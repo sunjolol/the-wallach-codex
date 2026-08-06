@@ -4494,7 +4494,7 @@
     "allergies"
    ],
    "facet": "uses",
-   "question": "What does negative ion therapy do?",
+   "question": "Can negative ions help asthma or allergies?",
    "answer_short": "Six effects - it lowers heart rate/BP, deepens breathing, speeds respiratory cilia, boosts glands and steadies brain rhythm - and Wallach says it especially helps asthma, allergies and cystic fibrosis.",
    "topics": [
     "respiration",
@@ -6212,7 +6212,7 @@
     "calcium"
    ],
    "facet": "warning",
-   "question": "Can you take too much magnesium?",
+   "question": "What does too much magnesium do to your bones?",
    "answer_short": "Wallach's book reports that with healthy kidneys there is no evidence of magnesium toxicity even up to 6,000 mg a day — though he cautions that a true excess of magnesium can inhibit bone calcification.",
    "topics": [
     "magnesium",
@@ -7779,7 +7779,7 @@
     "gluten"
    ],
    "facet": "mechanism",
-   "question": "What causes iron deficiency?",
+   "question": "Can gluten intolerance cause iron deficiency?",
    "answer_short": "Iron deficiency comes from unsupplemented pregnancy, menstruation, chronic infections, low stomach acid, chronic diarrhea or bleeding, and impaired absorption from high-fat, high-phytate, or gluten-intolerant diets.",
    "topics": [
     "iron-deficiency",
@@ -8880,7 +8880,7 @@
     "magnesium"
    ],
    "facet": "mechanism",
-   "question": "What does iron do in the body?",
+   "question": "How does iron help your body use oxygen?",
    "answer_short": "Iron builds hemoglobin and myoglobin and transfers electrons so the body can use oxygen—'iron is to hemoglobin what magnesium is to chlorophyll.'",
    "topics": [
     "hemoglobin",
@@ -14035,7 +14035,7 @@
     "cancer"
    ],
    "facet": "physiology",
-   "question": "What are the signs of germanium deficiency?",
+   "question": "Can low germanium cause arthritis?",
    "answer_short": "Germanium deficiency is typified by a severely reduced immune status, arthritis, osteoarthritis, low energy, and cancer.",
    "topics": [
     "deficiency",
@@ -14198,7 +14198,7 @@
     "autism"
    ],
    "facet": "physiology",
-   "question": "What are the signs of a lithium deficiency?",
+   "question": "Does sugar or alcohol make a lithium deficiency worse?",
    "answer_short": "In animals lithium deficiency causes reproductive failure, infertility, poor growth and shortened life; in humans it shows as manic depression, rages, hyperactivity, ADD/ADHD, some autism and 'bad seed' behavior.",
    "topics": [
     "mental-health",
@@ -14937,7 +14937,7 @@
     "veganism"
    ],
    "facet": "stance",
-   "question": "Do vegetarians get enough phosphorus?",
+   "question": "Can gluten intolerance cause a phosphorus deficiency?",
    "answer_short": "Yes — Wallach says vegetarians and vegans who don't supplement with minerals rarely have a phosphorus deficiency (unless they have chronic gluten intolerance from heavy whole-grain consumption), though because of their high phytic-acid intake they always have other mineral deficiencies, such as calcium, copper, chromium, vanadium, lithium and zinc, unless they supplement.",
    "topics": [
     "phosphorus",
@@ -21418,7 +21418,7 @@
     "epigenetics"
    ],
    "facet": "mechanism",
-   "question": "What are the 90 essential nutrients?",
+   "question": "Why does your DNA need all 90 essential nutrients?",
    "answer_short": "Wallach's cornerstone: DNA must have constant access to all 90 essentials -- 60 minerals, 16 vitamins, 12 amino acids and 3 fatty acids -- each in optimal amounts and proper ratios, because genes need nutrient-supplied energy, raw materials and on/off cofactors.",
    "topics": [
     "nutrition",
@@ -26504,7 +26504,7 @@
     "liver_disease"
    ],
    "facet": "physiology",
-   "question": "What are the signs of choline deficiency?",
+   "question": "How much choline does it take to treat Huntington's disease?",
    "answer_short": "Wallach lists the signs of choline deficiency as fatty liver, kidney hemorrhage, Alzheimer's disease, tardive dyskinesia and Huntington's disease, and says treatment can require high doses on the order of 20 grams a day.",
    "topics": [
     "choline",
@@ -26573,7 +26573,7 @@
    "subject": "chromium",
    "also_about": [],
    "facet": "basics",
-   "question": "What is chromium and what does it do?",
+   "question": "What is glucose tolerance factor (GTF)?",
    "answer_short": "Wallach describes chromium as a trace mineral that activates phosphoglucomutase and is the working core of glucose tolerance factor (GTF) — a complex of chromium III, dinicotinic acid and glutathione — with the body holding only about 1.5 mg, best read by hair analysis.",
    "topics": [
     "chromium",
@@ -28849,7 +28849,7 @@
     "alopecia"
    ],
    "facet": "physiology",
-   "question": "What are the signs of copper deficiency?",
+   "question": "Can low copper cause fatigue and depression?",
    "answer_short": "Wallach lists copper-deficiency signs including hair loss, microcytic anemia, aneurysm and cerebral hemorrhage, depression, dermatosis, diarrhea, fatigue, fragile bones and arthritis, high cholesterol, respiratory disease, and liver cirrhosis with weakness.",
    "topics": [
     "copper deficiency",
@@ -30885,7 +30885,7 @@
    "subject": "silver",
    "also_about": [],
    "facet": "protocol",
-   "question": "How much silver can you take per day?",
+   "question": "How does silver kill germs?",
    "answer_short": "Wallach says humans can take about 400 micrograms of silver a day, and that a silver deficiency results in an impaired immune system.",
    "topics": [
     "silver",
@@ -31181,7 +31181,7 @@
     "methionine"
    ],
    "facet": "mechanism",
-   "question": "What does sulfur do in the body?",
+   "question": "Why does glutathione need sulfur?",
    "answer_short": "Wallach explains sulfur is an important structural atom in most proteins — present as the sulfur amino acids cystine, cysteine, and methionine — and that glutathione, a cysteine-containing tripeptide, is essential to cellular reactions involving these sulfur amino acids.",
    "topics": [
     "sulfur",
@@ -31346,7 +31346,7 @@
     "hypoglycemia"
    ],
    "facet": "physiology",
-   "question": "What are the signs of vanadium deficiency?",
+   "question": "Can a vanadium deficiency cause diabetes or low blood sugar?",
    "answer_short": "Diabetes and hypoglycemia. Wallach counts vanadium (with chromium) as essential to blood-sugar control, so its deficiency drives insulin up — producing type II diabetes and low blood sugar — and shows up day-to-day as thirst and relentless carbohydrate and sugar cravings.",
    "topics": [
     "vanadium",
@@ -31570,7 +31570,7 @@
     "cancer"
    ],
    "facet": "physiology",
-   "question": "What are the signs of vitamin C deficiency?",
+   "question": "What does scurvy do to the body?",
    "answer_short": "A vitamin C shortage causes scurvy — bleeding gums, loosened teeth, and skin hemorrhages — plus anemia, poor appetite and growth, swollen wrist and ankle joints, rib and cartilage fractures, and a high risk of infection and cancer.",
    "topics": [
     "vitamin c",
@@ -32973,7 +32973,7 @@
     "chondroitin"
    ],
    "facet": "physiology",
-   "question": "What are the signs of manganese deficiency?",
+   "question": "What birth defects come from a manganese deficiency?",
    "answer_short": "Wallach lists striking manganese-deficiency diseases — congenital ataxia, deafness, chondromalacia, chondrodystrophy, 'slipped tendon,' asthma, convulsions, infertility, miscarriage, loss of libido, and joint problems like TMJ, carpal tunnel and repetitive-motion syndrome — while excess manganese can instead cause a Parkinson-like or schizophrenia-like disorder.",
    "topics": [
     "manganese",
@@ -33484,7 +33484,7 @@
     "cancer"
    ],
    "facet": "physiology",
-   "question": "What are the signs of germanium deficiency?",
+   "question": "Why does low germanium lead to cancer?",
    "answer_short": "Wallach writes that germanium deficiency typically shows up as a severely weakened immune system, arthritis, osteoporosis, low energy, and cancer.",
    "topics": [
     "germanium",
@@ -34047,7 +34047,7 @@
     "insomnia"
    ],
    "facet": "physiology",
-   "question": "What are the signs of vitamin A deficiency?",
+   "question": "Can low vitamin A cause hair loss and insomnia?",
    "answer_short": "Wallach's signs of vitamin A deficiency include acne, loss of smell, birth defects, dry hair and hair loss, fatigue, growth retardation, thickened rough skin, infections, infertility, insomnia, night blindness, weight loss, and dry eyes and skin.",
    "topics": [
     "vitamin a",
@@ -34580,7 +34580,7 @@
    "subject": "potassium",
    "also_about": [],
    "facet": "basics",
-   "question": "What is potassium and what does it do in the body?",
+   "question": "Does your body store potassium?",
    "answer_short": "Potassium is an essential mineral — the major positively charged ion inside your cells — that runs fluid balance, nerve signaling and muscle activity, and makes up about five percent of the body's total mineral content.",
    "topics": [
     "potassium",
