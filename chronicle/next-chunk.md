@@ -1,136 +1,105 @@
 # ★ STATE ✓measured at close 2026-08-06
 
-- **Corpus SEALED at knowledge_version=466**, 2250 claims (count UNCHANGED — nothing deleted this
-  session), `corpus_verify` PASS, 7 book hashes match.
+- **Corpus SEALED at knowledge_version=469**, **2230 claims** (was 2250 — 20 duplicates deleted),
+  `corpus_verify` PASS, 7 book hashes match.
 - **Board 89/89, 0 failed.** 23 external / 24 consistency / 40 structural / 2 meta. Green means
-  NOTHING DRIFTED — only the 23 external gates can catch a value that is wrong but self-consistent.
-- `node tools/build.mjs` exits 0; `render_probe_knowledge`, `render_probe_entity`,
-  `render_probe_knowledge_filter` PASS with 0 page errors.
-- Drafts and sealed shards are IN SYNC — nothing pending a seal.
-- ⚠ **`render_probe_search` FAILS** on `calcium shows its full claim set (146)`. **PROVEN
-  PRE-EXISTING**, not caused by this session: the whole working tree was stashed, rebuilt at HEAD,
-  the probe failed identically, then restored. The probe hardcodes `146` while calcium reports 144;
-  calcium's claim set is unchanged (113 at HEAD and now). Undiagnosed — its own job.
+  NOTHING DRIFTED — only the 23 external gates catch a value that is wrong but self-consistent.
+- `build_embeds` + `node tools/build.mjs` exit 0. `render_probe_knowledge`, `render_probe_entity`,
+  `render_probe_knowledge_filter` PASS, 0 page errors.
+- Drafts and sealed shards are IN SYNC.
+- ⚠ **`render_probe_search` FAILS** on a hardcoded `146` calcium count. **PROVEN PRE-EXISTING** by
+  stashing the whole tree, rebuilding at HEAD and reproducing it there. Undiagnosed.
+- Commits: `36e2c6cc` (ceiling sweep), `beeb0a26` (full defect sweep), `c44fa156` (question re-cuts).
+  **Not pushed** — master is 13 ahead of origin and pushing has not been routine.
 
-# ✔ TASK #5 — THE UN-SAVEABLE LIST — **DONE. ZERO CLAIMS REQUIRED DELETION.**
+# ★★★ THE HEADLINE — WHY DUPLICATES KEPT SURVIVING
 
-Swept all 2250 claims for other superseded dose ceilings after the 2026-08-05 vitamin D deletions.
+Luneth found two cards on the vitamin D page saying the same thing and asked why. The cause is
+structural, and it is now in the `duplicate-gate-blind-three-ways` memory.
 
-**The result.** Exactly **one** claim still carried the deleted 400 IU ceiling, and it did not need
-deleting. Two other numeric candidates dissolved on reading: `IMMORT-000071` is a deficiency
-**floor** ("less than 500 mg of calcium"), and `IMMORT-000010` attributes its 15 mcg selenium limit
-to **Pauling** and refutes it in the same sentence.
+`no_duplicate_claims` buckets on **`(book, subject, facet)`** — book is IN the key — and requires
+**verbatim containment**. Cross-book: invisible. Cross-facet, *even inside one book*: invisible.
+Different wording: invisible. It cannot see 407 cross-book + 615 cross-facet candidate pairs.
 
-**Why the list is structurally tiny — checkable, not a hunch.** Nearly every 1995 → 2014 target
-moved **down** (molybdenum 500 → 10-25 mcg, vanadium 500 → 50-100, iron 45 → 15-30, iodine 250 →
-50-150, vitamin E 400 → 100-200). **Vitamin D is the only essential whose number rose sharply**
-(275 → 1,000-2,000). An old ceiling can only contradict a new target where the target went UP, so
-vitamin D was the only place this could happen.
+**Root cause of the twin cards is a TAXONOMY defect**: the colour family named `signs` in
+`core/schemas/search.ts` contains ONLY `warning`, so deficiency-**sign** claims get filed there, and
+`warning` is PINNED at position 2 — so the misfiled claim is *promoted above* its correct twin.
 
-**What shipped**
-- `WAL-CLM-LETS-000295` (heart disease, 1995) — the direct twin of the deleted `DDDL-000171`.
-  **Prose trimmed** to what its verbatim actually quotes; the 400 IU ceiling, the selenium 500 mcg
-  and the vitamin E 800-1,200 IU were never in its quote. `essentials` dropped omega-3. Verbatim and
-  char_offset untouched. Enrichment question/answer_short/also_about/topics matched to the new prose.
-  ⚠ **Subject deliberately left `cardiovascular_disease`** — it is the ONLY enriched claim for that
-  condition and its only `protocol` entry; re-subjecting it would have left heart disease with zero
-  questions and **no gate would have fired** (the folate lesson).
-- `WAL-CLM-LETS-000139` (angina) — **verbatim WIDENED** 192 → 1,162 chars over the full ANGINA
-  entry. Over soft-500, allowed, flagged for spot-check.
-- `WAL-CLM-LETS-000390` (Paget's) — **KEPT**. "reduce vitamin D intake and exposure" is byte-exact in
-  its verbatim, condition-scoped, numberless, and the claim carries Wallach's mechanism.
+**A global `kind→facet` gate was considered and REJECTED on evidence**: it would demand 941
+re-facets (41.8% of the corpus) and `kind: definition` legitimately spans 13 facets.
 
-# ★ THE REVERSAL — read this before trusting a "prose overreach" diagnosis
+# ✔ WHAT SHIPPED
 
-139 was presented to Luneth as the same prose-overreach defect as 295, and **he approved trimming
-it**. Reading the book at its char_offset then showed the **entire ANGINA entry sitting immediately
-before the quoted slice** — the prose was faithful and the **verbatim was too narrow**. Trimming
-would have destroyed real content (chelation over bypass, calcium 2,000 mg, magnesium 800 mg, EFA,
-hawthorn) to remove a numberless sentence being kept in `LETS-000390` anyway. The approved
-instruction was **stopped and re-asked**, and he chose WIDEN.
+- **46 facet corrections** (`warning` 196 → 164; `LETS-000017` HELD — its text covers excess too).
+- **63 OCR run-together source fixes** across 5 books (`ofthe`, `ofa`, `toa`, `isa`, `asa`…), all
+  word-bounded. ⚠ **`Asa Chandler` ×2 (Coca-Cola) and `Asai` ×13 (Kazuhiko Asai) deliberately
+  SKIPPED** — a naive replace corrupts them.
+- **57 verbatim widenings** — the prose-exceeds-quote class, fixed by widening the QUOTE, never by
+  cutting the prose.
+- **20 duplicate claims deleted**, each with its unique mappings merged into the keeper FIRST.
+- **2 §00.A violations fixed**, both CROSS-BOOK CONTAMINATION not invention: `RARE-000324` displayed
+  selenium 1,000–3,000 mcg to readers (zero hits in all 1.17M chars of rare-earths; found in dddl);
+  `HELLS-000041` carried chromium figures absent from all 692K chars of hk.txt.
+- **17 question re-cuts** (collisions 46 → 29), plus the 3 vitamin D ones.
 
-**The rule this sets: a claim whose prose exceeds its verbatim has TWO possible causes — invented
-prose, or a slice drawn too small. Read the book at the offset before deciding which.** They need
-opposite fixes.
+# ⚠ MY OWN ERROR THIS SESSION — READ IT
 
-# ⚠ THE REAL DEFECT CLASS THIS SWEEP SURFACED — not fixed, needs his call
+Joining OCR hyphens in the widened quotes, my pattern used `\w+` instead of letters, so
+**`800-\n1200` collapsed to `8001200` across SIX vitamin E doses**, plus B-1/B-2 designations and two
+year ranges. The gate's own pattern is `[A-Za-z]{2,}-\n[A-Za-z]{2,}` — **letters only**. Caught by
+reading what the script did rather than trusting it, reverted via `git checkout` of the book sources,
+re-applied with the pattern narrowed. **Nothing reached a seal.** Verified after: 0 numeric
+corruptions, 33 `800-1200` ranges intact, 13 B-1/B-2 intact.
 
-**At least 86 claims state a figure in `claim_text` that does not appear in their own `verbatim`**,
-31 of them `protocol`. `dose_amount_in_verbatim` guards only the structured `dose` field;
-`prose_contained` only catches prose in **fact** fields. **Nothing guards a number asserted in prose.**
+**Rule: any sweep touching hyphens or spacing near numbers must match the GATE's own pattern.**
 
-⚠ **86 is a FLOOR with a known false-negative mode** — the counter tolerates b.i.d. halving, so
-`LETS-000295`'s own unsupported "400" matched the "200" inside "75-200 mg" and was wrongly cleared.
-The true number is higher by an unmeasured amount.
+# ★★ NEW STANDING LESSONS
 
-**No gate was written on purpose.** The rule needs Luneth's ruling on what counts as legitimate
-restatement versus overreach; inventing it unilaterally would be a WISH dressed as a gate.
+1. **A PURGE IS THREE DELETIONS, NOT TWO.** draft + `search-enrichment.json` + **claim ids embedded
+   elsewhere**. `mechanism_blocks_wellformed` caught `dashboard/assets/data/
+   mechanism-clarity-data.json` (hand-authored) where selenium's RENDERED `quote_claim` pointed at a
+   deleted claim. That file reproduces at NO indent 1-4 — edit by targeted raw string replace.
+2. **A re-worded question MUST be answered by its own card.** 25 of 44 proposed re-cuts promised
+   content absent from both `answer_short` and `claim_text` and were reverted. Test mechanically,
+   with **prefix matching both directions** — an asymmetric stemmer (`antidotes`→`antidot` vs
+   `antidote`) silently reverted 39 of 44 on the first attempt.
+3. **The fix is usually re-facet or re-word, not delete.** 904 of 1,021 adjudicated pairs were
+   DISTINCT.
 
-# ⚠ COVERAGE HOLE — named, not hidden
+# ⚠ OPEN — named, not buried
 
-With `DDDL-000171` deleted (2026-08-05) and `LETS-000295` trimmed, **the corpus now has no
-heart-disease PREVENTION protocol** — only post-heart-attack treatment.
+- **29 question collisions remain.** Each needs its **ANSWER** re-cut against the source before its
+  question can move. Doing it blind is exactly how the 25 bad rewrites happened.
+- **4 groups have NO honest split** and are DELETION candidates for a later pass, not re-wording
+  ones: `vitamin-k` (`LETS-000042` is a strict subset of `EPIGEN-000034`), `phosphorus` ×2 (the same
+  passage reprinted word-for-word), **`gadolinium` (flagged GENUINE DUPLICATE** — identical
+  periodic-table catalog entry in two books, differing only by the Epigenetics misspelling
+  "Gadolium").
+- **6 verbatim widenings deferred** — their span does not name a mapped condition, so `vb_apply`
+  refuses (correctly). Ids in `scratchpad/widen-deferred.json` shape; re-derive if needed.
+- **16 TRIM_PROSE and 8 NEEDS_RESCOPE** from the sweep are unapplied.
+- **No new duplicate gate written yet.** The cross-book/cross-facet signature is semantic; the one
+  deterministic gate available (same subject + same normalised question) is being cleared to zero
+  first so it can ship green rather than red.
+- **#7 same-span groups: DONE.** 71 groups read (handoff said 47): 52 legit multi-row, 11 true
+  duplicates deleted, 8 need rescope (still open).
+- **#6 Home `.kh-search` suggest dropdown** — `byRelevance` sorts alphabetically, ignores claim
+  count. **He has NOT asked for this. Do not raise it unprompted.**
+- `protocol`'s 425 claims are phase 2, unstarted. Vitamin A `EPIGEN-000110/000111` rival-answer
+  shape. `LETS-000076` (vitamin K) still explains its table's columns instead of naming his figure.
 
-# ✔ TOOL FIXES THIS SESSION
+# TRAPS
 
-- **`eden/tools/vb_apply.py` had `indent=2` hardcoded** while the draft is `indent=1`. One verbatim
-  edit would have re-spaced all 510 claims and `corpus_seal` would have promoted the reformat onto
-  the golden shard. **This is the identical failure fixed in `mine_batch.py` and `corpus_extract.py`
-  on 2026-08-05 — this tool was missed.** Now measures BEFORE mutating (afterwards the original
-  bytes cannot be reproduced) and refuses rather than guessing. Sealed-shard diff came out at
-  **3 insertions / 4 deletions** instead of ~40,000 lines.
-- ⚠ **The per-book indent list in memory was wrong AGAIN, in a third direction.** Measured
-  2026-08-06: `lets-play-doctor` is **indent=1**, not the sole indent=2. `hells-kitchen`, `iaiyh`
-  and `rare-earths` reproduce at **no** indent 1-4 — they are indent=1 with **CRLF** while the check
-  compares LF-joined output. **Both sanctioned edit tools will now REFUSE to write those three.**
-  Fail-safe and correct, but it means those books are currently un-editable via the sanctioned path.
-- **`tools/claim_review.py` gained `--draft`.** It read only sealed shards, so it could not show
-  Luneth unsealed work — yet review is meant to happen BEFORE the seal, which is his act.
-  Negative-controlled: the default path still renders sealed text.
-
-# TRAPS — unchanged, plus what bit this session
-
-1. `corpus_seal` / `catalog_seal` are **USER-ONLY**. Ask every time. **Two seals this session, each
-   authorised separately** — the first authorisation explicitly did NOT carry to the second, which
-   promoted a book-source change and 353 relocations beyond its scope.
-2. **A gate can go red BECAUSE OF a correction.** `frontface_verbatims_clean` did exactly that here:
-   the widened 139 verbatim now spans five OCR line-wraps the 192-char slice was too small to
-   contain. Ask what was making it pass before — the answer was "the quote was too small to contain
-   the defect".
-3. **safe_write matching is byte-exact.** `claim_review.py` is CRLF while the Write tool stages LF;
-   a `printf`-staged payload also turned `\\n` into a real newline and failed to match. Stage with
-   the Write tool and convert endings deliberately.
-4. **A round-trip control before any JSON edit.** `search-enrichment.json` (indent=1) passed here
-   because it was checked first.
-5. **The first-run onboarding modal covers the page.** DOM probes read through it and pass while the
-   screenshot is worthless. Dismiss "I'm just browsing" before any visual capture.
-6. **A sticky search bar sits over whatever lands at the top of the scroll box.**
-7. **The book files are CRLF while stored `char_offset`s are in LF-translated space.** A source edit
-   must match raw `-\r\n` and preserve CRLF, or every offset after it shifts wrongly.
-
-# ⚠ OPEN — tracked
-
-- **#7 47 same-span claim groups** — 16 legitimate multi-row table mining, 31 share span AND
-  essentials, 18 of those also share `kind` (likeliest true duplicates). `no_duplicate_claims`
-  misses them because it only compares within a subject+facet pair. READ each before deleting; merge
-  good prose first as was done for selenium.
-- **The 86+ prose-overreach claims** (above) — needs his ruling before any gate.
-- **`render_probe_search`** — pre-existing failure, undiagnosed.
-- **#6 the search port** — DONE for the Conditions tab. The Home `.kh-search` suggest dropdown has a
-  SEPARATE, unfixed defect: `byRelevance` sorts alphabetically and ignores claim count. **He has NOT
-  asked for this to be fixed. Do not raise it unprompted.**
-- `protocol`'s 425 claims are phase 2, unstarted. The 119-claim dose + contraindication grind is
-  COMPLETE.
-- Vitamin A `EPIGEN-000110`/`000111` show the rival-answer shape on one page.
-- `LETS-000076` (vitamin K) still explains its table's columns instead of naming his figure.
-
-# ★ DOCTRINE — carried forward from 2026-08-05, still binding
-
-1. **Cross-book relation is allowed ONLY where two rival dosing claims already render together.**
-   Everywhere else (headers, why-lines, panels) the ban stands.
-2. **Supersession is not correction.** The older figure may have been right for its era. ⚠ That
-   changed-conditions reading is an **ASSUMPTION, not a fact**, and must never be written as
-   Wallach's stated reason — he never says "therefore I raise my number."
-3. **When an instruction is one sentence, implement one sentence.** Do not re-diagnose a symptom the
-   user has already explained. Do not mock up a change to a mechanism you have not yet located.
-   (From the 2026-08-05 session close, which ended on anger over exactly this.)
+1. `corpus_seal` / `catalog_seal` are **USER-ONLY**. Ask every time. Three seals this session, each
+   authorised separately.
+2. **A gate can go red BECAUSE OF a correction.** `frontface_verbatims_clean` did exactly that: the
+   widened quotes spanned OCR wraps the narrow slices were too small to contain.
+3. **`search-enrichment.json` needs NO seal** — no golden, and neither `corpus_verify` nor
+   `corpus_seal` reads it. Facet/question fixes ship with `build_embeds` + `build` only.
+4. **Windows file locks**: a running read-heavy workflow holds files open and makes `os.replace`
+   fail with `WinError 5`. `safe_write` fails at the swap rather than corrupting. Wait, don't fight.
+5. **Book `.txt` files are CRLF while `char_offset`s are LF-translated.** Source edits must match raw
+   `-\r\n` and preserve CRLF.
+6. **The first-run onboarding modal covers the page.** Dismiss "I'm just browsing" before any capture.
+7. `git stash`/`pop` **normalises line endings** under `core.autocrlf=input` — it silently converted
+   book sources CRLF→LF mid-session. Harmless here (offsets are read translated) but be aware.
