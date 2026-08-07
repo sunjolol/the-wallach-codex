@@ -1,40 +1,31 @@
-# ★ NEXT SESSION — the duplicate-review campaign is DONE (read this first)
+# ★ NEXT SESSION — both corpus branches are clean; PR #1 is rebased and ready (read first)
 
-Luneth's **274 duplicate rulings are APPLIED, sealed, and committed** on branch
-`duplicate-review-campaign` (**kv467, 2162 claims, board 89/89**). Nothing about the dedup is pending.
-Full record: build-log `2026-08-07 13:50 CDT` + Creator's Log `lg_msjaxmrr`.
+Two big things shipped and are on the remote. **Nothing is pending or broken.**
 
-## What shipped this session
-- 88 duplicate claims deleted, **5 merges** authored from his notes, **92 survivors** re-tagged +
-  **37 essentials** set (tag-review.html delivered for his records).
-- Epigenetics source fix `Gadolium→Gadolinium` (resnap + ratified-divergence).
-- mechanism-clarity re-point (`RARE-000119→IMMORT-000100`), ratified-divergences 78→71,
-  `processed_meat` topic restored on the merged pork card.
-- `render_probe_search` / `render_probe_knowledge` count assertions now **DERIVE from truth**
-  (heroMeta == grouped-row totals; foods counts == `foods-curation.json` lengths) — the old
-  hardcoded 74/146/5 are gone.
+## State of the world
+- **`master`** = `1c47831f`, **kv467**, 2162 claims, board 89/89 — the **dedup** (274 rulings applied,
+  88 deleted, 5 merged, 92 re-tagged). Pushed.
+- **`protocol-widen-batch`** (PR #1) = `f9b416a2`, **kv468** — master **+ PR #1's 38 protocol
+  dose-widenings + 2 book de-hyphenations**, rebased cleanly onto the dedup. Board 89/89. Pushed
+  (force). **You are on this branch.**
+- PR #1 now **fast-forwards master** (its only diff vs master is the 38 widenings — a correct, small,
+  ready-to-merge PR, NOT unsaved work). Merge it whenever: `git checkout master && git merge --ff-only
+  protocol-widen-batch && git push`. That takes master to kv468 with everything.
 
-## Still open (NOT dedup — pre-existing)
-- **PR #1** (protocol-widen, kv469) still open on master: https://github.com/sunjolol/the-wallach-codex/pull/1 .
-  This branch is off master at kv466 and now carries kv467 dedup work. **If PR #1 merges first, rebase**
-  this branch onto the new master — they touch the same claim shards + indices, expect conflicts,
-  re-seal after resolving.
-- Branch **pushed to origin** 2026-08-07 (commit 84e331d5, tracks origin/duplicate-review-campaign). No PR opened yet — open at github.com/sunjolol/the-wallach-codex/pull/new/duplicate-review-campaign when wanted.
+## Nothing else is open
+The whole duplicate-review nightmare is done. Build-log has the two round-closes (`13:50` dedup,
+`14:16` pr1-rebase); Creator's Log `lg_msjaxmrr` + `lg_msjbtnac`.
 
-## Traps that bit THIS session (don't repeat)
-1. **After `corpus_seal` you MUST also run `build_embeds`.** corpus_seal derives the CORPUS indices,
-   NOT the dashboard artifacts. Running only `corpus_embed` left entity-page/targets/search-index
-   STALE and reddened 3 gates (`derived_artifacts_fresh`, `amounts_wallach_only`,
-   `entity_pills_justified`). `build_embeds` cleared all three at once.
-2. **Deleting a claim can un-vouch a book word** in the corpus vocabulary → `book_source_clean` reds
-   on a DIFFERENT book. `hypogonadism` → allowlisted in the dddl purity baseline (same purge/vouch
-   pattern the file records for `amebiasis`).
-3. **A cross-book merge that folds a topic's only card silently drops it from search.** The foods
-   REMOVE strip went 5→4 when `processed_meat` folded into `pork`. Fix: add the folded topic to the
-   keeper's `also_about`. Before folding, grep `foods-curation.json` / `mechanism-clarity-data.json` /
-   `ratified-divergences.json` for the folded id AND its topic slug.
+## Traps this stretch exposed (durable — see memory)
+1. **After `corpus_seal`, always run `build_embeds`** (not just `corpus_embed`) — else 3 gates red on
+   stale dashboard artifacts.
+2. **Deleting a claim can un-vouch a book word** → `book_source_clean` reds elsewhere → allowlist the
+   real term in the book's purity baseline.
+3. **A merge that folds a topic's only card drops it from search** → add the topic to the keeper's
+   `also_about`; grep `foods-curation.json` before folding.
+4. **A corpus branch "rebase" is NOT a git rebase** — the shards/goldens/kv/derived are generated, so
+   git conflicts are unresolvable soup. Replay the SOURCE change (book edits + `resnap --fix` the
+   verbatims) on the new base and re-seal. See memory `corpus-branch-rebase-is-source-replay`.
 
 # ⚠ DELIBERATELY NOT RESTORED — HIS DECISION (still binding)
-The 18 claims deleted Aug 3–5 STAY DELETED (he chose `36e2c6cc`/2,250 over `83c0e63f`/2,268). Do not
-"helpfully" restore them. The 88 deleted this session were each his per-pair ruling — do not restore
-those either.
+The 18 claims deleted Aug 3–5 and the 88 deleted this session STAY DELETED — each his own ruling.
