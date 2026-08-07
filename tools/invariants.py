@@ -4991,6 +4991,170 @@ def check_no_duplicate_claims():
     return _no_duplicate_claims_impl(claims, enrichment)
 
 
+# ---------------------------------------------------------------------------
+# search_no_twin_questions -- one PAGE, one question (the CROSS-BOOK twin)
+# ---------------------------------------------------------------------------
+# THE DEFECT, in full, because the last twin-card gate was written too NARROW and
+# the reader walked back into the wall three days later:
+#   2026-08-07. After a three-day duplicate-review campaign (274 rulings, 88 claims
+#   removed, board 89/89 green), Luneth opened the Vitamin D entity page and it STILL
+#   had twins: "Can too much vitamin D be dangerous?" beside "Can too much vitamin D
+#   be harmful?", and "What are the symptoms of vitamin D deficiency?" beside "What
+#   are the signs of vitamin D deficiency?". Two clusters, one page, green board.
+#
+# WHY no_duplicate_claims (2026-08-03) COULD NOT SEE IT -- its signature is
+#   same book . verbatim CONTAINMENT . same subject . same facet.
+# These twins break THREE of those four: they are CROSS-BOOK (dddl vs lets;
+# epigenetics vs lets), their verbatims do NOT contain each other (different book
+# tables list different signs -- answer-overlap measured as low as 0.04), and they
+# often sit under different facets. That gate catches ONE extraction emitting a
+# truncated + full take of ONE span. It was never built to catch the same TEACHING
+# mined from several books, each given its own hand-authored question that differs
+# only by a synonym (signs<->symptoms, dangerous<->harmful). This gate is that
+# missing sibling.
+#
+# WHERE THE DUPLICATION LIVES -- NOT in the claims. Two "signs of X deficiency"
+# claims from two books are legitimately different records, both true to their
+# source; the claim-level campaign correctly left them alone. The duplication is in
+# the QUESTION the app mints per claim in search-enrichment.json: two claims -> two
+# cards -> two near-identical questions on ONE page. So the gate reads the AUTHORED
+# questions, grouped by the page they render on (enrichment subject).
+#
+# THE SIGNATURE -- deterministic, NO similarity threshold (the same discipline the
+# no_duplicate_claims block records: a % floor picked without evidence red-boards
+# legitimate neighbours). Two cards on one subject are twins IFF their questions
+# reduce to the SAME token set after: lowercasing, dropping pure function words,
+# dropping the subject's own name tokens, and folding a SMALL, EXPLICIT synonym set
+# measured from the real corpus (signs=symptoms, dangerous=harmful=toxic,
+# deficiency=low=lack, disease=disorder, cause=caused). Fold-EQUALITY, not fuzzy
+# distance. Measured 2026-08-07 over the 2159 authored questions: 19 fold-equal
+# pairs across 17 subjects, ALL of them real twins -- the allowlist below is EMPTY
+# by design. Only 'does'/'did' are dropped, NOT 'do': keeping 'do' as a content word
+# means "what IS X" (definition) and "what does X DO" (function) reduce to DIFFERENT
+# signatures, so the one shape that first looked like a false positive
+# (negative_ion_therapy) is not one, and no carve-out is needed to spare it.
+#
+# HONEST GAP (WISH, R7): a twin whose two questions differ by MORE than a synonym
+# (e.g. "what does deficiency do to your bones?" vs "what are the signs of
+# deficiency?" -- a bone-specific take vs the general one, or a COMPOUND question
+# like "what does X do, and what are the signs of low X?") is NOT fold-equal and
+# escapes this gate. Those need a human ruling (merge vs keep-as-distinct-subquery)
+# a machine cannot make without guessing a threshold. ~130 such borderline pairs
+# were measured 2026-08-07 and are being reviewed by hand; if a hard, recurring
+# shape emerges, TIGHTEN with that evidence -- do not guess a floor now. also_about
+# cross-page collisions are likewise out of v1 scope; subject-primary only.
+#
+# NO BASELINE EXCEPTION: like no_duplicate_claims, any future keep-both pair lives in
+# the in-gate allowlist below with a stated reason + a pinned test, NEVER in
+# .claude/invariant-baseline.json (that file is invariant-scoped -- one entry would
+# tolerate every twin this gate will ever find). A carve-out that stops firing is
+# itself RED (R9).
+#
+# Truth anchor: the hand-authored questions in search-enrichment.json x their
+# subject, normalized + fold-compared each run. Structural -- proves no two cards on
+# a page ASK THE SAME THING, never that any answer is RIGHT.
+
+_TWIN_QUESTION_STOP = frozenset(
+    "a an the is are was were be been being am does did of to in on at for and or "
+    "with as by it its this that your you my our their his her i we they he she s t re ll about".split())
+
+_TWIN_QUESTION_FOLD = {}
+for _twin_bucket, _twin_words in [
+    ("SIGN", "sign signs symptom symptoms"),
+    ("TOX", "dangerous harmful toxic toxicity toxicities poisonous unsafe hazardous"),
+    ("DEF", "deficiency deficient deficiencies low lack lacking shortage deficit"),
+    ("DISEASE", "disease diseases disorder disorders"),
+    ("CAUSE", "cause caused causes causing"),
+]:
+    for _twin_w in _twin_words.split():
+        _TWIN_QUESTION_FOLD[_twin_w] = _twin_bucket
+
+# Pairs that fold-equal and are nonetheless CORRECT -- each really asks a different
+# reader question. EMPTY today: the 19 fold-equal pairs measured 2026-08-07 are all
+# real twins, and the one shape that first looked distinct (negative_ion_therapy
+# 'what IS it' vs 'what does it DO') is separated by the normalizer itself (it keeps
+# 'do'), not by a carve-out. When a real false positive first appears, add it here
+# with a stated reason + a pinned test (same rules as _DUPLICATE_KEEP_BOTH), NEVER in
+# the baseline. A pair here that STOPS firing is RED (stale carve-out, R9).
+_TWIN_QUESTION_KEEP_BOTH = {}
+
+
+def _twin_question_sig(question, subject):
+    """Deterministic token signature of an authored question, scoped to its page. Lowercase, strip
+    punctuation, drop function words + the subject's own name tokens, fold the explicit synonym set.
+    Two questions on one subject are twins IFF their signatures are EQUAL (no fuzzy threshold)."""
+    q = re.sub(r"[^a-z0-9\s]", " ", (question or "").lower())
+    subtok = set(re.sub(r"[^a-z0-9\s]", " ", (subject or "").replace("-", " ").lower()).split())
+    out = set()
+    for w in q.split():
+        if w in _TWIN_QUESTION_STOP or w in subtok:
+            continue
+        out.add(_TWIN_QUESTION_FOLD.get(w, w))
+    return frozenset(out)
+
+
+def _search_no_twin_questions_impl(enrichment, approved=None):
+    """Fold-equal question pairs within one subject -- the cross-book twin-card class the 2026-08-07
+    vitamin-D page still showed. Data-driven so the negative test can pass approved={} and prove this
+    REDDENS on the real vitamin-D signs/symptoms pair. See the block comment above for the defect, why
+    no_duplicate_claims was blind to it, and why fold-equality (not fuzzy distance) is the signature."""
+    approved = _TWIN_QUESTION_KEEP_BOTH if approved is None else approved
+
+    bysub, n = {}, 0
+    for cid, e in enrichment.items():
+        e = e or {}
+        q, sub = e.get("question"), e.get("subject")
+        if not q or not sub:
+            continue
+        n += 1
+        bysub.setdefault(sub, []).append((cid, _twin_question_sig(q, sub), q, e.get("facet")))
+
+    viol, seen_approved = [], set()
+    for sub in sorted(bysub):
+        group = sorted(bysub[sub], key=lambda t: t[0])
+        for i in range(len(group)):
+            for j in range(i + 1, len(group)):
+                (ia, sa, qa, fa), (ib, sb, qb, fb) = group[i], group[j]
+                if sa != sb:
+                    continue
+                pair = frozenset((ia, ib))
+                if pair in approved:
+                    seen_approved.add(pair)
+                    continue
+                viol.append(f"{ia} + {ib} [subject={sub!r}]: {qa!r} <{fa}> == {qb!r} <{fb}> "
+                            f"(fold-equal question -> twin cards on one page)")
+
+    stale = sorted(" + ".join(sorted(p)) for p in approved if p not in seen_approved)
+    if viol or stale:
+        parts = []
+        if viol:
+            parts.append(f"{len(viol)} twin-question pair(s) -- two cards ask the same question on one "
+                         "entity page (cross-book synonym twins): " + "; ".join(viol[:6])
+                         + (f" ... (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+        if stale:
+            parts.append("stale keep-both exception(s) in _TWIN_QUESTION_KEEP_BOTH -- no longer fold-equal, "
+                         "so they bless nothing and must be DELETED in the same patch that made them stale "
+                         "(R9): " + "; ".join(stale))
+        return False, " || ".join(parts)
+
+    return True, (f"no twin-question pair across {n} authored question(s) / {len(bysub)} subject(s) "
+                  f"(signature: same subject + fold-equal question; synonyms folded signs=symptoms / "
+                  f"dangerous=harmful / deficiency=low); {len(approved)} keep-both exception(s) "
+                  f"allowlisted in-gate (empty today), each with a reason + a pinned test and still firing")
+
+
+def check_search_no_twin_questions():
+    """Charter R3 (one source per fact) / R7 -- the CROSS-BOOK sibling of no_duplicate_claims. See the
+    block comment above _TWIN_QUESTION_KEEP_BOTH for the 2026-08-07 vitamin-D twin the same-book gate
+    could not see, and why fold-equality is the signature. Thin path-binding shell over the impl so
+    tools/test_search_no_twin_questions.py can drive the logic with the real twin planted back in."""
+    enr_p = ROOT / "eden" / "corpus" / "search-enrichment.json"
+    if not enr_p.exists():
+        return True, "eden/corpus/search-enrichment.json missing (bootstrap-guard)"
+    enrichment = json.loads(enr_p.read_text(encoding="utf-8")).get("enrichment", {})
+    return _search_no_twin_questions_impl(enrichment)
+
+
 def check_no_hand_duplicated_canonical():
     """Charter R3 -- no canonical value is hand-written twice; the pillar is the single hand-edited
     home, and derived copies are proven fresh (derived_artifacts_fresh IS R3's 'derived copies only'
@@ -7257,6 +7421,15 @@ INVARIANTS = [
         truth_anchor="the sealed claim verbatims (eden/corpus/claims/claims-*.json) x subject/facet from eden/corpus/search-enrichment.json, bucketed by book+subject+facet and containment-tested pairwise, recomputed each run; a keep-both exception that stops firing is itself RED",
         severity="critical",
         lesson_ref="2026-08-03 twin-card incident -- Luneth found two near-identical 'What is Vitamin A?' cards on one entity page; EPIGEN-000213/-000214 were a truncated and a full take of the same span, same offset, same extracted_at, and 13 duplicates were removed corpus-wide (commit b3551834). An 84-gate board caught none of it: the class was found by a human looking at a screen, which is not a control. Negative test: tools/test_no_duplicate_claims.py (replants the real vitamin-A pair). memory: a-gate-can-be-green-because-of-the-defect, negative-control-or-it-proves-nothing",
+    ),
+    Invariant(
+        name="search_no_twin_questions",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
+        description="no two search cards on one entity page (same enrichment subject) ask the SAME question after synonym-folding (signs=symptoms, dangerous=harmful, deficiency=low) -- the CROSS-BOOK twin-card class no_duplicate_claims cannot see (it keys on same-book verbatim containment). On 2026-08-07, after a 3-day duplicate campaign, the vitamin-D page STILL rendered 'signs of' beside 'symptoms of' deficiency and 'dangerous' beside 'harmful' on an 89/89 board. Fold-EQUALITY, not a fuzzy threshold; any confirmed-distinct pair is allowlisted IN-GATE with a reason (empty today), never in the baseline",
+        check_fn=check_search_no_twin_questions,
+        truth_anchor="the hand-authored questions in eden/corpus/search-enrichment.json x their subject, normalized (drop function words + subject-name tokens, fold an explicit synonym set) and fold-compared pairwise within each subject, recomputed each run; a keep-both exception that stops firing is itself RED",
+        severity="critical",
+        lesson_ref="2026-08-07 vitamin-D twin recurrence -- after a 3-day duplicate campaign the entity page STILL rendered signs/symptoms + dangerous/harmful twins because no_duplicate_claims keys on same-book verbatim containment and these are cross-book, different-content, synonym-worded. 19 fold-equal pairs across 17 subjects the day the gate landed, ALL real twins (allowlist empty; keeping 'do' as a content word separates 'what IS X' from 'what does X DO'). Negative test: tools/test_search_no_twin_questions.py replants the real vitamin-D signs/symptoms pair. memory: duplicate-gate-blind-three-ways, a-gate-can-be-green-because-of-the-defect",
     ),
     Invariant(
         name="no_hand_duplicated_canonical",
