@@ -19,7 +19,7 @@ Full record: build-log `2026-08-07 13:50 CDT` + Creator's Log `lg_msjaxmrr`.
   This branch is off master at kv466 and now carries kv467 dedup work. **If PR #1 merges first, rebase**
   this branch onto the new master — they touch the same claim shards + indices, expect conflicts,
   re-seal after resolving.
-- Branch is **local-only** (Luneth's standing choice) — committed, **not pushed**. Push only when he says.
+- Branch **pushed to origin** 2026-08-07 (commit 84e331d5, tracks origin/duplicate-review-campaign). No PR opened yet — open at github.com/sunjolol/the-wallach-codex/pull/new/duplicate-review-campaign when wanted.
 
 ## Traps that bit THIS session (don't repeat)
 1. **After `corpus_seal` you MUST also run `build_embeds`.** corpus_seal derives the CORPUS indices,
