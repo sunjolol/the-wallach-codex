@@ -6,7 +6,6 @@
  "divergences": [
   {
    "claim_ids": [
-    "WAL-CLM-RARE-000090",
     "WAL-CLM-DDDL-000013",
     "WAL-CLM-IMMORT-000027"
    ],
@@ -142,16 +141,6 @@
    "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
   },
   {
-   "claim": "WAL-CLM-LETS-000008",
-   "ours": "aneurysm / cerebral hemorrhage  |  exostosis (\"lipping\" of epiphyseal plates)  |  weakness / liver cirrhosis  |  Shwachman's syndrome",
-   "page_prints": "aneutysm / cerebral hemorrage  |  otosis (\"lipping\" of epiphyseal / plates)  |  weakness / liver cirritosis  |  Swachman's syndrome",
-   "decided_by": "Luneth",
-   "decided_at": "2026-08-03",
-   "evidence": "The PAGE carries FIVE defects in this one list; our corpus already holds the corrected form of all five, so nothing needs changing. Recording them so the divergence is documented rather than re-derived.\n(a) page 'aneutysm' (a-n-e-u-T-y-s-m; the glyph has a full ascender with crossbar, read at 10x) - ours 'aneurysm'. CORRECT.\n(b) page 'hemorrage' (single h in the middle) - ours 'hemorrhage'. CORRECT.\n(c) page 'cirritosis' (c-i-r-r-i-t-o-s-i-s, read at 26x) - ours 'cirrhosis'. CORRECT.\n(d) page 'Swachman's' (no h after the S, read at 26x, straight apostrophe) - ours 'Shwachman's'. CORRECT; the e",
-   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
-   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
-  },
-  {
    "claim": "WAL-CLM-EPIGEN-000372",
    "ours": "post-translational",
    "page_prints": "Common post-transitional modifications of lysine include methylation producing methyl-, dimethyl-, and trimethyllysine.",
@@ -167,15 +156,6 @@
    "decided_by": "Luneth",
    "decided_at": "2026-08-03",
    "evidence": "Whole verbatim compared word-for-word; every number verified at 9x: 1990, 17th, 2000, 24th, 2005, 46th, 2008, 48th — all match ours, as do every semicolon and comma. The three flagged hunks were the second OCR dropping a leading character ('2000'->'000', 'in'->'n', 'and'->'nd'); ours is right in all three. The one REAL difference is one nobody flagged: the page misspells Atlanta as 'Atlantha' (read at 26x, unambiguous A-t-l-a-n-t-h-a). Ours already carries the corrected proper noun — same class as the ratified 'Dean Hamer'/'Dean Harmer' entry. Keep ours; logging it so the divergence is on the ",
-   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
-  },
-  {
-   "claim": "WAL-CLM-RARE-000116",
-   "ours": "(see page_prints)",
-   "page_prints": "Hyperirratability  |  “Bi-polar” disesase  |  Dr. Jykell/Mr. Hyde rages (“Bad Seeds”)  |  Negative nitrogen balance( protein loss)  |  Diabetes (ulcers/gangrene) (Fig. 11-6)",
-   "decided_by": "Luneth",
-   "decided_at": "2026-08-03",
-   "evidence": "All 21 lines compared item by item. THE FLAGGED HUNK GOES THE OTHER WAY: the second OCR's 'Hyperirratability' was reading the page correctly — the page really does print it, and ours already carries the corrected spelling. Two MORE page typos on the same list that nobody flagged, both already corrected in ours: the page prints '“Bi-polar” disesase' (ours: disease) and 'Dr. Jykell/Mr. Hyde' (ours: Dr. Jekyll). All three read at 11x, unambiguous. This falls squarely under the 'book typo -> corrected spelling = DOCTRINE, not a divergence' class already recorded in ratified-divergences.json for th",
    "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
   },
   {
@@ -248,15 +228,6 @@
    "decided_by": "Luneth",
    "decided_at": "2026-08-03",
    "evidence": "Two page typos, both already corrected in ours. (1) page 'poor hair keratization' (no 'in'), ours 'keratinization'. (2) page 'neutrophillic WBCs' (double l), ours 'neutrophilic'. Both read at 18x and unambiguous; both OCR passes were faithful to the page, ours is the corrected side. Falls squarely in the 'book typo -> corrected spelling' DOCTRINE class already recorded in ratified-divergences.json _classes. Rest of the verbatim matches, including the curly apostrophe in cow's milk and 'and/or iron storage disease.'",
-   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
-  },
-  {
-   "claim": "WAL-CLM-RARE-000176",
-   "ours": "otoliths",
-   "page_prints": "otolithes",
-   "decided_by": "Luneth",
-   "decided_at": "2026-08-03",
-   "evidence": "Two page typos, both already corrected in ours. (1) page 'deafness (malformation of otolithes)', ours 'otoliths' — the correct English plural; read at 16x. (2) page 'abortions (miscarriges)', ours 'miscarriages' — the page really does omit the 'a' between i and g. THE SECOND ONE WAS NOT FLAGGED BY EITHER OCR PASS and surfaced only because the whole table was compared bullet by bullet; it is the same shared-blind-spot class as the 'drum/dnim' find in LETS-000315. All 16 bullets are present, in the page's order, and everything else matches — including the curly quotes on “Slipped Tendon”, the se",
    "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
   },
   {
@@ -352,31 +323,12 @@
    "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
   },
   {
-   "claim": "WAL-CLM-RARE-000262",
-   "ours": "hydroencephalocele) … Micro- or anophthalmia … Umbilical hernias",
-   "page_prints": "hydroencephaloceol  [NO closing parenthesis] … Micro- or anopthalmia … Umbilical; hernias",
-   "decided_by": "Luneth",
-   "decided_at": "2026-08-03",
-   "evidence": "Both flagged hunks are the second OCR reproducing the PAGE ('hydroencephaloceol', 'anopthalmia'); ours is the corrected side. The 'Umbilical;' semicolon was flagged by neither pass and surfaced only from the whole-table read. Every other row matches at 14x: 'Table 11-24. Congenital Birth defects associated with Zinc Deficiency.', Down's Syndrome, Cleft lip, Cleft palate, '(dorsal herniation,', '(small or absent eyes)', 'Micro- or agnathia', 'Spina bifida', lowercase 'clubbed limbs', 'Syndactyly (webbed toes and fingers)', 'Diaphragmatic hernias (hiatal hernia)', 'Heart defects', lowercase 'lun",
-   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
-   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
-  },
-  {
    "claim": "WAL-CLM-IMMORT-000026",
    "ours": "(hydrophilic)",
    "page_prints": "(hydrophyllic)",
    "decided_by": "Luneth",
    "decided_at": "2026-08-03",
    "evidence": "This is an UNDISCLOSED DIVERGENCE, not a defect: the page carries the typo and our corpus already carries the correct spelling. Read at ~22x, the page unmistakably prints 'hydrophyllic' (p-h-y-l-l-i-c). The book is consistent in the error -- the facing page (p93) prints '(lipophyllic or fat or oil loving)' the same way -- and our immortality .txt holds 'hydrophilic' 1x and 'lipophilic' 1x, i.e. the correction was applied at some earlier point and never logged. That is exactly the class ratified-divergences.json exists to stop being re-derived. EVERYTHING ELSE in the verbatim was compared and i",
-   "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
-  },
-  {
-   "claim": "WAL-CLM-IMMORT-000144",
-   "ours": "Ge-132 is absorbed",
-   "page_prints": "GE-132 is absorbed  (the SECOND occurrence only; the first occurrence four lines above prints 'Ge-132')",
-   "decided_by": "Luneth",
-   "decided_at": "2026-08-03",
-   "evidence": "Same shape as the hydrophyllic case: our text already normalised a page inconsistency and it was never logged. Read at ~24x, the second occurrence is unambiguously a capital G AND a capital E. EVERYTHING ELSE compared and byte-exact: 'Asai synthesized Ge-132, carboxyethyl germanium sesquioxide, in 1967 by a hydrolysis reaction... at the rate of 30% efficiency and the total intake is completely excreted in one week.' 1967 and 30% both read at high zoom. The flagged hunk (ours 'This' vs pdf 'his') is the second OCR shaving the leading T -- the page prints 'This'.",
    "source": "page-read campaign wave 1; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
   },
   {
@@ -488,23 +440,13 @@
    "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
   },
   {
-   "claim": "WAL-CLM-RARE-000321",
+   "claim": "WAL-CLM-RARE-000225",
    "ours": "is known as ceroid lipofuscin",
    "page_prints": "is known as ceroid lipofucsin",
    "decided_by": "Luneth",
    "decided_at": "2026-08-03",
    "evidence": "Verbatim identical to WAL-CLM-RARE-000225 and read against the same lines of folio 378 at 12x. Same finding: the page prints the transposed 'lipofucsin', our text already carries the corrected 'lipofuscin'. Nothing to change; both claim ids should go into the ratified-divergences ledger together so this is not re-derived a third time. Rest of the verbatim exact.",
    "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
-  },
-  {
-   "claim": "WAL-CLM-RARE-000107",
-   "ours": "calcium deficiency as the cause of\\nhypertension",
-   "page_prints": "calcium deficiency as the cause of\\nhypertention,",
-   "decided_by": "Luneth",
-   "decided_at": "2026-08-03",
-   "evidence": "THE PAGE CARRIES THE TYPO AND WE ALREADY HOLD THE FIX. At 26x the second occurrence unambiguously reads 'hypertention,' — h-y-p-e-r-t-e-n-t-i-o-n — the ninth glyph being a t with stem, crossbar and curved foot, identical to the t six letters earlier in the same word, and nothing like the s two lines above. The FIRST occurrence in the same paragraph ('probably led to hypertension. More than 30 subsequent') is spelled correctly with an s, read at 8x, so the book contradicts itself inside one paragraph — the same self-refuting shape recorded for the KNO2/KNO3 case. Our corpus holds 'hypertension' in both places. This divergence is NOT in eden/tools/ratified-divergences.json (I checked all ten of my claim ids against that file; none appear) and should be added there.\\nTHE FLAGGED 'dropped-text' HUNK IS AN ARTIFACT OF EXACTLY THIS TYPO. The aligner could not match our final 'hypertension' to the page's 'hypertention', so it matched it to the NEXT, correctly-spelled occurrence forty words later ('...in humans with untreated hypertension'), which made everything in between — 'additionally recent studies have shown that serum ionized calcium is consistently lower in humans with untreated' — look dropped. It is not: that text follows our excerpt's end. No interior gap exists. Everything else in the verbatim is exact, including 'In 1980, McCarron, et al, theorized' and 'More than 30 subsequent'.",
-   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
-   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
   },
   {
    "claim": "WAL-CLM-RARE-000258",
@@ -559,25 +501,6 @@
    "decided_at": "2026-08-03",
    "evidence": "THE LOCATOR WAS WRONG AND SAID SO (page_index_reliable=false, coverage 0.25). PDF p70 = printed p58 is Chiropractic / Color therapy and does not contain the passage; the second OCR's 'pdf' side in every hunk is p70's colour-therapy text, which is why nothing aligned. I searched outward and found the passage on PDF p65 = printed p53, right column, the AYURVEDIC MEDICINE entry. All five flagged hunks are therefore wrong-page artifacts, not drops. THE REAL FINDING: at 24x the page unambiguously prints 'in the Arthavara veda' - A-r-t-h-a-v-a-r-a. Our corpus holds 'Atharva veda', the correct Sanskrit text (the Atharvaveda, whose ~1200 BC date the page's own figure matches). So our text ALREADY corrects a garbled proper noun and nothing on disk should change - but this divergence is NOT on the seven-entry ratified list, so nothing currently protects it from being 'restored' by a future faithfulness pass. Same class as the ratified 'Dean Hamer'/'Dean Harmer'. The rest of the verbatim was read at 8x-9x and matches the page exactly, including the straight typewriter double quotes around \"life sciences.\" and the '=' signs in 'Ayur = life, veda = science'. Our quote stops before the page's final period after 'BC' - tail boundary.",
    "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
-  },
-  {
-   "claim": "WAL-CLM-RARE-000119",
-   "ours": "cofactor for many hundreds of metalloenzymes.",
-   "page_prints": "cofactor for many hundreds of metalloenzynes.",
-   "decided_by": "Luneth",
-   "decided_at": "2026-08-03",
-   "evidence": "THE HUNK GOES THE OPPOSITE WAY FROM THE USUAL PATTERN: the second OCR ('metalloenzynes') was reading the page CORRECTLY and the page itself is wrong. At 40x the glyph after the 'y' has exactly TWO stems - an n - then 'e', 's', period; there is no third stem. It is the same 2-stem shape as the n earlier in the same word ('...oenz...'). The page prints 'metalloenzynes', which is not a word; the term is metalloenzymes, and our corpus already holds it. Nothing on disk should change. Not on the ratified list, so record it. The rest of the sentence was read at 14x and is exact: 'Copper is essential to all living organisms and is a universally important cofactor for many hundreds of...'. The page sets a wide justified gap between 'universally' and 'important' - that is justification, not a double space, and ours correctly holds one space.",
-   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs."
-  },
-  {
-   "claim": "WAL-CLM-RARE-000290",
-   "ours": "Gd - Gadolinium, a Rare Earth, is found ... land animals accumulate gadolinium in bone and liver very quickly after absorption.",
-   "page_prints": "Gd - Gadolium, a RareEarth,  is found ... land animals accumulate gadolium in bone and liver very quickly after absorption.",
-   "decided_by": "Luneth",
-   "decided_at": "2026-08-03",
-   "evidence": "THREE divergences, all in the same direction — the page carries the typo and our text already holds the fix, so nothing needs changing, but none of this is in the ratified-divergences ledger (I checked; RARE-000290 is not listed). At 14x the page plainly prints 'Gadolium' — G-a-d-o-l-i-u-m, the 'in' is missing — and 'RareEarth' as one word; at 12x the closing sentence prints 'accumulate gadolium in bone'. Our corpus holds the correct element name 'Gadolinium'/'gadolinium' and the spaced 'Rare Earth'. EVERY NUMBER MATCHES EXACTLY at 12x: igneous 5.4 ppm; shales 4.3 ppm; sandstones 2.6 ppm; limestones 0.7 ppm; land plants up to 70 ppm by Carya spp.; marine animals 0.06 ppm. The flagged alignment-slip hunk (a wall of Gallium/Spezioli citation text ending 'GCl Gadolium aRareEarth') is the positional window sliding back over the preceding Gallium reference block — not a real difference.",
-   "source": "page-read campaign wave 2; ratified in bulk during the end-of-campaign review sweep. Each was found by an independent reader and survived an adversarial skeptic pass told to default to 'refuted' on unclear glyphs.",
-   "_note": "our side could not be re-anchored mechanically at ratification time — the logged 'ours' is a paraphrase or spans a reflow; the evidence note carries the literal reading."
   },
   {
    "claim": "WAL-CLM-LETS-000051",
@@ -746,6 +669,14 @@
    "ratified_on": "2026-08-05",
    "reason": "Two claims were mined from the identical Base Line table row at char_offset 139873 with byte-identical verbatims, rendering as twin cards in one page section. The duplicate went undetected because LETS-000065's enrichment had been authored from the NEXT table row and its subject set to 'sodium', so no_duplicate_claims never compared the pair; correcting that wrong-row enrichment on 2026-08-05 surfaced it. 491's better framing of the question-mark RDA column was merged into 065 first. Its cancer dose (1,000-3,000 mcg/day) and its colloidal-vs-metallic absorption point were deliberately NOT merged: neither appears in the table row 491 quotes, so both are claim_text exceeding its own verbatim and would have carried that defect forward.",
    "evidence": "Deleted verbatim recorded above, lets-play-doctor char_offset 139873; kind=dose, essentials=[], dose=None. Surviving claim WAL-CLM-LETS-000065 holds essentials=['selenium'], dose=200 mcg base-line."
+  },
+  {
+   "claim": "WAL-CLM-EPIGEN-000085",
+   "ours": "Gd - Gadolinium",
+   "page_prints": "Gd - Gadolium",
+   "decided_by": "Luneth",
+   "decided_at": "2026-08-07",
+   "evidence": "The Epigenetics book misprints the element name as 'Gadolium' (not a word) at the 'Gd -' periodic entry; the same book spells it correctly as 'Gadolinium' in four other places (the element list, the closing sentence of this same entry 'accumulate gadolinium in bone', the rare-earth abundance table, and the index). Corrected in the source under the book-typo doctrine and re-snapped 2026-08-07. Migrated here from the deleted RARE-000290 entry when the rare-earths gadolinium twin (which already read 'Gadolinium') was merged into EPIGEN-000085 in the dedup pass."
   }
  ],
  "pending_review": {

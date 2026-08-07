@@ -267,7 +267,7 @@
         "gallium",
         "mercury"
       ],
-      "claim_count": 12,
+      "claim_count": 11,
       "symbol": "Al"
     },
     "alzheimers": {
@@ -384,7 +384,7 @@
         "heart pain"
       ],
       "related": [],
-      "claim_count": 2
+      "claim_count": 1
     },
     "anorexia": {
       "display_name": "Anorexia",
@@ -528,7 +528,7 @@
         "citrulline",
         "nitric-oxide"
       ],
-      "claim_count": 12
+      "claim_count": 11
     },
     "aromatherapy": {
       "display_name": "Aromatherapy",
@@ -983,7 +983,7 @@
         "zirconium",
         "berylliosis"
       ],
-      "claim_count": 6,
+      "claim_count": 5,
       "symbol": "Be"
     },
     "biotin": {
@@ -1031,7 +1031,7 @@
         "inositol",
         "magnesium"
       ],
-      "claim_count": 14
+      "claim_count": 13
     },
     "birth_defects": {
       "display_name": "Birth Defects",
@@ -1231,7 +1231,7 @@
         "estrogen",
         "testosterone"
       ],
-      "claim_count": 17,
+      "claim_count": 15,
       "symbol": "B"
     },
     "breast_tenderness": {
@@ -1286,7 +1286,7 @@
         "iodine",
         "mercury"
       ],
-      "claim_count": 7,
+      "claim_count": 6,
       "symbol": "Br"
     },
     "bronchitis": {
@@ -1425,7 +1425,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 56,
+      "claim_count": 54,
       "symbol": "Ca"
     },
     "cancer": {
@@ -1555,7 +1555,7 @@
         "heart_attack",
         "keshan_disease"
       ],
-      "claim_count": 5
+      "claim_count": 3
     },
     "cardiovascular_disease": {
       "display_name": "Cardiovascular Disease",
@@ -1870,7 +1870,7 @@
         "calcium",
         "bromine"
       ],
-      "claim_count": 20,
+      "claim_count": 19,
       "symbol": "Cl"
     },
     "cholesterol": {
@@ -1925,7 +1925,7 @@
         "manganese",
         "taurine"
       ],
-      "claim_count": 16
+      "claim_count": 15
     },
     "chorea": {
       "display_name": "Chorea",
@@ -1984,7 +1984,7 @@
         "colloidal_minerals",
         "essential_nutrients"
       ],
-      "claim_count": 41,
+      "claim_count": 39,
       "symbol": "Cr"
     },
     "chronic_fatigue": {
@@ -2119,7 +2119,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 23,
+      "claim_count": 20,
       "symbol": "Co"
     },
     "coenzyme-a": {
@@ -2409,7 +2409,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 49,
+      "claim_count": 47,
       "symbol": "Cu"
     },
     "cor_pulmonale": {
@@ -2456,7 +2456,7 @@
       "related": [
         "dandruff"
       ],
-      "claim_count": 2
+      "claim_count": 1
     },
     "cranial-nerves": {
       "display_name": "Cranial Nerves",
@@ -2806,7 +2806,7 @@
         "vitamin-e",
         "processed_meat"
       ],
-      "claim_count": 6
+      "claim_count": 5
     },
     "digestion": {
       "display_name": "Digestion & Stomach Acid",
@@ -3292,7 +3292,7 @@
         "amino_acids",
         "macronutrients"
       ],
-      "claim_count": 6
+      "claim_count": 5
     },
     "estrogen": {
       "display_name": "Estrogen",
@@ -3712,7 +3712,7 @@
         "terbium",
         "samarium"
       ],
-      "claim_count": 2,
+      "claim_count": 1,
       "symbol": "Gd"
     },
     "gallium": {
@@ -3854,7 +3854,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 26,
+      "claim_count": 20,
       "symbol": "Ge"
     },
     "ginger": {
@@ -4106,7 +4106,7 @@
         "beryllium",
         "scandium"
       ],
-      "claim_count": 4,
+      "claim_count": 3,
       "symbol": "Hf"
     },
     "hair-analysis": {
@@ -4944,7 +4944,7 @@
         "insomnia",
         "alopecia"
       ],
-      "claim_count": 13
+      "claim_count": 12
     },
     "insomnia": {
       "display_name": "Insomnia",
@@ -4998,7 +4998,7 @@
         "learning_disabilities",
         "cretinism"
       ],
-      "claim_count": 18,
+      "claim_count": 17,
       "intro_claim": "WAL-CLM-IMMORT-000053"
     },
     "intermittent_claudication": {
@@ -5093,7 +5093,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 33,
+      "claim_count": 30,
       "symbol": "I"
     },
     "iron": {
@@ -5163,7 +5163,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 33,
+      "claim_count": 30,
       "symbol": "Fe"
     },
     "irritable_bowel_syndrome": {
@@ -5481,7 +5481,7 @@
         "chronic_fatigue",
         "candidiasis"
       ],
-      "claim_count": 6,
+      "claim_count": 5,
       "symbol": "La"
     },
     "laryngitis": {
@@ -5684,7 +5684,7 @@
         "vitamin-b12",
         "germanium"
       ],
-      "claim_count": 22,
+      "claim_count": 21,
       "symbol": "Li"
     },
     "liver_disease": {
@@ -5834,7 +5834,7 @@
         "vitamin-e",
         "zinc"
       ],
-      "claim_count": 10
+      "claim_count": 9
     },
     "ma_lan": {
       "display_name": "Ma Lan",
@@ -5965,7 +5965,7 @@
         "muscle_cramps",
         "asthma"
       ],
-      "claim_count": 47,
+      "claim_count": 43,
       "symbol": "Mg"
     },
     "malnutrition": {
@@ -6039,7 +6039,7 @@
         "tmj",
         "asthma"
       ],
-      "claim_count": 22,
+      "claim_count": 21,
       "symbol": "Mn"
     },
     "margarine": {
@@ -6273,7 +6273,7 @@
         "minamata_disease",
         "vaccines"
       ],
-      "claim_count": 18,
+      "claim_count": 17,
       "symbol": "Hg"
     },
     "mercury_poisoning": {
@@ -6440,7 +6440,7 @@
         "chromium",
         "vanadium"
       ],
-      "claim_count": 15,
+      "claim_count": 14,
       "symbol": "Mo"
     },
     "monckebergs_arteriosclerosis": {
@@ -6554,7 +6554,7 @@
         "muscular_dystrophy",
         "zinc"
       ],
-      "claim_count": 12,
+      "claim_count": 11,
       "intro_claim": "WAL-CLM-IMMORT-000055"
     },
     "muscular_dystrophy": {
@@ -6569,7 +6569,7 @@
         "wasting muscles"
       ],
       "related": [],
-      "claim_count": 4
+      "claim_count": 3
     },
     "nasal_catarrh": {
       "display_name": "Nasal Catarrh",
@@ -7055,7 +7055,7 @@
         "acne",
         "depression"
       ],
-      "claim_count": 34
+      "claim_count": 32
     },
     "omega-6": {
       "display_name": "Omega-6",
@@ -7573,7 +7573,7 @@
         "hyperparathyroidism",
         "obesity"
       ],
-      "claim_count": 26,
+      "claim_count": 22,
       "symbol": "P"
     },
     "phytates": {
@@ -7772,7 +7772,7 @@
         "essential_nutrients",
         "colloidal_minerals"
       ],
-      "claim_count": 31,
+      "claim_count": 28,
       "symbol": "K"
     },
     "praseodymium": {
@@ -7842,33 +7842,6 @@
         "sexual_health"
       ],
       "claim_count": 9
-    },
-    "processed_meat": {
-      "display_name": "Processed & Cured Meats",
-      "type": "concept",
-      "synonyms": [
-        "processed meat",
-        "deli meat",
-        "lunch meat",
-        "bacon",
-        "hot dogs",
-        "sausage",
-        "nitrates",
-        "nitrites",
-        "cured meat",
-        "which meats are bad",
-        "bad meats",
-        "worst meats",
-        "meats to avoid",
-        "unhealthy meats",
-        "processed meats"
-      ],
-      "related": [
-        "dietary_oils",
-        "meat",
-        "gluten"
-      ],
-      "claim_count": 1
     },
     "prostate_cancer": {
       "display_name": "Prostate Cancer",
@@ -8531,7 +8504,7 @@
         "antioxidants",
         "cardiomyopathy"
       ],
-      "claim_count": 35,
+      "claim_count": 31,
       "symbol": "Se"
     },
     "serotonin": {
@@ -8669,7 +8642,7 @@
         "essential_nutrients",
         "silver-nitrate"
       ],
-      "claim_count": 16,
+      "claim_count": 15,
       "symbol": "Ag"
     },
     "silver-nitrate": {
@@ -8754,7 +8727,7 @@
         "iron",
         "achlorhydria"
       ],
-      "claim_count": 43,
+      "claim_count": 42,
       "symbol": "Na"
     },
     "soil-depletion": {
@@ -9033,7 +9006,7 @@
         "fibromyalgia",
         "biotin"
       ],
-      "claim_count": 20,
+      "claim_count": 17,
       "symbol": "S"
     },
     "supplement-dosing": {
@@ -9185,7 +9158,7 @@
         "selenium",
         "vitamin-e"
       ],
-      "claim_count": 10
+      "claim_count": 9
     },
     "teeth_discoloration": {
       "display_name": "Teeth Discoloration",
@@ -9793,7 +9766,7 @@
         "cancer",
         "hyperinsulinemia"
       ],
-      "claim_count": 23,
+      "claim_count": 21,
       "symbol": "V"
     },
     "varicose_veins": {
@@ -9910,7 +9883,7 @@
         "cancer",
         "xerophthalmia"
       ],
-      "claim_count": 29
+      "claim_count": 28
     },
     "vitamin-b1": {
       "display_name": "Thiamine",
@@ -10208,7 +10181,7 @@
         "alcoholism",
         "hypoglycemia"
       ],
-      "claim_count": 18
+      "claim_count": 17
     },
     "vitamin-b9": {
       "display_name": "Folate",
@@ -10300,7 +10273,7 @@
         "anemia",
         "antioxidants"
       ],
-      "claim_count": 28
+      "claim_count": 27
     },
     "vitamin-d": {
       "display_name": "Cholecalciferol",
@@ -10405,7 +10378,7 @@
         "vitamin-c",
         "anemia"
       ],
-      "claim_count": 30
+      "claim_count": 29
     },
     "vitamin-k": {
       "display_name": "Phylloquinone",
@@ -10456,7 +10429,7 @@
         "ecchymosis",
         "nosebleeds"
       ],
-      "claim_count": 17
+      "claim_count": 15
     },
     "vitamins": {
       "display_name": "Vitamins",
@@ -10667,7 +10640,7 @@
         "lutetium",
         "calcium"
       ],
-      "claim_count": 3,
+      "claim_count": 2,
       "symbol": "Yb"
     },
     "yttrium": {
@@ -10745,7 +10718,7 @@
         "cadmium",
         "vitamin-b12"
       ],
-      "claim_count": 51,
+      "claim_count": 47,
       "symbol": "Zn"
     },
     "zirconium": {
@@ -11047,41 +11020,6 @@
       }
     },
     {
-      "id": "WAL-CLM-DDDL-000012",
-      "subject": "germanium",
-      "also_about": [
-        "arthritis",
-        "osteoporosis",
-        "cancer"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of germanium deficiency?",
-      "answer_short": "A crashing immune system is the hallmark — Wallach also ties a germanium shortfall to arthritis, osteoporosis, low energy, and cancer.",
-      "answer": "Germanium deficiency is typified by reduced immune status, arthritis, osteoporosis, low energy, and cancer.",
-      "verbatim": "A severely reduced immune status, arthritis, osteoporosis, low energy, and\ncancer typify deficiencies of germanium.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "germanium",
-        "germanium deficiency",
-        "immune",
-        "arthritis",
-        "osteoporosis",
-        "low energy",
-        "cancer"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "germanium"
-        ],
-        "conditions": [
-          "arthritis",
-          "osteoporosis",
-          "cancer"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-DDDL-000013",
       "subject": "silver",
       "also_about": [],
@@ -11269,38 +11207,6 @@
         ],
         "symptoms": [
           "pica"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-DDDL-000020",
-      "subject": "iron",
-      "also_about": [
-        "anemia",
-        "intelligence"
-      ],
-      "facet": "physiology",
-      "question": "What are the symptoms of iron deficiency?",
-      "answer_short": "Low iron shows up as tiredness and listlessness, a pounding heart on exertion, fuzzy thinking and memory slips, a sore tongue, and a pale, small-cell (hypochromic microcytic) anemia.",
-      "answer": "Iron deficiency symptoms include fatigue, heart palpitations on exertion, reduced cognition and memory, sore tongue, and hypochromic microcytic anemia.",
-      "verbatim": "Symptoms of iron deficiency\ninclude listlessness, fatigue, heart palpitations on exertion, reduced\ncognition, memory deficits, sore tongue, angular stomatitis dysphagia, and\nhypochromic microcytic anemia.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "iron",
-        "iron deficiency",
-        "fatigue",
-        "palpitations",
-        "memory",
-        "anemia",
-        "sore tongue"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "iron"
-        ],
-        "conditions": [
-          "anemia"
         ]
       }
     },
@@ -11841,9 +11747,9 @@
       ],
       "facet": "physiology",
       "question": "What birth defects are linked to zinc deficiency?",
-      "answer_short": "Wallach ties zinc deficiency in pregnancy to birth defects including Down's syndrome, cleft lip and palate, brain and eye malformations, spina bifida, and clubbed or webbed limbs, plus degenerative diseases across all age groups.",
-      "answer": "Zinc deficiency, in Wallach's account, produces an unusually wide range of diseases — from congenital birth defects present at birth to degenerative diseases across every age group. He ties a striking list of birth defects specifically to zinc shortage during pregnancy, including Down's syndrome, cleft lip and palate, brain and eye malformations, spina bifida, and clubbed or webbed limbs. He notes zinc concentrates in the kidney, prostate, and eye, and that its essentiality for humans was recognized only about twenty years before he wrote.",
-      "verbatim": "Zinc deficiency\nproduces a wide range of diseases including congenital birth defects and\ndegenerative diseases of all age groups.",
+      "answer_short": "Wallach ties zinc deficiency in pregnancy to an exhaustive list of congenital birth defects — Down's syndrome, cleft lip and palate, brain and eye malformations, agnathia, spina bifida, clubbed limbs, syndactyly, polydactyly, atresia, hernias, and heart, lung, and urogenital defects — plus degenerative diseases across all age groups.",
+      "answer": "Zinc deficiency, in Wallach's account, produces a wide range of diseases — from congenital birth defects present at birth to degenerative diseases across every age group. He ties an exhaustive list of congenital birth defects to zinc shortage during pregnancy: Down's syndrome; cleft lip and cleft palate; brain defects (dorsal herniation, hydroencephalocele); micro- or anophthalmia (small or absent eyes); agnathia (small or absent lower jaw); spina bifida; clubbed limbs; syndactyly (webbed toes and fingers); polydactyly (extra limbs and digits); atresia (failure to develop limbs, digits, organs, or the anal opening); diaphragmatic, hiatal, umbilical, and inguinal hernias; heart defects; lung defects; and urogenital defects (horseshoe or small kidney, and intersex malformations of the genitalia).",
+      "verbatim": "Zinc deficiency\nproduces a wide range of diseases including congenital birth defects and\ndegenerative diseases of all age groups.\nCongenital Birth Defects Associated with Zinc Deficiency\n• Down’s Syndrome\n• Cleft lip\n• Cleft palate\n• Brain defects (dorsal herniation, hydroenchalocoel) • Micro or\nanopthalmia (small or absent eyes)\n• Agnathia (small lower jaw) • Spina bifida • Clubbed limbs\n• Syndactyly (webbed toes and fingers) • Polydactyly (extra limbs and\ndigits) • Atresia (failure to develop limbs, digits,organs, anal opening,etc.)\n• Hernias (hiatal, diaphragmatic, umbilical, inguinal, etc.) • Heart defects (\nLung defects\n• Urogenital defects (horseshoe kidney, small kidney, intersex\nmalformations of the male and female genitalia)",
       "page": null,
       "book_id": "dddl-3e-2011",
       "topics": [
@@ -11860,7 +11766,12 @@
           "zinc"
         ],
         "conditions": [
-          "birth_defects"
+          "birth_defects",
+          "down_syndrome",
+          "cleft_lip",
+          "cleft_palate",
+          "spina_bifida",
+          "heart_defects"
         ]
       }
     },
@@ -12234,41 +12145,6 @@
       }
     },
     {
-      "id": "WAL-CLM-DDDL-000052",
-      "subject": "calcium",
-      "also_about": [
-        "phosphorus",
-        "arthritis",
-        "osteoporosis"
-      ],
-      "facet": "mechanism",
-      "question": "What is the ideal calcium to phosphorus ratio?",
-      "answer_short": "Wallach says a 2:1 dietary calcium-to-phosphorus ratio is ideal but impossible to reach on an unsupplemented diet, and the more meat you eat the more calcium supplementation you need.",
-      "answer": "A dietary calcium:phosphorus ratio of 2:1 is ideal but impossible to attain on an unsupplemented diet; the more meat eaten, the more calcium supplementation needed.",
-      "verbatim": "A dietary calcium/phosphorus ratio of 2:1 is ideal yet impossible to attain in\nan unsupplemented diet.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "calcium",
-        "phosphorus",
-        "calcium phosphorus ratio",
-        "meat",
-        "diet",
-        "supplementation",
-        "osteoporosis"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "calcium",
-          "phosphorus"
-        ],
-        "conditions": [
-          "arthritis",
-          "osteoporosis"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-DDDL-000053",
       "subject": "absorption",
       "also_about": [
@@ -12587,34 +12463,6 @@
       }
     },
     {
-      "id": "WAL-CLM-DDDL-000064",
-      "subject": "omega-3",
-      "also_about": [
-        "omega-6"
-      ],
-      "facet": "mechanism",
-      "question": "What do essential fatty acids do in the body?",
-      "answer_short": "Wallach explains essential fatty acids are the raw material the body uses to make prostaglandins, which help regulate blood pressure, heart rate, blood-vessel and airway dilation, clotting, and central nervous system function.",
-      "answer": "EFAs are the raw material the body uses to manufacture prostaglandins, which regulate blood pressure, heart rate, vascular and bronchial dilation, blood clotting, and central nervous system (CNS) function.",
-      "verbatim": "EFA’s are also the raw material for the human body to\nmanufacture prostaglandins that help regulate blood pressure, heart rate,\nvascular dilation, blood clotting, bronchial dilation, and central nervous\nsystem (brain and spinal cord) function.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "essential fatty acids",
-        "omega-3",
-        "omega-6",
-        "prostaglandins",
-        "blood pressure",
-        "heart rate"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "omega-3",
-          "omega-6"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-DDDL-000065",
       "subject": "omega-3",
       "also_about": [
@@ -12646,38 +12494,6 @@
         "conditions": [
           "eczema",
           "dermatitis"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-DDDL-000066",
-      "subject": "taurine",
-      "also_about": [
-        "arginine",
-        "tyrosine"
-      ],
-      "facet": "stance",
-      "question": "Is taurine an essential amino acid?",
-      "answer_short": "Wallach adds taurine to the classic list of essential amino acids, saying that over the long haul it helps prevent a specific disease — macular degeneration.",
-      "answer": "Wallach adds arginine, taurine, and tyrosine to the classic essential amino acids — over the long haul these three help prevent cancer, macular degeneration, and goiter respectively.",
-      "verbatim": "To the classic list of essential amino\nacids, I would add arginine, taurine, and tyrosine. Over the long haul, these\nthree amino acids help prevent certain specific diseases. Respectively, those\ndiseases are cancer, macular degeneration, and goiter.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "amino-acids",
-        "essential-nutrients",
-        "eye-health"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "arginine",
-          "tyrosine",
-          "taurine"
-        ],
-        "conditions": [
-          "cancer",
-          "macular_degeneration",
-          "goiter"
         ]
       }
     },
@@ -12941,40 +12757,6 @@
         ],
         "conditions": [
           "insomnia"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-DDDL-000076",
-      "subject": "angina",
-      "also_about": [
-        "calcium",
-        "magnesium",
-        "cardiovascular_disease"
-      ],
-      "facet": "protocol",
-      "question": "How do you treat angina naturally?",
-      "answer_short": "For angina, Wallach says calcium, magnesium, and essential fatty acids help prevent disease progression, and that lifestyle change with supplementation can reverse cardiovascular disease.",
-      "answer": "For angina, calcium 2,000 mg/day, magnesium 800 mg/day, and essential fatty acids help prevent disease progression; lifestyle change and supplementation can reverse cardiovascular disease.",
-      "verbatim": "Calcium (2000 mg/day) and magnesium (800 mg/day) and essential fatty\nacids can help prevent progress of current disease",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "angina",
-        "chest pain",
-        "heart disease",
-        "calcium",
-        "magnesium",
-        "essential fatty acids"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "calcium",
-          "magnesium"
-        ],
-        "conditions": [
-          "angina",
-          "cardiovascular_disease"
         ]
       }
     },
@@ -13625,42 +13407,6 @@
         "trans-fat",
         "vegetable-oil"
       ]
-    },
-    {
-      "id": "WAL-CLM-DDDL-000098",
-      "subject": "dietary_oils",
-      "also_about": [
-        "selenium",
-        "vitamin-e",
-        "fibromyalgia",
-        "margarine",
-        "sulfur",
-        "methionine"
-      ],
-      "facet": "mechanism",
-      "question": "What does Wallach say causes fibromyalgia?",
-      "answer_short": "He calls fibromyalgia a multiple-deficiency disease driven by a high intake of fried foods and vegetable oils plus low selenium, vitamin E and sulfur amino acids.",
-      "answer": "Wallach frames fibromyalgia (which he equates with white muscle disease / stiff lamb disease / adult-onset muscular dystrophy, eliminated in livestock in 1957) as a multiple-deficiency disease caused by a high intake of fried foods and vegetable oils together with deficiencies of selenium, vitamin E, and the sulfur amino acids.",
-      "verbatim": "FIBROMYALGIA (stiff lamb disease, white muscle disease, adult onset\nmuscular dystrophy) is a disease that was eliminated from lambs, calves,\nand pigs in 1957. It is a multiple deficiency disease caused by a high intake\nof fried foods and vegetable oils (margarine, cooking oils, and salad\ndressing) and deficiencies of selenium, vitamin E, and sulfur amino acids\n(methionine, cysteine, cystine).",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "fibromyalgia",
-        "fried-foods",
-        "vegetable-oil",
-        "margarine",
-        "selenium",
-        "vitamin-e"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "selenium",
-          "vitamin-e"
-        ],
-        "conditions": [
-          "fibromyalgia"
-        ]
-      }
     },
     {
       "id": "WAL-CLM-DDDL-000099",
@@ -14382,7 +14128,13 @@
         "multiple-deficiency",
         "vegetable-oils",
         "white-muscle-disease"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium",
+          "vitamin-e"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000137",
@@ -14467,7 +14219,12 @@
         "body stores",
         "total zinc",
         "where zinc is stored"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "zinc"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000141",
@@ -14487,7 +14244,12 @@
         "loss of smell",
         "wound healing",
         "immune"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "zinc"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000142",
@@ -14617,28 +14379,6 @@
         "malabsorption",
         "cancer cause",
         "cancer prevention"
-      ]
-    },
-    {
-      "id": "WAL-CLM-DDDL-000148",
-      "subject": "magnesium",
-      "also_about": [
-        "calcium"
-      ],
-      "facet": "mechanism",
-      "question": "What is the relationship between calcium and magnesium?",
-      "answer_short": "Wallach says calcium and magnesium are antagonists in muscle contraction — calcium is the stimulator, magnesium the relaxer — so too much calcium can trigger signs of magnesium deficiency, while too much magnesium blocks bone calcification.",
-      "answer": "According to Wallach, calcium and magnesium play opposite roles in normal muscle contraction: calcium acts as the stimulator and magnesium as the relaxer. Because they balance each other, an excessive amount of calcium can induce the signs of a magnesium deficiency. He also warns that the reverse imbalance matters — an excess of magnesium will inhibit bone calcification.",
-      "verbatim": "AN EXCESS OF\nMAGNESIUM WILL INHIBIT BONE CALCIFICATION. Calcium and\nMg have antagonistic roles in normal muscle contraction, calcium acting as\nthe stimulator and Mg as the relaxer. An excessive amount of Ca can induce\nsigns of Mg deficiency.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "magnesium",
-        "calcium",
-        "muscle contraction",
-        "balance",
-        "cramps",
-        "relaxer"
       ]
     },
     {
@@ -14846,7 +14586,13 @@
         "omega-3",
         "essential fatty acids",
         "cell membranes"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000158",
@@ -15246,7 +14992,13 @@
         "calcium magnesium balance",
         "muscle function",
         "minerals"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "magnesium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000178",
@@ -15302,7 +15054,13 @@
         "calcium phosphorus ratio",
         "diet",
         "bone health"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "phosphorus"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000181",
@@ -15790,30 +15548,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-DDDL-000205",
-      "subject": "iodine",
-      "also_about": [
-        "goiter",
-        "copper",
-        "molybdenum",
-        "tyrosine",
-        "hypothyroidism"
-      ],
-      "facet": "physiology",
-      "question": "What causes goiter?",
-      "answer_short": "Goiter is a simple deficiency of iodine (and copper, molybdenum, and tyrosine) that makes the thyroid gland swell.",
-      "answer": "Goiter (colloid goiter) is caused by a simple deficiency of nutrients, chiefly iodine, but also copper, molybdenum, and the amino acid tyrosine. When these are lacking, the nutrient-starved thyroid gland enlarges dramatically, swelling to 50 to 100 times its normal size just below the larynx at the front of the neck. Wallach notes this makes goiter easy to diagnose.",
-      "verbatim": "GOITER (colloid goiter, hypothyroid) is caused by a simple deficiency of\nnutrients (i.e. iodine, copper, molybdenum, the amino acid tyrosine, etc.).",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "iodine",
-        "goiter",
-        "thyroid",
-        "deficiency"
-      ]
-    },
-    {
       "id": "WAL-CLM-DDDL-000206",
       "subject": "iodine",
       "also_about": [
@@ -15896,7 +15630,12 @@
         "safety",
         "dose",
         "sweat"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iodine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000210",
@@ -16237,49 +15976,12 @@
         "obesity",
         "mental health",
         "blood sugar"
-      ]
-    },
-    {
-      "id": "WAL-CLM-DDDL-000227",
-      "subject": "germanium",
-      "also_about": [
-        "silica",
-        "carbon",
-        "oxygen"
       ],
-      "facet": "basics",
-      "question": "What is germanium?",
-      "answer_short": "Germanium is a trace mineral and metalloid element that Wallach counts among the body's essential nutrients; biologically it acts as a highly effective electrical impulse initiator inside cells and as a metallic cofactor for oxygen utilization.",
-      "answer": "Germanium is a trace mineral -- a metalloid element chemically related to silica and carbon, and a poor conductor of electricity that is prized as a semiconductor in electronics. In Wallach's framework it is an essential nutrient: biologically it works as a highly effective electrical impulse initiator inside the cell and as a metallic cofactor for oxygen utilization, helping the body use oxygen at the cellular level. Wallach links germanium deficiency to reduced immune status, arthritis, low energy, and cancer, and recommends 20 to 30 mg per day for maintenance.",
-      "verbatim": "Biologically, germanium is a highly effective\nelectrical impulse initiator intracellularly and acts as a metallic cofactor for\noxygen utilization.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "trace-minerals",
-        "oxygen",
-        "basics"
-      ]
-    },
-    {
-      "id": "WAL-CLM-DDDL-000228",
-      "subject": "germanium",
-      "also_about": [
-        "oxygen",
-        "silica",
-        "carbon"
-      ],
-      "facet": "mechanism",
-      "question": "How does germanium work in the body?",
-      "answer_short": "In the body germanium acts as a highly effective intracellular electrical-impulse initiator and as a metallic cofactor for oxygen utilization.",
-      "answer": "Germanium is closely related to silica and carbon. Biologically, Wallach describes it as a highly effective electrical impulse initiator inside the cell, and as a metallic cofactor for oxygen utilization -- helping the body use oxygen at the cellular level.",
-      "verbatim": "It is therefore not too surprising that germanium is closely\nrelated to silica and carbon. Biologically, germanium is a highly effective\nelectrical impulse initiator intracellularly and acts as a metallic cofactor for\noxygen utilization.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "oxygen",
-        "cellular-energy",
-        "trace-minerals"
-      ]
+      "tier1_link": {
+        "essentials": [
+          "vanadium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000229",
@@ -16318,7 +16020,12 @@
         "organic-germanium",
         "absorption",
         "forms"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000231",
@@ -16460,27 +16167,6 @@
         "joint-health",
         "repetitive-strain",
         "workplace-health"
-      ]
-    },
-    {
-      "id": "WAL-CLM-DDDL-000238",
-      "subject": "boron",
-      "also_about": [
-        "calcium",
-        "magnesium"
-      ],
-      "facet": "physiology",
-      "question": "What does boron do in the body?",
-      "answer_short": "Boron supports bone metabolism, helps the body use calcium and magnesium efficiently, and is needed for proper function of the ovaries, testes, and adrenal glands.",
-      "answer": "In Wallach's framework, boron is essential for bone metabolism, including the efficient use of calcium and magnesium. It is also required for the proper function of the endocrine glands, specifically the ovaries, testes, and adrenals. This ties boron to both skeletal health and hormone production.",
-      "verbatim": "Boron is essential for bone metabolism including efficient use of calcium\nand magnesium and proper function of endocrine glands (i.e.— ovaries,\ntestes, and adrenals).",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "bone health",
-        "hormones",
-        "adrenal glands",
-        "minerals"
       ]
     },
     {
@@ -16669,7 +16355,12 @@
         "minerals",
         "bone health",
         "body composition"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "phosphorus"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000248",
@@ -16709,7 +16400,12 @@
         "absorption",
         "daily intake",
         "colloidal minerals"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "phosphorus"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000250",
@@ -16877,46 +16573,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-DDDL-000258",
-      "subject": "sulfur",
-      "also_about": [
-        "scabies"
-      ],
-      "facet": "uses",
-      "question": "Can sulfur treat scabies?",
-      "answer_short": "For scabies, Wallach recommends a 5-10% sulfur ointment for infants, in place of the adult chemical treatments, to avoid potential neurotoxicity.",
-      "answer": "In treating scabies, an infestation by the microscopic mite Sarcoptes scabiei, Wallach lists total-body application of 1 percent gamma benzene hexachloride and 25 percent benzyl benzoate cream for adults, but recommends a 5-10 percent sulfur ointment for infants to avoid potential neurotoxicity. He notes that poke (Phytolacca decandra) may also be used topically as a natural alternative.",
-      "verbatim": "Treatment of scabies includes total body application of 1 percent gamma\nbenzene hexachloride, 25 percent benzyl benzoate cream in adults, and 5-10\npercent sulfur ointment in infants to avoid potential neurotoxicity; poke\n(Phytolacca decandra) may be used topically as a natural alternative.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "skin",
-        "topical",
-        "children"
-      ]
-    },
-    {
-      "id": "WAL-CLM-DDDL-000259",
-      "subject": "sulfur",
-      "also_about": [
-        "osteoarthritis",
-        "arthritis",
-        "lupus"
-      ],
-      "facet": "warning",
-      "question": "What are the symptoms of sulfur deficiency?",
-      "answer_short": "Wallach says a sulfur deficiency produces degenerative arthritis and cartilage breakdown, weakened ligaments and tendons, lupus, sickle cell anemia, and other collagen diseases.",
-      "answer": "According to Wallach, a deficiency of sulfur drives degenerative types of arthritis marked by the breakdown of cartilage, including osteoarthritis and degenerative arthritis, along with weakened ligaments and tendons. He also ties sulfur deficiency to systemic lupus erythematosus, sickle cell anemia, and various collagen diseases.",
-      "verbatim": "A deficiency of sulfur results in\ndegenerative types of arthritis involving degeneration of\ncartilage, osteoarthritis, degenerative arthritis, weakened ligaments,\nweakened tendons, Systemic Lupus Erythematosus, sickle cell anemia, and\nvarious “collagen diseases.”",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "deficiency-signs",
-        "joint-health",
-        "connective-tissue"
-      ]
-    },
-    {
       "id": "WAL-CLM-DDDL-000260",
       "subject": "sulfur",
       "also_about": [
@@ -16959,30 +16615,12 @@
         "stomach acid",
         "essential minerals",
         "chloride basics"
-      ]
-    },
-    {
-      "id": "WAL-CLM-DDDL-000262",
-      "subject": "chloride",
-      "also_about": [
-        "sodium",
-        "achlorhydria",
-        "vitamin-b12"
       ],
-      "facet": "mechanism",
-      "question": "What does chloride actually do in the body?",
-      "answer_short": "Chloride is the raw material your stomach uses to make hydrochloric acid; it is essential to all living things and activates numerous enzymes.",
-      "answer": "Wallach teaches that chlorine (chloride) is essential to every living species for electrochemical and catalytic functions and that it activates numerous enzymes. It also serves as the basic raw material the stomach uses to manufacture stomach acid (HCl), which drives protein digestion by pepsin, activates intrinsic factor for vitamin B12 absorption, and enables the absorption of minerals. He notes that sodium chloride (NaCl), or common table salt, is the universal source of chloride ions for all living things.",
-      "verbatim": "Chlorine is essential for all living species’ electrochemical and catalytic\nfunctions, activates numerous enzymes, and is the basic raw material for\nour stomachs to make stomach acid (HCl) for protein digestion by pepsin,\nB12 absorption (intrinsic factor activation), and absorption of minerals.\nSodium chloride (NaCl) or salt is the universal source of chloride ions for\nall living things.",
-      "page": null,
-      "book_id": "dddl-3e-2011",
-      "topics": [
-        "stomach acid",
-        "digestion",
-        "enzymes",
-        "electrolytes",
-        "mineral absorption"
-      ]
+      "tier1_link": {
+        "essentials": [
+          "chloride"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000263",
@@ -17253,7 +16891,14 @@
         "amino acids",
         "thyroid health",
         "nutrition basics"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "tyrosine",
+          "arginine",
+          "taurine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-DDDL-000276",
@@ -18352,40 +17997,6 @@
         ],
         "conditions": [
           "muscular_dystrophy"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000006",
-      "subject": "cardiomyopathy",
-      "also_about": [
-        "selenium",
-        "keshan_disease",
-        "sudden_cardiac_death"
-      ],
-      "facet": "stance",
-      "question": "What causes sudden cardiac death in athletes?",
-      "answer_short": "Wallach holds that hypertrophic cardiomyopathy, including the sudden cardiac death of athletes, is Keshan disease caused by a simple selenium deficiency, and that a complete 90-nutrient program with extra selenium is protective.",
-      "answer": "Wallach holds that hypertrophic cardiomyopathy -- including the sudden cardiac death of athletes -- is Keshan disease, caused by a simple deficiency of the trace element selenium, and that supplementing a complete 90-nutrient program with extra selenium is protective.",
-      "verbatim": "In fact, hypertrophic cardiomyopathy,\nsudden heart death of athletes, is KSD and is caused by a simple deficiency\nof the trace element selenium. Supplement a complete 90 nutrient program\nwith extra selenium and the athlete can live.",
-      "page": 568,
-      "book_id": "epigenetics",
-      "topics": [
-        "cardiomyopathy",
-        "sudden cardiac death",
-        "athletes",
-        "keshan disease",
-        "selenium",
-        "heart"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "selenium"
-        ],
-        "conditions": [
-          "keshan_disease",
-          "cardiomyopathy",
-          "sudden_cardiac_death"
         ]
       }
     },
@@ -20792,8 +20403,8 @@
       "facet": "basics",
       "question": "What is gadolinium?",
       "answer_short": "Gadolinium is a rare-earth mineral Wallach counts among the trace elements, found naturally in rocks, plants and animals.",
-      "answer": "Wallach's Epigenetics entry for gadolinium (the book spells it 'Gadolium') -- a rare-earth mineral -- records only its natural distribution across igneous rocks, shale, sandstone, limestone, plants and animals, and the observation that land animals accumulate it in bone and liver very quickly after absorption; he assigns it no specific human deficiency disease or nutritional function.",
-      "verbatim": "Gd - Gadolium, a rare earth mineral, is found in igneous rocks at 5.4 ppm; shale\nat 4.3 ppm; sandstone at 2.6 ppm; limestone at 0.7 ppm; land plants at up to\n70 ppm by Carya spp.; marine animals at 0.06 ppm; land animals accumulate\ngadolinium in bone and liver very quickly after absorption.",
+      "answer": "Wallach catalogs gadolinium as a rare earth mineral and records its natural distribution (5.4 parts-per-million in igneous rocks down to trace levels, up to 70 parts-per-million in land plants) and notes that land animals accumulate gadolinium in bone and liver very quickly after absorption.",
+      "verbatim": "Gd - Gadolinium, a rare earth mineral, is found in igneous rocks at 5.4 ppm; shale\nat 4.3 ppm; sandstone at 2.6 ppm; limestone at 0.7 ppm; land plants at up to\n70 ppm by Carya spp.; marine animals at 0.06 ppm; land animals accumulate\ngadolinium in bone and liver very quickly after absorption.",
       "page": null,
       "book_id": "epigenetics",
       "topics": [
@@ -20807,37 +20418,6 @@
       "tier1_link": {
         "essentials": [
           "gadolinium"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000086",
-      "subject": "germanium",
-      "also_about": [
-        "arthritis",
-        "osteoarthritis",
-        "cancer"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of germanium deficiency?",
-      "answer_short": "Germanium deficiency is typified by a severely reduced immune status, arthritis, osteoarthritis, low energy, and cancer.",
-      "answer": "Wallach lists the fallout of a germanium deficiency as a severely weakened immune system, arthritis and osteoarthritis, low energy, and cancer — consistent with his view of germanium as an oxygen- and immune-supporting trace element. In the same passage he puts the maintenance dose at 20 to 30 mg a day, rising to 50 to 100 mg when a person is seriously ill and needs more oxygen carried to the tissues.",
-      "verbatim": "Deficiencies of germanium are typified by a severely reduced immune status,\narthritis, osteoarthritis, low energy, and cancer.",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "deficiency",
-        "immune-health",
-        "low-energy"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "germanium"
-        ],
-        "conditions": [
-          "cancer",
-          "arthritis",
-          "osteoarthritis"
         ]
       }
     },
@@ -20887,30 +20467,6 @@
         "dosing",
         "colloidal-minerals"
       ]
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000090",
-      "subject": "hafnium",
-      "also_about": [],
-      "facet": "basics",
-      "question": "What is hafnium?",
-      "answer_short": "In Epigenetics, Wallach's hafnium entry gives only its natural distribution across rocks, sea water, soil, and plants and animals, assigning it no specific human deficiency disease or function.",
-      "answer": "In Epigenetics, Wallach's entry for hafnium -- a trace metal -- gives only its natural distribution: its concentration in parts per million (ppm) across igneous rocks, shale, sandstone, limestone, sea water, soil, and marine and land plants and animals. He assigns it no specific human deficiency disease or nutritional function here.",
-      "verbatim": "Hf - Hafnium is found in igneous rocks at 3 ppm; shale at 2.8 ppm; sandstone\nat 3.4 ppm; limestone at 0.5 ppm",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "hafnium",
-        "trace mineral",
-        "minerals",
-        "natural distribution",
-        "elements"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "hafnium"
-        ]
-      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000091",
@@ -20995,32 +20551,6 @@
           "hashimotos_disease",
           "goiter",
           "cretinism"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000094",
-      "subject": "potassium",
-      "also_about": [],
-      "facet": "physiology",
-      "question": "What are the signs of low potassium?",
-      "answer_short": "Wallach states chronic potassium deficiency shows as muscular weakness and mental apathy, with hypokalemic cardiac failure its most serious event.",
-      "answer": "Potassium is essential to all organisms and is the major positively-charged ion (cation) inside cells, driving electrochemical and enzyme functions; it makes up about five percent of the body's total mineral content. With sodium, the other main electrolyte, potassium maintains normal water balance, osmotic equilibrium and acid-base balance, and works with calcium to regulate neuromuscular activity. It is easily absorbed but barely stored -- about 90 percent of ingested potassium is excreted in the urine -- so Wallach states a significant daily intake of 5,000 milligrams is required. Chronic potassium deficiency shows as muscular weakness and mental apathy, and its most serious event is hypokalemic (low-potassium) cardiac failure. Diuretics (both natural and prescribed), sweating from colds, flu or exercise, vomiting and diarrhea all increase the loss of potassium and other minerals.",
-      "verbatim": "Muscular weakness and mental apathy are features of chronic K deficiency;\nhypokalemic cardiac failure is the most serious K deficiency event.",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "potassium",
-        "low potassium",
-        "muscle weakness",
-        "apathy",
-        "hypokalemia",
-        "cardiac failure",
-        "electrolyte"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "potassium"
         ]
       }
     },
@@ -21892,30 +21422,6 @@
       }
     },
     {
-      "id": "WAL-CLM-EPIGEN-000125",
-      "subject": "inositol",
-      "also_about": [],
-      "facet": "protocol",
-      "question": "How much inositol should you take daily?",
-      "answer_short": "10 to 100 mg a day. This figure is from the daily multiple table in his 2014 book Epigenetics.",
-      "answer": "In his Epigenetics daily multiple recommendations, Wallach gives inositol a daily range of 10 to 100 mg.",
-      "verbatim": "Biotin 100 - 300 mcg\nFolic acid 400 mcg\nCholine 10 - 100 mg\nInositol 10 - 100 mg",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "inositol",
-        "inositol dose",
-        "supplement",
-        "mg per day",
-        "daily multiple"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "inositol"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-EPIGEN-000126",
       "subject": "flavonoids",
       "also_about": [],
@@ -22387,7 +21893,7 @@
       "facet": "stance",
       "question": "Are fermented foods good for you?",
       "answer_short": "Wallach presents fermented foods -- fermented vegetables, fruit, dairy, meats, and condiments, plus soaked, sprouted, and fermented seeds, grains, and nuts -- as a hallmark of the healthy traditional diets documented by Weston Price.",
-      "answer": "Among the shared traits Wallach lists for healthy, non-industrialized traditional diets, he notes that seeds, grains, and nuts are soaked, sprouted, and fermented before they are eaten (alongside diets rich in fermented vegetables, fruit, drinks, dairy, meats, and condiments).",
+      "answer": "In Epigenetics, documenting Weston Price's classical characteristics of healthy traditional diets, Wallach notes that primitive and traditional tribal diets are rich in fermented foods — fermented vegetables, fruit, drinks, dairy products, meats, and condiments — and that seeds, grains, and nuts are routinely soaked, sprouted, and fermented before being eaten. He presents these fermentation practices as a hallmark of the nourishing native diets, whose abandonment in favor of modern convenience foods (refined sugar, white flour, canned and low-fat processed foods) drives the physical degeneration Price photographed.",
       "verbatim": "5. Primitive and traditional tribal diets have diets rich in fermented\n\nvegetables, fruit, drinks, dairy products, meats, and condiments.\n6. Seeds, grains, and nuts are soaked, sprouted, and fermented.",
       "page": 208,
       "book_id": "epigenetics",
@@ -22626,29 +22132,6 @@
         "full-fat",
         "processed-foods",
         "weston-price"
-      ]
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000157",
-      "subject": "processed_meat",
-      "also_about": [
-        "nitrates",
-        "nitrites"
-      ],
-      "facet": "warning",
-      "question": "Which processed meats does Wallach say to avoid?",
-      "answer_short": "Deli slices, sandwich meats, sausage, bologna, salami, pepperoni, jerky, hamburger patties, meatloaf, meatballs and canned meats.",
-      "answer": "In his prevention program Wallach says to avoid nitrate- and nitrite-cured, gluten-filler processed meats by name -- deli slices, sandwich meats, sausage, bologna, salami, pepperoni, jerky, hamburger patties, meatloaf, meatballs and canned meats.",
-      "verbatim": "Avoid the consumption of processed meats containing nitrates\nand nitrites and gluten-laden fillers (e.g., deli slices, sandwich\nmeats, sausage, bologna, salami, pepperoni, jerky, hamburger\npatties, meatloaf, meat balls, canned meats, etc.)",
-      "page": 800,
-      "book_id": "epigenetics",
-      "topics": [
-        "processed-meat",
-        "deli-meat",
-        "sausage",
-        "bologna",
-        "salami",
-        "pepperoni"
       ]
     },
     {
@@ -22939,11 +22422,13 @@
     {
       "id": "WAL-CLM-EPIGEN-000169",
       "subject": "pork",
-      "also_about": [],
+      "also_about": [
+        "processed_meat"
+      ],
       "facet": "protocol",
       "question": "What kinds of pork or meat products does Wallach tell people to avoid?",
       "answer_short": "As a standing rule Wallach says to avoid processed meats such as sausage, deli slices, bologna, salami and pepperoni because of their nitrates, nitrites, and gluten-laden fillers.",
-      "answer": "As a standing rule Wallach says to avoid processed meats such as sausage, deli slices, bologna, salami and pepperoni because of their nitrates, nitrites, and gluten-laden fillers.",
+      "answer": "Wallach's standing rule is to avoid processed meats because of their nitrates, nitrites, and gluten-laden fillers — the offenders he names are deli slices, sandwich meats, sausage, bologna, salami, pepperoni, jerky, hamburger patties, meatloaf, meatballs and canned meats, which commonly carry those additives.",
       "verbatim": "Avoid the consumption of processed meats containing nitrates\nand nitrites and gluten-laden fillers (e.g., deli slices, sandwich\nmeats, sausage, bologna, salami, pepperoni, jerky, hamburger\npatties, meatloaf, meat balls, canned meats, etc.)",
       "page": null,
       "book_id": "epigenetics",
@@ -23357,7 +22842,12 @@
         "athletes",
         "sudden-death",
         "prevention"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000187",
@@ -23465,7 +22955,12 @@
         "congenital",
         "cleft palate",
         "spina bifida"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "zinc"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000192",
@@ -23483,7 +22978,12 @@
         "zinc history",
         "essential nutrient",
         "when zinc discovered"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "zinc"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000193",
@@ -23549,7 +23049,12 @@
         "safe",
         "toxicity",
         "kidneys"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "magnesium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000196",
@@ -24143,7 +23648,12 @@
         "iron",
         "minerals",
         "nutrition-basics"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iron"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000227",
@@ -24162,7 +23672,12 @@
         "iron-deficiency",
         "absorption",
         "causes"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iron"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000228",
@@ -25323,26 +24838,12 @@
         "fat-soluble vitamins",
         "blood clotting",
         "bone health"
-      ]
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000286",
-      "subject": "vitamin-k",
-      "also_about": [
-        "calcium"
       ],
-      "facet": "mechanism",
-      "question": "What does vitamin K do in the body?",
-      "answer_short": "Vitamin K is a fat-soluble vitamin the liver needs to make prothrombin and other clotting proteins and to deposit calcium properly in bone.",
-      "answer": "Wallach describes vitamin K, isolated in 1939, as a fat-soluble vitamin the liver requires to produce prothrombin plus at least five other proteins — clotting factors VII, IX, and X and proteins C and S. These are essential for proper blood clotting and for the proper deposition of calcium in the bones. So vitamin K works on two fronts at once: it lets the blood clot normally and it helps build bone.",
-      "verbatim": "Vitamin K (menaquinone) function:\n\nThis vitamin, isolated in 1939, is a fat soluble vitamin that is required by the liver\nfor the production of prothrombin and at least five other proteins (factors VII, IX,\nand X, and proteins C and S) and other biologically active substances essential\nfor proper blood clotting and for the proper deposition of calcium in bones.",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "blood clotting",
-        "bone health",
-        "how vitamins work"
-      ]
+      "tier1_link": {
+        "essentials": [
+          "vitamin-k"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000287",
@@ -25430,27 +24931,12 @@
         "b-vitamins",
         "metabolism",
         "basics"
-      ]
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000292",
-      "subject": "biotin",
-      "also_about": [
-        "magnesium"
       ],
-      "facet": "mechanism",
-      "question": "What does biotin do in the body?",
-      "answer_short": "Biotin is a sulfur-containing vitamin required for glucose metabolism and the production of fatty acids, working through enzymes that carry carboxyl units and fix carbon dioxide.",
-      "answer": "Biotin is a sulfur-containing vitamin the body needs for glucose metabolism and for the production of fatty acids. It works as an essential part of enzymes that transport carboxyl units and fix carbon dioxide in animal tissue. Converting biotin into its active coenzyme form depends on magnesium and adenosine triphosphate (ATP). Two of its enzymes, pyruvate carboxylase and acetyl-CoA carboxylase, are required for gluconeogenesis and fatty acid synthesis.",
-      "verbatim": "It is\nrequired for glucose metabolism and for the production of fatty acids. Biotin is a\nsulfur-containing vitamin. Biotin is an important part of enzymes that facilitate\nthe transport of carboxyl units and fix carbon dioxide in animal tissue.",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "metabolism",
-        "b-vitamins",
-        "vitamins",
-        "how-it-works"
-      ]
+      "tier1_link": {
+        "essentials": [
+          "biotin"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000293",
@@ -25766,7 +25252,12 @@
         "food-sources",
         "herbs",
         "diet"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "germanium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000310",
@@ -25993,7 +25484,12 @@
         "salt",
         "water-balance",
         "nerve-function"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "sodium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000322",
@@ -26261,28 +25757,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-EPIGEN-000335",
-      "subject": "phosphorus",
-      "also_about": [
-        "calcium",
-        "hyperparathyroidism"
-      ],
-      "facet": "warning",
-      "question": "What causes low blood phosphorus?",
-      "answer_short": "Low blood phosphorus (hypophosphatemia) results from IV glucose or TPN without phosphorus, excessive antacids, hyperparathyroidism, diuretics, sweating from exercise, and alcoholism.",
-      "answer": "Wallach lists the clinical causes of phosphorus depletion and resulting low blood phosphorus (hypophosphatemia): IV administration of glucose or total parenteral nutrition without phosphorus supplementation, excessive use of antacids, hyperparathyroidism (which he attributes to low-calcium/high-phosphate diets), improper treatment of diabetic acidosis, use of diuretics, sweating during exercise, and alcoholism with and without liver disease.",
-      "verbatim": "Clinical P depletion and resultant low blood P (hypophosphatemia) result\nfrom IV administration of glucose or TPN (Total Parenteral Nutrition) without P\nsupplementation, excessive use of antacids, hyperparathyroidism (low calcium/\nhigh phosphate diets are the cause of this one), improper treatment of diabetic\nacidosis, use of diuretics, sweating during exercise, and alcoholism with and\nwithout liver disease.",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "phosphorus",
-        "hypophosphatemia",
-        "low blood phosphorus",
-        "antacids",
-        "alcoholism"
-      ]
-    },
-    {
       "id": "WAL-CLM-EPIGEN-000336",
       "subject": "phosphorus",
       "also_about": [
@@ -26305,7 +25779,12 @@
         "vegan",
         "phytic acid",
         "mineral deficiency"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "phosphorus"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000337",
@@ -26405,7 +25884,12 @@
         "arginine",
         "amino-acids",
         "essential-amino-acids"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "arginine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000342",
@@ -26425,24 +25909,6 @@
         "atp",
         "metabolism",
         "cell-fuel"
-      ]
-    },
-    {
-      "id": "WAL-CLM-EPIGEN-000343",
-      "subject": "arginine",
-      "also_about": [],
-      "facet": "physiology",
-      "question": "What does arginine do in the body?",
-      "answer_short": "Arginine is required for cell division, wound healing, ammonia excretion, immune support, and the availability of stored hormones.",
-      "answer": "Arginine is required for complete and efficient cell division and for wound healing. It also facilitates the biological use and excretion of ammonia, supports the immune system, and helps make stored hormones available to the body.",
-      "verbatim": "Arginine is required for complete and efficient cell division, wound healing,\nfacilitating the biological use of and the excretion of ammonia, immune system\nsupport, and the availability of stored hormones.",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "wound-healing",
-        "immunity",
-        "hormones",
-        "cell-division"
       ]
     },
     {
@@ -27035,27 +26501,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-EPIGEN-000375",
-      "subject": "lysine",
-      "also_about": [
-        "arginine",
-        "taurine",
-        "tyrosine"
-      ],
-      "facet": "stance",
-      "question": "Why is lysine considered an essential amino acid?",
-      "answer_short": "Lysine is one of the nine amino acids Wallach lists as classically essential: the body cannot synthesize them, so they must be eaten every day to prevent deficiencies and disease.",
-      "answer": "Lysine is one of the nine amino acids that Wallach, following the classic classification, calls 'essential': histidine, isoleucine, leucine, lysine, methionine, phenylalanine, threonine, tryptophan, and valine. What makes them essential is that the human body cannot synthesize them on its own, so they must be consumed on a daily basis to prevent deficiencies and their disease consequences. Wallach further argues that three more amino acids, arginine, taurine, and tyrosine, should be treated as essential too, because long-term shortages of them drive cancer, macular degeneration, and goiter respectively.",
-      "verbatim": "There are nine amino acids that are classically considered to be “essential”\namino acids: Histidine, Isoleucine, leucine, Lysine, Methionine, Phenylalanine,\nThreonine, Tryptophan and Valine. These amino acids can’t be synthesized\nby humans and must be consumed on a daily basis to prevent deficiencies\nand disease consequences.",
-      "page": null,
-      "book_id": "epigenetics",
-      "topics": [
-        "amino-acids",
-        "essential-nutrients",
-        "deficiency"
-      ]
-    },
-    {
       "id": "WAL-CLM-EPIGEN-000376",
       "subject": "leucine",
       "also_about": [],
@@ -27162,7 +26607,12 @@
         "essential-amino-acids",
         "amino-acids",
         "nutrition"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "leucine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000382",
@@ -27190,7 +26640,12 @@
         "essential-amino-acids",
         "deficiency",
         "diet"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "valine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000383",
@@ -27269,7 +26724,12 @@
         "amino-acids",
         "essential-nutrients",
         "protein"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "histidine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000387",
@@ -27345,7 +26805,12 @@
         "nutrition",
         "deficiency",
         "diet"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "isoleucine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000391",
@@ -27388,7 +26853,12 @@
         "threonine",
         "essential amino acids",
         "nutrition"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "threonine"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000393",
@@ -29753,7 +29223,12 @@
         "trace-minerals",
         "insulin",
         "glucose-metabolism"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-HELLS-000043",
@@ -31654,26 +31129,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-IMMORT-000014",
-      "subject": "essential_nutrients",
-      "also_about": [
-        "vitamins",
-        "amino_acids"
-      ],
-      "facet": "basics",
-      "question": "What are the 90 essential nutrients?",
-      "answer_short": "Of 79+ elements found in the body, Wallach counts 60 minerals as essential - plus 16 vitamins, 12 amino acids and 3 essential fatty acids: the '90 essentials.'",
-      "answer": "How many minerals does the body actually need? Wallach's starting point: more than 79 elements and minerals have been detected in human and animal tissue, and simply being present in the tissue meets the first criterion for calling a substance an 'essential nutrient.' From there, he says thousands of studies support designating 60 of those 79 as truly essential - the mineral backbone of his '90 essential nutrients' framework (60 minerals, 16 vitamins, 12 amino acids, and 3 essential fatty acids).",
-      "verbatim": "More than 79 elements and minerals have been detected\nin animal and human tissue (i.e.- blood, liver, muscle, brain,\nbones, connective tissue, etc.) in the 20th and 21st centuries. Their\npresence in human tissue fulfills the first criteria for designating\nan element or mineral an “essential nutrient.” Literally thousands\nof additional studies provide support for designating 60 of these\n79 elemental nutrients to be essential nutrients.",
-      "page": 84,
-      "book_id": "immortality",
-      "topics": [
-        "90-essentials",
-        "minerals",
-        "framework"
-      ]
-    },
-    {
       "id": "WAL-CLM-IMMORT-000015",
       "subject": "minerals",
       "also_about": [
@@ -32093,26 +31548,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-IMMORT-000034",
-      "subject": "aluminum",
-      "also_about": [
-        "alzheimers",
-        "memory_loss"
-      ],
-      "facet": "big_question",
-      "question": "Does aluminum cause Alzheimer's disease?",
-      "answer_short": "Wallach says no - he calls it a myth from 'a single faulty study,' citing later work (Oxford 1992, a 2007 German assessment) that found no proven dietary-aluminum link.",
-      "answer": "Does aluminum cause Alzheimer's disease? Wallach says no - and calls the scare a myth built on 'a single faulty study.' He cites the follow-up work: a 1992 study in Nature by Frank Watt and colleagues at Oxford, using a highly accurate technique, found the same aluminum levels in the brains of non-Alzheimer's controls as in Alzheimer's patients; a 1997 Berkeley newsletter and a 2007 German Federal Institute for Risk Assessment opinion both concluded there is no proven link between dietary aluminum and Alzheimer's.",
-      "verbatim": "A single faulty study over 35 years ago suggested a link\nbetween chronic aluminum exposure and Alzheimer’s disease.",
-      "page": 97,
-      "book_id": "immortality",
-      "topics": [
-        "alzheimers",
-        "myth",
-        "is-x-good-bad"
-      ]
-    },
-    {
       "id": "WAL-CLM-IMMORT-000035",
       "subject": "obscure_elements",
       "also_about": [],
@@ -32337,33 +31772,6 @@
       }
     },
     {
-      "id": "WAL-CLM-IMMORT-000045",
-      "subject": "beryllium",
-      "also_about": [
-        "berylliosis"
-      ],
-      "facet": "warning",
-      "question": "What is berylliosis?",
-      "answer_short": "Berylliosis is a painful, sometimes fatal lung disease Wallach says comes from inhaling beryllium oxide dust from mining and industry.",
-      "answer": "Beryllium is on Wallach's list of essential minerals, but it is one of the thin ones - in this book he assigns it no specific positive role in the body, offering mostly geology and history (it heads the 'alkaline-earth' metal family, alongside calcium and magnesium). What he does flag is a hazard: breathing beryllium-oxide dust, a mining and industrial contaminant, can cause berylliosis, a painful and sometimes fatal lung disease.",
-      "verbatim": "Inhalation of beryllium oxide dust (mining and\nindustrial contaminants) can lead to “berylliosis,” a painful\nand sometimes fatal lung disease.",
-      "page": 105,
-      "book_id": "immortality",
-      "topics": [
-        "beryllium",
-        "berylliosis",
-        "lung disease",
-        "beryllium dust",
-        "breathing",
-        "inhalation"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "beryllium"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-IMMORT-000046",
       "subject": "bismuth",
       "also_about": [
@@ -32382,33 +31790,6 @@
         "peptic-ulcers",
         "h-pylori"
       ]
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000047",
-      "subject": "bromine",
-      "also_about": [
-        "iodine"
-      ],
-      "facet": "basics",
-      "question": "What is bromine?",
-      "answer_short": "Bromine is a halogen in the same chemical family as iodine that Wallach counts among the essential minerals, working in the body in its active form as brominated amino acids.",
-      "answer": "Bromine is a canon essential mineral in Wallach's framework and a halogen - the same chemical family as iodine. He says it works in the body in its active form as brominated amino acids, and that there is strong evidence for its essentiality in both mammals and humans.",
-      "verbatim": "There is strong evidence for Bromine’s essentiality in\nmammals and humans.",
-      "page": 107,
-      "book_id": "immortality",
-      "topics": [
-        "bromine",
-        "what is bromine",
-        "halogen",
-        "essential mineral",
-        "brominated amino acids",
-        "is bromine essential"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "bromine"
-        ]
-      }
     },
     {
       "id": "WAL-CLM-IMMORT-000048",
@@ -33117,31 +32498,6 @@
       }
     },
     {
-      "id": "WAL-CLM-IMMORT-000079",
-      "subject": "cobalt",
-      "also_about": [
-        "vitamin-b12"
-      ],
-      "facet": "physiology",
-      "question": "What does cobalt do in the body?",
-      "answer_short": "Cobalt is essential for all forms of life; it activates enzymes, helps fix nitrogen, and sits at the very center of vitamin B12.",
-      "answer": "Cobalt is essential to every form of life — from blue-green algae, bacteria and fungi to plants, insects, and all the vertebrates including humans. It works as an enzyme cofactor and activator, helps \"fix\" nitrogen during amino-acid production, and — most importantly — a single cobalt atom sits at the center of vitamin B12, which is itself a cofactor and activator (the cobamide coenzymes) for several essential enzymes.",
-      "verbatim": "Cobalt is essential for all forms of life including blue-green algae, some bacteria and fungi, some plants, insects,\nbirds, reptiles, amphibians and mammals including man.\nCobalt functions as a cofactor and an activator for enzymes,\n“fixes” nitrogen during amino acid production, and a single\ncobalt atom is the central metal component of vitamin B12,\nwhich itself is a cofactor and activator (cobamide coenzymes)\nfor several essential enzymes.",
-      "page": 126,
-      "book_id": "immortality",
-      "topics": [
-        "cobalt",
-        "b12",
-        "enzymes",
-        "trace-minerals"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "cobalt"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-IMMORT-000080",
       "subject": "vitamin-b12",
       "also_about": [
@@ -33340,32 +32696,6 @@
         "b12",
         "ruminants"
       ]
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000087",
-      "subject": "chromium",
-      "also_about": [],
-      "facet": "basics",
-      "question": "What is chromium and what does it do?",
-      "answer_short": "Wallach describes chromium as a trace mineral that activates phosphoglucomutase and is the working core of glucose tolerance factor (GTF) — a complex of chromium III, dinicotinic acid and glutathione — with the body holding only about 1.5 mg, best read by hair analysis.",
-      "answer": "Chromium is a small but metabolically busy trace mineral. Wallach says it activates the enzyme phosphoglucomutase and others, and — most importantly — it is the working core of glucose tolerance factor (GTF), the compound that lets insulin do its job of controlling blood sugar. GTF is a complex of chromium in its trivalent (chromium-III) form, dinicotinic acid (a niacin / vitamin-B3 derivative), and glutathione (the body's main built-in antioxidant). The whole body holds only about 1.5 mg of chromium, and because hair concentrates it roughly ten times higher than blood does, hair analysis gives a more accurate read on tissue stores than a blood test.",
-      "verbatim": "Chromium activates phosphoglucomutase and other\nenzymes and is closely associated with glucose tolerance factor\n(GTF). Glucose tolerance factor is a combination of chromium\nIII, dinicotinic acid and glutathione.",
-      "page": 130,
-      "book_id": "immortality",
-      "topics": [
-        "chromium",
-        "glucose tolerance factor",
-        "gtf",
-        "insulin",
-        "blood sugar",
-        "hair analysis",
-        "trace mineral"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "chromium"
-        ]
-      }
     },
     {
       "id": "WAL-CLM-IMMORT-000088",
@@ -34504,28 +33834,6 @@
       }
     },
     {
-      "id": "WAL-CLM-IMMORT-000130",
-      "subject": "iron",
-      "also_about": [],
-      "facet": "mechanism",
-      "question": "What causes iron deficiency?",
-      "answer_short": "Wallach's list: unsupplemented pregnancy, heavy periods, chronic infection or bleeding, low stomach acid, diarrhea, and poor absorption from high-fiber diets.",
-      "answer": "What causes iron deficiency in the first place. Wallach lists the drivers: an unsupplemented pregnancy; painful menstruation (dysmenorrhea); chronic infections; low stomach acid (hypochlorhydria, e.g. from a salt-restricted diet); chronic diarrhea; ongoing blood loss (from cancer, ulcers, parasites, blood-thinning drugs, or other nutritional deficiencies); and poor absorption (from high-fat or high-fiber diets, or celiac disease).",
-      "verbatim": "Iron deficiency can be the result of unsupplemented\npregnancy, dysmenorrhea, chronic infections, hypochlorhydria\n(low stomach acid from a salt-restricted diet), chronic diarrhea,\nchronic bleeding (i.e. cancer, ulcers, parasites, blood thinners,\nnutritional deficiencies, etc.) and impaired absorption (i.e.\nhigh fat diets, high fiber diets, celiac disease, etc.).",
-      "page": 144,
-      "book_id": "immortality",
-      "topics": [
-        "iron-deficiency",
-        "causes",
-        "menstruation"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "iron"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-IMMORT-000131",
       "subject": "iron",
       "also_about": [
@@ -34869,58 +34177,6 @@
         "immune-system",
         "natural-killer-cells",
         "interferon"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "germanium"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000144",
-      "subject": "germanium",
-      "also_about": [],
-      "facet": "sources",
-      "question": "What is Ge-132, the germanium supplement?",
-      "answer_short": "An organic, chelated germanium (carboxyethyl germanium sesquioxide) Asai made in 1967 - absorbed at ~30% and fully excreted within a week.",
-      "answer": "Ge-132 — the organic germanium supplement. In 1967 Dr. Asai created Ge-132 (carboxyethyl germanium sesquioxide) through a hydrolysis reaction. As an organic, chelated form of germanium, Ge-132 is absorbed at 30% efficiency, and the entire intake is completely excreted within one week.",
-      "verbatim": "Asai synthesized Ge-132, carboxyethyl germanium\nsesquioxide, in 1967 by a hydrolysis reaction. This organic\ngermanium structure forms a cubic structure with three\nnegative oxygen ions at the base of a cubic triangle. As an\norganic or chelated form of germanium, Ge-132 is absorbed\nat the rate of 30% efficiency and the total intake is completely\nexcreted in one week.",
-      "page": 147,
-      "book_id": "immortality",
-      "topics": [
-        "ge-132",
-        "supplement",
-        "organic-germanium"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "germanium"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000145",
-      "subject": "germanium",
-      "also_about": [
-        "garlic",
-        "aloe_vera",
-        "ginseng"
-      ],
-      "facet": "sources",
-      "question": "What foods contain germanium?",
-      "answer_short": "Wallach says everyday foods carry small amounts of germanium (beans ~4.67 ppm, tuna ~2.3 ppm), while germanium-rich healing herbs — garlic, aloe, comfrey, chlorella, ginseng, watercress, Shiitake mushroom, pearl barley and others — carry 100 to 2,000 ppm.",
-      "answer": "Where to get germanium in food. Everyday foods carry small amounts (beans ~4.67 ppm, tuna ~2.3 ppm), but germanium-rich 'healing herbs' carry far more — 100 to 2,000 ppm — including garlic, aloe, comfrey, chlorella, ginseng, watercress, Shiitake mushroom, pearl barley, sanzukon, sushi, waternut, boxthorn seed and wisteria knob.",
-      "verbatim": "Food plants and animals contain small amounts of\ngermanium (i.e. beans - 4.67 ppm, tuna - 2.3 ppm). Healing\nherbs such as garlic, aloe, comfrey, chlorella, ginseng,\nwatercress, Shiitake mushroom, pearl barley, sanzukon,\nsushi, waternut, boxthorn seed and wisteria knob contain\ngermanium in amounts ranging from 100 to 2,000 ppm.",
-      "page": 147,
-      "book_id": "immortality",
-      "topics": [
-        "germanium",
-        "food sources",
-        "garlic",
-        "ginseng",
-        "chlorella",
-        "mushrooms",
-        "herbs"
       ],
       "tier1_link": {
         "essentials": [
@@ -35317,24 +34573,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-IMMORT-000163",
-      "subject": "mercury",
-      "also_about": [],
-      "facet": "warning",
-      "question": "Is the mercury in fish dangerous?",
-      "answer_short": "Fish carry mercury as persistent methylmercury; heavy fish-eaters hold far more, and unlike inorganic mercury it crosses the placenta into the fetus.",
-      "answer": "Methyl mercury, fish, and the unborn. In fish, mercury occurs as methyl mercury. Wallach gives typical body levels: people who rarely eat fish carry 2-5 micrograms per kilogram (µg/kg), moderate fish-eaters 10 µg/kg, and heavy consumers — especially of shark, tuna or swordfish — up to 400 µg/kg. Methyl mercury is dangerously persistent: its biological half-life in humans is about 70 days, versus only 4 days for inorganic mercury. And while the placenta blocks inorganic mercury, it does NOT block methyl mercury — which crosses easily into the fetus, causing the 'congenital' form of Minamata disease seen in Japanese infants.",
-      "verbatim": "Mercury in fish is present as methyl mercury. People\nwho rarely eat fish have low levels of mercury (2-5ug/kg);\nmoderate fish consumers have 10 ug/kg; high fish consumers\n(especially if they eat shark, tuna, or swordfish) have higher\nvalues ranging up to 400 ug/kg.",
-      "page": 155,
-      "book_id": "immortality",
-      "topics": [
-        "methylmercury",
-        "fish",
-        "pregnancy",
-        "minamata"
-      ]
-    },
-    {
       "id": "WAL-CLM-IMMORT-000164",
       "subject": "mercury",
       "also_about": [
@@ -35648,29 +34886,6 @@
         "conditions": [
           "hypothyroidism",
           "goiter"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000178",
-      "subject": "iodine",
-      "also_about": [],
-      "facet": "physiology",
-      "question": "How much iodine do we take in - and how much is safe?",
-      "answer_short": "Americans average 170-250 mcg a day and can sweat out up to 146 mcg; metallic iodine isn't toxic even at 2,000 mcg/day long-term - a wide safety margin.",
-      "answer": "How much iodine people get, lose and can safely tolerate. The average American takes in 170–250 micrograms (mcg) of elemental iodine a day. The body loses a surprising amount through sweat — up to 146 mcg a day with only moderate exercise — which can deepen a shortfall. On the safety side, Wallach notes metallic iodine is not toxic even at long-term intakes up to 2,000 mcg a day.",
-      "verbatim": "The average American takes in 170-250 mcg/day of\nelemental iodine. Humans lose considerable amounts of\niodine in their sweat - a loss, of as much as 146 mcg/day, with\nonly moderate exercise. Metallic iodine is not toxic with long\nterm intakes of up to 2,000 mcg/day.",
-      "page": 159,
-      "book_id": "immortality",
-      "topics": [
-        "intake",
-        "sweat-loss",
-        "toxicity",
-        "safety-margin"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "iodine"
         ]
       }
     },
@@ -36040,32 +35255,6 @@
       }
     },
     {
-      "id": "WAL-CLM-IMMORT-000192",
-      "subject": "potassium",
-      "also_about": [
-        "sodium",
-        "calcium"
-      ],
-      "facet": "physiology",
-      "question": "What does potassium do in the body?",
-      "answer_short": "Potassium is the major positively-charged mineral inside your cells, running enzyme systems, fluid balance and nerve-muscle activity.",
-      "answer": "What potassium does in the body. It is essential to all organisms and the major cation (positively charged mineral) inside the cell, driving a wide range of electrochemical and enzyme functions. Potassium makes up 5% of the body's total mineral content and is the main mineral of the intracellular fluid (the fluid inside cells). Working with sodium — the other main 'electrolyte' — it maintains normal water balance, osmotic equilibrium (fluid balance across cell membranes), and acid-base (pH) balance; and working with calcium it regulates neuromuscular activity (nerve-and-muscle signaling).",
-      "verbatim": "Potassium is essential to all organisms and is the major\ncation in cell cytoplasm with a wide variety of electrochemical\nand catalytic functions for enzyme systems. Potassium\nconstitutes five percent of the total mineral content of the\nbody. It is the major cation of the intracellular fluid and there\nis a small amount in the extracellular fluid. With sodium, the\nother “electrolyte,” potassium participates in the maintenance\nof normal water balance, osmotic equilibrium and acid-base\nbalance. Potassium participates with calcium in the regulation\nof neuromuscular activity.",
-      "page": 164,
-      "book_id": "immortality",
-      "topics": [
-        "electrolytes",
-        "minerals",
-        "cell-function",
-        "nerve-and-muscle"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "potassium"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-IMMORT-000193",
       "subject": "potassium",
       "also_about": [],
@@ -36171,37 +35360,6 @@
         "krypton-fluoride",
         "chemistry"
       ]
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000198",
-      "subject": "lanthanum",
-      "also_about": [
-        "chronic_fatigue_syndrome"
-      ],
-      "facet": "mechanism",
-      "question": "Can Candida cause chronic fatigue?",
-      "answer_short": "Wallach theorizes the yeast Candida albicans, which accumulates lanthanum at 370 ppm per day, causes an energy-sapping chronic fatigue by 'stealing' lanthanum from its victim; lanthanum at just 0.32 ppm doubles the lifespan of certain protozoa.",
-      "answer": "Wallach's theory linking lanthanum to chronic fatigue. The yeast Candida albicans accumulates lanthanum at 370 ppm (parts per million) per day; Wallach theorizes this is how C. albicans produces a debilitating, energy-sapping 'chronic fatigue' disease -- by 'stealing' lanthanum from its victim. He also notes lanthanum's biological potency: at just 0.32 ppm it stimulates the growth of the protozoa Blepharisma and Tetrahymena pyriformis and doubles their lifespan.",
-      "verbatim": "Notably the yeast Candida albicans accumulates\nlanthanum at the rate of 370 ppm/day. It is theorized that\nthis is how C. albicans produces a debilitating, energy sapping\n“chronic fatigue” disease, by “stealing” lanthanum from the\nvictim.\n\nThe growth of the protozoa Blepharisma and Tetrahymena\npyriformis is stimulated and their life span doubled by the\npresence of the rare earth lanthanum at concentrations of 0.32\nppm.",
-      "page": 166,
-      "book_id": "immortality",
-      "topics": [
-        "lanthanum",
-        "chronic fatigue",
-        "candida",
-        "yeast",
-        "rare earth",
-        "energy",
-        "fatigue"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "lanthanum"
-        ],
-        "conditions": [
-          "chronic_fatigue_syndrome"
-        ]
-      }
     },
     {
       "id": "WAL-CLM-IMMORT-000199",
@@ -36349,50 +35507,6 @@
       }
     },
     {
-      "id": "WAL-CLM-IMMORT-000204",
-      "subject": "magnesium",
-      "also_about": [
-        "asthma",
-        "anorexia",
-        "migraine",
-        "tetany",
-        "depression",
-        "vertigo",
-        "failure_to_thrive"
-      ],
-      "facet": "physiology",
-      "question": "What diseases does magnesium deficiency cause?",
-      "answer_short": "Wallach lists magnesium deficiency diseases including asthma, anorexia, menstrual migraines, growth failure, ECG changes, neuromuscular problems, tetany, depression, muscular weakness, tremors, vertigo, and calcification of the arteries and soft tissue.",
-      "answer": "Magnesium deficiency diseases. Wallach lists the conditions that flow from a magnesium deficiency: asthma, anorexia, menstrual migraines, growth failure, ECG (electrocardiogram, a heart tracing) changes, neuromuscular problems, tetany (convulsions with muscle cramping), depression, muscular weakness, tremors, and vertigo -- plus calcification of the arterial wall and 'malignant calcification' of soft tissue.",
-      "verbatim": "Magnesium Deficiency Diseases\n\nAsthma\nAnorexia\n\nMenstrual migraines\n\n\n \n\nGrowth failure\n\nECG changes\n\nNeuromuscular problems\n\nTetany (convulsions with muscle cramping)\nDepression\n\nMuscular weakness\n\nMuscle “ties”\n\nTremors\n\nVertigo\n\nCalcification of arterial media\n\n“Malignant calcification” of soft tissue",
-      "page": 171,
-      "book_id": "immortality",
-      "topics": [
-        "magnesium",
-        "magnesium deficiency",
-        "asthma",
-        "migraines",
-        "tetany",
-        "depression",
-        "vertigo",
-        "muscle cramps"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "magnesium"
-        ],
-        "conditions": [
-          "asthma",
-          "anorexia",
-          "migraine",
-          "tetany",
-          "depression",
-          "vertigo",
-          "failure_to_thrive"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-IMMORT-000205",
       "subject": "magnesium",
       "also_about": [
@@ -36518,31 +35632,6 @@
         "plant-derived",
         "bioavailability",
         "colloidal minerals"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "magnesium"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000210",
-      "subject": "magnesium",
-      "also_about": [],
-      "facet": "warning",
-      "question": "Can you take too much magnesium?",
-      "answer_short": "Wallach cites the magnesium RDA (350 mg/day for men, 300 for women, 450 for pregnant and lactating women) and notes that, with healthy kidneys, there is no evidence of toxicity even at supplemental doses up to 6,000 mg/day.",
-      "answer": "Magnesium's reference intake and safety ceiling. Wallach cites the RDA (Recommended Dietary Allowance) -- 350 mg/day for adult men, 300 mg/day for women, and 450 mg/day for pregnant and lactating women -- and notes that, with healthy kidneys, there is no evidence of toxicity even at supplemental doses up to 6,000 mg/day.",
-      "verbatim": "The RDA for Mg is 350 mg/day for adult males, 300\nmg/day for adult females, and 450 mg/day for pregnant and\nlactating females. If the kidneys are healthy, there is no evidence\nof toxicity at supplemental doses of up to 6,000 mg/day.",
-      "page": 171,
-      "book_id": "immortality",
-      "topics": [
-        "magnesium",
-        "magnesium safety",
-        "magnesium toxicity",
-        "rda",
-        "overdose",
-        "kidneys"
       ],
       "tier1_link": {
         "essentials": [
@@ -37876,7 +36965,12 @@
         "dental-amalgam",
         "kidney",
         "pregnancy"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000270",
@@ -38596,7 +37690,12 @@
         "elderly",
         "stomach-acid",
         "b12-shots"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b12"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000307",
@@ -39289,7 +38388,13 @@
         "sugar",
         "munchies",
         "chocolate"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vanadium",
+          "chromium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000345",
@@ -39479,7 +38584,12 @@
         "b12",
         "trace-minerals",
         "enzymes"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "cobalt"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000356",
@@ -39518,29 +38628,6 @@
         "b12",
         "storage",
         "supplements"
-      ]
-    },
-    {
-      "id": "WAL-CLM-IMMORT-000358",
-      "subject": "cobalt",
-      "also_about": [
-        "vitamin-b12",
-        "hypochlorhydria",
-        "sodium"
-      ],
-      "facet": "sources",
-      "question": "Why do older people often need B12 shots?",
-      "answer_short": "Cobalt/B12 only absorbs when intrinsic factor is present and stomach pH is 2.0 or less; low stomach acid (often from too little salt) blocks it, so doctors give shots.",
-      "answer": "Wallach explains that metallic cobalt is absorbed at only 20 to 26.2%, and only if intrinsic factor is present and the stomach pH is 2.0 or less. Intrinsic factor is a mucoprotein enzyme (Castle's intrinsic factor) that is part of normal stomach secretions. When a person has hypochlorhydria - low stomach acid, usually from a NaCl (salt) deficiency - the intrinsic factor won't work and B12/cobalt is not absorbed, which is why doctors frequently give B12 shots to older people on salt-restricted diets.",
-      "verbatim": "Metallic cobalt itself is absorbed at the rate of 20 to\n26.2% by mice and in humans if intrinsic factor is present\nin the stomach and the stomach pH is 2.0 or less. Intrinsic\nfactor is a mucoprotein enzyme known as Castle’s intrinsic\nfactor and is part of normal stomach secretions. If a person\nhas hypochlorhydria (low stomach acid- usually a NaCl\ndeficiency) the intrinsic factor will not work and B12 cobalt is\nnot absorbed - this is why doctors frequently give B12 shots\nto older people on salt restricted diets.",
-      "page": null,
-      "book_id": "immortality",
-      "topics": [
-        "cobalt",
-        "b12",
-        "absorption",
-        "stomach-acid",
-        "b12-shots"
       ]
     },
     {
@@ -39734,26 +38821,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-IMMORT-000369",
-      "subject": "molybdenum",
-      "also_about": [
-        "copper",
-        "gout"
-      ],
-      "facet": "warning",
-      "question": "Can you take too much molybdenum? Is it toxic?",
-      "answer_short": "Wallach says molybdenum toxicity occurs at 10 mg per day, showing up as a gout-like disease and as interference with copper metabolism.",
-      "answer": "According to Wallach, molybdenum toxicity occurs at an intake of 10 mg per day. The clinical signs of toxicity appear as a gout-like disease and as interference with copper metabolism. This 10 mg toxic threshold is many times higher than the 250 mcg RDA he cites in the same passage.",
-      "verbatim": "Toxicity occurs at 10 mg per day; clinical signs\nof toxicity appear as a gout-like disease and interference with\ncopper metabolism.",
-      "page": null,
-      "book_id": "immortality",
-      "topics": [
-        "minerals",
-        "toxicity",
-        "safety"
-      ]
-    },
-    {
       "id": "WAL-CLM-IMMORT-000370",
       "subject": "molybdenum",
       "also_about": [],
@@ -39940,7 +39007,12 @@
         "protein",
         "amino-acids",
         "biochemistry"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "sulfur"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000381",
@@ -41557,7 +40629,12 @@
         "trace mineral",
         "essential elements",
         "zirconium twin"
-      ]
+      ],
+      "tier1_link": {
+        "essentials": [
+          "hafnium"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-IMMORT-000457",
@@ -42243,61 +41320,6 @@
           "peptic_ulcers",
           "kidney_disease",
           "liver_disease"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-LETS-000008",
-      "subject": "copper",
-      "also_about": [
-        "anemia",
-        "aneurysm",
-        "arthritis",
-        "depression",
-        "high_cholesterol",
-        "alopecia"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of copper deficiency?",
-      "answer_short": "Wallach lists copper-deficiency signs including hair loss, microcytic anemia, aneurysm and cerebral hemorrhage, depression, dermatosis, diarrhea, fatigue, fragile bones and arthritis, high cholesterol, respiratory disease, and liver cirrhosis with weakness.",
-      "answer": "Wallach lists the signs of copper deficiency: hair loss (alopecia), microcytic anemia, aneurysm and cerebral hemorrhage, criminal behavior, depression, dermatosis, diarrhea, fatigue, fragile bones and arthritis, high cholesterol, exostosis (\"lipping\" of the epiphyseal growth plates), respiratory disease, weakness with liver cirrhosis, and Shwachman's syndrome.",
-      "verbatim": "COPPER DEFICIENCY\nalopecia\nanemia (microcytic)\naneurysm / cerebral hemorrhage\ncriminal behavior\ndepression\ndermatosis\ndiarrhea\nfatigue\nfragile bones / arthritis\nhypercholesterolemia\nexostosis (\"lipping\" of epiphyseal\nplates)\nrespiratory disease\nweakness / liver cirrhosis\nShwachman's syndrome",
-      "page": 44,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "copper deficiency",
-        "hair loss",
-        "anemia",
-        "aneurysm",
-        "depression",
-        "arthritis",
-        "high cholesterol",
-        "fatigue"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "copper"
-        ],
-        "conditions": [
-          "alopecia",
-          "anemia",
-          "aneurysm",
-          "criminal_behavior",
-          "depression",
-          "dermatosis",
-          "diarrhea",
-          "arthritis",
-          "high_cholesterol",
-          "respiratory_disease",
-          "liver_cirrhosis",
-          "liver_disease",
-          "shwachman_syndrome"
-        ],
-        "symptoms": [
-          "fatigue",
-          "hemorrhage",
-          "weakness",
-          "fragile_bones"
         ]
       }
     },
@@ -43491,59 +42513,6 @@
       }
     },
     {
-      "id": "WAL-CLM-LETS-000036",
-      "subject": "vitamin-a",
-      "also_about": [
-        "night_blindness",
-        "acne",
-        "alopecia",
-        "xerophthalmia",
-        "infertility",
-        "insomnia"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of vitamin A deficiency?",
-      "answer_short": "Wallach's signs of vitamin A deficiency include acne, loss of smell, birth defects, dry hair and hair loss, fatigue, growth retardation, thickened rough skin, infections, infertility, insomnia, night blindness, weight loss, and dry eyes and skin.",
-      "answer": "Wallach lists the signs of vitamin A deficiency: acne, anosmia (loss of smell), birth defects, dry hair and hair loss (alopecia), fatigue, growth retardation, hyperkeratosis (thickened rough skin), infections, infertility, insomnia, night blindness, weight loss, xerophthalmia (dry eyes), and xerosis (abnormally dry skin).",
-      "verbatim": "VITAMIN A DEFICIENCY\nacne\nanosmia (loss of smell)\nbirth defects\ndry hair/alopecia\nfatigue\ngrowth retardation\nhyperkeratosis\ninfections\ninfertility\ninsomnia\nnight blindness\nweight loss\nxerophthalmia\nxerosis",
-      "page": 49,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "vitamin a",
-        "deficiency",
-        "night blindness",
-        "dry eyes",
-        "dry skin",
-        "hair loss",
-        "acne",
-        "fatigue"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "vitamin-a"
-        ],
-        "conditions": [
-          "acne",
-          "anosmia",
-          "birth_defects",
-          "alopecia",
-          "infertility",
-          "insomnia",
-          "night_blindness",
-          "xerophthalmia"
-        ],
-        "symptoms": [
-          "dry_hair",
-          "fatigue",
-          "retarded_growth",
-          "hyperkeratosis",
-          "lowered_immunity",
-          "weight_loss",
-          "dry_skin"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-LETS-000037",
       "subject": "vitamin-a",
       "also_about": [],
@@ -43702,118 +42671,6 @@
         ],
         "symptoms": [
           "ectopic_calcification"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-LETS-000041",
-      "subject": "vitamin-e",
-      "also_about": [
-        "alopecia",
-        "dermatitis",
-        "infertility",
-        "malabsorption",
-        "muscular_dystrophy"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of vitamin E deficiency?",
-      "answer_short": "Wallach lists hair loss, absent reflexes, dermatitis, gait disturbances, infertility, malabsorption, muscular dystrophy, eye-muscle paralysis, impaired position sense, red-blood-cell fragility, and vibratory sense dysfunction.",
-      "answer": "Wallach lists the signs of vitamin E deficiency: hair loss (alopecia), areflexia (absent reflexes), dermatitis, gait disturbances, infertility, malabsorption, muscular dystrophy, ophthalmoplegia (paralysis of the eye muscles), proprioception problems (impaired position sense), red blood cell (RBC) fragility, and vibratory sense dysfunction.",
-      "verbatim": "VITAMIN E DEFICIENCY\nalopecia\nareflexia\ndermatitis\ngait disturbances\ninfertility\nmalabsorption\nmuscular dystrophy\nophthalmoplegia\nproprioception problems\nRBC fragility\nvibratory sense dysfunction",
-      "page": 50,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "vitamin e",
-        "vitamin e deficiency",
-        "hair loss",
-        "infertility",
-        "muscular dystrophy",
-        "dermatitis",
-        "reflexes"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "vitamin-e"
-        ],
-        "conditions": [
-          "alopecia",
-          "dermatitis",
-          "infertility",
-          "malabsorption",
-          "muscular_dystrophy"
-        ],
-        "symptoms": [
-          "areflexia",
-          "gait_disturbance",
-          "ophthalmoplegia",
-          "proprioception_problems",
-          "rbc_fragility",
-          "vibratory_sense_dysfunction"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-LETS-000042",
-      "subject": "vitamin-k",
-      "also_about": [
-        "osteoporosis"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of vitamin K deficiency?",
-      "answer_short": "Wallach lists prolonged (poor) clotting time and osteoporosis as signs of vitamin K deficiency.",
-      "answer": "Wallach lists the signs of vitamin K deficiency: poor (prolonged) clotting time and osteoporosis.",
-      "verbatim": "VITAMIN K DEFICIENCY\npoor clotting time\nosteoporosis.\nVANADIUM DEFICIENCY",
-      "page": 50,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "vitamin k",
-        "vitamin k deficiency",
-        "clotting",
-        "clotting time",
-        "osteoporosis",
-        "bleeding"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "vitamin-k"
-        ],
-        "conditions": [
-          "osteoporosis"
-        ],
-        "symptoms": [
-          "prolonged_clotting_time"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-LETS-000043",
-      "subject": "vanadium",
-      "also_about": [
-        "diabetes",
-        "hypoglycemia"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of vanadium deficiency?",
-      "answer_short": "Diabetes and hypoglycemia. Wallach counts vanadium (with chromium) as essential to blood-sugar control, so its deficiency drives insulin up — producing type II diabetes and low blood sugar — and shows up day-to-day as thirst and relentless carbohydrate and sugar cravings.",
-      "answer": "Wallach frames adult-onset (type II) diabetes as, at root, a simple mineral-deficiency disease in which vanadium — alongside chromium — is central. When dietary intake or absorption of chromium and vanadium is insufficient, blood insulin climbs, and that excess insulin in turn produces hypoglycemia, hyperinsulinemia, and pre-diabetes. So in his framework the signs of a vanadium deficiency are precisely diabetes and low blood sugar (hypoglycemia); at the everyday level the deficiency also shows up as thirst, an obsessive hunger for carbohydrates and sugar, and the 'munchies.'",
-      "verbatim": "VANADIUM DEFICIENCY\ndiabetes\nhypoglycemia\nZINC DEFICIENCY\nacne",
-      "page": 50,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "vanadium",
-        "vanadium deficiency",
-        "diabetes",
-        "hypoglycemia",
-        "low blood sugar",
-        "blood sugar"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "vanadium"
-        ],
-        "conditions": [
-          "diabetes",
-          "hypoglycemia"
         ]
       }
     },
@@ -49293,44 +48150,6 @@
       "tier1_link": {
         "conditions": [
           "pubic_lice"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-LETS-000237",
-      "subject": "cradle_cap",
-      "also_about": [
-        "seborrheic_dermatitis",
-        "dermatitis",
-        "vitamin-b6",
-        "zinc"
-      ],
-      "facet": "protocol",
-      "question": "How do you treat cradle cap?",
-      "answer_short": "Wallach treats cradle cap (seborrheic dermatitis of infants) with regular shampooing to loosen the scale, vitamin B-6 at 10-25 mg a day, and zinc at 15-25 mg a day, plus a pulse test for contributing food allergies.",
-      "answer": "Cradle cap (seborrheic dermatitis of infants) can appear as early as one month of age as a greasy, thick crust on the scalp, behind the ears, and on the face. Wallach's treatment is regular shampooing to loosen the greasy scale, vitamin B-6 at 10-25 mg per day, and zinc at 15-25 mg per day; because food allergies can contribute, do a pulse test.",
-      "verbatim": "\"CRADLE CAP\" (seborrheic dermatitis of\ninfants): can occur as early as one month of\nage in babies. Cradle cap appears as a greasy\nthick crust on the scalp, behind the ears and\nface.\nTreatment of cradle cap includes shampooing\nregularly to loosen die greasy scale, B-6 at 10-\n25 mg per day and zinc at 15-25 mg per day.",
-      "page": null,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "cradle cap",
-        "seborrheic dermatitis",
-        "infants",
-        "babies",
-        "scalp",
-        "vitamin b6",
-        "zinc",
-        "shampoo"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "vitamin-b6",
-          "zinc"
-        ],
-        "conditions": [
-          "cradle_cap",
-          "seborrheic_dermatitis",
-          "dermatitis"
         ]
       }
     },
@@ -57480,27 +56299,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-LETS-000514",
-      "subject": "sodium",
-      "also_about": [
-        "chloride",
-        "potassium"
-      ],
-      "facet": "physiology",
-      "question": "What does sodium do in the body?",
-      "answer_short": "Sodium is an essential macro-mineral that maintains acid-base balance, fluid pressure in the blood and tissues, and neuromuscular function.",
-      "answer": "Wallach classifies sodium (Na) as an essential \"macro\" mineral required in the diet. It maintains proper acid-base balance in the blood and tissues, regulates fluid pressure in the blood vessels and cells, and supports neuromuscular function. Elevated blood sodium points to dehydration, kidney disease, or adrenal dysfunction, while low blood sodium is typical of excessive water intake, diabetes, or pituitary disorders; the normal blood range is 135-147 mEq/L.",
-      "verbatim": "Na (sodium) is an essential \"macro\"mineral\nrequired in our diet. Sodium is required to\nmaintain the proper acid-base balance in our\nblood and tissues, the fluid pressure in our\nblood and tissues, the fluid pressure in our\nblood vessels, cells and neuromuscular function. Elevated sodium levels are characteristic\nof dehydration, kidney disease and adrenal\ngland dysfunction. Low blood levels of sodium are typical of excessive water consumption, diabetes and pituitary disorders.",
-      "page": null,
-      "book_id": "lets-play-doctor",
-      "topics": [
-        "sodium",
-        "electrolytes",
-        "macro-minerals",
-        "blood-test"
-      ]
-    },
-    {
       "id": "WAL-CLM-LETS-000515",
       "subject": "phosphorus",
       "also_about": [
@@ -57879,7 +56677,7 @@
       "facet": "physiology",
       "question": "What are the signs of germanium deficiency?",
       "answer_short": "Wallach writes that germanium deficiency typically shows up as a severely weakened immune system, arthritis, osteoporosis, low energy, and cancer.",
-      "answer": "Germanium deficiency, Wallach writes, typically shows as a severely weakened immune system, arthritis, osteoporosis, low energy, and cancer. He connects these to germanium's job as an oxygen carrier at the cellular level — when cells cannot get enough oxygen, immunity, joints, bone, and energy all suffer, and cancer (which he says dislikes high-oxygen conditions) gets a foothold. He recommends 20 to 30 mg a day to maintain status.",
+      "answer": "Germanium deficiency, Wallach writes, typically shows as a severely weakened immune system, arthritis, osteoporosis, low energy, and cancer. He connects these to germanium's job as an oxygen carrier at the cellular level — when cells cannot get enough oxygen, immunity, joints, bone, and energy all suffer, and cancer (which he says dislikes high-oxygen conditions) gets a foothold. He recommends 20 to 30 mg a day to maintain status, rising to 50 to 100 mg a day when a person is seriously ill and needs more oxygen carried to the tissues.",
       "verbatim": "Deficiencies of germanium are typified\nby severely reduced immune status, arthritis, osteoporosis, low energy and cancer.",
       "page": null,
       "book_id": "rare-earths",
@@ -58847,37 +57645,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000050",
-      "subject": "muscular_dystrophy",
-      "also_about": [
-        "selenium"
-      ],
-      "facet": "stance",
-      "question": "Is muscular dystrophy caused by a selenium deficiency?",
-      "answer_short": "Wallach holds that muscular dystrophy is a preventable selenium-deficiency disease, with its named forms merely classified by which muscle group is affected first, and notes the veterinary industry wiped out white muscle disease with simple selenium supplementation.",
-      "answer": "Wallach holds that muscular dystrophy is a preventable selenium-deficiency disease: adequate selenium in the diets and supplements of preconception women is key to preventing muscular dystrophy in all its named forms (Duchenne, Erb, Leyden-Moebius, Landouzy-Dejerine, Becker's, Gowers), which he calls artificial classifications by the muscle group first affected. He notes the veterinary industry wiped out white muscle disease / mulberry heart disease with simple selenium supplementation.",
-      "verbatim": "muscular dystrophy would be\ntotally preventable but a whole medical\nspecialty would be wiped out!!!",
-      "page": 153,
-      "book_id": "rare-earths",
-      "topics": [
-        "muscular dystrophy",
-        "selenium",
-        "deficiency",
-        "preconception",
-        "duchenne",
-        "white muscle disease",
-        "prevention"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "selenium"
-        ],
-        "conditions": [
-          "muscular_dystrophy"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000051",
       "subject": "kawasaki_disease",
       "also_about": [
@@ -59575,35 +58342,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000084",
-      "subject": "selenium",
-      "also_about": [
-        "calcium"
-      ],
-      "facet": "mechanism",
-      "question": "Does selenium protect against mercury poisoning?",
-      "answer_short": "Wallach notes that minerals can neutralize the toxic effects of other minerals, with selenium a specific antidote for mercury poisoning and calcium for lead.",
-      "answer": "Wallach notes the well-established principle among nutritional chemists that minerals can neutralize or reverse the toxic effects of other minerals — for example selenium is a specific antidote for mercury (Hg) poisoning and calcium for lead (Pb) — and presents Dr. Gary Price Todd's clinical study built on this mineral-substitution approach.",
-      "verbatim": "It is very well known among nutritional chemists that minerals can neutralize or reverse the toxic effects of other minerals (i.e.- Se is a specific antidote for Hg poisoning, Ca for Pb, etc.)",
-      "page": 276,
-      "book_id": "rare-earths",
-      "topics": [
-        "selenium",
-        "mercury",
-        "mercury poisoning",
-        "calcium",
-        "lead",
-        "heavy metals",
-        "antidote"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "selenium",
-          "calcium"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000085",
       "subject": "lead",
       "also_about": [
@@ -59730,33 +58468,6 @@
         "essential-minerals",
         "cofactors"
       ]
-    },
-    {
-      "id": "WAL-CLM-RARE-000090",
-      "subject": "silver",
-      "also_about": [],
-      "facet": "protocol",
-      "question": "How much silver can you take per day?",
-      "answer_short": "Wallach says humans can consume 400 mcg of silver per day, and that a silver 'deficiency' results in an impaired immune system.",
-      "answer": "Wallach reports that silver — used in human health care since the Chinese alchemists 8,000 years ago — is considered by many to be an essential element, acting not as an enzyme cofactor but as a systemic disinfectant and immune-system support. Humans can safely consume up to 400 mcg of silver per day, and a silver 'deficiency' results in an impaired immune system.",
-      "verbatim": "Humans can consume 400 mcg of silver\nper day. A silver “deficiency” results in an\nimpaired immune system.",
-      "page": 282,
-      "book_id": "rare-earths",
-      "topics": [
-        "silver dose",
-        "400 mcg",
-        "daily silver",
-        "how much silver",
-        "silver deficiency"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "silver"
-        ],
-        "symptoms": [
-          "reduced_immune_status"
-        ]
-      }
     },
     {
       "id": "WAL-CLM-RARE-000091",
@@ -59945,37 +58656,6 @@
       "tier1_link": {
         "essentials": [
           "gold"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000098",
-      "subject": "boron",
-      "also_about": [
-        "calcium",
-        "magnesium"
-      ],
-      "facet": "mechanism",
-      "question": "What does boron do in the body?",
-      "answer_short": "Wallach states boron is essential for bone metabolism — including efficient use of calcium and magnesium — and for proper function of the endocrine glands (ovaries, testes and adrenals); it was accepted as essential for humans in 1990.",
-      "answer": "Wallach states boron is essential for bone metabolism — including the efficient use of calcium and magnesium — and for proper function of the endocrine glands (ovaries, testes and adrenals). Boron was only accepted as an essential nutrient for humans in 1990.",
-      "verbatim": "boron is essential for bone metabolism including efficient use of calcium and magnesium and proper function of endocrine glands (i.e.- ovaries, testes and adrenals).",
-      "page": 287,
-      "book_id": "rare-earths",
-      "topics": [
-        "boron",
-        "bone metabolism",
-        "calcium",
-        "magnesium",
-        "endocrine glands",
-        "hormones",
-        "essential mineral"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "boron",
-          "calcium",
-          "magnesium"
         ]
       }
     },
@@ -60228,36 +58908,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000107",
-      "subject": "calcium",
-      "also_about": [
-        "hypertension"
-      ],
-      "facet": "physiology",
-      "question": "Can calcium deficiency cause high blood pressure?",
-      "answer_short": "Wallach reports McCarron's 1980 theory — backed by more than 30 later studies — that chronic calcium deficiency leads to hypertension, with a study of 58,218 nurses finding high blood pressure more likely below 800 mg of calcium a day.",
-      "answer": "Wallach reports that McCarron and colleagues theorized in 1980 that chronic calcium deficiency leads to hypertension — a theory supported by more than 30 subsequent studies — and that serum ionized calcium runs consistently lower in people with untreated high blood pressure. In a four-year study of 58,218 nurses, hypertension was more likely in women taking in less than 800 mg of calcium per day.",
-      "verbatim": "In 1980, McCarron, et al, theorized that\nchronic calcium deficiency probably led to\nhypertension. More than 30 subsequent\nstudies supported the original theory of\ncalcium deficiency as the cause of\nhypertension",
-      "page": 298,
-      "book_id": "rare-earths",
-      "topics": [
-        "calcium",
-        "hypertension",
-        "high blood pressure",
-        "calcium deficiency",
-        "mccarron",
-        "blood pressure"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "calcium"
-        ],
-        "conditions": [
-          "hypertension"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000108",
       "subject": "calcium",
       "also_about": [],
@@ -60338,41 +58988,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000111",
-      "subject": "omega-3",
-      "also_about": [
-        "omega-6",
-        "eczema",
-        "dermatitis"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of essential fatty acid deficiency?",
-      "answer_short": "Wallach reports essential fatty acid deficiency in infants causes poor growth, eczema, and lowered resistance to infection, and in animals produces atherosclerosis.",
-      "answer": "Wallach reports that essential fatty acid deficiency in human infants results in a poor growth rate, eczema, and lowered resistance to infectious diseases; in animals, essential fatty acid deficiency produces atherosclerosis (seen in a sheep's aorta and a pheasant's coronary arteries).",
-      "verbatim": "EFA deficiency in human infants results in a poor growth rate, eczema, lowered resistance to infectious diseases.",
-      "page": 291,
-      "book_id": "rare-earths",
-      "topics": [
-        "essential fatty acids",
-        "omega-3",
-        "omega-6",
-        "eczema",
-        "infants",
-        "atherosclerosis",
-        "poor growth"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "omega-3",
-          "omega-6"
-        ],
-        "conditions": [
-          "eczema",
-          "dermatitis"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000112",
       "subject": "rare_earth_elements",
       "also_about": [
@@ -60423,35 +59038,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000114",
-      "subject": "cobalt",
-      "also_about": [
-        "vitamin-b12"
-      ],
-      "facet": "mechanism",
-      "question": "What does cobalt do in the body?",
-      "answer_short": "Wallach explains the body's cobalt requirement is really for vitamin B12, in which a single cobalt atom is the central metal, working with folic acid, choline and methionine to transfer methyl groups for DNA and RNA, growth, myelin and red-blood-cell formation.",
-      "answer": "Wallach explains the essentiality of cobalt is unusual: the actual requirement is for the cobalt-containing complex vitamin B12 (cyanocobalamin), in which a single cobalt atom is the central metal. Vitamin B12/cobalt works with folic acid, choline, and the amino acid methionine to transfer methyl groups in the synthesis of RNA and DNA (directly involved in gene function and preconception nutrition), and is required for growth, myelin formation, and red-blood-cell synthesis.",
-      "verbatim": "a\nsingle cobalt atom is the central metal\ncomponent of vitamin B12 which itself is a\ncofactor and activator",
-      "page": 305,
-      "book_id": "rare-earths",
-      "topics": [
-        "cobalt",
-        "vitamin b12",
-        "methyl groups",
-        "dna",
-        "rna",
-        "myelin",
-        "red blood cells"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "cobalt",
-          "vitamin-b12"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000115",
       "subject": "cobalt",
       "also_about": [
@@ -60483,58 +59069,6 @@
         "conditions": [
           "pernicious_anemia",
           "anemia"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000116",
-      "subject": "chromium",
-      "also_about": [
-        "diabetes",
-        "hypoglycemia",
-        "prediabetes",
-        "depression"
-      ],
-      "facet": "physiology",
-      "question": "What diseases does chromium deficiency cause?",
-      "answer_short": "Wallach links chromium deficiency to low blood sugar, prediabetes, diabetes, ADD/ADHD, depression, bipolar disease, infertility, and a shortened life span, among many others.",
-      "answer": "Wallach states chromium activates several enzymes and is tightly associated with GTF (glucose tolerance factor — chromium III combined with dinicotinic acid and glutathione). Chromium deficiency produces low blood sugar, prediabetes, diabetes (with ulcers and gangrene), hyperinsulinemia, hyperactivity, learning disabilities, attention-deficit/hyperactivity disorder (ADD/ADHD), hyperirritability, depression, manic depression and bipolar disorder, explosive rage and violent or criminal behavior (the blood-sugar-instability 'Jekyll-and-Hyde' temperament), impaired growth, peripheral neuropathy, negative nitrogen balance (protein loss), elevated blood triglycerides and cholesterol, coronary blood-vessel disease and aortic plaque, infertility with decreased sperm count, and a shortened lifespan.",
-      "verbatim": "Low blood sugar\nPrediabetes\nDiabetes (ulcers/gangrene)\nHyperinsulinemia\nHyperactivity\nLearning disabilities\nADD/ADHD\nHyperirritability\nDepression\nManic depression\n“Bi-polar” disease\nDr. Jekyll/Mr. Hyde rages (\"Bad Seeds”)\nImpaired growth\nPeripheral neuropathy\nNegative nitrogen balance (protein loss)\nElevated blood triglycerides\nElevated blood cholesterol\nCoronary blood vessel disease\nAortic cholesterol plaque\nInfertility and decreased sperm count\nShortened life span",
-      "page": 306,
-      "book_id": "rare-earths",
-      "topics": [
-        "deficiency",
-        "blood-sugar",
-        "mental-health",
-        "symptoms"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "chromium"
-        ],
-        "conditions": [
-          "adhd",
-          "atherosclerosis",
-          "bipolar_disorder",
-          "blind_rage",
-          "coronary_artery_disease",
-          "criminal_behavior",
-          "depression",
-          "diabetes",
-          "explosive_outbursts",
-          "failure_to_thrive",
-          "high_cholesterol",
-          "high_triglycerides",
-          "hyperactivity",
-          "hyperinsulinemia",
-          "hyperirritability",
-          "hypoglycemia",
-          "infertility",
-          "learning_disabilities",
-          "oligospermia",
-          "peripheral_neuropathy",
-          "prediabetes",
-          "violent_behavior"
         ]
       }
     },
@@ -60590,32 +59124,6 @@
         ],
         "conditions": [
           "diabetes"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000119",
-      "subject": "copper",
-      "also_about": [],
-      "facet": "mechanism",
-      "question": "What does copper do in the body?",
-      "answer_short": "Wallach says copper is a universally important cofactor for hundreds of metalloenzymes, required for RNA and DNA, as the lysyl-oxidase cofactor, for melanin (hair and skin pigment), for oxygen-based cellular respiration, and for the tensile strength of elastic fibers in blood vessels, skin and spinal discs.",
-      "answer": "Wallach states copper is essential to all living organisms and is a universally important cofactor for many hundreds of metalloenzymes. Copper is required for RNA and DNA, as the lysyl-oxidase cofactor, for melanin production (hair and skin pigment), for electron transfer in oxygen-based subcellular respiration, and for the tensile strength of the elastic fibers in blood vessels, skin, and vertebral discs.",
-      "verbatim": "Copper is essential to all living organisms and is a universally important cofactor for many hundreds of metalloenzymes.",
-      "page": 315,
-      "book_id": "rare-earths",
-      "topics": [
-        "copper",
-        "metalloenzymes",
-        "lysyl-oxidase",
-        "melanin",
-        "dna",
-        "elastin",
-        "cofactor"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "copper"
         ]
       }
     },
@@ -60894,31 +59402,6 @@
         "conditions": [
           "blind_rage",
           "violent_behavior"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000130",
-      "subject": "iron",
-      "also_about": [
-        "magnesium"
-      ],
-      "facet": "mechanism",
-      "question": "What does iron do in the body?",
-      "answer_short": "Iron builds hemoglobin and myoglobin and transfers electrons so the body can use oxygen—'iron is to hemoglobin what magnesium is to chlorophyll.'",
-      "answer": "Wallach states iron is essential to all land animals (first recognized as an essential nutrient by Boussingault in the 1860s). A healthy adult holds 3 to 5 grams of iron — 60 to 70 percent functional (built into hemoglobin, the muscle oxygen-store myoglobin, and respiratory enzymes) and 30 to 40 percent stored as ferritin and hemosiderin in bone marrow and liver. Iron's functions: enzyme/metalloenzyme cofactor, the respiratory pigment hemoglobin (iron is to hemoglobin what magnesium is to chlorophyll), and electron transfer for the utilization of oxygen.",
-      "verbatim": "Functions of iron include cofactor and\nactivator of enzymes and metallo enzymes;\nrespiratory pigments (hemoglobin - iron is\nto hemoglobin what Mg is to chlorophyll)",
-      "page": 329,
-      "book_id": "rare-earths",
-      "topics": [
-        "hemoglobin",
-        "oxygen",
-        "how-iron-works"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "iron",
-          "magnesium"
         ]
       }
     },
@@ -61340,36 +59823,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000147",
-      "subject": "iodine",
-      "also_about": [
-        "goiter"
-      ],
-      "facet": "mechanism",
-      "question": "Why do some people get goiter even with high iodine intake?",
-      "answer_short": "Because goitrogens — foods that block thyroid metabolism — can override iodine: Wallach notes goiter develops in Japanese living on the sea coast despite high iodine intake, and in a feeding study every group developed goiter except the one fed seaweed (the other foods it lists — cabbage, turnips, buckwheat — are goitrogens).",
-      "answer": "Wallach observes that goiter develops in Japanese living along the sea coast despite high daily iodine intake; in a feeding study, subjects fed Chinese cabbage, turnips, buckwheat, noodles, iodine, or soybean developed goiter in every group except the one fed seaweed.",
-      "verbatim": "Goiter develops in Japanese living along the sea coast despite high daily iodine consumption.",
-      "page": 341,
-      "book_id": "rare-earths",
-      "topics": [
-        "iodine",
-        "goiter",
-        "goitrogens",
-        "seaweed",
-        "japan",
-        "feeding study"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "iodine"
-        ],
-        "conditions": [
-          "goiter"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000148",
       "subject": "iodine",
       "also_about": [
@@ -61577,31 +60030,6 @@
           "potassium",
           "sodium",
           "calcium"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000154",
-      "subject": "potassium",
-      "also_about": [],
-      "facet": "protocol",
-      "question": "How much potassium do you need each day?",
-      "answer_short": "Wallach says potassium is easily absorbed but barely stored, with about 90 percent excreted in the urine, so it needs a large daily intake of 5,000 mg.",
-      "answer": "Wallach notes potassium is easily absorbed, about 90 percent of ingested potassium is excreted in the urine, and because the body stores essentially none, it requires a significant daily intake of 5,000 mg.",
-      "verbatim": "Potassium is easily absorbed, 90 % of ingested K is excreted through the urine, there is essentially no storage of K in the human body requiring significant daily intake of 5,000 mg.",
-      "page": 344,
-      "book_id": "rare-earths",
-      "topics": [
-        "potassium",
-        "daily intake",
-        "dosage",
-        "absorption",
-        "excretion",
-        "5000 mg"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "potassium"
         ]
       }
     },
@@ -61827,54 +60255,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-RARE-000163",
-      "subject": "lithium",
-      "also_about": [
-        "depression",
-        "bipolar_disorder",
-        "hyperactivity",
-        "infertility",
-        "blind_rage",
-        "violent_behavior"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of lithium deficiency?",
-      "answer_short": "Wallach lists lithium-deficiency hallmarks: in animals reproductive failure, infertility, reduced growth, shortened lifespan and behavioral problems; in humans manic depression, depression, bipolar disorder, rages, 'Dr. Jekyll/Mr. Hyde' behavior, hyperactivity and ADD.",
-      "answer": "Wallach lists the hallmarks of lithium deficiency: in animal studies, reproductive failure, infertility, reduced growth rate, shortened life expectancy, and behavioral problems; in humans, manic depression, depression, bipolar disorder, rages, 'Dr. Jekyll/Mr. Hyde' behavior, hyperactivity, and attention-deficit disorder (ADD).",
-      "verbatim": "Animal studies show that a deficiency of lithium results in reproductive failure, infertility, reduced growth rate, shortened life expectancy and behavioral problems. In humans, manic depression, depression, “Bi-polar” disease, rages, Dr. Jekyll/Mr. Hyde behavior, hyperactivity, ADD, “Bad Seeds” are hallmarks of Li deficiency.",
-      "page": 350,
-      "book_id": "rare-earths",
-      "topics": [
-        "lithium",
-        "lithium deficiency",
-        "depression",
-        "bipolar",
-        "adhd",
-        "rage",
-        "infertility",
-        "behavior"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "lithium"
-        ],
-        "conditions": [
-          "depression",
-          "bipolar_disorder",
-          "hyperactivity",
-          "infertility",
-          "blind_rage",
-          "violent_behavior"
-        ],
-        "symptoms": [
-          "reproductive_failure",
-          "reduced_growth",
-          "shortened_lifespan",
-          "behavioral_problems"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000164",
       "subject": "lithium",
       "also_about": [],
@@ -61975,31 +60355,6 @@
         "essentials": [
           "lithium",
           "vitamin-b12"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000168",
-      "subject": "magnesium",
-      "also_about": [],
-      "facet": "basics",
-      "question": "What is magnesium and what does it do?",
-      "answer_short": "Wallach describes magnesium as essential to every living organism, with electrochemical, catalytic and structural roles — activating numerous enzymes, forming part of all chlorophylls, and totaling 20 to 28 grams in the body, mostly in bone and muscle.",
-      "answer": "Magnesium is essential to every living organism, Wallach says, filling electrochemical, catalytic, and structural roles at once: it activates numerous enzymes and is a building block of all chlorophylls, the green pigment plants use to capture sunlight. In the human body he puts total magnesium at 20 to 28 grams — roughly 60% held in bone and about a quarter in skeletal muscle — and describes it as central to producing and transferring the body's energy.",
-      "verbatim": "Magnesium is essential to all living organisms and has electrochemical, catalytic and structural functions, activates numerous enzymes and is a constituent of all chlorophylls.",
-      "page": 350,
-      "book_id": "rare-earths",
-      "topics": [
-        "magnesium",
-        "what is magnesium",
-        "enzymes",
-        "chlorophyll",
-        "body content",
-        "minerals"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "magnesium"
         ]
       }
     },
@@ -62187,60 +60542,6 @@
         "conditions": [
           "schizophrenia",
           "parkinsonism"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000176",
-      "subject": "manganese",
-      "also_about": [
-        "carpal_tunnel_syndrome",
-        "tmj",
-        "asthma",
-        "infertility",
-        "deafness",
-        "chondroitin"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of manganese deficiency?",
-      "answer_short": "Wallach lists manganese deficiency diseases including congenital ataxia, deafness, asthma, cartilage and 'slipped tendon' defects, TMJ, repetitive motion and carpal tunnel syndrome, convulsions, infertility, miscarriage, loss of libido, and stunted bone growth.",
-      "answer": "Wallach lists the deficiency diseases of manganese: congenital ataxia, deafness (malformation of the otoliths), asthma, chondromalacia, chondrodystrophy, 'slipped tendon,' defects of chondroitin sulfate metabolism (poor cartilage formation), temporomandibular joint (TMJ) problems, repetitive motion syndrome, carpal tunnel syndrome, convulsions, infertility (failure to ovulate; testicular atrophy), stillbirths or miscarriages, loss of libido in both sexes, retarded growth rate, and shortened long bones.",
-      "verbatim": "Table 11-19. Deficiency Diseases of Manganese.\nCongenital ataxia\ndeafness (malformation of otoliths)\nAsthma\nChondromalacia\nChondrodystrophy\n“Slipped Tendon”\nDefects of chondroitin sulfate metabolism (poor cartilage formation)\nTMJ\nRepetitive Motion Syndrome\nCarpal Tunnel Syndrome\nConvulsions\nInfertility (failure to ovulate; testicular atrophy)\nStill births or spontaneous abortions (miscarriages)\nLoss of libido in males and females\nRetarded growth rate\nShortened long bones",
-      "page": 352,
-      "book_id": "rare-earths",
-      "topics": [
-        "manganese",
-        "manganese deficiency",
-        "carpal tunnel",
-        "tmj",
-        "repetitive motion syndrome",
-        "infertility",
-        "convulsions",
-        "cartilage"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "manganese"
-        ],
-        "conditions": [
-          "congenital_ataxia",
-          "deafness",
-          "asthma",
-          "chondromalacia",
-          "chondrodystrophy",
-          "tmj",
-          "repetitive_motion_syndrome",
-          "carpal_tunnel_syndrome",
-          "infertility",
-          "miscarriage",
-          "low_libido"
-        ],
-        "symptoms": [
-          "slipped_tendon",
-          "convulsions",
-          "retarded_growth",
-          "shortened_long_bones",
-          "testicular_atrophy"
         ]
       }
     },
@@ -63053,33 +61354,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000205",
-      "subject": "phosphorus",
-      "also_about": [
-        "calcium"
-      ],
-      "facet": "basics",
-      "question": "How much phosphorus is in the body?",
-      "answer_short": "Wallach notes phosphorus is second only to calcium in the body, about 22 percent of total mineral content, with roughly 800 grams total and 700 grams locked in bones and teeth as calcium phosphate.",
-      "answer": "Wallach notes that phosphorus is second in abundance only to calcium in the human body, comprising 22 percent of total mineral content. The body contains roughly 800 grams of phosphorus (just under two pounds), 700 grams of it held in bones and teeth as insoluble calcium phosphate (apatite crystals); the remainder is biologically active phosphorus combined with carbohydrates, lipids, and proteins, and it forms the blood's major buffering system.",
-      "verbatim": "Second in abundance only to calcium in the human body, it comprises 22 percent of the bodies total mineral content. The human body contains about 800 grams of P (just short of two pounds) of which 700 grams is found in bones and teeth as insoluble calcium phosphate (apatite crystals).",
-      "page": 373,
-      "book_id": "rare-earths",
-      "topics": [
-        "phosphorus",
-        "calcium",
-        "bones",
-        "teeth",
-        "body content",
-        "apatite"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "phosphorus"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000206",
       "subject": "phosphorus",
       "also_about": [
@@ -63112,31 +61386,6 @@
         ],
         "symptoms": [
           "loose_teeth"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000207",
-      "subject": "phosphorus",
-      "also_about": [],
-      "facet": "sources",
-      "question": "How well is phosphorus absorbed?",
-      "answer_short": "Wallach gives average adult phosphorus intake as 1,000–1,500 mg a day, with absorption ranging from 3–5 percent for metallic phosphorus up to 98 percent for colloidal, and best absorption at a 1:1 calcium-to-phosphorus ratio.",
-      "answer": "Wallach gives the average adult dietary phosphorus intake as 1,000–1,500 mg per day. Absorption depends heavily on form: metallic phosphorus is absorbed at only about 3–5 percent in adults (up to 8–12 percent in infants), chelated forms at 40–50 percent, and colloidal phosphorus up to 98 percent — and optimal absorption of metallic and chelated phosphorus occurs at a calcium-to-phosphorus ratio of 1:1.",
-      "verbatim": "The average adult human dietary intake of P is 1,000 to 1,500 mg/day. In adults and older children, the absorption of metallic P is limited to about three to five percent and as high as eight to 12 percent in infants. Mixed dietary sources of P (chelated forms) may be absorbed at the rate of 40 to 50 %. Optimal absorption of metallic and chelated P occurs when the Ca:P ratio is 1:1. Colloidal P is absorbed up to 98 %.",
-      "page": 373,
-      "book_id": "rare-earths",
-      "topics": [
-        "phosphorus",
-        "absorption",
-        "colloidal",
-        "chelated",
-        "bioavailability",
-        "daily intake"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "phosphorus"
         ]
       }
     },
@@ -63192,33 +61441,6 @@
         ],
         "conditions": [
           "hypophosphatemia"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000210",
-      "subject": "phosphorus",
-      "also_about": [],
-      "facet": "warning",
-      "question": "Do vegetarians get enough phosphorus?",
-      "answer_short": "Wallach observes vegetarians and vegans who don't supplement rarely lack phosphorus, but their high phytic acid intake always leaves them short of other minerals like calcium, copper, chromium, vanadium, lithium, and zinc.",
-      "answer": "Wallach observes that vegetarians and vegans who do not supplement with minerals rarely show phosphorus deficiency — but because of their high phytic acid intake they always carry other mineral deficiencies, including calcium, copper, chromium, vanadium, lithium, and zinc.",
-      "verbatim": "Vegetarians and vegans who do not supplement with minerals rarely have P deficiency, however, because of their high phytic acid intake they always have other mineral deficiencies including Ca, Cu, Cr, V. Li and Zn.",
-      "page": 373,
-      "book_id": "rare-earths",
-      "topics": [
-        "phosphorus",
-        "vegetarian",
-        "vegan",
-        "phytic acid",
-        "mineral deficiency",
-        "zinc",
-        "copper",
-        "calcium"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "phosphorus"
         ]
       }
     },
@@ -63437,34 +61659,6 @@
         "carcinogen",
         "radioactive"
       ]
-    },
-    {
-      "id": "WAL-CLM-RARE-000219",
-      "subject": "sulfur",
-      "also_about": [
-        "methionine"
-      ],
-      "facet": "basics",
-      "question": "What does sulfur do in the body?",
-      "answer_short": "Wallach explains sulfur is an important structural atom in most proteins — present as the sulfur amino acids cystine, cysteine, and methionine — and that glutathione, a cysteine-containing tripeptide, is essential to cellular reactions involving these sulfur amino acids.",
-      "answer": "Wallach explains that sulfur is an important structural atom in most proteins, present as the sulfur amino acids cystine, cysteine, and methionine and in small organic molecules; glutathione, a tripeptide containing cysteine, is essential to cellular reactions involving these sulfur amino acids in protein.",
-      "verbatim": "Glutathione, a\ntripeptide containing cysteine, is essential\nto cellular reactions involving sulfur amino\nacids in protein.",
-      "page": 376,
-      "book_id": "rare-earths",
-      "topics": [
-        "sulfur",
-        "protein",
-        "amino acids",
-        "cysteine",
-        "cystine",
-        "methionine",
-        "glutathione"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "sulfur"
-        ]
-      }
     },
     {
       "id": "WAL-CLM-RARE-000220",
@@ -64101,52 +62295,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000237",
-      "subject": "vitamin-b6",
-      "also_about": [
-        "depression",
-        "seborrheic_dermatitis",
-        "peripheral_neuropathy",
-        "tourette_syndrome"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of vitamin B6 deficiency?",
-      "answer_short": "Wallach lists depression, nausea, vomiting, seborrheic dermatitis, mucous-membrane lesions, peripheral neuritis, unsteadiness (ataxia), hyperirritability, head tic (Tourette's syndrome), and convulsions.",
-      "answer": "Wallach lists the common diseases of vitamin B6 (pyridoxine) deficiency: depression, nausea, vomiting, seborrheic dermatitis, mucous-membrane lesions and peripheral neuritis (nerve inflammation), unsteadiness (ataxia), hyperirritability, head tic (Tourette's syndrome), and convulsions.",
-      "verbatim": "Depression, nausea, vomiting, seborrheic dermatitis, mucus\nmembrane lesions and peripheral neuritis, ataxia (instability),\nhyperirritability, head tic (Tourette's syndrome), convulsions.",
-      "page": 295,
-      "book_id": "rare-earths",
-      "topics": [
-        "vitamin b6",
-        "pyridoxine",
-        "b6 deficiency",
-        "depression",
-        "nausea",
-        "vomiting",
-        "tourette's syndrome",
-        "convulsions"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "vitamin-b6"
-        ],
-        "conditions": [
-          "depression",
-          "seborrheic_dermatitis",
-          "peripheral_neuropathy",
-          "hyperirritability",
-          "tourette_syndrome",
-          "dermatitis"
-        ],
-        "symptoms": [
-          "nausea",
-          "vomiting",
-          "ataxia",
-          "convulsions"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000238",
       "subject": "vitamin-b12",
       "also_about": [
@@ -64257,93 +62405,6 @@
           "gray_hair",
           "white_hair",
           "paresthesia"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000241",
-      "subject": "vitamin-c",
-      "also_about": [
-        "scurvy",
-        "anemia",
-        "cancer"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of vitamin C deficiency?",
-      "answer_short": "A vitamin C shortage causes scurvy — bleeding gums, loosened teeth, and skin hemorrhages — plus anemia, poor appetite and growth, swollen wrist and ankle joints, rib and cartilage fractures, and a high risk of infection and cancer.",
-      "answer": "Wallach's vitamin table spells out what a vitamin C (ascorbic acid) shortage does to the body, and the classic picture is scurvy: bleeding gums, loosened teeth, and skin hemorrhages, together with anemia, poor appetite and growth, swollen wrist and ankle joints, and even rib and cartilage fractures. He also flags a high risk of both infection and cancer when vitamin C runs low — reflecting its central role in immunity and in holding connective tissue together.",
-      "verbatim": "Vitamin C (Ascorbic acid)\nScurvy, bleeding gums, anemia, poor appetite, poor growth, high risk for infection, high risk for cancer, loosened teeth, skin hemorrhages, swollen wrist and ankle joints, rib/cartilage fractures.",
-      "page": 296,
-      "book_id": "rare-earths",
-      "topics": [
-        "vitamin c",
-        "ascorbic acid",
-        "scurvy",
-        "bleeding gums",
-        "loose teeth",
-        "anemia",
-        "cancer",
-        "infection"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "vitamin-c"
-        ],
-        "conditions": [
-          "scurvy",
-          "anemia",
-          "cancer"
-        ],
-        "symptoms": [
-          "bleeding_gums",
-          "poor_appetite",
-          "poor_growth",
-          "loose_teeth",
-          "skin_hemorrhages"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000242",
-      "subject": "choline",
-      "also_about": [
-        "fatty_liver",
-        "alzheimers",
-        "huntingtons_disease",
-        "tardive_dyskinesia",
-        "dementia",
-        "liver_disease"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of choline deficiency?",
-      "answer_short": "Wallach lists the signs of choline deficiency as fatty liver, kidney hemorrhage, Alzheimer's disease, tardive dyskinesia and Huntington's disease, and says treatment can require high doses on the order of 20 grams a day.",
-      "answer": "From his vitamin table, Wallach lists the consequences of a choline deficiency: a fatty liver, kidney hemorrhage, and a striking set of brain and movement disorders — Alzheimer's disease, tardive dyskinesia, and Huntington's disease. He notes the therapeutic dose runs high, on the order of 20 grams a day, reflecting his view that large amounts of choline can help manage these neurological conditions.",
-      "verbatim": "Choline\nFatty liver, kidney hemorrhage, Alzheimer’s disease, tardive dyskinesia, Huntington's disease (treatment requires 20 G per day).",
-      "page": 296,
-      "book_id": "rare-earths",
-      "topics": [
-        "choline",
-        "fatty liver",
-        "kidney hemorrhage",
-        "alzheimer's",
-        "tardive dyskinesia",
-        "huntington's disease",
-        "dementia"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "choline"
-        ],
-        "conditions": [
-          "fatty_liver",
-          "alzheimers",
-          "tardive_dyskinesia",
-          "huntingtons_disease",
-          "dementia",
-          "liver_disease"
-        ],
-        "symptoms": [
-          "kidney_hemorrhage"
         ]
       }
     },
@@ -64695,52 +62756,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000257",
-      "subject": "vanadium",
-      "also_about": [
-        "diabetes",
-        "obesity",
-        "cardiovascular_disease",
-        "high_cholesterol",
-        "high_triglycerides",
-        "hypoglycemia",
-        "hyperinsulinemia",
-        "infertility"
-      ],
-      "facet": "physiology",
-      "question": "What health problems does vanadium deficiency cause?",
-      "answer_short": "Wallach links vanadium deficiency to slow growth, increased infant mortality, infertility, high cholesterol and triglycerides, hypoglycemia, hyperinsulinemia, diabetes, cardiovascular disease, and obesity.",
-      "answer": "Wallach lists the clinical diseases associated with vanadium deficiency: slow growth, increased infant mortality, infertility, elevated cholesterol, elevated triglycerides, hypoglycemia, hyperinsulinemia, diabetes, cardiovascular disease, and obesity.",
-      "verbatim": "Clinical diseases associated with Vanadium deficiency include:\nSlow growth\nIncreased infant mortality\nInfertility\nElevated cholesterol\nElevated triglycerides\nHypoglycemia\nHyperinsulinemia\nDiabetes\nCardiovascular disease\nObesity",
-      "page": 412,
-      "book_id": "rare-earths",
-      "topics": [
-        "vanadium",
-        "deficiency",
-        "diabetes",
-        "blood sugar",
-        "obesity",
-        "cholesterol",
-        "triglycerides",
-        "heart disease"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "vanadium"
-        ],
-        "conditions": [
-          "infertility",
-          "high_cholesterol",
-          "high_triglycerides",
-          "hypoglycemia",
-          "hyperinsulinemia",
-          "diabetes",
-          "cardiovascular_disease",
-          "obesity"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000258",
       "subject": "xenon",
       "also_about": [
@@ -64812,117 +62827,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000261",
-      "subject": "ytterbium",
-      "also_about": [
-        "yttrium"
-      ],
-      "facet": "physiology",
-      "question": "Does ytterbium cross the placenta?",
-      "answer_short": "Yes -- Wallach reports ytterbium rapidly crosses the placenta, with 14% of an ingested amount detectable in newborn mice.",
-      "answer": "Wallach reports that ytterbium readily crosses the placenta — exposure of pregnant mice leads to rapid placental transfer, with 14 percent of ingested ytterbium detectable in the newborn mice.",
-      "verbatim": "Exposure of pregnant mice leads to rapid placental transfer, 14% of ingested Yb can be detected in newborn mice.",
-      "page": 413,
-      "book_id": "rare-earths",
-      "topics": [
-        "ytterbium",
-        "placenta",
-        "pregnancy",
-        "placental transfer",
-        "newborn",
-        "mice",
-        "rare earth"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "ytterbium"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000262",
-      "subject": "zinc",
-      "also_about": [
-        "birth_defects",
-        "down_syndrome",
-        "cleft_lip",
-        "cleft_palate",
-        "spina_bifida",
-        "heart_defects"
-      ],
-      "facet": "physiology",
-      "question": "What birth defects are linked to zinc deficiency?",
-      "answer_short": "Wallach links zinc deficiency to congenital birth defects including Down's syndrome, cleft lip and palate, spina bifida, heart and lung defects, clubbed limbs, and webbed fingers and toes.",
-      "answer": "Wallach lists the congenital birth defects associated with zinc deficiency: Down's Syndrome, cleft lip, cleft palate, brain defects (dorsal herniation, hydroencephalocele), micro- or anophthalmia (small or absent eyes), micro- or agnathia (small or absent jaw), spina bifida, clubbed limbs, syndactyly (webbed toes and fingers), diaphragmatic (hiatal) hernias, umbilical hernias, heart defects, lung defects, and urogenital defects.",
-      "verbatim": "Table 11-24. Congenital Birth defects associated with Zinc Deficiency.\nDown’s Syndrome\nCleft lip\nCleft palate\nBrain defects (dorsal herniation, hydroencephalocele)\nMicro- or anophthalmia (small or absent eyes)\nMicro- or agnathia\nSpina bifida\nclubbed limbs\nSyndactyly (webbed toes and fingers)\nDiaphragmatic hernias (hiatal hernia)\nUmbilical hernias\nHeart defects\nlung defects\nUrogenital",
-      "page": 413,
-      "book_id": "rare-earths",
-      "topics": [
-        "zinc deficiency",
-        "birth defects",
-        "congenital defects",
-        "down syndrome",
-        "cleft lip",
-        "cleft palate",
-        "spina bifida",
-        "heart defects"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "zinc"
-        ],
-        "conditions": [
-          "birth_defects",
-          "down_syndrome",
-          "cleft_lip",
-          "cleft_palate",
-          "spina_bifida",
-          "heart_defects"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000263",
-      "subject": "zinc",
-      "also_about": [
-        "anosmia",
-        "ageusia",
-        "infertility",
-        "hypogonadism",
-        "anemia"
-      ],
-      "facet": "physiology",
-      "question": "What are the signs of zinc deficiency?",
-      "answer_short": "Wallach lists zinc-deficiency signs such as pica (eating non-food substances), loss of smell and taste, infertility, poor wound healing, immune failure, stunted growth, hypogonadism, and anemia.",
-      "answer": "Wallach lists the symptoms and diseases of zinc deficiency (part 1 of 2): pica (the eating of non-food substances — geophagia/earth-eating, wool eating, hair eating), loss of the sense of smell, loss of the sense of taste, infertility, failure of wounds and ulcers to heal, immune-status failure, poor growth (short stature), high infant mortality, hypogonadism (small, poorly functioning ovaries and testes), remaining in a prepuberty state, and anemia.",
-      "verbatim": "Table 11-25. Symptoms and Diseases of Zinc Deficiency\nPica (geophagia, wool eating, hair eating, etc.)\nLoss of sense of smell\nLoss of sense of taste\nInfertility\nFailure of wounds and ulcers to heal\nImmune status failure\nPoor growth (short stature)\nHigh infant mortality\nHypogonadism (small poorly functioning ovaries and testes)\nRemains in a prepuberty state\nAnemia",
-      "page": 417,
-      "book_id": "rare-earths",
-      "topics": [
-        "zinc deficiency",
-        "low zinc",
-        "loss of smell",
-        "loss of taste",
-        "infertility",
-        "poor wound healing",
-        "stunted growth",
-        "anemia",
-        "pica"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "zinc"
-        ],
-        "conditions": [
-          "anosmia",
-          "ageusia",
-          "infertility",
-          "hypogonadism",
-          "anemia"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000264",
       "subject": "zinc",
       "also_about": [
@@ -64989,56 +62893,6 @@
         "alkaline phosphatase",
         "rna polymerase",
         "enzyme cofactor"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "zinc"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000266",
-      "subject": "zinc",
-      "also_about": [],
-      "facet": "physiology",
-      "question": "How much zinc is in the human body?",
-      "answer_short": "Wallach reports the adult body holds 1.4 to 2.3 grams of zinc, with the largest reserves in the liver, pancreas, kidney, bone, and skeletal muscles.",
-      "answer": "Wallach reports that the adult human body contains 1.4 to 2.3 grams of zinc, with the greatest reserves in the liver, pancreas, kidney, bone, and skeletal muscles, and lesser amounts in the eye, prostate gland, semen, skin, hair, fingernails, and toenails.",
-      "verbatim": "There is 1.4 to 2.3 grams of Zn in the adult human. The liver, pancreas, kidney, bone and skeletal muscles have the greatest reserves of Zn, lesser amounts are found in the eye, prostate gland, semen, skin, hair, fingernails and toenails.",
-      "page": 418,
-      "book_id": "rare-earths",
-      "topics": [
-        "zinc",
-        "body zinc content",
-        "zinc reserves",
-        "zinc distribution",
-        "liver",
-        "pancreas",
-        "kidney"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "zinc"
-        ]
-      }
-    },
-    {
-      "id": "WAL-CLM-RARE-000267",
-      "subject": "zinc",
-      "also_about": [],
-      "facet": "history",
-      "question": "When was zinc discovered to be essential for humans?",
-      "answer_short": "Wallach notes zinc was known to be essential for bread mold 100 years ago and for rats 50 years ago, but recognized as essential for humans only about 20 years ago.",
-      "answer": "Wallach notes the late recognition of zinc's essentiality: it was known to be essential for bread mold 100 years ago, for rats 50 years ago, and for humans only 20 years ago.",
-      "verbatim": "Zinc was known to be essential for bread mold 100 years ago, essential for rats 50 years ago and for humans only 20 years ago.",
-      "page": 417,
-      "book_id": "rare-earths",
-      "topics": [
-        "zinc",
-        "essential mineral",
-        "history of zinc",
-        "essentiality",
-        "discovery"
       ],
       "tier1_link": {
         "essentials": [
@@ -65699,31 +63553,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000290",
-      "subject": "gadolinium",
-      "also_about": [],
-      "facet": "basics",
-      "question": "What is gadolinium?",
-      "answer_short": "Wallach catalogs gadolinium as a rare-earth metal found in rocks and plants that land animals accumulate in bone and liver very quickly after absorption; he records no specific deficiency disease for it.",
-      "answer": "In Rare Earths: Forbidden Cures, Wallach catalogs gadolinium -- a rare-earth metal -- in his periodic-table survey. His entry records its natural distribution (5.4 parts-per-million in igneous rocks down to trace levels, up to 70 parts-per-million in land plants) and notes that land animals accumulate gadolinium in bone and liver very quickly after absorption. He records no specific deficiency disease here; the value is completeness -- this is gadolinium's second sourced appearance alongside the Epigenetics catalog, confirming Wallach counts it among the rare-earth minerals taken up by living tissue.",
-      "verbatim": "Gd - Gadolinium, a Rare Earth, is found\nin igneous rocks at 5.4 ppm; shales at 4.3\nppm; sandstones at 2.6 ppm; limestones at\n0.7 ppm; land plants at up to 70 ppm by\nCarya spp.; marine animals at 0.06 ppm;\nland animals accumulate gadolinium in bone\nand liver very quickly after absorption.",
-      "page": null,
-      "book_id": "rare-earths",
-      "topics": [
-        "gadolinium",
-        "rare earth",
-        "minerals",
-        "distribution",
-        "bone",
-        "liver"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "gadolinium"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000291",
       "subject": "hafnium",
       "also_about": [],
@@ -66143,34 +63972,6 @@
       }
     },
     {
-      "id": "WAL-CLM-RARE-000309",
-      "subject": "cardiomyopathy",
-      "also_about": [
-        "selenium"
-      ],
-      "facet": "stance",
-      "question": "What causes cardiomyopathy?",
-      "answer_short": "Cardiomyopathy is Keshan disease — a selenium-deficiency muscular dystrophy of the heart, WHO-recognized and, Wallach says, preventable with pennies of selenium.",
-      "answer": "Wallach attributes cardiomyopathy to selenium deficiency. He identifies it as Keshan disease, a muscular dystrophy of the heart muscle \"recognized by the WHO as a selenium deficiency disease\" — the same condition called \"mulberry heart disease\" in pigs and \"white muscle disease\" in cattle, sheep and horses, which veterinarians eliminate with selenium injections and supplemented feed. Because selenium protects heart-muscle cell membranes from oxidative destruction, its lack lets the heart muscle degenerate; he notes the disease is especially common in young athletes and that roughly $1/month of selenium would prevent it and the supposed \"need\" for a $250,000 heart transplant.",
-      "verbatim": "Table 7-8. Common Degenerative Diseases of Humans and Their Cause.\nOsteoporosis: Ca, Mg, B, Cu, S\nArthritis (Ankylosing spondylitis): Ca, Mg, B, Cu, S\nHypertension: Ca, Mg, B\nBone spurs, heel spurs, Ca deposits: Ca, Mg, B\nCancer: Se\nDiabetes: Cr, Va, Zn\nAneurysms: Cu\nCardiomyopathy: Se\nCataracts: Se\nDeafness: Sn",
-      "page": 169,
-      "book_id": "rare-earths",
-      "topics": [
-        "cardiomyopathy",
-        "selenium",
-        "deficiency",
-        "heart muscle"
-      ],
-      "tier1_link": {
-        "essentials": [
-          "selenium"
-        ],
-        "conditions": [
-          "cardiomyopathy"
-        ]
-      }
-    },
-    {
       "id": "WAL-CLM-RARE-000310",
       "subject": "cataracts",
       "also_about": [
@@ -66431,29 +64232,6 @@
       ]
     },
     {
-      "id": "WAL-CLM-RARE-000321",
-      "subject": "selenium",
-      "also_about": [
-        "free_radicals",
-        "antioxidants",
-        "longevity"
-      ],
-      "facet": "physiology",
-      "question": "What causes age spots and liver spots?",
-      "answer_short": "According to Wallach, those brown “age spots” or “liver spots” are literally rancid fat — a peroxidized lipid called ceroid lipofuscin — surfacing because selenium is too low to keep body fats from oxidizing. He calls their appearance in older adults an early sign of selenium deficiency.",
-      "answer": "It's the same oxidation Wallach blames for cellular aging, made visible on the skin. When selenium — the body's main defense against fats going rancid — falls short, lipids peroxidize and leave behind a brown-gold residue called ceroid lipofuscin; on the skin that shows up as the familiar “age spots” or “liver spots.” He treats their arrival in older adults not as harmless cosmetic aging but as an early external sign of selenium deficiency — the visible cousin of the “age pigment” that builds up inside oxygen-starved, selenium-deficient cells. In his framework that makes a liver spot a warning worth heeding, not just a blemish.",
-      "verbatim": "Selenium prevents cellular and subcellular lipids and fats from being peroxidized which literally means it prevents body fats from going rancid (seen externally as “age spots” or “liver spots” - this brown gold peroxidized lipid is known as ceroid lipofuscin).",
-      "page": null,
-      "book_id": "rare-earths",
-      "topics": [
-        "age-spots",
-        "liver-spots",
-        "ceroid-lipofuscin",
-        "aging",
-        "oxidation"
-      ]
-    },
-    {
       "id": "WAL-CLM-RARE-000322",
       "subject": "selenium",
       "also_about": [
@@ -66496,51 +64274,6 @@
         "preventable",
         "livestock",
         "jerry-lewis"
-      ]
-    },
-    {
-      "id": "WAL-CLM-RARE-000324",
-      "subject": "selenium",
-      "also_about": [
-        "cancer",
-        "antioxidants"
-      ],
-      "facet": "uses",
-      "question": "Can selenium help fight cancer?",
-      "answer_short": "Wallach considers selenium one of the most important anti-cancer nutrients — citing a UCSD chemist's review that it works through several distinct mechanisms — and puts the therapeutic dose at 1,000–3,000 mcg a day.",
-      "answer": "Wallach leans on Dr. Gerhard Schrauzer, head of chemistry at UC San Diego, who reviewed selenium as “a versatile anticarcinogenic agent” whose protection can't be pinned on the glutathione-peroxidase enzyme alone. In Schrauzer's account, selenium acts as a “redox switch” that throttles the growth factors driving cell division, stimulates cellular respiration (Wallach's shorthand: “more oxygen, less cancer”), blocks tumor viruses and oncogene activation, alters how the body handles carcinogens, and shields DNA from carcinogen-induced damage. For actual use, Wallach names 1,000–3,000 mcg per day as the therapeutic range and stresses that form matters — plant-derived colloidal selenium, he says, is up to 98% absorbable. (Worth flagging: that's a therapy figure, far above his ~200 mcg daily maintenance target, not an everyday supplement dose.)",
-      "verbatim": "Selenium is increasingly recognized as a versatile anticarcinogenic agent. Its protective functions cannot be solely attributed to the action of glutathione peroxidase. Instead, selenium appears to operate by several mechanisms, depending on dosage and chemical form of selenium and the nature of the carcinogenic stress.",
-      "page": null,
-      "book_id": "rare-earths",
-      "topics": [
-        "cancer",
-        "anticarcinogen",
-        "schrauzer",
-        "therapy-dose",
-        "colloidal-selenium"
-      ]
-    },
-    {
-      "id": "WAL-CLM-RARE-000325",
-      "subject": "selenium",
-      "also_about": [
-        "cancer",
-        "cystic_fibrosis",
-        "multiple_sclerosis",
-        "muscle_strength"
-      ],
-      "facet": "big_question",
-      "question": "What diseases does Wallach link to selenium deficiency?",
-      "answer_short": "An unusually long list. Wallach ties selenium deficiency to dozens of conditions — from Keshan heart disease, muscular dystrophy, and cystic fibrosis to cancer, cataracts, and liver cirrhosis, and even Alzheimer's, ALS, and Parkinson's.",
-      "answer": "This is central to Wallach's whole thesis — that one mineral shortage surfaces as many differently-named diseases. His published selenium-deficiency lists run long: Keshan-disease cardiomyopathy and “mulberry heart,” muscular dystrophy and white muscle disease, cystic fibrosis, cancer, cataracts, liver cirrhosis, anemia, pancreatitis and pancreatic atrophy, scoliosis, myalgia and muscle weakness, infertility, low birth weight, SIDS, and clinical AIDS. He extends it to several neurodegenerative diseases — multiple sclerosis, ALS (Lou Gehrig's), Parkinson's, and Alzheimer's — noting some (ALS, Parkinson's) tend to travel with mercury poisoning and others (Alzheimer's) with high vegetable-oil intake. His point isn't that selenium is a cure-all, but that the same rancidity-and-oxidation damage, left unchecked in different tissues, ends up wearing different clinical names.",
-      "verbatim": "Selenium Deficiency Diseases.\nHIV (AIDS)\nAnemia (RBC fragility)\n“Age Spots” & “Liver Spots”\nFatigue\nMuscular weakness\nMyalgia (muscle pain and soreness)\nScoliosis\nMuscular Dystrophy (MD, White Muscle Disease, Stiff Lamb Disease)\nCystic Fibrosis (congenital)",
-      "page": null,
-      "book_id": "rare-earths",
-      "topics": [
-        "deficiency-diseases",
-        "breadth",
-        "neurodegenerative",
-        "one-deficiency-many-diseases"
       ]
     },
     {

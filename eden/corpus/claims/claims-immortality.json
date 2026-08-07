@@ -28,7 +28,13 @@
    "dose": null,
    "tags": [
     "deficiency",
-    "regional_disease"
+    "regional_disease",
+    "iodine",
+    "thyroid",
+    "goiter",
+    "goitrogens",
+    "deficiency_sign",
+    "nitrates"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -59,7 +65,11 @@
    "tags": [
     "about-wallach",
     "credentials",
-    "autopsy-evidence"
+    "autopsy-evidence",
+    "autopsies",
+    "wallach",
+    "nutritional-deficiency",
+    "nih"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -422,37 +432,6 @@
    "review_state": "draft",
    "superseded_by": null,
    "extracted_at": "2026-07-03T06:19:15+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000014",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "How many minerals does the body actually need? Wallach's starting point: more than 79 elements and minerals have been detected in human and animal tissue, and simply being present in the tissue meets the first criterion for calling a substance an 'essential nutrient.' From there, he says thousands of studies support designating 60 of those 79 as truly essential - the mineral backbone of his '90 essential nutrients' framework (60 minerals, 16 vitamins, 12 amino acids, and 3 essential fatty acids).",
-   "verbatim": "More than 79 elements and minerals have been detected\nin animal and human tissue (i.e.- blood, liver, muscle, brain,\nbones, connective tissue, etc.) in the 20th and 21st centuries. Their\npresence in human tissue fulfills the first criteria for designating\nan element or mineral an “essential nutrient.” Literally thousands\nof additional studies provide support for designating 60 of these\n79 elemental nutrients to be essential nutrients.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 84,
-    "screenshot": 55,
-    "kindle_location": null,
-    "char_offset": 152683
-   },
-   "dose": null,
-   "tags": [
-    "essential-nutrients",
-    "minerals",
-    "90-essentials"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-03T14:11:20+00:00",
    "reviewed_at": null,
    "reviewed_by": null
   },
@@ -1041,38 +1020,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000034",
-   "kind": "definition",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Does aluminum cause Alzheimer's disease? Wallach says no - and calls the scare a myth built on 'a single faulty study.' He cites the follow-up work: a 1992 study in Nature by Frank Watt and colleagues at Oxford, using a highly accurate technique, found the same aluminum levels in the brains of non-Alzheimer's controls as in Alzheimer's patients; a 1997 Berkeley newsletter and a 2007 German Federal Institute for Risk Assessment opinion both concluded there is no proven link between dietary aluminum and Alzheimer's.",
-   "verbatim": "A single faulty study over 35 years ago suggested a link\nbetween chronic aluminum exposure and Alzheimer’s disease.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 97,
-    "screenshot": 61,
-    "kindle_location": null,
-    "char_offset": 175619
-   },
-   "dose": null,
-   "tags": [
-    "aluminum",
-    "alzheimers",
-    "is-x-good-bad",
-    "wallach-stance"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-03T15:34:14+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000035",
    "kind": "definition",
    "essentials": [],
@@ -1290,7 +1237,15 @@
    "dose": null,
    "tags": [
     "boron",
-    "essential-mineral"
+    "essential-mineral",
+    "definition",
+    "minerals",
+    "bone-metabolism",
+    "calcium-magnesium",
+    "endocrine",
+    "estradiol",
+    "testosterone",
+    "essential-1990"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -1364,40 +1319,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000045",
-   "kind": "definition",
-   "essentials": [
-    "beryllium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Beryllium is on Wallach's list of essential minerals, but it is one of the thin ones - in this book he assigns it no specific positive role in the body, offering mostly geology and history (it heads the 'alkaline-earth' metal family, alongside calcium and magnesium). What he does flag is a hazard: breathing beryllium-oxide dust, a mining and industrial contaminant, can cause berylliosis, a painful and sometimes fatal lung disease.",
-   "verbatim": "Inhalation of beryllium oxide dust (mining and\nindustrial contaminants) can lead to “berylliosis,” a painful\nand sometimes fatal lung disease.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 105,
-    "screenshot": 65,
-    "kindle_location": null,
-    "char_offset": 191378
-   },
-   "dose": null,
-   "tags": [
-    "beryllium",
-    "essential-mineral",
-    "toxicity",
-    "berylliosis"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-03T16:40:16+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000046",
    "kind": "definition",
    "essentials": [],
@@ -1423,38 +1344,6 @@
     "bismuth",
     "peptic-ulcers",
     "h-pylori"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-03T16:40:16+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000047",
-   "kind": "definition",
-   "essentials": [
-    "bromine"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Bromine is a canon essential mineral in Wallach's framework and a halogen - the same chemical family as iodine. He says it works in the body in its active form as brominated amino acids, and that there is strong evidence for its essentiality in both mammals and humans.",
-   "verbatim": "There is strong evidence for Bromine’s essentiality in\nmammals and humans.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 107,
-    "screenshot": 66,
-    "kindle_location": null,
-    "char_offset": 194328
-   },
-   "dose": null,
-   "tags": [
-    "bromine",
-    "essential-mineral"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -2270,7 +2159,9 @@
     "hypertension",
     "mccarron",
     "salt-sensitive",
-    "deficiency"
+    "deficiency",
+    "deficiency_sign",
+    "minerals"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -2453,40 +2344,6 @@
    "review_state": "draft",
    "superseded_by": null,
    "extracted_at": "2026-07-03T21:07:35+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000079",
-   "kind": "definition",
-   "essentials": [
-    "cobalt"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Cobalt is essential to every form of life — from blue-green algae, bacteria and fungi to plants, insects, and all the vertebrates including humans. It works as an enzyme cofactor and activator, helps \"fix\" nitrogen during amino-acid production, and — most importantly — a single cobalt atom sits at the center of vitamin B12, which is itself a cofactor and activator (the cobamide coenzymes) for several essential enzymes.",
-   "verbatim": "Cobalt is essential for all forms of life including blue-green algae, some bacteria and fungi, some plants, insects,\nbirds, reptiles, amphibians and mammals including man.\nCobalt functions as a cofactor and an activator for enzymes,\n“fixes” nitrogen during amino acid production, and a single\ncobalt atom is the central metal component of vitamin B12,\nwhich itself is a cofactor and activator (cobamide coenzymes)\nfor several essential enzymes.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 126,
-    "screenshot": 76,
-    "kindle_location": null,
-    "char_offset": 227834
-   },
-   "dose": null,
-   "tags": [
-    "cobalt",
-    "vitamin-b12",
-    "essential-mineral",
-    "enzyme-cofactor"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-03T21:44:57+00:00",
    "reviewed_at": null,
    "reviewed_by": null
   },
@@ -2763,40 +2620,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000087",
-   "kind": "definition",
-   "essentials": [
-    "chromium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Chromium is a small but metabolically busy trace mineral. Wallach says it activates the enzyme phosphoglucomutase and others, and — most importantly — it is the working core of glucose tolerance factor (GTF), the compound that lets insulin do its job of controlling blood sugar. GTF is a complex of chromium in its trivalent (chromium-III) form, dinicotinic acid (a niacin / vitamin-B3 derivative), and glutathione (the body's main built-in antioxidant). The whole body holds only about 1.5 mg of chromium, and because hair concentrates it roughly ten times higher than blood does, hair analysis gives a more accurate read on tissue stores than a blood test.",
-   "verbatim": "Chromium activates phosphoglucomutase and other\nenzymes and is closely associated with glucose tolerance factor\n(GTF). Glucose tolerance factor is a combination of chromium\nIII, dinicotinic acid and glutathione.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 130,
-    "screenshot": 78,
-    "kindle_location": null,
-    "char_offset": 235933
-   },
-   "dose": null,
-   "tags": [
-    "chromium",
-    "glucose-tolerance-factor",
-    "gtf",
-    "essentiality"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-04T08:43:32+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000088",
    "kind": "deficiency_sign",
    "essentials": [
@@ -2847,7 +2670,11 @@
     "deficiency",
     "deficiency-table",
     "deficiency_sign",
-    "blood-sugar"
+    "blood-sugar",
+    "diabetes",
+    "insulin",
+    "glucose-tolerance-factor",
+    "gtf"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -3251,7 +3078,13 @@
     "copper",
     "deficiency",
     "deficiency-table",
-    "deficiency_sign"
+    "deficiency_sign",
+    "aneurysm",
+    "gray-hair",
+    "anemia",
+    "arthritis",
+    "copper-deficiency",
+    "cerebral-palsy"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -3285,7 +3118,11 @@
     "copper",
     "lysyl-oxidase",
     "melanin",
-    "functions"
+    "functions",
+    "mechanism",
+    "elastin",
+    "metalloenzymes",
+    "cofactor"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -4303,40 +4140,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000130",
-   "kind": "definition",
-   "essentials": [
-    "iron"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "What causes iron deficiency in the first place. Wallach lists the drivers: an unsupplemented pregnancy; painful menstruation (dysmenorrhea); chronic infections; low stomach acid (hypochlorhydria, e.g. from a salt-restricted diet); chronic diarrhea; ongoing blood loss (from cancer, ulcers, parasites, blood-thinning drugs, or other nutritional deficiencies); and poor absorption (from high-fat or high-fiber diets, or celiac disease).",
-   "verbatim": "Iron deficiency can be the result of unsupplemented\npregnancy, dysmenorrhea, chronic infections, hypochlorhydria\n(low stomach acid from a salt-restricted diet), chronic diarrhea,\nchronic bleeding (i.e. cancer, ulcers, parasites, blood thinners,\nnutritional deficiencies, etc.) and impaired absorption (i.e.\nhigh fat diets, high fiber diets, celiac disease, etc.).",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 144,
-    "screenshot": 85,
-    "kindle_location": null,
-    "char_offset": 259717
-   },
-   "dose": null,
-   "tags": [
-    "iron",
-    "deficiency",
-    "causes",
-    "etiology"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-04T11:20:13+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000131",
    "kind": "deficiency_sign",
    "essentials": [
@@ -4367,7 +4170,10 @@
     "iron",
     "deficiency",
     "symptoms",
-    "anemia"
+    "anemia",
+    "deficiency_sign",
+    "pica",
+    "iron-deficiency"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -4616,7 +4422,9 @@
     "germanium",
     "history",
     "semiconductor",
-    "about"
+    "about",
+    "definition",
+    "basics"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -4795,72 +4603,6 @@
     "germanium",
     "immune",
     "mechanism"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-04T13:07:59+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000144",
-   "kind": "definition",
-   "essentials": [
-    "germanium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Ge-132 — the organic germanium supplement. In 1967 Dr. Asai created Ge-132 (carboxyethyl germanium sesquioxide) through a hydrolysis reaction. As an organic, chelated form of germanium, Ge-132 is absorbed at 30% efficiency, and the entire intake is completely excreted within one week.",
-   "verbatim": "Asai synthesized Ge-132, carboxyethyl germanium\nsesquioxide, in 1967 by a hydrolysis reaction. This organic\ngermanium structure forms a cubic structure with three\nnegative oxygen ions at the base of a cubic triangle. As an\norganic or chelated form of germanium, Ge-132 is absorbed\nat the rate of 30% efficiency and the total intake is completely\nexcreted in one week.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 147,
-    "screenshot": 86,
-    "kindle_location": null,
-    "char_offset": 265674
-   },
-   "dose": null,
-   "tags": [
-    "germanium",
-    "ge-132",
-    "supplement-form"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-04T13:07:59+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000145",
-   "kind": "food_source",
-   "essentials": [
-    "germanium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Where to get germanium in food. Everyday foods carry small amounts (beans ~4.67 ppm, tuna ~2.3 ppm), but germanium-rich 'healing herbs' carry far more — 100 to 2,000 ppm — including garlic, aloe, comfrey, chlorella, ginseng, watercress, Shiitake mushroom, pearl barley, sanzukon, sushi, waternut, boxthorn seed and wisteria knob.",
-   "verbatim": "Food plants and animals contain small amounts of\ngermanium (i.e. beans - 4.67 ppm, tuna - 2.3 ppm). Healing\nherbs such as garlic, aloe, comfrey, chlorella, ginseng,\nwatercress, Shiitake mushroom, pearl barley, sanzukon,\nsushi, waternut, boxthorn seed and wisteria knob contain\ngermanium in amounts ranging from 100 to 2,000 ppm.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 147,
-    "screenshot": 86,
-    "kindle_location": null,
-    "char_offset": 266043
-   },
-   "dose": null,
-   "tags": [
-    "germanium",
-    "food-source",
-    "herbs"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -5447,37 +5189,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000163",
-   "kind": "mechanism",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Methyl mercury, fish, and the unborn. In fish, mercury occurs as methyl mercury. Wallach gives typical body levels: people who rarely eat fish carry 2-5 micrograms per kilogram (µg/kg), moderate fish-eaters 10 µg/kg, and heavy consumers — especially of shark, tuna or swordfish — up to 400 µg/kg. Methyl mercury is dangerously persistent: its biological half-life in humans is about 70 days, versus only 4 days for inorganic mercury. And while the placenta blocks inorganic mercury, it does NOT block methyl mercury — which crosses easily into the fetus, causing the 'congenital' form of Minamata disease seen in Japanese infants.",
-   "verbatim": "Mercury in fish is present as methyl mercury. People\nwho rarely eat fish have low levels of mercury (2-5ug/kg);\nmoderate fish consumers have 10 ug/kg; high fish consumers\n(especially if they eat shark, tuna, or swordfish) have higher\nvalues ranging up to 400 ug/kg.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 155,
-    "screenshot": 90,
-    "kindle_location": null,
-    "char_offset": 281890
-   },
-   "dose": null,
-   "tags": [
-    "mercury",
-    "methylmercury",
-    "fish"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-04T15:15:27+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000164",
    "kind": "interaction",
    "essentials": [
@@ -5932,39 +5643,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000178",
-   "kind": "definition",
-   "essentials": [
-    "iodine"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "How much iodine people get, lose and can safely tolerate. The average American takes in 170–250 micrograms (mcg) of elemental iodine a day. The body loses a surprising amount through sweat — up to 146 mcg a day with only moderate exercise — which can deepen a shortfall. On the safety side, Wallach notes metallic iodine is not toxic even at long-term intakes up to 2,000 mcg a day.",
-   "verbatim": "The average American takes in 170-250 mcg/day of\nelemental iodine. Humans lose considerable amounts of\niodine in their sweat - a loss, of as much as 146 mcg/day, with\nonly moderate exercise. Metallic iodine is not toxic with long\nterm intakes of up to 2,000 mcg/day.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 159,
-    "screenshot": 92,
-    "kindle_location": null,
-    "char_offset": 290008
-   },
-   "dose": null,
-   "tags": [
-    "iodine",
-    "intake",
-    "toxicity"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-04T22:57:48+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000179",
    "kind": "mechanism",
    "essentials": [
@@ -5991,7 +5669,10 @@
     "iodine",
     "goiter",
     "goitrogens",
-    "study"
+    "study",
+    "mechanism",
+    "thyroid",
+    "seaweed"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -6441,40 +6122,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000192",
-   "kind": "mechanism",
-   "essentials": [
-    "potassium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "What potassium does in the body. It is essential to all organisms and the major cation (positively charged mineral) inside the cell, driving a wide range of electrochemical and enzyme functions. Potassium makes up 5% of the body's total mineral content and is the main mineral of the intracellular fluid (the fluid inside cells). Working with sodium — the other main 'electrolyte' — it maintains normal water balance, osmotic equilibrium (fluid balance across cell membranes), and acid-base (pH) balance; and working with calcium it regulates neuromuscular activity (nerve-and-muscle signaling).",
-   "verbatim": "Potassium is essential to all organisms and is the major\ncation in cell cytoplasm with a wide variety of electrochemical\nand catalytic functions for enzyme systems. Potassium\nconstitutes five percent of the total mineral content of the\nbody. It is the major cation of the intracellular fluid and there\nis a small amount in the extracellular fluid. With sodium, the\nother “electrolyte,” potassium participates in the maintenance\nof normal water balance, osmotic equilibrium and acid-base\nbalance. Potassium participates with calcium in the regulation\nof neuromuscular activity.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 164,
-    "screenshot": 95,
-    "kindle_location": null,
-    "char_offset": 297032
-   },
-   "dose": null,
-   "tags": [
-    "potassium",
-    "electrolyte",
-    "cellular-function",
-    "essential"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-04T23:55:14+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000193",
    "kind": "dose",
    "essentials": [
@@ -6506,7 +6153,10 @@
     "potassium",
     "dose",
     "daily-intake",
-    "maintenance"
+    "maintenance",
+    "dose-table",
+    "absorption",
+    "electrolyte"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -6650,42 +6300,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000198",
-   "kind": "mechanism",
-   "essentials": [
-    "lanthanum"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "chronic_fatigue_syndrome"
-   ],
-   "symptoms": [],
-   "claim_text": "Wallach's theory linking lanthanum to chronic fatigue. The yeast Candida albicans accumulates lanthanum at 370 ppm (parts per million) per day; Wallach theorizes this is how C. albicans produces a debilitating, energy-sapping 'chronic fatigue' disease -- by 'stealing' lanthanum from its victim. He also notes lanthanum's biological potency: at just 0.32 ppm it stimulates the growth of the protozoa Blepharisma and Tetrahymena pyriformis and doubles their lifespan.",
-   "verbatim": "Notably the yeast Candida albicans accumulates\nlanthanum at the rate of 370 ppm/day. It is theorized that\nthis is how C. albicans produces a debilitating, energy sapping\n“chronic fatigue” disease, by “stealing” lanthanum from the\nvictim.\n\nThe growth of the protozoa Blepharisma and Tetrahymena\npyriformis is stimulated and their life span doubled by the\npresence of the rare earth lanthanum at concentrations of 0.32\nppm.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 166,
-    "screenshot": 96,
-    "kindle_location": null,
-    "char_offset": 299790
-   },
-   "dose": null,
-   "tags": [
-    "lanthanum",
-    "rare-earth",
-    "chronic-fatigue",
-    "candida"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-09T21:18:23+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000199",
    "kind": "dose",
    "essentials": [
@@ -6763,7 +6377,12 @@
     "bipolar",
     "adhd",
     "autism",
-    "behavior"
+    "behavior",
+    "deficiency_sign",
+    "mental-health",
+    "manic-depression",
+    "violent-behavior",
+    "sugar"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -6877,50 +6496,6 @@
    "review_state": "draft",
    "superseded_by": null,
    "extracted_at": "2026-07-09T21:18:23+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000204",
-   "kind": "deficiency_sign",
-   "essentials": [
-    "magnesium"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "asthma",
-    "anorexia",
-    "migraine",
-    "tetany",
-    "depression",
-    "vertigo",
-    "failure_to_thrive"
-   ],
-   "symptoms": [],
-   "claim_text": "Magnesium deficiency diseases. Wallach lists the conditions that flow from a magnesium deficiency: asthma, anorexia, menstrual migraines, growth failure, ECG (electrocardiogram, a heart tracing) changes, neuromuscular problems, tetany (convulsions with muscle cramping), depression, muscular weakness, tremors, and vertigo -- plus calcification of the arterial wall and 'malignant calcification' of soft tissue.",
-   "verbatim": "Magnesium Deficiency Diseases\n\nAsthma\nAnorexia\n\nMenstrual migraines\n\n\n \n\nGrowth failure\n\nECG changes\n\nNeuromuscular problems\n\nTetany (convulsions with muscle cramping)\nDepression\n\nMuscular weakness\n\nMuscle “ties”\n\nTremors\n\nVertigo\n\nCalcification of arterial media\n\n“Malignant calcification” of soft tissue",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 171,
-    "screenshot": 98,
-    "kindle_location": null,
-    "char_offset": 309038
-   },
-   "dose": null,
-   "tags": [
-    "magnesium",
-    "deficiency",
-    "asthma",
-    "migraine",
-    "tetany",
-    "depression"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-09T22:13:27+00:00",
    "reviewed_at": null,
    "reviewed_by": null
   },
@@ -7100,40 +6675,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000210",
-   "kind": "toxicity_sign",
-   "essentials": [
-    "magnesium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Magnesium's reference intake and safety ceiling. Wallach cites the RDA (Recommended Dietary Allowance) -- 350 mg/day for adult men, 300 mg/day for women, and 450 mg/day for pregnant and lactating women -- and notes that, with healthy kidneys, there is no evidence of toxicity even at supplemental doses up to 6,000 mg/day.",
-   "verbatim": "The RDA for Mg is 350 mg/day for adult males, 300\nmg/day for adult females, and 450 mg/day for pregnant and\nlactating females. If the kidneys are healthy, there is no evidence\nof toxicity at supplemental doses of up to 6,000 mg/day.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 171,
-    "screenshot": 98,
-    "kindle_location": null,
-    "char_offset": 309758
-   },
-   "dose": null,
-   "tags": [
-    "magnesium",
-    "rda",
-    "safety",
-    "toxicity-ceiling"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-09T22:13:27+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000211",
    "kind": "deficiency_sign",
    "essentials": [
@@ -7192,7 +6733,11 @@
    "dose": null,
    "tags": [
     "deficiency",
-    "regional_disease"
+    "regional_disease",
+    "selenium",
+    "keshan-disease",
+    "cardiomyopathy",
+    "deficiency_sign"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -8597,7 +8142,10 @@
     "minerals",
     "vitamins",
     "four-pieces",
-    "longevity"
+    "longevity",
+    "mechanism",
+    "diet",
+    "antioxidants"
    ],
    "confidence": "medium",
    "review_state": "draft",
@@ -8993,7 +8541,9 @@
   {
    "id": "WAL-CLM-IMMORT-000269",
    "kind": "interaction",
-   "essentials": [],
+   "essentials": [
+    "selenium"
+   ],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
@@ -9014,7 +8564,9 @@
     "mercury",
     "antidote",
     "dental-amalgam",
-    "interaction"
+    "interaction",
+    "mechanism",
+    "pregnancy"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -9086,7 +8638,12 @@
     "essential nutrient",
     "enzymes",
     "chlorophyll",
-    "definition"
+    "definition",
+    "calcium",
+    "muscle",
+    "mechanism",
+    "bones",
+    "migraine"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -10219,7 +9776,9 @@
   {
    "id": "WAL-CLM-IMMORT-000306",
    "kind": "mechanism",
-   "essentials": [],
+   "essentials": [
+    "vitamin-b12"
+   ],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
@@ -10241,7 +9800,10 @@
     "elderly",
     "stomach-acid",
     "b12-shots",
-    "mechanism"
+    "mechanism",
+    "cobalt",
+    "b-vitamins",
+    "water-soluble-vitamins"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -11416,7 +10978,10 @@
   {
    "id": "WAL-CLM-IMMORT-000344",
    "kind": "deficiency_sign",
-   "essentials": [],
+   "essentials": [
+    "vanadium",
+    "chromium"
+   ],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
@@ -11439,7 +11004,11 @@
     "sugar",
     "munchies",
     "chocolate",
-    "deficiency_sign"
+    "deficiency_sign",
+    "chromium",
+    "blood sugar",
+    "deficiency",
+    "trace minerals"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -11754,7 +11323,9 @@
   {
    "id": "WAL-CLM-IMMORT-000355",
    "kind": "definition",
-   "essentials": [],
+   "essentials": [
+    "cobalt"
+   ],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
@@ -11775,7 +11346,11 @@
     "b12",
     "trace-minerals",
     "enzymes",
-    "definition"
+    "definition",
+    "vitamin-b12",
+    "essential-mineral",
+    "enzyme-cofactor",
+    "soil-deficiency"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -11840,40 +11415,6 @@
     "b12",
     "storage",
     "supplements",
-    "mechanism"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T01:51:12+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000358",
-   "kind": "mechanism",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Wallach explains that metallic cobalt is absorbed at only 20 to 26.2%, and only if intrinsic factor is present and the stomach pH is 2.0 or less. Intrinsic factor is a mucoprotein enzyme (Castle's intrinsic factor) that is part of normal stomach secretions. When a person has hypochlorhydria - low stomach acid, usually from a NaCl (salt) deficiency - the intrinsic factor won't work and B12/cobalt is not absorbed, which is why doctors frequently give B12 shots to older people on salt-restricted diets.",
-   "verbatim": "Metallic cobalt itself is absorbed at the rate of 20 to\n26.2% by mice and in humans if intrinsic factor is present\nin the stomach and the stomach pH is 2.0 or less. Intrinsic\nfactor is a mucoprotein enzyme known as Castle’s intrinsic\nfactor and is part of normal stomach secretions. If a person\nhas hypochlorhydria (low stomach acid- usually a NaCl\ndeficiency) the intrinsic factor will not work and B12 cobalt is\nnot absorbed - this is why doctors frequently give B12 shots\nto older people on salt restricted diets.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 230075
-   },
-   "dose": null,
-   "tags": [
-    "cobalt",
-    "b12",
-    "absorption",
-    "stomach-acid",
-    "b12-shots",
     "mechanism"
    ],
    "confidence": "high",
@@ -12213,39 +11754,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000369",
-   "kind": "toxicity_sign",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "According to Wallach, molybdenum toxicity occurs at an intake of 10 mg per day. The clinical signs of toxicity appear as a gout-like disease and as interference with copper metabolism. This 10 mg toxic threshold is many times higher than the 250 mcg RDA he cites in the same passage.",
-   "verbatim": "Toxicity occurs at 10 mg per day; clinical signs\nof toxicity appear as a gout-like disease and interference with\ncopper metabolism.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 316090
-   },
-   "dose": null,
-   "tags": [
-    "molybdenum",
-    "minerals",
-    "toxicity",
-    "safety",
-    "toxicity_sign"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T01:51:12+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000370",
    "kind": "toxicity_sign",
    "essentials": [],
@@ -12554,7 +12062,9 @@
   {
    "id": "WAL-CLM-IMMORT-000380",
    "kind": "mechanism",
-   "essentials": [],
+   "essentials": [
+    "sulfur"
+   ],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
@@ -12575,7 +12085,12 @@
     "protein",
     "amino-acids",
     "biochemistry",
-    "mechanism"
+    "mechanism",
+    "cysteine",
+    "glutathione",
+    "sulfhydryl",
+    "disulfide",
+    "protein-structure"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -15157,7 +14672,9 @@
   {
    "id": "WAL-CLM-IMMORT-000456",
    "kind": "definition",
-   "essentials": [],
+   "essentials": [
+    "hafnium"
+   ],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
@@ -15179,7 +14696,10 @@
     "silvery-white metal",
     "trace mineral",
     "essential elements",
-    "zirconium twin"
+    "zirconium twin",
+    "zirconium",
+    "minerals",
+    "trace-mineral"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -15494,7 +15014,9 @@
     "lung-disease",
     "beryllium-toxicity",
     "occupational-disease",
-    "mineral-safety"
+    "mineral-safety",
+    "definition",
+    "beryllium"
    ],
    "confidence": "medium",
    "review_state": "draft",
@@ -15663,38 +15185,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000471",
-   "kind": "personal_anecdote",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "As a comparative pathologist, Dr. Joel Wallach performed more than 20,000 autopsies: over 17,500 on captive wild animals, laboratory species, and domestic animals spanning more than 454 species, plus 3,000 humans for comparison. Each autopsy included a review of the clinical records, microscopic and electron-microscopic examination of the tissues, microbiology cultures for fungi, bacteria and viruses, and chemical and biochemical profiles. This body of comparative autopsy work is the foundation Wallach cites for his nutritional framework.",
-   "verbatim": "As a comparative pathologist, I (Wallach) performed\nmore than 20,000 autopsies of over 17,500 captive wild\nanimals, laboratory species and domestic animals, of over 454\nspecies and 3,000 humans for a comparison.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 97839
-   },
-   "dose": null,
-   "tags": [
-    "twenty_thousand_autopsies",
-    "wallach",
-    "comparative-pathology",
-    "autopsies"
-   ],
-   "confidence": "medium",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-28T18:14:11+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000472",
    "kind": "personal_anecdote",
    "essentials": [],
@@ -15751,38 +15241,6 @@
     "cellular immortality",
     "aging",
     "longevity"
-   ],
-   "confidence": "medium",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-28T18:14:11+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-IMMORT-000474",
-   "kind": "mechanism",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Wallach states that a high-protein, low-carbohydrate diet is relatively forgiving of a low vitamin intake, but unforgiving of a low mineral diet — meaning that on this kind of eating plan a shortfall of minerals is far more damaging than a shortfall of vitamins.",
-   "verbatim": "A high protein, low carbohydrate diet is relatively\nforgiving of a low vitamin intake, but unforgiving of a low\nmineral diet.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 713622
-   },
-   "dose": null,
-   "tags": [
-    "low_carb_diet",
-    "high-protein",
-    "minerals",
-    "vitamins"
    ],
    "confidence": "medium",
    "review_state": "draft",

@@ -4805,16 +4805,13 @@
   },
   "mangosteen": {
     "display_name": "Mangosteen",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-IMMORT-000476"
       ],
       "food_source": [
         "WAL-CLM-HELLS-000091"
-      ],
-      "protocol": [
-        "WAL-CLM-HELLS-000090"
       ]
     },
     "conditions_treated": [],
@@ -5327,16 +5324,13 @@
   },
   "noni": {
     "display_name": "Noni",
-    "claim_count": 3,
+    "claim_count": 2,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-IMMORT-000476"
       ],
       "food_source": [
         "WAL-CLM-HELLS-000091"
-      ],
-      "protocol": [
-        "WAL-CLM-HELLS-000090"
       ]
     },
     "conditions_treated": [],
@@ -6217,12 +6211,11 @@
   },
   "pulse-test": {
     "display_name": "Pulse Test",
-    "claim_count": 12,
+    "claim_count": 11,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000209",
         "WAL-CLM-LETS-000233",
-        "WAL-CLM-LETS-000237",
         "WAL-CLM-LETS-000244",
         "WAL-CLM-LETS-000245",
         "WAL-CLM-LETS-000247",
@@ -6238,7 +6231,6 @@
       "bedwetting",
       "celiac_disease",
       "convulsions",
-      "cradle_cap",
       "deafness",
       "depression",
       "dermatitis",
@@ -6250,7 +6242,6 @@
       "food_allergy",
       "glaucoma",
       "hyperactivity",
-      "seborrheic_dermatitis",
       "weight_loss"
     ],
     "books_cited": [

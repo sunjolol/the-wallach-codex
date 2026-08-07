@@ -567,7 +567,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['foods: Ultimate Enzymes strip -- 5 tiles, every amount derived live from the product DB', foods.enzTiles === 5 && foods.enzAmounts.filter(a => /\d\s*mg/.test(a)).length === 5],
     ['foods: CTA routes to the ultimate-enzymes product page at the derived $/serving', foods.ctaProduct === 'ultimate-enzymes' && /^\$\d/.test(foods.ctaPrice)],
     ['foods: section 04 ends in the shared full-record wrap', foods.recordWrap === true],
-    ['foods: REMOVE/EAT contrast (5/6) + form strip (4) render, all topic-linked', foods.removeItems === 5 && foods.eatItems === 6 && foods.formItems === 4 && foods.itemsLinked === true],
+    ['foods: REMOVE/EAT/conditional strips render EVERY curated item (counts derived from foods-curation.json, never hardcoded), all topic-linked', (() => { const fc = require(REPO + '/dashboard/assets/data/foods-curation.json'); return foods.removeItems === fc.remove.length && foods.eatItems === fc.eat.length && foods.formItems === fc.conditional.length && foods.itemsLinked === true; })()],
     ['no page errors', errs.length === 0],
   ];
   const failed = checks.filter(([, ok]) => !ok).map(([n]) => n);

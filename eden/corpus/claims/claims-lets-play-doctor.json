@@ -309,57 +309,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-LETS-000008",
-   "kind": "deficiency_sign",
-   "essentials": [
-    "copper"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "alopecia",
-    "anemia",
-    "aneurysm",
-    "criminal_behavior",
-    "depression",
-    "dermatosis",
-    "diarrhea",
-    "arthritis",
-    "high_cholesterol",
-    "respiratory_disease",
-    "liver_cirrhosis",
-    "liver_disease",
-    "shwachman_syndrome"
-   ],
-   "symptoms": [
-    "fatigue",
-    "hemorrhage",
-    "weakness",
-    "fragile_bones"
-   ],
-   "claim_text": "Wallach lists the signs of copper deficiency: hair loss (alopecia), microcytic anemia, aneurysm and cerebral hemorrhage, criminal behavior, depression, dermatosis, diarrhea, fatigue, fragile bones and arthritis, high cholesterol, exostosis (\"lipping\" of the epiphyseal growth plates), respiratory disease, weakness with liver cirrhosis, and Shwachman's syndrome.",
-   "verbatim": "COPPER DEFICIENCY\nalopecia\nanemia (microcytic)\naneurysm / cerebral hemorrhage\ncriminal behavior\ndepression\ndermatosis\ndiarrhea\nfatigue\nfragile bones / arthritis\nhypercholesterolemia\nexostosis (\"lipping\" of epiphyseal\nplates)\nrespiratory disease\nweakness / liver cirrhosis\nShwachman's syndrome",
-   "locator": {
-    "book": "lets-play-doctor",
-    "scheme": "chapter_page",
-    "chapter": "6",
-    "page": 44,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 87121
-   },
-   "dose": null,
-   "tags": [
-    "table-6-1",
-    "deficiency-map"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-27T21:54:59+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-LETS-000009",
    "kind": "toxicity_sign",
    "essentials": [
@@ -493,7 +442,13 @@
    "dose": null,
    "tags": [
     "table-6-1",
-    "deficiency-map"
+    "deficiency-map",
+    "omega-3",
+    "omega-6",
+    "essential-fatty-acids",
+    "deficiency_sign",
+    "deficiency",
+    "eczema"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -1613,55 +1568,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-LETS-000036",
-   "kind": "deficiency_sign",
-   "essentials": [
-    "vitamin-a"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "acne",
-    "anosmia",
-    "birth_defects",
-    "alopecia",
-    "infertility",
-    "insomnia",
-    "night_blindness",
-    "xerophthalmia"
-   ],
-   "symptoms": [
-    "dry_hair",
-    "fatigue",
-    "retarded_growth",
-    "hyperkeratosis",
-    "lowered_immunity",
-    "weight_loss",
-    "dry_skin"
-   ],
-   "claim_text": "Wallach lists the signs of vitamin A deficiency: acne, anosmia (loss of smell), birth defects, dry hair and hair loss (alopecia), fatigue, growth retardation, hyperkeratosis (thickened rough skin), infections, infertility, insomnia, night blindness, weight loss, xerophthalmia (dry eyes), and xerosis (abnormally dry skin).",
-   "verbatim": "VITAMIN A DEFICIENCY\nacne\nanosmia (loss of smell)\nbirth defects\ndry hair/alopecia\nfatigue\ngrowth retardation\nhyperkeratosis\ninfections\ninfertility\ninsomnia\nnight blindness\nweight loss\nxerophthalmia\nxerosis",
-   "locator": {
-    "book": "lets-play-doctor",
-    "scheme": "chapter_page",
-    "chapter": "6",
-    "page": 49,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 92466
-   },
-   "dose": null,
-   "tags": [
-    "table-6-1",
-    "deficiency-map"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-27T22:45:52+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-LETS-000037",
    "kind": "toxicity_sign",
    "essentials": [
@@ -1831,123 +1737,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-LETS-000041",
-   "kind": "deficiency_sign",
-   "essentials": [
-    "vitamin-e"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "alopecia",
-    "dermatitis",
-    "infertility",
-    "malabsorption",
-    "muscular_dystrophy"
-   ],
-   "symptoms": [
-    "areflexia",
-    "gait_disturbance",
-    "ophthalmoplegia",
-    "proprioception_problems",
-    "rbc_fragility",
-    "vibratory_sense_dysfunction"
-   ],
-   "claim_text": "Wallach lists the signs of vitamin E deficiency: hair loss (alopecia), areflexia (absent reflexes), dermatitis, gait disturbances, infertility, malabsorption, muscular dystrophy, ophthalmoplegia (paralysis of the eye muscles), proprioception problems (impaired position sense), red blood cell (RBC) fragility, and vibratory sense dysfunction.",
-   "verbatim": "VITAMIN E DEFICIENCY\nalopecia\nareflexia\ndermatitis\ngait disturbances\ninfertility\nmalabsorption\nmuscular dystrophy\nophthalmoplegia\nproprioception problems\nRBC fragility\nvibratory sense dysfunction",
-   "locator": {
-    "book": "lets-play-doctor",
-    "scheme": "chapter_page",
-    "chapter": "6",
-    "page": 50,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 93226
-   },
-   "dose": null,
-   "tags": [
-    "table-6-1",
-    "deficiency-map"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-27T22:45:52+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-LETS-000042",
-   "kind": "deficiency_sign",
-   "essentials": [
-    "vitamin-k"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "osteoporosis"
-   ],
-   "symptoms": [
-    "prolonged_clotting_time"
-   ],
-   "claim_text": "Wallach lists the signs of vitamin K deficiency: poor (prolonged) clotting time and osteoporosis.",
-   "verbatim": "VITAMIN K DEFICIENCY\npoor clotting time\nosteoporosis.\nVANADIUM DEFICIENCY",
-   "locator": {
-    "book": "lets-play-doctor",
-    "scheme": "chapter_page",
-    "chapter": "6",
-    "page": 50,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 93422
-   },
-   "dose": null,
-   "tags": [
-    "table-6-1",
-    "deficiency-map"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-27T22:45:52+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-LETS-000043",
-   "kind": "deficiency_sign",
-   "essentials": [
-    "vanadium"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "diabetes",
-    "hypoglycemia"
-   ],
-   "symptoms": [],
-   "claim_text": "Wallach frames adult-onset (type II) diabetes as, at root, a simple mineral-deficiency disease in which vanadium — alongside chromium — is central. When dietary intake or absorption of chromium and vanadium is insufficient, blood insulin climbs, and that excess insulin in turn produces hypoglycemia, hyperinsulinemia, and pre-diabetes. So in his framework the signs of a vanadium deficiency are precisely diabetes and low blood sugar (hypoglycemia); at the everyday level the deficiency also shows up as thirst, an obsessive hunger for carbohydrates and sugar, and the 'munchies.'",
-   "verbatim": "VANADIUM DEFICIENCY\ndiabetes\nhypoglycemia\nZINC DEFICIENCY\nacne",
-   "locator": {
-    "book": "lets-play-doctor",
-    "scheme": "chapter_page",
-    "chapter": "6",
-    "page": 50,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 93476
-   },
-   "dose": null,
-   "tags": [
-    "table-6-1",
-    "deficiency-map",
-    "xref:WAL-CLM-RARE-000257"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-27T22:45:52+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-LETS-000044",
    "kind": "deficiency_sign",
    "essentials": [
@@ -1997,7 +1786,13 @@
     "table-6-1",
     "deficiency-map",
     "xref:WAL-CLM-RARE-000263",
-    "xref:WAL-CLM-RARE-000264"
+    "xref:WAL-CLM-RARE-000264",
+    "zinc",
+    "deficiency_sign",
+    "zinc deficiency",
+    "deficiency",
+    "men's health",
+    "symptoms"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -5508,7 +5303,13 @@
    "dose": null,
    "tags": [
     "materia-medica",
-    "ch10"
+    "ch10",
+    "protocol",
+    "calcium",
+    "magnesium",
+    "omega-3",
+    "essential-fatty-acids",
+    "caffeine"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -7277,7 +7078,14 @@
    "tags": [
     "materia-medica",
     "ch10",
-    "cancer"
+    "cancer",
+    "germanium",
+    "mechanism",
+    "immune",
+    "oxygen",
+    "interferon",
+    "natural-killer-cells",
+    "prevention"
    ],
    "confidence": "medium",
    "review_state": "draft",
@@ -9251,45 +9059,6 @@
     "screenshot": null,
     "kindle_location": null,
     "char_offset": 248697
-   },
-   "dose": null,
-   "tags": [
-    "materia-medica",
-    "ch10"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-28T20:25:42+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-LETS-000237",
-   "kind": "protocol",
-   "essentials": [
-    "vitamin-b6",
-    "zinc"
-   ],
-   "other_substances": [
-    "pulse-test"
-   ],
-   "conditions": [
-    "cradle_cap",
-    "seborrheic_dermatitis",
-    "dermatitis"
-   ],
-   "symptoms": [],
-   "claim_text": "Cradle cap (seborrheic dermatitis of infants) can appear as early as one month of age as a greasy, thick crust on the scalp, behind the ears, and on the face. Wallach's treatment is regular shampooing to loosen the greasy scale, vitamin B-6 at 10-25 mg per day, and zinc at 15-25 mg per day; because food allergies can contribute, do a pulse test.",
-   "verbatim": "\"CRADLE CAP\" (seborrheic dermatitis of\ninfants): can occur as early as one month of\nage in babies. Cradle cap appears as a greasy\nthick crust on the scalp, behind the ears and\nface.\nTreatment of cradle cap includes shampooing\nregularly to loosen die greasy scale, B-6 at 10-\n25 mg per day and zinc at 15-25 mg per day.",
-   "locator": {
-    "book": "lets-play-doctor",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 248835
    },
    "dose": null,
    "tags": [
@@ -16638,7 +16407,9 @@
    "dose": null,
    "tags": [
     "materia-medica",
-    "ch10"
+    "ch10",
+    "protocol",
+    "skin"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -19651,39 +19422,6 @@
    "review_state": "draft",
    "superseded_by": null,
    "extracted_at": "2026-07-27T01:51:12+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-LETS-000514",
-   "kind": "mechanism",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Wallach classifies sodium (Na) as an essential \"macro\" mineral required in the diet. It maintains proper acid-base balance in the blood and tissues, regulates fluid pressure in the blood vessels and cells, and supports neuromuscular function. Elevated blood sodium points to dehydration, kidney disease, or adrenal dysfunction, while low blood sodium is typical of excessive water intake, diabetes, or pituitary disorders; the normal blood range is 135-147 mEq/L.",
-   "verbatim": "Na (sodium) is an essential \"macro\"mineral\nrequired in our diet. Sodium is required to\nmaintain the proper acid-base balance in our\nblood and tissues, the fluid pressure in our\nblood and tissues, the fluid pressure in our\nblood vessels, cells and neuromuscular function. Elevated sodium levels are characteristic\nof dehydration, kidney disease and adrenal\ngland dysfunction. Low blood levels of sodium are typical of excessive water consumption, diabetes and pituitary disorders.",
-   "locator": {
-    "book": "lets-play-doctor",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 72509
-   },
-   "dose": null,
-   "tags": [
-    "sodium",
-    "electrolytes",
-    "macro-minerals",
-    "blood-test",
-    "mechanism"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T01:58:44+00:00",
    "reviewed_at": null,
    "reviewed_by": null
   },

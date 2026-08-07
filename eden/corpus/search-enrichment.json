@@ -133,28 +133,6 @@
     "vegetable-oil"
    ]
   },
-  "WAL-CLM-DDDL-000098": {
-   "subject": "dietary_oils",
-   "also_about": [
-    "selenium",
-    "vitamin-e",
-    "fibromyalgia",
-    "margarine",
-    "sulfur",
-    "methionine"
-   ],
-   "facet": "mechanism",
-   "question": "What does Wallach say causes fibromyalgia?",
-   "answer_short": "He calls fibromyalgia a multiple-deficiency disease driven by a high intake of fried foods and vegetable oils plus low selenium, vitamin E and sulfur amino acids.",
-   "topics": [
-    "fibromyalgia",
-    "fried-foods",
-    "vegetable-oil",
-    "margarine",
-    "selenium",
-    "vitamin-e"
-   ]
-  },
   "WAL-CLM-DDDL-000099": {
    "subject": "eggs",
    "also_about": [
@@ -1129,24 +1107,6 @@
     "weston-price"
    ]
   },
-  "WAL-CLM-EPIGEN-000157": {
-   "subject": "processed_meat",
-   "also_about": [
-    "nitrates",
-    "nitrites"
-   ],
-   "facet": "warning",
-   "question": "Which processed meats does Wallach say to avoid?",
-   "answer_short": "Deli slices, sandwich meats, sausage, bologna, salami, pepperoni, jerky, hamburger patties, meatloaf, meatballs and canned meats.",
-   "topics": [
-    "processed-meat",
-    "deli-meat",
-    "sausage",
-    "bologna",
-    "salami",
-    "pepperoni"
-   ]
-  },
   "WAL-CLM-EPIGEN-000158": {
    "subject": "gluten",
    "also_about": [],
@@ -1323,7 +1283,9 @@
   },
   "WAL-CLM-EPIGEN-000169": {
    "subject": "pork",
-   "also_about": [],
+   "also_about": [
+    "processed_meat"
+   ],
    "facet": "protocol",
    "question": "What kinds of pork or meat products does Wallach tell people to avoid?",
    "answer_short": "As a standing rule Wallach says to avoid processed meats such as sausage, deli slices, bologna, salami and pepperoni because of their nitrates, nitrites, and gluten-laden fillers.",
@@ -1858,21 +1820,6 @@
     "minerals"
    ]
   },
-  "WAL-CLM-IMMORT-000014": {
-   "subject": "essential_nutrients",
-   "also_about": [
-    "vitamins",
-    "amino_acids"
-   ],
-   "facet": "basics",
-   "question": "What are the 90 essential nutrients?",
-   "answer_short": "Of 79+ elements found in the body, Wallach counts 60 minerals as essential - plus 16 vitamins, 12 amino acids and 3 essential fatty acids: the '90 essentials.'",
-   "topics": [
-    "90-essentials",
-    "minerals",
-    "framework"
-   ]
-  },
   "WAL-CLM-IMMORT-000017": {
    "subject": "essential_nutrients",
    "also_about": [],
@@ -1956,21 +1903,6 @@
     "food-source",
     "abundance",
     "exposure"
-   ]
-  },
-  "WAL-CLM-IMMORT-000034": {
-   "subject": "aluminum",
-   "also_about": [
-    "alzheimers",
-    "memory_loss"
-   ],
-   "facet": "big_question",
-   "question": "Does aluminum cause Alzheimer's disease?",
-   "answer_short": "Wallach says no - he calls it a myth from 'a single faulty study,' citing later work (Oxford 1992, a 2007 German assessment) that found no proven dietary-aluminum link.",
-   "topics": [
-    "alzheimers",
-    "myth",
-    "is-x-good-bad"
    ]
   },
   "WAL-CLM-IMMORT-000035": {
@@ -2646,18 +2578,6 @@
     "ferritin"
    ]
   },
-  "WAL-CLM-IMMORT-000130": {
-   "subject": "iron",
-   "also_about": [],
-   "facet": "mechanism",
-   "question": "What causes iron deficiency?",
-   "answer_short": "Wallach's list: unsupplemented pregnancy, heavy periods, chronic infection or bleeding, low stomach acid, diarrhea, and poor absorption from high-fiber diets.",
-   "topics": [
-    "iron-deficiency",
-    "causes",
-    "menstruation"
-   ]
-  },
   "WAL-CLM-IMMORT-000132": {
    "subject": "iron",
    "also_about": [
@@ -2766,18 +2686,6 @@
     "immune-system",
     "natural-killer-cells",
     "interferon"
-   ]
-  },
-  "WAL-CLM-IMMORT-000144": {
-   "subject": "germanium",
-   "also_about": [],
-   "facet": "sources",
-   "question": "What is Ge-132, the germanium supplement?",
-   "answer_short": "An organic, chelated germanium (carboxyethyl germanium sesquioxide) Asai made in 1967 - absorbed at ~30% and fully excreted within a week.",
-   "topics": [
-    "ge-132",
-    "supplement",
-    "organic-germanium"
    ]
   },
   "WAL-CLM-IMMORT-000146": {
@@ -2998,19 +2906,6 @@
     "environment"
    ]
   },
-  "WAL-CLM-IMMORT-000163": {
-   "subject": "mercury",
-   "also_about": [],
-   "facet": "warning",
-   "question": "Is the mercury in fish dangerous?",
-   "answer_short": "Fish carry mercury as persistent methylmercury; heavy fish-eaters hold far more, and unlike inorganic mercury it crosses the placenta into the fetus.",
-   "topics": [
-    "methylmercury",
-    "fish",
-    "pregnancy",
-    "minamata"
-   ]
-  },
   "WAL-CLM-IMMORT-000164": {
    "subject": "mercury",
    "also_about": [
@@ -3170,19 +3065,6 @@
     "antiseptic",
     "water-purification",
     "radioiodine"
-   ]
-  },
-  "WAL-CLM-IMMORT-000178": {
-   "subject": "iodine",
-   "also_about": [],
-   "facet": "physiology",
-   "question": "How much iodine do we take in - and how much is safe?",
-   "answer_short": "Americans average 170-250 mcg a day and can sweat out up to 146 mcg; metallic iodine isn't toxic even at 2,000 mcg/day long-term - a wide safety margin.",
-   "topics": [
-    "intake",
-    "sweat-loss",
-    "toxicity",
-    "safety-margin"
    ]
   },
   "WAL-CLM-IMMORT-000181": {
@@ -5676,24 +5558,6 @@
     "mitochondria"
    ]
   },
-  "WAL-CLM-RARE-000321": {
-   "subject": "selenium",
-   "also_about": [
-    "free_radicals",
-    "antioxidants",
-    "longevity"
-   ],
-   "facet": "physiology",
-   "question": "What causes age spots and liver spots?",
-   "answer_short": "According to Wallach, those brown “age spots” or “liver spots” are literally rancid fat — a peroxidized lipid called ceroid lipofuscin — surfacing because selenium is too low to keep body fats from oxidizing. He calls their appearance in older adults an early sign of selenium deficiency.",
-   "topics": [
-    "age-spots",
-    "liver-spots",
-    "ceroid-lipofuscin",
-    "aging",
-    "oxidation"
-   ]
-  },
   "WAL-CLM-RARE-000322": {
    "subject": "selenium",
    "also_about": [
@@ -5727,41 +5591,6 @@
     "preventable",
     "livestock",
     "jerry-lewis"
-   ]
-  },
-  "WAL-CLM-RARE-000324": {
-   "subject": "selenium",
-   "also_about": [
-    "cancer",
-    "antioxidants"
-   ],
-   "facet": "uses",
-   "question": "Can selenium help fight cancer?",
-   "answer_short": "Wallach considers selenium one of the most important anti-cancer nutrients — citing a UCSD chemist's review that it works through several distinct mechanisms — and puts the therapeutic dose at 1,000–3,000 mcg a day.",
-   "topics": [
-    "cancer",
-    "anticarcinogen",
-    "schrauzer",
-    "therapy-dose",
-    "colloidal-selenium"
-   ]
-  },
-  "WAL-CLM-RARE-000325": {
-   "subject": "selenium",
-   "also_about": [
-    "cancer",
-    "cystic_fibrosis",
-    "multiple_sclerosis",
-    "muscle_strength"
-   ],
-   "facet": "big_question",
-   "question": "What diseases does Wallach link to selenium deficiency?",
-   "answer_short": "An unusually long list. Wallach ties selenium deficiency to dozens of conditions — from Keshan heart disease, muscular dystrophy, and cystic fibrosis to cancer, cataracts, and liver cirrhosis, and even Alzheimer's, ALS, and Parkinson's.",
-   "topics": [
-    "deficiency-diseases",
-    "breadth",
-    "neurodegenerative",
-    "one-deficiency-many-diseases"
    ]
   },
   "WAL-CLM-IMMORT-000269": {
@@ -5975,23 +5804,6 @@
     "malabsorption",
     "cancer cause",
     "cancer prevention"
-   ]
-  },
-  "WAL-CLM-DDDL-000148": {
-   "subject": "magnesium",
-   "also_about": [
-    "calcium"
-   ],
-   "facet": "mechanism",
-   "question": "What is the relationship between calcium and magnesium?",
-   "answer_short": "Wallach says calcium and magnesium are antagonists in muscle contraction — calcium is the stimulator, magnesium the relaxer — so too much calcium can trigger signs of magnesium deficiency, while too much magnesium blocks bone calcification.",
-   "topics": [
-    "magnesium",
-    "calcium",
-    "muscle contraction",
-    "balance",
-    "cramps",
-    "relaxer"
    ]
   },
   "WAL-CLM-DDDL-000149": {
@@ -8907,20 +8719,6 @@
     "deficiency"
    ]
   },
-  "WAL-CLM-RARE-000130": {
-   "subject": "iron",
-   "also_about": [
-    "magnesium"
-   ],
-   "facet": "mechanism",
-   "question": "What does iron do in the body?",
-   "answer_short": "Iron builds hemoglobin and myoglobin and transfers electrons so the body can use oxygen—'iron is to hemoglobin what magnesium is to chlorophyll.'",
-   "topics": [
-    "hemoglobin",
-    "oxygen",
-    "how-iron-works"
-   ]
-  },
   "WAL-CLM-LETS-000054": {
    "subject": "iodine",
    "also_about": [],
@@ -9431,25 +9229,6 @@
     "hydration",
     "electrolytes",
     "illness"
-   ]
-  },
-  "WAL-CLM-DDDL-000205": {
-   "subject": "iodine",
-   "also_about": [
-    "goiter",
-    "copper",
-    "molybdenum",
-    "tyrosine",
-    "hypothyroidism"
-   ],
-   "facet": "physiology",
-   "question": "What causes goiter?",
-   "answer_short": "Goiter is a simple deficiency of iodine (and copper, molybdenum, and tyrosine) that makes the thyroid gland swell.",
-   "topics": [
-    "iodine",
-    "goiter",
-    "thyroid",
-    "deficiency"
    ]
   },
   "WAL-CLM-DDDL-000206": {
@@ -11767,24 +11546,6 @@
     "pregnancy"
    ]
   },
-  "WAL-CLM-RARE-000116": {
-   "subject": "chromium",
-   "also_about": [
-    "diabetes",
-    "hypoglycemia",
-    "prediabetes",
-    "depression"
-   ],
-   "facet": "physiology",
-   "question": "What diseases does chromium deficiency cause?",
-   "answer_short": "Wallach links chromium deficiency to low blood sugar, prediabetes, diabetes, ADD/ADHD, depression, bipolar disease, infertility, and a shortened life span, among many others.",
-   "topics": [
-    "deficiency",
-    "blood-sugar",
-    "mental-health",
-    "symptoms"
-   ]
-  },
   "WAL-CLM-DDDL-000046": {
    "subject": "chromium",
    "also_about": [
@@ -11845,22 +11606,6 @@
     "lifespan",
     "chromium",
     "research"
-   ]
-  },
-  "WAL-CLM-IMMORT-000192": {
-   "subject": "potassium",
-   "also_about": [
-    "sodium",
-    "calcium"
-   ],
-   "facet": "physiology",
-   "question": "What does potassium do in the body?",
-   "answer_short": "Potassium is the major positively-charged mineral inside your cells, running enzyme systems, fluid balance and nerve-muscle activity.",
-   "topics": [
-    "electrolytes",
-    "minerals",
-    "cell-function",
-    "nerve-and-muscle"
    ]
   },
   "WAL-CLM-IMMORT-000193": {
@@ -12203,20 +11948,6 @@
     "bone health"
    ]
   },
-  "WAL-CLM-EPIGEN-000286": {
-   "subject": "vitamin-k",
-   "also_about": [
-    "calcium"
-   ],
-   "facet": "mechanism",
-   "question": "What does vitamin K do in the body?",
-   "answer_short": "Vitamin K is a fat-soluble vitamin the liver needs to make prothrombin and other clotting proteins and to deposit calcium properly in bone.",
-   "topics": [
-    "blood clotting",
-    "bone health",
-    "how vitamins work"
-   ]
-  },
   "WAL-CLM-EPIGEN-000287": {
    "subject": "vitamin-k",
    "also_about": [],
@@ -12278,21 +12009,6 @@
     "b-vitamins",
     "metabolism",
     "basics"
-   ]
-  },
-  "WAL-CLM-EPIGEN-000292": {
-   "subject": "biotin",
-   "also_about": [
-    "magnesium"
-   ],
-   "facet": "mechanism",
-   "question": "What does biotin do in the body?",
-   "answer_short": "Biotin is a sulfur-containing vitamin required for glucose metabolism and the production of fatty acids, working through enzymes that carry carboxyl units and fix carbon dioxide.",
-   "topics": [
-    "metabolism",
-    "b-vitamins",
-    "vitamins",
-    "how-it-works"
    ]
   },
   "WAL-CLM-EPIGEN-000293": {
@@ -12993,38 +12709,6 @@
     "blood sugar"
    ]
   },
-  "WAL-CLM-DDDL-000227": {
-   "subject": "germanium",
-   "also_about": [
-    "silica",
-    "carbon",
-    "oxygen"
-   ],
-   "facet": "basics",
-   "question": "What is germanium?",
-   "answer_short": "Germanium is a trace mineral and metalloid element that Wallach counts among the body's essential nutrients; biologically it acts as a highly effective electrical impulse initiator inside cells and as a metallic cofactor for oxygen utilization.",
-   "topics": [
-    "trace-minerals",
-    "oxygen",
-    "basics"
-   ]
-  },
-  "WAL-CLM-DDDL-000228": {
-   "subject": "germanium",
-   "also_about": [
-    "oxygen",
-    "silica",
-    "carbon"
-   ],
-   "facet": "mechanism",
-   "question": "How does germanium work in the body?",
-   "answer_short": "In the body germanium acts as a highly effective intracellular electrical-impulse initiator and as a metallic cofactor for oxygen utilization.",
-   "topics": [
-    "oxygen",
-    "cellular-energy",
-    "trace-minerals"
-   ]
-  },
   "WAL-CLM-DDDL-000229": {
    "subject": "germanium",
    "also_about": [
@@ -13159,22 +12843,6 @@
     "joint-health",
     "repetitive-strain",
     "workplace-health"
-   ]
-  },
-  "WAL-CLM-DDDL-000238": {
-   "subject": "boron",
-   "also_about": [
-    "calcium",
-    "magnesium"
-   ],
-   "facet": "physiology",
-   "question": "What does boron do in the body?",
-   "answer_short": "Boron supports bone metabolism, helps the body use calcium and magnesium efficiently, and is needed for proper function of the ovaries, testes, and adrenal glands.",
-   "topics": [
-    "bone health",
-    "hormones",
-    "adrenal glands",
-    "minerals"
    ]
   },
   "WAL-CLM-DDDL-000239": {
@@ -13658,24 +13326,6 @@
     "supplements"
    ]
   },
-  "WAL-CLM-IMMORT-000358": {
-   "subject": "cobalt",
-   "also_about": [
-    "vitamin-b12",
-    "hypochlorhydria",
-    "sodium"
-   ],
-   "facet": "sources",
-   "question": "Why do older people often need B12 shots?",
-   "answer_short": "Cobalt/B12 only absorbs when intrinsic factor is present and stomach pH is 2.0 or less; low stomach acid (often from too little salt) blocks it, so doctors give shots.",
-   "topics": [
-    "cobalt",
-    "b12",
-    "absorption",
-    "stomach-acid",
-    "b12-shots"
-   ]
-  },
   "WAL-CLM-IMMORT-000359": {
    "subject": "cobalt",
    "also_about": [
@@ -13814,21 +13464,6 @@
    "topics": [
     "minerals",
     "trace-minerals"
-   ]
-  },
-  "WAL-CLM-IMMORT-000369": {
-   "subject": "molybdenum",
-   "also_about": [
-    "copper",
-    "gout"
-   ],
-   "facet": "warning",
-   "question": "Can you take too much molybdenum? Is it toxic?",
-   "answer_short": "Wallach says molybdenum toxicity occurs at 10 mg per day, showing up as a gout-like disease and as interference with copper metabolism.",
-   "topics": [
-    "minerals",
-    "toxicity",
-    "safety"
    ]
   },
   "WAL-CLM-IMMORT-000370": {
@@ -14091,22 +13726,6 @@
     "adult onset diabetes"
    ]
   },
-  "WAL-CLM-EPIGEN-000086": {
-   "subject": "germanium",
-   "also_about": [
-    "arthritis",
-    "osteoarthritis",
-    "cancer"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of germanium deficiency?",
-   "answer_short": "Germanium deficiency is typified by a severely reduced immune status, arthritis, osteoarthritis, low energy, and cancer.",
-   "topics": [
-    "deficiency",
-    "immune-health",
-    "low-energy"
-   ]
-  },
   "WAL-CLM-DDDL-000011": {
    "subject": "germanium",
    "also_about": [],
@@ -14191,21 +13810,6 @@
     "hormones",
     "menopause",
     "men's health"
-   ]
-  },
-  "WAL-CLM-IMMORT-000079": {
-   "subject": "cobalt",
-   "also_about": [
-    "vitamin-b12"
-   ],
-   "facet": "physiology",
-   "question": "What does cobalt do in the body?",
-   "answer_short": "Cobalt is essential for all forms of life; it activates enzymes, helps fix nitrogen, and sits at the very center of vitamin B12.",
-   "topics": [
-    "cobalt",
-    "b12",
-    "enzymes",
-    "trace-minerals"
    ]
   },
   "WAL-CLM-IMMORT-000084": {
@@ -14631,36 +14235,6 @@
     "gut-health"
    ]
   },
-  "WAL-CLM-DDDL-000258": {
-   "subject": "sulfur",
-   "also_about": [
-    "scabies"
-   ],
-   "facet": "uses",
-   "question": "Can sulfur treat scabies?",
-   "answer_short": "For scabies, Wallach recommends a 5-10% sulfur ointment for infants, in place of the adult chemical treatments, to avoid potential neurotoxicity.",
-   "topics": [
-    "skin",
-    "topical",
-    "children"
-   ]
-  },
-  "WAL-CLM-DDDL-000259": {
-   "subject": "sulfur",
-   "also_about": [
-    "osteoarthritis",
-    "arthritis",
-    "lupus"
-   ],
-   "facet": "warning",
-   "question": "What are the symptoms of sulfur deficiency?",
-   "answer_short": "Wallach says a sulfur deficiency produces degenerative arthritis and cartilage breakdown, weakened ligaments and tendons, lupus, sickle cell anemia, and other collagen diseases.",
-   "topics": [
-    "deficiency-signs",
-    "joint-health",
-    "connective-tissue"
-   ]
-  },
   "WAL-CLM-DDDL-000260": {
    "subject": "sulfur",
    "also_about": [
@@ -14694,24 +14268,6 @@
     "stomach acid",
     "essential minerals",
     "chloride basics"
-   ]
-  },
-  "WAL-CLM-DDDL-000262": {
-   "subject": "chloride",
-   "also_about": [
-    "sodium",
-    "achlorhydria",
-    "vitamin-b12"
-   ],
-   "facet": "mechanism",
-   "question": "What does chloride actually do in the body?",
-   "answer_short": "Chloride is the raw material your stomach uses to make hydrochloric acid; it is essential to all living things and activates numerous enzymes.",
-   "topics": [
-    "stomach acid",
-    "digestion",
-    "enzymes",
-    "electrolytes",
-    "mineral absorption"
    ]
   },
   "WAL-CLM-DDDL-000263": {
@@ -14990,23 +14546,6 @@
     "word-origin",
     "history-of-salt",
     "sodium"
-   ]
-  },
-  "WAL-CLM-EPIGEN-000335": {
-   "subject": "phosphorus",
-   "also_about": [
-    "calcium",
-    "hyperparathyroidism"
-   ],
-   "facet": "warning",
-   "question": "What causes low blood phosphorus?",
-   "answer_short": "Low blood phosphorus (hypophosphatemia) results from IV glucose or TPN without phosphorus, excessive antacids, hyperparathyroidism, diuretics, sweating from exercise, and alcoholism.",
-   "topics": [
-    "phosphorus",
-    "hypophosphatemia",
-    "low blood phosphorus",
-    "antacids",
-    "alcoholism"
    ]
   },
   "WAL-CLM-EPIGEN-000336": {
@@ -15343,22 +14882,6 @@
     "longevity",
     "antioxidants",
     "aging"
-   ]
-  },
-  "WAL-CLM-LETS-000514": {
-   "subject": "sodium",
-   "also_about": [
-    "chloride",
-    "potassium"
-   ],
-   "facet": "physiology",
-   "question": "What does sodium do in the body?",
-   "answer_short": "Sodium is an essential macro-mineral that maintains acid-base balance, fluid pressure in the blood and tissues, and neuromuscular function.",
-   "topics": [
-    "sodium",
-    "electrolytes",
-    "macro-minerals",
-    "blood-test"
    ]
   },
   "WAL-CLM-LETS-000515": {
@@ -15863,19 +15386,6 @@
     "cell-fuel"
    ]
   },
-  "WAL-CLM-EPIGEN-000343": {
-   "subject": "arginine",
-   "also_about": [],
-   "facet": "physiology",
-   "question": "What does arginine do in the body?",
-   "answer_short": "Arginine is required for cell division, wound healing, ammonia excretion, immune support, and the availability of stored hormones.",
-   "topics": [
-    "wound-healing",
-    "immunity",
-    "hormones",
-    "cell-division"
-   ]
-  },
   "WAL-CLM-EPIGEN-000344": {
    "subject": "arginine",
    "also_about": [
@@ -16168,21 +15678,6 @@
     "vision",
     "blood-pressure",
     "muscle-health"
-   ]
-  },
-  "WAL-CLM-DDDL-000066": {
-   "subject": "taurine",
-   "also_about": [
-    "arginine",
-    "tyrosine"
-   ],
-   "facet": "stance",
-   "question": "Is taurine an essential amino acid?",
-   "answer_short": "Wallach adds taurine to the classic list of essential amino acids, saying that over the long haul it helps prevent a specific disease — macular degeneration.",
-   "topics": [
-    "amino-acids",
-    "essential-nutrients",
-    "eye-health"
    ]
   },
   "WAL-CLM-EPIGEN-000056": {
@@ -16508,22 +16003,6 @@
     "amino-acids",
     "popular-culture",
     "essential-nutrients"
-   ]
-  },
-  "WAL-CLM-EPIGEN-000375": {
-   "subject": "lysine",
-   "also_about": [
-    "arginine",
-    "taurine",
-    "tyrosine"
-   ],
-   "facet": "stance",
-   "question": "Why is lysine considered an essential amino acid?",
-   "answer_short": "Lysine is one of the nine amino acids Wallach lists as classically essential: the body cannot synthesize them, so they must be eaten every day to prevent deficiencies and disease.",
-   "topics": [
-    "amino-acids",
-    "essential-nutrients",
-    "deficiency"
    ]
   },
   "WAL-CLM-EPIGEN-000376": {
@@ -19933,20 +19412,6 @@
     "silver dollars in milk"
    ]
   },
-  "WAL-CLM-RARE-000090": {
-   "subject": "silver",
-   "also_about": [],
-   "facet": "protocol",
-   "question": "How much silver can you take per day?",
-   "answer_short": "Wallach says humans can consume 400 mcg of silver per day, and that a silver 'deficiency' results in an impaired immune system.",
-   "topics": [
-    "silver dose",
-    "400 mcg",
-    "daily silver",
-    "how much silver",
-    "silver deficiency"
-   ]
-  },
   "WAL-CLM-IMMORT-000032": {
    "subject": "aluminum",
    "also_about": [
@@ -20060,23 +19525,6 @@
     "fission"
    ]
   },
-  "WAL-CLM-IMMORT-000047": {
-   "subject": "bromine",
-   "also_about": [
-    "iodine"
-   ],
-   "facet": "basics",
-   "question": "What is bromine?",
-   "answer_short": "Bromine is a halogen in the same chemical family as iodine that Wallach counts among the essential minerals, working in the body in its active form as brominated amino acids.",
-   "topics": [
-    "bromine",
-    "what is bromine",
-    "halogen",
-    "essential mineral",
-    "brominated amino acids",
-    "is bromine essential"
-   ]
-  },
   "WAL-CLM-RARE-000103": {
    "subject": "bromine",
    "also_about": [
@@ -20156,23 +19604,6 @@
     "acute beryllium disease",
     "chemical pneumonitis",
     "poison"
-   ]
-  },
-  "WAL-CLM-IMMORT-000045": {
-   "subject": "beryllium",
-   "also_about": [
-    "berylliosis"
-   ],
-   "facet": "warning",
-   "question": "What is berylliosis?",
-   "answer_short": "Berylliosis is a painful, sometimes fatal lung disease Wallach says comes from inhaling beryllium oxide dust from mining and industry.",
-   "topics": [
-    "beryllium",
-    "berylliosis",
-    "lung disease",
-    "beryllium dust",
-    "breathing",
-    "inhalation"
    ]
   },
   "WAL-CLM-RARE-000287": {
@@ -20692,24 +20123,6 @@
     "longevity",
     "cell proliferation",
     "anti-aging",
-    "rare earth"
-   ]
-  },
-  "WAL-CLM-RARE-000261": {
-   "subject": "ytterbium",
-   "also_about": [
-    "yttrium"
-   ],
-   "facet": "physiology",
-   "question": "Does ytterbium cross the placenta?",
-   "answer_short": "Yes -- Wallach reports ytterbium rapidly crosses the placenta, with 14% of an ingested amount detectable in newborn mice.",
-   "topics": [
-    "ytterbium",
-    "placenta",
-    "pregnancy",
-    "placental transfer",
-    "newborn",
-    "mice",
     "rare earth"
    ]
   },
@@ -24957,25 +24370,6 @@
     "diagnosis"
    ]
   },
-  "WAL-CLM-DDDL-000076": {
-   "subject": "angina",
-   "also_about": [
-    "calcium",
-    "magnesium",
-    "cardiovascular_disease"
-   ],
-   "facet": "protocol",
-   "question": "How do you treat angina naturally?",
-   "answer_short": "For angina, Wallach says calcium, magnesium, and essential fatty acids help prevent disease progression, and that lifestyle change with supplementation can reverse cardiovascular disease.",
-   "topics": [
-    "angina",
-    "chest pain",
-    "heart disease",
-    "calcium",
-    "magnesium",
-    "essential fatty acids"
-   ]
-  },
   "WAL-CLM-DDDL-000085": {
    "subject": "benign_prostatic_hyperplasia",
    "also_about": [
@@ -26571,29 +25965,6 @@
     "base line program"
    ]
   },
-  "WAL-CLM-RARE-000242": {
-   "subject": "choline",
-   "also_about": [
-    "fatty_liver",
-    "alzheimers",
-    "huntingtons_disease",
-    "tardive_dyskinesia",
-    "dementia",
-    "liver_disease"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of choline deficiency?",
-   "answer_short": "Wallach lists the signs of choline deficiency as fatty liver, kidney hemorrhage, Alzheimer's disease, tardive dyskinesia and Huntington's disease, and says treatment can require high doses on the order of 20 grams a day.",
-   "topics": [
-    "choline",
-    "fatty liver",
-    "kidney hemorrhage",
-    "alzheimer's",
-    "tardive dyskinesia",
-    "huntington's disease",
-    "dementia"
-   ]
-  },
   "WAL-CLM-DDDL-000015": {
    "subject": "chromium",
    "also_about": [],
@@ -26645,22 +26016,6 @@
     "daily amount",
     "supplement",
     "minerals"
-   ]
-  },
-  "WAL-CLM-IMMORT-000087": {
-   "subject": "chromium",
-   "also_about": [],
-   "facet": "basics",
-   "question": "What is chromium and what does it do?",
-   "answer_short": "Wallach describes chromium as a trace mineral that activates phosphoglucomutase and is the working core of glucose tolerance factor (GTF) — a complex of chromium III, dinicotinic acid and glutathione — with the body holding only about 1.5 mg, best read by hair analysis.",
-   "topics": [
-    "chromium",
-    "glucose tolerance factor",
-    "gtf",
-    "insulin",
-    "blood sugar",
-    "hair analysis",
-    "trace mineral"
    ]
   },
   "WAL-CLM-IMMORT-000088": {
@@ -26909,24 +26264,6 @@
     "symbiosis"
    ]
   },
-  "WAL-CLM-RARE-000114": {
-   "subject": "cobalt",
-   "also_about": [
-    "vitamin-b12"
-   ],
-   "facet": "mechanism",
-   "question": "What does cobalt do in the body?",
-   "answer_short": "Wallach explains the body's cobalt requirement is really for vitamin B12, in which a single cobalt atom is the central metal, working with folic acid, choline and methionine to transfer methyl groups for DNA and RNA, growth, myelin and red-blood-cell formation.",
-   "topics": [
-    "cobalt",
-    "vitamin b12",
-    "methyl groups",
-    "dna",
-    "rna",
-    "myelin",
-    "red blood cells"
-   ]
-  },
   "WAL-CLM-RARE-000115": {
    "subject": "cobalt",
    "also_about": [
@@ -27066,25 +26403,6 @@
     "hormones"
    ]
   },
-  "WAL-CLM-RARE-000098": {
-   "subject": "boron",
-   "also_about": [
-    "calcium",
-    "magnesium"
-   ],
-   "facet": "mechanism",
-   "question": "What does boron do in the body?",
-   "answer_short": "Wallach states boron is essential for bone metabolism — including efficient use of calcium and magnesium — and for proper function of the endocrine glands (ovaries, testes and adrenals); it was accepted as essential for humans in 1990.",
-   "topics": [
-    "boron",
-    "bone metabolism",
-    "calcium",
-    "magnesium",
-    "endocrine glands",
-    "hormones",
-    "essential mineral"
-   ]
-  },
   "WAL-CLM-RARE-000099": {
    "subject": "boron",
    "also_about": [
@@ -27119,26 +26437,6 @@
     "bromo-seltzer",
     "acne",
     "iodine"
-   ]
-  },
-  "WAL-CLM-DDDL-000052": {
-   "subject": "calcium",
-   "also_about": [
-    "phosphorus",
-    "arthritis",
-    "osteoporosis"
-   ],
-   "facet": "mechanism",
-   "question": "What is the ideal calcium to phosphorus ratio?",
-   "answer_short": "Wallach says a 2:1 dietary calcium-to-phosphorus ratio is ideal but impossible to reach on an unsupplemented diet, and the more meat you eat the more calcium supplementation you need.",
-   "topics": [
-    "calcium",
-    "phosphorus",
-    "calcium phosphorus ratio",
-    "meat",
-    "diet",
-    "supplementation",
-    "osteoporosis"
    ]
   },
   "WAL-CLM-EPIGEN-000061": {
@@ -27425,23 +26723,6 @@
     "colloidal minerals",
     "metallic minerals",
     "caffeine"
-   ]
-  },
-  "WAL-CLM-RARE-000107": {
-   "subject": "calcium",
-   "also_about": [
-    "hypertension"
-   ],
-   "facet": "physiology",
-   "question": "Can calcium deficiency cause high blood pressure?",
-   "answer_short": "Wallach reports McCarron's 1980 theory — backed by more than 30 later studies — that chronic calcium deficiency leads to hypertension, with a study of 58,218 nurses finding high blood pressure more likely below 800 mg of calcium a day.",
-   "topics": [
-    "calcium",
-    "hypertension",
-    "high blood pressure",
-    "calcium deficiency",
-    "mccarron",
-    "blood pressure"
    ]
   },
   "WAL-CLM-RARE-000108": {
@@ -28916,30 +28197,6 @@
     "regional deficiency"
    ]
   },
-  "WAL-CLM-LETS-000008": {
-   "subject": "copper",
-   "also_about": [
-    "anemia",
-    "aneurysm",
-    "arthritis",
-    "depression",
-    "high_cholesterol",
-    "alopecia"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of copper deficiency?",
-   "answer_short": "Wallach lists copper-deficiency signs including hair loss, microcytic anemia, aneurysm and cerebral hemorrhage, depression, dermatosis, diarrhea, fatigue, fragile bones and arthritis, high cholesterol, respiratory disease, and liver cirrhosis with weakness.",
-   "topics": [
-    "copper deficiency",
-    "hair loss",
-    "anemia",
-    "aneurysm",
-    "depression",
-    "arthritis",
-    "high cholesterol",
-    "fatigue"
-   ]
-  },
   "WAL-CLM-LETS-000050": {
    "subject": "copper",
    "also_about": [],
@@ -28970,22 +28227,6 @@
     "preconception",
     "colloidal copper",
     "elastin"
-   ]
-  },
-  "WAL-CLM-RARE-000119": {
-   "subject": "copper",
-   "also_about": [],
-   "facet": "mechanism",
-   "question": "What does copper do in the body?",
-   "answer_short": "Wallach says copper is a universally important cofactor for hundreds of metalloenzymes, required for RNA and DNA, as the lysyl-oxidase cofactor, for melanin (hair and skin pigment), for oxygen-based cellular respiration, and for the tensile strength of elastic fibers in blood vessels, skin and spinal discs.",
-   "topics": [
-    "copper",
-    "metalloenzymes",
-    "lysyl-oxidase",
-    "melanin",
-    "dna",
-    "elastin",
-    "cofactor"
    ]
   },
   "WAL-CLM-RARE-000120": {
@@ -29104,21 +28345,6 @@
     "deficiency"
    ]
   },
-  "WAL-CLM-RARE-000290": {
-   "subject": "gadolinium",
-   "also_about": [],
-   "facet": "basics",
-   "question": "What is gadolinium?",
-   "answer_short": "Wallach catalogs gadolinium as a rare-earth metal found in rocks and plants that land animals accumulate in bone and liver very quickly after absorption; he records no specific deficiency disease for it.",
-   "topics": [
-    "gadolinium",
-    "rare earth",
-    "minerals",
-    "distribution",
-    "bone",
-    "liver"
-   ]
-  },
   "WAL-CLM-RARE-000132": {
    "subject": "gallium",
    "also_about": [
@@ -29135,26 +28361,6 @@
     "cancer prevention",
     "pregnancy",
     "brain"
-   ]
-  },
-  "WAL-CLM-DDDL-000012": {
-   "subject": "germanium",
-   "also_about": [
-    "arthritis",
-    "osteoporosis",
-    "cancer"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of germanium deficiency?",
-   "answer_short": "A crashing immune system is the hallmark — Wallach also ties a germanium shortfall to arthritis, osteoporosis, low energy, and cancer.",
-   "topics": [
-    "germanium",
-    "germanium deficiency",
-    "immune",
-    "arthritis",
-    "osteoporosis",
-    "low energy",
-    "cancer"
    ]
   },
   "WAL-CLM-IMMORT-000139": {
@@ -29190,26 +28396,6 @@
     "maintenance dose",
     "daily germanium",
     "supplement"
-   ]
-  },
-  "WAL-CLM-IMMORT-000145": {
-   "subject": "germanium",
-   "also_about": [
-    "garlic",
-    "aloe_vera",
-    "ginseng"
-   ],
-   "facet": "sources",
-   "question": "What foods contain germanium?",
-   "answer_short": "Wallach says everyday foods carry small amounts of germanium (beans ~4.67 ppm, tuna ~2.3 ppm), while germanium-rich healing herbs — garlic, aloe, comfrey, chlorella, ginseng, watercress, Shiitake mushroom, pearl barley and others — carry 100 to 2,000 ppm.",
-   "topics": [
-    "germanium",
-    "food sources",
-    "garlic",
-    "ginseng",
-    "chlorella",
-    "mushrooms",
-    "herbs"
    ]
   },
   "WAL-CLM-LETS-000183": {
@@ -30673,28 +29859,6 @@
     "prevention"
    ]
   },
-  "WAL-CLM-LETS-000237": {
-   "subject": "cradle_cap",
-   "also_about": [
-    "seborrheic_dermatitis",
-    "dermatitis",
-    "vitamin-b6",
-    "zinc"
-   ],
-   "facet": "protocol",
-   "question": "How do you treat cradle cap?",
-   "answer_short": "Wallach treats cradle cap (seborrheic dermatitis of infants) with regular shampooing to loosen the scale, vitamin B-6 at 10-25 mg a day, and zinc at 15-25 mg a day, plus a pulse test for contributing food allergies.",
-   "topics": [
-    "cradle cap",
-    "seborrheic dermatitis",
-    "infants",
-    "babies",
-    "scalp",
-    "vitamin b6",
-    "zinc",
-    "shampoo"
-   ]
-  },
   "WAL-CLM-LETS-000433": {
    "subject": "dermatitis",
    "also_about": [
@@ -30873,54 +30037,6 @@
     "diagnostic test"
    ]
   },
-  "WAL-CLM-RARE-000262": {
-   "subject": "zinc",
-   "also_about": [
-    "birth_defects",
-    "down_syndrome",
-    "cleft_lip",
-    "cleft_palate",
-    "spina_bifida",
-    "heart_defects"
-   ],
-   "facet": "physiology",
-   "question": "What birth defects are linked to zinc deficiency?",
-   "answer_short": "Wallach links zinc deficiency to congenital birth defects including Down's syndrome, cleft lip and palate, spina bifida, heart and lung defects, clubbed limbs, and webbed fingers and toes.",
-   "topics": [
-    "zinc deficiency",
-    "birth defects",
-    "congenital defects",
-    "down syndrome",
-    "cleft lip",
-    "cleft palate",
-    "spina bifida",
-    "heart defects"
-   ]
-  },
-  "WAL-CLM-RARE-000263": {
-   "subject": "zinc",
-   "also_about": [
-    "anosmia",
-    "ageusia",
-    "infertility",
-    "hypogonadism",
-    "anemia"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of zinc deficiency?",
-   "answer_short": "Wallach lists zinc-deficiency signs such as pica (eating non-food substances), loss of smell and taste, infertility, poor wound healing, immune failure, stunted growth, hypogonadism, and anemia.",
-   "topics": [
-    "zinc deficiency",
-    "low zinc",
-    "loss of smell",
-    "loss of taste",
-    "infertility",
-    "poor wound healing",
-    "stunted growth",
-    "anemia",
-    "pica"
-   ]
-  },
   "WAL-CLM-RARE-000264": {
    "subject": "zinc",
    "also_about": [
@@ -30963,36 +30079,6 @@
     "alkaline phosphatase",
     "rna polymerase",
     "enzyme cofactor"
-   ]
-  },
-  "WAL-CLM-RARE-000266": {
-   "subject": "zinc",
-   "also_about": [],
-   "facet": "physiology",
-   "question": "How much zinc is in the human body?",
-   "answer_short": "Wallach reports the adult body holds 1.4 to 2.3 grams of zinc, with the largest reserves in the liver, pancreas, kidney, bone, and skeletal muscles.",
-   "topics": [
-    "zinc",
-    "body zinc content",
-    "zinc reserves",
-    "zinc distribution",
-    "liver",
-    "pancreas",
-    "kidney"
-   ]
-  },
-  "WAL-CLM-RARE-000267": {
-   "subject": "zinc",
-   "also_about": [],
-   "facet": "history",
-   "question": "When was zinc discovered to be essential for humans?",
-   "answer_short": "Wallach notes zinc was known to be essential for bread mold 100 years ago and for rats 50 years ago, but recognized as essential for humans only about 20 years ago.",
-   "topics": [
-    "zinc",
-    "essential mineral",
-    "history of zinc",
-    "essentiality",
-    "discovery"
    ]
   },
   "WAL-CLM-RARE-000058": {
@@ -31304,24 +30390,6 @@
     "maintenance dose"
    ]
   },
-  "WAL-CLM-RARE-000219": {
-   "subject": "sulfur",
-   "also_about": [
-    "methionine"
-   ],
-   "facet": "basics",
-   "question": "What does sulfur do in the body?",
-   "answer_short": "Wallach explains sulfur is an important structural atom in most proteins — present as the sulfur amino acids cystine, cysteine, and methionine — and that glutathione, a cysteine-containing tripeptide, is essential to cellular reactions involving these sulfur amino acids.",
-   "topics": [
-    "sulfur",
-    "protein",
-    "amino acids",
-    "cysteine",
-    "cystine",
-    "methionine",
-    "glutathione"
-   ]
-  },
   "WAL-CLM-RARE-000220": {
    "subject": "sulfur",
    "also_about": [],
@@ -31468,24 +30536,6 @@
     "mammary tumors"
    ]
   },
-  "WAL-CLM-LETS-000043": {
-   "subject": "vanadium",
-   "also_about": [
-    "diabetes",
-    "hypoglycemia"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of vanadium deficiency?",
-   "answer_short": "Diabetes and hypoglycemia. Wallach counts vanadium (with chromium) as essential to blood-sugar control, so its deficiency drives insulin up — producing type II diabetes and low blood sugar — and shows up day-to-day as thirst and relentless carbohydrate and sugar cravings.",
-   "topics": [
-    "vanadium",
-    "vanadium deficiency",
-    "diabetes",
-    "hypoglycemia",
-    "low blood sugar",
-    "blood sugar"
-   ]
-  },
   "WAL-CLM-LETS-000070": {
    "subject": "vanadium",
    "also_about": [],
@@ -31549,28 +30599,6 @@
     "paresthesia",
     "numbness",
     "tingling"
-   ]
-  },
-  "WAL-CLM-RARE-000237": {
-   "subject": "vitamin-b6",
-   "also_about": [
-    "depression",
-    "seborrheic_dermatitis",
-    "peripheral_neuropathy",
-    "tourette_syndrome"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of vitamin B6 deficiency?",
-   "answer_short": "Wallach lists depression, nausea, vomiting, seborrheic dermatitis, mucous-membrane lesions, peripheral neuritis, unsteadiness (ataxia), hyperirritability, head tic (Tourette's syndrome), and convulsions.",
-   "topics": [
-    "vitamin b6",
-    "pyridoxine",
-    "b6 deficiency",
-    "depression",
-    "nausea",
-    "vomiting",
-    "tourette's syndrome",
-    "convulsions"
    ]
   },
   "WAL-CLM-DDDL-000042": {
@@ -31689,27 +30717,6 @@
     "lupus",
     "als",
     "food allergies"
-   ]
-  },
-  "WAL-CLM-RARE-000241": {
-   "subject": "vitamin-c",
-   "also_about": [
-    "scurvy",
-    "anemia",
-    "cancer"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of vitamin C deficiency?",
-   "answer_short": "A vitamin C shortage causes scurvy — bleeding gums, loosened teeth, and skin hemorrhages — plus anemia, poor appetite and growth, swollen wrist and ankle joints, rib and cartilage fractures, and a high risk of infection and cancer.",
-   "topics": [
-    "vitamin c",
-    "ascorbic acid",
-    "scurvy",
-    "bleeding gums",
-    "loose teeth",
-    "anemia",
-    "cancer",
-    "infection"
    ]
   },
   "WAL-CLM-LETS-000038": {
@@ -31877,28 +30884,6 @@
     "supplement program"
    ]
   },
-  "WAL-CLM-LETS-000041": {
-   "subject": "vitamin-e",
-   "also_about": [
-    "alopecia",
-    "dermatitis",
-    "infertility",
-    "malabsorption",
-    "muscular_dystrophy"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of vitamin E deficiency?",
-   "answer_short": "Wallach lists hair loss, absent reflexes, dermatitis, gait disturbances, infertility, malabsorption, muscular dystrophy, eye-muscle paralysis, impaired position sense, red-blood-cell fragility, and vibratory sense dysfunction.",
-   "topics": [
-    "vitamin e",
-    "vitamin e deficiency",
-    "hair loss",
-    "infertility",
-    "muscular dystrophy",
-    "dermatitis",
-    "reflexes"
-   ]
-  },
   "WAL-CLM-RARE-000231": {
    "subject": "vitamin-e",
    "also_about": [
@@ -31937,23 +30922,6 @@
     "how much vitamin k",
     "daily vitamin k",
     "supplement program"
-   ]
-  },
-  "WAL-CLM-LETS-000042": {
-   "subject": "vitamin-k",
-   "also_about": [
-    "osteoporosis"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of vitamin K deficiency?",
-   "answer_short": "Wallach lists prolonged (poor) clotting time and osteoporosis as signs of vitamin K deficiency.",
-   "topics": [
-    "vitamin k",
-    "vitamin k deficiency",
-    "clotting",
-    "clotting time",
-    "osteoporosis",
-    "bleeding"
    ]
   },
   "WAL-CLM-RARE-000232": {
@@ -32011,7 +30979,7 @@
    ],
    "facet": "physiology",
    "question": "What birth defects are linked to zinc deficiency?",
-   "answer_short": "Wallach ties zinc deficiency in pregnancy to birth defects including Down's syndrome, cleft lip and palate, brain and eye malformations, spina bifida, and clubbed or webbed limbs, plus degenerative diseases across all age groups.",
+   "answer_short": "Wallach ties zinc deficiency in pregnancy to an exhaustive list of congenital birth defects — Down's syndrome, cleft lip and palate, brain and eye malformations, agnathia, spina bifida, clubbed limbs, syndactyly, polydactyly, atresia, hernias, and heart, lung, and urogenital defects — plus degenerative diseases across all age groups.",
    "topics": [
     "zinc",
     "zinc deficiency",
@@ -32723,24 +31691,6 @@
     "vegan"
    ]
   },
-  "WAL-CLM-IMMORT-000198": {
-   "subject": "lanthanum",
-   "also_about": [
-    "chronic_fatigue_syndrome"
-   ],
-   "facet": "mechanism",
-   "question": "Can Candida cause chronic fatigue?",
-   "answer_short": "Wallach theorizes the yeast Candida albicans, which accumulates lanthanum at 370 ppm per day, causes an energy-sapping chronic fatigue by 'stealing' lanthanum from its victim; lanthanum at just 0.32 ppm doubles the lifespan of certain protozoa.",
-   "topics": [
-    "lanthanum",
-    "chronic fatigue",
-    "candida",
-    "yeast",
-    "rare earth",
-    "energy",
-    "fatigue"
-   ]
-  },
   "WAL-CLM-RARE-000157": {
    "subject": "lanthanum",
    "also_about": [
@@ -32815,30 +31765,6 @@
     "bipolar",
     "sugar",
     "mental health"
-   ]
-  },
-  "WAL-CLM-RARE-000163": {
-   "subject": "lithium",
-   "also_about": [
-    "depression",
-    "bipolar_disorder",
-    "hyperactivity",
-    "infertility",
-    "blind_rage",
-    "violent_behavior"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of lithium deficiency?",
-   "answer_short": "Wallach lists lithium-deficiency hallmarks: in animals reproductive failure, infertility, reduced growth, shortened lifespan and behavioral problems; in humans manic depression, depression, bipolar disorder, rages, 'Dr. Jekyll/Mr. Hyde' behavior, hyperactivity and ADD.",
-   "topics": [
-    "lithium",
-    "lithium deficiency",
-    "depression",
-    "bipolar",
-    "adhd",
-    "rage",
-    "infertility",
-    "behavior"
    ]
   },
   "WAL-CLM-RARE-000164": {
@@ -32920,31 +31846,6 @@
     "minerals"
    ]
   },
-  "WAL-CLM-IMMORT-000204": {
-   "subject": "magnesium",
-   "also_about": [
-    "asthma",
-    "anorexia",
-    "migraine",
-    "tetany",
-    "depression",
-    "vertigo",
-    "failure_to_thrive"
-   ],
-   "facet": "physiology",
-   "question": "What diseases does magnesium deficiency cause?",
-   "answer_short": "Wallach lists magnesium deficiency diseases including asthma, anorexia, menstrual migraines, growth failure, ECG changes, neuromuscular problems, tetany, depression, muscular weakness, tremors, vertigo, and calcification of the arteries and soft tissue.",
-   "topics": [
-    "magnesium",
-    "magnesium deficiency",
-    "asthma",
-    "migraines",
-    "tetany",
-    "depression",
-    "vertigo",
-    "muscle cramps"
-   ]
-  },
   "WAL-CLM-IMMORT-000206": {
    "subject": "magnesium",
    "also_about": [
@@ -32959,36 +31860,6 @@
     "calcium magnesium balance",
     "muscle contraction",
     "mineral interaction"
-   ]
-  },
-  "WAL-CLM-IMMORT-000210": {
-   "subject": "magnesium",
-   "also_about": [],
-   "facet": "warning",
-   "question": "Can you take too much magnesium?",
-   "answer_short": "Wallach cites the magnesium RDA (350 mg/day for men, 300 for women, 450 for pregnant and lactating women) and notes that, with healthy kidneys, there is no evidence of toxicity even at supplemental doses up to 6,000 mg/day.",
-   "topics": [
-    "magnesium",
-    "magnesium safety",
-    "magnesium toxicity",
-    "rda",
-    "overdose",
-    "kidneys"
-   ]
-  },
-  "WAL-CLM-RARE-000168": {
-   "subject": "magnesium",
-   "also_about": [],
-   "facet": "basics",
-   "question": "What is magnesium and what does it do?",
-   "answer_short": "Wallach describes magnesium as essential to every living organism, with electrochemical, catalytic and structural roles — activating numerous enzymes, forming part of all chlorophylls, and totaling 20 to 28 grams in the body, mostly in bone and muscle.",
-   "topics": [
-    "magnesium",
-    "what is magnesium",
-    "enzymes",
-    "chlorophyll",
-    "body content",
-    "minerals"
    ]
   },
   "WAL-CLM-RARE-000169": {
@@ -33177,30 +32048,6 @@
     "maintenance dose"
    ]
   },
-  "WAL-CLM-RARE-000176": {
-   "subject": "manganese",
-   "also_about": [
-    "carpal_tunnel_syndrome",
-    "tmj",
-    "asthma",
-    "infertility",
-    "deafness",
-    "chondroitin"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of manganese deficiency?",
-   "answer_short": "Wallach lists manganese deficiency diseases including congenital ataxia, deafness, asthma, cartilage and 'slipped tendon' defects, TMJ, repetitive motion and carpal tunnel syndrome, convulsions, infertility, miscarriage, loss of libido, and stunted bone growth.",
-   "topics": [
-    "manganese",
-    "manganese deficiency",
-    "carpal tunnel",
-    "tmj",
-    "repetitive motion syndrome",
-    "infertility",
-    "convulsions",
-    "cartilage"
-   ]
-  },
   "WAL-CLM-RARE-000178": {
    "subject": "manganese",
    "also_about": [],
@@ -33326,23 +32173,6 @@
     "immunity"
    ]
   },
-  "WAL-CLM-DDDL-000064": {
-   "subject": "omega-3",
-   "also_about": [
-    "omega-6"
-   ],
-   "facet": "mechanism",
-   "question": "What do essential fatty acids do in the body?",
-   "answer_short": "Wallach explains essential fatty acids are the raw material the body uses to make prostaglandins, which help regulate blood pressure, heart rate, blood-vessel and airway dilation, clotting, and central nervous system function.",
-   "topics": [
-    "essential fatty acids",
-    "omega-3",
-    "omega-6",
-    "prostaglandins",
-    "blood pressure",
-    "heart rate"
-   ]
-  },
   "WAL-CLM-DDDL-000065": {
    "subject": "omega-3",
    "also_about": [
@@ -33402,26 +32232,6 @@
     "prostaglandins",
     "cholesterol",
     "blood pressure"
-   ]
-  },
-  "WAL-CLM-RARE-000111": {
-   "subject": "omega-3",
-   "also_about": [
-    "omega-6",
-    "eczema",
-    "dermatitis"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of essential fatty acid deficiency?",
-   "answer_short": "Wallach reports essential fatty acid deficiency in infants causes poor growth, eczema, and lowered resistance to infection, and in animals produces atherosclerosis.",
-   "topics": [
-    "essential fatty acids",
-    "omega-3",
-    "omega-6",
-    "eczema",
-    "infants",
-    "atherosclerosis",
-    "poor growth"
    ]
   },
   "WAL-CLM-RARE-000195": {
@@ -33556,38 +32366,6 @@
     "enzymes"
    ]
   },
-  "WAL-CLM-RARE-000205": {
-   "subject": "phosphorus",
-   "also_about": [
-    "calcium"
-   ],
-   "facet": "basics",
-   "question": "How much phosphorus is in the body?",
-   "answer_short": "Wallach notes phosphorus is second only to calcium in the body, about 22 percent of total mineral content, with roughly 800 grams total and 700 grams locked in bones and teeth as calcium phosphate.",
-   "topics": [
-    "phosphorus",
-    "calcium",
-    "bones",
-    "teeth",
-    "body content",
-    "apatite"
-   ]
-  },
-  "WAL-CLM-RARE-000207": {
-   "subject": "phosphorus",
-   "also_about": [],
-   "facet": "sources",
-   "question": "How well is phosphorus absorbed?",
-   "answer_short": "Wallach gives average adult phosphorus intake as 1,000–1,500 mg a day, with absorption ranging from 3–5 percent for metallic phosphorus up to 98 percent for colloidal, and best absorption at a 1:1 calcium-to-phosphorus ratio.",
-   "topics": [
-    "phosphorus",
-    "absorption",
-    "colloidal",
-    "chelated",
-    "bioavailability",
-    "daily intake"
-   ]
-  },
   "WAL-CLM-RARE-000208": {
    "subject": "phosphorus",
    "also_about": [],
@@ -33618,39 +32396,6 @@
     "antacids",
     "alcoholism",
     "diuretics"
-   ]
-  },
-  "WAL-CLM-RARE-000210": {
-   "subject": "phosphorus",
-   "also_about": [],
-   "facet": "warning",
-   "question": "Do vegetarians get enough phosphorus?",
-   "answer_short": "Wallach observes vegetarians and vegans who don't supplement rarely lack phosphorus, but their high phytic acid intake always leaves them short of other minerals like calcium, copper, chromium, vanadium, lithium, and zinc.",
-   "topics": [
-    "phosphorus",
-    "vegetarian",
-    "vegan",
-    "phytic acid",
-    "mineral deficiency",
-    "zinc",
-    "copper",
-    "calcium"
-   ]
-  },
-  "WAL-CLM-EPIGEN-000094": {
-   "subject": "potassium",
-   "also_about": [],
-   "facet": "physiology",
-   "question": "What are the signs of low potassium?",
-   "answer_short": "Wallach states chronic potassium deficiency shows as muscular weakness and mental apathy, with hypokalemic cardiac failure its most serious event.",
-   "topics": [
-    "potassium",
-    "low potassium",
-    "muscle weakness",
-    "apathy",
-    "hypokalemia",
-    "cardiac failure",
-    "electrolyte"
    ]
   },
   "WAL-CLM-LETS-000026": {
@@ -33733,20 +32478,6 @@
     "sushi"
    ]
   },
-  "WAL-CLM-EPIGEN-000090": {
-   "subject": "hafnium",
-   "also_about": [],
-   "facet": "basics",
-   "question": "What is hafnium?",
-   "answer_short": "In Epigenetics, Wallach's hafnium entry gives only its natural distribution across rocks, sea water, soil, and plants and animals, assigning it no specific human deficiency disease or function.",
-   "topics": [
-    "hafnium",
-    "trace mineral",
-    "minerals",
-    "natural distribution",
-    "elements"
-   ]
-  },
   "WAL-CLM-RARE-000291": {
    "subject": "hafnium",
    "also_about": [],
@@ -33824,20 +32555,6 @@
     "acidosis",
     "alkalosis",
     "ph"
-   ]
-  },
-  "WAL-CLM-EPIGEN-000125": {
-   "subject": "inositol",
-   "also_about": [],
-   "facet": "protocol",
-   "question": "How much inositol should you take daily?",
-   "answer_short": "10 to 100 mg a day. This figure is from the daily multiple table in his 2014 book Epigenetics.",
-   "topics": [
-    "inositol",
-    "inositol dose",
-    "supplement",
-    "mg per day",
-    "daily multiple"
    ]
   },
   "WAL-CLM-LETS-000053": {
@@ -34030,23 +32747,6 @@
     "mcg per day"
    ]
   },
-  "WAL-CLM-RARE-000147": {
-   "subject": "iodine",
-   "also_about": [
-    "goiter"
-   ],
-   "facet": "mechanism",
-   "question": "Why do some people get goiter even with high iodine intake?",
-   "answer_short": "Because goitrogens — foods that block thyroid metabolism — can override iodine: Wallach notes goiter develops in Japanese living on the sea coast despite high iodine intake, and in a feeding study every group developed goiter except the one fed seaweed (the other foods it lists — cabbage, turnips, buckwheat — are goitrogens).",
-   "topics": [
-    "iodine",
-    "goiter",
-    "goitrogens",
-    "seaweed",
-    "japan",
-    "feeding study"
-   ]
-  },
   "WAL-CLM-RARE-000148": {
    "subject": "iodine",
    "also_about": [
@@ -34099,25 +32799,6 @@
     "eating ice",
     "eating dirt",
     "cravings"
-   ]
-  },
-  "WAL-CLM-DDDL-000020": {
-   "subject": "iron",
-   "also_about": [
-    "anemia",
-    "intelligence"
-   ],
-   "facet": "physiology",
-   "question": "What are the symptoms of iron deficiency?",
-   "answer_short": "Low iron shows up as tiredness and listlessness, a pounding heart on exertion, fuzzy thinking and memory slips, a sore tongue, and a pale, small-cell (hypochromic microcytic) anemia.",
-   "topics": [
-    "iron",
-    "iron deficiency",
-    "fatigue",
-    "palpitations",
-    "memory",
-    "anemia",
-    "sore tongue"
    ]
   },
   "WAL-CLM-DDDL-000022": {
@@ -34199,32 +32880,6 @@
     "palpitations"
    ]
   },
-  "WAL-CLM-RARE-000257": {
-   "subject": "vanadium",
-   "also_about": [
-    "diabetes",
-    "obesity",
-    "cardiovascular_disease",
-    "high_cholesterol",
-    "high_triglycerides",
-    "hypoglycemia",
-    "hyperinsulinemia",
-    "infertility"
-   ],
-   "facet": "physiology",
-   "question": "What health problems does vanadium deficiency cause?",
-   "answer_short": "Wallach links vanadium deficiency to slow growth, increased infant mortality, infertility, high cholesterol and triglycerides, hypoglycemia, hyperinsulinemia, diabetes, cardiovascular disease, and obesity.",
-   "topics": [
-    "vanadium",
-    "deficiency",
-    "diabetes",
-    "blood sugar",
-    "obesity",
-    "cholesterol",
-    "triglycerides",
-    "heart disease"
-   ]
-  },
   "WAL-CLM-DDDL-000041": {
    "subject": "vitamin-a",
    "also_about": [
@@ -34258,30 +32913,6 @@
     "daily dose",
     "supplement",
     "retinol"
-   ]
-  },
-  "WAL-CLM-LETS-000036": {
-   "subject": "vitamin-a",
-   "also_about": [
-    "night_blindness",
-    "acne",
-    "alopecia",
-    "xerophthalmia",
-    "infertility",
-    "insomnia"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of vitamin A deficiency?",
-   "answer_short": "Wallach's signs of vitamin A deficiency include acne, loss of smell, birth defects, dry hair and hair loss, fatigue, growth retardation, thickened rough skin, infections, infertility, insomnia, night blindness, weight loss, and dry eyes and skin.",
-   "topics": [
-    "vitamin a",
-    "deficiency",
-    "night blindness",
-    "dry eyes",
-    "dry skin",
-    "hair loss",
-    "acne",
-    "fatigue"
    ]
   },
   "WAL-CLM-LETS-000071": {
@@ -34834,21 +33465,6 @@
     "neuromuscular"
    ]
   },
-  "WAL-CLM-RARE-000154": {
-   "subject": "potassium",
-   "also_about": [],
-   "facet": "protocol",
-   "question": "How much potassium do you need each day?",
-   "answer_short": "Wallach says potassium is easily absorbed but barely stored, with about 90 percent excreted in the urine, so it needs a large daily intake of 5,000 mg.",
-   "topics": [
-    "potassium",
-    "daily intake",
-    "dosage",
-    "absorption",
-    "excretion",
-    "5000 mg"
-   ]
-  },
   "WAL-CLM-RARE-000155": {
    "subject": "potassium",
    "also_about": [
@@ -34966,25 +33582,6 @@
     "genetic disease",
     "cure",
     "prevention"
-   ]
-  },
-  "WAL-CLM-EPIGEN-000006": {
-   "subject": "cardiomyopathy",
-   "also_about": [
-    "selenium",
-    "keshan_disease",
-    "sudden_cardiac_death"
-   ],
-   "facet": "stance",
-   "question": "What causes sudden cardiac death in athletes?",
-   "answer_short": "Wallach holds that hypertrophic cardiomyopathy, including the sudden cardiac death of athletes, is Keshan disease caused by a simple selenium deficiency, and that a complete 90-nutrient program with extra selenium is protective.",
-   "topics": [
-    "cardiomyopathy",
-    "sudden cardiac death",
-    "athletes",
-    "keshan disease",
-    "selenium",
-    "heart"
    ]
   },
   "WAL-CLM-EPIGEN-000136": {
@@ -35151,42 +33748,6 @@
     "dose"
    ]
   },
-  "WAL-CLM-RARE-000050": {
-   "subject": "muscular_dystrophy",
-   "also_about": [
-    "selenium"
-   ],
-   "facet": "stance",
-   "question": "Is muscular dystrophy caused by a selenium deficiency?",
-   "answer_short": "Wallach holds that muscular dystrophy is a preventable selenium-deficiency disease, with its named forms merely classified by which muscle group is affected first, and notes the veterinary industry wiped out white muscle disease with simple selenium supplementation.",
-   "topics": [
-    "muscular dystrophy",
-    "selenium",
-    "deficiency",
-    "preconception",
-    "duchenne",
-    "white muscle disease",
-    "prevention"
-   ]
-  },
-  "WAL-CLM-RARE-000084": {
-   "subject": "selenium",
-   "also_about": [
-    "calcium"
-   ],
-   "facet": "mechanism",
-   "question": "Does selenium protect against mercury poisoning?",
-   "answer_short": "Wallach notes that minerals can neutralize the toxic effects of other minerals, with selenium a specific antidote for mercury poisoning and calcium for lead.",
-   "topics": [
-    "selenium",
-    "mercury",
-    "mercury poisoning",
-    "calcium",
-    "lead",
-    "heavy metals",
-    "antidote"
-   ]
-  },
   "WAL-CLM-RARE-000225": {
    "subject": "selenium",
    "also_about": [],
@@ -35309,21 +33870,6 @@
     "selenium",
     "deficiency",
     "degenerative disease"
-   ]
-  },
-  "WAL-CLM-RARE-000309": {
-   "subject": "cardiomyopathy",
-   "also_about": [
-    "selenium"
-   ],
-   "facet": "stance",
-   "question": "What causes cardiomyopathy?",
-   "answer_short": "Cardiomyopathy is Keshan disease — a selenium-deficiency muscular dystrophy of the heart, WHO-recognized and, Wallach says, preventable with pennies of selenium.",
-   "topics": [
-    "cardiomyopathy",
-    "selenium",
-    "deficiency",
-    "heart muscle"
    ]
   },
   "WAL-CLM-RARE-000310": {

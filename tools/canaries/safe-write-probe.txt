@@ -1,4 +1,4 @@
-safe-write-canary 2026-08-06T23:29:38+00:00 nonce=a93030ec39404a37
+safe-write-canary 2026-08-07T18:53:26+00:00 nonce=d2ffc52d66f945ef
 lf-terminated
 crlf-terminated
 lone-crafter-lone-cr

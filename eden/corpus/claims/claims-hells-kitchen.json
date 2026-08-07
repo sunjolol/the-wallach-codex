@@ -437,7 +437,10 @@
    "dose": null,
    "tags": [
     "orac",
-    "practical"
+    "practical",
+    "protocol",
+    "noni_juice",
+    "antioxidants"
    ],
    "confidence": "medium",
    "review_state": "draft",
@@ -1295,7 +1298,9 @@
   {
    "id": "WAL-CLM-HELLS-000041",
    "kind": "definition",
-   "essentials": [],
+   "essentials": [
+    "chromium"
+   ],
    "other_substances": [],
    "conditions": [],
    "symptoms": [],
@@ -1317,7 +1322,12 @@
     "trace-minerals",
     "insulin",
     "glucose-metabolism",
-    "definition"
+    "definition",
+    "glucose-tolerance-factor",
+    "diabetes",
+    "hypoglycemia",
+    "vanadium",
+    "deficiency-prevalence"
    ],
    "confidence": "high",
    "review_state": "draft",
@@ -2659,7 +2669,10 @@
     "atkins",
     "weight-loss",
     "minerals",
-    "see-food-diet"
+    "see-food-diet",
+    "keto_diet",
+    "diet",
+    "low-carb"
    ],
    "confidence": "medium",
    "review_state": "draft",
@@ -2901,42 +2914,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-HELLS-000090",
-   "kind": "protocol",
-   "essentials": [],
-   "other_substances": [
-    "mangosteen",
-    "noni"
-   ],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Dr. Wallach recommends using a high-ORAC-value antioxidant juice such as noni (or mangosteen) as a salad dressing at home, as part of his weight-loss eating plan. In his Hell's Kitchen recipes he specifically calls for 'mineral enriched noni juice' as a salad dressing (which he says 'tastes like vinaigrette') and even as a marinade for pork tenderloin. When dining out, where a noni dressing isn't available, he instead uses his 'Salad Fork Trick' of barely dipping the fork into the dressing, which he says gives up about ninety-five percent of the calories.",
-   "verbatim": "At home you will want to use a high ORAC value juice (noni, \nmangosteen) or juice blend for a salad dressing.",
-   "locator": {
-    "book": "hells-kitchen",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 508623
-   },
-   "dose": null,
-   "tags": [
-    "noni_juice",
-    "antioxidants",
-    "orac",
-    "weight-loss",
-    "salad-dressing"
-   ],
-   "confidence": "medium",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-28T18:14:11+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-HELLS-000091",
    "kind": "food_source",
    "essentials": [],
@@ -2964,38 +2941,6 @@
     "antioxidants",
     "free-radicals",
     "aging"
-   ],
-   "confidence": "medium",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-28T18:14:11+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-HELLS-000092",
-   "kind": "quote",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Dr. Wallach endorses low-carbohydrate, low-glycemic-index eating and calls his own 'See Food Diet' the best of the best among such diets. What sets his approach apart is that it weights mineral intake as more important than parsing the exact percentages of carbohydrates, fats and proteins, because in his framework the root cause of obesity is mineral deficiency, not the macronutrient ratio. Low-carbohydrate diets and low glycemic loads can speed up weight loss, but if low carbs are your sole consideration, he warns, you are in for a rude awakening.",
-   "verbatim": "Dr. Wallach’s See Food Diet is perhaps the best of the best when \nit comes to low carbohydrate, low glycemic index diets. Our low \ncarb diet differs from all others in that our concerns for the mineral \nintake is actually more heavily weighted and more important than \nparsing words on the percentages of carbohydrates, fats and proteins.",
-   "locator": {
-    "book": "hells-kitchen",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 500332
-   },
-   "dose": null,
-   "tags": [
-    "keto_diet",
-    "low-carb",
-    "weight-loss",
-    "dieting"
    ],
    "confidence": "medium",
    "review_state": "draft",

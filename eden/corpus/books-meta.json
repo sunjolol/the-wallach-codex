@@ -68,8 +68,8 @@
         "Gerhard N. Schrauzer"
       ],
       "file": "eden/corpus/books/epigenetics.txt",
-      "content_sha256": "46e31c00bffef3498c82b15ba5a7c17d6d724e321d3ba4b1eb6140f4246080aa",
-      "content_bytes": 1559125,
+      "content_sha256": "d245118773db76555e75e8dc70eb1fd4ed5af91226936ce6b88d6b398b5fc255",
+      "content_bytes": 1559127,
       "line_count": 32092,
       "hash_basis": "lf_normalized_utf8",
       "locator_scheme": "screenshot",

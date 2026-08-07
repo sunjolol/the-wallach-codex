@@ -23475,7 +23475,7 @@ reduce the rate of brain cancer in children. Gallium maltolate, an orally
 absorbable form of gallium (Ill) ion, is used in medical treatments for brain cancer,
 inflammation, and certain infectious diseases.
 
-Gd - Gadolium, a rare earth mineral, is found in igneous rocks at 5.4 ppm; shale
+Gd - Gadolinium, a rare earth mineral, is found in igneous rocks at 5.4 ppm; shale
 at 4.3 ppm; sandstone at 2.6 ppm; limestone at 0.7 ppm; land plants at up to
 70 ppm by Carya spp.; marine animals at 0.06 ppm; land animals accumulate
 gadolinium in bone and liver very quickly after absorption.

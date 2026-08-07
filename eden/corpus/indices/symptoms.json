@@ -156,24 +156,9 @@
       "lets-play-doctor"
     ]
   },
-  "areflexia": {
-    "display_name": "Areflexia",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "vitamin-e",
-        "claim_id": "WAL-CLM-LETS-000041",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "ataxia": {
     "display_name": "Ataxia",
-    "claim_count": 7,
+    "claim_count": 6,
     "likely_deficiencies": [
       {
         "essential": "calcium",
@@ -210,30 +195,17 @@
         "claim_id": "WAL-CLM-EPIGEN-000039",
         "confidence": "high",
         "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-b6",
-        "claim_id": "WAL-CLM-RARE-000237",
-        "confidence": "high",
-        "appears_in_books": 1
       }
     ],
     "books_cited": [
       "epigenetics",
-      "lets-play-doctor",
-      "rare-earths"
+      "lets-play-doctor"
     ]
   },
   "behavioral_problems": {
     "display_name": "Behavioral Problems",
-    "claim_count": 3,
+    "claim_count": 2,
     "likely_deficiencies": [
-      {
-        "essential": "lithium",
-        "claim_id": "WAL-CLM-RARE-000163",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
       {
         "essential": "vitamin-b12",
         "claim_id": "WAL-CLM-EPIGEN-000040",
@@ -254,24 +226,17 @@
   },
   "bleeding_gums": {
     "display_name": "Bleeding Gums",
-    "claim_count": 2,
+    "claim_count": 1,
     "likely_deficiencies": [
       {
         "essential": "vitamin-c",
         "claim_id": "WAL-CLM-LETS-000038",
         "confidence": "high",
         "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-c",
-        "claim_id": "WAL-CLM-RARE-000241",
-        "confidence": "high",
-        "appears_in_books": 1
       }
     ],
     "books_cited": [
-      "lets-play-doctor",
-      "rare-earths"
+      "lets-play-doctor"
     ]
   },
   "blurred_vision": {
@@ -640,7 +605,7 @@
   },
   "convulsions": {
     "display_name": "Convulsions",
-    "claim_count": 9,
+    "claim_count": 7,
     "likely_deficiencies": [
       {
         "essential": "calcium",
@@ -667,12 +632,6 @@
         "appears_in_books": 1
       },
       {
-        "essential": "manganese",
-        "claim_id": "WAL-CLM-RARE-000176",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
         "essential": "sodium",
         "claim_id": "WAL-CLM-LETS-000032",
         "confidence": "high",
@@ -687,12 +646,6 @@
       {
         "essential": "vitamin-b6",
         "claim_id": "WAL-CLM-LETS-000027",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-b6",
-        "claim_id": "WAL-CLM-RARE-000237",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -829,7 +782,7 @@
   },
   "dry_hair": {
     "display_name": "Dry Hair",
-    "claim_count": 5,
+    "claim_count": 4,
     "likely_deficiencies": [
       {
         "essential": "copper",
@@ -860,12 +813,6 @@
         "claim_id": "WAL-CLM-RARE-000245",
         "confidence": "high",
         "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-a",
-        "claim_id": "WAL-CLM-LETS-000036",
-        "confidence": "high",
-        "appears_in_books": 1
       }
     ],
     "books_cited": [
@@ -876,7 +823,7 @@
   },
   "dry_skin": {
     "display_name": "Dry Skin",
-    "claim_count": 8,
+    "claim_count": 7,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -923,12 +870,6 @@
       {
         "essential": "vitamin-a",
         "claim_id": "WAL-CLM-EPIGEN-000031",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-a",
-        "claim_id": "WAL-CLM-LETS-000036",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -1362,7 +1303,7 @@
   },
   "fatigue": {
     "display_name": "Fatigue",
-    "claim_count": 25,
+    "claim_count": 23,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -1379,12 +1320,6 @@
       {
         "essential": "chromium",
         "claim_id": "WAL-CLM-LETS-000006",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "copper",
-        "claim_id": "WAL-CLM-LETS-000008",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -1439,12 +1374,6 @@
       {
         "essential": "tyrosine",
         "claim_id": "WAL-CLM-EPIGEN-000057",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-a",
-        "claim_id": "WAL-CLM-LETS-000036",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -1556,32 +1485,11 @@
   },
   "fragile_bones": {
     "display_name": "Fragile Bones",
-    "claim_count": 2,
-    "likely_deficiencies": [
-      {
-        "essential": "copper",
-        "claim_id": "WAL-CLM-LETS-000008",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "iron",
-        "claim_id": "WAL-CLM-LETS-000014",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "gait_disturbance": {
-    "display_name": "Gait Disturbance",
     "claim_count": 1,
     "likely_deficiencies": [
       {
-        "essential": "vitamin-e",
-        "claim_id": "WAL-CLM-LETS-000041",
+        "essential": "iron",
+        "claim_id": "WAL-CLM-LETS-000014",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -1935,14 +1843,8 @@
   },
   "hemorrhage": {
     "display_name": "Hemorrhage",
-    "claim_count": 2,
+    "claim_count": 1,
     "likely_deficiencies": [
-      {
-        "essential": "copper",
-        "claim_id": "WAL-CLM-LETS-000008",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
       {
         "essential": "vitamin-k",
         "claim_id": "WAL-CLM-RARE-000232",
@@ -1951,7 +1853,6 @@
       }
     ],
     "books_cited": [
-      "lets-play-doctor",
       "rare-earths"
     ]
   },
@@ -1987,24 +1888,17 @@
   },
   "hyperkeratosis": {
     "display_name": "Hyperkeratosis",
-    "claim_count": 2,
+    "claim_count": 1,
     "likely_deficiencies": [
       {
         "essential": "vitamin-a",
         "claim_id": "WAL-CLM-EPIGEN-000031",
         "confidence": "high",
         "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-a",
-        "claim_id": "WAL-CLM-LETS-000036",
-        "confidence": "high",
-        "appears_in_books": 1
       }
     ],
     "books_cited": [
-      "epigenetics",
-      "lets-play-doctor"
+      "epigenetics"
     ]
   },
   "hyperreflexia": {
@@ -2308,24 +2202,17 @@
   },
   "kidney_hemorrhage": {
     "display_name": "Kidney Hemorrhage",
-    "claim_count": 2,
+    "claim_count": 1,
     "likely_deficiencies": [
       {
         "essential": "choline",
         "claim_id": "WAL-CLM-EPIGEN-000044",
         "confidence": "high",
         "appears_in_books": 1
-      },
-      {
-        "essential": "choline",
-        "claim_id": "WAL-CLM-RARE-000242",
-        "confidence": "high",
-        "appears_in_books": 1
       }
     ],
     "books_cited": [
-      "epigenetics",
-      "rare-earths"
+      "epigenetics"
     ]
   },
   "knock_knees": {
@@ -2448,7 +2335,7 @@
   },
   "loose_teeth": {
     "display_name": "Loose Teeth",
-    "claim_count": 5,
+    "claim_count": 4,
     "likely_deficiencies": [
       {
         "essential": "phosphorus",
@@ -2471,12 +2358,6 @@
       {
         "essential": "vitamin-c",
         "claim_id": "WAL-CLM-LETS-000038",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-c",
-        "claim_id": "WAL-CLM-RARE-000241",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -2583,7 +2464,7 @@
   },
   "lowered_immunity": {
     "display_name": "Lowered Immunity",
-    "claim_count": 9,
+    "claim_count": 8,
     "likely_deficiencies": [
       {
         "essential": "flavonoids",
@@ -2618,12 +2499,6 @@
       {
         "essential": "sodium",
         "claim_id": "WAL-CLM-LETS-000032",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-a",
-        "claim_id": "WAL-CLM-LETS-000036",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -3101,7 +2976,7 @@
   },
   "nausea": {
     "display_name": "Nausea",
-    "claim_count": 11,
+    "claim_count": 10,
     "likely_deficiencies": [
       {
         "essential": "biotin",
@@ -3150,19 +3025,12 @@
         "claim_id": "WAL-CLM-LETS-000027",
         "confidence": "high",
         "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-b6",
-        "claim_id": "WAL-CLM-RARE-000237",
-        "confidence": "high",
-        "appears_in_books": 1
       }
     ],
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
-      "lets-play-doctor",
-      "rare-earths"
+      "lets-play-doctor"
     ]
   },
   "nervousness": {
@@ -3357,21 +3225,6 @@
       {
         "essential": "zinc",
         "claim_id": "WAL-CLM-LETS-000383",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "ophthalmoplegia": {
-    "display_name": "Ophthalmoplegia",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "vitamin-e",
-        "claim_id": "WAL-CLM-LETS-000041",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -3634,24 +3487,9 @@
       "lets-play-doctor"
     ]
   },
-  "poor_appetite": {
-    "display_name": "Poor Appetite",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "vitamin-c",
-        "claim_id": "WAL-CLM-RARE-000241",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "rare-earths"
-    ]
-  },
   "poor_growth": {
     "display_name": "Poor Growth",
-    "claim_count": 6,
+    "claim_count": 5,
     "likely_deficiencies": [
       {
         "essential": "nickel",
@@ -3680,12 +3518,6 @@
       {
         "essential": "vitamin-c",
         "claim_id": "WAL-CLM-EPIGEN-000043",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-c",
-        "claim_id": "WAL-CLM-RARE-000241",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -3820,17 +3652,11 @@
   },
   "prolonged_clotting_time": {
     "display_name": "Prolonged Clotting Time",
-    "claim_count": 3,
+    "claim_count": 2,
     "likely_deficiencies": [
       {
         "essential": "vitamin-k",
         "claim_id": "WAL-CLM-EPIGEN-000034",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-k",
-        "claim_id": "WAL-CLM-LETS-000042",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -3843,23 +3669,7 @@
     ],
     "books_cited": [
       "epigenetics",
-      "lets-play-doctor",
       "rare-earths"
-    ]
-  },
-  "proprioception_problems": {
-    "display_name": "Proprioception Problems",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "vitamin-e",
-        "claim_id": "WAL-CLM-LETS-000041",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "lets-play-doctor"
     ]
   },
   "proteinuria": {
@@ -3939,71 +3749,28 @@
       "rare-earths"
     ]
   },
-  "rbc_fragility": {
-    "display_name": "Rbc Fragility",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "vitamin-e",
-        "claim_id": "WAL-CLM-LETS-000041",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "reduced_growth": {
     "display_name": "Reduced Growth",
-    "claim_count": 2,
+    "claim_count": 1,
     "likely_deficiencies": [
       {
         "essential": "chromium",
         "claim_id": "WAL-CLM-EPIGEN-000062",
         "confidence": "high",
         "appears_in_books": 1
-      },
-      {
-        "essential": "lithium",
-        "claim_id": "WAL-CLM-RARE-000163",
-        "confidence": "high",
-        "appears_in_books": 1
       }
     ],
     "books_cited": [
-      "epigenetics",
-      "rare-earths"
+      "epigenetics"
     ]
   },
   "reduced_immune_status": {
     "display_name": "Reduced Immune Status",
-    "claim_count": 2,
+    "claim_count": 1,
     "likely_deficiencies": [
       {
         "essential": "germanium",
         "claim_id": "WAL-CLM-RARE-000011",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "silver",
-        "claim_id": "WAL-CLM-RARE-000090",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "rare-earths"
-    ]
-  },
-  "reproductive_failure": {
-    "display_name": "Reproductive Failure",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "lithium",
-        "claim_id": "WAL-CLM-RARE-000163",
         "confidence": "high",
         "appears_in_books": 1
       }
@@ -4044,7 +3811,7 @@
   },
   "retarded_growth": {
     "display_name": "Retarded Growth",
-    "claim_count": 13,
+    "claim_count": 11,
     "likely_deficiencies": [
       {
         "essential": "calcium",
@@ -4071,12 +3838,6 @@
         "appears_in_books": 1
       },
       {
-        "essential": "manganese",
-        "claim_id": "WAL-CLM-RARE-000176",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
         "essential": "omega-3",
         "claim_id": "WAL-CLM-LETS-000011",
         "confidence": "high",
@@ -4097,12 +3858,6 @@
       {
         "essential": "selenium",
         "claim_id": "WAL-CLM-LETS-000030",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-a",
-        "claim_id": "WAL-CLM-LETS-000036",
         "confidence": "high",
         "appears_in_books": 1
       },
@@ -4132,8 +3887,7 @@
       }
     ],
     "books_cited": [
-      "lets-play-doctor",
-      "rare-earths"
+      "lets-play-doctor"
     ]
   },
   "salt_hunger": {
@@ -4274,7 +4028,7 @@
   },
   "shortened_lifespan": {
     "display_name": "Shortened Lifespan",
-    "claim_count": 4,
+    "claim_count": 3,
     "likely_deficiencies": [
       {
         "essential": "chromium",
@@ -4293,33 +4047,11 @@
         "claim_id": "WAL-CLM-EPIGEN-000046",
         "confidence": "high",
         "appears_in_books": 1
-      },
-      {
-        "essential": "lithium",
-        "claim_id": "WAL-CLM-RARE-000163",
-        "confidence": "high",
-        "appears_in_books": 1
       }
     ],
     "books_cited": [
       "epigenetics",
-      "lets-play-doctor",
-      "rare-earths"
-    ]
-  },
-  "shortened_long_bones": {
-    "display_name": "Shortened Long Bones",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "manganese",
-        "claim_id": "WAL-CLM-RARE-000176",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "rare-earths"
+      "lets-play-doctor"
     ]
   },
   "skin_eruptions": {
@@ -4339,39 +4071,17 @@
   },
   "skin_hemorrhages": {
     "display_name": "Skin Hemorrhages",
-    "claim_count": 2,
+    "claim_count": 1,
     "likely_deficiencies": [
       {
         "essential": "vitamin-c",
         "claim_id": "WAL-CLM-EPIGEN-000043",
         "confidence": "high",
         "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-c",
-        "claim_id": "WAL-CLM-RARE-000241",
-        "confidence": "high",
-        "appears_in_books": 1
       }
     ],
     "books_cited": [
-      "epigenetics",
-      "rare-earths"
-    ]
-  },
-  "slipped_tendon": {
-    "display_name": "Slipped Tendon",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "manganese",
-        "claim_id": "WAL-CLM-RARE-000176",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "rare-earths"
+      "epigenetics"
     ]
   },
   "smooth_tongue": {
@@ -4515,21 +4225,6 @@
       "lets-play-doctor"
     ]
   },
-  "testicular_atrophy": {
-    "display_name": "Testicular Atrophy",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "manganese",
-        "claim_id": "WAL-CLM-RARE-000176",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "rare-earths"
-    ]
-  },
   "tooth_loss": {
     "display_name": "Tooth Loss",
     "claim_count": 1,
@@ -4618,24 +4313,9 @@
       "lets-play-doctor"
     ]
   },
-  "vibratory_sense_dysfunction": {
-    "display_name": "Vibratory Sense Dysfunction",
-    "claim_count": 1,
-    "likely_deficiencies": [
-      {
-        "essential": "vitamin-e",
-        "claim_id": "WAL-CLM-LETS-000041",
-        "confidence": "high",
-        "appears_in_books": 1
-      }
-    ],
-    "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
   "vomiting": {
     "display_name": "Vomiting",
-    "claim_count": 5,
+    "claim_count": 4,
     "likely_deficiencies": [
       {
         "essential": "sodium",
@@ -4654,30 +4334,17 @@
         "claim_id": "WAL-CLM-LETS-000021",
         "confidence": "high",
         "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-b6",
-        "claim_id": "WAL-CLM-RARE-000237",
-        "confidence": "high",
-        "appears_in_books": 1
       }
     ],
     "books_cited": [
       "dddl-3e-2011",
-      "lets-play-doctor",
-      "rare-earths"
+      "lets-play-doctor"
     ]
   },
   "weakness": {
     "display_name": "Weakness",
-    "claim_count": 9,
+    "claim_count": 8,
     "likely_deficiencies": [
-      {
-        "essential": "copper",
-        "claim_id": "WAL-CLM-LETS-000008",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
       {
         "essential": "phosphorus",
         "claim_id": "WAL-CLM-LETS-000023",
@@ -4776,7 +4443,7 @@
   },
   "weight_loss": {
     "display_name": "Weight Loss",
-    "claim_count": 8,
+    "claim_count": 7,
     "likely_deficiencies": [
       {
         "essential": "iodine",
@@ -4817,12 +4484,6 @@
       {
         "essential": "sodium",
         "claim_id": "WAL-CLM-RARE-000188",
-        "confidence": "high",
-        "appears_in_books": 1
-      },
-      {
-        "essential": "vitamin-a",
-        "claim_id": "WAL-CLM-LETS-000036",
         "confidence": "high",
         "appears_in_books": 1
       },
