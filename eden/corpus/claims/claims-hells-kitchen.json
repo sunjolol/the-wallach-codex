@@ -19,7 +19,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 488412
+    "char_offset": 488409
    },
    "dose": null,
    "tags": [
@@ -145,7 +145,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 603176
+    "char_offset": 603167
    },
    "dose": null,
    "tags": [
@@ -232,7 +232,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach's maintenance dose for the liquid plant-derived colloidal minerals: one ounce per 100 pounds of body weight per day, ideally split. A 100-pound person takes one ounce a day (or half an ounce — one tablespoon — twice daily); a 200-pound person, two ounces; a 300-pound person, three, and so on. He specifies the supplement should carry at least 77 minerals at a concentration of 19,000 mg per quart and cover all 90 essential nutrients. For anyone needing to lose 25 pounds or more, the level can be raised to one and one-quarter ounces per 100 pounds.",
-   "verbatim": "These liquid minerals should be taken at the rate of one ounce \nper hundred pounds of body weight as a maintenance dose.",
+   "verbatim": "These liquid minerals should be taken at the rate of one ounce \nper hundred pounds of body weight as a maintenance dose. For example, a 100 pound person would take one ounce per day in a split \ndose or one half ounce (one tablespoon) twice per day. A 200 pound \nperson would take two ounces per day; a 300 pound person would \ntake three ounces per day and so on. \nFor those individuals needing to lose twenty five pounds or more \nthe supplement level can be increased to one and one quarter ounces \n(1 1/4 oz) per 100 pounds of body weight",
    "locator": {
     "book": "hells-kitchen",
     "scheme": "chapter_page",
@@ -240,7 +240,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 509558
+    "char_offset": 509552
    },
    "dose": null,
    "tags": [
@@ -273,7 +273,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 491669
+    "char_offset": 491666
    },
    "dose": null,
    "tags": [
@@ -306,7 +306,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 580874
+    "char_offset": 580865
    },
    "dose": null,
    "tags": [
@@ -424,7 +424,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach's practical trick is to replace salad dressing with a high-ORAC juice - noni or mangosteen - instead of oil. It sits inside his See Food Diet, where oils and dressings are a main target. For eating out he gives the Salad Fork Trick: dip the fork a quarter inch into the dressing and shake off the excess, which lets you taste it while giving up about ninety-five percent of the calories.",
-   "verbatim": "At home you will want to use a high ORAC value juice (noni, \nmangosteen) or juice blend for a salad dressing.",
+   "verbatim": "At home you will want to use a high ORAC value juice (noni, \nmangosteen) or juice blend for a salad dressing. When dining out \nyou will want to use “Dr. Wallach’s Salad Fork Trick.” \nDr. Wallach’s Salad Fork Trick is simply performed by dipping a \nsalad fork 1/4 inch into the dish of salad dressing and shaking off the \nexcess. This simple procedure will allow you to taste the salad dressing, yet give up ninety five percent of the calories",
    "locator": {
     "book": "hells-kitchen",
     "scheme": "chapter_page",
@@ -432,7 +432,7 @@
     "page": 269,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 508623
+    "char_offset": 508620
    },
    "dose": null,
    "tags": [
@@ -567,7 +567,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 556255
+    "char_offset": 556246
    },
    "dose": null,
    "tags": [
@@ -603,7 +603,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 554926
+    "char_offset": 554917
    },
    "dose": null,
    "tags": [
@@ -670,7 +670,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 618358
+    "char_offset": 618349
    },
    "dose": null,
    "tags": [
@@ -770,7 +770,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 618833
+    "char_offset": 618824
    },
    "dose": null,
    "tags": [
@@ -1005,7 +1005,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 555704
+    "char_offset": 555695
    },
    "dose": null,
    "tags": [
@@ -1039,7 +1039,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 586431
+    "char_offset": 586422
    },
    "dose": null,
    "tags": [
@@ -1142,7 +1142,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 489082
+    "char_offset": 489079
    },
    "dose": null,
    "tags": [
@@ -1243,7 +1243,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 556255
+    "char_offset": 556246
    },
    "dose": null,
    "tags": [
@@ -1277,7 +1277,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 613766
+    "char_offset": 613757
    },
    "dose": null,
    "tags": [
@@ -1622,7 +1622,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 555321
+    "char_offset": 555312
    },
    "dose": null,
    "tags": [
@@ -1655,7 +1655,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 617163
+    "char_offset": 617154
    },
    "dose": null,
    "tags": [
@@ -1791,7 +1791,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 555321
+    "char_offset": 555312
    },
    "dose": null,
    "tags": [
@@ -1890,7 +1890,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 489082
+    "char_offset": 489079
    },
    "dose": null,
    "tags": [
@@ -1926,7 +1926,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 489634
+    "char_offset": 489631
    },
    "dose": null,
    "tags": [
@@ -1962,7 +1962,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 488820
+    "char_offset": 488817
    },
    "dose": null,
    "tags": [
@@ -1997,7 +1997,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 489401
+    "char_offset": 489398
    },
    "dose": null,
    "tags": [
@@ -2032,7 +2032,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 605063
+    "char_offset": 605054
    },
    "dose": null,
    "tags": [
@@ -2137,7 +2137,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 527523
+    "char_offset": 527514
    },
    "dose": null,
    "tags": [
@@ -2170,7 +2170,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 530430
+    "char_offset": 530421
    },
    "dose": null,
    "tags": [
@@ -2204,7 +2204,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 593552
+    "char_offset": 593543
    },
    "dose": null,
    "tags": [
@@ -2374,7 +2374,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 527523
+    "char_offset": 527514
    },
    "dose": null,
    "tags": [
@@ -2407,7 +2407,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 488412
+    "char_offset": 488409
    },
    "dose": null,
    "tags": [],
@@ -2434,7 +2434,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 492223
+    "char_offset": 492220
    },
    "dose": null,
    "tags": [
@@ -2467,7 +2467,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 492376
+    "char_offset": 492373
    },
    "dose": null,
    "tags": [
@@ -2500,7 +2500,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 492728
+    "char_offset": 492725
    },
    "dose": null,
    "tags": [
@@ -2565,7 +2565,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 491597
+    "char_offset": 491594
    },
    "dose": null,
    "tags": [
@@ -2661,7 +2661,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 500332
+    "char_offset": 500329
    },
    "dose": null,
    "tags": [
@@ -2699,7 +2699,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 500996
+    "char_offset": 500993
    },
    "dose": null,
    "tags": [
@@ -2731,7 +2731,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 501454
+    "char_offset": 501451
    },
    "dose": null,
    "tags": [
@@ -2764,7 +2764,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 501864
+    "char_offset": 501861
    },
    "dose": null,
    "tags": [
@@ -2796,7 +2796,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 502294
+    "char_offset": 502291
    },
    "dose": null,
    "tags": [
@@ -2832,7 +2832,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 487221
+    "char_offset": 487218
    },
    "dose": null,
    "tags": [
@@ -2933,7 +2933,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 614599
+    "char_offset": 614590
    },
    "dose": null,
    "tags": [
@@ -2967,7 +2967,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 498097
+    "char_offset": 498094
    },
    "dose": null,
    "tags": [
@@ -3000,7 +3000,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 499804
+    "char_offset": 499801
    },
    "dose": null,
    "tags": [
@@ -3032,7 +3032,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 496022
+    "char_offset": 496019
    },
    "dose": null,
    "tags": [
@@ -3065,7 +3065,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 617231
+    "char_offset": 617222
    },
    "dose": null,
    "tags": [],

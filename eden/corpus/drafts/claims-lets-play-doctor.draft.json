@@ -29,7 +29,7 @@
     "page": 71,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 136118
+    "char_offset": 136112
    },
    "dose": null,
    "tags": [
@@ -60,7 +60,7 @@
     "page": 71,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 136353
+    "char_offset": 136347
    },
    "dose": null,
    "tags": [
@@ -1819,7 +1819,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139115
+    "char_offset": 139109
    },
    "dose": {
     "amount": 200,
@@ -1859,7 +1859,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139155
+    "char_offset": 139149
    },
    "dose": {
     "amount": 2000,
@@ -1899,7 +1899,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139198
+    "char_offset": 139192
    },
    "dose": {
     "amount": 2500,
@@ -1939,7 +1939,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139241
+    "char_offset": 139235
    },
    "dose": {
     "amount": 600,
@@ -1979,7 +1979,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139279
+    "char_offset": 139273
    },
    "dose": {
     "amount": 200,
@@ -2019,7 +2019,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139318
+    "char_offset": 139312
    },
    "dose": {
     "amount": "3-4",
@@ -2061,7 +2061,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139350
+    "char_offset": 139344
    },
    "dose": {
     "amount": 1.5,
@@ -2101,7 +2101,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139382
+    "char_offset": 139376
    },
    "dose": {
     "amount": 1000,
@@ -2142,7 +2142,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139423
+    "char_offset": 139417
    },
    "dose": {
     "amount": 90,
@@ -2182,7 +2182,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139460
+    "char_offset": 139454
    },
    "dose": {
     "amount": 250,
@@ -2222,7 +2222,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139493
+    "char_offset": 139487
    },
    "dose": {
     "amount": 45,
@@ -2262,7 +2262,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139523
+    "char_offset": 139517
    },
    "dose": {
     "amount": 1000,
@@ -2302,7 +2302,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139558
+    "char_offset": 139552
    },
    "dose": {
     "amount": 5,
@@ -2342,7 +2342,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139591
+    "char_offset": 139585
    },
    "dose": {
     "amount": 500,
@@ -2382,7 +2382,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139627
+    "char_offset": 139621
    },
    "dose": {
     "amount": 50,
@@ -2422,7 +2422,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139679
+    "char_offset": 139673
    },
    "dose": {
     "amount": 50,
@@ -2462,7 +2462,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139734
+    "char_offset": 139728
    },
    "dose": {
     "amount": 0,
@@ -2502,7 +2502,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139760
+    "char_offset": 139754
    },
    "dose": {
     "amount": 5500,
@@ -2542,7 +2542,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139797
+    "char_offset": 139791
    },
    "dose": {
     "amount": 50,
@@ -2582,7 +2582,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139835
+    "char_offset": 139829
    },
    "dose": {
     "amount": 50,
@@ -2622,7 +2622,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139873
+    "char_offset": 139867
    },
    "dose": {
     "amount": 200,
@@ -2662,7 +2662,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139909
+    "char_offset": 139903
    },
    "dose": {
     "amount": 3300,
@@ -2702,7 +2702,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139950
+    "char_offset": 139944
    },
    "dose": {
     "amount": 500,
@@ -2742,7 +2742,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 139976
+    "char_offset": 139970
    },
    "dose": {
     "amount": 50,
@@ -2782,7 +2782,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140012
+    "char_offset": 140006
    },
    "dose": {
     "amount": 500,
@@ -2822,7 +2822,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140035
+    "char_offset": 140029
    },
    "dose": {
     "amount": 500,
@@ -2862,7 +2862,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140063
+    "char_offset": 140057
    },
    "dose": {
     "amount": 5000,
@@ -2902,7 +2902,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140121
+    "char_offset": 140115
    },
    "dose": {
     "amount": 200,
@@ -2942,7 +2942,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140158
+    "char_offset": 140152
    },
    "dose": {
     "amount": 1000,
@@ -2982,7 +2982,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140193
+    "char_offset": 140187
    },
    "dose": {
     "amount": 275,
@@ -3022,7 +3022,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140226
+    "char_offset": 140220
    },
    "dose": {
     "amount": 400,
@@ -3062,7 +3062,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140258
+    "char_offset": 140252
    },
    "dose": {
     "amount": 140,
@@ -3102,7 +3102,7 @@
     "page": 73,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140291
+    "char_offset": 140285
    },
    "dose": {
     "amount": 25,
@@ -3294,7 +3294,7 @@
     "page": 66,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 124651
+    "char_offset": 124649
    },
    "dose": null,
    "tags": [
@@ -3339,7 +3339,7 @@
     "page": 66,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 122147
+    "char_offset": 122145
    },
    "dose": null,
    "tags": [
@@ -3378,7 +3378,7 @@
     "page": 66,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 122329
+    "char_offset": 122327
    },
    "dose": null,
    "tags": [
@@ -3418,7 +3418,7 @@
     "page": 66,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 122904
+    "char_offset": 122902
    },
    "dose": null,
    "tags": [
@@ -3456,7 +3456,7 @@
     "page": 66,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 123296
+    "char_offset": 123294
    },
    "dose": null,
    "tags": [
@@ -3559,7 +3559,7 @@
     "page": 67,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 129007
+    "char_offset": 129005
    },
    "dose": null,
    "tags": [
@@ -3591,7 +3591,7 @@
     "page": 67,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 129767
+    "char_offset": 129765
    },
    "dose": null,
    "tags": [
@@ -3623,7 +3623,7 @@
     "page": 68,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 130321
+    "char_offset": 130319
    },
    "dose": null,
    "tags": [
@@ -4209,7 +4209,7 @@
     "page": 67,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 128015
+    "char_offset": 128013
    },
    "dose": null,
    "tags": [
@@ -4246,7 +4246,7 @@
     "page": 67,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 128559
+    "char_offset": 128557
    },
    "dose": null,
    "tags": [
@@ -4281,7 +4281,7 @@
     "page": 68,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 131189
+    "char_offset": 131187
    },
    "dose": null,
    "tags": [
@@ -4320,7 +4320,7 @@
     "page": 68,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 132063
+    "char_offset": 132061
    },
    "dose": null,
    "tags": [
@@ -4421,7 +4421,7 @@
     "page": 67,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 126359
+    "char_offset": 126357
    },
    "dose": null,
    "tags": [
@@ -4455,7 +4455,7 @@
     "page": 66,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 123602
+    "char_offset": 123600
    },
    "dose": null,
    "tags": [
@@ -4491,7 +4491,7 @@
     "page": 66,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 124048
+    "char_offset": 124046
    },
    "dose": null,
    "tags": [
@@ -4531,7 +4531,7 @@
     "page": 66,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 125164
+    "char_offset": 125162
    },
    "dose": null,
    "tags": [
@@ -4573,7 +4573,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 158231
+    "char_offset": 158225
    },
    "dose": null,
    "tags": [
@@ -4612,7 +4612,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 158528
+    "char_offset": 158522
    },
    "dose": null,
    "tags": [
@@ -4651,7 +4651,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 159315
+    "char_offset": 159309
    },
    "dose": null,
    "tags": [
@@ -4683,7 +4683,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 159856
+    "char_offset": 159850
    },
    "dose": null,
    "tags": [
@@ -4719,7 +4719,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 160508
+    "char_offset": 160502
    },
    "dose": null,
    "tags": [
@@ -4761,7 +4761,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 161591
+    "char_offset": 161585
    },
    "dose": null,
    "tags": [
@@ -4800,7 +4800,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 162411
+    "char_offset": 162405
    },
    "dose": null,
    "tags": [
@@ -4838,7 +4838,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 162833
+    "char_offset": 162827
    },
    "dose": null,
    "tags": [
@@ -4878,7 +4878,7 @@
    ],
    "symptoms": [],
    "claim_text": "For AIDS (autoimmune deficiency syndrome), Wallach stresses prevention as the 'magic bullet' (avoid intravenous recreational drugs, unsafe sex, and contaminated blood). Once contracted, he recommends a vigorous program of anti-viral medications (Ribavirin and Isoprinosin) and immune support (Levamisol, hydrazine sulfate), plus vitamin C to bowel tolerance, vitamin A 300,000 IU per day as beta carotene, zinc 50 mg three times daily, adrenal cortical extract (ACE) 10 drops three times daily sublingually, selenium 1000 mcg per day orally or by injection, vitamin E 1000 IU per day, herbs such as garlic, evening primrose oil, and goldenseal, and injectable thymus.",
-   "verbatim": "Once AIDS is contracted, a vigorous\nprogram ofanti-viral medicationsO.e., Ribavirin\nand Isoprinosin) and immune support\n(Levamisol , hydrazine sulfate) are indicated.\nVitamin C to bowel tolerance, 300,000 IU of\nvitamin A per day as beta carotene, 50 mg zinc\nt.i.d., ACE (adrenal cortical extract) 10 drops\nt.i.d. sublingual, selenium 1000 mcg/day orally",
+   "verbatim": "Once AIDS is contracted, a vigorous\nprogram ofanti-viral medicationsO.e., Ribavirin\nand Isoprinosin) and immune support\n(Levamisol , hydrazine sulfate) are indicated.\nVitamin C to bowel tolerance, 300,000 IU of\nvitamin A per day as beta carotene, 50 mg zinc\nt.i.d., ACE (adrenal cortical extract) 10 drops\nt.i.d. sublingual, selenium 1000 mcg/day orally\nor by injection,vitamin E 1000 IU/day, herbs",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -4886,7 +4886,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 163889
+    "char_offset": 163883
    },
    "dose": null,
    "tags": [
@@ -4933,7 +4933,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 165164
+    "char_offset": 165158
    },
    "dose": null,
    "tags": [
@@ -4967,7 +4967,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 166111
+    "char_offset": 166105
    },
    "dose": null,
    "tags": [
@@ -5013,7 +5013,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 166867
+    "char_offset": 166861
    },
    "dose": null,
    "tags": [
@@ -5055,7 +5055,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 168101
+    "char_offset": 168095
    },
    "dose": null,
    "tags": [
@@ -5089,7 +5089,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 168478
+    "char_offset": 168472
    },
    "dose": {
     "amount": 1000,
@@ -5136,7 +5136,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 169553
+    "char_offset": 169547
    },
    "dose": null,
    "tags": [
@@ -5170,7 +5170,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 170473
+    "char_offset": 170467
    },
    "dose": null,
    "tags": [
@@ -5198,7 +5198,7 @@
    ],
    "symptoms": [],
    "claim_text": "Anal abscess and anal fissures are caused by constipation and passing large hard stools, often alongside hemorrhoids, producing painful red swellings near the anal opening. Wallach's approach: open them with a blade or by soaking in hot sitz baths of 3% boric acid; apply a poultice of echinacea (Echinacea angustifolia) directly to disinfect and bring the abscess to a point so it can be opened; then flush the opened abscess with 3% hydrogen peroxide to clean out the pus and disinfect the wound.",
-   "verbatim": "ANAL ABSCESS: and anal fissures are caused\nby constipation and frequent passage of large\nhard stools; they may occur at the same time\nwith hemorrhoids. Painful red swellings at or\nnear the anal opening are characteristic. These\nmay be opened with a blade or by soaking in\nhot sitz baths of 3% boric acid. A poultice of\nechinacea (Echinacea angustifolia) may be\napplied directly to the abscess to disinfect and\nhelp to bring it to a \"point\" so it can be opened.",
+   "verbatim": "ANAL ABSCESS: and anal fissures are caused\nby constipation and frequent passage of large\nhard stools; they may occur at the same time\nwith hemorrhoids. Painful red swellings at or\nnear the anal opening are characteristic. These\nmay be opened with a blade or by soaking in\nhot sitz baths of 3% boric acid. A poultice of\nechinacea (Echinacea angustifolia) may be\napplied directly to the abscess to disinfect and\nhelp to bring it to a \"point\" so it can be opened.\nFlushing the opened abscess with 3% H202\nwill clean out the puss and disinfect the",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -5206,7 +5206,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 170613
+    "char_offset": 170607
    },
    "dose": null,
    "tags": [
@@ -5248,7 +5248,7 @@
    ],
    "symptoms": [],
    "claim_text": "For anemia (a lack of blood from hemorrhage, infection, and/or nutritional deficiencies), Wallach's program is betaine hydrochloride 75-200 mg three times daily 15-20 minutes before meals (to assure B-12 absorption); liver extract orally or by intramuscular injection; iron 20 mg; vitamin B-12 1000 mcg per day for 20 days; folic acid 15 mg for 20 days; copper 2 mg; zinc 50 mg three times daily; vitamin B-2 50 mg twice daily; vitamin B-5 50 mg three times daily; vitamin B-6 50 mg twice daily for 20 days; vitamin C to bowel tolerance; vitamin E 800-1200 IU per day; selenium 500 mcg per day; and essential fatty acids 5 grams three times daily; with herbs sweet cicely (Myrrhis odorata) and marsh marigold (Caltha palustris).",
-   "verbatim": "ANEMIA: is a lack of blood from many\npossible causes including hemorrhage, infections and/or nutritional deficiencies. Betaine\nHCl orally at 75-200 mg t.i.d. 15-20 minutes\nbefore meals is required to assure absorption\nof B-12; liver extract orally or IM; nutritional\nsupport with iron 20 mg; B-12 1000 mcg per\nday for 20 days; folic acid 15 mg for 20 days",
+   "verbatim": "ANEMIA: is a lack of blood from many\npossible causes including hemorrhage, infections and/or nutritional deficiencies. Betaine\nHCl orally at 75-200 mg t.i.d. 15-20 minutes\nbefore meals is required to assure absorption\nof B-12; liver extract orally or IM; nutritional\nsupport with iron 20 mg; B-12 1000 mcg per\nday for 20 days; folic acid 15 mg for 20 days;\n84\ncopper 2 mg; zinc 50 mg t.i.d.; B-2 50 mgb.i.d.;\nB-5 50 mg t.i.d.; B-6 50 mg b.i.d. for 20 days;\nvitamin C to bowel tolerance; Vitamin E 800-\n1200 IU per day; selenium 500 mcg/day; and\nessential fatty acids at a rate of 5 gram t.i.d.\nHerbs including sweet cicely (Mymhis odorata)\nand marsh marigold (Coltha palustris)",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -5256,7 +5256,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 171165
+    "char_offset": 171159
    },
    "dose": null,
    "tags": [
@@ -5298,7 +5298,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 172465
+    "char_offset": 172459
    },
    "dose": null,
    "tags": [
@@ -5344,7 +5344,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 174050
+    "char_offset": 174044
    },
    "dose": null,
    "tags": [
@@ -5378,7 +5378,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 174656
+    "char_offset": 174650
    },
    "dose": {
     "amount": 50,
@@ -5430,7 +5430,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 175415
+    "char_offset": 175409
    },
    "dose": null,
    "tags": [
@@ -5467,7 +5467,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 175831
+    "char_offset": 175825
    },
    "dose": null,
    "tags": [
@@ -5503,7 +5503,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 176618
+    "char_offset": 176612
    },
    "dose": null,
    "tags": [
@@ -5546,7 +5546,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 177779
+    "char_offset": 177773
    },
    "dose": null,
    "tags": [
@@ -5600,7 +5600,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 180120
+    "char_offset": 180114
    },
    "dose": null,
    "tags": [
@@ -5647,7 +5647,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 181345
+    "char_offset": 181339
    },
    "dose": null,
    "tags": [
@@ -5686,7 +5686,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 182701
+    "char_offset": 182695
    },
    "dose": null,
    "tags": [
@@ -5726,7 +5726,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 183078
+    "char_offset": 183072
    },
    "dose": null,
    "tags": [
@@ -5767,7 +5767,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 183473
+    "char_offset": 183467
    },
    "dose": null,
    "tags": [
@@ -5804,7 +5804,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 184221
+    "char_offset": 184215
    },
    "dose": null,
    "tags": [
@@ -5843,7 +5843,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 185323
+    "char_offset": 185317
    },
    "dose": null,
    "tags": [
@@ -5880,7 +5880,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 185471
+    "char_offset": 185465
    },
    "dose": {
     "amount": 50,
@@ -5928,7 +5928,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 185793
+    "char_offset": 185787
    },
    "dose": null,
    "tags": [
@@ -5967,7 +5967,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 186589
+    "char_offset": 186583
    },
    "dose": null,
    "tags": [
@@ -6003,7 +6003,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 187232
+    "char_offset": 187226
    },
    "dose": null,
    "tags": [
@@ -6043,7 +6043,7 @@
    ],
    "symptoms": [],
    "claim_text": "Benign prostatic hyperplasia (enlargement of the prostate gland) is perhaps the most common infirmity of aging in men; the enlarging gland squeezes the bladder neck, producing urinary frequency and urgency. Wallach's protocol is zinc at 50 mg three times daily, essential fatty acids as flaxseed oil 1 tablespoon three times daily, a high-fiber diet including pumpkin seeds and alfalfa, vitamin A as beta carotene 300,000 IU/day, vitamin C to bowel tolerance, chlorophyll (best from alfalfa), the amino acids glycine, alanine, and glutamic acid at 5 grams each daily for 90 days, hydrogen peroxide (20 drops per oz of aloe juice) 1 oz twice daily, cranberry juice 2 pints/day, saw palmetto (Serenoa serrulata), and selenium 250 mcg three times daily.",
-   "verbatim": "Benign prostatic hypertrophy is treated with\nzinc at 50 mg t.i.d., essential fatty acids as\nflaxseed oil at 1 tbsp. t.i.d., high fiber diets\nincluding pumpkin seeds and alfalfa, 300,000\nIU vitamin A as beta carotene per day, vitamin\nC to bowel tolerance, chlorophyll (best source\nis alfalfa), amino acids (glycine, alanine and\nglutamic acid) at five grams each daily for 90\ndays",
+   "verbatim": "Benign prostatic hypertrophy is treated with\nzinc at 50 mg t.i.d., essential fatty acids as\nflaxseed oil at 1 tbsp. t.i.d., high fiber diets\nincluding pumpkin seeds and alfalfa, 300,000\nIU vitamin A as beta carotene per day, vitamin\nC to bowel tolerance, chlorophyll (best source\nis alfalfa), amino acids (glycine, alanine and\nglutamic acid) at five grams each daily for 90\ndays, hydrogen peroxide ( 20 drops per oz of\naloe juice) at 1 oz. b.i.d. , cranberry juice at two\npints per day,herbs including saw palmetto\n(Serenoa serrulata) and selenium at 250 mcg\nt.i.d.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -6051,7 +6051,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 188350
+    "char_offset": 188344
    },
    "dose": null,
    "tags": [
@@ -6083,7 +6083,7 @@
    ],
    "symptoms": [],
    "claim_text": "Bell's palsy is the sudden drooping of one side of the face from inflammation or compression of the facial nerve (the 7th cranial nerve); it is often mistaken for a stroke because of its sudden onset, with numbness and partial or total loss of muscle control on the affected side. Treated properly, there can be up to an 80% chance of significant recovery. Wallach's treatment is vitamin B-12 at 1000 mcg/day for a total of 20,000 mcg, calcium/magnesium at 2000 mg and 800 mg per day, essential fatty acids at 5 grams three times daily, and American ginseng (Panax quinquefolius); colloidal minerals are also useful.",
-   "verbatim": "Treatment is B-12 at 1000 mcg/day for a total\nof 20,000 mcg; calcium/ magnesium at 2,000\nmg and 800 mg per day; essential fatty acids at\n5 gm t.i.d. and American ginseng (Panax\nquinquefolius). Colloidal minerals are useful.",
+   "verbatim": "Bells palsy is often mistaken for a stroke\nbecause of the sudden onset. Numbness and\npartial or total loss of muscular control on the\naffected side are typical signs and symptoms.\nTreated properly, there can be as much as an\n80% chance of significant recovery.\nTreatment is B-12 at 1000 mcg/day for a total\nof 20,000 mcg; calcium/ magnesium at 2,000\nmg and 800 mg per day; essential fatty acids at\n5 gm t.i.d. and American ginseng (Panax\nquinquefolius). Colloidal minerals are useful.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -6091,7 +6091,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 189363
+    "char_offset": 189096
    },
    "dose": null,
    "tags": [
@@ -6136,7 +6136,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 190909
+    "char_offset": 190903
    },
    "dose": null,
    "tags": [
@@ -6171,7 +6171,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 192180
+    "char_offset": 192172
    },
    "dose": null,
    "tags": [
@@ -6215,7 +6215,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 193652
+    "char_offset": 193644
    },
    "dose": null,
    "tags": [
@@ -6249,7 +6249,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 194657
+    "char_offset": 194649
    },
    "dose": null,
    "tags": [
@@ -6286,7 +6286,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 195186
+    "char_offset": 195178
    },
    "dose": {
     "amount": 1000,
@@ -6334,7 +6334,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 195616
+    "char_offset": 195608
    },
    "dose": null,
    "tags": [
@@ -6371,7 +6371,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 196275
+    "char_offset": 196267
    },
    "dose": null,
    "tags": [
@@ -6411,7 +6411,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 196480
+    "char_offset": 196472
    },
    "dose": null,
    "tags": [
@@ -6453,7 +6453,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 196898
+    "char_offset": 196890
    },
    "dose": null,
    "tags": [
@@ -6494,7 +6494,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 197895
+    "char_offset": 197887
    },
    "dose": null,
    "tags": [
@@ -6530,7 +6530,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 198619
+    "char_offset": 198611
    },
    "dose": null,
    "tags": [
@@ -6565,7 +6565,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 198758
+    "char_offset": 198750
    },
    "dose": null,
    "tags": [
@@ -6607,7 +6607,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 199391
+    "char_offset": 199383
    },
    "dose": null,
    "tags": [
@@ -6655,7 +6655,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 199990
+    "char_offset": 199982
    },
    "dose": null,
    "tags": [
@@ -6697,7 +6697,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 200710
+    "char_offset": 200702
    },
    "dose": null,
    "tags": [
@@ -6733,7 +6733,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 201331
+    "char_offset": 201323
    },
    "dose": null,
    "tags": [
@@ -6772,7 +6772,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 202194
+    "char_offset": 202186
    },
    "dose": null,
    "tags": [
@@ -6819,7 +6819,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 203349
+    "char_offset": 203341
    },
    "dose": null,
    "tags": [
@@ -6855,7 +6855,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 204332
+    "char_offset": 204324
    },
    "dose": null,
    "tags": [
@@ -6896,7 +6896,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 204830
+    "char_offset": 204822
    },
    "dose": null,
    "tags": [
@@ -6929,7 +6929,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 207216
+    "char_offset": 207208
    },
    "dose": null,
    "tags": [
@@ -6964,7 +6964,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 208418
+    "char_offset": 208408
    },
    "dose": null,
    "tags": [
@@ -7002,7 +7002,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 208927
+    "char_offset": 208917
    },
    "dose": null,
    "tags": [
@@ -7037,7 +7037,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 209229
+    "char_offset": 209219
    },
    "dose": null,
    "tags": [
@@ -7072,7 +7072,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 209459
+    "char_offset": 209449
    },
    "dose": null,
    "tags": [
@@ -7116,7 +7116,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 209931
+    "char_offset": 209921
    },
    "dose": null,
    "tags": [
@@ -7153,7 +7153,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 210316
+    "char_offset": 210306
    },
    "dose": null,
    "tags": [
@@ -7188,7 +7188,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 210722
+    "char_offset": 210712
    },
    "dose": null,
    "tags": [
@@ -7232,7 +7232,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 210876
+    "char_offset": 210866
    },
    "dose": null,
    "tags": [
@@ -7269,7 +7269,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 211138
+    "char_offset": 211128
    },
    "dose": null,
    "tags": [
@@ -7304,7 +7304,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 211349
+    "char_offset": 211339
    },
    "dose": null,
    "tags": [
@@ -7339,7 +7339,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 211536
+    "char_offset": 211526
    },
    "dose": null,
    "tags": [
@@ -7374,7 +7374,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 211831
+    "char_offset": 211821
    },
    "dose": null,
    "tags": [
@@ -7410,7 +7410,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212096
+    "char_offset": 212086
    },
    "dose": null,
    "tags": [
@@ -7445,7 +7445,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212210
+    "char_offset": 212200
    },
    "dose": null,
    "tags": [
@@ -7481,7 +7481,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212302
+    "char_offset": 212292
    },
    "dose": null,
    "tags": [
@@ -7518,7 +7518,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212508
+    "char_offset": 212498
    },
    "dose": null,
    "tags": [
@@ -7557,7 +7557,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212628
+    "char_offset": 212618
    },
    "dose": null,
    "tags": [
@@ -7592,7 +7592,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 212924
+    "char_offset": 212914
    },
    "dose": null,
    "tags": [
@@ -7628,7 +7628,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 213168
+    "char_offset": 213158
    },
    "dose": null,
    "tags": [
@@ -7663,7 +7663,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 213306
+    "char_offset": 213296
    },
    "dose": null,
    "tags": [
@@ -7698,7 +7698,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 213432
+    "char_offset": 213422
    },
    "dose": null,
    "tags": [
@@ -7739,7 +7739,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 216629
+    "char_offset": 216619
    },
    "dose": null,
    "tags": [
@@ -7778,7 +7778,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 217928
+    "char_offset": 217918
    },
    "dose": null,
    "tags": [
@@ -7825,7 +7825,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 218935
+    "char_offset": 218925
    },
    "dose": null,
    "tags": [
@@ -7863,7 +7863,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 220545
+    "char_offset": 220535
    },
    "dose": null,
    "tags": [
@@ -7900,7 +7900,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 221381
+    "char_offset": 221371
    },
    "dose": null,
    "tags": [
@@ -7935,7 +7935,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 221923
+    "char_offset": 221913
    },
    "dose": null,
    "tags": [
@@ -7986,7 +7986,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 222539
+    "char_offset": 222529
    },
    "dose": null,
    "tags": [
@@ -8024,7 +8024,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 223229
+    "char_offset": 223219
    },
    "dose": null,
    "tags": [
@@ -8058,7 +8058,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 225001
+    "char_offset": 224991
    },
    "dose": null,
    "tags": [
@@ -8094,7 +8094,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 225414
+    "char_offset": 225404
    },
    "dose": null,
    "tags": [
@@ -8131,7 +8131,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 227814
+    "char_offset": 227804
    },
    "dose": null,
    "tags": [
@@ -8168,7 +8168,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 228364
+    "char_offset": 228354
    },
    "dose": null,
    "tags": [
@@ -8202,7 +8202,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 228806
+    "char_offset": 228796
    },
    "dose": {
     "amount": 75,
@@ -8246,7 +8246,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 229457
+    "char_offset": 229447
    },
    "dose": null,
    "tags": [
@@ -8282,7 +8282,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 230048
+    "char_offset": 230038
    },
    "dose": null,
    "tags": [
@@ -8316,7 +8316,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 230381
+    "char_offset": 230371
    },
    "dose": null,
    "tags": [
@@ -8348,7 +8348,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 230857
+    "char_offset": 230847
    },
    "dose": null,
    "tags": [
@@ -8391,7 +8391,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 231551
+    "char_offset": 231541
    },
    "dose": null,
    "tags": [
@@ -8431,7 +8431,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 232785
+    "char_offset": 232775
    },
    "dose": null,
    "tags": [
@@ -8465,7 +8465,7 @@
    ],
    "symptoms": [],
    "claim_text": "Chronic Fatigue Syndrome is, by its name, a complex of symptoms with multiple causes — Wallach says affected patients have two or more of candidiasis, Epstein-Barr virus, human B-lymphotropic virus, cytomegalovirus, food allergies, and low blood sugar — producing moodiness, aches, depression, gastrointestinal upset, and intense fatigue. Treatment should include intravenous hydrogen peroxide in a dimethyl sulfoxide (DMSO) and 5% dextrose solution, intravenous nutrition, intramuscular germanium, the base-line supplement program, oral hydrogen peroxide (20 drops per ounce in aloe juice) 1 ounce twice daily, pulse testing and a six-hour glucose tolerance test, eliminating caffeine and refined sugar, avoiding food allergens, treating low blood sugar with chromium at 75 to 200 micrograms three times daily, autoimmune urine and blood therapies, liver flushes and colonics, and the antivirals Isoprinosine (500 mg three times daily) and Ribavirin (250-1,200 mg per day).",
-   "verbatim": "Treatment for Chronic Fatigue Syndrome\nshould include IV hydrogen peroxide in a\nsolution of DMSO and 5% dextrose, IV nutrition, IM germanium, base line nutritional\nsupplement program, hydrogen peroxide ( 20\ndrops per oz in aloe juice) 1 oz. b.i.d., do pulse\ntest for food allergies, do six-hour GTT for\nhypoglycemia, eliminate caffeine, eliminate\nrefined sugar, avoid any food allergens, treat\nhypoglycemia with chromium at 75 to 200 mcg\nt.i.d",
+   "verbatim": "Treatment for Chronic Fatigue Syndrome\nshould include IV hydrogen peroxide in a\nsolution of DMSO and 5% dextrose, IV nutrition, IM germanium, base line nutritional\nsupplement program, hydrogen peroxide ( 20\ndrops per oz in aloe juice) 1 oz. b.i.d., do pulse\ntest for food allergies, do six-hour GTT for\nhypoglycemia, eliminate caffeine, eliminate\nrefined sugar, avoid any food allergens, treat\nhypoglycemia with chromium at 75 to 200 mcg\nt.i.d., employ autoimmune urine and blood\ntherapies, detoxify with liver flushes and\ncolonics (especially for the first two weeks of\ntherapy) to copy with toxins generated by\norganism die-off, Isoprinosin at 500 mg t.i.d.\nand Ribavirin at 250-1,200 mg per day as",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -8473,7 +8473,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 233850
+    "char_offset": 233840
    },
    "dose": null,
    "tags": [
@@ -8516,7 +8516,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 235246
+    "char_offset": 235236
    },
    "dose": null,
    "tags": [
@@ -8550,7 +8550,7 @@
    ],
    "symptoms": [],
    "claim_text": "Menopause (the climacteric) is the natural cessation of ovarian function and menstruation, usually between ages 45-55, with hot flashes, sweating, nervousness, fatigue, depression, and insomnia when the adrenals and liver produce insufficient estrogen; osteoporosis is a common result of poorly managed menopause. Wallach frames it as needing support rather than treatment: transdermal estrogen patches (oral estrogens should NOT be taken with progesterone, which raises cancer-induction risk), a liver flush at least once per month, the base-line supplement program, calcium and magnesium at 2,000 mg and 1,000 mg per day, betaine hydrochloride and pancreatic enzymes at 75-200 mg three times daily before meals, and herbs including Lady's mantle (Alchemilla vulgaris), motherwort (Leonurus cardiaca), and St. John's wort (Hypericum perforatum).",
-   "verbatim": "Treatment for menopause is probably an improper term as normal events don't need\ntreatment but rather \"support\" on occasion to\nhelp smooth the transition. Transdermal estrogen \"patches\" can be applied to the back or\nchest for a time release of hormones, oral\nestrogens should not be accompanied by progesterone as they increase the cancer induction risk; liver flush at least once per month,\nbase line supplement program, calcium and\nmagnesium at 2,000 mg and 1,000 mg per day\nand herbs to include Lady's mantle (Alchemilla\nvulgaris), motherwort (Leonurus cardiaca)\nand St. John's wort (Hypericum perforatum",
+   "verbatim": "Treatment for menopause is probably an improper term as normal events don't need\ntreatment but rather \"support\" on occasion to\nhelp smooth the transition. Transdermal estrogen \"patches\" can be applied to the back or\nchest for a time release of hormones, oral\nestrogens should not be accompanied by progesterone as they increase the cancer induction risk; liver flush at least once per month,\nbase line supplement program, calcium and\nmagnesium at 2,000 mg and 1,000 mg per day\nand herbs to include Lady's mantle (Alchemilla\nvulgaris), motherwort (Leonurus cardiaca)\nand St. John's wort (Hypericum perforatum).\nDon't forget calcium and magnesium at 2,000\nmg and 1,000 mg per day. Betaine HCl and\npancreatic enzymes at 75-200 mg t.i.d. 15\nminutes before meals.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -8558,7 +8558,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 236482
+    "char_offset": 236472
    },
    "dose": null,
    "tags": [
@@ -8596,7 +8596,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 237859
+    "char_offset": 237849
    },
    "dose": null,
    "tags": [
@@ -8637,7 +8637,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 238619
+    "char_offset": 238609
    },
    "dose": null,
    "tags": [
@@ -8676,7 +8676,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 240474
+    "char_offset": 240464
    },
    "dose": null,
    "tags": [
@@ -8713,7 +8713,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 241633
+    "char_offset": 241623
    },
    "dose": null,
    "tags": [
@@ -8747,7 +8747,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 241933
+    "char_offset": 241923
    },
    "dose": null,
    "tags": [
@@ -8788,7 +8788,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 242132
+    "char_offset": 242122
    },
    "dose": null,
    "tags": [
@@ -8823,7 +8823,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 243334
+    "char_offset": 243324
    },
    "dose": null,
    "tags": [
@@ -8867,7 +8867,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 244086
+    "char_offset": 244076
    },
    "dose": null,
    "tags": [
@@ -8897,7 +8897,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 245269
+    "char_offset": 245259
    },
    "dose": null,
    "tags": [
@@ -8944,7 +8944,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 245730
+    "char_offset": 245720
    },
    "dose": null,
    "tags": [
@@ -8982,7 +8982,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 247404
+    "char_offset": 247394
    },
    "dose": null,
    "tags": [
@@ -9024,7 +9024,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 247930
+    "char_offset": 247920
    },
    "dose": null,
    "tags": [
@@ -9058,7 +9058,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 248697
+    "char_offset": 248687
    },
    "dose": null,
    "tags": [
@@ -9103,7 +9103,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 250095
+    "char_offset": 250085
    },
    "dose": null,
    "tags": [
@@ -9137,7 +9137,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 251096
+    "char_offset": 251086
    },
    "dose": null,
    "tags": [
@@ -9175,7 +9175,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 256253
+    "char_offset": 256239
    },
    "dose": null,
    "tags": [
@@ -9215,7 +9215,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 258532
+    "char_offset": 258518
    },
    "dose": null,
    "tags": [
@@ -9258,7 +9258,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 259178
+    "char_offset": 259164
    },
    "dose": null,
    "tags": [
@@ -9311,7 +9311,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 260237
+    "char_offset": 260223
    },
    "dose": null,
    "tags": [
@@ -9365,7 +9365,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 262498
+    "char_offset": 262484
    },
    "dose": null,
    "tags": [
@@ -9408,7 +9408,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 264481
+    "char_offset": 264467
    },
    "dose": null,
    "tags": [
@@ -9460,7 +9460,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 267702
+    "char_offset": 267688
    },
    "dose": null,
    "tags": [
@@ -9500,7 +9500,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 268586
+    "char_offset": 268572
    },
    "dose": null,
    "tags": [
@@ -9545,7 +9545,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 269845
+    "char_offset": 269831
    },
    "dose": null,
    "tags": [
@@ -9585,7 +9585,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 272027
+    "char_offset": 272013
    },
    "dose": null,
    "tags": [
@@ -9619,7 +9619,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 272426
+    "char_offset": 272412
    },
    "dose": null,
    "tags": [
@@ -9655,7 +9655,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 273232
+    "char_offset": 273218
    },
    "dose": null,
    "tags": [
@@ -9692,7 +9692,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 273653
+    "char_offset": 273639
    },
    "dose": null,
    "tags": [
@@ -9737,7 +9737,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 274500
+    "char_offset": 274486
    },
    "dose": null,
    "tags": [
@@ -9775,7 +9775,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 275663
+    "char_offset": 275649
    },
    "dose": null,
    "tags": [
@@ -9812,7 +9812,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 276409
+    "char_offset": 276395
    },
    "dose": null,
    "tags": [
@@ -9849,7 +9849,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 277438
+    "char_offset": 277424
    },
    "dose": null,
    "tags": [
@@ -9887,7 +9887,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 279214
+    "char_offset": 279200
    },
    "dose": null,
    "tags": [
@@ -9929,7 +9929,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 280287
+    "char_offset": 280273
    },
    "dose": null,
    "tags": [
@@ -9968,7 +9968,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 281598
+    "char_offset": 281584
    },
    "dose": null,
    "tags": [
@@ -10006,7 +10006,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 282603
+    "char_offset": 282589
    },
    "dose": null,
    "tags": [
@@ -10046,7 +10046,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 283099
+    "char_offset": 283085
    },
    "dose": null,
    "tags": [
@@ -10078,7 +10078,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 285310
+    "char_offset": 285296
    },
    "dose": null,
    "tags": [
@@ -10111,7 +10111,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 288374
+    "char_offset": 288360
    },
    "dose": null,
    "tags": [
@@ -10140,7 +10140,7 @@
    ],
    "symptoms": [],
    "claim_text": "Emesis (vomiting) may signal overeating, cancer, excess alcohol, poisoning, food poisoning, food allergies, or infection; in infants, vomiting with lethargy and fever can be an ominous sign of meningitis, and 'coffee-grounds' vomiting (old blood) signals a bleeding ulcer or stomach cancer needing emergency help. Wallach's treatment is to not eat for several hours, suck ice, and drink small amounts of peppermint tea, chicken or beef bouillon, or athletic fluid/electrolyte replacers; for severe stomach irritation, Pepto-Bismol or Kaopectate (preferably liquid) coats the stomach. To induce vomiting after a non-corrosive poisoning, ipecac syrup (1 tablespoon for children, 2 for adults) is given with a large amount of water, repeated in 15 minutes if needed.",
-   "verbatim": "Treatment of vomiting can be simply to not eat\nfor several hours, suck ice, drink small amounts\nof peppermint tea, drink small amounts of\nchicken or beef bouillon.",
+   "verbatim": "Treatment of vomiting can be simply to not eat\nfor several hours, suck ice, drink small amounts\nof peppermint tea, drink small amounts of\nchicken or beef bouillon. Drinking small\nvolumes of athletic fluid/electrolyte replacers\nis of value. If stomach initation is severe don't\nbe bashful about taking Pepto Bismol or\nKaopectate —preferably the liquid to coat the\nstomach.\nTo cause vomiting in case of nonconosive\npoisoning including dmg ingestion, you can\nuse the ipecac syrup from your home \"pharmacy\" at 1 tbsp. for children and 2 tbsp. for\nadults; have the patient take in a large amount\nof water (one quart for an adult and as much\nas one pint for a child); repeat the dose in 15",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -10148,7 +10148,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 289416
+    "char_offset": 289402
    },
    "dose": null,
    "tags": [
@@ -10189,7 +10189,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 290904
+    "char_offset": 290888
    },
    "dose": null,
    "tags": [
@@ -10228,7 +10228,7 @@
     "seizures"
    ],
    "claim_text": "Epilepsy (fits, convulsions) is categorized by severity — petite mal (a brief blank stare or dizziness) and grand mal (a spectacular convulsive attack with stiffening, falling, teeth-gnashing, and jerking, which can be fatal if the patient inhales vomit or hits the head). The orthodox drugs (phenytoin, phenobarbital, primidone) stop symptomatic convulsions but have dramatic side effects (uncontrolled eye movements, weakness, arthritis and osteoporosis, rashes, anemia, learning disabilities, hyperactivity). Wallach holds that vitamin B-6 alone at 50-100 mg three times daily will frequently 'cure' epilepsy (long-term use can cause some facial/hand numbness and tingling), and that calcium and magnesium at 2,000 and 1,000 mg per day, folic acid at 15-25 mg per day, and vitamin B-12 at 1,000 mcg per day by intramuscular injection can also be curative, along with manganese at 50 mg per day, zinc at 50 mg three times daily, essential fatty acids at 5 gm three times daily, choline at 4 gm per day, taurine at 500 mg three times daily, and dimethyl glycine at 100 mg twice daily.",
-   "verbatim": "Vitamin B-6 alone will frequently \"cure\" epilepsy at 50-100 mg t.i.d.\n(long term administration can cause some\nnumb-ness and tingling in the face or hands),\ncalcium magnesium at 2,000 and 1,000 mg/\nday, folic acid at 15-25 mg/day and B-12 at\n1,000 mcg/day IM can also be curative, manganese at 50 mg/day, zinc at 50 mg t.i.d",
+   "verbatim": "Vitamin B-6 alone will frequently \"cure\" epilepsy at 50-100 mg t.i.d.\n(long term administration can cause some\nnumb-ness and tingling in the face or hands),\ncalcium magnesium at 2,000 and 1,000 mg/\nday, folic acid at 15-25 mg/day and B-12 at\n1,000 mcg/day IM can also be curative, manganese at 50 mg/day, zinc at 50 mg t.i.d.,\nessential fatty acids at 5 gm t.i.d., choline at 4\n121\ngm/day, taurine at 500 mg t.i.d. anddimethyl\nglycine at 100 mg b.i.d.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -10236,7 +10236,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 292413
+    "char_offset": 292397
    },
    "dose": null,
    "tags": [
@@ -10268,7 +10268,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 292865
+    "char_offset": 292849
    },
    "dose": null,
    "tags": [
@@ -10310,7 +10310,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 293773
+    "char_offset": 293757
    },
    "dose": null,
    "tags": [
@@ -10344,7 +10344,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 294013
+    "char_offset": 293997
    },
    "dose": null,
    "tags": [
@@ -10380,7 +10380,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 294692
+    "char_offset": 294676
    },
    "dose": null,
    "tags": [
@@ -10420,7 +10420,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 294992
+    "char_offset": 294976
    },
    "dose": null,
    "tags": [
@@ -10458,7 +10458,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 296085
+    "char_offset": 296069
    },
    "dose": null,
    "tags": [
@@ -10501,7 +10501,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 296873
+    "char_offset": 296857
    },
    "dose": null,
    "tags": [
@@ -10539,7 +10539,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 297714
+    "char_offset": 297698
    },
    "dose": null,
    "tags": [
@@ -10576,7 +10576,7 @@
     "brittle_nails"
    ],
    "claim_text": "Fingernails are good barometers of absorption and nutritional status. Wallach reads the signs as: bluish fingernails indicate chronic lung conditions (not enough oxygen), white spots indicate zinc deficiency, ridges can indicate iron and/or calcium deficiency, and brittle nails indicate sulfur amino acid deficiencies — and he stresses not to forget the baseline nutritional supplements. His treatment of fingernail problems should include gelatin (diabetic Jello or Knox gelatin) — especially important for anyone who has been vegetarian for any length of time — essential fatty acids at 5 grams three times a day, and betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals.",
-   "verbatim": "Bluish fingernails indicate chronic lung conditions (i.e., not enough\noxygen), white spots indicate zinc deficiency,\nridges can indicate iron and/or calcium deficiency and brittle nails indicates sulfur amino\nacid deficiencies",
+   "verbatim": "Bluish fingernails indicate chronic lung conditions (i.e., not enough\noxygen), white spots indicate zinc deficiency,\nridges can indicate iron and/or calcium deficiency and brittle nails indicates sulfur amino\nacid deficiencies. Don't forget the base line\nnutritional supplements.\nTreatment of fingernail problems should include gelatin (diabetic Jello, or Knox gelatin)\n- this is especially important for those who\nhave been vegetarians for any length of time,\nessential fatty acids at 5 gm t.i.d. and betaine\nHCl and pancreatic enzymes at 75-200 mg\nt.i.d. before meals",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -10584,7 +10584,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 298163
+    "char_offset": 298147
    },
    "dose": null,
    "tags": [
@@ -10618,7 +10618,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 298736
+    "char_offset": 298718
    },
    "dose": null,
    "tags": [
@@ -10659,7 +10659,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 299422
+    "char_offset": 299404
    },
    "dose": null,
    "tags": [
@@ -10715,7 +10715,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 300735
+    "char_offset": 300717
    },
    "dose": null,
    "tags": [
@@ -10754,7 +10754,7 @@
    ],
    "symptoms": [],
    "claim_text": "Food allergies (sensitivities) are a concern for everyone, because the celiac-disease-type changes they cause in the intestines prevent absorption of essential nutrients; Wallach says anyone with a chronic disease (cancer, diabetes, arthritis, heart disease) and/or emotional problems (hypoglycemia, depression, neurosis, schizophrenia, hyperactivity, paranoia) has food allergies, identifiable by the Coca pulse test and a diet diary. His treatment includes religious use of hypoallergenic baseline nutritional supplements (no corn, wheat, soy, egg, or milk); avoiding vaccinations of egg, blood, or beef origin; vitamin C to bowel tolerance; vitamin A at 300,000 international units a day as beta carotene; bioflavonoids at 150-300 milligrams a day; zinc at 50 milligrams three times a day; essential fatty acids at 5 grams three times a day; selenium at 200 micrograms three times a day; chromium at 50-200 micrograms three times a day; betaine hydrochloride and pancreatic enzymes at 75-500 milligrams three times a day before meals; adrenal cortical extract; autoimmune urine therapy; five-day rotation diets; and avoidance of offending foods (intestinal repair takes up to 90 days, and intravenous hydrogen peroxide speeds healing).",
-   "verbatim": "Treatment of food allergies includes religious\nuse of the base line nutritional supplements\n(be sure to use hypoallergenic supplements -\n- no corn, wheat, soy, egg or milk), avoid\nvaccinations that have egg, blood or beef\norigins; vitamin C to bowel tolerance levels,\nvitamin A at 300,000 IU/day as beta carotene,\nbioflavonoids at 150-300 mg/day, zinc at 50\nmg t.i.d., essential fatty acids at 5 gm t.i.d.,\nselenium at 200 mcg t.i.d. , chromium at 50-200\nmcg t.i.d., betaine HCl and pancreatic en",
+   "verbatim": "Treatment of food allergies includes religious\nuse of the base line nutritional supplements\n(be sure to use hypoallergenic supplements -\n- no corn, wheat, soy, egg or milk), avoid\nvaccinations that have egg, blood or beef\norigins; vitamin C to bowel tolerance levels,\nvitamin A at 300,000 IU/day as beta carotene,\nbioflavonoids at 150-300 mg/day, zinc at 50\nmg t.i.d., essential fatty acids at 5 gm t.i.d.,\nselenium at 200 mcg t.i.d. , chromium at 50-200\nmcg t.i.d., betaine HCl and pancreatic enzymes at 75-500 mg t. i. d. 1 5-20 minutes before\nmeals, ACE sublingual or rv, autoimmune\nurine therapy, five day rotation diets, avoidance of offending foods and patience!!!!! It\ntakes up to 90 days to repair the intestinal\ninjury (the good news is that repair will take\nplace even if you're 100 years old!!!). IV\nhydrogen peroxide speeds up the healing",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -10762,7 +10762,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 304929
+    "char_offset": 304911
    },
    "dose": null,
    "tags": [
@@ -10802,7 +10802,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 306568
+    "char_offset": 306548
    },
    "dose": null,
    "tags": [
@@ -10836,7 +10836,7 @@
     "liver_spots"
    ],
    "claim_text": "Freckles are caused by melanin pigment responding to sunlight in fair-skinned people; 'liver spots' in middle-aged and older people are caused by ceroid pigment building up in the skin from peroxidation of fats (free-radical damage) and are a more ominous sign than freckles. Wallach says freckles can be prevented or reduced by religious use of sunscreens. His treatment of freckles and liver spots includes vitamin E at 800-1,200 international units a day, selenium at 200-500 micrograms three times a day, vitamin C to bowel tolerance, vitamin A at 300,000 international units a day as beta carotene, essential fatty acids at 5 grams three times a day, and the herb English mandrake (Tamus communis) applied topically on the spots twice a day.",
-   "verbatim": "Treatment of freckles and \"liver spots\" includes the use of vitamin E at 800-1,200 I U/\nday, selenium at 200-500 mcg t.i.d., vitamin C\nto bowel tolerance, vitamin A at 300,000 IU/\nday as beta carotene, essential fatty acids at 5\ngm t.i.d. and the herb, English mandrake\n(Tamus communis) topically on the spots",
+   "verbatim": "Treatment of freckles and \"liver spots\" includes the use of vitamin E at 800-1,200 I U/\nday, selenium at 200-500 mcg t.i.d., vitamin C\nto bowel tolerance, vitamin A at 300,000 IU/\nday as beta carotene, essential fatty acids at 5\ngm t.i.d. and the herb, English mandrake\n(Tamus communis) topically on the spots\nb.i.d.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -10844,7 +10844,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 307465
+    "char_offset": 307445
    },
    "dose": null,
    "tags": [
@@ -10898,7 +10898,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 308485
+    "char_offset": 308465
    },
    "dose": null,
    "tags": [
@@ -10943,7 +10943,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 309814
+    "char_offset": 309794
    },
    "dose": null,
    "tags": [
@@ -10988,7 +10988,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 312346
+    "char_offset": 312326
    },
    "dose": null,
    "tags": [
@@ -11027,7 +11027,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 312000
+    "char_offset": 311980
    },
    "dose": null,
    "tags": [
@@ -11064,7 +11064,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 313842
+    "char_offset": 313822
    },
    "dose": null,
    "tags": [
@@ -11105,7 +11105,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 314536
+    "char_offset": 314516
    },
    "dose": null,
    "tags": [
@@ -11146,7 +11146,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 315330
+    "char_offset": 315310
    },
    "dose": null,
    "tags": [
@@ -11180,7 +11180,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 315526
+    "char_offset": 315506
    },
    "dose": null,
    "tags": [
@@ -11219,7 +11219,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 315761
+    "char_offset": 315741
    },
    "dose": null,
    "tags": [
@@ -11258,7 +11258,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 316299
+    "char_offset": 316279
    },
    "dose": null,
    "tags": [
@@ -11304,7 +11304,7 @@
    ],
    "symptoms": [],
    "claim_text": "Headaches are caused by a wide variety of problems; Wallach says food allergies (the primary cause of migraines) and hypoglycemia are major causes, sinus headaches often come from pollen and milk allergies, and headaches can be cyclic in premenstrual syndrome — so do a series of pulse tests and a six-hour glucose tolerance test. His treatment includes commercial products (aspirin, acetaminophen/Tylenol, ibuprofen/Nuprin, Bufferin), chromium at 50-200 micrograms three times a day, betaine hydrochloride at 75-200 milligrams three times a day, avoiding offending foods including all sources of caffeine, autoimmune urine therapy, vitamin C to bowel tolerance, vitamin B-3 at 450 milligrams time-release four times a day, vitamin B-6 at 100 milligrams three times a day or as needed, choline at 150 milligrams a day, flaxseed oil at 5 grams four times a day, using proteins and amino acids for snacks, and herbs including feverfew (Tanacetum parthenium), horseweed (Erigeron canadensis), balm (Melissa officinalis), cowslip (Primula veris), lavender (Lavandula angustifolia), queen-of-the-meadow/meadowsweet (Filipendula ulmaria), valerian (Valeriana officinalis), and white willow (Salix alba).",
-   "verbatim": "Treatment for headaches comes in the form of\na wide variety of commercial products (i.e.,\naspirin, tylenol, Nuprin, Bufferin), chromium\nat 50-200 mcg t.i.d. betaine HCl at 75-200 mg",
+   "verbatim": "Treatment for headaches comes in the form of\na wide variety of commercial products (i.e.,\naspirin, tylenol, Nuprin, Bufferin), chromium\nat 50-200 mcg t.i.d. betaine HCl at 75-200 mg\n128\nt.i.d, avoid offending foods including all\nsourcesofcaffeine, autoimmune urine therapy,\nvitamin C to bowel tolerance, B-3 at 450 mg\ntime release q.i.d., B-6 at 100 mg t.i.d. or as\nneeded, choline at 150 mg/day, flaxseed oil at\n5 gm q.i.d.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -11312,7 +11312,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 316880
+    "char_offset": 316860
    },
    "dose": null,
    "tags": [
@@ -11350,7 +11350,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 318196
+    "char_offset": 318176
    },
    "dose": null,
    "tags": [
@@ -11394,7 +11394,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 319672
+    "char_offset": 319652
    },
    "dose": null,
    "tags": [
@@ -11431,7 +11431,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 321103
+    "char_offset": 321081
    },
    "dose": null,
    "tags": [
@@ -11466,7 +11466,7 @@
    ],
    "symptoms": [],
    "claim_text": "Hemorrhoids (piles) are varicose veins in the rectum and anus that itch, bleed, become painful, and eventually clot (thrombose); Wallach says the primary cause is low-fiber diets, the resulting constipation, and lack of exercise, since the pressure of forcing out a constipated movement balloons the hemorrhoidal veins. Prevention and treatment center on high-fiber diets and exercise. His treatment includes high-fiber diets (you may add oat bran at two heaping tablespoons in eight ounces of juice or water before bed) to encourage two bowel movements a day, hydrotherapy (a Jacuzzi jet directed at the hemorrhoidal tissue) twice a day, commercial topical products (such as Preparation H), and topical washes or compresses of herbs including German chamomile, silver weed (Potentilla anserina), smart weed (Polygonum hydropiper), witch hazel, yarrow, juniper berries, horse chestnut, and plantain. He stresses surgery is rarely, if ever, necessary.",
-   "verbatim": "and topical washes and/\nor compresses of herbs including German\nchamomile (Matricaria chamomilla), silver\nweed (Potentilla anserina), smart weed\n(Polygonium hydropiper), witch hazel\n(Hamamelis virginiana), yarrow (Achillea\nmillefollium), juniper berries (Juniperus\ncommunis), horse chestnut (Aesculus\nhippocastanum) and plantain (Plantago major",
+   "verbatim": "hemorrhoids includes high fiber\ndiets (you may need to add oat bran at two\nheaping tbsp. in eight oz. of juice or water\nbefore bed) to encourage two bowel movements per day, hydrotherapy (Jaccuzi jet direct-edat hemorrhoidal tissue) b.i.d. as long as\nnecessary, commercial topical products (i.e.,\nPreparation H, etc.), and topical washes and/\nor compresses of herbs including German\nchamomile (Matricaria chamomilla), silver\nweed (Potentilla anserina), smart weed\n(Polygonium hydropiper), witch hazel\n(Hamamelis virginiana), yarrow (Achillea\nmillefollium), juniper berries (Juniperus\ncommunis), horse chestnut (Aesculus\nhippocastanum) and plantain (Plantago major)",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -11474,7 +11474,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 322346
+    "char_offset": 322001
    },
    "dose": null,
    "tags": [
@@ -11518,7 +11518,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 324642
+    "char_offset": 324616
    },
    "dose": null,
    "tags": [
@@ -11560,7 +11560,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 325850
+    "char_offset": 325824
    },
    "dose": null,
    "tags": [
@@ -11600,7 +11600,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 326576
+    "char_offset": 326550
    },
    "dose": null,
    "tags": [
@@ -11632,7 +11632,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 327143
+    "char_offset": 327117
    },
    "dose": null,
    "tags": [
@@ -11664,7 +11664,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 327865
+    "char_offset": 327839
    },
    "dose": null,
    "tags": [
@@ -11701,7 +11701,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 328231
+    "char_offset": 328205
    },
    "dose": null,
    "tags": [
@@ -11735,7 +11735,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 328586
+    "char_offset": 328560
    },
    "dose": null,
    "tags": [
@@ -11774,7 +11774,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 329583
+    "char_offset": 329557
    },
    "dose": null,
    "tags": [
@@ -11815,7 +11815,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 335131
+    "char_offset": 335105
    },
    "dose": null,
    "tags": [
@@ -11856,7 +11856,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 336161
+    "char_offset": 336133
    },
    "dose": null,
    "tags": [
@@ -11894,7 +11894,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 337034
+    "char_offset": 337006
    },
    "dose": null,
    "tags": [
@@ -11929,7 +11929,7 @@
    ],
    "symptoms": [],
    "claim_text": "Hysteria (melancholia) is, in Wallach's framing, a symptomatic diagnosis that can result from premenstrual syndrome, food allergies, prescribed and illegal drugs, alcoholism, and hypoglycemia. Work-up: test for food allergies (pulse test), hypoglycemia (six-hour glucose tolerance test), and premenstrual syndrome (a daily diary), and review any medications. Treatment: avoid offending (allergenic) foods; rotation diets; autoimmune urine therapy; essential fatty acids at 5 grams three times daily with meals; chromium at 50-200 micrograms three times daily with meals; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; acupuncture and homeopathy; herbs black hellebore (Helleborus niger), blue cohosh (Caulophyllum thalictroides), and mistletoe (Viscum album); vitamin B-3 at 450 milligrams three times daily (time-release); and vitamin B-6 at 150-300 milligrams three times daily (take for thirty days, then a 14-day break to avoid side effects).",
-   "verbatim": "Treatment of hysteria includes avoidance of\noffending foods that you might be allergic to,\nrotation diets, autoimmune urine therapy, essential fatty acids at 5 gm t.i.d. with meals,\nchromium at 50-200 mcg t.i.d. with meals,\nbetaine HCl and pancreatic enzymes at 75-200\nmg t.i.d. before meals, acupuncture, homeopathy and herbs including black hellebore\n(Helle-bores niger) blue cohosh (Caulophyllum thalictroides), mistletoe (Viscum album",
+   "verbatim": "Treatment of hysteria includes avoidance of\noffending foods that you might be allergic to,\nrotation diets, autoimmune urine therapy, essential fatty acids at 5 gm t.i.d. with meals,\nchromium at 50-200 mcg t.i.d. with meals,\nbetaine HCl and pancreatic enzymes at 75-200\nmg t.i.d. before meals, acupuncture, homeopathy and herbs including black hellebore\n(Helle-bores niger) blue cohosh (Caulophyllum thalictroides), mistletoe (Viscum album),\nB-3 at 450 mg t.i.d. (time release) and B-6 at\n150-300 mg t.i.d. (take this dose for thirty days\n134\nthen take take a 14-day break to avoid side",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -11937,7 +11937,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 337802
+    "char_offset": 337774
    },
    "dose": null,
    "tags": [
@@ -11979,7 +11979,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 338996
+    "char_offset": 338968
    },
    "dose": null,
    "tags": [
@@ -12009,7 +12009,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 339365
+    "char_offset": 339337
    },
    "dose": null,
    "tags": [
@@ -12049,7 +12049,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 340814
+    "char_offset": 340786
    },
    "dose": null,
    "tags": [
@@ -12083,7 +12083,7 @@
    ],
    "symptoms": [],
    "claim_text": "Impetigo (ecthyma) is a form of dermatitis in children — blisters filled with straw-colored fluid or pus, or skin ulcers, mainly on the face, arms, and legs. Wallach holds it is more than a simple Streptococcus infection: it is an early sign of immune depression (often from food allergies to milk, wheat, or soy) that lets normal skin organisms flourish unchecked; untreated it can cause deep tissue and lymph-node infection. Treatment: topical washes with boric acid and herbs such as comfrey (Symphytum officinale), echinacea (Echinacea angustifolia), and goldenseal (Hydrastis canadensis); topical or systemic penicillin may be needed for facial impetigo to prevent scarring; vitamin C to bowel tolerance; vitamin A 25,000-300,000 international units per day as beta carotene; zinc at 25-30 milligrams three times daily; avoidance or rotation diets for food allergies; autoimmune urine therapy; and increased animal protein (eggs, chicken, fish).",
-   "verbatim": "Treatment ofimpetigo includes topical washes\nwith boric acid and herbs such as comfrey\n(Symphytum officinale), echinacea (Echinacea\nangustifolia) and golden seal (Hydrastis\ncanadensis), topical or systemic penicillin may\nbe necessary in cases where impetigo occurs\non the face to prevent scaring, vitamin C to\nbowel tolerance, vitamin A 25,000-300,000\nIU/day as beta caro-tene, zinc at 25-30 mg",
+   "verbatim": "Treatment ofimpetigo includes topical washes\nwith boric acid and herbs such as comfrey\n(Symphytum officinale), echinacea (Echinacea\nangustifolia) and golden seal (Hydrastis\ncanadensis), topical or systemic penicillin may\nbe necessary in cases where impetigo occurs\non the face to prevent scaring, vitamin C to\nbowel tolerance, vitamin A 25,000-300,000\nIU/day as beta caro-tene, zinc at 25-30 mg\nt.i.d., avoidance or rotation diets for food\nallergies, autoimmune urine therapy, increase\nanimal protein level of the diet",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12091,7 +12091,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 342132
+    "char_offset": 342104
    },
    "dose": null,
    "tags": [
@@ -12131,7 +12131,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 343426
+    "char_offset": 343398
    },
    "dose": null,
    "tags": [
@@ -12173,7 +12173,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 344597
+    "char_offset": 344569
    },
    "dose": null,
    "tags": [
@@ -12217,7 +12217,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 345817
+    "char_offset": 345789
    },
    "dose": null,
    "tags": [
@@ -12254,7 +12254,7 @@
    ],
    "symptoms": [],
    "claim_text": "Infection (invasion of tissues by bacteria, viruses, or fungus) is caused by two factors: an infective 'dose' of organisms and a low state of resistance in the host. The baseline nutrient program supplies the macro- and micro-elements needed to maintain and repair the immune system; pulse-test for food allergies and use reasonable precautions around contagious illness. Treatment: echinacea (Echinacea angustifolia), goldenseal (Hydrastis canadensis), garlic (Allium sativum), vitamin C to bowel tolerance, vitamin A at 300,000 international units per day as beta carotene, zinc at 50 milligrams three times daily, selenium at 500-1,000 micrograms per day, Immu-Stim (intramuscular or 2 capsules twice daily), Isoprinosine at 100-300 milligrams per day, Ribavirin, and hydrogen peroxide in a 250-milliliter infusion over four hours; antibiotics and antifungal medications are sometimes necessary in lifesaving situations.",
-   "verbatim": "Treatment of infections should include the use\nof echinacea (Echinacea angustifolia), golden\nseal (Hydrastis canadensis), garlic (Allium\nsativum), vitamin C to bowel tolerance, vitamin A at 300,000 IU/day as beta carotene, zinc\nat 50 mg t.i.d. , selenium at 500-1 ,000 mcg/day,\nImmu-Stim IM or orally 2 capsules b.i.d.,\nIsoprinosin at 100-300 mg/day, Ribavirin",
+   "verbatim": "Treatment of infections should include the use\nof echinacea (Echinacea angustifolia), golden\nseal (Hydrastis canadensis), garlic (Allium\nsativum), vitamin C to bowel tolerance, vitamin A at 300,000 IU/day as beta carotene, zinc\nat 50 mg t.i.d. , selenium at 500-1 ,000 mcg/day,\nImmu-Stim IM or orally 2 capsules b.i.d.,\nIsoprinosin at 100-300 mg/day, Ribavirin,\nH202 in 250 ml infusion over four hours",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12262,7 +12262,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 347088
+    "char_offset": 347060
    },
    "dose": null,
    "tags": [
@@ -12298,7 +12298,7 @@
    ],
    "symptoms": [],
    "claim_text": "This is Wallach's dedicated infertility entry (distinct from his fertility entry): he holds that infertility — a curable inability to have children — is usually caused by a nutritional deficiency, and reports curing several hundred cases by simple supplementation of vitamins, minerals, and digestive aids; food allergies can impair absorption through celiac-type intestinal changes. Treatment: the baseline nutritional program with plant-derived colloidal minerals; resolve food allergies by avoidance and rotation diets; a high-protein diet (up to 200 grams per day); essential fatty acids at 5 grams three times daily; L-arginine at 500 milligrams three times daily; zinc at 50 milligrams three times daily; selenium at 250 micrograms per day; vitamin A at 100,000 international units per day for 30 days, then 25,000; germanium at 50 milligrams per day; acupuncture; and herbs ginseng (Panax ginseng), leek (Allium porrum), and garlic (Allium sativum). (The book misprints the zinc dose as '50 gm'; 50 grams is toxic and every other zinc dose is in milligrams, so it is shown here as 50 milligrams.)",
-   "verbatim": "Treatment of infertility should include the\nbase line nutritional program (include plant\nderived colloidal minerals) , resolve food allergies by avoidance and rotation diets, eat\nhigh protein diets (up to 200 gm/day), essential fatty acids at 5 gm t.i.d., 1-arginine at 500\nmg t.i.d., zinc at 50 mg t.i.d., selenium at 250\nmcg/day",
+   "verbatim": "Treatment of infertility should include the\nbase line nutritional program (include plant\nderived colloidal minerals) , resolve food allergies by avoidance and rotation diets, eat\nhigh protein diets (up to 200 gm/day), essential fatty acids at 5 gm t.i.d., 1-arginine at 500\nmg t.i.d., zinc at 50 mg t.i.d., selenium at 250\nmcg/day, vitamin A at 100,000 IU/day for 30\ndays then drop to 25,000 IU/day, germanium\nat 50 mg/day; acupuncaire, and herbs",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12306,7 +12306,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 347936
+    "char_offset": 347908
    },
    "dose": null,
    "tags": [
@@ -12347,7 +12347,7 @@
    ],
    "symptoms": [],
    "claim_text": "Inflammation can result from injury, arthritis, infection, or cancer; its signs include swelling, tenderness, discharges, edema, fever, and allergies. Treatment: dimethyl sulfoxide (DMSO); autoimmune urine therapy; oral proteolytic enzymes (chymotrypsin, pancreatic enzymes, bromelain, trypsin); vitamin C to bowel tolerance; vitamin E at 800-1,200 international units per day; zinc at 50 milligrams three times daily; essential fatty acids at 5 grams three times daily; bioflavonoids at 150 milligrams per day; quercetin at 100 milligrams per day; D-phenylalanine, L-tryptophane, and DL-valine each at 1.5 grams per day; acupuncture; and herbs camphor (Cinnamomum camphora), comfrey (Symphytum officinale), and feverfew (Chrysanthemum parthenium).",
-   "verbatim": "Treatment of inflammation include DMSO,\nautoimmune urine therapy, proteolytic enzymes orally (i.e., chymotrypsin, pancreatic\nenzymes, bromelin, trypsin), vitamin C to\nbowel tolerance,vitamin E at 800-1,200 IU/\nday, zinc at 50 mg t.i.d",
+   "verbatim": "Treatment of inflammation include DMSO,\nautoimmune urine therapy, proteolytic enzymes orally (i.e., chymotrypsin, pancreatic\nenzymes, bromelin, trypsin), vitamin C to\nbowel tolerance,vitamin E at 800-1,200 IU/\nday, zinc at 50 mg t.i.d., essential fatty acids at\n137\n5 gmti.d., bioflavonoids 150 mg/day, quercetin 100 mg/day, d-phenylalanine, 1-\ntryptophane and dl -valine each at 1.5 gm/\nday",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12355,7 +12355,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 348638
+    "char_offset": 348610
    },
    "dose": null,
    "tags": [
@@ -12395,7 +12395,7 @@
    ],
    "symptoms": [],
    "claim_text": "Indigestion (dyspepsia — belching, burping, bloating) occurs with aging, stress, and overeating; Wallach attributes much of it to the stomach losing its ability to make hydrochloric acid starting around age 35, with food allergies contributing (use a pulse test to identify them). Treatment: Kaopectate or Pepto-Bismol for acute diarrhea; betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times daily before meals; mint tea to calm the stomach; gentian (Gentiana lutea) before each meal; vitamin E at 800-1,200 international units per day; selenium at 500 micrograms per day; calcium and magnesium at 2,000 and 1,000 milligrams per day; acupuncture; homeopathy; and herbs including balm, bitter orange, celandine, fennel, hops, masterwort, peppermint, wormwood, yarrow, and marshmallow.",
-   "verbatim": "Treatment of indigestion should include\nKaopectate or Pepto Bismol for acute diarrhea, betaine HCl and pancreatic enzymes at\n75-200 mg t.i.d. before meals, mint tea as\nneeded to calm stomach, English bitters\n(Gentiana lutea) before each meal, vitamin E\nat 800- 1 ,200 IU/day, selenium at 500 mcg/day",
+   "verbatim": "INDIGESTION (dyspepsia, belch, burp,\nand bloat): occurs as a natural course of\naging, as a result of stress and overeating. In\nthe course of aging, the stomach begins to\nloose its ability to produce hydrochloric acid -\n- this process begins at about age 35. Food\nallergies can contribute to this syndrome. The\npulse test should be used to determine food\nallergies.\nTreatment of indigestion should include\nKaopectate or Pepto Bismol for acute diarrhea, betaine HCl and pancreatic enzymes at\n75-200 mg t.i.d. before meals, mint tea as\nneeded to calm stomach, English bitters\n(Gentiana lutea) before each meal, vitamin E\nat 800- 1 ,200 IU/day, selenium at 500 mcg/day,\ncalcium and magnesium at 2,000 and 1,000",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12403,7 +12403,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 349533
+    "char_offset": 349138
    },
    "dose": null,
    "tags": [
@@ -12440,7 +12440,7 @@
    ],
    "symptoms": [],
    "claim_text": "Insomnia (inability to sleep) can be caused by stress, excitement, drugs (including caffeine in coffee, cola, and chocolate), prescription medications, food allergies, and hypoglycemia — use a pulse test and six-hour glucose tolerance test. Treatment: avoid caffeine and offending food allergens; calcium (especially plant-derived colloidal calcium); chromium at 25-200 micrograms three times daily; acupuncture; homeopathy; DL-phenylalanine at 250 milligrams three times daily; L-tryptophan at 1,000 milligrams three times daily; inositol at 500 milligrams per day; niacinamide at 1,000 milligrams at bedtime; herbs valerian (Valeriana officinalis), passion flower (Passiflora incarnata), hops (Humulus lupulus), and California poppy (Eschscholzia californica); and vitamin B-3 (niacin) at 450 milligrams three times daily (time-release); plus the baseline nutrition program.",
-   "verbatim": "Treatment for insomnia includes avoidance of\ncaffeine and offending food allergens, calcium (especially plant derived colloidal calcium), chromium at 25-200 mcg t.i.d., acupuncture, homeopathy, dl-phenylalanine at\n250 mg t.i.d., 1-tryptophan at 1,000 mg t.i.d.,\ninositol at 500 mg/day, niacinamide at 1,000\nmg at bedtime",
+   "verbatim": "Treatment for insomnia includes avoidance of\ncaffeine and offending food allergens, calcium (especially plant derived colloidal calcium), chromium at 25-200 mcg t.i.d., acupuncture, homeopathy, dl-phenylalanine at\n250 mg t.i.d., 1-tryptophan at 1,000 mg t.i.d.,\ninositol at 500 mg/day, niacinamide at 1,000\nmg at bedtime, and herbs including valerian\n(Valeriana officinalis), passion flower\n(Passiflora incarnata), hops (Humulus lupulus)\nand California poppy (Eschscholzia California) and B-3 (niacin) at 450 mg t.i.d. (time",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12448,7 +12448,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 350523
+    "char_offset": 350493
    },
    "dose": null,
    "tags": [
@@ -12486,7 +12486,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 351586
+    "char_offset": 351554
    },
    "dose": null,
    "tags": [
@@ -12526,7 +12526,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 352305
+    "char_offset": 352273
    },
    "dose": null,
    "tags": [
@@ -12561,7 +12561,7 @@
    ],
    "symptoms": [],
    "claim_text": "Jaundice (icterus, yellow eyes) can be caused by blockage of the bile-duct system in the liver (gallstones, tumor, hepatitis) and/or destruction of red blood cells (Rh factor, blood parasites, malaria); diagnosis is critical. Examining the whites of the eyes (sclera) reveals true jaundice by a yellow coloration — which is absent when the skin is yellow from high beta-carotene intake; blood tests differentiate obstruction (bilirubin above 2.0-2.5 milligrams percent) from red-blood-cell destruction. Treatment: exposure to ultraviolet light to speed elimination; a liver flush (three days of apple juice, then a cup of olive oil and a cup of lemon juice); vitamin C to bowel tolerance; vitamin A at 300,000 international units per day as beta carotene; selenium at 500-1,000 micrograms per day; vitamin E at 800-1,200 international units per day; and herbs licorice (Glycyrrhiza glabra), agrimony (Agrimonia eupatoria), celandine (Chelidonium majus), and chionanthus (Chionanthus virginica).",
-   "verbatim": "Treatment of jaundice includes exposure to\nultra violet light to speed up elimination, liver\nflush (three days of apple juice followed by a\ncup of olive oil and a cup of lemon juice),\nvitamin C to bowel tolerance, vitamin A at\n300,000 IU/day as beta carotene, selenium at\n500-1 ,000 mcg/day, vitamin E at 800-1 ,200 IU/\nday, and herbs including licorice (Glycyrrhiza\nglabra), agrimony (Agrimonia eupatoria),\nceladine (Chelidonium majus), chionanthus\n(Chionanthus virginica).",
+   "verbatim": "Treatment of jaundice includes exposure to\nultra violet light to speed up elimination, liver\nflush (three days of apple juice followed by a\ncup of olive oil and a cup of lemon juice),\nvitamin C to bowel tolerance, vitamin A at\n300,000 IU/day as beta carotene, selenium at\n500-1 ,000 mcg/day, vitamin E at 800-1 ,200 IU/\nday, and herbs including licorice (Glycyrrhiza\nglabra), agrimony (Agrimonia eupatoria),\nceladine (Chelidonium majus), chionanthus\n(Chionanthus virginica)",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12569,7 +12569,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 353286
+    "char_offset": 353254
    },
    "dose": null,
    "tags": [
@@ -12610,7 +12610,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 354024
+    "char_offset": 353992
    },
    "dose": null,
    "tags": [
@@ -12640,7 +12640,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 354728
+    "char_offset": 354696
    },
    "dose": null,
    "tags": [
@@ -12668,7 +12668,7 @@
    ],
    "symptoms": [],
    "claim_text": "Keratomalacia (xerophthalmia) is a hazy, dry cornea (the clear domed bulge at the front of the eye) that becomes ulcerated — a sign of vitamin A deficiency. Symptoms include extreme dryness of the eyes with blinking to keep them moist, conjunctivitis, night blindness, and fat-like spots (Bitot's spots) on the white of the eyeball; untreated, it can cause permanent blindness. Treatment: vitamin A at 25,000 international units (children) to 300,000 international units (adults) per day as beta carotene, zinc at 10-50 milligrams three times daily, and increasing animal protein to 120 grams per day (chicken, fish, eggs, milk, lamb, pork, or beef), plus the baseline nutritional program.",
-   "verbatim": "KERATOMALACIA (xerophthalmia): is recognized as a hazy dry cornea (the domed clear\nbulge on the front of the eye) that becomes\nulcerated. Symptoms include extreme dryness of the eyes with blinking in attempts to\nkeep the eyes moist, conjunctivitis, and night\nblindness. Fat-like spots (Bitot's spots) can be\nfound on the \"white\" of the eye ball.\nUntreated keratomalacia can result in permanent blindness",
+   "verbatim": "KERATOMALACIA (xerophthalmia): is recognized as a hazy dry cornea (the domed clear\nbulge on the front of the eye) that becomes\nulcerated. Symptoms include extreme dryness of the eyes with blinking in attempts to\nkeep the eyes moist, conjunctivitis, and night\nblindness. Fat-like spots (Bitot's spots) can be\nfound on the \"white\" of the eye ball.\nUntreated keratomalacia can result in permanent blindness.\nTreatment of keratomalacia includes vitamin\nA at 25,000 IU (kids) to 300,000 IU (adults) per\n139\nday as beta carotene, zincat 10-50 mg t.i.d. and\nincrease the animal protein to 120 gm day",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12676,7 +12676,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 355261
+    "char_offset": 355229
    },
    "dose": null,
    "tags": [
@@ -12711,7 +12711,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 356302
+    "char_offset": 356269
    },
    "dose": null,
    "tags": [
@@ -12743,7 +12743,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 356817
+    "char_offset": 356784
    },
    "dose": null,
    "tags": [
@@ -12778,7 +12778,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 357658
+    "char_offset": 357625
    },
    "dose": null,
    "tags": [
@@ -12819,7 +12819,7 @@
    ],
    "symptoms": [],
    "claim_text": "Kidney disease (kidney stones) can be caused by infections, toxins, nutritional excesses (hypervitaminosis D) and deficiencies (vitamin A, selenium, zinc), and can be secondary to cardiovascular disease or diabetes. Contrary to orthodox belief, Wallach holds that kidney stones are caused by calcium AND magnesium deficiencies — which deplete calcium from the bones, the actual source of stone calcium — not by too much calcium; excess vitamin D (suntanning, fish oil, supplements) alongside a calcium deficiency accelerates the depletion. Check for cadmium toxicity with a hair analysis. Treatment: calcium and magnesium at 2,000 and 1,000 milligrams per day, reduce phosphorus intake, vitamin A at 25,000-300,000 international units per day as beta carotene, vitamin B-6 at 50 milligrams three times daily, lysine and glutamic acid, and herbs (dandelion, dwarf elder, goldenrod, Java tea, parsley, horsetail, mugwort, cranberry juice). Chelation helps; an acute stone blockage may require morphine for pain and prednisone for three days to reduce ureter inflammation, and a 'lithotripter' (ultrasound) can shatter stones without surgery.",
-   "verbatim": "Treatment of kidney disease and kidney stones\nshould include supplementation of calcium\nand magnesium at 2,000 mg and 1 ,000 mg per\nday, reduction of your phosphorus intake,\nadequate vitamin A nutriture at 25 ,000-300,000\nIU vitamin A per day as beta carotene, B-6 at\n50 mg t.i.d. .lysine and glutamic acid and herbs\nincluding dandelion (Taraxacum officinale),",
+   "verbatim": "Treatment of kidney disease and kidney stones\nshould include supplementation of calcium\nand magnesium at 2,000 mg and 1 ,000 mg per\nday, reduction of your phosphorus intake,\nadequate vitamin A nutriture at 25 ,000-300,000\nIU vitamin A per day as beta carotene, B-6 at\n50 mg t.i.d. .lysine and glutamic acid and herbs\nincluding dandelion (Taraxacum officinale),\n140\ndwarf elder (Sambucus ebulus), goldenrod\n(Solidago virgaurea), Java tea (Orthosiphon\nstamineus), parsley (Petro Selinum crispum),\nhorsetail (Equisetum spp.), mugwort (Artemisia vulgaris) and cranberry juice. Chelation\nwill help kidney disease, kidney disease that is\nsecondary to cardiovascular disease and cadmium toxicity. An acute or sudden kidney\nstone blockage may require the pain relief of\nmorphine as it can be excmciating; you may\nalso wish to use a prednisone for three days to\nreduce the inflammation in the ureter",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -12827,7 +12827,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 358845
+    "char_offset": 358812
    },
    "dose": null,
    "tags": [
@@ -12872,7 +12872,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 360690
+    "char_offset": 360653
    },
    "dose": null,
    "tags": [
@@ -12907,7 +12907,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 361667
+    "char_offset": 361630
    },
    "dose": null,
    "tags": [
@@ -12943,7 +12943,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 361888
+    "char_offset": 361851
    },
    "dose": null,
    "tags": [
@@ -12979,7 +12979,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 362514
+    "char_offset": 362477
    },
    "dose": null,
    "tags": [
@@ -13015,7 +13015,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 363452
+    "char_offset": 363415
    },
    "dose": null,
    "tags": [
@@ -13052,7 +13052,7 @@
    ],
    "symptoms": [],
    "claim_text": "Laryngitis (loss of voice) can be caused by bacterial or viral infections and extreme overuse of the vocal cords (e.g., yelling at a football or hockey game); frequently the temperature is not elevated and voice loss is the only symptom. A 'Strep' throat cause can be dangerous and lead to rheumatic fever or meningitis if not treated. Treatment: penicillin or tetracycline for Strep throat at 250 milligrams orally every 6 hours for 10-12 days, voice rest, honey/lemon preparations, and herbs including cajuput (Melaleuca leucadendron), sunflower (Helianthus annuus), pine oils (Pinus sylvestris), black caraway (Pimpinella saxifraga), garden sage (Salvia officinalis), high mallow (Malva sylvestris), wild ginger (Asarum europaeum), and eucalyptus (Eucalyptus globulus). Viral laryngitis may be treated with Isoprinosine at 500-1,500 milligrams per day or Ribavirin at 250-1,500 milligrams per day (pregnant women should avoid these drugs — they are teratogenic in lab animals).",
-   "verbatim": "Treatment of laryngitis can include penicillin\nor tetracyclines for \"Strep\" throat at 250 mg\norally q 6 h for 10-12 days, voice rest, honey/\nlemon preparations and herbs including\ncajuput (Melaleuca leucadendron), sunflower\n(Helianthus annuus), pine oils (Pinus\nsylvestris), black caraway (Pimpinella\nsaxifraga), garden sage (Salvia officinalis), high\nmallow (Malva sylvestris), wild ginger (Asarum\neuropaeum), eucalyptus (Eucalyptus globulus).",
+   "verbatim": "Treatment of laryngitis can include penicillin\nor tetracyclines for \"Strep\" throat at 250 mg\norally q 6 h for 10-12 days, voice rest, honey/\nlemon preparations and herbs including\ncajuput (Melaleuca leucadendron), sunflower\n(Helianthus annuus), pine oils (Pinus\nsylvestris), black caraway (Pimpinella\nsaxifraga), garden sage (Salvia officinalis), high\nmallow (Malva sylvestris), wild ginger (Asarum\neuropaeum), eucalyptus (Eucalyptus globulus).\nViral laryngitis may be treated with Isoprinosin\nat 500-1,500 mg per day or Ribavirin at 250-\n1 ,500 mg per day",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -13060,7 +13060,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 364092
+    "char_offset": 364055
    },
    "dose": null,
    "tags": [
@@ -13099,7 +13099,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 364731
+    "char_offset": 364694
    },
    "dose": null,
    "tags": [
@@ -13140,7 +13140,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 365683
+    "char_offset": 365646
    },
    "dose": null,
    "tags": [
@@ -13174,7 +13174,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 366792
+    "char_offset": 366755
    },
    "dose": null,
    "tags": [
@@ -13213,7 +13213,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 367278
+    "char_offset": 367241
    },
    "dose": null,
    "tags": [
@@ -13249,7 +13249,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 368232
+    "char_offset": 368193
    },
    "dose": null,
    "tags": [
@@ -13297,7 +13297,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 368904
+    "char_offset": 368863
    },
    "dose": null,
    "tags": [
@@ -13335,7 +13335,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 369755
+    "char_offset": 369714
    },
    "dose": null,
    "tags": [
@@ -13372,7 +13372,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 370583
+    "char_offset": 370542
    },
    "dose": null,
    "tags": [
@@ -13406,7 +13406,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 371086
+    "char_offset": 371045
    },
    "dose": null,
    "tags": [
@@ -13457,7 +13457,7 @@
     "page": 144,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 373115
+    "char_offset": 373074
    },
    "dose": null,
    "tags": [
@@ -13495,7 +13495,7 @@
     "page": 145,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 374480
+    "char_offset": 374439
    },
    "dose": null,
    "tags": [
@@ -13535,7 +13535,7 @@
     "page": 145,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 375974
+    "char_offset": 375933
    },
    "dose": null,
    "tags": [
@@ -13570,7 +13570,7 @@
     "page": 146,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 377508
+    "char_offset": 377465
    },
    "dose": null,
    "tags": [
@@ -13604,7 +13604,7 @@
     "page": 146,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 378937
+    "char_offset": 378892
    },
    "dose": null,
    "tags": [
@@ -13646,7 +13646,7 @@
     "page": 146,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 380139
+    "char_offset": 380092
    },
    "dose": null,
    "tags": [
@@ -13678,7 +13678,7 @@
     "page": 147,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 380927
+    "char_offset": 380880
    },
    "dose": null,
    "tags": [
@@ -13712,7 +13712,7 @@
     "page": 147,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 381222
+    "char_offset": 381175
    },
    "dose": null,
    "tags": [
@@ -13758,7 +13758,7 @@
     "page": 147,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 382015
+    "char_offset": 381968
    },
    "dose": null,
    "tags": [
@@ -13810,7 +13810,7 @@
     "page": 147,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 383600
+    "char_offset": 383553
    },
    "dose": null,
    "tags": [
@@ -13842,7 +13842,7 @@
     "page": 148,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 384621
+    "char_offset": 384574
    },
    "dose": null,
    "tags": [
@@ -13882,7 +13882,7 @@
     "page": 148,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 385097
+    "char_offset": 385050
    },
    "dose": null,
    "tags": [
@@ -13916,7 +13916,7 @@
     "page": 148,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 386290
+    "char_offset": 386243
    },
    "dose": null,
    "tags": [
@@ -13955,7 +13955,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 387372
+    "char_offset": 387325
    },
    "dose": null,
    "tags": [
@@ -13985,7 +13985,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 387718
+    "char_offset": 387671
    },
    "dose": null,
    "tags": [
@@ -14021,7 +14021,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 388257
+    "char_offset": 388210
    },
    "dose": null,
    "tags": [
@@ -14060,7 +14060,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 389334
+    "char_offset": 389287
    },
    "dose": null,
    "tags": [
@@ -14101,7 +14101,7 @@
     "page": 149,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 389660
+    "char_offset": 389613
    },
    "dose": null,
    "tags": [
@@ -14131,7 +14131,7 @@
    ],
    "symptoms": [],
    "claim_text": "Mitral valve prolapse is a common, progressive change in the left atrioventricular (mitral) valve and the surrounding heart tissue. Most people have no symptoms; some have non-anginal chest pain, palpitations, fatigue and/or breathing problems, and a late systolic heart murmur is sometimes heard during squatting exercises. If you have no symptoms, your activities need not be restricted. Wallach's treatment is selenium at 500 to 1,000 micrograms a day, magnesium at 1,000 milligrams three times a day, salmon oil (a source of omega-3 essential fatty acids) at 1 to 5 grams three times a day and the herb hawthorne (Crataegus oxyacantha), in addition to the baseline nutritional supplement program. He says you can expect significant improvement in 30 to 60 days.",
-   "verbatim": "Treatment of mitral valve prolapse should\ninclude selenium at 500-1 ,000 mcg/day, magnesium at 1,000 mg t.i.d. and salmon oil at 1-\n5 gm t.i.d. and hawthorne (Crataegus\noxyacantha",
+   "verbatim": "Treatment of mitral valve prolapse should\ninclude selenium at 500-1 ,000 mcg/day, magnesium at 1,000 mg t.i.d. and salmon oil at 1-\n5 gm t.i.d. and hawthorne (Crataegus\noxyacantha). Don't forget the base line nutrition program. You can expect significant\nimprovement in 30-60 days",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -14139,7 +14139,7 @@
     "page": 150,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 390862
+    "char_offset": 390813
    },
    "dose": null,
    "tags": [
@@ -14176,7 +14176,7 @@
     "page": 150,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 391380
+    "char_offset": 391329
    },
    "dose": null,
    "tags": [
@@ -14211,7 +14211,7 @@
     "page": 150,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 391568
+    "char_offset": 391517
    },
    "dose": null,
    "tags": [
@@ -14250,7 +14250,7 @@
     "page": 150,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 393230
+    "char_offset": 393177
    },
    "dose": null,
    "tags": [
@@ -14284,7 +14284,7 @@
     "page": 151,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 394137
+    "char_offset": 394084
    },
    "dose": null,
    "tags": [
@@ -14327,7 +14327,7 @@
     "page": 151,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 395778
+    "char_offset": 395725
    },
    "dose": null,
    "tags": [
@@ -14361,7 +14361,7 @@
     "page": 151,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 397089
+    "char_offset": 397036
    },
    "dose": null,
    "tags": [
@@ -14403,7 +14403,7 @@
     "page": 152,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 399738
+    "char_offset": 399685
    },
    "dose": null,
    "tags": [
@@ -14437,7 +14437,7 @@
    ],
    "symptoms": [],
    "claim_text": "Muscle cramps (charley horse) are a 'mini' convulsion in the muscle caused by deficiencies of calcium, magnesium, potassium, selenium and/or vitamin E. They range from a subtle eyelid twitch or muscle flutter (fasciculations) in the arms or legs to hard cramps of the feet, calves, back and neck. Prevention is the baseline nutritional supplement program; do a pulse test for food allergies that can cause celiac-type changes and malabsorption, and a hair analysis to check mineral status. Treatment can include liquid colloidal calcium, magnesium and potassium, plus betaine hydrochloride and pancreatic enzymes at 75-200 milligrams three times a day before meals.",
-   "verbatim": "MUSCLE CRAMPS (Charley horse): are a\n\"mini\" convulsion that is taking place in the\nmuscle as a result of deficiencies of calcium,\nmagnesium, potassium, selenium and/or vitamin E",
+   "verbatim": "MUSCLE CRAMPS (Charley horse): are a\n\"mini\" convulsion that is taking place in the\nmuscle as a result of deficiencies of calcium,\nmagnesium, potassium, selenium and/or vitamin E. Muscle cramps may be as subtle as the\ntwitch of an eyelid, muscle flutter in arms or\nlegs (fasciculations) to and including the hard\ncramps of the feet, calves, back and neck\nmuscles. Prevention includes the base line\nnutritional supplement program. Do pulse\ntest to determine food allergies that might\ncause celiac disease type changes and the\nresultant malabsorption. Do a hair analysis to\ndetermine mineral status.\nTreatment of muscle cramps can include liquid colloidal calcium, magnesium and potassium; betaine HCl and pancreatic enzymes at\n75-200 mg t.i.d. before meals",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -14445,7 +14445,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 400509
+    "char_offset": 400456
    },
    "dose": null,
    "tags": [
@@ -14483,7 +14483,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 401269
+    "char_offset": 401212
    },
    "dose": null,
    "tags": [
@@ -14521,7 +14521,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 401807
+    "char_offset": 401748
    },
    "dose": null,
    "tags": [
@@ -14556,7 +14556,7 @@
     "palpitations"
    ],
    "claim_text": "Nervous heart (a rapid beat or palpitations when nervous) tends to be common in senior citizens. Wallach says many of these cardiac symptoms result from vitamin B-1 (thiamine, the beri-beri vitamin) deficiency, anemia and a deficiency of stomach acid; do a pulse test to check whether food allergies contribute. His treatment is vitamin B-1 at 100 milligrams three times a day, iron at 45-100 milligrams, an improved general diet and the baseline nutritional supplement program, plus the herbs hawthorn (Crataegus oxyacantha), hops (Humulus lupulus), lavender (Lavandula angustifolia), motherwort (Leonurus cardiaca) and valerian (Valeriana officinalis); avoid offending food allergens and use rotation diets.",
-   "verbatim": "NERVOUS HEART (rapid beat or palpitations when nervous): tends to be common\nin senior citizens. Many of these cardiac\nsymptoms are the result of B-1 (Beri-Beri)\ndeficiencies, anemia and deficiencies of stomach acid",
+   "verbatim": "NERVOUS HEART (rapid beat or palpitations when nervous): tends to be common\nin senior citizens. Many of these cardiac\nsymptoms are the result of B-1 (Beri-Beri)\ndeficiencies, anemia and deficiencies of stomach acid. Do pulse test to determine if food\nallergies are a contributing factor.\nTreatment of\"nervous\" heart conditions should\ninclude B-l at 100 mg t.i.d., iron at 45-100 mg",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -14564,7 +14564,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 401969
+    "char_offset": 401910
    },
    "dose": null,
    "tags": [
@@ -14602,7 +14602,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 402668
+    "char_offset": 402609
    },
    "dose": null,
    "tags": [
@@ -14642,7 +14642,7 @@
    ],
    "symptoms": [],
    "claim_text": "Neuralgia (which includes Bell's palsy and neuropathy) is an irritation of a nerve that can stem from many causes — trauma; nutritional deficiencies (vitamin B-12, folic acid, vitamin B-1, vitamin B-6); infections (herpes, shingles); alcoholism; diabetes; and multiple sclerosis. Treatment requires addressing every underlying condition and should also include a B-complex at 50 milligrams three times a day, vitamin B-12 at 1,000 micrograms a day, essential fatty acids as EPA at 5 grams three times a day and flaxseed oil at one tablespoon twice a day, calcium and magnesium at 2,000 and 1,000 milligrams a day, and — for viral neuralgias such as herpes and shingles — the antivirals Isoprinosine at 500-1,500 milligrams a day and Ribavirin at 250-1,500 milligrams a day, plus acupuncture and the herbs lavender (Lavandula angustifolia), oats (Avena sativa), rosemary (Rosmarinus officinalis), St. John's wort (Hypericum perforatum) and white willow (Salix alba).",
-   "verbatim": "NEURALGIA (Bell's palsy, neuropathy): is\nan irritation of a nerve which can be caused by\nmany diseases ranging from trauma, nutritional\ndeficiencies (i.e., B-12, folic acid, B-l, B-6,\netc.), infections (i.e., herpes, shingles, etc.),\nalcoholism, diabetes, MS, etc.",
+   "verbatim": "NEURALGIA (Bell's palsy, neuropathy): is\nan irritation of a nerve which can be caused by\nmany diseases ranging from trauma, nutritional\ndeficiencies (i.e., B-12, folic acid, B-l, B-6,\netc.), infections (i.e., herpes, shingles, etc.),\nalcoholism, diabetes, MS, etc.\nTreatment requires attention to any and all\nunderlying conditions; treatment of neuralgia\nshould also include B-complex 50 t.i.d., B-12\n153\n1 ,000 mcg per day, essential fatty acids as EPA\nat 5 gmt.i.d. and flaxseed oil at one tbsp. b.i.d.,\ncalcium and magnesium at 2,000 mg and\n1,000 mg per day, Isoprinosin at 500-1,500\nmg/day and Ribavirin at 250-1 ,500 mg/day for\nviral neuralgias (i.e., herpes and shingles),\nacupuncture and herbs including lavender\n(Lavandula angustifolia), oats (Avena satifa),\nrosemary (Rosmarinus officinalis), St. Johns\nwort (Hypericum perforatum), white willow\n(Salix alba).",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -14650,7 +14650,7 @@
     "page": 153,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 403226
+    "char_offset": 403167
    },
    "dose": null,
    "tags": [
@@ -14686,7 +14686,7 @@
     "page": 154,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 404676
+    "char_offset": 404617
    },
    "dose": null,
    "tags": [
@@ -14720,7 +14720,7 @@
     "page": 154,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 405489
+    "char_offset": 405430
    },
    "dose": null,
    "tags": [
@@ -14762,7 +14762,7 @@
     "page": 154,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 405928
+    "char_offset": 405869
    },
    "dose": null,
    "tags": [
@@ -14804,7 +14804,7 @@
     "page": 154,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 406763
+    "char_offset": 406704
    },
    "dose": null,
    "tags": [
@@ -14847,7 +14847,7 @@
     "page": 155,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 409622
+    "char_offset": 409563
    },
    "dose": null,
    "tags": [
@@ -14879,7 +14879,7 @@
     "page": 155,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 411043
+    "char_offset": 410984
    },
    "dose": null,
    "tags": [
@@ -14914,7 +14914,7 @@
     "page": 156,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 412656
+    "char_offset": 412597
    },
    "dose": null,
    "tags": [
@@ -14950,7 +14950,7 @@
     "page": 156,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 412895
+    "char_offset": 412836
    },
    "dose": null,
    "tags": [
@@ -15001,7 +15001,7 @@
     "page": 156,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 414850
+    "char_offset": 414791
    },
    "dose": null,
    "tags": [
@@ -15036,7 +15036,7 @@
     "page": 157,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 415934
+    "char_offset": 415873
    },
    "dose": null,
    "tags": [
@@ -15075,7 +15075,7 @@
     "page": 157,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 417555
+    "char_offset": 417494
    },
    "dose": null,
    "tags": [
@@ -15115,7 +15115,7 @@
     "page": 158,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 418770
+    "char_offset": 418709
    },
    "dose": null,
    "tags": [
@@ -15153,7 +15153,7 @@
     "page": 158,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 419807
+    "char_offset": 419746
    },
    "dose": null,
    "tags": [
@@ -15195,7 +15195,7 @@
     "page": 158,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 420495
+    "char_offset": 420434
    },
    "dose": null,
    "tags": [
@@ -15233,7 +15233,7 @@
    ],
    "symptoms": [],
    "claim_text": "Palpitations (irregular heartbeat) can come from organic heart disease (easily checked with an electrocardiogram, EKG/ECG), food allergies (such as Chinese Restaurant Syndrome, an allergy to MSG/monosodium glutamate), nutritional deficiencies (for example vitamin B-1, vitamin B-3, selenium, potassium), and/or hypoglycemia. Treatment should include EDTA chelation for cardiovascular disease, intravenous hydrogen peroxide, and avoiding caffeine, offending food allergens, sugar, and processed foods; vitamin B-1 at 100 milligrams three times a day, vitamin B-3 at 450 milligrams three times a day as time-release tablets, vitamin C to bowel tolerance, and the baseline nutritional supplement program; plus herbs including hawthorn (Crataegus oxyacantha), lily-of-the-valley (Convallaria majalis), hops (Humulus lupulus), lavender (Lavandula angustifolia), motherwort (Leonurus cardiaca), valerian (Valeriana officinalis), and foxglove (Digitalis purpurea).",
-   "verbatim": "Treatment of palpitations should include EDTA\nchelation for cardio-vascular disease, IV hydrogen peroxide, avoid caffeine, avoid offending food allergens, avoid sugar and processed foods in all forms",
+   "verbatim": "Treatment of palpitations should include EDTA\nchelation for cardio-vascular disease, IV hydrogen peroxide, avoid caffeine, avoid offending food allergens, avoid sugar and processed foods in all forms, vitamin B-l at 100\n158\nmg t.i.d., B-3 at 450 mg t.i.cl. as time release\ntablets, vitamin C to bowel tolerance and base\nline nutritional supplementation program;\nherbs including English hawthorn (Crataegus\noxyacantha), lily-of-the-valley (Convallaria\nmejalis), hops (Humulus lupulus), lavender\n(Lavandula angustifolia), mother wort\n(Leonuruscardiaca), valerian (Valeriana\nofficinalis) and foxglove (Digitalis purpurea)",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -15241,7 +15241,7 @@
     "page": 158,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 421150
+    "char_offset": 421089
    },
    "dose": null,
    "tags": [
@@ -15280,7 +15280,7 @@
     "page": 159,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 422269
+    "char_offset": 422208
    },
    "dose": null,
    "tags": [
@@ -15325,7 +15325,7 @@
     "page": 159,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 423059
+    "char_offset": 422998
    },
    "dose": null,
    "tags": [
@@ -15363,7 +15363,7 @@
     "page": 159,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 424197
+    "char_offset": 424136
    },
    "dose": null,
    "tags": [
@@ -15408,7 +15408,7 @@
     "page": 159,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 426380
+    "char_offset": 426319
    },
    "dose": null,
    "tags": [
@@ -15454,7 +15454,7 @@
     "page": 160,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 425650
+    "char_offset": 425589
    },
    "dose": null,
    "tags": [
@@ -15489,7 +15489,7 @@
     "page": 160,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 427362
+    "char_offset": 427301
    },
    "dose": null,
    "tags": [
@@ -15529,7 +15529,7 @@
     "page": 160,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 427828
+    "char_offset": 427767
    },
    "dose": null,
    "tags": [
@@ -15572,7 +15572,7 @@
     "page": 160,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 428729
+    "char_offset": 428668
    },
    "dose": null,
    "tags": [
@@ -15610,7 +15610,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 429186
+    "char_offset": 429125
    },
    "dose": null,
    "tags": [
@@ -15656,7 +15656,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 429567
+    "char_offset": 429506
    },
    "dose": null,
    "tags": [
@@ -15690,7 +15690,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 430321
+    "char_offset": 430260
    },
    "dose": null,
    "tags": [
@@ -15725,7 +15725,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 430564
+    "char_offset": 430503
    },
    "dose": null,
    "tags": [
@@ -15761,7 +15761,7 @@
     "page": 161,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 431514
+    "char_offset": 431453
    },
    "dose": null,
    "tags": [
@@ -15796,7 +15796,7 @@
     "page": 162,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 433522
+    "char_offset": 433461
    },
    "dose": null,
    "tags": [
@@ -15840,7 +15840,7 @@
     "page": 162,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 432959
+    "char_offset": 432898
    },
    "dose": null,
    "tags": [
@@ -15879,7 +15879,7 @@
     "page": 162,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 433991
+    "char_offset": 433930
    },
    "dose": null,
    "tags": [
@@ -15915,7 +15915,7 @@
     "page": 162,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 435001
+    "char_offset": 434940
    },
    "dose": null,
    "tags": [
@@ -15947,7 +15947,7 @@
     "page": 163,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 436192
+    "char_offset": 436131
    },
    "dose": null,
    "tags": [
@@ -15983,7 +15983,7 @@
     "page": 163,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 436391
+    "char_offset": 436330
    },
    "dose": null,
    "tags": [
@@ -16018,7 +16018,7 @@
     "page": 163,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 437233
+    "char_offset": 437172
    },
    "dose": null,
    "tags": [
@@ -16060,7 +16060,7 @@
     "page": 164,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 439794
+    "char_offset": 439733
    },
    "dose": null,
    "tags": [
@@ -16094,7 +16094,7 @@
     "page": 164,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 440638
+    "char_offset": 440577
    },
    "dose": null,
    "tags": [
@@ -16132,7 +16132,7 @@
     "page": 164,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 441587
+    "char_offset": 441526
    },
    "dose": null,
    "tags": [
@@ -16168,7 +16168,7 @@
     "page": 165,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 442122
+    "char_offset": 442061
    },
    "dose": null,
    "tags": [
@@ -16224,7 +16224,7 @@
     "page": 165,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 443750
+    "char_offset": 443689
    },
    "dose": null,
    "tags": [
@@ -16260,7 +16260,7 @@
     "page": 165,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 444853
+    "char_offset": 444792
    },
    "dose": null,
    "tags": [
@@ -16300,7 +16300,7 @@
     "page": 166,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 445611
+    "char_offset": 445550
    },
    "dose": null,
    "tags": [
@@ -16334,7 +16334,7 @@
     "page": 166,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 447091
+    "char_offset": 447030
    },
    "dose": null,
    "tags": [
@@ -16366,7 +16366,7 @@
     "page": 166,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 447703
+    "char_offset": 447642
    },
    "dose": null,
    "tags": [
@@ -16402,7 +16402,7 @@
     "page": 166,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 448098
+    "char_offset": 448037
    },
    "dose": null,
    "tags": [
@@ -16438,7 +16438,7 @@
     "page": 167,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 448934
+    "char_offset": 448873
    },
    "dose": null,
    "tags": [
@@ -16475,7 +16475,7 @@
     "page": 167,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 449351
+    "char_offset": 449290
    },
    "dose": null,
    "tags": [
@@ -16514,7 +16514,7 @@
     "page": 167,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 450382
+    "char_offset": 450321
    },
    "dose": null,
    "tags": [
@@ -16550,7 +16550,7 @@
     "page": 167,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 451061
+    "char_offset": 451000
    },
    "dose": null,
    "tags": [
@@ -16576,7 +16576,7 @@
    ],
    "symptoms": [],
    "claim_text": "A sebaceous cyst (wen, steatoma) is a slow-growing benign cystic skin 'tumor' containing sebaceous material, frequently found on the scalp (wen), ears, back, or scrotum; it ranges from pea- to golf-ball-sized, is firm (like a soft-shell egg), and painless. Treatment includes a 'stab' incision at the lowest edge of the cyst, evacuating the contents, and flushing with hydrogen peroxide; large cysts require removal of the cyst wall to prevent refilling, placing a sterile gauze drain in the empty cyst and gradually removing it over 7-10 days.",
-   "verbatim": "Treatment of a sebaceous cyst includes a\n\"stab\" incision at the lowest edge of the cyst;\nevacuate the contents; flush with hydrogen\nperoxide.",
+   "verbatim": "Treatment of a sebaceous cyst includes a\n\"stab\" incision at the lowest edge of the cyst;\nevacuate the contents; flush with hydrogen\nperoxide. Large cysts require removal of the\ncyst wall to prevent refilling of the cyst; place\na sterile gauze drain in the empty cyst and\n167\ngradually remove over a period of 7-10 days",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -16584,7 +16584,7 @@
     "page": 167,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 451501
+    "char_offset": 451440
    },
    "dose": null,
    "tags": [
@@ -16626,7 +16626,7 @@
     "page": 168,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 451821
+    "char_offset": 451760
    },
    "dose": null,
    "tags": [
@@ -16664,7 +16664,7 @@
     "page": 168,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 453100
+    "char_offset": 453037
    },
    "dose": null,
    "tags": [
@@ -16699,7 +16699,7 @@
     "page": 168,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 453497
+    "char_offset": 453434
    },
    "dose": null,
    "tags": [
@@ -16743,7 +16743,7 @@
     "page": 168,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 453663
+    "char_offset": 453600
    },
    "dose": null,
    "tags": [
@@ -16785,7 +16785,7 @@
     "page": 168,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 454467
+    "char_offset": 454404
    },
    "dose": null,
    "tags": [
@@ -16824,7 +16824,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 455090
+    "char_offset": 455027
    },
    "dose": null,
    "tags": [
@@ -16858,7 +16858,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 455625
+    "char_offset": 455562
    },
    "dose": null,
    "tags": [
@@ -16897,7 +16897,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 456098
+    "char_offset": 456035
    },
    "dose": null,
    "tags": [
@@ -16934,7 +16934,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 456811
+    "char_offset": 456748
    },
    "dose": null,
    "tags": [
@@ -16972,7 +16972,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 457553
+    "char_offset": 457490
    },
    "dose": null,
    "tags": [
@@ -17004,7 +17004,7 @@
     "page": 169,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 457790
+    "char_offset": 457727
    },
    "dose": null,
    "tags": [
@@ -17039,7 +17039,7 @@
     "page": 170,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 458491
+    "char_offset": 458428
    },
    "dose": null,
    "tags": [
@@ -17073,7 +17073,7 @@
     "page": 170,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 459341
+    "char_offset": 459278
    },
    "dose": null,
    "tags": [
@@ -17116,7 +17116,7 @@
     "page": 170,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 459874
+    "char_offset": 459811
    },
    "dose": null,
    "tags": [
@@ -17153,7 +17153,7 @@
     "page": 170,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 461137
+    "char_offset": 461074
    },
    "dose": null,
    "tags": [
@@ -17193,7 +17193,7 @@
     "page": 171,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 461669
+    "char_offset": 461606
    },
    "dose": null,
    "tags": [
@@ -17225,7 +17225,7 @@
     "page": 171,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 461968
+    "char_offset": 461905
    },
    "dose": null,
    "tags": [
@@ -17262,7 +17262,7 @@
     "page": 171,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 463455
+    "char_offset": 463390
    },
    "dose": null,
    "tags": [
@@ -17305,7 +17305,7 @@
     "page": 171,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 464419
+    "char_offset": 464354
    },
    "dose": null,
    "tags": [
@@ -17348,7 +17348,7 @@
     "page": 172,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 465816
+    "char_offset": 465751
    },
    "dose": null,
    "tags": [
@@ -17393,7 +17393,7 @@
     "page": 172,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 466451
+    "char_offset": 466386
    },
    "dose": null,
    "tags": [
@@ -17432,7 +17432,7 @@
     "page": 172,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 467007
+    "char_offset": 466942
    },
    "dose": null,
    "tags": [
@@ -17469,7 +17469,7 @@
     "page": 172,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 467543
+    "char_offset": 467478
    },
    "dose": null,
    "tags": [
@@ -17503,7 +17503,7 @@
     "page": 172,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 468531
+    "char_offset": 468466
    },
    "dose": null,
    "tags": [
@@ -17537,7 +17537,7 @@
     "page": 173,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 469909
+    "char_offset": 469844
    },
    "dose": null,
    "tags": [
@@ -17576,7 +17576,7 @@
     "page": 173,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 470299
+    "char_offset": 470234
    },
    "dose": null,
    "tags": [
@@ -17616,7 +17616,7 @@
     "page": 173,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 470893
+    "char_offset": 470828
    },
    "dose": null,
    "tags": [
@@ -17654,7 +17654,7 @@
     "page": 174,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 471922
+    "char_offset": 471857
    },
    "dose": null,
    "tags": [
@@ -17697,7 +17697,7 @@
     "page": 174,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 472409
+    "char_offset": 472344
    },
    "dose": null,
    "tags": [
@@ -17732,7 +17732,7 @@
     "page": 174,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 472771
+    "char_offset": 472706
    },
    "dose": null,
    "tags": [
@@ -17775,7 +17775,7 @@
     "page": 174,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 472983
+    "char_offset": 472918
    },
    "dose": null,
    "tags": [
@@ -17812,7 +17812,7 @@
     "page": 174,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 473599
+    "char_offset": 473534
    },
    "dose": null,
    "tags": [
@@ -17848,7 +17848,7 @@
     "page": 174,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 473884
+    "char_offset": 473819
    },
    "dose": null,
    "tags": [
@@ -17884,7 +17884,7 @@
     "page": 174,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 474072
+    "char_offset": 474007
    },
    "dose": null,
    "tags": [
@@ -17925,7 +17925,7 @@
     "page": 174,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 474314
+    "char_offset": 474249
    },
    "dose": null,
    "tags": [
@@ -17955,7 +17955,7 @@
     "page": 74,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 140592
+    "char_offset": 140586
    },
    "dose": null,
    "tags": [
@@ -17986,7 +17986,7 @@
     "page": 75,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 145162
+    "char_offset": 145156
    },
    "dose": null,
    "tags": [
@@ -18017,7 +18017,7 @@
     "page": 75,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 144772
+    "char_offset": 144766
    },
    "dose": null,
    "tags": [
@@ -18048,7 +18048,7 @@
     "page": 76,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 147394
+    "char_offset": 147388
    },
    "dose": null,
    "tags": [
@@ -18084,7 +18084,7 @@
     "page": 76,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 148841
+    "char_offset": 148835
    },
    "dose": null,
    "tags": [
@@ -18117,7 +18117,7 @@
     "page": 77,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 153776
+    "char_offset": 153770
    },
    "dose": null,
    "tags": [
@@ -18148,7 +18148,7 @@
     "page": 176,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 478785
+    "char_offset": 478720
    },
    "dose": null,
    "tags": [
@@ -18179,7 +18179,7 @@
     "page": 176,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 477643
+    "char_offset": 477578
    },
    "dose": null,
    "tags": [
@@ -18210,7 +18210,7 @@
     "page": 176,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 478162
+    "char_offset": 478097
    },
    "dose": null,
    "tags": [
@@ -18241,7 +18241,7 @@
     "page": 179,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 482713
+    "char_offset": 482648
    },
    "dose": null,
    "tags": [
@@ -18272,7 +18272,7 @@
     "page": 179,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 484581
+    "char_offset": 484516
    },
    "dose": null,
    "tags": [
@@ -18303,7 +18303,7 @@
     "page": 180,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 488642
+    "char_offset": 488577
    },
    "dose": null,
    "tags": [
@@ -18334,7 +18334,7 @@
     "page": 182,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 490049
+    "char_offset": 489984
    },
    "dose": null,
    "tags": [
@@ -18365,7 +18365,7 @@
     "page": 182,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 490576
+    "char_offset": 490511
    },
    "dose": null,
    "tags": [
@@ -18396,7 +18396,7 @@
     "page": 182,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 493321
+    "char_offset": 493256
    },
    "dose": null,
    "tags": [
@@ -18429,7 +18429,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 179339
+    "char_offset": 179333
    },
    "dose": null,
    "tags": [
@@ -18463,7 +18463,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 408558
+    "char_offset": 408499
    },
    "dose": null,
    "tags": [
@@ -18499,7 +18499,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 375974
+    "char_offset": 375933
    },
    "dose": null,
    "tags": [
@@ -18533,7 +18533,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 469122
+    "char_offset": 469057
    },
    "dose": null,
    "tags": [
@@ -18566,7 +18566,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 308386
+    "char_offset": 308366
    },
    "dose": null,
    "tags": [
@@ -18599,7 +18599,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 460569
+    "char_offset": 460506
    },
    "dose": null,
    "tags": [
@@ -18665,7 +18665,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 495066
+    "char_offset": 495001
    },
    "dose": null,
    "tags": [
@@ -18698,7 +18698,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 492991
+    "char_offset": 492926
    },
    "dose": null,
    "tags": [
@@ -18731,7 +18731,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 161281
+    "char_offset": 161275
    },
    "dose": null,
    "tags": [
@@ -18767,7 +18767,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 464802
+    "char_offset": 464737
    },
    "dose": null,
    "tags": [
@@ -18802,7 +18802,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 353761
+    "char_offset": 353729
    },
    "dose": null,
    "tags": [
@@ -18836,7 +18836,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 312991
+    "char_offset": 312971
    },
    "dose": null,
    "tags": [
@@ -18862,7 +18862,7 @@
    "conditions": [],
    "symptoms": [],
    "claim_text": "Wallach reports that the veterinary profession has prevented cystic fibrosis in pet, farm and laboratory animals by ensuring adequate selenium and essential fatty acid nutrition in the preconception, pregnant, and nursing mother. In people he treats it early with selenium and flaxseed oil at 5 gm three times a day.",
-   "verbatim": "The prevention of CF has been accomplished\nin pet, farm and laboratory animals by the\nveterinary profession by assuring adequate\nlevels of selenium and essential fatty acid\nnutriture to the preconception, pregnant and\nnursing mother.",
+   "verbatim": "The prevention of CF has been accomplished\nin pet, farm and laboratory animals by the\nveterinary profession by assuring adequate\nlevels of selenium and essential fatty acid\nnutriture to the preconception, pregnant and\nnursing mother. This is not as easy as it sounds\nbecause of malabsorption problems (i.e., celiac diseases and Crohn's Disease) in a percentage of women!!! All things being normal\na supplementation of 200 mcg selenium per\nday and 5 gm of flaxseed oil t.i.d. would be\nadequate to prevent CF.\nTreatment of CF is very basic - treat the infant\nas early as possible with selenium IM at 10-25\nmcg per day. Plant derived colloidal minerals\nmay be used orally thereafter. Provide 5 gm of\nflaxseed oil orally t.i.d.",
    "locator": {
     "book": "lets-play-doctor",
     "scheme": "chapter_page",
@@ -18870,7 +18870,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 255741
+    "char_offset": 255731
    },
    "dose": null,
    "tags": [
@@ -18902,7 +18902,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 428483
+    "char_offset": 428422
    },
    "dose": null,
    "tags": [
@@ -18934,7 +18934,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 405699
+    "char_offset": 405640
    },
    "dose": null,
    "tags": [
@@ -18968,7 +18968,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 301498
+    "char_offset": 301480
    },
    "dose": null,
    "tags": [
@@ -19002,7 +19002,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 227664
+    "char_offset": 227654
    },
    "dose": null,
    "tags": [
@@ -19035,7 +19035,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 154351
+    "char_offset": 154345
    },
    "dose": null,
    "tags": [
@@ -19103,7 +19103,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 383668
+    "char_offset": 383621
    },
    "dose": null,
    "tags": [
@@ -19138,7 +19138,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 378686
+    "char_offset": 378641
    },
    "dose": null,
    "tags": [
@@ -19172,7 +19172,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 125956
+    "char_offset": 125954
    },
    "dose": null,
    "tags": [
@@ -19241,7 +19241,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 332136
+    "char_offset": 332110
    },
    "dose": null,
    "tags": [
@@ -19275,7 +19275,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 335085
+    "char_offset": 335059
    },
    "dose": null,
    "tags": [
@@ -19342,7 +19342,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 399333
+    "char_offset": 399280
    },
    "dose": null,
    "tags": [
@@ -19374,7 +19374,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 138985
+    "char_offset": 138979
    },
    "dose": null,
    "tags": [
@@ -19408,7 +19408,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 378331
+    "char_offset": 378286
    },
    "dose": null,
    "tags": [
