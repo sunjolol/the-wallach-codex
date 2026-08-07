@@ -12509,6 +12509,18 @@
       ],
       "record": [
         {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-LETS-000039"
+          ]
+        },
+        {
+          "kind": "toxicity_sign",
+          "claim_ids": [
+            "WAL-CLM-LETS-000040"
+          ]
+        },
+        {
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000139",
@@ -12538,7 +12550,7 @@
           ]
         }
       ],
-      "record_claim_count": 9,
+      "record_claim_count": 11,
       "search": [
         {
           "facet": "basics",
@@ -12549,16 +12561,14 @@
         {
           "facet": "warning",
           "claim_ids": [
-            "WAL-CLM-DDDL-000083",
-            "WAL-CLM-EPIGEN-000032",
-            "WAL-CLM-LETS-000040"
+            "WAL-CLM-DDDL-000083"
           ]
         },
         {
           "facet": "physiology",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000032",
             "WAL-CLM-IMMORT-000287",
-            "WAL-CLM-LETS-000039",
             "WAL-CLM-RARE-000230"
           ]
         },

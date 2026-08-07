@@ -8654,17 +8654,25 @@
     "rickets",
     "osteoporosis",
     "arthritis",
-    "tetany"
+    "tetany",
+    "osteomalacia",
+    "myopia",
+    "insomnia"
    ],
-   "facet": "warning",
-   "question": "What are the symptoms of vitamin D deficiency?",
-   "answer_short": "Vitamin D deficiency can cause facial tics, muscle cramps, tetany and convulsions, childhood rickets, osteoporosis, arthritis, kidney stones, and more.",
+   "facet": "physiology",
+   "question": "What are the signs of vitamin D deficiency?",
+   "answer_short": "Wallach's vitamin D deficiency signs run head to toe: facial tics and Tourette's, muscle cramps, tetany and convulsions, burning in the mouth and throat, diarrhea, insomnia, nearsightedness (myopia), nervousness, profuse sweating, restless legs, childhood rickets, softening of the bones (osteomalacia), osteoporosis, arthritis, and kidney stones.",
    "topics": [
     "vitamin d",
     "vitamin d deficiency",
     "rickets",
     "bone health",
-    "muscle cramps"
+    "muscle cramps",
+    "cholecalciferol",
+    "osteomalacia",
+    "insomnia",
+    "myopia",
+    "nervousness"
    ]
   },
   "WAL-CLM-DDDL-000083": {
@@ -8672,16 +8680,22 @@
    "also_about": [
     "cholesterol",
     "arteriosclerosis",
-    "calcium"
+    "calcium",
+    "liver_disease"
    ],
    "facet": "warning",
    "question": "Can too much vitamin D be dangerous?",
-   "answer_short": "Yes — Wallach teaches that vitamin D toxicity is angiotoxic, targeting the elastic arteries and causing fibrosis of arterial smooth muscle and calcification of blood vessel walls.",
+   "answer_short": "Yes — Wallach counts excess vitamin D among the few toxicities he takes seriously, and it is angiotoxic: it targets the elastic arteries, causing fibrosis of the vascular smooth muscle, and drives calcium out of solution into the artery walls — hardening them (arteriosclerosis), calcifying soft tissue, and bringing on liver dysfunction.",
    "topics": [
     "vitamin d",
     "vitamin d toxicity",
     "artery calcification",
-    "heart health"
+    "heart health",
+    "too much vitamin d",
+    "arteriosclerosis",
+    "calcification",
+    "hardening of arteries",
+    "liver"
    ]
   },
   "WAL-CLM-IMMORT-000126": {
@@ -30772,47 +30786,6 @@
     "how much vitamin d",
     "daily vitamin d",
     "supplement program"
-   ]
-  },
-  "WAL-CLM-LETS-000039": {
-   "subject": "vitamin-d",
-   "also_about": [
-    "rickets",
-    "osteomalacia",
-    "myopia",
-    "insomnia"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of vitamin D deficiency?",
-   "answer_short": "Wallach lists burning in the mouth and throat, diarrhea, insomnia, nearsightedness (myopia), nervousness, softening of the bones (osteomalacia), and rickets.",
-   "topics": [
-    "vitamin d",
-    "cholecalciferol",
-    "vitamin d deficiency",
-    "rickets",
-    "osteomalacia",
-    "insomnia",
-    "myopia",
-    "nervousness"
-   ]
-  },
-  "WAL-CLM-LETS-000040": {
-   "subject": "vitamin-d",
-   "also_about": [
-    "arteriosclerosis",
-    "liver_disease"
-   ],
-   "facet": "warning",
-   "question": "Can too much vitamin D be harmful?",
-   "answer_short": "Wallach warns that excess vitamin D causes angiotoxicity — calcification and hardening of the arteries (arteriosclerosis), malignant calcification of soft tissue, and liver dysfunction — by driving calcium into the artery walls.",
-   "topics": [
-    "vitamin d",
-    "vitamin d toxicity",
-    "too much vitamin d",
-    "arteriosclerosis",
-    "calcification",
-    "hardening of arteries",
-    "liver"
    ]
   },
   "WAL-CLM-LETS-000074": {

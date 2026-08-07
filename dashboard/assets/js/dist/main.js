@@ -40246,6 +40246,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
+            kind: "deficiency_sign",
+            claim_ids: [
+              "WAL-CLM-LETS-000039"
+            ]
+          },
+          {
+            kind: "toxicity_sign",
+            claim_ids: [
+              "WAL-CLM-LETS-000040"
+            ]
+          },
+          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000139",
@@ -40275,7 +40287,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 9,
+        record_claim_count: 11,
         search: [
           {
             facet: "basics",
@@ -40286,16 +40298,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000083",
-              "WAL-CLM-EPIGEN-000032",
-              "WAL-CLM-LETS-000040"
+              "WAL-CLM-DDDL-000083"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000032",
               "WAL-CLM-IMMORT-000287",
-              "WAL-CLM-LETS-000039",
               "WAL-CLM-RARE-000230"
             ]
           },
@@ -88437,7 +88447,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-a",
           "arteriosclerosis"
         ],
-        claim_count: 17
+        claim_count: 15
       },
       "vitamin-e": {
         display_name: "Tocopherol",
@@ -91076,11 +91086,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         also_about: [
           "cholesterol",
           "arteriosclerosis",
-          "calcium"
+          "calcium",
+          "liver_disease"
         ],
         facet: "warning",
         question: "Can too much vitamin D be dangerous?",
-        answer_short: "Yes \u2014 Wallach teaches that vitamin D toxicity is angiotoxic, targeting the elastic arteries and causing fibrosis of arterial smooth muscle and calcification of blood vessel walls.",
+        answer_short: "Yes \u2014 Wallach counts excess vitamin D among the few toxicities he takes seriously, and it is angiotoxic: it targets the elastic arteries, causing fibrosis of the vascular smooth muscle, and drives calcium out of solution into the artery walls \u2014 hardening them (arteriosclerosis), calcifying soft tissue, and bringing on liver dysfunction.",
         answer: "Vitamin D toxicity (angiotoxicity) targets the elastic arteries, causing fibrosis of the vascular smooth muscle and calcification of the vessel wall.",
         verbatim: "The target tissue of vitamin D toxicity is the\nelastic arteries and the specific result is fibrosis of the vascular smooth\nmuscle and calcification of the blood vessel wall",
         page: null,
@@ -91089,7 +91100,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin d",
           "vitamin d toxicity",
           "artery calcification",
-          "heart health"
+          "heart health",
+          "too much vitamin d",
+          "arteriosclerosis",
+          "calcification",
+          "hardening of arteries",
+          "liver"
         ],
         tier1_link: {
           essentials: [
@@ -96792,11 +96808,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "rickets",
           "osteoporosis",
           "arthritis",
-          "tetany"
+          "tetany",
+          "osteomalacia",
+          "myopia",
+          "insomnia"
         ],
-        facet: "warning",
-        question: "What are the symptoms of vitamin D deficiency?",
-        answer_short: "Vitamin D deficiency can cause facial tics, muscle cramps, tetany and convulsions, childhood rickets, osteoporosis, arthritis, kidney stones, and more.",
+        facet: "physiology",
+        question: "What are the signs of vitamin D deficiency?",
+        answer_short: "Wallach's vitamin D deficiency signs run head to toe: facial tics and Tourette's, muscle cramps, tetany and convulsions, burning in the mouth and throat, diarrhea, insomnia, nearsightedness (myopia), nervousness, profuse sweating, restless legs, childhood rickets, softening of the bones (osteomalacia), osteoporosis, arthritis, and kidney stones.",
         answer: "Vitamin D is required for the absorption, metabolism, and proper deposition of calcium and phosphorus in the bones and teeth, and works hand-in-hand with parathyroid hormone. Wallach calls the modern universal vitamin D deficiency a 'physician-caused disease' -- a perfect storm created by medical advice to avoid the sun, wear sunblock and covering clothing, avoid dietary cholesterol (egg yolks, chicken skin, dairy, saturated fats), and skip vitamin-mineral supplements. He lists the health problems of vitamin D deficiency: facial tics and Tourette's syndrome, twitches and muscle cramps, tetany (full-body cramp) and convulsions, childhood rickets (rachitic rosary, bowed legs, knock-knees, pigeon chest), profuse sweating, restless leg syndrome, enlarged wrists, osteopenia/osteoporosis, periodontal disease, arthritis/osteoarthritis/degenerative 'bone-to-bone' arthritis, bone spurs, kidney stones, uterine fibroids, and a higher risk of cancer.",
         verbatim: "Facial tics, Tourette\u2019s syndrome\nTwitches, muscle cramps\nTetany (full body cramp), convulsions\n\nChildhood rickets (rachitic rosary), bowed legs, knock-knees, pigeon chest,\nProfuse sweating\n\nRestless leg syndrome\n\nEnlarged wrists, osteopenia, osteoporosis, periodontal disease, arthritis,\nosteoarthritis, degenerative arthritis, \u201Cbone to bone\u201D arthritis, bone spurs,\nKidney stones.\n\nUterine fibroids",
         page: 610,
@@ -96806,7 +96825,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin d deficiency",
           "rickets",
           "bone health",
-          "muscle cramps"
+          "muscle cramps",
+          "cholecalciferol",
+          "osteomalacia",
+          "insomnia",
+          "myopia",
+          "nervousness"
         ],
         tier1_link: {
           essentials: [
@@ -120695,86 +120719,6 @@ diarrhea, dermatitis, dementia, and death.`,
             "impaired_wound_healing",
             "irritability",
             "joint_pain"
-          ]
-        }
-      },
-      {
-        id: "WAL-CLM-LETS-000039",
-        subject: "vitamin-d",
-        also_about: [
-          "rickets",
-          "osteomalacia",
-          "myopia",
-          "insomnia"
-        ],
-        facet: "physiology",
-        question: "What are the signs of vitamin D deficiency?",
-        answer_short: "Wallach lists burning in the mouth and throat, diarrhea, insomnia, nearsightedness (myopia), nervousness, softening of the bones (osteomalacia), and rickets.",
-        answer: "Wallach lists the signs of vitamin D deficiency: burning in the mouth, burning in the throat, diarrhea, insomnia, myopia (nearsightedness), nervousness, osteomalacia (softening of the bones), and rickets.",
-        verbatim: "VITAMIN D DEFICIENCY\nburning in mouth\nburning in throat\ndiarrhea\ninsomnia\nmyopia\nnervousness\nosteomalacia\nrickets",
-        page: 50,
-        book_id: "lets-play-doctor",
-        topics: [
-          "vitamin d",
-          "cholecalciferol",
-          "vitamin d deficiency",
-          "rickets",
-          "osteomalacia",
-          "insomnia",
-          "myopia",
-          "nervousness"
-        ],
-        tier1_link: {
-          essentials: [
-            "vitamin-d"
-          ],
-          conditions: [
-            "diarrhea",
-            "insomnia",
-            "myopia",
-            "osteomalacia",
-            "rickets"
-          ],
-          symptoms: [
-            "burning_mouth",
-            "burning_throat",
-            "nervousness"
-          ]
-        }
-      },
-      {
-        id: "WAL-CLM-LETS-000040",
-        subject: "vitamin-d",
-        also_about: [
-          "arteriosclerosis",
-          "liver_disease"
-        ],
-        facet: "warning",
-        question: "Can too much vitamin D be harmful?",
-        answer_short: "Wallach warns that excess vitamin D causes angiotoxicity \u2014 calcification and hardening of the arteries (arteriosclerosis), malignant calcification of soft tissue, and liver dysfunction \u2014 by driving calcium into the artery walls.",
-        answer: "Excess vitamin D is one of the few vitamin toxicities Wallach takes seriously, and he ties it squarely to the blood vessels: the signs he lists are 'angiotoxicity' \u2014 calcification of the arteries \u2014 along with arteriosclerosis, 'malignant' calcification of soft tissue, and liver dysfunction. In his framework the danger of too much vitamin D is that it drives calcium out of solution and into the artery walls, hardening them.",
-        verbatim: 'VITAMIN D TOXICITY\nangiotoxicity (calcification)\narteriosclerosis (angiotoxicity)\nliver dysfunction\n"malignant" calcification',
-        page: 50,
-        book_id: "lets-play-doctor",
-        topics: [
-          "vitamin d",
-          "vitamin d toxicity",
-          "too much vitamin d",
-          "arteriosclerosis",
-          "calcification",
-          "hardening of arteries",
-          "liver"
-        ],
-        tier1_link: {
-          essentials: [
-            "vitamin-d"
-          ],
-          conditions: [
-            "arteriosclerosis",
-            "liver_disease"
-          ],
-          symptoms: [
-            "ectopic_calcification"
           ]
         }
       },
