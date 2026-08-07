@@ -28191,6 +28191,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
+              "WAL-CLM-LETS-000032",
               "WAL-CLM-RARE-000003",
               "WAL-CLM-RARE-000027"
             ]
@@ -28208,7 +28209,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 5,
         search: [
           {
             facet: "basics",
@@ -28239,7 +28240,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000320",
               "WAL-CLM-EPIGEN-000321",
               "WAL-CLM-EPIGEN-000322",
-              "WAL-CLM-LETS-000032",
               "WAL-CLM-RARE-000186",
               "WAL-CLM-RARE-000368"
             ]
@@ -28398,6 +28398,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000053",
               "WAL-CLM-DDDL-000087",
+              "WAL-CLM-EPIGEN-000098",
               "WAL-CLM-RARE-000275",
               "WAL-CLM-RARE-000303",
               "WAL-CLM-RARE-000304",
@@ -28492,7 +28493,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 68,
+        record_claim_count: 69,
         search: [
           {
             facet: "basics",
@@ -28509,7 +28510,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000152",
               "WAL-CLM-DDDL-000153",
               "WAL-CLM-DDDL-000154",
-              "WAL-CLM-EPIGEN-000098",
               "WAL-CLM-EPIGEN-000195",
               "WAL-CLM-IMMORT-000206"
             ]
@@ -29153,6 +29153,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
+            kind: "deficiency_sign",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000194"
+            ]
+          },
+          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000203",
@@ -29175,7 +29181,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 7,
+        record_claim_count: 8,
         search: [
           {
             facet: "basics",
@@ -29188,7 +29194,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-IMMORT-000194",
               "WAL-CLM-LETS-000025",
               "WAL-CLM-LETS-000026",
               "WAL-CLM-RARE-000038",
@@ -30090,6 +30095,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-IMMORT-000089",
               "WAL-CLM-IMMORT-000344",
               "WAL-CLM-IMMORT-000467",
+              "WAL-CLM-LETS-000006",
               "WAL-CLM-RARE-000307",
               "WAL-CLM-RARE-000313"
             ]
@@ -30156,7 +30162,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 46,
+        record_claim_count: 47,
         search: [
           {
             facet: "basics",
@@ -30182,7 +30188,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-HELLS-000045",
               "WAL-CLM-IMMORT-000088",
               "WAL-CLM-IMMORT-000092",
-              "WAL-CLM-LETS-000006",
               "WAL-CLM-RARE-000039",
               "WAL-CLM-RARE-000042",
               "WAL-CLM-RARE-000118",
@@ -30389,6 +30394,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
+              "WAL-CLM-IMMORT-000099",
               "WAL-CLM-IMMORT-000102",
               "WAL-CLM-IMMORT-000103",
               "WAL-CLM-RARE-000051",
@@ -30457,7 +30463,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 30,
+        record_claim_count: 31,
         search: [
           {
             facet: "basics",
@@ -30469,7 +30475,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-IMMORT-000099",
               "WAL-CLM-IMMORT-000104",
               "WAL-CLM-IMMORT-000111",
               "WAL-CLM-LETS-000009"
@@ -30675,6 +30680,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
+            kind: "dose",
+            claim_ids: [
+              "WAL-CLM-RARE-000012"
+            ]
+          },
+          {
+            kind: "deficiency_sign",
+            claim_ids: [
+              "WAL-CLM-RARE-000011"
+            ]
+          },
+          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000070",
@@ -30696,7 +30713,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 11,
+        record_claim_count: 13,
         search: [
           {
             facet: "basics",
@@ -30708,8 +30725,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
-              "WAL-CLM-IMMORT-000139",
-              "WAL-CLM-RARE-000011"
+              "WAL-CLM-IMMORT-000139"
             ]
           },
           {
@@ -30740,8 +30756,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000011",
               "WAL-CLM-DDDL-000232",
-              "WAL-CLM-IMMORT-000140",
-              "WAL-CLM-RARE-000012"
+              "WAL-CLM-IMMORT-000140"
             ]
           },
           {
@@ -30856,6 +30871,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
+              "WAL-CLM-IMMORT-000131",
               "WAL-CLM-RARE-000037"
             ]
           },
@@ -30901,7 +30917,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 17,
+        record_claim_count: 18,
         search: [
           {
             facet: "basics",
@@ -30926,7 +30942,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000227",
               "WAL-CLM-IMMORT-000126",
               "WAL-CLM-IMMORT-000128",
-              "WAL-CLM-IMMORT-000131",
               "WAL-CLM-LETS-000014",
               "WAL-CLM-LETS-000503",
               "WAL-CLM-RARE-000337"
@@ -31535,6 +31550,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-IMMORT-000211",
               "WAL-CLM-IMMORT-000212",
               "WAL-CLM-LETS-000471",
+              "WAL-CLM-RARE-000270",
               "WAL-CLM-RARE-000306",
               "WAL-CLM-RARE-000310"
             ]
@@ -31657,7 +31673,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 88,
+        record_claim_count: 89,
         search: [
           {
             facet: "basics",
@@ -31681,8 +31697,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000137",
               "WAL-CLM-LETS-000030",
               "WAL-CLM-RARE-000227",
-              "WAL-CLM-RARE-000269",
-              "WAL-CLM-RARE-000270"
+              "WAL-CLM-RARE-000269"
             ]
           },
           {
@@ -32358,6 +32373,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-DDDL-000042",
+              "WAL-CLM-DDDL-000141",
               "WAL-CLM-RARE-000042",
               "WAL-CLM-RARE-000307"
             ]
@@ -32461,7 +32477,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 81,
+        record_claim_count: 82,
         search: [
           {
             facet: "basics",
@@ -32486,7 +32502,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000079",
               "WAL-CLM-DDDL-000084",
               "WAL-CLM-DDDL-000140",
-              "WAL-CLM-DDDL-000141",
               "WAL-CLM-DDDL-000142",
               "WAL-CLM-IMMORT-000270",
               "WAL-CLM-LETS-000044",
@@ -38577,7 +38592,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 23,
-        distinct_claim_count: 32,
+        distinct_claim_count: 31,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -38664,7 +38679,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000183",
               "WAL-CLM-EPIGEN-000035",
-              "WAL-CLM-IMMORT-000294",
               "WAL-CLM-LETS-000034",
               "WAL-CLM-RARE-000233"
             ]
@@ -38900,7 +38914,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 25,
-        distinct_claim_count: 38,
+        distinct_claim_count: 37,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -38978,7 +38992,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000037",
-              "WAL-CLM-IMMORT-000298",
               "WAL-CLM-LETS-000019",
               "WAL-CLM-RARE-000235"
             ]
@@ -39121,6 +39134,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
+            kind: "deficiency_sign",
+            claim_ids: [
+              "WAL-CLM-LETS-000021"
+            ]
+          },
+          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000137",
@@ -39131,7 +39150,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 6,
         search: [
           {
             facet: "basics",
@@ -39149,7 +39168,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000038",
-              "WAL-CLM-LETS-000021",
               "WAL-CLM-RARE-000236"
             ]
           },
@@ -39271,6 +39289,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
+              "WAL-CLM-LETS-000027",
               "WAL-CLM-LETS-000210"
             ]
           },
@@ -39325,7 +39344,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 41,
+        record_claim_count: 42,
         search: [
           {
             facet: "basics",
@@ -39344,8 +39363,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000039",
-              "WAL-CLM-EPIGEN-000108",
-              "WAL-CLM-LETS-000027"
+              "WAL-CLM-EPIGEN-000108"
             ]
           },
           {
@@ -39717,6 +39735,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000040",
               "WAL-CLM-RARE-000115"
             ]
           },
@@ -39767,7 +39786,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 28,
+        record_claim_count: 29,
         search: [
           {
             facet: "basics",
@@ -39779,7 +39798,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000040",
               "WAL-CLM-EPIGEN-000269",
               "WAL-CLM-EPIGEN-000270",
               "WAL-CLM-IMMORT-000307"
@@ -40891,6 +40909,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
+            kind: "deficiency_sign",
+            claim_ids: [
+              "WAL-CLM-RARE-000240"
+            ]
+          },
+          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000430"
@@ -40903,7 +40927,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 3,
         search: [
           {
             facet: "basics",
@@ -40922,8 +40946,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000042",
               "WAL-CLM-IMMORT-000328",
-              "WAL-CLM-LETS-000003",
-              "WAL-CLM-RARE-000240"
+              "WAL-CLM-LETS-000003"
             ]
           },
           {
@@ -79144,7 +79167,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "inositol",
           "magnesium"
         ],
-        claim_count: 13
+        claim_count: 12
       },
       birth_defects: {
         display_name: "Birth Defects",
@@ -80097,7 +80120,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "colloidal_minerals",
           "essential_nutrients"
         ],
-        claim_count: 39,
+        claim_count: 38,
         symbol: "Cr"
       },
       chronic_fatigue: {
@@ -80522,7 +80545,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "essential_nutrients",
           "colloidal_minerals"
         ],
-        claim_count: 47,
+        claim_count: 46,
         symbol: "Cu"
       },
       cor_pulmonale: {
@@ -81967,7 +81990,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "essential_nutrients",
           "colloidal_minerals"
         ],
-        claim_count: 20,
+        claim_count: 18,
         symbol: "Ge"
       },
       ginger: {
@@ -83276,7 +83299,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "essential_nutrients",
           "colloidal_minerals"
         ],
-        claim_count: 30,
+        claim_count: 29,
         symbol: "Fe"
       },
       irritable_bowel_syndrome: {
@@ -84078,7 +84101,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "muscle_cramps",
           "asthma"
         ],
-        claim_count: 43,
+        claim_count: 42,
         symbol: "Mg"
       },
       malnutrition: {
@@ -84386,7 +84409,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "minamata_disease",
           "vaccines"
         ],
-        claim_count: 17,
+        claim_count: 16,
         symbol: "Hg"
       },
       mercury_poisoning: {
@@ -85885,7 +85908,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "essential_nutrients",
           "colloidal_minerals"
         ],
-        claim_count: 28,
+        claim_count: 27,
         symbol: "K"
       },
       praseodymium: {
@@ -86617,7 +86640,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "antioxidants",
           "cardiomyopathy"
         ],
-        claim_count: 31,
+        claim_count: 30,
         symbol: "Se"
       },
       serotonin: {
@@ -86840,7 +86863,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iron",
           "achlorhydria"
         ],
-        claim_count: 42,
+        claim_count: 41,
         symbol: "Na"
       },
       "soil-depletion": {
@@ -88044,7 +88067,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "cancer",
           "korsakoff"
         ],
-        claim_count: 16
+        claim_count: 15
       },
       "vitamin-b12": {
         display_name: "Cobalamin",
@@ -88096,7 +88119,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "gluten",
           "zinc"
         ],
-        claim_count: 23
+        claim_count: 22
       },
       "vitamin-b2": {
         display_name: "Riboflavin",
@@ -88195,7 +88218,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "insomnia",
           "cholesterol"
         ],
-        claim_count: 20
+        claim_count: 19
       },
       "vitamin-b5": {
         display_name: "Pantothenic Acid",
@@ -88242,7 +88265,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "coenzyme-a",
           "acetylcholine"
         ],
-        claim_count: 10
+        claim_count: 9
       },
       "vitamin-b6": {
         display_name: "Pyridoxine",
@@ -88294,7 +88317,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "alcoholism",
           "hypoglycemia"
         ],
-        claim_count: 17
+        claim_count: 16
       },
       "vitamin-b9": {
         display_name: "Folate",
@@ -88831,7 +88854,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "cadmium",
           "vitamin-b12"
         ],
-        claim_count: 47,
+        claim_count: 46,
         symbol: "Zn"
       },
       zirconium: {
@@ -92338,31 +92361,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "body stores",
           "total zinc",
           "where zinc is stored"
-        ],
-        tier1_link: {
-          essentials: [
-            "zinc"
-          ]
-        }
-      },
-      {
-        id: "WAL-CLM-DDDL-000141",
-        subject: "zinc",
-        also_about: [],
-        facet: "physiology",
-        question: "What are the signs and symptoms of a zinc deficiency?",
-        answer_short: "Wallach lists a wide range \u2014 loss of taste and smell, wounds that won't heal, weak immunity, poor growth, hair loss, anemia, depression, and even odd cravings like eating dirt.",
-        answer: "Wallach catalogs a broad set of zinc-deficiency signs and diseases: loss of the sense of smell and taste, infertility, failure of wounds and ulcers to heal, immune failure, poor growth and short stature, high infant mortality, hypogonadism, anemia, and hair loss (alopecia). He also lists pica or cribbing \u2014 abnormal cravings to eat things like dirt, wool, or hair. In his framework these are not separate mysterious illnesses but the visible fingerprint of one missing mineral.",
-        verbatim: "Symptoms and Diseases of Zinc Deficiency\n\u2022 Pica/Cribbing (geophagia, wool eating, hair eating, etc.)\n\u2022 Loss of sense of smell\n\u2022 Loss of sense of taste\n\u2022 Infertility\n\u2022 Failure of wounds and ulcers to heal\n\u2022 Immune status failure\n\u2022 Poor growth (short stature)\n\u2022 High infant mortality\n\u2022 Hypogonadism (small poorly functioning ovaries and testes)\n\u2022 Perpetual prepubic state\n\u2022 Anemia\n\u2022 Alopecia (hair loss)",
-        page: null,
-        book_id: "dddl-3e-2011",
-        topics: [
-          "zinc deficiency",
-          "symptoms",
-          "loss of taste",
-          "loss of smell",
-          "wound healing",
-          "immune"
         ],
         tier1_link: {
           essentials: [
@@ -96947,11 +96945,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "congestive_heart_failure",
           "dementia",
           "fibromyalgia",
-          "wernicke_korsakoff_syndrome"
+          "wernicke_korsakoff_syndrome",
+          "intelligence"
         ],
         facet: "physiology",
         question: "What are the signs of vitamin B1 deficiency?",
-        answer_short: "Wallach ties thiamine (B1) deficiency to anxiety, hysteria, confusion, nausea, depression, anorexia, muscular weakness, fibromyalgia, beriberi (with congestive heart failure and Korsakoff/Wernicke-Korsakoff dementia), paralysis, and peripheral neuropathies.",
+        answer_short: "Wallach ties thiamine (B1) deficiency to anxiety, hysteria, confusion and nausea, depression, anorexia and appetite loss, fatigue, muscular weakness, fibromyalgia, peripheral neuropathies and paralysis, and \u2014 as it worsens \u2014 beriberi with congestive heart failure and Korsakoff/Wernicke-Korsakoff dementia.",
         answer: "Vitamin B1 (thiamine) is a cofactor for energy production and the metabolism of carbohydrates, protein, and fat; its deficiency especially disturbs carbohydrate metabolism in the brain (dementia) and heart (congestive heart failure). Wallach lists the health problems of thiamine deficiency: anxiety, hysteria, confusion, nausea, depression, mental confusion, loss of appetite (anorexia), muscular weakness, fibromyalgia, beriberi (muscle wasting, congestive heart failure, Korsakoff syndrome with dementia, and Wernicke-Korsakoff syndrome with dementia and multiple sclerosis), paralysis, and peripheral neuropathies.",
         verbatim: "Anorexia\n\nMuscular weakness\n\nFibromyalgia\n\nBeriberi (muscle wasting, congestive heart failure, Korsakoff syndrome\n[dementia] and Wernicke-Korsakoff syndrome [dementia & MS])",
         page: 614,
@@ -96964,7 +96963,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "heart failure",
           "dementia",
           "fibromyalgia",
-          "depression"
+          "depression",
+          "symptoms",
+          "fatigue",
+          "heart-failure"
         ],
         tier1_link: {
           essentials: [
@@ -97087,11 +97089,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "insomnia",
           "depression",
           "tachycardia",
-          "muscle_cramps"
+          "muscle_cramps",
+          "alopecia",
+          "eczema"
         ],
         facet: "physiology",
         question: "What are the signs of vitamin B5 deficiency?",
-        answer_short: "Wallach ties pantothenic acid (B5) deficiency to dermatitis, burning feet, muscle cramps, loss of appetite, anemia, a quarrelsome and sullen attitude, depression, insomnia, a depressed immune system, rapid heartbeat, fainting, and gastrointestinal distress.",
+        answer_short: "Wallach ties pantothenic acid (B5) deficiency to burning feet, dermatitis and eczema, hair loss, muscle cramps, appetite loss, anemia, depression and a quarrelsome, sullen mood, insomnia, a depressed immune system, low blood pressure with a rapid heartbeat, fainting, and gastrointestinal distress.",
         answer: "Vitamin B5 (pantothenic acid) is a component of coenzyme A and of the acyl carrier protein of fatty-acid synthetase, essential for releasing energy from carbohydrates, building and breaking down fatty acids, and synthesizing sterols, steroid hormones, and acetylcholine. Wallach lists the health problems of pantothenic acid deficiency: dermatitis, burning feet, muscle cramps, loss of appetite (anorexia), anemia, a quarrelsome and sullen attitude, depression, insomnia, a depressed immune system, rapid heartbeat (tachycardia), fainting ('light headedness'), and gastrointestinal distress (gas, diarrhea, gut pain).",
         verbatim: 'Pantothenic acid-deficiency health problems include:\n\nDermatitis\n\nBurning feet\n\nMuscle cramps\n\nAnorexia\n\nAnemia\n\nQuarrelsome attitude\n\nsullen\n\nDepressed\n\nInsomnia\n\nDepressed immune system\nTachycardia\n\nFainting (\u201Clight headedness")\nGI distress (gas, diarrhea',
         page: 620,
@@ -97104,7 +97108,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "muscle cramps",
           "depression",
           "insomnia",
-          "fainting"
+          "fainting",
+          "vitamin-b5",
+          "pantothenic-acid",
+          "vitamin-deficiency",
+          "hair-loss",
+          "fatigue"
         ],
         tier1_link: {
           essentials: [
@@ -97136,11 +97145,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "depression",
           "stomatitis",
           "vomiting",
-          "intelligence"
+          "intelligence",
+          "anemia",
+          "acne"
         ],
         facet: "physiology",
         question: "What are the signs of vitamin B6 deficiency?",
-        answer_short: "Wallach's signs of pyridoxine (B6) deficiency include depression and mental confusion, inflammation and lesions of the oral mucous membranes, nausea, vomiting, PMS, seborrheic dermatitis, carpal tunnel syndrome, TMJ problems, peripheral neuritis, ataxia, head tics (Tourette's syndrome), and seizures.",
+        answer_short: "Wallach's pyridoxine (B6) deficiency signs include depression and mental confusion, acne and seborrheic dermatitis, hair loss, anemia and fatigue, inflammation and lesions of the oral mucous membranes, nausea and vomiting, PMS, carpal tunnel syndrome, TMJ problems, peripheral neuritis, ataxia, head tics (Tourette's syndrome), and seizures.",
         answer: "Vitamin B6 (pyridoxine) is converted to pyridoxal phosphate, the coenzyme for transamination and other reactions in amino-acid, lipid, and nucleic-acid metabolism, and for glycogen phosphorylase. Wallach lists the health problems of pyridoxine deficiency: depression and mental confusion, inflammation and lesions of the oral mucous membranes, nausea, vomiting, premenstrual syndrome, seborrheic dermatitis, itchy scaly skin, carpal tunnel syndrome, temporomandibular joint problems, peripheral neuritis, ataxia (instability), hyperirritability, head tic (Tourette's syndrome), seizures, and convulsions.",
         verbatim: "Pyridoxine (B6) deficiency health problems include:\n\nDepression, mental confusion\n\nInflammation of the oral mucus membranes\nNausea\n\nVomiting",
         page: 620,
@@ -97153,7 +97164,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "nausea",
           "vomiting",
           "pms",
-          "carpal tunnel"
+          "carpal tunnel",
+          "b-vitamins",
+          "symptoms",
+          "nutrition"
         ],
         tier1_link: {
           essentials: [
@@ -97169,47 +97183,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             "nausea",
             "ataxia",
             "seizures"
-          ]
-        }
-      },
-      {
-        id: "WAL-CLM-EPIGEN-000040",
-        subject: "vitamin-b12",
-        also_about: [
-          "dementia",
-          "neuropathy"
-        ],
-        facet: "warning",
-        question: "What are the symptoms of vitamin B12 deficiency?",
-        answer_short: "B12 deficiency causes pernicious anemia, dementia and neuropsychiatric changes, nerve demyelination and neuropathy, a sore tongue, general weakness, and liver disease.",
-        answer: "Vitamin B12 (cobalamin) works with folate to synthesize DNA and RNA, supports bone marrow and the production of myelin (the nerve-fiber insulation), and is required to release folate from its bound form -- so a B12 deficiency causes a folic-acid deficiency even when folate intake is optimal. Wallach notes the deficiency can be dietary or secondary to hypochlorhydria (low stomach acid), salt deficiency, or gluten intolerance, and lists its health problems: pernicious anemia (macrocytic, megaloblastic anemia), dementia, neuropsychiatric behavior, demyelination of the brain, spinal cord, optic nerve, and peripheral nerves, neuropathy, a sore tongue, general weakness, and liver disease.",
-        verbatim: "Pernicious anemia (macrocytic, megaloblastic anemia)\n\nDementia\n\nNeuropsychiatric behavior\n\nBrain, spinal cord, optic nerve and peripheral nerve demyelination\nNeuropathy\n\nSore tongue\n\nGeneral weakness\n\nLiver disease",
-        page: 624,
-        book_id: "epigenetics",
-        topics: [
-          "vitamin-b12",
-          "deficiency",
-          "dementia",
-          "neuropathy",
-          "anemia",
-          "symptoms"
-        ],
-        tier1_link: {
-          essentials: [
-            "vitamin-b12"
-          ],
-          conditions: [
-            "pernicious_anemia",
-            "anemia",
-            "dementia",
-            "neuropathy",
-            "liver_disease"
-          ],
-          symptoms: [
-            "behavioral_problems",
-            "spinal_cord_demyelination",
-            "smooth_tongue",
-            "weakness"
           ]
         }
       },
@@ -97268,11 +97241,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "dermatitis",
           "depression",
           "fatty_liver",
-          "insomnia"
+          "insomnia",
+          "blepharitis"
         ],
         facet: "physiology",
         question: "What are the signs of biotin deficiency?",
-        answer_short: "Wallach lists biotin (B7) deficiency signs including eczema and dermatitis, baldness, muscle pain, fatigue, fatty liver, depression, insomnia, appetite loss, gray or white hair, and hallucinations.",
+        answer_short: "Wallach ties biotin (B7) deficiency to eczema and dermatitis, baldness (alopecia), gray or white hair, muscle pain, fatigue, fatty liver, appetite loss, depression, insomnia, hallucinations, and skin-and-nerve signs like hyperesthesia, paraesthesia, and blepharitis.",
         answer: "Biotin (vitamin B7, or vitamin H) is required for glucose metabolism and the production of fatty acids; its conversion to the active coenzyme depends on magnesium and adenosine triphosphate. Wallach lists the health problems of biotin deficiency: eczema and dermatitis, alopecia (baldness), myalgia (muscle pain), fatigue, fatty liver, inborn errors of metabolism, depression, hyperesthesia and paresthesia, blepharitis, gray, silver, or white hair, loss of appetite (anorexia), insomnia, weight loss, and hallucinations.",
         verbatim: "Biotin-deficiency health problems can result in:\n\nEczema, dermatitis\nAlopecia (baldness)\n\nMyalgia (muscle pain)\nFatigue\n\nFatty liver\n\nInborn errors of metabolism\nDepression\n\nHyperesthesia, paraesthesia\n\nBlephritis\nGray, silver or white hair\nAnorexia\n\nInsomnia.\n\nWeight loss",
         page: 626,
@@ -97285,7 +97259,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "eczema",
           "depression",
           "insomnia",
-          "muscle pain"
+          "muscle pain",
+          "deficiency",
+          "hair",
+          "skin",
+          "symptoms"
         ],
         tier1_link: {
           essentials: [
@@ -98774,45 +98752,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         }
       },
       {
-        id: "WAL-CLM-EPIGEN-000098",
-        subject: "magnesium",
-        also_about: [
-          "asthma",
-          "depression",
-          "migraine",
-          "anorexia"
-        ],
-        facet: "warning",
-        question: "What are the symptoms of magnesium deficiency?",
-        answer_short: "Wallach ties a long list of problems to magnesium shortage \u2014 including asthma, menstrual migraines, depression, tetany and convulsions, tremors, muscular weakness, vertigo, ECG changes, and abnormal calcification of arteries and soft tissue.",
-        answer: "Magnesium is essential to all living organisms, second only to potassium as an intracellular cation; the adult body holds 20 to 28 grams, about 60% of it in bone. It powers energy production and protein synthesis, muscle contractility and nerve excitability, is a cofactor for countless enzymes, and is a constituent of chlorophyll. Calcium and magnesium play antagonistic roles in muscle -- calcium the stimulator, magnesium the relaxer -- so an excess of calcium can induce magnesium-deficiency signs, and an excess of magnesium inhibits bone calcification. Wallach lists a wide range of magnesium-deficiency diseases and symptoms: asthma, anorexia, menstrual migraines, growth failure, electrocardiogram (ECG) changes, neuromuscular problems, tetany and convulsions, depression, muscular weakness, muscle tics, tremors, vertigo, and calcification of the small arteries and soft tissue. Absorption ranges from about 24% for metallic sources to 85% for plant-derived colloidal sources; fat, phytates and calcium reduce it while vitamin D has no effect. He notes there is no evidence of toxicity up to 6,000 milligrams per day when the kidneys are healthy.",
-        verbatim: "Magnesium-Deficiency Diseases:\n\nAsthma\n\nAnorexia\n\nMenstrual migraines\nGrowth failure\n\nECG changes\nNeuromuscular problems\nTetany (convulsions)\nDepression\n\nMuscular weakness\nMuscle \u201CTies\u201D\n\nTremors\n\nVertigo",
-        page: null,
-        book_id: "epigenetics",
-        topics: [
-          "magnesium deficiency",
-          "symptoms",
-          "depression",
-          "migraines",
-          "asthma",
-          "cramps"
-        ],
-        tier1_link: {
-          essentials: [
-            "magnesium"
-          ],
-          conditions: [
-            "asthma",
-            "anorexia",
-            "migraine",
-            "tetany",
-            "convulsions",
-            "depression",
-            "vertigo"
-          ]
-        }
-      },
-      {
         id: "WAL-CLM-EPIGEN-000099",
         subject: "manganese",
         also_about: [
@@ -98933,7 +98872,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         facet: "physiology",
         question: "What are the signs of low sodium?",
-        answer_short: "Wallach explains that a sodium deficiency causes salt hunger, that Addison's disease brings weakness, muscle cramps, weight loss, and marked salt hunger, and that 'water intoxication' from low-sodium infant formula swelled babies' brains and killed them.",
+        answer_short: "Wallach says a sodium deficiency brings on salt hunger, along with abdominal and muscle cramps, confusion, dizziness, fatigue, muscular weakness, weight loss, loss of taste, and seizures; marked salt hunger also marks Addison's disease, and 'water intoxication' from low-sodium infant formula once fatally swelled babies' brains.",
         answer: "Sodium is one of the three indispensable electrolytes (with chloride and potassium); it makes up about two percent of the body's mineral content and, with chloride, is mainly extracellular. Together these electrolytes maintain normal water balance and distribution, osmotic equilibrium, acid-base balance, and muscular and nerve excitability, all under adrenal-cortex and pituitary hormonal control. Wallach explains that 'salt hunger' is one of the most basic cravings of animals and man, strongest in herbivores and human vegetarians because grains, vegetables and fruit contain little sodium chloride. Addison's disease (failure of the adrenal cortex) causes a loss of sodium and potassium retention with general weakness, muscle cramps, weight loss and a marked salt hunger, relieved by salt supplementation. Sodium-chloride deficiency arises mainly in hot weather or heavy exercise with profuse sweating; Wallach warns that 'water intoxication' killed infants fed low-sodium formulas -- their brains swelled from a simple sodium deficiency -- and that the treatment for sodium deficiency is water and salt, taken orally or as 0.9% intravenous saline.",
         verbatim: "Addison's disease, a loss of\nfunction of the adrenal cortex, results in the loss of Na and K retention with\nclinical signs of general weakness, muscle cramps, weight loss and a marked \u201Csalt\nhunger.\u201D The symptoms can be relieved with the supplementation of NaCl or by\nadministering adrenal cortical hormones.\n\nDeficiencies of NaCl occur primarily in hot weather (the heat wave of July\n\n1993) or heavy work or exercise in a hot environment when large volumes of\nsweat are required for body cooling. \u201CWater intoxication\u201D occurred in infants fed\nlow Na formulas because of the allopathic doctor's paranoia about Na. Their\nbrains swelled causing death from a simple Na deficiency.",
         page: null,
@@ -98946,7 +98885,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "muscle cramps",
           "weakness",
           "weight loss",
-          "water intoxication"
+          "water intoxication",
+          "sodium-deficiency",
+          "electrolytes",
+          "deficiency-signs"
         ],
         tier1_link: {
           essentials: [
@@ -107386,11 +107328,13 @@ diarrhea, dermatitis, dementia, and death.`,
           "hypoglycemia",
           "vanadium",
           "nitrogen",
-          "muscle_strength"
+          "muscle_strength",
+          "anxiety",
+          "high_cholesterol"
         ],
         facet: "physiology",
         question: "What are the symptoms of chromium deficiency?",
-        answer_short: "Chromium deficiency shows up as glucose intolerance, poor growth, peripheral neuropathy, muscle and protein loss, and a lowered respiratory quotient.",
+        answer_short: "Wallach's chromium-deficiency signs span blood sugar and metabolism: glucose intolerance and diabetes, low blood sugar (hypoglycemia), high cholesterol, anxiety and fatigue, poor or stunted growth with a shortened lifespan, peripheral neuropathy, muscle and protein loss, and a lowered respiratory quotient.",
         answer: "Wallach characterizes chromium deficiency by glucose intolerance \u2014 hypoglycemia, insulin resistance, hyperinsulinemia, and diabetes. It also produces poor growth, peripheral neuropathies, and a negative nitrogen balance, meaning loss of muscle mass or sarcopenia. A decreased respiratory quotient is another sign.",
         verbatim: "Deficiency of chromium is characterized by glucose intolerance \n(hypoglycemia, insulin resistance, hyperinsulinemia and diabetes), \npoor growth, peripheral neuropathies, negative nitrogen balance (loss \nof muscle mass - sarcopenia) and a decreased respiratory quotient.",
         page: null,
@@ -107399,7 +107343,15 @@ diarrhea, dermatitis, dementia, and death.`,
           "chromium-deficiency",
           "blood-sugar",
           "muscle-loss",
-          "symptoms"
+          "symptoms",
+          "chromium",
+          "anxiety",
+          "fatigue",
+          "low blood sugar",
+          "hypoglycemia",
+          "diabetes",
+          "high cholesterol",
+          "growth"
         ]
       },
       {
@@ -111125,65 +111077,6 @@ diarrhea, dermatitis, dementia, and death.`,
         }
       },
       {
-        id: "WAL-CLM-IMMORT-000099",
-        subject: "copper",
-        also_about: [
-          "vitiligo",
-          "anemia",
-          "aneurysm",
-          "arthritis"
-        ],
-        facet: "warning",
-        question: "What are the signs of copper deficiency?",
-        answer_short: "Wallach lists white, grey and silver hair, loss of skin pigment (vitiligo), and dry brittle hair among the first signs, alongside aneurysms, varicose veins, anemia and arthritis.",
-        answer: "Wallach prints a long table of the conditions he attributes to copper deficiency \u2014 many tied to copper's role in pigment, connective tissue and blood vessels. Hair and skin: white/grey/'silver' hair, vitiligo (loss of skin pigment), dry brittle hair. Sagging and weakened tissue: ptosis (drooping eyelids, 'crow's feet,' sagging skin/breasts/belly), hernias, varicose veins, hemorrhoids, spider veins, and aneurysms (rupture-prone weak spots in artery walls) \u2014 including Kawasaki disease (congenital aneurysms with streptococcal infections). Also anemia, hypo- and hyperthyroid dysfunction, arthritis, disc disease and liver cirrhosis. Neuro-behavioral: violent behavior / blind rage / 'criminal' behavior, learning disabilities (ADD, ADHD, some autism), cerebral palsy, and aplasia/hypoplasia (underdevelopment) of the cerebellum. Copper-deficiency brain diseases across species: enzootic ataxia in sheep, Mad Cow Disease in cattle, and Creutzfeldt-Jakob disease in humans. Plus elevated blood cholesterol (above 350), iron storage disease (hemosiderosis), reduced carbohydrate tolerance, and neutropenia (low neutrophil count).",
-        verbatim: "Copper deficiency Symptoms and Diseases\nWhite, grey and \u201Csilver\u201D hair\n\nVitiligo (loss of skin pigment)\n\nDry brittle hair (\u201Csteely wool\u201D in sheep)\n\nPtosis (sagging tissue - eye lids, \u201Ccrows feet,\u201D skin, arm\n\n\n \n\nflappers, breasts, belly)\n\nHernias (congenital and acquired)\n\nVaricose veins (including hemorrhoids)\n\nSpider veins\n\nAneurysms (cerebral artery, coronary artery, aorta and large\nartery \u201Cblowouts\u201D)\n\nKawasaki disease (congenital aneurysms with streptococcal\ninfections)\n\nAnemia (especially common in high milk and vegan diets)\n\nHypo and hyperthyroid dysfunction\n\nArthritis (especially where immature bone growth plates are\ninvolved)\n\nDisc disease (ruptured, bulging, degenerative)\n\nLiver cirrhosis\n\nViolent behavior, blind rage, explosive outbursts and\n\u201Ccriminal\u201D behavior\n\nLearning disabilities (ADD, ADHD, some forms of autism)\n\nCerebral palsy, aplasia and hypoplasia of the cerebellum\n\nEnzootic ataxia in sheep\n\nMad Cow Disease in cattle (same disease as enzootic\nataxia-sheep)\n\nCreutzfeldt-Jakob Disease (Humans-madcow disease)\n\nElevated blood cholesterol (above 350)\n\nIron storage disease (hemosiderosis)\n\nReduced carbohydrate tolerance\n\nNeutropenia (low neutrophil count)",
-        page: 134,
-        book_id: "immortality",
-        topics: [
-          "deficiency",
-          "grey-hair",
-          "symptoms",
-          "minerals"
-        ],
-        tier1_link: {
-          essentials: [
-            "copper"
-          ],
-          conditions: [
-            "gray_hair",
-            "vitiligo",
-            "brittle_hair",
-            "ptosis",
-            "hernia",
-            "varicose_veins",
-            "hemorrhoids",
-            "spider_veins",
-            "aneurysm",
-            "kawasaki_disease",
-            "anemia",
-            "hypothyroidism",
-            "hyperthyroidism",
-            "arthritis",
-            "degenerative_disc_disease",
-            "liver_cirrhosis",
-            "blind_rage",
-            "learning_disabilities",
-            "adhd",
-            "autism",
-            "cerebral_palsy",
-            "cerebellar_hypoplasia",
-            "enzootic_ataxia",
-            "mad_cow_disease",
-            "creutzfeldt_jakob_disease",
-            "high_cholesterol",
-            "hemochromatosis",
-            "glucose_intolerance",
-            "neutropenia"
-          ]
-        }
-      },
-      {
         id: "WAL-CLM-IMMORT-000100",
         subject: "copper",
         also_about: [],
@@ -111962,41 +111855,6 @@ diarrhea, dermatitis, dementia, and death.`,
         }
       },
       {
-        id: "WAL-CLM-IMMORT-000131",
-        subject: "iron",
-        also_about: [
-          "anemia",
-          "pica"
-        ],
-        facet: "physiology",
-        question: "What are the symptoms of iron deficiency?",
-        answer_short: "Iron deficiency brings fatigue, listlessness, palpitations on exertion, poor memory and concentration, a sore tongue, and microcytic anemia.",
-        answer: "The symptoms of iron deficiency. They include listlessness and fatigue, heart palpitations on exertion, reduced thinking ability (cognition) and memory deficits, a sore tongue, cracks at the corners of the mouth (angular stomatitis), difficulty swallowing (dysphagia) with poor appetite and pica, obesity, and hypochromic microcytic anemia \u2014 the classic 'small, pale red-blood-cell' anemia of iron lack.",
-        verbatim: "Symptoms of iron deficiency include listlessness,\nfatigue, heart palpitations on exertion, reduced cognition,\nmemory deficits, sore tongue, angular stomatitis, dysphagia\n(poor appetite, pica, etc.), obesity and hypochromic microcytic\nanemia.",
-        page: 144,
-        book_id: "immortality",
-        topics: [
-          "iron",
-          "fatigue",
-          "anemia",
-          "symptoms",
-          "brain-fog",
-          "deficiency"
-        ],
-        tier1_link: {
-          essentials: [
-            "iron"
-          ],
-          conditions: [
-            "anemia",
-            "angular_stomatitis",
-            "dysphagia",
-            "obesity",
-            "memory_loss"
-          ]
-        }
-      },
-      {
         id: "WAL-CLM-IMMORT-000132",
         subject: "iron",
         also_about: [
@@ -112194,7 +112052,7 @@ diarrhea, dermatitis, dementia, and death.`,
         ],
         facet: "physiology",
         question: "What are the symptoms of germanium deficiency?",
-        answer_short: "Wallach lists the symptoms of germanium deficiency as reduced immune status, arthritis, osteoporosis, low energy and fatigue, and cancer.",
+        answer_short: "Wallach says germanium deficiency shows up as a severely weakened immune system, arthritis, osteoporosis, low energy and fatigue, and cancer.",
         answer: "The symptoms of germanium deficiency. Wallach lists them: a weakened immune system (reduced immune status), arthritis, osteoporosis, low energy and fatigue, and cancer.",
         verbatim: "Symptoms of a typical germanium deficiency include\nreduced immune status, arthritis, osteoporosis, low energy,\nfatigue and cancer.",
         page: 146,
@@ -112206,7 +112064,8 @@ diarrhea, dermatitis, dementia, and death.`,
           "arthritis",
           "osteoporosis",
           "fatigue",
-          "cancer"
+          "cancer",
+          "low energy"
         ],
         tier1_link: {
           essentials: [
@@ -112743,30 +112602,6 @@ diarrhea, dermatitis, dementia, and death.`,
           "antibiotic-resistance",
           "gut"
         ]
-      },
-      {
-        id: "WAL-CLM-IMMORT-000166",
-        subject: "mercury",
-        also_about: [],
-        facet: "history",
-        question: "Why do we say 'mad as a hatter'?",
-        answer_short: "The phrase comes from real poisoning: Victorian hatmakers who brushed mercury paste onto felt inhaled the vapor and went 'mad as a hatter.'",
-        answer: "'Mad as a hatter' \u2014 occupational mercury poisoning. The phrase comes from real mercury poisoning. During the Victorian era, 'hatters' who brushed mercuric-nitrate paste onto felt hats to stop mold routinely inhaled mercury vapor and developed serious problems \u2014 hair loss, loss of teeth, loss of memory, bizarre behavior and various forms of insanity \u2014 which is where the expression 'mad as a hatter' (from Alice in Wonderland) originates. Goldsmiths and mirror workers, who also worked with mercury, could suffer the same inhalation poisoning.",
-        verbatim: "Mercury poisoning from inhalation of mercury vapors\nwas reported during the Victorian Age in \u201Chatters\u201D who used\nmercuric nitrate paste to prevent molds from growing on felt\nhats and as a result, commonly developed serious problems,\nincluding hair loss, loss of teeth, loss of memory, bizarre\nbehavior and various forms of insanity, hence the expression\n\n\u201Cmad as a hatter\u201D from Alice in Wonderland.",
-        page: 156,
-        book_id: "immortality",
-        topics: [
-          "mad-as-a-hatter",
-          "occupational",
-          "history"
-        ],
-        tier1_link: {
-          conditions: [
-            "mercury_poisoning",
-            "alopecia",
-            "memory_loss"
-          ]
-        }
       },
       {
         id: "WAL-CLM-IMMORT-000167",
@@ -113401,38 +113236,6 @@ diarrhea, dermatitis, dementia, and death.`,
         tier1_link: {
           essentials: [
             "potassium"
-          ]
-        }
-      },
-      {
-        id: "WAL-CLM-IMMORT-000194",
-        subject: "potassium",
-        also_about: [
-          "intelligence"
-        ],
-        facet: "warning",
-        question: "What are the signs of potassium deficiency?",
-        answer_short: "Muscular weakness and mental apathy are the hallmark signs, and the most serious event is low-potassium (hypokalemic) heart failure.",
-        answer: "Signs of a potassium deficiency. Muscular weakness and mental apathy (listlessness, lack of interest) are its features, and hypokalemic cardiac failure \u2014 heart failure from low potassium \u2014 is the most serious event. Wallach warns that potassium (and other minerals) is lost faster than normal through diuretics (both natural and prescribed water pills), water toxicity (over-drinking water), sweating, colds and flu, vomiting, and diarrhea.",
-        verbatim: "Muscular weakness and mental apathy are features\nof a potassium deficiency. Hypokalemic cardiac failure is\nthe most serious potassium deficiency event. Diuretics (both\nnatural and prescribed), water toxicity (over drinking water),\nsweating, colds and flu, vomiting and diarrhea increase\nthe rate of loss of all minerals, including potassium, when\ncompared to the normal expected excretion rate.",
-        page: 165,
-        book_id: "immortality",
-        topics: [
-          "deficiency",
-          "heart-health",
-          "electrolytes"
-        ],
-        tier1_link: {
-          essentials: [
-            "potassium"
-          ],
-          conditions: [
-            "hypokalemia",
-            "cardiac_failure"
-          ],
-          symptoms: [
-            "muscle_weakness",
-            "mental_apathy"
           ]
         }
       },
@@ -115583,26 +115386,6 @@ diarrhea, dermatitis, dementia, and death.`,
         ]
       },
       {
-        id: "WAL-CLM-IMMORT-000294",
-        subject: "vitamin-b1",
-        also_about: [
-          "intelligence"
-        ],
-        facet: "physiology",
-        question: "What are the symptoms of vitamin B1 deficiency?",
-        answer_short: "Mild thiamine deficiency causes mental confusion, muscle weakness, fatigue and appetite loss; chronic deficiency progresses to polyneuritis and congestive heart failure.",
-        answer: "According to Wallach, mild vitamin B1 (thiamine) deficiency produces mental confusion, muscular weakness, peripheral paralysis, calf muscle tenderness, muscle fatigue, emotional instability, loss of appetite, loss of interest in daily tasks and general lethargy. Chronic deficiency advances to a polyneuritis and congestive heart failure with edema and life-threatening pulmonary edema. The signs therefore span both the nervous system and the cardiovascular system.",
-        verbatim: "Mild deficiencies produce mental confusion, muscular\nweakness, peripheral paralysis, calf muscle tenderness,\nmuscle fatigue, emotional instability, loss of appetite, loss of\ninterest in daily tasks and general lethargy.\n\nChronic deficiencies of thiamine result in a polyneuritis\nand congestive heart failure with edema and life-threatening\npulmonary edema.",
-        page: null,
-        book_id: "immortality",
-        topics: [
-          "deficiency",
-          "symptoms",
-          "fatigue",
-          "heart-failure"
-        ]
-      },
-      {
         id: "WAL-CLM-IMMORT-000295",
         subject: "vitamin-b1",
         also_about: [],
@@ -115656,27 +115439,6 @@ diarrhea, dermatitis, dementia, and death.`,
           "discovery",
           "when was it discovered",
           "who discovered it"
-        ]
-      },
-      {
-        id: "WAL-CLM-IMMORT-000298",
-        subject: "vitamin-b3",
-        also_about: [
-          "pellagra"
-        ],
-        facet: "physiology",
-        question: "What are the symptoms of vitamin B3 (niacin) deficiency?",
-        answer_short: "Early niacin deficiency brings muscle weakness, poor appetite, indigestion, and skin eruptions; severe deficiency becomes pellagra.",
-        answer: "The early stages of niacin deficiency show up as muscular weakness, anorexia (loss of appetite), indigestion, and skin eruptions. Severe niacin deficiency produces classic pellagra, characterized by the '3 D's' \u2014 dermatitis, dementia, and diarrhea \u2014 along with tremors and a sore tongue ('beef tongue').",
-        verbatim: "The early stages of niacin deficiency show up as\nmuscular weakness, anorexia, indigestion and skin eruptions.\nSevere deficiency of niacin produces classic pellagra which is\ncharacterized by the \u201C3 D\u2019s\u201D of pellagra (dermatitis, dementia\nand diarrhea), tremors and sore tongue or \u201Cbeef tongue.\u201D",
-        page: null,
-        book_id: "immortality",
-        topics: [
-          "niacin-deficiency",
-          "pellagra",
-          "beef-tongue",
-          "dermatitis",
-          "dementia"
         ]
       },
       {
@@ -119372,49 +119134,6 @@ diarrhea, dermatitis, dementia, and death.`,
         }
       },
       {
-        id: "WAL-CLM-LETS-000006",
-        subject: "chromium",
-        also_about: [
-          "anxiety",
-          "hypoglycemia",
-          "diabetes",
-          "high_cholesterol"
-        ],
-        facet: "physiology",
-        question: "What are the signs of chromium deficiency?",
-        answer_short: "Wallach lists the signs of chromium deficiency as anxiety, fatigue, low blood sugar (hypoglycemia), diabetes, stunted growth with a shortened lifespan, and high cholesterol.",
-        answer: "Wallach lists the signs of chromium deficiency: anxiety, fatigue, hypoglycemia (low blood sugar), diabetes, retarded growth with a shortened lifespan, and high cholesterol.",
-        verbatim: "CHROMIUM DEFICIENCY\nanxiety\nfatigue\nhypoglycemia\ndiabetes\nretarded growth / short life span\nhypercholesterolemia",
-        page: 44,
-        book_id: "lets-play-doctor",
-        topics: [
-          "chromium",
-          "anxiety",
-          "fatigue",
-          "low blood sugar",
-          "hypoglycemia",
-          "diabetes",
-          "high cholesterol",
-          "growth"
-        ],
-        tier1_link: {
-          essentials: [
-            "chromium"
-          ],
-          conditions: [
-            "anxiety",
-            "hypoglycemia",
-            "diabetes",
-            "high_cholesterol"
-          ],
-          symptoms: [
-            "fatigue",
-            "retarded_growth",
-            "shortened_lifespan"
-          ]
-        }
-      },
-      {
         id: "WAL-CLM-LETS-000007",
         subject: "chromium",
         also_about: [
@@ -119664,7 +119383,7 @@ diarrhea, dermatitis, dementia, and death.`,
         ],
         facet: "physiology",
         question: "What are the signs of iron deficiency?",
-        answer_short: "Wallach's iron-deficiency signs include microcytic anemia, cracked mouth corners, anorexia, brittle nails, confusion, constipation, depression, dizziness, difficulty swallowing, fatigue, fragile bones, GI upset, growth retardation, headaches, ice eating (pica), irritability, and palpitations.",
+        answer_short: "Wallach's iron-deficiency signs include microcytic anemia, fatigue and listlessness, palpitations (especially on exertion), poor memory and concentration, a sore tongue, cracked mouth corners, brittle nails, anorexia and pica (ice eating), confusion, depression, dizziness, difficulty swallowing, constipation and GI upset, fragile bones, growth retardation, headaches, and irritability.",
         answer: "Wallach lists the signs of iron deficiency: microcytic anemia, angular stomatitis (cracked mouth corners), anorexia, brittle nails, confusion, constipation, depression, dizziness, dysphagia (difficulty swallowing), fatigue, fragile bones, gastrointestinal upset, growth retardation, headaches, ice eating (pica), irritability, and heart palpitations.",
         verbatim: "IRON DEFICIENCY\nanemia (microcytic)\nangular stomatitis\nanorexia\nbrittle nails\nconfusion\nconstipation\ndepression\ndizziness\ndysphagia\nfatigue\nfragile bones\nG I upset\ngrowth retardation\nheadaches\nice eating (pica)\nirritability\npalpitations",
         page: 45,
@@ -119677,7 +119396,10 @@ diarrhea, dermatitis, dementia, and death.`,
           "fatigue",
           "depression",
           "brittle nails",
-          "palpitations"
+          "palpitations",
+          "symptoms",
+          "brain-fog",
+          "deficiency"
         ],
         tier1_link: {
           essentials: [
@@ -119875,11 +119597,12 @@ diarrhea, dermatitis, dementia, and death.`,
           "diarrhea",
           "insomnia",
           "eczema",
-          "canker_sores"
+          "canker_sores",
+          "pellagra"
         ],
         facet: "physiology",
         question: "What are the symptoms of niacin deficiency?",
-        answer_short: "Wallach's signs of niacin (B3) deficiency include anorexia and nausea, canker sores, confusion, depression, dermatitis, diarrhea, crying jags and emotional lability, fatigue, bad breath, headache, indigestion, insomnia, irritability, limb pains, memory loss, muscular weakness, and skin eruptions with eczema.",
+        answer_short: "Wallach's niacin (B3) deficiency signs include anorexia and nausea, indigestion and diarrhea, canker sores, dermatitis and skin eruptions with eczema, confusion and memory loss, depression, emotional lability and crying jags, fatigue, insomnia, irritability, headache, bad breath, limb pains, and muscular weakness \u2014 progressing in severe cases to pellagra.",
         answer: "Wallach lists the signs of niacin (vitamin B-3) deficiency: anorexia (loss of appetite) and nausea, canker sores, confusion, depression, dermatitis (including a localized scaly, dark-pigmented dermatitis), diarrhea, crying jags and emotional lability, fatigue, halitosis (bad breath), headache, dyspepsia (indigestion), insomnia, irritability, limb pains, memory loss, muscular weakness, and skin eruptions with eczema.",
         verbatim: "NIACIN DEFICIENCY\nanorexia & nausea\ncanker sores\nconfusion\ndepression\ndermatitis\nlocalized scaly,\ndark pigmented\ndermatitis\ndiarrhea\ncrying jags, emotional\nfatigue\nhalitosis (bad breath)\nheadache\ndyspepsia\ninsomnia\nirritability\nlimb pains\nmemory loss\nmuscular weakness\nskin eruptions/eczema",
         page: 46,
@@ -119892,7 +119615,11 @@ diarrhea, dermatitis, dementia, and death.`,
           "depression",
           "dermatitis",
           "diarrhea",
-          "insomnia"
+          "insomnia",
+          "niacin-deficiency",
+          "pellagra",
+          "beef-tongue",
+          "dementia"
         ],
         tier1_link: {
           essentials: [
@@ -119954,57 +119681,6 @@ diarrhea, dermatitis, dementia, and death.`,
           ],
           symptoms: [
             "flushing"
-          ]
-        }
-      },
-      {
-        id: "WAL-CLM-LETS-000021",
-        subject: "vitamin-b5",
-        also_about: [
-          "alopecia",
-          "depression",
-          "eczema"
-        ],
-        facet: "physiology",
-        question: "What are the symptoms of vitamin B5 deficiency?",
-        answer_short: "B5 deficiency can cause burning feet, eczema, hair loss, fatigue, insomnia, depression, low blood pressure, and a fast heartbeat.",
-        answer: "Wallach lists the signs of pantothenic acid (vitamin B-5) deficiency: abdominal pain, hair loss (alopecia), burning feet, coordination impairment, depression, eczema, faintness, fatigue, low blood pressure, infections, insomnia, muscle spasms, nausea and vomiting, nervousness, a rapid heartbeat (tachycardia), and weakness.",
-        verbatim: "PANTOTHENIC ACID\n(B-5) DEFICIENCY\nabdominal pain\nalopecia\nburning feet\ncoordination impairment\ndepression\neczema\nfaintness\nfatigue\nhypotension\ninfections\ninsomnia\nmuscle spasms\nnausea & vomiting",
-        page: 46,
-        book_id: "lets-play-doctor",
-        topics: [
-          "vitamin-b5",
-          "pantothenic-acid",
-          "vitamin-deficiency",
-          "hair-loss",
-          "fatigue",
-          "depression"
-        ],
-        tier1_link: {
-          essentials: [
-            "vitamin-b5"
-          ],
-          conditions: [
-            "alopecia",
-            "depression",
-            "eczema",
-            "hypotension",
-            "insomnia",
-            "dermatitis"
-          ],
-          symptoms: [
-            "abdominal_pain",
-            "burning_feet",
-            "ataxia",
-            "fainting",
-            "fatigue",
-            "lowered_immunity",
-            "muscle_cramps",
-            "nausea",
-            "vomiting",
-            "nervousness",
-            "rapid_pulse",
-            "weakness"
           ]
         }
       },
@@ -120215,58 +119891,6 @@ diarrhea, dermatitis, dementia, and death.`,
         }
       },
       {
-        id: "WAL-CLM-LETS-000027",
-        subject: "vitamin-b6",
-        also_about: [
-          "depression",
-          "anemia",
-          "acne"
-        ],
-        facet: "physiology",
-        question: "What are the symptoms of vitamin B6 deficiency?",
-        answer_short: "Wallach links B6 (pyridoxine) deficiency to acne, hair loss, anemia, depression, fatigue, seizures, and many skin and nerve problems.",
-        answer: "Wallach lists the signs of pyridoxine (vitamin B-6) deficiency: acne, hair loss (alopecia), anemia, anorexia (loss of appetite) and nausea, arthritis, cheilosis (cracked lip corners), conjunctivitis, depression, dizziness, facial oiliness, fatigue, geographic tongue, impaired wound healing, irritability, nervousness, neurologic symptoms, seizures, stomatitis (mouth inflammation), stunted growth, and weakness.",
-        verbatim: "PYRIDOXINE (B-6) DEFICIENCY\nacne\nalopecia\nanemia\nanorexia & nausea\narthritis\ncheilosis\nconjunctivitis\ndepression\ndizziness\nfacial oiliness\nfatigue\ngeographic tongue\nimpaired wound healing\nirritability\nnervousness\nneurologic symptoms\nseizures\nstomatitis\nstunted growth\nweakness",
-        page: 47,
-        book_id: "lets-play-doctor",
-        topics: [
-          "b-vitamins",
-          "deficiency",
-          "symptoms",
-          "nutrition"
-        ],
-        tier1_link: {
-          essentials: [
-            "vitamin-b6"
-          ],
-          conditions: [
-            "acne",
-            "alopecia",
-            "anemia",
-            "anorexia",
-            "arthritis",
-            "conjunctivitis",
-            "depression",
-            "stomatitis"
-          ],
-          symptoms: [
-            "nausea",
-            "cheilosis",
-            "dizziness",
-            "facial_oiliness",
-            "fatigue",
-            "geographic_tongue",
-            "impaired_wound_healing",
-            "irritability",
-            "nervousness",
-            "neurologic_symptoms",
-            "convulsions",
-            "retarded_growth",
-            "weakness"
-          ]
-        }
-      },
-      {
         id: "WAL-CLM-LETS-000028",
         subject: "vitamin-b6",
         also_about: [],
@@ -120438,56 +120062,6 @@ diarrhea, dermatitis, dementia, and death.`,
         }
       },
       {
-        id: "WAL-CLM-LETS-000032",
-        subject: "sodium",
-        also_about: [],
-        facet: "physiology",
-        question: "What are the symptoms of sodium deficiency?",
-        answer_short: "Sodium deficiency can cause abdominal cramps, confusion, dizziness, fatigue, muscular weakness, seizures, and loss of taste, among other signs.",
-        answer: "Wallach lists the signs of sodium deficiency: abdominal cramps, anorexia (loss of appetite), ataxia (loss of coordination), confusion, crying jags, depression, dermatosis (skin disease), dizziness, fatigue, flatulence, hallucinations, headaches, low blood pressure, illusions, infections, lethargy, memory loss, muscular weakness, nausea and vomiting, seizures, taste loss, and weight loss.",
-        verbatim: "SODIUM DEFICIENCY\nabdominal cramps\nanorexia\nataxia\nconfusion\ncrying jags\ndepression\ndermatosis\ndizziness\nfatigue\nflatulence\nhallucinations\nheadaches\nhypotension\nillusions\ninfections\nlethargy\nmemory loss\nmuscular weakness\nnausea & vomiting\nseizures\ntaste loss\nweight loss",
-        page: 48,
-        book_id: "lets-play-doctor",
-        topics: [
-          "sodium-deficiency",
-          "salt",
-          "electrolytes",
-          "deficiency-signs"
-        ],
-        tier1_link: {
-          essentials: [
-            "sodium"
-          ],
-          conditions: [
-            "anorexia",
-            "depression",
-            "dermatitis",
-            "hypotension",
-            "ageusia"
-          ],
-          symptoms: [
-            "abdominal_cramps",
-            "ataxia",
-            "mental_confusion",
-            "emotional_instability",
-            "dizziness",
-            "fatigue",
-            "flatulence",
-            "hallucinations",
-            "headache",
-            "illusions",
-            "lowered_immunity",
-            "lethargy",
-            "poor_memory",
-            "muscle_weakness",
-            "nausea",
-            "vomiting",
-            "convulsions",
-            "weight_loss"
-          ]
-        }
-      },
-      {
         id: "WAL-CLM-LETS-000033",
         subject: "sodium",
         also_about: [
@@ -120594,11 +120168,13 @@ diarrhea, dermatitis, dementia, and death.`,
           "anemia",
           "depression",
           "psychosis",
-          "achlorhydria"
+          "achlorhydria",
+          "dementia",
+          "neuropathy"
         ],
         facet: "physiology",
         question: "What are the signs of vitamin B12 deficiency?",
-        answer_short: "Wallach's signs of B12 (cobalamin) deficiency include absent stomach acid, anemia, birth defects, constipation, depression, dizziness, labored breathing, fatigue, geographic tongue, headache, irritability, moodiness, numbness, palpitations, psychosis, and spinal cord degeneration.",
+        answer_short: "Wallach's B12 (cobalamin) deficiency signs include pernicious anemia, absent stomach acid, spinal cord degeneration and nerve demyelination with numbness, dementia and neuropsychiatric changes (depression, moodiness, irritability, psychosis), a sore or geographic tongue, fatigue and weakness, dizziness, labored breathing, palpitations, headache, constipation, birth defects, and liver disease.",
         answer: "Wallach lists the signs of vitamin B-12 (cobalamin) deficiency: achlorhydria (absent stomach acid), anemia, birth defects, constipation, depression, dizziness, dyspnea (labored breathing), fatigue, gastrointestinal upset, geographic tongue, headache, irritability, moodiness, numbness, palpitations, psychosis, and spinal cord degeneration.",
         verbatim: "VITAMIN B-12 DEFICIENCY\nachlorhydria\nanemia\nbirth defects\nconstipation\ndepression\ndizziness\ndyspnea (labored breathing)\nfatigue\nG I upset\ngeographic tongue\nheadache\nirritability\nmoodiness\nnumbness\npalpitations\npsychosis\nspinal cord degeneration",
         page: 49,
@@ -120611,7 +120187,11 @@ diarrhea, dermatitis, dementia, and death.`,
           "depression",
           "numbness",
           "fatigue",
-          "psychosis"
+          "psychosis",
+          "vitamin-b12",
+          "dementia",
+          "neuropathy",
+          "symptoms"
         ],
         tier1_link: {
           essentials: [
@@ -120736,7 +120316,7 @@ diarrhea, dermatitis, dementia, and death.`,
         ],
         facet: "physiology",
         question: "What are the signs of zinc deficiency?",
-        answer_short: "Wallach lists acne, hair loss, loss of appetite, apathy, birth defects, brittle nails, depression, eczema, fatigue, growth retardation, high cholesterol, loss of taste, poor wound healing, impotence, infertility, irritability, lethargy, malabsorption, memory loss, paranoia, sexual immaturity, sterility, and white spots on the nails.",
+        answer_short: "Wallach's zinc-deficiency signs include loss of taste and smell, wounds that won't heal, weakened immunity, poor growth and sexual immaturity, hair loss, acne and eczema, brittle nails with white spots, anemia, appetite loss, apathy and lethargy, depression, irritability and paranoia, memory loss, fatigue, high cholesterol, malabsorption, birth defects, impotence, infertility and sterility, and odd cravings like eating dirt (pica).",
         answer: "Wallach lists the signs of zinc deficiency: acne, hair loss (alopecia), anorexia (loss of appetite), apathy, birth defects, brittle nails, depression, eczema, fatigue, growth retardation, high cholesterol, hypogeusia (loss of the sensation of taste), impaired wound healing, impotence, infertility, irritability, lethargy, malabsorption, memory loss, paranoia, sexual immaturity, sterility, and white spots on the nails.",
         verbatim: "ZINC DEFICIENCY\nacne\nalopecia\nanorexia\napathy\nbirth defects\nbrittle nails\ndepression\neczema\nfatigue\ngrowth retardation\nhypercholesterolemia\nhypogeusia (loss of\nsensation of taste)\nimpaired wound healing\nimpotence\ninfertility\nirritability\nlethargy\nmalabsorption\nmemory loss\nparanoia\nsexual immaturity\nsterility\nwhite spots on nails",
         page: 50,
@@ -120749,7 +120329,11 @@ diarrhea, dermatitis, dementia, and death.`,
           "loss of taste",
           "white spots on nails",
           "impotence",
-          "memory loss"
+          "memory loss",
+          "symptoms",
+          "loss of smell",
+          "wound healing",
+          "immune"
         ],
         tier1_link: {
           essentials: [
@@ -134854,68 +134438,6 @@ deaths, blood clots, sterility`,
         }
       },
       {
-        id: "WAL-CLM-RARE-000011",
-        subject: "germanium",
-        also_about: [
-          "osteoporosis",
-          "cancer"
-        ],
-        facet: "physiology",
-        question: "What are the signs of germanium deficiency?",
-        answer_short: "Wallach writes that germanium deficiency typically shows up as a severely weakened immune system, arthritis, osteoporosis, low energy, and cancer.",
-        answer: "Germanium deficiency, Wallach writes, typically shows as a severely weakened immune system, arthritis, osteoporosis, low energy, and cancer. He connects these to germanium's job as an oxygen carrier at the cellular level \u2014 when cells cannot get enough oxygen, immunity, joints, bone, and energy all suffer, and cancer (which he says dislikes high-oxygen conditions) gets a foothold. He recommends 20 to 30 mg a day to maintain status, rising to 50 to 100 mg a day when a person is seriously ill and needs more oxygen carried to the tissues.",
-        verbatim: "Deficiencies of germanium are typified\nby severely reduced immune status, arthritis, osteoporosis, low energy and cancer.",
-        page: null,
-        book_id: "rare-earths",
-        topics: [
-          "germanium",
-          "germanium deficiency",
-          "immune system",
-          "arthritis",
-          "osteoporosis",
-          "low energy",
-          "cancer"
-        ],
-        tier1_link: {
-          essentials: [
-            "germanium"
-          ],
-          conditions: [
-            "osteoporosis",
-            "cancer"
-          ],
-          symptoms: [
-            "low_energy",
-            "reduced_immune_status"
-          ]
-        }
-      },
-      {
-        id: "WAL-CLM-RARE-000012",
-        subject: "germanium",
-        also_about: [],
-        facet: "protocol",
-        question: "How much germanium should you take a day?",
-        answer_short: "Wallach gives a germanium maintenance dose of 20 to 30 mg a day, with 50 to 100 mg a day commonly used for a serious illness that requires more oxygen in the body.",
-        answer: "Wallach gives a germanium maintenance dose of 20-30 mg/day; 50-100 mg/day is commonly used when an individual has a serious illness that requires an increased oxygen level in the body.",
-        verbatim: "50 to 100 mg per day are commonly used\nwhen an individual has a serious illness that\nrequires an increased oxygen level in the\nbody.",
-        page: null,
-        book_id: "rare-earths",
-        topics: [
-          "germanium",
-          "germanium dose",
-          "supplement",
-          "mg per day",
-          "oxygen",
-          "serious illness"
-        ],
-        tier1_link: {
-          essentials: [
-            "germanium"
-          ]
-        }
-      },
-      {
         id: "WAL-CLM-RARE-000013",
         subject: "germanium",
         also_about: [],
@@ -137378,11 +136900,12 @@ deaths, blood clots, sterility`,
           "hernia",
           "arthritis",
           "anemia",
-          "thyroid_disease"
+          "thyroid_disease",
+          "vitiligo"
         ],
         facet: "physiology",
         question: "What are the symptoms of copper deficiency?",
-        answer_short: "Wallach lists copper-deficiency signs including white, gray and brittle hair, sagging tissue (ptosis), hernias, varicose veins, aneurysms, Kawasaki disease, anemia, thyroid problems, arthritis, ruptured vertebral discs and liver cirrhosis.",
+        answer_short: "Wallach lists copper-deficiency signs including white, gray, silver and brittle hair, loss of skin pigment (vitiligo), sagging tissue (ptosis), hernias, varicose veins, aneurysms, Kawasaki disease, anemia, thyroid problems, arthritis, ruptured vertebral discs, and liver cirrhosis.",
         answer: "Wallach lists copper-deficiency signs that appear in many forms, including: white, gray and dry brittle hair; ptosis (sagging tissue of eyelids, skin, breasts, stomach); congenital and acquired hernias; varicose veins; aneurysms (including cerebral artery blowouts); Kawasaki disease (congenital aneurysms with streptococcal infection); anemia (especially on vegan and high-milk diets); hypo- and hyperthyroid; arthritis; ruptured vertebral disc; and liver cirrhosis.",
         verbatim: "Ptosis (sagging tissue - eye lids, skin,\nbreasts, stomach, etc.)\n\nHernias (Congenital and acquired)\nVaricose veins\n\nAneurysms (large artery blowouts,\ncerebral artery blowouts)\n\nKawasaki Disease (congenital aneurysms\nwith Streptococcal infection)\n\nAnemia (especially in vegan and\n\nhigh milk diets)\n\nHypo and hyper thyroid\n\nArthritis (especially where growth plate\nis involved)\n\nRuptured vertebral disc\n\nLiver cirrhosis",
         page: 315,
@@ -137395,7 +136918,11 @@ deaths, blood clots, sterility`,
           "hernia",
           "aneurysm",
           "arthritis",
-          "thyroid"
+          "thyroid",
+          "deficiency",
+          "grey-hair",
+          "symptoms",
+          "minerals"
         ],
         tier1_link: {
           essentials: [
@@ -137827,7 +137354,7 @@ deaths, blood clots, sterility`,
         also_about: [],
         facet: "history",
         question: "Why do they say 'mad as a hatter'?",
-        answer_short: "Victorian hatters were poisoned by mercuric-nitrate hat paste ('mad as a hatter'); Wallach adds that dentists develop mental disease from chronic mercury vapor and have the highest suicide rate of all health professionals.",
+        answer_short: "The phrase comes from real poisoning: Victorian hatters who brushed mercuric-nitrate paste onto felt inhaled the vapor and went 'mad as a hatter' \u2014 and Wallach adds that dentists, chronically exposed to mercury vapor, develop mental disease and have the highest suicide rate of the health professions.",
         answer: "Wallach recounts mercury's history as a vapor toxin: Victorian 'hatters' who used mercuric-nitrate paste on felt hats developed mercury poisoning ('mad as a hatter,' from Alice in Wonderland), as did goldsmiths and mirror workers; in modern times dentists have developed mental disease from chronic mercury-vapor exposure and have the highest suicide rate among all health professionals.",
         verbatim: "in modern times dentists\nhave developed mental disease from\nchronic exposure to mercury vapors (they\nhave the highest rate of suicide amongst all\nthe health professionals)",
         page: 337,
@@ -137836,7 +137363,9 @@ deaths, blood clots, sterility`,
           "mercury-poisoning",
           "dentists",
           "occupational-hazard",
-          "mad-as-a-hatter"
+          "mad-as-a-hatter",
+          "occupational",
+          "history"
         ]
       },
       {
@@ -138239,11 +137768,12 @@ Goiter`,
         subject: "potassium",
         also_about: [
           "hypokalemia",
-          "cardiac_failure"
+          "cardiac_failure",
+          "intelligence"
         ],
         facet: "physiology",
         question: "What are the signs of low potassium?",
-        answer_short: "Wallach says low potassium first shows as muscular weakness and mental apathy, with its most serious form being hypokalemic cardiac failure, and that losses climb quickly with diuretics, heavy sweating, vomiting, or diarrhea.",
+        answer_short: "Wallach says low potassium first shows as muscular weakness and mental apathy, with its most serious form being hypokalemic (low-potassium) heart failure; losses climb quickly with diuretics, heavy sweating, vomiting, or diarrhea.",
         answer: "Potassium deficiency shows up first as muscular weakness and mental apathy, Wallach says, but its gravest form is hypokalemic cardiac failure \u2014 the heart failing for lack of potassium. He stresses that potassium is barely stored in the body (roughly 90% of what you eat is excreted in the urine), so it needs a large daily intake of about 5,000 mg, and losses climb quickly with diuretics, heavy sweating, vomiting, or diarrhea.",
         verbatim: "Muscular weakness and mental apathy are features of K deficiency, hypokalemic cardiac failure is the most serious K deficiency event.",
         page: 344,
@@ -138255,7 +137785,9 @@ Goiter`,
           "mental apathy",
           "hypokalemia",
           "cardiac failure",
-          "diuretics"
+          "diuretics",
+          "heart-health",
+          "electrolytes"
         ],
         tier1_link: {
           essentials: [
@@ -138656,7 +138188,7 @@ Goiter`,
         ],
         facet: "physiology",
         question: "What are the signs of low magnesium?",
-        answer_short: "Wallach lists magnesium deficiency diseases: asthma, anorexia, menstrual migraines, growth failure, ECG changes, neuromuscular problems, tetany, depression, muscular weakness, muscle 'ties,' tremors, vertigo, and calcification of small arteries and soft tissue.",
+        answer_short: "Wallach ties magnesium deficiency to asthma, anorexia, menstrual migraines, depression, tetany and convulsions, tremors and muscle 'ties,' muscular weakness, vertigo, growth failure, neuromuscular problems, ECG changes, and abnormal calcification of the small arteries and soft tissue.",
         answer: "Wallach lists the deficiency diseases of magnesium: asthma, anorexia, menstrual migraines, growth failure, electrocardiogram (ECG) changes, neuromuscular problems, tetany (convulsions), depression, muscular weakness, muscle 'Ties' (muscle knots), tremors, vertigo, calcification of small arteries, and 'malignant' calcification of soft tissue.",
         verbatim: "Table 11-18. Deficiency Diseases of Magnesium.\nAsthma\nAnorexia\nMenstrual migraines\nGrowth failure\nECG changes\nNeuromuscular problems\nTetany (Convulsions)\nDepression\nMuscular weakness\nMuscle \u201CTies\u201D\nTremors\nVertigo\nCalcification of small arteries\n\u201CMalignant\u201D calcification of soft tissue",
         page: 351,
@@ -138669,7 +138201,9 @@ Goiter`,
           "tetany",
           "depression",
           "vertigo",
-          "muscle weakness"
+          "muscle weakness",
+          "symptoms",
+          "cramps"
         ],
         tier1_link: {
           essentials: [
@@ -140570,46 +140104,6 @@ Goiter`,
         }
       },
       {
-        id: "WAL-CLM-RARE-000240",
-        subject: "biotin",
-        also_about: [
-          "eczema",
-          "alopecia",
-          "depression",
-          "blepharitis"
-        ],
-        facet: "physiology",
-        question: "What are the symptoms of a biotin deficiency?",
-        answer_short: "Biotin deficiency causes eczema, alopecia (baldness), depression, hyperesthesia, paraesthesia, blepharitis, and gray or white hair.",
-        answer: "Wallach lists the common diseases of biotin deficiency: eczema, hair loss (alopecia/baldness), depression, heightened skin sensitivity (hyperesthesia), abnormal tingling sensations (paraesthesia), eyelid inflammation (blepharitis), and gray or white hair.",
-        verbatim: "Biotin - 1936\nEczema, alopecia (baldness), depression, hyperesthesia, paraesthesia, blepharitis, gray or white hair.",
-        page: 296,
-        book_id: "rare-earths",
-        topics: [
-          "deficiency",
-          "hair",
-          "skin",
-          "symptoms"
-        ],
-        tier1_link: {
-          essentials: [
-            "biotin"
-          ],
-          conditions: [
-            "eczema",
-            "depression",
-            "blepharitis",
-            "dermatitis"
-          ],
-          symptoms: [
-            "hair_loss",
-            "gray_hair",
-            "white_hair",
-            "paresthesia"
-          ]
-        }
-      },
-      {
         id: "WAL-CLM-RARE-000243",
         subject: "flavonoids",
         also_about: [],
@@ -141141,11 +140635,19 @@ Goiter`,
           "cardiomyopathy",
           "keshan_disease",
           "multiple_sclerosis",
-          "scoliosis"
+          "scoliosis",
+          "pancreatitis",
+          "als",
+          "parkinsons_disease",
+          "alzheimers",
+          "infertility",
+          "sids",
+          "cancer",
+          "sickle_cell_anemia"
         ],
         facet: "physiology",
         question: "What diseases are caused by a selenium deficiency?",
-        answer_short: "Wallach lists diseases of selenium deficiency including HIV/AIDS, anemia, age spots, fatigue, muscle weakness, scoliosis, muscular dystrophy, congenital cystic fibrosis, cardiomyopathy (Keshan disease), multiple sclerosis, heart palpitations, and liver cirrhosis.",
+        answer_short: "Wallach's selenium-deficiency disease list is long: cardiomyopathy (Keshan disease) and heart palpitations, muscular dystrophy, muscle weakness and fatigue, scoliosis, cystic fibrosis, multiple sclerosis, ALS, Parkinson's and Alzheimer's, adrenoleukodystrophy, anemia and sickle cell anemia, liver cirrhosis, pancreatitis and pancreatic atrophy, cancer, HIV/AIDS, infertility, low birth weight, high infant mortality and SIDS, and age spots.",
         answer: "Wallach lists the diseases of selenium deficiency (part 1 of 2): HIV/AIDS (human immunodeficiency virus / acquired immunodeficiency syndrome), anemia (red-blood-cell fragility), 'age spots' and 'liver spots,' fatigue, muscular weakness, myalgia (muscle pain and soreness), scoliosis, muscular dystrophy (including white muscle disease and stiff lamb disease), congenital cystic fibrosis, cardiomyopathy (Keshan disease, 'mulberry heart' disease), multiple sclerosis (associated with mercury poisoning), heart palpitations, irregular heartbeat, and liver cirrhosis.",
         verbatim: "Table 11-23. Selenium Deficiency Diseases.\nHIV (AIDS)\nAnemia (RBC fragility)\n\u201CAge Spots\u201D & \u201CLiver Spots\u201D\nFatigue\nMuscular weakness\nMyalgia (muscle pain and soreness)\nScoliosis\nMuscular Dystrophy (MD, White Muscle Disease, Stiff Lamb Disease)\nCystic Fibrosis (congenital)\nCardiomyopathy (Keshan Disease, \u201CMulberry heart\u201D Disease)\nMultiple Sclerosis (MS) - associated with Hg poisoning\nHeart palpitations\nIrregular heart beat\nLiver cirrhosis",
         page: 378,
@@ -141158,7 +140660,13 @@ Goiter`,
           "muscular dystrophy",
           "cystic fibrosis",
           "cardiomyopathy",
-          "multiple sclerosis"
+          "multiple sclerosis",
+          "pancreatitis",
+          "als",
+          "parkinson's",
+          "alzheimer's",
+          "sids",
+          "sickle cell anemia"
         ],
         tier1_link: {
           essentials: [
@@ -141176,68 +140684,6 @@ Goiter`,
             "multiple_sclerosis",
             "liver_cirrhosis",
             "liver_disease"
-          ]
-        }
-      },
-      {
-        id: "WAL-CLM-RARE-000270",
-        subject: "selenium",
-        also_about: [
-          "pancreatitis",
-          "als",
-          "parkinsons_disease",
-          "alzheimers",
-          "infertility",
-          "sids",
-          "cancer",
-          "sickle_cell_anemia"
-        ],
-        facet: "physiology",
-        question: "What diseases does selenium deficiency cause?",
-        answer_short: "Wallach continues the list of selenium-deficiency diseases with pancreatitis, pancreatic atrophy, ALS, Parkinson's, Alzheimer's, adrenoleukodystrophy, infertility, low birth weight, high infant mortality, SIDS, cancer, clinical AIDS, and sickle cell anemia.",
-        answer: "Wallach lists the diseases of selenium deficiency (part 2 of 2): pancreatitis, pancreatic atrophy, amyotrophic lateral sclerosis (Lou Gehrig's disease, associated with mercury poisoning), Parkinson's disease (associated with mercury poisoning), Alzheimer's disease (associated with high vegetable-oil consumption), adrenoleukodystrophy (ALD, 'Lorenzo's Oil' syndrome), infertility, low birth weight, high infant mortality, sudden infant death syndrome (SIDS), cancer (associated with carcinogen contact and high vegetable-oil intake), clinical AIDS (human immunodeficiency virus infection), and sickle cell anemia.",
-        verbatim: `Pancreatitis
-Pancreatic atrophy
-Lou Gehrig's Disease (ALS) - associated with Hg poisoning
-Parkinson's Disease - associated with Hg poisoning
-Alzheimer\u2019s Disease - associated with high vegetable oil consumption
-Adrenoleucodystrophy (ALD -"Lorenzo\u2019s Oil\u2019 Syndrome)
-Infertility
-Low birth weight
-High infant mortality
-Sudden Infant Death Syndrome (SIDS)
-Cancer - associated with carcinogen contact as well as high vegetable oil intake
-Clinical AIDS (HIV infection)
-Sickle cell anemia`,
-        page: 378,
-        book_id: "rare-earths",
-        topics: [
-          "selenium",
-          "deficiency",
-          "pancreatitis",
-          "als",
-          "parkinson's",
-          "alzheimer's",
-          "sids",
-          "sickle cell anemia"
-        ],
-        tier1_link: {
-          essentials: [
-            "selenium"
-          ],
-          conditions: [
-            "pancreatitis",
-            "als",
-            "parkinsons_disease",
-            "alzheimers",
-            "adrenoleukodystrophy",
-            "infertility",
-            "sids",
-            "cancer",
-            "sickle_cell_anemia",
-            "hiv_aids",
-            "anemia",
-            "dementia"
           ]
         }
       },

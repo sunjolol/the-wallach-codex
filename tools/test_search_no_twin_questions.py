@@ -35,10 +35,10 @@ tolerates EVERY twin). 'stale_exception' shows a carve-out that stops firing is 
 Run:  PYTHONUTF8=1 python tools/test_search_no_twin_questions.py
 Exit 0 = every planted case behaves; non-zero = the gate stopped biting (a real regression).
 
-NOTE (campaign in progress, 2026-08-07): the REAL corpus currently has 19 unresolved twins by design
--- the gate shipped FIRST, the merges/rewords follow under it. The real-corpus count is printed as a
-burn-down meter; the hard GREEN assertion (ENFORCE_GREEN) is switched on in the final commit before
-this branch merges to master, once the count reaches 0."""
+NOTE (2026-08-07): the gate shipped FIRST (RED at 19), then the 19 twins were resolved under it in two
+reviewed batches (vitamin D, then the remaining 17). The corpus is now twin-free, so ENFORCE_GREEN is
+ON and this file hard-asserts the real corpus stays green -- a regression that re-introduces a twin
+fails here as well as on the board."""
 import importlib.util
 import json
 import re
@@ -161,7 +161,7 @@ def main():
         remaining = int(m.group(1)) if m else (0 if ok else -1)
         print("INFO real_corpus twins remaining = %s (campaign target: 0) -- %s"
               % (remaining, "GREEN" if ok else "RED"))
-        ENFORCE_GREEN = False  # <-- flip to True in the final commit before merge, once remaining == 0
+        ENFORCE_GREEN = True  # campaign complete 2026-08-07 — corpus is twin-free; this now hard-asserts it
         if ENFORCE_GREEN and not ok:
             fails.append(("real_corpus", "campaign complete but corpus still has twins", msg))
 

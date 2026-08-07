@@ -454,6 +454,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-LETS-000032",
             "WAL-CLM-RARE-000003",
             "WAL-CLM-RARE-000027"
           ]
@@ -471,7 +472,7 @@
           ]
         }
       ],
-      "record_claim_count": 4,
+      "record_claim_count": 5,
       "search": [
         {
           "facet": "basics",
@@ -502,7 +503,6 @@
             "WAL-CLM-EPIGEN-000320",
             "WAL-CLM-EPIGEN-000321",
             "WAL-CLM-EPIGEN-000322",
-            "WAL-CLM-LETS-000032",
             "WAL-CLM-RARE-000186",
             "WAL-CLM-RARE-000368"
           ]
@@ -661,6 +661,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000053",
             "WAL-CLM-DDDL-000087",
+            "WAL-CLM-EPIGEN-000098",
             "WAL-CLM-RARE-000275",
             "WAL-CLM-RARE-000303",
             "WAL-CLM-RARE-000304",
@@ -755,7 +756,7 @@
           ]
         }
       ],
-      "record_claim_count": 68,
+      "record_claim_count": 69,
       "search": [
         {
           "facet": "basics",
@@ -772,7 +773,6 @@
             "WAL-CLM-DDDL-000152",
             "WAL-CLM-DDDL-000153",
             "WAL-CLM-DDDL-000154",
-            "WAL-CLM-EPIGEN-000098",
             "WAL-CLM-EPIGEN-000195",
             "WAL-CLM-IMMORT-000206"
           ]
@@ -1416,6 +1416,12 @@
       ],
       "record": [
         {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000194"
+          ]
+        },
+        {
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000203",
@@ -1438,7 +1444,7 @@
           ]
         }
       ],
-      "record_claim_count": 7,
+      "record_claim_count": 8,
       "search": [
         {
           "facet": "basics",
@@ -1451,7 +1457,6 @@
         {
           "facet": "warning",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000194",
             "WAL-CLM-LETS-000025",
             "WAL-CLM-LETS-000026",
             "WAL-CLM-RARE-000038",
@@ -2353,6 +2358,7 @@
             "WAL-CLM-IMMORT-000089",
             "WAL-CLM-IMMORT-000344",
             "WAL-CLM-IMMORT-000467",
+            "WAL-CLM-LETS-000006",
             "WAL-CLM-RARE-000307",
             "WAL-CLM-RARE-000313"
           ]
@@ -2419,7 +2425,7 @@
           ]
         }
       ],
-      "record_claim_count": 46,
+      "record_claim_count": 47,
       "search": [
         {
           "facet": "basics",
@@ -2445,7 +2451,6 @@
             "WAL-CLM-HELLS-000045",
             "WAL-CLM-IMMORT-000088",
             "WAL-CLM-IMMORT-000092",
-            "WAL-CLM-LETS-000006",
             "WAL-CLM-RARE-000039",
             "WAL-CLM-RARE-000042",
             "WAL-CLM-RARE-000118",
@@ -2652,6 +2657,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000099",
             "WAL-CLM-IMMORT-000102",
             "WAL-CLM-IMMORT-000103",
             "WAL-CLM-RARE-000051",
@@ -2720,7 +2726,7 @@
           ]
         }
       ],
-      "record_claim_count": 30,
+      "record_claim_count": 31,
       "search": [
         {
           "facet": "basics",
@@ -2732,7 +2738,6 @@
         {
           "facet": "warning",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000099",
             "WAL-CLM-IMMORT-000104",
             "WAL-CLM-IMMORT-000111",
             "WAL-CLM-LETS-000009"
@@ -2938,6 +2943,18 @@
       ],
       "record": [
         {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-RARE-000012"
+          ]
+        },
+        {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-RARE-000011"
+          ]
+        },
+        {
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000070",
@@ -2959,7 +2976,7 @@
           ]
         }
       ],
-      "record_claim_count": 11,
+      "record_claim_count": 13,
       "search": [
         {
           "facet": "basics",
@@ -2971,8 +2988,7 @@
         {
           "facet": "physiology",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000139",
-            "WAL-CLM-RARE-000011"
+            "WAL-CLM-IMMORT-000139"
           ]
         },
         {
@@ -3003,8 +3019,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000011",
             "WAL-CLM-DDDL-000232",
-            "WAL-CLM-IMMORT-000140",
-            "WAL-CLM-RARE-000012"
+            "WAL-CLM-IMMORT-000140"
           ]
         },
         {
@@ -3119,6 +3134,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000131",
             "WAL-CLM-RARE-000037"
           ]
         },
@@ -3164,7 +3180,7 @@
           ]
         }
       ],
-      "record_claim_count": 17,
+      "record_claim_count": 18,
       "search": [
         {
           "facet": "basics",
@@ -3189,7 +3205,6 @@
             "WAL-CLM-EPIGEN-000227",
             "WAL-CLM-IMMORT-000126",
             "WAL-CLM-IMMORT-000128",
-            "WAL-CLM-IMMORT-000131",
             "WAL-CLM-LETS-000014",
             "WAL-CLM-LETS-000503",
             "WAL-CLM-RARE-000337"
@@ -3798,6 +3813,7 @@
             "WAL-CLM-IMMORT-000211",
             "WAL-CLM-IMMORT-000212",
             "WAL-CLM-LETS-000471",
+            "WAL-CLM-RARE-000270",
             "WAL-CLM-RARE-000306",
             "WAL-CLM-RARE-000310"
           ]
@@ -3920,7 +3936,7 @@
           ]
         }
       ],
-      "record_claim_count": 88,
+      "record_claim_count": 89,
       "search": [
         {
           "facet": "basics",
@@ -3944,8 +3960,7 @@
             "WAL-CLM-DDDL-000137",
             "WAL-CLM-LETS-000030",
             "WAL-CLM-RARE-000227",
-            "WAL-CLM-RARE-000269",
-            "WAL-CLM-RARE-000270"
+            "WAL-CLM-RARE-000269"
           ]
         },
         {
@@ -4621,6 +4636,7 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000042",
+            "WAL-CLM-DDDL-000141",
             "WAL-CLM-RARE-000042",
             "WAL-CLM-RARE-000307"
           ]
@@ -4724,7 +4740,7 @@
           ]
         }
       ],
-      "record_claim_count": 81,
+      "record_claim_count": 82,
       "search": [
         {
           "facet": "basics",
@@ -4749,7 +4765,6 @@
             "WAL-CLM-DDDL-000079",
             "WAL-CLM-DDDL-000084",
             "WAL-CLM-DDDL-000140",
-            "WAL-CLM-DDDL-000141",
             "WAL-CLM-DDDL-000142",
             "WAL-CLM-IMMORT-000270",
             "WAL-CLM-LETS-000044",
@@ -10840,7 +10855,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 23,
-      "distinct_claim_count": 32,
+      "distinct_claim_count": 31,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -10927,7 +10942,6 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000183",
             "WAL-CLM-EPIGEN-000035",
-            "WAL-CLM-IMMORT-000294",
             "WAL-CLM-LETS-000034",
             "WAL-CLM-RARE-000233"
           ]
@@ -11163,7 +11177,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 25,
-      "distinct_claim_count": 38,
+      "distinct_claim_count": 37,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -11241,7 +11255,6 @@
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000037",
-            "WAL-CLM-IMMORT-000298",
             "WAL-CLM-LETS-000019",
             "WAL-CLM-RARE-000235"
           ]
@@ -11384,6 +11397,12 @@
       ],
       "record": [
         {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-LETS-000021"
+          ]
+        },
+        {
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000137",
@@ -11394,7 +11413,7 @@
           ]
         }
       ],
-      "record_claim_count": 5,
+      "record_claim_count": 6,
       "search": [
         {
           "facet": "basics",
@@ -11412,7 +11431,6 @@
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000038",
-            "WAL-CLM-LETS-000021",
             "WAL-CLM-RARE-000236"
           ]
         },
@@ -11534,6 +11552,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-LETS-000027",
             "WAL-CLM-LETS-000210"
           ]
         },
@@ -11588,7 +11607,7 @@
           ]
         }
       ],
-      "record_claim_count": 41,
+      "record_claim_count": 42,
       "search": [
         {
           "facet": "basics",
@@ -11607,8 +11626,7 @@
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000039",
-            "WAL-CLM-EPIGEN-000108",
-            "WAL-CLM-LETS-000027"
+            "WAL-CLM-EPIGEN-000108"
           ]
         },
         {
@@ -11980,6 +11998,7 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000040",
             "WAL-CLM-RARE-000115"
           ]
         },
@@ -12030,7 +12049,7 @@
           ]
         }
       ],
-      "record_claim_count": 28,
+      "record_claim_count": 29,
       "search": [
         {
           "facet": "basics",
@@ -12042,7 +12061,6 @@
         {
           "facet": "warning",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000040",
             "WAL-CLM-EPIGEN-000269",
             "WAL-CLM-EPIGEN-000270",
             "WAL-CLM-IMMORT-000307"
@@ -13154,6 +13172,12 @@
       ],
       "record": [
         {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-RARE-000240"
+          ]
+        },
+        {
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000430"
@@ -13166,7 +13190,7 @@
           ]
         }
       ],
-      "record_claim_count": 2,
+      "record_claim_count": 3,
       "search": [
         {
           "facet": "basics",
@@ -13185,8 +13209,7 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000042",
             "WAL-CLM-IMMORT-000328",
-            "WAL-CLM-LETS-000003",
-            "WAL-CLM-RARE-000240"
+            "WAL-CLM-LETS-000003"
           ]
         },
         {

@@ -2932,18 +2932,6 @@
     "gut"
    ]
   },
-  "WAL-CLM-IMMORT-000166": {
-   "subject": "mercury",
-   "also_about": [],
-   "facet": "history",
-   "question": "Why do we say 'mad as a hatter'?",
-   "answer_short": "The phrase comes from real poisoning: Victorian hatmakers who brushed mercury paste onto felt inhaled the vapor and went 'mad as a hatter.'",
-   "topics": [
-    "mad-as-a-hatter",
-    "occupational",
-    "history"
-   ]
-  },
   "WAL-CLM-IMMORT-000167": {
    "subject": "mercury",
    "also_about": [],
@@ -5691,21 +5679,6 @@
     "where zinc is stored"
    ]
   },
-  "WAL-CLM-DDDL-000141": {
-   "subject": "zinc",
-   "also_about": [],
-   "facet": "physiology",
-   "question": "What are the signs and symptoms of a zinc deficiency?",
-   "answer_short": "Wallach lists a wide range — loss of taste and smell, wounds that won't heal, weak immunity, poor growth, hair loss, anemia, depression, and even odd cravings like eating dirt.",
-   "topics": [
-    "zinc deficiency",
-    "symptoms",
-    "loss of taste",
-    "loss of smell",
-    "wound healing",
-    "immune"
-   ]
-  },
   "WAL-CLM-DDDL-000142": {
    "subject": "zinc",
    "also_about": [],
@@ -6797,26 +6770,6 @@
     "calcium and magnesium",
     "1000 mg",
     "osteoporosis"
-   ]
-  },
-  "WAL-CLM-EPIGEN-000098": {
-   "subject": "magnesium",
-   "also_about": [
-    "asthma",
-    "depression",
-    "migraine",
-    "anorexia"
-   ],
-   "facet": "warning",
-   "question": "What are the symptoms of magnesium deficiency?",
-   "answer_short": "Wallach ties a long list of problems to magnesium shortage — including asthma, menstrual migraines, depression, tetany and convulsions, tremors, muscular weakness, vertigo, ECG changes, and abnormal calcification of arteries and soft tissue.",
-   "topics": [
-    "magnesium deficiency",
-    "symptoms",
-    "depression",
-    "migraines",
-    "asthma",
-    "cramps"
    ]
   },
   "WAL-CLM-IMMORT-000205": {
@@ -8715,24 +8668,6 @@
     "hemoglobin"
    ]
   },
-  "WAL-CLM-IMMORT-000131": {
-   "subject": "iron",
-   "also_about": [
-    "anemia",
-    "pica"
-   ],
-   "facet": "physiology",
-   "question": "What are the symptoms of iron deficiency?",
-   "answer_short": "Iron deficiency brings fatigue, listlessness, palpitations on exertion, poor memory and concentration, a sore tongue, and microcytic anemia.",
-   "topics": [
-    "iron",
-    "fatigue",
-    "anemia",
-    "symptoms",
-    "brain-fog",
-    "deficiency"
-   ]
-  },
   "WAL-CLM-LETS-000054": {
    "subject": "iodine",
    "also_about": [],
@@ -10274,16 +10209,26 @@
     "hypoglycemia",
     "vanadium",
     "nitrogen",
-    "muscle_strength"
+    "muscle_strength",
+    "anxiety",
+    "high_cholesterol"
    ],
    "facet": "physiology",
    "question": "What are the symptoms of chromium deficiency?",
-   "answer_short": "Chromium deficiency shows up as glucose intolerance, poor growth, peripheral neuropathy, muscle and protein loss, and a lowered respiratory quotient.",
+   "answer_short": "Wallach's chromium-deficiency signs span blood sugar and metabolism: glucose intolerance and diabetes, low blood sugar (hypoglycemia), high cholesterol, anxiety and fatigue, poor or stunted growth with a shortened lifespan, peripheral neuropathy, muscle and protein loss, and a lowered respiratory quotient.",
    "topics": [
     "chromium-deficiency",
     "blood-sugar",
     "muscle-loss",
-    "symptoms"
+    "symptoms",
+    "chromium",
+    "anxiety",
+    "fatigue",
+    "low blood sugar",
+    "hypoglycemia",
+    "diabetes",
+    "high cholesterol",
+    "growth"
    ]
   },
   "WAL-CLM-HELLS-000045": {
@@ -10433,21 +10378,6 @@
     "fertility"
    ]
   },
-  "WAL-CLM-IMMORT-000294": {
-   "subject": "vitamin-b1",
-   "also_about": [
-    "intelligence"
-   ],
-   "facet": "physiology",
-   "question": "What are the symptoms of vitamin B1 deficiency?",
-   "answer_short": "Mild thiamine deficiency causes mental confusion, muscle weakness, fatigue and appetite loss; chronic deficiency progresses to polyneuritis and congestive heart failure.",
-   "topics": [
-    "deficiency",
-    "symptoms",
-    "fatigue",
-    "heart-failure"
-   ]
-  },
   "WAL-CLM-IMMORT-000295": {
    "subject": "vitamin-b1",
    "also_about": [],
@@ -10487,22 +10417,6 @@
     "discovery",
     "when was it discovered",
     "who discovered it"
-   ]
-  },
-  "WAL-CLM-IMMORT-000298": {
-   "subject": "vitamin-b3",
-   "also_about": [
-    "pellagra"
-   ],
-   "facet": "physiology",
-   "question": "What are the symptoms of vitamin B3 (niacin) deficiency?",
-   "answer_short": "Early niacin deficiency brings muscle weakness, poor appetite, indigestion, and skin eruptions; severe deficiency becomes pellagra.",
-   "topics": [
-    "niacin-deficiency",
-    "pellagra",
-    "beef-tongue",
-    "dermatitis",
-    "dementia"
    ]
   },
   "WAL-CLM-IMMORT-000299": {
@@ -11211,25 +11125,6 @@
     "niacin"
    ]
   },
-  "WAL-CLM-LETS-000021": {
-   "subject": "vitamin-b5",
-   "also_about": [
-    "alopecia",
-    "depression",
-    "eczema"
-   ],
-   "facet": "physiology",
-   "question": "What are the symptoms of vitamin B5 deficiency?",
-   "answer_short": "B5 deficiency can cause burning feet, eczema, hair loss, fatigue, insomnia, depression, low blood pressure, and a fast heartbeat.",
-   "topics": [
-    "vitamin-b5",
-    "pantothenic-acid",
-    "vitamin-deficiency",
-    "hair-loss",
-    "fatigue",
-    "depression"
-   ]
-  },
   "WAL-CLM-EPIGEN-000115": {
    "subject": "vitamin-b5",
    "also_about": [],
@@ -11257,23 +11152,6 @@
     "rda",
     "therapeutic-dose",
     "supplements"
-   ]
-  },
-  "WAL-CLM-LETS-000027": {
-   "subject": "vitamin-b6",
-   "also_about": [
-    "depression",
-    "anemia",
-    "acne"
-   ],
-   "facet": "physiology",
-   "question": "What are the symptoms of vitamin B6 deficiency?",
-   "answer_short": "Wallach links B6 (pyridoxine) deficiency to acne, hair loss, anemia, depression, fatigue, seizures, and many skin and nerve problems.",
-   "topics": [
-    "b-vitamins",
-    "deficiency",
-    "symptoms",
-    "nutrition"
    ]
   },
   "WAL-CLM-IMMORT-000008": {
@@ -11350,24 +11228,6 @@
     "pyridoxine",
     "daily dose",
     "supplements"
-   ]
-  },
-  "WAL-CLM-EPIGEN-000040": {
-   "subject": "vitamin-b12",
-   "also_about": [
-    "dementia",
-    "neuropathy"
-   ],
-   "facet": "warning",
-   "question": "What are the symptoms of vitamin B12 deficiency?",
-   "answer_short": "B12 deficiency causes pernicious anemia, dementia and neuropsychiatric changes, nerve demyelination and neuropathy, a sore tongue, general weakness, and liver disease.",
-   "topics": [
-    "vitamin-b12",
-    "deficiency",
-    "dementia",
-    "neuropathy",
-    "anemia",
-    "symptoms"
    ]
   },
   "WAL-CLM-DDDL-000003": {
@@ -11467,24 +11327,6 @@
     "chromium",
     "base line program",
     "daily dose",
-    "minerals"
-   ]
-  },
-  "WAL-CLM-IMMORT-000099": {
-   "subject": "copper",
-   "also_about": [
-    "vitiligo",
-    "anemia",
-    "aneurysm",
-    "arthritis"
-   ],
-   "facet": "warning",
-   "question": "What are the signs of copper deficiency?",
-   "answer_short": "Wallach lists white, grey and silver hair, loss of skin pigment (vitiligo), and dry brittle hair among the first signs, alongside aneurysms, varicose veins, anemia and arthritis.",
-   "topics": [
-    "deficiency",
-    "grey-hair",
-    "symptoms",
     "minerals"
    ]
   },
@@ -11671,20 +11513,6 @@
     "muscle-health",
     "cramps",
     "deficiency"
-   ]
-  },
-  "WAL-CLM-IMMORT-000194": {
-   "subject": "potassium",
-   "also_about": [
-    "intelligence"
-   ],
-   "facet": "warning",
-   "question": "What are the signs of potassium deficiency?",
-   "answer_short": "Muscular weakness and mental apathy are the hallmark signs, and the most serious event is low-potassium (hypokalemic) heart failure.",
-   "topics": [
-    "deficiency",
-    "heart-health",
-    "electrolytes"
    ]
   },
   "WAL-CLM-LETS-000025": {
@@ -12497,24 +12325,6 @@
     "deficiency signs",
     "bleeding",
     "bone health"
-   ]
-  },
-  "WAL-CLM-RARE-000240": {
-   "subject": "biotin",
-   "also_about": [
-    "eczema",
-    "alopecia",
-    "depression",
-    "blepharitis"
-   ],
-   "facet": "physiology",
-   "question": "What are the symptoms of a biotin deficiency?",
-   "answer_short": "Biotin deficiency causes eczema, alopecia (baldness), depression, hyperesthesia, paraesthesia, blepharitis, and gray or white hair.",
-   "topics": [
-    "deficiency",
-    "hair",
-    "skin",
-    "symptoms"
    ]
   },
   "WAL-CLM-EPIGEN-000044": {
@@ -15138,19 +14948,6 @@
     "paracelsus",
     "medicine",
     "minerals"
-   ]
-  },
-  "WAL-CLM-LETS-000032": {
-   "subject": "sodium",
-   "also_about": [],
-   "facet": "physiology",
-   "question": "What are the symptoms of sodium deficiency?",
-   "answer_short": "Sodium deficiency can cause abdominal cramps, confusion, dizziness, fatigue, muscular weakness, seizures, and loss of taste, among other signs.",
-   "topics": [
-    "sodium-deficiency",
-    "salt",
-    "electrolytes",
-    "deficiency-signs"
    ]
   },
   "WAL-CLM-LETS-000065": {
@@ -21596,12 +21393,14 @@
    "also_about": [],
    "facet": "history",
    "question": "Why do they say 'mad as a hatter'?",
-   "answer_short": "Victorian hatters were poisoned by mercuric-nitrate hat paste ('mad as a hatter'); Wallach adds that dentists develop mental disease from chronic mercury vapor and have the highest suicide rate of all health professionals.",
+   "answer_short": "The phrase comes from real poisoning: Victorian hatters who brushed mercuric-nitrate paste onto felt inhaled the vapor and went 'mad as a hatter' — and Wallach adds that dentists, chronically exposed to mercury vapor, develop mental disease and have the highest suicide rate of the health professions.",
    "topics": [
     "mercury-poisoning",
     "dentists",
     "occupational-hazard",
-    "mad-as-a-hatter"
+    "mad-as-a-hatter",
+    "occupational",
+    "history"
    ]
   },
   "WAL-CLM-RARE-000159": {
@@ -26073,28 +25872,6 @@
     "animal study"
    ]
   },
-  "WAL-CLM-LETS-000006": {
-   "subject": "chromium",
-   "also_about": [
-    "anxiety",
-    "hypoglycemia",
-    "diabetes",
-    "high_cholesterol"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of chromium deficiency?",
-   "answer_short": "Wallach lists the signs of chromium deficiency as anxiety, fatigue, low blood sugar (hypoglycemia), diabetes, stunted growth with a shortened lifespan, and high cholesterol.",
-   "topics": [
-    "chromium",
-    "anxiety",
-    "fatigue",
-    "low blood sugar",
-    "hypoglycemia",
-    "diabetes",
-    "high cholesterol",
-    "growth"
-   ]
-  },
   "WAL-CLM-LETS-000007": {
    "subject": "chromium",
    "also_about": [
@@ -26343,11 +26120,12 @@
     "dermatitis",
     "depression",
     "fatty_liver",
-    "insomnia"
+    "insomnia",
+    "blepharitis"
    ],
    "facet": "physiology",
    "question": "What are the signs of biotin deficiency?",
-   "answer_short": "Wallach lists biotin (B7) deficiency signs including eczema and dermatitis, baldness, muscle pain, fatigue, fatty liver, depression, insomnia, appetite loss, gray or white hair, and hallucinations.",
+   "answer_short": "Wallach ties biotin (B7) deficiency to eczema and dermatitis, baldness (alopecia), gray or white hair, muscle pain, fatigue, fatty liver, appetite loss, depression, insomnia, hallucinations, and skin-and-nerve signs like hyperesthesia, paraesthesia, and blepharitis.",
    "topics": [
     "biotin",
     "vitamin b7",
@@ -26356,7 +26134,11 @@
     "eczema",
     "depression",
     "insomnia",
-    "muscle pain"
+    "muscle pain",
+    "deficiency",
+    "hair",
+    "skin",
+    "symptoms"
    ]
   },
   "WAL-CLM-EPIGEN-000122": {
@@ -28284,11 +28066,12 @@
     "hernia",
     "arthritis",
     "anemia",
-    "thyroid_disease"
+    "thyroid_disease",
+    "vitiligo"
    ],
    "facet": "physiology",
    "question": "What are the symptoms of copper deficiency?",
-   "answer_short": "Wallach lists copper-deficiency signs including white, gray and brittle hair, sagging tissue (ptosis), hernias, varicose veins, aneurysms, Kawasaki disease, anemia, thyroid problems, arthritis, ruptured vertebral discs and liver cirrhosis.",
+   "answer_short": "Wallach lists copper-deficiency signs including white, gray, silver and brittle hair, loss of skin pigment (vitiligo), sagging tissue (ptosis), hernias, varicose veins, aneurysms, Kawasaki disease, anemia, thyroid problems, arthritis, ruptured vertebral discs, and liver cirrhosis.",
    "topics": [
     "copper deficiency",
     "gray hair",
@@ -28297,7 +28080,11 @@
     "hernia",
     "aneurysm",
     "arthritis",
-    "thyroid"
+    "thyroid",
+    "deficiency",
+    "grey-hair",
+    "symptoms",
+    "minerals"
    ]
   },
   "WAL-CLM-RARE-000141": {
@@ -28387,7 +28174,7 @@
    ],
    "facet": "physiology",
    "question": "What are the symptoms of germanium deficiency?",
-   "answer_short": "Wallach lists the symptoms of germanium deficiency as reduced immune status, arthritis, osteoporosis, low energy and fatigue, and cancer.",
+   "answer_short": "Wallach says germanium deficiency shows up as a severely weakened immune system, arthritis, osteoporosis, low energy and fatigue, and cancer.",
    "topics": [
     "germanium",
     "germanium deficiency",
@@ -28395,7 +28182,8 @@
     "arthritis",
     "osteoporosis",
     "fatigue",
-    "cancer"
+    "cancer",
+    "low energy"
    ]
   },
   "WAL-CLM-IMMORT-000140": {
@@ -30221,7 +30009,7 @@
    ],
    "facet": "physiology",
    "question": "What are the signs of low sodium?",
-   "answer_short": "Wallach explains that a sodium deficiency causes salt hunger, that Addison's disease brings weakness, muscle cramps, weight loss, and marked salt hunger, and that 'water intoxication' from low-sodium infant formula swelled babies' brains and killed them.",
+   "answer_short": "Wallach says a sodium deficiency brings on salt hunger, along with abdominal and muscle cramps, confusion, dizziness, fatigue, muscular weakness, weight loss, loss of taste, and seizures; marked salt hunger also marks Addison's disease, and 'water intoxication' from low-sodium infant formula once fatally swelled babies' brains.",
    "topics": [
     "sodium",
     "salt",
@@ -30230,7 +30018,10 @@
     "muscle cramps",
     "weakness",
     "weight loss",
-    "water intoxication"
+    "water intoxication",
+    "sodium-deficiency",
+    "electrolytes",
+    "deficiency-signs"
    ]
   },
   "WAL-CLM-LETS-000066": {
@@ -31031,7 +30822,7 @@
    ],
    "facet": "physiology",
    "question": "What are the signs of zinc deficiency?",
-   "answer_short": "Wallach lists acne, hair loss, loss of appetite, apathy, birth defects, brittle nails, depression, eczema, fatigue, growth retardation, high cholesterol, loss of taste, poor wound healing, impotence, infertility, irritability, lethargy, malabsorption, memory loss, paranoia, sexual immaturity, sterility, and white spots on the nails.",
+   "answer_short": "Wallach's zinc-deficiency signs include loss of taste and smell, wounds that won't heal, weakened immunity, poor growth and sexual immaturity, hair loss, acne and eczema, brittle nails with white spots, anemia, appetite loss, apathy and lethargy, depression, irritability and paranoia, memory loss, fatigue, high cholesterol, malabsorption, birth defects, impotence, infertility and sterility, and odd cravings like eating dirt (pica).",
    "topics": [
     "zinc",
     "zinc deficiency",
@@ -31040,7 +30831,11 @@
     "loss of taste",
     "white spots on nails",
     "impotence",
-    "memory loss"
+    "memory loss",
+    "symptoms",
+    "loss of smell",
+    "wound healing",
+    "immune"
    ]
   },
   "WAL-CLM-RARE-000035": {
@@ -31899,7 +31694,7 @@
    ],
    "facet": "physiology",
    "question": "What are the signs of low magnesium?",
-   "answer_short": "Wallach lists magnesium deficiency diseases: asthma, anorexia, menstrual migraines, growth failure, ECG changes, neuromuscular problems, tetany, depression, muscular weakness, muscle 'ties,' tremors, vertigo, and calcification of small arteries and soft tissue.",
+   "answer_short": "Wallach ties magnesium deficiency to asthma, anorexia, menstrual migraines, depression, tetany and convulsions, tremors and muscle 'ties,' muscular weakness, vertigo, growth failure, neuromuscular problems, ECG changes, and abnormal calcification of the small arteries and soft tissue.",
    "topics": [
     "magnesium",
     "magnesium deficiency",
@@ -31908,7 +31703,9 @@
     "tetany",
     "depression",
     "vertigo",
-    "muscle weakness"
+    "muscle weakness",
+    "symptoms",
+    "cramps"
    ]
   },
   "WAL-CLM-RARE-000173": {
@@ -32402,40 +32199,6 @@
     "water pills"
    ]
   },
-  "WAL-CLM-RARE-000011": {
-   "subject": "germanium",
-   "also_about": [
-    "osteoporosis",
-    "cancer"
-   ],
-   "facet": "physiology",
-   "question": "What are the signs of germanium deficiency?",
-   "answer_short": "Wallach writes that germanium deficiency typically shows up as a severely weakened immune system, arthritis, osteoporosis, low energy, and cancer.",
-   "topics": [
-    "germanium",
-    "germanium deficiency",
-    "immune system",
-    "arthritis",
-    "osteoporosis",
-    "low energy",
-    "cancer"
-   ]
-  },
-  "WAL-CLM-RARE-000012": {
-   "subject": "germanium",
-   "also_about": [],
-   "facet": "protocol",
-   "question": "How much germanium should you take a day?",
-   "answer_short": "Wallach gives a germanium maintenance dose of 20 to 30 mg a day, with 50 to 100 mg a day commonly used for a serious illness that requires more oxygen in the body.",
-   "topics": [
-    "germanium",
-    "germanium dose",
-    "supplement",
-    "mg per day",
-    "oxygen",
-    "serious illness"
-   ]
-  },
   "WAL-CLM-RARE-000013": {
    "subject": "germanium",
    "also_about": [],
@@ -32841,7 +32604,7 @@
    ],
    "facet": "physiology",
    "question": "What are the signs of iron deficiency?",
-   "answer_short": "Wallach's iron-deficiency signs include microcytic anemia, cracked mouth corners, anorexia, brittle nails, confusion, constipation, depression, dizziness, difficulty swallowing, fatigue, fragile bones, GI upset, growth retardation, headaches, ice eating (pica), irritability, and palpitations.",
+   "answer_short": "Wallach's iron-deficiency signs include microcytic anemia, fatigue and listlessness, palpitations (especially on exertion), poor memory and concentration, a sore tongue, cracked mouth corners, brittle nails, anorexia and pica (ice eating), confusion, depression, dizziness, difficulty swallowing, constipation and GI upset, fragile bones, growth retardation, headaches, and irritability.",
    "topics": [
     "iron",
     "iron deficiency",
@@ -32850,7 +32613,10 @@
     "fatigue",
     "depression",
     "brittle nails",
-    "palpitations"
+    "palpitations",
+    "symptoms",
+    "brain-fog",
+    "deficiency"
    ]
   },
   "WAL-CLM-DDDL-000041": {
@@ -32955,11 +32721,12 @@
     "congestive_heart_failure",
     "dementia",
     "fibromyalgia",
-    "wernicke_korsakoff_syndrome"
+    "wernicke_korsakoff_syndrome",
+    "intelligence"
    ],
    "facet": "physiology",
    "question": "What are the signs of vitamin B1 deficiency?",
-   "answer_short": "Wallach ties thiamine (B1) deficiency to anxiety, hysteria, confusion, nausea, depression, anorexia, muscular weakness, fibromyalgia, beriberi (with congestive heart failure and Korsakoff/Wernicke-Korsakoff dementia), paralysis, and peripheral neuropathies.",
+   "answer_short": "Wallach ties thiamine (B1) deficiency to anxiety, hysteria, confusion and nausea, depression, anorexia and appetite loss, fatigue, muscular weakness, fibromyalgia, peripheral neuropathies and paralysis, and — as it worsens — beriberi with congestive heart failure and Korsakoff/Wernicke-Korsakoff dementia.",
    "topics": [
     "vitamin b1",
     "thiamine",
@@ -32968,7 +32735,10 @@
     "heart failure",
     "dementia",
     "fibromyalgia",
-    "depression"
+    "depression",
+    "symptoms",
+    "fatigue",
+    "heart-failure"
    ]
   },
   "WAL-CLM-EPIGEN-000112": {
@@ -33084,11 +32854,13 @@
     "anemia",
     "depression",
     "psychosis",
-    "achlorhydria"
+    "achlorhydria",
+    "dementia",
+    "neuropathy"
    ],
    "facet": "physiology",
    "question": "What are the signs of vitamin B12 deficiency?",
-   "answer_short": "Wallach's signs of B12 (cobalamin) deficiency include absent stomach acid, anemia, birth defects, constipation, depression, dizziness, labored breathing, fatigue, geographic tongue, headache, irritability, moodiness, numbness, palpitations, psychosis, and spinal cord degeneration.",
+   "answer_short": "Wallach's B12 (cobalamin) deficiency signs include pernicious anemia, absent stomach acid, spinal cord degeneration and nerve demyelination with numbness, dementia and neuropsychiatric changes (depression, moodiness, irritability, psychosis), a sore or geographic tongue, fatigue and weakness, dizziness, labored breathing, palpitations, headache, constipation, birth defects, and liver disease.",
    "topics": [
     "vitamin b12",
     "cobalamin",
@@ -33097,7 +32869,11 @@
     "depression",
     "numbness",
     "fatigue",
-    "psychosis"
+    "psychosis",
+    "vitamin-b12",
+    "dementia",
+    "neuropathy",
+    "symptoms"
    ]
   },
   "WAL-CLM-LETS-000072": {
@@ -33258,11 +33034,12 @@
     "diarrhea",
     "insomnia",
     "eczema",
-    "canker_sores"
+    "canker_sores",
+    "pellagra"
    ],
    "facet": "physiology",
    "question": "What are the symptoms of niacin deficiency?",
-   "answer_short": "Wallach's signs of niacin (B3) deficiency include anorexia and nausea, canker sores, confusion, depression, dermatitis, diarrhea, crying jags and emotional lability, fatigue, bad breath, headache, indigestion, insomnia, irritability, limb pains, memory loss, muscular weakness, and skin eruptions with eczema.",
+   "answer_short": "Wallach's niacin (B3) deficiency signs include anorexia and nausea, indigestion and diarrhea, canker sores, dermatitis and skin eruptions with eczema, confusion and memory loss, depression, emotional lability and crying jags, fatigue, insomnia, irritability, headache, bad breath, limb pains, and muscular weakness — progressing in severe cases to pellagra.",
    "topics": [
     "vitamin b3",
     "niacin",
@@ -33271,7 +33048,11 @@
     "depression",
     "dermatitis",
     "diarrhea",
-    "insomnia"
+    "insomnia",
+    "niacin-deficiency",
+    "pellagra",
+    "beef-tongue",
+    "dementia"
    ]
   },
   "WAL-CLM-LETS-000020": {
@@ -33322,11 +33103,13 @@
     "insomnia",
     "depression",
     "tachycardia",
-    "muscle_cramps"
+    "muscle_cramps",
+    "alopecia",
+    "eczema"
    ],
    "facet": "physiology",
    "question": "What are the signs of vitamin B5 deficiency?",
-   "answer_short": "Wallach ties pantothenic acid (B5) deficiency to dermatitis, burning feet, muscle cramps, loss of appetite, anemia, a quarrelsome and sullen attitude, depression, insomnia, a depressed immune system, rapid heartbeat, fainting, and gastrointestinal distress.",
+   "answer_short": "Wallach ties pantothenic acid (B5) deficiency to burning feet, dermatitis and eczema, hair loss, muscle cramps, appetite loss, anemia, depression and a quarrelsome, sullen mood, insomnia, a depressed immune system, low blood pressure with a rapid heartbeat, fainting, and gastrointestinal distress.",
    "topics": [
     "vitamin b5",
     "pantothenic acid",
@@ -33335,7 +33118,12 @@
     "muscle cramps",
     "depression",
     "insomnia",
-    "fainting"
+    "fainting",
+    "vitamin-b5",
+    "pantothenic-acid",
+    "vitamin-deficiency",
+    "hair-loss",
+    "fatigue"
    ]
   },
   "WAL-CLM-RARE-000236": {
@@ -33364,11 +33152,13 @@
     "depression",
     "stomatitis",
     "vomiting",
-    "intelligence"
+    "intelligence",
+    "anemia",
+    "acne"
    ],
    "facet": "physiology",
    "question": "What are the signs of vitamin B6 deficiency?",
-   "answer_short": "Wallach's signs of pyridoxine (B6) deficiency include depression and mental confusion, inflammation and lesions of the oral mucous membranes, nausea, vomiting, PMS, seborrheic dermatitis, carpal tunnel syndrome, TMJ problems, peripheral neuritis, ataxia, head tics (Tourette's syndrome), and seizures.",
+   "answer_short": "Wallach's pyridoxine (B6) deficiency signs include depression and mental confusion, acne and seborrheic dermatitis, hair loss, anemia and fatigue, inflammation and lesions of the oral mucous membranes, nausea and vomiting, PMS, carpal tunnel syndrome, TMJ problems, peripheral neuritis, ataxia, head tics (Tourette's syndrome), and seizures.",
    "topics": [
     "vitamin b6",
     "pyridoxine",
@@ -33377,7 +33167,10 @@
     "nausea",
     "vomiting",
     "pms",
-    "carpal tunnel"
+    "carpal tunnel",
+    "b-vitamins",
+    "symptoms",
+    "nutrition"
    ]
   },
   "WAL-CLM-EPIGEN-000108": {
@@ -33442,11 +33235,12 @@
    "subject": "potassium",
    "also_about": [
     "hypokalemia",
-    "cardiac_failure"
+    "cardiac_failure",
+    "intelligence"
    ],
    "facet": "physiology",
    "question": "What are the signs of low potassium?",
-   "answer_short": "Wallach says low potassium first shows as muscular weakness and mental apathy, with its most serious form being hypokalemic cardiac failure, and that losses climb quickly with diuretics, heavy sweating, vomiting, or diarrhea.",
+   "answer_short": "Wallach says low potassium first shows as muscular weakness and mental apathy, with its most serious form being hypokalemic (low-potassium) heart failure; losses climb quickly with diuretics, heavy sweating, vomiting, or diarrhea.",
    "topics": [
     "potassium",
     "deficiency",
@@ -33454,7 +33248,9 @@
     "mental apathy",
     "hypokalemia",
     "cardiac failure",
-    "diuretics"
+    "diuretics",
+    "heart-health",
+    "electrolytes"
    ]
   },
   "WAL-CLM-RARE-000156": {
@@ -33788,25 +33584,7 @@
     "cardiomyopathy",
     "keshan_disease",
     "multiple_sclerosis",
-    "scoliosis"
-   ],
-   "facet": "physiology",
-   "question": "What diseases are caused by a selenium deficiency?",
-   "answer_short": "Wallach lists diseases of selenium deficiency including HIV/AIDS, anemia, age spots, fatigue, muscle weakness, scoliosis, muscular dystrophy, congenital cystic fibrosis, cardiomyopathy (Keshan disease), multiple sclerosis, heart palpitations, and liver cirrhosis.",
-   "topics": [
-    "selenium",
-    "deficiency",
-    "hiv",
-    "aids",
-    "muscular dystrophy",
-    "cystic fibrosis",
-    "cardiomyopathy",
-    "multiple sclerosis"
-   ]
-  },
-  "WAL-CLM-RARE-000270": {
-   "subject": "selenium",
-   "also_about": [
+    "scoliosis",
     "pancreatitis",
     "als",
     "parkinsons_disease",
@@ -33817,11 +33595,17 @@
     "sickle_cell_anemia"
    ],
    "facet": "physiology",
-   "question": "What diseases does selenium deficiency cause?",
-   "answer_short": "Wallach continues the list of selenium-deficiency diseases with pancreatitis, pancreatic atrophy, ALS, Parkinson's, Alzheimer's, adrenoleukodystrophy, infertility, low birth weight, high infant mortality, SIDS, cancer, clinical AIDS, and sickle cell anemia.",
+   "question": "What diseases are caused by a selenium deficiency?",
+   "answer_short": "Wallach's selenium-deficiency disease list is long: cardiomyopathy (Keshan disease) and heart palpitations, muscular dystrophy, muscle weakness and fatigue, scoliosis, cystic fibrosis, multiple sclerosis, ALS, Parkinson's and Alzheimer's, adrenoleukodystrophy, anemia and sickle cell anemia, liver cirrhosis, pancreatitis and pancreatic atrophy, cancer, HIV/AIDS, infertility, low birth weight, high infant mortality and SIDS, and age spots.",
    "topics": [
     "selenium",
     "deficiency",
+    "hiv",
+    "aids",
+    "muscular dystrophy",
+    "cystic fibrosis",
+    "cardiomyopathy",
+    "multiple sclerosis",
     "pancreatitis",
     "als",
     "parkinson's",
