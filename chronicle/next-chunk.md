@@ -1,35 +1,43 @@
-# ★ NEXT SESSION — the twin-card class is DEAD (gated + green); read first
+# ★ NEXT SESSION — try Vitamin D again (the header), on a clean slate
 
-The recurring duplicate-cards problem that ate three days is **fixed for good**. Nothing is pending
-or broken.
+The blocker that made Vitamin D fail 5–6 times is FIXED (below), the workbench is tidy, and the board
+is 90/90. This session is set up for one thing: a fresh Vitamin-D element-header attempt.
 
-## What shipped
-- **`search_no_twin_questions`** — a permanent gate (the missing fence). For every entity page it REDs
-  if two cards ask the same question after synonym-folding (signs=symptoms, dangerous=harmful,
-  deficiency=low). It reads the authored questions in `search-enrichment.json`, grouped by subject.
-  Deterministic fold-equality, **empty allowlist**, negative test
-  `tools/test_search_no_twin_questions.py` (ENFORCE_GREEN on). This is the CROSS-BOOK sibling of
-  `no_duplicate_claims` (which was blind to cross-book synonym twins — see
-  [[duplicate-gate-blind-three-ways]]). It is the successful redo of the Aug-6 `no_duplicate_questions`
-  gate that was deleted for overreach.
-- **All 19 twins resolved** under Luneth's per-pair review — 2 on vitamin-D, then 17 (14 signs/symptoms
-  merges + selenium + mercury + a germanium-dose delete). MODEL: keep the fuller book's card, fold the
-  other book's unique signs into its answer_short, un-enrich the twin. **Both claims stay sealed; no
-  claim was deleted — only redundant search cards collapsed.**
+## Why it will go differently this time
+The header kept regressing to small static SVG diagrams even though Luneth asked for bold, beautiful
+sun imagery. Root cause (postmortem: `chronicle/vitamin-d-header-regression-postmortem-2026-08-07.md`):
+the 2026-08-03 sweep LIBERATED the `element-headers` skill ("not limited to static SVG; animation,
+imagery, canvas encouraged") but left ~10 always-loaded header MEMORIES enforcing the OLD static-SVG
+regime (a 12px label ceiling, "copy the last header," "fewest marks," "undershoot"). Memory loads every
+turn; a skill only on match — so the stale memories won every turn. **Now fixed:** three memories
+reframed + a new `always-loaded-memory-overrides-on-demand-skill` meta-lesson. Trust the skill.
 
-## State of the world
-- **`master`** = campaign tip, board **90/90**, gate GREEN (0 twins across 513 subjects).
-  `search-enrichment.json` 2159 → **2140 entries** (19 twin cards removed). Corpus claims UNCHANGED
-  (kv unchanged — enrichment is unsealed).
-- Commits: `cb970149` (gate) · `6dcadad2` (vitamin-D) · `dda1414e` (the 17). Creator's Log
-  `lg_msjferz1_y165ah`. Branch `twin-question-gate` was ff-merged and can be deleted (local-only).
+## How to run the Vitamin-D attempt
+1. READ `.claude/skills/element-headers` (liberated) + `chronicle/header-research/vitamin-d.md` +
+   `chronicle/header-research/design-prep/vitamin-d.md` + `chronicle/demo-revamp-brief.md` (his verdicts).
+2. His direction (demo-revamp-brief): go DEEP on SUN EXPOSURE; beautiful sun imagery — *"go crazy with
+   sun / sunlight / beach / skin — fun (but adult, through solid modern design)"*; fight
+   cholesterol-avoidance (eggs) and sunscreen; tie it all to vitamin D. Honest limits: Wallach attacks
+   the FEAR of skin cancer, not the oncology; he is two-sided on sunscreen (brief §"TWO HONEST LIMITS").
+3. Build **4 genuinely distinct mockups** — different layout AND illustration, NOT four static diagrams.
+   Reach for the form the content deserves (canvas, animation, real imagery). Tone to beat: the archived
+   r3 panel A (a day→night sun canvas) — the ONE panel that hit the bar — at
+   `temporary/recycling-bin/_purged-2026-08-07/vitamin-d-demos-r3.html`.
+4. Mock up in the real container via `python tools/mockup_harness.py`. Luneth picks → port composed →
+   **STOP for his visual sign-off**. Never build live without his explicit approval.
 
-## If you want to go further (optional, not pending)
-The gate catches fold-EQUAL twins only. ~130 **borderline** pairs (question-similarity 0.5–0.99 but not
-fold-equal — e.g. "what does deficiency do to your bones?" vs "signs of deficiency") were measured but
-are NOT gated: they need human judgment (merge vs keep-as-distinct-subquery), which a machine can't make
-without guessing a threshold. That's a labeled WISH in the gate's block comment. Raise it only if Luneth
-asks.
+## Where things are (temporary/ was reorganized this session)
+- `temporary/completed-headers/` — 5 live headers (Ca, Cu, Zn, Mg, Vit A)
+- `temporary/awaiting-refinement/` — Vitamin C r2, Vitamin E (liked, not finalized)
+- `temporary/demos/` · `images/` · `header-fragments/` · `build-scripts/` · `notes/` · `recycling-bin/`
+- `temporary/demo-index.html` — the workbench (regenerated, no dead links)
+- Old Vitamin-D rounds live in `recycling-bin/_purged-2026-08-07/` if you want to see what failed.
 
-# ⚠ DELIBERATELY NOT RESTORED — HIS DECISION (still binding)
-The 18 claims deleted Aug 3–5 and the 88 deleted in the dedup STAY DELETED — each his own ruling.
+## Board / repo
+- Invariants 90/90. Committed + pushed to origin/master this round. `temporary/` is fully OFF GitHub now
+  (the one force-added file was untracked); it remains in old history only (a scrub needs a force-push — ask first).
+
+# ⚠ Still binding
+The twin-card gate (`search_no_twin_questions`) and the Aug 3–5 / dedup deletions stay as they are. OPEN
+for Luneth's call (postmortem §"Flagged"): the 5 header-memories → skill consolidation, the `figure.width`
+mech/fork/rail enum, grouping the big `temporary/` work folders, and a `/consolidate-memory` pass.
