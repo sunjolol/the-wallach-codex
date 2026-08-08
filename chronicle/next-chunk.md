@@ -10,8 +10,17 @@ ALL — **not the info, the PRESENTATION**: "clearly lower quality than the rest
 DIAGNOSIS (a diagnosis, NOT a ban on any shape): the r1 visuals drifted to infographic/diagram idioms — a
 labelled dose gauge, a stat + draining vessel, a numbered timeline, comparison cards — instead of the singular,
 beautiful, often typographic/organic HERO images that carried niacin (three monumental Ds, the glowing furnace)
-and B1 (heart↔mind poles, rice grains). Also: the epilepsy concept deviated to a 1.42rem pull-quote — keep the
-standard bordered ~1.04rem quote (`.xxx-quote`, identical since potassium). **NO rule was made between the B1
+and B1 (heart↔mind poles, rice grains). QUOTE REGRESSION (corrected — Luneth caught it with a before/after, and I had WRONGLY said I
+“didn’t change the quote styling”): my header demos dropped the established app quote component
+**`.ds-pull-quote`** — a large italic pull-quote with the giant “ glyph (::before, accent), a **`.ds-mark`**
+warm-yellow highlight on the key phrase, a `footer` attribution (“— DR. JOEL WALLACH · BOOK”), plus the
+“General education, not medical advice” disclaimer (design-system.css:475 + :749; STYLE-GUIDE.md; rendered
+live by entity-page.ts) — in favour of a plain hand-rolled `border-left` quote (~1.04rem) with a mono
+claim-id line. This regression is in **niacin, B1 AND B6** (I mis-diagnosed it as “only the epilepsy
+concept” by comparing B6 to niacin/B1, which had ALSO already regressed — a false baseline). Fix on the B6
+retry AND when refining niacin/B1: use the real **`.ds-pull-quote` + `.ds-mark`** treatment, not a custom
+quote. DEEPER LESSON (the likely root of the “lower quality”): build header figures with the real
+design-system components, not hand-rolled approximations. **NO rule was made between the B1
 demo (approved) and the B6 demo (rejected)** — this was execution, not a restriction; the earlier pro-HERO note
 ("a boxed loop / bar chart / stat-tile reads boring/clinical") argues AGAINST the clinical drift, so it was a
 failure to heed my own note. RETRY: rebuild each B6 concept toward a striking hero with real craft (material +
