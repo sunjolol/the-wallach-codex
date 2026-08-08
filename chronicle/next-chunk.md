@@ -4,6 +4,26 @@ Eleven banked demo sets and counting; the clean-slate method (trust the LIBERATE
 landing consistently. Board 90/90. Run genesis, then **ask Luneth** whether to REFINE a banked set toward
 porting, or BUILD more.
 
+## ⚠ B6 (Pyridoxine) — r1 REJECTED (2026-08-08), rebuild FRESH next session
+Built 5 concepts (dial · epilepsy twin-EEG · drug-drain · pregnancy arc · carpal-tunnel swap); Luneth rejected
+ALL — **not the info, the PRESENTATION**: "clearly lower quality than the rest … it's the way it's presented."
+DIAGNOSIS (a diagnosis, NOT a ban on any shape): the r1 visuals drifted to infographic/diagram idioms — a
+labelled dose gauge, a stat + draining vessel, a numbered timeline, comparison cards — instead of the singular,
+beautiful, often typographic/organic HERO images that carried niacin (three monumental Ds, the glowing furnace)
+and B1 (heart↔mind poles, rice grains). Also: the epilepsy concept deviated to a 1.42rem pull-quote — keep the
+standard bordered ~1.04rem quote (`.xxx-quote`, identical since potassium). **NO rule was made between the B1
+demo (approved) and the B6 demo (rejected)** — this was execution, not a restriction; the earlier pro-HERO note
+("a boxed loop / bar chart / stat-tile reads boring/clinical") argues AGAINST the clinical drift, so it was a
+failure to heed my own note. RETRY: rebuild each B6 concept toward a striking hero with real craft (material +
+grounding are solid). Rejected r1 files (reference for what to RAISE ABOVE, never repeat): temporary/header-
+fragments/vb6-frags/ (vb6-dial/seizure/drain/maternal/scalpel) + temporary/awaiting-refinement/vitamin-b6-demos-r1.html.
+GROUNDING (verified 2026-08-08, reuse): all 12 non-dead ids live; **dead id RARE-000237 → substitute EPIGEN-000108 +
+LETS-000027**. By concept: A dial (LETS-000028 toxicity + EPIGEN-000108 deficiency + EPIGEN-000116 window) · B
+epilepsy (LETS-000267 + LETS-000233/000120 + EPIGEN-000108 Tourette) · C drain (IMMORT-000009 pill + RARE-000286
+BP-drugs) · D pregnancy (IMMORT-000008 + LETS-000407 breast-milk + LETS-000210 preconception) · E carpal-tunnel
+(LETS-000205 + LETS-000383 + EPIGEN-000108). Target 100 mg (EPIGEN-000116 25–100; older 50 mg LETS-000063; the
+2.2 mg RDA on that row is the decoy).
+
 ## Banked demos (all in `temporary/awaiting-refinement/`, all Luneth-approved as starting points)
 - **vitamin-d-demos-r4.html** — 4 sun-forward (A sun+cholesterol, B 400%/sunscreen, C sun-dose, D Goldilocks). Round-closed `ceaaa3d6`.
 - **vitamin-k-demos-r1.html** — 4 (A Two Jobs, B Homemade Half, C Read the Bruise, D Activator X). "All 4 good, some tweaks."
