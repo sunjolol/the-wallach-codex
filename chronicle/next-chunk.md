@@ -1,47 +1,68 @@
 # ★ NEXT SESSION — element-header demos continue (the clean-slate method is working)
 
-Nine banked demo sets and counting; the clean-slate method (trust the LIBERATED `element-headers` skill) is landing
-consistently. Board 90/90. Run genesis, then **ask Luneth** whether to REFINE a banked set toward porting, or BUILD more.
+Ten banked demo sets and counting; the clean-slate method (trust the LIBERATED `element-headers` skill) keeps
+landing consistently. Board 90/90. Run genesis, then **ask Luneth** whether to REFINE a banked set toward
+porting, or BUILD more.
 
 ## Banked demos (all in `temporary/awaiting-refinement/`, all Luneth-approved as starting points)
 - **vitamin-d-demos-r4.html** — 4 sun-forward (A sun+cholesterol, B 400%/sunscreen, C sun-dose, D Goldilocks). Round-closed `ceaaa3d6`.
 - **vitamin-k-demos-r1.html** — 4 (A Two Jobs, B Homemade Half, C Read the Bruise, D Activator X). "All 4 good, some tweaks."
 - **vitamin-b12-demos-r1.html** — 6 (A Red Crystal **[his FAVORITE]**, B Made by Microbes, C What Survives, D Losing the Insulation, E Why B12 energises you, F Why you're secretly low). E/F = the ENERGY angle.
+- **vitamin-b3-demos-r1.html** — 4, vitamin/orange, the coenzyme-and-pellagra vitamin. A "The Three Ds" (typographic pellagra triad — Diarrhea/gut · Dermatitis/skin · Dementia/mind under a PELLAGRA band, +retardation + beef-tongue; EPIGEN-000037/RARE-000235) · B **[FAVORITE]** "What burns your food" (the glowing NAD·NADP furnace — carbs+fat+protein converge in, Energy radiates out, animated flow+glow; EPIGEN-000037, the pack's SOLE mechanism claim) · C **[FAVORITE]** "Why time-release?" (the flush — a big-dose bloom flaring vs a time-release calm, with a ⚠ note that the flush→time-release CAUSATION is pharmacology, not one Wallach sentence; LETS-000020 + the recurring "time-release" qualifier) · D "The mind's default" (the identical 450 mg·time-release chip down anxiety/bipolar/dementia/hysteria/insomnia/headache under "organic brain syndrome"; LETS-000388 + 6 per-condition protocols). Luneth: "all are good, especially B and C." ALL 16 cited ids verified LIVE, **niacin.md dossier CLEAN** (no dead ids). A/D both touch the mind but stay distinct (A=deficiency collapse, D=therapeutic breadth). lede + why (100 mg = top of Epigenetics 10–100 mg EPIGEN-000114; older 50 mg LETS-000059 a footnote, newest-wins) await ratification. Round-closed this session.
 - **iron-demos-r1.html** — 4, FIRST mineral / blue (A oxygen-seat+CO, B pica+trial, C earth-core, D "it was never the iron" **[his BEST]**). "some combination of them all will likely be the final state."
-- **iodine-demos-r1.html** — 4, mineral / blue (A the dial hypo↔hyper mirror, B copper-twist **[the "wow"]**, C sea-to-gland gradient, D goitrogen block). Round-closed `3fc5a40f`. B/D share a theme → only ONE ships; lede+why (230 mcg) await ratification (canon coverage_kind still "unspecified").
-- **amino-trio-demos-r1.html** — FIRST amino_acid / green AND first GROUP page: "the three Wallach added" = arginine + taurine + tyrosine (each too thin solo; all share IMMORT-000058). 7 concepts, **dopamine-forward** at his call: A roster · B disease-triptych · C nine-vs-twelve · D from-dinner-to-dopamine pathway (EPIGEN-000053) · E tyrosine's fork · F when-dopamine-runs-dry Parkinson's (LETS-000396) · G amino-for-hard-times stress (EPIGEN-000057). Banked "workable, needs some changes." He SCRAPPED a body-map + an anatomical eye as amateurish → **hand-drawn anatomy is a weak spot; favor abstract/flow/molecular/typographic.** Unbuilt-but-offered deeper dopamine angles: drive/reward hook · dopamine→noradrenaline→adrenaline cascade · depression protocol (LETS-000244) · rate-limiting "gentle vs L-Dopa."
-- **chromium-demos-r1.html** — mineral / blue, one of the richest palettes. 5 concepts: A vicious-circle (sugar⟳chromium loop, RARE-000039+IMMORT-000091) · B **[KEPT as-is]** a-third-more-life +33.3% lifespan bars (RARE-000124) · C 1-in-100 grain field (99 ghosts, 1 glows; RARE-000074) · D **[KEPT as-is]** GTF gem emblem (DDDL-000200) · E dark provocation "a whole specialty wiped out" (DDDL-000046). **REVAMP LESSON (pro-ambition, not restrictive):** Luneth called A/C/E "very boring/clinical" (a boxed loop, a bar chart, a stat dashboard) → the fix was a **visceral hero visual + motion** (glowing loop, one grain among 99, a bold dark provocation); B/D never needed it (each already had a hero — the +33.3% reversal, the Cr³⁺ gem). A's ring took extra passes (caption overlap → arrowhead overlap → a stuttering animation) and is now **RESOLVED** — arrowheads removed (circulation via the central ↻ + the ↓/↑ caption tags), ring reworked to a seamless rigid rotation (transform-rotate + pathLength=380); Luneth confirmed. **That was a VERIFICATION miss, not a design one:** I claimed "fixed" ~3× from editing code — always view the render and confirm the exact flagged thing before saying fixed. Design ambition + animation stay fully encouraged. Target 620 mcg/day (Wallach-sourced, not a gap). Unbuilt angles: behavioral (sugar-crash→ADHD/depression/"Jekyll rages"/allergic shiners); serum-decline curio (1948→1985, numbers claim_text-only).
-- **boron-demos-r1.html** — mineral / blue, the bone-and-hormone trace mineral. 4 concepts: A "Eight Days" (the 8-day flip — ↓40% Ca + ↓33% Mg urinary loss, estradiol ×2 + testosterone ×2, on an 8-day stopwatch; IMMORT-000043, the wow) · B "The Seal" **[reworked v2]** (without-boron glass drains vs with-boron glass held behind a boron seal — a loss-comparison that actually shows retention; IMMORT-000042) · C "Two Jobs" (dual identity: hex-lattice bone-density ↔ boron keystone ↔ endocrine trio ovaries/testes/adrenals; IMMORT-000043) · D "The Latecomer" (quiet editorial timeline c.1980 chicks→1990 humans; IMMORT-000042). Luneth: A/C/D good on sight; B "needs work" — the first jar-with-lid was **meaningless + the "boron seal" label misaligned** (a floating HTML overlay I failed to scrutinize) → rebuilt as the loss-comparison, all labels SVG-internal, alignment verified numerically (BORON cx = seal cx), approved "good enough." **D's 1990 / c.1980 dates are claim_text-only (NOT verbatim) → weakest-grounded, shown as our editorial timeline.** lede + why (9.2 mg — Epigenetics 1–6 mg per 100 lb → 6 × 1.54) await ratification. boron.md dossier was CLEAN (no dead claim-ids).
-- **potassium-demos-r1.html** — mineral / blue (the intracellular electrolyte). 5 concepts: A "Can't bank it" (flow-through funnel — 90% out in urine, ~0 stored → why 5,000 mg/day; IMMORT-000193, the signature) · B "5,000 vs 99" (daily need vs FDA 99 mg supplement cap, framed HONESTLY — diet target + safety cap, NOT "FDA over-restrictive / take 50 pills"; EPIGEN-000463) · C "The inside cation" (K⁺ inside the cell + Na/Ca partnerships; RARE-000152/153) · D "The narrow window" (**most-visceral pick** — an ECG flatlining both ends: too little → cardiac failure, too much → cardiac arrest; IMMORT-000194 + LETS-000026) · E "Where it comes from" (**richest-foods table, USDA reference**). Luneth: "looks good"; the original E (K-40 "you're radioactive" curio) was **"really scuffed" → CUT**; he asked for a foods table "same as ORAC." **KEY PRECEDENT — first external-reference data in the project:** Wallach gives NO food-potassium numbers (searched every verbatim), so the foods table uses USDA FoodData Central (2019, via NIH ODS) per-serving values, ORAC-style, labeled loud as REFERENCE (not Wallach); permitted by reference-when-Wallach-silent. 5,000 mg target verified clean at his challenge (IMMORT-000193 daily-intake prose, NOT the decoy sea-water 5,000 ppm). DOSSIER DRIFT: 3 dead ids (IMMORT-000192, EPIGEN-000094, RARE-000154) → live subs (RARE-000152/153/187, IMMORT-000194, IMMORT-000193). lede + why (5,000 mg direct) await ratification.
+- **iodine-demos-r1.html** — 4, mineral / blue (A the dial hypo↔hyper, B copper-twist **[the "wow"]**, C sea-to-gland gradient, D goitrogen block). Round-closed `3fc5a40f`. B/D share a theme → only ONE ships; lede+why (230 mcg) await ratification (canon coverage_kind still "unspecified").
+- **amino-trio-demos-r1.html** — FIRST amino_acid / green AND first GROUP page: arginine + taurine + tyrosine (each too thin solo; all share IMMORT-000058). 7 concepts, **dopamine-forward**. Banked "workable, needs some changes." Luneth SCRAPPED a body-map + an anatomical eye as amateurish → **hand-drawn anatomy is a weak spot; favor abstract/flow/molecular/typographic.**
+- **chromium-demos-r1.html** — mineral / blue, one of the richest palettes. 5 concepts: A vicious-circle (sugar⟳chromium loop) · B **[KEPT]** +33.3% lifespan bars · C 1-in-100 grain field · D **[KEPT]** GTF gem emblem · E dark provocation. **REVAMP LESSON:** a boxed loop / bar chart / stat dashboard reads "boring/clinical" → the fix is a **visceral hero visual + motion**; B/D never needed it (each already had a hero). Target 620 mcg/day (Wallach-sourced).
+- **boron-demos-r1.html** — mineral / blue, the bone-and-hormone trace mineral. 4 concepts: A "Eight Days" (the 8-day flip, IMMORT-000043, the wow) · B "The Seal" (reworked to a without-vs-with loss-comparison, IMMORT-000042) · C "Two Jobs" (bone-density ↔ endocrine trio) · D "The Latecomer" (dates claim_text-only, weakest-grounded). lede + why (9.2 mg) await ratification. boron.md was CLEAN.
+- **potassium-demos-r1.html** — mineral / blue (the intracellular electrolyte). 5 concepts: A "Can't bank it" (90% out in urine → 5,000 mg/day; IMMORT-000193) · B "5,000 vs 99" (daily need vs FDA cap, framed HONESTLY) · C "The inside cation" · D "The narrow window" (**most-visceral** — an ECG flatlining both ends) · E "Where it comes from" (**first external USDA foods table**, ORAC-style, labeled REFERENCE). lede + why (5,000 mg direct) await ratification.
 - vitamin-c-demos-r2.html, vitamin-e-demos.html — older, liked, not finalised.
 
 ## The workflow (standing policy)
 - Header/demo HTML lives in `temporary/awaiting-refinement/` **by default** until he graduates it to
   `temporary/ready-to-be-ported/`. Port to LIVE only from there, with explicit approval + STOP-for-sign-off. [[header-demos-default-to-awaiting-refinement]].
-- MOVING a demo between `temporary/` depths → **regenerate via `tools/mockup_harness.py` to the new path, never `mv`** (the `../dashboard` depth is baked in).
-- Per-element process: read `chronicle/header-research/<el>.md` (+ `design-prep/<el>.md`) → pull verbatims BY CLAIM-ID **and verify each id is still
-  in the sealed corpus** (see drift flag) → build **genuinely-distinct** fragments (`mockup_harness --category <mineral|vitamin|amino_acid|…>`;
-  mineral=blue #2b6fb0, vitamin=orange, amino=green #5aa82c, omega=purple) → `mockup_measure` (every scale 1.000; fixed-px SVG + CSS-gradient art avoid
-  the scale trap; the in-app browser may refuse file:// on a new file → screenshot via a puppeteer script with NODE_PATH set to repo node_modules) →
-  park → STOP for his pick. **Cast a wide net — 4+ concepts, or a GROUP page when the element is too thin solo** (the amino trio proved the group pattern; reuse it for other thin clusters).
-- **Give every figure a HERO moment — be ambitious.** A boxed loop / bar chart / stat-tile dashboard reads "boring/clinical" to Luneth; a visceral
-  centrepiece + motion is what lands (chromium revamp, B12 crystal, iron seat). This is a push toward BOLD, not a list of banned shapes.
-- The benefit panel must land a visceral **"oh, so THIS is why"** — personal, topical ("Ever wonder why X? Here's the Y"). [[element-header-benefit-panel-needs-the-aha]], [[element-header-illustration-failure-modes]].
-- **Verify with your eyes, not the code.** When he flags a visual issue, view the actual rendered output (screenshot/zoom) and confirm the EXACT thing before claiming fixed; for motion you can't screenshot, reason honestly about the mechanism. (Chromium-A cost several rounds because I claimed "fixed" from reading code.) [[screenshot-verify-visual-chunks]], [[verification-doctrine]].
+- MOVING a demo between `temporary/` depths → **regenerate via `tools/mockup_harness.py` to the new path, never `mv`** (the `../../dashboard` depth is baked in).
+- **Fragments are written via `safe_write` with a `.htmlfrag` suffix, NOT `.html`.** A fragment is partial HTML;
+  safe_write's `.html` shape-check rejects anything not ending in `</html>`, so a non-.html suffix skips it while
+  the harness still reads any path. The Write tool is hook-blocked for ALL repo files (incl. gitignored `temporary/`),
+  and `pre_bash_guard`'s BANNED_DIRS do NOT include `temporary/` — so the clean UTF-8-safe path is: stage the
+  fragment in the scratchpad, then `safe_write rewrite temporary/header-fragments/<el>-frags/<el>-x.htmlfrag`.
+  The assembled demo (a full `.html` ending in `</html>`) is written directly by the harness.
+- Per-element process: read `chronicle/header-research/<el>.md` → pull verbatims BY CLAIM-ID **and verify each id is
+  still in the sealed corpus** (`claim_review.py --ids …`) → build **genuinely-distinct** fragments
+  (`mockup_harness --category <mineral|vitamin|amino_acid|…>`; mineral=blue #2b6fb0, vitamin=orange #ff7e3c
+  [DEFAULT, no override], amino=green #5aa82c, omega=purple) → `mockup_measure` (every scale 1.000; fixed-px SVG +
+  CSS-gradient art avoid the trap — a responsive `width:100%` SVG WILL flag, give figures a fixed authored width) →
+  screenshot via a puppeteer script (force the reveal class e.g. `.nia-in` so nothing shoots blank; the in-app
+  browser may refuse file:// on a new file) → park → STOP for his pick. **Cast a wide net — 4+ concepts, or a GROUP
+  page when the element is too thin solo.**
+- **Give every figure a HERO moment — be ambitious.** A boxed loop / bar chart / stat-tile dashboard reads
+  "boring/clinical"; a visceral centrepiece + motion is what lands (chromium revamp, B12 crystal, iron seat, B3 furnace).
+- The benefit panel must land a visceral **"oh, so THIS is why"** — personal, topical. [[element-header-benefit-panel-needs-the-aha]], [[element-header-illustration-failure-modes]].
+- **Verify with your eyes, not the code.** View the actual rendered output (screenshot/zoom) and confirm the EXACT
+  flagged thing before claiming fixed; for motion you can't screenshot, reason honestly about the mechanism. [[screenshot-verify-visual-chunks]], [[verification-doctrine]].
 
 ## Next task (ask Luneth via genesis)
 Either **(a) REFINE** a banked set toward porting (he picks element + concept/combination), graduate to `ready-to-be-ported/`, port LIVE
-(needs the composed `blocks[]` shape + **a live `--ds-accent` category override for anything non-mineral/vitamin** — amino=green + omega=purple
-are NOT in drawer-knowledge.css yet, only mineral is — + his STOP-for-sign-off); OR **(b) BUILD** the next element. Remaining dossiers:
-B1 B2 B3 B5 B6 B9 · manganese vanadium germanium sodium sulfur phosphorus silica cobalt silver ·
-choline flavonoids · the remaining amino acids (phenylalanine, lysine, methionine, tryptophan, histidine, leucine, isoleucine, valine, threonine — several are thin → candidate group pages).
+(needs the composed `blocks[]` shape + **a live `--ds-accent` category override for amino=green + omega=purple** — NOT
+yet in drawer-knowledge.css; mineral + vitamin[default orange] already resolve — + his STOP-for-sign-off); OR **(b) BUILD**
+the next element. Remaining dossiers:
+B1 B2 B5 B6 B9 · manganese vanadium germanium sodium sulfur phosphorus silica cobalt silver ·
+choline flavonoids · the remaining amino acids (phenylalanine, lysine, methionine, tryptophan, histidine, leucine, isoleucine, valine, threonine — several thin → candidate group pages).
 
 ## Still binding / OPEN for Luneth (carried forward)
-- **Dossier drift — VERIFY every cited claim-id before quoting.** Dossiers predate a corpus reseal, so some cited ids are dead/renumbered even
-  though the content survives. Confirmed dead so far: WAL-CLM-IMMORT-000178, WAL-CLM-RARE-000147 (iodine), WAL-CLM-DDDL-000066 (amino stance),
-  WAL-CLM-IMMORT-000087 + WAL-CLM-RARE-000116 (chromium GTF — survives in WAL-CLM-DDDL-000200), and WAL-CLM-IMMORT-000192 / -EPIGEN-000094 / -RARE-000154 (potassium — live subs RARE-000152/153/187, IMMORT-000194, IMMORT-000193). Run `claim_review.py --ids …` (it prints "not in
-  the sealed corpus") and substitute the sealed sibling. [[header-research-dossiers-exist]].
-- **Potassium target: a stale corroboration id, plus a NEW external-reference precedent.** `essentials-targets-data.json` potassium `other_claims` cites `WAL-CLM-LETS-000062` (5,500 mg) which is DEAD in the sealed corpus; the 5,500 value survives in a live True-Supplement-Need table (`POTASSIUM 1,875 mg 5,500 mg 5,500 mg`) — repoint the id (the primary 5,000 mg from `WAL-CLM-IMMORT-000193` is solid; Luneth said leave the number). The potassium foods table (concept E) is the project's **FIRST external-reference data** — USDA FoodData Central (2019) via NIH ODS, labeled REFERENCE, not Wallach — permitted by supply-reference-when-Wallach-silent. A LIVE port of any foods table needs a real data file + derive pipeline like ORAC, never hardcoded. Omega-3/6 dropped from the build list per Luneth ("stop asking about the omegas, they're already enriched") [[dont-offer-omega-headers]].
-- Deferred (postmortem §Flagged): 5 header-memories → skill consolidation; the `figure.width` mech/fork/rail enum; a supervised
-  `/consolidate-memory` pass (MEMORY.md near threshold).
+- **Dossier drift — VERIFY every cited claim-id before quoting.** Dossiers predate a corpus reseal, so some cited ids
+  are dead/renumbered even though the content survives. Confirmed dead so far: WAL-CLM-IMMORT-000178, WAL-CLM-RARE-000147
+  (iodine), WAL-CLM-DDDL-000066 (amino stance), WAL-CLM-IMMORT-000087 + WAL-CLM-RARE-000116 (chromium GTF — survives in
+  WAL-CLM-DDDL-000200), and WAL-CLM-IMMORT-000192 / -EPIGEN-000094 / -RARE-000154 (potassium — live subs
+  RARE-000152/153/187, IMMORT-000194, IMMORT-000193). **niacin.md + boron.md were CLEAN.** Run `claim_review.py --ids …`
+  and substitute the sealed sibling. [[header-research-dossiers-exist]].
+- **Potassium target: a stale corroboration id, plus the external-reference precedent.** `essentials-targets-data.json`
+  potassium `other_claims` cites `WAL-CLM-LETS-000062` (5,500 mg) which is DEAD; the 5,500 value survives in a live
+  True-Supplement-Need table — repoint the id (the primary 5,000 mg from `WAL-CLM-IMMORT-000193` is solid; Luneth said
+  leave the number). The potassium foods table (concept E) is the project's **FIRST external-reference data** — USDA
+  FoodData Central (2019) via NIH ODS, labeled REFERENCE, not Wallach — permitted by supply-reference-when-Wallach-silent.
+  A LIVE port of any foods table needs a real data file + derive pipeline like ORAC, never hardcoded. Omega-3/6 dropped
+  from the build list per Luneth [[dont-offer-omega-headers]].
+- Deferred (postmortem §Flagged): 5 header-memories → skill consolidation; the `figure.width` mech/fork/rail enum; a
+  supervised `/consolidate-memory` pass (MEMORY.md near threshold).
 - The twin-card gate (`search_no_twin_questions`) + the Aug 3–5 / dedup deletions stay as they are.
