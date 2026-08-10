@@ -1,17 +1,120 @@
-# ★ NEXT SESSION — run genesis, then CONFIRM the next element and build its header demos
+# ★ NEXT SESSION — run genesis, then ASK. Two elements now carry an UNSTATED rejection reason.
 
-**19** demo sets now sit in `temporary/awaiting-refinement/` (counted off disk, not carried forward — the
-inherited “thirteen” in this file had drifted and so did my own correction of it; recount, never copy). Board 90/90. Three elements were taken from nothing to banked sets last
-session (B9, vanadium, sodium). Run `PYTHONUTF8=1 python tools/genesis.py`, report the split, then
-**confirm with Luneth which element** — he closed the last session saying "continue with the next
-element", and the measured next-richest is **manganese (36 claims)**. Say which one you are taking and
-offer to redirect, the way vanadium and sodium were taken up.
+**20** demo sets sit in `temporary/awaiting-refinement/` (counted off disk — recount, never copy).
+Board 90/90, build parity fresh. Last session took **manganese** from nothing to two rounds and
+**both were rejected**. Run `PYTHONUTF8=1 python tools/genesis.py`, report the split, then **ask
+before building anything** — there are now two open asks whose reasons he did not give, and guessing
+at either is the single most expensive thing you can do.
 
-## ⚠⚠ FIRST THING TO RAISE — SODIUM NEEDS REFINEMENT AND HE DID NOT SAY WHAT
-`temporary/awaiting-refinement/sodium-demos-r1.html` is banked with **7 concepts** and his verdict was
-**"Good enough, but needs some refinement"** — then he closed the session without naming the changes.
-**ASK HIM WHAT TO REFINE. Do not guess, do not rebuild, do not "improve" it.** Every other element in
-the bank is either approved or has named notes; this is the only one with an unnamed outstanding ask.
+## ⚠⚠ THE TWO UNSTATED ASKS — ASK, DO NOT GUESS, DO NOT REBUILD
+1. **Sodium.** `sodium-demos-r1.html`, 7 concepts, verdict **"Good enough, but needs some
+   refinement"** — he closed without naming the changes. Still open, still unnamed.
+2. **Manganese.** Two rounds, both rejected, and the r2 verdict was **"Worse across the board than
+   the first manganese demo"** — again without naming why. See the manganese block below.
+
+**ASK HIM WHAT TO CHANGE. Do not guess, do not rebuild, do not "improve" either one.**
+
+## ✗✗ MANGANESE — r1 AND r2 BOTH REJECTED. READ THIS BEFORE TOUCHING IT.
+Two full rounds built last session, both banked, **neither approved**. r1 is the better of the two by
+his own comparison; r2 is worse. Nothing here is a starting point without his direction first.
+
+- **`manganese-demos-r1.html`** — 7 concepts (A three ear bones · B Velcro braces · C veterinarian's
+  cross-species ledger · D both edges cut · E 10–20 mg + enzyme activation · F named-for-a-magnet
+  editorial history · G hazelnuts + bone broth + all-meat diet). Verdict: **"making illustrations that
+  mean nothing, illustrate nothing, teach nothing, reveal nothing at a glance … Stop making useless
+  illustrations and make sure EVERY illustration actually serves a purpose, complete re-do."**
+- **`manganese-demos-r2.html`** — 6 concepts, every figure rebuilt as a quantitative or causal figure
+  (A absorption-ladder bar chart · B four doses on one 0–50 mg scale · C three-systems-to-signs map
+  with one solid arrow and two dashed stubs · D his two lists on a body map · E wrist cross-section
+  open-vs-shrinking · F the sound path as a linked chain). Verdict: **"Worse across the board than the
+  first manganese demo, close the session."**
+
+### ★★★ MY DIAGNOSIS OF THE r2 FAILURE — flagged as a DIAGNOSIS, he did not state a reason
+Told the r1 figures "teach nothing at a glance", I made every r2 figure **teach** — and in doing so
+turned all six into **charts, diagrams and cross-sections**. That is the exact idiom this project has
+already had rejected twice, and both rejections are recorded in this very file:
+- **B6 r1:** *"clearly lower quality than the rest … it's the way it's presented"* — diagnosed then as
+  a drift to "infographic/diagram idioms — a labelled dose gauge, a stat + draining vessel, a numbered
+  timeline, comparison cards — instead of the singular, beautiful, often typographic/organic HERO
+  images" that carried niacin and B1.
+- **Chromium:** *a boxed loop / bar chart / stat dashboard reads **"boring/clinical"*** — the fix was a
+  visceral hero visual with motion.
+
+So r2 fixed the stated fault (says nothing) by walking straight into a documented one (reads clinical).
+**The two requirements are not in tension and the next round has to satisfy BOTH: a figure must teach
+at a glance AND be a hero image rather than a chart.** The approved sets already do both — niacin's
+glowing NAD furnace teaches the convergence AND is a hero; B1's rice grain teaches polishing AND is a
+hero; vanadium's four tubes teach oxidation state AND are beautiful. **A bar chart is not the answer to
+"it teaches nothing"; a realistic, labelled, arresting object is.**
+⚠ **This is my reading, not his words. He gave no reason. ASK HIM FIRST.**
+
+### ✓ WHAT IS WORTH KEEPING FROM THE SESSION — the mechanism research, which he asked for by name
+He asked, from personal experience (a Wallach-based doctor saved his grandfather with the 90-essential
+programme **plus an extra liquid/food-form manganese**), *why* manganese was the critical extra and why
+the programme alone was not enough. **This was answered and the answer is sourced.** It survives the
+demo rejection and should not be re-derived:
+
+1. **Wallach himself says the colloidal base needs a manganese top-up.** Dead Doctors Don't Lie, on the
+   Toddy colloidal minerals: *"The colloidal minerals were all present in trace amounts. They required
+   an additional source of the major minerals and electrolytes such as calcium, magnesium, **manganese**,
+   zinc, and potassium to even come close to the published RDAs."* Manganese is 1 of only 5 named.
+   **NOT YET A SEALED CLAIM — mine it.**
+2. **The programme delivers a maintenance dose; his corrective dose is up to 5.5× larger.** Base Line
+   table (Let's Play Doctor Fig. 8-1) manganese row = **RDA 2.5 mg · True Supplement Need 5 mg ·
+   30-Day Pharmacologic 2 to 50 mg** (`LETS-000057`). On that third column: *"used in extraordinary
+   situations when your body requires large amounts of raw material to restore and replenish overworked
+   organs and tissues"* — **NOT YET SEALED, mine it.** His own Mn protocols live up there: 10–15 mg/day
+   tardive dyskinesia (`LETS-000445`), **50 mg/day** epilepsy (`LETS-000267`, `DDDL-000236`).
+3. **A failing body absorbs badly, so the form is the point — hence a liquid.** *"YOU ARE NOT WHAT YOU
+   EAT—YOU ARE WHAT YOU ABSORB!"* (Epigenetics, his capitals — **NOT YET SEALED**). His ladder, all
+   sealed: metallic **1–10%** (`IMMORT-000291`, `IMMORT-000292`, `RARE-000106`), chelated **25–50%**,
+   plant-derived colloidal **up to 98%** (`DDDL-000051`, `LETS-000146`, `LETS-000197`). And he
+   prescribes manganese in that form by name — *"plant derived colloidal arsenic, manganese, and
+   choline"* (`DDDL-000235`/`DDDL-000219`), *"colloidal mineral suspensions that contain magnesium and
+   manganese"* for asthma, which he calls a disease of malabsorption (`LETS-000147`, `DDDL-000053`).
+   Liquid dose: **one ounce per 100 lb per day** (Epigenetics, beside the mineral table).
+
+**Product arithmetic, computed from the sealed database — the "programme wasn't enough" story is NOT a
+daily-target shortfall, and must never be told as one.** His grandfather's stack delivers **9.00 mg**
+(Ultimate Classic 5.0 + Ultimate Daily 2.0 + Ultimate Gluco-Gel 2.0) against a **7.7 mg** target — it
+CLEARS the target. Beyond Tangy Tangerine, Ultimate EFA Plus, Ultimate Enzymes and Osteo FX carry **no
+manganese at all**. The real gap is maintenance-vs-corrective, not target-vs-coverage.
+Candidate for the unidentified liquid (**inference from composition data, NOT a claim**): **Ultra Body
+Toddy**, 5.0 mg, the only other top-tier liquid in the line and the descendant of the "Toddy" colloidal
+base Wallach describes by name.
+
+### ⚠ CORRECTION — a dossier flag AND my own report of it were both wrong
+`manganese.md` flags `RARE-000177` as claim_text-exceeds-verbatim on the "100,000 carpal-tunnel
+operations at $4,000 each / over $29,000 per case" figures, and **I repeated that to Luneth**. Reading
+the book page: **those figures ARE on it**, in BOTH `rare-earths-forbidden-cures.txt` and
+`dddl-third-edition-2011.txt`. The claim_text is correct; the **sealed verbatim is trimmed too short**.
+Fix the verbatim, delete the dossier flag. Also dead in that dossier: **`RARE-000174` and
+`RARE-000176` no longer exist in the sealed corpus** (folded during the dedup campaign) — the material
+survives as `IMMORT-000347`, `RARE-000360` and `EPIGEN-000099`.
+
+### Manganese grounding, verified this session (36 sealed claims — reuse, do not re-derive)
+Target **7.7 mg** = Epigenetics 3–5 mg **per 100 lb** (`EPIGEN-000134`), upper × 1.54 to a 154 lb
+reference, 2 s.f. The 1995 flat **5 mg** (`LETS-000057`) is corroboration, and is LOWER only because it
+is not per-body-weight — say so, do not present it as a disagreement. Material the r1/r2 rounds proved
+out: ear bones + cartilage (`DDDL-000027`, `IMMORT-000348`), congenital deafness as maternal deficiency
+(`EPIGEN-000010`, `EPIGEN-000311`), reversible childhood hearing loss (`DDDL-000234`, `LETS-000294`),
+the Velcro-brace thesis (`DDDL-000237`, `RARE-000178`), carpal tunnel as an arsenic + manganese +
+choline **triad** (`DDDL-000219`, `DDDL-000235`, `IMMORT-000037`), the deficiency/toxicity pair
+(`LETS-000017`, `LETS-000018`, `RARE-000175`), 10–20 mg total body content + the three enzyme systems
+(`IMMORT-000347`, `RARE-000360`), etymology *magnes*/pyrolusite/Scheele 1774 (`IMMORT-000350`), the
+1800s medical history — Macon miners, "superior to iron" for anaemia, amenorrhea, 1884 permanganate
+(`RARE-000361`), hazelnuts 24 nuts = 90% of the **USDA** DV (`HELLS-000056` — a government yardstick,
+NOT his target), Ma Lan's bone broth (`DDDL-000309`), the all-meat-diet gap (`RARE-000341`).
+Two sealed claims whose **verbatims do not reach the sentence they are cited for**: `LETS-000205`
+(carpal-tunnel anatomy — the shrinking circular wrist ligament) and `RARE-000082` (hair analysis:
+universally-low = maldigestion/malabsorption). Widen both.
+⚠ `LETS-000017` prints **"muscle therapy"**, an apparent misprint. Never display it; never guess it.
+
+### ⚠ Mining work these two rounds created (none of it done)
+`RARE-000177` verbatim widening · the "trace amounts / additional source" passage · "YOU ARE NOT WHAT
+YOU EAT—YOU ARE WHAT YOU ABSORB!" · the "extraordinary situations / restore and replenish" doctrine on
+the pharmacologic column · `LETS-000205` and `RARE-000082` verbatim widening · Immortality's manganese
+deficiency list adds **cerebral palsy**, which the other two books' lists do not carry.
 
 ## ★★★ THE STANDING LESSON FROM 21 CONCEPTS ACROSS 3 ELEMENTS
 **A green `mockup_measure` board sat alongside a visibly broken picture in EVERY SINGLE ROUND — three

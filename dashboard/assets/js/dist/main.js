@@ -180245,7 +180245,74 @@ VERIFIED. Seven of seven figures at scale 1.000, zero text collisions, zero clip
 
 DEFECTS FOUND AND FIXED. The clipped-label check earned its keep twice: one caption ran 97.1px off its own viewBox and another 71.8px, both because I estimated the caption face at about six pixels per character when it renders at about seven. Both split onto two lines with the figures grown to match. The reveal-opacity defect described above. And the salt crystals, first drawn as diamonds that read as abstract gems, redrawn as isometric cubes, which is what salt actually forms.
 
-DEFERRED AND OPEN. Sodium needs unspecified refinement - ask, do not guess. The lede and the 3,300 mg why-block are unratified. A finding worth acting on separately: LETS-000032, his twenty-two-sign sodium deficiency roster, has no authored question and no short answer in the enrichment store, making it the only claim in this pack that Ask Wallach cannot answer from - and "what are the symptoms of low sodium" is the most obvious question anyone would type. Unused material: the Japanese comparison, where the newer book says fifteen grams a day with eighty-five percent less cardiovascular disease while the older says twenty-eight, so favour-newest picks fifteen and the two must never appear side by side as books disagreeing; the 1997 Sodium Task Force six-hundred-percent heart-attack figure; pregnancy toxemia and the pregnancy salt requirement; water intoxication in infants fed low-sodium formula; and potassium-deficient rats licking everything in sight.` }, { id: "lg_msmpol0a_bjjebu", ts: "2026-08-09T23:08:28.762190-05:00", surface: "element-headers", kind: "session-end", summary: "Session close: three elements taken from nothing to banked demo sets - folic acid, vanadium and sodium - and the standing lesson is that a green measurement board sat alongside a broken picture in every single round.", detail: "Three elements went from nothing to banked demo sets this session: folic acid, vanadium and sodium. Twenty-one concepts, all screenshotted and read rather than assumed. Folic acid and vanadium are approved; sodium is banked and needs refinement Luneth has not yet specified.\n\nThe thread running through all three is worth stating on its own, because it did not vary once. In every round the machine checks came back clean - every figure at its true authored size, no overlapping text, no labels off the canvas, the page proven to scroll by actually scrolling it - and in every round the screenshot then showed something broken. A band meant to be a faint tint rendered solid orange. Two heartbeat traces meant to show a stronger contraction were drawn on top of each other, so the whole point was invisible. Two labels shared a line and read as one run-on sentence. A chip label was six pixels wider than the box it sat in and had its first and last letters clipped by its own border. A shadow rendered as a solid black oval. Not one of those is visible to a probe that compares text against text, and every one of them was obvious within a second of looking at the picture.\n\nThe second thread is that the research dossiers were wrong on every element I touched. Folic acid's proposed a daily target of 400 micrograms, which is the exact number we had thrown out four days earlier as a misprint in the book, and would have posted the government's figure as Wallach's recommendation on all seven panels. Vanadium's undercounted itself by twenty-nine claims. Sodium's says fourteen claims against an actual sixty-six, the worst in the set. In all three cases the correct move was the same: read every sealed claim, verify the target against the canon's own provenance and the commit history rather than a dossier, and design from that.\n\nThe third is a piece of Luneth's taste, learned the hard way on vanadium. Told that the colour aspect was underplayed and that a panel was the weakest by far, the wrong response is a richer palette. The right one is a realistic demonstration that carries an argument - four tubes of the element actually in solution, where the blue one turns out to be the form sold on supplement labels and absorbed at a hundredth of the dose. Demonstrate, do not decorate.\n\nHandoff is set for a fresh genesis start. Board 90/90 with zero new reds, build parity fresh, the Creator's Log a pure append at 829 entries, and everything committed and pushed." }];
+DEFERRED AND OPEN. Sodium needs unspecified refinement - ask, do not guess. The lede and the 3,300 mg why-block are unratified. A finding worth acting on separately: LETS-000032, his twenty-two-sign sodium deficiency roster, has no authored question and no short answer in the enrichment store, making it the only claim in this pack that Ask Wallach cannot answer from - and "what are the symptoms of low sodium" is the most obvious question anyone would type. Unused material: the Japanese comparison, where the newer book says fifteen grams a day with eighty-five percent less cardiovascular disease while the older says twenty-eight, so favour-newest picks fifteen and the two must never appear side by side as books disagreeing; the 1997 Sodium Task Force six-hundred-percent heart-attack figure; pregnancy toxemia and the pregnancy salt requirement; water intoxication in infants fed low-sodium formula; and potassium-deficient rats licking everything in sight.` }, { id: "lg_msmpol0a_bjjebu", ts: "2026-08-09T23:08:28.762190-05:00", surface: "element-headers", kind: "session-end", summary: "Session close: three elements taken from nothing to banked demo sets - folic acid, vanadium and sodium - and the standing lesson is that a green measurement board sat alongside a broken picture in every single round.", detail: "Three elements went from nothing to banked demo sets this session: folic acid, vanadium and sodium. Twenty-one concepts, all screenshotted and read rather than assumed. Folic acid and vanadium are approved; sodium is banked and needs refinement Luneth has not yet specified.\n\nThe thread running through all three is worth stating on its own, because it did not vary once. In every round the machine checks came back clean - every figure at its true authored size, no overlapping text, no labels off the canvas, the page proven to scroll by actually scrolling it - and in every round the screenshot then showed something broken. A band meant to be a faint tint rendered solid orange. Two heartbeat traces meant to show a stronger contraction were drawn on top of each other, so the whole point was invisible. Two labels shared a line and read as one run-on sentence. A chip label was six pixels wider than the box it sat in and had its first and last letters clipped by its own border. A shadow rendered as a solid black oval. Not one of those is visible to a probe that compares text against text, and every one of them was obvious within a second of looking at the picture.\n\nThe second thread is that the research dossiers were wrong on every element I touched. Folic acid's proposed a daily target of 400 micrograms, which is the exact number we had thrown out four days earlier as a misprint in the book, and would have posted the government's figure as Wallach's recommendation on all seven panels. Vanadium's undercounted itself by twenty-nine claims. Sodium's says fourteen claims against an actual sixty-six, the worst in the set. In all three cases the correct move was the same: read every sealed claim, verify the target against the canon's own provenance and the commit history rather than a dossier, and design from that.\n\nThe third is a piece of Luneth's taste, learned the hard way on vanadium. Told that the colour aspect was underplayed and that a panel was the weakest by far, the wrong response is a richer palette. The right one is a realistic demonstration that carries an argument - four tubes of the element actually in solution, where the blue one turns out to be the form sold on supplement labels and absorbed at a hundredth of the dose. Demonstrate, do not decorate.\n\nHandoff is set for a fresh genesis start. Board 90/90 with zero new reds, build parity fresh, the Creator's Log a pure append at 829 entries, and everything committed and pushed." }, { id: "lg_msncxnjh_rrqqms", ts: "2026-08-10T09:59:23.117716-05:00", surface: "element-headers", kind: "session-end", summary: "Manganese header demos: two rounds built, both rejected. What survives is the answer to the question he actually asked -- why an extra manganese saved a dying man when the 90-essential programme alone did not.", detail: `Luneth asked for manganese header concepts and I built them twice. He turned down both. The
+first round he called illustrations that "mean nothing, illustrate nothing, teach nothing, reveal
+nothing at a glance" and asked for a complete re-do where every figure serves a purpose. The second
+round -- where I rebuilt every figure to teach -- came back "worse across the board than the first."
+He gave no reason either time, so no reason is recorded here as his.
+
+In between, he asked something better than a design question. A Wallach-based doctor had pulled his
+grandfather back from death's door on the 90-essential programme plus one extra manganese in liquid
+form, and he wanted to know the mechanism: why that mineral, and why the programme alone was not
+enough. That question got answered, it is sourced, and it outlives the demos.
+
+MY DIAGNOSIS OF THE SECOND FAILURE -- a diagnosis, not his words. Told the figures taught nothing, I
+made all six teach and in doing so turned them into charts, diagrams and cross-sections. That is the
+exact idiom this project has already rejected twice, both times recorded in the handoff I was reading
+from: B6 round one ("clearly lower quality than the rest ... it's the way it's presented", diagnosed
+then as a drift to infographic idioms instead of singular hero images) and chromium (a boxed loop, a
+bar chart, a stat dashboard reads "boring/clinical"). I fixed the stated fault by walking into a
+documented one. The two demands are not in tension and the next round has to meet both: a figure must
+teach at a glance AND be a hero image rather than a chart. The approved sets already do both -- the
+niacin furnace teaches convergence and is a hero, the B1 rice grain teaches polishing and is a hero,
+the vanadium tubes teach oxidation state and are beautiful.
+
+THE MECHANISM, in his own sources -- three reasons an extra manganese is not a deviation from Wallach's
+programme but a step his own text prescribes:
+
+1. He says the colloidal base needs a manganese top-up himself. Dead Doctors Don't Lie, describing the
+   Toddy colloidal minerals his whole programme is built on: "The colloidal minerals were all present
+   in trace amounts. They required an additional source of the major minerals and electrolytes such as
+   calcium, magnesium, manganese, zinc, and potassium to even come close to the published RDAs."
+   Manganese is one of only five minerals he names. NOT YET A SEALED CLAIM.
+
+2. The daily programme delivers a maintenance dose; his own table carries a corrective column up to
+   5.5 times larger. Base Line Fig. 8-1, manganese row: RDA 2.5 mg / True Supplement Need 5 mg /
+   30-Day Pharmacologic 2 to 50 mg (LETS-000057). Of that third column he writes that it is "used in
+   extraordinary situations when your body requires large amounts of raw material to restore and
+   replenish overworked organs and tissues" -- NOT YET SEALED. His own manganese prescriptions sit in
+   that upper band: 10-15 mg/day for tardive dyskinesia (LETS-000445), 50 mg/day for epilepsy
+   (LETS-000267, DDDL-000236).
+
+3. A failing body absorbs badly, so the form is the point -- which is why it was a liquid. "YOU ARE NOT
+   WHAT YOU EAT-YOU ARE WHAT YOU ABSORB!" (Epigenetics, his capitals, NOT YET SEALED), over an
+   absorption ladder that IS sealed: metallic forms 1-10% (IMMORT-000291, IMMORT-000292, RARE-000106),
+   chelated 25-50%, plant-derived colloidal up to 98% (DDDL-000051, LETS-000146, LETS-000197). And he
+   prescribes manganese in that exact form by name -- "plant derived colloidal arsenic, manganese, and
+   choline" (DDDL-000235, DDDL-000219), and "colloidal mineral suspensions that contain magnesium and
+   manganese" for asthma, which he defines outright as a disease of malabsorption (LETS-000147,
+   DDDL-000053). His liquid dose: one ounce per 100 pounds of body weight per day.
+
+WHAT THE NUMBERS ACTUALLY SAY, so the story is never told wrong. I checked the stack against the sealed
+product database rather than assuming it fell short. Ultimate Classic 5.0 mg + Ultimate Daily 2.0 mg +
+Ultimate Gluco-Gel 2.0 mg = 9.00 mg of manganese against a 7.7 mg daily target. It CLEARS the target.
+Beyond Tangy Tangerine, Ultimate EFA Plus, Ultimate Enzymes and Osteo FX carry no manganese at all. So
+"the programme was not enough" is NOT a daily-target shortfall and must never be presented as one -- the
+real gap is maintenance versus corrective. Composition only, per the prime directive: what a product
+contains is never a Wallach recommendation. As for which liquid it was, I cannot identify it and did not
+pretend to; the one candidate that fits is Ultra Body Toddy at 5.0 mg, the only other top-tier liquid in
+the line and the descendant of the "Toddy" colloidal base Wallach names -- flagged as inference.
+
+A CORRECTION I OWED HIM, logged in the chunk that found it. The manganese dossier flags RARE-000177 as
+having a claim_text that outruns its verbatim on the "100,000 carpal-tunnel operations at $4,000 each"
+and "over $29,000 per case" figures, and I repeated that to him as fact. Reading the actual book pages,
+those figures are printed -- in both Rare Earths: Forbidden Cures and Dead Doctors Don't Lie. The
+claim_text is correct and the sealed verbatim is trimmed too short. The dossier also cites RARE-000174
+and RARE-000176, neither of which is in the sealed corpus any more. Both corrections are written into
+next-chunk.md so the next session cannot inherit them as true.
+
+Manganese now sits beside sodium as an element carrying an ask whose reason he did not state. The
+handoff says the same thing about both: ask him, do not guess, do not rebuild, do not improve it.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
