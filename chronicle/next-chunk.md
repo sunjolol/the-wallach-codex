@@ -1,7 +1,34 @@
 # ★ NEXT SESSION — run genesis, then start the next element's demos.
 
-**22** demo sets sit in `temporary/awaiting-refinement/` (counted off disk — recount, never copy),
-one per element. Board 90/90, build parity fresh. **Phosphorus closed this session (r2 approved).**
+**23** demo sets sit in `temporary/awaiting-refinement/` (counted off disk — recount, never copy),
+one per element. Board 90/90, build parity fresh. **Phosphorus (r2) and germanium (r1) both closed
+this session.**
+
+## ✓ GERMANIUM — CLOSED, r1 APPROVED (`temporary/awaiting-refinement/germanium-demos-r1.html`). DO NOT REBUILD.
+Luneth: **"Good enough."** Approved FIRST TIME — the first pack this session to do so, because it was
+built to the phosphorus-r2 standard from the start (own headline class at magazine scale, no drawn
+objects). Six concepts: **A** the empty periodic-table square (`?`/eka-silicon → click → **Ge**) ·
+**B** *(hero)* an electron field you can dope, then relabel transistor→cell, doping DISABLES itself on
+the cell side · **C** log axis, tuna 2.3 / beans 4.67 against the 100–2,000 ppm accumulator band ·
+**D** Lourdes + a "what he does NOT say" state · **E** nine protocols, four saying *no dose stated* ·
+**F** GE-132 30% in / all out in a week, middle hatched because he gives no curve.
+Build: `temporary/build-scripts/germanium-r1-build.py`. lede + why (**30 mg**) await ratification.
+
+### ★★★ THE SIM THAT LOOKED RIGHT AND DEMONSTRATED NOTHING (germanium B)
+B's doping control raised spawn rate **and** transit speed together, so steady-state population =
+spawn/exit stayed flat: **3,864 → 5,083 lit pixels across the entire range.** It screenshots as a
+handsome working figure. Fixed by making doping raise carrier DENSITY only (speed barely moves):
+**3 → 37.5 carriers, monotonic at every step.** Same class as manganese D.
+⚠ **The INSTRUMENT was wrong twice too, and both fixes belong in the probe, not the threshold:**
+1. **Lit-pixel counting saturates** as glow sprites overlap — it under-reported a 12.5× mechanism
+   change as 2.1×. Measure the MECHANISM (expose the model's own count) *and* the render.
+2. **One instantaneous sample of a stochastic spawn is noise** — a d60/d100 pair read 30 vs 37 by
+   sampling luck alone. Average several samples; never relax the bar to make noise pass.
+[[interactive-figure-must-be-measured]] · [[verification-doctrine]]
+
+⚠ **Germanium mining work found, none done:** `RARE-000011` and `RARE-000012` are NOT search-enriched
+(no authored question / answer_short). His herb list in `EPIGEN-000309` includes **"sushi"**, a
+prepared dish among herbs — left byte-exact and flagged, never silently corrected.
 
 ## ★★★ PHOSPHORUS — CLOSED, r2 APPROVED (`temporary/awaiting-refinement/phosphorus-demos-r2.html`). DO NOT REBUILD.
 Luneth: **"This is good enough."** Six concepts, reader-driven, ZERO drawn objects:
@@ -33,11 +60,18 @@ Test what PAINTS, not what the box measures. [[interactive-figure-must-be-measur
 
 ## ★ NEXT TASK — build the next element's demos
 Measured claim counts (**use this ranking, never a dossier count**): vanadium 66 ✓ · sodium 66 ✓ ·
-manganese 36 ✓ · cobalt 35 ✓ · phosphorus 34 ✓ · **germanium 34** · **choline 34** · tryptophan 33 ·
+manganese 36 ✓ · cobalt 35 ✓ · phosphorus 34 ✓ · germanium 34 ✓ · **choline 34** · tryptophan 33 ·
 sulfur 28 · flavonoids 27 · phenylalanine 23 · methionine 22 · silver 18 · lysine 18 · leucine 17 ·
 valine 16 · silica 12 · isoleucine 12 · histidine 9 · threonine 8.
-**Germanium and choline are tied at 34 — ASK which.** Do the grounding first, it is useful either way.
+Next by ranking is **choline**, then tryptophan 33, then sulfur 28.
 The thin tail (silica / isoleucine / histidine / threonine) are the **group-page** candidates.
+
+⚠ **CHOLINE OVERLAPS THE APPROVED MANGANESE r4 PACK — check before designing.** Its carpal-tunnel
+and seizure/epilepsy material is the same territory manganese r4-C and r4-A already own, and its
+dossier says 14 claims against a measured 34. Steer to choline's own ground (lecithin /
+acetylcholine, the B12+folate partnership, phosphatidylcholine vs lecithin).
+⚠ **Choline is category `vitamin`** → `mockup_harness --category vitamin` (orange, the DEFAULT — do
+not pass an accent override), not mineral blue.
 
 ⚠ **The phosphorus dossier was wrong by a factor of ~3** (said 13 claims, corpus holds 34) and three
 of its "not verbatim-safe" flags were FALSE. Corrected in place with a block at the top of

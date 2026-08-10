@@ -1,5 +1,40 @@
 # Germanium — header research dossier
-> status: RESEARCH (concepts only — NOT designed). 27 sealed claims · mineral (symbol Ge) · target: 30 mg/day (upper of Wallach's 20–30 mg maintenance range).
+
+> ## ✓ CLOSED — r1 APPROVED 2026-08-10. Luneth: *"Good enough."*
+>
+> `temporary/awaiting-refinement/germanium-demos-r1.html`, built by
+> `temporary/build-scripts/germanium-r1-build.py`. Six concepts, reader-driven, no drawn objects:
+> **A** the empty periodic-table square (`?` / eka-silicon → click → **Ge**, 1871→1886) ·
+> **B** *(hero)* an electron field you can dope, then relabel from transistor to cell — the doping
+> control DISABLES itself on the cell side · **C** log axis, tuna/beans against the 100–2,000 ppm
+> accumulator band · **D** Lourdes, with a "what he does NOT say" state · **E** his nine protocols,
+> four of which say *no dose stated* because he states none · **F** GE-132: 30% in, all out in a
+> week, middle of the week hatched because he gives no curve. **DO NOT REBUILD.**
+> lede + why (**30 mg**) await ratification.
+>
+> **⚠ This file said 27 claims; the sealed corpus holds 34.** Designed off
+> `claim_review.py --entity germanium`, not this file. Material it never reached, all verbatim:
+> `EPIGEN-000310` (Mendeleev predicted it; Winkler isolated it 1886) · `IMMORT-000346` (doping →
+> transistors → "micro-computers") · `IMMORT-000146` (**Lourdes** contains large amounts of germanium
+> and lithium) · `DDDL-000230` (GE-132: 30% absorbed, total intake excreted in one week) ·
+> `LETS-000201/221/298/311/313/319/344` + `RARE-000282` (the protocol roster).
+>
+> **⚠ Two spelling splits across books — flagged in the panels, never silently picked.**
+> `EPIGEN-000310` has **Mendeleev**; `IMMORT-000138` has **Mendeleyev** and adds 1871 + *eka-silicon*.
+>
+> **⚠ Two claims are NOT search-enriched**: `RARE-000011` and `RARE-000012` have no authored question
+> or answer_short. Mining work, not done.
+>
+> **⚠ His herb list is byte-exact and includes "sushi"**, a prepared dish rather than a herb
+> (`EPIGEN-000309`). Left as printed rather than quietly corrected — decide + log, never silently fix.
+>
+> **Target verified** from `essentials-targets-data.json` provenance, not this file: kind wallach,
+> low 20 / high 30 mg daily, upper taken → **30 mg**, `source_claim_id: WAL-CLM-DDDL-000011` (2011),
+> corroborated by `WAL-CLM-IMMORT-000140` (2008). ⚠ The **50–100 mg** second half of his range is NOT
+> the daily target, and the two books give it a DIFFERENT stated reason: 2011 says "serious illness
+> that requires an increased oxygen level", 2008 says "a serious germanium deficiency".
+
+> status: RESEARCH (concepts only — NOT designed). **34** sealed claims (this file was written against 27) · mineral (symbol Ge) · target: 30 mg/day (upper of Wallach's 20–30 mg maintenance range).
 
 ## 1. The material (grounded, by angle)
 
