@@ -6047,7 +6047,7 @@ loads (i.e. colas, apple juice, grape juice, honey, candy, table
 sugar, fructose, etc.) increase the natural rate of urinary Cr loss
 by 300% for 12 hours. The average intake of 50 to 100 ug of
 inorganic chromium from food and water supplies only 0.25
-to 5 ug of usable and retainable chromium. By contrast, 25%
+to 0.5 ug of usable and retainable chromium. By contrast, 25%
 of chelated chromium is absorbed and up to 98% of colloidal
 
 

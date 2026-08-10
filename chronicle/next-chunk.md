@@ -1,4 +1,117 @@
-# ★ NEXT SESSION — run genesis, then start the next element's demos.
+# ★★★ NEXT SESSION — READ THIS BLOCK FIRST. A NEW SYSTEM WAS COMMISSIONED 2026-08-10.
+
+## ★★★ THE SOURCING-LITERACY SYSTEM — Luneth's own words, verbatim
+
+> "ANYTHING we can do to FULLY equip the user with the ability to find their own sources where
+> Youngevity fails to provide them would be INCREDIBLY powerful, especially if we can present it well
+> and clearly in a way the laymen can understand. Equipping people with the knowledge and
+> understanding of how to properly source their supplements is a MASSIVE use-case for this app and we
+> should do it right, this is something that will surely be used over and over again from this point
+> on for specific 'cure protocols' that Wallach suggests where the numbers are so absurd that they
+> can't inexpensively be obtained from Youngevity products … we need to REALLY develop a SOLID
+> foundation for equipping people to find their needs elsewhere — e.g: search for X form, AVOID Y
+> form, and here's why."
+
+**This is a NEW REUSABLE SURFACE, not a choline panel.** Every Wallach "cure protocol" will hit the
+same wall. Build it once, properly, and every condition page can use it.
+
+**The shape he asked for:** per nutrient — *search for X form · AVOID Y form · and here is why*, in
+language a layman can act on, so a user can walk into a shop or onto a website and judge a label.
+
+**The alarming finding that triggered it.** On the FIRST protocol examined — his absence-attack /
+seizure protocol — **3 of the 4 dosed nutrients cannot reliably be obtained from Youngevity** without
+either spending a fortune or overdosing on other essentials to get there. His observation, and it is
+a serious one about the product line, not about Wallach.
+
+## ★★★ THE STANDING RULE (recorded in memory, do not re-litigate)
+`[[recommend-generic-supplements-when-ygy-cannot-reach]]` — order of preference:
+1. **Food first** where food realistically reaches it (taurine → salmon, scallops).
+2. **Youngevity** where its composition actually gets there.
+3. **A brand-agnostic ingredient-specific supplement** otherwise — state Wallach's dose
+   (*"taurine, 500 mg three times daily"*), note single-ingredient products are widely available
+   online and in stores, **name no brand**.
+4. **Teach the sourcing principle** so the user can judge any product themselves.
+
+§00.A-clean: the amount is always Wallach's, Youngevity still contributes composition only, and
+"get taurine somewhere" adds no number and no health claim.
+
+## ✓ FIRST JOB DONE — THE SOURCING LADDER IS VERIFIED (2026-08-10, sealed kv=469)
+Full working: `chronicle/audits/2026-08-10/sourcing-ladder-verification.md`. **The ladder HOLDS**, re-derived from all 7 books: **metallic 8–12%** (*and 3–5% after age 35–40* — his own qualifier) → **chelated 40–65%** → **plant-derived colloidal up to 98%**. Anchors `RARE-000061` · `HELLS-000017` · `IMMORT-000023` · `IMMORT-000292`; vehicle dose `EPIGEN-000089` (1 fl oz/100 lb/day). Per-element ladders exist for 11 elements.
+
+### ★★★ THE CENTREPIECE — "colloidal" on a label is NOT the winner
+`IMMORT-000026` / HK pp.219–220 give **four** kinds of colloidal supplement. **Type 1 is bare "rock flour" — sea-bed minerals, clays, "soils," glacial milk — and in his own words "is in fact a metallic mineral."** Type 4 is an industrial detergent product. Only **type 2** (living-system, hydrophilic-coated) carries the 98%. He proves it on the Hunza (`RARE-000072`): they absorb only *five to 12 per cent* of the Glacial Milk they DRINK — longevity comes from IRRIGATING with it.
+⚠ **Never flatten to "metallic bad":** **iodine**'s metallic form absorbs ≈1:1 (`IMMORT-000317`), and **arsenic** shows form governs TOXICITY — 65× less from the organically-bound form (`RARE-000095`).
+
+### Rulings Luneth made 2026-08-10 — do not re-litigate
+- **Chelated era = 1960s.** *"it began in the 1950s and by the early 1960s it had been developed. 1940s is flat wrong."* ★ **`favor-newest` LOSES here** — the two NEWEST books say 1940s and are wrong. Outside knowledge outranks recency.
+- **Chelated = 40–65%** (clean favor-newest supersession over Rare Earths' flat 40%).
+- **Humic shale = NO contradiction.** "no less than 60" is a **FLOOR**, not a count; 77 satisfies it. My misread. **Concentration is OUT OF SCOPE for this system — do not raise it again.**
+- **Chromium = OCR defect, CORRECTED.** `immortality.txt` "0.25 to 5 ug" → "0.25 to 0.5 ug".
+
+### Still open from the audit
+- `WAL-CLM-IMMORT-000023` claim_text says **pre-WWI**; all four books say **WWII**.
+- `WAL-CLM-RARE-000072`'s verbatim doesn't carry its own "five to 12 per cent" headline — widening job.
+- **Tag hygiene will break any tag-driven query:** `colloidal-minerals`(17) / `colloidal minerals`(4) / `colloidal_minerals`(1) / `colloidal`(3); `chelated`(4) / `chelated-minerals`(2) / `chelation`(2).
+- **All 66 form/absorption claims are `review_state: draft`.**
+- The tile's chelated tier still reads "Intermediate" where he has 40–65%.
+⚠ `dashboard/components/` is **design-reference, NOT live** — `dashboard.html` never loads it.
+Its two citation defects were fixed 2026-08-10 (LPD p.82 → Rare Earths p.213; the derived "eight to twelve times" → his own comparison). Its **"1960s" is CORRECT — do not "fix" it.**
+
+## ✓ CHOLINE — r5 PARKED, NOT CLOSED (`temporary/awaiting-refinement/choline-demos-r5.html`)
+Four panels. **A is APPROVED and must not be touched** ("only A is good") — the absence-seizure
+sentence that types out, halts, and resumes; the parked frame is already mid-pause.
+B eggs · C dementia-is-not-ageing · **D the protocol calculator**.
+Build: `temporary/build-scripts/choline-r5-build.py`. r1–r4 deleted.
+D's sweep verifies **all 63 slider combinations**; 8 eggs → 3 tbsp Bio Alert → **$89.85/month
+wholesale**; 8 eggs + 6 oz liver still does not reach 4 g.
+
+### D MUST BE REBUILT to the new rule. Verified facts to build on:
+- **Choline** 4,000 mg/day → Bio Alert 1,000 mg/tbsp, 30/bottle, **$29.95 wholesale**. Works.
+- **Taurine** 1,500 mg/day (500 t.i.d.) → **FOOD FIRST**: salmon, scallops. Then generic taurine.
+- **Dimethyl glycine** 200 mg/day (100 b.i.d.) → **generic only**; see the glycine trap below.
+- **Vitamin B-6** 100–300 mg/day → check YGY reach; Ultra Body Toddy 40 mg → 3–8 servings.
+- **Phosphatidyl choline** → **no dose stated**, and **covered by the 6–8 eggs** (egg yolk is a rich
+  source — ⚠ that is reference knowledge, not Wallach; label it).
+
+### ⚠⚠ THE GLYCINE TRAP — CAUGHT, DO NOT REINTRODUCE
+`H.G.H. Amino Acid Blend` contains **GLYCINE, not dimethylglycine**. Wallach's protocol calls for
+**DMG**, a different compound. The product does **NOT** close the DMG line. (180 caps, 6-cap serving,
+30 servings, $37.95 wholesale; blend also holds arginine, ornithine, lysine, glutamine — useful for
+the amino cards, useless for DMG.)
+
+### ⚠ `Ultimate Cardio FX™` DOES contain taurine — but do not use it
+60 caps, 2-cap serving, 30 servings, **$42.95 wholesale**. Blend ≈690 mg across ~7 ingredients, so
+the taurine share is **undisclosed**. ~4 servings/day and we would be guessing at the amount. This is
+the textbook case for recommending plain taurine instead.
+
+### ⚠ Numbers on D, and which kind each is
+**His:** 4,000 mg; the 6–8 egg ceiling — ⚠ he gives that ceiling for **repairing myelin** in
+Epigenetics (`EPIGEN-000015` / `EPIGEN-000172`) and **never links eggs to choline**.
+**Reference (USDA via NIH ODS):** 147 mg/egg, 356 mg per 3 oz beef liver.
+**Composition (Youngevity, wholesale):** Bio Alert 1,000 mg/tbsp, $29.95/30.
+**⚠ Wallach does NOT say choline cures seizures** — for **epilepsy** he says *vitamin B-6 alone will
+frequently "cure" it at 50–100 mg t.i.d.*, with choline among nutrients *also* indicated. Choline
+leads the **absence-attack** protocol only. This stays on the panel face, never buried.
+⚠ **Personal stakes: his mother has seizures.** He came to this because no amount of supplementing
+helped and he now suspects she never reached the choline figure. Accuracy here is not academic.
+
+### Why r1–r4 were rejected — do not repeat
+r1 six-of-one-template + librarian's concepts · r2 two **contradiction panels**
+([[dont-build-contradiction-panels]] — ★★★, he had said it before) · r3 C–F "extremely skippable and
+boring, walls of text and repetitive animations you already used from other essentials" · r4 the food
+maths was real but **27 eggs / 33 oz of liver is not a solution a human can act on** — which is what
+produced the calculator.
+
+## ⚠ ALSO PENDING
+- **MEMORY.md needs a real consolidation pass FIRST** — 160 lines against a 140 target, and it needs
+  merging/dropping entries, not shortening hooks (already trimmed twice). Use `/consolidate-memory`.
+  Do it at the START of a session; it is destructive to attempt at the end of one.
+- Sodium r1's refinement is still unnamed — **ASK**.
+- `HELLS-000029` / `HELLS-000064` duplicate still needs per-claim approval.
+- Germanium `RARE-000011` / `RARE-000012` are not search-enriched.
+- A live foods table needs a real derived data file (the ORAC pattern), never hardcoded values.
+
+# ★ NEXT SESSION — run genesis, then start the next next element's demos.
 
 **23** demo sets sit in `temporary/awaiting-refinement/` (counted off disk — recount, never copy),
 one per element. Board 90/90, build parity fresh. **Phosphorus (r2) and germanium (r1) both closed

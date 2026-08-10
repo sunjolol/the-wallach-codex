@@ -181,7 +181,10 @@ def main() -> int:
     b["line_count"] = new_lines
     META_PATH.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if has_shard:
-        shard_path.write_text(json.dumps(shard, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+        # indent=1 - the convention EVERY claims shard is stored in. This wrote indent=2 until
+        # 2026-08-10, so a resnap reformatted the whole shard and buried its real change
+        # (a 250-line correction rendered as a 30,700-line diff) exactly when review matters most.
+        shard_path.write_text(json.dumps(shard, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"  WROTE books-meta ({args.book}: bytes={new_bytes}, lines={new_lines}){' + shard' if has_shard else ' (no shard — hash only)'}.")
     print("  Next: run corpus_seal.py to re-derive indices + re-seal goldens.")
     return 0
