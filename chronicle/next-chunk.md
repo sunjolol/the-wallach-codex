@@ -106,7 +106,27 @@ BP-drugs) · D pregnancy (IMMORT-000008 + LETS-000407 breast-milk + LETS-000210 
 - **Verify with your eyes, not the code.** View the actual rendered output (screenshot/zoom) and confirm the EXACT
   flagged thing before claiming fixed; for motion you can't screenshot, reason honestly about the mechanism. [[screenshot-verify-visual-chunks]], [[verification-doctrine]].
 
-## Next task (ask Luneth via genesis)
+## ★ NEXT TASK — B9 (folic acid) demos. ALREADY CHOSEN by Luneth 2026-08-09; do not re-ask.
+Build the demo set the proven way: 5–6 genuinely-distinct concepts, **every figure LABELS ITS OWN PARTS**
+(see the B2 lesson above), all in ONE file in `temporary/awaiting-refinement/vitamin-b9-demos-r1.html`,
+`--category vitamin` (orange default), then `mockup_measure` → screenshot → STOP for his picks.
+
+**Grounding already established this session — reuse it, do not redo it:**
+- **38 sealed claims** — the richest B vitamin so far (B2 had 19, B5 had 17). Verify with
+  `PYTHONUTF8=1 python tools/claim_review.py --entity vitamin-b9` — the slug is `vitamin-b9`, **not** `folic-acid`.
+- ⚠ **The dossier cites dead `WAL-CLM-EPIGEN-000123`** and says 24 claims against an actual 38. Run
+  `tools/dossier_sweep.py` and treat `vitamin-b9.md` as a head start only.
+- **The editorial constraint, derived from the overlap dashboard:** folate genuinely dominates
+  **`spina_bifida`** — 66.7% of cause-claims across **4 books**, the strongest single nutrient→condition signal
+  found anywhere in the corpus. BUT for **`birth_defects` generally, ZINC outranks B9** (29.4% vs 23.5%, 3 books
+  vs 4). So **"the birth-defect vitamin" would overstate what Wallach wrote**; a spina-bifida-specific claim is
+  unusually well grounded. Same rule as every crowded sign: never imply one element owns it.
+- Unused material worth a concept: `EPIGEN-000265` is a **quote/discovery** claim; `HELLS-000033/34/35`
+  (prognosis · food source · prevalence) bring in **Hell's Kitchen**, a book barely used in any header;
+  `EPIGEN-000263/264` give an **interaction warning + toxicity** (B5's dose-scale panel was built on exactly
+  that shape and he picked it); `LETS-000359` is a **meningocele** protocol — a second neural-tube defect.
+
+## After B9 — remaining options (ask Luneth then)
 Either **(a) REFINE** a banked set toward porting (he picks element + concept/combination), graduate to `ready-to-be-ported/`, port LIVE
 (needs the composed `blocks[]` shape + **a live `--ds-accent` category override for amino=green + omega=purple** — NOT
 yet in drawer-knowledge.css; mineral + vitamin[default orange] already resolve — + his STOP-for-sign-off); OR **(b) BUILD**
