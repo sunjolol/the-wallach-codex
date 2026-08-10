@@ -1,8 +1,78 @@
-# ★ NEXT SESSION — element-header demos continue (the clean-slate method is working)
+# ★ NEXT SESSION — run genesis, then CONFIRM the next element and build its header demos
 
-Fifteen banked demo sets and counting; the clean-slate method (trust the LIBERATED `element-headers` skill) keeps
-landing consistently. Board 90/90. Run genesis, then **ask Luneth** whether to REFINE a banked set toward
-porting, or BUILD more.
+**19** demo sets now sit in `temporary/awaiting-refinement/` (counted off disk, not carried forward — the
+inherited “thirteen” in this file had drifted and so did my own correction of it; recount, never copy). Board 90/90. Three elements were taken from nothing to banked sets last
+session (B9, vanadium, sodium). Run `PYTHONUTF8=1 python tools/genesis.py`, report the split, then
+**confirm with Luneth which element** — he closed the last session saying "continue with the next
+element", and the measured next-richest is **manganese (36 claims)**. Say which one you are taking and
+offer to redirect, the way vanadium and sodium were taken up.
+
+## ⚠⚠ FIRST THING TO RAISE — SODIUM NEEDS REFINEMENT AND HE DID NOT SAY WHAT
+`temporary/awaiting-refinement/sodium-demos-r1.html` is banked with **7 concepts** and his verdict was
+**"Good enough, but needs some refinement"** — then he closed the session without naming the changes.
+**ASK HIM WHAT TO REFINE. Do not guess, do not rebuild, do not "improve" it.** Every other element in
+the bank is either approved or has named notes; this is the only one with an unnamed outstanding ask.
+
+## ★★★ THE STANDING LESSON FROM 21 CONCEPTS ACROSS 3 ELEMENTS
+**A green `mockup_measure` board sat alongside a visibly broken picture in EVERY SINGLE ROUND — three
+elements, no exceptions.** Scale 1.000, zero collisions, zero clipped labels, scroll proven — and then
+the screenshot showed: a 13% tint band rendered SOLID orange · two heartbeat traces drawn on top of each
+other so "a stronger contraction" was invisible · two labels sharing a baseline that read as one run-on
+sentence · a chip label 6px wider than its own box with both end glyphs clipped by the border · a ground
+shadow rendered as a solid black oval. **None of those is visible to a text-vs-text probe. All were
+obvious within one second of looking.** Screenshot every panel and READ IT. Every time.
+
+### The two traps that recurred WITHIN one session
+1. **A reveal class forces `opacity:1` and beats an SVG `opacity` attribute.** Any element carrying
+   `.<el>-rv` must use `fill-opacity` / `stroke-opacity`. I documented this on vanadium and then hit it
+   again on sodium, in a stylesheet that carried my own warning. Knowing a trap is not avoiding it —
+   **scan for it**: parse every SVG *tag* (tags span lines, so do not grep lines) for a reveal class plus
+   a bare `opacity=`. On sodium that scan found exactly one, matching the screenshot.
+2. **Measure, never estimate.** The caption face renders at ~7.0px/char, not ~6.0; 13px display bold is
+   ~48px for 4 characters, not ~34px. Two captions ran 97px and 72px off their own viewBox, and a spine
+   placed at an "obviously safe" distance ran straight through every year numeral.
+
+### ★ And a piece of his taste, learned on vanadium: DEMONSTRATE, DON'T DECORATE
+Told "I do wish the color aspect was hit more" + "D is the weakest by far", the wrong answer is a richer
+palette. The right answer was **four tubes of the element actually in solution** — rim, meniscus, specular
+highlight, depth gradient, coloured light pooling on the surface beneath — **carrying an argument**: the
+blue tube is vanadium(IV) = vanadyl, the exact form he says the gut absorbs at 0.1–1%. An aesthetic note
+wants a realistic demonstration that makes a point, not more colour.
+
+## ✓ SODIUM — r1 BANKED, REFINEMENT UNSPECIFIED (`temporary/awaiting-refinement/sodium-demos-r1.html`)
+7 concepts, `--category mineral`. **A** what salt is made of (REALISTIC — sodium metal under oil + a flask
+of chlorine + salt as isometric cubes; the National Geographic passage he quotes) · **B** the salt block
+(REALISTIC — hollowed where licked, 85% minimum, "dumber than cows") · **C** forty-eight hours (the 1940
+Richter boy, dead 48h after his salt was restricted, autopsy Addison's) · **D** the heat wave of '93
+(70–100 g/day lost in sweat vs the 0.9% saline that treated survivors) · **E** your stomach acid is made
+out of salt (NaCl → HCl → protein / B12 intrinsic factor / mineral absorption) · **F** both of these are
+his (THE HONESTY PANEL) · **G** worth their salt (salarium, Via Salacia, Sierra Leone).
+
+### ★★★ SODIUM IS THE ELEMENT YOU CAN QUOTE INTO EITHER POSITION
+His 2015 book: salt does **not** cause high blood pressure, restricting it **shortens your life**
+(`HELLS-000061`). His own 1995 **sodium TOXICITY table**: hypertension, edema, congestive heart failure,
+renal failure (`LETS-000033`). **Both are his.** A panel on either quote alone misrepresents him, so F
+prints both lists side by side unedited. He reconciles them by moving the cause — "salt sensitivity" is
+driven by restricted **calcium and potassium**, not salt (`EPIGEN-000332`) — and that belongs in the
+payoff, never the headline. Every panel touching blood pressure carries an explicit contradicts-consensus
++ not-advice note, because a reader on a prescribed low-sodium diet for heart failure can land here.
+
+### Sodium target — corroborated across two books once units are reconciled
+**3,300 mg** (`LETS-000066`, 1995 base-line true-supplement-need; the 1,100 mg beside it is the RDA he
+reprints to argue with). His 2014 book states the requirement as **6–10 g of SALT** (`EPIGEN-000324`);
+salt is **39.34% sodium** by weight, so that is 2,360–3,933 mg sodium and 3,300 sits inside it (≈ 8.4 g
+salt/day). **The conversion is OURS and is flagged as such in-panel.** Oddity left on the record: the
+"300–3,000 mg" 30-day figure on that row is LOWER than his daily target, reverse of every other row.
+
+### ⚠ Sodium finding to act on separately
+`WAL-CLM-LETS-000032` (his 22-sign sodium deficiency roster) has **no authored question and no
+answer_short** — the only claim in the pack Ask Wallach cannot answer from, and "what are the symptoms of
+low sodium" is the most obvious question anyone would type. Unused material: the Japanese comparison
+(`HELLS-000063` 15 g/day + 85% less CVD; `RARE-000186` says 28 g/day — **older, so favour-newest picks 15
+and the two must NEVER be shown side by side as books disagreeing**), the 1997 Sodium Task Force 600%
+heart-attack figure (`HELLS-000062`), pregnancy toxemia + the pregnancy salt requirement
+(`DDDL-000245` + `RARE-000368`), water intoxication in infants on low-sodium formula (`EPIGEN-000327`).
+
 
 ## ✓ VANADIUM — r1 BANKED + APPROVED, with D REPLACED on his note (`temporary/awaiting-refinement/vanadium-demos-r1.html`). Do NOT rebuild vanadium.
 Luneth: **"These are good enough, I do wish the color aspect was hit more though. D is the weakest by far"** → rebuilt D, then **"Good enough"**. Seven concepts: **A** it acts like insulin (blood glucose normal while serum insulin stays LOW; the 1985 Vancouver "vanadium will replace insulin" line) · **B** not genetic (struck "a genetically-transmitted disease" → "a simple mineral deficiency", over his own Cr · Va · Zn table row) · **C** the craving is the sign (soft drink FIRST, water LAST, + the 300% urinary-loss loop) · **D** four colours in a glass (**the replacement** — see below) · **E** named for a goddess (1801 · del Rio · Vanadis · the 1971 essentiality gap) · **F** beyond blood sugar (inotropic effect · cholesterol · tumours in mice) · **G** a dog's life (40 / 28 / 12 minerals, Cr · V · Li TOTALLY ABSENT). lede + why (**150 mcg**) await ratification.
@@ -129,15 +199,33 @@ BP-drugs) · D pregnancy (IMMORT-000008 + LETS-000407 breast-milk + LETS-000210 
 - **Verify with your eyes, not the code.** View the actual rendered output (screenshot/zoom) and confirm the EXACT
   flagged thing before claiming fixed; for motion you can't screenshot, reason honestly about the mechanism. [[screenshot-verify-visual-chunks]], [[verification-doctrine]].
 
-## ★ NEXT TASK — SODIUM demos (taken up 2026-08-09 after vanadium closed)
-Luneth said only "let's move to the next element", so sodium was taken as the next-richest and he was told so in the same breath, with an offer to redirect. If he redirected, follow that instead.
+## ★ NEXT TASK — CONFIRM the element, then build its demos (sodium is CLOSED, refinement pending)
+Measured claim counts — **use this ranking, never a dossier count**:
+vanadium 66 ✓ · sodium 66 ✓ · **manganese 36** · cobalt 35 · phosphorus 34 · germanium 34 · choline 34 ·
+tryptophan 33 · sulfur 28 · flavonoids 27 · phenylalanine 23 · methionine 22 · silver 18 · lysine 18 ·
+leucine 17 · valine 16 · silica 12 · isoleucine 12 · histidine 9 · threonine 8.
+The thin tail (silica / isoleucine / histidine / threonine) are the **group-page** candidates.
 
-**REAL claim counts, measured (NOT dossier counts) — use this ranking, not a dossier:**
-vanadium 66 ✓ · **sodium 66** · manganese 36 · cobalt 35 · phosphorus 34 · germanium 34 · choline 34 · tryptophan 33 · sulfur 28 · flavonoids 27 · phenylalanine 23 · methionine 22 · silver 18 · lysine 18 · leucine 17 · valine 16 · silica 12 · isoleucine 12 · histidine 9 · threonine 8. The thin tail (silica / isoleucine / histidine / threonine) are the group-page candidates.
+**The method, now proven over three elements — follow it exactly:**
+1. Screenshot **two APPROVED sets** first (B2 r4 + B5 r1 are good references) and copy the panel anatomy
+   1:1 before adapting: eyebrow → kill headline → setup prose → captioned figure whose parts are named
+   INSIDE the frame → real `.ds-pull-quote` + `.ds-mark` → payoff with bold key phrases → mono claim-id
+   line → ⚠ mono caveat → disclaimer.
+2. `claim_review.py --entity <slug>` and read **every** sealed claim. Run `dossier_sweep.py`, then treat
+   the dossier as a head start only — it has been wrong on all three elements so far.
+3. Verify the target from `dashboard/assets/data/essentials-targets-data.json` **provenance** +
+   `git log -S <claim-id>`. Never from a dossier, never from memory.
+4. Build 5–7 genuinely-distinct concepts where **every figure LABELS ITS OWN PARTS** (test: could a
+   reader get the panel from the figure alone, prose removed?). Reach for a **realistic demonstration**
+   when the material allows it — that is what has landed best.
+5. `mockup_measure` → the reveal-`opacity` tag scan → the boxed-label padding check → **screenshot every
+   panel and READ IT** → park in `temporary/awaiting-refinement/` → **STOP for his picks.**
 
-⚠ **`sodium.md` is the WORST undercounter in the whole set — it says 14 against an actual 66.** Run `claim_review.py --entity sodium` and design off THAT. Expect his salt stance to be contrarian, so [[outside-agreement-is-an-alarm-not-a-verdict]] cuts both ways: verify before building a panel on it.
-
-**The method, now proven over three elements (B9, vanadium):** screenshot two APPROVED sets first → read every sealed claim → verify the target from `essentials-targets-data.json` provenance + `git log -S` the source id, never a dossier → build 5–7 genuinely-distinct concepts where **every figure LABELS ITS OWN PARTS** → `mockup_measure` → **screenshot and READ IT WITH YOUR EYES** → park → STOP for his picks. The measure step has now been green three rounds running while a screenshot showed something broken.
+**Reusable scratch tooling from last session** (all scratchpad-only, none wired into a gate): a shared
+chrome assembler (`assemble-<el>.py`: one style block + one why-block + per-concept bodies, derived
+element-to-element by `sed` so packs cannot drift), a per-panel screenshotter that forces every reveal
+class on, a single-figure cropper, and the boxed-label padding probe. Re-create them by the same pattern;
+folding the padding probe into `mockup_measure` is a real change to a shared tool and remains undone.
 
 ## After B9 — remaining options (ask Luneth then)
 B9 is closed, so the standing pair of options is: Either **(a) REFINE** a banked set toward porting (he picks element + concept/combination), graduate to `ready-to-be-ported/`, port LIVE
