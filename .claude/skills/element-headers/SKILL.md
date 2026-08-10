@@ -31,6 +31,19 @@ Offline-first means every asset is vendored, pinned, and works forever with the 
 never meant small, static, or plain. The app targets one pinned browser engine, so use modern CSS and
 JS directly -- no fallbacks, no polyfills, no defensive coding for browsers that will never load it.
 
+**Start from dashboard/design-wisdom/, every time.** It holds 33 CodePen captures Luneth
+personally chose plus 
+eferences-data.json carrying his own notes -- a standing statement of his
+taste. Their titles are the brief: crazy good animation effect, 3D-feeling effect on a 2D plane, a
+liquid thermometer with a movable slider, bold magazine-style, high-end editorial typography,
+brutalist high-end, brownian tendrils, plasma sphere, radial wave rays. **Not opening that folder,
+and shipping flat static SVG instead, has now caused three rejections** (Vitamin D, B6, manganese r3).
+
+**Never start from a previous header file or its CSS class vocabulary.** Copying the last approved
+header's classes carries its 15px/11.5px label sizes and fixed-width SVG into the new one, and that is
+how the small-static-diagram idiom propagates. Generate the shell fresh and choose the medium from the
+content. There is no fixed type ceiling.
+
 Reach for the form the content deserves. A mineral that accumulates over decades might want a
 scrubbable timeline. A deficiency cascade might want a sequence that plays. A comparison might want
 real photography. Ask what would make someone *stop scrolling*.

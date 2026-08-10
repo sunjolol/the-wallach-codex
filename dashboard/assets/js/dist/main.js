@@ -180312,7 +180312,69 @@ and RARE-000176, neither of which is in the sealed corpus any more. Both correct
 next-chunk.md so the next session cannot inherit them as true.
 
 Manganese now sits beside sodium as an element carrying an ask whose reason he did not state. The
-handoff says the same thing about both: ask him, do not guess, do not rebuild, do not improve it.` }];
+handoff says the same thing about both: ask him, do not guess, do not rebuild, do not improve it.` }, { id: "lg_msnig9b3_fm4gvp", ts: "2026-08-10T12:33:49.215491-05:00", surface: "element-headers", kind: "session-end", summary: "Three manganese rounds rejected in a row, and Luneth called it: rules I had written were forcing every illustration into the same shape. Cleared them, rebuilt from the 33 references he picked, and both manganese and cobalt landed.", detail: `Three rounds of manganese header demos were rejected one after another. The third got the
+sharpest verdict yet -- "Every single illustration is both unbelievably corny, and almost completely
+pointless. You're not illustrating anything, you're just making ugly svg images" -- and then Luneth
+did something more useful than describe what he disliked. He named a cause: "you must have written
+restrictive rules AGAIN that need to be cleared."
+
+He was right, and the cause turned out to be documentation rather than taste. Two files were doing it.
+The session handoff told the next session to "copy the panel anatomy 1:1" off the last approved
+header. A memory file that loads on every single turn had taken one fix for one old rejection --
+label the parts of a figure -- and promoted it into "THE RULE THAT SUBSUMES ALL". Follow both exactly
+and you get flat static SVGs of literal props: a quill drawn for "1717", a tap for "tap water", an
+inhaler for "asthma". Drawing the noun in the headline is the corniness. Meanwhile the guidance that
+would have freed the work -- the element-headers skill, which says animation and canvas and real
+imagery are all encouraged, and the 33 CodePen references Luneth hand-picked with his own notes on
+each -- only loads when something happens to match it. Always-loaded beats on-demand, every time.
+That is the third time this exact mechanism has caused a regression: Vitamin D, then B6, then
+manganese.
+
+So the fix was to clear the rules rather than try harder inside them, and then to actually open the
+folder of references. Reading his notes rather than the titles is what changed the work. His note on
+the liquid thermometer says "the move-able slider effect WITHIN THE THERMOMETER ITSELF is so unique"
+-- that sentence is why manganese's dose ladder has its handle inside the tube instead of a slider
+bolted alongside. His note on the highlight-marks pen says it "could for highlighting parts of
+Wallach quotes that are important" -- so one manganese panel is a mark that sweeps down his own
+deficiency list and stops on the three entries about fertility. His note on the brownian organism
+says "I LOVE how alive and random this looks, it looks like a living organism trying to get out not
+some loop", and the capture file spells out the mechanism: re-randomise velocity every frame so there
+is no period at all. That is what drives the particles at the gut wall, and the bacteria assembling a
+B12 molecule around a cobalt atom.
+
+Manganese r4 was approved at four concepts. Cobalt r1 was approved in part and corrected in a way
+worth recording: "Both A and D would be better if the user could control the timeline/slider instead
+of autoplaying on a loop. B and C are weak, and go back to doing 6 demos again, I felt like that was
+working better." Cobalt r2 is six concepts with every control in the reader's hands, and the ambient
+motion left running when a figure is parked so it does not look dead.
+
+The other lesson is about verification. An interactive figure lies far more convincingly than a
+static one, because it moves and movement reads as function. Four defects this session would have
+survived any screenshot. Cobalt's metal selector never had its JavaScript passed to the assembler at
+all -- it rendered beautifully and did nothing; the sweep hit "not a function" on the first call.
+Manganese's absorption animation measured MORE absorbed particles at his 1-10% form than at his
+25-50% form, exactly backwards, because switching forms left the previous form's particles stranded
+on the far side. Manganese's first dose control used a rotated native range input, which cannot align
+its thumb to a non-linear scale, so the handle sat at 50 mg while the readout said 7.7. And a range
+thumb travels inside the track minus its own width, so a marker positioned at the same percentage
+drifts from it. None of that is visible by looking once. All of it is visible by sweeping every state
+and counting pixels.
+
+One correction against myself, logged here so it cannot be inherited: while checking the cobalt
+dossier for dead claim ids, an ad-hoc probe I wrote globbed a directory that does not exist and
+reported all thirteen ids dead. I had read most of those same ids as live minutes earlier. Claims
+live in eden/corpus/claims/*.json under the key "id", not "claim_id", and the true answer is two dead
+ids. A probe's first output is not evidence -- negative-control it before reporting from it.
+
+Cobalt also turned out to be structurally unique on this board: it is the only essential whose card
+carries no number of its own. It mirrors vitamin B12, because Wallach's position is that there is no
+free-standing cobalt requirement to state. His words: "a pure cobalt requirement is only found in
+some bacteria and algae." That is not a gap in the data. It is the most interesting thing about the
+element, and it became the header thesis -- you do not have a cobalt requirement, you have a
+requirement for what a microbe makes out of cobalt.
+
+Nothing shipped live. Both packs sit in temporary/awaiting-refinement/ awaiting his picks, which is
+where every header stays until he says otherwise.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
