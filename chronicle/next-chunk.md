@@ -1,16 +1,50 @@
 # ★ NEXT SESSION — run genesis, then start the next element's demos.
 
-**21** demo sets sit in `temporary/awaiting-refinement/` (counted off disk — recount, never copy),
-one per element. Board 90/90, build parity fresh. Manganese and cobalt both closed this session.
+**22** demo sets sit in `temporary/awaiting-refinement/` (counted off disk — recount, never copy),
+one per element. Board 90/90, build parity fresh. **Phosphorus closed this session (r2 approved).**
+
+## ★★★ PHOSPHORUS — CLOSED, r2 APPROVED (`temporary/awaiting-refinement/phosphorus-demos-r2.html`). DO NOT REBUILD.
+Luneth: **"This is good enough."** Six concepts, reader-driven, ZERO drawn objects:
+**A** the zero — his `PHOSPHORUS 800mg 0.0 0.0` row as a clickable instrument · **B** one-to-
+forty-four — his food table where the NUMERAL'S POINT-SIZE IS THE VALUE (1:8 at 37px, 1:44 at 99px) ·
+**C** I bear light — the WORD PHOSPHORUS emits light as you drag the room dark · **D** 2:1 against
+1:20 + the 25 lb arithmetic · **E** pica — the word held pixel-fixed while the list changes around it ·
+**F** the rampage — his sentence at display scale with the mark.
+Build: `temporary/build-scripts/phosphorus-r2-build.py`. lede + why (**0 mg**) await ratification.
+r1 REJECTED → `temporary/recycling-bin/_superseded/2026-08-10-phosphorus-rejected-r1/`.
+
+### ★★★ THE r1 REJECTION — TWO CAUSES, BOTH MECHANICAL, BOTH CHEAP TO AVOID
+*"A is absolutely hideously ugly and childish illustration, D is the same, and the rest are just
+boring walls of text."* Four rounds have now died on one or both (Vitamin D, B6, manganese r3,
+phosphorus r1). Recorded in `.claude/skills/element-headers` and
+[[element-header-illustration-failure-modes]]:
+1. **SCALE.** `#drawer-knowledge-mount .kd-ep-fam__kill { font-size: var(--ds-text-lg) }` — an ID rule
+   pinning that class to **1.14rem**. Any headline written with it renders at document size and the
+   panel reads as a wall of text. `--ds-text-4xl` (2.8–4.2rem) / `--ds-text-5xl` (5–7.5rem) exist and
+   went unused for four rounds. **Write your own headline class.** Scale IS the design.
+2. **NEVER DRAW THE NOUN IN YOUR OWN HEADLINE.** Cartoon broccoli under a broccoli headline. Canvas
+   does not rescue it. **If a figure wants light, light the TYPE** — C lights the word itself.
+⚠ **`type-futurist.css` loads LAST** and overrides `--ds-font-display`→Unbounded,
+`--ds-font-serif`→Space Grotesk. The BAR (`dashboard/components/trace-mineral-tile-detail.html`)
+is Playfair only because it does not load that sheet. Copy its RELATIONSHIPS, never its font stack.
+⚠ **A DOM probe missed an 18px label overlap in r1-C** that only measuring the rects caught, and the
+r2 sweep's overflow check false-alarmed on a deliberately-oversized layer clipped by `overflow:hidden`.
+Test what PAINTS, not what the box measures. [[interactive-figure-must-be-measured]]
 
 ## ★ NEXT TASK — build the next element's demos
 Measured claim counts (**use this ranking, never a dossier count**): vanadium 66 ✓ · sodium 66 ✓ ·
-manganese 36 ✓ · cobalt 35 ✓ · **phosphorus 34** · germanium 34 · choline 34 · tryptophan 33 ·
+manganese 36 ✓ · cobalt 35 ✓ · phosphorus 34 ✓ · **germanium 34** · **choline 34** · tryptophan 33 ·
 sulfur 28 · flavonoids 27 · phenylalanine 23 · methionine 22 · silver 18 · lysine 18 · leucine 17 ·
 valine 16 · silica 12 · isoleucine 12 · histidine 9 · threonine 8.
-Next by ranking is **phosphorus**; germanium and choline are tied one behind. **Confirm with him
-before building** — but do the grounding first, it is useful either way. The thin tail (silica /
-isoleucine / histidine / threonine) are the **group-page** candidates.
+**Germanium and choline are tied at 34 — ASK which.** Do the grounding first, it is useful either way.
+The thin tail (silica / isoleucine / histidine / threonine) are the **group-page** candidates.
+
+⚠ **The phosphorus dossier was wrong by a factor of ~3** (said 13 claims, corpus holds 34) and three
+of its "not verbatim-safe" flags were FALSE. Corrected in place with a block at the top of
+`chronicle/header-research/phosphorus.md`. **Assume the next dossier is wrong too** — run
+`claim_review.py --entity <slug>` and design off that. ⚠ **`HELLS-000029` and `HELLS-000064` carry the
+SAME verbatim from the SAME book**, differing only in subject (iron vs phosphorus) — a possible
+duplicate, untouched, needs per-claim approval.
 
 ## ★★★ THE LESSON THAT COST FOUR ROUNDS — READ BEFORE DESIGNING ANYTHING
 Manganese r1, r2 and r3 were all rejected. r3's verdict: **"Every single illustration is both

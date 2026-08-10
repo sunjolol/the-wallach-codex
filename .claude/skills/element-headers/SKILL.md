@@ -96,6 +96,33 @@ box-sizing -- or the geometry stops being the real geometry.
   existing one and silently restyled two already-shipped headers. The new element's own page looked
   perfect; only the regression pass caught it.
 
+## The two things that cause almost every rejection
+
+Four rounds have now died on one or both of these (Vitamin D, B6, manganese r3, phosphorus r1).
+They are cheap to avoid and expensive to miss.
+
+### 1. SCALE. `.kd-ep-fam__kill` is pinned to 1.14rem by an ID rule.
+`#drawer-knowledge-mount .kd-ep-fam__kill { font-size: var(--ds-text-lg) }` -- so a headline written
+with that class renders at **document size, not magazine size**, and a panel built on it reads as a
+"boring wall of text" however good the words are. `--ds-text-4xl` (2.8-4.2rem) and `--ds-text-5xl`
+(5-7.5rem) exist and were unused for four rounds. **Write your own headline class** so nothing is
+pinned; the approved sets run headlines at 2.5-3.2rem and numerals at 4.5-6.4rem.
+
+### 2. NEVER DRAW THE NOUN IN YOUR OWN HEADLINE.
+A broccoli headline with drawn broccoli under it, a glowing-lump headline with a drawn glowing lump --
+that is the corniness, and rendering it in canvas instead of SVG does not save it. Verdict on
+phosphorus r1: *"absolutely hideously ugly and childish illustration."* **Nothing in
+`dashboard/design-wisdom/` or in `dashboard/components/trace-mineral-tile-detail.html` (the BAR) is a
+picture of an object.** The whole vocabulary is two things: editorial-technical typography (colour-split
+headlines, oversized accent numerals, drop caps, corner-bracket frames, mono chrome) and ABSTRACT
+luminous/generative fields (plasma, glow, particle drift). If a figure wants light, light the TYPE --
+phosphorus C lights the word PHOSPHORUS itself and draws no object at all.
+
+⚠ **`type-futurist.css` loads LAST and overrides the faces.** `--ds-font-display` becomes Unbounded and
+`--ds-font-serif` becomes Space Grotesk, so the bar's Playfair magazine look is NOT available in the
+drawer. Copy the bar's RELATIONSHIPS, not its font stack. Repointing that token is a design-system
+change [[token-indirection-grep-the-readers]].
+
 ## What has failed before -- and why
 Not a list of bans. These are diagnosed failures, so you can avoid the cause rather than the shape.
 

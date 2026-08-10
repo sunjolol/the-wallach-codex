@@ -1,6 +1,65 @@
 # Phosphorus — header research dossier
-> status: RESEARCH (concepts only — NOT designed). 13 sealed claims · mineral · target: 0.0 mg/day — the one essential Wallach tells you NOT to supplement.
 
+> ## ⚠⚠ CORRECTED 2026-08-10 — READ THIS BLOCK BEFORE ANYTHING BELOW IT
+>
+> The body of this dossier was written against **13 claims**. The sealed corpus holds **34**
+> (`PYTHONUTF8=1 python tools/claim_review.py --entity phosphorus`). Everything below is a head
+> start only; three of its §5 "not verbatim-safe" flags are **FALSE**, and it never reached the
+> best material in the entity. Design off `claim_review.py`, never off this file.
+>
+> **Flags below that are wrong:**
+> - §5 says the **15–20:1 inversion** is claim_text-only and appears in no verbatim. It is
+>   **verbatim** in `WAL-CLM-DDDL-000253`: *"The correct calcium/phosphorus ratio is 2 calcium/1
+>   phosphorus (most American diets are 15-20 phosphorus/ 1 calcium)"*. Usable as a hard figure.
+> - §5 says the **B-complex/phosphorus coenzyme tie** is claim_text-only. It is **verbatim** in
+>   `WAL-CLM-DDDL-000248`, which also carries **the blood's major buffer system** verbatim — the
+>   other thing §5 says not to put on a label. (§5 is right that neither is in `RARE-000204/205`;
+>   it is wrong that neither is anywhere.)
+> - §5 says "nutritionists ignore it" is not verbatim-safe. It is **verbatim** in
+>   `WAL-CLM-DDDL-000246`.
+>
+> **Material the dossier never found, all verbatim, all stronger than what it recommends:**
+> - `DDDL-000250` — **his food ratio table**: grain 1:8 · red meat 1:12 · organ meat (liver,
+>   kidney) **1:44** · fish 1:12 · carbonated drinks 1:8, closing *"the more meat you eat, the
+>   more calcium supplementation you need."* This is the best data figure the element has.
+> - `DDDL-000180` — **"You would have to eat 25 pounds of broccoli every time you ate a 16 oz.
+>   steak!"** The most quotable line in the entity.
+> - `EPIGEN-000337` + `IMMORT-000378` — **the 1669 naming**: Hennig Brand(t), boiled-down urine
+>   (+ beach sand), the residue that *glowed in a dark room*, named for Greek **"I bear light"**,
+>   bursting into flames in warm air. ⚠ **Epigenetics spells him Brandt and calls him an
+>   alchemist; Immortality spells him Brand and calls him a physician.** Flag it, never pick one
+>   silently.
+> - `DDDL-000254` — **osteophagia**: LeVaillant (1796), cattle in phosphate-deficient South
+>   African pastures hunting discarded bones, chewing wood and each other's horns; reported in
+>   reindeer, caribou, red deer, camels, giraffe, elephant, wildebeest.
+> - `HELLS-000064` / `HELLS-000029` — **iron + phosphorus deficiency together** producing *"an
+>   almost psychotic binge eating and soft drink consumption rampage that results in morbid
+>   obesity."* Obesity as a mineral-deficiency disease.
+> - `IMMORT-000070` — **doubling phosphate intake raises urinary calcium output by 50%**
+>   (and salt: 96 → 148 mg/day). Hard mechanistic numbers.
+> - `DDDL-000252` — his **livestock** deficiency signs (pica, cribbing, fractures), which pair
+>   against the 13 human signs in `LETS-000023`. `pica` is the only word on both lists.
+>
+> **⚠ Possible duplicate, needs per-claim approval — not touched.** `HELLS-000029` and
+> `HELLS-000064` carry the **same verbatim from the same book**, differing only in `subject`
+> (iron vs phosphorus). Neither is superseded. Route through the duplicate-review process.
+>
+> **Target verified 2026-08-10** against `essentials-targets-data.json` provenance, not this
+> file: `kind: wallach`, `low: 0.0`, unit mg, daily, `source_claim_id: WAL-CLM-LETS-000061`.
+> The dossier's §4 "why this number" is sound and survives.
+>
+> **Demos built and APPROVED 2026-08-10:** `temporary/awaiting-refinement/phosphorus-demos-r2.html`
+> (6 concepts, reader-driven), built by `temporary/build-scripts/phosphorus-r2-build.py`. Luneth:
+> *"This is good enough."* It designs off the corrected material above, not the four concepts in §2.
+>
+> **⚠ r1 was REJECTED outright** — *"absolutely hideously ugly and childish illustration ... the rest
+> are just boring walls of text"* — and now sits in
+> `temporary/recycling-bin/_superseded/2026-08-10-phosphorus-rejected-r1/`. **Do not rebuild from it.**
+> Its two causes are recorded in `chronicle/next-chunk.md` and in the `element-headers` skill:
+> (1) it drew the noun from its own headline as cartoon canvas blobs, and (2) it set every headline
+> with `.kd-ep-fam__kill`, which an ID rule pins to 1.14rem, so four panels read as documents.
+
+> status: RESEARCH (concepts only — NOT designed). **34** sealed claims (this file was written against 13) · mineral · target: 0.0 mg/day — the one essential Wallach tells you NOT to supplement.
 Phosphorus is the outlier of the 90. Almost every element's header is built around a positive daily target the user should reach. Phosphorus's Wallach target is an affirmative **zero** (WAL-CLM-LETS-000061): you already get a large excess, and the excess is the problem. That inversion is the single most distinctive thing the corpus supports, and it is unlike any of the six shipped headers.
 
 ## 1. The material (grounded, by angle)
