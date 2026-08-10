@@ -180033,7 +180033,79 @@ Rule audit (Luneth explicitly asked whether a rule made between the last good de
 Grounding was clean regardless: all 12 non-dead cited claim-ids verified live; the dossier-drift dead id RARE-000237 was substituted with the live EPIGEN-000108 + LETS-000027; every pull-quote was byte-exact. Board 90/90; build exit 0.
 
 Retry, next session: rebuild B6 fresh, pushing each concept toward a striking hero with real craft (the verified grounding and concept material are preserved in chronicle/next-chunk.md). Do not ban any shape \u2014 per the vitamin-D header postmortem, diagnose causes, don't ban shapes \u2014 and do not add restrictive rules, per Luneth's standing instruction.
-` }, { id: "lg_mskwh3he_w7bysm", ts: "2026-08-08T16:43:04.418980-05:00", surface: "element-headers/quote-treatment", kind: "incident", summary: "Correction: I wrongly told Luneth I didn't change the quote styling - he proved a before/after. My demos (niacin, B1, B6) dropped the app's real .ds-pull-quote component for a plain border-left quote; my 'no change' compared to an already-regressed baseline. Record corrected.", detail: 'A correction to the record, and to what I told Luneth. He asked why I changed the quote styling in B6; I answered that I hadn\'t \u2014 that the standard quote was byte-identical to niacin and B1 and only the epilepsy concept deviated. He then showed a before/after screenshot proving I had changed it. He was right. This entry corrects the falsehood I stated and committed (the prior B6-rejection note, entry lg_mskw09hw_pcfv52).\n\nThe truth: the established Wallach-quote treatment is the app\'s design-system component `.ds-pull-quote` \u2014 a large italic pull-quote carrying the giant opening-quote glyph (via ::before, in the accent colour), a `.ds-mark` warm-yellow highlight on the key phrase, a `footer` attribution reading "\u2014 DR. JOEL WALLACH \xB7 BOOK (ED. YEAR)", plus a "General education, not medical advice" disclaimer. It is rendered live by entity-page.ts and defined in design-system.css (.ds-mark at line 475, .ds-pull-quote at 749), documented in STYLE-GUIDE.md.\n\nMy header demos \u2014 niacin, B1, and B6, and the mineral run before them \u2014 hand-rolled a plain border-left quote at about 1.04rem with a mono claim-id line, instead of that component. That is a real and visible regression.\n\nWhy my answer was false, mechanically: I compared B6\'s quote only against niacin\'s and B1\'s. But those two had already abandoned .ds-pull-quote, so "byte-identical to niacin/B1" measured against an already-regressed baseline and confirmed a falsehood rather than catching it. Comparing to the wrong baseline is how I convinced myself nothing had changed.\n\nFixes applied this session: corrected chronicle/next-chunk.md (the B6-retry note\'s quote diagnosis had it backwards \u2014 the plain quote IS the regression, not the standard) and appended a correction line to chronicle/build-log.md. No fragment files were reverted (all gitignored scratch; niacin and B1 remain banked as starting points, with the quote fix now logged as a refinement item for them too).\n\nDeeper lesson, and probably the real root of the "lower quality" Luneth flagged beyond the infographic-idioms point: build header figures with the real design-system components, not hand-rolled approximations of them. The retry, and the eventual refinement of niacin and B1, must use the real .ds-pull-quote + .ds-mark treatment.\n' }];
+` }, { id: "lg_mskwh3he_w7bysm", ts: "2026-08-08T16:43:04.418980-05:00", surface: "element-headers/quote-treatment", kind: "incident", summary: "Correction: I wrongly told Luneth I didn't change the quote styling - he proved a before/after. My demos (niacin, B1, B6) dropped the app's real .ds-pull-quote component for a plain border-left quote; my 'no change' compared to an already-regressed baseline. Record corrected.", detail: 'A correction to the record, and to what I told Luneth. He asked why I changed the quote styling in B6; I answered that I hadn\'t \u2014 that the standard quote was byte-identical to niacin and B1 and only the epilepsy concept deviated. He then showed a before/after screenshot proving I had changed it. He was right. This entry corrects the falsehood I stated and committed (the prior B6-rejection note, entry lg_mskw09hw_pcfv52).\n\nThe truth: the established Wallach-quote treatment is the app\'s design-system component `.ds-pull-quote` \u2014 a large italic pull-quote carrying the giant opening-quote glyph (via ::before, in the accent colour), a `.ds-mark` warm-yellow highlight on the key phrase, a `footer` attribution reading "\u2014 DR. JOEL WALLACH \xB7 BOOK (ED. YEAR)", plus a "General education, not medical advice" disclaimer. It is rendered live by entity-page.ts and defined in design-system.css (.ds-mark at line 475, .ds-pull-quote at 749), documented in STYLE-GUIDE.md.\n\nMy header demos \u2014 niacin, B1, and B6, and the mineral run before them \u2014 hand-rolled a plain border-left quote at about 1.04rem with a mono claim-id line, instead of that component. That is a real and visible regression.\n\nWhy my answer was false, mechanically: I compared B6\'s quote only against niacin\'s and B1\'s. But those two had already abandoned .ds-pull-quote, so "byte-identical to niacin/B1" measured against an already-regressed baseline and confirmed a falsehood rather than catching it. Comparing to the wrong baseline is how I convinced myself nothing had changed.\n\nFixes applied this session: corrected chronicle/next-chunk.md (the B6-retry note\'s quote diagnosis had it backwards \u2014 the plain quote IS the regression, not the standard) and appended a correction line to chronicle/build-log.md. No fragment files were reverted (all gitignored scratch; niacin and B1 remain banked as starting points, with the quote fix now logged as a refinement item for them too).\n\nDeeper lesson, and probably the real root of the "lower quality" Luneth flagged beyond the infographic-idioms point: build header figures with the real design-system components, not hand-rolled approximations of them. The retry, and the eventual refinement of niacin and B1, must use the real .ds-pull-quote + .ds-mark treatment.\n' }, { id: "lg_msmji0rq_hovzqa", ts: "2026-08-09T20:15:24.902609-05:00", surface: "element-headers", kind: "round-close", summary: 'B2 header approved at round 4 after three rejections. The lesson: a header figure must LABEL ITS OWN PARTS -- unlabelled mood art "literally says nothing". Found it by screenshotting the sets Luneth had already approved, instead of designing from taste a fourth time.', detail: `Vitamin B2's illustrated header took four attempts. The first three were rejected, and the third
+rejection is the one that taught something. I had built five figures that were genuinely beautiful -- a field
+of lights guttering out, a crack splitting open, a glare washing out a room, a fluorescent glow breathing in
+the dark -- and Luneth threw all five out: "huge illustrations that literally say nothing ... it's there for
+no apparent reason. Illustrations MUST MAKE VISUAL SENSE." He was right. Every one of those figures was an
+atmosphere with no words in it; all the explaining sat in the text underneath, so the picture itself carried
+nothing. Rather than guess a fourth time, I opened the header sets he had already approved and looked at what
+they had in common. It was not subtle: every approved figure names its parts inside the frame. So the fourth
+round rebuilt all six figures that way, and he picked three of them.
+
+WHAT WAS REJECTED AND WHY (r3, five concepts, all deleted)
+Unlabelled atmospheres: a dot-field "cell lights" wave, an abstract fissure, an optical glare bloom, a
+luminous whey glow, plus one typographic roster. Four of the five carried zero in-figure text; every label sat
+below the figure, disconnected. Diagnosis in Luneth's words: they "say nothing" and are "there for no apparent
+reason."
+
+THE RULE, DERIVED FROM EVIDENCE NOT TASTE
+Screenshotted temporary/awaiting-refinement/vitamin-b3-demos-r1.html and vitamin-b1-demos-r1.html. Niacin's
+NAD figure labels Carbohydrate / Fat / Protein going in and Energy coming out. B1's rice grain labels
+"thiamine-bearing bran" on a leader line, "POLISHING" on the arrow, and captions each grain. Niacin's three Ds
+label each letter with its word plus THE GUT / THE SKIN / THE MIND. The falsifiable test that falls out:
+could a reader get the whole panel from the figure alone, with the prose removed? If no, it is decoration.
+Corollary: he does NOT dislike diagrams -- the standing "diagram clutter" failure mode is about CLUTTER; a
+clean 5-node labelled flow is the approved genre. Also: restrained line art on the tan background, not 760px
+dark full-bleed slabs.
+
+r4 -- SIX LABELLED CONCEPTS, THREE PICKED
+A what B2 becomes (B2 -> FMN + FAD -> Energy under named columns) - B it switches the others on (two named
+conversions: inactive B6 -> functional B6, tryptophan -> niacin, each enzyme named on its arrow; NEW this
+round and the strongest unused idea) - C the three sites Wallach names, three across, each mark over its own
+name - D his 12-entry deficiency roster with depression and dizziness ignited - E the 1879 discovery: a dish
+of whey and its fluorescence, both labelled, over an 1879/1932/1935 rule - F clear lens vs clouded lens with
+the early eye signs named. Luneth: "C, E and F are the best."
+
+DEFECTS CAUGHT BY LOOKING, THAT NO PROBE REPORTS
+(1) a leader line running straight through its own caption -- the single most common rejection in this project
+-- fixed by rebuilding C as a three-across roster that needs no leaders at all; (2) a caption clipped at the
+SVG edge; (3) a caption whose last word sat behind a drawn vessel. All three were invisible to the text-vs-text
+collision pass and visible immediately in a screenshot.
+
+DOSSIER DRIFT -- SECOND CONFIRMED CASE
+chronicle/header-research/vitamin-b2.md carries two flags that are now false: it says the mechanism lives in
+claim_text with "no mechanism verbatim to pull by ID" (WAL-CLM-EPIGEN-000243 has a full quotable one, used in
+four panels), and it says the yellow-green pigment fact is world knowledge that must never be injected
+(WAL-CLM-IMMORT-000297 states it byte-exact, plus 1932 Warburg / 1935 Kuhn). Concept E -- one of his three
+picks -- is built entirely on grounding the dossier forbids. The same pattern then appeared in vitamin-b5.md
+(says 10 claims, there are 17; declares a discovery/history concept unsupported when WAL-CLM-EPIGEN-000253 is
+exactly that). Two in a row is a pattern, not a coincidence; flagged for a sweep.
+
+TOOLING -- A HOLE CLOSED
+tools/mockup_measure.js compared text against text only, so it passed a figure whose label read "sterols and
+steroid hormone|s" -- nothing overlapped it, it simply ran off the canvas. It now also checks every label
+against its own viewBox edges (right/left/bottom) and exits non-zero on a clip. Proved the check can fire
+before trusting it: reports "CLIPPED LABELS: none" on the fixed page and fires on a deliberately clipped
+control label. Board 90/90 after the change.
+
+FILES
+temporary/awaiting-refinement/vitamin-b2-demos-r4.html (6 panels) + temporary/header-fragments/vb2-frags/
+(6 fragments); r1 + r3 and eight orphaned fragments moved to
+temporary/recycling-bin/_superseded/2026-08-09-vb2-rejected-rounds/ (moved, not deleted). tools/mockup_measure.js
+gains the clipped-label check. chronicle/next-chunk.md banks B2 r4 and records the labelled-figure rule and the
+dossier drift. Memory element-header-illustration-failure-modes.md gains the rule as its top section.
+
+VERIFICATION
+6 figures at scale 1.000; zero label-box overlaps by a getBBox probe (mockup_measure's residual flags are
+stacked two-line captions, confirmed non-overlapping); scroll proven by a real wheel event; every verbatim
+pulled by claim id at generation time with a hard failure on a missing slice, never hand-typed. Board 90/90
+(23 external / 24 consistency / 41 structural / 2 meta) -- nothing drifted, which is not the same as anything
+being right. Build parity fresh.
+
+IN FLIGHT, NOT CLOSED
+B5 (pantothenic acid) r1 is built -- six labelled concepts -- and is awaiting Luneth's picks. It is deliberately
+not part of this round-close.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

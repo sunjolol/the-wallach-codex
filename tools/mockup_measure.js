@@ -67,7 +67,7 @@ const path = require('path');
     && (scroll.wheeled < 50 || ['hidden', 'clip'].includes(scroll.effective));
 
   const report = await page.evaluate(() => {
-    const out = { containers: [], figures: [], collisions: [] };
+    const out = { containers: [], figures: [], collisions: [], clipped: [] };
     document.querySelectorAll('.kd-ep-fam').forEach((el, i) => {
       const cs = getComputedStyle(el);
       out.containers.push({ i, clientWidth: el.clientWidth,
@@ -82,6 +82,18 @@ const path = require('path');
         rendered: +rendered.toFixed(1),
         scale: authored ? +(rendered / authored).toFixed(3) : null });
       const texts = [...svg.querySelectorAll('text')];
+      // A label that runs off the viewBox is truncated on screen but collides with
+      // NOTHING, so the text-vs-text pass above cannot see it. Check the edges too.
+      const vbx = svg.viewBox && svg.viewBox.baseVal;
+      if (vbx && vbx.width) texts.forEach(t => {
+        const bb = t.getBBox();
+        const over = (bb.x + bb.width) - (vbx.x + vbx.width);
+        const under = vbx.x - bb.x;
+        const below = (bb.y + bb.height) - (vbx.y + vbx.height);
+        if (over > 1) out.clipped.push(`right by ${over.toFixed(1)}px: "${t.textContent.trim().slice(0,32)}"`);
+        else if (under > 1) out.clipped.push(`left by ${under.toFixed(1)}px: "${t.textContent.trim().slice(0,32)}"`);
+        if (below > 1) out.clipped.push(`bottom by ${below.toFixed(1)}px: "${t.textContent.trim().slice(0,32)}"`);
+      });
       for (let a = 0; a < texts.length; a++) for (let b = a + 1; b < texts.length; b++) {
         const r1 = texts[a].getBoundingClientRect(), r2 = texts[b].getBoundingClientRect();
         if (r1.width && r2.width && !(r1.right < r2.left || r2.right < r1.left ||
@@ -121,8 +133,12 @@ const path = require('path');
     console.log(`TEXT COLLISIONS (${report.collisions.length}):`);
     report.collisions.slice(0, 12).forEach(c => console.log('  ' + c));
   } else console.log('TEXT COLLISIONS: none');
+  if (report.clipped.length) {
+    console.log(`CLIPPED LABELS (${report.clipped.length}) -- text running off its own viewBox:`);
+    report.clipped.slice(0, 12).forEach(c => console.log('  ' + c));
+  } else console.log('CLIPPED LABELS: none');
   console.log('NOTE: text-vs-text only. A stroke through a label, or a label hidden behind an');
   console.log('      opaque shape, is INVISIBLE here. Screenshot and use your eyes.');
   await browser.close();
-  process.exit(failed.length || report.collisions.length || scrollLocked ? 1 : 0);
+  process.exit(failed.length || report.collisions.length || report.clipped.length || scrollLocked ? 1 : 0);
 })();

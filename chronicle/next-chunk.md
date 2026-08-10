@@ -1,10 +1,43 @@
 # ★ NEXT SESSION — element-header demos continue (the clean-slate method is working)
 
-Eleven banked demo sets and counting; the clean-slate method (trust the LIBERATED `element-headers` skill) keeps
+Twelve banked demo sets and counting; the clean-slate method (trust the LIBERATED `element-headers` skill) keeps
 landing consistently. Board 90/90. Run genesis, then **ask Luneth** whether to REFINE a banked set toward
 porting, or BUILD more.
 
-## ⚠ B6 (Pyridoxine) — r1 REJECTED (2026-08-08), rebuild FRESH next session
+## ✓ B6 (Pyridoxine) — r2 REBUILT + APPROVED (temporary/awaiting-refinement/vitamin-b6-demos-r2.html). Do NOT rebuild B6; the r1 notes below are HISTORICAL.
+
+## ✓ B2 (Riboflavin) — r4 BANKED + APPROVED (`temporary/awaiting-refinement/vitamin-b2-demos-r4.html`). Do NOT rebuild B2.
+Six labelled concepts. Luneth: **"C, E and F are the best."** — **C** the three sites Wallach names (corners of the
+mouth · nasolabial folds · "geographic" tongue, three-across, each mark over its own name, no leader lines) ·
+**E** the 1879 discovery (an actual dish of whey + its fluorescence, both labelled, over an 1879/1932/1935 rule) ·
+**F** same-list-both-ends (clear lens passing light vs clouded lens blocking it, the early eye signs named beside).
+Also built and kept: **A** what B2 BECOMES (B2 → FMN + FAD → Energy under named columns) · **B** *it switches the
+others on* (the two named conversions — inactive B6 → functional B6, tryptophan → niacin, each enzyme named on its
+arrow; NEW this round and the strongest unused idea in the pack) · **D** his 12-entry deficiency roster with
+`depression` and `dizziness` ignited. r1 + r3 and their orphaned fragments were moved to
+`temporary/recycling-bin/_superseded/2026-08-09-vb2-rejected-rounds/`.
+
+### ★★★ THE LESSON FROM THREE B2 REJECTIONS — a header figure MUST LABEL ITS OWN PARTS
+r3 was rejected with: *"huge illustrations that literally say nothing … so braindead to just show a bright light
+illustration that illustrates nothing … Illustrations MUST MAKE VISUAL SENSE."* All five r3 figures were beautiful,
+animated, **unlabelled atmospheres** (a dot field, a crack, a glare, a glow) with every word sitting BELOW the
+figure. The fix came from screenshotting the APPROVED sets instead of designing from taste: **every figure Luneth
+has approved names its parts inside the frame** — niacin's NAD figure labels Carbohydrate / Fat / Protein in and
+Energy out; B1's rice grain labels "thiamine-bearing bran" on a leader, "POLISHING" on the arrow, and captions each
+grain. **Test: could a reader get the whole panel from the figure alone, prose removed?** If no, it is decoration.
+He does NOT hate diagrams — a clean 5-node labelled flow is the approved genre; clutter is the failure.
+Screenshot two approved sets BEFORE designing anything. [[element-header-illustration-failure-modes]] updated.
+
+### ⚠ vitamin-b2.md dossier drift — two flags are STALE, fix before reuse
+The dossier says the mechanism lives in `claim_text` only with "no mechanism verbatim to pull by ID" (**false** —
+`WAL-CLM-EPIGEN-000243` carries a full quotable mechanism verbatim, used in A/B/D/F), and says there is no
+"riboflavin is yellow" fact and to **not** inject it as world knowledge (**false** — `WAL-CLM-IMMORT-000297` states
+the 1879 yellow-green fluorescent pigment in milk whey byte-exact, plus 1932 Warburg / 1935 Kuhn; `IMMORT-000296`
+corroborates). Concept E exists entirely on grounding the dossier forbids. It also claims no discovery/history
+material exists; IMMORT-000297 is exactly that. lede + why (50 mg — `EPIGEN-000113` upper of 10–50, independently
+corroborated at the same 50 mg by `LETS-000064`; the 1.6 mg on that row is the RDA decoy) await ratification.
+
+## B6 (Pyridoxine) — r1 rejection notes, HISTORICAL (B6 r2 is approved; do not rebuild)
 Built 5 concepts (dial · epilepsy twin-EEG · drug-drain · pregnancy arc · carpal-tunnel swap); Luneth rejected
 ALL — **not the info, the PRESENTATION**: "clearly lower quality than the rest … it's the way it's presented."
 DIAGNOSIS (a diagnosis, NOT a ban on any shape): the r1 visuals drifted to infographic/diagram idioms — a
@@ -38,6 +71,7 @@ BP-drugs) · D pregnancy (IMMORT-000008 + LETS-000407 breast-milk + LETS-000210 
 - **vitamin-k-demos-r1.html** — 4 (A Two Jobs, B Homemade Half, C Read the Bruise, D Activator X). "All 4 good, some tweaks."
 - **vitamin-b12-demos-r1.html** — 6 (A Red Crystal **[his FAVORITE]**, B Made by Microbes, C What Survives, D Losing the Insulation, E Why B12 energises you, F Why you're secretly low). E/F = the ENERGY angle.
 - **vitamin-b3-demos-r1.html** — 4, vitamin/orange, the coenzyme-and-pellagra vitamin. A "The Three Ds" (typographic pellagra triad — Diarrhea/gut · Dermatitis/skin · Dementia/mind under a PELLAGRA band, +retardation + beef-tongue; EPIGEN-000037/RARE-000235) · B **[FAVORITE]** "What burns your food" (the glowing NAD·NADP furnace — carbs+fat+protein converge in, Energy radiates out, animated flow+glow; EPIGEN-000037, the pack's SOLE mechanism claim) · C **[FAVORITE]** "Why time-release?" (the flush — a big-dose bloom flaring vs a time-release calm, with a ⚠ note that the flush→time-release CAUSATION is pharmacology, not one Wallach sentence; LETS-000020 + the recurring "time-release" qualifier) · D "The mind's default" (the identical 450 mg·time-release chip down anxiety/bipolar/dementia/hysteria/insomnia/headache under "organic brain syndrome"; LETS-000388 + 6 per-condition protocols). Luneth: "all are good, especially B and C." ALL 16 cited ids verified LIVE, **niacin.md dossier CLEAN** (no dead ids). A/D both touch the mind but stay distinct (A=deficiency collapse, D=therapeutic breadth). lede + why (100 mg = top of Epigenetics 10–100 mg EPIGEN-000114; older 50 mg LETS-000059 a footnote, newest-wins) await ratification. Round-closed this session.
+- **vitamin-b2-demos-r4.html** — 6, vitamin/orange, the labelled-figure round. **C + E + F are his picks**; A/B/D banked alongside (B = the B6-activation / tryptophan→niacin switchboard, unused and strong). lede + why (50 mg) await ratification.
 - **vitamin-b1-demos-r1.html** — 4, vitamin/orange, thiamine the "beri-beri vitamin". A "Heart to the Mind" (the two-pole reach — one thiamine thread joining a failing HEART [ECG flatlining: CHF/beriberi/palpitations] and a failing MIND [fraying neural cluster: memory loss/Wernicke-Korsakoff/confusion/depression]; RARE-000233 byte-exact + EPIGEN-000035 cofactor) · B "I cannot" (polished-rice origin — whole grain w/ thiamine-bearing bran ring vs stripped white grain, "beriberi = Sinhalese for 'I cannot'"; DDDL-000043) · C "False Alzheimer's" (reversible reframe — "Alzheimer's/permanent" struck then "Korsakoff's, a thiamine gap, REVERSIBLE", ⚠ flagged as WALLACH'S FRAMEWORK not consensus/advice; EPIGEN-000014 byte-exact reversal + LETS-000333) · D "The dose ladder" (50→100→200-500 mg climbing, surprise top rung 500 mg "repels mosquitoes"; LETS-000068 + EPIGEN-000112 + LETS-000370). Luneth: "all of these are good." ALL 12 ids verified LIVE, **vitamin-b1.md CLEAN**. Cofactor mechanism + "I cannot"/"bran removed" are claim_text (not byte-exact slices) → cited, not quote-marked. lede (beri-beri / heart↔mind) + why (100 mg, top of Epigenetics 10–100 mg EPIGEN-000112; 50 mg LETS-000068 footnote) await ratification. Round-closed this session.
 - **iron-demos-r1.html** — 4, FIRST mineral / blue (A oxygen-seat+CO, B pica+trial, C earth-core, D "it was never the iron" **[his BEST]**). "some combination of them all will likely be the final state."
 - **iodine-demos-r1.html** — 4, mineral / blue (A the dial hypo↔hyper, B copper-twist **[the "wow"]**, C sea-to-gland gradient, D goitrogen block). Round-closed `3fc5a40f`. B/D share a theme → only ONE ships; lede+why (230 mcg) await ratification (canon coverage_kind still "unspecified").
@@ -76,7 +110,7 @@ Either **(a) REFINE** a banked set toward porting (he picks element + concept/co
 (needs the composed `blocks[]` shape + **a live `--ds-accent` category override for amino=green + omega=purple** — NOT
 yet in drawer-knowledge.css; mineral + vitamin[default orange] already resolve — + his STOP-for-sign-off); OR **(b) BUILD**
 the next element. Remaining dossiers:
-B2 B5 B6 B9 · manganese vanadium germanium sodium sulfur phosphorus silica cobalt silver ·
+B5 B9 · manganese vanadium germanium sodium sulfur phosphorus silica cobalt silver ·
 choline flavonoids · the remaining amino acids (phenylalanine, lysine, methionine, tryptophan, histidine, leucine, isoleucine, valine, threonine — several thin → candidate group pages).
 
 ## Still binding / OPEN for Luneth (carried forward)
