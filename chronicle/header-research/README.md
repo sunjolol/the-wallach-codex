@@ -92,3 +92,22 @@ concept, not individual headers).
 ## Design-prep build sheets (design-prep/<slug>.md — byte-exact quotes + numbers + figure labels per concept)
 
 **29 / 29** name-brand elements have a design-prep build sheet (source materials assembled, NOT designed).
+
+## ⚠ 2026-08-09 — READ THIS BEFORE TRUSTING ANY DOSSIER
+
+These were written on 2026-08-01 against the corpus **as it stood then**. The corpus has been
+resealed, renumbered and mined further since. A machine sweep of all 47 dossiers
+(`PYTHONUTF8=1 python tools/dossier_sweep.py`) found:
+
+- **25 of 47 cite at least one claim id that no longer exists.**
+- **44 of 47 understate their own claim count** — sometimes badly (`sodium` says 14, the corpus
+  now holds 66). The gap is where a dossier wrongly rules a concept out.
+- **42 contain a flat "this material does not exist, do not use it" assertion.** Several are now
+  false. Two concepts Luneth actually PICKED — vitamin B2's "The glow that named it" and vitamin
+  B5's "Found by accident" — are built on material their own dossier forbids.
+
+**So: a dossier is a head start, never an authority.** Before using one, run the sweep, then
+re-verify with `PYTHONUTF8=1 python tools/claim_review.py --entity <slug>` and design off THAT.
+Where the two disagree, the corpus wins and the dossier gets corrected.
+
+The sweep report regenerates to `temporary/dossier-sweep.md`.

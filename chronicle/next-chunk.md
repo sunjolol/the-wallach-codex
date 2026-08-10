@@ -1,6 +1,6 @@
 # ★ NEXT SESSION — element-header demos continue (the clean-slate method is working)
 
-Twelve banked demo sets and counting; the clean-slate method (trust the LIBERATED `element-headers` skill) keeps
+Thirteen banked demo sets and counting; the clean-slate method (trust the LIBERATED `element-headers` skill) keeps
 landing consistently. Board 90/90. Run genesis, then **ask Luneth** whether to REFINE a banked set toward
 porting, or BUILD more.
 
@@ -71,6 +71,7 @@ BP-drugs) · D pregnancy (IMMORT-000008 + LETS-000407 breast-milk + LETS-000210 
 - **vitamin-k-demos-r1.html** — 4 (A Two Jobs, B Homemade Half, C Read the Bruise, D Activator X). "All 4 good, some tweaks."
 - **vitamin-b12-demos-r1.html** — 6 (A Red Crystal **[his FAVORITE]**, B Made by Microbes, C What Survives, D Losing the Insulation, E Why B12 energises you, F Why you're secretly low). E/F = the ENERGY angle.
 - **vitamin-b3-demos-r1.html** — 4, vitamin/orange, the coenzyme-and-pellagra vitamin. A "The Three Ds" (typographic pellagra triad — Diarrhea/gut · Dermatitis/skin · Dementia/mind under a PELLAGRA band, +retardation + beef-tongue; EPIGEN-000037/RARE-000235) · B **[FAVORITE]** "What burns your food" (the glowing NAD·NADP furnace — carbs+fat+protein converge in, Energy radiates out, animated flow+glow; EPIGEN-000037, the pack's SOLE mechanism claim) · C **[FAVORITE]** "Why time-release?" (the flush — a big-dose bloom flaring vs a time-release calm, with a ⚠ note that the flush→time-release CAUSATION is pharmacology, not one Wallach sentence; LETS-000020 + the recurring "time-release" qualifier) · D "The mind's default" (the identical 450 mg·time-release chip down anxiety/bipolar/dementia/hysteria/insomnia/headache under "organic brain syndrome"; LETS-000388 + 6 per-condition protocols). Luneth: "all are good, especially B and C." ALL 16 cited ids verified LIVE, **niacin.md dossier CLEAN** (no dead ids). A/D both touch the mind but stay distinct (A=deficiency collapse, D=therapeutic breadth). lede + why (100 mg = top of Epigenetics 10–100 mg EPIGEN-000114; older 50 mg LETS-000059 a footnote, newest-wins) await ratification. Round-closed this session.
+- **vitamin-b5-demos-r1.html** — 6, vitamin/orange, pantothenic acid. **Luneth: "A, C, D, E, and F are all good."** A becomes-coenzyme-A (B5 → CoA → four unrelated jobs) · C body-vs-mood two-lane split · D four doses to scale (RDA 4 mg sliver / 100 mg / 300–1,000 mg + a 100× hero to the 10–20 g overdose range) · E found-by-accident (the yeast flask, 1930s→1940) · F the quiet teammate (4 programs, near-constant dose). **B (three books, one sign) was NOT picked** — he liked the presentation but: *"showing contradictions across books is not something to bring front-facing."* He explicitly said **do not make a rule of this**, it is a small note: the three-lists figure reads as books DISAGREEING, even though it was built to show agreement. lede + why (100 mg) await ratification.
 - **vitamin-b2-demos-r4.html** — 6, vitamin/orange, the labelled-figure round. **C + E + F are his picks**; A/B/D banked alongside (B = the B6-activation / tryptophan→niacin switchboard, unused and strong). lede + why (50 mg) await ratification.
 - **vitamin-b1-demos-r1.html** — 4, vitamin/orange, thiamine the "beri-beri vitamin". A "Heart to the Mind" (the two-pole reach — one thiamine thread joining a failing HEART [ECG flatlining: CHF/beriberi/palpitations] and a failing MIND [fraying neural cluster: memory loss/Wernicke-Korsakoff/confusion/depression]; RARE-000233 byte-exact + EPIGEN-000035 cofactor) · B "I cannot" (polished-rice origin — whole grain w/ thiamine-bearing bran ring vs stripped white grain, "beriberi = Sinhalese for 'I cannot'"; DDDL-000043) · C "False Alzheimer's" (reversible reframe — "Alzheimer's/permanent" struck then "Korsakoff's, a thiamine gap, REVERSIBLE", ⚠ flagged as WALLACH'S FRAMEWORK not consensus/advice; EPIGEN-000014 byte-exact reversal + LETS-000333) · D "The dose ladder" (50→100→200-500 mg climbing, surprise top rung 500 mg "repels mosquitoes"; LETS-000068 + EPIGEN-000112 + LETS-000370). Luneth: "all of these are good." ALL 12 ids verified LIVE, **vitamin-b1.md CLEAN**. Cofactor mechanism + "I cannot"/"bran removed" are claim_text (not byte-exact slices) → cited, not quote-marked. lede (beri-beri / heart↔mind) + why (100 mg, top of Epigenetics 10–100 mg EPIGEN-000112; 50 mg LETS-000068 footnote) await ratification. Round-closed this session.
 - **iron-demos-r1.html** — 4, FIRST mineral / blue (A oxygen-seat+CO, B pica+trial, C earth-core, D "it was never the iron" **[his BEST]**). "some combination of them all will likely be the final state."
@@ -110,16 +111,20 @@ Either **(a) REFINE** a banked set toward porting (he picks element + concept/co
 (needs the composed `blocks[]` shape + **a live `--ds-accent` category override for amino=green + omega=purple** — NOT
 yet in drawer-knowledge.css; mineral + vitamin[default orange] already resolve — + his STOP-for-sign-off); OR **(b) BUILD**
 the next element. Remaining dossiers:
-B5 B9 · manganese vanadium germanium sodium sulfur phosphorus silica cobalt silver ·
+B9 · manganese vanadium germanium sodium sulfur phosphorus silica cobalt silver ·
 choline flavonoids · the remaining amino acids (phenylalanine, lysine, methionine, tryptophan, histidine, leucine, isoleucine, valine, threonine — several thin → candidate group pages).
 
+## Nutrient-overlap dashboard (built 2026-08-09, at his request)
+`temporary/nutrient-condition-overlap.html`, regenerated by `temporary/build-scripts/nutrient-overlap-build.py`.
+Answers "which nutrient is MOST responsible for X" the only honest way: **Wallach assigns no percentages of
+responsibility anywhere**, so it derives share-of-HIS-CLAIMS, split cause (deficiency_sign) vs cure (protocol),
+with book-breadth as the better signal. **Headline finding: only 11 of 542 conditions have ≥3 independent claims on
+BOTH sides** — everywhere else the percentages are membership-in-one-list, and each card says so. Least-specific
+signs: arthritis 45 nutrients · depression 31 · headache 31 · rheumatoid arthritis 30 · dementia 28. **Design
+consequence: a header must never imply one element owns a crowded sign** (mood, fatigue, dermatitis, anemia).
+
 ## Still binding / OPEN for Luneth (carried forward)
-- **Dossier drift — VERIFY every cited claim-id before quoting.** Dossiers predate a corpus reseal, so some cited ids
-  are dead/renumbered even though the content survives. Confirmed dead so far: WAL-CLM-IMMORT-000178, WAL-CLM-RARE-000147
-  (iodine), WAL-CLM-DDDL-000066 (amino stance), WAL-CLM-IMMORT-000087 + WAL-CLM-RARE-000116 (chromium GTF — survives in
-  WAL-CLM-DDDL-000200), and WAL-CLM-IMMORT-000192 / -EPIGEN-000094 / -RARE-000154 (potassium — live subs
-  RARE-000152/153/187, IMMORT-000194, IMMORT-000193). **niacin.md + boron.md were CLEAN.** Run `claim_review.py --ids …`
-  and substitute the sealed sibling. [[header-research-dossiers-exist]].
+- **Dossier drift is SYSTEMIC, not occasional — swept 2026-08-09.** `PYTHONUTF8=1 python tools/dossier_sweep.py` audits all 47 dossiers against the sealed corpus (report regenerates to `temporary/dossier-sweep.md`). Findings: **25 of 47 cite a DEAD claim id**; **44 of 47 understate their claim count** (worst: `sodium` says 14, corpus has 66; `vitamin-b12` 37→75; `vitamin-e` 68→104); **42 carry a flat "this material does not exist, do not use it" assertion**, several now false. Two concepts Luneth PICKED — B2's "glow that named it" and B5's "found by accident" — are built on material their own dossier forbids. **A dossier is a head start, never an authority**: run the sweep, then re-verify with `claim_review.py --entity <slug>` and design off THAT. Guard added to `chronicle/header-research/README.md`. ⚠ **CORRECTION to this file's earlier record: `boron.md` was logged as CLEAN and is NOT** — it cites the dead `WAL-CLM-RARE-000098` and undercounts by 14. Do not trust the old clean/dirty notes; trust the sweep. **`vitamin-b9` (the next element) cites dead `WAL-CLM-EPIGEN-000123` and says 24 claims when the corpus holds 38.**
 - **Potassium target: a stale corroboration id, plus the external-reference precedent.** `essentials-targets-data.json`
   potassium `other_claims` cites `WAL-CLM-LETS-000062` (5,500 mg) which is DEAD; the 5,500 value survives in a live
   True-Supplement-Need table — repoint the id (the primary 5,000 mg from `WAL-CLM-IMMORT-000193` is solid; Luneth said

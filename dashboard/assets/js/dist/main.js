@@ -180105,7 +180105,83 @@ being right. Build parity fresh.
 
 IN FLIGHT, NOT CLOSED
 B5 (pantothenic acid) r1 is built -- six labelled concepts -- and is awaiting Luneth's picks. It is deliberately
-not part of this round-close.` }];
+not part of this round-close.` }, { id: "lg_msmkrddz_j6o6ih", ts: "2026-08-09T20:50:40.775239-05:00", surface: "element-headers", kind: "round-close", summary: 'B5 header approved (5 of 6 concepts) \xB7 a dashboard that answers "which nutrient is most responsible" without inventing the number Wallach never wrote \xB7 and a sweep proving the research dossiers are systemically stale: 25 of 47 cite dead claim ids, 44 of 47 undercount themselves.', detail: `Three pieces of work closed together, and the third is the one that matters most.
+
+B5 (PANTOTHENIC ACID) -- FIVE OF SIX CONCEPTS PICKED
+The labelled-figure rule learned from B2 held on the first attempt: six concepts, five approved
+("A, C, D, E, and F are all good"). A becomes-coenzyme-A (B5 -> CoA -> four unrelated jobs under
+named columns) - C body-vs-mood, the same deficiency list split into two lanes, every word his -
+D four doses drawn to one scale, the 4 mg RDA as a sliver, with a 100x hero to the overdose range -
+E found-by-accident, a labelled yeast flask and 1930s->1940 - F the quiet teammate, four programs
+at a near-constant dose. B (three books, one shared sign) was NOT picked, and the reason is worth
+keeping: "showing contradictions across books is not something to bring front-facing." The figure
+was built to show three books AGREEING on burning feet; he read it as three books disagreeing. He
+said explicitly not to make a rule of it, so it is recorded as a note.
+
+Two factual slips were caught before he saw them, both corrected toward the more conservative
+reading. D's headline claimed you would need "five thousand times" the RDA before Wallach calls it
+an overdose; his range is 10-20 g, so it BEGINS at 2,500x -- 5,000x is the top of the range, and
+putting the threshold there overstates how much is safe. In a dose context that is exactly where
+00.A demands rigidity. C claimed burning feet sits "four words" from quarrelsome; the verbatim
+gives three.
+
+THE OVERLAP DASHBOARD -- ANSWERING AN UNANSWERABLE QUESTION HONESTLY
+Luneth noticed that many nutrients share deficiency signs (depression, mood) and worried a header
+would imply "THIS is the mood vitamin". He asked which nutrients are MOST responsible for which
+conditions, on a percentage scale, and flagged himself that this might not be derivable without
+hallucinating. He was right: Wallach assigns no percentage of responsibility to any nutrient for
+any condition, anywhere in the seven books. Inventing one would have been fabrication.
+
+So the dashboard derives the only thing that IS in the corpus -- how often he says it. Share of
+Wallach's own claims for a condition, split into cause (deficiency_sign) and cure (protocol),
+never summed, with book-breadth offered as the more honest signal. The distinction is stated in
+the largest type on the page.
+
+The headline finding is deflating and useful: only 11 of 542 conditions have three or more
+INDEPENDENT claims on both sides. Everywhere else a single protocol claim names a dozen nutrients
+at once and all of them score, so a "ranking" is really a membership list -- 356 of 365 cards say
+so explicitly, with the count of distinct source claims per lane. Least-specific signs: arthritis
+45 nutrients, depression 31, headache 31, rheumatoid arthritis 30, dementia 28. Luneth's instinct
+was right and the problem is wider than mood. Design consequence: no header may imply one element
+owns a crowded sign. Verified by writing an independent recount of depression and checking it
+against the generator's output before shipping.
+
+THE DOSSIER SWEEP -- IT IS SYSTEMIC
+Three dossiers in a row had turned out to assert things that are no longer true, so rather than
+keep discovering it one element at a time, tools/dossier_sweep.py now audits all 47 against the
+sealed corpus. 25 of 47 cite at least one DEAD claim id. 44 of 47 understate their own claim count
+-- sodium says 14 where the corpus holds 66, vitamin-b12 says 37 against 75, vitamin-e 68 against
+104. 42 carry a flat "this material does not exist, do not use it" assertion, and several are now
+false. The sharpest evidence: two concepts Luneth actually PICKED -- B2's "The glow that named it"
+and B5's "Found by accident" -- are built entirely on material their own dossier forbids as
+outside knowledge.
+
+CORRECTION TO THE RECORD: chronicle/next-chunk.md logged boron.md as CLEAN. It is not -- it cites
+the dead WAL-CLM-RARE-000098 and undercounts by 14. The old clean/dirty notes in the handoff are
+not trustworthy and have been replaced by a pointer to the sweep. vitamin-b9, the element chosen
+next, cites dead WAL-CLM-EPIGEN-000123 and says 24 claims where the corpus holds 38.
+
+A guard was appended to chronicle/header-research/README.md so a future session runs the sweep
+before trusting a dossier at all. A dossier is a head start, never an authority.
+
+TOOLING
+tools/mockup_measure.js compared text against text only, so it passed a figure whose label read
+"sterols and steroid hormone|s" -- nothing overlapped it, it simply ran off the canvas. It now
+checks every label against its own viewBox edges and exits non-zero on a clip. Negative-controlled
+before being trusted: reports none on the fixed page, fires on a deliberately clipped control.
+
+VERIFICATION
+6 B5 figures at scale 1.000; zero clipped labels; zero real label overlaps (residual mockup_measure
+flags are stacked two-line captions, confirmed non-overlapping by a getBBox probe); scroll proven
+by a real wheel event; every verbatim pulled by claim id at generation time with a hard failure on
+a missing slice, never hand-typed. Board 90/90 (23 external / 24 consistency / 41 structural /
+2 meta) -- nothing drifted, which is not the same as anything being right. Build parity fresh.
+
+DEFERRED
+B9 (folic acid) demos. Grounding started and already shapes the design: folate dominates
+spina_bifida at 66.7% of cause-claims across 4 books -- the strongest single nutrient-condition
+signal found so far -- but ZINC outranks B9 for birth_defects generally (29.4% vs 23.5%), so a
+"the birth-defect vitamin" header would overstate what Wallach actually wrote.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
