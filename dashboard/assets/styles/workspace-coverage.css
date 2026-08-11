@@ -5,14 +5,14 @@
  * on 2026-06-21 (Round 26 · task #20 visual fidelity sweep).
  *
  * Three blocks:
- *   1. Workspace chrome (fonts, :root tokens, ds-cipher / ds-border-travel,
- *      coverage-stat glyph pulse) — shared by every
+ *   1. Workspace chrome (fonts, :root tokens, ds-cipher / ds-border-travel) —
+ *      shared by every
  *      view, lives here for now until extracted into design-system.css
  *      by the user (sealed-canonical writer rule).
  *   2. SKIPPED — .app-shell / .app-rail / .app-topbar already styled by
  *      dashboard.css. Pulling them in would collide.
- *   3. Coverage workspace styles — .coverage-grid, .coverage-hero,
- *      .coverage-stat, .tile, .essentials-* etc.
+ *   3. Coverage workspace styles — .coverage-grid, .coverage-workspace,
+ *      .tile, .essentials-*, .goalstrip, .rail-panel etc.
  *
  * Load order in dashboard.html: AFTER dashboard.css
  * so workspace styles win on the new coverage mount.
@@ -114,11 +114,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .app-shell *::-webkit-scrollbar-corner {
   background: var(--ds-paper-darker);
 }
-/* Dark-shell scrollbar (rail / footer if they ever scroll — defensive) */
-.app-rail::-webkit-scrollbar-track,
-.app-footer::-webkit-scrollbar-track { background: var(--ds-ink-medium); }
-.app-rail::-webkit-scrollbar-thumb,
-.app-footer::-webkit-scrollbar-thumb { border-color: var(--ds-ink-medium); }
+/* Dark-shell scrollbar (rail, if it ever scrolls — defensive) */
+.app-rail::-webkit-scrollbar-track { background: var(--ds-ink-medium); }
+.app-rail::-webkit-scrollbar-thumb { border-color: var(--ds-ink-medium); }
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
@@ -175,12 +173,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
   100% { right: 130%; opacity: 0; }
 }
 
-/* COVERAGE-STAT GLYPH PULSE — the kill-shot numeral now has a slow pulse */
-@keyframes ds-numeric-glow {
-  0%, 100% { text-shadow: 0 0 40px rgba(255,126,60,0.4); }
-  50%      { text-shadow: 0 0 60px rgba(255,126,60,0.65); }
-}
-
 
 
 /* ─── Block 3: coverage workspace styles ──────────────────────────────── */
@@ -212,116 +204,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
   padding: var(--ds-space-7);
 }
 
-
-/* ════ COVERAGE HERO ═══════════════════════════════════════════════════════ */
-.coverage-main { display: flex; flex-direction: column; gap: var(--ds-space-6); min-width: 0; }
-
-.coverage-hero {
-  background: var(--ds-paper);
-  border-radius: var(--ds-radius-md);
-  padding: var(--ds-space-7);
-  box-shadow: var(--ds-elev-2);
-  position: relative;
-  overflow: hidden;
-}
-.coverage-hero__head {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: var(--ds-space-5);
-  align-items: end;
-  margin-bottom: var(--ds-space-6);
-  padding-bottom: var(--ds-space-5);
-  border-bottom: 1px solid var(--ds-rule-soft);
-}
-.coverage-hero__kicker {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-widest);
-  text-transform: uppercase;
-  color: var(--ds-ink-soft);
-  margin-bottom: var(--ds-space-2);
-  display: flex;
-  align-items: center;
-  gap: var(--ds-space-3);
-}
-.coverage-hero__kicker::before {
-  content: '';
-  width: 16px; height: 1px; background: var(--ds-accent);
-}
-/* HERO TITLE — Chakra Petch (interface display) */
-.coverage-hero__title {
-  font-family: var(--ds-font-display-interface);
-  font-size: clamp(1.8rem, 2.4vw, 2.4rem);
-  font-weight: 700;
-  color: var(--ds-ink);
-  letter-spacing: 0;
-  text-transform: uppercase;
-  margin: 0;
-  line-height: 1.05;
-}
-.coverage-hero__title em {
-  font-style: normal;
-  font-weight: 400;
-  color: var(--ds-accent-deep);
-  letter-spacing: 0.02em;
-  text-transform: none;
-  font-family: var(--ds-font-mono);
-  font-size: 0.65em;
-  display: block;
-  margin-top: var(--ds-space-2);
-}
-
-/* The kill-shot coverage stat */
-.coverage-stat {
-  display: flex;
-  align-items: baseline;
-  gap: var(--ds-space-2);
-  background: linear-gradient(135deg, var(--ds-ink) 0%, var(--ds-ink-medium) 100%);
-  padding: var(--ds-space-4) var(--ds-space-5);
-  border-radius: var(--ds-radius-sm);
-  color: var(--ds-paper);
-  position: relative;
-  overflow: hidden;
-}
-.coverage-stat::before {
-  content: '';
-  position: absolute;
-  top: 50%; left: 30%;
-  width: 180px; height: 180px;
-  transform: translate(-50%, -50%);
-  background: radial-gradient(circle, var(--ds-accent) 0%, transparent 70%);
-  opacity: 0.25;
-  pointer-events: none;
-  animation: ds-stat-pulse 4s ease-in-out infinite;
-}
-/* KILL-SHOT NUMERAL — Bruno Ace (rare alien-artifact moment) */
-.coverage-stat__num {
-  font-family: var(--ds-font-display-artifact);
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 1;
-  color: var(--ds-accent-bright);
-  letter-spacing: 0.02em;
-  position: relative;
-  animation: ds-numeric-glow 4s ease-in-out infinite;
-}
-.coverage-stat__den {
-  font-family: var(--ds-font-display-artifact);
-  font-size: 1.5rem;
-  font-weight: 400;
-  color: var(--ds-ink-faint);
-  position: relative;
-}
-.coverage-stat__label {
-  margin-left: var(--ds-space-3);
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wider);
-  text-transform: uppercase;
-  color: var(--ds-accent-soft);
-  line-height: 1.3;
-  position: relative;
-}
 
 /* ════ ESSENTIALS — 4-SECTION FUNCTIONAL GRID ═══════════════════════════════
    Replaces the chemistry-only periodic table with Wallach's 90 essentials
@@ -526,15 +408,13 @@ body { margin: 0; background: var(--ds-paper-deep); }
   /* ── COVERED TREATMENT TOGGLE (Luneth chose A, 2026-07-14) ─────────────────
      A = SATURATED: the green fills the name strip. Loud, unmissable.
      B = RESTRAINED: luminosity + lift + a rim carry it; the strip stays quiet.
-     Flip by setting --cov-strip-mode to 0 (B) — one value, no other edit. Kept live
-     because the A/B was judged on a mockup, and the real page at 90-tile density is
-     the only honest test. */
-  --cov-strip-mode: 1;                       /* 1 = A (saturated) · 0 = B (restrained) */
+     Flip to B by setting data-covered-variant='b' on .coverage-grid (the :root:has
+     rule below re-points --cov-strip-bg/fg). Kept live because the A/B was judged on
+     a mockup, and the real page at 90-tile density is the only honest test. */
   --cov-strip-bg:   var(--ds-status-ok);
   --cov-strip-fg:   #ffffff;
 }
 :root:has(.coverage-grid[data-covered-variant='b']) {
-  --cov-strip-mode: 0;
   --cov-strip-bg: transparent;
   --cov-strip-fg: var(--ds-ok-deep);
 }
@@ -861,20 +741,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
     var(--ds-glow-accent-sm);
 }
 
-.legend {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: var(--ds-space-5);
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wider);
-  text-transform: uppercase;
-  color: var(--ds-ink-soft);
-  padding-top: var(--ds-space-4);
-  border-top: 1px solid var(--ds-rule-soft);
-}
-.legend__item { display: inline-flex; align-items: center; gap: var(--ds-space-2); }
 /* Each swatch is the real plate treatment in miniature — a legend that renders a
    different language than the thing it explains is just another lie. */
 .legend__sw { width: 13px; height: 13px; border-radius: var(--ds-radius-xs); flex: 0 0 auto; }
@@ -893,20 +759,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
   box-shadow: inset 0 1px 3px rgba(26, 22, 18, 0.12), inset 0 0 0 1px var(--ds-rule-soft);
 }
 
-
-/* ════ THE CONSOLE — goals first ═══════════════════════════════════════════
-   Replaces the GOALS STRIP (deleted 2026-07-14), which sat BELOW the 91-plate table: goals
-   were the last thing you saw despite being where a new user starts, and three cards spent
-   ~214px to say three words each.
-
-   THE CONSOLE CARRIES NO LIGHT. An A/B luminous band lived here briefly and was rejected
-   (Luneth 2026-07-14: "I don't like either. It comes off as corny and distracting"); the
-   plasma work that followed it — a status-bar porthole, a gooey CSS strip, a WebGL window —
-   was then pulled OUT of the live dashboard entirely at his call and moved to an isolated
-   mockup under temporary/, because the theme it implies (a phazon-infected, fully dark
-   interface) is far too large a change to test on the live surface. Nothing of it remains
-   here; this console is paper, and the goals-first UX work it belongs to is PAUSED, not
-   reverted. */
 
 /* ★ NO PADDING, and no gap. This is a BARE mount wrapper: in the signed-off demo the
    goalstrip and .cov-d are direct children of .app-workspace, and .cov-d owns the page
@@ -948,278 +800,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
   padding: 0;
 }
 
-.coverage-console {
-  position: relative;
-  background: var(--ds-paper);
-  border-radius: var(--ds-radius-md);
-  box-shadow: var(--ds-elev-1);
-  padding: var(--ds-space-5) var(--ds-space-6);
-}
-
-.coverage-console__body {
-  display: flex;
-  flex-direction: column;
-  gap: var(--ds-space-4);
-}
-
-.coverage-console__head {
-  display: flex;
-  align-items: baseline;
-  gap: var(--ds-space-4);
-  flex-wrap: wrap;
-}
-
-/* Luneth's item 3: "// what you're absorbing, what you're missing" returns as an ORANGE
-   aesthetic accent in a distinct face/size, because the top area "looks boring". Mono + wide
-   tracking sets it apart from every display-face heading around it. */
-.coverage-console__kicker {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wider);
-  text-transform: lowercase;
-  color: var(--ds-accent);
-}
-
-.coverage-console__q {
-  font-family: var(--ds-font-display);
-  font-size: var(--ds-text-lg);
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  color: var(--ds-ink);
-  margin: 0;
-}
-
-.console-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--ds-space-3);
-}
-
-/* A chip carries the goal NAME only. It deliberately shows NO ratio: real membership needs
-   eden/catalog/goals.json (goal -> condition slugs), which does not exist yet, and a
-   plausible-looking number typed in to make a surface feel finished is the exact defect this
-   page spent two sessions deleting. The ratio ships with the derivation. */
-.goal-chip {
-  font-family: var(--ds-font-display);
-  font-size: var(--ds-text-xs);
-  font-weight: 600;
-  letter-spacing: var(--ds-track-wide);
-  text-transform: uppercase;
-  padding: 0.5rem 1rem;
-  border-radius: var(--ds-radius-pill);
-  cursor: pointer;
-  background: var(--ds-paper-light);
-  color: var(--ds-ink-medium);
-  border: 1px solid var(--ds-rule);
-  transition: background var(--ds-motion-fast), color var(--ds-motion-fast), border-color var(--ds-motion-fast);
-}
-
-.goal-chip:hover {
-  background: var(--ds-accent-wash);
-  border-color: var(--ds-accent);
-  color: var(--ds-accent-deep);
-}
-
-.goal-chip--add {
-  background: transparent;
-  color: var(--ds-accent-deep);
-  border-style: dashed;
-  border-color: var(--ds-accent);
-}
-
-.coverage-console__stat {
-  display: flex;
-  align-items: baseline;
-  gap: var(--ds-space-2);
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-mini);
-  letter-spacing: var(--ds-track-wide);
-  color: var(--ds-ink-soft);
-}
-
-.coverage-console__stat strong {
-  font-family: var(--ds-font-display);
-  font-size: var(--ds-text-md);
-  color: var(--ds-ink);
-}
-
-
-/* ════ REGIMEN RAIL ════════════════════════════════════════════════════════ */
-.regimen-rail {
-  background: var(--ds-paper);
-  border-radius: var(--ds-radius-md);
-  box-shadow: var(--ds-elev-2);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  position: sticky;
-  top: 0;
-  /* Bound to the visible workspace area so the action bar always sits
-     correctly with breathing room. Calculation: 100vh minus topbar (≈68px)
-     + footer (≈40px) + workspace padding (5rem total) + 50px tail breathing
-     room as user-requested. List inside scrolls via the global stylized
-     scrollbar if items overflow. */
-  height: calc(100vh - 68px - 40px - 5rem - 50px);
-  max-height: calc(100vh - 68px - 40px - 5rem - 50px);
-}
-.regimen-rail__head {
-  padding: var(--ds-space-5);
-  border-bottom: 1px solid var(--ds-rule);
-  background: var(--ds-paper-darker);
-  position: relative;
-}
-.regimen-rail__head::after {
-  content: '';
-  position: absolute;
-  left: var(--ds-space-5); right: var(--ds-space-5);
-  bottom: -1px;
-  height: 1px;
-  background: linear-gradient(to right,
-    transparent 0%,
-    var(--ds-accent) 6%, var(--ds-accent) 12%,
-    transparent 14%);
-}
-.regimen-rail__eyebrow {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-widest);
-  text-transform: uppercase;
-  color: var(--ds-accent);
-  font-weight: 600;
-  margin-bottom: var(--ds-space-2);
-  display: flex;
-  align-items: center;
-  gap: var(--ds-space-2);
-}
-.regimen-rail__eyebrow .pulse-dot { width: 6px; height: 6px; background: var(--ds-accent); border-radius: 50%; box-shadow: 0 0 6px var(--ds-accent-soft); }
-/* SLOT NAME — Chakra Petch */
-.regimen-rail__slot-name {
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-lg);
-  font-weight: 700;
-  color: var(--ds-ink);
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  margin: 0;
-}
-.regimen-rail__slot-meta {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-space-3);
-  margin-top: var(--ds-space-2);
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wider);
-  text-transform: uppercase;
-  color: var(--ds-ink-soft);
-}
-.regimen-rail__slot-meta strong { color: var(--ds-ink); font-weight: 600; }
-
-.regimen-rail__list {
-  flex: 1;
-  overflow-y: auto;
-  padding: var(--ds-space-3);
-}
-.regimen-item {
-  display: flex;
-  align-items: center;
-  gap: var(--ds-space-3);
-  padding: var(--ds-space-3);
-  border-radius: var(--ds-radius-sm);
-  background: var(--ds-paper-light);
-  border: 1px solid var(--ds-rule-soft);
-  margin-bottom: var(--ds-space-2);
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-}
-.regimen-item:hover { border-color: var(--ds-accent); }
-.regimen-item__icon {
-  width: 32px; height: 32px;
-  background: var(--ds-paper-darker);
-  border-radius: var(--ds-radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--ds-font-display-artifact);
-  font-size: var(--ds-text-sm);
-  font-weight: 400;
-  color: var(--ds-accent-deep);
-}
-.regimen-item__body { flex: 1; min-width: 0; }
-/* ITEM NAME — Chakra Petch (interface display) */
-.regimen-item__name {
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-sm);
-  font-weight: 600;
-  color: var(--ds-ink);
-  margin: 0;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.regimen-item__meta {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  color: var(--ds-ink-soft);
-  letter-spacing: var(--ds-track-wide);
-  text-transform: uppercase;
-}
-.regimen-item__count {
-  font-family: var(--ds-font-display-artifact);
-  font-size: var(--ds-text-md);
-  font-weight: 400;
-  color: var(--ds-accent-deep);
-  font-variant-numeric: tabular-nums;
-}
-
-.regimen-rail__actions {
-  padding: var(--ds-space-4) var(--ds-space-5);
-  border-top: 1px solid var(--ds-rule);
-  background: var(--ds-paper-darker);
-  display: flex;
-  gap: var(--ds-space-2);
-}
-
-
-/* ════ FOOTER ══════════════════════════════════════════════════════════════ */
-.app-footer {
-  grid-area: footer;
-  background: var(--ds-ink);
-  color: var(--ds-paper);
-  padding: var(--ds-space-3) var(--ds-space-7);
-  display: flex;
-  align-items: center;
-  gap: var(--ds-space-6);
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wider);
-  text-transform: uppercase;
-  position: relative;
-}
-.app-footer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: var(--ds-space-7); right: var(--ds-space-7);
-  height: 1px;
-  background: linear-gradient(to right,
-    transparent 0%,
-    var(--ds-tech) 4%, var(--ds-tech) 10%,
-    transparent 12%);
-}
-.footer__item { display: inline-flex; align-items: center; gap: var(--ds-space-2); color: var(--ds-ink-faint); }
-.footer__item strong { color: var(--ds-paper); font-weight: 600; }
-.footer__item .dot {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--ds-status-ok);
-  margin-right: 2px;
-}
-.footer__spacer { flex: 1; }
-.footer__signature { color: var(--ds-tech); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; }
-
 
 /* ═══ RESPONSIVE FALLBACK — desktop (> 1160px) UNCHANGED ════════════
    (minmax(0,1fr) == 1fr when content fits, so 1920 is byte-identical.) */
@@ -1228,8 +808,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 @media (max-width: 640px) {
   .coverage-grid { padding: var(--ds-space-4); gap: var(--ds-space-4); }
-  .coverage-hero { padding: var(--ds-space-5); }
-  .coverage-hero__head { grid-template-columns: minmax(0, 1fr); }   /* covered-stat drops below title */
   .essentials-grid--minerals, .essentials-grid--vitamins, .essentials-grid--aminos {
     grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));   /* smaller tiles fit more per row */
   }
@@ -1250,11 +828,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
  * NOT in this list, on Luneth's explicit instruction: .goal-card__name ("bone & skeletal")
  * and .goal-card__progress — "those were better before".
  * ═══════════════════════════════════════════════════════════════════════════ */
-.essentials-section__title,   /* 01 MINERALS · 02 VITAMINS · 03 AMINO ACIDS · 04 FATTY ACIDS */
-.regimen-rail__slot-name,     /* DAILY PROTOCOL */
-.regimen-item__name,          /* BTT 2.5 CANISTER + every product name */
-.goals-strip__title,          /* YOUR GOALS */
-.goals-strip__add {           /* + ADD GOAL */
+.essentials-section__title {   /* 01 MINERALS · 02 VITAMINS · 03 AMINO ACIDS · 04 FATTY ACIDS */
   font-family: var(--ds-font-display);
 }
 
@@ -1492,7 +1066,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .recs { margin-bottom: var(--ds-space-5); }
 .recs__head { display: flex; align-items: baseline; gap: var(--ds-space-3); margin-bottom: var(--ds-space-4); }
 .recs__eyebrow { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-faint); }
-.recs__title { font-family: var(--ds-font-display); font-size: 1rem; font-weight: 700; color: var(--ds-ink); margin: 0; }
 .rec {
   position: relative; display: block; width: 100%; text-align: left;
   padding: 11px 13px; margin-bottom: 7px; cursor: pointer;
@@ -1652,15 +1225,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .rec { padding-right: 30px; }
 .rec__add { position: absolute; top: 50%; right: 9px; transform: translateY(-50%); width: 18px; height: 18px; display: grid; place-items: center; border: 1px solid var(--ds-rule); border-radius: 50%; color: var(--ds-ink-faint); font-family: var(--ds-font-mono); font-size: .78rem; line-height: 1; transition: background .14s, color .14s, border-color .14s; }
 .rec:hover .rec__add { background: var(--ds-ink); border-color: var(--ds-ink); color: var(--ds-paper); }
-
-
-
-/* §13 — the aside's card order is an OPEN question: recs above the protocol puts
-   "what you could buy" over "what you take" and pushes the protocol to the fold at
-   1440x900. One class flips it, so it can be judged rather than argued. */
-body.protocol-first #aside { display: flex; flex-direction: column; }
-body.protocol-first #aside .rail-panel { order: 1; }
-body.protocol-first #aside .recs { order: 2; margin-bottom: 0; margin-top: var(--ds-space-5); }
 
 
 /* ── THE EXPLAINER IS A HOVER NOW (Luneth 2026-07-16). It used to be a permanent

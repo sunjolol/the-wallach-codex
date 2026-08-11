@@ -6818,6 +6818,220 @@ def check_no_new_dead_code():
     return True, f"no new dead code -- {len(current)} known item(s), all baselined{tail}"
 
 
+# ---------------------------------------------------------------------------
+# workspace-coverage.css dead-rule fence (2026-08-11)
+# ---------------------------------------------------------------------------
+# WHY THIS GATE EXISTS. workspace-coverage.css had accreted TWO whole superseded UI
+# generations (the coverage-hero/coverage-stat/coverage-console/goal-chip layout and the
+# regimen-rail/regimen-item protocol rail) plus a deleted footer -- 51 class rules,
+# ~425 lines that NO live code referenced and only demos under temporary/ still pulled in,
+# so those demos rendered ancient, revamped-away styling. Nothing caught it: knip
+# (no_new_dead_code) reads the TS/JS entry graph and is structurally BLIND to CSS-rule
+# liveness. This gate is the fence Luneth asked for (2026-08-11): every class-bearing
+# selector in the sheet must trace to a LIVE reference, or sit on the allowlist WITH A
+# REASON. It REDs the moment a revamp orphans a rule, or a dead rule is pasted back from a
+# demo.
+#
+# FALSE-POSITIVE TRAPS THIS CLASSIFIER MUST NOT FALL INTO (each cost a real debugging pass
+# during the audit that built it -- mirrors tools' css_deadscan method):
+#   1. SUBSTRING. `.coverage-stat` lives inside the filename coverage-status.ts -> bounded
+#      tokens only, over the class-char alphabet [A-Za-z0-9_-].
+#   2. DATA-DRIVEN CLASSES. `.essentials-grid--minerals` / `.tile--vitamin` reach the DOM as
+#      gridClass/tileClass VALUES in coverage-layout-data.json, never as a code literal.
+#   3. DYNAMIC CONSTRUCTION. `tile--${fam}` builds `.tile--vitamin` from the stub 'tile--'.
+#   4. PROSE / COMMENT CONTAMINATION. creators-log-embed.json (inlined into dist) and code
+#      comments NAME dead classes in changelog text; a class mentioned only there is NOT a
+#      reference. Comments are stripped before matching.
+# The classifier is deliberately CONSERVATIVE on the live side (a bare identifier run counts
+# as live): its job is to catch a wholly-orphaned rule, never to cry wolf on a class that is
+# merely hard to see. The exhaustive audit -- not this gate -- is what proved the 51 dead.
+
+_WC_CSS_REL = "dashboard/assets/styles/workspace-coverage.css"
+
+# Intentionally-dormant styling kept in the sheet ON PURPOSE. Each key is a class token that
+# is currently unreferenced BY DESIGN, with the reason it stays. NOT an R9 loosening: it
+# names specific tokens, so adding any NEW dead class still REDs the gate.
+_WC_DEAD_RULE_ALLOWLIST = {
+    "is-foundation":  "plant-derived FOUNDATION-block marker. The THIRD tile state (Luneth's "
+                      "call) is designed but the coverage view does not yet apply the class; kept "
+                      "as a wire-up-later hook. Delete both this entry and the .is-foundation rule "
+                      "together if the concept is dropped.",
+}
+
+
+def _wc_live_class_refs():
+    """Bounded-token live set + dynamic-construction stubs from COMMENT-STRIPPED src+html.
+    Returns (runs, stubs). A class is live if it is a whole token in `runs` or starts with a
+    stub. Comments are stripped so a class named only in a code comment is not a false ref."""
+    texts = []
+    src = ROOT / "dashboard" / "assets" / "js" / "src"
+    if src.exists():
+        for p in src.rglob("*.ts"):
+            if p.name.endswith(".test.ts"):
+                continue
+            try:
+                s = p.read_text(encoding="utf-8", errors="replace")
+            except Exception:
+                continue
+            s = re.sub(r"/\*[\s\S]*?\*/", " ", s)      # block comments
+            s = re.sub(r"(?<!:)//[^\n]*", " ", s)      # line comments (spare ://)
+            texts.append(s)
+    html = ROOT / "dashboard" / "dashboard.html"
+    if html.exists():
+        texts.append(re.sub(r"<!--[\s\S]*?-->", " ",
+                            html.read_text(encoding="utf-8", errors="replace")))
+    runs = set()
+    stubs = set()
+    for t in texts:
+        runs |= set(re.findall(r"[A-Za-z0-9_-]+", t))
+        for m in re.finditer(r"([A-Za-z0-9_-]*[-_])\$\{", t):      # `prefix-${`
+            stubs.add(m.group(1))
+        for m in re.finditer(r"['\"]([A-Za-z0-9_-]*[-_])['\"]\s*\+", t):  # 'prefix-' +
+            stubs.add(m.group(1))
+    return runs, {s for s in stubs if len(s) >= 3}
+
+
+def _wc_data_class_refs():
+    """Class tokens injected via DATA. Two legitimate channels: (1) a field whose whole
+    value IS a class (gridClass/tileClass in the coverage-layout family), (2) a class="..."
+    fragment in a copy/content JSON. Prose-heavy embeds (corpus/creators-log) are skipped so
+    a changelog that merely names a dead class is not counted."""
+    refs = set()
+    data = ROOT / "dashboard" / "assets" / "data"
+    layout = ("coverage-layout-data.json", "coverage-layout-skeleton.json",
+              "efa-coverage-data.json", "pdm-coverage-data.json")
+    for name in layout:                       # channel 1: whole-value class fields
+        p = data / name
+        if not p.exists():
+            continue
+        t = p.read_text(encoding="utf-8", errors="replace")
+        for m in re.finditer(r'"([A-Za-z0-9_ -]{1,80})"', t):
+            for tok in m.group(1).split():
+                if re.match(r"^-?[_a-zA-Z][_a-zA-Z0-9-]*$", tok):
+                    refs.add(tok)
+    if data.exists():                         # channel 2: class="..." in copy/content json
+        skip = {"corpus-embed.json", "creators-log-embed.json"}
+        for p in data.rglob("*.json"):
+            if p.name in skip:
+                continue
+            try:
+                t = p.read_text(encoding="utf-8", errors="replace")
+            except Exception:
+                continue
+            for m in re.finditer(r'class=\\?["\']([^"\'\\]+)', t):
+                refs.update(m.group(1).split())
+    return refs
+
+
+def _wc_selector_classes(css_text):
+    """Every class token that appears in a SELECTOR (the prelude before a `{`). Brace-walk
+    with string-skipping so a `{`/`}`/`;` inside a value can't confuse the scan, and so a
+    declaration (ends at `;`) is never mistaken for a selector."""
+    t = re.sub(r"/\*.*?\*/", " ", css_text, flags=re.S)   # strip CSS comments
+    classes = set()
+    buf = []
+    i, n = 0, len(t)
+    while i < n:
+        c = t[i]
+        if c in "\"'":
+            q = c
+            i += 1
+            while i < n and t[i] != q:
+                if t[i] == "\\":
+                    i += 1
+                i += 1
+            i += 1
+            continue
+        if c == "{":
+            for cl in re.findall(r"\.(-?[_a-zA-Z][_a-zA-Z0-9-]*)", "".join(buf)):
+                classes.add(cl)
+            buf = []
+            i += 1
+            continue
+        if c in "};":
+            buf = []
+            i += 1
+            continue
+        buf.append(c)
+        i += 1
+    return classes
+
+
+def _wc_keyframe_orphans(css_text, all_css_texts):
+    """@keyframes DEFINED in this sheet but referenced by no animation:/animation-name: in
+    ANY shipped stylesheet. Deleting a rule can orphan the keyframe it animated (ds-numeric-
+    glow, deleted with .coverage-stat__num on 2026-08-11)."""
+    defined = set(re.findall(r"@keyframes\s+([A-Za-z0-9_-]+)", css_text))
+    used = set()
+    for t in all_css_texts:
+        for m in re.finditer(r"animation(?:-name)?\s*:\s*([^;]+);", t):
+            used |= set(re.findall(r"[A-Za-z0-9_-]+", m.group(1)))
+    return sorted(defined - used)
+
+
+def _workspace_coverage_no_dead_rules_impl(css_text, runs, stubs, data_refs, all_css_texts,
+                                           allowlist):
+    """Pure core: RED if a class-selector rule (or a defined-here keyframe) is dead and not
+    allowlisted. Split out so the negative test can feed a synthetic dead class."""
+    classes = _wc_selector_classes(css_text)
+    dead = []
+    for cl in sorted(classes):
+        if cl in runs:
+            continue
+        if cl in data_refs:
+            continue
+        if any(cl.startswith(s) for s in stubs):
+            continue
+        dead.append(cl)
+    unexpected = [c for c in dead if c not in allowlist]
+    kf_orphans = _wc_keyframe_orphans(css_text, all_css_texts)
+    problems = []
+    if unexpected:
+        problems.append(
+            "dead class rule(s) with no live reference in src/dashboard.html/coverage-layout "
+            "data/dynamic construction -- delete them, or if intentionally dormant add to "
+            "_WC_DEAD_RULE_ALLOWLIST with a reason: "
+            + ", ".join("." + c for c in unexpected))
+    if kf_orphans:
+        problems.append("orphaned @keyframes (defined here, animated nowhere): "
+                        + ", ".join(kf_orphans))
+    if problems:
+        return False, " | ".join(problems)
+    allow = ", ".join("." + c for c in sorted(allowlist)) or "none"
+    return True, (f"{len(classes)} class selector(s) all trace to a live reference; "
+                  f"{len(allowlist)} intentional-dormant allowlisted ({allow}); "
+                  f"keyframes all animated")
+
+
+def check_workspace_coverage_no_dead_rules():
+    """FENCE (Luneth, 2026-08-11): no class-selector rule in workspace-coverage.css may be
+    dead. A rule is dead when none of its class tokens is referenced by any LIVE surface --
+    src/**/*.ts (non-test, comment-stripped), dashboard.html, a class-valued field in the
+    coverage-layout data family, or dynamic `prefix-${...}` construction. Two documented
+    dormant items are allowlisted WITH REASONS (_WC_DEAD_RULE_ALLOWLIST); a NEW dead class,
+    or a keyframe defined-here-and-animated-nowhere, REDs the board. Scope is class rules +
+    this sheet's keyframes -- NOT custom-property/@font-face liveness, which the 2026-07-14
+    font-token disaster showed cannot be judged from this sheet alone (a token is read
+    THROUGH by 89 rules across 6 stylesheets). Truth anchor: the sheet's bytes vs the live
+    reference surface, re-derived each run."""
+    css_path = ROOT / _WC_CSS_REL
+    if not css_path.exists():
+        return False, f"{_WC_CSS_REL} missing"
+    css = css_path.read_text(encoding="utf-8", errors="replace")
+    runs, stubs = _wc_live_class_refs()
+    data_refs = _wc_data_class_refs()
+    all_css = []
+    styles = ROOT / "dashboard" / "assets" / "styles"
+    if styles.exists():
+        for p in styles.glob("*.css"):
+            try:
+                all_css.append(p.read_text(encoding="utf-8", errors="replace"))
+            except Exception:
+                continue
+    return _workspace_coverage_no_dead_rules_impl(css, runs, stubs, data_refs, all_css,
+                                                  _WC_DEAD_RULE_ALLOWLIST)
+
+
 INVARIANTS = [
     Invariant(
         name="no_new_dead_code",
@@ -7628,6 +7842,15 @@ INVARIANTS = [
         truth_anchor="sha256 of each vendored file recomputed from disk x the committed manifest, plus os-level existence of every local CSS asset reference",
         severity="critical",
         lesson_ref="2026-08-03 doctor sweep — 'offline-first' now means vendored + pinned rather than small, so the pin has to be real. The CSS half has a prior incident: a 404'd @font-face src does not error, the token falls back and shifts metrics on EVERY element, presenting as 'everything slightly off' with a clean console.",
+    ),
+    Invariant(
+        name="workspace_coverage_no_dead_rules",
+        anchor_class="consistency",  # the sheet vs src/data — catches a rule whose referrer vanished, not a born-wrong value
+        description="no class-selector rule in workspace-coverage.css is dead: every class token in a selector traces to a LIVE reference (src/**/*.ts non-test comment-stripped, dashboard.html, a coverage-layout data class field, or dynamic prefix-${...} construction) or sits on _WC_DEAD_RULE_ALLOWLIST with a reason; also flags a @keyframes defined here but animated nowhere. Fills the gap knip cannot see: CSS-rule liveness. Scope is class rules + this sheet's keyframes, NOT custom-property/@font-face liveness (the 2026-07-14 font-token disaster showed a token cannot be judged dead from this sheet alone)",
+        check_fn=check_workspace_coverage_no_dead_rules,
+        truth_anchor="workspace-coverage.css class selectors x the live reference surface (src + dashboard.html + coverage-layout data + dynamic stubs) + styles/*.css animation refs, re-derived each run",
+        severity="critical",
+        lesson_ref="2026-08-11 dead-CSS purge (Luneth: 'I am tired of you telling me code is clean when it is not'). 51 dead class rules across two superseded UI generations (coverage-hero/stat/console/goal-chip + regimen-rail) plus a deleted footer, ~425 lines, that only demos still pulled in. knip (no_new_dead_code) is blind to CSS. Non-vacuous: an empty allowlist REDs on .is-foundation, and a synthetic .zzz-dead class REDs.",
     ),
 ]
 
