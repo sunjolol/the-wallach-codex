@@ -68,6 +68,32 @@ function activateRailItem(target: WorkspaceTarget): void {
   }
 }
 
+/**
+ * Per-workspace topbar identity (name + deck). The shell markup ships the Coverage
+ * strings as the initial paint; every navigation repaints them here so Regimen and
+ * Scanner no longer inherit the Coverage title/deck (each demo carries its own).
+ */
+const WORKSPACE_HEADERS: Partial<Record<WorkspaceTarget, { name: string; deck: string }>> = {
+  coverage: { name: 'Coverage', deck: 'Every essential Wallach named, measured against what you take.' },
+  regimen: { name: 'Regimen', deck: 'A calm, coverage-led cockpit: one gauge over your 90, your save-slots switch across the top, your best next moves sit below.' },
+  scanner: { name: 'Scanner', deck: 'Scan \u2192 Confirm \u2192 Result \u2014 the verdict fires only on reads you confirm.' },
+};
+
+function setTopbarHeader(target: WorkspaceTarget): void {
+  const head = WORKSPACE_HEADERS[target];
+  if (head === undefined) {
+    return;
+  }
+  const nameEl = document.querySelector<HTMLElement>('.topbar__breadcrumb .np__name');
+  const deckEl = document.querySelector<HTMLElement>('.topbar__breadcrumb .np__deck');
+  if (nameEl !== null) {
+    nameEl.textContent = head.name;
+  }
+  if (deckEl !== null) {
+    deckEl.textContent = head.deck;
+  }
+}
+
 // ─── Drawers (Knowledge · K, Journey · J) ──────────────────────────────
 
 /** The structural subset of each view's DrawerHandle that the shell drives. */
@@ -109,6 +135,7 @@ function navigateTo(target: WorkspaceTarget): void {
   // Switching workspace closes any open drawer overlay.
   closeAllDrawers();
   activateRailItem(target);
+  setTopbarHeader(target);
   events.emit('rail:navigate', { target });
 
   hideAllNewMounts();
@@ -363,6 +390,14 @@ function bootstrap(): void {
   }
 
   wireRail();
+  // Cross-workspace jumps dispatched by views (coverage -> regimen, regimen -> scanner).
+  window.addEventListener('wallach:navigate', (ev) => {
+    const detail = (ev as CustomEvent<{ to?: string }>).detail;
+    const to = detail?.to;
+    if (to === 'coverage' || to === 'regimen' || to === 'scanner') {
+      navigateTo(to);
+    }
+  });
   wireProfileChip();
   wireProfileIdentity();
   wireWelcome();

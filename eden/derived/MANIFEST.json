@@ -292,6 +292,11 @@
       "file": "dashboard/assets/data/mechanism-clarity-data.json",
       "disposition": "hand_authored",
       "reason": "Mechanism-explainer prose store for the entity-page 'how it works' hero (selenium's rancidity mechanism = first instance). A plain-language gloss of Wallach's OWN sealed claims; his exact words + the stat figure are pulled BY CLAIM ID at render (never hand-typed verbatim). General-education, non-target (source-rule/R2-safe); segregated content (R4). Sibling to fatty-acid-clarity-data.json. Luneth 2026-07-25."
+    },
+    {
+      "file": "dashboard/assets/data/slot-colours-data.json",
+      "disposition": "hand_authored",
+      "reason": "The 14-hue Regimen save-slot COLOUR PALETTE (P4, 2026-08-13). A user picks a personal hue per save slot from this fixed spectrum -- the ONE sanctioned exception to no-invented-hues (Luneth-approved), because a slot colour is personal chrome, not a category token. UI CHROME only: no Wallach/composition number, not a pillar projection, no generator. A 14-element array cannot be an inline literal in code (eslint no-restricted-syntax + views_state_no_inline_data), so the list lives here; core/schemas/regimen.ts narrows the shape (SlotColoursDataSchema) and state/regimen.ts loads + exposes it (SLOT_COLOURS / DEFAULT_SLOT_COLOUR / isSlotColour). Palette membership is enforced at the write boundary by the setSlotColour op; an off-palette or absent stored colour falls back to the default (cosmetic, never a data-loss trigger)."
     }
   ]
 }

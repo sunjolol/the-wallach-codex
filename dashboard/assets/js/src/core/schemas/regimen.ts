@@ -96,10 +96,36 @@ export const SlotNameSchema = z
     message: 'A slot name cannot contain control characters.',
   });
 
+// ─── Slot colour palette (P4 — per-slot personal colour) ──────────────────────
+
+/**
+ * Shape of dashboard/assets/data/slot-colours-data.json — the 14-hue slot palette
+ * (the ONE sanctioned exception to "no invented hues": a personal save-slot colour
+ * is chrome, not a category token). The array lives in assets/data (a 14-element
+ * inline literal is banned in code) and is loaded + exposed by state/regimen.ts
+ * (SLOT_COLOURS / DEFAULT_SLOT_COLOUR / isSlotColour); this schema only narrows it.
+ */
+export const SlotColoursDataSchema = z.object({
+  colours: z.array(z.string()).min(1),
+});
+
+// The slot's `colour` field (below) is a PLAIN `z.string().optional()`: colour is
+// cosmetic, so the schema stays permissive (an off-palette or absent value never
+// fails the document → never triggers an auto-heal wipe). Palette membership is
+// enforced at the write boundary by the `setSlotColour` op, and the render falls
+// back to the default for anything off-palette. A refine/catch/enum here would
+// diverge the field's input vs output types (the default-divergence goals.ts
+// documents) and break SlotDoc assignability.
+
 /**
  * One regimen slot — the §3 state model. `items` + `overrides` are the SAME
  * shapes the legacy per-key stores used, reused verbatim so the coverage
  * consumers (which read only the return TYPES of the loaders) are untouched.
+ *
+ * P4 fields `colour` + `goals` are OPTIONAL: a pre-P4 stored slot lacks them and
+ * must still validate (else auto-heal would wipe the user's regimen). The state
+ * layer backfills them in place on first read (colour → a palette hue, goals →
+ * the legacy global goals) so downstream reads see them populated.
  */
 export const SlotSchema = z.object({
   id: z.string(),
@@ -108,6 +134,8 @@ export const SlotSchema = z.object({
   overrides: OverridesMapSchema,
   createdAt: z.string(), // ISO YYYY-MM-DD
   editedAt: z.string(), // ISO YYYY-MM-DD
+  colour: z.string().optional(), // P4 — personal hue (palette enforced by setSlotColour, not here); absent on pre-P4 docs
+  goals: z.array(z.string()).optional(), // P4 — per-slot steering goals; absent on pre-P4 docs
 });
 
 /**

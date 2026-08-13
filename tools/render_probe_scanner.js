@@ -2,10 +2,12 @@
 //
 // Usage: node tools/render_probe_scanner.js   (exit 0 = PASS, non-zero = FAIL)
 //
-// Chunk 6a: verifies the Scanner workspace mounts off legacy. Navigates to the
-// scanner rail item, scopes queries to #workspace-scanner-mount, and asserts the
-// v3 idle shell rendered (.scanner-grid + drop stage + pipeline + history rail),
-// the legacy host is hidden, and no page errors fired. Mirrors render_probe.js.
+// Verifies the Scanner workspace mounts as the Scan·Confirm·Result design (2026-08-13
+// live port): navigates to the scanner rail item, scopes queries to
+// #workspace-scanner-mount, and asserts the .vd idle shell rendered — the Scan step
+// (.vd-step--scan) with its New Scan button + drop zone — AND that the retired
+// in-content stepper strip (.vd-flow) is ABSENT (the flow line lives in the topbar
+// now). No page errors. Mirrors render_probe.js.
 
 const path = require('path');
 const REPO = path.resolve(__dirname, '..');
@@ -38,19 +40,15 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
     const mount = document.getElementById('workspace-scanner-mount');
     const inMount = s => (mount ? mount.querySelectorAll(s).length : -1);
     const mountVisible = mount ? getComputedStyle(mount).display !== 'none' : false;
-    const legacyHost = document.getElementById('legacy-workspace-host');
-    const legacyHidden = legacyHost ? getComputedStyle(legacyHost).display === 'none' : null;
     return {
       mountExists: !!mount,
       mountVisible,
-      legacyHidden,
-      grid: inMount('.scanner-grid'),
-      stage: inMount('.scan-stage'),
-      dropZone: inMount('.scan-canvas--empty'),
-      pipeline: inMount('.pipeline'),
-      parsed: inMount('.parsed'),
-      verdict: inMount('.verdict'),
-      historyRail: inMount('.scanner-side'),
+      vd: inMount('.vd'),
+      scanStep: inMount('.vd-step--scan'),
+      dropZone: inMount('.vd-drop'),
+      newScan: inMount('.vd-newscan'),
+      stepBadge: inMount('.vd-step__badge'),
+      stepper: inMount('.vd-flow'),
     };
   });
 
@@ -59,12 +57,11 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
 
   const ok = clicked
     && info.mountExists && info.mountVisible
-    && info.legacyHidden === true
-    && info.grid >= 1 && info.stage >= 1 && info.dropZone >= 1
-    && info.pipeline >= 1 && info.parsed >= 1 && info.verdict >= 1
-    && info.historyRail >= 1
+    && info.vd >= 1 && info.scanStep >= 1 && info.dropZone >= 1
+    && info.newScan >= 1 && info.stepBadge >= 1
+    && info.stepper === 0
     && pageErrors.length === 0;
-  console.log(ok ? 'PASS · scanner surface mounts off legacy (idle)' : 'FAIL · scanner surface did not mount cleanly');
+  console.log(ok ? 'PASS · scanner mounts Scan·Confirm·Result idle shell; no in-content stepper' : 'FAIL · scanner surface did not mount cleanly');
   await browser.close();
   process.exit(ok ? 0 : 1);
 })().catch(e => { console.log('PROBE_ERR', e.message); process.exit(1); });

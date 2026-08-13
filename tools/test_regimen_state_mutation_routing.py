@@ -39,10 +39,10 @@ inv = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(inv)
 impl = inv._regimen_state_mutation_routing_impl
 
-# A minimal, self-contained regimen.ts mirroring the real P3 delegating shape: one private
-# writer, the five legacy chokepoints delegating (four to writeSlotDoc, saveRgUserGoals to its
-# own global key), and the retired keys read-only. Kept small so it cannot rot when the real
-# file is refactored.
+# A minimal, self-contained regimen.ts mirroring the real delegating shape: one private writer
+# and ALL FIVE legacy chokepoints delegating to writeSlotDoc (P4 folded goals into the slot
+# doc, so saveRgUserGoals delegates too; rgUserGoals_v1 is now a retired read-only key). Kept
+# small so it cannot rot when the real file is refactored.
 GOOD_REGIMEN = """
 export const RG_SLOTS_KEY = 'rgSlots_v1';
 export const RG_USER_GOALS_KEY = 'rgUserGoals_v1';
@@ -81,8 +81,7 @@ export function saveRgRemoved(setOfIds: Set<number>): void {
   writeSlotDoc(loadSlotDoc(), { reason: 'remove' });
 }
 export function saveRgUserGoals(goalsArray: unknown): void {
-  set(RG_USER_GOALS_KEY, cleaned);
-  emit('regimen:changed', { slotId: RG_USER_GOALS_KEY, reason: 'add' });
+  writeSlotDoc(withActiveSlot(loadSlotDoc(), s => ({ ...s, goals: cleaned })), { reason: 'add' });
 }
 export function addSlot(name?: string): SlotOpResult {
   writeSlotDoc({ ...loadSlotDoc() }, { reason: 'add' });
@@ -188,14 +187,24 @@ case("chokepoint_missing",
      GOOD_STORAGE, [], False,
      "a chokepoint that stops being exported breaks the views that import it (API preservation)")
 
-case("goals_no_emit",
+case("goals_chokepoint_not_delegating",
      GOOD_REGIMEN.replace(
-         "  set(RG_USER_GOALS_KEY, cleaned);\n"
-         "  emit('regimen:changed', { slotId: RG_USER_GOALS_KEY, reason: 'add' });",
-         "  set(RG_USER_GOALS_KEY, cleaned);"),
+         "export function saveRgUserGoals(goalsArray: unknown): void {\n"
+         "  writeSlotDoc(withActiveSlot(loadSlotDoc(), s => ({ ...s, goals: cleaned })), { reason: 'add' });\n"
+         "}",
+         "export function saveRgUserGoals(goalsArray: unknown): void {\n"
+         "  const nope = goalsArray; // does not route through the single writer\n"
+         "}"),
      GOOD_STORAGE, [], False,
-     "saveRgUserGoals is the one GLOBAL chokepoint; if it does not emit, a goal change leaves "
-     "every subscriber stale")
+     "P4: goals moved per-slot into the slot doc, so saveRgUserGoals must now delegate to "
+     "writeSlotDoc like every other chokepoint -- a non-delegating goals write never persists "
+     "and never fires the cascade")
+
+case("goals_key_now_retired",
+     GOOD_REGIMEN.replace("return build(a, b, c, d);", "set(RG_USER_GOALS_KEY, x); return build(a, b, c, d);"),
+     GOOD_STORAGE, [], False,
+     "P4 retired rgUserGoals_v1: a write to it means goals are no longer single-sourced in the "
+     "slot doc -- the global store is live again")
 
 case("view_writes_storage", GOOD_REGIMEN, GOOD_STORAGE,
      [("views/coverage.ts", "export function r() { localStorage.setItem('x', '1'); }")], False,

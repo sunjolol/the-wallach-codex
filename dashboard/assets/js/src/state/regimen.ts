@@ -24,7 +24,7 @@
  * invariant 4: "extends the existing five; does not replace them"), so the views
  * that still import them (views/regimen.ts, views/scanner.ts) compile unchanged
  * even though they burn at §7/§8. Only their STORAGE moved into the active slot.
- * `saveRgRemoved`/`loadRgRemoved` are now trash adapters; `persistRegimen`
+ * `saveRgRemoved` is now a trash adapter; `persistRegimen`
  * (0 callers) is kept for the gate + bridge. These shims are transitional — they
  * retire when those views burn, at which point the slot ops become the only API.
  *
@@ -48,6 +48,7 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import slotColoursData from '../../../data/slot-colours-data.json';
 import { emit } from '../core/events.js';
 import {
   type OverridesMap,
@@ -59,11 +60,12 @@ import {
   RgRemovedSchema,
   RgUserGoalsSchema,
   type Slot,
+  SlotColoursDataSchema,
   type SlotDoc,
   SlotDocSchema,
   SlotNameSchema,
 } from '../core/schemas/index.js';
-import { getRaw, getValidated, set, setValidated, type WriteResult } from '../core/storage.js';
+import { getRaw, getValidated, setValidated, type WriteResult } from '../core/storage.js';
 
 // ─── LS key constants ─────────────────────────────────────────────────────
 export const RG_SLOTS_KEY = 'rgSlots_v1';
@@ -79,6 +81,20 @@ export const RG_REMOVED_KEY = 'rgRemoved_v1';
 export const MAX_SLOTS = 4;
 export const MAX_TRASH = 20;
 export const DEFAULT_SLOT_ID = 'default';
+
+// ─── Slot colour palette (P4) — loaded from assets/data, validated once ────────
+// The 14 hues live in slot-colours-data.json (a 14-element inline array is banned
+// in code — anti-fakery >10 rule). A bad/absent file degrades to an empty palette;
+// DEFAULT_SLOT_COLOUR always resolves. isSlotColour is the palette gate setSlotColour
+// enforces; the view imports SLOT_COLOURS for its swatches + DEFAULT for its fallback.
+const _slotColours = SlotColoursDataSchema.safeParse(slotColoursData);
+export const SLOT_COLOURS: readonly string[] = _slotColours.success ? _slotColours.data.colours : [];
+/** The default active-slot hue (orange — matches the Scanner's New Scan button). */
+export const DEFAULT_SLOT_COLOUR = '#ff7e3c';
+/** True when `c` is one of the palette hues. */
+export function isSlotColour(c: string): boolean {
+  return SLOT_COLOURS.includes(c);
+}
 
 // ─── Re-export inferred types so callers can `import type { Regimen } from '@state/regimen'` ─
 export type { OverridesMap, Regimen, RegimenItem, Slot, SlotDoc };
@@ -121,6 +137,15 @@ function capTrash(entries: SlotDoc['trash']): SlotDoc['trash'] {
 }
 
 /**
+ * The next slot colour to assign: the first palette hue not already used by a
+ * slot, else the default. Deterministic (no random) so a re-render is stable and
+ * two slots created back-to-back get distinct hues (P4).
+ */
+function pickSlotColour(used: readonly (string | undefined)[]): string {
+  return SLOT_COLOURS.find(h => !used.includes(h)) ?? DEFAULT_SLOT_COLOUR;
+}
+
+/**
  * The active slot. SlotDocSchema's superRefine guarantees `activeSlot` resolves
  * and `.min(1)` guarantees a slot exists, but TS can't see those runtime facts,
  * so this stays total and fails LOUD on the impossible (doctrine #1).
@@ -159,6 +184,10 @@ function readLegacyOverrides(): OverridesMap {
 function readLegacyRemoved(): Set<number> {
   return new Set(getValidated(RG_REMOVED_KEY, RgRemovedSchema) ?? []);
 }
+/** The retired GLOBAL goals key — read ONCE by the P4 per-slot migration/backfill. */
+function readLegacyUserGoals(): string[] {
+  return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema) ?? [];
+}
 
 /**
  * Build a Default slot from the legacy keys, reproducing the OLD
@@ -187,6 +216,8 @@ function migrateFromLegacy(): SlotDoc {
       overrides: readLegacyOverrides(),
       createdAt: now,
       editedAt: now,
+      colour: DEFAULT_SLOT_COLOUR,
+      goals: readLegacyUserGoals(),
     }],
     activeSlot: DEFAULT_SLOT_ID,
     trash,
@@ -194,6 +225,30 @@ function migrateFromLegacy(): SlotDoc {
 }
 
 // ─── The slot document: the ONE reader + the ONE writer ────────────────────
+
+/**
+ * P4 in-place upgrade: a pre-P4 slot document validates (colour + goals are
+ * optional) but reads with those fields undefined. Fill them ONCE — colour → a
+ * distinct palette hue (first slot orange), goals → the legacy global goals (they
+ * were shared before P4). Persisted WITHOUT emitting (a read must not fire the
+ * render cascade); a no-op once every slot has both fields.
+ */
+function backfillP4(doc: SlotDoc): SlotDoc {
+  if (doc.slots.every(s => s.colour !== undefined && s.goals !== undefined)) {
+    return doc;
+  }
+  const legacyGoals = readLegacyUserGoals();
+  const used: (string | undefined)[] = [];
+  const slots = doc.slots.map((s) => {
+    const colour = s.colour ?? (used.length === 0 ? DEFAULT_SLOT_COLOUR : pickSlotColour(used));
+    used.push(colour);
+    const goals = s.goals ?? [...legacyGoals];
+    return { ...s, colour, goals };
+  });
+  const next: SlotDoc = { ...doc, slots };
+  writeSlotDoc(next, { emit: false });
+  return next;
+}
 
 /**
  * Load the slot document, migrating from the legacy keys on first read.
@@ -206,7 +261,7 @@ function loadSlotDoc(): SlotDoc {
   if (getRaw(RG_SLOTS_KEY) !== null) {
     const doc = getValidated(RG_SLOTS_KEY, SlotDocSchema);
     if (doc !== null) {
-      return doc;
+      return backfillP4(doc);
     }
     console.warn('[state/regimen] rgSlots_v1 present but failed validation — '
       + 'rebuilding a Default slot from the legacy keys (auto-heal).');
@@ -249,16 +304,13 @@ export function loadRgManual(): RegimenItem[] {
   return getActiveSlot(loadSlotDoc()).items;
 }
 
-/** The set of item ids currently in the active slot's trash (the "removed" set). */
-export function loadRgRemoved(): Set<number> {
-  const doc = loadSlotDoc();
-  const activeId = getActiveSlot(doc).id;
-  return new Set(doc.trash.filter(e => e.slotId === activeId).map(e => e.item.id));
-}
-
-/** User-selected goals — GLOBAL, its own key, unchanged by the slot system. */
+/**
+ * The active slot's steering goals (P4 — per-slot; goals were a GLOBAL key before,
+ * now seeded into each slot by the migration/backfill). Returns null only when the
+ * active slot has no goals field at all (pre-backfill), so callers keep their `?? []`.
+ */
 export function loadRgUserGoals(): string[] | null {
-  return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
+  return getActiveSlot(loadSlotDoc()).goals ?? null;
 }
 
 // ─── Effective regimen (the user's own stack = the active slot's items) ────
@@ -329,14 +381,18 @@ export function saveRgRemoved(setOfIds: Set<number>): void {
   writeSlotDoc(next, { reason: 'remove' });
 }
 
-/** Save user-selected goals (GLOBAL key — cleaned of non-string entries per legacy). */
+/**
+ * Save the ACTIVE slot's steering goals (P4 — per-slot; delegates to the single
+ * writer, which fires the §31 cascade). Non-string entries are dropped per the
+ * legacy contract. The NAME is kept so callers (coverage / welcome / regimen) are
+ * unchanged, though the store is now the slot document, not the retired global key.
+ */
 export function saveRgUserGoals(goalsArray: unknown): void {
   const cleaned = Array.isArray(goalsArray)
     ? goalsArray.filter((g): g is string => typeof g === 'string' && g.length > 0)
     : [];
-  set(RG_USER_GOALS_KEY, cleaned);
-  fireLegacyTrigger('saveRgUserGoals');
-  emit('regimen:changed', { slotId: RG_USER_GOALS_KEY, reason: 'add' });
+  const doc = loadSlotDoc();
+  writeSlotDoc(withActiveSlot(doc, s => ({ ...s, goals: cleaned, editedAt: today() })), { reason: 'add' });
 }
 
 // ─── Slot operations (P3 — the new §31 mutation surface) ───────────────────
@@ -362,7 +418,16 @@ export function addSlot(name?: string): SlotOpResult {
     return { ok: false, reason: checked.error.issues[0]?.message ?? 'That slot name cannot be used.' };
   }
   const now = today();
-  const slot: Slot = { id: newSlotId(), name: checked.data, items: [], overrides: {}, createdAt: now, editedAt: now };
+  const slot: Slot = {
+    id: newSlotId(),
+    name: checked.data,
+    items: [],
+    overrides: {},
+    createdAt: now,
+    editedAt: now,
+    colour: pickSlotColour(doc.slots.map(s => s.colour)),
+    goals: [],
+  };
   const res = writeSlotDoc({ ...doc, slots: [...doc.slots, slot] }, { reason: 'add' });
   return res.ok ? { ok: true, slotId: slot.id } : { ok: false, reason: 'That slot could not be saved to this device.' };
 }
@@ -387,6 +452,8 @@ export function duplicateSlot(id: string): SlotOpResult {
     overrides: structuredClone(src.overrides),
     createdAt: now,
     editedAt: now,
+    colour: pickSlotColour(doc.slots.map(s => s.colour)),
+    goals: [...(src.goals ?? [])],
   };
   const res = writeSlotDoc({ ...doc, slots: [...doc.slots, slot] }, { reason: 'add' });
   return res.ok ? { ok: true, slotId: slot.id } : { ok: false, reason: 'That slot could not be saved to this device.' };
@@ -444,6 +511,27 @@ export function renameSlot(id: string, name: string): SlotOpResult {
   return res.ok ? { ok: true, slotId: id } : { ok: false, reason: 'That name could not be saved.' };
 }
 
+/**
+ * Set a slot's personal colour (P4). Refuses an off-palette hue — the palette gate
+ * that keeps the cosmetic, permissive schema field on-palette (never a silent drop).
+ */
+export function setSlotColour(id: string, colour: string): SlotOpResult {
+  const doc = loadSlotDoc();
+  const target = doc.slots.find(s => s.id === id);
+  if (target === undefined) {
+    return { ok: false, reason: 'That slot no longer exists.' };
+  }
+  if (!isSlotColour(colour)) {
+    return { ok: false, reason: 'That colour is not in the slot palette.' };
+  }
+  const next: SlotDoc = {
+    ...doc,
+    slots: doc.slots.map(s => (s.id === id ? { ...s, colour, editedAt: today() } : s)),
+  };
+  const res = writeSlotDoc(next, { reason: 'restore' });
+  return res.ok ? { ok: true, slotId: id } : { ok: false, reason: 'That colour could not be saved.' };
+}
+
 /** Switch the active slot. Refuses an id that does not resolve. */
 export function setActiveSlot(id: string): SlotOpResult {
   const doc = loadSlotDoc();
@@ -499,6 +587,7 @@ declare global {
     deleteSlot?: typeof deleteSlot;
     renameSlot?: typeof renameSlot;
     setActiveSlot?: typeof setActiveSlot;
+    setSlotColour?: typeof setSlotColour;
     restoreFromTrash?: typeof restoreFromTrash;
   }
 }
@@ -522,5 +611,6 @@ export function installBridges(): void {
   window.deleteSlot = deleteSlot;
   window.renameSlot = renameSlot;
   window.setActiveSlot = setActiveSlot;
+  window.setSlotColour = setSlotColour;
   window.restoreFromTrash = restoreFromTrash;
 }

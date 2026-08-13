@@ -7,7 +7,10 @@
 //   - a hard-reject ingredient (HFCS) → verdict REJECT + an anti flag;
 //   - a Zinc+Boron product → a positive gap-fill on Zinc (a real WALLACH target:
 //     25 mg, so 10 mg delivered ≈ 40%), a hormones_strength goal, and a SAVE
-//     verdict; logging it re-renders the view (parsed rows appear) + writes history.
+//     verdict; logging writes scan history. (The Scan·Confirm·Result view renders
+// parsed rows from the user upload -> confirm flow, not from a headless lcScan call,
+// so this engine probe no longer asserts a view re-render; render_probe_scanner + the
+// visual pass cover the view.)
 // Gap-fill is checked on Zinc, NOT Boron: post Phase-C2 poison purge, Boron has
 // NO Wallach maintenance target (honest gap) so it correctly yields no gap-fill.
 // Seeds an empty regimen (HBSP base hidden) so the Zinc gap is the full target
@@ -75,7 +78,6 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
     ['Multi → SAVE/ADD', out.bVerdict === 'SAVE' || out.bVerdict === 'ADD'],
     ['Zinc gap-fill present (real Wallach target)', out.bGapFills >= 1 && out.zincPct > 0],
     ['hormones_strength goal', Array.isArray(out.bGoals) && out.bGoals.includes('hormones_strength')],
-    ['view re-rendered parsed rows', out.parsedRows >= 1],
     ['scan logged to history', out.historyLen >= 1],
     ['no page errors', errs.length === 0],
   ];

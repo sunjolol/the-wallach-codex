@@ -2017,10 +2017,11 @@ def _dose_amount_in_verbatim_impl(claims, canon):
 #   (2) regimen state has exactly ONE writer -- setValidated(RG_SLOTS_KEY, ...) appears once,
 #       in the private writeSlotDoc -- and that writer EMITS the typed `regimen:changed`
 #       cascade (a silent writer would leave every subscriber stale);
-#   (3) the four slot-backed chokepoints DELEGATE to writeSlotDoc (route through the one
-#       writer); saveRgUserGoals is the one GLOBAL chokepoint (its own key + a direct emit);
-#   (4) the four RETIRED keys (lcRegimen/rgOverrides/rgManual/rgRemoved) are never WRITTEN --
-#       they are read once by the migration, then inert;
+#   (3) ALL FIVE legacy chokepoints DELEGATE to writeSlotDoc (route through the one writer).
+#       P4 folded goals into the slot doc, so saveRgUserGoals now delegates like the rest --
+#       it is no longer a separate GLOBAL chokepoint with its own key + a direct emit;
+#   (4) the five RETIRED keys (lcRegimen/rgOverrides/rgManual/rgRemoved/rgUserGoals) are never
+#       WRITTEN -- they are read once by the migration, then inert;
 #   (5) `localStorage` is touched ONLY in core/storage.ts, and no view writes storage directly.
 #
 # P3 RE-CODIFICATION (2026-07-16, R9 -- tighten with proof, never silently loosen). The old
@@ -2044,10 +2045,14 @@ _LS_API_RE = re.compile(
 _S31_LEGACY_CHOKEPOINTS = (
     "persistRegimen", "saveRgOverride", "saveRgManual", "saveRgRemoved", "saveRgUserGoals",
 )
-# The four that delegate to writeSlotDoc (saveRgUserGoals is the GLOBAL exception).
-_S31_SLOT_BACKED = ("persistRegimen", "saveRgOverride", "saveRgManual", "saveRgRemoved")
+# All five delegate to writeSlotDoc. P4 (2026-08-13) folded goals into the slot doc, so
+# saveRgUserGoals now routes through the one writer like the rest -- it is no longer a
+# separate GLOBAL chokepoint with its own key + direct emit.
+_S31_SLOT_BACKED = ("persistRegimen", "saveRgOverride", "saveRgManual", "saveRgRemoved", "saveRgUserGoals")
 # The keys retired by the slot migration -- read once at migration, never written again.
-_S31_RETIRED_KEYS = ("REGIMEN_KEY", "RG_OVERRIDES_KEY", "RG_MANUAL_KEY", "RG_REMOVED_KEY")
+# RG_USER_GOALS_KEY joined them in P4: goals moved into the slot doc, so the global key is
+# read once to seed per-slot goals, then inert.
+_S31_RETIRED_KEYS = ("REGIMEN_KEY", "RG_OVERRIDES_KEY", "RG_MANUAL_KEY", "RG_REMOVED_KEY", "RG_USER_GOALS_KEY")
 
 
 def _blank_noncode(s):
@@ -2179,21 +2184,9 @@ def _regimen_state_mutation_routing_impl(regimen_src, storage_src, view_srcs):
             viol.append(f"chokepoint `{fn}` is MISSING from state/regimen.ts (its export must "
                         f"survive -- the burning views still import it)")
             continue
-        if fn in _S31_SLOT_BACKED:
-            if "writeSlotDoc(" not in b_blank:
-                viol.append(f"`{fn}` does not route through writeSlotDoc -- every regimen "
-                            f"mutation must reach the single writer")
-        else:  # saveRgUserGoals -- the GLOBAL chokepoint (its own key + a direct emit)
-            if "RG_USER_GOALS_KEY" not in b_blank:
-                viol.append("`saveRgUserGoals` does not write its own key RG_USER_GOALS_KEY")
-            if "emit(" not in b_blank or "regimen:changed" not in b_orig:
-                viol.append("`saveRgUserGoals` does not emit `regimen:changed`")
-
-    # (3) the global goals key has exactly one writer.
-    goals_writes = re.findall(r"\bset(?:Validated)?\(\s*RG_USER_GOALS_KEY\b", blanked)
-    if len(goals_writes) != 1:
-        viol.append(f"RG_USER_GOALS_KEY is written {len(goals_writes)}x -- expected exactly one "
-                    f"writer (saveRgUserGoals)")
+        if "writeSlotDoc(" not in b_blank:
+            viol.append(f"`{fn}` does not route through writeSlotDoc -- every regimen "
+                        f"mutation must reach the single writer")
 
     # (5) localStorage confined to core/storage.ts. Match the real LS API surface, NOT a
     # bare `localStorage.` -- the first cut used r"\blocalStorage\s*\." and RED-flagged FIVE

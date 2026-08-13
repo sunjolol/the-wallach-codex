@@ -2,14 +2,16 @@
 //
 // Usage: node tools/render_probe_adopt.js   (exit 0 = PASS, non-zero = FAIL)
 //
-// Drives the core value path: scan a label, click the product-level
-// "ADD TO REGIMEN" action on the verdict card, and assert that
-//   - the scanned product lands in the active slot inside rgSlots_v1 (provenance 'user_scanned');
-//   - the verdict button confirms (text + disabled);
-//   - covered tiles on the Coverage surface increase (the §31 saveRgManual →
+// Drives the core value path: score a label with the native engine, then fire the
+// SAME §31 cascade the Scan·Confirm·Result "Add to regimen" button fires —
+// saveRgManual() with a provenance:'user_scanned' item — and assert that
+//   - the scanned product lands in the active slot inside rgSlots_v1 (user_scanned);
+//   - covered tiles on the Coverage surface increase (§31 saveRgManual →
 //     regimen:changed → coverage recompute cascade).
-// Seeds an empty regimen (HBSP base hidden) so the coverage delta is clean.
-// Mirrors render_probe_scan.js. Requires puppeteer.
+// The 2026-08-13 port drives adopt from a real upload→OCR→confirm→result flow a
+// headless probe cannot reach (local OCR), so this exercises the cascade via the
+// engine bridge (window.saveRgManual), mirroring render_probe_scan's use of lcScan.
+// Seeds an empty regimen (HBSP base hidden) so the coverage delta is clean. Requires puppeteer.
 
 const path = require('path');
 const REPO = path.resolve(__dirname, '..');
@@ -28,7 +30,7 @@ const PRODUCT = {
     { name: 'Calcium', amount: 1600, unit: 'mg' },
     { name: 'Magnesium', amount: 800, unit: 'mg' },
     { name: 'Zinc', amount: 50, unit: 'mg' },
-    { name: 'Vitamin D', amount: 2400, unit: 'iu' },  // 2400 IU x0.025 = 60 mcg > 50 mcg target: exercises the IU->mcg fix
+    { name: 'Vitamin D', amount: 2400, unit: 'iu' },
     { name: 'Selenium', amount: 400, unit: 'mcg' },
   ],
   ingredients: 'ascorbic acid, calcium citrate, magnesium glycinate, zinc picolinate',
@@ -59,10 +61,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     return root ? root.querySelectorAll('.tile.covered, .tile--vitamin.covered, .tile--amino.covered, .tile--fat.covered').length : -1;
   });
 
-  // Default lands on Coverage — capture the baseline covered-tile count.
   const baselineCovered = await coveredCount();
 
-  // Go to Scanner and score the product.
   await page.evaluate(() => { document.querySelector('[data-rail-nav="scanner"]')?.click(); });
   await wait(400);
   const scan = await page.evaluate((label) => {
@@ -71,12 +71,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     w.lcScan(label);
     return { scanFn: true };
   }, PRODUCT);
-  await wait(400);
+  await wait(300);
 
-  // Click the product-level ADD TO REGIMEN action and read the result.
-  const adopt = await page.evaluate(() => {
-    // P3: the adopt path (§31 saveRgManual) now writes the ACTIVE SLOT inside rgSlots_v1, not the
-    // retired rgManualItems_v1 key. Read the active slot's items to assert the write landed.
+  const adopt = await page.evaluate((label) => {
     const activeItems = () => {
       const doc = JSON.parse(localStorage.getItem('rgSlots_v1') || 'null');
       if (!doc || !Array.isArray(doc.slots)) { return []; }
@@ -84,24 +81,22 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       return active ? active.items : [];
     };
     const before = activeItems().length;
-    const btn = document.querySelector('#workspace-scanner-mount [data-sc-action="adopt-product"]');
-    const btnFound = btn !== null;
-    if (btnFound) { btn.click(); }
+    const bridge = typeof window.saveRgManual === 'function';
+    if (bridge) {
+      // Mirror views/scanner.ts adopt: a user_scanned item through the §31 chokepoint.
+      const item = { id: Date.now(), label: { name: label.name, nutrients: label.nutrients }, addedDate: new Date().toISOString().slice(0, 10), provenance: 'user_scanned' };
+      window.saveRgManual([item]);
+    }
     const after = activeItems();
     const last = after[after.length - 1] || null;
     return {
-      btnFound,
-      before,
-      after: after.length,
+      bridge, before, after: after.length,
       provenance: last ? last.provenance : null,
       adoptedName: last ? (last.label && last.label.name) : null,
-      btnText: btnFound ? btn.textContent.trim() : null,
-      btnDisabled: btnFound ? btn.disabled === true : null,
     };
-  });
+  }, PRODUCT);
   await wait(300);
 
-  // Back to Coverage — the cascade should have moved covered tiles up.
   await page.evaluate(() => { document.querySelector('[data-rail-nav="coverage"]')?.click(); });
   await wait(500);
   const afterCovered = await coveredCount();
@@ -112,11 +107,10 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
 
   const checks = [
     ['window.lcScan present', out.scanFn === true],
-    ['adopt button found', out.btnFound === true],
-    ['manual stack +1', out.after === out.before + 1 && out.after === 1],
+    ['saveRgManual §31 bridge present', out.bridge === true],
+    ['active slot +1', out.after === out.before + 1 && out.after === 1],
     ['provenance user_scanned', out.provenance === 'user_scanned'],
     ['adopted product name', out.adoptedName === 'Test Adopt Multi'],
-    ['button confirms', out.btnText === '✓ ADDED TO REGIMEN' && out.btnDisabled === true],
     ['covered tiles increased', out.afterCovered > out.baselineCovered && out.baselineCovered >= 0],
     ['no page errors', errs.length === 0],
   ];

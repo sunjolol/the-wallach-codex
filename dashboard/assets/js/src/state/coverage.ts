@@ -829,11 +829,22 @@ function deliveryRatio(target: CoverageTarget | null, status: CoverageStatus, d:
 let cachedSnapshot: CoverageSnapshot | null = null;
 
 /** Recompute coverage from the targets DB + the active regimen. */
-export function recompute(): CoverageSnapshot {
+interface BuiltTiles {
+  tiles: CoverageTile[];
+  pdm: ReturnType<typeof pdmAggregate>;
+  pdmStatus: CoverageStatus;
+}
+
+/**
+ * Build the 90 tiles for a GIVEN item list + overrides. Pure: reads only the sealed
+ * targets and the passed stack, never active state. recompute() feeds it the active
+ * slot; coveredCountForItems() feeds it a saved slot — so a saved slot's count equals
+ * exactly what it would read once active (no drift; the count derives from the same
+ * truth). Extracted from recompute() 2026-08-13 (P4 Regimen cockpit needs per-slot counts).
+ */
+function buildTiles(items: RegimenItem[], overrides: OverridesMap): BuiltTiles {
   const targets = readTargets();
   const bySlug = buildBySlug(targets);
-  const overrides = loadRgOverrides();
-  const items = loadEffectiveRegimen();
   const delivery = accumulate(items, overrides, targets, bySlug);
   const pdm = pdmAggregate(items, overrides);
   const pdmStatus = pdmStatusOf(pdm);
@@ -959,9 +970,33 @@ export function recompute(): CoverageSnapshot {
     tile.mirrorsSlug = srcSlug ?? null;
   });
 
+  return { tiles, pdm, pdmStatus };
+}
+
+/**
+ * Covered-count for an ARBITRARY slot's items — the SAME engine recompute uses, so a
+ * saved slot's number equals what it would show once active (no drift). Pure; the
+ * Regimen cockpit reads it to paint each save-slot's coverage without switching slots.
+ */
+export function coveredCountForItems(items: RegimenItem[], overrides: OverridesMap): number {
+  const { tiles } = buildTiles(items, overrides);
+  return tiles.filter(t => !NON_ESSENTIAL_NAMES.has(t.name) && t.covered).length;
+}
+
+export function recompute(): CoverageSnapshot {
+  const items = loadEffectiveRegimen();
+  const overrides = loadRgOverrides();
+  const { tiles, pdm, pdmStatus } = buildTiles(items, overrides);
+
   // Tally by category.
   const byCategory: CoverageSnapshot['byCategory'] = {};
   for (const tile of tiles) {
+    // Non-essentials (omega-9 / oleic) are shown for completeness but are NOT one of
+    // the 90 -- skip them so the category totals sum to totalCount (90), the same filter
+    // coveredCount/totalCount use below. Otherwise Fatty acids reads /3 (categories = 91).
+    if (NON_ESSENTIAL_NAMES.has(tile.name)) {
+      continue;
+    }
     const bucket = byCategory[tile.category] ?? { total: 0, covered: 0 };
     bucket.total += 1;
     if (tile.covered) {

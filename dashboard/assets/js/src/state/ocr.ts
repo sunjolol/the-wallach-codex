@@ -271,6 +271,151 @@ function ocrPostProcess(text: string): string {
   return text.replace(/[a-z]+/gi, m => ocrFuzzyFix(m));
 }
 
+// ─── Ranked suggestion candidates (the Confirm-step correction engine) ─────
+// Re-ported faithfully from the pre-TS suggestion engine (fca48c9d^, the recovered
+// legacy helper): the multi-path scorer + suspect walker that the Scan->Confirm
+// step surfaces as click-to-fix candidates. Only the PURE logic lives here; the
+// helper-panel DOM + word-replace UI belong to views/scanner.ts.
+
+/** One ranked correction candidate — lower score is a better match. */
+export interface SuggestionCandidate {
+  word: string;
+  score: number;
+}
+
+/**
+ * Ranked correction candidates for one OCR-garbled word, against the food/
+ * ingredient dictionary. Four scoring paths (verbatim from the legacy engine):
+ *   1. first-letter match + tight Levenshtein
+ *   2. first-letter match + Jaccard char-overlap >= 0.4  (topineg -> tapioca)
+ *   3. suffix match for prefix-eaten OCR  (REDIENTS -> INGREDIENTS)
+ *   4. prefix match, dict word starts with the read  (Orga -> Organic)
+ * Returns the best up to 4, deduped. Pure.
+ */
+function scoreCandidates(lowerWord: string, pool: Iterable<string>): SuggestionCandidate[] {
+  const candidates: SuggestionCandidate[] = [];
+  const lowerSet = new Set(lowerWord);
+  const firstChar = lowerWord[0];
+  for (const cand of pool) {
+    if (cand.length < 3) {
+      continue;
+    }
+    const lengthDiff = Math.abs(cand.length - lowerWord.length);
+    if (lengthDiff > 5) {
+      continue;
+    }
+    const dist = levenshtein(lowerWord, cand);
+    const candSet = new Set(cand);
+    let common = 0;
+    lowerSet.forEach((ch) => {
+      if (candSet.has(ch)) {
+        common++;
+      }
+    });
+    const jaccard = common / new Set([...lowerSet, ...candSet]).size;
+    const firstMatch = cand[0] === firstChar;
+    const suffixLen = Math.min(5, lowerWord.length);
+    const suffixMatch = cand.length > lowerWord.length && lowerWord.length >= 4
+      && cand.endsWith(lowerWord.slice(-suffixLen));
+    let score = Infinity;
+    if (firstMatch) {
+      const maxLev = lowerWord.length <= 4 ? 2 : (lowerWord.length <= 7 ? 3 : 4);
+      if (dist <= maxLev) {
+        score = dist;
+      }
+      if (jaccard >= 0.4 && lengthDiff <= 2) {
+        score = Math.min(score, 4 - jaccard * 4);
+      }
+    }
+    if (suffixMatch && (cand.length - lowerWord.length) <= 5) {
+      score = Math.min(score, 5);
+    }
+    if (cand.startsWith(lowerWord) && cand.length > lowerWord.length
+      && cand.length - lowerWord.length <= 5 && lowerWord.length >= 3) {
+      score = Math.min(score, 1);
+    }
+    if (score < Infinity) {
+      candidates.push({ word: cand, score });
+    }
+  }
+  candidates.sort((a, b) => a.score - b.score);
+  const seen = new Set<string>();
+  const out: SuggestionCandidate[] = [];
+  for (const cnd of candidates) {
+    if (seen.has(cnd.word)) {
+      continue;
+    }
+    seen.add(cnd.word);
+    out.push(cnd);
+    if (out.length >= 4) {
+      break;
+    }
+  }
+  return out;
+}
+
+/** Ranked candidates from the food/ingredient dictionary (the Confirm ingredients panel). */
+export function findSuggestionCandidates(lowerWord: string): SuggestionCandidate[] {
+  return scoreCandidates(lowerWord, loadDict().fuzzy);
+}
+
+/**
+ * Ranked candidates from the KNOWN-NUTRIENT list (the Confirm nutrient rows: a garbled
+ * read like "Vit8min B12" -> "Vitamin B12"). Same scorer, different pool. Returns the
+ * dictionary's original casing so the pick lands as a proper nutrient name.
+ */
+export function findNutrientCandidates(word: string): SuggestionCandidate[] {
+  const byLower = new Map(loadDict().known.map(k => [k.toLowerCase(), k]));
+  return scoreCandidates(word.toLowerCase(), byLower.keys())
+    .map(c => ({ word: byLower.get(c.word) ?? c.word, score: c.score }));
+}
+
+/** One suspect word in an ingredients line + its ranked candidates. */
+export interface IngredientSuspect {
+  word: string;
+  candidates: SuggestionCandidate[];
+}
+
+/**
+ * Suspect words in an ingredients line + their ranked candidates. Walks 3+-letter
+ * words, skips exact dictionary hits (correct reads) and any caller-dismissed word,
+ * caps at 12. Pure — the `dismissed` set is passed IN (the view owns dismiss state),
+ * never a module global (the legacy code kept it global; the port makes it a param).
+ */
+export function findIngredientSuspects(
+  text: string,
+  dismissed: ReadonlySet<string> = new Set(),
+): IngredientSuspect[] {
+  if (text.length < 10) {
+    return [];
+  }
+  const dict = loadDict();
+  const suspects: IngredientSuspect[] = [];
+  const seen = new Set<string>();
+  for (const m of text.matchAll(/\b[a-z]{3,}\b/gi)) {
+    const word = m[0];
+    const lower = word.toLowerCase();
+    if (seen.has(lower)) {
+      continue;
+    }
+    seen.add(lower);
+    if (dismissed.has(lower)) {
+      continue;
+    }
+    if (dict.fuzzy.has(lower)) {
+      continue; // exact dictionary match -- the read is correct
+    }
+    const candidates = findSuggestionCandidates(lower);
+    if (candidates.length > 0) {
+      suspects.push({ word, candidates });
+    }
+    if (suspects.length >= 12) {
+      break;
+    }
+  }
+  return suspects;
+}
+
 // ─── Label parser (OCR text → ingredients · nutrients · container hint) ────
 
 /** Parse raw OCR text into structured label fields (legacy parseOcrText port). */
@@ -417,12 +562,18 @@ function parseLabel(rawText: string): ScanLabel {
 
 // ─── Orchestrator + bridge ─────────────────────────────────────────────────
 
-/** Image data URL → OCR → parsed label → native verdict scan (logged). */
-export async function scanImage(dataUrl: string): Promise<ScanResult | null> {
+/**
+ * Image data URL → OCR → parsed ScanLabel, WITHOUT running the verdict. The
+ * Scan→Confirm→Result flow withholds the verdict until the user confirms the reads,
+ * so the view calls this, lets the user correct the label, then calls runScan on the
+ * corrected label itself. Returns the raw OCR text too (the ingredients suspect walk
+ * + the reference thumbnail want it).
+ */
+export async function ocrToLabel(dataUrl: string): Promise<{ label: ScanLabel; rawText: string }> {
   if (dataUrl === '') {
-    throw new Error('scanImage: no dataUrl provided');
+    throw new Error('ocrToLabel: no dataUrl provided');
   }
-  const text = await runOcr(dataUrl, (message, progress) => {
+  const rawText = await runOcr(dataUrl, (message, progress) => {
     try {
       window.dispatchEvent(new CustomEvent('lcscan:progress', { detail: { message, progress } }));
     }
@@ -430,7 +581,15 @@ export async function scanImage(dataUrl: string): Promise<ScanResult | null> {
       // progress dispatch is best-effort — never block the scan on it.
     }
   });
-  const label = parseLabel(text);
+  return { label: parseLabel(rawText), rawText };
+}
+
+/**
+ * One-shot image → OCR → parsed label → verdict (logged). Kept for the headless
+ * probe + legacy callers; the live Confirm flow uses ocrToLabel + runScan instead.
+ */
+export async function scanImage(dataUrl: string): Promise<ScanResult | null> {
+  const { label } = await ocrToLabel(dataUrl);
   return runScan(label);
 }
 

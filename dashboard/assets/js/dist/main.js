@@ -4740,6 +4740,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }).refine((s) => !SLOT_NAME_FORBIDDEN.test(s), {
     message: "A slot name cannot contain control characters."
   });
+  var SlotColoursDataSchema = external_exports.object({
+    colours: external_exports.array(external_exports.string()).min(1)
+  });
   var SlotSchema = external_exports.object({
     id: external_exports.string(),
     name: SlotNameSchema,
@@ -4747,8 +4750,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     overrides: OverridesMapSchema,
     createdAt: external_exports.string(),
     // ISO YYYY-MM-DD
-    editedAt: external_exports.string()
+    editedAt: external_exports.string(),
     // ISO YYYY-MM-DD
+    colour: external_exports.string().optional(),
+    // P4 — personal hue (palette enforced by setSlotColour, not here); absent on pre-P4 docs
+    goals: external_exports.array(external_exports.string()).optional()
+    // P4 — per-slot steering goals; absent on pre-P4 docs
   });
   var TrashEntrySchema = external_exports.object({
     item: RegimenItemSchema,
@@ -15933,6 +15940,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return { v: value, u: "mg" };
   }
 
+  // assets/data/slot-colours-data.json
+  var slot_colours_data_default = {
+    colours: [
+      "#e2352a",
+      "#ff7a6b",
+      "#ff7e3c",
+      "#ffb02e",
+      "#8bc34a",
+      "#35c46a",
+      "#1fc3aa",
+      "#35b6e8",
+      "#2f6fe0",
+      "#4a46d6",
+      "#9b5de5",
+      "#6a30c4",
+      "#c04fd0",
+      "#f15bb5"
+    ]
+  };
+
   // assets/js/src/state/regimen.ts
   var RG_SLOTS_KEY = "rgSlots_v1";
   var RG_USER_GOALS_KEY = "rgUserGoals_v1";
@@ -15943,6 +15970,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   var MAX_SLOTS = 4;
   var MAX_TRASH = 20;
   var DEFAULT_SLOT_ID = "default";
+  var _slotColours = SlotColoursDataSchema.safeParse(slot_colours_data_default);
+  var SLOT_COLOURS = _slotColours.success ? _slotColours.data.colours : [];
+  var DEFAULT_SLOT_COLOUR = "#ff7e3c";
+  function isSlotColour(c) {
+    return SLOT_COLOURS.includes(c);
+  }
   function fireLegacyTrigger(label) {
     const w = window;
     if (typeof w.triggerRegimenRerender === "function") {
@@ -15961,6 +15994,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function capTrash(entries) {
     return entries.slice(0, MAX_TRASH);
+  }
+  function pickSlotColour(used) {
+    return SLOT_COLOURS.find((h) => !used.includes(h)) ?? DEFAULT_SLOT_COLOUR;
   }
   function getActiveSlot(doc) {
     const found = doc.slots.find((s) => s.id === doc.activeSlot);
@@ -15988,6 +16024,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function readLegacyRemoved() {
     return new Set(getValidated(RG_REMOVED_KEY, RgRemovedSchema) ?? []);
   }
+  function readLegacyUserGoals() {
+    return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema) ?? [];
+  }
   function migrateFromLegacy() {
     const hidden = readLegacyRemoved();
     const byId = /* @__PURE__ */ new Map();
@@ -16008,17 +16047,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         items: live,
         overrides: readLegacyOverrides(),
         createdAt: now,
-        editedAt: now
+        editedAt: now,
+        colour: DEFAULT_SLOT_COLOUR,
+        goals: readLegacyUserGoals()
       }],
       activeSlot: DEFAULT_SLOT_ID,
       trash
     };
   }
+  function backfillP4(doc) {
+    if (doc.slots.every((s) => s.colour !== void 0 && s.goals !== void 0)) {
+      return doc;
+    }
+    const legacyGoals = readLegacyUserGoals();
+    const used = [];
+    const slots = doc.slots.map((s) => {
+      const colour = s.colour ?? (used.length === 0 ? DEFAULT_SLOT_COLOUR : pickSlotColour(used));
+      used.push(colour);
+      const goals = s.goals ?? [...legacyGoals];
+      return { ...s, colour, goals };
+    });
+    const next = { ...doc, slots };
+    writeSlotDoc(next, { emit: false });
+    return next;
+  }
   function loadSlotDoc() {
     if (getRaw(RG_SLOTS_KEY) !== null) {
       const doc = getValidated(RG_SLOTS_KEY, SlotDocSchema);
       if (doc !== null) {
-        return doc;
+        return backfillP4(doc);
       }
       console.warn("[state/regimen] rgSlots_v1 present but failed validation \u2014 rebuilding a Default slot from the legacy keys (auto-heal).");
     }
@@ -16044,13 +16101,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function loadRgManual() {
     return getActiveSlot(loadSlotDoc()).items;
   }
-  function loadRgRemoved() {
-    const doc = loadSlotDoc();
-    const activeId = getActiveSlot(doc).id;
-    return new Set(doc.trash.filter((e) => e.slotId === activeId).map((e) => e.item.id));
-  }
   function loadRgUserGoals() {
-    return getValidated(RG_USER_GOALS_KEY, RgUserGoalsSchema);
+    return getActiveSlot(loadSlotDoc()).goals ?? null;
   }
   function loadEffectiveRegimen() {
     return getActiveSlot(loadSlotDoc()).items;
@@ -16093,9 +16145,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function saveRgUserGoals(goalsArray) {
     const cleaned = Array.isArray(goalsArray) ? goalsArray.filter((g) => typeof g === "string" && g.length > 0) : [];
-    set(RG_USER_GOALS_KEY, cleaned);
-    fireLegacyTrigger("saveRgUserGoals");
-    emit("regimen:changed", { slotId: RG_USER_GOALS_KEY, reason: "add" });
+    const doc = loadSlotDoc();
+    writeSlotDoc(withActiveSlot(doc, (s) => ({ ...s, goals: cleaned, editedAt: today() })), { reason: "add" });
   }
   function loadSlots() {
     return loadSlotDoc();
@@ -16111,7 +16162,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return { ok: false, reason: checked.error.issues[0]?.message ?? "That slot name cannot be used." };
     }
     const now = today();
-    const slot = { id: newSlotId(), name: checked.data, items: [], overrides: {}, createdAt: now, editedAt: now };
+    const slot = {
+      id: newSlotId(),
+      name: checked.data,
+      items: [],
+      overrides: {},
+      createdAt: now,
+      editedAt: now,
+      colour: pickSlotColour(doc.slots.map((s) => s.colour)),
+      goals: []
+    };
     const res = writeSlotDoc({ ...doc, slots: [...doc.slots, slot] }, { reason: "add" });
     return res.ok ? { ok: true, slotId: slot.id } : { ok: false, reason: "That slot could not be saved to this device." };
   }
@@ -16133,7 +16193,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       items: src.items.map((i) => ({ ...i })),
       overrides: structuredClone(src.overrides),
       createdAt: now,
-      editedAt: now
+      editedAt: now,
+      colour: pickSlotColour(doc.slots.map((s) => s.colour)),
+      goals: [...src.goals ?? []]
     };
     const res = writeSlotDoc({ ...doc, slots: [...doc.slots, slot] }, { reason: "add" });
     return res.ok ? { ok: true, slotId: slot.id } : { ok: false, reason: "That slot could not be saved to this device." };
@@ -16180,6 +16242,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const res = writeSlotDoc(next, { reason: "restore" });
     return res.ok ? { ok: true, slotId: id } : { ok: false, reason: "That name could not be saved." };
   }
+  function setSlotColour(id, colour) {
+    const doc = loadSlotDoc();
+    const target = doc.slots.find((s) => s.id === id);
+    if (target === void 0) {
+      return { ok: false, reason: "That slot no longer exists." };
+    }
+    if (!isSlotColour(colour)) {
+      return { ok: false, reason: "That colour is not in the slot palette." };
+    }
+    const next = {
+      ...doc,
+      slots: doc.slots.map((s) => s.id === id ? { ...s, colour, editedAt: today() } : s)
+    };
+    const res = writeSlotDoc(next, { reason: "restore" });
+    return res.ok ? { ok: true, slotId: id } : { ok: false, reason: "That colour could not be saved." };
+  }
   function setActiveSlot(id) {
     const doc = loadSlotDoc();
     if (!doc.slots.some((s) => s.id === id)) {
@@ -16225,6 +16303,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     window.deleteSlot = deleteSlot;
     window.renameSlot = renameSlot;
     window.setActiveSlot = setActiveSlot;
+    window.setSlotColour = setSlotColour;
     window.restoreFromTrash = restoreFromTrash;
   }
 
@@ -16575,11 +16654,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return status === "covered" || status === "trace" ? 1 : 0;
   }
   var cachedSnapshot = null;
-  function recompute() {
+  function buildTiles(items, overrides) {
     const targets = readTargets();
     const bySlug = buildBySlug(targets);
-    const overrides = loadRgOverrides();
-    const items = loadEffectiveRegimen();
     const delivery = accumulate(items, overrides, targets, bySlug);
     const pdm = pdmAggregate(items, overrides);
     const pdmStatus = pdmStatusOf(pdm);
@@ -16662,8 +16739,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       tile.mirrorsOf = srcName;
       tile.mirrorsSlug = srcSlug ?? null;
     });
+    return { tiles, pdm, pdmStatus };
+  }
+  function coveredCountForItems(items, overrides) {
+    const { tiles } = buildTiles(items, overrides);
+    return tiles.filter((t) => !NON_ESSENTIAL_NAMES.has(t.name) && t.covered).length;
+  }
+  function recompute() {
+    const items = loadEffectiveRegimen();
+    const overrides = loadRgOverrides();
+    const { tiles, pdm, pdmStatus } = buildTiles(items, overrides);
     const byCategory = {};
     for (const tile of tiles) {
+      if (NON_ESSENTIAL_NAMES.has(tile.name)) {
+        continue;
+      }
       const bucket = byCategory[tile.category] ?? { total: 0, covered: 0 };
       bucket.total += 1;
       if (tile.covered) {
@@ -17974,6 +18064,43 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       unit: norm.family === "iu" ? "iu" : "mcg"
     };
   }
+  function coverageDeltaForLabel(label) {
+    const snapshot = getOrCompute();
+    const before = snapshot.coveredCount;
+    const dailyServings = Number.parseFloat(String(label.servings)) || 1;
+    const scanned = [];
+    for (const n of label.nutrients ?? []) {
+      const ess = matchEssential(n.name);
+      if (ess === null) {
+        continue;
+      }
+      scanned.push({ name: ess.name, amount: Number(n.amount) * dailyServings, unit: n.unit });
+    }
+    const addedEssentials = [];
+    for (const tile of snapshot.tiles) {
+      if (tile.covered || tile.intakeVsTarget === null) {
+        continue;
+      }
+      const { deliveredAmount, targetLow, unit } = tile.intakeVsTarget;
+      if (targetLow <= 0) {
+        continue;
+      }
+      let scanAmount = 0;
+      for (const s of scanned) {
+        if (s.name !== tile.name) {
+          continue;
+        }
+        const conv = unitConv(s.amount, s.unit, unit);
+        if (conv !== null) {
+          scanAmount += conv;
+        }
+      }
+      if (scanAmount > 0 && deliveredAmount + scanAmount >= targetLow) {
+        addedEssentials.push(tile.name);
+      }
+    }
+    return { before, after: before + addedEssentials.length, addedEssentials };
+  }
   function matchGoals(label, corpus2) {
     const nameTxt = `${label.name ?? ""} ${label.brand ?? ""}`.toLowerCase();
     const labelNutrients = label.nutrients ?? [];
@@ -18189,6 +18316,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return null;
     }
   }
+  function scoreLabel(label) {
+    try {
+      return scan(label, { logToRecent: false });
+    } catch (e) {
+      console.warn("[state/scanner] scoreLabel threw:", e);
+      return null;
+    }
+  }
   function mapVerdict(v) {
     if (v === "ADD") {
       return "aligns";
@@ -18366,6 +18501,102 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function ocrPostProcess(text) {
     return text.replace(/[a-z]+/gi, (m) => ocrFuzzyFix(m));
   }
+  function scoreCandidates(lowerWord, pool) {
+    const candidates = [];
+    const lowerSet = new Set(lowerWord);
+    const firstChar = lowerWord[0];
+    for (const cand of pool) {
+      if (cand.length < 3) {
+        continue;
+      }
+      const lengthDiff = Math.abs(cand.length - lowerWord.length);
+      if (lengthDiff > 5) {
+        continue;
+      }
+      const dist = levenshtein(lowerWord, cand);
+      const candSet = new Set(cand);
+      let common = 0;
+      lowerSet.forEach((ch) => {
+        if (candSet.has(ch)) {
+          common++;
+        }
+      });
+      const jaccard = common / (/* @__PURE__ */ new Set([...lowerSet, ...candSet])).size;
+      const firstMatch = cand[0] === firstChar;
+      const suffixLen = Math.min(5, lowerWord.length);
+      const suffixMatch = cand.length > lowerWord.length && lowerWord.length >= 4 && cand.endsWith(lowerWord.slice(-suffixLen));
+      let score = Infinity;
+      if (firstMatch) {
+        const maxLev = lowerWord.length <= 4 ? 2 : lowerWord.length <= 7 ? 3 : 4;
+        if (dist <= maxLev) {
+          score = dist;
+        }
+        if (jaccard >= 0.4 && lengthDiff <= 2) {
+          score = Math.min(score, 4 - jaccard * 4);
+        }
+      }
+      if (suffixMatch && cand.length - lowerWord.length <= 5) {
+        score = Math.min(score, 5);
+      }
+      if (cand.startsWith(lowerWord) && cand.length > lowerWord.length && cand.length - lowerWord.length <= 5 && lowerWord.length >= 3) {
+        score = Math.min(score, 1);
+      }
+      if (score < Infinity) {
+        candidates.push({ word: cand, score });
+      }
+    }
+    candidates.sort((a, b) => a.score - b.score);
+    const seen = /* @__PURE__ */ new Set();
+    const out = [];
+    for (const cnd of candidates) {
+      if (seen.has(cnd.word)) {
+        continue;
+      }
+      seen.add(cnd.word);
+      out.push(cnd);
+      if (out.length >= 4) {
+        break;
+      }
+    }
+    return out;
+  }
+  function findSuggestionCandidates(lowerWord) {
+    return scoreCandidates(lowerWord, loadDict().fuzzy);
+  }
+  function findNutrientCandidates(word) {
+    const byLower = new Map(loadDict().known.map((k) => [k.toLowerCase(), k]));
+    return scoreCandidates(word.toLowerCase(), byLower.keys()).map((c) => ({ word: byLower.get(c.word) ?? c.word, score: c.score }));
+  }
+  function findIngredientSuspects(text, dismissed = /* @__PURE__ */ new Set()) {
+    if (text.length < 10) {
+      return [];
+    }
+    const dict = loadDict();
+    const suspects = [];
+    const seen = /* @__PURE__ */ new Set();
+    for (const m of text.matchAll(/\b[a-z]{3,}\b/gi)) {
+      const word = m[0];
+      const lower = word.toLowerCase();
+      if (seen.has(lower)) {
+        continue;
+      }
+      seen.add(lower);
+      if (dismissed.has(lower)) {
+        continue;
+      }
+      if (dict.fuzzy.has(lower)) {
+        continue;
+      }
+      const candidates = findSuggestionCandidates(lower);
+      if (candidates.length > 0) {
+        suspects.push({ word, candidates });
+      }
+      if (suspects.length >= 12) {
+        break;
+      }
+    }
+    return suspects;
+  }
   function parseOcrText(rawTextInput) {
     const out = { containerHint: "", ingredients: "", nutrients: [] };
     const rawText = ocrPostProcess(rawTextInput);
@@ -18490,17 +18721,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       ingredients: parsed.ingredients
     };
   }
-  async function scanImage(dataUrl) {
+  async function ocrToLabel(dataUrl) {
     if (dataUrl === "") {
-      throw new Error("scanImage: no dataUrl provided");
+      throw new Error("ocrToLabel: no dataUrl provided");
     }
-    const text = await runOcr(dataUrl, (message, progress) => {
+    const rawText = await runOcr(dataUrl, (message, progress) => {
       try {
         window.dispatchEvent(new CustomEvent("lcscan:progress", { detail: { message, progress } }));
       } catch {
       }
     });
-    const label = parseLabel(text);
+    return { label: parseLabel(rawText), rawText };
+  }
+  async function scanImage(dataUrl) {
+    const { label } = await ocrToLabel(dataUrl);
     return runScan(label);
   }
   if (typeof window !== "undefined") {
@@ -180624,7 +180858,21 @@ TECHNICAL RECORD
 - Scanner (scanner-demo-3-verdict-r4.html; re-graduated onto ready-to-be-ported/scanner-demo-3-verdict-r3.html): no structural change.
 - Both: .ck / .vd padding var(--ds-space-7) -> var(--ds-space-4) var(--ds-space-7) var(--ds-space-7).
 - Board: invariants 91/91 green (unchanged; no shipped source touched \u2014 all demos are gitignored under temporary/). next-chunk.md carries a "2026-08-13 polish fixes" section so the port includes them.
-- Deferred: the live port (views/scanner.ts + views/regimen.ts) \u2014 next session, approval + STOP-for-sign-off.` }];
+- Deferred: the live port (views/scanner.ts + views/regimen.ts) \u2014 next session, approval + STOP-for-sign-off.` }, { id: "lg_mss62v3f_vl1zqy", ts: "2026-08-13T18:46:19.755353-05:00", surface: "views/scanner.ts + views/regimen.ts (live port)", kind: "round-close", summary: "Ported the redesigned Scanner (Scan\xB7Confirm\xB7Result) and Regimen (Cockpit + save-slots) tabs into the real app, matched them to Luneth's newest demos, then fixed the two things he caught live: the active-stack width and best-next-moves cards breaking on real product names.", detail: `This was the live build of the two redesigned tabs Luneth had already signed off as demos \u2014 plus fixing the parts of the demo design that only broke once real Youngevity data (long product names, an empty active stack) hit the surface. It began as a reconciliation: an earlier session had ported both tabs but drifted from the approved look (an old scanner with a "1 2 3" strip at the top, an unstyled add-a-product input). A read-only 9-agent diff pass inventoried every difference against the newest demos (scanner-demo-3-verdict-r4 / regimen-slots-tray-v7); the CSS turned out faithful, so the fixes were in the view markup + the shell.
+
+SCANNER (views/scanner.ts): dropped the in-content .vd-flow stepper (the demo carries "Scan \u2192 Confirm \u2192 Result" in the topbar, not the body); Confirm now renders the .vd-cf__ref "Your uploaded photo" card with the user's REAL image (not the demo's faux label) so the 2-col grid's right column is no longer empty; the SAVE verdict chip text is dark ink again (an inline colour was forcing near-white on the amber wash); copy/aria matched to r4. Two wordings were deliberately NOT matched, per \xA700.A: the unrecognized-row badge stays "not recognized" (the demo's "low confidence" implies a confidence score the engine never fabricates) and the count line stays "N mapped \xB7 N to check" (the demo's "1 unreadable" is a category the live has no data for). The Youngevity no-OCR link was omitted (no live flow behind it).
+
+REGIMEN (views/regimen.ts): the add-field is the real .ck-addfield pill (\uFF0B glyph, a borderless input styled as the ghost placeholder, a "/" hint wired to focus) instead of a raw <input> + "Add" button; the slot trash is always visible EXCEPT on the last remaining slot (Luneth's call \u2014 and it matches the engine, which already refuses to delete the last slot); "Slot NN \xB7" ordinals; a per-goal .ck-tag on the recommendation cards; a scoped .ck-goalmenu style for the add-goal dropdown the live view had made functional but never styled.
+
+SHELL (main.ts + dashboard.html): the topbar was hardcoded to "Coverage" and never changed \u2014 now WORKSPACE_HEADERS repaints the name + deck on every navigation, and a wallach:navigate window listener wires the cross-tab jump buttons ("Scan a new item", coverage's "Add to regimen") that were dispatching an event nobody heard.
+
+COVERAGE ENGINE (state/coverage.ts): recompute()'s byCategory tally counted every tile, including the non-essential omega-9/oleic \u2014 so Fatty acids read /3 and the four categories summed to 91 while the gauge/readout said 90. Excluding NON_ESSENTIAL_NAMES (the same filter coveredCount/totalCount already use) makes Fatty acids /2 and the categories sum to 90. Wallach names two essential fatty acids (linoleic/linolenic); oleic is body-made.
+
+THE TWO LIVE-SURFACE FIXES Luneth flagged after the first screenshots: (1) the active-stack panel had align-self:start (inherited from the shared .rail-panel), so it hugged its content \u2014 fine when full of item names (380px in the demo), wrong when empty (334px live); align-self:stretch pins it to the column. (2) the shared .rec card floats its + at top:50%, which collided with wrapped names, and 3 narrow columns cramped real product titles; scoped to .ck-recgrid the cards are now wider 2-up, a flex column with the name on top and price/essentials pinned to the bottom, and the + parked in the corner \u2014 Coverage's own .rec is untouched.
+
+PROBES: the scanner rebuild made three render probes stale (they asserted the retired v3 DOM). render_probe_scanner now asserts the .vd idle shell AND that .vd-flow is absent (a regression guard for the stepper removal); render_probe_scan drops the lcScan\u2192view coupling check (the new view renders from the user's own upload\u2192confirm flow, not a headless lcScan); render_probe_adopt fires the same \xA731 saveRgManual(user_scanned) cascade the adopt button fires, via the engine bridge, since the button itself is only reachable through the real (OCR) flow.
+
+Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2192 91/91 (23 external, unchanged); render probes scanner/scan/ocr/adopt/slots/omega/rail_sync/coverage_add_remove/reduced_motion all green; both tabs screenshot-reviewed and signed off by Luneth. Deferred (agreed): the demo's engine-backed Confirm/Result richness (proprietary-blend + oxide-form rows, trace-mineral-tiles-closed tile) needs new metrics; swatch colour-name aria-labels need names in slot-colours-data.json; headers still parked.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -180918,22 +181166,14 @@ TECHNICAL RECORD
   }
 
   // assets/js/src/views/regimen.ts
-  var SLOT_PLACEHOLDERS = [
-    { id: "slot-01", num: "01", serial: "01\xB7A23F", name: "Travel Pack", items: 6, coverage: 31, total: essentialCount(), stamp: "SAVED \xB7 2D AGO" },
-    { id: "slot-02", num: "02", serial: "02\xB7F71D", name: "Daily Protocol", items: 9, coverage: 47, total: essentialCount(), stamp: "EDIT 0:14 AGO", active: true },
-    { id: "slot-03", num: "03", serial: "03\xB7C8B2", name: "Sleep Stack", items: 4, coverage: 18, total: essentialCount(), stamp: "SAVED \xB7 1W AGO" },
-    { id: "slot-04", num: "04", serial: "04\xB7E901", name: "Recovery Ramp", items: 11, coverage: 54, total: essentialCount(), stamp: "SAVED \xB7 3W AGO" },
-    { id: "slot-05", num: "05", serial: "", name: "", items: 0, coverage: 0, total: essentialCount(), stamp: "", empty: true }
-  ];
-  var RECOMMENDATIONS = [
-    { name: "CHEWABLE VITAMIN D3", contribution: 12, heat: "xl", reason: "Closes 12 trace tiles via the PDM-aggregate vehicle. Single-serve daily, neutral taste." },
-    { name: "ULTIMATE EFA PLUS", contribution: 2, heat: "md", reason: "Adds Omega-6 + Omega-9 coverage. Bone & skeletal goal already at 78%, this raises to 84%." },
-    { name: "CHEWABLE C\xB71000", contribution: 1, heat: "sm", reason: "Strengthens existing Vitamin C coverage to clinical-dose level." },
-    { name: "SLENDER FX SHAKE", contribution: 8, heat: "lg", reason: "Meal-replacement option; adds 8 essentials at once but high overlap with existing BTT." }
-  ];
-  var WISHLIST = [
-    { name: "HYDRA DNA COLLAGEN", contribution: 0, heat: "sm", reason: "Logged 2026-06-15 \xB7 skin & connective tissue goal \xB7 pending cost/timing decision." },
-    { name: "OPTIVIDA HEMP EXTRACT", contribution: 0, heat: "sm", reason: "Deferred \u2014 overlap with sleep stack already; revisit once sleep goal closes." }
+  var LAYOUT4 = CoverageLayoutSchema.parse(coverage_layout_data_default);
+  var REC_LIMIT2 = 6;
+  var SLOT_CAP = 4;
+  var CATEGORY_ROWS = [
+    { label: "Minerals", bucket: "other", hue: "#2b6fb0" },
+    { label: "Vitamins", bucket: "vitamins", hue: "#c8781a" },
+    { label: "Amino acids", bucket: "aminos", hue: "#5aa82c" },
+    { label: "Fatty acids", bucket: "fatty-acids", hue: "#8a4fae" }
   ];
   function escHTML14(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
@@ -180944,310 +181184,92 @@ TECHNICAL RECORD
       "'": "&#39;"
     })[c]);
   }
-  function contributionPips(contribution) {
-    return Math.max(0, Math.min(10, Math.ceil(contribution / 3)));
-  }
-  function renderPips2(filled) {
-    let html = "";
-    for (let i = 0; i < 10; i += 1) {
-      const cls = i < filled ? "contrib-pip fill" : "contrib-pip";
-      html += `<span class="${cls}"></span>`;
+  function relEdited(iso) {
+    const then = Date.parse(`${iso}T00:00:00`);
+    if (Number.isNaN(then)) {
+      return escHTML14(iso);
     }
-    return html;
-  }
-  function itemIcon(item) {
-    const name = (item.label.name ?? "?").toString();
-    return name.charAt(0).toUpperCase();
-  }
-  function itemContribution(item) {
-    return item.label.nutrients?.length ?? 0;
-  }
-  function renderSlot(slot) {
-    if (slot.empty === true) {
-      return `
-      <article class="slot-card empty" data-slot-id="${escHTML14(slot.id)}">
-        <div class="slot-card__empty-mark">+</div>
-        <div class="slot-card__empty-label">EMPTY SLOT</div>
-      </article>
-    `;
+    const today2 = /* @__PURE__ */ new Date();
+    const start = Date.parse(`${today2.toISOString().slice(0, 10)}T00:00:00`);
+    const days = Math.round((start - then) / 864e5);
+    if (days <= 0) {
+      return "edited today";
     }
-    const activeClass = slot.active === true ? " active ds-border-travel" : "";
-    const serialPrefix = slot.active === true ? "\u25CF " : "";
-    const serialSuffix = slot.active === true ? " \xB7 ACTIVE" : "";
-    return `
-    <article class="slot-card${activeClass}" data-slot-id="${escHTML14(slot.id)}" data-slot-num="${escHTML14(slot.num)}">
-      <div class="slot-card__serial">${serialPrefix}<span class="ds-cipher" data-cipher-set="hexa">${escHTML14(slot.serial)}</span>${serialSuffix}</div>
-      <div class="slot-card__num">${escHTML14(slot.num)}</div>
-      <h3 class="slot-card__name">${escHTML14(slot.name)}</h3>
-      <div class="slot-card__items">${slot.items} items \xB7 <span class="slot-card__coverage">${slot.coverage}</span>/${slot.total}</div>
-      <div class="slot-card__stamp">${escHTML14(slot.stamp)}</div>
-    </article>
-  `;
-  }
-  function renderSlotsShowcase() {
-    const slotsHTML = SLOT_PLACEHOLDERS.map(renderSlot).join("");
-    return `
-    <section class="slots-showcase">
-      <header class="slots-showcase__head">
-        <div>
-          <div class="slots-showcase__kicker">YOUR CARTRIDGES \xB7 ${SLOT_PLACEHOLDERS.length} SLOTS \xB7 <span class="ds-cipher" data-cipher-set="hexa">02\xB7F71D</span> ACTIVE</div>
-          <h2 class="slots-showcase__title">
-            CARTRIDGES
-            <em>// each slot is a standalone protocol \u2014 save, switch, share</em>
-          </h2>
-        </div>
-        <button class="slots-showcase__new" data-rg-action="new-cartridge">+ NEW CARTRIDGE</button>
-      </header>
-      <div class="slots-grid">${slotsHTML}</div>
-    </section>
-  `;
-  }
-  function readDose(raw) {
-    const n = typeof raw === "number" ? raw : typeof raw === "string" ? Number.parseFloat(raw) : Number.NaN;
-    return Number.isFinite(n) && n > 0 ? n : 1;
-  }
-  function renderItemRow(item, overrides) {
-    const contrib = itemContribution(item);
-    const pips = renderPips2(contributionPips(contrib));
-    const icon = itemIcon(item);
-    const name = (item.label.name ?? "(unnamed)").toString();
-    const ov = overrides[String(item.id)] ?? {};
-    const amount = readDose(ov["dose_amount"]);
-    const freq = readDose(ov["dose_freq"]);
-    const scaling = amount * freq;
-    return `
-    <div class="regimen-item-row" data-item-id="${item.id}">
-      <div class="regimen-item-row__icon">${escHTML14(icon)}</div>
-      <div class="regimen-item-row__body">
-        <h4 class="regimen-item-row__name">${escHTML14(name)}</h4>
-        <div class="regimen-item-row__contrib">
-          <span class="regimen-item-row__contrib-label">CONTRIBUTES \xB7 ${contrib}</span>
-          ${pips}
-        </div>
-      </div>
-      <div class="dose-block">
-        <input class="dose-input" type="text" value="${amount}" data-rg-dose="amount" data-item-id="${item.id}" />
-        <span class="dose-unit dose-unit--label">DOSE</span>
-        <span class="dose-sep">\xD7</span>
-        <input class="dose-input" type="text" value="${freq}" data-rg-dose="freq" data-item-id="${item.id}" />
-        <span class="dose-unit dose-unit--label">PER DAY</span>
-      </div>
-      <span class="scaling">\xD7${scaling.toFixed(1)}</span>
-      <button class="btn-remove" title="Remove" data-rg-action="remove" data-item-id="${item.id}">\xD7</button>
-    </div>
-  `;
-  }
-  function renderActiveSlot(items, coverageCount, overrides) {
-    const rowsHTML = items.length > 0 ? items.map((item) => renderItemRow(item, overrides)).join("") : '<div class="regimen-item-row regimen-item-row--empty"><div class="regimen-item-row__body"><h4 class="regimen-item-row__name">\u2014 no items yet \u2014</h4></div></div>';
-    return `
-    <section class="active-slot">
-      <header class="active-slot__head">
-        <div class="active-slot__eyebrow"><span class="pulse-dot"></span>EDITING \xB7 SLOT <span class="ds-cipher" data-cipher-set="hexa">02\xB7F71D</span></div>
-        <div class="active-slot__title-row">
-          <div>
-            <h2 class="active-slot__title">Daily Protocol</h2>
-            <div class="active-slot__meta">
-              <span><strong>${items.length}</strong> items</span>
-              <span>\xB7</span>
-              <span>EDITED <strong><span class="ds-cipher" data-cipher-set="time">0:14</span> AGO</strong></span>
-              <span>\xB7</span>
-              <span>SYNCED</span>
-            </div>
-          </div>
-          <div class="active-slot__stat">
-            <span class="active-slot__stat-num">${coverageCount}</span>
-            <span class="active-slot__stat-den">/ ${essentialCount()}</span>
-            <span class="active-slot__stat-label">essentials<br>covered</span>
-          </div>
-        </div>
-      </header>
-      <div class="active-slot__items">${rowsHTML}</div>
-      <div class="active-slot__actions">
-        <button class="cart-action cart-action--primary" data-rg-action="add-item">
-          <span class="cart-action__glyph">+</span>ADD ITEM
-        </button>
-        <span class="cart-action__spacer"></span>
-        <button class="cart-action" data-rg-action="save"><span class="cart-action__glyph">\u25A4</span>SAVE</button>
-        <button class="cart-action" data-rg-action="duplicate"><span class="cart-action__glyph">\u21BB</span>DUPLICATE</button>
-        <button class="cart-action" data-rg-action="import"><span class="cart-action__glyph">\u2193</span>IMPORT</button>
-        <button class="cart-action" data-rg-action="export"><span class="cart-action__glyph">\u2191</span>EXPORT</button>
-        <button class="cart-action" data-rg-action="vault"><span class="cart-action__glyph">\u2303</span>VAULT</button>
-      </div>
-    </section>
-  `;
-  }
-  function renderRecItem(item) {
-    const sign = item.contribution > 0 ? "+" : "";
-    const tagText = item.contribution > 0 ? `${sign}${item.contribution}` : "\xB7";
-    return `
-    <div class="rec-item">
-      <div class="rec-item__head">
-        <h4 class="rec-item__name">${escHTML14(item.name)}</h4>
-        <span class="rec-item__tag" data-heat="${escHTML14(item.heat)}"><span class="rec-item__tag-sign">${escHTML14(sign)}</span>${escHTML14(tagText)}</span>
-      </div>
-      <div class="rec-item__reason">${escHTML14(item.reason)}</div>
-      <div class="rec-item__actions">
-        <button class="rec-item__adopt" data-rg-action="adopt" data-item-name="${escHTML14(item.name)}">+ ADOPT</button>
-        <button class="rec-item__details" data-rg-action="details" data-item-name="${escHTML14(item.name)}">DETAILS</button>
-      </div>
-    </div>
-  `;
-  }
-  function renderRail2() {
-    const userGoals = loadRgUserGoals();
-    const hasGoals = userGoals !== null && userGoals.length > 0;
-    const recsHTML = hasGoals ? RECOMMENDATIONS.map(renderRecItem).join("") : '<div class="rec-item rec-item--empty"><div class="rec-item__reason">Set a goal to see personalized recommendations.</div></div>';
-    const wishHTML = WISHLIST.length > 0 ? WISHLIST.map(renderRecItem).join("") : '<div class="rec-item rec-item--empty"><div class="rec-item__reason">No items saved for later.</div></div>';
-    return `
-    <aside class="regimen-side">
-      <section class="side-panel">
-        <header class="side-panel__head">
-          <div class="side-panel__eyebrow">RECOMMENDED \xB7 GOAL-DRIVEN</div>
-          <h3 class="side-panel__title">CLOSES YOUR GAPS</h3>
-        </header>
-        <div class="side-panel__list">${recsHTML}</div>
-      </section>
-      <section class="side-panel">
-        <header class="side-panel__head">
-          <div class="side-panel__eyebrow">WISHLIST \xB7 SAVED-FOR-LATER</div>
-          <h3 class="side-panel__title">DECISIONS DEFERRED</h3>
-        </header>
-        <div class="side-panel__list">${wishHTML}</div>
-      </section>
-    </aside>
-  `;
-  }
-  var CIPHER_SETS2 = {
-    hexa: "0123456789ABCDEF",
-    alphanum: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    numfrac: "0123456789",
-    time: "0123456789:\xB7"
-  };
-  var cipherInterval2 = null;
-  var cipherTickCount = 0;
-  function startCipherEngine2(container) {
-    if (cipherInterval2 !== null) {
-      return;
+    if (days === 1) {
+      return "1 day ago";
     }
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
+    if (days < 7) {
+      return `${days} days ago`;
     }
-    cipherInterval2 = window.setInterval(() => {
-      cipherTickCount += 1;
-      const elements = Array.from(container.querySelectorAll(".ds-cipher"));
-      for (const el of elements) {
-        let original = el.dataset["cipherOriginal"];
-        if (original === void 0) {
-          original = el.textContent ?? "";
-          el.dataset["cipherOriginal"] = original;
-          const setKey = el.dataset["cipherSet"] ?? "alphanum";
-          el.dataset["cipherSetResolved"] = CIPHER_SETS2[setKey] ?? CIPHER_SETS2["alphanum"] ?? "";
-        }
-        const set2 = el.dataset["cipherSetResolved"] ?? "";
-        if (cipherTickCount % 5 === 0) {
-          el.textContent = original;
-          continue;
-        }
-        if (original.length === 0 || set2.length === 0) {
-          continue;
-        }
-        const chars = original.split("");
-        const i = Math.floor(Math.random() * chars.length);
-        const charAt = chars[i];
-        if (charAt === void 0) {
-          continue;
-        }
-        if (!/[A-Z0-9·:]/i.test(charAt)) {
-          continue;
-        }
-        const newChar = set2[Math.floor(Math.random() * set2.length)] ?? charAt;
-        chars[i] = newChar;
-        el.textContent = chars.join("");
+    const weeks = Math.round(days / 7);
+    return weeks === 1 ? "1 week ago" : `${weeks} weeks ago`;
+  }
+  function activeGoals2() {
+    const chosen = loadRgUserGoals() ?? [];
+    const byId = new Map(LAYOUT4.goals.map((g) => [g.id, g]));
+    const out = [];
+    for (const id of chosen) {
+      const g = byId.get(id);
+      if (g !== void 0 && !out.some((o) => o.id === g.id)) {
+        out.push(g);
       }
-    }, 1e3);
-  }
-  function stopCipherEngine2() {
-    if (cipherInterval2 !== null) {
-      window.clearInterval(cipherInterval2);
-      cipherInterval2 = null;
-    }
-  }
-  function handleAction(action, target) {
-    const w = window;
-    const slotId = target.closest("[data-slot-id]")?.dataset["slotId"];
-    switch (action) {
-      case "save":
-        if (slotId !== void 0 && typeof w.saveCurrentToSlot === "function") {
-          try {
-            w.saveCurrentToSlot(slotId);
-          } catch (e) {
-            console.warn("[views/regimen] saveCurrentToSlot threw:", e);
-          }
-        }
-        break;
-      case "new-cartridge":
-        if (typeof w.showSlotInputModal === "function") {
-          try {
-            w.showSlotInputModal();
-          } catch (e) {
-            console.warn("[views/regimen] showSlotInputModal threw:", e);
-          }
-        }
-        break;
-      case "export":
-        if (typeof w.exportRegimen === "function") {
-          try {
-            w.exportRegimen();
-          } catch (e) {
-            console.warn("[views/regimen] exportRegimen threw:", e);
-          }
-        }
-        break;
-      case "import":
-        if (typeof w.importRegimen === "function") {
-          try {
-            w.importRegimen();
-          } catch (e) {
-            console.warn("[views/regimen] importRegimen threw:", e);
-          }
-        }
-        break;
-      case "vault":
-        if (typeof w.showVaultModal === "function") {
-          try {
-            w.showVaultModal();
-          } catch (e) {
-            console.warn("[views/regimen] showVaultModal threw:", e);
-          }
-        }
-        break;
-      case "remove": {
-        const idStr = target.dataset["itemId"];
-        const id = idStr === void 0 ? Number.NaN : Number(idStr);
-        if (Number.isFinite(id)) {
-          const removed = loadRgRemoved();
-          removed.add(id);
-          saveRgRemoved(removed);
-        }
+      if (out.length >= MAX_GOALS) {
         break;
       }
-      default:
-        break;
     }
+    return out;
   }
-  function handleDoseEdit(input) {
-    const idStr = input.dataset["itemId"];
-    const id = idStr === void 0 ? Number.NaN : Number(idStr);
-    if (!Number.isFinite(id)) {
-      return;
+  function slugToTileKey2() {
+    const m = /* @__PURE__ */ new Map();
+    for (const sec of LAYOUT4.sections) {
+      const tiles = sec.subsections !== void 0 ? sec.subsections.flatMap((s) => s.tiles) : sec.tiles ?? [];
+      for (const t of tiles) {
+        if (t.slug !== void 0) {
+          m.set(t.slug, t.key);
+        }
+      }
     }
-    const row = input.closest(".regimen-item-row");
-    if (row === null) {
-      return;
+    return m;
+  }
+  function readItemDose2(item) {
+    const slots = loadSlots();
+    const active = slots.slots.find((s) => s.id === slots.activeSlot);
+    const ov = active?.overrides[String(item.id)];
+    const candidates = [ov?.scaling_factor, item.label["servings"]];
+    for (const c of candidates) {
+      const n = typeof c === "number" ? c : typeof c === "string" ? Number.parseFloat(c) : Number.NaN;
+      if (Number.isFinite(n) && n > 0) {
+        return n;
+      }
     }
-    const amount = readDose(row.querySelector('[data-rg-dose="amount"]')?.value);
-    const freq = readDose(row.querySelector('[data-rg-dose="freq"]')?.value);
-    saveRgOverride(id, { dose_amount: amount, dose_freq: freq, scaling_factor: amount * freq });
+    return 1;
+  }
+  function formatDose3(n) {
+    return Number.isInteger(n) ? String(n) : String(Number(n.toFixed(2)));
+  }
+  function fieldInfo(goals) {
+    const snapshot = getOrCompute();
+    const goalSlugs = new Set(goals.flatMap((g) => g.members));
+    const nameToSlug = new Map([...slugToTileKey2()].map(([slug, name]) => [name, slug]));
+    const counted = snapshot.tiles.filter((t) => t.noTargetReason !== "non_essential");
+    let covered = 0;
+    let goalGap = 0;
+    const cells = [];
+    for (const t of counted) {
+      if (t.covered) {
+        covered++;
+        cells.push("covered");
+        continue;
+      }
+      const slug = nameToSlug.get(t.name);
+      if (slug !== void 0 && goalSlugs.has(slug)) {
+        goalGap++;
+        cells.push("goalgap");
+      } else {
+        cells.push("");
+      }
+    }
+    return { covered, goalGap, open: counted.length - covered - goalGap, cells };
   }
   var cachedVault = null;
   function readVault() {
@@ -181279,7 +181301,7 @@ TECHNICAL RECORD
   function addItem(rawName) {
     const product = readVault().get(rawName.trim().toLowerCase());
     if (product === void 0) {
-      return;
+      return false;
     }
     const item = {
       id: Date.now(),
@@ -181288,95 +181310,647 @@ TECHNICAL RECORD
       provenance: "user_manual"
     };
     saveRgManual([...loadRgManual(), item]);
+    return true;
   }
-  function renderAddRow() {
+  var PENCIL_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>';
+  var TRASH_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2m-9 0v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/></svg>';
+  var PLUS_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>';
+  function slotColour(slot) {
+    return isSlotColour(slot.colour ?? "") ? String(slot.colour) : DEFAULT_SLOT_COLOUR;
+  }
+  function renderSwatches(selected) {
+    return SLOT_COLOURS.map((h) => {
+      const on2 = h === selected ? " is-on" : "";
+      return `<button type="button" class="ck-swatch${on2}" style="--h:${escHTML14(h)}" data-swatch="${escHTML14(h)}" aria-pressed="${h === selected ? "true" : "false"}" aria-label="${escHTML14(h)}"></button>`;
+    }).join("");
+  }
+  function renderFilledSlot(slot, active, covered, showDelete) {
+    const hue = slotColour(slot);
+    const pct = Math.round(covered / Math.max(1, essentialCount()) * 100);
+    const state = active ? "ck-slot--active" : "ck-slot--saved";
+    const items = slot.items.length;
+    return `
+  <div class="ck-slot ck-slot--filled ${state}" role="tab" aria-selected="${active ? "true" : "false"}" tabindex="0" data-slot="${escHTML14(slot.id)}" style="--sc:${escHTML14(hue)}" aria-label="${escHTML14(slot.name)}, ${active ? "active save slot" : "saved slot"}, ${covered} of ${essentialCount()} covered, ${items} ${items === 1 ? "item" : "items"}, ${escHTML14(relEdited(slot.editedAt))}">
+    <div class="ck-slot__top">
+      <div class="ck-slot__head">
+        <span class="ck-slot__name" data-slot-name title="${escHTML14(slot.name)}">${escHTML14(slot.name)}</span>
+        <button type="button" class="ck-slot__pencil" data-slot-rename aria-label="Rename this save" title="Rename">${PENCIL_SVG}</button>
+        ${showDelete ? `<button type="button" class="ck-slot__pencil ck-slot__trash" data-slot-delete aria-label="Delete this save" title="Delete">${TRASH_SVG}</button>` : ""}
+      </div>
+      <div class="ck-slot__body">
+        <span class="ck-slot__cov"><span class="ck-slot__num">${covered}</span><span class="ck-slot__den">/${essentialCount()}</span></span>
+        <span class="ck-slot__meta">${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML14(relEdited(slot.editedAt))}</span>
+      </div>
+    </div>
+    <div class="ck-slot__tray">
+      <div class="ck-slot__meter" role="img" aria-label="${covered} of ${essentialCount()} covered"><span class="ck-slot__meter-fill" style="width:${pct}%"></span></div>
+      <div class="ck-slot__swatches" role="group" aria-label="Slot colour">${renderSwatches(hue)}</div>
+    </div>
+  </div>`;
+  }
+  function renderEmptySlot(index3) {
+    const idx = String(index3).padStart(2, "0");
+    return `
+  <button type="button" class="ck-slot ck-slot--empty" role="tab" aria-selected="false" data-slot-add data-index="${idx}" aria-label="Empty save slot ${index3}, add a new regimen">
+    <span class="ck-slot__plus" aria-hidden="true">${PLUS_SVG}</span>
+    <span class="ck-slot__emptylabel">Empty Slot</span>
+    <span class="ck-slot__emptysub">Add a save</span>
+  </button>`;
+  }
+  function renderSlots() {
+    const doc = loadSlots();
+    const activeSnapshot = getOrCompute();
+    const tiles = doc.slots.map((slot) => {
+      const covered = slot.id === doc.activeSlot ? activeSnapshot.coveredCount : coveredCountForItems(slot.items, slot.overrides);
+      return renderFilledSlot(slot, slot.id === doc.activeSlot, covered, doc.slots.length > 1);
+    });
+    for (let i = doc.slots.length; i < SLOT_CAP; i++) {
+      tiles.push(renderEmptySlot(i + 1));
+    }
+    return `<div class="ck-slots" data-rise="1" role="tablist" aria-label="Save slots">${tiles.join("")}</div>`;
+  }
+  function renderGauge(covered, goalGap) {
+    const total = essentialCount();
+    const covPct = covered / Math.max(1, total) * 100;
+    const gapPct = goalGap / Math.max(1, total) * 100;
+    const gapRotate = (-90 + covPct * 3.6).toFixed(3);
+    return `
+    <div class="ck-gauge">
+      <svg class="ck-gauge__svg" viewBox="0 0 240 240" role="img" aria-label="${covered} of ${total} essentials covered">
+        <defs><linearGradient id="ck-cov-grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3d6129"/><stop offset="1" stop-color="#7cb356"/></linearGradient></defs>
+        <circle class="ck-gauge__face" cx="120" cy="120" r="91"/>
+        <circle class="ck-gauge__facering" cx="120" cy="120" r="84"/>
+        <circle class="ck-gauge__ticks" cx="120" cy="120" r="115" pathLength="100" transform="rotate(-90 120 120)"/>
+        <circle class="ck-gauge__track" cx="120" cy="120" r="100" pathLength="100"/>
+        <circle class="ck-gauge__arc ck-gauge__arc--cov" cx="120" cy="120" r="100" pathLength="100" transform="rotate(-90 120 120)" style="stroke-dasharray:${covPct.toFixed(3)} 100"/>
+        <circle class="ck-gauge__arc ck-gauge__arc--gap" cx="120" cy="120" r="100" pathLength="100" transform="rotate(${gapRotate} 120 120)" style="stroke-dasharray:${gapPct.toFixed(3)} 100"/>
+      </svg>
+      <div class="ck-gauge__center">
+        <div class="ck-gauge__num" data-gauge-num>${covered}</div>
+        <div class="ck-gauge__den">of <b>${total}</b> covered</div>
+      </div>
+    </div>`;
+  }
+  function renderCategories() {
+    const snapshot = getOrCompute();
+    const rows = CATEGORY_ROWS.map((row) => {
+      const bucket = snapshot.byCategory[row.bucket] ?? { total: 0, covered: 0 };
+      const pct = bucket.total > 0 ? bucket.covered / bucket.total * 100 : 0;
+      const emptyCls = bucket.covered === 0 ? " ck-cat--empty" : "";
+      return `
+      <div class="ck-cat${emptyCls}">
+        <span class="ck-cat__id"><span class="ck-cat__dot" style="--cc:${row.hue}"></span><span class="ck-cat__name">${escHTML14(row.label)}</span></span>
+        <span class="ck-cat__meter"><i style="width:${pct.toFixed(1)}%"></i></span>
+        <span class="ck-cat__frac"><b>${bucket.covered}</b>/${bucket.total}</span>
+      </div>`;
+    }).join("");
+    return rows;
+  }
+  function renderConsole(field) {
+    const doc = loadSlots();
+    const active = doc.slots.find((s) => s.id === doc.activeSlot);
+    const ordinal2 = String(Math.max(0, doc.slots.findIndex((s) => s.id === doc.activeSlot)) + 1).padStart(2, "0");
+    const total = essentialCount();
+    const items = active?.items.length ?? 0;
+    const cells = field.cells.map((c) => `<i class="${c}"></i>`).join("");
+    return `
+    <section class="ck-console" data-rise="2" aria-label="Coverage gauge">
+      <div class="ck-console__bar">
+        <span class="ck-console__live"></span>
+        <span class="ck-console__label">Coverage \xB7 <b>${escHTML14(active?.name ?? "Regimen")}</b></span>
+        <span class="ck-console__tag">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML14(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</span>
+      </div>
+      <div class="ck-hero">
+        ${renderGauge(field.covered, field.goalGap)}
+        <div class="ck-cluster">
+          <div class="ck-cluster__head">By category</div>
+          ${renderCategories()}
+          <div class="ck-legend">
+            <span class="ck-legend__item"><span class="ck-legend__sw ck-legend__sw--cov"></span>${field.covered} covered</span>
+            <span class="ck-legend__item"><span class="ck-legend__sw ck-legend__sw--gap"></span>${field.goalGap} goal-gap</span>
+            <span class="ck-legend__item"><span class="ck-legend__sw ck-legend__sw--not"></span>${field.open} open</span>
+          </div>
+        </div>
+      </div>
+      <div class="ck-readout">
+        <div class="ck-readout__label">${total}-essential readout \xB7 <b>${field.covered} covered</b> \xB7 ${field.goalGap} goal-gap \xB7 ${field.open} open</div>
+        <div class="ck-readout__field">${cells}</div>
+      </div>
+    </section>`;
+  }
+  function renderGoals2(goals) {
+    const chips = goals.map((g, i) => `
+    <span class="gchip" style="--gc:${escHTML14(GOAL_HUES[i] ?? GOAL_HUES[0])}"><span class="gchip__dot"></span><span class="gchip__label">${escHTML14(g.name)}</span><button class="gchip__x" type="button" data-goal-remove="${escHTML14(g.id)}" aria-label="Remove ${escHTML14(g.name)}">\xD7</button></span>`).join("");
+    const add = goals.length < MAX_GOALS ? '<span class="gchip gchip--add" data-goal-add><span class="gchip__label">\uFF0B Add goal</span></span>' : "";
+    return `
+    <div class="goalstrip ck-goals" data-rise="3">
+      <span class="goalstrip__eyebrow">Steering goals \xB7 ${escHTML14(loadSlots().slots.find((s) => s.id === loadSlots().activeSlot)?.name ?? "Regimen")}</span>
+      ${chips}${add}
+    </div>`;
+  }
+  function renderGoalMenu(goals) {
+    const picked = new Set(goals.map((g) => g.id));
+    const options = LAYOUT4.goals.filter((g) => !picked.has(g.id)).map((g) => `<button type="button" class="ck-goalmenu__opt" data-goal-pick="${escHTML14(g.id)}">${escHTML14(g.name)}</button>`).join("");
+    return `<div class="ck-goalmenu" data-goal-menu hidden>${options}</div>`;
+  }
+  function wantedSlugs2(goals) {
+    if (goals.length > 0) {
+      return [...new Set(goals.flatMap((g) => g.members))];
+    }
+    const snapshot = getOrCompute();
+    const keyToSlug = new Map([...slugToTileKey2()].map(([slug, key]) => [key, slug]));
+    return snapshot.tiles.filter((t) => t.status === "gap").map((t) => keyToSlug.get(t.name)).filter((s) => s !== void 0);
+  }
+  function buildRecs2(host, recs, goals) {
+    host.replaceChildren();
+    const hueOf = (id) => {
+      const i = goals.findIndex((g) => g.id === id);
+      return GOAL_HUES[i] ?? GOAL_HUES[0];
+    };
+    if (recs.length === 0) {
+      const note = document.createElement("p");
+      note.className = "ck-recs__note";
+      note.textContent = "No product fills a gap right now \u2014 your stack already reaches these.";
+      host.appendChild(note);
+      return;
+    }
+    for (const r of recs) {
+      const cols = r.goalIds.map(hueOf);
+      const ring = cols.length === 0 ? "linear-gradient(var(--ds-rule-bright), var(--ds-rule-soft))" : cols.length === 1 ? `linear-gradient(150deg, ${cols[0]}, color-mix(in srgb, ${cols[0]} 22%, transparent))` : `linear-gradient(150deg, ${cols.join(", ")})`;
+      const card = document.createElement("button");
+      card.className = "rec";
+      card.type = "button";
+      card.dataset["recAdd"] = r.name;
+      card.style.setProperty("--recRing", ring);
+      const name = document.createElement("div");
+      name.className = "rec__name";
+      name.textContent = r.name;
+      card.appendChild(name);
+      const meta = document.createElement("div");
+      meta.className = "rec__meta";
+      const price = document.createElement("span");
+      price.className = "rec__price";
+      price.textContent = `$${r.price.toFixed(2)}`;
+      const val = document.createElement("span");
+      val.className = "rec__val";
+      val.textContent = `+${r.supplies} ${r.supplies === 1 ? "essential" : "essentials"}`;
+      meta.append(price, val);
+      for (const gid of r.goalIds) {
+        const g = goals.find((x) => x.id === gid);
+        if (g === void 0) {
+          continue;
+        }
+        const tag = document.createElement("span");
+        tag.className = "ck-tag";
+        tag.style.setProperty("--tc", hueOf(gid));
+        tag.textContent = g.name;
+        meta.appendChild(tag);
+      }
+      card.appendChild(meta);
+      const add = document.createElement("span");
+      add.className = "rec__add";
+      add.textContent = "\uFF0B";
+      card.appendChild(add);
+      host.appendChild(card);
+    }
+  }
+  function buildRailRows2(host, items) {
+    host.replaceChildren();
+    if (items.length === 0) {
+      const empty = document.createElement("div");
+      empty.className = "rail-empty";
+      const p = document.createElement("p");
+      p.textContent = "Nothing in this save yet.";
+      const small = document.createElement("small");
+      small.textContent = "Add a product below, or scan a label.";
+      empty.append(p, small);
+      host.appendChild(empty);
+      return;
+    }
+    for (const item of items) {
+      const id = String(item.id);
+      const label = typeof item.label.name === "string" ? item.label.name : "?";
+      const dose = readItemDose2(item);
+      const row = document.createElement("div");
+      row.className = "rl-row";
+      row.dataset["rowId"] = id;
+      const nameEl = document.createElement("div");
+      nameEl.className = "rl-row__name";
+      nameEl.textContent = label;
+      nameEl.title = label;
+      row.appendChild(nameEl);
+      const x = document.createElement("button");
+      x.className = "rl-row__x";
+      x.type = "button";
+      x.dataset["rowRemove"] = id;
+      x.setAttribute("aria-label", `Remove ${label}`);
+      x.textContent = "\xD7";
+      row.appendChild(x);
+      const foot = document.createElement("div");
+      foot.className = "rl-row__foot";
+      const src = document.createElement("span");
+      const own = item.provenance === "user_scanned";
+      src.className = `rl-src${own ? " is-own" : ""}`;
+      src.textContent = own ? "YOUR OWN" : "EDEN";
+      foot.appendChild(src);
+      const doseEl = document.createElement("div");
+      doseEl.className = "rl-dose";
+      const minus = document.createElement("button");
+      minus.className = "rl-dose__b";
+      minus.type = "button";
+      minus.dataset["doseDown"] = id;
+      minus.setAttribute("aria-label", "Fewer");
+      minus.textContent = "\u2212";
+      minus.disabled = dose <= 1;
+      const nEl = document.createElement("span");
+      nEl.className = "rl-dose__n";
+      nEl.textContent = formatDose3(dose);
+      const plus = document.createElement("button");
+      plus.className = "rl-dose__b";
+      plus.type = "button";
+      plus.dataset["doseUp"] = id;
+      plus.setAttribute("aria-label", "More");
+      plus.textContent = "+";
+      const unit = document.createElement("span");
+      unit.className = "rl-dose__u";
+      unit.textContent = "/day";
+      doseEl.append(minus, nEl, plus, unit);
+      foot.appendChild(doseEl);
+      row.appendChild(foot);
+      host.appendChild(row);
+    }
+  }
+  function renderRail2() {
+    const doc = loadSlots();
+    const active = doc.slots.find((s) => s.id === doc.activeSlot);
+    const items = active?.items.length ?? 0;
+    const ordinal2 = String(Math.max(0, doc.slots.findIndex((s) => s.id === doc.activeSlot)) + 1).padStart(2, "0");
     const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
     const options = names.map((n) => `<option value="${escHTML14(n)}"></option>`).join("");
     return `
-    <section class="active-slot rg-add-panel">
-      <div class="search-wrap">
-        <input class="search-input" type="text" list="rg-product-options" data-rg-add-input placeholder="Search the product vault\u2026" autocomplete="off" />
-        <datalist id="rg-product-options">${options}</datalist>
-      </div>
-      <div class="active-slot__actions">
-        <button class="cart-action cart-action--primary" data-rg-action="add-confirm"><span class="cart-action__glyph">+</span>ADD TO STACK</button>
-        <button class="cart-action" data-rg-action="add-cancel">CANCEL</button>
-      </div>
-    </section>
-  `;
+    <aside class="ck-rail" data-rise="5">
+      <section class="rail-panel">
+        <div class="rail-panel__head">
+          <div class="rail-panel__eyebrow">Active stack</div>
+          <div class="rail-panel__title">${escHTML14(active?.name ?? "Regimen")}</div>
+          <div class="rail-panel__meta">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML14(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</div>
+        </div>
+        <div class="rail-list" data-rail-list></div>
+      </section>
+      <section class="ck-addcard">
+        <div class="ck-addcard__head">
+          <span class="ck-addcard__eyebrow">Add to ${escHTML14(active?.name ?? "Regimen")}</span>
+          <span class="ck-addcard__sub">products</span>
+        </div>
+        <label class="ck-addfield">
+          <span class="ck-addfield__plus">\uFF0B</span>
+          <input class="ck-addfield__input" list="ck-vault-list" placeholder="Add a product\u2026" aria-label="Add a product" data-add-input>
+          <kbd class="ck-addfield__kbd" aria-hidden="true">/</kbd>
+        </label>
+        <datalist id="ck-vault-list">${options}</datalist>
+      </section>
+      <button class="ds-btn-primary ck-scan" type="button" data-scan-new><b class="ck-scan__plus" aria-hidden="true">+</b>Scan a new item</button>
+    </aside>`;
+  }
+  function undoDelete(cap) {
+    const res = addSlot(cap.name);
+    if (!res.ok || res.slotId === void 0) {
+      return;
+    }
+    setActiveSlot(res.slotId);
+    for (const item of cap.items) {
+      restoreFromTrash(item.id);
+    }
+    if (isSlotColour(cap.colour)) {
+      setSlotColour(res.slotId, cap.colour);
+    }
+    saveRgUserGoals(cap.goals);
+    for (const [id, patch] of Object.entries(cap.overrides)) {
+      saveRgOverride(id, patch);
+    }
   }
   function mount5(container) {
-    let pickerOpen = false;
+    let animated = false;
+    let undoTimer = null;
+    const syncStackHeight = () => {
+      const consoleEl = container.querySelector(".ck-console");
+      const stack = container.querySelector(".ck-rail .rail-panel");
+      if (consoleEl !== null && stack !== null) {
+        stack.style.maxHeight = `${Math.round(consoleEl.getBoundingClientRect().height)}px`;
+      }
+    };
+    const animateGauge = (target) => {
+      const el = container.querySelector("[data-gauge-num]");
+      if (el === null) {
+        return;
+      }
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        el.textContent = String(target);
+        return;
+      }
+      let start = null;
+      const step = (ts) => {
+        start ??= ts;
+        const p = Math.min((ts - start) / 1150, 1);
+        el.textContent = String(Math.round((1 - (1 - p) ** 3) * target));
+        if (p < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = String(target);
+        }
+      };
+      requestAnimationFrame(step);
+    };
     const render = () => {
-      const items = loadEffectiveRegimen();
-      const coverageCount = getOrCompute().coveredCount;
-      const overrides = loadRgOverrides();
+      const goals = activeGoals2();
+      const field = fieldInfo(goals);
       container.innerHTML = `
-      <div class="regimen-grid">
-        <div class="regimen-main">
-          ${renderSlotsShowcase()}
-          ${renderActiveSlot(items, coverageCount, overrides)}
-          ${pickerOpen ? renderAddRow() : ""}
+      <div class="ck">
+        ${renderSlots()}
+        <div class="coverage-grid ck-grid">
+          <div class="coverage-main ck-main">
+            ${renderConsole(field)}
+            ${renderGoals2(goals)}
+            ${renderGoalMenu(goals)}
+            <div class="recs ck-recs" data-rise="4">
+              <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><span class="ck-recs__note">Products, ranked by your goals</span></div>
+              <div class="ck-recgrid" data-recgrid></div>
+            </div>
+          </div>
+          ${renderRail2()}
         </div>
-        ${renderRail2()}
-      </div>
-    `;
+        <div class="ck-undo" data-undo hidden></div>
+      </div>`;
+      const items = loadEffectiveRegimen();
+      const railList = container.querySelector("[data-rail-list]");
+      if (railList !== null) {
+        buildRailRows2(railList, items);
+      }
+      const recGrid = container.querySelector("[data-recgrid]");
+      if (recGrid !== null) {
+        const recs = rankProductsForCoverage({
+          want: wantedSlugs2(goals),
+          owned: productIdsForNames(items.map((i) => typeof i.label.name === "string" ? i.label.name : "")),
+          goals: goals.map((g) => ({ id: g.id, members: g.members })),
+          limit: REC_LIMIT2
+        });
+        buildRecs2(recGrid, recs, goals);
+      }
+      syncStackHeight();
+      if (!animated) {
+        animated = true;
+        animateGauge(field.covered);
+      }
+    };
+    const showToast = (message, undo) => {
+      const bar = container.querySelector("[data-undo]");
+      if (bar === null) {
+        return;
+      }
+      bar.replaceChildren();
+      const msg = document.createElement("span");
+      msg.textContent = message;
+      bar.appendChild(msg);
+      if (undo !== void 0) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "ck-undo__btn";
+        btn.textContent = "Undo";
+        btn.addEventListener("click", () => {
+          if (undoTimer !== null) {
+            window.clearTimeout(undoTimer);
+            undoTimer = null;
+          }
+          undo();
+        });
+        bar.appendChild(btn);
+      }
+      bar.hidden = false;
+      if (undoTimer !== null) {
+        window.clearTimeout(undoTimer);
+      }
+      undoTimer = window.setTimeout(() => {
+        bar.hidden = true;
+      }, 8e3);
+    };
+    const beginRename = (nameEl, slotId) => {
+      nameEl.setAttribute("contenteditable", "true");
+      nameEl.focus();
+      const range = document.createRange();
+      range.selectNodeContents(nameEl);
+      const sel = window.getSelection();
+      sel?.removeAllRanges();
+      sel?.addRange(range);
+      const onKey = (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          nameEl.blur();
+        }
+      };
+      const onInput = () => {
+        const v = nameEl.textContent ?? "";
+        if (v.length > 17) {
+          nameEl.textContent = v.slice(0, 17);
+          const r = document.createRange();
+          r.selectNodeContents(nameEl);
+          r.collapse(false);
+          const s = window.getSelection();
+          s?.removeAllRanges();
+          s?.addRange(r);
+        }
+      };
+      const onBlur = () => {
+        nameEl.removeAttribute("contenteditable");
+        nameEl.removeEventListener("keydown", onKey);
+        nameEl.removeEventListener("input", onInput);
+        nameEl.removeEventListener("blur", onBlur);
+        const next = (nameEl.textContent ?? "").replace(/\s+/g, " ").trim();
+        if (next.length > 0) {
+          renameSlot(slotId, next);
+        } else {
+          render();
+        }
+      };
+      nameEl.addEventListener("keydown", onKey);
+      nameEl.addEventListener("input", onInput);
+      nameEl.addEventListener("blur", onBlur);
     };
     const clickHandler = (ev) => {
       const target = ev.target;
       if (target === null) {
         return;
       }
-      const actionEl = target.closest("[data-rg-action]");
-      if (actionEl === null) {
-        return;
-      }
-      const action = actionEl.dataset["rgAction"] ?? "";
-      if (action === "add-item") {
-        pickerOpen = !pickerOpen;
-        render();
-        if (pickerOpen) {
-          container.querySelector("[data-rg-add-input]")?.focus();
+      const swatch = target.closest("[data-swatch]");
+      if (swatch !== null) {
+        ev.stopPropagation();
+        const tile = swatch.closest("[data-slot]");
+        const hue = swatch.dataset["swatch"];
+        if (tile?.dataset["slot"] !== void 0 && hue !== void 0) {
+          setSlotColour(tile.dataset["slot"], hue);
         }
         return;
       }
-      if (action === "add-cancel") {
-        pickerOpen = false;
-        render();
-        return;
-      }
-      if (action === "add-confirm") {
-        const input = container.querySelector("[data-rg-add-input]");
-        if (input !== null) {
-          addItem(input.value);
+      const rename = target.closest("[data-slot-rename]");
+      if (rename !== null) {
+        ev.stopPropagation();
+        const tile = rename.closest("[data-slot]");
+        const nameEl = tile?.querySelector("[data-slot-name]");
+        if (tile?.dataset["slot"] !== void 0 && nameEl != null) {
+          beginRename(nameEl, tile.dataset["slot"]);
         }
-        pickerOpen = false;
-        render();
         return;
       }
-      handleAction(action, actionEl);
+      const del = target.closest("[data-slot-delete]");
+      if (del !== null) {
+        ev.stopPropagation();
+        const tile = del.closest("[data-slot]");
+        const id = tile?.dataset["slot"];
+        if (id === void 0) {
+          return;
+        }
+        const doc = loadSlots();
+        const slot = doc.slots.find((s) => s.id === id);
+        if (slot === void 0) {
+          return;
+        }
+        const cap = {
+          name: slot.name,
+          colour: slotColour(slot),
+          goals: [...slot.goals ?? []],
+          items: slot.items.map((i) => ({ ...i })),
+          overrides: JSON.parse(JSON.stringify(slot.overrides))
+        };
+        const res = deleteSlot(id);
+        if (res.ok) {
+          showToast(`Deleted "${cap.name}".`, () => undoDelete(cap));
+        } else {
+          showToast(res.reason);
+        }
+        return;
+      }
+      const addSlotBtn = target.closest("[data-slot-add]");
+      if (addSlotBtn !== null) {
+        ev.stopPropagation();
+        const res = addSlot();
+        if (res.ok && res.slotId !== void 0) {
+          setActiveSlot(res.slotId);
+        } else if (!res.ok) {
+          showToast(res.reason);
+        }
+        return;
+      }
+      if (target.closest("[data-goal-add]") !== null) {
+        ev.stopPropagation();
+        const menu = container.querySelector("[data-goal-menu]");
+        if (menu !== null) {
+          menu.hidden = !menu.hidden;
+        }
+        return;
+      }
+      const pick = target.closest("[data-goal-pick]");
+      if (pick !== null) {
+        const id = pick.dataset["goalPick"];
+        if (id !== void 0) {
+          saveRgUserGoals([...loadRgUserGoals() ?? [], id]);
+        }
+        return;
+      }
+      const goalRemove = target.closest("[data-goal-remove]");
+      if (goalRemove !== null) {
+        const id = goalRemove.dataset["goalRemove"];
+        if (id !== void 0) {
+          saveRgUserGoals((loadRgUserGoals() ?? []).filter((g) => g !== id));
+        }
+        return;
+      }
+      const recAdd = target.closest("[data-rec-add]");
+      if (recAdd !== null) {
+        const name = recAdd.dataset["recAdd"];
+        if (name !== void 0) {
+          addItem(name);
+        }
+        return;
+      }
+      const up = target.closest("[data-dose-up]");
+      const down = target.closest("[data-dose-down]");
+      if (up !== null || down !== null) {
+        const idStr = (up ?? down)?.dataset[up !== null ? "doseUp" : "doseDown"];
+        const id = Number(idStr);
+        if (Number.isFinite(id)) {
+          const item = loadEffectiveRegimen().find((i) => i.id === id);
+          if (item !== void 0) {
+            const next = Math.max(1, readItemDose2(item) + (up !== null ? 1 : -1));
+            saveRgOverride(id, { scaling_factor: next });
+          }
+        }
+        return;
+      }
+      const rowRemove = target.closest("[data-row-remove]");
+      if (rowRemove !== null) {
+        const id = Number(rowRemove.dataset["rowRemove"]);
+        if (Number.isFinite(id)) {
+          saveRgRemoved(/* @__PURE__ */ new Set([id]));
+        }
+        return;
+      }
+      if (target.closest("[data-scan-new]") !== null) {
+        window.dispatchEvent(new CustomEvent("wallach:navigate", { detail: { to: "scanner" } }));
+        return;
+      }
+      const slotTile = target.closest("[data-slot]");
+      if (slotTile?.dataset["slot"] !== void 0) {
+        setActiveSlot(slotTile.dataset["slot"]);
+      }
     };
-    const changeHandler = (ev) => {
-      const target = ev.target;
-      const doseEl = target?.closest("[data-rg-dose]") ?? null;
-      if (doseEl !== null) {
-        handleDoseEdit(doseEl);
+    const keyHandler = (ev) => {
+      if (ev.key !== "Enter") {
+        return;
+      }
+      const input = ev.target;
+      if (input?.matches("[data-add-input]") === true) {
+        ev.preventDefault();
+        const field = input;
+        if (field.value.trim().length > 0 && addItem(field.value)) {
+          field.value = "";
+        }
+      }
+    };
+    const slashFocus = (ev) => {
+      if (ev.key !== "/" || ev.metaKey || ev.ctrlKey || ev.altKey) {
+        return;
+      }
+      if (container.offsetParent === null) {
+        return;
+      }
+      const t = ev.target;
+      if (t !== null && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable)) {
+        return;
+      }
+      const input = container.querySelector("[data-add-input]");
+      if (input !== null) {
+        ev.preventDefault();
+        input.focus();
       }
     };
     render();
-    startCipherEngine2(container);
     container.addEventListener("click", clickHandler);
-    container.addEventListener("change", changeHandler);
-    const unsubRegimen = on("regimen:changed", () => render());
-    const unsubCoverage = on("coverage:recomputed", () => render());
+    container.addEventListener("keydown", keyHandler);
+    document.addEventListener("keydown", slashFocus);
+    window.addEventListener("resize", syncStackHeight);
+    const unsubReg = on("regimen:changed", render);
+    const unsubCov = on("coverage:recomputed", render);
     return {
       update: render,
       unmount: () => {
-        unsubRegimen();
-        unsubCoverage();
-        stopCipherEngine2();
+        unsubReg();
+        unsubCov();
+        if (undoTimer !== null) {
+          window.clearTimeout(undoTimer);
+        }
         container.removeEventListener("click", clickHandler);
-        container.removeEventListener("change", changeHandler);
+        container.removeEventListener("keydown", keyHandler);
+        document.removeEventListener("keydown", slashFocus);
+        window.removeEventListener("resize", syncStackHeight);
         container.innerHTML = "";
       }
     };
@@ -181392,486 +181966,520 @@ TECHNICAL RECORD
       "'": "&#39;"
     })[c]);
   }
-  function verdictPillClass(v) {
-    if (v === "ADD") {
-      return "verdict-pill verdict-pill--ok";
-    }
-    if (v === "SAVE") {
-      return "verdict-pill verdict-pill--warn";
-    }
-    return "verdict-pill verdict-pill--err";
-  }
+  var VERDICT_TONE = {
+    ADD: "var(--ds-status-ok)",
+    SAVE: "var(--ds-status-warn)",
+    REJECT: "var(--ds-status-err)"
+  };
   function verdictHeadline(v) {
     if (v === "ADD") {
-      return "ALIGNS WITH <em>WALLACH DOCTRINE</em>";
+      return { head: "Aligns", sub: "Worth adding" };
     }
     if (v === "SAVE") {
-      return "PARTIAL \xB7 <em>WORTH CONSIDERING</em>";
+      return { head: "Partial", sub: "Worth considering" };
     }
-    return "DOES NOT ALIGN \xB7 <em>FLAGGED FOR REVIEW</em>";
+    return { head: "Out", sub: "Doesn\u2019t fit the framework" };
   }
-  function renderStageEmpty() {
-    return `
-    <div class="scan-canvas scan-canvas--empty" data-sc-action="upload-click">
-      <div class="scan-canvas__drop-mark">\u2316</div>
-      <div class="scan-canvas__drop-headline">Drop a label image \xB7 or paste \xB7 or click to upload</div>
-      <div class="scan-canvas__drop-sub">// JPG \xB7 PNG \xB7 WEBP \xB7 HEIC \u2014 OCR runs locally, no upload to server</div>
-      <div class="scan-canvas__drop-formats">
-        <span>JPG</span><span>PNG</span><span>WEBP</span><span>HEIC</span>
-      </div>
-    </div>
-  `;
-  }
-  function renderLabelBlock(label) {
-    const brand = (label.brand ?? "YOUNGEVITY").toString();
-    const product = (label.name ?? "(unnamed)").toString();
-    const servings = label.servings === void 0 ? "\u2014 \xB7 \u2014 servings" : String(label.servings);
-    const nutrientRows = (label.nutrients ?? []).slice(0, 8).map((n) => `
-    <div class="scan-label__row">
-      <span>${escHTML15(n.name)}</span>
-      <span>${escHTML15(n.amount ?? "")}${escHTML15(n.unit ?? "")}</span>
-      <span>\u2014</span>
-    </div>
-  `).join("");
-    return `
-    <div class="scan-canvas scan-canvas--active">
-      <div class="scan-label">
-        <div class="scan-label__brand">${escHTML15(brand)}</div>
-        <div class="scan-label__product">${escHTML15(product)}</div>
-        <div class="scan-label__rule"></div>
-        <h4 class="scan-label__section-title">Supplement Facts</h4>
-        <div class="scan-label__serving">Serving Size \xB7 ${escHTML15(servings)}</div>
-        <div class="scan-label__rows">${nutrientRows}</div>
-        <span class="ocr-bracket ocr-bracket--brand"></span>
-        <span class="ocr-bracket ocr-bracket--product"></span>
-        <span class="ocr-bracket ocr-bracket--serving"></span>
-        <span class="ocr-bracket ocr-bracket--rows"></span>
-      </div>
-    </div>
-  `;
-  }
-  function renderStage(state, result) {
-    const canvasHTML = state === "result" && result !== null ? renderLabelBlock(result.label) : renderStageEmpty();
-    const regionCount = result?.label.nutrients?.length ?? 0;
-    const confidence = result?.alignment.score.toFixed(2) ?? "\u2014";
-    const controlsActive = state === "result" && result !== null;
-    const metaHTML = controlsActive ? `
-    <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC\xB7B14F</strong></span>
-    <span>\xB7</span>
-    <span>${regionCount} REGIONS</span>
-    <span>\xB7</span>
-    <span>CONFIDENCE <strong>${escHTML15(confidence)}</strong></span>
-  ` : `
-    <span>CAPTURE <strong class="ds-cipher" data-cipher-set="hexa">SC\xB7----</strong></span>
-    <span>\xB7</span>
-    <span>0 REGIONS</span>
-    <span>\xB7</span>
-    <span>READY</span>
-  `;
-    return `
-    <section class="scan-stage">
-      <header class="scan-stage__head">
-        <div>
-          <div class="scan-stage__kicker"><span class="pulse-dot"></span>STAGE \xB7 <span class="ds-cipher" data-cipher-set="hexa">CS\xB712B4</span></div>
-          <h2 class="scan-stage__title">
-            ${state === "result" ? "CAPTURED" : "DROP A LABEL"}
-            <em>// ${state === "result" ? "OCR + Eden grammar + vault lookup" : "image goes here \u2014 paste, drop, upload"}</em>
-          </h2>
+  function renderScan(state, fileName, dataUrl) {
+    const done = state === "confirming" || state === "result";
+    const badge = done ? "is-done" : "is-active";
+    const stateChip = done ? '<span class="vd-step__state is-done">Done &check;</span>' : state === "scanning" ? '<span class="vd-step__state is-active">Reading\u2026</span>' : '<span class="vd-step__state is-active">Start here</span>';
+    const body = done ? `<div class="vd-scan">
+        <button class="ds-btn-primary vd-newscan" type="button" data-sc-new><b aria-hidden="true">+</b> New Scan</button>
+        <div class="vd-scan__thumb">
+          ${dataUrl !== null ? `<img class="vd-scan__img" src="${escHTML15(dataUrl)}" alt="Your scanned label">` : ""}
+          <div class="vd-scan__meta">
+            <span class="vd-scan__file">${escHTML15(fileName ?? "label image")}</span>
+            <span class="vd-scan__done">&check; decoded locally \xB7 reads confirmed below</span>
+            <span class="vd-yours">Yours \xB7 user-scanned</span>
+          </div>
         </div>
-        <div class="scan-stage__head-stat">
-          <span>RESOLUTION <strong>${state === "result" ? "1080\xD71620" : "\u2014"}</strong></span>
-          <span>\xB7</span>
-          <span>CAPTURE <strong class="ds-cipher" data-cipher-set="time">${state === "result" ? "0:08" : "\u2014"}</strong> AGO</span>
-        </div>
-      </header>
-      ${canvasHTML}
-      <div class="scan-stage__controls">
-        <span class="scan-stage__meta">${metaHTML}</span>
-        <span class="scan-stage__spacer"></span>
-        <button class="scan-btn" data-sc-action="retake"><span class="scan-btn__glyph">\u21BA</span>RETAKE</button>
-        <button class="scan-btn" data-sc-action="upload"><span class="scan-btn__glyph">\u2303</span>UPLOAD</button>
-        <button class="scan-btn" data-sc-action="crop"><span class="scan-btn__glyph">\u2316</span>CROP</button>
+      </div>` : `<div class="vd-scan">
+        <button class="ds-btn-primary vd-newscan" type="button" data-sc-upload><b aria-hidden="true">+</b> New Scan</button>
+        <button class="vd-drop" type="button" data-sc-upload ${state === "scanning" ? "disabled" : ""}>
+          <span class="vd-drop__ic" aria-hidden="true">&uarr;</span>
+          <span class="vd-drop__t">${state === "scanning" ? "Reading the label\u2026" : "Upload a label image"}</span>
+          <span class="vd-drop__n">${state === "scanning" ? "OCR runs on your machine \u2014 slow by design, nothing uploaded" : "or drop / paste an image here \xB7 OCR runs locally, slow by design, nothing uploaded"}</span>
+        </button>
       </div>
-    </section>
-  `;
+      <div class="vd-scan__foot"><span>Default is image upload \u2014 OCR pre-fills the panel you confirm next.</span></div>`;
+    return `
+    <section class="vd-step vd-step--scan">
+      <div class="vd-step__head">
+        <span class="vd-step__badge ${badge}">1</span>
+        <div class="vd-step__ttlwrap">
+          <div class="vd-step__ttl">Scan a label</div>
+          <div class="vd-step__sub">Upload or drop a photo \u2014 decoded on your machine, nothing uploaded.</div>
+        </div>
+        ${stateChip}
+      </div>
+      ${body}
+    </section>`;
   }
-  function pipelineStages(state) {
-    const allDone = [
-      { name: "EXTRACT", sub: "tesseract OCR", ms: "1.42s", status: "done" },
-      { name: "PARSE", sub: "Eden grammar", ms: "0.31s", status: "done" },
-      { name: "MATCH", sub: "vault lookup", ms: "2.11s", status: "done" },
-      { name: "VERDICT", sub: "Wallach align", ms: "0.18s", status: "done" }
-    ];
-    if (state === "idle") {
-      return allDone.map((s) => ({ ...s, ms: "\u2014", status: "queued" }));
-    }
-    if (state === "scanning") {
-      return [
-        { name: "EXTRACT", sub: "tesseract OCR", ms: "1.42s", status: "done" },
-        { name: "PARSE", sub: "Eden grammar", ms: "0.31s", status: "done" },
-        { name: "MATCH", sub: "vault lookup", ms: "2.11s", status: "active" },
-        { name: "VERDICT", sub: "Wallach align", ms: "\u2014", status: "queued" }
-      ];
-    }
-    return allDone;
-  }
-  function renderPipeline(state) {
-    const stages = pipelineStages(state);
-    const stagesHTML = stages.map((s) => {
-      const dotChar = s.status === "done" ? "\u2713" : s.status === "active" ? "\u25CF" : "\u25CB";
+  function nutrientRow(n, i, added) {
+    const name = typeof n.name === "string" ? n.name : "";
+    const amt = `${n.amount ?? ""} ${escHTML15(n.unit ?? "")}`.trim();
+    const ess = matchEssential(name);
+    if (ess !== null) {
+      const plus = added.has(ess.name) ? '<span class="vd-nrow__r">+1</span>' : '<span class="vd-nrow__cov">\xB7 +0 (already covered)</span>';
       return `
-      <div class="stage stage--${s.status}">
-        <div class="stage__dot">${dotChar}</div>
-        <div class="stage__name">${escHTML15(s.name)}</div>
-        <div class="stage__sub">${escHTML15(s.sub)}</div>
-        <div class="stage__ms">${s.status === "active" ? `<span class="ds-cipher" data-cipher-set="alphanum">${escHTML15(s.ms)}</span>` : escHTML15(s.ms)}</div>
-      </div>
-    `;
-    }).join("");
-    const total = state === "result" ? "3.84s" : state === "scanning" ? "2.84s" : "\u2014";
-    return `
-    <section class="pipeline">
-      <header class="pipeline__head">
-        <div>
-          <div class="pipeline__eyebrow">PIPELINE \xB7 <span class="ds-cipher" data-cipher-set="hexa">PL\xB724A7</span> \xB7 4 STAGES</div>
-          <h2 class="pipeline__title">Extract \xB7 Parse \xB7 Match \xB7 Verdict</h2>
+      <div class="vd-nrow is-ok" data-nrow="${i}">
+        <div class="vd-nrow__main">
+          <span class="vd-nrow__g">&check;</span>
+          <input class="vd-edit" value="${escHTML15(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt">${escHTML15(amt)}</span>
+          <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML15(ess.name)}</b>${plus}</span>
         </div>
-        <div class="pipeline__total">TOTAL ELAPSED <strong>${escHTML15(total)}</strong> \xB7 target &lt;5s</div>
-      </header>
-      <div class="pipeline__stages">${stagesHTML}</div>
-    </section>
-  `;
-  }
-  function renderParsedRow(row) {
-    const statusChar = row.status === "ok" ? "\u2713" : row.status === "warn" ? "?" : "\xD7";
-    const adoptLabel = row.status === "warn" ? "CONFIRM" : row.status === "err" ? "DISMISS" : "ADOPT";
-    const adoptClass = row.status === "err" ? "parsed-row__btn" : "parsed-row__btn parsed-row__btn--adopt";
-    const mappedClass = row.status === "err" ? "parsed-row__mapped parsed-row__mapped--none" : "parsed-row__mapped";
-    const tagSignHTML = row.tag.sign !== void 0 ? `<span class="parsed-row__tag-sign">${escHTML15(row.tag.sign)}</span>` : "";
-    return `
-    <div class="parsed-row parsed-row--${row.status}">
-      <div class="parsed-row__status">${statusChar}</div>
-      <div class="parsed-row__body">
-        <span class="parsed-row__raw">"${escHTML15(row.raw)}"</span>
-        <h4 class="parsed-row__name">${escHTML15(row.name)}</h4>
-      </div>
-      <span class="${mappedClass}">\u2192 ${escHTML15(row.mapped)}</span>
-      <span class="parsed-row__confidence">${escHTML15(row.confidence)} <small>conf</small></span>
-      <span class="parsed-row__tag" data-heat="${escHTML15(row.tag.heat)}">${tagSignHTML}${escHTML15(row.tag.text)}</span>
-      <div class="parsed-row__actions">
-        <button class="parsed-row__btn" data-sc-action="details">DETAILS</button>
-        <button class="${adoptClass}" data-sc-action="${row.status === "err" ? "dismiss" : "adopt"}">${adoptLabel}</button>
-      </div>
-    </div>
-  `;
-  }
-  function parsedRowsFromResult(result) {
-    if (result === null) {
-      return [];
+      </div>`;
     }
-    return result.gapFills.map((g) => {
-      const heatKey = g.gapFillPct >= 0.5 ? "xl" : g.gapFillPct >= 0.2 ? "lg" : g.gapFillPct >= 0.1 ? "md" : "sm";
-      return {
-        status: "ok",
-        raw: g.essential.toLowerCase(),
-        name: g.essential,
-        mapped: `\u2192 ${g.essential.toLowerCase()}`,
-        confidence: "0.95",
-        tag: { heat: heatKey, sign: "+", text: String(Math.round(g.gapFillPct * 100)) }
-      };
-    });
-  }
-  function renderParsed(result) {
-    const rows = parsedRowsFromResult(result);
-    const rowsHTML = rows.length > 0 ? rows.map(renderParsedRow).join("") : '<div class="parsed-row parsed-row--empty"><div class="parsed-row__body"><span class="parsed-row__raw">\u2014 scan a label to populate this list \u2014</span></div></div>';
+    const cands = findNutrientCandidates(name).slice(0, 4);
+    const btns = cands.map((c, k) => `<button class="vd-sug__btn${k === 0 ? " is-best" : ""}" type="button" data-nfix="${i}" data-nfix-val="${escHTML15(c.word)}">${escHTML15(c.word)}</button>`).join("");
     return `
-    <section class="parsed">
-      <header class="parsed__head">
-        <div>
-          <div class="parsed__eyebrow">INGREDIENTS \xB7 <span class="ds-cipher" data-cipher-set="hexa">IG\xB756D2</span> \xB7 ${rows.length} DETECTED</div>
-          <h2 class="parsed__title">Parsed &amp; Mapped</h2>
-        </div>
-        <div class="parsed__legend">
-          <span class="parsed__legend-key"><span class="dot dot--ok"></span>VAULT HIT</span>
-          <span class="parsed__legend-key"><span class="dot dot--warn"></span>FUZZY MATCH</span>
-          <span class="parsed__legend-key"><span class="dot dot--err"></span>UNKNOWN</span>
-        </div>
-      </header>
-      <div class="parsed__list">${rowsHTML}</div>
-    </section>
-  `;
+    <div class="vd-nrow is-warn" data-nrow="${i}">
+      <div class="vd-nrow__main">
+        <span class="vd-nrow__g">!</span>
+        <input class="vd-edit is-warn" value="${escHTML15(name)}" data-nedit="${i}" aria-label="Garbled read (editable)">
+        <span class="vd-nrow__amt">${escHTML15(amt)}</span>
+        <span class="vd-nrow__map vd-nrow__map--pending">not recognized \xB7 pick a match or edit</span>
+      </div>
+      ${cands.length > 0 ? `<div class="vd-sug"><span class="vd-sug__lab">Did you mean</span>${btns}<button class="vd-sug__keep" type="button" data-nkeep="${i}">&times; keep</button></div>` : ""}
+    </div>`;
   }
-  function renderVerdict(result) {
-    if (result === null) {
-      return `
-      <section class="verdict verdict--empty">
-        <div class="verdict__grid">
-          <div class="verdict__lead">
-            <div class="verdict__eyebrow"><span class="pulse-dot"></span>VERDICT \xB7 awaiting scan</div>
-            <h2 class="verdict__headline">NO LABEL LOADED YET</h2>
-            <p class="verdict__body">Drop, paste, or upload a label image to begin. OCR runs locally; no data leaves your machine.</p>
-          </div>
-        </div>
-      </section>
-    `;
-    }
-    const headline = verdictHeadline(result.verdict);
-    const added = result.gapFills.length;
-    const traces = result.gapFills.filter((g) => g.gapFillPct < 0.05).length;
-    const anti = result.anti.length;
+  function flagRow(f) {
+    const term = f.terms !== void 0 && f.terms.length > 0 ? f.terms[0] : f.category;
+    const reason = f.nuance ?? `On Wallach's anti-list (${escHTML15(f.category)}).`;
     return `
-    <section class="verdict">
-      <div class="verdict__grid">
-        <div class="verdict__lead">
-          <div class="verdict__eyebrow"><span class="pulse-dot"></span>VERDICT \xB7 <span class="ds-cipher" data-cipher-set="hexa">VD\xB781E3</span> \xB7 WALLACH ALIGNMENT</div>
-          <h2 class="verdict__headline">${headline}</h2>
-          <p class="verdict__body">
-            ${result.reasonsFor[0]?.label ?? "Scan complete."}
-            ${anti > 0 ? `${anti} item${anti === 1 ? "" : "s"} flagged for review.` : ""}
-          </p>
-          <div class="verdict__source">CITED \xB7 <strong>Wallach corpus \u2014 alignment per source-rule allowlist</strong></div>
-          <div class="verdict__actions">
-            <button class="scan-btn scan-btn--adopt" data-sc-action="adopt-product"><span class="scan-btn__glyph">+</span>ADD TO REGIMEN</button>
-          </div>
+    <div class="vd-flag">
+      <span class="vd-flag__m">!</span>
+      <div class="vd-flag__b">
+        <span class="vd-flag__h"><b>${escHTML15(term)}</b> \u2014 ${escHTML15(f.category)}</span>
+        <span class="vd-flag__r">${escHTML15(reason)} <span class="vd-flag__cite">Wallach</span></span>
+      </div>
+    </div>`;
+  }
+  function suspectCard(s) {
+    const chips = s.candidates.slice(0, 4).map((c, k) => `<button class="vd-chip${k === 0 ? " is-best" : ""}" type="button" data-ifix="${escHTML15(s.word)}" data-ifix-val="${escHTML15(c.word)}">${escHTML15(c.word)}</button>`).join("");
+    return `
+    <div class="vd-ocr__card" data-suspect="${escHTML15(s.word)}">
+      <span class="vd-ocr__word">${escHTML15(s.word)}</span>
+      <span class="vd-ocr__arr" aria-hidden="true">&rarr;</span>
+      ${chips}
+      <button class="vd-ocr__x" type="button" data-idismiss="${escHTML15(s.word)}" title="Dismiss" aria-label="Dismiss">&times;</button>
+    </div>`;
+  }
+  function renderConfirm(label, dismissed, dataUrl) {
+    const nutrients = label.nutrients ?? [];
+    const delta = coverageDeltaForLabel(label);
+    const added = new Set(delta.addedEssentials);
+    const mapped = nutrients.filter((n) => matchEssential(typeof n.name === "string" ? n.name : "") !== null).length;
+    const unmapped = nutrients.length - mapped;
+    const rows = nutrients.map((n, i) => nutrientRow(n, i, added)).join("");
+    const ingredients = label.ingredients ?? "";
+    const suspects = findIngredientSuspects(ingredients, dismissed);
+    const suspectPanel = suspects.length > 0 ? `<div class="vd-ocr">
+        <div class="vd-ocr__head"><span class="vd-ocr__t">Possible OCR errors</span><span class="vd-ocr__hint">Click a suggestion to fix, or &times; to dismiss</span></div>
+        ${suspects.map(suspectCard).join("")}
+      </div>` : "";
+    const preview = scoreLabel(label);
+    const flags = preview?.anti ?? [];
+    const flagPanel = flags.length > 0 ? `<div class="vd-flags">
+        <div class="vd-flags__head"><span class="vd-flags__t">Ingredient flags \xB7 Wallach doctrine</span><span class="vd-flags__note">These surface once the reads are confirmed \u2014 and only the ingredients scan catches them, never the nutrition panel.</span></div>
+        ${flags.map(flagRow).join("")}
+      </div>` : "";
+    return `
+    <section class="vd-step vd-step--hero">
+      <div class="vd-step__head">
+        <span class="vd-step__badge is-active">2</span>
+        <div class="vd-step__ttlwrap">
+          <div class="vd-step__ttl">Confirm what we read</div>
+          <div class="vd-step__sub">OCR is imperfect \u2014 fix any misread word before we judge it.</div>
         </div>
-        <div class="verdict__stats">
-          <div class="verdict-stat">
-            <div class="verdict-stat__num">+${added}<small>/${essentialCount()}</small></div>
-            <div class="verdict-stat__label">essentials added to coverage</div>
+        <span class="vd-step__herotag">The hero step \xB7 verdict withheld until confirmed</span>
+      </div>
+      <div class="vd-cf">
+        <div class="vd-cf__grid">
+          <div class="vd-cf__edits">
+            <div class="vd-cf-sec">
+              <div class="vd-cf-sec__head">
+                <span class="vd-cf-sec__t">Supplement Facts \u2014 what we read</span>
+                <span class="vd-cf-sec__n">${nutrients.length} lines \xB7 ${mapped} mapped \xB7 ${unmapped} to check</span>
+                <span class="vd-cf-sec__hint">Every row is editable. Clean reads are mapped &check;; garbled reads show ranked suggestions \u2014 pick one, or keep as-is.</span>
+              </div>
+              <div class="vd-nlist">${rows || '<div class="vd-nrow__covrow">No nutrient lines read \u2014 edit the ingredients below, or rescan.</div>'}</div>
+            </div>
+            <div class="vd-cf-sec">
+              <div class="vd-cf-sec__head">
+                <span class="vd-cf-sec__t">Other ingredients \u2014 what we read</span>
+                <span class="vd-cf-sec__n">${suspects.length} suspect word${suspects.length === 1 ? "" : "s"}</span>
+                <span class="vd-cf-sec__hint">These never appear on the nutrition panel \u2014 only an ingredients scan can catch a gluten source or a seed oil.</span>
+              </div>
+              <div>
+                <label class="vd-ing__lab" for="vd-ing">Ingredients line (editable)</label>
+                <textarea id="vd-ing" class="vd-ing" rows="2" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML15(ingredients)}</textarea>
+              </div>
+              ${suspectPanel}
+              ${flagPanel}
+            </div>
           </div>
-          <div class="verdict-stat">
-            <div class="verdict-stat__num">${traces}</div>
-            <div class="verdict-stat__label">trace tiles closed</div>
-          </div>
-          <div class="verdict-stat ${anti > 0 ? "verdict-stat--warn" : ""}">
-            <div class="verdict-stat__num">${anti}</div>
-            <div class="verdict-stat__label">items flagged</div>
-          </div>
-          <div class="verdict-stat">
-            <div class="verdict-stat__num">${result.alignment.aligned}/${result.alignment.total}</div>
-            <div class="verdict-stat__label">aligned \xB7 ${(result.alignment.score * 100).toFixed(0)}%</div>
-          </div>
+          <aside class="vd-cf__ref">
+            <div class="vd-cf__ref-h">Your uploaded photo</div>
+            ${dataUrl !== null ? `<img class="vd-cf__refimg" src="${escHTML15(dataUrl)}" alt="Your uploaded label">` : ""}
+            <div class="vd-cf__ref-n"><span class="vd-yours">Yours \xB7 user-provided</span> amounts are the label's own, not a Wallach target</div>
+          </aside>
+        </div>
+        <div class="vd-cf__cta">
+          <button class="ds-btn-primary" type="button" data-sc-confirm>Confirm scan <span aria-hidden="true">&rarr;</span> verdict</button>
+          <span class="vd-cf__ctanote">Locks your corrections, then judges the confirmed reads against the Wallach corpus. No verdict is shown until you confirm.</span>
         </div>
       </div>
-    </section>
-  `;
+    </section>`;
   }
-  function renderHistoryEntry(entry) {
-    const name = entry.label.name || "(unnamed)";
-    const verdictText = entry.verdict;
-    const pillClass = verdictPillClass(entry.verdict);
-    return `
-    <div class="scan-history-item" data-sc-action="reopen" data-scan-id="${entry.id}">
-      <div class="scan-history-item__body">
-        <h4 class="scan-history-item__name">${escHTML15(name)}</h4>
-        <span class="scan-history-item__ts">${escHTML15(entry.ts.slice(0, 16))}</span>
-      </div>
-      <span class="${pillClass}">${escHTML15(verdictText)}</span>
-    </div>
-  `;
-  }
-  function renderRail3() {
-    const history = getHistory();
-    const itemsHTML = history.length > 0 ? history.slice(0, 12).map(renderHistoryEntry).join("") : '<div class="scan-history-item scan-history-item--empty"><div class="scan-history-item__body"><h4 class="scan-history-item__name">\u2014 no scans yet \u2014</h4></div></div>';
-    return `
-    <aside class="scanner-side">
-      <section class="side-panel">
-        <header class="side-panel__head">
-          <div class="side-panel__eyebrow">SCAN HISTORY \xB7 ${history.length} TOTAL</div>
-          <h3 class="side-panel__title">PAST CAPTURES</h3>
-        </header>
-        <div class="side-panel__list">${itemsHTML}</div>
-      </section>
-    </aside>
-  `;
-  }
-  var CIPHER_SETS3 = {
-    hexa: "0123456789ABCDEF",
-    alphanum: "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    numfrac: "0123456789",
-    time: "0123456789:\xB7"
-  };
-  var cipherInterval3 = null;
-  var cipherTickCount2 = 0;
-  function startCipherEngine3(container) {
-    if (cipherInterval3 !== null) {
-      return;
+  function reasonRows(result) {
+    const rows = [];
+    for (const r of result.reasonsFor) {
+      const items = r.items !== void 0 && r.items.length > 0 ? ` \u2014 ${escHTML15(r.items.join(", "))}` : "";
+      rows.push(`<div class="vd-reason vd-reason--plus"><span class="vd-reason__m" aria-hidden="true">+</span><span class="vd-reason__t"><b>${escHTML15(r.label)}</b>${items}</span></div>`);
     }
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
+    for (const r of result.reasonsAgainst) {
+      const items = r.items !== void 0 && r.items.length > 0 ? ` \u2014 ${escHTML15(r.items.join(", "))}` : "";
+      const cls = /flag|reject|conflict/i.test(r.label) ? "vd-reason--flag" : "vd-reason--minus";
+      const glyph = cls === "vd-reason--flag" ? "!" : "&minus;";
+      rows.push(`<div class="vd-reason ${cls}"><span class="vd-reason__m" aria-hidden="true">${glyph}</span><span class="vd-reason__t"><b>${escHTML15(r.label)}</b>${items}</span></div>`);
     }
-    cipherInterval3 = window.setInterval(() => {
-      cipherTickCount2 += 1;
-      const elements = Array.from(container.querySelectorAll(".ds-cipher"));
-      for (const el of elements) {
-        let original = el.dataset["cipherOriginal"];
-        if (original === void 0) {
-          original = el.textContent ?? "";
-          el.dataset["cipherOriginal"] = original;
-          const setKey = el.dataset["cipherSet"] ?? "alphanum";
-          el.dataset["cipherSetResolved"] = CIPHER_SETS3[setKey] ?? CIPHER_SETS3["alphanum"] ?? "";
-        }
-        const set2 = el.dataset["cipherSetResolved"] ?? "";
-        if (cipherTickCount2 % 5 === 0) {
-          el.textContent = original;
-          continue;
-        }
-        if (original.length === 0 || set2.length === 0) {
-          continue;
-        }
-        const chars = original.split("");
-        const i = Math.floor(Math.random() * chars.length);
-        const charAt = chars[i];
-        if (charAt === void 0) {
-          continue;
-        }
-        if (!/[A-Z0-9·:]/i.test(charAt)) {
-          continue;
-        }
-        const newChar = set2[Math.floor(Math.random() * set2.length)] ?? charAt;
-        chars[i] = newChar;
-        el.textContent = chars.join("");
-      }
-    }, 1e3);
+    return rows.join("");
   }
-  function stopCipherEngine3() {
-    if (cipherInterval3 !== null) {
-      window.clearInterval(cipherInterval3);
-      cipherInterval3 = null;
+  function deltaField(before, added, total) {
+    let h = "";
+    for (let i = 0; i < total; i++) {
+      const cls = i < before ? "covered" : i < before + added ? "scanadd" : "";
+      h += `<i class="${cls}"></i>`;
     }
+    return h;
   }
-  async function readFileAsDataURL(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onload = () => resolve(String(reader.result ?? ""));
-      reader.onerror = () => reject(new Error("FileReader failed"));
-      reader.readAsDataURL(file);
-    });
-  }
-  async function handleImageFile(file) {
-    try {
-      const dataUrl = await readFileAsDataURL(file);
-      await scanImage(dataUrl);
-    } catch (e) {
-      console.warn("[views/scanner] OCR scan failed:", e);
-    }
-  }
-  function adoptProduct(label) {
-    const item = {
-      id: Date.now(),
-      label: { name: label.name, nutrients: label.nutrients ?? [] },
-      addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
-      provenance: "user_scanned"
+  function renderResult(result) {
+    const tone = VERDICT_TONE[result.verdict];
+    const { head, sub } = verdictHeadline(result.verdict);
+    const delta = coverageDeltaForLabel(result.label);
+    const total = essentialCount();
+    const added = delta.after - delta.before;
+    const name = typeof result.label.name === "string" ? result.label.name : "Scanned label";
+    const flags = result.anti.length;
+    const alignedPct = result.alignment.total > 0 ? Math.round(result.alignment.aligned / result.alignment.total * 100) : 0;
+    const tierChip = (key, big, small) => {
+      const on2 = result.verdict === key;
+      return `<span class="vd-tier__c tier-${key === "ADD" ? "add" : key === "SAVE" ? "save" : "out"}${on2 ? " is-on" : ""}"${on2 ? ` style="background:${tone};color:${key === "SAVE" ? "var(--ds-ink)" : "var(--ds-paper-light)"}"` : ""}>${big}<small>${small}</small></span>`;
     };
-    saveRgManual([...loadRgManual(), item]);
+    return `
+    <div class="coverage-grid">
+      <div class="vd-main">
+        <section class="vd-step vd-step--result">
+          <div class="vd-step__head">
+            <span class="vd-step__badge is-active">3</span>
+            <div class="vd-step__ttlwrap">
+              <div class="vd-step__ttl">The verdict</div>
+              <div class="vd-step__sub">Fires only now \u2014 judged on the reads you confirmed.</div>
+            </div>
+            <span class="vd-step__state is-active">Result</span>
+          </div>
+          <article class="vd-card">
+            <div class="vd-card__top">
+              <span class="vd-live" style="background:${tone};box-shadow:0 0 0 3px color-mix(in srgb, ${tone} 22%, transparent)" aria-hidden="true"></span>
+              <span class="vd-card__eyebrow">Wallach-alignment verdict \xB7 <b>${escHTML15(name)}</b></span>
+              <span class="vd-card__tag">Local \xB7 confirmed</span>
+            </div>
+            <div class="vd-card__body">
+              <div class="vd-judg">
+                <div class="vd-verdict__eyebrow" style="color:${tone}">The verdict</div>
+                <div class="vd-tier" role="img" aria-label="Verdict: ${escHTML15(head)} \u2014 ${escHTML15(sub)}">
+                  ${tierChip("ADD", "Add", "aligns")}${tierChip("SAVE", "Save", "worth it")}${tierChip("REJECT", "Reject", "out")}
+                </div>
+                <h2 class="vd-verdict__h" style="color:${tone}">${head}<b>${sub}</b></h2>
+                <p class="vd-verdict__deck">${added > 0 ? `Fills ${added} real gap${added === 1 ? "" : "s"} in your 90` : "Adds no new coverage to your 90"}${flags > 0 ? `, and the ingredient scan flagged ${flags}.` : "."}</p>
+                <div class="vd-reasons">
+                  <div class="vd-reasons__h">Why \u2014 grounded in Wallach doctrine</div>
+                  ${reasonRows(result)}
+                  <div class="vd-cite"><span class="vd-cite__b">Cited</span> Wallach corpus \u2014 alignment per source-rule allowlist.</div>
+                </div>
+              </div>
+              <div class="vd-side">
+                <div class="vd-impact">
+                  <div class="vd-impact__h">Your coverage \xB7 active slot</div>
+                  <div class="vd-delta">
+                    <span class="vd-delta__from">${delta.before}</span>
+                    <span class="vd-delta__arrow" aria-hidden="true">&rarr;</span>
+                    <span class="vd-delta__to">${delta.after}</span>
+                    <span class="vd-delta__den">of ${total}</span>
+                    ${added > 0 ? `<span class="vd-delta__plus">+${added}</span>` : ""}
+                  </div>
+                  <div class="vd-field" aria-hidden="true">${deltaField(delta.before, added, total)}</div>
+                  <div class="vd-field__legend">
+                    <span class="vd-lg"><span class="vd-lg__s vd-lg__s--cov"></span>${delta.before} covered</span>
+                    <span class="vd-lg"><span class="vd-lg__s vd-lg__s--add"></span>+${added} this scan</span>
+                    <span class="vd-lg"><span class="vd-lg__s vd-lg__s--open"></span>${total - delta.after} open</span>
+                  </div>
+                </div>
+                <div class="vd-stats">
+                  <div class="vd-stat vd-stat--add"><div class="vd-stat__v">+${added}</div><div class="vd-stat__l">of ${total} added \xB7 ${delta.before} &rarr; ${delta.after}</div></div>
+                  <div class="vd-stat vd-stat--flag"><div class="vd-stat__v">${flags}</div><div class="vd-stat__l">ingredient flag${flags === 1 ? "" : "s"}</div></div>
+                  <div class="vd-stat"><div class="vd-stat__v">${alignedPct}%</div><div class="vd-stat__l">aligned \xB7 ${result.alignment.aligned} of ${result.alignment.total} nutrients</div></div>
+                  <div class="vd-stat"><div class="vd-stat__v">${result.gapFills.length}</div><div class="vd-stat__l">nutrients reach the 90</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="vd-card__foot">
+              <button class="ds-btn-primary vd-cta" type="button" data-sc-adopt>Add to regimen <span aria-hidden="true">&rarr;</span></button>
+              <button class="ds-btn-ghost" type="button" data-sc-save>Save for later</button>
+              <button class="vd-reject" type="button" data-sc-reject>Reject</button>
+              <div class="vd-foot__note">
+                <span class="vd-foot__prov"><span class="vd-yours">Yours \xB7 user-scanned</span> lands marked user-provided</span>
+                <span class="vd-foot__sub">Never merged into the sealed Wallach / Youngevity canon \u2014 your data, on your device.</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </div>
+      ${renderHistoryRail()}
+    </div>`;
+  }
+  function verdictPill(v) {
+    if (v === "ADD") {
+      return '<span class="vd-pill vd-pill--aligns">Aligns</span>';
+    }
+    if (v === "SAVE") {
+      return '<span class="vd-pill vd-pill--save">Save</span>';
+    }
+    return '<span class="vd-pill vd-pill--out">Out</span>';
+  }
+  function relAge(iso) {
+    const then = Date.parse(iso);
+    if (Number.isNaN(then)) {
+      return "";
+    }
+    const days = Math.floor((Date.now() - then) / 864e5);
+    if (days <= 0) {
+      return "Now";
+    }
+    if (days < 7) {
+      return `${days}d`;
+    }
+    return `${Math.floor(days / 7)}w`;
+  }
+  function renderHistoryRail() {
+    const history = getHistory();
+    const rows = history.map((h, i) => `
+    <div class="rl-row vd-hrow${i === 0 ? " is-current" : ""}">
+      <div class="rl-row__name">${escHTML15(typeof h.label.name === "string" ? h.label.name : "Scan")}</div>
+      ${verdictPill(h.verdict)}
+      <div class="rl-row__foot"><span class="rl-src is-own">Yours \xB7 user-scanned</span><span class="vd-when">${escHTML15(relAge(h.ts))}</span></div>
+    </div>`).join("");
+    return `
+    <aside class="vd-rail">
+      <div class="rail-panel">
+        <div class="rail-panel__head">
+          <div class="rail-panel__eyebrow">Scan history \xB7 max 5</div>
+          <div class="rail-panel__title">Recent captures</div>
+          <div class="rail-panel__meta">A new scan never destroys the last</div>
+        </div>
+        <div class="rail-list">${rows || '<div class="rail-empty"><p>No scans yet.</p><small>Your captures land here.</small></div>'}</div>
+        <div class="vd-rail__note">Every capture is marked <b>Yours</b> \u2014 registered against the 90, never written into the sealed pillars.</div>
+      </div>
+    </aside>`;
   }
   function mount6(container) {
     let state = "idle";
-    const currentResult = () => {
-      const w = window;
-      return w.lcLastResult ?? null;
-    };
+    let label = null;
+    let result = null;
+    let fileName = null;
+    let imageDataUrl = null;
+    const dismissed = /* @__PURE__ */ new Set();
     const render = () => {
-      const result = currentResult();
-      if (result !== null && state === "idle") {
-        state = "result";
+      let steps = "";
+      if (state === "result" && result !== null) {
+        steps = renderScan(state, fileName, imageDataUrl) + renderResult(result);
+      } else if (state === "confirming" && label !== null) {
+        steps = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
+      } else {
+        steps = renderScan(state, fileName, imageDataUrl);
       }
-      container.innerHTML = `
-      <div class="scanner-grid">
-        <div class="scanner-main">
-          ${renderStage(state, result)}
-          ${renderPipeline(state)}
-          ${renderParsed(result)}
-          ${renderVerdict(result)}
-        </div>
-        ${renderRail3()}
-      </div>
-    `;
+      container.innerHTML = `<div class="vd">${steps}</div>`;
+    };
+    const handleImageFile = (file) => {
+      fileName = file.name;
+      state = "scanning";
+      render();
+      const reader = new FileReader();
+      reader.addEventListener("load", () => {
+        const dataUrl = typeof reader.result === "string" ? reader.result : "";
+        imageDataUrl = dataUrl === "" ? null : dataUrl;
+        ocrToLabel(dataUrl).then((out) => {
+          label = out.label;
+          dismissed.clear();
+          state = "confirming";
+          render();
+        }).catch((e) => {
+          console.warn("[views/scanner] ocr failed:", e);
+          state = "idle";
+          render();
+        });
+      });
+      reader.readAsDataURL(file);
+    };
+    const pickImage = () => {
+      const input = document.createElement("input");
+      input.type = "file";
+      input.accept = "image/*";
+      input.addEventListener("change", () => {
+        const f = input.files?.[0];
+        if (f !== void 0) {
+          handleImageFile(f);
+        }
+      });
+      input.click();
+    };
+    const readCorrectedLabel = () => {
+      const base = label ?? { name: "Scanned label", nutrients: [], ingredients: "" };
+      const nutrients = (base.nutrients ?? []).map((n, i) => {
+        const input = container.querySelector(`[data-nedit="${i}"]`);
+        const next = input !== null ? input.value.trim() : typeof n.name === "string" ? n.name : "";
+        return { ...n, name: next };
+      }).filter((n) => typeof n.name === "string" && n.name.length > 0);
+      const ing = container.querySelector("[data-ing]");
+      return { ...base, nutrients, ingredients: ing !== null ? ing.value : base.ingredients ?? "" };
     };
     const clickHandler = (ev) => {
-      const target = ev.target;
-      if (target === null) {
+      const t = ev.target;
+      if (t === null) {
         return;
       }
-      const actionEl = target.closest("[data-sc-action]");
-      if (actionEl === null) {
+      if (t.closest("[data-sc-upload]") !== null || t.closest("[data-sc-new]") !== null) {
+        pickImage();
         return;
       }
-      const action = actionEl.dataset["scAction"] ?? "";
-      if (action === "upload" || action === "upload-click" || action === "retake") {
-        const input = document.createElement("input");
-        input.type = "file";
-        input.accept = "image/*";
-        input.addEventListener("change", () => {
-          const file = input.files?.[0];
-          if (file !== void 0) {
-            void handleImageFile(file);
-            state = "scanning";
-            render();
+      const nfix = t.closest("[data-nfix]");
+      if (nfix !== null) {
+        const i = nfix.dataset["nfix"];
+        const val = nfix.dataset["nfixVal"];
+        const input = container.querySelector(`[data-nedit="${i}"]`);
+        if (input !== null && val !== void 0) {
+          input.value = val;
+          const row = nfix.closest(".vd-nrow");
+          row?.classList.remove("is-warn");
+          row?.classList.add("is-ok");
+          const g = row?.querySelector(".vd-nrow__g");
+          if (g !== null && g !== void 0) {
+            g.innerHTML = "&check;";
           }
-        });
-        input.click();
-      } else if (action === "adopt-product") {
-        const result = currentResult();
-        if (result === null) {
-          return;
+          nfix.closest(".vd-sug")?.remove();
+          const map = row?.querySelector(".vd-nrow__map");
+          if (map !== null && map !== void 0) {
+            map.classList.remove("vd-nrow__map--pending");
+            map.textContent = "mapped";
+          }
         }
-        adoptProduct(result.label);
-        actionEl.textContent = "\u2713 ADDED TO REGIMEN";
-        if (actionEl instanceof HTMLButtonElement) {
-          actionEl.disabled = true;
+        return;
+      }
+      const nkeep = t.closest("[data-nkeep]");
+      if (nkeep !== null) {
+        nkeep.closest(".vd-sug")?.remove();
+        return;
+      }
+      const ifix = t.closest("[data-ifix]");
+      if (ifix !== null) {
+        const from = ifix.dataset["ifix"];
+        const to = ifix.dataset["ifixVal"];
+        const ta = container.querySelector("[data-ing]");
+        if (ta !== null && from !== void 0 && to !== void 0) {
+          ta.value = ta.value.replace(from, to);
         }
+        ifix.closest(".vd-ocr__card")?.remove();
+        return;
+      }
+      const idismiss = t.closest("[data-idismiss]");
+      if (idismiss !== null) {
+        idismiss.closest(".vd-ocr__card")?.remove();
+        return;
+      }
+      if (t.closest("[data-sc-confirm]") !== null) {
+        label = readCorrectedLabel();
+        const r = runScan(label);
+        if (r !== null) {
+          result = r;
+          state = "result";
+          render();
+        }
+        return;
+      }
+      if (t.closest("[data-sc-adopt]") !== null && result !== null) {
+        const lbl = result.label;
+        const item = {
+          id: Date.now(),
+          label: { name: typeof lbl.name === "string" ? lbl.name : "Scanned label", nutrients: lbl.nutrients ?? [] },
+          addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
+          provenance: "user_scanned"
+        };
+        saveRgManual([...loadRgManual(), item]);
+        const btn = t.closest("[data-sc-adopt]");
+        if (btn !== null) {
+          btn.textContent = "\u2713 Added to regimen";
+          btn.disabled = true;
+        }
+        return;
+      }
+      if (t.closest("[data-sc-save]") !== null) {
+        const btn = t.closest("[data-sc-save]");
+        if (btn !== null) {
+          btn.textContent = "\u2713 In scan history";
+          btn.disabled = true;
+        }
+        return;
+      }
+      if (t.closest("[data-sc-reject]") !== null) {
+        state = "idle";
+        label = null;
+        result = null;
+        fileName = null;
+        imageDataUrl = null;
+        render();
+      }
+    };
+    const dropHandler = (ev) => {
+      ev.preventDefault();
+      const f = ev.dataTransfer?.files[0];
+      if (f !== void 0) {
+        handleImageFile(f);
       }
     };
     const dragHandler = (ev) => {
       ev.preventDefault();
     };
-    const dropHandler = (ev) => {
-      ev.preventDefault();
-      const file = ev.dataTransfer?.files[0];
-      if (file !== void 0) {
-        void handleImageFile(file);
-        state = "scanning";
-        render();
-      }
-    };
     const pasteHandler = (ev) => {
-      const items = ev.clipboardData?.items;
-      if (items === void 0) {
-        return;
-      }
-      for (const item of Array.from(items)) {
-        if (item.type.startsWith("image/")) {
-          const file = item.getAsFile();
-          if (file !== null) {
-            void handleImageFile(file);
-            state = "scanning";
-            render();
+      for (const it of Array.from(ev.clipboardData?.items ?? [])) {
+        if (it.type.startsWith("image/")) {
+          const f = it.getAsFile();
+          if (f !== null) {
+            handleImageFile(f);
             return;
           }
         }
       }
     };
     render();
-    startCipherEngine3(container);
     container.addEventListener("click", clickHandler);
     container.addEventListener("dragover", dragHandler);
     container.addEventListener("drop", dropHandler);
     document.addEventListener("paste", pasteHandler);
-    const unsubComplete = on("scanner:scan-complete", () => {
-      state = "result";
-      render();
-    });
-    const unsubCleared = on("scanner:scan-cleared", () => {
+    const unsub = on("scanner:scan-cleared", () => {
       state = "idle";
+      label = null;
+      result = null;
+      fileName = null;
+      imageDataUrl = null;
       render();
     });
     return {
       update: render,
       unmount: () => {
-        unsubComplete();
-        unsubCleared();
-        stopCipherEngine3();
+        unsub();
         container.removeEventListener("click", clickHandler);
         container.removeEventListener("dragover", dragHandler);
         container.removeEventListener("drop", dropHandler);
@@ -182469,7 +183077,7 @@ TECHNICAL RECORD
   }
 
   // assets/js/src/views/welcome.ts
-  var LAYOUT4 = CoverageLayoutSchema.parse(coverage_layout_data_default);
+  var LAYOUT5 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   var NAME_MAX = 18;
   function escHTML17(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
@@ -182487,7 +183095,7 @@ TECHNICAL RECORD
     const existing = loadUserProfile();
     const reopen = existing !== null;
     let chosen = [...loadRgUserGoals() ?? []].slice(0, MAX_GOALS);
-    const goalChips = LAYOUT4.goals.map((g) => `<button class="wc-goal" type="button" data-goal="${escHTML17(g.id)}"><span class="wc-goal__dot"></span>${escHTML17(g.name)}</button>`).join("");
+    const goalChips = LAYOUT5.goals.map((g) => `<button class="wc-goal" type="button" data-goal="${escHTML17(g.id)}"><span class="wc-goal__dot"></span>${escHTML17(g.name)}</button>`).join("");
     host.innerHTML = `
     <div class="wc-veil" data-veil>
       <div class="wc" role="dialog" aria-modal="true" aria-labelledby="wcH">
@@ -182622,6 +183230,25 @@ TECHNICAL RECORD
       btn.classList.toggle("active", btn.getAttribute("data-rail-nav") === target);
     }
   }
+  var WORKSPACE_HEADERS = {
+    coverage: { name: "Coverage", deck: "Every essential Wallach named, measured against what you take." },
+    regimen: { name: "Regimen", deck: "A calm, coverage-led cockpit: one gauge over your 90, your save-slots switch across the top, your best next moves sit below." },
+    scanner: { name: "Scanner", deck: "Scan \u2192 Confirm \u2192 Result \u2014 the verdict fires only on reads you confirm." }
+  };
+  function setTopbarHeader(target) {
+    const head = WORKSPACE_HEADERS[target];
+    if (head === void 0) {
+      return;
+    }
+    const nameEl = document.querySelector(".topbar__breadcrumb .np__name");
+    const deckEl = document.querySelector(".topbar__breadcrumb .np__deck");
+    if (nameEl !== null) {
+      nameEl.textContent = head.name;
+    }
+    if (deckEl !== null) {
+      deckEl.textContent = head.deck;
+    }
+  }
   var DRAWER_SPECS = [
     { target: "search", mountId: "drawer-search-mount", key: "s", mount: mount7 },
     { target: "knowledge", mountId: "drawer-knowledge-mount", key: "k", mount: mount3 },
@@ -182639,6 +183266,7 @@ TECHNICAL RECORD
   function navigateTo(target) {
     closeAllDrawers();
     activateRailItem(target);
+    setTopbarHeader(target);
     emit("rail:navigate", { target });
     hideAllNewMounts();
     if (target === "coverage") {
@@ -182836,6 +183464,13 @@ TECHNICAL RECORD
       console.warn("[main] installBridges threw:", e);
     }
     wireRail();
+    window.addEventListener("wallach:navigate", (ev) => {
+      const detail = ev.detail;
+      const to = detail?.to;
+      if (to === "coverage" || to === "regimen" || to === "scanner") {
+        navigateTo(to);
+      }
+    });
     wireProfileChip();
     wireProfileIdentity();
     wireWelcome();

@@ -65,6 +65,7 @@ import {
 import { getValidated, setValidated } from '../core/storage.js';
 import {
   currentDelivery,
+  getOrCompute,
   getTargets,
   matchEssential,
 } from './coverage.js';
@@ -336,6 +337,59 @@ function gapFillFor(n: ScanNutrient, dailyServings: number, effectiveCov: Effect
   };
 }
 
+// ─── Projected coverage delta (the Scan → Result "47 → 55" readout) ──────────
+
+/**
+ * The projected coverage delta if this label's confirmed reads were adopted, in the
+ * Coverage tab's OWN frame so the numbers agree across surfaces: `before` is the live
+ * snapshot coveredCount (the 47/90 the user sees everywhere), and an essential counts
+ * as ADDED only when the scan's own amount actually crosses its Wallach targetLow on a
+ * tile that is not already covered. No fabrication — every number is the live coverage
+ * snapshot plus the label's user-provided amounts. Conservative by design: a nutrient
+ * that does not resolve to a tile or whose unit cannot convert simply does not add, so
+ * this never OVER-claims coverage (it can only under-count on an imperfect join).
+ */
+export function coverageDeltaForLabel(label: ScanLabel): { before: number; after: number; addedEssentials: string[] } {
+  const snapshot = getOrCompute();
+  const before = snapshot.coveredCount;
+  const dailyServings = Number.parseFloat(String(label.servings)) || 1;
+
+  // Sum the scan's contribution per canonical essential name (matchEssential's join key).
+  const scanned: Array<{ name: string; amount: number; unit: string | undefined }> = [];
+  for (const n of label.nutrients ?? []) {
+    const ess = matchEssential(n.name);
+    if (ess === null) {
+      continue;
+    }
+    scanned.push({ name: ess.name, amount: Number(n.amount) * dailyServings, unit: n.unit });
+  }
+
+  const addedEssentials: string[] = [];
+  for (const tile of snapshot.tiles) {
+    if (tile.covered || tile.intakeVsTarget === null) {
+      continue;
+    }
+    const { deliveredAmount, targetLow, unit } = tile.intakeVsTarget;
+    if (targetLow <= 0) {
+      continue;
+    }
+    let scanAmount = 0;
+    for (const s of scanned) {
+      if (s.name !== tile.name) {
+        continue;
+      }
+      const conv = unitConv(s.amount, s.unit, unit);
+      if (conv !== null) {
+        scanAmount += conv;
+      }
+    }
+    if (scanAmount > 0 && deliveredAmount + scanAmount >= targetLow) {
+      addedEssentials.push(tile.name);
+    }
+  }
+  return { before, after: before + addedEssentials.length, addedEssentials };
+}
+
 // ─── Goal matching ───────────────────────────────────────────────────────────
 
 /** Goals the product serves — strong keyword OR a meaningful (≥10% target) nutrient. */
@@ -605,6 +659,21 @@ export function runScan(label: ScanLabel): ScanResult | null {
   }
   catch (e) {
     console.warn('[state/scanner] scan threw:', e);
+    return null;
+  }
+}
+
+/**
+ * Score a label WITHOUT logging to history — the Confirm-step preview (surface the
+ * Wallach flags + the mapping on the reads-so-far before the user commits). runScan is
+ * the logging commit path; this never touches lcRecentScans_v1 nor fires the cascade.
+ */
+export function scoreLabel(label: ScanLabel): ScanResult | null {
+  try {
+    return scan(label, { logToRecent: false });
+  }
+  catch (e) {
+    console.warn('[state/scanner] scoreLabel threw:', e);
     return null;
   }
 }
