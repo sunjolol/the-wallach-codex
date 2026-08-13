@@ -3,10 +3,35 @@
 Everything you need is below — **nothing needs to be re-derived.** Do not re-explore the codebase,
 do not rebuild the demos from scratch, do not re-run the research fleet.
 
-## WHERE WE ARE (2026-08-11, end of day)
+## RESUME POINT (2026-08-13) — REGIMEN REFINEMENTS
+The active task is unchanged: **refine the 4-demo regimen shortlist to Luneth's per-demo tweaks.**
+He will hand over the detailed tweaks; wait for them, then REFINE (do not rebuild). See the demo +
+pipeline sections below — all still on disk and current.
+
+### 2026-08-13 corpus diversion — DONE, PARKED (do not re-do)
+A brief 3-category corpus **expansion** was completed this session and parked; it does NOT block the
+regimen work. Summary so the next session doesn't repeat it:
+- Luneth asked to expand **Chronic Fatigue**, **Seizures** (umbrella over convulsions/epilepsy/
+  absence, his own grouping), and **Eye health** — and to add findings to his **claim-ruling
+  dashboard**, ranked the same way, visually distinct from the pending 907.
+- Delivered: `claim-ruling-dashboard-final.html` (in the OTHER session scratchpad
+  `…/603b1e2d-…/scratchpad/`) now has **936 rows** = original 907 (untouched, rulings preserved via
+  stable nkeys) **+ 29 new byte-exact-verified claims**. New rows carry a category chip + NEW pill +
+  colored right-edge; added a Category filter, ★priority / NEW-only buttons, priority sort, per-cat
+  tallies. **112** already-pending category claims were tagged too. Original backed up to `.bak`.
+- **18 true near-dups were dropped** (verbatim contained in a sealed claim). Build/verify scripts +
+  the recon live in THIS session's scratchpad (`…/02cbd614-…/scratchpad/`: `recon.json`,
+  `assemble_expansion.py`, `build_dashboard_v2.py`, `dashboard-shell-v2.html`).
+- **FLOATERS: Wallach is silent** — verified 2× across all 7 books; NO floaters claim/page was
+  added, per Luneth (if he doesn't cover it, it doesn't appear). Recorded in memory
+  `wallach-silent-on-floaters`.
+- **Nothing was sealed into the corpus** — the 29 await Luneth's introduce/merge/reject rulings in
+  the dashboard. Only after he rules do any land in `eden/` (a separate future task).
+
+## WHERE WE ARE (regimen, 2026-08-11, end of day)
 Luneth reviewed **6 fresh regimen-tab demos**. Verdict, verbatim: *"This is a step in the right
 direction. 1, 2, 4, and 5 are best but all of them will require a lot of small tweaks and changes."*
-He was out of time; **this morning session = he gives detailed per-demo tweaks so we finally nail it.**
+He was out of time; **the next working session = he gives detailed per-demo tweaks so we finally nail it.**
 - **SHORTLIST (refine these): 1 Cockpit · 2 Save States · 4 Mission Control · 5 Studio.**
 - **OUT: 3 Almanac · 6 Bloom.** (Kept on disk for reference, not the direction.)
 - **Do NOT rebuild — REFINE the shortlist to his tweaks.** Wait for his tweaks before editing.
@@ -47,14 +72,13 @@ save slots (flexible names, max 4) · per-slot goals (max 5, from the 14-goal ca
 - **Foods: NET-NEW** — no USDA/NIH data in repo; the source-rule forbids non-Wallach numbers, so a foods DB needs the labeled-reference decision (**Luneth: YES, first-class labeled reference**). Build live later via a derived artifact (the ORAC pattern), never hand-typed. Precedent: potassium foods table + ORAC.
 - **Layers**: `views→state→core`. New regimen UI in `views/regimen.ts` onto `loadSlots`/slot-ops; per-slot goals in `core/schemas/regimen.ts`; anti-fakery gate forbids faked data or literals >10 in views/state.
 
-## ALSO THIS SESSION (2026-08-11)
-- **Memory consolidation done.** Retired **23 always-loaded memories** (22 header/design + 1 spent duplicate-campaign status) at Luneth's direction — headers are done "until everything else is done." Index **158→135 files, MEMORY.md 161→139 lines**. `always-loaded-memory-overrides-on-demand-skill` was rewritten as the tombstone/guardrail against re-accumulating design cruft. Header knowledge is safe in `.claude/skills/element-headers` + `chronicle/header-research/` + git. **Still open**: an offer to also cut ~9 borderline design-adjacent keeps (`measured-change`, `signed-off-demo`, `screenshot-verify`, `quote-typography`, `in-app-preview`, `webgl`, `derive-elegance`, `dark-theme`, `demo-elements-still-to-do`).
-- **Sourcing-literacy system: CANCELLED** by Luneth — not enough Wallach sourcing data outside minerals to build it honestly.
-
 ## HEADERS — PARKED until everything else is done (Luneth, 2026-08-11). DO NOT build headers.
 Phosphorus r2, germanium r1, cobalt r2, manganese r4 are all CLOSED/approved; sodium r1's refinement is unnamed (ASK when headers resume); the sourcing-ladder is verified (kv469). All of it lives in git history + `.claude/skills/element-headers` + `chronicle/header-research/`. **Revisit at the very end.**
 
 ## STILL-OPEN CORPUS THREADS (non-header — carry forward)
+- **3-category expansion (2026-08-13): 29 new claims await rulings** in `claim-ruling-dashboard-final.html` (session 603b1e2d scratchpad). Only after Luneth rules introduce/merge do any land in `eden/`. Not started as a corpus write.
+- **Seizures umbrella slug does NOT exist yet** in `conditions.json` — creating it (over convulsions/epilepsy/absence_attacks) is part of introducing the seizure claims Luneth rules "introduce."
+- **Findability gaps (2026-08-13):** ~5 seizure facts are already SEALED but under a different question (e.g. "low magnesium causes seizures" lives in the claim about why magnesium tastes bad). Fix by ENRICHING the existing claim with a seizure-phrased question — not a duplicate claim.
 - `WAL-CLM-IMMORT-000023` claim_text says **pre-WWI**; all four books say **WWII**.
 - `WAL-CLM-RARE-000072` verbatim doesn't carry its own "five to 12 per cent" headline (widening).
 - Tag hygiene: `colloidal-minerals`(17)/`colloidal minerals`(4)/`colloidal_minerals`(1)/`colloidal`(3); `chelated`(4)/`chelated-minerals`(2)/`chelation`(2).
