@@ -1,46 +1,42 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-The **Journey/Journal feature was removed entirely** on 2026-08-13, at Luneth's decision — it was
-redundant against the note apps people already keep. What led here: a design round produced four
-archaic "logbook" Journal redesign demos (Day-Book / Kept Hand / Specimen Book / Kept Almanack);
-Luneth reviewed them and cut the whole surface rather than ship it.
+## NEXT TASK: build the PROFILE feature ("the profile tab").
+Luneth's spec (2026-08-13). He originally wanted Journal + Profile demos; Journal was CUT (see below),
+so Profile is next. **Start with demos, 4-6 as usual** — genuinely divergent first concepts, screenshot
+with your eyes, then STOP for his pick/mix; port live only with approval. What the profile lets the user do:
+- **Edit their NAME** — already a validated field (`UserNameSchema`: bounded 40, no control/bidi chars,
+  explicit rejection path; it is the app's ONLY free-text field, treat input carefully).
+- **Give themselves an AVATAR** — uploaded, OR chosen from a preset of ~40 **REAL GRAPHICS**. His exact
+  words: "no nonsense SVG garbage, I want real graphics here." So: a bundled pack of ~40 real raster
+  avatar images (offline-first → LOCAL + hash-pinned like the fonts/vendored libs; NOT external, NOT SVG
+  line-art). Sourcing a license-clean real-graphic avatar pack is the open question to raise with him.
+- **Modify COLOUR SCHEMES** — "only if possible, if there's a reasonable way to do it." This is the natural
+  home for the planned multi-theme toggle: cream is the default; more themes change STYLE ONLY, never
+  functionality (design-language). Dark theme is the already-planned first alternate.
+- **Any other creative, plausible additions** you come up with.
 
-## WHAT WAS REMOVED (complete + verified)
-- **Deleted files:** `views/journey.ts`, `state/journey.ts`, `state/goals.ts`, `core/schemas/journey.ts`,
-  `core/schemas/goals.ts`, `assets/styles/drawer-journey.css`, `tools/render_probe_journey.js`,
-  `components/drawer-journey-v3-PROPOSAL.html`, and the temporary Journal demos.
-- **Unwired from:** `main.ts` (imports, DRAWER_SPECS, wireJourneyAutoDerive, WorkspaceTarget union),
-  `core/events.ts` (`goals:updated` + `journey:changed` events + target unions), `core/schemas/index.ts`,
-  `core/schemas/profile.ts` (comment), `dashboard.html` (rail J item + mount + stylesheet link),
-  `dashboard.css` / `drawer-search.css` / `drawer-shared.css` / `drawer-knowledge.css` /
-  `workspace-coverage.css` (journey chrome + comments), `render_probe_rail_sync.js`,
-  `test_views_no_ciphered_data.py`, `knip-baseline.json`.
-- **Two "goals" — do not confuse:** the COVERAGE board's goals (`LayoutGoal` / coverage-layout-data.json /
-  `.goalstrip` / `activeGoals()`) are a DIFFERENT, live system and were UNTOUCHED. Only the journey's
-  goals/milestones (state/goals.ts) were removed. `drawer-shared.css` now backs the Knowledge drawer only.
+### Current profile implementation (what you're redesigning)
+- Access: rail profile chip `.rail__profile` → `main.ts::showProfilePanel()` → `views/profile.ts` mounts
+  into a `.pf-overlay` overlay (NOT a workspace tab; "tab" is loose — redesign shape is open, like Journal was).
+- Identity state: `state/profile.ts` (`name`/`browsing`/`chosenAt` + `displayName`/`displayInitial`/
+  `displayTitle`), schema `core/schemas/profile.ts`. The panel today is a Round-25 SCAFFOLD showing
+  Creator's Log / Invariants / Build (see `views/profile.ts`). Avatar today = a gradient circle with the
+  name's initial — no image, no theme in the schema yet.
+- Adding avatar + theme EXTENDS `UserProfileSchema` (a versioned shape change = a migration). Uploaded
+  avatars persist as data URIs through the §31 storage chokepoint — mind the ~5MB LS quota (downscale on upload).
 
-## VERIFIED
-- Board **91/91** green. knip: **no new dead code** (nothing orphaned). tsc + esbuild build clean.
-- `render_probe_rail_sync` PASS (Knowledge + Search drawers + rail highlight, **0 page errors**).
-- Live screenshot: rail is **Coverage · Regimen · Scanner · Search · Knowledge** — no Journey; board renders.
+## JUST FINISHED (this session, on master @ 6cf30f3a)
+- **Journey/Journal feature REMOVED entirely** — Luneth cut it as redundant against note apps. 8 files
+  deleted, 13 unwired. Board 91/91, knip clean (nothing orphaned), rail = Coverage/Regimen/Scanner/Search/Knowledge.
+- **Browser-tab title is now dynamic** (`<Name>'s Health Journey` / `Your Health Journey`) via `profile.displayTitle()`.
+- **`dashboard/components/` deleted** (12 obsolete mockups; all surfaces ported live). `style_diff.js` now
+  needs an explicit `<mockupRelPath>`; live-code refs reconciled.
 
-## FOLLOW-UP CLEANUP DONE (this session, after the removal)
-- Browser-tab title is now DYNAMIC: `<Name>'s Health Journey` / `Your Health Journey` (guest), via
-  `profile.displayTitle()` — the hardcoded name in the markup is gone.
-- The entire `dashboard/components/` mockup folder was DELETED (12 files, obsolete — all surfaces are
-  ported live). Live-code refs reconciled; `tools/style_diff.js` now needs an explicit `<mockupRelPath>`.
-
-## LEFT INTENTIONALLY (accurate history, not legacy)
-- `chronicle/creators-log` + `build-log` + blueprint history + `invariants.py` lesson-refs that mention
-  Journey or the retired mockups as PAST context — true history, left intact.
-- Wallach's word "journey" in the corpus books / OCR caches — his vocabulary.
-
-## STILL PARKED / CARRIED FORWARD (unchanged)
+## STILL PARKED / CARRIED FORWARD
 - **HEADERS**: parked until everything else is done. Do not build.
-- The **29 new corpus claims** (fatigue / seizures / eye) await Luneth's rulings; plus the small open
-  corpus threads (IMMORT-000023 date, tag hygiene, 66 draft form/absorption claims, potassium dead-cite,
-  germanium enrichment, HELLS-000029/064 dup). See the pre-removal handoff in git history for detail.
+- The **29 new corpus claims** (fatigue / seizures / eye) await Luneth's rulings; plus small corpus threads
+  (IMMORT-000023 date, tag hygiene, 66 draft form/absorption claims, potassium dead-cite, germanium, HELLS dup).
 
-## STANDING WORKFLOW (unchanged)
+## STANDING WORKFLOW
 Demos: `temporary/awaiting-refinement/` → `temporary/ready-to-be-ported/` → port live only with approval
-+ STOP-for-sign-off. All repo writes via `safe_write`. Verify with your eyes (screenshot).
++ STOP-for-sign-off. All repo writes via `safe_write`. Verify with your eyes (screenshot). Cream default theme.
