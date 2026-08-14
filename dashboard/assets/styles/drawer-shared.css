@@ -1,25 +1,18 @@
-/* ═══════════════════════════════════════════════════════════════════════════
- * drawer-shared.css — chrome shared by the Knowledge (kd-*) + Journey (jd-*) drawers
- * ───────────────────────────────────────────────────────────────────────────
- * Both drawers render an IDENTICAL shell (head · tabs · search · body · footer)
- * and differ only in their tab CONTENT + starting width. The common chrome was
- * lifted out of drawer-journey.css to here so it lives in ONE place (§00.B #3
- * single-source-of-truth) and both surfaces stay byte-identical.
+/* ═══════════════════════════════════════════════════════════════════════════════
+ * drawer-shared.css — chrome for the Knowledge (kd-*) drawer
+ * ──────────────────────────────────────────────────────────────────────────────
+ * The common drawer shell (head · tabs · search · body · close · eyebrow ·
+ * empty). Formerly shared with the Journey drawer, which was removed 2026-08-13;
+ * only the Knowledge drawer renders this chrome now. Every rule is rooted at
+ * #drawer-knowledge-mount so nothing here can leak onto another surface.
  *
- * Every rule lists BOTH surfaces' selectors and is rooted at the drawer's mount
- * id (#drawer-journey-mount / #drawer-knowledge-mount) so nothing here can leak
- * onto another surface (Sever-Safety). Per-drawer specifics (panel width, tab
- * content, the primary/expand footer action) live in drawer-journey.css and
- * drawer-knowledge.css respectively.
- *
- * Loaded after workspace-coverage.css (provides --ds-font-display-*), before the
- * two per-drawer files. Tokens come from design-system.css (sealed).
- * ═══════════════════════════════════════════════════════════════════════════ */
+ * Loaded after workspace-coverage.css (provides --ds-font-display-*), before
+ * drawer-knowledge.css. Tokens come from design-system.css (sealed).
+ * ═══════════════════════════════════════════════════════════════════════════── */
 
 /* ─── PANEL — the view renders its shell INTO the mount and toggles
-       .jd-open/.kd-open (+ .jd-expanded/.kd-expanded) on it; the container IS
+       .kd-open (+ .kd-expanded) on it; the container IS
        the drawer panel. Starting width is per-drawer. ─────────────────────── */
-#drawer-journey-mount.jd-open,
 #drawer-knowledge-mount.kd-open {
   top: 0;
   bottom: 0;
@@ -34,7 +27,6 @@
   pointer-events: auto;
   transition: width var(--ds-motion-base) var(--ds-ease-out);
 }
-#drawer-journey-mount.jd-open::after,
 #drawer-knowledge-mount.kd-open::after {
   content: '';
   position: absolute;
@@ -47,7 +39,6 @@
 }
 
 /* ─── HEAD ───────────────────────────────────────────────────────────────── */
-#drawer-journey-mount .jd-head,
 #drawer-knowledge-mount .kd-head {
   padding: var(--ds-space-5) var(--ds-space-5) var(--ds-space-4);
   background: var(--ds-paper-darker);
@@ -58,7 +49,6 @@
   align-items: start;
   gap: var(--ds-space-3);
 }
-#drawer-journey-mount .jd-head::after,
 #drawer-knowledge-mount .kd-head::after {
   content: '';
   position: absolute;
@@ -68,7 +58,6 @@
   height: 1px;
   background: linear-gradient(to right, transparent 0%, var(--ds-accent) 6%, var(--ds-accent) 13%, transparent 15%, transparent 85%, var(--ds-tech) 88%, var(--ds-tech) 92%, transparent 95%);
 }
-#drawer-journey-mount .jd-eyebrow,
 #drawer-knowledge-mount .kd-eyebrow {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
@@ -81,7 +70,6 @@
   align-items: center;
   gap: var(--ds-space-2);
 }
-#drawer-journey-mount .jd-eyebrow .pulse-dot,
 #drawer-knowledge-mount .kd-eyebrow .pulse-dot {
   width: 6px;
   height: 6px;
@@ -89,7 +77,6 @@
   border-radius: 50%;
   box-shadow: 0 0 6px var(--ds-accent-soft);
 }
-#drawer-journey-mount .jd-title,
 #drawer-knowledge-mount .kd-title {
   font-family: var(--ds-font-display-interface);
   font-size: var(--ds-text-2xl);
@@ -100,7 +87,6 @@
   margin: 0;
   line-height: 1;
 }
-#drawer-journey-mount .jd-sub,
 #drawer-knowledge-mount .kd-sub {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
@@ -109,7 +95,6 @@
   color: var(--ds-ink-soft);
   margin-top: var(--ds-space-2);
 }
-#drawer-journey-mount .jd-close,
 #drawer-knowledge-mount .kd-close {
   width: 32px;
   height: 32px;
@@ -125,11 +110,9 @@
   font-family: var(--ds-font-mono);
   transition: all var(--ds-motion-fast) var(--ds-ease-out);
 }
-#drawer-journey-mount .jd-close:hover,
 #drawer-knowledge-mount .kd-close:hover { border-color: var(--ds-ink); color: var(--ds-ink); }
 
 /* ─── TAB STRIP ──────────────────────────────────────────────────────────── */
-#drawer-journey-mount .jd-tabs,
 #drawer-knowledge-mount .kd-tabs {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -137,7 +120,6 @@
   border-bottom: 1px solid var(--ds-rule-soft);
   position: relative;
 }
-#drawer-journey-mount .jd-tab,
 #drawer-knowledge-mount .kd-tab {
   background: transparent;
   border: 0;
@@ -157,15 +139,12 @@
   transition: all var(--ds-motion-fast) var(--ds-ease-out);
   border-bottom: 2px solid transparent;
 }
-#drawer-journey-mount .jd-tab:hover,
 #drawer-knowledge-mount .kd-tab:hover { color: var(--ds-ink); background: var(--ds-paper-deep); }
-#drawer-journey-mount .jd-tab.active,
 #drawer-knowledge-mount .kd-tab.active {
   color: var(--ds-accent-deep);
   background: var(--ds-paper);
   border-bottom-color: var(--ds-accent);
 }
-#drawer-journey-mount .jd-tab.active::before,
 #drawer-knowledge-mount .kd-tab.active::before {
   content: '';
   position: absolute;
@@ -176,7 +155,6 @@
   background: linear-gradient(90deg, transparent, var(--ds-accent), transparent);
   box-shadow: 0 0 8px var(--ds-accent);
 }
-#drawer-journey-mount .jd-tab__count,
 #drawer-knowledge-mount .kd-tab__count {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
@@ -184,11 +162,9 @@
   color: var(--ds-ink-faint);
   font-weight: 600;
 }
-#drawer-journey-mount .jd-tab.active .jd-tab__count,
 #drawer-knowledge-mount .kd-tab.active .kd-tab__count { color: var(--ds-accent); }
 
 /* ─── SEARCH BAR ─────────────────────────────────────────────────────────── */
-#drawer-journey-mount .jd-search,
 #drawer-knowledge-mount .kd-search {
   padding: var(--ds-space-3) var(--ds-space-4);
   background: var(--ds-paper-deep);
@@ -197,9 +173,7 @@
   align-items: center;
   gap: var(--ds-space-2);
 }
-#drawer-journey-mount .jd-search-icon,
 #drawer-knowledge-mount .kd-search-icon { font-family: var(--ds-font-mono); color: var(--ds-tech); font-size: var(--ds-text-md); }
-#drawer-journey-mount .jd-search-input,
 #drawer-knowledge-mount .kd-search-input {
   flex: 1;
   background: transparent;
@@ -211,14 +185,12 @@
   letter-spacing: 0.02em;
   padding: 4px 0;
 }
-#drawer-journey-mount .jd-search-input::placeholder,
 #drawer-knowledge-mount .kd-search-input::placeholder {
   color: var(--ds-ink-faint);
   text-transform: uppercase;
   font-size: var(--ds-text-xs);
   letter-spacing: var(--ds-track-wide);
 }
-#drawer-journey-mount .jd-search-kbd,
 #drawer-knowledge-mount .kd-search-kbd {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
@@ -250,9 +222,7 @@
 #drawer-knowledge-mount .kd-search.has-query .kd-search-kbd { display: none; }
 
 /* ─── BODY ───────────────────────────────────────────────────────────────── */
-#drawer-journey-mount .jd-body,
 #drawer-knowledge-mount .kd-body { flex: 1; overflow-y: auto; padding: var(--ds-space-4) var(--ds-space-5); }
-#drawer-journey-mount .jd-empty,
 #drawer-knowledge-mount .kd-empty {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-xs);
@@ -263,33 +233,3 @@
   padding: var(--ds-space-7) var(--ds-space-4);
   line-height: 1.6;
 }
-
-/* ─── FOOTER + ACTIONS (the primary/expand variant is per-drawer) ────────── */
-#drawer-journey-mount .jd-footer {
-  padding: var(--ds-space-3) var(--ds-space-4);
-  background: var(--ds-paper-darker);
-  border-top: 1px solid var(--ds-rule);
-  display: flex;
-  gap: var(--ds-space-2);
-  align-items: center;
-}
-#drawer-journey-mount .jd-action {
-  background: transparent;
-  border: 1px solid var(--ds-rule);
-  color: var(--ds-ink);
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-xs);
-  font-weight: 700;
-  letter-spacing: var(--ds-track-wide);
-  text-transform: uppercase;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--ds-radius-sm);
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--ds-space-2);
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-}
-#drawer-journey-mount .jd-action:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
-#drawer-journey-mount .jd-action__glyph { font-family: var(--ds-font-mono); color: var(--ds-tech); }
-#drawer-journey-mount .jd-action__spacer { flex: 1; }

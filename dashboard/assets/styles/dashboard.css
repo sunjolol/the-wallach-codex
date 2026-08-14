@@ -177,14 +177,12 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 }
 
 #drawer-knowledge-mount,
-#drawer-journey-mount,
 #palette-mount {
   /* These are overlay containers; their children handle positioning */
   position: absolute;
   pointer-events: none;
 }
 #drawer-knowledge-mount > *,
-#drawer-journey-mount > *,
 #palette-mount > * {
   pointer-events: auto;
 }

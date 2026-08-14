@@ -25,8 +25,8 @@
  * ⚠ THESE TWO TOKENS ARE APP-WIDE, NOT LOCAL TO COVERAGE. This sheet loads globally, so
  * this :root block is the ONLY definition of --ds-font-display-interface /
  * --ds-font-display-artifact anywhere (the sealed design-system.css never declared them).
- * 89 rules across 6 stylesheets read them — drawer-knowledge (34), drawer-search (13),
- * drawer-journey (7), drawer-shared (4), dashboard (4), this file (9).
+ * Rules across five stylesheets read them — drawer-knowledge, drawer-search,
+ * drawer-shared, dashboard, and this file. (The Journey drawer, formerly a reader, was removed 2026-08-13.)
  *
  * DO NOT REPOINT THESE WITHOUT CHECKING THE TOKEN'S READERS. On 2026-07-14 they were
  * repointed to Unbounded and these @font-face blocks deleted, on the belief the faces were

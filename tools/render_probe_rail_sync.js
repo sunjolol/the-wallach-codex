@@ -29,7 +29,6 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
 // and not the rail button, since those are the two paths that already worked.
 const DRAWERS = [
   { target: 'knowledge', mount: 'drawer-knowledge-mount', openCls: 'kd-open', closeSel: '[data-kd-action="close"]' },
-  { target: 'journey',   mount: 'drawer-journey-mount',   openCls: 'jd-open', closeSel: '[data-jd-action="close"]' },
   // Search has no [X]: the mount host IS the scrim, and a click outside the panel closes.
   { target: 'search',    mount: 'drawer-search-mount',    openCls: 'sr-open', closeSel: null },
 ];

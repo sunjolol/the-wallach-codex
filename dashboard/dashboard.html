@@ -28,7 +28,7 @@
 -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob: data:; worker-src 'self' blob:; child-src 'self' blob:; object-src 'none'; base-uri 'self';">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Luneth's Health Journey — Wallach Framework Dashboard</title>
+<title>Your Health Journey</title>
 
 <!-- ═══ Stylesheets (load order matters) ═══════════════════════════════════ -->
 <link rel="stylesheet" href="./assets/styles/design-system.css">
@@ -37,7 +37,6 @@
 <link rel="stylesheet" href="./assets/styles/workspace-regimen.css">
 <link rel="stylesheet" href="./assets/styles/workspace-scanner.css">
 <link rel="stylesheet" href="./assets/styles/drawer-shared.css">
-<link rel="stylesheet" href="./assets/styles/drawer-journey.css">
 <link rel="stylesheet" href="./assets/styles/drawer-knowledge.css">
 <link rel="stylesheet" href="./assets/styles/drawer-orac.css">
 <link rel="stylesheet" href="./assets/styles/drawer-search.css">
@@ -73,7 +72,6 @@
       <div class="rail__section-label">Drawers</div>
       <button class="rail__item" data-rail-nav="search"><span class="rail__icon">⌕</span><span class="rail__label">Search</span><span class="rail__kbd">S</span></button>
       <button class="rail__item" data-rail-nav="knowledge"><span class="rail__icon">❡</span><span class="rail__label">Knowledge</span><span class="rail__kbd">K</span></button>
-      <button class="rail__item" data-rail-nav="journey"><span class="rail__icon">⌭</span><span class="rail__label">Journey</span><span class="rail__kbd">J</span></button>
     </div>
     <div class="rail__spacer"></div>
     <div class="rail__footer">
@@ -134,7 +132,6 @@
   <!-- Textured-highlighter filter for <mark> (design-system.css filter: url(#ds-filter-rough)); required once per page. -->
   <svg width="0" height="0" aria-hidden="true" style="position: absolute;"><defs><filter id="ds-filter-rough"><feTurbulence type="fractalNoise" baseFrequency=".08" numOctaves="4"/><feDisplacementMap in="SourceGraphic" scale="5" /></filter></defs></svg>
   <div id="drawer-knowledge-mount"></div>
-  <div id="drawer-journey-mount"></div>
   <div id="palette-mount"></div>
 
 </div>

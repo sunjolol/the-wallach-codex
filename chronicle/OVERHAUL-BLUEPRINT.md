@@ -151,7 +151,7 @@ You expected far fewer than the count (43 at plan time; **45 LIVE now**). Here's
 
 ## Section 5 — PER-SURFACE PLANS  `[LOCKED 2026-07-05]`
 
-Every surface is a READ-ONLY view of the pillars + the user's own localStorage. No surface writes a pillar. User state flows through the §31 chokepoints to localStorage only. Build priority: **Coverage · Knowledge · Regimen · Scanner (core) → Search → Journey (last).**
+Every surface is a READ-ONLY view of the pillars + the user's own localStorage. No surface writes a pillar. User state flows through the §31 chokepoints to localStorage only. Build priority: **Coverage · Knowledge · Regimen · Scanner (core) → Search.**
 
 ### 5.1 · Coverage (⌘1) — the 90-essentials dashboard
 - **Derives from:** catalog(essentials) + corpus(targets from `dose` claims + stances) + products(composition) + user regimen(localStorage).
@@ -185,9 +185,9 @@ Every surface is a READ-ONLY view of the pillars + the user's own localStorage. 
 - **[DECISION D4 — RESOLVED 2026-07-11, retrieval-only]:** ~~bundled offline LLM vs. smart offline retrieval~~ → RESOLVED to smart offline retrieval + templated synthesis ONLY (light, deterministic, never breaks, fully portable). The bundled-LLM option is **SHELVED** — no generation, **no later opt-in** (kills the 350 MB budget; redesign §8.5 decision #4 is the authority). `corpus_runtime_purity` keeps it network-free.
 - **Gates:** `corpus_runtime_purity` (CRITICAL — the helper agent must never reach the network).
 
-### 5.6 · Journey (J) — archaic, contained, LAST
-- Fully quarantined: its own localStorage state, imports from NO other state module, touches no pillar (so it cannot corrupt anything). Rebuilt to the original demo-page vision, AFTER every other surface.
-- **Gates:** boundary lint (Journey may not import other surfaces' state) + containment.
+### 5.6 · Journey/Journal — REMOVED 2026-08-13
+- Cut entirely at Luneth's decision (2026-08-13): redundant against the note apps people already keep. A design round produced four archaic "logbook" redesign demos; he decided the surface added nothing and had it removed rather than shipped.
+- All feature code/state/schemas/styles + the render probe + drawer wiring were deleted; board held 91/91 and knip confirmed nothing orphaned. No plan to rebuild. (Historical build/decision records in chronicle/creators-log are left intact.)
 
 ### 5.7 · Distribution — true offline portability
 - Ship static files + a portable, permanently-offline browser (updates disabled) so the Codex runs forever on an air-gapped machine. The app is already file:// offline-first (no server, vendored OCR); the portable browser is a distribution wrapper. Phase-late, but noted so it is engineered-for: **no feature may assume network.**
@@ -208,7 +208,7 @@ Legend: **KEEP** · **CHANGE** (rewrite for new model) · **GEN** (becomes gener
 - NEW: `eden/products/` (Pillar 2), `eden/catalog/` (Pillar 3).
 
 **App view layer — `dashboard/assets/js/src/` (KEEP the architecture)**
-- `core/*`, `state/*`, `views/*` — **KEEP**. **CHANGE**: `coverage`+`goals` (read new derived data), `journey` (rebuild, contained §5.6), `main.ts` (wire D1 esbuild imports); schemas tied to rotten embeds (`coverage-layout`, `goals`) update.
+- `core/*`, `state/*`, `views/*` — **KEEP**. **CHANGE**: `coverage` (read new derived data), `main.ts` (wire D1 esbuild imports); schemas tied to rotten embeds (`coverage-layout`) update. (`journey` + its `goals`/`milestones` REMOVED 2026-08-13.)
 
 **App data — `dashboard/assets/data/` (nearly all → GEN)**
 - **DONE (MANIFEST `artifacts`, freshness-gated):** `corpus-embed`, `essentials-targets-data`, `coverage-layout-data` (Phase E, via `coverage-layout-skeleton`), `regimen-label-lookup`. **Hand-authored (MANIFEST `accounted`, disposition+reason):** `glossary`, `doctrine-data`, `coverage-layout-skeleton`, `regimen-base-data`, `scanner-corpus-data`, `ocr-dict-data`, `versions-data`, `creators-log-embed`. **DELETED (orphaned dead embeds → regenerate in F/G):** `essentials-benefits-data`, `essentials-best-supplements`, `goal-recommendations-data`, `ingredients-embed`, `ingredients-quickref-data`. Completeness of this accounting is gated by `data_artifacts_accounted`.

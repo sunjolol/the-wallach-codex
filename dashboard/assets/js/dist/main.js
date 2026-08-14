@@ -4577,68 +4577,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     terms: external_exports.array(GlossaryEntrySchema)
   });
 
-  // assets/js/src/core/schemas/goals.ts
-  var GoalSchema = external_exports.object({
-    goalId: external_exports.string().min(1),
-    title: external_exports.string().min(1).max(200),
-    /** ISO date or short display string for the target ("SEP 01", "2026-09-01"). */
-    targetDate: external_exports.string().max(80),
-    /** Fractional completion, 0..1 (drives the headline % + the bar fill). */
-    progress: external_exports.number().min(0).max(1),
-    numerator: external_exports.number().nonnegative(),
-    denominator: external_exports.number().positive(),
-    /** Count noun for numerator/denominator ("tiles", "essentials", "days"). */
-    unit: external_exports.string().max(40).optional(),
-    blockers: external_exports.array(external_exports.string().max(120)).max(20).optional(),
-    featured: external_exports.boolean().optional()
-  });
-  var MilestoneSchema = external_exports.object({
-    milestoneId: external_exports.string().min(1),
-    title: external_exports.string().min(1).max(200),
-    /** Wallach doctrine this ties back to, e.g. "DOCT·02". */
-    doctrineRef: external_exports.string().max(120),
-    /** ISO-8601 timestamp earned, or null when still locked. */
-    earnedAt: external_exports.string().min(1).nullable(),
-    /** Short text on the badge ("35", "11", "60d"). */
-    badge: external_exports.string().max(8),
-    /** Progress toward a locked milestone (optional display only). */
-    numerator: external_exports.number().nonnegative().optional(),
-    denominator: external_exports.number().positive().optional()
-  });
-  var GoalsShapeSchema = external_exports.object({
-    goals: external_exports.array(GoalSchema).default([])
-  });
-  var MilestonesShapeSchema = external_exports.object({
-    milestones: external_exports.array(MilestoneSchema).default([])
-  });
-
-  // assets/js/src/core/schemas/journey.ts
-  var EventKindSchema = external_exports.enum(["scan", "regimen", "coverage", "symptom", "milestone"]);
-  var JourneyEventSchema = external_exports.object({
-    eventId: external_exports.string().min(1),
-    kind: EventKindSchema,
-    title: external_exports.string().min(1).max(200),
-    detail: external_exports.string().max(2e3).optional(),
-    /** Short delta tag, e.g. "+35 trace", "+16 essentials". */
-    delta: external_exports.string().max(80).optional(),
-    /** ISO-8601 timestamp the event occurred. */
-    occurredAt: external_exports.string().min(1)
-  });
-  var CheckinSchema = external_exports.object({
-    checkinId: external_exports.string().min(1),
-    severity: external_exports.union([external_exports.literal(1), external_exports.literal(2), external_exports.literal(3), external_exports.literal(4), external_exports.literal(5)]),
-    note: external_exports.string().max(2e3),
-    tags: external_exports.array(external_exports.string().max(40)).max(20),
-    /** ISO-8601 timestamp the check-in was logged. */
-    loggedAt: external_exports.string().min(1)
-  });
-  var JourneyEventsShapeSchema = external_exports.object({
-    events: external_exports.array(JourneyEventSchema).default([])
-  });
-  var CheckinsShapeSchema = external_exports.object({
-    checkins: external_exports.array(CheckinSchema).default([])
-  });
-
   // assets/js/src/core/schemas/knowledge.ts
   var EssentialSchema = external_exports.object({
     name: external_exports.string(),
@@ -16843,93 +16781,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
   }
 
-  // assets/js/src/state/goals.ts
-  var GOALS_KEY = "wallachGoals_v1";
-  var MILESTONES_KEY = "wallachMilestones_v1";
-  function listGoals() {
-    const shape = getValidated(GOALS_KEY, GoalsShapeSchema);
-    const goals = shape?.goals ?? [];
-    return [...goals].sort((a, b) => {
-      const af = a.featured ?? false;
-      const bf = b.featured ?? false;
-      if (af !== bf) {
-        return af ? -1 : 1;
-      }
-      return b.progress - a.progress;
-    });
-  }
-  function listMilestones() {
-    const shape = getValidated(MILESTONES_KEY, MilestonesShapeSchema);
-    const milestones = shape?.milestones ?? [];
-    return [...milestones].sort((a, b) => {
-      const aLocked = a.earnedAt === null;
-      const bLocked = b.earnedAt === null;
-      if (aLocked !== bLocked) {
-        return aLocked ? 1 : -1;
-      }
-      if (a.earnedAt !== null && b.earnedAt !== null) {
-        return a.earnedAt < b.earnedAt ? 1 : a.earnedAt > b.earnedAt ? -1 : 0;
-      }
-      return 0;
-    });
-  }
-
-  // assets/js/src/state/journey.ts
-  var JOURNEY_EVENTS_KEY = "wallachJourneyEvents_v1";
-  var JOURNEY_CHECKINS_KEY = "wallachJourneyCheckins_v1";
-  var CROSS_REF_WINDOW_DAYS = 7;
-  var JOURNEY_RETENTION = 5e3;
-  var DAY_MS = 24 * 60 * 60 * 1e3;
-  function genId(prefix) {
-    return `${prefix}_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`;
-  }
-  function byTsDesc(aTs, bTs) {
-    return aTs < bTs ? 1 : aTs > bTs ? -1 : 0;
-  }
-  function listEvents(sinceISO) {
-    const shape = getValidated(JOURNEY_EVENTS_KEY, JourneyEventsShapeSchema);
-    let events = shape?.events ?? [];
-    if (sinceISO !== void 0) {
-      events = events.filter((e) => e.occurredAt >= sinceISO);
-    }
-    return [...events].sort((a, b) => byTsDesc(a.occurredAt, b.occurredAt));
-  }
-  function listCheckins() {
-    const shape = getValidated(JOURNEY_CHECKINS_KEY, CheckinsShapeSchema);
-    return [...shape?.checkins ?? []].sort((a, b) => byTsDesc(a.loggedAt, b.loggedAt));
-  }
-  function logEvent(event) {
-    const eventId = genId("ev");
-    const full = { ...event, eventId };
-    const shape = getValidated(JOURNEY_EVENTS_KEY, JourneyEventsShapeSchema);
-    const all = [...shape?.events ?? [], full];
-    const pruned = all.length > JOURNEY_RETENTION ? all.slice(all.length - JOURNEY_RETENTION) : all;
-    set(JOURNEY_EVENTS_KEY, { events: pruned });
-    emit("journey:changed", { reason: "event-logged" });
-    return eventId;
-  }
-  function logCheckin(checkin) {
-    const checkinId = genId("ci");
-    const full = { ...checkin, checkinId };
-    const shape = getValidated(JOURNEY_CHECKINS_KEY, CheckinsShapeSchema);
-    const all = [...shape?.checkins ?? [], full];
-    const pruned = all.length > JOURNEY_RETENTION ? all.slice(all.length - JOURNEY_RETENTION) : all;
-    set(JOURNEY_CHECKINS_KEY, { checkins: pruned });
-    emit("journey:changed", { reason: "checkin-logged" });
-    return checkinId;
-  }
-  function crossRefForCheckin(checkin) {
-    const center = Date.parse(checkin.loggedAt);
-    if (Number.isNaN(center)) {
-      return [];
-    }
-    const windowMs = CROSS_REF_WINDOW_DAYS * DAY_MS;
-    return listEvents().filter((e) => {
-      const t = Date.parse(e.occurredAt);
-      return !Number.isNaN(t) && Math.abs(t - center) <= windowMs;
-    });
-  }
-
   // assets/data/ocr-dict-data.json
   var ocr_dict_data_default = {
     fuzzyDict: [
@@ -18759,7 +18610,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     name: UserNameSchema.optional(),
     /** True when the user explicitly picked browsing -- distinct from "not asked yet". */
     browsing: external_exports.boolean(),
-    /** ISO date the choice was made -- the Journey surface will want it later. */
+    /** ISO date the choice was made. */
     chosenAt: external_exports.string()
   });
   function validateUserName(raw) {
@@ -18807,6 +18658,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function displayInitial(profile) {
     return displayName(profile, "profile").charAt(0).toUpperCase();
+  }
+  function displayTitle(profile) {
+    if (profile?.name !== void 0 && profile.name !== "") {
+      return `${profile.name}'s Health Journey`;
+    }
+    return "Your Health Journey";
   }
 
   // assets/js/src/core/format.ts
@@ -26871,508 +26728,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     const next = Math.max(1, readItemDose(item) + delta);
     saveRgOverride(id, { scaling_factor: next });
-  }
-
-  // assets/js/src/views/journey.ts
-  var DAY_MS2 = 24 * 60 * 60 * 1e3;
-  function escHTML2(s) {
-    return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
-  }
-  function hexSerial(seed) {
-    return (seed * 2654435769 >>> 0).toString(16).toUpperCase().padStart(4, "0").slice(0, 4);
-  }
-  function relTime(iso) {
-    const t = Date.parse(iso);
-    if (Number.isNaN(t)) {
-      return "";
-    }
-    const sec = Math.max(0, Math.round((Date.now() - t) / 1e3));
-    if (sec < 60) {
-      return `${sec}S AGO`;
-    }
-    const min = Math.round(sec / 60);
-    if (min < 60) {
-      return `${min}M AGO`;
-    }
-    const hr = Math.round(min / 60);
-    if (hr < 24) {
-      return `${hr}H AGO`;
-    }
-    return `${Math.round(hr / 24)}D AGO`;
-  }
-  function dayKey(iso) {
-    const d = new Date(iso);
-    if (Number.isNaN(d.getTime())) {
-      return iso.slice(0, 10);
-    }
-    return `${d.getFullYear()}-${d.getMonth()}-${d.getDate()}`;
-  }
-  function dayStamp(iso) {
-    const d = new Date(iso);
-    if (Number.isNaN(d.getTime())) {
-      return iso;
-    }
-    const startOfDay = (x) => new Date(x.getFullYear(), x.getMonth(), x.getDate()).getTime();
-    const diffDays = Math.round((startOfDay(/* @__PURE__ */ new Date()) - startOfDay(d)) / DAY_MS2);
-    const wd = d.toLocaleDateString("en-US", { weekday: "short" }).toUpperCase();
-    const mo = d.toLocaleDateString("en-US", { month: "short" }).toUpperCase();
-    const base = `${wd} ${mo}\xB7${String(d.getDate()).padStart(2, "0")}`;
-    if (diffDays === 0) {
-      return `TODAY \xB7 ${base}`;
-    }
-    if (diffDays === 1) {
-      return `YESTERDAY \xB7 ${base}`;
-    }
-    if (diffDays > 1 && diffDays < 7) {
-      return `THIS WEEK \xB7 ${base}`;
-    }
-    return base;
-  }
-  function sevWord(n) {
-    switch (n) {
-      case 1:
-        return "MINIMAL";
-      case 2:
-        return "MILD";
-      case 3:
-        return "MODERATE";
-      case 4:
-        return "STRONG";
-      case 5:
-        return "PEAK";
-      default:
-        return "\u2014";
-    }
-  }
-  function kindMeta(kind) {
-    switch (kind) {
-      case "scan":
-        return { glyph: "\u2316", cls: "jd-tl-event--scan", label: "SCAN" };
-      case "regimen":
-        return { glyph: "\u25A4", cls: "jd-tl-event--regimen", label: "REGIMEN" };
-      case "coverage":
-        return { glyph: "\u25C9", cls: "jd-tl-event--coverage", label: "COVERAGE" };
-      case "symptom":
-        return { glyph: "!", cls: "jd-tl-event--symptom", label: "SYMPTOM" };
-      case "milestone":
-        return { glyph: "\u2726", cls: "jd-tl-event--milestone", label: "MILESTONE" };
-    }
-  }
-  function groupByDay(events) {
-    const groups = [];
-    const byKey = /* @__PURE__ */ new Map();
-    for (const ev of events) {
-      const key = dayKey(ev.occurredAt);
-      let group = byKey.get(key);
-      if (group === void 0) {
-        group = { stamp: dayStamp(ev.occurredAt), events: [] };
-        byKey.set(key, group);
-        groups.push(group);
-      }
-      group.events.push(ev);
-    }
-    return groups;
-  }
-  function renderPips(severity) {
-    const fill2 = severity >= 4 ? "fill-ok" : "fill-warn";
-    let out = "";
-    for (let i = 1; i <= 5; i++) {
-      out += `<span class="jd-sev-pip${i <= severity ? ` ${fill2}` : ""}"></span>`;
-    }
-    return out;
-  }
-  function renderTimeline() {
-    const events = listEvents();
-    if (events.length === 0) {
-      return '<div class="jd-empty">\u2014 no events yet \xB7 scans, regimen edits, and coverage jumps land here \u2014</div>';
-    }
-    const days = groupByDay(events).map((g) => `
-    <div class="jd-tl-day">
-      <div class="jd-tl-day__stamp">${escHTML2(g.stamp)}</div>
-      ${g.events.map((ev) => {
-      const m = kindMeta(ev.kind);
-      const hasDetail = ev.detail !== void 0 && ev.detail.length > 0;
-      const hasDelta = ev.delta !== void 0 && ev.delta.length > 0;
-      return `
-        <div class="jd-tl-event ${m.cls}">
-          <div class="jd-tl-event__glyph">${escHTML2(m.glyph)}</div>
-          <div class="jd-tl-event__body">
-            <div class="jd-tl-event__meta"><span class="jd-tl-event__kind">${escHTML2(m.label)}</span> \xB7 ${escHTML2(relTime(ev.occurredAt))}</div>
-            <h4 class="jd-tl-event__title">${escHTML2(ev.title)}</h4>
-            ${hasDetail ? `<div class="jd-tl-event__detail">${escHTML2(ev.detail)}</div>` : ""}
-            ${hasDelta ? `<span class="jd-tl-event__delta">${escHTML2(ev.delta)}</span>` : ""}
-          </div>
-        </div>`;
-    }).join("")}
-    </div>`).join("");
-    return `<div class="jd-timeline">${days}</div>`;
-  }
-  function renderGoals() {
-    const goals = listGoals();
-    if (goals.length === 0) {
-      return '<div class="jd-empty">\u2014 no active goals yet \u2014</div>';
-    }
-    return goals.map((g) => {
-      const pct = Math.max(0, Math.min(100, Math.round(g.progress * 100)));
-      const unit = g.unit ?? "done";
-      const blockerList = g.blockers ?? [];
-      const blockers = blockerList.length > 0 ? `<div class="jd-goal__blockers">BLOCKED BY \xB7 ${blockerList.map((b) => `<span class="jd-goal__chip">${escHTML2(b)}</span>`).join("")}</div>` : "";
-      return `
-    <div class="jd-goal${g.featured === true ? " featured" : ""}">
-      <header class="jd-goal__head">
-        <div>
-          <div class="jd-goal__id">GOAL \xB7 <span class="ds-cipher" data-cipher-set="hexa">G\xB7${hexSerial(g.goalId.length * 7)}</span>${g.featured === true ? " \xB7 FEATURED" : ""}</div>
-          <h4 class="jd-goal__title">${escHTML2(g.title)}</h4>
-        </div>
-        <div class="jd-goal__due">DUE<strong>${escHTML2(g.targetDate)}</strong></div>
-      </header>
-      <div class="jd-goal__progress">
-        <span class="jd-goal__pct">${pct}<small>%</small></span>
-        <span class="jd-goal__counts"><strong>${escHTML2(g.numerator)}</strong> / ${escHTML2(g.denominator)} ${escHTML2(unit)}</span>
-      </div>
-      <div class="jd-goal__bar"><div class="jd-goal__bar-fill" style="width: ${pct}%;"></div></div>
-      ${blockers}
-    </div>`;
-    }).join("");
-  }
-  function renderCheckins() {
-    const entry = `
-    <button class="jd-checkin-entry" data-jd-action="quick-checkin">
-      <span class="jd-checkin-entry__glyph">+</span> QUICK CHECK-IN \u2014 HOW ARE YOU FEELING?
-      <span class="jd-checkin-entry__spacer"></span>
-      <span class="jd-checkin-entry__kbd">\u2318.</span>
-    </button>`;
-    const checkins = listCheckins();
-    if (checkins.length === 0) {
-      return `${entry}<div class="jd-empty">\u2014 no check-ins yet \xB7 they stay private on this device \u2014</div>`;
-    }
-    const cards2 = checkins.map((c) => {
-      const d = new Date(c.loggedAt);
-      const valid = !Number.isNaN(d.getTime());
-      const day = valid ? String(d.getDate()) : "\xB7\xB7";
-      const mo = valid ? d.toLocaleDateString("en-US", { month: "short" }).toUpperCase() : "";
-      const tags = c.tags.length > 0 ? `<div class="jd-checkin__tags">${c.tags.map((t) => `<span class="jd-checkin__tag">${escHTML2(t)}</span>`).join("")}</div>` : "";
-      const top = crossRefForCheckin(c)[0];
-      const xrefHTML = top !== void 0 ? `<div class="jd-checkin__xref">CROSS-REF \xB7 <strong>${escHTML2(top.title)}</strong></div>` : "";
-      return `
-    <div class="jd-checkin">
-      <div class="jd-checkin__date">
-        <div class="jd-checkin__date-day">${escHTML2(day)}</div>
-        <div class="jd-checkin__date-mo">${escHTML2(mo)}</div>
-      </div>
-      <div class="jd-checkin__body">
-        <div class="jd-checkin__row">
-          <div class="jd-checkin__severity">${renderPips(c.severity)}</div>
-          <span class="jd-checkin__sev"><strong>${c.severity} / 5</strong> \xB7 ${escHTML2(sevWord(c.severity))}</span>
-        </div>
-        ${c.note.length > 0 ? `<p class="jd-checkin__note">${escHTML2(c.note)}</p>` : ""}
-        ${tags}
-        ${xrefHTML}
-      </div>
-    </div>`;
-    }).join("");
-    return entry + cards2;
-  }
-  function renderMilestones() {
-    const milestones = listMilestones();
-    if (milestones.length === 0) {
-      return '<div class="jd-empty">\u2014 no milestones yet \xB7 earned automatically as coverage doctrine is met \u2014</div>';
-    }
-    return milestones.map((m) => {
-      const locked = m.earnedAt === null;
-      const fresh = !locked && Date.now() - Date.parse(m.earnedAt ?? "") < DAY_MS2;
-      const cls = locked ? " locked" : fresh ? " fresh" : "";
-      const hasProgress = m.numerator !== void 0 && m.denominator !== void 0;
-      const earnedLine = locked ? hasProgress ? `PROGRESS \xB7 ${escHTML2(m.numerator)} / ${escHTML2(m.denominator)}` : "LOCKED" : `EARNED \xB7 ${escHTML2(relTime(m.earnedAt ?? ""))}`;
-      const tag = locked ? " \xB7 LOCKED" : fresh ? " \xB7 JUST EARNED" : "";
-      return `
-    <div class="jd-milestone${cls}">
-      <div class="jd-milestone__badge">${escHTML2(m.badge)}</div>
-      <div class="jd-milestone__body">
-        <div class="jd-milestone__id">${escHTML2(m.milestoneId)}${tag}</div>
-        <h4 class="jd-milestone__title">${escHTML2(m.title)}</h4>
-        <div class="jd-milestone__doctrine">DOCTRINE \xB7 <strong>${escHTML2(m.doctrineRef)}</strong></div>
-        <div class="jd-milestone__earned">${earnedLine}</div>
-      </div>
-    </div>`;
-    }).join("");
-  }
-  function renderTab(tab) {
-    switch (tab) {
-      case "timeline":
-        return renderTimeline();
-      case "goals":
-        return renderGoals();
-      case "checkins":
-        return renderCheckins();
-      case "milestones":
-        return renderMilestones();
-    }
-  }
-  function renderEventForm() {
-    return `
-    <div class="jd-form" data-jd-form="event">
-      <div class="jd-form__title">LOG EVENT</div>
-      <label class="jd-form__row">
-        <span class="jd-form__label">KIND</span>
-        <select class="jd-form__input" data-jd-field="kind">
-          <option value="regimen">Regimen</option>
-          <option value="scan">Scan</option>
-          <option value="coverage">Coverage</option>
-          <option value="symptom">Symptom</option>
-          <option value="milestone">Milestone</option>
-        </select>
-      </label>
-      <label class="jd-form__row">
-        <span class="jd-form__label">TITLE</span>
-        <input class="jd-form__input" data-jd-field="title" type="text" maxlength="200" placeholder="What happened?" />
-      </label>
-      <label class="jd-form__row">
-        <span class="jd-form__label">DETAIL</span>
-        <input class="jd-form__input" data-jd-field="detail" type="text" maxlength="2000" placeholder="Optional context" />
-      </label>
-      <label class="jd-form__row">
-        <span class="jd-form__label">DELTA</span>
-        <input class="jd-form__input" data-jd-field="delta" type="text" maxlength="80" placeholder="e.g. +35 trace" />
-      </label>
-      <div class="jd-form__err" data-jd-field="err"></div>
-      <div class="jd-form__actions">
-        <button class="jd-action jd-action--primary" data-jd-action="event-save">SAVE</button>
-        <button class="jd-action" data-jd-action="form-cancel">CANCEL</button>
-      </div>
-    </div>`;
-  }
-  function renderCheckinForm() {
-    return `
-    <div class="jd-form" data-jd-form="checkin">
-      <div class="jd-form__title">QUICK CHECK-IN</div>
-      <label class="jd-form__row">
-        <span class="jd-form__label">FEELING</span>
-        <select class="jd-form__input" data-jd-field="severity">
-          <option value="5">5 \xB7 Peak</option>
-          <option value="4">4 \xB7 Strong</option>
-          <option value="3" selected>3 \xB7 Moderate</option>
-          <option value="2">2 \xB7 Mild</option>
-          <option value="1">1 \xB7 Minimal</option>
-        </select>
-      </label>
-      <label class="jd-form__row">
-        <span class="jd-form__label">NOTE</span>
-        <textarea class="jd-form__input jd-form__input--area" data-jd-field="note" maxlength="2000" placeholder="How are you feeling?"></textarea>
-      </label>
-      <label class="jd-form__row">
-        <span class="jd-form__label">TAGS</span>
-        <input class="jd-form__input" data-jd-field="tags" type="text" maxlength="200" placeholder="comma,separated" />
-      </label>
-      <div class="jd-form__err" data-jd-field="err"></div>
-      <div class="jd-form__actions">
-        <button class="jd-action jd-action--primary" data-jd-action="checkin-save">SAVE</button>
-        <button class="jd-action" data-jd-action="form-cancel">CANCEL</button>
-      </div>
-    </div>`;
-  }
-  function renderShell(activeTab, formMode) {
-    const events = listEvents();
-    const goals = listGoals();
-    const checkins = listCheckins();
-    const milestones = listMilestones();
-    const earned = milestones.filter((m) => m.earnedAt !== null).length;
-    const tabs = [
-      { id: "timeline", label: "Timeline", count: `${events.length} EVENTS` },
-      { id: "goals", label: "Goals", count: `${goals.length} ACTIVE` },
-      { id: "checkins", label: "Check-ins", count: `${checkins.length} LOGGED` },
-      { id: "milestones", label: "Milestones", count: `${earned} / ${milestones.length}` }
-    ];
-    const tabsHTML = tabs.map((t) => `
-    <button class="jd-tab${t.id === activeTab ? " active" : ""}" data-jd-tab="${t.id}">
-      <span>${escHTML2(t.label)}</span>
-      <span class="jd-tab__count">${escHTML2(t.count)}</span>
-    </button>`).join("");
-    let formHTML = "";
-    if (formMode === "event") {
-      formHTML = renderEventForm();
-    } else if (formMode === "checkin") {
-      formHTML = renderCheckinForm();
-    }
-    return `
-    <header class="jd-head">
-      <div>
-        <div class="jd-eyebrow"><span class="pulse-dot"></span>DRAWER \xB7 <span class="ds-cipher" data-cipher-set="hexa">JN\xB7${hexSerial(activeTab.length * 7)}</span></div>
-        <h2 class="jd-title">Journey</h2>
-        <div class="jd-sub">// timeline \xB7 goals \xB7 check-ins \xB7 milestones</div>
-      </div>
-      <button class="jd-close" data-jd-action="close" title="Close (Esc)">\xD7</button>
-    </header>
-    <div class="jd-tabs">${tabsHTML}</div>
-    <div class="jd-search">
-      <span class="jd-search-icon">\u2315</span>
-      <input class="jd-search-input" type="text" placeholder="SEARCH ${escHTML2(activeTab.toUpperCase())}\u2026" />
-      <span class="jd-search-kbd">/</span>
-    </div>
-    <div class="jd-body">${formHTML}${renderTab(activeTab)}</div>
-    <footer class="jd-footer">
-      <button class="jd-action jd-action--primary" data-jd-action="log-event"><span class="jd-action__glyph">+</span>LOG EVENT</button>
-      <button class="jd-action" data-jd-action="pin"><span class="jd-action__glyph">\u2295</span>PIN</button>
-      <button class="jd-action" data-jd-action="export"><span class="jd-action__glyph">\u21E3</span>EXPORT</button>
-      <span class="jd-action__spacer"></span>
-      <button class="jd-action jd-action--expand" data-jd-action="expand"><span class="jd-action__glyph">\u2922</span>EXPAND</button>
-    </footer>`;
-  }
-  function normalizeKind(raw) {
-    const parsed = EventKindSchema.safeParse(raw);
-    return parsed.success ? parsed.data : "regimen";
-  }
-  function clampSeverity(raw) {
-    const n = Math.round(Number(raw));
-    const clamped = Number.isFinite(n) ? Math.min(5, Math.max(1, n)) : 3;
-    return clamped;
-  }
-  function mount2(container) {
-    let isOpen = false;
-    let isExpanded = false;
-    let activeTab = "timeline";
-    let formMode = null;
-    const render = () => {
-      container.innerHTML = renderShell(activeTab, formMode);
-    };
-    const open = () => {
-      if (isOpen) {
-        return;
-      }
-      isOpen = true;
-      container.classList.add("jd-open");
-      render();
-      emit("drawer:toggled", { target: "journey", open: true });
-    };
-    const close = () => {
-      if (!isOpen) {
-        return;
-      }
-      isOpen = false;
-      isExpanded = false;
-      formMode = null;
-      container.classList.remove("jd-open", "jd-expanded");
-      container.innerHTML = "";
-      emit("drawer:toggled", { target: "journey", open: false });
-    };
-    const toggle = () => {
-      if (isOpen) {
-        close();
-      } else {
-        open();
-      }
-    };
-    const toggleExpanded = () => {
-      isExpanded = !isExpanded;
-      container.classList.toggle("jd-expanded", isExpanded);
-    };
-    const submitEvent = () => {
-      const kindEl = container.querySelector('[data-jd-field="kind"]');
-      const titleEl = container.querySelector('[data-jd-field="title"]');
-      const detailEl = container.querySelector('[data-jd-field="detail"]');
-      const deltaEl = container.querySelector('[data-jd-field="delta"]');
-      const errEl = container.querySelector('[data-jd-field="err"]');
-      const title = (titleEl?.value ?? "").trim().slice(0, 200);
-      if (title.length === 0) {
-        if (errEl !== null) {
-          errEl.textContent = "Title is required.";
-        }
-        return;
-      }
-      const detail = (detailEl?.value ?? "").trim().slice(0, 2e3);
-      const delta = (deltaEl?.value ?? "").trim().slice(0, 80);
-      const event = {
-        kind: normalizeKind(kindEl?.value),
-        title,
-        occurredAt: (/* @__PURE__ */ new Date()).toISOString(),
-        ...detail.length > 0 ? { detail } : {},
-        ...delta.length > 0 ? { delta } : {}
-      };
-      formMode = null;
-      logEvent(event);
-      render();
-    };
-    const submitCheckin = () => {
-      const sevEl = container.querySelector('[data-jd-field="severity"]');
-      const noteEl = container.querySelector('[data-jd-field="note"]');
-      const tagsEl = container.querySelector('[data-jd-field="tags"]');
-      const note = (noteEl?.value ?? "").trim().slice(0, 2e3);
-      const tags = (tagsEl?.value ?? "").split(",").map((t) => t.trim().slice(0, 40)).filter((t) => t.length > 0).slice(0, 20);
-      formMode = null;
-      logCheckin({ severity: clampSeverity(sevEl?.value), note, tags, loggedAt: (/* @__PURE__ */ new Date()).toISOString() });
-      render();
-    };
-    const clickHandler = (ev) => {
-      const target = ev.target;
-      if (target === null) {
-        return;
-      }
-      const tabBtn = target.closest("[data-jd-tab]");
-      if (tabBtn !== null) {
-        const next = tabBtn.getAttribute("data-jd-tab");
-        if (next !== null && next !== activeTab) {
-          activeTab = next;
-          formMode = null;
-          render();
-        }
-        return;
-      }
-      const actionEl = target.closest("[data-jd-action]");
-      if (actionEl === null) {
-        return;
-      }
-      const action = actionEl.getAttribute("data-jd-action");
-      if (action === null) {
-        return;
-      }
-      switch (action) {
-        case "close":
-          close();
-          break;
-        case "expand":
-          toggleExpanded();
-          break;
-        case "log-event":
-          formMode = "event";
-          render();
-          break;
-        case "quick-checkin":
-          activeTab = "checkins";
-          formMode = "checkin";
-          render();
-          break;
-        case "event-save":
-          submitEvent();
-          break;
-        case "checkin-save":
-          submitCheckin();
-          break;
-        case "form-cancel":
-          formMode = null;
-          render();
-          break;
-        default:
-          break;
-      }
-    };
-    container.addEventListener("click", clickHandler);
-    on("journey:changed", () => {
-      if (isOpen) {
-        render();
-      }
-    });
-    on("goals:updated", () => {
-      if (isOpen) {
-        render();
-      }
-    });
-    return {
-      open,
-      close,
-      toggle,
-      toggleExpanded,
-      isOpen: () => isOpen
-    };
   }
 
   // assets/data/condition-categories.json
@@ -144253,14 +143608,14 @@ Goiter`,
   bridge.wallachSearch = { resolveQuery, facetGroups, getEntity, composeCite, defaultSubject, entityList, indexTotals, familyCounts, familyTopics, entityFamilies, oracClaims };
 
   // assets/js/src/views/glossify.ts
-  function escHTML3(s) {
+  function escHTML2(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function emphasize(escaped) {
     return escaped.replace(/\*([^*]+)\*/g, "<em>$1</em>");
   }
   function glossify(raw, emph2 = false) {
-    const esc = (s) => emph2 ? emphasize(escHTML3(s)) : escHTML3(s);
+    const esc = (s) => emph2 ? emphasize(escHTML2(s)) : escHTML2(s);
     const re = glossaryRegex();
     if (re === null) {
       return esc(raw);
@@ -144280,7 +143635,7 @@ Goiter`,
       }
       seen.add(key);
       out += esc(raw.slice(last, m.index));
-      out += `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML3(word)}: ${escHTML3(def)}" data-def="${escHTML3(def)}">${escHTML3(word)}</span>`;
+      out += `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML2(word)}: ${escHTML2(def)}" data-def="${escHTML2(def)}">${escHTML2(word)}</span>`;
       last = m.index + word.length;
     }
     out += esc(raw.slice(last));
@@ -144288,7 +143643,7 @@ Goiter`,
   }
 
   // assets/js/src/views/knowledge-corpus.ts
-  function escHTML4(s) {
+  function escHTML3(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function tileOf(snapshot, key) {
@@ -144317,13 +143672,13 @@ Goiter`,
     const cls = `kd-condition-row${c.slug === selectedSlug ? " is-selected" : ""}`;
     const nutrients = c.essentials_involved.length;
     const cat = conditionCategory(c.slug);
-    const catStyle = cat !== null ? ` style="--cat:${escHTML4(cat.color)}"` : "";
-    const catHTML = cat !== null ? `<div class="kd-condition-row__cat"><i></i>${escHTML4(cat.label)}</div>` : "";
+    const catStyle = cat !== null ? ` style="--cat:${escHTML3(cat.color)}"` : "";
+    const catHTML = cat !== null ? `<div class="kd-condition-row__cat"><i></i>${escHTML3(cat.label)}</div>` : "";
     return `
-    <div class="${cls}"${catStyle} data-kd-condition="${escHTML4(c.slug)}" data-search="${escHTML4(conditionSearchKeywords(c))}" role="button" tabindex="0">
+    <div class="${cls}"${catStyle} data-kd-condition="${escHTML3(c.slug)}" data-search="${escHTML3(conditionSearchKeywords(c))}" role="button" tabindex="0">
       <div class="kd-condition-row__ghost" aria-hidden="true">${c.claim_count}</div>
       ${catHTML}
-      <h4 class="kd-condition-row__name">${escHTML4(c.display_name)}</h4>
+      <h4 class="kd-condition-row__name">${escHTML3(c.display_name)}</h4>
       <div class="kd-condition-row__foot">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${nutrients} ${plural(nutrients, "nutrient")}</div>
     </div>`;
   }
@@ -172713,7 +172068,7 @@ Goiter`,
   };
 
   // assets/js/src/views/knowledge-products.ts
-  function escHTML5(s) {
+  function escHTML4(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   var cachedProducts = null;
@@ -172810,10 +172165,10 @@ Goiter`,
     const foot = [lead, price, serv].filter((s) => s.length > 0).join(" \xB7 ");
     const ghost = supplied > 0 ? `<div class="kd-product-row__ghost" aria-hidden="true">${supplied}</div>` : "";
     return `
-    <div class="${cls}" data-form="${fam}" data-kd-product="${escHTML5(p.product_id)}" data-search="${escHTML5(productSearchBlob(p))}" role="button" tabindex="0">
+    <div class="${cls}" data-form="${fam}" data-kd-product="${escHTML4(p.product_id)}" data-search="${escHTML4(productSearchBlob(p))}" role="button" tabindex="0">
       ${ghost}
-      <div class="kd-product-row__cat"><i></i>${escHTML5(fam.toUpperCase())}</div>
-      <h4 class="kd-product-row__name">${escHTML5(p.name)}</h4>
+      <div class="kd-product-row__cat"><i></i>${escHTML4(fam.toUpperCase())}</div>
+      <h4 class="kd-product-row__name">${escHTML4(p.name)}</h4>
       <div class="kd-product-row__foot">${foot}</div>
     </div>`;
   }
@@ -172890,48 +172245,48 @@ Goiter`,
   }
   var PRODUCT_GLYPH = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>';
   function pfNutrientRow(n, byNorm) {
-    const unit = n.unit !== null && n.unit !== void 0 && n.unit.length > 0 ? ` ${escHTML5(n.unit)}` : "";
+    const unit = n.unit !== null && n.unit !== void 0 && n.unit.length > 0 ? ` ${escHTML4(n.unit)}` : "";
     const amt = fmtAmt(n.amount);
-    const amtHTML = amt.length > 0 ? `${escHTML5(amt)}${unit}` : "";
-    const iu = n.label_iu !== null && n.label_iu !== void 0 ? ` \xB7 ${escHTML5(String(n.label_iu))} IU` : "";
-    const detail = n.unit_detail !== void 0 && n.unit_detail.length > 0 ? ` <span class="kd-pf-nrow__ex">(${escHTML5(n.unit_detail)})</span>` : "";
-    const form = n.form !== void 0 && n.form.length > 0 ? `<span class="kd-pf-nrow__form">${escHTML5(n.form)}</span>` : "";
+    const amtHTML = amt.length > 0 ? `${escHTML4(amt)}${unit}` : "";
+    const iu = n.label_iu !== null && n.label_iu !== void 0 ? ` \xB7 ${escHTML4(String(n.label_iu))} IU` : "";
+    const detail = n.unit_detail !== void 0 && n.unit_detail.length > 0 ? ` <span class="kd-pf-nrow__ex">(${escHTML4(n.unit_detail)})</span>` : "";
+    const form = n.form !== void 0 && n.form.length > 0 ? `<span class="kd-pf-nrow__form">${escHTML4(n.form)}</span>` : "";
     const dvRaw = n.pct_dv;
-    const dv = dvRaw !== null && dvRaw !== void 0 && String(dvRaw).length > 0 ? `${escHTML5(String(dvRaw))}%` : '<span title="Daily Value not established">\u2020</span>';
+    const dv = dvRaw !== null && dvRaw !== void 0 && String(dvRaw).length > 0 ? `${escHTML4(String(dvRaw))}%` : '<span title="Daily Value not established">\u2020</span>';
     const rowNorm = normNutrientName(n.name);
     const bt = rowBToken(n, rowNorm);
     const match = byNorm.get(rowNorm) ?? (bt !== null ? byNorm.get(bt) : void 0);
     const linked = match !== void 0 && match.category.length > 0;
-    const nav = linked ? ` data-cat="${escHTML5(match.category)}" data-kd-essential="${escHTML5(match.layoutKey)}" role="button" tabindex="0"` : match !== void 0 ? ` data-kd-essential="${escHTML5(match.layoutKey)}" role="button" tabindex="0"` : "";
+    const nav = linked ? ` data-cat="${escHTML4(match.category)}" data-kd-essential="${escHTML4(match.layoutKey)}" role="button" tabindex="0"` : match !== void 0 ? ` data-kd-essential="${escHTML4(match.layoutKey)}" role="button" tabindex="0"` : "";
     const cls = match !== void 0 ? " kd-pf-nrow--link" : "";
     const go = match !== void 0 ? '<span class="kd-pf-nrow__go">\u203A</span>' : "";
     return `<div class="kd-pf-nrow${cls}"${nav}>
-      <span class="kd-pf-nrow__nm">${escHTML5(n.name)}${detail}${go}${form}</span>
+      <span class="kd-pf-nrow__nm">${escHTML4(n.name)}${detail}${go}${form}</span>
       <span class="kd-pf-nrow__amt">${amtHTML}${iu}</span>
       <span class="kd-pf-nrow__dv">${dv}</span>
     </div>`;
   }
   function pfBlend(b) {
-    const name = b.name !== void 0 && b.name.length > 0 ? escHTML5(b.name) : "Proprietary blend";
-    const total = b.total != null && b.total.amount != null ? `${escHTML5(fmtAmt(b.total.amount))}${b.total.unit != null ? ` ${escHTML5(b.total.unit)}` : ""}` : "";
-    const cfu = b.total_cfu != null && b.total_cfu.amount != null ? `${escHTML5(fmtAmt(b.total_cfu.amount))}${b.total_cfu.unit != null ? ` ${escHTML5(b.total_cfu.unit)}` : ""}` : "";
+    const name = b.name !== void 0 && b.name.length > 0 ? escHTML4(b.name) : "Proprietary blend";
+    const total = b.total != null && b.total.amount != null ? `${escHTML4(fmtAmt(b.total.amount))}${b.total.unit != null ? ` ${escHTML4(b.total.unit)}` : ""}` : "";
+    const cfu = b.total_cfu != null && b.total_cfu.amount != null ? `${escHTML4(fmtAmt(b.total_cfu.amount))}${b.total_cfu.unit != null ? ` ${escHTML4(b.total_cfu.unit)}` : ""}` : "";
     const ings = b.ingredients ?? [];
     const body = ings.length > 0 ? ings.map((i) => {
-      const parts = [escHTML5(i.name)];
+      const parts = [escHTML4(i.name)];
       if (i.form !== void 0 && i.form.length > 0) {
-        parts.push(`<span class="kd-pf-ing__q">${escHTML5(i.form)}</span>`);
+        parts.push(`<span class="kd-pf-ing__q">${escHTML4(i.form)}</span>`);
       }
       if (i.part !== void 0 && i.part.length > 0) {
-        parts.push(`<span class="kd-pf-ing__q">${escHTML5(i.part)}</span>`);
+        parts.push(`<span class="kd-pf-ing__q">${escHTML4(i.part)}</span>`);
       }
       if (i.standardization !== void 0 && i.standardization.length > 0) {
-        parts.push(`<span class="kd-pf-ing__q">(${escHTML5(i.standardization)})</span>`);
+        parts.push(`<span class="kd-pf-ing__q">(${escHTML4(i.standardization)})</span>`);
       }
       if (i.latin !== void 0 && i.latin.length > 0) {
-        parts.push(`<i>(${escHTML5(i.latin)})</i>`);
+        parts.push(`<i>(${escHTML4(i.latin)})</i>`);
       }
       return parts.join(" ");
-    }).join(" \xB7 ") : b.as_labeled !== void 0 ? escHTML5(b.as_labeled) : "";
+    }).join(" \xB7 ") : b.as_labeled !== void 0 ? escHTML4(b.as_labeled) : "";
     const count = ings.length > 0 ? `${ings.length} ingredient${ings.length === 1 ? "" : "s"}` : "";
     const meta = [total.length > 0 ? total : cfu, count].filter((s) => s.length > 0).join(" \xB7 ");
     return `<details class="kd-pf-blend">
@@ -172953,8 +172308,8 @@ Goiter`,
         continue;
       }
       const unit = val.unit;
-      const u = typeof unit === "string" ? escHTML5(unit) : "";
-      chips.push(`<span class="kd-pf-macro"><b>${escHTML5(String(amount))}${u}</b><span>${escHTML5(key.replace(/_/g, " "))}</span></span>`);
+      const u = typeof unit === "string" ? escHTML4(unit) : "";
+      chips.push(`<span class="kd-pf-macro"><b>${escHTML4(String(amount))}${u}</b><span>${escHTML4(key.replace(/_/g, " "))}</span></span>`);
     }
     return chips.length > 0 ? `<div class="kd-pf-macros">${chips.join("")}</div>` : "";
   }
@@ -172966,7 +172321,7 @@ Goiter`,
       c.servings_per_container !== null && c.servings_per_container !== void 0 ? `${String(c.servings_per_container)} serving${String(c.servings_per_container) === "1" ? "" : "s"}` : ""
     ].filter((s) => s.length > 0).join(" \xB7 ");
     let h = `<div class="kd-pf-comp">
-      <div class="kd-pf-comp__head"><span class="kd-pf-comp__title">${escHTML5(title)}</span><span class="kd-pf-comp__meta">${escHTML5(metaBits)}</span></div>`;
+      <div class="kd-pf-comp__head"><span class="kd-pf-comp__title">${escHTML4(title)}</span><span class="kd-pf-comp__meta">${escHTML4(metaBits)}</span></div>`;
     h += pfMacros(c.macros);
     const nuts = c.nutrients ?? [];
     if (nuts.length > 0) {
@@ -172979,7 +172334,7 @@ Goiter`,
       h += blends.map(pfBlend).join("");
     }
     if (c.other_ingredients !== void 0 && c.other_ingredients.length > 0) {
-      h += `<div class="kd-pf-sub">Other ingredients</div><div class="kd-pf-other">${escHTML5(c.other_ingredients.join(", "))}</div>`;
+      h += `<div class="kd-pf-sub">Other ingredients</div><div class="kd-pf-other">${escHTML4(c.other_ingredients.join(", "))}</div>`;
     }
     return `${h}</div>`;
   }
@@ -172995,10 +172350,10 @@ Goiter`,
     const hero = supplied > 0 ? `<div class="kd-pf-glance__num">${supplied}</div>
         <div class="kd-pf-glance__cap"><b>of 90</b> Wallach essentials<br>delivered on this label</div>` : `<div class="kd-pf-glance__kill">Targeted<br>formula</div>
         <div class="kd-pf-glance__cap">a focused botanical outside<br>the 90 core essentials</div>`;
-    const metric = (k, v, sub) => `<div class="kd-pf-metric"><div class="kd-pf-metric__k">${escHTML5(k)}</div><div class="kd-pf-metric__v">${v}</div>${sub.length > 0 ? `<div class="kd-pf-metric__sub">${escHTML5(sub)}</div>` : ""}</div>`;
+    const metric = (k, v, sub) => `<div class="kd-pf-metric"><div class="kd-pf-metric__k">${escHTML4(k)}</div><div class="kd-pf-metric__v">${v}</div>${sub.length > 0 ? `<div class="kd-pf-metric__sub">${escHTML4(sub)}</div>` : ""}</div>`;
     const metrics = [
       metric("Wholesale", wholesale !== null ? `$${fmtMoney(wholesale)}` : "\u2014", retail !== null ? `$${fmtMoney(retail)} retail` : ""),
-      metric("Per serving", serving.length > 0 ? escHTML5(serving) : "\u2014", spc !== null ? `${spc} per container` : ""),
+      metric("Per serving", serving.length > 0 ? escHTML4(serving) : "\u2014", spc !== null ? `${spc} per container` : ""),
       metric("Cost / serving", perServe !== null ? `$${fmtMoney(perServe)}` : "\u2014", perServe !== null ? "wholesale \xF7 servings" : "")
     ].join("");
     return `<div class="kd-ep-seclabel">At a glance <span class="kd-ep-seclabel__hint">what\u2019s on the label</span></div>
@@ -173023,7 +172378,7 @@ Goiter`,
     const c0 = comps[0];
     const nNut = comps.reduce((s, c) => s + (c.nutrients?.length ?? 0), 0);
     const nBlend = comps.reduce((s, c) => s + (c.blends?.length ?? 0), 0);
-    const sku = p.sku !== void 0 && p.sku.length > 0 ? ` \xB7 SKU ${escHTML5(p.sku)}` : "";
+    const sku = p.sku !== void 0 && p.sku.length > 0 ? ` \xB7 SKU ${escHTML4(p.sku)}` : "";
     const supplied_list = suppliedEssentials(p.product_id);
     const byNorm = /* @__PURE__ */ new Map();
     for (const e of supplied_list) {
@@ -173038,22 +172393,22 @@ Goiter`,
     const spcTxt = spcVal !== null && spcVal !== void 0 ? `, ${String(spcVal)} serving${String(spcVal) === "1" ? "" : "s"} per container` : "";
     const blendPhrase = nBlend > 0 ? `${nBlend} whole-food blend${nBlend === 1 ? "" : "s"}` : "";
     const labelSentence = nNut > 0 ? ` The label lists ${nNut} nutrient${nNut === 1 ? "" : "s"}${blendPhrase.length > 0 ? ` across ${blendPhrase}` : ""}.` : blendPhrase.length > 0 ? ` The label is built from ${blendPhrase}.` : "";
-    const lede = `A ${escHTML5(forms.length > 0 ? forms : "Youngevity")} supplement \u2014 one serving is ${escHTML5(servingTxt)}${escHTML5(spcTxt)}.${labelSentence}`;
+    const lede = `A ${escHTML4(forms.length > 0 ? forms : "Youngevity")} supplement \u2014 one serving is ${escHTML4(servingTxt)}${escHTML4(spcTxt)}.${labelSentence}`;
     const factsHead = `<div class="kd-ep-seclabel">Supplement facts${multi ? ` <span class="kd-ep-seclabel__hint">${comps.length} components</span>` : ""}</div>`;
     const factsHTML = comps.map((c) => pfComponent(c, multi, byNorm)).join("");
     const dirs = comps.map((c) => c.directions).filter((d) => d !== void 0 && d.length > 0);
-    const dirHTML = dirs.length > 0 ? `<div class="kd-ep-seclabel">How to use it</div>${dirs.map((d) => `<div class="kd-pf-use">${escHTML5(d)}</div>`).join("")}` : "";
+    const dirHTML = dirs.length > 0 ? `<div class="kd-ep-seclabel">How to use it</div>${dirs.map((d) => `<div class="kd-pf-use">${escHTML4(d)}</div>`).join("")}` : "";
     const pills = [...supplied_list].sort((a, b) => a.name.localeCompare(b.name));
     const pillsHTML = pills.length > 0 ? `<div class="kd-ep-seclabel">Essentials on this label</div>
       <p class="kd-ep-lead">This product delivers <b>${pills.length}</b> of Wallach\u2019s 90 essentials that have their own page \u2014 tap one to read it.</p>
-      <div class="kd-ep-cloud">${pills.map((e) => `<button class="kd-ep-pill kd-ep-pill--nut" type="button" data-kd-essential="${escHTML5(e.layoutKey)}">${escHTML5(e.name)}</button>`).join("")}</div>` : "";
+      <div class="kd-ep-cloud">${pills.map((e) => `<button class="kd-ep-pill kd-ep-pill--nut" type="button" data-kd-essential="${escHTML4(e.layoutKey)}">${escHTML4(e.name)}</button>`).join("")}</div>` : "";
     return `<div class="kd-essential-deep kd-ep kd-ep--prod"${famStyle}>
     <div class="kd-ep-hero">
       <div class="kd-ep-hero__sym kd-ep-hero__sym--form">${PRODUCT_GLYPH}</div>
       <div class="kd-ep-hero__idblock">
-        <h1 class="kd-ep-hero__name">${escHTML5(p.name)}</h1>
+        <h1 class="kd-ep-hero__name">${escHTML4(p.name)}</h1>
         <div class="kd-ep-hero__subline">
-          <div class="kd-ep-hero__form"><i></i>${escHTML5(fam.toUpperCase())}</div>
+          <div class="kd-ep-hero__form"><i></i>${escHTML4(fam.toUpperCase())}</div>
           <span class="kd-ep-hero__sep">\xB7</span>
           <span class="kd-ep-hero__meta">Youngevity product${sku}</span>
         </div>
@@ -173096,7 +172451,7 @@ Goiter`,
   }
 
   // assets/js/src/views/entity-page.ts
-  function escHTML6(s) {
+  function escHTML5(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function collapseWS(s) {
@@ -173122,9 +172477,9 @@ Goiter`,
   function glossCol(term) {
     const def = glossaryDef(term);
     if (def === null) {
-      return escHTML6(term);
+      return escHTML5(term);
     }
-    return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML6(term)}: ${escHTML6(def)}" data-def="${escHTML6(def)}">${escHTML6(term)}</span>`;
+    return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML5(term)}: ${escHTML5(def)}" data-def="${escHTML5(def)}">${escHTML5(term)}</span>`;
   }
   function renderFig81Legend() {
     const cols = ["RDA", "True Supplement Need", "30-Day Pharmacologic"].map(glossCol).join(" \xB7 ");
@@ -173164,14 +172519,14 @@ Goiter`,
       return "";
     }
     const label = doseContextLabel(claim);
-    const labelHTML = label.length > 0 ? `<span class="kd-claim__dose-label">${escHTML6(label)}</span>` : "";
+    const labelHTML = label.length > 0 ? `<span class="kd-claim__dose-label">${escHTML5(label)}</span>` : "";
     return `
-      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML6(value)}</span></div>`;
+      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML5(value)}</span></div>`;
   }
   function renderRefHeader(label) {
     return `
       <div class="kd-claim__legend" role="note">
-        <span class="kd-claim__legend-eyebrow">${escHTML6(label)}</span>
+        <span class="kd-claim__legend-eyebrow">${escHTML5(label)}</span>
         <span class="kd-claim__legend-cols">as printed in Wallach's book</span>
       </div>`;
   }
@@ -173183,20 +172538,20 @@ Goiter`,
   }
   function renderSearchCard(claim) {
     const cite = composeCite(claim);
-    const tags = claim.topics.map((t) => `<span class="kd-ep-tag">#${escHTML6(t)}</span>`).join("");
-    const preview = claim.answer_short.length > 0 ? `<span class="kd-ep-claim__preview">${escHTML6(claim.answer_short)}</span>` : "";
-    const short = claim.answer_short.length > 0 ? `<div class="kd-ep-claim__short">${escHTML6(claim.answer_short)}</div>` : "";
+    const tags = claim.topics.map((t) => `<span class="kd-ep-tag">#${escHTML5(t)}</span>`).join("");
+    const preview = claim.answer_short.length > 0 ? `<span class="kd-ep-claim__preview">${escHTML5(claim.answer_short)}</span>` : "";
+    const short = claim.answer_short.length > 0 ? `<div class="kd-ep-claim__short">${escHTML5(claim.answer_short)}</div>` : "";
     return `<details class="kd-ep-claim">
     <summary class="kd-ep-claim__summary">
       <span class="kd-ep-claim__badge">?</span>
-      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML6(claim.question)}</span>${preview}</span>
+      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML5(claim.question)}</span>${preview}</span>
       <span class="kd-ep-claim__chev">\u25B8</span>
     </summary>
     <div class="kd-ep-claim__body">
       ${short}
       ${claim.answer.trim() === claim.answer_short.trim() ? "" : `<div class="kd-ep-claim__answer">${glossify(claim.answer)}</div>`}
       <blockquote class="kd-ep-claim__verbatim">\u201C${glossify(collapseWS(claim.verbatim))}\u201D</blockquote>
-      ${cite.length > 0 ? `<div class="kd-ep-claim__cite">\u2014 Dr. Joel Wallach \xB7 ${escHTML6(cite)}</div>` : ""}
+      ${cite.length > 0 ? `<div class="kd-ep-claim__cite">\u2014 Dr. Joel Wallach \xB7 ${escHTML5(cite)}</div>` : ""}
       ${tags.length > 0 ? `<div class="kd-ep-claim__tags">${tags}</div>` : ""}
     </div>
   </details>`;
@@ -173207,11 +172562,11 @@ Goiter`,
     const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
     const verbatimCls = isTable ? "kd-ep-claim__verbatim kd-ep-claim__verbatim--rows" : "kd-ep-claim__verbatim";
     const enrichQ = getSearchClaim(claim.id)?.question ?? "";
-    const qAttr = enrichQ.length > 0 ? ` data-question="${escHTML6(enrichQ)}"` : "";
+    const qAttr = enrichQ.length > 0 ? ` data-question="${escHTML5(enrichQ)}"` : "";
     return `<details class="kd-ep-claim kd-ep-claim--record"${open ? " open" : ""}${qAttr}>
     <summary class="kd-ep-claim__summary">
       <span class="kd-ep-claim__badge">?</span>
-      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML6(truncate(claim.claim_text, 116))}</span><span class="kd-ep-claim__full">${glossify(claim.claim_text)}</span></span>
+      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML5(truncate(claim.claim_text, 116))}</span><span class="kd-ep-claim__full">${glossify(claim.claim_text)}</span></span>
       <span class="kd-ep-claim__chev">\u25B8</span>
     </summary>
     <div class="kd-ep-claim__body">
@@ -173219,7 +172574,7 @@ Goiter`,
       ${isTable ? renderFig81Legend() : ""}
       ${refLabel !== null ? renderRefHeader(refLabel) : ""}
       <blockquote class="${verbatimCls}">${glossify(shownVerbatim)}</blockquote>
-      <div class="kd-ep-claim__cite">CITED \xB7 ${escHTML6(getBookLabel(claim.book))}</div>
+      <div class="kd-ep-claim__cite">CITED \xB7 ${escHTML5(getBookLabel(claim.book))}</div>
     </div>
   </details>`;
   }
@@ -173253,11 +172608,11 @@ Goiter`,
     return r.toLocaleString("en-US");
   }
   function seclabel(label, hint) {
-    const h = hint !== void 0 && hint.length > 0 ? `<span class="kd-ep-seclabel__hint">${escHTML6(hint)}</span>` : "";
-    return `<div class="kd-ep-seclabel">${escHTML6(label)}${h}</div>`;
+    const h = hint !== void 0 && hint.length > 0 ? `<span class="kd-ep-seclabel__hint">${escHTML5(hint)}</span>` : "";
+    return `<div class="kd-ep-seclabel">${escHTML5(label)}${h}</div>`;
   }
   function pill(display, attr, val, cls) {
-    return `<button class="kd-ep-pill ${cls}" type="button" ${attr}="${escHTML6(val)}">${escHTML6(display)}</button>`;
+    return `<button class="kd-ep-pill ${cls}" type="button" ${attr}="${escHTML5(val)}">${escHTML5(display)}</button>`;
   }
   function pillCloud(pills, showN) {
     const head = pills.slice(0, showN).join("");
@@ -173290,10 +172645,10 @@ Goiter`,
   function srcRow(s, isBest) {
     const price = s.price !== null ? `$${s.price.toFixed(2)}` : "\u2014";
     const tag = isBest ? '<span class="kd-ep-vtag">best value</span>' : "";
-    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML6(s.productId)}">
+    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML5(s.productId)}">
       <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
-      <span class="kd-ep-src__nm">${escHTML6(s.name)}${tag}</span>
-      <span class="kd-ep-src__amt">${fmtTarget(s.amount)} ${escHTML6(s.unit)}</span>
+      <span class="kd-ep-src__nm">${escHTML5(s.name)}${tag}</span>
+      <span class="kd-ep-src__amt">${fmtTarget(s.amount)} ${escHTML5(s.unit)}</span>
       <span class="kd-ep-src__pr">${price}</span>
       <span class="kd-ep-src__chev">\u203A</span>
     </button>`;
@@ -173313,16 +172668,16 @@ Goiter`,
     }
     const ivt = tile?.intakeVsTarget ?? null;
     const why = slug !== null ? essentialWhy(slug) : "";
-    const whyHTML = why.length > 0 ? `<span class="kd-ep-why">why this number?<span class="kd-ep-tip">${escHTML6(why)}</span></span>` : "";
-    const targetHTML = ivt !== null ? `<div class="kd-ep-v">${fmtTarget(ivt.targetLow)}${ivt.targetHigh !== ivt.targetLow ? "\u2013" + fmtTarget(ivt.targetHigh) : ""}<small> ${escHTML6(ivt.unit)}</small></div>` : `<div class="kd-ep-gap">${escHTML6(ui("ep_no_target"))}</div>`;
+    const whyHTML = why.length > 0 ? `<span class="kd-ep-why">why this number?<span class="kd-ep-tip">${escHTML5(why)}</span></span>` : "";
+    const targetHTML = ivt !== null ? `<div class="kd-ep-v">${fmtTarget(ivt.targetLow)}${ivt.targetHigh !== ivt.targetLow ? "\u2013" + fmtTarget(ivt.targetHigh) : ""}<small> ${escHTML5(ivt.unit)}</small></div>` : `<div class="kd-ep-gap">${escHTML5(ui("ep_no_target"))}</div>`;
     let coverageHTML;
     if (ivt !== null) {
       const pct = Math.max(0, Math.round((tile?.fillPercent ?? 0) * 100));
       const barPct = Math.min(100, pct);
       coverageHTML = `<div class="kd-ep-k">Your coverage</div>
-        <div class="kd-ep-v">${fmtTarget(ivt.deliveredAmount)}<small> / ${fmtTarget(ivt.targetLow)} ${escHTML6(ivt.unit)}</small></div>
+        <div class="kd-ep-v">${fmtTarget(ivt.deliveredAmount)}<small> / ${fmtTarget(ivt.targetLow)} ${escHTML5(ivt.unit)}</small></div>
         <div class="kd-ep-bar${barFillClass(status)}"><i style="width:${barPct}%"></i></div>
-        <div class="kd-ep-sub">${pct}% ${escHTML6(ui("ep_coverage_of_target"))}</div>`;
+        <div class="kd-ep-sub">${pct}% ${escHTML5(ui("ep_coverage_of_target"))}</div>`;
     } else {
       coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(status)}">\u25CF ${statusLabel(status)}</span></div>`;
@@ -173388,9 +172743,9 @@ Goiter`,
     return "not covered";
   }
   function pdmSrcRow(s) {
-    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML6(s.productId)}">
+    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML5(s.productId)}">
       <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
-      <span class="kd-ep-src__nm">${escHTML6(s.name)}</span>
+      <span class="kd-ep-src__nm">${escHTML5(s.name)}</span>
       <span class="kd-ep-src__amt">${fmtTarget(s.mg)} mg</span>
       <span class="kd-ep-src__chev">\u203A</span>
     </button>`;
@@ -173400,28 +172755,28 @@ Goiter`,
     const short = src.replace(/\s*\([^)]*\)\s*$/, "").trim();
     const pct = Math.max(0, Math.round(tile.fillPercent * 100));
     const barPct = Math.min(100, pct);
-    const cta = src.length > 0 ? `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="${escHTML6(src)}">
-        <span class="kd-ep-mirror__cta-nm">${escHTML6(short)}</span>
-        <span class="kd-ep-mirror__cta-go">${escHTML6(ui("kd_ep_mirror_cta"))}</span>
+    const cta = src.length > 0 ? `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="${escHTML5(src)}">
+        <span class="kd-ep-mirror__cta-nm">${escHTML5(short)}</span>
+        <span class="kd-ep-mirror__cta-go">${escHTML5(ui("kd_ep_mirror_cta"))}</span>
         <span class="kd-ep-mirror__cta-chev" aria-hidden="true">\u203A</span>
       </button>` : "";
     return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
-        <div class="kd-ep-k">${escHTML6(ui("kd_ep_mirror_targetlabel"))}</div>
-        <div class="kd-ep-gap">${escHTML6(ui("kd_ep_mirror_notarget"))}</div>
+        <div class="kd-ep-k">${escHTML5(ui("kd_ep_mirror_targetlabel"))}</div>
+        <div class="kd-ep-gap">${escHTML5(ui("kd_ep_mirror_notarget"))}</div>
       </div>
       <div>
-        <div class="kd-ep-k">${escHTML6(ui("kd_ep_mirror_covlabel"))} <span class="kd-ep-pdm-tag">${escHTML6(fillTokens("kd_ep_mirror_via", { name: short }))}</span></div>
+        <div class="kd-ep-k">${escHTML5(ui("kd_ep_mirror_covlabel"))} <span class="kd-ep-pdm-tag">${escHTML5(fillTokens("kd_ep_mirror_via", { name: short }))}</span></div>
         <div class="kd-ep-v">${pct}<small>%</small></div>
         <div class="kd-ep-bar${barFillClass(tile.status)}"><i style="width:${barPct}%"></i></div>
-        <div class="kd-ep-sub">${escHTML6(fillTokens("kd_ep_mirror_covof", { name: short }))}</div>
+        <div class="kd-ep-sub">${escHTML5(fillTokens("kd_ep_mirror_covof", { name: short }))}</div>
       </div>
     </div>
     <div class="kd-ep-mirror">
-      <div class="kd-ep-mirror__lead">${escHTML6(ui("kd_ep_mirror_lead"))}</div>
-      <div class="kd-ep-mirror__body">${escHTML6(ui("kd_ep_mirror_body"))}</div>
-      <div class="kd-ep-mirror__foot">${escHTML6(ui("kd_ep_mirror_foot"))}</div>
+      <div class="kd-ep-mirror__lead">${escHTML5(ui("kd_ep_mirror_lead"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML5(ui("kd_ep_mirror_body"))}</div>
+      <div class="kd-ep-mirror__foot">${escHTML5(ui("kd_ep_mirror_foot"))}</div>
       ${cta}
     </div>
   </div>`;
@@ -173431,43 +172786,43 @@ Goiter`,
     return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
-        <div class="kd-ep-k">${escHTML6(ui("kd_ep_present_targetlabel"))}</div>
-        <div class="kd-ep-gap">${escHTML6(ui("kd_ep_present_notarget"))}</div>
+        <div class="kd-ep-k">${escHTML5(ui("kd_ep_present_targetlabel"))}</div>
+        <div class="kd-ep-gap">${escHTML5(ui("kd_ep_present_notarget"))}</div>
       </div>
       <div>
-        <div class="kd-ep-k">${escHTML6(ui("kd_ep_present_covlabel"))}</div>
-        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(tile.status)}">\u25CF ${escHTML6(statusLabel(tile.status))}</span></div>
-        <div class="kd-ep-sub">${escHTML6(ui("kd_ep_present_sub"))}</div>
+        <div class="kd-ep-k">${escHTML5(ui("kd_ep_present_covlabel"))}</div>
+        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(tile.status)}">\u25CF ${escHTML5(statusLabel(tile.status))}</span></div>
+        <div class="kd-ep-sub">${escHTML5(ui("kd_ep_present_sub"))}</div>
       </div>
     </div>
     <div class="kd-ep-mirror">
-      <div class="kd-ep-mirror__lead">${escHTML6(ui("kd_ep_present_lead"))}</div>
-      <div class="kd-ep-mirror__body">${escHTML6(body)}</div>
+      <div class="kd-ep-mirror__lead">${escHTML5(ui("kd_ep_present_lead"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML5(body)}</div>
     </div>
   </div>`;
   }
   function renderNonEssentialGlance(layoutKey) {
     const cta = `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="Omega-6 (Linoleic Acid / LA)">
         <span class="kd-ep-mirror__cta-nm">Omega-6</span>
-        <span class="kd-ep-mirror__cta-go">${escHTML6(ui("kd_ep_noness_cta"))}</span>
+        <span class="kd-ep-mirror__cta-go">${escHTML5(ui("kd_ep_noness_cta"))}</span>
         <span class="kd-ep-mirror__cta-chev" aria-hidden="true">\u203A</span>
       </button>`;
     return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
-        <div class="kd-ep-k">${escHTML6(ui("kd_ep_noness_targetlabel"))}</div>
-        <div class="kd-ep-gap">${escHTML6(ui("kd_ep_noness_notarget"))}</div>
+        <div class="kd-ep-k">${escHTML5(ui("kd_ep_noness_targetlabel"))}</div>
+        <div class="kd-ep-gap">${escHTML5(ui("kd_ep_noness_notarget"))}</div>
       </div>
       <div>
-        <div class="kd-ep-k">${escHTML6(ui("kd_ep_noness_covlabel"))}</div>
-        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill kd-essential-deep__status-pill--pending">${escHTML6(ui("kd_ep_noness_covword"))}</span></div>
+        <div class="kd-ep-k">${escHTML5(ui("kd_ep_noness_covlabel"))}</div>
+        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill kd-essential-deep__status-pill--pending">${escHTML5(ui("kd_ep_noness_covword"))}</span></div>
       </div>
     </div>
     <div class="kd-ep-mirror kd-ep-mirror--aside">
-      <div class="kd-ep-k kd-ep-mirror__eyebrow">${escHTML6(ui("kd_ep_noness_eyebrow"))}</div>
-      <div class="kd-ep-mirror__lead">${escHTML6(ui("kd_ep_noness_lead"))}</div>
-      <div class="kd-ep-mirror__body">${escHTML6(ui("kd_ep_noness_body"))}</div>
-      <div class="kd-ep-mirror__body">${escHTML6(ui("kd_ep_noness_body2"))}</div>
+      <div class="kd-ep-k kd-ep-mirror__eyebrow">${escHTML5(ui("kd_ep_noness_eyebrow"))}</div>
+      <div class="kd-ep-mirror__lead">${escHTML5(ui("kd_ep_noness_lead"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML5(ui("kd_ep_noness_body"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML5(ui("kd_ep_noness_body2"))}</div>
       ${cta}
     </div>
     ${renderSourcesBlock(layoutKey)}
@@ -173487,18 +172842,18 @@ Goiter`,
     return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
-        <div class="kd-ep-k">${escHTML6(ui("kd_ep_pdm_targetlabel"))}</div>
+        <div class="kd-ep-k">${escHTML5(ui("kd_ep_pdm_targetlabel"))}</div>
         <div class="kd-ep-v">${fmtTarget(g.goalMg)}<small> mg / day</small></div>
-        <span class="kd-ep-why">${escHTML6(ui("kd_ep_pdm_calc_q"))}<span class="kd-ep-tip">${escHTML6(tip2)}</span></span>
+        <span class="kd-ep-why">${escHTML5(ui("kd_ep_pdm_calc_q"))}<span class="kd-ep-tip">${escHTML5(tip2)}</span></span>
       </div>
       <div>
-        <div class="kd-ep-k">Your coverage <span class="kd-ep-pdm-tag">${escHTML6(ui("kd_ep_pdm_grouptag"))}</span></div>
+        <div class="kd-ep-k">Your coverage <span class="kd-ep-pdm-tag">${escHTML5(ui("kd_ep_pdm_grouptag"))}</span></div>
         <div class="kd-ep-v">${fmtTarget(g.deliveredMg)}<small> / ${fmtTarget(g.goalMg)} mg</small></div>
         <div class="kd-ep-bar${barFillClass(g.status)}"><i style="width:${barPct}%"></i></div>
-        <div class="kd-ep-sub">${pct}% ${escHTML6(ui("kd_ep_pdm_covof"))} \u2014 ${escHTML6(pdmVerdictWord(g.status))}</div>
+        <div class="kd-ep-sub">${pct}% ${escHTML5(ui("kd_ep_pdm_covof"))} \u2014 ${escHTML5(pdmVerdictWord(g.status))}</div>
       </div>
     </div>
-    <div class="kd-ep-pdm-note">${escHTML6(ui("kd_ep_pdm_note"))}</div>
+    <div class="kd-ep-pdm-note">${escHTML5(ui("kd_ep_pdm_note"))}</div>
   </div>`;
   }
   function renderPdmSourcesBlock() {
@@ -173511,7 +172866,7 @@ Goiter`,
     const rest = src.slice(TOP);
     const more = rest.length > 0 ? `<details class="kd-ep-more"><summary>Show all ${src.length} sources</summary><div class="kd-ep-more__body">${rest.map((s) => pdmSrcRow(s)).join("")}</div></details>` : "";
     return `<hr class="kd-ep-op__div">
-      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML6(ui("kd_ep_pdm_srclabel"))}</div>
+      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML5(ui("kd_ep_pdm_srclabel"))}</div>
       ${head}${more}`;
   }
   function renderFacetGroups(page) {
@@ -173528,8 +172883,8 @@ Goiter`,
       if (cards2.length === 0) {
         return "";
       }
-      return `<details class="kd-ep-facet" data-facet="${escHTML6(g.facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML6(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
+      return `<details class="kd-ep-facet" data-facet="${escHTML5(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML5(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
       <div class="kd-ep-facet__body">${cards2}</div>
     </details>`;
     }).join("");
@@ -173551,7 +172906,7 @@ Goiter`,
     }
     const TOP = 3;
     const rows = src.slice(0, TOP).map(
-      (s) => `<button class="kd-ep-getit__prod" type="button" data-kd-product="${escHTML6(s.productId)}">${escHTML6(s.name)}<span class="kd-ep-getit__chev">\u203A</span></button>`
+      (s) => `<button class="kd-ep-getit__prod" type="button" data-kd-product="${escHTML5(s.productId)}">${escHTML5(s.name)}<span class="kd-ep-getit__chev">\u203A</span></button>`
     ).join("");
     const more = src.length > TOP ? `<span class="kd-ep-getit__more">+${src.length - TOP} more above</span>` : "";
     return `<div class="kd-ep-getit">
@@ -173593,8 +172948,8 @@ Goiter`,
       if (getIt.length > 0) {
         getItPlaced = true;
       }
-      return `<details class="kd-ep-facet" data-facet="${escHTML6(g.facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML6(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
+      return `<details class="kd-ep-facet" data-facet="${escHTML5(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML5(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
       <div class="kd-ep-facet__body">${cards2}${getIt}</div>
     </details>`;
     }).join("");
@@ -173625,8 +172980,8 @@ Goiter`,
         return "";
       }
       const cards2 = claims.map((cl) => renderRecordClaim(cl)).join("");
-      return `<details class="kd-ep-kind"${openKinds} data-family="${escHTML6(kindCategory(g.kind))}">
-      <summary><span class="kd-ep-kind__label">${escHTML6(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${claims.length}</span></summary>
+      return `<details class="kd-ep-kind"${openKinds} data-family="${escHTML5(kindCategory(g.kind))}">
+      <summary><span class="kd-ep-kind__label">${escHTML5(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${claims.length}</span></summary>
       <div class="kd-ep-kind__body">${cards2}</div>
     </details>`;
     }).join("");
@@ -173634,7 +172989,7 @@ Goiter`,
         <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} ${plural(total, "claim")}</span><span class="kd-ep-facet__count">${total}</span></summary>
         <div class="kd-ep-record__body">
           <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">\u2315</span><input class="kd-ep-filter" type="text" placeholder="Filter these ${total} ${plural(total, "claim")} by keyword\u2026"></div>
-          <div class="kd-ep-record-note">${escHTML6(ui("ep_record_note"))}</div>
+          <div class="kd-ep-record-note">${escHTML5(ui("ep_record_note"))}</div>
           ${kindsHTML}
         </div>
       </details>`;
@@ -173645,7 +173000,7 @@ Goiter`,
     }
     const pills = page.conditions.map((slug) => pill(conditionDisplayName(slug), "data-kd-condition", slug, "kd-ep-pill--cond"));
     const lead = leadWithCount("ep_conditions_lead", page.conditions.length, "condition");
-    return seclabel("Need help with a condition?") + (lead.length > 0 ? `<p class="kd-ep-lead">${escHTML6(lead)}</p>` : "") + pillCloud(pills, 12);
+    return seclabel("Need help with a condition?") + (lead.length > 0 ? `<p class="kd-ep-lead">${escHTML5(lead)}</p>` : "") + pillCloud(pills, 12);
   }
   function renderWorksWithSection(page) {
     if (page.works_with.length === 0) {
@@ -173656,7 +173011,7 @@ Goiter`,
       return pill(essentialDisplayName(slug), "data-kd-essential", lk, "kd-ep-pill--nut");
     });
     const lead = leadWithCount("ep_works_with_lead", page.works_with.length, "nutrient");
-    return seclabel("Works with") + (lead.length > 0 ? `<p class="kd-ep-lead">${escHTML6(lead)}</p>` : "") + pillCloud(pills, 12);
+    return seclabel("Works with") + (lead.length > 0 ? `<p class="kd-ep-lead">${escHTML5(lead)}</p>` : "") + pillCloud(pills, 12);
   }
   function renderRelatedSection(page) {
     if (page.related.length === 0) {
@@ -173671,7 +173026,7 @@ Goiter`,
       if (cond !== null) {
         return pill(cond.display_name, "data-kd-condition", slug, "kd-ep-pill--explore");
       }
-      return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML6(humanizeSlug(slug))}</span>`;
+      return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML5(humanizeSlug(slug))}</span>`;
     }).join("");
     return seclabel("Keep exploring") + `<div class="kd-ep-cloud">${pills}</div>`;
   }
@@ -173691,19 +173046,19 @@ Goiter`,
     }
     const rows = fam.acids.map((a) => `
       <li class="kd-omega__row">
-        <span class="kd-omega__abbr">${escHTML6(a.abbr)}</span>
+        <span class="kd-omega__abbr">${escHTML5(a.abbr)}</span>
         <div class="kd-omega__body">
-          <span class="kd-omega__name">${escHTML6(a.name)}${a.primary ? ' <em class="kd-omega__primary">primary</em>' : ""}</span>
-          <span class="kd-omega__desc">${escHTML6(a.description)}</span>
+          <span class="kd-omega__name">${escHTML5(a.name)}${a.primary ? ' <em class="kd-omega__primary">primary</em>' : ""}</span>
+          <span class="kd-omega__desc">${escHTML5(a.description)}</span>
         </div>
       </li>`).join("");
     return `
     <div class="kd-omega">
       <div class="kd-omega__head">
-        <span class="kd-omega__title">${escHTML6(fam.label)} \xB7 FATTY-ACID FORMS</span>
+        <span class="kd-omega__title">${escHTML5(fam.label)} \xB7 FATTY-ACID FORMS</span>
       </div>
       <ul class="kd-omega__list">${rows}</ul>
-      <div class="kd-omega__note">${escHTML6(FATTY_ACID_CLARITY.disclaimer)}</div>
+      <div class="kd-omega__note">${escHTML5(FATTY_ACID_CLARITY.disclaimer)}</div>
     </div>`;
   }
   function omega3Figure(fam) {
@@ -173714,35 +173069,35 @@ Goiter`,
       const shortName = a.name.replace(/\s+Acid$/i, "");
       const src = (a.source ?? "").toUpperCase();
       return `
-      <text class="kd-ep-fam__nfam${solid ? "" : " kd-ep-fam__nfam--cond"}" x="${XC[i]}" y="24" text-anchor="middle">${escHTML6(src)}</text>
+      <text class="kd-ep-fam__nfam${solid ? "" : " kd-ep-fam__nfam--cond"}" x="${XC[i]}" y="24" text-anchor="middle">${escHTML5(src)}</text>
       <rect class="kd-ep-fam__node kd-ep-fam__node--${solid ? "solid" : "soft"}" x="${XN[i]}" y="38" width="168" height="72" rx="12"/>
-      <text class="kd-ep-fam__nabbr${solid ? "" : " kd-ep-fam__nabbr--cond"}" x="${XC[i]}" y="80" text-anchor="middle">${escHTML6(a.abbr)}</text>
-      <text class="kd-ep-fam__nname" x="${XC[i]}" y="98" text-anchor="middle">${escHTML6(shortName)}</text>
-      ${solid ? `<text class="kd-ep-fam__bracketlbl" x="${XC[i]}" y="134" text-anchor="middle">${escHTML6(ui("kd_ep_o3_ala_tag"))}</text>` : ""}`;
+      <text class="kd-ep-fam__nabbr${solid ? "" : " kd-ep-fam__nabbr--cond"}" x="${XC[i]}" y="80" text-anchor="middle">${escHTML5(a.abbr)}</text>
+      <text class="kd-ep-fam__nname" x="${XC[i]}" y="98" text-anchor="middle">${escHTML5(shortName)}</text>
+      ${solid ? `<text class="kd-ep-fam__bracketlbl" x="${XC[i]}" y="134" text-anchor="middle">${escHTML5(ui("kd_ep_o3_ala_tag"))}</text>` : ""}`;
     }).join("");
     return `<svg class="kd-ep-fam__art" viewBox="0 0 680 150" role="img" aria-label="The three forms of omega-3: ALA from plants, the essential one; EPA and DHA from the sea">${nodes}</svg>`;
   }
   function renderOmega3Rich(fam) {
     const rows = fam.acids.map((a) => `
       <div class="kd-ep-fam__step">
-        <span class="kd-ep-fam__num">${escHTML6(a.abbr)}</span>
+        <span class="kd-ep-fam__num">${escHTML5(a.abbr)}</span>
         <div class="kd-ep-fam__stepbody">
-          <div class="kd-ep-fam__steptitle">${escHTML6(a.name)}</div>
-          <div class="kd-ep-fam__steptext">${escHTML6(a.description)}</div>
+          <div class="kd-ep-fam__steptitle">${escHTML5(a.name)}</div>
+          <div class="kd-ep-fam__steptext">${escHTML5(a.description)}</div>
         </div>
       </div>`).join("");
     return `<section class="kd-ep-fam">
-      <span class="kd-ep-fam__eyebrow">${escHTML6(ui("kd_ep_o3_eyebrow"))}</span>
-      <h3 class="kd-ep-fam__kill">${escHTML6(ui("kd_ep_o3_kill"))}</h3>
+      <span class="kd-ep-fam__eyebrow">${escHTML5(ui("kd_ep_o3_eyebrow"))}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML5(ui("kd_ep_o3_kill"))}</h3>
       <div class="kd-ep-fam__figure">${omega3Figure(fam)}</div>
       <div class="kd-ep-fam__steps">${rows}</div>
-      <div class="kd-ep-fam__note">${escHTML6(FATTY_ACID_CLARITY.disclaimer)}</div>
+      <div class="kd-ep-fam__note">${escHTML5(FATTY_ACID_CLARITY.disclaimer)}</div>
     </section>`;
   }
   function fatFamilyFigure() {
-    const arrow = escHTML6(ui("kd_ep_fam_arrow"));
-    const bracket = escHTML6(ui("kd_ep_fam_bracket"));
-    const condtag = escHTML6(ui("kd_ep_fam_condtag"));
+    const arrow = escHTML5(ui("kd_ep_fam_arrow"));
+    const bracket = escHTML5(ui("kd_ep_fam_bracket"));
+    const condtag = escHTML5(ui("kd_ep_fam_condtag"));
     return `<svg class="kd-ep-fam__art" viewBox="0 0 680 166" role="img" aria-label="Three fatty acids: two essential (linolenic, linoleic) and one conditional (arachidonic)">
       <defs><marker id="fam-arrow" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path class="kd-ep-fam__arrowhead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
       <text class="kd-ep-fam__nfam" x="100" y="26" text-anchor="middle">\u03C9-3</text>
@@ -173766,9 +173121,9 @@ Goiter`,
   }
   function fatFamilyStep(num2, tKey, bKey) {
     return `<div class="kd-ep-fam__step">
-      <span class="kd-ep-fam__num">${escHTML6(num2)}</span>
+      <span class="kd-ep-fam__num">${escHTML5(num2)}</span>
       <div class="kd-ep-fam__stepbody">
-        <div class="kd-ep-fam__steptitle">${escHTML6(ui(tKey))}</div>
+        <div class="kd-ep-fam__steptitle">${escHTML5(ui(tKey))}</div>
         <div class="kd-ep-fam__steptext">${glossify(collapseWS(ui(bKey)))}</div>
       </div>
     </div>`;
@@ -173784,14 +173139,14 @@ Goiter`,
     return `<div class="ds-pull-quote-wrap kd-ep-fam__quote${big ? " kd-ep-fam__quote--big" : ""}">
       <blockquote class="ds-pull-quote">
         <p>${body}</p>
-        <footer>\u2014 Dr. Joel Wallach \xB7 ${escHTML6(getBookLabel(c.book))}</footer>
+        <footer>\u2014 Dr. Joel Wallach \xB7 ${escHTML5(getBookLabel(c.book))}</footer>
       </blockquote>
     </div>`;
   }
   function renderOmega6Experience(quoteClaim, highlight, layoutKey) {
     return `<section class="kd-ep-fam">
-      <span class="kd-ep-fam__eyebrow">${escHTML6(ui("kd_ep_fam_eyebrow"))}</span>
-      <h3 class="kd-ep-fam__kill">${escHTML6(ui("kd_ep_fam_kill"))}</h3>
+      <span class="kd-ep-fam__eyebrow">${escHTML5(ui("kd_ep_fam_eyebrow"))}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML5(ui("kd_ep_fam_kill"))}</h3>
       <div class="kd-ep-fam__figure">${fatFamilyFigure()}</div>
       <div class="kd-ep-fam__steps">
         ${fatFamilyStep("01", "kd_ep_fam_s1_t", "kd_ep_fam_s1_b")}
@@ -173799,7 +173154,7 @@ Goiter`,
         ${fatFamilyStep("03", "kd_ep_fam_s3_t", "kd_ep_fam_s3_b")}
       </div>
       ${fatFamilyQuote(quoteClaim, highlight)}
-      <div class="kd-ep-fam__note">${escHTML6(ui("kd_ep_fam_note"))}</div>
+      <div class="kd-ep-fam__note">${escHTML5(ui("kd_ep_fam_note"))}</div>
       ${renderSourcesBlock(layoutKey)}
     </section>`;
   }
@@ -173810,7 +173165,7 @@ Goiter`,
       const cls = x < 250 ? "" : x > 430 ? " kd-ep-fam__head--rancid" : " kd-ep-fam__head--guard";
       heads.push(`<circle class="kd-ep-fam__head${cls}" cx="${x}" cy="58" r="5"/><circle class="kd-ep-fam__head${cls}" cx="${x}" cy="92" r="5"/>`);
     }
-    return `<svg class="kd-ep-fam__art kd-ep-fam__art--mech" viewBox="0 0 680 150" role="img" aria-label="${escHTML6(alt)}">
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--mech" viewBox="0 0 680 150" role="img" aria-label="${escHTML5(alt)}">
       <path class="kd-ep-fam__mem" d="M20 58 L430 58 M20 92 L430 92"/>
       <path class="kd-ep-fam__mem kd-ep-fam__mem--gone" d="M430 58 L660 58 M430 92 L660 92"/>
       ${heads.join("")}
@@ -173826,12 +173181,12 @@ Goiter`,
     </svg>`;
   }
   function figLabel(labels, id) {
-    return escHTML6(labels?.[id] ?? "");
+    return escHTML5(labels?.[id] ?? "");
   }
   function cofactorForkFigure(alt, labels) {
     const HAIR = ["black", "brown", "auburn", "blond"];
     const swatches = HAIR.map((h, k) => `<rect class="kd-ep-fam__hair kd-ep-fam__hair--${h}" x="${80 + k * 31}" y="222" width="26" height="40" rx="4"/>`).join("");
-    return `<svg class="kd-ep-fam__art kd-ep-fam__art--fork" viewBox="0 0 700 322" role="img" aria-label="${escHTML6(alt)}">
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--fork" viewBox="0 0 700 322" role="img" aria-label="${escHTML5(alt)}">
       <defs><marker id="mech-fork-tip" markerWidth="8" markerHeight="8" refX="4.5" refY="2.6" orient="auto">
         <path class="kd-ep-fam__ghead" d="M0 0 L5.5 2.6 L0 5.2 Z"/></marker></defs>
       <rect class="kd-ep-fam__gnode kd-ep-fam__gnode--el" x="300" y="8" width="100" height="52" rx="10"/>
@@ -173864,7 +173219,7 @@ Goiter`,
       <text class="kd-ep-fam__gstop" x="${x}" y="48" text-anchor="middle">${figLabel(labels, `stop${k + 1}`)}</text>
       <text class="kd-ep-fam__gsub" x="${x}" y="70" text-anchor="middle">${figLabel(labels, `stop${k + 1}_sub`)}</text>
       <circle class="kd-ep-fam__gstopdot" cx="${x}" cy="100" r="7"/>`).join("");
-    return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 172" role="img" aria-label="${escHTML6(alt)}">
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 172" role="img" aria-label="${escHTML5(alt)}">
       <defs><marker id="mech-rail-tip" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
         <path class="kd-ep-fam__ghead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
       <path class="kd-ep-fam__grail" d="M60 100 H576" marker-end="url(#mech-rail-tip)"/>
@@ -173876,7 +173231,7 @@ Goiter`,
     </svg>`;
   }
   function reversalRailFigure(alt, labels) {
-    return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 84" role="img" aria-label="${escHTML6(alt)}">
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 84" role="img" aria-label="${escHTML5(alt)}">
       <defs><marker id="mech-turn-tip" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
         <path class="kd-ep-fam__ghead kd-ep-fam__ghead--acc" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
       <text class="kd-ep-fam__gsub kd-ep-fam__gsub--acc" x="330" y="22" text-anchor="middle">${figLabel(labels, "duration")}</text>
@@ -173907,7 +173262,7 @@ Goiter`,
       </g>
       <path class="kd-ep-fam__nailline" d="${nail(f.x, f.t)}"/>`).join("");
     const spots = SPOTS.map((s) => `<ellipse class="kd-ep-fam__nspot" cx="${s.cx}" cy="${s.cy}" rx="${s.rx}" ry="${s.ry}"/>`).join("");
-    return `<svg class="kd-ep-fam__art" viewBox="0 0 380 132" role="img" aria-label="${escHTML6(alt)}">
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 380 132" role="img" aria-label="${escHTML5(alt)}">
       <defs>${clips}</defs>${skins}${nails}${spots}
       <path class="kd-ep-fam__gline" d="M260 50 H274"/>
       <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="280" y="54">${figLabel(labels, "spots")}</text>
@@ -173925,7 +173280,7 @@ Goiter`,
       const bars = STOPS.map((x) => `<rect class="kd-ep-fam__gbar${on2 ? "" : " kd-ep-fam__gbar--off"}" x="${x + dx - 32}" y="140" width="64" height="22" rx="4"/>`).join("");
       return `<path class="kd-ep-fam__strand" d="M${52 + dx} 74 C${82 + dx} 58 ${112 + dx} 90 ${142 + dx} 74 C${172 + dx} 58 ${202 + dx} 90 ${232 + dx} 74 C${262 + dx} 58 ${292 + dx} 90 ${308 + dx} 80"/>${nodes}${stems}${bars}`;
     };
-    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 216" role="img" aria-label="${escHTML6(alt)}">
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 216" role="img" aria-label="${escHTML5(alt)}">
       <defs><marker id="mech-mf-tip" markerWidth="8" markerHeight="8" refX="4.5" refY="2.6" orient="auto">
         <path class="kd-ep-fam__ghead kd-ep-fam__ghead--acc" d="M0 0 L5.5 2.6 L0 5.2 Z"/></marker></defs>
       <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="180" y="18" text-anchor="middle">${figLabel(labels, "with")}</text>
@@ -173945,8 +173300,8 @@ Goiter`,
   }
   function diseaseScaleFigure(alt, labels) {
     const L = labels ?? {};
-    const g = (k) => escHTML6(L[k] ?? "");
-    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 176" role="img" aria-label="${escHTML6(alt)}">
+    const g = (k) => escHTML5(L[k] ?? "");
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 176" role="img" aria-label="${escHTML5(alt)}">
       <defs><linearGradient id="kd-ep-scale-num" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" style="stop-color:var(--ds-accent-bright)"/><stop offset="0.6" style="stop-color:var(--ds-accent)"/><stop offset="1" style="stop-color:var(--ds-accent-deep)"/>
       </linearGradient></defs>
@@ -173960,8 +173315,8 @@ Goiter`,
   }
   function heartbeatFigure(alt, labels) {
     const L = labels ?? {};
-    const g = (k) => escHTML6(L[k] ?? "");
-    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 249" role="img" aria-label="${escHTML6(alt)}">
+    const g = (k) => escHTML5(L[k] ?? "");
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 249" role="img" aria-label="${escHTML5(alt)}">
       <defs>
         <linearGradient id="kd-ep-heart-fill" x1="0" y1="0" x2="0.4" y2="1">
           <stop offset="0" stop-color="#e07a5f"/><stop offset="0.55" stop-color="#c0392b"/><stop offset="1" stop-color="#8f271c"/>
@@ -173987,8 +173342,8 @@ Goiter`,
     </svg>`;
   }
   function mgCycleFigure(alt, labels) {
-    const g = (k) => escHTML6(labels?.[k] ?? "");
-    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 270" role="img" aria-label="${escHTML6(alt)}">
+    const g = (k) => escHTML5(labels?.[k] ?? "");
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 270" role="img" aria-label="${escHTML5(alt)}">
       <defs>
         <radialGradient id="kd-ep-mg-sun" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stop-color="#e8b13e" stop-opacity="0.5"/><stop offset="100%" stop-color="#e8b13e" stop-opacity="0"/>
@@ -174084,11 +173439,11 @@ Goiter`,
     const marks = [];
     for (let k = 0; k < f.total; k++) {
       const key = band[k];
-      const mod = key !== void 0 ? ` kd-ep-fam__mark--${escHTML6(key)}` : "";
+      const mod = key !== void 0 ? ` kd-ep-fam__mark--${escHTML5(key)}` : "";
       marks.push(`<circle class="kd-ep-fam__mark${mod}" cx="${6 + k % f.columns * 12}" cy="${6 + Math.floor(k / f.columns) * 12}" r="4.5"/>`);
     }
     const rows = Math.ceil(f.total / f.columns);
-    const legend = f.bands.filter((b) => b.label.length > 0).map((b) => `<div class="kd-ep-fam__fieldleg"><span class="kd-ep-fam__fieldkey kd-ep-fam__fieldkey--${escHTML6(b.key)}"></span>${escHTML6(b.label)}</div>`).join("");
+    const legend = f.bands.filter((b) => b.label.length > 0).map((b) => `<div class="kd-ep-fam__fieldleg"><span class="kd-ep-fam__fieldkey kd-ep-fam__fieldkey--${escHTML5(b.key)}"></span>${escHTML5(b.label)}</div>`).join("");
     return `<svg class="kd-ep-fam__fieldart" viewBox="0 0 ${12 + (f.columns - 1) * 12} ${12 + (rows - 1) * 12}" aria-hidden="true">${marks.join("")}</svg>${legend}`;
   }
   function mechEvidence(side) {
@@ -174098,7 +173453,7 @@ Goiter`,
     const c = side.quote_claim !== void 0 ? getClaim(side.quote_claim) : null;
     if (side.note !== void 0 && side.note.length > 0) {
       if (c !== null) {
-        return `<blockquote class="kd-ep-fam__miniq kd-ep-fam__miniq--sourced">${glossify(collapseWS(side.note))}<cite>${escHTML6(getBookLabel(c.book))}</cite></blockquote>`;
+        return `<blockquote class="kd-ep-fam__miniq kd-ep-fam__miniq--sourced">${glossify(collapseWS(side.note))}<cite>${escHTML5(getBookLabel(c.book))}</cite></blockquote>`;
       }
       return `<p class="kd-ep-fam__splittx kd-ep-fam__evnote">${glossify(collapseWS(side.note))}</p>`;
     }
@@ -174106,12 +173461,12 @@ Goiter`,
       return "";
     }
     const shown = side.quote_trim !== void 0 && side.quote_trim.length > 0 ? side.quote_trim : c.verbatim;
-    return `<blockquote class="kd-ep-fam__miniq">${glossify(collapseWS(shown))}<cite>${escHTML6(getBookLabel(c.book))}</cite></blockquote>`;
+    return `<blockquote class="kd-ep-fam__miniq">${glossify(collapseWS(shown))}<cite>${escHTML5(getBookLabel(c.book))}</cite></blockquote>`;
   }
   function renderMechSplit(left, right) {
     const R = " kd-ep-fam__splitcell--r";
     const prose = (s, mod) => `<div class="kd-ep-fam__splitcell${mod}">
-        <div class="kd-ep-fam__splithd">${escHTML6(s.head)}</div>
+        <div class="kd-ep-fam__splithd">${escHTML5(s.head)}</div>
         <p class="kd-ep-fam__splittx">${glossify(collapseWS(s.text), true)}</p>
       </div>`;
     const evid = (s, mod) => {
@@ -174119,7 +173474,7 @@ Goiter`,
       if (body.length === 0) {
         return `<div class="kd-ep-fam__splitcell${mod}"></div>`;
       }
-      const cap = s.evidence_caption !== void 0 ? `<div class="kd-ep-fam__evcap">${escHTML6(s.evidence_caption)}</div>` : "";
+      const cap = s.evidence_caption !== void 0 ? `<div class="kd-ep-fam__evcap">${escHTML5(s.evidence_caption)}</div>` : "";
       return `<div class="kd-ep-fam__splitcell kd-ep-fam__splitcell--ev${mod}">${cap}${body}</div>`;
     };
     return `<div class="kd-ep-fam__split">${prose(left, "")}${prose(right, R)}${evid(left, "")}${evid(right, R)}</div>`;
@@ -174127,10 +173482,10 @@ Goiter`,
   var MECH_BLOCK_SEP = `
       `;
   function mechEyebrow(text) {
-    return `<span class="kd-ep-fam__eyebrow">${escHTML6(text)}</span>`;
+    return `<span class="kd-ep-fam__eyebrow">${escHTML5(text)}</span>`;
   }
   function mechKill(text) {
-    return `<h3 class="kd-ep-fam__kill">${escHTML6(text)}</h3>`;
+    return `<h3 class="kd-ep-fam__kill">${escHTML5(text)}</h3>`;
   }
   function mechFigureRow(figSvg, mod) {
     return `<div class="kd-ep-fam__figure${mod}">${figSvg}</div>`;
@@ -174149,14 +173504,14 @@ Goiter`,
   }
   function mechBeats(items, mod, bignum = false) {
     const steps = items.map((b) => {
-      const hook = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>` : "";
+      const hook = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML5(b.hook)}</p>` : "";
       const turn = b.turn === true ? " kd-ep-fam__step--turn" : "";
-      const cta = b.cta !== void 0 ? `<button class="kd-ep-fam__cta" type="button" data-kd-tab="${escHTML6(b.cta.tab)}">${escHTML6(b.cta.label)} <span class="kd-ep-fam__cta-arrow" aria-hidden="true">&rarr;</span></button>` : "";
+      const cta = b.cta !== void 0 ? `<button class="kd-ep-fam__cta" type="button" data-kd-tab="${escHTML5(b.cta.tab)}">${escHTML5(b.cta.label)} <span class="kd-ep-fam__cta-arrow" aria-hidden="true">&rarr;</span></button>` : "";
       return `
       <div class="kd-ep-fam__step${turn}">
-        <span class="kd-ep-fam__num${bignum ? " kd-ep-fam__num--big" : ""}">${escHTML6(b.n)}</span>
+        <span class="kd-ep-fam__num${bignum ? " kd-ep-fam__num--big" : ""}">${escHTML5(b.n)}</span>
         <div class="kd-ep-fam__stepbody">
-          <div class="kd-ep-fam__steptitle">${escHTML6(b.title)}</div>
+          <div class="kd-ep-fam__steptitle">${escHTML5(b.title)}</div>
           <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
           ${cta}${hook}
         </div>
@@ -174167,22 +173522,22 @@ Goiter`,
   function mechStat(readout, value, label) {
     return `
       <div class="kd-ep-fam__stat">
-        <span class="kd-ep-fam__statread">${escHTML6(readout)}</span>
-        <span class="kd-ep-fam__statnum">${escHTML6(value)}</span>
-        <span class="kd-ep-fam__statlbl">${escHTML6(label)}</span>
+        <span class="kd-ep-fam__statread">${escHTML5(readout)}</span>
+        <span class="kd-ep-fam__statnum">${escHTML5(value)}</span>
+        <span class="kd-ep-fam__statlbl">${escHTML5(label)}</span>
       </div>`;
   }
   function mechInline(raw) {
-    return escHTML6(raw).replace(/&lt;b&gt;/g, "<b>").replace(/&lt;\/b&gt;/g, "</b>").replace(/&lt;em&gt;/g, "<em>").replace(/&lt;\/em&gt;/g, "</em>");
+    return escHTML5(raw).replace(/&lt;b&gt;/g, "<b>").replace(/&lt;\/b&gt;/g, "</b>").replace(/&lt;em&gt;/g, "<em>").replace(/&lt;\/em&gt;/g, "</em>");
   }
   function mechCompareCard(c) {
     const marker = c.big.mark === "star" ? "<sup>*</sup>" : c.big.mark === "tick" ? ' <span class="mkA-tick">&#10003;</span>' : "";
     const bigMod = c.big.struck === true ? " mkA-big--muted" : "";
     const cardMod = c.accent === true ? " mkA-card--animal" : "";
-    const rows = (items, dir) => items.map((r) => `<div class="mkA-pt mkA-pt--${dir}"><span class="mkA-pt__chip">${dir === "up" ? "+" : "&minus;"}</span><div class="mkA-pt__txt"><span class="mkA-pt__lead">${escHTML6(r.lead)}</span> ${mechInline(r.body)}</div></div>`).join("");
+    const rows = (items, dir) => items.map((r) => `<div class="mkA-pt mkA-pt--${dir}"><span class="mkA-pt__chip">${dir === "up" ? "+" : "&minus;"}</span><div class="mkA-pt__txt"><span class="mkA-pt__lead">${escHTML5(r.lead)}</span> ${mechInline(r.body)}</div></div>`).join("");
     return `<div class="mkA-card${cardMod}">
-        <div class="mkA-kicker">${escHTML6(c.kicker)}</div>
-        <div class="mkA-big${bigMod}">${escHTML6(c.big.text)}${marker}</div>
+        <div class="mkA-kicker">${escHTML5(c.kicker)}</div>
+        <div class="mkA-big${bigMod}">${escHTML5(c.big.text)}${marker}</div>
         <p class="mkA-fine">${mechInline(c.fine)}</p>
         ${rows(c.pros, "up")}${rows(c.cons, "down")}
       </div>`;
@@ -174194,15 +173549,15 @@ Goiter`,
       </div>`;
   }
   function mechExplain(label, text) {
-    return `<div class="mk-section-label">${escHTML6(label)}</div>
+    return `<div class="mk-section-label">${escHTML5(label)}</div>
       <div class="mk-explain">${mechInline(text)}</div>`;
   }
   function mechCurio(eyebrow, head, body, cite) {
     return `<div class="mk-curio">
-        <div class="mk-curio__eyebrow">${escHTML6(eyebrow)}</div>
-        <h4 class="mk-curio__head">${escHTML6(head)}</h4>
+        <div class="mk-curio__eyebrow">${escHTML5(eyebrow)}</div>
+        <h4 class="mk-curio__head">${escHTML5(head)}</h4>
         <p class="mk-curio__body">${mechInline(body)}</p>
-        <div class="mk-curio__cite">${escHTML6(cite)}</div>
+        <div class="mk-curio__cite">${escHTML5(cite)}</div>
       </div>`;
   }
   function mechSlotFigure(f) {
@@ -174274,9 +173629,9 @@ Goiter`,
     const body = composed ? renderMechBlocks(m.blocks) : renderMechLegacy(m);
     const cardsMod = composed && m.cards === true ? " kd-ep-fam--cards" : "";
     const variantMod = composed && typeof m.variant === "string" && m.variant.length > 0 ? ` kd-ep-fam--${m.variant}` : "";
-    return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}${variantMod}" data-category="${escHTML6(category ?? "")}">
+    return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}${variantMod}" data-category="${escHTML5(category ?? "")}">
       ${body}
-      <div class="kd-ep-fam__note">${escHTML6(MECHANISM_CLARITY.disclaimer)}</div>
+      <div class="kd-ep-fam__note">${escHTML5(MECHANISM_CLARITY.disclaimer)}</div>
       ${renderSourcesBlock(layoutKey)}
     </section>`;
   }
@@ -174290,8 +173645,8 @@ Goiter`,
     ];
     const nodes = NODES.map((n) => {
       const rect = `<rect class="kd-ep-fam__node kd-ep-fam__node--${n.solid ? "solid" : "soft"}" x="${n.x}" y="40" width="${W}" height="76" rx="12"/>`;
-      const label = n.solid ? `<text class="kd-ep-fam__nabbr" x="${n.cx}" y="75" text-anchor="middle">${escHTML6(ui("kd_ep_pdm_fig_n4stat"))}</text>
-         <text class="kd-ep-fam__nname" x="${n.cx}" y="100" text-anchor="middle">${escHTML6(ui(n.nameKey))}</text>` : `<text class="kd-ep-fam__nname" x="${n.cx}" y="85" text-anchor="middle">${escHTML6(ui(n.nameKey))}</text>`;
+      const label = n.solid ? `<text class="kd-ep-fam__nabbr" x="${n.cx}" y="75" text-anchor="middle">${escHTML5(ui("kd_ep_pdm_fig_n4stat"))}</text>
+         <text class="kd-ep-fam__nname" x="${n.cx}" y="100" text-anchor="middle">${escHTML5(ui(n.nameKey))}</text>` : `<text class="kd-ep-fam__nname" x="${n.cx}" y="85" text-anchor="middle">${escHTML5(ui(n.nameKey))}</text>`;
       return rect + label;
     }).join("");
     const ARROWS = [
@@ -174302,7 +173657,7 @@ Goiter`,
     const arrows = ARROWS.map((a) => {
       const mid = (a.x1 + a.x2) / 2;
       return `<path class="kd-ep-fam__arrowline" d="M${a.x1 + 4} 78 L${a.x2 - 4} 78" marker-end="url(#pdm-arrow)"/>
-        <text class="kd-ep-fam__arrowlbl" x="${mid}" y="24" text-anchor="middle">${escHTML6(ui(a.key))}</text>`;
+        <text class="kd-ep-fam__arrowlbl" x="${mid}" y="24" text-anchor="middle">${escHTML5(ui(a.key))}</text>`;
     }).join("");
     return `<svg class="kd-ep-fam__art kd-ep-fam__art--pdm" viewBox="0 0 1050 130" role="img" aria-label="How plant-derived minerals form: parent rock is ground by glaciers into glacial milk, taken up and rebuilt by plants into colloidal minerals the body absorbs at about 98 percent">
       <defs><marker id="pdm-arrow" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path class="kd-ep-fam__arrowhead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
@@ -174314,8 +173669,8 @@ Goiter`,
       return "";
     }
     return `<section class="kd-ep-fam">
-      <span class="kd-ep-fam__eyebrow">${escHTML6(ui("kd_ep_pdm_hero_eyebrow"))}</span>
-      <h3 class="kd-ep-fam__kill">${escHTML6(ui("kd_ep_pdm_hero_kill"))}</h3>
+      <span class="kd-ep-fam__eyebrow">${escHTML5(ui("kd_ep_pdm_hero_eyebrow"))}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML5(ui("kd_ep_pdm_hero_kill"))}</h3>
       <div class="kd-ep-fam__figure kd-ep-fam__figure--pdm">${pdmFigure()}</div>
       <div class="kd-ep-fam__steps">
         ${fatFamilyStep("01", "kd_ep_pdm_s1_t", "kd_ep_pdm_s1_b")}
@@ -174329,8 +173684,8 @@ Goiter`,
   }
   function renderFamCTA() {
     return `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="Omega-6 (Linoleic Acid / LA)">
-      <span class="kd-ep-mirror__cta-nm">${escHTML6(ui("kd_ep_fam_crosslink"))}</span>
-      <span class="kd-ep-mirror__cta-go">${escHTML6(ui("kd_ep_fam_cta_go"))}</span>
+      <span class="kd-ep-mirror__cta-nm">${escHTML5(ui("kd_ep_fam_crosslink"))}</span>
+      <span class="kd-ep-mirror__cta-go">${escHTML5(ui("kd_ep_fam_cta_go"))}</span>
       <span class="kd-ep-mirror__cta-chev" aria-hidden="true">\u203A</span>
     </button>`;
   }
@@ -174372,24 +173727,24 @@ Goiter`,
     const deferSources = page !== null && (fatBlockOwnsSources(page.name) || slug !== null && MECH_BY_SLUG.has(slug));
     const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot, !deferSources);
     if (page === null) {
-      const nm = escHTML6(corpusEss?.common_name ?? layoutKey);
-      return `<div class="kd-essential-deep kd-ep" data-category="${escHTML6(corpusEss?.category ?? "")}" data-essential="${escHTML6(slug ?? "")}">
+      const nm = escHTML5(corpusEss?.common_name ?? layoutKey);
+      return `<div class="kd-essential-deep kd-ep" data-category="${escHTML5(corpusEss?.category ?? "")}" data-essential="${escHTML5(slug ?? "")}">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${backButton()}</div>
       ${seclabel("At a glance", "Daily Needs & How It Works")}
       ${glanceHTML}
-      <div class="kd-ep-empty">${escHTML6(ui("ep_empty_record"))}</div>
+      <div class="kd-ep-empty">${escHTML5(ui("ep_empty_record"))}</div>
     </div>`;
     }
-    const sciBit = page.scientific_name !== page.name ? escHTML6(page.scientific_name) : "";
-    const metaBits = [sciBit, escHTML6(page.category ?? ""), `${page.distinct_claim_count} ${plural(page.distinct_claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].filter((s) => s.length > 0).join(" \xB7 ");
-    const nonEss = page.is_essential || tile?.noTargetReason === "non_essential" ? "" : `<div class="kd-ep-flag">${escHTML6(ui("ep_non_essential"))}</div>`;
+    const sciBit = page.scientific_name !== page.name ? escHTML5(page.scientific_name) : "";
+    const metaBits = [sciBit, escHTML5(page.category ?? ""), `${page.distinct_claim_count} ${plural(page.distinct_claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].filter((s) => s.length > 0).join(" \xB7 ");
+    const nonEss = page.is_essential || tile?.noTargetReason === "non_essential" ? "" : `<div class="kd-ep-flag">${escHTML5(ui("ep_non_essential"))}</div>`;
     const ledeText = slug !== null ? essentialLede(slug) : "";
-    const lede = ledeText.length > 0 ? `<p class="kd-ep-lede">${escHTML6(ledeText)}</p>` : "";
-    return `<div class="kd-essential-deep kd-ep" data-category="${escHTML6(corpusEss?.category ?? "")}" data-essential="${escHTML6(slug ?? "")}">
+    const lede = ledeText.length > 0 ? `<p class="kd-ep-lede">${escHTML5(ledeText)}</p>` : "";
+    return `<div class="kd-essential-deep kd-ep" data-category="${escHTML5(corpusEss?.category ?? "")}" data-essential="${escHTML5(slug ?? "")}">
     <div class="kd-ep-hero">
-      ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML6(page.symbol)}</div>` : ""}
+      ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML5(page.symbol)}</div>` : ""}
       <div class="kd-ep-hero__idblock">
-        <h1 class="kd-ep-hero__name">${escHTML6(page.name)}</h1>
+        <h1 class="kd-ep-hero__name">${escHTML5(page.name)}</h1>
         <div class="kd-ep-hero__meta">${metaBits}</div>
       </div>
       ${backButton()}
@@ -174436,9 +173791,9 @@ Goiter`,
     if (kids.length === 0 || claimCount3 < UMBRELLA_TIP_MIN_CLAIMS) {
       return "";
     }
-    const examples = kids.slice(0, 2).map((n) => `<em>${escHTML6(n)}</em>`).join(", ");
+    const examples = kids.slice(0, 2).map((n) => `<em>${escHTML5(n)}</em>`).join(", ");
     const eg = examples.length > 0 ? ` (e.g. ${examples})` : "";
-    return `<p class="kd-ep-umbrella"><strong>${escHTML6(ui("kd_ep_umbrella_lead"))}</strong> \u2014 ${escHTML6(ui("kd_ep_umbrella_body"))}${eg}.</p>`;
+    return `<p class="kd-ep-umbrella"><strong>${escHTML5(ui("kd_ep_umbrella_lead"))}</strong> \u2014 ${escHTML5(ui("kd_ep_umbrella_body"))}${eg}.</p>`;
   }
   function nutrientPill(slug, cls) {
     const lk = getEssentialBySlug(slug)?.layout_key ?? slug;
@@ -174456,12 +173811,12 @@ Goiter`,
     const primaryLabel = restore.length > 0 ? "To restore" : "Caused by these deficiencies";
     const primaryPills = primarySlugs.map((s) => nutrientPill(s, "kd-ep-pill--nut"));
     const primary = `<div class="kd-ep-nutri__grp">
-      <div class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--restore"></i>${escHTML6(primaryLabel)}<span class="kd-ep-nutri__n">${primarySlugs.length}</span></div>
+      <div class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--restore"></i>${escHTML5(primaryLabel)}<span class="kd-ep-nutri__n">${primarySlugs.length}</span></div>
       ${pillCloud(primaryPills, 12)}
     </div>`;
     const relToggle = '<span class="kd-ep-nutri__toggle"><span class="kd-ep-nutri__toggle-open">Expand \u25BE</span><span class="kd-ep-nutri__toggle-close">Collapse \u25B4</span></span>';
     const nutriLens = (dotCls, label, count, pillsHTML) => `<details class="kd-ep-nutri__rel">
-        <summary><span class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--${dotCls}"></i>${escHTML6(label)}<span class="kd-ep-nutri__n">${count}</span></span>${relToggle}</summary>
+        <summary><span class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--${dotCls}"></i>${escHTML5(label)}<span class="kd-ep-nutri__n">${count}</span></span>${relToggle}</summary>
         <div class="kd-ep-cloud kd-ep-nutri__cloud">${pillsHTML}</div>
       </details>`;
     const lenses = [];
@@ -174484,9 +173839,9 @@ Goiter`,
   function condProductRow(rec, total, isBest) {
     const price = rec.price > 0 ? `$${rec.price.toFixed(2)}` : "\u2014";
     const tag = isBest ? '<span class="kd-ep-vtag">best value</span>' : "";
-    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML6(rec.productId)}">
+    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML5(rec.productId)}">
       <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
-      <span class="kd-ep-src__nm">${escHTML6(rec.name)}${tag}</span>
+      <span class="kd-ep-src__nm">${escHTML5(rec.name)}${tag}</span>
       <span class="kd-ep-src__amt">covers ${rec.supplies} / ${total}</span>
       <span class="kd-ep-src__pr">${price}</span>
       <span class="kd-ep-src__chev">\u203A</span>
@@ -174531,7 +173886,7 @@ Goiter`,
         if (cond !== null) {
           return pill(cond.display_name, "data-kd-condition", slug, "kd-ep-pill--explore");
         }
-        return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML6(humanizeSlug(slug))}</span>`;
+        return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML5(humanizeSlug(slug))}</span>`;
       });
       out += seclabel("Keep exploring") + pillCloud(pills, 14);
     }
@@ -174541,24 +173896,24 @@ Goiter`,
     const page = getConditionPage(slug);
     const c = getCondition(slug);
     if (page === null) {
-      const nm = escHTML6(c?.display_name ?? humanizeSlug(slug));
+      const nm = escHTML5(c?.display_name ?? humanizeSlug(slug));
       return `<div class="kd-essential-deep kd-ep kd-ep--cond">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${conditionBackButton()}</div>
-      <div class="kd-ep-empty">${escHTML6(ui("ep_empty_record"))}</div>
+      <div class="kd-ep-empty">${escHTML5(ui("ep_empty_record"))}</div>
     </div>`;
     }
     const cat = conditionCategory(slug);
-    const catStyle = cat !== null ? ` style="--cat:${escHTML6(cat.color)}"` : "";
+    const catStyle = cat !== null ? ` style="--cat:${escHTML5(cat.color)}"` : "";
     const catIcon = cat !== null && cat.icon.length > 0 ? `<div class="kd-ep-hero__sym kd-ep-hero__sym--cat"><svg viewBox="0 0 24 24" aria-hidden="true">${cat.icon}</svg></div>` : "";
-    const catChip = cat !== null ? `<div class="kd-ep-hero__cat"><i></i>${escHTML6(cat.label)}</div>` : "";
+    const catChip = cat !== null ? `<div class="kd-ep-hero__cat"><i></i>${escHTML5(cat.label)}</div>` : "";
     const metaBits = [`${page.claim_count} ${plural(page.claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].join(" \xB7 ");
     const synopsis = c !== null ? conditionSynopsis(c) : "";
-    const lede = synopsis.length > 0 ? `<p class="kd-ep-lede">${escHTML6(synopsis)}</p>` : "";
+    const lede = synopsis.length > 0 ? `<p class="kd-ep-lede">${escHTML5(synopsis)}</p>` : "";
     return `<div class="kd-essential-deep kd-ep kd-ep--cond"${catStyle}>
     <div class="kd-ep-hero">
       ${catIcon}
       <div class="kd-ep-hero__idblock">
-        <h1 class="kd-ep-hero__name">${escHTML6(page.name)}</h1>
+        <h1 class="kd-ep-hero__name">${escHTML5(page.name)}</h1>
         <div class="kd-ep-hero__subline">${catChip}${catChip.length > 0 ? '<span class="kd-ep-hero__sep">\xB7</span>' : ""}<span class="kd-ep-hero__meta">${metaBits}</span></div>
       </div>
       ${conditionBackButton()}
@@ -174574,7 +173929,7 @@ Goiter`,
   }
 
   // assets/js/src/views/knowledge-explore.ts
-  function escHTML7(s) {
+  function escHTML6(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   var EXPLORE_TYPES = [
@@ -174602,7 +173957,7 @@ Goiter`,
     return [...parts].join(" ");
   }
   function chip(e) {
-    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML7(e.slug)}" data-search="${escHTML7(searchBlob(e.slug))}">${escHTML7(e.display_name)}</button>`;
+    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML6(e.slug)}" data-search="${escHTML6(searchBlob(e.slug))}">${escHTML6(e.display_name)}</button>`;
   }
   function renderExploreTab() {
     const all = exploreEntities();
@@ -174611,7 +173966,7 @@ Goiter`,
       if (inType.length === 0) {
         return "";
       }
-      return `<div class="kd-explore-group"><div class="kd-explore-group__head">${escHTML7(ui(key))}<span class="kd-explore-group__ct">${inType.length}</span></div><div class="kd-explore-cloud">${inType.map(chip).join("")}</div></div>`;
+      return `<div class="kd-explore-group"><div class="kd-explore-group__head">${escHTML6(ui(key))}<span class="kd-explore-group__ct">${inType.length}</span></div><div class="kd-explore-cloud">${inType.map(chip).join("")}</div></div>`;
     }).join("");
     return `<div class="kd-explore">${groups}</div>`;
   }
@@ -174750,17 +174105,17 @@ Goiter`,
   }
 
   // assets/js/src/views/knowledge-foods.ts
-  function escHTML8(s) {
+  function escHTML7(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function withVilliGloss(raw) {
-    const def = escHTML8(ui("kd_foods_villi_gloss"));
-    return escHTML8(raw).replace(/\bvilli\b/gi, (m) => `<span class="gloss kd-foods-term" tabindex="0" role="button" aria-label="${m}: ${def}" data-def="${def}">${m}</span>`);
+    const def = escHTML7(ui("kd_foods_villi_gloss"));
+    return escHTML7(raw).replace(/\bvilli\b/gi, (m) => `<span class="gloss kd-foods-term" tabindex="0" role="button" aria-label="${m}: ${def}" data-def="${def}">${m}</span>`);
   }
   function sectionHeader(num2, kicker, headingHTML, extra) {
-    const kickerHTML = kicker.length > 0 ? `<div class="ds-kicker">${escHTML8(kicker)}</div>` : "";
+    const kickerHTML = kicker.length > 0 ? `<div class="ds-kicker">${escHTML7(kicker)}</div>` : "";
     return `<header class="kd-foods-sec${extra}">
-      <span class="kd-foods-sec__num">${escHTML8(num2)}</span>
+      <span class="kd-foods-sec__num">${escHTML7(num2)}</span>
       <div class="kd-foods-sec__body">
         ${kickerHTML}
         ${headingHTML}
@@ -174774,8 +174129,8 @@ Goiter`,
       if (inFacet.length === 0) {
         return "";
       }
-      return `<details class="kd-ep-facet" data-facet="${escHTML8(facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML8(facetLabel(facet))}</span><span class="kd-ep-facet__count">${inFacet.length}</span></summary>
+      return `<details class="kd-ep-facet" data-facet="${escHTML7(facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML7(facetLabel(facet))}</span><span class="kd-ep-facet__count">${inFacet.length}</span></summary>
       <div class="kd-ep-facet__body">${inFacet.map(renderSearchCard).join("")}</div>
     </details>`;
     }).join("");
@@ -174828,8 +174183,8 @@ Goiter`,
     const cap = healthy ? ui("kd_foods_villi_ok_cap") : ui("kd_foods_villi_bad_cap");
     return `<div class="kd-foods-villi__panel kd-foods-villi__panel--${kind}">
       <div class="kd-foods-villi__top">
-        <div class="kd-foods-villi__t">${escHTML8(title)}</div>
-        <div class="kd-foods-villi__metric">${escHTML8(metric)}</div>
+        <div class="kd-foods-villi__t">${escHTML7(title)}</div>
+        <div class="kd-foods-villi__metric">${escHTML7(metric)}</div>
       </div>
       ${villiArt(healthy)}
       <div class="kd-foods-villi__cap">${withVilliGloss(cap)}</div>
@@ -174848,20 +174203,20 @@ Goiter`,
     }
     const text = fixQuoteGlyph(collapseWS2(q.claim.verbatim));
     const idx = text.indexOf(q.highlightFrom);
-    const body = idx >= 0 ? `${escHTML8(text.slice(0, idx))}<mark class="ds-mark">${escHTML8(text.slice(idx))}</mark>` : escHTML8(text);
+    const body = idx >= 0 ? `${escHTML7(text.slice(0, idx))}<mark class="ds-mark">${escHTML7(text.slice(idx))}</mark>` : escHTML7(text);
     const page = q.claim.page !== null ? `Page \xB7 ${q.claim.page}` : "";
     return `<div class="ds-pull-quote-wrap kd-foods-pq">
       <blockquote class="ds-pull-quote">
-        ${page.length > 0 ? `<span class="kd-foods-pq__page">${escHTML8(page)}</span>` : ""}
+        ${page.length > 0 ? `<span class="kd-foods-pq__page">${escHTML7(page)}</span>` : ""}
         <p>${body}</p>
-        <footer>${escHTML8(ui("kd_foods_villi_cite"))}</footer>
+        <footer>${escHTML7(ui("kd_foods_villi_cite"))}</footer>
       </blockquote>
     </div>`;
   }
   function foodItem(c, kind) {
-    return `<button class="kd-foods-item kd-foods-item--${escHTML8(kind)}" type="button" data-kd-topic="${escHTML8(c.slug)}">
-      <span class="kd-foods-item__nm">${escHTML8(c.name)}</span>
-      <span class="kd-foods-item__why">${escHTML8(c.why)}</span>
+    return `<button class="kd-foods-item kd-foods-item--${escHTML7(kind)}" type="button" data-kd-topic="${escHTML7(c.slug)}">
+      <span class="kd-foods-item__nm">${escHTML7(c.name)}</span>
+      <span class="kd-foods-item__why">${escHTML7(c.why)}</span>
       <span class="kd-foods-item__go" aria-hidden="true">&rarr;</span>
     </button>`;
   }
@@ -174876,11 +174231,11 @@ Goiter`,
     return null;
   }
   function emphasize2(raw, sub, open, close) {
-    const e = escHTML8(raw);
+    const e = escHTML7(raw);
     if (sub.length === 0) {
       return e;
     }
-    const s = escHTML8(sub);
+    const s = escHTML7(sub);
     const i = e.indexOf(s);
     if (i < 0) {
       return e;
@@ -174897,15 +174252,15 @@ Goiter`,
     for (let t = 0; t <= 14; t += 2) {
       out += `<span class="sxb-axis__t" style="top:${phY(t).toFixed(1)}px">${t}</span>`;
     }
-    out += `<span class="sxb-cap" style="top:${phY(13.3).toFixed(1)}px">${escHTML8(ui("kd_foods_sec04_ladder_alk"))}</span>`;
-    out += `<span class="sxb-cap" style="top:${phY(0.7).toFixed(1)}px">${escHTML8(ui("kd_foods_sec04_ladder_acid"))}</span>`;
+    out += `<span class="sxb-cap" style="top:${phY(13.3).toFixed(1)}px">${escHTML7(ui("kd_foods_sec04_ladder_alk"))}</span>`;
+    out += `<span class="sxb-cap" style="top:${phY(0.7).toFixed(1)}px">${escHTML7(ui("kd_foods_sec04_ladder_acid"))}</span>`;
     out += '<div class="sxb-track"></div>';
     out += `<div class="sxb-band" style="top:${phY(7.4).toFixed(1)}px"></div>`;
-    out += `<div class="sxb-bandlbl" style="top:${phY(7.4).toFixed(1)}px">${escHTML8(ui("kd_foods_sec04_ladder_blood"))}<small>${escHTML8(ui("kd_foods_sec04_ladder_blood_s"))}</small></div>`;
+    out += `<div class="sxb-bandlbl" style="top:${phY(7.4).toFixed(1)}px">${escHTML7(ui("kd_foods_sec04_ladder_blood"))}<small>${escHTML7(ui("kd_foods_sec04_ladder_blood_s"))}</small></div>`;
     out += `<div class="sxb-dot" style="top:${phY(8.2).toFixed(1)}px;background:#5a8ca8"></div>`;
-    out += `<div class="sxb-card sxb-card--panc" style="top:${phY(10.2).toFixed(1)}px"><div class="sxb-card__ph">${escHTML8(ui("kd_foods_sec04_ladder_panc_ph"))}</div><div class="sxb-card__nm">${escHTML8(ui("kd_foods_sec04_ladder_panc_nm"))}</div><div class="sxb-card__d">${escHTML8(ui("kd_foods_sec04_ladder_panc_d"))}</div></div>`;
+    out += `<div class="sxb-card sxb-card--panc" style="top:${phY(10.2).toFixed(1)}px"><div class="sxb-card__ph">${escHTML7(ui("kd_foods_sec04_ladder_panc_ph"))}</div><div class="sxb-card__nm">${escHTML7(ui("kd_foods_sec04_ladder_panc_nm"))}</div><div class="sxb-card__d">${escHTML7(ui("kd_foods_sec04_ladder_panc_d"))}</div></div>`;
     out += `<div class="sxb-dot" style="top:${phY(1).toFixed(1)}px;background:#ff6420"></div>`;
-    out += `<div class="sxb-card sxb-card--stomach" style="top:${phY(2).toFixed(1)}px"><div class="sxb-card__ph">${escHTML8(ui("kd_foods_sec04_ladder_stom_ph"))}</div><div class="sxb-card__nm">${escHTML8(ui("kd_foods_sec04_ladder_stom_nm"))}</div><div class="sxb-card__d">${escHTML8(ui("kd_foods_sec04_ladder_stom_d"))}</div></div>`;
+    out += `<div class="sxb-card sxb-card--stomach" style="top:${phY(2).toFixed(1)}px"><div class="sxb-card__ph">${escHTML7(ui("kd_foods_sec04_ladder_stom_ph"))}</div><div class="sxb-card__nm">${escHTML7(ui("kd_foods_sec04_ladder_stom_nm"))}</div><div class="sxb-card__d">${escHTML7(ui("kd_foods_sec04_ladder_stom_d"))}</div></div>`;
     return out;
   }
   var FRT_FOOD_X = [95, 140, 185, 225];
@@ -174982,8 +174337,8 @@ Goiter`,
     return ENZ_TILES.map((t) => {
       const amt = amountOf(t.comp);
       const provLabel = t.prov === "p" ? ui("kd_foods_sec04_prov_p") : ui("kd_foods_sec04_prov_w");
-      const dot = `<span class="ue-dot ue-dot--${t.prov}"></span> ${escHTML8(provLabel)}`;
-      return `<div class="ue-tile"><div class="ue-tile__stage">${escHTML8(ui(t.stage))}</div><div class="ue-tile__c">${escHTML8(ui(t.nm))}</div><div class="ue-tile__amt">${escHTML8(amt)}</div><div class="ue-tile__d">${escHTML8(ui(t.blurb))}</div><div class="ue-tile__prov">${dot}</div></div>`;
+      const dot = `<span class="ue-dot ue-dot--${t.prov}"></span> ${escHTML7(provLabel)}`;
+      return `<div class="ue-tile"><div class="ue-tile__stage">${escHTML7(ui(t.stage))}</div><div class="ue-tile__c">${escHTML7(ui(t.nm))}</div><div class="ue-tile__amt">${escHTML7(amt)}</div><div class="ue-tile__d">${escHTML7(ui(t.blurb))}</div><div class="ue-tile__prov">${dot}</div></div>`;
     }).join("");
   }
   function ctaBar() {
@@ -174995,14 +174350,14 @@ Goiter`,
     const perServeStr = perServe !== null ? `$${perServe.toFixed(2)}` : "";
     const perDayStr = perServe !== null ? `$${(perServe * 3).toFixed(2)}` : "";
     const capsStr = spc !== null ? String(spc) : "";
-    const foot = `Wholesale &middot; ${escHTML8(capsStr)} capsules &middot; &asymp; ${escHTML8(perDayStr)} a day &middot; ${escHTML8(ui("kd_foods_sec04_cta_foot_tail"))}`;
+    const foot = `Wholesale &middot; ${escHTML7(capsStr)} capsules &middot; &asymp; ${escHTML7(perDayStr)} a day &middot; ${escHTML7(ui("kd_foods_sec04_cta_foot_tail"))}`;
     return `<button class="ue-bar" type="button" data-kd-product="ultimate-enzymes">
         <span>
-          <span class="ue-bar__nm">${escHTML8(ui("kd_foods_sec04_cta_nm"))}</span>
-          <span class="ue-bar__sub">${escHTML8(ui("kd_foods_sec04_cta_sub"))}</span>
+          <span class="ue-bar__nm">${escHTML7(ui("kd_foods_sec04_cta_nm"))}</span>
+          <span class="ue-bar__sub">${escHTML7(ui("kd_foods_sec04_cta_sub"))}</span>
         </span>
         <span class="ue-bar__r">
-          <span class="ue-bar__price"><span class="ue-bar__pn">${escHTML8(perServeStr)}</span><span class="ue-bar__pl">${escHTML8(ui("kd_foods_sec04_cta_price_l"))}</span></span>
+          <span class="ue-bar__price"><span class="ue-bar__pn">${escHTML7(perServeStr)}</span><span class="ue-bar__pl">${escHTML7(ui("kd_foods_sec04_cta_price_l"))}</span></span>
           <span class="ue-bar__chev">&rsaquo;</span>
         </span>
       </button>
@@ -175021,7 +174376,7 @@ Goiter`,
     return `<div class="ds-pull-quote-wrap kd-foods-pq sxbeat">
       <blockquote class="ds-pull-quote">
         <p>${body}</p>
-        <footer>&mdash; ${escHTML8(ui("kd_foods_sec04_pq_cite"))}</footer>
+        <footer>&mdash; ${escHTML7(ui("kd_foods_sec04_pq_cite"))}</footer>
       </blockquote>
     </div>`;
   }
@@ -175032,26 +174387,26 @@ Goiter`,
     return `<div class="kt-page kd-ep kd-foods">
     <header class="kd-foods-hero">
       <div class="kd-foods-eyebrow">
-        <span class="kd-foods-eyebrow__l">${escHTML8(ui("kd_foods_eyebrow_l"))}</span>
+        <span class="kd-foods-eyebrow__l">${escHTML7(ui("kd_foods_eyebrow_l"))}</span>
         <span class="kd-foods-eyebrow__rule"></span>
-        <span class="kd-foods-eyebrow__r">${escHTML8(ui("kd_foods_eyebrow_r"))}</span>
+        <span class="kd-foods-eyebrow__r">${escHTML7(ui("kd_foods_eyebrow_r"))}</span>
       </div>
       <div class="kd-foods-corner">
-        <div class="kd-foods-brand">${escHTML8(ui("kd_foods_readout_2"))}</div>
-        <div class="kd-foods-scan">${escHTML8(ui("kd_foods_scan"))}</div>
+        <div class="kd-foods-brand">${escHTML7(ui("kd_foods_readout_2"))}</div>
+        <div class="kd-foods-scan">${escHTML7(ui("kd_foods_scan"))}</div>
       </div>
-      ${sectionHeader("01", "", `<h1 class="kd-foods-hero__h"><span class="l1">${escHTML8(ui("kd_foods_hl1"))}</span><span class="l2">${escHTML8(ui("kd_foods_hl2"))}</span></h1>`, " kd-foods-sec--hero")}
-      <p class="kd-foods-hero__deck">${escHTML8(ui("kd_foods_deck"))}</p>
+      ${sectionHeader("01", "", `<h1 class="kd-foods-hero__h"><span class="l1">${escHTML7(ui("kd_foods_hl1"))}</span><span class="l2">${escHTML7(ui("kd_foods_hl2"))}</span></h1>`, " kd-foods-sec--hero")}
+      <p class="kd-foods-hero__deck">${escHTML7(ui("kd_foods_deck"))}</p>
     </header>
 
     <div class="ds-pull-stat kd-foods-stat">
-      <span class="ds-pull-stat__readout">${escHTML8(ui("kd_foods_stat_readout"))}</span>
-      <div class="ds-pull-stat__num">${escHTML8(ui("kd_foods_stat_num"))}</div>
-      <div class="ds-pull-stat__body">${escHTML8(ui("kd_foods_stat_body"))}<small>${escHTML8(ui("kd_foods_stat_small"))}</small></div>
+      <span class="ds-pull-stat__readout">${escHTML7(ui("kd_foods_stat_readout"))}</span>
+      <div class="ds-pull-stat__num">${escHTML7(ui("kd_foods_stat_num"))}</div>
+      <div class="ds-pull-stat__body">${escHTML7(ui("kd_foods_stat_body"))}<small>${escHTML7(ui("kd_foods_stat_small"))}</small></div>
     </div>
 
     <section class="kd-foods-villi">
-      ${sectionHeader("02", ui("kd_foods_sec02_kicker"), `<h2 class="ds-h-section">${escHTML8(ui("kd_foods_villi_title"))}</h2>`, "")}
+      ${sectionHeader("02", ui("kd_foods_sec02_kicker"), `<h2 class="ds-h-section">${escHTML7(ui("kd_foods_villi_title"))}</h2>`, "")}
       <p class="kd-foods-villi__intro">${withVilliGloss(ui("kd_foods_villi_explain"))}</p>
       <div class="kd-foods-villi__grid">
         ${villiPanel(false)}
@@ -175061,19 +174416,19 @@ Goiter`,
     </section>
 
     <section class="kd-foods-contrast">
-      ${sectionHeader("03", ui("kd_foods_sec03_kicker"), `<h2 class="ds-h-section">${escHTML8(ui("kd_foods_contrast_hd"))}</h2>`, "")}
+      ${sectionHeader("03", ui("kd_foods_sec03_kicker"), `<h2 class="ds-h-section">${escHTML7(ui("kd_foods_contrast_hd"))}</h2>`, "")}
       <div class="kd-foods-contrast__grid">
         <div class="kd-foods-col kd-foods-col--remove">
-          <div class="kd-foods-col__hd">${escHTML8(ui("kd_foods_col_remove"))}</div>
+          <div class="kd-foods-col__hd">${escHTML7(ui("kd_foods_col_remove"))}</div>
           ${remove.map((c) => foodItem(c, "remove")).join("")}
         </div>
         <div class="kd-foods-col kd-foods-col--eat">
-          <div class="kd-foods-col__hd">${escHTML8(ui("kd_foods_col_eat"))}</div>
+          <div class="kd-foods-col__hd">${escHTML7(ui("kd_foods_col_eat"))}</div>
           ${eat.map((c) => foodItem(c, "eat")).join("")}
         </div>
       </div>
       <div class="kd-foods-form">
-        <div class="kd-foods-col__hd kd-foods-form__hd">${escHTML8(ui("kd_foods_form_hd"))}</div>
+        <div class="kd-foods-col__hd kd-foods-form__hd">${escHTML7(ui("kd_foods_form_hd"))}</div>
         <div class="kd-foods-form__grid">
           ${conditional.map((c) => foodItem(c, "form")).join("")}
         </div>
@@ -175081,73 +174436,73 @@ Goiter`,
     </section>
 
     <section class="kd-foods-enz">
-      ${sectionHeader("04", ui("kd_foods_sec04_kicker"), `<h2 class="ds-h-section">${escHTML8(ui("kd_foods_sec04_hd"))}</h2>`, "")}
+      ${sectionHeader("04", ui("kd_foods_sec04_kicker"), `<h2 class="ds-h-section">${escHTML7(ui("kd_foods_sec04_hd"))}</h2>`, "")}
       <p class="sx-p">${emphasize2(ui("kd_foods_sec04_lead"), "pH 1.0", "<strong>", "</strong>")}</p>
 
       <div class="sxb-wrap">
         <div class="sxb-scale">${phLadder()}</div>
         <div class="sxb-side">
-          <div class="ds-kicker" style="margin-bottom:12px">${escHTML8(ui("kd_foods_sec04_ladder_kicker"))}</div>
+          <div class="ds-kicker" style="margin-bottom:12px">${escHTML7(ui("kd_foods_sec04_ladder_kicker"))}</div>
           <div class="sxb-triad">
-            <div class="sxb-triad__i"><span class="sxb-triad__n">01</span><span class="sxb-triad__t"><b>${escHTML8(ui("kd_foods_sec04_ladder_t1_b"))}</b> ${escHTML8(ui("kd_foods_sec04_ladder_t1"))}</span></div>
-            <div class="sxb-triad__i"><span class="sxb-triad__n">02</span><span class="sxb-triad__t"><b>${escHTML8(ui("kd_foods_sec04_ladder_t2_b"))}</b> ${escHTML8(ui("kd_foods_sec04_ladder_t2"))}</span></div>
-            <div class="sxb-triad__i"><span class="sxb-triad__n">03</span><span class="sxb-triad__t"><b>${escHTML8(ui("kd_foods_sec04_ladder_t3_b"))}</b> ${escHTML8(ui("kd_foods_sec04_ladder_t3"))}</span></div>
+            <div class="sxb-triad__i"><span class="sxb-triad__n">01</span><span class="sxb-triad__t"><b>${escHTML7(ui("kd_foods_sec04_ladder_t1_b"))}</b> ${escHTML7(ui("kd_foods_sec04_ladder_t1"))}</span></div>
+            <div class="sxb-triad__i"><span class="sxb-triad__n">02</span><span class="sxb-triad__t"><b>${escHTML7(ui("kd_foods_sec04_ladder_t2_b"))}</b> ${escHTML7(ui("kd_foods_sec04_ladder_t2"))}</span></div>
+            <div class="sxb-triad__i"><span class="sxb-triad__n">03</span><span class="sxb-triad__t"><b>${escHTML7(ui("kd_foods_sec04_ladder_t3_b"))}</b> ${escHTML7(ui("kd_foods_sec04_ladder_t3"))}</span></div>
           </div>
-          <p class="sx-note">${escHTML8(ui("kd_foods_sec04_ladder_note"))}</p>
-          <div class="sx-cite">${escHTML8(ui("kd_foods_sec04_ladder_cite"))}</div>
+          <p class="sx-note">${escHTML7(ui("kd_foods_sec04_ladder_note"))}</p>
+          <div class="sx-cite">${escHTML7(ui("kd_foods_sec04_ladder_cite"))}</div>
         </div>
       </div>
 
       <div class="sxbeat">
-        <div class="ds-kicker" style="margin-bottom:12px">${escHTML8(ui("kd_foods_sec04_frt_kicker"))}</div>
+        <div class="ds-kicker" style="margin-bottom:12px">${escHTML7(ui("kd_foods_sec04_frt_kicker"))}</div>
         <p class="sx-p">${emphasize2(ui("kd_foods_sec04_frt_lede"), "pH 1.0", "<strong>", "</strong>")}</p>
         <div class="frt-scene">
           <div class="frt-cell frt-cell--ok">
-            <div class="frt-cell__hd"><span class="frt-cell__k">${escHTML8(ui("kd_foods_sec04_frt_ok_k"))}</span><span class="frt-cell__ph">${escHTML8(ui("kd_foods_sec04_frt_ok_ph"))}</span></div>
-            <div class="frt-cell__t">${escHTML8(ui("kd_foods_sec04_frt_ok_t"))}</div>
+            <div class="frt-cell__hd"><span class="frt-cell__k">${escHTML7(ui("kd_foods_sec04_frt_ok_k"))}</span><span class="frt-cell__ph">${escHTML7(ui("kd_foods_sec04_frt_ok_ph"))}</span></div>
+            <div class="frt-cell__t">${escHTML7(ui("kd_foods_sec04_frt_ok_t"))}</div>
             ${fortressFig("ok")}
-            <p class="frt-cap">${escHTML8(ui("kd_foods_sec04_frt_ok_cap"))}</p>
+            <p class="frt-cap">${escHTML7(ui("kd_foods_sec04_frt_ok_cap"))}</p>
           </div>
           <div class="frt-cell frt-cell--bad">
-            <div class="frt-cell__hd"><span class="frt-cell__k">${escHTML8(ui("kd_foods_sec04_frt_bad_k"))}</span><span class="frt-cell__ph">${escHTML8(ui("kd_foods_sec04_frt_bad_ph"))}</span></div>
-            <div class="frt-cell__t">${escHTML8(ui("kd_foods_sec04_frt_bad_t"))}</div>
+            <div class="frt-cell__hd"><span class="frt-cell__k">${escHTML7(ui("kd_foods_sec04_frt_bad_k"))}</span><span class="frt-cell__ph">${escHTML7(ui("kd_foods_sec04_frt_bad_ph"))}</span></div>
+            <div class="frt-cell__t">${escHTML7(ui("kd_foods_sec04_frt_bad_t"))}</div>
             ${fortressFig("bad")}
-            <p class="frt-cap">${escHTML8(ui("kd_foods_sec04_frt_bad_cap"))}</p>
+            <p class="frt-cap">${escHTML7(ui("kd_foods_sec04_frt_bad_cap"))}</p>
           </div>
         </div>
         <div class="frt-legend">
-          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--ds-accent)"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_moat"))}</span>
-          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-calm)"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_nutrient"))}</span>
-          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-crit)"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_invader"))}</span>
-          <span class="frt-legend__i"><span class="frt-legend__sw" style="border:1px solid var(--ds-ink-faint);background:transparent"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_gas"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--ds-accent)"></span> ${escHTML7(ui("kd_foods_sec04_frt_leg_moat"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-calm)"></span> ${escHTML7(ui("kd_foods_sec04_frt_leg_nutrient"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-crit)"></span> ${escHTML7(ui("kd_foods_sec04_frt_leg_invader"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="border:1px solid var(--ds-ink-faint);background:transparent"></span> ${escHTML7(ui("kd_foods_sec04_frt_leg_gas"))}</span>
         </div>
       </div>
 
       <div class="sxbeat">
         <div class="sx-callout">
-          <div class="sx-callout__k">${escHTML8(ui("kd_foods_sec04_inv_k"))}</div>
+          <div class="sx-callout__k">${escHTML7(ui("kd_foods_sec04_inv_k"))}</div>
           <div class="sx-callout__t">${emphasize2(ui("kd_foods_sec04_inv_t"), ui("kd_foods_sec04_inv_t_em"), "<em>", "</em>")}</div>
           <p class="sx-callout__b">${emphasize2(ui("kd_foods_sec04_inv_b"), ui("kd_foods_sec04_inv_b_mark"), '<mark class="ds-mark rose">', "</mark>")}</p>
         </div>
       </div>
 
       <div class="ds-pull-stat sxbeat">
-        <span class="ds-pull-stat__readout">${escHTML8(ui("kd_foods_sec04_stat_readout"))}</span>
-        <div class="ds-pull-stat__num">${escHTML8(ui("kd_foods_sec04_stat_num"))}</div>
-        <div class="ds-pull-stat__body">${escHTML8(ui("kd_foods_sec04_stat_body"))}<small>${escHTML8(ui("kd_foods_sec04_stat_small"))}</small></div>
+        <span class="ds-pull-stat__readout">${escHTML7(ui("kd_foods_sec04_stat_readout"))}</span>
+        <div class="ds-pull-stat__num">${escHTML7(ui("kd_foods_sec04_stat_num"))}</div>
+        <div class="ds-pull-stat__body">${escHTML7(ui("kd_foods_sec04_stat_body"))}<small>${escHTML7(ui("kd_foods_sec04_stat_small"))}</small></div>
       </div>
 
       ${sec04PullQuote()}
 
       <section class="sxbeat">
-        <div class="ds-kicker" style="margin-bottom:10px">${escHTML8(ui("kd_foods_sec04_cta_kicker"))}</div>
+        <div class="ds-kicker" style="margin-bottom:10px">${escHTML7(ui("kd_foods_sec04_cta_kicker"))}</div>
         <h3 style="font-family:var(--ds-font-display);font-size:2rem;font-weight:800;line-height:1.4;letter-spacing:-.01em;color:var(--ds-ink);margin:0 0 10px">${emphasize2(ui("kd_foods_sec04_cta_h"), ui("kd_foods_sec04_cta_h_em"), '<em style="color:var(--ds-accent-deep);font-style:italic">', "</em>")}</h3>
         <p class="sx-p">${emphasize2(ui("kd_foods_sec04_cta_p"), ui("kd_foods_sec04_cta_p_strong"), "<br><strong>", "</strong>")}</p>
         <div class="ue-strip">${enzStrip()}</div>
         <div class="ue-proof">
           <span class="ue-proof__q">&ldquo;</span>
           <div class="ue-proof__t">${emphasize2(ui("kd_foods_sec04_proof"), ui("kd_foods_sec04_proof_bold"), "<b>", "</b>")}
-            <span class="ue-proof__cite">${escHTML8(ui("kd_foods_sec04_proof_cite"))}</span>
+            <span class="ue-proof__cite">${escHTML7(ui("kd_foods_sec04_proof_cite"))}</span>
           </div>
         </div>
         ${ctaBar()}
@@ -175155,8 +174510,8 @@ Goiter`,
 
       <div class="sxr-wrap">
         <div class="sxr-lead">${emphasize2(ui("kd_foods_sec04_rec_lead"), ui("kd_foods_sec04_rec_lead_b"), "<b>", "</b>")}</div>
-        <h3 class="sxr-h">${escHTML8(ui("kd_foods_sec04_rec_h"))}</h3>
-        <p class="sxr-sub">${escHTML8(ui("kd_foods_sec04_rec_sub"))}</p>
+        <h3 class="sxr-h">${escHTML7(ui("kd_foods_sec04_rec_h"))}</h3>
+        <p class="sxr-sub">${escHTML7(ui("kd_foods_sec04_rec_sub"))}</p>
         ${facetSections([...foodsThesisClaims(), ...foodsEnzymeClaims()])}
       </div>
     </section>
@@ -175207,7 +174562,7 @@ Goiter`,
   }
 
   // assets/js/src/views/knowledge-home.ts
-  function escHTML9(s) {
+  function escHTML8(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function fmt(n) {
@@ -175226,42 +174581,42 @@ Goiter`,
       if (e === null) {
         return "";
       }
-      return `<button class="sh-hint" type="button" data-kd-essential="${escHTML9(e.layout_key)}">${escHTML9(e.common_name)}</button>`;
+      return `<button class="sh-hint" type="button" data-kd-essential="${escHTML8(e.layout_key)}">${escHTML8(e.common_name)}</button>`;
     }
-    return `<button class="sh-hint" type="button" data-kd-condition="${escHTML9(h.slug)}">${escHTML9(conditionDisplayName(h.slug))}</button>`;
+    return `<button class="sh-hint" type="button" data-kd-condition="${escHTML8(h.slug)}">${escHTML8(conditionDisplayName(h.slug))}</button>`;
   }
   var LEGEND_CATS = ["mineral", "vitamin", "amino_acid", "fatty_acid"];
   function shelfTile(e) {
     const layoutKey = getEssentialBySlug(e.slug)?.layout_key ?? e.slug;
     const glyph = essentialGlyph(layoutKey) || e.name.slice(0, 2);
-    return `<button class="sh-tile" data-cat="${escHTML9(e.category)}" data-kd-essential="${escHTML9(layoutKey)}" title="${escHTML9(e.name)}"><span class="sh-tile__sym">${escHTML9(glyph)}</span><span class="sh-tile__nm">${escHTML9(e.name)}</span><span class="sh-tile__ct">${e.distinct_claim_count} ${plural(e.distinct_claim_count, "claim")}</span></button>`;
+    return `<button class="sh-tile" data-cat="${escHTML8(e.category)}" data-kd-essential="${escHTML8(layoutKey)}" title="${escHTML8(e.name)}"><span class="sh-tile__sym">${escHTML8(glyph)}</span><span class="sh-tile__nm">${escHTML8(e.name)}</span><span class="sh-tile__ct">${e.distinct_claim_count} ${plural(e.distinct_claim_count, "claim")}</span></button>`;
   }
   function renderEssentialsShelf() {
     const top = listEssentialPages().slice().sort((a, b) => b.distinct_claim_count - a.distinct_claim_count).slice(0, 18);
-    const legend = LEGEND_CATS.map((cat) => `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML9(ui(`kh_legend_${cat}`))}</span>`).join("");
-    return `<div class="ep-seclabel ep-seclabel--tight">${escHTML9(ui("kh_essentials_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_essentials_hint"))}</span><a data-kd-tab="essentials">${escHTML9(ui("kh_essentials_link"))}</a></div>
+    const legend = LEGEND_CATS.map((cat) => `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML8(ui(`kh_legend_${cat}`))}</span>`).join("");
+    return `<div class="ep-seclabel ep-seclabel--tight">${escHTML8(ui("kh_essentials_label"))} <span class="ep-seclabel__hint">${escHTML8(ui("kh_essentials_hint"))}</span><a data-kd-tab="essentials">${escHTML8(ui("kh_essentials_link"))}</a></div>
     <div class="sh-grid">${top.map(shelfTile).join("")}</div>
-    <div class="ep-legend"><span class="ep-legend__lbl">${escHTML9(ui("kh_legend_label"))}</span>${legend}</div>`;
+    <div class="ep-legend"><span class="ep-legend__lbl">${escHTML8(ui("kh_legend_label"))}</span>${legend}</div>`;
   }
   function condRow(c) {
-    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML9(c.slug)}"><span class="sh-condrow__nm">${escHTML9(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
+    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML8(c.slug)}"><span class="sh-condrow__nm">${escHTML8(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
   }
   function renderConditionsShelf() {
     const conds = listConditionPages();
     const top = conds.slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 8);
     const link = ui("kh_conditions_link").replace("{n}", fmt(conds.length));
-    return `<div class="ep-seclabel">${escHTML9(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML9(link)}</a></div>
+    return `<div class="ep-seclabel">${escHTML8(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML8(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML8(link)}</a></div>
     <div class="sh-condgrid">${top.map(condRow).join("")}</div>`;
   }
   function exploreChip(e) {
-    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML9(e.slug)}">${escHTML9(e.display_name)}</button>`;
+    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML8(e.slug)}">${escHTML8(e.display_name)}</button>`;
   }
   function renderExploreShelf() {
     const topics = homeExploreTopics();
     if (topics.length === 0) {
       return "";
     }
-    return `<div class="ep-seclabel">${escHTML9(ui("kh_explore_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_explore_hint"))}</span><a data-kd-tab="explore">${escHTML9(ui("kh_explore_link"))}</a></div>
+    return `<div class="ep-seclabel">${escHTML8(ui("kh_explore_label"))} <span class="ep-seclabel__hint">${escHTML8(ui("kh_explore_hint"))}</span><a data-kd-tab="explore">${escHTML8(ui("kh_explore_link"))}</a></div>
     <div class="kd-explore-cloud">${topics.map(exploreChip).join("")}</div>`;
   }
   function renderHomeTab() {
@@ -175270,11 +174625,11 @@ Goiter`,
     const hints = HINTS.map(hintChip).join("");
     return `<div class="kd-home">
     <section class="sh-hero">
-      <h1>${escHTML9(ui("kh_hero_headline"))}</h1>
-      <p>${escHTML9(sub).replace("{br}", "<br>")}</p>
+      <h1>${escHTML8(ui("kh_hero_headline"))}</h1>
+      <p>${escHTML8(sub).replace("{br}", "<br>")}</p>
       <div class="sh-hero__search">
         <div class="sh-search">
-          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" placeholder="${escHTML9(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
+          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" placeholder="${escHTML8(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
           <div class="sh-search__results"></div>
         </div>
         <div class="sh-hero__hints">${hints}</div>
@@ -175332,12 +174687,12 @@ Goiter`,
     return a.name.localeCompare(b.name);
   }
   function resRow(m, active) {
-    return `<button class="sh-res${active ? " active" : ""}" type="button" ${m.navAttr}="${escHTML9(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML9(m.name)}</span><span class="sh-res__meta">${m.claimCount} claim${m.claimCount === 1 ? "" : "s"}</span></button>`;
+    return `<button class="sh-res${active ? " active" : ""}" type="button" ${m.navAttr}="${escHTML8(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML8(m.name)}</span><span class="sh-res__meta">${m.claimCount} claim${m.claimCount === 1 ? "" : "s"}</span></button>`;
   }
   function renderHomeSuggestions(query) {
     const matches = homeMatches(query);
     if (matches.length === 0) {
-      return `<div class="sh-res__empty">${escHTML9(ui("kh_search_empty"))}</div>`;
+      return `<div class="sh-res__empty">${escHTML8(ui("kh_search_empty"))}</div>`;
     }
     const shown = [
       ...matches.filter((m) => m.kind === "essential").sort(byRelevance),
@@ -175351,7 +174706,7 @@ Goiter`,
       if (rows.length === 0) {
         return;
       }
-      html += `<div class="sh-res__group">${escHTML9(label)}</div>`;
+      html += `<div class="sh-res__group">${escHTML8(label)}</div>`;
       for (const m of rows) {
         html += resRow(m, idx === 0);
         idx += 1;
@@ -175407,11 +174762,11 @@ Goiter`,
   function collapseWS3(s) {
     return s.replace(/\s+/g, " ").trim();
   }
-  function escHTML10(s) {
+  function escHTML9(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function emph(raw) {
-    return escHTML10(raw).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>");
+    return escHTML9(raw).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>");
   }
   function fill(key, repl = {}) {
     let s = ui(key);
@@ -175438,43 +174793,43 @@ Goiter`,
   }
   function sectionHeader2(num2, kickerHTML, headingKey) {
     return `<div class="kd-orac-sec">
-      <span class="kd-orac-sec__num">${escHTML10(num2)}</span>
+      <span class="kd-orac-sec__num">${escHTML9(num2)}</span>
       <div class="kd-orac-sec__body">
         ${kickerHTML}
-        <h2 class="kd-orac-sec__h">${escHTML10(ui(headingKey))}</h2>
+        <h2 class="kd-orac-sec__h">${escHTML9(ui(headingKey))}</h2>
       </div>
     </div>`;
   }
   function secKicker(key) {
-    return `<div class="kd-orac-sec__k">${escHTML10(ui(key))}</div>`;
+    return `<div class="kd-orac-sec__k">${escHTML9(ui(key))}</div>`;
   }
   var SEV_VARS = ["var(--sev-calm)", "var(--sev-warn)", "var(--sev-dang)", "var(--sev-crit)"];
   function renderMirror(od) {
     const d = od.decades;
     const capKeys = ["kd_orac_dec_cap1", "kd_orac_dec_cap2", "kd_orac_dec_cap3", "kd_orac_dec_cap4"];
     const cols = d.rows.map((r, i) => `<div class="kd-orac-dec">
-      <div class="kd-orac-dec__bar"><div class="kd-orac-dec__fill" style="height:${r.pct}%;--f:${SEV_VARS[i] ?? "var(--sev-crit)"}"><div class="kd-orac-dec__pct" style="bottom:6px;">${r.pct}%<span class="kd-orac-dec__cap" style="display:block;">${escHTML10(ui(capKeys[i] ?? ""))}</span></div></div></div>
-      <div class="kd-orac-dec__age">${escHTML10(ui("kd_orac_dec_age_prefix"))}${escHTML10(r.age)}</div>
-      <div class="kd-orac-dec__lbl">${escHTML10(ui("kd_orac_dec_lbl"))}</div>
+      <div class="kd-orac-dec__bar"><div class="kd-orac-dec__fill" style="height:${r.pct}%;--f:${SEV_VARS[i] ?? "var(--sev-crit)"}"><div class="kd-orac-dec__pct" style="bottom:6px;">${r.pct}%<span class="kd-orac-dec__cap" style="display:block;">${escHTML9(ui(capKeys[i] ?? ""))}</span></div></div></div>
+      <div class="kd-orac-dec__age">${escHTML9(ui("kd_orac_dec_age_prefix"))}${escHTML9(r.age)}</div>
+      <div class="kd-orac-dec__lbl">${escHTML9(ui("kd_orac_dec_lbl"))}</div>
     </div>`).join("");
     return `<div class="kd-orac-mirror">
-    <div class="kd-orac-mirror__k">${escHTML10(ui("kd_orac_mirror_k"))}</div>
+    <div class="kd-orac-mirror__k">${escHTML9(ui("kd_orac_mirror_k"))}</div>
     <h2 class="kd-orac-mirror__h">${fill("kd_orac_mirror_h")}</h2>
     <p class="kd-orac-mirror__body">${fill("kd_orac_mirror_body")}</p>
     <div class="kd-orac-decades">${cols}</div>
-    <div class="kd-orac-mirror__src">${escHTML10(d.cite)}</div>
+    <div class="kd-orac-mirror__src">${escHTML9(d.cite)}</div>
   </div>`;
   }
   function renderSteal(od) {
     const s = od.stolen_years;
     const r = od.rankings;
     const cells = r.points.map((p, i) => `<div class="kd-orac-rank__c">
-      <div class="kd-orac-rank__yr">${escHTML10(String(p.year))}</div>
-      <div class="kd-orac-rank__v" style="color:${SEV_VARS[i] ?? "var(--sev-crit)"}">${escHTML10(String(p.rank))}${ordinal(p.rank)}</div>
+      <div class="kd-orac-rank__yr">${escHTML9(String(p.year))}</div>
+      <div class="kd-orac-rank__v" style="color:${SEV_VARS[i] ?? "var(--sev-crit)"}">${escHTML9(String(p.rank))}${ordinal(p.rank)}</div>
     </div>`).join('<span class="kd-orac-rank__arrow">\u2192</span>');
     return `<div class="kd-orac-steal">
-    <div class="kd-orac-steal__lead">${escHTML10(ui("kd_orac_steal_lead"))}</div>
-    <div class="kd-orac-steal__num">${escHTML10(s.display)}</div>
+    <div class="kd-orac-steal__lead">${escHTML9(ui("kd_orac_steal_lead"))}</div>
+    <div class="kd-orac-steal__num">${escHTML9(s.display)}</div>
     <p class="kd-orac-steal__body">${fill("kd_orac_steal_body", {
       shouldLow: String(s.should_low),
       shouldHigh: String(s.should_high),
@@ -175483,7 +174838,7 @@ Goiter`,
       high: String(s.high)
     })}</p>
     <div class="kd-orac-rank">${cells}</div>
-    <div class="kd-orac-mirror__src">${escHTML10(r.cite)}</div>
+    <div class="kd-orac-mirror__src">${escHTML9(r.cite)}</div>
   </div>`;
   }
   var CHAIN_COLORS = ["#12879b", "#c67d16", "#e0641c", "#c8382a", "#a3182f"];
@@ -175492,8 +174847,8 @@ Goiter`,
       const n = i + 1;
       return `<div class="kd-orac-chain__step" style="--f:${c}">
       <div class="kd-orac-chain__i">${String(n).padStart(2, "0")}</div>
-      <div class="kd-orac-chain__t">${escHTML10(ui(`kd_orac_chain_s${n}_t`))}</div>
-      <div class="kd-orac-chain__d">${escHTML10(ui(`kd_orac_chain_s${n}_d`))}</div>
+      <div class="kd-orac-chain__t">${escHTML9(ui(`kd_orac_chain_s${n}_t`))}</div>
+      <div class="kd-orac-chain__d">${escHTML9(ui(`kd_orac_chain_s${n}_d`))}</div>
     </div>`;
     }).join("");
     return `${sectionHeader2("02", secKicker("kd_orac_chain_k"), "kd_orac_chain_h")}
@@ -175507,21 +174862,21 @@ Goiter`,
     <p class="kd-orac-p">${fill("kd_orac_target_intro")}</p>
     <div class="kd-orac-target">
       <div class="kd-orac-target__main">
-        <div class="kd-orac-target__lead">${escHTML10(ui("kd_orac_target_lead"))}</div>
-        <div class="kd-orac-target__num">${escHTML10(t.low_display)}<em>${DASH}</em>${escHTML10(t.high_display)}<span class="kd-orac-target__unit">${escHTML10(ui("kd_orac_target_unit"))}</span></div>
+        <div class="kd-orac-target__lead">${escHTML9(ui("kd_orac_target_lead"))}</div>
+        <div class="kd-orac-target__num">${escHTML9(t.low_display)}<em>${DASH}</em>${escHTML9(t.high_display)}<span class="kd-orac-target__unit">${escHTML9(ui("kd_orac_target_unit"))}</span></div>
         <p class="kd-orac-target__body">${fill("kd_orac_target_body", { baseAge: String(t.base_age) })}</p>
       </div>
       <div class="kd-orac-target__side">
-        <div class="kd-orac-target__sk">${escHTML10(ui("kd_orac_target_sk"))}</div>
-        <div class="kd-orac-target__sn">${escHTML10(dis.display)}</div>
+        <div class="kd-orac-target__sk">${escHTML9(ui("kd_orac_target_sk"))}</div>
+        <div class="kd-orac-target__sn">${escHTML9(dis.display)}</div>
         <div class="kd-orac-target__sb">${fill("kd_orac_target_sb", { diseaseMin: dis.min_display })}</div>
       </div>
     </div>`;
   }
   function oracPiece(n, mod, repl = {}) {
     return `<div class="kd-orac-piece kd-orac-piece--${mod}">
-      <div class="kd-orac-piece__tag">${escHTML10(ui(`kd_orac_piece${n}_tag`))}</div>
-      <div class="kd-orac-piece__t">${escHTML10(ui(`kd_orac_piece${n}_t`))}</div>
+      <div class="kd-orac-piece__tag">${escHTML9(ui(`kd_orac_piece${n}_tag`))}</div>
+      <div class="kd-orac-piece__t">${escHTML9(ui(`kd_orac_piece${n}_t`))}</div>
       <div class="kd-orac-piece__d">${fill(`kd_orac_piece${n}_d`, repl)}</div>
     </div>`;
   }
@@ -175537,46 +174892,46 @@ Goiter`,
     <div class="kd-orac-pieces">${pieces}</div>
     <div class="kd-orac-abs">
       <div class="kd-orac-abs__txt">${fill("kd_orac_abs_txt")}</div>
-      <button class="kd-orac-abs__btn" type="button" data-kd-tab="foods">${escHTML10(ui("kd_orac_abs_btn"))}</button>
+      <button class="kd-orac-abs__btn" type="button" data-kd-tab="foods">${escHTML9(ui("kd_orac_abs_btn"))}</button>
     </div>
     <p class="kd-orac-p" style="margin-top:34px; margin-bottom:12px; font-weight:700; font-size:1.25rem; text-align:center">${fill("kd_orac_forces_intro", { gap: String(cl.gap), baseAge: String(cl.base), ceiling: String(cl.ceiling) })}</p>
     <div class="kd-orac-forces">
       <div class="kd-orac-force kd-orac-force--a">
-        <div class="kd-orac-force__k">${escHTML10(ui("kd_orac_force_a_k"))}</div>
-        <div class="kd-orac-force__t">${escHTML10(ui("kd_orac_force_a_t"))}</div>
-        <div class="kd-orac-force__d">${escHTML10(ui("kd_orac_force_a_d"))}</div>
-        <div class="kd-orac-force__big">${escHTML10(ui("kd_orac_force_a_big"))}</div>
+        <div class="kd-orac-force__k">${escHTML9(ui("kd_orac_force_a_k"))}</div>
+        <div class="kd-orac-force__t">${escHTML9(ui("kd_orac_force_a_t"))}</div>
+        <div class="kd-orac-force__d">${escHTML9(ui("kd_orac_force_a_d"))}</div>
+        <div class="kd-orac-force__big">${escHTML9(ui("kd_orac_force_a_big"))}</div>
       </div>
       <div class="kd-orac-force__plus">+</div>
       <div class="kd-orac-force kd-orac-force--b">
         <div class="kd-orac-force__k">${fill("kd_orac_force_b_k", { essentials: String(essentialCount()) })}</div>
-        <div class="kd-orac-force__t">${escHTML10(ui("kd_orac_force_b_t"))}</div>
-        <div class="kd-orac-force__d">${escHTML10(ui("kd_orac_force_b_d"))}</div>
-        <div class="kd-orac-force__big">${escHTML10(ui("kd_orac_force_b_big"))}</div>
+        <div class="kd-orac-force__t">${escHTML9(ui("kd_orac_force_b_t"))}</div>
+        <div class="kd-orac-force__d">${escHTML9(ui("kd_orac_force_b_d"))}</div>
+        <div class="kd-orac-force__big">${escHTML9(ui("kd_orac_force_b_big"))}</div>
       </div>
     </div>
     <div class="kd-orac-payoff">
-      <div class="kd-orac-payoff__n">${escHTML10(pay.years_display)}</div>
+      <div class="kd-orac-payoff__n">${escHTML9(pay.years_display)}</div>
       <p class="kd-orac-payoff__b">${fill("kd_orac_payoff_body", { weight: pay.weight_display, baseAge: String(t.base_age) })}</p>
-      <div class="kd-orac-src">${escHTML10(pay.cite)}</div>
+      <div class="kd-orac-src">${escHTML9(pay.cite)}</div>
     </div>`;
   }
   function renderReach(f) {
-    const rows = f.reach.rows.map((r) => `<div class="kd-orac-reach__row"><span class="kd-orac-reach__name">${escHTML10(r.name)}</span><span class="kd-orac-reach__track"><span class="kd-orac-reach__fill" style="width:${Math.min(100, r.pct)}%;--c:var(--${escHTML10(r.color)})"></span>${r.over ? '<span class="kd-orac-reach__over"></span>' : ""}</span><span class="kd-orac-reach__pct">${r.pct}%</span></div>`).join("");
+    const rows = f.reach.rows.map((r) => `<div class="kd-orac-reach__row"><span class="kd-orac-reach__name">${escHTML9(r.name)}</span><span class="kd-orac-reach__track"><span class="kd-orac-reach__fill" style="width:${Math.min(100, r.pct)}%;--c:var(--${escHTML9(r.color)})"></span>${r.over ? '<span class="kd-orac-reach__over"></span>' : ""}</span><span class="kd-orac-reach__pct">${r.pct}%</span></div>`).join("");
     return `${sectionHeader2("04", secKicker("kd_orac_reach_k"), "kd_orac_reach_h")}
     <p class="kd-orac-p">${fill("kd_orac_reach_intro", { target: f.reach.target_display })}</p>
     <div class="kd-orac-reach" id="reach">${rows}</div>
     <div class="kd-orac-reach__cap">${fill("kd_orac_reach_cap", { cite: f.reach.cite })}</div>`;
   }
   function renderScale(f) {
-    const rows = f.scale.rows.map((r) => `<div class="kd-orac-scale__row"><span class="kd-orac-scale__nm">${escHTML10(r.name)}</span><span class="kd-orac-scale__tr"><span class="kd-orac-scale__fl" style="width:${r.bar}%;--c:var(--${escHTML10(r.color)})"></span></span><span class="kd-orac-scale__vl">${escHTML10(r.value_display)}</span></div>`).join("");
+    const rows = f.scale.rows.map((r) => `<div class="kd-orac-scale__row"><span class="kd-orac-scale__nm">${escHTML9(r.name)}</span><span class="kd-orac-scale__tr"><span class="kd-orac-scale__fl" style="width:${r.bar}%;--c:var(--${escHTML9(r.color)})"></span></span><span class="kd-orac-scale__vl">${escHTML9(r.value_display)}</span></div>`).join("");
     return `${sectionHeader2("05", secKicker("kd_orac_scale_k"), "kd_orac_scale_h")}
     <div class="kd-orac-scale" id="scale">${rows}<p class="kd-orac-scale__note">${fill("kd_orac_scale_note", { cloves: f.scale.max_display })}</p></div>`;
   }
   function renderTables(f) {
     const tbls = f.tables.categories.map((cat) => {
-      const body = cat.rows.map((r) => `<div class="kd-orac-row"><span class="kd-orac-row__n">${escHTML10(r.name)}</span><span class="kd-orac-row__v">${escHTML10(r.value_display)}</span><span class="kd-orac-row__bar" style="width:${r.bar}%;--c:var(--${escHTML10(cat.color)})"></span></div>`).join("");
-      return `<div class="kd-orac-tbl"><div class="kd-orac-tbl__hd" style="--c:var(--${escHTML10(cat.color)})"><span class="kd-orac-tbl__ttl">${escHTML10(cat.label)}</span><span class="kd-orac-tbl__meta">${escHTML10(cat.basis)}</span></div><div class="kd-orac-tbl__body">${body}</div></div>`;
+      const body = cat.rows.map((r) => `<div class="kd-orac-row"><span class="kd-orac-row__n">${escHTML9(r.name)}</span><span class="kd-orac-row__v">${escHTML9(r.value_display)}</span><span class="kd-orac-row__bar" style="width:${r.bar}%;--c:var(--${escHTML9(cat.color)})"></span></div>`).join("");
+      return `<div class="kd-orac-tbl"><div class="kd-orac-tbl__hd" style="--c:var(--${escHTML9(cat.color)})"><span class="kd-orac-tbl__ttl">${escHTML9(cat.label)}</span><span class="kd-orac-tbl__meta">${escHTML9(cat.basis)}</span></div><div class="kd-orac-tbl__body">${body}</div></div>`;
     }).join("");
     return `${sectionHeader2("06", secKicker("kd_orac_tables_k"), "kd_orac_tables_h")}
     <p class="kd-orac-p">${fill("kd_orac_tables_intro")}</p>
@@ -175590,20 +174945,20 @@ Goiter`,
     const L = p.leader;
     const li = formInfo(L.form);
     const lStyle = li.color.length > 0 ? ` style="--fc:${li.color}"` : "";
-    const leader = `<button type="button" class="kd-orac-supp__leader" data-kd-product="${escHTML10(L.product_id)}"${lStyle}>
-      <span class="kd-orac-supp__tag">${escHTML10(ui("kd_orac_supp_leader_tag"))}</span>
-      <span class="kd-orac-supp__lead-top"><span class="kd-orac-supp__lead-name">${escHTML10(L.name)}</span><span class="kd-orac-supp__form">${escHTML10(li.label)}</span></span>
-      <span class="kd-orac-supp__lead-meta"><span class="v"><strong>${escHTML10(L.value_display)}</strong> ${escHTML10(ui("kd_orac_supp_per_dollar"))}</span><span class="kd-orac-supp__dot" aria-hidden="true">\xB7</span><span class="p">${escHTML10(L.price_display)} ${escHTML10(ui("kd_orac_supp_wholesale"))}</span></span>
-      <span class="kd-orac-supp__lead-score"><span class="n">${escHTML10(L.orac_display)}</span><span class="u">${escHTML10(ui("kd_orac_supp_unit"))}</span></span>
+    const leader = `<button type="button" class="kd-orac-supp__leader" data-kd-product="${escHTML9(L.product_id)}"${lStyle}>
+      <span class="kd-orac-supp__tag">${escHTML9(ui("kd_orac_supp_leader_tag"))}</span>
+      <span class="kd-orac-supp__lead-top"><span class="kd-orac-supp__lead-name">${escHTML9(L.name)}</span><span class="kd-orac-supp__form">${escHTML9(li.label)}</span></span>
+      <span class="kd-orac-supp__lead-meta"><span class="v"><strong>${escHTML9(L.value_display)}</strong> ${escHTML9(ui("kd_orac_supp_per_dollar"))}</span><span class="kd-orac-supp__dot" aria-hidden="true">\xB7</span><span class="p">${escHTML9(L.price_display)} ${escHTML9(ui("kd_orac_supp_wholesale"))}</span></span>
+      <span class="kd-orac-supp__lead-score"><span class="n">${escHTML9(L.orac_display)}</span><span class="u">${escHTML9(ui("kd_orac_supp_unit"))}</span></span>
     </button>`;
     const rows = p.rows.map((r) => {
       const fi = formInfo(r.form);
       const barStyle = fi.color.length > 0 ? `width:${r.bar}%;--fc:${fi.color}` : `width:${r.bar}%`;
       const badge = fi.color.length > 0 ? ` style="--fc:${fi.color}"` : "";
-      return `<button type="button" class="kd-orac-supp__row" data-kd-product="${escHTML10(r.product_id)}">
-      <span class="kd-orac-supp__row-head"><span class="kd-orac-supp__row-name">${escHTML10(r.name)}</span><span class="kd-orac-supp__form"${badge}>${escHTML10(fi.label)}</span></span>
+      return `<button type="button" class="kd-orac-supp__row" data-kd-product="${escHTML9(r.product_id)}">
+      <span class="kd-orac-supp__row-head"><span class="kd-orac-supp__row-name">${escHTML9(r.name)}</span><span class="kd-orac-supp__form"${badge}>${escHTML9(fi.label)}</span></span>
       <span class="kd-orac-supp__row-track"><span class="kd-orac-supp__row-fill" style="${barStyle}"></span></span>
-      <span class="kd-orac-supp__row-nums"><span class="s">${escHTML10(r.orac_display)}</span><span class="sub"><span class="v">${escHTML10(r.value_display)}</span> ${escHTML10(ui("kd_orac_supp_per_dollar"))} \xB7 ${escHTML10(r.price_display)}</span></span>
+      <span class="kd-orac-supp__row-nums"><span class="s">${escHTML9(r.orac_display)}</span><span class="sub"><span class="v">${escHTML9(r.value_display)}</span> ${escHTML9(ui("kd_orac_supp_per_dollar"))} \xB7 ${escHTML9(r.price_display)}</span></span>
       <span class="kd-orac-supp__go" aria-hidden="true">\u203A</span>
     </button>`;
     }).join("");
@@ -175613,7 +174968,7 @@ Goiter`,
     <div class="kd-orac-supp" id="supplements">
       ${leader}
       <div class="kd-orac-supp__rows">${rows}</div>
-      ${cap.length > 0 ? `<div class="kd-orac-supp__cap">${escHTML10(cap)}</div>` : ""}
+      ${cap.length > 0 ? `<div class="kd-orac-supp__cap">${escHTML9(cap)}</div>` : ""}
     </div>`;
   }
   function renderFoods(f) {
@@ -175635,15 +174990,15 @@ Goiter`,
     const fullAnswer = c.answer.trim() === c.answer_short.trim() ? "" : `<p class="kd-orac-claim__full">${glossify(c.answer)}</p>`;
     return `<details class="kd-orac-claim">
       <summary class="kd-orac-claim__summary">
-        <div class="kd-orac-claim__q">${escHTML10(c.question)}</div>
+        <div class="kd-orac-claim__q">${escHTML9(c.question)}</div>
         <span class="kd-orac-claim__chev" aria-hidden="true">\u25B8</span>
-        <p class="kd-orac-claim__a">${escHTML10(c.answer_short)}</p>
-        <div class="kd-orac-claim__src">${escHTML10(composeShortCite(c))}</div>
+        <p class="kd-orac-claim__a">${escHTML9(c.answer_short)}</p>
+        <div class="kd-orac-claim__src">${escHTML9(composeShortCite(c))}</div>
       </summary>
       <div class="kd-orac-claim__body">
         ${fullAnswer}
         <blockquote class="kd-orac-claim__verbatim">\u201C${glossify(collapseWS3(c.verbatim))}\u201D</blockquote>
-        ${cite.length > 0 ? `<div class="kd-orac-claim__cite">\u2014 Dr. Joel Wallach \xB7 ${escHTML10(cite)}</div>` : ""}
+        ${cite.length > 0 ? `<div class="kd-orac-claim__cite">\u2014 Dr. Joel Wallach \xB7 ${escHTML9(cite)}</div>` : ""}
       </div>
     </details>`;
   }
@@ -175655,7 +175010,7 @@ Goiter`,
         return "";
       }
       return `<div class="kd-orac-fgroup">
-      <div class="kd-orac-fgroup__h">${escHTML10(facetLabel(facet))}<span class="kd-orac-fgroup__n">${inFacet.length}</span></div>
+      <div class="kd-orac-fgroup__h">${escHTML9(facetLabel(facet))}<span class="kd-orac-fgroup__n">${inFacet.length}</span></div>
       <div class="kd-orac-claimlist">${inFacet.map(oracClaimCard).join("")}</div>
     </div>`;
     }).join("");
@@ -175665,18 +175020,18 @@ Goiter`,
     const od = oracData();
     const ofd = oracFoodsData();
     const opd = oracProductsData();
-    const claimsKicker = `<div class="kd-orac-sec__k">${escHTML10(ui("kd_orac_claims_kicker").replace("{n}", String(claims.length)))}</div>`;
+    const claimsKicker = `<div class="kd-orac-sec__k">${escHTML9(ui("kd_orac_claims_kicker").replace("{n}", String(claims.length)))}</div>`;
     return `<div class="kt-page kd-orac">
     <header class="kd-orac-hero">
       <div class="kd-orac-eyebrow">
-        <span class="kd-orac-eyebrow__l">${escHTML10(ui("kd_orac_eyebrow_l"))}</span>
+        <span class="kd-orac-eyebrow__l">${escHTML9(ui("kd_orac_eyebrow_l"))}</span>
         <span class="kd-orac-eyebrow__rule"></span>
-        <span class="kd-orac-eyebrow__r">${escHTML10(ui("kd_orac_eyebrow_r"))}</span>
+        <span class="kd-orac-eyebrow__r">${escHTML9(ui("kd_orac_eyebrow_r"))}</span>
       </div>
       <div class="kd-orac-hd">
         <span class="kd-orac-hd__num">01</span>
         <div>
-          <h1 class="kd-orac-hero__h"><span class="l1">${escHTML10(ui("kd_orac_hero_hl1"))}</span><span class="l2">${escHTML10(ui("kd_orac_hero_hl2"))}</span></h1>
+          <h1 class="kd-orac-hero__h"><span class="l1">${escHTML9(ui("kd_orac_hero_hl1"))}</span><span class="l2">${escHTML9(ui("kd_orac_hero_hl2"))}</span></h1>
           <p class="kd-orac-hero__deck">${emph(ui("kd_orac_hero_deck"))}</p>
         </div>
       </div>
@@ -175685,19 +175040,19 @@ Goiter`,
     ${od !== null ? renderNarrative(od, ofd, opd) : ""}
 
     ${sectionHeader2("09", claimsKicker, "kd_orac_claims_h")}
-    <p class="kd-orac-p">${escHTML10(ui("kd_orac_claims_intro"))}</p>
+    <p class="kd-orac-p">${escHTML9(ui("kd_orac_claims_intro"))}</p>
     <div class="kd-orac-claims">${oracClaimGroups(claims)}</div>
   </div>`;
   }
 
   // assets/js/src/views/knowledge-topic.ts
-  function escHTML11(s) {
+  function escHTML10(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function relPill(slug) {
     const t = relTarget(slug);
     const name = displayName2(slug);
-    return t === null ? `<span class="kt-pill kt-pill--static">${escHTML11(name)}</span>` : `<button class="kt-pill" type="button" ${t.attr}="${escHTML11(t.val)}">${escHTML11(name)}</button>`;
+    return t === null ? `<span class="kt-pill kt-pill--static">${escHTML10(name)}</span>` : `<button class="kt-pill" type="button" ${t.attr}="${escHTML10(t.val)}">${escHTML10(name)}</button>`;
   }
   function relTarget(slug) {
     const essAttr = (s) => {
@@ -175728,27 +175083,27 @@ Goiter`,
     const groups = facetGroups(slug);
     const lede = entityLede(slug);
     const sym = e.symbol ?? "";
-    const symHTML = sym.length > 0 ? `<span class="kt-sym">${escHTML11(sym)}</span>` : "";
+    const symHTML = sym.length > 0 ? `<span class="kt-sym">${escHTML10(sym)}</span>` : "";
     const rels = e.related.map(relPill).join("");
-    const relBlock = rels.length > 0 ? `<div class="kt-rel"><span class="kt-rel__lbl">${escHTML11(ui("kt_related"))}</span>${rels}</div>` : "";
+    const relBlock = rels.length > 0 ? `<div class="kt-rel"><span class="kt-rel__lbl">${escHTML10(ui("kt_related"))}</span>${rels}</div>` : "";
     const nClaims = groups.reduce((n, g) => n + g.claims.length, 0);
     const books = booksForSubject(slug);
     const noun = plural(nClaims, "claim");
     const meta = books.length > 0 ? ui("kt_meta_full").replace("{n}", String(nClaims)).replace("{noun}", noun).replace("{books}", books.join(", ")) : ui("kt_meta").replace("{n}", String(nClaims)).replace("{noun}", noun);
-    const facetsHTML = groups.map((g) => `<details class="kd-ep-facet" data-facet="${escHTML11(g.facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML11(g.label)}</span><span class="kd-ep-facet__count">${g.claims.length}</span></summary>
+    const facetsHTML = groups.map((g) => `<details class="kd-ep-facet" data-facet="${escHTML10(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML10(g.label)}</span><span class="kd-ep-facet__count">${g.claims.length}</span></summary>
       <div class="kd-ep-facet__body">${g.claims.map(renderSearchCard).join("")}</div>
     </details>`).join("");
     return `<div class="kt-page kd-ep">
     <header class="kt-hero">
       <div class="kt-hero__top">
-        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML11(e.type)} \xB7 <button type="button" class="kt-kicker__link" data-kd-action="explore-home">${escHTML11(ui("kt_kicker"))}</button></span>
-        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML11(fromExplore ? ui("kt_back") : ui("kt_back_generic"))}</button>
+        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML10(e.type)} \xB7 <button type="button" class="kt-kicker__link" data-kd-action="explore-home">${escHTML10(ui("kt_kicker"))}</button></span>
+        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML10(fromExplore ? ui("kt_back") : ui("kt_back_generic"))}</button>
       </div>
-      <div class="kt-title">${symHTML}<h1>${escHTML11(e.common_name ?? e.display_name)}</h1></div>
-      ${lede.length > 0 ? `<p class="kt-lede">${escHTML11(lede)}</p>` : ""}
+      <div class="kt-title">${symHTML}<h1>${escHTML10(e.common_name ?? e.display_name)}</h1></div>
+      ${lede.length > 0 ? `<p class="kt-lede">${escHTML10(lede)}</p>` : ""}
       ${relBlock}
-      <div class="kt-meta">${escHTML11(meta)}</div>
+      <div class="kt-meta">${escHTML10(meta)}</div>
     </header>
     ${facetsHTML}
   </div>`;
@@ -175858,7 +175213,7 @@ Goiter`,
     return out;
   }
   var ESS_SUBSECTIONS = buildSubsections();
-  function escHTML12(s) {
+  function escHTML11(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   var CRUMB_MAX = 6;
@@ -175887,7 +175242,7 @@ Goiter`,
       return "";
     }
     const items = trail.map(
-      (c, i) => i === trail.length - 1 ? `<span class="kd-crumb kd-crumb--here">${escHTML12(c.label)}</span>` : `<button class="kd-crumb" type="button" data-kd-crumb="${i}">${escHTML12(c.label)}</button>`
+      (c, i) => i === trail.length - 1 ? `<span class="kd-crumb kd-crumb--here">${escHTML11(c.label)}</span>` : `<button class="kd-crumb" type="button" data-kd-crumb="${i}">${escHTML11(c.label)}</button>`
     ).join('<span class="kd-crumb__sep" aria-hidden="true">\u203A</span>');
     return `<nav class="kd-crumbs" aria-label="Breadcrumb">${items}</nav>`;
   }
@@ -175908,15 +175263,15 @@ Goiter`,
     const groupsHTML = ESS_SUBSECTIONS.map((group) => {
       const tilesHTML = group.items.map((e) => {
         const sel = e.key === selectedKey ? " is-selected" : "";
-        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML12(e.category)}" data-kd-essential="${escHTML12(e.key)}" title="${escHTML12(e.name)}"><span class="sh-tile__sym">${escHTML12(e.symbol)}</span><span class="sh-tile__nm">${escHTML12(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML12(plural(e.claimCount, "claim"))}</span></button>`;
+        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML11(e.category)}" data-kd-essential="${escHTML11(e.key)}" title="${escHTML11(e.name)}"><span class="sh-tile__sym">${escHTML11(e.symbol)}</span><span class="sh-tile__nm">${escHTML11(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML11(plural(e.claimCount, "claim"))}</span></button>`;
       }).join("");
       const key = SEC_LABEL_KEY[group.label];
       const label = key !== void 0 ? ui(key) : group.label;
-      return `<div class="sh-subhead">${escHTML12(label)}</div><div class="sh-grid${group.wide ? " sh-grid--wide" : ""}">${tilesHTML}</div>`;
+      return `<div class="sh-subhead">${escHTML11(label)}</div><div class="sh-grid${group.wide ? " sh-grid--wide" : ""}">${tilesHTML}</div>`;
     }).join("");
     return `${deepHTML}${groupsHTML}`;
   }
-  function renderTab2(tab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic, fromProductsTab) {
+  function renderTab(tab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic, fromProductsTab) {
     if (selectedTopic !== null) {
       const page = renderTopicPage(selectedTopic, tab === "explore");
       if (page.length > 0) {
@@ -175940,7 +175295,7 @@ Goiter`,
         return renderProductsTab(selectedProduct, fromProductsTab);
     }
   }
-  function renderShell2(activeTab, selectedKey, selectedCondition, selectedProduct, selectedTopic, trail) {
+  function renderShell(activeTab, selectedKey, selectedCondition, selectedProduct, selectedTopic, trail) {
     const snapshot = getOrCompute();
     const productsCount = productCount();
     const tabs = [
@@ -175951,11 +175306,11 @@ Goiter`,
       { id: "explore", label: ui("kd_tab_explore"), count: `${exploreEntities().length} TOPICS` },
       { id: "products", label: ui("kd_tab_products"), count: `${productsCount} KNOWN` }
     ];
-    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML12(t.label)}</button>`).join("");
+    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML11(t.label)}</button>`).join("");
     const fromProductsTab = trail.length === 0 || trail[0]?.type === "tab" && trail[0].val === "products";
     return `
     <header class="kd-knh">
-      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML12(ui("kd_mark"))}</b></div>
+      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML11(ui("kd_mark"))}</b></div>
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">\xD7</button></div>
     </header>
@@ -175965,7 +175320,7 @@ Goiter`,
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">\xD7</button>
       <span class="kd-search-kbd">/</span>
     </div>` : ""}
-    <div class="kd-body">${renderCrumbs(trail)}${renderTab2(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic, fromProductsTab)}</div>`;
+    <div class="kd-body">${renderCrumbs(trail)}${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic, fromProductsTab)}</div>`;
   }
   var KD_SEARCH_ITEM_SELECTOR = {
     home: ".kd-home",
@@ -176101,7 +175456,7 @@ Goiter`,
     }
     return visible;
   }
-  function mount3(container) {
+  function mount2(container) {
     let isOpen = false;
     let activeTab = "home";
     let selectedEssential = null;
@@ -176111,7 +175466,7 @@ Goiter`,
     let trail = [];
     let searchQuery = "";
     const render = () => {
-      container.innerHTML = renderShell2(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedTopic, trail);
+      container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedTopic, trail);
       if (searchQuery.length > 0) {
         const input = container.querySelector(".kd-search-input");
         if (input !== null) {
@@ -180908,7 +180263,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   }
 
   // assets/js/src/views/profile.ts
-  function escHTML13(s) {
+  function escHTML12(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -180954,15 +180309,15 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     return map[k];
   }
   function renderLogEntry(entry) {
-    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML13(entry.detail)}</div>` : "";
+    const detailHTML = entry.detail !== void 0 && entry.detail.length > 0 ? `<div class="pf-log-entry__detail">${escHTML12(entry.detail)}</div>` : "";
     return `
-    <article class="pf-log-entry" data-log-id="${escHTML13(entry.id)}">
+    <article class="pf-log-entry" data-log-id="${escHTML12(entry.id)}">
       <header class="pf-log-entry__head">
-        <span class="pf-log-entry__ts">${escHTML13(formatTs(entry.ts))}</span>
-        <span class="pf-log-entry__surface">${escHTML13(entry.surface)}</span>
-        <span class="${kindClass(entry.kind)}">${escHTML13(kindLabel2(entry.kind))}</span>
+        <span class="pf-log-entry__ts">${escHTML12(formatTs(entry.ts))}</span>
+        <span class="pf-log-entry__surface">${escHTML12(entry.surface)}</span>
+        <span class="${kindClass(entry.kind)}">${escHTML12(kindLabel2(entry.kind))}</span>
       </header>
-      <h4 class="pf-log-entry__summary">${escHTML13(entry.summary)}</h4>
+      <h4 class="pf-log-entry__summary">${escHTML12(entry.summary)}</h4>
       ${detailHTML}
     </article>
   `;
@@ -181036,9 +180391,9 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     }
     return `
     <div class="pf-build-card">
-      <div class="pf-build-card__ts">${escHTML13(formatTs(lastBuild.ts))}</div>
-      <h3 class="pf-build-card__summary">${escHTML13(lastBuild.summary)}</h3>
-      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML13(lastBuild.detail)}</pre>` : ""}
+      <div class="pf-build-card__ts">${escHTML12(formatTs(lastBuild.ts))}</div>
+      <h3 class="pf-build-card__summary">${escHTML12(lastBuild.summary)}</h3>
+      ${lastBuild.detail !== void 0 ? `<pre class="pf-build-card__detail">${escHTML12(lastBuild.detail)}</pre>` : ""}
     </div>
   `;
   }
@@ -181051,7 +180406,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     }
     return renderBuildTab();
   }
-  function renderShell3(tab, totalEntries) {
+  function renderShell2(tab, totalEntries) {
     return `
     <div class="pf-panel" role="dialog" aria-label="Profile">
       <header class="pf-panel__head">
@@ -181126,10 +180481,10 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       cipherInterval = null;
     }
   }
-  function mount4(container) {
+  function mount3(container) {
     let tab = "log";
     const render = () => {
-      container.innerHTML = renderShell3(tab, getEntries().length);
+      container.innerHTML = renderShell2(tab, getEntries().length);
     };
     const onClick = (ev) => {
       const target = ev.target;
@@ -181175,7 +180530,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     { label: "Amino acids", bucket: "aminos", hue: "#5aa82c" },
     { label: "Fatty acids", bucket: "fatty-acids", hue: "#8a4fae" }
   ];
-  function escHTML14(s) {
+  function escHTML13(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -181187,7 +180542,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   function relEdited(iso) {
     const then = Date.parse(`${iso}T00:00:00`);
     if (Number.isNaN(then)) {
-      return escHTML14(iso);
+      return escHTML13(iso);
     }
     const today2 = /* @__PURE__ */ new Date();
     const start = Date.parse(`${today2.toISOString().slice(0, 10)}T00:00:00`);
@@ -181321,7 +180676,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   function renderSwatches(selected) {
     return SLOT_COLOURS.map((h) => {
       const on2 = h === selected ? " is-on" : "";
-      return `<button type="button" class="ck-swatch${on2}" style="--h:${escHTML14(h)}" data-swatch="${escHTML14(h)}" aria-pressed="${h === selected ? "true" : "false"}" aria-label="${escHTML14(h)}"></button>`;
+      return `<button type="button" class="ck-swatch${on2}" style="--h:${escHTML13(h)}" data-swatch="${escHTML13(h)}" aria-pressed="${h === selected ? "true" : "false"}" aria-label="${escHTML13(h)}"></button>`;
     }).join("");
   }
   function renderFilledSlot(slot, active, covered, showDelete) {
@@ -181330,16 +180685,16 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     const state = active ? "ck-slot--active" : "ck-slot--saved";
     const items = slot.items.length;
     return `
-  <div class="ck-slot ck-slot--filled ${state}" role="tab" aria-selected="${active ? "true" : "false"}" tabindex="0" data-slot="${escHTML14(slot.id)}" style="--sc:${escHTML14(hue)}" aria-label="${escHTML14(slot.name)}, ${active ? "active save slot" : "saved slot"}, ${covered} of ${essentialCount()} covered, ${items} ${items === 1 ? "item" : "items"}, ${escHTML14(relEdited(slot.editedAt))}">
+  <div class="ck-slot ck-slot--filled ${state}" role="tab" aria-selected="${active ? "true" : "false"}" tabindex="0" data-slot="${escHTML13(slot.id)}" style="--sc:${escHTML13(hue)}" aria-label="${escHTML13(slot.name)}, ${active ? "active save slot" : "saved slot"}, ${covered} of ${essentialCount()} covered, ${items} ${items === 1 ? "item" : "items"}, ${escHTML13(relEdited(slot.editedAt))}">
     <div class="ck-slot__top">
       <div class="ck-slot__head">
-        <span class="ck-slot__name" data-slot-name title="${escHTML14(slot.name)}">${escHTML14(slot.name)}</span>
+        <span class="ck-slot__name" data-slot-name title="${escHTML13(slot.name)}">${escHTML13(slot.name)}</span>
         <button type="button" class="ck-slot__pencil" data-slot-rename aria-label="Rename this save" title="Rename">${PENCIL_SVG}</button>
         ${showDelete ? `<button type="button" class="ck-slot__pencil ck-slot__trash" data-slot-delete aria-label="Delete this save" title="Delete">${TRASH_SVG}</button>` : ""}
       </div>
       <div class="ck-slot__body">
         <span class="ck-slot__cov"><span class="ck-slot__num">${covered}</span><span class="ck-slot__den">/${essentialCount()}</span></span>
-        <span class="ck-slot__meta">${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML14(relEdited(slot.editedAt))}</span>
+        <span class="ck-slot__meta">${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML13(relEdited(slot.editedAt))}</span>
       </div>
     </div>
     <div class="ck-slot__tray">
@@ -181399,7 +180754,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       const emptyCls = bucket.covered === 0 ? " ck-cat--empty" : "";
       return `
       <div class="ck-cat${emptyCls}">
-        <span class="ck-cat__id"><span class="ck-cat__dot" style="--cc:${row.hue}"></span><span class="ck-cat__name">${escHTML14(row.label)}</span></span>
+        <span class="ck-cat__id"><span class="ck-cat__dot" style="--cc:${row.hue}"></span><span class="ck-cat__name">${escHTML13(row.label)}</span></span>
         <span class="ck-cat__meter"><i style="width:${pct.toFixed(1)}%"></i></span>
         <span class="ck-cat__frac"><b>${bucket.covered}</b>/${bucket.total}</span>
       </div>`;
@@ -181417,8 +180772,8 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     <section class="ck-console" data-rise="2" aria-label="Coverage gauge">
       <div class="ck-console__bar">
         <span class="ck-console__live"></span>
-        <span class="ck-console__label">Coverage \xB7 <b>${escHTML14(active?.name ?? "Regimen")}</b></span>
-        <span class="ck-console__tag">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML14(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</span>
+        <span class="ck-console__label">Coverage \xB7 <b>${escHTML13(active?.name ?? "Regimen")}</b></span>
+        <span class="ck-console__tag">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML13(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</span>
       </div>
       <div class="ck-hero">
         ${renderGauge(field.covered, field.goalGap)}
@@ -181438,19 +180793,19 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       </div>
     </section>`;
   }
-  function renderGoals2(goals) {
+  function renderGoals(goals) {
     const chips = goals.map((g, i) => `
-    <span class="gchip" style="--gc:${escHTML14(GOAL_HUES[i] ?? GOAL_HUES[0])}"><span class="gchip__dot"></span><span class="gchip__label">${escHTML14(g.name)}</span><button class="gchip__x" type="button" data-goal-remove="${escHTML14(g.id)}" aria-label="Remove ${escHTML14(g.name)}">\xD7</button></span>`).join("");
+    <span class="gchip" style="--gc:${escHTML13(GOAL_HUES[i] ?? GOAL_HUES[0])}"><span class="gchip__dot"></span><span class="gchip__label">${escHTML13(g.name)}</span><button class="gchip__x" type="button" data-goal-remove="${escHTML13(g.id)}" aria-label="Remove ${escHTML13(g.name)}">\xD7</button></span>`).join("");
     const add = goals.length < MAX_GOALS ? '<span class="gchip gchip--add" data-goal-add><span class="gchip__label">\uFF0B Add goal</span></span>' : "";
     return `
     <div class="goalstrip ck-goals" data-rise="3">
-      <span class="goalstrip__eyebrow">Steering goals \xB7 ${escHTML14(loadSlots().slots.find((s) => s.id === loadSlots().activeSlot)?.name ?? "Regimen")}</span>
+      <span class="goalstrip__eyebrow">Steering goals \xB7 ${escHTML13(loadSlots().slots.find((s) => s.id === loadSlots().activeSlot)?.name ?? "Regimen")}</span>
       ${chips}${add}
     </div>`;
   }
   function renderGoalMenu(goals) {
     const picked = new Set(goals.map((g) => g.id));
-    const options = LAYOUT4.goals.filter((g) => !picked.has(g.id)).map((g) => `<button type="button" class="ck-goalmenu__opt" data-goal-pick="${escHTML14(g.id)}">${escHTML14(g.name)}</button>`).join("");
+    const options = LAYOUT4.goals.filter((g) => !picked.has(g.id)).map((g) => `<button type="button" class="ck-goalmenu__opt" data-goal-pick="${escHTML13(g.id)}">${escHTML13(g.name)}</button>`).join("");
     return `<div class="ck-goalmenu" data-goal-menu hidden>${options}</div>`;
   }
   function wantedSlugs2(goals) {
@@ -181586,20 +180941,20 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     const items = active?.items.length ?? 0;
     const ordinal2 = String(Math.max(0, doc.slots.findIndex((s) => s.id === doc.activeSlot)) + 1).padStart(2, "0");
     const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
-    const options = names.map((n) => `<option value="${escHTML14(n)}"></option>`).join("");
+    const options = names.map((n) => `<option value="${escHTML13(n)}"></option>`).join("");
     return `
     <aside class="ck-rail" data-rise="5">
       <section class="rail-panel">
         <div class="rail-panel__head">
           <div class="rail-panel__eyebrow">Active stack</div>
-          <div class="rail-panel__title">${escHTML14(active?.name ?? "Regimen")}</div>
-          <div class="rail-panel__meta">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML14(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</div>
+          <div class="rail-panel__title">${escHTML13(active?.name ?? "Regimen")}</div>
+          <div class="rail-panel__meta">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML13(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</div>
         </div>
         <div class="rail-list" data-rail-list></div>
       </section>
       <section class="ck-addcard">
         <div class="ck-addcard__head">
-          <span class="ck-addcard__eyebrow">Add to ${escHTML14(active?.name ?? "Regimen")}</span>
+          <span class="ck-addcard__eyebrow">Add to ${escHTML13(active?.name ?? "Regimen")}</span>
           <span class="ck-addcard__sub">products</span>
         </div>
         <label class="ck-addfield">
@@ -181629,7 +180984,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       saveRgOverride(id, patch);
     }
   }
-  function mount5(container) {
+  function mount4(container) {
     let animated = false;
     let undoTimer = null;
     const syncStackHeight = () => {
@@ -181670,7 +181025,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
         <div class="coverage-grid ck-grid">
           <div class="coverage-main ck-main">
             ${renderConsole(field)}
-            ${renderGoals2(goals)}
+            ${renderGoals(goals)}
             ${renderGoalMenu(goals)}
             <div class="recs ck-recs" data-rise="4">
               <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><span class="ck-recs__note">Products, ranked by your goals</span></div>
@@ -181957,7 +181312,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   }
 
   // assets/js/src/views/scanner.ts
-  function escHTML15(s) {
+  function escHTML14(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -181987,9 +181342,9 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     const body = done ? `<div class="vd-scan">
         <button class="ds-btn-primary vd-newscan" type="button" data-sc-new><b aria-hidden="true">+</b> New Scan</button>
         <div class="vd-scan__thumb">
-          ${dataUrl !== null ? `<img class="vd-scan__img" src="${escHTML15(dataUrl)}" alt="Your scanned label">` : ""}
+          ${dataUrl !== null ? `<img class="vd-scan__img" src="${escHTML14(dataUrl)}" alt="Your scanned label">` : ""}
           <div class="vd-scan__meta">
-            <span class="vd-scan__file">${escHTML15(fileName ?? "label image")}</span>
+            <span class="vd-scan__file">${escHTML14(fileName ?? "label image")}</span>
             <span class="vd-scan__done">&check; decoded locally \xB7 reads confirmed below</span>
             <span class="vd-yours">Yours \xB7 user-scanned</span>
           </div>
@@ -182018,7 +181373,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   }
   function nutrientRow(n, i, added) {
     const name = typeof n.name === "string" ? n.name : "";
-    const amt = `${n.amount ?? ""} ${escHTML15(n.unit ?? "")}`.trim();
+    const amt = `${n.amount ?? ""} ${escHTML14(n.unit ?? "")}`.trim();
     const ess = matchEssential(name);
     if (ess !== null) {
       const plus = added.has(ess.name) ? '<span class="vd-nrow__r">+1</span>' : '<span class="vd-nrow__cov">\xB7 +0 (already covered)</span>';
@@ -182026,20 +181381,20 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       <div class="vd-nrow is-ok" data-nrow="${i}">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
-          <input class="vd-edit" value="${escHTML15(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
-          <span class="vd-nrow__amt">${escHTML15(amt)}</span>
-          <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML15(ess.name)}</b>${plus}</span>
+          <input class="vd-edit" value="${escHTML14(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt">${escHTML14(amt)}</span>
+          <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML14(ess.name)}</b>${plus}</span>
         </div>
       </div>`;
     }
     const cands = findNutrientCandidates(name).slice(0, 4);
-    const btns = cands.map((c, k) => `<button class="vd-sug__btn${k === 0 ? " is-best" : ""}" type="button" data-nfix="${i}" data-nfix-val="${escHTML15(c.word)}">${escHTML15(c.word)}</button>`).join("");
+    const btns = cands.map((c, k) => `<button class="vd-sug__btn${k === 0 ? " is-best" : ""}" type="button" data-nfix="${i}" data-nfix-val="${escHTML14(c.word)}">${escHTML14(c.word)}</button>`).join("");
     return `
     <div class="vd-nrow is-warn" data-nrow="${i}">
       <div class="vd-nrow__main">
         <span class="vd-nrow__g">!</span>
-        <input class="vd-edit is-warn" value="${escHTML15(name)}" data-nedit="${i}" aria-label="Garbled read (editable)">
-        <span class="vd-nrow__amt">${escHTML15(amt)}</span>
+        <input class="vd-edit is-warn" value="${escHTML14(name)}" data-nedit="${i}" aria-label="Garbled read (editable)">
+        <span class="vd-nrow__amt">${escHTML14(amt)}</span>
         <span class="vd-nrow__map vd-nrow__map--pending">not recognized \xB7 pick a match or edit</span>
       </div>
       ${cands.length > 0 ? `<div class="vd-sug"><span class="vd-sug__lab">Did you mean</span>${btns}<button class="vd-sug__keep" type="button" data-nkeep="${i}">&times; keep</button></div>` : ""}
@@ -182047,24 +181402,24 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   }
   function flagRow(f) {
     const term = f.terms !== void 0 && f.terms.length > 0 ? f.terms[0] : f.category;
-    const reason = f.nuance ?? `On Wallach's anti-list (${escHTML15(f.category)}).`;
+    const reason = f.nuance ?? `On Wallach's anti-list (${escHTML14(f.category)}).`;
     return `
     <div class="vd-flag">
       <span class="vd-flag__m">!</span>
       <div class="vd-flag__b">
-        <span class="vd-flag__h"><b>${escHTML15(term)}</b> \u2014 ${escHTML15(f.category)}</span>
-        <span class="vd-flag__r">${escHTML15(reason)} <span class="vd-flag__cite">Wallach</span></span>
+        <span class="vd-flag__h"><b>${escHTML14(term)}</b> \u2014 ${escHTML14(f.category)}</span>
+        <span class="vd-flag__r">${escHTML14(reason)} <span class="vd-flag__cite">Wallach</span></span>
       </div>
     </div>`;
   }
   function suspectCard(s) {
-    const chips = s.candidates.slice(0, 4).map((c, k) => `<button class="vd-chip${k === 0 ? " is-best" : ""}" type="button" data-ifix="${escHTML15(s.word)}" data-ifix-val="${escHTML15(c.word)}">${escHTML15(c.word)}</button>`).join("");
+    const chips = s.candidates.slice(0, 4).map((c, k) => `<button class="vd-chip${k === 0 ? " is-best" : ""}" type="button" data-ifix="${escHTML14(s.word)}" data-ifix-val="${escHTML14(c.word)}">${escHTML14(c.word)}</button>`).join("");
     return `
-    <div class="vd-ocr__card" data-suspect="${escHTML15(s.word)}">
-      <span class="vd-ocr__word">${escHTML15(s.word)}</span>
+    <div class="vd-ocr__card" data-suspect="${escHTML14(s.word)}">
+      <span class="vd-ocr__word">${escHTML14(s.word)}</span>
       <span class="vd-ocr__arr" aria-hidden="true">&rarr;</span>
       ${chips}
-      <button class="vd-ocr__x" type="button" data-idismiss="${escHTML15(s.word)}" title="Dismiss" aria-label="Dismiss">&times;</button>
+      <button class="vd-ocr__x" type="button" data-idismiss="${escHTML14(s.word)}" title="Dismiss" aria-label="Dismiss">&times;</button>
     </div>`;
   }
   function renderConfirm(label, dismissed, dataUrl) {
@@ -182115,7 +181470,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
               </div>
               <div>
                 <label class="vd-ing__lab" for="vd-ing">Ingredients line (editable)</label>
-                <textarea id="vd-ing" class="vd-ing" rows="2" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML15(ingredients)}</textarea>
+                <textarea id="vd-ing" class="vd-ing" rows="2" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML14(ingredients)}</textarea>
               </div>
               ${suspectPanel}
               ${flagPanel}
@@ -182123,7 +181478,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
           </div>
           <aside class="vd-cf__ref">
             <div class="vd-cf__ref-h">Your uploaded photo</div>
-            ${dataUrl !== null ? `<img class="vd-cf__refimg" src="${escHTML15(dataUrl)}" alt="Your uploaded label">` : ""}
+            ${dataUrl !== null ? `<img class="vd-cf__refimg" src="${escHTML14(dataUrl)}" alt="Your uploaded label">` : ""}
             <div class="vd-cf__ref-n"><span class="vd-yours">Yours \xB7 user-provided</span> amounts are the label's own, not a Wallach target</div>
           </aside>
         </div>
@@ -182137,14 +181492,14 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   function reasonRows(result) {
     const rows = [];
     for (const r of result.reasonsFor) {
-      const items = r.items !== void 0 && r.items.length > 0 ? ` \u2014 ${escHTML15(r.items.join(", "))}` : "";
-      rows.push(`<div class="vd-reason vd-reason--plus"><span class="vd-reason__m" aria-hidden="true">+</span><span class="vd-reason__t"><b>${escHTML15(r.label)}</b>${items}</span></div>`);
+      const items = r.items !== void 0 && r.items.length > 0 ? ` \u2014 ${escHTML14(r.items.join(", "))}` : "";
+      rows.push(`<div class="vd-reason vd-reason--plus"><span class="vd-reason__m" aria-hidden="true">+</span><span class="vd-reason__t"><b>${escHTML14(r.label)}</b>${items}</span></div>`);
     }
     for (const r of result.reasonsAgainst) {
-      const items = r.items !== void 0 && r.items.length > 0 ? ` \u2014 ${escHTML15(r.items.join(", "))}` : "";
+      const items = r.items !== void 0 && r.items.length > 0 ? ` \u2014 ${escHTML14(r.items.join(", "))}` : "";
       const cls = /flag|reject|conflict/i.test(r.label) ? "vd-reason--flag" : "vd-reason--minus";
       const glyph = cls === "vd-reason--flag" ? "!" : "&minus;";
-      rows.push(`<div class="vd-reason ${cls}"><span class="vd-reason__m" aria-hidden="true">${glyph}</span><span class="vd-reason__t"><b>${escHTML15(r.label)}</b>${items}</span></div>`);
+      rows.push(`<div class="vd-reason ${cls}"><span class="vd-reason__m" aria-hidden="true">${glyph}</span><span class="vd-reason__t"><b>${escHTML14(r.label)}</b>${items}</span></div>`);
     }
     return rows.join("");
   }
@@ -182184,13 +181539,13 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
           <article class="vd-card">
             <div class="vd-card__top">
               <span class="vd-live" style="background:${tone};box-shadow:0 0 0 3px color-mix(in srgb, ${tone} 22%, transparent)" aria-hidden="true"></span>
-              <span class="vd-card__eyebrow">Wallach-alignment verdict \xB7 <b>${escHTML15(name)}</b></span>
+              <span class="vd-card__eyebrow">Wallach-alignment verdict \xB7 <b>${escHTML14(name)}</b></span>
               <span class="vd-card__tag">Local \xB7 confirmed</span>
             </div>
             <div class="vd-card__body">
               <div class="vd-judg">
                 <div class="vd-verdict__eyebrow" style="color:${tone}">The verdict</div>
-                <div class="vd-tier" role="img" aria-label="Verdict: ${escHTML15(head)} \u2014 ${escHTML15(sub)}">
+                <div class="vd-tier" role="img" aria-label="Verdict: ${escHTML14(head)} \u2014 ${escHTML14(sub)}">
                   ${tierChip("ADD", "Add", "aligns")}${tierChip("SAVE", "Save", "worth it")}${tierChip("REJECT", "Reject", "out")}
                 </div>
                 <h2 class="vd-verdict__h" style="color:${tone}">${head}<b>${sub}</b></h2>
@@ -182268,9 +181623,9 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     const history = getHistory();
     const rows = history.map((h, i) => `
     <div class="rl-row vd-hrow${i === 0 ? " is-current" : ""}">
-      <div class="rl-row__name">${escHTML15(typeof h.label.name === "string" ? h.label.name : "Scan")}</div>
+      <div class="rl-row__name">${escHTML14(typeof h.label.name === "string" ? h.label.name : "Scan")}</div>
       ${verdictPill(h.verdict)}
-      <div class="rl-row__foot"><span class="rl-src is-own">Yours \xB7 user-scanned</span><span class="vd-when">${escHTML15(relAge(h.ts))}</span></div>
+      <div class="rl-row__foot"><span class="rl-src is-own">Yours \xB7 user-scanned</span><span class="vd-when">${escHTML14(relAge(h.ts))}</span></div>
     </div>`).join("");
     return `
     <aside class="vd-rail">
@@ -182285,7 +181640,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       </div>
     </aside>`;
   }
-  function mount6(container) {
+  function mount5(container) {
     let state = "idle";
     let label = null;
     let result = null;
@@ -182490,7 +181845,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   }
 
   // assets/js/src/views/search.ts
-  function escHTML16(s) {
+  function escHTML15(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function oneLine(s) {
@@ -182512,9 +181867,9 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   };
   function tileGlyph(slug, e) {
     if (typeof e.symbol === "string" && e.symbol.length > 0) {
-      return escHTML16(e.symbol);
+      return escHTML15(e.symbol);
     }
-    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML16(e.display_name.charAt(0));
+    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML15(e.display_name.charAt(0));
   }
   function claimRelatedSlugs(claim) {
     const seen = /* @__PURE__ */ new Set([claim.subject]);
@@ -182534,11 +181889,11 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     return out;
   }
   function renderRelPill(slug) {
-    const name = escHTML16(displayName2(slug));
+    const name = escHTML15(displayName2(slug));
     const e = getEntity(slug);
     const type = e !== null ? e.type : getConditionPage(slug) !== null ? "condition" : getEssentialPage(slug) !== null ? "essential" : "";
     if (type !== "") {
-      return `<button class="relpill" data-type="${escHTML16(type)}" data-sr-entity="${escHTML16(slug)}" title="Open ${name}">${name}</button>`;
+      return `<button class="relpill" data-type="${escHTML15(type)}" data-sr-entity="${escHTML15(slug)}" title="Open ${name}">${name}</button>`;
     }
     return `<span class="relpill relpill--plain" title="Related to this">${name}</span>`;
   }
@@ -182555,7 +181910,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       const i = claim.answer.indexOf(xref.phrase);
       const before = claim.answer.slice(0, i);
       const after = claim.answer.slice(i + xref.phrase.length);
-      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML16(xref.target)}" title="Jump to the full answer">${escHTML16(xref.phrase)}</button>`;
+      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML15(xref.target)}" title="Jump to the full answer">${escHTML15(xref.phrase)}</button>`;
       return glossify(before) + link + glossify(after);
     }
     return glossify(claim.answer);
@@ -182573,24 +181928,24 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     return `<div class="ans__body">${renderAnswer(claim)}</div>`;
   }
   function claimInner(claim) {
-    return `<div class="ans__short">${escHTML16(claim.answer_short)}</div>${renderAnswerBody(claim)}${renderVerbatim(claim)}`;
+    return `<div class="ans__short">${escHTML15(claim.answer_short)}</div>${renderAnswerBody(claim)}${renderVerbatim(claim)}`;
   }
   function renderBestAnswer(claim) {
     return `
-    <div class="ans" data-facet="${escHTML16(claim.facet)}">
-      <span class="facetpill"><i></i>${escHTML16(facetLabel(claim.facet))}</span>
-      <div class="ans__q">${escHTML16(claim.question)}</div>
+    <div class="ans" data-facet="${escHTML15(claim.facet)}">
+      <span class="facetpill"><i></i>${escHTML15(facetLabel(claim.facet))}</span>
+      <div class="ans__q">${escHTML15(claim.question)}</div>
       ${claimInner(claim)}
       ${renderRelated(claim)}
     </div>`;
   }
   function renderArow(claim, hidden) {
     return `
-    <details class="arow${hidden ? " arow--hidden" : ""}" data-facet="${escHTML16(claim.facet)}" data-sr-claim="${escHTML16(claim.id)}">
+    <details class="arow${hidden ? " arow--hidden" : ""}" data-facet="${escHTML15(claim.facet)}" data-sr-claim="${escHTML15(claim.id)}">
       <summary class="arow__sum">
-        <span class="arow__text"><span class="arow__q">${escHTML16(claim.question)}</span><span class="arow__prev">${escHTML16(claim.answer_short)}</span></span>
+        <span class="arow__text"><span class="arow__q">${escHTML15(claim.question)}</span><span class="arow__prev">${escHTML15(claim.answer_short)}</span></span>
         <span class="arow__chev">\u203A</span>
-        <span class="arow__pill">${escHTML16(facetLabel(claim.facet))}</span>
+        <span class="arow__pill">${escHTML15(facetLabel(claim.facet))}</span>
       </summary>
       <div class="arow__body">${claimInner(claim)}</div>
     </details>`;
@@ -182601,12 +181956,12 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       return "";
     }
     const n = claimCount2(subject);
-    const hints = subjectFacetHints(subject).map(escHTML16).join(" \xB7 ");
+    const hints = subjectFacetHints(subject).map(escHTML15).join(" \xB7 ");
     return `
-    <button class="tcard" data-type="${escHTML16(e.type)}" data-sr-entity="${escHTML16(subject)}">
+    <button class="tcard" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(subject)}">
       <div class="tcard-ghost">${n}</div>
-      <div class="tcard-cat"><i></i>${escHTML16(e.type)}</div>
-      <div class="tcard-name">${escHTML16(displayName2(subject))}</div>
+      <div class="tcard-cat"><i></i>${escHTML15(e.type)}</div>
+      <div class="tcard-name">${escHTML15(displayName2(subject))}</div>
       <div class="tcard-foot"><b>${n} ${n === 1 ? "answer" : "answers"}</b>${hints.length > 0 ? ` \xB7 ${hints}` : ""}</div>
     </button>`;
   }
@@ -182630,16 +181985,16 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     return `${rows}${more}`;
   }
   function renderEntityRow(a, hidden) {
-    const prev = a.prev.length > 0 ? `<span class="arow__prev">${escHTML16(a.prev)}</span>` : "";
-    const short = a.short.length > 0 ? `<div class="ans__short">${escHTML16(a.short)}</div>` : "";
+    const prev = a.prev.length > 0 ? `<span class="arow__prev">${escHTML15(a.prev)}</span>` : "";
+    const short = a.short.length > 0 ? `<div class="ans__short">${escHTML15(a.short)}</div>` : "";
     const body = a.body.length > 0 ? `<div class="ans__body">${glossify(a.body)}</div>` : "";
     const verbatim = a.verbatim.trim().length > 0 ? `<blockquote class="vq">${glossify(oneLine(a.verbatim))}<span class="vq__attr">\u2014 Dr. Wallach, in his own words</span></blockquote>` : "";
     return `
-    <details class="arow${hidden ? " arow--hidden" : ""}" data-family="${escHTML16(a.familyId)}" data-sr-claim="${escHTML16(a.id)}">
+    <details class="arow${hidden ? " arow--hidden" : ""}" data-family="${escHTML15(a.familyId)}" data-sr-claim="${escHTML15(a.id)}">
       <summary class="arow__sum">
-        <span class="arow__text"><span class="arow__q">${escHTML16(a.title)}</span>${prev}</span>
+        <span class="arow__text"><span class="arow__q">${escHTML15(a.title)}</span>${prev}</span>
         <span class="arow__chev">\u203A</span>
-        <span class="arow__pill">${escHTML16(a.pill)}</span>
+        <span class="arow__pill">${escHTML15(a.pill)}</span>
       </summary>
       <div class="arow__body">${short}${body}${verbatim}</div>
     </details>`;
@@ -182648,10 +182003,10 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     const shown = fam.answers.slice(0, FAM_CAP).map((a) => renderEntityRow(a, false)).join("");
     const rest = fam.answers.slice(FAM_CAP);
     const hidden = rest.map((a) => renderEntityRow(a, true)).join("");
-    const more = rest.length > 0 ? `<button class="fgroup__more" data-aw-morebtn>See ${rest.length} more ${escHTML16(ui(`search_fam_${fam.familyId}_more`))} <span class="fm-arrow">\u2192</span></button>` : "";
+    const more = rest.length > 0 ? `<button class="fgroup__more" data-aw-morebtn>See ${rest.length} more ${escHTML15(ui(`search_fam_${fam.familyId}_more`))} <span class="fm-arrow">\u2192</span></button>` : "";
     return `
-    <div class="fgroup" data-family="${escHTML16(fam.familyId)}">
-      <div class="fgroup__head"><span class="fgroup__label">${escHTML16(ui(`search_fam_${fam.familyId}_name`))}</span><span class="fgroup__ct">${fam.count}</span><span class="fgroup__rule"></span></div>
+    <div class="fgroup" data-family="${escHTML15(fam.familyId)}">
+      <div class="fgroup__head"><span class="fgroup__label">${escHTML15(ui(`search_fam_${fam.familyId}_name`))}</span><span class="fgroup__ct">${fam.count}</span><span class="fgroup__rule"></span></div>
       ${shown}${hidden}
       ${more}
     </div>`;
@@ -182697,15 +182052,15 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     const n = total > 0 ? total : hero.count;
     const kind = learnKind(subject, e);
     const heroCls = kind !== null ? "ehero ehero--link" : "ehero";
-    const heroAttrs = kind !== null ? ` data-aw-learnmore="${escHTML16(subject)}" data-aw-kind="${kind}"` : "";
-    const learnMore = kind !== null ? `<button class="eback" data-aw-learnmore="${escHTML16(subject)}" data-aw-kind="${kind}">Learn More \u2192</button>` : "";
+    const heroAttrs = kind !== null ? ` data-aw-learnmore="${escHTML15(subject)}" data-aw-kind="${kind}"` : "";
+    const learnMore = kind !== null ? `<button class="eback" data-aw-learnmore="${escHTML15(subject)}" data-aw-kind="${kind}">Learn More \u2192</button>` : "";
     const groupsHTML = families.length > 0 ? families.map(renderFamilyGroup).join("") : '<div class="aw-empty-line">\u2014 no sealed claims on this yet \u2014</div>';
     return `
-    <div class="${heroCls}" data-type="${escHTML16(hero.type)}"${heroAttrs}>
+    <div class="${heroCls}" data-type="${escHTML15(hero.type)}"${heroAttrs}>
       <span class="ehero__sym">${tileGlyph(subject, { symbol: hero.symbol, type: hero.type, display_name: hero.name })}</span>
       <span class="ehero__id">
-        <span class="ehero__name">${escHTML16(hero.name)}</span>
-        <span class="ehero__meta">${escHTML16(hero.type)} \xB7 ${n} ${n === 1 ? "answer" : "answers"}</span>
+        <span class="ehero__name">${escHTML15(hero.name)}</span>
+        <span class="ehero__meta">${escHTML15(hero.type)} \xB7 ${n} ${n === 1 ? "answer" : "answers"}</span>
       </span>
       ${learnMore}
     </div>
@@ -182714,53 +182069,53 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   }
   function renderOpening() {
     const card = (f) => `
-    <button class="kcard" data-family="${escHTML16(f.id)}" data-aw-family="${escHTML16(f.id)}">
+    <button class="kcard" data-family="${escHTML15(f.id)}" data-aw-family="${escHTML15(f.id)}">
       <span class="kcard-main">
-        <span class="kcard-name">${escHTML16(ui(`search_fam_${f.id}_name`))}</span>
-        <span class="kcard-facets">${escHTML16(ui(`search_fam_${f.id}_sub`))}</span>
+        <span class="kcard-name">${escHTML15(ui(`search_fam_${f.id}_name`))}</span>
+        <span class="kcard-facets">${escHTML15(ui(`search_fam_${f.id}_sub`))}</span>
       </span>
       <span class="kcard-n">${f.count}</span>
     </button>`;
     return `
-    <div class="scr-label">${escHTML16(ui("search_browse_label"))}</div>
+    <div class="scr-label">${escHTML15(ui("search_browse_label"))}</div>
     <div class="kstack">${familyCounts().map(card).join("")}</div>`;
   }
   function renderBrowseCard(familyId, t) {
     return `
-    <button class="brow-card" data-family="${escHTML16(familyId)}" data-sr-entity="${escHTML16(t.subject)}">
+    <button class="brow-card" data-family="${escHTML15(familyId)}" data-sr-entity="${escHTML15(t.subject)}">
       <span class="brow-card__top">
-        <span class="brow-card__cat"><i></i>${escHTML16(facetLabel(t.facet))}</span>
+        <span class="brow-card__cat"><i></i>${escHTML15(facetLabel(t.facet))}</span>
         <span class="brow-card__n">${t.count}</span>
       </span>
-      <span class="brow-card__name">${escHTML16(displayName2(t.subject))}</span>
-      <span class="brow-card__peek">${escHTML16(t.peek)}</span>
+      <span class="brow-card__name">${escHTML15(displayName2(t.subject))}</span>
+      <span class="brow-card__peek">${escHTML15(t.peek)}</span>
     </button>`;
   }
   function renderBrowse(familyId) {
     const topics = familyTopics(familyId);
     const total = topics.reduce((n, t) => n + t.count, 0);
     const lens = familyCounts().map((f) => `
-    <button class="brow-lens__b${f.id === familyId ? " is-active" : ""}" data-family="${escHTML16(f.id)}" data-aw-family="${escHTML16(f.id)}">${escHTML16(ui(`search_fam_${f.id}_name`))}</button>`).join("");
+    <button class="brow-lens__b${f.id === familyId ? " is-active" : ""}" data-family="${escHTML15(f.id)}" data-aw-family="${escHTML15(f.id)}">${escHTML15(ui(`search_fam_${f.id}_name`))}</button>`).join("");
     const cards2 = topics.map((t) => renderBrowseCard(familyId, t)).join("");
     return `
     <div class="brow-lens">${lens}</div>
-    <div class="brow-head" data-family="${escHTML16(familyId)}">
+    <div class="brow-head" data-family="${escHTML15(familyId)}">
       <div class="brow-head__main">
-        <div class="brow-head__k">${escHTML16(ui("search_browse_label"))}</div>
-        <div class="brow-head__t">${escHTML16(ui(`search_fam_${familyId}_name`))}</div>
+        <div class="brow-head__k">${escHTML15(ui("search_browse_label"))}</div>
+        <div class="brow-head__t">${escHTML15(ui(`search_fam_${familyId}_name`))}</div>
         <div class="brow-head__m"><b>${topics.length}</b> topics \xB7 <b>${total}</b> ${total === 1 ? "answer" : "answers"}</div>
       </div>
       <button class="brow-head__back" data-aw-browse-back type="button">\u2039 Go Back</button>
     </div>
-    <div class="brow-grid" data-family="${escHTML16(familyId)}">${cards2}</div>`;
+    <div class="brow-grid" data-family="${escHTML15(familyId)}">${cards2}</div>`;
   }
   function renderEmpty(query) {
     const sugg = entityList().filter((e) => !isChargedEntity(e.slug)).sort((a, b) => b.claim_count - a.claim_count).slice(0, 5);
-    const chip2 = (e) => `<button class="echip" data-type="${escHTML16(e.type)}" data-sr-entity="${escHTML16(e.slug)}">${escHTML16(e.display_name)}</button>`;
+    const chip2 = (e) => `<button class="echip" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(e.slug)}">${escHTML15(e.display_name)}</button>`;
     return `
     <div class="empty">
       <div class="empty__h">Nothing on that yet</div>
-      <div class="empty__p">No match for \u201C${escHTML16(query)}.\u201D Try one of these:</div>
+      <div class="empty__p">No match for \u201C${escHTML15(query)}.\u201D Try one of these:</div>
       <div class="empty__chips">${sugg.map(chip2).join("")}</div>
     </div>`;
   }
@@ -182776,7 +182131,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     }
     return renderOpening();
   }
-  function renderShell4() {
+  function renderShell3() {
     return `
     <div class="scr" data-aw-pop>
       <button class="scr-nav scr-nav--back" data-aw-nav-back type="button" aria-label="Back" title="Back" hidden><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
@@ -182785,7 +182140,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
         <button class="scr-id" data-aw-home type="button" title="Back to the start">Ask <em>Wallach</em></button>
         <div class="aw-search">
           <div class="aw-search__well">
-            <input class="aw-search__input" type="text" placeholder="${escHTML16(ui("search_placeholder"))}" autocomplete="off" spellcheck="false" />
+            <input class="aw-search__input" type="text" placeholder="${escHTML15(ui("search_placeholder"))}" autocomplete="off" spellcheck="false" />
             <span class="aw-search__btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></span>
           </div>
         </div>
@@ -182793,7 +182148,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       <div class="scr-body"></div>
     </div>`;
   }
-  function mount7(container) {
+  function mount6(container) {
     let isOpen = false;
     let query = "";
     let lastKey = "";
@@ -182864,7 +182219,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       paintBody(true);
     };
     const render = () => {
-      container.innerHTML = renderShell4();
+      container.innerHTML = renderShell3();
       lastKey = "";
       paintBody(true);
       syncSearchbar();
@@ -183079,7 +182434,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   // assets/js/src/views/welcome.ts
   var LAYOUT5 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   var NAME_MAX = 18;
-  function escHTML17(s) {
+  function escHTML16(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -183091,31 +182446,31 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
   function shouldShowWelcome() {
     return loadUserProfile() === null;
   }
-  function mount8(host, onDone) {
+  function mount7(host, onDone) {
     const existing = loadUserProfile();
     const reopen = existing !== null;
     let chosen = [...loadRgUserGoals() ?? []].slice(0, MAX_GOALS);
-    const goalChips = LAYOUT5.goals.map((g) => `<button class="wc-goal" type="button" data-goal="${escHTML17(g.id)}"><span class="wc-goal__dot"></span>${escHTML17(g.name)}</button>`).join("");
+    const goalChips = LAYOUT5.goals.map((g) => `<button class="wc-goal" type="button" data-goal="${escHTML16(g.id)}"><span class="wc-goal__dot"></span>${escHTML16(g.name)}</button>`).join("");
     host.innerHTML = `
     <div class="wc-veil" data-veil>
       <div class="wc" role="dialog" aria-modal="true" aria-labelledby="wcH">
-        <div class="wc__kicker">${escHTML17(ui("wc_kicker"))}</div>
-        <h2 class="wc__h" id="wcH">${escHTML17(ui("wc_h"))}</h2>
-        <p class="wc__deck">${escHTML17(ui("wc_deck"))}</p>
-        ${reopen ? "" : `<label class="wc__label" for="wcName">${escHTML17(ui("wc_name_label"))}
+        <div class="wc__kicker">${escHTML16(ui("wc_kicker"))}</div>
+        <h2 class="wc__h" id="wcH">${escHTML16(ui("wc_h"))}</h2>
+        <p class="wc__deck">${escHTML16(ui("wc_deck"))}</p>
+        ${reopen ? "" : `<label class="wc__label" for="wcName">${escHTML16(ui("wc_name_label"))}
                <span class="wc__count"><span data-name-count>0</span>/${NAME_MAX}</span>
              </label>
              <input class="wc__name" id="wcName" data-name maxlength="${NAME_MAX}"
-                    placeholder="${escHTML17(ui("wc_name_placeholder"))}" autocomplete="off">
+                    placeholder="${escHTML16(ui("wc_name_placeholder"))}" autocomplete="off">
              <p class="wc__err" data-name-err hidden></p>`}
         <div style="height: var(--ds-space-6)"></div>
-        <span class="wc__label">${escHTML17(ui("wc_goals_label"))}
+        <span class="wc__label">${escHTML16(ui("wc_goals_label"))}
           <span class="wc__count"><span data-goal-count>0</span>/${MAX_GOALS} selected</span>
         </span>
         <div class="wc__goals" data-goals>${goalChips}</div>
         <div class="wc__foot">
-          <button class="wc__browse" type="button" data-browse>${escHTML17(ui("wc_browse"))}</button>
-          <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML17(ui("wc_go"))}</button>
+          <button class="wc__browse" type="button" data-browse>${escHTML16(ui("wc_browse"))}</button>
+          <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML16(ui("wc_go"))}</button>
         </div>
       </div>
     </div>
@@ -183250,9 +182605,8 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     }
   }
   var DRAWER_SPECS = [
-    { target: "search", mountId: "drawer-search-mount", key: "s", mount: mount7 },
-    { target: "knowledge", mountId: "drawer-knowledge-mount", key: "k", mount: mount3 },
-    { target: "journey", mountId: "drawer-journey-mount", key: "j", mount: mount2 }
+    { target: "search", mountId: "drawer-search-mount", key: "s", mount: mount6 },
+    { target: "knowledge", mountId: "drawer-knowledge-mount", key: "k", mount: mount2 }
   ];
   var drawerHandles = /* @__PURE__ */ new Map();
   function isDrawerTarget(target) {
@@ -183287,7 +182641,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       }
       mountEl.style.display = "block";
       if (mounted.regimen === void 0) {
-        mounted.regimen = mount5(mountEl);
+        mounted.regimen = mount4(mountEl);
       }
       return;
     }
@@ -183298,7 +182652,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       }
       mountEl.style.display = "block";
       if (mounted.scanner === void 0) {
-        mounted.scanner = mount6(mountEl);
+        mounted.scanner = mount5(mountEl);
       }
       return;
     }
@@ -183372,22 +182726,6 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       }
     });
   }
-  function wireJourneyAutoDerive() {
-    on("scanner:scan-complete", (p) => {
-      const label = p.verdict === "aligns" ? "aligns with the framework" : p.verdict === "partial" ? "a partial match" : "outside the framework";
-      logEvent({ kind: "scan", title: `Scanned a product \u2014 ${label}`, occurredAt: (/* @__PURE__ */ new Date()).toISOString() });
-    });
-    on("regimen:changed", (p) => {
-      if (p.reason === "dose-edit") {
-        return;
-      }
-      const verb = p.reason === "add" ? "Added an item to" : p.reason === "remove" ? "Removed an item from" : "Restored an item to";
-      logEvent({ kind: "regimen", title: `${verb} your regimen`, occurredAt: (/* @__PURE__ */ new Date()).toISOString() });
-    });
-    on("goals:updated", () => {
-      logEvent({ kind: "milestone", title: "Updated a goal", occurredAt: (/* @__PURE__ */ new Date()).toISOString() });
-    });
-  }
   function wireSearchToKnowledge() {
     on("knowledge:open-entity", ({ kind, slug }) => {
       closeAllDrawers();
@@ -183421,7 +182759,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     overlay.addEventListener("pf:close", () => hideProfilePanel());
     document.body.appendChild(overlay);
     profileOverlay = overlay;
-    profileHandle = mount4(overlay);
+    profileHandle = mount3(overlay);
   }
   function wireTopbarSearch() {
     const btn = document.querySelector(".topbar__ask");
@@ -183479,13 +182817,13 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
     wireDrawerKeys();
     on("drawer:toggled", () => syncDrawerRail());
     wireSearchToKnowledge();
-    wireJourneyAutoDerive();
     initGlossTooltip();
     setTimeout(() => navigateTo("coverage"), 0);
   }
   function wireProfileIdentity() {
     const paint = () => {
       const p = loadUserProfile();
+      document.title = displayTitle(p);
       const nameEl = document.getElementById("railProfileName");
       const avEl = document.getElementById("railAvatar");
       const brandEl = document.getElementById("railBrandName");
@@ -183512,7 +182850,7 @@ Verify: node tools/build.mjs exit 0; PYTHONUTF8=1 python tools/invariants.py \u2
       return;
     }
     const open = () => {
-      mount8(host);
+      mount7(host);
     };
     if (shouldShowWelcome()) {
       open();

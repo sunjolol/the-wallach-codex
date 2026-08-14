@@ -24,8 +24,6 @@ export type EventName =
   | 'coverage:recomputed'
   | 'scanner:scan-complete'
   | 'scanner:scan-cleared'
-  | 'goals:updated'
-  | 'journey:changed'
   | 'eden:hash-mismatch'
   | 'storage:pressure-warn'
   | 'rail:navigate'
@@ -40,11 +38,9 @@ export interface EventPayloads {
   'coverage:recomputed': { coveredCount: number; totalCount: number };
   'scanner:scan-complete': { captureId: string; verdict: 'aligns' | 'partial' | 'out' };
   'scanner:scan-cleared': { captureId: string };
-  'goals:updated': { goalId: string };
-  'journey:changed': { reason: 'event-logged' | 'checkin-logged' };
   'eden:hash-mismatch': { file: string; expected: string; actual: string };
   'storage:pressure-warn': { bytesUsed: number; bytesLimit: number };
-  'rail:navigate': { target: 'coverage' | 'regimen' | 'scanner' | 'search' | 'knowledge' | 'journey' };
+  'rail:navigate': { target: 'coverage' | 'regimen' | 'scanner' | 'search' | 'knowledge' };
   'log:entry-added': { id: string; kind: string };
   /** The user named themselves, or chose to browse. Fired by the state/profile.ts
    *  chokepoint; the name is painted in three slots (topbar · profile tab · avatar
@@ -60,7 +56,7 @@ export interface EventPayloads {
    *  before this event the shell re-synced it only on the paths IT drove, so closing
    *  from inside left the button lit for a drawer that was already gone. Views emit;
    *  main.ts::syncDrawerRail is the single subscriber. */
-  'drawer:toggled': { target: 'search' | 'knowledge' | 'journey'; open: boolean };
+  'drawer:toggled': { target: 'search' | 'knowledge'; open: boolean };
 }
 
 export type EventHandler<E extends EventName> = (payload: EventPayloads[E]) => void;

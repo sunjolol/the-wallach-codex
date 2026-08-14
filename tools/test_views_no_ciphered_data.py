@@ -6,7 +6,7 @@ flow (pillars -> generators -> core/ -> state/ -> views/), that import boundary 
 data/chrome line.
 
 R9 HISTORY: the first cut banned ALL interpolation inside a cipher span. It over-fired on 4
-legitimate view-local sites (hexSerial hashes in journey/search; static placeholder serial +
+legitimate view-local sites (hexSerial hashes in search; static placeholder serial +
 OCR timings in regimen/scanner). Tightened to the boundary rule rather than loosened; these
 cases are pinned below so the refinement can never silently regress.
 
@@ -46,11 +46,11 @@ const html = `<span data-cipher-set="hexa" class="ds-chrome ds-cipher tile__num"
 '''
 
 # ── MUST NOT FIRE (real sites in the app; pinned by the R9 refinement) ───────
-# journey.ts / search.ts: a view-local hash producing a meaningless 4-hex serial.
+# search.ts: a view-local hash producing a meaningless 4-hex serial.
 CLEAN_HEXSERIAL = '''
-import { listGoals } from '../state/journey.js';
+import { getOrCompute } from '../state/coverage.js';
 function hexSerial(seed) { return ((seed * 0x9E3779B9) >>> 0).toString(16); }
-const html = `<span class="ds-cipher" data-cipher-set="hexa">G·${hexSerial(g.goalId.length * 7)}</span>`;
+const html = `<span class="ds-cipher" data-cipher-set="hexa">S·${hexSerial(q.length * 7)}</span>`;
 '''
 
 # scanner.ts / regimen.ts: a static decorative literal arriving via a local placeholder struct.

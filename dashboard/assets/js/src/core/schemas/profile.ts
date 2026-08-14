@@ -93,7 +93,7 @@ export const UserProfileSchema = z.object({
   name: UserNameSchema.optional(),
   /** True when the user explicitly picked browsing -- distinct from "not asked yet". */
   browsing: z.boolean(),
-  /** ISO date the choice was made -- the Journey surface will want it later. */
+  /** ISO date the choice was made. */
   chosenAt: z.string(),
 });
 

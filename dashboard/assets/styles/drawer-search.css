@@ -72,10 +72,10 @@
    Scoped to those containers by name (never a bare `*`) so the popup's OWN animations keep running.
    Purely a hold, not a stop: `animation-play-state` resumes exactly where it paused the moment the
    popup closes, and none of it is visible under a 74%-opaque blurred wash anyway. */
-body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount, #drawer-journey-mount),
-body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount, #drawer-journey-mount) *,
-body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount, #drawer-journey-mount) *::before,
-body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount, #drawer-journey-mount) *::after {
+body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount),
+body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount) *,
+body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount) *::before,
+body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-knowledge-mount) *::after {
   animation-play-state: paused;
 }
 #drawer-search-mount .scr {

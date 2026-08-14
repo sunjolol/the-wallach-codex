@@ -96,3 +96,16 @@ export function displayName(profile: UserProfile | null, slot: 'profile' | 'bran
 export function displayInitial(profile: UserProfile | null): string {
   return displayName(profile, 'profile').charAt(0).toUpperCase();
 }
+
+/**
+ * The browser-tab title. Luneth 2026-08-13: keep "Health Journey" as the app's name, but
+ * derive the possessive from the identity choice -- a named user gets "<Name>'s Health Journey";
+ * a guest gets "Your Health Journey". Kept here (not in a view) so the title derives from the
+ * same one place as the brand + profile slots and cannot drift (#3).
+ */
+export function displayTitle(profile: UserProfile | null): string {
+  if (profile?.name !== undefined && profile.name !== '') {
+    return `${profile.name}'s Health Journey`;
+  }
+  return 'Your Health Journey';
+}

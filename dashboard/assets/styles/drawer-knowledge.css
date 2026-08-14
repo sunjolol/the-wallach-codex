@@ -3,7 +3,7 @@
  * ───────────────────────────────────────────────────────────────────────────
  * Knowledge-SPECIFIC styling only. The shared drawer chrome (head · tabs ·
  * search · body · footer · close · action · eyebrow · empty) lives in
- * drawer-shared.css, which targets both kd-* and jd-* and MUST load before this
+ * drawer-shared.css, which targets kd-* and MUST load before this
  * file. Here: the panel starting width (950px) + the four Knowledge tabs
  * (Corpus / Essentials / Products / Doctrine).
  *
@@ -11,7 +11,7 @@
  * uses generic .section-head / .book-row / .featured-citation / .essential-tile
  * / .product-row / .doctrine-card names that COLLIDE with the old dashboard styles (now removed)
  * (.essential-tile) + workspace-coverage.css (.essentials-grid); the live view
- * self-namespaces them as kd-* (mirroring Journey's jd-*) so no global can ever
+ * self-namespaces them as kd-* so no global can ever
  * leak in. Every selector is rooted at #drawer-knowledge-mount so nothing here
  * can leak out either (Sever-Safety). Tokens come from design-system.css (sealed).
  * Only the states the view actually renders are styled (no phantom variants).
@@ -22,8 +22,8 @@
 
 /* ─── HEADER — compact single row (mark · pill-group tabs · close), a pristine
        re-creation of the signed-off demo's .knh. Knowledge-specific: it REPLACES
-       the shared .kd-head/.kd-tabs block+grid chrome for this drawer (the shared
-       rules still style Journey's jd-* shell). ────────────────────────────────── */
+       the shared .kd-head/.kd-tabs block+grid chrome for this drawer
+       ────────────────────────────────── */
 #drawer-knowledge-mount .kd-knh { display: flex; align-items: center; gap: var(--ds-space-5); padding: var(--ds-space-4) var(--ds-space-7); border-bottom: 1px solid var(--ds-rule-soft); position: relative; flex: 0 0 auto; }
 #drawer-knowledge-mount .kd-knh::after { content: ''; position: absolute; left: var(--ds-space-7); right: var(--ds-space-7); bottom: -1px; height: 1px; background: linear-gradient(to right, transparent, var(--ds-accent) 8%, transparent 22%, transparent 100%); }
 #drawer-knowledge-mount .kd-knh__mark { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: 0.75rem; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); white-space: nowrap; }

@@ -17,15 +17,12 @@ import * as storage from './core/storage.js';
 
 import * as corpusState from './state/corpus.js';
 import { installRecomputeTrigger } from './state/coverage.js';
-import * as goalsState from './state/goals.js';
-import * as journeyState from './state/journey.js';
 import * as ocrState from './state/ocr.js';
 import * as profileState from './state/profile.js';
 import * as regimenState from './state/regimen.js';
 import * as scannerState from './state/scanner.js';
 
 import * as coverageView from './views/coverage.js';
-import * as journeyView from './views/journey.js';
 import * as knowledgeView from './views/knowledge.js';
 import * as paletteView from './views/palette.js';
 import * as profileView from './views/profile.js';
@@ -39,12 +36,12 @@ import * as welcomeView from './views/welcome.js';
  * Reference all unused imports so they're held by the bundler (scaffolds
  * still throw on call — that's intended until their rounds land).
  */
-const _refs = { storage, events, eden, sourceRule, regimenState, scannerState, ocrState, goalsState, journeyState, regimenView, scannerView, knowledgeView, journeyView, paletteView, profileView };
+const _refs = { storage, events, eden, sourceRule, regimenState, scannerState, ocrState, regimenView, scannerView, knowledgeView, paletteView, profileView };
 void _refs;
 
 // ─── Rail navigation state ────────────────────────────────────────────────
 
-type WorkspaceTarget = 'coverage' | 'regimen' | 'scanner' | 'search' | 'knowledge' | 'journey';
+type WorkspaceTarget = 'coverage' | 'regimen' | 'scanner' | 'search' | 'knowledge';
 
 interface MountedView {
   unmount: () => void;
@@ -94,7 +91,7 @@ function setTopbarHeader(target: WorkspaceTarget): void {
   }
 }
 
-// ─── Drawers (Knowledge · K, Journey · J) ──────────────────────────────
+// ─── Drawers (Knowledge · K) ──────────────────────────────
 
 /** The structural subset of each view's DrawerHandle that the shell drives. */
 interface DrawerHandle {
@@ -116,7 +113,6 @@ interface DrawerSpec {
 const DRAWER_SPECS: readonly DrawerSpec[] = [
   { target: 'search', mountId: 'drawer-search-mount', key: 's', mount: searchView.mount },
   { target: 'knowledge', mountId: 'drawer-knowledge-mount', key: 'k', mount: knowledgeView.mount },
-  { target: 'journey', mountId: 'drawer-journey-mount', key: 'j', mount: journeyView.mount },
 ];
 
 const drawerHandles = new Map<WorkspaceTarget, DrawerHandle>();
@@ -195,7 +191,7 @@ function wireRail(): void {
   }
 }
 
-// ─── Drawer mounting + wiring (shared K + J) ──────────────────────────
+// ─── Drawer mounting + wiring (Knowledge · K) ──────────────────────────
 
 /** Mount every overlay drawer into its host once at boot. */
 function mountDrawers(): void {
@@ -238,7 +234,7 @@ function toggleDrawer(target: WorkspaceTarget): void {
   syncDrawerRail();
 }
 
-/** Esc closes any open drawer; a bare drawer key (K / J) toggles it. */
+/** Esc closes any open drawer; a bare drawer key (K) toggles it. */
 function wireDrawerKeys(): void {
   document.addEventListener('keydown', (ev) => {
     if (ev.key === 'Escape') {
@@ -261,33 +257,6 @@ function wireDrawerKeys(): void {
   });
 }
 
-/**
- * Auto-derive — real app activity becomes Journey timeline events so the
- * timeline fills from genuine use (J1 reads real activity; there is no fake
- * seed). Deliberately excludes coverage:recomputed and regimen 'dose-edit':
- * both fire on every micro-change and would flood the timeline with redundant
- * noise. Only deliberate, low-frequency actions are recorded.
- */
-function wireJourneyAutoDerive(): void {
-  events.on('scanner:scan-complete', (p) => {
-    const label = p.verdict === 'aligns'
-      ? 'aligns with the framework'
-      : p.verdict === 'partial' ? 'a partial match' : 'outside the framework';
-    journeyState.logEvent({ kind: 'scan', title: `Scanned a product — ${label}`, occurredAt: new Date().toISOString() });
-  });
-  events.on('regimen:changed', (p) => {
-    if (p.reason === 'dose-edit') {
-      return;
-    }
-    const verb = p.reason === 'add'
-      ? 'Added an item to'
-      : p.reason === 'remove' ? 'Removed an item from' : 'Restored an item to';
-    journeyState.logEvent({ kind: 'regimen', title: `${verb} your regimen`, occurredAt: new Date().toISOString() });
-  });
-  events.on('goals:updated', () => {
-    journeyState.logEvent({ kind: 'milestone', title: 'Updated a goal', occurredAt: new Date().toISOString() });
-  });
-}
 
 /**
  * Ask-Wallach "Learn More" → the Knowledge detail page. The search popup emits knowledge:open-entity;
@@ -408,7 +377,6 @@ function bootstrap(): void {
   // close path — including the drawer's own [X], which the shell never sees.
   events.on('drawer:toggled', () => syncDrawerRail());
   wireSearchToKnowledge();
-  wireJourneyAutoDerive();
   initGlossTooltip();
 
   /*
@@ -435,6 +403,7 @@ function bootstrap(): void {
 function wireProfileIdentity(): void {
   const paint = (): void => {
     const p = profileState.loadUserProfile();
+    document.title = profileState.displayTitle(p);
     const nameEl = document.getElementById('railProfileName');
     const avEl = document.getElementById('railAvatar');
     const brandEl = document.getElementById('railBrandName');
