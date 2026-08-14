@@ -24,11 +24,15 @@ Luneth reviewed them and cut the whole surface rather than ship it.
 - `render_probe_rail_sync` PASS (Knowledge + Search drawers + rail highlight, **0 page errors**).
 - Live screenshot: rail is **Coverage · Regimen · Scanner · Search · Knowledge** — no Journey; board renders.
 
-## LEFT INTENTIONALLY (NOT "legacy" — flag if you want them gone)
-- The app `<title>` "Luneth's Health Journey" in dashboard.html — the app's NAME, not the feature.
-- Sibling frozen `*-v3-PROPOSAL.html` mockups that incidentally show a J rail item — historical design
-  artifacts, not loaded at runtime.
-- `chronicle/creators-log` + `build-log` entries recording that Journey was once built — history, append-only.
+## FOLLOW-UP CLEANUP DONE (this session, after the removal)
+- Browser-tab title is now DYNAMIC: `<Name>'s Health Journey` / `Your Health Journey` (guest), via
+  `profile.displayTitle()` — the hardcoded name in the markup is gone.
+- The entire `dashboard/components/` mockup folder was DELETED (12 files, obsolete — all surfaces are
+  ported live). Live-code refs reconciled; `tools/style_diff.js` now needs an explicit `<mockupRelPath>`.
+
+## LEFT INTENTIONALLY (accurate history, not legacy)
+- `chronicle/creators-log` + `build-log` + blueprint history + `invariants.py` lesson-refs that mention
+  Journey or the retired mockups as PAST context — true history, left intact.
 - Wallach's word "journey" in the corpus books / OCR caches — his vocabulary.
 
 ## STILL PARKED / CARRIED FORWARD (unchanged)
