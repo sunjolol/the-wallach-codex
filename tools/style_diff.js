@@ -1,7 +1,7 @@
 // tools/style_diff.js — objective computed-style diff: the LIVE shell vs a mockup.
 //
-// Usage:  node tools/style_diff.js [mockupRelPath]
-//   default mockup: dashboard/components/workspace-coverage-v3.2-PROPOSAL.html
+// Usage:  node tools/style_diff.js <mockupRelPath>
+//   (no default — the v3 proposal mockups were retired 2026-08-13; pass a mockup path)
 //
 // WHY THIS EXISTS (2026-06-23 lesson): when matching a surface to a v3 mockup,
 // do NOT eyeball it and do NOT trust a CSS read — both mislead. This loads the
@@ -20,7 +20,8 @@ for (const c of [REPO + '/dashboard/node_modules/puppeteer', REPO + '/node_modul
 }
 if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer in dashboard/)'); process.exit(2); }
 
-const mock = process.argv[2] || 'dashboard/components/workspace-coverage-v3.2-PROPOSAL.html';
+const mock = process.argv[2];
+if (!mock) { console.error('usage: node tools/style_diff.js <mockupRelPath> — no default (v3 mockups retired 2026-08-13)'); process.exit(2); }
 const toUrl = rel => 'file://' + path.join(REPO, rel).split(path.sep).join('/');
 const LIVE = toUrl('dashboard/dashboard.html');
 const MOCK = toUrl(mock);

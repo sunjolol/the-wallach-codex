@@ -2,7 +2,7 @@
  * views/palette.ts — Command Palette (⌘K) renderer
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Visual contract: command-palette-v3-PROPOSAL.html.
+ * Visual contract: the live view (its v3 mockup was retired 2026-08-13).
  * Three result modes: JUMP TO / LOOKUP / ASK WALLACH.
  *
  * ASK WALLACH portability promise:

@@ -19,8 +19,8 @@
  * Reference for the visual language: the "Empower" calibration anchor (design-wisdom/
  * references/futuristic-tech-reference-empower-by-niteangel-depthcore.md) -- orange as a
  * SIGNAL accent, tech precision + surreal-eloquent composition grafted onto warm cream
- * paper -- and the design-system primitives in dashboard/components/trace-mineral-tile-
- * detail.html (the corner SCAN·NNN / WALLACH-CORP lockup, .ds-pull-stat, mono readouts,
+ * paper -- and the design-system primitives from the retired trace-mineral-tile-
+ * detail mockup (the corner SCAN·NNN / WALLACH-CORP lockup, .ds-pull-stat, mono readouts,
  * the accent-notch rule). Translated to clean code -- NOT copied.
  *
  * PURE PROJECTION (R1): no canonical value or per-topic literal. Thesis claims + food cards

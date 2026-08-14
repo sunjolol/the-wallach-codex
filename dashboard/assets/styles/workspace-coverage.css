@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════════════════════
  * workspace-coverage.css — Coverage workspace styles + shared chrome
  * ═══════════════════════════════════════════════════════════════════════════
- * EXTRACTED from dashboard/components/workspace-coverage-v3.2-PROPOSAL.html
+ * EXTRACTED from the workspace-coverage-v3.2 mockup (retired 2026-08-13)
  * on 2026-06-21 (Round 26 · task #20 visual fidelity sweep).
  *
  * Three blocks:
@@ -438,7 +438,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
   /* The registration grid is DELIBERATELY at the edge of perception — rule-soft on
      paper-darker is a ~3-value delta, and that is the point: it should register as texture,
      never as a pattern competing with 91 plates. This matches the signed-off
-     coverage-plates-PROPOSAL.html byte-for-byte. A background-blend-mode: multiply was added
+     coverage-plates mockup (retired 2026-08-13) byte-for-byte. A background-blend-mode: multiply was added
      here after sign-off (my call, not asked for) to "fix" the subtlety; it made the grid
      dominate the surface. Subtlety was never the defect. Do not re-strengthen this. */
   background-image:

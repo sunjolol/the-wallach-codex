@@ -27,7 +27,7 @@ user-side; the agent invokes everything through bash.
 | `render_probe_knowledge.js` | Knowledge drawer. |
 | `render_probe_journey.js` | Journey drawer. |
 | `render_probe_profile.js` | Profile panel. |
-| `style_diff.js` | Computed-style diff of a live surface vs its v3 mockup — prints only the `getComputedStyle` deltas (the "measure, don't eyeball" visual gate). |
+| `style_diff.js` | Computed-style diff of a live surface vs a mockup — prints only the `getComputedStyle` deltas (the "measure, don't eyeball" visual gate). |
 
 ## Discipline core
 

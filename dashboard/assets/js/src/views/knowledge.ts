@@ -16,7 +16,7 @@
  * §00 Zod boundary: data reads pass through schemas defined in
  * core/schemas/knowledge + core/schemas/coverage-layout before field access.
  *
- * Visual contract: drawer-knowledge-v3-PROPOSAL.html. Styling: drawer-shared.css
+ * Visual contract: the live view (its v3 mockup was retired 2026-08-13). Styling: drawer-shared.css
  * (chrome) + drawer-knowledge.css (kd-* content). Keyboard: rail "K" toggles;
  * Esc closes (handler in main.ts).
  * ═══════════════════════════════════════════════════════════════════════════

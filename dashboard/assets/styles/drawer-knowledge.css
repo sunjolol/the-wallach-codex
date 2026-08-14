@@ -7,7 +7,7 @@
  * file. Here: the panel starting width (950px) + the four Knowledge tabs
  * (Corpus / Essentials / Products / Doctrine).
  *
- * Ported from dashboard/components/drawer-knowledge-v3-PROPOSAL.html. The mockup
+ * Ported from the drawer-knowledge-v3 mockup (retired 2026-08-13). That mockup
  * uses generic .section-head / .book-row / .featured-citation / .essential-tile
  * / .product-row / .doctrine-card names that COLLIDE with the old dashboard styles (now removed)
  * (.essential-tile) + workspace-coverage.css (.essentials-grid); the live view
@@ -1632,7 +1632,7 @@
 
 /* ═══════════════════════════ ABSORPTION §04 · pH ladder + fortress + Ultimate Enzymes CTA ═══════════════════════════ */
 /* The redesigned "You can't absorb what you can't break down" section (Luneth-approved 2026-07-24,
-   spec: dashboard/components/knowledge-foods-sec04-PROPOSAL.html). --sev-* live only under .kd-orac,
+   spec: the knowledge-foods-sec04 mockup, retired 2026-08-13). --sev-* live only under .kd-orac,
    so re-declare the two this section uses on the foods root. Every rule scoped like its neighbours. */
 #drawer-knowledge-mount .kd-foods { --sev-calm: #5a8ca8; --sev-crit: #8a2f2f; }
 
