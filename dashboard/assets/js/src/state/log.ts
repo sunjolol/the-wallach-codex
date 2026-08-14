@@ -90,11 +90,6 @@ export function getEntryCount(): number {
   return getEntries().length;
 }
 
-/** Entries filtered by kind. Useful for the invariant scoreboard. */
-export function getEntriesByKind(kind: LogKind): LogEntry[] {
-  return getEntries().filter(e => e.kind === kind);
-}
-
 // ─── Write chokepoint ─────────────────────────────────────────────────────
 
 export interface LogInput {

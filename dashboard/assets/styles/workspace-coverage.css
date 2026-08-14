@@ -124,16 +124,6 @@ body { margin: 0; background: var(--ds-paper-deep); }
  * All gated by prefers-reduced-motion via existing design-system.css rule.
  * ═══════════════════════════════════════════════════════════════════════════ */
 
-/* CIPHER — slow-cycling glyph readout. JS rotates the textContent every 1s.
-   Class only sets the styling; the JS at the bottom of this file does the
-   character cycling. */
-.ds-cipher {
-  font-family: var(--ds-font-mono);
-  font-variant-numeric: tabular-nums;
-  letter-spacing: 0.05em;
-  display: inline-block;
-  min-width: 1ch;
-}
 
 /* BORDER TRAVEL — a hairline accent that travels around a card border.
    Uses two pseudo elements for top→right and bottom→left edges. */

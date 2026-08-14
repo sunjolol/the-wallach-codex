@@ -87,6 +87,52 @@ export const UserNameSchema = z
     message: 'A name cannot contain control characters.',
   });
 
+/* --- APPEARANCE: theme + primary accent -------------------------------------
+ * Both are STYLE-ONLY choices (design-language: a theme changes look, never
+ * function). Cream is the default; a missing value reads as the default at the
+ * display layer, so an old v1 profile (name/browsing/chosenAt only) still parses
+ * -- this is an additive, backward-compatible migration, not a key bump. The
+ * hexes for each accent + the dark palette live in ONE place, the non-sealed
+ * theme layer (assets/styles/theme.css); this file owns only the id vocabulary
+ * so schema, state, and view cannot drift on WHICH ids are legal. */
+export const THEMES = ['cream', 'dark'] as const;
+export type ThemeId = typeof THEMES[number];
+
+export const ACCENTS = ['ember', 'sapphire', 'verdant', 'amethyst', 'rose', 'gold', 'teal', 'slate'] as const;
+export type AccentId = typeof ACCENTS[number];
+
+/** Human labels for the swatch tooltips. Kept here (core/) so the view holds no inline prose. */
+export const ACCENT_LABELS: Record<AccentId, string> = {
+  ember: 'Ember',
+  sapphire: 'Sapphire',
+  verdant: 'Verdant',
+  amethyst: 'Amethyst',
+  rose: 'Rose',
+  gold: 'Gold',
+  teal: 'Teal',
+  slate: 'Slate',
+};
+
+/* --- AVATAR -----------------------------------------------------------------
+ * Either a PRESET id (a bundled offline PNG, families aura/gem/world) or an
+ * UPLOADED image as a data: URI. The upload is the second unbounded-input vector
+ * after the name, so it is bounded HERE too: the UI downscales an upload to a
+ * ~256px PNG (tens of KB) before it is ever stored, and this cap is the backstop
+ * that stops a hand-edited/oversized value from eating the LS quota. */
+const AVATAR_PRESET = /^(?:aura|gem|world)-\d{2}$/;
+/** ~900 KB of data-URI string. A downscaled 256px PNG is well under this; the cap
+ *  only ever catches abuse, and it leaves the ~5 MB quota for the regimen. */
+export const AVATAR_MAX = 900_000;
+
+export const AvatarSchema = z
+  .string()
+  .refine(s => AVATAR_PRESET.test(s) || s.startsWith('data:image/'), {
+    message: 'An avatar must be a preset or an uploaded image.',
+  })
+  .refine(s => s.length <= AVATAR_MAX, {
+    message: 'That image is too large to store on this device.',
+  });
+
 /** What is persisted. Versioned so a future shape change is a migration, not a surprise. */
 export const UserProfileSchema = z.object({
   /** Absent = the user chose "just browsing". Present = they named themselves. */
@@ -95,6 +141,12 @@ export const UserProfileSchema = z.object({
   browsing: z.boolean(),
   /** ISO date the choice was made. */
   chosenAt: z.string(),
+  /** Preset id or uploaded data: URI. Absent = the auto avatar (name initial). */
+  avatar: AvatarSchema.optional(),
+  /** Light/dark. Absent = cream (the default). */
+  theme: z.enum(THEMES).optional(),
+  /** Primary colour id. Absent = ember (the default). */
+  accent: z.enum(ACCENTS).optional(),
 });
 
 export type UserProfile = z.infer<typeof UserProfileSchema>;

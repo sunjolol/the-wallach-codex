@@ -404,6 +404,10 @@ function wireProfileIdentity(): void {
   const paint = (): void => {
     const p = profileState.loadUserProfile();
     document.title = profileState.displayTitle(p);
+    // Appearance rides on <html>: theme + accent drive theme.css APP-WIDE, applied from this
+    // one place so the console, the rail, and every surface flip together (§31 cascade).
+    document.documentElement.dataset['theme'] = profileState.themeOf(p);
+    document.documentElement.dataset['accent'] = profileState.accentOf(p);
     const nameEl = document.getElementById('railProfileName');
     const avEl = document.getElementById('railAvatar');
     const brandEl = document.getElementById('railBrandName');
@@ -414,7 +418,17 @@ function wireProfileIdentity(): void {
       nameEl.textContent = profileState.displayName(p, 'profile');
     }
     if (avEl !== null) {
-      avEl.textContent = profileState.displayInitial(p);
+      // The rail avatar shows the chosen image (a preset or an upload), else the name initial.
+      const avSrc = profileState.avatarSrcOf(p);
+      if (avSrc !== null) {
+        const img = document.createElement('img');
+        img.src = avSrc;
+        img.alt = '';
+        avEl.replaceChildren(img);
+      }
+      else {
+        avEl.replaceChildren(document.createTextNode(profileState.displayInitial(p)));
+      }
     }
     const subEl = document.getElementById('railBrandSub');
     if (subEl !== null) {

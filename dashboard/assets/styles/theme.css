@@ -1,0 +1,126 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * theme.css — the appearance layer (adopted 2026-08-13, Profile feature)
+ * ───────────────────────────────────────────────────────────────────────────
+ * STYLE ONLY, NEVER FUNCTION (design-language). The whole app is themed by
+ * overriding the SEALED design-system.css tokens from a NON-sealed layer that
+ * loads AFTER it — the same mechanism type-futurist.css uses for the font
+ * tokens. Two independent axes, both driven off <html> attributes that
+ * main.ts stamps from the persisted profile:
+ *
+ *   data-theme="cream"|"dark"      — the surface palette (paper + ink + rule)
+ *   data-accent="ember"|...        — the single primary signal colour
+ *
+ * Cream + ember is the default and simply restores the design-system values, so
+ * an unthemed <html> (or a guest who never chose) looks exactly as before.
+ * design-system.css stays untouched and sealed; nothing here edits a token's
+ * home, it only shadows it under an attribute selector (higher specificity + a
+ * later cascade position, so no !important is needed).
+ *
+ * SCOPE NOTE: this remaps only the PRIMARY accent (--ds-accent family). The
+ * category taxonomy (minerals blue / vitamins orange / aminos green / omegas
+ * purple) rides its own tokens and is intentionally left alone — swapping your
+ * primary colour must not recolour what a nutrient category MEANS.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ─── DARK (charcoal) — the planned first alternate, now real ───────────────── */
+:root[data-theme="dark"] {
+  --ds-paper:        #17130d;
+  --ds-paper-light:  #221d15;
+  --ds-paper-deep:   #100c08;
+  --ds-paper-darker: #0b0805;
+  --ds-paper-shadow: #000000;
+
+  --ds-ink:          #f3ead7;
+  --ds-ink-medium:   #d9ccb4;
+  --ds-ink-soft:     #a89a80;
+  --ds-ink-faint:    #786c58;
+
+  --ds-rule:         #38322a;
+  --ds-rule-soft:    #2a251d;
+  --ds-rule-bright:  #4a4132;
+
+  /* Elevation shadows read as warm ink on cream; on charcoal they add depth as
+     near-black plus a faint top highlight. Kept token-shaped so consumers are
+     none the wiser. */
+  --ds-elev-1: 0 1px 0 rgba(255,255,255,0.04) inset,
+               0 0 0 1px var(--ds-rule-soft),
+               0 6px 16px -8px rgba(0,0,0,0.55);
+  --ds-elev-2: 0 1px 0 rgba(255,255,255,0.05) inset,
+               0 0 0 1px var(--ds-rule-soft),
+               0 16px 34px -16px rgba(0,0,0,0.6),
+               0 4px 12px -6px rgba(0,0,0,0.4);
+  --ds-elev-3: 0 1px 0 rgba(255,255,255,0.06) inset,
+               0 0 0 1px var(--ds-rule-soft),
+               0 26px 62px -26px rgba(0,0,0,0.7),
+               0 8px 20px -10px rgba(0,0,0,0.45);
+}
+
+/* ─── PRIMARY ACCENT — eight swappable signal colours ───────────────────────
+ * Each block overrides the whole --ds-accent family so buttons, kickers, marks,
+ * focus rings, and the profile console all pick up the choice at once. */
+:root[data-accent="ember"] {
+  --ds-accent: #ff7e3c; --ds-accent-bright: #ff9d5c; --ds-accent-hot: #ff6420;
+  --ds-accent-deep: #c8552a; --ds-accent-soft: #ffd0b3; --ds-accent-wash: #ffe9d8;
+}
+:root[data-accent="sapphire"] {
+  --ds-accent: #2f9dba; --ds-accent-bright: #4bb6d2; --ds-accent-hot: #1b8fb0;
+  --ds-accent-deep: #1e5f77; --ds-accent-soft: #bfe0ea; --ds-accent-wash: #e2f1f6;
+}
+:root[data-accent="verdant"] {
+  --ds-accent: #5aa82c; --ds-accent-bright: #74c245; --ds-accent-hot: #4a9420;
+  --ds-accent-deep: #3f7a1e; --ds-accent-soft: #cfe6bb; --ds-accent-wash: #e8f3dd;
+}
+:root[data-accent="amethyst"] {
+  --ds-accent: #8a52d6; --ds-accent-bright: #a370ea; --ds-accent-hot: #7a3fce;
+  --ds-accent-deep: #5a33a0; --ds-accent-soft: #ddccf3; --ds-accent-wash: #efe7fb;
+}
+:root[data-accent="rose"] {
+  --ds-accent: #e5687f; --ds-accent-bright: #ef849a; --ds-accent-hot: #db4d68;
+  --ds-accent-deep: #a5324f; --ds-accent-soft: #f6cdd6; --ds-accent-wash: #fbe8ec;
+}
+:root[data-accent="gold"] {
+  --ds-accent: #e0a92e; --ds-accent-bright: #f0c052; --ds-accent-hot: #d4991a;
+  --ds-accent-deep: #a9781a; --ds-accent-soft: #f4e0ac; --ds-accent-wash: #faf1d6;
+}
+:root[data-accent="teal"] {
+  --ds-accent: #2bb2a3; --ds-accent-bright: #45cabb; --ds-accent-hot: #1a9e8f;
+  --ds-accent-deep: #146b62; --ds-accent-soft: #bde8e2; --ds-accent-wash: #e0f4f1;
+}
+:root[data-accent="slate"] {
+  --ds-accent: #5f7599; --ds-accent-bright: #7c92b4; --ds-accent-hot: #4e6488;
+  --ds-accent-deep: #364763; --ds-accent-soft: #cdd6e4; --ds-accent-wash: #e7ecf3;
+}
+
+/* The named accent hexes as first-class vars, so the profile swatches can paint
+   their dots from the SAME source as the remaps above (no re-typed literals in
+   the view). --acc-<id> = each accent's base. */
+:root {
+  --acc-ember: #ff7e3c; --acc-sapphire: #2f9dba; --acc-verdant: #5aa82c; --acc-amethyst: #8a52d6;
+  --acc-rose: #e5687f; --acc-gold: #e0a92e; --acc-teal: #2bb2a3; --acc-slate: #5f7599;
+}
+
+/* ─── DARK: keep the rail a dark island (do not let the ink/paper flip invert it) ───
+ * The rail's palette IS ink=dark background + paper=light text. In dark mode those tokens
+ * flip globally, which would light the rail up. Re-pin the rail's OWN ink/paper/rule tokens
+ * to their cream values so the rail stays a constant dark chrome while only the WORKSPACE
+ * goes dark. Accent tokens are deliberately NOT re-pinned — the avatar + active item keep the
+ * chosen primary colour. */
+:root[data-theme="dark"] .app-rail {
+  --ds-ink: #1a1612;
+  --ds-paper: #faf5e8;
+  --ds-paper-light: #fffbf2;
+  --ds-ink-medium: #3d342a;
+  --ds-ink-soft: #6a5d50;
+  --ds-ink-faint: #9b8e7c;
+  --ds-rule: #d4c8a9;
+  --ds-rule-soft: #e8dfc6;
+}
+
+/* ─── DARK: the coverage registration grid, dialled to barely-there ───
+ * On paper the rule-soft lines sit a ~3-value delta above paper-darker (intended texture);
+ * on charcoal that same delta reads loud, so drop the lines to a whisper above the dark bg. */
+:root[data-theme="dark"] .essentials-host {
+  background-image:
+    linear-gradient(rgba(233, 223, 200, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(233, 223, 200, 0.035) 1px, transparent 1px);
+}

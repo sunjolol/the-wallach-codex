@@ -183,3 +183,69 @@ export function estimateUsage(): number {
   }
   return total * 2; // UTF-16 in most engines
 }
+
+/* --- BACKUP: whole-origin snapshot / restore (export <-> import) ------------
+ * The app's data is 100% on-device; export/import is how the user MOVES or backs
+ * it up (CLAUDE.md). Scoped to the app's own key prefixes so an export is clean
+ * and a restore cannot write arbitrary keys. Restore writes the raw strings back
+ * verbatim; every READ re-validates through getValidated, so a tampered value
+ * degrades to null rather than entering typed-land (#7 graceful degradation). */
+const APP_KEY_PREFIXES = ['wallach', 'rg', 'lc'] as const;
+
+function isAppKey(k: string): boolean {
+  return APP_KEY_PREFIXES.some(p => k.startsWith(p));
+}
+
+/** Every app-owned key -> its raw stored string. The shape the exporter serialises. */
+export function snapshot(): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k === null || !isAppKey(k)) {
+      continue;
+    }
+    const v = localStorage.getItem(k);
+    if (v !== null) {
+      out[k] = v;
+    }
+  }
+  return out;
+}
+
+/** Write a raw string verbatim (no JSON re-encoding), verified. Restore-only. */
+function setRaw(key: StorageKey, value: string): WriteResult {
+  try {
+    localStorage.setItem(key, value);
+  }
+  catch {
+    return { ok: false, key, reason: 'quota-exceeded' };
+  }
+  if (localStorage.getItem(key) !== value) {
+    return { ok: false, key, reason: 'verify-mismatch' };
+  }
+  return { ok: true, key };
+}
+
+/**
+ * Restore an exported snapshot. Only app-owned keys are written; the restored /
+ * skipped counts are returned so the caller can report honestly rather than
+ * claiming a clean import over a partial one.
+ */
+export function restore(data: Record<string, string>): { restored: number; skipped: number } {
+  let restored = 0;
+  let skipped = 0;
+  for (const [k, v] of Object.entries(data)) {
+    if (!isAppKey(k) || typeof v !== 'string') {
+      skipped++;
+      continue;
+    }
+    const res = setRaw(k, v);
+    if (res.ok) {
+      restored++;
+    }
+    else {
+      skipped++;
+    }
+  }
+  return { restored, skipped };
+}

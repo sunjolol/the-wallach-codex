@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cream" data-accent="ember">
 <head>
 <meta charset="UTF-8">
 <!--
@@ -42,6 +42,10 @@
 <link rel="stylesheet" href="./assets/styles/drawer-search.css">
 <!-- Futurist type direction: Unbounded (display) + Space Grotesk (body). SUPERSEDES design-system.css's serif tokens pending the next-session font survey. See type-futurist.css. -->
 <link rel="stylesheet" href="./assets/styles/type-futurist.css">
+<!-- Appearance layer: theme (cream/dark) + primary accent. Loads AFTER design-system.css so it
+     shadows the sealed tokens under [data-theme]/[data-accent] on <html> (never edits them).
+     main.ts stamps those attributes from the persisted profile. See views/profile.ts. -->
+<link rel="stylesheet" href="./assets/styles/theme.css">
 
 </head>
 <body>

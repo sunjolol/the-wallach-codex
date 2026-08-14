@@ -1,325 +1,565 @@
 /**
- * views/profile.ts — Profile panel (Creator's Log + Invariants + Build)
+ * views/profile.ts — the Profile console (identity + appearance + data)
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * The panel that opens when Luneth clicks the rail profile chip. Surfaces
- * the §00 discipline audit trail:
+ * The popup that opens from the rail profile chip. Ported live from the
+ * signed-off "Command Card" demo (2026-08-13). It lets the user:
+ *   - set / change their NAME (the app's one free-text field; validated at the
+ *     state chokepoint, rendered here via textContent/value — never innerHTML),
+ *   - pick an AVATAR (a bundled offline preset, or an uploaded image that is
+ *     downscaled to 256px before it is ever stored),
+ *   - switch THEME (cream / charcoal) and the primary ACCENT colour — both
+ *     apply APP-WIDE via <html data-theme data-accent> (main.ts is the single
+ *     applier, on the profile:changed cascade),
+ *   - own their DATA — export a JSON backup, import one, or reset to guest.
  *
- *   - Creator's Log tab — every round close, invariant result, incident,
- *     and milestone, sourced live from `state/log.getEntries()`. No
- *     hardcoded entries: an empty LS reads as an empty panel.
- *   - Invariants tab — scoreboard derived from log entries of kind
- *     'invariant-pass' / 'invariant-fail'. Scaffold this round.
- *   - Build tab — last-build status. Scaffold this round.
- *
- * Visual chrome (cipher chips, dot pulses, scan-line) follows the same
- * language as coverage / regimen / scanner views.
+ * Every mutation routes through a NAMED state op in state/profile.ts (§31); this
+ * view never writes localStorage. The three homes stay in sync because each op's
+ * last line emits profile:changed and this view + main.ts both subscribe.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import { on } from '../core/events.js';
+import { BACKUP_APP_ID, BackupEnvelopeSchema } from '../core/schemas/backup.js';
+import { ACCENT_LABELS, ACCENTS } from '../core/schemas/profile.js';
+import { restore, snapshot } from '../core/storage.js';
+import { getEntries, type LogEntry, type LogKind } from '../state/log.js';
 import {
-  getEntries,
-  getEntriesByKind,
-  type LogEntry,
-  type LogKind,
-} from '../state/log.js';
+  accentOf,
+  avatarSrcOf,
+  clearAvatar,
+  displayInitial,
+  loadUserProfile,
+  presetSrc,
+  resetIdentity,
+  saveUserProfile,
+  setAccent,
+  setAvatar,
+  setTheme,
+  themeOf,
+} from '../state/profile.js';
 
 export interface MountHandle {
   update: () => void;
   unmount: () => void;
 }
 
-type Tab = 'log' | 'invariants' | 'build';
+/** The avatar families, in browse order. Three entries — the filenames (aura-01
+ *  … world-08) are generated from count, so no >10-element list lives here. */
+const FAMILIES: ReadonlyArray<{ id: string; count: number; label: string }> = [
+  { id: 'aura', count: 12, label: 'Auras' },
+  { id: 'gem', count: 12, label: 'Gems' },
+  { id: 'world', count: 8, label: 'Worlds' },
+];
 
-// ─── Helpers ──────────────────────────────────────────────────────────────
+/** The UI's tighter name bound; the schema's USER_NAME_MAX (40) is the backstop. */
+const NAME_MAX = 24;
 
+function pad2(n: number): string {
+  return n < 10 ? `0${n}` : String(n);
+}
+
+/** Every preset id, derived from the family counts (aura-01 … world-08). */
+function presetIds(): string[] {
+  const ids: string[] = [];
+  for (const f of FAMILIES) {
+    for (let i = 1; i <= f.count; i++) {
+      ids.push(`${f.id}-${pad2(i)}`);
+    }
+  }
+  return ids;
+}
+
+// ─── icons (inline SVG; stroke = currentColor) ──────────────────────────────
+const IC = {
+  plus: '<svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>',
+  upload: '<svg viewBox="0 0 24 24"><path d="M12 15V4M8 8l4-4 4 4"/><path d="M4 15v4a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-4"/></svg>',
+  pencil: '<svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>',
+  sun: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v3M12 20v3M4.2 4.2l2 2M17.8 17.8l2 2M1 12h3M20 12h3M4.2 19.8l2-2M17.8 6.2l2-2"/></svg>',
+  moon: '<svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>',
+  down: '<svg viewBox="0 0 24 24"><path d="M12 3v12M8 11l4 4 4-4"/><path d="M4 21h16"/></svg>',
+  up: '<svg viewBox="0 0 24 24"><path d="M12 21V9M8 13l4-4 4 4"/><path d="M4 3h16"/></svg>',
+  trash: '<svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>',
+} as const;
+
+// ─── Creator's Log (re-homed) ───────────────────────────────────────────────
+// This is the CREATOR's identity panel, so the §00 discipline audit trail lives
+// here too — collapsed by default so it never crowds the identity controls. It
+// also keeps the log embed bundled + current (creators_log_bundle_synced).
 function escHTML(s: unknown): string {
-  return String(s ?? '').replace(/[&<>"']/g, c => ({
+  return String(s ?? '').replace(/[&<>"']/g, c => (({
     '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
     '\'': '&#39;',
-  }[c] as string));
+  })[c] as string));
 }
 
-function formatTs(iso: string): string {
-  // ISO is sortable; show "YYYY-MM-DD HH:MM" for readability.
-  if (iso.length < 16) {
-    return iso;
-  }
-  return `${iso.slice(0, 10)} ${iso.slice(11, 16)}`;
+function fmtTs(iso: string): string {
+  return iso.length < 16 ? iso : `${iso.slice(0, 10)} ${iso.slice(11, 16)}`;
 }
 
-function kindLabel(k: LogKind): string {
-  const map: Record<LogKind, string> = {
-    'session-start': 'SESSION START',
-    'session-end': 'SESSION END',
-    'round-close': 'ROUND CLOSE',
-    'build': 'BUILD',
-    'invariant-pass': 'INVARIANT ✓',
-    'invariant-fail': 'INVARIANT ✗',
-    'incident': 'INCIDENT',
-    'milestone': 'MILESTONE',
-    'design-decision': 'DESIGN',
-    'note': 'NOTE',
-  };
-  return map[k];
-}
-
-function kindClass(k: LogKind): string {
-  const map: Record<LogKind, string> = {
-    'session-start': 'pf-pill pf-pill--neutral',
-    'session-end': 'pf-pill pf-pill--neutral',
-    'round-close': 'pf-pill pf-pill--ok',
-    'build': 'pf-pill pf-pill--neutral',
-    'invariant-pass': 'pf-pill pf-pill--ok',
-    'invariant-fail': 'pf-pill pf-pill--err',
-    'incident': 'pf-pill pf-pill--err',
-    'milestone': 'pf-pill pf-pill--accent',
-    'design-decision': 'pf-pill pf-pill--accent',
-    'note': 'pf-pill pf-pill--neutral',
-  };
-  return map[k];
-}
-
-// ─── Tab: Creator's Log ───────────────────────────────────────────────────
-
-function renderLogEntry(entry: LogEntry): string {
-  const detailHTML = entry.detail !== undefined && entry.detail.length > 0
-    ? `<div class="pf-log-entry__detail">${escHTML(entry.detail)}</div>`
-    : '';
-  return `
-    <article class="pf-log-entry" data-log-id="${escHTML(entry.id)}">
-      <header class="pf-log-entry__head">
-        <span class="pf-log-entry__ts">${escHTML(formatTs(entry.ts))}</span>
-        <span class="pf-log-entry__surface">${escHTML(entry.surface)}</span>
-        <span class="${kindClass(entry.kind)}">${escHTML(kindLabel(entry.kind))}</span>
-      </header>
-      <h4 class="pf-log-entry__summary">${escHTML(entry.summary)}</h4>
-      ${detailHTML}
-    </article>
-  `;
-}
-
-function renderLogEmpty(): string {
-  return `
-    <div class="pf-empty">
-      <div class="pf-empty__mark">○</div>
-      <h3 class="pf-empty__title">No log entries yet</h3>
-      <p class="pf-empty__body">
-        Round closes, invariant results, incidents, and milestones will appear here
-        once <code>state/log.log()</code> is called from the §00 audit trail hooks.
-      </p>
-    </div>
-  `;
-}
-
-function renderLogTab(): string {
-  const entries = getEntries();
-  if (entries.length === 0) {
-    return renderLogEmpty();
-  }
-  return `<div class="pf-log-stream">${entries.map(renderLogEntry).join('')}</div>`;
-}
-
-// ─── Tab: Invariants ──────────────────────────────────────────────────────
-
-function renderInvariantsTab(): string {
-  const passes = getEntriesByKind('invariant-pass');
-  const fails = getEntriesByKind('invariant-fail');
-  const total = passes.length + fails.length;
-  if (total === 0) {
-    return `
-      <div class="pf-empty">
-        <div class="pf-empty__mark">○</div>
-        <h3 class="pf-empty__title">No invariant runs recorded</h3>
-        <p class="pf-empty__body">
-          Run <code>python3 tools/invariants.py</code> and let the hook log to
-          state/log to populate this scoreboard.
-        </p>
-      </div>
-    `;
-  }
-  const passPct = total > 0 ? Math.round((passes.length / total) * 100) : 0;
-  return `
-    <div class="pf-inv-board">
-      <div class="pf-inv-stat pf-inv-stat--ok">
-        <div class="pf-inv-stat__num">${passes.length}</div>
-        <div class="pf-inv-stat__label">passes</div>
-      </div>
-      <div class="pf-inv-stat pf-inv-stat--err">
-        <div class="pf-inv-stat__num">${fails.length}</div>
-        <div class="pf-inv-stat__label">failures</div>
-      </div>
-      <div class="pf-inv-stat">
-        <div class="pf-inv-stat__num">${passPct}%</div>
-        <div class="pf-inv-stat__label">pass rate</div>
-      </div>
-    </div>
-  `;
-}
-
-// ─── Tab: Build ───────────────────────────────────────────────────────────
-
-function renderBuildTab(): string {
-  const lastBuild = getEntriesByKind('build')[0] ?? null;
-  if (lastBuild === null) {
-    return `
-      <div class="pf-empty">
-        <div class="pf-empty__mark">○</div>
-        <h3 class="pf-empty__title">No build events recorded</h3>
-        <p class="pf-empty__body">
-          Build events appear here when <code>tools/build-dashboard.sh</code>
-          logs a round.
-        </p>
-      </div>
-    `;
-  }
-  return `
-    <div class="pf-build-card">
-      <div class="pf-build-card__ts">${escHTML(formatTs(lastBuild.ts))}</div>
-      <h3 class="pf-build-card__summary">${escHTML(lastBuild.summary)}</h3>
-      ${lastBuild.detail !== undefined ? `<pre class="pf-build-card__detail">${escHTML(lastBuild.detail)}</pre>` : ''}
-    </div>
-  `;
-}
-
-// ─── Shell ────────────────────────────────────────────────────────────────
-
-function renderTabBody(tab: Tab): string {
-  if (tab === 'log') {
-    return renderLogTab();
-  }
-  if (tab === 'invariants') {
-    return renderInvariantsTab();
-  }
-  return renderBuildTab();
-}
-
-function renderShell(tab: Tab, totalEntries: number): string {
-  return `
-    <div class="pf-panel" role="dialog" aria-label="Profile">
-      <header class="pf-panel__head">
-        <div class="pf-panel__title-block">
-          <div class="pf-panel__eyebrow">
-            <span class="pulse-dot"></span>PROFILE · <span class="ds-cipher" data-cipher-set="hexa">PF·0001</span>
-          </div>
-          <h2 class="pf-panel__title">Luneth <em>// creator</em></h2>
-          <div class="pf-panel__sub">${totalEntries} entr${totalEntries === 1 ? 'y' : 'ies'} on file · Wallach discipline audit</div>
-        </div>
-        <button class="pf-panel__close" data-pf-action="close" aria-label="Close profile">✕</button>
-      </header>
-      <nav class="pf-tabs">
-        <button class="pf-tab ${tab === 'log' ? 'pf-tab--active' : ''}" data-pf-tab="log">Creator's Log</button>
-        <button class="pf-tab ${tab === 'invariants' ? 'pf-tab--active' : ''}" data-pf-tab="invariants">Invariants</button>
-        <button class="pf-tab ${tab === 'build' ? 'pf-tab--active' : ''}" data-pf-tab="build">Build</button>
-      </nav>
-      <div class="pf-body">${renderTabBody(tab)}</div>
-    </div>
-  `;
-}
-
-// ─── Cipher engine (scoped) ───────────────────────────────────────────────
-
-const CIPHER_SETS: Record<string, string> = {
-  hexa: '0123456789ABCDEF',
-  alphanum: '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+const LOG_LABEL: Record<LogKind, string> = {
+  'session-start': 'SESSION',
+  'session-end': 'SESSION END',
+  'round-close': 'ROUND CLOSE',
+  'build': 'BUILD',
+  'invariant-pass': 'INVARIANT ✓',
+  'invariant-fail': 'INVARIANT ✗',
+  'incident': 'INCIDENT',
+  'milestone': 'MILESTONE',
+  'design-decision': 'DESIGN',
+  'note': 'NOTE',
 };
 
-let cipherInterval: number | null = null;
-let cipherTick = 0;
-
-function startCipherEngine(container: HTMLElement): void {
-  if (cipherInterval !== null) {
-    return;
+function logPill(k: LogKind): string {
+  if (k === 'invariant-fail' || k === 'incident') {
+    return 'pf-logentry__pill pf-logentry__pill--err';
   }
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    return;
+  if (k === 'invariant-pass' || k === 'round-close') {
+    return 'pf-logentry__pill pf-logentry__pill--ok';
   }
-  cipherInterval = window.setInterval(() => {
-    cipherTick += 1;
-    const elements = Array.from(container.querySelectorAll<HTMLElement>('.ds-cipher'));
-    for (const el of elements) {
-      let original = el.dataset['cipherOriginal'];
-      if (original === undefined) {
-        original = el.textContent ?? '';
-        el.dataset['cipherOriginal'] = original;
-        const setKey = el.dataset['cipherSet'] ?? 'alphanum';
-        el.dataset['cipherSetResolved'] = CIPHER_SETS[setKey] ?? CIPHER_SETS['alphanum'] ?? '';
-      }
-      const set = el.dataset['cipherSetResolved'] ?? '';
-      if (cipherTick % 5 === 0) {
-        el.textContent = original;
-        continue;
-      }
-      if (original.length === 0 || set.length === 0) {
-        continue;
-      }
-      const chars = original.split('');
-      const i = Math.floor(Math.random() * chars.length);
-      const charAt = chars[i];
-      if (charAt === undefined) {
-        continue;
-      }
-      if (!/[A-Z0-9·:]/i.test(charAt)) {
-        continue;
-      }
-      const newChar = set[Math.floor(Math.random() * set.length)] ?? charAt;
-      chars[i] = newChar;
-      el.textContent = chars.join('');
-    }
-  }, 1000);
+  return 'pf-logentry__pill';
 }
 
-function stopCipherEngine(): void {
-  if (cipherInterval !== null) {
-    window.clearInterval(cipherInterval);
-    cipherInterval = null;
-  }
+function renderLogEntry(e: LogEntry): string {
+  const detail = e.detail !== undefined && e.detail.length > 0
+    ? `<div class="pf-logentry__detail">${escHTML(e.detail)}</div>`
+    : '';
+  return `<article class="pf-logentry"><div class="pf-logentry__head"><span>${escHTML(fmtTs(e.ts))}</span><span>${escHTML(e.surface)}</span><span class="${logPill(e.kind)}">${escHTML(LOG_LABEL[e.kind])}</span></div><h4 class="pf-logentry__sum">${escHTML(e.summary)}</h4>${detail}</article>`;
 }
 
-// ─── Mount ────────────────────────────────────────────────────────────────
+function renderLog(): string {
+  const entries = getEntries();
+  if (entries.length === 0) {
+    return '';
+  }
+  return `<details class="pf-log"><summary class="pf-log__sum">Creator's Log · <b>${entries.length}</b> entries</summary><div class="pf-log__stream">${entries.map(renderLogEntry).join('')}</div></details>`;
+}
+
+function shell(): string {
+  const swatches = ACCENTS.map(id =>
+    `<button class="pf-sw" data-accent="${id}" style="--sw: var(--acc-${id})" title="${ACCENT_LABELS[id]}" type="button"></button>`).join('');
+  return `
+    <div class="pf-panel" role="dialog" aria-modal="true" aria-label="Profile">
+      <div class="pf-head">
+        <div class="pf-eyebrow"><span class="dot"></span> Profile</div>
+        <button class="pf-close" data-act="close" type="button" aria-label="Close profile">✕</button>
+      </div>
+
+      <div class="pf-scroll">
+        <div class="pf-hero">
+          <div class="pf-av">
+            <span data-av-slot></span>
+            <button class="pf-av__badge" data-act="upload" type="button" title="Upload a photo">${IC.plus}</button>
+          </div>
+          <div class="pf-nameblock">
+            <div class="pf-namefield">
+              <input class="pf-name" data-name type="text" maxlength="${NAME_MAX}" placeholder="Set your name" autocomplete="off" spellcheck="false" aria-label="Your name">
+              <span class="pf-pencil">${IC.pencil}</span>
+            </div>
+            <div class="pf-namemeta">
+              <span class="pf-status" data-status><i></i> Signed in</span>
+              <span>·</span>
+              <span class="pf-cnt" data-cnt>0/${NAME_MAX}</span>
+            </div>
+            <div class="pf-err" data-err></div>
+          </div>
+        </div>
+
+        <div class="pf-body">
+          <div class="pf-label"><b>Choose your avatar</b> · <span>32 graphics</span></div>
+          <div class="pf-filters" data-filters>
+            <button class="pf-fchip on" data-fam="all" type="button">All</button>
+            ${FAMILIES.map(f => `<button class="pf-fchip" data-fam="${f.id}" type="button">${f.label}</button>`).join('')}
+          </div>
+          <div class="pf-grid" data-grid></div>
+
+          <div class="pf-label"><b>Theme</b> · style only, never function</div>
+          <div class="pf-appearance">
+            <div class="pf-modeseg" data-modeseg>
+              <button class="pf-modeb" data-mode="cream" type="button">${IC.sun} Cream</button>
+              <button class="pf-modeb" data-mode="dark" type="button">${IC.moon} Charcoal</button>
+            </div>
+          </div>
+          <div class="pf-swatches" data-swatches>${swatches}</div>
+
+          <div class="pf-label"><b>Your data</b> · 100% on this device</div>
+          <div class="pf-data">
+            <button class="pf-dbtn" data-act="export" type="button">
+              <span class="pf-dbtn__ico">${IC.down}</span>
+              <span><span class="pf-dbtn__t">Export</span><span class="pf-dbtn__s">Save a .json backup</span></span>
+            </button>
+            <button class="pf-dbtn" data-act="import" type="button">
+              <span class="pf-dbtn__ico">${IC.up}</span>
+              <span><span class="pf-dbtn__t">Import</span><span class="pf-dbtn__s">Restore from .json</span></span>
+            </button>
+            <button class="pf-dbtn pf-dbtn--danger" data-act="reset" type="button">
+              <span class="pf-dbtn__ico">${IC.trash}</span>
+              <span><span class="pf-dbtn__t">Reset identity</span><span class="pf-dbtn__s">Back to guest — your regimen is kept</span></span>
+            </button>
+          </div>
+          ${renderLog()}
+        </div>
+      </div>
+
+      <div class="pf-foot">
+        <button class="pf-ghost pf-hidden" data-act="close" data-guestbtn type="button">Continue as guest</button>
+        <button class="pf-done" data-act="close" type="button">Done</button>
+      </div>
+      <input type="file" accept="image/png,image/jpeg,image/webp" data-upload-input class="pf-hidden">
+      <input type="file" accept="application/json,.json" data-import-input class="pf-hidden">
+    </div>
+  `;
+}
 
 export function mount(container: HTMLElement): MountHandle {
-  let tab: Tab = 'log';
+  container.innerHTML = shell();
 
-  const render = (): void => {
-    container.innerHTML = renderShell(tab, getEntries().length);
+  const $ = <T extends HTMLElement>(sel: string): T | null => container.querySelector<T>(sel);
+  const nameEl = $<HTMLInputElement>('[data-name]');
+  const cntEl = $('[data-cnt]');
+  const statusEl = $('[data-status]');
+  const errEl = $('[data-err]');
+  const gridEl = $('[data-grid]');
+  const avSlot = $('[data-av-slot]');
+  const uploadInput = $<HTMLInputElement>('[data-upload-input]');
+  const importInput = $<HTMLInputElement>('[data-import-input]');
+  const guestBtn = $('[data-guestbtn]');
+
+  let fam = 'all';
+
+  const showErr = (msg: string): void => {
+    if (errEl !== null) {
+      errEl.textContent = msg;
+    }
+  };
+  const clearErr = (): void => {
+    if (errEl !== null) {
+      errEl.textContent = '';
+    }
   };
 
-  const onClick = (ev: Event): void => {
-    const target = ev.target as HTMLElement | null;
-    if (target === null) {
+  // ── hero avatar (image when chosen, else the name initial) ──
+  const paintAvatar = (): void => {
+    if (avSlot === null) {
       return;
     }
-    const tabBtn = target.closest<HTMLElement>('[data-pf-tab]');
-    if (tabBtn !== null) {
-      const t = tabBtn.dataset['pfTab'] as Tab | undefined;
-      if (t !== undefined) {
-        tab = t;
-        render();
+    const p = loadUserProfile();
+    const src = avatarSrcOf(p);
+    if (src !== null) {
+      const img = document.createElement('img');
+      img.className = 'pf-av__img';
+      img.alt = 'Your avatar';
+      img.src = src;
+      avSlot.replaceChildren(img);
+    }
+    else {
+      const mono = document.createElement('div');
+      mono.className = 'pf-av__mono';
+      mono.textContent = displayInitial(p); // textContent: the initial is user-derived
+      avSlot.replaceChildren(mono);
+    }
+    // reflect selection in the grid
+    const cur = p?.avatar ?? '';
+    for (const t of container.querySelectorAll<HTMLElement>('.pf-tile[data-avatar]')) {
+      t.classList.toggle('sel', t.dataset['avatar'] === cur);
+    }
+    const defTile = container.querySelector<HTMLElement>('.pf-tile--default');
+    if (defTile !== null) {
+      defTile.textContent = displayInitial(p); // stays in step with the name
+      defTile.classList.toggle('sel', src === null); // selected when there is no avatar
+    }
+  };
+
+  // ── name meta (counter + guest/signed-in) ──
+  const paintNameMeta = (): void => {
+    const v = nameEl?.value ?? '';
+    const guest = v.trim() === '';
+    if (cntEl !== null) {
+      cntEl.textContent = `${v.length}/${NAME_MAX}`;
+      cntEl.dataset['over'] = v.length >= NAME_MAX ? '1' : '0';
+    }
+    if (statusEl !== null) {
+      statusEl.classList.toggle('pf-status--guest', guest);
+      statusEl.innerHTML = `<i></i> ${guest ? 'Guest' : 'Signed in'}`;
+    }
+    // "Continue as guest" is only offered TO a guest — for a named user it would drop
+    // their identity with no undo, so it is hidden until the name field is empty.
+    if (guestBtn !== null) {
+      guestBtn.classList.toggle('pf-hidden', !guest);
+    }
+  };
+
+  // ── theme + accent selected states ──
+  const paintAppearance = (): void => {
+    const p = loadUserProfile();
+    const theme = themeOf(p);
+    const accent = accentOf(p);
+    for (const b of container.querySelectorAll<HTMLElement>('.pf-modeb')) {
+      b.classList.toggle('on', b.dataset['mode'] === theme);
+    }
+    for (const s of container.querySelectorAll<HTMLElement>('.pf-sw')) {
+      s.classList.toggle('on', s.dataset['accent'] === accent);
+    }
+  };
+
+  // ── avatar grid ──
+  const renderGrid = (): void => {
+    if (gridEl === null) {
+      return;
+    }
+    const frag = document.createDocumentFragment();
+    // Default (your initial) — always first, the way back to the auto avatar.
+    const def = document.createElement('button');
+    def.className = 'pf-tile pf-tile--default';
+    def.type = 'button';
+    def.dataset['default'] = '1';
+    def.title = 'Default — your initial';
+    frag.appendChild(def);
+    const up = document.createElement('button');
+    up.className = 'pf-tile pf-tile--up';
+    up.type = 'button';
+    up.title = 'Upload a photo';
+    up.dataset['act'] = 'upload';
+    up.innerHTML = IC.upload;
+    frag.appendChild(up);
+    for (const id of presetIds()) {
+      if (fam !== 'all' && !id.startsWith(`${fam}-`)) {
+        continue;
+      }
+      const b = document.createElement('button');
+      b.className = 'pf-tile';
+      b.type = 'button';
+      b.dataset['avatar'] = id;
+      const img = document.createElement('img');
+      img.className = 'pf-tile__img';
+      img.loading = 'lazy';
+      img.alt = '';
+      img.src = presetSrc(id);
+      b.appendChild(img);
+      frag.appendChild(b);
+    }
+    gridEl.replaceChildren(frag);
+    paintAvatar(); // re-mark selection
+  };
+
+  // ── upload → downscale to 256px → store as data URI ──
+  const handleFile = (file: File): void => {
+    const reader = new FileReader();
+    reader.onload = (): void => {
+      const img = new Image();
+      img.onload = (): void => {
+        const S = 256;
+        const canvas = document.createElement('canvas');
+        canvas.width = S;
+        canvas.height = S;
+        const ctx = canvas.getContext('2d');
+        if (ctx === null) {
+          showErr('This device could not process that image.');
+          return;
+        }
+        const scale = Math.max(S / img.width, S / img.height);
+        const w = img.width * scale;
+        const h = img.height * scale;
+        ctx.drawImage(img, (S - w) / 2, (S - h) / 2, w, h);
+        const dataUri = canvas.toDataURL('image/png');
+        const res = setAvatar(dataUri);
+        if (!res.ok) {
+          showErr(res.reason);
+        }
+        else {
+          clearErr();
+        }
+      };
+      img.onerror = (): void => showErr('That image could not be read.');
+      img.src = String(reader.result);
+    };
+    reader.onerror = (): void => showErr('That file could not be read.');
+    reader.readAsDataURL(file);
+  };
+
+  const doExport = (): void => {
+    const env = {
+      app: BACKUP_APP_ID,
+      version: 1,
+      exportedAt: new Date().toISOString(),
+      data: snapshot(),
+    };
+    const blob = new Blob([JSON.stringify(env, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `wallach-codex-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImport = (file: File): void => {
+    const reader = new FileReader();
+    reader.onload = (): void => {
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(String(reader.result));
+      }
+      catch {
+        showErr('That file is not valid JSON.');
+        return;
+      }
+      const env = BackupEnvelopeSchema.safeParse(parsed);
+      if (!env.success) {
+        showErr('That is not a Codex backup file.');
+        return;
+      }
+      restore(env.data.data);
+      // Many keys changed at once; a reload is the honest way to re-read every
+      // surface through its own schema rather than hand-repaint each.
+      window.location.reload();
+    };
+    reader.onerror = (): void => showErr('That file could not be read.');
+    reader.readAsText(file);
+  };
+
+  // ── name commit ──
+  const commitName = (): void => {
+    const raw = nameEl?.value.trim() ?? '';
+    const res = raw === ''
+      ? saveUserProfile({ browsing: true }) // blanked → guest, keeps avatar/appearance
+      : saveUserProfile({ name: raw, browsing: false });
+    if (!res.ok) {
+      showErr(res.reason);
+    }
+    else {
+      clearErr();
+    }
+  };
+
+  // ── event delegation ──
+  const onClick = (ev: Event): void => {
+    const t = ev.target as HTMLElement | null;
+    if (t === null) {
+      return;
+    }
+    if (t.closest('.pf-tile--default') !== null) {
+      clearAvatar(); // back to the auto avatar (the name initial)
+      clearErr();
+      return;
+    }
+    const tile = t.closest<HTMLElement>('.pf-tile[data-avatar]');
+    if (tile !== null) {
+      const id = tile.dataset['avatar'];
+      if (id !== undefined) {
+        const res = setAvatar(id);
+        if (!res.ok) {
+          showErr(res.reason);
+        }
+        else {
+          clearErr();
+        }
       }
       return;
     }
-    const actionBtn = target.closest<HTMLElement>('[data-pf-action]');
-    if (actionBtn !== null && actionBtn.dataset['pfAction'] === 'close') {
+    const fchip = t.closest<HTMLElement>('.pf-fchip');
+    if (fchip !== null) {
+      fam = fchip.dataset['fam'] ?? 'all';
+      for (const c of container.querySelectorAll<HTMLElement>('.pf-fchip')) {
+        c.classList.toggle('on', c === fchip);
+      }
+      renderGrid();
+      return;
+    }
+    const modeb = t.closest<HTMLElement>('.pf-modeb');
+    if (modeb !== null) {
+      const m = modeb.dataset['mode'];
+      if (m === 'cream' || m === 'dark') {
+        setTheme(m);
+      }
+      return;
+    }
+    const sw = t.closest<HTMLElement>('.pf-sw');
+    if (sw !== null) {
+      const a = sw.dataset['accent'];
+      if (a !== undefined && (ACCENTS as readonly string[]).includes(a)) {
+        setAccent(a as (typeof ACCENTS)[number]);
+      }
+      return;
+    }
+    const act = t.closest<HTMLElement>('[data-act]')?.dataset['act'];
+    if (act === 'close') {
       container.dispatchEvent(new CustomEvent('pf:close', { bubbles: true }));
+    }
+    else if (act === 'upload') {
+      uploadInput?.click();
+    }
+    else if (act === 'export') {
+      doExport();
+    }
+    else if (act === 'import') {
+      importInput?.click();
+    }
+    else if (act === 'reset') {
+      resetIdentity();
     }
   };
 
-  render();
-  startCipherEngine(container);
-  container.addEventListener('click', onClick);
+  // ── initial paint ──
+  const paintAll = (): void => {
+    if (nameEl !== null) {
+      const p = loadUserProfile();
+      // .value assignment, never innerHTML: the input renders the name as text.
+      nameEl.value = p?.name ?? '';
+    }
+    paintNameMeta();
+    paintAvatar();
+    paintAppearance();
+  };
 
-  const unsubLog = on('log:entry-added', () => render());
+  renderGrid();
+  paintAll();
+
+  container.addEventListener('click', onClick);
+  nameEl?.addEventListener('input', () => {
+    clearErr();
+    paintNameMeta();
+  });
+  nameEl?.addEventListener('change', commitName);
+  nameEl?.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Enter') {
+      ev.preventDefault();
+      nameEl.blur();
+    }
+  });
+  uploadInput?.addEventListener('change', () => {
+    const f = uploadInput.files?.[0];
+    if (f !== undefined) {
+      handleFile(f);
+    }
+    uploadInput.value = '';
+  });
+  importInput?.addEventListener('change', () => {
+    const f = importInput.files?.[0];
+    if (f !== undefined) {
+      handleImport(f);
+    }
+    importInput.value = '';
+  });
+
+  // Repaint on any profile change (e.g. reset, or a cross-tab write). The console
+  // is the mutator while open, but re-reading state keeps every slot honest.
+  const unsub = on('profile:changed', () => {
+    if (nameEl !== null && document.activeElement !== nameEl) {
+      nameEl.value = loadUserProfile()?.name ?? '';
+    }
+    paintNameMeta();
+    paintAvatar();
+    paintAppearance();
+  });
 
   return {
-    update: render,
-    unmount: () => {
-      unsubLog();
-      stopCipherEngine();
+    update: paintAll,
+    unmount: (): void => {
+      unsub();
       container.removeEventListener('click', onClick);
       container.innerHTML = '';
     },
