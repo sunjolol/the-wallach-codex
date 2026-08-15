@@ -64,6 +64,7 @@ import {
   type SlotDoc,
   SlotDocSchema,
   SlotNameSchema,
+  type SlotTrashEntry,
 } from '../core/schemas/index.js';
 import { getRaw, getValidated, setValidated, type WriteResult } from '../core/storage.js';
 
@@ -79,7 +80,9 @@ export const RG_REMOVED_KEY = 'rgRemoved_v1';
 
 // ─── Slot limits (the §3 invariants, as constants the gate can find) ───────
 export const MAX_SLOTS = 4;
-export const MAX_TRASH = 20;
+/** The recycle bin (P5): at most 4 removed items + 7 deleted saves, newest-first, no expiry. */
+export const MAX_ITEM_TRASH = 4;
+export const MAX_SLOT_TRASH = 7;
 export const DEFAULT_SLOT_ID = 'default';
 
 // ─── Slot colour palette (P4) — loaded from assets/data, validated once ────────
@@ -97,7 +100,7 @@ export function isSlotColour(c: string): boolean {
 }
 
 // ─── Re-export inferred types so callers can `import type { Regimen } from '@state/regimen'` ─
-export type { OverridesMap, Regimen, RegimenItem, Slot, SlotDoc };
+export type { OverridesMap, Regimen, RegimenItem, Slot, SlotDoc, SlotTrashEntry };
 export type OverridePatch = Record<string, unknown>;
 
 /** Result of a refusable slot operation — never a silent drop (doctrine #1, #8). */
@@ -131,9 +134,14 @@ function newSlotId(): string {
   return `slot_${Date.now().toString(36)}${Math.floor(Math.random() * 1e4).toString(36)}`;
 }
 
-/** Newest-first ring cap for the trash buffer. */
+/** Newest-first ring cap for the item bin (P5: at most MAX_ITEM_TRASH). */
 function capTrash(entries: SlotDoc['trash']): SlotDoc['trash'] {
-  return entries.slice(0, MAX_TRASH);
+  return entries.slice(0, MAX_ITEM_TRASH);
+}
+
+/** Newest-first ring cap for the save bin (P5: at most MAX_SLOT_TRASH). */
+function capSlotTrash(entries: SlotTrashEntry[]): SlotTrashEntry[] {
+  return entries.slice(0, MAX_SLOT_TRASH);
 }
 
 /**
@@ -221,6 +229,7 @@ function migrateFromLegacy(): SlotDoc {
     }],
     activeSlot: DEFAULT_SLOT_ID,
     trash,
+    slotTrash: [],
   };
 }
 
@@ -251,6 +260,33 @@ function backfillP4(doc: SlotDoc): SlotDoc {
 }
 
 /**
+ * P5 in-place upgrade: a pre-recycle doc has no `slotTrash` and an item bin capped at the
+ * old 20. Fill/repair ONCE — add `slotTrash: []`, cap the item bin to MAX_ITEM_TRASH (4)
+ * newest-first, and backfill each item entry's `slotName` from its `slotId` when that save
+ * still exists. Persisted WITHOUT emitting (a read must not fire the render cascade); a
+ * no-op once every field is present.
+ */
+function backfillRecycle(doc: SlotDoc): SlotDoc {
+  const hasSlotTrash = doc.slotTrash !== undefined;
+  const overCap = doc.trash.length > MAX_ITEM_TRASH;
+  const needsName = doc.trash.some(e => e.slotName === undefined && doc.slots.some(s => s.id === e.slotId));
+  if (hasSlotTrash && !overCap && !needsName) {
+    return doc;
+  }
+  const nameById = new Map(doc.slots.map(s => [s.id, s.name]));
+  const trash = capTrash(doc.trash.map((e) => {
+    if (e.slotName !== undefined) {
+      return e;
+    }
+    const nm = nameById.get(e.slotId);
+    return nm !== undefined ? { ...e, slotName: nm } : e;
+  }));
+  const next: SlotDoc = { ...doc, trash, slotTrash: doc.slotTrash ?? [] };
+  writeSlotDoc(next, { emit: false });
+  return next;
+}
+
+/**
  * Load the slot document, migrating from the legacy keys on first read.
  *
  * A present-but-invalid document (corruption / hand-edit) is treated as absent
@@ -261,7 +297,7 @@ function loadSlotDoc(): SlotDoc {
   if (getRaw(RG_SLOTS_KEY) !== null) {
     const doc = getValidated(RG_SLOTS_KEY, SlotDocSchema);
     if (doc !== null) {
-      return backfillP4(doc);
+      return backfillRecycle(backfillP4(doc));
     }
     console.warn('[state/regimen] rgSlots_v1 present but failed validation — '
       + 'rebuilding a Default slot from the legacy keys (auto-heal).');
@@ -417,7 +453,7 @@ export function saveRgRemoved(setOfIds: Set<number>): void {
   const toTrash = slot.items.filter(i => setOfIds.has(i.id));
   const remaining = slot.items.filter(i => !setOfIds.has(i.id));
   const now = today();
-  const newEntries = toTrash.map(item => ({ item, slotId: slot.id, removedAt: now }));
+  const newEntries = toTrash.map(item => ({ item, slotId: slot.id, slotName: slot.name, removedAt: now }));
   const movedIds = new Set(toTrash.map(i => i.id));
   const keptOld = doc.trash.filter(e => !movedIds.has(e.item.id)); // dedupe: newer removal wins
   const next: SlotDoc = {
@@ -509,9 +545,9 @@ export function duplicateSlot(id: string): SlotOpResult {
 /**
  * Delete a slot. Refuses the last slot (there is always a regimen, invariant 1).
  * If the active slot is deleted, promotes the lowest-numbered survivor (the first
- * in creation order, invariant 2). The deleted slot's items go to the trash so a
- * whole-slot delete never destroys user data (reversibility #9); whole-SLOT
- * recovery UI is a §7 deliverable.
+ * in creation order, invariant 2). The WHOLE slot (its items, overrides, colour,
+ * goals) is snapshotted into the save bin (slotTrash, cap 7) so restoreDeletedSlot
+ * reproduces its exact pre-delete state (reversibility #9, P5 recycle bin).
  */
 export function deleteSlot(id: string): SlotOpResult {
   const doc = loadSlotDoc();
@@ -528,12 +564,11 @@ export function deleteSlot(id: string): SlotOpResult {
     return { ok: false, reason: 'That slot could not be deleted.' }; // unreachable (length ≥ 2 above)
   }
   const now = today();
-  const trashed = target.items.map(item => ({ item, slotId: id, removedAt: now }));
   const next: SlotDoc = {
     ...doc,
     slots: survivors,
     activeSlot: doc.activeSlot === id ? promoted.id : doc.activeSlot,
-    trash: capTrash([...trashed, ...doc.trash]),
+    slotTrash: capSlotTrash([{ slot: target, deletedAt: now }, ...(doc.slotTrash ?? [])]),
   };
   const res = writeSlotDoc(next, { reason: 'remove' });
   return res.ok ? { ok: true } : { ok: false, reason: 'That slot could not be deleted.' };
@@ -593,21 +628,23 @@ export function setActiveSlot(id: string): SlotOpResult {
 }
 
 /**
- * Restore a trashed item (by its item id) into the active slot. Removes the
- * first matching trash entry; skips re-adding if the id is already present.
+ * Restore a removed item (by its item id) from the item bin. Lands in its origin save if
+ * that save still exists, else the active save (P5). Removes the first matching bin entry;
+ * skips re-adding if the id is already present in the target.
  */
-export function restoreFromTrash(itemId: number): SlotOpResult {
+export function restoreDeletedItem(itemId: number): SlotOpResult {
   const doc = loadSlotDoc();
   const entry = doc.trash.find(e => e.item.id === itemId);
   if (entry === undefined) {
-    return { ok: false, reason: 'That item is not in the trash.' };
+    return { ok: false, reason: 'That item is not in the recycle bin.' };
   }
+  const targetId = doc.slots.some(s => s.id === entry.slotId) ? entry.slotId : doc.activeSlot;
   const trash = doc.trash.filter(e => e !== entry);
   const now = today();
   const next: SlotDoc = {
     ...doc,
     slots: doc.slots.map((s) => {
-      if (s.id !== doc.activeSlot) {
+      if (s.id !== targetId) {
         return s;
       }
       const already = s.items.some(i => i.id === itemId);
@@ -617,6 +654,52 @@ export function restoreFromTrash(itemId: number): SlotOpResult {
   };
   const res = writeSlotDoc(next, { reason: 'add' });
   return res.ok ? { ok: true } : { ok: false, reason: 'That item could not be restored.' };
+}
+
+/**
+ * Restore a deleted SAVE from the save bin (keyed by its deletedAt stamp). With room
+ * (< MAX_SLOTS) it returns directly — reusing its original id when that id is free (so an
+ * orphaned item's origin resolves again), else a fresh id — and becomes active. At
+ * MAX_SLOTS, `replaceSlotId` is REQUIRED: that current save is snapshotted back into the
+ * bin (the swap) and the restored save takes its place. All via writeSlotDoc (§31). (P5)
+ */
+export function restoreDeletedSlot(deletedAtKey: string, replaceSlotId?: string): SlotOpResult {
+  const doc = loadSlotDoc();
+  const bin = doc.slotTrash ?? [];
+  const entry = bin.find(e => e.deletedAt === deletedAtKey);
+  if (entry === undefined) {
+    return { ok: false, reason: 'That save is not in the recycle bin.' };
+  }
+  const idTaken = doc.slots.some(s => s.id === entry.slot.id);
+  const restored: Slot = idTaken ? { ...entry.slot, id: newSlotId() } : entry.slot;
+
+  if (doc.slots.length < MAX_SLOTS) {
+    const next: SlotDoc = {
+      ...doc,
+      slots: [...doc.slots, restored],
+      activeSlot: restored.id,
+      slotTrash: bin.filter(e => e !== entry),
+    };
+    const res = writeSlotDoc(next, { reason: 'restore' });
+    return res.ok ? { ok: true, slotId: restored.id } : { ok: false, reason: 'That save could not be restored.' };
+  }
+
+  if (replaceSlotId === undefined) {
+    return { ok: false, reason: `You have ${MAX_SLOTS} saves. Choose one to move to the recycle bin first.` };
+  }
+  const replaced = doc.slots.find(s => s.id === replaceSlotId);
+  if (replaced === undefined) {
+    return { ok: false, reason: 'The save to replace no longer exists.' };
+  }
+  const now = today();
+  const next: SlotDoc = {
+    ...doc,
+    slots: doc.slots.map(s => (s.id === replaceSlotId ? restored : s)),
+    activeSlot: doc.activeSlot === replaceSlotId ? restored.id : doc.activeSlot,
+    slotTrash: capSlotTrash([{ slot: replaced, deletedAt: now }, ...bin.filter(e => e !== entry)]),
+  };
+  const res = writeSlotDoc(next, { reason: 'restore' });
+  return res.ok ? { ok: true, slotId: restored.id } : { ok: false, reason: 'That save could not be restored.' };
 }
 
 // ─── Bridge installation (cross-IIFE compat + probe/DOM-handler reach) ─────
@@ -635,7 +718,8 @@ declare global {
     renameSlot?: typeof renameSlot;
     setActiveSlot?: typeof setActiveSlot;
     setSlotColour?: typeof setSlotColour;
-    restoreFromTrash?: typeof restoreFromTrash;
+    restoreDeletedItem?: typeof restoreDeletedItem;
+    restoreDeletedSlot?: typeof restoreDeletedSlot;
   }
 }
 
@@ -659,5 +743,6 @@ export function installBridges(): void {
   window.renameSlot = renameSlot;
   window.setActiveSlot = setActiveSlot;
   window.setSlotColour = setSlotColour;
-  window.restoreFromTrash = restoreFromTrash;
+  window.restoreDeletedItem = restoreDeletedItem;
+  window.restoreDeletedSlot = restoreDeletedSlot;
 }

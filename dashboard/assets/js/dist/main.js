@@ -4744,14 +4744,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   var TrashEntrySchema = external_exports.object({
     item: RegimenItemSchema,
     slotId: external_exports.string(),
+    slotName: external_exports.string().optional(),
+    // origin save's name at removal — for display; survives its later deletion
     removedAt: external_exports.string()
+    // ISO YYYY-MM-DD
+  });
+  var SlotTrashEntrySchema = external_exports.object({
+    slot: SlotSchema,
+    deletedAt: external_exports.string()
     // ISO YYYY-MM-DD
   });
   var SlotDocSchema = external_exports.object({
     version: external_exports.literal(1),
     slots: external_exports.array(SlotSchema).min(1).max(4),
     activeSlot: external_exports.string(),
-    trash: external_exports.array(TrashEntrySchema).max(20)
+    trash: external_exports.array(TrashEntrySchema).max(20),
+    slotTrash: external_exports.array(SlotTrashEntrySchema).max(7).optional()
   }).superRefine((doc, ctx) => {
     if (!doc.slots.some((s) => s.id === doc.activeSlot)) {
       ctx.addIssue({
@@ -15952,7 +15960,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   var RG_MANUAL_KEY = "rgManualItems_v1";
   var RG_REMOVED_KEY = "rgRemoved_v1";
   var MAX_SLOTS = 4;
-  var MAX_TRASH = 20;
+  var MAX_ITEM_TRASH = 4;
+  var MAX_SLOT_TRASH = 7;
   var DEFAULT_SLOT_ID = "default";
   var _slotColours = SlotColoursDataSchema.safeParse(slot_colours_data_default);
   var SLOT_COLOURS = _slotColours.success ? _slotColours.data.colours : [];
@@ -15977,7 +15986,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return `slot_${Date.now().toString(36)}${Math.floor(Math.random() * 1e4).toString(36)}`;
   }
   function capTrash(entries) {
-    return entries.slice(0, MAX_TRASH);
+    return entries.slice(0, MAX_ITEM_TRASH);
+  }
+  function capSlotTrash(entries) {
+    return entries.slice(0, MAX_SLOT_TRASH);
   }
   function pickSlotColour(used) {
     return SLOT_COLOURS.find((h) => !used.includes(h)) ?? DEFAULT_SLOT_COLOUR;
@@ -16036,7 +16048,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         goals: readLegacyUserGoals()
       }],
       activeSlot: DEFAULT_SLOT_ID,
-      trash
+      trash,
+      slotTrash: []
     };
   }
   function backfillP4(doc) {
@@ -16055,11 +16068,30 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     writeSlotDoc(next, { emit: false });
     return next;
   }
+  function backfillRecycle(doc) {
+    const hasSlotTrash = doc.slotTrash !== void 0;
+    const overCap = doc.trash.length > MAX_ITEM_TRASH;
+    const needsName = doc.trash.some((e) => e.slotName === void 0 && doc.slots.some((s) => s.id === e.slotId));
+    if (hasSlotTrash && !overCap && !needsName) {
+      return doc;
+    }
+    const nameById = new Map(doc.slots.map((s) => [s.id, s.name]));
+    const trash = capTrash(doc.trash.map((e) => {
+      if (e.slotName !== void 0) {
+        return e;
+      }
+      const nm = nameById.get(e.slotId);
+      return nm !== void 0 ? { ...e, slotName: nm } : e;
+    }));
+    const next = { ...doc, trash, slotTrash: doc.slotTrash ?? [] };
+    writeSlotDoc(next, { emit: false });
+    return next;
+  }
   function loadSlotDoc() {
     if (getRaw(RG_SLOTS_KEY) !== null) {
       const doc = getValidated(RG_SLOTS_KEY, SlotDocSchema);
       if (doc !== null) {
-        return backfillP4(doc);
+        return backfillRecycle(backfillP4(doc));
       }
       console.warn("[state/regimen] rgSlots_v1 present but failed validation \u2014 rebuilding a Default slot from the legacy keys (auto-heal).");
     }
@@ -16142,7 +16174,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const toTrash = slot.items.filter((i) => setOfIds.has(i.id));
     const remaining = slot.items.filter((i) => !setOfIds.has(i.id));
     const now = today();
-    const newEntries = toTrash.map((item) => ({ item, slotId: slot.id, removedAt: now }));
+    const newEntries = toTrash.map((item) => ({ item, slotId: slot.id, slotName: slot.name, removedAt: now }));
     const movedIds = new Set(toTrash.map((i) => i.id));
     const keptOld = doc.trash.filter((e) => !movedIds.has(e.item.id));
     const next = {
@@ -16224,12 +16256,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return { ok: false, reason: "That slot could not be deleted." };
     }
     const now = today();
-    const trashed = target.items.map((item) => ({ item, slotId: id, removedAt: now }));
     const next = {
       ...doc,
       slots: survivors,
       activeSlot: doc.activeSlot === id ? promoted.id : doc.activeSlot,
-      trash: capTrash([...trashed, ...doc.trash])
+      slotTrash: capSlotTrash([{ slot: target, deletedAt: now }, ...doc.slotTrash ?? []])
     };
     const res = writeSlotDoc(next, { reason: "remove" });
     return res.ok ? { ok: true } : { ok: false, reason: "That slot could not be deleted." };
@@ -16278,18 +16309,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const res = writeSlotDoc({ ...doc, activeSlot: id }, { reason: "restore" });
     return res.ok ? { ok: true, slotId: id } : { ok: false, reason: "That slot could not be activated." };
   }
-  function restoreFromTrash(itemId) {
+  function restoreDeletedItem(itemId) {
     const doc = loadSlotDoc();
     const entry = doc.trash.find((e) => e.item.id === itemId);
     if (entry === void 0) {
-      return { ok: false, reason: "That item is not in the trash." };
+      return { ok: false, reason: "That item is not in the recycle bin." };
     }
+    const targetId = doc.slots.some((s) => s.id === entry.slotId) ? entry.slotId : doc.activeSlot;
     const trash = doc.trash.filter((e) => e !== entry);
     const now = today();
     const next = {
       ...doc,
       slots: doc.slots.map((s) => {
-        if (s.id !== doc.activeSlot) {
+        if (s.id !== targetId) {
           return s;
         }
         const already = s.items.some((i) => i.id === itemId);
@@ -16299,6 +16331,42 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     };
     const res = writeSlotDoc(next, { reason: "add" });
     return res.ok ? { ok: true } : { ok: false, reason: "That item could not be restored." };
+  }
+  function restoreDeletedSlot(deletedAtKey, replaceSlotId) {
+    const doc = loadSlotDoc();
+    const bin = doc.slotTrash ?? [];
+    const entry = bin.find((e) => e.deletedAt === deletedAtKey);
+    if (entry === void 0) {
+      return { ok: false, reason: "That save is not in the recycle bin." };
+    }
+    const idTaken = doc.slots.some((s) => s.id === entry.slot.id);
+    const restored = idTaken ? { ...entry.slot, id: newSlotId() } : entry.slot;
+    if (doc.slots.length < MAX_SLOTS) {
+      const next2 = {
+        ...doc,
+        slots: [...doc.slots, restored],
+        activeSlot: restored.id,
+        slotTrash: bin.filter((e) => e !== entry)
+      };
+      const res2 = writeSlotDoc(next2, { reason: "restore" });
+      return res2.ok ? { ok: true, slotId: restored.id } : { ok: false, reason: "That save could not be restored." };
+    }
+    if (replaceSlotId === void 0) {
+      return { ok: false, reason: `You have ${MAX_SLOTS} saves. Choose one to move to the recycle bin first.` };
+    }
+    const replaced = doc.slots.find((s) => s.id === replaceSlotId);
+    if (replaced === void 0) {
+      return { ok: false, reason: "The save to replace no longer exists." };
+    }
+    const now = today();
+    const next = {
+      ...doc,
+      slots: doc.slots.map((s) => s.id === replaceSlotId ? restored : s),
+      activeSlot: doc.activeSlot === replaceSlotId ? restored.id : doc.activeSlot,
+      slotTrash: capSlotTrash([{ slot: replaced, deletedAt: now }, ...bin.filter((e) => e !== entry)])
+    };
+    const res = writeSlotDoc(next, { reason: "restore" });
+    return res.ok ? { ok: true, slotId: restored.id } : { ok: false, reason: "That save could not be restored." };
   }
   function installBridges() {
     window.persistRegimen = persistRegimen;
@@ -16313,7 +16381,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     window.renameSlot = renameSlot;
     window.setActiveSlot = setActiveSlot;
     window.setSlotColour = setSlotColour;
-    window.restoreFromTrash = restoreFromTrash;
+    window.restoreDeletedItem = restoreDeletedItem;
+    window.restoreDeletedSlot = restoreDeletedSlot;
   }
 
   // assets/js/src/state/coverage.ts
@@ -180601,7 +180670,27 @@ Also fixed 2 lint errors: my AddOutcome type\u2192interface (@antfu ts/consisten
 
 VERIFICATION: node tools/build.mjs exit 0 (11485.4 KB); PYTHONUTF8=1 python tools/invariants.py 91/91 (0 new reds); tsc --noEmit exit 0; eslint on the 3 touched src files = 0 errors (only pre-existing warnings: regimen.ts max-lines + jsdoc:577); madge --circular = no cycles. Two NEW persisted probes: render_probe_regimen_dedup.js (add the same product twice \u2192 1 rail row, dose 1\u21922, slot.items.length=1, override scaling_factor=2, 0 page errors; negative control \u2014 pre-fix would be 2 rows) and render_probe_slot_delete_confirm.js (first trash click shows the confirm and does NOT delete; Cancel keeps; second trash + Delete removes the slot and moves its item to trash; 0 errors). Existing render_probe_{adopt,slots,rail_sync} PASS. Deduped-state and confirm-overlay screenshots reviewed and signed off by Luneth.
 
-DEFERRED / FINDINGS: (#1) coverage.ts::addVaultProduct still carries its own inline dedup \u2014 the add-or-bump rule now lives in two places; consolidation into the shared helper was offered, not done (signed-off code, awaiting the ok). (#2) .ck-undo / .ck-undo__btn have zero CSS anywhere, so the pre-existing slot-delete "Undo" toast (and any bump feedback) render as bare bottom-of-page text; a confirmed slot-delete's undo is not really usable until the toast is styled or #8b Trash-restore lands. Remaining \xA71: #8b Trash restore UI (restoreFromTrash exists in state, no UI, design-first); then C goal-picker/veil (#9), D result 2-box redesign (#7), A-sweep. eden/ untouched this round \u2014 no corpus/catalog seal applies or was run.` }];
+DEFERRED / FINDINGS: (#1) coverage.ts::addVaultProduct still carries its own inline dedup \u2014 the add-or-bump rule now lives in two places; consolidation into the shared helper was offered, not done (signed-off code, awaiting the ok). (#2) .ck-undo / .ck-undo__btn have zero CSS anywhere, so the pre-existing slot-delete "Undo" toast (and any bump feedback) render as bare bottom-of-page text; a confirmed slot-delete's undo is not really usable until the toast is styled or #8b Trash-restore lands. Remaining \xA71: #8b Trash restore UI (restoreFromTrash exists in state, no UI, design-first); then C goal-picker/veil (#9), D result 2-box redesign (#7), A-sweep. eden/ untouched this round \u2014 no corpus/catalog seal applies or was run.` }, { id: "lg_msuvoe8g_fu4jd1", ts: "2026-08-15T16:18:27.088408-05:00", surface: "regimen", kind: "round-close", summary: "Built the invisible half of the recycle bin: deleting a whole save snapshots the entire save into a restorable bin (keeps 7); removed items go to a separate bin (keeps 4); a full-slots restore lets you swap one out; a dashboard update won't lose any of it. No UI yet \u2014 next batch.", detail: `This is the invisible half of the recycle bin \u2014 all the data plumbing, built and proven before any of the visible popup, so the risky part (never losing your saved regimens) is locked down first.
+
+What it does now: when you delete a whole saved regimen, the app quietly keeps a full snapshot of it \u2014 its items and its settings \u2014 in a "deleted saves" bin that holds your 7 most recent; when you remove a single item, that goes into a separate "removed items" bin that holds your 4 most recent. Nothing expires \u2014 the oldest only drops off when a bin is full. Both bins live inside your saves document (the storage choice you made), and I wrote the upgrade so a future dashboard update reads your old data and simply adds the new bin fields \u2014 it can't wipe anything. If all 4 of your save-slots are full when you go to restore a save, the app will (once the UI lands) let you pick one to move into the bin so the restored one has a place to land. There's no button for any of this yet \u2014 that's the next batch.
+
+TECHNICAL RECORD
+
+Storage decision (yours): the bin lives inside rgSlots_v1, not a separate key \u2014 atomic writes, \xA731-consistent.
+
+Deviation from the approved plan, flagged honestly: the plan said bump the document to version 2 with a read-transform-validate migration. I used this codebase's proven backfillP4 idiom instead \u2014 the new fields are OPTIONAL and I backfill them AFTER the document already validates as version 1. This is strictly safer against data loss: with a v2 bump, a bug in the transform could yield an invalid document and trip the auto-heal that rebuilds a blank Default (wiping the user's data); with backfill-after-validate, the document is already known-good before anything is added, so a backfill bug cannot cause a wipe. Same durability goal (survive a dashboard update), safer mechanism. The migration probe proves zero loss.
+
+Schema (core/schemas/regimen.ts): TrashEntrySchema gains slotName (optional) \u2014 the origin save's name captured at removal, so a removed item can still show where it came from even after that save is itself deleted. New SlotTrashEntrySchema = { slot: SlotSchema, deletedAt } \u2014 a whole-slot snapshot (items, overrides, colour, goals, timestamps). SlotDocSchema gains slotTrash: z.array(SlotTrashEntrySchema).max(7).optional(). Version stays literal(1). trash keeps .max(20) as a read-tolerance; the real item cap (4) is enforced by capTrash on every write and by the one-time backfill.
+
+State (state/regimen.ts): constants MAX_ITEM_TRASH=4, MAX_SLOT_TRASH=7. capTrash caps the item bin to 4; new capSlotTrash caps the save bin to 7 (both newest-first ring buffers). backfillRecycle runs inside loadSlotDoc after backfillP4: adds slotTrash [] if absent, caps the item bin to 4, backfills each item entry's slotName from its slotId when that save still exists \u2014 persisted without emitting, a no-op once complete. deleteSlot now snapshots the WHOLE slot into slotTrash (cap 7) instead of scattering its items into the item bin \u2014 this reconciles the #8a slot-delete confirm shipped earlier today (that had put items into the item trash). saveRgRemoved captures slotName = the active save's name. restoreDeletedItem: restores to the origin save if its slotId still resolves, else the active save; dedups by id. restoreDeletedSlot(deletedAtKey, replaceSlotId?): under MAX_SLOTS it returns the snapshot directly and activates it, reusing the original slot id when that id is free (so an orphaned removed-item's origin resolves again \u2014 the edge case Luneth raised); at MAX_SLOTS it requires replaceSlotId, snapshots that current save back into the bin, and the restored save takes its place. installBridges + the Window interface gain restoreDeletedItem/restoreDeletedSlot for probe reach.
+
+Views (views/regimen.ts): removed the slot-delete undo path (undoDelete + the DeletedSlot capture + the confirm-do undo callback + the restoreFromTrash import) \u2014 the #8a confirm plus the recycle bin supersede it. The confirm-do branch now just calls deleteSlot and shows a toast only on refusal. showToast is kept for refusals; the unstyled .ck-undo (finding #2) now only affects those.
+
+Gate (tools/invariants.py + test_slot_invariants.py): slot_invariants now also requires SlotDocSchema.slotTrash to carry .max(7); the negative test schema_no_max7 was added, and GOOD_SCHEMA updated so baseline_good still passes. A speculative unused \`export type TrashEntry\` was removed (knip no_new_dead_code flagged it).
+
+VERIFICATION: node tools/build.mjs exit 0 (11493.2 KB); tsc --noEmit 0; eslint 0 new errors; invariants 91/91 (0 new reds). New tools/render_probe_recycle.js drives the real \xA731 window bridges and PASSES all of: migration of a seeded v1 document (6 trash items, no slotTrash, no slotName) \u2192 v2 with the item bin capped to 4, slotTrash [], slotName backfilled, no loss; delete a save \u2192 the whole slot snapshotted into slotTrash; restore a save with room \u2192 back + active + out of the bin; restore at 4/4 \u2192 refused without a target, then swapped with one; restore an item \u2192 its origin if it exists, else active; ring caps hold (7 saves, 4 items, oldest-out). render_probe_{slots,slot_delete_confirm,regimen_dedup,adopt,rail_sync} all PASS (slots + slot_delete_confirm updated for the new model).
+
+DEFERRED: Batch 2 = the sticky dashed "Restore Deleted Slots & Items" trigger in the rail + the signed-off style-D popup (a gallery of deleted saves as faithful mini-tiles + a removed-items list; restore an item and restore a non-full save). Batch 3 = the D2 replace-a-save step + the remaining edges (empty states, cap displays, dedup). Design D was signed off from the mockup. Findings #1 (coverage.ts::addVaultProduct still carries its own copy of the add-or-bump rule) and #2 (.ck-undo has no CSS) remain flagged. eden/ untouched this round \u2014 no corpus/catalog seal applies.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -181591,24 +181680,6 @@ DEFERRED / FINDINGS: (#1) coverage.ts::addVaultProduct still carries its own inl
       <div class="rr-scan">Not in the catalog? <button class="rr-scan__link" type="button" data-scan-new>Scan your own item &rarr;</button></div>
     </aside>`;
   }
-  function undoDelete(cap) {
-    const res = addSlot(cap.name);
-    if (!res.ok || res.slotId === void 0) {
-      return { ok: false, reason: res.ok ? "Could not undo \u2014 you are at the slot limit." : res.reason };
-    }
-    setActiveSlot(res.slotId);
-    for (const item of cap.items) {
-      restoreFromTrash(item.id);
-    }
-    if (isSlotColour(cap.colour)) {
-      setSlotColour(res.slotId, cap.colour);
-    }
-    saveRgUserGoals(cap.goals);
-    for (const [id, patch] of Object.entries(cap.overrides)) {
-      saveRgOverride(id, patch);
-    }
-    return { ok: true };
-  }
   function buildSlotDeleteConfirm(id, itemCount) {
     const wrap = document.createElement("div");
     wrap.className = "ck-slot__confirm";
@@ -181832,30 +181903,11 @@ DEFERRED / FINDINGS: (#1) coverage.ts::addVaultProduct still carries its own inl
       if (delDo !== null) {
         ev.stopPropagation();
         const id = delDo.dataset["slotConfirmDo"];
-        if (id === void 0) {
-          return;
-        }
-        const slot = loadSlots().slots.find((s) => s.id === id);
-        if (slot === void 0) {
-          return;
-        }
-        const cap = {
-          name: slot.name,
-          colour: slotColour(slot),
-          goals: [...slot.goals ?? []],
-          items: slot.items.map((i) => ({ ...i })),
-          overrides: JSON.parse(JSON.stringify(slot.overrides))
-        };
-        const res = deleteSlot(id);
-        if (res.ok) {
-          showToast(`Deleted "${cap.name}".`, () => {
-            const r = undoDelete(cap);
-            if (!r.ok) {
-              showToast(r.reason ?? "Could not undo.");
-            }
-          });
-        } else {
-          showToast(res.reason);
+        if (id !== void 0) {
+          const res = deleteSlot(id);
+          if (!res.ok) {
+            showToast(res.reason);
+          }
         }
         return;
       }

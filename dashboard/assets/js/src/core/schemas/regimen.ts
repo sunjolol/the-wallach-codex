@@ -139,16 +139,25 @@ export const SlotSchema = z.object({
 });
 
 /**
- * A trashed regimen ITEM (P3 trash is items-only, matching §3's literal
- * {item, slotId, removedAt} shape). Deleted-SLOT recovery is deferred to the
- * Regimen-view rebuild (§7), where the delete-slot UI that would produce it
- * actually lands — building the discriminated union now would be machinery with
- * no P3 caller (the P4 anti-speculation lesson).
+ * A trashed regimen ITEM (individually removed from a slot). Deleted whole SAVES are a
+ * SEPARATE bin (SlotTrashEntrySchema below); an item removed on its own restores to its
+ * origin save if it still exists, else the active save (P5 recycle bin).
  */
 export const TrashEntrySchema = z.object({
   item: RegimenItemSchema,
   slotId: z.string(),
+  slotName: z.string().optional(), // origin save's name at removal — for display; survives its later deletion
   removedAt: z.string(), // ISO YYYY-MM-DD
+});
+
+/**
+ * A trashed whole SAVE (P5 recycle bin). deleteSlot snapshots the ENTIRE slot — items,
+ * overrides, colour, goals, timestamps — so a restore reproduces the exact pre-delete
+ * state, not just the loose items. Capped at MAX_SLOT_TRASH (7), newest-first.
+ */
+export const SlotTrashEntrySchema = z.object({
+  slot: SlotSchema,
+  deletedAt: z.string(), // ISO YYYY-MM-DD
 });
 
 /**
@@ -161,7 +170,7 @@ export const TrashEntrySchema = z.object({
  * data-loss window on the live remove path (doctrine #4 atomic ops, #9 reversibility).
  *
  * The runtime invariants are enforced HERE, at both read (getValidated) and write
- * (setValidated): ≥1 slot (.min(1)), ≤4 (.max(4)), ≤20 trash (.max(20)), and
+ * (setValidated): ≥1 slot (.min(1)), ≤4 (.max(4)), ≤20 trash (.max(20)), ≤7 slotTrash (.max(7)), and
  * activeSlot always resolves (the superRefine). A torn or hand-edited document
  * cannot be read back as valid — a null read re-synthesizes a clean Default (auto-heal).
  */
@@ -171,6 +180,7 @@ export const SlotDocSchema = z
     slots: z.array(SlotSchema).min(1).max(4),
     activeSlot: z.string(),
     trash: z.array(TrashEntrySchema).max(20),
+    slotTrash: z.array(SlotTrashEntrySchema).max(7).optional(),
   })
   .superRefine((doc, ctx) => {
     if (!doc.slots.some(s => s.id === doc.activeSlot)) {
@@ -191,4 +201,5 @@ export type RgManual = z.infer<typeof RgManualSchema>;
 export type RgRemoved = z.infer<typeof RgRemovedSchema>;
 export type RgUserGoals = z.infer<typeof RgUserGoalsSchema>;
 export type Slot = z.infer<typeof SlotSchema>;
+export type SlotTrashEntry = z.infer<typeof SlotTrashEntrySchema>;
 export type SlotDoc = z.infer<typeof SlotDocSchema>;

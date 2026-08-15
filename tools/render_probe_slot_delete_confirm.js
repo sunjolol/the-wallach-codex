@@ -28,7 +28,7 @@ const state = page => page.evaluate(() => {
     confirm: document.querySelectorAll('.ck-slot__confirm').length,
     q: document.querySelector('.ck-slot__confirm-q')?.textContent ?? null,
     sub: document.querySelector('.ck-slot__confirm-sub')?.textContent ?? null,
-    trashFromTrip: doc ? doc.trash.filter(e => e.slotId === 'trip').length : null,
+    tripInBin: doc ? (doc.slotTrash || []).some(e => e.slot.id === 'trip') : null,
   };
 });
 const click = (page, sel) => page.evaluate(s => { const el = document.querySelector(s); if (el) { el.click(); return true; } return false; }, sel);
@@ -75,7 +75,7 @@ const click = (page, sel) => page.evaluate(s => { const el = document.querySelec
   const s3 = await state(page);
   if (s3.slots !== 1) fails.push(`after confirm-delete: slots=${s3.slots}, expected 1`);
   if (s3.trip !== false) fails.push(`after confirm-delete: 'trip' still present`);
-  if (s3.trashFromTrip < 1) fails.push(`after confirm-delete: items from 'trip' in trash=${s3.trashFromTrip}, expected >=1`);
+  if (s3.tripInBin !== true) fails.push(`after confirm-delete: 'trip' save not in the recycle bin (slotTrash)`);
 
   console.log('S1', JSON.stringify(s1));
   console.log('S3', JSON.stringify(s3));
@@ -83,5 +83,5 @@ const click = (page, sel) => page.evaluate(s => { const el = document.querySelec
   if (errs.length) fails.push(`page errors: ${errs.length}`);
   await browser.close();
   if (fails.length) { console.log('FAIL', JSON.stringify(fails)); process.exit(1); }
-  console.log('PASS — slot delete takes a confirm; Cancel keeps, Delete removes (items → trash)');
+  console.log('PASS — slot delete takes a confirm; Cancel keeps, Delete removes (save → recycle bin)');
 })();

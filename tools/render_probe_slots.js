@@ -13,7 +13,7 @@
 //   4. deleting the active slot promotes the lowest-numbered survivor;
 //   1'. the last slot cannot be deleted     — refused with a reason.
 //
-// Plus a trash round-trip (saveRgRemoved → restoreFromTrash) proving the remove-to-trash adapter
+// Plus a trash round-trip (saveRgRemoved → restoreDeletedItem) proving the remove-to-trash adapter
 // and restore path end-to-end. Exits non-zero on any mismatch. Requires puppeteer.
 
 const path = require('path');
@@ -104,7 +104,7 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
     const afterRemove = w.loadSlots();
     r.itemsAfterRemove = itemCount(afterRemove);
     r.trashHasItem = afterRemove.trash.some(e => e.item.id === 77001);
-    const restored = w.restoreFromTrash(77001);
+    const restored = w.restoreDeletedItem(77001);
     r.restoreOk = restored.ok === true;
     const afterRestore = w.loadSlots();
     r.itemsAfterRestore = itemCount(afterRestore);
@@ -144,7 +144,7 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
     ['saveRgManual added 1 item to the active slot', info.itemsAfterAdd === 1],
     ['saveRgRemoved emptied the active slot', info.itemsAfterRemove === 0],
     ['the removed item is in the trash', info.trashHasItem === true],
-    ['restoreFromTrash succeeds', info.restoreOk === true],
+    ['restoreDeletedItem succeeds', info.restoreOk === true],
     ['the restored item is back in the active slot', info.itemsAfterRestore === 1],
     ['the trash is empty after restore', info.trashEmptyAfterRestore === true],
     ['no page errors', pageErrors.length === 0],

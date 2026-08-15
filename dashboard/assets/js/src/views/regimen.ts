@@ -55,7 +55,6 @@ import {
   loadRgUserGoals,
   loadSlots,
   renameSlot,
-  restoreFromTrash,
   saveRgOverride,
   saveRgRemoved,
   saveRgUserGoals,
@@ -675,38 +674,6 @@ function renderRail(): string {
     </aside>`;
 }
 
-// ─── Delete-with-undo ────────────────────────────────────────────────────────
-
-interface DeletedSlot {
-  name: string;
-  colour: string;
-  goals: string[];
-  items: RegimenItem[];
-  overrides: Record<string, Record<string, unknown>>;
-}
-
-/** Reconstruct a just-deleted slot from the capture (items come back out of the trash). */
-function undoDelete(cap: DeletedSlot): { ok: boolean; reason?: string } {
-  const res = addSlot(cap.name);
-  if (!res.ok || res.slotId === undefined) {
-    // REG-07: the cap may have been refilled during the undo window — surface the refusal
-    // instead of a silent no-op that strands the captured items in trash.
-    return { ok: false, reason: res.ok ? 'Could not undo — you are at the slot limit.' : res.reason };
-  }
-  setActiveSlot(res.slotId);
-  for (const item of cap.items) {
-    restoreFromTrash(item.id);
-  }
-  if (isSlotColour(cap.colour)) {
-    setSlotColour(res.slotId, cap.colour);
-  }
-  saveRgUserGoals(cap.goals);
-  for (const [id, patch] of Object.entries(cap.overrides)) {
-    saveRgOverride(id, patch);
-  }
-  return { ok: true };
-}
-
 /**
  * The inline "Delete this save?" confirm overlaid on a slot tile (#8a). A slot delete is
  * destructive — the save is gone and its items go to the trash — and it used to fire on the
@@ -953,36 +920,16 @@ export function mount(container: HTMLElement): MountHandle {
       delCancel.closest<HTMLElement>('[data-slot-confirm]')?.remove();
       return;
     }
-    // — slot delete: step 2 — confirmed; the slot's items go to the trash, then delete (with undo) —
+    // — slot delete: step 2 — confirmed; the whole save is snapshotted into the recycle bin —
     const delDo = target.closest<HTMLElement>('[data-slot-confirm-do]');
     if (delDo !== null) {
       ev.stopPropagation();
       const id = delDo.dataset['slotConfirmDo'];
-      if (id === undefined) {
-        return;
-      }
-      const slot = loadSlots().slots.find(s => s.id === id);
-      if (slot === undefined) {
-        return;
-      }
-      const cap: DeletedSlot = {
-        name: slot.name,
-        colour: slotColour(slot),
-        goals: [...(slot.goals ?? [])],
-        items: slot.items.map(i => ({ ...i })),
-        overrides: JSON.parse(JSON.stringify(slot.overrides)) as DeletedSlot['overrides'],
-      };
-      const res = deleteSlot(id);
-      if (res.ok) {
-        showToast(`Deleted "${cap.name}".`, () => {
-          const r = undoDelete(cap);
-          if (!r.ok) {
-            showToast(r.reason ?? 'Could not undo.');
-          }
-        }); // re-render fires from the delete's regimen:changed; then the bar shows on the fresh DOM
-      }
-      else {
-        showToast(res.reason);
+      if (id !== undefined) {
+        const res = deleteSlot(id);
+        if (!res.ok) {
+          showToast(res.reason); // on success the save moves to the recycle bin (restore via the bin)
+        }
       }
       return;
     }

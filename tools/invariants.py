@@ -2234,7 +2234,7 @@ def check_regimen_state_mutation_routing():
 # ---------------------------------------------------------------------------
 # HONEST STATIC/RUNTIME SPLIT (R7). A Python gate reading TS SOURCE can prove the
 # enforcing CODE EXISTS; it cannot observe runtime state. So this STATIC gate proves:
-#   - SlotDocSchema enforces >=1 slot (.min(1)), <=4 (.max(4)), <=20 trash (.max(20)),
+#   - SlotDocSchema enforces >=1 slot (.min(1)), <=4 (.max(4)), <=20 trash (.max(20)), <=7 slotTrash (.max(7)),
 #     and activeSlot-resolves (a superRefine naming activeSlot) -- at the Zod boundary,
 #     so a torn/hand-edited document cannot be READ BACK as valid;
 #   - writeSlotDoc re-validates on WRITE (setValidated(..., SlotDocSchema));
@@ -2267,6 +2267,9 @@ def _slot_invariants_impl(schema_src, regimen_src):
                         "enforced at the Zod boundary")
         if ".max(20)" not in doc:
             viol.append("SlotDocSchema.trash missing .max(20) -- the trash ring cap is not "
+                        "enforced at the Zod boundary")
+        if ".max(7)" not in doc:
+            viol.append("SlotDocSchema.slotTrash missing .max(7) -- the save-bin ring cap is not "
                         "enforced at the Zod boundary")
         if "superRefine" not in doc or "activeSlot" not in doc:
             viol.append("SlotDocSchema has no superRefine naming activeSlot -- a document whose "
@@ -2308,7 +2311,7 @@ def _slot_invariants_impl(schema_src, regimen_src):
                         "could leave activeSlot dangling")
 
     return (False, "slot invariants unenforced: " + "; ".join(viol[:5])) if viol else (
-        True, "SlotDocSchema enforces >=1/<=4 slots + <=20 trash + activeSlot-resolves (Zod, both "
+        True, "SlotDocSchema enforces >=1/<=4 slots + <=20 trash + <=7 slotTrash + activeSlot-resolves (Zod, both "
               "boundaries); addSlot refuses the 5th with a reason; deleteSlot refuses the last + "
               "promotes a survivor. Runtime BEHAVIOUR proven by render_probe_slots.js (R7: this "
               "static gate proves the guards EXIST, not that they RUN)")

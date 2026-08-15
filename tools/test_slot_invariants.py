@@ -31,6 +31,7 @@ export const SlotDocSchema = z
     slots: z.array(SlotSchema).min(1).max(4),
     activeSlot: z.string(),
     trash: z.array(TrashEntrySchema).max(20),
+    slotTrash: z.array(SlotTrashEntrySchema).max(7).optional(),
   })
   .superRefine((doc, ctx) => {
     if (!doc.slots.some(s => s.id === doc.activeSlot)) {
@@ -99,6 +100,8 @@ case("schema_no_max4", GOOD_SCHEMA.replace(".min(1).max(4)", ".min(1)"), GOOD_RE
      "without .max(4) the <=4-slot cap is not enforced at the Zod boundary")
 case("schema_no_max20", GOOD_SCHEMA.replace(".max(20)", ""), GOOD_REGIMEN, False,
      "without .max(20) the trash ring cap is not enforced -- an unbounded trash could be read back")
+case("schema_no_max7", GOOD_SCHEMA.replace(".max(7)", ""), GOOD_REGIMEN, False,
+     "without .max(7) the save-bin ring cap is not enforced -- an unbounded slotTrash could be read back")
 case("schema_no_superrefine", GOOD_SCHEMA.replace("superRefine", "transform"), GOOD_REGIMEN, False,
      "without a superRefine naming activeSlot, a document whose activeSlot dangles reads as valid")
 
