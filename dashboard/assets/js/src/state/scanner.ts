@@ -618,11 +618,16 @@ function decideVerdict(
     reasonsAgainst.push({ label: 'High-severity conflicts', items: high.map(c => c.rule) });
   }
 
+  // R2-4 (Luneth-ratified 'neutral', section 00.A): a scanned label carries NO form_alignment
+  // (a photo cannot state chemical form), so alignmentScore is 0 for every real scan. The ADD
+  // gate must therefore NOT require form when form is unassessed -- else no scanned product could
+  // ever earn ADD. When form IS assessed (a future product-DB-backed scan), score>=1.0 still holds.
+  // No form judgment is fabricated; an unreadable dimension simply stops penalising the verdict.
   let verdict: Verdict;
   if (high.length > 0 || hardHits.length > 0 || seriousHits.length >= 2) {
     verdict = 'REJECT';
   }
-  else if (alignment.score >= 1.0 && meaningful.length > 0 && seriousHits.length === 0) {
+  else if (meaningful.length > 0 && seriousHits.length === 0 && !((alignment.aligned > 0 || alignment.misaligned > 0 || alignment.score > 0) && alignment.score < 1.0)) {
     verdict = 'ADD';
   }
   else if (meaningful.length > 0 || alignment.score >= 0.5 || goals.length > 0 || seriousHits.length > 0 || softHits.length > 0) {
@@ -636,6 +641,17 @@ function decideVerdict(
 
 // ─── Scan orchestration + history ──────────────────────────────────────────
 
+/** Monotonic id minter for scan-history entries (saved + recent). Date.now() alone collides
+ *  when two scans land in the same millisecond, and the retired Date.now()+random(1000) scheme
+ *  collided whenever two saves fell within ~1s -- a colliding saved id made a re-opened row
+ *  resolve to the WRONG entry (R2-7), so adopting the second saved scan silently re-added the
+ *  first. Strictly-increasing ids remove the collision at the source. */
+let _lastScanId = 0;
+function nextScanId(): number {
+  _lastScanId = Math.max(Date.now(), _lastScanId + 1);
+  return _lastScanId;
+}
+
 /**
  * Persist a scan to the auto FIFO history, newest first, cap MAX_RECENT.
  * SCAN-03: no name-dedup — scanned labels share a few low-cardinality container names
@@ -646,7 +662,7 @@ function pushRecentScan(label: ScanLabel, result: ScanResult): void {
   const shape = getValidated(RECENT_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
   const items = [...shape.items];
   items.unshift({
-    id: Date.now() + Math.floor(Math.random() * 1000),
+    id: nextScanId(),
     ts: new Date().toISOString(),
     label,
     verdict: result.verdict,
@@ -661,7 +677,7 @@ function pushRecentScan(label: ScanLabel, result: ScanResult): void {
  *  new entry's id so the caller can reflect a 'saved' state. */
 export function saveScan(label: ScanLabel, result: ScanResult): number {
   const shape = getValidated(SAVED_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
-  const id = Date.now() + Math.floor(Math.random() * 1000);
+  const id = nextScanId();
   const items = [
     { id, ts: new Date().toISOString(), label, verdict: result.verdict, alignment: result.alignment, goals: result.goals, gapFills: result.gapFills },
     ...shape.items,

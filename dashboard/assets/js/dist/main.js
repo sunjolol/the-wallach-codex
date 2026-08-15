@@ -4785,15 +4785,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   // assets/js/src/core/schemas/scanner.ts
   var VerdictSchema = external_exports.enum(["ADD", "SAVE", "REJECT"]);
   var ScanLabelSchema = external_exports.object({
-    name: external_exports.string(),
-    brand: external_exports.string().optional(),
+    name: external_exports.string().max(200),
+    brand: external_exports.string().max(200).optional(),
     servings: external_exports.union([external_exports.string(), external_exports.number()]).optional(),
     nutrients: external_exports.array(external_exports.object({
-      name: external_exports.string(),
+      name: external_exports.string().max(120),
       amount: external_exports.number().optional(),
       unit: external_exports.string().optional()
     })).optional(),
-    ingredients: external_exports.string().optional()
+    ingredients: external_exports.string().max(1e4).optional()
   });
   var GapFillSchema = external_exports.object({
     essential: external_exports.string(),
@@ -18178,7 +18178,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     let verdict;
     if (high.length > 0 || hardHits.length > 0 || seriousHits.length >= 2) {
       verdict = "REJECT";
-    } else if (alignment.score >= 1 && meaningful.length > 0 && seriousHits.length === 0) {
+    } else if (meaningful.length > 0 && seriousHits.length === 0 && !((alignment.aligned > 0 || alignment.misaligned > 0 || alignment.score > 0) && alignment.score < 1)) {
       verdict = "ADD";
     } else if (meaningful.length > 0 || alignment.score >= 0.5 || goals.length > 0 || seriousHits.length > 0 || softHits.length > 0) {
       verdict = "SAVE";
@@ -18187,11 +18187,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     return { verdict, reasonsFor, reasonsAgainst };
   }
+  var _lastScanId = 0;
+  function nextScanId() {
+    _lastScanId = Math.max(Date.now(), _lastScanId + 1);
+    return _lastScanId;
+  }
   function pushRecentScan(label, result) {
     const shape = getValidated(RECENT_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
     const items = [...shape.items];
     items.unshift({
-      id: Date.now() + Math.floor(Math.random() * 1e3),
+      id: nextScanId(),
       ts: (/* @__PURE__ */ new Date()).toISOString(),
       label,
       verdict: result.verdict,
@@ -18203,7 +18208,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function saveScan(label, result) {
     const shape = getValidated(SAVED_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
-    const id = Date.now() + Math.floor(Math.random() * 1e3);
+    const id = nextScanId();
     const items = [
       { id, ts: (/* @__PURE__ */ new Date()).toISOString(), label, verdict: result.verdict, alignment: result.alignment, goals: result.goals, gapFills: result.gapFills },
       ...shape.items
@@ -173207,7 +173212,7 @@ Goiter`,
     return seclabel(label, hint) + `<details class="kd-ep-record" open>
         <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} ${plural(total, "claim")}</span><span class="kd-ep-facet__count">${total}</span></summary>
         <div class="kd-ep-record__body">
-          <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">\u2315</span><input class="kd-ep-filter" type="text" placeholder="Filter these ${total} ${plural(total, "claim")} by keyword\u2026"></div>
+          <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">\u2315</span><input class="kd-ep-filter" type="text" maxlength="120" placeholder="Filter these ${total} ${plural(total, "claim")} by keyword\u2026"></div>
           <div class="kd-ep-record-note">${escHTML5(ui("ep_record_note"))}</div>
           ${kindsHTML}
         </div>
@@ -174865,7 +174870,7 @@ Goiter`,
       <p>${escHTML8(sub).replace("{br}", "<br>")}</p>
       <div class="sh-hero__search">
         <div class="sh-search">
-          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" placeholder="${escHTML8(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
+          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" maxlength="120" placeholder="${escHTML8(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
           <div class="sh-search__results"></div>
         </div>
         <div class="sh-hero__hints">${hints}</div>
@@ -175552,7 +175557,7 @@ Goiter`,
     </header>
     ${(activeTab === "essentials" || activeTab === "conditions" || activeTab === "products" || activeTab === "explore") && selectedTopic === null ? `<div class="kd-search">
       <span class="kd-search-icon">\u2315</span>
-      <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}\u2026" />
+      <input class="kd-search-input" type="text" maxlength="120" placeholder="SEARCH ${activeTab.toUpperCase()}\u2026" />
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">\xD7</button>
       <span class="kd-search-kbd">/</span>
     </div>` : ""}
@@ -180555,7 +180560,7 @@ HOUSEKEEPING: deleted the two obsolete launcher .bats (launch-/serve-wallach-cod
 
 SEAL / \xA700.A: corpus_seal was NOT run. eden/ is untouched this session (clean git status), and eden/corpus/drafts holds 7 UNREVIEWED draft books that corpus_seal would promote into the canon \u2014 that needs per-claim review in a dedicated corpus session, never as a byproduct of closing a scanner chunk. Nothing pillar-level changed, so nothing needed sealing; the session is sealed by this commit + this append-only entry.
 
-DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session).` }, { id: "lg_msuf8vxr_69e0i8", ts: "2026-08-15T08:38:29.679622-05:00", surface: "scanner + qol-audit", kind: "round-close", summary: "Final QOL/UX ship pass R1: fixed 23 of 50 audit issues + Luneth's 3 named ones, and logged the 30 remaining (each with a decided fix) so nothing's forgotten. Scanner keeps Saved items across a refresh + re-openable history; the 'you're fully covered' bug is dead.", detail: "The final quality/usability sweep before shipping. An AI audit turned up 50 issues; with the three Luneth flagged, this round fixed 23 and wrote a complete ledger of the 30 still to do -- each already decided -- so the next session can't drop one. The scanner is the big one: saved scans now survive a refresh and you can click any past scan to re-open its verdict; a supplement gets a real name instead of 'aluminum_can'; and an unreadable photo no longer gets a fake 'rejected' verdict. Also killed a bug that told every brand-new user they were already fully covered, and made the regimen coverage squares readable (grouped green->gap->beige, and each names itself on hover).\n\nMASTER LEDGER = chronicle/qol-audit-2026-08-14.md (5 LOCKED decisions, 23 DONE, 30 TODO each w/ disposition + suggested order). Found by a 13-finder adversarially-verified audit workflow (60 verified -> 50 deduped) + the 3 named issues. Per fix: confirm-vs-live-code -> safe_write -> build.mjs -> tsc -> eslint-vs-HEAD (0 new errors) -> touched-surface probe(s) -> invariants 91/91.\n\nSHIPPED (23): COV-01 no-goal recommender case-join (coverage.ts+regimen.ts wantedSlugs lowercased join; the layout keys tiles UPPERCASE while the snapshot is Title-case, so every gap missed and the panel said 'everything covered' to an empty regimen) -- GATED by extending render_probe_coverage_add_remove.js to remove all goals and assert the no-goal recs still surface. COV-02 clear body.focusing atop render(). ASK-01 search resultKey memo includes the query. ASK-03 renderBestAnswer gets data-sr-claim. PROD-01 pluralize '1 serving'. PROD-02 product cards derive of-90 via essentialCount(). NAV-04 wireDrawerKeys bails when #welcomeHost has children or .pf-overlay is present (render_probe_knowledge.js updated to dismiss the veil first, the realistic state). KNOW-02 applyRecordFilter injects a .kd-empty no-match line. KNOW-05 gloss-tooltip tracks activeEl so a 2nd tap switches term. KNOW-06 .kd-explore-group__head added to the head-hide selector. NAV-02 navigateTo saves/restores per-view .app-workspace.scrollTop. REG-07 undoDelete returns {ok,reason} and the caller toasts a refusal. PROF-02 profile unmount blurs [data-name] so an Esc-close commits the name. NAMED-2 regimen readout: fieldInfo cells carry the element name + sort covered->goalgap->open, renderConsole adds a title per <i> + a CSS hover pop (no pointer cursor). NAMED-3 avatar grid: upload tile before the default tile. Both Luneth-confirmed.\n\nSCANNER (his #1, NAMED-1): S1 state -- SAVED_SCANS_KEY 'lcSavedScans_v1' + getSaved/saveScan/removeSaved (cap 100), SCAN-03 pushRecentScan drops the label.name dedup (unique id keeps distinct low-cardinality scans), humanizeName container-token map. S2 view -- editable [data-sc-name] in Confirm read by readCorrectedLabel; renderUnreadable when sparseNutrients && sparseIngredients (no false REJECT, offers Scan-clearer / Edit-reads); renderHistoryRail -> scanRow + renderRail (two panels: durable Saved over auto Recent); render() wraps a PERSISTENT .vd-rail in coverage-grid in EVERY state (saved items survive a refresh); clickHandler: save -> saveScan + refreshRail, [data-sc-unsave] removes, [data-sc-open] re-scores the stored label and re-opens, [data-sc-edit] returns to Confirm; SCAN-06 paste offsetParent visibility guard; SCAN-07 confirm-null injects an inline .vd-cf__err. + workspace-scanner.css for the name field / re-openable rows / remove-x / couldn't-read card / confirm error.\n\nGATE FIX: render_probe_profile.js was STALE after the profile console rebuild renamed classes (.pf-log-entry->.pf-logentry, .pf-pill->.pf-logentry__pill, .pf-panel__sub->.pf-log__sum) -> updated selectors; now PASS, validating 843 embedded Creator's Log entries render on empty localStorage. The log was NEVER broken; my mid-session claim that it didn't render was wrong and is corrected here (never poison the future).\n\nVERIFY: build.mjs exit 0 (11467.5 KB); invariants 91/91 (0 new reds); tsc exit 0; eslint on every touched src file = 0 NEW errors (counts match HEAD exactly: main 6, search 2, entity-page 18, knowledge 1, others 0); probes coverage(31)/search/knowledge/knowledge_filter/entity/slots/profile/rail_sync/scanner/scan/ocr/adopt/scanner_concurrency ALL PASS.\n\nDEFERRALS: 30 findings remain (ledger has each + its decided disposition + a suggested batch order); NEXT = the regimen undo/correctness batch (REG-01 undo bar survives re-render, REG-03 dedup at both add sites, REG-02 item undo, REG-08 focus, then REG-09 \xA731-chokepoint WriteResult -- carefully). SCANNER LAYOUT needs Luneth's eyes: S2 moved Confirm into the left column beside the now-persistent rail -- functionally verified (5 scanner probes), visually unreviewed. SCAN-08 (Confirm live count refresh) deferred as minor. Pre-existing eslint debt (main/search/entity-page/knowledge) is NOT from this pass (vs-HEAD verified) -- a separate hand-fix (eslint --fix is banned). Git stash/pop during the log-probe investigation normalized several touched files CRLF->LF (autocrlf=input; aligns to repo canonical LF, byte-verified through safe_write). eden/ untouched -> NO corpus/catalog seal applies or was run." }];
+DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session).` }, { id: "lg_msuf8vxr_69e0i8", ts: "2026-08-15T08:38:29.679622-05:00", surface: "scanner + qol-audit", kind: "round-close", summary: "Final QOL/UX ship pass R1: fixed 23 of 50 audit issues + Luneth's 3 named ones, and logged the 30 remaining (each with a decided fix) so nothing's forgotten. Scanner keeps Saved items across a refresh + re-openable history; the 'you're fully covered' bug is dead.", detail: "The final quality/usability sweep before shipping. An AI audit turned up 50 issues; with the three Luneth flagged, this round fixed 23 and wrote a complete ledger of the 30 still to do -- each already decided -- so the next session can't drop one. The scanner is the big one: saved scans now survive a refresh and you can click any past scan to re-open its verdict; a supplement gets a real name instead of 'aluminum_can'; and an unreadable photo no longer gets a fake 'rejected' verdict. Also killed a bug that told every brand-new user they were already fully covered, and made the regimen coverage squares readable (grouped green->gap->beige, and each names itself on hover).\n\nMASTER LEDGER = chronicle/qol-audit-2026-08-14.md (5 LOCKED decisions, 23 DONE, 30 TODO each w/ disposition + suggested order). Found by a 13-finder adversarially-verified audit workflow (60 verified -> 50 deduped) + the 3 named issues. Per fix: confirm-vs-live-code -> safe_write -> build.mjs -> tsc -> eslint-vs-HEAD (0 new errors) -> touched-surface probe(s) -> invariants 91/91.\n\nSHIPPED (23): COV-01 no-goal recommender case-join (coverage.ts+regimen.ts wantedSlugs lowercased join; the layout keys tiles UPPERCASE while the snapshot is Title-case, so every gap missed and the panel said 'everything covered' to an empty regimen) -- GATED by extending render_probe_coverage_add_remove.js to remove all goals and assert the no-goal recs still surface. COV-02 clear body.focusing atop render(). ASK-01 search resultKey memo includes the query. ASK-03 renderBestAnswer gets data-sr-claim. PROD-01 pluralize '1 serving'. PROD-02 product cards derive of-90 via essentialCount(). NAV-04 wireDrawerKeys bails when #welcomeHost has children or .pf-overlay is present (render_probe_knowledge.js updated to dismiss the veil first, the realistic state). KNOW-02 applyRecordFilter injects a .kd-empty no-match line. KNOW-05 gloss-tooltip tracks activeEl so a 2nd tap switches term. KNOW-06 .kd-explore-group__head added to the head-hide selector. NAV-02 navigateTo saves/restores per-view .app-workspace.scrollTop. REG-07 undoDelete returns {ok,reason} and the caller toasts a refusal. PROF-02 profile unmount blurs [data-name] so an Esc-close commits the name. NAMED-2 regimen readout: fieldInfo cells carry the element name + sort covered->goalgap->open, renderConsole adds a title per <i> + a CSS hover pop (no pointer cursor). NAMED-3 avatar grid: upload tile before the default tile. Both Luneth-confirmed.\n\nSCANNER (his #1, NAMED-1): S1 state -- SAVED_SCANS_KEY 'lcSavedScans_v1' + getSaved/saveScan/removeSaved (cap 100), SCAN-03 pushRecentScan drops the label.name dedup (unique id keeps distinct low-cardinality scans), humanizeName container-token map. S2 view -- editable [data-sc-name] in Confirm read by readCorrectedLabel; renderUnreadable when sparseNutrients && sparseIngredients (no false REJECT, offers Scan-clearer / Edit-reads); renderHistoryRail -> scanRow + renderRail (two panels: durable Saved over auto Recent); render() wraps a PERSISTENT .vd-rail in coverage-grid in EVERY state (saved items survive a refresh); clickHandler: save -> saveScan + refreshRail, [data-sc-unsave] removes, [data-sc-open] re-scores the stored label and re-opens, [data-sc-edit] returns to Confirm; SCAN-06 paste offsetParent visibility guard; SCAN-07 confirm-null injects an inline .vd-cf__err. + workspace-scanner.css for the name field / re-openable rows / remove-x / couldn't-read card / confirm error.\n\nGATE FIX: render_probe_profile.js was STALE after the profile console rebuild renamed classes (.pf-log-entry->.pf-logentry, .pf-pill->.pf-logentry__pill, .pf-panel__sub->.pf-log__sum) -> updated selectors; now PASS, validating 843 embedded Creator's Log entries render on empty localStorage. The log was NEVER broken; my mid-session claim that it didn't render was wrong and is corrected here (never poison the future).\n\nVERIFY: build.mjs exit 0 (11467.5 KB); invariants 91/91 (0 new reds); tsc exit 0; eslint on every touched src file = 0 NEW errors (counts match HEAD exactly: main 6, search 2, entity-page 18, knowledge 1, others 0); probes coverage(31)/search/knowledge/knowledge_filter/entity/slots/profile/rail_sync/scanner/scan/ocr/adopt/scanner_concurrency ALL PASS.\n\nDEFERRALS: 30 findings remain (ledger has each + its decided disposition + a suggested batch order); NEXT = the regimen undo/correctness batch (REG-01 undo bar survives re-render, REG-03 dedup at both add sites, REG-02 item undo, REG-08 focus, then REG-09 \xA731-chokepoint WriteResult -- carefully). SCANNER LAYOUT needs Luneth's eyes: S2 moved Confirm into the left column beside the now-persistent rail -- functionally verified (5 scanner probes), visually unreviewed. SCAN-08 (Confirm live count refresh) deferred as minor. Pre-existing eslint debt (main/search/entity-page/knowledge) is NOT from this pass (vs-HEAD verified) -- a separate hand-fix (eslint --fix is banned). Git stash/pop during the log-probe investigation normalized several touched files CRLF->LF (autocrlf=input; aligns to repo canonical LF, byte-verified through safe_write). eden/ untouched -> NO corpus/catalog seal applies or was run." }, { id: "lg_msupkttq_l7gdej", ts: "2026-08-15T13:27:42.974990-05:00", surface: "scanner + regimen (ux pass)", kind: "round-close", summary: "Scanner + regimen UX pass: a Youngevity product can finally earn 'Add' (was capped at Save); a Saved scan that wouldn't add now works; all close x's are one standard; and the regimen add/manage panel is rebuilt: type-to-search + Add + per-item delete with a restorable Trash.", detail: "This session was a big user-experience pass on Dr. Wallach's health dashboard, driven by Luneth's live testing.\n\nTHE SCANNER. The biggest fix: a scanned product could never be told 'Add' \u2014 it was always capped at 'Save' \u2014 because the verdict demanded a 'chemical form' score that only exists in the Youngevity product database, never on a photographed label, so every scan scored 0. Now, when the form can't be read from a photo, the app judges the product on what a photo DOES show (does it fill gaps in your 90, clean ingredients) and shows an honest 'form not on a label' instead of a damning 0%. A Youngevity multivitamin now correctly earns 'Add'. Also fixed: a Saved scan that silently failed to add to your regimen (a rare id collision made the app re-open the wrong saved item \u2014 reproduced in a headless run, then fixed by resolving a row by its position, not its id); character limits on every input; and a re-opened Saved item now says 'Delete' and removes it from the shelf.\n\nTHE CLOSE BUTTON. There were 8+ different close/x buttons in different sizes and styles across the app. They are now one standard '.ui-close' (a round button with an X, orange on hover), applied to the scanner first.\n\nTHE REGIMEN. Rebuilt the whole 'add products / manage your stack' panel (Luneth picked the roster-first design from a mockup): type-to-search shows the top 3 products with an 'Add' button and 'covers N of 90 essentials' so a layman knows what each product is; deleting an item asks first and moves it to a restorable Trash; the misleading orange 'Scan' button became a small secondary link. A tricky bug where the stack box collapsed to nothing (whenever a re-render fired while the tab was hidden) is fixed \u2014 it also fixed the 'I'm just browsing' bug Luneth found.\n\nBoard stayed 91/91 throughout; everything verified with the headless probes + reproductions + screenshots. Nothing about the sealed corpus/Youngevity data changed.\n\nUNFINISHED (fully logged in chronicle/next-chunk.md + ux-pass-2026-08-15.md): finish the regimen (dead-CSS cleanup, a Trash browse/restore UI + confirm-before-slot-delete, REG-03 duplicate dedup); C = the goal-picker/veil (#9: veil everywhere, a proper veil close, hide 'I'm just browsing' for existing users); D = the result-panel 2-box redesign (#7, mockup first); sweep the .ui-close onto the remaining x's; and the parked escaper-consolidation gate (R2-6 WS2). The original 30-item QOL audit (qol-audit-2026-08-14.md) also still has open items to reconcile." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -181410,62 +181415,121 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       const id = String(item.id);
       const label = typeof item.label.name === "string" ? item.label.name : "?";
       const dose = readItemDose2(item);
+      const own = item.provenance === "user_scanned";
       const row = document.createElement("div");
-      row.className = "rl-row";
+      row.className = "rr-row";
       row.dataset["rowId"] = id;
+      const main = document.createElement("div");
+      main.className = "rr-row__main";
       const nameEl = document.createElement("div");
-      nameEl.className = "rl-row__name";
+      nameEl.className = "rr-row__name";
       nameEl.textContent = label;
       nameEl.title = label;
-      row.appendChild(nameEl);
-      const x = document.createElement("button");
-      x.className = "rl-row__x";
-      x.type = "button";
-      x.dataset["rowRemove"] = id;
-      x.setAttribute("aria-label", `Remove ${label}`);
-      x.textContent = "\xD7";
-      row.appendChild(x);
-      const foot = document.createElement("div");
-      foot.className = "rl-row__foot";
-      const src = document.createElement("span");
-      const own = item.provenance === "user_scanned";
-      src.className = `rl-src${own ? " is-own" : ""}`;
-      src.textContent = own ? "YOUR OWN" : "EDEN";
-      foot.appendChild(src);
+      const srcEl = document.createElement("div");
+      srcEl.className = `rr-row__src ${own ? "is-own" : "is-eden"}`;
+      srcEl.textContent = own ? "Your own" : "Eden";
+      main.append(nameEl, srcEl);
+      row.appendChild(main);
       const doseEl = document.createElement("div");
-      doseEl.className = "rl-dose";
+      doseEl.className = "rr-dose";
       const minus = document.createElement("button");
-      minus.className = "rl-dose__b";
+      minus.className = "rr-dose__b";
       minus.type = "button";
       minus.dataset["doseDown"] = id;
       minus.setAttribute("aria-label", "Fewer");
       minus.textContent = "\u2212";
       minus.disabled = dose <= 1;
       const nEl = document.createElement("span");
-      nEl.className = "rl-dose__n";
+      nEl.className = "rr-dose__n";
       nEl.textContent = formatDose3(dose);
       const plus = document.createElement("button");
-      plus.className = "rl-dose__b";
+      plus.className = "rr-dose__b";
       plus.type = "button";
       plus.dataset["doseUp"] = id;
       plus.setAttribute("aria-label", "More");
       plus.textContent = "+";
       const unit = document.createElement("span");
-      unit.className = "rl-dose__u";
+      unit.className = "rr-dose__u";
       unit.textContent = "/day";
       doseEl.append(minus, nEl, plus, unit);
-      foot.appendChild(doseEl);
-      row.appendChild(foot);
+      row.appendChild(doseEl);
+      const x = document.createElement("button");
+      x.className = "ui-close ui-close--sm";
+      x.type = "button";
+      x.dataset["rowRemove"] = id;
+      x.setAttribute("aria-label", `Remove ${label}`);
+      x.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+      row.appendChild(x);
       host.appendChild(row);
     }
+  }
+  function productSupplies(entry) {
+    const ess = /* @__PURE__ */ new Set();
+    for (const n of entry.nutrients ?? []) {
+      const nm = n.name;
+      if (typeof nm === "string") {
+        const m = matchEssential(nm);
+        if (m !== null) {
+          ess.add(m.name);
+        }
+      }
+    }
+    return ess.size;
+  }
+  function renderTypeahead(container, query) {
+    const results = container.querySelector("[data-ta-results]");
+    if (results === null) {
+      return;
+    }
+    const q = query.trim().toLowerCase();
+    results.replaceChildren();
+    if (q.length === 0) {
+      results.hidden = true;
+      return;
+    }
+    const matches = [...readVault().values()].map((p) => ({ name: p.canonical_name ?? p.name, entry: p })).filter((x) => typeof x.name === "string" && x.name.toLowerCase().includes(q)).sort((a, b) => {
+      const ai = a.name.toLowerCase().indexOf(q);
+      const bi = b.name.toLowerCase().indexOf(q);
+      return ai !== bi ? ai - bi : a.name.localeCompare(b.name);
+    }).slice(0, 3);
+    if (matches.length === 0) {
+      const none = document.createElement("div");
+      none.className = "rr-results__none";
+      none.textContent = `No product matches \u201C${query.trim()}\u201D.`;
+      results.appendChild(none);
+      results.hidden = false;
+      return;
+    }
+    const total = essentialCount();
+    for (const { name, entry } of matches) {
+      const supplies = productSupplies(entry);
+      const row = document.createElement("div");
+      row.className = "rr-results__row";
+      const info = document.createElement("span");
+      info.className = "rr-results__info";
+      const nm = document.createElement("span");
+      nm.className = "rr-results__name";
+      nm.textContent = name;
+      nm.title = name;
+      const meta = document.createElement("span");
+      meta.className = "rr-results__meta";
+      meta.textContent = supplies > 0 ? `covers ${supplies} of ${total} essentials` : "single-ingredient product";
+      info.append(nm, meta);
+      const add = document.createElement("button");
+      add.className = "rr-results__add";
+      add.type = "button";
+      add.dataset["taAdd"] = name;
+      add.textContent = "Add";
+      row.append(info, add);
+      results.appendChild(row);
+    }
+    results.hidden = false;
   }
   function renderRail2() {
     const doc = loadSlots();
     const active = doc.slots.find((s) => s.id === doc.activeSlot);
     const items = active?.items.length ?? 0;
     const ordinal2 = String(Math.max(0, doc.slots.findIndex((s) => s.id === doc.activeSlot)) + 1).padStart(2, "0");
-    const names = [...readVault().values()].map((p) => p.canonical_name ?? p.name).filter((n) => typeof n === "string").sort((a, b) => a.localeCompare(b));
-    const options = names.map((n) => `<option value="${escHTML13(n)}"></option>`).join("");
     return `
     <aside class="ck-rail" data-rise="5">
       <section class="rail-panel">
@@ -181475,20 +181539,16 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
           <div class="rail-panel__meta">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML13(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</div>
         </div>
         <div class="rail-list" data-rail-list></div>
-      </section>
-      <section class="ck-addcard">
-        <div class="ck-addcard__head">
-          <span class="ck-addcard__eyebrow">Add to ${escHTML13(active?.name ?? "Regimen")}</span>
-          <span class="ck-addcard__sub">products</span>
+        <div class="rr-add">
+          <label class="ck-addfield rr-field">
+            <span class="ck-addfield__plus">+</span>
+            <input class="ck-addfield__input" maxlength="80" placeholder="Add a product\u2026" aria-label="Add a product" data-add-input autocomplete="off">
+            <kbd class="ck-addfield__kbd" aria-hidden="true">/</kbd>
+          </label>
+          <div class="rr-results" data-ta-results hidden></div>
         </div>
-        <label class="ck-addfield">
-          <span class="ck-addfield__plus">\uFF0B</span>
-          <input class="ck-addfield__input" list="ck-vault-list" placeholder="Add a product\u2026" aria-label="Add a product" data-add-input>
-          <kbd class="ck-addfield__kbd" aria-hidden="true">/</kbd>
-        </label>
-        <datalist id="ck-vault-list">${options}</datalist>
       </section>
-      <button class="ds-btn-primary ck-scan" type="button" data-scan-new><b class="ck-scan__plus" aria-hidden="true">+</b>Scan a new item</button>
+      <div class="rr-scan">Not in the catalog? <button class="rr-scan__link" type="button" data-scan-new>Scan your own item &rarr;</button></div>
     </aside>`;
   }
   function undoDelete(cap) {
@@ -181513,10 +181573,9 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     let animated = false;
     let undoTimer = null;
     const syncStackHeight = () => {
-      const consoleEl = container.querySelector(".ck-console");
       const stack = container.querySelector(".ck-rail .rail-panel");
-      if (consoleEl !== null && stack !== null) {
-        stack.style.maxHeight = `${Math.round(consoleEl.getBoundingClientRect().height)}px`;
+      if (stack !== null) {
+        stack.style.maxHeight = "";
       }
     };
     const animateGauge = (target) => {
@@ -181756,6 +181815,14 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         }
         return;
       }
+      const taAdd = target.closest("[data-ta-add]");
+      if (taAdd !== null) {
+        const name = taAdd.dataset["taAdd"];
+        if (name !== void 0) {
+          addItem(name);
+        }
+        return;
+      }
       const up = target.closest("[data-dose-up]");
       const down = target.closest("[data-dose-down]");
       if (up !== null || down !== null) {
@@ -181772,7 +181839,41 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       }
       const rowRemove = target.closest("[data-row-remove]");
       if (rowRemove !== null) {
-        const id = Number(rowRemove.dataset["rowRemove"]);
+        const row = rowRemove.closest(".rr-row");
+        const id = rowRemove.dataset["rowRemove"];
+        if (row !== null && id !== void 0) {
+          const nm = row.querySelector(".rr-row__name")?.textContent ?? "this item";
+          row.className = "rr-row rr-row--confirm";
+          const q = document.createElement("div");
+          q.className = "rr-confirm__q";
+          q.textContent = `Remove ${nm}? It moves to Trash \u2014 you can restore it.`;
+          const btns = document.createElement("div");
+          btns.className = "rr-confirm__btns";
+          const keep = document.createElement("button");
+          keep.className = "rr-btn";
+          keep.type = "button";
+          keep.dataset["rowKeep"] = "1";
+          keep.textContent = "Keep";
+          const rm = document.createElement("button");
+          rm.className = "rr-btn rr-btn--danger";
+          rm.type = "button";
+          rm.dataset["rowConfirmRemove"] = id;
+          rm.textContent = "Remove";
+          btns.append(keep, rm);
+          row.replaceChildren(q, btns);
+        }
+        return;
+      }
+      if (target.closest("[data-row-keep]") !== null) {
+        const list = container.querySelector("[data-rail-list]");
+        if (list !== null) {
+          buildRailRows2(list, loadEffectiveRegimen());
+        }
+        return;
+      }
+      const rowConfirmRemove = target.closest("[data-row-confirm-remove]");
+      if (rowConfirmRemove !== null) {
+        const id = Number(rowConfirmRemove.dataset["rowConfirmRemove"]);
         if (Number.isFinite(id)) {
           saveRgRemoved(/* @__PURE__ */ new Set([id]));
         }
@@ -181795,7 +181896,9 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       if (input?.matches("[data-add-input]") === true) {
         ev.preventDefault();
         const field = input;
-        if (field.value.trim().length > 0 && addItem(field.value)) {
+        const firstAdd = container.querySelector("[data-ta-add]");
+        const name = firstAdd?.dataset["taAdd"] ?? field.value;
+        if (name.trim().length > 0 && addItem(name)) {
           field.value = "";
         }
       }
@@ -181817,8 +181920,15 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         input.focus();
       }
     };
+    const inputHandler = (ev) => {
+      const it = ev.target;
+      if (it !== null && it.matches("[data-add-input]")) {
+        renderTypeahead(container, it.value);
+      }
+    };
     render();
     container.addEventListener("click", clickHandler);
+    container.addEventListener("input", inputHandler);
     container.addEventListener("keydown", keyHandler);
     document.addEventListener("keydown", slashFocus);
     window.addEventListener("resize", syncStackHeight);
@@ -181833,6 +181943,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
           window.clearTimeout(undoTimer);
         }
         container.removeEventListener("click", clickHandler);
+        container.removeEventListener("input", inputHandler);
         container.removeEventListener("keydown", keyHandler);
         document.removeEventListener("keydown", slashFocus);
         window.removeEventListener("resize", syncStackHeight);
@@ -181851,6 +181962,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       "'": "&#39;"
     })[c]);
   }
+  var CLOSE_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
   var VERDICT_TONE = {
     ADD: "var(--ds-status-ok)",
     SAVE: "var(--ds-status-warn)",
@@ -181942,18 +182054,17 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       ${body}
     </section>`;
   }
-  function nutrientRow(n, i, added) {
+  function nutrientRow(n, i, added, covered) {
     const name = typeof n.name === "string" ? n.name : "";
-    const amt = `${n.amount ?? ""} ${escHTML14(n.unit ?? "")}`.trim();
     const ess = matchEssential(name);
     if (ess !== null) {
-      const plus = added.has(ess.name) ? '<span class="vd-nrow__r">+1</span>' : '<span class="vd-nrow__cov">\xB7 +0 (already covered)</span>';
+      const plus = added.has(ess.name) ? '<span class="vd-nrow__r">+1</span>' : covered.has(ess.name) ? '<span class="vd-nrow__cov">\xB7 already covered</span>' : '<span class="vd-nrow__cov">\xB7 counts toward your 90</span>';
       return `
       <div class="vd-nrow is-ok" data-nrow="${i}">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
-          <input class="vd-edit" value="${escHTML14(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
-          <span class="vd-nrow__amt">${escHTML14(amt)}</span>
+          <input class="vd-edit" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML14(ess.name)}</b>${plus}</span>
         </div>
       </div>`;
@@ -181964,8 +182075,8 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     <div class="vd-nrow is-warn" data-nrow="${i}">
       <div class="vd-nrow__main">
         <span class="vd-nrow__g">!</span>
-        <input class="vd-edit is-warn" value="${escHTML14(name)}" data-nedit="${i}" aria-label="Garbled read (editable)">
-        <span class="vd-nrow__amt">${escHTML14(amt)}</span>
+        <input class="vd-edit is-warn" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" aria-label="Garbled read (editable)">
+        <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" aria-label="Unit (editable)"></span>
         <span class="vd-nrow__map vd-nrow__map--pending">not recognized \xB7 pick a match or edit</span>
       </div>
       ${cands.length > 0 ? `<div class="vd-sug"><span class="vd-sug__lab">Did you mean</span>${btns}<button class="vd-sug__keep" type="button" data-nkeep="${i}">&times; keep</button></div>` : ""}
@@ -181997,9 +182108,10 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     const nutrients = label.nutrients ?? [];
     const delta = coverageDeltaForLabel(label);
     const added = new Set(delta.addedEssentials);
+    const coveredNames = new Set(getOrCompute().tiles.filter((t) => t.covered).map((t) => t.name));
     const mapped = nutrients.filter((n) => matchEssential(typeof n.name === "string" ? n.name : "") !== null).length;
     const unmapped = nutrients.length - mapped;
-    const rows = nutrients.map((n, i) => nutrientRow(n, i, added)).join("");
+    const rows = nutrients.map((n, i) => nutrientRow(n, i, added, coveredNames)).join("");
     const ingredients = label.ingredients ?? "";
     const suspects = findIngredientSuspects(ingredients, dismissed);
     const suspectPanel = suspects.length > 0 ? `<div class="vd-ocr">
@@ -182027,7 +182139,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
           <div class="vd-cf__edits">
             <div class="vd-cf-sec vd-cf-sec--name">
               <label class="vd-cf-name__lab" for="vd-sc-name">Product name</label>
-              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name value="${escHTML14(humanizeName(label.name))}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
+              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name maxlength="80" value="${escHTML14(humanizeName(label.name))}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
               <span class="vd-cf-sec__hint">Name it so your saved items and regimen read cleanly \u2014 not a raw container guess.</span>
             </div>
             <div class="vd-cf-sec">
@@ -182046,7 +182158,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
               </div>
               <div>
                 <label class="vd-ing__lab" for="vd-ing">Ingredients line (editable)</label>
-                <textarea id="vd-ing" class="vd-ing" rows="2" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML14(ingredients)}</textarea>
+                <textarea id="vd-ing" class="vd-ing" rows="2" maxlength="4000" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML14(ingredients)}</textarea>
               </div>
               ${suspectPanel}
               ${flagPanel}
@@ -182087,7 +182199,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     }
     return h;
   }
-  function renderResult(result) {
+  function renderResult(result, origin) {
     const tone = VERDICT_TONE[result.verdict];
     const { head, sub } = verdictHeadline(result.verdict);
     const delta = coverageDeltaForLabel(result.label);
@@ -182115,6 +182227,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
               <span class="vd-live" style="background:${tone};box-shadow:0 0 0 3px color-mix(in srgb, ${tone} 22%, transparent)" aria-hidden="true"></span>
               <span class="vd-card__eyebrow">Wallach-alignment verdict \xB7 <b>${escHTML14(name)}</b></span>
               <span class="vd-card__tag">Local \xB7 confirmed</span>
+              <button class="ui-close" type="button" data-sc-clear aria-label="Close this verdict" title="Close">${CLOSE_SVG}</button>
             </div>
             <div class="vd-card__body">
               <div class="vd-judg">
@@ -182150,7 +182263,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
                 <div class="vd-stats">
                   <div class="vd-stat vd-stat--add"><div class="vd-stat__v">+${added}</div><div class="vd-stat__l">of ${total} added \xB7 ${delta.before} &rarr; ${delta.after}</div></div>
                   <div class="vd-stat vd-stat--flag"><div class="vd-stat__v">${flags}</div><div class="vd-stat__l">ingredient flag${flags === 1 ? "" : "s"}</div></div>
-                  <div class="vd-stat"><div class="vd-stat__v">${alignedPct}%</div><div class="vd-stat__l">aligned \xB7 ${result.alignment.aligned} of ${result.alignment.total} nutrients</div></div>
+                  <div class="vd-stat">${result.alignment.aligned === 0 && result.alignment.misaligned === 0 && result.alignment.score === 0 ? `<div class="vd-stat__v">\u2014</div><div class="vd-stat__l">form not on a label \xB7 judged on gaps + ingredients</div>` : `<div class="vd-stat__v">${alignedPct}%</div><div class="vd-stat__l">aligned \xB7 ${result.alignment.aligned} of ${result.alignment.total} nutrients</div>`}</div>
                   <div class="vd-stat"><div class="vd-stat__v">${result.gapFills.length}</div><div class="vd-stat__l">nutrients reach the 90</div></div>
                 </div>
               </div>
@@ -182158,7 +182271,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
             <div class="vd-card__foot">
               <button class="ds-btn-primary vd-cta" type="button" data-sc-adopt>Add to regimen <span aria-hidden="true">&rarr;</span></button>
               <button class="ds-btn-ghost" type="button" data-sc-save>Save for later</button>
-              <button class="vd-reject" type="button" data-sc-reject>Reject</button>
+              <button class="vd-reject" type="button" data-sc-reject>${origin === "saved" ? "Delete" : "Reject"}</button>
               <div class="vd-foot__note">
                 <span class="vd-foot__prov"><span class="vd-yours">Yours \xB7 user-scanned</span> lands marked user-provided</span>
                 <span class="vd-foot__sub">Never merged into the sealed Wallach / Youngevity canon \u2014 your data, on your device.</span>
@@ -182214,10 +182327,10 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     }
     return `${Math.floor(days / 7)}w`;
   }
-  function scanRow(h, saved) {
-    const rm = saved ? `<span class="rl-row__x" data-sc-unsave="${h.id}" role="button" tabindex="0" aria-label="Remove from saved" title="Remove">&times;</span>` : "";
+  function scanRow(h, saved, index3) {
+    const rm = saved ? `<button class="ui-close ui-close--sm rl-row__rm" type="button" data-sc-unsave="${h.id}" aria-label="Remove from saved" title="Remove">${CLOSE_SVG}</button>` : "";
     return `
-    <div class="rl-row vd-hrow" data-sc-open="${h.id}" role="button" tabindex="0" title="Re-open this verdict">
+    <div class="rl-row vd-hrow" data-sc-open="${h.id}" data-sc-src="${saved ? "saved" : "recent"}" data-sc-idx="${index3}" role="button" tabindex="0" title="Re-open this verdict">
       <div class="rl-row__name">${escHTML14(humanizeName(h.label.name))}</div>
       ${verdictPill(h.verdict)}
       <div class="rl-row__foot"><span class="rl-src is-own">Yours \xB7 user-scanned</span><span class="vd-when">${escHTML14(relAge(h.ts))}</span></div>
@@ -182225,8 +182338,8 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     </div>`;
   }
   function renderRail3() {
-    const saved = getSaved().map((h) => scanRow(h, true)).join("");
-    const recent = getHistory().map((h) => scanRow(h, false)).join("");
+    const saved = getSaved().map((h, i) => scanRow(h, true, i)).join("");
+    const recent = getHistory().map((h, i) => scanRow(h, false, i)).join("");
     return `
     <aside class="vd-rail">
       <div class="rail-panel">
@@ -182245,7 +182358,6 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         </div>
         <div class="rail-list">${recent || '<div class="rail-empty"><p>No scans yet.</p><small>Your captures land here.</small></div>'}</div>
       </div>
-      <div class="vd-rail__note">Every capture is marked <b>Yours</b> \u2014 registered against the 90, never written into the sealed pillars.</div>
     </aside>`;
   }
   function mount5(container) {
@@ -182256,11 +182368,13 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     let imageDataUrl = null;
     let scanError = null;
     const dismissed = /* @__PURE__ */ new Set();
+    let resultOrigin = "scan";
+    let reopenedSavedId = null;
     const render = () => {
       let main = "";
       if (state === "result" && result !== null) {
         const unreadable = result.sparseNutrients === true && result.sparseIngredients === true;
-        main = renderScan(state, fileName, imageDataUrl) + (unreadable ? renderUnreadable() : renderResult(result));
+        main = renderScan(state, fileName, imageDataUrl) + (unreadable ? renderUnreadable() : renderResult(result, resultOrigin));
       } else if (state === "confirming" && label !== null) {
         main = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
       } else {
@@ -182333,7 +182447,12 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       const nutrients = (base.nutrients ?? []).map((n, i) => {
         const input = container.querySelector(`[data-nedit="${i}"]`);
         const next = input !== null ? input.value.trim() : typeof n.name === "string" ? n.name : "";
-        return { ...n, name: next };
+        const amtEl = container.querySelector(`[data-aedit="${i}"]`);
+        const unitEl = container.querySelector(`[data-uedit="${i}"]`);
+        const parsed = amtEl !== null ? Number.parseFloat(amtEl.value) : NaN;
+        const amount = Number.isFinite(parsed) ? parsed : n.amount;
+        const unit = unitEl !== null && unitEl.value.trim().length > 0 ? unitEl.value.trim() : n.unit;
+        return { ...n, name: next, amount, unit };
       }).filter((n) => typeof n.name === "string" && n.name.length > 0);
       const ing = container.querySelector("[data-ing]");
       const nameEl = container.querySelector("[data-sc-name]");
@@ -182405,6 +182524,8 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         if (r !== null) {
           result = r;
           state = "result";
+          resultOrigin = "scan";
+          reopenedSavedId = null;
           render();
         } else {
           const cta = container.querySelector(".vd-cf__cta");
@@ -182445,14 +182566,18 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       }
       const openRow = t.closest("[data-sc-open]");
       if (openRow !== null) {
-        const oid = Number(openRow.dataset["scOpen"]);
-        const entry = [...getSaved(), ...getHistory()].find((h) => h.id === oid);
+        const src = openRow.dataset["scSrc"];
+        const idx = Number(openRow.dataset["scIdx"]);
+        const list = src === "saved" ? getSaved() : getHistory();
+        const entry = Number.isInteger(idx) ? list[idx] : void 0;
         if (entry !== void 0) {
           const r = scoreLabel(entry.label);
           if (r !== null) {
             label = entry.label;
             result = r;
             state = "result";
+            resultOrigin = src === "saved" ? "saved" : "recent";
+            reopenedSavedId = src === "saved" && typeof entry.id === "number" ? entry.id : null;
             imageDataUrl = null;
             fileName = typeof entry.label.name === "string" ? entry.label.name : null;
             scanError = null;
@@ -182476,12 +182601,27 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         refreshRail();
         return;
       }
-      if (t.closest("[data-sc-reject]") !== null) {
+      if (t.closest("[data-sc-clear]") !== null) {
         state = "idle";
         label = null;
         result = null;
         fileName = null;
         imageDataUrl = null;
+        scanError = null;
+        render();
+        return;
+      }
+      if (t.closest("[data-sc-reject]") !== null) {
+        if (resultOrigin === "saved" && reopenedSavedId !== null) {
+          removeSaved(reopenedSavedId);
+        }
+        state = "idle";
+        label = null;
+        result = null;
+        fileName = null;
+        imageDataUrl = null;
+        resultOrigin = "scan";
+        reopenedSavedId = null;
         render();
       }
     };
@@ -182868,7 +183008,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         <button class="scr-id" data-aw-home type="button" title="Back to the start">Ask <em>Wallach</em></button>
         <div class="aw-search">
           <div class="aw-search__well">
-            <input class="aw-search__input" type="text" placeholder="${escHTML15(ui("search_placeholder"))}" autocomplete="off" spellcheck="false" />
+            <input class="aw-search__input" type="text" maxlength="120" placeholder="${escHTML15(ui("search_placeholder"))}" autocomplete="off" spellcheck="false" />
             <span class="aw-search__btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></span>
           </div>
         </div>

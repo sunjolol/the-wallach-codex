@@ -15,15 +15,15 @@ export const VerdictSchema = z.enum(['ADD', 'SAVE', 'REJECT']);
 
 /** A scanned product label as captured by the OCR pipeline. */
 export const ScanLabelSchema = z.object({
-  name: z.string(),
-  brand: z.string().optional(),
+  name: z.string().max(200),
+  brand: z.string().max(200).optional(),
   servings: z.union([z.string(), z.number()]).optional(),
   nutrients: z.array(z.object({
-    name: z.string(),
+    name: z.string().max(120),
     amount: z.number().optional(),
     unit: z.string().optional(),
   })).optional(),
-  ingredients: z.string().optional(),
+  ingredients: z.string().max(10000).optional(),
 });
 
 /** Per-essential gap-fill contribution from one scanned product. */

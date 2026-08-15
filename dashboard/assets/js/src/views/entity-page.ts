@@ -837,7 +837,7 @@ function renderRecord(record: EntityKindGroup[], claimCount: number, label: stri
     + `<details class="kd-ep-record" open>
         <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} ${plural(total, 'claim')}</span><span class="kd-ep-facet__count">${total}</span></summary>
         <div class="kd-ep-record__body">
-          <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">⌕</span><input class="kd-ep-filter" type="text" placeholder="Filter these ${total} ${plural(total, 'claim')} by keyword…"></div>
+          <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">⌕</span><input class="kd-ep-filter" type="text" maxlength="120" placeholder="Filter these ${total} ${plural(total, 'claim')} by keyword…"></div>
           <div class="kd-ep-record-note">${escHTML(ui('ep_record_note'))}</div>
           ${kindsHTML}
         </div>

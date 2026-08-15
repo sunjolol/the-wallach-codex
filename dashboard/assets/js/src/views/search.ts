@@ -474,7 +474,7 @@ function renderShell(): string {
         <button class="scr-id" data-aw-home type="button" title="Back to the start">Ask <em>Wallach</em></button>
         <div class="aw-search">
           <div class="aw-search__well">
-            <input class="aw-search__input" type="text" placeholder="${escHTML(ui('search_placeholder'))}" autocomplete="off" spellcheck="false" />
+            <input class="aw-search__input" type="text" maxlength="120" placeholder="${escHTML(ui('search_placeholder'))}" autocomplete="off" spellcheck="false" />
             <span class="aw-search__btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></span>
           </div>
         </div>

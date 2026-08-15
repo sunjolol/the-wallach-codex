@@ -299,7 +299,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
     ${(activeTab === 'essentials' || activeTab === 'conditions' || activeTab === 'products' || activeTab === 'explore') && selectedTopic === null
       ? `<div class="kd-search">
       <span class="kd-search-icon">⌕</span>
-      <input class="kd-search-input" type="text" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
+      <input class="kd-search-input" type="text" maxlength="120" placeholder="SEARCH ${activeTab.toUpperCase()}…" />
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">×</button>
       <span class="kd-search-kbd">/</span>
     </div>`

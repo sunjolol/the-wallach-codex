@@ -272,8 +272,6 @@
 .vd-pill--save { color: var(--ds-status-warn); background: var(--ds-status-warn-soft); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-status-warn) 40%, transparent); }
 .vd-pill--out { color: var(--ds-status-err); background: var(--ds-status-err-soft); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-status-err) 30%, transparent); }
 .vd-when { margin-left: auto; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .06em; text-transform: uppercase; }
-.vd-rail__note { margin-top: var(--ds-space-4); padding-top: var(--ds-space-4); border-top: 1px solid var(--ds-rule-soft); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .04em; color: var(--ds-ink-faint); line-height: 1.5; }
-.vd-rail__note b { color: var(--ds-tech); font-weight: 700; }
 
 /* -- uploaded-image previews (live shows the REAL scan, not a faux label) -- */
 .vd-scan__img { width: 56px; height: 56px; flex: 0 0 auto; object-fit: cover; border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-rule); box-shadow: var(--ds-elev-1); }
@@ -335,3 +333,22 @@
 
 /* inline Confirm scoring error (SCAN-07) */
 .vd-cf__err { flex-basis: 100%; font-family: var(--ds-font-serif); font-size: var(--ds-text-xs); color: var(--ds-status-warn); }
+
+/* Scanner review R2 (2026-08-15) -- rail overlap/width/x, editable amounts, close x */
+/* R2-2/R2-3: the two stacked scanner rail panels must NOT inherit the shared .rail-panel
+   position:sticky (they collided on scroll) nor its align-self:start (which shrank each to
+   its content width in this flex column). Scoped to .vd-rail so the coverage rail is untouched. */
+.vd-rail .rail-panel { position: static; align-self: stretch; }
+/* R2-3: the remove x sat absolute over the verdict pill and was a 20px target. Reserve a right
+   gutter on a saved (re-openable) row and seat a larger, centred x in it, clear of the pill. */
+.vd-rail .rl-row[data-sc-src="saved"] { padding-right: 44px; }
+.vd-rail .rl-row__rm { position: absolute; top: 50%; right: 9px; transform: translateY(-50%); }
+/* R2-5: editable nutrient amount + unit (were read-only spans). */
+.vd-nrow__amt { display: inline-flex; align-items: center; gap: 5px; }
+.vd-amt, .vd-unit { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink); background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); padding: 4px 6px; transition: border-color var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out); }
+.vd-amt { width: 5.5ch; text-align: right; }
+.vd-unit { width: 4.5ch; }
+.vd-amt:hover, .vd-unit:hover { border-color: var(--ds-rule-bright); }
+.vd-amt:focus, .vd-unit:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 2px var(--ds-accent-wash); }
+/* the verdict-card close now uses the canonical .ui-close (dashboard.css); only its spacing is scoped here. */
+.vd-card__top .ui-close { margin-left: 8px; }

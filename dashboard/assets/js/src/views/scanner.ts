@@ -30,7 +30,7 @@
 
 import type { RegimenItem, ScanLabel } from '../core/schemas/index.js';
 import { on } from '../core/events.js';
-import { essentialCount, matchEssential } from '../state/coverage.js';
+import { essentialCount, getOrCompute, matchEssential } from '../state/coverage.js';
 import {
   findIngredientSuspects,
   findNutrientCandidates,
@@ -70,6 +70,8 @@ function escHTML(s: unknown): string {
     '\'': '&#39;',
   }[c] as string));
 }
+
+const CLOSE_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
 const VERDICT_TONE: Record<Verdict, string> = {
   ADD: 'var(--ds-status-ok)',
@@ -190,18 +192,17 @@ function renderScan(state: ScState, fileName: string | null, dataUrl: string | n
 
 // ─── STEP 2 · CONFIRM ───────────────────────────────────────────────────────────
 
-function nutrientRow(n: Nutrient, i: number, added: Set<string>): string {
+function nutrientRow(n: Nutrient, i: number, added: Set<string>, covered: Set<string>): string {
   const name = typeof n.name === 'string' ? n.name : '';
-  const amt = `${n.amount ?? ''} ${escHTML(n.unit ?? '')}`.trim();
   const ess = matchEssential(name);
   if (ess !== null) {
-    const plus = added.has(ess.name) ? '<span class="vd-nrow__r">+1</span>' : '<span class="vd-nrow__cov">· +0 (already covered)</span>';
+    const plus = added.has(ess.name) ? '<span class="vd-nrow__r">+1</span>' : (covered.has(ess.name) ? '<span class="vd-nrow__cov">· already covered</span>' : '<span class="vd-nrow__cov">· counts toward your 90</span>');
     return `
       <div class="vd-nrow is-ok" data-nrow="${i}">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
-          <input class="vd-edit" value="${escHTML(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
-          <span class="vd-nrow__amt">${escHTML(amt)}</span>
+          <input class="vd-edit" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML(ess.name)}</b>${plus}</span>
         </div>
       </div>`;
@@ -213,8 +214,8 @@ function nutrientRow(n: Nutrient, i: number, added: Set<string>): string {
     <div class="vd-nrow is-warn" data-nrow="${i}">
       <div class="vd-nrow__main">
         <span class="vd-nrow__g">!</span>
-        <input class="vd-edit is-warn" value="${escHTML(name)}" data-nedit="${i}" aria-label="Garbled read (editable)">
-        <span class="vd-nrow__amt">${escHTML(amt)}</span>
+        <input class="vd-edit is-warn" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" aria-label="Garbled read (editable)">
+        <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" aria-label="Unit (editable)"></span>
         <span class="vd-nrow__map vd-nrow__map--pending">not recognized · pick a match or edit</span>
       </div>
       ${cands.length > 0
@@ -252,9 +253,10 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
   const nutrients = label.nutrients ?? [];
   const delta = coverageDeltaForLabel(label);
   const added = new Set(delta.addedEssentials);
+  const coveredNames = new Set(getOrCompute().tiles.filter(t => t.covered).map(t => t.name));
   const mapped = nutrients.filter(n => matchEssential(typeof n.name === 'string' ? n.name : '') !== null).length;
   const unmapped = nutrients.length - mapped;
-  const rows = nutrients.map((n, i) => nutrientRow(n, i, added)).join('');
+  const rows = nutrients.map((n, i) => nutrientRow(n, i, added, coveredNames)).join('');
 
   const ingredients = label.ingredients ?? '';
   const suspects = findIngredientSuspects(ingredients, dismissed);
@@ -289,7 +291,7 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
           <div class="vd-cf__edits">
             <div class="vd-cf-sec vd-cf-sec--name">
               <label class="vd-cf-name__lab" for="vd-sc-name">Product name</label>
-              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name value="${escHTML(humanizeName(label.name))}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
+              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name maxlength="80" value="${escHTML(humanizeName(label.name))}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
               <span class="vd-cf-sec__hint">Name it so your saved items and regimen read cleanly — not a raw container guess.</span>
             </div>
             <div class="vd-cf-sec">
@@ -308,7 +310,7 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
               </div>
               <div>
                 <label class="vd-ing__lab" for="vd-ing">Ingredients line (editable)</label>
-                <textarea id="vd-ing" class="vd-ing" rows="2" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML(ingredients)}</textarea>
+                <textarea id="vd-ing" class="vd-ing" rows="2" maxlength="4000" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML(ingredients)}</textarea>
               </div>
               ${suspectPanel}
               ${flagPanel}
@@ -354,7 +356,7 @@ function deltaField(before: number, added: number, total: number): string {
   return h;
 }
 
-function renderResult(result: ScanResult): string {
+function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): string {
   const tone = VERDICT_TONE[result.verdict];
   const { head, sub } = verdictHeadline(result.verdict);
   const delta = coverageDeltaForLabel(result.label);
@@ -384,6 +386,7 @@ function renderResult(result: ScanResult): string {
               <span class="vd-live" style="background:${tone};box-shadow:0 0 0 3px color-mix(in srgb, ${tone} 22%, transparent)" aria-hidden="true"></span>
               <span class="vd-card__eyebrow">Wallach-alignment verdict · <b>${escHTML(name)}</b></span>
               <span class="vd-card__tag">Local · confirmed</span>
+              <button class="ui-close" type="button" data-sc-clear aria-label="Close this verdict" title="Close">${CLOSE_SVG}</button>
             </div>
             <div class="vd-card__body">
               <div class="vd-judg">
@@ -419,7 +422,7 @@ function renderResult(result: ScanResult): string {
                 <div class="vd-stats">
                   <div class="vd-stat vd-stat--add"><div class="vd-stat__v">+${added}</div><div class="vd-stat__l">of ${total} added · ${delta.before} &rarr; ${delta.after}</div></div>
                   <div class="vd-stat vd-stat--flag"><div class="vd-stat__v">${flags}</div><div class="vd-stat__l">ingredient flag${flags === 1 ? '' : 's'}</div></div>
-                  <div class="vd-stat"><div class="vd-stat__v">${alignedPct}%</div><div class="vd-stat__l">aligned · ${result.alignment.aligned} of ${result.alignment.total} nutrients</div></div>
+                  <div class="vd-stat">${result.alignment.aligned === 0 && result.alignment.misaligned === 0 && result.alignment.score === 0 ? `<div class="vd-stat__v">—</div><div class="vd-stat__l">form not on a label · judged on gaps + ingredients</div>` : `<div class="vd-stat__v">${alignedPct}%</div><div class="vd-stat__l">aligned · ${result.alignment.aligned} of ${result.alignment.total} nutrients</div>`}</div>
                   <div class="vd-stat"><div class="vd-stat__v">${result.gapFills.length}</div><div class="vd-stat__l">nutrients reach the 90</div></div>
                 </div>
               </div>
@@ -427,7 +430,7 @@ function renderResult(result: ScanResult): string {
             <div class="vd-card__foot">
               <button class="ds-btn-primary vd-cta" type="button" data-sc-adopt>Add to regimen <span aria-hidden="true">&rarr;</span></button>
               <button class="ds-btn-ghost" type="button" data-sc-save>Save for later</button>
-              <button class="vd-reject" type="button" data-sc-reject>Reject</button>
+              <button class="vd-reject" type="button" data-sc-reject>${origin === 'saved' ? 'Delete' : 'Reject'}</button>
               <div class="vd-foot__note">
                 <span class="vd-foot__prov"><span class="vd-yours">Yours · user-scanned</span> lands marked user-provided</span>
                 <span class="vd-foot__sub">Never merged into the sealed Wallach / Youngevity canon — your data, on your device.</span>
@@ -491,12 +494,12 @@ function relAge(iso: string): string {
 }
 
 /** One scan row — clickable to re-open its verdict (data-sc-open); a saved row carries a x. */
-function scanRow(h: HistoryEntry, saved: boolean): string {
+function scanRow(h: HistoryEntry, saved: boolean, index: number): string {
   const rm = saved
-    ? `<span class="rl-row__x" data-sc-unsave="${h.id}" role="button" tabindex="0" aria-label="Remove from saved" title="Remove">&times;</span>`
+    ? `<button class="ui-close ui-close--sm rl-row__rm" type="button" data-sc-unsave="${h.id}" aria-label="Remove from saved" title="Remove">${CLOSE_SVG}</button>`
     : '';
   return `
-    <div class="rl-row vd-hrow" data-sc-open="${h.id}" role="button" tabindex="0" title="Re-open this verdict">
+    <div class="rl-row vd-hrow" data-sc-open="${h.id}" data-sc-src="${saved ? 'saved' : 'recent'}" data-sc-idx="${index}" role="button" tabindex="0" title="Re-open this verdict">
       <div class="rl-row__name">${escHTML(humanizeName(h.label.name))}</div>
       ${verdictPill(h.verdict)}
       <div class="rl-row__foot"><span class="rl-src is-own">Yours · user-scanned</span><span class="vd-when">${escHTML(relAge(h.ts))}</span></div>
@@ -507,8 +510,8 @@ function scanRow(h: HistoryEntry, saved: boolean): string {
 /** The persistent rail: the durable Saved shelf (SCAN-04) over the auto Recent captures.
  *  Rendered in every state so a refresh always surfaces saved items; rows re-open on click. */
 function renderRail(): string {
-  const saved = getSaved().map(h => scanRow(h, true)).join('');
-  const recent = getHistory().map(h => scanRow(h, false)).join('');
+  const saved = getSaved().map((h, i) => scanRow(h, true, i)).join('');
+  const recent = getHistory().map((h, i) => scanRow(h, false, i)).join('');
   return `
     <aside class="vd-rail">
       <div class="rail-panel">
@@ -527,7 +530,6 @@ function renderRail(): string {
         </div>
         <div class="rail-list">${recent || '<div class="rail-empty"><p>No scans yet.</p><small>Your captures land here.</small></div>'}</div>
       </div>
-      <div class="vd-rail__note">Every capture is marked <b>Yours</b> — registered against the 90, never written into the sealed pillars.</div>
     </aside>`;
 }
 
@@ -541,12 +543,16 @@ export function mount(container: HTMLElement): MountHandle {
   let imageDataUrl: string | null = null;
   let scanError: string | null = null;
   const dismissed = new Set<string>();
+  // #6: where the shown verdict came from, so a re-opened SAVED item offers Delete (removes it
+  // from the shelf) instead of a meaningless Reject. A fresh scan / recent re-open stays Reject.
+  let resultOrigin: 'scan' | 'saved' | 'recent' = 'scan';
+  let reopenedSavedId: number | null = null;
 
   const render = (): void => {
     let main = '';
     if (state === 'result' && result !== null) {
       const unreadable = result.sparseNutrients === true && result.sparseIngredients === true;
-      main = renderScan(state, fileName, imageDataUrl) + (unreadable ? renderUnreadable() : renderResult(result));
+      main = renderScan(state, fileName, imageDataUrl) + (unreadable ? renderUnreadable() : renderResult(result, resultOrigin));
     }
     else if (state === 'confirming' && label !== null) {
       main = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
@@ -644,7 +650,12 @@ export function mount(container: HTMLElement): MountHandle {
     const nutrients = (base.nutrients ?? []).map((n, i) => {
       const input = container.querySelector<HTMLInputElement>(`[data-nedit="${i}"]`);
       const next = input !== null ? input.value.trim() : (typeof n.name === 'string' ? n.name : '');
-      return { ...n, name: next };
+      const amtEl = container.querySelector<HTMLInputElement>(`[data-aedit="${i}"]`);
+      const unitEl = container.querySelector<HTMLInputElement>(`[data-uedit="${i}"]`);
+      const parsed = amtEl !== null ? Number.parseFloat(amtEl.value) : NaN;
+      const amount = Number.isFinite(parsed) ? parsed : n.amount;
+      const unit = unitEl !== null && unitEl.value.trim().length > 0 ? unitEl.value.trim() : n.unit;
+      return { ...n, name: next, amount, unit };
     }).filter(n => typeof n.name === 'string' && n.name.length > 0);
     const ing = container.querySelector<HTMLTextAreaElement>('[data-ing]');
     const nameEl = container.querySelector<HTMLInputElement>('[data-sc-name]');
@@ -723,6 +734,8 @@ export function mount(container: HTMLElement): MountHandle {
       if (r !== null) {
         result = r;
         state = 'result';
+        resultOrigin = 'scan';
+        reopenedSavedId = null;
         render();
       }
       else {
@@ -768,14 +781,21 @@ export function mount(container: HTMLElement): MountHandle {
     // Re-open a Saved / Recent row: re-score its stored label against your CURRENT regimen.
     const openRow = t.closest<HTMLElement>('[data-sc-open]');
     if (openRow !== null) {
-      const oid = Number(openRow.dataset['scOpen']);
-      const entry = [...getSaved(), ...getHistory()].find(h => h.id === oid);
+      // Resolve by (source list, index), NOT by id: two saved/recent entries can share a
+      // Date.now()-derived id (R2-7), and an id lookup re-opens the WRONG row. A row's
+      // position in its own list is unambiguous, even for pre-existing colliding data.
+      const src = openRow.dataset['scSrc'];
+      const idx = Number(openRow.dataset['scIdx']);
+      const list = src === 'saved' ? getSaved() : getHistory();
+      const entry = Number.isInteger(idx) ? list[idx] : undefined;
       if (entry !== undefined) {
         const r = scoreLabel(entry.label);
         if (r !== null) {
           label = entry.label;
           result = r;
           state = 'result';
+          resultOrigin = src === 'saved' ? 'saved' : 'recent';
+          reopenedSavedId = src === 'saved' && typeof entry.id === 'number' ? entry.id : null;
           imageDataUrl = null;
           fileName = typeof entry.label.name === 'string' ? entry.label.name : null;
           scanError = null;
@@ -800,12 +820,28 @@ export function mount(container: HTMLElement): MountHandle {
       refreshRail();
       return;
     }
-    if (t.closest('[data-sc-reject]') !== null) {
+    if (t.closest('[data-sc-clear]') !== null) {
       state = 'idle';
       label = null;
       result = null;
       fileName = null;
       imageDataUrl = null;
+      scanError = null;
+      render();
+      return;
+    }
+    if (t.closest('[data-sc-reject]') !== null) {
+      // #6: a re-opened SAVED item's Delete removes it from the shelf; a fresh/recent Reject just closes.
+      if (resultOrigin === 'saved' && reopenedSavedId !== null) {
+        removeSaved(reopenedSavedId);
+      }
+      state = 'idle';
+      label = null;
+      result = null;
+      fileName = null;
+      imageDataUrl = null;
+      resultOrigin = 'scan';
+      reopenedSavedId = null;
       render();
     }
   };

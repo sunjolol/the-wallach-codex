@@ -42,7 +42,7 @@ import {
   type RegimenVaultEntry,
   RegimenVaultEntrySchema,
 } from '../core/schemas/index.js';
-import { coveredCountForItems, essentialCount, getOrCompute } from '../state/coverage.js';
+import { coveredCountForItems, essentialCount, getOrCompute, matchEssential } from '../state/coverage.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage } from '../state/recommender.js';
 import {
   addSlot,
@@ -522,54 +522,131 @@ function buildRailRows(host: HTMLElement, items: RegimenItem[]): void {
     const id = String(item.id);
     const label = typeof item.label.name === 'string' ? item.label.name : '?';
     const dose = readItemDose(item);
+    const own = item.provenance === 'user_scanned';
     const row = document.createElement('div');
-    row.className = 'rl-row';
+    row.className = 'rr-row';
     row.dataset['rowId'] = id;
+
+    const main = document.createElement('div');
+    main.className = 'rr-row__main';
     const nameEl = document.createElement('div');
-    nameEl.className = 'rl-row__name';
+    nameEl.className = 'rr-row__name';
     nameEl.textContent = label;
     nameEl.title = label;
-    row.appendChild(nameEl);
-    const x = document.createElement('button');
-    x.className = 'rl-row__x';
-    x.type = 'button';
-    x.dataset['rowRemove'] = id;
-    x.setAttribute('aria-label', `Remove ${label}`);
-    x.textContent = '×';
-    row.appendChild(x);
-    const foot = document.createElement('div');
-    foot.className = 'rl-row__foot';
-    const src = document.createElement('span');
-    const own = item.provenance === 'user_scanned';
-    src.className = `rl-src${own ? ' is-own' : ''}`;
-    src.textContent = own ? 'YOUR OWN' : 'EDEN';
-    foot.appendChild(src);
+    const srcEl = document.createElement('div');
+    srcEl.className = `rr-row__src ${own ? 'is-own' : 'is-eden'}`;
+    srcEl.textContent = own ? 'Your own' : 'Eden';
+    main.append(nameEl, srcEl);
+    row.appendChild(main);
+
     const doseEl = document.createElement('div');
-    doseEl.className = 'rl-dose';
+    doseEl.className = 'rr-dose';
     const minus = document.createElement('button');
-    minus.className = 'rl-dose__b';
+    minus.className = 'rr-dose__b';
     minus.type = 'button';
     minus.dataset['doseDown'] = id;
     minus.setAttribute('aria-label', 'Fewer');
     minus.textContent = '−';
     minus.disabled = dose <= 1;
     const nEl = document.createElement('span');
-    nEl.className = 'rl-dose__n';
+    nEl.className = 'rr-dose__n';
     nEl.textContent = formatDose(dose);
     const plus = document.createElement('button');
-    plus.className = 'rl-dose__b';
+    plus.className = 'rr-dose__b';
     plus.type = 'button';
     plus.dataset['doseUp'] = id;
     plus.setAttribute('aria-label', 'More');
     plus.textContent = '+';
     const unit = document.createElement('span');
-    unit.className = 'rl-dose__u';
+    unit.className = 'rr-dose__u';
     unit.textContent = '/day';
     doseEl.append(minus, nEl, plus, unit);
-    foot.appendChild(doseEl);
-    row.appendChild(foot);
+    row.appendChild(doseEl);
+
+    const x = document.createElement('button');
+    x.className = 'ui-close ui-close--sm';
+    x.type = 'button';
+    x.dataset['rowRemove'] = id;
+    x.setAttribute('aria-label', `Remove ${label}`);
+    x.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+    row.appendChild(x);
+
     host.appendChild(row);
   }
+}
+
+/** Intrinsic essentials a product supplies — how many of the 90 its composition covers, so the
+ *  typeahead tells a layman what a product IS, not just its name. */
+function productSupplies(entry: RegimenVaultEntry): number {
+  const ess = new Set<string>();
+  for (const n of entry.nutrients ?? []) {
+    const nm = (n as { name?: unknown }).name;
+    if (typeof nm === 'string') {
+      const m = matchEssential(nm);
+      if (m !== null) {
+        ess.add(m.name);
+      }
+    }
+  }
+  return ess.size;
+}
+
+/**
+ * The add-a-product typeahead (#3): show the top 3 vault matches ONLY after the user types,
+ * each an explicit row with an Add button. Replaces the every-product native datalist.
+ */
+function renderTypeahead(container: HTMLElement, query: string): void {
+  const results = container.querySelector<HTMLElement>('[data-ta-results]');
+  if (results === null) {
+    return;
+  }
+  const q = query.trim().toLowerCase();
+  results.replaceChildren();
+  if (q.length === 0) {
+    results.hidden = true;
+    return;
+  }
+  const matches = [...readVault().values()]
+    .map(p => ({ name: p.canonical_name ?? p.name, entry: p }))
+    .filter((x): x is { name: string; entry: RegimenVaultEntry } => typeof x.name === 'string' && x.name.toLowerCase().includes(q))
+    .sort((a, b) => {
+      const ai = a.name.toLowerCase().indexOf(q);
+      const bi = b.name.toLowerCase().indexOf(q);
+      return ai !== bi ? ai - bi : a.name.localeCompare(b.name);
+    })
+    .slice(0, 3);
+  if (matches.length === 0) {
+    const none = document.createElement('div');
+    none.className = 'rr-results__none';
+    none.textContent = `No product matches “${query.trim()}”.`;
+    results.appendChild(none);
+    results.hidden = false;
+    return;
+  }
+  const total = essentialCount();
+  for (const { name, entry } of matches) {
+    const supplies = productSupplies(entry);
+    const row = document.createElement('div');
+    row.className = 'rr-results__row';
+    const info = document.createElement('span');
+    info.className = 'rr-results__info';
+    const nm = document.createElement('span');
+    nm.className = 'rr-results__name';
+    nm.textContent = name;
+    nm.title = name;
+    const meta = document.createElement('span');
+    meta.className = 'rr-results__meta';
+    meta.textContent = supplies > 0 ? `covers ${supplies} of ${total} essentials` : 'single-ingredient product';
+    info.append(nm, meta);
+    const add = document.createElement('button');
+    add.className = 'rr-results__add';
+    add.type = 'button';
+    add.dataset['taAdd'] = name;
+    add.textContent = 'Add';
+    row.append(info, add);
+    results.appendChild(row);
+  }
+  results.hidden = false;
 }
 
 function renderRail(): string {
@@ -577,8 +654,6 @@ function renderRail(): string {
   const active = doc.slots.find(s => s.id === doc.activeSlot);
   const items = active?.items.length ?? 0;
   const ordinal = String(Math.max(0, doc.slots.findIndex(s => s.id === doc.activeSlot)) + 1).padStart(2, '0');
-  const names = [...readVault().values()].map(p => p.canonical_name ?? p.name).filter((n): n is string => typeof n === 'string').sort((a, b) => a.localeCompare(b));
-  const options = names.map(n => `<option value="${escHTML(n)}"></option>`).join('');
   return `
     <aside class="ck-rail" data-rise="5">
       <section class="rail-panel">
@@ -588,20 +663,16 @@ function renderRail(): string {
           <div class="rail-panel__meta">Slot ${ordinal} · ${items} ${items === 1 ? 'item' : 'items'} · ${escHTML(relEdited(active?.editedAt ?? new Date().toISOString().slice(0, 10)))}</div>
         </div>
         <div class="rail-list" data-rail-list></div>
-      </section>
-      <section class="ck-addcard">
-        <div class="ck-addcard__head">
-          <span class="ck-addcard__eyebrow">Add to ${escHTML(active?.name ?? 'Regimen')}</span>
-          <span class="ck-addcard__sub">products</span>
+        <div class="rr-add">
+          <label class="ck-addfield rr-field">
+            <span class="ck-addfield__plus">+</span>
+            <input class="ck-addfield__input" maxlength="80" placeholder="Add a product…" aria-label="Add a product" data-add-input autocomplete="off">
+            <kbd class="ck-addfield__kbd" aria-hidden="true">/</kbd>
+          </label>
+          <div class="rr-results" data-ta-results hidden></div>
         </div>
-        <label class="ck-addfield">
-          <span class="ck-addfield__plus">＋</span>
-          <input class="ck-addfield__input" list="ck-vault-list" placeholder="Add a product…" aria-label="Add a product" data-add-input>
-          <kbd class="ck-addfield__kbd" aria-hidden="true">/</kbd>
-        </label>
-        <datalist id="ck-vault-list">${options}</datalist>
       </section>
-      <button class="ds-btn-primary ck-scan" type="button" data-scan-new><b class="ck-scan__plus" aria-hidden="true">+</b>Scan a new item</button>
+      <div class="rr-scan">Not in the catalog? <button class="rr-scan__link" type="button" data-scan-new>Scan your own item &rarr;</button></div>
     </aside>`;
 }
 
@@ -645,10 +716,14 @@ export function mount(container: HTMLElement): MountHandle {
 
   /** Cap the active-stack panel to the console's height (measured, tracks any width). */
   const syncStackHeight = (): void => {
-    const consoleEl = container.querySelector<HTMLElement>('.ck-console');
+    // The active-stack box now grows with its content and scrolls WITH the page (Luneth) — no
+    // console-height cap. The old cap read `.ck-console` height, which is 0 while the Regimen tab
+    // is hidden, so a re-render fired from another tab (adopting from the Scanner, or the goal
+    // veil's "I'm just browsing") collapsed the box to 0px — the #2 glitch + the browse bug.
+    // Kept as a no-op that clears any stale cap, so the render/resize wiring stays valid.
     const stack = container.querySelector<HTMLElement>('.ck-rail .rail-panel');
-    if (consoleEl !== null && stack !== null) {
-      stack.style.maxHeight = `${Math.round(consoleEl.getBoundingClientRect().height)}px`;
+    if (stack !== null) {
+      stack.style.maxHeight = '';
     }
   };
 
@@ -906,6 +981,15 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
+    // — typeahead add —
+    const taAdd = target.closest<HTMLElement>('[data-ta-add]');
+    if (taAdd !== null) {
+      const name = taAdd.dataset['taAdd'];
+      if (name !== undefined) {
+        addItem(name);
+      }
+      return;
+    }
     // — dose steppers —
     const up = target.closest<HTMLElement>('[data-dose-up]');
     const down = target.closest<HTMLElement>('[data-dose-down]');
@@ -924,7 +1008,43 @@ export function mount(container: HTMLElement): MountHandle {
     // — remove item —
     const rowRemove = target.closest<HTMLElement>('[data-row-remove]');
     if (rowRemove !== null) {
-      const id = Number(rowRemove.dataset['rowRemove']);
+      // #4/#8: never a silent delete. Swap the row to an inline Keep/Remove confirm; Remove
+      // routes through saveRgRemoved, which moves the item to the restorable Trash.
+      const row = rowRemove.closest<HTMLElement>('.rr-row');
+      const id = rowRemove.dataset['rowRemove'];
+      if (row !== null && id !== undefined) {
+        const nm = row.querySelector('.rr-row__name')?.textContent ?? 'this item';
+        row.className = 'rr-row rr-row--confirm';
+        const q = document.createElement('div');
+        q.className = 'rr-confirm__q';
+        q.textContent = `Remove ${nm}? It moves to Trash — you can restore it.`;
+        const btns = document.createElement('div');
+        btns.className = 'rr-confirm__btns';
+        const keep = document.createElement('button');
+        keep.className = 'rr-btn';
+        keep.type = 'button';
+        keep.dataset['rowKeep'] = '1';
+        keep.textContent = 'Keep';
+        const rm = document.createElement('button');
+        rm.className = 'rr-btn rr-btn--danger';
+        rm.type = 'button';
+        rm.dataset['rowConfirmRemove'] = id;
+        rm.textContent = 'Remove';
+        btns.append(keep, rm);
+        row.replaceChildren(q, btns);
+      }
+      return;
+    }
+    if (target.closest('[data-row-keep]') !== null) {
+      const list = container.querySelector<HTMLElement>('[data-rail-list]');
+      if (list !== null) {
+        buildRailRows(list, loadEffectiveRegimen());
+      }
+      return;
+    }
+    const rowConfirmRemove = target.closest<HTMLElement>('[data-row-confirm-remove]');
+    if (rowConfirmRemove !== null) {
+      const id = Number(rowConfirmRemove.dataset['rowConfirmRemove']);
       if (Number.isFinite(id)) {
         saveRgRemoved(new Set([id]));
       }
@@ -950,7 +1070,9 @@ export function mount(container: HTMLElement): MountHandle {
     if (input?.matches('[data-add-input]') === true) {
       ev.preventDefault();
       const field = input as HTMLInputElement;
-      if (field.value.trim().length > 0 && addItem(field.value)) {
+      const firstAdd = container.querySelector<HTMLElement>('[data-ta-add]');
+      const name = firstAdd?.dataset['taAdd'] ?? field.value;
+      if (name.trim().length > 0 && addItem(name)) {
         field.value = '';
       }
     }
@@ -975,8 +1097,16 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
+  const inputHandler = (ev: Event): void => {
+    const it = ev.target as HTMLElement | null;
+    if (it !== null && it.matches('[data-add-input]')) {
+      renderTypeahead(container, (it as HTMLInputElement).value);
+    }
+  };
+
   render();
   container.addEventListener('click', clickHandler);
+  container.addEventListener('input', inputHandler);
   container.addEventListener('keydown', keyHandler);
   document.addEventListener('keydown', slashFocus);
   window.addEventListener('resize', syncStackHeight);
@@ -993,6 +1123,7 @@ export function mount(container: HTMLElement): MountHandle {
         window.clearTimeout(undoTimer);
       }
       container.removeEventListener('click', clickHandler);
+      container.removeEventListener('input', inputHandler);
       container.removeEventListener('keydown', keyHandler);
       document.removeEventListener('keydown', slashFocus);
       window.removeEventListener('resize', syncStackHeight);

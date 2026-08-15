@@ -355,3 +355,25 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
   .app-footer { padding: var(--ds-space-2) var(--ds-space-4); }
   .footer__item:not(:first-child), .footer__signature { display: none; }
 }
+
+/* == Canonical close / dismiss control ===================================
+   ONE close button for the whole app (was 8+ ad-hoc x in different sizes/styles).
+   Mirrors the Ask-Wallach search-popup close (.scr-nav): a round, softly-shadowed
+   button with an 18px SVG X. Hover accents ORANGE (the primary accent), not green.
+   Always an SVG X, never a text glyph, so weight + alignment are identical everywhere.
+     .ui-close      standard 34px (panel / card / modal close)
+     .ui-close--sm  28px (inline row / chip remove) */
+.ui-close {
+  --uic-size: 34px;
+  flex: 0 0 auto; width: var(--uic-size); height: var(--uic-size); padding: 0;
+  display: inline-flex; align-items: center; justify-content: center; border-radius: 50%;
+  background: var(--ds-paper); border: 1px solid var(--ds-rule); color: var(--ds-ink-soft);
+  cursor: pointer; -webkit-appearance: none; appearance: none;
+  box-shadow: 2px 2px 6px rgba(150, 126, 84, 0.16), -2px -2px 6px rgba(255, 252, 244, 0.85);
+  transition: color var(--ds-motion-fast) var(--ds-ease-out), border-color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out);
+}
+.ui-close:hover { color: var(--ds-accent-deep); border-color: var(--ds-accent); background: var(--ds-paper-light); }
+.ui-close:focus-visible { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 3px var(--ds-accent-wash); }
+.ui-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
+.ui-close--sm { --uic-size: 28px; box-shadow: 1px 1px 4px rgba(150, 126, 84, 0.14), -1px -1px 4px rgba(255, 252, 244, 0.8); }
+.ui-close--sm svg { width: 14px; height: 14px; }
