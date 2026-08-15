@@ -10,8 +10,8 @@
 /* ═══ CONCEPT 1 · THE COCKPIT — premium health-tech ═══ everything scoped under .ck ═══ */
 .ck { position: relative; z-index: 1; padding: var(--ds-space-4) var(--ds-space-7) var(--ds-space-7); display: flex; flex-direction: column; gap: var(--ds-space-6); }
 .ck *, .ck *::before, .ck *::after { box-sizing: border-box; }
-/* button reset kept BELOW class specificity (:where = 0) so styled buttons — .rec, .ck-scan,
-   .rl-dose__b, .ck-slot, .ck-foodchip — keep their own background/border/border-image. */
+/* button reset kept BELOW class specificity (:where = 0) so styled buttons — .rec, .ck-slot,
+   .ck-swatch, .rr-dose__b — keep their own background/border/border-image. */
 :where(.ck) button { -webkit-appearance: none; appearance: none; background: none; border: none; font: inherit; color: inherit; cursor: pointer; }
 
 /* the reusable 2-col grid keeps its shape; the .ck wrapper owns the outer padding */
@@ -226,6 +226,23 @@
   .ck-swatch:hover, .ck-swatch.is-on, .ck-slot__pencil:hover, .ck-slot--empty:hover .ck-slot__plus{ transform:none; }
 }
 
+/* ── slot-delete inline confirm (#8a — never delete on the first click) ── */
+.ck-slot__confirm {
+  position: absolute; inset: 0; z-index: 3;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
+  padding: 10px; text-align: center;
+  background: color-mix(in srgb, var(--ds-paper-light) 92%, transparent);
+  -webkit-backdrop-filter: blur(2px); backdrop-filter: blur(2px);
+}
+.ck-slot__confirm-q { font-family: var(--ds-font-display-interface); font-weight: 700; font-size: var(--ds-text-sm); color: var(--ds-ink); line-height: 1.15; }
+.ck-slot__confirm-sub { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .03em; color: var(--ds-ink-soft); }
+.ck-slot__confirm-btns { display: flex; gap: 7px; margin-top: 2px; }
+.ck-slot__confirm-btns .rr-btn { padding: 5px 12px; }
+@media (prefers-reduced-motion: no-preference) {
+  .ck-slot__confirm { animation: ck-confirm-in var(--ds-motion-fast) var(--ds-ease-out) both; }
+}
+@keyframes ck-confirm-in { from { opacity: 0; } to { opacity: 1; } }
+
 /* ── HERO CONSOLE — the gauge cluster ──────────────────────────────────── */
 .ck-console {
   background: var(--ds-paper-light);
@@ -316,11 +333,8 @@
 .ck-recgrid .rec__add { top: auto; bottom: 12px; right: 12px; transform: none; width: 22px; height: 22px; }
 .ck .rec { --recRing: linear-gradient(150deg, var(--ds-rule-bright), var(--ds-rule-soft)); }
 .ck-tag { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .05em; text-transform: uppercase; padding: 2px 7px; border-radius: var(--ds-radius-pill); color: var(--tc, var(--ds-ink-soft)); background: color-mix(in srgb, var(--tc, var(--ds-ink-faint)) 12%, transparent); border: 1px solid color-mix(in srgb, var(--tc, var(--ds-ink-faint)) 30%, transparent); }
-.ck-tag--food { color: var(--ds-status-ok); background: var(--ds-status-ok-soft); border-color: color-mix(in srgb, var(--ds-status-ok) 32%, transparent); }
 
-/* ── RAIL: stack (reuse .rail-panel/.rl-row) + food-mark + own-mark ─────── */
-.ck .rl-src.food-mark { color: var(--ds-status-ok); }
-.ck .rl-src.is-own { color: var(--ds-status-info); }
+/* ── RAIL: the active-stack panel (reuses the shared .rail-panel shell) ─────── */
 .ck .rail-panel { box-shadow: var(--ds-elev-1); }
 
 /* Active stack caps to the console's height (JS-synced to the box on its left);
@@ -334,28 +348,13 @@
 .ck-rail .rail-list::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%); border-radius: var(--ds-radius-pill); border: 2px solid var(--ds-paper-darker); box-shadow: 0 0 8px rgba(255,126,60,.3); }
 .ck-rail .rail-list::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--ds-accent-hot) 0%, var(--ds-accent-bright) 100%); box-shadow: 0 0 10px rgba(255,126,60,.5); }
 
-/* ── ADD card — unified product + food add ─────────────────────────────── */
-.ck-addcard { background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); padding: var(--ds-space-5); display: flex; flex-direction: column; gap: var(--ds-space-4); }
-.ck-addcard__head { display: flex; align-items: baseline; gap: var(--ds-space-3); }
-.ck-addcard__eyebrow { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-faint); }
-.ck-addcard__sub { margin-left: auto; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .04em; }
+/* ── ADD field — the rail's product typeahead input ─────────────────────────────── */
 .ck-addfield { display: flex; align-items: center; gap: 10px; width: 100%; padding: 11px 13px; background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); cursor: text; transition: border-color .15s, box-shadow .15s; }
 .ck-addfield:hover { border-color: var(--ds-accent); box-shadow: 0 0 0 3px var(--ds-accent-wash); }
 .ck-addfield__plus { font-family: var(--ds-font-mono); color: var(--ds-accent); font-size: 1rem; line-height: 1; }
-.ck-addfield__ph { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink-faint); flex: 1; }
 .ck-addfield__kbd { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); border: 1px solid var(--ds-rule); border-radius: 3px; padding: 1px 6px; line-height: 1.4; }
 .ck-addfield__input { flex: 1; min-width: 0; appearance: none; -webkit-appearance: none; background: none; border: none; outline: none; padding: 0; font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink); }
 .ck-addfield__input::placeholder { color: var(--ds-ink-faint); opacity: 1; }
-.ck-addfoods { display: flex; flex-direction: column; gap: 9px; }
-.ck-addfoods__label { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-status-ok); }
-.ck-foodchips { display: flex; flex-wrap: wrap; gap: 6px; }
-.ck-foodchip { display: inline-flex; align-items: center; gap: 7px; padding: 6px 11px; background: var(--ds-paper); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-pill); cursor: pointer; font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); color: var(--ds-ink-medium); transition: border-color .15s, color .15s, background .15s; }
-.ck-foodchip b { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-status-ok); font-weight: 700; }
-.ck-foodchip:hover { border-color: var(--ds-status-ok); color: var(--ds-ink); background: var(--ds-status-ok-soft); }
-
-/* ── SCAN hand-off — styled like the Scanner's New Scan button ─ */
-.ck-scan { width: 100%; justify-content: center; font-size: var(--ds-text-sm); }
-.ck-scan__plus { font-family: var(--ds-font-mono); font-weight: 700; font-size: var(--ds-text-md); }
 
 /* ── entrance rise (tasteful, once, motion-safe) ───────────────────────── */
 @media (prefers-reduced-motion: no-preference) {

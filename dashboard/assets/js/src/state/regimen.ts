@@ -356,6 +356,53 @@ export function saveRgManual(items: RegimenItem[]): void {
 }
 
 /**
+ * The servings/day currently in effect for an item — mirrors state/coverage
+ * readScale (override scaling_factor → label.servings → 1) but WITHOUT importing
+ * coverage.ts (which imports THIS module — a cycle). Tiny + kept in sync by intent;
+ * coverage.readScale stays the canonical dose read, this only feeds the bump math.
+ */
+function currentDose(item: RegimenItem, overrideScale: unknown): number {
+  const candidates: unknown[] = [overrideScale, (item.label as Record<string, unknown>)['servings']];
+  for (const c of candidates) {
+    const n = typeof c === 'number' ? c : typeof c === 'string' ? Number.parseFloat(c) : Number.NaN;
+    if (Number.isFinite(n) && n > 0) {
+      return n;
+    }
+  }
+  return 1;
+}
+
+/** Outcome of an add: a fresh row, or a dose bump on the product already in the slot. */
+export interface AddOutcome { outcome: 'added' | 'bumped'; name: string; dose: number }
+
+/**
+ * Add a product to the active slot — but NEVER a duplicate row (REG-03). When a
+ * case-insensitively same-named item is already in the slot, bump THAT item's
+ * servings/day by one (saveRgOverride) instead of appending a second row that
+ * coverage.accumulate would sum into a phantom double-count. This matches the rule
+ * views/coverage.ts::addVaultProduct already ships; both branches route through the
+ * existing §31 chokepoints (saveRgManual / saveRgOverride), so the mutation-routing
+ * gate stays satisfied — no ad-hoc write.
+ */
+export function addOrBumpRegimenItem(item: RegimenItem): AddOutcome {
+  const slot = getActiveSlot(loadSlotDoc());
+  const rawName = typeof item.label.name === 'string' ? item.label.name : '';
+  const key = rawName.trim().toLowerCase();
+  const existing = key.length > 0
+    ? slot.items.find(i => (typeof i.label.name === 'string' ? i.label.name : '').trim().toLowerCase() === key)
+    : undefined;
+  if (existing !== undefined) {
+    const ov = slot.overrides[String(existing.id)] as { scaling_factor?: unknown } | undefined;
+    const next = Math.max(1, currentDose(existing, ov?.scaling_factor) + 1);
+    saveRgOverride(existing.id, { scaling_factor: next }); // → writeSlotDoc → 'regimen:changed'
+    const name = typeof existing.label.name === 'string' ? existing.label.name : rawName;
+    return { outcome: 'bumped', name, dose: next };
+  }
+  saveRgManual([...slot.items, item]); // append → writeSlotDoc → 'regimen:changed'
+  return { outcome: 'added', name: rawName, dose: currentDose(item, undefined) };
+}
+
+/**
  * Move the active slot's items whose id ∈ `setOfIds` into the trash.
  *
  * Adapter for the legacy remove path (views/regimen.ts's read-add-write on the

@@ -45,17 +45,17 @@ import {
 import { coveredCountForItems, essentialCount, getOrCompute, matchEssential } from '../state/coverage.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage } from '../state/recommender.js';
 import {
+  addOrBumpRegimenItem,
+  type AddOutcome,
   addSlot,
   DEFAULT_SLOT_COLOUR,
   deleteSlot,
   isSlotColour,
   loadEffectiveRegimen,
-  loadRgManual,
   loadRgUserGoals,
   loadSlots,
   renameSlot,
   restoreFromTrash,
-  saveRgManual,
   saveRgOverride,
   saveRgRemoved,
   saveRgUserGoals,
@@ -257,10 +257,10 @@ function readVault(): Map<string, RegimenVaultEntry> {
 }
 
 /** Build a RegimenItem from a vault product (matched by name) + persist via §31. */
-function addItem(rawName: string): boolean {
+function addItem(rawName: string): AddOutcome | null {
   const product = readVault().get(rawName.trim().toLowerCase());
   if (product === undefined) {
-    return false;
+    return null;
   }
   const item: RegimenItem = {
     id: Date.now(),
@@ -268,8 +268,7 @@ function addItem(rawName: string): boolean {
     addedDate: new Date().toISOString().slice(0, 10),
     provenance: 'user_manual',
   };
-  saveRgManual([...loadRgManual(), item]);
-  return true;
+  return addOrBumpRegimenItem(item);
 }
 
 // ─── Slot switcher ───────────────────────────────────────────────────────────
@@ -708,6 +707,42 @@ function undoDelete(cap: DeletedSlot): { ok: boolean; reason?: string } {
   return { ok: true };
 }
 
+/**
+ * The inline "Delete this save?" confirm overlaid on a slot tile (#8a). A slot delete is
+ * destructive — the save is gone and its items go to the trash — and it used to fire on the
+ * first click of the tiny trash icon. Now it takes a deliberate second confirm.
+ */
+function buildSlotDeleteConfirm(id: string, itemCount: number): HTMLElement {
+  const wrap = document.createElement('div');
+  wrap.className = 'ck-slot__confirm';
+  wrap.dataset['slotConfirm'] = '1';
+  const q = document.createElement('div');
+  q.className = 'ck-slot__confirm-q';
+  q.textContent = 'Delete this save?';
+  wrap.appendChild(q);
+  if (itemCount > 0) {
+    const sub = document.createElement('div');
+    sub.className = 'ck-slot__confirm-sub';
+    sub.textContent = `${itemCount} ${itemCount === 1 ? 'item' : 'items'} → Trash`;
+    wrap.appendChild(sub);
+  }
+  const btns = document.createElement('div');
+  btns.className = 'ck-slot__confirm-btns';
+  const cancel = document.createElement('button');
+  cancel.type = 'button';
+  cancel.className = 'rr-btn';
+  cancel.dataset['slotConfirmCancel'] = '1';
+  cancel.textContent = 'Cancel';
+  const del = document.createElement('button');
+  del.type = 'button';
+  del.className = 'rr-btn rr-btn--danger';
+  del.dataset['slotConfirmDo'] = id;
+  del.textContent = 'Delete';
+  btns.append(cancel, del);
+  wrap.appendChild(btns);
+  return wrap;
+}
+
 // ─── Mount ────────────────────────────────────────────────────────────────────
 
 export function mount(container: HTMLElement): MountHandle {
@@ -897,17 +932,36 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
-    // — delete (with undo) —
+    // — slot delete: step 1 — show an inline confirm on the tile (never delete on first click, #8a) —
     const del = target.closest<HTMLElement>('[data-slot-delete]');
     if (del !== null) {
       ev.stopPropagation();
       const tile = del.closest<HTMLElement>('[data-slot]');
       const id = tile?.dataset['slot'];
+      if (tile != null && id !== undefined && tile.querySelector('[data-slot-confirm]') === null) {
+        const slot = loadSlots().slots.find(s => s.id === id);
+        if (slot !== undefined) {
+          tile.appendChild(buildSlotDeleteConfirm(id, slot.items.length));
+        }
+      }
+      return;
+    }
+    // — slot delete: cancel — dismiss the confirm, keep the save —
+    const delCancel = target.closest<HTMLElement>('[data-slot-confirm-cancel]');
+    if (delCancel !== null) {
+      ev.stopPropagation();
+      delCancel.closest<HTMLElement>('[data-slot-confirm]')?.remove();
+      return;
+    }
+    // — slot delete: step 2 — confirmed; the slot's items go to the trash, then delete (with undo) —
+    const delDo = target.closest<HTMLElement>('[data-slot-confirm-do]');
+    if (delDo !== null) {
+      ev.stopPropagation();
+      const id = delDo.dataset['slotConfirmDo'];
       if (id === undefined) {
         return;
       }
-      const doc = loadSlots();
-      const slot = doc.slots.find(s => s.id === id);
+      const slot = loadSlots().slots.find(s => s.id === id);
       if (slot === undefined) {
         return;
       }
@@ -1055,6 +1109,10 @@ export function mount(container: HTMLElement): MountHandle {
       window.dispatchEvent(new CustomEvent('wallach:navigate', { detail: { to: 'scanner' } }));
       return;
     }
+    // — a click on the delete-confirm backdrop (not a button) must not fall through to activate —
+    if (target.closest('[data-slot-confirm]') !== null) {
+      return;
+    }
     // — activate a slot (last: the tile background) —
     const slotTile = target.closest<HTMLElement>('[data-slot]');
     if (slotTile?.dataset['slot'] !== undefined) {
@@ -1072,7 +1130,7 @@ export function mount(container: HTMLElement): MountHandle {
       const field = input as HTMLInputElement;
       const firstAdd = container.querySelector<HTMLElement>('[data-ta-add]');
       const name = firstAdd?.dataset['taAdd'] ?? field.value;
-      if (name.trim().length > 0 && addItem(name)) {
+      if (name.trim().length > 0 && addItem(name) !== null) {
         field.value = '';
       }
     }

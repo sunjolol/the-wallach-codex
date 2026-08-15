@@ -16111,6 +16111,31 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const doc = loadSlotDoc();
     writeSlotDoc(withActiveSlot(doc, (s) => ({ ...s, items, editedAt: today() })), { reason: "add" });
   }
+  function currentDose(item, overrideScale) {
+    const candidates = [overrideScale, item.label["servings"]];
+    for (const c of candidates) {
+      const n = typeof c === "number" ? c : typeof c === "string" ? Number.parseFloat(c) : Number.NaN;
+      if (Number.isFinite(n) && n > 0) {
+        return n;
+      }
+    }
+    return 1;
+  }
+  function addOrBumpRegimenItem(item) {
+    const slot = getActiveSlot(loadSlotDoc());
+    const rawName = typeof item.label.name === "string" ? item.label.name : "";
+    const key = rawName.trim().toLowerCase();
+    const existing = key.length > 0 ? slot.items.find((i) => (typeof i.label.name === "string" ? i.label.name : "").trim().toLowerCase() === key) : void 0;
+    if (existing !== void 0) {
+      const ov = slot.overrides[String(existing.id)];
+      const next = Math.max(1, currentDose(existing, ov?.scaling_factor) + 1);
+      saveRgOverride(existing.id, { scaling_factor: next });
+      const name = typeof existing.label.name === "string" ? existing.label.name : rawName;
+      return { outcome: "bumped", name, dose: next };
+    }
+    saveRgManual([...slot.items, item]);
+    return { outcome: "added", name: rawName, dose: currentDose(item, void 0) };
+  }
   function saveRgRemoved(setOfIds) {
     const doc = loadSlotDoc();
     const slot = getActiveSlot(doc);
@@ -180560,7 +180585,23 @@ HOUSEKEEPING: deleted the two obsolete launcher .bats (launch-/serve-wallach-cod
 
 SEAL / \xA700.A: corpus_seal was NOT run. eden/ is untouched this session (clean git status), and eden/corpus/drafts holds 7 UNREVIEWED draft books that corpus_seal would promote into the canon \u2014 that needs per-claim review in a dedicated corpus session, never as a byproduct of closing a scanner chunk. Nothing pillar-level changed, so nothing needed sealing; the session is sealed by this commit + this append-only entry.
 
-DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session).` }, { id: "lg_msuf8vxr_69e0i8", ts: "2026-08-15T08:38:29.679622-05:00", surface: "scanner + qol-audit", kind: "round-close", summary: "Final QOL/UX ship pass R1: fixed 23 of 50 audit issues + Luneth's 3 named ones, and logged the 30 remaining (each with a decided fix) so nothing's forgotten. Scanner keeps Saved items across a refresh + re-openable history; the 'you're fully covered' bug is dead.", detail: "The final quality/usability sweep before shipping. An AI audit turned up 50 issues; with the three Luneth flagged, this round fixed 23 and wrote a complete ledger of the 30 still to do -- each already decided -- so the next session can't drop one. The scanner is the big one: saved scans now survive a refresh and you can click any past scan to re-open its verdict; a supplement gets a real name instead of 'aluminum_can'; and an unreadable photo no longer gets a fake 'rejected' verdict. Also killed a bug that told every brand-new user they were already fully covered, and made the regimen coverage squares readable (grouped green->gap->beige, and each names itself on hover).\n\nMASTER LEDGER = chronicle/qol-audit-2026-08-14.md (5 LOCKED decisions, 23 DONE, 30 TODO each w/ disposition + suggested order). Found by a 13-finder adversarially-verified audit workflow (60 verified -> 50 deduped) + the 3 named issues. Per fix: confirm-vs-live-code -> safe_write -> build.mjs -> tsc -> eslint-vs-HEAD (0 new errors) -> touched-surface probe(s) -> invariants 91/91.\n\nSHIPPED (23): COV-01 no-goal recommender case-join (coverage.ts+regimen.ts wantedSlugs lowercased join; the layout keys tiles UPPERCASE while the snapshot is Title-case, so every gap missed and the panel said 'everything covered' to an empty regimen) -- GATED by extending render_probe_coverage_add_remove.js to remove all goals and assert the no-goal recs still surface. COV-02 clear body.focusing atop render(). ASK-01 search resultKey memo includes the query. ASK-03 renderBestAnswer gets data-sr-claim. PROD-01 pluralize '1 serving'. PROD-02 product cards derive of-90 via essentialCount(). NAV-04 wireDrawerKeys bails when #welcomeHost has children or .pf-overlay is present (render_probe_knowledge.js updated to dismiss the veil first, the realistic state). KNOW-02 applyRecordFilter injects a .kd-empty no-match line. KNOW-05 gloss-tooltip tracks activeEl so a 2nd tap switches term. KNOW-06 .kd-explore-group__head added to the head-hide selector. NAV-02 navigateTo saves/restores per-view .app-workspace.scrollTop. REG-07 undoDelete returns {ok,reason} and the caller toasts a refusal. PROF-02 profile unmount blurs [data-name] so an Esc-close commits the name. NAMED-2 regimen readout: fieldInfo cells carry the element name + sort covered->goalgap->open, renderConsole adds a title per <i> + a CSS hover pop (no pointer cursor). NAMED-3 avatar grid: upload tile before the default tile. Both Luneth-confirmed.\n\nSCANNER (his #1, NAMED-1): S1 state -- SAVED_SCANS_KEY 'lcSavedScans_v1' + getSaved/saveScan/removeSaved (cap 100), SCAN-03 pushRecentScan drops the label.name dedup (unique id keeps distinct low-cardinality scans), humanizeName container-token map. S2 view -- editable [data-sc-name] in Confirm read by readCorrectedLabel; renderUnreadable when sparseNutrients && sparseIngredients (no false REJECT, offers Scan-clearer / Edit-reads); renderHistoryRail -> scanRow + renderRail (two panels: durable Saved over auto Recent); render() wraps a PERSISTENT .vd-rail in coverage-grid in EVERY state (saved items survive a refresh); clickHandler: save -> saveScan + refreshRail, [data-sc-unsave] removes, [data-sc-open] re-scores the stored label and re-opens, [data-sc-edit] returns to Confirm; SCAN-06 paste offsetParent visibility guard; SCAN-07 confirm-null injects an inline .vd-cf__err. + workspace-scanner.css for the name field / re-openable rows / remove-x / couldn't-read card / confirm error.\n\nGATE FIX: render_probe_profile.js was STALE after the profile console rebuild renamed classes (.pf-log-entry->.pf-logentry, .pf-pill->.pf-logentry__pill, .pf-panel__sub->.pf-log__sum) -> updated selectors; now PASS, validating 843 embedded Creator's Log entries render on empty localStorage. The log was NEVER broken; my mid-session claim that it didn't render was wrong and is corrected here (never poison the future).\n\nVERIFY: build.mjs exit 0 (11467.5 KB); invariants 91/91 (0 new reds); tsc exit 0; eslint on every touched src file = 0 NEW errors (counts match HEAD exactly: main 6, search 2, entity-page 18, knowledge 1, others 0); probes coverage(31)/search/knowledge/knowledge_filter/entity/slots/profile/rail_sync/scanner/scan/ocr/adopt/scanner_concurrency ALL PASS.\n\nDEFERRALS: 30 findings remain (ledger has each + its decided disposition + a suggested batch order); NEXT = the regimen undo/correctness batch (REG-01 undo bar survives re-render, REG-03 dedup at both add sites, REG-02 item undo, REG-08 focus, then REG-09 \xA731-chokepoint WriteResult -- carefully). SCANNER LAYOUT needs Luneth's eyes: S2 moved Confirm into the left column beside the now-persistent rail -- functionally verified (5 scanner probes), visually unreviewed. SCAN-08 (Confirm live count refresh) deferred as minor. Pre-existing eslint debt (main/search/entity-page/knowledge) is NOT from this pass (vs-HEAD verified) -- a separate hand-fix (eslint --fix is banned). Git stash/pop during the log-probe investigation normalized several touched files CRLF->LF (autocrlf=input; aligns to repo canonical LF, byte-verified through safe_write). eden/ untouched -> NO corpus/catalog seal applies or was run." }, { id: "lg_msupkttq_l7gdej", ts: "2026-08-15T13:27:42.974990-05:00", surface: "scanner + regimen (ux pass)", kind: "round-close", summary: "Scanner + regimen UX pass: a Youngevity product can finally earn 'Add' (was capped at Save); a Saved scan that wouldn't add now works; all close x's are one standard; and the regimen add/manage panel is rebuilt: type-to-search + Add + per-item delete with a restorable Trash.", detail: "This session was a big user-experience pass on Dr. Wallach's health dashboard, driven by Luneth's live testing.\n\nTHE SCANNER. The biggest fix: a scanned product could never be told 'Add' \u2014 it was always capped at 'Save' \u2014 because the verdict demanded a 'chemical form' score that only exists in the Youngevity product database, never on a photographed label, so every scan scored 0. Now, when the form can't be read from a photo, the app judges the product on what a photo DOES show (does it fill gaps in your 90, clean ingredients) and shows an honest 'form not on a label' instead of a damning 0%. A Youngevity multivitamin now correctly earns 'Add'. Also fixed: a Saved scan that silently failed to add to your regimen (a rare id collision made the app re-open the wrong saved item \u2014 reproduced in a headless run, then fixed by resolving a row by its position, not its id); character limits on every input; and a re-opened Saved item now says 'Delete' and removes it from the shelf.\n\nTHE CLOSE BUTTON. There were 8+ different close/x buttons in different sizes and styles across the app. They are now one standard '.ui-close' (a round button with an X, orange on hover), applied to the scanner first.\n\nTHE REGIMEN. Rebuilt the whole 'add products / manage your stack' panel (Luneth picked the roster-first design from a mockup): type-to-search shows the top 3 products with an 'Add' button and 'covers N of 90 essentials' so a layman knows what each product is; deleting an item asks first and moves it to a restorable Trash; the misleading orange 'Scan' button became a small secondary link. A tricky bug where the stack box collapsed to nothing (whenever a re-render fired while the tab was hidden) is fixed \u2014 it also fixed the 'I'm just browsing' bug Luneth found.\n\nBoard stayed 91/91 throughout; everything verified with the headless probes + reproductions + screenshots. Nothing about the sealed corpus/Youngevity data changed.\n\nUNFINISHED (fully logged in chronicle/next-chunk.md + ux-pass-2026-08-15.md): finish the regimen (dead-CSS cleanup, a Trash browse/restore UI + confirm-before-slot-delete, REG-03 duplicate dedup); C = the goal-picker/veil (#9: veil everywhere, a proper veil close, hide 'I'm just browsing' for existing users); D = the result-panel 2-box redesign (#7, mockup first); sweep the .ui-close onto the remaining x's; and the parked escaper-consolidation gate (R2-6 WS2). The original 30-item QOL audit (qol-audit-2026-08-14.md) also still has open items to reconcile." }];
+DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session).` }, { id: "lg_msuf8vxr_69e0i8", ts: "2026-08-15T08:38:29.679622-05:00", surface: "scanner + qol-audit", kind: "round-close", summary: "Final QOL/UX ship pass R1: fixed 23 of 50 audit issues + Luneth's 3 named ones, and logged the 30 remaining (each with a decided fix) so nothing's forgotten. Scanner keeps Saved items across a refresh + re-openable history; the 'you're fully covered' bug is dead.", detail: "The final quality/usability sweep before shipping. An AI audit turned up 50 issues; with the three Luneth flagged, this round fixed 23 and wrote a complete ledger of the 30 still to do -- each already decided -- so the next session can't drop one. The scanner is the big one: saved scans now survive a refresh and you can click any past scan to re-open its verdict; a supplement gets a real name instead of 'aluminum_can'; and an unreadable photo no longer gets a fake 'rejected' verdict. Also killed a bug that told every brand-new user they were already fully covered, and made the regimen coverage squares readable (grouped green->gap->beige, and each names itself on hover).\n\nMASTER LEDGER = chronicle/qol-audit-2026-08-14.md (5 LOCKED decisions, 23 DONE, 30 TODO each w/ disposition + suggested order). Found by a 13-finder adversarially-verified audit workflow (60 verified -> 50 deduped) + the 3 named issues. Per fix: confirm-vs-live-code -> safe_write -> build.mjs -> tsc -> eslint-vs-HEAD (0 new errors) -> touched-surface probe(s) -> invariants 91/91.\n\nSHIPPED (23): COV-01 no-goal recommender case-join (coverage.ts+regimen.ts wantedSlugs lowercased join; the layout keys tiles UPPERCASE while the snapshot is Title-case, so every gap missed and the panel said 'everything covered' to an empty regimen) -- GATED by extending render_probe_coverage_add_remove.js to remove all goals and assert the no-goal recs still surface. COV-02 clear body.focusing atop render(). ASK-01 search resultKey memo includes the query. ASK-03 renderBestAnswer gets data-sr-claim. PROD-01 pluralize '1 serving'. PROD-02 product cards derive of-90 via essentialCount(). NAV-04 wireDrawerKeys bails when #welcomeHost has children or .pf-overlay is present (render_probe_knowledge.js updated to dismiss the veil first, the realistic state). KNOW-02 applyRecordFilter injects a .kd-empty no-match line. KNOW-05 gloss-tooltip tracks activeEl so a 2nd tap switches term. KNOW-06 .kd-explore-group__head added to the head-hide selector. NAV-02 navigateTo saves/restores per-view .app-workspace.scrollTop. REG-07 undoDelete returns {ok,reason} and the caller toasts a refusal. PROF-02 profile unmount blurs [data-name] so an Esc-close commits the name. NAMED-2 regimen readout: fieldInfo cells carry the element name + sort covered->goalgap->open, renderConsole adds a title per <i> + a CSS hover pop (no pointer cursor). NAMED-3 avatar grid: upload tile before the default tile. Both Luneth-confirmed.\n\nSCANNER (his #1, NAMED-1): S1 state -- SAVED_SCANS_KEY 'lcSavedScans_v1' + getSaved/saveScan/removeSaved (cap 100), SCAN-03 pushRecentScan drops the label.name dedup (unique id keeps distinct low-cardinality scans), humanizeName container-token map. S2 view -- editable [data-sc-name] in Confirm read by readCorrectedLabel; renderUnreadable when sparseNutrients && sparseIngredients (no false REJECT, offers Scan-clearer / Edit-reads); renderHistoryRail -> scanRow + renderRail (two panels: durable Saved over auto Recent); render() wraps a PERSISTENT .vd-rail in coverage-grid in EVERY state (saved items survive a refresh); clickHandler: save -> saveScan + refreshRail, [data-sc-unsave] removes, [data-sc-open] re-scores the stored label and re-opens, [data-sc-edit] returns to Confirm; SCAN-06 paste offsetParent visibility guard; SCAN-07 confirm-null injects an inline .vd-cf__err. + workspace-scanner.css for the name field / re-openable rows / remove-x / couldn't-read card / confirm error.\n\nGATE FIX: render_probe_profile.js was STALE after the profile console rebuild renamed classes (.pf-log-entry->.pf-logentry, .pf-pill->.pf-logentry__pill, .pf-panel__sub->.pf-log__sum) -> updated selectors; now PASS, validating 843 embedded Creator's Log entries render on empty localStorage. The log was NEVER broken; my mid-session claim that it didn't render was wrong and is corrected here (never poison the future).\n\nVERIFY: build.mjs exit 0 (11467.5 KB); invariants 91/91 (0 new reds); tsc exit 0; eslint on every touched src file = 0 NEW errors (counts match HEAD exactly: main 6, search 2, entity-page 18, knowledge 1, others 0); probes coverage(31)/search/knowledge/knowledge_filter/entity/slots/profile/rail_sync/scanner/scan/ocr/adopt/scanner_concurrency ALL PASS.\n\nDEFERRALS: 30 findings remain (ledger has each + its decided disposition + a suggested batch order); NEXT = the regimen undo/correctness batch (REG-01 undo bar survives re-render, REG-03 dedup at both add sites, REG-02 item undo, REG-08 focus, then REG-09 \xA731-chokepoint WriteResult -- carefully). SCANNER LAYOUT needs Luneth's eyes: S2 moved Confirm into the left column beside the now-persistent rail -- functionally verified (5 scanner probes), visually unreviewed. SCAN-08 (Confirm live count refresh) deferred as minor. Pre-existing eslint debt (main/search/entity-page/knowledge) is NOT from this pass (vs-HEAD verified) -- a separate hand-fix (eslint --fix is banned). Git stash/pop during the log-probe investigation normalized several touched files CRLF->LF (autocrlf=input; aligns to repo canonical LF, byte-verified through safe_write). eden/ untouched -> NO corpus/catalog seal applies or was run." }, { id: "lg_msupkttq_l7gdej", ts: "2026-08-15T13:27:42.974990-05:00", surface: "scanner + regimen (ux pass)", kind: "round-close", summary: "Scanner + regimen UX pass: a Youngevity product can finally earn 'Add' (was capped at Save); a Saved scan that wouldn't add now works; all close x's are one standard; and the regimen add/manage panel is rebuilt: type-to-search + Add + per-item delete with a restorable Trash.", detail: "This session was a big user-experience pass on Dr. Wallach's health dashboard, driven by Luneth's live testing.\n\nTHE SCANNER. The biggest fix: a scanned product could never be told 'Add' \u2014 it was always capped at 'Save' \u2014 because the verdict demanded a 'chemical form' score that only exists in the Youngevity product database, never on a photographed label, so every scan scored 0. Now, when the form can't be read from a photo, the app judges the product on what a photo DOES show (does it fill gaps in your 90, clean ingredients) and shows an honest 'form not on a label' instead of a damning 0%. A Youngevity multivitamin now correctly earns 'Add'. Also fixed: a Saved scan that silently failed to add to your regimen (a rare id collision made the app re-open the wrong saved item \u2014 reproduced in a headless run, then fixed by resolving a row by its position, not its id); character limits on every input; and a re-opened Saved item now says 'Delete' and removes it from the shelf.\n\nTHE CLOSE BUTTON. There were 8+ different close/x buttons in different sizes and styles across the app. They are now one standard '.ui-close' (a round button with an X, orange on hover), applied to the scanner first.\n\nTHE REGIMEN. Rebuilt the whole 'add products / manage your stack' panel (Luneth picked the roster-first design from a mockup): type-to-search shows the top 3 products with an 'Add' button and 'covers N of 90 essentials' so a layman knows what each product is; deleting an item asks first and moves it to a restorable Trash; the misleading orange 'Scan' button became a small secondary link. A tricky bug where the stack box collapsed to nothing (whenever a re-render fired while the tab was hidden) is fixed \u2014 it also fixed the 'I'm just browsing' bug Luneth found.\n\nBoard stayed 91/91 throughout; everything verified with the headless probes + reproductions + screenshots. Nothing about the sealed corpus/Youngevity data changed.\n\nUNFINISHED (fully logged in chronicle/next-chunk.md + ux-pass-2026-08-15.md): finish the regimen (dead-CSS cleanup, a Trash browse/restore UI + confirm-before-slot-delete, REG-03 duplicate dedup); C = the goal-picker/veil (#9: veil everywhere, a proper veil close, hide 'I'm just browsing' for existing users); D = the result-panel 2-box redesign (#7, mockup first); sweep the .ui-close onto the remaining x's; and the parked escaper-consolidation gate (R2-6 WS2). The original 30-item QOL audit (qol-audit-2026-08-14.md) also still has open items to reconcile." }, { id: "lg_msusbypz_1wzgqc", ts: "2026-08-15T14:44:48.263359-05:00", surface: "regimen", kind: "round-close", summary: "Three \xA71 regimen fixes: removed dead styling code; re-adding a product now bumps its per-day dose instead of making a duplicate that inflated coverage; and deleting a whole save now asks to confirm first instead of vanishing on one click. Board 91/91.", detail: `This round closed three items from the \xA71 "finish the regimen" list.
+
+First, I removed styling rules that no longer matched anything on the page \u2014 leftovers from the earlier roster-first redesign, plus styling for a food feature that isn't built yet (you approved removing those). Second, if you add a product that's already in your regimen, it now raises that product's per-day amount instead of quietly adding a second identical row; the old behavior made your coverage look higher than it really was, because the app counted the same product twice. Third, deleting a whole saved regimen now shows a small "Delete this save?" confirmation on the tile, so one misclick can't wipe a save. I also found and flagged two pre-existing problems I did NOT fix this round: the Coverage screen carries its own copy of the add-or-bump rule (so that rule now lives in two places), and the little "Undo" popup after a delete has no styling at all \u2014 it renders as bare text at the bottom of the page and is easy to miss.
+
+TECHNICAL RECORD
+
+(DEAD-CSS) Purged 18 confirmed-dead rules from dashboard/assets/styles/workspace-regimen.css: .ck-addcard*/.ck-scan*/.ck-addfield__ph/.ck-tag--food/.ck .rl-src.{is-own,food-mark}/.ck-addfoods*/.ck-foodchip* \u2014 all superseded by the Variant-B rail rewrite, plus the deferred-food chrome (Luneth-approved removal). Verified dead against every live reference site (src/**/*.ts non-test + dashboard.html + coverage-layout data class-fields), holding the 5 grep-lies traps in mind (substring, data-driven, dynamic-construction, prose/comment contamination, compound-selector gating). The handoff's ".rl-dose*" was a FALSE lead (live in views/coverage.ts, defined in workspace-coverage.css \u2014 untouched); 4 more dead rules surfaced beyond the handoff's 3-item list. 3 comments corrected to stay truthful (\xA700.B #3). The workspace_coverage_no_dead_rules gate only scans coverage.css, so regimen.css was hand-verified; file is LF (not CRLF as the blanket handoff note implied) and unsealed.
+
+(REG-03 double-count) New shared state helper state/regimen.ts::addOrBumpRegimenItem \u2014 dedup by case-insensitive name, then bump the existing item's scaling_factor via saveRgOverride, routed entirely through the existing \xA731 chokepoints (saveRgManual / saveRgOverride), so regimen_state_mutation_routing stays satisfied (no ad-hoc write). This replicates views/coverage.ts::addVaultProduct, which ALREADY deduped-and-bumped \u2014 so REG-03 was really "make the regimen typeahead/rec add and the scanner adopt behave like Coverage already does." Wired views/regimen.ts::addItem and the views/scanner.ts adopt handler to the helper; dropped the now-unused loadRgManual/saveRgManual imports in both views. Scanner adopt button now reads "\u2713 Already saved \u2014 bumped to N/day" on a re-adopt. The bump is SILENT (no toast) to match Coverage's reference behavior and because the .ck-undo toast is unstyled (see findings). A cycle was avoided: coverage.ts imports regimen.ts, so the dose read is inlined (currentDose) rather than importing coverage.readScale \u2014 madge confirms no circular dependency.
+
+(#8a slot-delete confirm) The slot trash icon no longer deletes on the first click. It now appends an inline confirm overlay to the tile via buildSlotDeleteConfirm (a [data-slot-confirm] element: "Delete this save?" + "N items \u2192 Trash" when non-empty + Cancel/Delete buttons reusing the approved .rr-btn / .rr-btn--danger styles). New CSS .ck-slot__confirm* in workspace-regimen.css (absolute inset-0 over the tile, frosted paper-light backdrop, reduced-motion-guarded fade-in). Cancel removes the overlay and keeps the save; Delete runs the existing deleteSlot + undo-toast path; a guard added before the slot-activate branch swallows backdrop clicks so they don't fall through to activate the slot.
+
+Also fixed 2 lint errors: my AddOutcome type\u2192interface (@antfu ts/consistent-type-definitions), and a pre-existing NaN\u2192Number.NaN in scanner.ts:655 (fix-as-found, confirmed identical in HEAD, unrelated to this change).
+
+VERIFICATION: node tools/build.mjs exit 0 (11485.4 KB); PYTHONUTF8=1 python tools/invariants.py 91/91 (0 new reds); tsc --noEmit exit 0; eslint on the 3 touched src files = 0 errors (only pre-existing warnings: regimen.ts max-lines + jsdoc:577); madge --circular = no cycles. Two NEW persisted probes: render_probe_regimen_dedup.js (add the same product twice \u2192 1 rail row, dose 1\u21922, slot.items.length=1, override scaling_factor=2, 0 page errors; negative control \u2014 pre-fix would be 2 rows) and render_probe_slot_delete_confirm.js (first trash click shows the confirm and does NOT delete; Cancel keeps; second trash + Delete removes the slot and moves its item to trash; 0 errors). Existing render_probe_{adopt,slots,rail_sync} PASS. Deduped-state and confirm-overlay screenshots reviewed and signed off by Luneth.
+
+DEFERRED / FINDINGS: (#1) coverage.ts::addVaultProduct still carries its own inline dedup \u2014 the add-or-bump rule now lives in two places; consolidation into the shared helper was offered, not done (signed-off code, awaiting the ok). (#2) .ck-undo / .ck-undo__btn have zero CSS anywhere, so the pre-existing slot-delete "Undo" toast (and any bump feedback) render as bare bottom-of-page text; a confirmed slot-delete's undo is not really usable until the toast is styled or #8b Trash-restore lands. Remaining \xA71: #8b Trash restore UI (restoreFromTrash exists in state, no UI, design-first); then C goal-picker/veil (#9), D result 2-box redesign (#7), A-sweep. eden/ untouched this round \u2014 no corpus/catalog seal applies or was run.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -181185,7 +181226,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
   function addItem(rawName) {
     const product = readVault().get(rawName.trim().toLowerCase());
     if (product === void 0) {
-      return false;
+      return null;
     }
     const item = {
       id: Date.now(),
@@ -181193,8 +181234,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
       provenance: "user_manual"
     };
-    saveRgManual([...loadRgManual(), item]);
-    return true;
+    return addOrBumpRegimenItem(item);
   }
   var PENCIL_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>';
   var TRASH_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2m-9 0v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/></svg>';
@@ -181569,6 +181609,36 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     }
     return { ok: true };
   }
+  function buildSlotDeleteConfirm(id, itemCount) {
+    const wrap = document.createElement("div");
+    wrap.className = "ck-slot__confirm";
+    wrap.dataset["slotConfirm"] = "1";
+    const q = document.createElement("div");
+    q.className = "ck-slot__confirm-q";
+    q.textContent = "Delete this save?";
+    wrap.appendChild(q);
+    if (itemCount > 0) {
+      const sub = document.createElement("div");
+      sub.className = "ck-slot__confirm-sub";
+      sub.textContent = `${itemCount} ${itemCount === 1 ? "item" : "items"} \u2192 Trash`;
+      wrap.appendChild(sub);
+    }
+    const btns = document.createElement("div");
+    btns.className = "ck-slot__confirm-btns";
+    const cancel = document.createElement("button");
+    cancel.type = "button";
+    cancel.className = "rr-btn";
+    cancel.dataset["slotConfirmCancel"] = "1";
+    cancel.textContent = "Cancel";
+    const del = document.createElement("button");
+    del.type = "button";
+    del.className = "rr-btn rr-btn--danger";
+    del.dataset["slotConfirmDo"] = id;
+    del.textContent = "Delete";
+    btns.append(cancel, del);
+    wrap.appendChild(btns);
+    return wrap;
+  }
   function mount4(container) {
     let animated = false;
     let undoTimer = null;
@@ -181744,11 +181814,28 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         ev.stopPropagation();
         const tile = del.closest("[data-slot]");
         const id = tile?.dataset["slot"];
+        if (tile != null && id !== void 0 && tile.querySelector("[data-slot-confirm]") === null) {
+          const slot = loadSlots().slots.find((s) => s.id === id);
+          if (slot !== void 0) {
+            tile.appendChild(buildSlotDeleteConfirm(id, slot.items.length));
+          }
+        }
+        return;
+      }
+      const delCancel = target.closest("[data-slot-confirm-cancel]");
+      if (delCancel !== null) {
+        ev.stopPropagation();
+        delCancel.closest("[data-slot-confirm]")?.remove();
+        return;
+      }
+      const delDo = target.closest("[data-slot-confirm-do]");
+      if (delDo !== null) {
+        ev.stopPropagation();
+        const id = delDo.dataset["slotConfirmDo"];
         if (id === void 0) {
           return;
         }
-        const doc = loadSlots();
-        const slot = doc.slots.find((s) => s.id === id);
+        const slot = loadSlots().slots.find((s) => s.id === id);
         if (slot === void 0) {
           return;
         }
@@ -181883,6 +181970,9 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         window.dispatchEvent(new CustomEvent("wallach:navigate", { detail: { to: "scanner" } }));
         return;
       }
+      if (target.closest("[data-slot-confirm]") !== null) {
+        return;
+      }
       const slotTile = target.closest("[data-slot]");
       if (slotTile?.dataset["slot"] !== void 0) {
         setActiveSlot(slotTile.dataset["slot"]);
@@ -181898,7 +181988,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         const field = input;
         const firstAdd = container.querySelector("[data-ta-add]");
         const name = firstAdd?.dataset["taAdd"] ?? field.value;
-        if (name.trim().length > 0 && addItem(name)) {
+        if (name.trim().length > 0 && addItem(name) !== null) {
           field.value = "";
         }
       }
@@ -182449,7 +182539,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         const next = input !== null ? input.value.trim() : typeof n.name === "string" ? n.name : "";
         const amtEl = container.querySelector(`[data-aedit="${i}"]`);
         const unitEl = container.querySelector(`[data-uedit="${i}"]`);
-        const parsed = amtEl !== null ? Number.parseFloat(amtEl.value) : NaN;
+        const parsed = amtEl !== null ? Number.parseFloat(amtEl.value) : Number.NaN;
         const amount = Number.isFinite(parsed) ? parsed : n.amount;
         const unit = unitEl !== null && unitEl.value.trim().length > 0 ? unitEl.value.trim() : n.unit;
         return { ...n, name: next, amount, unit };
@@ -182547,10 +182637,10 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
           addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
           provenance: "user_scanned"
         };
-        saveRgManual([...loadRgManual(), item]);
+        const r = addOrBumpRegimenItem(item);
         const btn = t.closest("[data-sc-adopt]");
         if (btn !== null) {
-          btn.textContent = "\u2713 Added to regimen";
+          btn.textContent = r.outcome === "bumped" ? `\u2713 Already saved \u2014 bumped to ${r.dose}/day` : "\u2713 Added to regimen";
           btn.disabled = true;
         }
         return;

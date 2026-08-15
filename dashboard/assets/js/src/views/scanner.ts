@@ -37,7 +37,7 @@ import {
   type IngredientSuspect,
   ocrToLabel,
 } from '../state/ocr.js';
-import { loadRgManual, saveRgManual } from '../state/regimen.js';
+import { addOrBumpRegimenItem } from '../state/regimen.js';
 import {
   type AntiFlag,
   coverageDeltaForLabel,
@@ -652,7 +652,7 @@ export function mount(container: HTMLElement): MountHandle {
       const next = input !== null ? input.value.trim() : (typeof n.name === 'string' ? n.name : '');
       const amtEl = container.querySelector<HTMLInputElement>(`[data-aedit="${i}"]`);
       const unitEl = container.querySelector<HTMLInputElement>(`[data-uedit="${i}"]`);
-      const parsed = amtEl !== null ? Number.parseFloat(amtEl.value) : NaN;
+      const parsed = amtEl !== null ? Number.parseFloat(amtEl.value) : Number.NaN;
       const amount = Number.isFinite(parsed) ? parsed : n.amount;
       const unit = unitEl !== null && unitEl.value.trim().length > 0 ? unitEl.value.trim() : n.unit;
       return { ...n, name: next, amount, unit };
@@ -760,10 +760,12 @@ export function mount(container: HTMLElement): MountHandle {
         addedDate: new Date().toISOString().slice(0, 10),
         provenance: 'user_scanned',
       };
-      saveRgManual([...loadRgManual(), item]);
+      const r = addOrBumpRegimenItem(item);
       const btn = t.closest<HTMLButtonElement>('[data-sc-adopt]');
       if (btn !== null) {
-        btn.textContent = '✓ Added to regimen';
+        btn.textContent = r.outcome === 'bumped'
+          ? `✓ Already saved — bumped to ${r.dose}/day`
+          : '✓ Added to regimen';
         btn.disabled = true;
       }
       return;
