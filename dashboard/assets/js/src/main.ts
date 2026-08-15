@@ -77,7 +77,7 @@ function activateRailItem(target: WorkspaceTarget): void {
  */
 const WORKSPACE_HEADERS: Partial<Record<WorkspaceTarget, { name: string; deck: string }>> = {
   coverage: { name: 'Coverage', deck: 'Every essential Wallach named, measured against what you take.' },
-  regimen: { name: 'Regimen', deck: 'A calm, coverage-led cockpit: one gauge over your 90, your save-slots switch across the top, your best next moves sit below.' },
+  regimen: { name: 'Regimen', deck: 'Design your own protocols based on your goals + Import and export regimens for yourself or others' },
   scanner: { name: 'Scanner', deck: 'Scan \u2192 Confirm \u2192 Result \u2014 the verdict fires only on reads you confirm.' },
 };
 
@@ -273,6 +273,16 @@ function wireDrawerKeys(): void {
     const modalOpen = (document.getElementById('welcomeHost')?.children.length ?? 0) > 0
       || document.querySelector('.pf-overlay') !== null;
     if (modalOpen) {
+      return;
+    }
+    // Bare digit keys 1/2/3 jump to the three workspaces (matches the relabelled rail
+    // chips). The mockup's ⌘1-3 never fired: every modifier is rejected just above and
+    // Cmd/Ctrl+digit is browser-reserved — so these are bare single keys, exactly like S/K.
+    const workspaceByDigit: Partial<Record<string, WorkspaceTarget>> = { 1: 'coverage', 2: 'regimen', 3: 'scanner' };
+    const digitTarget = workspaceByDigit[ev.key];
+    if (digitTarget !== undefined) {
+      ev.preventDefault();
+      navigateTo(digitTarget);
       return;
     }
     for (const spec of DRAWER_SPECS) {

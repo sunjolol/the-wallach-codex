@@ -455,7 +455,7 @@ function renderGoals(goals: LayoutGoal[]): string {
     : '';
   return `
     <div class="goalstrip ck-goals" data-rise="3">
-      <span class="goalstrip__eyebrow">Steering goals · ${escHTML(loadSlots().slots.find(s => s.id === loadSlots().activeSlot)?.name ?? 'Regimen')}</span>
+      <span class="goalstrip__eyebrow">Your Goals</span>
       ${chips}${add}
     </div>`;
 }

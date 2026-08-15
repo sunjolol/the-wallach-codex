@@ -479,3 +479,32 @@
 .rc-btn-cancel:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
 .rc-btn-primary { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-paper-light); background: var(--ds-accent); border: 0; border-radius: var(--ds-radius-pill); padding: 8px 18px; cursor: pointer; }
 .rc-btn-primary:hover { background: var(--ds-accent-deep); }
+
+/* ============================================================
+   Legibility bump (tweak-list · regimen): raise the 0.6rem micro
+   labels to the 0.7rem --ds-text-mini tier at weight 700 so the
+   Regimen telemetry is readable. Shared classes (.recs__eyebrow,
+   .goalstrip__eyebrow, .rail-panel__*, .rail-empty small) are
+   raised via a .ck-scoped override so the Coverage tab is left
+   untouched; regimen-only .ck-* classes are re-declared here.
+   The token --ds-text-micro is NOT repointed (dozens of readers).
+   ============================================================ */
+.ck .recs__eyebrow,
+.ck .goalstrip__eyebrow,
+.ck .rail-panel__eyebrow,
+.ck .rail-panel__meta,
+.ck .rail-empty small,
+.ck-recs__note,
+.ck-readout__label,
+.ck-legend__item,
+.ck-console__label,
+.ck-console__tag,
+.ck-cluster__head {
+  font-size: var(--ds-text-mini);
+  font-weight: 700;
+}
+/* price + essentials line: size only — weight already sits on the
+   child spans, and the goal-tag chips (.ck-tag) keep their own size. */
+.ck-recgrid .rec__meta {
+  font-size: var(--ds-text-mini);
+}
