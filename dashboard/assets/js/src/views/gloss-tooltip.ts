@@ -12,6 +12,7 @@
  */
 
 let tip: HTMLElement | null = null;
+let activeEl: HTMLElement | null = null;
 let wired = false;
 
 function ensureTip(): HTMLElement {
@@ -36,6 +37,7 @@ function showFor(el: HTMLElement): void {
     return;
   }
   const t = ensureTip();
+  activeEl = el;
   t.textContent = def;
   t.hidden = false;
   // Measure after content is set, then clamp to the viewport; prefer above the
@@ -54,6 +56,7 @@ function showFor(el: HTMLElement): void {
 }
 
 function hide(): void {
+  activeEl = null;
   if (tip !== null) {
     tip.hidden = true;
   }
@@ -87,7 +90,9 @@ export function initGlossTooltip(): void {
   document.addEventListener('click', (e) => {
     const el = glossTarget(e);
     if (el !== null) {
-      if (tip !== null && tip.hidden === false) {
+      // KNOW-05: only toggle OFF when the SAME term is tapped again; tapping a different term
+      // switches the tip to it (was: any second tap dismissed, so switching took two taps).
+      if (tip !== null && tip.hidden === false && el === activeEl) {
         hide();
       }
       else {

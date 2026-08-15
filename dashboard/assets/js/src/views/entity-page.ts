@@ -1913,6 +1913,7 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
  */
 export function applyRecordFilter(scope: HTMLElement, rawQuery: string): void {
   const q = rawQuery.trim().toLowerCase();
+  let anyVisible = false;
   scope.querySelectorAll<HTMLElement>('.kd-ep-kind').forEach((group) => {
     let any = false;
     group.querySelectorAll<HTMLElement>('.kd-ep-claim').forEach((card) => {
@@ -1930,7 +1931,28 @@ export function applyRecordFilter(scope: HTMLElement, rawQuery: string): void {
     if (q.length > 0 && any) {
       (group as HTMLDetailsElement).open = true;
     }
+    if (any) {
+      anyVisible = true;
+    }
   });
+  // KNOW-02: when a keyword hides every claim, say so — the sibling list filter
+  // (applyKnowledgeSearch) injects a .kd-empty line; without one here the user faces a blank
+  // gap with no signal the filter ran. Injected/removed in place, never a re-render.
+  const emptyNote = scope.querySelector<HTMLElement>('.kd-ep-record-empty');
+  if (q.length > 0 && !anyVisible) {
+    if (emptyNote === null) {
+      const note = document.createElement('div');
+      note.className = 'kd-empty kd-ep-record-empty';
+      note.textContent = `— no claim matches "${rawQuery.trim()}" —`;
+      scope.appendChild(note);
+    }
+    else {
+      emptyNote.textContent = `— no claim matches "${rawQuery.trim()}" —`;
+    }
+  }
+  else if (emptyNote !== null) {
+    emptyNote.remove();
+  }
 }
 
 // ═══════════════════════════════════════════════════════════════════════════

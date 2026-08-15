@@ -180,7 +180,7 @@ function claimInner(claim: SearchClaim): string {
 /** The best-answer card — facet-coloured bar + kind pill + question + answer + verbatim + related. */
 function renderBestAnswer(claim: SearchClaim): string {
   return `
-    <div class="ans" data-facet="${escHTML(claim.facet)}">
+    <div class="ans" data-sr-claim="${escHTML(claim.id)}" data-facet="${escHTML(claim.facet)}">
       <span class="facetpill"><i></i>${escHTML(facetLabel(claim.facet))}</span>
       <div class="ans__q">${escHTML(claim.question)}</div>
       ${claimInner(claim)}
@@ -510,7 +510,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     }
   };
 
-  const resultKey = (r: SearchResult): string => `${r.mode}|${r.subject}|${r.claim?.id ?? ''}|${r.noMatch}`;
+  const resultKey = (r: SearchResult): string => `${r.mode}|${r.subject}|${r.claim?.id ?? ''}|${r.noMatch}|${query.trim().toLowerCase()}`;
 
   const paintBody = (force: boolean): void => {
     const body = container.querySelector<HTMLElement>('.scr-body');

@@ -17798,7 +17798,33 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
 
   // assets/js/src/state/scanner.ts
   var RECENT_SCANS_KEY = "lcRecentScans_v1";
+  var SAVED_SCANS_KEY = "lcSavedScans_v1";
   var MAX_RECENT = 5;
+  var MAX_SAVED = 100;
+  var CONTAINER_LABELS = /* @__PURE__ */ new Map([
+    ["aluminum_can", "Canned drink"],
+    ["can", "Canned drink"],
+    ["capsule", "Capsules"],
+    ["tablet", "Tablets"],
+    ["softgel", "Softgels"],
+    ["powder", "Powder"],
+    ["liquid", "Liquid"],
+    ["bottle", "Bottled product"]
+  ]);
+  function humanizeName(raw) {
+    const s = (raw ?? "").trim();
+    if (s === "" || s.toLowerCase() === "scanned label") {
+      return "Scanned label";
+    }
+    const mapped = CONTAINER_LABELS.get(s.toLowerCase().replace(/\s+/g, "_"));
+    if (mapped !== void 0) {
+      return mapped;
+    }
+    if (/[A-Z ]/.test(s)) {
+      return s;
+    }
+    return s.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  }
   var cachedCorpus = null;
   function loadScanCorpus() {
     if (cachedCorpus === null) {
@@ -17808,6 +17834,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function getHistory() {
     return getValidated(RECENT_SCANS_KEY, HistoryShapeSchema)?.items ?? [];
+  }
+  function getSaved() {
+    return getValidated(SAVED_SCANS_KEY, HistoryShapeSchema)?.items ?? [];
   }
   var lastResult = null;
   function normalize(amount, unit) {
@@ -18160,7 +18189,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function pushRecentScan(label, result) {
     const shape = getValidated(RECENT_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
-    const items = shape.items.filter((i) => i.label.name !== label.name);
+    const items = [...shape.items];
     items.unshift({
       id: Date.now() + Math.floor(Math.random() * 1e3),
       ts: (/* @__PURE__ */ new Date()).toISOString(),
@@ -18171,6 +18200,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       gapFills: result.gapFills
     });
     setValidated(RECENT_SCANS_KEY, { items: items.slice(0, MAX_RECENT) }, HistoryShapeSchema);
+  }
+  function saveScan(label, result) {
+    const shape = getValidated(SAVED_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
+    const id = Date.now() + Math.floor(Math.random() * 1e3);
+    const items = [
+      { id, ts: (/* @__PURE__ */ new Date()).toISOString(), label, verdict: result.verdict, alignment: result.alignment, goals: result.goals, gapFills: result.gapFills },
+      ...shape.items
+    ];
+    setValidated(SAVED_SCANS_KEY, { items: items.slice(0, MAX_SAVED) }, HistoryShapeSchema);
+    return id;
+  }
+  function removeSaved(id) {
+    const shape = getValidated(SAVED_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
+    setValidated(SAVED_SCANS_KEY, { items: shape.items.filter((i) => i.id !== id) }, HistoryShapeSchema);
   }
   function scan(label, opts) {
     const cfg = { logToRecent: true, ...opts };
@@ -26587,8 +26630,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     if (goals.length > 0) {
       return [...new Set(goals.flatMap((g) => g.members))];
     }
-    const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key, slug]));
-    return (snapshot2?.tiles ?? []).filter((t) => t.status === "gap").map((t) => keyToSlug.get(t.name)).filter((s) => s !== void 0);
+    const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
+    return (snapshot2?.tiles ?? []).filter((t) => t.status === "gap").map((t) => keyToSlug.get(t.name.toLowerCase())).filter((s) => s !== void 0);
   }
   function buildRecs(host, recs, goals, goalMode) {
     host.replaceChildren();
@@ -26749,6 +26792,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function mount(container) {
     const render = () => {
+      document.body.classList.remove("focusing");
       const snapshot2 = getOrCompute();
       const goals = activeGoals();
       const items = loadEffectiveRegimen();
@@ -172335,8 +172379,8 @@ Goiter`,
     const supplied = essentialsSupplied(p);
     const price = p.price != null && p.price.wholesale != null ? `$${fmtMoney(p.price.wholesale)}` : p.price != null && p.price.retail != null ? `$${fmtMoney(p.price.retail)}` : "";
     const spc = p.components[0]?.servings_per_container;
-    const serv = spc !== null && spc !== void 0 ? `${spc} servings` : "";
-    const lead = supplied > 0 ? "<b>of 90</b> essentials" : "targeted formula";
+    const serv = spc !== null && spc !== void 0 ? `${spc} serving${spc === 1 ? "" : "s"}` : "";
+    const lead = supplied > 0 ? `<b>of ${essentialCount()}</b> essentials` : "targeted formula";
     const foot = [lead, price, serv].filter((s) => s.length > 0).join(" \xB7 ");
     const ghost = supplied > 0 ? `<div class="kd-product-row__ghost" aria-hidden="true">${supplied}</div>` : "";
     return `
@@ -172523,7 +172567,7 @@ Goiter`,
     const perServe = wholesale !== null && spc !== null && spc > 0 ? wholesale / spc : null;
     const serving = c0?.serving_size ?? "";
     const hero = supplied > 0 ? `<div class="kd-pf-glance__num">${supplied}</div>
-        <div class="kd-pf-glance__cap"><b>of 90</b> Wallach essentials<br>delivered on this label</div>` : `<div class="kd-pf-glance__kill">Targeted<br>formula</div>
+        <div class="kd-pf-glance__cap"><b>of ${essentialCount()}</b> Wallach essentials<br>delivered on this label</div>` : `<div class="kd-pf-glance__kill">Targeted<br>formula</div>
         <div class="kd-pf-glance__cap">a focused botanical outside<br>the 90 core essentials</div>`;
     const metric = (k, v, sub) => `<div class="kd-pf-metric"><div class="kd-pf-metric__k">${escHTML4(k)}</div><div class="kd-pf-metric__v">${v}</div>${sub.length > 0 ? `<div class="kd-pf-metric__sub">${escHTML4(sub)}</div>` : ""}</div>`;
     const metrics = [
@@ -173941,6 +173985,7 @@ Goiter`,
   }
   function applyRecordFilter(scope, rawQuery) {
     const q = rawQuery.trim().toLowerCase();
+    let anyVisible = false;
     scope.querySelectorAll(".kd-ep-kind").forEach((group) => {
       let any = false;
       group.querySelectorAll(".kd-ep-claim").forEach((card) => {
@@ -173955,7 +174000,23 @@ Goiter`,
       if (q.length > 0 && any) {
         group.open = true;
       }
+      if (any) {
+        anyVisible = true;
+      }
     });
+    const emptyNote = scope.querySelector(".kd-ep-record-empty");
+    if (q.length > 0 && !anyVisible) {
+      if (emptyNote === null) {
+        const note = document.createElement("div");
+        note.className = "kd-empty kd-ep-record-empty";
+        note.textContent = `\u2014 no claim matches "${rawQuery.trim()}" \u2014`;
+        scope.appendChild(note);
+      } else {
+        emptyNote.textContent = `\u2014 no claim matches "${rawQuery.trim()}" \u2014`;
+      }
+    } else if (emptyNote !== null) {
+      emptyNote.remove();
+    }
   }
   function conditionBackButton() {
     return '<button class="kd-ep-back" data-kd-action="condition-close" type="button">\u2039 All conditions</button>';
@@ -175602,8 +175663,8 @@ Goiter`,
         head.classList.toggle("kd-hidden", active && !headHasMatch);
       }
     };
-    body.querySelectorAll(`.kd-section-head, .sh-subhead, ${selector}`).forEach((node) => {
-      if (node.classList.contains("kd-section-head") || node.classList.contains("sh-subhead")) {
+    body.querySelectorAll(`.kd-section-head, .sh-subhead, .kd-explore-group__head, ${selector}`).forEach((node) => {
+      if (node.classList.contains("kd-section-head") || node.classList.contains("sh-subhead") || node.classList.contains("kd-explore-group__head")) {
         commitHead();
         head = node;
         headHasMatch = false;
@@ -180494,7 +180555,7 @@ HOUSEKEEPING: deleted the two obsolete launcher .bats (launch-/serve-wallach-cod
 
 SEAL / \xA700.A: corpus_seal was NOT run. eden/ is untouched this session (clean git status), and eden/corpus/drafts holds 7 UNREVIEWED draft books that corpus_seal would promote into the canon \u2014 that needs per-claim review in a dedicated corpus session, never as a byproduct of closing a scanner chunk. Nothing pillar-level changed, so nothing needed sealing; the session is sealed by this commit + this append-only entry.
 
-DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session).` }];
+DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session).` }, { id: "lg_msuf8vxr_69e0i8", ts: "2026-08-15T08:38:29.679622-05:00", surface: "scanner + qol-audit", kind: "round-close", summary: "Final QOL/UX ship pass R1: fixed 23 of 50 audit issues + Luneth's 3 named ones, and logged the 30 remaining (each with a decided fix) so nothing's forgotten. Scanner keeps Saved items across a refresh + re-openable history; the 'you're fully covered' bug is dead.", detail: "The final quality/usability sweep before shipping. An AI audit turned up 50 issues; with the three Luneth flagged, this round fixed 23 and wrote a complete ledger of the 30 still to do -- each already decided -- so the next session can't drop one. The scanner is the big one: saved scans now survive a refresh and you can click any past scan to re-open its verdict; a supplement gets a real name instead of 'aluminum_can'; and an unreadable photo no longer gets a fake 'rejected' verdict. Also killed a bug that told every brand-new user they were already fully covered, and made the regimen coverage squares readable (grouped green->gap->beige, and each names itself on hover).\n\nMASTER LEDGER = chronicle/qol-audit-2026-08-14.md (5 LOCKED decisions, 23 DONE, 30 TODO each w/ disposition + suggested order). Found by a 13-finder adversarially-verified audit workflow (60 verified -> 50 deduped) + the 3 named issues. Per fix: confirm-vs-live-code -> safe_write -> build.mjs -> tsc -> eslint-vs-HEAD (0 new errors) -> touched-surface probe(s) -> invariants 91/91.\n\nSHIPPED (23): COV-01 no-goal recommender case-join (coverage.ts+regimen.ts wantedSlugs lowercased join; the layout keys tiles UPPERCASE while the snapshot is Title-case, so every gap missed and the panel said 'everything covered' to an empty regimen) -- GATED by extending render_probe_coverage_add_remove.js to remove all goals and assert the no-goal recs still surface. COV-02 clear body.focusing atop render(). ASK-01 search resultKey memo includes the query. ASK-03 renderBestAnswer gets data-sr-claim. PROD-01 pluralize '1 serving'. PROD-02 product cards derive of-90 via essentialCount(). NAV-04 wireDrawerKeys bails when #welcomeHost has children or .pf-overlay is present (render_probe_knowledge.js updated to dismiss the veil first, the realistic state). KNOW-02 applyRecordFilter injects a .kd-empty no-match line. KNOW-05 gloss-tooltip tracks activeEl so a 2nd tap switches term. KNOW-06 .kd-explore-group__head added to the head-hide selector. NAV-02 navigateTo saves/restores per-view .app-workspace.scrollTop. REG-07 undoDelete returns {ok,reason} and the caller toasts a refusal. PROF-02 profile unmount blurs [data-name] so an Esc-close commits the name. NAMED-2 regimen readout: fieldInfo cells carry the element name + sort covered->goalgap->open, renderConsole adds a title per <i> + a CSS hover pop (no pointer cursor). NAMED-3 avatar grid: upload tile before the default tile. Both Luneth-confirmed.\n\nSCANNER (his #1, NAMED-1): S1 state -- SAVED_SCANS_KEY 'lcSavedScans_v1' + getSaved/saveScan/removeSaved (cap 100), SCAN-03 pushRecentScan drops the label.name dedup (unique id keeps distinct low-cardinality scans), humanizeName container-token map. S2 view -- editable [data-sc-name] in Confirm read by readCorrectedLabel; renderUnreadable when sparseNutrients && sparseIngredients (no false REJECT, offers Scan-clearer / Edit-reads); renderHistoryRail -> scanRow + renderRail (two panels: durable Saved over auto Recent); render() wraps a PERSISTENT .vd-rail in coverage-grid in EVERY state (saved items survive a refresh); clickHandler: save -> saveScan + refreshRail, [data-sc-unsave] removes, [data-sc-open] re-scores the stored label and re-opens, [data-sc-edit] returns to Confirm; SCAN-06 paste offsetParent visibility guard; SCAN-07 confirm-null injects an inline .vd-cf__err. + workspace-scanner.css for the name field / re-openable rows / remove-x / couldn't-read card / confirm error.\n\nGATE FIX: render_probe_profile.js was STALE after the profile console rebuild renamed classes (.pf-log-entry->.pf-logentry, .pf-pill->.pf-logentry__pill, .pf-panel__sub->.pf-log__sum) -> updated selectors; now PASS, validating 843 embedded Creator's Log entries render on empty localStorage. The log was NEVER broken; my mid-session claim that it didn't render was wrong and is corrected here (never poison the future).\n\nVERIFY: build.mjs exit 0 (11467.5 KB); invariants 91/91 (0 new reds); tsc exit 0; eslint on every touched src file = 0 NEW errors (counts match HEAD exactly: main 6, search 2, entity-page 18, knowledge 1, others 0); probes coverage(31)/search/knowledge/knowledge_filter/entity/slots/profile/rail_sync/scanner/scan/ocr/adopt/scanner_concurrency ALL PASS.\n\nDEFERRALS: 30 findings remain (ledger has each + its decided disposition + a suggested batch order); NEXT = the regimen undo/correctness batch (REG-01 undo bar survives re-render, REG-03 dedup at both add sites, REG-02 item undo, REG-08 focus, then REG-09 \xA731-chokepoint WriteResult -- carefully). SCANNER LAYOUT needs Luneth's eyes: S2 moved Confirm into the left column beside the now-persistent rail -- functionally verified (5 scanner probes), visually unreviewed. SCAN-08 (Confirm live count refresh) deferred as minor. Pre-existing eslint debt (main/search/entity-page/knowledge) is NOT from this pass (vs-HEAD verified) -- a separate hand-fix (eslint --fix is banned). Git stash/pop during the log-probe investigation normalized several touched files CRLF->LF (autocrlf=input; aligns to repo canonical LF, byte-verified through safe_write). eden/ untouched -> NO corpus/catalog seal applies or was run." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -180755,12 +180816,6 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         return;
       }
       const frag = document.createDocumentFragment();
-      const def = document.createElement("button");
-      def.className = "pf-tile pf-tile--default";
-      def.type = "button";
-      def.dataset["default"] = "1";
-      def.title = "Default \u2014 your initial";
-      frag.appendChild(def);
       const up = document.createElement("button");
       up.className = "pf-tile pf-tile--up";
       up.type = "button";
@@ -180768,6 +180823,12 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       up.dataset["act"] = "upload";
       up.innerHTML = IC.upload;
       frag.appendChild(up);
+      const def = document.createElement("button");
+      def.className = "pf-tile pf-tile--default";
+      def.type = "button";
+      def.dataset["default"] = "1";
+      def.title = "Default \u2014 your initial";
+      frag.appendChild(def);
       for (const id of presetIds()) {
         if (fam !== "all" && !id.startsWith(`${fam}-`)) {
           continue;
@@ -180973,6 +181034,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     return {
       update: paintAll,
       unmount: () => {
+        nameEl?.blur();
         unsub();
         container.removeEventListener("click", onClick);
         container.innerHTML = "";
@@ -181073,17 +181135,19 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     for (const t of counted) {
       if (t.covered) {
         covered++;
-        cells.push("covered");
+        cells.push({ cls: "covered", name: t.name });
         continue;
       }
       const slug = nameToSlug.get(t.name);
       if (slug !== void 0 && goalSlugs.has(slug)) {
         goalGap++;
-        cells.push("goalgap");
+        cells.push({ cls: "goalgap", name: t.name });
       } else {
-        cells.push("");
+        cells.push({ cls: "", name: t.name });
       }
     }
+    const rank = (c) => c === "covered" ? 0 : c === "goalgap" ? 1 : 2;
+    cells.sort((a, b) => rank(a.cls) - rank(b.cls));
     return { covered, goalGap, open: counted.length - covered - goalGap, cells };
   }
   var cachedVault = null;
@@ -181227,7 +181291,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     const ordinal2 = String(Math.max(0, doc.slots.findIndex((s) => s.id === doc.activeSlot)) + 1).padStart(2, "0");
     const total = essentialCount();
     const items = active?.items.length ?? 0;
-    const cells = field.cells.map((c) => `<i class="${c}"></i>`).join("");
+    const cells = field.cells.map((c) => `<i class="${c.cls}" title="${escHTML13(c.name)} \xB7 ${c.cls === "covered" ? "covered" : c.cls === "goalgap" ? "goal-gap" : "open"}"></i>`).join("");
     return `
     <section class="ck-console" data-rise="2" aria-label="Coverage gauge">
       <div class="ck-console__bar">
@@ -181273,8 +181337,8 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       return [...new Set(goals.flatMap((g) => g.members))];
     }
     const snapshot2 = getOrCompute();
-    const keyToSlug = new Map([...slugToTileKey2()].map(([slug, key]) => [key, slug]));
-    return snapshot2.tiles.filter((t) => t.status === "gap").map((t) => keyToSlug.get(t.name)).filter((s) => s !== void 0);
+    const keyToSlug = new Map([...slugToTileKey2()].map(([slug, key]) => [key.toLowerCase(), slug]));
+    return snapshot2.tiles.filter((t) => t.status === "gap").map((t) => keyToSlug.get(t.name.toLowerCase())).filter((s) => s !== void 0);
   }
   function buildRecs2(host, recs, goals) {
     host.replaceChildren();
@@ -181430,7 +181494,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
   function undoDelete(cap) {
     const res = addSlot(cap.name);
     if (!res.ok || res.slotId === void 0) {
-      return;
+      return { ok: false, reason: res.ok ? "Could not undo \u2014 you are at the slot limit." : res.reason };
     }
     setActiveSlot(res.slotId);
     for (const item of cap.items) {
@@ -181443,6 +181507,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     for (const [id, patch] of Object.entries(cap.overrides)) {
       saveRgOverride(id, patch);
     }
+    return { ok: true };
   }
   function mount4(container) {
     let animated = false;
@@ -181637,7 +181702,12 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         };
         const res = deleteSlot(id);
         if (res.ok) {
-          showToast(`Deleted "${cap.name}".`, () => undoDelete(cap));
+          showToast(`Deleted "${cap.name}".`, () => {
+            const r = undoDelete(cap);
+            if (!r.ok) {
+              showToast(r.reason ?? "Could not undo.");
+            }
+          });
         } else {
           showToast(res.reason);
         }
@@ -181955,6 +182025,11 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       <div class="vd-cf">
         <div class="vd-cf__grid">
           <div class="vd-cf__edits">
+            <div class="vd-cf-sec vd-cf-sec--name">
+              <label class="vd-cf-name__lab" for="vd-sc-name">Product name</label>
+              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name value="${escHTML14(humanizeName(label.name))}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
+              <span class="vd-cf-sec__hint">Name it so your saved items and regimen read cleanly \u2014 not a raw container guess.</span>
+            </div>
             <div class="vd-cf-sec">
               <div class="vd-cf-sec__head">
                 <span class="vd-cf-sec__t">Supplement Facts \u2014 what we read</span>
@@ -182018,7 +182093,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     const delta = coverageDeltaForLabel(result.label);
     const total = essentialCount();
     const added = delta.after - delta.before;
-    const name = typeof result.label.name === "string" ? result.label.name : "Scanned label";
+    const name = humanizeName(result.label.name);
     const flags = result.anti.length;
     const alignedPct = result.alignment.total > 0 ? Math.round(result.alignment.aligned / result.alignment.total * 100) : 0;
     const tierChip = (key, big, small) => {
@@ -182026,9 +182101,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       return `<span class="vd-tier__c tier-${key === "ADD" ? "add" : key === "SAVE" ? "save" : "out"}${on2 ? " is-on" : ""}"${on2 ? ` style="background:${tone};color:${key === "SAVE" ? "var(--ds-ink)" : "var(--ds-paper-light)"}"` : ""}>${big}<small>${small}</small></span>`;
     };
     return `
-    <div class="coverage-grid">
-      <div class="vd-main">
-        <section class="vd-step vd-step--result">
+    <section class="vd-step vd-step--result">
           <div class="vd-step__head">
             <span class="vd-step__badge is-active">3</span>
             <div class="vd-step__ttlwrap">
@@ -182092,10 +182165,31 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
               </div>
             </div>
           </article>
-        </section>
+        </section>`;
+  }
+  function renderUnreadable() {
+    return `
+    <section class="vd-step vd-step--result">
+      <div class="vd-step__head">
+        <span class="vd-step__badge is-active">3</span>
+        <div class="vd-step__ttlwrap">
+          <div class="vd-step__ttl">Couldn't read this label</div>
+          <div class="vd-step__sub">No verdict \u2014 we couldn't make out enough to judge it fairly.</div>
+        </div>
+        <span class="vd-step__state is-active">No read</span>
       </div>
-      ${renderHistoryRail()}
-    </div>`;
+      <article class="vd-card vd-card--unread">
+        <div class="vd-unread">
+          <span class="vd-unread__ic" aria-hidden="true">?</span>
+          <div class="vd-unread__t">We couldn't read the nutrition panel or the ingredients on this image.</div>
+          <p class="vd-unread__m">A verdict here would be about the photo, not the product \u2014 so we're withholding it. Try a sharper, straight-on photo, or add the reads yourself.</p>
+          <div class="vd-unread__cta">
+            <button class="ds-btn-primary" type="button" data-sc-upload>Scan a clearer image</button>
+            <button class="ds-btn-ghost" type="button" data-sc-edit>Edit the reads</button>
+          </div>
+        </div>
+      </article>
+    </section>`;
   }
   function verdictPill(v) {
     if (v === "ADD") {
@@ -182120,25 +182214,38 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     }
     return `${Math.floor(days / 7)}w`;
   }
-  function renderHistoryRail() {
-    const history = getHistory();
-    const rows = history.map((h, i) => `
-    <div class="rl-row vd-hrow${i === 0 ? " is-current" : ""}">
-      <div class="rl-row__name">${escHTML14(typeof h.label.name === "string" ? h.label.name : "Scan")}</div>
+  function scanRow(h, saved) {
+    const rm = saved ? `<span class="rl-row__x" data-sc-unsave="${h.id}" role="button" tabindex="0" aria-label="Remove from saved" title="Remove">&times;</span>` : "";
+    return `
+    <div class="rl-row vd-hrow" data-sc-open="${h.id}" role="button" tabindex="0" title="Re-open this verdict">
+      <div class="rl-row__name">${escHTML14(humanizeName(h.label.name))}</div>
       ${verdictPill(h.verdict)}
       <div class="rl-row__foot"><span class="rl-src is-own">Yours \xB7 user-scanned</span><span class="vd-when">${escHTML14(relAge(h.ts))}</span></div>
-    </div>`).join("");
+      ${rm}
+    </div>`;
+  }
+  function renderRail3() {
+    const saved = getSaved().map((h) => scanRow(h, true)).join("");
+    const recent = getHistory().map((h) => scanRow(h, false)).join("");
     return `
     <aside class="vd-rail">
       <div class="rail-panel">
         <div class="rail-panel__head">
-          <div class="rail-panel__eyebrow">Scan history \xB7 max 5</div>
-          <div class="rail-panel__title">Recent captures</div>
-          <div class="rail-panel__meta">A new scan never destroys the last</div>
+          <div class="rail-panel__eyebrow">Saved</div>
+          <div class="rail-panel__title">Saved for later</div>
+          <div class="rail-panel__meta">Kept until you remove them \xB7 click to re-open</div>
         </div>
-        <div class="rail-list">${rows || '<div class="rail-empty"><p>No scans yet.</p><small>Your captures land here.</small></div>'}</div>
-        <div class="vd-rail__note">Every capture is marked <b>Yours</b> \u2014 registered against the 90, never written into the sealed pillars.</div>
+        <div class="rail-list">${saved || '<div class="rail-empty"><p>Nothing saved yet.</p><small>Hit &ldquo;Save for later&rdquo; on a verdict.</small></div>'}</div>
       </div>
+      <div class="rail-panel">
+        <div class="rail-panel__head">
+          <div class="rail-panel__eyebrow">Recent</div>
+          <div class="rail-panel__title">Recent captures</div>
+          <div class="rail-panel__meta">Your last few scans \xB7 click to re-open</div>
+        </div>
+        <div class="rail-list">${recent || '<div class="rail-empty"><p>No scans yet.</p><small>Your captures land here.</small></div>'}</div>
+      </div>
+      <div class="vd-rail__note">Every capture is marked <b>Yours</b> \u2014 registered against the 90, never written into the sealed pillars.</div>
     </aside>`;
   }
   function mount5(container) {
@@ -182150,15 +182257,16 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     let scanError = null;
     const dismissed = /* @__PURE__ */ new Set();
     const render = () => {
-      let steps = "";
+      let main = "";
       if (state === "result" && result !== null) {
-        steps = renderScan(state, fileName, imageDataUrl) + renderResult(result);
+        const unreadable = result.sparseNutrients === true && result.sparseIngredients === true;
+        main = renderScan(state, fileName, imageDataUrl) + (unreadable ? renderUnreadable() : renderResult(result));
       } else if (state === "confirming" && label !== null) {
-        steps = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
+        main = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
       } else {
-        steps = (scanError !== null ? renderScanError(scanError) : "") + renderScan(state, fileName, imageDataUrl);
+        main = (scanError !== null ? renderScanError(scanError) : "") + renderScan(state, fileName, imageDataUrl);
       }
-      container.innerHTML = `<div class="vd">${steps}</div>`;
+      container.innerHTML = `<div class="vd"><div class="coverage-grid"><div class="vd-main">${main}</div>${renderRail3()}</div></div>`;
     };
     let scanSeq = 0;
     let activeReader = null;
@@ -182228,7 +182336,15 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         return { ...n, name: next };
       }).filter((n) => typeof n.name === "string" && n.name.length > 0);
       const ing = container.querySelector("[data-ing]");
-      return { ...base, nutrients, ingredients: ing !== null ? ing.value : base.ingredients ?? "" };
+      const nameEl = container.querySelector("[data-sc-name]");
+      const name = nameEl !== null && nameEl.value.trim().length > 0 ? nameEl.value.trim() : typeof base.name === "string" ? base.name : "Scanned label";
+      return { ...base, name, nutrients, ingredients: ing !== null ? ing.value : base.ingredients ?? "" };
+    };
+    const refreshRail = () => {
+      const rail = container.querySelector(".vd-rail");
+      if (rail !== null) {
+        rail.outerHTML = renderRail3();
+      }
     };
     const clickHandler = (ev) => {
       const t = ev.target;
@@ -182290,6 +182406,15 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
           result = r;
           state = "result";
           render();
+        } else {
+          const cta = container.querySelector(".vd-cf__cta");
+          if (cta !== null && cta.querySelector(".vd-cf__err") === null) {
+            const err = document.createElement("div");
+            err.className = "vd-cf__err";
+            err.setAttribute("role", "alert");
+            err.textContent = "Something went wrong scoring this scan. Adjust a read and try Confirm again.";
+            cta.appendChild(err);
+          }
         }
         return;
       }
@@ -182309,12 +182434,46 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         }
         return;
       }
-      if (t.closest("[data-sc-save]") !== null) {
+      const unsave = t.closest("[data-sc-unsave]");
+      if (unsave !== null) {
+        const rid = Number(unsave.dataset["scUnsave"]);
+        if (!Number.isNaN(rid)) {
+          removeSaved(rid);
+          refreshRail();
+        }
+        return;
+      }
+      const openRow = t.closest("[data-sc-open]");
+      if (openRow !== null) {
+        const oid = Number(openRow.dataset["scOpen"]);
+        const entry = [...getSaved(), ...getHistory()].find((h) => h.id === oid);
+        if (entry !== void 0) {
+          const r = scoreLabel(entry.label);
+          if (r !== null) {
+            label = entry.label;
+            result = r;
+            state = "result";
+            imageDataUrl = null;
+            fileName = typeof entry.label.name === "string" ? entry.label.name : null;
+            scanError = null;
+            render();
+          }
+        }
+        return;
+      }
+      if (t.closest("[data-sc-edit]") !== null && label !== null) {
+        state = "confirming";
+        render();
+        return;
+      }
+      if (t.closest("[data-sc-save]") !== null && result !== null) {
+        saveScan(result.label, result);
         const btn = t.closest("[data-sc-save]");
         if (btn !== null) {
-          btn.textContent = "\u2713 In scan history";
+          btn.textContent = "\u2713 Saved";
           btn.disabled = true;
         }
+        refreshRail();
         return;
       }
       if (t.closest("[data-sc-reject]") !== null) {
@@ -182337,6 +182496,9 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       ev.preventDefault();
     };
     const pasteHandler = (ev) => {
+      if (container.offsetParent === null) {
+        return;
+      }
       for (const it of Array.from(ev.clipboardData?.items ?? [])) {
         if (it.type.startsWith("image/")) {
           const f = it.getAsFile();
@@ -182498,7 +182660,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
   }
   function renderBestAnswer(claim) {
     return `
-    <div class="ans" data-facet="${escHTML15(claim.facet)}">
+    <div class="ans" data-sr-claim="${escHTML15(claim.id)}" data-facet="${escHTML15(claim.facet)}">
       <span class="facetpill"><i></i>${escHTML15(facetLabel(claim.facet))}</span>
       <div class="ans__q">${escHTML15(claim.question)}</div>
       ${claimInner(claim)}
@@ -182732,7 +182894,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
         back.hidden = navHistory.length === 0 && browseFamily === null && query.trim() === "";
       }
     };
-    const resultKey = (r) => `${r.mode}|${r.subject}|${r.claim?.id ?? ""}|${r.noMatch}`;
+    const resultKey = (r) => `${r.mode}|${r.subject}|${r.claim?.id ?? ""}|${r.noMatch}|${query.trim().toLowerCase()}`;
     const paintBody = (force) => {
       const body = container.querySelector(".scr-body");
       if (body === null) {
@@ -182919,6 +183081,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
 
   // assets/js/src/views/gloss-tooltip.ts
   var tip = null;
+  var activeEl = null;
   var wired = false;
   function ensureTip() {
     if (tip === null) {
@@ -182940,6 +183103,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       return;
     }
     const t = ensureTip();
+    activeEl = el;
     t.textContent = def;
     t.hidden = false;
     const r = el.getBoundingClientRect();
@@ -182955,6 +183119,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     t.style.top = `${top}px`;
   }
   function hide() {
+    activeEl = null;
     if (tip !== null) {
       tip.hidden = true;
     }
@@ -182985,7 +183150,7 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     document.addEventListener("click", (e) => {
       const el = glossTarget(e);
       if (el !== null) {
-        if (tip !== null && tip.hidden === false) {
+        if (tip !== null && tip.hidden === false && el === activeEl) {
           hide();
         } else {
           showFor(el);
@@ -183138,6 +183303,8 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
 
   // assets/js/src/main.ts
   var mounted = {};
+  var scrollByView = {};
+  var currentWorkspace = null;
   function hideAllNewMounts() {
     for (const id of ["workspace-coverage-mount", "workspace-regimen-mount", "workspace-scanner-mount"]) {
       const el = document.getElementById(id);
@@ -183188,6 +183355,11 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
     activateRailItem(target);
     setTopbarHeader(target);
     emit("rail:navigate", { target });
+    const ws = document.querySelector(".app-workspace");
+    if (ws !== null && currentWorkspace !== null && currentWorkspace !== target) {
+      scrollByView[currentWorkspace] = ws.scrollTop;
+    }
+    currentWorkspace = target;
     hideAllNewMounts();
     if (target === "coverage") {
       const mountEl = document.getElementById("workspace-coverage-mount");
@@ -183197,6 +183369,9 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       mountEl.style.display = "block";
       if (mounted.coverage === void 0) {
         mounted.coverage = mount(mountEl);
+      }
+      if (ws !== null) {
+        ws.scrollTop = scrollByView[target] ?? 0;
       }
       return;
     }
@@ -183209,6 +183384,9 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       if (mounted.regimen === void 0) {
         mounted.regimen = mount4(mountEl);
       }
+      if (ws !== null) {
+        ws.scrollTop = scrollByView[target] ?? 0;
+      }
       return;
     }
     if (target === "scanner") {
@@ -183219,6 +183397,9 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       mountEl.style.display = "block";
       if (mounted.scanner === void 0) {
         mounted.scanner = mount5(mountEl);
+      }
+      if (ws !== null) {
+        ws.scrollTop = scrollByView[target] ?? 0;
       }
       return;
     }
@@ -183281,6 +183462,10 @@ DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session)
       const t = ev.target;
       const typing = t !== null && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable);
       if (typing || ev.metaKey || ev.ctrlKey || ev.altKey) {
+        return;
+      }
+      const modalOpen = (document.getElementById("welcomeHost")?.children.length ?? 0) > 0 || document.querySelector(".pf-overlay") !== null;
+      if (modalOpen) {
         return;
       }
       for (const spec of DRAWER_SPECS) {

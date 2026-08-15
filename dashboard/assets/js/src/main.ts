@@ -50,6 +50,11 @@ interface MountedView {
 /** Tracks each workspace's mount handle for unmount on switch-away. */
 const mounted: Partial<Record<WorkspaceTarget, MountedView>> = {};
 
+/** NAV-02: per-workspace scrollTop — the three workspaces share one .app-workspace scroll
+ *  container, so switching views and back would otherwise dump you at the top. */
+const scrollByView: Partial<Record<WorkspaceTarget, number>> = {};
+let currentWorkspace: WorkspaceTarget | null = null;
+
 function hideAllNewMounts(): void {
   for (const id of ['workspace-coverage-mount', 'workspace-regimen-mount', 'workspace-scanner-mount']) {
     const el = document.getElementById(id);
@@ -134,6 +139,13 @@ function navigateTo(target: WorkspaceTarget): void {
   setTopbarHeader(target);
   events.emit('rail:navigate', { target });
 
+  // NAV-02: remember where you were in the outgoing view before hiding it.
+  const ws = document.querySelector<HTMLElement>('.app-workspace');
+  if (ws !== null && currentWorkspace !== null && currentWorkspace !== target) {
+    scrollByView[currentWorkspace] = ws.scrollTop;
+  }
+  currentWorkspace = target;
+
   hideAllNewMounts();
 
   if (target === 'coverage') {
@@ -144,6 +156,9 @@ function navigateTo(target: WorkspaceTarget): void {
     mountEl.style.display = 'block';
     if (mounted.coverage === undefined) {
       mounted.coverage = coverageView.mount(mountEl);
+    }
+    if (ws !== null) {
+      ws.scrollTop = scrollByView[target] ?? 0;
     }
     return;
   }
@@ -157,6 +172,9 @@ function navigateTo(target: WorkspaceTarget): void {
     if (mounted.regimen === undefined) {
       mounted.regimen = regimenView.mount(mountEl);
     }
+    if (ws !== null) {
+      ws.scrollTop = scrollByView[target] ?? 0;
+    }
     return;
   }
 
@@ -168,6 +186,9 @@ function navigateTo(target: WorkspaceTarget): void {
     mountEl.style.display = 'block';
     if (mounted.scanner === undefined) {
       mounted.scanner = scannerView.mount(mountEl);
+    }
+    if (ws !== null) {
+      ws.scrollTop = scrollByView[target] ?? 0;
     }
     return;
   }
@@ -245,6 +266,13 @@ function wireDrawerKeys(): void {
     const t = ev.target as HTMLElement | null;
     const typing = t !== null && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
     if (typing || ev.metaKey || ev.ctrlKey || ev.altKey) {
+      return;
+    }
+    // NAV-04: a blocking overlay (arrival veil / profile console) owns the screen — a bare-key
+    // drawer shortcut must not toggle a drawer behind it and leave it open once the modal closes.
+    const modalOpen = (document.getElementById('welcomeHost')?.children.length ?? 0) > 0
+      || document.querySelector('.pf-overlay') !== null;
+    if (modalOpen) {
       return;
     }
     for (const spec of DRAWER_SPECS) {

@@ -294,9 +294,12 @@
 .ck-readout__label { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: var(--ds-space-3); }
 .ck-readout__label b { color: var(--ds-ink-soft); font-weight: 700; }
 .ck-readout__field { display: grid; grid-template-columns: repeat(45, minmax(0, 1fr)); gap: 5px; }
-.ck-readout__field i { aspect-ratio: 1; border-radius: 2px; background: var(--ds-paper-shadow); box-shadow: inset 0 0 0 1px var(--ds-rule-soft); }
+.ck-readout__field i { aspect-ratio: 1; border-radius: 2px; background: var(--ds-paper-shadow); box-shadow: inset 0 0 0 1px var(--ds-rule-soft); transition: transform .1s ease, box-shadow .1s ease; }
 .ck-readout__field i.covered { background: linear-gradient(180deg, var(--ds-ok-bright), var(--ds-status-ok)); box-shadow: 0 1px 3px -1px rgba(61,97,41,.5); }
 .ck-readout__field i.goalgap { background: var(--ds-paper-light); box-shadow: inset 0 0 0 1.5px var(--ds-accent); }
+/* NAMED-2: each square now carries a per-element title; a hover pop makes the target
+   unmistakable. No pointer cursor -- this is a readout, not a control. */
+.ck-readout__field i:hover { transform: scale(1.4); box-shadow: 0 0 0 2px var(--ds-ink-soft), 0 3px 7px -2px rgba(0,0,0,.4); position: relative; z-index: 2; }
 
 /* ── GOALS — reuse .goalstrip / .gchip, stripped of the sticky-bar chrome ── */
 .ck .goalstrip { padding: 0; background: transparent; box-shadow: none; }

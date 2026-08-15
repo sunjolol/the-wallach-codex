@@ -181,8 +181,11 @@ interface FieldInfo {
   covered: number;
   goalGap: number;
   open: number;
-  /** One entry per counted essential, in tile order: its readout cell class. */
-  cells: string[];
+  /**
+   * One entry per counted essential, ordered covered -> goal-gap -> open; each carries its
+   * element name so the readout square names itself on hover.
+   */
+  cells: { cls: string; name: string }[];
 }
 
 /**
@@ -198,22 +201,26 @@ function fieldInfo(goals: LayoutGoal[]): FieldInfo {
   const counted = snapshot.tiles.filter(t => t.noTargetReason !== 'non_essential');
   let covered = 0;
   let goalGap = 0;
-  const cells: string[] = [];
+  const cells: { cls: string; name: string }[] = [];
   for (const t of counted) {
     if (t.covered) {
       covered++;
-      cells.push('covered');
+      cells.push({ cls: 'covered', name: t.name });
       continue;
     }
     const slug = nameToSlug.get(t.name);
     if (slug !== undefined && goalSlugs.has(slug)) {
       goalGap++;
-      cells.push('goalgap');
+      cells.push({ cls: 'goalgap', name: t.name });
     }
     else {
-      cells.push('');
+      cells.push({ cls: '', name: t.name });
     }
   }
+  // Luneth 2026-08-14: the readout was interleaved by canon order and illegible. Group it
+  // covered (green) -> goal-gap -> open (beige); the stable sort keeps canon order per block.
+  const rank = (c: string): number => (c === 'covered' ? 0 : c === 'goalgap' ? 1 : 2);
+  cells.sort((a, b) => rank(a.cls) - rank(b.cls));
   return { covered, goalGap, open: counted.length - covered - goalGap, cells };
 }
 
@@ -379,7 +386,7 @@ function renderConsole(field: FieldInfo): string {
   const ordinal = String(Math.max(0, doc.slots.findIndex(s => s.id === doc.activeSlot)) + 1).padStart(2, '0');
   const total = essentialCount();
   const items = active?.items.length ?? 0;
-  const cells = field.cells.map(c => `<i class="${c}"></i>`).join('');
+  const cells = field.cells.map(c => `<i class="${c.cls}" title="${escHTML(c.name)} · ${c.cls === 'covered' ? 'covered' : c.cls === 'goalgap' ? 'goal-gap' : 'open'}"></i>`).join('');
   return `
     <section class="ck-console" data-rise="2" aria-label="Coverage gauge">
       <div class="ck-console__bar">
@@ -436,8 +443,10 @@ function wantedSlugs(goals: LayoutGoal[]): string[] {
     return [...new Set(goals.flatMap(g => g.members))];
   }
   const snapshot = getOrCompute();
-  const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key, slug]));
-  return snapshot.tiles.filter(t => t.status === 'gap').map(t => keyToSlug.get(t.name)).filter((s): s is string => s !== undefined);
+  // Normalise case on the join: layout tiles are keyed UPPERCASE ('HYDROGEN'), the snapshot
+  // carries the Title-case target name ('Hydrogen'). Without this every gap misses -> want [].
+  const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
+  return snapshot.tiles.filter(t => t.status === 'gap').map(t => keyToSlug.get(t.name.toLowerCase())).filter((s): s is string => s !== undefined);
 }
 
 function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[]): void {
@@ -607,10 +616,12 @@ interface DeletedSlot {
 }
 
 /** Reconstruct a just-deleted slot from the capture (items come back out of the trash). */
-function undoDelete(cap: DeletedSlot): void {
+function undoDelete(cap: DeletedSlot): { ok: boolean; reason?: string } {
   const res = addSlot(cap.name);
   if (!res.ok || res.slotId === undefined) {
-    return;
+    // REG-07: the cap may have been refilled during the undo window — surface the refusal
+    // instead of a silent no-op that strands the captured items in trash.
+    return { ok: false, reason: res.ok ? 'Could not undo — you are at the slot limit.' : res.reason };
   }
   setActiveSlot(res.slotId);
   for (const item of cap.items) {
@@ -623,6 +634,7 @@ function undoDelete(cap: DeletedSlot): void {
   for (const [id, patch] of Object.entries(cap.overrides)) {
     saveRgOverride(id, patch);
   }
+  return { ok: true };
 }
 
 // ─── Mount ────────────────────────────────────────────────────────────────────
@@ -833,7 +845,12 @@ export function mount(container: HTMLElement): MountHandle {
       };
       const res = deleteSlot(id);
       if (res.ok) {
-        showToast(`Deleted "${cap.name}".`, () => undoDelete(cap)); // re-render fires from the delete's regimen:changed; then the bar shows on the fresh DOM
+        showToast(`Deleted "${cap.name}".`, () => {
+          const r = undoDelete(cap);
+          if (!r.ok) {
+            showToast(r.reason ?? 'Could not undo.');
+          }
+        }); // re-render fires from the delete's regimen:changed; then the bar shows on the fresh DOM
       }
       else {
         showToast(res.reason);

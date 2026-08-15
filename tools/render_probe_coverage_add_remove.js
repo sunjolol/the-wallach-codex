@@ -159,6 +159,31 @@ const readState = () => {
   checks.push(['an open drawer COVERS the sticky goal strip', drawer.inDrawer]);
   checks.push(['the strip is STILL position:sticky (the fix must not delete it)', drawer.sticky === 'sticky']);
 
+  // -- COV-01 + COV-02: the NO-GOAL recommender (regression gate) --------------
+  //   Goal-mode recs rank by goal members and always worked; the goal-LESS fallback joins
+  //   snapshot gaps back to slugs and shipped BROKEN -- layout tile keys are UPPERCASE
+  //   ('HYDROGEN'), snapshot names Title-case ('Hydrogen'), so every gap missed, want=[],
+  //   and the panel told an empty-regimen user "everything covered." Remove every goal and
+  //   assert real gaps still surface, and that removing a goal leaves no stuck dim (COV-02).
+  await page.keyboard.press('Escape'); // close the Search drawer opened by the prior check
+  await new Promise(r => setTimeout(r, 300));
+  let goalGuard = 0;
+  while ((await page.$('[data-goal-remove]')) && goalGuard++ < 12) {
+    await page.click('[data-goal-remove]');
+    await new Promise(r => setTimeout(r, 300));
+  }
+  const nogoal = await page.evaluate(() => ({
+    goals: document.querySelectorAll('[data-goal-remove]').length,
+    recs: [...document.querySelectorAll('.rec__name')].map(e => e.textContent),
+    recsText: ((document.querySelector('[data-recs]') || {}).textContent || '').replace(/\s+/g, ' ').trim(),
+    focusing: document.body.classList.contains('focusing'),
+  }));
+  console.log('NOGOAL', JSON.stringify(nogoal, null, 1));
+  checks.push(['all goals removed (no-goal mode reached)', nogoal.goals === 0]);
+  checks.push(['COV-01: no-goal recommender still surfaces real gaps (empty regimen is NOT "all covered")', nogoal.recs.length > 0]);
+  checks.push(['COV-01: recs panel does not falsely claim everything is covered', !/every essential|nothing left to add|everything.{0,12}covered/i.test(nogoal.recsText)]);
+  checks.push(['COV-02: removing a goal leaves no stuck-dimmed field', nogoal.focusing === false]);
+
   checks.push(['no page errors', pageErrors.length === 0]);
 
   console.log('STATES', JSON.stringify({ s0, s1, s2, s3, s4 }, null, 1));

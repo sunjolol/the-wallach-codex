@@ -311,13 +311,7 @@ export function mount(container: HTMLElement): MountHandle {
       return;
     }
     const frag = document.createDocumentFragment();
-    // Default (your initial) — always first, the way back to the auto avatar.
-    const def = document.createElement('button');
-    def.className = 'pf-tile pf-tile--default';
-    def.type = 'button';
-    def.dataset['default'] = '1';
-    def.title = 'Default — your initial';
-    frag.appendChild(def);
+    // Upload leads the grid — the primary action is always first (Luneth 2026-08-14).
     const up = document.createElement('button');
     up.className = 'pf-tile pf-tile--up';
     up.type = 'button';
@@ -325,6 +319,13 @@ export function mount(container: HTMLElement): MountHandle {
     up.dataset['act'] = 'upload';
     up.innerHTML = IC.upload;
     frag.appendChild(up);
+    // Default (your initial) — the way back to the auto avatar, right after Upload.
+    const def = document.createElement('button');
+    def.className = 'pf-tile pf-tile--default';
+    def.type = 'button';
+    def.dataset['default'] = '1';
+    def.title = 'Default — your initial';
+    frag.appendChild(def);
     for (const id of presetIds()) {
       if (fam !== 'all' && !id.startsWith(`${fam}-`)) {
         continue;
@@ -559,6 +560,9 @@ export function mount(container: HTMLElement): MountHandle {
   return {
     update: paintAll,
     unmount: (): void => {
+      // PROF-02: Esc/close removes the DOM with no native blur, so a typed-but-uncommitted
+      // name would be lost. Blur first — the change handler then commits only a real edit.
+      nameEl?.blur();
       unsub();
       container.removeEventListener('click', onClick);
       container.innerHTML = '';

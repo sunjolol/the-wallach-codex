@@ -29,6 +29,16 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
   await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 }).catch(e => console.log('GOTO_ERR', e.message));
   await wait(1500);
 
+  // NAV-04: bare-key drawer shortcuts (S/K) are intentionally dead while a blocking overlay
+  // owns the screen -- the arrival veil is one until the user enters. Dismiss it so the probe
+  // runs the realistic post-onboarding state (and the bare-K reopen at step 6 is live).
+  if (await page.$('.wc-veil')) {
+    await page.type('.wc__name', 'Probe');
+    await page.click('.wc-goal');
+    await page.click('[data-go]');
+    await wait(500);
+  }
+
   const drawerState = () => page.evaluate(() => {
     const el = document.getElementById('drawer-knowledge-mount');
     return {

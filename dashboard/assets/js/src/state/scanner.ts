@@ -72,8 +72,47 @@ import {
 
 export const RECENT_SCANS_KEY = 'lcRecentScans_v1';
 
+/** The durable Saved shelf (SCAN-04) — items the user explicitly "Save for later". Separate
+ *  from the auto RECENT_SCANS FIFO: no eviction on new scans, only removed by the user. */
+export const SAVED_SCANS_KEY = 'lcSavedScans_v1';
+
 /** Faithful to legacy MAX_RECENT — the history is capped at 5 entries. */
 const MAX_RECENT = 5;
+
+/** Cap the durable Saved shelf generously; it is user-curated, not auto-churned. */
+const MAX_SAVED = 100;
+
+/** Container-hint tokens the OCR parser emits when no product name is legible — humanised for
+ *  display so a raw 'aluminum_can' never surfaces as a product name (SCAN-02). */
+const CONTAINER_LABELS = new Map<string, string>([
+  ['aluminum_can', 'Canned drink'],
+  ['can', 'Canned drink'],
+  ['capsule', 'Capsules'],
+  ['tablet', 'Tablets'],
+  ['softgel', 'Softgels'],
+  ['powder', 'Powder'],
+  ['liquid', 'Liquid'],
+  ['bottle', 'Bottled product'],
+]);
+
+/** A human product name for display: humanise a known container token, keep a real name as-is,
+ *  else fall back to 'Scanned label' — never show the raw parser token to the user. */
+export function humanizeName(raw: string | undefined): string {
+  const s = (raw ?? '').trim();
+  if (s === '' || s.toLowerCase() === 'scanned label') {
+    return 'Scanned label';
+  }
+  const mapped = CONTAINER_LABELS.get(s.toLowerCase().replace(/\s+/g, '_'));
+  if (mapped !== undefined) {
+    return mapped;
+  }
+  // A real name (already has a space or a capital) passes through; a bare token gets its
+  // underscores opened and each word capitalised.
+  if (/[A-Z ]/.test(s)) {
+    return s;
+  }
+  return s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
 
 // ─── Re-export inferred types so callers can import from @state/scanner ───
 export type { Alignment, GapFill, HistoryEntry, ScanLabel, Verdict };
@@ -148,6 +187,11 @@ export function getHistory(): HistoryEntry[] {
 /** Last scan, if any — useful for "show the most recent verdict" view. */
 export function getLastScan(): HistoryEntry | null {
   return getHistory()[0] ?? null;
+}
+
+/** The durable Saved shelf, newest first (SCAN-04). Bad LS data → empty. */
+export function getSaved(): HistoryEntry[] {
+  return getValidated(SAVED_SCANS_KEY, HistoryShapeSchema)?.items ?? [];
 }
 
 let lastResult: ScanResult | null = null;
@@ -592,10 +636,15 @@ function decideVerdict(
 
 // ─── Scan orchestration + history ──────────────────────────────────────────
 
-/** Persist a scan to the FIFO history (dedup by label.name, cap MAX_RECENT). */
+/**
+ * Persist a scan to the auto FIFO history, newest first, cap MAX_RECENT.
+ * SCAN-03: no name-dedup — scanned labels share a few low-cardinality container names
+ * ('capsule', 'powder'), so deduping by name collapsed genuinely distinct products. Each
+ * capture carries a unique id, so distinct scans each keep a slot up to the cap.
+ */
 function pushRecentScan(label: ScanLabel, result: ScanResult): void {
   const shape = getValidated(RECENT_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
-  const items = shape.items.filter(i => i.label.name !== label.name);
+  const items = [...shape.items];
   items.unshift({
     id: Date.now() + Math.floor(Math.random() * 1000),
     ts: new Date().toISOString(),
@@ -606,6 +655,25 @@ function pushRecentScan(label: ScanLabel, result: ScanResult): void {
     gapFills: result.gapFills,
   });
   setValidated(RECENT_SCANS_KEY, { items: items.slice(0, MAX_RECENT) }, HistoryShapeSchema);
+}
+
+/** Add a scan to the durable Saved shelf (SCAN-04). Newest first, cap MAX_SAVED. Returns the
+ *  new entry's id so the caller can reflect a 'saved' state. */
+export function saveScan(label: ScanLabel, result: ScanResult): number {
+  const shape = getValidated(SAVED_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
+  const id = Date.now() + Math.floor(Math.random() * 1000);
+  const items = [
+    { id, ts: new Date().toISOString(), label, verdict: result.verdict, alignment: result.alignment, goals: result.goals, gapFills: result.gapFills },
+    ...shape.items,
+  ];
+  setValidated(SAVED_SCANS_KEY, { items: items.slice(0, MAX_SAVED) }, HistoryShapeSchema);
+  return id;
+}
+
+/** Remove one saved scan by id (the shelf × affordance, SCAN-04). */
+export function removeSaved(id: number): void {
+  const shape = getValidated(SAVED_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
+  setValidated(SAVED_SCANS_KEY, { items: shape.items.filter(i => i.id !== id) }, HistoryShapeSchema);
 }
 
 /**

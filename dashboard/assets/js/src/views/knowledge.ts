@@ -485,8 +485,8 @@ function applyKnowledgeSearch(body: HTMLElement, tab: Tab, rawQuery: string): nu
       head.classList.toggle('kd-hidden', active && !headHasMatch);
     }
   };
-  body.querySelectorAll<HTMLElement>(`.kd-section-head, .sh-subhead, ${selector}`).forEach((node) => {
-    if (node.classList.contains('kd-section-head') || node.classList.contains('sh-subhead')) {
+  body.querySelectorAll<HTMLElement>(`.kd-section-head, .sh-subhead, .kd-explore-group__head, ${selector}`).forEach((node) => {
+    if (node.classList.contains('kd-section-head') || node.classList.contains('sh-subhead') || node.classList.contains('kd-explore-group__head')) {
       commitHead();
       head = node;
       headHasMatch = false;

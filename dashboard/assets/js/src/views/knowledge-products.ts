@@ -25,7 +25,7 @@ import {
   type ProductNutrientRow,
 } from '../core/schemas/index.js';
 import { getEssentialBySlug } from '../state/corpus.js';
-import { getTargets } from '../state/coverage.js';
+import { essentialCount, getTargets } from '../state/coverage.js';
 import { getEssentialPage } from '../state/entity-page.js';
 import { essentialSlugsByProduct, type RankedSource, rankSources } from '../state/recommender.js';
 
@@ -177,8 +177,8 @@ function renderProductRow(p: ProductDetail, selected: string | null): string {
     ? `$${fmtMoney(p.price.wholesale)}`
     : (p.price != null && p.price.retail != null ? `$${fmtMoney(p.price.retail)}` : '');
   const spc = p.components[0]?.servings_per_container;
-  const serv = (spc !== null && spc !== undefined) ? `${spc} servings` : '';
-  const lead = supplied > 0 ? '<b>of 90</b> essentials' : 'targeted formula';
+  const serv = (spc !== null && spc !== undefined) ? `${spc} serving${spc === 1 ? '' : 's'}` : '';
+  const lead = supplied > 0 ? `<b>of ${essentialCount()}</b> essentials` : 'targeted formula';
   const foot = [lead, price, serv].filter(s => s.length > 0).join(' · ');
   const ghost = supplied > 0 ? `<div class="kd-product-row__ghost" aria-hidden="true">${supplied}</div>` : '';
   return `
@@ -455,7 +455,7 @@ function pfGlance(p: ProductDetail, supplied: number): string {
 
   const hero = supplied > 0
     ? `<div class="kd-pf-glance__num">${supplied}</div>
-        <div class="kd-pf-glance__cap"><b>of 90</b> Wallach essentials<br>delivered on this label</div>`
+        <div class="kd-pf-glance__cap"><b>of ${essentialCount()}</b> Wallach essentials<br>delivered on this label</div>`
     : `<div class="kd-pf-glance__kill">Targeted<br>formula</div>
         <div class="kd-pf-glance__cap">a focused botanical outside<br>the 90 core essentials</div>`;
 

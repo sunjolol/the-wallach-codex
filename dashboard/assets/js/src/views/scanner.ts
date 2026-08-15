@@ -42,7 +42,12 @@ import {
   type AntiFlag,
   coverageDeltaForLabel,
   getHistory,
+  getSaved,
+  type HistoryEntry,
+  humanizeName,
+  removeSaved,
   runScan,
+  saveScan,
   type ScanResult,
   scoreLabel,
   type Verdict,
@@ -282,6 +287,11 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
       <div class="vd-cf">
         <div class="vd-cf__grid">
           <div class="vd-cf__edits">
+            <div class="vd-cf-sec vd-cf-sec--name">
+              <label class="vd-cf-name__lab" for="vd-sc-name">Product name</label>
+              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name value="${escHTML(humanizeName(label.name))}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
+              <span class="vd-cf-sec__hint">Name it so your saved items and regimen read cleanly — not a raw container guess.</span>
+            </div>
             <div class="vd-cf-sec">
               <div class="vd-cf-sec__head">
                 <span class="vd-cf-sec__t">Supplement Facts — what we read</span>
@@ -350,7 +360,7 @@ function renderResult(result: ScanResult): string {
   const delta = coverageDeltaForLabel(result.label);
   const total = essentialCount();
   const added = delta.after - delta.before;
-  const name = typeof result.label.name === 'string' ? result.label.name : 'Scanned label';
+  const name = humanizeName(result.label.name);
   const flags = result.anti.length;
   const alignedPct = result.alignment.total > 0 ? Math.round((result.alignment.aligned / result.alignment.total) * 100) : 0;
 
@@ -360,9 +370,7 @@ function renderResult(result: ScanResult): string {
   };
 
   return `
-    <div class="coverage-grid">
-      <div class="vd-main">
-        <section class="vd-step vd-step--result">
+    <section class="vd-step vd-step--result">
           <div class="vd-step__head">
             <span class="vd-step__badge is-active">3</span>
             <div class="vd-step__ttlwrap">
@@ -426,10 +434,34 @@ function renderResult(result: ScanResult): string {
               </div>
             </div>
           </article>
-        </section>
+        </section>`;
+}
+
+/** SCAN-01: OCR read nothing — withhold the verdict (a REJECT here would judge the photo, not
+ *  the product, violating section 00.A) and offer a way forward. */
+function renderUnreadable(): string {
+  return `
+    <section class="vd-step vd-step--result">
+      <div class="vd-step__head">
+        <span class="vd-step__badge is-active">3</span>
+        <div class="vd-step__ttlwrap">
+          <div class="vd-step__ttl">Couldn't read this label</div>
+          <div class="vd-step__sub">No verdict — we couldn't make out enough to judge it fairly.</div>
+        </div>
+        <span class="vd-step__state is-active">No read</span>
       </div>
-      ${renderHistoryRail()}
-    </div>`;
+      <article class="vd-card vd-card--unread">
+        <div class="vd-unread">
+          <span class="vd-unread__ic" aria-hidden="true">?</span>
+          <div class="vd-unread__t">We couldn't read the nutrition panel or the ingredients on this image.</div>
+          <p class="vd-unread__m">A verdict here would be about the photo, not the product — so we're withholding it. Try a sharper, straight-on photo, or add the reads yourself.</p>
+          <div class="vd-unread__cta">
+            <button class="ds-btn-primary" type="button" data-sc-upload>Scan a clearer image</button>
+            <button class="ds-btn-ghost" type="button" data-sc-edit>Edit the reads</button>
+          </div>
+        </div>
+      </article>
+    </section>`;
 }
 
 function verdictPill(v: Verdict): string {
@@ -458,25 +490,44 @@ function relAge(iso: string): string {
   return `${Math.floor(days / 7)}w`;
 }
 
-function renderHistoryRail(): string {
-  const history = getHistory();
-  const rows = history.map((h, i) => `
-    <div class="rl-row vd-hrow${i === 0 ? ' is-current' : ''}">
-      <div class="rl-row__name">${escHTML(typeof h.label.name === 'string' ? h.label.name : 'Scan')}</div>
+/** One scan row — clickable to re-open its verdict (data-sc-open); a saved row carries a x. */
+function scanRow(h: HistoryEntry, saved: boolean): string {
+  const rm = saved
+    ? `<span class="rl-row__x" data-sc-unsave="${h.id}" role="button" tabindex="0" aria-label="Remove from saved" title="Remove">&times;</span>`
+    : '';
+  return `
+    <div class="rl-row vd-hrow" data-sc-open="${h.id}" role="button" tabindex="0" title="Re-open this verdict">
+      <div class="rl-row__name">${escHTML(humanizeName(h.label.name))}</div>
       ${verdictPill(h.verdict)}
       <div class="rl-row__foot"><span class="rl-src is-own">Yours · user-scanned</span><span class="vd-when">${escHTML(relAge(h.ts))}</span></div>
-    </div>`).join('');
+      ${rm}
+    </div>`;
+}
+
+/** The persistent rail: the durable Saved shelf (SCAN-04) over the auto Recent captures.
+ *  Rendered in every state so a refresh always surfaces saved items; rows re-open on click. */
+function renderRail(): string {
+  const saved = getSaved().map(h => scanRow(h, true)).join('');
+  const recent = getHistory().map(h => scanRow(h, false)).join('');
   return `
     <aside class="vd-rail">
       <div class="rail-panel">
         <div class="rail-panel__head">
-          <div class="rail-panel__eyebrow">Scan history · max 5</div>
-          <div class="rail-panel__title">Recent captures</div>
-          <div class="rail-panel__meta">A new scan never destroys the last</div>
+          <div class="rail-panel__eyebrow">Saved</div>
+          <div class="rail-panel__title">Saved for later</div>
+          <div class="rail-panel__meta">Kept until you remove them · click to re-open</div>
         </div>
-        <div class="rail-list">${rows || '<div class="rail-empty"><p>No scans yet.</p><small>Your captures land here.</small></div>'}</div>
-        <div class="vd-rail__note">Every capture is marked <b>Yours</b> — registered against the 90, never written into the sealed pillars.</div>
+        <div class="rail-list">${saved || '<div class="rail-empty"><p>Nothing saved yet.</p><small>Hit &ldquo;Save for later&rdquo; on a verdict.</small></div>'}</div>
       </div>
+      <div class="rail-panel">
+        <div class="rail-panel__head">
+          <div class="rail-panel__eyebrow">Recent</div>
+          <div class="rail-panel__title">Recent captures</div>
+          <div class="rail-panel__meta">Your last few scans · click to re-open</div>
+        </div>
+        <div class="rail-list">${recent || '<div class="rail-empty"><p>No scans yet.</p><small>Your captures land here.</small></div>'}</div>
+      </div>
+      <div class="vd-rail__note">Every capture is marked <b>Yours</b> — registered against the 90, never written into the sealed pillars.</div>
     </aside>`;
 }
 
@@ -492,17 +543,20 @@ export function mount(container: HTMLElement): MountHandle {
   const dismissed = new Set<string>();
 
   const render = (): void => {
-    let steps = '';
+    let main = '';
     if (state === 'result' && result !== null) {
-      steps = renderScan(state, fileName, imageDataUrl) + renderResult(result);
+      const unreadable = result.sparseNutrients === true && result.sparseIngredients === true;
+      main = renderScan(state, fileName, imageDataUrl) + (unreadable ? renderUnreadable() : renderResult(result));
     }
     else if (state === 'confirming' && label !== null) {
-      steps = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
+      main = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
     }
     else {
-      steps = (scanError !== null ? renderScanError(scanError) : '') + renderScan(state, fileName, imageDataUrl);
+      main = (scanError !== null ? renderScanError(scanError) : '') + renderScan(state, fileName, imageDataUrl);
     }
-    container.innerHTML = `<div class="vd">${steps}</div>`;
+    // The rail (Saved + Recent) is a persistent aside in every state, so a refresh always
+    // surfaces saved items — the whole point of the shelf. renderRail reads live state each paint.
+    container.innerHTML = `<div class="vd"><div class="coverage-grid"><div class="vd-main">${main}</div>${renderRail()}</div></div>`;
   };
 
   // Last-wins scan sequencing: the newest image owns the view. Every scan takes an id;
@@ -593,7 +647,18 @@ export function mount(container: HTMLElement): MountHandle {
       return { ...n, name: next };
     }).filter(n => typeof n.name === 'string' && n.name.length > 0);
     const ing = container.querySelector<HTMLTextAreaElement>('[data-ing]');
-    return { ...base, nutrients, ingredients: ing !== null ? ing.value : (base.ingredients ?? '') };
+    const nameEl = container.querySelector<HTMLInputElement>('[data-sc-name]');
+    const name = nameEl !== null && nameEl.value.trim().length > 0
+      ? nameEl.value.trim()
+      : (typeof base.name === 'string' ? base.name : 'Scanned label');
+    return { ...base, name, nutrients, ingredients: ing !== null ? ing.value : (base.ingredients ?? '') };
+  };
+
+  const refreshRail = (): void => {
+    const rail = container.querySelector('.vd-rail');
+    if (rail !== null) {
+      rail.outerHTML = renderRail();
+    }
   };
 
   const clickHandler = (ev: Event): void => {
@@ -660,6 +725,17 @@ export function mount(container: HTMLElement): MountHandle {
         state = 'result';
         render();
       }
+      else {
+        // SCAN-07: scoring threw — say so inline instead of a dead button that does nothing.
+        const cta = container.querySelector<HTMLElement>('.vd-cf__cta');
+        if (cta !== null && cta.querySelector('.vd-cf__err') === null) {
+          const err = document.createElement('div');
+          err.className = 'vd-cf__err';
+          err.setAttribute('role', 'alert');
+          err.textContent = 'Something went wrong scoring this scan. Adjust a read and try Confirm again.';
+          cta.appendChild(err);
+        }
+      }
       return;
     }
     // result actions
@@ -679,12 +755,49 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
-    if (t.closest('[data-sc-save]') !== null) {
+    // Unsave (x on a Saved row) — before data-sc-open, since it sits inside the row.
+    const unsave = t.closest<HTMLElement>('[data-sc-unsave]');
+    if (unsave !== null) {
+      const rid = Number(unsave.dataset['scUnsave']);
+      if (!Number.isNaN(rid)) {
+        removeSaved(rid);
+        refreshRail();
+      }
+      return;
+    }
+    // Re-open a Saved / Recent row: re-score its stored label against your CURRENT regimen.
+    const openRow = t.closest<HTMLElement>('[data-sc-open]');
+    if (openRow !== null) {
+      const oid = Number(openRow.dataset['scOpen']);
+      const entry = [...getSaved(), ...getHistory()].find(h => h.id === oid);
+      if (entry !== undefined) {
+        const r = scoreLabel(entry.label);
+        if (r !== null) {
+          label = entry.label;
+          result = r;
+          state = 'result';
+          imageDataUrl = null;
+          fileName = typeof entry.label.name === 'string' ? entry.label.name : null;
+          scanError = null;
+          render();
+        }
+      }
+      return;
+    }
+    // Couldn't-read -> back to Confirm to add the reads by hand.
+    if (t.closest('[data-sc-edit]') !== null && label !== null) {
+      state = 'confirming';
+      render();
+      return;
+    }
+    if (t.closest('[data-sc-save]') !== null && result !== null) {
+      saveScan(result.label, result);
       const btn = t.closest<HTMLButtonElement>('[data-sc-save]');
       if (btn !== null) {
-        btn.textContent = '✓ In scan history';
+        btn.textContent = '✓ Saved';
         btn.disabled = true;
       }
+      refreshRail();
       return;
     }
     if (t.closest('[data-sc-reject]') !== null) {
@@ -708,6 +821,12 @@ export function mount(container: HTMLElement): MountHandle {
     ev.preventDefault();
   };
   const pasteHandler = (ev: ClipboardEvent): void => {
+    // SCAN-06: this listener is on document and the Scanner is never unmounted (only hidden),
+    // so a paste while another workspace is up would start a hidden background OCR. Ignore
+    // paste unless the Scanner is actually on screen.
+    if (container.offsetParent === null) {
+      return;
+    }
     for (const it of Array.from(ev.clipboardData?.items ?? [])) {
       if (it.type.startsWith('image/')) {
         const f = it.getAsFile();

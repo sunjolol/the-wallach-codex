@@ -48,13 +48,13 @@ const embedCount = JSON.parse(fs.readFileSync(embedPath, 'utf8')).length;
 
   const opened = await page.evaluate(() => {
     const panel = document.querySelector('.pf-panel');
-    const sub = panel?.querySelector('.pf-panel__sub')?.textContent ?? '';
+    const sub = panel?.querySelector('.pf-log__sum')?.textContent ?? '';
     const m = sub.match(/(\d+)\s+entr/);
     return {
       hasPanel: panel !== null,
-      logEntries: document.querySelectorAll('.pf-log-entry').length,
+      logEntries: document.querySelectorAll('.pf-logentry').length,
       subCount: m ? parseInt(m[1], 10) : -1,
-      hasRoundClose: [...document.querySelectorAll('.pf-log-entry .pf-pill')]
+      hasRoundClose: [...document.querySelectorAll('.pf-logentry .pf-logentry__pill')]
         .some(e => /ROUND CLOSE/.test(e.textContent || '')),
     };
   });

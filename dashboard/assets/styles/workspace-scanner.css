@@ -313,3 +313,25 @@
 .vd-error__t { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-sm); font-weight: 700; letter-spacing: .02em; color: var(--ds-ink); }
 .vd-error__m { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); line-height: 1.6; color: var(--ds-ink-medium); }
 .vd-error__retry { flex: 0 0 auto; align-self: center; }
+
+/* ── Scanner redesign (2026-08-14): name field · re-openable rows · Saved shelf · couldn't-read ── */
+.vd-cf-sec--name { padding-bottom: var(--ds-space-3); border-bottom: 1px dashed var(--ds-rule); margin-bottom: var(--ds-space-2); }
+.vd-cf-name__lab { display: block; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: 6px; }
+.vd-cf-name__in { width: 100%; box-sizing: border-box; font-family: var(--ds-font-serif); font-size: var(--ds-text-sm); font-weight: 600; color: var(--ds-ink); background: var(--ds-paper-light); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); padding: 0.6rem 0.75rem; }
+.vd-cf-name__in:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 3px var(--ds-accent-wash); }
+
+/* re-openable scan rows — genuinely clickable now, so a pointer cursor is honest (SCAN-05) */
+.vd-rail .rl-row[data-sc-open] { cursor: pointer; position: relative; width: 100%; text-align: left; }
+.rl-row__x { position: absolute; top: 4px; right: 2px; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--ds-ink-faint); cursor: pointer; font-size: 15px; line-height: 1; }
+.rl-row__x:hover { background: var(--ds-paper-deep); color: var(--ds-status-warn); }
+
+/* the neutral "couldn't read" result (SCAN-01) — no verdict, an honest exit with a way out */
+.vd-card--unread { padding: var(--ds-space-6); }
+.vd-unread { display: flex; flex-direction: column; align-items: flex-start; gap: var(--ds-space-3); }
+.vd-unread__ic { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--ds-paper-deep); color: var(--ds-ink-soft); font-weight: 700; }
+.vd-unread__t { font-family: var(--ds-font-serif); font-size: var(--ds-text-sm); font-weight: 700; color: var(--ds-ink); }
+.vd-unread__m { font-family: var(--ds-font-serif); font-size: var(--ds-text-sm); color: var(--ds-ink-soft); line-height: var(--ds-lh-normal); max-width: 52ch; }
+.vd-unread__cta { display: flex; gap: var(--ds-space-3); flex-wrap: wrap; margin-top: var(--ds-space-2); }
+
+/* inline Confirm scoring error (SCAN-07) */
+.vd-cf__err { flex-basis: 100%; font-family: var(--ds-font-serif); font-size: var(--ds-text-xs); color: var(--ds-status-warn); }

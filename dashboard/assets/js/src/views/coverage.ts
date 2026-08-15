@@ -399,10 +399,13 @@ function wantedSlugs(snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): st
   if (goals.length > 0) {
     return [...new Set(goals.flatMap(g => g.members))];
   }
-  const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key, slug]));
+  // Join snapshot-gap tiles back to slugs. The layout keys tiles by an UPPERCASE display
+  // name ('HYDROGEN') while the snapshot carries the Title-case target name ('Hydrogen'),
+  // so the reverse lookup must normalise case or every gap misses and want becomes [].
+  const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
   return (snapshot?.tiles ?? [])
     .filter(t => t.status === 'gap')
-    .map(t => keyToSlug.get(t.name))
+    .map(t => keyToSlug.get(t.name.toLowerCase()))
     .filter((s): s is string => s !== undefined);
 }
 
@@ -640,6 +643,9 @@ function renderRail(items: ReturnType<typeof loadEffectiveRegimen>): string {
 
 export function mount(container: HTMLElement): MountHandle {
   const render = (): void => {
+    // COV-02: a stationary cursor over a just-removed goal x fires no mouseout, so a stale
+    // body.focusing (goal-hover dim) would otherwise stick through this rebuild. Clear first.
+    document.body.classList.remove('focusing');
     const snapshot = getOrCompute();
     const goals = activeGoals();
     const items = loadEffectiveRegimen();
