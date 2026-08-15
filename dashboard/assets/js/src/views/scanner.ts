@@ -84,6 +84,60 @@ function verdictHeadline(v: Verdict): { head: string; sub: string } {
 
 // ─── STEP 1 · SCAN ─────────────────────────────────────────────────────────────
 
+const SCAN_STEP_LABELS = ['Prepare', 'Load engine', 'Read label'];
+
+/**
+ * The Scan step while OCR runs: the staged progress indicator (concept C), fed live by the
+ * real `lcscan:progress` events — the stepper + bar update in place (see mount's onProgress),
+ * never a full re-render. Setup phases show an indeterminate sweep; the read phase fills for real.
+ */
+function renderScanning(): string {
+  return `<div class="vd-scan">
+        <button class="ds-btn-primary vd-newscan" type="button" disabled><b aria-hidden="true">+</b> New Scan</button>
+        <div class="vd-drop vd-drop--busy">
+          <div class="vd-prog is-indet" data-prog>
+            <div class="vd-steps">
+              <span class="vd-steps__i is-active" data-step="0">Prepare</span>
+              <span class="vd-steps__i" data-step="1">Load engine</span>
+              <span class="vd-steps__i" data-step="2">Read label</span>
+            </div>
+            <div class="vd-prog__track"><div class="vd-prog__fill" data-prog-fill></div></div>
+            <div class="vd-prog__row">
+              <span class="vd-prog__msg" data-prog-msg>Preparing the image…</span>
+              <span class="vd-prog__pct" data-prog-pct></span>
+            </div>
+            <div class="vd-prog__note">OCR runs locally — slow by design, nothing uploaded</div>
+          </div>
+        </div>
+      </div>`;
+}
+
+/** An honest, actionable failure card for the Scan step — shown instead of an infinite spinner when
+ *  OCR can't load (the model fetch is blocked on a raw file:// open) or a read fails. Retry re-opens
+ *  the file picker. */
+function renderScanError(message: string): string {
+  return `<div class="vd-error" role="alert">
+      <span class="vd-error__ic" aria-hidden="true">!</span>
+      <div class="vd-error__body">
+        <div class="vd-error__t">Couldn’t read the label</div>
+        <div class="vd-error__m">${escHTML(message)}</div>
+      </div>
+      <button class="ds-btn-primary vd-error__retry" type="button" data-sc-upload>Try again</button>
+    </div>`;
+}
+
+/** Map an OCR failure to a plain, actionable line — a file:// model-fetch block gets specific guidance. */
+function scanErrorMessage(e: unknown): string {
+  const code = e instanceof Error ? e.message : String(e);
+  if (code.includes('OCR_MODEL_UNREACHABLE')) {
+    return 'Couldn’t reach the OCR language model. Check your connection and scan again.';
+  }
+  if (code.includes('OCR_TIMEOUT')) {
+    return 'The OCR engine took too long to load and timed out. Scan again.';
+  }
+  return 'Something went wrong while reading that image. Try a clearer photo, or scan again.';
+}
+
 function renderScan(state: ScState, fileName: string | null, dataUrl: string | null): string {
   const done = state === 'confirming' || state === 'result';
   const badge = done ? 'is-done' : 'is-active';
@@ -104,15 +158,17 @@ function renderScan(state: ScState, fileName: string | null, dataUrl: string | n
           </div>
         </div>
       </div>`
-    : `<div class="vd-scan">
+    : (state === 'scanning'
+        ? renderScanning()
+        : `<div class="vd-scan">
         <button class="ds-btn-primary vd-newscan" type="button" data-sc-upload><b aria-hidden="true">+</b> New Scan</button>
-        <button class="vd-drop" type="button" data-sc-upload ${state === 'scanning' ? 'disabled' : ''}>
+        <button class="vd-drop" type="button" data-sc-upload>
           <span class="vd-drop__ic" aria-hidden="true">&uarr;</span>
-          <span class="vd-drop__t">${state === 'scanning' ? 'Reading the label…' : 'Upload a label image'}</span>
-          <span class="vd-drop__n">${state === 'scanning' ? 'OCR runs on your machine — slow by design, nothing uploaded' : 'or drop / paste an image here · OCR runs locally, slow by design, nothing uploaded'}</span>
+          <span class="vd-drop__t">Upload a label image</span>
+          <span class="vd-drop__n">or drop / paste an image here · OCR runs locally, slow by design, nothing uploaded</span>
         </button>
       </div>
-      <div class="vd-scan__foot"><span>Default is image upload — OCR pre-fills the panel you confirm next.</span></div>`;
+      <div class="vd-scan__foot"><span>Default is image upload — OCR pre-fills the panel you confirm next.</span></div>`);
   return `
     <section class="vd-step vd-step--scan">
       <div class="vd-step__head">
@@ -432,6 +488,7 @@ export function mount(container: HTMLElement): MountHandle {
   let result: ScanResult | null = null;
   let fileName: string | null = null;
   let imageDataUrl: string | null = null;
+  let scanError: string | null = null;
   const dismissed = new Set<string>();
 
   const render = (): void => {
@@ -443,30 +500,74 @@ export function mount(container: HTMLElement): MountHandle {
       steps = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
     }
     else {
-      steps = renderScan(state, fileName, imageDataUrl);
+      steps = (scanError !== null ? renderScanError(scanError) : '') + renderScan(state, fileName, imageDataUrl);
     }
     container.innerHTML = `<div class="vd">${steps}</div>`;
   };
 
+  // Last-wins scan sequencing: the newest image owns the view. Every scan takes an id;
+  // a superseded scan's late FileReader / OCR callbacks check the id and no-op, so a stale
+  // read can never clobber the current one. This is what makes an upload + a paste fired
+  // together safe: bumping the id + aborting the old reader means only the newest read
+  // reaches Confirm, and state/ocr's shared Tesseract load stops the two from double-
+  // injecting the engine and wedging the worker (the old "Reading the label…" forever hang).
+  let scanSeq = 0;
+  let activeReader: FileReader | null = null;
+
+  /** Return the Scan step to idle after a failed / unreadable scan — current scan only. */
+  const failScan = (seq: number, e: unknown): void => {
+    if (seq !== scanSeq) {
+      return; // a superseded scan's failure/abort is irrelevant — the newest scan owns the view
+    }
+    console.warn('[views/scanner] scan failed:', e);
+    scanError = scanErrorMessage(e);
+    state = 'idle';
+    fileName = null;
+    imageDataUrl = null;
+    render();
+  };
+
   const handleImageFile = (file: File): void => {
+    // A new image supersedes any in-flight scan (last-wins). Bump the sequence FIRST so
+    // the previous scan's pending callbacks fall stale, then abort its reader to stop the
+    // old read promptly.
+    const seq = ++scanSeq;
+    if (activeReader !== null) {
+      try {
+        activeReader.abort();
+      }
+      catch {
+        // abort is best-effort — a finished reader throws nothing that matters here
+      }
+    }
     fileName = file.name;
     state = 'scanning';
+    imageDataUrl = null;
+    scanError = null;
     render();
     const reader = new FileReader();
+    activeReader = reader;
     reader.addEventListener('load', () => {
+      if (seq !== scanSeq) {
+        return; // superseded before this read finished
+      }
       const dataUrl = typeof reader.result === 'string' ? reader.result : '';
       imageDataUrl = dataUrl === '' ? null : dataUrl;
       ocrToLabel(dataUrl).then((out) => {
+        if (seq !== scanSeq) {
+          return; // superseded during OCR — drop the stale result
+        }
         label = out.label;
         dismissed.clear();
         state = 'confirming';
         render();
-      }).catch((e: unknown) => {
-        console.warn('[views/scanner] ocr failed:', e);
-        state = 'idle';
-        render();
-      });
+      }).catch((e: unknown) => failScan(seq, e));
     });
+    // A FileReader error/abort previously had no handler, so an unreadable file left the
+    // Scan step stuck on "Reading the label…" forever. Route both to the guarded failScan
+    // (a superseded reader's abort is dropped by the seq check, so it never resets state).
+    reader.addEventListener('error', () => failScan(seq, reader.error));
+    reader.addEventListener('abort', () => failScan(seq, new Error('file read aborted')));
     reader.readAsDataURL(file);
   };
 
@@ -618,17 +719,57 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
+  // Live progress for the Scan step: the OCR pipeline dispatches window 'lcscan:progress' with
+  // { stage, message, determinate, fraction }. Update the staged indicator in place — no re-render
+  // (progress ticks fire many times/sec during recognition). Ignored unless we're scanning.
+  const onProgress = (ev: Event): void => {
+    if (state !== 'scanning') {
+      return;
+    }
+    const root = container.querySelector<HTMLElement>('[data-prog]');
+    if (root === null) {
+      return;
+    }
+    const detail = (ev as CustomEvent<{ stage?: number; message?: string; determinate?: boolean; fraction?: number }>).detail;
+    const stage = typeof detail.stage === 'number' ? detail.stage : 0;
+    const determinate = detail.determinate === true;
+    const pct = Math.max(0, Math.min(100, Math.round((detail.fraction ?? 0) * 100)));
+    root.classList.toggle('is-indet', !determinate);
+    for (const el of root.querySelectorAll<HTMLElement>('[data-step]')) {
+      const i = Number(el.dataset['step']);
+      el.classList.toggle('is-active', i === stage);
+      el.classList.toggle('is-done', i < stage);
+      el.textContent = (i < stage ? '✓ ' : '') + (SCAN_STEP_LABELS[i] ?? '');
+    }
+    const msgEl = root.querySelector('[data-prog-msg]');
+    if (msgEl !== null) {
+      msgEl.textContent = detail.message ?? '';
+    }
+    const pctEl = root.querySelector('[data-prog-pct]');
+    if (pctEl !== null) {
+      pctEl.textContent = determinate ? `${pct}%` : '';
+    }
+    if (determinate) {
+      const fill = root.querySelector<HTMLElement>('[data-prog-fill]');
+      if (fill !== null) {
+        fill.style.width = `${pct}%`;
+      }
+    }
+  };
+
   render();
   container.addEventListener('click', clickHandler);
   container.addEventListener('dragover', dragHandler);
   container.addEventListener('drop', dropHandler);
   document.addEventListener('paste', pasteHandler);
+  window.addEventListener('lcscan:progress', onProgress);
   const unsub = on('scanner:scan-cleared', () => {
     state = 'idle';
     label = null;
     result = null;
     fileName = null;
     imageDataUrl = null;
+    scanError = null;
     render();
   });
 
@@ -640,6 +781,7 @@ export function mount(container: HTMLElement): MountHandle {
       container.removeEventListener('dragover', dragHandler);
       container.removeEventListener('drop', dropHandler);
       document.removeEventListener('paste', pasteHandler);
+      window.removeEventListener('lcscan:progress', onProgress);
       container.innerHTML = '';
     },
   };

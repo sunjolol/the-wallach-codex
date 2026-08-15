@@ -22,10 +22,10 @@ user-side; the agent invokes everything through bash.
 | `render_probe.js` | Headless Coverage render check — drives the surface, asserts visible state, exits 0 / non-zero. |
 | `render_probe_seeded.js` | Coverage with a seeded regimen. |
 | `render_probe_scan.js`, `render_probe_scanner.js` | Scanner verdict path. |
+| `render_probe_scanner_concurrency.js` | Scanner re-entrancy + Tesseract load idempotency — the "Reading the label…" hang regression gate. |
 | `render_probe_ocr.js` | Scanner OCR path (no WASM load). |
 | `render_probe_adopt.js` | Scanner → adopt → Coverage cascade. |
 | `render_probe_knowledge.js` | Knowledge drawer. |
-| `render_probe_journey.js` | Journey drawer. |
 | `render_probe_profile.js` | Profile panel. |
 | `style_diff.js` | Computed-style diff of a live surface vs a mockup — prints only the `getComputedStyle` deltas (the "measure, don't eyeball" visual gate). |
 

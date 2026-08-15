@@ -278,3 +278,38 @@
 /* -- uploaded-image previews (live shows the REAL scan, not a faux label) -- */
 .vd-scan__img { width: 56px; height: 56px; flex: 0 0 auto; object-fit: cover; border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-rule); box-shadow: var(--ds-elev-1); }
 .vd-cf__refimg { width: 100%; max-width: 216px; display: block; border-radius: var(--ds-radius-xs); border: 1px solid var(--ds-ink-faint); box-shadow: var(--ds-elev-1); }
+
+/* ── Scan-in-progress indicator (concept C · staged) ─────────────────────────────
+   Rendered by views/scanner.renderScanning() and updated live by mount's onProgress
+   from the OCR's real `lcscan:progress` events. Colour tracks the user's chosen accent. */
+.vd-drop--busy { cursor: default; }
+.vd-drop--busy:hover { border-color: var(--ds-rule); background: transparent; }
+.vd-prog { display: flex; flex-direction: column; gap: 9px; width: 100%; }
+.vd-prog__row { display: flex; justify-content: space-between; align-items: baseline; gap: 14px; }
+.vd-prog__msg { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-sm); font-weight: 700; letter-spacing: .03em; text-transform: uppercase; color: var(--ds-ink-medium); }
+.vd-prog__pct { font-family: var(--ds-font-mono); font-size: var(--ds-text-sm); font-weight: 700; color: var(--ds-accent); font-variant-numeric: tabular-nums; }
+.vd-prog__track { position: relative; height: 9px; border-radius: 999px; background: var(--ds-paper-deep); overflow: hidden; box-shadow: inset 0 1px 2px rgba(0, 0, 0, .09); }
+.vd-prog__fill { height: 100%; width: 0; border-radius: 999px; background: linear-gradient(90deg, var(--ds-accent-soft), var(--ds-accent)); transition: width .28s cubic-bezier(.4, 0, .2, 1); position: relative; overflow: hidden; }
+.vd-prog__fill::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent); transform: translateX(-100%); animation: vd-shimmer 1.15s linear infinite; }
+@keyframes vd-shimmer { to { transform: translateX(100%); } }
+.vd-prog__note { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .03em; color: var(--ds-ink-faint); }
+.vd-prog.is-indet .vd-prog__pct { visibility: hidden; }
+.vd-prog.is-indet .vd-prog__fill { width: 34%; animation: vd-indet 1.35s ease-in-out infinite; }
+.vd-prog.is-indet .vd-prog__fill::after { animation: none; }
+@keyframes vd-indet { 0% { transform: translateX(-110%); } 100% { transform: translateX(320%); } }
+.vd-steps { display: flex; gap: 8px; flex-wrap: wrap; }
+.vd-steps__i { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); font-weight: 700; letter-spacing: .05em; text-transform: uppercase; padding: 6px 10px; border-radius: 999px; border: 1px solid var(--ds-rule); color: var(--ds-ink-faint); background: var(--ds-paper-deep); display: inline-flex; align-items: center; gap: 6px; }
+.vd-steps__i.is-active { color: var(--ds-accent); border-color: var(--ds-accent-soft); background: var(--ds-accent-wash); }
+.vd-steps__i.is-done { color: var(--ds-status-ok); border-color: color-mix(in srgb, var(--ds-status-ok) 40%, transparent); }
+@media (prefers-reduced-motion: reduce) {
+  .vd-prog__fill::after { animation: none; }
+  .vd-prog.is-indet .vd-prog__fill { animation: none; width: 100%; }
+}
+
+/* ── Scan error card (honest fail-loud, replaces an infinite spinner) ── */
+.vd-error { display: flex; align-items: flex-start; gap: var(--ds-space-4); padding: var(--ds-space-4) var(--ds-space-5); margin-bottom: var(--ds-space-4); border: 1px solid color-mix(in srgb, var(--ds-status-err) 45%, var(--ds-rule)); border-radius: var(--ds-radius-md); background: color-mix(in srgb, var(--ds-status-err) 8%, var(--ds-paper-light)); }
+.vd-error__ic { flex: 0 0 auto; width: 24px; height: 24px; border-radius: 999px; display: grid; place-items: center; font-family: var(--ds-font-mono); font-weight: 700; color: var(--ds-paper-light); background: var(--ds-status-err); }
+.vd-error__body { flex: 1 1 auto; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+.vd-error__t { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-sm); font-weight: 700; letter-spacing: .02em; color: var(--ds-ink); }
+.vd-error__m { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); line-height: 1.6; color: var(--ds-ink-medium); }
+.vd-error__retry { flex: 0 0 auto; align-self: center; }

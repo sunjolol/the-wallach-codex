@@ -68,7 +68,8 @@ interface OcrWindow extends Window {
   lcScanImage?: (dataUrl: string) => Promise<ScanResult | null>;
 }
 
-type ProgressFn = (message: string, progress: number) => void;
+interface ProgressUpdate { stage: 0 | 1 | 2; message: string; determinate: boolean; fraction: number }
+type ProgressFn = (update: ProgressUpdate) => void;
 
 interface ParsedOcr {
   containerHint: string;
@@ -99,19 +100,35 @@ function loadDict(): OcrDicts {
 
 // ─── Tesseract loader + image preprocessing + OCR run ──────────────────────
 
-/** Lazily inject the vendored Tesseract script (zero external runtime fetch). */
+/**
+ * In-flight Tesseract-load promise, shared across concurrent callers. Without it, two
+ * scans launched together (an upload and a paste) both see `window.Tesseract === undefined`
+ * and each append a <script> tag; re-running the UMD clobbers the first worker\'s module
+ * state mid-init, so its recognize() never settles and the Scan step hangs on "Reading the
+ * label…" forever. One shared promise means exactly one injection. Reset on error so a
+ * later scan can retry.
+ */
+let tesseractLoad: Promise<void> | null = null;
+
+/** Lazily inject the vendored Tesseract script once (zero external runtime fetch). */
 async function loadTesseract(): Promise<void> {
   const w = window as OcrWindow;
   if (w.Tesseract !== undefined) {
     return;
   }
-  await new Promise<void>((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = './assets/vendor/tesseract/tesseract.min.js';
-    script.onload = () => resolve();
-    script.onerror = () => reject(new Error('Could not load local OCR engine. Run `node tools/vendor-tesseract.js` once to vendor Tesseract files into dashboard/assets/vendor/tesseract/.'));
-    document.head.appendChild(script);
-  });
+  if (tesseractLoad === null) {
+    tesseractLoad = new Promise<void>((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = './assets/vendor/tesseract/tesseract.min.js';
+      script.onload = () => resolve();
+      script.onerror = () => {
+        tesseractLoad = null;
+        reject(new Error('Could not load local OCR engine. Run `node tools/vendor-tesseract.js` once to vendor Tesseract files into dashboard/assets/vendor/tesseract/.'));
+      };
+      document.head.appendChild(script);
+    });
+  }
+  return tesseractLoad;
 }
 
 /** Upscale + grayscale + gentle contrast — makes Tesseract dramatically sharper. */
@@ -154,9 +171,55 @@ async function preprocessImage(dataUrl: string): Promise<string> {
   });
 }
 
+/** Where the worker fetches the language model (kept in sync with createWorker's langPath below). */
+const TRAINEDDATA_URL = './assets/vendor/tesseract/lang-data/eng.traineddata.gz';
+const OCR_TIMEOUT_MS = 60_000;
+
+let modelReachable = false;
+
+/**
+ * Fast reachability check for the OCR language model. On a plain file:// open (no
+ * --allow-file-access-from-files) and when genuinely offline, the browser blocks fetch() of the
+ * local model — the Tesseract worker's own fetch then fails as an UNCAUGHT rejection that never
+ * settles createWorker, so the Scan step would hang on "Loading the language model…" forever.
+ * Probing it here (we abort before streaming the 13MB body) turns that silent hang into a clear,
+ * catchable error BEFORE we load ~8MB of WASM. Served over http/https (the online build) this
+ * resolves normally; opened via the launcher's file-access flag it also resolves. Cached after the
+ * first success, so it costs nothing on later scans.
+ */
+async function assertModelReachable(): Promise<void> {
+  if (modelReachable) {
+    return;
+  }
+  const ctrl = new AbortController();
+  try {
+    await fetch(TRAINEDDATA_URL, { signal: ctrl.signal });
+    ctrl.abort(); // headers are enough — don't stream the body
+    modelReachable = true;
+  }
+  catch {
+    throw new Error('OCR_MODEL_UNREACHABLE');
+  }
+}
+
+/** Reject if `work` hasn't settled within `ms` — a backstop so no OCR stall hangs the Scan step forever. */
+// eslint-disable-next-line ts/promise-function-async -- a timeout race is a promise combinator, not an async body
+function withTimeout<T>(work: Promise<T>, ms: number, code: string): Promise<T> {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const guard = new Promise<never>((_resolve, reject) => {
+    timer = setTimeout(() => reject(new Error(code)), ms);
+  });
+  return Promise.race([work, guard]).finally(() => clearTimeout(timer));
+}
+
 /** Run vendored Tesseract over a (preprocessed) image; PSM 6 single text block. */
 async function runOcr(imageData: string, progress: ProgressFn): Promise<string> {
-  progress('Preprocessing image...', 0);
+  progress({ stage: 0, message: 'Preparing the image…', determinate: false, fraction: 0 });
+  const onFile = window.location.protocol === 'file:';
+  if (!onFile) {
+    // http/https: the worker fetches the model, so probe it — a genuine miss fails fast + clear.
+    await assertModelReachable();
+  }
   let processed: string;
   try {
     processed = await preprocessImage(imageData);
@@ -164,9 +227,9 @@ async function runOcr(imageData: string, progress: ProgressFn): Promise<string> 
   catch {
     processed = imageData;
   }
-  progress('Warming up high-accuracy OCR...', 0.05);
+  progress({ stage: 1, message: 'Warming up the OCR engine…', determinate: false, fraction: 0 });
   await loadTesseract();
-  progress('Starting recognition...', 0.1);
+  progress({ stage: 1, message: 'Starting the OCR engine…', determinate: false, fraction: 0 });
   const tesseract = (window as OcrWindow).Tesseract;
   if (tesseract === undefined) {
     throw new Error('OCR engine did not initialize');
@@ -176,16 +239,18 @@ async function runOcr(imageData: string, progress: ProgressFn): Promise<string> 
     langPath: './assets/vendor/tesseract/lang-data',
     logger: (m) => {
       if (m.status === 'recognizing text') {
-        progress('Reading text carefully...', 0.1 + (m.progress ?? 0) * 0.9);
+        progress({ stage: 2, message: 'Reading the label…', determinate: true, fraction: m.progress ?? 0 });
       }
       else if (m.status === 'loading language traineddata') {
-        progress('Loading language model from local vendor...', m.progress ?? 0);
+        progress({ stage: 1, message: 'Loading the language model…', determinate: false, fraction: 0 });
       }
       else if (typeof m.status === 'string' && m.status.length < 40) {
-        progress(m.status, m.progress ?? 0);
+        progress({ stage: 1, message: `Preparing the engine — ${m.status}…`, determinate: false, fraction: 0 });
       }
     },
-    workerPath: './assets/vendor/tesseract/worker.min.js',
+    // file:// blocks fetch() of the local model, so use the self-contained offline worker
+    // (bundled model, no fetch). http/https fetches normally with the lean worker.
+    workerPath: onFile ? './assets/vendor/tesseract/worker-offline.js' : './assets/vendor/tesseract/worker.min.js',
   });
   try {
     await worker.setParameters({ preserve_interword_spaces: '1', tessedit_pageseg_mode: '6' });
@@ -573,14 +638,14 @@ export async function ocrToLabel(dataUrl: string): Promise<{ label: ScanLabel; r
   if (dataUrl === '') {
     throw new Error('ocrToLabel: no dataUrl provided');
   }
-  const rawText = await runOcr(dataUrl, (message, progress) => {
+  const rawText = await withTimeout(runOcr(dataUrl, (update) => {
     try {
-      window.dispatchEvent(new CustomEvent('lcscan:progress', { detail: { message, progress } }));
+      window.dispatchEvent(new CustomEvent('lcscan:progress', { detail: update }));
     }
     catch {
       // progress dispatch is best-effort — never block the scan on it.
     }
-  });
+  }), OCR_TIMEOUT_MS, 'OCR_TIMEOUT');
   return { label: parseLabel(rawText), rawText };
 }
 

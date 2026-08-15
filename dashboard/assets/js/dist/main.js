@@ -18246,18 +18246,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     return cachedDict;
   }
+  var tesseractLoad = null;
   async function loadTesseract() {
     const w = window;
     if (w.Tesseract !== void 0) {
       return;
     }
-    await new Promise((resolve, reject) => {
-      const script = document.createElement("script");
-      script.src = "./assets/vendor/tesseract/tesseract.min.js";
-      script.onload = () => resolve();
-      script.onerror = () => reject(new Error("Could not load local OCR engine. Run `node tools/vendor-tesseract.js` once to vendor Tesseract files into dashboard/assets/vendor/tesseract/."));
-      document.head.appendChild(script);
-    });
+    if (tesseractLoad === null) {
+      tesseractLoad = new Promise((resolve, reject) => {
+        const script = document.createElement("script");
+        script.src = "./assets/vendor/tesseract/tesseract.min.js";
+        script.onload = () => resolve();
+        script.onerror = () => {
+          tesseractLoad = null;
+          reject(new Error("Could not load local OCR engine. Run `node tools/vendor-tesseract.js` once to vendor Tesseract files into dashboard/assets/vendor/tesseract/."));
+        };
+        document.head.appendChild(script);
+      });
+    }
+    return tesseractLoad;
   }
   async function preprocessImage(dataUrl) {
     return new Promise((resolve, reject) => {
@@ -18296,17 +18303,44 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       img.src = dataUrl;
     });
   }
+  var TRAINEDDATA_URL = "./assets/vendor/tesseract/lang-data/eng.traineddata.gz";
+  var OCR_TIMEOUT_MS = 6e4;
+  var modelReachable = false;
+  async function assertModelReachable() {
+    if (modelReachable) {
+      return;
+    }
+    const ctrl = new AbortController();
+    try {
+      await fetch(TRAINEDDATA_URL, { signal: ctrl.signal });
+      ctrl.abort();
+      modelReachable = true;
+    } catch {
+      throw new Error("OCR_MODEL_UNREACHABLE");
+    }
+  }
+  function withTimeout(work, ms, code) {
+    let timer;
+    const guard = new Promise((_resolve, reject) => {
+      timer = setTimeout(() => reject(new Error(code)), ms);
+    });
+    return Promise.race([work, guard]).finally(() => clearTimeout(timer));
+  }
   async function runOcr(imageData, progress) {
-    progress("Preprocessing image...", 0);
+    progress({ stage: 0, message: "Preparing the image\u2026", determinate: false, fraction: 0 });
+    const onFile = window.location.protocol === "file:";
+    if (!onFile) {
+      await assertModelReachable();
+    }
     let processed;
     try {
       processed = await preprocessImage(imageData);
     } catch {
       processed = imageData;
     }
-    progress("Warming up high-accuracy OCR...", 0.05);
+    progress({ stage: 1, message: "Warming up the OCR engine\u2026", determinate: false, fraction: 0 });
     await loadTesseract();
-    progress("Starting recognition...", 0.1);
+    progress({ stage: 1, message: "Starting the OCR engine\u2026", determinate: false, fraction: 0 });
     const tesseract = window.Tesseract;
     if (tesseract === void 0) {
       throw new Error("OCR engine did not initialize");
@@ -18316,14 +18350,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       langPath: "./assets/vendor/tesseract/lang-data",
       logger: (m) => {
         if (m.status === "recognizing text") {
-          progress("Reading text carefully...", 0.1 + (m.progress ?? 0) * 0.9);
+          progress({ stage: 2, message: "Reading the label\u2026", determinate: true, fraction: m.progress ?? 0 });
         } else if (m.status === "loading language traineddata") {
-          progress("Loading language model from local vendor...", m.progress ?? 0);
+          progress({ stage: 1, message: "Loading the language model\u2026", determinate: false, fraction: 0 });
         } else if (typeof m.status === "string" && m.status.length < 40) {
-          progress(m.status, m.progress ?? 0);
+          progress({ stage: 1, message: `Preparing the engine \u2014 ${m.status}\u2026`, determinate: false, fraction: 0 });
         }
       },
-      workerPath: "./assets/vendor/tesseract/worker.min.js"
+      // file:// blocks fetch() of the local model, so use the self-contained offline worker
+      // (bundled model, no fetch). http/https fetches normally with the lean worker.
+      workerPath: onFile ? "./assets/vendor/tesseract/worker-offline.js" : "./assets/vendor/tesseract/worker.min.js"
     });
     try {
       await worker.setParameters({ preserve_interword_spaces: "1", tessedit_pageseg_mode: "6" });
@@ -18622,12 +18658,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     if (dataUrl === "") {
       throw new Error("ocrToLabel: no dataUrl provided");
     }
-    const rawText = await runOcr(dataUrl, (message, progress) => {
+    const rawText = await withTimeout(runOcr(dataUrl, (update) => {
       try {
-        window.dispatchEvent(new CustomEvent("lcscan:progress", { detail: { message, progress } }));
+        window.dispatchEvent(new CustomEvent("lcscan:progress", { detail: update }));
       } catch {
       }
-    });
+    }), OCR_TIMEOUT_MS, "OCR_TIMEOUT");
     return { label: parseLabel(rawText), rawText };
   }
   async function scanImage(dataUrl) {
@@ -180434,7 +180470,31 @@ Coverage / Regimen / Search.
 Deferred: a permanent tools/render_probe_profile.js (verified via live-probe this round); the full
 retirement of the in-app Creator's Log (Luneth's open call \u2014 needs OK to drop the gate + embed step);
 custom per-category avatar art; pre-existing sort-import lint debt in main.ts/log.ts. NEXT task: the
-scanner "reading the label\u2026 forever" hang when a pasted label and an uploaded image are combined.` }];
+scanner "reading the label\u2026 forever" hang when a pasted label and an uploaded image are combined.` }, { id: "lg_mstgrcl9_p4kuhf", ts: "2026-08-14T16:33:04.509597-05:00", surface: "scanner", kind: "round-close", summary: "Fixed the scanner hanging on \u201CReading the label\u2026\u201D forever when a label image is uploaded and pasted at the same time. The newest image now wins; the older read is dropped. Root cause: two OCR runs double-loaded the engine and wedged the worker so it never returned.", detail: "When you uploaded a label image and pasted one at the same time, the scanner froze on \u201CReading the label\u2026\u201D forever. Two scans started at once, both loaded the OCR engine, and re-loading it mid-run jammed the worker so it never returned an answer. Now a newer image simply replaces an older one that is still being read, and any read that fails cleanly resets instead of hanging.\n\nROOT CAUSE (reproduced on the real file:// app with puppeteer):\n- No re-entrancy guard: an upload + a paste fired together each ran a full OCR pipeline (repro: workersCreated=2).\n- loadTesseract() early-returned only if window.Tesseract was already defined; on a fresh scanner both concurrent scans saw it undefined and each appended <script src=\u2026/tesseract.min.js> (repro: 2 script tags). Re-running the UMD clobbers the first worker\u2019s module state mid-init, so worker.recognize() never settles \u2192 state stays 'scanning' \u2192 \u201CReading the label\u2026\u201D forever, PAGE_ERRORS=0 (a silent never-settle, not a thrown error).\n- FileReader had a 'load' handler only; an 'error'/'abort' left the same permanent 'scanning'.\n\nFIX:\n- state/ocr.ts: loadTesseract() now caches a module-level in-flight Promise (tesseractLoad); concurrent callers share ONE injection; reset to null on script error so a later scan can retry.\n- views/scanner.ts: LAST-WINS. A monotonic scanSeq is bumped on every handleImageFile(); the previous reader is aborted; the load handler and the ocrToLabel().then both no-op when seq !== scanSeq, so a superseded scan\u2019s late result can never clobber the current view. failScan(seq, e) is seq-guarded and also handles the reader 'error'/'abort'. imageDataUrl reset at scan start.\n\nBEHAVIOUR (Luneth\u2019s call): LAST-WINS \u2014 the newest image supersedes any in-flight scan (chosen over first-wins / ignore-the-second).\n\nVERIFICATION:\n- Board 91/91 (0 new reds). tsc --noEmit + eslint (touched files) clean. Build OK, dist/main.js 11446.6 KB.\n- NEW permanent gate tools/render_probe_scanner_concurrency.js \u2014 PASS: one OCR worker from two tight-together inputs, reaches Confirm, winner=paste.png (last input wins), exactly one tesseract.min.js injection, 0 page errors. Real gate: the same measurements read 2 pre-fix.\n- Existing render_probe_scanner / render_probe_scan / render_probe_ocr / render_probe_adopt all PASS. Screenshots (idle + confirm-after-upload+paste) render clean \u2014 no visual regression (the fix is behavioural).\n- Housekeeping: removed the stale render_probe_journey.js row from tools/README.md (feature deleted 2026-08-13) and added the new probe\u2019s row.\n\nFILES: dashboard/assets/js/src/state/ocr.ts, dashboard/assets/js/src/views/scanner.ts, tools/render_probe_scanner_concurrency.js (new), tools/README.md.\n\nDEFERRED: git commit/push held for Luneth\u2019s explicit go-ahead." }, { id: "lg_mstmb8oa_o2xihm", ts: "2026-08-14T19:08:30.634368-05:00", surface: "scanner", kind: "round-close", summary: "The scanner now reads labels when you just open dashboard.html \u2014 no launcher, flag, or server. A live progress bar exposed the real bug (file:// blocks fetching the OCR model); fixed by bundling the model into a self-contained worker. Plus fail-loud error cards.", detail: `After the last-wins fix, the scanner STILL hung the first time you scanned \u2014 and you were right that a progress bar would expose why. It did: the bar froze at \u201CLoad engine\u201D, which pointed straight at the cause. When the app is opened as a plain file (file://), the browser refuses to let the page fetch() its own local language-model file, so the OCR engine never got its model and hung forever. The fix bundles that model directly into the OCR worker, so nothing needs fetching \u2014 OCR now works just by opening dashboard.html. Over http (your future online version) it uses the normal lighter path with no bundled bloat. It also fails loudly now: a clear error card with a Try-again button instead of an endless spinner.
+
+ROOT CAUSE (reproduced on the real file:// app): the vendored Tesseract worker loads eng.traineddata.gz via (env==='webworker'?fetch:...)(_) \u2014 the global fetch. On file:// the browser blocks fetch() of local files (net::ERR_FAILED, 'Failed to fetch'), an uncaught rejection that never settles createWorker, so the Scan step hung on 'Loading the language model'. Everything else loads fine because it uses importScripts (allowed on file://). Confirmed the fix direction two ways: --allow-file-access-from-files made it work (0.5s), and http worked natively \u2014 both prove fetch was the blocker.
+
+THE FIX \u2014 bundle the model, no fetch:
+- dashboard/assets/vendor/tesseract/worker-offline.js: one self-contained worker = [model base64] + [a self.fetch patch that serves the bundled model to any *.traineddata request] + [the vendored worker.min.js]. Tesseract wraps the worker as new Blob(['importScripts("<abs url>")']); a blob worker CAN importScripts an absolute file:// script (that is why worker.min.js works) but a relative import resolves against the blob base \u2014 so everything lives in ONE file with no relative imports. Generated by tools/build.mjs (idempotent; regenerates from worker.min.js + eng.traineddata.gz so it can never drift). git-force-added (~16MB) because the tesseract dir is gitignored and GitHub downloads only include tracked files \u2014 the offline-download case needs it present.
+- state/ocr.ts: workerPath = onFile ? worker-offline.js : worker.min.js (window.location.protocol). The reachability preflight (assertModelReachable, a headers-only fetch) runs on http ONLY \u2014 on file:// the model is bundled, no fetch. A 60s withTimeout backstops any stall. Errors surface as typed codes (OCR_MODEL_UNREACHABLE / OCR_TIMEOUT).
+
+PROGRESS INDICATOR (concept C, screenshot-approved earlier):
+- state/ocr emits ProgressUpdate {stage 0|1|2, message, determinate, fraction} via lcscan:progress.
+- views/scanner.renderScanning() renders the staged pills (Prepare / Load engine / Read label) + bar + note; mount.onProgress updates them in place (no re-render). Setup phases are an indeterminate sweep; the read phase fills with Tesseract's real recognition %. Honest \u2014 no fake timings.
+
+FAIL-LOUD:
+- views/scanner: scanError state + renderScanError() card (Couldn't read the label + Try again), shown instead of an infinite spinner; cleared on a new scan. failScan maps the typed codes to plain guidance.
+
+VERIFICATION (real app, headless Chromium):
+- Raw file:// (NO flag / launcher / server): a rendered supplement label read into 3 mapped nutrient rows (Zinc / Vitamin C / Magnesium) in ~2s, 0 page errors \u2014 the exact double-click case.
+- http://localhost: reaches Confirm via worker.min.js:200 + eng.traineddata.gz:200 (the lean online path).
+- Board 91/91 (offline_no_runtime_network, vendor_assets_pinned, dead-rule + keyframe gates all green). tsc + eslint clean. render_probe_scanner/scan/ocr/adopt + the new render_probe_scanner_concurrency all PASS.
+
+HOUSEKEEPING: deleted the two obsolete launcher .bats (launch-/serve-wallach-codex.bat) and the dead-end shim/base64 prototype files; tools/build.mjs now builds worker-offline.js; tools/README updated.
+
+SEAL / \xA700.A: corpus_seal was NOT run. eden/ is untouched this session (clean git status), and eden/corpus/drafts holds 7 UNREVIEWED draft books that corpus_seal would promote into the canon \u2014 that needs per-claim review in a dedicated corpus session, never as a byproduct of closing a scanner chunk. Nothing pillar-level changed, so nothing needed sealing; the session is sealed by this commit + this append-only entry.
+
+DEFERRED: the scanner QOL / flow pass Luneth flagged (list to come next session).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -181735,6 +181795,47 @@ scanner "reading the label\u2026 forever" hang when a pasted label and an upload
     }
     return { head: "Out", sub: "Doesn\u2019t fit the framework" };
   }
+  var SCAN_STEP_LABELS = ["Prepare", "Load engine", "Read label"];
+  function renderScanning() {
+    return `<div class="vd-scan">
+        <button class="ds-btn-primary vd-newscan" type="button" disabled><b aria-hidden="true">+</b> New Scan</button>
+        <div class="vd-drop vd-drop--busy">
+          <div class="vd-prog is-indet" data-prog>
+            <div class="vd-steps">
+              <span class="vd-steps__i is-active" data-step="0">Prepare</span>
+              <span class="vd-steps__i" data-step="1">Load engine</span>
+              <span class="vd-steps__i" data-step="2">Read label</span>
+            </div>
+            <div class="vd-prog__track"><div class="vd-prog__fill" data-prog-fill></div></div>
+            <div class="vd-prog__row">
+              <span class="vd-prog__msg" data-prog-msg>Preparing the image\u2026</span>
+              <span class="vd-prog__pct" data-prog-pct></span>
+            </div>
+            <div class="vd-prog__note">OCR runs locally \u2014 slow by design, nothing uploaded</div>
+          </div>
+        </div>
+      </div>`;
+  }
+  function renderScanError(message) {
+    return `<div class="vd-error" role="alert">
+      <span class="vd-error__ic" aria-hidden="true">!</span>
+      <div class="vd-error__body">
+        <div class="vd-error__t">Couldn\u2019t read the label</div>
+        <div class="vd-error__m">${escHTML14(message)}</div>
+      </div>
+      <button class="ds-btn-primary vd-error__retry" type="button" data-sc-upload>Try again</button>
+    </div>`;
+  }
+  function scanErrorMessage(e) {
+    const code = e instanceof Error ? e.message : String(e);
+    if (code.includes("OCR_MODEL_UNREACHABLE")) {
+      return "Couldn\u2019t reach the OCR language model. Check your connection and scan again.";
+    }
+    if (code.includes("OCR_TIMEOUT")) {
+      return "The OCR engine took too long to load and timed out. Scan again.";
+    }
+    return "Something went wrong while reading that image. Try a clearer photo, or scan again.";
+  }
   function renderScan(state, fileName, dataUrl) {
     const done = state === "confirming" || state === "result";
     const badge = done ? "is-done" : "is-active";
@@ -181749,12 +181850,12 @@ scanner "reading the label\u2026 forever" hang when a pasted label and an upload
             <span class="vd-yours">Yours \xB7 user-scanned</span>
           </div>
         </div>
-      </div>` : `<div class="vd-scan">
+      </div>` : state === "scanning" ? renderScanning() : `<div class="vd-scan">
         <button class="ds-btn-primary vd-newscan" type="button" data-sc-upload><b aria-hidden="true">+</b> New Scan</button>
-        <button class="vd-drop" type="button" data-sc-upload ${state === "scanning" ? "disabled" : ""}>
+        <button class="vd-drop" type="button" data-sc-upload>
           <span class="vd-drop__ic" aria-hidden="true">&uarr;</span>
-          <span class="vd-drop__t">${state === "scanning" ? "Reading the label\u2026" : "Upload a label image"}</span>
-          <span class="vd-drop__n">${state === "scanning" ? "OCR runs on your machine \u2014 slow by design, nothing uploaded" : "or drop / paste an image here \xB7 OCR runs locally, slow by design, nothing uploaded"}</span>
+          <span class="vd-drop__t">Upload a label image</span>
+          <span class="vd-drop__n">or drop / paste an image here \xB7 OCR runs locally, slow by design, nothing uploaded</span>
         </button>
       </div>
       <div class="vd-scan__foot"><span>Default is image upload \u2014 OCR pre-fills the panel you confirm next.</span></div>`;
@@ -182046,6 +182147,7 @@ scanner "reading the label\u2026 forever" hang when a pasted label and an upload
     let result = null;
     let fileName = null;
     let imageDataUrl = null;
+    let scanError = null;
     const dismissed = /* @__PURE__ */ new Set();
     const render = () => {
       let steps = "";
@@ -182054,29 +182156,56 @@ scanner "reading the label\u2026 forever" hang when a pasted label and an upload
       } else if (state === "confirming" && label !== null) {
         steps = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
       } else {
-        steps = renderScan(state, fileName, imageDataUrl);
+        steps = (scanError !== null ? renderScanError(scanError) : "") + renderScan(state, fileName, imageDataUrl);
       }
       container.innerHTML = `<div class="vd">${steps}</div>`;
     };
+    let scanSeq = 0;
+    let activeReader = null;
+    const failScan = (seq, e) => {
+      if (seq !== scanSeq) {
+        return;
+      }
+      console.warn("[views/scanner] scan failed:", e);
+      scanError = scanErrorMessage(e);
+      state = "idle";
+      fileName = null;
+      imageDataUrl = null;
+      render();
+    };
     const handleImageFile = (file) => {
+      const seq = ++scanSeq;
+      if (activeReader !== null) {
+        try {
+          activeReader.abort();
+        } catch {
+        }
+      }
       fileName = file.name;
       state = "scanning";
+      imageDataUrl = null;
+      scanError = null;
       render();
       const reader = new FileReader();
+      activeReader = reader;
       reader.addEventListener("load", () => {
+        if (seq !== scanSeq) {
+          return;
+        }
         const dataUrl = typeof reader.result === "string" ? reader.result : "";
         imageDataUrl = dataUrl === "" ? null : dataUrl;
         ocrToLabel(dataUrl).then((out) => {
+          if (seq !== scanSeq) {
+            return;
+          }
           label = out.label;
           dismissed.clear();
           state = "confirming";
           render();
-        }).catch((e) => {
-          console.warn("[views/scanner] ocr failed:", e);
-          state = "idle";
-          render();
-        });
+        }).catch((e) => failScan(seq, e));
       });
+      reader.addEventListener("error", () => failScan(seq, reader.error));
+      reader.addEventListener("abort", () => failScan(seq, new Error("file read aborted")));
       reader.readAsDataURL(file);
     };
     const pickImage = () => {
@@ -182218,17 +182347,53 @@ scanner "reading the label\u2026 forever" hang when a pasted label and an upload
         }
       }
     };
+    const onProgress = (ev) => {
+      if (state !== "scanning") {
+        return;
+      }
+      const root = container.querySelector("[data-prog]");
+      if (root === null) {
+        return;
+      }
+      const detail = ev.detail;
+      const stage = typeof detail.stage === "number" ? detail.stage : 0;
+      const determinate = detail.determinate === true;
+      const pct = Math.max(0, Math.min(100, Math.round((detail.fraction ?? 0) * 100)));
+      root.classList.toggle("is-indet", !determinate);
+      for (const el of root.querySelectorAll("[data-step]")) {
+        const i = Number(el.dataset["step"]);
+        el.classList.toggle("is-active", i === stage);
+        el.classList.toggle("is-done", i < stage);
+        el.textContent = (i < stage ? "\u2713 " : "") + (SCAN_STEP_LABELS[i] ?? "");
+      }
+      const msgEl = root.querySelector("[data-prog-msg]");
+      if (msgEl !== null) {
+        msgEl.textContent = detail.message ?? "";
+      }
+      const pctEl = root.querySelector("[data-prog-pct]");
+      if (pctEl !== null) {
+        pctEl.textContent = determinate ? `${pct}%` : "";
+      }
+      if (determinate) {
+        const fill2 = root.querySelector("[data-prog-fill]");
+        if (fill2 !== null) {
+          fill2.style.width = `${pct}%`;
+        }
+      }
+    };
     render();
     container.addEventListener("click", clickHandler);
     container.addEventListener("dragover", dragHandler);
     container.addEventListener("drop", dropHandler);
     document.addEventListener("paste", pasteHandler);
+    window.addEventListener("lcscan:progress", onProgress);
     const unsub = on("scanner:scan-cleared", () => {
       state = "idle";
       label = null;
       result = null;
       fileName = null;
       imageDataUrl = null;
+      scanError = null;
       render();
     });
     return {
@@ -182239,6 +182404,7 @@ scanner "reading the label\u2026 forever" hang when a pasted label and an upload
         container.removeEventListener("dragover", dragHandler);
         container.removeEventListener("drop", dropHandler);
         document.removeEventListener("paste", pasteHandler);
+        window.removeEventListener("lcscan:progress", onProgress);
         container.innerHTML = "";
       }
     };
