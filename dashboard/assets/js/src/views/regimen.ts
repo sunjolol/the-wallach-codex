@@ -54,7 +54,11 @@ import {
   loadEffectiveRegimen,
   loadRgUserGoals,
   loadSlots,
+  MAX_ITEM_TRASH,
+  MAX_SLOT_TRASH,
   renameSlot,
+  restoreDeletedItem,
+  restoreDeletedSlot,
   saveRgOverride,
   saveRgRemoved,
   saveRgUserGoals,
@@ -110,6 +114,35 @@ function relEdited(iso: string): string {
   }
   if (days === 1) {
     return '1 day ago';
+  }
+  if (days < 7) {
+    return `${days} days ago`;
+  }
+  const weeks = Math.round(days / 7);
+  return weeks === 1 ? '1 week ago' : `${weeks} weeks ago`;
+}
+
+/** Relative time from a full ISO timestamp — "just now" / "Nm ago" / "Nh ago" / "yesterday" / "N days ago". */
+function relAge(iso: string): string {
+  const then = Date.parse(iso);
+  if (Number.isNaN(then)) {
+    return iso;
+  }
+  const secs = Math.max(0, Math.round((Date.now() - then) / 1000));
+  if (secs < 45) {
+    return 'just now';
+  }
+  const mins = Math.round(secs / 60);
+  if (mins < 60) {
+    return `${mins}m ago`;
+  }
+  const hrs = Math.round(mins / 60);
+  if (hrs < 24) {
+    return `${hrs}h ago`;
+  }
+  const days = Math.round(hrs / 24);
+  if (days === 1) {
+    return 'yesterday';
   }
   if (days < 7) {
     return `${days} days ago`;
@@ -652,6 +685,7 @@ function renderRail(): string {
   const active = doc.slots.find(s => s.id === doc.activeSlot);
   const items = active?.items.length ?? 0;
   const ordinal = String(Math.max(0, doc.slots.findIndex(s => s.id === doc.activeSlot)) + 1).padStart(2, '0');
+  const binCount = (doc.slotTrash?.length ?? 0) + doc.trash.length;
   return `
     <aside class="ck-rail" data-rise="5">
       <section class="rail-panel">
@@ -671,6 +705,9 @@ function renderRail(): string {
         </div>
       </section>
       <div class="rr-scan">Not in the catalog? <button class="rr-scan__link" type="button" data-scan-new>Scan your own item &rarr;</button></div>
+      ${binCount > 0
+        ? `<button class="rc-trigger" type="button" data-rc-open aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m-9 0v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/></svg> Restore Deleted Slots &amp; Items</button>`
+        : ''}
     </aside>`;
 }
 
@@ -715,6 +752,7 @@ function buildSlotDeleteConfirm(id: string, itemCount: number): HTMLElement {
 export function mount(container: HTMLElement): MountHandle {
   let animated = false;
   let undoTimer: number | null = null;
+  let recycleOpen = false;
 
   /** Cap the active-stack panel to the console's height (measured, tracks any width). */
   const syncStackHeight = (): void => {
@@ -753,6 +791,153 @@ export function mount(container: HTMLElement): MountHandle {
     requestAnimationFrame(step);
   };
 
+  /** Build the recycle-bin popup (style D) from the live save + item bins, then show it. */
+  const populateRecycle = (): void => {
+    const host = container.querySelector<HTMLElement>('[data-rc-host]');
+    if (host === null) {
+      return;
+    }
+    const doc = loadSlots();
+    const saves = doc.slotTrash ?? [];
+    const removed = doc.trash;
+    const total = essentialCount();
+
+    const backdrop = document.createElement('div');
+    backdrop.className = 'rc-backdrop';
+    backdrop.dataset['rcBackdrop'] = '1';
+    const pop = document.createElement('div');
+    pop.className = 'rc-pop';
+    pop.setAttribute('role', 'dialog');
+    pop.setAttribute('aria-modal', 'true');
+    pop.setAttribute('aria-label', 'Restore deleted saves and items');
+    pop.innerHTML = `
+      <div class="rc-pop__head">
+        <span class="rc-pop__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m-9 0v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/></svg></span>
+        <span class="rc-pop__title">Restore deleted</span>
+        <button class="rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div class="rc-pop__sub">The ${MAX_SLOT_TRASH} most recent deleted save slots and ${MAX_ITEM_TRASH} most recent items are stored here.</div>
+      <div class="rc-pop__body" data-rc-body></div>`;
+    const body = pop.querySelector<HTMLElement>('[data-rc-body]');
+    if (body === null) {
+      return;
+    }
+
+    const savesHead = document.createElement('div');
+    savesHead.className = 'rc-sec';
+    savesHead.innerHTML = `Deleted saves <span class="rc-sec__cap">${saves.length} / ${MAX_SLOT_TRASH}</span>`;
+    body.appendChild(savesHead);
+    if (saves.length === 0) {
+      const e = document.createElement('div');
+      e.className = 'rc-empty';
+      e.textContent = 'No deleted saves.';
+      body.appendChild(e);
+    }
+    else {
+      const gal = document.createElement('div');
+      gal.className = 'rc-gal';
+      for (const entry of saves) {
+        const covered = coveredCountForItems(entry.slot.items, entry.slot.overrides);
+        const hue = isSlotColour(entry.slot.colour ?? '') ? String(entry.slot.colour) : DEFAULT_SLOT_COLOUR;
+        const n = entry.slot.items.length;
+        const tile = document.createElement('div');
+        tile.className = 'rc-gtile';
+        tile.style.setProperty('--sc', hue);
+        const top = document.createElement('div');
+        top.className = 'rc-gtile__top';
+        const nm = document.createElement('div');
+        nm.className = 'rc-gtile__name';
+        nm.textContent = entry.slot.name;
+        nm.title = entry.slot.name;
+        const cov = document.createElement('div');
+        cov.className = 'rc-gtile__cov';
+        cov.innerHTML = `${covered}<small>/${total}</small>`;
+        const sub = document.createElement('div');
+        sub.className = 'rc-gtile__sub';
+        sub.textContent = `${n} ${n === 1 ? 'item' : 'items'}`;
+        top.append(nm, cov, sub);
+        const tray = document.createElement('div');
+        tray.className = 'rc-gtile__tray';
+        const when = document.createElement('span');
+        when.className = 'rc-gtile__when';
+        when.textContent = relAge(entry.deletedAt);
+        const btn = document.createElement('button');
+        btn.className = 'rc-btn-restore';
+        btn.type = 'button';
+        btn.dataset['rcRestoreSlot'] = entry.deletedAt;
+        btn.textContent = 'Restore';
+        tray.append(when, btn);
+        tile.append(top, tray);
+        gal.appendChild(tile);
+      }
+      body.appendChild(gal);
+    }
+
+    const divider = document.createElement('div');
+    divider.className = 'rc-divider';
+    body.appendChild(divider);
+    const itemsHead = document.createElement('div');
+    itemsHead.className = 'rc-sec';
+    itemsHead.innerHTML = `Removed items <span class="rc-sec__cap">${removed.length} / ${MAX_ITEM_TRASH}</span>`;
+    body.appendChild(itemsHead);
+    if (removed.length === 0) {
+      const e = document.createElement('div');
+      e.className = 'rc-empty';
+      e.textContent = 'No removed items.';
+      body.appendChild(e);
+    }
+    else {
+      for (const entry of removed) {
+        const originExists = doc.slots.some(s => s.id === entry.slotId);
+        const nm = typeof entry.item.label.name === 'string' ? entry.item.label.name : '?';
+        const row = document.createElement('div');
+        row.className = 'rc-item';
+        const info = document.createElement('div');
+        const nameEl = document.createElement('div');
+        nameEl.className = 'rc-item__name';
+        nameEl.textContent = nm;
+        const meta = document.createElement('div');
+        meta.className = 'rc-item__meta';
+        const when = relAge(entry.removedAt);
+        if (originExists) {
+          meta.textContent = `from ${entry.slotName ?? 'a save'} · ${when}`;
+        }
+        else {
+          const gone = document.createElement('span');
+          gone.className = 'rc-gone';
+          gone.textContent = `${entry.slotName ?? 'a save'} · deleted`;
+          meta.append(gone, document.createTextNode(` · will restore to active save slot · ${when}`));
+        }
+        info.append(nameEl, meta);
+        const btn = document.createElement('button');
+        btn.className = 'rc-btn-ghost';
+        btn.type = 'button';
+        btn.dataset['rcRestoreItem'] = String(entry.item.id);
+        btn.textContent = 'Restore';
+        row.append(info, btn);
+        body.appendChild(row);
+      }
+    }
+
+    backdrop.appendChild(pop);
+    host.replaceChildren(backdrop);
+    host.hidden = false;
+  };
+
+  const openRecycle = (): void => {
+    recycleOpen = true;
+    populateRecycle();
+  };
+
+  const closeRecycle = (): void => {
+    recycleOpen = false;
+    const host = container.querySelector<HTMLElement>('[data-rc-host]');
+    if (host !== null) {
+      host.hidden = true;
+      host.replaceChildren();
+    }
+  };
+
   const render = (): void => {
     const goals = activeGoals();
     const field = fieldInfo(goals);
@@ -772,6 +957,7 @@ export function mount(container: HTMLElement): MountHandle {
           ${renderRail()}
         </div>
         <div class="ck-undo" data-undo hidden></div>
+        <div class="rc-host" data-rc-host hidden></div>
       </div>`;
 
     const items = loadEffectiveRegimen();
@@ -788,6 +974,9 @@ export function mount(container: HTMLElement): MountHandle {
         limit: REC_LIMIT,
       });
       buildRecs(recGrid, recs, goals);
+    }
+    if (recycleOpen) {
+      populateRecycle();
     }
     syncStackHeight();
     if (!animated) {
@@ -875,6 +1064,38 @@ export function mount(container: HTMLElement): MountHandle {
   const clickHandler = (ev: Event): void => {
     const target = ev.target as HTMLElement | null;
     if (target === null) {
+      return;
+    }
+    // — recycle bin: open / close / restore —
+    if (target.closest('[data-rc-open]') !== null) {
+      ev.stopPropagation();
+      openRecycle();
+      return;
+    }
+    if (target.closest('[data-rc-close]') !== null || target.matches('[data-rc-backdrop]')) {
+      ev.stopPropagation();
+      closeRecycle();
+      return;
+    }
+    const rcItem = target.closest<HTMLElement>('[data-rc-restore-item]');
+    if (rcItem !== null) {
+      ev.stopPropagation();
+      const rid = Number(rcItem.dataset['rcRestoreItem']);
+      if (Number.isFinite(rid)) {
+        restoreDeletedItem(rid); // regimen:changed re-renders + re-populates the open popup
+      }
+      return;
+    }
+    const rcSlot = target.closest<HTMLElement>('[data-rc-restore-slot]');
+    if (rcSlot !== null) {
+      ev.stopPropagation();
+      const key = rcSlot.dataset['rcRestoreSlot'];
+      if (key !== undefined) {
+        const res = restoreDeletedSlot(key);
+        if (!res.ok) {
+          showToast(res.reason); // full slots: the D2 replace step (batch 3) lands next; for now surface the refusal
+        }
+      }
       return;
     }
     // — slot swatch (recolour) —
@@ -1109,11 +1330,18 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
+  const escHandler = (ev: KeyboardEvent): void => {
+    if (ev.key === 'Escape' && recycleOpen) {
+      closeRecycle();
+    }
+  };
+
   render();
   container.addEventListener('click', clickHandler);
   container.addEventListener('input', inputHandler);
   container.addEventListener('keydown', keyHandler);
   document.addEventListener('keydown', slashFocus);
+  document.addEventListener('keydown', escHandler);
   window.addEventListener('resize', syncStackHeight);
 
   const unsubReg = on('regimen:changed', render);
@@ -1131,6 +1359,7 @@ export function mount(container: HTMLElement): MountHandle {
       container.removeEventListener('input', inputHandler);
       container.removeEventListener('keydown', keyHandler);
       document.removeEventListener('keydown', slashFocus);
+      document.removeEventListener('keydown', escHandler);
       window.removeEventListener('resize', syncStackHeight);
       container.innerHTML = '';
     },

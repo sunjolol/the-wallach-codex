@@ -147,7 +147,7 @@ export const TrashEntrySchema = z.object({
   item: RegimenItemSchema,
   slotId: z.string(),
   slotName: z.string().optional(), // origin save's name at removal — for display; survives its later deletion
-  removedAt: z.string(), // ISO YYYY-MM-DD
+  removedAt: z.string(), // ISO timestamp (full — a unique key is not needed here, but enables relative-time)
 });
 
 /**
@@ -157,7 +157,7 @@ export const TrashEntrySchema = z.object({
  */
 export const SlotTrashEntrySchema = z.object({
   slot: SlotSchema,
-  deletedAt: z.string(), // ISO YYYY-MM-DD
+  deletedAt: z.string(), // ISO timestamp (full — the restore key + relative-time display)
 });
 
 /**

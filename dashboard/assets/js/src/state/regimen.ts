@@ -124,9 +124,14 @@ function fireLegacyTrigger(label: string): void {
 
 // ─── Small pure helpers ────────────────────────────────────────────────────
 
-/** Today as ISO YYYY-MM-DD. */
+/** Today as ISO YYYY-MM-DD (date-only; slot edit stamps). */
 function today(): string {
   return new Date().toISOString().slice(0, 10);
+}
+
+/** A full ISO timestamp — the recycle-bin deletedAt/removedAt: a unique restore key + a real relative-time. */
+function nowStamp(): string {
+  return new Date().toISOString();
 }
 
 /** A fresh unique slot id. Date+random so two creations in the same ms differ. */
@@ -453,7 +458,7 @@ export function saveRgRemoved(setOfIds: Set<number>): void {
   const toTrash = slot.items.filter(i => setOfIds.has(i.id));
   const remaining = slot.items.filter(i => !setOfIds.has(i.id));
   const now = today();
-  const newEntries = toTrash.map(item => ({ item, slotId: slot.id, slotName: slot.name, removedAt: now }));
+  const newEntries = toTrash.map(item => ({ item, slotId: slot.id, slotName: slot.name, removedAt: nowStamp() }));
   const movedIds = new Set(toTrash.map(i => i.id));
   const keptOld = doc.trash.filter(e => !movedIds.has(e.item.id)); // dedupe: newer removal wins
   const next: SlotDoc = {
@@ -563,12 +568,11 @@ export function deleteSlot(id: string): SlotOpResult {
   if (promoted === undefined) {
     return { ok: false, reason: 'That slot could not be deleted.' }; // unreachable (length ≥ 2 above)
   }
-  const now = today();
   const next: SlotDoc = {
     ...doc,
     slots: survivors,
     activeSlot: doc.activeSlot === id ? promoted.id : doc.activeSlot,
-    slotTrash: capSlotTrash([{ slot: target, deletedAt: now }, ...(doc.slotTrash ?? [])]),
+    slotTrash: capSlotTrash([{ slot: target, deletedAt: nowStamp() }, ...(doc.slotTrash ?? [])]),
   };
   const res = writeSlotDoc(next, { reason: 'remove' });
   return res.ok ? { ok: true } : { ok: false, reason: 'That slot could not be deleted.' };
@@ -691,12 +695,11 @@ export function restoreDeletedSlot(deletedAtKey: string, replaceSlotId?: string)
   if (replaced === undefined) {
     return { ok: false, reason: 'The save to replace no longer exists.' };
   }
-  const now = today();
   const next: SlotDoc = {
     ...doc,
     slots: doc.slots.map(s => (s.id === replaceSlotId ? restored : s)),
     activeSlot: doc.activeSlot === replaceSlotId ? restored.id : doc.activeSlot,
-    slotTrash: capSlotTrash([{ slot: replaced, deletedAt: now }, ...bin.filter(e => e !== entry)]),
+    slotTrash: capSlotTrash([{ slot: replaced, deletedAt: nowStamp() }, ...bin.filter(e => e !== entry)]),
   };
   const res = writeSlotDoc(next, { reason: 'restore' });
   return res.ok ? { ok: true, slotId: restored.id } : { ok: false, reason: 'That save could not be restored.' };
