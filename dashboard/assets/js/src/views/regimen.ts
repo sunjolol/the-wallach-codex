@@ -56,6 +56,7 @@ import {
   loadSlots,
   MAX_ITEM_TRASH,
   MAX_SLOT_TRASH,
+  MAX_SLOTS,
   renameSlot,
   restoreDeletedItem,
   restoreDeletedSlot,
@@ -753,6 +754,10 @@ export function mount(container: HTMLElement): MountHandle {
   let animated = false;
   let undoTimer: number | null = null;
   let recycleOpen = false;
+  // D2 "Replace a save": while all four slots are full, this holds the deletedAt key of the
+  // save being restored; recyclePick is the current save chosen to move to the bin. (§1 #8b)
+  let recycleReplaceKey: string | null = null;
+  let recyclePick: string | null = null;
 
   /** Cap the active-stack panel to the console's height (measured, tracks any width). */
   const syncStackHeight = (): void => {
@@ -791,8 +796,8 @@ export function mount(container: HTMLElement): MountHandle {
     requestAnimationFrame(step);
   };
 
-  /** Build the recycle-bin popup (style D) from the live save + item bins, then show it. */
-  const populateRecycle = (): void => {
+  /** Build the recycle-bin list view (style D1) from the live save + item bins, then show it. */
+  const populateList = (): void => {
     const host = container.querySelector<HTMLElement>('[data-rc-host]');
     if (host === null) {
       return;
@@ -924,6 +929,144 @@ export function mount(container: HTMLElement): MountHandle {
     host.hidden = false;
   };
 
+  /**
+   * The "Replace a save" step (style D2) — reached when the user hits Restore on a deleted save
+   * while all four slots are full. Lists the four current saves as a radio group; picking one and
+   * confirming swaps it into the bin as the restored save takes its place (restoreDeletedSlot with
+   * a replaceSlotId). UI-only — the swap itself is the state op's job (§31, batch 1).
+   */
+  const populateReplace = (key: string): void => {
+    const host = container.querySelector<HTMLElement>('[data-rc-host]');
+    if (host === null) {
+      return;
+    }
+    const doc = loadSlots();
+    const entry = (doc.slotTrash ?? []).find(e => e.deletedAt === key);
+    // The bin or the slot count changed under us (a parallel restore/delete) — fall back to D1.
+    if (entry === undefined || doc.slots.length < MAX_SLOTS) {
+      recycleReplaceKey = null;
+      recyclePick = null;
+      populateList();
+      return;
+    }
+    // Keep the chosen save valid across rebuilds; default to the first.
+    const pick = (doc.slots.find(s => s.id === recyclePick) ?? doc.slots[0])?.id;
+    if (pick === undefined) {
+      recycleReplaceKey = null;
+      recyclePick = null;
+      populateList();
+      return;
+    }
+    recyclePick = pick;
+    const total = essentialCount();
+    const reviving = entry.slot.name;
+    const chosen = doc.slots.find(s => s.id === pick);
+
+    const backdrop = document.createElement('div');
+    backdrop.className = 'rc-backdrop';
+    backdrop.dataset['rcBackdrop'] = '1';
+    const pop = document.createElement('div');
+    pop.className = 'rc-pop';
+    pop.setAttribute('role', 'dialog');
+    pop.setAttribute('aria-modal', 'true');
+    pop.setAttribute('aria-label', 'Replace a save to restore this one');
+    pop.innerHTML = `
+      <div class="rc-pop__head">
+        <button class="rc-pop__back" type="button" data-rc-back aria-label="Back to the list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <span class="rc-pop__title">Replace a save</span>
+        <button class="rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div class="rc-pop__body" data-rc-body></div>
+      <div class="rc-pop__foot" data-rc-foot></div>`;
+    const body = pop.querySelector<HTMLElement>('[data-rc-body]');
+    const foot = pop.querySelector<HTMLElement>('[data-rc-foot]');
+    if (body === null || foot === null) {
+      return;
+    }
+
+    const note = document.createElement('div');
+    note.className = 'rc-rep-note';
+    const strong = document.createElement('b');
+    strong.textContent = `“${reviving}”`;
+    note.append(
+      document.createTextNode(`Your ${MAX_SLOTS} saves are full. To bring back `),
+      strong,
+      document.createTextNode(', choose a current save to move to the bin — you can restore it again later.'),
+    );
+    body.appendChild(note);
+
+    const head = document.createElement('div');
+    head.className = 'rc-sec';
+    head.innerHTML = `Your saves <span class="rc-sec__cap">${doc.slots.length} / ${MAX_SLOTS}</span>`;
+    body.appendChild(head);
+
+    const group = document.createElement('div');
+    group.setAttribute('role', 'radiogroup');
+    group.setAttribute('aria-label', 'Choose a save to move to the recycle bin');
+    for (const s of doc.slots) {
+      const selected = s.id === pick;
+      const hue = isSlotColour(s.colour ?? '') ? String(s.colour) : DEFAULT_SLOT_COLOUR;
+      const covered = coveredCountForItems(s.items, s.overrides);
+      const n = s.items.length;
+      const row = document.createElement('div');
+      row.className = selected ? 'rc-rep-row is-sel' : 'rc-rep-row';
+      row.style.setProperty('--sc', hue);
+      row.dataset['rcPick'] = s.id;
+      row.setAttribute('role', 'radio');
+      row.setAttribute('aria-checked', selected ? 'true' : 'false');
+      row.tabIndex = 0;
+      const radio = document.createElement('span');
+      radio.className = 'rc-rep-radio';
+      const bar = document.createElement('span');
+      bar.className = 'rc-rep-bar';
+      const rbody = document.createElement('div');
+      rbody.className = 'rc-rep-body';
+      const nm = document.createElement('div');
+      nm.className = 'rc-rep-name';
+      nm.textContent = s.name;
+      nm.title = s.name;
+      const meta = document.createElement('div');
+      meta.className = 'rc-rep-meta';
+      meta.textContent = `${covered}/${total} · ${n} ${n === 1 ? 'item' : 'items'} · ${relEdited(s.editedAt)}`;
+      rbody.append(nm, meta);
+      const tobin = document.createElement('span');
+      tobin.className = 'rc-rep-tobin';
+      tobin.textContent = '→ bin';
+      row.append(radio, bar, rbody, tobin);
+      group.appendChild(row);
+    }
+    body.appendChild(group);
+
+    const summary = document.createElement('span');
+    summary.className = 'rc-rep-summary';
+    summary.textContent = chosen !== undefined ? `“${chosen.name}” → bin · “${reviving}” restored` : '';
+    const cancel = document.createElement('button');
+    cancel.type = 'button';
+    cancel.className = 'rc-btn-cancel';
+    cancel.dataset['rcBack'] = '1';
+    cancel.textContent = 'Cancel';
+    const confirmBtn = document.createElement('button');
+    confirmBtn.type = 'button';
+    confirmBtn.className = 'rc-btn-primary';
+    confirmBtn.dataset['rcReplace'] = '1';
+    confirmBtn.textContent = 'Replace & restore';
+    foot.append(summary, cancel, confirmBtn);
+
+    backdrop.appendChild(pop);
+    host.replaceChildren(backdrop);
+    host.hidden = false;
+  };
+
+  /** Show whichever recycle view is active — the D2 replace step, else the D1 list. */
+  const populateRecycle = (): void => {
+    if (recycleReplaceKey !== null) {
+      populateReplace(recycleReplaceKey);
+    }
+    else {
+      populateList();
+    }
+  };
+
   const openRecycle = (): void => {
     recycleOpen = true;
     populateRecycle();
@@ -931,6 +1074,8 @@ export function mount(container: HTMLElement): MountHandle {
 
   const closeRecycle = (): void => {
     recycleOpen = false;
+    recycleReplaceKey = null;
+    recyclePick = null;
     const host = container.querySelector<HTMLElement>('[data-rc-host]');
     if (host !== null) {
       host.hidden = true;
@@ -1091,9 +1236,54 @@ export function mount(container: HTMLElement): MountHandle {
       ev.stopPropagation();
       const key = rcSlot.dataset['rcRestoreSlot'];
       if (key !== undefined) {
-        const res = restoreDeletedSlot(key);
-        if (!res.ok) {
-          showToast(res.reason); // full slots: the D2 replace step (batch 3) lands next; for now surface the refusal
+        if (loadSlots().slots.length >= MAX_SLOTS) {
+          // All four saves are full — open the D2 replace step instead of refusing.
+          recycleReplaceKey = key;
+          recyclePick = null;
+          populateRecycle();
+        }
+        else {
+          const res = restoreDeletedSlot(key);
+          if (!res.ok) {
+            showToast(res.reason);
+          }
+        }
+      }
+      return;
+    }
+    // — recycle D2: back to the list (the head back-arrow or the footer Cancel) —
+    if (target.closest('[data-rc-back]') !== null) {
+      ev.stopPropagation();
+      recycleReplaceKey = null;
+      recyclePick = null;
+      populateRecycle();
+      return;
+    }
+    // — recycle D2: pick which current save moves to the bin —
+    const rcPick = target.closest<HTMLElement>('[data-rc-pick]');
+    if (rcPick !== null) {
+      ev.stopPropagation();
+      const pid = rcPick.dataset['rcPick'];
+      if (pid !== undefined) {
+        recyclePick = pid;
+        populateRecycle();
+      }
+      return;
+    }
+    // — recycle D2: confirm the swap (move the chosen save to the bin, restore this one) —
+    if (target.closest('[data-rc-replace]') !== null) {
+      ev.stopPropagation();
+      if (recycleReplaceKey !== null && recyclePick !== null) {
+        const res = restoreDeletedSlot(recycleReplaceKey, recyclePick);
+        if (res.ok) {
+          // The swap landed → regimen:changed re-renders and repopulates the list (D1).
+          recycleReplaceKey = null;
+          recyclePick = null;
+        }
+        else {
+          // Rare (the chosen save vanished under us) — surface it and refresh against reality.
+          showToast(res.reason);
+          populateRecycle();
         }
       }
       return;
@@ -1332,7 +1522,15 @@ export function mount(container: HTMLElement): MountHandle {
 
   const escHandler = (ev: KeyboardEvent): void => {
     if (ev.key === 'Escape' && recycleOpen) {
-      closeRecycle();
+      if (recycleReplaceKey !== null) {
+        // In the D2 replace step, Escape backs out to the list first (not straight to closed).
+        recycleReplaceKey = null;
+        recyclePick = null;
+        populateRecycle();
+      }
+      else {
+        closeRecycle();
+      }
     }
   };
 

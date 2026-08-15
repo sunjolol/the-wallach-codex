@@ -456,3 +456,26 @@
 .rc-btn-restore:hover { background: var(--ds-accent-deep); }
 .rc-btn-ghost { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-accent-deep); background: var(--ds-accent-wash); border: 1px solid color-mix(in srgb, var(--ds-accent) 30%, transparent); border-radius: var(--ds-radius-pill); padding: 6px 14px; cursor: pointer; white-space: nowrap; }
 .rc-btn-ghost:hover { background: var(--ds-accent); color: var(--ds-paper-light); }
+
+/* ── Recycle bin · D2 "Replace a save" step (§1 #8b, batch 3) ────────────── */
+.rc-pop__back { width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--ds-rule); background: var(--ds-paper); color: var(--ds-ink-soft); display: grid; place-items: center; cursor: pointer; margin-right: 2px; flex: 0 0 auto; transition: color var(--ds-motion-fast) var(--ds-ease-out), border-color var(--ds-motion-fast) var(--ds-ease-out); }
+.rc-pop__back:hover { color: var(--ds-accent-deep); border-color: var(--ds-accent); }
+.rc-pop__back svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.rc-rep-note { font-family: var(--ds-font-serif); font-size: var(--ds-text-sm); color: var(--ds-ink); background: var(--ds-status-warn-soft); border: 1px solid color-mix(in srgb, var(--ds-status-warn) 30%, transparent); border-radius: var(--ds-radius-md); padding: 12px 14px; margin-bottom: 4px; }
+.rc-rep-note b { font-weight: 700; }
+.rc-rep-row { display: grid; grid-template-columns: 20px 5px minmax(0,1fr) auto; align-items: center; gap: 11px; border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); background: var(--ds-paper); overflow: hidden; margin-top: 8px; cursor: pointer; }
+.rc-rep-row.is-sel { border-color: var(--ds-accent); box-shadow: 0 0 0 2px var(--ds-accent-wash); }
+.rc-rep-radio { margin-left: 12px; width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid var(--ds-rule-bright); }
+.rc-rep-row.is-sel .rc-rep-radio { border-color: var(--ds-accent); background: radial-gradient(circle, var(--ds-accent) 0 42%, transparent 46%); }
+.rc-rep-bar { align-self: stretch; background: var(--sc); }
+.rc-rep-body { padding: 10px 0; min-width: 0; }
+.rc-rep-name { font-family: var(--ds-font-display-interface); font-weight: 700; font-size: var(--ds-text-sm); color: var(--ds-ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rc-rep-meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); margin-top: 2px; }
+.rc-rep-tobin { padding-right: 13px; font-family: var(--ds-font-mono); font-size: 9px; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-status-err); opacity: 0; }
+.rc-rep-row.is-sel .rc-rep-tobin { opacity: 1; }
+.rc-pop__foot { display: flex; align-items: center; gap: 12px; padding: 15px 22px; border-top: 1px solid var(--ds-rule-soft); background: var(--ds-paper); position: sticky; bottom: 0; z-index: 1; }
+.rc-rep-summary { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); margin-right: auto; }
+.rc-btn-cancel { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-ink-soft); background: var(--ds-paper-light); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); padding: 8px 16px; cursor: pointer; transition: border-color var(--ds-motion-fast) var(--ds-ease-out), color var(--ds-motion-fast) var(--ds-ease-out); }
+.rc-btn-cancel:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
+.rc-btn-primary { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-paper-light); background: var(--ds-accent); border: 0; border-radius: var(--ds-radius-pill); padding: 8px 18px; cursor: pointer; }
+.rc-btn-primary:hover { background: var(--ds-accent-deep); }

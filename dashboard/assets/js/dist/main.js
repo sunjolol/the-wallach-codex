@@ -180705,7 +180705,7 @@ VERIFICATION: node tools/build.mjs exit 0 (11507.8 KB); tsc --noEmit 0; eslint 0
 
 HANDOFF: chronicle/next-chunk.md was rewritten with the full session summary (three commits) and the exact Batch 3 pickup, since the session is near its limit and the next session will boot with genesis.
 
-DEFERRED: Batch 3 = the D2 "Replace a save" step (state is ready \u2014 restoreDeletedSlot(deletedAtKey, replaceSlotId) already performs the swap, proven by render_probe_recycle.js; this is UI-only: a second popup view + wiring + a back arrow), then round-close #8b. After that: C (#9 goal-picker/veil), D (#7 result redesign), the A-sweep. Findings #1 (coverage.ts::addVaultProduct still carries its own copy of the add-or-bump rule) and #2 (.ck-undo has no CSS, now only affecting refusal toasts) remain flagged. eden/ untouched this round \u2014 no corpus/catalog seal applies.` }];
+DEFERRED: Batch 3 = the D2 "Replace a save" step (state is ready \u2014 restoreDeletedSlot(deletedAtKey, replaceSlotId) already performs the swap, proven by render_probe_recycle.js; this is UI-only: a second popup view + wiring + a back arrow), then round-close #8b. After that: C (#9 goal-picker/veil), D (#7 result redesign), the A-sweep. Findings #1 (coverage.ts::addVaultProduct still carries its own copy of the add-or-bump rule) and #2 (.ck-undo has no CSS, now only affecting refusal toasts) remain flagged. eden/ untouched this round \u2014 no corpus/catalog seal applies.` }, { id: "lg_msuxskik_yaqz3h", ts: "2026-08-15T17:17:41.084630-05:00", surface: "regimen", kind: "round-close", summary: "Finished the recycle bin (\xA71 #8b): restoring a deleted save when all four save slots are full now opens a clean \u201CReplace a save\u201D step \u2014 pick a current save to move to the bin and the restored one takes its place \u2014 instead of the old dead-end error.", detail: "This was the last missing piece of the recycle bin. Before, if your four save slots were full and you tried to bring a deleted save back from the bin, the app just showed an error and stopped. Now it opens a small step that lists your four saves so you can choose one to set aside (it drops to the bin), and your restored save takes the freed slot. You can always restore the set-aside one again later. Back-arrow and Cancel return to the list; the \xD7 closes; Esc backs out one step at a time.\n\nUI-only over the batch-1 state op restoreDeletedSlot(deletedAtKey, replaceSlotId). views/regimen.ts: added populateReplace (the D2 builder) + a populateRecycle dispatcher (D1 list vs D2 replace), D2 click handlers (restore-at-4/4 \u2192 D2, pick, back, Replace&restore), Esc backing D2\u2192D1\u2192closed, closeRecycle resetting the D2 state, and the MAX_SLOTS import (sort-order fixed). workspace-regimen.css: appended the D2 rules (.rc-pop__back / .rc-pop__foot, .rc-rep-note/row/radio/bar/body/name/meta/tobin/summary, .rc-btn-cancel / .rc-btn-primary), ported from the signed-off trash_D_refined.html D2 state. New regression probe tools/render_probe_recycle_d2.js drives open-at-4/4 \u2192 pick-updates-summary \u2192 back+Esc-return-to-D1 \u2192 Replace&restore-swaps (chosen\u2192bin, saved\u2192live) \u2192 refresh-to-D1. Verified: typecheck clean; eslint 0 errors (2 pre-existing warnings); build OK; invariants 91/91 (incl. workspace_coverage_no_dead_rules \u2014 all 14 new classes trace to live JS references); all three recycle probes PASS with 0 page errors; D2 screenshots human-signed-off (Cancel\u2192D1 and the app's spelled-out relative-time wording both explicitly approved). Deferred to AFTER the next big-tweak session (Luneth's instruction): #1 coverage.ts::addVaultProduct still duplicates the add-or-bump dedup rule; #2 .ck-undo/.ck-undo__btn remain unstyled (now only the refusal toasts). eden/ untouched \u2014 no seal applied.", metadata: { chunk: "#8b-batch-3", board: "91/91", files: ["dashboard/assets/js/src/views/regimen.ts", "dashboard/assets/styles/workspace-regimen.css", "tools/render_probe_recycle_d2.js"] } }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -181758,6 +181758,8 @@ DEFERRED: Batch 3 = the D2 "Replace a save" step (state is ready \u2014 restoreD
     let animated = false;
     let undoTimer = null;
     let recycleOpen = false;
+    let recycleReplaceKey = null;
+    let recyclePick = null;
     const syncStackHeight = () => {
       const stack = container.querySelector(".ck-rail .rail-panel");
       if (stack !== null) {
@@ -181786,7 +181788,7 @@ DEFERRED: Batch 3 = the D2 "Replace a save" step (state is ready \u2014 restoreD
       };
       requestAnimationFrame(step);
     };
-    const populateRecycle = () => {
+    const populateList = () => {
       const host = container.querySelector("[data-rc-host]");
       if (host === null) {
         return;
@@ -181910,12 +181912,134 @@ DEFERRED: Batch 3 = the D2 "Replace a save" step (state is ready \u2014 restoreD
       host.replaceChildren(backdrop);
       host.hidden = false;
     };
+    const populateReplace = (key) => {
+      const host = container.querySelector("[data-rc-host]");
+      if (host === null) {
+        return;
+      }
+      const doc = loadSlots();
+      const entry = (doc.slotTrash ?? []).find((e) => e.deletedAt === key);
+      if (entry === void 0 || doc.slots.length < MAX_SLOTS) {
+        recycleReplaceKey = null;
+        recyclePick = null;
+        populateList();
+        return;
+      }
+      const pick = (doc.slots.find((s) => s.id === recyclePick) ?? doc.slots[0])?.id;
+      if (pick === void 0) {
+        recycleReplaceKey = null;
+        recyclePick = null;
+        populateList();
+        return;
+      }
+      recyclePick = pick;
+      const total = essentialCount();
+      const reviving = entry.slot.name;
+      const chosen = doc.slots.find((s) => s.id === pick);
+      const backdrop = document.createElement("div");
+      backdrop.className = "rc-backdrop";
+      backdrop.dataset["rcBackdrop"] = "1";
+      const pop = document.createElement("div");
+      pop.className = "rc-pop";
+      pop.setAttribute("role", "dialog");
+      pop.setAttribute("aria-modal", "true");
+      pop.setAttribute("aria-label", "Replace a save to restore this one");
+      pop.innerHTML = `
+      <div class="rc-pop__head">
+        <button class="rc-pop__back" type="button" data-rc-back aria-label="Back to the list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <span class="rc-pop__title">Replace a save</span>
+        <button class="rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+      </div>
+      <div class="rc-pop__body" data-rc-body></div>
+      <div class="rc-pop__foot" data-rc-foot></div>`;
+      const body = pop.querySelector("[data-rc-body]");
+      const foot = pop.querySelector("[data-rc-foot]");
+      if (body === null || foot === null) {
+        return;
+      }
+      const note = document.createElement("div");
+      note.className = "rc-rep-note";
+      const strong = document.createElement("b");
+      strong.textContent = `\u201C${reviving}\u201D`;
+      note.append(
+        document.createTextNode(`Your ${MAX_SLOTS} saves are full. To bring back `),
+        strong,
+        document.createTextNode(", choose a current save to move to the bin \u2014 you can restore it again later.")
+      );
+      body.appendChild(note);
+      const head = document.createElement("div");
+      head.className = "rc-sec";
+      head.innerHTML = `Your saves <span class="rc-sec__cap">${doc.slots.length} / ${MAX_SLOTS}</span>`;
+      body.appendChild(head);
+      const group = document.createElement("div");
+      group.setAttribute("role", "radiogroup");
+      group.setAttribute("aria-label", "Choose a save to move to the recycle bin");
+      for (const s of doc.slots) {
+        const selected = s.id === pick;
+        const hue = isSlotColour(s.colour ?? "") ? String(s.colour) : DEFAULT_SLOT_COLOUR;
+        const covered = coveredCountForItems(s.items, s.overrides);
+        const n = s.items.length;
+        const row = document.createElement("div");
+        row.className = selected ? "rc-rep-row is-sel" : "rc-rep-row";
+        row.style.setProperty("--sc", hue);
+        row.dataset["rcPick"] = s.id;
+        row.setAttribute("role", "radio");
+        row.setAttribute("aria-checked", selected ? "true" : "false");
+        row.tabIndex = 0;
+        const radio = document.createElement("span");
+        radio.className = "rc-rep-radio";
+        const bar = document.createElement("span");
+        bar.className = "rc-rep-bar";
+        const rbody = document.createElement("div");
+        rbody.className = "rc-rep-body";
+        const nm = document.createElement("div");
+        nm.className = "rc-rep-name";
+        nm.textContent = s.name;
+        nm.title = s.name;
+        const meta = document.createElement("div");
+        meta.className = "rc-rep-meta";
+        meta.textContent = `${covered}/${total} \xB7 ${n} ${n === 1 ? "item" : "items"} \xB7 ${relEdited(s.editedAt)}`;
+        rbody.append(nm, meta);
+        const tobin = document.createElement("span");
+        tobin.className = "rc-rep-tobin";
+        tobin.textContent = "\u2192 bin";
+        row.append(radio, bar, rbody, tobin);
+        group.appendChild(row);
+      }
+      body.appendChild(group);
+      const summary = document.createElement("span");
+      summary.className = "rc-rep-summary";
+      summary.textContent = chosen !== void 0 ? `\u201C${chosen.name}\u201D \u2192 bin \xB7 \u201C${reviving}\u201D restored` : "";
+      const cancel = document.createElement("button");
+      cancel.type = "button";
+      cancel.className = "rc-btn-cancel";
+      cancel.dataset["rcBack"] = "1";
+      cancel.textContent = "Cancel";
+      const confirmBtn = document.createElement("button");
+      confirmBtn.type = "button";
+      confirmBtn.className = "rc-btn-primary";
+      confirmBtn.dataset["rcReplace"] = "1";
+      confirmBtn.textContent = "Replace & restore";
+      foot.append(summary, cancel, confirmBtn);
+      backdrop.appendChild(pop);
+      host.replaceChildren(backdrop);
+      host.hidden = false;
+    };
+    const populateRecycle = () => {
+      if (recycleReplaceKey !== null) {
+        populateReplace(recycleReplaceKey);
+      } else {
+        populateList();
+      }
+    };
     const openRecycle = () => {
       recycleOpen = true;
       populateRecycle();
     };
     const closeRecycle = () => {
       recycleOpen = false;
+      recycleReplaceKey = null;
+      recyclePick = null;
       const host = container.querySelector("[data-rc-host]");
       if (host !== null) {
         host.hidden = true;
@@ -182069,9 +182193,46 @@ DEFERRED: Batch 3 = the D2 "Replace a save" step (state is ready \u2014 restoreD
         ev.stopPropagation();
         const key = rcSlot.dataset["rcRestoreSlot"];
         if (key !== void 0) {
-          const res = restoreDeletedSlot(key);
-          if (!res.ok) {
+          if (loadSlots().slots.length >= MAX_SLOTS) {
+            recycleReplaceKey = key;
+            recyclePick = null;
+            populateRecycle();
+          } else {
+            const res = restoreDeletedSlot(key);
+            if (!res.ok) {
+              showToast(res.reason);
+            }
+          }
+        }
+        return;
+      }
+      if (target.closest("[data-rc-back]") !== null) {
+        ev.stopPropagation();
+        recycleReplaceKey = null;
+        recyclePick = null;
+        populateRecycle();
+        return;
+      }
+      const rcPick = target.closest("[data-rc-pick]");
+      if (rcPick !== null) {
+        ev.stopPropagation();
+        const pid = rcPick.dataset["rcPick"];
+        if (pid !== void 0) {
+          recyclePick = pid;
+          populateRecycle();
+        }
+        return;
+      }
+      if (target.closest("[data-rc-replace]") !== null) {
+        ev.stopPropagation();
+        if (recycleReplaceKey !== null && recyclePick !== null) {
+          const res = restoreDeletedSlot(recycleReplaceKey, recyclePick);
+          if (res.ok) {
+            recycleReplaceKey = null;
+            recyclePick = null;
+          } else {
             showToast(res.reason);
+            populateRecycle();
           }
         }
         return;
@@ -182286,7 +182447,13 @@ DEFERRED: Batch 3 = the D2 "Replace a save" step (state is ready \u2014 restoreD
     };
     const escHandler = (ev) => {
       if (ev.key === "Escape" && recycleOpen) {
-        closeRecycle();
+        if (recycleReplaceKey !== null) {
+          recycleReplaceKey = null;
+          recyclePick = null;
+          populateRecycle();
+        } else {
+          closeRecycle();
+        }
       }
     };
     render();
