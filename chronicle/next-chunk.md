@@ -3,7 +3,7 @@
 **BIG TWEAK LIST — in progress (2026-08-16).** Authority: **`chronicle/tweak-list-master-2026-08-15.md`**.
 Board **91/91 throughout.** eden/ untouched — no seal applied.
 
-## ✅ COMMITTED THIS SESSION (2026-08-16) — 1–8 on origin/master; 9 local, PUSH PENDING
+## ✅ COMMITTED THIS SESSION (2026-08-16) — 1–9 on origin/master; 10 local, PUSH PENDING
 1. `add14a5b` **① rotation OCR** — offline 4-way orientation (no OSD model).
 2. `fd424c6d` **②a parser PSM 3** — two-column labels read full ingredients.
 3. `9da4b9df` **②c suspect-safety** — Confirm never "corrects" a flagged bad term / known nutrient.
@@ -12,15 +12,16 @@ Board **91/91 throughout.** eden/ untouched — no seal applied.
 6. `c0c51530` **②d.2 mining batch 1** — +20 ratified bad terms (wheat-family hard-reject; hidden-glutamate/refined-flour serious).
 7. `6a017381` **anti-list reconciliation** — sucralose REMOVED (Wallach accepts it, HK); 3 MSG terms DROPPED (zero book hits); push of 1–6.
 8. `ecaafa3e` **②d.2 added-sugar batch** — 2-tier: HFCS/corn syrup/fructose hard-reject, ALL other sugars MINOR (category left seriousAnti); +6 terms (fructose/sucrose/molasses/brown sugar/turbinado/cane juice). Luneth "treat sugar lightly".
-9. `(this commit)` **②d.2 gluten batch 2** — +7 hard-reject wheat instances (emmer/freekeh/panko/orzo/matzo/maida/atta); udon skipped (Wallach's buckwheat udon).
+9. `1231e4f6` **②d.2 gluten batch 2** — +7 hard-reject wheat instances (emmer/freekeh/panko/orzo/matzo/maida/atta); udon skipped (Wallach's buckwheat udon).
+10. `(this commit)` **②d.2 seed-oil batch + BACK-CHECK** — +4 serious (margarine/peanut oil/palm oil/palm kernel oil); DROPPED grapeseed/rice bran/shortening (Wallach positive/silent); fixed the fried-oils citation (lecture line → book verbatim) AND restored the sugar-note 'Rare Earths 300% for 12 hours' citation I'd wrongly dropped.
 
 Earlier on origin/master: `4087b16e` (Phase 2 + scanner), `12be0627` (regimen+rail).
 
 ## 🟢 SCANNER ②d.2 — MINING PROGRESS (toward 200–300, §00.A: propose→ratify→add)
-**DONE this session:** sucralose removed · 3 MSG terms dropped · **added-sugar 2-tier** (+6; only HFCS/corn syrup/fructose reject) · **gluten batch 2** (+7 hard-reject: emmer/freekeh/panko/orzo/matzo/maida/atta; udon skipped — Wallach's buckwheat udon).
+**DONE this session:** sucralose removed · 3 MSG terms dropped · **added-sugar 2-tier** (+6) · **gluten batch 2** (+7) · **seed-oil batch** (+4 serious: margarine/peanut oil/palm oil/palm kernel oil; DROPPED grapeseed/rice bran/shortening as Wallach-positive) · **session-wide BACK-CHECK** (all adds re-verified vs the grapeseed failure mode; sugar-note citation restored). Strong veins now EXPANDED.
 - **⚠ Aluminum = §00.A NO** (handoff premise was WRONG). Wallach: ingested aluminum is *"remarkably nontoxic / probably an essential nutrient / no Alzheimer's link"* (Epigenetics 2014, Immortality 2008, DDDL 2011); only 1995 Let's Play Doctor says avoid *metallic* aluminum (cookware/deodorant). Do NOT anti-list aluminum. Mineable instead as a two-sided Ask-Wallach corpus claim.
 - **Other "new categories" are weak:** trans-fat ≈ redundant (`hydrogenated` already hard-reject; "0g trans fat" would false-flag); fluoride = water/toothpaste, not a food-label ingredient; aspartame-family/saccharin already listed + Wallach's own stance is soft ("used in moderation ... considered safe").
-- **Remaining strong vein — seed-oils:** instance-expand fried-oils (*"if it has oil in name don't use it"* — CAREFUL: fish/cod-liver/flax + high-oleic are Wallach-*endorsed*, never blanket-add 'oil'). Sugar + gluten now DONE for this pass; honey/maple/agave still HELD for Luneth's call.
+- **②d.2 substantially COMPLETE.** Strong well-cited categories all expanded (gluten ×2, msg, modified, added-sugar, seed-oils). LESSON (grapeseed): NEVER infer 'bad' from a general stance — grep each term for Wallach's ACTUAL words incl. any POSITIVE mention before adding. Remaining/optional: caffeine instances (nuanced — Wallach not anti-coffee-absolute); further msg/modified instances (diminishing). honey/maple/agave still HELD for Luneth's call. Consider auditing the EXISTING seed-oil terms the same way.
 - **Severity mechanics** (state/scanner.ts antiFlags/decideVerdict, data-driven): a hit in `hardRejectTerms` → hard flag → REJECT on 1 hit; a category in `seriousAnti` → serious (2+ serious CATEGORIES → REJECT); else MILD (never rejects). One flag per category. Matcher = word-boundary `\bkw\b`; single distinctive words beat multi-word. **Use CORRECT label spellings, not Wallach's OCR typos** (turbinado ≠ turbanado).
 
 ## ⬜ STILL UNBUILT from the list (their own chunks / need his live scan)
@@ -41,5 +42,5 @@ Earlier on origin/master: `4087b16e` (Phase 2 + scanner), `12be0627` (regimen+ra
 
 ## GENESIS
 `genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report, ask which task to resume. If he
-continues: keep mining ②d.2 — remaining strong vein is seed-oils (sugar/gluten/sucralose/
-MSG/aluminum all settled this session). Reconcile against `chronicle/tweak-list-master-2026-08-15.md`, never assume.
+continues: ②d.2 is substantially complete (sugar/gluten/seed-oils/msg/modified expanded; sucralose/
+aluminum settled). Optional: caffeine + further msg/modified instances; or audit EXISTING seed-oil terms. Reconcile against `chronicle/tweak-list-master-2026-08-15.md`, never assume.
