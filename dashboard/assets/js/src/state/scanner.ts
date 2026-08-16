@@ -178,6 +178,38 @@ function loadScanCorpus(): ScanCorpus {
   return cachedCorpus;
 }
 
+let cachedAntiWords: ReadonlySet<string> | null = null;
+
+/**
+ * Lowercased single words (>=3 chars) that appear in any anti-list term or hard-reject term. The
+ * Confirm-step "Possible OCR errors" walker skips these so it never offers to "correct" a flagged
+ * bad ingredient away -- suggesting `modified` -> `certified` would silently erase the flag that
+ * makes a modified-starch product REJECT. Derived from the corpus, cached. Pure.
+ */
+export function getAntiIngredientWords(): ReadonlySet<string> {
+  if (cachedAntiWords === null) {
+    const corpus = loadScanCorpus();
+    const words = new Set<string>();
+    const add = (term: string): void => {
+      for (const w of term.toLowerCase().split(/[^a-z]+/)) {
+        if (w.length >= 3) {
+          words.add(w);
+        }
+      }
+    };
+    for (const terms of Object.values(corpus.antiList)) {
+      for (const term of terms) {
+        add(term);
+      }
+    }
+    for (const term of corpus.hardRejectTerms) {
+      add(term);
+    }
+    cachedAntiWords = words;
+  }
+  return cachedAntiWords;
+}
+
 // ─── Read API — Zod-validated boundary ────────────────────────────────────
 
 export function getHistory(): HistoryEntry[] {

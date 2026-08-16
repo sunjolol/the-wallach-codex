@@ -565,11 +565,13 @@ export interface IngredientSuspect {
 export function findIngredientSuspects(
   text: string,
   dismissed: ReadonlySet<string> = new Set(),
+  protectedWords: ReadonlySet<string> = new Set(),
 ): IngredientSuspect[] {
   if (text.length < 10) {
     return [];
   }
   const dict = loadDict();
+  const knownLower = new Set(dict.known.map(k => k.toLowerCase()));
   const suspects: IngredientSuspect[] = [];
   const seen = new Set<string>();
   for (const m of text.matchAll(/\b[a-z]{3,}\b/gi)) {
@@ -584,6 +586,12 @@ export function findIngredientSuspects(
     }
     if (dict.fuzzy.has(lower)) {
       continue; // exact dictionary match -- the read is correct
+    }
+    if (knownLower.has(lower)) {
+      continue; // a known nutrient name (calcium, iron) is a correct read, not garble
+    }
+    if (protectedWords.has(lower)) {
+      continue; // never suggest "correcting" a flagged bad ingredient away (modified -> certified)
     }
     const candidates = findSuggestionCandidates(lower);
     if (candidates.length > 0) {

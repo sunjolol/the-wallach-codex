@@ -41,6 +41,7 @@ import { addOrBumpRegimenItem } from '../state/regimen.js';
 import {
   type AntiFlag,
   coverageDeltaForLabel,
+  getAntiIngredientWords,
   getHistory,
   getSaved,
   type HistoryEntry,
@@ -264,7 +265,7 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
   const rows = nutrients.map((n, i) => nutrientRow(n, i, added, coveredNames)).join('');
 
   const ingredients = label.ingredients ?? '';
-  const suspects = findIngredientSuspects(ingredients, dismissed);
+  const suspects = findIngredientSuspects(ingredients, dismissed, getAntiIngredientWords());
   const suspectPanel = suspects.length > 0
     ? `<div class="vd-ocr">
         <div class="vd-ocr__head"><span class="vd-ocr__t">Possible OCR errors</span><span class="vd-ocr__hint">Click a suggestion to fix, or &times; to dismiss</span></div>
