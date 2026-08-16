@@ -9,7 +9,7 @@
  *
  * Pipeline (scanImage):
  *   preprocessImage (canvas upscale → grayscale → gentle contrast) → runOcr
- *   (vendored Tesseract.js, PSM 6, local worker/core/lang — zero network) →
+ *   (vendored Tesseract.js, PSM 3 auto layout, local worker/core/lang — zero network) →
  *   ocrPostProcess (Levenshtein snap to the food/ingredient dictionary) →
  *   parseOcrText (nutrition-panel + ingredient-line heuristics → name / amount /
  *   unit + ingredients string + container hint) → parseLabel (→ ScanLabel) →
@@ -173,7 +173,7 @@ async function preprocessImage(dataUrl: string): Promise<string> {
 }
 
 // ─── Orientation (offline brute-force: no OSD model needed) ────────────
-// Tesseract is pinned to PSM 6 (one horizontal text block) with no orientation model vendored,
+// Tesseract runs PSM 3 (automatic page segmentation) with no orientation model vendored,
 // so a sideways or upside-down label OCRs as noise. Rather than ship a network download for
 // osd.traineddata (which offline-first forbids), we detect orientation the offline way: score the
 // as-shot read, and only if it looks like garbage do we OCR downscaled 90/180/270 rotations and
@@ -293,7 +293,7 @@ function withTimeout<T>(work: Promise<T>, ms: number, code: string): Promise<T> 
   return Promise.race([work, guard]).finally(() => clearTimeout(timer));
 }
 
-/** Run vendored Tesseract over a (preprocessed) image; PSM 6 single text block. */
+/** Run vendored Tesseract over a (preprocessed) image; PSM 3 auto page segmentation (multi-column safe). */
 async function runOcr(imageData: string, progress: ProgressFn): Promise<string> {
   progress({ stage: 0, message: 'Preparing the image…', determinate: false, fraction: 0 });
   const onFile = window.location.protocol === 'file:';
@@ -334,7 +334,7 @@ async function runOcr(imageData: string, progress: ProgressFn): Promise<string> 
     workerPath: onFile ? './assets/vendor/tesseract/worker-offline.js' : './assets/vendor/tesseract/worker.min.js',
   });
   try {
-    await worker.setParameters({ preserve_interword_spaces: '1', tessedit_pageseg_mode: '6' });
+    await worker.setParameters({ preserve_interword_spaces: '1', tessedit_pageseg_mode: '3' });
   }
   catch {
     // setParameters is best-effort — some builds reject unknown keys.
@@ -691,7 +691,7 @@ function parseOcrText(rawTextInput: string): ParsedOcr {
     out.nutrients.push({ amount: Number.parseFloat(g1), name: canonical, unit: g2.toLowerCase() });
   }
 
-  // Known-nutrient pass: scan the WHOLE text (recovers data when PSM 6 collapses
+  // Known-nutrient pass: scan the WHOLE text (recovers data when the segmenter collapses
   // the panel into one line and the line-anchored regex can't fire).
   const known = loadDict().known;
   for (const nutName of known) {
