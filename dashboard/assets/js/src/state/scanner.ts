@@ -521,7 +521,6 @@ function matchGoals(label: ScanLabel, corpus: ScanCorpus): string[] {
 
 // ─── Anti-list flags (legacy antiFlags port, nuance preserved) ─────────────
 
-const HARD_GLUTEN = new Set(['wheat', 'barley', 'rye', 'malt', 'spelt']);
 const OAT_DERIVED = new Set(['oats', 'oat', 'oatmeal', 'oat flour', 'oat syrup', 'oat groats', 'oat bran']);
 
 function antiFlags(label: ScanLabel, corpus: ScanCorpus): AntiFlag[] {
@@ -550,7 +549,9 @@ function antiFlags(label: ScanLabel, corpus: ScanCorpus): AntiFlag[] {
     }
 
     if (cat === 'gluten sources') {
-      const hardHits = hits.filter(h => HARD_GLUTEN.has(h));
+      // Hard gluten proteins = the gluten-category hits that sit on the unconditional hardRejectTerms
+      // list (data-driven; includes the ratified wheat-derivative grains). Oats are never on that list.
+      const hardHits = hits.filter(h => hardReject.has(h));
       const oatHits = hits.filter(h => OAT_DERIVED.has(h));
       const oatGfPre = /gluten[-\s]+free[^,]+\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b/i;
       const oatGfPost = /\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b[^,]+gluten[-\s]+free/i;
