@@ -116,11 +116,133 @@
   --ds-rule-soft: #e8dfc6;
 }
 
-/* ─── DARK: the coverage registration grid, dialled to barely-there ───
- * On paper the rule-soft lines sit a ~3-value delta above paper-darker (intended texture);
- * on charcoal that same delta reads loud, so drop the lines to a whisper above the dark bg. */
+/* ─── DARK: the coverage registration grid — REMOVED entirely (tweak-list) ───
+ * On charcoal even the dimmed grid lines read as distracting, so the grid is
+ * dropped in dark. The substrate fill + inset shadow live on the base
+ * .essentials-host rule and stay; only the gradient lines go. */
 :root[data-theme="dark"] .essentials-host {
-  background-image:
-    linear-gradient(rgba(233, 223, 200, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(233, 223, 200, 0.035) 1px, transparent 1px);
+  background-image: none;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * DARK-THEME REFINEMENTS (tweak-list) — scoped overrides only, no token repoint.
+ * Each targets a surface authored for cream paper that stays luminous on charcoal
+ * (a hardcoded #fff, a cream neumorphic highlight, or an opaque -wash/-soft token
+ * dark never remaps). Fixes follow the regimen .ck-tag recipe: translucent
+ * color-mix tints that composite over whatever paper is active. theme.css loads
+ * last and these carry [data-theme] specificity, so no !important is needed.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* (1) Search close/back button — resting cream neumorphic highlight + a hover fill
+   of solid #fff both flash bright on charcoal. Re-pin the shadow dark and fill the
+   hover with elevated dark paper (the green border via --aw-green is kept). */
+:root[data-theme="dark"] #drawer-search-mount .scr-nav {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.45), -1px -1px 4px rgba(255, 255, 255, 0.03);
+}
+:root[data-theme="dark"] #drawer-search-mount .scr-nav:hover {
+  background: var(--ds-paper-light);
+}
+
+/* (2) Search popup — the luminous green glow layer + cream neumorphic highlights
+   read as a bright halo on charcoal. Replace with a deep near-black drop plus a
+   faint green hairline ring; do the same for the inner search bar. */
+:root[data-theme="dark"] #drawer-search-mount .scr {
+  box-shadow:
+    0 24px 54px -22px rgba(0, 0, 0, 0.72),
+    0 0 0 1px color-mix(in srgb, var(--aw-green) 22%, transparent);
+}
+:root[data-theme="dark"] #drawer-search-mount .aw-search {
+  box-shadow: 6px 6px 16px rgba(0, 0, 0, 0.5), -2px -2px 8px rgba(255, 255, 255, 0.02),
+              0 0 22px -4px color-mix(in srgb, var(--aw-green) 22%, transparent);
+}
+:root[data-theme="dark"] #drawer-search-mount .aw-search:focus-within {
+  box-shadow: 5px 5px 14px rgba(0, 0, 0, 0.55), -2px -2px 8px rgba(255, 255, 255, 0.025),
+              0 0 34px -2px color-mix(in srgb, var(--aw-green) 40%, transparent),
+              0 0 0 1.5px color-mix(in srgb, var(--aw-green) 55%, transparent);
+}
+:root[data-theme="dark"] #drawer-search-mount .aw-search__well {
+  box-shadow: inset 5px 5px 11px -6px rgba(0, 0, 0, 0.6), inset -3px -3px 9px -6px rgba(255, 255, 255, 0.03);
+}
+
+/* (3) Scanner rail verdict pills — opaque light -wash/-soft fills dark never remaps.
+   Repaint as translucent color-mix tints (the .ck-tag recipe) + brighter text. */
+:root[data-theme="dark"] .vd-pill--aligns {
+  background: color-mix(in srgb, var(--ds-status-ok) 16%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-status-ok) 34%, transparent);
+  color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink));
+}
+:root[data-theme="dark"] .vd-pill--save {
+  background: color-mix(in srgb, var(--ds-status-warn) 16%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-status-warn) 34%, transparent);
+  color: color-mix(in srgb, var(--ds-status-warn) 66%, var(--ds-ink));
+}
+:root[data-theme="dark"] .vd-pill--out {
+  background: color-mix(in srgb, var(--ds-status-err) 16%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-status-err) 34%, transparent);
+  color: color-mix(in srgb, var(--ds-status-err) 66%, var(--ds-ink));
+}
+
+/* (4) Coverage grid removal is handled by editing the .essentials-host block above. */
+
+/* (5) Covered coverage tiles — the white→pale-green plate + white top-light stay
+   bright on charcoal. Repaint as a green-tinted dark plate that keeps the bright
+   rim (so "covered" still reads via plate + rim + name-strip); lift the glyph
+   colours to bright green for contrast on the darker body. */
+:root[data-theme="dark"] :is(.tile, .tile--vitamin, .tile--amino, .tile--fat).covered {
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--ds-status-ok) 24%, var(--ds-paper-light)) 0%,
+    color-mix(in srgb, var(--ds-ok-deep) 32%, var(--ds-paper-deep)) 100%);
+  box-shadow:
+    inset 0 0 0 1px var(--ds-ok-bright),
+    0 12px 22px -11px rgba(0, 0, 0, 0.6),
+    0 3px 8px -3px rgba(0, 0, 0, 0.4);
+}
+:root[data-theme="dark"] :is(.tile, .tile--vitamin, .tile--amino, .tile--fat).covered .tile__num,
+:root[data-theme="dark"] :is(.tile, .tile--vitamin, .tile--amino, .tile--fat).covered .tile__code,
+:root[data-theme="dark"] :is(.tile, .tile--vitamin, .tile--amino, .tile--fat).covered .tile__sym,
+:root[data-theme="dark"] .tile--vitamin.covered .tile__letter,
+:root[data-theme="dark"] .tile--amino.covered .tile__abbr,
+:root[data-theme="dark"] .tile--fat.covered .tile__name,
+:root[data-theme="dark"] .tile--fat.covered .tile__hint {
+  color: var(--ds-ok-bright);
+}
+/* legend swatch must match the new dark plate (a legend that renders a different
+   language than the thing it explains is a lie). */
+:root[data-theme="dark"] .legend__sw.covered {
+  background: linear-gradient(180deg,
+    color-mix(in srgb, var(--ds-status-ok) 24%, var(--ds-paper-light)),
+    color-mix(in srgb, var(--ds-ok-deep) 32%, var(--ds-paper-deep)));
+  box-shadow: 0 0 0 1px var(--ds-ok-bright), 0 3px 6px -3px rgba(0, 0, 0, 0.6);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * SHADOWS FOLLOW THE PRIMARY (tweak-list, both themes) — the two derived accent
+ * GLOW tokens and three sealed-file shadows were frozen to ember orange, so any
+ * non-ember accent (amethyst, sapphire, …) left an orange halo behind a purple/
+ * blue button. Redefine the glow tokens off --ds-accent (ember stays byte-
+ * identical: color-mix(C 35%, transparent) == rgba(C, .35)) and shadow the three
+ * sealed rules whose glow was a raw ember literal. design-system.css is SEALED —
+ * these OVERRIDE it from the later non-sealed theme layer (same specificity, later
+ * cascade → wins); the sealed file is untouched. Every non-sealed stylesheet's raw
+ * ember shadow literal was swapped to an accent color-mix in the same pass.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+:root {
+  --ds-glow-accent:    0 0 60px color-mix(in srgb, var(--ds-accent) 35%, transparent);
+  --ds-glow-accent-sm: 0 4px 12px -2px color-mix(in srgb, var(--ds-accent) 40%, transparent);
+}
+/* .ds-btn-primary REST glow now tracks via the token above; its HOVER glow was a
+   raw ember literal — re-declare the full hover shadow with an accent color-mix
+   (transform stays on the sealed base rule). */
+.ds-btn-primary:hover {
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.4) inset,
+    0 6px 16px -2px color-mix(in srgb, var(--ds-accent) 50%, transparent);
+}
+/* .ds-pull-stat decorative concentric rings were frozen ember; track the accent. */
+.ds-pull-stat::after {
+  border-color: color-mix(in srgb, var(--ds-accent) 15%, transparent);
+  box-shadow:
+    0 0 0 20px color-mix(in srgb, var(--ds-accent) 6%, transparent) inset,
+    0 0 0 60px color-mix(in srgb, var(--ds-accent) 4%, transparent) inset,
+    0 0 0 120px color-mix(in srgb, var(--ds-accent) 2%, transparent) inset;
 }

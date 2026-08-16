@@ -634,7 +634,10 @@ function decideVerdict(
     verdict = 'SAVE';
   }
   else {
-    verdict = 'REJECT';
+    // Ingredient-checker default (Luneth-ratified): "nothing bad found" reads NEUTRAL,
+    // never a bare REJECT. Only a hard flag / 2+ serious / high conflict rejects (above), so
+    // a clean paste or a nutrient-less food is NEUTRAL, not "rejected".
+    verdict = 'SAVE';
   }
   return { verdict, reasonsFor, reasonsAgainst };
 }

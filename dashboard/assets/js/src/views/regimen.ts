@@ -34,13 +34,16 @@ import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { on } from '../core/events.js';
 import { GOAL_HUES, MAX_GOALS } from '../core/goal-display.js';
+import { BACKUP_APP_ID } from '../core/schemas/backup.js';
 import {
   CoverageLayoutSchema,
   type LayoutGoal,
   ProductsLookupSchema,
+  REGIMEN_SLOT_EXPORT_KIND,
   type RegimenItem,
   type RegimenVaultEntry,
   RegimenVaultEntrySchema,
+  SlotExportEnvelopeSchema,
 } from '../core/schemas/index.js';
 import { coveredCountForItems, essentialCount, getOrCompute, matchEssential } from '../state/coverage.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage } from '../state/recommender.js';
@@ -50,6 +53,7 @@ import {
   addSlot,
   DEFAULT_SLOT_COLOUR,
   deleteSlot,
+  importSlot,
   isSlotColour,
   loadEffectiveRegimen,
   loadRgUserGoals,
@@ -309,6 +313,8 @@ function addItem(rawName: string): AddOutcome | null {
 const PENCIL_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg>';
 const TRASH_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M8 6V4h8v2m-9 0v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/></svg>';
 const PLUS_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>';
+const EXPORT_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>';
+const IMPORT_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 9l5-5 5 5"/><path d="M12 4v12"/></svg>';
 
 function slotColour(slot: Slot): string {
   return isSlotColour(slot.colour ?? '') ? String(slot.colour) : DEFAULT_SLOT_COLOUR;
@@ -332,6 +338,7 @@ function renderFilledSlot(slot: Slot, active: boolean, covered: number, showDele
       <div class="ck-slot__head">
         <span class="ck-slot__name" data-slot-name title="${escHTML(slot.name)}">${escHTML(slot.name)}</span>
         <button type="button" class="ck-slot__pencil" data-slot-rename aria-label="Rename this save" title="Rename">${PENCIL_SVG}</button>
+        <button type="button" class="ck-slot__pencil ck-slot__export" data-slot-export="${escHTML(slot.id)}" aria-label="Export this save to a file" title="Export this save">${EXPORT_SVG}</button>
         ${showDelete ? `<button type="button" class="ck-slot__pencil ck-slot__trash" data-slot-delete aria-label="Delete this save" title="Delete">${TRASH_SVG}</button>` : ''}
       </div>
       <div class="ck-slot__body">
@@ -349,11 +356,79 @@ function renderFilledSlot(slot: Slot, active: boolean, covered: number, showDele
 function renderEmptySlot(index: number): string {
   const idx = String(index).padStart(2, '0');
   return `
-  <button type="button" class="ck-slot ck-slot--empty" role="tab" aria-selected="false" data-slot-add data-index="${idx}" aria-label="Empty save slot ${index}, add a new regimen">
-    <span class="ck-slot__plus" aria-hidden="true">${PLUS_SVG}</span>
-    <span class="ck-slot__emptylabel">Empty Slot</span>
-    <span class="ck-slot__emptysub">Add a save</span>
-  </button>`;
+  <div class="ck-slot ck-slot--empty" data-index="${idx}">
+    <button type="button" class="ck-slot__addcore" data-slot-add aria-label="Empty save slot ${index}, add a new regimen">
+      <span class="ck-slot__plus" aria-hidden="true">${PLUS_SVG}</span>
+      <span class="ck-slot__emptylabel">Empty Slot</span>
+      <span class="ck-slot__emptysub">Add a save</span>
+    </button>
+    <button type="button" class="ck-slot__import" data-slot-import aria-label="Import a saved regimen from a file" title="Import a saved regimen (.json)">${IMPORT_SVG}<span>Import</span></button>
+  </div>`;
+}
+
+/** Download one save as an app-marked JSON envelope (the user owns 100% of their data). */
+function exportSlot(slotId: string, toast: (message: string) => void): void {
+  const slot = loadSlots().slots.find(s => s.id === slotId);
+  if (slot === undefined) {
+    toast('That save no longer exists.');
+    return;
+  }
+  const env = {
+    app: BACKUP_APP_ID,
+    kind: REGIMEN_SLOT_EXPORT_KIND,
+    version: 1,
+    exportedAt: new Date().toISOString(),
+    slot,
+  };
+  const blob = new Blob([JSON.stringify(env, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  const safe = slot.name.replace(/[^a-z0-9]+/gi, '-').replace(/^-+|-+$/g, '').toLowerCase().slice(0, 30) || 'regimen';
+  a.download = `wallach-regimen-${safe}-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+/** Read a user-picked .json file, validate the envelope, hand the save to the sanitizing state op. */
+function importSlotFromFile(file: File, toast: (message: string) => void): void {
+  const reader = new FileReader();
+  reader.onload = (): void => {
+    let parsed: unknown;
+    try {
+      parsed = JSON.parse(String(reader.result)); // no reviver — file content is never executed
+    }
+    catch {
+      toast('That file is not valid JSON.');
+      return;
+    }
+    const env = SlotExportEnvelopeSchema.safeParse(parsed);
+    if (!env.success) {
+      toast('That is not a Codex regimen file.');
+      return;
+    }
+    const res = importSlot(env.data.slot);
+    if (!res.ok) {
+      toast(res.reason);
+    }
+    // On success writeSlotDoc emits 'regimen:changed' → the view re-renders with the new save active.
+  };
+  reader.onerror = (): void => toast('That file could not be read.');
+  reader.readAsText(file);
+}
+
+/** Open the OS file picker for a regimen import (transient input; nothing persists in the DOM). */
+function triggerImport(toast: (message: string) => void): void {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'application/json,.json';
+  input.addEventListener('change', () => {
+    const file = input.files?.[0];
+    if (file !== undefined) {
+      importSlotFromFile(file, toast);
+    }
+  });
+  input.click();
 }
 
 function renderSlots(): string {
@@ -418,7 +493,7 @@ function renderConsole(field: FieldInfo): string {
   const ordinal = String(Math.max(0, doc.slots.findIndex(s => s.id === doc.activeSlot)) + 1).padStart(2, '0');
   const total = essentialCount();
   const items = active?.items.length ?? 0;
-  const cells = field.cells.map(c => `<i class="${c.cls}" title="${escHTML(c.name)} · ${c.cls === 'covered' ? 'covered' : c.cls === 'goalgap' ? 'goal-gap' : 'open'}"></i>`).join('');
+  const cells = field.cells.map(c => `<i class="${c.cls}" data-tip="${escHTML(c.name)} · ${c.cls === 'covered' ? 'covered' : c.cls === 'goalgap' ? 'goal-gap' : 'open'}"></i>`).join('');
   return `
     <section class="ck-console" data-rise="2" aria-label="Coverage gauge">
       <div class="ck-console__bar">
@@ -558,6 +633,7 @@ function buildRailRows(host: HTMLElement, items: RegimenItem[]): void {
     const row = document.createElement('div');
     row.className = 'rr-row';
     row.dataset['rowId'] = id;
+    row.dataset['rrName'] = label.toLowerCase();
 
     const main = document.createElement('div');
     main.className = 'rr-row__main';
@@ -1310,6 +1386,16 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
+    // — export a save to a JSON file —
+    const exportBtn = target.closest<HTMLElement>('[data-slot-export]');
+    if (exportBtn !== null) {
+      ev.stopPropagation();
+      const sid = exportBtn.getAttribute('data-slot-export');
+      if (sid !== null) {
+        exportSlot(sid, showToast);
+      }
+      return;
+    }
     // — slot delete: step 1 — show an inline confirm on the tile (never delete on first click, #8a) —
     const del = target.closest<HTMLElement>('[data-slot-delete]');
     if (del !== null) {
@@ -1342,6 +1428,13 @@ export function mount(container: HTMLElement): MountHandle {
           showToast(res.reason); // on success the save moves to the recycle bin (restore via the bin)
         }
       }
+      return;
+    }
+    // — import a save from a JSON file (empty-slot affordance) —
+    const importBtn = target.closest<HTMLElement>('[data-slot-import]');
+    if (importBtn !== null) {
+      ev.stopPropagation();
+      triggerImport(showToast);
       return;
     }
     // — empty slot: create a blank save —

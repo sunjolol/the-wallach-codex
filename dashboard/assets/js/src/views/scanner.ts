@@ -84,7 +84,7 @@ function verdictHeadline(v: Verdict): { head: string; sub: string } {
     return { head: 'Aligns', sub: 'Worth adding' };
   }
   if (v === 'SAVE') {
-    return { head: 'Partial', sub: 'Worth considering' };
+    return { head: 'Neutral', sub: 'Worth considering' };
   }
   return { head: 'Out', sub: 'Doesn’t fit the framework' };
 }
@@ -174,8 +174,13 @@ function renderScan(state: ScState, fileName: string | null, dataUrl: string | n
           <span class="vd-drop__t">Upload a label image</span>
           <span class="vd-drop__n">or drop / paste an image here · OCR runs locally, slow by design, nothing uploaded</span>
         </button>
-      </div>
-      <div class="vd-scan__foot"><span>Default is image upload — OCR pre-fills the panel you confirm next.</span></div>`);
+        <div class="vd-paste">
+          <div class="vd-paste__lab">Or check an ingredients list</div>
+          <textarea class="vd-paste__in" data-sc-paste rows="3" maxlength="4000" spellcheck="false" placeholder="Paste or type an ingredients list — e.g. water, modified tapioca starch, canola oil, salt. Or a single ingredient like wheat."></textarea>
+          <button class="ds-btn-primary vd-paste__go" type="button" data-sc-paste-check>Check ingredients <span aria-hidden="true">&rarr;</span></button>
+          <div class="vd-paste__hint">The image scan above is for <b>supplement labels</b> (it reads nutrient amounts). For a <b>food</b>, paste its ingredients here — only ingredients Wallach says to avoid (gluten, seed oils, added sugar, MSG, sweeteners, modified / processed) are flagged; anything else reads neutral.</div>
+        </div>
+      </div>`);
   return `
     <section class="vd-step vd-step--scan">
       <div class="vd-step__head">
@@ -284,7 +289,7 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
           <div class="vd-step__ttl">Confirm what we read</div>
           <div class="vd-step__sub">OCR is imperfect — fix any misread word before we judge it.</div>
         </div>
-        <span class="vd-step__herotag">The hero step · verdict withheld until confirmed</span>
+        <button class="ui-close vd-step__close" type="button" data-sc-clear aria-label="Cancel this scan" title="Cancel scan">${CLOSE_SVG}</button>
       </div>
       <div class="vd-cf">
         <div class="vd-cf__grid">
@@ -319,7 +324,6 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
           <aside class="vd-cf__ref">
             <div class="vd-cf__ref-h">Your uploaded photo</div>
             ${dataUrl !== null ? `<img class="vd-cf__refimg" src="${escHTML(dataUrl)}" alt="Your uploaded label">` : ''}
-            <div class="vd-cf__ref-n"><span class="vd-yours">Yours · user-provided</span> amounts are the label\'s own, not a Wallach target</div>
           </aside>
         </div>
         <div class="vd-cf__cta">
@@ -392,7 +396,7 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
               <div class="vd-judg">
                 <div class="vd-verdict__eyebrow" style="color:${tone}">The verdict</div>
                 <div class="vd-tier" role="img" aria-label="Verdict: ${escHTML(head)} — ${escHTML(sub)}">
-                  ${tierChip('ADD', 'Add', 'aligns')}${tierChip('SAVE', 'Save', 'worth it')}${tierChip('REJECT', 'Reject', 'out')}
+                  ${tierChip('ADD', 'Add', 'aligns')}${tierChip('SAVE', 'Save', 'neutral')}${tierChip('REJECT', 'Reject', 'out')}
                 </div>
                 <h2 class="vd-verdict__h" style="color:${tone}">${head}<b>${sub}</b></h2>
                 <p class="vd-verdict__deck">${added > 0 ? `Fills ${added} real gap${added === 1 ? '' : 's'} in your 90` : 'Adds no new coverage to your 90'}${flags > 0 ? `, and the ingredient scan flagged ${flags}.` : '.'}</p>
@@ -679,6 +683,28 @@ export function mount(container: HTMLElement): MountHandle {
     }
     if (t.closest('[data-sc-upload]') !== null || t.closest('[data-sc-new]') !== null) {
       pickImage();
+      return;
+    }
+    // Paste / type an ingredients list (or a single ingredient) -> straight to a verdict.
+    // No OCR/confirm needed: the user typed it. runScan reuses the same antiFlags engine, so
+    // gluten/seed-oil/modified/etc. reject and everything else reads NEUTRAL (the neutral default).
+    if (t.closest('[data-sc-paste-check]') !== null) {
+      const ta = container.querySelector<HTMLTextAreaElement>('[data-sc-paste]');
+      const text = ta !== null ? ta.value.trim() : '';
+      if (text.length === 0) {
+        return;
+      }
+      const pasted: ScanLabel = { name: 'Pasted ingredients', nutrients: [], ingredients: text };
+      const r = runScan(pasted);
+      if (r !== null) {
+        label = pasted;
+        result = r;
+        state = 'result';
+        resultOrigin = 'scan';
+        reopenedSavedId = null;
+        imageDataUrl = null;
+        render();
+      }
       return;
     }
     // nutrient suggestion pick — fix the input in place (demo-style, no full re-render)

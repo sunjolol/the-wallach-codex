@@ -362,7 +362,7 @@ function scoreCandidates(lowerWord: string, pool: Iterable<string>): SuggestionC
   const lowerSet = new Set(lowerWord);
   const firstChar = lowerWord[0];
   for (const cand of pool) {
-    if (cand.length < 3) {
+    if (cand.length < 3 || cand === lowerWord) {
       continue;
     }
     const lengthDiff = Math.abs(cand.length - lowerWord.length);
@@ -430,8 +430,12 @@ export function findSuggestionCandidates(lowerWord: string): SuggestionCandidate
  * dictionary's original casing so the pick lands as a proper nutrient name.
  */
 export function findNutrientCandidates(word: string): SuggestionCandidate[] {
+  const lower = word.toLowerCase();
   const byLower = new Map(loadDict().known.map(k => [k.toLowerCase(), k]));
-  return scoreCandidates(word.toLowerCase(), byLower.keys())
+  if (byLower.has(lower)) {
+    return []; // an exact known-nutrient read is not garbled — never suggest it back to itself
+  }
+  return scoreCandidates(lower, byLower.keys())
     .map(c => ({ word: byLower.get(c.word) ?? c.word, score: c.score }));
 }
 

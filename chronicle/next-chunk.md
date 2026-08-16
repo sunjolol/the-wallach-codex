@@ -1,66 +1,93 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-Session 2026-08-15 finished **§1 #8b — the recycle bin** by shipping Batch 3 (the D2 replace-when-full
-step), then round-closed. **#8b is now COMPLETE (all three batches).** Board 91/91 throughout;
-everything probe- + screenshot- + **human-signed-off**. **eden/ untouched all session — no seal
-applied (corpus seal still held).**
+**BIG TWEAK LIST — in progress (2026-08-15).** Luneth handed over a large away-time tweak list; this
+session executed most of it. He was present intermittently (a mid-session computer shutdown; work
+survived intact on disk). Board **91/91 throughout.** eden/ untouched — no seal applied.
 
-## ⇒ NEXT SESSION IS LUNETH'S BIG TWEAK LIST
-Luneth ended the #8b session early **on purpose** to conserve usage for a **large list of tweaks** he
-wants to drive next. So the next genesis boot should be clean and ready: **let him lead with his
-list.** Do not pre-empt it with the parked §1 queue below.
+## ✅ COMMITTED
+- `12be0627` **regimen+rail (tweak #1)** — micro-label legibility bump (0.6→0.7rem/700), copy
+  (`Your Goals`, new deck), and working bare **1/2/3** rail hotkeys (the dead ⌘1/2/3 replaced).
+  Round-closed (build-log + Creator's Log). **Push DEFERRED** (public GitHub; his review pending).
 
-## DEFERRED — raise ONLY AFTER the big-tweak session (his explicit instruction)
-Two open regimen findings are parked with a **timing** instruction: surface them in the session
-**after** the big tweak list, NOT during it. Also recorded in memory ([[regimen-two-deferred-findings]]).
-- **#1** `coverage.ts::addVaultProduct` still carries its OWN copy of the add-or-bump dedup rule (now
-  duplicated with `state/regimen.ts::addOrBumpRegimenItem`). Behavior-identical if consolidated.
-- **#2** `.ck-undo` / `.ck-undo__btn` have ZERO CSS. They now only style the remaining `showToast`
-  REFUSAL messages (at-slot-limit; the rare restore-full failure path) — bare bottom-of-page text.
+## 🟡 HELD FOR SIGN-OFF — built + verified, UNCOMMITTED (per "commit mechanical, hold visual")
+All in the working tree (18 files ` M`); board 91/91; each screenshot-verified where reachable.
+1. **Dark theme** (theme.css): search close-hover→dark, search-popup glow→dark, scanner pills→
+   translucent color-mix tints, coverage grid removed in dark, covered tiles→dark-green plate.
+2. **Shadows-follow-primary** (theme.css + 6 non-sealed CSS): `--ds-glow-accent[-sm]` redefined off
+   `--ds-accent`; ~20 hardcoded ember `rgba(255,126,60)`/`(200,85,42)` literals → accent color-mix.
+   Proven with amethyst (purple button now has a purple glow).
+3. **Coverage-square fast tooltip**: generalized `gloss-tooltip.ts` to also serve `[data-tip]`; the
+   90 readout cells now use the instant `.gloss-tip` box instead of the slow native `title`.
+4. **Add-to-regimen + flash** (knowledge-products.ts / knowledge.ts / regimen.ts): button below
+   `‹ All products`, colored by supplement-type `--form`; add via `vaultEntry`+`addOrBumpRegimenItem`
+   → navigate to Regimen → the row flashes (`.rr-row--flash`, keyed by new `data-rr-name`). NOTE the
+   add button uses **`data-add-product`** (not `data-kd-product`) so the product-nav branch skips it.
+5. **Import / Export per slot** (new `importSlot` state op + `SlotExportEnvelopeSchema`): export icon
+   on filled slots, import on empty (empty tile restructured div+2 buttons). Import is **bulletproof**
+   — probe proved: no `__proto__` pollution, provenance forced to `user_manual`, unknown label keys
+   stripped, overrides remapped, bogus colour replaced, items capped 500, foreign/invalid/at-max
+   refused. Envelope reuses `BACKUP_APP_ID`.
+6. **Scanner** (demo-first bucket — his selection):
+   - Engine: **gluten (wheat/barley/rye/malt/spelt) → hardRejectTerms** = unconditional REJECT (fixes
+     the Tangy-Tangerine-with-wheat SAVE bug); oats stay serious + keep the GF-shutoff. **did-you-mean**
+     self-suggestion fixed (ocr.ts findNutrientCandidates early-return + scorer self-skip).
+     **neutral-default** (decideVerdict terminal REJECT→SAVE) so "nothing bad" reads NEUTRAL.
+     **`modified / processed`** antiList category added, severity **SERIOUS — LUNETH-RATIFIED** this
+     session (no direct Wallach "modified" claim; basis is his anti-processed/refined stance, cited in
+     the note). Verified via verdict_test: wheat→REJECT, Rudi's(modified+canola)→REJECT, GF-oats→ADD,
+     water→NEUTRAL.
+   - Copy: new intro deck, **WORTH IT → NEUTRAL** (tier chip), removed 3 redundant strings, hero-step
+     **close box** (reuses `data-sc-clear`).
+   - **Paste-ingredients checker** (the centerpiece): idle-state textarea + `data-sc-paste-check` →
+     builds `{ingredients, nutrients:[]}` → runScan → straight to a verdict. Single ingredient works;
+     guidance copy steers foods→paste, supplements→image. Verified: wheat→REJECT, clean→NEUTRAL.
+   - Typography bump: `.vd { --ds-text-micro: var(--ds-text-mini) }` + weight-700 on mono labels, tight
+     grid inputs/pills held at 0.6rem. Verified idle+result; **confirm-state unverified** (see below).
 
-## SHIPPED THIS SESSION — #8b Batch 3 (D2 "Replace a save")
-When you hit Restore on a deleted save while all 4 slots are full, a **D2 step** now opens (instead of
-the old refusal toast): the four current saves as a radio group, each with its colour bar + `covered/90
-· N items · edited …` meta; pick one, the footer live-summary reads `"X" → bin · "Y" restored`, and
-**Replace & restore** calls `restoreDeletedSlot(key, replaceSlotId)` — the chosen save drops to the bin
-as the restored one takes its place. Back-arrow **and** Cancel return to D1; **×** closes; **Esc** in D2
-backs out to D1 first, then closes. UI-only — the swap was already in state (batch 1).
-- Files: `views/regimen.ts` (populateReplace + dispatcher + D2 click/Esc handlers + MAX_SLOTS import),
-  `workspace-regimen.css` (D2 rules appended: `.rc-pop__back/__foot`, `.rc-rep-*`, `.rc-btn-cancel/
-  -primary`). Signed-off mockup was `trash_D_refined.html` / `shot_D.png` (state D2).
-- Probe: **`tools/render_probe_recycle_d2.js`** (new) — drives open-at-4/4 → pick → back+Esc → swap.
-  Add it to the regression set alongside `render_probe_recycle.js` + `render_probe_recycle_ui.js`.
+## ⬜ REMAINING TWEAK-LIST ITEMS (not built — need his real-scan eyes or a file)
+**⚠ LUNETH SAYS A LOT MORE REMAINS THAN LISTED HERE.** At session start, RE-READ his original
+tweak-list message in full and reconcile item-by-item; do NOT assume this list is complete. One he
+named explicitly: **remove "the two boxes from the results" he asked to remove — CLARIFY WHICH two**
+(likely result stat tiles, e.g. FORM-NOT-ON-A-LABEL / NUTRIENTS-REACH-THE-90 — confirm with him).
 
-## AFTER THE TWEAK LIST — REST OF §1 (parked order, unchanged)
-C (#9 goal-picker/veil: regimen "+ Add goal" opens the SAME full veil as Coverage; orange `.ui-close`) →
-D (#7 result 2-box redesign, mockup-first) → A-sweep (`.ui-close` onto the remaining × — goal chips,
-the veil close, knowledge-drawer closes, the scanner OCR ×). Then the §6 QOL-audit remainder.
+The CONFIRM state (post-image-OCR) is **not reachable headlessly** (needs a real label image + OCR),
+so these were NOT built blind — they want his live scan to verify:
+- Scanner QOL: **clickable thumbnail lightbox**; **per-row (X) delete + name input −30%** (recon's
+  CRITICAL gotcha: readCorrectedLabel falls back to the stored label, so delete must track a
+  `removedRows` set or clear `data-nedit`, never just remove the node); **live "Possible OCR errors"
+  update** (debounced input listener → refreshSuspects, and populate the `dismissed` set on idismiss).
+- **Rotation OCR** (sideways/upside-down labels): Tesseract is pinned PSM-6, no OSD model. Needs
+  vendoring `osd.traineddata` + a multi-orientation pass. His Rudi's example is transcribed as a
+  fixture but final test needs the real image dropped in a folder.
+- Copy nuances to confirm: the SAVE **headline** still says "Worth considering" (I changed only the
+  chip per his exact "WORTH IT" ask); the paste **result reuses the scanned/confirmed step-chrome +
+  `user-scanned` provenance**, slightly off for a typed paste.
 
-## THE THREE LEDGERS (master records for the earlier passes)
-1. `chronicle/ux-pass-2026-08-15.md` — the 10-point live UX review.
-2. `chronicle/scanner-review-r2.md` — the 8 scanner issues (all done).
-3. `chronicle/qol-audit-2026-08-14.md` — the original 30-item QOL audit (a subset done; many open).
+## DEFERRED — raise ONLY AFTER the tweak list closes (his explicit timing instruction)
+Two parked regimen findings (also in memory [[regimen-two-deferred-findings]]):
+- **#1** `coverage.ts::addVaultProduct` still duplicates the add-or-bump dedup rule now in
+  `state/regimen.ts::addOrBumpRegimenItem`. Behavior-identical if consolidated.
+- **#2** `.ck-undo` / `.ck-undo__btn` have ZERO CSS (now only the `showToast` refusal text).
 
 ## STANDING / PARKED (do NOT raise unprompted)
-- **CORPUS SEAL held.** eden/ untouched; 7 unreviewed draft books in `eden/corpus/drafts/` (a dedicated
-  per-claim review session, never a byproduct).
-- `design-system.css` is SEALED. The `.ui-close` standard + all recycle CSS live in NON-sealed
-  workspace files (dashboard.css / workspace-regimen.css).
-- 29 corpus claims + small threads await rulings. HEADERS parked. Online plan (Cloudflare) pending.
+- **CORPUS SEAL held.** eden/ untouched; 7 unreviewed draft books in `eden/corpus/drafts/`.
+- `design-system.css` SEALED — every tweak above overrides it from the NON-sealed theme.css layer.
+- Rest of §1 after the tweak list: C (#9 goal-picker/veil) → D (#7 result redesign) → A-sweep
+  (`.ui-close` onto remaining ×). Then the §6 QOL remainder. Ledgers: `chronicle/ux-pass-2026-08-15.md`,
+  `scanner-review-r2.md`, `qol-audit-2026-08-14.md`.
 
 ## GOTCHAS THAT SAVE HOURS
-- **Per-file line endings.** `state/regimen.ts`, `views/regimen.ts`, `core/schemas/regimen.ts`, and the
-  CSS are **LF**; `views/scanner.ts` + some tools probes are **CRLF**. Run `safe_write.py check` FIRST.
-- **The recycle bin lives INSIDE `rgSlots_v1`** (Luneth's storage choice — atomic, §31). `deletedAt` /
-  `removedAt` are full ISO timestamps (restore key + timer); `createdAt`/`editedAt` stay date-only.
-  Caps: `MAX_SLOT_TRASH=7`, `MAX_ITEM_TRASH=4`; `MAX_SLOTS=4` (state/regimen.ts).
-- **Slot colours must be palette hexes** (`slot-colours-data.json`) or `isSlotColour` rejects them and
-  the bar falls back to `DEFAULT_SLOT_COLOUR` (orange). Seed real palette hues in screenshots/probes.
-- **The popup is a fixed-position overlay inside `.ck`** — works because no ancestor keeps a lingering
-  transform. If a future change adds one, move the host to `document.body`.
-- Drive/screenshot the REAL app with the headless Puppeteer probes; the in-app Claude_Browser renders
-  file:// as a STATIC snapshot. Seed `wallachUserProfile_v1={chosenAt}` to dodge the arrival veil.
+- **Per-file line endings.** `state/regimen.ts`, `views/regimen.ts`, `core/schemas/regimen.ts`,
+  `main.ts`, `dashboard.html` are **LF**; `views/scanner.ts`, `state/scanner.ts`, `state/ocr.ts`,
+  `gloss-tooltip.ts`, `scanner-corpus-data.json`, and the workspace CSS are **CRLF**. `check` FIRST.
+- Multi-file edits went through a temp Python script → `safe_write.safe_rewrite` (read `newline=''`
+  to preserve endings). Scripts are in the session scratchpad.
+- Drive/screenshot the REAL app with the headless Puppeteer helper (`scratchpad/shot.js`, dismisses
+  onboarding); the in-app Claude_Browser renders file:// as a STATIC snapshot.
+- Scanner verdict data is `dashboard/assets/data/scanner-corpus-data.json` (hand-authored, unsealed).
+  `hardRejectTerms`→REJECT, `seriousAnti` (a category)→needs 2 to reject, GF-oats shutoff in code.
 
 ## GENESIS
 Luneth types `genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report, then ask which task to
-resume. **Suggested first move: hand him the floor for his big tweak list** (see the top of this file).
+resume. If he opens with the tweak list still going, pick up the REMAINING items above (or commit the
+HELD work once he signs off).

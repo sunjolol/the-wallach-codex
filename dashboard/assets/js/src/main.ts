@@ -78,7 +78,7 @@ function activateRailItem(target: WorkspaceTarget): void {
 const WORKSPACE_HEADERS: Partial<Record<WorkspaceTarget, { name: string; deck: string }>> = {
   coverage: { name: 'Coverage', deck: 'Every essential Wallach named, measured against what you take.' },
   regimen: { name: 'Regimen', deck: 'Design your own protocols based on your goals + Import and export regimens for yourself or others' },
-  scanner: { name: 'Scanner', deck: 'Scan \u2192 Confirm \u2192 Result \u2014 the verdict fires only on reads you confirm.' },
+  scanner: { name: 'Scanner', deck: 'Scan a label to see how your favorite supplements stack up against your goals, or type/paste ingredients to see if it\'s safe' },
 };
 
 function setTopbarHeader(target: WorkspaceTarget): void {

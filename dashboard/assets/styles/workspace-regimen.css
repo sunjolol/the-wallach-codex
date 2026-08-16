@@ -345,8 +345,8 @@
 .ck-rail .rail-list { scrollbar-width: thin; scrollbar-color: var(--ds-accent) var(--ds-paper-darker); }
 .ck-rail .rail-list::-webkit-scrollbar { width: 10px; }
 .ck-rail .rail-list::-webkit-scrollbar-track { background: var(--ds-paper-darker); border-radius: var(--ds-radius-pill); margin: 2px 0; }
-.ck-rail .rail-list::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%); border-radius: var(--ds-radius-pill); border: 2px solid var(--ds-paper-darker); box-shadow: 0 0 8px rgba(255,126,60,.3); }
-.ck-rail .rail-list::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--ds-accent-hot) 0%, var(--ds-accent-bright) 100%); box-shadow: 0 0 10px rgba(255,126,60,.5); }
+.ck-rail .rail-list::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--ds-accent) 0%, var(--ds-accent-hot) 100%); border-radius: var(--ds-radius-pill); border: 2px solid var(--ds-paper-darker); box-shadow: 0 0 8px color-mix(in srgb, var(--ds-accent) 30%, transparent); }
+.ck-rail .rail-list::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, var(--ds-accent-hot) 0%, var(--ds-accent-bright) 100%); box-shadow: 0 0 10px color-mix(in srgb, var(--ds-accent) 50%, transparent); }
 
 /* ── ADD field — the rail's product typeahead input ─────────────────────────────── */
 .ck-addfield { display: flex; align-items: center; gap: 10px; width: 100%; padding: 11px 13px; background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); cursor: text; transition: border-color .15s, box-shadow .15s; }
@@ -508,3 +508,39 @@
 .ck-recgrid .rec__meta {
   font-size: var(--ds-text-mini);
 }
+
+/* Add-to-regimen confirmation flash (tweak-list): a product added from the Products
+   tab jumps here and the matching Active-stack row pulses once so the add is visually
+   confirmed. .rr-row--flash is toggled in the knowledge click handler after navigate,
+   name-keyed via data-rr-name. Reduced-motion safe. */
+@keyframes rr-flash {
+  0%   { background: color-mix(in srgb, var(--ds-accent) 26%, transparent); box-shadow: inset 0 0 0 2px var(--ds-accent); }
+  60%  { background: color-mix(in srgb, var(--ds-accent) 14%, transparent); box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--ds-accent) 50%, transparent); }
+  100% { background: transparent; box-shadow: inset 0 0 0 2px transparent; }
+}
+.rr-row--flash { animation: rr-flash 1.15s var(--ds-ease-out); border-radius: var(--ds-radius-sm); }
+@media (prefers-reduced-motion: reduce) { .rr-row--flash { animation: none; } }
+
+/* Per-slot import affordance (tweak-list §7): the empty-slot tile is now a <div>
+   (a <button> cannot legally nest the Import button) holding a full-size "add" core
+   button + a small Import button below it. The tile's dashed/hover styling is
+   unchanged — it moved from the old <button> to this <div> under the same class.
+   The export icon on filled slots just reuses .ck-slot__pencil, no new rule. */
+.ck-slot--empty { position: relative; flex-direction: column; }
+.ck-slot__addcore {
+  all: unset;
+  box-sizing: border-box;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 5px; cursor: pointer; text-align: center;
+}
+.ck-slot__import {
+  display: inline-flex; align-items: center; gap: 5px; margin-top: 9px;
+  font-family: var(--ds-font-mono); font-size: 0.58rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ds-ink-soft);
+  background: color-mix(in srgb, var(--ds-paper) 65%, transparent);
+  border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill);
+  padding: 4px 11px; cursor: pointer; z-index: 2;
+  transition: color var(--ds-motion-fast) var(--ds-ease-out), border-color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out);
+}
+.ck-slot__import svg { width: 12px; height: 12px; }
+.ck-slot__import:hover { color: var(--ds-accent-deep); border-color: var(--ds-accent); background: var(--ds-paper); }

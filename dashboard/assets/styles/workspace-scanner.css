@@ -168,7 +168,6 @@
 
 .vd-cf__ref { display: flex; flex-direction: column; gap: var(--ds-space-3); padding: var(--ds-space-4); background: var(--ds-paper-deep); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); box-shadow: inset 0 1px 2px rgba(26,22,18,.05); align-items: center; text-align: center; position: sticky; top: var(--ds-space-5); }
 .vd-cf__ref-h { align-self: flex-start; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink-faint); }
-.vd-cf__ref-n { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .03em; color: var(--ds-ink-faint); display: inline-flex; align-items: center; gap: 7px; flex-wrap: wrap; justify-content: center; line-height: 1.5; }
 
 .vd-cf__cta { display: flex; align-items: center; gap: var(--ds-space-4); flex-wrap: wrap; padding-top: var(--ds-space-4); border-top: 1px solid var(--ds-rule); }
 .vd-cf__cta .ds-btn-primary { font-size: var(--ds-text-sm); padding: 0.9rem 1.8rem; }
@@ -226,7 +225,7 @@
 .vd-field { display: grid; grid-template-columns: repeat(15, 1fr); gap: 3px; margin-bottom: var(--ds-space-4); }
 .vd-field i { aspect-ratio: 1; border-radius: 1.5px; background: var(--ds-paper-darker); box-shadow: inset 0 0 0 1px var(--ds-rule-soft); }
 .vd-field i.covered { background: linear-gradient(180deg, var(--ds-ok-bright), var(--ds-status-ok)); box-shadow: inset 0 1px 0 rgba(255,255,255,.25); }
-.vd-field i.scanadd { background: linear-gradient(180deg, var(--ds-accent-bright), var(--ds-accent)); box-shadow: 0 0 0 1px var(--ds-accent-soft), 0 0 7px -1px rgba(255,126,60,.6); }
+.vd-field i.scanadd { background: linear-gradient(180deg, var(--ds-accent-bright), var(--ds-accent)); box-shadow: 0 0 0 1px var(--ds-accent-soft), 0 0 7px -1px color-mix(in srgb, var(--ds-accent) 60%, transparent); }
 @media (prefers-reduced-motion: no-preference) {
   .vd-field i.scanadd { animation: vd-ignite .5s var(--ds-ease-out) both; }
   .vd-field i:nth-child(48){animation-delay:.45s} .vd-field i:nth-child(49){animation-delay:.5s}
@@ -352,3 +351,26 @@
 .vd-amt:focus, .vd-unit:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 2px var(--ds-accent-wash); }
 /* the verdict-card close now uses the canonical .ui-close (dashboard.css); only its spacing is scoped here. */
 .vd-card__top .ui-close { margin-left: 8px; }
+
+/* Hero/confirm step close (tweak-list): replaces the removed herotag; reuses the
+   canonical .ui-close, pinned to the top-right of the flex step header. */
+.vd-step__head .vd-step__close { margin-left: auto; align-self: flex-start; }
+
+/* Paste-an-ingredients checker (tweak-list): the idle-state text path beside image upload.
+   Foods / single ingredients -> straight to a verdict via runScan (neutral unless a villain hits). */
+.vd-paste { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--ds-rule); display: flex; flex-direction: column; gap: 8px; }
+.vd-paste__lab { font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ds-ink-soft); }
+.vd-paste__in { width: 100%; box-sizing: border-box; resize: vertical; min-height: 62px; font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.5; color: var(--ds-ink); background: var(--ds-paper-light); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); padding: 9px 11px; }
+.vd-paste__in:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ds-accent) 18%, transparent); }
+.vd-paste__go { align-self: flex-start; }
+.vd-paste__hint { font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); line-height: 1.6; letter-spacing: .02em; color: var(--ds-ink-faint); }
+.vd-paste__hint b { color: var(--ds-ink-soft); font-weight: 700; }
+
+/* Scanner legibility bump (tweak-list): lift the dense 0.6rem micro-labels to the 0.7rem
+   --ds-text-mini tier + weight 700 (matching the Regimen bump), scoped to .vd so no other
+   tab is touched — the token is overridden ON .vd, never repointed globally. Overflow-tight
+   elements (fixed-ch nutrient inputs, verdict tier sub-labels, rail pills, ellipsis eyebrow)
+   are held at 0.6rem so the tight grids do not reflow. */
+.vd { --ds-text-micro: var(--ds-text-mini); }
+.vd :is(.vd-amt, .vd-unit, .vd-tier__c small, .vd-pill, .vd-card__eyebrow) { font-size: 0.6rem; }
+.vd :is(.vd-step__state, .vd-cf-sec__n, .vd-nrow__amt, .vd-nrow__map, .vd-sug__lab, .vd-ing__lab, .vd-ocr__hint, .vd-cf__ref-h, .vd-reasons__h, .vd-cite, .vd-impact__h, .vd-lg, .vd-stat__l, .vd-foot__prov, .vd-when, .vd-prog__note, .vd-error__m, .vd-cf-name__lab) { font-weight: 700; }

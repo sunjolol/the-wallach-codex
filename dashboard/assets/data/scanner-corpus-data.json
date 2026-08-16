@@ -613,6 +613,9 @@
       "monosodium glutamate",
       "yeast extract",
       "hydrolyzed protein"
+    ],
+    "modified / processed": [
+      "modified"
     ]
   },
   "antiListNotes": {
@@ -620,8 +623,9 @@
     "added sugar": "Wallach-direct: sugar raises urinary chromium loss 300% for 12 hours (Rare Earths Cr entry). Severity scales with daily exposure; low-dose trace use is bounded harm.",
     "artificial sweeteners": "Wallach acknowledges sucralose as acceptable (Hell's Kitchen). Aspartame and acesulfame are mainstream-controversial — framework-adjacent. Stevia is Wallach-friendly.",
     "caffeine": "Wallach-direct: caffeine raises urinary Cr loss for ~12 hrs per dose. Not anti-coffee absolute, but flag for Cr cofactor balance.",
-    "gluten sources": "Wallach-direct on actual gluten proteins: wheat / barley / rye / malt / spelt — these always flag serious regardless of marketing. Oats flag by default (commercial supply chains carry cross-contamination risk). Operational rule: if ANY oat ingredient in the label is declared 'gluten-free' — in either word order ('gluten free oats' or 'oats (gluten free)') — ALL oat-derivatives in that product are presumed GF, because a brand certifying one oat ingredient operates in a GF-aware supply chain across the rest. A 'gluten-free' claim attached to a NON-oat ingredient (e.g., 'gluten-free pasta') does NOT certify oats. Hard gluten proteins appearing elsewhere still flag independently — no shutoff trick. Buckwheat is a pseudocereal, gluten-free despite the name.",
-    "msg / glutamate": "Wallach: free glutamate is a neurotoxin concern. Common hidden sources: yeast extract, hydrolyzed protein."
+    "gluten sources": "Wallach-direct on actual gluten proteins: wheat / barley / rye / malt / spelt — these are an unconditional hard reject regardless of marketing (a gluten source is never a 'save'). Oats flag by default (commercial supply chains carry cross-contamination risk). Operational rule: if ANY oat ingredient in the label is declared 'gluten-free' — in either word order ('gluten free oats' or 'oats (gluten free)') — ALL oat-derivatives in that product are presumed GF, because a brand certifying one oat ingredient operates in a GF-aware supply chain across the rest. A 'gluten-free' claim attached to a NON-oat ingredient (e.g., 'gluten-free pasta') does NOT certify oats. Hard gluten proteins appearing elsewhere still flag independently — no shutoff trick. Buckwheat is a pseudocereal, gluten-free despite the name.",
+    "msg / glutamate": "Wallach: free glutamate is a neurotoxin concern. Common hidden sources: yeast extract, hydrolyzed protein.",
+    "modified / processed": "Wallach is broadly anti-processed/refined food: 'no processed or white flours', 'processed white flour and sugar' (empty-calorie diets), and 'processed salt confuses the body' (Dead Doctors Don't Lie, 2011); 'genetically modified' is his 'Frankenstein Food' (DDDL). Modified starches (modified food / corn / tapioca starch) are refined/processed derivatives, so this maps Wallach's anti-processed stance onto 'modified' ingredients. NOTE: no Wallach verbatim uses the word 'modified' for an ingredient — this is an inference awaiting Luneth's severity ratification (serious flag vs unconditional hard reject)."
   },
   "hardRejectTerms": [
     "high fructose corn syrup",
@@ -629,12 +633,18 @@
     "hydrogenated",
     "monosodium glutamate",
     "aspartame",
-    "acesulfame"
+    "acesulfame",
+    "wheat",
+    "barley",
+    "rye",
+    "malt",
+    "spelt"
   ],
   "seriousAnti": [
     "fried oils / seed oils",
     "added sugar",
     "gluten sources",
-    "msg / glutamate"
+    "msg / glutamate",
+    "modified / processed"
   ]
 }

@@ -45,6 +45,7 @@ import {
 } from '../state/coverage.js';
 import { listEssentialPages } from '../state/entity-page.js';
 import { vaultEntry } from '../state/recommender.js';
+import { addOrBumpRegimenItem } from '../state/regimen.js';
 import { applyRecordFilter, renderConditionPage, renderEssentialPage } from './entity-page.js';
 import { renderConditionsTab } from './knowledge-corpus.js';
 import { exploreEntities, renderExploreTab } from './knowledge-explore.js';
@@ -777,6 +778,33 @@ export function mount(container: HTMLElement): DrawerHandle {
           selectedProduct = null;
           trail = [];
           render();
+        }
+      }
+      else if (action === 'add-regimen') {
+        // Products tab -> add the shown product to the active regimen slot (dedup/bump via the
+        // §31 chokepoint), jump to the Regimen workspace, then flash the matching Active-stack
+        // row so the add is visually confirmed. Name-keyed (data-rr-name) so it works for both a
+        // fresh add and a dose bump; the timeout lets navigateTo mount/reveal + render the rail.
+        const pid = actionEl.getAttribute('data-add-product');
+        const entry = pid !== null ? vaultEntry(pid) : null;
+        if (entry !== null) {
+          addOrBumpRegimenItem({
+            id: Date.now(),
+            label: { name: entry.name, nutrients: entry.nutrients },
+            addedDate: new Date().toISOString().slice(0, 10),
+            provenance: 'user_manual',
+          });
+          window.dispatchEvent(new CustomEvent('wallach:navigate', { detail: { to: 'regimen' } }));
+          const key = entry.name.trim().toLowerCase();
+          setTimeout(() => {
+            const rows = Array.from(document.querySelectorAll<HTMLElement>('.rail-list .rr-row'));
+            const match = rows.find(r => r.dataset['rrName'] === key);
+            if (match !== undefined) {
+              match.classList.remove('rr-row--flash');
+              void match.offsetWidth;
+              match.classList.add('rr-row--flash');
+            }
+          }, 240);
         }
       }
       else if (action === 'topic-close') {

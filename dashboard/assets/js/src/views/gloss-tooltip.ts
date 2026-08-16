@@ -1,5 +1,5 @@
 /**
- * views/gloss-tooltip.ts — the shared hover/tap tooltip for glossary terms
+ * views/gloss-tooltip.ts — shared hover/tap tooltip for glossary terms + fast [data-tip] hints
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * A `.gloss` term (emitted by glossify() in knowledge-corpus.ts) shows its
@@ -27,12 +27,12 @@ function ensureTip(): HTMLElement {
 }
 
 function glossTarget(e: Event): HTMLElement | null {
-  const el = (e.target as Element | null)?.closest('.gloss');
+  const el = (e.target as Element | null)?.closest('.gloss, [data-tip]');
   return el instanceof HTMLElement ? el : null;
 }
 
 function showFor(el: HTMLElement): void {
-  const def = el.getAttribute('data-def');
+  const def = el.getAttribute('data-def') ?? el.getAttribute('data-tip');
   if (def === null || def.length === 0) {
     return;
   }

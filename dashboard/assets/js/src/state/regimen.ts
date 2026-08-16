@@ -64,6 +64,7 @@ import {
   type SlotDoc,
   SlotDocSchema,
   SlotNameSchema,
+  SlotSchema,
   type SlotTrashEntry,
 } from '../core/schemas/index.js';
 import { getRaw, getValidated, setValidated, type WriteResult } from '../core/storage.js';
@@ -485,9 +486,11 @@ export function saveRgUserGoals(goalsArray: unknown): void {
 
 // ─── Slot operations (P3 — the new §31 mutation surface) ───────────────────
 // Each returns {ok,reason?} where refusable (never a silent drop) and delegates
-// to writeSlotDoc (the single writer + cascade). importSlot is deferred to §7
-// (it is the untrusted-JSON surface that belongs with the import/export UI and
-// has no P3 caller — building it now would be speculation, the P4 lesson).
+// to writeSlotDoc (the single writer + cascade). importSlot (below) is the §7
+// untrusted-JSON surface: it validates via SlotSchema, then RE-MINTS every field
+// (fresh slot + item ids, label narrowed, provenance forced, items capped) and
+// routes the write through writeSlotDoc — an imported file can never inject code,
+// spoof provenance, or bypass the atomic single-writer.
 
 /** Read the current slot document (for a view/probe to enumerate slots). */
 export function loadSlots(): SlotDoc {
@@ -705,6 +708,67 @@ export function restoreDeletedSlot(deletedAtKey: string, replaceSlotId?: string)
   return res.ok ? { ok: true, slotId: restored.id } : { ok: false, reason: 'That save could not be restored.' };
 }
 
+/** Cap on items an imported save may carry — a bound with a rejection path (no silent LS-quota DoS). */
+const MAX_IMPORT_ITEMS = 500;
+
+/**
+ * Import a save from an already-JSON-parsed value (§7 — the untrusted-JSON surface).
+ * SECURITY: validated by SlotSchema, then EVERY field is re-minted — a fresh slot id +
+ * fresh item ids, label narrowed to {name,brand?,nutrients}, provenance forced to
+ * 'user_manual' (never a file-claimed 'user_scanned'), overrides remapped to the new
+ * ids, timestamps reset. Nothing executable and nothing of the file's identity survives.
+ * Routes through writeSlotDoc so the atomic single-writer + §31 cascade + SlotDocSchema
+ * re-validation all still apply. Refused with a reason at MAX_SLOTS or over MAX_IMPORT_ITEMS.
+ */
+export function importSlot(raw: unknown): SlotOpResult {
+  const doc = loadSlotDoc();
+  if (doc.slots.length >= MAX_SLOTS) {
+    return { ok: false, reason: `You have ${MAX_SLOTS} saves. Delete one first to import.` };
+  }
+  const parsed = SlotSchema.safeParse(raw);
+  if (!parsed.success) {
+    return { ok: false, reason: 'That file is not a valid saved regimen.' };
+  }
+  const src = parsed.data;
+  if (src.items.length > MAX_IMPORT_ITEMS) {
+    return { ok: false, reason: 'That save has too many items to import.' };
+  }
+  const now = today();
+  const base = Date.now();
+  const idMap = new Map<string, number>();
+  const items: RegimenItem[] = src.items.map((it, i) => {
+    const newId = base + i;
+    idMap.set(String(it.id), newId);
+    const label: RegimenItem['label'] = {
+      name: typeof it.label.name === 'string' ? it.label.name : '',
+      nutrients: Array.isArray(it.label.nutrients) ? it.label.nutrients : [],
+    };
+    if (typeof it.label.brand === 'string') {
+      label.brand = it.label.brand;
+    }
+    return { id: newId, label, addedDate: now, provenance: 'user_manual' };
+  });
+  const overrides: OverridesMap = {};
+  for (const [oldId, ov] of Object.entries(src.overrides)) {
+    const newId = idMap.get(oldId);
+    if (newId !== undefined) {
+      overrides[String(newId)] = ov;
+    }
+  }
+  const slot: Slot = {
+    id: newSlotId(),
+    name: src.name,
+    items,
+    overrides,
+    createdAt: now,
+    editedAt: now,
+    colour: pickSlotColour(doc.slots.map(s => s.colour)),
+    goals: (src.goals ?? []).filter((g): g is string => typeof g === 'string'),
+  };
+  const res = writeSlotDoc({ ...doc, slots: [...doc.slots, slot], activeSlot: slot.id }, { reason: 'add' });
+  return res.ok ? { ok: true, slotId: slot.id } : { ok: false, reason: 'That save could not be imported to this device.' };
+}
+
 // ─── Bridge installation (cross-IIFE compat + probe/DOM-handler reach) ─────
 
 declare global {
@@ -723,6 +787,7 @@ declare global {
     setSlotColour?: typeof setSlotColour;
     restoreDeletedItem?: typeof restoreDeletedItem;
     restoreDeletedSlot?: typeof restoreDeletedSlot;
+    importSlot?: typeof importSlot;
   }
 }
 
@@ -748,4 +813,5 @@ export function installBridges(): void {
   window.setSlotColour = setSlotColour;
   window.restoreDeletedItem = restoreDeletedItem;
   window.restoreDeletedSlot = restoreDeletedSlot;
+  window.importSlot = importSlot;
 }

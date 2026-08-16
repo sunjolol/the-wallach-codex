@@ -19,6 +19,7 @@
  */
 
 import { z } from 'zod';
+import { BACKUP_APP_ID } from './backup.js';
 
 /** A single product/item label as stored in localStorage. */
 export const RegimenLabelSchema = z.object({
@@ -203,3 +204,20 @@ export type RgUserGoals = z.infer<typeof RgUserGoalsSchema>;
 export type Slot = z.infer<typeof SlotSchema>;
 export type SlotTrashEntry = z.infer<typeof SlotTrashEntrySchema>;
 export type SlotDoc = z.infer<typeof SlotDocSchema>;
+
+// ─── Per-slot export/import envelope (§7 — the untrusted-JSON import surface) ──
+/** Marks an exported single save so import can reject foreign / whole-backup JSON. */
+export const REGIMEN_SLOT_EXPORT_KIND = 'regimen-slot';
+/**
+ * One exported save slot, app-marked + versioned. The `slot` is validated by
+ * SlotSchema at the envelope boundary; state/regimen.ts::importSlot then re-mints
+ * every field before it touches storage (see there). Reuses BACKUP_APP_ID so a
+ * regimen file and a full backup share one app marker.
+ */
+export const SlotExportEnvelopeSchema = z.object({
+  app: z.literal(BACKUP_APP_ID),
+  kind: z.literal(REGIMEN_SLOT_EXPORT_KIND),
+  version: z.number().int(),
+  exportedAt: z.string(),
+  slot: SlotSchema,
+});

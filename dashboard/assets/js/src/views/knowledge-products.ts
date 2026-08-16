@@ -539,7 +539,10 @@ export function renderProductDeep(id: string, fromProductsTab = true): string {
           <span class="kd-ep-hero__meta">Youngevity product${sku}</span>
         </div>
       </div>
-      <button class="kd-ep-back" data-kd-action="product-close" type="button">${fromProductsTab ? '‹ All products' : '‹ Go back'}</button>
+      <div class="kd-ep-actions">
+        <button class="kd-ep-back" data-kd-action="product-close" type="button">${fromProductsTab ? '‹ All products' : '‹ Go back'}</button>
+        <button class="kd-ep-add-regimen" data-kd-action="add-regimen" data-add-product="${escHTML(id)}" type="button">Add to regimen ›</button>
+      </div>
     </div>
     <p class="kd-ep-lede">${lede}</p>
     ${pfGlance(p, supplied)}
