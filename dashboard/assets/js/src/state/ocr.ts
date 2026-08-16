@@ -550,6 +550,19 @@ export function findNutrientCandidates(word: string): SuggestionCandidate[] {
     .map(c => ({ word: byLower.get(c.word) ?? c.word, score: c.score }));
 }
 
+/**
+ * True if `name` is an exact known-nutrient label (case-insensitive) -- even when it is not one of
+ * the 90 tracked essentials (Protein, etc.). Lets the Confirm step mark a correctly-read nutrient as
+ * recognized instead of flagging it as an OCR error to "fix". Pure.
+ */
+export function isKnownNutrient(name: string): boolean {
+  const lower = name.trim().toLowerCase();
+  if (lower === '') {
+    return false;
+  }
+  return loadDict().known.some(k => k.toLowerCase() === lower);
+}
+
 /** One suspect word in an ingredients line + its ranked candidates. */
 export interface IngredientSuspect {
   word: string;
@@ -632,7 +645,7 @@ function parseOcrText(rawTextInput: string): ParsedOcr {
   // Nutrients — line-anchored "Name AMOUNT unit", with OCR-noise rejection.
   const lines = rawText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
   const nutPat = /^([a-z][a-z\s()+\-/]{0,54}?)\s+(\d+(?:\.\d+)?)\s*(mg|mcg|g|iu)\b/i;
-  const skip = /^(?:calories|serving|amount per|daily value|total fat|saturated|trans fat|cholesterol|total carbohydrate|dietary fiber|total sugars|added sugars|nutrition|facts|amount)$/i;
+  const skip = /^(?:calories|serving|amount per|daily value|total fat|saturated|trans fat|cholesterol|total carbohydrate|dietary fiber|total sugars|added sugars|includes|nutrition|facts|amount)$/i;
   const seen = new Set<string>();
   for (const line of lines) {
     const m2 = line.match(nutPat);

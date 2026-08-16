@@ -35,6 +35,7 @@ import {
   findIngredientSuspects,
   findNutrientCandidates,
   type IngredientSuspect,
+  isKnownNutrient,
   ocrToLabel,
 } from '../state/ocr.js';
 import { addOrBumpRegimenItem } from '../state/regimen.js';
@@ -210,6 +211,19 @@ function nutrientRow(n: Nutrient, i: number, added: Set<string>, covered: Set<st
           <input class="vd-edit" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
           <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML(ess.name)}</b>${plus}</span>
+        </div>
+      </div>`;
+  }
+  if (isKnownNutrient(name)) {
+    // A correctly-read nutrient that is simply not one of Wallach's 90 tracked essentials (Protein,
+    // etc.). Recognized and shown -- never flagged as an OCR error to "fix".
+    return `
+      <div class="vd-nrow is-ok is-untracked" data-nrow="${i}">
+        <div class="vd-nrow__main">
+          <span class="vd-nrow__g">&check;</span>
+          <input class="vd-edit" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" aria-label="Unit (editable)"></span>
+          <span class="vd-nrow__map"><span class="vd-nrow__cov">· read OK · not one of the 90</span></span>
         </div>
       </div>`;
   }
