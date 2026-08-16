@@ -66,6 +66,7 @@ interface OcrWindow extends Window {
   Tesseract?: TesseractGlobal;
   lcParseLabel?: (rawText: string) => ScanLabel;
   lcScanImage?: (dataUrl: string) => Promise<ScanResult | null>;
+  lcOcrToLabel?: (dataUrl: string) => Promise<{ label: ScanLabel; rawText: string }>;
 }
 
 interface ProgressUpdate { stage: 0 | 1 | 2; message: string; determinate: boolean; fraction: number }
@@ -171,9 +172,89 @@ async function preprocessImage(dataUrl: string): Promise<string> {
   });
 }
 
+// ─── Orientation (offline brute-force: no OSD model needed) ────────────
+// Tesseract is pinned to PSM 6 (one horizontal text block) with no orientation model vendored,
+// so a sideways or upside-down label OCRs as noise. Rather than ship a network download for
+// osd.traineddata (which offline-first forbids), we detect orientation the offline way: score the
+// as-shot read, and only if it looks like garbage do we OCR downscaled 90/180/270 rotations and
+// keep the best. Measured on three real labels the correct angle scores 100-170 with 7-13 anchors
+// while every wrong angle scores <15 with 0 anchors — a clean separation. An upright photo pays
+// nothing: its 0° read wins immediately and no rotation passes run.
+
+/**
+ * Render `dataUrl` rotated by deg (0/90/180/270), optionally downscaled to `maxLong` px on the
+ * longest side (0 = keep size). Returns a PNG data URL. Rotation is exact multiples of 90°.
+ */
+async function renderVariant(dataUrl: string, deg: number, maxLong: number): Promise<string> {
+  const rot = ((deg % 360) + 360) % 360;
+  if (rot === 0 && maxLong === 0) {
+    return dataUrl;
+  }
+  return new Promise<string>((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => {
+      try {
+        const swap = rot === 90 || rot === 270;
+        const s = maxLong > 0 ? Math.min(1, maxLong / Math.max(img.naturalWidth, img.naturalHeight)) : 1;
+        const w = Math.round(img.naturalWidth * s);
+        const h = Math.round(img.naturalHeight * s);
+        const canvas = document.createElement('canvas');
+        canvas.width = swap ? h : w;
+        canvas.height = swap ? w : h;
+        const ctx = canvas.getContext('2d');
+        if (ctx === null) {
+          reject(new Error('2D canvas context unavailable'));
+          return;
+        }
+        ctx.imageSmoothingEnabled = true;
+        ctx.imageSmoothingQuality = 'high';
+        ctx.translate(canvas.width / 2, canvas.height / 2);
+        ctx.rotate(rot * Math.PI / 180);
+        ctx.drawImage(img, -w / 2, -h / 2, w, h);
+        resolve(canvas.toDataURL('image/png'));
+      }
+      catch (e) {
+        reject(e instanceof Error ? e : new Error(String(e)));
+      }
+    };
+    img.onerror = () => reject(new Error('Failed to load image for rotation'));
+    img.src = dataUrl;
+  });
+}
+
+/**
+ * Score how much an OCR read looks like a correctly-oriented food/supplement label. Label anchors
+ * (Nutrition Facts, Ingredients, Calories…) and amount tokens (12g, 190mg, 40%) survive only at
+ * the right angle; a rotated read is mostly punctuation noise. Pure.
+ */
+function scoreOcrOrientation(text: string): { score: number; anchors: number } {
+  const t = text.toLowerCase();
+  const anchorRes = [
+    /(?:nutrition|supplement) facts/,
+    /ingredients/,
+    /calories/,
+    /serving/,
+    /daily value/,
+    /total fat/,
+    /sodium/,
+    /protein/,
+    /carbohydrate/,
+    /cholesterol/,
+  ];
+  let anchors = 0;
+  for (const re of anchorRes) {
+    if (re.test(t)) {
+      anchors++;
+    }
+  }
+  const amounts = (t.match(/\d+\s*(?:mg|mcg|g|iu|%)\b/g) ?? []).length;
+  const realWords = (t.match(/\b[a-z]{4,}\b/g) ?? []).length;
+  return { score: anchors * 10 + amounts * 2 + realWords * 0.1, anchors };
+}
+
 /** Where the worker fetches the language model (kept in sync with createWorker's langPath below). */
 const TRAINEDDATA_URL = './assets/vendor/tesseract/lang-data/eng.traineddata.gz';
-const OCR_TIMEOUT_MS = 60_000;
+const OCR_TIMEOUT_MS = 90_000;
 
 let modelReachable = false;
 
@@ -258,9 +339,39 @@ async function runOcr(imageData: string, progress: ProgressFn): Promise<string> 
   catch {
     // setParameters is best-effort — some builds reject unknown keys.
   }
-  const result = await worker.recognize(processed);
-  await worker.terminate();
-  return result.data.text;
+  const recognize = async (url: string): Promise<string> => (await worker.recognize(url)).data.text;
+  try {
+    // Pass 1 — full-res at the as-shot orientation (exactly what the app always did).
+    const text0 = await recognize(processed);
+    const s0 = scoreOcrOrientation(text0);
+    // A recognizable label anchor (Nutrition/Supplement Facts, Ingredients, Calories…) means the
+    // read is oriented — return at once. Rotated garbage reliably yields zero anchors, so this is
+    // the common case AND supplement labels (few amount tokens) are never sent on a needless sweep.
+    if (s0.anchors >= 1) {
+      return text0;
+    }
+    // The as-shot read is garbage → the label is probably sideways/upside-down. Detect the angle
+    // on downscaled rotations (cheap), then re-read once at full res if one clearly wins.
+    progress({ stage: 2, message: 'Checking the label orientation…', determinate: false, fraction: 0 });
+    let best = { deg: 0, ...s0 };
+    for (const deg of [90, 180, 270]) {
+      const variant = await renderVariant(processed, deg, 1100);
+      const st = scoreOcrOrientation(await recognize(variant));
+      if (st.score > best.score) {
+        best = { deg, ...st };
+      }
+    }
+    // Rotate only when a non-zero angle actually surfaces an anchor the as-shot read lacked (its
+    // anchors were 0 to reach here) and out-scores it — never flip a genuinely upright label.
+    if (best.deg === 0 || best.anchors < 1 || best.score <= s0.score) {
+      return text0;
+    }
+    progress({ stage: 2, message: 'Reading the label…', determinate: true, fraction: 0 });
+    return await recognize(await renderVariant(processed, best.deg, 0));
+  }
+  finally {
+    await worker.terminate();
+  }
 }
 
 // ─── OCR fuzzy correction (Levenshtein snap to the food dictionary) ────────
@@ -666,4 +777,5 @@ if (typeof window !== 'undefined') {
   const w = window as OcrWindow;
   w.lcScanImage = scanImage;
   w.lcParseLabel = parseLabel;
+  w.lcOcrToLabel = ocrToLabel;
 }

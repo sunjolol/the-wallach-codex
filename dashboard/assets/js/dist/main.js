@@ -18523,8 +18523,67 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       img.src = dataUrl;
     });
   }
+  async function renderVariant(dataUrl, deg, maxLong) {
+    const rot = (deg % 360 + 360) % 360;
+    if (rot === 0 && maxLong === 0) {
+      return dataUrl;
+    }
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        try {
+          const swap = rot === 90 || rot === 270;
+          const s = maxLong > 0 ? Math.min(1, maxLong / Math.max(img.naturalWidth, img.naturalHeight)) : 1;
+          const w = Math.round(img.naturalWidth * s);
+          const h = Math.round(img.naturalHeight * s);
+          const canvas = document.createElement("canvas");
+          canvas.width = swap ? h : w;
+          canvas.height = swap ? w : h;
+          const ctx = canvas.getContext("2d");
+          if (ctx === null) {
+            reject(new Error("2D canvas context unavailable"));
+            return;
+          }
+          ctx.imageSmoothingEnabled = true;
+          ctx.imageSmoothingQuality = "high";
+          ctx.translate(canvas.width / 2, canvas.height / 2);
+          ctx.rotate(rot * Math.PI / 180);
+          ctx.drawImage(img, -w / 2, -h / 2, w, h);
+          resolve(canvas.toDataURL("image/png"));
+        } catch (e) {
+          reject(e instanceof Error ? e : new Error(String(e)));
+        }
+      };
+      img.onerror = () => reject(new Error("Failed to load image for rotation"));
+      img.src = dataUrl;
+    });
+  }
+  function scoreOcrOrientation(text) {
+    const t = text.toLowerCase();
+    const anchorRes = [
+      /(?:nutrition|supplement) facts/,
+      /ingredients/,
+      /calories/,
+      /serving/,
+      /daily value/,
+      /total fat/,
+      /sodium/,
+      /protein/,
+      /carbohydrate/,
+      /cholesterol/
+    ];
+    let anchors = 0;
+    for (const re of anchorRes) {
+      if (re.test(t)) {
+        anchors++;
+      }
+    }
+    const amounts = (t.match(/\d+\s*(?:mg|mcg|g|iu|%)\b/g) ?? []).length;
+    const realWords = (t.match(/\b[a-z]{4,}\b/g) ?? []).length;
+    return { score: anchors * 10 + amounts * 2 + realWords * 0.1, anchors };
+  }
   var TRAINEDDATA_URL = "./assets/vendor/tesseract/lang-data/eng.traineddata.gz";
-  var OCR_TIMEOUT_MS = 6e4;
+  var OCR_TIMEOUT_MS = 9e4;
   var modelReachable = false;
   async function assertModelReachable() {
     if (modelReachable) {
@@ -18585,9 +18644,30 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       await worker.setParameters({ preserve_interword_spaces: "1", tessedit_pageseg_mode: "6" });
     } catch {
     }
-    const result = await worker.recognize(processed);
-    await worker.terminate();
-    return result.data.text;
+    const recognize = async (url) => (await worker.recognize(url)).data.text;
+    try {
+      const text0 = await recognize(processed);
+      const s0 = scoreOcrOrientation(text0);
+      if (s0.anchors >= 1) {
+        return text0;
+      }
+      progress({ stage: 2, message: "Checking the label orientation\u2026", determinate: false, fraction: 0 });
+      let best = { deg: 0, ...s0 };
+      for (const deg of [90, 180, 270]) {
+        const variant = await renderVariant(processed, deg, 1100);
+        const st = scoreOcrOrientation(await recognize(variant));
+        if (st.score > best.score) {
+          best = { deg, ...st };
+        }
+      }
+      if (best.deg === 0 || best.anchors < 1 || best.score <= s0.score) {
+        return text0;
+      }
+      progress({ stage: 2, message: "Reading the label\u2026", determinate: true, fraction: 0 });
+      return await recognize(await renderVariant(processed, best.deg, 0));
+    } finally {
+      await worker.terminate();
+    }
   }
   function levenshtein(a, b) {
     if (a === b) {
@@ -18898,6 +18978,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const w = window;
     w.lcScanImage = scanImage;
     w.lcParseLabel = parseLabel;
+    w.lcOcrToLabel = ocrToLabel;
   }
 
   // assets/js/src/core/schemas/profile.ts
@@ -180802,7 +180883,7 @@ VERIFICATION: node tools/build.mjs exit 0 (11507.8 KB); tsc --noEmit 0; eslint 0
 
 HANDOFF: chronicle/next-chunk.md was rewritten with the full session summary (three commits) and the exact Batch 3 pickup, since the session is near its limit and the next session will boot with genesis.
 
-DEFERRED: Batch 3 = the D2 "Replace a save" step (state is ready \u2014 restoreDeletedSlot(deletedAtKey, replaceSlotId) already performs the swap, proven by render_probe_recycle.js; this is UI-only: a second popup view + wiring + a back arrow), then round-close #8b. After that: C (#9 goal-picker/veil), D (#7 result redesign), the A-sweep. Findings #1 (coverage.ts::addVaultProduct still carries its own copy of the add-or-bump rule) and #2 (.ck-undo has no CSS, now only affecting refusal toasts) remain flagged. eden/ untouched this round \u2014 no corpus/catalog seal applies.` }, { id: "lg_msuxskik_yaqz3h", ts: "2026-08-15T17:17:41.084630-05:00", surface: "regimen", kind: "round-close", summary: "Finished the recycle bin (\xA71 #8b): restoring a deleted save when all four save slots are full now opens a clean \u201CReplace a save\u201D step \u2014 pick a current save to move to the bin and the restored one takes its place \u2014 instead of the old dead-end error.", detail: "This was the last missing piece of the recycle bin. Before, if your four save slots were full and you tried to bring a deleted save back from the bin, the app just showed an error and stopped. Now it opens a small step that lists your four saves so you can choose one to set aside (it drops to the bin), and your restored save takes the freed slot. You can always restore the set-aside one again later. Back-arrow and Cancel return to the list; the \xD7 closes; Esc backs out one step at a time.\n\nUI-only over the batch-1 state op restoreDeletedSlot(deletedAtKey, replaceSlotId). views/regimen.ts: added populateReplace (the D2 builder) + a populateRecycle dispatcher (D1 list vs D2 replace), D2 click handlers (restore-at-4/4 \u2192 D2, pick, back, Replace&restore), Esc backing D2\u2192D1\u2192closed, closeRecycle resetting the D2 state, and the MAX_SLOTS import (sort-order fixed). workspace-regimen.css: appended the D2 rules (.rc-pop__back / .rc-pop__foot, .rc-rep-note/row/radio/bar/body/name/meta/tobin/summary, .rc-btn-cancel / .rc-btn-primary), ported from the signed-off trash_D_refined.html D2 state. New regression probe tools/render_probe_recycle_d2.js drives open-at-4/4 \u2192 pick-updates-summary \u2192 back+Esc-return-to-D1 \u2192 Replace&restore-swaps (chosen\u2192bin, saved\u2192live) \u2192 refresh-to-D1. Verified: typecheck clean; eslint 0 errors (2 pre-existing warnings); build OK; invariants 91/91 (incl. workspace_coverage_no_dead_rules \u2014 all 14 new classes trace to live JS references); all three recycle probes PASS with 0 page errors; D2 screenshots human-signed-off (Cancel\u2192D1 and the app's spelled-out relative-time wording both explicitly approved). Deferred to AFTER the next big-tweak session (Luneth's instruction): #1 coverage.ts::addVaultProduct still duplicates the add-or-bump dedup rule; #2 .ck-undo/.ck-undo__btn remain unstyled (now only the refusal toasts). eden/ untouched \u2014 no seal applied.", metadata: { chunk: "#8b-batch-3", board: "91/91", files: ["dashboard/assets/js/src/views/regimen.ts", "dashboard/assets/styles/workspace-regimen.css", "tools/render_probe_recycle_d2.js"] } }, { id: "lg_msuz6bgo_0jnbki", ts: "2026-08-15T17:56:22.152733-05:00", surface: "regimen+rail", kind: "round-close", summary: "Tweak-list batch 1: Regimen micro-labels bumped to a readable 0.7rem/700; tab subtitle + goals-strip copy updated; dead Cmd-1/2/3 rail chips replaced with working bare 1/2/3 keys (jump Coverage/Regimen/Scanner). Board 91/91; push held for review.", detail: 'Regimen legibility + copy + real rail hotkeys; committed locally, push deferred while Luneth is away.\n\nTECH: workspace-regimen.css scoped bump of 12 micro-labels to --ds-text-mini/700 without repointing the shared --ds-text-micro token (shared classes via a .ck scope so Coverage is untouched; regimen-only .ck-* re-declared; .ck-recgrid .rec__meta size-only). main.ts regimen deck copy + regimen.ts goalstrip static "Your Goals". dashboard.html rail Cmd-1/2/3 chips to 1/2/3; main.ts wireDrawerKeys bare-digit branch after the typing/modifier/modal guards, navigating via navigateTo. Verified: build 0, tsc clean, invariants 91/91 (0 new reds), render_probe boot/rail-sync/slots PASS, puppeteer key + typing-guard test PASS, screenshots reviewed. Part of the away-time tweak-list; Phase-2 visual work built-and-held for sign-off.' }, { id: "lg_msvjq5p2_o1d4f0", ts: "2026-08-16T03:31:40.118837-05:00", surface: "tweak-list", kind: "round-close", summary: "Away-time tweak list (Phase 2 + scanner): dark theme, shadows track primary, fast tooltip, add-to-regimen flash, bulletproof import/export, scanner overhaul (gluten rejects, paste-ingredients checker, NEUTRAL verdict). Board 91/91; confirm-state QOL + rotation remain.", detail: "Executed most of Luneth large tweak list in one away-time run; committed + pushed with his sign-off. See chronicle/build-log.md 2026-08-16 03:30 for the full technical record. REMAINS (next-chunk.md): confirm-state scanner QOL (thumbnail/row-delete/live-OCR), rotation OCR (needs osd.traineddata + real file), two result boxes to clarify, copy nuances. Luneth says more of the list remains." }];
+DEFERRED: Batch 3 = the D2 "Replace a save" step (state is ready \u2014 restoreDeletedSlot(deletedAtKey, replaceSlotId) already performs the swap, proven by render_probe_recycle.js; this is UI-only: a second popup view + wiring + a back arrow), then round-close #8b. After that: C (#9 goal-picker/veil), D (#7 result redesign), the A-sweep. Findings #1 (coverage.ts::addVaultProduct still carries its own copy of the add-or-bump rule) and #2 (.ck-undo has no CSS, now only affecting refusal toasts) remain flagged. eden/ untouched this round \u2014 no corpus/catalog seal applies.` }, { id: "lg_msuxskik_yaqz3h", ts: "2026-08-15T17:17:41.084630-05:00", surface: "regimen", kind: "round-close", summary: "Finished the recycle bin (\xA71 #8b): restoring a deleted save when all four save slots are full now opens a clean \u201CReplace a save\u201D step \u2014 pick a current save to move to the bin and the restored one takes its place \u2014 instead of the old dead-end error.", detail: "This was the last missing piece of the recycle bin. Before, if your four save slots were full and you tried to bring a deleted save back from the bin, the app just showed an error and stopped. Now it opens a small step that lists your four saves so you can choose one to set aside (it drops to the bin), and your restored save takes the freed slot. You can always restore the set-aside one again later. Back-arrow and Cancel return to the list; the \xD7 closes; Esc backs out one step at a time.\n\nUI-only over the batch-1 state op restoreDeletedSlot(deletedAtKey, replaceSlotId). views/regimen.ts: added populateReplace (the D2 builder) + a populateRecycle dispatcher (D1 list vs D2 replace), D2 click handlers (restore-at-4/4 \u2192 D2, pick, back, Replace&restore), Esc backing D2\u2192D1\u2192closed, closeRecycle resetting the D2 state, and the MAX_SLOTS import (sort-order fixed). workspace-regimen.css: appended the D2 rules (.rc-pop__back / .rc-pop__foot, .rc-rep-note/row/radio/bar/body/name/meta/tobin/summary, .rc-btn-cancel / .rc-btn-primary), ported from the signed-off trash_D_refined.html D2 state. New regression probe tools/render_probe_recycle_d2.js drives open-at-4/4 \u2192 pick-updates-summary \u2192 back+Esc-return-to-D1 \u2192 Replace&restore-swaps (chosen\u2192bin, saved\u2192live) \u2192 refresh-to-D1. Verified: typecheck clean; eslint 0 errors (2 pre-existing warnings); build OK; invariants 91/91 (incl. workspace_coverage_no_dead_rules \u2014 all 14 new classes trace to live JS references); all three recycle probes PASS with 0 page errors; D2 screenshots human-signed-off (Cancel\u2192D1 and the app's spelled-out relative-time wording both explicitly approved). Deferred to AFTER the next big-tweak session (Luneth's instruction): #1 coverage.ts::addVaultProduct still duplicates the add-or-bump dedup rule; #2 .ck-undo/.ck-undo__btn remain unstyled (now only the refusal toasts). eden/ untouched \u2014 no seal applied.", metadata: { chunk: "#8b-batch-3", board: "91/91", files: ["dashboard/assets/js/src/views/regimen.ts", "dashboard/assets/styles/workspace-regimen.css", "tools/render_probe_recycle_d2.js"] } }, { id: "lg_msuz6bgo_0jnbki", ts: "2026-08-15T17:56:22.152733-05:00", surface: "regimen+rail", kind: "round-close", summary: "Tweak-list batch 1: Regimen micro-labels bumped to a readable 0.7rem/700; tab subtitle + goals-strip copy updated; dead Cmd-1/2/3 rail chips replaced with working bare 1/2/3 keys (jump Coverage/Regimen/Scanner). Board 91/91; push held for review.", detail: 'Regimen legibility + copy + real rail hotkeys; committed locally, push deferred while Luneth is away.\n\nTECH: workspace-regimen.css scoped bump of 12 micro-labels to --ds-text-mini/700 without repointing the shared --ds-text-micro token (shared classes via a .ck scope so Coverage is untouched; regimen-only .ck-* re-declared; .ck-recgrid .rec__meta size-only). main.ts regimen deck copy + regimen.ts goalstrip static "Your Goals". dashboard.html rail Cmd-1/2/3 chips to 1/2/3; main.ts wireDrawerKeys bare-digit branch after the typing/modifier/modal guards, navigating via navigateTo. Verified: build 0, tsc clean, invariants 91/91 (0 new reds), render_probe boot/rail-sync/slots PASS, puppeteer key + typing-guard test PASS, screenshots reviewed. Part of the away-time tweak-list; Phase-2 visual work built-and-held for sign-off.' }, { id: "lg_msvjq5p2_o1d4f0", ts: "2026-08-16T03:31:40.118837-05:00", surface: "tweak-list", kind: "round-close", summary: "Away-time tweak list (Phase 2 + scanner): dark theme, shadows track primary, fast tooltip, add-to-regimen flash, bulletproof import/export, scanner overhaul (gluten rejects, paste-ingredients checker, NEUTRAL verdict). Board 91/91; confirm-state QOL + rotation remain.", detail: "Executed most of Luneth large tweak list in one away-time run; committed + pushed with his sign-off. See chronicle/build-log.md 2026-08-16 03:30 for the full technical record. REMAINS (next-chunk.md): confirm-state scanner QOL (thumbnail/row-delete/live-OCR), rotation OCR (needs osd.traineddata + real file), two result boxes to clarify, copy nuances. Luneth says more of the list remains." }, { id: "lg_msvmv1nj_4m3e4q", ts: "2026-08-16T04:59:27.007229-05:00", surface: "scanner", kind: "round-close", summary: "Scanner batch 1: sideways/upside-down labels now scan. Offline brute-force 4-way orientation in state/ocr.ts (no OSD model). Upright photos unchanged and faster; rotated ones auto-corrected. e2e-verified on 3 real labels; confirm-state signed off by Luneth. Board 91/91.", detail: "Plain: a photo of a nutrition or supplement label taken at any 90-degree rotation used to scan as gibberish; now the scanner notices the as-shot read is noise, tries the image rotated 90/180/270, and keeps whichever reads as real text \u2014 entirely on the machine, no new download.\n\nTECH: state/ocr.ts runOcr reads 0 degrees first and returns at once when the read scores as oriented (at least one anchor: Nutrition or Supplement Facts, Ingredients, Calories, Serving, Daily Value, Total Fat, Sodium, Protein, Carbohydrate, Cholesterol), so upright labels pay nothing. Zero anchors means rotated garbage, so it OCRs downscaled 90/180/270 rotations, scores each by anchor phrases plus amount tokens plus word count, and re-reads once at full resolution on the winner. New pure helpers renderVariant and scoreOcrOrientation. OCR timeout 60 to 90 seconds. No osd.traineddata vendored \u2014 offline-first forbids the download; brute-force uses the vendored eng model only.\n\nVERIFY: build 0, tsc clean, eslint clean, invariants 91/91, four scanner probes PASS. The concurrency probe caught a real regression (food-only anchors made an upright SUPPLEMENT label rotate needlessly and hang the stub); broadened anchors to nutrition|supplement facts and lowered the oriented-threshold to anchors>=1 to fix it. E2E through the real pipeline on three labels (Rudi 90, cheese 180, pumpkin upright). Confirm-state screenshot reviewed and approved by Luneth.\n\nDEFERRED batch 2: two-column parser interleaving (Rudi ingredients truncated to Gluten free, losing modified tapioca starch) and the gluten-free / allergen-wheat / modified verdict logic; plus S10 thumbnail lightbox, S11 per-row delete, S12 live OCR-error update. Push held for Luneth OK. eden untouched." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
