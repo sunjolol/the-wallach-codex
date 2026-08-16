@@ -577,10 +577,16 @@
     "added sugar": [
       "high fructose corn syrup",
       "corn syrup",
+      "fructose",
       "cane sugar",
       "evaporated cane juice",
+      "cane juice",
       "dextrose",
-      "maltodextrin"
+      "maltodextrin",
+      "sucrose",
+      "molasses",
+      "brown sugar",
+      "turbinado"
     ],
     "artificial sweeteners": [
       "aspartame",
@@ -639,7 +645,7 @@
   },
   "antiListNotes": {
     "fried oils / seed oils": "Wallach: 'if it has oil in name, don't use it' — broad rule against industrial seed oils due to omega-6 oxidation. High-oleic variants (sunflower/safflower/canola bred for >80% oleic acid) are framework-adjacent — significantly more stable than standard, but the broad rule still applies.",
-    "added sugar": "Wallach-direct: sugar raises urinary chromium loss 300% for 12 hours (Rare Earths Cr entry). Severity scales with daily exposure; low-dose trace use is bounded harm.",
+    "added sugar": "Wallach-direct on refined/simple sugar + chromium: 'Simple sugars increase the excretion rate of chromium ... up to 300 percent of the normal rate' and 'you will loose 300 percent more chromium in your urine than when you consume complex carbohydrates' (Dead Doctors Don't Lie 2011; Let's Play Doctor 1995). Two tiers (Luneth-ratified 2026-08-16, 'treat sugar lightly'): HARD-REJECT only the major harmful sources — high fructose corn syrup, corn syrup, fructose ('No fructose', Hell's Kitchen p.258 sugar-elimination list). Every other added sugar is a MINOR (mild) flag, never a reject — this category is deliberately NOT in seriousAnti, so cane sugar / evaporated cane juice / cane juice / dextrose / maltodextrin / sucrose (= table sugar) / molasses / brown sugar / turbinado read as worth-knowing flags whose severity scales with exposure, not 'avoid'. Mild-tier terms trace to Wallach's Hell's Kitchen p.258 'No ___' list ('No table sugar', 'No molasses (cane juice, turbanado sugar, brown sugar, etc.)'). Label terms use correct real-world spellings (turbinado, not Wallach's OCR 'turbanado'). HELD for Luneth's call, not added: honey (direct 'No honey' but Wallach bakes with it), maple syrup + agave (no Wallach verbatim), apple/grape juice (broad).",
     "artificial sweeteners": "Wallach accepts sucralose (Hell's Kitchen: 'Splenda (also known as Sucralose)... used in moderation ... considered safe' — and it sweetens dozens of his own recipes), so sucralose is deliberately NOT flagged — removed from the anti-list (Luneth 2026-08-16). Aspartame and acesulfame are mainstream-controversial — framework-adjacent, kept as hard-rejects. Stevia is Wallach-friendly.",
     "caffeine": "Wallach-direct: caffeine raises urinary Cr loss for ~12 hrs per dose. Not anti-coffee absolute, but flag for Cr cofactor balance.",
     "gluten sources": "Wallach-direct on actual gluten proteins: wheat / barley / rye / malt / spelt — these are an unconditional hard reject regardless of marketing (a gluten source is never a 'save'). Oats flag by default (commercial supply chains carry cross-contamination risk). Operational rule: if ANY oat ingredient in the label is declared 'gluten-free' — in either word order ('gluten free oats' or 'oats (gluten free)') — ALL oat-derivatives in that product are presumed GF, because a brand certifying one oat ingredient operates in a GF-aware supply chain across the rest. A 'gluten-free' claim attached to a NON-oat ingredient (e.g., 'gluten-free pasta') does NOT certify oats. Hard gluten proteins appearing elsewhere still flag independently — no shutoff trick. Buckwheat is a pseudocereal, gluten-free despite the name. Ratified instances (Luneth 2026-08-16): triticale/semolina/durum/farina/graham/seitan/einkorn/kamut/bulgur/couscous/farro are all wheat- or gluten-protein grains -- same unconditional hard reject (wheat germ/bran/starch/flour and malt-* are already caught by the 'wheat'/'malt' word-match, so not duplicated).",
@@ -649,6 +655,7 @@
   "hardRejectTerms": [
     "high fructose corn syrup",
     "corn syrup",
+    "fructose",
     "hydrogenated",
     "monosodium glutamate",
     "aspartame",
@@ -672,7 +679,6 @@
   ],
   "seriousAnti": [
     "fried oils / seed oils",
-    "added sugar",
     "gluten sources",
     "msg / glutamate",
     "modified / processed"
