@@ -1,23 +1,24 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-**No forced task.** The big-tweak list (2026-08-15) is closed, the two deferred regimen findings are done, and the **Profile feature was audited + hardened + given a new avatar set + a systemic dark-theme pass** this session (all committed + pushed). Board **91/91.** eden/ untouched — no seal applied. Session closed **2026-08-17**.
+**No forced task.** The low-severity dark nits are closed (2026-08-17, second session that day). Board **92/92** — a gate was added this session (see below). eden/ untouched — no seal applied. **Committed to master as `87f63219` but NOT pushed** (Luneth's call) — run `git push origin master` when he says.
 
-## ✅ DONE (2026-08-17, profile + dark session) — committed + pushed to origin/master
-- **Avatars replaced** — aura/gem/world → **Generic (1) / Men (12) / Women (12)** real portraits (25); old 32 files deleted; retired-id migration (degrades to the default initial, keeps name/theme); count derived; profile tiny-text 0.52→0.65rem.
-- **Profile audit → 4 fixes** (from a 12-finding adversarial audit): modal focus a11y (focus-in / Tab-trap / restore-on-close); a11y labeling (tile names, aria-pressed on theme/accent/filter/avatar, live-region errors); import safety = **true-replace** restore + partial-import surfaced (#8 decided: replace, not merge).
-- **Dark-theme pass** — a 6-agent sweep found 51 defects; fixed at the TOKEN root in theme.css (--ds-accent-wash/soft, --ds-status-*-soft, --ds-ok-wash, --ds-tech-wash → translucent tints) + mark-text / `.ui-close`-glow / `#fff`-hover / inverting-island overrides. Named surfaces verified live.
+## ✅ DONE (2026-08-17, dark-nits + gate session) — committed to master, NOT pushed
+- **4 low-severity dark fixes** (of the 9 low findings; the other 5 were already auto-fixed by the prior dark pass's (A) token remaps / (C)(G) overrides — confirmed via `getComputedStyle`, not re-touched):
+  - `.vd-cf__refzoom` (scanner ref-image zoom badge) — flipped tokens inverted it over a label photo; now theme-independent fixed literals `rgba(18,14,10,.78)` + `#f3ead7` (workspace-scanner.css, mirrors `.vd-lightbox`).
+  - theme.css **(H) block** — dark text lifts: `.rr-btn--danger` 3.4→5.9:1, `:is(.rr-results__meta,.rec__val)` 4.1→7.2:1, `.rr-scan__link` accent-deep→accent-bright 3.9→8.9:1.
+- **NEW GATE `css_comment_no_premature_close`** (invariants.py, structural/critical) + negative test `tools/test_css_comment_no_premature_close.py`. A `*/` in a theme.css comment closed it early and silently dropped `.rr-btn--danger` past a GREEN board; now caught board-wide. **CLAUDE.md gate count 91→92** (a boot file changed — external stays 23). [[css-comment-star-slash-drops-rule]].
 
 ## ▶ START HERE — candidates (nothing forced; ask via AskUserQuestion)
-1. **Scanner Confirm/Result in DARK** — token-fixed by the dark pass but not yet screenshot-verified (needs a scan flow; the [[in-app-preview-is-static-snapshot]] headless gotcha applies). Quick to verify; tweak if any pill/check/step-ring still reads off.
-2. **Absorption + ORAC redesign** — Luneth said both are getting redesigned from earlier demos; their dark-theme issues were DEFERRED to that redesign (excluded from this pass).
-3. **Low-severity dark nits** (optional, mostly already auto-fixed by the token remaps): input focus-ring hues, `.vd-cf__refzoom` badge, the `vd-pulse` keyframe warn-tint. Full 51-finding list: the **wmpaftluu** workflow output in this session’s transcript dir.
+1. **Push** — commit `87f63219` is local-only; offer `git push origin master`.
+2. **Scanner Confirm/Result in DARK** — token-fixed by the dark pass but STILL not screenshot-verified live (needs a real scan flow; [[in-app-preview-is-static-snapshot]]). NOTE: the in-app browser pane was not displayable this session and file:// pages render as non-screenshottable `data:` snapshots — drive headless (Puppeteer), or have Luneth open the app. For CSS colour introspection, inline all sheets into one file and read `getComputedStyle` (the A/B harness in gitignored `temporary/dark-nits-selfcontained.html` is the pattern).
+3. **Absorption + ORAC redesign** — both slated for redesign from earlier demos; their dark issues were DEFERRED to that redesign (excluded from the dark pass).
 
 ## STANDING / PARKED (do NOT raise unprompted)
 - **CORPUS SEAL held.** eden/ untouched; 7 unreviewed draft books in `eden/corpus/drafts/`.
 
 ## GOTCHAS
-- **Per-file endings**: `views/welcome.ts`, `views/scanner.ts`, `state/scanner.ts`, `state/ocr.ts`, `styles/workspace-scanner.css`, `scanner-corpus-data.json`, `ocr-dict-data.json` are **CRLF**; other views + `styles/*.css` + chronicle `.md` are **LF**. `safe_write check` FIRST.
-- **theme.css is the dark/appearance layer (NOT sealed).** Dark overrides go there via `:root[data-theme="dark"]`, placed AFTER the `[data-accent]` blocks (equal specificity → source order wins). Prefer remapping a wash/soft TOKEN once over per-surface rules; per-surface only for hardcoded literals (#fff, rgba cream) + inverting ink/paper islands. [[dark-theme-token-remaps]].
+- **Per-file endings**: `views/welcome.ts`, `views/scanner.ts`, `state/scanner.ts`, `state/ocr.ts`, `styles/workspace-scanner.css`, `scanner-corpus-data.json`, `ocr-dict-data.json` are **CRLF**; other views + `styles/*.css` (incl. theme.css) + chronicle `.md` are **LF**. `safe_write check` FIRST.
+- **theme.css is the dark/appearance layer (NOT sealed).** Dark overrides go there via `:root[data-theme="dark"]`, placed AFTER the `[data-accent]` blocks (equal specificity → source order wins). Prefer remapping a wash/soft TOKEN once over per-surface rules; per-surface only for hardcoded literals (#fff, rgba cream) + inverting ink/paper islands. Never put a `*/` in a comment (e.g. a `--x-*/` glob) — it drops the next rule; now gated. [[dark-theme-token-remaps]].
 - **In-app file:// preview is a static snapshot** ([[in-app-preview-is-static-snapshot]]). Drive headless: Puppeteer `--allow-file-access-from-files`; require puppeteer from the repo `node_modules`; seed `localStorage.wallachUserProfile_v1={name,browsing:false,chosenAt[,theme:'dark']}`.
 
 ## GENESIS
