@@ -67,10 +67,10 @@ committed, not independently re-verified — flagged inline._
   - (a) His morning 10-point review **#7**: the verdict card's two stat tiles ("form not on a label"
     + the redundant +N box) — that review said **REDESIGN into a full-width "N of 90" hero, NOT delete**.
   - (b) The two redundant strings in the confirm "uploaded photo" box (= S4 above) — already removed.
-  His words ("the results") point at (a). → **RESOLVED 2026-08-16: (a) REDESIGN shipped** as ux-pass #7 — concept A "Deficit Rail"; Luneth confirmed redesign (not delete), picked A of 4 mockups, live sign-off.
+  His words ("the results") point at (a). → **RESOLVED 2026-08-16: (a) REDESIGN shipped** as ux-pass #7 — concept **B "Gap Arc"** (built A first, then Luneth re-ranked B>D>A>C and picked B); confirmed redesign, not delete; 4 mockups; live sign-off.
 
 ## Adjacent open threads (from his earlier 2026-08-15 reviews, not this away-list)
-- **ux-pass #7** — result 2-box **redesign** → ✅ SHIPPED 2026-08-16 (concept **A "Deficit Rail"**; `.vd-side` → self-contained `.vd-cov-*` "N of 90" coverage hero, open/gap segment dominant; mockup-first `temporary/scanner-verdict-hero-demos.html`, Luneth picked A, live sign-off; committed on master). Deferred: soften +0/zero-add · maybe drop the "+N reach the 90" fact (dupes rail legend) · card-wide width follow-up.
+- **ux-pass #7** — result 2-box **redesign** → ✅ SHIPPED 2026-08-16 (concept **B "Gap Arc"** radial gauge — unlit arc = the gap; `.vd-side` → self-contained `.vd-cov-*` "N of 90" hero; mockup-first, 4 concepts; built A first (06c582e9) then Luneth re-ranked B>D>A>C and picked B; live sign-off; committed on master). Deferred: soften +0/zero-add · maybe drop the "+N reach the 90" fact (dupes rail legend) · card-wide width follow-up.
 - **ux-pass #9** — goal-picker/veil (C task): veil everywhere, veil close ×, hide "I'm just browsing"
   for an existing profile, close orange→green.
 - **A-sweep** — `.ui-close` onto every remaining × (goal chips, veil, knowledge drawers).

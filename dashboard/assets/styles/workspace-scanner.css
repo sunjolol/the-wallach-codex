@@ -214,25 +214,18 @@
 .vd-cite__b { color: var(--ds-status-ok); background: var(--ds-ok-wash); padding: 2px 8px; border-radius: var(--ds-radius-pill); box-shadow: inset 0 0 0 1px var(--ds-status-ok-soft); font-weight: 700; }
 
 .vd-side { display: flex; flex-direction: column; gap: var(--ds-space-4); min-width: 0; }
-/* -- COVERAGE HERO * Concept A "Deficit Rail" -- the result card side column (#7).
- *    Replaces the old coverage-impact block + four stat tiles with one honest coverage
- *    line whose OPEN stretch is the biggest thing on it and is named. */
-.vd-cov-hero { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--ds-space-4); flex-wrap: wrap; }
-.vd-cov-num { display: flex; align-items: baseline; gap: 11px; }
-.vd-cov-big { font-family: var(--ds-font-display-artifact); font-size: 3.5rem; line-height: .82; color: var(--ds-ink); font-variant-numeric: tabular-nums; }
-.vd-cov-den { font-family: var(--ds-font-mono); font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink-soft); line-height: 1.25; }
-.vd-cov-open { align-self: center; font-family: var(--ds-font-display-interface); font-weight: 700; font-size: .82rem; letter-spacing: .03em; text-transform: uppercase; color: var(--ds-accent-deep); background: var(--ds-accent-wash); padding: 7px 13px; border-radius: var(--ds-radius-pill); box-shadow: inset 0 0 0 1px var(--ds-accent-soft); }
-.vd-cov-rail { display: flex; height: 24px; border-radius: var(--ds-radius-pill); overflow: hidden; background: var(--ds-paper-darker); box-shadow: inset 0 1px 3px rgba(26,22,18,.10); margin: var(--ds-space-4) 0 var(--ds-space-3); }
-.vd-cov-seg { display: block; }
-.vd-cov-seg--cov { background: linear-gradient(180deg, var(--ds-ok-bright), var(--ds-status-ok)); }
-.vd-cov-seg--add { background: linear-gradient(180deg, var(--ds-accent-bright), var(--ds-accent)); box-shadow: 0 0 9px color-mix(in srgb, var(--ds-accent) 60%, transparent); }
-.vd-cov-seg--open { background: transparent; }
-.vd-cov-legend { display: flex; flex-wrap: wrap; gap: 9px 16px; }
-.vd-cov-lg { display: inline-flex; align-items: center; gap: 6px; font-family: var(--ds-font-mono); font-size: .6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-ink-soft); }
-.vd-cov-d { width: 10px; height: 10px; border-radius: 2px; flex: 0 0 auto; }
-.vd-cov-d--cov { background: linear-gradient(180deg, var(--ds-ok-bright), var(--ds-status-ok)); }
-.vd-cov-d--add { background: linear-gradient(180deg, var(--ds-accent-bright), var(--ds-accent)); }
-.vd-cov-d--open { background: var(--ds-paper-darker); box-shadow: inset 0 0 0 1px var(--ds-rule); }
+/* -- COVERAGE HERO * Concept B "Gap Arc" -- the result card side column (#7).
+ *    A radial gauge whose large UNLIT arc is the gap (essentials still open);
+ *    green is covered, the accent tick is this scan. Replaced concept A "Deficit Rail". */
+.vd-cov-gauge { display: grid; place-items: center; padding-top: 4px; }
+.vd-cov-svg { width: 100%; max-width: 290px; height: auto; overflow: visible; }
+.vd-cov-arc-base { fill: none; stroke: var(--ds-paper-darker); stroke-width: 15; stroke-linecap: round; }
+.vd-cov-arc-cov { fill: none; stroke: var(--ds-status-ok); stroke-width: 15; stroke-linecap: round; }
+.vd-cov-arc-add { fill: none; stroke: var(--ds-accent); stroke-width: 15; stroke-linecap: round; filter: drop-shadow(0 0 4px color-mix(in srgb, var(--ds-accent) 55%, transparent)); }
+.vd-cov-gnum { fill: var(--ds-ink); font-family: var(--ds-font-display-artifact); font-size: 37px; font-variant-numeric: tabular-nums; }
+.vd-cov-gden { fill: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 9.5px; letter-spacing: 1.5px; font-weight: 700; }
+.vd-cov-cap { text-align: center; font-family: var(--ds-font-serif); font-size: .92rem; line-height: 1.45; color: var(--ds-ink-medium); margin-top: 2px; }
+.vd-cov-cap b { font-family: var(--ds-font-display-interface); font-weight: 700; color: var(--ds-accent-deep); }
 .vd-cov-facts { display: flex; gap: var(--ds-space-3); margin-top: var(--ds-space-4); }
 .vd-cov-fact { flex: 1; display: flex; flex-direction: column; gap: 4px; padding: 11px 13px; background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); box-shadow: var(--ds-elev-1); }
 .vd-cov-fact b { font-family: var(--ds-font-display-artifact); font-size: 1.35rem; line-height: 1; color: var(--ds-ink); font-variant-numeric: tabular-nums; }

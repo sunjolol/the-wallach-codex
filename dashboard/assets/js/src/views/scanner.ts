@@ -388,6 +388,7 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
   const delta = coverageDeltaForLabel(result.label);
   const total = essentialCount();
   const added = delta.after - delta.before;
+  const gaps = total - delta.after;
   const name = humanizeName(result.label.name);
   const flags = result.anti.length;
 
@@ -428,18 +429,16 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
                 </div>
               </div>
               <div class="vd-side">
-                <div class="vd-cov-hero">
-                  <div class="vd-cov-num"><span class="vd-cov-big">${delta.after}</span><span class="vd-cov-den">of ${total}<br>covered</span></div>
-                  <div class="vd-cov-open">${total - delta.after} still open</div>
+                <div class="vd-cov-gauge">
+                  <svg viewBox="0 0 200 122" class="vd-cov-svg" role="img" aria-label="${delta.after} of ${total} covered, ${gaps} still open">
+                    <path class="vd-cov-arc-base" d="M20 100 A80 80 0 0 1 180 100"/>
+                    <path class="vd-cov-arc-cov" d="M20 100 A80 80 0 0 1 180 100" pathLength="90" stroke-dasharray="${delta.before} 90"/>
+                    ${added > 0 ? `<path class="vd-cov-arc-add" d="M20 100 A80 80 0 0 1 180 100" pathLength="90" stroke-dasharray="${added} 90" stroke-dashoffset="-${delta.before}"/>` : ''}
+                    <text class="vd-cov-gnum" x="100" y="80" text-anchor="middle">${delta.after}</text>
+                    <text class="vd-cov-gden" x="100" y="104" text-anchor="middle">OF ${total}</text>
+                  </svg>
                 </div>
-                <div class="vd-cov-rail" role="img" aria-label="${delta.before} covered, ${added} added this scan, ${total - delta.after} open of ${total}">
-                  <span class="vd-cov-seg vd-cov-seg--cov" style="flex:${delta.before}"></span>${added > 0 ? `<span class="vd-cov-seg vd-cov-seg--add" style="flex:${added}"></span>` : ''}<span class="vd-cov-seg vd-cov-seg--open" style="flex:${total - delta.after}"></span>
-                </div>
-                <div class="vd-cov-legend">
-                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--cov"></span>${delta.before} covered</span>
-                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--add"></span>+${added} this scan</span>
-                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--open"></span>${total - delta.after} open</span>
-                </div>
+                <div class="vd-cov-cap"><b>${gaps} gap${gaps === 1 ? '' : 's'} remain${gaps === 1 ? 's' : ''}</b> — the essentials to hunt next.</div>
                 <div class="vd-cov-facts">
                   <div class="vd-cov-fact"><b>${added > 0 ? '+' : ''}${added}</b><span>reach the 90 this scan</span></div>
                   <div class="vd-cov-fact vd-cov-fact--flag"><b>${flags}</b><span>ingredient flag${flags === 1 ? '' : 's'}</span></div>

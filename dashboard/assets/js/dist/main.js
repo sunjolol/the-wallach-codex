@@ -181375,7 +181375,19 @@ FILES:
 
 VERIFY: tsc + esbuild build 0; invariants 91/91 with the workspace dead-rule gate green ("110 selectors all trace to a live reference \xB7 keyframes all animated") proving the old classes were fully severed, not just orphaned; render_probe_scanner exits 0; a repo-wide grep confirms no tool or probe still references the removed classes. A headless drive of the real app (upload label-test.png \u2192 Confirm \u2192 Result; it scores a REJECT that adds 0 coverage) shows .vd-cov-hero rendering at true 336px side geometry, no .vd-impact/.vd-stat left in the DOM, and the +0\u2192"0" guard on screen.
 
-DEFERRED (Luneth left these open at sign-off, do not treat as bugs): soften the "+0 this scan" / "0 reach the 90" wording on zero-add scans; possibly drop the "+N reach the 90" fact since the rail legend already states "+N this scan"; a card-wide (vs side-column) width is a one-step follow-up if he wants it. The mockup file temporary/scanner-verdict-hero-demos.html is kept as the record of the 4 concepts and his pick.` }];
+DEFERRED (Luneth left these open at sign-off, do not treat as bugs): soften the "+0 this scan" / "0 reach the 90" wording on zero-add scans; possibly drop the "+N reach the 90" fact since the rail legend already states "+N this scan"; a card-wide (vs side-column) width is a one-step follow-up if he wants it. The mockup file temporary/scanner-verdict-hero-demos.html is kept as the record of the 4 concepts and his pick.` }, { id: "lg_mswomm42_aruv1j", ts: "2026-08-16T22:36:39.026507-05:00", surface: "scanner", kind: "design-decision", summary: "Scanner coverage hero swapped A (Deficit Rail) \u2192 B (Gap Arc) per Luneth's revised ranking (B>D>A>C) after seeing all 4 mockups live. Radial gauge: the big unlit arc is the gap, green=covered, accent tick=this scan, 'N / of 90' at centre. Live sign-off; supersedes 06c582e9.", detail: `Follow-up to the concept-A ship earlier this session. After I built concept A (the Deficit Rail) live and Luneth signed it off, he looked again at all four "N of 90" mockups side by side and revised his ranking: B (Gap Arc) best, D second, A third, C worst. He said "Build B." So this swaps the live coverage hero from A to B. The concept-A build (commit 06c582e9) stays in history; this supersedes it.
+
+WHAT B is: the verdict card's right column is now a radial semicircle gauge. Its large UNLIT arc is the gap \u2014 the essentials you still haven't covered \u2014 which is deliberately the visually dominant part (the app's whole point is what you're missing). A green arc fills what you already cover; an accent tick is what this scan adds. "N / of 90" reads at the centre, and a caption below says "N gaps remain \u2014 the essentials to hunt next."
+
+HOW it's wired: an inline SVG semicircle path with pathLength="90", so the covered and this-scan stroke-dasharrays are written directly in units of essentials (e.g. "5 90" = 5 of 90 lit) \u2014 no trig, and it always maps to the real coverage numbers. The base arc underneath is the paper-dark gap. The this-scan (accent) arc is only drawn when a scan actually adds coverage. Two fact tiles remain below (+N reach the 90 this scan \xB7 N ingredient flags), with the +0\u2192"0" guard.
+
+FILES:
+- views/scanner.ts \u2014 renderResult(): replaced the .vd-cov-* Deficit-Rail markup (hero + rail + legend) with the Gap-Arc markup (gauge + caption); the facts row is unchanged. Added a \`gaps\` local (= total - delta.after) for the aria-label and the pluralised caption.
+- workspace-scanner.css \u2014 replaced the A rule block (.vd-cov-hero/num/big/den/open/rail/seg*/legend/lg/d*) with the B block (.vd-cov-gauge/svg/arc-base/arc-cov/arc-add/gnum/gden/cap); the shared .vd-cov-facts/fact/fact--flag rules are kept.
+
+VERIFY: tsc + esbuild 0; invariants 91/91 with the workspace dead-rule gate green ("110 selectors all trace to a live reference \xB7 keyframes all animated"), proving the A classes were fully removed, not orphaned; render_probe_scanner exits 0. A headless drive of the real app (upload label-test.png \u2192 Confirm \u2192 Result; scores a REJECT that adds 0 coverage) shows .vd-cov-gauge at true 336px side geometry, the covered arc dasharray "5 90", the caption "85 gaps remain", and no old/A classes left in the DOM. Luneth signed off the live arc.
+
+DEFERRED (unchanged from the A ship, Luneth left open): soften the "0 reach the 90" fact on zero-add scans; possibly drop the "+N reach the 90" fact since it restates the coverage story. The mockup file temporary/scanner-verdict-hero-demos.html holds all four concepts and his final ranking (B > D > A > C).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -183505,6 +183517,7 @@ DEFERRED (Luneth left these open at sign-off, do not treat as bugs): soften the 
     const delta = coverageDeltaForLabel(result.label);
     const total = essentialCount();
     const added = delta.after - delta.before;
+    const gaps = total - delta.after;
     const name = humanizeName(result.label.name);
     const flags = result.anti.length;
     const tierChip = (key, big, small) => {
@@ -183543,18 +183556,16 @@ DEFERRED (Luneth left these open at sign-off, do not treat as bugs): soften the 
                 </div>
               </div>
               <div class="vd-side">
-                <div class="vd-cov-hero">
-                  <div class="vd-cov-num"><span class="vd-cov-big">${delta.after}</span><span class="vd-cov-den">of ${total}<br>covered</span></div>
-                  <div class="vd-cov-open">${total - delta.after} still open</div>
+                <div class="vd-cov-gauge">
+                  <svg viewBox="0 0 200 122" class="vd-cov-svg" role="img" aria-label="${delta.after} of ${total} covered, ${gaps} still open">
+                    <path class="vd-cov-arc-base" d="M20 100 A80 80 0 0 1 180 100"/>
+                    <path class="vd-cov-arc-cov" d="M20 100 A80 80 0 0 1 180 100" pathLength="90" stroke-dasharray="${delta.before} 90"/>
+                    ${added > 0 ? `<path class="vd-cov-arc-add" d="M20 100 A80 80 0 0 1 180 100" pathLength="90" stroke-dasharray="${added} 90" stroke-dashoffset="-${delta.before}"/>` : ""}
+                    <text class="vd-cov-gnum" x="100" y="80" text-anchor="middle">${delta.after}</text>
+                    <text class="vd-cov-gden" x="100" y="104" text-anchor="middle">OF ${total}</text>
+                  </svg>
                 </div>
-                <div class="vd-cov-rail" role="img" aria-label="${delta.before} covered, ${added} added this scan, ${total - delta.after} open of ${total}">
-                  <span class="vd-cov-seg vd-cov-seg--cov" style="flex:${delta.before}"></span>${added > 0 ? `<span class="vd-cov-seg vd-cov-seg--add" style="flex:${added}"></span>` : ""}<span class="vd-cov-seg vd-cov-seg--open" style="flex:${total - delta.after}"></span>
-                </div>
-                <div class="vd-cov-legend">
-                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--cov"></span>${delta.before} covered</span>
-                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--add"></span>+${added} this scan</span>
-                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--open"></span>${total - delta.after} open</span>
-                </div>
+                <div class="vd-cov-cap"><b>${gaps} gap${gaps === 1 ? "" : "s"} remain${gaps === 1 ? "s" : ""}</b> \u2014 the essentials to hunt next.</div>
                 <div class="vd-cov-facts">
                   <div class="vd-cov-fact"><b>${added > 0 ? "+" : ""}${added}</b><span>reach the 90 this scan</span></div>
                   <div class="vd-cov-fact vd-cov-fact--flag"><b>${flags}</b><span>ingredient flag${flags === 1 ? "" : "s"}</span></div>
