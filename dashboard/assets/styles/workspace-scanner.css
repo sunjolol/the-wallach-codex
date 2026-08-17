@@ -214,41 +214,30 @@
 .vd-cite__b { color: var(--ds-status-ok); background: var(--ds-ok-wash); padding: 2px 8px; border-radius: var(--ds-radius-pill); box-shadow: inset 0 0 0 1px var(--ds-status-ok-soft); font-weight: 700; }
 
 .vd-side { display: flex; flex-direction: column; gap: var(--ds-space-4); min-width: 0; }
-.vd-impact { background: var(--ds-paper); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); padding: var(--ds-space-5); box-shadow: inset 0 1px 2px rgba(26,22,18,.05); }
-.vd-impact__h { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: var(--ds-space-4); }
-.vd-delta { display: flex; align-items: baseline; gap: 9px; margin-bottom: var(--ds-space-4); flex-wrap: wrap; }
-.vd-delta__from { font-family: var(--ds-font-display-artifact); font-size: 1.55rem; color: var(--ds-ink-faint); font-variant-numeric: tabular-nums; line-height: 1; }
-.vd-delta__arrow { color: var(--ds-accent); font-family: var(--ds-font-mono); font-size: 1.1rem; font-weight: 700; }
-.vd-delta__to { font-family: var(--ds-font-display-artifact); font-size: 2.7rem; color: var(--ds-ink); line-height: .9; font-variant-numeric: tabular-nums; }
-.vd-delta__den { font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink-soft); }
-.vd-delta__plus { margin-left: auto; align-self: center; font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 700; color: var(--ds-accent-deep); background: var(--ds-accent-wash); padding: 3px 11px; border-radius: var(--ds-radius-pill); box-shadow: inset 0 0 0 1px var(--ds-accent-soft); }
-.vd-field { display: grid; grid-template-columns: repeat(15, 1fr); gap: 3px; margin-bottom: var(--ds-space-4); }
-.vd-field i { aspect-ratio: 1; border-radius: 1.5px; background: var(--ds-paper-darker); box-shadow: inset 0 0 0 1px var(--ds-rule-soft); }
-.vd-field i.covered { background: linear-gradient(180deg, var(--ds-ok-bright), var(--ds-status-ok)); box-shadow: inset 0 1px 0 rgba(255,255,255,.25); }
-.vd-field i.scanadd { background: linear-gradient(180deg, var(--ds-accent-bright), var(--ds-accent)); box-shadow: 0 0 0 1px var(--ds-accent-soft), 0 0 7px -1px color-mix(in srgb, var(--ds-accent) 60%, transparent); }
-@media (prefers-reduced-motion: no-preference) {
-  .vd-field i.scanadd { animation: vd-ignite .5s var(--ds-ease-out) both; }
-  .vd-field i:nth-child(48){animation-delay:.45s} .vd-field i:nth-child(49){animation-delay:.5s}
-  .vd-field i:nth-child(50){animation-delay:.55s} .vd-field i:nth-child(51){animation-delay:.6s}
-  .vd-field i:nth-child(52){animation-delay:.65s} .vd-field i:nth-child(53){animation-delay:.7s}
-  .vd-field i:nth-child(54){animation-delay:.75s} .vd-field i:nth-child(55){animation-delay:.8s}
-}
-@keyframes vd-ignite { 0% { transform: scale(.35); opacity: 0; } 60% { opacity: 1; } 100% { transform: none; opacity: 1; } }
-.vd-field__legend { display: flex; flex-wrap: wrap; gap: var(--ds-space-3) var(--ds-space-4); }
-.vd-lg { display: inline-flex; align-items: center; gap: 6px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .04em; text-transform: uppercase; color: var(--ds-ink-soft); }
-.vd-lg__s { width: 10px; height: 10px; border-radius: 2px; flex: 0 0 auto; }
-.vd-lg__s--cov { background: linear-gradient(180deg, var(--ds-ok-bright), var(--ds-status-ok)); }
-.vd-lg__s--add { background: linear-gradient(180deg, var(--ds-accent-bright), var(--ds-accent)); }
-.vd-lg__s--open { background: var(--ds-paper-darker); box-shadow: inset 0 0 0 1px var(--ds-rule); }
-
-.vd-stats { display: grid; grid-template-columns: 1fr 1fr; gap: var(--ds-space-3); }
-.vd-stat { padding: var(--ds-space-3) var(--ds-space-4); background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); box-shadow: var(--ds-elev-1);
-  transition: transform var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out); }
-.vd-stat:hover { transform: translateY(-2px); box-shadow: var(--ds-elev-2); }
-.vd-stat__v { font-family: var(--ds-font-display-artifact); font-size: var(--ds-text-xl); color: var(--ds-ink); line-height: 1; font-variant-numeric: tabular-nums; }
-.vd-stat__l { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .05em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 6px; line-height: 1.3; }
-.vd-stat--add .vd-stat__v { color: var(--ds-ok-deep); }
-.vd-stat--flag .vd-stat__v { color: var(--ds-status-warn); }
+/* -- COVERAGE HERO * Concept A "Deficit Rail" -- the result card side column (#7).
+ *    Replaces the old coverage-impact block + four stat tiles with one honest coverage
+ *    line whose OPEN stretch is the biggest thing on it and is named. */
+.vd-cov-hero { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--ds-space-4); flex-wrap: wrap; }
+.vd-cov-num { display: flex; align-items: baseline; gap: 11px; }
+.vd-cov-big { font-family: var(--ds-font-display-artifact); font-size: 3.5rem; line-height: .82; color: var(--ds-ink); font-variant-numeric: tabular-nums; }
+.vd-cov-den { font-family: var(--ds-font-mono); font-size: .68rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink-soft); line-height: 1.25; }
+.vd-cov-open { align-self: center; font-family: var(--ds-font-display-interface); font-weight: 700; font-size: .82rem; letter-spacing: .03em; text-transform: uppercase; color: var(--ds-accent-deep); background: var(--ds-accent-wash); padding: 7px 13px; border-radius: var(--ds-radius-pill); box-shadow: inset 0 0 0 1px var(--ds-accent-soft); }
+.vd-cov-rail { display: flex; height: 24px; border-radius: var(--ds-radius-pill); overflow: hidden; background: var(--ds-paper-darker); box-shadow: inset 0 1px 3px rgba(26,22,18,.10); margin: var(--ds-space-4) 0 var(--ds-space-3); }
+.vd-cov-seg { display: block; }
+.vd-cov-seg--cov { background: linear-gradient(180deg, var(--ds-ok-bright), var(--ds-status-ok)); }
+.vd-cov-seg--add { background: linear-gradient(180deg, var(--ds-accent-bright), var(--ds-accent)); box-shadow: 0 0 9px color-mix(in srgb, var(--ds-accent) 60%, transparent); }
+.vd-cov-seg--open { background: transparent; }
+.vd-cov-legend { display: flex; flex-wrap: wrap; gap: 9px 16px; }
+.vd-cov-lg { display: inline-flex; align-items: center; gap: 6px; font-family: var(--ds-font-mono); font-size: .6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-ink-soft); }
+.vd-cov-d { width: 10px; height: 10px; border-radius: 2px; flex: 0 0 auto; }
+.vd-cov-d--cov { background: linear-gradient(180deg, var(--ds-ok-bright), var(--ds-status-ok)); }
+.vd-cov-d--add { background: linear-gradient(180deg, var(--ds-accent-bright), var(--ds-accent)); }
+.vd-cov-d--open { background: var(--ds-paper-darker); box-shadow: inset 0 0 0 1px var(--ds-rule); }
+.vd-cov-facts { display: flex; gap: var(--ds-space-3); margin-top: var(--ds-space-4); }
+.vd-cov-fact { flex: 1; display: flex; flex-direction: column; gap: 4px; padding: 11px 13px; background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); box-shadow: var(--ds-elev-1); }
+.vd-cov-fact b { font-family: var(--ds-font-display-artifact); font-size: 1.35rem; line-height: 1; color: var(--ds-ink); font-variant-numeric: tabular-nums; }
+.vd-cov-fact span { font-family: var(--ds-font-mono); font-size: .58rem; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; color: var(--ds-ink-soft); line-height: 1.3; }
+.vd-cov-fact--flag b { color: var(--ds-status-warn); }
 
 .vd-card__foot { display: flex; flex-wrap: wrap; align-items: center; gap: var(--ds-space-4); padding: var(--ds-space-5) var(--ds-space-7);
   border-top: 1px solid var(--ds-rule-soft); background: linear-gradient(180deg, var(--ds-paper), var(--ds-paper-deep)); }
@@ -373,7 +362,7 @@
    are held at 0.6rem so the tight grids do not reflow. */
 .vd { --ds-text-micro: var(--ds-text-mini); }
 .vd :is(.vd-amt, .vd-unit, .vd-tier__c small, .vd-pill, .vd-card__eyebrow) { font-size: 0.6rem; }
-.vd :is(.vd-step__state, .vd-cf-sec__n, .vd-nrow__amt, .vd-nrow__map, .vd-sug__lab, .vd-ing__lab, .vd-ocr__hint, .vd-cf__ref-h, .vd-reasons__h, .vd-cite, .vd-impact__h, .vd-lg, .vd-stat__l, .vd-foot__prov, .vd-when, .vd-prog__note, .vd-error__m, .vd-cf-name__lab) { font-weight: 700; }
+.vd :is(.vd-step__state, .vd-cf-sec__n, .vd-nrow__amt, .vd-nrow__map, .vd-sug__lab, .vd-ing__lab, .vd-ocr__hint, .vd-cf__ref-h, .vd-reasons__h, .vd-cite, .vd-foot__prov, .vd-when, .vd-prog__note, .vd-error__m, .vd-cf-name__lab) { font-weight: 700; }
 
 /* ── Scanner rows S10/S11/S12 (2026-08-16): thumbnail lightbox · per-row delete · live OCR panel ── */
 /* S11 — per-row delete. Trailing × in the last grid column; the name input column was narrowed

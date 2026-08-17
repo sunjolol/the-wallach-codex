@@ -181361,7 +181361,21 @@ Two truths carried forward for the next session (in chronicle/next-chunk.md):
 1. #7 and #9 are the remaining tweak-list items and are VISUAL work - #7 (verdict card's two stat tiles -> a full-width "N of 90" hero) is a REDESIGN, mockup-first (4 distinct), not a delete; #9 is the goal-picker/veil polish + the .ui-close A-sweep + dead-CSS verify. Next boot should AskUserQuestion which to take, never assume.
 2. label-test-2 (the WF cheese tub) has an inherent OCR ceiling - mangled amounts, %-DV-only minerals, garbled ingredient head - which the Confirm screen + the new live feedback are the correction path for. Not a bug; do not re-open it as one.
 
-New memory this session: [[scanner-recognition-dict-architecture]] (recognition dict fuzzy/known is separate from the anti-list; check membership before diagnosing "X is flagged").` }];
+New memory this session: [[scanner-recognition-dict-architecture]] (recognition dict fuzzy/known is separate from the anti-list; check membership before diagnosing "X is flagged").` }, { id: "lg_mswo0dy0_3xele9", ts: "2026-08-16T22:19:22.008575-05:00", surface: "scanner", kind: "round-close", summary: "Scanner verdict card: the 2x2 stat-tile grid (the redundant +N tile + the always-dead '\u2014 / form not on a label' tile) became one full-width 'N of 90' Deficit Rail coverage hero \u2014 gap-forward, mockup-first (4 concepts, Luneth picked A), live sign-off.", detail: `The scanner's verdict card used to end in a cramped little 2\xD72 grid of stat boxes on the right side. Luneth flagged two of them as clutter (tweak-list #7): one box just repeated the "+N added" number already shown right above it, and another showed a lifeless "\u2014" dash labelled "form not on a label" \u2014 which appeared on basically every scan. He asked for those to become one full-width "N of 90" hero \u2014 a redesign, not a delete.
+
+I worked mockup-first: four genuinely-distinct concepts (a horizontal deficit bar, a radial gap arc, a minimal keep-the-field version, and a vertical thermometer+ledger), each rendered in the REAL card geometry by linking the live stylesheets. Luneth picked concept A, the Deficit Rail, and signed off the live build.
+
+WHY the two boxes were genuinely wrong (not just cluttered): while wiring it I confirmed in the code (state/scanner.ts:654) that a scanned label can never carry a chemical "form_alignment" \u2014 a photo cannot state a supplement's chemical form \u2014 so the alignment score is 0 for every real scan. That means the "form not on a label \xB7 \u2014" tile was ALWAYS dead. So the redesign drops alignment entirely rather than showing it conditionally; nothing real was lost.
+
+WHAT the new hero shows (all gap-forward, per the app's "show what you're missing" rule): a big covered count with "of 90 covered"; an "N still open" pill in the accent colour; one horizontal rail split covered / +this-scan / open where the empty OPEN stretch is deliberately the largest, unfilled segment; a small legend; and two fact tiles (+N reach the 90 this scan \xB7 N ingredient flags). On a zero-add scan the "+0" is shown as "0" and the rail's add segment is omitted.
+
+FILES:
+- views/scanner.ts \u2014 renderResult(): swapped the .vd-side inner region for the .vd-cov-* markup; deleted the now-dead deltaField() helper and the unused alignedPct local.
+- workspace-scanner.css \u2014 removed .vd-impact / .vd-delta* / .vd-field* / .vd-lg* / .vd-stats / .vd-stat* and the orphaned @keyframes vd-ignite; pruned .vd-impact__h/.vd-lg/.vd-stat__l from the shared font-weight:700 :is() list; added the self-contained .vd-cov-* block (values ported verbatim from the approved mockup so live == the sign-off).
+
+VERIFY: tsc + esbuild build 0; invariants 91/91 with the workspace dead-rule gate green ("110 selectors all trace to a live reference \xB7 keyframes all animated") proving the old classes were fully severed, not just orphaned; render_probe_scanner exits 0; a repo-wide grep confirms no tool or probe still references the removed classes. A headless drive of the real app (upload label-test.png \u2192 Confirm \u2192 Result; it scores a REJECT that adds 0 coverage) shows .vd-cov-hero rendering at true 336px side geometry, no .vd-impact/.vd-stat left in the DOM, and the +0\u2192"0" guard on screen.
+
+DEFERRED (Luneth left these open at sign-off, do not treat as bugs): soften the "+0 this scan" / "0 reach the 90" wording on zero-add scans; possibly drop the "+N reach the 90" fact since the rail legend already states "+N this scan"; a card-wide (vs side-column) width is a one-step follow-up if he wants it. The mockup file temporary/scanner-verdict-hero-demos.html is kept as the record of the 4 concepts and his pick.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -183485,14 +183499,6 @@ New memory this session: [[scanner-recognition-dict-architecture]] (recognition 
     }
     return rows.join("");
   }
-  function deltaField(before, added, total) {
-    let h = "";
-    for (let i = 0; i < total; i++) {
-      const cls = i < before ? "covered" : i < before + added ? "scanadd" : "";
-      h += `<i class="${cls}"></i>`;
-    }
-    return h;
-  }
   function renderResult(result, origin) {
     const tone = VERDICT_TONE[result.verdict];
     const { head, sub } = verdictHeadline(result.verdict);
@@ -183501,7 +183507,6 @@ New memory this session: [[scanner-recognition-dict-architecture]] (recognition 
     const added = delta.after - delta.before;
     const name = humanizeName(result.label.name);
     const flags = result.anti.length;
-    const alignedPct = result.alignment.total > 0 ? Math.round(result.alignment.aligned / result.alignment.total * 100) : 0;
     const tierChip = (key, big, small) => {
       const on2 = result.verdict === key;
       return `<span class="vd-tier__c tier-${key === "ADD" ? "add" : key === "SAVE" ? "save" : "out"}${on2 ? " is-on" : ""}"${on2 ? ` style="background:${tone};color:${key === "SAVE" ? "var(--ds-ink)" : "var(--ds-paper-light)"}"` : ""}>${big}<small>${small}</small></span>`;
@@ -183538,27 +183543,21 @@ New memory this session: [[scanner-recognition-dict-architecture]] (recognition 
                 </div>
               </div>
               <div class="vd-side">
-                <div class="vd-impact">
-                  <div class="vd-impact__h">Your coverage \xB7 active slot</div>
-                  <div class="vd-delta">
-                    <span class="vd-delta__from">${delta.before}</span>
-                    <span class="vd-delta__arrow" aria-hidden="true">&rarr;</span>
-                    <span class="vd-delta__to">${delta.after}</span>
-                    <span class="vd-delta__den">of ${total}</span>
-                    ${added > 0 ? `<span class="vd-delta__plus">+${added}</span>` : ""}
-                  </div>
-                  <div class="vd-field" aria-hidden="true">${deltaField(delta.before, added, total)}</div>
-                  <div class="vd-field__legend">
-                    <span class="vd-lg"><span class="vd-lg__s vd-lg__s--cov"></span>${delta.before} covered</span>
-                    <span class="vd-lg"><span class="vd-lg__s vd-lg__s--add"></span>+${added} this scan</span>
-                    <span class="vd-lg"><span class="vd-lg__s vd-lg__s--open"></span>${total - delta.after} open</span>
-                  </div>
+                <div class="vd-cov-hero">
+                  <div class="vd-cov-num"><span class="vd-cov-big">${delta.after}</span><span class="vd-cov-den">of ${total}<br>covered</span></div>
+                  <div class="vd-cov-open">${total - delta.after} still open</div>
                 </div>
-                <div class="vd-stats">
-                  <div class="vd-stat vd-stat--add"><div class="vd-stat__v">+${added}</div><div class="vd-stat__l">of ${total} added \xB7 ${delta.before} &rarr; ${delta.after}</div></div>
-                  <div class="vd-stat vd-stat--flag"><div class="vd-stat__v">${flags}</div><div class="vd-stat__l">ingredient flag${flags === 1 ? "" : "s"}</div></div>
-                  <div class="vd-stat">${result.alignment.aligned === 0 && result.alignment.misaligned === 0 && result.alignment.score === 0 ? `<div class="vd-stat__v">\u2014</div><div class="vd-stat__l">form not on a label \xB7 judged on gaps + ingredients</div>` : `<div class="vd-stat__v">${alignedPct}%</div><div class="vd-stat__l">aligned \xB7 ${result.alignment.aligned} of ${result.alignment.total} nutrients</div>`}</div>
-                  <div class="vd-stat"><div class="vd-stat__v">${result.gapFills.length}</div><div class="vd-stat__l">nutrients reach the 90</div></div>
+                <div class="vd-cov-rail" role="img" aria-label="${delta.before} covered, ${added} added this scan, ${total - delta.after} open of ${total}">
+                  <span class="vd-cov-seg vd-cov-seg--cov" style="flex:${delta.before}"></span>${added > 0 ? `<span class="vd-cov-seg vd-cov-seg--add" style="flex:${added}"></span>` : ""}<span class="vd-cov-seg vd-cov-seg--open" style="flex:${total - delta.after}"></span>
+                </div>
+                <div class="vd-cov-legend">
+                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--cov"></span>${delta.before} covered</span>
+                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--add"></span>+${added} this scan</span>
+                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--open"></span>${total - delta.after} open</span>
+                </div>
+                <div class="vd-cov-facts">
+                  <div class="vd-cov-fact"><b>${added > 0 ? "+" : ""}${added}</b><span>reach the 90 this scan</span></div>
+                  <div class="vd-cov-fact vd-cov-fact--flag"><b>${flags}</b><span>ingredient flag${flags === 1 ? "" : "s"}</span></div>
                 </div>
               </div>
             </div>

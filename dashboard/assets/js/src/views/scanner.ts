@@ -382,15 +382,6 @@ function reasonRows(result: ScanResult): string {
   return rows.join('');
 }
 
-function deltaField(before: number, added: number, total: number): string {
-  let h = '';
-  for (let i = 0; i < total; i++) {
-    const cls = i < before ? 'covered' : (i < before + added ? 'scanadd' : '');
-    h += `<i class="${cls}"></i>`;
-  }
-  return h;
-}
-
 function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): string {
   const tone = VERDICT_TONE[result.verdict];
   const { head, sub } = verdictHeadline(result.verdict);
@@ -399,7 +390,6 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
   const added = delta.after - delta.before;
   const name = humanizeName(result.label.name);
   const flags = result.anti.length;
-  const alignedPct = result.alignment.total > 0 ? Math.round((result.alignment.aligned / result.alignment.total) * 100) : 0;
 
   const tierChip = (key: Verdict, big: string, small: string): string => {
     const on = result.verdict === key;
@@ -438,27 +428,21 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
                 </div>
               </div>
               <div class="vd-side">
-                <div class="vd-impact">
-                  <div class="vd-impact__h">Your coverage · active slot</div>
-                  <div class="vd-delta">
-                    <span class="vd-delta__from">${delta.before}</span>
-                    <span class="vd-delta__arrow" aria-hidden="true">&rarr;</span>
-                    <span class="vd-delta__to">${delta.after}</span>
-                    <span class="vd-delta__den">of ${total}</span>
-                    ${added > 0 ? `<span class="vd-delta__plus">+${added}</span>` : ''}
-                  </div>
-                  <div class="vd-field" aria-hidden="true">${deltaField(delta.before, added, total)}</div>
-                  <div class="vd-field__legend">
-                    <span class="vd-lg"><span class="vd-lg__s vd-lg__s--cov"></span>${delta.before} covered</span>
-                    <span class="vd-lg"><span class="vd-lg__s vd-lg__s--add"></span>+${added} this scan</span>
-                    <span class="vd-lg"><span class="vd-lg__s vd-lg__s--open"></span>${total - delta.after} open</span>
-                  </div>
+                <div class="vd-cov-hero">
+                  <div class="vd-cov-num"><span class="vd-cov-big">${delta.after}</span><span class="vd-cov-den">of ${total}<br>covered</span></div>
+                  <div class="vd-cov-open">${total - delta.after} still open</div>
                 </div>
-                <div class="vd-stats">
-                  <div class="vd-stat vd-stat--add"><div class="vd-stat__v">+${added}</div><div class="vd-stat__l">of ${total} added · ${delta.before} &rarr; ${delta.after}</div></div>
-                  <div class="vd-stat vd-stat--flag"><div class="vd-stat__v">${flags}</div><div class="vd-stat__l">ingredient flag${flags === 1 ? '' : 's'}</div></div>
-                  <div class="vd-stat">${result.alignment.aligned === 0 && result.alignment.misaligned === 0 && result.alignment.score === 0 ? `<div class="vd-stat__v">—</div><div class="vd-stat__l">form not on a label · judged on gaps + ingredients</div>` : `<div class="vd-stat__v">${alignedPct}%</div><div class="vd-stat__l">aligned · ${result.alignment.aligned} of ${result.alignment.total} nutrients</div>`}</div>
-                  <div class="vd-stat"><div class="vd-stat__v">${result.gapFills.length}</div><div class="vd-stat__l">nutrients reach the 90</div></div>
+                <div class="vd-cov-rail" role="img" aria-label="${delta.before} covered, ${added} added this scan, ${total - delta.after} open of ${total}">
+                  <span class="vd-cov-seg vd-cov-seg--cov" style="flex:${delta.before}"></span>${added > 0 ? `<span class="vd-cov-seg vd-cov-seg--add" style="flex:${added}"></span>` : ''}<span class="vd-cov-seg vd-cov-seg--open" style="flex:${total - delta.after}"></span>
+                </div>
+                <div class="vd-cov-legend">
+                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--cov"></span>${delta.before} covered</span>
+                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--add"></span>+${added} this scan</span>
+                  <span class="vd-cov-lg"><span class="vd-cov-d vd-cov-d--open"></span>${total - delta.after} open</span>
+                </div>
+                <div class="vd-cov-facts">
+                  <div class="vd-cov-fact"><b>${added > 0 ? '+' : ''}${added}</b><span>reach the 90 this scan</span></div>
+                  <div class="vd-cov-fact vd-cov-fact--flag"><b>${flags}</b><span>ingredient flag${flags === 1 ? '' : 's'}</span></div>
                 </div>
               </div>
             </div>

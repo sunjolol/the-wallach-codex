@@ -3,11 +3,13 @@
 **BIG TWEAK LIST — in progress.** Authority: **`chronicle/tweak-list-master-2026-08-15.md`**.
 Board **91/91.** eden/ untouched — no seal applied. Session closed 2026-08-16 (evening).
 
-## ▶ START HERE — the next two unbuilt items
-- **#7 "two result boxes" → REDESIGN** (his 2026-08-16 call): the verdict card's two stat tiles → a full-width "N of 90" hero — **REDESIGN, not delete**. **Mockup-first: 4 genuinely-distinct mockups, his pick/mix, THEN build live + sign-off.** Visual/design work — read the `design-language` + `visual-verification` skills first; a DOM probe is not a visual check.
+## ▶ START HERE — the next unbuilt item (#7 SHIPPED — see below)
 - **#9 goal-picker/veil**: veil everywhere · veil close × · hide "I'm just browsing" for an existing profile · close orange→green · **A-sweep** `.ui-close` onto every remaining × (goal chips, veil, knowledge drawers) · dead-CSS verify (`.rl-dose*`/`.ck-addcard*`/`.ck-scan*` vs the `938a407c` purge).
 
-**Pick one with an AskUserQuestion — do NOT assume which.**
+**#9 is the sole remaining START-HERE item — proceed, or ask via AskUserQuestion if he redirects.**
+
+## ✅ DONE (this session, 2026-08-16 late) — committed + pushed to origin/master
+- **#7 result verdict-card redesign → SHIPPED (concept A · "Deficit Rail").** The card's `.vd-side` (`.vd-impact` delta + 90-dot field + a 4-tile `.vd-stats` grid) → one full-width **"N of 90" coverage hero**: covered count + "N still open" accent pill + a 3-segment cov/add/**open** rail (the open/gap stretch is deliberately the biggest) + legend + 2 fact tiles. Mockup-first: 4 genuinely-distinct concepts in `temporary/scanner-verdict-hero-demos.html`, Luneth picked **A**, live sign-off. Dead code severed: `deltaField`, `.vd-impact/.vd-delta/.vd-field/.vd-lg/.vd-stats/.vd-stat` + `@keyframes vd-ignite` (replaced by a self-contained `.vd-cov-*` block). Alignment **dropped** — `state/scanner.ts:654`: a scan never carries `form_alignment`, so "form not on a label" was always the only case. Board **91/91**. **Deferred (Luneth left open):** soften "+0"/"0 reach the 90" on zero-add scans · maybe drop the "+N reach the 90" fact (dupes the rail legend) · card-wide vs side-column width is a 1-step follow-up.
 
 ## ✅ DONE THIS SESSION (2026-08-16 eve) — all committed + pushed to origin/master
 Scanner Confirm surface built end-to-end (S10–S18) + matcher/dict:
