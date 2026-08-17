@@ -376,6 +376,7 @@
   --fam-science: color-mix(in srgb, #2f9dba 60%, var(--ds-ink));
   --fam-action:  color-mix(in srgb, #5aa82c 58%, var(--ds-ink));
   --fam-story:   color-mix(in srgb, #8a52d6 55%, var(--ds-ink));
+  --fam-vita:    color-mix(in srgb, #ff7e3c 66%, var(--ds-ink));
 }
 :root[data-theme="dark"] #drawer-search-mount {
   --t-element:   color-mix(in srgb, #2f9dba 60%, var(--ds-ink));
@@ -688,6 +689,18 @@
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="mineral"] {
   --ds-accent: #5b9fd6;
   --ds-accent-deep: color-mix(in srgb, #2b6fb0 60%, var(--ds-ink));
+}
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="vitamin"] {
+  --ds-accent: #ff9d5c;
+  --ds-accent-deep: color-mix(in srgb, #ff7e3c 60%, var(--ds-ink));
+}
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="amino_acid"] {
+  --ds-accent: color-mix(in srgb, var(--fam-action) 78%, #fff);
+  --ds-accent-deep: color-mix(in srgb, #5aa82c 60%, var(--ds-ink));
+}
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="fatty_acid"] {
+  --ds-accent: color-mix(in srgb, var(--fam-story) 78%, #fff);
+  --ds-accent-deep: color-mix(in srgb, #8a52d6 60%, var(--ds-ink));
 }
 :root[data-theme="dark"] #drawer-knowledge-mount .mkA-pt--up .mkA-pt__lead { color: color-mix(in srgb, #2f7a33 62%, var(--ds-ink)); }
 :root[data-theme="dark"] #drawer-knowledge-mount .mkA-pt--down .mkA-pt__lead { color: color-mix(in srgb, #b0442e 62%, var(--ds-ink)); }
