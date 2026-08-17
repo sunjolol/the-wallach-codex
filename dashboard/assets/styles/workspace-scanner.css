@@ -98,8 +98,8 @@
 .vd-nlist { display: flex; flex-direction: column; }
 .vd-nrow { display: flex; flex-direction: column; gap: 9px; padding: 11px 0; border-bottom: 1px solid var(--ds-rule-soft); }
 .vd-nrow:last-child { border-bottom: 0; }
-.vd-nrow__main { display: grid; grid-template-columns: 20px minmax(0,1.4fr) auto minmax(0,1.25fr); align-items: center; gap: var(--ds-space-3); }
-@media (max-width: 620px) { .vd-nrow__main { grid-template-columns: 20px 1fr; } .vd-nrow__amt, .vd-nrow__map { grid-column: 2; } }
+.vd-nrow__main { display: grid; grid-template-columns: 20px minmax(0,1fr) auto minmax(0,1.25fr) auto; align-items: center; gap: var(--ds-space-3); }
+@media (max-width: 620px) { .vd-nrow__main { grid-template-columns: 20px 1fr auto; } .vd-nrow__amt, .vd-nrow__map { grid-column: 2; } .vd-nrow__del { grid-column: 3; grid-row: 1; } }
 .vd-nrow__g { width: 20px; height: 20px; border-radius: var(--ds-radius-circle); display: grid; place-items: center; font-family: var(--ds-font-mono); font-size: 11px; font-weight: 700; flex: 0 0 auto; }
 .vd-nrow.is-ok .vd-nrow__g { background: var(--ds-ok-wash); color: var(--ds-ok-deep); box-shadow: inset 0 0 0 1px var(--ds-status-ok-soft); }
 .vd-nrow.is-warn .vd-nrow__g { background: var(--ds-status-warn-soft); color: var(--ds-status-warn); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-status-warn) 40%, transparent); }
@@ -374,3 +374,28 @@
 .vd { --ds-text-micro: var(--ds-text-mini); }
 .vd :is(.vd-amt, .vd-unit, .vd-tier__c small, .vd-pill, .vd-card__eyebrow) { font-size: 0.6rem; }
 .vd :is(.vd-step__state, .vd-cf-sec__n, .vd-nrow__amt, .vd-nrow__map, .vd-sug__lab, .vd-ing__lab, .vd-ocr__hint, .vd-cf__ref-h, .vd-reasons__h, .vd-cite, .vd-impact__h, .vd-lg, .vd-stat__l, .vd-foot__prov, .vd-when, .vd-prog__note, .vd-error__m, .vd-cf-name__lab) { font-weight: 700; }
+
+/* ── Scanner rows S10/S11/S12 (2026-08-16): thumbnail lightbox · per-row delete · live OCR panel ── */
+/* S11 — per-row delete. Trailing × in the last grid column; the name input column was narrowed
+   (1.4fr → 1fr) to make room. Reuses the canonical .ui-close--sm, tuned smaller/quieter for a dense row. */
+.vd-nrow__del { justify-self: end; align-self: center; --uic-size: 24px; box-shadow: none; }
+.vd-nrow__del svg { width: 12px; height: 12px; }
+.vd-nrow__del:hover { color: var(--ds-status-err); border-color: color-mix(in srgb, var(--ds-status-err) 45%, transparent); background: var(--ds-status-err-soft); }
+
+/* S10 — the uploaded thumbnail / photo are click-to-enlarge triggers (verify the OCR vs the real label). */
+.vd-scan__imgbtn { display: inline-flex; padding: 0; border-radius: var(--ds-radius-sm); line-height: 0; cursor: zoom-in; transition: transform var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out); }
+.vd-scan__imgbtn:hover { transform: translateY(-1px); box-shadow: var(--ds-elev-2); }
+.vd-scan__imgbtn:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--ds-accent-wash); }
+.vd-cf__refbtn { display: block; width: 100%; max-width: 216px; padding: 0; position: relative; cursor: zoom-in; border-radius: var(--ds-radius-xs); }
+.vd-cf__refbtn .vd-cf__refimg { display: block; transition: filter var(--ds-motion-fast) var(--ds-ease-out); }
+.vd-cf__refbtn:hover .vd-cf__refimg { filter: brightness(0.9); }
+.vd-cf__refbtn:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--ds-accent-wash); }
+.vd-cf__refzoom { position: absolute; bottom: 6px; right: 6px; display: inline-flex; align-items: center; gap: 4px; font-family: var(--ds-font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-paper-light); background: color-mix(in srgb, var(--ds-ink) 78%, transparent); padding: 3px 8px; border-radius: var(--ds-radius-pill); backdrop-filter: blur(2px); pointer-events: none; }
+
+/* S10 — full-size label lightbox. Mirrors the .pf-overlay scrim grammar (token-based, self-theming);
+   mounts to document.body so a view re-render cannot wipe it. Reuses the pf-fade keyframe (dashboard.css). */
+.vd-lightbox { position: fixed; inset: 0; z-index: 9200; display: grid; place-items: center; padding: clamp(20px, 5vh, 56px); cursor: zoom-out;
+  background: radial-gradient(120% 90% at 50% -10%, color-mix(in srgb, var(--ds-accent) 12%, transparent), transparent 60%), rgba(18, 14, 10, 0.82);
+  backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); animation: pf-fade 160ms var(--ds-ease-out); }
+.vd-lightbox__img { max-width: min(100%, 900px); max-height: 90vh; object-fit: contain; border-radius: var(--ds-radius-md); border: 1px solid color-mix(in srgb, var(--ds-accent) 26%, var(--ds-rule)); box-shadow: 0 30px 70px -30px rgba(0, 0, 0, .7); cursor: default; }
+.vd-lightbox__x { position: fixed; top: clamp(14px, 3vh, 28px); right: clamp(14px, 3vw, 28px); }

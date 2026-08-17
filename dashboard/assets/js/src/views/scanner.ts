@@ -159,7 +159,7 @@ function renderScan(state: ScState, fileName: string | null, dataUrl: string | n
     ? `<div class="vd-scan">
         <button class="ds-btn-primary vd-newscan" type="button" data-sc-new><b aria-hidden="true">+</b> New Scan</button>
         <div class="vd-scan__thumb">
-          ${dataUrl !== null ? `<img class="vd-scan__img" src="${escHTML(dataUrl)}" alt="Your scanned label">` : ''}
+          ${dataUrl !== null ? `<button class="vd-scan__imgbtn" type="button" data-sc-zoom title="See the full label — click to enlarge"><img class="vd-scan__img" src="${escHTML(dataUrl)}" alt="Your scanned label — click to enlarge"></button>` : ''}
           <div class="vd-scan__meta">
             <span class="vd-scan__file">${escHTML(fileName ?? 'label image')}</span>
             <span class="vd-scan__done">&check; decoded locally · reads confirmed below</span>
@@ -201,16 +201,18 @@ function renderScan(state: ScState, fileName: string | null, dataUrl: string | n
 
 function nutrientRow(n: Nutrient, i: number, added: Set<string>, covered: Set<string>): string {
   const name = typeof n.name === 'string' ? n.name : '';
+  const del = `<button class="ui-close ui-close--sm vd-nrow__del" type="button" data-ndel="${i}" aria-label="Remove this row" title="Remove this row">${CLOSE_SVG}</button>`;
   const ess = matchEssential(name);
   if (ess !== null) {
     const plus = added.has(ess.name) ? '<span class="vd-nrow__r">+1</span>' : (covered.has(ess.name) ? '<span class="vd-nrow__cov">· already covered</span>' : '<span class="vd-nrow__cov">· counts toward your 90</span>');
     return `
-      <div class="vd-nrow is-ok" data-nrow="${i}">
+      <div class="vd-nrow is-ok" data-nrow="${i}" data-nmap="essential">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
           <input class="vd-edit" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
           <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML(ess.name)}</b>${plus}</span>
+          ${del}
         </div>
       </div>`;
   }
@@ -218,12 +220,13 @@ function nutrientRow(n: Nutrient, i: number, added: Set<string>, covered: Set<st
     // A correctly-read nutrient that is simply not one of Wallach's 90 tracked essentials (Protein,
     // etc.). Recognized and shown -- never flagged as an OCR error to "fix".
     return `
-      <div class="vd-nrow is-ok is-untracked" data-nrow="${i}">
+      <div class="vd-nrow is-ok is-untracked" data-nrow="${i}" data-nmap="untracked">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
           <input class="vd-edit" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
           <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__cov">· read OK · not one of the 90</span></span>
+          ${del}
         </div>
       </div>`;
   }
@@ -231,12 +234,13 @@ function nutrientRow(n: Nutrient, i: number, added: Set<string>, covered: Set<st
   const btns = cands.map((c, k) =>
     `<button class="vd-sug__btn${k === 0 ? ' is-best' : ''}" type="button" data-nfix="${i}" data-nfix-val="${escHTML(c.word)}">${escHTML(c.word)}</button>`).join('');
   return `
-    <div class="vd-nrow is-warn" data-nrow="${i}">
+    <div class="vd-nrow is-warn" data-nrow="${i}" data-nmap="warn">
       <div class="vd-nrow__main">
         <span class="vd-nrow__g">!</span>
         <input class="vd-edit is-warn" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" aria-label="Garbled read (editable)">
         <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" aria-label="Unit (editable)"></span>
         <span class="vd-nrow__map vd-nrow__map--pending">not recognized · pick a match or edit</span>
+        ${del}
       </div>
       ${cands.length > 0
         ? `<div class="vd-sug"><span class="vd-sug__lab">Did you mean</span>${btns}<button class="vd-sug__keep" type="button" data-nkeep="${i}">&times; keep</button></div>`
@@ -269,23 +273,35 @@ function suspectCard(s: IngredientSuspect): string {
     </div>`;
 }
 
+function suspectPanelHTML(suspects: IngredientSuspect[]): string {
+  return suspects.length > 0
+    ? `<div class="vd-ocr">
+        <div class="vd-ocr__head"><span class="vd-ocr__t">Possible OCR errors</span><span class="vd-ocr__hint">Click a suggestion to fix, or &times; to dismiss</span></div>
+        ${suspects.map(suspectCard).join('')}
+      </div>`
+    : '';
+}
+
+/** Shared count labels — same text at first render and on live refresh, never drifting apart. */
+function suspectCountLabel(n: number): string {
+  return `${n} suspect word${n === 1 ? '' : 's'}`;
+}
+
+function nutrientCountLabel(total: number, mapped: number): string {
+  return `${total} lines · ${mapped} mapped · ${total - mapped} to check`;
+}
+
 function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string | null): string {
   const nutrients = label.nutrients ?? [];
   const delta = coverageDeltaForLabel(label);
   const added = new Set(delta.addedEssentials);
   const coveredNames = new Set(getOrCompute().tiles.filter(t => t.covered).map(t => t.name));
   const mapped = nutrients.filter(n => matchEssential(typeof n.name === 'string' ? n.name : '') !== null).length;
-  const unmapped = nutrients.length - mapped;
   const rows = nutrients.map((n, i) => nutrientRow(n, i, added, coveredNames)).join('');
 
   const ingredients = label.ingredients ?? '';
   const suspects = findIngredientSuspects(ingredients, dismissed, getAntiIngredientWords());
-  const suspectPanel = suspects.length > 0
-    ? `<div class="vd-ocr">
-        <div class="vd-ocr__head"><span class="vd-ocr__t">Possible OCR errors</span><span class="vd-ocr__hint">Click a suggestion to fix, or &times; to dismiss</span></div>
-        ${suspects.map(suspectCard).join('')}
-      </div>`
-    : '';
+  const suspectPanel = suspectPanelHTML(suspects);
 
   const preview = scoreLabel(label);
   const flags = preview?.anti ?? [];
@@ -317,7 +333,7 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
             <div class="vd-cf-sec">
               <div class="vd-cf-sec__head">
                 <span class="vd-cf-sec__t">Supplement Facts — what we read</span>
-                <span class="vd-cf-sec__n">${nutrients.length} lines · ${mapped} mapped · ${unmapped} to check</span>
+                <span class="vd-cf-sec__n" data-nutrient-count>${nutrientCountLabel(nutrients.length, mapped)}</span>
                 <span class="vd-cf-sec__hint">Every row is editable. Clean reads are mapped &check;; garbled reads show ranked suggestions — pick one, or keep as-is.</span>
               </div>
               <div class="vd-nlist">${rows || '<div class="vd-nrow__covrow">No nutrient lines read — edit the ingredients below, or rescan.</div>'}</div>
@@ -325,20 +341,20 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
             <div class="vd-cf-sec">
               <div class="vd-cf-sec__head">
                 <span class="vd-cf-sec__t">Other ingredients — what we read</span>
-                <span class="vd-cf-sec__n">${suspects.length} suspect word${suspects.length === 1 ? '' : 's'}</span>
+                <span class="vd-cf-sec__n" data-suspect-count>${suspectCountLabel(suspects.length)}</span>
                 <span class="vd-cf-sec__hint">These never appear on the nutrition panel — only an ingredients scan can catch a gluten source or a seed oil.</span>
               </div>
               <div>
                 <label class="vd-ing__lab" for="vd-ing">Ingredients line (editable)</label>
                 <textarea id="vd-ing" class="vd-ing" rows="2" maxlength="4000" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML(ingredients)}</textarea>
               </div>
-              ${suspectPanel}
+              <div class="vd-ocr-host" data-ocr-host>${suspectPanel}</div>
               ${flagPanel}
             </div>
           </div>
           <aside class="vd-cf__ref">
             <div class="vd-cf__ref-h">Your uploaded photo</div>
-            ${dataUrl !== null ? `<img class="vd-cf__refimg" src="${escHTML(dataUrl)}" alt="Your uploaded label">` : ''}
+            ${dataUrl !== null ? `<button class="vd-cf__refbtn" type="button" data-sc-zoom title="See the full label — click to enlarge"><img class="vd-cf__refimg" src="${escHTML(dataUrl)}" alt="Your uploaded label — click to enlarge"><span class="vd-cf__refzoom" aria-hidden="true">&#10530;&nbsp;Enlarge</span></button>` : ''}
           </aside>
         </div>
         <div class="vd-cf__cta">
@@ -562,6 +578,14 @@ export function mount(container: HTMLElement): MountHandle {
   let imageDataUrl: string | null = null;
   let scanError: string | null = null;
   const dismissed = new Set<string>();
+  // S11: original indices the user deleted in Confirm. readCorrectedLabel skips these so a
+  // removed row can't be silently re-read from the stored label. Cleared on each fresh OCR.
+  const removedRows = new Set<number>();
+  // S10: the open full-label lightbox + an AbortController that unbinds its scrim/Escape listeners.
+  let lightboxEl: HTMLElement | null = null;
+  let lightboxAbort: AbortController | null = null;
+  // S12: debounce handle for the live "Possible OCR errors" refresh.
+  let suspectTimer = 0;
   // #6: where the shown verdict came from, so a re-opened SAVED item offers Delete (removes it
   // from the shelf) instead of a meaningless Reject. A fresh scan / recent re-open stays Reject.
   let resultOrigin: 'scan' | 'saved' | 'recent' = 'scan';
@@ -638,6 +662,7 @@ export function mount(container: HTMLElement): MountHandle {
         }
         label = out.label;
         dismissed.clear();
+        removedRows.clear();
         state = 'confirming';
         render();
       }).catch((e: unknown) => failScan(seq, e));
@@ -666,7 +691,10 @@ export function mount(container: HTMLElement): MountHandle {
   /** Read the corrected label back out of the Confirm inputs + textarea. */
   const readCorrectedLabel = (): ScanLabel => {
     const base = label ?? { name: 'Scanned label', nutrients: [], ingredients: '' };
-    const nutrients = (base.nutrients ?? []).map((n, i) => {
+    const nutrients = (base.nutrients ?? []).flatMap((n, i) => {
+      if (removedRows.has(i)) {
+        return []; // S11: deleted by the user — drop it, never fall back to the stored read
+      }
       const input = container.querySelector<HTMLInputElement>(`[data-nedit="${i}"]`);
       const next = input !== null ? input.value.trim() : (typeof n.name === 'string' ? n.name : '');
       const amtEl = container.querySelector<HTMLInputElement>(`[data-aedit="${i}"]`);
@@ -674,14 +702,91 @@ export function mount(container: HTMLElement): MountHandle {
       const parsed = amtEl !== null ? Number.parseFloat(amtEl.value) : Number.NaN;
       const amount = Number.isFinite(parsed) ? parsed : n.amount;
       const unit = unitEl !== null && unitEl.value.trim().length > 0 ? unitEl.value.trim() : n.unit;
-      return { ...n, name: next, amount, unit };
-    }).filter(n => typeof n.name === 'string' && n.name.length > 0);
+      return next.length > 0 ? [{ ...n, name: next, amount, unit }] : [];
+    });
     const ing = container.querySelector<HTMLTextAreaElement>('[data-ing]');
     const nameEl = container.querySelector<HTMLInputElement>('[data-sc-name]');
     const name = nameEl !== null && nameEl.value.trim().length > 0
       ? nameEl.value.trim()
       : (typeof base.name === 'string' ? base.name : 'Scanned label');
     return { ...base, name, nutrients, ingredients: ing !== null ? ing.value : (base.ingredients ?? '') };
+  };
+
+  /** S12: recompute the "Possible OCR errors" panel + its count from the live ingredients
+   *  textarea. The delegated debounced input calls this; dismiss/fix call it directly. */
+  const refreshSuspects = (): void => {
+    const host = container.querySelector<HTMLElement>('[data-ocr-host]');
+    const ta = container.querySelector<HTMLTextAreaElement>('[data-ing]');
+    if (host === null || ta === null) {
+      return;
+    }
+    const suspects = findIngredientSuspects(ta.value, dismissed, getAntiIngredientWords());
+    host.innerHTML = suspectPanelHTML(suspects);
+    const countEl = container.querySelector('[data-suspect-count]');
+    if (countEl !== null) {
+      countEl.textContent = suspectCountLabel(suspects.length);
+    }
+  };
+
+  /** S11: after a row delete, keep the "N lines · M mapped · K to check" tally honest — recount
+   *  from the rows still in the DOM rather than re-render (which would discard in-flight edits). */
+  const recountNutrients = (): void => {
+    const rows = container.querySelectorAll('.vd-nlist .vd-nrow[data-nrow]');
+    let total = 0;
+    let mapped = 0;
+    for (const r of rows) {
+      total++;
+      if (r.getAttribute('data-nmap') === 'essential') {
+        mapped++;
+      }
+    }
+    const countEl = container.querySelector('[data-nutrient-count]');
+    if (countEl !== null) {
+      countEl.textContent = nutrientCountLabel(total, mapped);
+    }
+  };
+
+  /** S10: dismiss the full-label lightbox and unbind its listeners via the AbortController. */
+  const closeLightbox = (): void => {
+    if (lightboxEl !== null) {
+      lightboxEl.remove();
+      lightboxEl = null;
+    }
+    if (lightboxAbort !== null) {
+      lightboxAbort.abort();
+      lightboxAbort = null;
+    }
+  };
+
+  /** S10: open the uploaded photo full-size so the user can verify the OCR against the real label.
+   *  Mounts to document.body (the house .pf-overlay convention) so a view re-render can't wipe it. */
+  const openLightbox = (): void => {
+    if (imageDataUrl === null) {
+      return;
+    }
+    closeLightbox();
+    const el = document.createElement('div');
+    el.className = 'vd-lightbox';
+    el.setAttribute('role', 'dialog');
+    el.setAttribute('aria-modal', 'true');
+    el.setAttribute('aria-label', 'Full-size scanned label');
+    el.innerHTML = `<button class="ui-close vd-lightbox__x" type="button" data-lb-close aria-label="Close full-size label" title="Close">${CLOSE_SVG}</button><img class="vd-lightbox__img" src="${escHTML(imageDataUrl)}" alt="Your scanned label at full size">`;
+    const ac = new AbortController();
+    el.addEventListener('click', (ev) => {
+      const tgt = ev.target as HTMLElement | null;
+      if (tgt !== null && (tgt === el || tgt.closest('[data-lb-close]') !== null)) {
+        closeLightbox();
+      }
+    }, { signal: ac.signal });
+    document.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Escape') {
+        closeLightbox();
+      }
+    }, { signal: ac.signal });
+    document.body.appendChild(el);
+    lightboxAbort = ac;
+    lightboxEl = el;
+    el.querySelector<HTMLButtonElement>('[data-lb-close]')?.focus();
   };
 
   const refreshRail = (): void => {
@@ -694,6 +799,11 @@ export function mount(container: HTMLElement): MountHandle {
   const clickHandler = (ev: Event): void => {
     const t = ev.target as HTMLElement | null;
     if (t === null) {
+      return;
+    }
+    // S10: click the uploaded thumbnail / photo -> open it full-size to verify the OCR.
+    if (t.closest('[data-sc-zoom]') !== null) {
+      openLightbox();
       return;
     }
     if (t.closest('[data-sc-upload]') !== null || t.closest('[data-sc-new]') !== null) {
@@ -719,6 +829,18 @@ export function mount(container: HTMLElement): MountHandle {
         reopenedSavedId = null;
         imageDataUrl = null;
         render();
+      }
+      return;
+    }
+    // S11: per-row delete — record the original index so readCorrectedLabel drops it, then pull
+    // the row from the DOM and keep the line tally honest. No re-render (would lose other edits).
+    const ndel = t.closest<HTMLElement>('[data-ndel]');
+    if (ndel !== null) {
+      const idx = Number(ndel.dataset['ndel']);
+      if (Number.isInteger(idx)) {
+        removedRows.add(idx);
+        ndel.closest('.vd-nrow')?.remove();
+        recountNutrients();
       }
       return;
     }
@@ -760,12 +882,19 @@ export function mount(container: HTMLElement): MountHandle {
       if (ta !== null && from !== undefined && to !== undefined) {
         ta.value = ta.value.replace(from, to);
       }
-      ifix.closest('.vd-ocr__card')?.remove();
+      // S12: re-run the pass so the corrected word drops out and the count updates.
+      refreshSuspects();
       return;
     }
     const idismiss = t.closest<HTMLElement>('[data-idismiss]');
     if (idismiss !== null) {
-      idismiss.closest('.vd-ocr__card')?.remove();
+      // S12: record the dismissal (lowercased, matching findIngredientSuspects) so a live
+      // refresh keeps it gone, then recompute the panel.
+      const w = idismiss.dataset['idismiss'];
+      if (w !== undefined) {
+        dismissed.add(w.toLowerCase());
+      }
+      refreshSuspects();
       return;
     }
     // confirm → verdict
@@ -955,8 +1084,19 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
+  // S12: debounced live refresh of the OCR-errors panel as the ingredients textarea is edited.
+  const inputHandler = (ev: Event): void => {
+    const target = ev.target as HTMLElement | null;
+    if (target === null || !target.matches('[data-ing]')) {
+      return;
+    }
+    window.clearTimeout(suspectTimer);
+    suspectTimer = window.setTimeout(refreshSuspects, 250);
+  };
+
   render();
   container.addEventListener('click', clickHandler);
+  container.addEventListener('input', inputHandler);
   container.addEventListener('dragover', dragHandler);
   container.addEventListener('drop', dropHandler);
   document.addEventListener('paste', pasteHandler);
@@ -975,7 +1115,10 @@ export function mount(container: HTMLElement): MountHandle {
     update: render,
     unmount: () => {
       unsub();
+      closeLightbox();
+      window.clearTimeout(suspectTimer);
       container.removeEventListener('click', clickHandler);
+      container.removeEventListener('input', inputHandler);
       container.removeEventListener('dragover', dragHandler);
       container.removeEventListener('drop', dropHandler);
       document.removeEventListener('paste', pasteHandler);
