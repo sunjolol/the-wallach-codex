@@ -1150,7 +1150,8 @@ body { margin: 0; background: var(--ds-paper-deep); }
    a wall — nobody is ever locked out, and the copy invites instead of interrogating
    ("what are you here for?" was the actual complaint, all along). */
 .wc-veil { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: rgba(26,22,18,.30); backdrop-filter: blur(9px) saturate(.9); }
-.wc { width: min(760px, 92vw); max-height: 90vh; overflow: auto; background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: 6px; box-shadow: 0 40px 90px -20px rgba(26,22,18,.5); padding: var(--ds-space-7); }
+.wc { position: relative; width: min(760px, 92vw); max-height: 90vh; overflow: auto; background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: 6px; box-shadow: 0 40px 90px -20px rgba(26,22,18,.5); padding: var(--ds-space-7); }
+.wc__x { position: absolute; top: var(--ds-space-5); right: var(--ds-space-5); }
 .wc__kicker { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-accent); }
 .wc__h { font-family: var(--ds-font-display); font-size: 1.9rem; font-weight: 800; color: var(--ds-ink); margin: 8px 0 6px; letter-spacing: -.01em; }
 .wc__deck { font-family: var(--ds-font-sans); font-size: .92rem; color: var(--ds-ink-soft); margin: 0 0 var(--ds-space-6); line-height: 1.5; }

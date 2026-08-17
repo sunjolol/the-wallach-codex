@@ -372,12 +372,6 @@
   .ck-hero { padding: var(--ds-space-5); }
 }
 
-/* -- add-goal picker (the live's functional dropdown; the demo's chip was inert) -- */
-.ck-goalmenu { display: flex; flex-wrap: wrap; gap: 7px; margin-top: calc(-1 * var(--ds-space-2)); padding: var(--ds-space-3) var(--ds-space-4); background: var(--ds-paper-light); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-md); box-shadow: var(--ds-elev-1); }
-.ck-goalmenu[hidden] { display: none; }
-.ck-goalmenu__opt { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 600; color: var(--ds-ink-medium); background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); padding: 5px 13px; cursor: pointer; transition: border-color var(--ds-motion-fast) var(--ds-ease-out), color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
-.ck-goalmenu__opt:hover { border-color: var(--ds-accent); color: var(--ds-ink); background: var(--ds-accent-wash); }
-
 /* == Regimen right-rail redesign (Variant B, roster-first) ================= */
 .rr-results__info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .rr-results__meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-status-ok); }

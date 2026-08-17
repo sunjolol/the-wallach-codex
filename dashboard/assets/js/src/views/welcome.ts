@@ -47,6 +47,7 @@ export interface MountHandle {
 
 const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
 const NAME_MAX = 18;
+const CLOSE_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
 function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({
@@ -88,6 +89,7 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
   host.innerHTML = `
     <div class="wc-veil" data-veil>
       <div class="wc" role="dialog" aria-modal="true" aria-labelledby="wcH">
+        <button class="ui-close wc__x" type="button" data-veil-close aria-label="Close" title="Close">${CLOSE_SVG}</button>
         <div class="wc__kicker">${escHTML(ui('wc_kicker'))}</div>
         <h2 class="wc__h" id="wcH">${escHTML(ui('wc_h'))}</h2>
         <p class="wc__deck">${escHTML(ui('wc_deck'))}</p>
@@ -105,7 +107,7 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
         </span>
         <div class="wc__goals" data-goals>${goalChips}</div>
         <div class="wc__foot">
-          <button class="wc__browse" type="button" data-browse>${escHTML(ui('wc_browse'))}</button>
+          ${reopen ? '' : `<button class="wc__browse" type="button" data-browse>${escHTML(ui('wc_browse'))}</button>`}
           <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML(ui('wc_go'))}</button>
         </div>
       </div>
@@ -177,9 +179,26 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
     onDone?.();
   };
 
+  const dismiss = (): void => {
+    if (reopen) {
+      // Goal-picker cancel: leave the existing profile and its goals untouched, just close.
+      host.replaceChildren();
+      onDone?.();
+    }
+    else {
+      // First arrival: a modal close must never trap the user. Treat it as "just
+      // browsing" so the tri-state records a choice and the veil never re-nags on refresh.
+      enter(true);
+    }
+  };
+
   const onClick = (ev: Event): void => {
     const t = ev.target as HTMLElement | null;
     if (t === null) {
+      return;
+    }
+    if (t.closest('[data-veil-close]') !== null) {
+      dismiss();
       return;
     }
     const chip = t.closest<HTMLElement>('.wc-goal');

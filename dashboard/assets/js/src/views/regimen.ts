@@ -535,14 +535,6 @@ function renderGoals(goals: LayoutGoal[]): string {
     </div>`;
 }
 
-/** The inline "add a goal" menu — the unpicked layout goals, click to add. */
-function renderGoalMenu(goals: LayoutGoal[]): string {
-  const picked = new Set(goals.map(g => g.id));
-  const options = LAYOUT.goals.filter(g => !picked.has(g.id)).map(g =>
-    `<button type="button" class="ck-goalmenu__opt" data-goal-pick="${escHTML(g.id)}">${escHTML(g.name)}</button>`).join('');
-  return `<div class="ck-goalmenu" data-goal-menu hidden>${options}</div>`;
-}
-
 // ─── Recommendations (products only) + active stack + add card (DOM) ──────────
 
 function wantedSlugs(goals: LayoutGoal[]): string[] {
@@ -1169,7 +1161,6 @@ export function mount(container: HTMLElement): MountHandle {
           <div class="coverage-main ck-main">
             ${renderConsole(field)}
             ${renderGoals(goals)}
-            ${renderGoalMenu(goals)}
             <div class="recs ck-recs" data-rise="4">
               <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><span class="ck-recs__note">Products, ranked by your goals</span></div>
               <div class="ck-recgrid" data-recgrid></div>
@@ -1450,22 +1441,9 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
-    // — goal add menu toggle —
+    // — add a goal: opens the same full arrival veil Coverage uses, as a goal picker —
     if (target.closest('[data-goal-add]') !== null) {
-      ev.stopPropagation();
-      const menu = container.querySelector<HTMLElement>('[data-goal-menu]');
-      if (menu !== null) {
-        menu.hidden = !menu.hidden;
-      }
-      return;
-    }
-    // — goal pick —
-    const pick = target.closest<HTMLElement>('[data-goal-pick]');
-    if (pick !== null) {
-      const id = pick.dataset['goalPick'];
-      if (id !== undefined) {
-        saveRgUserGoals([...(loadRgUserGoals() ?? []), id]);
-      }
+      window.dispatchEvent(new CustomEvent('wallach:open-welcome'));
       return;
     }
     // — goal remove —

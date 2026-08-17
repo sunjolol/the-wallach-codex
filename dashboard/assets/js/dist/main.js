@@ -182307,11 +182307,6 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       ${chips}${add}
     </div>`;
   }
-  function renderGoalMenu(goals) {
-    const picked = new Set(goals.map((g) => g.id));
-    const options = LAYOUT4.goals.filter((g) => !picked.has(g.id)).map((g) => `<button type="button" class="ck-goalmenu__opt" data-goal-pick="${escHTML13(g.id)}">${escHTML13(g.name)}</button>`).join("");
-    return `<div class="ck-goalmenu" data-goal-menu hidden>${options}</div>`;
-  }
   function wantedSlugs2(goals) {
     if (goals.length > 0) {
       return [...new Set(goals.flatMap((g) => g.members))];
@@ -182861,7 +182856,6 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
           <div class="coverage-main ck-main">
             ${renderConsole(field)}
             ${renderGoals(goals)}
-            ${renderGoalMenu(goals)}
             <div class="recs ck-recs" data-rise="4">
               <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><span class="ck-recs__note">Products, ranked by your goals</span></div>
               <div class="ck-recgrid" data-recgrid></div>
@@ -183120,19 +183114,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
         return;
       }
       if (target.closest("[data-goal-add]") !== null) {
-        ev.stopPropagation();
-        const menu = container.querySelector("[data-goal-menu]");
-        if (menu !== null) {
-          menu.hidden = !menu.hidden;
-        }
-        return;
-      }
-      const pick = target.closest("[data-goal-pick]");
-      if (pick !== null) {
-        const id = pick.dataset["goalPick"];
-        if (id !== void 0) {
-          saveRgUserGoals([...loadRgUserGoals() ?? [], id]);
-        }
+        window.dispatchEvent(new CustomEvent("wallach:open-welcome"));
         return;
       }
       const goalRemove = target.closest("[data-goal-remove]");
@@ -184847,6 +184829,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
   // assets/js/src/views/welcome.ts
   var LAYOUT5 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   var NAME_MAX2 = 18;
+  var CLOSE_SVG2 = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
   function escHTML16(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
@@ -184867,6 +184850,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
     host.innerHTML = `
     <div class="wc-veil" data-veil>
       <div class="wc" role="dialog" aria-modal="true" aria-labelledby="wcH">
+        <button class="ui-close wc__x" type="button" data-veil-close aria-label="Close" title="Close">${CLOSE_SVG2}</button>
         <div class="wc__kicker">${escHTML16(ui("wc_kicker"))}</div>
         <h2 class="wc__h" id="wcH">${escHTML16(ui("wc_h"))}</h2>
         <p class="wc__deck">${escHTML16(ui("wc_deck"))}</p>
@@ -184882,7 +184866,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
         </span>
         <div class="wc__goals" data-goals>${goalChips}</div>
         <div class="wc__foot">
-          <button class="wc__browse" type="button" data-browse>${escHTML16(ui("wc_browse"))}</button>
+          ${reopen ? "" : `<button class="wc__browse" type="button" data-browse>${escHTML16(ui("wc_browse"))}</button>`}
           <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML16(ui("wc_go"))}</button>
         </div>
       </div>
@@ -184941,9 +184925,21 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       host.replaceChildren();
       onDone?.();
     };
+    const dismiss = () => {
+      if (reopen) {
+        host.replaceChildren();
+        onDone?.();
+      } else {
+        enter(true);
+      }
+    };
     const onClick = (ev) => {
       const t = ev.target;
       if (t === null) {
+        return;
+      }
+      if (t.closest("[data-veil-close]") !== null) {
+        dismiss();
         return;
       }
       const chip2 = t.closest(".wc-goal");
