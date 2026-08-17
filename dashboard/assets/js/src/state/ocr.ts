@@ -83,6 +83,7 @@ interface ParsedOcr {
 interface OcrDicts {
   fuzzy: Set<string>;
   known: string[];
+  knownLower: Set<string>;
 }
 
 let cachedDict: OcrDicts | null = null;
@@ -94,6 +95,7 @@ function loadDict(): OcrDicts {
     cachedDict = {
       fuzzy: new Set(parsed.fuzzyDict.map(w => w.toLowerCase())),
       known: parsed.knownNutrientNames,
+      knownLower: new Set(parsed.knownNutrientNames.map(w => w.toLowerCase())),
     };
   }
   return cachedDict;
@@ -424,6 +426,11 @@ function ocrFuzzyFix(word: string): string {
   const dict = loadDict();
   const lower = word.toLowerCase();
   if (dict.fuzzy.has(lower)) {
+    return word;
+  }
+  // A recognized nutrient-panel label (Copper, Manganese, Phosphorus...) must never be
+  // "corrected" to a look-alike food term -- that snapped Copper -> Pepper. #7-hits.
+  if (dict.knownLower.has(lower)) {
     return word;
   }
   let best: string | null = null;

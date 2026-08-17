@@ -70,7 +70,7 @@ committed, not independently re-verified — flagged inline._
   His words ("the results") point at (a). → **RESOLVED 2026-08-16: (a) REDESIGN shipped** as ux-pass #7 — concept **B "Gap Arc"** (built A first, then Luneth re-ranked B>D>A>C and picked B); confirmed redesign, not delete; 4 mockups; live sign-off.
 
 ## Adjacent open threads (from his earlier 2026-08-15 reviews, not this away-list)
-- **ux-pass #7** — result 2-box **redesign** → ✅ SHIPPED 2026-08-16 (concept **B "Gap Arc"** radial gauge — unlit arc = the gap; `.vd-side` → self-contained `.vd-cov-*` "N of 90" hero; mockup-first, 4 concepts; built A first (06c582e9) then Luneth re-ranked B>D>A>C and picked B; live sign-off; committed on master). Deferred: soften +0/zero-add · maybe drop the "+N reach the 90" fact (dupes rail legend) · card-wide width follow-up.
+- **ux-pass #7** — result 2-box **redesign** → ✅ SHIPPED 2026-08-16 (concept **B "Gap Arc"** radial gauge — unlit arc = the gap; `.vd-side` → self-contained `.vd-cov-*` "N of 90" hero; mockup-first, 4 concepts; built A first (06c582e9) then Luneth re-ranked B>D>A>C and picked B; live sign-off; committed on master). Deferred: soften +0/zero-add · maybe drop the "+N reach the 90" fact (dupes rail legend) · card-wide width follow-up. **FOLLOW-ON (same session): scan hero reframed from coverage → the item's "hits N of 90" (≥3% of the Wallach target) + Copper→"Pepper" parse fix; the "0 reach the 90" concern resolved (pumpkin → "delivers 6, 2 strongly"). See build-log 2026-08-16 23:54.**
 - **ux-pass #9** — goal-picker/veil (C task): veil everywhere, veil close ×, hide "I'm just browsing"
   for an existing profile, close orange→green.
 - **A-sweep** — `.ui-close` onto every remaining × (goal chips, veil, knowledge drawers).

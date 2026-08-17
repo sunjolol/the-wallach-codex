@@ -385,10 +385,7 @@ function reasonRows(result: ScanResult): string {
 function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): string {
   const tone = VERDICT_TONE[result.verdict];
   const { head, sub } = verdictHeadline(result.verdict);
-  const delta = coverageDeltaForLabel(result.label);
   const total = essentialCount();
-  const added = delta.after - delta.before;
-  const gaps = total - delta.after;
   const name = humanizeName(result.label.name);
   const flags = result.anti.length;
 
@@ -421,7 +418,7 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
                   ${tierChip('ADD', 'Add', 'aligns')}${tierChip('SAVE', 'Save', 'neutral')}${tierChip('REJECT', 'Reject', 'out')}
                 </div>
                 <h2 class="vd-verdict__h" style="color:${tone}">${head}<b>${sub}</b></h2>
-                <p class="vd-verdict__deck">${added > 0 ? `Fills ${added} real gap${added === 1 ? '' : 's'} in your 90` : 'Adds no new coverage to your 90'}${flags > 0 ? `, and the ingredient scan flagged ${flags}.` : '.'}</p>
+                <p class="vd-verdict__deck">${result.hits > 0 ? `Meaningfully delivers ${result.hits} of your ${total} essential${result.hits === 1 ? '' : 's'}` : 'Delivers no essential in a meaningful amount'}${flags > 0 ? `, and the ingredient scan flagged ${flags}.` : '.'}</p>
                 <div class="vd-reasons">
                   <div class="vd-reasons__h">Why — grounded in Wallach doctrine</div>
                   ${reasonRows(result)}
@@ -430,17 +427,16 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
               </div>
               <div class="vd-side">
                 <div class="vd-cov-gauge">
-                  <svg viewBox="0 0 200 122" class="vd-cov-svg" role="img" aria-label="${delta.after} of ${total} covered, ${gaps} still open">
+                  <svg viewBox="0 0 200 122" class="vd-cov-svg" role="img" aria-label="Meaningfully delivers ${result.hits} of ${total} essentials in a meaningful amount">
                     <path class="vd-cov-arc-base" d="M20 100 A80 80 0 0 1 180 100"/>
-                    <path class="vd-cov-arc-cov" d="M20 100 A80 80 0 0 1 180 100" pathLength="90" stroke-dasharray="${delta.before} 90"/>
-                    ${added > 0 ? `<path class="vd-cov-arc-add" d="M20 100 A80 80 0 0 1 180 100" pathLength="90" stroke-dasharray="${added} 90" stroke-dashoffset="-${delta.before}"/>` : ''}
-                    <text class="vd-cov-gnum" x="100" y="80" text-anchor="middle">${delta.after}</text>
+                    ${result.hits > 0 ? `<path class="vd-cov-arc-hit" d="M20 100 A80 80 0 0 1 180 100" pathLength="90" stroke-dasharray="${result.hits} 90"/>` : ''}
+                    <text class="vd-cov-gnum" x="100" y="80" text-anchor="middle">${result.hits}</text>
                     <text class="vd-cov-gden" x="100" y="104" text-anchor="middle">OF ${total}</text>
                   </svg>
                 </div>
-                <div class="vd-cov-cap"><b>${gaps} gap${gaps === 1 ? '' : 's'} remain${gaps === 1 ? 's' : ''}</b> — the essentials to hunt next.</div>
+                <div class="vd-cov-cap"><b>hit in a meaningful amount</b> — a real start, not a full daily target.</div>
                 <div class="vd-cov-facts">
-                  <div class="vd-cov-fact"><b>${added > 0 ? '+' : ''}${added}</b><span>reach the 90 this scan</span></div>
+                  <div class="vd-cov-fact"><b>${result.hitsStrong}</b><span>delivered strongly</span></div>
                   <div class="vd-cov-fact vd-cov-fact--flag"><b>${flags}</b><span>ingredient flag${flags === 1 ? '' : 's'}</span></div>
                 </div>
               </div>

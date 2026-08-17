@@ -220,8 +220,7 @@
 .vd-cov-gauge { display: grid; place-items: center; padding-top: 4px; }
 .vd-cov-svg { width: 100%; max-width: 290px; height: auto; overflow: visible; }
 .vd-cov-arc-base { fill: none; stroke: var(--ds-paper-darker); stroke-width: 15; stroke-linecap: round; }
-.vd-cov-arc-cov { fill: none; stroke: var(--ds-status-ok); stroke-width: 15; stroke-linecap: round; }
-.vd-cov-arc-add { fill: none; stroke: var(--ds-accent); stroke-width: 15; stroke-linecap: round; filter: drop-shadow(0 0 4px color-mix(in srgb, var(--ds-accent) 55%, transparent)); }
+.vd-cov-arc-hit { fill: none; stroke: var(--ds-status-ok); stroke-width: 15; stroke-linecap: round; filter: drop-shadow(0 0 4px color-mix(in srgb, var(--ds-status-ok) 45%, transparent)); }
 .vd-cov-gnum { fill: var(--ds-ink); font-family: var(--ds-font-display-artifact); font-size: 37px; font-variant-numeric: tabular-nums; }
 .vd-cov-gden { fill: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 9.5px; letter-spacing: 1.5px; font-weight: 700; }
 .vd-cov-cap { text-align: center; font-family: var(--ds-font-serif); font-size: .92rem; line-height: 1.45; color: var(--ds-ink-medium); margin-top: 2px; }

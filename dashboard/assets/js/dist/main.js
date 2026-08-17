@@ -18494,6 +18494,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     return base;
   }
+  var HIT_THRESHOLD = 0.03;
+  var HIT_STRONG = 0.1;
+  function meaningfulHits(nutrients, dailyServings) {
+    const hit = /* @__PURE__ */ new Set();
+    const strong = /* @__PURE__ */ new Set();
+    for (const n of nutrients) {
+      const ess = matchEssential(n.name);
+      if (ess === null) {
+        continue;
+      }
+      const tgt = essTarget(ess);
+      if (tgt === null || tgt.low === void 0 || tgt.low === null) {
+        continue;
+      }
+      const norm = normalize(Number(n.amount), n.unit);
+      const targetNorm = normalize(tgt.low, tgt.unit);
+      if (norm === null || targetNorm === null || norm.family !== targetNorm.family || targetNorm.value <= 0) {
+        continue;
+      }
+      const pct = norm.value * dailyServings / targetNorm.value;
+      if (pct >= HIT_THRESHOLD) {
+        hit.add(ess.name);
+        if (pct >= HIT_STRONG) {
+          strong.add(ess.name);
+        }
+      }
+    }
+    return { hits: [...hit], strong: strong.size };
+  }
   function gapFillFor(n, dailyServings, effectiveCov) {
     const ess = matchEssential(n.name);
     if (ess === null) {
@@ -18760,6 +18789,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const dailyServings = Number.parseFloat(String(label.servings)) || 1;
     const effectiveCov = getEffectiveCoverage();
     const gapFills = nutrients.map((n) => gapFillFor(n, dailyServings, effectiveCov)).filter((g) => g !== null);
+    const hitInfo = meaningfulHits(nutrients, dailyServings);
     const goals = matchGoals(label, corpus2);
     const anti = antiFlags(label, corpus2);
     const conflicts = containerFlag();
@@ -18773,7 +18803,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       conflicts,
       verdict,
       reasonsFor,
-      reasonsAgainst
+      reasonsAgainst,
+      hits: hitInfo.hits.length,
+      hitEssentials: hitInfo.hits,
+      hitsStrong: hitInfo.strong
     };
     result.sparseNutrients = nutrients.length === 0;
     result.sparseIngredients = (label.ingredients ?? "").trim().length === 0;
@@ -18821,7 +18854,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       const parsed = OcrDictSchema.parse(ocr_dict_data_default);
       cachedDict = {
         fuzzy: new Set(parsed.fuzzyDict.map((w) => w.toLowerCase())),
-        known: parsed.knownNutrientNames
+        known: parsed.knownNutrientNames,
+        knownLower: new Set(parsed.knownNutrientNames.map((w) => w.toLowerCase()))
       };
     }
     return cachedDict;
@@ -19070,6 +19104,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const dict = loadDict();
     const lower = word.toLowerCase();
     if (dict.fuzzy.has(lower)) {
+      return word;
+    }
+    if (dict.knownLower.has(lower)) {
       return word;
     }
     let best = null;
@@ -181387,7 +181424,29 @@ FILES:
 
 VERIFY: tsc + esbuild 0; invariants 91/91 with the workspace dead-rule gate green ("110 selectors all trace to a live reference \xB7 keyframes all animated"), proving the A classes were fully removed, not orphaned; render_probe_scanner exits 0. A headless drive of the real app (upload label-test.png \u2192 Confirm \u2192 Result; scores a REJECT that adds 0 coverage) shows .vd-cov-gauge at true 336px side geometry, the covered arc dasharray "5 90", the caption "85 gaps remain", and no old/A classes left in the DOM. Luneth signed off the live arc.
 
-DEFERRED (unchanged from the A ship, Luneth left open): soften the "0 reach the 90" fact on zero-add scans; possibly drop the "+N reach the 90" fact since it restates the coverage story. The mockup file temporary/scanner-verdict-hero-demos.html holds all four concepts and his final ranking (B > D > A > C).` }];
+DEFERRED (unchanged from the A ship, Luneth left open): soften the "0 reach the 90" fact on zero-add scans; possibly drop the "+N reach the 90" fact since it restates the coverage story. The mockup file temporary/scanner-verdict-hero-demos.html holds all four concepts and his final ranking (B > D > A > C).` }, { id: "lg_mswrhiov_n6tjb1", ts: "2026-08-16T23:56:40.160005-05:00", surface: "scanner", kind: "design-decision", summary: "Scanner hero reframed: 'covers N of 90' (full Wallach targets, ~always 0, a stack funnel) -> the ITEM's 'hits N of 90' (>=3% of Wallach's target). Pumpkin now 'Worth adding \xB7 delivers 6 \xB7 2 strongly'. + fixed the Copper->'Pepper' parse bug. 00.A-clean.", detail: `Luneth scanned pumpkin seeds \u2014 one of the most nutritious foods there is \u2014 and the scanner said "0 reach the 90 this scan". He pushed back hard, and he was right: the scanner was headlining how many of the 90 essentials a scan got you to FULLY cover (a full Wallach daily target). Wallach's targets are so high that no real food, and no single supplement, hits even one of them alone \u2014 only the whole Youngevity stack (Ultimate Daily + EFA Plus + Tangy Tangerine + Ultimate Classic ...) approaches full coverage. So a "covers N of 90" headline is always ~0 and quietly turns the scanner into a funnel to buy the entire program, which is the opposite of its job: helping people judge which foods and supplements are worth introducing.
+
+THE FIX, in two parts.
+
+1. The scanner headline is now the ITEM's "hits N of 90" \u2014 how many essentials it delivers a MEANINGFUL amount of, defined as >= 3% of the Wallach daily target (his call, grounded on the real pumpkin numbers below). This scales honestly: a whole food hits ~6, a strong multivit far more, the full stack ~90 \u2014 so the number actually moves and discriminates. Crucially it is NOT called "covered": 3% is a meaningful start, not a full dose, and the wording says so. The full-target truth still lives on the Coverage tab (where YOU stand); the scanner answers "how good is this ITEM". Two honest jobs.
+
+2. Copper bug: the OCR auto-corrector (ocrFuzzyFix) only skipped words it already knew as food terms, so a recognized nutrient-panel label like "Copper" \u2014 which is in the known-nutrients list but not the food-term list \u2014 got snapped to the nearest food word, "Pepper" (and "Phosphorus" -> "Phosphoric"), silently dropping them from the scan. Now it also skips anything in the known-nutrients list.
+
+00.A: the 3% threshold is a DISPLAY threshold, always measured against the Wallach target.low (never an RDV/DV), and only the ~38 essentials Wallach has actually dosed are eligible. Where Wallach is silent there is no target to measure against, so the nutrient cannot be a hit (an honest non-hit \u2014 e.g. phosphorus, which pumpkin seeds have in quantity but Wallach never dosed).
+
+REAL NUMBERS (his pumpkin label through the live engine, % of the Wallach target): Magnesium 20.8, Manganese 18.2, Copper 9.7, Iron 4.3, Zinc 4.3, Potassium 3.6, Selenium 1.6, Phosphorus 0 (no Wallach dose). At >= 3%: hits 6 (Fe, Mg, Zn, Cu, Mn, K) \u2014 exactly the set he intuited, including hard-to-get potassium. Strong (>= 10%): 2 (Mg, Mn). His literal "5%" intuition would have given only 2, because Wallach's targets run ~5-15x the RDV \u2014 a genuinely useful correction that came out of grounding the number in the real engine.
+
+RESULT: pumpkin seeds now read "Aligns \xB7 Worth adding \xB7 Meaningfully delivers 6 of your 90 essentials \xB7 hit in a meaningful amount, a real start not a full daily target \xB7 2 delivered strongly \xB7 0 ingredient flags".
+
+FILES:
+- state/scanner.ts \u2014 meaningfulHits() returns { hits, strong }; HIT_THRESHOLD 0.03, HIT_STRONG 0.10; ScanResult gains hits/hitEssentials/hitsStrong (interface only, recomputed per scan).
+- views/scanner.ts \u2014 renderResult(): dropped delta/added/gaps; deck + gauge (single green hit-arc) + caption + facts all reframed to the item-hits story.
+- workspace-scanner.css \u2014 .vd-cov-arc-cov/.vd-cov-arc-add -> .vd-cov-arc-hit.
+- state/ocr.ts \u2014 ocrFuzzyFix skips known nutrient labels (dict.knownLower).
+
+VERIFY: tsc + esbuild 0; invariants 91/91 (dead-rule gate green); render_probe_ocr/scan/scanner 0; live re-open render of the pumpkin label screenshotted and signed off. Coverage tab untouched.
+
+DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (small green arc) \u2014 he may want a more strengths-forward visual later; the caption/deck/"delivered strongly" wording is open to tuning.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -183514,10 +183573,7 @@ DEFERRED (unchanged from the A ship, Luneth left open): soften the "0 reach the 
   function renderResult(result, origin) {
     const tone = VERDICT_TONE[result.verdict];
     const { head, sub } = verdictHeadline(result.verdict);
-    const delta = coverageDeltaForLabel(result.label);
     const total = essentialCount();
-    const added = delta.after - delta.before;
-    const gaps = total - delta.after;
     const name = humanizeName(result.label.name);
     const flags = result.anti.length;
     const tierChip = (key, big, small) => {
@@ -183548,7 +183604,7 @@ DEFERRED (unchanged from the A ship, Luneth left open): soften the "0 reach the 
                   ${tierChip("ADD", "Add", "aligns")}${tierChip("SAVE", "Save", "neutral")}${tierChip("REJECT", "Reject", "out")}
                 </div>
                 <h2 class="vd-verdict__h" style="color:${tone}">${head}<b>${sub}</b></h2>
-                <p class="vd-verdict__deck">${added > 0 ? `Fills ${added} real gap${added === 1 ? "" : "s"} in your 90` : "Adds no new coverage to your 90"}${flags > 0 ? `, and the ingredient scan flagged ${flags}.` : "."}</p>
+                <p class="vd-verdict__deck">${result.hits > 0 ? `Meaningfully delivers ${result.hits} of your ${total} essential${result.hits === 1 ? "" : "s"}` : "Delivers no essential in a meaningful amount"}${flags > 0 ? `, and the ingredient scan flagged ${flags}.` : "."}</p>
                 <div class="vd-reasons">
                   <div class="vd-reasons__h">Why \u2014 grounded in Wallach doctrine</div>
                   ${reasonRows(result)}
@@ -183557,17 +183613,16 @@ DEFERRED (unchanged from the A ship, Luneth left open): soften the "0 reach the 
               </div>
               <div class="vd-side">
                 <div class="vd-cov-gauge">
-                  <svg viewBox="0 0 200 122" class="vd-cov-svg" role="img" aria-label="${delta.after} of ${total} covered, ${gaps} still open">
+                  <svg viewBox="0 0 200 122" class="vd-cov-svg" role="img" aria-label="Meaningfully delivers ${result.hits} of ${total} essentials in a meaningful amount">
                     <path class="vd-cov-arc-base" d="M20 100 A80 80 0 0 1 180 100"/>
-                    <path class="vd-cov-arc-cov" d="M20 100 A80 80 0 0 1 180 100" pathLength="90" stroke-dasharray="${delta.before} 90"/>
-                    ${added > 0 ? `<path class="vd-cov-arc-add" d="M20 100 A80 80 0 0 1 180 100" pathLength="90" stroke-dasharray="${added} 90" stroke-dashoffset="-${delta.before}"/>` : ""}
-                    <text class="vd-cov-gnum" x="100" y="80" text-anchor="middle">${delta.after}</text>
+                    ${result.hits > 0 ? `<path class="vd-cov-arc-hit" d="M20 100 A80 80 0 0 1 180 100" pathLength="90" stroke-dasharray="${result.hits} 90"/>` : ""}
+                    <text class="vd-cov-gnum" x="100" y="80" text-anchor="middle">${result.hits}</text>
                     <text class="vd-cov-gden" x="100" y="104" text-anchor="middle">OF ${total}</text>
                   </svg>
                 </div>
-                <div class="vd-cov-cap"><b>${gaps} gap${gaps === 1 ? "" : "s"} remain${gaps === 1 ? "s" : ""}</b> \u2014 the essentials to hunt next.</div>
+                <div class="vd-cov-cap"><b>hit in a meaningful amount</b> \u2014 a real start, not a full daily target.</div>
                 <div class="vd-cov-facts">
-                  <div class="vd-cov-fact"><b>${added > 0 ? "+" : ""}${added}</b><span>reach the 90 this scan</span></div>
+                  <div class="vd-cov-fact"><b>${result.hitsStrong}</b><span>delivered strongly</span></div>
                   <div class="vd-cov-fact vd-cov-fact--flag"><b>${flags}</b><span>ingredient flag${flags === 1 ? "" : "s"}</span></div>
                 </div>
               </div>

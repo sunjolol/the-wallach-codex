@@ -150,6 +150,12 @@ export interface ScanResult {
   reasonsAgainst: Reason[];
   sparseNutrients?: boolean;
   sparseIngredients?: boolean;
+  /** #7-hits (Luneth 2026-08-16): essentials this label delivers a meaningful amount of
+   *  (>= HIT_THRESHOLD of the WALLACH daily target -- never RDV; only the ~38 dosed
+   *  essentials are eligible). A food-quality signal, distinct from coverage (full targets). */
+  hits: number;
+  hitEssentials: string[];
+  hitsStrong: number;
 }
 
 type ScanNutrient = NonNullable<ScanLabel['nutrients']>[number];
@@ -380,6 +386,46 @@ function getEffectiveCoverage(): EffectiveCov {
     }
   }
   return base;
+}
+
+/** #7-hits: >= this fraction of the WALLACH daily target counts as a meaningful "hit"
+ *  (Luneth 2026-08-16, grounded on real pumpkin-seed numbers). A DISPLAY threshold, always
+ *  measured against the Wallach target (section 00.A) -- never an RDV/DV. */
+const HIT_THRESHOLD = 0.03;
+/** #7-hits: >= this fraction of the Wallach target is a STRONG hit (matches the 'Meaningful
+ *  gap-fill' reason's >=10% cut). A depth signal atop the breadth count. */
+const HIT_STRONG = 0.10;
+
+/** Essentials this label delivers a meaningful amount of: >= HIT_THRESHOLD of the Wallach
+ *  target, per serving, UNCAPPED by current coverage (a stable property of the food, not of
+ *  your regimen). Only the ~38 essentials with a Wallach dose are eligible; where Wallach is
+ *  silent there is no target to measure against, so it cannot be a hit (an honest gap). */
+function meaningfulHits(nutrients: ScanNutrient[], dailyServings: number): { hits: string[]; strong: number } {
+  const hit = new Set<string>();
+  const strong = new Set<string>();
+  for (const n of nutrients) {
+    const ess = matchEssential(n.name);
+    if (ess === null) {
+      continue;
+    }
+    const tgt = essTarget(ess);
+    if (tgt === null || tgt.low === undefined || tgt.low === null) {
+      continue;
+    }
+    const norm = normalize(Number(n.amount), n.unit);
+    const targetNorm = normalize(tgt.low, tgt.unit);
+    if (norm === null || targetNorm === null || norm.family !== targetNorm.family || targetNorm.value <= 0) {
+      continue;
+    }
+    const pct = (norm.value * dailyServings) / targetNorm.value;
+    if (pct >= HIT_THRESHOLD) {
+      hit.add(ess.name);
+      if (pct >= HIT_STRONG) {
+        strong.add(ess.name);
+      }
+    }
+  }
+  return { hits: [...hit], strong: strong.size };
 }
 
 /** Per-nutrient gap-fill %: how much this nutrient closes of the remaining gap. */
@@ -743,6 +789,7 @@ function scan(label: ScanLabel, opts?: { logToRecent?: boolean }): ScanResult {
   const gapFills = nutrients
     .map(n => gapFillFor(n, dailyServings, effectiveCov))
     .filter((g): g is GapFill => g !== null);
+  const hitInfo = meaningfulHits(nutrients, dailyServings);
   const goals = matchGoals(label, corpus);
   const anti = antiFlags(label, corpus);
   const conflicts = containerFlag();
@@ -757,6 +804,9 @@ function scan(label: ScanLabel, opts?: { logToRecent?: boolean }): ScanResult {
     verdict,
     reasonsFor,
     reasonsAgainst,
+    hits: hitInfo.hits.length,
+    hitEssentials: hitInfo.hits,
+    hitsStrong: hitInfo.strong,
   };
   result.sparseNutrients = nutrients.length === 0;
   result.sparseIngredients = (label.ingredients ?? '').trim().length === 0;
