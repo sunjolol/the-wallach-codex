@@ -414,7 +414,7 @@
    style links that ride bare --ds-accent → bright. */
 :root[data-theme="dark"] :is(
   #drawer-knowledge-mount .ep-seclabel a, #drawer-knowledge-mount .kd-ep-fam__xlink,
-  #drawer-search-mount .fgroup__more, #drawer-search-mount .brow-head__k
+  #drawer-search-mount .brow-head__k
 ) { color: var(--ds-accent-deep); }
 
 
@@ -516,6 +516,24 @@
   background: color-mix(in srgb, var(--ds-accent) 32%, transparent);
   border-color: var(--ds-accent);
 }
+
+/* (J9) Dark point-fixes on controls Luneth flagged (2026-08-17, batch 1). */
+/* Primary buttons + the active scanner step badge: a light label on the accent fill
+   (was --ds-paper-light = #221d15 in dark = dark-on-saturated). */
+:root[data-theme="dark"] .ds-btn-primary { color: #f3ead7; }
+:root[data-theme="dark"] .vd-step__badge.is-active { color: #f3ead7; }
+/* Scanner step-1 badge reads primary like steps 2 & 3 instead of the dark-green is-done
+   styling (the "Done" state is still marked by the is-done text label). */
+:root[data-theme="dark"] .vd-step__badge.is-done {
+  background: var(--ds-accent); color: #f3ead7; box-shadow: 0 0 0 3px var(--ds-accent-wash);
+}
+/* Recommended-item (+) add affordance (coverage + regimen share .rec__add): visible at rest,
+   accent hover -- was an inverted-ink hover, i.e. a light pill on charcoal. */
+:root[data-theme="dark"] .rec__add { color: var(--ds-accent-deep); border-color: color-mix(in srgb, var(--ds-accent-deep) 45%, var(--ds-rule)); }
+:root[data-theme="dark"] .rec:hover .rec__add { background: var(--ds-accent); border-color: var(--ds-accent); color: #f3ead7; }
+/* "See N more <category>" pill keeps its CATEGORY hue (--k), just brightened for dark --
+   (J4) had routed it to the accent. */
+:root[data-theme="dark"] #drawer-search-mount .fgroup__more { color: color-mix(in srgb, var(--k) 62%, var(--ds-ink)); }
 
 /* ── workspaces: status / tech tokens as fg → color-mix(… 62%, --ds-ink) ── */
 :root[data-theme="dark"] :is(.vd-scan__done, .vd-nrow__cf) { color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }

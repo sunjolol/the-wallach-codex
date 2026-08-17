@@ -2061,7 +2061,7 @@
 }
 #drawer-knowledge-mount .kd-ep-nutri__lbl {
   display: inline-flex; align-items: center; gap: 7px;
-  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  font-family: var(--ds-font-mono); font-size: 0.7rem;
   letter-spacing: var(--ds-track-wide); text-transform: uppercase; font-weight: 700;
   color: var(--ds-ink-soft);
 }
