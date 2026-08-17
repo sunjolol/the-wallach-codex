@@ -145,7 +145,7 @@ function shell(): string {
     <div class="pf-panel" role="dialog" aria-modal="true" aria-label="Profile">
       <div class="pf-head">
         <div class="pf-eyebrow"><span class="dot"></span> Profile</div>
-        <button class="pf-close" data-act="close" type="button" aria-label="Close profile">✕</button>
+        <button class="ui-close pf-close" data-act="close" type="button" aria-label="Close profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
 
       <div class="pf-scroll">

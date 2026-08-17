@@ -371,7 +371,7 @@ function renderGoalStrip(goals: LayoutGoal[]): string {
   const chips = goals.map((g, i) => `
     <span class="gchip" data-goal="${escHTML(g.id)}" style="--gc: ${escHTML(GOAL_HUES[i] ?? GOAL_HUES[0])}">
       <span class="gchip__dot"></span><span class="gchip__label">${escHTML(g.name)}</span>
-      <button class="gchip__x" type="button" data-goal-remove="${escHTML(g.id)}" aria-label="Remove ${escHTML(g.name)}">✕</button>
+      <button class="ui-close ui-close--sm gchip__x" type="button" data-goal-remove="${escHTML(g.id)}" aria-label="Remove ${escHTML(g.name)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </span>`).join('');
   const addChip = goals.length < MAX_GOALS
     ? `<button class="gchip gchip--add" type="button" data-goal-add>${escHTML(ui('cov_goals_add'))}</button>`

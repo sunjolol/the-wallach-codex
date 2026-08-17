@@ -1,36 +1,28 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-**BIG TWEAK LIST — in progress.** Authority: **`chronicle/tweak-list-master-2026-08-15.md`**.
-Board **91/91.** eden/ untouched — no seal applied. Session closed **2026-08-17 00:01 CDT**. Last session: #7 shipped as concept **B "Gap Arc"**, then the scanner result hero reframed to the item's **"hits N of 90"** + Copper→"Pepper" fix (see DONE below). **#9 is the next task.**
+**BIG TWEAK LIST — CLOSED.** Authority was `chronicle/tweak-list-master-2026-08-15.md`; every item is now ✅ (see it for the ledger). Board **91/91.** eden/ untouched — no seal applied. Session closed **2026-08-17** after #9 shipped + pushed to origin/master.
 
-## ▶ START HERE — the next unbuilt item (#7 SHIPPED — see below)
-- **#9 goal-picker/veil**: veil everywhere · veil close × · hide "I'm just browsing" for an existing profile · close orange→green · **A-sweep** `.ui-close` onto every remaining × (goal chips, veil, knowledge drawers) · dead-CSS verify (`.rl-dose*`/`.ck-addcard*`/`.ck-scan*` vs the `938a407c` purge).
+## ✅ DONE (2026-08-17) — #9 goal-picker/veil, committed + pushed
+- **Veil everywhere:** Regimen’s “＋ Add goal” now opens the SAME full arrival veil Coverage uses (fires `wallach:open-welcome`); the old inline `ck-goalmenu` dropdown is fully severed (renderGoalMenu fn + call + data-goal-pick handler + .ck-goalmenu CSS). Commit 1e657165.
+- **Veil close ×** (`.ui-close.wc__x`): on reopen cancels (goals untouched), on first arrival records `{browsing:true}` so it never re-nags.
+- **Hide “I’m just browsing” + name field on reopen** (existing profile → pure goal picker).
+- **Close colour:** the × follows the THEME accent (`--ds-accent`, colour-picker-driven), NOT green. I first shipped GREEN; Luneth corrected it (green is only for the green-coded search surface). See [[close-x-follows-theme-accent]].
+- **A-sweep:** every remaining ad-hoc × now uses the one `.ui-close` (goal-chip `.gchip__x` sized via `--uic-size:20px`, knowledge `.kd-knh__close`, profile `.pf-close`, scanner OCR-suspect `.vd-ocr__x`, recycle `.rc-pop__x`). The Ask-Wallach search close `.scr-nav--close` deliberately stays `--aw-green`.
+- **Dead-CSS verify:** `.ck-addcard*`/`.ck-scan*` = zero refs (purged by `938a407c`); `.rl-dose*` is LIVE (the coverage dose stepper) — left as-is.
+- **Deferred (Luneth left open):** on reopen the veil kicker/heading still read like first-time onboarding; a slightly wide gap where the name field used to sit; the goal-chip × (20px) is heavier than the old 12px text × — all left pending his call.
 
-**#9 is the sole remaining START-HERE item — proceed, or ask via AskUserQuestion if he redirects.**
-
-## ✅ DONE (this session, 2026-08-16 late) — committed + pushed to origin/master
-- **Scanner result hero reframed → the ITEM's "hits N of 90" (Luneth, live).** The scan result's big number was regimen COVERAGE (full Wallach targets), which is ~always 0 for any real food/single supplement — only the whole Youngevity stack reaches full targets — so it read as a shill funnel. Now it's the item's **"hits N of 90"** = essentials it delivers **≥3% of the Wallach target** (per serving, uncapped; `HIT_THRESHOLD=0.03`; `hitsStrong` at `HIT_STRONG=0.10`). §00.A-clean: Wallach target only, and the ~52 undosed essentials are honest non-hits (e.g. phosphorus). Deck / gauge (green `.vd-cov-arc-hit`) / caption / facts ([N delivered strongly] + [flags]) all reframed; regimen coverage stays on the **Coverage tab**. Also fixed **Copper→"Pepper"** (`ocrFuzzyFix` now skips `known` nutrient labels; `dict.knownLower`). Pumpkin → "Worth adding · delivers 6 of your 90 · 2 delivered strongly · 0 flags". Board **91/91**. **Deferred (Luneth left open):** the /90 gauge reads a bit modest for a food (maybe a strengths-forward visual later); caption/deck/"delivered strongly" wording open to tuning.
-- **#7 result verdict-card redesign → SHIPPED (concept B · "Gap Arc").** The card's `.vd-side` (`.vd-impact` delta + 90-dot field + a 4-tile `.vd-stats` grid) → one full-width **"N of 90" coverage hero**: covered count + "N still open" accent pill + a radial semicircle gauge whose big **unlit arc is the gap** (green=covered · accent tick=this scan · "N / of 90" at centre · "N gaps remain" caption) + 2 fact tiles. Mockup-first: 4 genuinely-distinct concepts in `temporary/scanner-verdict-hero-demos.html`, Luneth first built + signed off A (Deficit Rail, commit 06c582e9), then re-ranked **B>D>A>C** after seeing them live and picked **B** — the live hero. Dead code severed: `deltaField`, `.vd-impact/.vd-delta/.vd-field/.vd-lg/.vd-stats/.vd-stat` + `@keyframes vd-ignite` (replaced by a self-contained `.vd-cov-*` block). Alignment **dropped** — `state/scanner.ts:654`: a scan never carries `form_alignment`, so "form not on a label" was always the only case. Board **91/91**. **Deferred (Luneth left open):** soften "+0"/"0 reach the 90" on zero-add scans · maybe drop the "+N reach the 90" fact (dupes the rail legend) · card-wide vs side-column width is a 1-step follow-up. → **NOTE (later same session): the hero's DATA was reframed from coverage to the item's "hits" (see the "hits N of 90" bullet above) — the gauge visual stays, but it now shows the item's meaningful hits, not regimen coverage.**
-
-## ✅ DONE THIS SESSION (2026-08-16 eve) — all committed + pushed to origin/master
-Scanner Confirm surface built end-to-end (S10–S18) + matcher/dict:
-- **S10/S11/S12** thumbnail lightbox · per-row × delete · live "Possible OCR errors" (`bdd08e0e`).
-- **Matcher/dict** plural tolerance (`pluralEq`) · +74 `fuzzyDict` words · nutrient-aware suggestions (`cd865b37`).
-- **S15** live nutrient-row feedback (`reevaluateNutrientRow`, 150ms; cursor survives) · "Fat→Oat" mis-snap fixed · +7 panel labels → known (`63a8e6f9`).
-- **S16** progress no-bounce on rotated labels (`inOrientationSweep` gates the OCR logger) · **S17** comma-segment parsing for horizontal panels (`35f75445`).
-- **S18** WF-cheese ingredient block read — header line-anchored + headerless "run after the last %DV" heuristic; label-test-2 now flags modified/processed (`9313c2e1`).
-
-## KNOWN CEILINGS (not bugs — do NOT "re-fix")
-- **label-test-2 (WF cheese tub):** OCR mangles amounts (4.5g→450, mg→ng), minerals show only %DV (no absolute value), and the ingredient head garbles ("PATRRTED PROCESS"). The parser extracts what it can; the Confirm screen + live ✓ feedback are the correction path. Inherent to a small curved label.
+## ▶ START HERE — the big list is CLOSED; ask which candidate to resume
+No item is forced. Candidates:
+1. **Two deferred regimen findings** (now raisable — the list closed): `addVaultProduct` dedup duplication; unstyled `.ck-undo`. [[regimen-two-deferred-findings]].
+2. **Profile feature build** — name/avatar/themes; the profile console already exists (avatars + theme picker + Cream/Charcoal). Scope what remains vs [[profile-feature-spec]].
+3. **scanner-r2 R2-6 WS2** — shared `core/escape.ts` + single-source gate — PARKED by Luneth (raise only if he asks).
 
 ## STANDING / PARKED (do NOT raise unprompted)
 - **CORPUS SEAL held.** eden/ untouched; 7 unreviewed draft books in `eden/corpus/drafts/`.
-- Two deferred regimen findings (after the tweak list closes): `addVaultProduct` dedup dup; unstyled `.ck-undo`. `[[regimen-two-deferred-findings]]`.
 
 ## GOTCHAS
-- **Per-file endings**: `state/ocr.ts`, `state/scanner.ts`, `views/scanner.ts`, `scanner-corpus-data.json`, `ocr-dict-data.json` are **CRLF**; chronicle .md are **LF**. `safe_write check` FIRST.
-- **Drive the real app** headless (Puppeteer `--allow-file-access-from-files`; seed `localStorage.wallachUserProfile_v1={browsing:true,chosenAt}`; upload via `waitForFileChooser()` + `[data-sc-upload]`). Inspect OCR: `window.lcOcrToLabel(dataUrl)` → {label, rawText}; `window.lcParseLabel(rawText)` re-parses fast (no OCR). Recognition dict vs anti-list: `[[scanner-recognition-dict-architecture]]`.
-- **Render a scan RESULT without OCR** (fast): in-page `const l=lcParseLabel(text); const r=lcScan(l,{logToRecent:false});` then seed `localStorage.lcSavedScans_v1={items:[{id:1,ts,label:l,verdict:r.verdict,alignment:r.alignment,goals:r.goals,gapFills:r.gapFills}]}`, reload, nav to scanner, click `[data-sc-open][data-sc-src="saved"]` → re-scores + renders the result card. Used for the pumpkin-hits screenshots.
+- **Per-file endings**: `views/welcome.ts`, `views/scanner.ts`, `state/scanner.ts`, `state/ocr.ts`, `styles/workspace-scanner.css`, `scanner-corpus-data.json`, `ocr-dict-data.json` are **CRLF**; the other views + `styles/*.css` + chronicle `.md` are **LF**. `safe_write check` FIRST.
+- **In-app file:// preview is a static snapshot** — no live clicks ([[in-app-preview-is-static-snapshot]]). Drive the real app headless: Puppeteer `--allow-file-access-from-files`; `require` puppeteer from the repo `node_modules` (scripts in scratchpad can’t resolve it otherwise); seed `localStorage.wallachUserProfile_v1={name,browsing:false,chosenAt}`. Both Coverage AND Regimen expose `[data-goal-add]` — scope selectors to `#workspace-regimen-mount`.
 
 ## GENESIS
-`genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report, then resume **#9 (goal-picker/veil — the sole remaining START-HERE item)**, or **ask via AskUserQuestion** if he redirects — never a flair-only boot. If a new invariant red appears, that is the only response. Reconcile against `chronicle/tweak-list-master-2026-08-15.md`, never assume.
+`genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report, then **ask which candidate to resume** (the big list is closed) — never a flair-only boot. If a new invariant red appears, that is the only response.

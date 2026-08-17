@@ -224,8 +224,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .pf-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ds-accent-deep); font-weight: 600; }
 .pf-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ds-accent); box-shadow: 0 0 8px color-mix(in srgb, var(--ds-accent) 70%, transparent); animation: pf-pulse 2.4s ease-in-out infinite; }
 @keyframes pf-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
-.pf-close { position: absolute; top: 16px; right: 16px; width: 34px; height: 34px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--ds-paper); border: 1px solid var(--ds-rule); color: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 1rem; cursor: pointer; box-shadow: var(--ds-elev-1); transition: color var(--ds-motion-fast) var(--ds-ease-out), border-color var(--ds-motion-fast) var(--ds-ease-out); }
-.pf-close:hover { color: var(--ds-ink); border-color: var(--ds-accent); }
+.pf-close { position: absolute; top: 16px; right: 16px; }
 
 .pf-scroll { overflow-y: auto; flex: 1 1 auto; scrollbar-width: thin; scrollbar-color: var(--ds-accent) color-mix(in srgb, var(--ds-accent) 10%, var(--ds-paper)); }
 

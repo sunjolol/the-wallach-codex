@@ -269,7 +269,7 @@ function suspectCard(s: IngredientSuspect): string {
       <span class="vd-ocr__word">${escHTML(s.word)}</span>
       <span class="vd-ocr__arr" aria-hidden="true">&rarr;</span>
       ${chips}
-      <button class="vd-ocr__x" type="button" data-idismiss="${escHTML(s.word)}" title="Dismiss" aria-label="Dismiss">&times;</button>
+      <button class="ui-close ui-close--sm vd-ocr__x" type="button" data-idismiss="${escHTML(s.word)}" title="Dismiss" aria-label="Dismiss">${CLOSE_SVG}</button>
     </div>`;
 }
 

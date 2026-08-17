@@ -524,7 +524,7 @@ function renderConsole(field: FieldInfo): string {
 
 function renderGoals(goals: LayoutGoal[]): string {
   const chips = goals.map((g, i) => `
-    <span class="gchip" style="--gc:${escHTML(GOAL_HUES[i] ?? GOAL_HUES[0])}"><span class="gchip__dot"></span><span class="gchip__label">${escHTML(g.name)}</span><button class="gchip__x" type="button" data-goal-remove="${escHTML(g.id)}" aria-label="Remove ${escHTML(g.name)}">×</button></span>`).join('');
+    <span class="gchip" style="--gc:${escHTML(GOAL_HUES[i] ?? GOAL_HUES[0])}"><span class="gchip__dot"></span><span class="gchip__label">${escHTML(g.name)}</span><button class="ui-close ui-close--sm gchip__x" type="button" data-goal-remove="${escHTML(g.id)}" aria-label="Remove ${escHTML(g.name)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span>`).join('');
   const add = goals.length < MAX_GOALS
     ? '<span class="gchip gchip--add" data-goal-add><span class="gchip__label">＋ Add goal</span></span>'
     : '';
@@ -887,7 +887,7 @@ export function mount(container: HTMLElement): MountHandle {
       <div class="rc-pop__head">
         <span class="rc-pop__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m-9 0v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/></svg></span>
         <span class="rc-pop__title">Restore deleted</span>
-        <button class="rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <button class="ui-close rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
       <div class="rc-pop__sub">The ${MAX_SLOT_TRASH} most recent deleted save slots and ${MAX_ITEM_TRASH} most recent items are stored here.</div>
       <div class="rc-pop__body" data-rc-body></div>`;
@@ -1042,7 +1042,7 @@ export function mount(container: HTMLElement): MountHandle {
       <div class="rc-pop__head">
         <button class="rc-pop__back" type="button" data-rc-back aria-label="Back to the list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
         <span class="rc-pop__title">Replace a save</span>
-        <button class="rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <button class="ui-close rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
       <div class="rc-pop__body" data-rc-body></div>
       <div class="rc-pop__foot" data-rc-foot></div>`;

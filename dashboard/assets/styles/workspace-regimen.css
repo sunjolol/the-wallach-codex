@@ -422,9 +422,7 @@
 .rc-pop__ico { width: 18px; height: 18px; color: var(--ds-accent-deep); flex: 0 0 auto; }
 .rc-pop__ico svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .rc-pop__title { font-family: var(--ds-font-display-interface); font-weight: 700; font-size: var(--ds-text-lg); color: var(--ds-ink); }
-.rc-pop__x { margin-left: auto; width: 30px; height: 30px; border-radius: 50%; border: 1px solid var(--ds-rule); background: var(--ds-paper); color: var(--ds-ink-soft); display: grid; place-items: center; cursor: pointer; transition: color var(--ds-motion-fast) var(--ds-ease-out), border-color var(--ds-motion-fast) var(--ds-ease-out); }
-.rc-pop__x:hover { color: var(--ds-accent-deep); border-color: var(--ds-accent); }
-.rc-pop__x svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.rc-pop__x { margin-left: auto; }
 .rc-pop__sub { padding: 12px 22px 0; font-family: var(--ds-font-serif); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); }
 .rc-pop__body { padding: 14px 22px 22px; }
 .rc-sec { display: flex; align-items: baseline; gap: 8px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .09em; text-transform: uppercase; color: var(--ds-ink-soft); margin: 14px 0 9px; }

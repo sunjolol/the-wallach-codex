@@ -27340,7 +27340,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const chips = goals.map((g, i) => `
     <span class="gchip" data-goal="${escHTML(g.id)}" style="--gc: ${escHTML(GOAL_HUES[i] ?? GOAL_HUES[0])}">
       <span class="gchip__dot"></span><span class="gchip__label">${escHTML(g.name)}</span>
-      <button class="gchip__x" type="button" data-goal-remove="${escHTML(g.id)}" aria-label="Remove ${escHTML(g.name)}">\u2715</button>
+      <button class="ui-close ui-close--sm gchip__x" type="button" data-goal-remove="${escHTML(g.id)}" aria-label="Remove ${escHTML(g.name)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     </span>`).join("");
     const addChip = goals.length < MAX_GOALS ? `<button class="gchip gchip--add" type="button" data-goal-add>${escHTML(ui("cov_goals_add"))}</button>` : "";
     return `
@@ -176276,7 +176276,7 @@ Goiter`,
     <header class="kd-knh">
       <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML11(ui("kd_mark"))}</b></div>
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
-      <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">\xD7</button></div>
+      <div class="kd-knh__end"><button class="ui-close" data-kd-action="close" title="Close (Esc)" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
     </header>
     ${(activeTab === "essentials" || activeTab === "conditions" || activeTab === "products" || activeTab === "explore") && selectedTopic === null ? `<div class="kd-search">
       <span class="kd-search-icon">\u2315</span>
@@ -181446,7 +181446,7 @@ FILES:
 
 VERIFY: tsc + esbuild 0; invariants 91/91 (dead-rule gate green); render_probe_ocr/scan/scanner 0; live re-open render of the pumpkin label screenshotted and signed off. Coverage tab untouched.
 
-DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (small green arc) \u2014 he may want a more strengths-forward visual later; the caption/deck/"delivered strongly" wording is open to tuning.` }, { id: "lg_mswrpghb_bd3z0g", ts: "2026-08-17T00:02:50.543791-05:00", surface: "session", kind: "session-end", summary: "Session close 2026-08-17. #7 verdict-hero shipped (built A -> re-ranked -> B 'Gap Arc'), then the scanner result hero reframed to the item's 'hits N of 90' (>=3% of Wallach's target) + Copper->'Pepper' fix. Board 91/91, eden untouched. Next: #9 goal-picker/veil.", detail: "Session arc (all committed + pushed to origin/master):\n\n1. #7 result verdict-card redesign. Mockup-first: 4 genuinely-distinct 'N of 90' hero concepts rendered in true geometry (temporary/scanner-verdict-hero-demos.html). Luneth picked A (Deficit Rail), I built + he signed it off (06c582e9); he then re-ranked B>D>A>C after seeing them live and picked B (Gap Arc), which I built to replace A (904528fc).\n\n2. Scanner reframe (babaf9b6). Luneth flagged that scanning pumpkin seeds showed '0 reach the 90' because the hero was full-COVERAGE (Wallach targets are so high only the whole Youngevity stack meets them -> a shill funnel). Reframed the scan hero to the ITEM's 'hits N of 90' = essentials delivered >=3% of the Wallach target (00.A-clean; ~52 undosed essentials are honest non-hits). Also fixed ocrFuzzyFix corrupting 'Copper'->'Pepper'. Pumpkin now reads 'Worth adding - delivers 6 - 2 strongly'. Doctrine saved to memory (scanner-hits-not-covers-doctrine).\n\nBoard 91/91 throughout; every visual chunk went mockup/live-render -> Luneth sign-off before commit.\n\nNEXT: #9 goal-picker/veil (veil everywhere + close x, hide 'I'm just browsing' for an existing profile, close orange->green, .ui-close A-sweep, dead-CSS verify). DEFERRED (Luneth left open): the scanner /90 gauge reads modest for a food (maybe a strengths-forward visual); caption/wording tuning." }];
+DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (small green arc) \u2014 he may want a more strengths-forward visual later; the caption/deck/"delivered strongly" wording is open to tuning.` }, { id: "lg_mswrpghb_bd3z0g", ts: "2026-08-17T00:02:50.543791-05:00", surface: "session", kind: "session-end", summary: "Session close 2026-08-17. #7 verdict-hero shipped (built A -> re-ranked -> B 'Gap Arc'), then the scanner result hero reframed to the item's 'hits N of 90' (>=3% of Wallach's target) + Copper->'Pepper' fix. Board 91/91, eden untouched. Next: #9 goal-picker/veil.", detail: "Session arc (all committed + pushed to origin/master):\n\n1. #7 result verdict-card redesign. Mockup-first: 4 genuinely-distinct 'N of 90' hero concepts rendered in true geometry (temporary/scanner-verdict-hero-demos.html). Luneth picked A (Deficit Rail), I built + he signed it off (06c582e9); he then re-ranked B>D>A>C after seeing them live and picked B (Gap Arc), which I built to replace A (904528fc).\n\n2. Scanner reframe (babaf9b6). Luneth flagged that scanning pumpkin seeds showed '0 reach the 90' because the hero was full-COVERAGE (Wallach targets are so high only the whole Youngevity stack meets them -> a shill funnel). Reframed the scan hero to the ITEM's 'hits N of 90' = essentials delivered >=3% of the Wallach target (00.A-clean; ~52 undosed essentials are honest non-hits). Also fixed ocrFuzzyFix corrupting 'Copper'->'Pepper'. Pumpkin now reads 'Worth adding - delivers 6 - 2 strongly'. Doctrine saved to memory (scanner-hits-not-covers-doctrine).\n\nBoard 91/91 throughout; every visual chunk went mockup/live-render -> Luneth sign-off before commit.\n\nNEXT: #9 goal-picker/veil (veil everywhere + close x, hide 'I'm just browsing' for an existing profile, close orange->green, .ui-close A-sweep, dead-CSS verify). DEFERRED (Luneth left open): the scanner /90 gauge reads modest for a food (maybe a strengths-forward visual); caption/wording tuning." }, { id: "lg_msxd4hdc_jguqvx", ts: "2026-08-17T10:02:23.472355-05:00", surface: "regimen+welcome+app-wide", kind: "round-close", summary: "#9 shipped: the goal picker is now one surface \u2014 Regimen\u2019s \u201C+ Add goal\u201D opens the same full veil as Coverage, the veil got a close \xD7 and stops re-asking existing users \u2014 and every leftover ad-hoc close \xD7 across the app now uses the one standard .ui-close button.", detail: "Two changes that make the app feel like one consistent thing. First, there used to be two ways to pick your goals \u2014 a big first-visit invitation on Coverage and a separate little drop-down in Regimen; now they open the SAME surface, it has a close \xD7 in the corner, and once you already have a profile it stops re-asking your name or offering \u201CI\u2019m just browsing.\u201D Second, all the mismatched little \xD7 buttons scattered around the app are now one standard close button that follows whatever theme colour you pick.\n\nVEIL UNIFICATION (commit 1e657165): welcome.ts gained a close \xD7 (.ui-close.wc__x, [data-veil-close]) \u2014 on reopen it cancels (profile+goals untouched), on first arrival it records {browsing:true} so it never re-nags; the browse button + name block are ${reopen ? \u2019\u2019 : \u2026}-gated. regimen.ts\u2019 [data-goal-add] now fires wallach:open-welcome (the event Coverage already fired) and the dead inline ck-goalmenu is severed (renderGoalMenu fn + call + data-goal-pick handler + .ck-goalmenu CSS). The \xD7 inherits .ui-close\u2019s --ds-accent hover (theme/colour-picker driven) \u2014 I first shipped it GREEN, Luneth corrected it (green is only for the green-coded search surface), reverted; saved as memory close-x-follows-theme-accent.\n\nA-SWEEP (this commit): 5 bespoke \xD7s adopt .ui-close (SVG X, theme-accent hover) \u2014 goal-chip .gchip__x (regimen+coverage, sized to the pill via --uic-size:20px, hover-reveal kept), knowledge .kd-knh__close, profile .pf-close, scanner OCR-suspect .vd-ocr__x (--uic-size:24px), recycle .rc-pop__x \xD72. The Ask-Wallach search close .scr-nav--close deliberately stays --aw-green. Old classes reduced to layout-only; all data-* hooks kept.\n\nVERIFY: build 0; invariants 91/91 (dead-rule gate green); render probes coverage_add_remove(31)/knowledge/profile/recycle/scanner all 0; e2e 22 veil assertions + per-\xD7 .ui-close+SVG checks; Luneth live sign-off on both. Full technical record in chronicle/build-log.md (two 2026-08-17 lines). The big-tweak list (2026-08-15) is now closed. eden/ untouched." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -181557,7 +181557,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
     <div class="pf-panel" role="dialog" aria-modal="true" aria-label="Profile">
       <div class="pf-head">
         <div class="pf-eyebrow"><span class="dot"></span> Profile</div>
-        <button class="pf-close" data-act="close" type="button" aria-label="Close profile">\u2715</button>
+        <button class="ui-close pf-close" data-act="close" type="button" aria-label="Close profile"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
 
       <div class="pf-scroll">
@@ -182299,7 +182299,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
   }
   function renderGoals(goals) {
     const chips = goals.map((g, i) => `
-    <span class="gchip" style="--gc:${escHTML13(GOAL_HUES[i] ?? GOAL_HUES[0])}"><span class="gchip__dot"></span><span class="gchip__label">${escHTML13(g.name)}</span><button class="gchip__x" type="button" data-goal-remove="${escHTML13(g.id)}" aria-label="Remove ${escHTML13(g.name)}">\xD7</button></span>`).join("");
+    <span class="gchip" style="--gc:${escHTML13(GOAL_HUES[i] ?? GOAL_HUES[0])}"><span class="gchip__dot"></span><span class="gchip__label">${escHTML13(g.name)}</span><button class="ui-close ui-close--sm gchip__x" type="button" data-goal-remove="${escHTML13(g.id)}" aria-label="Remove ${escHTML13(g.name)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span>`).join("");
     const add = goals.length < MAX_GOALS ? '<span class="gchip gchip--add" data-goal-add><span class="gchip__label">\uFF0B Add goal</span></span>' : "";
     return `
     <div class="goalstrip ck-goals" data-rise="3">
@@ -182609,7 +182609,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       <div class="rc-pop__head">
         <span class="rc-pop__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M8 6V4h8v2m-9 0v14a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V6"/></svg></span>
         <span class="rc-pop__title">Restore deleted</span>
-        <button class="rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <button class="ui-close rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
       <div class="rc-pop__sub">The ${MAX_SLOT_TRASH} most recent deleted save slots and ${MAX_ITEM_TRASH} most recent items are stored here.</div>
       <div class="rc-pop__body" data-rc-body></div>`;
@@ -182748,7 +182748,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       <div class="rc-pop__head">
         <button class="rc-pop__back" type="button" data-rc-back aria-label="Back to the list"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
         <span class="rc-pop__title">Replace a save</span>
-        <button class="rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+        <button class="ui-close rc-pop__x" type="button" data-rc-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
       </div>
       <div class="rc-pop__body" data-rc-body></div>
       <div class="rc-pop__foot" data-rc-foot></div>`;
@@ -183455,7 +183455,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       <span class="vd-ocr__word">${escHTML14(s.word)}</span>
       <span class="vd-ocr__arr" aria-hidden="true">&rarr;</span>
       ${chips}
-      <button class="vd-ocr__x" type="button" data-idismiss="${escHTML14(s.word)}" title="Dismiss" aria-label="Dismiss">&times;</button>
+      <button class="ui-close ui-close--sm vd-ocr__x" type="button" data-idismiss="${escHTML14(s.word)}" title="Dismiss" aria-label="Dismiss">${CLOSE_SVG}</button>
     </div>`;
   }
   function suspectPanelHTML(suspects) {

@@ -295,7 +295,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
     <header class="kd-knh">
       <div class="kd-knh__mark"><span class="kd-knh__g">❡</span><b>${escHTML(ui('kd_mark'))}</b></div>
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
-      <div class="kd-knh__end"><button class="kd-knh__close" data-kd-action="close" title="Close (Esc)">×</button></div>
+      <div class="kd-knh__end"><button class="ui-close" data-kd-action="close" title="Close (Esc)" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
     </header>
     ${(activeTab === 'essentials' || activeTab === 'conditions' || activeTab === 'products' || activeTab === 'explore') && selectedTopic === null
       ? `<div class="kd-search">

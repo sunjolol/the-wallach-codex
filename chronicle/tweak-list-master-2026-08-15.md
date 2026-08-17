@@ -71,10 +71,9 @@ committed, not independently re-verified — flagged inline._
 
 ## Adjacent open threads (from his earlier 2026-08-15 reviews, not this away-list)
 - **ux-pass #7** — result 2-box **redesign** → ✅ SHIPPED 2026-08-16 (concept **B "Gap Arc"** radial gauge — unlit arc = the gap; `.vd-side` → self-contained `.vd-cov-*` "N of 90" hero; mockup-first, 4 concepts; built A first (06c582e9) then Luneth re-ranked B>D>A>C and picked B; live sign-off; committed on master). Deferred: soften +0/zero-add · maybe drop the "+N reach the 90" fact (dupes rail legend) · card-wide width follow-up. **FOLLOW-ON (same session): scan hero reframed from coverage → the item's "hits N of 90" (≥3% of the Wallach target) + Copper→"Pepper" parse fix; the "0 reach the 90" concern resolved (pumpkin → "delivers 6, 2 strongly"). See build-log 2026-08-16 23:54.**
-- **ux-pass #9** — goal-picker/veil (C task): veil everywhere, veil close ×, hide "I'm just browsing"
-  for an existing profile, close orange→green.
-- **A-sweep** — `.ui-close` onto every remaining × (goal chips, veil, knowledge drawers).
-- **Dead-CSS** — `.rl-dose*`/`.ck-addcard*`/`.ck-scan*` (VERIFY vs the `938a407c` purge).
+- **ux-pass #9** — goal-picker/veil (C task) → ✅ SHIPPED 2026-08-17 (commit 1e657165 + the A-sweep commit). "Veil everywhere" = Regimen's "＋ Add goal" now opens the SAME full veil as Coverage (fires `wallach:open-welcome`; the inline `ck-goalmenu` is severed). Veil close × added (`.ui-close`, THEME accent — NOT green: I shipped green, Luneth corrected → theme accent, [[close-x-follows-theme-accent]]). "I'm just browsing" + name field hidden on reopen. Board 91/91; 22 e2e + 5 render probes green; live sign-off.
+- **A-sweep** → ✅ SHIPPED 2026-08-17. Every remaining ad-hoc × onto `.ui-close` (goal-chip `.gchip__x`, knowledge `.kd-knh__close`, profile `.pf-close`, scanner `.vd-ocr__x`, recycle `.rc-pop__x`). Search `.scr-nav--close` deliberately KEPT green (green-coded surface).
+- **Dead-CSS** → ✅ VERIFIED 2026-08-17. `.ck-addcard*`/`.ck-scan*` = zero refs (fully purged by `938a407c`); `.rl-dose*` is NOT dead (the live coverage dose stepper) — left as-is. Nothing to purge.
 - **scanner-r2 R2-6 WS2** — shared `core/escape.ts` + single-source gate — PARKED by Luneth.
 
 ## Parked (raise only after the list closes — his timing instruction)

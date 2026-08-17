@@ -151,8 +151,7 @@
   transition: background var(--ds-motion-fast) var(--ds-ease-out), transform var(--ds-motion-fast) var(--ds-ease-out); }
 .vd-chip:hover { background: var(--ds-accent-wash); transform: translateY(-1px); }
 .vd-chip.is-best { color: var(--ds-paper-light); background: var(--ds-accent); border-color: var(--ds-accent); }
-.vd-ocr__x { margin-left: 4px; font-family: var(--ds-font-mono); font-size: var(--ds-text-sm); color: var(--ds-ink-faint); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-circle); width: 24px; height: 24px; display: grid; place-items: center; flex: 0 0 auto; }
-.vd-ocr__x:hover { color: var(--ds-status-err); border-color: color-mix(in srgb, var(--ds-status-err) 40%, transparent); }
+.vd-ocr__x { margin-left: 4px; --uic-size: 24px; }
 
 .vd-flags { display: flex; flex-direction: column; gap: var(--ds-space-3); margin-top: var(--ds-space-4); padding: var(--ds-space-4); background: var(--ds-paper-light); border: 1px solid var(--ds-rule-soft); border-left: 3px solid var(--ds-status-warn); border-radius: var(--ds-radius-md); box-shadow: var(--ds-elev-1); }
 .vd-flags__head { display: flex; flex-direction: column; gap: 3px; }

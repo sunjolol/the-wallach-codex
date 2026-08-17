@@ -1036,14 +1036,8 @@ body { margin: 0; background: var(--ds-paper-deep); }
    layout shift, and hiding it until hover means 5 chips don't wear 5 permanent
    X's. A confirm-delete MODE was considered and rejected: removing a goal is one
    click to undo (+ ADD), so it is not destructive enough to earn a mode. */
-.gchip__x {
-  width: 12px; margin-right: -3px;
-  opacity: 0; transition: opacity .14s, color .14s;
-  color: var(--ds-ink-faint); font-size: .8rem; line-height: 1;
-  background: none; border: 0; padding: 0; cursor: pointer;
-}
+.gchip__x { --uic-size: 20px; margin-right: -3px; opacity: 0; transition: opacity .14s; }
 .gchip:hover .gchip__x { opacity: 1; }
-.gchip__x:hover { color: var(--ds-status-err); }
 
 
 /* ── BASED ON YOUR GOALS — the loop closes here.
