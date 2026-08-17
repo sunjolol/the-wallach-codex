@@ -586,6 +586,8 @@ export function mount(container: HTMLElement): MountHandle {
   let lightboxAbort: AbortController | null = null;
   // S12: debounce handle for the live "Possible OCR errors" refresh.
   let suspectTimer = 0;
+  // Live nutrient-row re-evaluation debounce (re-check a corrected read vs the essentials/known list).
+  let nameTimer = 0;
   // #6: where the shown verdict came from, so a re-opened SAVED item offers Delete (removes it
   // from the shelf) instead of a meaningless Reject. A fresh scan / recent re-open stays Reject.
   let resultOrigin: 'scan' | 'saved' | 'recent' = 'scan';
@@ -746,6 +748,70 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
+  /** Live feedback: re-check ONE nutrient row against the essentials + known-nutrient list as its
+   *  name is edited, updating the glyph / status / suggestions in place — never the input itself, so
+   *  the cursor survives — so a correction like "Oat" -> "Fat" immediately shows a check. */
+  const reevaluateNutrientRow = (rowEl: HTMLElement): void => {
+    const input = rowEl.querySelector<HTMLInputElement>('.vd-edit[data-nedit]');
+    if (input === null) {
+      return;
+    }
+    const name = input.value.trim();
+    const idx = rowEl.dataset['nrow'] ?? '';
+    const glyph = rowEl.querySelector('.vd-nrow__g');
+    const map = rowEl.querySelector<HTMLElement>('.vd-nrow__map');
+    const main = rowEl.querySelector('.vd-nrow__main');
+    rowEl.querySelector('.vd-sug')?.remove();
+    const ess = matchEssential(name);
+    if (ess !== null) {
+      rowEl.className = 'vd-nrow is-ok';
+      rowEl.dataset['nmap'] = 'essential';
+      input.classList.remove('is-warn');
+      if (glyph !== null) {
+        glyph.innerHTML = '&check;';
+      }
+      if (map !== null) {
+        const covered = new Set(getOrCompute().tiles.filter(t => t.covered).map(t => t.name)).has(ess.name);
+        map.className = 'vd-nrow__map';
+        map.innerHTML = `<span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML(ess.name)}</b><span class="vd-nrow__cov">${covered ? '· already covered' : '· counts toward your 90'}</span>`;
+      }
+    }
+    else if (isKnownNutrient(name)) {
+      rowEl.className = 'vd-nrow is-ok is-untracked';
+      rowEl.dataset['nmap'] = 'untracked';
+      input.classList.remove('is-warn');
+      if (glyph !== null) {
+        glyph.innerHTML = '&check;';
+      }
+      if (map !== null) {
+        map.className = 'vd-nrow__map';
+        map.innerHTML = '<span class="vd-nrow__cov">· read OK · not one of the 90</span>';
+      }
+    }
+    else {
+      rowEl.className = 'vd-nrow is-warn';
+      rowEl.dataset['nmap'] = 'warn';
+      input.classList.add('is-warn');
+      if (glyph !== null) {
+        glyph.innerHTML = '!';
+      }
+      if (map !== null) {
+        map.className = 'vd-nrow__map vd-nrow__map--pending';
+        map.textContent = 'not recognized · pick a match or edit';
+      }
+      const cands = findNutrientCandidates(name).slice(0, 4);
+      if (cands.length > 0 && main !== null) {
+        const btns = cands.map((c, k) =>
+          `<button class="vd-sug__btn${k === 0 ? ' is-best' : ''}" type="button" data-nfix="${escHTML(idx)}" data-nfix-val="${escHTML(c.word)}">${escHTML(c.word)}</button>`).join('');
+        const sug = document.createElement('div');
+        sug.className = 'vd-sug';
+        sug.innerHTML = `<span class="vd-sug__lab">Did you mean</span>${btns}<button class="vd-sug__keep" type="button" data-nkeep="${escHTML(idx)}">&times; keep</button>`;
+        main.insertAdjacentElement('afterend', sug);
+      }
+    }
+    recountNutrients();
+  };
+
   /** S10: dismiss the full-label lightbox and unbind its listeners via the AbortController. */
   const closeLightbox = (): void => {
     if (lightboxEl !== null) {
@@ -853,17 +919,8 @@ export function mount(container: HTMLElement): MountHandle {
       if (input !== null && val !== undefined) {
         input.value = val;
         const row = nfix.closest<HTMLElement>('.vd-nrow');
-        row?.classList.remove('is-warn');
-        row?.classList.add('is-ok');
-        const g = row?.querySelector('.vd-nrow__g');
-        if (g !== null && g !== undefined) {
-          g.innerHTML = '&check;';
-        }
-        nfix.closest('.vd-sug')?.remove();
-        const map = row?.querySelector('.vd-nrow__map');
-        if (map !== null && map !== undefined) {
-          map.classList.remove('vd-nrow__map--pending');
-          map.textContent = 'mapped';
+        if (row !== null) {
+          reevaluateNutrientRow(row);
         }
       }
       return;
@@ -1084,14 +1141,24 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
-  // S12: debounced live refresh of the OCR-errors panel as the ingredients textarea is edited.
+  // Debounced live refresh: the OCR-errors panel (ingredients textarea) AND the nutrient rows.
   const inputHandler = (ev: Event): void => {
     const target = ev.target as HTMLElement | null;
-    if (target === null || !target.matches('[data-ing]')) {
+    if (target === null) {
       return;
     }
-    window.clearTimeout(suspectTimer);
-    suspectTimer = window.setTimeout(refreshSuspects, 250);
+    if (target.matches('[data-ing]')) {
+      window.clearTimeout(suspectTimer);
+      suspectTimer = window.setTimeout(refreshSuspects, 250);
+      return;
+    }
+    if (target.matches('.vd-edit[data-nedit]')) {
+      const row = target.closest<HTMLElement>('.vd-nrow');
+      if (row !== null) {
+        window.clearTimeout(nameTimer);
+        nameTimer = window.setTimeout(() => reevaluateNutrientRow(row), 150);
+      }
+    }
   };
 
   render();
@@ -1117,6 +1184,7 @@ export function mount(container: HTMLElement): MountHandle {
       unsub();
       closeLightbox();
       window.clearTimeout(suspectTimer);
+      window.clearTimeout(nameTimer);
       container.removeEventListener('click', clickHandler);
       container.removeEventListener('input', inputHandler);
       container.removeEventListener('dragover', dragHandler);

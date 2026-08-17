@@ -518,7 +518,10 @@
     "carbohydrates",
     "monounsaturated",
     "polyunsaturated",
-    "coenzyme"
+    "coenzyme",
+    "fat",
+    "saturated",
+    "trans"
   ],
   "knownNutrientNames": [
     "Vitamin B12",
@@ -570,6 +573,13 @@
     "Inositol",
     "Protein",
     "Collagen",
-    "Fiber"
+    "Fiber",
+    "Total Fat",
+    "Saturated Fat",
+    "Trans Fat",
+    "Cholesterol",
+    "Calories",
+    "Monounsaturated Fat",
+    "Polyunsaturated Fat"
   ]
 }
