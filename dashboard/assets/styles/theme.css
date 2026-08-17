@@ -746,3 +746,16 @@
 }
 :root[data-theme="dark"] #drawer-knowledge-mount .frt-cell--ok { background: color-mix(in srgb, var(--ds-accent) 10%, var(--ds-paper-light)); border-color: color-mix(in srgb, var(--ds-accent) 35%, var(--ds-rule)); }
 :root[data-theme="dark"] #drawer-knowledge-mount .frt-cell--bad { background: var(--ds-paper-deep); }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   (L) ORAC §01–§06 redesign — dark overrides. The ported demo is light-only; these
+   flip the surfaces that assume a light ground. §08 (block K) stays as-is.
+   ═══════════════════════════════════════════════════════════════════════════ */
+/* the two --ds-ink instrument bars (scrubber label + field control) invert to white on
+   dark; re-pin them to a warm dark plate that still reads as a raised bar in dark mode. */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-scrub__lbl,
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-fld__ctl { background: color-mix(in srgb, var(--ds-ink) 10%, var(--ds-paper-light)); }
+/* chain cards keep the pale→vivid accumulation ramp (var(--f)); force their text dark so it
+   still reads on the pale first steps, where dark-mode ink would vanish. */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-chain__step,
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-chain__d { color: #1a1612; }

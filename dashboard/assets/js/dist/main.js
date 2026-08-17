@@ -19928,6 +19928,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_mark: "KNOWLEDGE",
       kd_orac_abs_btn: "Explore the Absorption facts \u2192",
       kd_orac_abs_txt: "**Two of the four are what you eat and don\u2019t eat** \u2014 a calorie-restricted, well-rounded diet, and steering clear of the land mines. Both are covered in depth on the Absorption tab.",
+      kd_orac_bridge_b: "Every food above is worth adding, and none of them is a plan on its own \u2014 hitting {low}\u2013{high} every single day, without rebuilding your whole diet around spices, is what the next section is for.",
+      kd_orac_bridge_k: "What comes next",
       kd_orac_chain_h: "Rust, one cell at a time",
       kd_orac_chain_intro: "Wallach quotes the researcher Roy Walford, who called free radicals \u201Cthe great white sharks in the biochemical sea.\u201D Here is the attack, in plain terms \u2014 five steps from a single broken molecule to the spot on your hand:",
       kd_orac_chain_k: "How the damage actually happens",
@@ -19952,6 +19954,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_orac_dec_lbl: "of the cell, full",
       kd_orac_eyebrow_l: "The Wallach Codex \xB7 Knowledge",
       kd_orac_eyebrow_r: "ORAC",
+      kd_orac_field_hint: "Hover any dot \u2014 click to keep it open",
+      kd_orac_field_lin: "True \u2014 linear",
+      kd_orac_field_log: "Ranked \u2014 log",
+      kd_orac_field_src: "Per-serving values \xB7 {cite} \xB7 log axis by default \u2014 switch to true-linear to see the real gaps.",
+      kd_orac_field_tgt_suffix: "a day\u2019s target",
+      kd_orac_field_tip_share: "of a {target}-point day",
+      kd_orac_field_unit: "ORAC",
       kd_orac_force_a_big: "\u2191 raises your AVERAGE",
       kd_orac_force_a_d: "Neutralize the free radicals before they burn through a cell. This is defence \u2014 it stops damage you\u2019d otherwise take.",
       kd_orac_force_a_k: "Antioxidants \xB7 ORAC",
@@ -19967,6 +19976,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_orac_mirror_body: "**Age spots** and liver spots aren\u2019t cosmetic. They\u2019re **ceroid lipofuscin** \u2014 a brown residue left behind wherever free radicals have burned through a cell. **The ones on your skin are the readable surface of the same buildup happening in your brain, heart, liver and eyes.** Wallach cites how much of a brain cell it fills as you age:",
       kd_orac_mirror_h: "See a dark spot? You already have *millions more* you can\u2019t see.",
       kd_orac_mirror_k: "Look at the back of your hand",
+      kd_orac_mirror_src_note: "the four marked ages are Wallach\u2019s measured figures; between them the fill interpolates \u2014 a reading device, not his number.",
+      kd_orac_mirror_sub: "of a single cell, filled with the pigment left behind \u2014 at age {age}.",
       kd_orac_payoff_body: "Wallach\u2019s calculation for a {weight} person doing both \u2014 and note the word **healthful**. The goal isn\u2019t extra years in decline; it\u2019s reaching past {baseAge} \u201Cin a beautiful, healthful and functional way.\u201D It even *saves* money: cheaper whole food more than offsets the supplements, and you avoid the medical bills of the diseases that can otherwise occur. Prevention, not cure.",
       kd_orac_piece1_d: "{orac} ORAC points a day \u2014 the defence that slows the rusting.",
       kd_orac_piece1_t: "Antioxidants",
@@ -19987,9 +19998,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       kd_orac_reach_h: "One serving, and how far it gets you",
       kd_orac_reach_intro: "Against a {target}-point day. The target isn\u2019t exotic \u2014 a handful of pecans covers most of it, a glass of blueberry juice covers a third.",
       kd_orac_reach_k: "What it takes",
+      kd_orac_reach_of_day: "of a day",
+      kd_orac_reach_rest: "Read the empty half of every bar as well as the full half. One serving is a real contribution and none of them is the whole day \u2014 the point of the list is that adding two or three of these to what you already eat moves you a long way from zero.",
       kd_orac_scale_h: "Spices are not on the same scale",
       kd_orac_scale_k: "The outlier",
       kd_orac_scale_note: "Cloves score **{cloves}** \u2014 seventeen times the best nut on the list. On one linear axis the fruit vanishes, which is why everything below is separated by category.",
+      kd_orac_scrub_label: "Drag through the decades",
       kd_orac_steal_body: "Wallach\u2019s math: the industrialized world *should* average {shouldLow} to {shouldHigh} years, and instead averages about {actual}. That gap is roughly {low} to {high} years taken off the front of your life \u2014 and America keeps losing ground, sliding down the world longevity rankings for two decades straight.",
       kd_orac_steal_lead: "What that damage is costing you",
       kd_orac_supp_h: "Best supplement sources",
@@ -175794,30 +175808,67 @@ Goiter`,
   function secKicker(key) {
     return `<div class="kd-orac-sec__k">${escHTML9(ui(key))}</div>`;
   }
-  var SEV_VARS = ["var(--sev-calm)", "var(--sev-warn)", "var(--sev-dang)", "var(--sev-crit)"];
+  function bandEnds(band) {
+    const e = band.split(/[–-]/).map((s) => Number(s.trim()));
+    const lo = e[0] ?? 0;
+    const hi = e[1] ?? lo;
+    return [lo, hi];
+  }
   function renderMirror(od) {
     const d = od.decades;
     const capKeys = ["kd_orac_dec_cap1", "kd_orac_dec_cap2", "kd_orac_dec_cap3", "kd_orac_dec_cap4"];
-    const cols = d.rows.map((r, i) => `<div class="kd-orac-dec">
-      <div class="kd-orac-dec__bar"><div class="kd-orac-dec__fill" style="height:${r.pct}%;--f:${SEV_VARS[i] ?? "var(--sev-crit)"}"><div class="kd-orac-dec__pct" style="bottom:6px;">${r.pct}%<span class="kd-orac-dec__cap" style="display:block;">${escHTML9(ui(capKeys[i] ?? ""))}</span></div></div></div>
-      <div class="kd-orac-dec__age">${escHTML9(ui("kd_orac_dec_age_prefix"))}${escHTML9(r.age)}</div>
-      <div class="kd-orac-dec__lbl">${escHTML9(ui("kd_orac_dec_lbl"))}</div>
-    </div>`).join("");
-    return `<div class="kd-orac-mirror">
+    const mids = d.rows.map((r) => {
+      const [lo, hi] = bandEnds(r.age);
+      return (lo + hi) / 2;
+    });
+    const meas = d.rows.map((r, i) => `${mids[i] ?? 0}:${r.pct}`).join(",");
+    const firstBand = bandEnds(d.rows[0]?.age ?? "");
+    const lastBand = bandEnds(d.rows[d.rows.length - 1]?.age ?? "");
+    const rMin = firstBand[0];
+    const rMax = lastBand[1];
+    const span = rMax - rMin || 1;
+    const startPct = d.rows[0]?.pct ?? 0;
+    const startAge = Math.round(mids[0] ?? rMin);
+    const caps = capKeys.map((k) => ui(k)).join("|");
+    const ticks = d.rows.map((r, i) => {
+      const mid = mids[i] ?? rMin;
+      const left = (mid - rMin) / span * 100;
+      const on2 = Math.abs(mid - startAge) <= 5 ? " kd-orac-tick--on" : "";
+      return `<div class="kd-orac-tick${on2}" data-age="${mid}" style="left:${left}%">${escHTML9(r.age)}</div>`;
+    }).join("");
+    const subParts = ui("kd_orac_mirror_sub").split("{age}");
+    const sub = `${emph(subParts[0] ?? "")}<span class="kd-orac-scrub__age">${startAge}</span>${emph(subParts[1] ?? "")}`;
+    return `<div class="kd-orac-mirror" data-orac-scrub data-meas="${meas}" data-caps="${escHTML9(caps)}">
     <div class="kd-orac-mirror__k">${escHTML9(ui("kd_orac_mirror_k"))}</div>
     <h2 class="kd-orac-mirror__h">${fill("kd_orac_mirror_h")}</h2>
     <p class="kd-orac-mirror__body">${fill("kd_orac_mirror_body")}</p>
-    <div class="kd-orac-decades">${cols}</div>
-    <div class="kd-orac-mirror__src">${escHTML9(d.cite)}</div>
+    <div class="kd-orac-cellwrap">
+      <div class="kd-orac-cell"><div class="kd-orac-cell__nuc"></div><div class="kd-orac-cell__fill" style="height:${startPct}%"></div></div>
+      <div class="kd-orac-read">
+        <div class="kd-orac-read__pct"><span class="kd-orac-read__pctv">${startPct}</span>%</div>
+        <div class="kd-orac-read__cap">${escHTML9(ui(capKeys[0] ?? ""))}</div>
+        <p class="kd-orac-read__sub">${sub}</p>
+        <div class="kd-orac-scrub">
+          <div class="kd-orac-scrub__lbl"><span aria-hidden="true">&#9668;</span>${escHTML9(ui("kd_orac_scrub_label"))}<span aria-hidden="true">&#9658;</span></div>
+          <input type="range" class="kd-orac-scrub__range" min="${rMin}" max="${rMax}" step="1" value="${startAge}" aria-label="${escHTML9(ui("kd_orac_scrub_label"))}">
+          <div class="kd-orac-ticks">${ticks}</div>
+        </div>
+      </div>
+    </div>
+    <div class="kd-orac-mirror__src">${escHTML9(d.cite)} \xB7 ${escHTML9(ui("kd_orac_mirror_src_note"))}</div>
   </div>`;
   }
   function renderSteal(od) {
     const s = od.stolen_years;
     const r = od.rankings;
-    const cells = r.points.map((p, i) => `<div class="kd-orac-rank__c">
+    const last = r.points.length - 1;
+    const cells = r.points.map((p, i) => {
+      const style = i === last ? ' style="color:var(--ds-accent-deep)"' : "";
+      return `<div class="kd-orac-rank__c">
       <div class="kd-orac-rank__yr">${escHTML9(String(p.year))}</div>
-      <div class="kd-orac-rank__v" style="color:${SEV_VARS[i] ?? "var(--sev-crit)"}">${escHTML9(String(p.rank))}${ordinal(p.rank)}</div>
-    </div>`).join('<span class="kd-orac-rank__arrow">\u2192</span>');
+      <div class="kd-orac-rank__v"${style}>${escHTML9(String(p.rank))}${ordinal(p.rank)}</div>
+    </div>`;
+    }).join('<span class="kd-orac-rank__arrow">\u2192</span>');
     return `<div class="kd-orac-steal">
     <div class="kd-orac-steal__lead">${escHTML9(ui("kd_orac_steal_lead"))}</div>
     <div class="kd-orac-steal__num">${escHTML9(s.display)}</div>
@@ -175832,11 +175883,10 @@ Goiter`,
     <div class="kd-orac-mirror__src">${escHTML9(r.cite)}</div>
   </div>`;
   }
-  var CHAIN_COLORS = ["#12879b", "#c67d16", "#e0641c", "#c8382a", "#a3182f"];
   function renderChain() {
-    const cards2 = CHAIN_COLORS.map((c, i) => {
+    const cards2 = [0, 1, 2, 3, 4].map((i) => {
       const n = i + 1;
-      return `<div class="kd-orac-chain__step" style="--f:${c}">
+      return `<div class="kd-orac-chain__step" style="--f:var(--p${i})">
       <div class="kd-orac-chain__i">${String(n).padStart(2, "0")}</div>
       <div class="kd-orac-chain__t">${escHTML9(ui(`kd_orac_chain_s${n}_t`))}</div>
       <div class="kd-orac-chain__d">${escHTML9(ui(`kd_orac_chain_s${n}_d`))}</div>
@@ -175907,26 +175957,349 @@ Goiter`,
       <div class="kd-orac-src">${escHTML9(pay.cite)}</div>
     </div>`;
   }
+  function foodColorVar(token) {
+    return token === "o-spice" ? "var(--of-spice)" : `var(--${token})`;
+  }
   function renderReach(f) {
-    const rows = f.reach.rows.map((r) => `<div class="kd-orac-reach__row"><span class="kd-orac-reach__name">${escHTML9(r.name)}</span><span class="kd-orac-reach__track"><span class="kd-orac-reach__fill" style="width:${Math.min(100, r.pct)}%;--c:var(--${escHTML9(r.color)})"></span>${r.over ? '<span class="kd-orac-reach__over"></span>' : ""}</span><span class="kd-orac-reach__pct">${r.pct}%</span></div>`).join("");
+    const rows = f.reach.rows.map((r) => `<div class="kd-orac-reach__row" style="--fc:${foodColorVar(r.color)}">
+      <span class="kd-orac-reach__name"><i class="kd-orac-reach__dot" aria-hidden="true"></i>${escHTML9(r.name)}</span>
+      <span class="kd-orac-reach__track"><span class="kd-orac-reach__fill" style="width:${Math.min(100, r.pct)}%"></span>${r.over ? '<span class="kd-orac-reach__over"></span>' : ""}</span>
+      <span class="kd-orac-reach__pct"><b>${r.pct}%</b> ${escHTML9(ui("kd_orac_reach_of_day"))}</span>
+    </div>`).join("");
     return `${sectionHeader2("04", secKicker("kd_orac_reach_k"), "kd_orac_reach_h")}
     <p class="kd-orac-p">${fill("kd_orac_reach_intro", { target: f.reach.target_display })}</p>
     <div class="kd-orac-reach" id="reach">${rows}</div>
+    <div class="kd-orac-reach__rest">${fill("kd_orac_reach_rest")}</div>
     <div class="kd-orac-reach__cap">${fill("kd_orac_reach_cap", { cite: f.reach.cite })}</div>`;
   }
   function renderScale(f) {
-    const rows = f.scale.rows.map((r) => `<div class="kd-orac-scale__row"><span class="kd-orac-scale__nm">${escHTML9(r.name)}</span><span class="kd-orac-scale__tr"><span class="kd-orac-scale__fl" style="width:${r.bar}%;--c:var(--${escHTML9(r.color)})"></span></span><span class="kd-orac-scale__vl">${escHTML9(r.value_display)}</span></div>`).join("");
+    const rows = f.scale.rows.map((r) => `<div class="kd-orac-scale__row" style="--fc:${foodColorVar(r.color)}"><span class="kd-orac-scale__nm">${escHTML9(r.name)}</span><span class="kd-orac-scale__tr"><span class="kd-orac-scale__fl" style="width:${r.bar}%"></span></span><span class="kd-orac-scale__vl">${escHTML9(r.value_display)}</span></div>`).join("");
     return `${sectionHeader2("05", secKicker("kd_orac_scale_k"), "kd_orac_scale_h")}
     <div class="kd-orac-scale" id="scale">${rows}<p class="kd-orac-scale__note">${fill("kd_orac_scale_note", { cloves: f.scale.max_display })}</p></div>`;
   }
-  function renderTables(f) {
-    const tbls = f.tables.categories.map((cat) => {
-      const body = cat.rows.map((r) => `<div class="kd-orac-row"><span class="kd-orac-row__n">${escHTML9(r.name)}</span><span class="kd-orac-row__v">${escHTML9(r.value_display)}</span><span class="kd-orac-row__bar" style="width:${r.bar}%;--c:var(--${escHTML9(cat.color)})"></span></div>`).join("");
-      return `<div class="kd-orac-tbl"><div class="kd-orac-tbl__hd" style="--c:var(--${escHTML9(cat.color)})"><span class="kd-orac-tbl__ttl">${escHTML9(cat.label)}</span><span class="kd-orac-tbl__meta">${escHTML9(cat.basis)}</span></div><div class="kd-orac-tbl__body">${body}</div></div>`;
+  function foodValue(display) {
+    return Number(String(display).replace(/[^0-9.]/g, ""));
+  }
+  var PLOT_FLOOR = 300;
+  var PLOT_MAX = 95.5;
+  function plotPos(v, max, mode) {
+    if (mode === "lin") {
+      return (max > 0 ? v / max : 0) * PLOT_MAX;
+    }
+    const loL = Math.log10(PLOT_FLOOR);
+    const hiL = Math.log10(Math.max(PLOT_FLOOR + 1, max));
+    const frac = (Math.log10(Math.max(PLOT_FLOOR, v)) - loL) / (hiL - loL);
+    return frac * PLOT_MAX;
+  }
+  var DOT_TOP_A = 64;
+  var DOT_TOP_B = 40;
+  var DOT_MIN_ADJ = 1.25;
+  var DOT_MIN_SAME = 2.1;
+  function spreadLane(positions) {
+    const order = positions.map((p, i) => ({ p, i })).sort((a, b) => a.p - b.p);
+    const out = positions.map(() => ({ left: 0, top: DOT_TOP_A }));
+    let prevLeft = -Infinity;
+    let prevBand = 1;
+    for (const { p, i } of order) {
+      let left = p;
+      if (left - prevLeft < DOT_MIN_ADJ) {
+        left = prevLeft + DOT_MIN_ADJ;
+      }
+      const band = left - prevLeft < DOT_MIN_SAME ? prevBand === 0 ? 1 : 0 : 0;
+      out[i] = { left, top: band === 0 ? DOT_TOP_A : DOT_TOP_B };
+      prevLeft = left;
+      prevBand = band;
+    }
+    return out;
+  }
+  function renderField2(od, f) {
+    const cats = f.tables.categories;
+    const target = f.reach.target;
+    const targetDisplay = f.reach.target_display;
+    let max = 0;
+    for (const cat of cats) {
+      for (const r of cat.rows) {
+        max = Math.max(max, foodValue(r.value_display));
+      }
+    }
+    const baseBasis = cats[0]?.basis ?? "";
+    const shareText = fill("kd_orac_field_tip_share", { target: targetDisplay });
+    const clamp = (x) => Math.max(5, Math.min(82, x));
+    const lanes = cats.map((cat) => {
+      const vals = cat.rows.map((r) => foodValue(r.value_display));
+      const posLog = spreadLane(vals.map((v) => plotPos(v, max, "log")));
+      const posLin = spreadLane(vals.map((v) => plotPos(v, max, "lin")));
+      const colorVar = foodColorVar(cat.color);
+      const unit = `${ui("kd_orac_field_unit")} \xB7 ${cat.basis}`;
+      let topIdx = 0;
+      let topV = -Infinity;
+      vals.forEach((v, i) => {
+        if (v > topV) {
+          topV = v;
+          topIdx = i;
+        }
+      });
+      const dotMeta = cat.rows.map((r, i) => ({
+        r,
+        v: vals[i] ?? 0,
+        pl: posLog[i] ?? { left: 0, top: DOT_TOP_A },
+        pn: posLin[i] ?? { left: 0, top: DOT_TOP_A }
+      }));
+      const dots = dotMeta.map(({ r, v, pl, pn }) => {
+        const share = target > 0 ? v / target * 100 : 0;
+        const shareStr = share >= 100 ? `${Math.round(share)}%` : `${share.toFixed(1)}%`;
+        const barPct = Math.min(100, share);
+        return `<span class="kd-orac-dot" style="left:${pl.left}%;top:${pl.top}%" data-left-log="${pl.left}" data-top-log="${pl.top}" data-left-lin="${pn.left}" data-top-lin="${pn.top}" data-n="${escHTML9(r.name)}" data-vd="${escHTML9(r.value_display)}" data-fam="${escHTML9(cat.label)}" data-c="${colorVar}" data-unit="${escHTML9(unit)}" data-share="${shareStr}" data-sharetext="${escHTML9(shareText)}" data-barpct="${barPct}"></span>`;
+      }).join("");
+      const topRow = cat.rows[topIdx];
+      const topL = clamp((posLog[topIdx] ?? { left: 0 }).left);
+      const topN = clamp((posLin[topIdx] ?? { left: 0 }).left);
+      const topLabel = topRow !== void 0 ? `<span class="kd-orac-top" style="left:${topL}%" data-left-log="${topL}" data-left-lin="${topN}">${escHTML9(topRow.name)} \xB7 <b>${escHTML9(topRow.value_display)}</b></span>` : "";
+      const sub = cat.basis !== baseBasis ? `<i>${escHTML9(cat.basis)}</i>` : "";
+      return `<div class="kd-orac-lane" data-fam="${escHTML9(cat.key)}" style="--fc:${colorVar}">
+        <div class="kd-orac-lane__n"><span><b>${escHTML9(cat.label)}</b>${sub}</span><span class="kd-orac-lane__sw" aria-hidden="true"></span></div>
+        <div class="kd-orac-rail">${dots}${topLabel}</div>
+      </div>`;
     }).join("");
+    const tgtLog = plotPos(target, max, "log");
+    const tgtLin = plotPos(target, max, "lin");
+    const logTicks = [];
+    for (let e = Math.ceil(Math.log10(PLOT_FLOOR + 1)); Math.pow(10, e) < max; e++) {
+      logTicks.push(Math.pow(10, e));
+    }
+    const linStep = 1e5;
+    const linTicks = [0];
+    for (let v = linStep; v < max; v += linStep) {
+      linTicks.push(v);
+    }
+    const axisLog = logTicks.map((v) => `<i class="kd-orac-axis__tick kd-orac-axis__tick--log" style="left:${plotPos(v, max, "log")}%">${v.toLocaleString("en-US")}</i>`).join("");
+    const axisLin = linTicks.map((v) => `<i class="kd-orac-axis__tick kd-orac-axis__tick--lin" style="left:${plotPos(v, max, "lin")}%">${v.toLocaleString("en-US")}</i>`).join("");
+    const legend = cats.map((cat) => `<button type="button" class="kd-orac-keyb" data-fam="${escHTML9(cat.key)}" style="--fc:${foodColorVar(cat.color)}"><i aria-hidden="true"></i>${escHTML9(cat.label)}</button>`).join("");
     return `${sectionHeader2("06", secKicker("kd_orac_tables_k"), "kd_orac_tables_h")}
     <p class="kd-orac-p">${fill("kd_orac_tables_intro")}</p>
-    <div class="kd-orac-tables" id="tables">${tbls}</div>`;
+    <div class="kd-orac-field" data-orac-field data-mode="log">
+      <div class="kd-orac-fld__ctl">
+        <span class="kd-orac-fld__hint"><i aria-hidden="true"></i>${escHTML9(ui("kd_orac_field_hint"))}</span>
+        <div class="kd-orac-seg">
+          <button type="button" class="kd-orac-seg__btn" data-orac-mode="log">${escHTML9(ui("kd_orac_field_log"))}</button>
+          <button type="button" class="kd-orac-seg__btn" data-orac-mode="lin">${escHTML9(ui("kd_orac_field_lin"))}</button>
+        </div>
+      </div>
+      <div class="kd-orac-fld__plot">
+        <div class="kd-orac-fld__lines"><div class="kd-orac-fld__tgt" style="left:${tgtLog}%" data-left-log="${tgtLog}" data-left-lin="${tgtLin}"><b>${escHTML9(targetDisplay)} \xB7 ${escHTML9(ui("kd_orac_field_tgt_suffix"))}</b></div></div>
+        ${lanes}
+        <div class="kd-orac-fld__axis">${axisLog}${axisLin}</div>
+        <div class="kd-orac-fld__tip">
+          <div class="kd-orac-tip__fam"><i aria-hidden="true"></i><span class="kd-orac-tip__fam-t"></span></div>
+          <div class="kd-orac-tip__n"></div>
+          <div class="kd-orac-tip__v"></div>
+          <div class="kd-orac-tip__u"></div>
+          <div class="kd-orac-tip__bar"><span></span></div>
+          <div class="kd-orac-tip__pct"><b class="kd-orac-tip__pct-v"></b> <span class="kd-orac-tip__pct-t"></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="kd-orac-fld__key">${legend}</div>
+    <div class="kd-orac-fld__src">${fill("kd_orac_field_src", { cite: f.reach.cite })}</div>
+    <div class="kd-orac-bridge">
+      <div class="kd-orac-bridge__k">${escHTML9(ui("kd_orac_bridge_k"))}</div>
+      <p class="kd-orac-bridge__b">${fill("kd_orac_bridge_b", { low: od.target.low_display, high: od.target.high_display })}</p>
+    </div>`;
+  }
+  function oracScrubInput(input) {
+    const root = input.closest("[data-orac-scrub]");
+    if (root === null) {
+      return;
+    }
+    const meas = (root.dataset["meas"] ?? "").split(",").map((pair) => {
+      const parts = pair.split(":");
+      return [Number(parts[0] ?? 0), Number(parts[1] ?? 0)];
+    });
+    const first = meas[0];
+    const lastM = meas[meas.length - 1];
+    if (first === void 0 || lastM === void 0) {
+      return;
+    }
+    const caps = (root.dataset["caps"] ?? "").split("|");
+    const a = Number(input.value);
+    let p = first[1];
+    if (a <= first[0]) {
+      p = first[1];
+    } else if (a >= lastM[0]) {
+      p = lastM[1];
+    } else {
+      for (let i = 0; i < meas.length - 1; i++) {
+        const x = meas[i];
+        const y = meas[i + 1];
+        if (x !== void 0 && y !== void 0 && a >= x[0] && a <= y[0]) {
+          p = x[1] + (y[1] - x[1]) * (a - x[0]) / (y[0] - x[0]);
+          break;
+        }
+      }
+    }
+    let k = 0;
+    meas.forEach((m, i) => {
+      if (a >= m[0]) {
+        k = i;
+      }
+    });
+    const fill2 = root.querySelector(".kd-orac-cell__fill");
+    const pv = root.querySelector(".kd-orac-read__pctv");
+    const cap = root.querySelector(".kd-orac-read__cap");
+    const age = root.querySelector(".kd-orac-scrub__age");
+    if (fill2 !== null) {
+      fill2.style.height = `${p.toFixed(2)}%`;
+    }
+    if (pv !== null) {
+      pv.textContent = String(Math.round(p));
+    }
+    if (cap !== null) {
+      cap.textContent = caps[k] ?? "";
+    }
+    if (age !== null) {
+      age.textContent = String(Math.round(a));
+    }
+    root.querySelectorAll(".kd-orac-tick").forEach((t) => {
+      const ta = Number(t.dataset["age"]);
+      t.classList.toggle("kd-orac-tick--on", Math.abs(ta - a) <= 5);
+    });
+  }
+  function oracShowTip(field, dot) {
+    const tip2 = field.querySelector(".kd-orac-fld__tip");
+    const plot = field.querySelector(".kd-orac-fld__plot");
+    if (tip2 === null || plot === null) {
+      return;
+    }
+    tip2.style.setProperty("--fc", dot.dataset["c"] ?? "var(--ds-accent)");
+    const set2 = (sel, val) => {
+      const el = tip2.querySelector(sel);
+      if (el !== null) {
+        el.textContent = val;
+      }
+    };
+    set2(".kd-orac-tip__fam-t", dot.dataset["fam"] ?? "");
+    set2(".kd-orac-tip__n", dot.dataset["n"] ?? "");
+    set2(".kd-orac-tip__v", dot.dataset["vd"] ?? "");
+    set2(".kd-orac-tip__u", dot.dataset["unit"] ?? "");
+    set2(".kd-orac-tip__pct-v", dot.dataset["share"] ?? "");
+    set2(".kd-orac-tip__pct-t", dot.dataset["sharetext"] ?? "");
+    const bar = tip2.querySelector(".kd-orac-tip__bar span");
+    if (bar !== null) {
+      bar.style.width = `${dot.dataset["barpct"] ?? "0"}%`;
+    }
+    const pr = plot.getBoundingClientRect();
+    const dr = dot.getBoundingClientRect();
+    const w = tip2.offsetWidth || 232;
+    const h = tip2.offsetHeight || 168;
+    let x = dr.left - pr.left + dr.width / 2 - w / 2;
+    x = Math.max(6, Math.min(pr.width - w - 6, x));
+    let y = dr.top - pr.top - h - 12;
+    if (y < 4) {
+      y = dr.top - pr.top + dr.height + 12;
+    }
+    tip2.style.left = `${x}px`;
+    tip2.style.top = `${y}px`;
+    tip2.classList.add("kd-orac-fld__tip--on");
+    const lane = dot.closest(".kd-orac-lane");
+    field.querySelectorAll(".kd-orac-lane").forEach((l) => l.classList.toggle("kd-orac-lane--hot", l === lane));
+  }
+  function oracHideTip(field) {
+    if (field.classList.contains("kd-orac-field--pinned")) {
+      return;
+    }
+    const tip2 = field.querySelector(".kd-orac-fld__tip");
+    if (tip2 !== null) {
+      tip2.classList.remove("kd-orac-fld__tip--on");
+    }
+    field.querySelectorAll(".kd-orac-lane--hot").forEach((l) => l.classList.remove("kd-orac-lane--hot"));
+  }
+  function oracSetMode(field, mode) {
+    field.dataset["mode"] = mode;
+    const leftKey = mode === "lin" ? "leftLin" : "leftLog";
+    const topKey = mode === "lin" ? "topLin" : "topLog";
+    field.querySelectorAll(".kd-orac-dot").forEach((d) => {
+      const lv = d.dataset[leftKey];
+      const tv = d.dataset[topKey];
+      if (lv !== void 0) {
+        d.style.left = `${lv}%`;
+      }
+      if (tv !== void 0) {
+        d.style.top = `${tv}%`;
+      }
+    });
+    field.querySelectorAll(".kd-orac-top").forEach((t) => {
+      const lv = t.dataset[leftKey];
+      if (lv !== void 0) {
+        t.style.left = `${lv}%`;
+      }
+    });
+    const tgt = field.querySelector(".kd-orac-fld__tgt");
+    if (tgt !== null) {
+      const lv = tgt.dataset[leftKey];
+      if (lv !== void 0) {
+        tgt.style.left = `${lv}%`;
+      }
+    }
+    const pinned = field.querySelector(".kd-orac-dot--pin");
+    if (pinned !== null) {
+      oracShowTip(field, pinned);
+    }
+  }
+  function oracFieldHover(dot) {
+    const field = dot.closest(".kd-orac-field");
+    if (field === null || field.classList.contains("kd-orac-field--pinned")) {
+      return;
+    }
+    oracShowTip(field, dot);
+  }
+  function oracFieldOut(dot) {
+    const field = dot.closest(".kd-orac-field");
+    if (field !== null) {
+      oracHideTip(field);
+    }
+  }
+  function oracFieldClick(target) {
+    const field = target.closest(".kd-orac")?.querySelector(".kd-orac-field") ?? null;
+    if (field === null) {
+      return false;
+    }
+    const modeBtn = target.closest("[data-orac-mode]");
+    if (modeBtn !== null) {
+      oracSetMode(field, modeBtn.dataset["oracMode"] === "lin" ? "lin" : "log");
+      return true;
+    }
+    const keyBtn = target.closest(".kd-orac-keyb");
+    if (keyBtn !== null) {
+      const fam = keyBtn.dataset["fam"] ?? "";
+      const off = keyBtn.classList.toggle("kd-orac-keyb--off");
+      field.querySelectorAll(".kd-orac-lane").forEach((l) => {
+        if (l.dataset["fam"] === fam) {
+          l.style.display = off ? "none" : "";
+        }
+      });
+      return true;
+    }
+    const dot = target.closest(".kd-orac-dot");
+    if (dot !== null) {
+      const wasPinned = field.classList.contains("kd-orac-field--pinned") && dot.classList.contains("kd-orac-dot--pin");
+      field.querySelectorAll(".kd-orac-dot--pin").forEach((d) => d.classList.remove("kd-orac-dot--pin"));
+      if (wasPinned) {
+        field.classList.remove("kd-orac-field--pinned");
+        oracHideTip(field);
+      } else {
+        field.classList.add("kd-orac-field--pinned");
+        dot.classList.add("kd-orac-dot--pin");
+        oracShowTip(field, dot);
+      }
+      return true;
+    }
+    if (target.closest(".kd-orac-fld__plot") !== null) {
+      field.classList.remove("kd-orac-field--pinned");
+      field.querySelectorAll(".kd-orac-dot--pin").forEach((d) => d.classList.remove("kd-orac-dot--pin"));
+      oracHideTip(field);
+      return true;
+    }
+    return false;
   }
   function formInfo(form) {
     const fam = formFamilyFromForm(form);
@@ -175962,17 +176335,17 @@ Goiter`,
       ${cap.length > 0 ? `<div class="kd-orac-supp__cap">${escHTML9(cap)}</div>` : ""}
     </div>`;
   }
-  function renderFoods(f) {
+  function renderFoods(od, f) {
     return `${renderReach(f)}
     ${renderScale(f)}
-    ${renderTables(f)}`;
+    ${renderField2(od, f)}`;
   }
   function renderNarrative(od, ofd, opd) {
     return `${renderMirror(od)}
     ${renderSteal(od)}
     ${renderChain()}
     ${renderTarget(od)}
-    ${ofd !== null ? renderFoods(ofd) : ""}
+    ${ofd !== null ? renderFoods(od, ofd) : ""}
     ${opd !== null ? renderSupplements(opd) : ""}
     ${renderPieces(od)}`;
   }
@@ -176580,6 +176953,9 @@ Goiter`,
       if (target.closest(".sh-search") === null) {
         container.querySelector(".sh-search__results")?.classList.remove("open");
       }
+      if (oracFieldClick(target)) {
+        return;
+      }
       const tabBtn = target.closest("[data-kd-tab]");
       if (tabBtn !== null) {
         const next = tabBtn.getAttribute("data-kd-tab");
@@ -176723,6 +177099,10 @@ Goiter`,
       if (t === null) {
         return;
       }
+      if (t.classList.contains("kd-orac-scrub__range")) {
+        oracScrubInput(t);
+        return;
+      }
       if (t.classList.contains("kh-search")) {
         const panel = container.querySelector(".sh-search__results");
         if (panel !== null) {
@@ -176755,6 +177135,20 @@ Goiter`,
       }
     };
     container.addEventListener("input", inputHandler);
+    const oracOverHandler = (ev) => {
+      const dot = ev.target?.closest(".kd-orac-dot") ?? null;
+      if (dot !== null) {
+        oracFieldHover(dot);
+      }
+    };
+    const oracOutHandler = (ev) => {
+      const dot = ev.target?.closest(".kd-orac-dot") ?? null;
+      if (dot !== null) {
+        oracFieldOut(dot);
+      }
+    };
+    container.addEventListener("mouseover", oracOverHandler);
+    container.addEventListener("mouseout", oracOutHandler);
     const keydownHandler = (ev) => {
       const t = ev.target;
       if (t === null || !t.classList.contains("kh-search")) {

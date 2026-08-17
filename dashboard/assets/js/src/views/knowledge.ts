@@ -51,7 +51,7 @@ import { renderConditionsTab } from './knowledge-corpus.js';
 import { exploreEntities, renderExploreTab } from './knowledge-explore.js';
 import { renderFoodsTab } from './knowledge-foods.js';
 import { renderHomeSuggestions, renderHomeTab } from './knowledge-home.js';
-import { renderOracTab } from './knowledge-orac.js';
+import { oracFieldClick, oracFieldHover, oracFieldOut, oracScrubInput, renderOracTab } from './knowledge-orac.js';
 import { productCount, productScrollTint, renderProductsTab } from './knowledge-products.js';
 import { renderTopicPage } from './knowledge-topic.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
@@ -695,6 +695,11 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (target.closest('.sh-search') === null) {
       container.querySelector('.sh-search__results')?.classList.remove('open');
     }
+    // ORAC field controls (mode toggle / legend filter / dot pin) — progressive enhancement
+    // over a static-correct render; oracFieldClick returns false elsewhere and falls through.
+    if (oracFieldClick(target)) {
+      return;
+    }
     const tabBtn = target.closest<HTMLElement>('[data-kd-tab]');
     if (tabBtn !== null) {
       const next = tabBtn.getAttribute('data-kd-tab') as Tab | null;
@@ -869,6 +874,11 @@ export function mount(container: HTMLElement): DrawerHandle {
     if (t === null) {
       return;
     }
+    // ORAC §01 age scrubber — interpolate the mirror cell + readout (progressive enhancement).
+    if (t.classList.contains('kd-orac-scrub__range')) {
+      oracScrubInput(t as HTMLInputElement);
+      return;
+    }
     // Home hero live-suggest: repaint ONLY the results panel (not a full drawer
     // re-render) so the input keeps focus mid-type. Empty query closes the panel.
     if (t.classList.contains('kh-search')) {
@@ -905,6 +915,19 @@ export function mount(container: HTMLElement): DrawerHandle {
     }
   };
   container.addEventListener('input', inputHandler);
+
+  // ORAC §06 field dot hover — delegated (mouseover/mouseout bubble, unlike enter/leave), so
+  // it survives the drawer's innerHTML re-renders. The static render needs none of this.
+  const oracOverHandler = (ev: Event): void => {
+    const dot = (ev.target as HTMLElement | null)?.closest<HTMLElement>('.kd-orac-dot') ?? null;
+    if (dot !== null) { oracFieldHover(dot); }
+  };
+  const oracOutHandler = (ev: Event): void => {
+    const dot = (ev.target as HTMLElement | null)?.closest<HTMLElement>('.kd-orac-dot') ?? null;
+    if (dot !== null) { oracFieldOut(dot); }
+  };
+  container.addEventListener('mouseover', oracOverHandler);
+  container.addEventListener('mouseout', oracOutHandler);
 
   // Home hero live-suggest keyboard control: arrows move the highlight, Enter opens
   // the highlighted entity, Escape dismisses. Delegated so it survives re-renders;
