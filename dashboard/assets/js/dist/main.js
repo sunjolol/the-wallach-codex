@@ -19221,10 +19221,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function parseOcrText(rawTextInput) {
     const out = { containerHint: "", ingredients: "", nutrients: [] };
     const rawText = ocrPostProcess(rawTextInput);
-    const ingMatch = rawText.match(/INGREDIENTS?\s{0,8}[:.]?\s{0,8}([\s\S]+?)(?:\n\s*\n|NUTRITION\s+FACTS|SUPPLEMENT\s+FACTS|DIRECTIONS|SUGGESTED\s+USE|OTHER\s+INGREDIENTS|CONTAINS\s*:|WARNING|ALLERGEN|MANUFACTURED|DISTRIBUTED|$)/i);
+    const ingMatch = rawText.match(/(?:^|\n)[^\S\n]{0,8}(?:OTHER\s+)?INGREDIENTS?\s{0,8}[:.]?\s{0,8}([\s\S]+?)(?:\n\s*\n|NUTRITION\s+FACTS|SUPPLEMENT\s+FACTS|DIRECTIONS|SUGGESTED\s+USE|OTHER\s+INGREDIENTS|CONTAINS\s*:|WARNING|ALLERGEN|MANUFACTURED|DISTRIBUTED|$)/i);
     if (ingMatch !== null && ingMatch[1] !== void 0) {
       const ing = ingMatch[1].trim().replace(/\s+/g, " ").replace(/[.\s]+$/, "");
-      if (ing.length > 8) {
+      if (ing.length > 8 && !/^(?:distributed|manufactured|packed|dist\.|mfg)\b/i.test(ing)) {
         out.ingredients = ing;
       }
     }
@@ -19234,6 +19234,33 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       const hasNutritionHeader = /NUTRITION\s+FACTS|SUPPLEMENT\s+FACTS|Calories|Serving/i.test(trimmed);
       if (commas >= 4 && trimmed.length >= 30 && trimmed.length <= 2e3 && !hasNutritionHeader) {
         out.ingredients = trimmed;
+      }
+    }
+    if (out.ingredients === "") {
+      let body = rawText.replace(/\s+/g, " ").trim();
+      const tail = body.search(/DISTRIBUTED\s+BY|MANUFACTURED\s+BY|PACKED\s+BY|\bwww\.|https?:\/\/|\u00A9/i);
+      if (tail > 0) {
+        body = body.slice(0, tail).trim();
+      }
+      const lastEnd = (re) => {
+        let end = -1;
+        for (const m of body.matchAll(re)) {
+          if (m.index !== void 0) {
+            end = m.index + (m[0]?.length ?? 0);
+          }
+        }
+        return end;
+      };
+      let start = lastEnd(/%\s*(?:dv|daily value)\s*\)?/gi);
+      if (start < 0) {
+        start = lastEnd(/\bprotein\s+\d+(?:\.\d+)?\s*g\b/gi);
+      }
+      if (start >= 0) {
+        const block = body.slice(start).replace(/^[\s.,:)]+/, "").replace(/[.\s]+$/, "");
+        const commaCount = (block.match(/,/g) ?? []).length;
+        if (commaCount >= 3 && block.length >= 30 && block.length <= 2e3) {
+          out.ingredients = block;
+        }
       }
     }
     const lines = rawText.split("\n").map((l) => l.trim()).filter((l) => l.length > 0);
@@ -181319,7 +181346,7 @@ VERIFY: tsc 0, eslint 0 errors, build 0 (11592 KB), invariants 91/91 (0 new reds
 - #2: lcscan:progress on label-test-2 (triggers the sweep, swept=true): 0 backward resets, 1 determinate fill.
 - #3: synthetic one-line panel -> 10 clean nutrients (header-noise row gone); label-test-2 2->4; label-test.png unchanged (9, no regression).
 
-Commits (this session, on origin/master): live-feedback [views/scanner.ts + ocr-dict-data.json]; OCR/parser robustness [state/ocr.ts + dist bundle + docs]. Still OPEN: the WF-cheese INGREDIENT block still under-reads (its "INGREDIENTS:" header OCR-garbles; S17 was scoped to nutrients). eden/ untouched - no seal.` }];
+Commits (this session, on origin/master): live-feedback [views/scanner.ts + ocr-dict-data.json]; OCR/parser robustness [state/ocr.ts + dist bundle + docs]. Still OPEN: the WF-cheese INGREDIENT block still under-reads (its "INGREDIENTS:" header OCR-garbles; S17 was scoped to nutrients). eden/ untouched - no seal.` }, { id: "lg_mswm8z8o_igi7p3", ts: "2026-08-16T21:30:03.624433-05:00", surface: "scanner", kind: "round-close", summary: "WF-cheese ingredient read: scan grabbed the 'DISTRIBUTED BY' text, not the real ingredients, so no villains flagged. Fix: header line-anchored + headerless heuristic (comma-rich run after the last %DV). label-test-2 now flags modified/processed; no regression.", detail: 'The cheese-tub scan (label-test-2) was reading the wrong text as its ingredient list - it pulled the "DISTRIBUTED BY / Whole Foods Market / www..." line instead of the actual ingredients, so none of the bad ingredients (like modified cornstarch) were flagged.\n\nRoot cause: the OCR garbles the real "INGREDIENTS:" header on this label, and the only clean word "INGREDIENTS" left in the text is the trailing allergen line "CONTAINS MILK INGREDIENTS." - the old regex matched THAT and captured everything after it, which was the distributor block.\n\nFix: the ingredients header must now sit at a line start (so it can no longer match the mid-sentence "MILK INGREDIENTS"), and for labels whose header is garbled the ingredient list is found structurally - it is the comma-rich run that comes AFTER the nutrition panel. Nutrition panels are full of "% DV" and ingredient lists have none, so we slice from the last "% DV" to the end, after cutting off the distributor / contact tail.\n\nTECH -- state/ocr.ts parseOcrText:\n- Header regex line-anchored: /(?:^|\\n)[^\\S\\n]{0,8}(?:OTHER\\s+)?INGREDIENTS?.../i (still allows supplement "Other Ingredients:"), plus a reject if the capture starts with distributor/manufactured/packed boilerplate.\n- New headerless heuristic (only runs if nothing else set ingredients): body = whitespace-collapsed rawText, truncated at the first of DISTRIBUTED BY / MANUFACTURED BY / PACKED BY / www. / http(s) / (c); then start = end of the LAST "% DV" match (fallback: end of the last "Protein Ng"); take body.slice(start), strip leading punctuation, require >=3 commas and 30-2000 chars.\n\nVERIFY: tsc 0, eslint 0 errors, build 0 (11597 KB), invariants 91/91 (0 new reds). e2e via window.lcOcrToLabel + lcScan, 0 page-errors:\n- label-test-2.jpg now extracts the real block ("PROCESS AMERICAN CHEESE (CULTURED MILK, NONFAT MILK, CREAM, SODIUM PHOSPHATE, SALT, COLOR [ANNATTO, PAPRIKA]... MODIFIED CORNSTARCH... NONFAT DRY MILK POWDER, GARLIC, CHILI PEPPERS, VINEGAR, SALT, CITRIC ACID... XANTHAN... CAYENNE PEPPER POWDER"), 513 chars; the anti-flag engine flags "modified / processed" (was 0 flags).\n- label-test.png ingredients unchanged (654 chars; still flags fried-oils / added-sugar / modified) - no regression.\nResidual: the head of the cheese block still has OCR garble ("PATRRTED PROCESS" = "Pasteurized Process") - the right ingredients are there and the villains flag; Confirm lets the user clean the garble. Committed + pushed to origin/master. eden/ untouched.' }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

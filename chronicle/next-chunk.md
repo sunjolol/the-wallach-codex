@@ -13,7 +13,7 @@ Board **91/91 throughout.** eden/ untouched — no seal applied.
 ## ⬜ STILL UNBUILT (their own chunks / need his live scan)
 - **#7 "two result boxes" → REDESIGN**: verdict card's 2 stat tiles → full-width hero. **Mockup-first (4 distinct).**
 - **#9 goal-picker/veil** · A-sweep `.ui-close` onto remaining × · dead-CSS verify.
-- **WF-cheese INGREDIENT block still under-reads** on this hard tub. S17 improved its NUTRIENTS (comma-parse), but the ingredient-block detection was NOT changed — Luneth scoped S17 to nutrients only. Root cause: the "INGREDIENTS:" header OCR-garbles ("REE PATRRTED...") so the extractor grabs the wrong block ("DISTRIBUTED BY..."). Open.
+- **WF-cheese INGREDIENT block — FIXED (S18).** Header now line-anchored + a headerless heuristic (comma-rich run after the last %DV, truncated at the distributor tail). label-test-2 now reads the real cheese ingredients and flags modified/processed. Residual head OCR garble ("PATRRTED PROCESS") is the user's to clean in Confirm.
 - **label-test-2 ceiling (not a bug):** OCR mangles amounts (4.5g→450, mg→ng) + %-DV-only minerals have no absolute value → those need Confirm correction (now with live check feedback). Inherent OCR limit on a small curved tub.
 
 ## STANDING / PARKED (do NOT raise unprompted)
@@ -25,4 +25,4 @@ Board **91/91 throughout.** eden/ untouched — no seal applied.
 - **Drive the real app** headless (Puppeteer `--allow-file-access-from-files`; seed `localStorage.wallachUserProfile_v1={browsing:true,chosenAt}`; upload via `waitForFileChooser()` + `[data-sc-upload]`). To inspect OCR: `window.lcOcrToLabel(dataUrl)` returns {label, rawText}; `window.lcParseLabel(rawText)` re-parses raw text fast (no OCR). Recognition dict vs anti-list: `[[scanner-recognition-dict-architecture]]`.
 
 ## GENESIS
-`genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report, ask which task to resume. The scanner Confirm surface is now heavily built (S10–S17). Next unbuilt: **#7 two-result-boxes REDESIGN (mockup-first)**, **#9 goal-picker/veil**, **WF-cheese ingredient-block under-read**. Reconcile against `chronicle/tweak-list-master-2026-08-15.md`, never assume.
+`genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report, ask which task to resume. The scanner Confirm surface is now heavily built (S10–S17). Next unbuilt: **#7 two-result-boxes REDESIGN (mockup-first)**, **#9 goal-picker/veil**. Reconcile against `chronicle/tweak-list-master-2026-08-15.md`, never assume.

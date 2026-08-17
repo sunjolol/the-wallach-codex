@@ -643,11 +643,15 @@ function parseOcrText(rawTextInput: string): ParsedOcr {
   const out: ParsedOcr = { containerHint: '', ingredients: '', nutrients: [] };
   const rawText = ocrPostProcess(rawTextInput);
 
-  // Ingredients — relaxed (bounded) whitespace + a wide set of stop conditions.
-  const ingMatch = rawText.match(/INGREDIENTS?\s{0,8}[:.]?\s{0,8}([\s\S]+?)(?:\n\s*\n|NUTRITION\s+FACTS|SUPPLEMENT\s+FACTS|DIRECTIONS|SUGGESTED\s+USE|OTHER\s+INGREDIENTS|CONTAINS\s*:|WARNING|ALLERGEN|MANUFACTURED|DISTRIBUTED|$)/i);
+  // Ingredients — a real "INGREDIENTS:" header sits at a LINE START. Anchoring there avoids the
+  // trap where the only "INGREDIENTS" on a messy label is the trailing allergen line ("CONTAINS
+  // MILK INGREDIENTS.") — matching that captured the distributor block after it. Supplement
+  // "Other Ingredients:" is allowed too.
+  const ingMatch = rawText.match(/(?:^|\n)[^\S\n]{0,8}(?:OTHER\s+)?INGREDIENTS?\s{0,8}[:.]?\s{0,8}([\s\S]+?)(?:\n\s*\n|NUTRITION\s+FACTS|SUPPLEMENT\s+FACTS|DIRECTIONS|SUGGESTED\s+USE|OTHER\s+INGREDIENTS|CONTAINS\s*:|WARNING|ALLERGEN|MANUFACTURED|DISTRIBUTED|$)/i);
   if (ingMatch !== null && ingMatch[1] !== undefined) {
     const ing = ingMatch[1].trim().replace(/\s+/g, ' ').replace(/[.\s]+$/, '');
-    if (ing.length > 8) {
+    // Reject a capture that is really the distributor / contact block (defensive net).
+    if (ing.length > 8 && !/^(?:distributed|manufactured|packed|dist\.|mfg)\b/i.test(ing)) {
       out.ingredients = ing;
     }
   }
@@ -658,6 +662,37 @@ function parseOcrText(rawTextInput: string): ParsedOcr {
     const hasNutritionHeader = /NUTRITION\s+FACTS|SUPPLEMENT\s+FACTS|Calories|Serving/i.test(trimmed);
     if (commas >= 4 && trimmed.length >= 30 && trimmed.length <= 2000 && !hasNutritionHeader) {
       out.ingredients = trimmed;
+    }
+  }
+  // Mixed panel + headerless ingredient block (small tubs / linear food labels): the ingredient
+  // list sits AFTER the nutrition panel with no clean "INGREDIENTS:" header. The panel is full of
+  // "% DV" and the ingredient list has none, so take the comma-rich run after the LAST "% DV" (or
+  // the last "Protein Ng"), truncated before the distributor / contact tail.
+  if (out.ingredients === '') {
+    let body = rawText.replace(/\s+/g, ' ').trim();
+    const tail = body.search(/DISTRIBUTED\s+BY|MANUFACTURED\s+BY|PACKED\s+BY|\bwww\.|https?:\/\/|\u00A9/i);
+    if (tail > 0) {
+      body = body.slice(0, tail).trim();
+    }
+    const lastEnd = (re: RegExp): number => {
+      let end = -1;
+      for (const m of body.matchAll(re)) {
+        if (m.index !== undefined) {
+          end = m.index + (m[0]?.length ?? 0);
+        }
+      }
+      return end;
+    };
+    let start = lastEnd(/%\s*(?:dv|daily value)\s*\)?/gi);
+    if (start < 0) {
+      start = lastEnd(/\bprotein\s+\d+(?:\.\d+)?\s*g\b/gi);
+    }
+    if (start >= 0) {
+      const block = body.slice(start).replace(/^[\s.,:)]+/, '').replace(/[.\s]+$/, '');
+      const commaCount = (block.match(/,/g) ?? []).length;
+      if (commaCount >= 3 && block.length >= 30 && block.length <= 2000) {
+        out.ingredients = block;
+      }
     }
   }
 
