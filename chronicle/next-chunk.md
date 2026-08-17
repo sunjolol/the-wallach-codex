@@ -1,7 +1,7 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
 **BIG TWEAK LIST — in progress.** Authority: **`chronicle/tweak-list-master-2026-08-15.md`**.
-Board **91/91.** eden/ untouched — no seal applied. Session closed 2026-08-16 (evening).
+Board **91/91.** eden/ untouched — no seal applied. Session closed **2026-08-17 00:01 CDT**. Last session: #7 shipped as concept **B "Gap Arc"**, then the scanner result hero reframed to the item's **"hits N of 90"** + Copper→"Pepper" fix (see DONE below). **#9 is the next task.**
 
 ## ▶ START HERE — the next unbuilt item (#7 SHIPPED — see below)
 - **#9 goal-picker/veil**: veil everywhere · veil close × · hide "I'm just browsing" for an existing profile · close orange→green · **A-sweep** `.ui-close` onto every remaining × (goal chips, veil, knowledge drawers) · dead-CSS verify (`.rl-dose*`/`.ck-addcard*`/`.ck-scan*` vs the `938a407c` purge).
@@ -30,6 +30,7 @@ Scanner Confirm surface built end-to-end (S10–S18) + matcher/dict:
 ## GOTCHAS
 - **Per-file endings**: `state/ocr.ts`, `state/scanner.ts`, `views/scanner.ts`, `scanner-corpus-data.json`, `ocr-dict-data.json` are **CRLF**; chronicle .md are **LF**. `safe_write check` FIRST.
 - **Drive the real app** headless (Puppeteer `--allow-file-access-from-files`; seed `localStorage.wallachUserProfile_v1={browsing:true,chosenAt}`; upload via `waitForFileChooser()` + `[data-sc-upload]`). Inspect OCR: `window.lcOcrToLabel(dataUrl)` → {label, rawText}; `window.lcParseLabel(rawText)` re-parses fast (no OCR). Recognition dict vs anti-list: `[[scanner-recognition-dict-architecture]]`.
+- **Render a scan RESULT without OCR** (fast): in-page `const l=lcParseLabel(text); const r=lcScan(l,{logToRecent:false});` then seed `localStorage.lcSavedScans_v1={items:[{id:1,ts,label:l,verdict:r.verdict,alignment:r.alignment,goals:r.goals,gapFills:r.gapFills}]}`, reload, nav to scanner, click `[data-sc-open][data-sc-src="saved"]` → re-scores + renders the result card. Used for the pumpkin-hits screenshots.
 
 ## GENESIS
-`genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report, then **ask which task to resume (#7 or #9) via AskUserQuestion** — never assume, never a flair-only boot. If a new invariant red appears, that is the only response. Reconcile against `chronicle/tweak-list-master-2026-08-15.md`, never assume.
+`genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report, then resume **#9 (goal-picker/veil — the sole remaining START-HERE item)**, or **ask via AskUserQuestion** if he redirects — never a flair-only boot. If a new invariant red appears, that is the only response. Reconcile against `chronicle/tweak-list-master-2026-08-15.md`, never assume.
