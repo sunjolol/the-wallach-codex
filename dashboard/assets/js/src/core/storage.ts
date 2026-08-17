@@ -227,11 +227,25 @@ function setRaw(key: StorageKey, value: string): WriteResult {
 }
 
 /**
- * Restore an exported snapshot. Only app-owned keys are written; the restored /
- * skipped counts are returned so the caller can report honestly rather than
- * claiming a clean import over a partial one.
+ * Restore an exported snapshot as a TRUE REPLACE: app-owned keys ABSENT from the backup are
+ * removed first (so the origin returns to the exported state, not a merge that keeps ghosts of
+ * keys created after the backup), then the backup's keys are written. The restored / skipped /
+ * removed counts are returned so the caller can report honestly rather than claiming a clean
+ * import over a partial one. An empty backup is a NO-OP (never a wipe).
  */
-export function restore(data: Record<string, string>): { restored: number; skipped: number } {
+export function restore(data: Record<string, string>): { restored: number; skipped: number; removed: number } {
+  // TRUE restore, not a merge: drop app-owned keys ABSENT from the backup so a key created
+  // after the backup does not linger. Guarded: an empty backup clears nothing (never a wipe).
+  const incoming = new Set(Object.keys(data).filter(isAppKey));
+  let removed = 0;
+  if (incoming.size > 0) {
+    for (const k of Object.keys(snapshot())) {
+      if (!incoming.has(k)) {
+        remove(k);
+        removed++;
+      }
+    }
+  }
   let restored = 0;
   let skipped = 0;
   for (const [k, v] of Object.entries(data)) {
@@ -247,5 +261,5 @@ export function restore(data: Record<string, string>): { restored: number; skipp
       skipped++;
     }
   }
-  return { restored, skipped };
+  return { restored, skipped, removed };
 }

@@ -37,6 +37,7 @@ import { emit } from '@core/events.js';
 import {
   type AccentId,
   AvatarSchema,
+  isPresetAvatar,
   type ThemeId,
   type UserProfile,
   UserProfileSchema,
@@ -220,8 +221,16 @@ export function accentOf(profile: UserProfile | null): AccentId {
   return profile?.accent ?? 'ember';
 }
 
-/** The URL for a bundled preset avatar. One place so the view + the rail agree. */
+/** The URL for a bundled preset avatar. One place so the view + the rail agree.
+ *  Layout: the single `generic-01` -> Generic.png; `men-NN`/`women-NN` -> Men|Women/NN.png. */
 export function presetSrc(id: string): string {
+  if (id === 'generic-01') {
+    return 'assets/avatars/Generic.png';
+  }
+  const m = /^(men|women)-(\d{2})$/.exec(id);
+  if (m !== null) {
+    return `assets/avatars/${m[1] === 'men' ? 'Men' : 'Women'}/${m[2]}.png`;
+  }
   return `assets/avatars/${id}.png`;
 }
 
@@ -235,5 +244,10 @@ export function avatarSrcOf(profile: UserProfile | null): string | null {
   if (a === undefined || a === '') {
     return null;
   }
-  return a.startsWith('data:') ? a : presetSrc(a);
+  if (a.startsWith('data:')) {
+    return a;
+  }
+  // A retired/unknown preset id (an old aura/gem/world value) degrades to the default
+  // initial rather than a broken image.
+  return isPresetAvatar(a) ? presetSrc(a) : null;
 }

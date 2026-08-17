@@ -114,12 +114,12 @@ export const ACCENT_LABELS: Record<AccentId, string> = {
 };
 
 /* --- AVATAR -----------------------------------------------------------------
- * Either a PRESET id (a bundled offline PNG, families aura/gem/world) or an
+ * Either a PRESET id (a bundled offline PNG, families generic/men/women) or an
  * UPLOADED image as a data: URI. The upload is the second unbounded-input vector
  * after the name, so it is bounded HERE too: the UI downscales an upload to a
  * ~256px PNG (tens of KB) before it is ever stored, and this cap is the backstop
  * that stops a hand-edited/oversized value from eating the LS quota. */
-const AVATAR_PRESET = /^(?:aura|gem|world)-\d{2}$/;
+const AVATAR_PRESET = /^(?:men|women|generic)-\d{2}$/;
 /** ~900 KB of data-URI string. A downscaled 256px PNG is well under this; the cap
  *  only ever catches abuse, and it leaves the ~5 MB quota for the regimen. */
 export const AVATAR_MAX = 900_000;
@@ -133,6 +133,17 @@ export const AvatarSchema = z
     message: 'That image is too large to store on this device.',
   });
 
+/** True for a CURRENTLY-shipped preset id. Used to degrade a retired id to the default
+ *  avatar at the render boundary (state/profile.ts::avatarSrcOf) rather than a broken image. */
+export function isPresetAvatar(s: string): boolean {
+  return AVATAR_PRESET.test(s);
+}
+
+/** How the avatar is validated when READ from a stored profile: bounded (the size backstop
+ *  that has teeth) but tolerant of a retired/unknown preset id, so an old value never fails the
+ *  whole profile parse. The strict preset|data-URI shape is enforced on WRITE (AvatarSchema). */
+const StoredAvatarSchema = z.string().max(AVATAR_MAX);
+
 /** What is persisted. Versioned so a future shape change is a migration, not a surprise. */
 export const UserProfileSchema = z.object({
   /** Absent = the user chose "just browsing". Present = they named themselves. */
@@ -141,8 +152,12 @@ export const UserProfileSchema = z.object({
   browsing: z.boolean(),
   /** ISO date the choice was made. */
   chosenAt: z.string(),
-  /** Preset id or uploaded data: URI. Absent = the auto avatar (name initial). */
-  avatar: AvatarSchema.optional(),
+  /** The stored avatar: a preset id or an uploaded data: URI. Absent = the auto avatar (name
+   *  initial). Validated LENIENTLY here (a bounded string) so a RETIRED preset id (the old
+   *  aura/gem/world sets) does not fail the WHOLE profile parse and drop the user's name/theme/
+   *  accent; the strict preset|data-URI shape is enforced on WRITE (setAvatar + AvatarSchema),
+   *  and a retired/unknown id degrades to the default initial at avatarSrcOf. */
+  avatar: StoredAvatarSchema.optional(),
   /** Light/dark. Absent = cream (the default). */
   theme: z.enum(THEMES).optional(),
   /** Primary colour id. Absent = ember (the default). */

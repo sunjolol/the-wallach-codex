@@ -246,3 +246,98 @@
     0 0 0 60px color-mix(in srgb, var(--ds-accent) 4%, transparent) inset,
     0 0 0 120px color-mix(in srgb, var(--ds-accent) 2%, transparent) inset;
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * DARK READABILITY PASS (2026-08-17) — the systemic fix. An agentic sweep found
+ * ~50 dark-mode defects that traced to a handful of "wash"/"soft"/"tech" token
+ * families authored for cream paper that theme.css never remapped for dark, so
+ * every hover/focus/status/wash consumer flashed a bright pale patch on charcoal.
+ * Remapping the TOKENS (translucent color-mix tints, the .vd-pill recipe) fixes
+ * the majority at once; the rest are hardcoded #fff hovers, mark text, the
+ * .ui-close cream glow, and constant-hue islands that need targeted overrides.
+ * This block is LATER than the [data-accent] blocks, so the accent-wash/soft
+ * remaps win at equal specificity. (Absorption + ORAC excluded — being redesigned.)
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* (A) SYSTEMIC — recomposite the never-remapped wash/soft/tech tokens over dark.
+   Translucent so they read as a subtle tint when used as a FILL and as a soft glow
+   when used as a focus/halo box-shadow. Tracks the live accent. */
+:root[data-theme="dark"] {
+  --ds-accent-wash:      color-mix(in srgb, var(--ds-accent) 16%, transparent);
+  --ds-accent-soft:      color-mix(in srgb, var(--ds-accent) 34%, transparent);
+  --ds-status-ok-soft:   color-mix(in srgb, var(--ds-status-ok) 20%, transparent);
+  --ds-status-warn-soft: color-mix(in srgb, var(--ds-status-warn) 20%, transparent);
+  --ds-status-err-soft:  color-mix(in srgb, var(--ds-status-err) 20%, transparent);
+  --ds-status-info-soft: color-mix(in srgb, var(--ds-status-info) 20%, transparent);
+  --ds-ok-wash:          color-mix(in srgb, var(--ds-status-ok) 18%, transparent);
+  --ds-tech-wash:        color-mix(in srgb, var(--ds-tech) 18%, transparent);
+}
+
+/* (B) Highlighter marks (pull-quote + live search hits) — the swatch stays pale but the
+   text is color:inherit, which flips light in dark → light-on-light. Pin the ink dark. */
+:root[data-theme="dark"] :is(.ds-canvas mark, .ds-mark),
+:root[data-theme="dark"] #drawer-knowledge-mount mark.kd-search-hl {
+  color: var(--ds-paper);
+}
+
+/* (C) The canonical close button's cream neumorphic top-light glows on charcoal (all
+   modal/card/drawer closes, app-wide). Re-pin the shadow dark like the .scr-nav twin. */
+:root[data-theme="dark"] .ui-close {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.45), -1px -1px 4px rgba(255, 255, 255, 0.03);
+}
+:root[data-theme="dark"] .ui-close--sm {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4), -1px -1px 3px rgba(255, 255, 255, 0.03);
+}
+:root[data-theme="dark"] .ui-close:focus-visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--ds-accent) 30%, transparent);
+}
+
+/* (D) Hardcoded #fff hovers (not token-based, so the remaps above miss them) — the
+   Ask-Wallach browse/topic cards and the Knowledge product/condition rows. */
+:root[data-theme="dark"] #drawer-search-mount :is(.kcard, .tcard, .brow-card):hover {
+  background: color-mix(in srgb, var(--k, var(--ds-accent)) 14%, var(--ds-paper-light));
+}
+:root[data-theme="dark"] #drawer-knowledge-mount :is(.kd-product-row, .kd-condition-row):hover {
+  background: var(--ds-paper-light);
+}
+
+/* (E) Constant-hue / dark-chrome islands that INVERT when ink/paper flip. */
+/* score tooltip: --ds-ink bg becomes light → re-pin to a real dark plate */
+:root[data-theme="dark"] .rec__tip {
+  background: var(--ds-paper-deep);
+  color: var(--ds-ink);
+}
+/* recycle scrim built from --ds-ink would milk-over the page → a true dark scrim */
+:root[data-theme="dark"] .rc-backdrop {
+  background: color-mix(in srgb, #000000 55%, transparent);
+}
+/* coloured save-slot header + featured citation are white-text islands — re-pin their
+   two flipping tokens (the rail precedent) so they render like cream mode */
+:root[data-theme="dark"] :is(.ck-slot__top, .rc-gtile__top) {
+  --ds-paper-light: #fffbf2;
+  --ds-ink: #1a1612;
+}
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-featured-citation {
+  --ds-ink: #1a1612;
+  --ds-ink-medium: #3d342a;
+  --ds-paper: #faf5e8;
+}
+
+/* (F) Hardcoded white neumorphic top-lights in the Coverage field (not covered by the
+   token remaps). Drop the bright crescent/hairline to a faint dark-friendly highlight. */
+:root[data-theme="dark"] :is(.tile, .tile--vitamin, .tile--amino, .tile--fat):hover {
+  box-shadow: inset 0 0 0 1px var(--ds-accent), inset 0 2px 0 -1px rgba(255, 255, 255, 0.10), var(--ds-glow-accent-sm);
+}
+:root[data-theme="dark"] .cov-d .essentials-host {
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.4), inset 0 0 0 1px var(--ds-rule);
+}
+
+/* (G) Small legibility lifts: deep-accent text now sits on the dark accent tints (reads
+   dim) → the bright accent; glyphs that must stay light on a coloured disc. */
+:root[data-theme="dark"] :is(.rc-btn-ghost, .rc-trigger:hover, .ck-slot--empty:hover .ck-slot__emptylabel) {
+  color: var(--ds-accent-bright);
+}
+:root[data-theme="dark"] .vd-error__ic {
+  color: #f3ead7;
+}

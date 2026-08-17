@@ -102,6 +102,14 @@
   function getRaw(key) {
     return localStorage.getItem(key);
   }
+  function remove(key) {
+    try {
+      localStorage.removeItem(key);
+      return { ok: true, key };
+    } catch {
+      return { ok: false, key, reason: "remove-failed" };
+    }
+  }
   function onChange(handler) {
     installNativeListener();
     subscribers2.add(handler);
@@ -139,6 +147,16 @@
     return { ok: true, key };
   }
   function restore(data6) {
+    const incoming = new Set(Object.keys(data6).filter(isAppKey));
+    let removed = 0;
+    if (incoming.size > 0) {
+      for (const k of Object.keys(snapshot())) {
+        if (!incoming.has(k)) {
+          remove(k);
+          removed++;
+        }
+      }
+    }
     let restored = 0;
     let skipped = 0;
     for (const [k, v] of Object.entries(data6)) {
@@ -153,7 +171,7 @@
         skipped++;
       }
     }
-    return { restored, skipped };
+    return { restored, skipped, removed };
   }
 
   // assets/data/corpus-embed.json
@@ -19464,13 +19482,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     teal: "Teal",
     slate: "Slate"
   };
-  var AVATAR_PRESET = /^(?:aura|gem|world)-\d{2}$/;
+  var AVATAR_PRESET = /^(?:men|women|generic)-\d{2}$/;
   var AVATAR_MAX = 9e5;
   var AvatarSchema = external_exports.string().refine((s) => AVATAR_PRESET.test(s) || s.startsWith("data:image/"), {
     message: "An avatar must be a preset or an uploaded image."
   }).refine((s) => s.length <= AVATAR_MAX, {
     message: "That image is too large to store on this device."
   });
+  function isPresetAvatar(s) {
+    return AVATAR_PRESET.test(s);
+  }
+  var StoredAvatarSchema = external_exports.string().max(AVATAR_MAX);
   var UserProfileSchema = external_exports.object({
     /** Absent = the user chose "just browsing". Present = they named themselves. */
     name: UserNameSchema.optional(),
@@ -19478,8 +19500,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     browsing: external_exports.boolean(),
     /** ISO date the choice was made. */
     chosenAt: external_exports.string(),
-    /** Preset id or uploaded data: URI. Absent = the auto avatar (name initial). */
-    avatar: AvatarSchema.optional(),
+    /** The stored avatar: a preset id or an uploaded data: URI. Absent = the auto avatar (name
+     *  initial). Validated LENIENTLY here (a bounded string) so a RETIRED preset id (the old
+     *  aura/gem/world sets) does not fail the WHOLE profile parse and drop the user's name/theme/
+     *  accent; the strict preset|data-URI shape is enforced on WRITE (setAvatar + AvatarSchema),
+     *  and a retired/unknown id degrades to the default initial at avatarSrcOf. */
+    avatar: StoredAvatarSchema.optional(),
     /** Light/dark. Absent = cream (the default). */
     theme: external_exports.enum(THEMES).optional(),
     /** Primary colour id. Absent = ember (the default). */
@@ -19596,6 +19622,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return profile?.accent ?? "ember";
   }
   function presetSrc(id) {
+    if (id === "generic-01") {
+      return "assets/avatars/Generic.png";
+    }
+    const m = /^(men|women)-(\d{2})$/.exec(id);
+    if (m !== null) {
+      return `assets/avatars/${m[1] === "men" ? "Men" : "Women"}/${m[2]}.png`;
+    }
     return `assets/avatars/${id}.png`;
   }
   function avatarSrcOf(profile) {
@@ -19603,7 +19636,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     if (a === void 0 || a === "") {
       return null;
     }
-    return a.startsWith("data:") ? a : presetSrc(a);
+    if (a.startsWith("data:")) {
+      return a;
+    }
+    return isPresetAvatar(a) ? presetSrc(a) : null;
   }
 
   // assets/js/src/core/format.ts
@@ -27555,9 +27591,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       if (t === null) {
         return;
       }
-      const remove = t.closest("[data-goal-remove]");
-      if (remove !== null) {
-        const id = remove.dataset["goalRemove"] ?? "";
+      const remove2 = t.closest("[data-goal-remove]");
+      if (remove2 !== null) {
+        const id = remove2.dataset["goalRemove"] ?? "";
         saveRgUserGoals((loadRgUserGoals() ?? []).filter((g) => g !== id));
         return;
       }
@@ -175336,7 +175372,7 @@ Goiter`,
     </div>`;
   }
   function renderFoodsTab() {
-    const remove = foodsRemove();
+    const remove2 = foodsRemove();
     const eat = foodsEat();
     const conditional = foodsConditional();
     return `<div class="kt-page kd-ep kd-foods">
@@ -175375,7 +175411,7 @@ Goiter`,
       <div class="kd-foods-contrast__grid">
         <div class="kd-foods-col kd-foods-col--remove">
           <div class="kd-foods-col__hd">${escHTML7(ui("kd_foods_col_remove"))}</div>
-          ${remove.map((c) => foodItem(c, "remove")).join("")}
+          ${remove2.map((c) => foodItem(c, "remove")).join("")}
         </div>
         <div class="kd-foods-col kd-foods-col--eat">
           <div class="kd-foods-col__hd">${escHTML7(ui("kd_foods_col_eat"))}</div>
@@ -181437,7 +181473,7 @@ FILES:
 
 VERIFY: tsc + esbuild 0; invariants 91/91 (dead-rule gate green); render_probe_ocr/scan/scanner 0; live re-open render of the pumpkin label screenshotted and signed off. Coverage tab untouched.
 
-DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (small green arc) \u2014 he may want a more strengths-forward visual later; the caption/deck/"delivered strongly" wording is open to tuning.` }, { id: "lg_mswrpghb_bd3z0g", ts: "2026-08-17T00:02:50.543791-05:00", surface: "session", kind: "session-end", summary: "Session close 2026-08-17. #7 verdict-hero shipped (built A -> re-ranked -> B 'Gap Arc'), then the scanner result hero reframed to the item's 'hits N of 90' (>=3% of Wallach's target) + Copper->'Pepper' fix. Board 91/91, eden untouched. Next: #9 goal-picker/veil.", detail: "Session arc (all committed + pushed to origin/master):\n\n1. #7 result verdict-card redesign. Mockup-first: 4 genuinely-distinct 'N of 90' hero concepts rendered in true geometry (temporary/scanner-verdict-hero-demos.html). Luneth picked A (Deficit Rail), I built + he signed it off (06c582e9); he then re-ranked B>D>A>C after seeing them live and picked B (Gap Arc), which I built to replace A (904528fc).\n\n2. Scanner reframe (babaf9b6). Luneth flagged that scanning pumpkin seeds showed '0 reach the 90' because the hero was full-COVERAGE (Wallach targets are so high only the whole Youngevity stack meets them -> a shill funnel). Reframed the scan hero to the ITEM's 'hits N of 90' = essentials delivered >=3% of the Wallach target (00.A-clean; ~52 undosed essentials are honest non-hits). Also fixed ocrFuzzyFix corrupting 'Copper'->'Pepper'. Pumpkin now reads 'Worth adding - delivers 6 - 2 strongly'. Doctrine saved to memory (scanner-hits-not-covers-doctrine).\n\nBoard 91/91 throughout; every visual chunk went mockup/live-render -> Luneth sign-off before commit.\n\nNEXT: #9 goal-picker/veil (veil everywhere + close x, hide 'I'm just browsing' for an existing profile, close orange->green, .ui-close A-sweep, dead-CSS verify). DEFERRED (Luneth left open): the scanner /90 gauge reads modest for a food (maybe a strengths-forward visual); caption/wording tuning." }, { id: "lg_msxd4hdc_jguqvx", ts: "2026-08-17T10:02:23.472355-05:00", surface: "regimen+welcome+app-wide", kind: "round-close", summary: "#9 shipped: the goal picker is now one surface \u2014 Regimen\u2019s \u201C+ Add goal\u201D opens the same full veil as Coverage, the veil got a close \xD7 and stops re-asking existing users \u2014 and every leftover ad-hoc close \xD7 across the app now uses the one standard .ui-close button.", detail: "Two changes that make the app feel like one consistent thing. First, there used to be two ways to pick your goals \u2014 a big first-visit invitation on Coverage and a separate little drop-down in Regimen; now they open the SAME surface, it has a close \xD7 in the corner, and once you already have a profile it stops re-asking your name or offering \u201CI\u2019m just browsing.\u201D Second, all the mismatched little \xD7 buttons scattered around the app are now one standard close button that follows whatever theme colour you pick.\n\nVEIL UNIFICATION (commit 1e657165): welcome.ts gained a close \xD7 (.ui-close.wc__x, [data-veil-close]) \u2014 on reopen it cancels (profile+goals untouched), on first arrival it records {browsing:true} so it never re-nags; the browse button + name block are ${reopen ? \u2019\u2019 : \u2026}-gated. regimen.ts\u2019 [data-goal-add] now fires wallach:open-welcome (the event Coverage already fired) and the dead inline ck-goalmenu is severed (renderGoalMenu fn + call + data-goal-pick handler + .ck-goalmenu CSS). The \xD7 inherits .ui-close\u2019s --ds-accent hover (theme/colour-picker driven) \u2014 I first shipped it GREEN, Luneth corrected it (green is only for the green-coded search surface), reverted; saved as memory close-x-follows-theme-accent.\n\nA-SWEEP (this commit): 5 bespoke \xD7s adopt .ui-close (SVG X, theme-accent hover) \u2014 goal-chip .gchip__x (regimen+coverage, sized to the pill via --uic-size:20px, hover-reveal kept), knowledge .kd-knh__close, profile .pf-close, scanner OCR-suspect .vd-ocr__x (--uic-size:24px), recycle .rc-pop__x \xD72. The Ask-Wallach search close .scr-nav--close deliberately stays --aw-green. Old classes reduced to layout-only; all data-* hooks kept.\n\nVERIFY: build 0; invariants 91/91 (dead-rule gate green); render probes coverage_add_remove(31)/knowledge/profile/recycle/scanner all 0; e2e 22 veil assertions + per-\xD7 .ui-close+SVG checks; Luneth live sign-off on both. Full technical record in chronicle/build-log.md (two 2026-08-17 lines). The big-tweak list (2026-08-15) is now closed. eden/ untouched." }, { id: "lg_msxe3k17_l9shwi", ts: "2026-08-17T10:29:39.883995-05:00", surface: "regimen+coverage", kind: "round-close", summary: "Cleared the two deferred regimen findings: the add-or-bump dedup rule now lives in one shared helper (Coverage\u2019s rec-card \u201C+\u201D delegates to it), and the regimen refusal message is a real styled floating toast instead of unstyled text at the bottom of the page.", detail: "Two small, long-parked regimen code cleanups (flagged during #8b, deliberately held until after the big-tweak list; that list closed this session, so I raised them). Neither changes what you normally see.\n\nFINDING 1 \u2014 one source of truth for add-or-bump. Adding a supplement already in your stack raises its dose instead of making a duplicate row (a duplicate would double-count on the field). That rule existed in TWO hand-maintained places: coverage.ts::addVaultProduct and the shared state/regimen.ts::addOrBumpRegimenItem. addVaultProduct now just mints the item and calls the shared helper. Removing coverage\u2019s copy left state/regimen.ts::loadRgManual with no importers \u2014 the no_new_dead_code gate went red (a red CAUSED by the fix, not a regression), so the dead export was removed too. Behaviour-identical; render_probe_regimen_dedup (re-add \u2192 dose 1\u21922, one row) + the 31-check coverage loop both pass.\n\nFINDING 2 \u2014 the refusal toast. When the regimen refuses an action (e.g. importing a file that isn\u2019t a valid regimen), it shows a short message. Its CSS class (.ck-undo) had ZERO styling, so it rendered as bare text at the bottom of the content. Now it\u2019s a real toast pill: workspace-regimen.css .ck-toast \u2014 fixed, bottom-centre, --ds-paper + --ds-elev-3 + a --ds-accent left-border, auto-hides after 8s. Also removed dead code: the slot-delete undo path was cut long ago so nothing passed an `undo` fn \u2014 dropped the param + the .ck-undo__btn block \u2014 and renamed for honesty (ck-undo\u2192ck-toast, data-undo\u2192data-toast, undoTimer\u2192toastTimer). A comment points future actionable toasts at the design-system .ds-slot-toast region. Verified with a REAL trigger (invalid-file import \u2192 \u2018That file is not valid JSON.\u2019): visible, position:fixed, z 110, message present; 5/5, 0 errors. First placed top-right (the .ds-slot-toast convention) but it overlapped the Ask-Wallach button, so moved bottom-centre; Luneth signed off.\n\nVERIFY: build 0; invariants 91/91; render probes coverage_add_remove(31)/regimen_dedup/recycle/recycle_ui/recycle_d2/slots/slot_delete_confirm all 0. Full technicals in chronicle/build-log.md (two 2026-08-17 10:27 lines). The memory that parked these (regimen-two-deferred-findings) is now resolved. eden/ untouched." }];
+DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (small green arc) \u2014 he may want a more strengths-forward visual later; the caption/deck/"delivered strongly" wording is open to tuning.` }, { id: "lg_mswrpghb_bd3z0g", ts: "2026-08-17T00:02:50.543791-05:00", surface: "session", kind: "session-end", summary: "Session close 2026-08-17. #7 verdict-hero shipped (built A -> re-ranked -> B 'Gap Arc'), then the scanner result hero reframed to the item's 'hits N of 90' (>=3% of Wallach's target) + Copper->'Pepper' fix. Board 91/91, eden untouched. Next: #9 goal-picker/veil.", detail: "Session arc (all committed + pushed to origin/master):\n\n1. #7 result verdict-card redesign. Mockup-first: 4 genuinely-distinct 'N of 90' hero concepts rendered in true geometry (temporary/scanner-verdict-hero-demos.html). Luneth picked A (Deficit Rail), I built + he signed it off (06c582e9); he then re-ranked B>D>A>C after seeing them live and picked B (Gap Arc), which I built to replace A (904528fc).\n\n2. Scanner reframe (babaf9b6). Luneth flagged that scanning pumpkin seeds showed '0 reach the 90' because the hero was full-COVERAGE (Wallach targets are so high only the whole Youngevity stack meets them -> a shill funnel). Reframed the scan hero to the ITEM's 'hits N of 90' = essentials delivered >=3% of the Wallach target (00.A-clean; ~52 undosed essentials are honest non-hits). Also fixed ocrFuzzyFix corrupting 'Copper'->'Pepper'. Pumpkin now reads 'Worth adding - delivers 6 - 2 strongly'. Doctrine saved to memory (scanner-hits-not-covers-doctrine).\n\nBoard 91/91 throughout; every visual chunk went mockup/live-render -> Luneth sign-off before commit.\n\nNEXT: #9 goal-picker/veil (veil everywhere + close x, hide 'I'm just browsing' for an existing profile, close orange->green, .ui-close A-sweep, dead-CSS verify). DEFERRED (Luneth left open): the scanner /90 gauge reads modest for a food (maybe a strengths-forward visual); caption/wording tuning." }, { id: "lg_msxd4hdc_jguqvx", ts: "2026-08-17T10:02:23.472355-05:00", surface: "regimen+welcome+app-wide", kind: "round-close", summary: "#9 shipped: the goal picker is now one surface \u2014 Regimen\u2019s \u201C+ Add goal\u201D opens the same full veil as Coverage, the veil got a close \xD7 and stops re-asking existing users \u2014 and every leftover ad-hoc close \xD7 across the app now uses the one standard .ui-close button.", detail: "Two changes that make the app feel like one consistent thing. First, there used to be two ways to pick your goals \u2014 a big first-visit invitation on Coverage and a separate little drop-down in Regimen; now they open the SAME surface, it has a close \xD7 in the corner, and once you already have a profile it stops re-asking your name or offering \u201CI\u2019m just browsing.\u201D Second, all the mismatched little \xD7 buttons scattered around the app are now one standard close button that follows whatever theme colour you pick.\n\nVEIL UNIFICATION (commit 1e657165): welcome.ts gained a close \xD7 (.ui-close.wc__x, [data-veil-close]) \u2014 on reopen it cancels (profile+goals untouched), on first arrival it records {browsing:true} so it never re-nags; the browse button + name block are ${reopen ? \u2019\u2019 : \u2026}-gated. regimen.ts\u2019 [data-goal-add] now fires wallach:open-welcome (the event Coverage already fired) and the dead inline ck-goalmenu is severed (renderGoalMenu fn + call + data-goal-pick handler + .ck-goalmenu CSS). The \xD7 inherits .ui-close\u2019s --ds-accent hover (theme/colour-picker driven) \u2014 I first shipped it GREEN, Luneth corrected it (green is only for the green-coded search surface), reverted; saved as memory close-x-follows-theme-accent.\n\nA-SWEEP (this commit): 5 bespoke \xD7s adopt .ui-close (SVG X, theme-accent hover) \u2014 goal-chip .gchip__x (regimen+coverage, sized to the pill via --uic-size:20px, hover-reveal kept), knowledge .kd-knh__close, profile .pf-close, scanner OCR-suspect .vd-ocr__x (--uic-size:24px), recycle .rc-pop__x \xD72. The Ask-Wallach search close .scr-nav--close deliberately stays --aw-green. Old classes reduced to layout-only; all data-* hooks kept.\n\nVERIFY: build 0; invariants 91/91 (dead-rule gate green); render probes coverage_add_remove(31)/knowledge/profile/recycle/scanner all 0; e2e 22 veil assertions + per-\xD7 .ui-close+SVG checks; Luneth live sign-off on both. Full technical record in chronicle/build-log.md (two 2026-08-17 lines). The big-tweak list (2026-08-15) is now closed. eden/ untouched." }, { id: "lg_msxe3k17_l9shwi", ts: "2026-08-17T10:29:39.883995-05:00", surface: "regimen+coverage", kind: "round-close", summary: "Cleared the two deferred regimen findings: the add-or-bump dedup rule now lives in one shared helper (Coverage\u2019s rec-card \u201C+\u201D delegates to it), and the regimen refusal message is a real styled floating toast instead of unstyled text at the bottom of the page.", detail: "Two small, long-parked regimen code cleanups (flagged during #8b, deliberately held until after the big-tweak list; that list closed this session, so I raised them). Neither changes what you normally see.\n\nFINDING 1 \u2014 one source of truth for add-or-bump. Adding a supplement already in your stack raises its dose instead of making a duplicate row (a duplicate would double-count on the field). That rule existed in TWO hand-maintained places: coverage.ts::addVaultProduct and the shared state/regimen.ts::addOrBumpRegimenItem. addVaultProduct now just mints the item and calls the shared helper. Removing coverage\u2019s copy left state/regimen.ts::loadRgManual with no importers \u2014 the no_new_dead_code gate went red (a red CAUSED by the fix, not a regression), so the dead export was removed too. Behaviour-identical; render_probe_regimen_dedup (re-add \u2192 dose 1\u21922, one row) + the 31-check coverage loop both pass.\n\nFINDING 2 \u2014 the refusal toast. When the regimen refuses an action (e.g. importing a file that isn\u2019t a valid regimen), it shows a short message. Its CSS class (.ck-undo) had ZERO styling, so it rendered as bare text at the bottom of the content. Now it\u2019s a real toast pill: workspace-regimen.css .ck-toast \u2014 fixed, bottom-centre, --ds-paper + --ds-elev-3 + a --ds-accent left-border, auto-hides after 8s. Also removed dead code: the slot-delete undo path was cut long ago so nothing passed an `undo` fn \u2014 dropped the param + the .ck-undo__btn block \u2014 and renamed for honesty (ck-undo\u2192ck-toast, data-undo\u2192data-toast, undoTimer\u2192toastTimer). A comment points future actionable toasts at the design-system .ds-slot-toast region. Verified with a REAL trigger (invalid-file import \u2192 \u2018That file is not valid JSON.\u2019): visible, position:fixed, z 110, message present; 5/5, 0 errors. First placed top-right (the .ds-slot-toast convention) but it overlapped the Ask-Wallach button, so moved bottom-centre; Luneth signed off.\n\nVERIFY: build 0; invariants 91/91; render probes coverage_add_remove(31)/regimen_dedup/recycle/recycle_ui/recycle_d2/slots/slot_delete_confirm all 0. Full technicals in chronicle/build-log.md (two 2026-08-17 10:27 lines). The memory that parked these (regimen-two-deferred-findings) is now resolved. eden/ untouched." }, { id: "lg_msxh2kd2_vgd0dy", ts: "2026-08-17T11:52:52.502522-05:00", surface: "profile+app-wide", kind: "round-close", summary: "Profile feature audited + hardened: new real-portrait avatars (Generic/Men/Women, 25), modal focus a11y + control labeling, a true-replace backup import, and a systemic dark-theme readability pass (~50 charcoal defects fixed at the token root).", detail: "The Profile console was already shipped, so this session AUDITED it (a 12-finding adversarial workflow), then fixed what Luneth picked, swapped the avatar art he supplied, and ran a second workflow to clean up the dark theme app-wide.\n\nAVATARS: replaced the abstract aura/gem/world sets with 25 real painted portraits Luneth added \u2014 Generic (1), Men (12), Women (12) \u2014 new categories All/Generic/Men/Women, keeping the upload + default-initial. Old 32 files deleted. Migration matters: the stored avatar now validates leniently (a bounded string) so a RETIRED id degrades to the default initial rather than failing the whole profile parse (which would drop the user\u2019s name/theme); the strict shape check stays on write. Count derived, not hardcoded. Profile tiny-text 0.52\u21920.65rem.\n\nAUDIT FIXES: (1) modal focus a11y \u2014 the pop-up now moves focus in on open, traps Tab, and restores focus to the opener on close. (2) labeling \u2014 the 25 tiles, theme/colour/filter buttons announce name + selected state; errors are a live region. (3) import safety \u2014 restore() is a TRUE REPLACE (clears keys absent from the backup, guarded against wiping) and a partial/quota-truncated import is surfaced instead of a fake-success reload. (#8 decided: replace, not merge.)\n\nDARK PASS: a 6-agent sweep found 51 charcoal defects; almost all traced to a few colour families (--ds-accent-wash/soft, --ds-status-*-soft, --ds-ok-wash, --ds-tech-wash) that were only defined for the light theme. Remapping THOSE for dark (translucent tints, the verdict-pill recipe) cascade-fixed most \u2014 hovers, focus rings, status pills, the scanner check-glyphs/step-rings/\u2018Yours\xB7user-scanned\u2019, the reset chip. Targeted overrides handled the rest: highlighter mark text pinned dark, the .ui-close cream glow, the hardcoded #fff card hovers, and the inverting ink/paper islands (tooltip, scrim, save-slot header, featured citation). Absorption + ORAC excluded (being redesigned).\n\nVERIFY: build 0 throughout; invariants 91/91; render probes profile/coverage/knowledge/scanner/search/recycle/slots/slot-delete all 0; targeted e2e 11+7+9+3 all green; live dark screenshots signed off. The earlier part of the session (veil #9, the .ui-close A-sweep, the two deferred regimen findings) shipped in commits 1e657165 / a54145a9 / 98ff7748. eden/ untouched. Full technicals: chronicle/build-log.md (three 2026-08-17 11:50 lines)." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -181471,9 +181507,9 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
 
   // assets/js/src/views/profile.ts
   var FAMILIES = [
-    { id: "aura", count: 12, label: "Auras" },
-    { id: "gem", count: 12, label: "Gems" },
-    { id: "world", count: 8, label: "Worlds" }
+    { id: "generic", count: 1, label: "Generic" },
+    { id: "men", count: 12, label: "Men" },
+    { id: "women", count: 12, label: "Women" }
   ];
   var NAME_MAX = 24;
   function pad2(n) {
@@ -181543,7 +181579,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
     return `<details class="pf-log"><summary class="pf-log__sum">Creator's Log \xB7 <b>${entries.length}</b> entries</summary><div class="pf-log__stream">${entries.map(renderLogEntry).join("")}</div></details>`;
   }
   function shell() {
-    const swatches = ACCENTS.map((id) => `<button class="pf-sw" data-accent="${id}" style="--sw: var(--acc-${id})" title="${ACCENT_LABELS[id]}" type="button"></button>`).join("");
+    const swatches = ACCENTS.map((id) => `<button class="pf-sw" data-accent="${id}" style="--sw: var(--acc-${id})" title="${ACCENT_LABELS[id]}" aria-label="${ACCENT_LABELS[id]}" aria-pressed="false" type="button"></button>`).join("");
     return `
     <div class="pf-panel" role="dialog" aria-modal="true" aria-label="Profile">
       <div class="pf-head">
@@ -181559,7 +181595,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
           </div>
           <div class="pf-nameblock">
             <div class="pf-namefield">
-              <input class="pf-name" data-name type="text" maxlength="${NAME_MAX}" placeholder="Set your name" autocomplete="off" spellcheck="false" aria-label="Your name">
+              <input class="pf-name" data-name type="text" maxlength="${NAME_MAX}" placeholder="Set your name" autocomplete="off" spellcheck="false" aria-label="Your name" aria-describedby="pfErr">
               <span class="pf-pencil">${IC.pencil}</span>
             </div>
             <div class="pf-namemeta">
@@ -181567,23 +181603,23 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
               <span>\xB7</span>
               <span class="pf-cnt" data-cnt>0/${NAME_MAX}</span>
             </div>
-            <div class="pf-err" data-err></div>
+            <div class="pf-err" data-err id="pfErr" role="alert" aria-live="polite"></div>
           </div>
         </div>
 
         <div class="pf-body">
-          <div class="pf-label"><b>Choose your avatar</b> \xB7 <span>32 graphics</span></div>
+          <div class="pf-label"><b>Choose your avatar</b> \xB7 <span>${presetIds().length} graphics</span></div>
           <div class="pf-filters" data-filters>
-            <button class="pf-fchip on" data-fam="all" type="button">All</button>
-            ${FAMILIES.map((f) => `<button class="pf-fchip" data-fam="${f.id}" type="button">${f.label}</button>`).join("")}
+            <button class="pf-fchip on" data-fam="all" type="button" aria-pressed="true">All</button>
+            ${FAMILIES.map((f) => `<button class="pf-fchip" data-fam="${f.id}" type="button" aria-pressed="false">${f.label}</button>`).join("")}
           </div>
           <div class="pf-grid" data-grid></div>
 
           <div class="pf-label"><b>Theme</b> \xB7 style only, never function</div>
           <div class="pf-appearance">
             <div class="pf-modeseg" data-modeseg>
-              <button class="pf-modeb" data-mode="cream" type="button">${IC.sun} Cream</button>
-              <button class="pf-modeb" data-mode="dark" type="button">${IC.moon} Charcoal</button>
+              <button class="pf-modeb" data-mode="cream" type="button" aria-pressed="false">${IC.sun} Cream</button>
+              <button class="pf-modeb" data-mode="dark" type="button" aria-pressed="false">${IC.moon} Charcoal</button>
             </div>
           </div>
           <div class="pf-swatches" data-swatches>${swatches}</div>
@@ -181659,12 +181695,16 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       }
       const cur = p?.avatar ?? "";
       for (const t of container.querySelectorAll(".pf-tile[data-avatar]")) {
-        t.classList.toggle("sel", t.dataset["avatar"] === cur);
+        const on2 = t.dataset["avatar"] === cur;
+        t.classList.toggle("sel", on2);
+        t.setAttribute("aria-pressed", String(on2));
       }
       const defTile = container.querySelector(".pf-tile--default");
       if (defTile !== null) {
         defTile.textContent = displayInitial(p);
-        defTile.classList.toggle("sel", src === null);
+        const defOn = src === null;
+        defTile.classList.toggle("sel", defOn);
+        defTile.setAttribute("aria-pressed", String(defOn));
       }
     };
     const paintNameMeta = () => {
@@ -181687,10 +181727,14 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       const theme = themeOf(p);
       const accent = accentOf(p);
       for (const b of container.querySelectorAll(".pf-modeb")) {
-        b.classList.toggle("on", b.dataset["mode"] === theme);
+        const on2 = b.dataset["mode"] === theme;
+        b.classList.toggle("on", on2);
+        b.setAttribute("aria-pressed", String(on2));
       }
       for (const s of container.querySelectorAll(".pf-sw")) {
-        s.classList.toggle("on", s.dataset["accent"] === accent);
+        const on2 = s.dataset["accent"] === accent;
+        s.classList.toggle("on", on2);
+        s.setAttribute("aria-pressed", String(on2));
       }
     };
     const renderGrid = () => {
@@ -181703,6 +181747,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       up.type = "button";
       up.title = "Upload a photo";
       up.dataset["act"] = "upload";
+      up.setAttribute("aria-label", "Upload a photo");
       up.innerHTML = IC.upload;
       frag.appendChild(up);
       const def = document.createElement("button");
@@ -181719,6 +181764,10 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
         b.className = "pf-tile";
         b.type = "button";
         b.dataset["avatar"] = id;
+        const famId = id.split("-")[0] ?? id;
+        const famLabel = FAMILIES.find((f) => f.id === famId)?.label ?? famId;
+        b.setAttribute("aria-label", famId === "generic" ? "Generic avatar" : `${famLabel} avatar ${Number(id.split("-")[1] ?? "0")}`);
+        b.setAttribute("aria-pressed", "false");
         const img = document.createElement("img");
         img.className = "pf-tile__img";
         img.loading = "lazy";
@@ -181792,7 +181841,11 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
           showErr("That is not a Codex backup file.");
           return;
         }
-        restore(env.data.data);
+        const res = restore(env.data.data);
+        if (res.skipped > 0) {
+          showErr(`Import incomplete \u2014 ${res.skipped} item(s) could not be saved; this device may be out of room. ${res.restored} restored.`);
+          return;
+        }
         window.location.reload();
       };
       reader.onerror = () => showErr("That file could not be read.");
@@ -181834,7 +181887,9 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       if (fchip !== null) {
         fam = fchip.dataset["fam"] ?? "all";
         for (const c of container.querySelectorAll(".pf-fchip")) {
-          c.classList.toggle("on", c === fchip);
+          const on2 = c === fchip;
+          c.classList.toggle("on", on2);
+          c.setAttribute("aria-pressed", String(on2));
         }
         renderGrid();
         return;
@@ -185148,6 +185203,8 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
   }
   var profileHandle = null;
   var profileOverlay = null;
+  var profileTrigger = null;
+  var PF_FOCUSABLE = 'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
   function hideProfilePanel() {
     if (profileHandle !== null) {
       profileHandle.unmount();
@@ -185157,11 +185214,16 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       profileOverlay.remove();
       profileOverlay = null;
     }
+    if (profileTrigger !== null) {
+      profileTrigger.focus();
+      profileTrigger = null;
+    }
   }
   function showProfilePanel() {
     if (profileOverlay !== null) {
       return;
     }
+    profileTrigger = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     const overlay = document.createElement("div");
     overlay.className = "pf-overlay";
     overlay.addEventListener("click", (ev) => {
@@ -185170,9 +185232,36 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       }
     });
     overlay.addEventListener("pf:close", () => hideProfilePanel());
+    overlay.addEventListener("keydown", (ev) => {
+      if (ev.key !== "Tab") {
+        return;
+      }
+      const panel2 = overlay.querySelector(".pf-panel");
+      if (panel2 === null) {
+        return;
+      }
+      const items = [...panel2.querySelectorAll(PF_FOCUSABLE)].filter((el) => el.offsetParent !== null);
+      const first = items[0];
+      const last = items[items.length - 1];
+      if (first === void 0 || last === void 0) {
+        return;
+      }
+      if (ev.shiftKey && document.activeElement === first) {
+        ev.preventDefault();
+        last.focus();
+      } else if (!ev.shiftKey && document.activeElement === last) {
+        ev.preventDefault();
+        first.focus();
+      }
+    });
     document.body.appendChild(overlay);
     profileOverlay = overlay;
     profileHandle = mount3(overlay);
+    const panel = overlay.querySelector(".pf-panel");
+    if (panel !== null) {
+      panel.tabIndex = -1;
+      panel.focus();
+    }
   }
   function wireTopbarSearch() {
     const btn = document.querySelector(".topbar__ask");

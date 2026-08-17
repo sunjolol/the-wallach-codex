@@ -313,6 +313,11 @@ function wireSearchToKnowledge(): void {
 
 let profileHandle: { unmount: () => void } | null = null;
 let profileOverlay: HTMLElement | null = null;
+let profileTrigger: HTMLElement | null = null;
+
+/** Focusable controls inside the profile modal — the focus trap cycles within these. */
+const PF_FOCUSABLE =
+  'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
 function hideProfilePanel(): void {
   if (profileHandle !== null) {
@@ -323,12 +328,19 @@ function hideProfilePanel(): void {
     profileOverlay.remove();
     profileOverlay = null;
   }
+  // A11y: return focus to the control that opened the panel, not to <body> (focus-restore).
+  if (profileTrigger !== null) {
+    profileTrigger.focus();
+    profileTrigger = null;
+  }
 }
 
 function showProfilePanel(): void {
   if (profileOverlay !== null) {
     return;
   }
+  // Remember what to hand focus back to on close (a11y focus-restore).
+  profileTrigger = document.activeElement instanceof HTMLElement ? document.activeElement : null;
   const overlay = document.createElement('div');
   overlay.className = 'pf-overlay';
   overlay.addEventListener('click', (ev) => {
@@ -337,9 +349,41 @@ function showProfilePanel(): void {
     }
   });
   overlay.addEventListener('pf:close', () => hideProfilePanel());
+  // Trap Tab inside the dialog: aria-modal is advisory, so without this focus would fall to
+  // the obscured-but-still-focusable rail/topbar behind the overlay.
+  overlay.addEventListener('keydown', (ev) => {
+    if (ev.key !== 'Tab') {
+      return;
+    }
+    const panel = overlay.querySelector<HTMLElement>('.pf-panel');
+    if (panel === null) {
+      return;
+    }
+    const items = [...panel.querySelectorAll<HTMLElement>(PF_FOCUSABLE)].filter(el => el.offsetParent !== null);
+    const first = items[0];
+    const last = items[items.length - 1];
+    if (first === undefined || last === undefined) {
+      return;
+    }
+    if (ev.shiftKey && document.activeElement === first) {
+      ev.preventDefault();
+      last.focus();
+    }
+    else if (!ev.shiftKey && document.activeElement === last) {
+      ev.preventDefault();
+      first.focus();
+    }
+  });
   document.body.appendChild(overlay);
   profileOverlay = overlay;
   profileHandle = profileView.mount(overlay);
+  // Move focus INTO the dialog so a keyboard/SR user is placed inside the modal, not left on
+  // the now-obscured trigger (focus-in). The panel is a programmatic focus target.
+  const panel = overlay.querySelector<HTMLElement>('.pf-panel');
+  if (panel !== null) {
+    panel.tabIndex = -1;
+    panel.focus();
+  }
 }
 
 /** The topbar "Ask Wallach" button — the always-visible, inviting entry that opens the Search drawer. */

@@ -44,12 +44,12 @@ export interface MountHandle {
   unmount: () => void;
 }
 
-/** The avatar families, in browse order. Three entries — the filenames (aura-01
- *  … world-08) are generated from count, so no >10-element list lives here. */
+/** The avatar families, in browse order. Three entries — the preset ids (generic-01,
+ *  men-01 … women-12) are generated from count, so no >10-element list lives here. */
 const FAMILIES: ReadonlyArray<{ id: string; count: number; label: string }> = [
-  { id: 'aura', count: 12, label: 'Auras' },
-  { id: 'gem', count: 12, label: 'Gems' },
-  { id: 'world', count: 8, label: 'Worlds' },
+  { id: 'generic', count: 1, label: 'Generic' },
+  { id: 'men', count: 12, label: 'Men' },
+  { id: 'women', count: 12, label: 'Women' },
 ];
 
 /** The UI's tighter name bound; the schema's USER_NAME_MAX (40) is the backstop. */
@@ -140,7 +140,7 @@ function renderLog(): string {
 
 function shell(): string {
   const swatches = ACCENTS.map(id =>
-    `<button class="pf-sw" data-accent="${id}" style="--sw: var(--acc-${id})" title="${ACCENT_LABELS[id]}" type="button"></button>`).join('');
+    `<button class="pf-sw" data-accent="${id}" style="--sw: var(--acc-${id})" title="${ACCENT_LABELS[id]}" aria-label="${ACCENT_LABELS[id]}" aria-pressed="false" type="button"></button>`).join('');
   return `
     <div class="pf-panel" role="dialog" aria-modal="true" aria-label="Profile">
       <div class="pf-head">
@@ -156,7 +156,7 @@ function shell(): string {
           </div>
           <div class="pf-nameblock">
             <div class="pf-namefield">
-              <input class="pf-name" data-name type="text" maxlength="${NAME_MAX}" placeholder="Set your name" autocomplete="off" spellcheck="false" aria-label="Your name">
+              <input class="pf-name" data-name type="text" maxlength="${NAME_MAX}" placeholder="Set your name" autocomplete="off" spellcheck="false" aria-label="Your name" aria-describedby="pfErr">
               <span class="pf-pencil">${IC.pencil}</span>
             </div>
             <div class="pf-namemeta">
@@ -164,23 +164,23 @@ function shell(): string {
               <span>·</span>
               <span class="pf-cnt" data-cnt>0/${NAME_MAX}</span>
             </div>
-            <div class="pf-err" data-err></div>
+            <div class="pf-err" data-err id="pfErr" role="alert" aria-live="polite"></div>
           </div>
         </div>
 
         <div class="pf-body">
-          <div class="pf-label"><b>Choose your avatar</b> · <span>32 graphics</span></div>
+          <div class="pf-label"><b>Choose your avatar</b> · <span>${presetIds().length} graphics</span></div>
           <div class="pf-filters" data-filters>
-            <button class="pf-fchip on" data-fam="all" type="button">All</button>
-            ${FAMILIES.map(f => `<button class="pf-fchip" data-fam="${f.id}" type="button">${f.label}</button>`).join('')}
+            <button class="pf-fchip on" data-fam="all" type="button" aria-pressed="true">All</button>
+            ${FAMILIES.map(f => `<button class="pf-fchip" data-fam="${f.id}" type="button" aria-pressed="false">${f.label}</button>`).join('')}
           </div>
           <div class="pf-grid" data-grid></div>
 
           <div class="pf-label"><b>Theme</b> · style only, never function</div>
           <div class="pf-appearance">
             <div class="pf-modeseg" data-modeseg>
-              <button class="pf-modeb" data-mode="cream" type="button">${IC.sun} Cream</button>
-              <button class="pf-modeb" data-mode="dark" type="button">${IC.moon} Charcoal</button>
+              <button class="pf-modeb" data-mode="cream" type="button" aria-pressed="false">${IC.sun} Cream</button>
+              <button class="pf-modeb" data-mode="dark" type="button" aria-pressed="false">${IC.moon} Charcoal</button>
             </div>
           </div>
           <div class="pf-swatches" data-swatches>${swatches}</div>
@@ -264,12 +264,16 @@ export function mount(container: HTMLElement): MountHandle {
     // reflect selection in the grid
     const cur = p?.avatar ?? '';
     for (const t of container.querySelectorAll<HTMLElement>('.pf-tile[data-avatar]')) {
-      t.classList.toggle('sel', t.dataset['avatar'] === cur);
+      const on = t.dataset['avatar'] === cur;
+      t.classList.toggle('sel', on);
+      t.setAttribute('aria-pressed', String(on));
     }
     const defTile = container.querySelector<HTMLElement>('.pf-tile--default');
     if (defTile !== null) {
       defTile.textContent = displayInitial(p); // stays in step with the name
-      defTile.classList.toggle('sel', src === null); // selected when there is no avatar
+      const defOn = src === null; // selected when there is no avatar
+      defTile.classList.toggle('sel', defOn);
+      defTile.setAttribute('aria-pressed', String(defOn));
     }
   };
 
@@ -298,10 +302,14 @@ export function mount(container: HTMLElement): MountHandle {
     const theme = themeOf(p);
     const accent = accentOf(p);
     for (const b of container.querySelectorAll<HTMLElement>('.pf-modeb')) {
-      b.classList.toggle('on', b.dataset['mode'] === theme);
+      const on = b.dataset['mode'] === theme;
+      b.classList.toggle('on', on);
+      b.setAttribute('aria-pressed', String(on));
     }
     for (const s of container.querySelectorAll<HTMLElement>('.pf-sw')) {
-      s.classList.toggle('on', s.dataset['accent'] === accent);
+      const on = s.dataset['accent'] === accent;
+      s.classList.toggle('on', on);
+      s.setAttribute('aria-pressed', String(on));
     }
   };
 
@@ -317,6 +325,7 @@ export function mount(container: HTMLElement): MountHandle {
     up.type = 'button';
     up.title = 'Upload a photo';
     up.dataset['act'] = 'upload';
+    up.setAttribute('aria-label', 'Upload a photo');
     up.innerHTML = IC.upload;
     frag.appendChild(up);
     // Default (your initial) — the way back to the auto avatar, right after Upload.
@@ -334,6 +343,10 @@ export function mount(container: HTMLElement): MountHandle {
       b.className = 'pf-tile';
       b.type = 'button';
       b.dataset['avatar'] = id;
+      const famId = id.split('-')[0] ?? id;
+      const famLabel = FAMILIES.find(f => f.id === famId)?.label ?? famId;
+      b.setAttribute('aria-label', famId === 'generic' ? 'Generic avatar' : `${famLabel} avatar ${Number(id.split('-')[1] ?? '0')}`);
+      b.setAttribute('aria-pressed', 'false');
       const img = document.createElement('img');
       img.className = 'pf-tile__img';
       img.loading = 'lazy';
@@ -413,7 +426,14 @@ export function mount(container: HTMLElement): MountHandle {
         showErr('That is not a Codex backup file.');
         return;
       }
-      restore(env.data.data);
+      const res = restore(env.data.data);
+      if (res.skipped > 0) {
+        // A partial write (most likely the ~5MB device quota) must NOT masquerade as a clean
+        // restore: surface it (the .pf-err region is a live-region now) and stay put rather
+        // than reloading into a half-applied state.
+        showErr(`Import incomplete — ${res.skipped} item(s) could not be saved; this device may be out of room. ${res.restored} restored.`);
+        return;
+      }
       // Many keys changed at once; a reload is the honest way to re-read every
       // surface through its own schema rather than hand-repaint each.
       window.location.reload();
@@ -465,7 +485,9 @@ export function mount(container: HTMLElement): MountHandle {
     if (fchip !== null) {
       fam = fchip.dataset['fam'] ?? 'all';
       for (const c of container.querySelectorAll<HTMLElement>('.pf-fchip')) {
-        c.classList.toggle('on', c === fchip);
+        const on = c === fchip;
+        c.classList.toggle('on', on);
+        c.setAttribute('aria-pressed', String(on));
       }
       renderGrid();
       return;

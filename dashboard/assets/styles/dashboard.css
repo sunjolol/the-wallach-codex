@@ -287,7 +287,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .pf-dbtn__ico { flex: 0 0 auto; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--ds-accent) 10%, var(--ds-paper)); color: var(--ds-accent-deep); border: 1px solid color-mix(in srgb, var(--ds-accent) 22%, var(--ds-rule)); }
 .pf-dbtn__ico svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
 .pf-dbtn__t { display: block; font-family: var(--ds-font-display-interface, var(--ds-font-sans)); font-size: 0.84rem; font-weight: 600; color: var(--ds-ink); }
-.pf-dbtn__s { display: block; font-family: var(--ds-font-mono); font-size: 0.52rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 3px; }
+.pf-dbtn__s { display: block; font-family: var(--ds-font-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 3px; }
 .pf-dbtn--danger { grid-column: 1 / -1; }
 .pf-dbtn--danger .pf-dbtn__ico { background: var(--ds-status-err-soft); color: var(--ds-status-err); border-color: color-mix(in srgb, var(--ds-status-err) 30%, var(--ds-rule)); }
 .pf-dbtn--danger:hover { border-color: var(--ds-status-err); }
@@ -310,7 +310,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .pf-log__sum b { color: var(--ds-accent-deep); }
 .pf-log__stream { display: flex; flex-direction: column; gap: 8px; padding: 8px 0 4px; max-height: 260px; overflow-y: auto; }
 .pf-logentry { border: 1px solid var(--ds-rule-soft); border-radius: 8px; padding: 10px 12px; background: var(--ds-paper-light); }
-.pf-logentry__head { display: flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: 0.52rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: 5px; }
+.pf-logentry__head { display: flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: 5px; }
 .pf-logentry__pill { margin-left: auto; color: var(--ds-accent-deep); }
 .pf-logentry__pill--ok { color: var(--ds-status-ok); }
 .pf-logentry__pill--err { color: var(--ds-status-err); }
