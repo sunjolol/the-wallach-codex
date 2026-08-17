@@ -551,7 +551,7 @@
 
 /* Items 6/7 -- explore topic pills + the home essentials/condition left stripes: darken. */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-explore-chip { border-color: color-mix(in srgb, var(--fam-story) var(--dk-fam-a), transparent); }
-:root[data-theme="dark"] #drawer-knowledge-mount .sh-tile::before { background: color-mix(in srgb, var(--cat) var(--dk-fam-a), transparent); }
+:root[data-theme="dark"] #drawer-knowledge-mount .sh-tile::before { background: color-mix(in srgb, var(--cat) 50%, transparent); }
 
 /* Item 9 -- the coloured nutrient pills ("to restore" green, "explore" purple): darken borders. */
 :root[data-theme="dark"] #drawer-knowledge-mount button.kd-ep-pill--nut { border-color: color-mix(in srgb, var(--fam-action) var(--dk-fam-a), transparent); }
@@ -581,9 +581,9 @@
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep--prod .kd-ep-hero__sym.kd-ep-hero__sym--form {
   border-color: color-mix(in srgb, var(--form) 60%, var(--ds-rule));
 }
-/* HOME left-stripes at 50% (28% read too dark here); essentials keep --cat, the common-condition
-   rows keep the accent -- both at 50% opacity. Scoped to .kd-home so only the home screen changes. */
-:root[data-theme="dark"] #drawer-knowledge-mount .kd-home .sh-tile::before { background: color-mix(in srgb, var(--cat) 50%, transparent); }
+/* .sh-tile left-stripes are set globally to 50% in (J10) -- .sh-tile appears only on Home + the
+   hidden all-essentials tab, both wanting 50%. The common-condition rows (.sh-condrow, Home-only)
+   keep the accent, also at 50% opacity. */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-home .sh-condrow { border-left-color: color-mix(in srgb, var(--ds-accent) 50%, transparent); }
 
 

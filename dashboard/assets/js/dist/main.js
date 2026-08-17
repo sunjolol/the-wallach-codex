@@ -181584,7 +181584,16 @@ Verification (dark + amethyst, driving the REAL knowledge drawer):
   - HOME: .sh-tile::before and .sh-condrow border-left both at 0.5 alpha.
   - product-detail + home screenshots reviewed.
 
-Push: origin/master this round, per his instruction.` }];
+Push: origin/master this round, per his instruction.` }, { id: "lg_msxrstg4_u0hl74", ts: "2026-08-17T16:53:13.492183-05:00", surface: "theme (knowledge drawer)", kind: "round-close", summary: "Dark: the hidden all-essentials tab now gets the same 50% left-stripes as Home (moved .sh-tile::before to a global 50%, since it only appears on Home + that tab).", detail: `Final tweak of the session. The knowledge drawer's hidden "all essentials" tab -- the full 91-tile grid you reach from the Home essentials link -- still had its tile left-stripes at the old 28%. It now matches the Home screen's 50%.
+
+Why it was missed: the essentials tiles are .sh-tile (with a ::before --cat left stripe) on BOTH Home and the all-essentials tab, but renderEssentialsTab() returns bare sh-subhead + sh-grid HTML with no .kd-home wrapper, so the earlier Home-scoped 50% override (.kd-home .sh-tile::before) never reached the tab. Since .sh-tile appears ONLY on Home + that tab (both wanting 50%), the clean fix was to move the 50% to the GLOBAL rule and drop the redundant Home-scoped one:
+  - theme.css (J10): #drawer-knowledge-mount .sh-tile::before background color-mix(--cat var(--dk-fam-a)=28%) -> color-mix(--cat 50%, transparent).
+  - theme.css (J11): removed the now-redundant .kd-home .sh-tile::before override; the .kd-home .sh-condrow 50% stays (sh-condrow is Home-only).
+The Explore pills and the condition-detail protocol/restore borders still ride the 28% knob (--dk-fam-a), untouched.
+
+Verification (dark + amethyst, real drawer): build 0; invariants 92/92; render probe PASS knowledge; a Puppeteer probe clicked the hidden [data-kd-tab="essentials"] link -> 91 tiles, closest('.kd-home')=false (so it's the tab, not Home), .sh-tile::before at 0.5 alpha; essentials-tab screenshot reviewed (teal mineral + purple vitamin stripes, calm, matching Home).
+
+Push: origin/master this round, per his instruction. Session wrapping up -- genesis next.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
