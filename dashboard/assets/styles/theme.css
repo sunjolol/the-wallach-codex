@@ -341,3 +341,18 @@
 :root[data-theme="dark"] .vd-error__ic {
   color: #f3ead7;
 }
+
+
+/* (H) Deep status / accent hues used as SMALL TEXT read low-contrast on charcoal
+   (rust ~3.4:1, deep-orange ~3.9:1, green ~4.1:1). The base status + deep-accent hues
+   are left alone (correct on cream), so lift only the TEXT toward ink — the verdict-pill
+   recipe — and use the bright accent for link text. Fills/borders already composite via (A). */
+:root[data-theme="dark"] .rr-btn--danger {
+  color: color-mix(in srgb, var(--ds-status-err) 66%, var(--ds-ink));
+}
+:root[data-theme="dark"] :is(.rr-results__meta, .rec__val) {
+  color: color-mix(in srgb, var(--ds-status-ok) 66%, var(--ds-ink));
+}
+:root[data-theme="dark"] .rr-scan__link {
+  color: var(--ds-accent-bright);
+}

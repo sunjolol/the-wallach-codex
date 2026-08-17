@@ -370,7 +370,11 @@
 .vd-cf__refbtn .vd-cf__refimg { display: block; transition: filter var(--ds-motion-fast) var(--ds-ease-out); }
 .vd-cf__refbtn:hover .vd-cf__refimg { filter: brightness(0.9); }
 .vd-cf__refbtn:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--ds-accent-wash); }
-.vd-cf__refzoom { position: absolute; bottom: 6px; right: 6px; display: inline-flex; align-items: center; gap: 4px; font-family: var(--ds-font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--ds-paper-light); background: color-mix(in srgb, var(--ds-ink) 78%, transparent); padding: 3px 8px; border-radius: var(--ds-radius-pill); backdrop-filter: blur(2px); pointer-events: none; }
+/* The zoom badge floats over the scanned label PHOTO, so it must read as a dark plate
+   with light text in BOTH themes. Token-based colours flipped it to a light pill with
+   dark text on charcoal (near-invisible over a pale label); fixed literals mirror the
+   .vd-lightbox scrim below and stay correct over any image. */
+.vd-cf__refzoom { position: absolute; bottom: 6px; right: 6px; display: inline-flex; align-items: center; gap: 4px; font-family: var(--ds-font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #f3ead7; background: rgba(18, 14, 10, 0.78); padding: 3px 8px; border-radius: var(--ds-radius-pill); backdrop-filter: blur(2px); pointer-events: none; }
 
 /* S10 — full-size label lightbox. Mirrors the .pf-overlay scrim grammar (token-based, self-theming);
    mounts to document.body so a view re-render cannot wipe it. Reuses the pf-fade keyframe (dashboard.css). */

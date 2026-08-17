@@ -5840,6 +5840,109 @@ def check_no_stub_render_paths():
     return _no_stub_render_paths_impl(files)
 
 
+def _premature_comment_close_hits(text):
+    """(line, col) of every '*/' that appears in CODE context -- NOT closing an open
+    comment and NOT inside a string. Models the CSS tokenizer's comment + string state:
+    a '*/' reached in code means an earlier '*/' in a comment body (the classic
+    '--foo-*/' token-glob-in-a-comment) already closed that comment early, so the CSS
+    after it was read as garbage and the following rule silently dropped. A '*/' inside a
+    string (e.g. content: "*/") is legitimate and is NOT flagged."""
+    hits = []
+    i, n = 0, len(text)
+    in_comment = False
+    in_string = None       # the open quote char, or None
+    line, col = 1, 1
+    while i < n:
+        c = text[i]
+        nxt = text[i + 1] if i + 1 < n else ""
+        if c == "\n":
+            line += 1
+            col = 1
+            i += 1
+            continue
+        if in_comment:
+            if c == "*" and nxt == "/":
+                in_comment = False
+                i += 2
+                col += 2
+                continue
+            i += 1
+            col += 1
+            continue
+        if in_string is not None:
+            if c == "\\":              # escape -- skip the next char (e.g. \" inside a string)
+                i += 2
+                col += 2
+                continue
+            if c == in_string:
+                in_string = None
+            i += 1
+            col += 1
+            continue
+        # code context
+        if c == "/" and nxt == "*":
+            in_comment = True
+            i += 2
+            col += 2
+            continue
+        if c == "*" and nxt == "/":
+            hits.append((line, col))
+            i += 2
+            col += 2
+            continue
+        if c in ('"', "'"):
+            in_string = c
+        i += 1
+        col += 1
+    return hits
+
+
+def _css_comment_no_premature_close_impl(files):
+    """RED if any (relpath, text) .css carries a '*/' in code context (a premature comment
+    close). `files` = iterable of (relpath, text). Param-taking for the negative test."""
+    hits = []
+    files = list(files)
+    for rel, text in files:
+        for (ln, _col) in _premature_comment_close_hits(text):
+            hits.append(f"{rel}:{ln}")
+    if hits:
+        return False, ("premature '*/' comment-close in shipped CSS -- an earlier '*/' inside a "
+                       "comment body (e.g. a token glob like '--foo-*/') closed the comment early, "
+                       "so the rule that followed was silently DROPPED while the board stayed green: "
+                       + ", ".join(hits[:8]) + (" ..." if len(hits) > 8 else "")
+                       + ". Reword the comment so no '*/' appears before its intended close.")
+    return True, f"no premature '*/' comment-close across {len(files)} shipped stylesheet(s)"
+
+
+def check_css_comment_no_premature_close():
+    """A '*/' inside a CSS comment body closes the comment EARLY; the parser then reads the
+    author's comment tail as CSS and error-recovers by discarding the next rule -- silently.
+
+    WHY THIS EXISTS (2026-08-17): a dark-theme fix appended a theme.css comment reading
+    '... The base --ds-status-*/--ds-accent-deep are left alone ...'. The '*/' in
+    '--ds-status-*/' ended the comment; the '.rr-btn--danger' rule right after it was eaten
+    by error-recovery and never applied -- and the (then 91-gate) board stayed fully GREEN,
+    because nothing checked CSS comment balance. Caught only by reading the live CSSOM
+    (getComputedStyle showed the rule absent). The recurring css-comment-star-slash-drops-rule
+    footgun; now a gate, not just a memory.
+
+    Truth anchor: a comment/string-state tokenizer scan of the git-tracked shipped
+    stylesheets, each run."""
+    rels = _shipped_view_css_files()
+    if rels is None:
+        return True, ("⚠ UNVERIFIED -- git unavailable; premature-comment-close guard could "
+                      "not run this pass (fail-open, not a silent green)")
+    files = []
+    for rel in rels:
+        if not rel.endswith(".css"):
+            continue
+        try:
+            files.append((rel, (ROOT / rel).read_text(encoding="utf-8", errors="ignore")))
+        except Exception:
+            continue
+    return _css_comment_no_premature_close_impl(files)
+
+
 def _extract_ts_string_literals(src: str):
     """Yield the CONTENT of every string / template literal in TS source, skipping
     // and /* */ comments. A cheap backstop, not a parser -- mirrors
@@ -7118,6 +7221,15 @@ INVARIANTS = [
         truth_anchor="static regex scan against fonts.googleapis.com / fonts.gstatic.com / cdn.jsdelivr.net / cdnjs / unpkg / pro.fontawesome.com / external <link>+<script>+@import",
         severity="critical",
         lesson_ref="Round 160 Phase 0 + Round 161 sealing — long-term portability requires zero external resources; promoted warn → critical after Tesseract in-housed + all 6 surfaces migrated",
+    ),
+    Invariant(
+        name="css_comment_no_premature_close",
+        anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
+        description="no shipped stylesheet has a '*/' inside a comment body that closes the comment early and silently drops the rule after it",
+        check_fn=check_css_comment_no_premature_close,
+        truth_anchor="comment/string-state tokenizer scan of the git-tracked dashboard/assets/styles/*.css, recomputed each run",
+        severity="critical",
+        lesson_ref="2026-08-17 dark nits — a '--ds-status-*/' glob in a theme.css comment closed the comment early and dropped .rr-btn--danger while the board stayed green; caught via live CSSOM. Memory css-comment-star-slash-drops-rule.",
     ),
     Invariant(
         name="design_system_hash_integrity",
