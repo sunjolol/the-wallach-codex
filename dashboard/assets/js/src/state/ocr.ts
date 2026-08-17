@@ -315,12 +315,21 @@ async function runOcr(imageData: string, progress: ProgressFn): Promise<string> 
   if (tesseract === undefined) {
     throw new Error('OCR engine did not initialize');
   }
+  // Progress gate: during the offline orientation sweep, each rotation's recognize() call fires the
+  // Tesseract 'recognizing text' logger and would reset the determinate bar 0->100 again (the
+  // "bouncing" progress). While sweeping we report indeterminate, so the bar only fills once.
+  let inOrientationSweep = false;
   const worker = await tesseract.createWorker('eng', 1, {
     corePath: './assets/vendor/tesseract/',
     langPath: './assets/vendor/tesseract/lang-data',
     logger: (m) => {
       if (m.status === 'recognizing text') {
-        progress({ stage: 2, message: 'Reading the label…', determinate: true, fraction: m.progress ?? 0 });
+        if (inOrientationSweep) {
+          progress({ stage: 2, message: 'Re-reading at the correct orientation…', determinate: false, fraction: 0 });
+        }
+        else {
+          progress({ stage: 2, message: 'Reading the label…', determinate: true, fraction: m.progress ?? 0 });
+        }
       }
       else if (m.status === 'loading language traineddata') {
         progress({ stage: 1, message: 'Loading the language model…', determinate: false, fraction: 0 });
@@ -352,6 +361,7 @@ async function runOcr(imageData: string, progress: ProgressFn): Promise<string> 
     }
     // The as-shot read is garbage → the label is probably sideways/upside-down. Detect the angle
     // on downscaled rotations (cheap), then re-read once at full res if one clearly wins.
+    inOrientationSweep = true;
     progress({ stage: 2, message: 'Checking the label orientation…', determinate: false, fraction: 0 });
     let best = { deg: 0, ...s0 };
     for (const deg of [90, 180, 270]) {
@@ -366,7 +376,7 @@ async function runOcr(imageData: string, progress: ProgressFn): Promise<string> 
     if (best.deg === 0 || best.anchors < 1 || best.score <= s0.score) {
       return text0;
     }
-    progress({ stage: 2, message: 'Reading the label…', determinate: true, fraction: 0 });
+    progress({ stage: 2, message: 'Reading the label at the correct orientation…', determinate: false, fraction: 0 });
     return await recognize(await renderVariant(processed, best.deg, 0));
   }
   finally {
@@ -651,18 +661,39 @@ function parseOcrText(rawTextInput: string): ParsedOcr {
     }
   }
 
-  // Nutrients — line-anchored "Name AMOUNT unit", with OCR-noise rejection.
+  // Nutrients — "Name AMOUNT unit", with OCR-noise rejection. Vertical panels put one nutrient per
+  // line; horizontal / linear panels (small tubs, drink pouches) pack several per line, comma-
+  // separated. So scan each LINE and also each comma-segment of a comma-rich line — the same pattern
+  // then fires once per nutrient. `.` is allowed in the name so panel abbreviations ("Total Carb.",
+  // "Sat. Fat") still extract (as an editable row the user confirms), never silently dropped.
   const lines = rawText.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-  const nutPat = /^([a-z][a-z\s()+\-/]{0,54}?)\s+(\d+(?:\.\d+)?)\s*(mg|mcg|g|iu)\b/i;
+  const units: string[] = [];
+  for (const line of lines) {
+    units.push(line);
+    if ((line.match(/,/g) ?? []).length >= 2) {
+      for (const seg of line.split(',')) {
+        const s = seg.trim();
+        if (s.length > 0) {
+          units.push(s);
+        }
+      }
+    }
+  }
+  const nutPat = /^([a-z][a-z\s.()+\-/]{0,54}?)\s+(\d+(?:\.\d+)?)\s*(mg|mcg|g|iu)\b/i;
   const skip = /^(?:calories|serving|amount per|daily value|total fat|saturated|trans fat|cholesterol|total carbohydrate|dietary fiber|total sugars|added sugars|includes|nutrition|facts|amount)$/i;
   const seen = new Set<string>();
-  for (const line of lines) {
+  for (const line of units) {
     const m2 = line.match(nutPat);
     if (m2 === null || m2[1] === undefined || m2[2] === undefined || m2[3] === undefined) {
       continue;
     }
     const name = m2[1].trim();
     if (skip.test(name)) {
+      continue;
+    }
+    // Reject a segment that still carries panel boilerplate — a horizontal-panel comma-split can
+    // leave "Nutrition Facts" glued onto the first nutrient. No real nutrient name contains these.
+    if (/\b(?:nutrition|supplement|facts|serving|daily value|amount per|per container)\b/i.test(name)) {
       continue;
     }
     if (name.length < 2 || name.length > 55) {

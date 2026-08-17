@@ -38,6 +38,9 @@ committed, not independently re-verified — flagged inline._
 | S12 | **Live-update "Possible OCR errors"** as the ingredients list is edited (remove options as fixed) | ✅ shipped+verified (2026-08-16; debounced 250ms refreshSuspects; dismiss records to `dismissed`; e2e 0→5 suspects + Luneth sign-off) |
 | S13 | **Gluten source = AUTO REJECT no matter what** (Tangy Tangerine 2.5 + "wheat" wrongly showed SAVE) | ✅ shipped+verified (gluten → `hardRejectTerms` unconditional REJECT; wheat→REJECT confirmed) |
 | S14 | **(added 2026-08-16, live review)** Plural-tolerant nutrient match (Total Sugar≡Sugars) + OCR-dict false-flag gap (74 common words) + nutrient-aware ingredient suggestions | ✅ shipped+verified (2026-08-16; `pluralEq`; +74 `fuzzyDict`; `findSuggestionCandidates` fuzzy∪known; e2e + Luneth sign-off) |
+| S15 | **(live review 2026-08-16)** Live nutrient-row feedback — a corrected read must re-check + show a check immediately; also fix "Fat"->"Oat" mis-snap + recognize standard panel labels | ✅ shipped+verified (reevaluateNutrientRow on 150ms input; fat/saturated/trans -> fuzzy; +7 panel labels -> known; e2e + Luneth sign-off) |
+| S16 | **(live review 2026-08-16)** Progress bar bounces back/forth on sideways/upside-down labels (glitchy) | ✅ shipped+verified (inOrientationSweep gates the OCR logger -> sweep runs indeterminate; e2e 0 resets / 1 fill on label-test-2; Luneth sign-off) |
+| S17 | **(live review 2026-08-16)** Horizontal/linear panels (small tubs) parse almost nothing (label-test-2 = WF cheese only got Protein+Fiber) | ✅ shipped+verified (comma-segment parsing + header-noise guard; synthetic 10, label-test-2 2->4; ceiling: OCR-mangled amounts + %-DV-only minerals need Confirm correction; ingredient-block under-read still OPEN) |
 
 ## Dark theme
 | # | His ask | Status |

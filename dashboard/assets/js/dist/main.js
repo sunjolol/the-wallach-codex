@@ -17510,7 +17510,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       "carbohydrates",
       "monounsaturated",
       "polyunsaturated",
-      "coenzyme"
+      "coenzyme",
+      "fat",
+      "saturated",
+      "trans"
     ],
     knownNutrientNames: [
       "Vitamin B12",
@@ -17562,7 +17565,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       "Inositol",
       "Protein",
       "Collagen",
-      "Fiber"
+      "Fiber",
+      "Total Fat",
+      "Saturated Fat",
+      "Trans Fat",
+      "Cholesterol",
+      "Calories",
+      "Monounsaturated Fat",
+      "Polyunsaturated Fat"
     ]
   };
 
@@ -18974,12 +18984,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     if (tesseract === void 0) {
       throw new Error("OCR engine did not initialize");
     }
+    let inOrientationSweep = false;
     const worker = await tesseract.createWorker("eng", 1, {
       corePath: "./assets/vendor/tesseract/",
       langPath: "./assets/vendor/tesseract/lang-data",
       logger: (m) => {
         if (m.status === "recognizing text") {
-          progress({ stage: 2, message: "Reading the label\u2026", determinate: true, fraction: m.progress ?? 0 });
+          if (inOrientationSweep) {
+            progress({ stage: 2, message: "Re-reading at the correct orientation\u2026", determinate: false, fraction: 0 });
+          } else {
+            progress({ stage: 2, message: "Reading the label\u2026", determinate: true, fraction: m.progress ?? 0 });
+          }
         } else if (m.status === "loading language traineddata") {
           progress({ stage: 1, message: "Loading the language model\u2026", determinate: false, fraction: 0 });
         } else if (typeof m.status === "string" && m.status.length < 40) {
@@ -19001,6 +19016,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       if (s0.anchors >= 1) {
         return text0;
       }
+      inOrientationSweep = true;
       progress({ stage: 2, message: "Checking the label orientation\u2026", determinate: false, fraction: 0 });
       let best = { deg: 0, ...s0 };
       for (const deg of [90, 180, 270]) {
@@ -19013,7 +19029,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       if (best.deg === 0 || best.anchors < 1 || best.score <= s0.score) {
         return text0;
       }
-      progress({ stage: 2, message: "Reading the label\u2026", determinate: true, fraction: 0 });
+      progress({ stage: 2, message: "Reading the label at the correct orientation\u2026", determinate: false, fraction: 0 });
       return await recognize(await renderVariant(processed, best.deg, 0));
     } finally {
       await worker.terminate();
@@ -19221,16 +19237,31 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       }
     }
     const lines = rawText.split("\n").map((l) => l.trim()).filter((l) => l.length > 0);
-    const nutPat = /^([a-z][a-z\s()+\-/]{0,54}?)\s+(\d+(?:\.\d+)?)\s*(mg|mcg|g|iu)\b/i;
+    const units = [];
+    for (const line of lines) {
+      units.push(line);
+      if ((line.match(/,/g) ?? []).length >= 2) {
+        for (const seg of line.split(",")) {
+          const s = seg.trim();
+          if (s.length > 0) {
+            units.push(s);
+          }
+        }
+      }
+    }
+    const nutPat = /^([a-z][a-z\s.()+\-/]{0,54}?)\s+(\d+(?:\.\d+)?)\s*(mg|mcg|g|iu)\b/i;
     const skip = /^(?:calories|serving|amount per|daily value|total fat|saturated|trans fat|cholesterol|total carbohydrate|dietary fiber|total sugars|added sugars|includes|nutrition|facts|amount)$/i;
     const seen = /* @__PURE__ */ new Set();
-    for (const line of lines) {
+    for (const line of units) {
       const m2 = line.match(nutPat);
       if (m2 === null || m2[1] === void 0 || m2[2] === void 0 || m2[3] === void 0) {
         continue;
       }
       const name = m2[1].trim();
       if (skip.test(name)) {
+        continue;
+      }
+      if (/\b(?:nutrition|supplement|facts|serving|daily value|amount per|per container)\b/i.test(name)) {
         continue;
       }
       if (name.length < 2 || name.length > 55) {
@@ -181269,7 +181300,26 @@ Matcher/dict - state/ocr.ts + data/ocr-dict-data.json.
 
 VERIFY: tsc 0, eslint 0 errors, build 0 (11585 KB), invariants 91/91 (0 new reds - 23 external / 25 consistency / 41 structural / 2 meta). e2e via real upload->OCR->Confirm on label-test.png, 0 page-errors: lightbox open + Esc-close; delete 7->6 rows with count "5 to check"->"4 to check"; S12 0->5 suspects on edit then dismiss 5->4; "Total Sugar" row recognized; a line of 13 correct forms -> 0 suspects; magnesuim->magnesium, calcuim->calcium, ascorbc->ascorbic.
 
-Commits: (a) scanner rows S10/S11/S12 [views/scanner.ts + workspace-scanner.css]; (b) matcher plural + dict + suggestions [state/ocr.ts + ocr-dict-data.json + dist bundle + docs]. Push HELD pending Luneth's OK. eden/ untouched - no seal applies.` }];
+Commits: (a) scanner rows S10/S11/S12 [views/scanner.ts + workspace-scanner.css]; (b) matcher plural + dict + suggestions [state/ocr.ts + ocr-dict-data.json + dist bundle + docs]. Push HELD pending Luneth's OK. eden/ untouched - no seal applies.` }, { id: "lg_mswlhdtf_bs0syz", ts: "2026-08-16T21:08:36.147127-05:00", surface: "scanner", kind: "round-close", summary: "Live-review scanner batch: live nutrient-row feedback + Fat->Oat fix + panel labels; progress bar no longer bounces on rotated labels; comma-segment parsing for horizontal panels. Board 91/91, Luneth sign-off, pushed to origin/master.", detail: `Three fixes Luneth found while testing the scanner live, all signed off and pushed.
+
+1) LIVE FEEDBACK. He corrected a misread nutrient name and nothing confirmed it worked - no check appeared. Turned out to be three problems: the OCR was mislabeling "Fat" as "Oat" (the auto-corrector snapped the word "fat" onto "oat", both in its dictionary one letter apart); the standard panel labels (Total Fat, Cholesterol, etc.) weren't in the recognized list, so even a correct fix wouldn't show a check; and nothing re-checked a row as you typed. All fixed - "Total Fat" now reads right, corrections resolve to a check, and every keystroke re-checks the row live.
+
+2) PROGRESS BOUNCE. Scanning a sideways/upside-down label made the progress bar jump 0->100 several times - the offline orientation detector reads the image at up to 4 angles and each read restarted the bar. Now it fills once and the sweep runs under a smooth indeterminate animation.
+
+3) HORIZONTAL PANELS. A small cheese tub (label-test-2) prints its whole nutrition panel as one long comma-separated line; the parser expected one nutrient per line and only got Protein + Fiber. Added comma-segment parsing. Honest ceiling: that tub's OCR also mangles the amounts and its minerals show only % DV (no absolute value), so it improved 2->4, not to perfection - the Confirm screen (now with live feedback) covers the rest. On a clean synthetic horizontal panel it recovers 10.
+
+TECH.
+views/scanner.ts (#1): reevaluateNutrientRow(rowEl) recomputes matchEssential/isKnownNutrient/findNutrientCandidates for one row and surgically updates the glyph, row class, .vd-edit is-warn, .vd-nrow__map, data-nmap, and the .vd-sug suggestion block - never the input element, so the cursor survives mid-type. Debounced 150ms via the delegated input handler (which also still drives the S12 ingredient refresh). The suggestion-pick (data-nfix) handler now delegates to reevaluateNutrientRow instead of hand-editing the DOM, so a pick shows the real mapping + updates the tally.
+ocr-dict-data.json (#1): knownNutrientNames +7 (Total Fat, Saturated Fat, Trans Fat, Cholesterol, Calories, Monounsaturated Fat, Polyunsaturated Fat); fuzzyDict +3 (fat, saturated, trans) so ocrPostProcess stops snapping "fat"->"oat". Recognition vocabulary only, no Wallach claim.
+state/ocr.ts runOcr (#2): a let inOrientationSweep flag, set true before the 90/180/270 sweep, gates the Tesseract 'recognizing text' logger to report determinate:false while sweeping; the final full-res re-read is indeterminate too. One determinate fill total.
+state/ocr.ts parseOcrText (#3): build a \`units\` array = each line PLUS each comma-segment of any comma-rich (>=2 commas) line, and scan all units with the nutrient pattern; '.' added to the name char class so panel abbreviations extract as editable rows; a header-noise guard (/\\b(nutrition|supplement|facts|serving|daily value|amount per|per container)\\b/i) rejects a segment that still carries panel boilerplate.
+
+VERIFY: tsc 0, eslint 0 errors, build 0 (11592 KB), invariants 91/91 (0 new reds). e2e via real upload->OCR->Confirm + window.lcOcrToLabel / lcParseLabel, 0 page-errors:
+- #1: "Total Fat" reads correctly with a check (was "Total Oat"); live typing Zqxwv->warn, Magnesium->essential/check, Cholesterol->known/check, Vit8min->warn + suggestions; parser now also recovers Saturated Fat + Cholesterol.
+- #2: lcscan:progress on label-test-2 (triggers the sweep, swept=true): 0 backward resets, 1 determinate fill.
+- #3: synthetic one-line panel -> 10 clean nutrients (header-noise row gone); label-test-2 2->4; label-test.png unchanged (9, no regression).
+
+Commits (this session, on origin/master): live-feedback [views/scanner.ts + ocr-dict-data.json]; OCR/parser robustness [state/ocr.ts + dist bundle + docs]. Still OPEN: the WF-cheese INGREDIENT block still under-reads (its "INGREDIENTS:" header OCR-garbles; S17 was scoped to nutrients). eden/ untouched - no seal.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -183574,6 +183624,7 @@ Commits: (a) scanner rows S10/S11/S12 [views/scanner.ts + workspace-scanner.css]
     let lightboxEl = null;
     let lightboxAbort = null;
     let suspectTimer = 0;
+    let nameTimer = 0;
     let resultOrigin = "scan";
     let reopenedSavedId = null;
     const render = () => {
@@ -183697,6 +183748,63 @@ Commits: (a) scanner rows S10/S11/S12 [views/scanner.ts + workspace-scanner.css]
         countEl.textContent = nutrientCountLabel(total, mapped);
       }
     };
+    const reevaluateNutrientRow = (rowEl) => {
+      const input = rowEl.querySelector(".vd-edit[data-nedit]");
+      if (input === null) {
+        return;
+      }
+      const name = input.value.trim();
+      const idx = rowEl.dataset["nrow"] ?? "";
+      const glyph = rowEl.querySelector(".vd-nrow__g");
+      const map = rowEl.querySelector(".vd-nrow__map");
+      const main = rowEl.querySelector(".vd-nrow__main");
+      rowEl.querySelector(".vd-sug")?.remove();
+      const ess = matchEssential(name);
+      if (ess !== null) {
+        rowEl.className = "vd-nrow is-ok";
+        rowEl.dataset["nmap"] = "essential";
+        input.classList.remove("is-warn");
+        if (glyph !== null) {
+          glyph.innerHTML = "&check;";
+        }
+        if (map !== null) {
+          const covered = new Set(getOrCompute().tiles.filter((t) => t.covered).map((t) => t.name)).has(ess.name);
+          map.className = "vd-nrow__map";
+          map.innerHTML = `<span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML14(ess.name)}</b><span class="vd-nrow__cov">${covered ? "\xB7 already covered" : "\xB7 counts toward your 90"}</span>`;
+        }
+      } else if (isKnownNutrient(name)) {
+        rowEl.className = "vd-nrow is-ok is-untracked";
+        rowEl.dataset["nmap"] = "untracked";
+        input.classList.remove("is-warn");
+        if (glyph !== null) {
+          glyph.innerHTML = "&check;";
+        }
+        if (map !== null) {
+          map.className = "vd-nrow__map";
+          map.innerHTML = '<span class="vd-nrow__cov">\xB7 read OK \xB7 not one of the 90</span>';
+        }
+      } else {
+        rowEl.className = "vd-nrow is-warn";
+        rowEl.dataset["nmap"] = "warn";
+        input.classList.add("is-warn");
+        if (glyph !== null) {
+          glyph.innerHTML = "!";
+        }
+        if (map !== null) {
+          map.className = "vd-nrow__map vd-nrow__map--pending";
+          map.textContent = "not recognized \xB7 pick a match or edit";
+        }
+        const cands = findNutrientCandidates(name).slice(0, 4);
+        if (cands.length > 0 && main !== null) {
+          const btns = cands.map((c, k) => `<button class="vd-sug__btn${k === 0 ? " is-best" : ""}" type="button" data-nfix="${escHTML14(idx)}" data-nfix-val="${escHTML14(c.word)}">${escHTML14(c.word)}</button>`).join("");
+          const sug = document.createElement("div");
+          sug.className = "vd-sug";
+          sug.innerHTML = `<span class="vd-sug__lab">Did you mean</span>${btns}<button class="vd-sug__keep" type="button" data-nkeep="${escHTML14(idx)}">&times; keep</button>`;
+          main.insertAdjacentElement("afterend", sug);
+        }
+      }
+      recountNutrients();
+    };
     const closeLightbox = () => {
       if (lightboxEl !== null) {
         lightboxEl.remove();
@@ -183791,17 +183899,8 @@ Commits: (a) scanner rows S10/S11/S12 [views/scanner.ts + workspace-scanner.css]
         if (input !== null && val !== void 0) {
           input.value = val;
           const row = nfix.closest(".vd-nrow");
-          row?.classList.remove("is-warn");
-          row?.classList.add("is-ok");
-          const g = row?.querySelector(".vd-nrow__g");
-          if (g !== null && g !== void 0) {
-            g.innerHTML = "&check;";
-          }
-          nfix.closest(".vd-sug")?.remove();
-          const map = row?.querySelector(".vd-nrow__map");
-          if (map !== null && map !== void 0) {
-            map.classList.remove("vd-nrow__map--pending");
-            map.textContent = "mapped";
+          if (row !== null) {
+            reevaluateNutrientRow(row);
           }
         }
         return;
@@ -183998,11 +184097,21 @@ Commits: (a) scanner rows S10/S11/S12 [views/scanner.ts + workspace-scanner.css]
     };
     const inputHandler = (ev) => {
       const target = ev.target;
-      if (target === null || !target.matches("[data-ing]")) {
+      if (target === null) {
         return;
       }
-      window.clearTimeout(suspectTimer);
-      suspectTimer = window.setTimeout(refreshSuspects, 250);
+      if (target.matches("[data-ing]")) {
+        window.clearTimeout(suspectTimer);
+        suspectTimer = window.setTimeout(refreshSuspects, 250);
+        return;
+      }
+      if (target.matches(".vd-edit[data-nedit]")) {
+        const row = target.closest(".vd-nrow");
+        if (row !== null) {
+          window.clearTimeout(nameTimer);
+          nameTimer = window.setTimeout(() => reevaluateNutrientRow(row), 150);
+        }
+      }
     };
     render();
     container.addEventListener("click", clickHandler);
@@ -184026,6 +184135,7 @@ Commits: (a) scanner rows S10/S11/S12 [views/scanner.ts + workspace-scanner.css]
         unsub();
         closeLightbox();
         window.clearTimeout(suspectTimer);
+        window.clearTimeout(nameTimer);
         container.removeEventListener("click", clickHandler);
         container.removeEventListener("input", inputHandler);
         container.removeEventListener("dragover", dragHandler);
