@@ -1370,7 +1370,7 @@
   border-radius: var(--ds-radius-xs); cursor: pointer; transition: all var(--ds-motion-fast) var(--ds-ease-out);
   white-space: nowrap; flex: 0 0 auto;   /* the back affordance is ALWAYS one line — the title shrinks, never this (Luneth 2026-07-22) */
 }
-#drawer-knowledge-mount .kd-ep-back:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
+#drawer-knowledge-mount .kd-ep-back:hover { border-color: var(--cat, var(--form, var(--ds-accent))); color: var(--cat, var(--form, var(--ds-accent-deep))); }
 /* Back sits top-right of the hero line (closing = top-right), no extra vertical row (Luneth 2026-07-12). */
 #drawer-knowledge-mount .kd-ep-hero .kd-ep-back { margin-left: auto; align-self: flex-start; }
 #drawer-knowledge-mount .kt-hero__top { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); }

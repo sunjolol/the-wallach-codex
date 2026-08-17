@@ -564,6 +564,29 @@
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim__verbatim { border-left-color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-accent)) var(--dk-fam-a), transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount :is(.kd-ep-claim__short, .kd-ep-claim__full, .kd-ep-claim__cite, .kd-ep-claim__badge) { color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-accent-deep)) 80%, #000); }
 
+/* (J11) Follow-ups (batch 2b): back-button category hover, product-detail category borders, HOME stripes -> 50%. */
+/* Back button (.kd-ep-back = "< ALL CONDITIONS" / "< ALL PRODUCTS" / "< All essentials") hover
+   follows the detail's category -- --cat on conditions/essentials, --form on products -- brightened
+   for dark. The chained var() fallback in the base rule picks the right one per context. */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-back:hover {
+  border-color: color-mix(in srgb, var(--cat, var(--form, var(--ds-accent))) 60%, var(--ds-ink));
+  color: color-mix(in srgb, var(--cat, var(--form, var(--ds-accent-deep))) 62%, var(--ds-ink));
+}
+/* Product detail: box + hero-icon borders follow the delivery-form colour (--form), the products'
+   category-analog -- same fix as item 8 for conditions (--cat). Both had accent-deep forced by the sweep. */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep.kd-ep.kd-ep--prod {
+  border-color: var(--form, var(--ds-accent-deep));
+  box-shadow: 0 4px 14px -3px color-mix(in srgb, var(--form, var(--ds-accent)) 22%, transparent);
+}
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep--prod .kd-ep-hero__sym.kd-ep-hero__sym--form {
+  border-color: color-mix(in srgb, var(--form) 60%, var(--ds-rule));
+}
+/* HOME left-stripes at 50% (28% read too dark here); essentials keep --cat, the common-condition
+   rows keep the accent -- both at 50% opacity. Scoped to .kd-home so only the home screen changes. */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-home .sh-tile::before { background: color-mix(in srgb, var(--cat) 50%, transparent); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-home .sh-condrow { border-left-color: color-mix(in srgb, var(--ds-accent) 50%, transparent); }
+
+
 
 /* ── workspaces: status / tech tokens as fg → color-mix(… 62%, --ds-ink) ── */
 :root[data-theme="dark"] :is(.vd-scan__done, .vd-nrow__cf) { color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
