@@ -181547,6 +181547,26 @@ Verification (dark + amethyst, driving the REAL surfaces -- no injected proxies,
   - Puppeteer computed styles on the real elements: rec__add rest = accent-deep, hover = accent bg + #f3ead7; .vd-step__badge is-active AND is-done = accent bg + #f3ead7; .ds-btn-primary = #f3ead7; .kd-ep-nutri__lbl = 11.2px (0.7rem); .fgroup__more = the science/teal category colour, not the accent.
   - Screenshots reviewed: coverage recommended card (rest + hover), scanner steps, the "See 1 more science answers" pill.
 
+Push: origin/master this round, per his instruction.` }, { id: "lg_msxqxppw_mcal2d", ts: "2026-08-17T16:29:02.324183-05:00", surface: "theme (knowledge drawer)", kind: "round-close", summary: "Dark point-fixes batch 2 of 2: condition-detail box + icon borders follow the CATEGORY colour again (not the accent), and a border-darkening pass (explore pills, home left-stripes, to-restore + protocol greens) at Luneth's chosen aggressive level via a --dk-fam-a knob.", detail: `Batch 2 of 2 of Luneth's dark-theme polish list -- the border cluster: "too busy / too bright" borders on charcoal, plus a category-colour fix on condition detail pages. New theme.css block (J10), all dark-only + #drawer-knowledge-mount-scoped.
+
+Item 8 -- condition-detail borders follow the CATEGORY colour:
+  On a condition's detail page, the main content box + the small category icon had their BORDERS tinted the accent (amethyst) in dark, even though the icon's own colour correctly followed the condition's category (Cancer grey, Osteoporosis blue, Anemia red). The borders now follow --cat too, matching the icon and the light theme.
+  Root cause + a specificity lesson: the box/icon carry --cat set inline (I confirmed it -- boxCatComputed = #4f76a3 for Osteoporosis). My first override still lost, because the dark "drawers" block has an accent-deep :is() override whose :is() specificity is (1,4,0) -- it TIED my override and won on source order (it sits later in the file). Bumped my selectors to (1,5,0) -- three classes on the box (.kd-essential-deep.kd-ep.kd-ep--cond) and the .kd-ep--cond ancestor + both icon classes -- so they win regardless of order. (Note for next time: :is() takes the specificity of its most specific argument, so an :is() list that contains a two-class selector is (1,2,0)+prefix, not (1,1,0)+prefix.)
+
+Items 6, 7, 9, 11 -- the border-darkening pass (Luneth picked the aggressive level):
+  A single magnitude knob, --dk-fam-a (default 28%), drives every family/category BORDER:
+    - .kd-explore-chip (explore topic pills) border
+    - .sh-tile::before (home essentials + condition left stripes) background
+    - button.kd-ep-pill--nut / --explore ("to restore" green + explore purple pills) border
+    - .kd-ep-claim box-shadow inset (the protocol left bar) + [open] border + __badge border + __verbatim border-left
+  each -> color-mix(in srgb, <family> var(--dk-fam-a), transparent). The "Wallach's protocol" family TEXT (__short/__full/__cite/__badge) is also slightly darkened -> color-mix(<family> 80%, #000). The legend swatches were left bright -- they're the reference key. To let Luneth compare, I parameterised the darkening with the knob and screenshotted 45% vs 28% by flipping one value; he chose 28%.
+
+Verification (dark + amethyst, driving the REAL knowledge drawer -- home, explore, Cancer + Osteoporosis details):
+  - build 0; invariants 92/92; render probes PASS knowledge + scanner.
+  - item 8: Osteoporosis box border = rgb(79,118,163) (the blue category colour, NOT the accent); icon border = the --cat 60% mix.
+  - darkening resolves at 28% alpha by DEFAULT with no inline override (badge green / 0.28).
+  - before/after screenshots (45% vs 28%) across explore / home / condition detail reviewed with Luneth.
+
 Push: origin/master this round, per his instruction.` }];
 
   // assets/js/src/state/log.ts

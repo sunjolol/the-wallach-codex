@@ -535,6 +535,36 @@
    (J4) had routed it to the accent. */
 :root[data-theme="dark"] #drawer-search-mount .fgroup__more { color: color-mix(in srgb, var(--k) 62%, var(--ds-ink)); }
 
+/* (J10) Dark border-darkening + condition-detail category borders (batch 2). */
+/* Magnitude knob for the family/category BORDER darkening -- lower = darker/quieter. */
+:root[data-theme="dark"] { --dk-fam-a: 28%; }
+
+/* Item 8 -- condition detail: the box + hero-icon borders follow the CATEGORY colour (--cat),
+   like the icon content and light theme, instead of the accent-deep the sweep forced on them. */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep.kd-ep.kd-ep--cond {
+  border-color: var(--cat, var(--ds-accent-deep));
+  box-shadow: 0 4px 14px -3px color-mix(in srgb, var(--cat, var(--ds-accent)) 22%, transparent);
+}
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep--cond .kd-ep-hero__sym.kd-ep-hero__sym--cat {
+  border-color: color-mix(in srgb, var(--cat) 60%, var(--ds-rule));
+}
+
+/* Items 6/7 -- explore topic pills + the home essentials/condition left stripes: darken. */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-explore-chip { border-color: color-mix(in srgb, var(--fam-story) var(--dk-fam-a), transparent); }
+:root[data-theme="dark"] #drawer-knowledge-mount .sh-tile::before { background: color-mix(in srgb, var(--cat) var(--dk-fam-a), transparent); }
+
+/* Item 9 -- the coloured nutrient pills ("to restore" green, "explore" purple): darken borders. */
+:root[data-theme="dark"] #drawer-knowledge-mount button.kd-ep-pill--nut { border-color: color-mix(in srgb, var(--fam-action) var(--dk-fam-a), transparent); }
+:root[data-theme="dark"] #drawer-knowledge-mount button.kd-ep-pill--explore { border-color: color-mix(in srgb, var(--fam-story) var(--dk-fam-a), transparent); }
+
+/* Item 11 -- "Wallach's protocol" claim cards: borders significantly darker, family text slightly darker. */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim { box-shadow: inset 4px 0 0 color-mix(in srgb, var(--kd-ep-fam, transparent) var(--dk-fam-a), transparent); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim[open] { border-color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-accent)) var(--dk-fam-a), transparent); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim__badge { border-color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-tech)) var(--dk-fam-a), transparent); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim__verbatim { border-left-color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-accent)) var(--dk-fam-a), transparent); }
+:root[data-theme="dark"] #drawer-knowledge-mount :is(.kd-ep-claim__short, .kd-ep-claim__full, .kd-ep-claim__cite, .kd-ep-claim__badge) { color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-accent-deep)) 80%, #000); }
+
+
 /* ── workspaces: status / tech tokens as fg → color-mix(… 62%, --ds-ink) ── */
 :root[data-theme="dark"] :is(.vd-scan__done, .vd-nrow__cf) { color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
 :root[data-theme="dark"] :is(.rc-gone, .rc-rep-tobin, .vd-nrow__map b.vd-nrow__x, .vd-nrow__sub--err) { color: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
