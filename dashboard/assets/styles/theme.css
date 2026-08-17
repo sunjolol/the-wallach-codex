@@ -558,8 +558,10 @@
 :root[data-theme="dark"] #drawer-knowledge-mount button.kd-ep-pill--nut { border-color: color-mix(in srgb, var(--fam-action) var(--dk-fam-a), transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount button.kd-ep-pill--explore { border-color: color-mix(in srgb, var(--fam-story) var(--dk-fam-a), transparent); }
 
-/* Item 11 -- "Wallach's protocol" claim cards: borders significantly darker, family text slightly darker. */
-:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim { box-shadow: inset 4px 0 0 color-mix(in srgb, var(--kd-ep-fam, transparent) var(--dk-fam-a), transparent); }
+/* Item 11 -- "Wallach's protocol" claim cards: family text slightly darker (below). The LEFT
+   stripe is at 50% (matching the Home / all-essentials stripes, Luneth 2026-08-17); the [open],
+   badge + verbatim borders stay on the 28% --dk-fam-a knob. */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim { box-shadow: inset 4px 0 0 color-mix(in srgb, var(--kd-ep-fam, transparent) 50%, transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim[open] { border-color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-accent)) var(--dk-fam-a), transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim__badge { border-color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-tech)) var(--dk-fam-a), transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim__verbatim { border-left-color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-accent)) var(--dk-fam-a), transparent); }
@@ -695,11 +697,11 @@
   --ds-accent-deep: color-mix(in srgb, #ff7e3c 60%, var(--ds-ink));
 }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="amino_acid"] {
-  --ds-accent: color-mix(in srgb, var(--fam-action) 78%, #fff);
+  --ds-accent: #7cc24e;
   --ds-accent-deep: color-mix(in srgb, #5aa82c 60%, var(--ds-ink));
 }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="fatty_acid"] {
-  --ds-accent: color-mix(in srgb, var(--fam-story) 78%, #fff);
+  --ds-accent: #a878e6;
   --ds-accent-deep: color-mix(in srgb, #8a52d6 60%, var(--ds-ink));
 }
 :root[data-theme="dark"] #drawer-knowledge-mount .mkA-pt--up .mkA-pt__lead { color: color-mix(in srgb, #2f7a33 62%, var(--ds-ink)); }
