@@ -714,3 +714,33 @@
 
 /* white-on-bright-facet count pill: flip text dark so it reads on the lightened fill */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-kind__count { color: #14100b; }
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   (K) Dark boxes the 2026-08-17 sweep left light. Absorption + ORAC were excluded
+   then as "being redesigned"; ORAC §08 STAYS as-is, so it is dark-fixed here.
+   ═══════════════════════════════════════════════════════════════════════════ */
+/* 98% Colloidal PDM node: its --ds-accent-wash fill still read bright — pin a dark
+   accent-tinted fill (the stroke is already handled by the grouped rule above). */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-fam__node--solid { fill: color-mix(in srgb, var(--ds-accent) 20%, var(--ds-paper-light)); }
+/* Absorption 115M / 75% pull-stats: a dark-ink slab that INVERTS to a bright box.
+   Re-pin the flip tokens so it renders like cream mode (the island precedent, section E). */
+:root[data-theme="dark"] .ds-pull-stat { --ds-ink: #1a1612; --ds-ink-medium: #3d342a; --ds-paper: #fffbf2; --ds-paper-light: #fffbf2; }
+/* Absorption "the twist" callout: hardcoded #f7ece6 → a faint status-tinted dark panel. */
+:root[data-theme="dark"] #drawer-knowledge-mount .sx-callout { background: color-mix(in srgb, var(--ds-status-err) 12%, var(--ds-paper-light)); }
+/* ORAC §08: five hardcoded rgb() boxes → dark, faintly tinted to their own semantic hue. */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-piece--diet { background: var(--ds-paper-deep); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-force--a { background: color-mix(in srgb, var(--sev-calm) 12%, var(--ds-paper-light)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-force--b { background: color-mix(in srgb, var(--o-leaf) 12%, var(--ds-paper-light)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-payoff { background: color-mix(in srgb, var(--o-leaf) 12%, var(--ds-paper-light)); }
+/* Absorption "same gut, two states" fortress figures: full-bleed light-first diagrams.
+   Darken the cells and flip the figure's three light-dependent surfaces via --frt-* so the
+   marks stay legible (orange food + tan walls already read on dark). BLIND dark adaptation —
+   these four knobs are the tuning surface. */
+:root[data-theme="dark"] #drawer-knowledge-mount .frt-cell {
+  --frt-organ: var(--ds-paper-deep);
+  --frt-blood: #23343e;
+  --frt-blood-br: #37525f;
+  --frt-invader: #d1584f;
+}
+:root[data-theme="dark"] #drawer-knowledge-mount .frt-cell--ok { background: color-mix(in srgb, var(--ds-accent) 10%, var(--ds-paper-light)); border-color: color-mix(in srgb, var(--ds-accent) 35%, var(--ds-rule)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .frt-cell--bad { background: var(--ds-paper-deep); }

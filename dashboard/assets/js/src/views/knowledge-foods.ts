@@ -300,8 +300,8 @@ function fortressFig(state: 'ok' | 'bad'): string {
   const W = 300;
   const H = 190;
   const wallY = 150;
-  const body = '<path d="M40 30 Q150 6 262 34 Q276 78 236 128 Q210 168 150 176 Q90 168 66 128 Q28 82 40 30 Z" fill="#ffffff" stroke="#d8b48c" stroke-width="2"/>';
-  const blood = `<rect x="14" y="${wallY + 6}" width="${W - 28}" height="26" rx="5" fill="#e7eef2" stroke="#cddbe2" stroke-width="1"/><text x="${W - 20}" y="${wallY + 22}" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1" fill="#7a8f9a">BLOOD</text>`;
+  const body = '<path d="M40 30 Q150 6 262 34 Q276 78 236 128 Q210 168 150 176 Q90 168 66 128 Q28 82 40 30 Z" style="fill:var(--frt-organ,#ffffff)" stroke="#d8b48c" stroke-width="2"/>';
+  const blood = `<rect x="14" y="${wallY + 6}" width="${W - 28}" height="26" rx="5" style="fill:var(--frt-blood,#e7eef2);stroke:var(--frt-blood-br,#cddbe2)" stroke-width="1"/><text x="${W - 20}" y="${wallY + 22}" text-anchor="end" font-family="JetBrains Mono, monospace" font-size="8" letter-spacing="1" fill="#7a8f9a">BLOOD</text>`;
   let g = '';
   if (state === 'ok') {
     g += '<path d="M52 58 Q150 40 250 60 Q262 96 230 128 Q206 160 150 166 Q94 160 72 128 Q44 96 52 58 Z" fill="rgba(255,126,60,.20)"/>';
@@ -319,7 +319,7 @@ function fortressFig(state: 'ok' | 'bad'): string {
   else {
     g += '<path d="M62 118 Q150 106 238 118 Q214 156 150 164 Q92 158 62 118 Z" fill="rgba(255,126,60,.14)"/>';
     for (const p of FRT_INVADERS) {
-      g += `<g transform="translate(${p[0]},${p[1]})"><circle r="4.5" fill="#8a2f2f"/><line x1="-6" y1="0" x2="6" y2="0" stroke="#8a2f2f" stroke-width="1.4"/><line x1="0" y1="-6" x2="0" y2="6" stroke="#8a2f2f" stroke-width="1.4"/></g>`;
+      g += `<g transform="translate(${p[0]},${p[1]})"><circle r="4.5" style="fill:var(--frt-invader,#8a2f2f)"/><line x1="-6" y1="0" x2="6" y2="0" stroke-width="1.4" style="stroke:var(--frt-invader,#8a2f2f)"/><line x1="0" y1="-6" x2="0" y2="6" stroke-width="1.4" style="stroke:var(--frt-invader,#8a2f2f)"/></g>`;
     }
     for (const b of FRT_BUBBLES) {
       g += `<circle cx="${b[0]}" cy="${b[1]}" r="${b[2]}" fill="none" stroke="#9b8e7c" stroke-width="1.4"/>`;
