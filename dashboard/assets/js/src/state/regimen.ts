@@ -342,10 +342,6 @@ export function loadRgOverrides(): OverridesMap {
   return getActiveSlot(loadSlotDoc()).overrides;
 }
 
-export function loadRgManual(): RegimenItem[] {
-  return getActiveSlot(loadSlotDoc()).items;
-}
-
 /**
  * The active slot's steering goals (P4 — per-slot; goals were a GLOBAL key before,
  * now seeded into each slot by the migration/backfill). Returns null only when the

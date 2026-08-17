@@ -11,11 +11,14 @@
 - **Dead-CSS verify:** `.ck-addcard*`/`.ck-scan*` = zero refs (purged by `938a407c`); `.rl-dose*` is LIVE (the coverage dose stepper) — left as-is.
 - **Deferred (Luneth left open):** on reopen the veil kicker/heading still read like first-time onboarding; a slightly wide gap where the name field used to sit; the goal-chip × (20px) is heavier than the old 12px text × — all left pending his call.
 
+## ✅ ALSO DONE (2026-08-17) — the two deferred regimen findings, committed + pushed
+- **Finding 1:** `coverage.ts::addVaultProduct` now delegates the §10 add-or-bump dedup to the shared `state/regimen.ts::addOrBumpRegimenItem` (was a duplicated rule); the freed-up dead `loadRgManual` export removed. Behaviour-identical; dedup + coverage probes green.
+- **Finding 2:** the regimen refusal toast (`.ck-undo`, which had ZERO css → bare page text) is now a styled floating pill (`.ck-toast`, bottom-centre, `--ds-elev-3` + accent edge). Dead undo button/param removed; renamed `ck-undo`→`ck-toast` / `undoTimer`→`toastTimer`. Verified by a real import-invalid trigger.
+
 ## ▶ START HERE — the big list is CLOSED; ask which candidate to resume
 No item is forced. Candidates:
-1. **Two deferred regimen findings** (now raisable — the list closed): `addVaultProduct` dedup duplication; unstyled `.ck-undo`. [[regimen-two-deferred-findings]].
-2. **Profile feature build** — name/avatar/themes; the profile console already exists (avatars + theme picker + Cream/Charcoal). Scope what remains vs [[profile-feature-spec]].
-3. **scanner-r2 R2-6 WS2** — shared `core/escape.ts` + single-source gate — PARKED by Luneth (raise only if he asks).
+1. **Profile feature build** — name/avatar/themes; the profile console already exists (avatars + theme picker + Cream/Charcoal). Scope what remains vs [[profile-feature-spec]].
+2. **scanner-r2 R2-6 WS2** — shared `core/escape.ts` + single-source gate — PARKED by Luneth (raise only if he asks).
 
 ## STANDING / PARKED (do NOT raise unprompted)
 - **CORPUS SEAL held.** eden/ untouched; 7 unreviewed draft books in `eden/corpus/drafts/`.

@@ -820,7 +820,7 @@ function buildSlotDeleteConfirm(id: string, itemCount: number): HTMLElement {
 
 export function mount(container: HTMLElement): MountHandle {
   let animated = false;
-  let undoTimer: number | null = null;
+  let toastTimer: number | null = null;
   let recycleOpen = false;
   // D2 "Replace a save": while all four slots are full, this holds the deletedAt key of the
   // save being restored; recyclePick is the current save chosen to move to the bin. (§1 #8b)
@@ -1168,7 +1168,7 @@ export function mount(container: HTMLElement): MountHandle {
           </div>
           ${renderRail()}
         </div>
-        <div class="ck-undo" data-undo hidden></div>
+        <div class="ck-toast" data-toast hidden></div>
         <div class="rc-host" data-rc-host hidden></div>
       </div>`;
 
@@ -1197,8 +1197,12 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
-  const showToast = (message: string, undo?: () => void): void => {
-    const bar = container.querySelector<HTMLElement>('[data-undo]');
+  // A transient notice pill (styled fixed in the toast corner). Refusal-only now: the
+  // slot-delete undo path was removed, so no caller passes an action — it shows a message and
+  // auto-hides. If an actionable toast is ever wanted again, route it through the design-system
+  // .ds-slot-toast region instead of re-growing an undo button here.
+  const showToast = (message: string): void => {
+    const bar = container.querySelector<HTMLElement>('[data-toast]');
     if (bar === null) {
       return;
     }
@@ -1206,25 +1210,11 @@ export function mount(container: HTMLElement): MountHandle {
     const msg = document.createElement('span');
     msg.textContent = message;
     bar.appendChild(msg);
-    if (undo !== undefined) {
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'ck-undo__btn';
-      btn.textContent = 'Undo';
-      btn.addEventListener('click', () => {
-        if (undoTimer !== null) {
-          window.clearTimeout(undoTimer);
-          undoTimer = null;
-        }
-        undo();
-      });
-      bar.appendChild(btn);
-    }
     bar.hidden = false;
-    if (undoTimer !== null) {
-      window.clearTimeout(undoTimer);
+    if (toastTimer !== null) {
+      window.clearTimeout(toastTimer);
     }
-    undoTimer = window.setTimeout(() => {
+    toastTimer = window.setTimeout(() => {
       bar.hidden = true;
     }, 8000);
   };
@@ -1621,8 +1611,8 @@ export function mount(container: HTMLElement): MountHandle {
     unmount: () => {
       unsubReg();
       unsubCov();
-      if (undoTimer !== null) {
-        window.clearTimeout(undoTimer);
+      if (toastTimer !== null) {
+        window.clearTimeout(toastTimer);
       }
       container.removeEventListener('click', clickHandler);
       container.removeEventListener('input', inputHandler);

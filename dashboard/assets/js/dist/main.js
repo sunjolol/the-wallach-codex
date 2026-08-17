@@ -16134,9 +16134,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function loadRgOverrides() {
     return getActiveSlot(loadSlotDoc()).overrides;
   }
-  function loadRgManual() {
-    return getActiveSlot(loadSlotDoc()).items;
-  }
   function loadRgUserGoals() {
     return getActiveSlot(loadSlotDoc()).goals ?? null;
   }
@@ -27648,19 +27645,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     if (entry === null) {
       return;
     }
-    const current = loadEffectiveRegimen();
-    const existing = current.find((i) => typeof i.label.name === "string" && i.label.name.trim().toLowerCase() === entry.name.trim().toLowerCase());
-    if (existing !== void 0) {
-      bumpDose(String(existing.id), 1);
-      return;
-    }
     const item = {
       id: Date.now(),
       label: { name: entry.name, nutrients: entry.nutrients },
       addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
       provenance: "user_manual"
     };
-    saveRgManual([...loadRgManual(), item]);
+    addOrBumpRegimenItem(item);
   }
   function bumpDose(id, delta) {
     if (id === "") {
@@ -181446,7 +181437,7 @@ FILES:
 
 VERIFY: tsc + esbuild 0; invariants 91/91 (dead-rule gate green); render_probe_ocr/scan/scanner 0; live re-open render of the pumpkin label screenshotted and signed off. Coverage tab untouched.
 
-DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (small green arc) \u2014 he may want a more strengths-forward visual later; the caption/deck/"delivered strongly" wording is open to tuning.` }, { id: "lg_mswrpghb_bd3z0g", ts: "2026-08-17T00:02:50.543791-05:00", surface: "session", kind: "session-end", summary: "Session close 2026-08-17. #7 verdict-hero shipped (built A -> re-ranked -> B 'Gap Arc'), then the scanner result hero reframed to the item's 'hits N of 90' (>=3% of Wallach's target) + Copper->'Pepper' fix. Board 91/91, eden untouched. Next: #9 goal-picker/veil.", detail: "Session arc (all committed + pushed to origin/master):\n\n1. #7 result verdict-card redesign. Mockup-first: 4 genuinely-distinct 'N of 90' hero concepts rendered in true geometry (temporary/scanner-verdict-hero-demos.html). Luneth picked A (Deficit Rail), I built + he signed it off (06c582e9); he then re-ranked B>D>A>C after seeing them live and picked B (Gap Arc), which I built to replace A (904528fc).\n\n2. Scanner reframe (babaf9b6). Luneth flagged that scanning pumpkin seeds showed '0 reach the 90' because the hero was full-COVERAGE (Wallach targets are so high only the whole Youngevity stack meets them -> a shill funnel). Reframed the scan hero to the ITEM's 'hits N of 90' = essentials delivered >=3% of the Wallach target (00.A-clean; ~52 undosed essentials are honest non-hits). Also fixed ocrFuzzyFix corrupting 'Copper'->'Pepper'. Pumpkin now reads 'Worth adding - delivers 6 - 2 strongly'. Doctrine saved to memory (scanner-hits-not-covers-doctrine).\n\nBoard 91/91 throughout; every visual chunk went mockup/live-render -> Luneth sign-off before commit.\n\nNEXT: #9 goal-picker/veil (veil everywhere + close x, hide 'I'm just browsing' for an existing profile, close orange->green, .ui-close A-sweep, dead-CSS verify). DEFERRED (Luneth left open): the scanner /90 gauge reads modest for a food (maybe a strengths-forward visual); caption/wording tuning." }, { id: "lg_msxd4hdc_jguqvx", ts: "2026-08-17T10:02:23.472355-05:00", surface: "regimen+welcome+app-wide", kind: "round-close", summary: "#9 shipped: the goal picker is now one surface \u2014 Regimen\u2019s \u201C+ Add goal\u201D opens the same full veil as Coverage, the veil got a close \xD7 and stops re-asking existing users \u2014 and every leftover ad-hoc close \xD7 across the app now uses the one standard .ui-close button.", detail: "Two changes that make the app feel like one consistent thing. First, there used to be two ways to pick your goals \u2014 a big first-visit invitation on Coverage and a separate little drop-down in Regimen; now they open the SAME surface, it has a close \xD7 in the corner, and once you already have a profile it stops re-asking your name or offering \u201CI\u2019m just browsing.\u201D Second, all the mismatched little \xD7 buttons scattered around the app are now one standard close button that follows whatever theme colour you pick.\n\nVEIL UNIFICATION (commit 1e657165): welcome.ts gained a close \xD7 (.ui-close.wc__x, [data-veil-close]) \u2014 on reopen it cancels (profile+goals untouched), on first arrival it records {browsing:true} so it never re-nags; the browse button + name block are ${reopen ? \u2019\u2019 : \u2026}-gated. regimen.ts\u2019 [data-goal-add] now fires wallach:open-welcome (the event Coverage already fired) and the dead inline ck-goalmenu is severed (renderGoalMenu fn + call + data-goal-pick handler + .ck-goalmenu CSS). The \xD7 inherits .ui-close\u2019s --ds-accent hover (theme/colour-picker driven) \u2014 I first shipped it GREEN, Luneth corrected it (green is only for the green-coded search surface), reverted; saved as memory close-x-follows-theme-accent.\n\nA-SWEEP (this commit): 5 bespoke \xD7s adopt .ui-close (SVG X, theme-accent hover) \u2014 goal-chip .gchip__x (regimen+coverage, sized to the pill via --uic-size:20px, hover-reveal kept), knowledge .kd-knh__close, profile .pf-close, scanner OCR-suspect .vd-ocr__x (--uic-size:24px), recycle .rc-pop__x \xD72. The Ask-Wallach search close .scr-nav--close deliberately stays --aw-green. Old classes reduced to layout-only; all data-* hooks kept.\n\nVERIFY: build 0; invariants 91/91 (dead-rule gate green); render probes coverage_add_remove(31)/knowledge/profile/recycle/scanner all 0; e2e 22 veil assertions + per-\xD7 .ui-close+SVG checks; Luneth live sign-off on both. Full technical record in chronicle/build-log.md (two 2026-08-17 lines). The big-tweak list (2026-08-15) is now closed. eden/ untouched." }];
+DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (small green arc) \u2014 he may want a more strengths-forward visual later; the caption/deck/"delivered strongly" wording is open to tuning.` }, { id: "lg_mswrpghb_bd3z0g", ts: "2026-08-17T00:02:50.543791-05:00", surface: "session", kind: "session-end", summary: "Session close 2026-08-17. #7 verdict-hero shipped (built A -> re-ranked -> B 'Gap Arc'), then the scanner result hero reframed to the item's 'hits N of 90' (>=3% of Wallach's target) + Copper->'Pepper' fix. Board 91/91, eden untouched. Next: #9 goal-picker/veil.", detail: "Session arc (all committed + pushed to origin/master):\n\n1. #7 result verdict-card redesign. Mockup-first: 4 genuinely-distinct 'N of 90' hero concepts rendered in true geometry (temporary/scanner-verdict-hero-demos.html). Luneth picked A (Deficit Rail), I built + he signed it off (06c582e9); he then re-ranked B>D>A>C after seeing them live and picked B (Gap Arc), which I built to replace A (904528fc).\n\n2. Scanner reframe (babaf9b6). Luneth flagged that scanning pumpkin seeds showed '0 reach the 90' because the hero was full-COVERAGE (Wallach targets are so high only the whole Youngevity stack meets them -> a shill funnel). Reframed the scan hero to the ITEM's 'hits N of 90' = essentials delivered >=3% of the Wallach target (00.A-clean; ~52 undosed essentials are honest non-hits). Also fixed ocrFuzzyFix corrupting 'Copper'->'Pepper'. Pumpkin now reads 'Worth adding - delivers 6 - 2 strongly'. Doctrine saved to memory (scanner-hits-not-covers-doctrine).\n\nBoard 91/91 throughout; every visual chunk went mockup/live-render -> Luneth sign-off before commit.\n\nNEXT: #9 goal-picker/veil (veil everywhere + close x, hide 'I'm just browsing' for an existing profile, close orange->green, .ui-close A-sweep, dead-CSS verify). DEFERRED (Luneth left open): the scanner /90 gauge reads modest for a food (maybe a strengths-forward visual); caption/wording tuning." }, { id: "lg_msxd4hdc_jguqvx", ts: "2026-08-17T10:02:23.472355-05:00", surface: "regimen+welcome+app-wide", kind: "round-close", summary: "#9 shipped: the goal picker is now one surface \u2014 Regimen\u2019s \u201C+ Add goal\u201D opens the same full veil as Coverage, the veil got a close \xD7 and stops re-asking existing users \u2014 and every leftover ad-hoc close \xD7 across the app now uses the one standard .ui-close button.", detail: "Two changes that make the app feel like one consistent thing. First, there used to be two ways to pick your goals \u2014 a big first-visit invitation on Coverage and a separate little drop-down in Regimen; now they open the SAME surface, it has a close \xD7 in the corner, and once you already have a profile it stops re-asking your name or offering \u201CI\u2019m just browsing.\u201D Second, all the mismatched little \xD7 buttons scattered around the app are now one standard close button that follows whatever theme colour you pick.\n\nVEIL UNIFICATION (commit 1e657165): welcome.ts gained a close \xD7 (.ui-close.wc__x, [data-veil-close]) \u2014 on reopen it cancels (profile+goals untouched), on first arrival it records {browsing:true} so it never re-nags; the browse button + name block are ${reopen ? \u2019\u2019 : \u2026}-gated. regimen.ts\u2019 [data-goal-add] now fires wallach:open-welcome (the event Coverage already fired) and the dead inline ck-goalmenu is severed (renderGoalMenu fn + call + data-goal-pick handler + .ck-goalmenu CSS). The \xD7 inherits .ui-close\u2019s --ds-accent hover (theme/colour-picker driven) \u2014 I first shipped it GREEN, Luneth corrected it (green is only for the green-coded search surface), reverted; saved as memory close-x-follows-theme-accent.\n\nA-SWEEP (this commit): 5 bespoke \xD7s adopt .ui-close (SVG X, theme-accent hover) \u2014 goal-chip .gchip__x (regimen+coverage, sized to the pill via --uic-size:20px, hover-reveal kept), knowledge .kd-knh__close, profile .pf-close, scanner OCR-suspect .vd-ocr__x (--uic-size:24px), recycle .rc-pop__x \xD72. The Ask-Wallach search close .scr-nav--close deliberately stays --aw-green. Old classes reduced to layout-only; all data-* hooks kept.\n\nVERIFY: build 0; invariants 91/91 (dead-rule gate green); render probes coverage_add_remove(31)/knowledge/profile/recycle/scanner all 0; e2e 22 veil assertions + per-\xD7 .ui-close+SVG checks; Luneth live sign-off on both. Full technical record in chronicle/build-log.md (two 2026-08-17 lines). The big-tweak list (2026-08-15) is now closed. eden/ untouched." }, { id: "lg_msxe3k17_l9shwi", ts: "2026-08-17T10:29:39.883995-05:00", surface: "regimen+coverage", kind: "round-close", summary: "Cleared the two deferred regimen findings: the add-or-bump dedup rule now lives in one shared helper (Coverage\u2019s rec-card \u201C+\u201D delegates to it), and the regimen refusal message is a real styled floating toast instead of unstyled text at the bottom of the page.", detail: "Two small, long-parked regimen code cleanups (flagged during #8b, deliberately held until after the big-tweak list; that list closed this session, so I raised them). Neither changes what you normally see.\n\nFINDING 1 \u2014 one source of truth for add-or-bump. Adding a supplement already in your stack raises its dose instead of making a duplicate row (a duplicate would double-count on the field). That rule existed in TWO hand-maintained places: coverage.ts::addVaultProduct and the shared state/regimen.ts::addOrBumpRegimenItem. addVaultProduct now just mints the item and calls the shared helper. Removing coverage\u2019s copy left state/regimen.ts::loadRgManual with no importers \u2014 the no_new_dead_code gate went red (a red CAUSED by the fix, not a regression), so the dead export was removed too. Behaviour-identical; render_probe_regimen_dedup (re-add \u2192 dose 1\u21922, one row) + the 31-check coverage loop both pass.\n\nFINDING 2 \u2014 the refusal toast. When the regimen refuses an action (e.g. importing a file that isn\u2019t a valid regimen), it shows a short message. Its CSS class (.ck-undo) had ZERO styling, so it rendered as bare text at the bottom of the content. Now it\u2019s a real toast pill: workspace-regimen.css .ck-toast \u2014 fixed, bottom-centre, --ds-paper + --ds-elev-3 + a --ds-accent left-border, auto-hides after 8s. Also removed dead code: the slot-delete undo path was cut long ago so nothing passed an `undo` fn \u2014 dropped the param + the .ck-undo__btn block \u2014 and renamed for honesty (ck-undo\u2192ck-toast, data-undo\u2192data-toast, undoTimer\u2192toastTimer). A comment points future actionable toasts at the design-system .ds-slot-toast region. Verified with a REAL trigger (invalid-file import \u2192 \u2018That file is not valid JSON.\u2019): visible, position:fixed, z 110, message present; 5/5, 0 errors. First placed top-right (the .ds-slot-toast convention) but it overlapped the Ask-Wallach button, so moved bottom-centre; Luneth signed off.\n\nVERIFY: build 0; invariants 91/91; render probes coverage_add_remove(31)/regimen_dedup/recycle/recycle_ui/recycle_d2/slots/slot_delete_confirm all 0. Full technicals in chronicle/build-log.md (two 2026-08-17 10:27 lines). The memory that parked these (regimen-two-deferred-findings) is now resolved. eden/ untouched." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -182556,7 +182547,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
   }
   function mount4(container) {
     let animated = false;
-    let undoTimer = null;
+    let toastTimer = null;
     let recycleOpen = false;
     let recycleReplaceKey = null;
     let recyclePick = null;
@@ -182863,7 +182854,7 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
           </div>
           ${renderRail2()}
         </div>
-        <div class="ck-undo" data-undo hidden></div>
+        <div class="ck-toast" data-toast hidden></div>
         <div class="rc-host" data-rc-host hidden></div>
       </div>`;
       const items = loadEffectiveRegimen();
@@ -182890,8 +182881,8 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
         animateGauge(field.covered);
       }
     };
-    const showToast = (message, undo) => {
-      const bar = container.querySelector("[data-undo]");
+    const showToast = (message) => {
+      const bar = container.querySelector("[data-toast]");
       if (bar === null) {
         return;
       }
@@ -182899,25 +182890,11 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       const msg = document.createElement("span");
       msg.textContent = message;
       bar.appendChild(msg);
-      if (undo !== void 0) {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "ck-undo__btn";
-        btn.textContent = "Undo";
-        btn.addEventListener("click", () => {
-          if (undoTimer !== null) {
-            window.clearTimeout(undoTimer);
-            undoTimer = null;
-          }
-          undo();
-        });
-        bar.appendChild(btn);
-      }
       bar.hidden = false;
-      if (undoTimer !== null) {
-        window.clearTimeout(undoTimer);
+      if (toastTimer !== null) {
+        window.clearTimeout(toastTimer);
       }
-      undoTimer = window.setTimeout(() => {
+      toastTimer = window.setTimeout(() => {
         bar.hidden = true;
       }, 8e3);
     };
@@ -183272,8 +183249,8 @@ DEFERRED (Luneth left open): the /90 gauge still reads a bit modest for a food (
       unmount: () => {
         unsubReg();
         unsubCov();
-        if (undoTimer !== null) {
-          window.clearTimeout(undoTimer);
+        if (toastTimer !== null) {
+          window.clearTimeout(toastTimer);
         }
         container.removeEventListener("click", clickHandler);
         container.removeEventListener("input", inputHandler);

@@ -39,7 +39,7 @@ import { CoverageLayoutSchema, type LayoutGoal, type LayoutSection, type LayoutS
 import { ui } from '../state/copy.js';
 import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCount, getOrCompute } from '../state/coverage.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage, vaultEntry } from '../state/recommender.js';
-import { loadEffectiveRegimen, loadRgManual, loadRgUserGoals, loadSlots, saveRgManual, saveRgOverride, saveRgRemoved, saveRgUserGoals } from '../state/regimen.js';
+import { addOrBumpRegimenItem, loadEffectiveRegimen, loadRgUserGoals, loadSlots, saveRgOverride, saveRgRemoved, saveRgUserGoals } from '../state/regimen.js';
 
 export interface MountHandle {
   update: () => void;
@@ -824,14 +824,15 @@ export function mount(container: HTMLElement): MountHandle {
  * The rec card's `+` — 1-click add. Luneth: discoverability of 1-click add is solved by a
  * `+` on each card, not by a second button that lies.
  *
- * Routes through §31 (saveRgManual → writeSlotDoc → 'regimen:changed'), which cascades the
+ * Resolves the vault id, mints the SAME RegimenItem shape as views/regimen.ts's vault picker
+ * — provenance 'user_manual', because a vault-matched add IS an Eden product, not the user's
+ * own scanned item (that distinction is what the EDEN/YOURS mark reads) — then delegates to
+ * state/regimen.ts::addOrBumpRegimenItem, the ONE home of the §10 add-or-bump rule: a
+ * same-named item already in the slot has its dose raised instead of a duplicate row (two rows
+ * for one product would double-count it on the field). That helper routes through §31
+ * (saveRgManual / saveRgOverride → writeSlotDoc → 'regimen:changed'), which cascades the
  * recompute; the view re-renders off the event, so the field relights and the product leaves
- * its own recommendation list. It mints the SAME RegimenItem shape as views/regimen.ts's
- * vault picker — provenance 'user_manual', because a vault-matched add IS an Eden product,
- * not the user's own scanned item (that distinction is what the EDEN/YOURS mark reads).
- *
- * §10 edge rule: adding an item ALREADY in the slot raises its dose instead of creating a
- * duplicate row. Two rows for one product would double-count it on the field.
+ * its own recommendation list.
  */
 function addVaultProduct(productId: string): void {
   if (productId === '') {
@@ -841,21 +842,13 @@ function addVaultProduct(productId: string): void {
   if (entry === null) {
     return; // unresolvable id — do nothing rather than mint an item with a slug for a name
   }
-  const current = loadEffectiveRegimen();
-  const existing = current.find(i =>
-    typeof i.label.name === 'string'
-    && i.label.name.trim().toLowerCase() === entry.name.trim().toLowerCase());
-  if (existing !== undefined) {
-    bumpDose(String(existing.id), 1);
-    return;
-  }
   const item: RegimenItem = {
     id: Date.now(),
     label: { name: entry.name, nutrients: entry.nutrients },
     addedDate: new Date().toISOString().slice(0, 10),
     provenance: 'user_manual',
   };
-  saveRgManual([...loadRgManual(), item]);
+  addOrBumpRegimenItem(item);
 }
 
 function bumpDose(id: string, delta: number): void {
