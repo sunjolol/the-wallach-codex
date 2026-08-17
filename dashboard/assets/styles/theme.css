@@ -629,7 +629,8 @@
   #drawer-knowledge-mount .sh-condrow
 ) { border-left-color: var(--ds-accent-deep); }
 :root[data-theme="dark"] #drawer-knowledge-mount .ue-tile { border-top-color: var(--ds-accent-deep); }
-:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-tab.active, .gloss, #drawer-knowledge-mount .kd-ep-why) { border-bottom-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-tab.active, #drawer-knowledge-mount .kd-ep-why) { border-bottom-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] .gloss { border-bottom-color: var(--kd-ep-fam, var(--ds-accent-deep)); }
 :root[data-theme="dark"] :is(
   #drawer-knowledge-mount.kd-open::after, #drawer-knowledge-mount .kd-eyebrow .pulse-dot,
   #drawer-knowledge-mount .kd-corpus__eyebrow .pulse-dot, #drawer-knowledge-mount .kd-essential-deep__sub::before,

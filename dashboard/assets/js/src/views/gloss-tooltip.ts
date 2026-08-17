@@ -39,6 +39,18 @@ function showFor(el: HTMLElement): void {
   const t = ensureTip();
   activeEl = el;
   t.textContent = def;
+  // Colour the tip to match the term's claim family -- the same colour its dotted underline
+  // resolves to (green protocol, blue/violet/amber category, etc.). [data-tip] hints and
+  // Search-drawer glosses have no family, so they keep the default accent outline.
+  if (el.classList.contains('gloss')) {
+    const fam = getComputedStyle(el).borderBottomColor;
+    t.style.borderColor = fam;
+    t.style.background = `color-mix(in srgb, ${fam} 16%, var(--ds-ink))`;
+  }
+  else {
+    t.style.borderColor = '';
+    t.style.background = '';
+  }
   t.hidden = false;
   // Measure after content is set, then clamp to the viewport; prefer above the
   // term, flip below when there is no room.

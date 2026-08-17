@@ -1194,14 +1194,14 @@
    Knowledge + Search drawers); the
    floating .gloss-tip is appended to <body> (so it escapes drawer clipping). */
 .gloss {
-  border-bottom: 1px dotted var(--ds-accent);
+  border-bottom: 1px dotted var(--kd-ep-fam, var(--ds-accent));
   cursor: help;
   transition: color 120ms ease, border-color 120ms ease;
 }
 .gloss:hover,
 .gloss:focus-visible {
-  color: var(--ds-accent-deep);
-  border-bottom-color: var(--ds-accent-deep);
+  color: var(--kd-ep-fam, var(--ds-accent-deep));
+  border-bottom-color: var(--kd-ep-fam, var(--ds-accent-deep));
   outline: none;
 }
 .gloss-tip {
@@ -1365,7 +1365,7 @@
 /* back affordance (the drawer's essential-close handler returns to the grid) */
 #drawer-knowledge-mount .kd-ep-back {
   align-self: flex-start; background: transparent; border: 1px solid var(--ds-rule);
-  color: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  color: var(--ds-ink-soft); font-family: var(--ds-font-display-interface); font-size: var(--ds-text-micro);
   letter-spacing: var(--ds-track-wide); text-transform: uppercase; padding: 3px 9px;
   border-radius: var(--ds-radius-xs); cursor: pointer; transition: all var(--ds-motion-fast) var(--ds-ease-out);
   white-space: nowrap; flex: 0 0 auto;   /* the back affordance is ALWAYS one line — the title shrinks, never this (Luneth 2026-07-22) */
@@ -2144,7 +2144,7 @@
 #drawer-knowledge-mount .kd-crumbs {
   display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
   margin: 0 0 var(--ds-space-4);
-  font-family: var(--ds-font-mono); font-size: var(--ds-text-mini);
+  font-family: var(--ds-font-display-interface); font-size: var(--ds-text-mini);
   letter-spacing: var(--ds-track-wide); text-transform: uppercase;
 }
 #drawer-knowledge-mount .kd-crumb {
@@ -2619,22 +2619,23 @@
 }
 #drawer-knowledge-mount .kd-ep-actions .kd-ep-back { margin-left: 0; align-self: auto; }
 #drawer-knowledge-mount .kd-ep--prod .kd-ep-add-regimen {
+  /* Twin of .kd-ep-back's geometry (Chakra, micro, track-wide, uppercase, 3px 9px, radius-xs,
+     1px border) but SOLID-filled in the product's category colour so it reads as the action. */
   font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-xs);
+  font-size: var(--ds-text-micro);
   font-weight: 700;
-  letter-spacing: .03em;
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
   color: #fff;
   background: var(--form, var(--ds-accent));
-  border: 0;
-  border-radius: var(--ds-radius-pill);
-  padding: 7px 15px;
+  border: 1px solid var(--form, var(--ds-accent));
+  border-radius: var(--ds-radius-xs);
+  padding: 3px 9px;
   cursor: pointer;
   white-space: nowrap;
-  box-shadow: 0 3px 10px -3px color-mix(in srgb, var(--form, var(--ds-accent)) 55%, transparent);
-  transition: transform var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out), filter var(--ds-motion-fast) var(--ds-ease-out);
+  transition: filter var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out);
 }
 #drawer-knowledge-mount .kd-ep--prod .kd-ep-add-regimen:hover {
-  transform: translateY(-1px);
   filter: brightness(1.06);
-  box-shadow: 0 5px 14px -3px color-mix(in srgb, var(--form, var(--ds-accent)) 65%, transparent);
+  box-shadow: 0 3px 10px -3px color-mix(in srgb, var(--form, var(--ds-accent)) 55%, transparent);
 }

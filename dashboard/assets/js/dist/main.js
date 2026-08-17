@@ -184921,6 +184921,14 @@ Push: origin/master this round, per his instruction. Session wrapping up -- gene
     const t = ensureTip();
     activeEl = el;
     t.textContent = def;
+    if (el.classList.contains("gloss")) {
+      const fam = getComputedStyle(el).borderBottomColor;
+      t.style.borderColor = fam;
+      t.style.background = `color-mix(in srgb, ${fam} 16%, var(--ds-ink))`;
+    } else {
+      t.style.borderColor = "";
+      t.style.background = "";
+    }
     t.hidden = false;
     const r = el.getBoundingClientRect();
     const tr = t.getBoundingClientRect();
