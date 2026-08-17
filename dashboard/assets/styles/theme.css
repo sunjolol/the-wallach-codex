@@ -485,18 +485,14 @@
   box-shadow: inset 0 0 0 1px var(--ds-accent-deep), inset 0 2px 0 -1px rgba(255,255,255,0.10), var(--ds-glow-accent-sm);
 }
 
-/* (J6) FILL uses of --ds-accent-deep -- keep them saturated in dark.
-   --ds-accent-deep is remapped FOREGROUND-bright for dark (block A: a pale light
-   tint of the accent). A few surfaces use it as a solid FILL, where that pale tint
-   reads bright + desaturated, or turns light text unreadable. Fills stay saturated:
-   route these to --ds-accent-hot (the deeper saturated per-accent variant, untouched
-   by the sweep). See [[dark-theme-token-remaps]] -- the dual-use trap. */
-/* Profile "Done" primary button: its gradient deep end went pale for every accent. */
+/* (J6) --ds-accent-deep used as a FILL washes out in dark -- keep it saturated.
+   --ds-accent-deep is remapped FOREGROUND-bright for dark (block A: a pale light tint of
+   the accent). The profile Done button used it as the deep end of a solid gradient FILL, so
+   the whole button read pale + desaturated on every accent. Route that fill to the saturated
+   per-accent --ds-accent-hot (untouched by the sweep). See [[dark-theme-token-remaps]]. */
 :root[data-theme="dark"] .pf-done {
   background: linear-gradient(140deg, color-mix(in srgb, var(--ds-accent) 82%, #fff), var(--ds-accent-hot));
 }
-/* Recycle-bin "Restore" pill: the hover fill went pale, so its light text turned unreadable. */
-:root[data-theme="dark"] .rc-btn-restore:hover { background: var(--ds-accent-hot); }
 
 /* (J7) Destructive DELETE-row button: red hover on every accent.
    .vd-nrow__del is a .ui-close, so the generic accent-close hover (J-block above,
@@ -506,6 +502,19 @@
    stays as visible as the accent rim it replaces, only red. Cream already hovers red. */
 :root[data-theme="dark"] .vd-nrow__del.ui-close:hover {
   border-color: color-mix(in srgb, var(--ds-status-err) 55%, var(--ds-ink));
+}
+
+/* (J8) Recycle-bin REMOVED-ITEM restore button (.rc-btn-ghost) -- readable hover on EVERY accent.
+   Block (G) above lifts the ghost text to --ds-accent-bright so it reads on the resting
+   translucent wash; its :is() carries (0,5,0), so it also governs :hover. But the base :hover
+   FILLS the bg with solid --ds-accent, and accent-bright text on a solid accent is
+   accent-on-accent -- nearly invisible (worst on amethyst). A single fixed light text would
+   wash out on the pale accents (gold/ember/teal). So keep the dark theme's bright-text-on-dark
+   regime: on hover DEEPEN the tint (not a solid fill) and solidify the border. The bright text
+   then reads on all 8 accents. (0,5,0) via .rc-item, after (G) + the base :hover, so it wins. */
+:root[data-theme="dark"] .rc-item .rc-btn-ghost:hover {
+  background: color-mix(in srgb, var(--ds-accent) 32%, transparent);
+  border-color: var(--ds-accent);
 }
 
 /* ── workspaces: status / tech tokens as fg → color-mix(… 62%, --ds-ink) ── */
