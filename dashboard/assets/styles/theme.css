@@ -266,6 +266,7 @@
 :root[data-theme="dark"] {
   --ds-accent-wash:      color-mix(in srgb, var(--ds-accent) 16%, transparent);
   --ds-accent-soft:      color-mix(in srgb, var(--ds-accent) 34%, transparent);
+  --ds-accent-deep:      color-mix(in srgb, var(--ds-accent) 55%, var(--ds-ink));
   --ds-status-ok-soft:   color-mix(in srgb, var(--ds-status-ok) 20%, transparent);
   --ds-status-warn-soft: color-mix(in srgb, var(--ds-status-warn) 20%, transparent);
   --ds-status-err-soft:  color-mix(in srgb, var(--ds-status-err) 20%, transparent);
@@ -356,3 +357,243 @@
 :root[data-theme="dark"] .rr-scan__link {
   color: var(--ds-accent-bright);
 }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * (J) DARK FOREGROUND BRIGHTENING — full sweep (round 1). Colours tuned for cream
+ * paper read too dark as TEXT/BORDER/ICON on charcoal. Every colour token is ALSO
+ * used as a fill (hover / count-pill with light text on it), so we cannot blanket-
+ * brighten a token: we brighten the FOREGROUND role and keep fills saturated. Bare
+ * --ds-accent foreground routes to --ds-accent-deep (remapped bright in the (A) block).
+ * ORAC internals are excluded — that surface is being redesigned. Orange/gold untouched.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* (J1) Facet-family + entity-type tokens → bright light tints of their own hue, so every
+   facet label / number / dot / stripe / border reads. Scoped above the per-section
+   redefinitions (.kd-foods/.kd-explore/.kd-home each re-set --fam-*). */
+:root[data-theme="dark"] :is(#drawer-knowledge-mount, #drawer-knowledge-mount .kd-foods, #drawer-knowledge-mount .kd-explore, #drawer-knowledge-mount .kd-home),
+:root[data-theme="dark"] #drawer-search-mount {
+  --fam-science: color-mix(in srgb, #2f9dba 60%, var(--ds-ink));
+  --fam-action:  color-mix(in srgb, #5aa82c 58%, var(--ds-ink));
+  --fam-story:   color-mix(in srgb, #8a52d6 55%, var(--ds-ink));
+}
+:root[data-theme="dark"] #drawer-search-mount {
+  --t-element:   color-mix(in srgb, #2f9dba 60%, var(--ds-ink));
+  --t-condition: color-mix(in srgb, #a83f48 58%, var(--ds-ink));
+  --t-concept:   color-mix(in srgb, #8a52d6 55%, var(--ds-ink));
+  --t-substance: color-mix(in srgb, #bd7b34 62%, var(--ds-ink));
+  --t-topic:     color-mix(in srgb, #5f7599 60%, var(--ds-ink));
+}
+
+/* (J2) White-text pills whose fill is one of the now-bright facet tokens: re-pin the fill
+   to its saturated hue (unchanged hover look), or flip the text dark where the token varies. */
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-ep-pill--nut:hover, #drawer-knowledge-mount .kd-ep-vtag, #drawer-knowledge-mount .kd-ep-getit__prod:hover) { background: #5aa82c; }
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-ep-pill--explore:hover, #drawer-knowledge-mount .kt-pill:hover, #drawer-knowledge-mount .kd-explore-chip:hover) { background: #8a52d6; }
+:root[data-theme="dark"] :is(#drawer-search-mount button.relpill:hover, #drawer-search-mount .fgroup__more:hover, #drawer-search-mount .echip:hover, #drawer-search-mount .brow-lens__b.is-active) { color: #14100b; }
+
+/* (J3) Bare --ds-accent used as FOREGROUND text → the bright --ds-accent-deep. (Fills keep
+   the saturated --ds-accent; --ds-accent-deep foregrounds were already fixed in (A).) */
+:root[data-theme="dark"] :is(
+  .ds-tag-element, .ds-tab.active, .ds-tab.active .ds-tab__num, .ds-breadcrumb a:hover, .ds-icon-btn:hover,
+  .essentials-section__num, .essentials-section__stat strong, .essentials-subsection__rank, .wc__kicker,
+  .vd-prog__pct, .vd-steps__i.is-active
+) { color: var(--ds-accent-deep); }
+:root[data-theme="dark"] :is(
+  #drawer-knowledge-mount .kd-eyebrow, #drawer-knowledge-mount .kd-knh__g,
+  #drawer-knowledge-mount .kd-tab.active .kd-tab__count, #drawer-knowledge-mount .kd-essential-deep__sub,
+  #drawer-knowledge-mount .kd-why__summary, #drawer-knowledge-mount .kd-why[open] .kd-why__summary,
+  #drawer-knowledge-mount .kd-why__how, #drawer-knowledge-mount .kd-corpus__eyebrow,
+  #drawer-knowledge-mount .kd-foods-eyebrow__r, #drawer-knowledge-mount .kd-foods-hero__h .l2,
+  #drawer-knowledge-mount .kd-foods-term, #drawer-knowledge-mount .sxb-triad__n,
+  #drawer-knowledge-mount .kd-ep-fam__num, #drawer-knowledge-mount .kd-section-head,
+  #drawer-knowledge-mount .kd-corpus__group-label
+) { color: var(--ds-accent-deep); }
+:root[data-theme="dark"] #drawer-shared .kd-eyebrow { color: var(--ds-accent-deep); }
+
+/* (J4) Section-head / eyebrow links and the "open the full table / browse all / see all"
+   style links that ride bare --ds-accent → bright. */
+:root[data-theme="dark"] :is(
+  #drawer-knowledge-mount .ep-seclabel a, #drawer-knowledge-mount .kd-ep-fam__xlink,
+  #drawer-search-mount .fgroup__more, #drawer-search-mount .brow-head__k
+) { color: var(--ds-accent-deep); }
+
+
+/* ===================================================================
+ * (J5) DARK FOREGROUND BRIGHTENING - full sweep, generated overrides.
+ * Routes every bare --ds-accent foreground to the bright --ds-accent-deep,
+ * and status/tech/hardcoded foregrounds to color-mix(token 62%, --ds-ink).
+ * Fills stay saturated. ORAC excluded (being redesigned).
+ * =================================================================== */
+
+/* ── shell: bare --ds-accent foregrounds → --ds-accent-deep ── */
+:root[data-theme="dark"] .ds-pull-quote::before { color: var(--ds-accent-deep); }
+:root[data-theme="dark"] :is(.ds-kicker::before, .ds-tab.active::after, .ds-divider--editorial::after, .ds-pulse, .ds-badge::before, .pf-eyebrow .dot) { background: var(--ds-accent-deep); }
+:root[data-theme="dark"] :is(.pf-fchip:hover, .ui-close:hover, .ui-close:focus-visible) { border-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] .pf-tile.sel::after { border-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] .pf-name:focus { border-bottom-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] .pf-panel { border-color: color-mix(in srgb, var(--ds-accent-deep) 26%, var(--ds-rule)); }
+:root[data-theme="dark"] .pf-name { border-bottom-color: color-mix(in srgb, var(--ds-accent-deep) 35%, var(--ds-rule)); }
+:root[data-theme="dark"] .pf-tile--up { border-color: color-mix(in srgb, var(--ds-accent-deep) 45%, var(--ds-rule)); }
+:root[data-theme="dark"] .pf-dbtn__ico { border-color: color-mix(in srgb, var(--ds-accent-deep) 22%, var(--ds-rule)); }
+:root[data-theme="dark"] :is(.ds-border-travel::before, .ds-border-travel::after) { background: linear-gradient(90deg, transparent 0%, var(--ds-accent-deep) 50%, transparent 100%); }
+:root[data-theme="dark"] .pf-panel::before { background: linear-gradient(90deg, transparent, var(--ds-accent-deep) 18%, var(--ds-accent-deep) 82%, transparent); }
+
+/* Ask-Wallach pill routes through --ask-* vars; keep it green, just brighter */
+:root[data-theme="dark"] .topbar__ask { --ask-accent: var(--ds-accent-deep); }
+:root[data-theme="dark"] .topbar__ask--green {
+  --ask-accent: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink));
+  --ask-accent-deep: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink));
+}
+
+/* ── shell: status / tech foregrounds → color-mix(token 62%, --ds-ink) ── */
+:root[data-theme="dark"] :is(.ds-tag-element::before, .ds-tag-readout, .ds-breadcrumb .ds-crumb-sep, .ds-tab__num) { color: color-mix(in srgb, var(--ds-tech) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(.ds-ch-tl, .ds-ch-tr, .ds-ch-bl, .ds-ch-br) { border-color: color-mix(in srgb, var(--ds-tech) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(.ds-divider--editorial::before, .ds-pulse.tech, .ds-systemid::before) { background: color-mix(in srgb, var(--ds-tech) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(.ds-pulse.ok, .ds-badge--ok::before, .telemetry__item .pulse-dot, .pf-status i) { background: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(.ds-pulse.err, .ds-badge--err::before) { background: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] .ds-badge--info::before { background: color-mix(in srgb, var(--ds-status-info) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] .pf-logentry__pill--ok { color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(.pf-cnt[data-over="1"], .pf-err, .pf-dbtn--danger .pf-dbtn__ico, .pf-logentry__pill--err) { color: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] .pf-dbtn--danger:hover { border-color: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
+
+/* ── monogram on the accent avatar disc: pin light so it reads on the saturated fill ── */
+:root[data-theme="dark"] :is(.pf-av__mono, .pf-tile--default) { color: #fff; }
+
+/* ── workspaces: bare --ds-accent as border/outline → --ds-accent-deep ── */
+:root[data-theme="dark"] :is(
+  .wc__name:focus, .ck-slot--empty:hover, .ck-addfield:hover, .rc-trigger:hover,
+  .rc-pop__back:hover, .rc-rep-row.is-sel, .rc-btn-cancel:hover, .ck-slot__import:hover,
+  .vd-edit:focus, .vd-ing:focus, .vd-cf-name__in:focus, .vd-amt:focus, .vd-unit:focus, .vd-paste__in:focus
+) { border-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] .ck-slot:focus-visible { outline-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] .vd-step--hero { border-left-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] .ck-addfield__plus { color: var(--ds-accent-deep); }
+
+/* ── workspaces: bare --ds-accent as thin fill/stroke/ring → --ds-accent-deep ── */
+:root[data-theme="dark"] .tile--fat .tile__code::before { background: var(--ds-accent-deep); }
+:root[data-theme="dark"] .ck-gauge__arc--gap { stroke: var(--ds-accent-deep); }
+:root[data-theme="dark"] .rc-rep-row.is-sel .rc-rep-radio {
+  border-color: var(--ds-accent-deep);
+  background: radial-gradient(circle, var(--ds-accent-deep) 0 42%, transparent 46%);
+}
+:root[data-theme="dark"] :is(.ck-legend__sw--gap, .ck-readout__field i.goalgap) {
+  box-shadow: inset 0 0 0 1.5px var(--ds-accent-deep);
+}
+:root[data-theme="dark"] .vd-hrow.is-current { box-shadow: inset 3px 0 0 var(--ds-accent-deep); }
+/* keep the (F)-softened white crescent (0.10), only brighten the rim to accent-deep */
+:root[data-theme="dark"] :is(.tile:hover, .tile--vitamin:hover, .tile--amino:hover, .tile--fat:hover) {
+  box-shadow: inset 0 0 0 1px var(--ds-accent-deep), inset 0 2px 0 -1px rgba(255,255,255,0.10), var(--ds-glow-accent-sm);
+}
+
+/* ── workspaces: status / tech tokens as fg → color-mix(… 62%, --ds-ink) ── */
+:root[data-theme="dark"] :is(.vd-scan__done, .vd-nrow__cf) { color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(.rc-gone, .rc-rep-tobin, .vd-nrow__map b.vd-nrow__x, .vd-nrow__sub--err) { color: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(
+  .tile.present .tile__sym, .tile--vitamin.present .tile__letter, .tile--amino.present .tile__abbr,
+  .tile.present .tile__name, .tile--vitamin.present .tile__name, .tile--amino.present .tile__name, .tile--fat.present .tile__name
+) { color: color-mix(in srgb, var(--ds-status-info) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(.ck-gauge__den b, .vd-nrow__r) { color: color-mix(in srgb, var(--ds-ok-deep) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(.rl-src.is-own, .rr-row__src.is-own) { color: color-mix(in srgb, var(--ds-tech) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(.tile.present .tile__name, .tile--vitamin.present .tile__name, .tile--amino.present .tile__name, .tile--fat.present .tile__name) {
+  border-top-color: color-mix(in srgb, var(--ds-status-info) 62%, var(--ds-ink));
+}
+:root[data-theme="dark"] .vd-reject { color: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); border-color: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] .vd-steps__i.is-done { color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); border-color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(.tile.present, .tile--vitamin.present, .tile--amino.present, .tile--fat.present) {
+  box-shadow: var(--ds-elev-1), inset 0 0 0 1px color-mix(in srgb, var(--ds-status-info) 62%, var(--ds-ink));
+}
+:root[data-theme="dark"] .legend__sw.present { box-shadow: 0 0 0 1px color-mix(in srgb, var(--ds-status-info) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] .vd-cov-arc-hit { stroke: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] .ck-console__live { background: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
+
+/* ── drawers: bare --ds-accent foregrounds → --ds-accent-deep ── */
+:root[data-theme="dark"] :is(
+  #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__split > .kd-ep-fam__splitcell:first-child .kd-ep-fam__splithd,
+  #drawer-knowledge-mount .kd-ep-more > summary::before
+) { color: var(--ds-accent-deep); }
+:root[data-theme="dark"] :is(
+  #drawer-knowledge-mount .kd-book-row:hover, #drawer-knowledge-mount .kd-essential-tile:hover,
+  #drawer-knowledge-mount .kd-doctrine-card:hover, #drawer-knowledge-mount .kd-doctrine-card.featured,
+  #drawer-knowledge-mount .kd-essential-tile.is-selected, #drawer-knowledge-mount .kd-essential-deep,
+  #drawer-knowledge-mount .kd-ep-hero__sym, #drawer-knowledge-mount button.kd-ep-pill--cond,
+  #drawer-knowledge-mount .kd-ep-more > summary:hover, #drawer-knowledge-mount .kd-ep-filterbar,
+  #drawer-knowledge-mount .sh-condrow:hover, #drawer-knowledge-mount .sh-tile.is-selected
+) { border-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] :is(
+  #drawer-knowledge-mount .kd-essential-deep__source, #drawer-knowledge-mount .kd-why__body,
+  #drawer-knowledge-mount .kd-claim, #drawer-knowledge-mount .kd-foods-villi__note,
+  #drawer-knowledge-mount .kd-foods-enz__note, #drawer-knowledge-mount .kd-ep-mirror--aside,
+  #drawer-knowledge-mount .sh-condrow
+) { border-left-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] #drawer-knowledge-mount .ue-tile { border-top-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-tab.active, .gloss, #drawer-knowledge-mount .kd-ep-why) { border-bottom-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] :is(
+  #drawer-knowledge-mount.kd-open::after, #drawer-knowledge-mount .kd-eyebrow .pulse-dot,
+  #drawer-knowledge-mount .kd-corpus__eyebrow .pulse-dot, #drawer-knowledge-mount .kd-essential-deep__sub::before,
+  #drawer-knowledge-mount .kd-ep-bar > i, #drawer-knowledge-mount .sh-res[data-kd-condition] .sh-res__dot
+) { background: var(--ds-accent-deep); }
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-foods-villi__panel--ok .kd-foods-villi__dot, #drawer-knowledge-mount .kd-foods-gate__through) { fill: var(--ds-accent-deep); }
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-ep-fam__node--solid, #drawer-knowledge-mount .kd-ep-fam__bracket) { stroke: var(--ds-accent-deep); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-tab.active::before { background: linear-gradient(90deg, transparent, var(--ds-accent-deep), transparent); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-bestmatch__label::after { background: color-mix(in srgb, var(--ds-accent-deep) 30%, transparent); }
+
+/* search-surface accent = --aw-green (kept green, brighter) */
+:root[data-theme="dark"] :is(#drawer-search-mount .scr-id em, #drawer-search-mount .sr-xref:hover, #drawer-search-mount .sr-xref:focus-visible) { color: color-mix(in srgb, var(--aw-green) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-search-mount .sr-xref { color: color-mix(in srgb, var(--aw-green-deep) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-search-mount .scr-nav:hover { border-color: color-mix(in srgb, var(--aw-green) 62%, var(--ds-ink)); }
+
+/* ── drawers: status / tech foregrounds → color-mix(token 62%, --ds-ink) ── */
+/* (.kd-search-icon intentionally OMITTED here — it follows the ACCENT, set in drawer-shared) */
+:root[data-theme="dark"] :is(
+  #drawer-knowledge-mount .kd-search-clear:hover, #drawer-knowledge-mount .kd-doctrine-card__id,
+  #drawer-knowledge-mount .kd-essential-deep__cat, #drawer-knowledge-mount .kd-source__rank,
+  #drawer-knowledge-mount .kd-source-more, #drawer-knowledge-mount .kd-essential-tile--bonus .kd-essential-tile__meta,
+  #drawer-knowledge-mount .kd-essential-deep__flag strong, #drawer-knowledge-mount .kd-omega__title,
+  #drawer-knowledge-mount .kd-omega__primary, #drawer-knowledge-mount .kd-corpus__chip--ess,
+  #drawer-knowledge-mount .kd-condition-deep__umbrella-tip em, #drawer-knowledge-mount .kd-meter__cap,
+  #drawer-knowledge-mount .kd-book-deep__eyebrow, #drawer-knowledge-mount .kd-foods-brand,
+  #drawer-knowledge-mount .kd-foods-pq__page, #drawer-knowledge-mount .kd-foods-time__zone
+) { color: color-mix(in srgb, var(--ds-tech) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(
+  #drawer-knowledge-mount .kd-source:hover, #drawer-knowledge-mount .kd-source-more,
+  #drawer-knowledge-mount .kd-essential-deep__flag, #drawer-knowledge-mount .kd-omega,
+  #drawer-knowledge-mount .kd-condition-deep__synopsis
+) { border-left-color: color-mix(in srgb, var(--ds-tech) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-tile--bonus { border-color: color-mix(in srgb, var(--ds-tech) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-corpus__group-label::before { background: color-mix(in srgb, var(--ds-tech) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-foods-villi__gridline { stroke: color-mix(in srgb, var(--ds-tech) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-condition-deep__umbrella-tip { border-left-color: color-mix(in srgb, var(--ds-tech-dim) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-essential-tile--covered .kd-essential-tile__meta, #drawer-knowledge-mount .kd-essential-deep__status-pill--ok, #drawer-knowledge-mount .ue-proof__q) { color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-tile--covered { border-color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .ue-proof { border-left-color: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-meter--ok .kd-meter__fill, #drawer-knowledge-mount .ue-dot--w, #drawer-knowledge-mount .kd-ep-bar--met > i, #drawer-knowledge-mount .kd-cov-dot--covered) { background: color-mix(in srgb, var(--ds-status-ok) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(
+  #drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__t,
+  #drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__metric,
+  #drawer-knowledge-mount .kd-foods-gate__panel--bad .kd-foods-gate__metric,
+  #drawer-knowledge-mount .kd-foods-enz__panel--wrong .kd-foods-col__hd,
+  #drawer-knowledge-mount .kd-foods-col--remove .kd-foods-col__hd
+) { color: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-foods-villi__panel--bad, #drawer-knowledge-mount .kd-foods-gate__panel--bad) { border-top-color: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-foods-enz__panel--wrong, #drawer-knowledge-mount .kd-foods-item--remove) { border-left-color: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-foods-villi__panel--bad .kd-foods-villi__v, #drawer-knowledge-mount .kd-foods-gate__mass) { stroke: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-cov-dot--uncovered { background: color-mix(in srgb, var(--ds-status-err) 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-cov-dot--present { border-color: color-mix(in srgb, var(--ds-status-info, var(--ds-tech)) 62%, var(--ds-ink)); }
+
+/* ── drawers: hardcoded dark hexes ── */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="mineral"] {
+  --ds-accent: #5b9fd6;
+  --ds-accent-deep: color-mix(in srgb, #2b6fb0 60%, var(--ds-ink));
+}
+:root[data-theme="dark"] #drawer-knowledge-mount .mkA-pt--up .mkA-pt__lead { color: color-mix(in srgb, #2f7a33 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .mkA-pt--down .mkA-pt__lead { color: color-mix(in srgb, #b0442e 62%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-product-row[data-form="liquid"]   { --form: color-mix(in srgb, #3f8fa8 60%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-product-row[data-form="capsule"]  { --form: color-mix(in srgb, #c08a3e 60%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-product-row[data-form="powder"]   { --form: color-mix(in srgb, #5f8a4b 60%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-product-row[data-form="tablet"]   { --form: color-mix(in srgb, #5a63a8 60%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-product-row[data-form="chewable"] { --form: color-mix(in srgb, #a8517f 60%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-product-row[data-form="tea"]      { --form: color-mix(in srgb, #9a7b3c 60%, var(--ds-ink)); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-product-row[data-form="topical"]  { --form: color-mix(in srgb, #6a6f77 60%, var(--ds-ink)); }
+
+/* white-on-bright-facet count pill: flip text dark so it reads on the lightened fill */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-kind__count { color: #14100b; }

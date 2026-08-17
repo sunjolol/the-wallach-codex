@@ -173,7 +173,7 @@
   align-items: center;
   gap: var(--ds-space-2);
 }
-#drawer-knowledge-mount .kd-search-icon { font-family: var(--ds-font-mono); color: var(--ds-tech); font-size: var(--ds-text-md); }
+#drawer-knowledge-mount .kd-search-icon { font-family: var(--ds-font-mono); color: var(--ds-accent-deep); font-size: var(--ds-text-md); }
 #drawer-knowledge-mount .kd-search-input {
   flex: 1;
   background: transparent;

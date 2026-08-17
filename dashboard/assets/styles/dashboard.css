@@ -221,7 +221,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 }
 
 .pf-head { position: relative; padding: 22px 24px 4px; text-align: center; flex: 0 0 auto; }
-.pf-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ds-accent-deep); font-weight: 600; }
+.pf-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ds-accent-deep); font-weight: 600; }
 .pf-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ds-accent); box-shadow: 0 0 8px color-mix(in srgb, var(--ds-accent) 70%, transparent); animation: pf-pulse 2.4s ease-in-out infinite; }
 @keyframes pf-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.35; } }
 .pf-close { position: absolute; top: 16px; right: 16px; }
@@ -242,7 +242,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .pf-name:focus { border-bottom-color: var(--ds-accent); }
 .pf-pencil { position: absolute; right: 2px; color: var(--ds-ink-faint); pointer-events: none; }
 .pf-pencil svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.pf-namemeta { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 9px; font-family: var(--ds-font-mono); font-size: 0.56rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ds-ink-soft); }
+.pf-namemeta { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 9px; font-family: var(--ds-font-mono); font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ds-ink-soft); }
 .pf-status { display: inline-flex; align-items: center; gap: 6px; }
 .pf-status i { width: 6px; height: 6px; border-radius: 50%; background: var(--ds-status-ok); }
 .pf-status--guest i { background: var(--ds-ink-faint); }
@@ -250,12 +250,12 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .pf-err { margin-top: 8px; font-family: var(--ds-font-sans); font-size: 0.78rem; color: var(--ds-status-err); min-height: 1.1em; }
 
 .pf-body { padding: 0 24px 20px; }
-.pf-label { display: flex; align-items: center; gap: 12px; font-family: var(--ds-font-mono); font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ds-ink-soft); margin: 20px 0 13px; }
+.pf-label { display: flex; align-items: center; gap: 12px; font-family: var(--ds-font-mono); font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ds-ink-soft); margin: 20px 0 13px; }
 .pf-label::after { content: ''; flex: 1; height: 1px; background: var(--ds-rule-soft); }
 .pf-label b { color: var(--ds-accent-deep); font-weight: 700; }
 
 .pf-filters { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-.pf-fchip { font-family: var(--ds-font-display-interface, var(--ds-font-sans)); font-size: 0.72rem; font-weight: 600; color: var(--ds-ink-soft); border: 1px solid var(--ds-rule); border-radius: 999px; padding: 4px 12px; cursor: pointer; transition: all var(--ds-motion-fast) var(--ds-ease-out); }
+.pf-fchip { font-family: var(--ds-font-display-interface, var(--ds-font-sans)); font-size: 0.72rem; font-weight: 600; color: var(--ds-ink-soft); background: transparent; border: 1px solid var(--ds-rule); border-radius: 999px; padding: 4px 12px; cursor: pointer; transition: all var(--ds-motion-fast) var(--ds-ease-out); }
 .pf-fchip:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
 .pf-fchip.on { background: var(--ds-accent); color: #fff; border-color: var(--ds-accent); }
 
@@ -272,7 +272,9 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .pf-modeseg { display: inline-flex; padding: 3px; gap: 3px; background: var(--ds-paper-deep); border: 1px solid var(--ds-rule-soft); border-radius: 10px; }
 .pf-modeb { font-family: var(--ds-font-display-interface, var(--ds-font-sans)); font-size: 0.78rem; font-weight: 600; color: var(--ds-ink-soft); padding: 6px 15px; border-radius: 7px; display: inline-flex; align-items: center; gap: 7px; cursor: pointer; transition: all var(--ds-motion-fast) var(--ds-ease-out); }
 .pf-modeb svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.pf-modeb.on { background: var(--ds-paper); color: var(--ds-ink); box-shadow: var(--ds-elev-1); }
+.pf-modeb.on { box-shadow: inset 0 0 0 2px var(--ds-accent), var(--ds-elev-1); }
+.pf-modeb[data-mode="cream"] { background: #f4ecda; color: #2a2118; }
+.pf-modeb[data-mode="dark"] { background: #1c1712; color: #f3ead7; }
 .pf-tile--default { display: flex; align-items: center; justify-content: center; border-radius: 50%; font-family: var(--ds-font-display); font-weight: 700; font-size: 1.15rem; color: var(--ds-paper-light); background: linear-gradient(135deg, var(--ds-accent), var(--ds-accent-hot)); box-shadow: 0 0 0 1px var(--ds-rule-soft); }
 
 .pf-swatches { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 14px; }
@@ -303,7 +305,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 /* Creator's Log -- re-homed into the console, collapsed by default (the §00 audit trail
    belongs with the creator's identity; it stays out of the way until opened). */
 .pf-log { margin-top: 22px; border-top: 1px solid var(--ds-rule-soft); }
-.pf-log__sum { list-style: none; cursor: pointer; padding: 13px 2px 4px; font-family: var(--ds-font-mono); font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ds-ink-soft); display: flex; align-items: center; gap: 8px; }
+.pf-log__sum { list-style: none; cursor: pointer; padding: 13px 2px 4px; font-family: var(--ds-font-mono); font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ds-ink-soft); display: flex; align-items: center; gap: 8px; }
 .pf-log__sum::-webkit-details-marker { display: none; }
 .pf-log__sum::before { content: '\25B8'; color: var(--ds-accent-deep); transition: transform var(--ds-motion-fast) var(--ds-ease-out); }
 .pf-log[open] .pf-log__sum::before { transform: rotate(90deg); }
