@@ -1418,9 +1418,9 @@ export function mount(container: HTMLElement): MountHandle {
       triggerImport(showToast);
       return;
     }
-    // — empty slot: create a blank save —
-    const addSlotBtn = target.closest<HTMLElement>('[data-slot-add]');
-    if (addSlotBtn !== null) {
+    // — empty slot: a click anywhere on the tile creates a blank save; Import is caught above and returns first —
+    const emptySlot = target.closest<HTMLElement>('.ck-slot--empty');
+    if (emptySlot !== null) {
       ev.stopPropagation();
       const res = addSlot();
       if (res.ok && res.slotId !== undefined) {

@@ -183254,8 +183254,8 @@ Push: origin/master this round, per his instruction. Session wrapping up -- gene
         triggerImport(showToast);
         return;
       }
-      const addSlotBtn = target.closest("[data-slot-add]");
-      if (addSlotBtn !== null) {
+      const emptySlot = target.closest(".ck-slot--empty");
+      if (emptySlot !== null) {
         ev.stopPropagation();
         const res = addSlot();
         if (res.ok && res.slotId !== void 0) {

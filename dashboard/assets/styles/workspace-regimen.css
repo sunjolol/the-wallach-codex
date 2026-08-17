@@ -174,6 +174,7 @@
     radial-gradient(circle at 50% 38%, color-mix(in srgb, var(--ds-accent) 6%, transparent), transparent 62%),
     var(--ds-paper-light);
   color:var(--ds-ink-faint);
+  cursor:pointer;
 }
 .ck-slot--empty::before{
   content:attr(data-index);
@@ -390,8 +391,10 @@
 .rr-confirm__q { font-family: var(--ds-font-serif); font-size: var(--ds-text-sm); color: var(--ds-ink); }
 .rr-confirm__q b { font-weight: 700; }
 .rr-confirm__btns { display: inline-flex; gap: 8px; }
-.rr-btn { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; border-radius: var(--ds-radius-sm); padding: 6px 12px; cursor: pointer; border: 1px solid var(--ds-rule); background: var(--ds-paper); color: var(--ds-ink-soft); }
+.rr-btn { font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 700; letter-spacing: .04em; text-transform: uppercase; border-radius: var(--ds-radius-sm); padding: 6px 12px; cursor: pointer; border: 1px solid var(--ds-rule); background: var(--ds-paper); color: var(--ds-ink-soft); transition: border-color var(--ds-motion-fast) var(--ds-ease-out), color var(--ds-motion-fast) var(--ds-ease-out), background-color var(--ds-motion-fast) var(--ds-ease-out); }
+.rr-btn:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
 .rr-btn--danger { color: var(--ds-status-err); border-color: color-mix(in srgb, var(--ds-status-err) 40%, transparent); }
+.rr-btn--danger:hover { border-color: color-mix(in srgb, var(--ds-status-err) 60%, transparent); background: color-mix(in srgb, var(--ds-status-err) 10%, var(--ds-paper)); color: var(--ds-status-err); }
 .rr-add { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--ds-rule); }
 .rr-results { margin-top: 8px; display: flex; flex-direction: column; border: 1px solid var(--ds-rule-soft); border-radius: var(--ds-radius-md); background: var(--ds-paper-light); box-shadow: var(--ds-elev-2); overflow: hidden; }
 .rr-results[hidden] { display: none; }
