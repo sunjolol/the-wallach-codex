@@ -530,9 +530,18 @@ function scoreCandidates(lowerWord: string, pool: Iterable<string>): SuggestionC
   return out;
 }
 
-/** Ranked candidates from the food/ingredient dictionary (the Confirm ingredients panel). */
+/** Ranked candidates for an ingredient suspect — scored against the food/ingredient dictionary
+ *  AND the known-nutrient names, so a misspelled nutrient ("magnesuim") resolves to "magnesium",
+ *  not the nearest food word ("minerals"). */
 export function findSuggestionCandidates(lowerWord: string): SuggestionCandidate[] {
-  return scoreCandidates(lowerWord, loadDict().fuzzy);
+  const dict = loadDict();
+  return scoreCandidates(lowerWord, [...dict.fuzzy, ...dict.known.map(k => k.toLowerCase())]);
+}
+
+/** Singular/plural-insensitive equality for nutrient labels — "total sugar" ≡ "total sugars".
+ *  Matches ONLY an exact trailing-'s' difference, so unrelated names never collapse together. */
+function pluralEq(a: string, b: string): boolean {
+  return a === b || a === `${b}s` || b === `${a}s`;
 }
 
 /**
@@ -543,8 +552,8 @@ export function findSuggestionCandidates(lowerWord: string): SuggestionCandidate
 export function findNutrientCandidates(word: string): SuggestionCandidate[] {
   const lower = word.toLowerCase();
   const byLower = new Map(loadDict().known.map(k => [k.toLowerCase(), k]));
-  if (byLower.has(lower)) {
-    return []; // an exact known-nutrient read is not garbled — never suggest it back to itself
+  if ([...byLower.keys()].some(k => pluralEq(k, lower))) {
+    return []; // an exact (or singular/plural) known read is not garbled — never suggest it back
   }
   return scoreCandidates(lower, byLower.keys())
     .map(c => ({ word: byLower.get(c.word) ?? c.word, score: c.score }));
@@ -560,7 +569,7 @@ export function isKnownNutrient(name: string): boolean {
   if (lower === '') {
     return false;
   }
-  return loadDict().known.some(k => k.toLowerCase() === lower);
+  return loadDict().known.some(k => pluralEq(k.toLowerCase(), lower));
 }
 
 /** One suspect word in an ingredients line + its ranked candidates. */
