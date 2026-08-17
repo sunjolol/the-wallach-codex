@@ -3,7 +3,7 @@
 **BIG TWEAK LIST — in progress (2026-08-16).** Authority: **`chronicle/tweak-list-master-2026-08-15.md`**.
 Board **91/91 throughout.** eden/ untouched — no seal applied.
 
-## ✅ COMMITTED THIS SESSION (2026-08-16) — 1–13 on origin/master; 14 local, PUSH PENDING
+## ✅ COMMITTED + PUSHED THIS SESSION (2026-08-16) — 1–14 ALL on origin/master
 1. `add14a5b` **① rotation OCR** — offline 4-way orientation (no OSD model).
 2. `fd424c6d` **②a parser PSM 3** — two-column labels read full ingredients.
 3. `9da4b9df` **②c suspect-safety** — Confirm never "corrects" a flagged bad term / known nutrient.
@@ -17,7 +17,7 @@ Board **91/91 throughout.** eden/ untouched — no seal applied.
 11. `3cf167fd` **existing seed-oil audit** — doc-only: audited the pre-existing seed-oil terms with the grapeseed-test (all clean).
 12. `91e64acd` **msg Wallach-only + NEW preservatives category** — msg 8→2; new preservatives/additives category (nitrite/nitrate/sulfite +plurals).
 13. `7b9e4e6b` **audit sweep** — artificial-sweeteners category DROPPED; modified/processed + caffeine audited CLEAN.
-14. `(this commit)` **big instance-expansion +27** — +23 sugar aliases (MINOR) + 3 sulfiting variants + bioengineered. Anti-list 72→99 terms.
+14. `7e87ae96` **big instance-expansion +27** — +23 sugar aliases (MINOR) + 3 sulfiting variants + bioengineered. Anti-list 72→99 terms.
 
 Earlier on origin/master: `4087b16e` (Phase 2 + scanner), `12be0627` (regimen+rail).
 
@@ -25,7 +25,7 @@ Earlier on origin/master: `4087b16e` (Phase 2 + scanner), `12be0627` (regimen+ra
 **DONE this session:** sucralose removed · 3 MSG terms dropped · **added-sugar 2-tier** (+6) · **gluten batch 2** (+7) · **seed-oil batch** (+4 serious: margarine/peanut oil/palm oil/palm kernel oil; DROPPED grapeseed/rice bran/shortening as Wallach-positive) · **session-wide BACK-CHECK** (all adds re-verified vs the grapeseed failure mode; sugar-note citation restored). Strong veins now EXPANDED.
 - **⚠ Aluminum = §00.A NO** (handoff premise was WRONG). Wallach: ingested aluminum is *"remarkably nontoxic / probably an essential nutrient / no Alzheimer's link"* (Epigenetics 2014, Immortality 2008, DDDL 2011); only 1995 Let's Play Doctor says avoid *metallic* aluminum (cookware/deodorant). Do NOT anti-list aluminum. Mineable instead as a two-sided Ask-Wallach corpus claim.
 - **Other "new categories" are weak:** trans-fat ≈ redundant (`hydrogenated` already hard-reject; "0g trans fat" would false-flag); fluoride = water/toothpaste, not a food-label ingredient; aspartame-family/saccharin already listed + Wallach's own stance is soft ("used in moderation ... considered safe").
-- **COUNT: 99 anti-list terms (7 categories). HONEST CEILING ~110-120, NOT 200-300** — the audit proved the list can't be padded with mainstream additives (BHA/BHT/benzoates etc. are not in Wallach); 200+ would require outside-knowledge = §00.A violation. Remaining marginal veins: a few more sugar aliases (trehalose/tagatose/caramel), caffeine-additive terms (green tea extract/caffeine anhydrous), all thin.
+- **ANTI-LIST CLOSED at 99 terms (7 categories) — Luneth 2026-08-16.** The 200-300 target is RETIRED: the clean Wallach-grounded ceiling is ~110-120; reaching 200+ needs mainstream additives (BHA/BHT/benzoates/dyes) that are NOT in Wallach's books — a health claim with no Wallach source, which §00.A forbids. Luneth chose to STOP pure-Wallach rather than override the source rule (the option to add a SEPARATE, explicitly-labeled 'general food-safety, NOT Wallach' additive tier was offered + declined for now; would need the 3-turn source-rule override if revisited). If ever resumed, the only thin pure-Wallach terms left are: alcohol/ethanol, a couple more sugars (trehalose/tagatose), caffeine-additive terms (green tea extract/caffeine anhydrous).
 
 **②d.2 + ANTI-LIST AUDIT COMPLETE.** All 8 categories grapeseed-tested; the list was riddled with mainstream assumptions mislabeled as Wallach (grapeseed, oil lecture-line, hidden-MSG, glutamic acid, artificial sweeteners) — all corrected + traced to real verbatims. Final categories (7): fried-oils, added-sugar, gluten, msg (Wallach-only), modified/processed, caffeine, preservatives. Deferred: sulfur dioxide / metabisulfite micro-batch. LESSON (grapeseed): NEVER infer 'bad' from a general stance — grep each term for Wallach's ACTUAL words incl. any POSITIVE mention before adding. Remaining/optional: caffeine instances (nuanced — Wallach not anti-coffee-absolute); further msg/modified instances (diminishing). honey/maple/agave still HELD for Luneth's call. Existing seed-oil terms AUDITED clean (2026-08-16): vegetable oil/corn oil/hydrogenated Wallach-named; canola/rapeseed/soybean/sunflower/safflower/cottonseed oil = clean instances (none endorsed).
 - **Severity mechanics** (state/scanner.ts antiFlags/decideVerdict, data-driven): a hit in `hardRejectTerms` → hard flag → REJECT on 1 hit; a category in `seriousAnti` → serious (2+ serious CATEGORIES → REJECT); else MILD (never rejects). One flag per category. Matcher = word-boundary `\bkw\b`; single distinctive words beat multi-word. **Use CORRECT label spellings, not Wallach's OCR typos** (turbinado ≠ turbanado).
@@ -45,6 +45,8 @@ Earlier on origin/master: `4087b16e` (Phase 2 + scanner), `12be0627` (regimen+ra
 - **Multi-file / data edits** via a temp Python script → `safe_write` (JSON: mutate structure or exact-CRLF string replace; validate-all-then-write).
 - **Drive/screenshot the real app** headless (Puppeteer, `--allow-file-access-from-files`; seed `localStorage.wallachUserProfile_v1={browsing:true,chosenAt}` to skip onboarding; upload via `waitForFileChooser()`+click `[data-sc-upload]`). Bridges: `lcOcrToLabel`/`lcScanImage`/`lcParseLabel`/`lcScan`.
 - The 4 scanner probes do NOT run real image OCR — validate verdict changes via a `window.lcScan` scratchpad probe (see the added-sugar probe pattern) + e2e against the 3 labels in `temporary/scanner-tests/` (gitignored).
+
+## ⭐ NEXT SESSION STARTS HERE — the anti-list / ②d.2 scanner work is DONE. Pick up the UNFINISHED items from the original tweak list (`chronicle/tweak-list-master-2026-08-15.md`): the unbuilt UI chunks in 'STILL UNBUILT' above — S10 lightbox / S11 per-row delete / S12 live OCR-errors, the #7 two-result-boxes REDESIGN (mockup-first), #9 goal-picker/veil, WF-cheese under-read. These are UI/visual work (mockup + human sign-off), a different mode than the source audit.
 
 ## GENESIS
 `genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report, ask which task to resume. If he
