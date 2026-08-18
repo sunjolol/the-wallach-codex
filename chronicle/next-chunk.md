@@ -1,29 +1,34 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
 **CAMPAIGN: the 452 ruled claims → Search.** Engine 1 (DDDL doses) DONE + LIVE. Engine 2 (vision-verify
-the unverified books) — **full 70 sweep DONE**; corrections staged for Luneth’s ruling. Board 92/92, kv=475.
+the unverified books): swept + corrected + verified. Board 92/92, corpus **kv=476**.
 
 ## ✅ ENGINE 1 — DDDL dose audit: SEALED + LIVE
-All 24 recovered DDDL dose claims sealed/enriched/searchable (ids `582..605`, search 2402→2426). 19 carry
-dose pills; 2 conflicts resolved favor-newest (folic/gout 20-50, vitE/cataracts 2,000 IU) keeping the LETS
-protocols; 3 keep-both pairs allowlisted. Record: `chronicle/dose-audit-2026-08-18/`.
-See [[condition-dose-claim-sealing-gotchas]], [[ruling-dashboard-is-recovery-source]].
+24 dose claims live (ids `582..605`, search 2402→2426); 19 pills; 2 conflicts favor-newest; 3 keep-both.
+Record `chronicle/dose-audit-2026-08-18/`. [[condition-dose-claim-sealing-gotchas]] [[ruling-dashboard-is-recovery-source]].
 
-## ✅ ENGINE 2 — full 70 vision sweep: DONE (staged) · `chronicle/frontface-ocr/ruled-2026-08-18/`
-All 70 sealed unverified-book ruled claims page-read against their source images (12 vision agents +
-2 hand-checks). `VISION-SWEEP-FINDINGS.md` + `sweep-corrections.json` + `vision_findings.json`.
-- **55 CLEAN** (page-verified byte-for-byte) — ready to move into `verified.json::claims_verified` (→
-  front-faceable) ON LUNETH’S SAY-SO. **NOT flipped** (hold front-face).
-- **14 with OCR defects** (page is right, sealed verbatim wrong) — corrections captured byte-exact.
-  Notable: IMMORT-000495 dropped “theobromine” + “catechins in green tea are the antioxidants”;
-  IMMORT-000513 dropped “another neurotransmitter”; IMMORT-000487 subscript B₆; lodine→Iodine;
-  tendemess→tenderness; alled→called; Posty→artery). Judgment calls: IMMORT-000487 Isoniazid(ours) vs
-  Isonazid(page-typo) — ratified-divergence call; EPIGEN-000480 hyphen vs en-dash (cosmetic).
-- **1 UNVERIFIABLE**: RARE-000403 (a Mg/multi-mineral deficiency list) — not in the PDF text layer, the
-  corroboration mislocated it; needs a targeted manual page-read.
-- **NEXT (Luneth’s calls):** (a) apply the 14 source corrections → resnap → re-seal (BLUEPRINT §4; USER
-  seal); (b) move the 55 (+ corrected 14) into `claims_verified` and enrich/front-face them; (c) locate
-  RARE-000403. Then the 92 UNSEALED unverified ruled claims: recover from the ruling dashboard, seal, verify.
+## ✅ ENGINE 2 — vision sweep + corrections + verify: DONE
+All 70 sealed unverified-book ruled claims page-read (12 agents + 2 hand). Then, on Luneth’s ruling:
+- **14 source corrections applied** → resnap → sync_drafts → re-seal (kv 475→476). Fixed the OCR defects
+  in epig/hells/immort/rare (dropped text restored: IMMORT-000495 theobromine + catechins clause;
+  subscript B6; lodine→Iodine; Posty→artery); etc.). Kept correct “Isoniazid” over the page typo
+  “Isonazid” — **log as a ratified divergence** (`eden/tools/ratified-divergences.json`) next session.
+- **69 verified claims moved into `claims_verified`** (642→711). RARE-000403 held out — UNVERIFIABLE
+  (deficiency list not in the PDF text layer; corroboration mislocated to the bibliography; needs a
+  targeted manual locate).
+- Findings: `chronicle/frontface-ocr/ruled-2026-08-18/` (VISION-SWEEP-FINDINGS.md, sweep-corrections.json).
+
+## ⏳ REMAINING for Engine 2 — ENRICH the 69 so they FRONT-FACE (big task)
+The 69 are VERIFIED (search-eligible) but NOT yet enriched, so they don’t appear in search yet. To
+front-face them:
+- Recover each `question`/`answer_short` from the ruling dashboard DATA (candidate ids ≠ sealed ids →
+  match by verbatim; 14 corrected claims match on their PRE-correction verbatim or nkey).
+- Author subjects: ~41 map to an existing essential/condition (resolve cleanly like the dose claims);
+  **~27 have NO essential/condition mapping → need NEW topic entities** (Luneth’s “53 new topics”
+  curation — needs his topic naming/structure). Watch the dose-enrichment footguns
+  [[condition-dose-claim-sealing-gotchas]]: non-resolving subjects, keep-both dups, gloss gates.
+- Then merge search-enrichment → derive → build. THEN the 92 UNSEALED unverified ruled claims: recover
+  from the dashboard, seal, verify, enrich.
 
 ## GENESIS
-`genesis` → board, then resume Engine 2 fixes (apply corrections + front-face the clean) unless redirected.
+`genesis` → board, then resume Engine 2 enrichment (front-face the 69) unless redirected.
