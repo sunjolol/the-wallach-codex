@@ -1144,7 +1144,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
    a wall — nobody is ever locked out, and the copy invites instead of interrogating
    ("what are you here for?" was the actual complaint, all along). */
 .wc-veil { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: rgba(26,22,18,.30); backdrop-filter: blur(9px) saturate(.9); }
-.wc { position: relative; width: min(760px, 92vw); max-height: 90vh; overflow: auto; background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: 6px; box-shadow: 0 40px 90px -20px rgba(26,22,18,.5); padding: var(--ds-space-7); }
+.wc { position: relative; width: min(760px, 92vw); max-height: 90vh; overflow: auto; background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: 6px; box-shadow: 0 40px 90px -20px rgba(26,22,18,.5); padding: var(--ds-space-6) var(--ds-space-7); }
 .wc__x { position: absolute; top: var(--ds-space-5); right: var(--ds-space-5); }
 .wc__kicker { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-accent); }
 .wc__h { font-family: var(--ds-font-display); font-size: 1.9rem; font-weight: 800; color: var(--ds-ink); margin: 8px 0 6px; letter-spacing: -.01em; }
@@ -1153,8 +1153,10 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .wc__name { width: 100%; padding: 11px 14px; border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); background: var(--ds-paper-light); font-family: var(--ds-font-display-interface); font-size: 1rem; color: var(--ds-ink); }
 .wc__name:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 3px var(--ds-accent-wash); }
 .wc__count { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); float: right; }
-.wc__goals { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: var(--ds-space-6); }
-.wc-goal { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 100px; cursor: pointer; border: 1px solid var(--ds-rule); background: var(--ds-paper-light); font-family: var(--ds-font-display-interface); font-size: .78rem; font-weight: 600; color: var(--ds-ink-medium); transition: all .14s; }
+.wc__goals { display: flex; flex-direction: column; gap: 8px; margin-bottom: var(--ds-space-4); }
+.wc__goal-group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.wc__goal-cat { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-faint); margin-right: 2px; white-space: nowrap; }
+.wc-goal { display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; border-radius: 100px; cursor: pointer; border: 1px solid var(--ds-rule); background: var(--ds-paper-light); font-family: var(--ds-font-display-interface); font-size: .76rem; font-weight: 600; color: var(--ds-ink-medium); transition: all .14s; }
 .wc-goal:hover { border-color: var(--ds-ink-faint); color: var(--ds-ink); }
 .wc-goal__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--ds-rule); flex: 0 0 auto; transition: background .14s; }
 .wc-goal.is-on { border-color: var(--gc); color: var(--ds-ink); background: color-mix(in srgb, var(--gc) 8%, var(--ds-paper-light)); }

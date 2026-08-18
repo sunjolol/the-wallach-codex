@@ -116,6 +116,8 @@ export type LayoutSection = z.infer<typeof LayoutSectionSchema>;
 export const LayoutGoalSchema = z.object({
   id: z.string(),
   name: z.string(),
+  /** Category label the picker groups by. Editorial (skeleton-authored); not a Wallach claim. */
+  category: z.string().optional(),
   /** Sealed-Catalog condition slugs. The derive hard-fails on one that does not resolve. */
   conditions: z.array(z.string()).min(1),
   /** Canon essential slugs, derived. The derive hard-fails on a goal with zero. */

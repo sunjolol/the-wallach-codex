@@ -701,6 +701,7 @@
     {
       "id": "stronger-bones",
       "name": "Stronger bones",
+      "category": "Bones, joints & muscles",
       "conditions": [
         "osteoporosis",
         "osteopenia",
@@ -731,24 +732,29 @@
     },
     {
       "id": "less-joint-pain",
-      "name": "Less joint pain",
+      "name": "Healthy joints",
+      "category": "Bones, joints & muscles",
       "conditions": [
         "arthritis",
         "rheumatoid_arthritis",
         "osteoarthritis",
         "degenerative_arthritis",
         "joint_pain",
-        "heel_spurs"
+        "heel_spurs",
+        "fibromyalgia",
+        "tmj"
       ],
       "members": [
         "boron",
         "calcium",
+        "choline",
         "chromium",
         "copper",
         "germanium",
         "histidine",
         "iron",
         "magnesium",
+        "manganese",
         "molybdenum",
         "omega-3",
         "omega-6",
@@ -757,6 +763,7 @@
         "sulfur",
         "vanadium",
         "vitamin-a",
+        "vitamin-b1",
         "vitamin-b3",
         "vitamin-b6",
         "vitamin-b9",
@@ -770,42 +777,34 @@
       ]
     },
     {
-      "id": "more-energy",
-      "name": "More energy",
+      "id": "muscle-strength",
+      "name": "Muscle & strength",
+      "category": "Bones, joints & muscles",
       "conditions": [
-        "chronic_fatigue",
-        "chronic_fatigue_syndrome",
-        "hypothyroidism",
-        "anemia"
+        "muscular_dystrophy",
+        "muscle_cramps",
+        "muscle_twitches"
       ],
       "members": [
-        "biotin",
         "calcium",
-        "chromium",
-        "cobalt",
-        "copper",
-        "germanium",
-        "iodine",
-        "iron",
+        "choline",
+        "magnesium",
         "methionine",
         "omega-3",
+        "potassium",
         "selenium",
-        "sulfur",
-        "tyrosine",
-        "vanadium",
-        "vitamin-b12",
-        "vitamin-b2",
         "vitamin-b5",
-        "vitamin-b6",
-        "vitamin-b9",
-        "vitamin-c",
-        "vitamin-e",
-        "zinc"
+        "vitamin-d",
+        "vitamin-e"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
       "id": "sharper-thinking",
       "name": "Sharper thinking",
+      "category": "Mind & nerves",
       "conditions": [
         "dementia",
         "alzheimers",
@@ -841,10 +840,14 @@
     {
       "id": "better-mood",
       "name": "Better mood",
+      "category": "Mind & nerves",
       "conditions": [
         "depression",
         "anxiety",
-        "bipolar_disorder"
+        "bipolar_disorder",
+        "adrenal_exhaustion",
+        "addisons_disease",
+        "stress"
       ],
       "members": [
         "biotin",
@@ -878,47 +881,9 @@
       ]
     },
     {
-      "id": "healthy-heart",
-      "name": "A healthy heart",
-      "conditions": [
-        "cardiovascular_disease",
-        "arteriosclerosis",
-        "atherosclerosis",
-        "high_cholesterol",
-        "hypertension",
-        "heart_attack",
-        "congestive_heart_failure"
-      ],
-      "members": [
-        "biotin",
-        "boron",
-        "calcium",
-        "chromium",
-        "copper",
-        "inositol",
-        "magnesium",
-        "manganese",
-        "omega-3",
-        "phosphorus",
-        "potassium",
-        "selenium",
-        "silica",
-        "sodium",
-        "vitamin-a",
-        "vitamin-b1",
-        "vitamin-b3",
-        "vitamin-c",
-        "vitamin-d",
-        "vitamin-e",
-        "zinc"
-      ],
-      "groups": [
-        "plant-derived"
-      ]
-    },
-    {
       "id": "better-sleep",
       "name": "Better sleep",
+      "category": "Mind & nerves",
       "conditions": [
         "insomnia"
       ],
@@ -939,22 +904,70 @@
       ]
     },
     {
-      "id": "stronger-immunity",
-      "name": "Stronger immunity",
+      "id": "focus-attention",
+      "name": "Focus & attention",
+      "category": "Mind & nerves",
       "conditions": [
-        "immune_depression"
+        "adhd",
+        "hyperactivity",
+        "hyperkinesis",
+        "autism"
       ],
       "members": [
-        "flavonoids",
-        "germanium",
+        "calcium",
+        "chromium",
+        "copper",
+        "magnesium",
+        "omega-3",
+        "sodium",
+        "vitamin-b3",
+        "vitamin-b6",
+        "zinc"
+      ]
+    },
+    {
+      "id": "nerves-neuro",
+      "name": "Nerves, Seizures, MS & ALS",
+      "category": "Mind & nerves",
+      "conditions": [
+        "neuropathy",
+        "peripheral_neuropathy",
+        "neuralgia",
+        "trigeminal_neuralgia",
+        "sciatica",
+        "restless_leg_syndrome",
+        "bells_palsy",
+        "carpal_tunnel_syndrome",
+        "epilepsy",
+        "convulsions",
+        "tetany",
+        "absence_attacks",
+        "parkinsons_disease",
+        "parkinsonism",
+        "multiple_sclerosis",
+        "als",
+        "huntingtons_disease"
+      ],
+      "members": [
+        "calcium",
+        "choline",
+        "chromium",
+        "leucine",
+        "magnesium",
+        "manganese",
+        "methionine",
         "omega-3",
         "omega-6",
+        "phenylalanine",
         "selenium",
-        "silver",
-        "vitamin-a",
-        "vitamin-b5",
-        "vitamin-c",
-        "vitamin-e",
+        "taurine",
+        "tyrosine",
+        "vitamin-b1",
+        "vitamin-b12",
+        "vitamin-b2",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-d",
         "zinc"
       ],
       "groups": [
@@ -962,34 +975,53 @@
       ]
     },
     {
-      "id": "skin-and-hair",
-      "name": "Healthy skin & hair",
+      "id": "healthy-heart",
+      "name": "Heart health",
+      "category": "Heart & metabolism",
       "conditions": [
-        "dermatitis",
-        "eczema",
-        "alopecia",
-        "gray_hair",
-        "psoriasis",
-        "acne"
+        "cardiovascular_disease",
+        "arteriosclerosis",
+        "atherosclerosis",
+        "high_cholesterol",
+        "hypertension",
+        "heart_attack",
+        "congestive_heart_failure",
+        "cardiac_arrhythmia",
+        "atrial_fibrillation",
+        "tachycardia",
+        "palpitations",
+        "mitral_valve_prolapse",
+        "stroke",
+        "angina",
+        "high_triglycerides",
+        "coronary_artery_disease",
+        "aneurysm",
+        "cardiomyopathy"
       ],
       "members": [
         "biotin",
+        "boron",
         "calcium",
         "chromium",
         "copper",
         "inositol",
+        "lysine",
+        "magnesium",
+        "manganese",
         "omega-3",
         "omega-6",
+        "phosphorus",
         "potassium",
         "selenium",
+        "silica",
         "sodium",
-        "tin",
+        "vanadium",
         "vitamin-a",
-        "vitamin-b2",
+        "vitamin-b1",
         "vitamin-b3",
         "vitamin-b5",
         "vitamin-b6",
-        "vitamin-b9",
+        "vitamin-c",
         "vitamin-d",
         "vitamin-e",
         "zinc"
@@ -999,8 +1031,36 @@
       ]
     },
     {
+      "id": "circulation",
+      "name": "Circulation",
+      "category": "Heart & metabolism",
+      "conditions": [
+        "varicose_veins",
+        "spider_veins",
+        "poor_circulation",
+        "raynauds_disease",
+        "intermittent_claudication"
+      ],
+      "members": [
+        "calcium",
+        "chromium",
+        "copper",
+        "flavonoids",
+        "lysine",
+        "magnesium",
+        "omega-3",
+        "selenium",
+        "tryptophan",
+        "vitamin-b6",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ]
+    },
+    {
       "id": "blood-sugar",
       "name": "Blood-sugar balance",
+      "category": "Heart & metabolism",
       "conditions": [
         "diabetes",
         "hypoglycemia",
@@ -1022,8 +1082,407 @@
       ]
     },
     {
+      "id": "thyroid-support",
+      "name": "Thyroid support",
+      "category": "Heart & metabolism",
+      "conditions": [
+        "goiter",
+        "hyperthyroidism",
+        "hashimotos_disease",
+        "graves_disease",
+        "thyroid_disease",
+        "cretinism"
+      ],
+      "members": [
+        "arginine",
+        "copper",
+        "iodine",
+        "taurine",
+        "tyrosine"
+      ]
+    },
+    {
+      "id": "more-energy",
+      "name": "More energy",
+      "category": "Heart & metabolism",
+      "conditions": [
+        "chronic_fatigue",
+        "chronic_fatigue_syndrome",
+        "hypothyroidism",
+        "anemia",
+        "failure_to_thrive"
+      ],
+      "members": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "cobalt",
+        "copper",
+        "germanium",
+        "iodine",
+        "iron",
+        "methionine",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "sulfur",
+        "tyrosine",
+        "vanadium",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b2",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
+      "groups": [
+        "plant-derived"
+      ]
+    },
+    {
+      "id": "healthy-weight",
+      "name": "A healthy weight",
+      "category": "Heart & metabolism",
+      "conditions": [
+        "obesity",
+        "anorexia"
+      ],
+      "members": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "cobalt",
+        "iron",
+        "magnesium",
+        "manganese",
+        "omega-3",
+        "omega-6",
+        "phosphorus",
+        "potassium",
+        "sodium",
+        "vitamin-b1",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "zinc"
+      ]
+    },
+    {
+      "id": "digestion",
+      "name": "Better digestion",
+      "category": "Digestion, immunity & breathing",
+      "conditions": [
+        "crohns_disease",
+        "diarrhea",
+        "malabsorption",
+        "peptic_ulcers",
+        "dyspepsia",
+        "indigestion",
+        "hypochlorhydria",
+        "colic",
+        "irritable_bowel_syndrome",
+        "celiac_disease",
+        "hemorrhoids"
+      ],
+      "members": [
+        "calcium",
+        "chromium",
+        "cobalt",
+        "copper",
+        "flavonoids",
+        "lysine",
+        "magnesium",
+        "omega-3",
+        "omega-6",
+        "phosphorus",
+        "selenium",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e",
+        "zinc"
+      ]
+    },
+    {
+      "id": "liver-support",
+      "name": "Liver support",
+      "category": "Digestion, immunity & breathing",
+      "conditions": [
+        "liver_disease",
+        "liver_cirrhosis",
+        "fatty_liver",
+        "hepatitis",
+        "jaundice",
+        "gallstones"
+      ],
+      "members": [
+        "biotin",
+        "calcium",
+        "choline",
+        "chromium",
+        "copper",
+        "germanium",
+        "inositol",
+        "iron",
+        "methionine",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "taurine",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b3",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e",
+        "vitamin-k"
+      ]
+    },
+    {
+      "id": "stronger-immunity",
+      "name": "Stronger immunity",
+      "category": "Digestion, immunity & breathing",
+      "conditions": [
+        "immune_depression",
+        "candidiasis",
+        "thrush",
+        "cold_sores",
+        "herpes_simplex",
+        "shingles",
+        "ringworm",
+        "athletes_foot",
+        "boils",
+        "impetigo",
+        "infection"
+      ],
+      "members": [
+        "flavonoids",
+        "germanium",
+        "lysine",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "silver",
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e",
+        "zinc"
+      ],
+      "groups": [
+        "plant-derived"
+      ]
+    },
+    {
+      "id": "allergy-relief",
+      "name": "Allergy relief",
+      "category": "Digestion, immunity & breathing",
+      "conditions": [
+        "allergies",
+        "food_allergy",
+        "hay_fever"
+      ],
+      "members": [
+        "chromium",
+        "flavonoids",
+        "omega-3",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
+      ]
+    },
+    {
+      "id": "easier-breathing",
+      "name": "Easier breathing",
+      "category": "Digestion, immunity & breathing",
+      "conditions": [
+        "asthma",
+        "bronchitis",
+        "cystic_fibrosis",
+        "atopic_asthma",
+        "cough"
+      ],
+      "members": [
+        "magnesium",
+        "manganese",
+        "omega-3",
+        "omega-6",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
+      "groups": [
+        "plant-derived"
+      ]
+    },
+    {
+      "id": "fewer-colds-flu",
+      "name": "Fewer colds & flu",
+      "category": "Digestion, immunity & breathing",
+      "conditions": [
+        "common_cold",
+        "colds",
+        "influenza",
+        "tonsillitis"
+      ],
+      "members": [
+        "flavonoids",
+        "potassium",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
+      ]
+    },
+    {
+      "id": "skin-and-hair",
+      "name": "Healthy skin, hair & nails",
+      "category": "Skin, senses & mouth",
+      "conditions": [
+        "dermatitis",
+        "eczema",
+        "alopecia",
+        "gray_hair",
+        "psoriasis",
+        "acne",
+        "brittle_nails",
+        "brittle_hair",
+        "male_pattern_baldness",
+        "dandruff",
+        "hangnails",
+        "white_spots_fingernails"
+      ],
+      "members": [
+        "biotin",
+        "calcium",
+        "chromium",
+        "copper",
+        "inositol",
+        "iron",
+        "omega-3",
+        "omega-6",
+        "potassium",
+        "selenium",
+        "sodium",
+        "sulfur",
+        "tin",
+        "vitamin-a",
+        "vitamin-b2",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-d",
+        "vitamin-e",
+        "zinc"
+      ],
+      "groups": [
+        "plant-derived"
+      ]
+    },
+    {
+      "id": "healthy-vision",
+      "name": "Healthy eyes & vision",
+      "category": "Skin, senses & mouth",
+      "conditions": [
+        "cataracts",
+        "macular_degeneration",
+        "night_blindness",
+        "glaucoma",
+        "xerophthalmia",
+        "conjunctivitis"
+      ],
+      "members": [
+        "arginine",
+        "calcium",
+        "chromium",
+        "copper",
+        "flavonoids",
+        "inositol",
+        "selenium",
+        "taurine",
+        "tyrosine",
+        "vitamin-a",
+        "vitamin-b1",
+        "vitamin-b2",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ]
+    },
+    {
+      "id": "gums-teeth",
+      "name": "Healthy gums & teeth",
+      "category": "Skin, senses & mouth",
+      "conditions": [
+        "periodontal_disease",
+        "gingivitis",
+        "pyorrhea",
+        "tooth_decay",
+        "bleeding_gums",
+        "receding_gums"
+      ],
+      "members": [
+        "calcium",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e",
+        "zinc"
+      ],
+      "groups": [
+        "plant-derived"
+      ]
+    },
+    {
+      "id": "hearing-balance",
+      "name": "Hearing & balance",
+      "category": "Skin, senses & mouth",
+      "conditions": [
+        "tinnitus",
+        "deafness",
+        "menieres_disease",
+        "vertigo"
+      ],
+      "members": [
+        "calcium",
+        "magnesium",
+        "manganese",
+        "omega-3",
+        "tin",
+        "vitamin-a",
+        "zinc"
+      ],
+      "groups": [
+        "plant-derived"
+      ]
+    },
+    {
       "id": "hormones-fertility",
       "name": "Hormones & fertility",
+      "category": "Reproductive & whole-body",
       "conditions": [
         "infertility",
         "impotence",
@@ -1049,82 +1508,169 @@
       ]
     },
     {
-      "id": "muscle-strength",
-      "name": "Muscle & strength",
+      "id": "healthy-pregnancy",
+      "name": "Healthy pregnancy",
+      "category": "Reproductive & whole-body",
       "conditions": [
-        "muscular_dystrophy",
-        "muscle_cramps",
-        "muscle_twitches"
+        "birth_defects",
+        "spina_bifida",
+        "neural_tube_defects",
+        "miscarriage",
+        "morning_sickness",
+        "preeclampsia"
       ],
       "members": [
         "calcium",
-        "choline",
+        "cobalt",
+        "copper",
         "magnesium",
-        "methionine",
+        "manganese",
         "omega-3",
-        "potassium",
         "selenium",
-        "vitamin-b5",
-        "vitamin-d",
-        "vitamin-e"
+        "vitamin-a",
+        "vitamin-b12",
+        "vitamin-b6",
+        "vitamin-b9",
+        "zinc"
       ],
       "groups": [
         "plant-derived"
       ]
     },
     {
-      "id": "digestion",
-      "name": "Better digestion",
+      "id": "prostate-mens",
+      "name": "Prostate & men's health",
+      "category": "Reproductive & whole-body",
       "conditions": [
-        "crohns_disease",
-        "diarrhea",
-        "malabsorption"
+        "benign_prostatic_hyperplasia",
+        "oligospermia",
+        "erectile_dysfunction"
+      ],
+      "members": [
+        "arginine",
+        "chromium",
+        "omega-3",
+        "selenium",
+        "vitamin-a",
+        "vitamin-c",
+        "zinc"
+      ],
+      "groups": [
+        "plant-derived"
+      ]
+    },
+    {
+      "id": "womens-health",
+      "name": "Women's health & cycle",
+      "category": "Reproductive & whole-body",
+      "conditions": [
+        "pms",
+        "dysmenorrhea",
+        "amenorrhea",
+        "menorrhagia",
+        "fibrocystic_breast_disease"
       ],
       "members": [
         "calcium",
         "chromium",
+        "iodine",
+        "iron",
         "magnesium",
         "omega-3",
-        "omega-6",
-        "phosphorus",
         "selenium",
         "vitamin-a",
-        "vitamin-b12",
         "vitamin-b3",
-        "vitamin-b5",
-        "vitamin-b9",
-        "vitamin-c",
-        "vitamin-d",
+        "vitamin-b6",
+        "vitamin-e",
         "zinc"
       ]
     },
     {
-      "id": "healthy-weight",
-      "name": "A healthy weight",
+      "id": "kidney-urinary",
+      "name": "Kidney & urinary health",
+      "category": "Reproductive & whole-body",
       "conditions": [
-        "obesity",
-        "anorexia"
+        "kidney_stones",
+        "kidney_disease",
+        "bladder_stones",
+        "renal_failure",
+        "incontinence"
       ],
       "members": [
-        "biotin",
         "calcium",
         "chromium",
-        "cobalt",
-        "iron",
+        "inositol",
+        "lysine",
         "magnesium",
-        "manganese",
         "omega-3",
         "omega-6",
-        "phosphorus",
-        "potassium",
+        "selenium",
         "sodium",
-        "vitamin-b1",
-        "vitamin-b3",
-        "vitamin-b5",
+        "vitamin-a",
         "vitamin-b6",
+        "vitamin-d",
+        "vitamin-e"
+      ]
+    },
+    {
+      "id": "calm-inflammation",
+      "name": "Calm inflammation",
+      "category": "Reproductive & whole-body",
+      "conditions": [
+        "inflammation",
+        "gout",
+        "bursitis"
+      ],
+      "members": [
+        "calcium",
+        "copper",
+        "flavonoids",
+        "magnesium",
+        "molybdenum",
+        "omega-3",
+        "phenylalanine",
+        "tryptophan",
+        "valine",
+        "vitamin-b12",
         "vitamin-b9",
         "vitamin-c",
+        "vitamin-e",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
+      ]
+    },
+    {
+      "id": "cancer-support",
+      "name": "Cancer support",
+      "category": "Reproductive & whole-body",
+      "conditions": [
+        "cancer",
+        "leukemia",
+        "melanoma",
+        "carcinoma",
+        "prostate_cancer"
+      ],
+      "members": [
+        "arginine",
+        "calcium",
+        "copper",
+        "flavonoids",
+        "germanium",
+        "omega-3",
+        "selenium",
+        "taurine",
+        "tin",
+        "tyrosine",
+        "vanadium",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamin-e",
+        "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     }
   ]

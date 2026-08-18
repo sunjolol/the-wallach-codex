@@ -82,9 +82,30 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
   const reopen = existing !== null;
   let chosen: string[] = [...(loadRgUserGoals() ?? [])].slice(0, MAX_GOALS);
 
-  const goalChips = LAYOUT.goals.map(g =>
+  const chip = (g: (typeof LAYOUT.goals)[number]): string =>
     `<button class="wc-goal" type="button" data-goal="${escHTML(g.id)}">`
-    + `<span class="wc-goal__dot"></span>${escHTML(g.name)}</button>`).join('');
+    + `<span class="wc-goal__dot"></span>${escHTML(g.name)}</button>`;
+
+  // Group the goals by their editorial category (first-seen order) so the picker reads as
+  // labelled shelves, not one undifferentiated wall — 31 goals need the structure. A goal with
+  // no category (older skeleton) falls under a single unlabelled group, so this never drops one.
+  const catOrder: string[] = [];
+  const chipsByCat = new Map<string, string[]>();
+  for (const g of LAYOUT.goals) {
+    const cat = g.category ?? '';
+    let bucket = chipsByCat.get(cat);
+    if (bucket === undefined) {
+      bucket = [];
+      chipsByCat.set(cat, bucket);
+      catOrder.push(cat);
+    }
+    bucket.push(chip(g));
+  }
+  const goalGroups = catOrder.map((cat) => {
+    const head = cat === '' ? '' : `<span class="wc__goal-cat">${escHTML(cat)}</span>`;
+    const chips = (chipsByCat.get(cat) ?? []).join('');
+    return `<div class="wc__goal-group">${head}${chips}</div>`;
+  }).join('');
 
   host.innerHTML = `
     <div class="wc-veil" data-veil>
@@ -101,11 +122,11 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
              <input class="wc__name" id="wcName" data-name maxlength="${NAME_MAX}"
                     placeholder="${escHTML(ui('wc_name_placeholder'))}" autocomplete="off">
              <p class="wc__err" data-name-err hidden></p>`}
-        <div style="height: var(--ds-space-6)"></div>
+        <div style="height: var(--ds-space-3)"></div>
         <span class="wc__label">${escHTML(ui('wc_goals_label'))}
           <span class="wc__count"><span data-goal-count>0</span>/${MAX_GOALS} selected</span>
         </span>
-        <div class="wc__goals" data-goals>${goalChips}</div>
+        <div class="wc__goals" data-goals>${goalGroups}</div>
         <div class="wc__foot">
           ${reopen ? '' : `<button class="wc__browse" type="button" data-browse>${escHTML(ui('wc_browse'))}</button>`}
           <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML(ui('wc_go'))}</button>

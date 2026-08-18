@@ -4549,6 +4549,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   var LayoutGoalSchema = external_exports.object({
     id: external_exports.string(),
     name: external_exports.string(),
+    /** Category label the picker groups by. Editorial (skeleton-authored); not a Wallach claim. */
+    category: external_exports.string().optional(),
     /** Sealed-Catalog condition slugs. The derive hard-fails on one that does not resolve. */
     conditions: external_exports.array(external_exports.string()).min(1),
     /** Canon essential slugs, derived. The derive hard-fails on a goal with zero. */
@@ -6438,6 +6440,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "stronger-bones",
         name: "Stronger bones",
+        category: "Bones, joints & muscles",
         conditions: [
           "osteoporosis",
           "osteopenia",
@@ -6468,24 +6471,29 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         id: "less-joint-pain",
-        name: "Less joint pain",
+        name: "Healthy joints",
+        category: "Bones, joints & muscles",
         conditions: [
           "arthritis",
           "rheumatoid_arthritis",
           "osteoarthritis",
           "degenerative_arthritis",
           "joint_pain",
-          "heel_spurs"
+          "heel_spurs",
+          "fibromyalgia",
+          "tmj"
         ],
         members: [
           "boron",
           "calcium",
+          "choline",
           "chromium",
           "copper",
           "germanium",
           "histidine",
           "iron",
           "magnesium",
+          "manganese",
           "molybdenum",
           "omega-3",
           "omega-6",
@@ -6494,6 +6502,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "sulfur",
           "vanadium",
           "vitamin-a",
+          "vitamin-b1",
           "vitamin-b3",
           "vitamin-b6",
           "vitamin-b9",
@@ -6507,42 +6516,34 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
-        id: "more-energy",
-        name: "More energy",
+        id: "muscle-strength",
+        name: "Muscle & strength",
+        category: "Bones, joints & muscles",
         conditions: [
-          "chronic_fatigue",
-          "chronic_fatigue_syndrome",
-          "hypothyroidism",
-          "anemia"
+          "muscular_dystrophy",
+          "muscle_cramps",
+          "muscle_twitches"
         ],
         members: [
-          "biotin",
           "calcium",
-          "chromium",
-          "cobalt",
-          "copper",
-          "germanium",
-          "iodine",
-          "iron",
+          "choline",
+          "magnesium",
           "methionine",
           "omega-3",
+          "potassium",
           "selenium",
-          "sulfur",
-          "tyrosine",
-          "vanadium",
-          "vitamin-b12",
-          "vitamin-b2",
           "vitamin-b5",
-          "vitamin-b6",
-          "vitamin-b9",
-          "vitamin-c",
-          "vitamin-e",
-          "zinc"
+          "vitamin-d",
+          "vitamin-e"
+        ],
+        groups: [
+          "plant-derived"
         ]
       },
       {
         id: "sharper-thinking",
         name: "Sharper thinking",
+        category: "Mind & nerves",
         conditions: [
           "dementia",
           "alzheimers",
@@ -6578,10 +6579,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "better-mood",
         name: "Better mood",
+        category: "Mind & nerves",
         conditions: [
           "depression",
           "anxiety",
-          "bipolar_disorder"
+          "bipolar_disorder",
+          "adrenal_exhaustion",
+          "addisons_disease",
+          "stress"
         ],
         members: [
           "biotin",
@@ -6615,47 +6620,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
-        id: "healthy-heart",
-        name: "A healthy heart",
-        conditions: [
-          "cardiovascular_disease",
-          "arteriosclerosis",
-          "atherosclerosis",
-          "high_cholesterol",
-          "hypertension",
-          "heart_attack",
-          "congestive_heart_failure"
-        ],
-        members: [
-          "biotin",
-          "boron",
-          "calcium",
-          "chromium",
-          "copper",
-          "inositol",
-          "magnesium",
-          "manganese",
-          "omega-3",
-          "phosphorus",
-          "potassium",
-          "selenium",
-          "silica",
-          "sodium",
-          "vitamin-a",
-          "vitamin-b1",
-          "vitamin-b3",
-          "vitamin-c",
-          "vitamin-d",
-          "vitamin-e",
-          "zinc"
-        ],
-        groups: [
-          "plant-derived"
-        ]
-      },
-      {
         id: "better-sleep",
         name: "Better sleep",
+        category: "Mind & nerves",
         conditions: [
           "insomnia"
         ],
@@ -6676,22 +6643,70 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
-        id: "stronger-immunity",
-        name: "Stronger immunity",
+        id: "focus-attention",
+        name: "Focus & attention",
+        category: "Mind & nerves",
         conditions: [
-          "immune_depression"
+          "adhd",
+          "hyperactivity",
+          "hyperkinesis",
+          "autism"
         ],
         members: [
-          "flavonoids",
-          "germanium",
+          "calcium",
+          "chromium",
+          "copper",
+          "magnesium",
+          "omega-3",
+          "sodium",
+          "vitamin-b3",
+          "vitamin-b6",
+          "zinc"
+        ]
+      },
+      {
+        id: "nerves-neuro",
+        name: "Nerves, Seizures, MS & ALS",
+        category: "Mind & nerves",
+        conditions: [
+          "neuropathy",
+          "peripheral_neuropathy",
+          "neuralgia",
+          "trigeminal_neuralgia",
+          "sciatica",
+          "restless_leg_syndrome",
+          "bells_palsy",
+          "carpal_tunnel_syndrome",
+          "epilepsy",
+          "convulsions",
+          "tetany",
+          "absence_attacks",
+          "parkinsons_disease",
+          "parkinsonism",
+          "multiple_sclerosis",
+          "als",
+          "huntingtons_disease"
+        ],
+        members: [
+          "calcium",
+          "choline",
+          "chromium",
+          "leucine",
+          "magnesium",
+          "manganese",
+          "methionine",
           "omega-3",
           "omega-6",
+          "phenylalanine",
           "selenium",
-          "silver",
-          "vitamin-a",
-          "vitamin-b5",
-          "vitamin-c",
-          "vitamin-e",
+          "taurine",
+          "tyrosine",
+          "vitamin-b1",
+          "vitamin-b12",
+          "vitamin-b2",
+          "vitamin-b6",
+          "vitamin-b9",
+          "vitamin-d",
           "zinc"
         ],
         groups: [
@@ -6699,34 +6714,53 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
-        id: "skin-and-hair",
-        name: "Healthy skin & hair",
+        id: "healthy-heart",
+        name: "Heart health",
+        category: "Heart & metabolism",
         conditions: [
-          "dermatitis",
-          "eczema",
-          "alopecia",
-          "gray_hair",
-          "psoriasis",
-          "acne"
+          "cardiovascular_disease",
+          "arteriosclerosis",
+          "atherosclerosis",
+          "high_cholesterol",
+          "hypertension",
+          "heart_attack",
+          "congestive_heart_failure",
+          "cardiac_arrhythmia",
+          "atrial_fibrillation",
+          "tachycardia",
+          "palpitations",
+          "mitral_valve_prolapse",
+          "stroke",
+          "angina",
+          "high_triglycerides",
+          "coronary_artery_disease",
+          "aneurysm",
+          "cardiomyopathy"
         ],
         members: [
           "biotin",
+          "boron",
           "calcium",
           "chromium",
           "copper",
           "inositol",
+          "lysine",
+          "magnesium",
+          "manganese",
           "omega-3",
           "omega-6",
+          "phosphorus",
           "potassium",
           "selenium",
+          "silica",
           "sodium",
-          "tin",
+          "vanadium",
           "vitamin-a",
-          "vitamin-b2",
+          "vitamin-b1",
           "vitamin-b3",
           "vitamin-b5",
           "vitamin-b6",
-          "vitamin-b9",
+          "vitamin-c",
           "vitamin-d",
           "vitamin-e",
           "zinc"
@@ -6736,8 +6770,36 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        id: "circulation",
+        name: "Circulation",
+        category: "Heart & metabolism",
+        conditions: [
+          "varicose_veins",
+          "spider_veins",
+          "poor_circulation",
+          "raynauds_disease",
+          "intermittent_claudication"
+        ],
+        members: [
+          "calcium",
+          "chromium",
+          "copper",
+          "flavonoids",
+          "lysine",
+          "magnesium",
+          "omega-3",
+          "selenium",
+          "tryptophan",
+          "vitamin-b6",
+          "vitamin-c",
+          "vitamin-e",
+          "zinc"
+        ]
+      },
+      {
         id: "blood-sugar",
         name: "Blood-sugar balance",
+        category: "Heart & metabolism",
         conditions: [
           "diabetes",
           "hypoglycemia",
@@ -6759,8 +6821,407 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
+        id: "thyroid-support",
+        name: "Thyroid support",
+        category: "Heart & metabolism",
+        conditions: [
+          "goiter",
+          "hyperthyroidism",
+          "hashimotos_disease",
+          "graves_disease",
+          "thyroid_disease",
+          "cretinism"
+        ],
+        members: [
+          "arginine",
+          "copper",
+          "iodine",
+          "taurine",
+          "tyrosine"
+        ]
+      },
+      {
+        id: "more-energy",
+        name: "More energy",
+        category: "Heart & metabolism",
+        conditions: [
+          "chronic_fatigue",
+          "chronic_fatigue_syndrome",
+          "hypothyroidism",
+          "anemia",
+          "failure_to_thrive"
+        ],
+        members: [
+          "biotin",
+          "calcium",
+          "chromium",
+          "cobalt",
+          "copper",
+          "germanium",
+          "iodine",
+          "iron",
+          "methionine",
+          "omega-3",
+          "omega-6",
+          "selenium",
+          "sulfur",
+          "tyrosine",
+          "vanadium",
+          "vitamin-a",
+          "vitamin-b12",
+          "vitamin-b2",
+          "vitamin-b5",
+          "vitamin-b6",
+          "vitamin-b9",
+          "vitamin-c",
+          "vitamin-e",
+          "zinc"
+        ],
+        groups: [
+          "plant-derived"
+        ]
+      },
+      {
+        id: "healthy-weight",
+        name: "A healthy weight",
+        category: "Heart & metabolism",
+        conditions: [
+          "obesity",
+          "anorexia"
+        ],
+        members: [
+          "biotin",
+          "calcium",
+          "chromium",
+          "cobalt",
+          "iron",
+          "magnesium",
+          "manganese",
+          "omega-3",
+          "omega-6",
+          "phosphorus",
+          "potassium",
+          "sodium",
+          "vitamin-b1",
+          "vitamin-b3",
+          "vitamin-b5",
+          "vitamin-b6",
+          "vitamin-b9",
+          "vitamin-c",
+          "zinc"
+        ]
+      },
+      {
+        id: "digestion",
+        name: "Better digestion",
+        category: "Digestion, immunity & breathing",
+        conditions: [
+          "crohns_disease",
+          "diarrhea",
+          "malabsorption",
+          "peptic_ulcers",
+          "dyspepsia",
+          "indigestion",
+          "hypochlorhydria",
+          "colic",
+          "irritable_bowel_syndrome",
+          "celiac_disease",
+          "hemorrhoids"
+        ],
+        members: [
+          "calcium",
+          "chromium",
+          "cobalt",
+          "copper",
+          "flavonoids",
+          "lysine",
+          "magnesium",
+          "omega-3",
+          "omega-6",
+          "phosphorus",
+          "selenium",
+          "vitamin-a",
+          "vitamin-b12",
+          "vitamin-b3",
+          "vitamin-b5",
+          "vitamin-b6",
+          "vitamin-b9",
+          "vitamin-c",
+          "vitamin-d",
+          "vitamin-e",
+          "zinc"
+        ]
+      },
+      {
+        id: "liver-support",
+        name: "Liver support",
+        category: "Digestion, immunity & breathing",
+        conditions: [
+          "liver_disease",
+          "liver_cirrhosis",
+          "fatty_liver",
+          "hepatitis",
+          "jaundice",
+          "gallstones"
+        ],
+        members: [
+          "biotin",
+          "calcium",
+          "choline",
+          "chromium",
+          "copper",
+          "germanium",
+          "inositol",
+          "iron",
+          "methionine",
+          "omega-3",
+          "omega-6",
+          "selenium",
+          "taurine",
+          "vitamin-a",
+          "vitamin-b12",
+          "vitamin-b3",
+          "vitamin-b9",
+          "vitamin-c",
+          "vitamin-d",
+          "vitamin-e",
+          "vitamin-k"
+        ]
+      },
+      {
+        id: "stronger-immunity",
+        name: "Stronger immunity",
+        category: "Digestion, immunity & breathing",
+        conditions: [
+          "immune_depression",
+          "candidiasis",
+          "thrush",
+          "cold_sores",
+          "herpes_simplex",
+          "shingles",
+          "ringworm",
+          "athletes_foot",
+          "boils",
+          "impetigo",
+          "infection"
+        ],
+        members: [
+          "flavonoids",
+          "germanium",
+          "lysine",
+          "omega-3",
+          "omega-6",
+          "selenium",
+          "silver",
+          "vitamin-a",
+          "vitamin-b12",
+          "vitamin-b5",
+          "vitamin-b6",
+          "vitamin-c",
+          "vitamin-d",
+          "vitamin-e",
+          "zinc"
+        ],
+        groups: [
+          "plant-derived"
+        ]
+      },
+      {
+        id: "allergy-relief",
+        name: "Allergy relief",
+        category: "Digestion, immunity & breathing",
+        conditions: [
+          "allergies",
+          "food_allergy",
+          "hay_fever"
+        ],
+        members: [
+          "chromium",
+          "flavonoids",
+          "omega-3",
+          "selenium",
+          "vitamin-a",
+          "vitamin-c",
+          "zinc"
+        ]
+      },
+      {
+        id: "easier-breathing",
+        name: "Easier breathing",
+        category: "Digestion, immunity & breathing",
+        conditions: [
+          "asthma",
+          "bronchitis",
+          "cystic_fibrosis",
+          "atopic_asthma",
+          "cough"
+        ],
+        members: [
+          "magnesium",
+          "manganese",
+          "omega-3",
+          "omega-6",
+          "selenium",
+          "vitamin-a",
+          "vitamin-c",
+          "vitamin-e",
+          "zinc"
+        ],
+        groups: [
+          "plant-derived"
+        ]
+      },
+      {
+        id: "fewer-colds-flu",
+        name: "Fewer colds & flu",
+        category: "Digestion, immunity & breathing",
+        conditions: [
+          "common_cold",
+          "colds",
+          "influenza",
+          "tonsillitis"
+        ],
+        members: [
+          "flavonoids",
+          "potassium",
+          "selenium",
+          "vitamin-a",
+          "vitamin-c",
+          "zinc"
+        ]
+      },
+      {
+        id: "skin-and-hair",
+        name: "Healthy skin, hair & nails",
+        category: "Skin, senses & mouth",
+        conditions: [
+          "dermatitis",
+          "eczema",
+          "alopecia",
+          "gray_hair",
+          "psoriasis",
+          "acne",
+          "brittle_nails",
+          "brittle_hair",
+          "male_pattern_baldness",
+          "dandruff",
+          "hangnails",
+          "white_spots_fingernails"
+        ],
+        members: [
+          "biotin",
+          "calcium",
+          "chromium",
+          "copper",
+          "inositol",
+          "iron",
+          "omega-3",
+          "omega-6",
+          "potassium",
+          "selenium",
+          "sodium",
+          "sulfur",
+          "tin",
+          "vitamin-a",
+          "vitamin-b2",
+          "vitamin-b3",
+          "vitamin-b5",
+          "vitamin-b6",
+          "vitamin-b9",
+          "vitamin-d",
+          "vitamin-e",
+          "zinc"
+        ],
+        groups: [
+          "plant-derived"
+        ]
+      },
+      {
+        id: "healthy-vision",
+        name: "Healthy eyes & vision",
+        category: "Skin, senses & mouth",
+        conditions: [
+          "cataracts",
+          "macular_degeneration",
+          "night_blindness",
+          "glaucoma",
+          "xerophthalmia",
+          "conjunctivitis"
+        ],
+        members: [
+          "arginine",
+          "calcium",
+          "chromium",
+          "copper",
+          "flavonoids",
+          "inositol",
+          "selenium",
+          "taurine",
+          "tyrosine",
+          "vitamin-a",
+          "vitamin-b1",
+          "vitamin-b2",
+          "vitamin-b3",
+          "vitamin-b5",
+          "vitamin-b6",
+          "vitamin-c",
+          "vitamin-e",
+          "zinc"
+        ]
+      },
+      {
+        id: "gums-teeth",
+        name: "Healthy gums & teeth",
+        category: "Skin, senses & mouth",
+        conditions: [
+          "periodontal_disease",
+          "gingivitis",
+          "pyorrhea",
+          "tooth_decay",
+          "bleeding_gums",
+          "receding_gums"
+        ],
+        members: [
+          "calcium",
+          "magnesium",
+          "vitamin-a",
+          "vitamin-b9",
+          "vitamin-c",
+          "vitamin-d",
+          "vitamin-e",
+          "zinc"
+        ],
+        groups: [
+          "plant-derived"
+        ]
+      },
+      {
+        id: "hearing-balance",
+        name: "Hearing & balance",
+        category: "Skin, senses & mouth",
+        conditions: [
+          "tinnitus",
+          "deafness",
+          "menieres_disease",
+          "vertigo"
+        ],
+        members: [
+          "calcium",
+          "magnesium",
+          "manganese",
+          "omega-3",
+          "tin",
+          "vitamin-a",
+          "zinc"
+        ],
+        groups: [
+          "plant-derived"
+        ]
+      },
+      {
         id: "hormones-fertility",
         name: "Hormones & fertility",
+        category: "Reproductive & whole-body",
         conditions: [
           "infertility",
           "impotence",
@@ -6786,82 +7247,169 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ]
       },
       {
-        id: "muscle-strength",
-        name: "Muscle & strength",
+        id: "healthy-pregnancy",
+        name: "Healthy pregnancy",
+        category: "Reproductive & whole-body",
         conditions: [
-          "muscular_dystrophy",
-          "muscle_cramps",
-          "muscle_twitches"
+          "birth_defects",
+          "spina_bifida",
+          "neural_tube_defects",
+          "miscarriage",
+          "morning_sickness",
+          "preeclampsia"
         ],
         members: [
           "calcium",
-          "choline",
+          "cobalt",
+          "copper",
           "magnesium",
-          "methionine",
+          "manganese",
           "omega-3",
-          "potassium",
           "selenium",
-          "vitamin-b5",
-          "vitamin-d",
-          "vitamin-e"
+          "vitamin-a",
+          "vitamin-b12",
+          "vitamin-b6",
+          "vitamin-b9",
+          "zinc"
         ],
         groups: [
           "plant-derived"
         ]
       },
       {
-        id: "digestion",
-        name: "Better digestion",
+        id: "prostate-mens",
+        name: "Prostate & men's health",
+        category: "Reproductive & whole-body",
         conditions: [
-          "crohns_disease",
-          "diarrhea",
-          "malabsorption"
+          "benign_prostatic_hyperplasia",
+          "oligospermia",
+          "erectile_dysfunction"
+        ],
+        members: [
+          "arginine",
+          "chromium",
+          "omega-3",
+          "selenium",
+          "vitamin-a",
+          "vitamin-c",
+          "zinc"
+        ],
+        groups: [
+          "plant-derived"
+        ]
+      },
+      {
+        id: "womens-health",
+        name: "Women's health & cycle",
+        category: "Reproductive & whole-body",
+        conditions: [
+          "pms",
+          "dysmenorrhea",
+          "amenorrhea",
+          "menorrhagia",
+          "fibrocystic_breast_disease"
         ],
         members: [
           "calcium",
           "chromium",
+          "iodine",
+          "iron",
           "magnesium",
           "omega-3",
-          "omega-6",
-          "phosphorus",
           "selenium",
           "vitamin-a",
-          "vitamin-b12",
           "vitamin-b3",
-          "vitamin-b5",
-          "vitamin-b9",
-          "vitamin-c",
-          "vitamin-d",
+          "vitamin-b6",
+          "vitamin-e",
           "zinc"
         ]
       },
       {
-        id: "healthy-weight",
-        name: "A healthy weight",
+        id: "kidney-urinary",
+        name: "Kidney & urinary health",
+        category: "Reproductive & whole-body",
         conditions: [
-          "obesity",
-          "anorexia"
+          "kidney_stones",
+          "kidney_disease",
+          "bladder_stones",
+          "renal_failure",
+          "incontinence"
         ],
         members: [
-          "biotin",
           "calcium",
           "chromium",
-          "cobalt",
-          "iron",
+          "inositol",
+          "lysine",
           "magnesium",
-          "manganese",
           "omega-3",
           "omega-6",
-          "phosphorus",
-          "potassium",
+          "selenium",
           "sodium",
-          "vitamin-b1",
-          "vitamin-b3",
-          "vitamin-b5",
+          "vitamin-a",
           "vitamin-b6",
+          "vitamin-d",
+          "vitamin-e"
+        ]
+      },
+      {
+        id: "calm-inflammation",
+        name: "Calm inflammation",
+        category: "Reproductive & whole-body",
+        conditions: [
+          "inflammation",
+          "gout",
+          "bursitis"
+        ],
+        members: [
+          "calcium",
+          "copper",
+          "flavonoids",
+          "magnesium",
+          "molybdenum",
+          "omega-3",
+          "phenylalanine",
+          "tryptophan",
+          "valine",
+          "vitamin-b12",
           "vitamin-b9",
           "vitamin-c",
+          "vitamin-e",
           "zinc"
+        ],
+        groups: [
+          "plant-derived"
+        ]
+      },
+      {
+        id: "cancer-support",
+        name: "Cancer support",
+        category: "Reproductive & whole-body",
+        conditions: [
+          "cancer",
+          "leukemia",
+          "melanoma",
+          "carcinoma",
+          "prostate_cancer"
+        ],
+        members: [
+          "arginine",
+          "calcium",
+          "copper",
+          "flavonoids",
+          "germanium",
+          "omega-3",
+          "selenium",
+          "taurine",
+          "tin",
+          "tyrosine",
+          "vanadium",
+          "vitamin-a",
+          "vitamin-c",
+          "vitamin-e",
+          "zinc"
+        ],
+        groups: [
+          "plant-derived"
         ]
       }
     ]
@@ -181995,7 +182543,15 @@ This round (the last chunk) = his on-reload review of the freshly-ported ORAC ta
 (3) the mirror cell-fill read flat + too bright on dark \u2014 light gradient widened to var(--p2)->var(--ds-accent-hot); dark override mixes toward #000 (78%->42%) for a darker, wider fill.
 Commits ed359955 / a1bb6099 / 3a751a52. Verified: build 0, invariants 92/92, knowledge render probe PASS (0 page errors), headless screenshots under ember+amethyst light+dark.
 
-Session arc (for the ledger): the note-batch shipped 10 fixes + the ORAC 01-06 redesign port (mirror scrubber + interactive league field, \xA700.A-clean \u2014 every number projects from oracData()/oracFoodsData(), 07+ byte-untouched) + the Absorption pull-stat accent fix. Pushed to origin/master at session close per Luneth. Goals expansion proposal (chronicle/proposals/goals-expansion-proposal.md, +27 build-verified goals) is the next-session task, to be done together.` }];
+Session arc (for the ledger): the note-batch shipped 10 fixes + the ORAC 01-06 redesign port (mirror scrubber + interactive league field, \xA700.A-clean \u2014 every number projects from oracData()/oracFoodsData(), 07+ byte-untouched) + the Absorption pull-stat accent fix. Pushed to origin/master at session close per Luneth. Goals expansion proposal (chronicle/proposals/goals-expansion-proposal.md, +27 build-verified goals) is the next-session task, to be done together.` }, { id: "lg_msy0losh_q7r1ng", ts: "2026-08-17T20:59:37.409331-05:00", surface: "coverage goal picker (arrival veil)", kind: "round-close", summary: "Goals expansion, with Luneth: the arrival-veil picker grew 14 -> 31 goals in 6 compact categories, tuned to a measured 813px so it fits 1080p with no scroll. Goal cap stays 5. 92/92, render probe 31 checks, 0 page errors.", detail: `We expanded the "What do you want to work on?" goal picker from 14 goals to 31, grouped them into 6 labelled categories, and made the whole picker short enough to fit a 1080p screen without scrolling. Luneth curated the entire set with me over several rounds \u2014 keeping, renaming, merging, and dropping goals from a build-verified proposal, then adding two brand-new ones.
+
+THE SET (coverage-layout-skeleton.json goals 14->31, each {id,name,category,conditions}, ordered into 6 buckets: Bones/joints/muscles 3, Mind & nerves 5, Heart & metabolism 6, Digestion/immunity/breathing 6, Skin/senses/mouth 4, Reproductive & whole-body 7). NEW goals: nerves-neuro "Nerves, Seizures, MS & ALS" (17 conditions across nerve-pain + seizure + neurodegenerative); cancer-support (cancer/leukemia/melanoma/carcinoma/prostate_cancer, off the single most-claimed topic in the corpus, ~70 claims). RENAMES: less-joint-pain -> "Healthy joints" (+fibromyalgia,tmj); healthy-heart -> "Heart health", which ALSO absorbed the proposed rhythm goal (arrhythmia/a-fib/tachycardia/palpitations/MVP) plus stroke/angina/high_triglycerides/coronary_artery_disease/aneurysm/cardiomyopathy \u2014 the two near-identically-named heart goals unified into one (id kept as healthy-heart so no saved user goal orphans); skin-and-hair -> "Healthy skin, hair & nails"; + pass-1 renames (Circulation, Healthy pregnancy, Women's health & cycle). MERGES: adrenal->better-mood; upper-GI heartburn/ulcers/IBS/celiac/hemorrhoids->better digestion; infections->stronger immunity; failure_to_thrive->more energy. DROPPED from the +27: healthy-back, repetitive-strain, wound-healing, autoimmune, heavy-metal-detox, standalone headaches+seizure (folded into nerves-neuro).
+
+THE LAYOUT: schema gained an optional \`category\` on LayoutGoalSchema; welcome.ts groups goals by category (first-seen order) with the label as an inline <span> that flows on the same flex-wrap row as its chips \u2014 so a category costs no header line of its own (this is what killed the vertical bloat). A density pass (modal vertical padding space-7->space-6, name->goals spacer space-6->space-3, inter-group gap 12->8, goals->footer margin 32->16, chips 8x14->5x12 padding + .78->.76rem) brought the picker to a measured 813px at 1920x1080 \u2014 37px under Luneth's 850 budget, the goals block alone dropping 510->412px. MAX_GOALS stays 5: he considered 7 then reversed \u2014 more pick-order hues make the field's multi-goal gradients chaotic, and separate regimens already let a user track more.
+
+DOCTRINE: SS-00.A held throughout \u2014 the goal SET is our curation (Wallach enumerates no "goals"), but every goal's MEMBERSHIP auto-derives from sealed non-search claims via the real coverage_layout_derive; all 31 derive a non-empty member set (dry-run + build), zero hand-typed numbers. An honest finding surfaced mid-work and steered a decision: most "enrichment" merges add no NEW member nutrients until symptom->goal matching exists, so they were deferred rather than shipped as invisible changes.
+
+VERIFY: build 0; invariants 92/92 (goal_members_actionable, pdm_group_goals_wallach_sourced, and workspace_coverage_no_dead_rules all green \u2014 the new .wc__goal-cat/-group classes trace to welcome.ts and the removed .wc__goal-row left no dead rule); render_probe_coverage_add_remove PASS 31 checks (veil -> pick -> field relights -> dose moves the counts -> reversible -> remove -> rec returns; the denominator never moved), 0 page errors. Headless Puppeteer measure + screenshots at 1920x1080 confirmed the 813px height and the working selected-state hues; sent to Luneth, who approved and called round-close. Pushed to origin/master this round on his instruction.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -185408,7 +185964,24 @@ Session arc (for the ledger): the note-batch shipped 10 fixes + the ORAC 01-06 r
     const existing = loadUserProfile();
     const reopen = existing !== null;
     let chosen = [...loadRgUserGoals() ?? []].slice(0, MAX_GOALS);
-    const goalChips = LAYOUT5.goals.map((g) => `<button class="wc-goal" type="button" data-goal="${escHTML16(g.id)}"><span class="wc-goal__dot"></span>${escHTML16(g.name)}</button>`).join("");
+    const chip2 = (g) => `<button class="wc-goal" type="button" data-goal="${escHTML16(g.id)}"><span class="wc-goal__dot"></span>${escHTML16(g.name)}</button>`;
+    const catOrder = [];
+    const chipsByCat = /* @__PURE__ */ new Map();
+    for (const g of LAYOUT5.goals) {
+      const cat = g.category ?? "";
+      let bucket = chipsByCat.get(cat);
+      if (bucket === void 0) {
+        bucket = [];
+        chipsByCat.set(cat, bucket);
+        catOrder.push(cat);
+      }
+      bucket.push(chip2(g));
+    }
+    const goalGroups = catOrder.map((cat) => {
+      const head = cat === "" ? "" : `<span class="wc__goal-cat">${escHTML16(cat)}</span>`;
+      const chips = (chipsByCat.get(cat) ?? []).join("");
+      return `<div class="wc__goal-group">${head}${chips}</div>`;
+    }).join("");
     host.innerHTML = `
     <div class="wc-veil" data-veil>
       <div class="wc" role="dialog" aria-modal="true" aria-labelledby="wcH">
@@ -185422,11 +185995,11 @@ Session arc (for the ledger): the note-batch shipped 10 fixes + the ORAC 01-06 r
              <input class="wc__name" id="wcName" data-name maxlength="${NAME_MAX2}"
                     placeholder="${escHTML16(ui("wc_name_placeholder"))}" autocomplete="off">
              <p class="wc__err" data-name-err hidden></p>`}
-        <div style="height: var(--ds-space-6)"></div>
+        <div style="height: var(--ds-space-3)"></div>
         <span class="wc__label">${escHTML16(ui("wc_goals_label"))}
           <span class="wc__count"><span data-goal-count>0</span>/${MAX_GOALS} selected</span>
         </span>
-        <div class="wc__goals" data-goals>${goalChips}</div>
+        <div class="wc__goals" data-goals>${goalGroups}</div>
         <div class="wc__foot">
           ${reopen ? "" : `<button class="wc__browse" type="button" data-browse>${escHTML16(ui("wc_browse"))}</button>`}
           <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML16(ui("wc_go"))}</button>
@@ -185504,9 +186077,9 @@ Session arc (for the ledger): the note-batch shipped 10 fixes + the ORAC 01-06 r
         dismiss();
         return;
       }
-      const chip2 = t.closest(".wc-goal");
-      if (chip2 !== null) {
-        const id = chip2.dataset["goal"] ?? "";
+      const chip3 = t.closest(".wc-goal");
+      if (chip3 !== null) {
+        const id = chip3.dataset["goal"] ?? "";
         if (chosen.includes(id)) {
           chosen = chosen.filter((g) => g !== id);
         } else if (chosen.length < MAX_GOALS) {
