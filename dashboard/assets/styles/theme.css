@@ -726,7 +726,7 @@
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-fam__node--solid { fill: color-mix(in srgb, var(--ds-accent) 20%, var(--ds-paper-light)); }
 /* Absorption 115M / 75% pull-stats: a dark-ink slab that INVERTS to a bright box.
    Re-pin the flip tokens so it renders like cream mode (the island precedent, section E). */
-:root[data-theme="dark"] .ds-pull-stat { --ds-ink: #1a1612; --ds-ink-medium: #3d342a; --ds-paper: #fffbf2; --ds-paper-light: #fffbf2; }
+:root[data-theme="dark"] .ds-pull-stat { --ds-ink: #1a1612; --ds-ink-medium: #3d342a; --ds-paper: #fffbf2; --ds-paper-light: #fffbf2; --ds-accent-soft: color-mix(in srgb, var(--ds-accent) 42%, #fffbf2); }
 /* Absorption "the twist" callout: hardcoded #f7ece6 → a faint status-tinted dark panel. */
 :root[data-theme="dark"] #drawer-knowledge-mount .sx-callout { background: color-mix(in srgb, var(--ds-status-err) 12%, var(--ds-paper-light)); }
 /* ORAC §08: five hardcoded rgb() boxes → dark, faintly tinted to their own semantic hue. */
