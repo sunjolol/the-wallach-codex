@@ -181987,7 +181987,15 @@ The Explore pills and the condition-detail protocol/restore borders still ride t
 
 Verification (dark + amethyst, real drawer): build 0; invariants 92/92; render probe PASS knowledge; a Puppeteer probe clicked the hidden [data-kd-tab="essentials"] link -> 91 tiles, closest('.kd-home')=false (so it's the tab, not Home), .sh-tile::before at 0.5 alpha; essentials-tab screenshot reviewed (teal mineral + purple vitamin stripes, calm, matching Home).
 
-Push: origin/master this round, per his instruction. Session wrapping up -- genesis next.` }];
+Push: origin/master this round, per his instruction. Session wrapping up -- genesis next.` }, { id: "lg_msxx9n3r_ohytkx", ts: "2026-08-17T19:26:16.503020-05:00", surface: "knowledge drawer (ORAC)", kind: "round-close", summary: "ORAC tab review fixes (target-line knockout, accent-driven chain/slider/mirror ramp, less-flat darker mirror fill) \u2014 Luneth signed off; session closing, goals expansion next.", detail: `Closing the session after a big day on the knowledge drawer. Luneth left a written note-list while out; it was worked, he reviewed, greenlit the ORAC redesign port, then gave a few visual fixes on reload \u2014 all done and signed off ("Looks good"). Goals expansion is next session, together.
+
+This round (the last chunk) = his on-reload review of the freshly-ported ORAC tab, three visual notes:
+(1) the green 25,000-target line cut through the "17,940"/"16,062" top-scorer labels \u2014 .kd-orac-top now gets a row-matching knockout background (var(--ds-paper-light); even lanes color-mix(--ds-rule 34%, --ds-paper-light)) + padding + z-index:5 over the z-index:4 target marker; the densest lane's label (.kd-orac-lane[data-fam="berries"] .kd-orac-top) hidden because its box overlapped dots.
+(2) the 01-05 chain + the scrubber rail were hard-coded orange \u2014 the --p0..--p4 accumulation ramp is now color-mix(--ds-accent-hot {12,26,44,62,80}%, #fff), pale->vivid + white-mixed so the dark-forced chain text stays legible; chain (--f:var(--pN)) + rail (--p1..--p4) + mirror fill (--p3/4) all follow the accent now.
+(3) the mirror cell-fill read flat + too bright on dark \u2014 light gradient widened to var(--p2)->var(--ds-accent-hot); dark override mixes toward #000 (78%->42%) for a darker, wider fill.
+Commits ed359955 / a1bb6099 / 3a751a52. Verified: build 0, invariants 92/92, knowledge render probe PASS (0 page errors), headless screenshots under ember+amethyst light+dark.
+
+Session arc (for the ledger): the note-batch shipped 10 fixes + the ORAC 01-06 redesign port (mirror scrubber + interactive league field, \xA700.A-clean \u2014 every number projects from oracData()/oracFoodsData(), 07+ byte-untouched) + the Absorption pull-stat accent fix. Pushed to origin/master at session close per Luneth. Goals expansion proposal (chronicle/proposals/goals-expansion-proposal.md, +27 build-verified goals) is the next-session task, to be done together.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
