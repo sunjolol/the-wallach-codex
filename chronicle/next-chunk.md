@@ -1,62 +1,50 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-**ACTIVE CAMPAIGN: introduce the 452 ruled claims into Search.** The prior session sealed 177 raw
-claims but never ran the search-enrichment→index pipeline, so nothing showed in search. This session
-found the root cause, proved the fix, and shipped the two verified-book engines. See memory
-[[search-two-stage-and-verified-book-gate]].
+**ACTIVE CAMPAIGN: the 452 ruled claims → Search.** Engine 1 (DDDL clean+dirty, 262 claims) is LIVE.
+This session worked the 2 remaining engines AUTONOMOUSLY (Luneth out ~2h) and **STAGED both for his
+ratify — nothing sealed** (a lost scratchpad forced a reconstruction; §00.A says sealing dose amounts
+on fresh dispositions is his act). Board 92/92 green, corpus kv=473 UNCHANGED.
 
-## STATE (2026-08-18, board 92/92 green, corpus kv=473)
-- **262 DDDL claims LIVE in search** (107 clean + 155 dirty). Search index **2140 → 2402 (+262)**.
-  Family counts: Science 956 / What-To-Do 747 / Wallach's-Take 224 / Cautions 200 / Story 275.
-- **Engine 1 (DDDL-dirty finalize) DONE.** The 157 dirty DDDL claims were verified against Wallach's
-  own words (Luneth's rule: quote must back the claim). Result, all applied + sealed:
-  - 13+2 condition synonyms added (pyorrhea→periodontal, impotence→ED, caries/cavities→tooth_decay,…)
-  - 78 verbatims RE-SNAPPED to name the condition (Wallach's `HEADING → treatment` structure)
-  - 36 condition-mappings dropped (quote sat in a different section) + **2 whole claims dropped**
-    (#541 gum-disease, #461 eczema — mis-sourced) → **155 of 157 kept + live**
-  - 11 abbreviations → plain language; 3 glosses added; 71 keep-both dup pairs allowlisted in-gate
-    (`_DUPLICATE_KEEP_BOTH`, pinned in tools/test_no_duplicate_claims.py).
-  - Findability check: all 157 quotes are REAL (found verbatim in DDDL). Zero fabricated.
+## ⚠ THE PRIOR SCRATCHPAD IS GONE — how the data was recovered
+Prior session `0ce0c20f` (introduced-claims.json, finalize_raw/, enrich_src.json) is deleted
+(scratchpads are session-scoped). BOTH remaining engines drew from it. RECOVERY SOURCE:
+`temporary/claim-ruling-dashboard.html` embeds `const DATA = [...]` = all **907 ruled-claim candidates**
+with full payloads (claim_text, verbatim, question, answer_short, recommend, verdict). Fidelity proven:
+190 already-sealed claims match DATA byte-for-byte. **Lesson: campaign data is committed to chronicle/
+now — never leave it only in scratchpad.** See [[ruling-dashboard-is-recovery-source]].
 
-## ✅ ENTITY-RENDER CONSISTENCY FIX (2026-08-18, committed)
-Condition detail pages now render the enriched "Worth knowing" Q&A (`renderFacetGroups`) — conditions
-were the ONLY entity type stuck on RAW claim cards; essentials + explore topics already rendered
-enriched. Fix in `dashboard/assets/js/src/views/entity-page.ts`: `renderConditionPage` swaps raw
-`renderConditionProtocol` → `renderFacetGroups` (signature broadened to `EssentialPage | ConditionPage`;
-dead fn removed). Ask-Wallach ↔ condition ↔ essential ↔ topic now identical. If you touch ANY entity
-render, keep all four consistent. 3 render probes green.
+## ENGINE 1 — DDDL dose audit → STAGED (ratify-and-seal ready) · `chronicle/dose-audit-2026-08-18/`
+- 24 DDDL dose candidates recovered (recommend=introduce). **All 24 verbatims byte-exact in DDDL source,
+  ZERO fabricated.** Luneth's exact 22-of-24 ruling unrecoverable, but the dose-conflict audit
+  independently HELDS 2 → lands at 22 (matches the handoff count).
+- **2 HELD dose conflicts** (his “favor newest, but prove it” call — both proven by reading both books):
+  - `#347` folic acid/gout: DDDL(2011) **20-50 mg/day** vs `LETS-000288`(1995) 10-75 mg/day
+  - `#550` vitamin E/cataracts: DDDL(2011) **2,000 IU/day** vs `LETS-000207`(1995) 400 IU/day
+  Both values ALREADY coexist in the sealed corpus (protocol claims) — pre-existing divergence, not new.
+- **22 clean** staged: `finalize-raw-22.json` (every verbatim snap-validated via corpus_extract),
+  `enrichment-22.json` (recovered Q+A + proposed subject/facet/topics), `AUDIT-REPORT.md` (24 in review
+  form + the seal plan), `recovered-24-dose-audit.json` (provenance).
+- **SEAL PLAN (his ~2-min confirm):** `corpus_extract finalize --book dddl-3e-2011 --raw
+  chronicle/dose-audit-2026-08-18/finalize-raw-22.json` → prove draft offsets clean → merge enrichment
+  positionally (raw order; verbatim-match COLLIDES on shared spans) → `corpus_seal`+`catalog_seal`
+  (USER) → `search_index_derive`+`build.mjs` → on-screen count +22 → keep-both allowlist the
+  same-span pairs. Open dispositions listed in AUDIT-REPORT.md (dose:null, #657 reconcile-as-question,
+  #325 EFA mapping).
 
-## THE 2 REMAINING ENGINES
-
-1. **DDDL dose audit (22 claims).** Compare each dose to existing doses; SURFACE contradictions to
-   Luneth (his "favor newest, but prove it" rule); then finalize + enrich + seal like Engine 1.
-   Sources in `0ce0c20f` scratchpad (introduced-claims.json kind=dose; enrich_src has no dose entries —
-   author enrichment fresh). These are §00.A-critical (amounts) — read every quote.
-2. **Vision-verify the 162 unverified-book claims** → then front-face. 70 already sealed (raw records),
-   92 still unsealed. Blocked by `enriched_book_is_verified` until each span is page-read against the
-   in-repo images (`temporary/` PDFs + Screenshot dirs). Toolkit `tools/frontface/`; process
-   `chronicle/frontface-ocr/BLUEPRINT.md` (corroboration RANKS, only a page-read VERIFIES).
-
-## HOW ENGINE 1 WAS DONE (repeat for dose + vision)
-- Verified pass: `verbatim_audit.names()` on each (claim, condition); for failures, a workflow +
-  deterministic resolver classified synonym / resnap / drop against the real source (agent ±200-char
-  windows OVER-DROP — always cross-check the wider source: the condition name is usually in the
-  section HEADING above the treatment sentence).
-- Finalize path: build `{claims:[…]}` raw → `corpus_extract finalize --book <b> --raw <f>` (writes
-  DRAFT; snaps verbatims to exact bytes) → verify `corpus_seal.draft_offset_failures()==[]` →
-  `catalog_seal` + `corpus_seal` (Luneth granted seal permission this session — RE-ASK each session).
-- Enrich: map nkey→sealed id **positionally** (finalize assigns ids in raw order; verbatim-match
-  COLLIDES when claims share a resnapped span) → resolve subjects (register new entities) → merge
-  search-enrichment → derive → build. Then keep-both allowlist for surviving same-subject/facet dups.
-- Key scratchpad (`279f366a`): FINAL.json, dirty_nk2id.json, resolution.json, dup_final.json,
-  entity_plan.json, ddd_dirty_FINAL_raw.json.
-
-## GOTCHAS
-- Search reads `search-enrichment.json`→`search-index.json`, NOT corpus-embed. Verify by on-screen
-  number. `search-enrichment.json`(LF)/`search-entities.json`,`conditions.json`(CRLF, GOLDEN-sealed).
-- Draft/shard line endings: draft is CRLF — stage CRLF for safe_write.
-- `catalog_seal` recomputes nothing — if you change a condition's synonyms, update
-  `counts.with_synonyms` in conditions.json or the seal refuses.
+## ENGINE 2 — vision-verify unverified-book ruled claims → PILOT + STAGED · `chronicle/frontface-ocr/ruled-2026-08-18/`
+- Target: **70 SEALED unverified ruled claims** (epig 16, immort 45, hells 3, lets 3, rare 3). NEW
+  (sealed 2026-08-18) → absent from the 2026-08-02 worklist; correctly blocked by
+  `enriched_book_is_verified`. Worklist: `engine2_70_worklist.json`.
+- Corroboration (PDF text-layer, 9 claims): 6 agree, 3 diverge. **Vision-verified 2 diverging ones
+  against the page image** (`LETS-000523` p105, `LETS-000524` p71/render83) = **CLEAN** — the
+  “offood”/“ofan” divergences were PDF-text-layer extraction artifacts; ours matches the page.
+  `RARE-000403`: coverage 0.19 = mislocation, neighbour-search needed.
+- **HOLD FRONT-FACE** (his instruction): did NOT touch `verified.json` / `enriched_book_is_verified`.
+- NEXT: corroborate+vision-read the 61 epig/immort (dual-monitor Screenshot crops, x≈0.028-0.48, retry
+  adjacent frame) + the RARE neighbour; fix/resnap real defects; **then Luneth** moves clean ids into
+  `verified.json::claims_verified`. The 92 unsealed unverified claims recover from the ruling dashboard,
+  seal with the dose tranche, then verify.
 
 ## GENESIS
-`genesis` → run genesis.py, report the board, then resume ENGINE 1 (dose audit) unless redirected.
+`genesis` → run genesis.py, report the board, then resume: **Engine 1 seal (his confirm)** or **Engine 2
+full vision sweep**. If a new invariant red appears, that is the only response.
