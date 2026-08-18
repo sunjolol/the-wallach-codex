@@ -716,10 +716,12 @@
         "copper",
         "germanium",
         "magnesium",
+        "manganese",
         "phosphorus",
         "selenium",
         "sulfur",
         "vitamin-a",
+        "vitamin-b6",
         "vitamin-c",
         "vitamin-d",
         "vitamin-e",
@@ -755,6 +757,7 @@
         "iron",
         "magnesium",
         "manganese",
+        "methionine",
         "molybdenum",
         "omega-3",
         "omega-6",
@@ -1250,6 +1253,7 @@
         "omega-6",
         "selenium",
         "taurine",
+        "vanadium",
         "vitamin-a",
         "vitamin-b12",
         "vitamin-b3",
@@ -1315,6 +1319,9 @@
         "vitamin-a",
         "vitamin-c",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
@@ -1458,6 +1465,8 @@
       "members": [
         "calcium",
         "magnesium",
+        "phosphorus",
+        "silver",
         "vitamin-a",
         "vitamin-b9",
         "vitamin-c",
@@ -1566,6 +1575,7 @@
         "chromium",
         "omega-3",
         "selenium",
+        "silver",
         "vitamin-a",
         "vitamin-c",
         "zinc"

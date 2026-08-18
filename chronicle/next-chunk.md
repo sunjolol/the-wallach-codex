@@ -1,64 +1,53 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-**ACTIVE CAMPAIGN: introduce the 452 ruled claims into Search.** Luneth ruled 452 claims INTRODUCE in
-the triaged dashboard (prior session `0ce0c20f` scratchpad). The prior session sealed 177 raw claims
-but **never ran the search-enrichment→index pipeline**, so nothing showed in search. This session found
-the root cause, proved the fix, and is working the campaign to completion. See memory
-[[search-two-stage-and-verified-book-gate]] — it explains why a sealed claim ≠ a searchable claim.
+**ACTIVE CAMPAIGN: introduce the 452 ruled claims into Search.** The prior session sealed 177 raw
+claims but never ran the search-enrichment→index pipeline, so nothing showed in search. This session
+found the root cause, proved the fix, and shipped the two verified-book engines. See memory
+[[search-two-stage-and-verified-book-gate]].
 
-## STATE (2026-08-18, committed, board 92/92 green)
-- **107 DDDL-clean claims LIVE in search** (index 2140 → 2247). Family counts moved
-  (Science 903 / What-To-Do 656 / Wallach's-Take 218 / Cautions 191 / Story 274).
-- **Dup ruling done:** of 56 true gate-dup pairs, Luneth kept 52 (different questions on a shared span
-  = the gate's keep-both case) and DROPPED 4 nkeys: `dddl-3e-2011#518, #106, #96, #633` (all dirty,
-  unsealed — just excluded from finalize). Dashboard: scratchpad `dup-ruling-dashboard.html`.
+## STATE (2026-08-18, board 92/92 green, corpus kv=473)
+- **262 DDDL claims LIVE in search** (107 clean + 155 dirty). Search index **2140 → 2402 (+262)**.
+  Family counts: Science 956 / What-To-Do 747 / Wallach's-Take 224 / Cautions 200 / Story 275.
+- **Engine 1 (DDDL-dirty finalize) DONE.** The 157 dirty DDDL claims were verified against Wallach's
+  own words (Luneth's rule: quote must back the claim). Result, all applied + sealed:
+  - 13+2 condition synonyms added (pyorrhea→periodontal, impotence→ED, caries/cavities→tooth_decay,…)
+  - 78 verbatims RE-SNAPPED to name the condition (Wallach's `HEADING → treatment` structure)
+  - 36 condition-mappings dropped (quote sat in a different section) + **2 whole claims dropped**
+    (#541 gum-disease, #461 eczema — mis-sourced) → **155 of 157 kept + live**
+  - 11 abbreviations → plain language; 3 glosses added; 71 keep-both dup pairs allowlisted in-gate
+    (`_DUPLICATE_KEEP_BOTH`, pinned in tools/test_no_duplicate_claims.py).
+  - Findability check: all 157 quotes are REAL (found verbatim in DDDL). Zero fabricated.
 
-## Where all 448 introduce claims stand (452 − 4 drops)
-| State | Count | DDDL | Unverified |
-|---|--:|--:|--:|
-| ✅ Live in search | 107 | 107 | 0 |
-| 🔒 Sealed, needs vision-verify | 70 | 0 | 70 |
-| ⏳ Not sealed — dirty finalize | 248 | 157 | 91 |
-| ⏳ Not sealed — dose audit | 23 | 22 | 1 |
+## THE 2 REMAINING ENGINES
+1. **DDDL dose audit (22 claims).** Compare each dose to existing doses; SURFACE contradictions to
+   Luneth (his "favor newest, but prove it" rule); then finalize + enrich + seal like Engine 1.
+   Sources in `0ce0c20f` scratchpad (introduced-claims.json kind=dose; enrich_src has no dose entries —
+   author enrichment fresh). These are §00.A-critical (amounts) — read every quote.
+2. **Vision-verify the 162 unverified-book claims** → then front-face. 70 already sealed (raw records),
+   92 still unsealed. Blocked by `enriched_book_is_verified` until each span is page-read against the
+   in-repo images (`temporary/` PDFs + Screenshot dirs). Toolkit `tools/frontface/`; process
+   `chronicle/frontface-ocr/BLUEPRINT.md` (corroboration RANKS, only a page-read VERIFIES).
 
-**Only DDDL + IAIYH are verified books.** The 162 unverified-book claims (70 sealed + 92 unsealed)
-CANNOT front-face until vision-verified against the in-repo page images — that is the §00.A gate
-`enriched_book_is_verified`. Sources are all in-repo under `temporary/` (PDFs for hk/lets/rare;
-Screenshot dirs + `immortality-ocr/pages` for epig/immort). Toolkit: `tools/frontface/` (read its
-README); process: `chronicle/frontface-ocr/BLUEPRINT.md` — corroboration RANKS, only a page-read
-VERIFIES (~14% of agreeing claims still hid a defect).
-
-## THE 3 REMAINING ENGINES (in priority order)
-1. **DDDL-dirty finalize (157) — IN PROGRESS.** Seal the 157 DDDL dirty claims (exclude the 4 drops).
-   Gate trips to clear: `verbatim_names` (add a synonym to the catalog condition so the verbatim's
-   term matches, or drop the mapping — NEVER silence it blindly), `frontface` (dehyphenate the
-   verbatim, byte-exact), jargon (gloss), 1 unexpl_abbr (ACE). Then enrich + add the surviving
-   keep-both pairs to `_DUPLICATE_KEEP_BOTH` in tools/invariants.py (+ pin tools/test_no_duplicate_claims.py).
-   Ends with Luneth's `corpus_seal` (USER-ONLY).
-2. **DDDL dose audit (22).** Compare each to existing doses; SURFACE contradictions to Luneth (his
-   "favor newest, but prove it" rule); enrich the non-conflicting ones.
-3. **Vision-verify the 162** (frontface campaign) → then front-face them.
-
-## KEY SCRATCHPAD ARTIFACTS (this session, `279f366a` scratchpad)
-- `subject_resolution.json` / `entity_plan.json` — subject→slug map + the 53 new topics still to
-  author (mostly unverified-book, so they wait for the vision phase).
-- `clean_nk2id.json` — nkey→sealed-id map (verbatim+conditions verified) for the 177 clean.
-- `true_dups.json` / `dup_rows.json` / `dup_rulings.json` — the 56 pairs + the 4 drops.
-- `nk2id.json` — verbatim→sealed-id for all 429.
-- The 452 rulings + enrich_src: prior scratchpad `0ce0c20f` (`introduced-claims.json`,
-  `enrich_src.json` (429 authored enrichments), `clean_subset.json`, `audit_map.json`, `finalize_raw/`).
+## HOW ENGINE 1 WAS DONE (repeat for dose + vision)
+- Verified pass: `verbatim_audit.names()` on each (claim, condition); for failures, a workflow +
+  deterministic resolver classified synonym / resnap / drop against the real source (agent ±200-char
+  windows OVER-DROP — always cross-check the wider source: the condition name is usually in the
+  section HEADING above the treatment sentence).
+- Finalize path: build `{claims:[…]}` raw → `corpus_extract finalize --book <b> --raw <f>` (writes
+  DRAFT; snaps verbatims to exact bytes) → verify `corpus_seal.draft_offset_failures()==[]` →
+  `catalog_seal` + `corpus_seal` (Luneth granted seal permission this session — RE-ASK each session).
+- Enrich: map nkey→sealed id **positionally** (finalize assigns ids in raw order; verbatim-match
+  COLLIDES when claims share a resnapped span) → resolve subjects (register new entities) → merge
+  search-enrichment → derive → build. Then keep-both allowlist for surviving same-subject/facet dups.
+- Key scratchpad (`279f366a`): FINAL.json, dirty_nk2id.json, resolution.json, dup_final.json,
+  entity_plan.json, ddd_dirty_FINAL_raw.json.
 
 ## GOTCHAS
-- **Search reads `search-enrichment.json` → `search-index.json`, NOT corpus-embed.** Adding a raw
-  claim never makes it searchable; needs an enrichment entry (subject resolving to a REGISTERED entity
-  or canon) + `python eden/tools/search_index_derive.py` + `node tools/build.mjs`. Verify by the
-  on-screen number, never the data file. `search-enrichment.json` (LF) + `search-entities.json` (CRLF)
-  are NOT golden-sealed — normal safe_write.
-- **Registered 25 new search entities this session** (14 conditions incl. endometriosis/rosacea/
-  uterine_fibroids/celiac + 3 topics immunotherapy/nausea/lactation_suppression + the prior 8). New
-  condition subjects need a `{catalog_ref:true,type:condition,synonyms:[…]}` registry entry.
-- **Prior session hardened the 3 seal tools** (`_guard_cli` blocks `seal.py --help` from sealing).
+- Search reads `search-enrichment.json`→`search-index.json`, NOT corpus-embed. Verify by on-screen
+  number. `search-enrichment.json`(LF)/`search-entities.json`,`conditions.json`(CRLF, GOLDEN-sealed).
+- Draft/shard line endings: draft is CRLF — stage CRLF for safe_write.
+- `catalog_seal` recomputes nothing — if you change a condition's synonyms, update
+  `counts.with_synonyms` in conditions.json or the seal refuses.
 
 ## GENESIS
-`genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report the board, then resume ENGINE 1
-(DDDL-dirty finalize) unless Luneth redirects.
+`genesis` → run genesis.py, report the board, then resume ENGINE 1 (dose audit) unless redirected.

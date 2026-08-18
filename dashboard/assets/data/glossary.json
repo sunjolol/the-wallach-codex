@@ -2639,6 +2639,11 @@
    "category": "biology"
   },
   {
+   "term": "endometriosis",
+   "plain": "a condition where tissue like the womb lining grows outside the uterus, causing pelvic pain and heavy, painful periods",
+   "category": "medical"
+  },
+  {
    "term": "endothelium",
    "plain": "the thin layer of cells lining the inside of blood vessels",
    "category": "biology",
@@ -5698,6 +5703,11 @@
   {
    "term": "osteosclerosis",
    "plain": "abnormal hardening and thickening of bone",
+   "category": "medical"
+  },
+  {
+   "term": "ovariectomy",
+   "plain": "surgery to remove the ovaries",
    "category": "medical"
   },
   {

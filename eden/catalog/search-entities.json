@@ -12397,6 +12397,27 @@
     "want to vomit"
    ],
    "related": []
+  },
+  "glutathione": {
+   "display_name": "Glutathione",
+   "type": "substance",
+   "synonyms": [
+    "glutathione",
+    "GSH",
+    "master antioxidant",
+    "the body's master antioxidant"
+   ],
+   "related": []
+  },
+  "the_salad_fork_trick": {
+   "display_name": "The Salad Fork Trick",
+   "type": "concept",
+   "synonyms": [
+    "salad fork trick",
+    "fork dipping trick",
+    "dip the fork"
+   ],
+   "related": []
   }
  }
 }

@@ -4899,6 +4899,148 @@ _DUPLICATE_KEEP_BOTH = {
         "conditions=[brain_cancer]); -000389 answers the narrower 'Can taking gallium during "
         "pregnancy lower a child's risk of brain cancer?' (conditions=[brain_cancer], no "
         "essentials). Ruled keep-both 2026-08-03 -- commit b3551834 / chronicle/next-chunk.md.",
+    frozenset({"WAL-CLM-DDDL-000071", "WAL-CLM-DDDL-000137"}):
+        "selenium/physiology: one Wallach passage that answers two different reader questions -- A asks 'Can selenium prevent muscular dystrophy?'; B asks 'Does selenium affect fertility and pregnancy?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000092", "WAL-CLM-DDDL-000517"}):
+        "menopause/protocol: one Wallach passage that answers two different reader questions -- A asks 'Should women take estrogen supplements for menopause?'; B asks 'How much calcium and magnesium should you take during menopause?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000115", "WAL-CLM-DDDL-000427"}):
+        "omega-3/protocol: one Wallach passage that answers two different reader questions -- A asks 'How much omega-3 or essential fatty acids should I take per day?'; B asks 'How much essential fatty acid should you take for rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000168", "WAL-CLM-DDDL-000436"}):
+        "vitamin-a/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Wallach treat acne with vitamin A?'; B asks 'Does vitamin A help clear up rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000337", "WAL-CLM-DDDL-000430"}):
+        "rosacea/protocol: one Wallach passage that answers two different reader questions -- A asks \"What is Wallach's full treatment for acne rosacea?\"; B asks 'Is rosacea connected to poor digestion?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000337", "WAL-CLM-DDDL-000440"}):
+        "rosacea/protocol: one Wallach passage that answers two different reader questions -- A asks \"What is Wallach's full treatment for acne rosacea?\"; B asks 'Does sunlight or UV light help rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000354", "WAL-CLM-DDDL-000434"}):
+        "cataracts/protocol: one Wallach passage that answers two different reader questions -- A asks 'How do you treat cataracts caused by diabetes?'; B asks 'What does Wallach recommend for cataracts?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000356", "WAL-CLM-DDDL-000450"}):
+        "hypertension/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies cause high blood pressure?'; B asks 'What causes high blood pressure according to Wallach?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000356", "WAL-CLM-DDDL-000451"}):
+        "hypertension/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies cause high blood pressure?'; B asks 'Why do high blood pressure, arthritis, and kidney stones so often go together?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000357", "WAL-CLM-DDDL-000452"}):
+        "peptic_ulcers/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can a peptic ulcer be cured for good?'; B asks 'What does Wallach recommend for peptic or stomach ulcers?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000385", "WAL-CLM-DDDL-000448"}):
+        "irritable_bowel_syndrome/protocol: one Wallach passage that answers two different reader questions -- A asks 'What should I eat for IBS?'; B asks 'Should I take digestive enzymes for IBS?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000385", "WAL-CLM-DDDL-000474"}):
+        "irritable_bowel_syndrome/protocol: one Wallach passage that answers two different reader questions -- A asks 'What should I eat for IBS?'; B asks 'What foods should I avoid with IBS?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000394", "WAL-CLM-DDDL-000459"}):
+        "alopecia/protocol: one Wallach passage that answers two different reader questions -- A asks 'Why does Wallach recommend digestive enzymes for hair loss?'; B asks 'Can cutting out wheat and dairy help with hair loss?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000463"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'Does flaxseed oil help with high blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000471"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'Does CoQ10 help lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000476"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'How does Wallach treat high blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000477"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'What herbs does Wallach recommend for high blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000478"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000483"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000406", "WAL-CLM-DDDL-000465"}):
+        "tinnitus/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do essential fatty acids or fish and flax oils help tinnitus?'; B asks 'Does zinc help tinnitus?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000406", "WAL-CLM-DDDL-000466"}):
+        "tinnitus/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do essential fatty acids or fish and flax oils help tinnitus?'; B asks 'Can poor digestion cause tinnitus, and do digestive enzymes help?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000408", "WAL-CLM-DDDL-000481"}):
+        "uterine_fibroids/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Dr. Wallach treat uterine fibroids?'; B asks 'What foods should I avoid with uterine fibroids?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000408", "WAL-CLM-DDDL-000488"}):
+        "uterine_fibroids/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Dr. Wallach treat uterine fibroids?'; B asks 'Can I shrink uterine fibroids without a hysterectomy?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000411", "WAL-CLM-DDDL-000485"}):
+        "tinnitus/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies cause tinnitus?'; B asks 'Can heavy metals like lead or mercury cause tinnitus?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000415", "WAL-CLM-DDDL-000458"}):
+        "uterine_fibroids/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes uterine fibroids?'; B asks 'Are uterine fibroids related to fibrocystic breast disease?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000421", "WAL-CLM-DDDL-000467"}):
+        "chronic_fatigue/protocol: one Wallach passage that answers two different reader questions -- A asks \"What foods should I avoid if I'm always tired?\"; B asks 'What does Wallach recommend for chronic fatigue?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000428", "WAL-CLM-DDDL-000429"}):
+        "rosacea/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes acne rosacea?'; B asks 'Can food allergies make rosacea worse?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000428", "WAL-CLM-DDDL-000444"}):
+        "rosacea/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes acne rosacea?'; B asks 'Can hormones or menopause trigger rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000429", "WAL-CLM-DDDL-000444"}):
+        "rosacea/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies make rosacea worse?'; B asks 'Can hormones or menopause trigger rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000430", "WAL-CLM-DDDL-000440"}):
+        "rosacea/protocol: one Wallach passage that answers two different reader questions -- A asks 'Is rosacea connected to poor digestion?'; B asks 'Does sunlight or UV light help rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000431", "WAL-CLM-DDDL-000432"}):
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'Is cranberry juice good for an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000431", "WAL-CLM-DDDL-000495"}):
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'Does vitamin C help an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000431", "WAL-CLM-DDDL-000498"}):
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'How much selenium should a man take for prostate health?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000431", "WAL-CLM-DDDL-000501"}):
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000432", "WAL-CLM-DDDL-000495"}):
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Is cranberry juice good for an enlarged prostate?'; B asks 'Does vitamin C help an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000432", "WAL-CLM-DDDL-000498"}):
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Is cranberry juice good for an enlarged prostate?'; B asks 'How much selenium should a man take for prostate health?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000432", "WAL-CLM-DDDL-000501"}):
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Is cranberry juice good for an enlarged prostate?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000445", "WAL-CLM-DDDL-000523"}):
+        "joint_pain/protocol: one Wallach passage that answers two different reader questions -- A asks 'What does Wallach recommend for joint pain?'; B asks 'What supplements help rebuild worn spinal joints and cartilage?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000448", "WAL-CLM-DDDL-000474"}):
+        "irritable_bowel_syndrome/protocol: one Wallach passage that answers two different reader questions -- A asks 'Should I take digestive enzymes for IBS?'; B asks 'What foods should I avoid with IBS?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000449", "WAL-CLM-DDDL-000516"}):
+        "menopause/physiology: one Wallach passage that answers two different reader questions -- A asks 'Does menopause cause vaginal dryness and bladder problems?'; B asks 'What are the symptoms of menopause?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000450", "WAL-CLM-DDDL-000451"}):
+        "hypertension/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes high blood pressure according to Wallach?'; B asks 'Why do high blood pressure, arthritis, and kidney stones so often go together?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000460", "WAL-CLM-DDDL-000461"}):
+        "vertigo/protocol: one Wallach passage that answers two different reader questions -- A asks \"What does Wallach recommend for Wallach's Vertigo?\"; B asks \"How do you treat Wallach's vertigo naturally?\". Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000463", "WAL-CLM-DDDL-000471"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'Does CoQ10 help lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000463", "WAL-CLM-DDDL-000477"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'What herbs does Wallach recommend for high blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000463", "WAL-CLM-DDDL-000478"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000463", "WAL-CLM-DDDL-000483"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000465", "WAL-CLM-DDDL-000466"}):
+        "tinnitus/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does zinc help tinnitus?'; B asks 'Can poor digestion cause tinnitus, and do digestive enzymes help?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000471", "WAL-CLM-DDDL-000477"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does CoQ10 help lower blood pressure?'; B asks 'What herbs does Wallach recommend for high blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000471", "WAL-CLM-DDDL-000478"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does CoQ10 help lower blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000471", "WAL-CLM-DDDL-000483"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does CoQ10 help lower blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000476", "WAL-CLM-DDDL-000483"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Wallach treat high blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000477", "WAL-CLM-DDDL-000478"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'What herbs does Wallach recommend for high blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000477", "WAL-CLM-DDDL-000483"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'What herbs does Wallach recommend for high blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000478", "WAL-CLM-DDDL-000483"}):
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'What foods should I eat or avoid to lower blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000481", "WAL-CLM-DDDL-000488"}):
+        "uterine_fibroids/protocol: one Wallach passage that answers two different reader questions -- A asks 'What foods should I avoid with uterine fibroids?'; B asks 'Can I shrink uterine fibroids without a hysterectomy?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000482", "WAL-CLM-DDDL-000559"}):
+        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can folic acid help eczema?'; B asks 'Does zinc help eczema?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000490", "WAL-CLM-DDDL-000492"}):
+        "endometriosis/uses: one Wallach passage that answers two different reader questions -- A asks 'What herbs are recommended for endometriosis discomfort?'; B asks 'Can natural progesterone help with endometriosis?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000490", "WAL-CLM-DDDL-000577"}):
+        "endometriosis/uses: one Wallach passage that answers two different reader questions -- A asks 'What herbs are recommended for endometriosis discomfort?'; B asks 'How can severe endometriosis growths be removed?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000492", "WAL-CLM-DDDL-000577"}):
+        "endometriosis/uses: one Wallach passage that answers two different reader questions -- A asks 'Can natural progesterone help with endometriosis?'; B asks 'How can severe endometriosis growths be removed?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000494", "WAL-CLM-DDDL-000578"}):
+        "endometriosis/mechanism: one Wallach passage that answers two different reader questions -- A asks 'How does endometrial tissue end up outside the uterus?'; B asks 'Which organs can endometriosis affect?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000494", "WAL-CLM-DDDL-000581"}):
+        "endometriosis/mechanism: one Wallach passage that answers two different reader questions -- A asks 'How does endometrial tissue end up outside the uterus?'; B asks 'What causes endometriosis?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000495", "WAL-CLM-DDDL-000498"}):
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin C help an enlarged prostate?'; B asks 'How much selenium should a man take for prostate health?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000495", "WAL-CLM-DDDL-000501"}):
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin C help an enlarged prostate?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000498", "WAL-CLM-DDDL-000501"}):
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'How much selenium should a man take for prostate health?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000529", "WAL-CLM-DDDL-000571"}):
+        "erectile_dysfunction/protocol: one Wallach passage that answers two different reader questions -- A asks 'Are there self-help or sex-therapy techniques for erectile dysfunction you can do at home?'; B asks 'Do minerals or supplements actually help with impotence?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000531", "WAL-CLM-DDDL-000562"}):
+        "allergies/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do vitamin C and bioflavonoids help with allergies?'; B asks 'Can fixing my digestion help with allergies?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000532", "WAL-CLM-DDDL-000548"}):
+        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin A help eczema?'; B asks 'Do digestive enzymes help eczema?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000532", "WAL-CLM-DDDL-000563"}):
+        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin A help eczema?'; B asks 'How do I find out which foods trigger my eczema?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000548", "WAL-CLM-DDDL-000563"}):
+        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do digestive enzymes help eczema?'; B asks 'How do I find out which foods trigger my eczema?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000578", "WAL-CLM-DDDL-000581"}):
+        "endometriosis/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Which organs can endometriosis affect?'; B asks 'What causes endometriosis?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-IMMORT-000135", "WAL-CLM-IMMORT-000389"}):
+        "gallium/uses: one Wallach passage that answers two different reader questions -- A asks 'Does gallium help protect against brain cancer?'; B asks \"Can taking gallium during pregnancy lower a child's risk of brain cancer?\". Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
 }
 
 

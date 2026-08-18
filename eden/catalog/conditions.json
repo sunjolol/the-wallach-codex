@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "_doctrine": "The pre-registered condition catalog -- the SINGLE home for each condition's identity (display_name), umbrella->subtype structure (umbrella_of), and Wallach's synonym phrasings. Promoted 2026-07-05 (Phase B) from the emergent derived index + eden/tools/{condition-taxonomy,condition-synonyms}.json + corpus_derive DISPLAY_OVERRIDES (all retired). A claim may reference a condition slug ONLY if it appears here (references_resolve gate) -- closing the phantom-slug hole where a typo silently minted a condition. Hand-edited pillar: register a NEW condition here BEFORE mining a claim that maps to it. User is sole writer once sealed. SYNONYM MATCHING is OCR-folded, punctuation-insensitive, all-words-present; significant words of display_name + slug tokens are accepted implicitly, so list only DIFFERENT wordings. UMBRELLA_OF children must be real condition slugs (child->parent only; naming 'cancer' does NOT name 'leukemia'). display_name for the search-only slugs absent from the operational index is humanize(slug).",
-  "sealed_at": "2026-08-18T08:20:24+00:00",
+  "sealed_at": "2026-08-18T19:11:16+00:00",
   "counts": {
     "conditions": 524,
     "umbrellas": 7,
-    "with_synonyms": 136
+    "with_synonyms": 141
   },
   "conditions": {
     "abrasions": {
@@ -44,7 +44,8 @@
     "adhd": {
       "display_name": "Adhd",
       "synonyms": [
-        "add"
+        "add",
+        "hyperactivity"
       ]
     },
     "adrenal_exhaustion": {
@@ -70,7 +71,10 @@
       "display_name": "Airway Obstruction"
     },
     "alcoholism": {
-      "display_name": "Alcoholism"
+      "display_name": "Alcoholism",
+      "synonyms": [
+        "craving for alcohol"
+      ]
     },
     "alkalosis": {
       "display_name": "Alkalosis"
@@ -634,7 +638,8 @@
     "cystitis": {
       "display_name": "Cystitis",
       "synonyms": [
-        "bladder infection"
+        "bladder infection",
+        "irritation of the bladder"
       ]
     },
     "dandruff": {
@@ -741,7 +746,10 @@
       "display_name": "Dyslexia"
     },
     "dysmenorrhea": {
-      "display_name": "Dysmenorrhea"
+      "display_name": "Dysmenorrhea",
+      "synonyms": [
+        "painful periods"
+      ]
     },
     "dyspepsia": {
       "display_name": "Dyspepsia"
@@ -763,7 +771,10 @@
       "display_name": "Eclampsia"
     },
     "eczema": {
-      "display_name": "Eczema"
+      "display_name": "Eczema",
+      "synonyms": [
+        "atopic dermatitis"
+      ]
     },
     "edema": {
       "display_name": "Edema"
@@ -793,7 +804,10 @@
       "display_name": "Erbs Palsy"
     },
     "erectile_dysfunction": {
-      "display_name": "Erectile Dysfunction"
+      "display_name": "Erectile Dysfunction",
+      "synonyms": [
+        "impotence"
+      ]
     },
     "esophageal_cancer": {
       "display_name": "Esophageal Cancer"
@@ -1576,7 +1590,10 @@
     "obesity": {
       "display_name": "Obesity",
       "synonyms": [
-        "childhood obesity"
+        "childhood obesity",
+        "gain weight",
+        "overweight",
+        "weight problem"
       ]
     },
     "oligospermia": {
@@ -1713,7 +1730,8 @@
     "periodontal_disease": {
       "display_name": "Periodontal Disease",
       "synonyms": [
-        "loose teeth"
+        "loose teeth",
+        "pyorrhea"
       ]
     },
     "peripheral_arterial_disease": {
@@ -1841,7 +1859,10 @@
       "display_name": "Radial Nerve Palsy"
     },
     "raynauds_disease": {
-      "display_name": "Raynauds Disease"
+      "display_name": "Raynauds Disease",
+      "synonyms": [
+        "raynaud's disease"
+      ]
     },
     "reactive_hypoglycemia": {
       "display_name": "Reactive Hypoglycemia"
@@ -2086,7 +2107,9 @@
     "tooth_decay": {
       "display_name": "Tooth Decay",
       "synonyms": [
-        "dental caries"
+        "dental caries",
+        "caries",
+        "cavities"
       ]
     },
     "toothache": {
@@ -2125,7 +2148,8 @@
       "display_name": "Urinary Tract Infection",
       "synonyms": [
         "bladder infection",
-        "kidney infection"
+        "kidney infection",
+        "cystitis"
       ]
     },
     "uterine_cancer": {
@@ -2146,7 +2170,8 @@
     "vertigo": {
       "display_name": "Vertigo",
       "synonyms": [
-        "wallachs vertigo"
+        "wallachs vertigo",
+        "dizziness"
       ]
     },
     "violent_behavior": {

@@ -36313,6 +36313,2437 @@
     "bile duct",
     "fatty food"
    ]
+  },
+  "WAL-CLM-DDDL-000427": {
+   "subject": "omega-3",
+   "also_about": [
+    "rosacea",
+    "acne",
+    "omega-6"
+   ],
+   "facet": "protocol",
+   "question": "How much essential fatty acid should you take for rosacea?",
+   "answer_short": "Wallach calls essential fatty acids a must for acne rosacea -- about 3 percent of daily calories, or 9 grams per day in capsule form.",
+   "topics": [
+    "rosacea",
+    "acne",
+    "essential-fatty-acids",
+    "omega-3",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000428": {
+   "subject": "rosacea",
+   "also_about": [
+    "acne",
+    "omega-3",
+    "omega-6"
+   ],
+   "facet": "mechanism",
+   "question": "What causes acne rosacea?",
+   "answer_short": "Wallach teaches that acne rosacea is primarily caused by an essential fatty acid deficiency alongside too much saturated and polyunsaturated fat (fried foods, margarine).",
+   "topics": [
+    "rosacea",
+    "acne",
+    "essential-fatty-acids",
+    "diet",
+    "skin-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000429": {
+   "subject": "rosacea",
+   "also_about": [
+    "acne"
+   ],
+   "facet": "mechanism",
+   "question": "Can food allergies make rosacea worse?",
+   "answer_short": "Wallach advises checking for food allergies -- especially wheat, milk, and soy -- as a contributing factor behind acne rosacea.",
+   "topics": [
+    "rosacea",
+    "acne",
+    "food-allergies",
+    "diet",
+    "gluten"
+   ]
+  },
+  "WAL-CLM-DDDL-000430": {
+   "subject": "rosacea",
+   "also_about": [
+    "acne"
+   ],
+   "facet": "protocol",
+   "question": "Is rosacea connected to poor digestion?",
+   "answer_short": "Wallach recommends betaine HCl and pancreatic enzymes as of considerable benefit for acne rosacea, tying the skin problem to how well food is digested and absorbed.",
+   "topics": [
+    "rosacea",
+    "acne",
+    "digestion",
+    "stomach-acid",
+    "absorption",
+    "enzymes"
+   ]
+  },
+  "WAL-CLM-DDDL-000431": {
+   "subject": "benign_prostatic_hyperplasia",
+   "also_about": [],
+   "facet": "uses",
+   "question": "Does saw palmetto help an enlarged prostate?",
+   "answer_short": "Yes — Wallach includes the herb saw palmetto (Serenoa serrulata) in his protocol for benign prostatic hyperplasia.",
+   "topics": [
+    "mens-health",
+    "prostate",
+    "herbs"
+   ]
+  },
+  "WAL-CLM-DDDL-000432": {
+   "subject": "benign_prostatic_hyperplasia",
+   "also_about": [],
+   "facet": "uses",
+   "question": "Is cranberry juice good for an enlarged prostate?",
+   "answer_short": "Wallach includes unsweetened cranberry juice — two pints a day — as part of his enlarged-prostate protocol.",
+   "topics": [
+    "mens-health",
+    "prostate",
+    "urinary-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000433": {
+   "subject": "glutathione",
+   "also_about": [
+    "cataracts"
+   ],
+   "facet": "protocol",
+   "question": "Do glutathione and cysteine help with cataracts?",
+   "answer_short": "Wallach's cataract protocol adds l-cysteine at 400 mg/day and glutathione at 40 mg/day, two antioxidant compounds.",
+   "topics": [
+    "eye-health",
+    "antioxidants",
+    "amino-acids",
+    "cataracts"
+   ]
+  },
+  "WAL-CLM-DDDL-000434": {
+   "subject": "cataracts",
+   "also_about": [
+    "vitamin-e",
+    "vitamin-c",
+    "vitamin-b1",
+    "vitamin-b2",
+    "vitamin-b3",
+    "vitamin-b5",
+    "vitamin-b6",
+    "selenium",
+    "zinc",
+    "inositol",
+    "chromium",
+    "vanadium"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for cataracts?",
+   "answer_short": "Avoid fried foods/margarine; baseline supplement plus vitamin E 2,000 IU, vitamin C, B-complex, inositol, selenium, zinc, bioflavonoids and amino acids; add chromium and vanadium if diabetic or hypoglycemic.",
+   "topics": [
+    "eye-health",
+    "vision",
+    "vitamin-e",
+    "zinc",
+    "antioxidants"
+   ]
+  },
+  "WAL-CLM-DDDL-000435": {
+   "subject": "anxiety",
+   "also_about": [
+    "panic_attacks"
+   ],
+   "facet": "physiology",
+   "question": "Why are women more prone to anxiety and panic attacks?",
+   "answer_short": "Wallach says panic attacks affect women about twice as often as men, and that their hormonal biorhythm cycles make this no surprise -- with concurrent PMS able to amplify it.",
+   "topics": [
+    "womens-health",
+    "anxiety",
+    "panic-attacks",
+    "hormones"
+   ]
+  },
+  "WAL-CLM-DDDL-000436": {
+   "subject": "vitamin-a",
+   "also_about": [
+    "rosacea",
+    "acne"
+   ],
+   "facet": "protocol",
+   "question": "Does vitamin A help clear up rosacea?",
+   "answer_short": "Wallach recommends vitamin A as beta-carotene at 300,000 units daily for five months, then 25,000 units daily, as part of his acne rosacea regimen.",
+   "topics": [
+    "rosacea",
+    "acne",
+    "vitamin-a",
+    "beta-carotene",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000437": {
+   "subject": "zinc",
+   "also_about": [
+    "rosacea",
+    "acne"
+   ],
+   "facet": "protocol",
+   "question": "Does zinc help with rosacea?",
+   "answer_short": "Wallach includes zinc at 50 mg three times a day for 30 days in his acne rosacea protocol.",
+   "topics": [
+    "rosacea",
+    "acne",
+    "zinc",
+    "minerals",
+    "supplements",
+    "skin-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000438": {
+   "subject": "acne",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "Does sunlight or UV light help acne?",
+   "answer_short": "Wallach says brief direct ultraviolet-light exposure — 1 to 6 minutes on the affected areas — may help clear acne.",
+   "topics": [
+    "uv-light",
+    "sunlight",
+    "light-therapy",
+    "lifestyle"
+   ]
+  },
+  "WAL-CLM-DDDL-000439": {
+   "subject": "vitamin-b6",
+   "also_about": [
+    "rosacea",
+    "acne"
+   ],
+   "facet": "protocol",
+   "question": "Does vitamin B6 help with rosacea?",
+   "answer_short": "Wallach's acne rosacea protocol includes vitamin B6 at 100 mg three times a day.",
+   "topics": [
+    "rosacea",
+    "acne",
+    "vitamin-b6",
+    "b-vitamins",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000440": {
+   "subject": "rosacea",
+   "also_about": [
+    "acne"
+   ],
+   "facet": "protocol",
+   "question": "Does sunlight or UV light help rosacea?",
+   "answer_short": "Wallach suggests exposing affected areas directly to ultraviolet light for 1-6 minutes as a possible aid for acne rosacea.",
+   "topics": [
+    "rosacea",
+    "acne",
+    "sunlight",
+    "uv-light",
+    "lifestyle",
+    "skin-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000441": {
+   "subject": "acne",
+   "also_about": [
+    "pms",
+    "menopause"
+   ],
+   "facet": "mechanism",
+   "question": "Why do I break out around my period or during menopause?",
+   "answer_short": "Wallach says acne is not only a teenage problem — it is sometimes tied to hormones, flaring with PMS and with estrogen supplements taken during menopause.",
+   "topics": [
+    "hormones",
+    "pms",
+    "menopause",
+    "estrogen",
+    "adult-acne"
+   ]
+  },
+  "WAL-CLM-DDDL-000442": {
+   "subject": "vitamin-e",
+   "also_about": [
+    "rosacea",
+    "acne"
+   ],
+   "facet": "protocol",
+   "question": "What can you put on rosacea skin?",
+   "answer_short": "Wallach says vitamin E oil can be applied directly to acne rosacea lesions as a topical treatment.",
+   "topics": [
+    "rosacea",
+    "acne",
+    "vitamin-e",
+    "topical",
+    "skin-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000443": {
+   "subject": "rosacea",
+   "also_about": [
+    "acne"
+   ],
+   "facet": "basics",
+   "question": "What is acne rosacea?",
+   "answer_short": "Wallach describes acne rosacea as a frequent skin disease characterized by papules, pustules, superficial pus-filled cysts, and deep pus-filled canals, sometimes tied to PMS or menopausal estrogen.",
+   "topics": [
+    "rosacea",
+    "acne",
+    "skin-health",
+    "skin-disease"
+   ]
+  },
+  "WAL-CLM-DDDL-000444": {
+   "subject": "rosacea",
+   "also_about": [
+    "acne"
+   ],
+   "facet": "mechanism",
+   "question": "Can hormones or menopause trigger rosacea?",
+   "answer_short": "Wallach notes acne rosacea is sometimes linked to PMS and to estrogen supplements taken during menopause, suggesting hormonal shifts can drive breakouts.",
+   "topics": [
+    "rosacea",
+    "acne",
+    "hormones",
+    "menopause",
+    "womens-health",
+    "pms"
+   ]
+  },
+  "WAL-CLM-DDDL-000445": {
+   "subject": "joint_pain",
+   "also_about": [
+    "calcium",
+    "magnesium",
+    "copper",
+    "vitamin-b6"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for joint pain?",
+   "answer_short": "Correct underlying arthritis/osteoporosis, calcium and magnesium 2,000/1,000 mg, cartilage, gelatin, copper 2-5 mg/day, B6, mineral baths and UV light, plus his Pig Arthritis Formula twice daily.",
+   "topics": [
+    "joint-health",
+    "pain",
+    "arthritis",
+    "calcium",
+    "magnesium",
+    "copper"
+   ]
+  },
+  "WAL-CLM-DDDL-000446": {
+   "subject": "high_cholesterol",
+   "also_about": [
+    "chromium",
+    "vanadium",
+    "vitamin-d",
+    "omega-3",
+    "omega-6"
+   ],
+   "facet": "mechanism",
+   "question": "What causes high cholesterol besides eating fatty food?",
+   "answer_short": "Wallach blames low fiber, too much vitamin D, deficiencies of EFAs, chromium and vanadium, refined sugar and flour, a sluggish liver, and too little exercise.",
+   "topics": [
+    "cholesterol",
+    "heart-health",
+    "causes",
+    "diet",
+    "nutrition"
+   ]
+  },
+  "WAL-CLM-DDDL-000447": {
+   "subject": "gallstones",
+   "also_about": [
+    "high_cholesterol",
+    "chromium",
+    "vanadium"
+   ],
+   "facet": "mechanism",
+   "question": "Does high cholesterol cause gallstones?",
+   "answer_short": "Wallach counts gallstones among the risks of elevated cholesterol, which he blames on low-fiber and high sugar/flour diets, deficiency of EFAs, chromium and vanadium, and poor exercise.",
+   "topics": [
+    "gallstones",
+    "cholesterol",
+    "diet",
+    "exercise",
+    "chromium",
+    "vanadium"
+   ]
+  },
+  "WAL-CLM-DDDL-000448": {
+   "subject": "irritable_bowel_syndrome",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "Should I take digestive enzymes for IBS?",
+   "answer_short": "Yes -- Wallach adds betaine HCl and pancreatic enzymes (75-200 mg three times daily before meals) to restore the stomach acid and digestion that let you absorb food.",
+   "topics": [
+    "ibs",
+    "digestive-enzymes",
+    "betaine-hcl",
+    "stomach-acid",
+    "digestion"
+   ]
+  },
+  "WAL-CLM-DDDL-000449": {
+   "subject": "menopause",
+   "also_about": [],
+   "facet": "physiology",
+   "question": "Does menopause cause vaginal dryness and bladder problems?",
+   "answer_short": "Yes — Wallach names a dry vaginal tract and urinary frequency or incontinence as menopause symptoms, part of the estrogen shortfall as ovarian output fades.",
+   "topics": [
+    "menopause",
+    "vaginal-dryness",
+    "bladder",
+    "womens-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000450": {
+   "subject": "hypertension",
+   "also_about": [
+    "calcium"
+   ],
+   "facet": "mechanism",
+   "question": "What causes high blood pressure according to Wallach?",
+   "answer_short": "The most common cause is calcium deficiency, which is why hypertension clusters with arthritis, osteoporosis, kidney stones and muscle cramps.",
+   "topics": [
+    "blood-pressure",
+    "heart-health",
+    "calcium",
+    "mineral-deficiency"
+   ]
+  },
+  "WAL-CLM-DDDL-000451": {
+   "subject": "hypertension",
+   "also_about": [
+    "arthritis",
+    "osteoporosis",
+    "kidney_stones",
+    "calcium"
+   ],
+   "facet": "mechanism",
+   "question": "Why do high blood pressure, arthritis, and kidney stones so often go together?",
+   "answer_short": "Wallach says calcium deficiency is the most common cause of high blood pressure, which is why it travels with arthritis, osteoporosis, kidney stones, and muscle cramps.",
+   "topics": [
+    "hypertension",
+    "high blood pressure",
+    "calcium deficiency",
+    "arthritis",
+    "osteoporosis",
+    "kidney stones"
+   ]
+  },
+  "WAL-CLM-DDDL-000452": {
+   "subject": "peptic_ulcers",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for peptic or stomach ulcers?",
+   "answer_short": "Alfalfa (10 tablets t.i.d.), cabbage juice, flax, German chamomile, and licorice; antibiotics with bismuth can cure 98% (H. pylori cause).",
+   "topics": [
+    "digestion",
+    "peptic-ulcer",
+    "stomach",
+    "h-pylori",
+    "herbs"
+   ]
+  },
+  "WAL-CLM-DDDL-000453": {
+   "subject": "heartburn",
+   "also_about": [
+    "candidiasis",
+    "hypochlorhydria"
+   ],
+   "facet": "mechanism",
+   "question": "Can low stomach acid cause yeast or Candida overgrowth?",
+   "answer_short": "Wallach says low stomach acid — usually from salt restriction or stress — lets Candida albicans yeast move up into the normally sterile stomach where it doesn't belong.",
+   "topics": [
+    "acid-reflux",
+    "candida",
+    "yeast",
+    "stomach-acid",
+    "gut-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000454": {
+   "subject": "peptic_ulcers",
+   "also_about": [],
+   "facet": "basics",
+   "question": "What is a peptic ulcer and what are its symptoms?",
+   "answer_short": "A peptic ulcer is a raw sore in the lining of the stomach (gastric) or the upper small intestine (duodenal). Wallach says the true cause is a Helicobacter pylori infection - not stress or a missing 'vitamin U' (which he calls mythological) - and the signs are burning stomach pain, indigestion, and weight loss.",
+   "topics": [
+    "peptic-ulcer",
+    "digestive-health",
+    "stomach",
+    "gut-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000455": {
+   "subject": "varicose_veins",
+   "also_about": [
+    "vitamin-e"
+   ],
+   "facet": "protocol",
+   "question": "Does vitamin E help varicose veins?",
+   "answer_short": "Yes — Wallach puts vitamin E at 800-1,200 IU a day at the front of his varicose-vein program, alongside vitamin C, zinc and bioflavonoids.",
+   "topics": [
+    "circulation",
+    "veins",
+    "legs",
+    "vitamin E",
+    "antioxidants"
+   ]
+  },
+  "WAL-CLM-DDDL-000456": {
+   "subject": "fibromyalgia",
+   "also_about": [
+    "selenium",
+    "vitamin-e",
+    "methionine"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for fibromyalgia?",
+   "answer_short": "Eliminate vegetable oils and fried foods; supplement EFA 9 g/day, selenium 300 mcg/day, vitamin E 1,200 IU/day, and sulfur amino acids (methionine, cysteine, cystine).",
+   "topics": [
+    "muscle-health",
+    "pain",
+    "selenium",
+    "vitamin-e",
+    "amino-acids"
+   ]
+  },
+  "WAL-CLM-DDDL-000457": {
+   "subject": "hypothyroidism",
+   "also_about": [],
+   "facet": "physiology",
+   "question": "Is iodine the only nutrient the thyroid needs?",
+   "answer_short": "No -- Wallach says the thyroid needs all 90 essential nutrients to work and make thyroxin, so a broad mineral-and-vitamin program matters, not iodine alone.",
+   "topics": [
+    "thyroid",
+    "90-essential-nutrients",
+    "thyroxin"
+   ]
+  },
+  "WAL-CLM-DDDL-000458": {
+   "subject": "uterine_fibroids",
+   "also_about": [
+    "vitamin-e",
+    "selenium",
+    "magnesium"
+   ],
+   "facet": "mechanism",
+   "question": "Are uterine fibroids related to fibrocystic breast disease?",
+   "answer_short": "Wallach links them: fibroid tissue looks like both early arteriosclerosis and fibrocystic breast disease. Because eliminating caffeine and adding vitamin E and selenium help heal fibrocystic breasts, he applies the same clues to fibroids.",
+   "topics": [
+    "womens-health",
+    "uterine-fibroids",
+    "fibrocystic-breast-disease"
+   ]
+  },
+  "WAL-CLM-DDDL-000459": {
+   "subject": "alopecia",
+   "also_about": [
+    "eczema"
+   ],
+   "facet": "protocol",
+   "question": "Can cutting out wheat and dairy help with hair loss?",
+   "answer_short": "Yes — for hair loss that comes with eczema, Wallach says eliminating wheat and cow's milk from the diet speeds recovery, because the underlying problem is often a food-driven fatty-acid malabsorption.",
+   "topics": [
+    "hair-loss",
+    "diet",
+    "food-allergy",
+    "eczema"
+   ]
+  },
+  "WAL-CLM-DDDL-000460": {
+   "subject": "vertigo",
+   "also_about": [
+    "calcium",
+    "magnesium",
+    "boron"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for Wallach's Vertigo?",
+   "answer_short": "An osteoporosis nutritional program: chondroitin sulfate (gelatin), calcium 200 mg, magnesium 1000 mg, boron 1 mg, and plant-derived colloidal minerals.",
+   "topics": [
+    "dizziness",
+    "tinnitus",
+    "bone-health",
+    "calcium",
+    "magnesium"
+   ]
+  },
+  "WAL-CLM-DDDL-000461": {
+   "subject": "vertigo",
+   "also_about": [
+    "tinnitus",
+    "osteoporosis",
+    "calcium",
+    "magnesium",
+    "boron"
+   ],
+   "facet": "protocol",
+   "question": "How do you treat Wallach's vertigo naturally?",
+   "answer_short": "Wallach treats it as skull osteoporosis, using an osteoporosis nutrition program: chondroitin sulfate (gelatin), calcium 200 mg, magnesium 1000 mg, boron 1 mg, and plant-derived colloidal minerals with all 60 minerals.",
+   "topics": [
+    "balance",
+    "inner-ear",
+    "bone-health",
+    "minerals"
+   ]
+  },
+  "WAL-CLM-DDDL-000462": {
+   "subject": "osteoporosis",
+   "also_about": [
+    "calcium",
+    "magnesium",
+    "boron"
+   ],
+   "facet": "protocol",
+   "question": "Does collagen or gelatin help rebuild bone?",
+   "answer_short": "Wallach pairs collagen-building chondroitin sulfate (gelatin) with calcium, magnesium, boron and plant-derived colloidal minerals to rebuild bone.",
+   "topics": [
+    "bone-health",
+    "collagen",
+    "gelatin",
+    "minerals",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000463": {
+   "subject": "hypertension",
+   "also_about": [
+    "omega-3"
+   ],
+   "facet": "protocol",
+   "question": "Does flaxseed oil help with high blood pressure?",
+   "answer_short": "Yes—Wallach's hypertension program uses flaxseed oil at 5 grams three times a day.",
+   "topics": [
+    "hypertension",
+    "high blood pressure",
+    "flaxseed oil",
+    "omega-3",
+    "essential fatty acids"
+   ]
+  },
+  "WAL-CLM-DDDL-000464": {
+   "subject": "diverticulitis",
+   "also_about": [],
+   "facet": "warning",
+   "question": "What should I avoid eating and drinking with diverticulitis?",
+   "answer_short": "Alongside a high-fiber diet, Wallach says people with diverticulitis should avoid fried foods, margarine, and caffeine.",
+   "topics": [
+    "digestive-health",
+    "diet",
+    "gut-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000465": {
+   "subject": "tinnitus",
+   "also_about": [
+    "zinc"
+   ],
+   "facet": "protocol",
+   "question": "Does zinc help tinnitus?",
+   "answer_short": "Yes—Wallach's tinnitus treatment includes zinc at 15 mg three times a day.",
+   "topics": [
+    "tinnitus",
+    "zinc",
+    "supplements",
+    "minerals"
+   ]
+  },
+  "WAL-CLM-DDDL-000466": {
+   "subject": "tinnitus",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "Can poor digestion cause tinnitus, and do digestive enzymes help?",
+   "answer_short": "Wallach adds betaine HCl and pancreatic enzymes (75-200 mg, three times a day, 15 minutes before meals) so the nutrients that protect the ears are actually absorbed.",
+   "topics": [
+    "tinnitus",
+    "digestive-enzymes",
+    "betaine-hcl",
+    "absorption",
+    "stomach-acid"
+   ]
+  },
+  "WAL-CLM-DDDL-000467": {
+   "subject": "chronic_fatigue",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for chronic fatigue?",
+   "answer_short": "Treat the underlying disease, cut all sugar, soft drinks, fried foods, margarines, and caffeine, use herbs like ginseng, and take all 90 essential nutrients.",
+   "topics": [
+    "energy",
+    "chronic-fatigue",
+    "diet",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000468": {
+   "subject": "tinnitus",
+   "also_about": [
+    "menieres_disease",
+    "vertigo",
+    "calcium",
+    "magnesium"
+   ],
+   "facet": "protocol",
+   "question": "Do calcium and magnesium help ringing in the ears?",
+   "answer_short": "Yes—because ringing ears often come from skull osteoporosis pinching the hearing nerve, Wallach reverses it with calcium 2,000 mg and magnesium 1,000 mg a day.",
+   "topics": [
+    "tinnitus",
+    "calcium",
+    "magnesium",
+    "osteoporosis",
+    "bone-loss"
+   ]
+  },
+  "WAL-CLM-DDDL-000469": {
+   "subject": "vertigo",
+   "also_about": [
+    "tinnitus",
+    "hypertension",
+    "menieres_disease"
+   ],
+   "facet": "mechanism",
+   "question": "Can high blood pressure cause vertigo and ringing in the ears?",
+   "answer_short": "Yes - Wallach lists high blood pressure as one of three causes of tinnitus, Meniere's, and his 'Wallach's vertigo,' along with drug side effects and skull osteoporosis pinching the 8th cranial nerve.",
+   "topics": [
+    "balance",
+    "inner-ear",
+    "blood-pressure"
+   ]
+  },
+  "WAL-CLM-DDDL-000470": {
+   "subject": "vertigo",
+   "also_about": [
+    "tinnitus",
+    "osteoporosis",
+    "calcium",
+    "magnesium"
+   ],
+   "facet": "protocol",
+   "question": "Can rebuilding bone reverse vertigo and ringing in the ears?",
+   "answer_short": "Yes - Wallach directs treatment at reversing the skull osteoporosis with calcium 2000 mg and magnesium 1000 mg (his Pig Arthritis Formula), plus lowering blood pressure and removing drug side effects.",
+   "topics": [
+    "bone-health",
+    "balance",
+    "inner-ear"
+   ]
+  },
+  "WAL-CLM-DDDL-000471": {
+   "subject": "hypertension",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "Does CoQ10 help lower blood pressure?",
+   "answer_short": "Yes—Wallach's hypertension program includes CoQ10 at 60 mg per day.",
+   "topics": [
+    "hypertension",
+    "high blood pressure",
+    "CoQ10",
+    "supplements",
+    "heart health"
+   ]
+  },
+  "WAL-CLM-DDDL-000472": {
+   "subject": "bladder_stones",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Can bladder stones cause urinary infections?",
+   "answer_short": "Wallach notes that in older people, especially men, bladder stones (cystic calculi) can be part of what's causing recurrent bladder infection (cystitis).",
+   "topics": [
+    "bladder stones",
+    "cystitis",
+    "urinary tract infection",
+    "men's-health",
+    "UTI"
+   ]
+  },
+  "WAL-CLM-DDDL-000473": {
+   "subject": "hemorrhoids",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "How can I prevent hemorrhoids?",
+   "answer_short": "Wallach's prevention is all 90 essential nutrients, 8-10 glasses of water a day, a high-fiber diet, and regular exercise.",
+   "topics": [
+    "prevention",
+    "90-essentials",
+    "hydration",
+    "fiber",
+    "exercise"
+   ]
+  },
+  "WAL-CLM-DDDL-000474": {
+   "subject": "irritable_bowel_syndrome",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "What foods should I avoid with IBS?",
+   "answer_short": "Drop fried food, margarine, caffeine, sugar, and your pulse-test triggers (often wheat, milk, soy), and go gluten-free.",
+   "topics": [
+    "ibs",
+    "diet",
+    "gluten-free",
+    "foods-to-avoid",
+    "elimination-diet"
+   ]
+  },
+  "WAL-CLM-DDDL-000475": {
+   "subject": "tinnitus",
+   "also_about": [
+    "menieres_disease",
+    "vertigo"
+   ],
+   "facet": "mechanism",
+   "question": "Can high blood pressure cause ringing in the ears?",
+   "answer_short": "Yes—Wallach lists high blood pressure as a cause of ringing ears, so lowering the blood pressure is part of the treatment.",
+   "topics": [
+    "tinnitus",
+    "hypertension",
+    "blood-pressure",
+    "ringing-in-the-ears"
+   ]
+  },
+  "WAL-CLM-DDDL-000476": {
+   "subject": "hypertension",
+   "also_about": [
+    "calcium",
+    "vitamin-d"
+   ],
+   "facet": "protocol",
+   "question": "How does Wallach treat high blood pressure?",
+   "answer_short": "Calcium (especially plant-derived colloidal minerals), a low-fat high-fiber diet, avoiding sugar, caffeine and more than 400 IU vitamin D, EDTA chelation, flaxseed oil, garlic, CoQ10 60 mg/day, lecithin, and hawthorn/rauwolfia/olive herbs.",
+   "topics": [
+    "blood-pressure",
+    "heart-health",
+    "calcium",
+    "chelation",
+    "coq10"
+   ]
+  },
+  "WAL-CLM-DDDL-000477": {
+   "subject": "hypertension",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "What herbs does Wallach recommend for high blood pressure?",
+   "answer_short": "Wallach recommends heart herbs for hypertension: European hawthorn, rauwolfia, and olive.",
+   "topics": [
+    "hypertension",
+    "high blood pressure",
+    "herbs",
+    "hawthorn",
+    "rauwolfia",
+    "olive leaf"
+   ]
+  },
+  "WAL-CLM-DDDL-000478": {
+   "subject": "hypertension",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "What foods should I eat or avoid to lower blood pressure?",
+   "answer_short": "Wallach's blood-pressure diet is high-fiber and low-fat: 4-6 cups of vegetables and eight glasses of water daily, no fried foods, sugar, refined flour, or excess red meat.",
+   "topics": [
+    "hypertension",
+    "high blood pressure",
+    "diet",
+    "high-fiber diet",
+    "low-fat diet",
+    "vegetables"
+   ]
+  },
+  "WAL-CLM-DDDL-000479": {
+   "subject": "hypertension",
+   "also_about": [
+    "vitamin-d"
+   ],
+   "facet": "warning",
+   "question": "Should I avoid caffeine or too much vitamin D if I have high blood pressure?",
+   "answer_short": "Wallach says to cut caffeinated coffee and tea and to keep vitamin D under 400 IU when treating high blood pressure.",
+   "topics": [
+    "hypertension",
+    "high blood pressure",
+    "caffeine",
+    "vitamin D",
+    "what to avoid"
+   ]
+  },
+  "WAL-CLM-DDDL-000480": {
+   "subject": "psoriasis",
+   "also_about": [
+    "eczema",
+    "atopic_dermatitis"
+   ],
+   "facet": "mechanism",
+   "question": "Can food allergies cause psoriasis?",
+   "answer_short": "Yes — Wallach links psoriasis (with eczema) to food allergies, especially dairy, wheat, and soy, and uses pulse tests and elimination diets to find the trigger.",
+   "topics": [
+    "psoriasis",
+    "food-allergies",
+    "gluten",
+    "dairy",
+    "skin"
+   ]
+  },
+  "WAL-CLM-DDDL-000481": {
+   "subject": "uterine_fibroids",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "What foods should I avoid with uterine fibroids?",
+   "answer_short": "Wallach tells women with fibroids to cut out fried foods, margarine, and caffeine while taking all 90 essential nutrients. He treats the bad fats and caffeine as things that aggravate the runaway fibrous tissue.",
+   "topics": [
+    "womens-health",
+    "uterine-fibroids",
+    "diet"
+   ]
+  },
+  "WAL-CLM-DDDL-000482": {
+   "subject": "eczema",
+   "also_about": [
+    "atopic_dermatitis",
+    "psoriasis",
+    "vitamin-b9"
+   ],
+   "facet": "protocol",
+   "question": "Can folic acid help eczema?",
+   "answer_short": "Wallach builds folic acid at 3-5 mg/day into his eczema regimen, alongside the digestive aids that let the damaged gut absorb it.",
+   "topics": [
+    "skin-health",
+    "supplements",
+    "vitamins"
+   ]
+  },
+  "WAL-CLM-DDDL-000483": {
+   "subject": "hypertension",
+   "also_about": [
+    "calcium",
+    "omega-3"
+   ],
+   "facet": "protocol",
+   "question": "How does Dr. Wallach say to lower high blood pressure naturally?",
+   "answer_short": "Wallach treats high blood pressure with calcium (plant-derived colloidal minerals), a high-fiber low-fat diet, EDTA chelation, flaxseed oil, garlic, CoQ10, lecithin, and heart herbs such as hawthorn, rauwolfia, and olive.",
+   "topics": [
+    "hypertension",
+    "high blood pressure",
+    "blood pressure",
+    "heart health",
+    "cardiovascular",
+    "natural remedies"
+   ]
+  },
+  "WAL-CLM-DDDL-000484": {
+   "subject": "tinnitus",
+   "also_about": [],
+   "facet": "stance",
+   "question": "Is there really nothing you can do about tinnitus?",
+   "answer_short": "Wallach rejects the usual 'surgery won't help, just play background music' advice—he says ringing ears have real, findable causes (blood pressure, heavy metals, nutrient deficiencies, skull osteoporosis, food allergies, low blood sugar) that can each be treated.",
+   "topics": [
+    "tinnitus",
+    "hope",
+    "root-cause",
+    "ringing-in-the-ears"
+   ]
+  },
+  "WAL-CLM-DDDL-000485": {
+   "subject": "tinnitus",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Can heavy metals like lead or mercury cause tinnitus?",
+   "answer_short": "Yes—Wallach names lead and mercury toxicity among the causes of tinnitus, and screens for it with a hair analysis.",
+   "topics": [
+    "tinnitus",
+    "heavy-metals",
+    "toxicity",
+    "detox",
+    "lead",
+    "mercury"
+   ]
+  },
+  "WAL-CLM-DDDL-000486": {
+   "subject": "cold_sores",
+   "also_about": [
+    "herpes_simplex"
+   ],
+   "facet": "physiology",
+   "question": "Why do cold sores itch and then become painful?",
+   "answer_short": "Wallach says cold-sore lesions itch early on, then can turn very painful and disfiguring - the typical course of the recurring herpes blisters.",
+   "topics": [
+    "cold-sores",
+    "herpes",
+    "symptoms",
+    "itching",
+    "lip-blisters"
+   ]
+  },
+  "WAL-CLM-DDDL-000487": {
+   "subject": "cold_sores",
+   "also_about": [
+    "herpes_simplex"
+   ],
+   "facet": "warning",
+   "question": "How do cold sores spread, and how do I avoid passing them on?",
+   "answer_short": "Cold-sore (herpes) viruses spread by kissing and sexual contact. Wallach says to avoid kissing and sex while lesions are active, and to use condoms during an active genital herpes stage.",
+   "topics": [
+    "cold-sores",
+    "herpes",
+    "contagious",
+    "prevention",
+    "kissing"
+   ]
+  },
+  "WAL-CLM-DDDL-000488": {
+   "subject": "uterine_fibroids",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "Can I shrink uterine fibroids without a hysterectomy?",
+   "answer_short": "Wallach's outlook is encouraging: if nutrition alone does not work in four to six months, adding Luperon shrinks the fibroids enough to remove them with endoscopic surgery, so no full hysterectomy is needed.",
+   "topics": [
+    "womens-health",
+    "uterine-fibroids",
+    "hysterectomy"
+   ]
+  },
+  "WAL-CLM-DDDL-000489": {
+   "subject": "adhd",
+   "also_about": [
+    "hyperactivity",
+    "dyslexia",
+    "food_allergy"
+   ],
+   "facet": "protocol",
+   "question": "How can I find out which foods trigger my child's hyperactivity?",
+   "answer_short": "Wallach uses a diet diary with the Coca pulse test: feed one food at a time and log the timing — hyperactivity typically flares within minutes to a few hours of the offending food.",
+   "topics": [
+    "adhd",
+    "food-allergies",
+    "diet",
+    "testing",
+    "children",
+    "parenting"
+   ]
+  },
+  "WAL-CLM-DDDL-000490": {
+   "subject": "endometriosis",
+   "also_about": [],
+   "facet": "uses",
+   "question": "What herbs are recommended for endometriosis discomfort?",
+   "answer_short": "Blue cohosh, black cohosh, and donqui are named as herbs that help minimize the clinical discomfort, used alongside the nutrient program.",
+   "topics": [
+    "womens-health",
+    "endometriosis",
+    "herbs",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000491": {
+   "subject": "allergies",
+   "also_about": [],
+   "facet": "basics",
+   "question": "What symptoms can food allergies cause?",
+   "answer_short": "An allergy can show up as much more than a rash -- hives, headaches, a racing or pounding heart (often from monosodium glutamate (MSG)), paranoia from sugar, or asthma-like attacks from sulfites on dried fruit.",
+   "topics": [
+    "allergies",
+    "food-allergies",
+    "symptoms",
+    "asthma",
+    "food-additives"
+   ]
+  },
+  "WAL-CLM-DDDL-000492": {
+   "subject": "endometriosis",
+   "also_about": [],
+   "facet": "uses",
+   "question": "Can natural progesterone help with endometriosis?",
+   "answer_short": "Wallach recommends wild Mexican yam as a natural progesterone source to help ease the clinical discomfort, balancing the estrogen that drives the flares.",
+   "topics": [
+    "womens-health",
+    "endometriosis",
+    "hormones",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000493": {
+   "subject": "endometriosis",
+   "also_about": [],
+   "facet": "basics",
+   "question": "What is endometriosis?",
+   "answer_short": "Wallach describes it as uterine-lining cells implanted abnormally outside the uterus in the body cavity, still estrogen-sensitive so they swell during the high-estrogen part of the cycle.",
+   "topics": [
+    "womens-health",
+    "endometriosis",
+    "reproductive-health",
+    "menstruation"
+   ]
+  },
+  "WAL-CLM-DDDL-000494": {
+   "subject": "endometriosis",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "How does endometrial tissue end up outside the uterus?",
+   "answer_short": "Wallach says obstruction or damming of the normal vaginal flow forces a back-flow of endometrial tissue and blood into the abdominal cavity, where the cells lodge on nearby organs.",
+   "topics": [
+    "womens-health",
+    "endometriosis",
+    "menstruation",
+    "reproductive-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000495": {
+   "subject": "benign_prostatic_hyperplasia",
+   "also_about": [
+    "vitamin-c"
+   ],
+   "facet": "uses",
+   "question": "Does vitamin C help an enlarged prostate?",
+   "answer_short": "Wallach includes vitamin C, taken to bowel tolerance, among the nutrients in his enlarged-prostate protocol.",
+   "topics": [
+    "mens-health",
+    "prostate",
+    "vitamin-c"
+   ]
+  },
+  "WAL-CLM-DDDL-000496": {
+   "subject": "canker_sores",
+   "also_about": [
+    "aphthous_stomatitis"
+   ],
+   "facet": "mechanism",
+   "question": "What foods trigger canker sores?",
+   "answer_short": "Wallach names food sensitivities like orange juice and tomato juice as canker-sore triggers, and suggests an elimination/rotation diet or a pulse test to pinpoint the offending foods.",
+   "topics": [
+    "cold-sores",
+    "canker-sores",
+    "food-allergy",
+    "diet",
+    "mouth-ulcers"
+   ]
+  },
+  "WAL-CLM-DDDL-000497": {
+   "subject": "constipation",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "What are natural herbal laxatives for constipation?",
+   "answer_short": "Wallach lists herbal laxatives including castor oil, cascara sagrada, alder buckthorn, senna, psyllium, and flaxseed for constipation.",
+   "topics": [
+    "constipation",
+    "herbal laxatives",
+    "cascara sagrada",
+    "senna",
+    "psyllium",
+    "castor oil"
+   ]
+  },
+  "WAL-CLM-DDDL-000498": {
+   "subject": "benign_prostatic_hyperplasia",
+   "also_about": [
+    "selenium"
+   ],
+   "facet": "uses",
+   "question": "How much selenium should a man take for prostate health?",
+   "answer_short": "In his enlarged-prostate protocol Wallach uses selenium at 250 micrograms three times a day; he also links selenium deficiency to prostate cancer.",
+   "topics": [
+    "mens-health",
+    "prostate",
+    "selenium"
+   ]
+  },
+  "WAL-CLM-DDDL-000499": {
+   "subject": "alzheimers",
+   "also_about": [
+    "vitamin-b1",
+    "vitamin-e",
+    "selenium"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for Alzheimer's disease?",
+   "answer_short": "Lecithin 2,500 mg t.i.d., germanium, vitamin B1 200 mg t.i.d., vitamin E 2000 IU, selenium 500 mcg daily, colloidal minerals with betaine HCl and pancreatic enzymes, plus daily eggs and 72 oz red meat monthly to rebuild myelin.",
+   "topics": [
+    "brain-health",
+    "memory",
+    "dementia",
+    "cholesterol",
+    "myelin",
+    "lecithin"
+   ]
+  },
+  "WAL-CLM-DDDL-000500": {
+   "subject": "anxiety",
+   "also_about": [
+    "panic_attacks"
+   ],
+   "facet": "mechanism",
+   "question": "What actually causes anxiety and panic attacks?",
+   "answer_short": "Wallach points to two base causes -- a hidden food allergy (like corn or cow's milk) or a 'crash and burn' blood-sugar drop (reactive hypoglycemia) -- often worsened by PMS; a pulse test and a six-hour glucose test can pin down which.",
+   "topics": [
+    "mental-health",
+    "anxiety",
+    "panic-attacks",
+    "blood-sugar",
+    "food-allergies"
+   ]
+  },
+  "WAL-CLM-DDDL-000501": {
+   "subject": "benign_prostatic_hyperplasia",
+   "also_about": [],
+   "facet": "uses",
+   "question": "Which amino acids does Wallach use for an enlarged prostate?",
+   "answer_short": "Wallach adds glycine, alanine, and glutamic acid — five grams of each per day for 90 days — to his enlarged-prostate protocol, along with chlorophyll from alfalfa.",
+   "topics": [
+    "mens-health",
+    "prostate",
+    "amino-acids"
+   ]
+  },
+  "WAL-CLM-DDDL-000502": {
+   "subject": "toothache",
+   "also_about": [
+    "tooth_decay"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for a toothache?",
+   "answer_short": "Fill the cavity with non-metallic composite (fiberglass), avoid pain triggers, use acupuncture and herbs (pennyroyal, lavender, gelsemium), and over-the-counter analgesics as needed.",
+   "topics": [
+    "dental",
+    "teeth",
+    "pain",
+    "cavities",
+    "herbs"
+   ]
+  },
+  "WAL-CLM-DDDL-000503": {
+   "subject": "heartburn",
+   "also_about": [
+    "achlorhydria"
+   ],
+   "facet": "protocol",
+   "question": "How do you take betaine HCl for low stomach acid?",
+   "answer_short": "Wallach's approach: salt food to taste and take betaine HCl at 75-250 mg 15-20 minutes before meals; if you have no betaine, 1-2 oz of vinegar with gentian bitters works, and colloidal minerals help the stomach make its own acid.",
+   "topics": [
+    "acid-reflux",
+    "betaine-hcl",
+    "stomach-acid",
+    "supplements",
+    "digestion"
+   ]
+  },
+  "WAL-CLM-DDDL-000504": {
+   "subject": "raynauds_disease",
+   "also_about": [],
+   "facet": "basics",
+   "question": "What is Raynaud's disease and what causes it?",
+   "answer_short": "Wallach describes Raynaud's disease as tingling and numbness in the fingers (and sometimes the nose and tongue) caused by spasms of the small arteries.",
+   "topics": [
+    "circulation",
+    "blood-vessels",
+    "cold-hands",
+    "raynauds"
+   ]
+  },
+  "WAL-CLM-DDDL-000505": {
+   "subject": "influenza",
+   "also_about": [
+    "vitamin-c",
+    "vitamin-a",
+    "zinc",
+    "flavonoids"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for the flu?",
+   "answer_short": "Antivirals (Ribavirin, Isoprinosin), echinacea/golden seal for secondary pneumonia, fluids, vitamin C to bowel tolerance, vitamin A 300,000 IU as beta-carotene, bioflavonoids 150-300 mg, and zinc 50 mg t.i.d.",
+   "topics": [
+    "immune-health",
+    "flu",
+    "antiviral",
+    "vitamin-c",
+    "zinc"
+   ]
+  },
+  "WAL-CLM-DDDL-000506": {
+   "subject": "bruises",
+   "also_about": [
+    "vitamin-c",
+    "vitamin-e",
+    "vitamin-k",
+    "copper"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for bruises?",
+   "answer_short": "Vitamin C to bowel tolerance, vitamin E at 800-1,200 IU/day, vitamin K at 30 mcg/day, pancreatic enzymes at 200 mg three times daily between meals, topical DMSO (dimethyl sulfoxide), and herbs like arnica and witch hazel.",
+   "topics": [
+    "bruising",
+    "skin",
+    "vitamin-c",
+    "vitamin-k",
+    "blood"
+   ]
+  },
+  "WAL-CLM-DDDL-000507": {
+   "subject": "backache",
+   "also_about": [
+    "calcium",
+    "magnesium"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for backache?",
+   "answer_short": "Proper lifting and strengthening exercises, calcium 2000 mg + magnesium 800 mg, high-fiber diet, eight glasses of water, Dr. Wallach's Pig Arthritis Formula, plus massage, chiropractic, and comfrey/arnica poultices.",
+   "topics": [
+    "back-pain",
+    "musculoskeletal",
+    "calcium",
+    "magnesium",
+    "pain"
+   ]
+  },
+  "WAL-CLM-DDDL-000508": {
+   "subject": "neuropathy",
+   "also_about": [
+    "vitamin-b12"
+   ],
+   "facet": "warning",
+   "question": "What else causes numb, tingling fingers besides Raynaud's?",
+   "answer_short": "Wallach says numb, tingling hands can also come from B12 deficiency, diabetes, carpal tunnel syndrome or even food allergies — worth ruling out before assuming Raynaud's.",
+   "topics": [
+    "numbness",
+    "tingling",
+    "b12",
+    "carpal-tunnel",
+    "differential-diagnosis"
+   ]
+  },
+  "WAL-CLM-DDDL-000509": {
+   "subject": "lupus",
+   "also_about": [
+    "selenium"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for lupus (SLE)?",
+   "answer_short": "Avoid food allergens/fried foods/margarine, chelation with total nutrition, EFAs (salmon and flaxseed oil) 5 gm t.i.d., selenium 500-1,000 mcg/day, B-carnitine 500 mg/day, and the Pig Arthritis Formula.",
+   "topics": [
+    "autoimmune",
+    "joints",
+    "selenium",
+    "efa"
+   ]
+  },
+  "WAL-CLM-DDDL-000510": {
+   "subject": "hay_fever",
+   "also_about": [
+    "vitamin-c",
+    "flavonoids"
+   ],
+   "facet": "protocol",
+   "question": "What helps hay fever and allergic nasal congestion?",
+   "answer_short": "Wallach's hay-fever plan is vitamin C to bowel tolerance, bioflavonoids 150 mg four times a day and rutin 50 mg three times a day, plus antihistamines, and he says faithfully taking all 90 essential nutrients often cuts the symptoms right down.",
+   "topics": [
+    "sinus",
+    "congestion",
+    "hay-fever",
+    "allergies",
+    "vitamin-c"
+   ]
+  },
+  "WAL-CLM-DDDL-000511": {
+   "subject": "periodontal_disease",
+   "also_about": [
+    "pyorrhea",
+    "silver"
+   ],
+   "facet": "protocol",
+   "question": "Can I rinse with colloidal silver for sore or bleeding gums?",
+   "answer_short": "Wallach suggests it — for bleeding, sore or pyorrhea gums he says you may rinse the mouth with colloidal silver, or with a tea made from white pond lily root.",
+   "topics": [
+    "gum disease",
+    "colloidal silver",
+    "mouth rinse",
+    "bleeding gums",
+    "pyorrhea",
+    "herbal remedies"
+   ]
+  },
+  "WAL-CLM-DDDL-000512": {
+   "subject": "periodontal_disease",
+   "also_about": [
+    "gingivitis",
+    "mercury_poisoning"
+   ],
+   "facet": "warning",
+   "question": "Can my mercury (amalgam) fillings be causing my gum problems?",
+   "answer_short": "Possibly — Wallach lists gingivitis and burning mouth pain among the symptoms of mercury poisoning, which he ties to the mercury vapor that off-gasses from silver-mercury amalgam dental fillings.",
+   "topics": [
+    "gum disease",
+    "gingivitis",
+    "mercury fillings",
+    "amalgam",
+    "burning mouth",
+    "dental health"
+   ]
+  },
+  "WAL-CLM-DDDL-000513": {
+   "subject": "canker_sores",
+   "also_about": [
+    "cold_sores"
+   ],
+   "facet": "basics",
+   "question": "What is the difference between a canker sore and a cold sore?",
+   "answer_short": "They are not the same thing. Wallach says a canker sore appears only on the movable lining (mucosa) of the lips and cheeks, and that is what differentiates it from a herpes cold sore.",
+   "topics": [
+    "cold-sores",
+    "canker-sores",
+    "fever-blisters",
+    "mouth-ulcers",
+    "oral-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000514": {
+   "subject": "raynauds_disease",
+   "also_about": [],
+   "facet": "stance",
+   "question": "What is the standard medical treatment for Raynaud's disease?",
+   "answer_short": "Wallach says the orthodox approach to Raynaud's is to cut the sympathetic nerves and give anesthetics and tranquilizers — the opposite of his nutrition-first protocol.",
+   "topics": [
+    "raynauds",
+    "conventional-medicine",
+    "surgery"
+   ]
+  },
+  "WAL-CLM-DDDL-000515": {
+   "subject": "the_salad_fork_trick",
+   "also_about": [
+    "obesity"
+   ],
+   "facet": "protocol",
+   "question": "How can I cut the calories from salad dressing?",
+   "answer_short": "Wallach's Salad Fork Trick, dipping the fork into a side dish of dressing instead of pouring it on, drops a salad's dressing calories from about 1,000 to 50.",
+   "topics": [
+    "weight-loss",
+    "diet",
+    "practical-tips"
+   ]
+  },
+  "WAL-CLM-DDDL-000516": {
+   "subject": "menopause",
+   "also_about": [],
+   "facet": "physiology",
+   "question": "What are the symptoms of menopause?",
+   "answer_short": "Wallach's menopause symptom list runs well past hot flashes: sweating, nervousness, fatigue, depression, insomnia, tingling, volatile emotions, crying spells, vaginal dryness, and urinary frequency or incontinence — all tied to too little estrogen from the adrenals and liver.",
+   "topics": [
+    "menopause",
+    "symptoms",
+    "hot-flashes",
+    "womens-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000517": {
+   "subject": "menopause",
+   "also_about": [
+    "calcium",
+    "magnesium"
+   ],
+   "facet": "protocol",
+   "question": "How much calcium and magnesium should you take during menopause?",
+   "answer_short": "Wallach's menopause program adds calcium at 2,000 mg and magnesium at 1,000 mg per day to the baseline supplements — his mineral defense against the bone loss menopause can bring.",
+   "topics": [
+    "menopause",
+    "calcium",
+    "magnesium",
+    "bone-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000518": {
+   "subject": "hemorrhoids",
+   "also_about": [],
+   "facet": "uses",
+   "question": "What can I put on hemorrhoids to soothe them?",
+   "answer_short": "Compresses or washes of witch hazel, German chamomile, yarrow, horse chestnut, juniper, plantain, silver weed or smart weed, or an over-the-counter product like Preparation H.",
+   "topics": [
+    "herbal-remedies",
+    "witch-hazel",
+    "topical-treatment",
+    "natural-remedies"
+   ]
+  },
+  "WAL-CLM-DDDL-000519": {
+   "subject": "chronic_fatigue",
+   "also_about": [
+    "hypoglycemia"
+   ],
+   "facet": "protocol",
+   "question": "Why is my blood sugar normal but I'm still exhausted?",
+   "answer_short": "Because a single fasting blood sugar misses hypoglycemia (and diabetes) in 98 percent of cases, Wallach says. To catch the low blood sugar behind fatigue you need a six-hour glucose tolerance test, tracked with finger sticks every half hour.",
+   "topics": [
+    "chronic-fatigue",
+    "blood-sugar",
+    "hypoglycemia",
+    "diagnosis",
+    "self-test"
+   ]
+  },
+  "WAL-CLM-DDDL-000520": {
+   "subject": "peptic_ulcers",
+   "also_about": [],
+   "facet": "warning",
+   "question": "What really causes stomach ulcers?",
+   "answer_short": "Wallach says peptic ulcers are actually caused by Helicobacter pylori infection, not stress — and warns that coffee-ground stool or vomit means the ulcer is bleeding and needs a hospital immediately.",
+   "topics": [
+    "ulcer",
+    "peptic-ulcer",
+    "h-pylori",
+    "stomach-pain",
+    "acid-reflux",
+    "emergency"
+   ]
+  },
+  "WAL-CLM-DDDL-000521": {
+   "subject": "alcoholism",
+   "also_about": [
+    "calcium",
+    "magnesium",
+    "vitamin-b6",
+    "chromium",
+    "vanadium",
+    "flavonoids",
+    "phenylalanine"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for alcoholism?",
+   "answer_short": "Treat it as an addictive allergy with hypoglycemia: rotation/hypoglycemia diets, calcium 2000 mg + magnesium 1000 mg/day, B6, chromium and vanadium 250 mcg/day, bioflavonoids, DL-phenylalanine, and colloidal minerals in orange juice when cravings hit.",
+   "topics": [
+    "addiction",
+    "alcohol",
+    "hypoglycemia",
+    "cravings",
+    "chromium",
+    "vanadium"
+   ]
+  },
+  "WAL-CLM-DDDL-000522": {
+   "subject": "gallstones",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "Which herbs are good for the gallbladder?",
+   "answer_short": "Wallach names many gallbladder herbs, among them blessed thistle, fumitory, horehound, licorice, peppermint, wormwood, artichoke, chicory, and dandelion.",
+   "topics": [
+    "gallstones",
+    "herbs",
+    "gallbladder",
+    "natural remedies"
+   ]
+  },
+  "WAL-CLM-DDDL-000523": {
+   "subject": "joint_pain",
+   "also_about": [
+    "arthritis",
+    "osteoporosis",
+    "calcium",
+    "magnesium",
+    "manganese",
+    "sulfur",
+    "copper",
+    "vitamin-b6"
+   ],
+   "facet": "protocol",
+   "question": "What supplements help rebuild worn spinal joints and cartilage?",
+   "answer_short": "Wallach's joint program adds cartilage, unsweetened gelatin, copper, manganese, sulfur, B6 and calcium-magnesium, plus chiropractic for spinal subluxations.",
+   "topics": [
+    "joint pain",
+    "back pain",
+    "cartilage",
+    "supplements",
+    "arthritis"
+   ]
+  },
+  "WAL-CLM-DDDL-000524": {
+   "subject": "phlebitis",
+   "also_about": [
+    "varicose_veins",
+    "copper",
+    "vitamin-e",
+    "vitamin-c"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for varicose veins or phlebitis?",
+   "answer_short": "Copper deficiency is the root cause; treat with copper 2 mg/day, vitamin E 800-1,200 IU, B-complex, vitamin C, fiber, and EFAs.",
+   "topics": [
+    "circulation",
+    "varicose-veins",
+    "phlebitis",
+    "copper",
+    "vein-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000525": {
+   "subject": "dyslexia",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "What does Wallach say causes dyslexia?",
+   "answer_short": "Up to 80% of 'dyslexic' kids really have food allergies and/or sugar sensitivity, with sugar acting like a drug.",
+   "topics": [
+    "learning",
+    "childrens-health",
+    "dyslexia",
+    "food-allergy",
+    "sugar"
+   ]
+  },
+  "WAL-CLM-DDDL-000526": {
+   "subject": "benign_prostatic_hyperplasia",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "How do you check your prostate at home?",
+   "answer_short": "Wallach suggests a monthly self-exam, like a breast self-check: a normal prostate is firm like an orange and about the size of a walnut, felt in the rectum with the index finger.",
+   "topics": [
+    "mens-health",
+    "prostate",
+    "self-care"
+   ]
+  },
+  "WAL-CLM-DDDL-000527": {
+   "subject": "eczema",
+   "also_about": [
+    "atopic_dermatitis"
+   ],
+   "facet": "protocol",
+   "question": "Does flaxseed oil or omega-3 help eczema, and how much?",
+   "answer_short": "Wallach treats eczema as an essential-fatty-acid problem and supplements flaxseed oil at 9 grams per day (with vitamin E) -- switching to intravenous interlipids only if the gut is too damaged to absorb the oil.",
+   "topics": [
+    "skin-health",
+    "supplements",
+    "fats",
+    "omega-3"
+   ]
+  },
+  "WAL-CLM-DDDL-000528": {
+   "subject": "kidney_stones",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "How do you relieve kidney stone pain and pass the stone?",
+   "answer_short": "For a sudden, excruciating stone blockage Wallach uses morphine for the pain and a three-day course of prednisone to calm inflammation in the ureter so the stone can pass.",
+   "topics": [
+    "kidney stones",
+    "pain relief",
+    "passing a stone",
+    "ureter",
+    "morphine"
+   ]
+  },
+  "WAL-CLM-DDDL-000529": {
+   "subject": "erectile_dysfunction",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "Are there self-help or sex-therapy techniques for erectile dysfunction you can do at home?",
+   "answer_short": "Yes — Wallach points to the Masters and Johnson method: a three-step, at-home progression (nongenital pleasuring, then genital pleasuring, then pressure-free 'nondemand' lovemaking) that removes performance anxiety without a counselor.",
+   "topics": [
+    "mens-health",
+    "sex-therapy",
+    "relationships"
+   ]
+  },
+  "WAL-CLM-DDDL-000530": {
+   "subject": "migraine",
+   "also_about": [
+    "magnesium",
+    "calcium"
+   ],
+   "facet": "mechanism",
+   "question": "Why do I get migraines around my period?",
+   "answer_short": "Wallach counts menstrual migraines among magnesium-deficiency diseases; because magnesium is the muscle 'relaxer' and calcium the 'stimulator,' too much calcium relative to magnesium can trigger deficiency signs like period migraines.",
+   "topics": [
+    "pms",
+    "womens-health",
+    "migraine",
+    "headache",
+    "minerals"
+   ]
+  },
+  "WAL-CLM-DDDL-000531": {
+   "subject": "allergies",
+   "also_about": [
+    "vitamin-c",
+    "flavonoids"
+   ],
+   "facet": "protocol",
+   "question": "Do vitamin C and bioflavonoids help with allergies?",
+   "answer_short": "Wallach pairs vitamin C (taken up to bowel tolerance) with the bioflavonoids rutin, catechin, and quercetin to calm allergies.",
+   "topics": [
+    "allergies",
+    "vitamin-c",
+    "quercetin",
+    "bioflavonoids",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000532": {
+   "subject": "eczema",
+   "also_about": [
+    "dermatitis",
+    "atopic_dermatitis",
+    "vitamin-a"
+   ],
+   "facet": "protocol",
+   "question": "Does vitamin A help eczema?",
+   "answer_short": "Wallach recommends vitamin A at 300,000 IU/day as beta-carotene for eczema -- vitamin A is the classic skin-repair nutrient -- and tells patients to be patient, since it takes 60-90 days for the gut to heal enough to absorb it.",
+   "topics": [
+    "skin-health",
+    "supplements",
+    "vitamins"
+   ]
+  },
+  "WAL-CLM-DDDL-000533": {
+   "subject": "chronic_fatigue",
+   "also_about": [
+    "fibromyalgia",
+    "selenium",
+    "vitamin-e",
+    "methionine"
+   ],
+   "facet": "protocol",
+   "question": "Can fried foods and cooking oils cause fibromyalgia and worn-out muscles?",
+   "answer_short": "Wallach calls fibromyalgia a deficiency disease from too much fried food and vegetable oil plus too little selenium, vitamin E and sulfur amino acids -- so he cuts the oils and supplements those nutrients.",
+   "topics": [
+    "chronic-fatigue",
+    "fibromyalgia",
+    "diet",
+    "selenium",
+    "muscle-pain"
+   ]
+  },
+  "WAL-CLM-DDDL-000534": {
+   "subject": "gout",
+   "also_about": [],
+   "facet": "stance",
+   "question": "What medication do doctors use for gout?",
+   "answer_short": "Conventionally, Wallach says, doctors rely almost entirely on colchicine for gout and add prednisone for the inflammation.",
+   "topics": [
+    "gout",
+    "medication",
+    "conventional-treatment"
+   ]
+  },
+  "WAL-CLM-DDDL-000535": {
+   "subject": "silver",
+   "also_about": [
+    "cystitis",
+    "benign_prostatic_hyperplasia"
+   ],
+   "facet": "uses",
+   "question": "Can colloidal silver soothe bladder irritation from an enlarged prostate?",
+   "answer_short": "Yes — Wallach says colloidal silver subdues inflammation and has been used with remarkable results for enlarged prostate with irritation of the bladder.",
+   "topics": [
+    "urinary-tract-infection",
+    "cystitis",
+    "colloidal-silver",
+    "prostate-health",
+    "mens-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000536": {
+   "subject": "vertigo",
+   "also_about": [
+    "hypertension",
+    "calcium"
+   ],
+   "facet": "mechanism",
+   "question": "Can a calcium-deficient diet cause dizziness?",
+   "answer_short": "Wallach says calcium-deficient diets are a major cause of high blood pressure, and dizziness is one of hypertension's main symptoms - so the fix starts with restoring calcium.",
+   "topics": [
+    "blood-pressure",
+    "minerals",
+    "diet"
+   ]
+  },
+  "WAL-CLM-DDDL-000537": {
+   "subject": "valerian",
+   "also_about": [
+    "anxiety",
+    "panic_attacks"
+   ],
+   "facet": "uses",
+   "question": "Does valerian help with anxiety?",
+   "answer_short": "Yes -- Wallach names valerian among the calming herbs of value for anxiety and panic attacks, and pairs the program with betaine HCl before meals to aid digestion.",
+   "topics": [
+    "herbs",
+    "anxiety",
+    "supplements",
+    "digestion"
+   ]
+  },
+  "WAL-CLM-DDDL-000538": {
+   "subject": "amebiasis",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "How do you treat amebiasis (amebic dysentery)?",
+   "answer_short": "Metronidazole 750 mg orally t.i.d. for 10 days (adults), plus symptomatic relief of diarrhea and protein/electrolyte loss.",
+   "topics": [
+    "parasites",
+    "dysentery",
+    "diarrhea",
+    "infection",
+    "gut-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000539": {
+   "subject": "varicose_veins",
+   "also_about": [
+    "hemorrhoids"
+   ],
+   "facet": "protocol",
+   "question": "How can I prevent varicose veins and hemorrhoids?",
+   "answer_short": "Prevention, in Wallach's words, is high supplementation with all 90 essential nutrients, 8-10 glasses of water daily, a high-fiber diet, and regular exercise.",
+   "topics": [
+    "prevention",
+    "veins",
+    "hemorrhoids",
+    "fiber",
+    "water",
+    "exercise",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000540": {
+   "subject": "cystitis",
+   "also_about": [
+    "urinary_tract_infection",
+    "bladder_stones"
+   ],
+   "facet": "basics",
+   "question": "Could recurring bladder symptoms be stones instead of an infection?",
+   "answer_short": "Possibly — in older people, especially men, Wallach says recurring bladder symptoms blamed on cystitis may actually be bladder stones (cystic calculi).",
+   "topics": [
+    "urinary-tract-infection",
+    "cystitis",
+    "bladder-stones",
+    "mens-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000541": {
+   "subject": "weight_loss",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "How much flaxseed oil does Wallach recommend for weight loss?",
+   "answer_short": "Essential fatty acids as flaxseed oil at 5 gm three times a day to normalize fat metabolism.",
+   "topics": [
+    "weight-loss",
+    "flaxseed",
+    "efa",
+    "metabolism",
+    "fat"
+   ]
+  },
+  "WAL-CLM-DDDL-000542": {
+   "subject": "erectile_dysfunction",
+   "also_about": [],
+   "facet": "warning",
+   "question": "Can medications or health problems cause erectile dysfunction?",
+   "answer_short": "Yes — Wallach says impotence often traces to a fixable cause like blood-pressure drugs (calcium channel blockers), an underactive thyroid, low blood pressure, adrenal exhaustion, low blood sugar, stress, or prostate surgery, and fixing that first is what works.",
+   "topics": [
+    "mens-health",
+    "medications",
+    "causes"
+   ]
+  },
+  "WAL-CLM-DDDL-000543": {
+   "subject": "hypothyroidism",
+   "also_about": [
+    "obesity"
+   ],
+   "facet": "mechanism",
+   "question": "Could an underactive thyroid be why I can't lose weight?",
+   "answer_short": "Wallach says an undiagnosed low thyroid can drive a weight problem, so before dieting he checks for it with a basal body temperature test.",
+   "topics": [
+    "thyroid",
+    "weight-loss",
+    "metabolism",
+    "obesity"
+   ]
+  },
+  "WAL-CLM-DDDL-000544": {
+   "subject": "silver",
+   "also_about": [
+    "urinary_tract_infection",
+    "cystitis"
+   ],
+   "facet": "uses",
+   "question": "Is there a natural antibiotic for a urinary tract infection?",
+   "answer_short": "Yes — Wallach points to colloidal silver, a natural germ-fighter that historical medical reports used successfully against cystitis.",
+   "topics": [
+    "urinary-tract-infection",
+    "cystitis",
+    "colloidal-silver",
+    "natural-antibiotics"
+   ]
+  },
+  "WAL-CLM-DDDL-000545": {
+   "subject": "dysmenorrhea",
+   "also_about": [
+    "pms",
+    "calcium",
+    "omega-3",
+    "omega-6"
+   ],
+   "facet": "mechanism",
+   "question": "Why are my periods so painful?",
+   "answer_short": "Wallach holds that painful periods, sometimes severe enough to force bed rest, and PMS are usually the result of calcium and/or essential fatty acid (EFA) deficiencies, not something you simply have to live with.",
+   "topics": [
+    "pms",
+    "womens-health",
+    "menstruation",
+    "cramps",
+    "periods"
+   ]
+  },
+  "WAL-CLM-DDDL-000546": {
+   "subject": "hypertension",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Can heavy metals like lead or cadmium cause high blood pressure?",
+   "answer_short": "Wallach says heavy metals can raise blood pressure and recommends a hair analysis to check for excess lead, arsenic, cadmium, and mercury.",
+   "topics": [
+    "hypertension",
+    "high blood pressure",
+    "heavy metals",
+    "hair analysis",
+    "toxicity"
+   ]
+  },
+  "WAL-CLM-DDDL-000547": {
+   "subject": "adhd",
+   "also_about": [
+    "hyperactivity",
+    "hypoglycemia",
+    "chromium",
+    "vanadium"
+   ],
+   "facet": "mechanism",
+   "question": "Why does sugar make ADHD and hyperactivity worse?",
+   "answer_short": "Because sugar and refined flour dump up to 300% more chromium and vanadium out through the urine — the exact minerals Wallach ties to steady blood sugar and calm, focused behavior.",
+   "topics": [
+    "adhd",
+    "sugar",
+    "chromium",
+    "vanadium",
+    "blood-sugar",
+    "diet"
+   ]
+  },
+  "WAL-CLM-DDDL-000548": {
+   "subject": "eczema",
+   "also_about": [
+    "dermatitis",
+    "atopic_dermatitis"
+   ],
+   "facet": "protocol",
+   "question": "Do digestive enzymes help eczema?",
+   "answer_short": "Yes, in Wallach's protocol -- he adds betaine HCl and digestive enzymes (75-200 mg each, three times a day before meals) so the gut damaged by the food allergy can actually absorb the nutrients that heal the skin.",
+   "topics": [
+    "skin-health",
+    "digestion",
+    "gut-health",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000549": {
+   "subject": "memory_loss",
+   "also_about": [
+    "lead_poisoning",
+    "learning_disabilities",
+    "pica"
+   ],
+   "facet": "warning",
+   "question": "Can lead poisoning cause learning problems or brain damage?",
+   "answer_short": "Yes -- lead poisoning can cause brain damage, lost IQ and learning disabilities; Wallach says mineral-deficient kids crave and eat non-food items (pica) like paint, so he floods them with all 90 nutrients to stop the craving, plus chelation.",
+   "topics": [
+    "childrens health",
+    "brain health",
+    "environmental toxins",
+    "learning"
+   ]
+  },
+  "WAL-CLM-DDDL-000550": {
+   "subject": "periodontal_disease",
+   "also_about": [
+    "gingivitis"
+   ],
+   "facet": "protocol",
+   "question": "What herbs soothe inflamed, painful gums?",
+   "answer_short": "For inflamed, painful gums Wallach names mouthwash herbs including arnica, bilberry, German chamomile, high mallow and tormentil bloodroot, used along with colloidal silver.",
+   "topics": [
+    "gum disease",
+    "herbal remedies",
+    "mouthwash",
+    "gum inflammation",
+    "chamomile",
+    "arnica"
+   ]
+  },
+  "WAL-CLM-DDDL-000551": {
+   "subject": "chronic_fatigue",
+   "also_about": [
+    "celiac_disease"
+   ],
+   "facet": "mechanism",
+   "question": "Can gluten or a food sensitivity make you tired and run-down?",
+   "answer_short": "Wallach says a hidden sensitivity to wheat gluten, cow's milk, or soy can scar the gut (celiac disease) and cut its absorbing surface by up to 85 percent, so you can eat well yet stay malnourished and worn out.",
+   "topics": [
+    "chronic-fatigue",
+    "gluten",
+    "celiac",
+    "absorption",
+    "diet",
+    "gut-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000552": {
+   "subject": "depression",
+   "also_about": [
+    "food_allergy",
+    "hypoglycemia"
+   ],
+   "facet": "protocol",
+   "question": "How can I tell if my depression is caused by food allergies or blood sugar?",
+   "answer_short": "Wallach's home check: run a pulse test for food allergies and a six-hour glucose tolerance test for low blood sugar, and look for dark 'allergic shiners' under the eyes at the low point.",
+   "topics": [
+    "depression",
+    "self-testing",
+    "food-allergies",
+    "blood-sugar",
+    "glucose-tolerance-test",
+    "pulse-test"
+   ]
+  },
+  "WAL-CLM-DDDL-000553": {
+   "subject": "eczema",
+   "also_about": [
+    "atopic_dermatitis"
+   ],
+   "facet": "basics",
+   "question": "What's the difference between eczema, atopic dermatitis, and dermatitis herpetiformis?",
+   "answer_short": "Wallach says eczema is basically the same lesion as atopic dermatitis but more spread out, while dermatitis herpetiformis is clusters of itchy blisters that look like a herpes outbreak -- all three, in his view, driven by the same gluten/food-allergy gut damage.",
+   "topics": [
+    "skin-health",
+    "definitions",
+    "symptoms"
+   ]
+  },
+  "WAL-CLM-DDDL-000554": {
+   "subject": "weight_loss",
+   "also_about": [
+    "obesity"
+   ],
+   "facet": "biography",
+   "question": "Did Dr. Wallach actually help his patients lose weight?",
+   "answer_short": "Wallach found his overweight patients were mineral-deficient 100% of the time; complete mineral programs let them lose weight, keep it off, and shed their cravings and binge eating.",
+   "topics": [
+    "weight-loss",
+    "minerals",
+    "binge-eating",
+    "cravings"
+   ]
+  },
+  "WAL-CLM-DDDL-000555": {
+   "subject": "osteoporosis",
+   "also_about": [
+    "celiac_disease",
+    "malabsorption"
+   ],
+   "facet": "mechanism",
+   "question": "Can food allergies or celiac disease cause osteoporosis?",
+   "answer_short": "Yes -- Wallach says undetected food allergies and celiac-type damage cause malabsorption, so he has you do a pulse test to find the culprit foods behind bone loss.",
+   "topics": [
+    "bone-health",
+    "food-allergy",
+    "celiac-disease",
+    "absorption",
+    "gut-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000556": {
+   "subject": "vertigo",
+   "also_about": [
+    "epilepsy"
+   ],
+   "facet": "mechanism",
+   "question": "Could brief dizzy spells be a mild seizure?",
+   "answer_short": "Possibly - Wallach says a petit mal seizure is often just a blank stare or a brief moment of dizziness, so short unexplained dizzy spells can be a small seizure rather than true vertigo.",
+   "topics": [
+    "neurological",
+    "seizures",
+    "balance"
+   ]
+  },
+  "WAL-CLM-DDDL-000557": {
+   "subject": "erectile_dysfunction",
+   "also_about": [],
+   "facet": "stance",
+   "question": "Does Wallach think Viagra is safe or worth taking for erectile dysfunction?",
+   "answer_short": "Wallach allows that Viagra may help maintain an erection, but he warns it comes with side effects — and he'd fix the underlying nutritional and medical causes first.",
+   "topics": [
+    "mens-health",
+    "medications",
+    "erectile-dysfunction"
+   ]
+  },
+  "WAL-CLM-DDDL-000558": {
+   "subject": "chicken_pox",
+   "also_about": [
+    "shingles"
+   ],
+   "facet": "basics",
+   "question": "Are day care kids more likely to get chicken pox?",
+   "answer_short": "Wallach says chicken pox epidemics occur in winter and early spring and that day care children are almost guaranteed to catch it in their first year of day care.",
+   "topics": [
+    "chicken pox",
+    "day care",
+    "children",
+    "epidemics",
+    "winter and spring"
+   ]
+  },
+  "WAL-CLM-DDDL-000559": {
+   "subject": "eczema",
+   "also_about": [
+    "atopic_dermatitis",
+    "psoriasis",
+    "zinc"
+   ],
+   "facet": "protocol",
+   "question": "Does zinc help eczema?",
+   "answer_short": "Wallach uses zinc at 50 mg three times a day as part of his eczema program -- zinc drives skin repair and wound healing, and its deficiency is one of the mineral shortfalls the leaky gut creates.",
+   "topics": [
+    "skin-health",
+    "supplements",
+    "minerals"
+   ]
+  },
+  "WAL-CLM-DDDL-000560": {
+   "subject": "chicken_pox",
+   "also_about": [
+    "shingles"
+   ],
+   "facet": "stance",
+   "question": "Is there a vaccine you can get after being exposed to chicken pox?",
+   "answer_short": "Wallach notes that for those who choose vaccination, a post-exposure chicken pox vaccine is available for up to 72 hours after exposure.",
+   "topics": [
+    "chicken pox",
+    "vaccine",
+    "post-exposure",
+    "prevention"
+   ]
+  },
+  "WAL-CLM-DDDL-000561": {
+   "subject": "adhd",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Why are kids with ADHD so sensitive to sugar?",
+   "answer_short": "Wallach says people with ADHD react to sugar the way some people react to alcohol — it works like a drug on them, driving behavior from spaced-out to explosive.",
+   "topics": [
+    "adhd",
+    "sugar",
+    "diet",
+    "children",
+    "behavior",
+    "focus"
+   ]
+  },
+  "WAL-CLM-DDDL-000562": {
+   "subject": "allergies",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "Can fixing my digestion help with allergies?",
+   "answer_short": "Because allergies often start with poor digestion, Wallach adds digestive enzymes with betaine HCl before meals, essential fatty acids, and rotation diets.",
+   "topics": [
+    "allergies",
+    "food-allergies",
+    "digestion",
+    "digestive-enzymes",
+    "absorption"
+   ]
+  },
+  "WAL-CLM-DDDL-000563": {
+   "subject": "eczema",
+   "also_about": [
+    "dermatitis",
+    "atopic_dermatitis"
+   ],
+   "facet": "protocol",
+   "question": "How do I find out which foods trigger my eczema?",
+   "answer_short": "Wallach recommends a 'pulse test' on foods you eat frequently -- checking whether your pulse jumps after eating them -- to catch the hidden triggers beyond gluten and dairy that keep your eczema flaring.",
+   "topics": [
+    "skin-health",
+    "allergies",
+    "self-testing",
+    "diet"
+   ]
+  },
+  "WAL-CLM-DDDL-000564": {
+   "subject": "eczema",
+   "also_about": [
+    "atopic_dermatitis"
+   ],
+   "facet": "basics",
+   "question": "Where on the body does eczema usually appear?",
+   "answer_short": "Wallach describes eczema (atopic dermatitis) as patchy, crusty, weeping lesions that most often show up on the lips, ears, neck, hands, and joints.",
+   "topics": [
+    "skin-health",
+    "symptoms"
+   ]
+  },
+  "WAL-CLM-DDDL-000565": {
+   "subject": "cerebrovascular_disease",
+   "also_about": [
+    "vitamin-d",
+    "magnesium"
+   ],
+   "facet": "protocol",
+   "question": "How do you prevent cerebrovascular disease according to Wallach?",
+   "answer_short": "Wear loose collars/ties to avoid carotid eddies, cut vitamin D to a maximum of 400 IU/day because it is angiotoxic, and keep magnesium and all nutrients optimal to prevent malignant calcification.",
+   "topics": [
+    "prevention",
+    "vitamin-d",
+    "magnesium",
+    "circulation",
+    "calcification"
+   ]
+  },
+  "WAL-CLM-DDDL-000566": {
+   "subject": "constipation",
+   "also_about": [
+    "colic"
+   ],
+   "facet": "warning",
+   "question": "Can digestive enzymes cause constipation?",
+   "answer_short": "Wallach notes that pancreatic (digestive) enzyme supplements may be constipating for some people.",
+   "topics": [
+    "constipation",
+    "digestive enzymes",
+    "pancreatic enzymes",
+    "supplements",
+    "side effects"
+   ]
+  },
+  "WAL-CLM-DDDL-000567": {
+   "subject": "psoriasis",
+   "also_about": [
+    "vitamin-a",
+    "vitamin-d"
+   ],
+   "facet": "uses",
+   "question": "Are there topical or home remedies for psoriasis?",
+   "answer_short": "For the skin itself Wallach suggests palliative topicals — herbal washes, pureed onions, pureed cucumbers, and vitamin A & D creams.",
+   "topics": [
+    "psoriasis",
+    "home-remedies",
+    "topical",
+    "skin"
+   ]
+  },
+  "WAL-CLM-DDDL-000568": {
+   "subject": "adhd",
+   "also_about": [
+    "hyperactivity",
+    "food_allergy",
+    "malabsorption"
+   ],
+   "facet": "mechanism",
+   "question": "Can poor digestion and food allergies make a child's behavior worse?",
+   "answer_short": "Yes — Wallach says food allergies damage the gut lining so nutrients can't be absorbed, and that hidden malnutrition then feeds back into even worse behavior, a self-reinforcing cycle.",
+   "topics": [
+    "adhd",
+    "digestion",
+    "food-allergies",
+    "absorption",
+    "children",
+    "behavior"
+   ]
+  },
+  "WAL-CLM-DDDL-000569": {
+   "subject": "depression",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "What foods should I avoid if I have depression?",
+   "answer_short": "Wallach says cut out all sugar — natural and processed, which is hidden in almost everything packaged — along with caffeine and fried foods.",
+   "topics": [
+    "depression",
+    "diet",
+    "sugar",
+    "caffeine",
+    "foods-to-avoid",
+    "blood-sugar"
+   ]
+  },
+  "WAL-CLM-DDDL-000570": {
+   "subject": "lead",
+   "also_about": [
+    "lead_poisoning"
+   ],
+   "facet": "physiology",
+   "question": "Is lead an essential element according to Wallach?",
+   "answer_short": "Wallach says lead is required at parts-per-billion levels to convert RNA into DNA, though excess lead is toxic.",
+   "topics": [
+    "trace-minerals",
+    "lead",
+    "physiology",
+    "dna"
+   ]
+  },
+  "WAL-CLM-DDDL-000571": {
+   "subject": "erectile_dysfunction",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "Do minerals or supplements actually help with impotence?",
+   "answer_short": "Wallach's core answer is yes — the baseline 90-nutrient program with plant-derived colloidal minerals is the foundation under any impotence protocol; he jokes wives ask for it 'by the 55-gallon drum.'",
+   "topics": [
+    "mens-health",
+    "minerals",
+    "supplements"
+   ]
+  },
+  "WAL-CLM-DDDL-000572": {
+   "subject": "eczema",
+   "also_about": [
+    "dermatitis",
+    "atopic_dermatitis"
+   ],
+   "facet": "mechanism",
+   "question": "Is eczema just a skin problem, or a sign of something deeper?",
+   "answer_short": "Wallach says it's much deeper: the same damage on your skin is happening in your small intestine, and that hidden absorption problem can starve your immune system and open the door to diabetes, cancer, and arthritis.",
+   "topics": [
+    "skin-health",
+    "gut-health",
+    "chronic-disease"
+   ]
+  },
+  "WAL-CLM-DDDL-000573": {
+   "subject": "periodontal_disease",
+   "also_about": [],
+   "facet": "stance",
+   "question": "Why haven't dentists told me gum disease is a nutrition problem?",
+   "answer_short": "Wallach's answer is money — he points to the toothpaste, toothbrush and floss companies that get American Dental Association approval and also fund the dental schools, calling it a case of letting the fox guard the henhouse.",
+   "topics": [
+    "gum disease",
+    "dentistry",
+    "american dental association",
+    "flossing",
+    "conflict of interest"
+   ]
+  },
+  "WAL-CLM-DDDL-000574": {
+   "subject": "periodontal_disease",
+   "also_about": [
+    "receding_gums",
+    "calcium",
+    "phosphorus"
+   ],
+   "facet": "mechanism",
+   "question": "Why do my teeth loosen and gums recede before I ever break a bone?",
+   "answer_short": "Wallach says the alveolar bone that anchors your teeth is very thin and fragile, so tiny losses in bone density show up as loose teeth and receding gums long before they would show in a big bone like the thigh.",
+   "topics": [
+    "gum disease",
+    "loose teeth",
+    "receding gums",
+    "bone density",
+    "dental health",
+    "jawbone"
+   ]
+  },
+  "WAL-CLM-DDDL-000575": {
+   "subject": "bladder_stones",
+   "also_about": [
+    "urinary_tract_infection",
+    "cystitis"
+   ],
+   "facet": "basics",
+   "question": "Is blood in my urine from a urinary tract infection or my period?",
+   "answer_short": "It can be either — Wallach notes menstrual blood can show up too, so if the nitrate test is negative and there are no white blood cells, disregard the blood.",
+   "topics": [
+    "urinary-tract-infection",
+    "cystitis",
+    "womens-health",
+    "hematuria"
+   ]
+  },
+  "WAL-CLM-DDDL-000576": {
+   "subject": "endometriosis",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for endometriosis?",
+   "answer_short": "Avoid tampons and sex during the period; use all 90 nutrients, wild Mexican yam (progesterone), and cohosh/dong quai herbs.",
+   "topics": [
+    "womens-health",
+    "endometriosis",
+    "progesterone",
+    "menstruation",
+    "herbs"
+   ]
+  },
+  "WAL-CLM-DDDL-000577": {
+   "subject": "endometriosis",
+   "also_about": [],
+   "facet": "uses",
+   "question": "How can severe endometriosis growths be removed?",
+   "answer_short": "Wallach says the prescription hormone Luperon can shrink the misplaced tissue to pea size for easy endoscopic removal, causing only temporary menopausal symptoms that reverse when stopped.",
+   "topics": [
+    "womens-health",
+    "endometriosis",
+    "medical-treatment",
+    "surgery"
+   ]
+  },
+  "WAL-CLM-DDDL-000578": {
+   "subject": "endometriosis",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Which organs can endometriosis affect?",
+   "answer_short": "The displaced endometrial cells can take hold on the bladder, colon, uterus, and ovaries, feeding off those organ surfaces.",
+   "topics": [
+    "womens-health",
+    "endometriosis",
+    "reproductive-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000579": {
+   "subject": "aids",
+   "also_about": [
+    "vitamin-c",
+    "vitamin-a",
+    "zinc",
+    "selenium",
+    "vitamin-e"
+   ],
+   "facet": "protocol",
+   "question": "What does Wallach recommend for HIV/AIDS?",
+   "answer_short": "Antivirals and immune support plus vitamin C to bowel tolerance, 300,000 IU vitamin A as beta carotene, zinc 50 mg t.i.d., adrenal cortical extract (ACE), selenium 1000 mcg/day, and vitamin E 1000 IU/day; long-term remission but no cure.",
+   "topics": [
+    "immune-health",
+    "hiv",
+    "aids",
+    "selenium",
+    "vitamin-a",
+    "zinc"
+   ]
+  },
+  "WAL-CLM-DDDL-000580": {
+   "subject": "menopause",
+   "also_about": [],
+   "facet": "basics",
+   "question": "What is surgical menopause after a hysterectomy?",
+   "answer_short": "Wallach explains menopause can be induced surgically by removing the ovaries or uterus, rather than arriving gradually — when it's gradual, the adrenals and liver normally step up estrogen to cover the loss.",
+   "topics": [
+    "menopause",
+    "hysterectomy",
+    "surgical-menopause",
+    "womens-health"
+   ]
+  },
+  "WAL-CLM-DDDL-000581": {
+   "subject": "endometriosis",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "What causes endometriosis?",
+   "answer_short": "Wallach points to tampons and having sex during the period as the most common causes, since both can obstruct normal menstrual outflow and force a back-flow.",
+   "topics": [
+    "womens-health",
+    "endometriosis",
+    "menstruation",
+    "lifestyle"
+   ]
   }
  }
 }
