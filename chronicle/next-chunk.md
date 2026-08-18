@@ -1,38 +1,29 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-**CAMPAIGN: the 452 ruled claims → Search.** Engine 1 (all DDDL work) is **DONE + LIVE**. Engine 2
-(vision-verify the unverified books) is the remaining engine. Board 92/92 green, corpus **kv=475**.
+**CAMPAIGN: the 452 ruled claims → Search.** Engine 1 (DDDL doses) DONE + LIVE. Engine 2 (vision-verify
+the unverified books) — **full 70 sweep DONE**; corrections staged for Luneth’s ruling. Board 92/92, kv=475.
 
-## ✅ ENGINE 1 — DDDL dose audit: SEALED + LIVE (kv 473→475)
-All 24 recovered DDDL dose claims are sealed, enriched, and searchable. search-index **2402→2426 (+24)**.
-Ids `WAL-CLM-DDDL-000582..000605`. Staged record: `chronicle/dose-audit-2026-08-18/` (finalize-raw,
-enrichment, AUDIT-REPORT, sealed-idmap). Recovered from `temporary/claim-ruling-dashboard.html` after
-the prior scratchpad `0ce0c20f` was lost — see [[ruling-dashboard-is-recovery-source]].
-- **22 clean** sealed (kv=474). **19 carry dose pills** (structured dose object → condition-labelled
-  value, e.g. “cataracts / 250 mcg / daily”). **3 are dose:null**: fiber #509 (tbsp unit unsupported),
-  vitE/fibroids #624 (source prints “i.u.” dotted — the IU token won’t match), EFA #325 (reclassified
-  **kind=protocol**: a collective EFA dose can’t be a 2nd essential-fatty-acids singleton; keeps
-  [omega-3,omega-6]). See [[condition-dose-claim-sealing-gotchas]].
-- **2 conflicts** sealed (kv=475), favor-newest DDDL, LETS protocols kept intact:
-  `604` folic/gout **20-50 mg/day** (vs LETS-000288 10-75), `605` vitE/cataracts **2,000 IU/day**
-  (vs LETS-000207 400). Older figures stay only inside the faithful LETS protocol prose.
-- **3 keep-both pairs** (lecithin/psoriasis, fiber/constipation, lecithin/gallstones) — lecithin &
-  dietary-fiber aren’t registered search subjects, so those facets route on the condition and collide
-  with the condition-protocol claim on the same span. Allowlisted in `_DUPLICATE_KEEP_BOTH` + pinned in
-  `test_no_duplicate_claims.py` (71→74).
+## ✅ ENGINE 1 — DDDL dose audit: SEALED + LIVE
+All 24 recovered DDDL dose claims sealed/enriched/searchable (ids `582..605`, search 2402→2426). 19 carry
+dose pills; 2 conflicts resolved favor-newest (folic/gout 20-50, vitE/cataracts 2,000 IU) keeping the LETS
+protocols; 3 keep-both pairs allowlisted. Record: `chronicle/dose-audit-2026-08-18/`.
+See [[condition-dose-claim-sealing-gotchas]], [[ruling-dashboard-is-recovery-source]].
 
-## ⏳ ENGINE 2 — vision-verify unverified-book ruled claims (PILOT done, sweep remains)
-`chronicle/frontface-ocr/ruled-2026-08-18/`. Target: **70 sealed unverified ruled claims** (epig 16,
-immort 45, hells 3, lets 3, rare 3), blocked from front-facing by `enriched_book_is_verified`.
-- Done: 70-claim worklist; corroborated the 9 PDF-book claims; **vision-verified 2** (LETS-000523 p105,
-  LETS-000524 p71) = CLEAN (the divergences were PDF text-layer artifacts). RARE-000403 = mislocation
-  (cov 0.19), neighbour-search needed.
-- **HOLD front-face** (Luneth’s standing instruction): do NOT move ids into
-  `verified.json::claims_verified` without his sign-off.
-- NEXT: corroborate + vision-read the 61 epig/immort (dual-monitor Screenshot crops, x≈0.028-0.48) +
-  the RARE neighbour; fix/resnap real defects; then Luneth moves clean ids into claims_verified.
-- The 92 unsealed unverified ruled claims recover from the ruling dashboard, seal, then verify.
+## ✅ ENGINE 2 — full 70 vision sweep: DONE (staged) · `chronicle/frontface-ocr/ruled-2026-08-18/`
+All 70 sealed unverified-book ruled claims page-read against their source images (12 vision agents +
+2 hand-checks). `VISION-SWEEP-FINDINGS.md` + `sweep-corrections.json` + `vision_findings.json`.
+- **55 CLEAN** (page-verified byte-for-byte) — ready to move into `verified.json::claims_verified` (→
+  front-faceable) ON LUNETH’S SAY-SO. **NOT flipped** (hold front-face).
+- **14 with OCR defects** (page is right, sealed verbatim wrong) — corrections captured byte-exact.
+  Notable: IMMORT-000495 dropped “theobromine” + “catechins in green tea are the antioxidants”;
+  IMMORT-000513 dropped “another neurotransmitter”; IMMORT-000487 subscript B₆; lodine→Iodine;
+  tendemess→tenderness; alled→called; Posty→artery). Judgment calls: IMMORT-000487 Isoniazid(ours) vs
+  Isonazid(page-typo) — ratified-divergence call; EPIGEN-000480 hyphen vs en-dash (cosmetic).
+- **1 UNVERIFIABLE**: RARE-000403 (a Mg/multi-mineral deficiency list) — not in the PDF text layer, the
+  corroboration mislocated it; needs a targeted manual page-read.
+- **NEXT (Luneth’s calls):** (a) apply the 14 source corrections → resnap → re-seal (BLUEPRINT §4; USER
+  seal); (b) move the 55 (+ corrected 14) into `claims_verified` and enrich/front-face them; (c) locate
+  RARE-000403. Then the 92 UNSEALED unverified ruled claims: recover from the ruling dashboard, seal, verify.
 
 ## GENESIS
-`genesis` → run genesis.py, report the board, then resume **Engine 2** (vision sweep) unless redirected.
-If a new invariant red appears, that is the only response.
+`genesis` → board, then resume Engine 2 fixes (apply corrections + front-face the clean) unless redirected.
