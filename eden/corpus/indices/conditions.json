@@ -3040,7 +3040,7 @@
   },
   "cataracts": {
     "display_name": "Cataracts",
-    "claim_count": 15,
+    "claim_count": 18,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000473",
@@ -3053,6 +3053,11 @@
         "WAL-CLM-LETS-000030",
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000310"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000592",
+        "WAL-CLM-DDDL-000593",
+        "WAL-CLM-DDDL-000594"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -3888,13 +3893,16 @@
   },
   "constipation": {
     "display_name": "Constipation",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000412"
       ],
       "definitions": [
         "WAL-CLM-DDDL-000407"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000589"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000497",
@@ -5929,7 +5937,7 @@
   },
   "gallstones": {
     "display_name": "Gallstones",
-    "claim_count": 10,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000365",
@@ -5942,6 +5950,11 @@
       ],
       "deficiency_signs": [
         "WAL-CLM-LETS-000011"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000595",
+        "WAL-CLM-DDDL-000596",
+        "WAL-CLM-DDDL-000597"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000322",
@@ -7807,7 +7820,7 @@
   },
   "insomnia": {
     "display_name": "Insomnia",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000038",
@@ -7828,6 +7841,9 @@
       ],
       "diagnostics": [
         "WAL-CLM-DDDL-000404"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000588"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000075",
@@ -7929,13 +7945,16 @@
   },
   "irritable_bowel_syndrome": {
     "display_name": "Irritable Bowel Syndrome",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000030"
       ],
       "diagnostics": [
         "WAL-CLM-DDDL-000371"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000587"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000385",
@@ -8283,7 +8302,7 @@
   },
   "kidney_stones": {
     "display_name": "Kidney Stones",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000382"
@@ -8305,6 +8324,9 @@
       "diagnostics": [
         "WAL-CLM-DDDL-000366",
         "WAL-CLM-DDDL-000451"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000603"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000088",
@@ -11233,7 +11255,7 @@
   },
   "pms": {
     "display_name": "Premenstrual Syndrome (PMS)",
-    "claim_count": 11,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000332",
@@ -11248,6 +11270,10 @@
       ],
       "definitions": [
         "WAL-CLM-RARE-000105"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000590",
+        "WAL-CLM-DDDL-000591"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000389",
@@ -11468,7 +11494,7 @@
   },
   "psoriasis": {
     "display_name": "Psoriasis",
-    "claim_count": 9,
+    "claim_count": 14,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000391",
@@ -11480,11 +11506,18 @@
       "definitions": [
         "WAL-CLM-DDDL-000335"
       ],
+      "doses": [
+        "WAL-CLM-DDDL-000582",
+        "WAL-CLM-DDDL-000583",
+        "WAL-CLM-DDDL-000584",
+        "WAL-CLM-DDDL-000585"
+      ],
       "protocols": [
         "WAL-CLM-DDDL-000387",
         "WAL-CLM-DDDL-000482",
         "WAL-CLM-DDDL-000559",
         "WAL-CLM-DDDL-000567",
+        "WAL-CLM-DDDL-000586",
         "WAL-CLM-LETS-000409"
       ]
     },
@@ -11688,10 +11721,13 @@
   },
   "raynauds_disease": {
     "display_name": "Raynauds Disease",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-DDDL-000504"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000598"
       ],
       "protocols": [
         "WAL-CLM-LETS-000415"
@@ -12367,13 +12403,16 @@
   },
   "shingles": {
     "display_name": "Shingles",
-    "claim_count": 9,
+    "claim_count": 10,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-DDDL-000328",
         "WAL-CLM-DDDL-000362",
         "WAL-CLM-DDDL-000560",
         "WAL-CLM-RARE-000388"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000602"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000558"
@@ -13491,7 +13530,7 @@
   },
   "uterine_fibroids": {
     "display_name": "Uterine Fibroids",
-    "claim_count": 7,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000415",
@@ -13502,6 +13541,11 @@
       ],
       "definitions": [
         "WAL-CLM-DDDL-000416"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000599",
+        "WAL-CLM-DDDL-000600",
+        "WAL-CLM-DDDL-000601"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000488"

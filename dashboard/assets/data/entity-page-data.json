@@ -604,8 +604,8 @@
       "symbol": "Mg",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 117,
-      "distinct_claim_count": 137,
+      "claim_count": 118,
+      "distinct_claim_count": 138,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -859,6 +859,7 @@
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000060",
+            "WAL-CLM-DDDL-000599",
             "WAL-CLM-EPIGEN-000133",
             "WAL-CLM-LETS-000056",
             "WAL-CLM-RARE-000286"
@@ -3961,8 +3962,8 @@
       "symbol": "Se",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 132,
-      "distinct_claim_count": 140,
+      "claim_count": 135,
+      "distinct_claim_count": 143,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -4186,6 +4187,9 @@
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000593",
+            "WAL-CLM-DDDL-000597",
+            "WAL-CLM-DDDL-000601",
             "WAL-CLM-EPIGEN-000136",
             "WAL-CLM-LETS-000065",
             "WAL-CLM-LETS-000313",
@@ -4821,8 +4825,8 @@
       "symbol": "Zn",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 124,
-      "distinct_claim_count": 144,
+      "claim_count": 125,
+      "distinct_claim_count": 145,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -5069,6 +5073,7 @@
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000437",
+            "WAL-CLM-DDDL-000592",
             "WAL-CLM-EPIGEN-000139",
             "WAL-CLM-LETS-000077"
           ]
@@ -10835,8 +10840,8 @@
       "symbol": "A",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 81,
-      "distinct_claim_count": 101,
+      "claim_count": 83,
+      "distinct_claim_count": 103,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -11032,6 +11037,8 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000168",
             "WAL-CLM-DDDL-000436",
+            "WAL-CLM-DDDL-000583",
+            "WAL-CLM-DDDL-000591",
             "WAL-CLM-EPIGEN-000110",
             "WAL-CLM-EPIGEN-000111",
             "WAL-CLM-LETS-000071"
@@ -11820,8 +11827,8 @@
       "symbol": "B6",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 60,
-      "distinct_claim_count": 70,
+      "claim_count": 62,
+      "distinct_claim_count": 72,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -11988,6 +11995,8 @@
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000439",
+            "WAL-CLM-DDDL-000590",
+            "WAL-CLM-DDDL-000603",
             "WAL-CLM-EPIGEN-000116",
             "WAL-CLM-LETS-000063"
           ]
@@ -12082,8 +12091,8 @@
       "symbol": "B9",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 24,
-      "distinct_claim_count": 39,
+      "claim_count": 26,
+      "distinct_claim_count": 41,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12197,6 +12206,8 @@
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000582",
+            "WAL-CLM-DDDL-000587",
             "WAL-CLM-LETS-000052"
           ]
         },
@@ -12283,8 +12294,8 @@
       "symbol": "B12",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 39,
-      "distinct_claim_count": 53,
+      "claim_count": 40,
+      "distinct_claim_count": 54,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12440,6 +12451,7 @@
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000602",
             "WAL-CLM-EPIGEN-000117",
             "WAL-CLM-LETS-000072",
             "WAL-CLM-RARE-000014"
@@ -13060,8 +13072,8 @@
       "symbol": "E",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 82,
-      "distinct_claim_count": 104,
+      "claim_count": 85,
+      "distinct_claim_count": 107,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -13242,6 +13254,9 @@
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000442",
+            "WAL-CLM-DDDL-000584",
+            "WAL-CLM-DDDL-000596",
+            "WAL-CLM-DDDL-000600",
             "WAL-CLM-EPIGEN-000120",
             "WAL-CLM-LETS-000075"
           ]
@@ -13968,8 +13983,8 @@
       "symbol": "Fl",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 23,
-      "distinct_claim_count": 32,
+      "claim_count": 24,
+      "distinct_claim_count": 33,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -14078,6 +14093,7 @@
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000594",
             "WAL-CLM-EPIGEN-000126"
           ]
         },
@@ -15000,8 +15016,8 @@
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
-      "claim_count": 7,
-      "distinct_claim_count": 17,
+      "claim_count": 9,
+      "distinct_claim_count": 19,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -15084,6 +15100,13 @@
           ]
         },
         {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000588",
+            "WAL-CLM-DDDL-000598"
+          ]
+        },
+        {
           "facet": "discovery",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000357"
@@ -15111,8 +15134,8 @@
         "magnesium",
         "omega-3",
         "depression",
-        "vitamin-b1",
-        "vitamin-b2"
+        "insomnia",
+        "raynauds_disease"
       ]
     },
     "tyrosine": {
@@ -15323,8 +15346,8 @@
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
-      "claim_count": 98,
-      "distinct_claim_count": 117,
+      "claim_count": 99,
+      "distinct_claim_count": 118,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -15560,6 +15583,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000115",
             "WAL-CLM-DDDL-000427",
+            "WAL-CLM-DDDL-000586",
             "WAL-CLM-IMMORT-000277"
           ]
         },
@@ -15684,8 +15708,8 @@
       "related": [
         "vitamin-e",
         "zinc",
-        "selenium",
         "omega-6",
+        "selenium",
         "vitamin-a",
         "vitamin-b6",
         "calcium",
@@ -15699,8 +15723,8 @@
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
-      "claim_count": 25,
-      "distinct_claim_count": 26,
+      "claim_count": 26,
+      "distinct_claim_count": 27,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -15745,7 +15769,8 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000337",
             "WAL-CLM-DDDL-000406",
-            "WAL-CLM-DDDL-000427"
+            "WAL-CLM-DDDL-000427",
+            "WAL-CLM-DDDL-000586"
           ]
         },
         {
@@ -15784,7 +15809,7 @@
           ]
         }
       ],
-      "record_claim_count": 22,
+      "record_claim_count": 23,
       "search": [
         {
           "facet": "basics",
@@ -21724,7 +21749,7 @@
     "cataracts": {
       "type": "condition",
       "name": "Cataracts",
-      "claim_count": 15,
+      "claim_count": 18,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -21745,7 +21770,10 @@
         "WAL-CLM-DDDL-000433",
         "WAL-CLM-DDDL-000434",
         "WAL-CLM-IMMORT-000485",
-        "WAL-CLM-LETS-000207"
+        "WAL-CLM-LETS-000207",
+        "WAL-CLM-DDDL-000592",
+        "WAL-CLM-DDDL-000593",
+        "WAL-CLM-DDDL-000594"
       ],
       "restore": [
         "arginine",
@@ -21765,6 +21793,14 @@
         "zinc"
       ],
       "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000592",
+            "WAL-CLM-DDDL-000593",
+            "WAL-CLM-DDDL-000594"
+          ]
+        },
         {
           "kind": "deficiency_sign",
           "claim_ids": [
@@ -21802,7 +21838,7 @@
           ]
         }
       ],
-      "record_claim_count": 11,
+      "record_claim_count": 14,
       "search": [
         {
           "facet": "stance",
@@ -21831,11 +21867,11 @@
       ],
       "related": [
         "selenium",
+        "zinc",
         "cancer",
         "cardiomyopathy",
         "chromium",
         "vitamin-b2",
-        "zinc",
         "aneurysm",
         "arthritis"
       ]
@@ -23573,7 +23609,7 @@
     "constipation": {
       "type": "condition",
       "name": "Constipation",
-      "claim_count": 6,
+      "claim_count": 7,
       "books": [
         "dddl-3e-2011",
         "immortality",
@@ -23598,7 +23634,8 @@
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000497",
         "WAL-CLM-LETS-000231",
-        "WAL-CLM-LETS-000521"
+        "WAL-CLM-LETS-000521",
+        "WAL-CLM-DDDL-000589"
       ],
       "restore": [],
       "record": [
@@ -23627,6 +23664,7 @@
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000497",
+            "WAL-CLM-DDDL-000589",
             "WAL-CLM-LETS-000231"
           ]
         },
@@ -27706,7 +27744,7 @@
     "gallstones": {
       "type": "condition",
       "name": "Gallstones",
-      "claim_count": 10,
+      "claim_count": 13,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -27722,7 +27760,10 @@
         "WAL-CLM-DDDL-000322",
         "WAL-CLM-DDDL-000339",
         "WAL-CLM-DDDL-000522",
-        "WAL-CLM-LETS-000283"
+        "WAL-CLM-LETS-000283",
+        "WAL-CLM-DDDL-000595",
+        "WAL-CLM-DDDL-000596",
+        "WAL-CLM-DDDL-000597"
       ],
       "restore": [
         "omega-3",
@@ -27733,6 +27774,13 @@
         "vitamin-e"
       ],
       "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000596",
+            "WAL-CLM-DDDL-000597"
+          ]
+        },
         {
           "kind": "deficiency_sign",
           "claim_ids": [
@@ -27758,7 +27806,7 @@
           ]
         }
       ],
-      "record_claim_count": 4,
+      "record_claim_count": 6,
       "search": [
         {
           "facet": "mechanism",
@@ -27773,6 +27821,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000339",
             "WAL-CLM-DDDL-000522",
+            "WAL-CLM-DDDL-000595",
             "WAL-CLM-LETS-000283"
           ]
         }
@@ -27790,12 +27839,12 @@
       "related": [
         "arthritis",
         "omega-3",
+        "selenium",
         "vitamin-c",
+        "vitamin-e",
         "acne",
         "alopecia",
-        "anorexia",
-        "anxiety",
-        "boils"
+        "anorexia"
       ]
     },
     "gangrene": {
@@ -31478,7 +31527,7 @@
     "insomnia": {
       "type": "condition",
       "name": "Insomnia",
-      "claim_count": 16,
+      "claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -31496,7 +31545,8 @@
       ],
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000075",
-        "WAL-CLM-LETS-000322"
+        "WAL-CLM-LETS-000322",
+        "WAL-CLM-DDDL-000588"
       ],
       "restore": [
         "biotin",
@@ -31514,6 +31564,12 @@
         "vitamin-d"
       ],
       "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000588"
+          ]
+        },
         {
           "kind": "deficiency_sign",
           "claim_ids": [
@@ -31544,7 +31600,7 @@
           ]
         }
       ],
-      "record_claim_count": 14,
+      "record_claim_count": 15,
       "search": [
         {
           "facet": "mechanism",
@@ -31710,7 +31766,7 @@
     "irritable_bowel_syndrome": {
       "type": "condition",
       "name": "Irritable Bowel Syndrome",
-      "claim_count": 6,
+      "claim_count": 7,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -31728,12 +31784,19 @@
         "WAL-CLM-DDDL-000385",
         "WAL-CLM-DDDL-000448",
         "WAL-CLM-DDDL-000474",
-        "WAL-CLM-LETS-000323"
+        "WAL-CLM-LETS-000323",
+        "WAL-CLM-DDDL-000587"
       ],
       "restore": [
         "vitamin-b9"
       ],
       "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000587"
+          ]
+        },
         {
           "kind": "mechanism",
           "claim_ids": [
@@ -31741,7 +31804,7 @@
           ]
         }
       ],
-      "record_claim_count": 1,
+      "record_claim_count": 2,
       "search": [
         {
           "facet": "protocol",
@@ -31764,13 +31827,13 @@
         "malabsorption"
       ],
       "related": [
+        "vitamin-b9",
         "bloating",
         "celiac_disease",
         "colitis",
         "crohns_disease",
         "diverticulitis",
-        "malabsorption",
-        "vitamin-b9"
+        "malabsorption"
       ]
     },
     "ischemic_heart_disease": {
@@ -32481,7 +32544,7 @@
     "kidney_stones": {
       "type": "condition",
       "name": "Kidney Stones",
-      "claim_count": 16,
+      "claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -32501,7 +32564,8 @@
         "WAL-CLM-DDDL-000088",
         "WAL-CLM-DDDL-000528",
         "WAL-CLM-LETS-000161",
-        "WAL-CLM-LETS-000332"
+        "WAL-CLM-LETS-000332",
+        "WAL-CLM-DDDL-000603"
       ],
       "restore": [
         "calcium",
@@ -32512,6 +32576,12 @@
         "vitamin-d"
       ],
       "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000603"
+          ]
+        },
         {
           "kind": "deficiency_sign",
           "claim_ids": [
@@ -32553,7 +32623,7 @@
           ]
         }
       ],
-      "record_claim_count": 10,
+      "record_claim_count": 11,
       "search": [
         {
           "facet": "mechanism",
@@ -38402,7 +38472,7 @@
     "pms": {
       "type": "condition",
       "name": "Premenstrual Syndrome (PMS)",
-      "claim_count": 11,
+      "claim_count": 13,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -38421,7 +38491,9 @@
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000389",
         "WAL-CLM-LETS-000388",
-        "WAL-CLM-LETS-000402"
+        "WAL-CLM-LETS-000402",
+        "WAL-CLM-DDDL-000590",
+        "WAL-CLM-DDDL-000591"
       ],
       "restore": [
         "calcium",
@@ -38434,6 +38506,13 @@
         "zinc"
       ],
       "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000590",
+            "WAL-CLM-DDDL-000591"
+          ]
+        },
         {
           "kind": "deficiency_sign",
           "claim_ids": [
@@ -38462,7 +38541,7 @@
           ]
         }
       ],
-      "record_claim_count": 7,
+      "record_claim_count": 9,
       "search": [
         {
           "facet": "mechanism",
@@ -38492,12 +38571,12 @@
       "related": [
         "calcium",
         "omega-3",
+        "vitamin-b6",
         "muscle_cramps",
         "sciatica",
-        "vitamin-b6",
+        "vitamin-a",
         "bells_palsy",
-        "bone_spurs",
-        "calcium_deposits"
+        "bone_spurs"
       ]
     },
     "poison_ivy": {
@@ -38879,7 +38958,7 @@
     "psoriasis": {
       "type": "condition",
       "name": "Psoriasis",
-      "claim_count": 9,
+      "claim_count": 14,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -38899,7 +38978,12 @@
         "WAL-CLM-DDDL-000482",
         "WAL-CLM-DDDL-000559",
         "WAL-CLM-DDDL-000567",
-        "WAL-CLM-LETS-000409"
+        "WAL-CLM-DDDL-000586",
+        "WAL-CLM-LETS-000409",
+        "WAL-CLM-DDDL-000582",
+        "WAL-CLM-DDDL-000583",
+        "WAL-CLM-DDDL-000584",
+        "WAL-CLM-DDDL-000585"
       ],
       "restore": [
         "copper",
@@ -38914,6 +38998,14 @@
       ],
       "record": [
         {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000582",
+            "WAL-CLM-DDDL-000583",
+            "WAL-CLM-DDDL-000584"
+          ]
+        },
+        {
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000059"
@@ -38923,7 +39015,8 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000482",
-            "WAL-CLM-DDDL-000559"
+            "WAL-CLM-DDDL-000559",
+            "WAL-CLM-DDDL-000586"
           ]
         },
         {
@@ -38933,7 +39026,7 @@
           ]
         }
       ],
-      "record_claim_count": 4,
+      "record_claim_count": 8,
       "search": [
         {
           "facet": "mechanism",
@@ -38945,6 +39038,7 @@
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000387",
+            "WAL-CLM-DDDL-000585",
             "WAL-CLM-LETS-000409"
           ]
         },
@@ -38974,12 +39068,12 @@
       "related": [
         "eczema",
         "atopic_dermatitis",
+        "omega-3",
+        "vitamin-a",
+        "vitamin-b9",
         "zinc",
         "copper",
-        "omega-3",
-        "selenium",
-        "vitamin-a",
-        "vitamin-b9"
+        "omega-6"
       ]
     },
     "psychosis": {
@@ -39363,7 +39457,7 @@
     "raynauds_disease": {
       "type": "condition",
       "name": "Raynauds Disease",
-      "claim_count": 3,
+      "claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -39379,7 +39473,8 @@
         "cold hands and feet"
       ],
       "protocol_claim_ids": [
-        "WAL-CLM-LETS-000415"
+        "WAL-CLM-LETS-000415",
+        "WAL-CLM-DDDL-000598"
       ],
       "restore": [
         "calcium",
@@ -39388,8 +39483,15 @@
         "tryptophan",
         "vitamin-e"
       ],
-      "record": [],
-      "record_claim_count": 0,
+      "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000598"
+          ]
+        }
+      ],
+      "record_claim_count": 1,
       "search": [
         {
           "facet": "stance",
@@ -39412,10 +39514,10 @@
       ],
       "related_conditions": [],
       "related": [
+        "tryptophan",
         "calcium",
         "magnesium",
         "omega-3",
-        "tryptophan",
         "vitamin-e"
       ]
     },
@@ -40793,7 +40895,7 @@
     "shingles": {
       "type": "condition",
       "name": "Shingles",
-      "claim_count": 9,
+      "claim_count": 10,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor",
@@ -40810,7 +40912,8 @@
         "WAL-CLM-DDDL-000329",
         "WAL-CLM-LETS-000215",
         "WAL-CLM-LETS-000300",
-        "WAL-CLM-LETS-000432"
+        "WAL-CLM-LETS-000432",
+        "WAL-CLM-DDDL-000602"
       ],
       "restore": [
         "vitamin-b12",
@@ -40819,6 +40922,12 @@
         "zinc"
       ],
       "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000602"
+          ]
+        },
         {
           "kind": "protocol",
           "claim_ids": [
@@ -40840,7 +40949,7 @@
           ]
         }
       ],
-      "record_claim_count": 5,
+      "record_claim_count": 6,
       "search": [
         {
           "facet": "protocol",
@@ -40864,11 +40973,11 @@
       ],
       "related": [
         "chicken_pox",
+        "vitamin-b12",
         "vitamin-c",
         "vitamin-e",
         "cystitis",
         "tonsillitis",
-        "vitamin-b12",
         "zinc"
       ]
     },
@@ -43097,7 +43206,7 @@
     "uterine_fibroids": {
       "type": "condition",
       "name": "Uterine Fibroids",
-      "claim_count": 7,
+      "claim_count": 10,
       "books": [
         "dddl-3e-2011",
         "epigenetics"
@@ -43110,7 +43219,10 @@
       ],
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000408",
-        "WAL-CLM-DDDL-000481"
+        "WAL-CLM-DDDL-000481",
+        "WAL-CLM-DDDL-000599",
+        "WAL-CLM-DDDL-000600",
+        "WAL-CLM-DDDL-000601"
       ],
       "restore": [
         "magnesium",
@@ -43120,13 +43232,21 @@
       ],
       "record": [
         {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000599",
+            "WAL-CLM-DDDL-000600",
+            "WAL-CLM-DDDL-000601"
+          ]
+        },
+        {
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000032"
           ]
         }
       ],
-      "record_claim_count": 1,
+      "record_claim_count": 4,
       "search": [
         {
           "facet": "mechanism",

@@ -2445,8 +2445,11 @@
   },
   "dietary-fiber": {
     "display_name": "Dietary Fiber",
-    "claim_count": 8,
+    "claim_count": 9,
     "claims_by_kind": {
+      "dose": [
+        "WAL-CLM-DDDL-000589"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000178",
         "WAL-CLM-LETS-000231",
@@ -2469,6 +2472,7 @@
       "weight_loss"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -4525,8 +4529,12 @@
   },
   "lecithin": {
     "display_name": "Lecithin",
-    "claim_count": 7,
+    "claim_count": 9,
     "claims_by_kind": {
+      "dose": [
+        "WAL-CLM-DDDL-000585",
+        "WAL-CLM-DDDL-000595"
+      ],
       "protocol": [
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000220",
@@ -4547,6 +4555,7 @@
       "psoriasis"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },

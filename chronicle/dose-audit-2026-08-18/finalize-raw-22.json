@@ -12,8 +12,14 @@
    "symptoms": [],
    "claim_text": "Wallach uses high-dose folic acid at 15-25 mg per day as part of his psoriasis protocol.",
    "verbatim": "Treatment of psoriasis should include avoidance of offending\nfood allergens, rotation diets, folic acid at 15-25 mg per day, vitamin A at\n300,000 IU per day as beta-carotene",
-   "dose": null,
-   "about": "vitamin-b9",
+   "dose": {
+    "amount": "15-25",
+    "unit": "mg",
+    "period": "daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "psoriasis"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -32,8 +38,14 @@
    "symptoms": [],
    "claim_text": "Wallach recommends vitamin A as beta-carotene at 300,000 IU per day as part of his psoriasis protocol.",
    "verbatim": "Treatment of psoriasis should include avoidance of offending\nfood allergens, rotation diets, folic acid at 15-25 mg per day, vitamin A at\n300,000 IU per day as beta-carotene, lecithin at 2,500 mg t.i.d. with meals,",
-   "dose": null,
-   "about": "vitamin-a",
+   "dose": {
+    "amount": "300,000",
+    "unit": "IU",
+    "period": "daily",
+    "form": "beta-carotene",
+    "duration": null,
+    "for_condition": "psoriasis"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -52,8 +64,14 @@
    "symptoms": [],
    "claim_text": "Wallach includes vitamin E at 800-1,200 IU per day in his psoriasis protocol.",
    "verbatim": "Treatment of psoriasis should include avoidance of offending\nfood allergens, rotation diets, folic acid at 15-25 mg per day, vitamin A at\n300,000 IU per day as beta-carotene, lecithin at 2,500 mg t.i.d. with meals,\nEFA at 5 grams b.i.d., vitamin E at 800-1,200 IU per day",
-   "dose": null,
-   "about": "vitamin-e",
+   "dose": {
+    "amount": "800-1,200",
+    "unit": "IU",
+    "period": "daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "psoriasis"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -72,8 +90,14 @@
    "symptoms": [],
    "claim_text": "Wallach recommends lecithin at 2,500 mg three times daily with meals for psoriasis.",
    "verbatim": "Treatment of psoriasis should include avoidance of offending\nfood allergens, rotation diets, folic acid at 15-25 mg per day, vitamin A at\n300,000 IU per day as beta-carotene, lecithin at 2,500 mg t.i.d. with meals,",
-   "dose": null,
-   "about": "lecithin",
+   "dose": {
+    "amount": "2,500",
+    "unit": "mg",
+    "period": "three times daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "psoriasis"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -81,7 +105,7 @@
    "confidence": "high"
   },
   {
-   "kind": "dose",
+   "kind": "protocol",
    "essentials": [
     "omega-3",
     "omega-6"
@@ -94,7 +118,6 @@
    "claim_text": "Wallach recommends essential fatty acids (EFA) at 5 grams twice daily as part of his psoriasis protocol.",
    "verbatim": "Treatment of psoriasis should include avoidance of offending\nfood allergens, rotation diets, folic acid at 15-25 mg per day, vitamin A at\n300,000 IU per day as beta-carotene, lecithin at 2,500 mg t.i.d. with meals,\nEFA at 5 grams b.i.d.",
    "dose": null,
-   "about": "omega-3",
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -113,8 +136,14 @@
    "symptoms": [],
    "claim_text": "Wallach recommends folic acid at 5-25 mg a day as part of treating irritable bowel syndrome.",
    "verbatim": "Treatment of irritable bowel syndrome should include high fiber diets, 4-6\ncups of fruit and vegetables per day, elimination of fried food, margarine,\ncaffeine, sugar, and offending foods based on the pulse test (i.e. wheat,\nmilk, soy), betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before\nmeals, folic acid at 5-25 mg/day, gluten free diet, and eight to ten glasses of\nwater each day.",
-   "dose": null,
-   "about": "vitamin-b9",
+   "dose": {
+    "amount": "5-25",
+    "unit": "mg",
+    "period": "daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "irritable bowel syndrome"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -133,8 +162,14 @@
    "symptoms": [],
    "claim_text": "In Wallach's insomnia protocol, l-tryptophan is dosed at 1,000 mg three times a day.",
    "verbatim": "Treatment for insomnia includes avoidance of caffeine and offending food allergens, calcium\n(especially plant derived colloidal calcium), chromium and vanadium at 25-200 mcg t.i.d.,\nacupuncture, homeopathy, dl-phenylalanine at 250 mg t.i.d., l-tryptophan at 1,000 mg t.i.d., inositol\nat 500 mg/day, niacinamide at 1,000 mg at bedtime,",
-   "dose": null,
-   "about": "tryptophan",
+   "dose": {
+    "amount": "1,000",
+    "unit": "mg",
+    "period": "three times daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "insomnia"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -154,7 +189,6 @@
    "claim_text": "Wallach's constipation treatment includes fiber/protein at one tablespoon in eight ounces of juice twice a day, alongside eight to ten glasses of water daily.",
    "verbatim": "Treatment of constipation includes eight to ten glasses of water per day, fiber/protein at 1 tbsp. in 8\noz. of juice b.i.d.",
    "dose": null,
-   "about": "dietary-fiber",
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -173,8 +207,14 @@
    "symptoms": [],
    "claim_text": "For PMS, Wallach's protocol calls for 100 mg of vitamin B6 (pyridoxine), taken alongside essential fatty acids, vitamin A, vitamin E, calcium and herbs.",
    "verbatim": "Treatment of PMS includes 100 mg B6 q 4 d, EFA at 5 grams t.i.d., vitamin\nA at 300,000 IU per day as beta carotene during the last 14 days of the\ncycle, vitamin E at 800-1,200 IU/day, calcium (especially plant derived\ncolloidal sources), and herbs including mistletoe (Viscum album), black\ncohosh (Cimicifuga racemosa), and blue cohosh (Caulophyllum\nthalictroides).",
-   "dose": null,
-   "about": "vitamin-b6",
+   "dose": {
+    "amount": "100",
+    "unit": "mg",
+    "period": null,
+    "form": null,
+    "duration": null,
+    "for_condition": "PMS"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -193,8 +233,14 @@
    "symptoms": [],
    "claim_text": "Wallach recommends vitamin A at 300,000 IU per day as beta carotene during the last 14 days of the cycle for PMS.",
    "verbatim": "Treatment of PMS includes 100 mg B6 q 4 d, EFA at 5 grams t.i.d., vitamin\nA at 300,000 IU per day as beta carotene during the last 14 days of the\ncycle, vitamin E at 800-1,200 IU/day, calcium (especially plant derived\ncolloidal sources), and herbs including mistletoe (Viscum album), black\ncohosh (Cimicifuga racemosa), and blue cohosh (Caulophyllum\nthalictroides).",
-   "dose": null,
-   "about": "vitamin-a",
+   "dose": {
+    "amount": "300,000",
+    "unit": "IU",
+    "period": "daily",
+    "form": "beta-carotene",
+    "duration": "last 14 days of the cycle",
+    "for_condition": "PMS"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -213,8 +259,14 @@
    "symptoms": [],
    "claim_text": "Wallach's cataract protocol includes zinc at 25 mg three times a day (t.i.d.).",
    "verbatim": "Treatment of cataracts includes avoiding fried foods and margarine, the\nbase line vitamin/mineral supplement plus vitamin E at 2,000 IU/day,\nvitamin C to bowel tolerance, B1, B2, B3, B5, and B6 at 50 mg b.i.d.,\ninositol at 150 mg/day, selenium at 250 mcg/day, zinc at 25 mg\nt.i.d., bioflavonoids at 300 mg, glycine at 200 mg, l-glutamine at 200 mg,",
-   "dose": null,
-   "about": "zinc",
+   "dose": {
+    "amount": "25",
+    "unit": "mg",
+    "period": "three times daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "cataracts"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -233,8 +285,14 @@
    "symptoms": [],
    "claim_text": "For cataracts Wallach recommends selenium at 250 mcg per day, the antioxidant mineral he ties most directly to the clouding lens.",
    "verbatim": "Treatment of cataracts includes avoiding fried foods and margarine, the\nbase line vitamin/mineral supplement plus vitamin E at 2,000 IU/day,\nvitamin C to bowel tolerance, B1, B2, B3, B5, and B6 at 50 mg b.i.d.,\ninositol at 150 mg/day, selenium at 250 mcg/day, zinc at 25 mg",
-   "dose": null,
-   "about": "selenium",
+   "dose": {
+    "amount": "250",
+    "unit": "mcg",
+    "period": "daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "cataracts"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -253,8 +311,14 @@
    "symptoms": [],
    "claim_text": "Wallach's cataract protocol includes bioflavonoids at 300 mg.",
    "verbatim": "Treatment of cataracts includes avoiding fried foods and margarine, the\nbase line vitamin/mineral supplement plus vitamin E at 2,000 IU/day,\nvitamin C to bowel tolerance, B1, B2, B3, B5, and B6 at 50 mg b.i.d.,\ninositol at 150 mg/day, selenium at 250 mcg/day, zinc at 25 mg\nt.i.d., bioflavonoids at 300 mg, glycine at 200 mg, l-glutamine at 200 mg,",
-   "dose": null,
-   "about": "flavonoids",
+   "dose": {
+    "amount": "300",
+    "unit": "mg",
+    "period": null,
+    "form": null,
+    "duration": null,
+    "for_condition": "cataracts"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -273,8 +337,14 @@
    "symptoms": [],
    "claim_text": "For gallbladder disease and gallstones, Wallach recommends lecithin at 2,500 mg three times a day.",
    "verbatim": "Treatment of gallbladder disease and gallstones includes the use of high\nfiber diets (i.e. make sure you are having 2-3 bowel movements per day),\nlecithin at 2,500 mg t.i.d., EFA at 5 gm t.i.d., vitamin E at 800-1,200 IU per\nday, vitamin C to bowel tolerance, selenium at 200 mcg t.i.d., and taurine at\n500 mg t.i.d.",
-   "dose": null,
-   "about": "lecithin",
+   "dose": {
+    "amount": "2,500",
+    "unit": "mg",
+    "period": "three times daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "gallbladder disease and gallstones"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -293,8 +363,14 @@
    "symptoms": [],
    "claim_text": "Wallach includes vitamin E at 800 to 1,200 IU per day in his treatment for gallbladder disease and gallstones.",
    "verbatim": "Treatment of gallbladder disease and gallstones includes the use of high\nfiber diets (i.e. make sure you are having 2-3 bowel movements per day),\nlecithin at 2,500 mg t.i.d., EFA at 5 gm t.i.d., vitamin E at 800-1,200 IU per\nday, vitamin C to bowel tolerance, selenium at 200 mcg t.i.d., and taurine at\n500 mg t.i.d.",
-   "dose": null,
-   "about": "vitamin-e",
+   "dose": {
+    "amount": "800-1,200",
+    "unit": "IU",
+    "period": "daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "gallbladder disease and gallstones"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -313,8 +389,14 @@
    "symptoms": [],
    "claim_text": "Wallach includes selenium at 200 mcg three times a day in his treatment for gallbladder disease and gallstones.",
    "verbatim": "Treatment of gallbladder disease and gallstones includes the use of high\nfiber diets (i.e. make sure you are having 2-3 bowel movements per day),\nlecithin at 2,500 mg t.i.d., EFA at 5 gm t.i.d., vitamin E at 800-1,200 IU per\nday, vitamin C to bowel tolerance, selenium at 200 mcg t.i.d., and taurine at\n500 mg t.i.d.",
-   "dose": null,
-   "about": "selenium",
+   "dose": {
+    "amount": "200",
+    "unit": "mcg",
+    "period": "three times daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "gallbladder disease and gallstones"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -333,8 +415,14 @@
    "symptoms": [],
    "claim_text": "Wallach recommends L-tryptophan at 500 mg three times a day as part of his protocol for Raynaud's disease.",
    "verbatim": "Treatment of Raynaud’s disease\nshould include calcium and magnesium at 2,000 mg per day and 1,000 mg\nper day respectively. Avoid offending food allergens, avoid caffeine (i.e.\ncoffee, tea, soft drinks, chocolate, etc.), vitamin E at 800-1,200 IU per day,\nessential fatty acids at 5 grams t.i.d., l-tryptophan at 500 mg t.i.d.,\nacupuncture, chiropractic, and herbs to increase circulation such as cayenne\npepper (Capsicum minimum).",
-   "dose": null,
-   "about": "tryptophan",
+   "dose": {
+    "amount": "500",
+    "unit": "mg",
+    "period": "three times daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "Raynaud's disease"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -353,8 +441,14 @@
    "symptoms": [],
    "claim_text": "For uterine fibroids, Wallach says to crank magnesium up to 1,000 mg per day.",
    "verbatim": "Treatment of uterine fibroids should include avoidance of fried foods,\nmargarine, and caffeine, as well as supplementation with all 90\nessential nutrients. Crank up the magnesium level\nto 1,000 mg per day, vitamin E level to 2,000 i.u., and the selenium level to\n500 mcg per day.",
-   "dose": null,
-   "about": "magnesium",
+   "dose": {
+    "amount": "1,000",
+    "unit": "mg",
+    "period": "daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "uterine fibroids"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -374,7 +468,6 @@
    "claim_text": "Wallach recommends raising vitamin E to 2,000 IU per day as part of shrinking uterine fibroids.",
    "verbatim": "Treatment of uterine fibroids should include avoidance of fried foods,\nmargarine, and caffeine, as well as supplementation with all 90\nessential nutrients. Crank up the magnesium level\nto 1,000 mg per day, vitamin E level to 2,000 i.u., and the selenium level to\n500 mcg per day.",
    "dose": null,
-   "about": "vitamin-e",
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -393,8 +486,14 @@
    "symptoms": [],
    "claim_text": "Wallach recommends raising selenium to 500 mcg per day to help shrink uterine fibroids.",
    "verbatim": "Treatment of uterine fibroids should include avoidance of fried foods,\nmargarine, and caffeine, as well as supplementation with all 90\nessential nutrients. Crank up the magnesium level\nto 1,000 mg per day, vitamin E level to 2,000 i.u., and the selenium level to\n500 mcg per day.",
-   "dose": null,
-   "about": "selenium",
+   "dose": {
+    "amount": "500",
+    "unit": "mcg",
+    "period": "daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "uterine fibroids"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -413,8 +512,14 @@
    "symptoms": [],
    "claim_text": "Wallach includes vitamin B12 at 1,000 mcg per day in his treatment of choice for shingles.",
    "verbatim": "Treatment of choice for shingles is Isoprinosin at 500-1,500 mg/day,\nRibavirin at 250-500 mg/day, vitamin B12 at 1,000 mcg/day",
-   "dose": null,
-   "about": "vitamin-b12",
+   "dose": {
+    "amount": "1,000",
+    "unit": "mcg",
+    "period": "daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "shingles"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"
@@ -433,8 +538,14 @@
    "symptoms": [],
    "claim_text": "Wallach's kidney-stone protocol includes vitamin B6 at 50 mg three times a day.",
    "verbatim": "Treatment of kidney disease and kidney stones should include\nsupplementation of calcium and magnesium at 2,000 mg and 1,000 mg per\nday, reduction of your phosphorus intake, adequate vitamin A nutriture at\n25,000-300,000 IU, vitamin A per day as beta-carotene, B6 at 50 mg t.i.d.,",
-   "dose": null,
-   "about": "vitamin-b6",
+   "dose": {
+    "amount": "50",
+    "unit": "mg",
+    "period": "three times daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "kidney stones"
+   },
    "tags": [
     "dose-audit-2026-08-18",
     "recovered-from-ruling-dashboard"

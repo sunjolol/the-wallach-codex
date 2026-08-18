@@ -5041,6 +5041,12 @@ _DUPLICATE_KEEP_BOTH = {
         "endometriosis/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Which organs can endometriosis affect?'; B asks 'What causes endometriosis?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
     frozenset({"WAL-CLM-IMMORT-000135", "WAL-CLM-IMMORT-000389"}):
         "gallium/uses: one Wallach passage that answers two different reader questions -- A asks 'Does gallium help protect against brain cancer?'; B asks \"Can taking gallium during pregnancy lower a child's risk of brain cancer?\". Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000585", "WAL-CLM-DDDL-000387"}):
+        "psoriasis/protocol: one Wallach psoriasis-protocol span answering two different reader questions -- A (dose facet) asks 'Does lecithin help psoriasis?'; B asks 'Which minerals help psoriasis?'. The lecithin facet routes on the condition because 'lecithin' is not a registered search subject. Ruled keep-both (different questions on a shared span), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000589", "WAL-CLM-DDDL-000497"}):
+        "constipation/protocol: one Wallach constipation-protocol span answering two different reader questions -- A (dose facet) asks 'How much fiber should you take for constipation?'; B asks 'What are natural herbal laxatives for constipation?'. The fiber facet routes on the condition because 'dietary-fiber' is not a registered search subject. Ruled keep-both (different questions on a shared span), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-DDDL-000595", "WAL-CLM-DDDL-000522"}):
+        "gallstones/protocol: one Wallach gallbladder-protocol span answering two different reader questions -- A (dose facet) asks 'Does lecithin help with gallstones?'; B asks 'Which herbs are good for the gallbladder?'. The lecithin facet routes on the condition because 'lecithin' is not a registered search subject. Ruled keep-both (different questions on a shared span), Luneth-approved 2026-08-18.",
 }
 
 
