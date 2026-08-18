@@ -19656,6 +19656,111 @@
    "extracted_at": "2026-07-28T18:14:11+00:00",
    "reviewed_at": null,
    "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-LETS-000522",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "osteoporosis",
+    "menopause"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says osteoporosis is a common result of menopause that is not properly managed.",
+   "verbatim": "Osteoporosis is a common\nresult of improperly managed menopause.",
+   "locator": {
+    "book": "lets-play-doctor",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 236407
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2",
+    "raw-ocr",
+    "ocr-flagged"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:55+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-LETS-000523",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "allergies",
+    "food_allergy"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says cow's milk and wheat are the two foods most likely to be hidden allergens, uncovered with a simple pulse test.",
+   "verbatim": "Bruxism can be the result of food allergies (use\nthe pulse test to find out - milk and wheat tend\nto be the offenders)",
+   "locator": {
+    "book": "lets-play-doctor",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 201505
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2",
+    "raw-ocr"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:55+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-LETS-000524",
+   "kind": "protocol",
+   "essentials": [
+    "oxygen"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "asthma"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach suggests keeping a small home oxygen tank (about a 30-minute supply) on hand, saying it can save a life during emergencies such as a severe asthma attack, drowning, electric shock, or heart attack.",
+   "verbatim": "Oxygen in the form of a 30 minute\nsupply (home tank) can save your, or another\nfamily member's or neighbor's life in case of an\nelectric shock (stop breathing), drowning,\nasthma or heart attack.",
+   "locator": {
+    "book": "lets-play-doctor",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 138039
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2",
+    "raw-ocr",
+    "ocr-flagged"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:55+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
   }
  ]
 }

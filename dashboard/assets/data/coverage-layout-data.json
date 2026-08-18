@@ -793,6 +793,7 @@
         "omega-3",
         "potassium",
         "selenium",
+        "sodium",
         "vitamin-b5",
         "vitamin-d",
         "vitamin-e"
@@ -920,6 +921,7 @@
         "magnesium",
         "omega-3",
         "sodium",
+        "vanadium",
         "vitamin-b3",
         "vitamin-b6",
         "zinc"
@@ -949,9 +951,11 @@
         "huntingtons_disease"
       ],
       "members": [
+        "boron",
         "calcium",
         "choline",
         "chromium",
+        "copper",
         "leucine",
         "magnesium",
         "manganese",
@@ -959,7 +963,9 @@
         "omega-3",
         "omega-6",
         "phenylalanine",
+        "phosphorus",
         "selenium",
+        "sulfur",
         "taurine",
         "tyrosine",
         "vitamin-b1",
@@ -1004,6 +1010,7 @@
         "calcium",
         "chromium",
         "copper",
+        "flavonoids",
         "inositol",
         "lysine",
         "magnesium",
@@ -1046,6 +1053,7 @@
         "chromium",
         "copper",
         "flavonoids",
+        "iodine",
         "lysine",
         "magnesium",
         "omega-3",
@@ -1170,6 +1178,9 @@
         "vitamin-b9",
         "vitamin-c",
         "zinc"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {
@@ -1318,6 +1329,7 @@
         "cough"
       ],
       "members": [
+        "chromium",
         "magnesium",
         "manganese",
         "omega-3",
@@ -1419,6 +1431,7 @@
         "selenium",
         "taurine",
         "tyrosine",
+        "vanadium",
         "vitamin-a",
         "vitamin-b1",
         "vitamin-b2",
@@ -1467,10 +1480,12 @@
         "vertigo"
       ],
       "members": [
+        "boron",
         "calcium",
         "magnesium",
         "manganese",
         "omega-3",
+        "omega-6",
         "tin",
         "vitamin-a",
         "zinc"
@@ -1577,6 +1592,7 @@
         "iron",
         "magnesium",
         "omega-3",
+        "omega-6",
         "selenium",
         "vitamin-a",
         "vitamin-b3",
@@ -1604,6 +1620,7 @@
         "magnesium",
         "omega-3",
         "omega-6",
+        "phosphorus",
         "selenium",
         "sodium",
         "vitamin-a",

@@ -9995,6 +9995,3629 @@
    "extracted_at": "2026-07-29T03:51:59+00:00",
    "reviewed_at": null,
    "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000320",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-c",
+    "vitamin-b3",
+    "calcium",
+    "magnesium",
+    "chromium",
+    "vanadium",
+    "selenium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "high_cholesterol"
+   ],
+   "symptoms": [],
+   "claim_text": "For elevated cholesterol Wallach recommends exercise, oat bran or soy protein fiber in juice, vitamin C to bowel tolerance, essential fatty acids 5 gm t.i.d., time-release niacin 450 mg b.i.d., calcium and magnesium 2,000/1,000 mg, chromium and vanadium 250 mcg, selenium 300 mcg, evening primrose, and a liver flush.",
+   "verbatim": "Treatment for elevated cholesterol includes regular exercise, base line\nsupplement program, one to two heaping tablespoons of oat bran or protein\nfiber (soy powder) in an eight oz. glass of juice, vitamin C to bowel\ntolerance, essential fatty acids at 5 gm t.i.d., niacin at 450 mg b.i.d. as time\nrelease tablets, calcium and magnesium at 2,000 mg and 1,000 mg per day,\nchromium at 250 mcg., vanadium 250 mcg, selenium at 300 mcg., and\nherbs to include evening primrose (Oenothera biennis). A good liver flush\ncan be very useful.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 689704
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000321",
+   "kind": "protocol",
+   "essentials": [
+    "magnesium",
+    "manganese"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "congested_lungs"
+   ],
+   "symptoms": [],
+   "claim_text": "For congested lungs with bronchitis Wallach recommends homeopathy, acupuncture, steam-sauna hydrotherapy, massage, pennyroyal tea, and treatment with magnesium, manganese and essential fatty acids at 9 grams per day, avoiding dairy, fried foods, margarine and sugar.",
+   "verbatim": "CONGESTED LUNGS (with bronchitis) can be treated with homeopathy,\nacupuncture, hydrotherapy to include a steam sauna, massage, and herbs\nincluding penny royal (Mentha pulegium) as concentrated tea. Treat with\nmagnesium, manganese, and the essential fatty acids at 9 grams per day.\nRemember the baseline nutritional program. Avoid dairy products, fried\nfoods, margarine, and sugar natural and processed.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 700388
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000322",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-c"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "gallstones"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach includes vitamin C, taken to bowel tolerance, in his treatment for gallbladder disease and gallstones.",
+   "verbatim": "Treatment of gallbladder disease and gallstones includes the use of high\nfiber diets (i.e. make sure you are having 2-3 bowel movements per day),\nlecithin at 2,500 mg t.i.d., EFA at 5 gm t.i.d., vitamin E at 800-1,200 IU per\nday, vitamin C to bowel tolerance, selenium at 200 mcg t.i.d., and taurine at\n500 mg t.i.d.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 774957
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000323",
+   "kind": "protocol",
+   "essentials": [
+    "calcium",
+    "magnesium",
+    "selenium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "growing_pains"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach calls growing pains red flags for nutritional deficiency and treats them with calcium and magnesium at 2,000 mg and 1,000 mg per day, selenium at 50-200 mcg b.i.d., betaine HCl with pancreatic enzymes (75-200 mg t.i.d.), and his Pig Arthritis Formula at 1 tsp per 20 pounds of body weight.",
+   "verbatim": "Treatment of growing pains includes calcium and magnesium at 2,000 mg\nand 1,000 mg per day, selenium at 50-200 mcg b.i.d., and betaine HCl and\npancreatic enzymes at 75-200 mg t.i.d. before meals, and Dr. Wallach’s Pig\nArthritis Formula at one tsp per 20 pounds body weight.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 782412
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000324",
+   "kind": "prevalence",
+   "essentials": [
+    "zinc"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "benign_prostatic_hyperplasia"
+   ],
+   "symptoms": [],
+   "claim_text": "Benign prostatic hyperplasia (an enlarged prostate) is the most common infirmity of aging in men — Wallach says more than 500,000 American men, 85 percent of them over age 50, are affected each year, usually the result of a zinc deficiency.",
+   "verbatim": "BENIGN PROSTATIC HYPERPLASIA is perhaps the most common\ninfirmity of aging in the human male. More than 500,000 American males\n(85 percent over the age of 50) are afflicted each year. As the prostate\nenlarges with age (usually the result of a zinc deficiency), the tight outer",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 641383
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000325",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-c",
+    "vitamin-a",
+    "zinc",
+    "selenium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "tonsillitis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats tonsillitis with hydrogen peroxide mouthwash and gargle, vitamin C to bowel tolerance, vitamin A at 25,000-300,000 IU per day as beta-carotene, zinc at 15 mg three times daily, selenium at 25-1,000 mcg per day, and supporting herbs including echinacea and marshmallow.",
+   "verbatim": "Treatment of tonsillitis should include\nhydrogen peroxide mouthwash and gargle, vitamin C to bowel tolerance,\nvitamin A at 25,000-300,000 IU per day as beta-carotene, zinc at 15 mg\nt.i.d., selenium at 25-1,000 mcg per day, herbs to include echynacia\n(Echynacia angustifolia), green hellebore (Veratrum viride), marshmallow\n(Althaea officinalis), flaxseed (Linum usitatissimum), German chamomile\n(Matricaria chamomilla), marjoram (Origanum vulgare), and garden sage\n(Salvia officinalis).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 942475
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000326",
+   "kind": "mechanism",
+   "essentials": [
+    "chromium",
+    "vanadium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "high_triglycerides"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says elevated triglycerides can signal diabetes, a liver disease, and deficiencies of essential fatty acids, chromium, and vanadium, and are a high risk factor for cardiovascular disease and stroke.",
+   "verbatim": "TRIGLYCERIDES (Elevated) can be a sign of diabetes, a liver disease,\nand deficiencies of EFA, chromium, and vanadium. Do a six-hour GTT and\na full blood chemistry. Elevated triglycerides are a high risk factor for\ncardiovascular disease and stroke.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 946154
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000327",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "diverticulitis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach explains that diverticulitis pain comes from tiny concretions that build up in the colon's small pouches on a long-term low-fiber diet until they can no longer pass, irritating the colon wall into painful spasm.",
+   "verbatim": "DIVERTICULITIS is an inflammation of the small pea sized sacs in the\nouterwall of the colon. This inflammation is the result of a low fiber diet\nover a long period of time which allows tiny concretions to build up to a\nsize that does not allow them to exit into the colon. These concretions\nirritate the colon wall to the point of causing painful spasm.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 732668
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000328",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "shingles"
+   ],
+   "symptoms": [],
+   "claim_text": "Shingles (herpes zoster) is a chronic viral infection caused by the chicken pox virus, and its main symptom is a very painful skin lesion.",
+   "verbatim": "SHINGLES (Herpes zoster) is a chronic viral infection with the chicken\npox virus. The symptoms include a very painful skin lesion (“shingles”).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 928611
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000329",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-c"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "shingles"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach's treatment of choice for shingles includes vitamin C to bowel tolerance.",
+   "verbatim": "Treatment of choice for shingles is Isoprinosin at 500-1,500 mg/day,\nRibavirin at 250-500 mg/day, vitamin B12 at 1,000 mcg/day, vitamin C to\nbowel tolerance",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 794276
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000330",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "chronic_fatigue",
+    "adrenal_exhaustion"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says stress-driven adrenal exhaustion is marked by fatigue and an inability to cope, and you can check it at home by lying down five minutes then standing up suddenly -- the pulse should rise at least ten points, and if it does not, your adrenals need support.",
+   "verbatim": "ADRENAL GLAND EXHAUSTION (stress) characterized by fatigue and\ninability to cope with diseases or every day stresses. Adrenal exhaustion\ndirectly affects your ability to resist disease or heal a current disease. An\nadrenal function test can be performed in the following manner. Take base\nblood pressure in a lying down position after five minutes then stand up\nsuddenly. Pulse should increase by a minimum of ten points. If the pulse\ndoes not increase by that amount, your adrenals need help.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 610465
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000331",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-c",
+    "vitamin-e",
+    "selenium",
+    "choline"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "cerebrovascular_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "For cerebrovascular disease (senile dementia) Wallach recommends EDTA chelation and IV hydrogen peroxide, vitamin C to bowel tolerance, vitamin E 800-1,200 IU/day, selenium 1,000 mcg/day, choline 9 gm/day and lecithin, plus memory drugs such as centrophenoxine, hydergine, piracetam and vasopressin.",
+   "verbatim": "Treatment of cerebrovascular disease includes EDTA chelation therapy to\nhelp remove plaque, hydrogen peroxide IV to increase oxygen, vitamin C to\nbowel tolerance, avoid alcohol, vitamin E at 800-1,200 IU/day, essential\nfatty acids at 5 mg t.i.d., selenium at 1,000 mcg/day, centrophenoxine at\n1,000-2,000 mg/day, hydergine at 4.5-9.0 mg/day, vasopressin (DIAPID) at\n12-16 units/day, Lucidril at 4.4-8.0 gm/day, piracetam at 1.6 gm t.i.d. and\ncholine at 9 gm/day concurrently, and lecithin at 4 gm b.i.d.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 684897
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000332",
+   "kind": "mechanism",
+   "essentials": [
+    "calcium",
+    "omega-3",
+    "omega-6"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "pms"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says PMS is produced by deficiencies of calcium and essential fatty acids acting together with the cyclical hormone patterns of women.",
+   "verbatim": "It is now known that deficiencies of\ncalcium and essential fatty acids in concert with the cyclical hormone\npatterns of the women produce the classical PMS picture of fragile\nemotions, irrational behavior, mania, depression, and debilitating pelvic\n“cramps.”",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 903663
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000333",
+   "kind": "quote",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach warns that many vaccination programs are suspected of carrying catastrophic diseases, and that some experts even believe HIV was originally spread through vaccination programs including hepatitis, flu, and smallpox vaccines.",
+   "verbatim": "Don’t forget that many vaccination programs are suspected to be the carrier\nfor many catastrophic diseases. Some experts even believe that HIV was\noriginally spread through vaccination programs including hepatitis, flu, and\nsmallpox vaccines.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 809228
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000334",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "pms",
+    "anxiety"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach notes anxiety and panic attacks affect women twice as often as men and that concurrent PMS complicates them, with food allergy or reactive hypoglycemia as the base cause.",
+   "verbatim": "ANXIETY (panic attacks) affect women twice as frequently as men. When\none examines the total hormone biorhythm charts of women, this fact\ncannot be a surprise. The base cause can be either a food allergy reaction\n(i.e. corn, cow’s milk, etc.) or a severe reactive hypoglycemic reaction often\nreferred to as a “crash and burn” curve because the down slope on the\nglucose curve is almost vertical. Concurrent PMS can make this a very\nperplexing situation.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 625993
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000335",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "psoriasis"
+   ],
+   "symptoms": [],
+   "claim_text": "Psoriasis is a cosmetically disfiguring dermatitis marked by dry, well-demarcated silvery scaling plaques that appear mainly behind the joints (elbows and knees), on the scalp, and behind the ears.",
+   "verbatim": "PSORIASIS is well known as a cosmetically disfiguring dermatitis (i.e.\n“the heartbreak of psoriasis”). Psoriasis is characterized by dry, well-demarcated silvery, scaling plaques of all sizes that appear primarily behind\njoints (i.e. elbows and knees) and on the scalp and behind the ears.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 907562
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000336",
+   "kind": "protocol",
+   "essentials": [
+    "calcium",
+    "magnesium",
+    "vitamin-a",
+    "vitamin-b6",
+    "lysine",
+    "phosphorus"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "kidney_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats kidney disease and kidney stones with calcium and magnesium 2,000/1,000 mg per day, reduced phosphorus intake, vitamin A as beta-carotene, B6 50 mg t.i.d., lysine and glutamic acid, EDTA chelation, and diuretic herbs like dandelion and unsweetened cranberry juice.",
+   "verbatim": "Treatment of kidney disease and kidney stones should include\nsupplementation of calcium and magnesium at 2,000 mg and 1,000 mg per\nday, reduction of your phosphorus intake, adequate vitamin A nutriture at\n25,000-300,000 IU, vitamin A per day as beta-carotene, B6 at 50 mg t.i.d.,\nlysine and glutamic acid, and herbs including dandelion (Taraxacum\nofficinale), dwarf elder (Sambucus ebulus), goldenrod (Solidago virgaurea),\nJava tea (Orthosiphon stamineus), parsley (Petro Selinum crispum),\nhorsetail (Equisetum spp.), mugwort (Artemisia vulgaris), and unsweetened\ncranberry juice.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 828550
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail",
+    "ocr-flagged"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000337",
+   "kind": "protocol",
+   "essentials": [
+    "omega-3",
+    "omega-6",
+    "vitamin-a",
+    "vitamin-b6",
+    "zinc",
+    "vitamin-e"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "rosacea",
+    "acne"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach's full acne rosacea program is essential fatty acids (about 9 grams a day), betaine HCl and pancreatic enzymes, vitamin A as beta-carotene, vitamin B6, zinc, topical vitamin E oil, and brief ultraviolet light, alongside cutting fatty and sugary foods and checking food allergies.",
+   "verbatim": "ACNE (acne rosacea/acne vulgaris) is a frequent skin disease in teenagers\nand is sometimes associated with PMS and estrogen supplements during\nmenopause. Papules, pustules, superficial pus-filled cysts, and deep pus-filled canals characterize acne. Acne is primarily the result of an essential\nfatty acid deficiency with a concurrent intake of too much saturated fat and\npolyunsaturated fatty acids (fried foods and margarine). Eliminate “fast”\nfoods and other sources of fat and sugar. Check out the probability of food\nallergies (i.e., wheat, milk, soy) as a contributing factor. Betaine HCl and\npancreatic enzymes are of considerable benefit. Essential fatty acids are a\nmust and should be consumed at the rate of 3 percent of your total daily\ncalorie consumption or supplemented at the rate of 9 grams per day in\ncapsule form. A regimen of Vitamin A 300,000 units/day (as beta-carotene)\nfor five months, then reduce to 25,000 i per day B6 100 mg t.i.d., zinc 50\nmg t.i.d. for 30 days, and vitamin E oil may be applied topically to acne\nlesions is also recommended. Exposing areas affected by acne directly to\nultra violet light directly for 1-6 minutes may also prove helpful.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 609284
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000338",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "cystitis"
+   ],
+   "symptoms": [],
+   "claim_text": "For cystitis (bladder infection) Wallach recommends acidifying the urine by drinking one to two quarts of unsweetened cranberry juice per day the first day, then one quart per day as needed, plus herbs such as bearberry, birch, juniper, lovage and rupture wort.",
+   "verbatim": "Treatment of cystitis consists of acidifying the urine by consuming one to\ntwo quarts of unsweetened cranberry juice per day for the first day then\nreducing the intake to one quart per day as needed. Herbs are very useful\nand include bearberry (Arctostaphylos uvaursi), birch (Betula pendula, B.\npubescens), juniper (Juniperus communis), lovage (Levisticum officinale),\nprickly restharrow (Ononis spinosa), and rupture wort (Herniaria glabra).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 717631
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000339",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "gallstones"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says gallbladder problems are prevented by faithfully supplying all 90 essential nutrients for liver health, plus glycyrrhizin (a licorice extract) and 5 grams of essential fatty acids three times a day.",
+   "verbatim": "Prevention of gallbladder problems includes the faithful use of all\n90 essential nutrients to assure optimal liver nutrition, glycyrrhizin (an\nextract of the licorice plant, Glycyrrhiza glabra), and the base line\nnutritional supplement including 5 gm of EFA t.i.d.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 774557
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000340",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "celiac_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "For celiac disease Wallach recommends using the pulse test to identify sensitivity to wheat, cow's milk and soy, then eliminating and/or rotating the offending allergen, noting it takes 90 days to repair the injured gut.",
+   "verbatim": "Diagnosis and treatment of celiac disease includes using the pulse test for\nallergies (i.e. whole wheat is great unless your allergic to it!!!) especially\nwheat, cow’s milk, and soy products and eliminating and/or rotating the\noffending allergen. Macrobiotic diets “work” not because\nthere’s brown rice, but because of the elimination\nof wheat gluten and milk products. It takes 90 days to repair the injured gut\nwhich means there is great hope if you take the effort to see if, in fact, you\nare sensitive to wheat, cow’s milk, or soy.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 682754
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000341",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "syphilis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats syphilis at all stages with penicillin G at 2.4 million units intramuscularly, repeated 10-14 days later, noting it is a reportable disease.",
+   "verbatim": "Treatment for syphilis is specific in all stages with penicillin G at 2.4\nmillion u IM with a second treatment 10-14 days later. Like AIDS, syphilis\nis a reportable disease to the Public Health Service.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 934761
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000342",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "mumps"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats mumps symptomatically with pain relief, bed rest, a liquid diet, and herbs such as mullein.",
+   "verbatim": "Treatment of mumps is symptomatic including pain relief (i.e. codeine,\nTylenol, aspirin, etc.), bed rest, liquid diet including chicken\nrice soup, sugarless Jello, sports fluid and electrolyte replacer, juices, and\nherbs for symptomatic treatment including mullein (Verbascum thapsus).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 870082
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000343",
+   "kind": "toxicity_sign",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "vertigo",
+    "mercury_poisoning"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach ties mercury vapor from dental amalgam fillings to neurological disease, and says direct mercury poisoning shows up primarily as neurological problems including tremors and vertigo.",
+   "verbatim": "In modern times dentists have developed several\ndisease syndromes including multiple sclerosis, ALS (Lou Gehrig’s\nDisease), and Parkinson’s Disease depending on what part of the brain was\nmost severely affected by mercury toxicity. Annette Funicello contracted\nmultiple sclerosis, which is believed to be caused by vapors from dental\nmercury amalgams.\nThe manifestations of direct Hg poisoning are primarily neurological (i.e.\ntremors, vertigo, irritability, moodiness [suicidal], depression), salivation,\ninflammation of the mouth, stomatitis, and diarrhea.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 540376
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000344",
+   "kind": "mechanism",
+   "essentials": [
+    "phosphorus",
+    "calcium",
+    "magnesium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "kidney_stones"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says heavy phosphorus consumption from meat and carbonated soft drinks makes it impossible to get enough calcium and magnesium from the diet, working against kidney-stone prevention.",
+   "verbatim": "Prevention of kidney\nstones includes adequate levels of supplementary calcium and magnesium\n(impossible to get enough from your diet especially if you are a big\nconsumer of phosphorus—meat and carbonated soft drinks).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 827941
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000345",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-c",
+    "vitamin-a",
+    "zinc"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "impetigo"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats impetigo — which he sees as an early sign of immune depression from food allergies — with topical boric acid, colloidal silver and herbs (comfrey, echinacea, golden seal), vitamin C to bowel tolerance, vitamin A 25,000-300,000 IU/day as beta-carotene, and zinc 25-30 mg t.i.d.",
+   "verbatim": "Treatment of impetigo includes topical washes with boric acid, colloidal\nsilver and herbs such as comfrey (Symphytum officinale), echinacea\n(Echinacea angustifolia), and golden seal (Hydrastis canadensis), and\ntopical or systemic penicillin may be necessary in cases where impetigo\noccurs on the face to prevent scaring. Take vitamin C to bowel tolerance,\nvitamin A 25,000-300,000 IU/day as beta-carotene, zinc at 25-30 mg t.i.d.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 811218
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000346",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-a",
+    "zinc"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "keratomalacia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats keratomalacia (xerophthalmia) with vitamin A as beta-carotene, ranging from 25,000 IU/day for children up to 300,000 IU/day for adults, zinc 5-15 mg t.i.d., and increasing animal protein to 120 gm/day.",
+   "verbatim": "Treatment of keratomalacia includes vitamin A at 25,000 IU as beta\ncarotine (kids) to 300,000 I (adults) per day as beta carotene, zinc at 5 to 15\nmg ti.d. and increase the animal protein to 120 gm day (i.e. chicken, fish,\neggs, milk, lamb, pork, or beef). Don’t forget the base line nutritional\nsupplement program.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 825091
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000347",
+   "kind": "protocol",
+   "essentials": [
+    "chromium",
+    "vanadium",
+    "lithium",
+    "vitamin-b3",
+    "vitamin-b6"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "hysteria"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats hysteria (including panic attacks) by avoiding offending foods, plus EFA 5 gm t.i.d., chromium and vanadium 50-200 mcg t.i.d., lithium, betaine HCl and pancreatic enzymes, B3 450 mg t.i.d. time-release, and B6 150-300 mg t.i.d., with calming herbs.",
+   "verbatim": "Treatment of hysteria includes avoidance of offending foods that you might\nbe allergic to (i.e. sugar, dairy, caffeine, etc.), rotation diets, EFA at 5 gm\nt.i.d. with meals, chromium and vanadium at 50-200 mcg t.i.d. with meals,\nlithium, betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before\nmeals, acupuncture, homeopathy, and herbs including black hellebore\n(Helleborus niger), blue cohosh (Caulophyllum thalictroides), mistletoe (Viscum album), B3 at 450 mg t.i.d. (time release), and\nB6 at 150-300 mg t.i.d.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 806923
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000348",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "lyme_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats Lyme disease with tetracycline at 250-500 mg q.i.d. for 20 days, or IV antibiotics over 30 days for a 100 percent cure, using penicillin at 20 million units/day IV in children to avoid tooth discoloration.",
+   "verbatim": "Treatment of Lyme Disease requires the use of tetracycline at 250-500 mg\nq.i.d. for 20 days. IV antibiotics over a period of 30 days will ensure a 100\npercent cure. In children where teeth would be permanently discolored by\ntetracyclines, penicillin can be used at 20 million u/day IV in divided doses.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 848718
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000349",
+   "kind": "protocol",
+   "essentials": [
+    "calcium",
+    "magnesium",
+    "vitamin-b6",
+    "chromium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "convulsions"
+   ],
+   "symptoms": [],
+   "claim_text": "For non-fever convulsions Wallach recommends pulse testing for allergies with a five-day rotation diet, a high-fat high-cholesterol diet, calcium and magnesium 2,000/1,000 mg, B6 100 mg b.i.d., chromium 75-100 mcg t.i.d., and herbs peony, catnip and skullcap.",
+   "verbatim": "Treatment of non-temperature induced convulsions should include a pulse\ntest to determine if allergies are a factor. If it is determined that allergies are\nassociated with the convulsions, the patient may avoid the foods or\nchemicals or rotate foods on a five-day “rotation” diet. A high fat, high\ncholesterol diet is indicated. Supplements of value include calcium and\nmagnesium at 2,000 and 1,000 mg respectively, B6 at 100 mg b.i.d.,\nchromium at 75-100 mcg t.i.d., and herbs to include peony (Paeonia\nofficinalia), catnip (Nepeta cataria), and skullcap (Scutellaria lateriflora).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 705067
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000350",
+   "kind": "mechanism",
+   "essentials": [
+    "calcium",
+    "phosphorus"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "kidney_stones"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says excess urinary loss of calcium during osteoporosis produces kidney stones, bone spurs, heel spurs and calcium deposits — all from the same lost bone calcium.",
+   "verbatim": "In cases of excess urine loss of calcium (osteoporosis, excess\nphosphorous, etc.), kidney stones, bone spurs, and calcium deposits will\ndevelop. Bone and heel spurs and calcium deposits always develop at the\nsites of insertions of tendons and ligaments during a raging osteoporosis.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 504183
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000351",
+   "kind": "protocol",
+   "essentials": [
+    "manganese",
+    "choline",
+    "arsenic",
+    "vitamin-b12",
+    "vitamin-b6",
+    "calcium",
+    "magnesium",
+    "zinc"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "peripheral_neuropathy"
+   ],
+   "symptoms": [],
+   "claim_text": "For numbness and tingling in the hands, Wallach recommends treating any underlying condition plus manganese, choline, arsenic, B12 at 1,000 mcg/day, B6 at 200-300 mg t.i.d., calcium and magnesium at 2,000 and 1,000 mg/day, and zinc at 50 mg t.i.d.",
+   "verbatim": "Treatment for numbness and tingling should include aggressive diagnosis\nand treatment of any underlying condition as well as manganese, choline,\narsenic, B12 at 1000 mcg per day, B6 at 200-300 mg t.i.d., calcium and\nmagnesium at 2,000 mg and 1,000 mg per day and zinc at 50 mg t.i.d., B12\nat 1,000 mcg/day, and plant derived colloidal minerals.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 880123
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000352",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "benign_prostatic_hyperplasia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says a benign enlarged prostate feels like a uniform enlargement — hard in acute cases, 'boggy' in chronic ones — whereas tumors, benign or malignant, tend to feel irregular and nodular, and the PSA (prostate specific antigen) may be elevated.",
+   "verbatim": "Benign prostatic hypertrophy produces a uniform enlargement that may be\nhard in “acute” enlargement or “boggy” in chronic enlargement. Tumors,\neither benign or malignant, tend to be irregular and nodular. PSA (Prostate\nSpecific Antigen) may be elevated.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 642250
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000353",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "heartburn"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says you can prevent heartburn by eating small meals, avoiding fried foods, and drinking eight glasses of water a day, because stress, salt restriction, and aging lower stomach acid and let gas-forming bacteria grow.",
+   "verbatim": "HEARTBURN (dyspepsia, reflux) is one of the more common diseases in\nthe USA today. Stress, salt restricted diets, and aging cause a decrease in\nstomach acid production which allows bacteria to grow in the stomach.\nThese opportunistic bacteria generate gas and acid that results in the “belch,\nburp, and bloat” syndrome. Prevention includes eating small meals, no fried\nfoods, and drinking eight glasses of water each day to prevent constipation.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 788016
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000354",
+   "kind": "protocol",
+   "essentials": [
+    "chromium",
+    "vanadium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "cataracts"
+   ],
+   "symptoms": [],
+   "claim_text": "When diabetes or hypoglycemia is driving a cataract, Wallach adds chromium and vanadium at 250 mcg three times a day to the protocol.",
+   "verbatim": "Treatment of cataracts includes avoiding fried foods and margarine, the\nbase line vitamin/mineral supplement plus vitamin E at 2,000 IU/day,\nvitamin C to bowel tolerance, B1, B2, B3, B5, and B6 at 50 mg b.i.d.,\ninositol at 150 mg/day, selenium at 250 mcg/day, zinc at 25 mg\nt.i.d., bioflavonoids at 300 mg, glycine at 200 mg, l-glutamine at 200 mg,\nl-arginine at 300 mg/day, l-cysteine at 400 mg/day, and glutathione at 40\nmg/day. If diabetes or hypoglycemia is present, chromium and vanadium at\n250 mcg ti.d. should be added.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 680191
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000355",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "stroke"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats stroke (cerebrovascular accident) with EDTA chelation and IV hydrogen peroxide as soon as possible (5 grams t.i.d.), exercise, and the baseline nutritional program including hyperbaric and oral oxygen plus Dr. Wallach's Pig Arthritis Formula.",
+   "verbatim": "Treatment of stroke should include EDTA chelation and IV hydrogen\nperoxide as soon as possible, 5 grams t.i.d., exercise, and the base line\nnutritional supplement program to include hyperbaric oxygen and oral\noxygen and Dr. Wallach’s Pig Arthritis Formula.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 932942
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail",
+    "ocr-flagged"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000356",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "hypertension",
+    "food_allergy"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says high blood pressure can be caused by food allergies, and uses a pulse test to identify the offending foods.",
+   "verbatim": "High blood\npressure is complex and may be caused by many diseases ranging from\nsimple nervousness in the examining room, arteriosclerosis, kidney disease,\na variety of endocrine gland disorders, and food allergies. The most\ncommon reason for high blood pressure is a calcium deficiency and as a\nresult high blood pressure is usually found in people with arthritis,\nosteoporosis, kidney stones, muscle cramps, etc. Do pulse test to identify\noffending foods.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 798619
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000357",
+   "kind": "prognosis",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "peptic_ulcers"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says a peptic ulcer has a 98 percent chance of a cure from antibiotics and bismuth taken every day for four to six weeks, and adds supportive herbs such as alfalfa (his richest source of 'vitamin U'), cabbage juice, flax, German chamomile, and licorice.",
+   "verbatim": "Treatment of peptic ulcer should include alfalfa (Medicago sativa) which is\nthought to be the richest source of “vitamin U” at ten tablets t.i.d. with\nmeals, cabbage juice (Brassica oleracea), flax (Linum usitatissimum),\nGerman chamomile (Matricaria chamomilla), and licorice (Glycyrrhiza\nglabra). A 98 percent chance of a cure can be affected with antibiotics and\nbismuth every day for four to six weeks.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 898803
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000358",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "chronic_fatigue",
+    "candidiasis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says long-term antibiotic use kills the normal gut bacteria that hold Candida albicans in check, letting the yeast proliferate, move into the stomach and eventually spill into the bloodstream -- a systemic candidiasis he identifies with chronic fatigue syndrome.",
+   "verbatim": "CANDIDIASIS (chronic fatigue syndrome) is an infection caused by\nCandida albicans, a ubiquitous, normally harmless yeast (saprophyte) of\nyour skin, mouth, vagina, and intestine. Under certain circumstances of\nreduced immune status this organism becomes a parasite and therefore\npathological (disease creating) when its competitors—the normal bacteria\nof the gut—are killed by long term use of antibiotics, allowing them to\nproliferate unchecked. Hypochlorhydria, the reduced production of stomach\nacid (usually the result of salt restriction), allows the Candida albicans to\nmove into the stomach—an unusual location. Stress will cause the reduction\nof stomach acid after stress reaches the point of decompensation. Food\nallergies change the lining of the gut in a manner very similar to celiac\ndisease which causes an increased nutrient concentration in the gut—this\nhyperfertilized environment is very attractive to C. albicans. The\novergrowth of the organism eventually spills over into the blood stream\nand, thus, infests the body proper.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 671036
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000359",
+   "kind": "protocol",
+   "essentials": [
+    "iodine"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "hypothyroidism",
+    "goiter"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach's hypothyroidism treatment first removes goitrogens like nitrates and cabbage, then adds U.S. Armour thyroid at 1 to 3 grains each morning (titrated), plus kelp, an iodine supplement at 250-500 mcg a day, and the herb Fucus vesiculosis.",
+   "verbatim": "Treatment of hypothyroidism includes eliminating all goiterogenic\nsubstances such as nitrates, cabbage, etc. Supplement with U.S. Armour\nthyroid at 1 to 3 grains each morning. An excess will cause increase in heart\nrate and shaking of the extended arm. Increase dosage to OD then back off\none grain. Kelp and iodine supplement at 250-500 mcg per day and herbs to\ninclude quercus marine (Fucus vesiculosis).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 806045
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000360",
+   "kind": "prevalence",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "depression"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach claims that food allergies, hypoglycemia and PMS account for 90 percent of the depression diagnosed today, and that depression is often cyclic as in PMS.",
+   "verbatim": "Depression may be cyclic as in PMS\n(premenstrual syndrome). Food allergies, hypo glycemia, and PMS account\nfor 90 percent of the diagnosed “depression” today.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 720707
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000361",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-c",
+    "vitamin-a",
+    "zinc",
+    "germanium",
+    "selenium"
+   ],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach reframes immunotherapy as boosting rather than suppressing immunity, using avoidance of fried foods/margarine/sugar, allergen and rotation regimens, vitamin C to bowel tolerance, vitamin A 300,000 IU/day as beta-carotene, zinc 15 mg t.i.d., germanium 50 mg/day, selenium 300 mcg/day, and ginseng.",
+   "verbatim": "Treatment to provide immunotherapy includes avoiding fried foods,\nmargarines, and sugar (natural and processed),\nsublingual allergens regimen for allergies, autoimmune urine therapy,\navoidance of food allergens, rotation diets, vitamin C to bowel tolerance,\nvitamin A at 300,000 IU/day as beta-carotene, zinc at 15 mg t.i.d.,\ngermanium at 50 mg/day orally or IM, selenium at 300 mcg/day orally, IV\nor IM, acupuncture, and herbs to include ginseng (Panax ginseng).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 809854
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000362",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "shingles",
+    "chicken_pox"
+   ],
+   "symptoms": [],
+   "claim_text": "Chicken pox and shingles are the same virus: it causes an acute illness in children (chicken pox) and can return as a chronic, painful disease in adults (shingles).",
+   "verbatim": "CHICKEN POX (Varicella, Herpes zoster-shingles) is an acute viral disease\nin children and a chronic, painful disease in adults (i.e. shingles).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 687021
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000363",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-c",
+    "vitamin-a",
+    "zinc",
+    "selenium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "infection"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats infections with echinacea, golden seal and garlic, vitamin C to bowel tolerance, vitamin A 300,000 IU/day as beta-carotene, zinc 15 mg t.i.d., selenium 500-1,000 mcg/day, Isoprinosin, Ribavirin, and IV hydrogen peroxide, reserving antibiotics and antifungals for lifesaving situations.",
+   "verbatim": "Treatment of infections should include the use of echinacea (Echinacea\nangustifolia), golden seal (Hydrastis canadensis), garlic (Allium sativum),\nvitamin C to bowel tolerance, vitamin A at 300,000 IU/day as beta-carotene, zinc at 15 mg t.i.d., selenium at 500-1,000 mcg/day, Isoprinosin at\n100-300 mg/day, Ribavirin, H2O2 in an IV infusion over four hours;\nantibiotics and antifungal medications are sometimes necessary in\nlifesaving situations.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 816330
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000364",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "heartburn",
+    "hiatal_hernia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says a hiatal hernia commonly causes gas, reflux, and chest pain that mimics a heart attack, and that more than 40 percent of Americans have an undetected hiatal hernia by x-ray.",
+   "verbatim": "HIATAL HERNIA is usually a congenital birth defect (not genetic) of the\ndiaphragm. It can also be caused by crushing the chest or abdomen as in an\nauto accident. Gas, dyspepsia, reflux, and chest pain that mimics a “heart\nattack” are common symptoms. It is said that more than 40 percent of the\nUSA population has asymptomatic hiatal hernia by actual x-ray survey!",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 794513
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000365",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "gallstones"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says gallbladder attacks are caused by the gallbladder muscles cramping after a fatty meal, or a gallstone temporarily blocking the bile duct.",
+   "verbatim": "Gallbladder\n“attacks” are caused by a cramping of the muscles in the gallbladder after a\nfatty meal or a temporary blockage of the bile duct by a gallstone.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 774245
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000366",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "kidney_stones",
+    "bladder_stones"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says the signals of a kidney or bladder stone are blood in the urine and pain or 'colic' that gets worse in the bladder or kidney area, confirmed by x-ray.",
+   "verbatim": "BLADDER STONES (kidney stones, cystic calculi) are ironically caused\nby a calcium and/or a magnesium deficient diet and when you\nhave raging osteoporosis. The minerals in the\n“stones” come from your own bones!!! Diagnosis may require an x-ray (a\nflat “plate” of the abdomen). Don’t forget the gonadal shield!!! The signal\nto think “stones” is blood in the urine (use the urine test sticks) and pain or\n“colic” that gets worse in the bladder or kidney area.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 647177
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000367",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "alopecia",
+    "male_pattern_baldness"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach defines alopecia (baldness) as loss of hair that can be local or total, with male pattern baldness, female pattern baldness, and alopecia universalis as examples.",
+   "verbatim": "ALOPECIA: (baldness): loss of hair, which can occur locally or present as\ntotal hair loss. Male pattern baldness, female pattern baldness, and alopecia\nuniversalis are examples.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 617945
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000368",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "For fingernail problems, Wallach recommends collagen/gelatin (100% Kosher beef, diabetic Jello, or Knox gelatin — especially important for former vegetarians), essential fatty acids at 5 gm t.i.d., and betaine HCl with pancreatic enzymes at 75-200 mg t.i.d. before meals.",
+   "verbatim": "Treatment of fingernail problems should include collagen (Willamette\nValley which is 100 percent Kosher beef, diabetic Jello, or Knox gelatin—\nthis is especially important for those who have been vegetarians for any\nlength of time), essential fatty acids at 5 gm t.i.d., and betaine HCl and\npancreatic enzymes at 75-200 mg t.i.d. before meals.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 764306
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000369",
+   "kind": "mechanism",
+   "essentials": [
+    "sodium",
+    "potassium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "muscle_cramps"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach notes that losing sodium and potassium — as in Addison's disease or heavy sweating — brings general weakness and muscle cramps with a marked \"salt hunger,\" relieved by replacing salt (NaCl).",
+   "verbatim": "Addison’s\nDisease, a loss of function of the adrenal cortex,\nresults in the loss of Na and K retention with clinical signs of general\nweakness, muscle cramps, weight loss, and a marked “salt hunger.” The\nsymptoms can be relieved with the supplementation of NaCl or by\nadministering adrenal cortical hormones.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 562049
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000370",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "hemorrhoids"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach describes hemorrhoids (piles) as varicose veins in the rectum and anus that itch, bleed, become painful, and eventually clot (thrombose).",
+   "verbatim": "HEMORRHOIDS (piles) are varicose veins in the rectum and anus that\nitch, bleed, become painful, and eventually blocked with clots\n(thrombosed).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 788761
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000371",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "irritable_bowel_syndrome"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach uses the pulse test to pin down the individual food triggering irritable bowel syndrome -- commonly wheat, milk, or soy -- then has you eliminate the offending foods.",
+   "verbatim": "The pulse test is an\nextremely useful test for determining the individual cause of irritable bowel\nsyndrome.\nTreatment of irritable bowel syndrome should include high fiber diets, 4-6\ncups of fruit and vegetables per day, elimination of fried food, margarine,\ncaffeine, sugar, and offending foods based on the pulse test (i.e. wheat,\nmilk, soy),",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 820718
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000372",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "gallstones"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says gallstones generally come from liver problems, especially with fat and cholesterol metabolism.",
+   "verbatim": "GALLBLADDER DISEASE (gall stones) is generally caused by liver\nproblems, especially with fat and cholesterol metabolism.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 774124
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000373",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "gout"
+   ],
+   "symptoms": [],
+   "claim_text": "For gout, Wallach recommends avoiding organ meats, seafood, lentils, beans, and peas, along with alcohol and fructose sources, because these foods drive up uric acid.",
+   "verbatim": "Treatment for gout should include an avoidance of alcohol, organ meats,\nseafood, lentils, beans, peas, and fructose sources.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 781426
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000374",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach says lactation can be reduced and engorgement pain relieved by goldenrod, and Luperon (a posterior pituitary hormone) can stop milk production, though it may cause temporary menopausal symptoms.",
+   "verbatim": "LACTATION (reduce) can be reduced and breast pain of engorgement can\nbe relieved by goldenrod (Solidago petradoria). Luperon, a posterior\npituitary hormone can stop milk production; however, side effects include\ntemporary menopausal symptoms.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 832683
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000375",
+   "kind": "protocol",
+   "essentials": [
+    "copper"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "varicose_veins"
+   ],
+   "symptoms": [],
+   "claim_text": "Because copper builds the elastic fibers in vein walls, Wallach recommends copper at 2 mg per day for varicose veins and suggests trying a copper bracelet.",
+   "verbatim": "Treatment of varicose veins should include vitamin C to bowel tolerance,\nvitamin E at 800-1,200 IU per day, zinc at 50 mg t.i.d., bioflavonoids at 600\nmg t.i.d., DMSO, hydrotherapy, copper at 2 mg per day (try a copper\nbracelet)",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 948509
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000376",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "gout"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach explains that gout (gouty arthritis) is caused by deposits of uric acid crystals in the joints and surrounding tissues, classically the great toe of each foot, which become very tender and may deform in long-standing cases.",
+   "verbatim": "GOUT (gouty arthritis) is caused by deposits of uric acid crystals in the\njoints and surrounding tissues. These joints, classically the great toe of each\nfoot, are very tender and may become deformed in chronic or long-standing\ncases.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 780974
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000377",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "depression",
+    "food_allergy",
+    "hypoglycemia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach argues that food allergies drive emotional problems like depression indirectly — the celiac-type gut damage they cause blocks absorption of the essential nutrients the body and nervous system need.",
+   "verbatim": "FOOD ALLERGIES (sensitivities) are a concern for everyone. The reason\nis that the celiac disease type changes they cause in your intestines will\nprevent the absorption of essential nutrients that are required to keep your\nimmune system, as well as your various organs, maintained, repaired, and\nin tip top working order. Many of the maladies caused by food allergies are\nnot a direct cause but rather an indirect cause by cutting off the flow of\nessential raw materials necessary for your body to repair itself. A list of\nsymptoms of food allergies would perhaps fill ten pages of this book.\nSuffice it to be said that if you have any chronic disease (i.e. cancer,\ndiabetes, arthritis, heart disease, etc.) and/or emotional problems (i.e.\nhypoglycemia, depression, neurosis, schizophrenia, hyperactivity, paranoia,\netc.) you have food allergies and hypoglycemia!",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 768319
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000378",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "diverticulitis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says diverticulitis treatment should include not just colonics, high fiber, water, and exercise, but also the 90 essential nutrients.",
+   "verbatim": "Treatment of diverticulitis includes colonics two to three times per week,\nhigh fiber diet, eight glasses of water per day, and regular exercise. Avoid\nfried foods, margarine, and caffeine. Don’t forget the 90 essential nutrients.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 733330
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000379",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "vertigo",
+    "motion_sickness"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach explains motion sickness as the vertigo, nausea and 'green at the gills' feeling that hits when angular and linear movement happen at once; fixing your gaze on a single fixed point helps on a ship's deck but not in a car.",
+   "verbatim": "CARSICKNESS (motion sickness, sea sickness, air sickness, or motion\nsickness) is common in some individuals when repetitive angular and linear\nmovement occur at the same time. Fixing the gaze on a single geographic\npoint can help in seasickness when the patient is on deck but is a fruitless\nexercise in other forms of motion sickness. Symptoms include “green at the\ngills” feeling including vertigo, nausea, and vomiting.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 679039
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000380",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "peptic_ulcers"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach states that stomach ulcers are brought on by infection with Helicobacter pylori, and that antibiotics for 4 to 6 weeks are a preferred treatment of gastric ulcers over surgery.",
+   "verbatim": "ULCER (stomach) is brought on by an infection with Helicobacter pylori.\nAntibiotics for 4 to 6 weeks are a preferred treatment of gastric ulcers over\nsurgery.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 946874
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000381",
+   "kind": "deficiency_sign",
+   "essentials": [
+    "selenium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "chronic_fatigue"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says selenium deficiency in young adults appears as anemia and chronic fatigue, together with muscular weakness, myalgia, and fibromyalgia.",
+   "verbatim": "In young adults, selenium deficiency appears as anemia, chronic fatigue,\nmuscular weakness, myalgia, fibromyalgia, muscular tenderness,\npancreatitis, infertility, muscular dystrophy, scoliosis, and cardiomyopathy.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 587645
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000382",
+   "kind": "personal_anecdote",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "kidney_stones"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach observed that even dolphins and whales get kidney stones, arthritis and osteoporosis, especially when they feed almost exclusively on soft-bodied squid.",
+   "verbatim": "Deficiency diseases plague even the playful dolphins (and\nwhales), though they’re subject to arthritis, osteoporosis, and kidney stones,\nespecially if they feed almost exclusively on the soft bodied squid.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 157009
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000383",
+   "kind": "protocol",
+   "essentials": [
+    "calcium",
+    "magnesium",
+    "potassium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "muscle_cramps"
+   ],
+   "symptoms": [],
+   "claim_text": "For muscle cramps and twitching legs, Wallach's treatment includes liquid plant-derived colloidal calcium, magnesium, and potassium, plus betaine HCl and pancreatic enzymes at 75-200 mg three times a day before meals, and he says his Pig Arthritis Formula works like a charm.",
+   "verbatim": "Treatment of muscle cramps can include liquid plant derived colloidal\ncalcium, magnesium, and potassium, betaine HCl and pancreatic enzymes\nat 75-200 mg t.i.d. before meals. Dr. Wallach’s Pig Arthritis Formula works\nlike a charm here.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 874088
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000384",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "hemorrhoids"
+   ],
+   "symptoms": [],
+   "claim_text": "For hemorrhoids Wallach recommends a high-fiber diet, adding two heaping tablespoons of oat bran in eight ounces of juice or water before bed to encourage two bowel movements a day so stools pass without straining.",
+   "verbatim": "Treatment of hemorrhoids includes high fiber diets (you may need to add\noat bran at two heaping tbsp. in eight oz. of juice or water before bed) to\nencourage two bowel movements per day,",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 789516
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000385",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "irritable_bowel_syndrome"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach's IBS diet emphasizes high fiber with 4-6 cups of fruit and vegetables a day and eight to ten glasses of water, and he says a macrobiotic diet can be of great benefit.",
+   "verbatim": "Treatment of irritable bowel syndrome should include high fiber diets, 4-6\ncups of fruit and vegetables per day, elimination of fried food, margarine,\ncaffeine, sugar, and offending foods based on the pulse test (i.e. wheat,\nmilk, soy), betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before\nmeals, folic acid at 5-25 mg/day, gluten free diet, and eight to ten glasses of\nwater each day. Don’t forget the base line nutrition supplement program.\nHerbs including marshmallow (Althaea officinalis). A macrobiotic diet can\nbe of great benefit here.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 820827
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000386",
+   "kind": "definition",
+   "essentials": [
+    "copper"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "hemorrhoids",
+    "varicose_veins"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach classifies hemorrhoids as varicose veins, the rectal-and-anal form of the same weakened vessel walls (which he attributes to copper deficiency) that also produce leg varicose veins, spider veins, and aneurysms.",
+   "verbatim": "Copper Deficiency Symptoms and Diseases\n• White, grey, and silver hair\n• Dry brittle hair (“steely wool” in sheep)\n• Ptosis (sagging tissue—eye lids, “crow’s feet,” skin, breasts,\nstomach, etc.) • Hernias (congenital and acquired) • Varicose veins\n(including hemorrhoids) • Spider veins",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 518846
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000387",
+   "kind": "protocol",
+   "essentials": [
+    "zinc",
+    "copper",
+    "selenium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "psoriasis"
+   ],
+   "symptoms": [],
+   "claim_text": "For psoriasis Wallach recommends the trace minerals zinc at 15 mg three times daily, copper at 2 mg per day, and selenium at 500-1,000 mcg per day.",
+   "verbatim": "Treatment of psoriasis should include avoidance of offending\nfood allergens, rotation diets, folic acid at 15-25 mg per day, vitamin A at\n300,000 IU per day as beta-carotene, lecithin at 2,500 mg t.i.d. with meals,\nEFA at 5 grams b.i.d., vitamin E at 800-1,200 IU per day, zinc at 15 mg\nt.i.d., copper at 2 mg per day, selenium at 500-1,000 mcg per day",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 908015
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000388",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "depression",
+    "bipolar_disorder"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach observes that despite how common depression is, few psychiatrists ever check for hypoglycemia or food allergies when a patient complains of depression.",
+   "verbatim": "DEPRESSION (manic depression) is a common problem in the human\npopulation throughout the world—so common that some pharmaceutical\ncompanies specialize solely in antidepressant drugs. It should be no\nsurprise, however, that very few of the supposedly “expert” psychiatrists\never consider hypoglycemia and food allergies when they do an intake\nhistory on a patient who complains of depression.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 719965
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000389",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-b6",
+    "vitamin-a",
+    "vitamin-e",
+    "calcium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "pms"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach attributes PMS to calcium and essential-fatty-acid deficiencies and treats it with B6 at 100 mg, EFAs at 5 grams t.i.d., vitamin A during the last 14 days of the cycle, vitamin E at 800-1,200 IU/day, and calcium from colloidal sources.",
+   "verbatim": "Treatment of PMS includes 100 mg B6 q 4 d, EFA at 5 grams t.i.d., vitamin\nA at 300,000 IU per day as beta carotene during the last 14 days of the\ncycle, vitamin E at 800-1,200 IU/day, calcium (especially plant derived\ncolloidal sources), and herbs including mistletoe (Viscum album), black\ncohosh (Cimicifuga racemosa), and blue cohosh (Caulophyllum\nthalictroides).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 903922
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000390",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "chronic_fatigue",
+    "hypothyroidism"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says an under-active thyroid frequently causes fatigue (and weight gain and edema) even without a goiter, and you can screen for it with a basal body temperature test -- take your temperature under your armpit before getting up, and a reading below 97.6 F indicates low thyroid.",
+   "verbatim": "HYPOTHYROID (low thyroid, goiter): States that frequently do not\nproduce goiter (thyroid gland enlargement) can produce obesity, fatigue,\ndisinterest, low blood pressure, water retention (edema), etc. Diagnose with\na basal body temperature test. Upon waking up, take your temperature by\nplacing a thermometer under your armpit before getting up and stirring\naround. If your temperature is below 97.6°F, you have low thyroid. Don’t\nforget your thyroid gland requires all 90 essential nutrients to function\nproperly and produce thyroxin.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 805509
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000391",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "eczema",
+    "atopic_dermatitis",
+    "psoriasis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says eczema is usually caused by food allergies, most often to cow's milk, wheat, and soy, and that pulse tests and elimination diets pinpoint the culprit foods.",
+   "verbatim": "ECZEMA (atopic dermatitis, psoriasis) is a dry patchy scale on localized\nskin areas (i.e. ears, nose, joints, breasts, etc.). Eczema is usually the result\nof food allergies, especially cow’s milk, wheat, and soy. Do pulse tests and\nelimination diets to determine the culprits. This is not only a cosmetic\nproblem as the same damage is occurring in the intestinal lining which can\nlead to malabsorption, lowered immune status, and chronic degenerative\ndiseases.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 744244
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000392",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "high_cholesterol"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach considers cholesterol above 270 mg per 100 ml of blood a rising risk for heart disease, diabetes and liver disease, but cautions that a level driven below 200 can be equally or more dangerous than a high one.",
+   "verbatim": "CHOLESTEROL (elevated) is considered a risk factor for cardiovascular\ndisease. Elevation of cholesterol above 270 mg per 100 ml of blood is a\nsign of increasing risk for cardiovascular disease, diabetes, and liver disease\n(including gallstones). There are numerous causes of elevated cholesterol\nincluding low fiber diets, elevated vitamin D intake, deficiency of EFA and\nchromium and vanadium, diets high in refined sugar and flour, liver\nmalfunction, and poor exercise habits. CAUTION: Low cholesterol below\n200 can be equally or more dangerous than elevated cholesterol!",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 689130
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000393",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "tinnitus"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach identifies drug side effects as a cause of ringing in the ears, and includes eliminating those drug effects in the treatment.",
+   "verbatim": "RINGING IN THE EARS (tinnitus, Miniar’s disease, and Wallach’s\nvertigo) can be caused by high blood pressure, drug side effects, and\nosteoporosis (fibrous connective tissue squeezing the 8th cranial nerve).\nThe bones of the body try to get stronger following the loss of mineral by\ngenerating connective tissue. The 8th cranial nerve can be squeezed as it\npasses through the skull into the inner ear. When the vestibular branch is\nsqueezed, vertigo can be a feature; when the auditory branch is squeezed\nringing in the ears occurs.\nTreatment is directed toward lowering blood pressure, eliminating drug side\neffects, and reversing the osteoporosis with calcium 2000 mg and\nmagnesium 1000 mg. Dr. Wallach’s Pig Arthritis Formula is the treatment\nof choice.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 919141
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000394",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "alopecia",
+    "eczema"
+   ],
+   "symptoms": [],
+   "claim_text": "In treating alopecia that occurs with eczema, Wallach calls betaine HCl and pancreatic enzymes at 75-200 mg three times a day, 15-20 minutes before meals, “a must.”",
+   "verbatim": "Alopecia that occurs with eczema is\noften caused by essential fatty acid deficiency and will respond to IV\ninterlipids and/or oral flaxseed oil at the rate of 9 grams per day. Zinc at 50\nmg t.i.d. is also indicated. Elimination of wheat and cow’s milk from the\ndiet will increase the rate of recovery. Betaine HCl and pancreatic enzymes\nat 75-200 mg t.i.d. 15-20 minutes before meals are a must.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 618455
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000395",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "adhd",
+    "hyperactivity"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach describes ADD/ADHD as hyperactivity plus an inability to concentrate and retain information, often with disruptive, mean or cruel behavior toward other children and small animals, bedwetting, nightmares, and a fascination with fire.",
+   "verbatim": "ATTENTION DEFICIT DISORDER (ADD/ADHD, Hyperkinetic,\nhyperactive) is characterized as hyperactivity and inability to concentrate,\ncognate, and retain information. Many affected are disruptive, mean and\ncruel to other children and small animals, wet the bed, have nightmares, and\nlike to play with fire.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 635296
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000396",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "hypertension",
+    "stroke"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach lists the symptoms of high blood pressure as dizziness, a red face, headache, fatigue, nosebleeds, nervousness, memory loss, swelling of the optic nerve disc, and strokes.",
+   "verbatim": "Symptoms of hypertension include dizziness, red face, headache, fatigue,\nnosebleeds, nervousness, memory loss, edema of the optic nerve disc,\nstrokes, etc. While not a symptom, obesity is a serious predisposing factor\nto hypertension; obesity also indicates mineral deficiencies.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 799297
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000397",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "hypertension",
+    "obesity"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says obesity is a serious predisposing factor to high blood pressure, and that losing weight can drop elevated blood pressure dramatically.",
+   "verbatim": "While not a symptom, obesity is a serious predisposing factor\nto hypertension; obesity also indicates mineral deficiencies.\nTreatment of hypertension includes calcium (particularly useful is the plant\nderived colloidal minerals which are 98 percent absorbable), high fiber\ndiets, rotation/avoidance diets, low fat diet (no fried food or margarines),\navoid sugar and refined flour, avoid more than 400 IU of vitamin D, avoid\ncaffeinated coffee or tea, chelation with EDTA, infusions with hydrogen\nperoxide, flaxseed oil at 5 gm t.i.d., garlic, reduce red meat intake, consume\n4-6 cups of vegetables per day, CO-Q 10 at 60 mg/day, eight glasses of\nwater per day, lecithin at 2,500 mg t.i.d., herbs including European\nhawthorn (Crataegus oxyacantha), rauwolfia (Rauwolfia serpentina), and\nolive (Olea europaea). Weight loss can drop elevated blood pressure\ndramatically.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 799453
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000398",
+   "kind": "prognosis",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "menopause",
+    "osteoporosis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach warns that osteoporosis is a common result of an improperly managed menopause.",
+   "verbatim": "Osteoporosis is a common result of\nimproperly managed menopause.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 694760
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000399",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "osteoporosis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says the warning signs of osteoporosis are bone pain, joint pain, a 'dowager's hump,' and 'spontaneous' fractures.",
+   "verbatim": "The symptoms of osteoporosis are characterized\nby bone pain, joint pain, “dowagers” hump, and “spontaneous” fractures.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 892434
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000400",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "hemorrhoids"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach explains that the extra pressure of straining to force out a hard, constipated stool balloons the hemorrhoidal veins, so low-fiber diets and the constipation they cause are a direct mechanical driver of hemorrhoids.",
+   "verbatim": "The cause of hemorrhoids is primarily a copper deficiency (a\nbreakdown of elastic fibers in veins), low fiber diets, the resulting\nconstipation, and lack of exercise. The increased pressure needed to force\nout a constipated bowel movement causes ballooning of the hemorrhoidal\nveins.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 788905
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000401",
+   "kind": "mechanism",
+   "essentials": [
+    "calcium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "sciatica"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says that in its most severe form sciatica is the result of advanced osteoporosis, bone spurs between the lumbar vertebrae, and vertebral arthritis.",
+   "verbatim": "In its most severe\nform, sciatica may be the result of advanced osteoporosis, bone spurs\nbetween the lumbar vertebrae, and vertebral arthritis.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 924359
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000402",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "cold_sores",
+    "herpes_simplex"
+   ],
+   "symptoms": [],
+   "claim_text": "For herpes cold sores, Wallach lists a topical herb compress made with walnut (Juglans nigra) among the treatments.",
+   "verbatim": "HERPES (simplex, cold sores, canker sores) is a virus that causes recurrent\nblisters and ulcers on the lips (Type I) and on the genitals (Type II). This\ndisease never goes away completely (once infected, always infected). The\nbest you can hope for is long term remission. Herpes lesions itch at the\nearly stages and can be very painful and disfiguring. These viruses are\ntransmitted by kissing and sexual contact. Avoid kissing and sexual activity\nwhen the lesions are active. Use condoms during an active stage of genital\nHerpes.\nTreatment includes ultra violet light directly on lesion for 1-6 minutes per\nday, avoid high arginine foods (i.e. avoid chocolate, peanuts, nuts, seeds,\ngrains), eat high lysine foods (i.e. meat, potatoes, milk, yeast, fish, chicken,\nbeans, eggs), vitamin C to bowel tolerance, bioflavonoids at 200 mg t.i.d.,\nzinc at 75 mg t.i.d., l-Lysine at 1-6 gm/day to effect, then 500 mg/day\nmaintenance, Ribavirin at 250-500 mg/day (do not take during pregnancy),\nand Isoprinosin at 500-1,500 mg/day (do not take during pregnancy), and\ntopical herb compress with walnut (Juglans nigra). There are many\ncommercial products available for topical application.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 792737
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000403",
+   "kind": "prevalence",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "osteoporosis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach warns that osteoporosis is serious -- he ranks it the 12th most frequent cause of death in adults, largely through the fractured hips it leads to.",
+   "verbatim": "Osteoporosis is the 12th most frequent cause of death in adults (following\nfractured hips, etc.).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 892553
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000404",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "insomnia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says food allergies can cause insomnia and nightmares, and he uses the pulse test to identify the offending food.",
+   "verbatim": "Food allergies and hypoglycemia can cause insomnia and nightmares. Use the pulse test and six-hour\nGTT.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 819652
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000405",
+   "kind": "protocol",
+   "essentials": [
+    "boron",
+    "calcium",
+    "magnesium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "tinnitus",
+    "menieres_disease",
+    "vertigo"
+   ],
+   "symptoms": [],
+   "claim_text": "For the skull osteoporosis that squeezes the 8th cranial nerve, Wallach's nutritional program adds chondroitin sulfate (gelatin) and boron at 1 mg alongside calcium, magnesium, and plant-derived colloidal minerals.",
+   "verbatim": "WALLACH’S VERTIGO (dizziness with or without ringing in the ears)\nOsteoporosis of the skull. The connective tissue generated by the\ndemineralized bones squeezes the vestibular branch of the 8th cranial nerve.\nTreatment approach includes osteoporosis nutritional program—\nchondroitin sulfate (gelatin), calcium 200 mg, 1000 mg magnesium, boron\n1 mg, and plant derived colloidal minerals containing all 60 essential\nminerals.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 949507
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000406",
+   "kind": "protocol",
+   "essentials": [
+    "omega-3",
+    "omega-6"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "tinnitus"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach includes essential fatty acids at 5 grams three times daily in his treatment for tinnitus.",
+   "verbatim": "Treatment of tinnitus should include the treatment of the underlying\ndisease. Avoid offending food allergens, avoid sugar and all refined foods,\ntake zinc at 15 mg t.i.d., tin from plant derived colloidal minerals, EFA at 5\ngrams t.i.d., vitamin A at 300,000 IU per day as beta-carotene, calcium and\nmagnesium at 2,000 and 1,000 mg per day, and betaine HCl and pancreatic\nenzymes at 75-200 mg t.i.d. 15 minutes before meals. Using Dr. Wallach’s\nPig Arthritis simplifies the whole process.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 941816
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000407",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "constipation"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says that if you are not having two to three bowel movements per day you are constipated, and that simple cases are very often solved by walking and eight glasses of water a day.",
+   "verbatim": "If\nyou are not having two to three bowel movements per day, you are constipated! Very frequently\nexercise such as walking and eight glasses of water per day will solve simple constipation.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 702446
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000408",
+   "kind": "protocol",
+   "essentials": [
+    "magnesium",
+    "vitamin-e",
+    "selenium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "uterine_fibroids"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach's uterine-fibroid protocol is to avoid fried foods, margarine, and caffeine, take all 90 essential nutrients, and boost magnesium to 1,000 mg, vitamin E to 2,000 IU, and selenium to 500 mcg per day.",
+   "verbatim": "Treatment of uterine fibroids should include avoidance of fried foods,\nmargarine, and caffeine, as well as supplementation with all 90\nessential nutrients. Crank up the magnesium level\nto 1,000 mg per day, vitamin E level to 2,000 i.u., and the selenium level to\n500 mcg per day. If satisfactory results are not achieved in four to six\nmonths, one can consider the use of Luperon (posterior pituitary hormone\nsold originally to dry up milk supply). The fibroids will shrink suffiently to\nremove them with endoscopic surgery without the need for a hysterectomy.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 761809
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000409",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "headache",
+    "food_allergy",
+    "hypoglycemia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach's home method for pinning down a headache trigger is a diet diary: eat a single food, note the time, then record any headache that follows within minutes to a few hours, run alongside the pulse test and a six-hour glucose tolerance test.",
+   "verbatim": "A second method of allergy\ndiagnosis can be used in conjunction with the pulse test is the diet diary.\nThis diary is especially useful when emotional symptoms and headache are\nassociated with food allergies. First, you eat a single food (as you do with\nthe pulse test) noting the time on a pad of paper. Then record emotional\nsymptoms and/or headache with the time. The symptom will appear within\nminutes to a few hours of ingesting the offending food (this includes\nhyperactivity and dyslexia). Do a six-hour GTT as almost everyone with\nfood allergies has hypoglycemia because the celiac changes in the intestine\nprevent the efficient absorption of chromium and vanadium.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 770457
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000410",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach treats nausea with Pepto Bismol, Kaopectate, and herbs including artichoke, avens, and peppermint.",
+   "verbatim": "Treatment of nausea can include Pepto Bismol, Kaopectate, and herbs to\ninclude artichoke (Cynara scolymus), avens (Geum urbanum), and\npeppermint (Mentha piperita).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 874908
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000411",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "tinnitus"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach lists food allergies as a cause of tinnitus, identified with a pulse test and treated by avoiding the offending foods.",
+   "verbatim": "TINNITUS (ringing or buzzing in the ear) is characterized by a ringing or\nbuzzing in the ear. “Orthodox” doctors suggest that “surgery is of no value;\nif you can’t tolerate the ringing, play background music.” In reality, there\nare a variety of causes of tinnitus including hypertension, lead, mercury\ntoxicity, nutritional deficiencies, osteoporosis (connectissue squeezes the\n8th cranial nerve), food allergies, and/or hypoglycemia.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 941220
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000412",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "constipation",
+    "food_allergy"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says food allergies very frequently initiate constipation, and recommends the pulse test to find out whether an allergy is the cause.",
+   "verbatim": "Very\nfrequently food allergies will initiate constipation; do the pulse test to determine if this might be a\nfactor.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 702635
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000413",
+   "kind": "mechanism",
+   "essentials": [
+    "chromium",
+    "vanadium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "chronic_fatigue",
+    "hypoglycemia"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says sugar and refined flour flush chromium and vanadium out in the urine by as much as 300 percent, driving the low blood sugar (hypoglycemia) whose symptoms include sleepiness, narcolepsy, fatigue and heart palpitations.",
+   "verbatim": "hypoglycemia is almost always food allergies that cause a malabsorption of\nchromium and vanadium as a result of celiac disease type changes in the\nintestine and/or a large intake of sugar (natural and processed) and refined\nflour which increases the dumping of chromium and vanadium in the urine\nas much as 300 percent. The old wives’ tale “if you eat sugar from the sugar\nbowl, you will surely develop diabetes” is then quite true as untreated\nhypoglycemia will very frequently develop into diabetes. The symptoms of\nhypoglycemia are highly variable and may include emotional symptoms\n(i.e. hyperactivity, paranoia, schizophrenia, memory loss, irritability,\nhallucinations, depression, manic depression, bi-polar disease, dyslexia,\ncrying, learning disabilities, ADD, ADHD, Tourette’s syndrome, etc.),\nsleepiness, narcolepsy, fatigue, heart palpitations, sweating, inability to do\ncognitive tasks (i.e. inability to think out simple problems), explosive",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 800809
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000414",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Wallach says even a good diet fails if you cannot absorb minerals, so he advises a pulse test to find food allergies that cause celiac-type gut changes and malabsorption, plus a hair analysis to check your mineral status.",
+   "verbatim": "Do pulse test to determine food allergies that might cause celiac disease\ntype changes and the resultant malabsorption. Do a hair analysis to\ndetermine mineral status.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 873920
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000415",
+   "kind": "mechanism",
+   "essentials": [
+    "magnesium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "uterine_fibroids"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says no nutritional deficiency is proven to cause uterine fibroids, but fibroid tissue resembles early arteriosclerosis, whose calcification is driven by magnesium deficiency, hinting magnesium plays a role.",
+   "verbatim": "Looking at the tissue, however, there are certain similarities between fibroid\ntissue and the early changes of arteriosclerosis in the walls of muscular\narteries and fibrocystic breast disease, giving some clues as to best\napproach uterine fibroids naturally. We know that magnesium deficiency is\nthe cause of “malignant calcification” (arteriosclerosis) in the walls of\nmuscular and elastic arteries. We know that eliminating caffeine and the\nsupplementation of vitamin E and selenium enhance the healing process of\nfibrocystic breast disease.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 761264
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000416",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "uterine_fibroids"
+   ],
+   "symptoms": [],
+   "claim_text": "Uterine fibroids are a runaway production of the fibrous connective tissue and smooth muscle cells that make up the wall of the uterus.",
+   "verbatim": "FIBROIDS are a runaway production of fibrous connective tissue and\nsmooth muscle cells of the wall of the uterus. There are no agreed upon\nnutritional preventions or nutritional deficiencies that cause uterine fibroids.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 761044
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000417",
+   "kind": "protocol",
+   "essentials": [
+    "chromium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "asthma",
+    "food_allergy"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach links asthma to food allergies driven by celiac-type gut damage, and says a cheap pulse test plus a rotation or elimination diet usually reveals cow's milk, wheat, or soy as the culprits to remove.",
+   "verbatim": "include emotional symptoms similar to PMS, hypoglycemia, asthma,\nbronchitis, or diabetes as a result of malabsorption of chromium. The\nmalabsorption is usually the result of a “celiac” disease\ntype change in the small intestinal lining rather than dietary deficiency. Do\na pulse test to determine food allergies.\nTreatment should include a rotation or an elimination diet (usually a pulse\ntest will reveal cow’s milk, wheat, or soy products to be the culprits).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 634192
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000418",
+   "kind": "prognosis",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "asthma",
+    "influenza"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach warns that people with a serious respiratory ailment such as asthma are especially vulnerable to the most serious - potentially fatal - complications of the flu, particularly if they are poorly nourished or immune compromised.",
+   "verbatim": "FLU (influenza, grip) is a potentially fatal viral disease. Infants and elder\ncitizens are susceptible to the most serious complications if they are poorly\nnourished, immune compromised, or have a serious respiratory ailment (i.e.\nemphysema, asthma, pneumonia, CF, etc.).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 765748
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000419",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "teething"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach treats teething discomfort with Tylenol or aspirin drops per label directions and herbs including German chamomile (Matricaria chamomilla) in teaspoon doses as needed.",
+   "verbatim": "Treatment of teething includes Tylenol or aspirin drops (follow label\ndirections) and herbs including German chamomile (Matricaria\nchamomilla) as teaspoon doses as needed.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 937938
+   },
+   "dose": null,
+   "tags": [
+    "materia-medica",
+    "long-tail"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000420",
+   "kind": "toxicity_sign",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "asthma",
+    "allergies"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says the food preservative sulfite - sprayed on dried fruit like raisins and apricots - can set off an asthma-like reaction, and that avoiding the trigger is the most effective 'cure.'",
+   "verbatim": "Symptoms vary widely from urticaria (skin rash with itching)\nfrom strawberries or fish, headaches from perfume, tachycardia (fast heart\nrate) or palpitations (most allergies-MSG), or paranoia from sugar, etc., to\nasthma-like syndrome from sulfite (food preservative on raisins, apricots,\netc.).\nAvoidance is the most effective “cure,” however, this may be impractical.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 615303
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000421",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "chronic_fatigue"
+   ],
+   "symptoms": [],
+   "claim_text": "For fatigue, Wallach says to avoid all sugar (natural and processed), soft drinks, fried foods, margarine, and caffeine, and to take all 90 essential nutrients every day so no nutritional deficiency remains.",
+   "verbatim": "FATIGUE (chronic fatigue syndrome, Candidiasis, Epstein-Barr Virus,\ncytomegalovirus, human herpes 6 virus, human B lymphotrophic virus,\nfood allergies, hypoglycemia, diabetes, anemia, malnutrition) is the disease\nof the 80s. See specific disease description.\nTreatment should be specific as described in appropriate section, and in\naddition, herbs may be of value including American ginseng (Panax\nquinquefolius), lavender (Lavandula augustifolia), rosemary (Rosmarinus\nofficinalis), sweet flag (Acorus calamus), and pasque flower (Anemone\nPulsatilla). Avoid all sugar natural and processed, avoid soft drinks, and\navoid fried foods, margarines, and caffeine. Take all 90 essential nutrients\nas a daily supplement to ensure that there are no nutritional deficiencies.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 757816
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000422",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "diarrhea"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says diarrhea flushes out nutrients, so recovery means consuming plenty of fluids and replacing all 90 essential nutrients lost through it.",
+   "verbatim": "Be sure\nto consume lots of fluids (i.e. soup, herbal tea, hot water with lemon, etc.)\nand all 90 essential nutrients to replace nutrients lost through diarrhea.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 728971
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000423",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "acne"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says that after the extended antibiotic therapy often used for acne, you should restore gut flora with Lactobacillus acidophilus — ten capsules twice a day between meals for ten days each month.",
+   "verbatim": "Following extended antibiotic therapy\n(i.e. acne, rheumatic fever, cystic fibrosis, etc.), you can restore the\ncompetitive organisms into the bowel (to help keep yeast numbers down)\nby the use of Lactobacillus acidophilus. Administer Lactobacillus at ten\ncapsules twice each day between meals for ten days each month to restore\nnormal colon count; a retention enema with the Lactobacillus will assure\nreimplantaion.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 940804
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000424",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "hemorrhoids"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says bright red blood on the toilet paper is usually just an irritated hemorrhoid, whereas black or coffee-grounds stool points to a stomach ulcer and bloody mucus can signal ulcerative colitis or colon cancer, so the color of the blood tells you when to see a doctor.",
+   "verbatim": "Bleeding\nin the stool, on the other hand, can be a serious symptom indicating\nhemorrhoids (bright red blood on toilet paper), stomach ulcers (black\nbloody or “coffee grounds” stool), ulcerative colitis (bloody mucus in\nstool), colon cancer (bloody mucus in the stool), or coughing blood—lung\ncancer, etc.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 648793
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave1",
+    "ocr-flagged"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000425",
+   "kind": "contraindication",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "adhd"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach opposes the standard approach of prescribing Ritalin or Prozac to chemically subdue an ADD/ADHD child, warning the side effects are significant — biochemical and emotional addiction, drooling, drowsiness, and explosive emotions including violence and suicide.",
+   "verbatim": "The standard medical approach to ADD/ADHD is to prescribe Ritalin or\nProzac to chemically subdue the ADD/ADHD victim. The side effects of\nthese drugs are significant and include biochemical and emotional\naddiction, drooling, drowsiness, and explosive emotions (violence, suicide,\netc.).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 635914
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000426",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "endometriosis"
+   ],
+   "symptoms": [],
+   "claim_text": "The misplaced endometrial cells stay sensitive to estrogen, so they swell during the high-estrogen part of the female cycle.",
+   "verbatim": "ENDOMETRIOSIS is the abnormal implantation of the nonmalignant\nuterine lining cells in the body cavity. The endometrial cells are still\nsensitive to estrogen and therefore swell during high estrogen parts of the\nfemale cycle.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 750988
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:54+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
   }
  ]
 }

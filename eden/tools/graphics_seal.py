@@ -6,6 +6,7 @@ behalf without explicit per-invocation approval. Recomputes each graphic's RAW-B
 sha256, refuses if any drifts from the manifest, then writes the manifest's
 LF-content hash to graphics-manifest.golden.sha256 and logs the seal.
 """
+import argparse
 import datetime
 import hashlib
 import json
@@ -31,7 +32,21 @@ def lf_sha256(p: Path) -> str:
     return hashlib.sha256(p.read_text(encoding="utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")).hexdigest()
 
 
+def _guard_cli() -> None:
+    """USER-ONLY arg guard: a bare invocation seals; ANY argument is rejected. Mirrors
+    corpus_seal._guard_cli (see the 2026-08-18 catalog_seal --help incident). argparse prints real
+    help on -h/--help and errors on unknown flags, so only a deliberate BARE run can seal.
+    """
+    argparse.ArgumentParser(
+        prog="graphics_seal.py",
+        description="USER-ONLY. Seals the sacred graphics manifest: verifies image hashes, rewrites "
+                    "graphics-manifest.json.golden.sha256, and logs the seal. Takes NO options -- a "
+                    "bare run seals; any argument is rejected.",
+    ).parse_args()
+
+
 def main() -> int:
+    _guard_cli()
     if not MANIFEST.exists():
         print(f"FAIL: {MANIFEST} missing")
         return 1

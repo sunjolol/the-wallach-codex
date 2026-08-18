@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "_doctrine": "The pre-registered condition catalog -- the SINGLE home for each condition's identity (display_name), umbrella->subtype structure (umbrella_of), and Wallach's synonym phrasings. Promoted 2026-07-05 (Phase B) from the emergent derived index + eden/tools/{condition-taxonomy,condition-synonyms}.json + corpus_derive DISPLAY_OVERRIDES (all retired). A claim may reference a condition slug ONLY if it appears here (references_resolve gate) -- closing the phantom-slug hole where a typo silently minted a condition. Hand-edited pillar: register a NEW condition here BEFORE mining a claim that maps to it. User is sole writer once sealed. SYNONYM MATCHING is OCR-folded, punctuation-insensitive, all-words-present; significant words of display_name + slug tokens are accepted implicitly, so list only DIFFERENT wordings. UMBRELLA_OF children must be real condition slugs (child->parent only; naming 'cancer' does NOT name 'leukemia'). display_name for the search-only slugs absent from the operational index is humanize(slug).",
-  "sealed_at": "2026-07-28T19:18:55+00:00",
+  "sealed_at": "2026-08-18T08:20:24+00:00",
   "counts": {
-    "conditions": 512,
+    "conditions": 524,
     "umbrellas": 7,
-    "with_synonyms": 119
+    "with_synonyms": 136
   },
   "conditions": {
     "abrasions": {
@@ -15,7 +15,10 @@
       "display_name": "Abscess"
     },
     "absence_attacks": {
-      "display_name": "Absence Attacks"
+      "display_name": "Absence Attacks",
+      "synonyms": [
+        "petit mal"
+      ]
     },
     "achalasia": {
       "display_name": "Achalasia"
@@ -39,7 +42,10 @@
       ]
     },
     "adhd": {
-      "display_name": "Adhd"
+      "display_name": "Adhd",
+      "synonyms": [
+        "add"
+      ]
     },
     "adrenal_exhaustion": {
       "display_name": "Adrenal Exhaustion"
@@ -75,7 +81,9 @@
     "alopecia": {
       "display_name": "Alopecia",
       "synonyms": [
-        "hair loss"
+        "hair loss",
+        "alopecia universalis",
+        "female pattern baldness"
       ]
     },
     "als": {
@@ -88,7 +96,8 @@
     "alzheimers": {
       "display_name": "Alzheimers",
       "synonyms": [
-        "alzheimer"
+        "alzheimer",
+        "alzheimers disease"
       ]
     },
     "amblyopia": {
@@ -492,7 +501,10 @@
       "display_name": "Chorea"
     },
     "chronic_fatigue": {
-      "display_name": "Chronic Fatigue"
+      "display_name": "Chronic Fatigue",
+      "synonyms": [
+        "low energy"
+      ]
     },
     "chronic_fatigue_syndrome": {
       "display_name": "Chronic Fatigue Syndrome"
@@ -561,7 +573,8 @@
       "display_name": "Convulsions",
       "synonyms": [
         "seizures",
-        "seizure"
+        "seizure",
+        "infant convulsions"
       ]
     },
     "cor_pulmonale": {
@@ -619,7 +632,10 @@
       ]
     },
     "cystitis": {
-      "display_name": "Cystitis"
+      "display_name": "Cystitis",
+      "synonyms": [
+        "bladder infection"
+      ]
     },
     "dandruff": {
       "display_name": "Dandruff"
@@ -670,7 +686,10 @@
       "display_name": "Dermatosis"
     },
     "diabetes": {
-      "display_name": "Diabetes"
+      "display_name": "Diabetes",
+      "synonyms": [
+        "type 2 diabetes"
+      ]
     },
     "diaper_rash": {
       "display_name": "Diaper Rash"
@@ -765,7 +784,10 @@
       "display_name": "Enzootic Ataxia"
     },
     "epilepsy": {
-      "display_name": "Epilepsy"
+      "display_name": "Epilepsy",
+      "synonyms": [
+        "seizure disorders"
+      ]
     },
     "erbs_palsy": {
       "display_name": "Erbs Palsy"
@@ -836,7 +858,8 @@
       "synonyms": [
         "gallstones",
         "gall stones",
-        "biliary calculi"
+        "biliary calculi",
+        "gallbladder disease"
       ]
     },
     "gangrene": {
@@ -875,7 +898,10 @@
       ]
     },
     "gout": {
-      "display_name": "Gout"
+      "display_name": "Gout",
+      "synonyms": [
+        "gouty arthritis"
+      ]
     },
     "graves_disease": {
       "display_name": "Graves Disease",
@@ -907,7 +933,10 @@
       ]
     },
     "hay_fever": {
-      "display_name": "Hay Fever"
+      "display_name": "Hay Fever",
+      "synonyms": [
+        "allergic rhinitis"
+      ]
     },
     "headache": {
       "display_name": "Headache"
@@ -924,7 +953,8 @@
     "heartburn": {
       "display_name": "Heartburn",
       "synonyms": [
-        "reflux"
+        "reflux",
+        "acid reflux"
       ]
     },
     "heat_stroke": {
@@ -1029,7 +1059,8 @@
       "display_name": "Hyperirritability",
       "synonyms": [
         "hyperirratability",
-        "hyper irritability"
+        "hyper irritability",
+        "irritability"
       ]
     },
     "hyperkinesis": {
@@ -1137,7 +1168,10 @@
       "display_name": "Infection"
     },
     "infertility": {
-      "display_name": "Infertility"
+      "display_name": "Infertility",
+      "synonyms": [
+        "male infertility"
+      ]
     },
     "inflammation": {
       "display_name": "Inflammation"
@@ -1256,7 +1290,8 @@
       "display_name": "Learning Disabilities",
       "synonyms": [
         "learning disabilit",
-        "learning disorder"
+        "learning disorder",
+        "learning disability"
       ]
     },
     "legg_perthes": {
@@ -1423,7 +1458,10 @@
       ]
     },
     "mercury_poisoning": {
-      "display_name": "Mercury Poisoning"
+      "display_name": "Mercury Poisoning",
+      "synonyms": [
+        "mercury toxicity"
+      ]
     },
     "migraine": {
       "display_name": "Migraine"
@@ -1454,7 +1492,11 @@
       "display_name": "Morning Sickness"
     },
     "motion_sickness": {
-      "display_name": "Motion Sickness"
+      "display_name": "Motion Sickness",
+      "synonyms": [
+        "car sickness",
+        "sea sickness"
+      ]
     },
     "multiple_sclerosis": {
       "display_name": "Multiple Sclerosis"
@@ -1532,7 +1574,10 @@
       ]
     },
     "obesity": {
-      "display_name": "Obesity"
+      "display_name": "Obesity",
+      "synonyms": [
+        "childhood obesity"
+      ]
     },
     "oligospermia": {
       "display_name": "Oligospermia",
@@ -1661,11 +1706,15 @@
         "duodenal ulcer",
         "g i ulcers",
         "gi ulcers",
-        "gastrointestinal ulcer"
+        "gastrointestinal ulcer",
+        "gastric ulcers"
       ]
     },
     "periodontal_disease": {
-      "display_name": "Periodontal Disease"
+      "display_name": "Periodontal Disease",
+      "synonyms": [
+        "loose teeth"
+      ]
     },
     "peripheral_arterial_disease": {
       "display_name": "Peripheral Arterial Disease",
@@ -1681,7 +1730,8 @@
         "peripheral neuritis",
         "peripheral neuropathy",
         "neuritis",
-        "peripheral neuropathies"
+        "peripheral neuropathies",
+        "numbness"
       ]
     },
     "peritonsillar_abscess": {
@@ -1922,7 +1972,10 @@
       "display_name": "Sprain"
     },
     "stomach_cancer": {
-      "display_name": "Stomach Cancer"
+      "display_name": "Stomach Cancer",
+      "synonyms": [
+        "gastric cancer"
+      ]
     },
     "stomatitis": {
       "display_name": "Stomatitis",
@@ -2031,7 +2084,10 @@
       "display_name": "Tonsillitis"
     },
     "tooth_decay": {
-      "display_name": "Tooth Decay"
+      "display_name": "Tooth Decay",
+      "synonyms": [
+        "dental caries"
+      ]
     },
     "toothache": {
       "display_name": "Toothache"
@@ -2068,7 +2124,8 @@
     "urinary_tract_infection": {
       "display_name": "Urinary Tract Infection",
       "synonyms": [
-        "bladder infection"
+        "bladder infection",
+        "kidney infection"
       ]
     },
     "uterine_cancer": {
@@ -2087,7 +2144,10 @@
       "display_name": "Vascular Dementia"
     },
     "vertigo": {
-      "display_name": "Vertigo"
+      "display_name": "Vertigo",
+      "synonyms": [
+        "wallachs vertigo"
+      ]
     },
     "violent_behavior": {
       "display_name": "Violent Behavior",
@@ -2144,6 +2204,45 @@
     },
     "xerophthalmia": {
       "display_name": "Xerophthalmia"
+    },
+    "rosacea": {
+      "display_name": "Rosacea",
+      "synonyms": [
+        "acne rosacea"
+      ]
+    },
+    "sinusitis": {
+      "display_name": "Sinusitis"
+    },
+    "sleep_apnea": {
+      "display_name": "Sleep Apnea"
+    },
+    "endometriosis": {
+      "display_name": "Endometriosis"
+    },
+    "ergotism": {
+      "display_name": "Ergotism"
+    },
+    "sarcopenia": {
+      "display_name": "Sarcopenia"
+    },
+    "nystagmus": {
+      "display_name": "Nystagmus"
+    },
+    "insulin_resistance": {
+      "display_name": "Insulin Resistance"
+    },
+    "herniated_disc": {
+      "display_name": "Herniated Disc"
+    },
+    "dermatitis_herpetiformis": {
+      "display_name": "Dermatitis Herpetiformis"
+    },
+    "retinal_vascular_changes": {
+      "display_name": "Retinal Vascular Changes"
+    },
+    "gluten_intolerance": {
+      "display_name": "Gluten Intolerance"
     }
   }
 }

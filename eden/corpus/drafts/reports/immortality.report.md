@@ -1,115 +1,466 @@
 # Extraction report — immortality (Immortality)
 
-_11 claim(s) drafted 2026-07-28T18:14:11+00:00. Review then run corpus_seal.py to promote._
+_45 claim(s) drafted 2026-08-18T08:19:55+00:00. Review then run corpus_seal.py to promote._
 
-Kinds: deficiency_sign×1, definition×6, mechanism×1, personal_anecdote×2, quote×1
+Kinds: deficiency_sign×1, definition×2, diagnostic_pattern×1, food_source×7, interaction×1, mechanism×18, prevalence×6, prognosis×4, protocol×3, quote×2
 
-### WAL-CLM-IMMORT-000467 · deficiency_sign
-- **essentials:** chromium, vanadium · **conditions:** — · **symptoms:** —
-- **claim:** According to Wallach, reaching first for high-fructose-corn-syrup-laden soft drinks is a sign of mineral deficiency rather than simple thirst. Chromium and vanadium deficiencies manifest as an intense thirst for liquid — and minerally deficient people reach for HFCS soft drinks first and plain water last — together with a hunger for carbohydrates such as soft drinks, sweetened coffee and tea, alcohol, pasta, desserts, and bread.
-- **verbatim** (offset 471626): “Chromium and vanadium deficiencies are manifested
-by an intense thirst for liquid (high fructose corn syrup laden
-soft drinks being the usual first choice and water the last for
-minerally deficient humans) and hunger for carbohydrates
-(i.e. - soft drinks, coffee and tea with added sugar, alcohol,
-pasta, deserts, bread, etc.).”
+### WAL-CLM-IMMORT-000478 · mechanism
+- **essentials:** vanadium · **conditions:** adhd, hypoglycemia, diabetes · **symptoms:** —
+- **claim:** Wallach says vanadium acts like insulin — making cell-membrane insulin receptors more sensitive — so it benefits the glucose and carbohydrate intolerance he sees behind ADD/ADHD, depression, and other 'chemical imbalance' behavior.
+- **verbatim** (offset 394389): “Vanadium enhances the stimulating effect of insulin
+on DNA synthesis. Despite low serum insulin, the blood
+glucose levels of diabetic rats fed vanadium was the same as
+the glucose levels of normal controls. Vanadium appears to
+function like insulin by altering cell membrane function for
+ion transport. Therefore vanadium has a very beneficial effect
+for humans with glucose and carbohydrate intolerance (i.e.
+hypoglycemia, hyperinsulinemia, narcolepsy, prediabetes,
+diabetes, depression, manic depression, bi-polar disease,
+“chemical imbalance,” ADD, ADHD, violent behavior, autism,
+etc.) by making the cell membrane insulin receptors more
+sensitive to insulin.”
 
-### WAL-CLM-IMMORT-000468 · definition
+### WAL-CLM-IMMORT-000479 · mechanism
+- **essentials:** selenium · **conditions:** cataracts · **symptoms:** —
+- **claim:** Wallach says heavy consumption of vegetable oils together with low selenium, plus heated or hydrogenated 'trans' oils, drives the free-radical rancidity of cellular fat behind cataracts.
+- **verbatim** (offset 373148): “Selenium also functions to protect cellular and organelle
+bi-lipid layer membranes from oxidative damage. Highintakes
+of vegetable oils, including salad dressing and cooking oils,
+concurrent with a selenium deficiency is the quickest route
+to a cardiomyopathy heart attack, arteriosclerosis (build up
+of plaque in the arteries resulting from free radical damage
+to the “intima” or lining of the Posty cataracts, macular
+degeneration, dementias, eainiiple sclerosis, cancer, etc.
+
+The polyunsaturated configuration of oils when heated
+or treated with hydrogen (“trans fatty acids”) literally causes
+the rancidity (“free radical” damage) of cellular fat.”
+
+### WAL-CLM-IMMORT-000480 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach explains that high-fructose corn syrup is a manufactured sweetener made from grains (corn) as well as from sugar beet and sugar cane. Fructose — also called levulose or fruit sugar — occurs naturally with glucose and sucrose in honey and fruit and is the sweetest of the natural sugars; sweeteners containing glucose and levulose are processed from these crops to make high-fructose corn syrup.
-- **verbatim** (offset 104841): “Fructose: (levulose, fruit sugar) is found together with
-glucose and sucrose in honey and fruit. It is the sweetest of the
-natural sugars. Sweeteners containing glucose and levulose
-can be made from grains (corn) as well as from the sugar beet
-and sugar cane to make high-fructose corn syrup.”
+- **claim:** Wallach points to calorie restriction on a perfect longevity diet as a proven lifespan extender: an entire colony of rats fed this way lives to five years of age instead of the usual three.
+- **verbatim** (offset 518921): “if all humans were to employ the four basic principals of
+IMMORTALITY almost all could live beyond 100 years of age just as an entire colony of rats
+on a perfect longevity diet with Calorie Restriction can live to be five years of age
+instead of three years.”
 
-### WAL-CLM-IMMORT-000469 · definition
+### WAL-CLM-IMMORT-000481 · prognosis
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach recounts that in the 1940s professors A.H. Carlson and F. Holzol added a "creative twist" to the caloric-restriction (CR) longevity approach by testing intermittent periods of fasting in rats. The animals were free-choice fed a high-quality diet rich in vitamins and minerals in unlimited amounts, but were fasted completely every other day (one group), every third day (another group), or every fourth day (a third group). As Wallach reports the result, the un-fasted rats reached a maximum life span of 800 days, while all three intermittently fasted groups extended maximum life span to 1,000 to 1,100 days — a 20 to 30% increase. Wallach presents intermittent fasting here as a variant of his "under-nutrition without malnutrition" theme: the fasting is paired with a nutrient-dense diet on the eating days, not with starvation.
-- **verbatim** (offset 58695): “In the 1940s, professors A.H. Carlson and F. Holzol
-added a creative twist to the concept of the CR diet by studying
-the effects of intermittent periods of fasting on the life span
-of rats. They free choice fed rats a high-quality diet rich in
-vitamins and minerals in unlimited amounts, but fasted them
-completely every other day; another group was fasted every
-third day and another group fasted every fourth day.”
+- **claim:** Wallach reports that studies on the red-wine compound resveratrol extend animal lifespans by as much as 40%, citing Wall Street Journal (Oct 30, 2006) and New York Times (Oct 31, 2006) coverage of an original article published in Nature.
+- **verbatim** (offset 670697): “The October 30, 2006 edition of the Wall Street Journal
+reported that studies on the red wine compound resveratrol
+extend animal lifespans by as much as 40%. Resveratrol was
+also considered for its potential life extending properties in
+an article related to Calorie Restricted diets in the October
+31, 2006 edition of The New York Times - the scientific journal
+Nature published the original article that was quoted by both
+newspapers.”
 
-### WAL-CLM-IMMORT-000470 · definition
+### WAL-CLM-IMMORT-000482 · diagnostic_pattern
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach cites Dr. Charles Goodrick of the National Institute on Aging (Gerontology Research Unit), who studied intermittent fasting by giving the control group a "perfect diet" while fasting the study group every other day. According to Wallach, the every-other-day fasted rats increased maximum life span from 875 days (the normally fed rats) to 1,295 days, and raised the 50% survival point from 630 days to 980 days. Wallach presents this as further evidence that intermittent fasting — alternating fed days with complete fast days on a nutrient-rich diet — increases both the average and the maximum life span of animals.
-- **verbatim** (offset 59326): “Dr. Charles Goodrick of the National Institute on
-Aging (Gerontology Research Unit) studied intermittent
-fasting by feeding the control a perfect diet while the study
-group was fasted every other day. Maximum life span was
-increased from the 875 days of the normally fed rats to 1,295
-in the restricted rats, from 630 days 50% survival to 980 days.”
+- **claim:** Wallach's position is that when people crave chocolate they are really mineral deficient - the same pica / 'munchies' drive he ties to trace-mineral lack. He adds that bitter, dark, unsweetened chocolate has a very low glycemic index because up to 70% of its calories come from fat, and fat does not raise blood sugar.
+- **verbatim** (offset 705185): “When people crave chocolate, they are really mineral
+deficient (pica, munchies, etc.). In fact, bitter, dark unsweetened
+chocolate has a very low glycemic index because up to 70% of
+the chocolate’s calories come from fat, and fat does not raise
+blood sugar.”
 
-### WAL-CLM-IMMORT-000471 · personal_anecdote
+### WAL-CLM-IMMORT-000483 · mechanism
+- **essentials:** calcium · **conditions:** restless_leg_syndrome · **symptoms:** —
+- **claim:** Wallach warns that diets heavy in fiber, salt, and phosphates from soft drinks raise the body's calcium "cost" and flush calcium out in the urine — excess salt pushed urinary calcium loss from 96 to 148 mg a day — deepening the calcium shortage behind restless leg syndrome.
+- **verbatim** (offset 212927): “Restless leg syndrome
+
+Other nutrients that are commonly found in the
+American diet can aggravate the national calcium deficiency
+crisis. Diets rich with an overabundance of fiber, salt and
+phosphates (soft drinks) result in an increased calcium “cost.”
+In effect, these foods increase the dietary requirements for
+calcium. Urinary calcium loss increased from 96 mg per day
+to 148 mg per day when food was excessively salted.”
+
+### WAL-CLM-IMMORT-000484 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** As a comparative pathologist, Dr. Joel Wallach performed more than 20,000 autopsies: over 17,500 on captive wild animals, laboratory species, and domestic animals spanning more than 454 species, plus 3,000 humans for comparison. Each autopsy included a review of the clinical records, microscopic and electron-microscopic examination of the tissues, microbiology cultures for fungi, bacteria and viruses, and chemical and biochemical profiles. This body of comparative autopsy work is the foundation Wallach cites for his nutritional framework.
-- **verbatim** (offset 97839): “As a comparative pathologist, I (Wallach) performed
-more than 20,000 autopsies of over 17,500 captive wild
-animals, laboratory species and domestic animals, of over 454
-species and 3,000 humans for a comparison.”
+- **claim:** Wallach says resveratrol appears to work in animals and humans by activating a family of enzymes called sirtuins (Sir-2), the same proteins involved in the anti-aging effects of a calorie-restricted diet.
+- **verbatim** (offset 669775): “Resveratrol appears to function in animals and humans
+by activating a family of enzymes called sirtuins (Sir-2) -
+these proteins are involved in the same anti-aging effects as a
+Calorie Restricted diet.”
 
-### WAL-CLM-IMMORT-000472 · personal_anecdote
+### WAL-CLM-IMMORT-000485 · protocol
+- **essentials:** — · **conditions:** cataracts · **symptoms:** —
+- **claim:** Wallach says daily antioxidant-rich food and drink quench the free radicals that raise cataract risk, and puts the optimal intake at 20,000 to 25,000 ORAC points a day.
+- **verbatim** (offset 641466): “Daily consumption of antioxidant rich food and drink is a universal feature of those
+living in Blue Zones and in particular centenarians. These potent carbon compounds
+quench or neutralize free radicals that attack our cells, cell walls, mitochondria and
+physiological processes and increase our risk of cardiovascular disease, cancer,
+Alzheimer’s disease and other dementias, cataracts, diabetes and aggressively speed up
+the process and damage of aging itself.
+
+A universally agreed upon method of predicting the antioxidant power and free radical
+neutralizing value of foods, drink and supplements is the Oxygen Radical Absorbance
+Capacity or ORAC value - based on current studies, we believe that the optimal total
+daily intake of ORAC points to reach the age of 100 years is 20,000 to 25,000 per day.”
+
+### WAL-CLM-IMMORT-000486 · food_source
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach's autopsy program grew out of a $7.5 million grant from the National Institutes of Health, secured by zoo director Marlin Perkins and Washington University botany professor Dr. Barry Commoner. The project, the Center for the Biology of Natural Systems, was created to autopsy zoo animals and urban-dwelling humans who had died of natural causes, to determine whether environmental pollution or food contamination might be a factor in their deaths. What the autopsies actually found was that every animal and every human dying of natural causes died of a nutritional deficiency disease rather than of pollution.
-- **verbatim** (offset 97509): “Perkins and Dr. Barry Commoner, a professor of Botany
-at Washington University, had gotten a $7.5 million grant
-from the National Institutes of Health, to perform autopsies
-on zoo animals and urban dwelling humans who had died of
-“natural causes” to determine whether or not pollution might
-be a factor in their causes of death.”
+- **claim:** Wallach explains that by 'cutting' and extending precious salt with wood, peat, or kelp ashes — 'culinary ashes' — humans from the beginning of time unknowingly took in all 60 essential minerals daily as a food supplement.
+- **verbatim** (offset 521535): “salt was not squandered by simply eating it, it was mixed,,
+“cut” and diluted with wood, peat or kelp ashes. And so with:
+the simple act of “extending” salt with “culinary” ashes,,
+humans, from the beginning of time, unknowingly acquired|
+the 60 essential minerals daily as a food supplement.”
 
-### WAL-CLM-IMMORT-000473 · definition
+### WAL-CLM-IMMORT-000487 · interaction
+- **essentials:** vitamin-b6 · **conditions:** peripheral_neuropathy · **symptoms:** —
+- **claim:** Wallach notes the tuberculosis drug isoniazid works against vitamin B6, producing the classic B6-deficiency picture -- including peripheral neuritis (nerve inflammation).
+- **verbatim** (offset 122327): “Deficiency of B, produces depression, nausea, vomiting,
+seborrheic dermatitis, mucus membrane lesions, peripheral
+neuritis, ataxia, hyperacusis, hyperirritability, altered mobility
+and alertness, abnormal head movements and convulsions.
+
+Treatment of tuberculosis patients with Isoniazid
+produces an antagonistic reaction against pyridoxine function
+which then results in the classical symptoms of deficiency.”
+
+### WAL-CLM-IMMORT-000488 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach recounts that in 1912 Dr. Alexis Carrel, a Nobel laureate for pioneering end-to-end anastomosis (the suturing together of blood vessels), began growing undifferentiated fibroblasts, connective-tissue cells he calls 'stem cells,' from chicken hearts in flasks at the Rockefeller Institute. Fed on filtered extracts of blended chicken embryos, these cultures kept multiplying and growing for 34 years, including two years after Carrel's own death. Wallach presents this as the basis of 'cellular immortality': the theory that cells are inherently immortal if they are fed a perfect diet and kept in a perfect environment.
-- **verbatim** (offset 38686): “In 1912, Dr. Alexis Carrel, who had won the Nobel
-Prize for developing the original technique for “end to end
-anastomosis (joining) of blood vessels with fine suture,”
-began to grow undifferentiated fibroblasts (connective tissue
-cells aka “stem cells”) from chicken hearts in flasks in his
-laboratory at the Rockefeller Institute.
+- **claim:** Wallach attributes the Hunza people's long lives to irrigating their terraced fields with highly mineralized Glacial Milk and fertilizing them with wood-ash compost that recycles colloidal plant minerals back into the soil.
+- **verbatim** (offset 620431): “The serendipitous irrigation of their terraced fields with
+the common denominator of a highly mineralized “Glacial
+Milk” and the fertilization of their fields with an organic
+compost rich with the recycled colloidal plant minerals found
+in wood ashes from their heating and cooking fires is the
+secret of the Hunzas’s long and fruitful lives.”
 
-He fed these isolated and undifferentiated fibroblast or
-“stem cells” with filtered extracts of blended chicken embryos
-and the “stem cells” kept multiplying and growing for 34
-years (including 2 years after Carrel’s own death).”
-
-### WAL-CLM-IMMORT-000474 · mechanism
+### WAL-CLM-IMMORT-000489 · definition
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Wallach states that a high-protein, low-carbohydrate diet is relatively forgiving of a low vitamin intake, but unforgiving of a low mineral diet — meaning that on this kind of eating plan a shortfall of minerals is far more damaging than a shortfall of vitamins.
-- **verbatim** (offset 713561): “A high protein, low carbohydrate diet is relatively
-forgiving of a low vitamin intake, but unforgiving of a low
-mineral diet.”
+- **claim:** Wallach describes Glacial Milk as a mix of ionically dissolved elements and a suspension of glacier-ground rock flour, whose 'metallic colloidal mineral' particles average 7,000 times smaller than a red blood cell and can be seen only under an electron microscope.
+- **verbatim** (offset 618590): “Glacial Milk is a mixed liquid, a solution of ionically
+dissolved elements and a suspension of finely ground rock
+dust (rock flour) shaved and ground from the living parent
+rock of the mountain by glacial friction. The suspended
+minerals in the Glacial Milk are referred to as “metallic
+colloidal minerals.” The average particle size of these colloid
+particles is 7,000 times smaller than a red blood cell - so small,
+that they can only be visualized by an electron microscope.”
 
-### WAL-CLM-IMMORT-000475 · definition
+### WAL-CLM-IMMORT-000490 · food_source
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** Dr. Ma Lan is Dr. Joel Wallach's wife and long-time co-author. She was educated in the People's Republic of China, received her MD from Beijing Medical University, took her residency at the People's Hospital in Beijing, and served as a staff surgeon at the Canton Air Force Hospital. She earned an MS in transplantation immunology from Zhongshan Medical University in Canton and, like all Chinese doctors, was trained in Traditional Chinese Medicine (acupuncture, herbs, manipulation, food medicine, massage, and hydrotherapy) before entering Western-style medical school. She has ten peer-reviewed publications, co-authored nine best-selling alternative-health books with Wallach, and attained the rank of Lieutenant in the Chinese Air Force as a general surgeon.
-- **verbatim** (offset 8290): “Dr. Ma Lan was educated in the Peoples Republic of
-China. Dr. Ma Lan received her MD (medical degree)from the
-Beijing Medical University; took her residency at the People’s
-Hospital, Beijing and was staff surgeon at the Canton Air
-Force Hospital; she received her MS (Master of Science)
-in transplantation immunology from Zhongshan Medical
-University, Canton, Peoples Republic of China; as with
-all Chinese doctors, Dr. Ma Lan was trained in Traditional
-Chinese Medicine (i.e.- acupuncture, herbs, manipulation,
-food medicine, massage and hydrotherapy) prior to entering
-the Western-style medical schools.”
+- **claim:** Wallach lists resveratrol's sources as grape skins and seeds, with muscadine, Pinot noir and Concord grapes especially high, plus Japanese knotweed (Polygonum cuspidatum), blueberries and peanuts.
+- **verbatim** (offset 670012): “Resveratrol can be found in the skins, seeds; notable
+grape varieties that contain high levels of resveratrol are
+muscadine grapes, Pinot noir grapes and Concord grapes.
 
-### WAL-CLM-IMMORT-000476 · definition
-- **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** In the ORAC table of common foods and drinks that Dr. Wallach reproduces in Immortality, noni juice is listed with an ORAC (Oxygen Radical Absorbance Capacity) value of 398 per serving, near the other exotic juices he cites (mangosteen juice at 498 and wolfberry/goji juice at 363). Wallach uses ORAC as the measure of a food's antioxidant / free-radical-neutralizing power, and states that the optimal total daily intake to reach the age of 100 is 20,000 to 25,000 ORAC points per day.
-- **verbatim** (offset 644765): “Noni juice 398
-Mangosteen juice 498
-Wolfberry (Gogi) juice 363”
+Resveratrol is also found in the Japanese Knotweed
+(Polygonum cuspidatum), blueberries and peanuts.”
 
-### WAL-CLM-IMMORT-000477 · quote
+### WAL-CLM-IMMORT-000491 · mechanism
 - **essentials:** — · **conditions:** — · **symptoms:** —
-- **claim:** In Immortality, cataloging long-lived populations, Wallach notes that the classical Mediterranean diet is "legendary for its health benefits," citing the Greek island of Symi as a well-known success story with the wish "may you live to be one hundred and more." He describes Symi (population 2,700) as having the region's best health record and highest longevity, with men and women still working their herds, gardens and yogurt into their nineties on a diet of fish, olive oil, tomato sauces, goat's cheese, Greek yogurt, red meat, vegetables, salads, fruit and red wine.
-- **verbatim** (offset 549712): “The classical Mediterranean diet is legendary for its
-health benefits and the Greek island of Symi is a well known
-success story - “may you live to be one hundred and more.””
+- **claim:** Wallach states it is generally agreed in the scientific world that resveratrol, the anti-aging substance found in red wine, is the basis for both the 'Grape Cure' and the 'French Paradox.'
+- **verbatim** (offset 667461): “It is generally agreed throughout the scientific world
+that resveratrol, the anti-aging substance found in red wines
+are the basis for the “Grape Cure” and the “French Paradox.””
+
+### WAL-CLM-IMMORT-000492 · food_source
+- **essentials:** calcium, iron, magnesium · **conditions:** — · **symptoms:** —
+- **claim:** Wallach presents juniper ash (the 'culinary ash' the Navajo add to corn foods) as a concentrated mineral supplement: it is a good source of dietary calcium and iron and a moderate source of magnesium, with one teaspoon supplying the calcium equivalent of a cup of milk, 28% of the RDA for iron, and nine percent of the RDA for magnesium.
+- **verbatim** (offset 563568): “Juniper ash proves to bea good source of dietary calcium,
+iron and a moderate source of magnesium. One teaspoon of
+juniper ash provides the equivalent calcium levels found in one
+cup of milk; it supplies 28% of the RDA for iron and nine percent
+of the RDA for magnesium.”
+
+### WAL-CLM-IMMORT-000493 · food_source
+- **essentials:** potassium, calcium, iron, copper, zinc · **conditions:** — · **symptoms:** —
+- **claim:** Wallach treats traditional 'culinary' wood ash as a full-spectrum mineral supplement rather than mere potash: the three traditional ash sources are all good sources of essential minerals (iron highest in greasewood ash), and wood ash in general - though variable in analysis - is rich in potassium, calcium, iron, copper, zinc, trace minerals and rare earths.
+- **verbatim** (offset 565505): “The three sources of “culinary” wood ashes were all
+good sources of essential minerals. Iron concentration was
+higher in the greasewood. Wood ash in general, although
+variable in analysis, tends to be rich in potassium, calcium,
+iron, copper, zinc, trace minerals and rare earths.”
+
+### WAL-CLM-IMMORT-000494 · prevalence
+- **essentials:** — · **conditions:** alzheimers · **symptoms:** —
+- **claim:** Wallach notes that several epidemiological studies link moderate wine consumption with a lower incidence of Alzheimer's disease.
+- **verbatim** (offset 670556): “Several epidemiological studies indicate that the
+moderate consumption of wine is associated with a lower
+incidence of Alzheimer’s disease.”
+
+### WAL-CLM-IMMORT-000495 · mechanism
+- **essentials:** vitamin-c, vitamin-e, flavonoids · **conditions:** cancer · **symptoms:** —
+- **claim:** Wallach says the catechins in green tea are the antioxidants credited with significant anti-cancer activity - reducing cancer risk by as much as 90% - and are 100 times more potent than vitamin C and 25 times more potent than vitamin E at neutralizing free radicals. Green tea itself contains xanthines, caffeine, tannins, polyphenols, catechins, flavonoids, oils and fats, and vitamin C.
+- **verbatim** (offset 697456): “Green tea contains xanthines, caffeine,
+tannins, polyphenols, catechins, flavonoids, oils and fats and
+vitamin C. The
+credited with significant anti-cancer activity (can reduce risk
+of cancer by as much as 90%). Catechins are 100 times more
+potent than vitamin C and 25 times more potent than vitamin
+E in neutralizing free”
+
+### WAL-CLM-IMMORT-000496 · mechanism
+- **essentials:** — · **conditions:** diabetes, cardiovascular_disease, rheumatoid_arthritis · **symptoms:** —
+- **claim:** Wallach cites a 2006 study finding that the high antioxidant content of coffee (polyphenols, catechins, epicatechins) can reduce the risk of diabetes, heart disease and rheumatoid arthritis, and that the caffeine in coffee is linked to relieving post-workout pain and facilitating healthy fat metabolism.
+- **verbatim** (offset 688768): “In 2006 a significant study was released that showed
+the high antioxidant content of coffee (i.e. polyphenols,
+catechins, epicatechins, etc.) could reduce the risk of diabetes,
+heart disease and rheumatoid arthritis, and more specifically
+the caffeine in coffee was linked to relieving post workout
+pain and facilitating healthy fat metabolism.”
+
+### WAL-CLM-IMMORT-000497 · prevalence
+- **essentials:** — · **conditions:** cancer, stomach_cancer · **symptoms:** —
+- **claim:** In the Nicoya Peninsula of Costa Rica - one of the world's longevity hotspots - people die of cancer, and of stomach cancer in particular, at a rate 23% lower than in the rest of Costa Rica.
+- **verbatim** (offset 581230): “An examination of the life expectancy and mortality
+rates showed that one region in the northwest of the country,
+including the 80 mile long Nicoya Peninsula that was
+significantly different from any other (in that area, people die
+of cancer - particularly stomach cancer - at a rate 23% lower
+than in the rest of Costa Rica).”
+
+### WAL-CLM-IMMORT-000498 · quote
+- **essentials:** — · **conditions:** constipation · **symptoms:** —
+- **claim:** Wallach cites the teaching that fine white-flour bread lacks the nutritive elements of whole-wheat bread and is a frequent cause of constipation.
+- **verbatim** (offset 737281): ““For use in bread making, the superfine flour is not
+the best. Its use is neither healthful nor economical. Fine-flour
+bread is lacking nutritive elements to be found in bread made
+from the whole wheat. It is a frequent cause of constipation
+and other unhealthful conditions.””
+
+### WAL-CLM-IMMORT-000499 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach attributes Hunza longevity to their water: for more than 2,300 years they drank and irrigated with mineral-laden glacial meltwater so rich it ran bluish-white, which they called 'Glacial Milk', giving them an optimal daily intake of the more than 60 minerals ground from Mount Rakaposhi by the Ultar Glacier.
+- **verbatim** (offset 616571): “The water originating from under the millions of tons
+of ice grinding on the parent rock of Mount Rakaposhi was so
+rich with minerals that it was bluish white, so white that the
+original people called it “Glacial Milk.” For generation after
+generation, crop after crop and year after year for more than
+2,300 years the Hunza people have drunk and irrigated their
+terraced fields with “Glacial Milk,” unwittingly assuring their
+people of an optimal intake of the more than 60 minerals in
+the “Glacial Milk” of the Ultar Glacier truely the “land of milk
+and honey”!”
+
+### WAL-CLM-IMMORT-000500 · prognosis
+- **essentials:** — · **conditions:** coronary_artery_disease, cancer, inflammation · **symptoms:** —
+- **claim:** Wallach's position is that moderate consumption of red wine is preferable to complete abstinence: red wine reduces vascular inflammation and the risk of coronary heart disease and cancer, and significantly increases longevity across yeast, worms, flies, fish and small mammals including primates.
+- **verbatim** (offset 668775): “Modernresearchreveals that themoderateconsumption
+of red wine is preferable to complete abstenence. Red wine
+is known to reduce vascular inflammation and the risk of
+coronary heart disease and cancer, a plethora of degenerative
+diseases and to significantly increase longevity in yeast,
+worms, flies, fish, small mammalian vertebrates (including
+primates) and fish.”
+
+### WAL-CLM-IMMORT-000501 · definition
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach holds that aging begins the moment you are conceived and continues unabated at hourly, daily, weekly and annual rates until death.
+- **verbatim** (offset 639146): “The aging process starts the moment you are conceived and continues unabated,
+progressing forward at varying speeds, and degrees at an hourly, daily, weekly and
+annual rate until the ultimate end of the process - death.”
+
+### WAL-CLM-IMMORT-000502 · mechanism
+- **essentials:** flavonoids · **conditions:** cardiovascular_disease · **symptoms:** —
+- **claim:** Wallach cites a Harvard School of Public Health review of 136 studies which concluded that chocolate is a major source of flavonoids (epicatechins, catechins and procyanidins) and that its primary fat, stearic acid, does not have adverse effects on blood vessels, cholesterol or overall cardiovascular health because it is metabolized differently than other saturated fats.
+- **verbatim** (offset 709307): “A team of researchers from the Harvard School of
+Public Health reviewed 136 studies on the relationship of
+chocolate and cocoa to cardiovascular health. The study
+included research ranging from lab tests to human studies.
+The research team concluded that chocolate is a major source
+of flavanoids (epicatechins, catechins and procyanidins) and
+determined that “the primary fat in chocolate (stearic acid)
+did not have adverse effects on blood vessels, cholesterol
+or overall cardiovascular health” because it is metabolized
+differently than other types of saturated fats.”
+
+### WAL-CLM-IMMORT-000503 · prevalence
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach cites the U.S. Surgeon General's 2006 statement that of the 2.2 million deaths in America each year, 1.8 million are diet related, and says it corroborates his own 1968 observation that every animal and human that dies of natural causes is really dying of a nutritional deficiency disease.
+- **verbatim** (offset 517052): “In 2006, the U.S. Surgeon General said
+that, “of the 2.2 million deaths in America each year, that 1.8
+million are diet related” - this statement agrees with the 1968
+observation of Dr. Wallach that, “Every animal and every
+human being that dies of natural causes dies of a nutritional
+deficiency disease.””
+
+### WAL-CLM-IMMORT-000504 · prevalence
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach cites the 'French Paradox': the French consume more fat per person than any other culture in the world, yet rank third for health and longevity out of 193 nations.
+- **verbatim** (offset 667230): “The French consume more fat per person than any other
+culture in the world, yet they rank third oneveryone’s charts on
+health and longevity out of 193 nations. American physicians
+call this amazing phenomina the “French Paradox.””
+
+### WAL-CLM-IMMORT-000505 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach highlights that the Hunza ate an already calorie-restricted diet, and that each late spring their food reserves ran so low - a period they called 'Starvation Springtime' - that meals dropped to just two or three a week, framing this involuntary caloric restriction as part of their longevity.
+- **verbatim** (offset 587241): “Adding to their already Calorie Restricted diet was
+the fact that by late spring of each year the Hunzakut’s
+food reserves ran low, producing what they call “Starvation
+Springtime.” Meals are reduced to a frequency of two to three
+meals a week.”
+
+### WAL-CLM-IMMORT-000506 · food_source
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach explains that kelp and algae take up the ocean's dissolved inorganic minerals - which he estimates at 200,000,000 tons per cubic mile of sea - and convert them into usable organic form, making kelp eaten as a vegetable a significant source of dietary plant minerals.
+- **verbatim** (offset 629111): “Chemists have realized, for centuries that, in the great
+oceans there are dissolved all of the naturally occurring
+elements and minerals. It is estimated that each cubic mile
+of ocean contains 200,000,000 tons of elemental and mineral
+compounds.
+
+Kelp and algae growing in the sea takes up these
+inorganic salts and converts them into useable organic forms.
+When used as fertilizer (either as dried kelp or kelp ash) or
+added directly to the diet as a vegetable, kelp is a significant
+source of dietary plant minerals.”
+
+### WAL-CLM-IMMORT-000507 · prevalence
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach reports that among the Hunza, anyone surviving past the first year of life typically lives beyond age eighty in excellent health, with significant numbers reaching their nineties and past 100, and that the main cause of premature death is accidents such as landslides and falls rather than disease.
+- **verbatim** (offset 586623): “Doctors practicing in Hunza today have concluded that
+the main cause of premature death amongst the Hunzakut
+people is from accidents, from landslides or falls from the shear
+rock walls. Infant mortality from infectious diseases have been
+reported; however, the average individual surviving past one
+year of age lives beyond the age of eighty, in exc ellent health
+and significant numbers live into their nineties and past 100
+years.”
+
+### WAL-CLM-IMMORT-000508 · mechanism
+- **essentials:** — · **conditions:** coronary_artery_disease, cancer, diabetes · **symptoms:** —
+- **claim:** Wallach attributes the long-lived Yao people of Bama's extremely low rates of coronary artery disease, cancer, and diabetes to their mineral-rich environment — terraces irrigated with the mineral-laden Panyang River and gardens fertilized with wood-ash compost.
+- **verbatim** (offset 530333): “The Yao people of Bama irrigate their terraces with the
+mineral laden waters of the Panyang River, and they fertilize
+their gardens with compost consisting of kitchen waste, wood
+ash, plant debris and animal manure.
+
+The Yao people have an extremely low incidence of
+chronic disease such as coronary artery disease, cancer and
+diabetes.”
+
+### WAL-CLM-IMMORT-000509 · prognosis
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach rejects Dan Buettner's claim that there are only four Blue Zones on earth, arguing there are literally an infinite number of places where people commonly live beyond 100 years of age.
+- **verbatim** (offset 518618): “Dan Buettner, author of the Blue Zones, believes that there are only four places on earth
+where people successfully live to be over 100 years of age. His is quite the simple view as
+there are in fact literally an infinite number of places on earth where people commonly
+live beyond 100 years of age”
+
+### WAL-CLM-IMMORT-000510 · protocol
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach notes that the long-lived Costa Ricans take a daily 'sun-bathe' of 15 to 30 minutes, exposing their faces, arms and legs to sunlight each day.
+- **verbatim** (offset 584422): “The Costa Ricans take daily “sun-bathes” for 15 to 30
+minutes each day by exposing their faces, arms and legs.”
+
+### WAL-CLM-IMMORT-000511 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach frames the Macedonian pursuit of Nile-flood-plain wheat as a mineral story: the highly mineralized wheat of the Nile flood plains was legendary for giving strength and stamina to the armies that ate it, so Macedonia secured exclusive rights to it to fuel its invasion of Asia.
+- **verbatim** (offset 599012): “but rather a political treaty between
+Macedonia and Egypt - the Macedonians wanted and got
+exclusive rights to the highly mineralized wheat from the Nile
+flood plains, wheat that was legendary in providing strength
+and stamina to the armies that ate it - Macedonia needed this
+Egyptian wheat to support its armies for the coming invasion
+of Asia!”
+
+### WAL-CLM-IMMORT-000512 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach cites McCarrison's classic experiment: rats fed a typical Hunza diet (whole-grain chapattis, butter, legumes, raw carrots and cabbage, whole milk, eggs, meat, water, plus daily sunlight) reached 27 months - the equivalent of 55 human years - free of overt disease, with no early deaths and no aggression, offered as evidence that diet determines health and longevity.
+- **verbatim** (offset 589453): “Group 1 - These rats were fed a typical Hunza diet
+of whole-grain chapattis, butter, legumes, raw carrots, raw
+cabbage, whole milk, eggs, meat, water and they were exposed
+to sunlight daily.
+
+When the rats reached the age of 27 months (the
+equivalent of 55 years in humans), they were killed and
+examined: the rats were free of overt disease, there had not
+been any early mortality; the rats were alert yet lived together
+without aggression.”
+
+### WAL-CLM-IMMORT-000513 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach notes that anandamide, another neurotransmitter found in chocolate, targets the same brain structures that are targeted by THC, the active ingredient in marijuana.
+- **verbatim** (offset 708976): “Anandaminde_ is found
+in chocolate. This phytochemical targets the same brain
+structures that are targeted by the active ingredient in
+marijuana - THC.”
+
+### WAL-CLM-IMMORT-000514 · food_source
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach notes the Hunza mine their salt from hills near the Shimshal and Muztagh Rivers and use it in tea and cooking in its raw brown state - the brown color coming from the trace minerals left in the deposit when the ancient seas dried up.
+- **verbatim** (offset 611225): “The Hunza salt supply is mined from hills near the
+Shimshal and Muztagh Rivers and used in their tea and for
+cooking in its raw brown state (the color originates from the
+trace minerals included in the salt deposit when the seas dried”
+
+### WAL-CLM-IMMORT-000515 · prevalence
+- **essentials:** — · **conditions:** diabetes, obesity · **symptoms:** —
+- **claim:** Wallach uses the Pima Indians as a natural experiment against the genetic theory of diabetes: the Pima on both sides of the Arizona-Mexico border come from the identical genetic pool, yet the Mexican-side Pima (still subsistence farmers who cook and heat with wood and return the wood ash to their gardens and corn tortillas) have almost no type II diabetes and only about a 10% obesity rate, while the Arizona Pima who adopted the American lifestyle in the 1940s carry a 22% diabetes rate and 70% obesity - so in his framework the disease tracks diet and lost minerals, not genes.
+- **verbatim** (offset 566838): “The Pima band on both sides of the border are from
+the identical genetic pool; yet the Pima Indians on the Mexican
+side of the border have no almost no type II diabetes and have
+only a ten percent obesity rate compared with the rate of 22%
+diabetes and the 70% obesity in the Arizona Pima!”
+
+### WAL-CLM-IMMORT-000516 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach identifies phenylethylamine (PEA) as an important phytochemical in chocolate - a neurotransmitter that stimulates the body's pleasure centers, with large amounts associated with feelings of excitement, attraction and sexual pleasure, which he says is why chocolate became a traditional seductive gift.
+- **verbatim** (offset 708557): “An important phytochemical found in chocolate is
+phenylethylamine (PEA), this neurotransmitter stimulates the
+body’s pleasure centers. Large q uantities of PEA are associated
+with feelings of excitement, attraction and sexual pleasure. It
+is the affects of the PEA in chocolate that has caused chocolate
+to be given as a traditional seductive gift for Valentine’s Day,”
+
+### WAL-CLM-IMMORT-000517 · mechanism
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach explains resveratrol as a plant defense compound (phytoalexin): grapes and wine grown in humid environments produce more resveratrol than those from arid regions, the theory being that grapes make more of it to repel damaging fungi.
+- **verbatim** (offset 669528): “Grapes and wine grown in humid environments
+produce more resveratrol than wines grown in more arid
+environments. The theory for this phenomena is that grapes
+grown in humid environments produce more resveratrol in
+order to repell damaging fungi.”
+
+### WAL-CLM-IMMORT-000518 · food_source
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach reports that Okinawan centenarians ate their minerals directly by mixing rice-straw ashes into noodle dough and cooking rice - 'culinary ashes' he counts as part of the Okinawa longevity secret.
+- **verbatim** (offset 634302): “And then the lady centenarians shared something we
+hadn’t thought of, “We also added rice straw ashes to our
+noodle dough and rice as we cooked them because it added
+a wonderful yellow color and enhanced the flavor.” Culinary
+ashes (plant minerals) were part of the Okinawa secret!”
+
+### WAL-CLM-IMMORT-000519 · prognosis
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach holds that being religious increases longevity: a meta-analysis of 42 studies covering 125,826 people found that regular attendance at a place of worship added eight years to average lifespan and improved general health.
+- **verbatim** (offset 536258): “Being religious definitely increases one’s longevity. In
+a meta-analysis of 42 studies which examined 125,826 people
+(American Psychological Association in the year 2,000), it was
+demonstrated that regular attendance at a place of worship
+(church, synagogue, mosque or temple) added eight years to
+the average lifespan and improved general health.”
+
+### WAL-CLM-IMMORT-000520 · protocol
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach recommends learning to safely use and apply non-invasive anti-aging tools - vitamin-mineral supplements, non-surgical facelifts, non-chemical peels, phyto-hormones (phyto-estrogens, phyto-progesterones, HGH, thyroid and adrenal support) and non-toxic cosmetics - rather than the painful, risky route of plastic surgery, chemical peels and BoTox.
+- **verbatim** (offset 716426): “We believe that it is worth learning how to use and
+apply non-invasive anti-aging vitamin-mineral supplements,
+non-surgical facelifts, non-chemical peels, phyto-hormones
+(i.e. phyto-estrogens, phyto-progesterones, HGH, thyroid
+support, adrenal support, etc.) and beauty products and non-toxic cosmetics safely.”
+
+### WAL-CLM-IMMORT-000521 · quote
+- **essentials:** — · **conditions:** — · **symptoms:** —
+- **claim:** Wallach cites the Chinese herbalist Li-Ching-Yun — reportedly born in 1677 and dead in 1933 at age 256, having sold herbs for 100 years and outlived 23 wives — as a real-world exemplar of extreme longevity.
+- **verbatim** (offset 534364): “Li-Ching-Yun reportedly lived to the age of 256 years,
+he outlived 23 wives and had 180 descendents! Li of Kaihsien,
+in the Province of Szechwan, China, was born in 1677; he sold
+herbs for 100 years; and died in 1933 at the age of 256 years”
+
+### WAL-CLM-IMMORT-000522 · deficiency_sign
+- **essentials:** — · **conditions:** nystagmus · **symptoms:** —
+- **claim:** Wallach describes thiamine (vitamin B-1) deficiency as producing nystagmus — rhythmic, involuntary side-to-side movements of the eyes — together with memory loss that can look like early Alzheimer's, disorientation, and a staggering gait (ataxia).
+- **verbatim** (offset 118282): “memory (looks like early Alzheimer’s disease), disorientation,
+nystagmus (rhythmic side to side movements of the eyes) and
+ataxia (a type of staggering gait).”
 

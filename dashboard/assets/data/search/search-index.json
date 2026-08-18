@@ -145,7 +145,7 @@
         "acne vulgaris"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "adhd": {
       "display_name": "Adhd",
@@ -162,7 +162,7 @@
         "autism",
         "learning_disabilities"
       ],
-      "claim_count": 1
+      "claim_count": 3
     },
     "adrenal_exhaustion": {
       "display_name": "Adrenal Exhaustion",
@@ -235,7 +235,7 @@
         "baldness"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 3
     },
     "aluminum": {
       "display_name": "Aluminum",
@@ -677,7 +677,7 @@
         "breathing problems"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 4
     },
     "athletes_foot": {
       "display_name": "Athletes Foot",
@@ -932,7 +932,7 @@
         "prostate_cancer",
         "impotence"
       ],
-      "claim_count": 1
+      "claim_count": 3
     },
     "berylliosis": {
       "display_name": "Berylliosis",
@@ -1260,7 +1260,7 @@
         "peeling nails"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "bromine": {
       "display_name": "Bromine",
@@ -1600,7 +1600,7 @@
         "catarcts"
       ],
       "related": [],
-      "claim_count": 2
+      "claim_count": 3
     },
     "catarrh": {
       "display_name": "Catarrh",
@@ -1617,6 +1617,18 @@
         "congested_lungs",
         "colds"
       ],
+      "claim_count": 1
+    },
+    "celiac_disease": {
+      "display_name": "Celiac Disease",
+      "type": "condition",
+      "synonyms": [
+        "celiac",
+        "coeliac disease",
+        "celiac sprue",
+        "gluten enteropathy"
+      ],
+      "related": [],
       "claim_count": 1
     },
     "centenarian-cultures": {
@@ -1646,6 +1658,17 @@
       "related": [
         "birth_defects"
       ],
+      "claim_count": 1
+    },
+    "cerebrovascular_disease": {
+      "display_name": "Cerebrovascular Disease",
+      "type": "condition",
+      "synonyms": [
+        "cerebral vascular disease",
+        "brain blood vessel disease",
+        "carotid artery disease"
+      ],
+      "related": [],
       "claim_count": 1
     },
     "cerium": {
@@ -2010,7 +2033,7 @@
       "related": [
         "chronic_fatigue_syndrome"
       ],
-      "claim_count": 1
+      "claim_count": 7
     },
     "chronic_fatigue_syndrome": {
       "display_name": "Chronic Fatigue Syndrome",
@@ -2138,6 +2161,18 @@
       "related": [
         "vitamin-b5"
       ],
+      "claim_count": 1
+    },
+    "cold_sores": {
+      "display_name": "Cold Sores",
+      "type": "condition",
+      "synonyms": [
+        "fever blisters",
+        "oral herpes",
+        "herpes labialis",
+        "lip blisters"
+      ],
+      "related": [],
       "claim_count": 1
     },
     "colds": {
@@ -2279,7 +2314,7 @@
         "catarrh",
         "colds"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "congestive_heart_failure": {
       "display_name": "Congestive Heart Failure",
@@ -2332,7 +2367,7 @@
         "cant have a bowel movement"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 3
     },
     "convulsions": {
       "display_name": "Convulsions",
@@ -2345,7 +2380,7 @@
         "spasms"
       ],
       "related": [],
-      "claim_count": 2
+      "claim_count": 3
     },
     "copper": {
       "display_name": "Copper",
@@ -2570,7 +2605,7 @@
       "related": [
         "vaginitis"
       ],
-      "claim_count": 2
+      "claim_count": 3
     },
     "dairy": {
       "display_name": "Milk & Dairy",
@@ -2666,7 +2701,7 @@
       "related": [
         "bipolar_disorder"
       ],
-      "claim_count": 2
+      "claim_count": 5
     },
     "dermatitis": {
       "display_name": "Dermatitis",
@@ -2880,7 +2915,7 @@
         "colitis",
         "crohns_disease"
       ],
-      "claim_count": 1
+      "claim_count": 3
     },
     "docosahexaenoic-acid": {
       "display_name": "Docosahexaenoic Acid (DHA)",
@@ -3125,7 +3160,7 @@
       "related": [
         "dermatitis"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "eggs": {
       "display_name": "Eggs",
@@ -3177,6 +3212,17 @@
         "selenium"
       ],
       "claim_count": 3
+    },
+    "endometriosis": {
+      "display_name": "Endometriosis",
+      "type": "condition",
+      "synonyms": [
+        "endometrial tissue outside the uterus",
+        "pelvic endometriosis",
+        "endometrial implants"
+      ],
+      "related": [],
+      "claim_count": 1
     },
     "enuresis": {
       "display_name": "Enuresis",
@@ -3762,7 +3808,7 @@
       "related": [
         "indigestion"
       ],
-      "claim_count": 1
+      "claim_count": 4
     },
     "gamma-linolenic-acid": {
       "display_name": "Gamma-Linolenic Acid (GLA)",
@@ -4035,7 +4081,7 @@
         "painful big toe joint"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 3
     },
     "grilled_bbq_meat": {
       "display_name": "Grilled / BBQ meat",
@@ -4078,7 +4124,7 @@
         "kids aching legs"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "hafnium": {
       "display_name": "Hafnium",
@@ -4208,7 +4254,7 @@
         "hyperacidity",
         "hiatal_hernia"
       ],
-      "claim_count": 1
+      "claim_count": 3
     },
     "heat_stroke": {
       "display_name": "Heat Stroke",
@@ -4256,7 +4302,7 @@
         "rectal_itching",
         "bleeding_bowels"
       ],
-      "claim_count": 1
+      "claim_count": 6
     },
     "hepatitis": {
       "display_name": "Hepatitis",
@@ -4336,7 +4382,7 @@
         "hypertension",
         "heart_attack"
       ],
-      "claim_count": 1
+      "claim_count": 3
     },
     "high_fructose_corn_syrup": {
       "display_name": "High-Fructose Corn Syrup",
@@ -4372,7 +4418,7 @@
         "fatty_liver",
         "prediabetes"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "histidine": {
       "display_name": "Histidine",
@@ -4654,7 +4700,7 @@
         "high_cholesterol",
         "aneurysm"
       ],
-      "claim_count": 1
+      "claim_count": 4
     },
     "hyperthyroidism": {
       "display_name": "Hyperthyroidism",
@@ -4731,7 +4777,7 @@
       "related": [
         "goiter"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "hysteria": {
       "display_name": "Hysteria",
@@ -4745,7 +4791,7 @@
         "fit of hysteria"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "iatrogenic-medicine": {
       "display_name": "Iatrogenic Medicine",
@@ -4777,6 +4823,18 @@
       "related": [],
       "claim_count": 1
     },
+    "immunotherapy": {
+      "display_name": "Immunotherapy",
+      "type": "concept",
+      "synonyms": [
+        "immune therapy",
+        "immune-boosting treatment",
+        "boosting immunity",
+        "immune system therapy"
+      ],
+      "related": [],
+      "claim_count": 1
+    },
     "impetigo": {
       "display_name": "Impetigo",
       "type": "condition",
@@ -4791,7 +4849,7 @@
       "related": [
         "ringworm"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "impotence": {
       "display_name": "Impotence",
@@ -4870,7 +4928,7 @@
         "infected wound"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "infertility": {
       "display_name": "Infertility",
@@ -4958,7 +5016,7 @@
         "insomia"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "intelligence": {
       "display_name": "Intelligence & IQ",
@@ -5178,7 +5236,7 @@
         "ibs stomach"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 4
     },
     "isoleucine": {
       "display_name": "Isoleucine",
@@ -5273,7 +5331,7 @@
       "related": [
         "eye_redness"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "keratosis": {
       "display_name": "Keratosis",
@@ -5357,6 +5415,19 @@
       ],
       "claim_count": 1
     },
+    "kidney_disease": {
+      "display_name": "Kidney Disease",
+      "type": "condition",
+      "synonyms": [
+        "kidney problems",
+        "renal disease",
+        "kidney failure",
+        "bad kidneys",
+        "kidney trouble"
+      ],
+      "related": [],
+      "claim_count": 1
+    },
     "kidney_stones": {
       "display_name": "Kidney Stones",
       "type": "condition",
@@ -5368,7 +5439,7 @@
         "kidney gravel"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 5
     },
     "korsakoff": {
       "display_name": "Korsakoff's Syndrome",
@@ -5452,6 +5523,19 @@
       "related": [
         "lactose_intolerance"
       ],
+      "claim_count": 1
+    },
+    "lactation_suppression": {
+      "display_name": "Stopping Breast Milk",
+      "type": "concept",
+      "synonyms": [
+        "stop breast milk",
+        "dry up breast milk",
+        "suppress lactation",
+        "stop breastfeeding",
+        "reduce milk supply"
+      ],
+      "related": [],
       "claim_count": 1
     },
     "lanthanum": {
@@ -5798,7 +5882,7 @@
         "lyme's disease"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "lysine": {
       "display_name": "Lysine",
@@ -6257,7 +6341,7 @@
       "related": [
         "pms"
       ],
-      "claim_count": 3
+      "claim_count": 4
     },
     "mercury": {
       "display_name": "Mercury",
@@ -6367,7 +6451,7 @@
       "related": [
         "headache"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "minerals": {
       "display_name": "Minerals",
@@ -6487,7 +6571,7 @@
       "related": [
         "vomiting"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "msg": {
       "display_name": "MSG",
@@ -6520,7 +6604,7 @@
       "related": [
         "measles"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "muscle_strength": {
       "display_name": "Muscle & Strength",
@@ -6601,6 +6685,19 @@
         "hydrotherapy",
         "be_your_own_doctor"
       ],
+      "claim_count": 1
+    },
+    "nausea": {
+      "display_name": "Nausea",
+      "type": "concept",
+      "synonyms": [
+        "feeling sick to my stomach",
+        "queasiness",
+        "upset stomach",
+        "feeling nauseous",
+        "want to vomit"
+      ],
+      "related": [],
       "claim_count": 1
     },
     "negative_ion_therapy": {
@@ -7269,7 +7366,7 @@
         "arthritis",
         "pagets_disease"
       ],
-      "claim_count": 6
+      "claim_count": 8
     },
     "otitis": {
       "display_name": "Otitis",
@@ -7433,7 +7530,7 @@
         "duodenal ulcer"
       ],
       "related": [],
-      "claim_count": 4
+      "claim_count": 6
     },
     "periodontal_disease": {
       "display_name": "Periodontal Disease",
@@ -7449,6 +7546,22 @@
         "gingivitis",
         "pyorrhea",
         "tooth_decay"
+      ],
+      "claim_count": 1
+    },
+    "peripheral_neuropathy": {
+      "display_name": "Peripheral Neuropathy",
+      "type": "condition",
+      "synonyms": [
+        "nerve damage in feet",
+        "numbness in feet and hands",
+        "peripheral nerve damage",
+        "tingling hands and feet",
+        "burning feet nerves",
+        "peripheral neuropathy"
+      ],
+      "related": [
+        "neuropathy"
       ],
       "claim_count": 1
     },
@@ -7639,7 +7752,7 @@
       "related": [
         "menopause"
       ],
-      "claim_count": 1
+      "claim_count": 4
     },
     "poison_ivy": {
       "display_name": "Poison Ivy",
@@ -7906,7 +8019,7 @@
         "silvery skin scales"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 3
     },
     "ptosis": {
       "display_name": "Ptosis",
@@ -8132,6 +8245,20 @@
       ],
       "claim_count": 1
     },
+    "restless_leg_syndrome": {
+      "display_name": "Restless Leg Syndrome",
+      "type": "condition",
+      "synonyms": [
+        "rls",
+        "restless legs",
+        "restless leg",
+        "leg twitching at night",
+        "urge to move legs",
+        "creepy crawly legs"
+      ],
+      "related": [],
+      "claim_count": 3
+    },
     "rhenium": {
       "display_name": "Rhenium",
       "common_name": "Rhenium",
@@ -8216,6 +8343,18 @@
       "related": [
         "tularemia"
       ],
+      "claim_count": 1
+    },
+    "rosacea": {
+      "display_name": "Rosacea",
+      "type": "condition",
+      "synonyms": [
+        "acne rosacea",
+        "facial redness",
+        "facial flushing",
+        "red face rash"
+      ],
+      "related": [],
       "claim_count": 1
     },
     "roseola": {
@@ -8411,7 +8550,7 @@
         "sciatic pain"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "scoliosis": {
       "display_name": "Scoliosis",
@@ -8573,7 +8712,7 @@
         "zoster"
       ],
       "related": [],
-      "claim_count": 2
+      "claim_count": 4
     },
     "silica": {
       "display_name": "Silica",
@@ -8893,7 +9032,7 @@
         "cardiovascular_disease",
         "arteriosclerosis"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "strontium": {
       "display_name": "Strontium",
@@ -9047,7 +9186,7 @@
         "sexually transmitted infection"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "tachycardia": {
       "display_name": "Tachycardia",
@@ -9172,6 +9311,22 @@
         "brown teeth"
       ],
       "related": [],
+      "claim_count": 1
+    },
+    "teething": {
+      "display_name": "Teething",
+      "type": "condition",
+      "synonyms": [
+        "baby teething",
+        "teething pain",
+        "cutting teeth",
+        "teething baby",
+        "sore gums baby",
+        "teething trouble"
+      ],
+      "related": [
+        "diaper_rash"
+      ],
       "claim_count": 1
     },
     "terbium": {
@@ -9378,7 +9533,7 @@
         "tinitus"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 5
     },
     "titanium": {
       "display_name": "Titanium",
@@ -9429,7 +9584,7 @@
         "tonsilitis"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "toothache": {
       "display_name": "Toothache",
@@ -9653,6 +9808,18 @@
       ],
       "claim_count": 3
     },
+    "uterine_fibroids": {
+      "display_name": "Uterine Fibroids",
+      "type": "condition",
+      "synonyms": [
+        "fibroids",
+        "uterine fibroid",
+        "womb fibroids",
+        "fibroid tumors"
+      ],
+      "related": [],
+      "claim_count": 3
+    },
     "vaccines": {
       "display_name": "Vaccines",
       "type": "topic",
@@ -9667,7 +9834,7 @@
         "autism",
         "be_your_own_doctor"
       ],
-      "claim_count": 1
+      "claim_count": 2
     },
     "vaginitis": {
       "display_name": "Vaginitis",
@@ -9780,7 +9947,7 @@
         "varicose vein"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "veganism": {
       "display_name": "Veganism & Vegetarianism",
@@ -9823,7 +9990,7 @@
         "balance problems"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 2
     },
     "vitamin-a": {
       "display_name": "Retinol",
@@ -10273,7 +10440,7 @@
         "anemia",
         "antioxidants"
       ],
-      "claim_count": 27
+      "claim_count": 29
     },
     "vitamin-d": {
       "display_name": "Cholecalciferol",
@@ -17863,6 +18030,2940 @@
         "arthritis",
         "drug-safety"
       ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000320",
+      "subject": "high_cholesterol",
+      "also_about": [
+        "vitamin-c",
+        "vitamin-b3",
+        "calcium",
+        "magnesium",
+        "chromium",
+        "vanadium",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for high cholesterol?",
+      "answer_short": "Exercise, oat bran/soy fiber in juice, vitamin C, EFA 5 gm t.i.d., time-release niacin 450 mg b.i.d., calcium/magnesium, chromium and vanadium 250 mcg, selenium 300 mcg, evening primrose, and a liver flush.",
+      "answer": "For elevated cholesterol Wallach recommends exercise, oat bran or soy protein fiber in juice, vitamin C to bowel tolerance, essential fatty acids 5 gm t.i.d., time-release niacin 450 mg b.i.d., calcium and magnesium 2,000/1,000 mg, chromium and vanadium 250 mcg, selenium 300 mcg, evening primrose, and a liver flush.",
+      "verbatim": "Treatment for elevated cholesterol includes regular exercise, base line\nsupplement program, one to two heaping tablespoons of oat bran or protein\nfiber (soy powder) in an eight oz. glass of juice, vitamin C to bowel\ntolerance, essential fatty acids at 5 gm t.i.d., niacin at 450 mg b.i.d. as time\nrelease tablets, calcium and magnesium at 2,000 mg and 1,000 mg per day,\nchromium at 250 mcg., vanadium 250 mcg, selenium at 300 mcg., and\nherbs to include evening primrose (Oenothera biennis). A good liver flush\ncan be very useful.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "cholesterol",
+        "heart-health",
+        "niacin",
+        "cardiovascular",
+        "fiber"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c",
+          "vitamin-b3",
+          "calcium",
+          "magnesium",
+          "chromium",
+          "vanadium",
+          "selenium"
+        ],
+        "conditions": [
+          "high_cholesterol"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000321",
+      "subject": "congested_lungs",
+      "also_about": [
+        "magnesium",
+        "manganese"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for congested lungs or bronchitis?",
+      "answer_short": "Homeopathy, acupuncture, steam-sauna hydrotherapy, massage, pennyroyal tea, plus magnesium, manganese and essential fatty acids at 9 grams/day; avoid dairy, fried foods, margarine and sugar.",
+      "answer": "For congested lungs with bronchitis Wallach recommends homeopathy, acupuncture, steam-sauna hydrotherapy, massage, pennyroyal tea, and treatment with magnesium, manganese and essential fatty acids at 9 grams per day, avoiding dairy, fried foods, margarine and sugar.",
+      "verbatim": "CONGESTED LUNGS (with bronchitis) can be treated with homeopathy,\nacupuncture, hydrotherapy to include a steam sauna, massage, and herbs\nincluding penny royal (Mentha pulegium) as concentrated tea. Treat with\nmagnesium, manganese, and the essential fatty acids at 9 grams per day.\nRemember the baseline nutritional program. Avoid dairy products, fried\nfoods, margarine, and sugar natural and processed.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "respiratory",
+        "lungs",
+        "congestion",
+        "bronchitis",
+        "magnesium"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "magnesium",
+          "manganese"
+        ],
+        "conditions": [
+          "congested_lungs"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000322",
+      "subject": "vitamin-c",
+      "also_about": [
+        "gallstones"
+      ],
+      "facet": "protocol",
+      "question": "Does vitamin C help with gallstones?",
+      "answer_short": "Wallach's gallstone treatment includes vitamin C taken to bowel tolerance.",
+      "answer": "Wallach includes vitamin C, taken to bowel tolerance, in his treatment for gallbladder disease and gallstones.",
+      "verbatim": "Treatment of gallbladder disease and gallstones includes the use of high\nfiber diets (i.e. make sure you are having 2-3 bowel movements per day),\nlecithin at 2,500 mg t.i.d., EFA at 5 gm t.i.d., vitamin E at 800-1,200 IU per\nday, vitamin C to bowel tolerance, selenium at 200 mcg t.i.d., and taurine at\n500 mg t.i.d.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "gallstones",
+        "vitamin C",
+        "gallbladder"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c"
+        ],
+        "conditions": [
+          "gallstones"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000323",
+      "subject": "growing_pains",
+      "also_about": [
+        "calcium",
+        "magnesium",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for growing pains in children?",
+      "answer_short": "Calcium and magnesium at 2,000/1,000 mg/day, selenium 50-200 mcg b.i.d., betaine HCl with pancreatic enzymes, and Pig Arthritis Formula at 1 tsp per 20 lbs body weight.",
+      "answer": "Wallach calls growing pains red flags for nutritional deficiency and treats them with calcium and magnesium at 2,000 mg and 1,000 mg per day, selenium at 50-200 mcg b.i.d., betaine HCl with pancreatic enzymes (75-200 mg t.i.d.), and his Pig Arthritis Formula at 1 tsp per 20 pounds of body weight.",
+      "verbatim": "Treatment of growing pains includes calcium and magnesium at 2,000 mg\nand 1,000 mg per day, selenium at 50-200 mcg b.i.d., and betaine HCl and\npancreatic enzymes at 75-200 mg t.i.d. before meals, and Dr. Wallach’s Pig\nArthritis Formula at one tsp per 20 pounds body weight.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "children",
+        "growth",
+        "pain",
+        "calcium",
+        "magnesium"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "magnesium",
+          "selenium"
+        ],
+        "conditions": [
+          "growing_pains"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000324",
+      "subject": "benign_prostatic_hyperplasia",
+      "also_about": [
+        "zinc"
+      ],
+      "facet": "basics",
+      "question": "How common is an enlarged prostate?",
+      "answer_short": "Wallach calls it the most common infirmity of aging in men — more than 500,000 American men are affected each year, 85 percent of them past age 50, usually from a zinc deficiency.",
+      "answer": "Benign prostatic hyperplasia (an enlarged prostate) is the most common infirmity of aging in men — Wallach says more than 500,000 American men, 85 percent of them over age 50, are affected each year, usually the result of a zinc deficiency.",
+      "verbatim": "BENIGN PROSTATIC HYPERPLASIA is perhaps the most common\ninfirmity of aging in the human male. More than 500,000 American males\n(85 percent over the age of 50) are afflicted each year. As the prostate\nenlarges with age (usually the result of a zinc deficiency), the tight outer",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "mens-health",
+        "prostate",
+        "aging"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "zinc"
+        ],
+        "conditions": [
+          "benign_prostatic_hyperplasia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000325",
+      "subject": "tonsillitis",
+      "also_about": [
+        "vitamin-c",
+        "vitamin-a",
+        "zinc",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for tonsillitis?",
+      "answer_short": "Hydrogen peroxide gargle, vitamin C to bowel tolerance, vitamin A 25,000-300,000 IU/day as beta-carotene, zinc 15 mg t.i.d., selenium 25-1,000 mcg/day, plus echinacea and marshmallow herbs.",
+      "answer": "Wallach treats tonsillitis with hydrogen peroxide mouthwash and gargle, vitamin C to bowel tolerance, vitamin A at 25,000-300,000 IU per day as beta-carotene, zinc at 15 mg three times daily, selenium at 25-1,000 mcg per day, and supporting herbs including echinacea and marshmallow.",
+      "verbatim": "Treatment of tonsillitis should include\nhydrogen peroxide mouthwash and gargle, vitamin C to bowel tolerance,\nvitamin A at 25,000-300,000 IU per day as beta-carotene, zinc at 15 mg\nt.i.d., selenium at 25-1,000 mcg per day, herbs to include echynacia\n(Echynacia angustifolia), green hellebore (Veratrum viride), marshmallow\n(Althaea officinalis), flaxseed (Linum usitatissimum), German chamomile\n(Matricaria chamomilla), marjoram (Origanum vulgare), and garden sage\n(Salvia officinalis).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "throat",
+        "sore-throat",
+        "infection",
+        "immune-support",
+        "vitamin-c",
+        "zinc"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c",
+          "vitamin-a",
+          "zinc",
+          "selenium"
+        ],
+        "conditions": [
+          "tonsillitis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000326",
+      "subject": "high_triglycerides",
+      "also_about": [
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "mechanism",
+      "question": "What causes high triglycerides according to Wallach?",
+      "answer_short": "They can be a sign of diabetes or liver disease and of deficiencies of essential fatty acids, chromium, and vanadium, and raise cardiovascular and stroke risk.",
+      "answer": "Wallach says elevated triglycerides can signal diabetes, a liver disease, and deficiencies of essential fatty acids, chromium, and vanadium, and are a high risk factor for cardiovascular disease and stroke.",
+      "verbatim": "TRIGLYCERIDES (Elevated) can be a sign of diabetes, a liver disease,\nand deficiencies of EFA, chromium, and vanadium. Do a six-hour GTT and\na full blood chemistry. Elevated triglycerides are a high risk factor for\ncardiovascular disease and stroke.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "cholesterol",
+        "heart-health",
+        "deficiency",
+        "chromium",
+        "vanadium"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "vanadium"
+        ],
+        "conditions": [
+          "high_triglycerides"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000327",
+      "subject": "diverticulitis",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does diverticulitis cause such painful cramps?",
+      "answer_short": "Wallach says a long-term low-fiber diet lets tiny hardened concretions build up in the colon's pea-sized pouches until they cannot pass; these concretions irritate the colon wall and trigger painful spasms.",
+      "answer": "Wallach explains that diverticulitis pain comes from tiny concretions that build up in the colon's small pouches on a long-term low-fiber diet until they can no longer pass, irritating the colon wall into painful spasm.",
+      "verbatim": "DIVERTICULITIS is an inflammation of the small pea sized sacs in the\nouterwall of the colon. This inflammation is the result of a low fiber diet\nover a long period of time which allows tiny concretions to build up to a\nsize that does not allow them to exit into the colon. These concretions\nirritate the colon wall to the point of causing painful spasm.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "digestive-health",
+        "gut-health",
+        "fiber"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "diverticulitis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000328",
+      "subject": "shingles",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is shingles?",
+      "answer_short": "Wallach says shingles (herpes zoster) is a chronic viral infection with the chicken pox virus, whose main symptom is a very painful skin lesion.",
+      "answer": "Shingles (herpes zoster) is a chronic viral infection caused by the chicken pox virus, and its main symptom is a very painful skin lesion.",
+      "verbatim": "SHINGLES (Herpes zoster) is a chronic viral infection with the chicken\npox virus. The symptoms include a very painful skin lesion (“shingles”).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "shingles",
+        "herpes zoster",
+        "chicken pox virus",
+        "skin rash",
+        "viral infection"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "shingles"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000329",
+      "subject": "vitamin-c",
+      "also_about": [
+        "shingles"
+      ],
+      "facet": "protocol",
+      "question": "Does vitamin C help shingles?",
+      "answer_short": "Yes — Wallach's treatment of choice for shingles includes vitamin C to bowel tolerance, alongside antivirals, vitamin B12, vitamin E, lysine and zinc.",
+      "answer": "Wallach's treatment of choice for shingles includes vitamin C to bowel tolerance.",
+      "verbatim": "Treatment of choice for shingles is Isoprinosin at 500-1,500 mg/day,\nRibavirin at 250-500 mg/day, vitamin B12 at 1,000 mcg/day, vitamin C to\nbowel tolerance",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "shingles",
+        "vitamin C",
+        "bowel tolerance",
+        "immune support"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c"
+        ],
+        "conditions": [
+          "shingles"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000330",
+      "subject": "chronic_fatigue",
+      "also_about": [
+        "adrenal_exhaustion"
+      ],
+      "facet": "protocol",
+      "question": "How can I test for adrenal fatigue at home?",
+      "answer_short": "Wallach ties stress-driven adrenal exhaustion to fatigue and offers a home check: lie down five minutes, take your blood pressure/pulse, then stand up fast -- your pulse should jump at least ten points, and if it doesn't your adrenals need help.",
+      "answer": "Wallach says stress-driven adrenal exhaustion is marked by fatigue and an inability to cope, and you can check it at home by lying down five minutes then standing up suddenly -- the pulse should rise at least ten points, and if it does not, your adrenals need support.",
+      "verbatim": "ADRENAL GLAND EXHAUSTION (stress) characterized by fatigue and\ninability to cope with diseases or every day stresses. Adrenal exhaustion\ndirectly affects your ability to resist disease or heal a current disease. An\nadrenal function test can be performed in the following manner. Take base\nblood pressure in a lying down position after five minutes then stand up\nsuddenly. Pulse should increase by a minimum of ten points. If the pulse\ndoes not increase by that amount, your adrenals need help.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "chronic-fatigue",
+        "adrenals",
+        "stress",
+        "energy",
+        "self-test"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "chronic_fatigue",
+          "adrenal_exhaustion"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000331",
+      "subject": "cerebrovascular_disease",
+      "also_about": [
+        "vitamin-c",
+        "vitamin-e",
+        "selenium",
+        "choline"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for cerebrovascular disease or senile dementia?",
+      "answer_short": "EDTA chelation and IV hydrogen peroxide, vitamin C, vitamin E 800-1,200 IU, selenium 1,000 mcg, choline 9 gm and lecithin, plus memory drugs like centrophenoxine, hydergine, piracetam and vasopressin.",
+      "answer": "For cerebrovascular disease (senile dementia) Wallach recommends EDTA chelation and IV hydrogen peroxide, vitamin C to bowel tolerance, vitamin E 800-1,200 IU/day, selenium 1,000 mcg/day, choline 9 gm/day and lecithin, plus memory drugs such as centrophenoxine, hydergine, piracetam and vasopressin.",
+      "verbatim": "Treatment of cerebrovascular disease includes EDTA chelation therapy to\nhelp remove plaque, hydrogen peroxide IV to increase oxygen, vitamin C to\nbowel tolerance, avoid alcohol, vitamin E at 800-1,200 IU/day, essential\nfatty acids at 5 mg t.i.d., selenium at 1,000 mcg/day, centrophenoxine at\n1,000-2,000 mg/day, hydergine at 4.5-9.0 mg/day, vasopressin (DIAPID) at\n12-16 units/day, Lucidril at 4.4-8.0 gm/day, piracetam at 1.6 gm t.i.d. and\ncholine at 9 gm/day concurrently, and lecithin at 4 gm b.i.d.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "brain-health",
+        "memory",
+        "circulation",
+        "dementia",
+        "chelation"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c",
+          "vitamin-e",
+          "selenium",
+          "choline"
+        ],
+        "conditions": [
+          "cerebrovascular_disease"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000332",
+      "subject": "pms",
+      "also_about": [
+        "calcium",
+        "omega-3",
+        "omega-6"
+      ],
+      "facet": "mechanism",
+      "question": "What causes PMS according to Wallach?",
+      "answer_short": "Wallach frames PMS not as a hormone disease but as deficiencies of calcium and essential fatty acids interacting with the monthly hormone cycle, producing fragile emotions, irrational behavior, mania, depression and pelvic cramps.",
+      "answer": "Wallach says PMS is produced by deficiencies of calcium and essential fatty acids acting together with the cyclical hormone patterns of women.",
+      "verbatim": "It is now known that deficiencies of\ncalcium and essential fatty acids in concert with the cyclical hormone\npatterns of the women produce the classical PMS picture of fragile\nemotions, irrational behavior, mania, depression, and debilitating pelvic\n“cramps.”",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "pms",
+        "womens-health",
+        "menstruation",
+        "hormones",
+        "mood"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "omega-3",
+          "omega-6"
+        ],
+        "conditions": [
+          "pms"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000333",
+      "subject": "vaccines",
+      "also_about": [],
+      "facet": "stance",
+      "question": "What does Wallach say about vaccination?",
+      "answer_short": "He warns that many vaccination programs are suspected of carrying catastrophic diseases, and that some believe HIV was originally spread through vaccination programs including hepatitis, flu, and smallpox vaccines.",
+      "answer": "Wallach warns that many vaccination programs are suspected of carrying catastrophic diseases, and that some experts even believe HIV was originally spread through vaccination programs including hepatitis, flu, and smallpox vaccines.",
+      "verbatim": "Don’t forget that many vaccination programs are suspected to be the carrier\nfor many catastrophic diseases. Some experts even believe that HIV was\noriginally spread through vaccination programs including hepatitis, flu, and\nsmallpox vaccines.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "vaccination",
+        "immunization",
+        "freedom-of-choice",
+        "public-health",
+        "stance"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000334",
+      "subject": "pms",
+      "also_about": [
+        "anxiety"
+      ],
+      "facet": "mechanism",
+      "question": "Can PMS trigger anxiety or panic attacks?",
+      "answer_short": "Wallach says anxiety and panic attacks hit women twice as often as men, and concurrent PMS makes them worse; the base cause is usually a food allergy or a reactive hypoglycemic 'crash-and-burn' blood-sugar swing.",
+      "answer": "Wallach notes anxiety and panic attacks affect women twice as often as men and that concurrent PMS complicates them, with food allergy or reactive hypoglycemia as the base cause.",
+      "verbatim": "ANXIETY (panic attacks) affect women twice as frequently as men. When\none examines the total hormone biorhythm charts of women, this fact\ncannot be a surprise. The base cause can be either a food allergy reaction\n(i.e. corn, cow’s milk, etc.) or a severe reactive hypoglycemic reaction often\nreferred to as a “crash and burn” curve because the down slope on the\nglucose curve is almost vertical. Concurrent PMS can make this a very\nperplexing situation.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "pms",
+        "womens-health",
+        "anxiety",
+        "panic-attacks",
+        "blood-sugar"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "pms",
+          "anxiety"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000335",
+      "subject": "psoriasis",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is psoriasis?",
+      "answer_short": "Psoriasis shows up as dry, sharply-outlined silvery scaling patches, most often behind the elbows and knees, on the scalp, and behind the ears.",
+      "answer": "Psoriasis is a cosmetically disfiguring dermatitis marked by dry, well-demarcated silvery scaling plaques that appear mainly behind the joints (elbows and knees), on the scalp, and behind the ears.",
+      "verbatim": "PSORIASIS is well known as a cosmetically disfiguring dermatitis (i.e.\n“the heartbreak of psoriasis”). Psoriasis is characterized by dry, well-demarcated silvery, scaling plaques of all sizes that appear primarily behind\njoints (i.e. elbows and knees) and on the scalp and behind the ears.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "psoriasis",
+        "skin",
+        "skin-health",
+        "dermatology"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "psoriasis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000336",
+      "subject": "kidney_disease",
+      "also_about": [
+        "calcium",
+        "magnesium",
+        "vitamin-a",
+        "vitamin-b6",
+        "lysine",
+        "phosphorus"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for kidney disease?",
+      "answer_short": "Calcium and magnesium 2,000/1,000 mg per day, reduce phosphorus intake, vitamin A as beta-carotene, B6 50 mg t.i.d., lysine and glutamic acid, EDTA chelation, and diuretic herbs.",
+      "answer": "Wallach treats kidney disease and kidney stones with calcium and magnesium 2,000/1,000 mg per day, reduced phosphorus intake, vitamin A as beta-carotene, B6 50 mg t.i.d., lysine and glutamic acid, EDTA chelation, and diuretic herbs like dandelion and unsweetened cranberry juice.",
+      "verbatim": "Treatment of kidney disease and kidney stones should include\nsupplementation of calcium and magnesium at 2,000 mg and 1,000 mg per\nday, reduction of your phosphorus intake, adequate vitamin A nutriture at\n25,000-300,000 IU, vitamin A per day as beta-carotene, B6 at 50 mg t.i.d.,\nlysine and glutamic acid, and herbs including dandelion (Taraxacum\nofficinale), dwarf elder (Sambucus ebulus), goldenrod (Solidago virgaurea),\nJava tea (Orthosiphon stamineus), parsley (Petro Selinum crispum),\nhorsetail (Equisetum spp.), mugwort (Artemisia vulgaris), and unsweetened\ncranberry juice.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "kidney-health",
+        "kidney-stones",
+        "calcium",
+        "magnesium",
+        "phosphorus"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "magnesium",
+          "vitamin-a",
+          "vitamin-b6",
+          "lysine",
+          "phosphorus"
+        ],
+        "conditions": [
+          "kidney_disease"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000337",
+      "subject": "rosacea",
+      "also_about": [
+        "acne",
+        "omega-3",
+        "omega-6",
+        "vitamin-a",
+        "vitamin-b6",
+        "zinc",
+        "vitamin-e"
+      ],
+      "facet": "protocol",
+      "question": "What is Wallach's full treatment for acne rosacea?",
+      "answer_short": "Wallach's acne rosacea regimen combines essential fatty acids (~9 g/day), betaine HCl and pancreatic enzymes, vitamin A as beta-carotene (300,000 units tapering to 25,000), vitamin B6 100 mg and zinc 50 mg three times daily, topical vitamin E oil, and 1-6 minutes of UV light, plus eliminating fatty/sugary foods and checking wheat/milk/soy allergies.",
+      "answer": "Wallach's full acne rosacea program is essential fatty acids (about 9 grams a day), betaine HCl and pancreatic enzymes, vitamin A as beta-carotene, vitamin B6, zinc, topical vitamin E oil, and brief ultraviolet light, alongside cutting fatty and sugary foods and checking food allergies.",
+      "verbatim": "ACNE (acne rosacea/acne vulgaris) is a frequent skin disease in teenagers\nand is sometimes associated with PMS and estrogen supplements during\nmenopause. Papules, pustules, superficial pus-filled cysts, and deep pus-filled canals characterize acne. Acne is primarily the result of an essential\nfatty acid deficiency with a concurrent intake of too much saturated fat and\npolyunsaturated fatty acids (fried foods and margarine). Eliminate “fast”\nfoods and other sources of fat and sugar. Check out the probability of food\nallergies (i.e., wheat, milk, soy) as a contributing factor. Betaine HCl and\npancreatic enzymes are of considerable benefit. Essential fatty acids are a\nmust and should be consumed at the rate of 3 percent of your total daily\ncalorie consumption or supplemented at the rate of 9 grams per day in\ncapsule form. A regimen of Vitamin A 300,000 units/day (as beta-carotene)\nfor five months, then reduce to 25,000 i per day B6 100 mg t.i.d., zinc 50\nmg t.i.d. for 30 days, and vitamin E oil may be applied topically to acne\nlesions is also recommended. Exposing areas affected by acne directly to\nultra violet light directly for 1-6 minutes may also prove helpful.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "rosacea",
+        "acne",
+        "protocol",
+        "supplements",
+        "diet",
+        "skin-health"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6",
+          "vitamin-a",
+          "vitamin-b6",
+          "zinc",
+          "vitamin-e"
+        ],
+        "conditions": [
+          "rosacea",
+          "acne"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000338",
+      "subject": "cystitis",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for cystitis (a bladder infection)?",
+      "answer_short": "Acidify the urine with one to two quarts of unsweetened cranberry juice a day the first day, then one quart daily as needed, plus herbs like bearberry, birch, juniper and lovage.",
+      "answer": "For cystitis (bladder infection) Wallach recommends acidifying the urine by drinking one to two quarts of unsweetened cranberry juice per day the first day, then one quart per day as needed, plus herbs such as bearberry, birch, juniper, lovage and rupture wort.",
+      "verbatim": "Treatment of cystitis consists of acidifying the urine by consuming one to\ntwo quarts of unsweetened cranberry juice per day for the first day then\nreducing the intake to one quart per day as needed. Herbs are very useful\nand include bearberry (Arctostaphylos uvaursi), birch (Betula pendula, B.\npubescens), juniper (Juniperus communis), lovage (Levisticum officinale),\nprickly restharrow (Ononis spinosa), and rupture wort (Herniaria glabra).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "bladder",
+        "urinary-tract",
+        "infection",
+        "womens-health",
+        "cranberry"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "cystitis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000339",
+      "subject": "gallstones",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How can I prevent gallstones?",
+      "answer_short": "To prevent gallstones Wallach relies on all 90 essential nutrients for liver health, plus glycyrrhizin (a licorice extract) and essential fatty acids at 5 grams three times a day.",
+      "answer": "Wallach says gallbladder problems are prevented by faithfully supplying all 90 essential nutrients for liver health, plus glycyrrhizin (a licorice extract) and 5 grams of essential fatty acids three times a day.",
+      "verbatim": "Prevention of gallbladder problems includes the faithful use of all\n90 essential nutrients to assure optimal liver nutrition, glycyrrhizin (an\nextract of the licorice plant, Glycyrrhiza glabra), and the base line\nnutritional supplement including 5 gm of EFA t.i.d.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "gallstones",
+        "prevention",
+        "liver health",
+        "licorice",
+        "essential fatty acids"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "gallstones"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000340",
+      "subject": "celiac_disease",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How does Wallach treat celiac disease?",
+      "answer_short": "Pulse-test for sensitivity to wheat, cow's milk and soy, then eliminate or rotate the offending allergen; it takes 90 days to repair the injured gut.",
+      "answer": "For celiac disease Wallach recommends using the pulse test to identify sensitivity to wheat, cow's milk and soy, then eliminating and/or rotating the offending allergen, noting it takes 90 days to repair the injured gut.",
+      "verbatim": "Diagnosis and treatment of celiac disease includes using the pulse test for\nallergies (i.e. whole wheat is great unless your allergic to it!!!) especially\nwheat, cow’s milk, and soy products and eliminating and/or rotating the\noffending allergen. Macrobiotic diets “work” not because\nthere’s brown rice, but because of the elimination\nof wheat gluten and milk products. It takes 90 days to repair the injured gut\nwhich means there is great hope if you take the effort to see if, in fact, you\nare sensitive to wheat, cow’s milk, or soy.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "gut-health",
+        "gluten",
+        "food-allergy",
+        "malabsorption",
+        "digestion"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "celiac_disease"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000341",
+      "subject": "syphilis",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for syphilis?",
+      "answer_short": "Penicillin G 2.4 million units IM, repeated 10-14 days later (a reportable disease).",
+      "answer": "Wallach treats syphilis at all stages with penicillin G at 2.4 million units intramuscularly, repeated 10-14 days later, noting it is a reportable disease.",
+      "verbatim": "Treatment for syphilis is specific in all stages with penicillin G at 2.4\nmillion u IM with a second treatment 10-14 days later. Like AIDS, syphilis\nis a reportable disease to the Public Health Service.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "std",
+        "infection",
+        "antibiotics",
+        "penicillin"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "syphilis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000342",
+      "subject": "mumps",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for mumps?",
+      "answer_short": "Symptomatic care — pain relief, bed rest, a liquid diet with electrolyte replacement, and the herb mullein.",
+      "answer": "Wallach treats mumps symptomatically with pain relief, bed rest, a liquid diet, and herbs such as mullein.",
+      "verbatim": "Treatment of mumps is symptomatic including pain relief (i.e. codeine,\nTylenol, aspirin, etc.), bed rest, liquid diet including chicken\nrice soup, sugarless Jello, sports fluid and electrolyte replacer, juices, and\nherbs for symptomatic treatment including mullein (Verbascum thapsus).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "mumps",
+        "viral-infection",
+        "herbs",
+        "immune-health",
+        "children"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "mumps"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000343",
+      "subject": "vertigo",
+      "also_about": [
+        "mercury_poisoning"
+      ],
+      "facet": "warning",
+      "question": "Can mercury dental fillings cause vertigo?",
+      "answer_short": "Wallach blames mercury vapor from dental amalgam fillings for neurological disease, and says direct mercury poisoning is chiefly neurological - tremors, vertigo, irritability, and depression.",
+      "answer": "Wallach ties mercury vapor from dental amalgam fillings to neurological disease, and says direct mercury poisoning shows up primarily as neurological problems including tremors and vertigo.",
+      "verbatim": "In modern times dentists have developed several\ndisease syndromes including multiple sclerosis, ALS (Lou Gehrig’s\nDisease), and Parkinson’s Disease depending on what part of the brain was\nmost severely affected by mercury toxicity. Annette Funicello contracted\nmultiple sclerosis, which is believed to be caused by vapors from dental\nmercury amalgams.\nThe manifestations of direct Hg poisoning are primarily neurological (i.e.\ntremors, vertigo, irritability, moodiness [suicidal], depression), salivation,\ninflammation of the mouth, stomatitis, and diarrhea.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "heavy-metals",
+        "dental-health",
+        "neurological"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "vertigo",
+          "mercury_poisoning"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000344",
+      "subject": "kidney_stones",
+      "also_about": [
+        "phosphorus",
+        "calcium",
+        "magnesium"
+      ],
+      "facet": "mechanism",
+      "question": "Do soft drinks cause kidney stones?",
+      "answer_short": "Wallach says being a big consumer of phosphorus — from meat and carbonated soft drinks — makes it impossible to get enough calcium and magnesium from diet alone, which is what sets up kidney stones.",
+      "answer": "Wallach says heavy phosphorus consumption from meat and carbonated soft drinks makes it impossible to get enough calcium and magnesium from the diet, working against kidney-stone prevention.",
+      "verbatim": "Prevention of kidney\nstones includes adequate levels of supplementary calcium and magnesium\n(impossible to get enough from your diet especially if you are a big\nconsumer of phosphorus—meat and carbonated soft drinks).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "kidney stones",
+        "soft drinks",
+        "soda",
+        "phosphorus",
+        "diet",
+        "carbonated drinks"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "phosphorus",
+          "calcium",
+          "magnesium"
+        ],
+        "conditions": [
+          "kidney_stones"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000345",
+      "subject": "impetigo",
+      "also_about": [
+        "vitamin-c",
+        "vitamin-a",
+        "zinc"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for impetigo?",
+      "answer_short": "Topical boric acid, colloidal silver and herbs (comfrey, echinacea, golden seal), plus vitamin C, vitamin A as beta-carotene, and zinc, while avoiding sugar/fried foods and treating food allergies.",
+      "answer": "Wallach treats impetigo — which he sees as an early sign of immune depression from food allergies — with topical boric acid, colloidal silver and herbs (comfrey, echinacea, golden seal), vitamin C to bowel tolerance, vitamin A 25,000-300,000 IU/day as beta-carotene, and zinc 25-30 mg t.i.d.",
+      "verbatim": "Treatment of impetigo includes topical washes with boric acid, colloidal\nsilver and herbs such as comfrey (Symphytum officinale), echinacea\n(Echinacea angustifolia), and golden seal (Hydrastis canadensis), and\ntopical or systemic penicillin may be necessary in cases where impetigo\noccurs on the face to prevent scaring. Take vitamin C to bowel tolerance,\nvitamin A 25,000-300,000 IU/day as beta-carotene, zinc at 25-30 mg t.i.d.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "skin",
+        "impetigo",
+        "children",
+        "immune-health",
+        "vitamin-a",
+        "zinc"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c",
+          "vitamin-a",
+          "zinc"
+        ],
+        "conditions": [
+          "impetigo"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000346",
+      "subject": "keratomalacia",
+      "also_about": [
+        "vitamin-a",
+        "zinc"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for keratomalacia (xerophthalmia)?",
+      "answer_short": "Vitamin A as beta-carotene (25,000 IU for kids up to 300,000 IU for adults per day), zinc 5-15 mg t.i.d., and increasing animal protein to 120 gm/day.",
+      "answer": "Wallach treats keratomalacia (xerophthalmia) with vitamin A as beta-carotene, ranging from 25,000 IU/day for children up to 300,000 IU/day for adults, zinc 5-15 mg t.i.d., and increasing animal protein to 120 gm/day.",
+      "verbatim": "Treatment of keratomalacia includes vitamin A at 25,000 IU as beta\ncarotine (kids) to 300,000 I (adults) per day as beta carotene, zinc at 5 to 15\nmg ti.d. and increase the animal protein to 120 gm day (i.e. chicken, fish,\neggs, milk, lamb, pork, or beef). Don’t forget the base line nutritional\nsupplement program.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "eye-health",
+        "vision",
+        "vitamin-a",
+        "night-blindness",
+        "zinc"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-a",
+          "zinc"
+        ],
+        "conditions": [
+          "keratomalacia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000347",
+      "subject": "hysteria",
+      "also_about": [
+        "chromium",
+        "vanadium",
+        "lithium",
+        "vitamin-b3",
+        "vitamin-b6"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for hysteria or panic attacks?",
+      "answer_short": "Avoid offending foods, EFA 5 gm t.i.d., chromium and vanadium, lithium, betaine HCl and pancreatic enzymes, B3 450 mg t.i.d. and B6 150-300 mg t.i.d., plus calming herbs.",
+      "answer": "Wallach treats hysteria (including panic attacks) by avoiding offending foods, plus EFA 5 gm t.i.d., chromium and vanadium 50-200 mcg t.i.d., lithium, betaine HCl and pancreatic enzymes, B3 450 mg t.i.d. time-release, and B6 150-300 mg t.i.d., with calming herbs.",
+      "verbatim": "Treatment of hysteria includes avoidance of offending foods that you might\nbe allergic to (i.e. sugar, dairy, caffeine, etc.), rotation diets, EFA at 5 gm\nt.i.d. with meals, chromium and vanadium at 50-200 mcg t.i.d. with meals,\nlithium, betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before\nmeals, acupuncture, homeopathy, and herbs including black hellebore\n(Helleborus niger), blue cohosh (Caulophyllum thalictroides), mistletoe (Viscum album), B3 at 450 mg t.i.d. (time release), and\nB6 at 150-300 mg t.i.d.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "mental-health",
+        "panic",
+        "anxiety",
+        "chromium",
+        "vanadium",
+        "b-vitamins"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "vanadium",
+          "lithium",
+          "vitamin-b3",
+          "vitamin-b6"
+        ],
+        "conditions": [
+          "hysteria"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000348",
+      "subject": "lyme_disease",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How is Lyme disease treated?",
+      "answer_short": "Tetracycline 250-500 mg q.i.d. for 20 days, or 30 days of IV antibiotics for a 100% cure; penicillin for children.",
+      "answer": "Wallach treats Lyme disease with tetracycline at 250-500 mg q.i.d. for 20 days, or IV antibiotics over 30 days for a 100 percent cure, using penicillin at 20 million units/day IV in children to avoid tooth discoloration.",
+      "verbatim": "Treatment of Lyme Disease requires the use of tetracycline at 250-500 mg\nq.i.d. for 20 days. IV antibiotics over a period of 30 days will ensure a 100\npercent cure. In children where teeth would be permanently discolored by\ntetracyclines, penicillin can be used at 20 million u/day IV in divided doses.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "infection",
+        "tick-borne",
+        "antibiotics",
+        "joints"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "lyme_disease"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000349",
+      "subject": "convulsions",
+      "also_about": [
+        "calcium",
+        "magnesium",
+        "vitamin-b6",
+        "chromium"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for convulsions or seizures?",
+      "answer_short": "Pulse-test for allergies with a five-day rotation diet, a high-fat high-cholesterol diet, calcium/magnesium 2,000/1,000 mg, B6 100 mg b.i.d., chromium 75-100 mcg, and herbs peony, catnip and skullcap.",
+      "answer": "For non-fever convulsions Wallach recommends pulse testing for allergies with a five-day rotation diet, a high-fat high-cholesterol diet, calcium and magnesium 2,000/1,000 mg, B6 100 mg b.i.d., chromium 75-100 mcg t.i.d., and herbs peony, catnip and skullcap.",
+      "verbatim": "Treatment of non-temperature induced convulsions should include a pulse\ntest to determine if allergies are a factor. If it is determined that allergies are\nassociated with the convulsions, the patient may avoid the foods or\nchemicals or rotate foods on a five-day “rotation” diet. A high fat, high\ncholesterol diet is indicated. Supplements of value include calcium and\nmagnesium at 2,000 and 1,000 mg respectively, B6 at 100 mg b.i.d.,\nchromium at 75-100 mcg t.i.d., and herbs to include peony (Paeonia\nofficinalia), catnip (Nepeta cataria), and skullcap (Scutellaria lateriflora).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "seizures",
+        "brain-health",
+        "epilepsy",
+        "allergy",
+        "calcium"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "magnesium",
+          "vitamin-b6",
+          "chromium"
+        ],
+        "conditions": [
+          "convulsions"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000350",
+      "subject": "kidney_stones",
+      "also_about": [
+        "calcium",
+        "phosphorus"
+      ],
+      "facet": "mechanism",
+      "question": "Are kidney stones and bone spurs related?",
+      "answer_short": "Yes — Wallach says both come from the same problem: when calcium is lost in the urine during raging osteoporosis, it shows up as kidney stones, bone spurs, heel spurs and calcium deposits.",
+      "answer": "Wallach says excess urinary loss of calcium during osteoporosis produces kidney stones, bone spurs, heel spurs and calcium deposits — all from the same lost bone calcium.",
+      "verbatim": "In cases of excess urine loss of calcium (osteoporosis, excess\nphosphorous, etc.), kidney stones, bone spurs, and calcium deposits will\ndevelop. Bone and heel spurs and calcium deposits always develop at the\nsites of insertions of tendons and ligaments during a raging osteoporosis.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "kidney stones",
+        "bone spurs",
+        "heel spurs",
+        "calcium deposits",
+        "osteoporosis"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "phosphorus"
+        ],
+        "conditions": [
+          "kidney_stones"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000351",
+      "subject": "peripheral_neuropathy",
+      "also_about": [
+        "manganese",
+        "choline",
+        "arsenic",
+        "vitamin-b12",
+        "vitamin-b6",
+        "calcium",
+        "magnesium",
+        "zinc"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for numbness and tingling in the hands?",
+      "answer_short": "Manganese, choline, arsenic, B12 1,000 mcg/day, B6 200-300 mg t.i.d., calcium/magnesium 2,000/1,000 mg, and zinc 50 mg t.i.d.",
+      "answer": "For numbness and tingling in the hands, Wallach recommends treating any underlying condition plus manganese, choline, arsenic, B12 at 1,000 mcg/day, B6 at 200-300 mg t.i.d., calcium and magnesium at 2,000 and 1,000 mg/day, and zinc at 50 mg t.i.d.",
+      "verbatim": "Treatment for numbness and tingling should include aggressive diagnosis\nand treatment of any underlying condition as well as manganese, choline,\narsenic, B12 at 1000 mcg per day, B6 at 200-300 mg t.i.d., calcium and\nmagnesium at 2,000 mg and 1,000 mg per day and zinc at 50 mg t.i.d., B12\nat 1,000 mcg/day, and plant derived colloidal minerals.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "nerve-health",
+        "numbness",
+        "tingling",
+        "vitamin-b12",
+        "carpal-tunnel"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "manganese",
+          "choline",
+          "arsenic",
+          "vitamin-b12",
+          "vitamin-b6",
+          "calcium",
+          "magnesium",
+          "zinc"
+        ],
+        "conditions": [
+          "peripheral_neuropathy"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000352",
+      "subject": "benign_prostatic_hyperplasia",
+      "also_about": [],
+      "facet": "basics",
+      "question": "How can you tell an enlarged prostate from prostate cancer?",
+      "answer_short": "Benign enlargement is uniform (hard when acute, 'boggy' when chronic); cancerous tumors feel irregular and nodular, and PSA may be elevated — so Wallach urges regular checks.",
+      "answer": "Wallach says a benign enlarged prostate feels like a uniform enlargement — hard in acute cases, 'boggy' in chronic ones — whereas tumors, benign or malignant, tend to feel irregular and nodular, and the PSA (prostate specific antigen) may be elevated.",
+      "verbatim": "Benign prostatic hypertrophy produces a uniform enlargement that may be\nhard in “acute” enlargement or “boggy” in chronic enlargement. Tumors,\neither benign or malignant, tend to be irregular and nodular. PSA (Prostate\nSpecific Antigen) may be elevated.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "mens-health",
+        "prostate",
+        "prostate-cancer"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "benign_prostatic_hyperplasia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000353",
+      "subject": "heartburn",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How can I prevent heartburn without medication?",
+      "answer_short": "Wallach's prevention is dietary: eat small meals, skip fried foods, and drink eight glasses of water a day, since stress, low-salt diets, and aging cut stomach acid and let gas-forming bacteria grow.",
+      "answer": "Wallach says you can prevent heartburn by eating small meals, avoiding fried foods, and drinking eight glasses of water a day, because stress, salt restriction, and aging lower stomach acid and let gas-forming bacteria grow.",
+      "verbatim": "HEARTBURN (dyspepsia, reflux) is one of the more common diseases in\nthe USA today. Stress, salt restricted diets, and aging cause a decrease in\nstomach acid production which allows bacteria to grow in the stomach.\nThese opportunistic bacteria generate gas and acid that results in the “belch,\nburp, and bloat” syndrome. Prevention includes eating small meals, no fried\nfoods, and drinking eight glasses of water each day to prevent constipation.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "acid-reflux",
+        "heartburn",
+        "diet",
+        "prevention",
+        "lifestyle",
+        "hydration"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "heartburn"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000354",
+      "subject": "cataracts",
+      "also_about": [
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "protocol",
+      "question": "How do you treat cataracts caused by diabetes?",
+      "answer_short": "If diabetes or hypoglycemia is behind the cataract, Wallach adds chromium and vanadium at 250 mcg three times a day.",
+      "answer": "When diabetes or hypoglycemia is driving a cataract, Wallach adds chromium and vanadium at 250 mcg three times a day to the protocol.",
+      "verbatim": "Treatment of cataracts includes avoiding fried foods and margarine, the\nbase line vitamin/mineral supplement plus vitamin E at 2,000 IU/day,\nvitamin C to bowel tolerance, B1, B2, B3, B5, and B6 at 50 mg b.i.d.,\ninositol at 150 mg/day, selenium at 250 mcg/day, zinc at 25 mg\nt.i.d., bioflavonoids at 300 mg, glycine at 200 mg, l-glutamine at 200 mg,\nl-arginine at 300 mg/day, l-cysteine at 400 mg/day, and glutathione at 40\nmg/day. If diabetes or hypoglycemia is present, chromium and vanadium at\n250 mcg ti.d. should be added.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "eye-health",
+        "diabetes",
+        "blood-sugar",
+        "cataracts"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "vanadium"
+        ],
+        "conditions": [
+          "cataracts"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000355",
+      "subject": "stroke",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for a stroke?",
+      "answer_short": "EDTA chelation and IV hydrogen peroxide ASAP, exercise, and the baseline program with hyperbaric/oral oxygen and the Pig Arthritis Formula.",
+      "answer": "Wallach treats stroke (cerebrovascular accident) with EDTA chelation and IV hydrogen peroxide as soon as possible (5 grams t.i.d.), exercise, and the baseline nutritional program including hyperbaric and oral oxygen plus Dr. Wallach's Pig Arthritis Formula.",
+      "verbatim": "Treatment of stroke should include EDTA chelation and IV hydrogen\nperoxide as soon as possible, 5 grams t.i.d., exercise, and the base line\nnutritional supplement program to include hyperbaric oxygen and oral\noxygen and Dr. Wallach’s Pig Arthritis Formula.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "brain-health",
+        "circulation",
+        "chelation",
+        "oxygen"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "stroke"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000356",
+      "subject": "hypertension",
+      "also_about": [
+        "food_allergy"
+      ],
+      "facet": "mechanism",
+      "question": "Can food allergies cause high blood pressure?",
+      "answer_short": "Yes—Wallach lists food allergies among the causes of high blood pressure and uses a pulse test to find the offending foods.",
+      "answer": "Wallach says high blood pressure can be caused by food allergies, and uses a pulse test to identify the offending foods.",
+      "verbatim": "High blood\npressure is complex and may be caused by many diseases ranging from\nsimple nervousness in the examining room, arteriosclerosis, kidney disease,\na variety of endocrine gland disorders, and food allergies. The most\ncommon reason for high blood pressure is a calcium deficiency and as a\nresult high blood pressure is usually found in people with arthritis,\nosteoporosis, kidney stones, muscle cramps, etc. Do pulse test to identify\noffending foods.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "hypertension",
+        "high blood pressure",
+        "food allergies",
+        "pulse test",
+        "causes"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hypertension",
+          "food_allergy"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000357",
+      "subject": "peptic_ulcers",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Can a peptic ulcer be cured for good?",
+      "answer_short": "Yes - Wallach puts the odds at a 98 percent cure with antibiotics plus bismuth taken daily for four to six weeks, because the root cause is a treatable bacterial infection. He adds supportive herbs: alfalfa for its 'vitamin U,' cabbage juice, flax, German chamomile, and licorice.",
+      "answer": "Wallach says a peptic ulcer has a 98 percent chance of a cure from antibiotics and bismuth taken every day for four to six weeks, and adds supportive herbs such as alfalfa (his richest source of 'vitamin U'), cabbage juice, flax, German chamomile, and licorice.",
+      "verbatim": "Treatment of peptic ulcer should include alfalfa (Medicago sativa) which is\nthought to be the richest source of “vitamin U” at ten tablets t.i.d. with\nmeals, cabbage juice (Brassica oleracea), flax (Linum usitatissimum),\nGerman chamomile (Matricaria chamomilla), and licorice (Glycyrrhiza\nglabra). A 98 percent chance of a cure can be affected with antibiotics and\nbismuth every day for four to six weeks.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "peptic-ulcer",
+        "cure",
+        "treatment",
+        "digestive-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "peptic_ulcers"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000358",
+      "subject": "chronic_fatigue",
+      "also_about": [
+        "candidiasis"
+      ],
+      "facet": "mechanism",
+      "question": "Can antibiotics cause chronic fatigue?",
+      "answer_short": "Wallach's chain: long-term antibiotics kill the friendly gut bacteria that keep Candida in check, so the yeast overgrows and eventually spills into the bloodstream -- an infection he links directly to chronic fatigue syndrome.",
+      "answer": "Wallach says long-term antibiotic use kills the normal gut bacteria that hold Candida albicans in check, letting the yeast proliferate, move into the stomach and eventually spill into the bloodstream -- a systemic candidiasis he identifies with chronic fatigue syndrome.",
+      "verbatim": "CANDIDIASIS (chronic fatigue syndrome) is an infection caused by\nCandida albicans, a ubiquitous, normally harmless yeast (saprophyte) of\nyour skin, mouth, vagina, and intestine. Under certain circumstances of\nreduced immune status this organism becomes a parasite and therefore\npathological (disease creating) when its competitors—the normal bacteria\nof the gut—are killed by long term use of antibiotics, allowing them to\nproliferate unchecked. Hypochlorhydria, the reduced production of stomach\nacid (usually the result of salt restriction), allows the Candida albicans to\nmove into the stomach—an unusual location. Stress will cause the reduction\nof stomach acid after stress reaches the point of decompensation. Food\nallergies change the lining of the gut in a manner very similar to celiac\ndisease which causes an increased nutrient concentration in the gut—this\nhyperfertilized environment is very attractive to C. albicans. The\novergrowth of the organism eventually spills over into the blood stream\nand, thus, infests the body proper.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "chronic-fatigue",
+        "candida",
+        "gut-health",
+        "antibiotics",
+        "immune"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "chronic_fatigue",
+          "candidiasis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000359",
+      "subject": "hypothyroidism",
+      "also_about": [
+        "goiter",
+        "iodine"
+      ],
+      "facet": "protocol",
+      "question": "What is Wallach's full treatment for an underactive thyroid?",
+      "answer_short": "Wallach eliminates goitrogens (nitrates, cabbage), then adds U.S. Armour thyroid at 1-3 grains each morning, kelp, iodine at 250-500 mcg a day, and the herb Fucus vesiculosis.",
+      "answer": "Wallach's hypothyroidism treatment first removes goitrogens like nitrates and cabbage, then adds U.S. Armour thyroid at 1 to 3 grains each morning (titrated), plus kelp, an iodine supplement at 250-500 mcg a day, and the herb Fucus vesiculosis.",
+      "verbatim": "Treatment of hypothyroidism includes eliminating all goiterogenic\nsubstances such as nitrates, cabbage, etc. Supplement with U.S. Armour\nthyroid at 1 to 3 grains each morning. An excess will cause increase in heart\nrate and shaking of the extended arm. Increase dosage to OD then back off\none grain. Kelp and iodine supplement at 250-500 mcg per day and herbs to\ninclude quercus marine (Fucus vesiculosis).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "thyroid",
+        "armour-thyroid",
+        "kelp",
+        "iodine",
+        "protocol"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "iodine"
+        ],
+        "conditions": [
+          "hypothyroidism",
+          "goiter"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000360",
+      "subject": "depression",
+      "also_about": [],
+      "facet": "stance",
+      "question": "What does Wallach say causes most depression?",
+      "answer_short": "Food allergies, hypoglycemia and PMS account for about 90 percent of diagnosed depression.",
+      "answer": "Wallach claims that food allergies, hypoglycemia and PMS account for 90 percent of the depression diagnosed today, and that depression is often cyclic as in PMS.",
+      "verbatim": "Depression may be cyclic as in PMS\n(premenstrual syndrome). Food allergies, hypo glycemia, and PMS account\nfor 90 percent of the diagnosed “depression” today.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "mental-health",
+        "mood",
+        "depression",
+        "hypoglycemia",
+        "pms"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "depression"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000361",
+      "subject": "immunotherapy",
+      "also_about": [
+        "vitamin-c",
+        "vitamin-a",
+        "zinc",
+        "germanium",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "What is Wallach's approach to immunotherapy?",
+      "answer_short": "Rather than immune-suppressing chemo and cortisone, boost immunity by avoiding fried foods/margarine/sugar, treating allergies, and taking vitamin C, vitamin A, zinc, germanium, selenium and ginseng.",
+      "answer": "Wallach reframes immunotherapy as boosting rather than suppressing immunity, using avoidance of fried foods/margarine/sugar, allergen and rotation regimens, vitamin C to bowel tolerance, vitamin A 300,000 IU/day as beta-carotene, zinc 15 mg t.i.d., germanium 50 mg/day, selenium 300 mcg/day, and ginseng.",
+      "verbatim": "Treatment to provide immunotherapy includes avoiding fried foods,\nmargarines, and sugar (natural and processed),\nsublingual allergens regimen for allergies, autoimmune urine therapy,\navoidance of food allergens, rotation diets, vitamin C to bowel tolerance,\nvitamin A at 300,000 IU/day as beta-carotene, zinc at 15 mg t.i.d.,\ngermanium at 50 mg/day orally or IM, selenium at 300 mcg/day orally, IV\nor IM, acupuncture, and herbs to include ginseng (Panax ginseng).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "immune-health",
+        "immunotherapy",
+        "vitamin-a",
+        "zinc",
+        "germanium",
+        "selenium"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c",
+          "vitamin-a",
+          "zinc",
+          "germanium",
+          "selenium"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000362",
+      "subject": "shingles",
+      "also_about": [
+        "chicken_pox"
+      ],
+      "facet": "basics",
+      "question": "Is shingles the same virus as chicken pox?",
+      "answer_short": "Yes — Wallach says chicken pox and shingles are the same virus: an acute viral disease in children that can return as a chronic, painful disease in adults called shingles.",
+      "answer": "Chicken pox and shingles are the same virus: it causes an acute illness in children (chicken pox) and can return as a chronic, painful disease in adults (shingles).",
+      "verbatim": "CHICKEN POX (Varicella, Herpes zoster-shingles) is an acute viral disease\nin children and a chronic, painful disease in adults (i.e. shingles).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "shingles",
+        "chicken pox",
+        "varicella",
+        "same virus",
+        "adults"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "shingles",
+          "chicken_pox"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000363",
+      "subject": "infection",
+      "also_about": [
+        "vitamin-c",
+        "vitamin-a",
+        "zinc",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for infections?",
+      "answer_short": "Echinacea, golden seal and garlic, vitamin C to bowel tolerance, vitamin A as beta-carotene, zinc, selenium, Isoprinosin, Ribavirin, and IV hydrogen peroxide, with antibiotics/antifungals only in lifesaving situations.",
+      "answer": "Wallach treats infections with echinacea, golden seal and garlic, vitamin C to bowel tolerance, vitamin A 300,000 IU/day as beta-carotene, zinc 15 mg t.i.d., selenium 500-1,000 mcg/day, Isoprinosin, Ribavirin, and IV hydrogen peroxide, reserving antibiotics and antifungals for lifesaving situations.",
+      "verbatim": "Treatment of infections should include the use of echinacea (Echinacea\nangustifolia), golden seal (Hydrastis canadensis), garlic (Allium sativum),\nvitamin C to bowel tolerance, vitamin A at 300,000 IU/day as beta-carotene, zinc at 15 mg t.i.d., selenium at 500-1,000 mcg/day, Isoprinosin at\n100-300 mg/day, Ribavirin, H2O2 in an IV infusion over four hours;\nantibiotics and antifungal medications are sometimes necessary in\nlifesaving situations.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "infection",
+        "immune-health",
+        "vitamin-c",
+        "zinc",
+        "selenium",
+        "herbs"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c",
+          "vitamin-a",
+          "zinc",
+          "selenium"
+        ],
+        "conditions": [
+          "infection"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000364",
+      "subject": "heartburn",
+      "also_about": [
+        "hiatal_hernia"
+      ],
+      "facet": "warning",
+      "question": "Can acid reflux cause chest pain like a heart attack?",
+      "answer_short": "Yes — Wallach says a hiatal hernia often produces gas, reflux, and chest pain that mimics a heart attack, and more than 40 percent of Americans have one without knowing it.",
+      "answer": "Wallach says a hiatal hernia commonly causes gas, reflux, and chest pain that mimics a heart attack, and that more than 40 percent of Americans have an undetected hiatal hernia by x-ray.",
+      "verbatim": "HIATAL HERNIA is usually a congenital birth defect (not genetic) of the\ndiaphragm. It can also be caused by crushing the chest or abdomen as in an\nauto accident. Gas, dyspepsia, reflux, and chest pain that mimics a “heart\nattack” are common symptoms. It is said that more than 40 percent of the\nUSA population has asymptomatic hiatal hernia by actual x-ray survey!",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "acid-reflux",
+        "heartburn",
+        "chest-pain",
+        "hiatal-hernia"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "heartburn",
+          "hiatal_hernia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000365",
+      "subject": "gallstones",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What causes a gallbladder attack?",
+      "answer_short": "Wallach says a gallbladder attack is the gallbladder muscles cramping after a fatty meal, or a gallstone briefly blocking the bile duct.",
+      "answer": "Wallach says gallbladder attacks are caused by the gallbladder muscles cramping after a fatty meal, or a gallstone temporarily blocking the bile duct.",
+      "verbatim": "Gallbladder\n“attacks” are caused by a cramping of the muscles in the gallbladder after a\nfatty meal or a temporary blockage of the bile duct by a gallstone.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "gallstones",
+        "gallbladder attack",
+        "bile duct",
+        "fatty food"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "gallstones"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000366",
+      "subject": "kidney_stones",
+      "also_about": [
+        "bladder_stones"
+      ],
+      "facet": "warning",
+      "question": "What are the symptoms of a kidney stone?",
+      "answer_short": "Wallach says the tip-offs are blood in the urine (check with urine test sticks) and pain or 'colic' that worsens in the bladder or kidney area; an x-ray confirms it.",
+      "answer": "Wallach says the signals of a kidney or bladder stone are blood in the urine and pain or 'colic' that gets worse in the bladder or kidney area, confirmed by x-ray.",
+      "verbatim": "BLADDER STONES (kidney stones, cystic calculi) are ironically caused\nby a calcium and/or a magnesium deficient diet and when you\nhave raging osteoporosis. The minerals in the\n“stones” come from your own bones!!! Diagnosis may require an x-ray (a\nflat “plate” of the abdomen). Don’t forget the gonadal shield!!! The signal\nto think “stones” is blood in the urine (use the urine test sticks) and pain or\n“colic” that gets worse in the bladder or kidney area.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "kidney stones",
+        "symptoms",
+        "blood in urine",
+        "pain",
+        "colic",
+        "diagnosis"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "kidney_stones",
+          "bladder_stones"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000367",
+      "subject": "alopecia",
+      "also_about": [
+        "male_pattern_baldness"
+      ],
+      "facet": "basics",
+      "question": "What is alopecia?",
+      "answer_short": "Alopecia (baldness) is loss of hair that can be local or total; Wallach names male pattern baldness, female pattern baldness, and alopecia universalis as examples.",
+      "answer": "Wallach defines alopecia (baldness) as loss of hair that can be local or total, with male pattern baldness, female pattern baldness, and alopecia universalis as examples.",
+      "verbatim": "ALOPECIA: (baldness): loss of hair, which can occur locally or present as\ntotal hair loss. Male pattern baldness, female pattern baldness, and alopecia\nuniversalis are examples.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "hair-loss",
+        "baldness",
+        "alopecia",
+        "men's-health",
+        "women's-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "alopecia",
+          "male_pattern_baldness"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000368",
+      "subject": "brittle_nails",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How does Wallach treat weak or brittle fingernails?",
+      "answer_short": "Collagen/gelatin (Kosher beef or Knox), EFAs at 5 gm t.i.d., and betaine HCl with pancreatic enzymes at 75-200 mg t.i.d. before meals.",
+      "answer": "For fingernail problems, Wallach recommends collagen/gelatin (100% Kosher beef, diabetic Jello, or Knox gelatin — especially important for former vegetarians), essential fatty acids at 5 gm t.i.d., and betaine HCl with pancreatic enzymes at 75-200 mg t.i.d. before meals.",
+      "verbatim": "Treatment of fingernail problems should include collagen (Willamette\nValley which is 100 percent Kosher beef, diabetic Jello, or Knox gelatin—\nthis is especially important for those who have been vegetarians for any\nlength of time), essential fatty acids at 5 gm t.i.d., and betaine HCl and\npancreatic enzymes at 75-200 mg t.i.d. before meals.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "nails",
+        "collagen",
+        "enzymes",
+        "essential-fatty-acids"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000369",
+      "subject": "restless_leg_syndrome",
+      "also_about": [
+        "muscle_cramps",
+        "sodium",
+        "potassium"
+      ],
+      "facet": "mechanism",
+      "question": "Can sweating or low salt and potassium give me leg cramps?",
+      "answer_short": "Yes — Wallach says losing sodium and potassium brings on muscle cramps and \"salt hunger,\" eased by replacing salt.",
+      "answer": "Wallach notes that losing sodium and potassium — as in Addison's disease or heavy sweating — brings general weakness and muscle cramps with a marked \"salt hunger,\" relieved by replacing salt (NaCl).",
+      "verbatim": "Addison’s\nDisease, a loss of function of the adrenal cortex,\nresults in the loss of Na and K retention with clinical signs of general\nweakness, muscle cramps, weight loss, and a marked “salt hunger.” The\nsymptoms can be relieved with the supplementation of NaCl or by\nadministering adrenal cortical hormones.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "sodium",
+        "potassium",
+        "electrolytes",
+        "salt",
+        "sweating",
+        "muscle cramps",
+        "dehydration"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "sodium",
+          "potassium"
+        ],
+        "conditions": [
+          "muscle_cramps"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000370",
+      "subject": "hemorrhoids",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What are hemorrhoids and what do they feel like?",
+      "answer_short": "They're varicose veins in the rectum and anus that itch, bleed, hurt, and can eventually clot (thrombose) into a painful lump.",
+      "answer": "Wallach describes hemorrhoids (piles) as varicose veins in the rectum and anus that itch, bleed, become painful, and eventually clot (thrombose).",
+      "verbatim": "HEMORRHOIDS (piles) are varicose veins in the rectum and anus that\nitch, bleed, become painful, and eventually blocked with clots\n(thrombosed).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "hemorrhoids",
+        "piles",
+        "varicose-veins",
+        "digestive-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hemorrhoids"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000371",
+      "subject": "irritable_bowel_syndrome",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How do I find which foods trigger my IBS?",
+      "answer_short": "Use Wallach's pulse test to identify your individual trigger -- often wheat, milk, or soy -- and then eliminate those offending foods.",
+      "answer": "Wallach uses the pulse test to pin down the individual food triggering irritable bowel syndrome -- commonly wheat, milk, or soy -- then has you eliminate the offending foods.",
+      "verbatim": "The pulse test is an\nextremely useful test for determining the individual cause of irritable bowel\nsyndrome.\nTreatment of irritable bowel syndrome should include high fiber diets, 4-6\ncups of fruit and vegetables per day, elimination of fried food, margarine,\ncaffeine, sugar, and offending foods based on the pulse test (i.e. wheat,\nmilk, soy),",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "ibs",
+        "food-allergies",
+        "pulse-test",
+        "trigger-foods",
+        "elimination-diet"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "irritable_bowel_syndrome"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000372",
+      "subject": "gallstones",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What causes gallstones?",
+      "answer_short": "Wallach traces gallstones to liver problems with fat and cholesterol metabolism, so his approach aims at liver health, not just the gallbladder.",
+      "answer": "Wallach says gallstones generally come from liver problems, especially with fat and cholesterol metabolism.",
+      "verbatim": "GALLBLADDER DISEASE (gall stones) is generally caused by liver\nproblems, especially with fat and cholesterol metabolism.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "gallstones",
+        "gallbladder",
+        "liver",
+        "cholesterol",
+        "fat metabolism"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "gallstones"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000373",
+      "subject": "gout",
+      "also_about": [],
+      "facet": "uses",
+      "question": "What foods should I avoid if I have gout?",
+      "answer_short": "Wallach says to cut out organ meats, seafood, lentils, beans and peas (plus alcohol and fructose), since these raise the uric acid that crystallizes in gout.",
+      "answer": "For gout, Wallach recommends avoiding organ meats, seafood, lentils, beans, and peas, along with alcohol and fructose sources, because these foods drive up uric acid.",
+      "verbatim": "Treatment for gout should include an avoidance of alcohol, organ meats,\nseafood, lentils, beans, peas, and fructose sources.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "gout",
+        "diet",
+        "nutrition"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "gout"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000374",
+      "subject": "lactation_suppression",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "How do you reduce or stop breast milk production?",
+      "answer_short": "Goldenrod relieves engorgement; Luperon can stop milk production but may cause temporary menopausal symptoms.",
+      "answer": "Wallach says lactation can be reduced and engorgement pain relieved by goldenrod, and Luperon (a posterior pituitary hormone) can stop milk production, though it may cause temporary menopausal symptoms.",
+      "verbatim": "LACTATION (reduce) can be reduced and breast pain of engorgement can\nbe relieved by goldenrod (Solidago petradoria). Luperon, a posterior\npituitary hormone can stop milk production; however, side effects include\ntemporary menopausal symptoms.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "breastfeeding",
+        "lactation",
+        "engorgement",
+        "womens-health"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000375",
+      "subject": "varicose_veins",
+      "also_about": [
+        "copper"
+      ],
+      "facet": "uses",
+      "question": "Does a copper bracelet help varicose veins?",
+      "answer_short": "Copper is the key mineral for vein-wall elastic fibers, so Wallach recommends 2 mg of copper a day for varicose veins and even suggests wearing a copper bracelet.",
+      "answer": "Because copper builds the elastic fibers in vein walls, Wallach recommends copper at 2 mg per day for varicose veins and suggests trying a copper bracelet.",
+      "verbatim": "Treatment of varicose veins should include vitamin C to bowel tolerance,\nvitamin E at 800-1,200 IU per day, zinc at 50 mg t.i.d., bioflavonoids at 600\nmg t.i.d., DMSO, hydrotherapy, copper at 2 mg per day (try a copper\nbracelet)",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "circulation",
+        "veins",
+        "copper",
+        "copper bracelet",
+        "minerals"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "copper"
+        ],
+        "conditions": [
+          "varicose_veins"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000376",
+      "subject": "gout",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is gout?",
+      "answer_short": "Gout is a form of arthritis caused by uric-acid crystals depositing in the joints, most classically the big toe, making them very tender and, over time, deformed.",
+      "answer": "Wallach explains that gout (gouty arthritis) is caused by deposits of uric acid crystals in the joints and surrounding tissues, classically the great toe of each foot, which become very tender and may deform in long-standing cases.",
+      "verbatim": "GOUT (gouty arthritis) is caused by deposits of uric acid crystals in the\njoints and surrounding tissues. These joints, classically the great toe of each\nfoot, are very tender and may become deformed in chronic or long-standing\ncases.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "gout",
+        "arthritis",
+        "joint-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "gout"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000377",
+      "subject": "depression",
+      "also_about": [
+        "food_allergy",
+        "hypoglycemia"
+      ],
+      "facet": "mechanism",
+      "question": "How do food allergies cause depression?",
+      "answer_short": "Wallach says food allergies inflame the gut (celiac-type changes) and block absorption of the nutrients your brain and body need — so depression is an indirect result of the resulting nutrient starvation.",
+      "answer": "Wallach argues that food allergies drive emotional problems like depression indirectly — the celiac-type gut damage they cause blocks absorption of the essential nutrients the body and nervous system need.",
+      "verbatim": "FOOD ALLERGIES (sensitivities) are a concern for everyone. The reason\nis that the celiac disease type changes they cause in your intestines will\nprevent the absorption of essential nutrients that are required to keep your\nimmune system, as well as your various organs, maintained, repaired, and\nin tip top working order. Many of the maladies caused by food allergies are\nnot a direct cause but rather an indirect cause by cutting off the flow of\nessential raw materials necessary for your body to repair itself. A list of\nsymptoms of food allergies would perhaps fill ten pages of this book.\nSuffice it to be said that if you have any chronic disease (i.e. cancer,\ndiabetes, arthritis, heart disease, etc.) and/or emotional problems (i.e.\nhypoglycemia, depression, neurosis, schizophrenia, hyperactivity, paranoia,\netc.) you have food allergies and hypoglycemia!",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "depression",
+        "food-allergies",
+        "gut-health",
+        "nutrient-absorption",
+        "celiac",
+        "malabsorption"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "depression",
+          "food_allergy",
+          "hypoglycemia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000378",
+      "subject": "diverticulitis",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Besides fiber, what supplements does Wallach recommend for diverticulitis?",
+      "answer_short": "Wallach's diverticulitis plan is not only diet: alongside colonics, high fiber, water, and exercise, he says do not forget the 90 essential nutrients - his baseline vitamin-and-mineral program.",
+      "answer": "Wallach says diverticulitis treatment should include not just colonics, high fiber, water, and exercise, but also the 90 essential nutrients.",
+      "verbatim": "Treatment of diverticulitis includes colonics two to three times per week,\nhigh fiber diet, eight glasses of water per day, and regular exercise. Avoid\nfried foods, margarine, and caffeine. Don’t forget the 90 essential nutrients.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "digestive-health",
+        "supplements",
+        "nutrition"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "diverticulitis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000379",
+      "subject": "motion_sickness",
+      "also_about": [
+        "vertigo"
+      ],
+      "facet": "mechanism",
+      "question": "What causes motion sickness, and how can I prevent it?",
+      "answer_short": "It strikes when angular and linear movement occur together, bringing vertigo, nausea and a 'green at the gills' feeling; Wallach says fixing your gaze on a single fixed point helps on deck at sea, though not in other kinds of motion.",
+      "answer": "Wallach explains motion sickness as the vertigo, nausea and 'green at the gills' feeling that hits when angular and linear movement happen at once; fixing your gaze on a single fixed point helps on a ship's deck but not in a car.",
+      "verbatim": "CARSICKNESS (motion sickness, sea sickness, air sickness, or motion\nsickness) is common in some individuals when repetitive angular and linear\nmovement occur at the same time. Fixing the gaze on a single geographic\npoint can help in seasickness when the patient is on deck but is a fruitless\nexercise in other forms of motion sickness. Symptoms include “green at the\ngills” feeling including vertigo, nausea, and vomiting.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "balance",
+        "travel",
+        "inner-ear"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "vertigo",
+          "motion_sickness"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000380",
+      "subject": "peptic_ulcers",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "What causes stomach ulcers according to Wallach?",
+      "answer_short": "Infection with Helicobacter pylori; antibiotics for 4 to 6 weeks are preferred over surgery.",
+      "answer": "Wallach states that stomach ulcers are brought on by infection with Helicobacter pylori, and that antibiotics for 4 to 6 weeks are a preferred treatment of gastric ulcers over surgery.",
+      "verbatim": "ULCER (stomach) is brought on by an infection with Helicobacter pylori.\nAntibiotics for 4 to 6 weeks are a preferred treatment of gastric ulcers over\nsurgery.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "digestive-health",
+        "stomach",
+        "ulcer",
+        "infection",
+        "antibiotics"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "peptic_ulcers"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000381",
+      "subject": "chronic_fatigue",
+      "also_about": [
+        "selenium"
+      ],
+      "facet": "physiology",
+      "question": "Can low selenium cause chronic fatigue?",
+      "answer_short": "Yes. Wallach says that in young adults a selenium shortfall shows up as anemia and chronic fatigue, along with muscle weakness and aching (myalgia and fibromyalgia).",
+      "answer": "Wallach says selenium deficiency in young adults appears as anemia and chronic fatigue, together with muscular weakness, myalgia, and fibromyalgia.",
+      "verbatim": "In young adults, selenium deficiency appears as anemia, chronic fatigue,\nmuscular weakness, myalgia, fibromyalgia, muscular tenderness,\npancreatitis, infertility, muscular dystrophy, scoliosis, and cardiomyopathy.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "chronic-fatigue",
+        "selenium",
+        "minerals",
+        "energy",
+        "deficiency"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium"
+        ],
+        "conditions": [
+          "chronic_fatigue"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000382",
+      "subject": "kidney_stones",
+      "also_about": [],
+      "facet": "discovery",
+      "question": "Do animals get kidney stones too?",
+      "answer_short": "Wallach found that even dolphins and whales develop arthritis, osteoporosis and kidney stones — especially when they feed almost entirely on soft-bodied squid.",
+      "answer": "Wallach observed that even dolphins and whales get kidney stones, arthritis and osteoporosis, especially when they feed almost exclusively on soft-bodied squid.",
+      "verbatim": "Deficiency diseases plague even the playful dolphins (and\nwhales), though they’re subject to arthritis, osteoporosis, and kidney stones,\nespecially if they feed almost exclusively on the soft bodied squid.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "kidney stones",
+        "animals",
+        "dolphins",
+        "whales",
+        "veterinary",
+        "diet"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "kidney_stones"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000383",
+      "subject": "restless_leg_syndrome",
+      "also_about": [
+        "muscle_cramps",
+        "calcium",
+        "magnesium",
+        "potassium"
+      ],
+      "facet": "protocol",
+      "question": "What can I take to stop leg cramps and restless legs?",
+      "answer_short": "Colloidal calcium, magnesium and potassium, plus betaine HCl and pancreatic enzymes at 75-200 mg before each meal — Wallach's cramp protocol.",
+      "answer": "For muscle cramps and twitching legs, Wallach's treatment includes liquid plant-derived colloidal calcium, magnesium, and potassium, plus betaine HCl and pancreatic enzymes at 75-200 mg three times a day before meals, and he says his Pig Arthritis Formula works like a charm.",
+      "verbatim": "Treatment of muscle cramps can include liquid plant derived colloidal\ncalcium, magnesium, and potassium, betaine HCl and pancreatic enzymes\nat 75-200 mg t.i.d. before meals. Dr. Wallach’s Pig Arthritis Formula works\nlike a charm here.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "leg cramps treatment",
+        "muscle cramps remedy",
+        "restless legs remedy",
+        "colloidal minerals",
+        "betaine HCl",
+        "digestive enzymes",
+        "calcium",
+        "magnesium",
+        "potassium"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium",
+          "magnesium",
+          "potassium"
+        ],
+        "conditions": [
+          "muscle_cramps"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000384",
+      "subject": "hemorrhoids",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What should I eat to get rid of hemorrhoids?",
+      "answer_short": "Eat high-fiber; Wallach suggests two heaping tablespoons of oat bran in a glass of juice or water before bed to get two easy bowel movements a day so you don't strain.",
+      "answer": "For hemorrhoids Wallach recommends a high-fiber diet, adding two heaping tablespoons of oat bran in eight ounces of juice or water before bed to encourage two bowel movements a day so stools pass without straining.",
+      "verbatim": "Treatment of hemorrhoids includes high fiber diets (you may need to add\noat bran at two heaping tbsp. in eight oz. of juice or water before bed) to\nencourage two bowel movements per day,",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "fiber",
+        "oat-bran",
+        "diet",
+        "constipation",
+        "digestive-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hemorrhoids"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000385",
+      "subject": "irritable_bowel_syndrome",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What should I eat for IBS?",
+      "answer_short": "Eat high-fiber with 4-6 cups of fruit and vegetables daily and drink eight to ten glasses of water; Wallach says a macrobiotic diet can help greatly.",
+      "answer": "Wallach's IBS diet emphasizes high fiber with 4-6 cups of fruit and vegetables a day and eight to ten glasses of water, and he says a macrobiotic diet can be of great benefit.",
+      "verbatim": "Treatment of irritable bowel syndrome should include high fiber diets, 4-6\ncups of fruit and vegetables per day, elimination of fried food, margarine,\ncaffeine, sugar, and offending foods based on the pulse test (i.e. wheat,\nmilk, soy), betaine HCl and pancreatic enzymes at 75-200 mg t.i.d. before\nmeals, folic acid at 5-25 mg/day, gluten free diet, and eight to ten glasses of\nwater each day. Don’t forget the base line nutrition supplement program.\nHerbs including marshmallow (Althaea officinalis). A macrobiotic diet can\nbe of great benefit here.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "ibs",
+        "diet",
+        "fiber",
+        "macrobiotic-diet",
+        "hydration",
+        "fruit-and-vegetables"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "irritable_bowel_syndrome"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000386",
+      "subject": "hemorrhoids",
+      "also_about": [
+        "varicose_veins",
+        "copper"
+      ],
+      "facet": "basics",
+      "question": "Are hemorrhoids the same as varicose veins?",
+      "answer_short": "Yes, Wallach calls hemorrhoids varicose veins of the rectum, the same weakened vein walls (from copper deficiency) that cause leg varicose veins and spider veins.",
+      "answer": "Wallach classifies hemorrhoids as varicose veins, the rectal-and-anal form of the same weakened vessel walls (which he attributes to copper deficiency) that also produce leg varicose veins, spider veins, and aneurysms.",
+      "verbatim": "Copper Deficiency Symptoms and Diseases\n• White, grey, and silver hair\n• Dry brittle hair (“steely wool” in sheep)\n• Ptosis (sagging tissue—eye lids, “crow’s feet,” skin, breasts,\nstomach, etc.) • Hernias (congenital and acquired) • Varicose veins\n(including hemorrhoids) • Spider veins",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "varicose-veins",
+        "spider-veins",
+        "copper",
+        "veins"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "copper"
+        ],
+        "conditions": [
+          "hemorrhoids",
+          "varicose_veins"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000387",
+      "subject": "psoriasis",
+      "also_about": [
+        "zinc",
+        "copper",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "Which minerals help psoriasis?",
+      "answer_short": "Wallach's mineral support for psoriasis is zinc 15 mg three times a day, copper 2 mg a day, and selenium 500-1,000 mcg a day.",
+      "answer": "For psoriasis Wallach recommends the trace minerals zinc at 15 mg three times daily, copper at 2 mg per day, and selenium at 500-1,000 mcg per day.",
+      "verbatim": "Treatment of psoriasis should include avoidance of offending\nfood allergens, rotation diets, folic acid at 15-25 mg per day, vitamin A at\n300,000 IU per day as beta-carotene, lecithin at 2,500 mg t.i.d. with meals,\nEFA at 5 grams b.i.d., vitamin E at 800-1,200 IU per day, zinc at 15 mg\nt.i.d., copper at 2 mg per day, selenium at 500-1,000 mcg per day",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "psoriasis",
+        "minerals",
+        "zinc",
+        "skin"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "zinc",
+          "copper",
+          "selenium"
+        ],
+        "conditions": [
+          "psoriasis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000388",
+      "subject": "depression",
+      "also_about": [
+        "bipolar_disorder"
+      ],
+      "facet": "stance",
+      "question": "Is my depression all in my head, or could it be physical?",
+      "answer_short": "Wallach argues depression is often physical, not just mental — yet points out that few psychiatrists ever screen for the low blood sugar or food allergies behind it.",
+      "answer": "Wallach observes that despite how common depression is, few psychiatrists ever check for hypoglycemia or food allergies when a patient complains of depression.",
+      "verbatim": "DEPRESSION (manic depression) is a common problem in the human\npopulation throughout the world—so common that some pharmaceutical\ncompanies specialize solely in antidepressant drugs. It should be no\nsurprise, however, that very few of the supposedly “expert” psychiatrists\never consider hypoglycemia and food allergies when they do an intake\nhistory on a patient who complains of depression.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "depression",
+        "mental-health",
+        "psychiatry",
+        "root-cause",
+        "blood-sugar",
+        "food-allergies"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "depression",
+          "bipolar_disorder"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000389",
+      "subject": "pms",
+      "also_about": [
+        "vitamin-b6",
+        "vitamin-a",
+        "vitamin-e",
+        "calcium"
+      ],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for PMS (premenstrual syndrome)?",
+      "answer_short": "B6 100 mg, EFAs 5 g t.i.d., vitamin A in the last 14 days of the cycle, vitamin E 800-1,200 IU, and colloidal calcium.",
+      "answer": "Wallach attributes PMS to calcium and essential-fatty-acid deficiencies and treats it with B6 at 100 mg, EFAs at 5 grams t.i.d., vitamin A during the last 14 days of the cycle, vitamin E at 800-1,200 IU/day, and calcium from colloidal sources.",
+      "verbatim": "Treatment of PMS includes 100 mg B6 q 4 d, EFA at 5 grams t.i.d., vitamin\nA at 300,000 IU per day as beta carotene during the last 14 days of the\ncycle, vitamin E at 800-1,200 IU/day, calcium (especially plant derived\ncolloidal sources), and herbs including mistletoe (Viscum album), black\ncohosh (Cimicifuga racemosa), and blue cohosh (Caulophyllum\nthalictroides).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "womens-health",
+        "pms",
+        "menstruation",
+        "vitamin-b6",
+        "calcium"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b6",
+          "vitamin-a",
+          "vitamin-e",
+          "calcium"
+        ],
+        "conditions": [
+          "pms"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000390",
+      "subject": "chronic_fatigue",
+      "also_about": [
+        "hypothyroidism"
+      ],
+      "facet": "protocol",
+      "question": "How can I check my thyroid at home if I'm tired all the time?",
+      "answer_short": "Wallach says a low thyroid often causes fatigue without any goiter, and you can screen for it yourself: before getting out of bed, put a thermometer in your armpit -- below 97.6 F points to low thyroid.",
+      "answer": "Wallach says an under-active thyroid frequently causes fatigue (and weight gain and edema) even without a goiter, and you can screen for it with a basal body temperature test -- take your temperature under your armpit before getting up, and a reading below 97.6 F indicates low thyroid.",
+      "verbatim": "HYPOTHYROID (low thyroid, goiter): States that frequently do not\nproduce goiter (thyroid gland enlargement) can produce obesity, fatigue,\ndisinterest, low blood pressure, water retention (edema), etc. Diagnose with\na basal body temperature test. Upon waking up, take your temperature by\nplacing a thermometer under your armpit before getting up and stirring\naround. If your temperature is below 97.6°F, you have low thyroid. Don’t\nforget your thyroid gland requires all 90 essential nutrients to function\nproperly and produce thyroxin.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "chronic-fatigue",
+        "thyroid",
+        "hypothyroid",
+        "self-test",
+        "energy"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "chronic_fatigue",
+          "hypothyroidism"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000391",
+      "subject": "eczema",
+      "also_about": [
+        "atopic_dermatitis",
+        "psoriasis"
+      ],
+      "facet": "mechanism",
+      "question": "What causes eczema?",
+      "answer_short": "Wallach says eczema is usually the result of food allergies -- especially cow's milk, wheat, and soy -- not a random skin flaw, and the same allergic damage is happening in your gut lining at the same time.",
+      "answer": "Wallach says eczema is usually caused by food allergies, most often to cow's milk, wheat, and soy, and that pulse tests and elimination diets pinpoint the culprit foods.",
+      "verbatim": "ECZEMA (atopic dermatitis, psoriasis) is a dry patchy scale on localized\nskin areas (i.e. ears, nose, joints, breasts, etc.). Eczema is usually the result\nof food allergies, especially cow’s milk, wheat, and soy. Do pulse tests and\nelimination diets to determine the culprits. This is not only a cosmetic\nproblem as the same damage is occurring in the intestinal lining which can\nlead to malabsorption, lowered immune status, and chronic degenerative\ndiseases.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "skin-health",
+        "allergies",
+        "diet",
+        "gut-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "eczema",
+          "atopic_dermatitis",
+          "psoriasis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000392",
+      "subject": "high_cholesterol",
+      "also_about": [],
+      "facet": "basics",
+      "question": "How high is too high for cholesterol, and can it be too low?",
+      "answer_short": "Wallach flags cholesterol over 270 as a rising risk, but warns that pushing it below 200 can be as dangerous or worse.",
+      "answer": "Wallach considers cholesterol above 270 mg per 100 ml of blood a rising risk for heart disease, diabetes and liver disease, but cautions that a level driven below 200 can be equally or more dangerous than a high one.",
+      "verbatim": "CHOLESTEROL (elevated) is considered a risk factor for cardiovascular\ndisease. Elevation of cholesterol above 270 mg per 100 ml of blood is a\nsign of increasing risk for cardiovascular disease, diabetes, and liver disease\n(including gallstones). There are numerous causes of elevated cholesterol\nincluding low fiber diets, elevated vitamin D intake, deficiency of EFA and\nchromium and vanadium, diets high in refined sugar and flour, liver\nmalfunction, and poor exercise habits. CAUTION: Low cholesterol below\n200 can be equally or more dangerous than elevated cholesterol!",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "cholesterol",
+        "cholesterol-numbers",
+        "heart-health",
+        "testing"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "high_cholesterol"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000393",
+      "subject": "tinnitus",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Could my medication be causing ringing in my ears?",
+      "answer_short": "Yes—Wallach lists drug side effects as a cause of tinnitus, so identifying and eliminating the offending medication is part of the fix.",
+      "answer": "Wallach identifies drug side effects as a cause of ringing in the ears, and includes eliminating those drug effects in the treatment.",
+      "verbatim": "RINGING IN THE EARS (tinnitus, Miniar’s disease, and Wallach’s\nvertigo) can be caused by high blood pressure, drug side effects, and\nosteoporosis (fibrous connective tissue squeezing the 8th cranial nerve).\nThe bones of the body try to get stronger following the loss of mineral by\ngenerating connective tissue. The 8th cranial nerve can be squeezed as it\npasses through the skull into the inner ear. When the vestibular branch is\nsqueezed, vertigo can be a feature; when the auditory branch is squeezed\nringing in the ears occurs.\nTreatment is directed toward lowering blood pressure, eliminating drug side\neffects, and reversing the osteoporosis with calcium 2000 mg and\nmagnesium 1000 mg. Dr. Wallach’s Pig Arthritis Formula is the treatment\nof choice.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "tinnitus",
+        "medication-side-effects",
+        "ototoxicity",
+        "ringing-in-the-ears"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "tinnitus"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000394",
+      "subject": "alopecia",
+      "also_about": [
+        "eczema"
+      ],
+      "facet": "protocol",
+      "question": "Why does Wallach recommend digestive enzymes for hair loss?",
+      "answer_short": "Wallach considers betaine HCl and pancreatic enzymes (75-200 mg three times a day, 15-20 minutes before meals) 'a must' for hair loss, because poor digestion blocks the fats and nutrients hair needs.",
+      "answer": "In treating alopecia that occurs with eczema, Wallach calls betaine HCl and pancreatic enzymes at 75-200 mg three times a day, 15-20 minutes before meals, “a must.”",
+      "verbatim": "Alopecia that occurs with eczema is\noften caused by essential fatty acid deficiency and will respond to IV\ninterlipids and/or oral flaxseed oil at the rate of 9 grams per day. Zinc at 50\nmg t.i.d. is also indicated. Elimination of wheat and cow’s milk from the\ndiet will increase the rate of recovery. Betaine HCl and pancreatic enzymes\nat 75-200 mg t.i.d. 15-20 minutes before meals are a must.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "hair-loss",
+        "digestion",
+        "absorption",
+        "enzymes"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "alopecia",
+          "eczema"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000395",
+      "subject": "adhd",
+      "also_about": [
+        "hyperactivity"
+      ],
+      "facet": "basics",
+      "question": "What are the signs and symptoms of ADD and ADHD?",
+      "answer_short": "Wallach describes ADD/ADHD as hyperactivity plus trouble concentrating and remembering, often alongside disruptive or cruel behavior, bedwetting, nightmares, and fire-setting.",
+      "answer": "Wallach describes ADD/ADHD as hyperactivity plus an inability to concentrate and retain information, often with disruptive, mean or cruel behavior toward other children and small animals, bedwetting, nightmares, and a fascination with fire.",
+      "verbatim": "ATTENTION DEFICIT DISORDER (ADD/ADHD, Hyperkinetic,\nhyperactive) is characterized as hyperactivity and inability to concentrate,\ncognate, and retain information. Many affected are disruptive, mean and\ncruel to other children and small animals, wet the bed, have nightmares, and\nlike to play with fire.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "adhd",
+        "children",
+        "behavior",
+        "parenting",
+        "focus",
+        "mental-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "adhd",
+          "hyperactivity"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000396",
+      "subject": "hypertension",
+      "also_about": [
+        "stroke"
+      ],
+      "facet": "physiology",
+      "question": "What are the warning signs and symptoms of high blood pressure?",
+      "answer_short": "Warning signs Wallach ties to hypertension include dizziness, red face, headache, fatigue, nosebleeds, nervousness, memory loss, optic-nerve swelling, and strokes.",
+      "answer": "Wallach lists the symptoms of high blood pressure as dizziness, a red face, headache, fatigue, nosebleeds, nervousness, memory loss, swelling of the optic nerve disc, and strokes.",
+      "verbatim": "Symptoms of hypertension include dizziness, red face, headache, fatigue,\nnosebleeds, nervousness, memory loss, edema of the optic nerve disc,\nstrokes, etc. While not a symptom, obesity is a serious predisposing factor\nto hypertension; obesity also indicates mineral deficiencies.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "hypertension",
+        "high blood pressure",
+        "symptoms",
+        "warning signs",
+        "stroke"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hypertension",
+          "stroke"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000397",
+      "subject": "hypertension",
+      "also_about": [
+        "obesity"
+      ],
+      "facet": "protocol",
+      "question": "Can losing weight lower my blood pressure?",
+      "answer_short": "Yes—Wallach calls obesity a serious predisposing factor to hypertension and says weight loss can drop elevated blood pressure dramatically.",
+      "answer": "Wallach says obesity is a serious predisposing factor to high blood pressure, and that losing weight can drop elevated blood pressure dramatically.",
+      "verbatim": "While not a symptom, obesity is a serious predisposing factor\nto hypertension; obesity also indicates mineral deficiencies.\nTreatment of hypertension includes calcium (particularly useful is the plant\nderived colloidal minerals which are 98 percent absorbable), high fiber\ndiets, rotation/avoidance diets, low fat diet (no fried food or margarines),\navoid sugar and refined flour, avoid more than 400 IU of vitamin D, avoid\ncaffeinated coffee or tea, chelation with EDTA, infusions with hydrogen\nperoxide, flaxseed oil at 5 gm t.i.d., garlic, reduce red meat intake, consume\n4-6 cups of vegetables per day, CO-Q 10 at 60 mg/day, eight glasses of\nwater per day, lecithin at 2,500 mg t.i.d., herbs including European\nhawthorn (Crataegus oxyacantha), rauwolfia (Rauwolfia serpentina), and\nolive (Olea europaea). Weight loss can drop elevated blood pressure\ndramatically.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "hypertension",
+        "high blood pressure",
+        "obesity",
+        "weight loss",
+        "lifestyle"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hypertension",
+          "obesity"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000398",
+      "subject": "menopause",
+      "also_about": [
+        "osteoporosis"
+      ],
+      "facet": "warning",
+      "question": "Can menopause cause osteoporosis?",
+      "answer_short": "Yes — Wallach says osteoporosis is a common result of a menopause that isn't managed well, which is why he leans hard on minerals and diet through the transition.",
+      "answer": "Wallach warns that osteoporosis is a common result of an improperly managed menopause.",
+      "verbatim": "Osteoporosis is a common result of\nimproperly managed menopause.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "menopause",
+        "osteoporosis",
+        "bone-health",
+        "womens-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "menopause",
+          "osteoporosis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000399",
+      "subject": "osteoporosis",
+      "also_about": [],
+      "facet": "warning",
+      "question": "What are the warning signs and symptoms of osteoporosis?",
+      "answer_short": "Bone pain, joint pain, a 'dowager's hump' (a rounding of the upper back), and 'spontaneous' fractures are Wallach's hallmark signs of osteoporosis.",
+      "answer": "Wallach says the warning signs of osteoporosis are bone pain, joint pain, a 'dowager's hump,' and 'spontaneous' fractures.",
+      "verbatim": "The symptoms of osteoporosis are characterized\nby bone pain, joint pain, “dowagers” hump, and “spontaneous” fractures.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "bone-health",
+        "symptoms",
+        "fractures",
+        "dowagers-hump"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "osteoporosis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000400",
+      "subject": "hemorrhoids",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does constipation and straining cause hemorrhoids?",
+      "answer_short": "Straining to push out a hard, constipated stool raises pressure in the rectal veins and balloons them out into hemorrhoids.",
+      "answer": "Wallach explains that the extra pressure of straining to force out a hard, constipated stool balloons the hemorrhoidal veins, so low-fiber diets and the constipation they cause are a direct mechanical driver of hemorrhoids.",
+      "verbatim": "The cause of hemorrhoids is primarily a copper deficiency (a\nbreakdown of elastic fibers in veins), low fiber diets, the resulting\nconstipation, and lack of exercise. The increased pressure needed to force\nout a constipated bowel movement causes ballooning of the hemorrhoidal\nveins.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "constipation",
+        "straining",
+        "fiber",
+        "digestive-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hemorrhoids"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000401",
+      "subject": "sciatica",
+      "also_about": [
+        "calcium"
+      ],
+      "facet": "mechanism",
+      "question": "Can osteoporosis or bone spurs cause sciatica?",
+      "answer_short": "In its most severe form, Wallach says sciatica stems from advanced osteoporosis, bone spurs between the lumbar vertebrae, and vertebral arthritis — pointing at bone loss, not just a pinched nerve.",
+      "answer": "Wallach says that in its most severe form sciatica is the result of advanced osteoporosis, bone spurs between the lumbar vertebrae, and vertebral arthritis.",
+      "verbatim": "In its most severe\nform, sciatica may be the result of advanced osteoporosis, bone spurs\nbetween the lumbar vertebrae, and vertebral arthritis.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "sciatica",
+        "osteoporosis",
+        "bone spurs",
+        "arthritis",
+        "back pain",
+        "bone loss"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "calcium"
+        ],
+        "conditions": [
+          "sciatica"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000402",
+      "subject": "cold_sores",
+      "also_about": [
+        "herpes_simplex"
+      ],
+      "facet": "protocol",
+      "question": "Is there a natural topical remedy I can put on a cold sore?",
+      "answer_short": "Wallach names a topical herb compress made with black walnut (Juglans nigra) as a natural application for cold sores.",
+      "answer": "For herpes cold sores, Wallach lists a topical herb compress made with walnut (Juglans nigra) among the treatments.",
+      "verbatim": "HERPES (simplex, cold sores, canker sores) is a virus that causes recurrent\nblisters and ulcers on the lips (Type I) and on the genitals (Type II). This\ndisease never goes away completely (once infected, always infected). The\nbest you can hope for is long term remission. Herpes lesions itch at the\nearly stages and can be very painful and disfiguring. These viruses are\ntransmitted by kissing and sexual contact. Avoid kissing and sexual activity\nwhen the lesions are active. Use condoms during an active stage of genital\nHerpes.\nTreatment includes ultra violet light directly on lesion for 1-6 minutes per\nday, avoid high arginine foods (i.e. avoid chocolate, peanuts, nuts, seeds,\ngrains), eat high lysine foods (i.e. meat, potatoes, milk, yeast, fish, chicken,\nbeans, eggs), vitamin C to bowel tolerance, bioflavonoids at 200 mg t.i.d.,\nzinc at 75 mg t.i.d., l-Lysine at 1-6 gm/day to effect, then 500 mg/day\nmaintenance, Ribavirin at 250-500 mg/day (do not take during pregnancy),\nand Isoprinosin at 500-1,500 mg/day (do not take during pregnancy), and\ntopical herb compress with walnut (Juglans nigra). There are many\ncommercial products available for topical application.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "cold-sores",
+        "herpes",
+        "topical",
+        "black-walnut",
+        "herbs"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "cold_sores",
+          "herpes_simplex"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000403",
+      "subject": "osteoporosis",
+      "also_about": [],
+      "facet": "big_question",
+      "question": "How serious is osteoporosis -- can it be fatal?",
+      "answer_short": "Very -- Wallach ranks osteoporosis the 12th most frequent cause of death in adults, largely through the fractured hips it causes.",
+      "answer": "Wallach warns that osteoporosis is serious -- he ranks it the 12th most frequent cause of death in adults, largely through the fractured hips it leads to.",
+      "verbatim": "Osteoporosis is the 12th most frequent cause of death in adults (following\nfractured hips, etc.).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "bone-health",
+        "mortality",
+        "fractures"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "osteoporosis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000404",
+      "subject": "insomnia",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Can food allergies cause insomnia?",
+      "answer_short": "Yes — Wallach ties food allergies to insomnia (and nightmares), and uses the pulse test to pin down which food is the culprit.",
+      "answer": "Wallach says food allergies can cause insomnia and nightmares, and he uses the pulse test to identify the offending food.",
+      "verbatim": "Food allergies and hypoglycemia can cause insomnia and nightmares. Use the pulse test and six-hour\nGTT.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "food-allergy",
+        "sleep",
+        "insomnia-causes",
+        "pulse-test"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "insomnia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000405",
+      "subject": "tinnitus",
+      "also_about": [
+        "menieres_disease",
+        "vertigo",
+        "boron",
+        "calcium",
+        "magnesium"
+      ],
+      "facet": "protocol",
+      "question": "How do you rebuild the skull bone that pinches the hearing nerve?",
+      "answer_short": "For the skull osteoporosis behind Wallach's Vertigo and ringing ears, Wallach's bone program adds boron (1 mg) and chondroitin sulfate (gelatin) on top of calcium, magnesium, and plant-derived colloidal minerals.",
+      "answer": "For the skull osteoporosis that squeezes the 8th cranial nerve, Wallach's nutritional program adds chondroitin sulfate (gelatin) and boron at 1 mg alongside calcium, magnesium, and plant-derived colloidal minerals.",
+      "verbatim": "WALLACH’S VERTIGO (dizziness with or without ringing in the ears)\nOsteoporosis of the skull. The connective tissue generated by the\ndemineralized bones squeezes the vestibular branch of the 8th cranial nerve.\nTreatment approach includes osteoporosis nutritional program—\nchondroitin sulfate (gelatin), calcium 200 mg, 1000 mg magnesium, boron\n1 mg, and plant derived colloidal minerals containing all 60 essential\nminerals.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "tinnitus",
+        "boron",
+        "chondroitin",
+        "osteoporosis",
+        "colloidal-minerals",
+        "wallachs-vertigo"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "boron",
+          "calcium",
+          "magnesium"
+        ],
+        "conditions": [
+          "tinnitus",
+          "menieres_disease",
+          "vertigo"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000406",
+      "subject": "tinnitus",
+      "also_about": [
+        "omega-3",
+        "omega-6"
+      ],
+      "facet": "protocol",
+      "question": "Do essential fatty acids or fish and flax oils help tinnitus?",
+      "answer_short": "Yes—Wallach's tinnitus program includes essential fatty acids at 5 grams three times a day.",
+      "answer": "Wallach includes essential fatty acids at 5 grams three times daily in his treatment for tinnitus.",
+      "verbatim": "Treatment of tinnitus should include the treatment of the underlying\ndisease. Avoid offending food allergens, avoid sugar and all refined foods,\ntake zinc at 15 mg t.i.d., tin from plant derived colloidal minerals, EFA at 5\ngrams t.i.d., vitamin A at 300,000 IU per day as beta-carotene, calcium and\nmagnesium at 2,000 and 1,000 mg per day, and betaine HCl and pancreatic\nenzymes at 75-200 mg t.i.d. 15 minutes before meals. Using Dr. Wallach’s\nPig Arthritis simplifies the whole process.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "tinnitus",
+        "essential-fatty-acids",
+        "omega-3",
+        "omega-6",
+        "oils"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "omega-3",
+          "omega-6"
+        ],
+        "conditions": [
+          "tinnitus"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000407",
+      "subject": "constipation",
+      "also_about": [],
+      "facet": "basics",
+      "question": "How many bowel movements a day is normal?",
+      "answer_short": "Wallach says you should have two to three bowel movements a day; fewer than that means you are constipated, and simple cases often clear with a daily walk and eight glasses of water.",
+      "answer": "Wallach says that if you are not having two to three bowel movements per day you are constipated, and that simple cases are very often solved by walking and eight glasses of water a day.",
+      "verbatim": "If\nyou are not having two to three bowel movements per day, you are constipated! Very frequently\nexercise such as walking and eight glasses of water per day will solve simple constipation.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "constipation",
+        "bowel movements",
+        "regularity",
+        "normal bowel habits",
+        "digestive health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "constipation"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000408",
+      "subject": "uterine_fibroids",
+      "also_about": [
+        "magnesium",
+        "vitamin-e",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "How does Dr. Wallach treat uterine fibroids?",
+      "answer_short": "His plan: cut out fried foods, margarine, and caffeine; supplement all 90 essential nutrients; then crank magnesium up to 1,000 mg/day, vitamin E to 2,000 IU, and selenium to 500 mcg/day. If there is no satisfactory result in four to six months, the fibroids can be shrunk enough for endoscopic removal without a full hysterectomy.",
+      "answer": "Wallach's uterine-fibroid protocol is to avoid fried foods, margarine, and caffeine, take all 90 essential nutrients, and boost magnesium to 1,000 mg, vitamin E to 2,000 IU, and selenium to 500 mcg per day.",
+      "verbatim": "Treatment of uterine fibroids should include avoidance of fried foods,\nmargarine, and caffeine, as well as supplementation with all 90\nessential nutrients. Crank up the magnesium level\nto 1,000 mg per day, vitamin E level to 2,000 i.u., and the selenium level to\n500 mcg per day. If satisfactory results are not achieved in four to six\nmonths, one can consider the use of Luperon (posterior pituitary hormone\nsold originally to dry up milk supply). The fibroids will shrink suffiently to\nremove them with endoscopic surgery without the need for a hysterectomy.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "womens-health",
+        "uterine-fibroids",
+        "supplement-protocol"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "magnesium",
+          "vitamin-e",
+          "selenium"
+        ],
+        "conditions": [
+          "uterine_fibroids"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000409",
+      "subject": "migraine",
+      "also_about": [
+        "headache",
+        "food_allergy",
+        "hypoglycemia"
+      ],
+      "facet": "protocol",
+      "question": "How do I figure out which foods trigger my migraines?",
+      "answer_short": "Keep a diet diary -- eat one food at a time, note when, and log any headache in the next few hours; Wallach pairs it with the pulse test and a six-hour glucose test to expose hidden food allergies and low blood sugar.",
+      "answer": "Wallach's home method for pinning down a headache trigger is a diet diary: eat a single food, note the time, then record any headache that follows within minutes to a few hours, run alongside the pulse test and a six-hour glucose tolerance test.",
+      "verbatim": "A second method of allergy\ndiagnosis can be used in conjunction with the pulse test is the diet diary.\nThis diary is especially useful when emotional symptoms and headache are\nassociated with food allergies. First, you eat a single food (as you do with\nthe pulse test) noting the time on a pad of paper. Then record emotional\nsymptoms and/or headache with the time. The symptom will appear within\nminutes to a few hours of ingesting the offending food (this includes\nhyperactivity and dyslexia). Do a six-hour GTT as almost everyone with\nfood allergies has hypoglycemia because the celiac changes in the intestine\nprevent the efficient absorption of chromium and vanadium.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "migraine",
+        "food-allergy",
+        "elimination-diet",
+        "pulse-test"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "headache",
+          "food_allergy",
+          "hypoglycemia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000410",
+      "subject": "nausea",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for nausea?",
+      "answer_short": "Pepto Bismol, Kaopectate, and herbs — artichoke, avens, and peppermint.",
+      "answer": "Wallach treats nausea with Pepto Bismol, Kaopectate, and herbs including artichoke, avens, and peppermint.",
+      "verbatim": "Treatment of nausea can include Pepto Bismol, Kaopectate, and herbs to\ninclude artichoke (Cynara scolymus), avens (Geum urbanum), and\npeppermint (Mentha piperita).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "nausea",
+        "digestion",
+        "herbs",
+        "stomach"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000411",
+      "subject": "tinnitus",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Can food allergies cause tinnitus?",
+      "answer_short": "Yes—Wallach counts food allergies among tinnitus causes; a pulse test finds the offending foods so they can be removed from the diet.",
+      "answer": "Wallach lists food allergies as a cause of tinnitus, identified with a pulse test and treated by avoiding the offending foods.",
+      "verbatim": "TINNITUS (ringing or buzzing in the ear) is characterized by a ringing or\nbuzzing in the ear. “Orthodox” doctors suggest that “surgery is of no value;\nif you can’t tolerate the ringing, play background music.” In reality, there\nare a variety of causes of tinnitus including hypertension, lead, mercury\ntoxicity, nutritional deficiencies, osteoporosis (connectissue squeezes the\n8th cranial nerve), food allergies, and/or hypoglycemia.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "tinnitus",
+        "food-allergies",
+        "pulse-test",
+        "elimination-diet"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "tinnitus"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000412",
+      "subject": "constipation",
+      "also_about": [
+        "food_allergy"
+      ],
+      "facet": "mechanism",
+      "question": "Can a food allergy cause constipation?",
+      "answer_short": "Wallach says food allergies frequently trigger constipation; he suggests using his pulse test to pinpoint the offending food.",
+      "answer": "Wallach says food allergies very frequently initiate constipation, and recommends the pulse test to find out whether an allergy is the cause.",
+      "verbatim": "Very\nfrequently food allergies will initiate constipation; do the pulse test to determine if this might be a\nfactor.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "constipation",
+        "food allergies",
+        "pulse test",
+        "food sensitivity",
+        "elimination diet"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "constipation",
+          "food_allergy"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000413",
+      "subject": "chronic_fatigue",
+      "also_about": [
+        "hypoglycemia",
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "mechanism",
+      "question": "Why do I feel exhausted and sleepy after eating sugar?",
+      "answer_short": "Wallach blames low blood sugar: sugar and refined flour flush the minerals chromium and vanadium out in your urine (up to 300 percent faster), and the resulting hypoglycemia shows up as sleepiness, fatigue and palpitations.",
+      "answer": "Wallach says sugar and refined flour flush chromium and vanadium out in the urine by as much as 300 percent, driving the low blood sugar (hypoglycemia) whose symptoms include sleepiness, narcolepsy, fatigue and heart palpitations.",
+      "verbatim": "hypoglycemia is almost always food allergies that cause a malabsorption of\nchromium and vanadium as a result of celiac disease type changes in the\nintestine and/or a large intake of sugar (natural and processed) and refined\nflour which increases the dumping of chromium and vanadium in the urine\nas much as 300 percent. The old wives’ tale “if you eat sugar from the sugar\nbowl, you will surely develop diabetes” is then quite true as untreated\nhypoglycemia will very frequently develop into diabetes. The symptoms of\nhypoglycemia are highly variable and may include emotional symptoms\n(i.e. hyperactivity, paranoia, schizophrenia, memory loss, irritability,\nhallucinations, depression, manic depression, bi-polar disease, dyslexia,\ncrying, learning disabilities, ADD, ADHD, Tourette’s syndrome, etc.),\nsleepiness, narcolepsy, fatigue, heart palpitations, sweating, inability to do\ncognitive tasks (i.e. inability to think out simple problems), explosive",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "chronic-fatigue",
+        "blood-sugar",
+        "sugar",
+        "chromium",
+        "diet"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "vanadium"
+        ],
+        "conditions": [
+          "chronic_fatigue",
+          "hypoglycemia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000414",
+      "subject": "restless_leg_syndrome",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Why do I still get leg cramps even though I eat well?",
+      "answer_short": "You may not be absorbing minerals — Wallach says pulse-test for food allergies causing celiac-type malabsorption, and run a hair analysis for mineral status.",
+      "answer": "Wallach says even a good diet fails if you cannot absorb minerals, so he advises a pulse test to find food allergies that cause celiac-type gut changes and malabsorption, plus a hair analysis to check your mineral status.",
+      "verbatim": "Do pulse test to determine food allergies that might cause celiac disease\ntype changes and the resultant malabsorption. Do a hair analysis to\ndetermine mineral status.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "malabsorption",
+        "food allergies",
+        "gluten",
+        "celiac",
+        "hair analysis",
+        "pulse test",
+        "absorption",
+        "leg cramps",
+        "restless legs"
+      ]
+    },
+    {
+      "id": "WAL-CLM-DDDL-000415",
+      "subject": "uterine_fibroids",
+      "also_about": [
+        "magnesium"
+      ],
+      "facet": "mechanism",
+      "question": "What causes uterine fibroids?",
+      "answer_short": "Wallach admits no nutritional deficiency is proven to cause fibroids, but points out that fibroid tissue looks like early arteriosclerosis, the arterial calcification driven by magnesium deficiency, and like fibrocystic breast disease. Those parallels guide his natural approach: magnesium, vitamin E, selenium, and cutting caffeine.",
+      "answer": "Wallach says no nutritional deficiency is proven to cause uterine fibroids, but fibroid tissue resembles early arteriosclerosis, whose calcification is driven by magnesium deficiency, hinting magnesium plays a role.",
+      "verbatim": "Looking at the tissue, however, there are certain similarities between fibroid\ntissue and the early changes of arteriosclerosis in the walls of muscular\narteries and fibrocystic breast disease, giving some clues as to best\napproach uterine fibroids naturally. We know that magnesium deficiency is\nthe cause of “malignant calcification” (arteriosclerosis) in the walls of\nmuscular and elastic arteries. We know that eliminating caffeine and the\nsupplementation of vitamin E and selenium enhance the healing process of\nfibrocystic breast disease.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "womens-health",
+        "uterine-fibroids",
+        "magnesium"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "magnesium"
+        ],
+        "conditions": [
+          "uterine_fibroids"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000416",
+      "subject": "uterine_fibroids",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What are uterine fibroids?",
+      "answer_short": "Dr. Wallach describes uterine fibroids as a runaway overgrowth of the fibrous connective tissue and smooth muscle cells that form the wall of the uterus. He is candid that no nutritional deficiency is agreed to cause them, though the tissue resembles early arteriosclerosis.",
+      "answer": "Uterine fibroids are a runaway production of the fibrous connective tissue and smooth muscle cells that make up the wall of the uterus.",
+      "verbatim": "FIBROIDS are a runaway production of fibrous connective tissue and\nsmooth muscle cells of the wall of the uterus. There are no agreed upon\nnutritional preventions or nutritional deficiencies that cause uterine fibroids.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "womens-health",
+        "uterine-fibroids",
+        "reproductive-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "uterine_fibroids"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000417",
+      "subject": "asthma",
+      "also_about": [
+        "food_allergy",
+        "chromium"
+      ],
+      "facet": "protocol",
+      "question": "Can food allergies like milk, wheat, or soy trigger asthma, and how do I find out?",
+      "answer_short": "Wallach ties asthma to celiac-type gut damage and food allergies; a cheap pulse test plus a rotation or elimination diet usually narrows the culprit to cow's milk, wheat, or soy.",
+      "answer": "Wallach links asthma to food allergies driven by celiac-type gut damage, and says a cheap pulse test plus a rotation or elimination diet usually reveals cow's milk, wheat, or soy as the culprits to remove.",
+      "verbatim": "include emotional symptoms similar to PMS, hypoglycemia, asthma,\nbronchitis, or diabetes as a result of malabsorption of chromium. The\nmalabsorption is usually the result of a “celiac” disease\ntype change in the small intestinal lining rather than dietary deficiency. Do\na pulse test to determine food allergies.\nTreatment should include a rotation or an elimination diet (usually a pulse\ntest will reveal cow’s milk, wheat, or soy products to be the culprits).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "asthma",
+        "food-allergies",
+        "elimination-diet",
+        "gluten",
+        "dairy"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium"
+        ],
+        "conditions": [
+          "asthma",
+          "food_allergy"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000418",
+      "subject": "asthma",
+      "also_about": [
+        "influenza"
+      ],
+      "facet": "warning",
+      "question": "Is the flu more dangerous if you have asthma?",
+      "answer_short": "Yes - Wallach lists asthma among the serious respiratory ailments that make people, especially the poorly nourished or immune compromised, susceptible to the most serious and potentially fatal complications of the flu.",
+      "answer": "Wallach warns that people with a serious respiratory ailment such as asthma are especially vulnerable to the most serious - potentially fatal - complications of the flu, particularly if they are poorly nourished or immune compromised.",
+      "verbatim": "FLU (influenza, grip) is a potentially fatal viral disease. Infants and elder\ncitizens are susceptible to the most serious complications if they are poorly\nnourished, immune compromised, or have a serious respiratory ailment (i.e.\nemphysema, asthma, pneumonia, CF, etc.).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "asthma",
+        "flu",
+        "influenza",
+        "respiratory-health",
+        "immunity"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "asthma",
+          "influenza"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000419",
+      "subject": "teething",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What does Wallach recommend for teething?",
+      "answer_short": "Tylenol or aspirin drops per label plus German chamomile in teaspoon doses as needed.",
+      "answer": "Wallach treats teething discomfort with Tylenol or aspirin drops per label directions and herbs including German chamomile (Matricaria chamomilla) in teaspoon doses as needed.",
+      "verbatim": "Treatment of teething includes Tylenol or aspirin drops (follow label\ndirections) and herbs including German chamomile (Matricaria\nchamomilla) as teaspoon doses as needed.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "infants",
+        "dental-health",
+        "chamomile",
+        "pain"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "teething"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000420",
+      "subject": "asthma",
+      "also_about": [
+        "allergies"
+      ],
+      "facet": "warning",
+      "question": "Can food preservatives like sulfites trigger asthma?",
+      "answer_short": "Yes - Wallach says sulfite, the preservative on dried fruit such as raisins and apricots, can bring on an asthma-like reaction, and avoiding it is the most effective fix.",
+      "answer": "Wallach says the food preservative sulfite - sprayed on dried fruit like raisins and apricots - can set off an asthma-like reaction, and that avoiding the trigger is the most effective 'cure.'",
+      "verbatim": "Symptoms vary widely from urticaria (skin rash with itching)\nfrom strawberries or fish, headaches from perfume, tachycardia (fast heart\nrate) or palpitations (most allergies-MSG), or paranoia from sugar, etc., to\nasthma-like syndrome from sulfite (food preservative on raisins, apricots,\netc.).\nAvoidance is the most effective “cure,” however, this may be impractical.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "asthma",
+        "food-triggers",
+        "preservatives",
+        "sulfites",
+        "allergies"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "asthma",
+          "allergies"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000421",
+      "subject": "chronic_fatigue",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "What foods should I avoid if I'm always tired?",
+      "answer_short": "Wallach says drop all sugar (natural and processed), soft drinks, fried foods, margarine, and caffeine, and take all 90 essential nutrients daily so no deficiency is left behind.",
+      "answer": "For fatigue, Wallach says to avoid all sugar (natural and processed), soft drinks, fried foods, margarine, and caffeine, and to take all 90 essential nutrients every day so no nutritional deficiency remains.",
+      "verbatim": "FATIGUE (chronic fatigue syndrome, Candidiasis, Epstein-Barr Virus,\ncytomegalovirus, human herpes 6 virus, human B lymphotrophic virus,\nfood allergies, hypoglycemia, diabetes, anemia, malnutrition) is the disease\nof the 80s. See specific disease description.\nTreatment should be specific as described in appropriate section, and in\naddition, herbs may be of value including American ginseng (Panax\nquinquefolius), lavender (Lavandula augustifolia), rosemary (Rosmarinus\nofficinalis), sweet flag (Acorus calamus), and pasque flower (Anemone\nPulsatilla). Avoid all sugar natural and processed, avoid soft drinks, and\navoid fried foods, margarines, and caffeine. Take all 90 essential nutrients\nas a daily supplement to ensure that there are no nutritional deficiencies.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "chronic-fatigue",
+        "diet",
+        "sugar",
+        "caffeine",
+        "energy"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "chronic_fatigue"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000422",
+      "subject": "irritable_bowel_syndrome",
+      "also_about": [
+        "diarrhea"
+      ],
+      "facet": "protocol",
+      "question": "Does diarrhea drain your nutrients?",
+      "answer_short": "Yes -- diarrhea washes out nutrients, so Wallach says to drink lots of fluids and replace all 90 essential nutrients lost through it.",
+      "answer": "Wallach says diarrhea flushes out nutrients, so recovery means consuming plenty of fluids and replacing all 90 essential nutrients lost through it.",
+      "verbatim": "Be sure\nto consume lots of fluids (i.e. soup, herbal tea, hot water with lemon, etc.)\nand all 90 essential nutrients to replace nutrients lost through diarrhea.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "ibs",
+        "diarrhea",
+        "hydration",
+        "nutrient-replacement",
+        "90-essential-nutrients"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "diarrhea"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000423",
+      "subject": "acne",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Should I take probiotics after taking antibiotics for acne?",
+      "answer_short": "Wallach says yes: after the long antibiotic courses often prescribed for acne, restore your gut flora with Lactobacillus acidophilus — ten capsules twice a day between meals, ten days each month.",
+      "answer": "Wallach says that after the extended antibiotic therapy often used for acne, you should restore gut flora with Lactobacillus acidophilus — ten capsules twice a day between meals for ten days each month.",
+      "verbatim": "Following extended antibiotic therapy\n(i.e. acne, rheumatic fever, cystic fibrosis, etc.), you can restore the\ncompetitive organisms into the bowel (to help keep yeast numbers down)\nby the use of Lactobacillus acidophilus. Administer Lactobacillus at ten\ncapsules twice each day between meals for ten days each month to restore\nnormal colon count; a retention enema with the Lactobacillus will assure\nreimplantaion.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "probiotics",
+        "acidophilus",
+        "antibiotics",
+        "gut-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "acne"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000424",
+      "subject": "hemorrhoids",
+      "also_about": [],
+      "facet": "warning",
+      "question": "Is bright red blood on the toilet paper from hemorrhoids dangerous?",
+      "answer_short": "Bright red blood on the paper is usually just an irritated hemorrhoid; black or coffee-grounds stool (ulcer) or bloody mucus (colitis, colon cancer) is what needs a doctor.",
+      "answer": "Wallach says bright red blood on the toilet paper is usually just an irritated hemorrhoid, whereas black or coffee-grounds stool points to a stomach ulcer and bloody mucus can signal ulcerative colitis or colon cancer, so the color of the blood tells you when to see a doctor.",
+      "verbatim": "Bleeding\nin the stool, on the other hand, can be a serious symptom indicating\nhemorrhoids (bright red blood on toilet paper), stomach ulcers (black\nbloody or “coffee grounds” stool), ulcerative colitis (bloody mucus in\nstool), colon cancer (bloody mucus in the stool), or coughing blood—lung\ncancer, etc.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "rectal-bleeding",
+        "blood-in-stool",
+        "when-to-see-a-doctor",
+        "digestive-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hemorrhoids"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000425",
+      "subject": "adhd",
+      "also_about": [],
+      "facet": "stance",
+      "question": "Is Ritalin the right treatment for ADHD?",
+      "answer_short": "Wallach argues against drugging ADD/ADHD children with Ritalin or Prozac, warning of addiction, drooling, drowsiness, and explosive emotions including violence and suicide — and favors fixing the diet instead.",
+      "answer": "Wallach opposes the standard approach of prescribing Ritalin or Prozac to chemically subdue an ADD/ADHD child, warning the side effects are significant — biochemical and emotional addiction, drooling, drowsiness, and explosive emotions including violence and suicide.",
+      "verbatim": "The standard medical approach to ADD/ADHD is to prescribe Ritalin or\nProzac to chemically subdue the ADD/ADHD victim. The side effects of\nthese drugs are significant and include biochemical and emotional\naddiction, drooling, drowsiness, and explosive emotions (violence, suicide,\netc.).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "adhd",
+        "medication",
+        "ritalin",
+        "children",
+        "parenting",
+        "mental-health"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "adhd"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000426",
+      "subject": "endometriosis",
+      "also_about": [],
+      "facet": "mechanism",
+      "question": "Why does endometriosis flare up at certain times of the month?",
+      "answer_short": "Because the stray endometrial cells are still sensitive to estrogen, they swell during the high-estrogen phase of the female cycle.",
+      "answer": "The misplaced endometrial cells stay sensitive to estrogen, so they swell during the high-estrogen part of the female cycle.",
+      "verbatim": "ENDOMETRIOSIS is the abnormal implantation of the nonmalignant\nuterine lining cells in the body cavity. The endometrial cells are still\nsensitive to estrogen and therefore swell during high estrogen parts of the\nfemale cycle.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "womens-health",
+        "endometriosis",
+        "hormones",
+        "menstruation"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "endometriosis"
+        ]
+      }
     },
     {
       "id": "WAL-CLM-EPIGEN-000001",

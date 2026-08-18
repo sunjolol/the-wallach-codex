@@ -3075,6 +3075,113 @@
    "extracted_at": "2026-07-29T03:52:00+00:00",
    "reviewed_at": null,
    "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-HELLS-000097",
+   "kind": "deficiency_sign",
+   "essentials": [
+    "chromium",
+    "vanadium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "depression",
+    "anxiety",
+    "hypoglycemia",
+    "insulin_resistance"
+   ],
+   "symptoms": [],
+   "claim_text": "In Wallach's metabolic-syndrome table, deficiency of the blood-sugar minerals chromium and vanadium produces not only diabetes and insulin resistance but also anxiety and depression.",
+   "verbatim": "Nutritional deficiencies associated \nwith the Metabolic Syndrome \nNutrient Deficiency Clinical disease \nOmega -3 essential fatty acids _ elevated total cholesterol, elevated \nLDL, obesity, peripheral neuropathies, thrombotic disease, atherosclerosis \nCalcium hypertension, osteoporosis, \nperipheral neuropathies, insomnia, \npica, obesity \nChromium, vanadium diabetes, insulin resistance, \nhyperinsulinemia, hypoglycemia, \npica, anxiety, depression, obesity",
+   "locator": {
+    "book": "hells-kitchen",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 460305
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2",
+    "raw-ocr",
+    "ocr-flagged"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:55+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-HELLS-000098",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "kidney_stones"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach notes that a lithotripter destroys kidney stones with focused high-frequency sound shock waves, breaking them into sand-sized particles that pass easily through the urinary system.",
+   "verbatim": "Dornier Systems, a West German aerospace company \nhas produced the “Lithotripter,” a machine that destroys kidney stones \nby means of focused high frequency sound shock waves. The \n“Lithotripter (from the Greek words meaning “stone” and “crusher”), \ncauses the kidney stones to be broken up into sand-sized particles, \nthat are easily passed through the urinary system.",
+   "locator": {
+    "book": "hells-kitchen",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 310820
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave3",
+    "raw-ocr",
+    "ocr-flagged"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:55+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-HELLS-000099",
+   "kind": "personal_anecdote",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "adhd"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach reframes ADD encouragingly through Thomas Edison — dismissed as 'addled' at school and a hands-on rather than rote learner — suggesting Edison himself may have been a victim of ADD.",
+   "verbatim": "He was the kind of person who learned by \nactual hands on experience rather than rote learning - perhaps he \nwas a victim of ADD.",
+   "locator": {
+    "book": "hells-kitchen",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 188453
+   },
+   "dose": null,
+   "tags": [
+    "condition-enrichment",
+    "wave2",
+    "raw-ocr"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T08:19:55+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
   }
  ]
 }

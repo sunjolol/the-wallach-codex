@@ -14,6 +14,7 @@ Order:
   4. Append eden/products/seal-history.log (append-only).
   5. Re-run products_verify as the final gate.
 """
+import argparse
 import datetime
 import hashlib
 import json
@@ -33,7 +34,21 @@ def lf_sha256(p: Path) -> str:
     return hashlib.sha256(t.encode("utf-8")).hexdigest()
 
 
+def _guard_cli() -> None:
+    """USER-ONLY arg guard: a bare invocation seals; ANY argument is rejected. Mirrors
+    corpus_seal._guard_cli (see the 2026-08-18 catalog_seal --help incident). argparse prints real
+    help on -h/--help and errors on unknown flags, so only a deliberate BARE run can seal.
+    """
+    argparse.ArgumentParser(
+        prog="products_seal.py",
+        description="USER-ONLY. Seals the Youngevity Product DB pillar (eden/products/): stamps "
+                    "sealed_at, writes products.json.golden.sha256, then runs products_verify as the "
+                    "final gate. Takes NO options -- a bare run seals; any argument is rejected.",
+    ).parse_args()
+
+
 def main() -> int:
+    _guard_cli()
     # 1. gate on structural + prose checks
     if products_verify.main() != 0:
         print("\nREFUSING to seal -- products_verify failed (fix the pillar first).")

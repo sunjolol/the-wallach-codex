@@ -13,6 +13,7 @@ What it does, in order:
 
 All hashes are over LF-normalized UTF-8 content (clone/CRLF-stable; see .gitattributes).
 """
+import argparse
 import datetime
 import hashlib
 import json
@@ -36,7 +37,24 @@ def lf_sha256(p: Path) -> str:
     return hashlib.sha256(lf_text(p).encode("utf-8")).hexdigest()
 
 
+def _guard_cli() -> None:
+    """USER-ONLY arg guard: a bare invocation seals; ANY argument is rejected.
+
+    catalog_seal has NO options -- it always seals the whole Catalog pillar. It historically
+    ignored argv, so `catalog_seal.py --help` (an agent probing for usage) SILENTLY RAN a full
+    seal (2026-08-18 incident). argparse now prints real help on -h/--help and errors on any
+    unknown flag, so only a deliberate BARE run can seal. Mirrors corpus_seal._guard_cli.
+    """
+    argparse.ArgumentParser(
+        prog="catalog_seal.py",
+        description="USER-ONLY. Seals the Catalog pillar (eden/catalog/) as canonical: stamps "
+                    "sealed_at, rewrites each *.golden.sha256, then runs catalog_verify as the "
+                    "final gate. Takes NO options -- a bare run seals; any argument is rejected.",
+    ).parse_args()
+
+
 def main() -> int:
+    _guard_cli()
     # 1. gate on structural checks
     fails, _ = catalog_verify.run_checks()
     if fails:

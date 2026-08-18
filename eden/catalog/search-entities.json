@@ -12243,6 +12243,160 @@
     "pain"
    ],
    "intro_claim": "WAL-CLM-DDDL-000319"
+  },
+  "alcoholism": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "alcohol addiction",
+    "drinking problem",
+    "alcohol dependence",
+    "alcohol abuse"
+   ],
+   "related": []
+  },
+  "amebiasis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "amebic dysentery",
+    "amoebiasis",
+    "amoebic dysentery",
+    "entamoeba infection"
+   ],
+   "related": []
+  },
+  "ankylosing_spondylitis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "spinal arthritis",
+    "fused spine",
+    "bamboo spine",
+    "spondylitis"
+   ],
+   "related": []
+  },
+  "bruises": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "bruising",
+    "easy bruising",
+    "contusion",
+    "black and blue marks"
+   ],
+   "related": []
+  },
+  "celiac_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "celiac",
+    "coeliac disease",
+    "celiac sprue",
+    "gluten enteropathy"
+   ],
+   "related": []
+  },
+  "cerebrovascular_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "cerebral vascular disease",
+    "brain blood vessel disease",
+    "carotid artery disease"
+   ],
+   "related": []
+  },
+  "cold_sores": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "fever blisters",
+    "oral herpes",
+    "herpes labialis",
+    "lip blisters"
+   ],
+   "related": []
+  },
+  "endometriosis": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "endometrial tissue outside the uterus",
+    "pelvic endometriosis",
+    "endometrial implants"
+   ],
+   "related": []
+  },
+  "gray_hair": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "grey hair",
+    "graying hair",
+    "premature gray hair",
+    "hair turning gray"
+   ],
+   "related": []
+  },
+  "rosacea": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "acne rosacea",
+    "facial redness",
+    "facial flushing",
+    "red face rash"
+   ],
+   "related": []
+  },
+  "uterine_fibroids": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "fibroids",
+    "uterine fibroid",
+    "womb fibroids",
+    "fibroid tumors"
+   ],
+   "related": []
+  },
+  "immunotherapy": {
+   "display_name": "Immunotherapy",
+   "type": "concept",
+   "synonyms": [
+    "immune therapy",
+    "immune-boosting treatment",
+    "boosting immunity",
+    "immune system therapy"
+   ],
+   "related": []
+  },
+  "lactation_suppression": {
+   "display_name": "Stopping Breast Milk",
+   "type": "concept",
+   "synonyms": [
+    "stop breast milk",
+    "dry up breast milk",
+    "suppress lactation",
+    "stop breastfeeding",
+    "reduce milk supply"
+   ],
+   "related": []
+  },
+  "nausea": {
+   "display_name": "Nausea",
+   "type": "concept",
+   "synonyms": [
+    "feeling sick to my stomach",
+    "queasiness",
+    "upset stomach",
+    "feeling nauseous",
+    "want to vomit"
+   ],
+   "related": []
   }
  }
 }

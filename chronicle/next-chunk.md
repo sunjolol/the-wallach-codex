@@ -1,78 +1,64 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-**FINAL STRETCH — 3 TASKS LEFT before the app is FINISHED.** Luneth will name and explain the three
-remaining tasks at the START of the next session. Until he does: **boot, report the board, and WAIT.**
-Do NOT assume, propose, or start a task — the three are HIS to define. The "context threads" further
-down are my prior notes, **NOT confirmed as the three**. Everything through 2026-08-18 is shipped,
-reviewed, signed off, and **pushed** — local == origin/master, 92/92 green.
+**ACTIVE CAMPAIGN: introduce the 452 ruled claims into Search.** Luneth ruled 452 claims INTRODUCE in
+the triaged dashboard (prior session `0ce0c20f` scratchpad). The prior session sealed 177 raw claims
+but **never ran the search-enrichment→index pipeline**, so nothing showed in search. This session found
+the root cause, proved the fix, and is working the campaign to completion. See memory
+[[search-two-stage-and-verified-book-gate]] — it explains why a sealed claim ≠ a searchable claim.
 
-## ⏳ THE 3 REMAINING TASKS — Luneth defines them next session
-Unknown until he explains them. When he does: capture the three HERE (overwrite this section), then
-work them ONE AT A TIME to the gold-standard + round-close bar (build 0 → 92/92 → touched-surface render
-probe → screenshot for his eyes → build-log + Creator's Log → rebuild → commit + push). The app is
-otherwise complete — treat these as finishing work, measured and reviewed, not a place to invent scope.
+## STATE (2026-08-18, committed, board 92/92 green)
+- **107 DDDL-clean claims LIVE in search** (index 2140 → 2247). Family counts moved
+  (Science 903 / What-To-Do 656 / Wallach's-Take 218 / Cautions 191 / Story 274).
+- **Dup ruling done:** of 56 true gate-dup pairs, Luneth kept 52 (different questions on a shared span
+  = the gate's keep-both case) and DROPPED 4 nkeys: `dddl-3e-2011#518, #106, #96, #633` (all dirty,
+  unsealed — just excluded from finalize). Dashboard: scratchpad `dup-ruling-dashboard.html`.
 
-## ✅ JUST SHIPPED — GOALS EXPANSION (2026-08-17, PUSHED, commit 96768d94)
-The arrival-veil goal picker grew **14 → 31 goals** in **6 compact categories**, curated end-to-end
-with Luneth (+2 new: `nerves-neuro` "Nerves, Seizures, MS & ALS" and `cancer-support`; the two colliding
-heart goals unified into one **"Heart health"**). Layout: category label is an inline
-`<span class="wc__goal-cat">` on the same flex-wrap row as its chips (no header line) + a density pass →
-**measured 813px at 1920×1080**, under Luneth's **850px / no-scroll budget**. MAX_GOALS stays **5** (more
-pick-hues = chaotic field gradients; regimens cover more). §00.A held — members auto-derive; the goal
-SET is curation. 92/92, render probe 31 checks, screenshots signed off. Proposal file now HISTORICAL.
+## Where all 448 introduce claims stand (452 − 4 drops)
+| State | Count | DDDL | Unverified |
+|---|--:|--:|--:|
+| ✅ Live in search | 107 | 107 | 0 |
+| 🔒 Sealed, needs vision-verify | 70 | 0 | 70 |
+| ⏳ Not sealed — dirty finalize | 248 | 157 | 91 |
+| ⏳ Not sealed — dose audit | 23 | 22 | 1 |
 
-## (CONTEXT ONLY — my prior threads, NOT the 3 unless Luneth says so)
-- **Symptom-first entry + life-stage presets** (personalization glue): start from "what's bothering
-  you?" (164 catalog symptoms → conditions → the SAME goal members, no new data). Where the DEFERRED
-  goal-enrichment merges finally pay off — measured: most enrichment adds NO new member nutrient until
-  symptom→goal matching exists (mouth/oral +8, kidney +3; blood-sugar cluster +1 only, left out). Enrich
-  WHEN building this.
-- **Dashboard mining** — Luneth's own stated plan: work through the 936-claim
-  `claim-ruling-dashboard-final.html` (576 introduce / 300 reject / 60 merge; priority themes
-  chronic-fatigue 86, eye-health 31, seizures 24). Corpus seal + per-claim review apply.
-- **Category reshuffle** (cheap): "Reproductive & whole-body" is the loosest of the 6 buckets. One-line
-  `category` edit per goal in the skeleton → rebuild.
+**Only DDDL + IAIYH are verified books.** The 162 unverified-book claims (70 sealed + 92 unsealed)
+CANNOT front-face until vision-verified against the in-repo page images — that is the §00.A gate
+`enriched_book_is_verified`. Sources are all in-repo under `temporary/` (PDFs for hk/lets/rare;
+Screenshot dirs + `immortality-ocr/pages` for epig/immort). Toolkit: `tools/frontface/` (read its
+README); process: `chronicle/frontface-ocr/BLUEPRINT.md` — corroboration RANKS, only a page-read
+VERIFIES (~14% of agreeing claims still hid a defect).
 
-## ✅ DONE + SIGNED OFF (2026-08-17 → 2026-08-18, PUSHED)
-- **ORAC 01-06 redesign PORTED live** — demo `temporary/demos/orac-redesign-v2.html` §01-06 on the
-  live tab; **07/08/09 byte-untouched**. Interactive mirror scrubber (01) + league FIELD (06). §00.A held
-  (numbers project from `oracData()`/`oracFoodsData()`). Review fixes in: target-line knockout on
-  `.kd-orac-top` (+ Berries label hidden), `--p0..--p4` accent-derived, darker-on-dark mirror fill.
-  Screenshot-verified light+dark, ember+amethyst. SIGNED OFF.
-- **Note-batch (10 fixes):** empty-slot click-create + delete hover; Chakra-Petch nav + twinned
-  Add-to-regimen; family-coloured glosses; fixed `--fam-vita` (accent stops recolouring categories) +
-  detail category pins; NOT-COVERED follows accent; dark light-boxes (98% Colloidal, Absorption
-  115M/75%/twist + fortress `--frt-*`, ORAC §08); button sizes 0.7rem; omega/amino back-hover wash;
-  claim left stripe 50% dark; Absorption pull-stat accent subtitle.
+## THE 3 REMAINING ENGINES (in priority order)
+1. **DDDL-dirty finalize (157) — IN PROGRESS.** Seal the 157 DDDL dirty claims (exclude the 4 drops).
+   Gate trips to clear: `verbatim_names` (add a synonym to the catalog condition so the verbatim's
+   term matches, or drop the mapping — NEVER silence it blindly), `frontface` (dehyphenate the
+   verbatim, byte-exact), jargon (gloss), 1 unexpl_abbr (ACE). Then enrich + add the surviving
+   keep-both pairs to `_DUPLICATE_KEEP_BOTH` in tools/invariants.py (+ pin tools/test_no_duplicate_claims.py).
+   Ends with Luneth's `corpus_seal` (USER-ONLY).
+2. **DDDL dose audit (22).** Compare each to existing doses; SURFACE contradictions to Luneth (his
+   "favor newest, but prove it" rule); enrich the non-conflicting ones.
+3. **Vision-verify the 162** (frontface campaign) → then front-face them.
 
-## STANDING / PARKED (do NOT raise unprompted)
-- **CORPUS SEAL held.** eden/ untouched; 7 unreviewed draft books in `eden/corpus/drafts/`.
-- **Goal cap = 5, SETTLED** (palette length in `core/goal-display.ts` IS the cap) — do NOT re-raise.
-- **Primary-button-label pass: SETTLED, good as is** — do NOT re-raise.
-- `chronicle/proposals/orac-redesign-port-spec.md` + `goals-expansion-proposal.md` are HISTORICAL (shipped).
-- ORAC minor leftovers (Luneth's call, none blocking): two orphaned copy keys
-  `kd_orac_dec_age_prefix`/`kd_orac_dec_lbl`; the hero (01) kept as the existing live markup.
+## KEY SCRATCHPAD ARTIFACTS (this session, `279f366a` scratchpad)
+- `subject_resolution.json` / `entity_plan.json` — subject→slug map + the 53 new topics still to
+  author (mostly unverified-book, so they wait for the vision phase).
+- `clean_nk2id.json` — nkey→sealed-id map (verbatim+conditions verified) for the 177 clean.
+- `true_dups.json` / `dup_rows.json` / `dup_rulings.json` — the 56 pairs + the 4 drops.
+- `nk2id.json` — verbatim→sealed-id for all 429.
+- The 452 rulings + enrich_src: prior scratchpad `0ce0c20f` (`introduced-claims.json`,
+  `enrich_src.json` (429 authored enrichments), `clean_subset.json`, `audit_map.json`, `finalize_raw/`).
 
 ## GOTCHAS
-- **Goal picker** (`views/welcome.ts`): goals render GROUPED by `category` (first-seen order) with the
-  label an inline `<span class="wc__goal-cat">` flowing in the same `.wc__goal-group` flex-wrap row as its
-  chips — no `.wc__goal-row` wrapper. `category` lives on each goal in `coverage-layout-skeleton.json`
-  (optional in `LayoutGoalSchema`, copied through by the derive). Height budget **≤850px @ 1920×1080** (no
-  scroll) — re-measure with the scratchpad Puppeteer harness if you touch it. MAX_GOALS + the pick-order
-  hues both live in `core/goal-display.ts` (palette length == cap).
-- **ORAC interactivity** is delegated from `knowledge.ts mount()`; field/scrubber render STATIC-correct
-  with zero JS. Any ORAC number MUST come from `oracData()`/`oracFoodsData()` (§00.A). Ramp `--p0..--p4`
-  = `color-mix(--ds-accent-hot N%, #fff)`. Dark ORAC lives in theme.css block **(L)**.
-- **Per-file endings**: `welcome.ts`, `coverage-layout.ts`, `coverage-layout-skeleton.json`,
-  `knowledge-orac.ts`, `view-copy.json`, `drawer-orac.css`, `scanner.ts` etc. are CRLF-on-disk /
-  LF-in-git (git normalises on add; status stays clean). `workspace-coverage.css`, `knowledge-foods.ts`,
-  most `styles/*.css`, `theme.css`, chronicle `.md` are LF. `safe_write check` FIRST, ALWAYS.
-- **Headless screenshots WORK**: Puppeteer (`node_modules/puppeteer`), file:// +
-  `--allow-file-access-from-files`. The arrival veil (`.wc-veil`) mounts on a fresh (no-profile) load;
-  measure `.wc` scrollHeight for the picker height. The IN-APP browser pane renders file:// as a STATIC
-  data: snapshot (no JS/CSS) and blocks localhost — use Puppeteer, or real Chrome if connected.
+- **Search reads `search-enrichment.json` → `search-index.json`, NOT corpus-embed.** Adding a raw
+  claim never makes it searchable; needs an enrichment entry (subject resolving to a REGISTERED entity
+  or canon) + `python eden/tools/search_index_derive.py` + `node tools/build.mjs`. Verify by the
+  on-screen number, never the data file. `search-enrichment.json` (LF) + `search-entities.json` (CRLF)
+  are NOT golden-sealed — normal safe_write.
+- **Registered 25 new search entities this session** (14 conditions incl. endometriosis/rosacea/
+  uterine_fibroids/celiac + 3 topics immunotherapy/nausea/lactation_suppression + the prior 8). New
+  condition subjects need a `{catalog_ref:true,type:condition,synonyms:[…]}` registry entry.
+- **Prior session hardened the 3 seal tools** (`_guard_cli` blocks `seal.py --help` from sealing).
 
 ## GENESIS
-`genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report the board, then **WAIT for Luneth to
-explain the 3 remaining tasks** — do NOT resume a context thread or prescribe scope. If a new invariant
-red appears, that is the only response.
+`genesis` → run `PYTHONUTF8=1 python tools/genesis.py`, report the board, then resume ENGINE 1
+(DDDL-dirty finalize) unless Luneth redirects.

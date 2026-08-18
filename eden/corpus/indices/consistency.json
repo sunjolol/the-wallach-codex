@@ -1498,6 +1498,14 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000489",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000501",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000002",
         "book": "lets-play-doctor"
       },
@@ -1859,7 +1867,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 400
+    "claim_count": 402
   },
   {
     "id": "CG-0004",
@@ -1880,6 +1888,10 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000414",
+        "book": "dddl-3e-2011"
+      },
+      {
         "claim_id": "WAL-CLM-EPIGEN-000229",
         "book": "epigenetics"
       },
@@ -1889,6 +1901,10 @@
       },
       {
         "claim_id": "WAL-CLM-IMMORT-000245",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000482",
         "book": "immortality"
       },
       {
@@ -1921,7 +1937,7 @@
       }
     ],
     "books_repeating": 5,
-    "claim_count": 13
+    "claim_count": 15
   },
   {
     "id": "CG-0005",
@@ -2200,6 +2216,26 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000486",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000490",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000506",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000514",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000518",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000316",
         "book": "rare-earths"
       },
@@ -2229,7 +2265,7 @@
       }
     ],
     "books_repeating": 5,
-    "claim_count": 51
+    "claim_count": 56
   },
   {
     "id": "CG-0007",
@@ -2988,6 +3024,50 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000480",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000484",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000488",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000491",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000499",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000505",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000511",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000512",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000513",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000516",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000517",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000089",
         "book": "lets-play-doctor"
       },
@@ -3157,7 +3237,7 @@
       }
     ],
     "books_repeating": 7,
-    "claim_count": 207
+    "claim_count": 218
   },
   {
     "id": "CG-0009",
@@ -3376,6 +3456,18 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000503",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000504",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000507",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000474",
         "book": "lets-play-doctor"
       },
@@ -3421,7 +3513,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 30
+    "claim_count": 33
   },
   {
     "id": "CG-0011",
@@ -3554,6 +3646,18 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000481",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000509",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000519",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000511",
         "book": "lets-play-doctor"
       },
@@ -3575,7 +3679,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 36
+    "claim_count": 39
   },
   {
     "id": "CG-0012",
@@ -3712,6 +3816,18 @@
         "book": "dddl-3e-2011"
       },
       {
+        "claim_id": "WAL-CLM-DDDL-000368",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000374",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000410",
+        "book": "dddl-3e-2011"
+      },
+      {
         "claim_id": "WAL-CLM-EPIGEN-000142",
         "book": "epigenetics"
       },
@@ -3792,6 +3908,14 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000510",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000520",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000376",
         "book": "lets-play-doctor"
       },
@@ -3829,7 +3953,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 61
+    "claim_count": 66
   },
   {
     "id": "CG-0013",
@@ -3875,6 +3999,10 @@
       },
       {
         "claim_id": "WAL-CLM-DDDL-000305",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000333",
         "book": "dddl-3e-2011"
       },
       {
@@ -4118,6 +4246,10 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000521",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000518",
         "book": "lets-play-doctor"
       },
@@ -4191,7 +4323,7 @@
       }
     ],
     "books_repeating": 7,
-    "claim_count": 88
+    "claim_count": 90
   },
   {
     "id": "CG-0014",
@@ -4451,6 +4583,46 @@
     "id": "CG-0019",
     "essentials": [],
     "conditions": [
+      "celiac_disease"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000340",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000209",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0020",
+    "essentials": [],
+    "conditions": [
+      "chronic_fatigue"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000421",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000272",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0021",
+    "essentials": [],
+    "conditions": [
       "constipation"
     ],
     "kind": "protocol",
@@ -4468,7 +4640,67 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0020",
+    "id": "CG-0022",
+    "essentials": [],
+    "conditions": [
+      "cystitis"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000338",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000241",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0023",
+    "essentials": [],
+    "conditions": [
+      "diarrhea"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000422",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000248",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0024",
+    "essentials": [],
+    "conditions": [
+      "diverticulitis"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000378",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000251",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0025",
     "essentials": [],
     "conditions": [
       "flatulence"
@@ -4488,7 +4720,67 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0021",
+    "id": "CG-0026",
+    "essentials": [],
+    "conditions": [
+      "gallstones"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000365",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000372",
+        "book": "dddl-3e-2011"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0027",
+    "essentials": [],
+    "conditions": [
+      "heartburn"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000353",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000296",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0028",
+    "essentials": [],
+    "conditions": [
+      "hemorrhoids"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000384",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000297",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0029",
     "essentials": [],
     "conditions": [
       "homosexuality"
@@ -4516,7 +4808,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0022",
+    "id": "CG-0030",
     "essentials": [],
     "conditions": [
       "intersex"
@@ -4536,7 +4828,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0023",
+    "id": "CG-0031",
     "essentials": [],
     "conditions": [
       "labor"
@@ -4556,7 +4848,67 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0024",
+    "id": "CG-0032",
+    "essentials": [],
+    "conditions": [
+      "lyme_disease"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000348",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000351",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0033",
+    "essentials": [],
+    "conditions": [
+      "menopause"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000090",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000476",
+        "book": "epigenetics"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0034",
+    "essentials": [],
+    "conditions": [
+      "menopause"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000479",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000317",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0035",
     "essentials": [],
     "conditions": [
       "motion_sickness"
@@ -4576,7 +4928,27 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0025",
+    "id": "CG-0036",
+    "essentials": [],
+    "conditions": [
+      "mumps"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000342",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000372",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0037",
     "essentials": [],
     "conditions": [
       "obesity"
@@ -4596,7 +4968,27 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0026",
+    "id": "CG-0038",
+    "essentials": [],
+    "conditions": [
+      "obesity"
+    ],
+    "kind": "quote",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000478",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-HELLS-000083",
+        "book": "hells-kitchen"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0039",
     "essentials": [],
     "conditions": [
       "parasites"
@@ -4616,7 +5008,31 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0027",
+    "id": "CG-0040",
+    "essentials": [],
+    "conditions": [
+      "peptic_ulcers"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000380",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000466",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000101",
+        "book": "rare-earths"
+      }
+    ],
+    "books_repeating": 3,
+    "claim_count": 3
+  },
+  {
+    "id": "CG-0041",
     "essentials": [],
     "conditions": [
       "peptic_ulcers"
@@ -4624,19 +5040,27 @@
     "kind": "protocol",
     "repetitions": [
       {
+        "claim_id": "WAL-CLM-EPIGEN-000480",
+        "book": "epigenetics"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000397",
         "book": "lets-play-doctor"
       },
       {
         "claim_id": "WAL-CLM-RARE-000102",
         "book": "rare-earths"
+      },
+      {
+        "claim_id": "WAL-CLM-RARE-000404",
+        "book": "rare-earths"
       }
     ],
-    "books_repeating": 2,
-    "claim_count": 2
+    "books_repeating": 3,
+    "claim_count": 4
   },
   {
-    "id": "CG-0028",
+    "id": "CG-0042",
     "essentials": [],
     "conditions": [
       "pica"
@@ -4656,7 +5080,67 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0029",
+    "id": "CG-0043",
+    "essentials": [],
+    "conditions": [
+      "stroke"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000355",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000397",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0044",
+    "essentials": [],
+    "conditions": [
+      "syphilis"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000341",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000442",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0045",
+    "essentials": [],
+    "conditions": [
+      "tinnitus"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000393",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000411",
+        "book": "dddl-3e-2011"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0046",
     "essentials": [],
     "conditions": [
       "vaginitis"
@@ -4676,7 +5160,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0030",
+    "id": "CG-0047",
     "essentials": [
       "aluminum"
     ],
@@ -4696,7 +5180,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0031",
+    "id": "CG-0048",
     "essentials": [
       "arsenic"
     ],
@@ -4716,7 +5200,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0032",
+    "id": "CG-0049",
     "essentials": [
       "barium"
     ],
@@ -4736,7 +5220,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0033",
+    "id": "CG-0050",
     "essentials": [
       "biotin"
     ],
@@ -4756,7 +5240,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0034",
+    "id": "CG-0051",
     "essentials": [
       "boron"
     ],
@@ -4776,7 +5260,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0035",
+    "id": "CG-0052",
     "essentials": [
       "bromine"
     ],
@@ -4796,7 +5280,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0036",
+    "id": "CG-0053",
     "essentials": [
       "calcium"
     ],
@@ -4820,7 +5304,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0037",
+    "id": "CG-0054",
     "essentials": [
       "calcium"
     ],
@@ -4840,7 +5324,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0038",
+    "id": "CG-0055",
     "essentials": [
       "calcium"
     ],
@@ -4857,6 +5341,10 @@
       },
       {
         "claim_id": "WAL-CLM-EPIGEN-000146",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000471",
         "book": "epigenetics"
       },
       {
@@ -4877,10 +5365,10 @@
       }
     ],
     "books_repeating": 3,
-    "claim_count": 7
+    "claim_count": 8
   },
   {
-    "id": "CG-0039",
+    "id": "CG-0056",
     "essentials": [
       "calcium",
       "chromium",
@@ -4908,7 +5396,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0040",
+    "id": "CG-0057",
     "essentials": [
       "calcium",
       "magnesium"
@@ -4929,7 +5417,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0041",
+    "id": "CG-0058",
     "essentials": [
       "calcium",
       "magnesium"
@@ -4952,7 +5440,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0042",
+    "id": "CG-0059",
     "essentials": [
       "calcium",
       "magnesium",
@@ -4976,7 +5464,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0043",
+    "id": "CG-0060",
     "essentials": [
       "calcium",
       "phosphorus"
@@ -4997,7 +5485,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0044",
+    "id": "CG-0061",
     "essentials": [
       "cesium"
     ],
@@ -5020,7 +5508,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0045",
+    "id": "CG-0062",
     "essentials": [
       "chloride"
     ],
@@ -5040,7 +5528,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0046",
+    "id": "CG-0063",
     "essentials": [
       "chloride"
     ],
@@ -5060,7 +5548,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0047",
+    "id": "CG-0064",
     "essentials": [
       "choline"
     ],
@@ -5080,7 +5568,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0048",
+    "id": "CG-0065",
     "essentials": [
       "chromium"
     ],
@@ -5100,7 +5588,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0049",
+    "id": "CG-0066",
     "essentials": [
       "chromium"
     ],
@@ -5124,7 +5612,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0050",
+    "id": "CG-0067",
     "essentials": [
       "chromium"
     ],
@@ -5144,7 +5632,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0051",
+    "id": "CG-0068",
     "essentials": [
       "chromium"
     ],
@@ -5164,7 +5652,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0052",
+    "id": "CG-0069",
     "essentials": [
       "chromium",
       "vanadium"
@@ -5193,7 +5681,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0053",
+    "id": "CG-0070",
     "essentials": [
       "cobalt",
       "vitamin-b12"
@@ -5214,7 +5702,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0054",
+    "id": "CG-0071",
     "essentials": [
       "copper"
     ],
@@ -5234,7 +5722,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0055",
+    "id": "CG-0072",
     "essentials": [
       "copper"
     ],
@@ -5254,7 +5742,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0056",
+    "id": "CG-0073",
     "essentials": [
       "copper"
     ],
@@ -5274,7 +5762,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0057",
+    "id": "CG-0074",
     "essentials": [
       "copper"
     ],
@@ -5298,7 +5786,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0058",
+    "id": "CG-0075",
     "essentials": [
       "copper"
     ],
@@ -5318,7 +5806,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0059",
+    "id": "CG-0076",
     "essentials": [
       "copper"
     ],
@@ -5344,7 +5832,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0060",
+    "id": "CG-0077",
     "essentials": [
       "copper"
     ],
@@ -5366,7 +5854,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0061",
+    "id": "CG-0078",
     "essentials": [
       "copper",
       "iodine"
@@ -5393,7 +5881,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0062",
+    "id": "CG-0079",
     "essentials": [
       "dysprosium"
     ],
@@ -5417,7 +5905,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0063",
+    "id": "CG-0080",
     "essentials": [
       "erbium"
     ],
@@ -5437,7 +5925,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0064",
+    "id": "CG-0081",
     "essentials": [
       "europium"
     ],
@@ -5457,7 +5945,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0065",
+    "id": "CG-0082",
     "essentials": [
       "gadolinium"
     ],
@@ -5477,7 +5965,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0066",
+    "id": "CG-0083",
     "essentials": [
       "gallium"
     ],
@@ -5497,7 +5985,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0067",
+    "id": "CG-0084",
     "essentials": [
       "germanium"
     ],
@@ -5525,7 +6013,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0068",
+    "id": "CG-0085",
     "essentials": [
       "germanium"
     ],
@@ -5549,7 +6037,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0069",
+    "id": "CG-0086",
     "essentials": [
       "germanium"
     ],
@@ -5573,7 +6061,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0070",
+    "id": "CG-0087",
     "essentials": [
       "germanium"
     ],
@@ -5593,7 +6081,31 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0071",
+    "id": "CG-0088",
+    "essentials": [
+      "germanium",
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "conditions": [],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000361",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000313",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0089",
     "essentials": [
       "hafnium"
     ],
@@ -5617,7 +6129,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0072",
+    "id": "CG-0090",
     "essentials": [
       "holmium"
     ],
@@ -5641,7 +6153,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0073",
+    "id": "CG-0091",
     "essentials": [
       "hydrogen"
     ],
@@ -5665,7 +6177,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0074",
+    "id": "CG-0092",
     "essentials": [
       "hydrogen"
     ],
@@ -5689,7 +6201,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0075",
+    "id": "CG-0093",
     "essentials": [
       "hydrogen"
     ],
@@ -5712,7 +6224,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0076",
+    "id": "CG-0094",
     "essentials": [
       "iodine"
     ],
@@ -5748,7 +6260,7 @@
     "claim_count": 6
   },
   {
-    "id": "CG-0077",
+    "id": "CG-0095",
     "essentials": [
       "iodine"
     ],
@@ -5768,7 +6280,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0078",
+    "id": "CG-0096",
     "essentials": [
       "iodine"
     ],
@@ -5790,7 +6302,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0079",
+    "id": "CG-0097",
     "essentials": [
       "iodine"
     ],
@@ -5814,7 +6326,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0080",
+    "id": "CG-0098",
     "essentials": [
       "iodine"
     ],
@@ -5837,7 +6349,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0081",
+    "id": "CG-0099",
     "essentials": [
       "iron"
     ],
@@ -5857,7 +6369,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0082",
+    "id": "CG-0100",
     "essentials": [
       "iron"
     ],
@@ -5877,7 +6389,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0083",
+    "id": "CG-0101",
     "essentials": [
       "iron"
     ],
@@ -5905,7 +6417,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0084",
+    "id": "CG-0102",
     "essentials": [
       "isoleucine"
     ],
@@ -5925,7 +6437,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0085",
+    "id": "CG-0103",
     "essentials": [
       "lithium"
     ],
@@ -5948,7 +6460,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0086",
+    "id": "CG-0104",
     "essentials": [
       "lutetium"
     ],
@@ -5968,7 +6480,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0087",
+    "id": "CG-0105",
     "essentials": [
       "magnesium"
     ],
@@ -5996,7 +6508,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0088",
+    "id": "CG-0106",
     "essentials": [
       "magnesium"
     ],
@@ -6016,7 +6528,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0089",
+    "id": "CG-0107",
     "essentials": [
       "magnesium"
     ],
@@ -6040,7 +6552,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0090",
+    "id": "CG-0108",
     "essentials": [
       "magnesium"
     ],
@@ -6062,7 +6574,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0091",
+    "id": "CG-0109",
     "essentials": [
       "manganese"
     ],
@@ -6082,7 +6594,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0092",
+    "id": "CG-0110",
     "essentials": [
       "manganese"
     ],
@@ -6102,7 +6614,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0093",
+    "id": "CG-0111",
     "essentials": [
       "molybdenum"
     ],
@@ -6122,7 +6634,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0094",
+    "id": "CG-0112",
     "essentials": [
       "molybdenum"
     ],
@@ -6142,7 +6654,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0095",
+    "id": "CG-0113",
     "essentials": [
       "molybdenum"
     ],
@@ -6162,7 +6674,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0096",
+    "id": "CG-0114",
     "essentials": [
       "neodymium"
     ],
@@ -6182,7 +6694,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0097",
+    "id": "CG-0115",
     "essentials": [
       "niobium"
     ],
@@ -6202,7 +6714,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0098",
+    "id": "CG-0116",
     "essentials": [
       "nitrogen"
     ],
@@ -6222,7 +6734,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0099",
+    "id": "CG-0117",
     "essentials": [
       "nitrogen"
     ],
@@ -6246,7 +6758,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0100",
+    "id": "CG-0118",
     "essentials": [
       "omega-3",
       "omega-6"
@@ -6279,7 +6791,7 @@
     "claim_count": 5
   },
   {
-    "id": "CG-0101",
+    "id": "CG-0119",
     "essentials": [
       "omega-3",
       "omega-6"
@@ -6308,7 +6820,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0102",
+    "id": "CG-0120",
     "essentials": [
       "omega-3",
       "omega-6"
@@ -6329,7 +6841,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0103",
+    "id": "CG-0121",
     "essentials": [
       "oxygen"
     ],
@@ -6357,7 +6869,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0104",
+    "id": "CG-0122",
     "essentials": [
       "oxygen"
     ],
@@ -6379,7 +6891,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0105",
+    "id": "CG-0123",
     "essentials": [
       "phosphorus"
     ],
@@ -6399,7 +6911,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0106",
+    "id": "CG-0124",
     "essentials": [
       "phosphorus"
     ],
@@ -6419,7 +6931,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0107",
+    "id": "CG-0125",
     "essentials": [
       "potassium"
     ],
@@ -6459,7 +6971,7 @@
     "claim_count": 7
   },
   {
-    "id": "CG-0108",
+    "id": "CG-0126",
     "essentials": [
       "potassium"
     ],
@@ -6479,7 +6991,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0109",
+    "id": "CG-0127",
     "essentials": [
       "potassium"
     ],
@@ -6499,7 +7011,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0110",
+    "id": "CG-0128",
     "essentials": [
       "potassium"
     ],
@@ -6522,7 +7034,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0111",
+    "id": "CG-0129",
     "essentials": [
       "selenium"
     ],
@@ -6542,7 +7054,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0112",
+    "id": "CG-0130",
     "essentials": [
       "selenium"
     ],
@@ -6562,7 +7074,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0113",
+    "id": "CG-0131",
     "essentials": [
       "selenium"
     ],
@@ -6594,7 +7106,7 @@
     "claim_count": 5
   },
   {
-    "id": "CG-0114",
+    "id": "CG-0132",
     "essentials": [
       "selenium"
     ],
@@ -6616,7 +7128,29 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0115",
+    "id": "CG-0133",
+    "essentials": [
+      "selenium"
+    ],
+    "conditions": [
+      "cataracts"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000473",
+        "book": "epigenetics"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000479",
+        "book": "immortality"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0134",
     "essentials": [
       "selenium"
     ],
@@ -6638,7 +7172,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0116",
+    "id": "CG-0135",
     "essentials": [
       "selenium"
     ],
@@ -6660,7 +7194,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0117",
+    "id": "CG-0136",
     "essentials": [
       "selenium"
     ],
@@ -6682,7 +7216,57 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0118",
+    "id": "CG-0137",
+    "essentials": [
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "conditions": [
+      "infection"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000363",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000318",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0138",
+    "essentials": [
+      "selenium",
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "conditions": [
+      "tonsillitis"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000325",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000452",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0139",
     "essentials": [
       "silica"
     ],
@@ -6702,7 +7286,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0119",
+    "id": "CG-0140",
     "essentials": [
       "silver"
     ],
@@ -6726,7 +7310,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0120",
+    "id": "CG-0141",
     "essentials": [
       "sodium"
     ],
@@ -6746,7 +7330,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0121",
+    "id": "CG-0142",
     "essentials": [
       "sodium"
     ],
@@ -6768,7 +7352,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0122",
+    "id": "CG-0143",
     "essentials": [
       "sulfur"
     ],
@@ -6796,7 +7380,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0123",
+    "id": "CG-0144",
     "essentials": [
       "vanadium"
     ],
@@ -6816,7 +7400,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0124",
+    "id": "CG-0145",
     "essentials": [
       "vanadium"
     ],
@@ -6840,7 +7424,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0125",
+    "id": "CG-0146",
     "essentials": [
       "vitamin-a"
     ],
@@ -6864,7 +7448,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0126",
+    "id": "CG-0147",
     "essentials": [
       "vitamin-a"
     ],
@@ -6884,7 +7468,31 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0127",
+    "id": "CG-0148",
+    "essentials": [
+      "vitamin-a",
+      "vitamin-c",
+      "zinc"
+    ],
+    "conditions": [
+      "impetigo"
+    ],
+    "kind": "protocol",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000345",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-LETS-000314",
+        "book": "lets-play-doctor"
+      }
+    ],
+    "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0149",
     "essentials": [
       "vitamin-b1"
     ],
@@ -6904,7 +7512,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0128",
+    "id": "CG-0150",
     "essentials": [
       "vitamin-b12"
     ],
@@ -6924,7 +7532,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0129",
+    "id": "CG-0151",
     "essentials": [
       "vitamin-b12"
     ],
@@ -6944,7 +7552,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0130",
+    "id": "CG-0152",
     "essentials": [
       "vitamin-b12"
     ],
@@ -6964,7 +7572,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0131",
+    "id": "CG-0153",
     "essentials": [
       "vitamin-b2"
     ],
@@ -6984,7 +7592,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0132",
+    "id": "CG-0154",
     "essentials": [
       "vitamin-b3"
     ],
@@ -7004,7 +7612,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0133",
+    "id": "CG-0155",
     "essentials": [
       "vitamin-b5"
     ],
@@ -7024,7 +7632,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0134",
+    "id": "CG-0156",
     "essentials": [
       "vitamin-b6"
     ],
@@ -7044,7 +7652,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0135",
+    "id": "CG-0157",
     "essentials": [
       "vitamin-c"
     ],
@@ -7064,7 +7672,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0136",
+    "id": "CG-0158",
     "essentials": [
       "vitamin-d"
     ],
@@ -7084,7 +7692,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0137",
+    "id": "CG-0159",
     "essentials": [
       "vitamin-e"
     ],
@@ -7104,7 +7712,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0138",
+    "id": "CG-0160",
     "essentials": [
       "vitamin-k"
     ],
@@ -7124,7 +7732,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0139",
+    "id": "CG-0161",
     "essentials": [
       "vitamin-k"
     ],
@@ -7144,7 +7752,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0140",
+    "id": "CG-0162",
     "essentials": [
       "yttrium"
     ],
@@ -7164,7 +7772,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0141",
+    "id": "CG-0163",
     "essentials": [
       "zinc"
     ],
@@ -7184,7 +7792,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0142",
+    "id": "CG-0164",
     "essentials": [
       "zinc"
     ],
@@ -7204,7 +7812,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0143",
+    "id": "CG-0165",
     "essentials": [
       "zinc"
     ],
@@ -7224,7 +7832,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0144",
+    "id": "CG-0166",
     "essentials": [
       "zinc"
     ],
@@ -7252,7 +7860,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0145",
+    "id": "CG-0167",
     "essentials": [
       "zinc"
     ],
