@@ -185524,14 +185524,6 @@ Goiter`,
     }
     return seclabel("Nutrients to restore") + `<div class="kd-ep-nutri">${primary}${lenses.join("")}</div>`;
   }
-  function renderConditionProtocol(page) {
-    const claims = resolveClaims(page.protocol_claim_ids);
-    if (claims.length === 0) {
-      return "";
-    }
-    const cards2 = claims.map((cl, i) => renderRecordClaim(cl, i === 0)).join("");
-    return seclabel("Wallach\u2019s protocol") + `<div class="kd-ep-protocol">${cards2}</div>`;
-  }
   function condProductRow(rec, total, isBest) {
     const price = rec.price > 0 ? `$${rec.price.toFixed(2)}` : "\u2014";
     const tag = isBest ? '<span class="kd-ep-vtag">best value</span>' : "";
@@ -185616,7 +185608,7 @@ Goiter`,
     </div>
     ${conditionUmbrellaTip(slug, page.claim_count)}
     ${lede}
-    ${renderConditionProtocol(page)}
+    ${renderFacetGroups(page)}
     ${renderNutrientsToRestore(page, c)}
     ${renderConditionProducts(page)}
     ${renderRecord(page.record, page.record_claim_count, ui("ep_record_label_cond"), ui("ep_record_hint_cond"))}
@@ -192694,7 +192686,26 @@ THE LAYOUT: schema gained an optional \`category\` on LayoutGoalSchema; welcome.
 
 DOCTRINE: SS-00.A held throughout \u2014 the goal SET is our curation (Wallach enumerates no "goals"), but every goal's MEMBERSHIP auto-derives from sealed non-search claims via the real coverage_layout_derive; all 31 derive a non-empty member set (dry-run + build), zero hand-typed numbers. An honest finding surfaced mid-work and steered a decision: most "enrichment" merges add no NEW member nutrients until symptom->goal matching exists, so they were deferred rather than shipped as invisible changes.
 
-VERIFY: build 0; invariants 92/92 (goal_members_actionable, pdm_group_goals_wallach_sourced, and workspace_coverage_no_dead_rules all green \u2014 the new .wc__goal-cat/-group classes trace to welcome.ts and the removed .wc__goal-row left no dead rule); render_probe_coverage_add_remove PASS 31 checks (veil -> pick -> field relights -> dose moves the counts -> reversible -> remove -> rec returns; the denominator never moved), 0 page errors. Headless Puppeteer measure + screenshots at 1920x1080 confirmed the 813px height and the working selected-state hues; sent to Luneth, who approved and called round-close. Pushed to origin/master this round on his instruction.` }];
+VERIFY: build 0; invariants 92/92 (goal_members_actionable, pdm_group_goals_wallach_sourced, and workspace_coverage_no_dead_rules all green \u2014 the new .wc__goal-cat/-group classes trace to welcome.ts and the removed .wc__goal-row left no dead rule); render_probe_coverage_add_remove PASS 31 checks (veil -> pick -> field relights -> dose moves the counts -> reversible -> remove -> rec returns; the denominator never moved), 0 page errors. Headless Puppeteer measure + screenshots at 1920x1080 confirmed the 813px height and the working selected-state hues; sent to Luneth, who approved and called round-close. Pushed to origin/master this round on his instruction.` }, { id: "lg_msz34v32_9jcbx0", ts: "2026-08-18T14:58:17.438561-05:00", surface: "corpus+search", kind: "milestone", summary: "Put the verified-book half of the 452 ruled claims into search (155 more DDDL claims, all quote-checked against Wallach's own words) and fixed the condition pages so search, conditions, essentials and topics all show the same enriched Q&A.", detail: `Two things shipped this chunk. First, the 155 "Dead Doctors Don't Lie" claims that were stuck OUT of search: each was flagged because its quote didn't literally name the condition it was filed under. Wallach's book puts the condition name in a section HEADING, and the earlier mining had sliced only the treatment sentence below it, so the quote read like a bare list of remedies. I verified all 157 quotes against the real page (every one is real \u2014 zero fabricated), widened 78 quotes to include the heading so they name the condition, added 13 plain-language synonyms where Wallach names a condition his own way (pyorrhea for gum disease, impotence for ED, caries for tooth decay), and dropped 38 links where the quote genuinely sat in a DIFFERENT condition's section. Two whole claims were dropped as mis-sourced. Result: 155 of 157 now live and answering in search.
+
+Second, a bug Luneth caught: the condition detail pages were the ONLY place still showing raw claim cards, while Ask Wallach (and the essential + explore-topic pages) showed the enriched question-and-answer format. I made the condition pages render the same enriched cards, so every surface now matches.
+
+TECHNICAL RECORD
+
+Engine 1 (DDDL-dirty finalize, committed ee51f4e8):
+- Verified pass: verbatim_audit.names() per (claim, condition); a Workflow (11 agents) + a deterministic source-anchored resolver classified each failure as add_synonym / re-snap / drop. Lesson recorded: agent +/-200-char windows OVER-DROP; the condition name is usually in the ALL-CAPS section heading ABOVE the treatment sentence (e.g. "ACNE (acne rosacea/acne vulgaris)" vindicated the 9 rosacea claims the agents wrongly dropped).
+- 13 synonyms added to conditions.json (re-sealed catalog): hyperactivity, craving for alcohol, irritation of the bladder, painful periods, atopic dermatitis, impotence, gain weight/overweight/weight problem, pyorrhea, raynaud's disease, cystitis, dizziness, caries/cavities.
+- 78 verbatims re-snapped to the byte-exact span naming the condition (cap 1200; over-500 allowed). 36 condition-mappings dropped (quote in a different section) + 2 claims dropped (#541 gum-disease, #461 eczema). 11 abbreviations expanded (OTC, OJ, IV, UTI, ED, MSG, DMSO, ADD/ADHD, ACE-from-source). #507 widened to name BACKACHE; #477 "European hawthorn"->"hawthorn". 3 glosses (endometriosis, ovariectomy) + tooth_decay synonyms.
+- 71 keep-both duplicate pairs (all different questions on a shared span, Luneth-ruled) added to _DUPLICATE_KEEP_BOTH in tools/invariants.py + pinned in tools/test_no_duplicate_claims.py.
+- Sealed corpus knowledge_version=473, catalog re-sealed (Luneth granted seal permission this session). 155 mapped positionally to sealed ids + enriched (2 new topic entities: glutathione, the_salad_fork_trick). Search index 2140 -> 2402 (+262 with the earlier 107 clean).
+
+Render consistency fix (this commit):
+- Root cause: renderConditionPage rendered renderConditionProtocol (raw protocol_claim_ids) + renderRecord (raw) and NEVER page.search; renderEssentialPage uses renderFacetGroups (enriched) and renderTopicPage uses renderSearchCard (enriched). Conditions were the lone raw surface.
+- Fix in dashboard/assets/js/src/views/entity-page.ts: renderConditionPage now calls renderFacetGroups(page); its signature broadened to EssentialPage | ConditionPage (both carry search: EntityFacetGroup[]); the dead renderConditionProtocol removed (tsc TS6133).
+- Verified: chronic_fatigue condition page renders 13 enriched question cards (IN THE BODY / HOW IT WORKS / WHAT TO DO), 0 raw protocol blocks; 92/92 invariants; render_probe_search, _browse, _routing all exit 0.
+
+Remaining (chronicle/next-chunk.md): 22 DDDL dose claims (contradiction audit) + 162 unverified-book claims (frontface vision verification).
+` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

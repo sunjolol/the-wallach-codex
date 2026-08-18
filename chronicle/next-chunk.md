@@ -18,7 +18,16 @@ found the root cause, proved the fix, and shipped the two verified-book engines.
     (`_DUPLICATE_KEEP_BOTH`, pinned in tools/test_no_duplicate_claims.py).
   - Findability check: all 157 quotes are REAL (found verbatim in DDDL). Zero fabricated.
 
+## ✅ ENTITY-RENDER CONSISTENCY FIX (2026-08-18, committed)
+Condition detail pages now render the enriched "Worth knowing" Q&A (`renderFacetGroups`) — conditions
+were the ONLY entity type stuck on RAW claim cards; essentials + explore topics already rendered
+enriched. Fix in `dashboard/assets/js/src/views/entity-page.ts`: `renderConditionPage` swaps raw
+`renderConditionProtocol` → `renderFacetGroups` (signature broadened to `EssentialPage | ConditionPage`;
+dead fn removed). Ask-Wallach ↔ condition ↔ essential ↔ topic now identical. If you touch ANY entity
+render, keep all four consistent. 3 render probes green.
+
 ## THE 2 REMAINING ENGINES
+
 1. **DDDL dose audit (22 claims).** Compare each dose to existing doses; SURFACE contradictions to
    Luneth (his "favor newest, but prove it" rule); then finalize + enrich + seal like Engine 1.
    Sources in `0ce0c20f` scratchpad (introduced-claims.json kind=dose; enrich_src has no dose entries —

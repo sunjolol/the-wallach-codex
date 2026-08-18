@@ -665,7 +665,7 @@ function renderPdmSourcesBlock(): string {
 
 // ─── "Worth knowing" — the faceted search cards ─────────────────────────────
 
-function renderFacetGroups(page: EssentialPage): string {
+function renderFacetGroups(page: EssentialPage | ConditionPage): string {
   if (page.search.length === 0) {
     return '';
   }
@@ -2056,23 +2056,6 @@ function renderNutrientsToRestore(page: ConditionPage, c: CorpusCondition | null
     + `<div class="kd-ep-nutri">${primary}${lenses.join('')}</div>`;
 }
 
-/**
- * WALLACH'S PROTOCOL — features the REAL sourced protocol claims (protocol-kind, then
- * a non-base-line dose claim), each as its own claim card. §00.A / the handoff's hard
- * rule: NEVER composite several claims into one paraphrase — every sentence stays
- * attributable to the claim it came from. The first (most specific regimen) opens by
- * default; the rest are one tap away. Green (--fam-action) = the "what to do" family.
- */
-function renderConditionProtocol(page: ConditionPage): string {
-  const claims = resolveClaims(page.protocol_claim_ids);
-  if (claims.length === 0) {
-    return '';
-  }
-  const cards = claims.map((cl, i) => renderRecordClaim(cl, i === 0)).join('');
-  return seclabel('Wallach’s protocol')
-    + `<div class="kd-ep-protocol">${cards}</div>`;
-}
-
 /** One best-product row for a condition — "covers N / M nutrients · $wholesale", clickable to the product. */
 function condProductRow(rec: CoverageRec, total: number, isBest: boolean): string {
   const price = rec.price > 0 ? `$${rec.price.toFixed(2)}` : '—';
@@ -2190,7 +2173,7 @@ export function renderConditionPage(slug: string): string {
     </div>
     ${conditionUmbrellaTip(slug, page.claim_count)}
     ${lede}
-    ${renderConditionProtocol(page)}
+    ${renderFacetGroups(page)}
     ${renderNutrientsToRestore(page, c)}
     ${renderConditionProducts(page)}
     ${renderRecord(page.record, page.record_claim_count, ui('ep_record_label_cond'), ui('ep_record_hint_cond'))}
