@@ -238,3 +238,7 @@
 #drawer-knowledge-mount .kd-orac-supp__row-nums .sub .v { color: var(--ds-ink-medium); font-weight: 700; }
 #drawer-knowledge-mount .kd-orac-supp__go { font-family: var(--ds-font-display); font-size: 1.15rem; color: var(--ds-ink-soft); text-align: center; }
 #drawer-knowledge-mount .kd-orac-supp__cap { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 13px; }
+
+/* Berries is the densest lane (19 dots); its top-scorer knockout box overlapped
+   neighbouring dots, so hide just that label. Pecan (Nuts, sparse) stays. */
+#drawer-knowledge-mount .kd-orac-lane[data-fam="berries"] .kd-orac-top { display: none; }
