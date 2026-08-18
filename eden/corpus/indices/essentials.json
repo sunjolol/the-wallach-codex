@@ -5927,7 +5927,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 26,
+    "claim_count": 27,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -5938,6 +5938,7 @@
       "dose": [
         "WAL-CLM-DDDL-000582",
         "WAL-CLM-DDDL-000587",
+        "WAL-CLM-DDDL-000604",
         "WAL-CLM-LETS-000052"
       ],
       "protocol": [
@@ -6744,7 +6745,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 85,
+    "claim_count": 86,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -6755,6 +6756,7 @@
         "WAL-CLM-DDDL-000584",
         "WAL-CLM-DDDL-000596",
         "WAL-CLM-DDDL-000600",
+        "WAL-CLM-DDDL-000605",
         "WAL-CLM-EPIGEN-000120",
         "WAL-CLM-LETS-000075"
       ],

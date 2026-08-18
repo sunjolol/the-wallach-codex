@@ -19753,6 +19753,90 @@
    "extracted_at": "2026-08-18T21:45:21+00:00",
    "reviewed_at": null,
    "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000604",
+   "kind": "dose",
+   "essentials": [
+    "vitamin-b9"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "gout"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach recommends folic acid at 20-50 mg per day as part of his natural treatment for gout.",
+   "verbatim": "Use folic acid at 20-50\nmg/day, cherries, and unsweetened cherry juice, and herbs including gout\nweed (Aegopodium podagraria) and meadow saffron (Colchicium\nautumnale).",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 781551
+   },
+   "dose": {
+    "amount": "20-50",
+    "unit": "mg",
+    "period": "daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "gout"
+   },
+   "tags": [
+    "dose-conflict-resolved-2026-08-18",
+    "recovered-from-ruling-dashboard",
+    "favor-newest-DDDL-2011"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T22:38:20+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000605",
+   "kind": "dose",
+   "essentials": [
+    "vitamin-e"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "cataracts"
+   ],
+   "symptoms": [],
+   "claim_text": "For cataracts, Wallach's protocol calls for vitamin E at 2,000 IU per day on top of the baseline vitamin-mineral supplement.",
+   "verbatim": "Treatment of cataracts includes avoiding fried foods and margarine, the\nbase line vitamin/mineral supplement plus vitamin E at 2,000 IU/day,",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 680191
+   },
+   "dose": {
+    "amount": "2,000",
+    "unit": "IU",
+    "period": "daily",
+    "form": null,
+    "duration": null,
+    "for_condition": "cataracts"
+   },
+   "tags": [
+    "dose-conflict-resolved-2026-08-18",
+    "recovered-from-ruling-dashboard",
+    "favor-newest-DDDL-2011"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-08-18T22:38:20+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
   }
  ]
 }

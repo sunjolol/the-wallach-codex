@@ -3040,7 +3040,7 @@
   },
   "cataracts": {
     "display_name": "Cataracts",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000473",
@@ -3057,7 +3057,8 @@
       "doses": [
         "WAL-CLM-DDDL-000592",
         "WAL-CLM-DDDL-000593",
-        "WAL-CLM-DDDL-000594"
+        "WAL-CLM-DDDL-000594",
+        "WAL-CLM-DDDL-000605"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -6215,7 +6216,7 @@
   },
   "gout": {
     "display_name": "Gout",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "contraindications": [
         "WAL-CLM-RARE-000181"
@@ -6223,6 +6224,9 @@
       "definitions": [
         "WAL-CLM-DDDL-000376",
         "WAL-CLM-DDDL-000534"
+      ],
+      "doses": [
+        "WAL-CLM-DDDL-000604"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000373",

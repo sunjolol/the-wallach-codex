@@ -10515,7 +10515,7 @@
         "celiac_disease",
         "pernicious_anemia"
       ],
-      "claim_count": 22
+      "claim_count": 23
     },
     "vitamin-c": {
       "display_name": "Ascorbic Acid",
@@ -10664,7 +10664,7 @@
         "vitamin-c",
         "anemia"
       ],
-      "claim_count": 33
+      "claim_count": 34
     },
     "vitamin-k": {
       "display_name": "Phylloquinone",
@@ -25934,6 +25934,58 @@
         ],
         "conditions": [
           "kidney_stones"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000604",
+      "subject": "vitamin-b9",
+      "also_about": [
+        "gout"
+      ],
+      "facet": "protocol",
+      "question": "Does folic acid help gout?",
+      "answer_short": "Wallach uses high-dose folic acid - 20 to 50 mg a day - as part of his natural gout protocol.",
+      "answer": "Wallach recommends folic acid at 20-50 mg per day as part of his natural treatment for gout.",
+      "verbatim": "Use folic acid at 20-50\nmg/day, cherries, and unsweetened cherry juice, and herbs including gout\nweed (Aegopodium podagraria) and meadow saffron (Colchicium\nautumnale).",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "gout",
+        "vitamin-b9"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b9"
+        ],
+        "conditions": [
+          "gout"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000605",
+      "subject": "vitamin-e",
+      "also_about": [
+        "cataracts"
+      ],
+      "facet": "protocol",
+      "question": "How much vitamin E should I take for cataracts?",
+      "answer_short": "Wallach's cataract protocol includes vitamin E at 2,000 IU per day, on top of the baseline vitamin-mineral supplement.",
+      "answer": "For cataracts, Wallach's protocol calls for vitamin E at 2,000 IU per day on top of the baseline vitamin-mineral supplement.",
+      "verbatim": "Treatment of cataracts includes avoiding fried foods and margarine, the\nbase line vitamin/mineral supplement plus vitamin E at 2,000 IU/day,",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "cataracts",
+        "vitamin-e"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-e"
+        ],
+        "conditions": [
+          "cataracts"
         ]
       }
     },

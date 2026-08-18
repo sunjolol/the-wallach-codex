@@ -39024,6 +39024,32 @@
     "kidney_stones",
     "vitamin-b6"
    ]
+  },
+  "WAL-CLM-DDDL-000604": {
+   "subject": "vitamin-b9",
+   "also_about": [
+    "gout"
+   ],
+   "facet": "protocol",
+   "question": "Does folic acid help gout?",
+   "answer_short": "Wallach uses high-dose folic acid - 20 to 50 mg a day - as part of his natural gout protocol.",
+   "topics": [
+    "gout",
+    "vitamin-b9"
+   ]
+  },
+  "WAL-CLM-DDDL-000605": {
+   "subject": "vitamin-e",
+   "also_about": [
+    "cataracts"
+   ],
+   "facet": "protocol",
+   "question": "How much vitamin E should I take for cataracts?",
+   "answer_short": "Wallach's cataract protocol includes vitamin E at 2,000 IU per day, on top of the baseline vitamin-mineral supplement.",
+   "topics": [
+    "cataracts",
+    "vitamin-e"
+   ]
   }
  }
 }

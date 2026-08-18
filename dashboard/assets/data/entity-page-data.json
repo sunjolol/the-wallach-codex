@@ -12091,8 +12091,8 @@
       "symbol": "B9",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 26,
-      "distinct_claim_count": 41,
+      "claim_count": 27,
+      "distinct_claim_count": 42,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12208,6 +12208,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000582",
             "WAL-CLM-DDDL-000587",
+            "WAL-CLM-DDDL-000604",
             "WAL-CLM-LETS-000052"
           ]
         },
@@ -13072,8 +13073,8 @@
       "symbol": "E",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 85,
-      "distinct_claim_count": 107,
+      "claim_count": 86,
+      "distinct_claim_count": 108,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -13257,6 +13258,7 @@
             "WAL-CLM-DDDL-000584",
             "WAL-CLM-DDDL-000596",
             "WAL-CLM-DDDL-000600",
+            "WAL-CLM-DDDL-000605",
             "WAL-CLM-EPIGEN-000120",
             "WAL-CLM-LETS-000075"
           ]
@@ -21749,7 +21751,7 @@
     "cataracts": {
       "type": "condition",
       "name": "Cataracts",
-      "claim_count": 18,
+      "claim_count": 19,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -21773,7 +21775,8 @@
         "WAL-CLM-LETS-000207",
         "WAL-CLM-DDDL-000592",
         "WAL-CLM-DDDL-000593",
-        "WAL-CLM-DDDL-000594"
+        "WAL-CLM-DDDL-000594",
+        "WAL-CLM-DDDL-000605"
       ],
       "restore": [
         "arginine",
@@ -21798,7 +21801,8 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000592",
             "WAL-CLM-DDDL-000593",
-            "WAL-CLM-DDDL-000594"
+            "WAL-CLM-DDDL-000594",
+            "WAL-CLM-DDDL-000605"
           ]
         },
         {
@@ -21838,7 +21842,7 @@
           ]
         }
       ],
-      "record_claim_count": 14,
+      "record_claim_count": 15,
       "search": [
         {
           "facet": "stance",
@@ -21872,8 +21876,8 @@
         "cardiomyopathy",
         "chromium",
         "vitamin-b2",
-        "aneurysm",
-        "arthritis"
+        "vitamin-e",
+        "aneurysm"
       ]
     },
     "catarrh": {
@@ -28309,7 +28313,7 @@
     "gout": {
       "type": "condition",
       "name": "Gout",
-      "claim_count": 5,
+      "claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor",
@@ -28325,12 +28329,19 @@
       ],
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000373",
-        "WAL-CLM-LETS-000288"
+        "WAL-CLM-LETS-000288",
+        "WAL-CLM-DDDL-000604"
       ],
       "restore": [
         "vitamin-b9"
       ],
       "record": [
+        {
+          "kind": "dose",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000604"
+          ]
+        },
         {
           "kind": "contraindication",
           "claim_ids": [
@@ -28338,7 +28349,7 @@
           ]
         }
       ],
-      "record_claim_count": 1,
+      "record_claim_count": 2,
       "search": [
         {
           "facet": "stance",
@@ -28370,9 +28381,9 @@
       ],
       "related": [
         "arthritis",
+        "vitamin-b9",
         "copper",
-        "molybdenum",
-        "vitamin-b9"
+        "molybdenum"
       ]
     },
     "graves_disease": {
