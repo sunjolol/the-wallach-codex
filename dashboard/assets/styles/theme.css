@@ -759,3 +759,7 @@
    still reads on the pale first steps, where dark-mode ink would vanish. */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-chain__step,
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-chain__d { color: #1a1612; }
+
+/* (L cont.) Mirror cell-fill: the accent ramp read too bright + too flat here in dark.
+   Darker + wider gradient (a darkened-vivid top down to a deep bottom, mixed toward black). */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-cell__fill { background: linear-gradient(180deg, color-mix(in srgb, var(--ds-accent-hot) 78%, #000) 0%, color-mix(in srgb, var(--ds-accent-hot) 42%, #000) 100%); }

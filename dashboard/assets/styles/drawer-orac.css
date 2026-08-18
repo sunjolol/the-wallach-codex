@@ -24,7 +24,7 @@
 #drawer-knowledge-mount .kd-orac-mirror__src { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 12px; }
 #drawer-knowledge-mount .kd-orac-cellwrap { display: grid; grid-template-columns: 292px 1fr; gap: 40px; align-items: center; margin: var(--ds-space-5) 0 0; }
 #drawer-knowledge-mount .kd-orac-cell { position: relative; width: 292px; height: 292px; border-radius: 50%; overflow: hidden; background: var(--ds-paper-deep); border: 1px solid var(--ds-rule); box-shadow: inset 0 3px 16px rgba(26, 22, 18, 0.11); }
-#drawer-knowledge-mount .kd-orac-cell__fill { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: linear-gradient(180deg, var(--p3) 0%, var(--p4) 100%); transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+#drawer-knowledge-mount .kd-orac-cell__fill { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: linear-gradient(180deg, var(--p2) 0%, var(--ds-accent-hot) 100%); transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 #drawer-knowledge-mount .kd-orac-cell__fill::after { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 8px; background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent); }
 #drawer-knowledge-mount .kd-orac-cell__nuc { position: absolute; left: 50%; top: 45%; width: 82px; height: 82px; margin: -41px 0 0 -41px; border-radius: 50%; border: 1px dashed var(--ds-rule-bright); }
 #drawer-knowledge-mount .kd-orac-read__pct { font-family: var(--ds-font-display); font-size: 4.4rem; font-weight: 900; line-height: 1; color: var(--ds-accent-hot); letter-spacing: -0.04em; font-variant-numeric: tabular-nums; }
