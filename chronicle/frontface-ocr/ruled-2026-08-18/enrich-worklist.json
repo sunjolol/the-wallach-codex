@@ -1,0 +1,1045 @@
+{
+ "_doc": "Engine 2 enrichment worklist — the 69 vision-verified unverified-book claims to front-face. Recover Q/A where present; author subjects; ~needs_new_topic ones require Luneth's topic curation. Then merge search-enrichment -> derive -> build. Watch dose-seal footguns (non-resolving subjects, keep-both dups). See condition-dose-claim-sealing-gotchas.",
+ "total": 69,
+ "question_recovered": 61,
+ "resolvable_subject": 41,
+ "needs_new_topic": 28,
+ "claims": [
+  {
+   "id": "WAL-CLM-EPIGEN-000465",
+   "book": "epigenetics",
+   "kind": "deficiency_sign",
+   "essentials": [
+    "selenium"
+   ],
+   "conditions": [
+    "hypothyroidism",
+    "wilsons_syndrome"
+   ],
+   "verbatim": "In young adults, selenium deficiency appears as anemia, chronic fatigue,\nWilson's syndrome (hypothyroidism), liver cirrhosis, muscular weakness, myalgia,\nmuscle tenderness, fibromyalgia, lupus, pancreatitis, infertility, muscular",
+   "recovered_question": null,
+   "recovered_answer_short": null,
+   "proposed_subject": "selenium",
+   "needs_new_topic": false,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000466",
+   "book": "epigenetics",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [
+    "peptic_ulcers"
+   ],
+   "verbatim": "tetracycline has been used in pigs since 1952 to treat gastric ulcers. The same\nformula was approved by the FDA in February and in 1994 for curing gastric\nulcers in humans. Stress has historically been blamed as the boogy-man causing\nstomach and peptic ulcers of the stomach and duodenum; however, the same\nbacterium that causes gastric ulcers in pigs (Helicobacter pylori) has been proven\nto be the cause of gastric ulcers in humans.\n\nAustralian gastroenterologist Barry Marshall, M.D. and pathologist J. Robbin\nWarren proposed their theory for the bacterial cause of gastric ulcers in humans\nin 1983.",
+   "recovered_question": "How did we learn that bacteria, not stress, cause ulcers?",
+   "recovered_answer_short": "Wallach notes that vets were already curing gastric ulcers in pigs with tetracycline back in 1952 - decades before human medicine caught on. The same bug, Helicobacter pylori, was later proven to cause human ulcers too, and doctors Marshall and Warren proposed the bacterial theory in 1983, overturning the 'stress causes ulcers' dogma.",
+   "proposed_subject": "peptic_ulcers",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000467",
+   "book": "epigenetics",
+   "kind": "definition",
+   "essentials": [
+    "calcium"
+   ],
+   "conditions": [
+    "restless_leg_syndrome"
+   ],
+   "verbatim": "Calcium deposits (vascular, tendons, ligaments, restless leg, atrial-fibrillation, etc.) : Same as osteoporosis\n\nCramps & twitches (Tourette’s syndrome, foot, calf, hamstring, eyelids, etc.) : Same as osteoporosis\n\nPMS (emotional & physical symptoms) : Same as osteoporosis\n\nLow back (sciatica, spasm, disc, etc.) : Same as osteoporosis\n\nNeuropathy (Bell’s palsy, trigeminal neuralgia, sciatica, restless leg, etc.) : Same as osteoporosis",
+   "recovered_question": "Is restless leg syndrome a calcium deficiency?",
+   "recovered_answer_short": "Wallach classes restless leg as a calcium-deficiency disease — grouped with cramps and twitches — and treats it the same way he treats osteoporosis.",
+   "proposed_subject": "calcium",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000468",
+   "book": "epigenetics",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [
+    "memory_loss",
+    "alzheimers",
+    "dementia"
+   ],
+   "verbatim": "A cholesterol deficiency produces Alzheimer’s disease, makes menopause a\nliving hell and results in “low-T\" and “ED” in males. In February 28, 2012, the FDA\nadded new safety warnings regarding the increased risk of statin drugs used to\nlower blood cholesterol that results in increased rate of memory loss (Alzheimer’s\ndisease) and increased blood sugar (diabetes).",
+   "recovered_question": "Can statin drugs or low cholesterol cause memory loss?",
+   "recovered_answer_short": "Wallach says yes: the brain needs cholesterol, so a cholesterol deficiency produces Alzheimer's, and even the FDA warns that cholesterol-lowering statin drugs raise the rate of memory loss.",
+   "proposed_subject": "memory_loss",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000469",
+   "book": "epigenetics",
+   "kind": "deficiency_sign",
+   "essentials": [
+    "iodine",
+    "copper"
+   ],
+   "conditions": [
+    "varicose_veins"
+   ],
+   "verbatim": "Calcium deficiency caused\nosteomalacia in children and arthritis, and osteoporosis and kidney stones in\nadults. Iodine and copper deficiency produced anemia, varicose veins, aneurysms,\nmiscarriages, and goiter in adults.",
+   "recovered_question": null,
+   "recovered_answer_short": null,
+   "proposed_subject": "iodine",
+   "needs_new_topic": false,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000470",
+   "book": "epigenetics",
+   "kind": "prognosis",
+   "essentials": [],
+   "conditions": [
+    "cataracts"
+   ],
+   "verbatim": "pressure, type 2 diabetes, cataracts, macular degenerations, cancer, arthritis,\nlupus, IBS, Crohn's disease, etc.).\n\nAll of the birth defects are totally preventable with proper preconception\nnutrition and many of these, including cystic fibrosis and muscular dystrophy, can\nbe reversed later in life.\n\nCertainly all of the diseases acquired as an adult can be prevented and most\ncan be reversed.",
+   "recovered_question": "Can cataracts be reversed?",
+   "recovered_answer_short": "Wallach says cataracts are an adult deficiency disease that can be prevented and, in most cases, reversed.",
+   "proposed_subject": "cataracts",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000471",
+   "book": "epigenetics",
+   "kind": "mechanism",
+   "essentials": [
+    "calcium"
+   ],
+   "conditions": [],
+   "verbatim": "Approximately 99% of the total human body calcium is found in the\nbones and teeth. The remainder of the body's calcium reserve is employed for\nexocytosis, especially for neurotransmitter release and muscle contraction.",
+   "recovered_question": "Why does low calcium make muscles cramp?",
+   "recovered_answer_short": "The 1% of calcium outside your bones runs nerve signaling and muscle contraction, so a shortage lets muscles misfire into cramps and restless legs.",
+   "proposed_subject": "calcium",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000472",
+   "book": "epigenetics",
+   "kind": "deficiency_sign",
+   "essentials": [
+    "calcium"
+   ],
+   "conditions": [
+    "insomnia",
+    "sleep_apnea"
+   ],
+   "verbatim": "Insomnia (sleep apnea, snoring, etc.) : Same as osteoporosis\n\nCalcium deposits (vascular, tendons, ligaments, restless leg, atrial-fibrillation, etc.) : Same as osteoporosis",
+   "recovered_question": "Can a calcium deficiency cause insomnia or sleep apnea?",
+   "recovered_answer_short": "Wallach lists insomnia — including sleep apnea and snoring — as a calcium-deficiency disease, one he says responds to the same nutritional approach he uses for osteoporosis.",
+   "proposed_subject": "calcium",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000473",
+   "book": "epigenetics",
+   "kind": "mechanism",
+   "essentials": [
+    "selenium"
+   ],
+   "conditions": [
+    "cataracts"
+   ],
+   "verbatim": "Gluten intolerance, over time, produces a gradual loss of villi from the small\nintestine, resulting in a significant reduction in absorptive capacity. Fifty percent\nabsorption of nutrients from food that might have from zero to ten percent\nof one's nutritional requirement for selenium to begin with, will significantly\n\nincrease the risk for cardiomyopathy heart disease, liver cirrhosis, cancer,\ncataracts, macular degeneration, MS, dementia, infertility, muscular dystrophy,\ncystic fibrosis, fibromyalgia, lupus, thyroid disease, and other illness.\n\nPutting an afflicted individual on a gluten-free diet and supplementing the\nperson correctly with the basic platform of the 90 essential nutrients and\ntherapeutic levels of the deficient nutrient will solve many health problems,",
+   "recovered_question": "Can gluten or celiac disease cause cataracts?",
+   "recovered_answer_short": "Wallach says gluten intolerance destroys intestinal villi and starves the body of selenium and other nutrients, driving cataracts; a gluten-free diet plus the 90 essentials reverses many cases.",
+   "proposed_subject": "selenium",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000474",
+   "book": "epigenetics",
+   "kind": "quote",
+   "essentials": [],
+   "conditions": [
+    "sciatica"
+   ],
+   "verbatim": "In July of 2002, the New England Journal of Medicine published an article,\nthe title of which was “Knee Replacement Surgery for Arthritis is Worthless.” In\nNovember of 20006, the Journal of the American Medical Association published an\narticle, the title of which was \"Back Surgery for Sciatica is Unnecessary.”",
+   "recovered_question": "Do you need back surgery for sciatica?",
+   "recovered_answer_short": "Wallach says no — he cites a Journal of the American Medical Association article titled \"Back Surgery for Sciatica is Unnecessary,\" arguing the surgery is avoidable.",
+   "proposed_subject": "sciatica",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000475",
+   "book": "epigenetics",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [
+    "migraine",
+    "headache"
+   ],
+   "verbatim": "The sclerota contain ergot alkaloids, including lysergic acid (the source of LSD)\nand ergotamine, often used as a treatment for migraine headaches. The alkaloids\nhave a direct effect on the central nervous system and produce contraction of\nsmooth muscle in the vascular system and the internal organs.",
+   "recovered_question": "Where does migraine medication come from?",
+   "recovered_answer_short": "The common migraine drug ergotamine is actually an ergot-fungus alkaloid (a cousin of LSD) that works by squeezing the blood vessels -- context Wallach gives when explaining why he prefers a nutritional approach.",
+   "proposed_subject": "migraine",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000476",
+   "book": "epigenetics",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [
+    "menopause"
+   ],
+   "verbatim": "Chocolate appears to be the number one sweet craving in premenopausal\nwomen (39%) as opposed to only 14% in the male population at the same age\n\nas the women. Women as a group tend to be more depleted of minerals than\n\nmen because of their additional mineral losses as a result of their cyclic menstrual\nperiods, pregnancies and lactation.",
+   "recovered_question": "Why do women crave chocolate and run low on minerals before menopause?",
+   "recovered_answer_short": "Wallach points out chocolate is the top sweet craving in premenopausal women, and that women are more mineral-depleted than men thanks to the ongoing losses from periods, pregnancies, and breastfeeding.",
+   "proposed_subject": "menopause",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000477",
+   "book": "epigenetics",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [
+    "asthma"
+   ],
+   "verbatim": "Ninety-nine percent or more of all of the “genetic diseases” that plague\nthe Amish, Mennonite, and Hutterite communities are in fact simple, congenital\nnutritional deficiencies of the embryo (for example: congenital deafness, cleft\npalate, cleft lip, spina bifida, Down’s syndrome, cerebral palsy, limb defects, heart\ndefects, hernias, cystic fibrosis, muscular dystrophy, celiac disease, asthma, skin\nproblems, etc.)",
+   "recovered_question": "Can asthma start before birth from the mother's nutrition?",
+   "recovered_answer_short": "Wallach argues many 'genetic' conditions, including asthma, are really congenital nutritional deficiencies of the embryo - so a mother's nutrition before and during pregnancy can shape whether a child gets asthma.",
+   "proposed_subject": "asthma",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000478",
+   "book": "epigenetics",
+   "kind": "quote",
+   "essentials": [],
+   "conditions": [
+    "obesity"
+   ],
+   "verbatim": "The belief that exercise could prevent and control weight gain and obesity was\ndashed in January 2009, when Chicago's Loyola University School of Medicine\ndeclared that “exercise won't cure obesity.” The practitioners of bariatric medicine\n(weight loss specialists) who fought the study were forced to relent after a critical\nreview of the data showed that the original conclusion was correct.",
+   "recovered_question": "Will exercise alone make me lose weight?",
+   "recovered_answer_short": "Wallach cites Loyola University's 2009 finding that 'exercise won't cure obesity,' arguing exercise alone won't make you lose weight because the root cause is mineral deficiency.",
+   "proposed_subject": "obesity",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000479",
+   "book": "epigenetics",
+   "kind": "protocol",
+   "essentials": [],
+   "conditions": [
+    "menopause"
+   ],
+   "verbatim": "Others\nwere old family recipes that worked, such as that produced by Lydia Pinkums\ncalled “Lydia Pinkums’ Vegetable and Herbal Extract for Women's Complaints,”\nwhich was marketed in newspapers for PMS, dysmenorrhea, amenorrhea,\n\n\nmenopausal symptoms, and infertility.\n\nPinkums was a Quaker missionary and had used an ancient Native American\nherbal recipe as the basis of her patent medicine that was sold through\nnewspaper and magazine adds. This herbal product worked so well the Harvard\nGlee Club sang songs of her abilities to solve the problems of American women\nand she became an American icon.",
+   "recovered_question": null,
+   "recovered_answer_short": null,
+   "proposed_subject": "menopause",
+   "needs_new_topic": false,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000480",
+   "book": "epigenetics",
+   "kind": "protocol",
+   "essentials": [],
+   "conditions": [
+    "peptic_ulcers"
+   ],
+   "verbatim": "Specific remedies from the Ebers Papyrus include:\n\nAloe vera – burns, gastric ulcers, skin disorders and allergies",
+   "recovered_question": "Does aloe vera help heal stomach ulcers?",
+   "recovered_answer_short": "It has a long history for it. Wallach relays that the ancient Egyptian Ebers Papyrus listed aloe vera as a remedy for gastric ulcers (as well as burns, skin disorders, and allergies) - one of the oldest recorded soothing treatments for the stomach lining.",
+   "proposed_subject": "peptic_ulcers",
+   "needs_new_topic": false,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-HELLS-000097",
+   "book": "hells-kitchen",
+   "kind": "deficiency_sign",
+   "essentials": [
+    "chromium",
+    "vanadium"
+   ],
+   "conditions": [
+    "depression",
+    "anxiety",
+    "hypoglycemia",
+    "insulin_resistance"
+   ],
+   "verbatim": "Nutritional deficiencies associated \nwith the Metabolic Syndrome \nNutrient Deficiency Clinical disease \nOmega -3 essential fatty acids elevated total cholesterol, elevated \nLDL, obesity, peripheral neuropathies, thrombotic disease, atherosclerosis \nCalcium hypertension, osteoporosis, \nperipheral neuropathies, insomnia, \npica, obesity \nChromium, vanadium diabetes, insulin resistance, \nhyperinsulinemia, hypoglycemia, \npica, anxiety, depression, obesity",
+   "recovered_question": "Is my depression connected to blood sugar or insulin resistance?",
+   "recovered_answer_short": "Wallach links depression and anxiety to the same chromium and vanadium deficiency behind insulin resistance and low blood sugar — part of what he calls metabolic syndrome.",
+   "proposed_subject": "chromium",
+   "needs_new_topic": false,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-HELLS-000098",
+   "book": "hells-kitchen",
+   "kind": "definition",
+   "essentials": [],
+   "conditions": [
+    "kidney_stones"
+   ],
+   "verbatim": "Dornier Systems, a West German aerospace company \nhas produced the “Lithotripter,” a machine that destroys kidney stones \nby means of focused high frequency sound shock waves. The \n“Lithotripter (from the Greek words meaning “stone” and “crusher”), \ncauses the kidney stones to be broken up into sand-sized particles, \nthat are easily passed through the urinary system.",
+   "recovered_question": "How are kidney stones broken up without surgery?",
+   "recovered_answer_short": "Wallach describes the lithotripter — a machine that destroys kidney stones with focused high-frequency sound shock waves, breaking them into sand-sized particles that pass in the urine.",
+   "proposed_subject": "kidney_stones",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-HELLS-000099",
+   "book": "hells-kitchen",
+   "kind": "personal_anecdote",
+   "essentials": [],
+   "conditions": [
+    "adhd"
+   ],
+   "verbatim": "He was the kind of person who learned by \nactual hands on experience rather than rote learning - perhaps he \nwas a victim of ADD.",
+   "recovered_question": "Can someone with ADD still be successful?",
+   "recovered_answer_short": "Wallach points to Thomas Edison — written off as 'addled' at school and a hands-on rather than rote learner — as someone who may well have had ADD, and still changed the world.",
+   "proposed_subject": "adhd",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000478",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [
+    "vanadium"
+   ],
+   "conditions": [
+    "adhd",
+    "hypoglycemia",
+    "diabetes"
+   ],
+   "verbatim": "Vanadium enhances the stimulating effect of insulin\non DNA synthesis. Despite low serum insulin, the blood\nglucose levels of diabetic rats fed vanadium was the same as\nthe glucose levels of normal controls. Vanadium appears to\nfunction like insulin by altering cell membrane function for\nion transport. Therefore vanadium has a very beneficial effect\nfor humans with glucose and carbohydrate intolerance (i.e.\nhypoglycemia, hyperinsulinemia, narcolepsy, prediabetes,\ndiabetes, depression, manic depression, bi-polar disease,\n“chemical imbalance,” ADD, ADHD, violent behavior, autism,\netc.) by making the cell membrane insulin receptors more\nsensitive to insulin.",
+   "recovered_question": "How does vanadium help with ADD and ADHD?",
+   "recovered_answer_short": "Wallach says vanadium behaves like insulin, making cells more responsive to it and steadying the blood-sugar swings he blames for the 'chemical imbalance' behind ADD/ADHD and violent behavior.",
+   "proposed_subject": "vanadium",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000479",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [
+    "selenium"
+   ],
+   "conditions": [
+    "cataracts"
+   ],
+   "verbatim": "Selenium also functions to protect cellular and organelle\nbi-lipid layer membranes from oxidative damage. High intakes\nof vegetable oils, including salad dressing and cooking oils,\nconcurrent with a selenium deficiency is the quickest route\nto a cardiomyopathy heart attack, arteriosclerosis (build up\nof plaque in the arteries resulting from free radical damage\nto the “intima” or lining of the artery), cataracts, macular\ndegeneration, dementias, multiple sclerosis, cancer, etc.\n\nThe polyunsaturated configuration of oils when heated\nor treated with hydrogen (“trans fatty acids”) literally causes\nthe rancidity (“free radical” damage) of cellular fat.",
+   "recovered_question": null,
+   "recovered_answer_short": null,
+   "proposed_subject": "selenium",
+   "needs_new_topic": false,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000480",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "if all humans were to employ the four basic principals of\nIMMORTALITY almost all could live beyond 100 years of age just as an entire colony of rats\non a perfect longevity diet with Calorie Restriction can live to be five years of age\ninstead of three years.",
+   "recovered_question": "How much does calorie restriction extend a rat's lifespan?",
+   "recovered_answer_short": "Rats on a perfect calorie-restricted longevity diet live to five years instead of the usual three.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000481",
+   "book": "immortality",
+   "kind": "prognosis",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "The October 30, 2006 edition of the Wall Street Journal\nreported that studies on the red wine compound resveratrol\nextend animal lifespans by as much as 40%. Resveratrol was\nalso considered for its potential life extending properties in\nan article related to Calorie Restricted diets in the October\n31, 2006 edition of The New York Times - the scientific journal\nNature published the original article that was quoted by both\nnewspapers.",
+   "recovered_question": "Does resveratrol extend lifespan?",
+   "recovered_answer_short": "Wallach cites studies (published in Nature) showing resveratrol extends animal lifespans by as much as 40%.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000482",
+   "book": "immortality",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "When people crave chocolate, they are really mineral\ndeficient (pica, munchies, etc.). In fact, bitter, dark unsweetened\nchocolate has a very low glycemic index because up to 70% of\nthe chocolate’s calories come from fat, and fat does not raise\nblood sugar.",
+   "recovered_question": "Why do I crave chocolate?",
+   "recovered_answer_short": "Wallach says chocolate cravings mean you're mineral deficient; dark unsweetened chocolate is low-glycemic because up to 70% of its calories are fat.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000483",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [
+    "calcium"
+   ],
+   "conditions": [
+    "restless_leg_syndrome"
+   ],
+   "verbatim": "Restless leg syndrome\n\nOther nutrients that are commonly found in the\nAmerican diet can aggravate the national calcium deficiency\ncrisis. Diets rich with an overabundance of fiber, salt and\nphosphates (soft drinks) result in an increased calcium “cost.”\nIn effect, these foods increase the dietary requirements for\ncalcium. Urinary calcium loss increased from 96 mg per day\nto 148 mg per day when food was excessively salted.",
+   "recovered_question": "Can soda and too much salt make restless legs worse?",
+   "recovered_answer_short": "Yes — Wallach says fiber, salt, and soft-drink phosphates raise calcium loss (salt alone pushed it from 96 to 148 mg/day), worsening the deficiency behind restless legs.",
+   "proposed_subject": "calcium",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000484",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Resveratrol appears to function in animals and humans\nby activating a family of enzymes called sirtuins (Sir-2) -\nthese proteins are involved in the same anti-aging effects as a\nCalorie Restricted diet.",
+   "recovered_question": "How does resveratrol work in the body?",
+   "recovered_answer_short": "It activates sirtuins (Sir-2) enzymes, the same anti-aging pathway triggered by calorie restriction.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000485",
+   "book": "immortality",
+   "kind": "protocol",
+   "essentials": [],
+   "conditions": [
+    "cataracts"
+   ],
+   "verbatim": "Daily consumption of antioxidant rich food and drink is a universal feature of those\nliving in Blue Zones and in particular centenarians. These potent carbon compounds\nquench or neutralize free radicals that attack our cells, cell walls, mitochondria and\nphysiological processes and increase our risk of cardiovascular disease, cancer,\nAlzheimer’s disease and other dementias, cataracts, diabetes and aggressively speed up\nthe process and damage of aging itself.\n\nA universally agreed upon method of predicting the antioxidant power and free radical\nneutralizing value of foods, drink and supplements is the Oxygen Radical Absorbance\nCapacity or ORAC value - based on current studies, we believe that the optimal total\ndaily intake of ORAC points to reach the age of 100 years is 20,000 to 25,000 per day.",
+   "recovered_question": "Can antioxidants prevent cataracts?",
+   "recovered_answer_short": "Wallach says antioxidant-rich food and drink quench the free radicals that raise cataract risk; he targets 20,000-25,000 ORAC points a day.",
+   "proposed_subject": "cataracts",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000486",
+   "book": "immortality",
+   "kind": "food_source",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "salt was not squandered by simply eating it, it was mixed,\n“cut” and diluted with wood, peat or kelp ashes. And so with\nthe simple act of “extending” salt with “culinary” ashes,\nhumans, from the beginning of time, unknowingly acquired\nthe 60 essential minerals daily as a food supplement.",
+   "recovered_question": "How did ancient humans get all 60 essential minerals?",
+   "recovered_answer_short": "By extending scarce salt with wood, peat, or kelp 'culinary ashes,' which delivered the 60 essential minerals daily.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000487",
+   "book": "immortality",
+   "kind": "interaction",
+   "essentials": [
+    "vitamin-b6"
+   ],
+   "conditions": [
+    "peripheral_neuropathy"
+   ],
+   "verbatim": "Deficiency of B6 produces depression, nausea, vomiting,\nseborrheic dermatitis, mucus membrane lesions, peripheral\nneuritis, ataxia, hyperacusis, hyperirritability, altered mobility\nand alertness, abnormal head movements and convulsions.\n\nTreatment of tuberculosis patients with Isoniazid\nproduces an antagonistic reaction against pyridoxine function\nwhich then results in the classical symptoms of deficiency.",
+   "recovered_question": null,
+   "recovered_answer_short": null,
+   "proposed_subject": "vitamin-b6",
+   "needs_new_topic": false,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000488",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "The serendipitous irrigation of their terraced fields with\nthe common denominator of a highly mineralized “Glacial\nMilk” and the fertilization of their fields with an organic\ncompost rich with the recycled colloidal plant minerals found\nin wood ashes from their heating and cooking fires is the\nsecret of the Hunzas’s long and fruitful lives.",
+   "recovered_question": "What is the secret of the Hunza people's longevity?",
+   "recovered_answer_short": "Wallach says it is mineral-rich Glacial Milk irrigation plus wood-ash compost that keeps recycling colloidal plant minerals into their crops.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000489",
+   "book": "immortality",
+   "kind": "definition",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Glacial Milk is a mixed liquid, a solution of ionically\ndissolved elements and a suspension of finely ground rock\ndust (rock flour) shaved and ground from the living parent\nrock of the mountain by glacial friction. The suspended\nminerals in the Glacial Milk are referred to as “metallic\ncolloidal minerals.” The average particle size of these colloid\nparticles is 7,000 times smaller than a red blood cell - so small,\nthat they can only be visualized by an electron microscope.",
+   "recovered_question": "What is Glacial Milk?",
+   "recovered_answer_short": "A glacier-ground mix of dissolved elements and rock-flour colloids so tiny (about 7,000x smaller than a red blood cell) they need an electron microscope to see.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000490",
+   "book": "immortality",
+   "kind": "food_source",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Resveratrol can be found in the skins, seeds; notable\ngrape varieties that contain high levels of resveratrol are\nmuscadine grapes, Pinot noir grapes and Concord grapes.\n\nResveratrol is also found in the Japanese Knotweed\n(Polygonum cuspidatum), blueberries and peanuts.",
+   "recovered_question": "What foods contain resveratrol?",
+   "recovered_answer_short": "Grape skins and seeds (muscadine, Pinot noir, Concord grapes), Japanese knotweed, blueberries and peanuts.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000491",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "It is generally agreed throughout the scientific world\nthat resveratrol, the anti-aging substance found in red wines\nare the basis for the “Grape Cure” and the “French Paradox.”",
+   "recovered_question": "Why is red wine considered anti-aging?",
+   "recovered_answer_short": "Wallach credits resveratrol, the anti-aging compound in red wine, as the substance behind both the Grape Cure and the French Paradox.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000492",
+   "book": "immortality",
+   "kind": "food_source",
+   "essentials": [
+    "calcium",
+    "iron",
+    "magnesium"
+   ],
+   "conditions": [],
+   "verbatim": "Juniper ash proves to be a good source of dietary calcium,\niron and a moderate source of magnesium. One teaspoon of\njuniper ash provides the equivalent calcium levels found in one\ncup of milk; it supplies 28% of the RDA for iron and nine percent\nof the RDA for magnesium.",
+   "recovered_question": "How much calcium and iron are in juniper ash?",
+   "recovered_answer_short": "One teaspoon of juniper ash gives about as much calcium as a cup of milk, plus 28% of the RDA for iron and 9% for magnesium.",
+   "proposed_subject": "calcium",
+   "needs_new_topic": false,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000493",
+   "book": "immortality",
+   "kind": "food_source",
+   "essentials": [
+    "potassium",
+    "calcium",
+    "iron",
+    "copper",
+    "zinc"
+   ],
+   "conditions": [],
+   "verbatim": "The three sources of “culinary” wood ashes were all\ngood sources of essential minerals. Iron concentration was\nhigher in the greasewood. Wood ash in general, although\nvariable in analysis, tends to be rich in potassium, calcium,\niron, copper, zinc, trace minerals and rare earths.",
+   "recovered_question": "What minerals are in wood ash?",
+   "recovered_answer_short": "Wood ash is rich in potassium, calcium, iron, copper, zinc, trace minerals and even rare earths - Wallach's reason traditional 'culinary ashes' worked as a mineral supplement.",
+   "proposed_subject": "potassium",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000494",
+   "book": "immortality",
+   "kind": "prevalence",
+   "essentials": [],
+   "conditions": [
+    "alzheimers"
+   ],
+   "verbatim": "Several epidemiological studies indicate that the\nmoderate consumption of wine is associated with a lower\nincidence of Alzheimer’s disease.",
+   "recovered_question": "Does drinking wine lower Alzheimer's risk?",
+   "recovered_answer_short": "Wallach cites epidemiological studies associating moderate wine consumption with a lower incidence of Alzheimer's disease.",
+   "proposed_subject": "alzheimers",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000495",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [
+    "vitamin-c",
+    "vitamin-e",
+    "flavonoids"
+   ],
+   "conditions": [
+    "cancer"
+   ],
+   "verbatim": "Green tea contains xanthines, caffeine, theobromine,\ntannins, polyphenols, catechins, flavonoids, oils and fats and\nvitamin C. The catechins in green tea are the antioxidants\ncredited with significant anti-cancer activity (can reduce risk\nof cancer by as much as 90%). Catechins are 100 times more\npotent than vitamin C and 25 times more potent than vitamin\nE in neutralizing free",
+   "recovered_question": null,
+   "recovered_answer_short": null,
+   "proposed_subject": "vitamin-c",
+   "needs_new_topic": false,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000496",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [
+    "diabetes",
+    "cardiovascular_disease",
+    "rheumatoid_arthritis"
+   ],
+   "verbatim": "In 2006 a significant study was released that showed\nthe high antioxidant content of coffee (i.e. polyphenols,\ncatechins, epicatechins, etc.) could reduce the risk of diabetes,\nheart disease and rheumatoid arthritis, and more specifically\nthe caffeine in coffee was linked to relieving post workout\npain and facilitating healthy fat metabolism.",
+   "recovered_question": "Is drinking coffee good for your health?",
+   "recovered_answer_short": "Wallach cites a 2006 study that coffee's antioxidants lower risk of diabetes, heart disease and rheumatoid arthritis, and its caffeine eases post-workout pain and aids fat metabolism.",
+   "proposed_subject": "diabetes",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000497",
+   "book": "immortality",
+   "kind": "prevalence",
+   "essentials": [],
+   "conditions": [
+    "cancer",
+    "stomach_cancer"
+   ],
+   "verbatim": "An examination of the life expectancy and mortality\nrates showed that one region in the northwest of the country,\nincluding the 80 mile long Nicoya Peninsula that was\nsignificantly different from any other (in that area, people die\nof cancer - particularly stomach cancer - at a rate 23% lower\nthan in the rest of Costa Rica).",
+   "recovered_question": "Do people in the Nicoya region of Costa Rica get less cancer?",
+   "recovered_answer_short": "Yes - Wallach reports Nicoyans die of cancer, and stomach cancer especially, at a rate 23% lower than the rest of Costa Rica.",
+   "proposed_subject": "cancer",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000498",
+   "book": "immortality",
+   "kind": "quote",
+   "essentials": [],
+   "conditions": [
+    "constipation"
+   ],
+   "verbatim": "“For use in bread making, the superfine flour is not\nthe best. Its use is neither healthful nor economical. Fine-flour\nbread is lacking nutritive elements to be found in bread made\nfrom the whole wheat. It is a frequent cause of constipation\nand other unhealthful conditions.”",
+   "recovered_question": "Does white bread cause constipation?",
+   "recovered_answer_short": "Wallach cites the teaching that refined white-flour bread is a frequent cause of constipation, while whole-wheat bread is not.",
+   "proposed_subject": "constipation",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000499",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "The water originating from under the millions of tons\nof ice grinding on the parent rock of Mount Rakaposhi was so\nrich with minerals that it was bluish white, so white that the\noriginal people called it “Glacial Milk.” For generation after\ngeneration, crop after crop and year after year for more than\n2,300 years the Hunza people have drunk and irrigated their\nterraced fields with “Glacial Milk,” unwittingly assuring their\npeople of an optimal intake of the more than 60 minerals in\nthe “Glacial Milk” of the Ultar Glacier truely the “land of milk\nand honey”!",
+   "recovered_question": "What is Hunza 'Glacial Milk' and why did it keep them healthy?",
+   "recovered_answer_short": "It is mineral-laden glacial meltwater, so rich it ran bluish-white; drinking and irrigating with it for 2,300 years gave the Hunza an optimal intake of 60+ minerals.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000500",
+   "book": "immortality",
+   "kind": "prognosis",
+   "essentials": [],
+   "conditions": [
+    "coronary_artery_disease",
+    "cancer",
+    "inflammation"
+   ],
+   "verbatim": "Modernresearchreveals that themoderateconsumption\nof red wine is preferable to complete abstenence. Red wine\nis known to reduce vascular inflammation and the risk of\ncoronary heart disease and cancer, a plethora of degenerative\ndiseases and to significantly increase longevity in yeast,\nworms, flies, fish, small mammalian vertebrates (including\nprimates) and fish.",
+   "recovered_question": "Is moderate red wine better than not drinking at all?",
+   "recovered_answer_short": "Wallach says yes: moderate red wine beats complete abstinence, cutting vascular inflammation, heart disease and cancer risk and extending lifespan across many species.",
+   "proposed_subject": "coronary_artery_disease",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000501",
+   "book": "immortality",
+   "kind": "definition",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "The aging process starts the moment you are conceived and continues unabated,\nprogressing forward at varying speeds, and degrees at an hourly, daily, weekly and\nannual rate until the ultimate end of the process - death.",
+   "recovered_question": "When does the aging process start?",
+   "recovered_answer_short": "Wallach says aging starts at conception and never pauses, progressing at varying speeds until death.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000502",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [
+    "flavonoids"
+   ],
+   "conditions": [
+    "cardiovascular_disease"
+   ],
+   "verbatim": "A team of researchers from the Harvard School of\nPublic Health reviewed 136 studies on the relationship of\nchocolate and cocoa to cardiovascular health. The study\nincluded research ranging from lab tests to human studies.\nThe research team concluded that chocolate is a major source\nof flavanoids (epicatechins, catechins and procyanidins) and\ndetermined that “the primary fat in chocolate (stearic acid)\ndid not have adverse effects on blood vessels, cholesterol\nor overall cardiovascular health” because it is metabolized\ndifferently than other types of saturated fats.",
+   "recovered_question": "Is dark chocolate good for your heart?",
+   "recovered_answer_short": "A Harvard review of 136 studies found chocolate's main fat, stearic acid, doesn't harm blood vessels, cholesterol or heart health because it's metabolized differently than other saturated fats.",
+   "proposed_subject": "flavonoids",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000503",
+   "book": "immortality",
+   "kind": "prevalence",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "In 2006, the U.S. Surgeon General said\nthat, “of the 2.2 million deaths in America each year, that 1.8\nmillion are diet related” - this statement agrees with the 1968\nobservation of Dr. Wallach that, “Every animal and every\nhuman being that dies of natural causes dies of a nutritional\ndeficiency disease.”",
+   "recovered_question": "How many American deaths each year are diet related?",
+   "recovered_answer_short": "The Surgeon General says 1.8 million of the 2.2 million annual U.S. deaths are diet related — matching Wallach's thesis.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000504",
+   "book": "immortality",
+   "kind": "prevalence",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "The French consume more fat per person than any other\nculture in the world, yet they rank third oneveryone’s charts on\nhealth and longevity out of 193 nations. American physicians\ncall this amazing phenomina the “French Paradox.”",
+   "recovered_question": "What is the French Paradox?",
+   "recovered_answer_short": "The French eat more fat than any culture yet rank third in health and longevity of 193 nations; Wallach attributes it to resveratrol in red wine.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000505",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Adding to their already Calorie Restricted diet was\nthe fact that by late spring of each year the Hunzakut’s\nfood reserves ran low, producing what they call “Starvation\nSpringtime.” Meals are reduced to a frequency of two to three\nmeals a week.",
+   "recovered_question": "Did the Hunza practice calorie restriction?",
+   "recovered_answer_short": "Yes - their diet was already calorie-restricted, and each late spring ('Starvation Springtime') food ran so low they ate only two or three meals a week.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000506",
+   "book": "immortality",
+   "kind": "food_source",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Chemists have realized, for centuries that, in the great\noceans there are dissolved all of the naturally occurring\nelements and minerals. It is estimated that each cubic mile\nof ocean contains 200,000,000 tons of elemental and mineral\ncompounds.\n\nKelp and algae growing in the sea takes up these\ninorganic salts and converts them into useable organic forms.\nWhen used as fertilizer (either as dried kelp or kelp ash) or\nadded directly to the diet as a vegetable, kelp is a significant\nsource of dietary plant minerals.",
+   "recovered_question": "Why is kelp such a good source of minerals?",
+   "recovered_answer_short": "Kelp and algae absorb the ocean's dissolved minerals (Wallach estimates 200 million tons per cubic mile) and convert them into an organic form the body can use.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000507",
+   "book": "immortality",
+   "kind": "prevalence",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Doctors practicing in Hunza today have concluded that\nthe main cause of premature death amongst the Hunzakut\npeople is from accidents, from landslides or falls from the shear\nrock walls. Infant mortality from infectious diseases have been\nreported; however, the average individual surviving past one\nyear of age lives beyond the age of eighty, in excellent health\nand significant numbers live into their nineties and past 100\nyears.",
+   "recovered_question": "How long do the Hunza people live?",
+   "recovered_answer_short": "Past the first year, Hunzakuts typically live beyond 80 in excellent health, many into their 90s and past 100; premature deaths are mostly accidents, not disease.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000508",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [
+    "coronary_artery_disease",
+    "cancer",
+    "diabetes"
+   ],
+   "verbatim": "The Yao people of Bama irrigate their terraces with the\nmineral laden waters of the Panyang River, and they fertilize\ntheir gardens with compost consisting of kitchen waste, wood\nash, plant debris and animal manure.\n\nThe Yao people have an extremely low incidence of\nchronic disease such as coronary artery disease, cancer and\ndiabetes.",
+   "recovered_question": "Why do the Yao people of Bama have so little heart disease, cancer, and diabetes?",
+   "recovered_answer_short": "Wallach credits their mineral-rich diet — Panyang River water and wood-ash compost — for their very low chronic-disease rates.",
+   "proposed_subject": "coronary_artery_disease",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000509",
+   "book": "immortality",
+   "kind": "prognosis",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Dan Buettner, author of the Blue Zones, believes that there are only four places on earth\nwhere people successfully live to be over 100 years of age. His is quite the simple view as\nthere are in fact literally an infinite number of places on earth where people commonly\nlive beyond 100 years of age",
+   "recovered_question": "Are there really only four Blue Zones where people live past 100?",
+   "recovered_answer_short": "No — Wallach says there are infinitely many places people live past 100, not just Buettner's four Blue Zones.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000510",
+   "book": "immortality",
+   "kind": "protocol",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "The Costa Ricans take daily “sun-bathes” for 15 to 30\nminutes each day by exposing their faces, arms and legs.",
+   "recovered_question": "How much daily sun do the long-lived Costa Ricans get?",
+   "recovered_answer_short": "They take a daily 'sun-bathe' of 15 to 30 minutes, exposing face, arms and legs.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000511",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "but rather a political treaty between\nMacedonia and Egypt - the Macedonians wanted and got\nexclusive rights to the highly mineralized wheat from the Nile\nflood plains, wheat that was legendary in providing strength\nand stamina to the armies that ate it - Macedonia needed this\nEgyptian wheat to support its armies for the coming invasion\nof Asia!",
+   "recovered_question": "Why was Nile Valley wheat prized by ancient armies?",
+   "recovered_answer_short": "Wallach says the Nile flood plains grew highly mineralized wheat legendary for giving armies strength and stamina, so Macedonia secured exclusive rights to it.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000512",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Group 1 - These rats were fed a typical Hunza diet\nof whole-grain chapattis, butter, legumes, raw carrots, raw\ncabbage, whole milk, eggs, meat, water and they were exposed\nto sunlight daily.\n\nWhen the rats reached the age of 27 months (the\nequivalent of 55 years in humans), they were killed and\nexamined: the rats were free of overt disease, there had not\nbeen any early mortality; the rats were alert yet lived together\nwithout aggression.",
+   "recovered_question": "What did McCarrison's Hunza-diet rat experiment show?",
+   "recovered_answer_short": "Rats fed the Hunza diet reached 27 months (about 55 human years) free of disease, with no early deaths and no aggression.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000513",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Anandaminde is another neurotransmitter found\nin chocolate. This phytochemical targets the same brain\nstructures that are targeted by the active ingredient in\nmarijuana - THC.",
+   "recovered_question": null,
+   "recovered_answer_short": null,
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000514",
+   "book": "immortality",
+   "kind": "food_source",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "The Hunza salt supply is mined from hills near the\nShimshal and Muztagh Rivers and used in their tea and for\ncooking in its raw brown state (the color originates from the\ntrace minerals included in the salt deposit when the seas dried",
+   "recovered_question": "What kind of salt do the Hunza eat?",
+   "recovered_answer_short": "Raw, unrefined brown rock salt mined near the Shimshal and Muztagh Rivers; its brown color comes from the trace minerals in the ancient dried-sea deposit.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000515",
+   "book": "immortality",
+   "kind": "prevalence",
+   "essentials": [],
+   "conditions": [
+    "diabetes",
+    "obesity"
+   ],
+   "verbatim": "The Pima band on both sides of the border are from\nthe identical genetic pool; yet the Pima Indians on the Mexican\nside of the border have no almost no type II diabetes and have\nonly a ten percent obesity rate compared with the rate of 22%\ndiabetes and the 70% obesity in the Arizona Pima!",
+   "recovered_question": "Why do Arizona Pima Indians have so much diabetes and obesity?",
+   "recovered_answer_short": "Their genetically identical Mexican cousins still eat a traditional wood-ash-mineralized diet and have almost no diabetes, so Wallach blames the American diet and lost minerals, not genes.",
+   "proposed_subject": "diabetes",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000516",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "An important phytochemical found in chocolate is\nphenylethylamine (PEA), this neurotransmitter stimulates the\nbody’s pleasure centers. Large quantities of PEA are associated\nwith feelings of excitement, attraction and sexual pleasure. It\nis the affects of the PEA in chocolate that has caused chocolate\nto be given as a traditional seductive gift for Valentine’s Day,",
+   "recovered_question": "Why does chocolate make you feel good?",
+   "recovered_answer_short": "Chocolate's phenylethylamine (PEA) stimulates the brain's pleasure centers and is tied to excitement, attraction and sexual pleasure.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000517",
+   "book": "immortality",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Grapes and wine grown in humid environments\nproduce more resveratrol than wines grown in more arid\nenvironments. The theory for this phenomena is that grapes\ngrown in humid environments produce more resveratrol in\norder to repell damaging fungi.",
+   "recovered_question": "Why do some wines have more resveratrol than others?",
+   "recovered_answer_short": "Grapes in humid climates make more resveratrol to fend off fungi, so wines from humid regions contain more of it than wines from arid ones.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000518",
+   "book": "immortality",
+   "kind": "food_source",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "And then the lady centenarians shared something we\nhadn’t thought of, “We also added rice straw ashes to our\nnoodle dough and rice as we cooked them because it added\na wonderful yellow color and enhanced the flavor.” Culinary\nashes (plant minerals) were part of the Okinawa secret!",
+   "recovered_question": "What are culinary ashes and why did Okinawans eat them?",
+   "recovered_answer_short": "Rice-straw and wood ashes stirred into noodle dough and rice for color and flavor - a direct dietary source of plant minerals Wallach ties to Okinawan longevity.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000519",
+   "book": "immortality",
+   "kind": "prognosis",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Being religious definitely increases one’s longevity. In\na meta-analysis of 42 studies which examined 125,826 people\n(American Psychological Association in the year 2,000), it was\ndemonstrated that regular attendance at a place of worship\n(church, synagogue, mosque or temple) added eight years to\nthe average lifespan and improved general health.",
+   "recovered_question": "Does going to a place of worship help you live longer?",
+   "recovered_answer_short": "Wallach cites a 42-study meta-analysis: regular worship attendance added eight years to average lifespan.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000520",
+   "book": "immortality",
+   "kind": "protocol",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "We believe that it is worth learning how to use and\napply non-invasive anti-aging vitamin-mineral supplements,\nnon-surgical facelifts, non-chemical peels, phyto-hormones\n(i.e. phyto-estrogens, phyto-progesterones, HGH, thyroid\nsupport, adrenal support, etc.) and beauty products and non-toxic cosmetics safely.",
+   "recovered_question": "What are non-invasive anti-aging treatments?",
+   "recovered_answer_short": "Wallach favors non-invasive anti-aging - vitamin-mineral supplements, non-surgical facelifts, phyto-hormones and non-toxic cosmetics - over surgery, chemical peels and BoTox.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000521",
+   "book": "immortality",
+   "kind": "quote",
+   "essentials": [],
+   "conditions": [],
+   "verbatim": "Li-Ching-Yun reportedly lived to the age of 256 years,\nhe outlived 23 wives and had 180 descendents! Li of Kaihsien,\nin the Province of Szechwan, China, was born in 1677; he sold\nherbs for 100 years; and died in 1933 at the age of 256 years",
+   "recovered_question": "Did anyone really live to be 256 years old?",
+   "recovered_answer_short": "Wallach cites Li-Ching-Yun, a Chinese herbalist reportedly born 1677 and died 1933 at age 256.",
+   "proposed_subject": null,
+   "needs_new_topic": true,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-IMMORT-000522",
+   "book": "immortality",
+   "kind": "deficiency_sign",
+   "essentials": [],
+   "conditions": [
+    "nystagmus"
+   ],
+   "verbatim": "memory (looks like early Alzheimer’s disease), disorientation,\nnystagmus (rhythmic side to side movements of the eyes) and\nataxia (a type of staggering gait).",
+   "recovered_question": null,
+   "recovered_answer_short": null,
+   "proposed_subject": "nystagmus",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-LETS-000522",
+   "book": "lets-play-doctor",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [
+    "osteoporosis",
+    "menopause"
+   ],
+   "verbatim": "Osteoporosis is a common\nresult of improperly managed menopause.",
+   "recovered_question": "Can menopause cause osteoporosis?",
+   "recovered_answer_short": "Yes — Wallach says osteoporosis is a common result of a menopause that isn't managed well, which is why he leans hard on minerals and diet through the transition.",
+   "proposed_subject": "osteoporosis",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-LETS-000523",
+   "book": "lets-play-doctor",
+   "kind": "definition",
+   "essentials": [],
+   "conditions": [
+    "allergies",
+    "food_allergy"
+   ],
+   "verbatim": "Bruxism can be the result of food allergies (use\nthe pulse test to find out - milk and wheat tend\nto be the offenders)",
+   "recovered_question": "What are the most common food allergies?",
+   "recovered_answer_short": "Cow's milk and wheat are the usual culprits behind hidden food allergies -- a pulse test is the cheap way to catch them.",
+   "proposed_subject": "allergies",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-LETS-000524",
+   "book": "lets-play-doctor",
+   "kind": "protocol",
+   "essentials": [
+    "oxygen"
+   ],
+   "conditions": [
+    "asthma"
+   ],
+   "verbatim": "Oxygen in the form of a 30 minute\nsupply (home tank) can save your, or another\nfamily member's or neighbor's life in case of an\nelectric shock (stop breathing), drowning,\nasthma or heart attack.",
+   "recovered_question": "Should I keep emergency oxygen on hand for asthma attacks?",
+   "recovered_answer_short": "Wallach recommends keeping a small home oxygen tank (about a 30-minute supply); he says it can save a life in emergencies like a severe asthma attack, drowning, or heart attack.",
+   "proposed_subject": "oxygen",
+   "needs_new_topic": false,
+   "was_corrected": false
+  },
+  {
+   "id": "WAL-CLM-RARE-000404",
+   "book": "rare-earths",
+   "kind": "protocol",
+   "essentials": [],
+   "conditions": [
+    "peptic_ulcers"
+   ],
+   "verbatim": "ULCER CAUSE: The National Institutes of Health\nhas confirmed that peptic ulcers can be caused by a\nbacterium and drug therapy can prevent a recurrence in\n90% of cases. An NIH panel stated Wednesday that\nHelicobacter pylori plays a significant role in causing peptic\nulcer, which can be cured with a combination of bismuth,\ntetracycline and metronidazole.",
+   "recovered_question": "Will my ulcer come back after treatment?",
+   "recovered_answer_short": "Usually not, if the bacteria are cleared. Wallach cites the NIH: because peptic ulcers come from a bacterium, drug therapy - a combination of bismuth, tetracycline, and metronidazole - cures the ulcer and prevents recurrence in 90% of cases. That's the difference from old acid-blocking drugs, which let ulcers return.",
+   "proposed_subject": "peptic_ulcers",
+   "needs_new_topic": false,
+   "was_corrected": true
+  },
+  {
+   "id": "WAL-CLM-RARE-000405",
+   "book": "rare-earths",
+   "kind": "mechanism",
+   "essentials": [],
+   "conditions": [
+    "allergies",
+    "food_allergy"
+   ],
+   "verbatim": "mineral deficiencies aggravated by high\nsugar diets (it is also known that certain\nfood allergies, especially dairy can initiate\nexplosive sociopathic behavior).",
+   "recovered_question": "Can food allergies affect a child's behavior?",
+   "recovered_answer_short": "Wallach links certain food allergies, dairy above all, to explosive and aggressive behavior in kids -- worth a pulse test before assuming it's purely behavioral.",
+   "proposed_subject": "allergies",
+   "needs_new_topic": false,
+   "was_corrected": false
+  }
+ ]
+}
