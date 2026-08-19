@@ -1,6 +1,6 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-**Board 94/94 green.** Corpus **kv=476**.
+**Board 94/94 green.** Corpus **kv=480** (Hell's Kitchen landed 2026-08-19). Active campaign: land the 99 ruled unverified-book claims per-book — see NEXT TASK.
 
 ## ✅ DONE 2026-08-19 — Scanner 9-item refinement + post-review tweaks [SIGNED OFF + PUSHED]
 Luneth reviewed the REJECT / NEUTRAL / ADD result cards and approved (commit `396f7232` + a follow-up commit).
