@@ -190,7 +190,7 @@
 #drawer-knowledge-mount .kd-orac-claim[open] { border-color: var(--ds-rule); background: var(--ds-paper); }
 #drawer-knowledge-mount .kd-orac-claim[open] .kd-orac-claim__chev { transform: rotate(90deg); color: var(--ds-accent); }
 #drawer-knowledge-mount .kd-orac-claim__body { padding: 0 17px 15px; }
-#drawer-knowledge-mount .kd-orac-claim__full { font-family: var(--ds-font-serif); font-size: 0.88rem; line-height: 1.55; color: var(--ds-ink-medium); margin: 0 0 10px; }
+#drawer-knowledge-mount .kd-orac-claim__full { font-family: var(--ds-font-serif); font-size: 0.88rem; line-height: 1.55; color: var(--ds-ink-medium); margin: 0 0 10px; white-space: pre-line; }
 #drawer-knowledge-mount .kd-orac-claim__verbatim { margin: 4px 0 0; padding: 8px 14px; border-left: 2px solid var(--ds-accent); background: var(--ds-paper-darker); font-family: var(--ds-font-serif); font-style: italic; font-size: 0.86rem; line-height: 1.6; color: var(--ds-ink-medium); }
 #drawer-knowledge-mount .kd-orac-claim__cite { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: 0.06em; text-transform: uppercase; color: var(--ds-ink-soft); margin-top: 8px; }
 

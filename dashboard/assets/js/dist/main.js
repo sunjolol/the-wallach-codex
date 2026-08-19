@@ -29197,7 +29197,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000524",
               "WAL-CLM-RARE-000202",
               "WAL-CLM-RARE-000282"
             ]
@@ -29217,7 +29216,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 7,
+        record_claim_count: 6,
         search: [
           {
             facet: "basics",
@@ -29240,6 +29239,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "uses",
             claim_ids: [
               "WAL-CLM-IMMORT-000397"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000524"
             ]
           },
           {
@@ -30392,15 +30397,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-RARE-000169",
               "WAL-CLM-RARE-000187"
             ]
-          },
-          {
-            kind: "food_source",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000493"
-            ]
           }
         ],
-        record_claim_count: 11,
+        record_claim_count: 10,
         search: [
           {
             facet: "basics",
@@ -30439,7 +30438,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "sources",
             claim_ids: [
-              "WAL-CLM-IMMORT-000187"
+              "WAL-CLM-IMMORT-000187",
+              "WAL-CLM-IMMORT-000493"
             ]
           },
           {
@@ -30689,10 +30689,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000144",
               "WAL-CLM-EPIGEN-000146",
               "WAL-CLM-EPIGEN-000147",
-              "WAL-CLM-EPIGEN-000471",
               "WAL-CLM-IMMORT-000068",
               "WAL-CLM-IMMORT-000217",
-              "WAL-CLM-IMMORT-000483",
               "WAL-CLM-LETS-000483",
               "WAL-CLM-RARE-000099",
               "WAL-CLM-RARE-000153",
@@ -30709,7 +30707,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "definition",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000467",
               "WAL-CLM-IMMORT-000215",
               "WAL-CLM-LETS-000482"
             ]
@@ -30725,7 +30722,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "food_source",
             claim_ids: [
-              "WAL-CLM-IMMORT-000492",
               "WAL-CLM-IMMORT-000493"
             ]
           },
@@ -30749,7 +30745,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 122,
+        record_claim_count: 118,
         search: [
           {
             facet: "basics",
@@ -30772,6 +30768,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000061",
               "WAL-CLM-EPIGEN-000109",
               "WAL-CLM-EPIGEN-000232",
+              "WAL-CLM-EPIGEN-000467",
+              "WAL-CLM-EPIGEN-000471",
               "WAL-CLM-IMMORT-000063",
               "WAL-CLM-IMMORT-000064",
               "WAL-CLM-IMMORT-000065",
@@ -30795,6 +30793,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-IMMORT-000069",
               "WAL-CLM-IMMORT-000070",
               "WAL-CLM-IMMORT-000291",
+              "WAL-CLM-IMMORT-000483",
               "WAL-CLM-RARE-000106",
               "WAL-CLM-RARE-000340"
             ]
@@ -30804,7 +30803,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000178",
               "WAL-CLM-IMMORT-000022",
-              "WAL-CLM-IMMORT-000292"
+              "WAL-CLM-IMMORT-000292",
+              "WAL-CLM-IMMORT-000492"
             ]
           },
           {
@@ -31368,7 +31368,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-HELLS-000097",
               "WAL-CLM-IMMORT-000089",
               "WAL-CLM-IMMORT-000344",
               "WAL-CLM-IMMORT-000467",
@@ -31451,7 +31450,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 60,
+        record_claim_count: 59,
         search: [
           {
             facet: "basics",
@@ -31475,6 +31474,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000275",
               "WAL-CLM-HELLS-000044",
               "WAL-CLM-HELLS-000045",
+              "WAL-CLM-HELLS-000097",
               "WAL-CLM-IMMORT-000088",
               "WAL-CLM-IMMORT-000092",
               "WAL-CLM-RARE-000039",
@@ -32389,7 +32389,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-DDDL-000025",
-              "WAL-CLM-EPIGEN-000469",
               "WAL-CLM-IMMORT-000180"
             ]
           },
@@ -32422,7 +32421,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 11,
+        record_claim_count: 10,
         search: [
           {
             facet: "basics",
@@ -32444,6 +32443,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000093",
+              "WAL-CLM-EPIGEN-000469",
               "WAL-CLM-IMMORT-000001",
               "WAL-CLM-IMMORT-000182",
               "WAL-CLM-LETS-000013",
@@ -32874,7 +32874,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000381",
               "WAL-CLM-EPIGEN-000004",
-              "WAL-CLM-EPIGEN-000465",
               "WAL-CLM-IMMORT-000211",
               "WAL-CLM-IMMORT-000212",
               "WAL-CLM-LETS-000471",
@@ -32977,8 +32976,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000126",
               "WAL-CLM-DDDL-000458",
               "WAL-CLM-EPIGEN-000150",
-              "WAL-CLM-EPIGEN-000473",
-              "WAL-CLM-IMMORT-000479",
               "WAL-CLM-RARE-000010",
               "WAL-CLM-RARE-000094",
               "WAL-CLM-RARE-000403"
@@ -33020,7 +33017,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 110,
+        record_claim_count: 107,
         search: [
           {
             facet: "basics",
@@ -33042,6 +33039,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000006",
               "WAL-CLM-DDDL-000071",
               "WAL-CLM-DDDL-000137",
+              "WAL-CLM-EPIGEN-000465",
               "WAL-CLM-LETS-000030",
               "WAL-CLM-RARE-000227",
               "WAL-CLM-RARE-000269"
@@ -33051,6 +33049,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000029",
+              "WAL-CLM-EPIGEN-000473",
+              "WAL-CLM-IMMORT-000479",
               "WAL-CLM-RARE-000225",
               "WAL-CLM-RARE-000226",
               "WAL-CLM-RARE-000228",
@@ -33576,7 +33576,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000446",
               "WAL-CLM-DDDL-000447",
               "WAL-CLM-DDDL-000547",
-              "WAL-CLM-IMMORT-000478",
               "WAL-CLM-RARE-000043",
               "WAL-CLM-RARE-000128"
             ]
@@ -33594,7 +33593,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 38,
+        record_claim_count: 37,
         search: [
           {
             facet: "basics",
@@ -33620,6 +33619,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000036",
               "WAL-CLM-HELLS-000055",
+              "WAL-CLM-IMMORT-000478",
               "WAL-CLM-RARE-000253",
               "WAL-CLM-RARE-000255"
             ]
@@ -40825,15 +40825,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-IMMORT-000009"
             ]
-          },
-          {
-            kind: "interaction",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000487"
-            ]
           }
         ],
-        record_claim_count: 53,
+        record_claim_count: 52,
         search: [
           {
             facet: "basics",
@@ -40845,6 +40839,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "warning",
             claim_ids: [
               "WAL-CLM-EPIGEN-000258",
+              "WAL-CLM-IMMORT-000487",
               "WAL-CLM-LETS-000028"
             ]
           },
@@ -41540,19 +41535,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000495"
-            ]
-          },
-          {
             kind: "interaction",
             claim_ids: [
               "WAL-CLM-DDDL-000021"
             ]
           }
         ],
-        record_claim_count: 81,
+        record_claim_count: 80,
         search: [
           {
             facet: "basics",
@@ -41582,7 +41571,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000206",
-              "WAL-CLM-EPIGEN-000208"
+              "WAL-CLM-EPIGEN-000208",
+              "WAL-CLM-IMMORT-000495"
             ]
           },
           {
@@ -42940,12 +42930,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-IMMORT-000495",
-              "WAL-CLM-IMMORT-000502"
+              "WAL-CLM-IMMORT-000495"
             ]
           }
         ],
-        record_claim_count: 20,
+        record_claim_count: 19,
         search: [
           {
             facet: "basics",
@@ -42968,7 +42957,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-IMMORT-000340"
+              "WAL-CLM-IMMORT-000340",
+              "WAL-CLM-IMMORT-000502"
             ]
           },
           {
@@ -45288,15 +45278,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000106",
               "WAL-CLM-IMMORT-000478"
             ]
-          },
-          {
-            kind: "personal_anecdote",
-            claim_ids: [
-              "WAL-CLM-HELLS-000099"
-            ]
           }
         ],
-        record_claim_count: 7,
+        record_claim_count: 6,
         search: [
           {
             facet: "stance",
@@ -45323,6 +45307,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000395"
+            ]
+          },
+          {
+            facet: "biography",
+            claim_ids: [
+              "WAL-CLM-HELLS-000099"
             ]
           }
         ],
@@ -45721,19 +45711,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-LETS-000109",
-              "WAL-CLM-LETS-000111",
-              "WAL-CLM-RARE-000405"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-LETS-000523"
+              "WAL-CLM-LETS-000111"
             ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 3,
         search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-RARE-000405"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
@@ -45751,7 +45740,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "basics",
             claim_ids: [
-              "WAL-CLM-DDDL-000491"
+              "WAL-CLM-DDDL-000491",
+              "WAL-CLM-LETS-000523"
             ]
           }
         ],
@@ -46002,16 +45992,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000468"
             ]
-          },
+          }
+        ],
+        record_claim_count: 7,
+        search: [
           {
-            kind: "prevalence",
+            facet: "stance",
             claim_ids: [
               "WAL-CLM-IMMORT-000494"
             ]
-          }
-        ],
-        record_claim_count: 8,
-        search: [
+          },
           {
             facet: "protocol",
             claim_ids: [
@@ -47369,7 +47359,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000477",
               "WAL-CLM-LETS-000109",
               "WAL-CLM-LETS-000111"
             ]
@@ -47381,8 +47370,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 12,
+        record_claim_count: 11,
         search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000477"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
@@ -50000,12 +49995,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000497"
-            ]
-          },
-          {
             kind: "quote",
             claim_ids: [
               "WAL-CLM-DDDL-000314",
@@ -50013,12 +50002,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 49,
+        record_claim_count: 48,
         search: [
           {
             facet: "stance",
             claim_ids: [
               "WAL-CLM-DDDL-000057",
+              "WAL-CLM-IMMORT-000497",
               "WAL-CLM-LETS-000001",
               "WAL-CLM-LETS-000179",
               "WAL-CLM-RARE-000077",
@@ -50703,8 +50693,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000433",
-              "WAL-CLM-IMMORT-000485"
+              "WAL-CLM-DDDL-000433"
             ]
           },
           {
@@ -50716,23 +50705,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000470"
-            ]
-          },
-          {
             kind: "interaction",
             claim_ids: [
               "WAL-CLM-RARE-000086"
             ]
           }
         ],
-        record_claim_count: 15,
+        record_claim_count: 13,
         search: [
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000470",
               "WAL-CLM-RARE-000310"
             ]
           },
@@ -50741,6 +50725,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000354",
               "WAL-CLM-DDDL-000434",
+              "WAL-CLM-IMMORT-000485",
               "WAL-CLM-LETS-000207"
             ]
           }
@@ -52534,16 +52519,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000521"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "quote",
+            facet: "stance",
             claim_ids: [
               "WAL-CLM-IMMORT-000498"
             ]
-          }
-        ],
-        record_claim_count: 2,
-        search: [
+          },
           {
             facet: "mechanism",
             claim_ids: [
@@ -52756,7 +52741,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "epigenetics",
           "immortality"
         ],
-        synonyms: [],
+        synonyms: [
+          "coronary heart disease",
+          "coronary artery disease",
+          "cad",
+          "chd",
+          "heart disease",
+          "clogged arteries",
+          "hardening of the arteries"
+        ],
         protocol_claim_ids: [],
         restore: [
           "chromium",
@@ -52770,22 +52763,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000062",
               "WAL-CLM-IMMORT-000088"
             ]
-          },
+          }
+        ],
+        record_claim_count: 3,
+        search: [
           {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000508"
-            ]
-          },
-          {
-            kind: "prognosis",
+            facet: "stance",
             claim_ids: [
               "WAL-CLM-IMMORT-000500"
             ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000508"
+            ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
         related_conditions: [
           "diabetes",
           "hypoglycemia",
@@ -54177,7 +54171,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000010",
               "WAL-CLM-IMMORT-000019",
               "WAL-CLM-IMMORT-000478",
-              "WAL-CLM-IMMORT-000496",
               "WAL-CLM-IMMORT-000508",
               "WAL-CLM-LETS-000100",
               "WAL-CLM-LETS-000116"
@@ -54204,25 +54197,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000515"
-            ]
-          },
-          {
             kind: "quote",
             claim_ids: [
               "WAL-CLM-DDDL-000047"
             ]
           }
         ],
-        record_claim_count: 24,
+        record_claim_count: 22,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000515"
+            ]
+          },
           {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000034",
-              "WAL-CLM-IMMORT-000089"
+              "WAL-CLM-IMMORT-000089",
+              "WAL-CLM-IMMORT-000496"
             ]
           },
           {
@@ -60472,7 +60466,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000038",
               "WAL-CLM-EPIGEN-000042",
-              "WAL-CLM-EPIGEN-000472",
               "WAL-CLM-IMMORT-000063",
               "WAL-CLM-LETS-000003",
               "WAL-CLM-LETS-000004",
@@ -60497,7 +60490,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 15,
+        record_claim_count: 14,
         search: [
           {
             facet: "mechanism",
@@ -60509,6 +60502,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000075"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000472"
             ]
           }
         ],
@@ -61503,7 +61502,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "definition",
             claim_ids: [
-              "WAL-CLM-HELLS-000098",
               "WAL-CLM-RARE-000105"
             ]
           },
@@ -61520,7 +61518,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 11,
+        record_claim_count: 10,
         search: [
           {
             facet: "mechanism",
@@ -61540,6 +61538,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "warning",
             claim_ids: [
               "WAL-CLM-DDDL-000366"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-HELLS-000098"
             ]
           },
           {
@@ -63259,21 +63263,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-IMMORT-000166"
             ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000468"
-            ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 2,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000295",
-              "WAL-CLM-EPIGEN-000013"
+              "WAL-CLM-EPIGEN-000013",
+              "WAL-CLM-EPIGEN-000468"
             ]
           },
           {
@@ -63552,7 +63551,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000479",
               "WAL-CLM-RARE-000317"
             ]
           },
@@ -63561,7 +63559,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000068",
               "WAL-CLM-DDDL-000441",
-              "WAL-CLM-EPIGEN-000476",
               "WAL-CLM-LETS-000522"
             ]
           },
@@ -63578,12 +63575,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 8,
+        record_claim_count: 6,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000090"
+              "WAL-CLM-DDDL-000090",
+              "WAL-CLM-EPIGEN-000476"
             ]
           },
           {
@@ -63611,6 +63609,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000580"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000479"
             ]
           }
         ],
@@ -63815,17 +63819,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000475",
               "WAL-CLM-LETS-000111"
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 3,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000530"
+              "WAL-CLM-DDDL-000530",
+              "WAL-CLM-EPIGEN-000475"
             ]
           },
           {
@@ -65076,19 +65080,24 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         books: [
           "immortality"
         ],
-        synonyms: [],
+        synonyms: [
+          "dancing eyes",
+          "eye wobble",
+          "involuntary eye movements",
+          "jerky eye movements"
+        ],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-IMMORT-000522"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [],
         related: []
       },
@@ -65161,13 +65170,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "quote",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000478",
               "WAL-CLM-HELLS-000083"
             ]
           }
         ],
-        record_claim_count: 12,
+        record_claim_count: 11,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000478"
+            ]
+          },
           {
             facet: "mechanism",
             claim_ids: [
@@ -65834,8 +65848,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000133",
-              "WAL-CLM-LETS-000483",
-              "WAL-CLM-LETS-000522"
+              "WAL-CLM-LETS-000483"
             ]
           },
           {
@@ -65887,7 +65900,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 32,
+        record_claim_count: 31,
         search: [
           {
             facet: "stance",
@@ -65900,6 +65913,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000555",
               "WAL-CLM-IAIYH-000001",
+              "WAL-CLM-LETS-000522",
               "WAL-CLM-RARE-000275"
             ]
           },
@@ -66727,21 +66741,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000480",
-              "WAL-CLM-RARE-000404"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000466",
               "WAL-CLM-LETS-000100"
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 3,
         search: [
           {
             facet: "mechanism",
@@ -66757,7 +66763,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000452",
               "WAL-CLM-LETS-000397",
               "WAL-CLM-LETS-000458",
-              "WAL-CLM-RARE-000102"
+              "WAL-CLM-RARE-000102",
+              "WAL-CLM-RARE-000404"
             ]
           },
           {
@@ -66770,6 +66777,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000454"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000480"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000466"
             ]
           }
         ],
@@ -69474,16 +69493,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-RARE-000105"
             ]
-          },
+          }
+        ],
+        record_claim_count: 5,
+        search: [
           {
-            kind: "quote",
+            facet: "stance",
             claim_ids: [
               "WAL-CLM-EPIGEN-000474"
             ]
-          }
-        ],
-        record_claim_count: 6,
-        search: [
+          },
           {
             facet: "mechanism",
             claim_ids: [
@@ -82179,7 +82198,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "autism",
           "learning_disabilities"
         ],
-        claim_count: 7
+        claim_count: 8
       },
       adrenal_exhaustion: {
         display_name: "Adrenal Exhaustion",
@@ -82250,7 +82269,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "sneezing and itching"
         ],
         related: [],
-        claim_count: 5
+        claim_count: 7
       },
       alopecia: {
         display_name: "Alopecia",
@@ -82317,7 +82336,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-e",
           "germanium"
         ],
-        claim_count: 4
+        claim_count: 5
       },
       amblyopia: {
         display_name: "Amblyopia",
@@ -82718,7 +82737,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "breathing problems"
         ],
         related: [],
-        claim_count: 4
+        claim_count: 5
       },
       athletes_foot: {
         display_name: "Athletes Foot",
@@ -83478,7 +83497,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "essential_nutrients",
           "colloidal_minerals"
         ],
-        claim_count: 54,
+        claim_count: 58,
         symbol: "Ca"
       },
       cancer: {
@@ -83496,7 +83515,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         related: [
           "chemotherapy"
         ],
-        claim_count: 25
+        claim_count: 26
       },
       candidiasis: {
         display_name: "Candidiasis",
@@ -83653,7 +83672,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "catarcts"
         ],
         related: [],
-        claim_count: 4
+        claim_count: 6
       },
       catarrh: {
         display_name: "Catarrh",
@@ -84060,7 +84079,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "colloidal_minerals",
           "essential_nutrients"
         ],
-        claim_count: 38,
+        claim_count: 39,
         symbol: "Cr"
       },
       chronic_fatigue: {
@@ -84420,7 +84439,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "cant have a bowel movement"
         ],
         related: [],
-        claim_count: 6
+        claim_count: 7
       },
       convulsions: {
         display_name: "Convulsions",
@@ -84511,6 +84530,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "pulmonary heart disease"
         ],
         related: [],
+        claim_count: 2
+      },
+      coronary_artery_disease: {
+        display_name: "Coronary Artery Disease",
+        type: "condition",
+        synonyms: [
+          "coronary heart disease",
+          "coronary artery disease",
+          "cad",
+          "chd",
+          "heart disease",
+          "clogged arteries",
+          "hardening of the arteries"
+        ],
+        related: [
+          "selenium",
+          "omega-3",
+          "cardiovascular_disease"
+        ],
         claim_count: 2
       },
       cough: {
@@ -84814,7 +84852,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "hypoglycemia",
           "colloidal_minerals"
         ],
-        claim_count: 8
+        claim_count: 10
       },
       dialysis: {
         display_name: "Dialysis",
@@ -85686,7 +85724,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "cholesterol",
           "diabetes"
         ],
-        claim_count: 13
+        claim_count: 14
       },
       fluoride: {
         display_name: "Fluoride",
@@ -87112,7 +87150,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "insomia"
         ],
         related: [],
-        claim_count: 2
+        claim_count: 3
       },
       intelligence: {
         display_name: "Intelligence & IQ",
@@ -87247,7 +87285,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "essential_nutrients",
           "colloidal_minerals"
         ],
-        claim_count: 30,
+        claim_count: 31,
         symbol: "I"
       },
       iron: {
@@ -87535,7 +87573,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "kidney gravel"
         ],
         related: [],
-        claim_count: 6
+        claim_count: 7
       },
       korsakoff: {
         display_name: "Korsakoff's Syndrome",
@@ -88365,7 +88403,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-b1",
           "choline"
         ],
-        claim_count: 7
+        claim_count: 8
       },
       menieres_disease: {
         display_name: "Menieres Disease",
@@ -88437,7 +88475,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         related: [
           "pms"
         ],
-        claim_count: 8
+        claim_count: 10
       },
       mercury: {
         display_name: "Mercury",
@@ -88547,7 +88585,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         related: [
           "headache"
         ],
-        claim_count: 3
+        claim_count: 4
       },
       minerals: {
         display_name: "Minerals",
@@ -89143,6 +89181,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         claim_count: 1
       },
+      nystagmus: {
+        display_name: "Nystagmus",
+        type: "condition",
+        synonyms: [
+          "dancing eyes",
+          "eye wobble",
+          "involuntary eye movements",
+          "jerky eye movements"
+        ],
+        related: [
+          "vitamin-b1"
+        ],
+        claim_count: 1
+      },
       obesity: {
         display_name: "Obesity",
         type: "condition",
@@ -89157,7 +89209,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         related: [
           "high_cholesterol"
         ],
-        claim_count: 3
+        claim_count: 4
       },
       obscure_elements: {
         display_name: "Obscure Elements",
@@ -89478,7 +89530,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "arthritis",
           "pagets_disease"
         ],
-        claim_count: 10
+        claim_count: 11
       },
       otitis: {
         display_name: "Otitis",
@@ -89523,7 +89575,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "germanium",
           "hydrogen-peroxide"
         ],
-        claim_count: 10,
+        claim_count: 11,
         symbol: "O"
       },
       pagets_disease: {
@@ -89642,7 +89694,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "duodenal ulcer"
         ],
         related: [],
-        claim_count: 9
+        claim_count: 12
       },
       periodontal_disease: {
         display_name: "Periodontal Disease",
@@ -89997,7 +90049,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "essential_nutrients",
           "colloidal_minerals"
         ],
-        claim_count: 27,
+        claim_count: 28,
         symbol: "K"
       },
       praseodymium: {
@@ -90662,7 +90714,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "sciatic pain"
         ],
         related: [],
-        claim_count: 2
+        claim_count: 3
       },
       scoliosis: {
         display_name: "Scoliosis",
@@ -90755,7 +90807,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "antioxidants",
           "cardiomyopathy"
         ],
-        claim_count: 33,
+        claim_count: 36,
         symbol: "Se"
       },
       serotonin: {
@@ -92069,7 +92121,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "cancer",
           "hyperinsulinemia"
         ],
-        claim_count: 21,
+        claim_count: 22,
         symbol: "V"
       },
       varicose_veins: {
@@ -92484,7 +92536,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "alcoholism",
           "hypoglycemia"
         ],
-        claim_count: 19
+        claim_count: 20
       },
       "vitamin-b9": {
         display_name: "Folate",
@@ -92576,7 +92628,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "anemia",
           "antioxidants"
         ],
-        claim_count: 29
+        claim_count: 30
       },
       "vitamin-d": {
         display_name: "Cholecalciferol",
@@ -118486,6 +118538,430 @@ diarrhea, dermatitis, dementia, and death.`,
         }
       },
       {
+        id: "WAL-CLM-EPIGEN-000465",
+        subject: "selenium",
+        also_about: [
+          "hypothyroidism",
+          "wilsons_syndrome"
+        ],
+        facet: "physiology",
+        question: "Can a selenium deficiency cause an underactive thyroid?",
+        answer_short: "Yes. Wallach lists Wilson's syndrome \u2014 a form of hypothyroidism \u2014 among the diseases a selenium shortage produces in young adults.",
+        answer: "Yes. In young adults, Wallach names Wilson's syndrome \u2014 a form of low thyroid (hypothyroidism) \u2014 as one of the conditions a selenium shortage produces, right alongside anemia, chronic fatigue, liver cirrhosis, muscle weakness, fibromyalgia and infertility. So in his framework a selenium deficiency can absolutely show up as an underactive thyroid.\n\nBut selenium is only one thread. Wallach doesn't treat the thyroid as a one-mineral organ \u2014 he says the gland needs all 90 essential nutrients to work and make its hormone, thyroxin. Iodine is the one it concentrates most (the body combines it with the amino acid tyrosine to build thyroxin), and a copper deficiency too, he says, drives both under- and over-active thyroid. An underactive thyroid, whatever the trigger, tends to show as fatigue, cold intolerance, weight gain, hair loss, dry skin, constipation, depression and poor memory. You can screen for it at home with a basal body temperature test: take your armpit temperature before getting up, and a reading below 97.6\xB0F points to low thyroid.\n\nFor actually correcting it, Wallach's stated hypothyroid protocol is iodine-led rather than selenium-led: first cut out goitrogens (foods that block the thyroid) such as nitrates and cabbage, then add thyroid at 1-3 grains each morning (titrated up until your heart races or your outstretched arm shakes, then back off one grain), kelp, an iodine supplement at 250-500 mcg a day, and the herb Fucus vesiculosis \u2014 all on top of the full baseline nutrition program, which is what covers your selenium along with the rest of the 90.",
+        verbatim: "In young adults, selenium deficiency appears as anemia, chronic fatigue,\nWilson's syndrome (hypothyroidism), liver cirrhosis, muscular weakness, myalgia,\nmuscle tenderness, fibromyalgia, lupus, pancreatitis, infertility, muscular",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "hypothyroidism",
+          "wilsons_syndrome",
+          "selenium"
+        ],
+        tier1_link: {
+          essentials: [
+            "selenium"
+          ],
+          conditions: [
+            "hypothyroidism",
+            "wilsons_syndrome"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000466",
+        subject: "peptic_ulcers",
+        also_about: [],
+        facet: "discovery",
+        question: "How did we learn that bacteria, not stress, cause ulcers?",
+        answer_short: "The clue came from pigs: vets had been curing swine ulcers with the antibiotic tetracycline since 1952 \u2014 and an antibiotic only works if the cause is a germ. The same bacterium, Helicobacter pylori, was later proven to cause human ulcers, overturning the stress theory.",
+        answer: `Wallach's point is that the answer was hiding in veterinary medicine for decades before human doctors caught up. As far back as 1952, veterinarians were curing gastric ulcers in pigs with the antibiotic tetracycline \u2014 and the fact that an antibiotic cured them was the tell, because an antibiotic only clears an infection, not stress. The same germ behind the pigs' ulcers, a bacterium called Helicobacter pylori, turned out to be the culprit in people too.
+
+Wallach credits Australian gastroenterologist Barry Marshall and pathologist J. Robin Warren, who proposed the bacterial theory of human ulcers in 1983. It took years for mainstream medicine to accept it: the FDA finally approved the same antibiotic formula for treating human ulcers in 1994, and an NIH panel confirmed that H. pylori causes peptic ulcers and that drug therapy prevents a recurrence in 90% of cases. So the old "stress is the boogeyman" explanation gave way once studies showed that killing the bacterium \u2014 not calming the nerves \u2014 is what actually heals the ulcer.`,
+        verbatim: "tetracycline has been used in pigs since 1952 to treat gastric ulcers. The same\nformula was approved by the FDA in February and in 1994 for curing gastric\nulcers in humans. Stress has historically been blamed as the boogy-man causing\nstomach and peptic ulcers of the stomach and duodenum; however, the same\nbacterium that causes gastric ulcers in pigs (Helicobacter pylori) has been proven\nto be the cause of gastric ulcers in humans.\n\nAustralian gastroenterologist Barry Marshall, M.D. and pathologist J. Robbin\nWarren proposed their theory for the bacterial cause of gastric ulcers in humans\nin 1983.",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "peptic_ulcers"
+        ],
+        tier1_link: {
+          conditions: [
+            "peptic_ulcers"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000467",
+        subject: "calcium",
+        also_about: [
+          "restless_leg_syndrome"
+        ],
+        facet: "physiology",
+        question: "Is restless leg syndrome a calcium deficiency?",
+        answer_short: "Yes \u2014 Wallach classifies restless leg syndrome as a calcium-deficiency disease (and also a vitamin D deficiency sign), and says to treat it the same way he treats osteoporosis: rebuild calcium.",
+        answer: `Yes. In Wallach's framework, restless leg syndrome isn't a mysterious nerve disorder \u2014 it's one of his "Common Calcium Deficiency Diseases." He lists it twice in the very same table: once under "calcium deposits" (right alongside vascular deposits and atrial fibrillation) and once under "neuropathy" (alongside Bell's palsy and trigeminal neuralgia). Both times his instruction is the same three words \u2014 "same as osteoporosis." So he reads twitchy, crawling, jumpy legs as muscle and nerve starving for calcium, the identical shortage that hollows out the bones. He counts restless leg among the 147 diseases he attributes to a calcium deficiency or imbalance. He also lists it as a sign of vitamin D deficiency, which makes sense in his system: vitamin D is what lets the body actually absorb and deposit the calcium in the first place.
+
+Why the legs act up: Wallach warns that the ordinary American diet actively strips calcium out of you. Diets heavy in fiber, salt, and the phosphates in soft drinks raise the body's calcium "cost" and flush it out in the urine \u2014 he notes that heavy salting alone pushed urinary calcium loss from 96 to 148 mg a day \u2014 which deepens the very shortage behind restless legs.
+
+The fix runs the same direction as osteoporosis: rebuild calcium. Wallach's daily maintenance target for calcium is 2,000 mg (pushed to 2,000-5,000 mg for a short pharmacologic run). Calcium never works alone \u2014 vitamin D is the partner that lets you absorb it, and magnesium is its usual companion mineral. And cut the calcium thieves at the same time: go easy on excess fiber and salt, and drop the phosphate-loaded soft drinks.`,
+        verbatim: "Calcium deposits (vascular, tendons, ligaments, restless leg, atrial-fibrillation, etc.) : Same as osteoporosis\n\nCramps & twitches (Tourette\u2019s syndrome, foot, calf, hamstring, eyelids, etc.) : Same as osteoporosis\n\nPMS (emotional & physical symptoms) : Same as osteoporosis\n\nLow back (sciatica, spasm, disc, etc.) : Same as osteoporosis\n\nNeuropathy (Bell\u2019s palsy, trigeminal neuralgia, sciatica, restless leg, etc.) : Same as osteoporosis",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "restless_leg_syndrome",
+          "calcium"
+        ],
+        tier1_link: {
+          essentials: [
+            "calcium"
+          ],
+          conditions: [
+            "restless_leg_syndrome"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000468",
+        subject: "memory_loss",
+        also_about: [
+          "alzheimers",
+          "dementia"
+        ],
+        facet: "mechanism",
+        question: "Can statin drugs or low cholesterol cause memory loss?",
+        answer_short: "Yes. Wallach says low cholesterol and the statin drugs that lower it both drive memory loss \u2014 the brain needs cholesterol to rebuild its nerve insulation, and the FDA itself now warns statins raise the risk of memory loss.",
+        answer: `Yes \u2014 and Wallach puts it bluntly: he calls this kind of Alzheimer's a "physician-caused" disease. His reasoning is that the brain uses cholesterol as the raw material to rebuild myelin, the fatty insulation around nerve fibers. When you drive cholesterol too low, the brain loses the very material it needs to keep those nerves working, and memory goes with it. So a cholesterol deficiency, by itself, can produce Alzheimer's.
+
+Statin drugs make this worse because their whole job is to lower cholesterol. Wallach doesn't just assert it \u2014 he points to the FDA's own action: on February 28, 2012, the FDA added new safety warnings that statins used to lower cholesterol increase the rate of memory loss (Alzheimer's) and raise blood sugar (diabetes). In his view, the standard advice \u2014 lower your cholesterol and saturated fat, take a statin, and skip vitamin and mineral supplements \u2014 is exactly the combination that sets memory loss in motion.
+
+What Wallach does about it is the reverse of that advice: stop the statins and replace the cholesterol the brain is starving for. He recommends eating soft-scrambled (not fried) eggs every day and red meat \u2014 about 72 ounces a month \u2014 specifically to supply the cholesterol needed to rebuild myelin. He also adds omega-3 fatty acids (DHA and EPA) to support the neurotransmitters of memory and cognition, and steers people away from fried foods, processed meats, and oils. In short, Wallach's answer is that both low cholesterol and the drugs that cause it can take your memory \u2014 and that feeding the brain its cholesterol back is the fix.`,
+        verbatim: 'A cholesterol deficiency produces Alzheimer\u2019s disease, makes menopause a\nliving hell and results in \u201Clow-T" and \u201CED\u201D in males. In February 28, 2012, the FDA\nadded new safety warnings regarding the increased risk of statin drugs used to\nlower blood cholesterol that results in increased rate of memory loss (Alzheimer\u2019s\ndisease) and increased blood sugar (diabetes).',
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "alzheimers",
+          "dementia",
+          "memory_loss"
+        ],
+        tier1_link: {
+          conditions: [
+            "memory_loss",
+            "alzheimers",
+            "dementia"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000469",
+        subject: "iodine",
+        also_about: [
+          "varicose_veins",
+          "copper"
+        ],
+        facet: "physiology",
+        question: "Can an iodine or copper deficiency cause varicose veins?",
+        answer_short: "Yes \u2014 Wallach pins varicose veins mainly on copper deficiency (copper builds the elastic fibers in vein walls); iodine appears alongside it in his African clinic findings.",
+        answer: "Yes. In his African clinic work Wallach saw iodine and copper deficiency together produce varicose veins, along with anemia, aneurysms, miscarriages, and goiter in adults. But when he explains why the veins actually fail, the mineral he points to is copper. Copper is the cofactor for an enzyme called lysyl oxidase, which converts proelastin into elastin \u2014 the stretchy fiber that gives vein and artery walls their tensile strength. Starve the body of copper and that conversion drops off, the walls lose their spring, and you get spider veins, varicose veins, hemorrhoids (which he classes as varicose veins of the rectum and anus), and aneurysms. Wallach calls copper deficiency the root cause of varicose veins and phlebitis; long hours standing upright and constipation are precipitating factors, not the underlying reason. (Iodine sits in that African deficiency list, but in the corpus his varicose-vein mechanism is copper's role in elastin \u2014 iodine's own job is feeding the thyroid.)\n\nHis fix leans on copper and vessel-repair nutrients: copper at 2 mg per day (he suggests trying a copper bracelet), vitamin C to bowel tolerance, vitamin E at 800-1,200 IU per day, zinc at 50 mg three times a day, bioflavonoids at 600 mg three times a day, DMSO applied topically, and hydrotherapy. Because straining against constipation is what balloons the veins, he also wants eight glasses of water a day, two heaping tablespoons of fiber in water at bedtime, B-complex, and essential fatty acids at 5 grams three times a day. He adds that the amino acid lysine helps prevent and repair these veins, since it is the raw material lysyl oxidase crosslinks into elastin. Underneath all of it he wants high supplementation of all 90 essential nutrients plus regular exercise.",
+        verbatim: "Calcium deficiency caused\nosteomalacia in children and arthritis, and osteoporosis and kidney stones in\nadults. Iodine and copper deficiency produced anemia, varicose veins, aneurysms,\nmiscarriages, and goiter in adults.",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "varicose_veins",
+          "copper",
+          "iodine"
+        ],
+        tier1_link: {
+          essentials: [
+            "iodine",
+            "copper"
+          ],
+          conditions: [
+            "varicose_veins"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000470",
+        subject: "cataracts",
+        also_about: [],
+        facet: "stance",
+        question: "Can cataracts be reversed?",
+        answer_short: "Yes \u2014 Wallach calls cataracts an adult nutritional-deficiency disease, not a normal part of aging, and says most cases can be prevented and reversed by fixing the missing antioxidant nutrients.",
+        answer: `Yes. Wallach classifies cataracts \u2014 a clouding of the eye's lens that blocks light from reaching the retina \u2014 as an adult nutritional-deficiency disease rather than an unavoidable part of getting older, and he says most cases can be both prevented and, in most people, reversed.
+
+What clouds the lens, in his view, is oxidative or "free-radical" damage, driven above all by a shortage of selenium \u2014 the mineral he calls the body's most efficient antioxidant. He says heavy use of vegetable, salad and cooking oils on top of low selenium, plus heated or hydrogenated "trans" fats, makes the fat inside your cells go rancid, and that rancidity is what fogs the lens. Poor absorption makes it worse: gluten intolerance wears the villi off the small intestine and cuts selenium uptake so far that cataracts follow, and cadmium from cigarette smoke (about 23 micrograms per pack) further blocks selenium and zinc. Deficiencies of riboflavin (vitamin B-2) and the amino acid taurine can also produce cataracts.
+
+His actual protocol, built on top of the baseline 90-essential vitamin/mineral supplement: eat gluten-free, cut out fried foods and margarine, and load up on antioxidant-rich food and drink aiming for 20,000 to 25,000 ORAC points a day (ORAC is the standard score for a food's free-radical-fighting power). Then he adds vitamin E at 2,000 IU per day, vitamin C to bowel tolerance, vitamins B-1, B-2, B-3, B-5 and B-6 at 50 mg twice daily, inositol 150 mg/day, selenium 250 mcg/day, zinc 25 mg three times daily, bioflavonoids 300 mg, glycine 200 mg, l-glutamine 200 mg, l-arginine 300 mg/day, l-cysteine 400 mg/day and glutathione 40 mg/day. If diabetes or low blood sugar (hypoglycemia) is part of the picture, he adds chromium and vanadium at 250 mcg three times a day.`,
+        verbatim: "pressure, type 2 diabetes, cataracts, macular degenerations, cancer, arthritis,\nlupus, IBS, Crohn's disease, etc.).\n\nAll of the birth defects are totally preventable with proper preconception\nnutrition and many of these, including cystic fibrosis and muscular dystrophy, can\nbe reversed later in life.\n\nCertainly all of the diseases acquired as an adult can be prevented and most\ncan be reversed.",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "cataracts"
+        ],
+        tier1_link: {
+          conditions: [
+            "cataracts"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000471",
+        subject: "calcium",
+        also_about: [],
+        facet: "physiology",
+        question: "Why does low calcium make muscles cramp?",
+        answer_short: "Most of your calcium is locked in bone; only a tiny fraction is free to run the nerve-and-muscle electrical signals, so when that small pool drops, the signals misfire into twitches and cramps.",
+        answer: `Wallach's point in the quote is that calcium has two very different jobs, and most people only picture the first. About 99% of all the calcium in your body is locked away as structure \u2014 built into your bones and teeth. Only the small remainder, roughly the last 1%, is free to do the body's electrical work: it drives "exocytosis," the process nerve cells use to fire their signals (neurotransmitter release) and the process muscle fibers use to actually contract. That tiny fraction is what lets a nerve tell a muscle to squeeze and then relax.
+
+So when your calcium runs low, the bones hold onto their share and that small working pool is what comes up short first. Without enough of it, nerves and muscles lose their steady on/off control and get jumpy \u2014 they fire when they shouldn't. That is what you feel as an eyelid twitch, a muscle flutter (fasciculation) in the arms or legs, a "charley horse," restless legs, or the hard cramps of the feet, calves, back, and neck.
+
+Wallach does not pin it on calcium alone. He calls a muscle cramp a "mini convulsion" in the muscle, driven by a shortage of calcium, magnesium, potassium, selenium and/or vitamin E \u2014 these minerals work as a team. His fix is to get on the baseline supplement program with calcium at 2,000 mg a day, plus magnesium and potassium, favoring liquid colloidal (plant-derived) minerals so they absorb well. And because a cramp can just as easily mean you are not absorbing minerals in the first place, he adds betaine hydrochloride and pancreatic (digestive) enzymes at 75-200 mg three times a day before meals, and suggests a pulse test for food allergies that can cause celiac-type gut damage and malabsorption, plus a hair analysis to see where your minerals actually stand.`,
+        verbatim: "Approximately 99% of the total human body calcium is found in the\nbones and teeth. The remainder of the body's calcium reserve is employed for\nexocytosis, especially for neurotransmitter release and muscle contraction.",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "calcium"
+        ],
+        tier1_link: {
+          essentials: [
+            "calcium"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000472",
+        subject: "insomnia",
+        also_about: [
+          "calcium",
+          "sleep_apnea"
+        ],
+        facet: "physiology",
+        question: "Can a calcium deficiency cause insomnia or sleep apnea?",
+        answer_short: "Yes \u2014 Wallach files insomnia, and sleep apnea and snoring right along with it, as calcium-deficiency diseases, and treats them the same way he treats osteoporosis: rebuild calcium.",
+        answer: `Yes. The quote comes from a table of calcium-deficiency diseases in Wallach's Epigenetics \u2014 "Insomnia (sleep apnea, snoring, etc.): Same as osteoporosis." What he means is that trouble sleeping, and he groups sleep apnea and snoring in with it, is a sign the body is short on calcium \u2014 the same underlying shortage that thins the bones in osteoporosis \u2014 so he treats them the same way. He lists insomnia among the classic signs of calcium deficiency in several of his books, and in Rare Earths he claims calcium deficiency underlies no fewer than 147 different conditions.
+
+Wallach's actual sleep protocol (from Let's Play Doctor) is built around rebuilding calcium plus a few sleep-specific nutrients:
+
+- Calcium, especially plant-derived colloidal calcium \u2014 his base-line adult target is 2,000 mg a day (he will push it to 2,000-5,000 mg for a 30-day stretch), usually paired with magnesium.
+- L-tryptophan at 1,000 mg three times a day.
+- DL-phenylalanine at 250 mg three times a day.
+- Chromium at 25-200 mcg three times a day.
+- Inositol at 500 mg a day.
+- Niacinamide at 1,000 mg at bedtime, plus vitamin B-3 (niacin) at 450 mg three times a day as time-release.
+- Calming herbs: valerian, passion flower, hops, and California poppy.
+
+He also says to cut caffeine (coffee, cola, chocolate) and to hunt down food allergies and low blood sugar, which he says can cause insomnia and nightmares on their own \u2014 a simple pulse test helps identify an offending food.
+
+One honest limit: Wallach gives no separate dose or mechanism aimed specifically at sleep apnea. He simply files it under insomnia as a calcium-deficiency problem to be handled "same as osteoporosis" \u2014 that is, with the calcium-and-magnesium foundation above.`,
+        verbatim: "Insomnia (sleep apnea, snoring, etc.) : Same as osteoporosis\n\nCalcium deposits (vascular, tendons, ligaments, restless leg, atrial-fibrillation, etc.) : Same as osteoporosis",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "calcium",
+          "sleep_apnea",
+          "insomnia"
+        ],
+        tier1_link: {
+          essentials: [
+            "calcium"
+          ],
+          conditions: [
+            "insomnia",
+            "sleep_apnea"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000473",
+        subject: "selenium",
+        also_about: [
+          "cataracts"
+        ],
+        facet: "mechanism",
+        question: "Can gluten or celiac disease cause cataracts?",
+        answer_short: "Yes. Wallach says gluten damage to the gut starves the body of selenium, and that selenium shortage lets the lens cloud into a cataract \u2014 a gluten-free diet plus the 90 essentials reverses many cases.",
+        answer: "Yes \u2014 and Wallach lays out exactly how. He says gluten intolerance, over years, wears away the villi, the tiny finger-like absorbers lining the small intestine, until the gut can only take in a fraction of what you eat. Selenium is the nutrient he flags first here: many people are already getting only zero to ten percent of the selenium they need from their diet, so once gut damage cuts absorption roughly in half, they slide into a real deficiency. That matters because selenium is the body's most efficient antioxidant, guarding cell membranes from free-radical (oxidative) damage. Starve the lens of that protection and it clouds over \u2014 a cataract. Wallach classifies cataracts outright as a selenium-deficiency disease of adults, and he lists them alongside heart disease, cancer, macular degeneration and other conditions that follow the same gluten-to-malabsorption path.\n\nHis fix is the same in reverse. Put the person on a gluten-free diet so the gut can heal, then rebuild them on the base platform of the 90 essential nutrients plus therapeutic levels of whatever they're short on. Wallach says cataracts are an adult nutritional-deficiency disease that in most cases can be reversed, not just halted. His concrete cataract protocol centers on the antioxidants the lens needs: selenium at 250 mcg a day, vitamin E at 2,000 IU a day, zinc at 25 mg three times a day, bioflavonoids at 300 mg, plus l-cysteine at 400 mg and glutathione at 40 mg a day \u2014 and cutting out fried foods and margarine, whose oxidized fats drive the very free-radical damage selenium is meant to stop.",
+        verbatim: "Gluten intolerance, over time, produces a gradual loss of villi from the small\nintestine, resulting in a significant reduction in absorptive capacity. Fifty percent\nabsorption of nutrients from food that might have from zero to ten percent\nof one's nutritional requirement for selenium to begin with, will significantly\n\nincrease the risk for cardiomyopathy heart disease, liver cirrhosis, cancer,\ncataracts, macular degeneration, MS, dementia, infertility, muscular dystrophy,\ncystic fibrosis, fibromyalgia, lupus, thyroid disease, and other illness.\n\nPutting an afflicted individual on a gluten-free diet and supplementing the\nperson correctly with the basic platform of the 90 essential nutrients and\ntherapeutic levels of the deficient nutrient will solve many health problems,",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "cataracts",
+          "selenium"
+        ],
+        tier1_link: {
+          essentials: [
+            "selenium"
+          ],
+          conditions: [
+            "cataracts"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000474",
+        subject: "sciatica",
+        also_about: [],
+        facet: "stance",
+        question: "Do you need back surgery for sciatica?",
+        answer_short: 'No \u2014 Wallach cites a JAMA article titled "Back Surgery for Sciatica is Unnecessary," and treats sciatica as a fixable calcium and mineral deficiency, not a surgical problem.',
+        answer: `Wallach's answer is no. He points to a November 2006 Journal of the American Medical Association article titled "Back Surgery for Sciatica is Unnecessary" \u2014 right alongside a New England Journal of Medicine piece calling knee-replacement surgery for arthritis worthless \u2014 to make the case that the operation can be skipped.
+
+His reasoning is that sciatica (low-back pain shooting down the buttock and leg) is at root a calcium and mineral deficiency, not a wiring problem you cut out. He lists it among his "Common Calcium-Deficiency Diseases," and says that in its most severe form it comes from advanced osteoporosis, bone spurs between the lumbar vertebrae, and vertebral arthritis \u2014 all of which he ties to running short on calcium. He also names complicating deficiencies of magnesium, boron, copper, sulfur, selenium and strontium, plus too much phosphorus and dietary fat.
+
+So instead of surgery, Wallach's treatment for sciatica is calcium at 2,000 mg and magnesium at 1,000 mg per day, together with the baseline nutritional supplement program including plant-derived colloidal minerals, and hands-on conservative care: hydrotherapy, chiropractic, acupuncture, and inversion-gravity therapy. He also notes ordinary mechanical causes worth ruling out first \u2014 a lumbar vertebra out of alignment, a thinning or ruptured disc, or even a thick wallet in one back pocket.`,
+        verbatim: 'In July of 2002, the New England Journal of Medicine published an article,\nthe title of which was \u201CKnee Replacement Surgery for Arthritis is Worthless.\u201D In\nNovember of 20006, the Journal of the American Medical Association published an\narticle, the title of which was "Back Surgery for Sciatica is Unnecessary.\u201D',
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "sciatica"
+        ],
+        tier1_link: {
+          conditions: [
+            "sciatica"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000475",
+        subject: "migraine",
+        also_about: [
+          "headache"
+        ],
+        facet: "mechanism",
+        question: "Where does migraine medication come from?",
+        answer_short: "One of the oldest migraine drugs, ergotamine, comes from ergot \u2014 a fungus \u2014 and is chemically kin to LSD.",
+        answer: `Wallach traces one of the classic migraine drugs, ergotamine, straight back to a fungus. The sclerota of ergot \u2014 a fungus \u2014 contain what Wallach calls "ergot alkaloids." Two of them come from that same source: lysergic acid, which is the raw material for LSD, and ergotamine, the compound long used to treat migraine headaches. So the migraine drug and the psychedelic LSD are close chemical relatives, both drawn from the same fungal alkaloids.
+
+Wallach explains that these alkaloids act directly on the central nervous system and force the smooth muscle to contract \u2014 the smooth muscle in the blood vessels and in the internal organs. That vessel-tightening effect is how ergotamine acts on a migraine.
+
+Worth knowing: this describes where the conventional drug comes from and how it works \u2014 it is not Wallach's own approach to migraines. He treats migraines as a nutrition-and-food-allergy problem rather than reaching for the ergot drug, but that is a separate answer from the drug's origin you asked about here.`,
+        verbatim: "The sclerota contain ergot alkaloids, including lysergic acid (the source of LSD)\nand ergotamine, often used as a treatment for migraine headaches. The alkaloids\nhave a direct effect on the central nervous system and produce contraction of\nsmooth muscle in the vascular system and the internal organs.",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "headache",
+          "migraine"
+        ],
+        tier1_link: {
+          conditions: [
+            "migraine",
+            "headache"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000476",
+        subject: "menopause",
+        also_about: [],
+        facet: "mechanism",
+        question: "Why do women crave chocolate and run low on minerals before menopause?",
+        answer_short: "Wallach says a lifetime of monthly periods, pregnancies, and breastfeeding drains minerals that men never lose, so women run more depleted \u2014 and chocolate is the number-one sweet craving in premenopausal women (39%, versus just 14% of men the same age).",
+        answer: "Wallach is pointing at two facts about women in the years before menopause. First, chocolate is far and away the top sweet craving: he puts it at 39% of premenopausal women, against only 14% of men the same age. Second, women as a group run more depleted of minerals than men \u2014 and he gives a plain reason. On top of everyday needs, women lose minerals through their monthly menstrual periods, through pregnancies, and through breastfeeding. Men never pay those extra costs, so a woman's mineral reserves get drawn down again and again across her reproductive years.\n\nWallach sets those two observations side by side. What he does not spell out here is a hard claim that the chocolate craving is the body reaching for the minerals it is short on \u2014 he reports the craving as a striking pattern, not as a proven result of the shortfall.\n\nFor the mineral gap itself, his answer is direct: the baseline supplement program plus extra calcium and magnesium \u2014 2,000 mg of calcium and 1,000 mg of magnesium a day. Wallach leans on that mineral support especially around menopause, both to smooth the transition and to head off the osteoporosis that tends to follow a poorly managed one.",
+        verbatim: "Chocolate appears to be the number one sweet craving in premenopausal\nwomen (39%) as opposed to only 14% in the male population at the same age\n\nas the women. Women as a group tend to be more depleted of minerals than\n\nmen because of their additional mineral losses as a result of their cyclic menstrual\nperiods, pregnancies and lactation.",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "menopause"
+        ],
+        tier1_link: {
+          conditions: [
+            "menopause"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000477",
+        subject: "asthma",
+        also_about: [],
+        facet: "mechanism",
+        question: "Can asthma start before birth from the mother's nutrition?",
+        answer_short: "Yes \u2014 Wallach counts asthma as a congenital nutritional deficiency of the embryo, so the mother's diet before and during pregnancy helps decide whether the child gets it.",
+        answer: `Yes. This is one of Wallach's core claims. Looking at the "genetic diseases" that run in tight-knit groups like the Amish, Mennonite, and Hutterite communities, he argues that ninety-nine percent or more of them are not written in the genes at all \u2014 they are simple congenital nutritional deficiencies of the embryo. In other words, the developing baby was starved of specific nutrients in the womb, and the damage shows up later as a "disease." He puts asthma on that list, right alongside cleft palate, spina bifida, cystic fibrosis, and heart defects.
+
+So the mechanism is this: what the mother eats (or fails to eat) before and during pregnancy feeds the embryo while its lungs, airways, and tissues are being built. Shortchange the building materials, and the child can be born already primed for asthma.
+
+Which building materials? Across his books Wallach keeps tying asthma to the same short list of deficiencies \u2014 manganese, magnesium, and the essential fatty acids (the omega-3 and omega-6 fats the body cannot make and must get from the diet). He flags manganese and the essential fatty acids as especially critical during pregnancy and infancy: manganese deficiency in the mother is linked to birth defects and miscarriage, and a shortage of essential fatty acids is, in his words, especially damaging in infants \u2014 producing poor growth, eczema, and asthma. Wallach's takeaway is that asthma is not a fixed genetic sentence but a preventable nutritional one, and it starts with the mother being well supplied.`,
+        verbatim: "Ninety-nine percent or more of all of the \u201Cgenetic diseases\u201D that plague\nthe Amish, Mennonite, and Hutterite communities are in fact simple, congenital\nnutritional deficiencies of the embryo (for example: congenital deafness, cleft\npalate, cleft lip, spina bifida, Down\u2019s syndrome, cerebral palsy, limb defects, heart\ndefects, hernias, cystic fibrosis, muscular dystrophy, celiac disease, asthma, skin\nproblems, etc.)",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "asthma"
+        ],
+        tier1_link: {
+          conditions: [
+            "asthma"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000478",
+        subject: "obesity",
+        also_about: [],
+        facet: "stance",
+        question: "Will exercise alone make me lose weight?",
+        answer_short: "No \u2014 Wallach says exercise alone won't cure obesity, because he sees it as a mineral-deficiency disease, not a lack-of-exercise one; fix the minerals and the cravings driving the weight.",
+        answer: `No \u2014 and Wallach has a hard-nosed reason. In this passage he points to Chicago's Loyola University School of Medicine, which in January 2009 declared flatly that "exercise won't cure obesity." Weight-loss specialists fought that finding, but a review of the data forced them to back down: the conclusion held.
+
+Wallach's own explanation is why he isn't surprised. He argues obesity is not caused by laziness or lack of exercise at all \u2014 it is a mineral-deficiency disease. When the body is starved of trace minerals, that hunger shows up as cravings, binge eating, the "munchies," and pica (the urge to nibble or eat non-food items). No amount of walking or gym time refills a missing mineral, so exercise by itself leaves the real driver untouched. In his own practice he says overweight patients were mineral-deficient 100 percent of the time, and once he put them on complete mineral programs they lost the weight, kept it off, and lost the binge eating and cravings.
+
+So Wallach doesn't tell you to skip exercise \u2014 moderate movement like walking, tennis, golf, or swimming is part of his program \u2014 but it rides alongside the real fix, not in place of it. His weight-loss approach: use colloidal minerals to shut down the mineral-driven nibbling, eat at least 1,000 calories a day (starving yourself backfires because the body just conserves energy), and don't skip meals. He cuts sugar, caffeine, and carbonated drinks, has you test for food allergies (a pulse test) and for hypoglycemia (a six-hour glucose tolerance test), and checks for an underactive thyroid. Supplements in his program include salmon oil at 5 grams three times a day, flaxseed oil one tablespoon twice a day, two heaping tablespoons of fiber in water before bed, glucomannan at 1 gram before meals, and betaine hydrochloride with pancreatic enzymes at 75-200 milligrams three times a day before meals to fix absorption. Correct the minerals and the cravings first \u2014 exercise is a helper, never the cure.`,
+        verbatim: "The belief that exercise could prevent and control weight gain and obesity was\ndashed in January 2009, when Chicago's Loyola University School of Medicine\ndeclared that \u201Cexercise won't cure obesity.\u201D The practitioners of bariatric medicine\n(weight loss specialists) who fought the study were forced to relent after a critical\nreview of the data showed that the original conclusion was correct.",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "obesity"
+        ],
+        tier1_link: {
+          conditions: [
+            "obesity"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000479",
+        subject: "menopause",
+        also_about: [],
+        facet: "history",
+        question: "What was Lydia Pinkham's herbal remedy for women's complaints?",
+        answer_short: `Wallach says it was "Lydia Pinkham's Vegetable and Herbal Extract for Women's Complaints" \u2014 a herbal tonic she built on an old Native American recipe and sold through newspaper ads for period and menopause troubles, so effective it made her an American icon.`,
+        answer: `Wallach recounts that Lydia Pinkham's remedy was a herbal tonic she called "Lydia Pinkham's Vegetable and Herbal Extract for Women's Complaints." He tells it as one of the old family recipes that genuinely worked: Pinkham was a Quaker missionary who took an ancient Native American herbal recipe as the basis of her patent medicine, then sold it through newspaper and magazine ads. It was marketed for a whole range of women's problems \u2014 PMS, dysmenorrhea (painful periods), amenorrhea (missing periods), menopausal symptoms, and infertility. Wallach's point in telling the story is that it worked so well the Harvard Glee Club sang songs about her ability to solve American women's problems, and she became an American icon.`,
+        verbatim: "Others\nwere old family recipes that worked, such as that produced by Lydia Pinkums\ncalled \u201CLydia Pinkums\u2019 Vegetable and Herbal Extract for Women's Complaints,\u201D\nwhich was marketed in newspapers for PMS, dysmenorrhea, amenorrhea,\n\n\nmenopausal symptoms, and infertility.\n\nPinkums was a Quaker missionary and had used an ancient Native American\nherbal recipe as the basis of her patent medicine that was sold through\nnewspaper and magazine adds. This herbal product worked so well the Harvard\nGlee Club sang songs of her abilities to solve the problems of American women\nand she became an American icon.",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "menopause"
+        ],
+        tier1_link: {
+          conditions: [
+            "menopause"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-EPIGEN-000480",
+        subject: "peptic_ulcers",
+        also_about: [],
+        facet: "history",
+        question: "Does aloe vera help heal stomach ulcers?",
+        answer_short: "Only as ancient history: Wallach relays that the ancient Egyptian Ebers Papyrus listed aloe vera for gastric ulcers, but aloe is not in his own ulcer protocol \u2014 his real recommendations are different.",
+        answer: `This particular line is a history note, not a recommendation. Wallach is relaying that the Ebers Papyrus \u2014 an ancient Egyptian medical scroll \u2014 listed aloe vera as a remedy for gastric (stomach) ulcers, along with burns, skin disorders, and allergies. He's pointing out that people have reached for plants to treat ulcers for thousands of years; he is not endorsing aloe vera as his own fix.
+
+When Wallach gives his OWN answer to a stomach ulcer, aloe vera is not on the list. He says the real cause of peptic ulcers is not stress or a "mythical vitamin U" but infection with a bacterium, Helicobacter pylori. The herbs he actually leans on are alfalfa \u2014 which he calls the richest source of "vitamin U" \u2014 at ten tablets three times a day with meals, plus cabbage juice, flax, German chamomile, and licorice. He adds bioflavonoids at 1,000 mg four times a day, vitamin B-6 at 100 mg three times a day, vitamin A at 300,000 IU per day as beta carotene, zinc at 20 mg three times a day, and glutamine at 400 mg four times a day, while cutting out alcohol, sugar, and refined foods and eating a high-fiber diet. To actually clear the bacterium, he says antibiotics plus bismuth taken every day for four to six weeks cure about 98 percent of ulcers.
+
+One warning he repeats: if you ever see "coffee-ground" stool or vomit, the ulcer is bleeding \u2014 go to a hospital immediately.
+
+So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used it; it is not part of Wallach's protocol.`,
+        verbatim: "Specific remedies from the Ebers Papyrus include:\n\nAloe vera \u2013 burns, gastric ulcers, skin disorders and allergies",
+        page: null,
+        book_id: "epigenetics",
+        topics: [
+          "peptic_ulcers"
+        ],
+        tier1_link: {
+          conditions: [
+            "peptic_ulcers"
+          ]
+        }
+      },
+      {
         id: "WAL-CLM-HELLS-000001",
         subject: "beef",
         also_about: [
@@ -120384,6 +120860,96 @@ diarrhea, dermatitis, dementia, and death.`,
           "brain",
           "dementia"
         ]
+      },
+      {
+        id: "WAL-CLM-HELLS-000097",
+        subject: "chromium",
+        also_about: [
+          "depression",
+          "anxiety",
+          "hypoglycemia",
+          "insulin_resistance",
+          "vanadium"
+        ],
+        facet: "physiology",
+        question: "Is my depression connected to blood sugar or insulin resistance?",
+        answer_short: "Yes \u2014 in Wallach's framework depression and blood-sugar trouble share one root: a chromium and vanadium deficiency that derails insulin control and mood at the same time.",
+        answer: `Yes. In Wallach's framework depression and blood-sugar trouble aren't two separate problems \u2014 they're two faces of the same deficiency. The table you're reading is from his metabolic-syndrome chapter, where a shortage of the two "blood-sugar minerals," chromium and vanadium, produces the whole cluster at once: diabetes, insulin resistance, hyperinsulinemia (excess insulin), low blood sugar (hypoglycemia) \u2014 and anxiety, depression and obesity right alongside them.
+
+The link is chromium's job in the body. Wallach says chromium runs blood-sugar control through the glucose tolerance factor and insulin, so when it runs short, both your metabolism and your mood go with it. Two things drain it: a diet heavy in sugar and refined flour flushes chromium and vanadium out in the urine by as much as 300 percent, and food allergies cause celiac-type changes in the gut that block those minerals from being absorbed. The result is reactive hypoglycemia \u2014 the "crash and burn" blood-sugar curve \u2014 and Wallach holds that food allergies, hypoglycemia and PMS account for roughly 90 percent of diagnosed depression, the very factors conventional psychiatry rarely tests for.
+
+How to know for sure: he says a fasting blood-sugar reading alone misses hypoglycemia in about 98 percent of cases, so the real test is a six-hour glucose tolerance test, run alongside a pulse test to check for food allergies.
+
+What he does about it \u2014 treat the blood sugar and the mood together. Cut caffeine and sugar in all forms (fruit and juice included) and fried foods, follow a hypoglycemia diet, and supplement chromium and vanadium at 50-200 mcg three times daily with meals \u2014 with one important caution: anyone already on insulin should start at just 25 mcg three times daily so blood sugar doesn't drop too fast. Around that base he layers the rest of his depression program \u2014 iron, B-vitamins (B-6, B-2, B-1), B-12, vitamin C, calcium and magnesium, potassium, essential fatty acids, and the amino acids dl-phenylalanine, l-tryptophan and l-tyrosine \u2014 plus the baseline supplement program. It's been known since 1958, he notes, that supplemental chromium both prevents and treats hypoglycemia and diabetes, and to him, correcting that deficiency corrects the root cause of the mood symptoms too.`,
+        verbatim: "Nutritional deficiencies associated \nwith the Metabolic Syndrome \nNutrient Deficiency Clinical disease \nOmega -3 essential fatty acids elevated total cholesterol, elevated \nLDL, obesity, peripheral neuropathies, thrombotic disease, atherosclerosis \nCalcium hypertension, osteoporosis, \nperipheral neuropathies, insomnia, \npica, obesity \nChromium, vanadium diabetes, insulin resistance, \nhyperinsulinemia, hypoglycemia, \npica, anxiety, depression, obesity",
+        page: null,
+        book_id: "hells-kitchen",
+        topics: [
+          "depression",
+          "anxiety",
+          "hypoglycemia",
+          "insulin_resistance",
+          "vanadium",
+          "chromium"
+        ],
+        tier1_link: {
+          essentials: [
+            "chromium",
+            "vanadium"
+          ],
+          conditions: [
+            "depression",
+            "anxiety",
+            "hypoglycemia",
+            "insulin_resistance"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-HELLS-000098",
+        subject: "kidney_stones",
+        also_about: [],
+        facet: "uses",
+        question: "How are kidney stones broken up without surgery?",
+        answer_short: 'With a "lithotripter" \u2014 a machine that fires focused high-frequency sound shock waves at the stone and shatters it into sand-sized particles that pass easily out in the urine, no surgery involved.',
+        answer: `The Quote is describing a specific machine. Wallach explains that Dornier Systems, a West German aerospace company, built the "Lithotripter" \u2014 the name comes from the Greek words for "stone" and "crusher." It destroys kidney stones with focused high-frequency sound shock waves that break the stone into sand-sized particles small enough to pass easily through the urinary system in the urine \u2014 no surgery required.
+
+Wallach also points out a second non-surgical way to clear a stone that is already lodged and stuck: reduce the swelling around it so it can slide out on its own. He uses an anti-inflammatory such as licorice (Glycyrrhiza glabra) \u2014 or prednisone for three days if licorice isn't strong enough \u2014 to shrink the swelling at the "log jam" in the ureter (the tube from the kidney to the bladder), with morphine for the pain if it's severe, so the stone can pass naturally.
+
+And because Wallach holds that the stones form in the first place from a calcium- and magnesium-deficient diet \u2014 the minerals are actually pulled out of your own bones \u2014 he stresses fixing that cause so new stones stop forming: calcium at 2,000 mg and magnesium at 1,000 mg a day, and cutting back on phosphorus from meat and carbonated soft drinks, which he says makes it impossible to get enough calcium and magnesium from diet alone.`,
+        verbatim: "Dornier Systems, a West German aerospace company \nhas produced the \u201CLithotripter,\u201D a machine that destroys kidney stones \nby means of focused high frequency sound shock waves. The \n\u201CLithotripter (from the Greek words meaning \u201Cstone\u201D and \u201Ccrusher\u201D), \ncauses the kidney stones to be broken up into sand-sized particles, \nthat are easily passed through the urinary system.",
+        page: null,
+        book_id: "hells-kitchen",
+        topics: [
+          "kidney_stones"
+        ],
+        tier1_link: {
+          conditions: [
+            "kidney_stones"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-HELLS-000099",
+        subject: "adhd",
+        also_about: [],
+        facet: "biography",
+        question: "Can someone with ADD still be successful?",
+        answer_short: "Yes \u2014 Wallach points to Thomas Edison, a hands-on learner brushed off at school, the inventor he suspects himself had ADD.",
+        answer: `Wallach answers this encouragingly. In Hell's Kitchen he holds up Thomas Edison \u2014 a man who learned by actual hands-on experience rather than rote schoolbook memorization \u2014 and suggests Edison himself "was a victim of ADD." His point to the reader is that the ADD mind is a different kind of learner, not a broken one: the inventor Thomas Edison may have had exactly this wiring.
+
+Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a person's life. He frames it as a correctable trace-mineral deficiency \u2014 tying it to shortfalls of minerals like chromium, lithium, and vanadium, made worse by a high-sugar diet \u2014 which is why he's hopeful rather than resigned about it. So his answer is a clear yes: ADD is fully compatible with real success, and in his view it's a nutritional problem that can be addressed, not a life sentence.`,
+        verbatim: "He was the kind of person who learned by \nactual hands on experience rather than rote learning - perhaps he \nwas a victim of ADD.",
+        page: null,
+        book_id: "hells-kitchen",
+        topics: [
+          "adhd"
+        ],
+        tier1_link: {
+          conditions: [
+            "adhd"
+          ]
+        }
       },
       {
         id: "WAL-CLM-IAIYH-000001",
@@ -130913,6 +131479,472 @@ diarrhea, dermatitis, dementia, and death.`,
           "longevity",
           "mediterranean diet"
         ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000478",
+        subject: "vanadium",
+        also_about: [
+          "adhd",
+          "hypoglycemia",
+          "diabetes"
+        ],
+        facet: "mechanism",
+        question: "How does vanadium help with ADD and ADHD?",
+        answer_short: "Wallach says ADD/ADHD is really a blood-sugar problem, and vanadium fixes it by acting like insulin \u2014 making the cell's insulin receptors more sensitive so glucose is handled properly, which calms the behavior.",
+        answer: `Wallach doesn't treat ADD and ADHD as a brain-chemistry disorder to be drugged \u2014 he sees them as a symptom of the body mishandling blood sugar, what he calls glucose and carbohydrate intolerance. Vanadium helps because it acts like insulin: it alters how the cell membrane transports ions, which makes the membrane's insulin receptors more sensitive to insulin. In plain terms, it helps the cells take up and burn blood sugar the way they should. When blood sugar is handled properly, the swings Wallach ties to ADD, ADHD, hyperactivity, and the whole "chemical imbalance" spectrum settle down.
+
+Where does the shortage come from? Wallach says a heavy intake of sugar and refined flour flushes as much as 300% more vanadium (and its partner mineral chromium) out through the urine, and food allergies cause celiac-type damage to the gut that blocks their absorption. That deficiency drives the low blood sugar (hypoglycemia) whose symptoms, in his list, include hyperactivity, ADD and ADHD. He adds that people with ADD/ADHD react to sugar the way some people react to alcohol \u2014 it can swing them from drowsiness to rage.
+
+His fix is to restore the minerals and pull the sugar. Wallach pairs vanadium with chromium as the two blood-sugar minerals. In his hypoglycemia program he gives chromium and vanadium at 50-200 mcg three times a day with meals (starting lower, at 25 mcg three times a day, for anyone on insulin, so blood sugar doesn't dip too fast). Around that he adds zinc at 25 mg three times a day, B-complex at 50 mg three times a day (with niacin), and betaine hydrochloride plus digestive enzymes at 75-200 mg three times a day before meals to repair the poor absorption \u2014 on a diet that cuts sugar, refined flour, and alcohol and clears food allergies, especially wheat gluten. He explicitly opposes the standard Ritalin or Prozac route, warning of addiction, drowsiness, and explosive emotions.`,
+        verbatim: "Vanadium enhances the stimulating effect of insulin\non DNA synthesis. Despite low serum insulin, the blood\nglucose levels of diabetic rats fed vanadium was the same as\nthe glucose levels of normal controls. Vanadium appears to\nfunction like insulin by altering cell membrane function for\nion transport. Therefore vanadium has a very beneficial effect\nfor humans with glucose and carbohydrate intolerance (i.e.\nhypoglycemia, hyperinsulinemia, narcolepsy, prediabetes,\ndiabetes, depression, manic depression, bi-polar disease,\n\u201Cchemical imbalance,\u201D ADD, ADHD, violent behavior, autism,\netc.) by making the cell membrane insulin receptors more\nsensitive to insulin.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "adhd",
+          "hypoglycemia",
+          "diabetes",
+          "vanadium"
+        ],
+        tier1_link: {
+          essentials: [
+            "vanadium"
+          ],
+          conditions: [
+            "adhd",
+            "hypoglycemia",
+            "diabetes"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000479",
+        subject: "selenium",
+        also_about: [
+          "cataracts"
+        ],
+        facet: "mechanism",
+        question: "Can vegetable oils and low selenium cause cataracts?",
+        answer_short: "Yes \u2014 Wallach says loading up on vegetable oils while running low on selenium lets the fats in the eye's lens go rancid from free radicals, and that clouding is a cataract.",
+        answer: `Yes. Wallach describes cataracts as an adult selenium-deficiency disease, and he ties this exact pair of causes together. Every cell membrane is built partly from fat, and selenium is the body's most efficient antioxidant guarding that fat. When you eat a lot of vegetable oil \u2014 salad dressings and cooking oils \u2014 while short on selenium, there is nothing to protect those delicate fats, so free radicals attack them and turn them rancid. In the lens of the eye, that oxidized, rancid fat is what clouds the lens into a cataract. Wallach warns this gets worse when the oils are heated or hydrogenated into "trans" fats, because that polyunsaturated fat literally goes rancid and floods the tissue with free-radical damage. He calls the vegetable-oil-plus-low-selenium combination the quickest route not just to cataracts but to macular degeneration, heart disease and cancer as well. Cigarette smoke adds to it: the cadmium in tobacco blocks selenium's enzymes, deepening the deficiency.
+
+The encouraging part is that Wallach considers cataracts preventable and, in most cases, reversible. His fix follows straight from the mechanism \u2014 stop feeding the fire and supply the missing antioxidants. Cut out the fried foods and margarine, and go gluten-free, because he says gluten damage to the gut can strip your absorption of selenium down toward zero in the first place. On top of the baseline vitamin-and-mineral program he uses selenium at 250 mcg a day, vitamin E at 2,000 IU a day, zinc at 25 mg three times a day, bioflavonoids at 300 mg, and the antioxidant compounds l-cysteine at 400 mg and glutathione at 40 mg a day. He also wants a heavily antioxidant diet overall, putting the target at 20,000 to 25,000 ORAC points (a measure of antioxidant power) a day.`,
+        verbatim: "Selenium also functions to protect cellular and organelle\nbi-lipid layer membranes from oxidative damage. High intakes\nof vegetable oils, including salad dressing and cooking oils,\nconcurrent with a selenium deficiency is the quickest route\nto a cardiomyopathy heart attack, arteriosclerosis (build up\nof plaque in the arteries resulting from free radical damage\nto the \u201Cintima\u201D or lining of the artery), cataracts, macular\ndegeneration, dementias, multiple sclerosis, cancer, etc.\n\nThe polyunsaturated configuration of oils when heated\nor treated with hydrogen (\u201Ctrans fatty acids\u201D) literally causes\nthe rancidity (\u201Cfree radical\u201D damage) of cellular fat.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "cataracts",
+          "selenium"
+        ],
+        tier1_link: {
+          essentials: [
+            "selenium"
+          ],
+          conditions: [
+            "cataracts"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000483",
+        subject: "calcium",
+        also_about: [
+          "restless_leg_syndrome"
+        ],
+        facet: "mechanism",
+        question: "Can soda and too much salt make restless legs worse?",
+        answer_short: "Yes \u2014 Wallach counts restless legs as a calcium-deficiency disease, and both soda's phosphates and heavy salt flush calcium out of the body (salt alone pushed urinary loss from 96 to 148 mg a day), deepening the shortage that drives it.",
+        answer: `Yes. Wallach lists restless leg syndrome among his calcium-deficiency diseases, so anything that drains calcium out of the body makes it worse \u2014 and both heavy salt and soft drinks do exactly that. He explains that a diet loaded with salt, fiber, and the phosphates in soft drinks raises the body's calcium "cost": these foods increase how much calcium you actually need, and salt in particular flushes calcium out through the urine. In his figures, excessively salting food pushed urinary calcium loss from 96 mg a day up to 148 mg a day. So every heavily-salted meal and every soda deepens the very calcium shortage that is behind the restless legs.
+
+The answer, then, is to stop the leak and rebuild the calcium. Cut back on soft drinks and stop over-salting your food. Wallach treats restless leg the same way he treats osteoporosis \u2014 he actually lists it twice, once as a "calcium deposit" problem and once as a neuropathy. His calcium-family target is calcium at 2,000 mg and magnesium at 1,000 mg a day, ideally from plant-derived colloidal minerals (he adds boron), taken with betaine hydrochloride (stomach acid) and pancreatic enzymes so the minerals actually absorb. He also flags restless legs as a sign of vitamin D deficiency, and vitamin D is what lets the body absorb and deposit that calcium \u2014 so getting sunshine and vitamin D matters alongside cutting the salt and soda.`,
+        verbatim: "Restless leg syndrome\n\nOther nutrients that are commonly found in the\nAmerican diet can aggravate the national calcium deficiency\ncrisis. Diets rich with an overabundance of fiber, salt and\nphosphates (soft drinks) result in an increased calcium \u201Ccost.\u201D\nIn effect, these foods increase the dietary requirements for\ncalcium. Urinary calcium loss increased from 96 mg per day\nto 148 mg per day when food was excessively salted.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "restless_leg_syndrome",
+          "calcium"
+        ],
+        tier1_link: {
+          essentials: [
+            "calcium"
+          ],
+          conditions: [
+            "restless_leg_syndrome"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000485",
+        subject: "cataracts",
+        also_about: [],
+        facet: "protocol",
+        question: "Can antioxidants prevent cataracts?",
+        answer_short: "Yes \u2014 Wallach says a daily flood of antioxidants both prevents and, in most cases, reverses cataracts; he puts the target at 20,000 to 25,000 ORAC points a day plus a specific antioxidant supplement stack led by selenium and vitamin E.",
+        answer: `Yes. In Wallach's view a cataract \u2014 a clouding of the eye's lens that blocks light from reaching the retina, and the most common cause of blindness in older people \u2014 is oxidative damage: free radicals attacking the cells and membranes of the lens. Antioxidants "quench" or neutralize those free radicals, so a steady daily supply is exactly what protects the lens. The Quote's number is his benchmark for how much: measured on the ORAC (Oxygen Radical Absorbance Capacity) scale, he says the optimal total antioxidant intake is 20,000 to 25,000 ORAC points a day, hit through antioxidant-rich food and drink \u2014 the same habit he sees in the world's longest-lived people.
+
+Wallach treats cataracts as an adult nutritional-deficiency disease that can be prevented and, in most cases, reversed \u2014 not a fixed part of aging. He ties it most directly to selenium, which he calls the body's most efficient antioxidant and which protects cell membranes from oxidative damage; he lists cataracts among the diseases of selenium deficiency in adults.
+
+Food and drink alone are the foundation, but he also lays out a concrete supplement protocol on top of the baseline vitamin-mineral program: vitamin E at 2,000 IU a day, vitamin C to bowel tolerance, B-1, B-2, B-3, B-5 and B-6 at 50 mg twice a day, inositol 150 mg a day, selenium 250 mcg a day, zinc 25 mg three times a day, bioflavonoids 300 mg, glycine 200 mg, l-glutamine 200 mg, l-arginine 300 mg a day, l-cysteine 400 mg a day, and glutathione 40 mg a day. If diabetes or low blood sugar (hypoglycemia) is part of the picture, he adds chromium and vanadium at 250 mcg three times a day. (An earlier protocol lists the same stack with vitamin E at 400 IU rather than 2,000 IU.)
+
+Just as important is what to cut. Wallach says heavy use of vegetable oils \u2014 salad dressings and cooking oils \u2014 alongside low selenium is a fast route to cataracts, and that heating or hydrogenating oils into "trans" fats turns cellular fat rancid with free-radical damage; so he tells people to avoid fried foods and margarine. He also flags the cadmium in cigarettes (about 23 mcg per pack, and a major part of secondhand smoke), which knocks out selenium and drives cataracts. And because gluten intolerance strips the small intestine and slashes selenium absorption, he says a gluten-free diet paired with the 90 essential nutrients reverses many cases.`,
+        verbatim: "Daily consumption of antioxidant rich food and drink is a universal feature of those\nliving in Blue Zones and in particular centenarians. These potent carbon compounds\nquench or neutralize free radicals that attack our cells, cell walls, mitochondria and\nphysiological processes and increase our risk of cardiovascular disease, cancer,\nAlzheimer\u2019s disease and other dementias, cataracts, diabetes and aggressively speed up\nthe process and damage of aging itself.\n\nA universally agreed upon method of predicting the antioxidant power and free radical\nneutralizing value of foods, drink and supplements is the Oxygen Radical Absorbance\nCapacity or ORAC value - based on current studies, we believe that the optimal total\ndaily intake of ORAC points to reach the age of 100 years is 20,000 to 25,000 per day.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "cataracts"
+        ],
+        tier1_link: {
+          conditions: [
+            "cataracts"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000487",
+        subject: "vitamin-b6",
+        also_about: [
+          "peripheral_neuropathy"
+        ],
+        facet: "warning",
+        question: "Can the tuberculosis drug isoniazid cause a vitamin B6 deficiency?",
+        answer_short: "Yes \u2014 Wallach says isoniazid works directly against vitamin B6 (pyridoxine), driving the body into a full B6 deficiency, with inflamed, tingling nerves as the giveaway sign.",
+        answer: "Yes. Wallach says that treating tuberculosis patients with isoniazid sets off an antagonistic reaction against pyridoxine (vitamin B6) function \u2014 the drug works directly against how B6 does its job, so even someone eating normally gets pushed into a true B6 deficiency and shows the classic deficiency picture.\n\nThat picture is led by peripheral neuritis \u2014 inflamed nerves that tingle, burn, or go numb, usually starting in the hands and feet. Alongside it Wallach lists depression, nausea and vomiting, seborrheic dermatitis (itchy, scaly skin), mouth and mucous-membrane lesions, unsteadiness (ataxia), oversensitivity to sound, extreme irritability, and, in severe cases, convulsions.\n\nThe fix is to put the B6 back. Wallach's everyday maintenance target for B6 is 50 mg a day, and he uses a short pharmacologic course of 200-500 mg a day for about 30 days when the body is depleted; for the nerve symptoms of a B6 shortage specifically (the numbness and tingling), his protocol runs B6 as high as 200-300 mg three times a day. He flags the isoniazid interaction itself but does not print a dose keyed only to it \u2014 these are his general B6 restoration numbers.",
+        verbatim: "Deficiency of B6 produces depression, nausea, vomiting,\nseborrheic dermatitis, mucus membrane lesions, peripheral\nneuritis, ataxia, hyperacusis, hyperirritability, altered mobility\nand alertness, abnormal head movements and convulsions.\n\nTreatment of tuberculosis patients with Isoniazid\nproduces an antagonistic reaction against pyridoxine function\nwhich then results in the classical symptoms of deficiency.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "peripheral_neuropathy",
+          "vitamin-b6"
+        ],
+        tier1_link: {
+          essentials: [
+            "vitamin-b6"
+          ],
+          conditions: [
+            "peripheral_neuropathy"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000492",
+        subject: "calcium",
+        also_about: [
+          "iron",
+          "magnesium"
+        ],
+        facet: "sources",
+        question: "How much calcium and iron are in juniper ash?",
+        answer_short: "Wallach says one teaspoon of juniper ash gives as much calcium as a cup of milk, plus 28% of the RDA for iron and 9% for magnesium.",
+        answer: "Wallach presents juniper ash \u2014 the culinary ash traditionally stirred into corn foods \u2014 as a surprisingly concentrated mineral supplement. He calls it a good source of dietary calcium and iron and a moderate source of magnesium. In concrete terms: one teaspoon of juniper ash delivers the same amount of calcium as a full cup of milk, supplies 28% of the RDA for iron, and provides nine percent of the RDA for magnesium. So a single teaspoon is his way of showing how much usable mineral this everyday ash actually packs.",
+        verbatim: "Juniper ash proves to be a good source of dietary calcium,\niron and a moderate source of magnesium. One teaspoon of\njuniper ash provides the equivalent calcium levels found in one\ncup of milk; it supplies 28% of the RDA for iron and nine percent\nof the RDA for magnesium.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "iron",
+          "magnesium",
+          "calcium"
+        ],
+        tier1_link: {
+          essentials: [
+            "calcium",
+            "iron",
+            "magnesium"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000493",
+        subject: "potassium",
+        also_about: [
+          "calcium",
+          "iron",
+          "copper",
+          "zinc"
+        ],
+        facet: "sources",
+        question: "What minerals are in wood ash?",
+        answer_short: "Wood ash is rich in potassium, calcium, iron, copper and zinc, plus trace minerals and rare earths.",
+        answer: 'Wallach says wood ash is far more than "potash" (a potassium source) \u2014 it is a full-spectrum mineral supplement. In general it tends to be rich in potassium, calcium, iron, copper, and zinc, along with trace minerals and rare earths, though the exact analysis varies from batch to batch. He notes that the three traditional "culinary" wood ashes were all good sources of essential minerals, with iron running highest in the ash from greasewood.',
+        verbatim: "The three sources of \u201Cculinary\u201D wood ashes were all\ngood sources of essential minerals. Iron concentration was\nhigher in the greasewood. Wood ash in general, although\nvariable in analysis, tends to be rich in potassium, calcium,\niron, copper, zinc, trace minerals and rare earths.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "calcium",
+          "iron",
+          "copper",
+          "zinc",
+          "potassium"
+        ],
+        tier1_link: {
+          essentials: [
+            "potassium",
+            "calcium",
+            "iron",
+            "copper",
+            "zinc"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000494",
+        subject: "alzheimers",
+        also_about: [],
+        facet: "stance",
+        question: "Does drinking wine lower Alzheimer's risk?",
+        answer_short: "Wallach relays studies showing moderate wine drinkers have a lower Alzheimer's rate, but he is reporting an association, not telling you to drink \u2014 his own memory-loss protocol actually says avoid alcohol.",
+        answer: `Wallach is passing along what the research shows, not writing you a prescription. He notes that several population studies find people who drink wine in moderation tend to have a lower rate of Alzheimer's disease. That is an observed association \u2014 a pattern spotted in large groups of people \u2014 and Wallach relays it as such.
+
+But read it alongside the rest of his Alzheimer's work and the picture is more cautious than "pour a glass to protect your brain." In his own hands-on treatment for memory loss and dementia, Wallach explicitly lists avoiding alcohol, right next to avoiding sugar and offending foods. So he does not turn the wine studies into a recommendation to drink, and he certainly does not count alcohol as one of his tools.
+
+Where Wallach actually puts the prevention lever is diet and nutrients, not wine. He views Alzheimer's largely as a cholesterol-and-fat deficiency made worse by statin drugs (he points to the FDA's own warning that statins raise the rate of memory loss). His prevention approach is a special diet plus nutrient supplementation \u2014 he cites a ten-year Johns Hopkins double-blind study on nearly 5,000 people over 65, published in 2004, showing that combination can cut Alzheimer's risk by 78%. That, not a glass of wine, is what he actually leans on.`,
+        verbatim: "Several epidemiological studies indicate that the\nmoderate consumption of wine is associated with a lower\nincidence of Alzheimer\u2019s disease.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "alzheimers"
+        ],
+        tier1_link: {
+          conditions: [
+            "alzheimers"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000495",
+        subject: "vitamin-c",
+        also_about: [
+          "cancer",
+          "vitamin-e",
+          "flavonoids"
+        ],
+        facet: "mechanism",
+        question: "How do green tea's antioxidants compare to vitamin C and E?",
+        answer_short: "Far stronger: Wallach says green tea's catechins are about 100 times more potent than vitamin C and 25 times more potent than vitamin E at neutralizing free radicals.",
+        answer: "The antioxidants that do the heavy lifting in green tea are its catechins, and Wallach ranks them well above the two antioxidant vitamins most people know. He says the catechins are roughly 100 times more potent than vitamin C and 25 times more potent than vitamin E at neutralizing free radicals \u2014 the unstable molecules that damage cells. That neutralizing power is why he credits green tea's catechins with significant anti-cancer activity, saying they can cut the risk of cancer by as much as 90%.\n\nWorth knowing: green tea isn't only catechins. Wallach notes the leaf also carries xanthines, caffeine, theobromine, tannins, polyphenols, flavonoids, oils and fats, and some vitamin C of its own \u2014 but it's the catechins he singles out as the standout antioxidants.\n\nSo the comparison isn't that vitamin C and E are weak; Wallach treats them as real antioxidants elsewhere. It's that, dose for dose against free radicals, he puts green tea's catechins in a different league.",
+        verbatim: "Green tea contains xanthines, caffeine, theobromine,\ntannins, polyphenols, catechins, flavonoids, oils and fats and\nvitamin C. The catechins in green tea are the antioxidants\ncredited with significant anti-cancer activity (can reduce risk\nof cancer by as much as 90%). Catechins are 100 times more\npotent than vitamin C and 25 times more potent than vitamin\nE in neutralizing free",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "cancer",
+          "vitamin-e",
+          "flavonoids",
+          "vitamin-c"
+        ],
+        tier1_link: {
+          essentials: [
+            "vitamin-c",
+            "vitamin-e",
+            "flavonoids"
+          ],
+          conditions: [
+            "cancer"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000496",
+        subject: "diabetes",
+        also_about: [
+          "cardiovascular_disease",
+          "rheumatoid_arthritis"
+        ],
+        facet: "mechanism",
+        question: "Is drinking coffee good for your health?",
+        answer_short: "Coffee gets a cautious thumbs-up from Wallach: he cites a 2006 study crediting its antioxidants with lowering diabetes, heart-disease and rheumatoid-arthritis risk, and its caffeine with easing post-workout soreness and helping fat metabolism.",
+        answer: "Wallach's take here is a cautious thumbs-up. He points to a single study released in 2006 that credited coffee's high antioxidant content \u2014 plant compounds he names as polyphenols, catechins and epicatechins \u2014 with lowering the risk of three diseases: diabetes, heart disease and rheumatoid arthritis. The same study, he says, tied coffee's caffeine specifically to relieving post-workout muscle soreness and to helping the body burn fat more efficiently. So in this passage he treats coffee as a genuinely antioxidant-rich food rather than a vice \u2014 much the way he speaks well of other high-antioxidant foods, like chocolate, which he credits with heart-friendly flavonoids.\n\nOne honest caveat, so you don't read too much into it: coffee is not Wallach's actual remedy for any of those three conditions. In his larger framework diabetes is fundamentally a chromium and vanadium shortage \u2014 his diabetes program opens with those two minerals at 250 micrograms a day \u2014 rheumatoid arthritis is driven by a chronic Mycoplasma infection on top of nutritional gaps, and heart disease likewise traces back to missing minerals. Coffee's antioxidants are, at most, a modest helper, not the fix. He's reporting a favorable study on coffee here, not telling you to drink coffee in place of correcting the underlying deficiencies.",
+        verbatim: "In 2006 a significant study was released that showed\nthe high antioxidant content of coffee (i.e. polyphenols,\ncatechins, epicatechins, etc.) could reduce the risk of diabetes,\nheart disease and rheumatoid arthritis, and more specifically\nthe caffeine in coffee was linked to relieving post workout\npain and facilitating healthy fat metabolism.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "cardiovascular_disease",
+          "rheumatoid_arthritis",
+          "diabetes"
+        ],
+        tier1_link: {
+          conditions: [
+            "diabetes",
+            "cardiovascular_disease",
+            "rheumatoid_arthritis"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000497",
+        subject: "cancer",
+        also_about: [
+          "stomach_cancer"
+        ],
+        facet: "stance",
+        question: "Do people in the Nicoya region of Costa Rica get less cancer?",
+        answer_short: "Yes \u2014 on Costa Rica's Nicoya Peninsula, people die of cancer, and of stomach cancer especially, at a rate 23% lower than the rest of the country.",
+        answer: "Yes. In Immortality, Wallach points to the Nicoya Peninsula \u2014 an 80-mile stretch in the northwest of Costa Rica that he counts among the world's longevity hotspots \u2014 as a region that stands apart from everywhere else in the country. When you look at life expectancy and death rates there, one thing jumps out: its people die of cancer, and of stomach cancer in particular, at a rate 23% lower than in the rest of Costa Rica.\n\nHe raises it as real-world evidence for his running theme \u2014 that cancer risk tracks with how a population lives and is nourished, not with fate or bad luck. The Quote itself only reports the mortality gap; Wallach does not, in this passage, spell out what specifically about Nicoya drives the lower rate.",
+        verbatim: "An examination of the life expectancy and mortality\nrates showed that one region in the northwest of the country,\nincluding the 80 mile long Nicoya Peninsula that was\nsignificantly different from any other (in that area, people die\nof cancer - particularly stomach cancer - at a rate 23% lower\nthan in the rest of Costa Rica).",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "stomach_cancer",
+          "cancer"
+        ],
+        tier1_link: {
+          conditions: [
+            "cancer",
+            "stomach_cancer"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000498",
+        subject: "constipation",
+        also_about: [],
+        facet: "stance",
+        question: "Does white bread cause constipation?",
+        answer_short: "Yes \u2014 Wallach cites the teaching that refined white-flour bread, stripped of the nutritive elements whole wheat keeps, is a frequent cause of constipation.",
+        answer: `Yes. Wallach quotes the old baking teaching that superfine white flour makes bread that is "neither healthful nor economical" \u2014 because milling the wheat down to fine white flour strips out the nutritive elements that whole-wheat bread keeps, and that stripped-down bread is "a frequent cause of constipation and other unhealthful conditions." In plain terms: the refining that makes flour white also takes out the roughage and nutrients your gut needs to keep things moving, so white bread backs you up.
+
+If you are constipated \u2014 Wallach's line is that anything fewer than two to three bowel movements a day counts \u2014 here is what he actually does about it. Simple cases very often clear up with walking and eight glasses of water a day. For more, he adds fiber/protein at one tablespoon in eight ounces of juice twice a day, eight to ten glasses of water daily, four to six cups of vegetables a day, and thirty minutes of exercise. He also flags food allergies as a very frequent trigger \u2014 milk and cheese are common culprits \u2014 and suggests the "pulse test" to find out if a food is the cause. When more push is needed he reaches for herbal laxatives such as castor oil, cascara sagrada, alder buckthorn, senna, psyllium, and flaxseed.
+
+So the fix runs in the same direction as the problem: swap the stripped white bread for whole, fiber-rich food, drink your water, and move your body.`,
+        verbatim: "\u201CFor use in bread making, the superfine flour is not\nthe best. Its use is neither healthful nor economical. Fine-flour\nbread is lacking nutritive elements to be found in bread made\nfrom the whole wheat. It is a frequent cause of constipation\nand other unhealthful conditions.\u201D",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "constipation"
+        ],
+        tier1_link: {
+          conditions: [
+            "constipation"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000500",
+        subject: "coronary_artery_disease",
+        also_about: [
+          "cancer",
+          "inflammation"
+        ],
+        facet: "stance",
+        question: "Is moderate red wine better than not drinking at all?",
+        answer_short: 'Yes \u2014 Wallach says moderate red wine beats total abstinence, crediting it with less vascular inflammation, lower heart-disease and cancer risk, and longer life. The word doing the work is "moderate," not "wine."',
+        answer: `Yes. Wallach's position is that drinking red wine in moderation is better for you than not drinking at all \u2014 he points to modern research showing the moderate drinker comes out ahead of the total abstainer. His reasons: red wine calms inflammation in the blood vessels (vascular inflammation), lowers the risk of coronary heart disease and cancer and a whole range of degenerative diseases, and \u2014 in study after study across yeast, worms, flies, fish, and small mammals right up to primates \u2014 it lengthens lifespan.
+
+Read the whole sentence, though, because one word carries it: moderate. Wallach is not blessing heavy drinking; he is saying a modest, regular amount of red wine outperforms both abstinence and excess. That fits the rest of his thinking \u2014 even in his cancer-prevention program, where he is otherwise strict, the rule he gives is "alcohol only in moderation." So the honest takeaway is that a glass of red wine is something he'd rather see you have than nothing, provided you keep it moderate.`,
+        verbatim: "Modernresearchreveals that themoderateconsumption\nof red wine is preferable to complete abstenence. Red wine\nis known to reduce vascular inflammation and the risk of\ncoronary heart disease and cancer, a plethora of degenerative\ndiseases and to significantly increase longevity in yeast,\nworms, flies, fish, small mammalian vertebrates (including\nprimates) and fish.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "cancer",
+          "inflammation",
+          "coronary_artery_disease"
+        ],
+        tier1_link: {
+          conditions: [
+            "coronary_artery_disease",
+            "cancer",
+            "inflammation"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000502",
+        subject: "flavonoids",
+        also_about: [
+          "cardiovascular_disease"
+        ],
+        facet: "mechanism",
+        question: "Is the fat in chocolate bad for your heart?",
+        answer_short: "No \u2014 the main fat in chocolate is stearic acid, which Wallach says does not harm your heart, and chocolate is actually rich in heart-friendly flavonoids.",
+        answer: 'No \u2014 not according to Wallach. He points to a Harvard School of Public Health team that reviewed 136 studies (from lab tests to human research) on chocolate, cocoa, and heart health. Their conclusion: the primary fat in chocolate, stearic acid, does not have adverse effects on your blood vessels, your cholesterol, or your overall cardiovascular health. The reason is that your body metabolizes stearic acid differently than it handles other saturated fats, so it does not behave the way people assume "saturated fat" does.\n\nThe other half of the story is what chocolate carries alongside that fat. Wallach notes the same Harvard review found chocolate to be a major source of flavonoids \u2014 specifically epicatechins, catechins, and procyanidins. That matters because flavonoids are exactly the plant compounds Wallach credits with lowering cardiovascular risk: he says adequate flavonoid intake helps reduce blood pressure, inhibits clotting and arterial plaque, and improves the function of the blood vessel lining and the tiny capillaries. So in his view the fat in chocolate is a non-issue, and the flavonoids in it are a point in its favor.',
+        verbatim: "A team of researchers from the Harvard School of\nPublic Health reviewed 136 studies on the relationship of\nchocolate and cocoa to cardiovascular health. The study\nincluded research ranging from lab tests to human studies.\nThe research team concluded that chocolate is a major source\nof flavanoids (epicatechins, catechins and procyanidins) and\ndetermined that \u201Cthe primary fat in chocolate (stearic acid)\ndid not have adverse effects on blood vessels, cholesterol\nor overall cardiovascular health\u201D because it is metabolized\ndifferently than other types of saturated fats.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "cardiovascular_disease",
+          "flavonoids"
+        ],
+        tier1_link: {
+          essentials: [
+            "flavonoids"
+          ],
+          conditions: [
+            "cardiovascular_disease"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000508",
+        subject: "coronary_artery_disease",
+        also_about: [
+          "cancer",
+          "diabetes"
+        ],
+        facet: "mechanism",
+        question: "Why do the Yao people of Bama have so little heart disease, cancer, and diabetes?",
+        answer_short: "Wallach credits their mineral-rich land \u2014 terraces watered by the mineral-laden Panyang River and gardens fed with wood-ash compost \u2014 because he counts heart disease, cancer, and diabetes as mineral-deficiency diseases the Yao's food simply keeps at bay.",
+        answer: "Wallach's answer is about minerals in the ground, not luck or good genes. The Yao of Bama irrigate their terraced fields with the mineral-laden waters of the Panyang River and fertilize their gardens with compost made from kitchen waste, wood ash, plant debris, and animal manure. The result is soil \u2014 and every crop grown in it \u2014 that stays rich in trace minerals. So the people eating that food are effectively mineral-replete for a lifetime.\n\nWhy that specifically protects against these three diseases ties back to Wallach's core thesis: he classifies all three as mineral-deficiency diseases at root. He calls cancer, in essence, a selenium-deficiency disease; he says diabetes is really a deficiency of chromium, vanadium, and zinc; and he lists coronary artery disease among the consequences of chromium deficiency. It's the same idea in reverse \u2014 where the minerals are missing, these diseases appear; where the minerals are abundant, as in the Yao's food and water, a population largely doesn't develop them. Wallach holds the Yao up as a living demonstration of that principle.",
+        verbatim: "The Yao people of Bama irrigate their terraces with the\nmineral laden waters of the Panyang River, and they fertilize\ntheir gardens with compost consisting of kitchen waste, wood\nash, plant debris and animal manure.\n\nThe Yao people have an extremely low incidence of\nchronic disease such as coronary artery disease, cancer and\ndiabetes.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "cancer",
+          "diabetes",
+          "coronary_artery_disease"
+        ],
+        tier1_link: {
+          conditions: [
+            "coronary_artery_disease",
+            "cancer",
+            "diabetes"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000515",
+        subject: "diabetes",
+        also_about: [
+          "obesity"
+        ],
+        facet: "stance",
+        question: "Why do Arizona Pima Indians have so much diabetes and obesity?",
+        answer_short: "Because they took up the American processed diet in the 1940s. The same-gene Pima across the Mexican border, still farming and returning wood ash to their soil, barely get diabetes \u2014 so Wallach says it tracks lost minerals, not genes.",
+        answer: `Wallach uses the Pima Indians as his knockout argument against the idea that diabetes and obesity are "in the genes." The Pima band was split by the Arizona-Mexico border, so both sides come from the exact same gene pool. Yet the outcomes are worlds apart: the Mexican-side Pima, who still live as subsistence farmers \u2014 cooking and heating with wood and returning the mineral-rich wood ash to their gardens and corn tortillas \u2014 have almost no type II diabetes and only about a 10% obesity rate. The Arizona Pima, who adopted the American lifestyle in the 1940s, carry a 22% diabetes rate and 70% obesity. Same genes, opposite health \u2014 so in Wallach's framework the cause cannot be genetic. It is the diet, and the minerals lost along with it.
+
+In his system both diseases are really mineral-deficiency diseases. He calls diabetes fundamentally a shortage of chromium and vanadium \u2014 the minerals that let insulin control blood sugar \u2014 and warns that refined sugar and white flour actually flush those minerals out through the urine, so the modern diet both starves you of them and wastes what little you have. Obesity he calls "not a disease of excess" but a mineral-deficiency disease too: a body starved of trace minerals drives cravings, binge eating, the "munchies," and pica (eating non-food items), so people overeat chasing minerals that simply are not in processed food. He nicknames this the "Feedlot Syndrome" \u2014 put people on the mineral-depleted American diet, strip away their traditional wood-ash and garden minerals, and they gain weight and sicken regardless of ancestry. The Mexican Pima kept those minerals in their soil and their food; the Arizona Pima traded them for the grocery-store diet \u2014 and that, Wallach says, not their DNA, is what made the difference.`,
+        verbatim: "The Pima band on both sides of the border are from\nthe identical genetic pool; yet the Pima Indians on the Mexican\nside of the border have no almost no type II diabetes and have\nonly a ten percent obesity rate compared with the rate of 22%\ndiabetes and the 70% obesity in the Arizona Pima!",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "obesity",
+          "diabetes"
+        ],
+        tier1_link: {
+          conditions: [
+            "diabetes",
+            "obesity"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000522",
+        subject: "nystagmus",
+        also_about: [
+          "vitamin-b1"
+        ],
+        facet: "physiology",
+        question: "Can a vitamin B1 deficiency cause nystagmus?",
+        answer_short: "Yes \u2014 Wallach lists nystagmus (rhythmic, involuntary side-to-side eye movements) as a sign of thiamine (vitamin B-1) deficiency, part of the beriberi family of deficiency diseases.",
+        answer: "Yes. In Immortality, Wallach names nystagmus \u2014 rhythmic, involuntary side-to-side flicking of the eyes \u2014 as one of the signs of a thiamine (vitamin B-1) deficiency. He lists it alongside three other nervous-system signs that tend to show up together: memory loss that can look like early Alzheimer's, disorientation, and ataxia (a staggering, unsteady gait). In his framework this cluster is not brain damage or plain aging but the neurological face of a missing nutrient \u2014 Wallach places thiamine deficiency in the beriberi family, whose toll he says reaches from the heart to the mind (congestive heart failure, memory loss, mental confusion, weakness).\n\nBecause he treats these as deficiency signs rather than permanent damage, Wallach holds that thiamine-deficiency disorders can be reversed by restoring the nutrient: cut sugar, fried foods, processed meats, added oils and gluten from the diet, and follow a supplement program that supplies all 90 essential nutrients with a special emphasis on thiamine.",
+        verbatim: "memory (looks like early Alzheimer\u2019s disease), disorientation,\nnystagmus (rhythmic side to side movements of the eyes) and\nataxia (a type of staggering gait).",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "vitamin-b1",
+          "nystagmus"
+        ],
+        tier1_link: {
+          conditions: [
+            "nystagmus"
+          ]
+        }
       },
       {
         id: "WAL-CLM-LETS-000001",
@@ -146231,6 +147263,86 @@ deaths, blood clots, sterility`,
         }
       },
       {
+        id: "WAL-CLM-LETS-000522",
+        subject: "osteoporosis",
+        also_about: [
+          "menopause"
+        ],
+        facet: "mechanism",
+        question: "Is osteoporosis a common result of menopause?",
+        answer_short: "Yes \u2014 Wallach says osteoporosis is a common result of menopause that isn't managed properly, but he sees it as a mineral-and-absorption failure, not a hormone problem, and calls it easy to prevent.",
+        answer: `Yes. Wallach says osteoporosis is a common result of menopause when it isn't managed properly. But he means something specific by "improperly managed," and it isn't a shortage of estrogen. In his view osteoporosis is not a hormone-deficiency disease at all \u2014 it's a mineral-and-absorption failure. Women are especially prone to it because they already run more depleted of minerals than men, from the ongoing losses of menstrual periods, pregnancies, and breastfeeding; when dietary calcium falls short, the body pulls calcium out of the bones to keep blood levels up, thinning the skeleton until it fractures.
+
+That is why Wallach rejects the standard menopause answer of estrogen (and fluoride) for bone loss. He says estrogen may be contraindicated because it is known to cause breast and uterine cancer, and that it treats a symptom while missing the real deficiency. He frames menopause itself as a normal transition to "support," not a disease to treat: as the ovaries wind down, the adrenals and liver take over estrogen production.
+
+To actually keep the bone, Wallach says osteoporosis is easy to prevent and cure with proper supplementation: calcium and magnesium at 2,000 mg and 1,000 mg per day (or more for the first 30 days); betaine hydrochloride and pancreatic enzymes at 75-200 mg three times a day, taken 15 minutes before meals, to restore the stomach acid needed to absorb minerals; and plant-derived colloidal minerals that include calcium, magnesium, and boron. He also recommends a pulse test to catch hidden food allergies that can cause a celiac-type malabsorption and keep those minerals from ever reaching the bone.`,
+        verbatim: "Osteoporosis is a common\nresult of improperly managed menopause.",
+        page: null,
+        book_id: "lets-play-doctor",
+        topics: [
+          "menopause",
+          "osteoporosis"
+        ],
+        tier1_link: {
+          conditions: [
+            "osteoporosis",
+            "menopause"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-LETS-000523",
+        subject: "allergies",
+        also_about: [
+          "food_allergy"
+        ],
+        facet: "basics",
+        question: "What are the most common food allergies?",
+        answer_short: "Cow's milk and wheat are the two most common hidden food allergens \u2014 with soy the next usual suspect.",
+        answer: `Wallach says the two foods most likely to be behind a hidden food allergy are cow's milk and wheat \u2014 they are the ones that "tend to be the offenders." In his Dead Doctors Don't Lie protocol he widens that short list slightly: a simple pulse test will usually reveal cow's milk, wheat, or soy products to be the culprits. He also singles out dairy as capable of setting off explosive, sociopathic behavior in some people, so it is worth taking seriously.
+
+Rather than naming a fixed list and stopping there, Wallach's point is that you find your own offenders with the Coca pulse test \u2014 eat a single suspect food, then watch the time and your body for a reaction. That matters because he ties food allergies to celiac-type changes in the gut lining that block absorption of essential nutrients, so pinning down and dropping your trigger foods is the first move, not a minor one.`,
+        verbatim: "Bruxism can be the result of food allergies (use\nthe pulse test to find out - milk and wheat tend\nto be the offenders)",
+        page: null,
+        book_id: "lets-play-doctor",
+        topics: [
+          "food_allergy",
+          "allergies"
+        ],
+        tier1_link: {
+          conditions: [
+            "allergies",
+            "food_allergy"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-LETS-000524",
+        subject: "oxygen",
+        also_about: [
+          "asthma"
+        ],
+        facet: "protocol",
+        question: "Should I keep emergency oxygen on hand for asthma attacks?",
+        answer_short: "Yes \u2014 Wallach recommends keeping a small home oxygen tank (about a 30-minute supply) as emergency rescue for a severe asthma attack.",
+        answer: "Yes. Wallach recommends every household keep a small home oxygen tank \u2014 about a 30-minute supply \u2014 on hand, because oxygen given fast can save a life in any emergency where breathing stops or is choked off: a severe asthma attack, but also drowning, electric shock, or heart attack. He treats oxygen as the single most critical element for staying alive \u2014 you can last about 30 days without food and a few days without water, but only about four minutes without oxygen \u2014 so the tank is meant as an emergency bridge to carry a person through the crisis until help arrives.\n\nOne honest caveat: this is a rescue measure, not a cure. The tank handles the acute attack; it does nothing about why the asthma keeps happening. For that, Wallach treats asthma as a malabsorption disease driven by deficiencies of essential fatty acids, manganese, and magnesium \u2014 so his actual fix is nutritional, and the oxygen tank is just what you reach for in the moment someone can't breathe.",
+        verbatim: "Oxygen in the form of a 30 minute\nsupply (home tank) can save your, or another\nfamily member's or neighbor's life in case of an\nelectric shock (stop breathing), drowning,\nasthma or heart attack.",
+        page: null,
+        book_id: "lets-play-doctor",
+        topics: [
+          "asthma",
+          "oxygen"
+        ],
+        tier1_link: {
+          essentials: [
+            "oxygen"
+          ],
+          conditions: [
+            "asthma"
+          ]
+        }
+      },
+      {
         id: "WAL-CLM-RARE-000001",
         subject: "minerals",
         also_about: [
@@ -155531,6 +156643,50 @@ Goiter`,
           "supplements",
           "nutrition"
         ]
+      },
+      {
+        id: "WAL-CLM-RARE-000404",
+        subject: "peptic_ulcers",
+        also_about: [],
+        facet: "protocol",
+        question: "What drug combination did the NIH confirm can cure an H. pylori ulcer?",
+        answer_short: "The NIH panel named a combination of bismuth, tetracycline, and metronidazole \u2014 a cure that also prevents recurrence in 90% of cases.",
+        answer: "Wallach cites a National Institutes of Health panel that confirmed peptic ulcers are caused by a bacterium, Helicobacter pylori, rather than by stress as doctors long assumed. That same NIH panel stated the ulcer can be cured with a combination of three drugs: bismuth, tetracycline, and metronidazole. Wallach adds that this drug therapy prevents a recurrence of the ulcer in 90% of cases.\n\nThis lines up with how Wallach treats ulcers elsewhere. He calls tetracycline plus an anti-ulcer medication and bismuth subsalicylate (the active ingredient in Pepto-Bismol) the treatment of choice, run for ten days to four weeks, and says antibiotics with bismuth taken daily for that stretch carry a 98% chance of a cure.",
+        verbatim: "ULCER CAUSE: The National Institutes of Health\nhas confirmed that peptic ulcers can be caused by a\nbacterium and drug therapy can prevent a recurrence in\n90% of cases. An NIH panel stated Wednesday that\nHelicobacter pylori plays a significant role in causing peptic\nulcer, which can be cured with a combination of bismuth,\ntetracycline and metronidazole.",
+        page: null,
+        book_id: "rare-earths",
+        topics: [
+          "peptic_ulcers"
+        ],
+        tier1_link: {
+          conditions: [
+            "peptic_ulcers"
+          ]
+        }
+      },
+      {
+        id: "WAL-CLM-RARE-000405",
+        subject: "allergies",
+        also_about: [
+          "food_allergy"
+        ],
+        facet: "mechanism",
+        question: "Can food allergies affect a child's behavior?",
+        answer_short: "Yes -- Wallach says food allergies, dairy especially, can set off explosive, even sociopathic behavior in a child, both directly and by starving the gut of the nutrients a growing brain needs.",
+        answer: "Yes, and strongly. Wallach says a child's aggression can trace straight back to what they eat: certain food allergies, dairy above all, can initiate explosive, sociopathic behavior, and he adds that this rides on top of mineral deficiencies made worse by a high-sugar diet.\n\nHe describes it working two ways. The first is direct -- the offending food triggers the behavior, often within minutes to a few hours of eating it. The second is a vicious cycle that is more insidious: food allergies cause celiac-type changes in the lining of the intestine, that damage blocks absorption of the minerals, vitamins and essential fatty acids the body and nervous system need, and the resulting malnutrition then drives even more behavioral problems. So a child can be eating and still be starved of the raw materials a growing brain runs on.\n\nTo find the trigger at home, Wallach uses the Coca pulse test together with a diet diary -- eat a single food, note the time, and write down any behavior change that follows; hyperactivity and other emotional symptoms show up within minutes to a few hours. The usual culprits that turn up are cow's milk, wheat and soy, and dairy is the one he flags hardest for explosive behavior. Step one is simply removing those foods (rotation diets and strict avoidance).\n\nAlongside avoidance, Wallach's food-allergy program aims to repair the gut and refill what was lost. It uses hypoallergenic supplements only (no corn, wheat, soy, egg or milk) plus: vitamin C to bowel tolerance; vitamin A 300,000 IU a day as beta carotene; bioflavonoids 150-300 mg a day; zinc 50 mg three times a day; essential fatty acids 5 grams three times a day; selenium 200 mcg three times a day; chromium 50-200 mcg three times a day; and betaine hydrochloride with pancreatic (digestive) enzymes, 75-500 mg three times a day before meals, so food is broken down before it can provoke a reaction. He warns that healing the intestinal injury takes up to 90 days, so patience is part of the treatment.\n\nOne note on doses: these targets are Wallach's for food allergies in general -- he gives no separate child-sized numbers -- so for a young child this is a plan to run with a knowledgeable practitioner rather than to guess at.",
+        verbatim: "mineral deficiencies aggravated by high\nsugar diets (it is also known that certain\nfood allergies, especially dairy can initiate\nexplosive sociopathic behavior).",
+        page: null,
+        book_id: "rare-earths",
+        topics: [
+          "food_allergy",
+          "allergies"
+        ],
+        tier1_link: {
+          conditions: [
+            "allergies",
+            "food_allergy"
+          ]
+        }
       }
     ]
   };
@@ -193446,7 +194602,7 @@ Render consistency fix (this commit):
 - Verified: chronic_fatigue condition page renders 13 enriched question cards (IN THE BODY / HOW IT WORKS / WHAT TO DO), 0 raw protocol blocks; 92/92 invariants; render_probe_search, _browse, _routing all exit 0.
 
 Remaining (chronicle/next-chunk.md): 22 DDDL dose claims (contradiction audit) + 162 unverified-book claims (frontface vision verification).
-` }];
+` }, { id: "lg_mt02j9ix_80m13g", ts: "2026-08-19T07:29:15.897499-05:00", surface: "search", kind: "milestone", summary: "The 41 approved Engine-2 ruled claims are live in Ask Wallach with in-depth 'full answers' that explain each quote in plain English and carry Wallach's actual solution drawn from the whole corpus \u2014 a new answer_full search field; the sealed corpus is untouched.", detail: "The 41 ruled claims Luneth approved this session now front-face in Ask Wallach, and their 'full answer' is finally the real thing: not a one-line echo of the cryptic quote, but a plain-English explanation of what that quote means PLUS the actual Wallach solution \u2014 the doses, the foods, what to cut \u2014 gathered from across the whole corpus. And judged per claim: a 'can cataracts be reversed?' gets the full protocol; a 'what minerals are in wood ash?' stays two clean sentences. No padding either direction.\n\nTECH \u2014 chosen architecture (Option B): a new answer_full field lives beside answer_short in the hand-authored, unsealed eden/corpus/search-enrichment.json; the sealed atomic claim_text and the operational Full Record are UNTOUCHED (no re-seal, kv stays 476). search_index_derive.py sources the shipped search `answer` from answer_full when present. 41 enrichments merged; 2 catalog conditions (coronary_artery_disease, nystagmus) registered as search-entities. EPIGEN-000472 re-routed calcium\u2192insomnia to clear a no_duplicate_claims twin with 061 (its span \u2282 061's calcium-table span). CSS white-space:pre-line on the three answer containers renders answer_full's paragraph breaks. Provenance: 41-agent per-claim synthesis over per-claim corpus dossiers, then 41-agent adversarial \xA700.A verification (33 clean; 8 fixed \u2014 2 factual [RARE-404 duration blend, HELLS-097 '1958' attribution] + 6 decorative overreaches], plus hand spot-checks confirming the scariest specifics (097 since-1958/Walter Mertz, 496 Mycoplasma/250mcg diabetes, 494 Johns Hopkins 2004 78% study) all trace to sealed claims.\n\nVERIFY \u2014 board 92/92, 0 new reds; render_probe_search PASS (0 page errors); answer_full confirmed flowing into the index. DEFERRED \u2014 no styled screenshot possible in-session (preview snapshot / chrome ext unresponsive); the 28 needs_new_topic (curation) + 92 unsealed ruled claims remain. Next: front-face the 28 new-topic claims to the same answer_full bar." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

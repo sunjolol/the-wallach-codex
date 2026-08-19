@@ -1,40 +1,40 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-**NEXT TASK (Luneth’s call): ENRICH the 69 vision-verified unverified-book claims so they FRONT-FACE.**
-Everything is staged. Board 92/92 green, corpus **kv=476**. Campaign: the 452 ruled claims → Search.
+**Campaign: the 452 ruled claims → Search.** Board 92/92 green, corpus **kv=476** (no re-seal — Option B).
 
-## ▶ START HERE — the enrichment worklist is committed
-`chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json` — the 69 claims to front-face, each with:
-`{id, book, kind, essentials, conditions, verbatim, recovered_question, recovered_answer_short,
-proposed_subject, needs_new_topic, was_corrected}`.
-- **69 verified** (already in `verified.json::claims_verified`, so the `enriched_book_is_verified` gate
-  will ALLOW their enrichment).
-- **61 questions recovered** from the ruling dashboard (8 need authoring — `recovered_question:null`).
-- **41 subject-resolvable** (`proposed_subject` = a canon essential or registered condition — enrich
-  these like the dose claims: subject/facet/question/answer_short/also_about/topics → merge
-  search-enrichment → `search_index_derive` → `build_embeds` → `build.mjs`).
-- **28 `needs_new_topic:true`** — no resolving subject → **NEW topic entities**, which is Luneth’s
-  curation (the “53 new topics”). Author topic names/structure WITH him, register in search-entities
-  (catalog_seal), then enrich.
-- **Footguns** (proven this session): non-resolving subjects (lecithin/dietary-fiber route on the
-  condition), keep-both dups (same-span/same-subject), the dose gates. See
-  [[condition-dose-claim-sealing-gotchas]].
+## ✅ DONE — Engine 2: the 41 resolvable ruled claims are LIVE in Ask Wallach
+Front-faced with a new **`answer_full`** search field. Each claim's search "full answer" now explains its
+quote in plain English AND carries Wallach's actual solution (doses / foods / what-to-avoid) drawn from
+across the whole corpus — per-claim depth: rich for "how do I fix it", concise for plain facts. The sealed
+atomic claim_text is UNTOUCHED (Option B); answer_full sits beside answer_short in
+`eden/corpus/search-enrichment.json`, and `search_index_derive.py` sources the search `answer` from it.
+- Provenance: 41-agent per-claim synthesis over corpus dossiers → 41-agent adversarial §00.A verify (33
+  clean, 8 fixed) → hand spot-checks. Every dose/number/study traces to a sealed claim.
+- 2 new search-entities registered: `coronary_artery_disease`, `nystagmus`.
+- EPIGEN-000472 routed to subject=insomnia (was calcium) to clear a no_duplicate_claims twin with 061.
+- Render: `white-space:pre-line` on the answer containers shows the paragraph breaks.
+- ⚠ VISUAL UNCONFIRMED: no styled screenshot was possible in-session. Eyeball the rich answers in the real
+  app — search "can cataracts be reversed", "will exercise alone make me lose weight" — to confirm the
+  paragraph render + long-answer layout look right; tune the pre-line spacing if needed.
 
-## ✅ DONE THIS CAMPAIGN
-- **Engine 1 — DDDL dose audit: LIVE.** 24 dose claims (`582..605`), search 2402→2426, 19 pills, 2
-  conflicts favor-newest, 3 keep-both. `chronicle/dose-audit-2026-08-18/`.
-- **Engine 2 — vision sweep + corrections + verify.** All 70 page-read (12 agents + 2 hand). 14 source
-  corrections applied → resnap → sync_drafts → re-seal (kv 475→476; dropped text restored, B6 subscript,
-  etc.; kept correct “Isoniazid” — LOG as a ratified divergence in
-  `eden/tools/ratified-divergences.json`). 69 moved into `claims_verified` (642→711).
-  RARE-000403 UNVERIFIABLE (deficiency list not in the PDF text layer; needs a targeted manual locate).
-  Findings: `chronicle/frontface-ocr/ruled-2026-08-18/` (VISION-SWEEP-FINDINGS.md, sweep-corrections.json,
-  enrich-worklist.json, vision_findings.json).
+## ▶ NEXT TASK — the 28 needs_new_topic ruled claims (Luneth's curation)
+`chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json` — the `needs_new_topic:true` claims
+(Hunza / Glacial Milk, resveratrol, Blue Zones, culinary ashes, longevity, Li-Ching-Yun, etc.). No
+resolving subject → **NEW topic entities** = your curation. Author topic names/structure WITH him, register
+in search-entities, then enrich to the SAME rich-answer_full bar (per-claim synthesis + §00.A verify). 8 of
+them also need a question authored (`recovered_question:null`).
 
-## AFTER THE 69
+## AFTER THAT
 The **92 UNSEALED** unverified ruled claims: recover from `temporary/claim-ruling-dashboard.html`
-([[ruling-dashboard-is-recovery-source]]), seal, vision-verify, enrich — same pipeline.
+([[ruling-dashboard-is-recovery-source]]), seal, vision-verify, enrich — same pipeline, same answer_full bar.
+
+## THE answer_full BAR (set this session — hold it)
+A search "full answer" is NOT a one-line paraphrase of the quote. It FULLY explains the quote in plain
+English and draws the actual Wallach solution from across the corpus — but PER-CLAIM: never pad a simple
+factual/historical claim to look thorough. Every dose/number/study must trace to a sealed claim (§00.A).
+answer_short stays the crisp lead-with-the-answer TL;DR. See [[answer-short-crisp-distinct-from-full]],
+[[mining-serves-ask-wallach]].
 
 ## GENESIS
-`genesis` → run genesis.py, report the board, then resume **Engine 2 enrichment** (front-face the 69 via
-`enrich-worklist.json`) unless redirected. New invariant red = the only response.
+`genesis` → run genesis.py, report the board, then resume the 28 needs_new_topic curation unless redirected.
+New invariant red = the only response.

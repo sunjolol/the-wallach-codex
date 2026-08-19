@@ -12418,6 +12418,37 @@
     "dip the fork"
    ],
    "related": []
+  },
+  "coronary_artery_disease": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "coronary heart disease",
+    "coronary artery disease",
+    "cad",
+    "chd",
+    "heart disease",
+    "clogged arteries",
+    "hardening of the arteries"
+   ],
+   "related": [
+    "selenium",
+    "omega-3",
+    "cardiovascular_disease"
+   ]
+  },
+  "nystagmus": {
+   "catalog_ref": true,
+   "type": "condition",
+   "synonyms": [
+    "dancing eyes",
+    "eye wobble",
+    "involuntary eye movements",
+    "jerky eye movements"
+   ],
+   "related": [
+    "vitamin-b1"
+   ]
   }
  }
 }

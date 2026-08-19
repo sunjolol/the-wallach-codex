@@ -311,7 +311,6 @@
         {
           "kind": "protocol",
           "claim_ids": [
-            "WAL-CLM-LETS-000524",
             "WAL-CLM-RARE-000202",
             "WAL-CLM-RARE-000282"
           ]
@@ -331,7 +330,7 @@
           ]
         }
       ],
-      "record_claim_count": 7,
+      "record_claim_count": 6,
       "search": [
         {
           "facet": "basics",
@@ -354,6 +353,12 @@
           "facet": "uses",
           "claim_ids": [
             "WAL-CLM-IMMORT-000397"
+          ]
+        },
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000524"
           ]
         },
         {
@@ -1506,15 +1511,9 @@
             "WAL-CLM-RARE-000169",
             "WAL-CLM-RARE-000187"
           ]
-        },
-        {
-          "kind": "food_source",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000493"
-          ]
         }
       ],
-      "record_claim_count": 11,
+      "record_claim_count": 10,
       "search": [
         {
           "facet": "basics",
@@ -1553,7 +1552,8 @@
         {
           "facet": "sources",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000187"
+            "WAL-CLM-IMMORT-000187",
+            "WAL-CLM-IMMORT-000493"
           ]
         },
         {
@@ -1803,10 +1803,8 @@
             "WAL-CLM-EPIGEN-000144",
             "WAL-CLM-EPIGEN-000146",
             "WAL-CLM-EPIGEN-000147",
-            "WAL-CLM-EPIGEN-000471",
             "WAL-CLM-IMMORT-000068",
             "WAL-CLM-IMMORT-000217",
-            "WAL-CLM-IMMORT-000483",
             "WAL-CLM-LETS-000483",
             "WAL-CLM-RARE-000099",
             "WAL-CLM-RARE-000153",
@@ -1823,7 +1821,6 @@
         {
           "kind": "definition",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000467",
             "WAL-CLM-IMMORT-000215",
             "WAL-CLM-LETS-000482"
           ]
@@ -1839,7 +1836,6 @@
         {
           "kind": "food_source",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000492",
             "WAL-CLM-IMMORT-000493"
           ]
         },
@@ -1863,7 +1859,7 @@
           ]
         }
       ],
-      "record_claim_count": 122,
+      "record_claim_count": 118,
       "search": [
         {
           "facet": "basics",
@@ -1886,6 +1882,8 @@
             "WAL-CLM-EPIGEN-000061",
             "WAL-CLM-EPIGEN-000109",
             "WAL-CLM-EPIGEN-000232",
+            "WAL-CLM-EPIGEN-000467",
+            "WAL-CLM-EPIGEN-000471",
             "WAL-CLM-IMMORT-000063",
             "WAL-CLM-IMMORT-000064",
             "WAL-CLM-IMMORT-000065",
@@ -1909,6 +1907,7 @@
             "WAL-CLM-IMMORT-000069",
             "WAL-CLM-IMMORT-000070",
             "WAL-CLM-IMMORT-000291",
+            "WAL-CLM-IMMORT-000483",
             "WAL-CLM-RARE-000106",
             "WAL-CLM-RARE-000340"
           ]
@@ -1918,7 +1917,8 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000178",
             "WAL-CLM-IMMORT-000022",
-            "WAL-CLM-IMMORT-000292"
+            "WAL-CLM-IMMORT-000292",
+            "WAL-CLM-IMMORT-000492"
           ]
         },
         {
@@ -2482,7 +2482,6 @@
         {
           "kind": "deficiency_sign",
           "claim_ids": [
-            "WAL-CLM-HELLS-000097",
             "WAL-CLM-IMMORT-000089",
             "WAL-CLM-IMMORT-000344",
             "WAL-CLM-IMMORT-000467",
@@ -2565,7 +2564,7 @@
           ]
         }
       ],
-      "record_claim_count": 60,
+      "record_claim_count": 59,
       "search": [
         {
           "facet": "basics",
@@ -2589,6 +2588,7 @@
             "WAL-CLM-EPIGEN-000275",
             "WAL-CLM-HELLS-000044",
             "WAL-CLM-HELLS-000045",
+            "WAL-CLM-HELLS-000097",
             "WAL-CLM-IMMORT-000088",
             "WAL-CLM-IMMORT-000092",
             "WAL-CLM-RARE-000039",
@@ -3503,7 +3503,6 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-DDDL-000025",
-            "WAL-CLM-EPIGEN-000469",
             "WAL-CLM-IMMORT-000180"
           ]
         },
@@ -3536,7 +3535,7 @@
           ]
         }
       ],
-      "record_claim_count": 11,
+      "record_claim_count": 10,
       "search": [
         {
           "facet": "basics",
@@ -3558,6 +3557,7 @@
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000093",
+            "WAL-CLM-EPIGEN-000469",
             "WAL-CLM-IMMORT-000001",
             "WAL-CLM-IMMORT-000182",
             "WAL-CLM-LETS-000013",
@@ -3988,7 +3988,6 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000381",
             "WAL-CLM-EPIGEN-000004",
-            "WAL-CLM-EPIGEN-000465",
             "WAL-CLM-IMMORT-000211",
             "WAL-CLM-IMMORT-000212",
             "WAL-CLM-LETS-000471",
@@ -4091,8 +4090,6 @@
             "WAL-CLM-DDDL-000126",
             "WAL-CLM-DDDL-000458",
             "WAL-CLM-EPIGEN-000150",
-            "WAL-CLM-EPIGEN-000473",
-            "WAL-CLM-IMMORT-000479",
             "WAL-CLM-RARE-000010",
             "WAL-CLM-RARE-000094",
             "WAL-CLM-RARE-000403"
@@ -4134,7 +4131,7 @@
           ]
         }
       ],
-      "record_claim_count": 110,
+      "record_claim_count": 107,
       "search": [
         {
           "facet": "basics",
@@ -4156,6 +4153,7 @@
             "WAL-CLM-DDDL-000006",
             "WAL-CLM-DDDL-000071",
             "WAL-CLM-DDDL-000137",
+            "WAL-CLM-EPIGEN-000465",
             "WAL-CLM-LETS-000030",
             "WAL-CLM-RARE-000227",
             "WAL-CLM-RARE-000269"
@@ -4165,6 +4163,8 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000029",
+            "WAL-CLM-EPIGEN-000473",
+            "WAL-CLM-IMMORT-000479",
             "WAL-CLM-RARE-000225",
             "WAL-CLM-RARE-000226",
             "WAL-CLM-RARE-000228",
@@ -4690,7 +4690,6 @@
             "WAL-CLM-DDDL-000446",
             "WAL-CLM-DDDL-000447",
             "WAL-CLM-DDDL-000547",
-            "WAL-CLM-IMMORT-000478",
             "WAL-CLM-RARE-000043",
             "WAL-CLM-RARE-000128"
           ]
@@ -4708,7 +4707,7 @@
           ]
         }
       ],
-      "record_claim_count": 38,
+      "record_claim_count": 37,
       "search": [
         {
           "facet": "basics",
@@ -4734,6 +4733,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000036",
             "WAL-CLM-HELLS-000055",
+            "WAL-CLM-IMMORT-000478",
             "WAL-CLM-RARE-000253",
             "WAL-CLM-RARE-000255"
           ]
@@ -11939,15 +11939,9 @@
           "claim_ids": [
             "WAL-CLM-IMMORT-000009"
           ]
-        },
-        {
-          "kind": "interaction",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000487"
-          ]
         }
       ],
-      "record_claim_count": 53,
+      "record_claim_count": 52,
       "search": [
         {
           "facet": "basics",
@@ -11959,6 +11953,7 @@
           "facet": "warning",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000258",
+            "WAL-CLM-IMMORT-000487",
             "WAL-CLM-LETS-000028"
           ]
         },
@@ -12654,19 +12649,13 @@
           ]
         },
         {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000495"
-          ]
-        },
-        {
           "kind": "interaction",
           "claim_ids": [
             "WAL-CLM-DDDL-000021"
           ]
         }
       ],
-      "record_claim_count": 81,
+      "record_claim_count": 80,
       "search": [
         {
           "facet": "basics",
@@ -12696,7 +12685,8 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000206",
-            "WAL-CLM-EPIGEN-000208"
+            "WAL-CLM-EPIGEN-000208",
+            "WAL-CLM-IMMORT-000495"
           ]
         },
         {
@@ -14054,12 +14044,11 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000495",
-            "WAL-CLM-IMMORT-000502"
+            "WAL-CLM-IMMORT-000495"
           ]
         }
       ],
-      "record_claim_count": 20,
+      "record_claim_count": 19,
       "search": [
         {
           "facet": "basics",
@@ -14082,7 +14071,8 @@
         {
           "facet": "mechanism",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000340"
+            "WAL-CLM-IMMORT-000340",
+            "WAL-CLM-IMMORT-000502"
           ]
         },
         {
@@ -16402,15 +16392,9 @@
             "WAL-CLM-EPIGEN-000106",
             "WAL-CLM-IMMORT-000478"
           ]
-        },
-        {
-          "kind": "personal_anecdote",
-          "claim_ids": [
-            "WAL-CLM-HELLS-000099"
-          ]
         }
       ],
-      "record_claim_count": 7,
+      "record_claim_count": 6,
       "search": [
         {
           "facet": "stance",
@@ -16437,6 +16421,12 @@
           "facet": "basics",
           "claim_ids": [
             "WAL-CLM-DDDL-000395"
+          ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000099"
           ]
         }
       ],
@@ -16835,19 +16825,18 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-LETS-000109",
-            "WAL-CLM-LETS-000111",
-            "WAL-CLM-RARE-000405"
-          ]
-        },
-        {
-          "kind": "definition",
-          "claim_ids": [
-            "WAL-CLM-LETS-000523"
+            "WAL-CLM-LETS-000111"
           ]
         }
       ],
-      "record_claim_count": 5,
+      "record_claim_count": 3,
       "search": [
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-RARE-000405"
+          ]
+        },
         {
           "facet": "protocol",
           "claim_ids": [
@@ -16865,7 +16854,8 @@
         {
           "facet": "basics",
           "claim_ids": [
-            "WAL-CLM-DDDL-000491"
+            "WAL-CLM-DDDL-000491",
+            "WAL-CLM-LETS-000523"
           ]
         }
       ],
@@ -17116,16 +17106,16 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000468"
           ]
-        },
+        }
+      ],
+      "record_claim_count": 7,
+      "search": [
         {
-          "kind": "prevalence",
+          "facet": "stance",
           "claim_ids": [
             "WAL-CLM-IMMORT-000494"
           ]
-        }
-      ],
-      "record_claim_count": 8,
-      "search": [
+        },
         {
           "facet": "protocol",
           "claim_ids": [
@@ -18483,7 +18473,6 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000477",
             "WAL-CLM-LETS-000109",
             "WAL-CLM-LETS-000111"
           ]
@@ -18495,8 +18484,14 @@
           ]
         }
       ],
-      "record_claim_count": 12,
+      "record_claim_count": 11,
       "search": [
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000477"
+          ]
+        },
         {
           "facet": "protocol",
           "claim_ids": [
@@ -21114,12 +21109,6 @@
           ]
         },
         {
-          "kind": "prevalence",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000497"
-          ]
-        },
-        {
           "kind": "quote",
           "claim_ids": [
             "WAL-CLM-DDDL-000314",
@@ -21127,12 +21116,13 @@
           ]
         }
       ],
-      "record_claim_count": 49,
+      "record_claim_count": 48,
       "search": [
         {
           "facet": "stance",
           "claim_ids": [
             "WAL-CLM-DDDL-000057",
+            "WAL-CLM-IMMORT-000497",
             "WAL-CLM-LETS-000001",
             "WAL-CLM-LETS-000179",
             "WAL-CLM-RARE-000077",
@@ -21817,8 +21807,7 @@
         {
           "kind": "protocol",
           "claim_ids": [
-            "WAL-CLM-DDDL-000433",
-            "WAL-CLM-IMMORT-000485"
+            "WAL-CLM-DDDL-000433"
           ]
         },
         {
@@ -21830,23 +21819,18 @@
           ]
         },
         {
-          "kind": "prognosis",
-          "claim_ids": [
-            "WAL-CLM-EPIGEN-000470"
-          ]
-        },
-        {
           "kind": "interaction",
           "claim_ids": [
             "WAL-CLM-RARE-000086"
           ]
         }
       ],
-      "record_claim_count": 15,
+      "record_claim_count": 13,
       "search": [
         {
           "facet": "stance",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000470",
             "WAL-CLM-RARE-000310"
           ]
         },
@@ -21855,6 +21839,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000354",
             "WAL-CLM-DDDL-000434",
+            "WAL-CLM-IMMORT-000485",
             "WAL-CLM-LETS-000207"
           ]
         }
@@ -23648,16 +23633,16 @@
           "claim_ids": [
             "WAL-CLM-LETS-000521"
           ]
-        },
+        }
+      ],
+      "record_claim_count": 1,
+      "search": [
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
             "WAL-CLM-IMMORT-000498"
           ]
-        }
-      ],
-      "record_claim_count": 2,
-      "search": [
+        },
         {
           "facet": "mechanism",
           "claim_ids": [
@@ -23870,7 +23855,15 @@
         "epigenetics",
         "immortality"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "coronary heart disease",
+        "coronary artery disease",
+        "cad",
+        "chd",
+        "heart disease",
+        "clogged arteries",
+        "hardening of the arteries"
+      ],
       "protocol_claim_ids": [],
       "restore": [
         "chromium",
@@ -23884,22 +23877,23 @@
             "WAL-CLM-EPIGEN-000062",
             "WAL-CLM-IMMORT-000088"
           ]
-        },
+        }
+      ],
+      "record_claim_count": 3,
+      "search": [
         {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000508"
-          ]
-        },
-        {
-          "kind": "prognosis",
+          "facet": "stance",
           "claim_ids": [
             "WAL-CLM-IMMORT-000500"
           ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000508"
+          ]
         }
       ],
-      "record_claim_count": 5,
-      "search": [],
       "related_conditions": [
         "diabetes",
         "hypoglycemia",
@@ -25291,7 +25285,6 @@
             "WAL-CLM-DDDL-000010",
             "WAL-CLM-IMMORT-000019",
             "WAL-CLM-IMMORT-000478",
-            "WAL-CLM-IMMORT-000496",
             "WAL-CLM-IMMORT-000508",
             "WAL-CLM-LETS-000100",
             "WAL-CLM-LETS-000116"
@@ -25318,25 +25311,26 @@
           ]
         },
         {
-          "kind": "prevalence",
-          "claim_ids": [
-            "WAL-CLM-IMMORT-000515"
-          ]
-        },
-        {
           "kind": "quote",
           "claim_ids": [
             "WAL-CLM-DDDL-000047"
           ]
         }
       ],
-      "record_claim_count": 24,
+      "record_claim_count": 22,
       "search": [
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000515"
+          ]
+        },
         {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000034",
-            "WAL-CLM-IMMORT-000089"
+            "WAL-CLM-IMMORT-000089",
+            "WAL-CLM-IMMORT-000496"
           ]
         },
         {
@@ -31586,7 +31580,6 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000038",
             "WAL-CLM-EPIGEN-000042",
-            "WAL-CLM-EPIGEN-000472",
             "WAL-CLM-IMMORT-000063",
             "WAL-CLM-LETS-000003",
             "WAL-CLM-LETS-000004",
@@ -31611,7 +31604,7 @@
           ]
         }
       ],
-      "record_claim_count": 15,
+      "record_claim_count": 14,
       "search": [
         {
           "facet": "mechanism",
@@ -31623,6 +31616,12 @@
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000075"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000472"
           ]
         }
       ],
@@ -32617,7 +32616,6 @@
         {
           "kind": "definition",
           "claim_ids": [
-            "WAL-CLM-HELLS-000098",
             "WAL-CLM-RARE-000105"
           ]
         },
@@ -32634,7 +32632,7 @@
           ]
         }
       ],
-      "record_claim_count": 11,
+      "record_claim_count": 10,
       "search": [
         {
           "facet": "mechanism",
@@ -32654,6 +32652,12 @@
           "facet": "warning",
           "claim_ids": [
             "WAL-CLM-DDDL-000366"
+          ]
+        },
+        {
+          "facet": "uses",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000098"
           ]
         },
         {
@@ -34373,21 +34377,16 @@
           "claim_ids": [
             "WAL-CLM-IMMORT-000166"
           ]
-        },
-        {
-          "kind": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-EPIGEN-000468"
-          ]
         }
       ],
-      "record_claim_count": 3,
+      "record_claim_count": 2,
       "search": [
         {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000295",
-            "WAL-CLM-EPIGEN-000013"
+            "WAL-CLM-EPIGEN-000013",
+            "WAL-CLM-EPIGEN-000468"
           ]
         },
         {
@@ -34666,7 +34665,6 @@
         {
           "kind": "protocol",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000479",
             "WAL-CLM-RARE-000317"
           ]
         },
@@ -34675,7 +34673,6 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000068",
             "WAL-CLM-DDDL-000441",
-            "WAL-CLM-EPIGEN-000476",
             "WAL-CLM-LETS-000522"
           ]
         },
@@ -34692,12 +34689,13 @@
           ]
         }
       ],
-      "record_claim_count": 8,
+      "record_claim_count": 6,
       "search": [
         {
           "facet": "mechanism",
           "claim_ids": [
-            "WAL-CLM-DDDL-000090"
+            "WAL-CLM-DDDL-000090",
+            "WAL-CLM-EPIGEN-000476"
           ]
         },
         {
@@ -34725,6 +34723,12 @@
           "facet": "basics",
           "claim_ids": [
             "WAL-CLM-DDDL-000580"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000479"
           ]
         }
       ],
@@ -34929,17 +34933,17 @@
         {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000475",
             "WAL-CLM-LETS-000111"
           ]
         }
       ],
-      "record_claim_count": 4,
+      "record_claim_count": 3,
       "search": [
         {
           "facet": "mechanism",
           "claim_ids": [
-            "WAL-CLM-DDDL-000530"
+            "WAL-CLM-DDDL-000530",
+            "WAL-CLM-EPIGEN-000475"
           ]
         },
         {
@@ -36190,19 +36194,24 @@
       "books": [
         "immortality"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "dancing eyes",
+        "eye wobble",
+        "involuntary eye movements",
+        "jerky eye movements"
+      ],
       "protocol_claim_ids": [],
       "restore": [],
-      "record": [
+      "record": [],
+      "record_claim_count": 0,
+      "search": [
         {
-          "kind": "deficiency_sign",
+          "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-IMMORT-000522"
           ]
         }
       ],
-      "record_claim_count": 1,
-      "search": [],
       "related_conditions": [],
       "related": []
     },
@@ -36275,13 +36284,18 @@
         {
           "kind": "quote",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000478",
             "WAL-CLM-HELLS-000083"
           ]
         }
       ],
-      "record_claim_count": 12,
+      "record_claim_count": 11,
       "search": [
+        {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000478"
+          ]
+        },
         {
           "facet": "mechanism",
           "claim_ids": [
@@ -36948,8 +36962,7 @@
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000133",
-            "WAL-CLM-LETS-000483",
-            "WAL-CLM-LETS-000522"
+            "WAL-CLM-LETS-000483"
           ]
         },
         {
@@ -37001,7 +37014,7 @@
           ]
         }
       ],
-      "record_claim_count": 32,
+      "record_claim_count": 31,
       "search": [
         {
           "facet": "stance",
@@ -37014,6 +37027,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000555",
             "WAL-CLM-IAIYH-000001",
+            "WAL-CLM-LETS-000522",
             "WAL-CLM-RARE-000275"
           ]
         },
@@ -37841,21 +37855,13 @@
           ]
         },
         {
-          "kind": "protocol",
-          "claim_ids": [
-            "WAL-CLM-EPIGEN-000480",
-            "WAL-CLM-RARE-000404"
-          ]
-        },
-        {
           "kind": "mechanism",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000466",
             "WAL-CLM-LETS-000100"
           ]
         }
       ],
-      "record_claim_count": 6,
+      "record_claim_count": 3,
       "search": [
         {
           "facet": "mechanism",
@@ -37871,7 +37877,8 @@
             "WAL-CLM-DDDL-000452",
             "WAL-CLM-LETS-000397",
             "WAL-CLM-LETS-000458",
-            "WAL-CLM-RARE-000102"
+            "WAL-CLM-RARE-000102",
+            "WAL-CLM-RARE-000404"
           ]
         },
         {
@@ -37884,6 +37891,18 @@
           "facet": "basics",
           "claim_ids": [
             "WAL-CLM-DDDL-000454"
+          ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000480"
+          ]
+        },
+        {
+          "facet": "discovery",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000466"
           ]
         }
       ],
@@ -40588,16 +40607,16 @@
           "claim_ids": [
             "WAL-CLM-RARE-000105"
           ]
-        },
+        }
+      ],
+      "record_claim_count": 5,
+      "search": [
         {
-          "kind": "quote",
+          "facet": "stance",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000474"
           ]
-        }
-      ],
-      "record_claim_count": 6,
-      "search": [
+        },
         {
           "facet": "mechanism",
           "claim_ids": [

@@ -1800,7 +1800,7 @@
 #drawer-knowledge-mount .kd-ep-claim[open] .kd-ep-claim__chev { transform: rotate(90deg); color: var(--kd-ep-fam, var(--ds-accent)); }
 #drawer-knowledge-mount .kd-ep-claim__body { padding: 0 var(--ds-space-4) var(--ds-space-3) calc(20px + var(--ds-space-3) + var(--ds-space-3)); }
 #drawer-knowledge-mount .kd-ep-claim__short { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); font-weight: 600; color: var(--kd-ep-fam, var(--ds-accent-deep)); line-height: 1.5; margin-bottom: var(--ds-space-2); }
-#drawer-knowledge-mount .kd-ep-claim__answer { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink); line-height: 1.6; }
+#drawer-knowledge-mount .kd-ep-claim__answer { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink); line-height: 1.6; white-space: pre-line; }
 #drawer-knowledge-mount .kd-ep-claim__verbatim { margin: var(--ds-space-3) 0 var(--ds-space-2); padding: var(--ds-space-2) var(--ds-space-4); border-left: 2px solid var(--kd-ep-fam, var(--ds-accent)); background: var(--ds-paper-darker); font-family: var(--ds-font-serif); font-style: italic; font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.6; }
 #drawer-knowledge-mount .kd-ep-claim__verbatim--rows { white-space: pre-line; }
 #drawer-knowledge-mount .kd-ep-claim__cite { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--kd-ep-fam, var(--ds-tech)); margin-top: var(--ds-space-2); }

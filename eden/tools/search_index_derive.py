@@ -4,7 +4,7 @@ eden/tools/search_index_derive.py — DERIVE the shipped Search index from the p
 
 Joins the two hand-authored SOURCE files with the sealed corpus:
   - eden/corpus/search-enrichment.json  (authored: subject/also_about/facet/question/
-        answer_short/topics per search-only claim id)
+        answer_short/answer_full/topics per search-only claim id)
   - eden/catalog/search-entities.json   (entity registry; canon entities via canon_ref)
   - eden/corpus/claims/claims-*.json     (the sealed claim → answer/verbatim/page/book/tier1)
   - eden/corpus/essentials-canon.json    (canon display_name/symbol for canon_ref entities)
@@ -126,7 +126,7 @@ def validate(enr=None, reg=None, canon=None, claims_by_id=None):
         for ab in a.get('also_about', []):
             if ab not in resolvable:
                 errs.append(f'{cid}: also_about {ab!r} resolves to no registry/canon/condition slug')
-        if not _derive_answer(c.get('claim_text', '')).strip():
+        if not str(a['answer_full'] if a.get('answer_full') else _derive_answer(c.get('claim_text', ''))).strip():
             errs.append(f'{cid}: derived answer is empty')
         if not str(c.get('verbatim', '')).strip():
             errs.append(f'{cid}: sealed verbatim is empty')
@@ -235,7 +235,7 @@ def build_index():
             'facet': a['facet'],
             'question': a['question'],
             'answer_short': a['answer_short'],
-            'answer': _derive_answer(c.get('claim_text', '')),
+            'answer': a['answer_full'] if a.get('answer_full') else _derive_answer(c.get('claim_text', '')),
             'verbatim': c.get('verbatim', ''),
             # Roman-numeral / non-numeric front-matter pages (e.g. 'xix' for a book's
             # Introduction) can't fit the search-index numeric page field (SearchClaimSchema

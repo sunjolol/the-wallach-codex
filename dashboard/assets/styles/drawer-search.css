@@ -217,7 +217,7 @@ body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-
 #drawer-search-mount .facetpill i { width: 6px; height: 6px; border-radius: 50%; background: var(--k); }
 #drawer-search-mount .ans__q { font-family: var(--ds-font-display-interface); font-size: 1.18rem; font-weight: 700; line-height: 1.25; color: var(--ds-ink); margin: 12px 0 10px; }
 #drawer-search-mount .ans__short { font-family: var(--ds-font-sans); font-size: 0.96rem; font-weight: 600; line-height: 1.5; color: color-mix(in srgb, var(--k) 55%, var(--ds-ink)); }
-#drawer-search-mount .ans__body { font-family: var(--ds-font-sans); font-size: 0.9rem; line-height: 1.6; color: var(--ds-ink-medium); margin-top: 10px; }
+#drawer-search-mount .ans__body { font-family: var(--ds-font-sans); font-size: 0.9rem; line-height: 1.6; color: var(--ds-ink-medium); margin-top: 10px; white-space: pre-line; }
 
 /* ─── VERBATIM pull-quote (the one serif — Playfair) ───────────────────────── */
 #drawer-search-mount .vq {
