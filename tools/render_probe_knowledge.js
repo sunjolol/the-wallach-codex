@@ -301,6 +301,8 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       hasNote: d ? d.querySelector('.kd-ep-pdm-note') !== null : null,
       hasPill: d ? d.querySelector('.kd-essential-deep__status-pill') !== null : null,
       recordKindsOpen: d ? ([...d.querySelectorAll('.kd-ep-kind')].length > 0 && [...d.querySelectorAll('.kd-ep-kind')].every(k => k.open)) : null,
+      recordKindsCollapsed: d ? [...d.querySelectorAll('.kd-ep-kind')].some(k => !k.open) : null,
+      recordClaimCount: d ? d.querySelectorAll('.kd-ep-kind .kd-ep-claim').length : null,
     };
   });
 
@@ -540,8 +542,12 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['entity page: the full record renders with claim cards (Magnesium)', deep.recordShown === true && deep.recordClaimCount > 0],
     ['coverage: numeric target shows the real ep-bar (Magnesium)', deep.hasBar === true],
     ['coverage: rare-earth group shows the shared group meter + tag + note, no pill (Dysprosium)', traceMeter.hasBar === true && traceMeter.hasGroupTag === true && traceMeter.hasNote === true && traceMeter.hasPill === false],
-    ['record: few-claim entity auto-expands its kind groups (Dysprosium, 2 claims)', traceMeter.recordKindsOpen === true],
-    ['record: large entity keeps kind groups collapsed (Magnesium, 89 claims)', deep.recordKindsCollapsed === true],
+    // The record auto-expand heuristic (entity-page.ts renderRecord): a small record (<20 claims)
+    // renders every kind group open; a large one (>=20) stays collapsed for scannability. Assert the
+    // RELATIONSHIP against the live count so it holds at any data volume (record sizes shift as
+    // enrichment moves claims between Worth-Knowing and the record).
+    ['record: kind groups collapse iff the record is large (>=20) -- Dysprosium', traceMeter.recordKindsCollapsed === (traceMeter.recordClaimCount >= 20)],
+    ['record: kind groups collapse iff the record is large (>=20) -- Magnesium', deep.recordKindsCollapsed === (deep.recordClaimCount >= 20)],
     ['conditions: list rendered', conditions.rowCount >= 1],
     ['conditions: deep view opens (diabetes)', condDeep.shown === true],
     ['conditions: claims grouped by kind (full record)', condDeep.groupCount >= 1 && condDeep.claimCount >= 1],

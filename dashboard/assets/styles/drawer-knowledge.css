@@ -1433,6 +1433,9 @@
 #drawer-knowledge-mount .kd-ep-more[open] > summary::before { content: '▴'; }
 #drawer-knowledge-mount .kd-ep-more > summary:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
 #drawer-knowledge-mount .kd-ep-more__body { margin-top: var(--ds-space-3); }
+/* The Worth-knowing per-category "See N more answers" reveal is roomier than the compact
+   pill/source reveals -- the detail screen has the space (Luneth 2026-08-19). */
+#drawer-knowledge-mount .kd-ep-more--answers > summary { font-size: var(--ds-text-sm); padding: .5rem 1rem; border-style: solid; }
 
 /* facet groups (Worth knowing) — one --kd-ep-fam var drives the accent, by data-facet */
 #drawer-knowledge-mount .kd-ep-facet { --kd-ep-fam: var(--ds-ink-soft); border-bottom: 1px solid var(--ds-rule-soft); }

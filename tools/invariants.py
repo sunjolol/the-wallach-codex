@@ -6996,6 +6996,71 @@ def check_no_positional_hero():
     return _no_positional_hero_impl(artifact, embed.get("claims", {}), files)
 
 
+def _entity_page_enriched_matches_search_impl(artifact, search_index):
+    """RED if any condition/essential PAGE's enriched ("Worth Knowing") claim set differs from the
+    set SEARCH finds for that entity. `artifact` = entity-page-data dict; `search_index` =
+    search-index dict. Param-taking for the negative test.
+
+    claimsForSubject (state/search.ts) = every search claim whose subject == slug OR whose
+    also_about includes slug. The page's `search` sections (entity_page_derive.search_sections)
+    MUST enumerate EXACTLY that set. A subset means the page shows fewer enriched claims than search
+    surfaces (the recurring "search > page" defect); a superset means the page lists a claim search
+    cannot reach. Recomputed independently here so a regression in the generator's predicate is
+    caught even though derived_artifacts_fresh (artifact == generator output) stays green."""
+    for_subject: dict = {}
+    for c in search_index.get("claims", []):
+        cid = c.get("id")
+        subj = c.get("subject")
+        targets = set()
+        if subj:
+            targets.add(subj)
+        targets.update(c.get("also_about", []))
+        for t in targets:
+            for_subject.setdefault(t, set()).add(cid)
+
+    viol = []
+    checked = 0
+    for kind in ("conditions", "essentials"):
+        for slug, rec in artifact.get(kind, {}).items():
+            expected = for_subject.get(slug, set())
+            page = set()
+            for sec in rec.get("search", []):
+                page.update(sec.get("claim_ids", []))
+            checked += 1
+            missing = expected - page          # in search, NOT on the page (the reported defect)
+            extra = page - expected            # on the page, NOT reachable by search
+            if missing or extra:
+                bits = []
+                if missing:
+                    bits.append(f"{len(missing)} in search but not on page (e.g. {sorted(missing)[0]})")
+                if extra:
+                    bits.append(f"{len(extra)} on page but not in search (e.g. {sorted(extra)[0]})")
+                viol.append(f"{kind[:-1]} {slug}: " + ", ".join(bits))
+    if viol:
+        return False, ("entity page enriched set != claimsForSubject (search > page defect): "
+                       + "; ".join(viol[:6])
+                       + (f" (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+    return True, (f"all {checked} condition/essential pages list EXACTLY the enriched claims search "
+                  "finds for them (page.search == claimsForSubject, subject OR also_about)")
+
+
+def check_entity_page_enriched_matches_search():
+    """Every condition/essential page's "Worth Knowing" (enriched) section enumerates EXACTLY the
+    claims the live search finds for that entity -- state/search.ts::claimsForSubject (subject OR
+    also_about). The page and the search derive the "claims about this entity" set by two separate
+    code paths (entity_page_derive.search_sections vs search.ts), and they silently drifted: the
+    page used subject-only, so 1,086 also_about claim-instances were findable in search yet absent
+    from their pages (Luneth 2026-08-19: "not a single condition page should have less than its
+    search"). This recomputes claimsForSubject independently from the shipped index and RED-flags
+    any page whose enriched set differs. Truth anchor: entity-page-data.json search sections x an
+    independent claimsForSubject re-derivation from search-index.json, recomputed each run."""
+    artifact = json.loads((ROOT / "dashboard" / "assets" / "data" / "entity-page-data.json")
+                          .read_text(encoding="utf-8"))
+    search_index = json.loads((ROOT / "dashboard" / "assets" / "data" / "search" / "search-index.json")
+                              .read_text(encoding="utf-8"))
+    return _entity_page_enriched_matches_search_impl(artifact, search_index)
+
+
 # --- Dead-code gate (forever-fix, 2026-07-13) ------------------------------
 # knip (dashboard/knip.json, configured with the real entry graph: main.ts + tests) is run here
 # as a board gate so an orphaned export/file/type can never ship silently again -- the exact
@@ -8080,6 +8145,15 @@ INVARIANTS = [
         truth_anchor="entity-page-data.json protocol_claim_ids x corpus-embed base_line_table + the entity-view .ts bytes scanned for a claims[0]/record[0] hero, recomputed each run",
         severity="critical",
         lesson_ref="Phase H migration blueprint section 1.2 item (iii) + section 2 gate 'no-positional-hero' -- the fluoride base-line dose-table row was promoted into the default-open GREEN 'what to do' slot, contradicting the page's own 'avoid fluoride'. A table row is never a curated recommendation. Negative test: tools/test_no_positional_hero.py.",
+    ),
+    Invariant(
+        name="entity_page_enriched_matches_search",
+        anchor_class="consistency",  # entity-page-data vs search-index — two derivations of one set; catches drift
+        description="every condition/essential page's enriched 'Worth Knowing' section lists EXACTLY the claims the live search finds for that entity (state/search.ts::claimsForSubject = subject OR also_about). The page derive (search_sections) and the search derive computed this set two different ways and drifted -- the page used subject-only, dropping 1,086 also_about claim-instances that search still surfaced, so a page showed FEWER claims than its own search. This recomputes claimsForSubject independently and RED-flags any page whose enriched set differs (subset = search>page defect; superset = a page claim search can't reach)",
+        check_fn=check_entity_page_enriched_matches_search,
+        truth_anchor="dashboard/assets/data/entity-page-data.json search sections x an independent claimsForSubject (subject OR also_about) re-derivation from search-index.json, recomputed each run",
+        severity="critical",
+        lesson_ref="Luneth 2026-08-19 (repeat report): 'the search is showing more claims than the full topic page ... NOT A SINGLE CONDITION PAGE SHOULD HAVE LESS THAN ITS SEARCH'. Root cause: entity_page_derive.search_sections bucketed enriched claims by subject ONLY, while search.ts::claimsForSubject includes also_about -- so an also_about claim (Wallach's selenium answer naming hypothyroidism) was findable in search but absent from the hypothyroidism page. Fixed by including also_about in search_sections; gated here so the two derivations can never drift again. Negative test: tools/test_entity_page_enriched_matches_search.py.",
     ),
     Invariant(
         name="offline_no_runtime_network",

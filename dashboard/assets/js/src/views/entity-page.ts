@@ -665,6 +665,12 @@ function renderPdmSourcesBlock(): string {
 
 // ─── "Worth knowing" — the faceted search cards ─────────────────────────────
 
+// Per-category display cap on the entity page's Worth-Knowing (Luneth 2026-08-19): a heavily-
+// enriched essential (Calcium ~160 cards) would otherwise render an endless wall, so the first
+// FACET_CAP answers show and the rest sit behind a native "See N more answers" reveal. A display
+// cap, never a data cap -- the header count stays the true total, and every claim is one click away.
+const FACET_CAP = 7;
+
 function renderFacetGroups(page: EssentialPage | ConditionPage): string {
   if (page.search.length === 0) {
     return '';
@@ -672,16 +678,20 @@ function renderFacetGroups(page: EssentialPage | ConditionPage): string {
   const order = SEARCH_FACETS as readonly string[];
   const groups = [...page.search].sort((a, b) => order.indexOf(a.facet) - order.indexOf(b.facet));
   const html = groups.map((g) => {
-    const cards = g.claim_ids.map((id) => {
-      const c = getSearchClaim(id);
-      return c !== null ? renderSearchCard(c) : '';
-    }).join('');
-    if (cards.length === 0) {
+    const claims = g.claim_ids.map(id => getSearchClaim(id)).filter((c): c is SearchClaim => c !== null);
+    if (claims.length === 0) {
       return '';
     }
+    // First FACET_CAP cards inline; the overflow reveals in place behind a roomier "See N more
+    // answers" control (kd-ep-more--answers) -- the detail screen has more room than the Ask popup.
+    const shown = claims.slice(0, FACET_CAP).map(c => renderSearchCard(c)).join('');
+    const rest = claims.slice(FACET_CAP);
+    const more = rest.length > 0
+      ? `<details class="kd-ep-more kd-ep-more--answers"><summary>See ${rest.length} more ${plural(rest.length, 'answer')}</summary><div class="kd-ep-more__body">${rest.map(c => renderSearchCard(c)).join('')}</div></details>`
+      : '';
     return `<details class="kd-ep-facet" data-facet="${escHTML(g.facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
-      <div class="kd-ep-facet__body">${cards}</div>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${claims.length}</span></summary>
+      <div class="kd-ep-facet__body">${shown}${more}</div>
     </details>`;
   }).join('');
   if (html.length === 0) {

@@ -124,24 +124,39 @@ def build_data() -> dict:
     ess_slugs = set(embed_ess.keys())
     cond_slugs = set(embed_cond.keys())
 
-    # ── search-claim index: PRIMARY subject slug -> [search claims] (the entity's own
-    # "worth knowing" Q&A; also_about is a cross-link, not the entity's own content) ──
-    search_by_subject: dict = {}
+    # ── search-claim index: entity slug -> [search claims about it]. A claim belongs to an
+    # entity's "Worth Knowing" when the entity is its PRIMARY subject OR one of its also_about
+    # cross-links -- the SAME predicate the live search uses (state/search.ts::claimsForSubject:
+    # subject === slug || also_about.includes(slug)). The two derivations MUST stay identical, or
+    # the PAGE shows fewer enriched claims than SEARCH finds for the same entity -- the recurring
+    # "search > page" defect (e.g. Wallach's selenium->hypothyroidism answer, findable in search
+    # but formerly absent from the hypothyroidism page). also_about IS the entity's own content
+    # here. entity_page_enriched_matches_search gates this equality so it cannot drift again. ──
+    search_for_subject: dict = {}
     for sc in si_claims:
         slug = sc.get("subject")
-        if slug:
-            search_by_subject.setdefault(slug, []).append(sc)
+        for t in ([slug] if slug else []) + list(sc.get("also_about", [])):
+            search_for_subject.setdefault(t, []).append(sc)
 
     def search_sections(slug, ent_type):
-        scs = search_by_subject.get(slug)
+        scs = search_for_subject.get(slug)
         if not scs:
             return []
         by_facet: dict = {}
+        seen = set()
         for sc in scs:
+            if sc["id"] in seen:            # subject+also_about listing the same slug counts once
+                continue
+            seen.add(sc["id"])
             by_facet.setdefault(sc["facet"], []).append(sc["id"])
+        for ids in by_facet.values():
+            ids.sort()                      # deterministic id order within a facet (matches claimsForSubject)
         order = FACET_CONDITION if ent_type == "condition" else FACET_DEFAULT
-        return [{"facet": f, "claim_ids": by_facet[f]}
-                for f in order if f in by_facet]
+        # Every facet lives in both order lists today; append any future stray facet so an
+        # also_about claim's facet can never silently vanish from the page.
+        ordered = [f for f in order if f in by_facet]
+        extra = sorted(f for f in by_facet if f not in order)
+        return [{"facet": f, "claim_ids": by_facet[f]} for f in ordered + extra]
 
     # ── co-occurrence graph over entity slugs (essentials + conditions) sharing a claim ──
     # This is the SERENDIPITY signal (violet "keep exploring" + related-conditions), and is

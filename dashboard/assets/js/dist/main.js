@@ -28937,21 +28937,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-IMMORT-000155"
             ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-RARE-000136"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000151"
-            ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 1,
         search: [
           {
             facet: "basics",
@@ -28963,6 +28951,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-IMMORT-000151",
               "WAL-CLM-IMMORT-000154"
             ]
           },
@@ -28985,7 +28974,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-IMMORT-000153"
+              "WAL-CLM-IMMORT-000153",
+              "WAL-CLM-RARE-000136"
             ]
           },
           {
@@ -29093,7 +29083,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 5,
-        distinct_claim_count: 8,
+        distinct_claim_count: 11,
         books: [
           "epigenetics",
           "rare-earths"
@@ -29133,13 +29123,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000112",
               "WAL-CLM-EPIGEN-000101",
+              "WAL-CLM-IMMORT-000055",
               "WAL-CLM-LETS-000517"
             ]
           },
           {
             facet: "sources",
             claim_ids: [
+              "WAL-CLM-DDDL-000289",
               "WAL-CLM-RARE-000384"
             ]
           },
@@ -29171,7 +29164,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 11,
-        distinct_claim_count: 17,
+        distinct_claim_count: 19,
         books: [
           "lets-play-doctor",
           "rare-earths"
@@ -29197,26 +29190,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-RARE-000202",
               "WAL-CLM-RARE-000282"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-RARE-000198",
-              "WAL-CLM-RARE-000199",
-              "WAL-CLM-RARE-000201"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-RARE-000203"
+              "WAL-CLM-RARE-000199"
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 2,
         search: [
           {
             facet: "basics",
@@ -29226,25 +29210,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000126"
+            ]
+          },
+          {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-IMMORT-000127",
               "WAL-CLM-IMMORT-000394",
               "WAL-CLM-IMMORT-000396",
               "WAL-CLM-RARE-000196",
               "WAL-CLM-RARE-000197",
+              "WAL-CLM-RARE-000198",
               "WAL-CLM-RARE-000200"
             ]
           },
           {
             facet: "uses",
             claim_ids: [
-              "WAL-CLM-IMMORT-000397"
+              "WAL-CLM-IMMORT-000397",
+              "WAL-CLM-RARE-000201"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000524"
+              "WAL-CLM-LETS-000524",
+              "WAL-CLM-RARE-000203"
             ]
           },
           {
@@ -29256,7 +29250,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "history",
             claim_ids: [
-              "WAL-CLM-IMMORT-000398"
+              "WAL-CLM-IMMORT-000398",
+              "WAL-CLM-RARE-000202"
             ]
           }
         ],
@@ -29290,7 +29285,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 16,
-        distinct_claim_count: 47,
+        distinct_claim_count: 55,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -29348,16 +29343,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-LETS-000032",
-              "WAL-CLM-RARE-000003",
-              "WAL-CLM-RARE-000027"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000369",
-              "WAL-CLM-RARE-000153"
+              "WAL-CLM-LETS-000032"
             ]
           },
           {
@@ -29367,7 +29353,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 2,
         search: [
           {
             facet: "basics",
@@ -29381,6 +29367,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000244",
               "WAL-CLM-DDDL-000245",
+              "WAL-CLM-DDDL-000265",
               "WAL-CLM-EPIGEN-000325",
               "WAL-CLM-EPIGEN-000326",
               "WAL-CLM-EPIGEN-000327",
@@ -29394,20 +29381,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000242",
               "WAL-CLM-DDDL-000243",
+              "WAL-CLM-DDDL-000263",
               "WAL-CLM-EPIGEN-000102",
               "WAL-CLM-EPIGEN-000320",
               "WAL-CLM-EPIGEN-000321",
               "WAL-CLM-EPIGEN-000322",
+              "WAL-CLM-RARE-000003",
+              "WAL-CLM-RARE-000027",
               "WAL-CLM-RARE-000186",
-              "WAL-CLM-RARE-000368"
+              "WAL-CLM-RARE-000368",
+              "WAL-CLM-RARE-000376"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000369",
               "WAL-CLM-EPIGEN-000323",
               "WAL-CLM-HELLS-000059",
+              "WAL-CLM-IMMORT-000314",
               "WAL-CLM-IMMORT-000374",
+              "WAL-CLM-RARE-000153",
               "WAL-CLM-RARE-000188",
               "WAL-CLM-RARE-000367"
             ]
@@ -29418,6 +29412,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-IMMORT-000375",
               "WAL-CLM-IMMORT-000376",
               "WAL-CLM-RARE-000369"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-RARE-000352"
             ]
           },
           {
@@ -29436,13 +29436,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000330",
               "WAL-CLM-EPIGEN-000332",
               "WAL-CLM-HELLS-000061",
-              "WAL-CLM-RARE-000026"
+              "WAL-CLM-HELLS-000065",
+              "WAL-CLM-RARE-000026",
+              "WAL-CLM-RARE-000379"
             ]
           },
           {
             facet: "big_question",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000331"
+              "WAL-CLM-EPIGEN-000331",
+              "WAL-CLM-RARE-000378"
             ]
           },
           {
@@ -29496,7 +29499,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 118,
-        distinct_claim_count: 138,
+        distinct_claim_count: 141,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -29555,88 +29558,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-DDDL-000053",
-              "WAL-CLM-DDDL-000087",
               "WAL-CLM-EPIGEN-000098",
-              "WAL-CLM-RARE-000275",
-              "WAL-CLM-RARE-000303",
-              "WAL-CLM-RARE-000304",
               "WAL-CLM-RARE-000305"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000051",
-              "WAL-CLM-DDDL-000078",
-              "WAL-CLM-DDDL-000086",
-              "WAL-CLM-DDDL-000088",
-              "WAL-CLM-DDDL-000092",
-              "WAL-CLM-DDDL-000320",
-              "WAL-CLM-DDDL-000321",
-              "WAL-CLM-DDDL-000323",
-              "WAL-CLM-DDDL-000336",
-              "WAL-CLM-DDDL-000349",
-              "WAL-CLM-DDDL-000351",
-              "WAL-CLM-DDDL-000383",
-              "WAL-CLM-DDDL-000405",
-              "WAL-CLM-DDDL-000408",
-              "WAL-CLM-DDDL-000445",
-              "WAL-CLM-DDDL-000460",
-              "WAL-CLM-DDDL-000461",
-              "WAL-CLM-DDDL-000462",
-              "WAL-CLM-DDDL-000468",
-              "WAL-CLM-DDDL-000470",
-              "WAL-CLM-DDDL-000507",
-              "WAL-CLM-DDDL-000517",
-              "WAL-CLM-DDDL-000521",
-              "WAL-CLM-DDDL-000523",
-              "WAL-CLM-DDDL-000565",
-              "WAL-CLM-LETS-000139",
               "WAL-CLM-LETS-000142",
-              "WAL-CLM-LETS-000146",
-              "WAL-CLM-LETS-000147",
-              "WAL-CLM-LETS-000151",
-              "WAL-CLM-LETS-000152",
-              "WAL-CLM-LETS-000155",
-              "WAL-CLM-LETS-000158",
-              "WAL-CLM-LETS-000161",
               "WAL-CLM-LETS-000164",
               "WAL-CLM-LETS-000166",
-              "WAL-CLM-LETS-000168",
-              "WAL-CLM-LETS-000176",
-              "WAL-CLM-LETS-000177",
-              "WAL-CLM-LETS-000203",
-              "WAL-CLM-LETS-000219",
-              "WAL-CLM-LETS-000223",
-              "WAL-CLM-LETS-000233",
-              "WAL-CLM-LETS-000238",
-              "WAL-CLM-LETS-000243",
               "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000258",
-              "WAL-CLM-LETS-000266",
-              "WAL-CLM-LETS-000267",
-              "WAL-CLM-LETS-000281",
-              "WAL-CLM-LETS-000285",
-              "WAL-CLM-LETS-000289",
-              "WAL-CLM-LETS-000321",
-              "WAL-CLM-LETS-000326",
-              "WAL-CLM-LETS-000332",
-              "WAL-CLM-LETS-000366",
-              "WAL-CLM-LETS-000374",
-              "WAL-CLM-LETS-000379",
               "WAL-CLM-LETS-000382",
-              "WAL-CLM-LETS-000383",
-              "WAL-CLM-LETS-000390",
-              "WAL-CLM-LETS-000391",
-              "WAL-CLM-LETS-000398",
-              "WAL-CLM-LETS-000413",
-              "WAL-CLM-LETS-000415",
               "WAL-CLM-LETS-000419",
-              "WAL-CLM-LETS-000420",
-              "WAL-CLM-LETS-000426",
-              "WAL-CLM-LETS-000427",
-              "WAL-CLM-LETS-000451",
-              "WAL-CLM-LETS-000454",
               "WAL-CLM-RARE-000276",
               "WAL-CLM-RARE-000277",
               "WAL-CLM-RARE-000278",
@@ -29648,11 +29582,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000177",
-              "WAL-CLM-DDDL-000344",
-              "WAL-CLM-DDDL-000415",
-              "WAL-CLM-DDDL-000458",
-              "WAL-CLM-DDDL-000530",
               "WAL-CLM-RARE-000099",
               "WAL-CLM-RARE-000403"
             ]
@@ -29682,7 +29611,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 95,
+        record_claim_count: 21,
         search: [
           {
             facet: "basics",
@@ -29715,18 +29644,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000174",
               "WAL-CLM-LETS-000495",
               "WAL-CLM-RARE-000082",
-              "WAL-CLM-RARE-000172"
+              "WAL-CLM-RARE-000172",
+              "WAL-CLM-RARE-000303",
+              "WAL-CLM-RARE-000304"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000082",
+              "WAL-CLM-DDDL-000177",
+              "WAL-CLM-DDDL-000295",
+              "WAL-CLM-DDDL-000344",
+              "WAL-CLM-DDDL-000415",
+              "WAL-CLM-DDDL-000458",
+              "WAL-CLM-DDDL-000530",
               "WAL-CLM-EPIGEN-000194",
               "WAL-CLM-IMMORT-000207",
               "WAL-CLM-IMMORT-000208",
               "WAL-CLM-RARE-000170",
-              "WAL-CLM-RARE-000171"
+              "WAL-CLM-RARE-000171",
+              "WAL-CLM-RARE-000275"
             ]
           },
           {
@@ -29742,6 +29680,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000151",
               "WAL-CLM-IMMORT-000274",
+              "WAL-CLM-LETS-000332",
+              "WAL-CLM-LETS-000374",
               "WAL-CLM-LETS-000496",
               "WAL-CLM-RARE-000332"
             ]
@@ -29749,16 +29689,82 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000051",
               "WAL-CLM-DDDL-000060",
+              "WAL-CLM-DDDL-000078",
+              "WAL-CLM-DDDL-000086",
+              "WAL-CLM-DDDL-000088",
+              "WAL-CLM-DDDL-000092",
+              "WAL-CLM-DDDL-000172",
+              "WAL-CLM-DDDL-000203",
+              "WAL-CLM-DDDL-000320",
+              "WAL-CLM-DDDL-000321",
+              "WAL-CLM-DDDL-000323",
+              "WAL-CLM-DDDL-000336",
+              "WAL-CLM-DDDL-000349",
+              "WAL-CLM-DDDL-000351",
+              "WAL-CLM-DDDL-000383",
+              "WAL-CLM-DDDL-000405",
+              "WAL-CLM-DDDL-000408",
+              "WAL-CLM-DDDL-000445",
+              "WAL-CLM-DDDL-000460",
+              "WAL-CLM-DDDL-000461",
+              "WAL-CLM-DDDL-000462",
+              "WAL-CLM-DDDL-000468",
+              "WAL-CLM-DDDL-000470",
+              "WAL-CLM-DDDL-000507",
+              "WAL-CLM-DDDL-000517",
+              "WAL-CLM-DDDL-000521",
+              "WAL-CLM-DDDL-000523",
+              "WAL-CLM-DDDL-000565",
               "WAL-CLM-DDDL-000599",
               "WAL-CLM-EPIGEN-000133",
               "WAL-CLM-LETS-000056",
+              "WAL-CLM-LETS-000139",
+              "WAL-CLM-LETS-000146",
+              "WAL-CLM-LETS-000147",
+              "WAL-CLM-LETS-000151",
+              "WAL-CLM-LETS-000152",
+              "WAL-CLM-LETS-000155",
+              "WAL-CLM-LETS-000158",
+              "WAL-CLM-LETS-000161",
+              "WAL-CLM-LETS-000168",
+              "WAL-CLM-LETS-000176",
+              "WAL-CLM-LETS-000177",
+              "WAL-CLM-LETS-000203",
+              "WAL-CLM-LETS-000219",
+              "WAL-CLM-LETS-000223",
+              "WAL-CLM-LETS-000233",
+              "WAL-CLM-LETS-000238",
+              "WAL-CLM-LETS-000243",
+              "WAL-CLM-LETS-000258",
+              "WAL-CLM-LETS-000266",
+              "WAL-CLM-LETS-000267",
+              "WAL-CLM-LETS-000281",
+              "WAL-CLM-LETS-000285",
+              "WAL-CLM-LETS-000289",
+              "WAL-CLM-LETS-000321",
+              "WAL-CLM-LETS-000326",
+              "WAL-CLM-LETS-000366",
+              "WAL-CLM-LETS-000379",
+              "WAL-CLM-LETS-000383",
+              "WAL-CLM-LETS-000390",
+              "WAL-CLM-LETS-000391",
+              "WAL-CLM-LETS-000398",
+              "WAL-CLM-LETS-000413",
+              "WAL-CLM-LETS-000415",
+              "WAL-CLM-LETS-000420",
+              "WAL-CLM-LETS-000426",
+              "WAL-CLM-LETS-000427",
+              "WAL-CLM-LETS-000451",
+              "WAL-CLM-LETS-000454",
               "WAL-CLM-RARE-000286"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-DDDL-000087",
               "WAL-CLM-DDDL-000155",
               "WAL-CLM-EPIGEN-000196",
               "WAL-CLM-IMMORT-000205"
@@ -29878,7 +29884,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 18,
-        distinct_claim_count: 29,
+        distinct_claim_count: 34,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -29919,24 +29925,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000336"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000180",
-              "WAL-CLM-DDDL-000344",
               "WAL-CLM-DDDL-000350",
               "WAL-CLM-DDDL-000574",
-              "WAL-CLM-EPIGEN-000147",
               "WAL-CLM-RARE-000403"
             ]
           }
         ],
-        record_claim_count: 7,
+        record_claim_count: 3,
         search: [
           {
             facet: "basics",
@@ -29948,6 +29945,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
+              "WAL-CLM-DDDL-000105",
               "WAL-CLM-DDDL-000252",
               "WAL-CLM-LETS-000023",
               "WAL-CLM-LETS-000024",
@@ -29959,6 +29957,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000247",
               "WAL-CLM-IMMORT-000213",
+              "WAL-CLM-IMMORT-000287",
               "WAL-CLM-LETS-000515",
               "WAL-CLM-RARE-000208"
             ]
@@ -29967,6 +29966,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000248",
+              "WAL-CLM-DDDL-000344",
+              "WAL-CLM-EPIGEN-000147",
+              "WAL-CLM-IMMORT-000070",
               "WAL-CLM-RARE-000209"
             ]
           },
@@ -29981,19 +29983,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000336",
               "WAL-CLM-LETS-000061"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-DDDL-000180",
               "WAL-CLM-DDDL-000253",
-              "WAL-CLM-EPIGEN-000336"
+              "WAL-CLM-EPIGEN-000336",
+              "WAL-CLM-LETS-000505"
             ]
           },
           {
             facet: "big_question",
             claim_ids: [
+              "WAL-CLM-HELLS-000029",
               "WAL-CLM-HELLS-000064"
             ]
           },
@@ -30042,7 +30048,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 12,
-        distinct_claim_count: 23,
+        distinct_claim_count: 26,
         books: [
           "dddl-3e-2011",
           "immortality",
@@ -30075,16 +30081,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-RARE-000275",
-              "WAL-CLM-RARE-000303"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000523",
               "WAL-CLM-LETS-000276"
             ]
           },
@@ -30101,12 +30099,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 3,
         search: [
           {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-IMMORT-000379"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000152"
             ]
           },
           {
@@ -30117,7 +30121,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000257",
               "WAL-CLM-IMMORT-000381",
               "WAL-CLM-IMMORT-000382",
+              "WAL-CLM-LETS-000495",
               "WAL-CLM-RARE-000223",
+              "WAL-CLM-RARE-000303",
               "WAL-CLM-RARE-000370"
             ]
           },
@@ -30127,7 +30133,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-IMMORT-000380",
               "WAL-CLM-RARE-000220",
               "WAL-CLM-RARE-000221",
-              "WAL-CLM-RARE-000222"
+              "WAL-CLM-RARE-000222",
+              "WAL-CLM-RARE-000275"
             ]
           },
           {
@@ -30139,6 +30146,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000523",
               "WAL-CLM-LETS-000067"
             ]
           },
@@ -30146,6 +30154,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "stance",
             claim_ids: [
               "WAL-CLM-DDDL-000260",
+              "WAL-CLM-EPIGEN-000196",
               "WAL-CLM-RARE-000372"
             ]
           },
@@ -30186,7 +30195,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 7,
-        distinct_claim_count: 22,
+        distinct_claim_count: 27,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -30227,17 +30236,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "definition",
             claim_ids: [
               "WAL-CLM-IMMORT-000078",
-              "WAL-CLM-RARE-000026",
-              "WAL-CLM-RARE-000187"
+              "WAL-CLM-RARE-000026"
             ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 2,
         search: [
           {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000261",
+              "WAL-CLM-RARE-000187",
               "WAL-CLM-RARE-000373"
             ]
           },
@@ -30252,6 +30261,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000263",
               "WAL-CLM-DDDL-000264",
+              "WAL-CLM-EPIGEN-000102",
+              "WAL-CLM-EPIGEN-000321",
+              "WAL-CLM-EPIGEN-000322",
               "WAL-CLM-LETS-000516",
               "WAL-CLM-RARE-000374",
               "WAL-CLM-RARE-000376"
@@ -30261,6 +30273,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000076",
+              "WAL-CLM-HELLS-000059",
+              "WAL-CLM-IMMORT-000314",
               "WAL-CLM-RARE-000113",
               "WAL-CLM-RARE-000375"
             ]
@@ -30319,7 +30333,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 27,
-        distinct_claim_count: 38,
+        distinct_claim_count: 48,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -30377,36 +30391,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000383",
-              "WAL-CLM-LETS-000203",
               "WAL-CLM-LETS-000225",
-              "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000384"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000369",
-              "WAL-CLM-RARE-000188"
+              "WAL-CLM-LETS-000244"
             ]
           },
           {
             kind: "definition",
             claim_ids: [
-              "WAL-CLM-RARE-000169",
-              "WAL-CLM-RARE-000187"
+              "WAL-CLM-RARE-000169"
             ]
           }
         ],
-        record_claim_count: 10,
+        record_claim_count: 4,
         search: [
           {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-EPIGEN-000463",
+              "WAL-CLM-IMMORT-000094",
               "WAL-CLM-IMMORT-000188",
-              "WAL-CLM-RARE-000152"
+              "WAL-CLM-RARE-000152",
+              "WAL-CLM-RARE-000187"
             ]
           },
           {
@@ -30421,18 +30426,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000074",
+              "WAL-CLM-DDDL-000150",
+              "WAL-CLM-DDDL-000242",
+              "WAL-CLM-DDDL-000263",
+              "WAL-CLM-EPIGEN-000102",
+              "WAL-CLM-EPIGEN-000321",
               "WAL-CLM-HELLS-000047",
               "WAL-CLM-IMMORT-000189",
               "WAL-CLM-LETS-000510",
               "WAL-CLM-RARE-000155",
-              "WAL-CLM-RARE-000351"
+              "WAL-CLM-RARE-000351",
+              "WAL-CLM-RARE-000374"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000369",
               "WAL-CLM-IMMORT-000314",
-              "WAL-CLM-RARE-000153"
+              "WAL-CLM-RARE-000153",
+              "WAL-CLM-RARE-000188",
+              "WAL-CLM-RARE-000217"
             ]
           },
           {
@@ -30454,13 +30469,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000203",
+              "WAL-CLM-DDDL-000383",
               "WAL-CLM-IMMORT-000193",
-              "WAL-CLM-LETS-000062"
+              "WAL-CLM-LETS-000062",
+              "WAL-CLM-LETS-000203",
+              "WAL-CLM-LETS-000384"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000332",
               "WAL-CLM-HELLS-000048",
               "WAL-CLM-RARE-000353"
             ]
@@ -30525,7 +30544,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 147,
-        distinct_claim_count: 176,
+        distinct_claim_count: 197,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -30577,18 +30596,169 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
+            kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000074",
-              "WAL-CLM-EPIGEN-000472",
-              "WAL-CLM-RARE-000275",
-              "WAL-CLM-RARE-000303",
-              "WAL-CLM-RARE-000304",
-              "WAL-CLM-RARE-000305"
+              "WAL-CLM-LETS-000142",
+              "WAL-CLM-LETS-000166",
+              "WAL-CLM-LETS-000244",
+              "WAL-CLM-LETS-000276",
+              "WAL-CLM-LETS-000322",
+              "WAL-CLM-LETS-000419",
+              "WAL-CLM-RARE-000276",
+              "WAL-CLM-RARE-000277",
+              "WAL-CLM-RARE-000279",
+              "WAL-CLM-RARE-000285",
+              "WAL-CLM-RARE-000286"
             ]
           },
           {
-            kind: "protocol",
+            kind: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000033",
+              "WAL-CLM-DDDL-000401",
+              "WAL-CLM-RARE-000153",
+              "WAL-CLM-RARE-000170",
+              "WAL-CLM-RARE-000403"
+            ]
+          },
+          {
+            kind: "diagnostic_pattern",
+            claim_ids: [
+              "WAL-CLM-RARE-000083"
+            ]
+          },
+          {
+            kind: "food_source",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000493"
+            ]
+          },
+          {
+            kind: "interaction",
+            claim_ids: [
+              "WAL-CLM-RARE-000086"
+            ]
+          }
+        ],
+        record_claim_count: 19,
+        search: [
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000174",
+              "WAL-CLM-IMMORT-000061",
+              "WAL-CLM-IMMORT-000215",
+              "WAL-CLM-RARE-000104"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000009",
+              "WAL-CLM-DDDL-000105",
+              "WAL-CLM-DDDL-000152",
+              "WAL-CLM-DDDL-000154",
+              "WAL-CLM-IMMORT-000206",
+              "WAL-CLM-LETS-000005",
+              "WAL-CLM-LETS-000482",
+              "WAL-CLM-LETS-000483",
+              "WAL-CLM-RARE-000206"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000074",
+              "WAL-CLM-DDDL-000149",
+              "WAL-CLM-EPIGEN-000061",
+              "WAL-CLM-EPIGEN-000109",
+              "WAL-CLM-EPIGEN-000232",
+              "WAL-CLM-EPIGEN-000467",
+              "WAL-CLM-EPIGEN-000471",
+              "WAL-CLM-EPIGEN-000472",
+              "WAL-CLM-IMMORT-000063",
+              "WAL-CLM-IMMORT-000064",
+              "WAL-CLM-IMMORT-000065",
+              "WAL-CLM-IMMORT-000076",
+              "WAL-CLM-IMMORT-000287",
+              "WAL-CLM-IMMORT-000324",
+              "WAL-CLM-LETS-000004",
+              "WAL-CLM-LETS-000078",
+              "WAL-CLM-LETS-000079",
+              "WAL-CLM-LETS-000174",
+              "WAL-CLM-LETS-000495",
+              "WAL-CLM-RARE-000082",
+              "WAL-CLM-RARE-000303",
+              "WAL-CLM-RARE-000304",
+              "WAL-CLM-RARE-000305",
+              "WAL-CLM-RARE-000341"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000175",
+              "WAL-CLM-DDDL-000176",
+              "WAL-CLM-DDDL-000177",
+              "WAL-CLM-DDDL-000332",
+              "WAL-CLM-DDDL-000344",
+              "WAL-CLM-DDDL-000350",
+              "WAL-CLM-DDDL-000450",
+              "WAL-CLM-DDDL-000451",
+              "WAL-CLM-DDDL-000530",
+              "WAL-CLM-DDDL-000536",
+              "WAL-CLM-DDDL-000545",
+              "WAL-CLM-DDDL-000574",
+              "WAL-CLM-EPIGEN-000143",
+              "WAL-CLM-EPIGEN-000144",
+              "WAL-CLM-EPIGEN-000146",
+              "WAL-CLM-EPIGEN-000147",
+              "WAL-CLM-EPIGEN-000233",
+              "WAL-CLM-EPIGEN-000234",
+              "WAL-CLM-EPIGEN-000405",
+              "WAL-CLM-IMMORT-000066",
+              "WAL-CLM-IMMORT-000067",
+              "WAL-CLM-IMMORT-000068",
+              "WAL-CLM-IMMORT-000069",
+              "WAL-CLM-IMMORT-000070",
+              "WAL-CLM-IMMORT-000217",
+              "WAL-CLM-IMMORT-000225",
+              "WAL-CLM-IMMORT-000291",
+              "WAL-CLM-IMMORT-000483",
+              "WAL-CLM-RARE-000099",
+              "WAL-CLM-RARE-000106",
+              "WAL-CLM-RARE-000275",
+              "WAL-CLM-RARE-000340",
+              "WAL-CLM-RARE-000367"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-DDDL-000178",
+              "WAL-CLM-DDDL-000250",
+              "WAL-CLM-DDDL-000251",
+              "WAL-CLM-DDDL-000309",
+              "WAL-CLM-IMMORT-000022",
+              "WAL-CLM-IMMORT-000292",
+              "WAL-CLM-IMMORT-000492"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000059",
+              "WAL-CLM-EPIGEN-000235",
+              "WAL-CLM-HELLS-000030",
+              "WAL-CLM-IMMORT-000071",
+              "WAL-CLM-LETS-000332",
+              "WAL-CLM-LETS-000374",
+              "WAL-CLM-LETS-000496",
+              "WAL-CLM-RARE-000352"
+            ]
+          },
+          {
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000051",
               "WAL-CLM-DDDL-000060",
@@ -30597,6 +30767,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000086",
               "WAL-CLM-DDDL-000088",
               "WAL-CLM-DDDL-000092",
+              "WAL-CLM-DDDL-000172",
               "WAL-CLM-DDDL-000320",
               "WAL-CLM-DDDL-000323",
               "WAL-CLM-DDDL-000336",
@@ -30617,9 +30788,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000517",
               "WAL-CLM-DDDL-000521",
               "WAL-CLM-DDDL-000523",
+              "WAL-CLM-EPIGEN-000128",
               "WAL-CLM-IMMORT-000216",
+              "WAL-CLM-LETS-000046",
               "WAL-CLM-LETS-000139",
-              "WAL-CLM-LETS-000142",
               "WAL-CLM-LETS-000146",
               "WAL-CLM-LETS-000151",
               "WAL-CLM-LETS-000152",
@@ -30627,28 +30799,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000158",
               "WAL-CLM-LETS-000161",
               "WAL-CLM-LETS-000164",
-              "WAL-CLM-LETS-000166",
               "WAL-CLM-LETS-000168",
               "WAL-CLM-LETS-000171",
-              "WAL-CLM-LETS-000174",
               "WAL-CLM-LETS-000176",
               "WAL-CLM-LETS-000219",
               "WAL-CLM-LETS-000223",
               "WAL-CLM-LETS-000233",
               "WAL-CLM-LETS-000238",
-              "WAL-CLM-LETS-000244",
               "WAL-CLM-LETS-000258",
               "WAL-CLM-LETS-000266",
               "WAL-CLM-LETS-000267",
-              "WAL-CLM-LETS-000276",
               "WAL-CLM-LETS-000281",
               "WAL-CLM-LETS-000285",
               "WAL-CLM-LETS-000289",
               "WAL-CLM-LETS-000321",
-              "WAL-CLM-LETS-000322",
               "WAL-CLM-LETS-000326",
-              "WAL-CLM-LETS-000332",
-              "WAL-CLM-LETS-000374",
               "WAL-CLM-LETS-000379",
               "WAL-CLM-LETS-000382",
               "WAL-CLM-LETS-000383",
@@ -30658,178 +30823,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000402",
               "WAL-CLM-LETS-000413",
               "WAL-CLM-LETS-000415",
-              "WAL-CLM-LETS-000419",
               "WAL-CLM-LETS-000420",
               "WAL-CLM-LETS-000426",
               "WAL-CLM-LETS-000427",
               "WAL-CLM-LETS-000451",
               "WAL-CLM-LETS-000454",
-              "WAL-CLM-RARE-000276",
-              "WAL-CLM-RARE-000277",
-              "WAL-CLM-RARE-000279",
-              "WAL-CLM-RARE-000282",
-              "WAL-CLM-RARE-000285",
-              "WAL-CLM-RARE-000286"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000033",
-              "WAL-CLM-DDDL-000332",
-              "WAL-CLM-DDDL-000344",
-              "WAL-CLM-DDDL-000350",
-              "WAL-CLM-DDDL-000401",
-              "WAL-CLM-DDDL-000450",
-              "WAL-CLM-DDDL-000530",
-              "WAL-CLM-DDDL-000536",
-              "WAL-CLM-DDDL-000545",
-              "WAL-CLM-DDDL-000574",
-              "WAL-CLM-EPIGEN-000143",
-              "WAL-CLM-EPIGEN-000144",
-              "WAL-CLM-EPIGEN-000146",
-              "WAL-CLM-EPIGEN-000147",
-              "WAL-CLM-IMMORT-000068",
-              "WAL-CLM-IMMORT-000217",
-              "WAL-CLM-LETS-000483",
-              "WAL-CLM-RARE-000099",
-              "WAL-CLM-RARE-000153",
-              "WAL-CLM-RARE-000170",
-              "WAL-CLM-RARE-000403"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-DDDL-000058"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000215",
-              "WAL-CLM-LETS-000482"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000451",
-              "WAL-CLM-RARE-000082",
-              "WAL-CLM-RARE-000083"
-            ]
-          },
-          {
-            kind: "food_source",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000493"
-            ]
-          },
-          {
-            kind: "interaction",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000206",
-              "WAL-CLM-RARE-000086"
-            ]
-          },
-          {
-            kind: "personal_anecdote",
-            claim_ids: [
-              "WAL-CLM-DDDL-000309"
-            ]
-          },
-          {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000015"
-            ]
-          }
-        ],
-        record_claim_count: 118,
-        search: [
-          {
-            facet: "basics",
-            claim_ids: [
-              "WAL-CLM-DDDL-000174",
-              "WAL-CLM-IMMORT-000061",
-              "WAL-CLM-RARE-000104"
-            ]
-          },
-          {
-            facet: "warning",
-            claim_ids: [
-              "WAL-CLM-DDDL-000009",
-              "WAL-CLM-LETS-000005"
-            ]
-          },
-          {
-            facet: "physiology",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000061",
-              "WAL-CLM-EPIGEN-000109",
-              "WAL-CLM-EPIGEN-000232",
-              "WAL-CLM-EPIGEN-000467",
-              "WAL-CLM-EPIGEN-000471",
-              "WAL-CLM-IMMORT-000063",
-              "WAL-CLM-IMMORT-000064",
-              "WAL-CLM-IMMORT-000065",
-              "WAL-CLM-IMMORT-000076",
-              "WAL-CLM-LETS-000004",
-              "WAL-CLM-LETS-000078",
-              "WAL-CLM-LETS-000079",
-              "WAL-CLM-RARE-000341"
-            ]
-          },
-          {
-            facet: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000175",
-              "WAL-CLM-DDDL-000176",
-              "WAL-CLM-DDDL-000177",
-              "WAL-CLM-EPIGEN-000233",
-              "WAL-CLM-EPIGEN-000234",
-              "WAL-CLM-IMMORT-000066",
-              "WAL-CLM-IMMORT-000067",
-              "WAL-CLM-IMMORT-000069",
-              "WAL-CLM-IMMORT-000070",
-              "WAL-CLM-IMMORT-000291",
-              "WAL-CLM-IMMORT-000483",
-              "WAL-CLM-RARE-000106",
-              "WAL-CLM-RARE-000340"
-            ]
-          },
-          {
-            facet: "sources",
-            claim_ids: [
-              "WAL-CLM-DDDL-000178",
-              "WAL-CLM-IMMORT-000022",
-              "WAL-CLM-IMMORT-000292",
-              "WAL-CLM-IMMORT-000492"
-            ]
-          },
-          {
-            facet: "uses",
-            claim_ids: [
-              "WAL-CLM-DDDL-000059",
-              "WAL-CLM-EPIGEN-000235",
-              "WAL-CLM-HELLS-000030",
-              "WAL-CLM-IMMORT-000071"
-            ]
-          },
-          {
-            facet: "protocol",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000128",
-              "WAL-CLM-LETS-000046",
               "WAL-CLM-RARE-000278",
-              "WAL-CLM-RARE-000281"
+              "WAL-CLM-RARE-000281",
+              "WAL-CLM-RARE-000282"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-DDDL-000058",
               "WAL-CLM-DDDL-000087",
+              "WAL-CLM-DDDL-000155",
               "WAL-CLM-DDDL-000180",
+              "WAL-CLM-DDDL-000253",
+              "WAL-CLM-EPIGEN-000196",
+              "WAL-CLM-EPIGEN-000332",
+              "WAL-CLM-IMMORT-000015",
               "WAL-CLM-IMMORT-000062",
               "WAL-CLM-IMMORT-000073",
               "WAL-CLM-IMMORT-000074",
@@ -30847,6 +30861,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "discovery",
             claim_ids: [
+              "WAL-CLM-DDDL-000156",
               "WAL-CLM-EPIGEN-000236"
             ]
           },
@@ -30991,7 +31006,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 16,
-        distinct_claim_count: 27,
+        distinct_claim_count: 28,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -31031,20 +31046,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-RARE-000275",
-              "WAL-CLM-RARE-000303",
-              "WAL-CLM-RARE-000304",
-              "WAL-CLM-RARE-000305"
+              "WAL-CLM-RARE-000304"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000405",
-              "WAL-CLM-DDDL-000460",
-              "WAL-CLM-DDDL-000461",
-              "WAL-CLM-DDDL-000462",
-              "WAL-CLM-LETS-000391",
               "WAL-CLM-RARE-000279"
             ]
           },
@@ -31061,7 +31068,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 12,
+        record_claim_count: 4,
         search: [
           {
             facet: "basics",
@@ -31078,14 +31085,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
-              "WAL-CLM-IMMORT-000043"
+              "WAL-CLM-IMMORT-000043",
+              "WAL-CLM-RARE-000303",
+              "WAL-CLM-RARE-000305"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000290",
               "WAL-CLM-EPIGEN-000312",
-              "WAL-CLM-RARE-000099"
+              "WAL-CLM-RARE-000099",
+              "WAL-CLM-RARE-000275"
             ]
           },
           {
@@ -31105,7 +31116,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000127"
+              "WAL-CLM-DDDL-000405",
+              "WAL-CLM-DDDL-000460",
+              "WAL-CLM-DDDL-000461",
+              "WAL-CLM-DDDL-000462",
+              "WAL-CLM-EPIGEN-000127",
+              "WAL-CLM-LETS-000391"
             ]
           },
           {
@@ -31163,7 +31179,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 12,
-        distinct_claim_count: 23,
+        distinct_claim_count: 30,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -31211,27 +31227,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin b12",
           "b12"
         ],
-        record: [
-          {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-RARE-000014"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000044",
-              "WAL-CLM-IMMORT-000080"
-            ]
-          }
-        ],
-        record_claim_count: 3,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
             claim_ids: [
+              "WAL-CLM-DDDL-000044",
               "WAL-CLM-IMMORT-000233",
+              "WAL-CLM-IMMORT-000305",
               "WAL-CLM-IMMORT-000355"
             ]
           },
@@ -31245,7 +31249,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000193",
               "WAL-CLM-DDDL-000239",
+              "WAL-CLM-IMMORT-000080",
               "WAL-CLM-IMMORT-000356",
               "WAL-CLM-IMMORT-000357",
               "WAL-CLM-RARE-000115"
@@ -31255,13 +31261,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000077",
+              "WAL-CLM-EPIGEN-000323",
               "WAL-CLM-IMMORT-000081",
-              "WAL-CLM-IMMORT-000085"
+              "WAL-CLM-IMMORT-000085",
+              "WAL-CLM-IMMORT-000306"
             ]
           },
           {
             facet: "sources",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000267",
+              "WAL-CLM-EPIGEN-000268",
               "WAL-CLM-IMMORT-000086",
               "WAL-CLM-RARE-000363"
             ]
@@ -31269,7 +31279,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-IMMORT-000084"
+              "WAL-CLM-IMMORT-000084",
+              "WAL-CLM-RARE-000014"
             ]
           },
           {
@@ -31287,6 +31298,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "etymology",
             claim_ids: [
+              "WAL-CLM-IMMORT-000308",
               "WAL-CLM-IMMORT-000385"
             ]
           },
@@ -31327,7 +31339,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 80,
-        distinct_claim_count: 98,
+        distinct_claim_count: 105,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -31368,71 +31380,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-IMMORT-000089",
-              "WAL-CLM-IMMORT-000344",
-              "WAL-CLM-IMMORT-000467",
-              "WAL-CLM-LETS-000006",
-              "WAL-CLM-RARE-000307",
-              "WAL-CLM-RARE-000313"
+              "WAL-CLM-LETS-000006"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000048",
-              "WAL-CLM-DDDL-000075",
-              "WAL-CLM-DDDL-000078",
-              "WAL-CLM-DDDL-000320",
-              "WAL-CLM-DDDL-000347",
-              "WAL-CLM-DDDL-000349",
-              "WAL-CLM-DDDL-000354",
               "WAL-CLM-DDDL-000417",
-              "WAL-CLM-DDDL-000434",
-              "WAL-CLM-DDDL-000521",
-              "WAL-CLM-LETS-000125",
               "WAL-CLM-LETS-000142",
-              "WAL-CLM-LETS-000148",
-              "WAL-CLM-LETS-000151",
-              "WAL-CLM-LETS-000155",
-              "WAL-CLM-LETS-000159",
-              "WAL-CLM-LETS-000203",
               "WAL-CLM-LETS-000207",
-              "WAL-CLM-LETS-000219",
-              "WAL-CLM-LETS-000221",
-              "WAL-CLM-LETS-000222",
-              "WAL-CLM-LETS-000233",
-              "WAL-CLM-LETS-000238",
               "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000246",
-              "WAL-CLM-LETS-000280",
-              "WAL-CLM-LETS-000293",
-              "WAL-CLM-LETS-000305",
-              "WAL-CLM-LETS-000307",
-              "WAL-CLM-LETS-000310",
-              "WAL-CLM-LETS-000316",
               "WAL-CLM-LETS-000322",
-              "WAL-CLM-LETS-000331",
               "WAL-CLM-LETS-000333",
-              "WAL-CLM-LETS-000334",
               "WAL-CLM-LETS-000356",
-              "WAL-CLM-LETS-000381",
-              "WAL-CLM-LETS-000388",
-              "WAL-CLM-LETS-000457",
               "WAL-CLM-RARE-000276",
               "WAL-CLM-RARE-000277",
-              "WAL-CLM-RARE-000278",
-              "WAL-CLM-RARE-000280",
-              "WAL-CLM-RARE-000282"
+              "WAL-CLM-RARE-000278"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000326",
-              "WAL-CLM-DDDL-000413",
-              "WAL-CLM-DDDL-000446",
               "WAL-CLM-DDDL-000447",
-              "WAL-CLM-DDDL-000547",
               "WAL-CLM-RARE-000074"
             ]
           },
@@ -31442,15 +31411,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-RARE-000081",
               "WAL-CLM-RARE-000129"
             ]
-          },
-          {
-            kind: "personal_anecdote",
-            claim_ids: [
-              "WAL-CLM-DDDL-000008"
-            ]
           }
         ],
-        record_claim_count: 59,
+        record_claim_count: 15,
         search: [
           {
             facet: "basics",
@@ -31464,7 +31427,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "warning",
             claim_ids: [
               "WAL-CLM-DDDL-000017",
-              "WAL-CLM-LETS-000007"
+              "WAL-CLM-LETS-000007",
+              "WAL-CLM-RARE-000280"
             ]
           },
           {
@@ -31477,10 +31441,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-HELLS-000097",
               "WAL-CLM-IMMORT-000088",
               "WAL-CLM-IMMORT-000092",
+              "WAL-CLM-IMMORT-000344",
               "WAL-CLM-RARE-000039",
               "WAL-CLM-RARE-000042",
               "WAL-CLM-RARE-000118",
-              "WAL-CLM-RARE-000128"
+              "WAL-CLM-RARE-000128",
+              "WAL-CLM-RARE-000307",
+              "WAL-CLM-RARE-000313"
             ]
           },
           {
@@ -31488,8 +31455,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000200",
               "WAL-CLM-DDDL-000201",
+              "WAL-CLM-DDDL-000326",
+              "WAL-CLM-DDDL-000413",
+              "WAL-CLM-DDDL-000446",
+              "WAL-CLM-DDDL-000547",
               "WAL-CLM-HELLS-000043",
+              "WAL-CLM-HELLS-000055",
+              "WAL-CLM-IMMORT-000089",
               "WAL-CLM-IMMORT-000091",
+              "WAL-CLM-IMMORT-000467",
               "WAL-CLM-LETS-000508",
               "WAL-CLM-RARE-000117"
             ]
@@ -31505,15 +31479,52 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "uses",
             claim_ids: [
               "WAL-CLM-DDDL-000046",
+              "WAL-CLM-DDDL-000049",
+              "WAL-CLM-DDDL-000187",
               "WAL-CLM-DDDL-000202"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000048",
+              "WAL-CLM-DDDL-000075",
+              "WAL-CLM-DDDL-000078",
+              "WAL-CLM-DDDL-000225",
+              "WAL-CLM-DDDL-000294",
+              "WAL-CLM-DDDL-000320",
+              "WAL-CLM-DDDL-000347",
+              "WAL-CLM-DDDL-000349",
+              "WAL-CLM-DDDL-000354",
+              "WAL-CLM-DDDL-000434",
+              "WAL-CLM-DDDL-000521",
               "WAL-CLM-EPIGEN-000129",
               "WAL-CLM-LETS-000049",
-              "WAL-CLM-LETS-000509"
+              "WAL-CLM-LETS-000125",
+              "WAL-CLM-LETS-000148",
+              "WAL-CLM-LETS-000151",
+              "WAL-CLM-LETS-000155",
+              "WAL-CLM-LETS-000159",
+              "WAL-CLM-LETS-000203",
+              "WAL-CLM-LETS-000219",
+              "WAL-CLM-LETS-000221",
+              "WAL-CLM-LETS-000222",
+              "WAL-CLM-LETS-000233",
+              "WAL-CLM-LETS-000238",
+              "WAL-CLM-LETS-000246",
+              "WAL-CLM-LETS-000280",
+              "WAL-CLM-LETS-000293",
+              "WAL-CLM-LETS-000305",
+              "WAL-CLM-LETS-000307",
+              "WAL-CLM-LETS-000310",
+              "WAL-CLM-LETS-000316",
+              "WAL-CLM-LETS-000331",
+              "WAL-CLM-LETS-000334",
+              "WAL-CLM-LETS-000381",
+              "WAL-CLM-LETS-000388",
+              "WAL-CLM-LETS-000457",
+              "WAL-CLM-LETS-000509",
+              "WAL-CLM-RARE-000282"
             ]
           },
           {
@@ -31523,12 +31534,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000277",
               "WAL-CLM-IMMORT-000090",
               "WAL-CLM-IMMORT-000313",
+              "WAL-CLM-LETS-000513",
               "WAL-CLM-RARE-000124"
             ]
           },
           {
             facet: "big_question",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000308",
               "WAL-CLM-RARE-000043"
             ]
           },
@@ -31541,6 +31554,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "history",
             claim_ids: [
+              "WAL-CLM-DDDL-000008",
               "WAL-CLM-DDDL-000016",
               "WAL-CLM-EPIGEN-000278",
               "WAL-CLM-HELLS-000046"
@@ -31628,7 +31642,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 69,
-        distinct_claim_count: 87,
+        distinct_claim_count: 95,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -31685,38 +31699,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000469",
-              "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000102",
-              "WAL-CLM-IMMORT-000103",
-              "WAL-CLM-RARE-000051",
-              "WAL-CLM-RARE-000149",
-              "WAL-CLM-RARE-000275",
-              "WAL-CLM-RARE-000303"
+              "WAL-CLM-IMMORT-000099"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000049",
-              "WAL-CLM-DDDL-000375",
-              "WAL-CLM-DDDL-000387",
-              "WAL-CLM-DDDL-000445",
-              "WAL-CLM-DDDL-000506",
-              "WAL-CLM-DDDL-000523",
-              "WAL-CLM-DDDL-000524",
-              "WAL-CLM-EPIGEN-000007",
               "WAL-CLM-LETS-000137",
-              "WAL-CLM-LETS-000146",
               "WAL-CLM-LETS-000243",
-              "WAL-CLM-LETS-000246",
-              "WAL-CLM-LETS-000326",
-              "WAL-CLM-LETS-000360",
-              "WAL-CLM-LETS-000399",
-              "WAL-CLM-LETS-000409",
               "WAL-CLM-LETS-000419",
-              "WAL-CLM-LETS-000460",
-              "WAL-CLM-LETS-000462",
               "WAL-CLM-RARE-000279",
               "WAL-CLM-RARE-000281"
             ]
@@ -31730,29 +31722,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "contraindication",
-            claim_ids: [
-              "WAL-CLM-RARE-000181"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-DDDL-000386",
-              "WAL-CLM-IMMORT-000110"
-            ]
-          },
-          {
             kind: "diagnostic_pattern",
             claim_ids: [
               "WAL-CLM-RARE-000081",
               "WAL-CLM-RARE-000083"
-            ]
-          },
-          {
-            kind: "food_source",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000493"
             ]
           },
           {
@@ -31769,21 +31742,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 41,
+        record_claim_count: 15,
         search: [
           {
             facet: "basics",
             claim_ids: [
+              "WAL-CLM-DDDL-000386",
               "WAL-CLM-IMMORT-000097",
-              "WAL-CLM-IMMORT-000098"
+              "WAL-CLM-IMMORT-000098",
+              "WAL-CLM-IMMORT-000110"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
+              "WAL-CLM-DDDL-000211",
               "WAL-CLM-IMMORT-000104",
               "WAL-CLM-IMMORT-000111",
-              "WAL-CLM-LETS-000009"
+              "WAL-CLM-LETS-000009",
+              "WAL-CLM-RARE-000181"
             ]
           },
           {
@@ -31791,16 +31768,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000003",
               "WAL-CLM-DDDL-000195",
+              "WAL-CLM-DDDL-000241",
               "WAL-CLM-EPIGEN-000063",
               "WAL-CLM-EPIGEN-000107",
+              "WAL-CLM-EPIGEN-000469",
               "WAL-CLM-IMMORT-000100",
               "WAL-CLM-IMMORT-000105",
               "WAL-CLM-IMMORT-000106",
               "WAL-CLM-IMMORT-000108",
               "WAL-CLM-IMMORT-000109",
+              "WAL-CLM-LETS-000495",
               "WAL-CLM-RARE-000122",
               "WAL-CLM-RARE-000141",
               "WAL-CLM-RARE-000142",
+              "WAL-CLM-RARE-000303",
               "WAL-CLM-RARE-000344",
               "WAL-CLM-RARE-000345",
               "WAL-CLM-RARE-000347"
@@ -31810,19 +31791,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000025",
+              "WAL-CLM-EPIGEN-000007",
+              "WAL-CLM-EPIGEN-000051",
               "WAL-CLM-EPIGEN-000272",
               "WAL-CLM-IMMORT-000107",
               "WAL-CLM-IMMORT-000180",
               "WAL-CLM-RARE-000120",
-              "WAL-CLM-RARE-000346"
+              "WAL-CLM-RARE-000149",
+              "WAL-CLM-RARE-000275",
+              "WAL-CLM-RARE-000346",
+              "WAL-CLM-RARE-000381"
             ]
           },
           {
             facet: "sources",
             claim_ids: [
+              "WAL-CLM-HELLS-000019",
               "WAL-CLM-HELLS-000038",
               "WAL-CLM-HELLS-000039",
-              "WAL-CLM-IMMORT-000310"
+              "WAL-CLM-IMMORT-000310",
+              "WAL-CLM-IMMORT-000493"
             ]
           },
           {
@@ -31830,6 +31818,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000196",
               "WAL-CLM-DDDL-000198",
+              "WAL-CLM-DDDL-000375",
               "WAL-CLM-RARE-000121"
             ]
           },
@@ -31837,16 +31826,34 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000197",
+              "WAL-CLM-DDDL-000387",
+              "WAL-CLM-DDDL-000445",
+              "WAL-CLM-DDDL-000506",
+              "WAL-CLM-DDDL-000523",
+              "WAL-CLM-DDDL-000524",
               "WAL-CLM-EPIGEN-000130",
               "WAL-CLM-LETS-000050",
+              "WAL-CLM-LETS-000146",
+              "WAL-CLM-LETS-000246",
+              "WAL-CLM-LETS-000326",
+              "WAL-CLM-LETS-000360",
+              "WAL-CLM-LETS-000399",
+              "WAL-CLM-LETS-000409",
+              "WAL-CLM-LETS-000460",
+              "WAL-CLM-LETS-000462",
               "WAL-CLM-RARE-000348"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-DDDL-000173",
               "WAL-CLM-DDDL-000199",
+              "WAL-CLM-DDDL-000260",
               "WAL-CLM-EPIGEN-000273",
+              "WAL-CLM-IMMORT-000102",
+              "WAL-CLM-IMMORT-000103",
+              "WAL-CLM-RARE-000051",
               "WAL-CLM-RARE-000129",
               "WAL-CLM-RARE-000308"
             ]
@@ -31997,31 +32004,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-RARE-000011"
             ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000070",
-              "WAL-CLM-DDDL-000361",
-              "WAL-CLM-LETS-000130",
-              "WAL-CLM-LETS-000201",
-              "WAL-CLM-LETS-000221",
-              "WAL-CLM-LETS-000298",
-              "WAL-CLM-LETS-000311",
-              "WAL-CLM-LETS-000313",
-              "WAL-CLM-LETS-000319",
-              "WAL-CLM-LETS-000344",
-              "WAL-CLM-RARE-000282"
-            ]
-          },
-          {
-            kind: "food_source",
-            claim_ids: [
-              "WAL-CLM-DDDL-000114"
-            ]
           }
         ],
-        record_claim_count: 14,
+        record_claim_count: 2,
         search: [
           {
             facet: "basics",
@@ -32048,6 +32033,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "sources",
             claim_ids: [
+              "WAL-CLM-DDDL-000114",
               "WAL-CLM-DDDL-000230",
               "WAL-CLM-EPIGEN-000309",
               "WAL-CLM-RARE-000013"
@@ -32063,8 +32049,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000011",
+              "WAL-CLM-DDDL-000070",
               "WAL-CLM-DDDL-000232",
-              "WAL-CLM-IMMORT-000140"
+              "WAL-CLM-DDDL-000361",
+              "WAL-CLM-IMMORT-000140",
+              "WAL-CLM-LETS-000130",
+              "WAL-CLM-LETS-000201",
+              "WAL-CLM-LETS-000221",
+              "WAL-CLM-LETS-000298",
+              "WAL-CLM-LETS-000311",
+              "WAL-CLM-LETS-000313",
+              "WAL-CLM-LETS-000319",
+              "WAL-CLM-LETS-000344",
+              "WAL-CLM-RARE-000282"
             ]
           },
           {
@@ -32116,7 +32113,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 37,
-        distinct_claim_count: 49,
+        distinct_claim_count: 52,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -32179,21 +32176,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-IMMORT-000131",
-              "WAL-CLM-RARE-000037"
+              "WAL-CLM-IMMORT-000131"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000080",
-              "WAL-CLM-LETS-000137",
-              "WAL-CLM-LETS-000143",
-              "WAL-CLM-LETS-000171",
               "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000276",
-              "WAL-CLM-LETS-000357",
-              "WAL-CLM-LETS-000377"
+              "WAL-CLM-LETS-000357"
             ]
           },
           {
@@ -32218,21 +32209,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "food_source",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000492",
-              "WAL-CLM-IMMORT-000493"
-            ]
-          },
-          {
             kind: "interaction",
             claim_ids: [
-              "WAL-CLM-DDDL-000021",
               "WAL-CLM-DDDL-000040"
             ]
           }
         ],
-        record_claim_count: 20,
+        record_claim_count: 11,
         search: [
           {
             facet: "basics",
@@ -32245,6 +32228,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "warning",
             claim_ids: [
               "WAL-CLM-DDDL-000022",
+              "WAL-CLM-EPIGEN-000325",
               "WAL-CLM-IMMORT-000133",
               "WAL-CLM-LETS-000015"
             ]
@@ -32258,7 +32242,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-IMMORT-000126",
               "WAL-CLM-IMMORT-000128",
               "WAL-CLM-LETS-000014",
+              "WAL-CLM-LETS-000276",
               "WAL-CLM-LETS-000503",
+              "WAL-CLM-RARE-000037",
               "WAL-CLM-RARE-000337"
             ]
           },
@@ -32273,8 +32259,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "sources",
             claim_ids: [
+              "WAL-CLM-DDDL-000021",
               "WAL-CLM-IMMORT-000290",
+              "WAL-CLM-IMMORT-000492",
+              "WAL-CLM-IMMORT-000493",
               "WAL-CLM-RARE-000338"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000192"
             ]
           },
           {
@@ -32282,6 +32277,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000132",
               "WAL-CLM-LETS-000055",
+              "WAL-CLM-LETS-000137",
+              "WAL-CLM-LETS-000143",
+              "WAL-CLM-LETS-000171",
+              "WAL-CLM-LETS-000377",
               "WAL-CLM-LETS-000504"
             ]
           },
@@ -32297,7 +32296,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "big_question",
             claim_ids: [
-              "WAL-CLM-HELLS-000029"
+              "WAL-CLM-HELLS-000029",
+              "WAL-CLM-HELLS-000064"
             ]
           },
           {
@@ -32351,7 +32351,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 33,
-        distinct_claim_count: 41,
+        distinct_claim_count: 45,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -32386,19 +32386,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000025",
-              "WAL-CLM-IMMORT-000180"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000359",
-              "WAL-CLM-LETS-000275",
-              "WAL-CLM-LETS-000287",
-              "WAL-CLM-LETS-000309"
+              "WAL-CLM-LETS-000275"
             ]
           },
           {
@@ -32421,7 +32411,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 10,
+        record_claim_count: 5,
         search: [
           {
             facet: "basics",
@@ -32436,12 +32426,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000208",
               "WAL-CLM-DDDL-000209",
+              "WAL-CLM-EPIGEN-000326",
               "WAL-CLM-IMMORT-000184"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000241",
+              "WAL-CLM-DDDL-000276",
               "WAL-CLM-EPIGEN-000093",
               "WAL-CLM-EPIGEN-000469",
               "WAL-CLM-IMMORT-000001",
@@ -32454,7 +32447,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000023",
+              "WAL-CLM-DDDL-000025",
               "WAL-CLM-IMMORT-000179",
+              "WAL-CLM-IMMORT-000180",
               "WAL-CLM-IMMORT-000181",
               "WAL-CLM-IMMORT-000317",
               "WAL-CLM-RARE-000145",
@@ -32480,8 +32475,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000207",
+              "WAL-CLM-DDDL-000359",
               "WAL-CLM-EPIGEN-000131",
-              "WAL-CLM-LETS-000054"
+              "WAL-CLM-LETS-000054",
+              "WAL-CLM-LETS-000287",
+              "WAL-CLM-LETS-000309"
             ]
           },
           {
@@ -32500,7 +32498,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "history",
             claim_ids: [
-              "WAL-CLM-HELLS-000049"
+              "WAL-CLM-HELLS-000049",
+              "WAL-CLM-RARE-000382"
             ]
           },
           {
@@ -32539,7 +32538,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 21,
-        distinct_claim_count: 33,
+        distinct_claim_count: 34,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -32592,20 +32591,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000053",
-              "WAL-CLM-EPIGEN-000010"
+              "WAL-CLM-DDDL-000053"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000321",
-              "WAL-CLM-DDDL-000351",
-              "WAL-CLM-DDDL-000523",
-              "WAL-CLM-LETS-000147",
               "WAL-CLM-LETS-000267",
-              "WAL-CLM-LETS-000294",
-              "WAL-CLM-LETS-000445",
               "WAL-CLM-RARE-000283"
             ]
           },
@@ -32622,7 +32614,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 12,
+        record_claim_count: 5,
         search: [
           {
             facet: "basics",
@@ -32653,6 +32645,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000027",
+              "WAL-CLM-EPIGEN-000010",
               "WAL-CLM-IMMORT-000347"
             ]
           },
@@ -32672,13 +32665,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000321",
+              "WAL-CLM-DDDL-000351",
+              "WAL-CLM-DDDL-000523",
               "WAL-CLM-EPIGEN-000134",
-              "WAL-CLM-LETS-000057"
+              "WAL-CLM-LETS-000057",
+              "WAL-CLM-LETS-000147",
+              "WAL-CLM-LETS-000294",
+              "WAL-CLM-LETS-000445"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-DDDL-000219",
               "WAL-CLM-DDDL-000237",
               "WAL-CLM-RARE-000178"
             ]
@@ -32740,7 +32740,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 7,
-        distinct_claim_count: 14,
+        distinct_claim_count: 15,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -32803,7 +32803,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000028",
-              "WAL-CLM-EPIGEN-000100"
+              "WAL-CLM-EPIGEN-000100",
+              "WAL-CLM-RARE-000346"
             ]
           },
           {
@@ -32849,7 +32850,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 135,
-        distinct_claim_count: 143,
+        distinct_claim_count: 168,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -32872,24 +32873,132 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000381",
-              "WAL-CLM-EPIGEN-000004",
-              "WAL-CLM-IMMORT-000211",
-              "WAL-CLM-IMMORT-000212",
-              "WAL-CLM-LETS-000471",
-              "WAL-CLM-RARE-000270",
-              "WAL-CLM-RARE-000306",
-              "WAL-CLM-RARE-000310"
+              "WAL-CLM-RARE-000270"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000054",
               "WAL-CLM-DDDL-000056",
+              "WAL-CLM-EPIGEN-000015",
+              "WAL-CLM-LETS-000137",
+              "WAL-CLM-LETS-000144",
+              "WAL-CLM-LETS-000157",
+              "WAL-CLM-LETS-000275",
+              "WAL-CLM-LETS-000356",
+              "WAL-CLM-LETS-000365",
+              "WAL-CLM-LETS-000374",
+              "WAL-CLM-LETS-000417",
+              "WAL-CLM-LETS-000419",
+              "WAL-CLM-LETS-000452",
+              "WAL-CLM-RARE-000279",
+              "WAL-CLM-RARE-000281",
+              "WAL-CLM-RARE-000282",
+              "WAL-CLM-RARE-000283"
+            ]
+          },
+          {
+            kind: "mechanism",
+            claim_ids: [
+              "WAL-CLM-RARE-000094",
+              "WAL-CLM-RARE-000403"
+            ]
+          },
+          {
+            kind: "food_source",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000168"
+            ]
+          },
+          {
+            kind: "interaction",
+            claim_ids: [
+              "WAL-CLM-RARE-000086"
+            ]
+          }
+        ],
+        record_claim_count: 21,
+        search: [
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000138",
+              "WAL-CLM-LETS-000234"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000030",
+              "WAL-CLM-DDDL-000170",
+              "WAL-CLM-EPIGEN-000173",
+              "WAL-CLM-EPIGEN-000177",
+              "WAL-CLM-EPIGEN-000186",
+              "WAL-CLM-LETS-000031"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000006",
+              "WAL-CLM-DDDL-000071",
+              "WAL-CLM-DDDL-000074",
+              "WAL-CLM-DDDL-000137",
+              "WAL-CLM-DDDL-000150",
+              "WAL-CLM-DDDL-000381",
+              "WAL-CLM-EPIGEN-000033",
+              "WAL-CLM-EPIGEN-000280",
+              "WAL-CLM-EPIGEN-000465",
+              "WAL-CLM-LETS-000030",
+              "WAL-CLM-RARE-000227",
+              "WAL-CLM-RARE-000269",
+              "WAL-CLM-RARE-000355"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000029",
+              "WAL-CLM-DDDL-000126",
+              "WAL-CLM-DDDL-000458",
+              "WAL-CLM-EPIGEN-000150",
+              "WAL-CLM-EPIGEN-000473",
+              "WAL-CLM-IMMORT-000321",
+              "WAL-CLM-IMMORT-000479",
+              "WAL-CLM-RARE-000225",
+              "WAL-CLM-RARE-000226",
+              "WAL-CLM-RARE-000228",
+              "WAL-CLM-RARE-000320"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000171",
+              "WAL-CLM-EPIGEN-000187"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000151",
+              "WAL-CLM-DDDL-000498",
+              "WAL-CLM-IMMORT-000269",
+              "WAL-CLM-LETS-000197",
+              "WAL-CLM-LETS-000497",
+              "WAL-CLM-LETS-000511"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000054",
               "WAL-CLM-DDDL-000070",
               "WAL-CLM-DDDL-000081",
               "WAL-CLM-DDDL-000085",
+              "WAL-CLM-DDDL-000203",
+              "WAL-CLM-DDDL-000220",
+              "WAL-CLM-DDDL-000269",
               "WAL-CLM-DDDL-000320",
               "WAL-CLM-DDDL-000323",
               "WAL-CLM-DDDL-000325",
@@ -32900,21 +33009,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000408",
               "WAL-CLM-DDDL-000434",
               "WAL-CLM-DDDL-000456",
-              "WAL-CLM-DDDL-000498",
               "WAL-CLM-DDDL-000499",
               "WAL-CLM-DDDL-000509",
               "WAL-CLM-DDDL-000533",
               "WAL-CLM-DDDL-000579",
-              "WAL-CLM-EPIGEN-000005",
-              "WAL-CLM-EPIGEN-000015",
+              "WAL-CLM-DDDL-000593",
+              "WAL-CLM-DDDL-000597",
+              "WAL-CLM-DDDL-000601",
+              "WAL-CLM-EPIGEN-000136",
               "WAL-CLM-EPIGEN-000172",
+              "WAL-CLM-IMMORT-000164",
               "WAL-CLM-IMMORT-000265",
+              "WAL-CLM-LETS-000065",
               "WAL-CLM-LETS-000126",
-              "WAL-CLM-LETS-000137",
-              "WAL-CLM-LETS-000144",
               "WAL-CLM-LETS-000146",
               "WAL-CLM-LETS-000150",
-              "WAL-CLM-LETS-000157",
               "WAL-CLM-LETS-000178",
               "WAL-CLM-LETS-000203",
               "WAL-CLM-LETS-000204",
@@ -32923,11 +33032,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000220",
               "WAL-CLM-LETS-000222",
               "WAL-CLM-LETS-000229",
-              "WAL-CLM-LETS-000234",
               "WAL-CLM-LETS-000238",
               "WAL-CLM-LETS-000240",
               "WAL-CLM-LETS-000273",
-              "WAL-CLM-LETS-000275",
               "WAL-CLM-LETS-000280",
               "WAL-CLM-LETS-000282",
               "WAL-CLM-LETS-000283",
@@ -32935,6 +33042,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000295",
               "WAL-CLM-LETS-000298",
               "WAL-CLM-LETS-000311",
+              "WAL-CLM-LETS-000313",
               "WAL-CLM-LETS-000316",
               "WAL-CLM-LETS-000317",
               "WAL-CLM-LETS-000318",
@@ -32947,138 +33055,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000344",
               "WAL-CLM-LETS-000348",
               "WAL-CLM-LETS-000350",
-              "WAL-CLM-LETS-000356",
               "WAL-CLM-LETS-000357",
               "WAL-CLM-LETS-000361",
-              "WAL-CLM-LETS-000365",
               "WAL-CLM-LETS-000366",
               "WAL-CLM-LETS-000367",
               "WAL-CLM-LETS-000373",
-              "WAL-CLM-LETS-000374",
               "WAL-CLM-LETS-000409",
-              "WAL-CLM-LETS-000417",
-              "WAL-CLM-LETS-000419",
               "WAL-CLM-LETS-000427",
               "WAL-CLM-LETS-000443",
               "WAL-CLM-LETS-000450",
-              "WAL-CLM-LETS-000452",
               "WAL-CLM-LETS-000454",
               "WAL-CLM-LETS-000457",
-              "WAL-CLM-RARE-000279",
-              "WAL-CLM-RARE-000281",
-              "WAL-CLM-RARE-000282",
-              "WAL-CLM-RARE-000283"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000126",
-              "WAL-CLM-DDDL-000458",
-              "WAL-CLM-EPIGEN-000150",
-              "WAL-CLM-RARE-000010",
-              "WAL-CLM-RARE-000094",
-              "WAL-CLM-RARE-000403"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-DDDL-000072"
-            ]
-          },
-          {
-            kind: "contraindication",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000177"
-            ]
-          },
-          {
-            kind: "food_source",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000168",
-              "WAL-CLM-EPIGEN-000171"
-            ]
-          },
-          {
-            kind: "interaction",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000164",
-              "WAL-CLM-RARE-000086"
-            ]
-          },
-          {
-            kind: "personal_anecdote",
-            claim_ids: [
-              "WAL-CLM-DDDL-000301",
-              "WAL-CLM-EPIGEN-000456",
-              "WAL-CLM-EPIGEN-000457",
-              "WAL-CLM-EPIGEN-000458"
-            ]
-          }
-        ],
-        record_claim_count: 107,
-        search: [
-          {
-            facet: "basics",
-            claim_ids: [
-              "WAL-CLM-DDDL-000138"
-            ]
-          },
-          {
-            facet: "warning",
-            claim_ids: [
-              "WAL-CLM-DDDL-000030",
-              "WAL-CLM-EPIGEN-000186",
-              "WAL-CLM-LETS-000031"
-            ]
-          },
-          {
-            facet: "physiology",
-            claim_ids: [
-              "WAL-CLM-DDDL-000006",
-              "WAL-CLM-DDDL-000071",
-              "WAL-CLM-DDDL-000137",
-              "WAL-CLM-EPIGEN-000465",
-              "WAL-CLM-LETS-000030",
-              "WAL-CLM-RARE-000227",
-              "WAL-CLM-RARE-000269"
-            ]
-          },
-          {
-            facet: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000029",
-              "WAL-CLM-EPIGEN-000473",
-              "WAL-CLM-IMMORT-000479",
-              "WAL-CLM-RARE-000225",
-              "WAL-CLM-RARE-000226",
-              "WAL-CLM-RARE-000228",
-              "WAL-CLM-RARE-000320"
-            ]
-          },
-          {
-            facet: "sources",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000187"
-            ]
-          },
-          {
-            facet: "uses",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000269",
-              "WAL-CLM-LETS-000197"
-            ]
-          },
-          {
-            facet: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000593",
-              "WAL-CLM-DDDL-000597",
-              "WAL-CLM-DDDL-000601",
-              "WAL-CLM-EPIGEN-000136",
-              "WAL-CLM-LETS-000065",
-              "WAL-CLM-LETS-000313",
               "WAL-CLM-RARE-000048"
             ]
           },
@@ -33086,9 +33073,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "stance",
             claim_ids: [
               "WAL-CLM-DDDL-000007",
+              "WAL-CLM-DDDL-000072",
               "WAL-CLM-DDDL-000136",
+              "WAL-CLM-DDDL-000147",
+              "WAL-CLM-DDDL-000260",
+              "WAL-CLM-EPIGEN-000004",
+              "WAL-CLM-EPIGEN-000005",
+              "WAL-CLM-HELLS-000026",
               "WAL-CLM-IMMORT-000011",
-              "WAL-CLM-RARE-000323"
+              "WAL-CLM-IMMORT-000211",
+              "WAL-CLM-IMMORT-000212",
+              "WAL-CLM-IMMORT-000386",
+              "WAL-CLM-LETS-000471",
+              "WAL-CLM-RARE-000010",
+              "WAL-CLM-RARE-000306",
+              "WAL-CLM-RARE-000310",
+              "WAL-CLM-RARE-000323",
+              "WAL-CLM-RARE-000328"
             ]
           },
           {
@@ -33101,13 +33102,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "discovery",
             claim_ids: [
               "WAL-CLM-EPIGEN-000185",
+              "WAL-CLM-EPIGEN-000456",
+              "WAL-CLM-EPIGEN-000458",
               "WAL-CLM-RARE-000004"
             ]
           },
           {
             facet: "history",
             claim_ids: [
-              "WAL-CLM-RARE-000322"
+              "WAL-CLM-EPIGEN-000284",
+              "WAL-CLM-EPIGEN-000457",
+              "WAL-CLM-HELLS-000018",
+              "WAL-CLM-HELLS-000053",
+              "WAL-CLM-HELLS-000058",
+              "WAL-CLM-RARE-000322",
+              "WAL-CLM-RARE-000336",
+              "WAL-CLM-RARE-000357"
+            ]
+          },
+          {
+            facet: "biography",
+            claim_ids: [
+              "WAL-CLM-DDDL-000301"
             ]
           }
         ],
@@ -33479,7 +33495,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 49,
-        distinct_claim_count: 59,
+        distinct_claim_count: 67,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -33531,53 +33547,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000017",
-              "WAL-CLM-HELLS-000097",
-              "WAL-CLM-IMMORT-000467",
-              "WAL-CLM-RARE-000039",
-              "WAL-CLM-RARE-000042",
-              "WAL-CLM-RARE-000307",
-              "WAL-CLM-RARE-000313"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000048",
-              "WAL-CLM-DDDL-000075",
-              "WAL-CLM-DDDL-000078",
-              "WAL-CLM-DDDL-000320",
-              "WAL-CLM-DDDL-000347",
-              "WAL-CLM-DDDL-000354",
-              "WAL-CLM-DDDL-000434",
-              "WAL-CLM-DDDL-000521",
-              "WAL-CLM-LETS-000125",
               "WAL-CLM-LETS-000155",
-              "WAL-CLM-LETS-000159",
               "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000246",
-              "WAL-CLM-LETS-000307",
-              "WAL-CLM-LETS-000333",
-              "WAL-CLM-RARE-000276",
-              "WAL-CLM-RARE-000277",
-              "WAL-CLM-RARE-000278",
-              "WAL-CLM-RARE-000280",
-              "WAL-CLM-RARE-000282"
+              "WAL-CLM-LETS-000333"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000034",
-              "WAL-CLM-DDDL-000326",
-              "WAL-CLM-DDDL-000413",
-              "WAL-CLM-DDDL-000446",
-              "WAL-CLM-DDDL-000447",
-              "WAL-CLM-DDDL-000547",
-              "WAL-CLM-RARE-000043",
-              "WAL-CLM-RARE-000128"
+              "WAL-CLM-DDDL-000447"
             ]
           },
           {
@@ -33585,15 +33565,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-RARE-000129"
             ]
-          },
-          {
-            kind: "personal_anecdote",
-            claim_ids: [
-              "WAL-CLM-DDDL-000008"
-            ]
           }
         ],
-        record_claim_count: 37,
+        record_claim_count: 5,
         search: [
           {
             facet: "basics",
@@ -33604,22 +33578,40 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000226"
+              "WAL-CLM-DDDL-000017",
+              "WAL-CLM-DDDL-000226",
+              "WAL-CLM-RARE-000276",
+              "WAL-CLM-RARE-000277",
+              "WAL-CLM-RARE-000280"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-HELLS-000045",
+              "WAL-CLM-HELLS-000097",
               "WAL-CLM-IMMORT-000344",
-              "WAL-CLM-RARE-000081"
+              "WAL-CLM-RARE-000039",
+              "WAL-CLM-RARE-000042",
+              "WAL-CLM-RARE-000081",
+              "WAL-CLM-RARE-000128",
+              "WAL-CLM-RARE-000307",
+              "WAL-CLM-RARE-000313"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000034",
               "WAL-CLM-DDDL-000036",
+              "WAL-CLM-DDDL-000326",
+              "WAL-CLM-DDDL-000413",
+              "WAL-CLM-DDDL-000446",
+              "WAL-CLM-DDDL-000547",
               "WAL-CLM-HELLS-000055",
+              "WAL-CLM-IMMORT-000467",
               "WAL-CLM-IMMORT-000478",
+              "WAL-CLM-LETS-000508",
               "WAL-CLM-RARE-000253",
               "WAL-CLM-RARE-000255"
             ]
@@ -33634,6 +33626,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "uses",
             claim_ids: [
               "WAL-CLM-DDDL-000035",
+              "WAL-CLM-DDDL-000046",
               "WAL-CLM-EPIGEN-000307",
               "WAL-CLM-RARE-000256"
             ]
@@ -33641,22 +33634,47 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000048",
+              "WAL-CLM-DDDL-000075",
+              "WAL-CLM-DDDL-000078",
               "WAL-CLM-DDDL-000225",
+              "WAL-CLM-DDDL-000294",
+              "WAL-CLM-DDDL-000320",
+              "WAL-CLM-DDDL-000347",
+              "WAL-CLM-DDDL-000354",
+              "WAL-CLM-DDDL-000434",
+              "WAL-CLM-DDDL-000521",
               "WAL-CLM-EPIGEN-000138",
-              "WAL-CLM-LETS-000070"
+              "WAL-CLM-LETS-000070",
+              "WAL-CLM-LETS-000125",
+              "WAL-CLM-LETS-000159",
+              "WAL-CLM-LETS-000246",
+              "WAL-CLM-LETS-000307",
+              "WAL-CLM-LETS-000509",
+              "WAL-CLM-RARE-000278",
+              "WAL-CLM-RARE-000282"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
               "WAL-CLM-DDDL-000047",
-              "WAL-CLM-LETS-000513"
+              "WAL-CLM-LETS-000513",
+              "WAL-CLM-RARE-000366",
+              "WAL-CLM-RARE-000400"
             ]
           },
           {
             facet: "big_question",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000308"
+              "WAL-CLM-EPIGEN-000308",
+              "WAL-CLM-RARE-000043"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-RARE-000365"
             ]
           },
           {
@@ -33668,6 +33686,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "history",
             claim_ids: [
+              "WAL-CLM-DDDL-000008",
               "WAL-CLM-RARE-000358",
               "WAL-CLM-RARE-000359"
             ]
@@ -33712,7 +33731,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 125,
-        distinct_claim_count: 145,
+        distinct_claim_count: 164,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -33758,7 +33777,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000042",
               "WAL-CLM-DDDL-000141",
               "WAL-CLM-RARE-000042",
               "WAL-CLM-RARE-000307"
@@ -33768,10 +33786,127 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000049",
+              "WAL-CLM-LETS-000137",
+              "WAL-CLM-LETS-000245",
+              "WAL-CLM-LETS-000254",
+              "WAL-CLM-LETS-000267",
+              "WAL-CLM-LETS-000320",
+              "WAL-CLM-LETS-000450",
+              "WAL-CLM-LETS-000462",
+              "WAL-CLM-RARE-000045",
+              "WAL-CLM-RARE-000280"
+            ]
+          },
+          {
+            kind: "mechanism",
+            claim_ids: [
+              "WAL-CLM-RARE-000094",
+              "WAL-CLM-RARE-000192"
+            ]
+          },
+          {
+            kind: "diagnostic_pattern",
+            claim_ids: [
+              "WAL-CLM-RARE-000129"
+            ]
+          }
+        ],
+        record_claim_count: 16,
+        search: [
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000139",
+              "WAL-CLM-DDDL-000324",
+              "WAL-CLM-IMMORT-000215"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000170",
+              "WAL-CLM-EPIGEN-000191",
+              "WAL-CLM-EPIGEN-000264",
+              "WAL-CLM-LETS-000210",
+              "WAL-CLM-LETS-000365",
+              "WAL-CLM-RARE-000086"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000039",
+              "WAL-CLM-DDDL-000042",
+              "WAL-CLM-DDDL-000077",
+              "WAL-CLM-DDDL-000079",
+              "WAL-CLM-DDDL-000084",
+              "WAL-CLM-DDDL-000140",
+              "WAL-CLM-DDDL-000142",
+              "WAL-CLM-DDDL-000166",
+              "WAL-CLM-DDDL-000191",
+              "WAL-CLM-DDDL-000256",
+              "WAL-CLM-EPIGEN-000074",
+              "WAL-CLM-IMMORT-000270",
+              "WAL-CLM-LETS-000044",
+              "WAL-CLM-LETS-000141",
+              "WAL-CLM-LETS-000276",
+              "WAL-CLM-LETS-000464",
+              "WAL-CLM-RARE-000083",
+              "WAL-CLM-RARE-000264",
+              "WAL-CLM-RARE-000268"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000037",
+              "WAL-CLM-DDDL-000038",
+              "WAL-CLM-DDDL-000165",
+              "WAL-CLM-EPIGEN-000189",
+              "WAL-CLM-EPIGEN-000190",
+              "WAL-CLM-RARE-000046",
+              "WAL-CLM-RARE-000265"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-DDDL-000040",
+              "WAL-CLM-DDDL-000251",
+              "WAL-CLM-HELLS-000017",
+              "WAL-CLM-HELLS-000038",
+              "WAL-CLM-IMMORT-000493",
+              "WAL-CLM-RARE-000327",
+              "WAL-CLM-RARE-000363"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000143",
+              "WAL-CLM-DDDL-000144",
+              "WAL-CLM-DDDL-000145",
+              "WAL-CLM-DDDL-000146",
+              "WAL-CLM-DDDL-000235",
+              "WAL-CLM-DDDL-000236",
+              "WAL-CLM-LETS-000157",
+              "WAL-CLM-LETS-000166",
+              "WAL-CLM-LETS-000493",
+              "WAL-CLM-LETS-000494",
+              "WAL-CLM-LETS-000501",
+              "WAL-CLM-RARE-000326"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
               "WAL-CLM-DDDL-000055",
               "WAL-CLM-DDDL-000070",
               "WAL-CLM-DDDL-000080",
               "WAL-CLM-DDDL-000085",
+              "WAL-CLM-DDDL-000168",
+              "WAL-CLM-DDDL-000220",
+              "WAL-CLM-DDDL-000278",
               "WAL-CLM-DDDL-000325",
               "WAL-CLM-DDDL-000337",
               "WAL-CLM-DDDL-000345",
@@ -33781,17 +33916,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000363",
               "WAL-CLM-DDDL-000387",
               "WAL-CLM-DDDL-000434",
+              "WAL-CLM-DDDL-000437",
               "WAL-CLM-DDDL-000465",
               "WAL-CLM-DDDL-000505",
               "WAL-CLM-DDDL-000559",
               "WAL-CLM-DDDL-000579",
+              "WAL-CLM-DDDL-000592",
+              "WAL-CLM-EPIGEN-000139",
+              "WAL-CLM-LETS-000077",
               "WAL-CLM-LETS-000123",
               "WAL-CLM-LETS-000124",
               "WAL-CLM-LETS-000126",
               "WAL-CLM-LETS-000128",
               "WAL-CLM-LETS-000131",
               "WAL-CLM-LETS-000134",
-              "WAL-CLM-LETS-000137",
               "WAL-CLM-LETS-000143",
               "WAL-CLM-LETS-000146",
               "WAL-CLM-LETS-000149",
@@ -33808,11 +33946,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000238",
               "WAL-CLM-LETS-000242",
               "WAL-CLM-LETS-000243",
-              "WAL-CLM-LETS-000245",
               "WAL-CLM-LETS-000246",
               "WAL-CLM-LETS-000247",
-              "WAL-CLM-LETS-000254",
-              "WAL-CLM-LETS-000267",
               "WAL-CLM-LETS-000279",
               "WAL-CLM-LETS-000280",
               "WAL-CLM-LETS-000284",
@@ -33825,7 +33960,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000314",
               "WAL-CLM-LETS-000318",
               "WAL-CLM-LETS-000319",
-              "WAL-CLM-LETS-000320",
               "WAL-CLM-LETS-000324",
               "WAL-CLM-LETS-000328",
               "WAL-CLM-LETS-000329",
@@ -33844,133 +33978,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000431",
               "WAL-CLM-LETS-000433",
               "WAL-CLM-LETS-000438",
-              "WAL-CLM-LETS-000450",
               "WAL-CLM-LETS-000451",
               "WAL-CLM-LETS-000452",
               "WAL-CLM-LETS-000458",
-              "WAL-CLM-LETS-000460",
-              "WAL-CLM-LETS-000462",
-              "WAL-CLM-LETS-000464",
-              "WAL-CLM-RARE-000045",
-              "WAL-CLM-RARE-000280"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-RARE-000094",
-              "WAL-CLM-RARE-000192"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000215"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-RARE-000083",
-              "WAL-CLM-RARE-000129"
-            ]
-          },
-          {
-            kind: "food_source",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000493"
-            ]
-          },
-          {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-DDDL-000324"
-            ]
-          }
-        ],
-        record_claim_count: 97,
-        search: [
-          {
-            facet: "basics",
-            claim_ids: [
-              "WAL-CLM-DDDL-000139"
-            ]
-          },
-          {
-            facet: "warning",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000191",
-              "WAL-CLM-LETS-000210",
-              "WAL-CLM-LETS-000365",
-              "WAL-CLM-RARE-000086"
-            ]
-          },
-          {
-            facet: "physiology",
-            claim_ids: [
-              "WAL-CLM-DDDL-000039",
-              "WAL-CLM-DDDL-000077",
-              "WAL-CLM-DDDL-000079",
-              "WAL-CLM-DDDL-000084",
-              "WAL-CLM-DDDL-000140",
-              "WAL-CLM-DDDL-000142",
-              "WAL-CLM-IMMORT-000270",
-              "WAL-CLM-LETS-000044",
-              "WAL-CLM-LETS-000141",
-              "WAL-CLM-LETS-000276",
-              "WAL-CLM-RARE-000264",
-              "WAL-CLM-RARE-000268"
-            ]
-          },
-          {
-            facet: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000037",
-              "WAL-CLM-DDDL-000038",
-              "WAL-CLM-EPIGEN-000189",
-              "WAL-CLM-EPIGEN-000190",
-              "WAL-CLM-RARE-000046",
-              "WAL-CLM-RARE-000265"
-            ]
-          },
-          {
-            facet: "sources",
-            claim_ids: [
-              "WAL-CLM-DDDL-000040",
-              "WAL-CLM-HELLS-000017",
-              "WAL-CLM-RARE-000327"
-            ]
-          },
-          {
-            facet: "uses",
-            claim_ids: [
-              "WAL-CLM-DDDL-000143",
-              "WAL-CLM-DDDL-000144",
-              "WAL-CLM-DDDL-000145",
-              "WAL-CLM-DDDL-000146",
-              "WAL-CLM-LETS-000157",
-              "WAL-CLM-LETS-000166",
-              "WAL-CLM-LETS-000493",
-              "WAL-CLM-LETS-000494",
-              "WAL-CLM-RARE-000326"
-            ]
-          },
-          {
-            facet: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000437",
-              "WAL-CLM-DDDL-000592",
-              "WAL-CLM-EPIGEN-000139",
-              "WAL-CLM-LETS-000077"
+              "WAL-CLM-LETS-000460"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
               "WAL-CLM-DDDL-000147",
+              "WAL-CLM-EPIGEN-000105",
               "WAL-CLM-RARE-000010",
               "WAL-CLM-RARE-000044",
-              "WAL-CLM-RARE-000328"
+              "WAL-CLM-RARE-000328",
+              "WAL-CLM-RARE-000343"
             ]
           },
           {
@@ -33989,6 +34011,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "history",
             claim_ids: [
+              "WAL-CLM-DDDL-000194",
               "WAL-CLM-EPIGEN-000192",
               "WAL-CLM-HELLS-000018"
             ]
@@ -34124,7 +34147,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 12,
-        distinct_claim_count: 18,
+        distinct_claim_count: 20,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -34150,15 +34173,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "argentum",
           "silver sulfadiazine"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000511"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -34202,14 +34218,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000013"
+              "WAL-CLM-DDDL-000013",
+              "WAL-CLM-DDDL-000511"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-RARE-000392"
             ]
           },
           {
             facet: "history",
             claim_ids: [
               "WAL-CLM-RARE-000386",
-              "WAL-CLM-RARE-000387"
+              "WAL-CLM-RARE-000387",
+              "WAL-CLM-RARE-000399"
             ]
           }
         ],
@@ -34240,7 +34264,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
-        distinct_claim_count: 11,
+        distinct_claim_count: 12,
         books: [
           "epigenetics",
           "immortality",
@@ -34297,6 +34321,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "uses",
             claim_ids: [
               "WAL-CLM-EPIGEN-000404"
+            ]
+          },
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-RARE-000328"
             ]
           },
           {
@@ -34421,7 +34451,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 8,
-        distinct_claim_count: 14,
+        distinct_claim_count: 17,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -34444,21 +34474,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "arsenic for carpal tunnel",
           "arsnic"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000351"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000226"
-            ]
-          }
-        ],
-        record_claim_count: 2,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -34477,7 +34494,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
-              "WAL-CLM-IMMORT-000037"
+              "WAL-CLM-IMMORT-000037",
+              "WAL-CLM-IMMORT-000226"
             ]
           },
           {
@@ -34489,14 +34507,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "uses",
             claim_ids: [
+              "WAL-CLM-DDDL-000235",
               "WAL-CLM-EPIGEN-000066",
               "WAL-CLM-EPIGEN-000434",
+              "WAL-CLM-EPIGEN-000452",
               "WAL-CLM-IMMORT-000038"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000351"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-DDDL-000219",
               "WAL-CLM-RARE-000396"
             ]
           },
@@ -34984,7 +35011,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 2,
-        distinct_claim_count: 5,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "rare-earths"
@@ -35012,7 +35039,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "basics",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000419"
+              "WAL-CLM-EPIGEN-000419",
+              "WAL-CLM-IMMORT-000465"
             ]
           },
           {
@@ -35137,7 +35165,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 2,
-        distinct_claim_count: 6,
+        distinct_claim_count: 7,
         books: [
           "epigenetics",
           "rare-earths"
@@ -35190,6 +35218,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "etymology",
             claim_ids: [
               "WAL-CLM-IMMORT-000407"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000048"
             ]
           }
         ],
@@ -35311,15 +35345,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "serium",
           "cerium in the body"
         ],
-        record: [
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-RARE-000112"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -35337,6 +35364,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "sources",
             claim_ids: [
               "WAL-CLM-EPIGEN-000418"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-RARE-000112"
             ]
           },
           {
@@ -35449,7 +35482,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 5,
-        distinct_claim_count: 7,
+        distinct_claim_count: 8,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -35470,22 +35503,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "what is cesium",
           "cesium element"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000096"
-            ]
-          },
-          {
-            kind: "definition",
+            facet: "basics",
             claim_ids: [
               "WAL-CLM-IMMORT-000094"
             ]
-          }
-        ],
-        record_claim_count: 2,
-        search: [
+          },
           {
             facet: "physiology",
             claim_ids: [
@@ -35502,6 +35528,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "uses",
             claim_ids: [
               "WAL-CLM-DDDL-000018",
+              "WAL-CLM-IMMORT-000096",
               "WAL-CLM-RARE-000125"
             ]
           },
@@ -35509,6 +35536,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "stance",
             claim_ids: [
               "WAL-CLM-HELLS-000069"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000095"
             ]
           }
         ],
@@ -35641,15 +35674,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "plant derived minerals",
           "trace minerals"
         ],
-        record: [
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000112"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -35667,6 +35693,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "uses",
             claim_ids: [
               "WAL-CLM-IMMORT-000443"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000112"
             ]
           },
           {
@@ -35794,20 +35826,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "erbrium",
           "erbium symbol Er"
         ],
-        record: [
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000113"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000424"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000113"
             ]
           },
           {
@@ -35937,15 +35968,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "europeum",
           "eu mineral"
         ],
-        record: [
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000114"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "physiology",
@@ -35969,7 +35993,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "discovery",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000426"
+              "WAL-CLM-EPIGEN-000426",
+              "WAL-CLM-IMMORT-000114"
             ]
           }
         ],
@@ -36273,20 +36298,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "gadolinium wallach",
           "gadolinium trace mineral"
         ],
-        record: [
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000137"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-EPIGEN-000085"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000137"
             ]
           }
         ],
@@ -36387,7 +36411,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 3,
-        distinct_claim_count: 4,
+        distinct_claim_count: 5,
         books: [
           "immortality",
           "rare-earths"
@@ -36409,15 +36433,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "hafnuim",
           "haffnium"
         ],
-        record: [
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000158"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -36427,9 +36444,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000158"
+            ]
+          },
+          {
             facet: "etymology",
             claim_ids: [
               "WAL-CLM-IMMORT-000457"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000461"
             ]
           }
         ],
@@ -36553,20 +36582,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "holmiun",
           "holmium Ho"
         ],
-        record: [
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000172"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-EPIGEN-000092",
+              "WAL-CLM-IMMORT-000172",
               "WAL-CLM-RARE-000292"
             ]
           },
@@ -36826,7 +36849,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 27,
-        distinct_claim_count: 35,
+        distinct_claim_count: 37,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -36866,30 +36889,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000079",
-              "WAL-CLM-RARE-000042"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000347",
               "WAL-CLM-LETS-000159",
-              "WAL-CLM-LETS-000244",
-              "WAL-CLM-RARE-000276",
-              "WAL-CLM-RARE-000277",
-              "WAL-CLM-RARE-000278",
-              "WAL-CLM-RARE-000279",
-              "WAL-CLM-RARE-000282"
+              "WAL-CLM-LETS-000244"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-RARE-000043",
-              "WAL-CLM-RARE-000128"
+              "WAL-CLM-RARE-000043"
             ]
           },
           {
@@ -36905,7 +36914,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 14,
+        record_claim_count: 5,
         search: [
           {
             facet: "basics",
@@ -36918,16 +36927,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-RARE-000167"
+              "WAL-CLM-RARE-000167",
+              "WAL-CLM-RARE-000276",
+              "WAL-CLM-RARE-000277",
+              "WAL-CLM-RARE-000279"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000079",
               "WAL-CLM-EPIGEN-000096",
               "WAL-CLM-IMMORT-000200",
               "WAL-CLM-IMMORT-000201",
               "WAL-CLM-IMMORT-000202",
+              "WAL-CLM-RARE-000042",
+              "WAL-CLM-RARE-000128",
               "WAL-CLM-RARE-000165"
             ]
           },
@@ -36947,7 +36962,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000347",
               "WAL-CLM-IMMORT-000199",
+              "WAL-CLM-RARE-000278",
+              "WAL-CLM-RARE-000282",
               "WAL-CLM-RARE-000285"
             ]
           },
@@ -36955,7 +36973,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "stance",
             claim_ids: [
               "WAL-CLM-IMMORT-000366",
-              "WAL-CLM-RARE-000161"
+              "WAL-CLM-RARE-000161",
+              "WAL-CLM-RARE-000400"
             ]
           },
           {
@@ -36979,6 +36998,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "history",
             claim_ids: [
+              "WAL-CLM-IMMORT-000146",
               "WAL-CLM-RARE-000041",
               "WAL-CLM-RARE-000364"
             ]
@@ -37127,16 +37147,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lutetium element",
           "plant derived minerals"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "definition",
+            facet: "basics",
             claim_ids: [
               "WAL-CLM-IMMORT-000203"
             ]
-          }
-        ],
-        record_claim_count: 1,
-        search: [
+          },
           {
             facet: "physiology",
             claim_ids: [
@@ -37253,7 +37272,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 2,
-        distinct_claim_count: 5,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "rare-earths"
@@ -37294,6 +37313,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "etymology",
             claim_ids: [
               "WAL-CLM-IMMORT-000429"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000454"
             ]
           }
         ],
@@ -37731,7 +37756,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
-        distinct_claim_count: 5,
+        distinct_claim_count: 6,
         books: [
           "rare-earths"
         ],
@@ -37775,6 +37800,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "discovery",
             claim_ids: [
+              "WAL-CLM-IMMORT-000418",
               "WAL-CLM-IMMORT-000431"
             ]
           },
@@ -38481,7 +38507,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 8,
-        distinct_claim_count: 13,
+        distinct_claim_count: 14,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor",
@@ -38504,17 +38530,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "how much tin per day",
           "tin trace mineral"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000131",
-              "WAL-CLM-LETS-000294",
-              "WAL-CLM-LETS-000451"
-            ]
-          }
-        ],
-        record_claim_count: 3,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -38532,6 +38549,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-DDDL-000031",
+              "WAL-CLM-DDDL-000234",
               "WAL-CLM-EPIGEN-000436",
               "WAL-CLM-RARE-000311"
             ]
@@ -38551,7 +38569,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000069"
+              "WAL-CLM-LETS-000069",
+              "WAL-CLM-LETS-000131",
+              "WAL-CLM-LETS-000294",
+              "WAL-CLM-LETS-000451"
             ]
           },
           {
@@ -39569,7 +39590,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "mineral",
         is_essential: true,
         claim_count: 1,
-        distinct_claim_count: 6,
+        distinct_claim_count: 7,
         books: [
           "rare-earths"
         ],
@@ -39614,6 +39635,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "discovery",
             claim_ids: [
+              "WAL-CLM-IMMORT-000158",
               "WAL-CLM-IMMORT-000459"
             ]
           },
@@ -39727,7 +39749,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 83,
-        distinct_claim_count: 103,
+        distinct_claim_count: 104,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -39783,92 +39805,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000070",
-              "WAL-CLM-DDDL-000085",
-              "WAL-CLM-DDDL-000325",
-              "WAL-CLM-DDDL-000336",
-              "WAL-CLM-DDDL-000337",
-              "WAL-CLM-DDDL-000345",
-              "WAL-CLM-DDDL-000346",
-              "WAL-CLM-DDDL-000361",
-              "WAL-CLM-DDDL-000363",
-              "WAL-CLM-DDDL-000389",
-              "WAL-CLM-DDDL-000505",
-              "WAL-CLM-DDDL-000532",
               "WAL-CLM-DDDL-000567",
-              "WAL-CLM-DDDL-000579",
-              "WAL-CLM-LETS-000123",
-              "WAL-CLM-LETS-000126",
-              "WAL-CLM-LETS-000128",
-              "WAL-CLM-LETS-000149",
-              "WAL-CLM-LETS-000150",
               "WAL-CLM-LETS-000157",
-              "WAL-CLM-LETS-000167",
-              "WAL-CLM-LETS-000172",
-              "WAL-CLM-LETS-000178",
-              "WAL-CLM-LETS-000202",
-              "WAL-CLM-LETS-000212",
-              "WAL-CLM-LETS-000213",
-              "WAL-CLM-LETS-000238",
-              "WAL-CLM-LETS-000242",
               "WAL-CLM-LETS-000245",
-              "WAL-CLM-LETS-000254",
               "WAL-CLM-LETS-000275",
-              "WAL-CLM-LETS-000279",
-              "WAL-CLM-LETS-000280",
-              "WAL-CLM-LETS-000282",
-              "WAL-CLM-LETS-000311",
-              "WAL-CLM-LETS-000313",
-              "WAL-CLM-LETS-000314",
-              "WAL-CLM-LETS-000317",
-              "WAL-CLM-LETS-000318",
-              "WAL-CLM-LETS-000319",
-              "WAL-CLM-LETS-000324",
-              "WAL-CLM-LETS-000325",
-              "WAL-CLM-LETS-000328",
-              "WAL-CLM-LETS-000329",
               "WAL-CLM-LETS-000332",
-              "WAL-CLM-LETS-000342",
-              "WAL-CLM-LETS-000344",
-              "WAL-CLM-LETS-000348",
-              "WAL-CLM-LETS-000359",
               "WAL-CLM-LETS-000365",
-              "WAL-CLM-LETS-000380",
-              "WAL-CLM-LETS-000387",
-              "WAL-CLM-LETS-000398",
-              "WAL-CLM-LETS-000401",
-              "WAL-CLM-LETS-000402",
-              "WAL-CLM-LETS-000409",
-              "WAL-CLM-LETS-000410",
-              "WAL-CLM-LETS-000421",
               "WAL-CLM-LETS-000430",
-              "WAL-CLM-LETS-000431",
-              "WAL-CLM-LETS-000433",
               "WAL-CLM-LETS-000450",
-              "WAL-CLM-LETS-000451",
-              "WAL-CLM-LETS-000452",
-              "WAL-CLM-LETS-000458",
               "WAL-CLM-LETS-000462"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000164",
-              "WAL-CLM-LETS-000196"
             ]
           },
           {
             kind: "food_source",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000162",
-              "WAL-CLM-EPIGEN-000167",
-              "WAL-CLM-EPIGEN-000175",
-              "WAL-CLM-IMMORT-000221"
+              "WAL-CLM-EPIGEN-000162"
             ]
           }
         ],
-        record_claim_count: 72,
+        record_claim_count: 10,
         search: [
           {
             facet: "basics",
@@ -39905,7 +39860,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "sources",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000175",
               "WAL-CLM-EPIGEN-000216",
+              "WAL-CLM-IMMORT-000221",
               "WAL-CLM-IMMORT-000285",
               "WAL-CLM-RARE-000335"
             ]
@@ -39914,6 +39871,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "uses",
             claim_ids: [
               "WAL-CLM-DDDL-000167",
+              "WAL-CLM-LETS-000196",
               "WAL-CLM-LETS-000501",
               "WAL-CLM-LETS-000502"
             ]
@@ -39921,24 +39879,83 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000070",
+              "WAL-CLM-DDDL-000085",
               "WAL-CLM-DDDL-000168",
+              "WAL-CLM-DDDL-000325",
+              "WAL-CLM-DDDL-000336",
+              "WAL-CLM-DDDL-000337",
+              "WAL-CLM-DDDL-000345",
+              "WAL-CLM-DDDL-000346",
+              "WAL-CLM-DDDL-000361",
+              "WAL-CLM-DDDL-000363",
+              "WAL-CLM-DDDL-000389",
               "WAL-CLM-DDDL-000436",
+              "WAL-CLM-DDDL-000505",
+              "WAL-CLM-DDDL-000532",
+              "WAL-CLM-DDDL-000579",
               "WAL-CLM-DDDL-000583",
               "WAL-CLM-DDDL-000591",
               "WAL-CLM-EPIGEN-000110",
               "WAL-CLM-EPIGEN-000111",
-              "WAL-CLM-LETS-000071"
+              "WAL-CLM-LETS-000071",
+              "WAL-CLM-LETS-000123",
+              "WAL-CLM-LETS-000126",
+              "WAL-CLM-LETS-000128",
+              "WAL-CLM-LETS-000149",
+              "WAL-CLM-LETS-000150",
+              "WAL-CLM-LETS-000167",
+              "WAL-CLM-LETS-000172",
+              "WAL-CLM-LETS-000178",
+              "WAL-CLM-LETS-000202",
+              "WAL-CLM-LETS-000212",
+              "WAL-CLM-LETS-000213",
+              "WAL-CLM-LETS-000238",
+              "WAL-CLM-LETS-000242",
+              "WAL-CLM-LETS-000254",
+              "WAL-CLM-LETS-000279",
+              "WAL-CLM-LETS-000280",
+              "WAL-CLM-LETS-000282",
+              "WAL-CLM-LETS-000311",
+              "WAL-CLM-LETS-000313",
+              "WAL-CLM-LETS-000314",
+              "WAL-CLM-LETS-000317",
+              "WAL-CLM-LETS-000318",
+              "WAL-CLM-LETS-000319",
+              "WAL-CLM-LETS-000324",
+              "WAL-CLM-LETS-000325",
+              "WAL-CLM-LETS-000328",
+              "WAL-CLM-LETS-000329",
+              "WAL-CLM-LETS-000342",
+              "WAL-CLM-LETS-000344",
+              "WAL-CLM-LETS-000348",
+              "WAL-CLM-LETS-000359",
+              "WAL-CLM-LETS-000380",
+              "WAL-CLM-LETS-000387",
+              "WAL-CLM-LETS-000398",
+              "WAL-CLM-LETS-000401",
+              "WAL-CLM-LETS-000402",
+              "WAL-CLM-LETS-000409",
+              "WAL-CLM-LETS-000410",
+              "WAL-CLM-LETS-000421",
+              "WAL-CLM-LETS-000431",
+              "WAL-CLM-LETS-000433",
+              "WAL-CLM-LETS-000451",
+              "WAL-CLM-LETS-000452",
+              "WAL-CLM-LETS-000458"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
-              "WAL-CLM-DDDL-000056"
+              "WAL-CLM-DDDL-000056",
+              "WAL-CLM-DDDL-000147"
             ]
           },
           {
             facet: "discovery",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000164",
               "WAL-CLM-EPIGEN-000218"
             ]
           },
@@ -39951,6 +39968,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "history",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000167",
               "WAL-CLM-EPIGEN-000219",
               "WAL-CLM-IMMORT-000286",
               "WAL-CLM-RARE-000336"
@@ -40056,7 +40074,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 25,
-        distinct_claim_count: 33,
+        distinct_claim_count: 39,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -40100,44 +40118,31 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000434",
-              "WAL-CLM-DDDL-000499",
-              "WAL-CLM-EPIGEN-000014",
               "WAL-CLM-LETS-000130",
               "WAL-CLM-LETS-000142",
               "WAL-CLM-LETS-000159",
-              "WAL-CLM-LETS-000203",
               "WAL-CLM-LETS-000207",
-              "WAL-CLM-LETS-000229",
-              "WAL-CLM-LETS-000243",
               "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000333",
-              "WAL-CLM-LETS-000377",
-              "WAL-CLM-LETS-000394",
               "WAL-CLM-LETS-000396",
-              "WAL-CLM-LETS-000443",
               "WAL-CLM-RARE-000282"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-LETS-000370"
             ]
           }
         ],
-        record_claim_count: 18,
+        record_claim_count: 7,
         search: [
           {
             facet: "basics",
             claim_ids: [
+              "WAL-CLM-DDDL-000288",
               "WAL-CLM-EPIGEN-000237"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000043"
+              "WAL-CLM-DDDL-000043",
+              "WAL-CLM-DDDL-000153",
+              "WAL-CLM-EPIGEN-000252"
             ]
           },
           {
@@ -40145,6 +40150,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000183",
               "WAL-CLM-EPIGEN-000035",
+              "WAL-CLM-IMMORT-000522",
               "WAL-CLM-LETS-000034",
               "WAL-CLM-RARE-000233"
             ]
@@ -40152,6 +40158,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000248",
               "WAL-CLM-EPIGEN-000238",
               "WAL-CLM-EPIGEN-000464",
               "WAL-CLM-IMMORT-000295"
@@ -40166,20 +40173,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "uses",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000239"
+              "WAL-CLM-EPIGEN-000239",
+              "WAL-CLM-LETS-000370"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000434",
+              "WAL-CLM-DDDL-000499",
+              "WAL-CLM-EPIGEN-000014",
               "WAL-CLM-EPIGEN-000112",
-              "WAL-CLM-LETS-000068"
+              "WAL-CLM-LETS-000068",
+              "WAL-CLM-LETS-000203",
+              "WAL-CLM-LETS-000229",
+              "WAL-CLM-LETS-000243",
+              "WAL-CLM-LETS-000333",
+              "WAL-CLM-LETS-000377",
+              "WAL-CLM-LETS-000394",
+              "WAL-CLM-LETS-000443"
             ]
           },
           {
             facet: "etymology",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000241"
+              "WAL-CLM-EPIGEN-000241",
+              "WAL-CLM-EPIGEN-000453"
             ]
           },
           {
@@ -40229,7 +40248,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 13,
-        distinct_claim_count: 19,
+        distinct_claim_count: 20,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -40282,23 +40301,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000434",
               "WAL-CLM-LETS-000137",
               "WAL-CLM-LETS-000142",
               "WAL-CLM-LETS-000207",
-              "WAL-CLM-LETS-000214",
               "WAL-CLM-LETS-000244",
               "WAL-CLM-LETS-000284"
             ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-RARE-000010"
-            ]
           }
         ],
-        record_claim_count: 8,
+        record_claim_count: 5,
         search: [
           {
             facet: "basics",
@@ -40317,13 +40328,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000185",
               "WAL-CLM-EPIGEN-000036",
+              "WAL-CLM-LETS-000214",
               "WAL-CLM-RARE-000234"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000243"
+              "WAL-CLM-EPIGEN-000243",
+              "WAL-CLM-EPIGEN-000257"
             ]
           },
           {
@@ -40336,8 +40349,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000186",
+              "WAL-CLM-DDDL-000434",
               "WAL-CLM-EPIGEN-000113",
               "WAL-CLM-LETS-000064"
+            ]
+          },
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-RARE-000010"
             ]
           },
           {
@@ -40421,30 +40441,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000078",
-              "WAL-CLM-DDDL-000320",
-              "WAL-CLM-DDDL-000347",
-              "WAL-CLM-DDDL-000434",
               "WAL-CLM-LETS-000142",
               "WAL-CLM-LETS-000146",
               "WAL-CLM-LETS-000159",
-              "WAL-CLM-LETS-000203",
               "WAL-CLM-LETS-000207",
-              "WAL-CLM-LETS-000219",
               "WAL-CLM-LETS-000243",
-              "WAL-CLM-LETS-000258",
               "WAL-CLM-LETS-000284",
-              "WAL-CLM-LETS-000293",
-              "WAL-CLM-LETS-000310",
               "WAL-CLM-LETS-000322",
-              "WAL-CLM-LETS-000388",
-              "WAL-CLM-LETS-000394",
-              "WAL-CLM-LETS-000443",
-              "WAL-CLM-LETS-000445",
               "WAL-CLM-RARE-000282"
             ]
           }
         ],
-        record_claim_count: 21,
+        record_claim_count: 9,
         search: [
           {
             facet: "basics",
@@ -40486,8 +40494,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000221",
+              "WAL-CLM-DDDL-000320",
+              "WAL-CLM-DDDL-000347",
+              "WAL-CLM-DDDL-000434",
               "WAL-CLM-EPIGEN-000114",
-              "WAL-CLM-LETS-000059"
+              "WAL-CLM-LETS-000059",
+              "WAL-CLM-LETS-000203",
+              "WAL-CLM-LETS-000219",
+              "WAL-CLM-LETS-000258",
+              "WAL-CLM-LETS-000293",
+              "WAL-CLM-LETS-000310",
+              "WAL-CLM-LETS-000388",
+              "WAL-CLM-LETS-000394",
+              "WAL-CLM-LETS-000443",
+              "WAL-CLM-LETS-000445"
             ]
           },
           {
@@ -40566,7 +40586,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 11,
-        distinct_claim_count: 16,
+        distinct_claim_count: 17,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -40614,7 +40634,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000434",
               "WAL-CLM-LETS-000137",
               "WAL-CLM-LETS-000142",
               "WAL-CLM-LETS-000159",
@@ -40623,7 +40642,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 7,
+        record_claim_count: 6,
         search: [
           {
             facet: "basics",
@@ -40647,12 +40666,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000251"
+              "WAL-CLM-EPIGEN-000251",
+              "WAL-CLM-EPIGEN-000448"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000434",
               "WAL-CLM-EPIGEN-000115"
             ]
           },
@@ -40714,7 +40735,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 62,
-        distinct_claim_count: 72,
+        distinct_claim_count: 75,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -40762,72 +40783,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-LETS-000027",
-              "WAL-CLM-LETS-000210"
+              "WAL-CLM-LETS-000027"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000055",
-              "WAL-CLM-DDDL-000078",
-              "WAL-CLM-DDDL-000336",
-              "WAL-CLM-DDDL-000337",
-              "WAL-CLM-DDDL-000347",
-              "WAL-CLM-DDDL-000349",
-              "WAL-CLM-DDDL-000351",
-              "WAL-CLM-DDDL-000389",
-              "WAL-CLM-DDDL-000434",
-              "WAL-CLM-DDDL-000445",
-              "WAL-CLM-DDDL-000521",
-              "WAL-CLM-DDDL-000523",
-              "WAL-CLM-LETS-000120",
-              "WAL-CLM-LETS-000123",
               "WAL-CLM-LETS-000137",
               "WAL-CLM-LETS-000142",
               "WAL-CLM-LETS-000146",
-              "WAL-CLM-LETS-000149",
-              "WAL-CLM-LETS-000151",
               "WAL-CLM-LETS-000159",
-              "WAL-CLM-LETS-000174",
-              "WAL-CLM-LETS-000203",
-              "WAL-CLM-LETS-000205",
               "WAL-CLM-LETS-000207",
               "WAL-CLM-LETS-000222",
-              "WAL-CLM-LETS-000226",
-              "WAL-CLM-LETS-000233",
-              "WAL-CLM-LETS-000242",
               "WAL-CLM-LETS-000243",
               "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000247",
               "WAL-CLM-LETS-000254",
-              "WAL-CLM-LETS-000258",
-              "WAL-CLM-LETS-000267",
               "WAL-CLM-LETS-000284",
-              "WAL-CLM-LETS-000293",
-              "WAL-CLM-LETS-000310",
-              "WAL-CLM-LETS-000326",
-              "WAL-CLM-LETS-000332",
-              "WAL-CLM-LETS-000369",
-              "WAL-CLM-LETS-000383",
               "WAL-CLM-LETS-000396",
-              "WAL-CLM-LETS-000402",
-              "WAL-CLM-LETS-000407",
-              "WAL-CLM-LETS-000419",
-              "WAL-CLM-LETS-000430",
-              "WAL-CLM-LETS-000445",
-              "WAL-CLM-LETS-000458",
-              "WAL-CLM-RARE-000286"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000009"
+              "WAL-CLM-LETS-000419"
             ]
           }
         ],
-        record_claim_count: 52,
+        record_claim_count: 13,
         search: [
           {
             facet: "basics",
@@ -40839,15 +40816,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "warning",
             claim_ids: [
               "WAL-CLM-EPIGEN-000258",
+              "WAL-CLM-IMMORT-000009",
               "WAL-CLM-IMMORT-000487",
-              "WAL-CLM-LETS-000028"
+              "WAL-CLM-LETS-000028",
+              "WAL-CLM-LETS-000210"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000039",
-              "WAL-CLM-EPIGEN-000108"
+              "WAL-CLM-EPIGEN-000108",
+              "WAL-CLM-LETS-000174"
             ]
           },
           {
@@ -40868,18 +40848,57 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000189",
               "WAL-CLM-DDDL-000190",
+              "WAL-CLM-DDDL-000235",
               "WAL-CLM-IMMORT-000008",
-              "WAL-CLM-IMMORT-000300"
+              "WAL-CLM-IMMORT-000300",
+              "WAL-CLM-LETS-000332"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000055",
+              "WAL-CLM-DDDL-000078",
+              "WAL-CLM-DDDL-000168",
+              "WAL-CLM-DDDL-000270",
+              "WAL-CLM-DDDL-000336",
+              "WAL-CLM-DDDL-000337",
+              "WAL-CLM-DDDL-000347",
+              "WAL-CLM-DDDL-000349",
+              "WAL-CLM-DDDL-000351",
+              "WAL-CLM-DDDL-000389",
+              "WAL-CLM-DDDL-000434",
               "WAL-CLM-DDDL-000439",
+              "WAL-CLM-DDDL-000445",
+              "WAL-CLM-DDDL-000521",
+              "WAL-CLM-DDDL-000523",
               "WAL-CLM-DDDL-000590",
               "WAL-CLM-DDDL-000603",
               "WAL-CLM-EPIGEN-000116",
-              "WAL-CLM-LETS-000063"
+              "WAL-CLM-LETS-000063",
+              "WAL-CLM-LETS-000120",
+              "WAL-CLM-LETS-000123",
+              "WAL-CLM-LETS-000149",
+              "WAL-CLM-LETS-000151",
+              "WAL-CLM-LETS-000203",
+              "WAL-CLM-LETS-000205",
+              "WAL-CLM-LETS-000226",
+              "WAL-CLM-LETS-000233",
+              "WAL-CLM-LETS-000242",
+              "WAL-CLM-LETS-000247",
+              "WAL-CLM-LETS-000258",
+              "WAL-CLM-LETS-000267",
+              "WAL-CLM-LETS-000293",
+              "WAL-CLM-LETS-000310",
+              "WAL-CLM-LETS-000326",
+              "WAL-CLM-LETS-000369",
+              "WAL-CLM-LETS-000383",
+              "WAL-CLM-LETS-000402",
+              "WAL-CLM-LETS-000407",
+              "WAL-CLM-LETS-000430",
+              "WAL-CLM-LETS-000445",
+              "WAL-CLM-LETS-000458",
+              "WAL-CLM-RARE-000286"
             ]
           },
           {
@@ -41016,29 +41035,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000080",
-              "WAL-CLM-DDDL-000482",
               "WAL-CLM-LETS-000137",
-              "WAL-CLM-LETS-000143",
-              "WAL-CLM-LETS-000238",
               "WAL-CLM-LETS-000243",
               "WAL-CLM-LETS-000255",
               "WAL-CLM-LETS-000267",
-              "WAL-CLM-LETS-000284",
-              "WAL-CLM-LETS-000288",
-              "WAL-CLM-LETS-000298",
-              "WAL-CLM-LETS-000323",
-              "WAL-CLM-LETS-000348",
-              "WAL-CLM-LETS-000359",
               "WAL-CLM-LETS-000365",
-              "WAL-CLM-LETS-000401",
-              "WAL-CLM-LETS-000409",
-              "WAL-CLM-LETS-000430",
               "WAL-CLM-LETS-000462"
             ]
           }
         ],
-        record_claim_count: 19,
+        record_claim_count: 6,
         search: [
           {
             facet: "basics",
@@ -41087,10 +41093,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000080",
+              "WAL-CLM-DDDL-000482",
               "WAL-CLM-DDDL-000582",
               "WAL-CLM-DDDL-000587",
               "WAL-CLM-DDDL-000604",
-              "WAL-CLM-LETS-000052"
+              "WAL-CLM-LETS-000052",
+              "WAL-CLM-LETS-000143",
+              "WAL-CLM-LETS-000238",
+              "WAL-CLM-LETS-000284",
+              "WAL-CLM-LETS-000288",
+              "WAL-CLM-LETS-000298",
+              "WAL-CLM-LETS-000323",
+              "WAL-CLM-LETS-000348",
+              "WAL-CLM-LETS-000359",
+              "WAL-CLM-LETS-000401",
+              "WAL-CLM-LETS-000409",
+              "WAL-CLM-LETS-000430"
             ]
           },
           {
@@ -41177,7 +41196,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 40,
-        distinct_claim_count: 54,
+        distinct_claim_count: 73,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -41223,16 +41242,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000084"
-            ]
-          },
-          {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000040",
-              "WAL-CLM-RARE-000115"
+              "WAL-CLM-EPIGEN-000040"
             ]
           },
           {
@@ -41240,78 +41252,48 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000049",
               "WAL-CLM-DDDL-000080",
-              "WAL-CLM-DDDL-000086",
-              "WAL-CLM-DDDL-000351",
-              "WAL-CLM-LETS-000132",
-              "WAL-CLM-LETS-000137",
-              "WAL-CLM-LETS-000143",
-              "WAL-CLM-LETS-000158",
-              "WAL-CLM-LETS-000176",
-              "WAL-CLM-LETS-000238",
               "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000246",
               "WAL-CLM-LETS-000267",
-              "WAL-CLM-LETS-000284",
-              "WAL-CLM-LETS-000298",
               "WAL-CLM-LETS-000300",
-              "WAL-CLM-LETS-000348",
-              "WAL-CLM-LETS-000359",
-              "WAL-CLM-LETS-000379",
-              "WAL-CLM-LETS-000383",
               "WAL-CLM-LETS-000417",
               "WAL-CLM-LETS-000462"
             ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000233"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000508"
-            ]
-          },
-          {
-            kind: "food_source",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000219",
-              "WAL-CLM-IMMORT-000232"
-            ]
-          },
-          {
-            kind: "interaction",
-            claim_ids: [
-              "WAL-CLM-RARE-000167",
-              "WAL-CLM-RARE-000194"
-            ]
           }
         ],
-        record_claim_count: 31,
+        record_claim_count: 8,
         search: [
           {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000044",
-              "WAL-CLM-IMMORT-000305"
+              "WAL-CLM-IMMORT-000233",
+              "WAL-CLM-IMMORT-000305",
+              "WAL-CLM-IMMORT-000355"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
+              "WAL-CLM-DDDL-000508",
               "WAL-CLM-EPIGEN-000269",
               "WAL-CLM-EPIGEN-000270",
-              "WAL-CLM-IMMORT-000307"
+              "WAL-CLM-IMMORT-000083",
+              "WAL-CLM-IMMORT-000302",
+              "WAL-CLM-IMMORT-000307",
+              "WAL-CLM-IMMORT-000359",
+              "WAL-CLM-RARE-000167"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-DDDL-000193",
+              "WAL-CLM-DDDL-000239",
               "WAL-CLM-IMMORT-000080",
+              "WAL-CLM-IMMORT-000356",
+              "WAL-CLM-IMMORT-000357",
               "WAL-CLM-LETS-000035",
+              "WAL-CLM-RARE-000115",
               "WAL-CLM-RARE-000238"
             ]
           },
@@ -41319,23 +41301,58 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000045",
+              "WAL-CLM-DDDL-000216",
+              "WAL-CLM-EPIGEN-000077",
+              "WAL-CLM-EPIGEN-000261",
+              "WAL-CLM-EPIGEN-000262",
               "WAL-CLM-EPIGEN-000266",
-              "WAL-CLM-IMMORT-000306"
+              "WAL-CLM-EPIGEN-000323",
+              "WAL-CLM-IMMORT-000081",
+              "WAL-CLM-IMMORT-000085",
+              "WAL-CLM-IMMORT-000306",
+              "WAL-CLM-RARE-000194"
             ]
           },
           {
             facet: "sources",
             claim_ids: [
               "WAL-CLM-EPIGEN-000267",
-              "WAL-CLM-EPIGEN-000268"
+              "WAL-CLM-EPIGEN-000268",
+              "WAL-CLM-IMMORT-000086",
+              "WAL-CLM-IMMORT-000219",
+              "WAL-CLM-IMMORT-000232",
+              "WAL-CLM-IMMORT-000335"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000192"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000086",
+              "WAL-CLM-DDDL-000278",
+              "WAL-CLM-DDDL-000351",
               "WAL-CLM-DDDL-000602",
               "WAL-CLM-EPIGEN-000117",
+              "WAL-CLM-IMMORT-000084",
               "WAL-CLM-LETS-000072",
+              "WAL-CLM-LETS-000132",
+              "WAL-CLM-LETS-000137",
+              "WAL-CLM-LETS-000143",
+              "WAL-CLM-LETS-000158",
+              "WAL-CLM-LETS-000176",
+              "WAL-CLM-LETS-000238",
+              "WAL-CLM-LETS-000246",
+              "WAL-CLM-LETS-000284",
+              "WAL-CLM-LETS-000298",
+              "WAL-CLM-LETS-000348",
+              "WAL-CLM-LETS-000359",
+              "WAL-CLM-LETS-000379",
+              "WAL-CLM-LETS-000383",
               "WAL-CLM-RARE-000014"
             ]
           },
@@ -41356,6 +41373,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000194",
               "WAL-CLM-EPIGEN-000271",
+              "WAL-CLM-EPIGEN-000319",
               "WAL-CLM-HELLS-000037"
             ]
           }
@@ -41414,7 +41432,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 90,
-        distinct_claim_count: 110,
+        distinct_claim_count: 115,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -41453,95 +41471,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000094",
-              "WAL-CLM-DDDL-000320",
-              "WAL-CLM-DDDL-000325",
-              "WAL-CLM-DDDL-000331",
-              "WAL-CLM-DDDL-000345",
-              "WAL-CLM-DDDL-000361",
-              "WAL-CLM-DDDL-000363",
-              "WAL-CLM-DDDL-000434",
-              "WAL-CLM-DDDL-000495",
-              "WAL-CLM-DDDL-000505",
-              "WAL-CLM-DDDL-000506",
-              "WAL-CLM-DDDL-000510",
-              "WAL-CLM-DDDL-000524",
-              "WAL-CLM-DDDL-000531",
-              "WAL-CLM-DDDL-000579",
-              "WAL-CLM-LETS-000118",
-              "WAL-CLM-LETS-000119",
-              "WAL-CLM-LETS-000124",
-              "WAL-CLM-LETS-000126",
-              "WAL-CLM-LETS-000128",
               "WAL-CLM-LETS-000137",
-              "WAL-CLM-LETS-000145",
               "WAL-CLM-LETS-000146",
-              "WAL-CLM-LETS-000150",
               "WAL-CLM-LETS-000157",
-              "WAL-CLM-LETS-000163",
-              "WAL-CLM-LETS-000164",
-              "WAL-CLM-LETS-000167",
-              "WAL-CLM-LETS-000168",
-              "WAL-CLM-LETS-000172",
               "WAL-CLM-LETS-000173",
               "WAL-CLM-LETS-000175",
-              "WAL-CLM-LETS-000176",
-              "WAL-CLM-LETS-000207",
-              "WAL-CLM-LETS-000219",
-              "WAL-CLM-LETS-000222",
-              "WAL-CLM-LETS-000224",
-              "WAL-CLM-LETS-000225",
-              "WAL-CLM-LETS-000238",
               "WAL-CLM-LETS-000243",
               "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000261",
-              "WAL-CLM-LETS-000279",
-              "WAL-CLM-LETS-000280",
               "WAL-CLM-LETS-000282",
-              "WAL-CLM-LETS-000283",
-              "WAL-CLM-LETS-000285",
-              "WAL-CLM-LETS-000286",
               "WAL-CLM-LETS-000289",
-              "WAL-CLM-LETS-000292",
-              "WAL-CLM-LETS-000293",
-              "WAL-CLM-LETS-000298",
-              "WAL-CLM-LETS-000299",
-              "WAL-CLM-LETS-000300",
-              "WAL-CLM-LETS-000308",
-              "WAL-CLM-LETS-000311",
-              "WAL-CLM-LETS-000313",
-              "WAL-CLM-LETS-000314",
-              "WAL-CLM-LETS-000317",
-              "WAL-CLM-LETS-000318",
-              "WAL-CLM-LETS-000320",
-              "WAL-CLM-LETS-000325",
-              "WAL-CLM-LETS-000340",
-              "WAL-CLM-LETS-000342",
-              "WAL-CLM-LETS-000344",
-              "WAL-CLM-LETS-000348",
-              "WAL-CLM-LETS-000364",
-              "WAL-CLM-LETS-000367",
-              "WAL-CLM-LETS-000382",
-              "WAL-CLM-LETS-000394",
-              "WAL-CLM-LETS-000398",
-              "WAL-CLM-LETS-000399",
-              "WAL-CLM-LETS-000404",
-              "WAL-CLM-LETS-000410",
-              "WAL-CLM-LETS-000438",
-              "WAL-CLM-LETS-000450",
-              "WAL-CLM-LETS-000452",
-              "WAL-CLM-LETS-000457",
-              "WAL-CLM-LETS-000460"
-            ]
-          },
-          {
-            kind: "interaction",
-            claim_ids: [
-              "WAL-CLM-DDDL-000021"
+              "WAL-CLM-LETS-000320"
             ]
           }
         ],
-        record_claim_count: 80,
+        record_claim_count: 10,
         search: [
           {
             facet: "basics",
@@ -41553,6 +41496,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "warning",
             claim_ids: [
               "WAL-CLM-DDDL-000164",
+              "WAL-CLM-DDDL-000211",
               "WAL-CLM-EPIGEN-000043",
               "WAL-CLM-EPIGEN-000209",
               "WAL-CLM-IMMORT-000281"
@@ -41572,18 +41516,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000206",
               "WAL-CLM-EPIGEN-000208",
+              "WAL-CLM-IMMORT-000132",
               "WAL-CLM-IMMORT-000495"
             ]
           },
           {
             facet: "sources",
             claim_ids: [
+              "WAL-CLM-DDDL-000021",
               "WAL-CLM-HELLS-000024"
             ]
           },
           {
             facet: "uses",
             claim_ids: [
+              "WAL-CLM-DDDL-000213",
+              "WAL-CLM-DDDL-000214",
+              "WAL-CLM-DDDL-000495",
               "WAL-CLM-HELLS-000025",
               "WAL-CLM-IMMORT-000280",
               "WAL-CLM-LETS-000417"
@@ -41592,12 +41541,81 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000094",
               "WAL-CLM-DDDL-000163",
+              "WAL-CLM-DDDL-000278",
+              "WAL-CLM-DDDL-000320",
               "WAL-CLM-DDDL-000322",
+              "WAL-CLM-DDDL-000325",
               "WAL-CLM-DDDL-000329",
+              "WAL-CLM-DDDL-000331",
+              "WAL-CLM-DDDL-000345",
+              "WAL-CLM-DDDL-000361",
+              "WAL-CLM-DDDL-000363",
+              "WAL-CLM-DDDL-000434",
+              "WAL-CLM-DDDL-000505",
+              "WAL-CLM-DDDL-000506",
+              "WAL-CLM-DDDL-000510",
+              "WAL-CLM-DDDL-000524",
+              "WAL-CLM-DDDL-000531",
+              "WAL-CLM-DDDL-000579",
               "WAL-CLM-EPIGEN-000118",
               "WAL-CLM-HELLS-000023",
               "WAL-CLM-LETS-000073",
+              "WAL-CLM-LETS-000118",
+              "WAL-CLM-LETS-000119",
+              "WAL-CLM-LETS-000124",
+              "WAL-CLM-LETS-000126",
+              "WAL-CLM-LETS-000128",
+              "WAL-CLM-LETS-000145",
+              "WAL-CLM-LETS-000150",
+              "WAL-CLM-LETS-000163",
+              "WAL-CLM-LETS-000164",
+              "WAL-CLM-LETS-000167",
+              "WAL-CLM-LETS-000168",
+              "WAL-CLM-LETS-000172",
+              "WAL-CLM-LETS-000176",
+              "WAL-CLM-LETS-000207",
+              "WAL-CLM-LETS-000219",
+              "WAL-CLM-LETS-000222",
+              "WAL-CLM-LETS-000224",
+              "WAL-CLM-LETS-000225",
+              "WAL-CLM-LETS-000238",
+              "WAL-CLM-LETS-000261",
+              "WAL-CLM-LETS-000279",
+              "WAL-CLM-LETS-000280",
+              "WAL-CLM-LETS-000283",
+              "WAL-CLM-LETS-000285",
+              "WAL-CLM-LETS-000286",
+              "WAL-CLM-LETS-000292",
+              "WAL-CLM-LETS-000293",
+              "WAL-CLM-LETS-000298",
+              "WAL-CLM-LETS-000299",
+              "WAL-CLM-LETS-000300",
+              "WAL-CLM-LETS-000308",
+              "WAL-CLM-LETS-000311",
+              "WAL-CLM-LETS-000313",
+              "WAL-CLM-LETS-000314",
+              "WAL-CLM-LETS-000317",
+              "WAL-CLM-LETS-000318",
+              "WAL-CLM-LETS-000325",
+              "WAL-CLM-LETS-000340",
+              "WAL-CLM-LETS-000342",
+              "WAL-CLM-LETS-000344",
+              "WAL-CLM-LETS-000348",
+              "WAL-CLM-LETS-000364",
+              "WAL-CLM-LETS-000367",
+              "WAL-CLM-LETS-000382",
+              "WAL-CLM-LETS-000394",
+              "WAL-CLM-LETS-000398",
+              "WAL-CLM-LETS-000399",
+              "WAL-CLM-LETS-000404",
+              "WAL-CLM-LETS-000410",
+              "WAL-CLM-LETS-000438",
+              "WAL-CLM-LETS-000450",
+              "WAL-CLM-LETS-000452",
+              "WAL-CLM-LETS-000457",
+              "WAL-CLM-LETS-000460",
               "WAL-CLM-LETS-000500"
             ]
           },
@@ -41734,7 +41752,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 22,
-        distinct_claim_count: 31,
+        distinct_claim_count: 37,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -41802,13 +41820,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000476",
-              "WAL-CLM-DDDL-000479",
-              "WAL-CLM-DDDL-000565",
-              "WAL-CLM-DDDL-000567",
-              "WAL-CLM-LETS-000139",
-              "WAL-CLM-LETS-000413",
-              "WAL-CLM-LETS-000420"
+              "WAL-CLM-DDDL-000567"
             ]
           },
           {
@@ -41822,19 +41834,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "definition",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000165",
               "WAL-CLM-LETS-000087"
             ]
           },
           {
             kind: "food_source",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000162",
-              "WAL-CLM-EPIGEN-000170"
+              "WAL-CLM-EPIGEN-000162"
             ]
           }
         ],
-        record_claim_count: 16,
+        record_claim_count: 8,
         search: [
           {
             facet: "basics",
@@ -41845,7 +41855,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000083"
+              "WAL-CLM-DDDL-000083",
+              "WAL-CLM-DDDL-000479"
             ]
           },
           {
@@ -41859,18 +41870,24 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000068"
+              "WAL-CLM-DDDL-000068",
+              "WAL-CLM-DDDL-000175",
+              "WAL-CLM-DDDL-000295",
+              "WAL-CLM-EPIGEN-000234",
+              "WAL-CLM-RARE-000106"
             ]
           },
           {
             facet: "sources",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000170",
               "WAL-CLM-IMMORT-000288"
             ]
           },
           {
             facet: "uses",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000165",
               "WAL-CLM-IMMORT-000289"
             ]
           },
@@ -41878,8 +41895,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000172",
+              "WAL-CLM-DDDL-000476",
+              "WAL-CLM-DDDL-000565",
               "WAL-CLM-EPIGEN-000119",
-              "WAL-CLM-LETS-000074"
+              "WAL-CLM-LETS-000074",
+              "WAL-CLM-LETS-000139",
+              "WAL-CLM-LETS-000413",
+              "WAL-CLM-LETS-000420"
             ]
           },
           {
@@ -41901,8 +41923,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "etymology",
+            claim_ids: [
+              "WAL-CLM-HELLS-000028"
+            ]
+          },
+          {
             facet: "history",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000174",
               "WAL-CLM-EPIGEN-000224"
             ]
           }
@@ -41950,7 +41979,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 86,
-        distinct_claim_count: 108,
+        distinct_claim_count: 119,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -41990,94 +42019,29 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000331",
-              "WAL-CLM-DDDL-000337",
-              "WAL-CLM-DDDL-000389",
-              "WAL-CLM-DDDL-000408",
-              "WAL-CLM-DDDL-000434",
-              "WAL-CLM-DDDL-000455",
-              "WAL-CLM-DDDL-000456",
-              "WAL-CLM-DDDL-000499",
-              "WAL-CLM-DDDL-000506",
-              "WAL-CLM-DDDL-000524",
-              "WAL-CLM-DDDL-000533",
-              "WAL-CLM-DDDL-000579",
-              "WAL-CLM-LETS-000123",
-              "WAL-CLM-LETS-000126",
-              "WAL-CLM-LETS-000130",
               "WAL-CLM-LETS-000137",
               "WAL-CLM-LETS-000146",
-              "WAL-CLM-LETS-000148",
-              "WAL-CLM-LETS-000150",
-              "WAL-CLM-LETS-000154",
-              "WAL-CLM-LETS-000164",
-              "WAL-CLM-LETS-000168",
-              "WAL-CLM-LETS-000169",
-              "WAL-CLM-LETS-000170",
-              "WAL-CLM-LETS-000171",
               "WAL-CLM-LETS-000173",
-              "WAL-CLM-LETS-000176",
-              "WAL-CLM-LETS-000202",
-              "WAL-CLM-LETS-000204",
-              "WAL-CLM-LETS-000207",
-              "WAL-CLM-LETS-000215",
-              "WAL-CLM-LETS-000220",
-              "WAL-CLM-LETS-000222",
-              "WAL-CLM-LETS-000242",
               "WAL-CLM-LETS-000243",
-              "WAL-CLM-LETS-000247",
-              "WAL-CLM-LETS-000254",
-              "WAL-CLM-LETS-000258",
-              "WAL-CLM-LETS-000261",
-              "WAL-CLM-LETS-000282",
-              "WAL-CLM-LETS-000283",
               "WAL-CLM-LETS-000289",
-              "WAL-CLM-LETS-000291",
-              "WAL-CLM-LETS-000295",
-              "WAL-CLM-LETS-000300",
-              "WAL-CLM-LETS-000316",
-              "WAL-CLM-LETS-000317",
               "WAL-CLM-LETS-000320",
-              "WAL-CLM-LETS-000321",
-              "WAL-CLM-LETS-000325",
               "WAL-CLM-LETS-000356",
               "WAL-CLM-LETS-000357",
-              "WAL-CLM-LETS-000373",
               "WAL-CLM-LETS-000374",
               "WAL-CLM-LETS-000382",
-              "WAL-CLM-LETS-000399",
-              "WAL-CLM-LETS-000402",
-              "WAL-CLM-LETS-000404",
-              "WAL-CLM-LETS-000409",
-              "WAL-CLM-LETS-000415",
-              "WAL-CLM-LETS-000421",
-              "WAL-CLM-LETS-000427",
-              "WAL-CLM-LETS-000430",
               "WAL-CLM-LETS-000445",
               "WAL-CLM-LETS-000450",
-              "WAL-CLM-LETS-000454",
-              "WAL-CLM-LETS-000460",
               "WAL-CLM-RARE-000283"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000136",
-              "WAL-CLM-DDDL-000458",
-              "WAL-CLM-IMMORT-000495",
-              "WAL-CLM-LETS-000196",
-              "WAL-CLM-RARE-000010"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-DDDL-000072"
+              "WAL-CLM-LETS-000196"
             ]
           }
         ],
-        record_claim_count: 74,
+        record_claim_count: 14,
         search: [
           {
             facet: "basics",
@@ -42107,13 +42071,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000458",
               "WAL-CLM-IMMORT-000320",
-              "WAL-CLM-IMMORT-000321"
+              "WAL-CLM-IMMORT-000321",
+              "WAL-CLM-IMMORT-000495"
             ]
           },
           {
             facet: "sources",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000216",
               "WAL-CLM-HELLS-000050",
               "WAL-CLM-HELLS-000051"
             ]
@@ -42121,6 +42088,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "uses",
             claim_ids: [
+              "WAL-CLM-DDDL-000213",
+              "WAL-CLM-HELLS-000025",
               "WAL-CLM-HELLS-000052",
               "WAL-CLM-LETS-000175",
               "WAL-CLM-LETS-000275",
@@ -42130,13 +42099,81 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000269",
+              "WAL-CLM-DDDL-000278",
+              "WAL-CLM-DDDL-000331",
+              "WAL-CLM-DDDL-000337",
+              "WAL-CLM-DDDL-000389",
+              "WAL-CLM-DDDL-000408",
+              "WAL-CLM-DDDL-000434",
               "WAL-CLM-DDDL-000442",
+              "WAL-CLM-DDDL-000455",
+              "WAL-CLM-DDDL-000456",
+              "WAL-CLM-DDDL-000499",
+              "WAL-CLM-DDDL-000506",
+              "WAL-CLM-DDDL-000524",
+              "WAL-CLM-DDDL-000533",
+              "WAL-CLM-DDDL-000579",
               "WAL-CLM-DDDL-000584",
               "WAL-CLM-DDDL-000596",
               "WAL-CLM-DDDL-000600",
               "WAL-CLM-DDDL-000605",
               "WAL-CLM-EPIGEN-000120",
-              "WAL-CLM-LETS-000075"
+              "WAL-CLM-LETS-000075",
+              "WAL-CLM-LETS-000123",
+              "WAL-CLM-LETS-000126",
+              "WAL-CLM-LETS-000130",
+              "WAL-CLM-LETS-000148",
+              "WAL-CLM-LETS-000150",
+              "WAL-CLM-LETS-000154",
+              "WAL-CLM-LETS-000164",
+              "WAL-CLM-LETS-000168",
+              "WAL-CLM-LETS-000169",
+              "WAL-CLM-LETS-000170",
+              "WAL-CLM-LETS-000171",
+              "WAL-CLM-LETS-000176",
+              "WAL-CLM-LETS-000202",
+              "WAL-CLM-LETS-000204",
+              "WAL-CLM-LETS-000207",
+              "WAL-CLM-LETS-000215",
+              "WAL-CLM-LETS-000220",
+              "WAL-CLM-LETS-000222",
+              "WAL-CLM-LETS-000242",
+              "WAL-CLM-LETS-000247",
+              "WAL-CLM-LETS-000254",
+              "WAL-CLM-LETS-000258",
+              "WAL-CLM-LETS-000261",
+              "WAL-CLM-LETS-000282",
+              "WAL-CLM-LETS-000283",
+              "WAL-CLM-LETS-000291",
+              "WAL-CLM-LETS-000295",
+              "WAL-CLM-LETS-000300",
+              "WAL-CLM-LETS-000316",
+              "WAL-CLM-LETS-000317",
+              "WAL-CLM-LETS-000321",
+              "WAL-CLM-LETS-000325",
+              "WAL-CLM-LETS-000373",
+              "WAL-CLM-LETS-000399",
+              "WAL-CLM-LETS-000402",
+              "WAL-CLM-LETS-000404",
+              "WAL-CLM-LETS-000409",
+              "WAL-CLM-LETS-000415",
+              "WAL-CLM-LETS-000421",
+              "WAL-CLM-LETS-000427",
+              "WAL-CLM-LETS-000430",
+              "WAL-CLM-LETS-000454",
+              "WAL-CLM-LETS-000460"
+            ]
+          },
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000072",
+              "WAL-CLM-DDDL-000136",
+              "WAL-CLM-HELLS-000026",
+              "WAL-CLM-RARE-000010",
+              "WAL-CLM-RARE-000323",
+              "WAL-CLM-RARE-000328"
             ]
           },
           {
@@ -42164,7 +42201,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000212",
               "WAL-CLM-EPIGEN-000284",
+              "WAL-CLM-HELLS-000018",
               "WAL-CLM-HELLS-000053",
+              "WAL-CLM-HELLS-000058",
+              "WAL-CLM-RARE-000336",
               "WAL-CLM-RARE-000357"
             ]
           }
@@ -42268,7 +42308,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 11,
-        distinct_claim_count: 21,
+        distinct_claim_count: 24,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -42311,30 +42351,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitiman k",
           "vitamine k"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000089"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000506",
-              "WAL-CLM-LETS-000261",
-              "WAL-CLM-LETS-000382"
-            ]
-          },
-          {
-            kind: "food_source",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000163",
-              "WAL-CLM-EPIGEN-000176"
-            ]
-          }
-        ],
-        record_claim_count: 6,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -42345,6 +42363,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
+              "WAL-CLM-DDDL-000211",
               "WAL-CLM-EPIGEN-000034",
               "WAL-CLM-EPIGEN-000289"
             ]
@@ -42352,8 +42371,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000089",
               "WAL-CLM-IMMORT-000324",
               "WAL-CLM-IMMORT-000326",
+              "WAL-CLM-LETS-000499",
               "WAL-CLM-RARE-000232"
             ]
           },
@@ -42366,6 +42387,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "sources",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000163",
+              "WAL-CLM-EPIGEN-000176",
+              "WAL-CLM-EPIGEN-000216",
               "WAL-CLM-EPIGEN-000287",
               "WAL-CLM-EPIGEN-000288"
             ]
@@ -42380,8 +42404,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000506",
               "WAL-CLM-EPIGEN-000121",
-              "WAL-CLM-LETS-000076"
+              "WAL-CLM-LETS-000076",
+              "WAL-CLM-LETS-000261",
+              "WAL-CLM-LETS-000382"
             ]
           },
           {
@@ -42425,7 +42452,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 8,
-        distinct_claim_count: 15,
+        distinct_claim_count: 16,
         books: [
           "epigenetics",
           "immortality",
@@ -42470,21 +42497,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-RARE-000240"
             ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000430"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000218"
-            ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 1,
         search: [
           {
             facet: "basics",
@@ -42507,6 +42522,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000194",
+              "WAL-CLM-IMMORT-000218"
+            ]
+          },
+          {
             facet: "uses",
             claim_ids: [
               "WAL-CLM-DDDL-000215"
@@ -42517,6 +42539,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000122",
               "WAL-CLM-LETS-000045",
+              "WAL-CLM-LETS-000430",
               "WAL-CLM-LETS-000512"
             ]
           },
@@ -42576,7 +42599,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 15,
-        distinct_claim_count: 27,
+        distinct_claim_count: 33,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -42610,31 +42633,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000331",
-              "WAL-CLM-DDDL-000351",
-              "WAL-CLM-LETS-000120",
-              "WAL-CLM-LETS-000130",
               "WAL-CLM-LETS-000159",
-              "WAL-CLM-LETS-000220",
-              "WAL-CLM-LETS-000243",
               "WAL-CLM-LETS-000267",
-              "WAL-CLM-LETS-000293",
-              "WAL-CLM-LETS-000356",
-              "WAL-CLM-LETS-000373"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000226"
+              "WAL-CLM-LETS-000356"
             ]
           }
         ],
-        record_claim_count: 12,
+        record_claim_count: 3,
         search: [
           {
             facet: "basics",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000449",
               "WAL-CLM-IMMORT-000330",
               "WAL-CLM-IMMORT-000332"
             ]
@@ -42648,6 +42658,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-IMMORT-000080",
+              "WAL-CLM-IMMORT-000226",
               "WAL-CLM-IMMORT-000333"
             ]
           },
@@ -42670,14 +42682,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "uses",
             claim_ids: [
               "WAL-CLM-DDDL-000218",
+              "WAL-CLM-DDDL-000235",
+              "WAL-CLM-DDDL-000236",
               "WAL-CLM-IMMORT-000336"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000270",
+              "WAL-CLM-DDDL-000272",
+              "WAL-CLM-DDDL-000331",
+              "WAL-CLM-DDDL-000351",
               "WAL-CLM-EPIGEN-000124",
-              "WAL-CLM-LETS-000048"
+              "WAL-CLM-LETS-000048",
+              "WAL-CLM-LETS-000120",
+              "WAL-CLM-LETS-000130",
+              "WAL-CLM-LETS-000220",
+              "WAL-CLM-LETS-000243",
+              "WAL-CLM-LETS-000293",
+              "WAL-CLM-LETS-000373"
             ]
           },
           {
@@ -42733,7 +42757,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 6,
-        distinct_claim_count: 14,
+        distinct_claim_count: 16,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -42770,17 +42794,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000434",
               "WAL-CLM-LETS-000207"
             ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "basics",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000298"
+              "WAL-CLM-EPIGEN-000298",
+              "WAL-CLM-IMMORT-000215"
             ]
           },
           {
@@ -42819,6 +42843,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000220",
+              "WAL-CLM-DDDL-000274",
+              "WAL-CLM-DDDL-000434",
               "WAL-CLM-LETS-000053",
               "WAL-CLM-LETS-000322"
             ]
@@ -42862,7 +42888,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 24,
-        distinct_claim_count: 33,
+        distinct_claim_count: 34,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -42907,34 +42933,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000505",
-              "WAL-CLM-DDDL-000510",
-              "WAL-CLM-DDDL-000521",
-              "WAL-CLM-DDDL-000531",
-              "WAL-CLM-LETS-000128",
-              "WAL-CLM-LETS-000176",
               "WAL-CLM-LETS-000207",
-              "WAL-CLM-LETS-000224",
-              "WAL-CLM-LETS-000225",
               "WAL-CLM-LETS-000246",
               "WAL-CLM-LETS-000279",
-              "WAL-CLM-LETS-000280",
-              "WAL-CLM-LETS-000292",
               "WAL-CLM-LETS-000299",
-              "WAL-CLM-LETS-000320",
-              "WAL-CLM-LETS-000364",
-              "WAL-CLM-LETS-000458",
-              "WAL-CLM-LETS-000460"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000495"
+              "WAL-CLM-LETS-000320"
             ]
           }
         ],
-        record_claim_count: 19,
+        record_claim_count: 5,
         search: [
           {
             facet: "basics",
@@ -42957,7 +42964,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000178",
               "WAL-CLM-IMMORT-000340",
+              "WAL-CLM-IMMORT-000495",
               "WAL-CLM-IMMORT-000502"
             ]
           },
@@ -42971,8 +42980,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000505",
+              "WAL-CLM-DDDL-000510",
+              "WAL-CLM-DDDL-000521",
+              "WAL-CLM-DDDL-000531",
               "WAL-CLM-DDDL-000594",
-              "WAL-CLM-EPIGEN-000126"
+              "WAL-CLM-EPIGEN-000126",
+              "WAL-CLM-LETS-000128",
+              "WAL-CLM-LETS-000176",
+              "WAL-CLM-LETS-000224",
+              "WAL-CLM-LETS-000225",
+              "WAL-CLM-LETS-000280",
+              "WAL-CLM-LETS-000292",
+              "WAL-CLM-LETS-000364",
+              "WAL-CLM-LETS-000458",
+              "WAL-CLM-LETS-000460"
             ]
           },
           {
@@ -43044,7 +43066,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 7,
-        distinct_claim_count: 15,
+        distinct_claim_count: 21,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -43072,19 +43094,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000070",
-              "WAL-CLM-LETS-000207",
-              "WAL-CLM-LETS-000319"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-DDDL-000275"
+              "WAL-CLM-LETS-000207"
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 1,
         search: [
           {
             facet: "basics",
@@ -43099,11 +43113,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000445"
+            ]
+          },
+          {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000342",
               "WAL-CLM-EPIGEN-000344",
-              "WAL-CLM-HELLS-000066"
+              "WAL-CLM-EPIGEN-000444",
+              "WAL-CLM-HELLS-000066",
+              "WAL-CLM-HELLS-000073"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-DDDL-000277"
             ]
           },
           {
@@ -43116,13 +43144,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000070",
               "WAL-CLM-DDDL-000266",
-              "WAL-CLM-DDDL-000267"
+              "WAL-CLM-DDDL-000267",
+              "WAL-CLM-LETS-000299",
+              "WAL-CLM-LETS-000319"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-DDDL-000275",
+              "WAL-CLM-EPIGEN-000362",
               "WAL-CLM-IMMORT-000058"
             ]
           },
@@ -43157,7 +43190,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 6,
-        distinct_claim_count: 14,
+        distinct_claim_count: 16,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -43191,20 +43224,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000120",
-              "WAL-CLM-LETS-000267",
-              "WAL-CLM-LETS-000283"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-DDDL-000275",
-              "WAL-CLM-IMMORT-000058"
+              "WAL-CLM-LETS-000267"
             ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 1,
         search: [
           {
             facet: "basics",
@@ -43226,12 +43250,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000218",
+              "WAL-CLM-DDDL-000236"
+            ]
+          },
+          {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000269",
               "WAL-CLM-DDDL-000270",
               "WAL-CLM-DDDL-000271",
-              "WAL-CLM-DDDL-000272"
+              "WAL-CLM-DDDL-000272",
+              "WAL-CLM-LETS-000120",
+              "WAL-CLM-LETS-000283"
+            ]
+          },
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000275",
+              "WAL-CLM-IMMORT-000058"
             ]
           },
           {
@@ -43358,15 +43398,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "isoleucine deficiency",
           "what is isoleucine"
         ],
-        record: [
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000464"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -43383,7 +43416,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000049"
+              "WAL-CLM-EPIGEN-000049",
+              "WAL-CLM-EPIGEN-000464"
             ]
           },
           {
@@ -43434,15 +43468,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "leucine for muscle",
           "leucine muscle growth"
         ],
-        record: [
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000464"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -43466,7 +43493,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000378"
+              "WAL-CLM-EPIGEN-000378",
+              "WAL-CLM-EPIGEN-000464"
             ]
           },
           {
@@ -43517,7 +43545,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 5,
-        distinct_claim_count: 10,
+        distinct_claim_count: 11,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -43535,20 +43563,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "high lysine foods",
           "lysine for shingles"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000336"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-EPIGEN-000372"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000268"
             ]
           },
           {
@@ -43579,6 +43606,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000278",
+              "WAL-CLM-DDDL-000336",
               "WAL-CLM-LETS-000202",
               "WAL-CLM-LETS-000299"
             ]
@@ -43620,7 +43648,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 7,
-        distinct_claim_count: 11,
+        distinct_claim_count: 17,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -43639,23 +43667,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000456",
-              "WAL-CLM-DDDL-000533",
-              "WAL-CLM-LETS-000373",
-              "WAL-CLM-LETS-000396"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000067",
               "WAL-CLM-EPIGEN-000464"
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 1,
         search: [
           {
             facet: "basics",
@@ -43664,11 +43682,37 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000080",
+              "WAL-CLM-IMMORT-000382"
+            ]
+          },
+          {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000067",
+              "WAL-CLM-DDDL-000216",
+              "WAL-CLM-EPIGEN-000348",
               "WAL-CLM-EPIGEN-000358",
               "WAL-CLM-EPIGEN-000359",
               "WAL-CLM-EPIGEN-000360"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000335"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000269",
+              "WAL-CLM-DDDL-000456",
+              "WAL-CLM-DDDL-000533",
+              "WAL-CLM-LETS-000373",
+              "WAL-CLM-LETS-000396"
             ]
           },
           {
@@ -43707,7 +43751,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 10,
-        distinct_claim_count: 18,
+        distinct_claim_count: 20,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -43730,20 +43774,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000521",
-              "WAL-CLM-LETS-000320",
-              "WAL-CLM-LETS-000322",
-              "WAL-CLM-LETS-000396"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000067"
+              "WAL-CLM-LETS-000322"
             ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 1,
         search: [
           {
             facet: "basics",
@@ -43760,7 +43795,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000053"
+              "WAL-CLM-DDDL-000067",
+              "WAL-CLM-EPIGEN-000053",
+              "WAL-CLM-EPIGEN-000354"
             ]
           },
           {
@@ -43772,6 +43809,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "uses",
             claim_ids: [
+              "WAL-CLM-DDDL-000273",
               "WAL-CLM-EPIGEN-000366"
             ]
           },
@@ -43779,9 +43817,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000274",
+              "WAL-CLM-DDDL-000521",
               "WAL-CLM-LETS-000159",
               "WAL-CLM-LETS-000244",
+              "WAL-CLM-LETS-000320",
               "WAL-CLM-LETS-000371",
+              "WAL-CLM-LETS-000396",
               "WAL-CLM-LETS-000462"
             ]
           },
@@ -43830,7 +43871,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 3,
-        distinct_claim_count: 5,
+        distinct_claim_count: 8,
         books: [
           "epigenetics"
         ],
@@ -43842,15 +43883,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "threonine deficiency",
           "what is threonine"
         ],
-        record: [
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000464"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -43867,12 +43901,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000393"
+              "WAL-CLM-EPIGEN-000393",
+              "WAL-CLM-EPIGEN-000464"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000279",
+              "WAL-CLM-DDDL-000281"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000382",
               "WAL-CLM-EPIGEN-000392"
             ]
           }
@@ -43895,7 +43938,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 9,
-        distinct_claim_count: 19,
+        distinct_claim_count: 25,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -43928,29 +43971,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "tryptophan and serotonin",
           "amino acid tryptophan"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000320",
-              "WAL-CLM-LETS-000322",
-              "WAL-CLM-LETS-000415"
-            ]
-          }
-        ],
-        record_claim_count: 4,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000351"
+              "WAL-CLM-EPIGEN-000351",
+              "WAL-CLM-EPIGEN-000446",
+              "WAL-CLM-EPIGEN-000447"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000356"
+              "WAL-CLM-EPIGEN-000356",
+              "WAL-CLM-EPIGEN-000367"
             ]
           },
           {
@@ -43963,6 +43999,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000067",
+              "WAL-CLM-EPIGEN-000247",
               "WAL-CLM-EPIGEN-000352",
               "WAL-CLM-EPIGEN-000353",
               "WAL-CLM-EPIGEN-000354",
@@ -43980,8 +44017,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000274",
               "WAL-CLM-DDDL-000588",
-              "WAL-CLM-DDDL-000598"
+              "WAL-CLM-DDDL-000598",
+              "WAL-CLM-LETS-000244",
+              "WAL-CLM-LETS-000320",
+              "WAL-CLM-LETS-000322",
+              "WAL-CLM-LETS-000415"
             ]
           },
           {
@@ -43993,7 +44035,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "history",
             claim_ids: [
-              "WAL-CLM-IMMORT-000384"
+              "WAL-CLM-IMMORT-000384",
+              "WAL-CLM-IMMORT-000387"
             ]
           }
         ],
@@ -44024,7 +44067,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "amino_acid",
         is_essential: true,
         claim_count: 6,
-        distinct_claim_count: 13,
+        distinct_claim_count: 18,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -44043,28 +44086,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "tyrosine for thyroid",
           "n-acetyl-tyrosine"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000396"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000023"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000058"
-            ]
-          }
-        ],
-        record_claim_count: 4,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -44075,13 +44098,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000241",
               "WAL-CLM-DDDL-000276",
-              "WAL-CLM-EPIGEN-000371"
+              "WAL-CLM-EPIGEN-000371",
+              "WAL-CLM-RARE-000344"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000023",
+              "WAL-CLM-EPIGEN-000053",
               "WAL-CLM-EPIGEN-000370",
               "WAL-CLM-RARE-000381"
             ]
@@ -44089,13 +44116,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "uses",
             claim_ids: [
+              "WAL-CLM-DDDL-000273",
               "WAL-CLM-EPIGEN-000057"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000244",
+              "WAL-CLM-LETS-000396"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
-              "WAL-CLM-DDDL-000275"
+              "WAL-CLM-DDDL-000275",
+              "WAL-CLM-EPIGEN-000362",
+              "WAL-CLM-IMMORT-000058"
             ]
           },
           {
@@ -44149,15 +44186,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "valine deficiency",
           "what is valine"
         ],
-        record: [
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000464"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "basics",
@@ -44169,6 +44199,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000384"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000464"
             ]
           },
           {
@@ -44225,7 +44261,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "fatty_acid",
         is_essential: true,
         claim_count: 99,
-        distinct_claim_count: 118,
+        distinct_claim_count: 124,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -44290,128 +44326,48 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000471"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000337",
-              "WAL-CLM-DDDL-000406",
-              "WAL-CLM-DDDL-000463",
-              "WAL-CLM-DDDL-000483",
-              "WAL-CLM-EPIGEN-000016",
-              "WAL-CLM-LETS-000123",
-              "WAL-CLM-LETS-000125",
-              "WAL-CLM-LETS-000128",
-              "WAL-CLM-LETS-000131",
-              "WAL-CLM-LETS-000134",
               "WAL-CLM-LETS-000137",
-              "WAL-CLM-LETS-000139",
-              "WAL-CLM-LETS-000145",
-              "WAL-CLM-LETS-000147",
-              "WAL-CLM-LETS-000148",
-              "WAL-CLM-LETS-000150",
               "WAL-CLM-LETS-000157",
-              "WAL-CLM-LETS-000158",
               "WAL-CLM-LETS-000159",
-              "WAL-CLM-LETS-000169",
-              "WAL-CLM-LETS-000170",
-              "WAL-CLM-LETS-000171",
-              "WAL-CLM-LETS-000172",
-              "WAL-CLM-LETS-000178",
-              "WAL-CLM-LETS-000204",
-              "WAL-CLM-LETS-000219",
-              "WAL-CLM-LETS-000220",
-              "WAL-CLM-LETS-000240",
-              "WAL-CLM-LETS-000242",
               "WAL-CLM-LETS-000244",
               "WAL-CLM-LETS-000245",
               "WAL-CLM-LETS-000246",
-              "WAL-CLM-LETS-000249",
-              "WAL-CLM-LETS-000254",
-              "WAL-CLM-LETS-000258",
               "WAL-CLM-LETS-000267",
-              "WAL-CLM-LETS-000273",
               "WAL-CLM-LETS-000275",
               "WAL-CLM-LETS-000276",
-              "WAL-CLM-LETS-000280",
               "WAL-CLM-LETS-000282",
-              "WAL-CLM-LETS-000283",
-              "WAL-CLM-LETS-000291",
-              "WAL-CLM-LETS-000293",
-              "WAL-CLM-LETS-000310",
-              "WAL-CLM-LETS-000316",
-              "WAL-CLM-LETS-000319",
               "WAL-CLM-LETS-000320",
-              "WAL-CLM-LETS-000324",
-              "WAL-CLM-LETS-000348",
-              "WAL-CLM-LETS-000350",
-              "WAL-CLM-LETS-000357",
-              "WAL-CLM-LETS-000366",
-              "WAL-CLM-LETS-000369",
               "WAL-CLM-LETS-000371",
-              "WAL-CLM-LETS-000373",
-              "WAL-CLM-LETS-000379",
-              "WAL-CLM-LETS-000384",
               "WAL-CLM-LETS-000388",
               "WAL-CLM-LETS-000396",
-              "WAL-CLM-LETS-000399",
-              "WAL-CLM-LETS-000402",
               "WAL-CLM-LETS-000409",
-              "WAL-CLM-LETS-000415",
               "WAL-CLM-LETS-000419",
               "WAL-CLM-LETS-000430",
-              "WAL-CLM-LETS-000431",
-              "WAL-CLM-LETS-000433",
-              "WAL-CLM-LETS-000439",
               "WAL-CLM-LETS-000445",
-              "WAL-CLM-LETS-000451",
-              "WAL-CLM-LETS-000457",
               "WAL-CLM-RARE-000286"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000332",
-              "WAL-CLM-DDDL-000428",
-              "WAL-CLM-DDDL-000446",
-              "WAL-CLM-DDDL-000545",
-              "WAL-CLM-EPIGEN-000398",
-              "WAL-CLM-EPIGEN-000399",
-              "WAL-CLM-LETS-000488"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000394",
-              "WAL-CLM-RARE-000109"
-            ]
-          },
-          {
-            kind: "quote",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000397"
             ]
           }
         ],
-        record_claim_count: 84,
+        record_claim_count: 19,
         search: [
           {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000063",
-              "WAL-CLM-EPIGEN-000197"
+              "WAL-CLM-EPIGEN-000197",
+              "WAL-CLM-EPIGEN-000394",
+              "WAL-CLM-EPIGEN-000396",
+              "WAL-CLM-IMMORT-000052",
+              "WAL-CLM-RARE-000109"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
               "WAL-CLM-DDDL-000162",
+              "WAL-CLM-EPIGEN-000177",
               "WAL-CLM-HELLS-000021",
               "WAL-CLM-LETS-000011"
             ]
@@ -44432,9 +44388,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000158",
               "WAL-CLM-DDDL-000159",
+              "WAL-CLM-DDDL-000332",
+              "WAL-CLM-DDDL-000428",
+              "WAL-CLM-DDDL-000446",
+              "WAL-CLM-DDDL-000545",
               "WAL-CLM-EPIGEN-000198",
               "WAL-CLM-EPIGEN-000199",
               "WAL-CLM-EPIGEN-000201",
+              "WAL-CLM-EPIGEN-000398",
+              "WAL-CLM-EPIGEN-000399",
+              "WAL-CLM-EPIGEN-000451",
+              "WAL-CLM-LETS-000488",
               "WAL-CLM-RARE-000110"
             ]
           },
@@ -44449,6 +44413,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "uses",
             claim_ids: [
+              "WAL-CLM-DDDL-000102",
               "WAL-CLM-DDDL-000160",
               "WAL-CLM-IMMORT-000279",
               "WAL-CLM-LETS-000497",
@@ -44460,14 +44425,69 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000115",
+              "WAL-CLM-DDDL-000337",
+              "WAL-CLM-DDDL-000406",
               "WAL-CLM-DDDL-000427",
+              "WAL-CLM-DDDL-000463",
+              "WAL-CLM-DDDL-000483",
               "WAL-CLM-DDDL-000586",
-              "WAL-CLM-IMMORT-000277"
+              "WAL-CLM-EPIGEN-000016",
+              "WAL-CLM-IMMORT-000277",
+              "WAL-CLM-LETS-000123",
+              "WAL-CLM-LETS-000125",
+              "WAL-CLM-LETS-000128",
+              "WAL-CLM-LETS-000131",
+              "WAL-CLM-LETS-000134",
+              "WAL-CLM-LETS-000139",
+              "WAL-CLM-LETS-000145",
+              "WAL-CLM-LETS-000147",
+              "WAL-CLM-LETS-000148",
+              "WAL-CLM-LETS-000150",
+              "WAL-CLM-LETS-000158",
+              "WAL-CLM-LETS-000169",
+              "WAL-CLM-LETS-000170",
+              "WAL-CLM-LETS-000171",
+              "WAL-CLM-LETS-000172",
+              "WAL-CLM-LETS-000178",
+              "WAL-CLM-LETS-000204",
+              "WAL-CLM-LETS-000219",
+              "WAL-CLM-LETS-000220",
+              "WAL-CLM-LETS-000240",
+              "WAL-CLM-LETS-000242",
+              "WAL-CLM-LETS-000249",
+              "WAL-CLM-LETS-000254",
+              "WAL-CLM-LETS-000258",
+              "WAL-CLM-LETS-000273",
+              "WAL-CLM-LETS-000280",
+              "WAL-CLM-LETS-000283",
+              "WAL-CLM-LETS-000291",
+              "WAL-CLM-LETS-000293",
+              "WAL-CLM-LETS-000310",
+              "WAL-CLM-LETS-000316",
+              "WAL-CLM-LETS-000319",
+              "WAL-CLM-LETS-000324",
+              "WAL-CLM-LETS-000348",
+              "WAL-CLM-LETS-000350",
+              "WAL-CLM-LETS-000357",
+              "WAL-CLM-LETS-000366",
+              "WAL-CLM-LETS-000369",
+              "WAL-CLM-LETS-000373",
+              "WAL-CLM-LETS-000379",
+              "WAL-CLM-LETS-000384",
+              "WAL-CLM-LETS-000399",
+              "WAL-CLM-LETS-000402",
+              "WAL-CLM-LETS-000415",
+              "WAL-CLM-LETS-000431",
+              "WAL-CLM-LETS-000433",
+              "WAL-CLM-LETS-000439",
+              "WAL-CLM-LETS-000451",
+              "WAL-CLM-LETS-000457"
             ]
           },
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-LETS-000471",
               "WAL-CLM-RARE-000055"
             ]
           },
@@ -44481,13 +44501,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "history",
             claim_ids: [
               "WAL-CLM-EPIGEN-000202",
+              "WAL-CLM-EPIGEN-000397",
               "WAL-CLM-HELLS-000022"
             ]
           },
           {
             facet: "biography",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000203"
+              "WAL-CLM-EPIGEN-000203",
+              "WAL-CLM-HELLS-000008"
             ]
           }
         ],
@@ -44637,29 +44659,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000065",
-              "WAL-CLM-EPIGEN-000059",
               "WAL-CLM-LETS-000011"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000337",
-              "WAL-CLM-DDDL-000406",
-              "WAL-CLM-DDDL-000427",
               "WAL-CLM-DDDL-000586"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000157",
-              "WAL-CLM-DDDL-000332",
-              "WAL-CLM-DDDL-000428",
-              "WAL-CLM-DDDL-000446",
-              "WAL-CLM-DDDL-000545",
-              "WAL-CLM-RARE-000110"
+              "WAL-CLM-DDDL-000157"
             ]
           },
           {
@@ -44667,11 +44679,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000063",
               "WAL-CLM-EPIGEN-000197",
-              "WAL-CLM-EPIGEN-000204",
-              "WAL-CLM-EPIGEN-000394",
-              "WAL-CLM-EPIGEN-000450",
-              "WAL-CLM-IMMORT-000053",
-              "WAL-CLM-RARE-000109"
+              "WAL-CLM-IMMORT-000053"
             ]
           },
           {
@@ -44679,32 +44687,56 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-RARE-000334"
             ]
-          },
-          {
-            kind: "quote",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000202"
-            ]
           }
         ],
-        record_claim_count: 23,
+        record_claim_count: 8,
         search: [
           {
             facet: "basics",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000396"
+              "WAL-CLM-EPIGEN-000394",
+              "WAL-CLM-EPIGEN-000396",
+              "WAL-CLM-EPIGEN-000450",
+              "WAL-CLM-RARE-000109"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000065",
+              "WAL-CLM-EPIGEN-000059"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000332",
+              "WAL-CLM-DDDL-000428",
+              "WAL-CLM-DDDL-000446",
+              "WAL-CLM-DDDL-000545",
               "WAL-CLM-EPIGEN-000398",
-              "WAL-CLM-EPIGEN-000399"
+              "WAL-CLM-EPIGEN-000399",
+              "WAL-CLM-RARE-000110"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000337",
+              "WAL-CLM-DDDL-000406",
+              "WAL-CLM-DDDL-000427"
+            ]
+          },
+          {
+            facet: "etymology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000204"
             ]
           },
           {
             facet: "history",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000202",
               "WAL-CLM-EPIGEN-000397"
             ]
           }
@@ -44752,7 +44784,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "fatty_acid",
         is_essential: false,
         claim_count: 0,
-        distinct_claim_count: 2,
+        distinct_claim_count: 3,
         books: [],
         synonyms: [
           "omega-9",
@@ -44784,6 +44816,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "sources",
             claim_ids: [
               "WAL-CLM-HELLS-000067"
+            ]
+          },
+          {
+            facet: "etymology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000204"
             ]
           }
         ],
@@ -44817,19 +44855,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-c"
         ],
-        record: [
-          {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000163"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000163",
               "WAL-CLM-LETS-000118"
             ]
           }
@@ -44967,16 +44999,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000035"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000095",
-              "WAL-CLM-DDDL-000503",
               "WAL-CLM-LETS-000122"
             ]
           },
@@ -44987,8 +45011,34 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000095",
+              "WAL-CLM-DDDL-000503"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000265"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-LETS-000035"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000261"
+            ]
+          }
+        ],
         related_conditions: [
           "anemia",
           "birth_defects",
@@ -45016,20 +45066,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [],
         record: [
           {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-RARE-000135"
-            ]
-          },
-          {
             kind: "diagnostic_pattern",
             claim_ids: [
               "WAL-CLM-IMMORT-000151"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-RARE-000135"
+            ]
+          }
+        ],
         related_conditions: [
           "alkalosis"
         ],
@@ -45082,58 +45133,68 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000031",
               "WAL-CLM-EPIGEN-000059",
-              "WAL-CLM-LETS-000011",
               "WAL-CLM-LETS-000025",
               "WAL-CLM-LETS-000027",
-              "WAL-CLM-LETS-000044",
               "WAL-CLM-RARE-000229"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000337",
-              "WAL-CLM-DDDL-000427",
-              "WAL-CLM-DDDL-000430",
-              "WAL-CLM-DDDL-000436",
-              "WAL-CLM-DDDL-000437",
-              "WAL-CLM-DDDL-000439",
-              "WAL-CLM-DDDL-000440",
-              "WAL-CLM-DDDL-000442"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000428",
-              "WAL-CLM-DDDL-000429",
-              "WAL-CLM-DDDL-000444"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-DDDL-000443",
-              "WAL-CLM-LETS-000093"
             ]
           }
         ],
-        record_claim_count: 20,
+        record_claim_count: 4,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000441"
+              "WAL-CLM-DDDL-000428",
+              "WAL-CLM-DDDL-000429",
+              "WAL-CLM-DDDL-000441",
+              "WAL-CLM-DDDL-000444"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000115",
+              "WAL-CLM-DDDL-000168",
+              "WAL-CLM-DDDL-000337",
               "WAL-CLM-DDDL-000423",
+              "WAL-CLM-DDDL-000427",
+              "WAL-CLM-DDDL-000430",
+              "WAL-CLM-DDDL-000436",
+              "WAL-CLM-DDDL-000437",
               "WAL-CLM-DDDL-000438",
+              "WAL-CLM-DDDL-000439",
+              "WAL-CLM-DDDL-000440",
+              "WAL-CLM-DDDL-000442",
               "WAL-CLM-LETS-000123"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000011"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000031",
+              "WAL-CLM-EPIGEN-000039",
+              "WAL-CLM-LETS-000044"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000443",
+              "WAL-CLM-LETS-000093"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000160",
+              "WAL-CLM-LETS-000493"
             ]
           }
         ],
@@ -45170,16 +45231,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-RARE-000264"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "alopecia",
           "anorexia",
@@ -45213,22 +45274,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "sodium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000102"
-            ]
-          },
-          {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-RARE-000188"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000102"
+            ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "water_intoxication"
         ],
@@ -45266,21 +45327,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000062",
-              "WAL-CLM-IMMORT-000088",
-              "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000200"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000106",
-              "WAL-CLM-IMMORT-000478"
+              "WAL-CLM-IMMORT-000099"
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 1,
         search: [
           {
             facet: "stance",
@@ -45294,7 +45345,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000547",
               "WAL-CLM-DDDL-000561",
               "WAL-CLM-DDDL-000568",
-              "WAL-CLM-IMMORT-000018"
+              "WAL-CLM-EPIGEN-000106",
+              "WAL-CLM-IMMORT-000018",
+              "WAL-CLM-IMMORT-000478"
             ]
           },
           {
@@ -45304,9 +45357,30 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000226"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000062",
+              "WAL-CLM-IMMORT-000088",
+              "WAL-CLM-IMMORT-000200"
+            ]
+          },
+          {
             facet: "basics",
             claim_ids: [
-              "WAL-CLM-DDDL-000395"
+              "WAL-CLM-DDDL-000395",
+              "WAL-CLM-IMMORT-000363"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000240"
             ]
           },
           {
@@ -45360,19 +45434,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-c",
           "zinc"
         ],
-        record: [
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000330"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000330",
               "WAL-CLM-LETS-000124"
             ]
           }
@@ -45612,6 +45680,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000521"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000183"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000190"
+            ]
           }
         ],
         related_conditions: [
@@ -45648,20 +45728,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [],
         record: [
           {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-RARE-000135"
-            ]
-          },
-          {
             kind: "diagnostic_pattern",
             claim_ids: [
               "WAL-CLM-IMMORT-000151"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-RARE-000135"
+            ]
+          }
+        ],
         related_conditions: [
           "acidosis"
         ],
@@ -45700,22 +45781,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-c",
           "zinc"
         ],
-        record: [
-          {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000420"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-LETS-000109",
-              "WAL-CLM-LETS-000111"
-            ]
-          }
-        ],
-        record_claim_count: 3,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "mechanism",
@@ -45728,12 +45795,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000531",
               "WAL-CLM-DDDL-000562",
+              "WAL-CLM-LETS-000111",
               "WAL-CLM-LETS-000128"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000420"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000280",
+              "WAL-CLM-EPIGEN-000207",
               "WAL-CLM-LETS-000129"
             ]
           },
@@ -45741,7 +45817,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000491",
+              "WAL-CLM-LETS-000519",
               "WAL-CLM-LETS-000523"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000306",
+              "WAL-CLM-LETS-000109",
+              "WAL-CLM-LETS-000520"
             ]
           }
         ],
@@ -45804,22 +45889,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000042",
-              "WAL-CLM-LETS-000003",
               "WAL-CLM-LETS-000011",
-              "WAL-CLM-LETS-000012",
               "WAL-CLM-LETS-000021",
               "WAL-CLM-LETS-000027",
-              "WAL-CLM-LETS-000029",
-              "WAL-CLM-LETS-000044",
-              "WAL-CLM-RARE-000264"
+              "WAL-CLM-LETS-000029"
             ]
           },
           {
             kind: "toxicity_sign",
             claim_ids: [
               "WAL-CLM-IMMORT-000166",
-              "WAL-CLM-LETS-000031",
               "WAL-CLM-LETS-000037"
             ]
           },
@@ -45830,8 +45909,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 13,
+        record_claim_count: 7,
         search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000158"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
@@ -45841,9 +45926,39 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000012",
+              "WAL-CLM-LETS-000031"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000038",
+              "WAL-CLM-EPIGEN-000042",
+              "WAL-CLM-IMMORT-000328",
+              "WAL-CLM-LETS-000003",
+              "WAL-CLM-LETS-000044",
+              "WAL-CLM-RARE-000264"
+            ]
+          },
+          {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000367"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000143"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000295"
             ]
           }
         ],
@@ -45890,7 +46005,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-RARE-000227",
               "WAL-CLM-RARE-000270"
             ]
           },
@@ -45899,22 +46013,31 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-IMMORT-000167"
             ]
-          },
+          }
+        ],
+        record_claim_count: 2,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000371"
             ]
           },
           {
-            kind: "interaction",
+            facet: "warning",
             claim_ids: [
+              "WAL-CLM-DDDL-000164",
               "WAL-CLM-RARE-000087"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000227",
+              "WAL-CLM-RARE-000269"
             ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
         related_conditions: [
           "multiple_sclerosis",
           "parkinsons_disease",
@@ -45976,8 +46099,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000033",
               "WAL-CLM-EPIGEN-000044",
-              "WAL-CLM-RARE-000227",
-              "WAL-CLM-RARE-000231",
               "WAL-CLM-RARE-000270"
             ]
           },
@@ -45986,34 +46107,77 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000356"
             ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000468"
-            ]
           }
         ],
-        record_claim_count: 7,
+        record_claim_count: 4,
         search: [
           {
             facet: "stance",
             claim_ids: [
-              "WAL-CLM-IMMORT-000494"
+              "WAL-CLM-IMMORT-000494",
+              "WAL-CLM-RARE-000328"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000468"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000099",
+              "WAL-CLM-DDDL-000232",
+              "WAL-CLM-DDDL-000294",
               "WAL-CLM-DDDL-000499",
               "WAL-CLM-EPIGEN-000016",
               "WAL-CLM-LETS-000130"
             ]
           },
           {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000280",
+              "WAL-CLM-RARE-000227",
+              "WAL-CLM-RARE-000231",
+              "WAL-CLM-RARE-000269",
+              "WAL-CLM-RARE-000355"
+            ]
+          },
+          {
             facet: "basics",
             claim_ids: [
-              "WAL-CLM-DDDL-000296"
+              "WAL-CLM-DDDL-000296",
+              "WAL-CLM-EPIGEN-000012"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-DDDL-000217"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000404",
+              "WAL-CLM-HELLS-000025",
+              "WAL-CLM-HELLS-000052",
+              "WAL-CLM-HELLS-000096"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-HELLS-000022",
+              "WAL-CLM-RARE-000357"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000282"
             ]
           }
         ],
@@ -46152,6 +46316,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000134"
             ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-RARE-000361"
+            ]
           }
         ],
         related_conditions: [
@@ -46275,40 +46445,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000033",
-              "WAL-CLM-EPIGEN-000036",
-              "WAL-CLM-EPIGEN-000038",
               "WAL-CLM-EPIGEN-000040",
-              "WAL-CLM-EPIGEN-000041",
               "WAL-CLM-EPIGEN-000052",
               "WAL-CLM-EPIGEN-000063",
-              "WAL-CLM-EPIGEN-000077",
-              "WAL-CLM-EPIGEN-000083",
               "WAL-CLM-IMMORT-000064",
               "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000109",
               "WAL-CLM-IMMORT-000131",
-              "WAL-CLM-LETS-000003",
-              "WAL-CLM-LETS-000010",
-              "WAL-CLM-LETS-000014",
               "WAL-CLM-LETS-000027",
-              "WAL-CLM-LETS-000035",
-              "WAL-CLM-RARE-000115",
-              "WAL-CLM-RARE-000122",
-              "WAL-CLM-RARE-000193",
-              "WAL-CLM-RARE-000223",
               "WAL-CLM-RARE-000231",
-              "WAL-CLM-RARE-000234",
-              "WAL-CLM-RARE-000238",
-              "WAL-CLM-RARE-000239",
-              "WAL-CLM-RARE-000269",
               "WAL-CLM-RARE-000270"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000137"
             ]
           },
           {
@@ -46320,14 +46465,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "prognosis",
             claim_ids: [
-              "WAL-CLM-DDDL-000129",
-              "WAL-CLM-RARE-000213"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IAIYH-000002"
+              "WAL-CLM-DDDL-000129"
             ]
           },
           {
@@ -46337,8 +46475,108 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 34,
-        search: [],
+        record_claim_count: 12,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000173",
+              "WAL-CLM-EPIGEN-000229",
+              "WAL-CLM-IMMORT-000129",
+              "WAL-CLM-IMMORT-000303",
+              "WAL-CLM-RARE-000129"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000077"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000137",
+              "WAL-CLM-LETS-000504"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000325",
+              "WAL-CLM-RARE-000193",
+              "WAL-CLM-RARE-000213"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000003",
+              "WAL-CLM-EPIGEN-000033",
+              "WAL-CLM-EPIGEN-000036",
+              "WAL-CLM-EPIGEN-000038",
+              "WAL-CLM-EPIGEN-000039",
+              "WAL-CLM-EPIGEN-000041",
+              "WAL-CLM-EPIGEN-000083",
+              "WAL-CLM-IMMORT-000109",
+              "WAL-CLM-IMMORT-000126",
+              "WAL-CLM-LETS-000003",
+              "WAL-CLM-LETS-000010",
+              "WAL-CLM-LETS-000014",
+              "WAL-CLM-LETS-000035",
+              "WAL-CLM-LETS-000503",
+              "WAL-CLM-RARE-000115",
+              "WAL-CLM-RARE-000122",
+              "WAL-CLM-RARE-000223",
+              "WAL-CLM-RARE-000234",
+              "WAL-CLM-RARE-000238",
+              "WAL-CLM-RARE-000239",
+              "WAL-CLM-RARE-000269",
+              "WAL-CLM-RARE-000347"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000226",
+              "WAL-CLM-EPIGEN-000260",
+              "WAL-CLM-IAIYH-000002"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-HELLS-000034"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000192"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000230",
+              "WAL-CLM-EPIGEN-000254",
+              "WAL-CLM-RARE-000339",
+              "WAL-CLM-RARE-000361"
+            ]
+          },
+          {
+            facet: "biography",
+            claim_ids: [
+              "WAL-CLM-LETS-000507"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000265"
+            ]
+          }
+        ],
         related_conditions: [
           "arthritis",
           "anorexia",
@@ -46377,16 +46615,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-b9",
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000359"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000191"
+            ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "birth_defects",
           "meningocele",
@@ -46422,26 +46666,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000004",
-              "WAL-CLM-EPIGEN-000051",
               "WAL-CLM-EPIGEN-000063",
-              "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000107",
-              "WAL-CLM-RARE-000120",
-              "WAL-CLM-RARE-000122",
-              "WAL-CLM-RARE-000308"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000019"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-RARE-000077"
+              "WAL-CLM-IMMORT-000099"
             ]
           },
           {
@@ -46449,16 +46675,65 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-RARE-000086"
             ]
+          }
+        ],
+        record_claim_count: 3,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000305",
+              "WAL-CLM-EPIGEN-000273",
+              "WAL-CLM-RARE-000077",
+              "WAL-CLM-RARE-000308"
+            ]
           },
           {
-            kind: "personal_anecdote",
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000051",
+              "WAL-CLM-IMMORT-000019",
+              "WAL-CLM-IMMORT-000107",
+              "WAL-CLM-RARE-000120"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000197"
+            ]
+          },
+          {
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-IMMORT-000104"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000122"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000196"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-HELLS-000040"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-DDDL-000004"
+            ]
           }
         ],
-        record_claim_count: 12,
-        search: [],
         related_conditions: [
           "arthritis",
           "varicose_veins",
@@ -46507,20 +46782,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "omega-3",
           "vitamin-d"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000315"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000139"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000315"
             ]
           }
         ],
@@ -46552,15 +46826,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
+              "WAL-CLM-IMMORT-000131"
+            ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
               "WAL-CLM-EPIGEN-000036",
-              "WAL-CLM-IMMORT-000131",
               "WAL-CLM-LETS-000014",
               "WAL-CLM-RARE-000234"
             ]
           }
         ],
-        record_claim_count: 4,
-        search: [],
         related_conditions: [
           "anemia",
           "dermatitis",
@@ -46669,9 +46949,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000079",
               "WAL-CLM-EPIGEN-000035",
-              "WAL-CLM-EPIGEN-000037",
               "WAL-CLM-EPIGEN-000038",
               "WAL-CLM-EPIGEN-000042",
               "WAL-CLM-EPIGEN-000043",
@@ -46680,16 +46958,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000003",
               "WAL-CLM-LETS-000010",
               "WAL-CLM-LETS-000011",
-              "WAL-CLM-LETS-000014",
-              "WAL-CLM-LETS-000019",
               "WAL-CLM-LETS-000023",
               "WAL-CLM-LETS-000027",
               "WAL-CLM-LETS-000032",
-              "WAL-CLM-LETS-000034",
               "WAL-CLM-LETS-000044",
-              "WAL-CLM-RARE-000172",
-              "WAL-CLM-RARE-000235",
-              "WAL-CLM-RARE-000264",
               "WAL-CLM-RARE-000268"
             ]
           },
@@ -46697,18 +46969,36 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "toxicity_sign",
             claim_ids: [
               "WAL-CLM-LETS-000005",
-              "WAL-CLM-LETS-000015",
-              "WAL-CLM-LETS-000018",
               "WAL-CLM-LETS-000033"
             ]
           }
         ],
-        record_claim_count: 26,
+        record_claim_count: 16,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000140"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000015",
+              "WAL-CLM-LETS-000018"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000079",
+              "WAL-CLM-EPIGEN-000037",
+              "WAL-CLM-LETS-000014",
+              "WAL-CLM-LETS-000019",
+              "WAL-CLM-LETS-000034",
+              "WAL-CLM-RARE-000172",
+              "WAL-CLM-RARE-000235",
+              "WAL-CLM-RARE-000264"
             ]
           }
         ],
@@ -46745,16 +47035,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000140"
         ],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000140"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "anorexia"
         ],
@@ -46784,26 +47074,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "zinc"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000077"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000141"
-            ]
-          }
-        ],
-        record_claim_count: 2,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-IAIYH-000005"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000077",
+              "WAL-CLM-LETS-000141"
             ]
           }
         ],
@@ -46853,7 +47137,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-HELLS-000097",
               "WAL-CLM-IMMORT-000088",
               "WAL-CLM-LETS-000006",
               "WAL-CLM-LETS-000016",
@@ -46861,25 +47144,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000537",
-              "WAL-CLM-LETS-000142"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000334",
               "WAL-CLM-LETS-000100"
             ]
           }
         ],
-        record_claim_count: 9,
+        record_claim_count: 5,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000334",
               "WAL-CLM-DDDL-000500"
             ]
           },
@@ -46892,7 +47168,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
-              "WAL-CLM-DDDL-000435"
+              "WAL-CLM-DDDL-000435",
+              "WAL-CLM-HELLS-000044",
+              "WAL-CLM-HELLS-000097"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000537",
+              "WAL-CLM-LETS-000142"
             ]
           }
         ],
@@ -46943,25 +47228,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-b9",
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000080"
-            ]
-          },
-          {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000496"
             ]
-          }
-        ],
-        record_claim_count: 2,
-        search: [
+          },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000080",
               "WAL-CLM-LETS-000143"
             ]
           }
@@ -46998,20 +47277,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "selenium"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000144"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000081"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000144"
             ]
           }
         ],
@@ -47052,13 +47330,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000082",
-              "WAL-CLM-IMMORT-000205"
-            ]
-          },
-          {
             kind: "toxicity_sign",
             claim_ids: [
               "WAL-CLM-IMMORT-000155",
@@ -47074,14 +47345,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "contraindication",
             claim_ids: [
-              "WAL-CLM-DDDL-000083",
               "WAL-CLM-EPIGEN-000177"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-LETS-000001"
             ]
           },
           {
@@ -47091,12 +47355,37 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 9,
+        record_claim_count: 5,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000205",
+              "WAL-CLM-LETS-000001"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000082"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000145"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000083"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-DDDL-000156"
             ]
           }
         ],
@@ -47180,106 +47469,106 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000032",
               "WAL-CLM-EPIGEN-000031",
-              "WAL-CLM-EPIGEN-000032",
               "WAL-CLM-EPIGEN-000063",
-              "WAL-CLM-IMMORT-000076",
               "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000108",
-              "WAL-CLM-IMMORT-000139",
-              "WAL-CLM-LETS-000004",
               "WAL-CLM-LETS-000011",
-              "WAL-CLM-LETS-000027",
-              "WAL-CLM-RARE-000122",
-              "WAL-CLM-RARE-000223",
-              "WAL-CLM-RARE-000230"
-            ]
-          },
-          {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000024",
-              "WAL-CLM-LETS-000031"
+              "WAL-CLM-LETS-000027"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000523",
-              "WAL-CLM-LETS-000288",
-              "WAL-CLM-LETS-000419",
               "WAL-CLM-RARE-000096"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-IMMORT-000019",
-              "WAL-CLM-LETS-000085",
               "WAL-CLM-LETS-000086",
               "WAL-CLM-LETS-000100",
-              "WAL-CLM-LETS-000107",
               "WAL-CLM-LETS-000111"
-            ]
-          },
-          {
-            kind: "contraindication",
-            claim_ids: [
-              "WAL-CLM-RARE-000181"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-LETS-000001",
-              "WAL-CLM-RARE-000105"
             ]
           },
           {
             kind: "diagnostic_pattern",
             claim_ids: [
-              "WAL-CLM-DDDL-000451",
               "WAL-CLM-RARE-000081"
             ]
           },
           {
             kind: "interaction",
             claim_ids: [
-              "WAL-CLM-RARE-000086",
-              "WAL-CLM-RARE-000206"
-            ]
-          },
-          {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-DDDL-000009"
+              "WAL-CLM-RARE-000086"
             ]
           }
         ],
-        record_claim_count: 34,
+        record_claim_count: 12,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000196",
+              "WAL-CLM-EPIGEN-000460",
+              "WAL-CLM-IMMORT-000040",
+              "WAL-CLM-LETS-000001",
+              "WAL-CLM-LETS-000505",
+              "WAL-CLM-RARE-000105"
+            ]
+          },
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000050"
+              "WAL-CLM-DDDL-000050",
+              "WAL-CLM-DDDL-000451",
+              "WAL-CLM-IMMORT-000019"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000051",
-              "WAL-CLM-LETS-000146"
+              "WAL-CLM-DDDL-000523",
+              "WAL-CLM-LETS-000085",
+              "WAL-CLM-LETS-000146",
+              "WAL-CLM-LETS-000288",
+              "WAL-CLM-LETS-000419"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
+              "WAL-CLM-DDDL-000009",
+              "WAL-CLM-DDDL-000152",
+              "WAL-CLM-LETS-000024",
+              "WAL-CLM-LETS-000031",
+              "WAL-CLM-RARE-000181",
+              "WAL-CLM-RARE-000206",
               "WAL-CLM-RARE-000279"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
-              "WAL-CLM-RARE-000303"
+              "WAL-CLM-EPIGEN-000032",
+              "WAL-CLM-IMMORT-000076",
+              "WAL-CLM-IMMORT-000108",
+              "WAL-CLM-IMMORT-000139",
+              "WAL-CLM-IMMORT-000348",
+              "WAL-CLM-LETS-000004",
+              "WAL-CLM-LETS-000495",
+              "WAL-CLM-RARE-000082",
+              "WAL-CLM-RARE-000122",
+              "WAL-CLM-RARE-000223",
+              "WAL-CLM-RARE-000230",
+              "WAL-CLM-RARE-000303",
+              "WAL-CLM-RARE-000341"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000198",
+              "WAL-CLM-LETS-000107"
             ]
           }
         ],
@@ -47341,40 +47630,29 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000026",
-              "WAL-CLM-DDDL-000053",
-              "WAL-CLM-EPIGEN-000059",
-              "WAL-CLM-EPIGEN-000098",
-              "WAL-CLM-EPIGEN-000099",
-              "WAL-CLM-RARE-000172"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000524",
-              "WAL-CLM-RARE-000202"
+              "WAL-CLM-EPIGEN-000098"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-LETS-000109",
               "WAL-CLM-LETS-000111"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000053"
             ]
           }
         ],
-        record_claim_count: 11,
+        record_claim_count: 2,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000053"
+            ]
+          },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000158",
+              "WAL-CLM-EPIGEN-000201",
               "WAL-CLM-EPIGEN-000477"
             ]
           },
@@ -47382,14 +47660,37 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000417",
-              "WAL-CLM-LETS-000147"
+              "WAL-CLM-LETS-000147",
+              "WAL-CLM-LETS-000524"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
+              "WAL-CLM-DDDL-000026",
               "WAL-CLM-DDDL-000418",
               "WAL-CLM-DDDL-000420"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000059",
+              "WAL-CLM-EPIGEN-000099",
+              "WAL-CLM-IMMORT-000053",
+              "WAL-CLM-RARE-000172"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-LETS-000109"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-RARE-000202"
             ]
           }
         ],
@@ -47434,8 +47735,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000062",
-              "WAL-CLM-IMMORT-000088",
-              "WAL-CLM-LETS-000017"
+              "WAL-CLM-IMMORT-000088"
             ]
           },
           {
@@ -47451,8 +47751,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
+        record_claim_count: 4,
+        search: [
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-HELLS-000021",
+              "WAL-CLM-LETS-000017"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000303"
+            ]
+          }
+        ],
         related_conditions: [
           "high_cholesterol",
           "hypoglycemia",
@@ -47548,16 +47862,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "manganese",
           "omega-3"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000147"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "asthma"
         ],
@@ -47593,20 +47907,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-e",
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000482",
-              "WAL-CLM-DDDL-000527",
-              "WAL-CLM-DDDL-000532",
-              "WAL-CLM-DDDL-000548",
-              "WAL-CLM-DDDL-000559",
-              "WAL-CLM-LETS-000148"
-            ]
-          },
-          {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000391",
               "WAL-CLM-DDDL-000480",
@@ -47614,21 +47919,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "definition",
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000482",
+              "WAL-CLM-DDDL-000527",
+              "WAL-CLM-DDDL-000532",
+              "WAL-CLM-DDDL-000548",
+              "WAL-CLM-DDDL-000559",
+              "WAL-CLM-DDDL-000563",
+              "WAL-CLM-LETS-000148"
+            ]
+          },
+          {
+            facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000553",
               "WAL-CLM-DDDL-000564"
             ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000563"
-            ]
           }
         ],
-        record_claim_count: 12,
-        search: [],
         related_conditions: [
           "eczema",
           "dermatitis",
@@ -47671,20 +47980,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000061"
             ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IAIYH-000017"
-            ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-IAIYH-000014"
+              "WAL-CLM-IAIYH-000014",
+              "WAL-CLM-IAIYH-000017"
             ]
           }
         ],
@@ -47740,26 +48044,37 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000096",
-              "WAL-CLM-IMMORT-000088",
-              "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000200"
+              "WAL-CLM-IMMORT-000099"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000106",
               "WAL-CLM-IMMORT-000018"
             ]
-          }
-        ],
-        record_claim_count: 6,
-        search: [
+          },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000151"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000096",
+              "WAL-CLM-IMMORT-000088",
+              "WAL-CLM-IMMORT-000200"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000171"
             ]
           }
         ],
@@ -47941,16 +48256,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
+            facet: "uses",
             claim_ids: [
               "WAL-CLM-LETS-000188"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "cancer",
           "melanoma"
@@ -48040,20 +48355,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000062"
             ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000266"
-            ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000155"
+              "WAL-CLM-LETS-000155",
+              "WAL-CLM-LETS-000266"
             ]
           }
         ],
@@ -48144,14 +48454,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000109",
               "WAL-CLM-IMMORT-000064"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000379"
             ]
           },
           {
@@ -48167,7 +48470,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 3,
         search: [
           {
             facet: "mechanism",
@@ -48179,7 +48482,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000086",
-              "WAL-CLM-LETS-000158"
+              "WAL-CLM-LETS-000158",
+              "WAL-CLM-LETS-000379"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000109"
             ]
           }
         ],
@@ -48240,27 +48550,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000084",
-              "WAL-CLM-RARE-000264"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000535",
               "WAL-CLM-LETS-000157"
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 1,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000085",
               "WAL-CLM-DDDL-000526"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000084",
+              "WAL-CLM-RARE-000264"
             ]
           },
           {
@@ -48277,7 +48586,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000432",
               "WAL-CLM-DDDL-000495",
               "WAL-CLM-DDDL-000498",
-              "WAL-CLM-DDDL-000501"
+              "WAL-CLM-DDDL-000501",
+              "WAL-CLM-DDDL-000535"
             ]
           }
         ],
@@ -48320,14 +48630,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000043",
-              "WAL-CLM-EPIGEN-000035",
-              "WAL-CLM-RARE-000233"
+              "WAL-CLM-DDDL-000043"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000035",
+              "WAL-CLM-RARE-000233"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000240"
+            ]
+          }
+        ],
         related_conditions: [
           "congestive_heart_failure",
           "wernicke_korsakoff_syndrome",
@@ -48379,11 +48701,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000062",
-              "WAL-CLM-EPIGEN-000096",
-              "WAL-CLM-IMMORT-000088",
-              "WAL-CLM-IMMORT-000200",
-              "WAL-CLM-RARE-000161"
+              "WAL-CLM-IMMORT-000200"
             ]
           },
           {
@@ -48393,21 +48711,36 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000388",
-              "WAL-CLM-IMMORT-000018"
-            ]
-          },
-          {
             kind: "definition",
             claim_ids: [
               "WAL-CLM-RARE-000029"
             ]
           }
         ],
-        record_claim_count: 9,
-        search: [],
+        record_claim_count: 3,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000388",
+              "WAL-CLM-RARE-000161"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000018"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000062",
+              "WAL-CLM-EPIGEN-000096",
+              "WAL-CLM-IMMORT-000088"
+            ]
+          }
+        ],
         related_conditions: [
           "depression",
           "adhd",
@@ -48468,12 +48801,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000039",
-              "WAL-CLM-DDDL-000042",
               "WAL-CLM-EPIGEN-000031",
-              "WAL-CLM-EPIGEN-000041",
               "WAL-CLM-EPIGEN-000107",
-              "WAL-CLM-IMMORT-000032",
               "WAL-CLM-LETS-000010",
               "WAL-CLM-LETS-000016",
               "WAL-CLM-LETS-000035",
@@ -48481,16 +48810,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-LETS-000210",
               "WAL-CLM-RARE-000044",
               "WAL-CLM-RARE-000123",
-              "WAL-CLM-RARE-000229",
-              "WAL-CLM-RARE-000239"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000359",
-              "WAL-CLM-LETS-000368",
-              "WAL-CLM-RARE-000045"
+              "WAL-CLM-RARE-000229"
             ]
           },
           {
@@ -48498,8 +48818,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000017",
               "WAL-CLM-EPIGEN-000018",
-              "WAL-CLM-IMMORT-000080",
-              "WAL-CLM-RARE-000016"
+              "WAL-CLM-IMMORT-000080"
             ]
           },
           {
@@ -48515,20 +48834,58 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 24,
+        record_claim_count: 15,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-LETS-000470"
+            ]
+          },
           {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000002",
               "WAL-CLM-RARE-000015",
+              "WAL-CLM-RARE-000016",
               "WAL-CLM-RARE-000047"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000160"
+              "WAL-CLM-LETS-000160",
+              "WAL-CLM-LETS-000359",
+              "WAL-CLM-LETS-000368",
+              "WAL-CLM-RARE-000045"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000007"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000039",
+              "WAL-CLM-DDDL-000042",
+              "WAL-CLM-EPIGEN-000041",
+              "WAL-CLM-IMMORT-000032",
+              "WAL-CLM-RARE-000239"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-RARE-000326"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-LETS-000480"
             ]
           }
         ],
@@ -48589,16 +48946,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000087"
             ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000366",
-              "WAL-CLM-DDDL-000540"
-            ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 1,
         search: [
           {
             facet: "mechanism",
@@ -48613,8 +48963,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000366"
+            ]
+          },
+          {
             facet: "basics",
             claim_ids: [
+              "WAL-CLM-DDDL-000540",
               "WAL-CLM-DDDL-000575"
             ]
           }
@@ -48804,13 +49161,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000042",
               "WAL-CLM-RARE-000240"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000042"
+            ]
+          }
+        ],
         related_conditions: [
           "depression",
           "dermatitis",
@@ -48900,16 +49263,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-a"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000169"
+            ]
+          },
+          {
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-DDDL-000041"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "corneal_ulcers",
           "keratitis"
@@ -48986,16 +49355,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "magnesium",
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "uses",
             claim_ids: [
               "WAL-CLM-LETS-000166"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [],
         related: [
           "calcium",
@@ -49144,14 +49513,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000032",
               "WAL-CLM-IMMORT-000064",
-              "WAL-CLM-IMMORT-000108",
               "WAL-CLM-LETS-000004"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000168"
             ]
           },
           {
@@ -49161,11 +49523,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 4,
         search: [
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000168"
+            ]
+          },
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-IMMORT-000108",
               "WAL-CLM-RARE-000305"
             ]
           }
@@ -49206,30 +49575,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "gallium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-LETS-000187",
               "WAL-CLM-RARE-000132"
             ]
           },
           {
-            kind: "prognosis",
+            facet: "uses",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000401",
               "WAL-CLM-IMMORT-000135",
-              "WAL-CLM-IMMORT-000389"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000401"
+              "WAL-CLM-IMMORT-000389",
+              "WAL-CLM-LETS-000187"
             ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
         related_conditions: [
           "cancer",
           "breast_cancer",
@@ -49268,22 +49632,38 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-HELLS-000002",
-              "WAL-CLM-HELLS-000087",
-              "WAL-CLM-LETS-000100",
-              "WAL-CLM-LETS-000184",
-              "WAL-CLM-LETS-000187"
-            ]
-          },
-          {
-            kind: "contraindication",
-            claim_ids: [
-              "WAL-CLM-DDDL-000061",
-              "WAL-CLM-DDDL-000091"
+              "WAL-CLM-LETS-000100"
             ]
           }
         ],
-        record_claim_count: 7,
-        search: [],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000091"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-LETS-000184"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000061",
+              "WAL-CLM-HELLS-000087"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-LETS-000187"
+            ]
+          }
+        ],
         related_conditions: [
           "cancer",
           "colon_cancer",
@@ -49320,16 +49700,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "omega-3",
           "vitamin-e"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000169"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "fibrocystic_breast_disease"
         ],
@@ -49586,6 +49966,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000506"
             ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000211"
+            ]
           }
         ],
         related_conditions: [
@@ -49625,16 +50011,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "magnesium",
           "vitamin-b6"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-LETS-000174"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [],
         related: [
           "calcium",
@@ -49654,16 +50040,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-RARE-000264"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "acrodermatitis_enteropathica",
           "alopecia",
@@ -49701,20 +50087,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000175"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-LETS-000100"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000144",
+              "WAL-CLM-LETS-000175"
+            ]
+          }
+        ],
         related_conditions: [
           "anxiety",
           "arthritis",
@@ -49911,66 +50299,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000030",
               "WAL-CLM-EPIGEN-000031",
               "WAL-CLM-EPIGEN-000033",
-              "WAL-CLM-EPIGEN-000043",
               "WAL-CLM-EPIGEN-000046",
-              "WAL-CLM-IMMORT-000139",
-              "WAL-CLM-LETS-000030",
               "WAL-CLM-RARE-000011",
-              "WAL-CLM-RARE-000227",
-              "WAL-CLM-RARE-000229",
-              "WAL-CLM-RARE-000231",
               "WAL-CLM-RARE-000270"
-            ]
-          },
-          {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000123"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000018",
-              "WAL-CLM-DDDL-000056",
-              "WAL-CLM-DDDL-000313",
-              "WAL-CLM-EPIGEN-000078",
-              "WAL-CLM-IMMORT-000096",
-              "WAL-CLM-LETS-000342",
-              "WAL-CLM-LETS-000344",
-              "WAL-CLM-RARE-000125",
-              "WAL-CLM-RARE-000202"
+              "WAL-CLM-IMMORT-000096"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000036",
-              "WAL-CLM-DDDL-000312",
               "WAL-CLM-IMMORT-000393",
-              "WAL-CLM-IMMORT-000396",
-              "WAL-CLM-IMMORT-000495",
-              "WAL-CLM-IMMORT-000508",
               "WAL-CLM-LETS-000100",
-              "WAL-CLM-LETS-000111",
-              "WAL-CLM-LETS-000183",
-              "WAL-CLM-LETS-000185",
-              "WAL-CLM-LETS-000192",
-              "WAL-CLM-LETS-000194",
-              "WAL-CLM-LETS-000197",
-              "WAL-CLM-RARE-000132",
-              "WAL-CLM-RARE-000134",
-              "WAL-CLM-RARE-000197",
               "WAL-CLM-RARE-000249"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000500"
             ]
           },
           {
@@ -49982,34 +50329,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000058",
-              "WAL-CLM-RARE-000390"
-            ]
-          },
-          {
             kind: "interaction",
             claim_ids: [
               "WAL-CLM-RARE-000086"
             ]
-          },
-          {
-            kind: "quote",
-            claim_ids: [
-              "WAL-CLM-DDDL-000314",
-              "WAL-CLM-RARE-000228"
-            ]
           }
         ],
-        record_claim_count: 48,
+        record_claim_count: 13,
         search: [
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-DDDL-000056",
               "WAL-CLM-DDDL-000057",
+              "WAL-CLM-DDDL-000147",
+              "WAL-CLM-DDDL-000314",
+              "WAL-CLM-HELLS-000026",
+              "WAL-CLM-IMMORT-000058",
               "WAL-CLM-IMMORT-000497",
+              "WAL-CLM-IMMORT-000500",
               "WAL-CLM-LETS-000001",
+              "WAL-CLM-LETS-000105",
               "WAL-CLM-LETS-000179",
               "WAL-CLM-RARE-000077",
               "WAL-CLM-RARE-000306"
@@ -50019,35 +50359,110 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000010",
+              "WAL-CLM-DDDL-000036",
+              "WAL-CLM-DDDL-000229",
+              "WAL-CLM-DDDL-000312",
+              "WAL-CLM-EPIGEN-000078",
+              "WAL-CLM-IMMORT-000396",
+              "WAL-CLM-IMMORT-000495",
+              "WAL-CLM-IMMORT-000508",
               "WAL-CLM-LETS-000180",
               "WAL-CLM-LETS-000181",
               "WAL-CLM-LETS-000182",
+              "WAL-CLM-LETS-000183",
               "WAL-CLM-LETS-000184",
+              "WAL-CLM-LETS-000185",
               "WAL-CLM-LETS-000189",
               "WAL-CLM-LETS-000190",
               "WAL-CLM-LETS-000191",
+              "WAL-CLM-LETS-000192",
               "WAL-CLM-LETS-000193",
+              "WAL-CLM-LETS-000194",
               "WAL-CLM-LETS-000195",
               "WAL-CLM-LETS-000198",
               "WAL-CLM-LETS-000199",
               "WAL-CLM-LETS-000200",
-              "WAL-CLM-RARE-000198"
+              "WAL-CLM-RARE-000132",
+              "WAL-CLM-RARE-000197",
+              "WAL-CLM-RARE-000198",
+              "WAL-CLM-RARE-000228",
+              "WAL-CLM-RARE-000383"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000313",
+              "WAL-CLM-HELLS-000023",
+              "WAL-CLM-LETS-000111",
               "WAL-CLM-LETS-000178",
+              "WAL-CLM-LETS-000342",
+              "WAL-CLM-LETS-000344",
               "WAL-CLM-RARE-000203"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000030",
+              "WAL-CLM-EPIGEN-000043",
+              "WAL-CLM-IMMORT-000123",
+              "WAL-CLM-RARE-000134"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000139",
+              "WAL-CLM-LETS-000030",
+              "WAL-CLM-RARE-000227",
+              "WAL-CLM-RARE-000229",
+              "WAL-CLM-RARE-000231",
+              "WAL-CLM-RARE-000269",
+              "WAL-CLM-RARE-000355"
             ]
           },
           {
             facet: "uses",
             claim_ids: [
+              "WAL-CLM-DDDL-000018",
+              "WAL-CLM-DDDL-000167",
+              "WAL-CLM-DDDL-000231",
+              "WAL-CLM-EPIGEN-000306",
+              "WAL-CLM-EPIGEN-000307",
+              "WAL-CLM-EPIGEN-000314",
+              "WAL-CLM-IMMORT-000038",
+              "WAL-CLM-IMMORT-000041",
+              "WAL-CLM-IMMORT-000136",
+              "WAL-CLM-IMMORT-000289",
               "WAL-CLM-LETS-000186",
               "WAL-CLM-LETS-000187",
               "WAL-CLM-LETS-000188",
-              "WAL-CLM-LETS-000196"
+              "WAL-CLM-LETS-000196",
+              "WAL-CLM-LETS-000197",
+              "WAL-CLM-LETS-000501",
+              "WAL-CLM-RARE-000125",
+              "WAL-CLM-RARE-000362",
+              "WAL-CLM-RARE-000390"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-DDDL-000233",
+              "WAL-CLM-HELLS-000018",
+              "WAL-CLM-HELLS-000053",
+              "WAL-CLM-HELLS-000058",
+              "WAL-CLM-IMMORT-000142",
+              "WAL-CLM-RARE-000202",
+              "WAL-CLM-RARE-000336"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000124",
+              "WAL-CLM-IMMORT-000342"
             ]
           }
         ],
@@ -50102,29 +50517,31 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-e",
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000310",
+              "WAL-CLM-DDDL-000358",
+              "WAL-CLM-DDDL-000453",
+              "WAL-CLM-EPIGEN-000095",
+              "WAL-CLM-RARE-000157"
+            ]
+          },
+          {
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000311",
+              "WAL-CLM-LETS-000201",
               "WAL-CLM-LETS-000450"
             ]
           },
           {
-            kind: "mechanism",
+            facet: "uses",
             claim_ids: [
-              "WAL-CLM-DDDL-000358",
-              "WAL-CLM-DDDL-000453",
-              "WAL-CLM-RARE-000157"
-            ]
-          }
-        ],
-        record_claim_count: 5,
-        search: [
-          {
-            facet: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000201"
+              "WAL-CLM-LETS-000494"
             ]
           }
         ],
@@ -50176,19 +50593,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000019"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000202"
             ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "mechanism",
@@ -50200,6 +50611,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000080"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-LETS-000019"
             ]
           },
           {
@@ -50240,16 +50657,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
+            facet: "uses",
             claim_ids: [
+              "WAL-CLM-DDDL-000167",
               "WAL-CLM-LETS-000196"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "cancer"
         ],
@@ -50269,16 +50687,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "toxicity_sign",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-LETS-000026"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [],
         related: [
           "potassium"
@@ -50319,6 +50737,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000203"
             ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000303"
+            ]
           }
         ],
         related_conditions: [],
@@ -50349,13 +50773,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-IMMORT-000194",
+              "WAL-CLM-IMMORT-000194"
+            ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
               "WAL-CLM-RARE-000155"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "hypokalemia"
         ],
@@ -50394,22 +50824,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000033",
-              "WAL-CLM-RARE-000227",
-              "WAL-CLM-RARE-000269"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000010"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-DDDL-000007",
-              "WAL-CLM-RARE-000077"
+              "WAL-CLM-EPIGEN-000033"
             ]
           },
           {
@@ -50431,17 +50846,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 9,
+        record_claim_count: 4,
         search: [
           {
             facet: "stance",
             claim_ids: [
-              "WAL-CLM-IMMORT-000212"
+              "WAL-CLM-DDDL-000007",
+              "WAL-CLM-IMMORT-000212",
+              "WAL-CLM-RARE-000077"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000010",
               "WAL-CLM-IMMORT-000019"
             ]
           },
@@ -50449,6 +50867,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000204"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000186"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000280",
+              "WAL-CLM-RARE-000227",
+              "WAL-CLM-RARE-000269",
+              "WAL-CLM-RARE-000355"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-RARE-000322"
             ]
           }
         ],
@@ -50503,17 +50942,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-RARE-000245"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-IMMORT-000496",
               "WAL-CLM-IMMORT-000502"
             ]
-          }
-        ],
-        record_claim_count: 3,
-        search: [
+          },
           {
             facet: "protocol",
             claim_ids: [
@@ -50573,33 +51012,43 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000026",
-              "WAL-CLM-EPIGEN-000099",
-              "WAL-CLM-EPIGEN-000108",
-              "WAL-CLM-IMMORT-000037"
+              "WAL-CLM-DDDL-000026"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-IAIYH-000017",
               "WAL-CLM-IMMORT-000226"
-            ]
-          },
-          {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-RARE-000177"
             ]
           }
         ],
-        record_claim_count: 7,
+        record_claim_count: 2,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-RARE-000177"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-IAIYH-000017"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000205",
               "WAL-CLM-LETS-000383"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000099",
+              "WAL-CLM-EPIGEN-000108",
+              "WAL-CLM-IMMORT-000037"
             ]
           }
         ],
@@ -50673,45 +51122,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000592",
-              "WAL-CLM-DDDL-000593",
-              "WAL-CLM-DDDL-000594",
-              "WAL-CLM-DDDL-000605"
-            ]
-          },
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000054",
-              "WAL-CLM-LETS-000029",
-              "WAL-CLM-LETS-000030",
-              "WAL-CLM-RARE-000227"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000433"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000473",
-              "WAL-CLM-IMMORT-000019",
-              "WAL-CLM-IMMORT-000479"
-            ]
-          },
-          {
             kind: "interaction",
             claim_ids: [
               "WAL-CLM-RARE-000086"
             ]
           }
         ],
-        record_claim_count: 13,
+        record_claim_count: 1,
         search: [
           {
             facet: "stance",
@@ -50721,12 +51138,41 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000473",
+              "WAL-CLM-IMMORT-000019",
+              "WAL-CLM-IMMORT-000479"
+            ]
+          },
+          {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000220",
+              "WAL-CLM-DDDL-000267",
               "WAL-CLM-DDDL-000354",
+              "WAL-CLM-DDDL-000433",
               "WAL-CLM-DDDL-000434",
+              "WAL-CLM-DDDL-000592",
+              "WAL-CLM-DDDL-000593",
+              "WAL-CLM-DDDL-000594",
+              "WAL-CLM-DDDL-000605",
               "WAL-CLM-IMMORT-000485",
               "WAL-CLM-LETS-000207"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000054",
+              "WAL-CLM-LETS-000029"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-LETS-000030",
+              "WAL-CLM-RARE-000227"
             ]
           }
         ],
@@ -50815,35 +51261,48 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000209"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000551",
-              "WAL-CLM-DDDL-000555",
-              "WAL-CLM-EPIGEN-000030",
-              "WAL-CLM-IMMORT-000068",
-              "WAL-CLM-LETS-000083",
-              "WAL-CLM-LETS-000116"
-            ]
-          },
-          {
             kind: "diagnostic_pattern",
             claim_ids: [
               "WAL-CLM-RARE-000082"
             ]
           }
         ],
-        record_claim_count: 9,
+        record_claim_count: 2,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000147",
+              "WAL-CLM-LETS-000083"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000551",
+              "WAL-CLM-DDDL-000555",
+              "WAL-CLM-EPIGEN-000030",
+              "WAL-CLM-IMMORT-000068"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000340"
+              "WAL-CLM-DDDL-000340",
+              "WAL-CLM-LETS-000209"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000210"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000141",
+              "WAL-CLM-LETS-000116"
             ]
           }
         ],
@@ -50938,10 +51397,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000107",
               "WAL-CLM-IMMORT-000099",
               "WAL-CLM-IMMORT-000107",
-              "WAL-CLM-LETS-000210",
               "WAL-CLM-RARE-000123"
             ]
           },
@@ -50951,20 +51408,39 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-IMMORT-000169",
               "WAL-CLM-IMMORT-000170"
             ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000002"
-            ]
           }
         ],
-        record_claim_count: 8,
+        record_claim_count: 5,
         search: [
           {
             facet: "stance",
             claim_ids: [
               "WAL-CLM-IMMORT-000103"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000002"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000191",
+              "WAL-CLM-LETS-000210"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000107"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000193"
             ]
           }
         ],
@@ -51021,6 +51497,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000331",
               "WAL-CLM-DDDL-000565"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000153"
             ]
           }
         ],
@@ -51132,19 +51614,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-b2"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000036"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000186"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000029"
+            ]
+          },
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000166",
+              "WAL-CLM-DDDL-000185",
+              "WAL-CLM-EPIGEN-000036",
               "WAL-CLM-LETS-000214"
             ]
           }
@@ -51191,15 +51681,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-e"
         ],
-        record: [
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-DDDL-000362"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "stance",
@@ -51216,6 +51699,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "basics",
             claim_ids: [
+              "WAL-CLM-DDDL-000362",
               "WAL-CLM-DDDL-000558"
             ]
           }
@@ -51304,16 +51788,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "manganese"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000099"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "asthma",
           "carpal_tunnel_syndrome",
@@ -51347,16 +51831,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "manganese"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000099"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "asthma",
           "carpal_tunnel_syndrome",
@@ -51455,23 +51939,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "selenium"
         ],
-        record: [
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000095",
-              "WAL-CLM-RARE-000157"
-            ]
-          }
-        ],
-        record_claim_count: 2,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000358",
               "WAL-CLM-DDDL-000413",
-              "WAL-CLM-DDDL-000551"
+              "WAL-CLM-DDDL-000551",
+              "WAL-CLM-EPIGEN-000095",
+              "WAL-CLM-RARE-000157"
             ]
           },
           {
@@ -51536,6 +52014,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         record_claim_count: 0,
         search: [
           {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000310"
+            ]
+          },
+          {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000221"
@@ -51558,16 +52042,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-IAIYH-000014"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "atrial_fibrillation",
           "gastroparesis"
@@ -51662,20 +52146,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000032"
-            ]
-          },
-          {
             kind: "toxicity_sign",
             claim_ids: [
               "WAL-CLM-IMMORT-000133"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000032"
+            ]
+          }
+        ],
         related_conditions: [
           "birth_defects",
           "diabetes",
@@ -51746,13 +52231,31 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000039",
-              "WAL-CLM-DDDL-000042"
+              "WAL-CLM-DDDL-000039"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000191"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000042"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000193"
+            ]
+          }
+        ],
         related_conditions: [
           "birth_defects",
           "spina_bifida",
@@ -51838,15 +52341,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000299"
             ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-DDDL-000513"
-            ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "protocol",
@@ -51864,6 +52361,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-DDDL-000486"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000513"
             ]
           }
         ],
@@ -51948,20 +52451,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000100"
             ]
-          },
-          {
-            kind: "interaction",
-            claim_ids: [
-              "WAL-CLM-DDDL-000566"
-            ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000226"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000566"
             ]
           }
         ],
@@ -52051,16 +52554,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "sulfur"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-RARE-000223"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "anemia",
           "arthritis",
@@ -52099,22 +52602,33 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000078",
-              "WAL-CLM-IMMORT-000096",
-              "WAL-CLM-RARE-000125"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-HELLS-000087",
-              "WAL-CLM-LETS-000181",
-              "WAL-CLM-LETS-000187"
+              "WAL-CLM-IMMORT-000096"
             ]
           }
         ],
-        record_claim_count: 6,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000078",
+              "WAL-CLM-LETS-000181"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-HELLS-000087"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-LETS-000187",
+              "WAL-CLM-RARE-000125"
+            ]
+          }
+        ],
         related_conditions: [
           "cancer",
           "breast_cancer",
@@ -52165,20 +52679,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000100"
             ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-LETS-000117"
-            ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000094"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-LETS-000117"
             ]
           },
           {
@@ -52271,13 +52785,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-DDDL-000026",
-              "WAL-CLM-EPIGEN-000099",
               "WAL-CLM-EPIGEN-000107"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000099"
+            ]
+          }
+        ],
         related_conditions: [
           "asthma",
           "carpal_tunnel_syndrome",
@@ -52368,9 +52888,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000043",
-              "WAL-CLM-EPIGEN-000035",
-              "WAL-CLM-RARE-000233"
+              "WAL-CLM-DDDL-000043"
             ]
           },
           {
@@ -52380,12 +52898,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 2,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000229"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000035",
+              "WAL-CLM-RARE-000233"
             ]
           }
         ],
@@ -52440,8 +52965,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000031",
-              "WAL-CLM-LETS-000027",
-              "WAL-CLM-RARE-000229"
+              "WAL-CLM-LETS-000027"
             ]
           },
           {
@@ -52451,12 +52975,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 3,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000230"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000229"
             ]
           }
         ],
@@ -52513,15 +53043,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-DDDL-000589"
         ],
         restore: [],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000521"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "stance",
@@ -52546,13 +53069,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000566"
+              "WAL-CLM-DDDL-000566",
+              "WAL-CLM-LETS-000012"
             ]
           },
           {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000407"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000274",
+              "WAL-CLM-LETS-000521"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-RARE-000333"
             ]
           }
         ],
@@ -52599,7 +53136,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000032",
               "WAL-CLM-EPIGEN-000098",
-              "WAL-CLM-EPIGEN-000099",
               "WAL-CLM-EPIGEN-000108"
             ]
           },
@@ -52610,7 +53146,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 4,
         search: [
           {
             facet: "protocol",
@@ -52618,6 +53154,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000349",
               "WAL-CLM-LETS-000233",
               "WAL-CLM-LETS-000277"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000099"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-RARE-000342"
             ]
           }
         ],
@@ -52703,14 +53251,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000031"
+            ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
               "WAL-CLM-DDDL-000041",
-              "WAL-CLM-EPIGEN-000031",
               "WAL-CLM-RARE-000229"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
         related_conditions: [
           "acne",
           "birth_defects",
@@ -52912,16 +53466,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "iodine"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000093"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "goiter",
           "hashimotos_disease",
@@ -53003,7 +53557,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000107",
               "WAL-CLM-IMMORT-000200",
               "WAL-CLM-IMMORT-000202",
               "WAL-CLM-RARE-000041"
@@ -53016,12 +53569,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 4,
         search: [
           {
             facet: "stance",
             claim_ids: [
               "WAL-CLM-RARE-000126"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000107"
             ]
           }
         ],
@@ -53197,10 +53756,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000033",
-              "WAL-CLM-LETS-000011",
-              "WAL-CLM-LETS-000030",
-              "WAL-CLM-RARE-000004",
-              "WAL-CLM-RARE-000269"
+              "WAL-CLM-LETS-000011"
             ]
           },
           {
@@ -53208,30 +53764,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000109"
             ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-LETS-000001",
-              "WAL-CLM-RARE-000049"
-            ]
-          },
-          {
-            kind: "personal_anecdote",
-            claim_ids: [
-              "WAL-CLM-DDDL-000301",
-              "WAL-CLM-EPIGEN-000456",
-              "WAL-CLM-EPIGEN-000458"
-            ]
           }
         ],
-        record_claim_count: 11,
+        record_claim_count: 3,
         search: [
           {
             facet: "stance",
             claim_ids: [
               "WAL-CLM-EPIGEN-000004",
-              "WAL-CLM-LETS-000471"
+              "WAL-CLM-LETS-000001",
+              "WAL-CLM-LETS-000470",
+              "WAL-CLM-LETS-000471",
+              "WAL-CLM-RARE-000010",
+              "WAL-CLM-RARE-000049"
             ]
           },
           {
@@ -53241,9 +53786,50 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-LETS-000030",
+              "WAL-CLM-RARE-000269"
+            ]
+          },
+          {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-LETS-000440"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000187"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000457"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000188"
+            ]
+          },
+          {
+            facet: "biography",
+            claim_ids: [
+              "WAL-CLM-DDDL-000301"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000181",
+              "WAL-CLM-EPIGEN-000185",
+              "WAL-CLM-EPIGEN-000456",
+              "WAL-CLM-EPIGEN-000458",
+              "WAL-CLM-RARE-000004"
             ]
           }
         ],
@@ -53300,32 +53886,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000535",
-              "WAL-CLM-DDDL-000544",
-              "WAL-CLM-IMMORT-000153"
-            ]
-          },
-          {
             kind: "definition",
             claim_ids: [
               "WAL-CLM-RARE-000388"
             ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000575"
-            ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 1,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000338",
+              "WAL-CLM-IMMORT-000153",
               "WAL-CLM-LETS-000241",
               "WAL-CLM-RARE-000136"
             ]
@@ -53333,7 +53906,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "basics",
             claim_ids: [
-              "WAL-CLM-DDDL-000540"
+              "WAL-CLM-DDDL-000540",
+              "WAL-CLM-DDDL-000575"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000535",
+              "WAL-CLM-DDDL-000544"
             ]
           }
         ],
@@ -53382,20 +53963,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-e",
           "zinc"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000430"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000242"
+              "WAL-CLM-LETS-000242",
+              "WAL-CLM-LETS-000430"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000215"
             ]
           }
         ],
@@ -53442,30 +54023,38 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000099",
-              "WAL-CLM-EPIGEN-000437",
-              "WAL-CLM-RARE-000311"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IAIYH-000012"
+              "WAL-CLM-EPIGEN-000437"
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 1,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000010"
+              "WAL-CLM-EPIGEN-000010",
+              "WAL-CLM-IAIYH-000012"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000294"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000026"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000234",
+              "WAL-CLM-EPIGEN-000099",
+              "WAL-CLM-EPIGEN-000311",
+              "WAL-CLM-RARE-000311"
             ]
           }
         ],
@@ -53634,47 +54223,80 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000033",
-              "WAL-CLM-EPIGEN-000035",
-              "WAL-CLM-EPIGEN-000037",
               "WAL-CLM-EPIGEN-000040",
-              "WAL-CLM-EPIGEN-000044",
-              "WAL-CLM-LETS-000034",
               "WAL-CLM-RARE-000227",
               "WAL-CLM-RARE-000231",
-              "WAL-CLM-RARE-000235",
               "WAL-CLM-RARE-000270"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000013",
-              "WAL-CLM-EPIGEN-000016",
-              "WAL-CLM-LETS-000243",
               "WAL-CLM-LETS-000356",
               "WAL-CLM-LETS-000388"
             ]
+          }
+        ],
+        record_claim_count: 7,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-LETS-000001"
+            ]
           },
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000295",
+              "WAL-CLM-EPIGEN-000013",
               "WAL-CLM-EPIGEN-000468"
             ]
           },
           {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000012",
-              "WAL-CLM-LETS-000001"
-            ]
-          }
-        ],
-        record_claim_count: 18,
-        search: [
-          {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000294",
+              "WAL-CLM-EPIGEN-000016",
+              "WAL-CLM-LETS-000243",
               "WAL-CLM-RARE-000282"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000153",
+              "WAL-CLM-EPIGEN-000044"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000035",
+              "WAL-CLM-EPIGEN-000037",
+              "WAL-CLM-LETS-000034",
+              "WAL-CLM-LETS-000035",
+              "WAL-CLM-RARE-000235"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000012"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000316",
+              "WAL-CLM-EPIGEN-000239",
+              "WAL-CLM-HELLS-000052"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-HELLS-000022"
             ]
           }
         ],
@@ -53778,22 +54400,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000121"
-            ]
-          },
-          {
-            kind: "mechanism",
+            facet: "stance",
             claim_ids: [
               "WAL-CLM-RARE-000133"
             ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000121"
+            ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "osteosclerosis"
         ],
@@ -53857,63 +54479,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000031",
-              "WAL-CLM-EPIGEN-000038",
-              "WAL-CLM-EPIGEN-000039",
-              "WAL-CLM-EPIGEN-000042",
-              "WAL-CLM-EPIGEN-000056",
-              "WAL-CLM-EPIGEN-000059",
-              "WAL-CLM-EPIGEN-000062",
-              "WAL-CLM-EPIGEN-000096",
               "WAL-CLM-EPIGEN-000098",
-              "WAL-CLM-HELLS-000097",
-              "WAL-CLM-IMMORT-000088",
-              "WAL-CLM-IMMORT-000200",
-              "WAL-CLM-LETS-000003",
               "WAL-CLM-LETS-000004",
-              "WAL-CLM-LETS-000014",
               "WAL-CLM-LETS-000016",
-              "WAL-CLM-LETS-000019",
               "WAL-CLM-LETS-000021",
               "WAL-CLM-LETS-000025",
               "WAL-CLM-LETS-000027",
               "WAL-CLM-LETS-000029",
               "WAL-CLM-LETS-000032",
-              "WAL-CLM-LETS-000034",
-              "WAL-CLM-LETS-000035",
-              "WAL-CLM-LETS-000038",
-              "WAL-CLM-LETS-000044",
-              "WAL-CLM-RARE-000161",
-              "WAL-CLM-RARE-000172",
-              "WAL-CLM-RARE-000233",
-              "WAL-CLM-RARE-000236",
-              "WAL-CLM-RARE-000240",
-              "WAL-CLM-RARE-000264"
-            ]
-          },
-          {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000005",
-              "WAL-CLM-LETS-000009"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000244",
-              "WAL-CLM-LETS-000388"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000018"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-LETS-000117"
+              "WAL-CLM-RARE-000240"
             ]
           },
           {
@@ -53923,33 +54497,97 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 39,
+        record_claim_count: 11,
         search: [
           {
             facet: "stance",
             claim_ids: [
               "WAL-CLM-DDDL-000360",
               "WAL-CLM-DDDL-000388",
-              "WAL-CLM-RARE-000160"
+              "WAL-CLM-IMMORT-000366",
+              "WAL-CLM-RARE-000160",
+              "WAL-CLM-RARE-000161"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000377"
+              "WAL-CLM-DDDL-000377",
+              "WAL-CLM-EPIGEN-000198",
+              "WAL-CLM-IMMORT-000018",
+              "WAL-CLM-IMMORT-000365"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000552",
-              "WAL-CLM-DDDL-000569"
+              "WAL-CLM-DDDL-000569",
+              "WAL-CLM-LETS-000244",
+              "WAL-CLM-LETS-000388"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000226",
+              "WAL-CLM-LETS-000005",
+              "WAL-CLM-LETS-000009"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
-              "WAL-CLM-LETS-000022"
+              "WAL-CLM-EPIGEN-000038",
+              "WAL-CLM-EPIGEN-000039",
+              "WAL-CLM-EPIGEN-000042",
+              "WAL-CLM-EPIGEN-000056",
+              "WAL-CLM-EPIGEN-000059",
+              "WAL-CLM-EPIGEN-000062",
+              "WAL-CLM-EPIGEN-000096",
+              "WAL-CLM-HELLS-000097",
+              "WAL-CLM-IMMORT-000088",
+              "WAL-CLM-IMMORT-000200",
+              "WAL-CLM-IMMORT-000202",
+              "WAL-CLM-LETS-000003",
+              "WAL-CLM-LETS-000014",
+              "WAL-CLM-LETS-000019",
+              "WAL-CLM-LETS-000022",
+              "WAL-CLM-LETS-000034",
+              "WAL-CLM-LETS-000035",
+              "WAL-CLM-LETS-000038",
+              "WAL-CLM-LETS-000044",
+              "WAL-CLM-RARE-000172",
+              "WAL-CLM-RARE-000233",
+              "WAL-CLM-RARE-000236",
+              "WAL-CLM-RARE-000264"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000363"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000273",
+              "WAL-CLM-EPIGEN-000355",
+              "WAL-CLM-EPIGEN-000366"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-LETS-000117",
+              "WAL-CLM-RARE-000041"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-RARE-000029"
             ]
           }
         ],
@@ -54020,65 +54658,70 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000065",
               "WAL-CLM-EPIGEN-000031",
               "WAL-CLM-EPIGEN-000036",
-              "WAL-CLM-EPIGEN-000037",
-              "WAL-CLM-EPIGEN-000038",
-              "WAL-CLM-EPIGEN-000042",
               "WAL-CLM-EPIGEN-000059",
               "WAL-CLM-EPIGEN-000108",
               "WAL-CLM-LETS-000004",
               "WAL-CLM-LETS-000011",
               "WAL-CLM-LETS-000012",
-              "WAL-CLM-LETS-000019",
               "WAL-CLM-LETS-000021",
-              "WAL-CLM-LETS-000029",
               "WAL-CLM-LETS-000032",
               "WAL-CLM-LETS-000044",
-              "WAL-CLM-RARE-000193",
               "WAL-CLM-RARE-000229",
               "WAL-CLM-RARE-000234",
-              "WAL-CLM-RARE-000235",
-              "WAL-CLM-RARE-000236",
               "WAL-CLM-RARE-000240"
-            ]
-          },
-          {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000007"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000532",
-              "WAL-CLM-DDDL-000548",
-              "WAL-CLM-LETS-000245",
-              "WAL-CLM-LETS-000430"
+              "WAL-CLM-LETS-000245"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000572",
               "WAL-CLM-LETS-000084"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000563"
             ]
           }
         ],
-        record_claim_count: 30,
+        record_claim_count: 15,
         search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000572"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000532",
+              "WAL-CLM-DDDL-000548",
+              "WAL-CLM-DDDL-000563",
+              "WAL-CLM-LETS-000430",
               "WAL-CLM-LETS-000433"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000007",
+              "WAL-CLM-LETS-000029",
+              "WAL-CLM-RARE-000193"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000065",
+              "WAL-CLM-EPIGEN-000037",
+              "WAL-CLM-EPIGEN-000038",
+              "WAL-CLM-EPIGEN-000042",
+              "WAL-CLM-LETS-000019",
+              "WAL-CLM-RARE-000235",
+              "WAL-CLM-RARE-000236"
             ]
           }
         ],
@@ -54144,91 +54787,65 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-DDDL-000017",
-              "WAL-CLM-EPIGEN-000045",
-              "WAL-CLM-EPIGEN-000062",
-              "WAL-CLM-IMMORT-000088",
-              "WAL-CLM-LETS-000003",
-              "WAL-CLM-LETS-000006",
-              "WAL-CLM-RARE-000118"
-            ]
-          },
-          {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000133"
+              "WAL-CLM-LETS-000006"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000049",
               "WAL-CLM-LETS-000388"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000010",
-              "WAL-CLM-IMMORT-000019",
-              "WAL-CLM-IMMORT-000478",
-              "WAL-CLM-IMMORT-000508",
-              "WAL-CLM-LETS-000100",
-              "WAL-CLM-LETS-000116"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-DDDL-000035",
-              "WAL-CLM-DDDL-000046",
-              "WAL-CLM-RARE-000077"
-            ]
-          },
-          {
-            kind: "contraindication",
-            claim_ids: [
-              "WAL-CLM-DDDL-000022"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-RARE-000081"
-            ]
-          },
-          {
-            kind: "quote",
-            claim_ids: [
-              "WAL-CLM-DDDL-000047"
+              "WAL-CLM-LETS-000100"
             ]
           }
         ],
-        record_claim_count: 22,
+        record_claim_count: 4,
         search: [
           {
             facet: "stance",
             claim_ids: [
-              "WAL-CLM-IMMORT-000515"
+              "WAL-CLM-DDDL-000047",
+              "WAL-CLM-DDDL-000305",
+              "WAL-CLM-EPIGEN-000277",
+              "WAL-CLM-IMMORT-000515",
+              "WAL-CLM-LETS-000513",
+              "WAL-CLM-RARE-000077"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000010",
               "WAL-CLM-DDDL-000034",
+              "WAL-CLM-DDDL-000200",
+              "WAL-CLM-DDDL-000201",
+              "WAL-CLM-IMMORT-000019",
               "WAL-CLM-IMMORT-000089",
-              "WAL-CLM-IMMORT-000496"
+              "WAL-CLM-IMMORT-000478",
+              "WAL-CLM-IMMORT-000496",
+              "WAL-CLM-IMMORT-000508",
+              "WAL-CLM-RARE-000255"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000048",
-              "WAL-CLM-LETS-000246"
+              "WAL-CLM-DDDL-000225",
+              "WAL-CLM-LETS-000246",
+              "WAL-CLM-LETS-000509"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
+              "WAL-CLM-DDDL-000022",
+              "WAL-CLM-DDDL-000226",
+              "WAL-CLM-IMMORT-000133",
               "WAL-CLM-LETS-000080",
               "WAL-CLM-RARE-000280"
             ]
@@ -54236,13 +54853,47 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000045",
+              "WAL-CLM-EPIGEN-000062",
+              "WAL-CLM-HELLS-000044",
+              "WAL-CLM-IMMORT-000088",
+              "WAL-CLM-LETS-000003",
+              "WAL-CLM-RARE-000081",
+              "WAL-CLM-RARE-000118",
               "WAL-CLM-RARE-000307"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000222",
+              "WAL-CLM-HELLS-000041",
+              "WAL-CLM-LETS-000116"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000035",
+              "WAL-CLM-DDDL-000046",
+              "WAL-CLM-DDDL-000049",
+              "WAL-CLM-IMMORT-000289",
+              "WAL-CLM-IMMORT-000339"
             ]
           },
           {
             facet: "history",
             claim_ids: [
-              "WAL-CLM-DDDL-000008"
+              "WAL-CLM-DDDL-000008",
+              "WAL-CLM-HELLS-000046"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000308",
+              "WAL-CLM-HELLS-000083",
+              "WAL-CLM-IMMORT-000342"
             ]
           }
         ],
@@ -54345,20 +54996,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000037",
               "WAL-CLM-EPIGEN-000038",
               "WAL-CLM-EPIGEN-000041",
               "WAL-CLM-LETS-000010",
               "WAL-CLM-LETS-000011",
-              "WAL-CLM-LETS-000019",
-              "WAL-CLM-LETS-000039",
-              "WAL-CLM-RARE-000264"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000422"
+              "WAL-CLM-LETS-000039"
             ]
           },
           {
@@ -54368,12 +55010,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 10,
+        record_claim_count: 6,
         search: [
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000422",
               "WAL-CLM-LETS-000248"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000037",
+              "WAL-CLM-LETS-000019",
+              "WAL-CLM-RARE-000264"
             ]
           }
         ],
@@ -54641,19 +55292,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000039",
               "WAL-CLM-RARE-000044"
             ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000002"
-            ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 2,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000002",
               "WAL-CLM-RARE-000016"
             ]
           },
@@ -54662,6 +55308,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000368",
               "WAL-CLM-RARE-000045"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000191"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000145"
             ]
           }
         ],
@@ -54729,16 +55387,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000363"
         ],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000363"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "opiate_withdrawal"
         ],
@@ -54908,32 +55566,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000257"
         ],
         restore: [],
-        record: [
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000106"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000489"
-            ]
-          }
-        ],
-        record_claim_count: 2,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000525"
+              "WAL-CLM-DDDL-000525",
+              "WAL-CLM-EPIGEN-000106"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000489",
               "WAL-CLM-LETS-000257"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000300"
             ]
           }
         ],
@@ -55041,12 +55694,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000321"
-            ]
-          },
-          {
             kind: "prognosis",
             claim_ids: [
               "WAL-CLM-DDDL-000129"
@@ -55059,12 +55706,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 2,
         search: [
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000259"
+              "WAL-CLM-LETS-000259",
+              "WAL-CLM-LETS-000321"
             ]
           }
         ],
@@ -55155,20 +55803,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000392"
         ],
         restore: [],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000392"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000260"
+              "WAL-CLM-LETS-000260",
+              "WAL-CLM-LETS-000392"
             ]
           }
         ],
@@ -55205,20 +55847,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-e",
           "vitamin-k"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000034"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000261"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000034"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000213"
             ]
           }
         ],
@@ -55250,16 +55897,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-b6"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000407"
             ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000245"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-RARE-000332"
+            ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "preeclampsia",
           "pregnancy_toxemia"
@@ -55318,52 +55977,34 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000065",
-              "WAL-CLM-EPIGEN-000042",
-              "WAL-CLM-EPIGEN-000059",
               "WAL-CLM-LETS-000004",
-              "WAL-CLM-LETS-000011",
-              "WAL-CLM-LETS-000012",
-              "WAL-CLM-LETS-000019",
               "WAL-CLM-LETS-000021",
-              "WAL-CLM-LETS-000044",
               "WAL-CLM-RARE-000240"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000394",
-              "WAL-CLM-DDDL-000459",
               "WAL-CLM-LETS-000245"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000480",
-              "WAL-CLM-LETS-000084"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000053"
             ]
           }
         ],
-        record_claim_count: 16,
+        record_claim_count: 4,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000158",
               "WAL-CLM-DDDL-000391",
+              "WAL-CLM-DDDL-000480",
               "WAL-CLM-DDDL-000572"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000394",
+              "WAL-CLM-DDDL-000459",
               "WAL-CLM-DDDL-000482",
               "WAL-CLM-DDDL-000527",
               "WAL-CLM-DDDL-000532",
@@ -55374,10 +56015,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000011",
+              "WAL-CLM-LETS-000012"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000065",
+              "WAL-CLM-EPIGEN-000038",
+              "WAL-CLM-EPIGEN-000042",
+              "WAL-CLM-EPIGEN-000059",
+              "WAL-CLM-IMMORT-000053",
+              "WAL-CLM-LETS-000019",
+              "WAL-CLM-LETS-000044"
+            ]
+          },
+          {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000553",
               "WAL-CLM-DDDL-000564"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-LETS-000084"
             ]
           }
         ],
@@ -55422,16 +56088,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000101",
               "WAL-CLM-LETS-000025",
-              "WAL-CLM-LETS-000034",
               "WAL-CLM-RARE-000185"
-            ]
-          },
-          {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000033"
             ]
           },
           {
@@ -55441,8 +56099,24 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 6,
-        search: [],
+        record_claim_count: 3,
+        search: [
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000252",
+              "WAL-CLM-LETS-000033"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000101",
+              "WAL-CLM-LETS-000034",
+              "WAL-CLM-RARE-000368"
+            ]
+          }
+        ],
         related_conditions: [
           "anorexia",
           "depression",
@@ -55510,16 +56184,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "oxygen"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "history",
             claim_ids: [
               "WAL-CLM-RARE-000202"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "arteriosclerosis",
           "asthma",
@@ -55548,16 +56222,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "prognosis",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-RARE-000213"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "anemia"
         ],
@@ -55677,14 +56351,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000101",
-              "WAL-CLM-IMMORT-000214"
+              "WAL-CLM-IMMORT-000099"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000214"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000101"
+            ]
+          }
+        ],
         related_conditions: [
           "adhd",
           "anemia",
@@ -55742,30 +56427,42 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000233"
-            ]
-          },
-          {
             kind: "definition",
             claim_ids: [
               "WAL-CLM-RARE-000387"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "diagnostic_pattern",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000556"
             ]
-          }
-        ],
-        record_claim_count: 3,
-        search: [
+          },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000270",
+              "WAL-CLM-DDDL-000272",
+              "WAL-CLM-LETS-000233",
               "WAL-CLM-LETS-000267"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000189",
+              "WAL-CLM-DDDL-000218",
+              "WAL-CLM-DDDL-000236",
+              "WAL-CLM-IMMORT-000300"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-RARE-000394"
             ]
           }
         ],
@@ -55852,19 +56549,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000315"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000047"
             ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "stance",
@@ -55876,7 +56567,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000529",
-              "WAL-CLM-DDDL-000571"
+              "WAL-CLM-DDDL-000571",
+              "WAL-CLM-LETS-000315"
             ]
           },
           {
@@ -55904,16 +56596,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
+            facet: "uses",
             claim_ids: [
               "WAL-CLM-LETS-000187"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "brain_cancer",
           "breast_cancer",
@@ -56099,7 +56791,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000031",
-              "WAL-CLM-EPIGEN-000041",
               "WAL-CLM-IMMORT-000088"
             ]
           },
@@ -56110,12 +56801,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 3,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000270"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000041"
             ]
           }
         ],
@@ -56162,7 +56859,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000042",
               "WAL-CLM-EPIGEN-000044",
               "WAL-CLM-EPIGEN-000045",
               "WAL-CLM-EPIGEN-000052",
@@ -56170,8 +56866,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
+        record_claim_count: 4,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000042"
+            ]
+          }
+        ],
         related_conditions: [
           "liver_disease",
           "alopecia",
@@ -56257,8 +56960,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000033",
-              "WAL-CLM-RARE-000231"
+              "WAL-CLM-EPIGEN-000033"
             ]
           },
           {
@@ -56268,12 +56970,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 2,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000169"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000231"
             ]
           }
         ],
@@ -56329,29 +57037,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000033",
-              "WAL-CLM-EPIGEN-000035"
+              "WAL-CLM-EPIGEN-000033"
+            ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000136"
             ]
           },
           {
-            kind: "protocol",
+            facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-IAIYH-000017"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000456",
               "WAL-CLM-DDDL-000533"
             ]
           },
           {
-            kind: "mechanism",
+            facet: "physiology",
             claim_ids: [
-              "WAL-CLM-IAIYH-000017"
-            ]
-          }
-        ],
-        record_claim_count: 4,
-        search: [
-          {
-            facet: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000456"
+              "WAL-CLM-EPIGEN-000035"
             ]
           }
         ],
@@ -56443,22 +57157,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000409",
-              "WAL-CLM-DDDL-000417"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000356",
-              "WAL-CLM-DDDL-000377",
-              "WAL-CLM-DDDL-000412",
-              "WAL-CLM-DDDL-000568",
               "WAL-CLM-LETS-000107",
-              "WAL-CLM-LETS-000116",
-              "WAL-CLM-RARE-000405"
+              "WAL-CLM-LETS-000116"
             ]
           },
           {
@@ -56470,24 +57172,36 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "definition",
             claim_ids: [
-              "WAL-CLM-LETS-000117",
-              "WAL-CLM-LETS-000523"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000489",
-              "WAL-CLM-DDDL-000552"
+              "WAL-CLM-LETS-000117"
             ]
           }
         ],
-        record_claim_count: 14,
+        record_claim_count: 4,
         search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000356",
+              "WAL-CLM-DDDL-000377",
+              "WAL-CLM-DDDL-000412",
+              "WAL-CLM-DDDL-000568",
+              "WAL-CLM-RARE-000405"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000409",
+              "WAL-CLM-DDDL-000417",
+              "WAL-CLM-DDDL-000489",
+              "WAL-CLM-DDDL-000552",
               "WAL-CLM-LETS-000280"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-LETS-000523"
             ]
           }
         ],
@@ -56557,6 +57271,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000281"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000154"
             ]
           }
         ],
@@ -56659,22 +57379,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000596",
-              "WAL-CLM-DDDL-000597"
-            ]
-          },
-          {
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-LETS-000011"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000322"
             ]
           },
           {
@@ -56690,7 +57397,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 3,
         search: [
           {
             facet: "mechanism",
@@ -56703,9 +57410,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000271",
+              "WAL-CLM-DDDL-000322",
               "WAL-CLM-DDDL-000339",
               "WAL-CLM-DDDL-000522",
               "WAL-CLM-DDDL-000595",
+              "WAL-CLM-DDDL-000596",
+              "WAL-CLM-DDDL-000597",
               "WAL-CLM-LETS-000283"
             ]
           }
@@ -56783,16 +57494,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-IAIYH-000014"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "atrial_fibrillation",
           "chronic_obstructive_pulmonary_disease"
@@ -56926,33 +57637,39 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-c",
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "toxicity_sign",
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000253"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-IAIYH-000003"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000550",
+              "WAL-CLM-LETS-000285",
+              "WAL-CLM-LETS-000398"
+            ]
+          },
+          {
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-DDDL-000512"
             ]
           },
           {
-            kind: "protocol",
+            facet: "physiology",
             claim_ids: [
-              "WAL-CLM-DDDL-000550",
-              "WAL-CLM-LETS-000398"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IAIYH-000003"
-            ]
-          }
-        ],
-        record_claim_count: 4,
-        search: [
-          {
-            facet: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000285"
+              "WAL-CLM-LETS-000428"
             ]
           }
         ],
@@ -57113,59 +57830,89 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000025",
-              "WAL-CLM-EPIGEN-000093",
-              "WAL-CLM-IMMORT-000001",
-              "WAL-CLM-IMMORT-000177",
-              "WAL-CLM-IMMORT-000180",
-              "WAL-CLM-IMMORT-000182",
-              "WAL-CLM-LETS-000013",
-              "WAL-CLM-RARE-000149",
-              "WAL-CLM-RARE-000150"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000359"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000019",
-              "WAL-CLM-IMMORT-000179",
-              "WAL-CLM-RARE-000148"
-            ]
-          },
-          {
             kind: "definition",
             claim_ids: [
               "WAL-CLM-IMMORT-000058"
             ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000024",
+              "WAL-CLM-DDDL-000275",
+              "WAL-CLM-IMMORT-000177"
+            ]
           },
           {
-            kind: "diagnostic_pattern",
+            facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000023",
+              "WAL-CLM-DDDL-000025",
+              "WAL-CLM-IMMORT-000019",
+              "WAL-CLM-IMMORT-000179",
+              "WAL-CLM-IMMORT-000180",
+              "WAL-CLM-RARE-000148",
+              "WAL-CLM-RARE-000149"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000103",
+              "WAL-CLM-DDDL-000207",
+              "WAL-CLM-DDDL-000359",
+              "WAL-CLM-LETS-000287"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000208",
+              "WAL-CLM-EPIGEN-000160",
+              "WAL-CLM-EPIGEN-000326"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000241",
+              "WAL-CLM-DDDL-000276",
+              "WAL-CLM-EPIGEN-000093",
+              "WAL-CLM-IMMORT-000001",
+              "WAL-CLM-IMMORT-000182",
               "WAL-CLM-IMMORT-000183",
+              "WAL-CLM-LETS-000013",
+              "WAL-CLM-RARE-000150",
               "WAL-CLM-RARE-000151"
             ]
           },
           {
-            kind: "prevalence",
+            facet: "basics",
             claim_ids: [
-              "WAL-CLM-DDDL-000024"
+              "WAL-CLM-EPIGEN-000368",
+              "WAL-CLM-IMMORT-000316"
             ]
-          }
-        ],
-        record_claim_count: 17,
-        search: [
+          },
           {
-            facet: "protocol",
+            facet: "sources",
             claim_ids: [
-              "WAL-CLM-LETS-000287"
+              "WAL-CLM-DDDL-000206"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-HELLS-000049",
+              "WAL-CLM-RARE-000382"
+            ]
+          },
+          {
+            facet: "biography",
+            claim_ids: [
+              "WAL-CLM-DDDL-000210"
             ]
           }
         ],
@@ -57215,21 +57962,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-b9"
         ],
-        record: [
-          {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000604"
-            ]
-          },
-          {
-            kind: "contraindication",
-            claim_ids: [
-              "WAL-CLM-RARE-000181"
-            ]
-          }
-        ],
-        record_claim_count: 2,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "stance",
@@ -57240,7 +57974,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000604",
               "WAL-CLM-LETS-000288"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-RARE-000181"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-LETS-000495"
             ]
           },
           {
@@ -57253,6 +58000,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "uses",
             claim_ids: [
               "WAL-CLM-DDDL-000373"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-RARE-000364"
             ]
           }
         ],
@@ -57277,17 +58030,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "diagnostic_pattern",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-IMMORT-000183",
               "WAL-CLM-RARE-000151"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "goiter",
           "hyperthyroidism"
@@ -57440,9 +58193,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "iodine"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000093",
               "WAL-CLM-IMMORT-000182",
@@ -57450,8 +58205,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
         related_conditions: [
           "goiter",
           "hypothyroidism",
@@ -57535,31 +58288,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-b6",
           "vitamin-c"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000409"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000475"
-            ]
-          }
-        ],
-        record_claim_count: 2,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000475",
               "WAL-CLM-IAIYH-000003"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000409",
               "WAL-CLM-LETS-000293"
             ]
           }
@@ -57603,30 +58345,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-c",
           "vitamin-e"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "stance",
             claim_ids: [
-              "WAL-CLM-DDDL-000030",
-              "WAL-CLM-LETS-000030"
+              "WAL-CLM-LETS-000001"
             ]
           },
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000295",
               "WAL-CLM-LETS-000317"
             ]
           },
           {
-            kind: "definition",
+            facet: "warning",
             claim_ids: [
-              "WAL-CLM-LETS-000001"
+              "WAL-CLM-DDDL-000030"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-LETS-000030"
             ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
         related_conditions: [
           "cancer",
           "cystic_fibrosis",
@@ -57703,16 +58450,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-IMMORT-000133"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "contraindication",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-DDDL-000022"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "diabetes",
           "cirrhosis",
@@ -57833,21 +58581,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000361",
-              "WAL-CLM-LETS-000449"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-LETS-000107"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000361",
+              "WAL-CLM-LETS-000449"
+            ]
+          }
+        ],
         related_conditions: [
           "arthritis",
           "edema",
@@ -57990,32 +58739,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000046",
-              "WAL-CLM-EPIGEN-000051",
               "WAL-CLM-EPIGEN-000063",
-              "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000107"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000539"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-LETS-000107"
+              "WAL-CLM-IMMORT-000099"
             ]
           }
         ],
-        record_claim_count: 7,
+        record_claim_count: 2,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000400"
+              "WAL-CLM-DDDL-000400",
+              "WAL-CLM-EPIGEN-000051",
+              "WAL-CLM-IMMORT-000107"
             ]
           },
           {
@@ -58023,13 +58759,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000384",
               "WAL-CLM-DDDL-000473",
+              "WAL-CLM-DDDL-000539",
               "WAL-CLM-LETS-000297"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000424"
+              "WAL-CLM-DDDL-000424",
+              "WAL-CLM-EPIGEN-000046"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000003",
+              "WAL-CLM-DDDL-000195"
             ]
           },
           {
@@ -58042,7 +58787,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "uses",
             claim_ids: [
-              "WAL-CLM-DDDL-000518"
+              "WAL-CLM-DDDL-000196",
+              "WAL-CLM-DDDL-000518",
+              "WAL-CLM-LETS-000107"
             ]
           }
         ],
@@ -58134,13 +58881,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000063",
-              "WAL-CLM-IMMORT-000099",
+              "WAL-CLM-IMMORT-000099"
+            ]
+          }
+        ],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
               "WAL-CLM-RARE-000122"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
         related_conditions: [
           "anemia",
           "aneurysm",
@@ -58185,25 +58938,31 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000402",
               "WAL-CLM-LETS-000299"
+            ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000402"
             ]
           },
           {
-            kind: "mechanism",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-DDDL-000487"
             ]
           },
           {
-            kind: "definition",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-DDDL-000486"
             ]
           }
         ],
-        record_claim_count: 4,
-        search: [],
         related_conditions: [
           "cold_sores"
         ],
@@ -58235,20 +58994,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000301"
         ],
         restore: [],
-        record: [
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000364"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000301"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000364"
             ]
           }
         ],
@@ -58333,31 +59091,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000062",
-              "WAL-CLM-EPIGEN-000107",
               "WAL-CLM-IMMORT-000088",
               "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-LETS-000003",
               "WAL-CLM-LETS-000006",
               "WAL-CLM-LETS-000012",
               "WAL-CLM-LETS-000017",
-              "WAL-CLM-LETS-000025",
-              "WAL-CLM-LETS-000044"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000447"
+              "WAL-CLM-LETS-000025"
             ]
           }
         ],
-        record_claim_count: 11,
+        record_claim_count: 6,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000446"
+              "WAL-CLM-DDDL-000446",
+              "WAL-CLM-DDDL-000447"
             ]
           },
           {
@@ -58365,6 +59114,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000320",
               "WAL-CLM-LETS-000219"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000062",
+              "WAL-CLM-EPIGEN-000107",
+              "WAL-CLM-HELLS-000044",
+              "WAL-CLM-LETS-000003",
+              "WAL-CLM-LETS-000044"
             ]
           },
           {
@@ -58483,13 +59242,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-RARE-000269",
               "WAL-CLM-RARE-000270"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000269"
+            ]
+          }
+        ],
         related_conditions: [
           "anemia",
           "adrenoleukodystrophy",
@@ -58564,15 +59329,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         protocol_claim_ids: [],
         restore: [],
-        record: [
-          {
-            kind: "quote",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000021"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "stance",
@@ -58584,7 +59342,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000008",
-              "WAL-CLM-EPIGEN-000022"
+              "WAL-CLM-EPIGEN-000022",
+              "WAL-CLM-EPIGEN-000025"
             ]
           },
           {
@@ -58596,6 +59355,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "history",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000021",
               "WAL-CLM-EPIGEN-000024"
             ]
           },
@@ -58761,45 +59521,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000033"
             ]
-          },
+          }
+        ],
+        record_claim_count: 6,
+        search: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000257"
-            ]
-          },
-          {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000547",
               "WAL-CLM-DDDL-000568"
             ]
           },
           {
-            kind: "prognosis",
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000489",
+              "WAL-CLM-LETS-000257",
+              "WAL-CLM-LETS-000305"
+            ]
+          },
+          {
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-RARE-000215"
             ]
           },
           {
-            kind: "definition",
+            facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000395"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000489"
-            ]
-          }
-        ],
-        record_claim_count: 12,
-        search: [
-          {
-            facet: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000305"
             ]
           }
         ],
@@ -58896,7 +59646,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           }
         ],
         record_claim_count: 2,
-        search: [],
+        search: [
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000035"
+            ]
+          }
+        ],
         related_conditions: [
           "adhd",
           "atherosclerosis",
@@ -58987,13 +59744,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000305",
               "WAL-CLM-LETS-000388"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000305"
+            ]
+          }
+        ],
         related_conditions: [
           "alcoholism",
           "dementia",
@@ -59034,16 +59797,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000061"
             ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000073"
+            ]
           },
           {
-            kind: "toxicity_sign",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-LETS-000024"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "osteoporosis",
           "arthritis",
@@ -59104,32 +59874,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000061",
-              "WAL-CLM-IMMORT-000063",
-              "WAL-CLM-IMMORT-000071",
               "WAL-CLM-LETS-000004"
-            ]
-          },
-          {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000005",
-              "WAL-CLM-LETS-000033"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000469",
-              "WAL-CLM-DDDL-000536",
-              "WAL-CLM-LETS-000094",
               "WAL-CLM-LETS-000100"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-RARE-000105"
             ]
           },
           {
@@ -59140,15 +59891,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 13,
+        record_claim_count: 4,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000329",
+              "WAL-CLM-EPIGEN-000330",
+              "WAL-CLM-EPIGEN-000332",
+              "WAL-CLM-HELLS-000061",
+              "WAL-CLM-RARE-000105"
+            ]
+          },
           {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000356",
               "WAL-CLM-DDDL-000450",
               "WAL-CLM-DDDL-000451",
-              "WAL-CLM-DDDL-000546"
+              "WAL-CLM-DDDL-000469",
+              "WAL-CLM-DDDL-000536",
+              "WAL-CLM-DDDL-000546",
+              "WAL-CLM-IMMORT-000340"
             ]
           },
           {
@@ -59166,14 +59930,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000479"
+              "WAL-CLM-DDDL-000479",
+              "WAL-CLM-LETS-000005",
+              "WAL-CLM-LETS-000033"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
               "WAL-CLM-DDDL-000396",
+              "WAL-CLM-EPIGEN-000061",
+              "WAL-CLM-IMMORT-000063",
               "WAL-CLM-RARE-000304"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000303",
+              "WAL-CLM-IMMORT-000071",
+              "WAL-CLM-LETS-000094",
+              "WAL-CLM-RARE-000283",
+              "WAL-CLM-RARE-000352"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-HELLS-000062",
+              "WAL-CLM-HELLS-000063"
             ]
           }
         ],
@@ -59276,15 +60061,46 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000132",
-              "WAL-CLM-DDDL-000453",
-              "WAL-CLM-EPIGEN-000029",
-              "WAL-CLM-IMMORT-000068",
               "WAL-CLM-IMMORT-000081"
             ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-HELLS-000036"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000453",
+              "WAL-CLM-EPIGEN-000029",
+              "WAL-CLM-IMMORT-000068",
+              "WAL-CLM-IMMORT-000306"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000269"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000140"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-HELLS-000037"
+            ]
+          }
+        ],
         related_conditions: [
           "bloating",
           "candidiasis",
@@ -59338,10 +60154,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-DDDL-000017",
-              "WAL-CLM-EPIGEN-000062",
-              "WAL-CLM-EPIGEN-000107",
-              "WAL-CLM-HELLS-000097",
-              "WAL-CLM-IMMORT-000088",
               "WAL-CLM-LETS-000006",
               "WAL-CLM-LETS-000017"
             ]
@@ -59349,40 +60161,89 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000409",
               "WAL-CLM-LETS-000388"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000377",
-              "WAL-CLM-DDDL-000413",
-              "WAL-CLM-DDDL-000547",
-              "WAL-CLM-IMMORT-000478"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-DDDL-000046"
             ]
           },
           {
             kind: "diagnostic_pattern",
             claim_ids: [
-              "WAL-CLM-DDDL-000519",
-              "WAL-CLM-DDDL-000552",
               "WAL-CLM-LETS-000080"
             ]
           }
         ],
-        record_claim_count: 17,
+        record_claim_count: 5,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-LETS-000513",
+              "WAL-CLM-RARE-000401"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000201",
+              "WAL-CLM-DDDL-000377",
+              "WAL-CLM-DDDL-000413",
+              "WAL-CLM-DDDL-000547",
+              "WAL-CLM-IMMORT-000478",
+              "WAL-CLM-LETS-000508"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000307"
+              "WAL-CLM-DDDL-000225",
+              "WAL-CLM-DDDL-000274",
+              "WAL-CLM-DDDL-000409",
+              "WAL-CLM-DDDL-000519",
+              "WAL-CLM-DDDL-000552",
+              "WAL-CLM-LETS-000159",
+              "WAL-CLM-LETS-000244",
+              "WAL-CLM-LETS-000307",
+              "WAL-CLM-LETS-000509"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000226"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000062",
+              "WAL-CLM-EPIGEN-000107",
+              "WAL-CLM-HELLS-000044",
+              "WAL-CLM-HELLS-000045",
+              "WAL-CLM-HELLS-000097",
+              "WAL-CLM-IMMORT-000088",
+              "WAL-CLM-IMMORT-000344",
+              "WAL-CLM-LETS-000174",
+              "WAL-CLM-RARE-000081"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000222",
+              "WAL-CLM-HELLS-000041"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000035",
+              "WAL-CLM-DDDL-000046",
+              "WAL-CLM-DDDL-000190"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000308"
             ]
           }
         ],
@@ -59424,13 +60285,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-IMMORT-000194",
+              "WAL-CLM-IMMORT-000194"
+            ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
               "WAL-CLM-RARE-000155"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "cardiac_failure"
         ],
@@ -59449,16 +60316,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-RARE-000209"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [],
         related: [
           "phosphorus"
@@ -59600,59 +60467,67 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
+              "WAL-CLM-IMMORT-000099"
+            ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000024",
+              "WAL-CLM-IMMORT-000177"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000023",
+              "WAL-CLM-DDDL-000543",
+              "WAL-CLM-IMMORT-000180"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000103",
+              "WAL-CLM-DDDL-000207",
+              "WAL-CLM-DDDL-000359",
+              "WAL-CLM-DDDL-000390",
+              "WAL-CLM-LETS-000309"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000208",
+              "WAL-CLM-EPIGEN-000160",
+              "WAL-CLM-EPIGEN-000326"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000241",
+              "WAL-CLM-DDDL-000457",
               "WAL-CLM-EPIGEN-000093",
               "WAL-CLM-EPIGEN-000465",
-              "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000177",
               "WAL-CLM-IMMORT-000182",
               "WAL-CLM-LETS-000013",
               "WAL-CLM-RARE-000150"
             ]
           },
           {
-            kind: "protocol",
+            facet: "basics",
             claim_ids: [
-              "WAL-CLM-DDDL-000103"
+              "WAL-CLM-IMMORT-000316"
             ]
           },
           {
-            kind: "mechanism",
+            facet: "biography",
             claim_ids: [
-              "WAL-CLM-DDDL-000023"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000390"
-            ]
-          },
-          {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-DDDL-000024"
-            ]
-          }
-        ],
-        record_claim_count: 11,
-        search: [
-          {
-            facet: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000543"
-            ]
-          },
-          {
-            facet: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000359",
-              "WAL-CLM-LETS-000309"
-            ]
-          },
-          {
-            facet: "physiology",
-            claim_ids: [
-              "WAL-CLM-DDDL-000457"
+              "WAL-CLM-DDDL-000210"
             ]
           }
         ],
@@ -59810,8 +60685,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000033",
               "WAL-CLM-EPIGEN-000038",
               "WAL-CLM-EPIGEN-000046",
-              "WAL-CLM-IMMORT-000027",
-              "WAL-CLM-IMMORT-000139"
+              "WAL-CLM-IMMORT-000027"
             ]
           },
           {
@@ -59821,12 +60695,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 7,
+        record_claim_count: 6,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000311"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000139"
             ]
           }
         ],
@@ -59914,20 +60794,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "zinc"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000044"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000315"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-LETS-000044"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000146"
             ]
           }
         ],
@@ -60214,28 +61099,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000031",
-              "WAL-CLM-EPIGEN-000033",
               "WAL-CLM-EPIGEN-000062",
-              "WAL-CLM-EPIGEN-000101",
               "WAL-CLM-IMMORT-000088",
-              "WAL-CLM-IMMORT-000201",
               "WAL-CLM-LETS-000011",
-              "WAL-CLM-LETS-000030",
-              "WAL-CLM-LETS-000044",
               "WAL-CLM-RARE-000185",
-              "WAL-CLM-RARE-000229",
-              "WAL-CLM-RARE-000231",
               "WAL-CLM-RARE-000270"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-LETS-000472"
             ]
           }
         ],
-        record_claim_count: 14,
+        record_claim_count: 6,
         search: [
           {
             facet: "stance",
@@ -60244,11 +61116,59 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-LETS-000472"
+            ]
+          },
+          {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000070",
+              "WAL-CLM-DDDL-000266",
               "WAL-CLM-LETS-000273",
               "WAL-CLM-LETS-000319"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000226"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000137",
+              "WAL-CLM-EPIGEN-000033",
+              "WAL-CLM-EPIGEN-000101",
+              "WAL-CLM-IMMORT-000201",
+              "WAL-CLM-IMMORT-000319",
+              "WAL-CLM-IMMORT-000349",
+              "WAL-CLM-LETS-000030",
+              "WAL-CLM-LETS-000044",
+              "WAL-CLM-RARE-000229",
+              "WAL-CLM-RARE-000231",
+              "WAL-CLM-RARE-000269"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-LETS-000502"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000283",
+              "WAL-CLM-IMMORT-000322"
+            ]
+          },
+          {
+            facet: "etymology",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000323"
             ]
           }
         ],
@@ -60302,22 +61222,35 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000046"
             ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000500"
+            ]
           },
           {
-            kind: "protocol",
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000199"
+            ]
+          },
+          {
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000320"
             ]
           },
           {
-            kind: "prognosis",
+            facet: "uses",
             claim_ids: [
-              "WAL-CLM-IMMORT-000500"
+              "WAL-CLM-EPIGEN-000306"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
         related_conditions: [
           "cancer",
           "bruises",
@@ -60376,21 +61309,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000100"
             ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-DDDL-000418"
-            ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 2,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000505",
               "WAL-CLM-LETS-000279"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000418"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000211"
             ]
           }
         ],
@@ -60456,31 +61395,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000588"
-            ]
-          },
-          {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000038",
-              "WAL-CLM-EPIGEN-000042",
               "WAL-CLM-IMMORT-000063",
-              "WAL-CLM-LETS-000003",
               "WAL-CLM-LETS-000004",
               "WAL-CLM-LETS-000010",
               "WAL-CLM-LETS-000016",
-              "WAL-CLM-LETS-000019",
               "WAL-CLM-LETS-000021",
               "WAL-CLM-LETS-000025",
               "WAL-CLM-LETS-000039"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000322"
             ]
           },
           {
@@ -60490,7 +61413,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 14,
+        record_claim_count: 8,
         search: [
           {
             facet: "mechanism",
@@ -60501,13 +61424,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000075"
+              "WAL-CLM-DDDL-000075",
+              "WAL-CLM-DDDL-000221",
+              "WAL-CLM-DDDL-000274",
+              "WAL-CLM-DDDL-000588",
+              "WAL-CLM-LETS-000322"
             ]
           },
           {
             facet: "physiology",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000472"
+              "WAL-CLM-EPIGEN-000032",
+              "WAL-CLM-EPIGEN-000038",
+              "WAL-CLM-EPIGEN-000042",
+              "WAL-CLM-EPIGEN-000472",
+              "WAL-CLM-LETS-000003",
+              "WAL-CLM-LETS-000019"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000366"
             ]
           }
         ],
@@ -60545,16 +61483,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "chromium",
           "vanadium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-HELLS-000097"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "anxiety",
           "depression",
@@ -60635,8 +61573,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-EPIGEN-000008",
               "WAL-CLM-EPIGEN-000009",
               "WAL-CLM-EPIGEN-000025"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000026"
             ]
           },
           {
@@ -60688,19 +61633,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000587"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000030"
             ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "protocol",
@@ -60710,6 +61649,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000422",
               "WAL-CLM-DDDL-000448",
               "WAL-CLM-DDDL-000474",
+              "WAL-CLM-DDDL-000587",
               "WAL-CLM-LETS-000323"
             ]
           }
@@ -60749,13 +61689,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000033",
+              "WAL-CLM-EPIGEN-000033"
+            ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
               "WAL-CLM-RARE-000231"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "alzheimers",
           "anemia",
@@ -60858,6 +61804,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000325"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000289"
             ]
           }
         ],
@@ -60983,19 +61935,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-IMMORT-000107",
               "WAL-CLM-RARE-000122"
             ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-RARE-000049"
-            ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 4,
         search: [
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-RARE-000049",
               "WAL-CLM-RARE-000051"
             ]
           },
@@ -61039,16 +61986,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-a"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-DDDL-000041"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "blindness",
           "corneal_ulcers"
@@ -61083,21 +62030,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-a",
           "zinc"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000031"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000346",
               "WAL-CLM-LETS-000328"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000169"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000031"
             ]
           }
         ],
@@ -61153,6 +62105,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000329",
               "WAL-CLM-LETS-000431"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000166"
             ]
           }
         ],
@@ -61222,15 +62180,30 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "selenium",
           "vitamin-e"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "dose",
+            facet: "stance",
             claim_ids: [
+              "WAL-CLM-IMMORT-000211"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000373",
               "WAL-CLM-RARE-000048"
             ]
           },
           {
-            kind: "deficiency_sign",
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000186"
+            ]
+          },
+          {
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-DDDL-000071",
               "WAL-CLM-LETS-000030",
@@ -61238,24 +62211,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "protocol",
+            facet: "history",
             claim_ids: [
-              "WAL-CLM-LETS-000373"
+              "WAL-CLM-RARE-000322"
             ]
           },
           {
-            kind: "personal_anecdote",
+            facet: "discovery",
             claim_ids: [
               "WAL-CLM-EPIGEN-000458"
-            ]
-          }
-        ],
-        record_claim_count: 6,
-        search: [
-          {
-            facet: "stance",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000211"
             ]
           }
         ],
@@ -61332,16 +62296,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "chromium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000331"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "ketoacidosis"
         ],
@@ -61387,14 +62351,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000005",
-              "WAL-CLM-LETS-000007",
-              "WAL-CLM-LETS-000031"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000332"
@@ -61407,12 +62363,33 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 3,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000155"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000336"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000056",
+              "WAL-CLM-LETS-000005",
+              "WAL-CLM-LETS-000007",
+              "WAL-CLM-LETS-000031"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-HELLS-000088"
             ]
           }
         ],
@@ -61473,23 +62450,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000603"
-            ]
-          },
-          {
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-DDDL-000087",
-              "WAL-CLM-EPIGEN-000032",
-              "WAL-CLM-IMMORT-000063"
+              "WAL-CLM-EPIGEN-000032"
             ]
           },
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000161",
               "WAL-CLM-LETS-000332"
             ]
           },
@@ -61498,52 +62467,56 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000100"
             ]
-          },
+          }
+        ],
+        record_claim_count: 4,
+        search: [
           {
-            kind: "definition",
+            facet: "stance",
             claim_ids: [
+              "WAL-CLM-DDDL-000155",
               "WAL-CLM-RARE-000105"
             ]
           },
           {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000451"
-            ]
-          },
-          {
-            kind: "quote",
-            claim_ids: [
-              "WAL-CLM-HELLS-000094"
-            ]
-          }
-        ],
-        record_claim_count: 10,
-        search: [
-          {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000344",
-              "WAL-CLM-DDDL-000350"
+              "WAL-CLM-DDDL-000350",
+              "WAL-CLM-DDDL-000451"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000088",
-              "WAL-CLM-DDDL-000528"
+              "WAL-CLM-DDDL-000528",
+              "WAL-CLM-DDDL-000603",
+              "WAL-CLM-LETS-000161"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000366"
+              "WAL-CLM-DDDL-000152",
+              "WAL-CLM-DDDL-000366",
+              "WAL-CLM-HELLS-000084",
+              "WAL-CLM-HELLS-000094"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000061",
+              "WAL-CLM-IMMORT-000063",
+              "WAL-CLM-RARE-000082"
             ]
           },
           {
             facet: "uses",
             claim_ids: [
-              "WAL-CLM-HELLS-000098"
+              "WAL-CLM-HELLS-000098",
+              "WAL-CLM-LETS-000496"
             ]
           },
           {
@@ -61664,17 +62637,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000101",
               "WAL-CLM-RARE-000185"
             ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000334"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000101"
             ]
           }
         ],
@@ -61824,20 +62802,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000337"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-IMMORT-000068"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000337"
+            ]
+          }
+        ],
         related_conditions: [
           "celiac_disease",
           "hypochlorhydria",
@@ -61869,19 +62848,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000338"
         ],
         restore: [],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000303"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-LETS-000303",
               "WAL-CLM-LETS-000338"
             ]
           }
@@ -61918,21 +62891,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "selenium",
           "vitamin-c"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000549"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000570"
-            ]
-          }
-        ],
-        record_claim_count: 2,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "mechanism",
@@ -61948,8 +62908,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000549"
+            ]
+          },
+          {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000570",
               "WAL-CLM-RARE-000212"
             ]
           }
@@ -61995,7 +62962,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000062",
-              "WAL-CLM-EPIGEN-000107",
               "WAL-CLM-IMMORT-000088",
               "WAL-CLM-IMMORT-000099"
             ]
@@ -62003,20 +62969,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000549",
               "WAL-CLM-LETS-000388"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000018"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-RARE-000215"
             ]
           },
           {
@@ -62026,8 +62979,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 9,
-        search: [],
+        record_claim_count: 5,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000018"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000549",
+              "WAL-CLM-RARE-000215"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000107"
+            ]
+          }
+        ],
         related_conditions: [
           "adhd",
           "depression",
@@ -62184,15 +63157,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-a",
           "vitamin-c"
         ],
-        record: [
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000038"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "mechanism",
@@ -62204,6 +63170,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000344"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000434",
+              "WAL-CLM-IMMORT-000038"
             ]
           }
         ],
@@ -62231,16 +63204,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "copper"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-IMMORT-000109"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "anemia",
           "hemochromatosis",
@@ -62333,24 +63306,29 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "toxicity_sign",
+            facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-IMMORT-000123"
+              "WAL-CLM-LETS-000195"
             ]
           },
           {
-            kind: "mechanism",
+            facet: "warning",
             claim_ids: [
-              "WAL-CLM-LETS-000187",
-              "WAL-CLM-LETS-000195",
+              "WAL-CLM-IMMORT-000123",
               "WAL-CLM-RARE-000134"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-LETS-000187"
             ]
           }
         ],
-        record_claim_count: 4,
-        search: [],
         related_conditions: [
           "cancer",
           "liver_disease",
@@ -62404,33 +63382,39 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000044",
               "WAL-CLM-EPIGEN-000063",
               "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-LETS-000030",
               "WAL-CLM-RARE-000122",
-              "WAL-CLM-RARE-000227",
               "WAL-CLM-RARE-000269"
             ]
-          },
+          }
+        ],
+        record_claim_count: 5,
+        search: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000348"
-            ]
-          },
-          {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000010"
             ]
           },
           {
-            kind: "contraindication",
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000348"
+            ]
+          },
+          {
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-DDDL-000022"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-LETS-000030",
+              "WAL-CLM-RARE-000227"
+            ]
           }
         ],
-        record_claim_count: 10,
-        search: [],
         related_conditions: [
           "liver_disease",
           "anemia",
@@ -62511,33 +63495,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "toxicity_sign",
             claim_ids: [
-              "WAL-CLM-LETS-000005",
-              "WAL-CLM-LETS-000007",
-              "WAL-CLM-LETS-000020",
-              "WAL-CLM-LETS-000031",
               "WAL-CLM-LETS-000040"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000298"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000010",
               "WAL-CLM-LETS-000107",
               "WAL-CLM-LETS-000187",
               "WAL-CLM-LETS-000195",
               "WAL-CLM-RARE-000134"
-            ]
-          },
-          {
-            kind: "contraindication",
-            claim_ids: [
-              "WAL-CLM-DDDL-000022"
             ]
           },
           {
@@ -62547,12 +63514,31 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 25,
+        record_claim_count: 18,
         search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000010"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-LETS-000298",
               "WAL-CLM-LETS-000348"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000022",
+              "WAL-CLM-DDDL-000083",
+              "WAL-CLM-IMMORT-000056",
+              "WAL-CLM-LETS-000005",
+              "WAL-CLM-LETS-000007",
+              "WAL-CLM-LETS-000020",
+              "WAL-CLM-LETS-000031"
             ]
           }
         ],
@@ -62731,16 +63717,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-IMMORT-000096"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-LETS-000181"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "cancer",
           "colon_cancer",
@@ -62776,27 +63763,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "selenium",
           "sulfur"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "stance",
             claim_ids: [
-              "WAL-CLM-RARE-000223"
+              "WAL-CLM-DDDL-000260"
             ]
           },
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-IAIYH-000017"
             ]
-          }
-        ],
-        record_claim_count: 2,
-        search: [
+          },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000509",
               "WAL-CLM-LETS-000350"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000223"
             ]
           }
         ],
@@ -62977,17 +63969,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000024"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000555",
-              "WAL-CLM-DDDL-000568",
-              "WAL-CLM-EPIGEN-000030",
               "WAL-CLM-LETS-000083"
             ]
           },
@@ -62998,8 +63981,49 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 7,
-        search: [],
+        record_claim_count: 3,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000053",
+              "WAL-CLM-LETS-000513"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000555",
+              "WAL-CLM-DDDL-000568",
+              "WAL-CLM-EPIGEN-000030",
+              "WAL-CLM-IMMORT-000284"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000209"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000024"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000257"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-LETS-000502"
+            ]
+          }
+        ],
         related_conditions: [
           "celiac_disease",
           "osteoporosis",
@@ -63035,26 +64059,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000031"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-DDDL-000367"
-            ]
-          },
-          {
             kind: "personal_anecdote",
             claim_ids: [
               "WAL-CLM-DDDL-000287"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000031"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000367"
+            ]
+          }
+        ],
         related_conditions: [
           "alopecia"
         ],
@@ -63156,20 +64181,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-a",
           "vitamin-c"
         ],
-        record: [
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-LETS-000188"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000342"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000136",
+              "WAL-CLM-LETS-000188"
             ]
           }
         ],
@@ -63278,21 +64303,75 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000099",
+              "WAL-CLM-DDDL-000232",
               "WAL-CLM-DDDL-000294",
+              "WAL-CLM-EPIGEN-000014",
+              "WAL-CLM-EPIGEN-000016",
+              "WAL-CLM-LETS-000130",
               "WAL-CLM-LETS-000243",
+              "WAL-CLM-LETS-000333",
               "WAL-CLM-LETS-000356"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000549"
+              "WAL-CLM-DDDL-000153",
+              "WAL-CLM-DDDL-000549",
+              "WAL-CLM-EPIGEN-000044",
+              "WAL-CLM-IMMORT-000245"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000183",
+              "WAL-CLM-EPIGEN-000280",
+              "WAL-CLM-IMMORT-000243"
             ]
           },
           {
             facet: "basics",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000012"
+              "WAL-CLM-DDDL-000288",
+              "WAL-CLM-DDDL-000296",
+              "WAL-CLM-EPIGEN-000012",
+              "WAL-CLM-EPIGEN-000015"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-DDDL-000217"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000293",
+              "WAL-CLM-EPIGEN-000239",
+              "WAL-CLM-EPIGEN-000404",
+              "WAL-CLM-HELLS-000025",
+              "WAL-CLM-HELLS-000052"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-HELLS-000022"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000282"
+            ]
+          },
+          {
+            facet: "etymology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000453"
             ]
           }
         ],
@@ -63343,34 +64422,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "calcium",
           "magnesium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-IMMORT-000064"
+              "WAL-CLM-DDDL-000469",
+              "WAL-CLM-DDDL-000475",
+              "WAL-CLM-IAIYH-000012"
             ]
           },
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000405",
               "WAL-CLM-DDDL-000468"
             ]
           },
           {
-            kind: "mechanism",
+            facet: "physiology",
             claim_ids: [
-              "WAL-CLM-DDDL-000469",
-              "WAL-CLM-DDDL-000475"
-            ]
-          }
-        ],
-        record_claim_count: 5,
-        search: [
-          {
-            facet: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IAIYH-000012"
+              "WAL-CLM-IMMORT-000064"
             ]
           }
         ],
@@ -63555,33 +64628,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000068",
-              "WAL-CLM-DDDL-000441",
-              "WAL-CLM-LETS-000522"
-            ]
-          },
-          {
-            kind: "contraindication",
-            claim_ids: [
-              "WAL-CLM-DDDL-000091"
-            ]
-          },
-          {
             kind: "definition",
             claim_ids: [
               "WAL-CLM-IMMORT-000054"
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 2,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000091"
+            ]
+          },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000068",
               "WAL-CLM-DDDL-000090",
-              "WAL-CLM-EPIGEN-000476"
+              "WAL-CLM-DDDL-000441",
+              "WAL-CLM-EPIGEN-000476",
+              "WAL-CLM-LETS-000522"
             ]
           },
           {
@@ -63655,16 +64723,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "selenium",
           "vitamin-e"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000357"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "amenorrhea",
           "dysmenorrhea"
@@ -63735,8 +64803,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "toxicity_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000343",
-              "WAL-CLM-DDDL-000512",
               "WAL-CLM-IMMORT-000166"
             ]
           },
@@ -63753,12 +64819,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 3,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000361"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000343",
+              "WAL-CLM-DDDL-000512"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000269"
             ]
           }
         ],
@@ -63812,8 +64891,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000098",
-              "WAL-CLM-RARE-000172"
+              "WAL-CLM-EPIGEN-000098"
             ]
           },
           {
@@ -63823,7 +64901,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 2,
         search: [
           {
             facet: "mechanism",
@@ -63837,6 +64915,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000409",
               "WAL-CLM-LETS-000364"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000172"
             ]
           }
         ],
@@ -63878,16 +64962,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-IMMORT-000169"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-RARE-000137"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "cerebral_palsy",
           "mental_retardation",
@@ -63918,22 +65003,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-b9",
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "warning",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000099"
+              "WAL-CLM-DDDL-000170",
+              "WAL-CLM-LETS-000365"
             ]
           },
           {
-            kind: "protocol",
+            facet: "physiology",
             claim_ids: [
-              "WAL-CLM-LETS-000365"
+              "WAL-CLM-EPIGEN-000099",
+              "WAL-CLM-IMMORT-000319",
+              "WAL-CLM-IMMORT-000349"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "asthma",
           "carpal_tunnel_syndrome",
@@ -63985,6 +65073,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000366"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000151"
             ]
           }
         ],
@@ -64101,16 +65195,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000461"
         ],
         restore: [],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000298",
-              "WAL-CLM-LETS-000461"
-            ]
-          }
-        ],
-        record_claim_count: 2,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "mechanism",
@@ -64121,7 +65207,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000206"
+              "WAL-CLM-LETS-000206",
+              "WAL-CLM-LETS-000461"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000298"
             ]
           }
         ],
@@ -64155,13 +65248,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-RARE-000227",
-              "WAL-CLM-RARE-000269"
-            ]
-          },
-          {
             kind: "toxicity_sign",
             claim_ids: [
               "WAL-CLM-IMMORT-000167"
@@ -64174,16 +65260,24 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000172",
               "WAL-CLM-LETS-000371"
             ]
-          },
+          }
+        ],
+        record_claim_count: 4,
+        search: [
           {
-            kind: "interaction",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-RARE-000087"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000227",
+              "WAL-CLM-RARE-000269"
+            ]
           }
         ],
-        record_claim_count: 7,
-        search: [],
         related_conditions: [
           "als",
           "parkinsons_disease",
@@ -64269,9 +65363,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000074",
               "WAL-CLM-EPIGEN-000032",
-              "WAL-CLM-EPIGEN-000038",
               "WAL-CLM-EPIGEN-000061",
               "WAL-CLM-IMMORT-000064"
             ]
@@ -64279,14 +65371,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000383",
               "WAL-CLM-LETS-000374"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000369"
             ]
           },
           {
@@ -64296,8 +65381,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 9,
-        search: [],
+        record_claim_count: 5,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000369"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-DDDL-000383"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000074",
+              "WAL-CLM-EPIGEN-000038"
+            ]
+          }
+        ],
         related_conditions: [
           "bone_spurs",
           "osteoporosis",
@@ -64395,24 +65500,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000071",
-              "WAL-CLM-EPIGEN-000033",
-              "WAL-CLM-LETS-000030",
-              "WAL-CLM-RARE-000231",
-              "WAL-CLM-RARE-000269"
-            ]
-          },
-          {
-            kind: "prognosis",
-            claim_ids: [
-              "WAL-CLM-DDDL-000007"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-LETS-000001",
-              "WAL-CLM-RARE-000049"
+              "WAL-CLM-EPIGEN-000033"
             ]
           },
           {
@@ -64422,19 +65510,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 9,
+        record_claim_count: 2,
         search: [
           {
             facet: "stance",
             claim_ids: [
+              "WAL-CLM-DDDL-000007",
               "WAL-CLM-DDDL-000072",
-              "WAL-CLM-EPIGEN-000005"
+              "WAL-CLM-EPIGEN-000005",
+              "WAL-CLM-LETS-000001",
+              "WAL-CLM-RARE-000049",
+              "WAL-CLM-RARE-000323"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000373"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000071",
+              "WAL-CLM-LETS-000030",
+              "WAL-CLM-RARE-000231",
+              "WAL-CLM-RARE-000269"
             ]
           }
         ],
@@ -64523,7 +65624,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           }
         ],
         record_claim_count: 1,
-        search: [],
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000032"
+            ]
+          }
+        ],
         related_conditions: [
           "diarrhea",
           "insomnia",
@@ -64697,27 +65805,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000041"
-            ]
-          },
-          {
             kind: "toxicity_sign",
             claim_ids: [
               "WAL-CLM-IMMORT-000169",
               "WAL-CLM-IMMORT-000170"
             ]
-          },
+          }
+        ],
+        record_claim_count: 2,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000002"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000041"
+            ]
           }
         ],
-        record_claim_count: 4,
-        search: [],
         related_conditions: [
           "cerebral_palsy",
           "birth_defects",
@@ -64816,23 +65925,30 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000036",
-              "WAL-CLM-EPIGEN-000040",
-              "WAL-CLM-EPIGEN-000109"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000379"
+              "WAL-CLM-EPIGEN-000040"
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 2,
         search: [
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000379"
+            ]
+          },
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000508"
+              "WAL-CLM-DDDL-000508",
+              "WAL-CLM-IMMORT-000307"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000109",
+              "WAL-CLM-LETS-000035"
             ]
           }
         ],
@@ -64874,14 +65990,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000107",
-              "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000109"
+              "WAL-CLM-IMMORT-000099"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000107",
+              "WAL-CLM-IMMORT-000109",
+              "WAL-CLM-RARE-000347"
+            ]
+          }
+        ],
         related_conditions: [
           "anemia",
           "blind_rage",
@@ -64930,8 +66053,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000031",
-              "WAL-CLM-RARE-000229"
+              "WAL-CLM-EPIGEN-000031"
             ]
           },
           {
@@ -64941,12 +66063,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 2,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000380"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000229"
             ]
           }
         ],
@@ -65038,17 +66166,34 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000034",
-              "WAL-CLM-EPIGEN-000046"
+              "WAL-CLM-EPIGEN-000034"
             ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000382"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000046"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-LETS-000499"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000214"
             ]
           }
         ],
@@ -65135,64 +66280,82 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000083",
-              "WAL-CLM-IMMORT-000088",
               "WAL-CLM-IMMORT-000129",
               "WAL-CLM-IMMORT-000131"
             ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000397",
-              "WAL-CLM-DDDL-000515"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000543",
-              "WAL-CLM-IMMORT-000019"
-            ]
-          },
-          {
-            kind: "personal_anecdote",
-            claim_ids: [
-              "WAL-CLM-DDDL-000554"
-            ]
-          },
-          {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000515"
-            ]
-          },
-          {
-            kind: "quote",
-            claim_ids: [
-              "WAL-CLM-HELLS-000083"
-            ]
           }
         ],
-        record_claim_count: 11,
+        record_claim_count: 2,
         search: [
           {
             facet: "stance",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000478"
+              "WAL-CLM-EPIGEN-000478",
+              "WAL-CLM-HELLS-000082",
+              "WAL-CLM-IMMORT-000515"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000543",
               "WAL-CLM-EPIGEN-000011",
-              "WAL-CLM-IMMORT-000012"
+              "WAL-CLM-HELLS-000055",
+              "WAL-CLM-HELLS-000093",
+              "WAL-CLM-IMMORT-000012",
+              "WAL-CLM-IMMORT-000019"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000397",
+              "WAL-CLM-DDDL-000515",
               "WAL-CLM-LETS-000384"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000226",
+              "WAL-CLM-HELLS-000021"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000083",
+              "WAL-CLM-HELLS-000045",
+              "WAL-CLM-IMMORT-000088",
+              "WAL-CLM-IMMORT-000344"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000222",
+              "WAL-CLM-HELLS-000095"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000202",
+              "WAL-CLM-HELLS-000030"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-HELLS-000029",
+              "WAL-CLM-HELLS-000064",
+              "WAL-CLM-HELLS-000083"
+            ]
+          },
+          {
+            facet: "biography",
+            claim_ids: [
+              "WAL-CLM-DDDL-000554"
             ]
           }
         ],
@@ -65394,16 +66557,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "toxicity_sign",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-IMMORT-000123"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "cancer",
           "liver_cancer",
@@ -65569,12 +66732,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000050"
-            ]
-          },
-          {
             kind: "definition",
             claim_ids: [
               "WAL-CLM-LETS-000117"
@@ -65587,8 +66744,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 6,
-        search: [],
+        record_claim_count: 5,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000196"
+            ]
+          },
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000050"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-DDDL-000156"
+            ]
+          }
+        ],
         related_conditions: [
           "arthritis",
           "osteoporosis",
@@ -65683,10 +66859,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000031",
-              "WAL-CLM-IMMORT-000063",
               "WAL-CLM-LETS-000004",
-              "WAL-CLM-LETS-000039",
-              "WAL-CLM-RARE-000230"
+              "WAL-CLM-LETS-000039"
             ]
           },
           {
@@ -65702,8 +66876,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 7,
-        search: [],
+        record_claim_count: 5,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000032",
+              "WAL-CLM-IMMORT-000063",
+              "WAL-CLM-RARE-000230"
+            ]
+          }
+        ],
         related_conditions: [
           "osteoporosis",
           "arthritis",
@@ -65737,16 +66920,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "calcium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-IMMORT-000063"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "ankylosing_spondylitis",
           "compression_fractures",
@@ -65818,109 +67001,61 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000032",
               "WAL-CLM-EPIGEN-000031",
-              "WAL-CLM-EPIGEN-000032",
-              "WAL-CLM-EPIGEN-000061",
-              "WAL-CLM-IMMORT-000063",
-              "WAL-CLM-IMMORT-000076",
-              "WAL-CLM-IMMORT-000139",
-              "WAL-CLM-LETS-000004",
-              "WAL-CLM-RARE-000011",
-              "WAL-CLM-RARE-000230",
-              "WAL-CLM-RARE-000232"
-            ]
-          },
-          {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000024"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000060",
-              "WAL-CLM-DDDL-000461",
-              "WAL-CLM-DDDL-000470",
-              "WAL-CLM-DDDL-000523"
+              "WAL-CLM-RARE-000011"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000133",
-              "WAL-CLM-LETS-000483"
+              "WAL-CLM-DDDL-000133"
             ]
           },
           {
             kind: "prognosis",
             claim_ids: [
-              "WAL-CLM-DDDL-000129",
-              "WAL-CLM-DDDL-000398"
-            ]
-          },
-          {
-            kind: "contraindication",
-            claim_ids: [
-              "WAL-CLM-DDDL-000061"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-IAIYH-000002",
-              "WAL-CLM-LETS-000001",
-              "WAL-CLM-RARE-000105"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000451",
-              "WAL-CLM-LETS-000079",
-              "WAL-CLM-RARE-000082"
+              "WAL-CLM-DDDL-000129"
             ]
           },
           {
             kind: "interaction",
             claim_ids: [
-              "WAL-CLM-RARE-000086",
-              "WAL-CLM-RARE-000206"
-            ]
-          },
-          {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-DDDL-000009"
-            ]
-          },
-          {
-            kind: "quote",
-            claim_ids: [
-              "WAL-CLM-DDDL-000059"
+              "WAL-CLM-RARE-000086"
             ]
           }
         ],
-        record_claim_count: 31,
+        record_claim_count: 6,
         search: [
           {
             facet: "stance",
             claim_ids: [
-              "WAL-CLM-DDDL-000058"
+              "WAL-CLM-DDDL-000058",
+              "WAL-CLM-DDDL-000087",
+              "WAL-CLM-DDDL-000155",
+              "WAL-CLM-DDDL-000253",
+              "WAL-CLM-LETS-000001",
+              "WAL-CLM-RARE-000105"
             ]
           },
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000451",
               "WAL-CLM-DDDL-000555",
+              "WAL-CLM-EPIGEN-000405",
               "WAL-CLM-IAIYH-000001",
               "WAL-CLM-LETS-000522",
-              "WAL-CLM-RARE-000275"
+              "WAL-CLM-RARE-000275",
+              "WAL-CLM-RARE-000367"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000060",
+              "WAL-CLM-DDDL-000461",
               "WAL-CLM-DDDL-000462",
+              "WAL-CLM-DDDL-000470",
+              "WAL-CLM-DDDL-000523",
               "WAL-CLM-IAIYH-000004",
               "WAL-CLM-LETS-000051",
               "WAL-CLM-LETS-000391"
@@ -65929,13 +67064,70 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000399"
+              "WAL-CLM-DDDL-000009",
+              "WAL-CLM-DDDL-000061",
+              "WAL-CLM-DDDL-000105",
+              "WAL-CLM-DDDL-000152",
+              "WAL-CLM-DDDL-000154",
+              "WAL-CLM-DDDL-000398",
+              "WAL-CLM-DDDL-000399",
+              "WAL-CLM-EPIGEN-000034",
+              "WAL-CLM-HELLS-000084",
+              "WAL-CLM-LETS-000023",
+              "WAL-CLM-LETS-000024",
+              "WAL-CLM-LETS-000483",
+              "WAL-CLM-RARE-000206"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000149",
+              "WAL-CLM-EPIGEN-000032",
+              "WAL-CLM-EPIGEN-000061",
+              "WAL-CLM-IMMORT-000063",
+              "WAL-CLM-IMMORT-000076",
+              "WAL-CLM-IMMORT-000139",
+              "WAL-CLM-IMMORT-000324",
+              "WAL-CLM-LETS-000004",
+              "WAL-CLM-LETS-000079",
+              "WAL-CLM-RARE-000082",
+              "WAL-CLM-RARE-000230",
+              "WAL-CLM-RARE-000232",
+              "WAL-CLM-RARE-000341"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-IAIYH-000002"
+            ]
+          },
+          {
+            facet: "sources",
+            claim_ids: [
+              "WAL-CLM-DDDL-000250"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000059",
+              "WAL-CLM-EPIGEN-000235"
             ]
           },
           {
             facet: "big_question",
             claim_ids: [
-              "WAL-CLM-DDDL-000403"
+              "WAL-CLM-DDDL-000403",
+              "WAL-CLM-IMMORT-000124"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-DDDL-000156",
+              "WAL-CLM-EPIGEN-000236"
             ]
           }
         ],
@@ -65971,22 +67163,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "toxicity_sign",
+            facet: "warning",
             claim_ids: [
-              "WAL-CLM-IMMORT-000123"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
+              "WAL-CLM-IMMORT-000123",
               "WAL-CLM-RARE-000134"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "cancer",
           "liver_cancer",
@@ -66012,16 +67199,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "toxicity_sign",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-IMMORT-000121"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "dental_fluorosis"
         ],
@@ -66094,23 +67281,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "calcium",
           "magnesium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-IAIYH-000001"
+            ]
+          },
+          {
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-IAIYH-000004",
               "WAL-CLM-LETS-000390"
             ]
           },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IAIYH-000001"
-            ]
-          }
-        ],
-        record_claim_count: 3,
-        search: [
           {
             facet: "basics",
             claim_ids: [
@@ -66158,6 +67344,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000393"
             ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000366"
+            ]
           }
         ],
         related_conditions: [],
@@ -66193,7 +67385,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-LETS-000203",
               "WAL-CLM-LETS-000394"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000303"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000150"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-LETS-000519"
             ]
           }
         ],
@@ -66214,16 +67425,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
+            facet: "uses",
             claim_ids: [
               "WAL-CLM-LETS-000187"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "brain_cancer",
           "breast_cancer",
@@ -66298,7 +67509,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           }
         ],
         record_claim_count: 1,
-        search: [],
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000269"
+            ]
+          }
+        ],
         related_conditions: [
           "adrenoleukodystrophy",
           "als",
@@ -66347,22 +67565,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000109",
-              "WAL-CLM-IMMORT-000064",
               "WAL-CLM-IMMORT-000088"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000078",
-              "WAL-CLM-DDDL-000537"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000500"
             ]
           },
           {
@@ -66370,16 +67573,37 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-RARE-000105"
             ]
+          }
+        ],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000500"
+            ]
           },
           {
-            kind: "prevalence",
+            facet: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000435"
+              "WAL-CLM-DDDL-000078"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000435",
+              "WAL-CLM-EPIGEN-000109",
+              "WAL-CLM-IMMORT-000064"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000537"
             ]
           }
         ],
-        record_claim_count: 8,
-        search: [],
         related_conditions: [
           "anxiety",
           "bells_palsy",
@@ -66425,8 +67649,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-LETS-000010",
-              "WAL-CLM-LETS-000044",
-              "WAL-CLM-RARE-000264"
+              "WAL-CLM-LETS-000044"
             ]
           },
           {
@@ -66436,8 +67659,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 4,
-        search: [],
+        record_claim_count: 3,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000264"
+            ]
+          }
+        ],
         related_conditions: [
           "anorexia",
           "depression",
@@ -66515,12 +67745,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000018"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000396"
@@ -66533,8 +67757,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000018"
+            ]
+          }
+        ],
         related_conditions: [
           "anorexia",
           "schizophrenia"
@@ -66567,7 +67798,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-RARE-000227",
               "WAL-CLM-RARE-000270"
             ]
           },
@@ -66576,16 +67806,24 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-IMMORT-000167"
             ]
-          },
+          }
+        ],
+        record_claim_count: 2,
+        search: [
           {
-            kind: "interaction",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-RARE-000087"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000227",
+              "WAL-CLM-RARE-000269"
+            ]
           }
         ],
-        record_claim_count: 4,
-        search: [],
         related_conditions: [
           "als",
           "multiple_sclerosis",
@@ -66619,16 +67857,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000346"
         ],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000346"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "lice"
         ],
@@ -66658,13 +67896,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000037",
-              "WAL-CLM-RARE-000235"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000388"
@@ -66677,8 +67908,53 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 4,
-        search: [],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000246",
+              "WAL-CLM-EPIGEN-000353",
+              "WAL-CLM-IMMORT-000383"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000380",
+              "WAL-CLM-IMMORT-000111"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000037",
+              "WAL-CLM-LETS-000019",
+              "WAL-CLM-RARE-000235"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000244"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000250",
+              "WAL-CLM-HELLS-000031",
+              "WAL-CLM-IMMORT-000384",
+              "WAL-CLM-IMMORT-000387"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000249"
+            ]
+          }
+        ],
         related_conditions: [
           "dementia",
           "anorexia",
@@ -66734,20 +68010,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "toxicity_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000005",
-              "WAL-CLM-LETS-000007"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-LETS-000100"
             ]
           }
         ],
-        record_claim_count: 3,
+        record_claim_count: 1,
         search: [
           {
             facet: "mechanism",
@@ -66770,13 +68039,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000520"
+              "WAL-CLM-DDDL-000520",
+              "WAL-CLM-LETS-000005",
+              "WAL-CLM-LETS-000007"
             ]
           },
           {
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000454"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000046"
             ]
           },
           {
@@ -66855,20 +68132,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000285"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-IAIYH-000003",
               "WAL-CLM-IMMORT-000019"
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 4,
         search: [
           {
             facet: "stance",
@@ -66879,7 +68149,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000574"
+              "WAL-CLM-DDDL-000574",
+              "WAL-CLM-IAIYH-000003"
             ]
           },
           {
@@ -66887,6 +68158,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000511",
               "WAL-CLM-DDDL-000550",
+              "WAL-CLM-LETS-000285",
               "WAL-CLM-LETS-000398"
             ]
           },
@@ -66988,24 +68260,29 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000062",
-              "WAL-CLM-EPIGEN-000108",
               "WAL-CLM-IMMORT-000063",
               "WAL-CLM-IMMORT-000088"
             ]
-          },
-          {
-            kind: "interaction",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000487"
-            ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 3,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000351"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000487"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000108"
             ]
           }
         ],
@@ -67046,16 +68323,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-c",
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000410"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "quinsy"
         ],
@@ -67086,16 +68363,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000040",
-              "WAL-CLM-EPIGEN-000077",
               "WAL-CLM-IMMORT-000082",
-              "WAL-CLM-IMMORT-000083",
+              "WAL-CLM-IMMORT-000083"
+            ]
+          }
+        ],
+        record_claim_count: 3,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000077"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
               "WAL-CLM-RARE-000115",
               "WAL-CLM-RARE-000238"
             ]
           }
         ],
-        record_claim_count: 6,
-        search: [],
         related_conditions: [
           "anemia",
           "anorexia",
@@ -67179,18 +68467,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-b2"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-LETS-000029"
+            ]
+          },
+          {
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000036",
-              "WAL-CLM-LETS-000029",
               "WAL-CLM-RARE-000234"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
         related_conditions: [
           "dermatitis",
           "anemia",
@@ -67245,35 +68538,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000083",
-              "WAL-CLM-IMMORT-000129",
-              "WAL-CLM-IMMORT-000213",
-              "WAL-CLM-LETS-000004",
-              "WAL-CLM-LETS-000014",
-              "WAL-CLM-LETS-000023"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000549"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-RARE-000211"
+              "WAL-CLM-LETS-000004"
             ]
           }
         ],
-        record_claim_count: 8,
+        record_claim_count: 1,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000129"
+            ]
+          },
           {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-RARE-000035",
               "WAL-CLM-RARE-000036",
-              "WAL-CLM-RARE-000040"
+              "WAL-CLM-RARE-000040",
+              "WAL-CLM-RARE-000211",
+              "WAL-CLM-RARE-000340"
             ]
           },
           {
@@ -67283,10 +68567,38 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000252",
+              "WAL-CLM-DDDL-000549",
+              "WAL-CLM-LETS-000023"
+            ]
+          },
+          {
             facet: "physiology",
             claim_ids: [
+              "WAL-CLM-DDDL-000243",
+              "WAL-CLM-EPIGEN-000083",
               "WAL-CLM-IMMORT-000016",
+              "WAL-CLM-IMMORT-000213",
+              "WAL-CLM-IMMORT-000270",
+              "WAL-CLM-LETS-000014",
               "WAL-CLM-RARE-000037"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-DDDL-000254",
+              "WAL-CLM-EPIGEN-000230"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000331",
+              "WAL-CLM-HELLS-000029",
+              "WAL-CLM-HELLS-000064"
             ]
           }
         ],
@@ -67366,16 +68678,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "selenium",
           "vitamin-c"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000340"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "lead_poisoning"
         ],
@@ -67423,31 +68735,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000590",
-              "WAL-CLM-DDDL-000591"
-            ]
-          },
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000061",
-              "WAL-CLM-EPIGEN-000108",
-              "WAL-CLM-IMMORT-000064"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000388"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000441",
-              "WAL-CLM-DDDL-000545"
             ]
           },
           {
@@ -67457,20 +68747,39 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 9,
+        record_claim_count: 2,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000332",
-              "WAL-CLM-DDDL-000334"
+              "WAL-CLM-DDDL-000334",
+              "WAL-CLM-DDDL-000441",
+              "WAL-CLM-DDDL-000545"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000389",
+              "WAL-CLM-DDDL-000590",
+              "WAL-CLM-DDDL-000591",
+              "WAL-CLM-LETS-000244",
               "WAL-CLM-LETS-000402"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000061",
+              "WAL-CLM-EPIGEN-000108",
+              "WAL-CLM-IMMORT-000064"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-LETS-000498"
             ]
           }
         ],
@@ -67557,6 +68866,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000404"
             ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000317"
+            ]
           }
         ],
         related_conditions: [],
@@ -67610,17 +68925,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "chromium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000062",
               "WAL-CLM-IMMORT-000088"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "adhd",
           "atherosclerosis",
@@ -67671,6 +68986,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000407"
             ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000245"
+            ]
           }
         ],
         related_conditions: [
@@ -67697,16 +69018,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-b6"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000407"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "eclampsia",
           "preeclampsia"
@@ -67733,13 +69054,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-IMMORT-000064",
+              "WAL-CLM-IMMORT-000064"
+            ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
               "WAL-CLM-IMMORT-000076"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "anemia",
           "arthritis",
@@ -67780,27 +69107,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "selenium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "stance",
             claim_ids: [
               "WAL-CLM-IMMORT-000011"
             ]
           },
           {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-HELLS-000087",
-              "WAL-CLM-LETS-000184"
-            ]
-          }
-        ],
-        record_claim_count: 3,
-        search: [
-          {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-LETS-000184",
               "WAL-CLM-LETS-000185"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-HELLS-000087"
             ]
           }
         ],
@@ -67840,16 +69166,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000108"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000324"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "carpal_tunnel_syndrome",
           "convulsions",
@@ -67912,41 +69239,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-e",
           "zinc"
         ],
-        record: [
-          {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000582",
-              "WAL-CLM-DDDL-000583",
-              "WAL-CLM-DDDL-000584"
-            ]
-          },
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000059"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000482",
-              "WAL-CLM-DDDL-000559",
-              "WAL-CLM-DDDL-000586"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000391"
-            ]
-          }
-        ],
-        record_claim_count: 8,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000391",
               "WAL-CLM-DDDL-000480"
             ]
           },
@@ -67954,8 +69253,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000387",
+              "WAL-CLM-DDDL-000482",
+              "WAL-CLM-DDDL-000559",
+              "WAL-CLM-DDDL-000582",
+              "WAL-CLM-DDDL-000583",
+              "WAL-CLM-DDDL-000584",
               "WAL-CLM-DDDL-000585",
+              "WAL-CLM-DDDL-000586",
               "WAL-CLM-LETS-000409"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000349"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000059"
             ]
           },
           {
@@ -67967,7 +69284,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "uses",
             claim_ids: [
-              "WAL-CLM-DDDL-000567"
+              "WAL-CLM-DDDL-000567",
+              "WAL-CLM-EPIGEN-000434"
             ]
           }
         ],
@@ -68004,22 +69322,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-b12"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-LETS-000035"
-            ]
-          },
-          {
-            kind: "toxicity_sign",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-LETS-000005"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-LETS-000035"
+            ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "depression",
           "achlorhydria",
@@ -68160,27 +69478,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-c",
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000511",
-              "WAL-CLM-LETS-000398"
-            ]
-          },
-          {
-            kind: "definition",
+            facet: "stance",
             claim_ids: [
               "WAL-CLM-LETS-000001"
             ]
-          }
-        ],
-        record_claim_count: 3,
-        search: [
+          },
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000290"
+              "WAL-CLM-DDDL-000511",
+              "WAL-CLM-LETS-000290",
+              "WAL-CLM-LETS-000398"
             ]
           }
         ],
@@ -68291,16 +69603,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000411"
         ],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000411"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "tularemia"
         ],
@@ -68399,15 +69711,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "tryptophan",
           "vitamin-e"
         ],
-        record: [
-          {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000598"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "stance",
@@ -68418,6 +69723,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000598",
               "WAL-CLM-LETS-000415"
             ]
           },
@@ -68504,20 +69810,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           },
           {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000574"
-            ]
-          },
-          {
             kind: "definition",
             claim_ids: [
               "WAL-CLM-RARE-000105"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000574"
+            ]
+          }
+        ],
         related_conditions: [
           "dowagers_hump",
           "hypertension",
@@ -68600,7 +69907,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           }
         ],
         record_claim_count: 2,
-        search: [],
+        search: [
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-HELLS-000088"
+            ]
+          }
+        ],
         related_conditions: [
           "anorexia",
           "congestive_heart_failure",
@@ -68647,17 +69961,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-DDDL-000026",
-              "WAL-CLM-EPIGEN-000099"
+              "WAL-CLM-DDDL-000026"
             ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "stance",
             claim_ids: [
               "WAL-CLM-RARE-000177"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000099"
             ]
           }
         ],
@@ -68740,30 +70059,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000032",
-              "WAL-CLM-EPIGEN-000061",
-              "WAL-CLM-IMMORT-000064",
-              "WAL-CLM-RARE-000230"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000483"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000467"
+              "WAL-CLM-EPIGEN-000061"
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 2,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000369"
+              "WAL-CLM-DDDL-000369",
+              "WAL-CLM-IMMORT-000483"
             ]
           },
           {
@@ -68771,6 +70077,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000383",
               "WAL-CLM-DDDL-000414"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000467",
+              "WAL-CLM-IMMORT-000064",
+              "WAL-CLM-RARE-000230"
             ]
           }
         ],
@@ -68852,7 +70166,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000418"
+              "WAL-CLM-LETS-000418",
+              "WAL-CLM-LETS-000425"
             ]
           }
         ],
@@ -68890,20 +70205,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-LETS-000146",
               "WAL-CLM-LETS-000419"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000050",
               "WAL-CLM-IMMORT-000496"
             ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000146"
+            ]
           }
         ],
-        record_claim_count: 4,
-        search: [],
         related_conditions: [
           "arthritis",
           "cardiovascular_disease",
@@ -68950,18 +70271,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000172"
-            ]
-          },
-          {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000032",
               "WAL-CLM-LETS-000004",
-              "WAL-CLM-LETS-000039",
-              "WAL-CLM-RARE-000230"
+              "WAL-CLM-LETS-000039"
             ]
           },
           {
@@ -68978,13 +70291,46 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 8,
+        record_claim_count: 5,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000221"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000172",
               "WAL-CLM-LETS-000413",
               "WAL-CLM-LETS-000420"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000032",
+              "WAL-CLM-RARE-000230"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000224",
+              "WAL-CLM-RARE-000342"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000223"
+            ]
+          },
+          {
+            facet: "etymology",
+            claim_ids: [
+              "WAL-CLM-HELLS-000028"
             ]
           }
         ],
@@ -69128,19 +70474,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-e",
           "zinc"
         ],
-        record: [
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000427",
-              "WAL-CLM-DDDL-000436",
-              "WAL-CLM-DDDL-000437",
-              "WAL-CLM-DDDL-000439",
-              "WAL-CLM-DDDL-000442"
-            ]
-          }
-        ],
-        record_claim_count: 5,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "mechanism",
@@ -69154,8 +70489,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000337",
+              "WAL-CLM-DDDL-000427",
               "WAL-CLM-DDDL-000430",
-              "WAL-CLM-DDDL-000440"
+              "WAL-CLM-DDDL-000436",
+              "WAL-CLM-DDDL-000437",
+              "WAL-CLM-DDDL-000439",
+              "WAL-CLM-DDDL-000440",
+              "WAL-CLM-DDDL-000442"
             ]
           },
           {
@@ -69261,16 +70601,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-IMMORT-000096"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-LETS-000181"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "cancer",
           "colon_cancer",
@@ -69310,6 +70651,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000424"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-RARE-000361"
             ]
           }
         ],
@@ -69399,32 +70746,41 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000388"
-            ]
-          },
-          {
-            kind: "contraindication",
-            claim_ids: [
-              "WAL-CLM-RARE-000175"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-LETS-000117"
-            ]
-          },
-          {
             kind: "diagnostic_pattern",
             claim_ids: [
               "WAL-CLM-RARE-000081"
             ]
           }
         ],
-        record_claim_count: 4,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000188",
+              "WAL-CLM-RARE-000129"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000388"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-RARE-000175"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-LETS-000117",
+              "WAL-CLM-LETS-000506"
+            ]
+          }
+        ],
         related_conditions: [
           "alcoholism",
           "depression",
@@ -69477,14 +70833,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000061",
-              "WAL-CLM-IMMORT-000064"
+              "WAL-CLM-EPIGEN-000061"
             ]
           },
           {
             kind: "mechanism",
             claim_ids: [
-              "WAL-CLM-IAIYH-000017",
               "WAL-CLM-RARE-000403"
             ]
           },
@@ -69495,7 +70849,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 5,
+        record_claim_count: 3,
         search: [
           {
             facet: "stance",
@@ -69506,13 +70860,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             facet: "mechanism",
             claim_ids: [
-              "WAL-CLM-DDDL-000401"
+              "WAL-CLM-DDDL-000401",
+              "WAL-CLM-IAIYH-000017"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000426"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000064"
             ]
           }
         ],
@@ -69563,20 +70924,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "selenium",
           "vitamin-e"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-RARE-000269"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000427"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000269"
             ]
           }
         ],
@@ -69616,22 +70976,47 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-c"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-EPIGEN-000043"
             ]
           },
           {
-            kind: "protocol",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-LETS-000428"
             ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000205"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000210"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000282"
+            ]
+          },
+          {
+            facet: "etymology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000212",
+              "WAL-CLM-IMMORT-000283"
+            ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "anorexia",
           "bleeding_gums",
@@ -69712,22 +71097,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-e",
           "zinc"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000036",
-              "WAL-CLM-EPIGEN-000108",
-              "WAL-CLM-RARE-000234"
-            ]
-          }
-        ],
-        record_claim_count: 3,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000430"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000036",
+              "WAL-CLM-EPIGEN-000108",
+              "WAL-CLM-RARE-000234"
             ]
           }
         ],
@@ -69839,37 +71223,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000602"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000329",
-              "WAL-CLM-LETS-000215"
-            ]
-          },
-          {
             kind: "definition",
             claim_ids: [
-              "WAL-CLM-DDDL-000560",
               "WAL-CLM-RARE-000388"
-            ]
-          },
-          {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-DDDL-000558"
             ]
           }
         ],
-        record_claim_count: 6,
+        record_claim_count: 1,
         search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-DDDL-000560"
+            ]
+          },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000278",
+              "WAL-CLM-DDDL-000329",
+              "WAL-CLM-DDDL-000602",
+              "WAL-CLM-LETS-000215",
               "WAL-CLM-LETS-000300",
               "WAL-CLM-LETS-000432"
             ]
@@ -69878,7 +71252,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000328",
-              "WAL-CLM-DDDL-000362"
+              "WAL-CLM-DDDL-000362",
+              "WAL-CLM-DDDL-000558"
             ]
           }
         ],
@@ -69914,13 +71289,20 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-RARE-000223",
               "WAL-CLM-RARE-000270"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000223",
+              "WAL-CLM-RARE-000269"
+            ]
+          }
+        ],
         related_conditions: [
           "anemia",
           "adrenoleukodystrophy",
@@ -69966,7 +71348,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           }
         ],
         record_claim_count: 2,
-        search: [],
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000269"
+            ]
+          }
+        ],
         related_conditions: [
           "adrenoleukodystrophy",
           "als",
@@ -70028,16 +71417,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "calcium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000472"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "insomnia"
         ],
@@ -70178,21 +71567,45 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-DDDL-000039",
+              "WAL-CLM-LETS-000010"
+            ]
+          }
+        ],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000359"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000191"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
               "WAL-CLM-DDDL-000042",
               "WAL-CLM-EPIGEN-000041",
-              "WAL-CLM-LETS-000010",
               "WAL-CLM-RARE-000239"
             ]
           },
           {
-            kind: "protocol",
+            facet: "uses",
             claim_ids: [
-              "WAL-CLM-LETS-000359"
+              "WAL-CLM-RARE-000326"
+            ]
+          },
+          {
+            facet: "discovery",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000193"
             ]
           }
         ],
-        record_claim_count: 6,
-        search: [],
         related_conditions: [
           "birth_defects",
           "anemia",
@@ -70350,22 +71763,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-LETS-000187"
-            ]
-          },
-          {
-            kind: "prevalence",
+            facet: "stance",
             claim_ids: [
               "WAL-CLM-IMMORT-000497"
             ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-LETS-000187"
+            ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "cancer",
           "brain_cancer",
@@ -70405,7 +71818,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000039",
               "WAL-CLM-LETS-000027"
             ]
           },
@@ -70416,8 +71828,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000039"
+            ]
+          }
+        ],
         related_conditions: [
           "depression",
           "acne",
@@ -70583,12 +72002,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000059"
-            ]
-          },
-          {
             kind: "toxicity_sign",
             claim_ids: [
               "WAL-CLM-IMMORT-000155"
@@ -70597,15 +72010,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-IMMORT-000397",
-              "WAL-CLM-LETS-000317",
               "WAL-CLM-RARE-000202"
-            ]
-          },
-          {
-            kind: "diagnostic_pattern",
-            claim_ids: [
-              "WAL-CLM-DDDL-000396"
             ]
           },
           {
@@ -70615,13 +72020,34 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 7,
+        record_claim_count: 3,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000355",
+              "WAL-CLM-LETS-000317",
               "WAL-CLM-LETS-000439"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-DDDL-000396",
+              "WAL-CLM-EPIGEN-000059"
+            ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000279",
+              "WAL-CLM-IMMORT-000397"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000342"
             ]
           }
         ],
@@ -70658,16 +72084,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000269"
         ],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000269"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "eye_redness"
         ],
@@ -70736,6 +72162,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000341",
               "WAL-CLM-LETS-000442"
             ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000434"
+            ]
           }
         ],
         related_conditions: [],
@@ -70765,20 +72197,25 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-b3",
           "vitamin-b5"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000038"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000443"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000038"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-LETS-000519"
             ]
           }
         ],
@@ -71019,6 +72456,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000349"
             ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-RARE-000332"
+            ]
           }
         ],
         related_conditions: [],
@@ -71045,11 +72488,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000032",
               "WAL-CLM-EPIGEN-000098",
               "WAL-CLM-IMMORT-000064",
-              "WAL-CLM-LETS-000004",
-              "WAL-CLM-RARE-000172"
+              "WAL-CLM-LETS-000004"
             ]
           },
           {
@@ -71059,8 +72500,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 6,
-        search: [],
+        record_claim_count: 4,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000032",
+              "WAL-CLM-RARE-000172"
+            ]
+          }
+        ],
         related_conditions: [
           "bone_spurs",
           "arthritis",
@@ -71125,16 +72574,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
+            facet: "uses",
             claim_ids: [
               "WAL-CLM-LETS-000187"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "brain_cancer",
           "breast_cancer",
@@ -71221,6 +72670,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000450"
             ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-LETS-000494"
+            ]
           }
         ],
         related_conditions: [
@@ -71246,22 +72701,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "toxicity_sign",
+            facet: "warning",
             claim_ids: [
-              "WAL-CLM-IMMORT-000123"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
+              "WAL-CLM-IMMORT-000123",
               "WAL-CLM-RARE-000134"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "cancer",
           "liver_cancer",
@@ -71292,26 +72742,33 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-RARE-000122"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-IMMORT-000230"
             ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000181"
+            ]
           },
           {
-            kind: "interaction",
+            facet: "warning",
             claim_ids: [
               "WAL-CLM-IMMORT-000184"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000122"
+            ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
         related_conditions: [
           "anemia",
           "aneurysm",
@@ -71371,36 +72828,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-a",
           "zinc"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-IMMORT-000064",
-              "WAL-CLM-LETS-000017"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000461",
-              "WAL-CLM-DDDL-000470"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000469",
-              "WAL-CLM-IAIYH-000012"
-            ]
-          },
-          {
-            kind: "prevalence",
-            claim_ids: [
-              "WAL-CLM-DDDL-000009"
-            ]
-          }
-        ],
-        record_claim_count: 7,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "stance",
@@ -71412,8 +72841,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "mechanism",
             claim_ids: [
               "WAL-CLM-DDDL-000411",
+              "WAL-CLM-DDDL-000469",
               "WAL-CLM-DDDL-000475",
-              "WAL-CLM-DDDL-000485"
+              "WAL-CLM-DDDL-000485",
+              "WAL-CLM-IAIYH-000012"
             ]
           },
           {
@@ -71421,16 +72852,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000405",
               "WAL-CLM-DDDL-000406",
+              "WAL-CLM-DDDL-000461",
               "WAL-CLM-DDDL-000465",
               "WAL-CLM-DDDL-000466",
               "WAL-CLM-DDDL-000468",
+              "WAL-CLM-DDDL-000470",
               "WAL-CLM-LETS-000451"
             ]
           },
           {
             facet: "warning",
             claim_ids: [
-              "WAL-CLM-DDDL-000393"
+              "WAL-CLM-DDDL-000009",
+              "WAL-CLM-DDDL-000393",
+              "WAL-CLM-LETS-000017"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000064"
             ]
           }
         ],
@@ -71473,23 +72914,29 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-DDDL-000026",
-              "WAL-CLM-EPIGEN-000099",
-              "WAL-CLM-EPIGEN-000108",
-              "WAL-CLM-IMMORT-000037"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-IMMORT-000226"
             ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000026"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000099",
+              "WAL-CLM-EPIGEN-000108",
+              "WAL-CLM-IMMORT-000037"
+            ]
+          }
+        ],
         related_conditions: [
           "carpal_tunnel_syndrome",
           "asthma",
@@ -71570,24 +73017,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000260"
-            ]
-          },
-          {
             kind: "definition",
             claim_ids: [
               "WAL-CLM-RARE-000388"
             ]
           }
         ],
-        record_claim_count: 2,
+        record_claim_count: 1,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000325",
+              "WAL-CLM-LETS-000260",
               "WAL-CLM-LETS-000452"
             ]
           }
@@ -71631,24 +73073,31 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-LETS-000004"
             ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-IAIYH-000003",
+              "WAL-CLM-IMMORT-000119"
+            ]
           },
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000502",
               "WAL-CLM-LETS-000453"
             ]
           },
           {
-            kind: "mechanism",
+            facet: "sources",
             claim_ids: [
-              "WAL-CLM-IAIYH-000003",
-              "WAL-CLM-IMMORT-000119"
+              "WAL-CLM-IMMORT-000122"
             ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
         related_conditions: [
           "periodontal_disease",
           "toothache",
@@ -71770,13 +73219,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000032",
-              "WAL-CLM-EPIGEN-000061",
+              "WAL-CLM-EPIGEN-000061"
+            ]
+          }
+        ],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
               "WAL-CLM-EPIGEN-000108"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
         related_conditions: [
           "convulsions",
           "muscle_cramps",
@@ -71897,14 +73352,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "deficiency_sign",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000109",
               "WAL-CLM-IMMORT-000064"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-IAIYH-000003"
             ]
           },
           {
@@ -71914,12 +73362,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 2,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-IAIYH-000003",
               "WAL-CLM-IAIYH-000009"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000109"
             ]
           }
         ],
@@ -71954,16 +73409,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         synonyms: [],
         protocol_claim_ids: [],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "definition",
+            facet: "history",
             claim_ids: [
-              "WAL-CLM-LETS-000115"
+              "WAL-CLM-LETS-000115",
+              "WAL-CLM-RARE-000395"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [],
         related: []
       },
@@ -72017,16 +73473,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "vitamin-a",
           "zinc"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000387"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "omphalocele"
         ],
@@ -72059,21 +73515,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           {
             kind: "protocol",
             claim_ids: [
-              "WAL-CLM-DDDL-000544",
-              "WAL-CLM-IMMORT-000153",
+              "WAL-CLM-IMMORT-000153"
+            ]
+          }
+        ],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "protocol",
+            claim_ids: [
               "WAL-CLM-RARE-000136"
             ]
           },
           {
-            kind: "diagnostic_pattern",
+            facet: "basics",
             claim_ids: [
               "WAL-CLM-DDDL-000540",
               "WAL-CLM-DDDL-000575"
             ]
+          },
+          {
+            facet: "uses",
+            claim_ids: [
+              "WAL-CLM-DDDL-000544"
+            ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
         related_conditions: [
           "cystitis",
           "bladder_stones"
@@ -72148,21 +73615,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "dose",
-            claim_ids: [
-              "WAL-CLM-DDDL-000599",
-              "WAL-CLM-DDDL-000600",
-              "WAL-CLM-DDDL-000601"
-            ]
-          },
-          {
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000032"
             ]
           }
         ],
-        record_claim_count: 4,
+        record_claim_count: 1,
         search: [
           {
             facet: "mechanism",
@@ -72176,7 +73635,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-DDDL-000408",
               "WAL-CLM-DDDL-000481",
-              "WAL-CLM-DDDL-000488"
+              "WAL-CLM-DDDL-000488",
+              "WAL-CLM-DDDL-000599",
+              "WAL-CLM-DDDL-000600",
+              "WAL-CLM-DDDL-000601"
             ]
           },
           {
@@ -72301,34 +73763,34 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-EPIGEN-000051",
               "WAL-CLM-EPIGEN-000063",
-              "WAL-CLM-EPIGEN-000469",
               "WAL-CLM-IMMORT-000099",
-              "WAL-CLM-IMMORT-000107",
-              "WAL-CLM-RARE-000122"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000524",
-              "WAL-CLM-LETS-000399"
-            ]
-          },
-          {
-            kind: "definition",
-            claim_ids: [
-              "WAL-CLM-DDDL-000386"
+              "WAL-CLM-IMMORT-000107"
             ]
           }
         ],
-        record_claim_count: 9,
+        record_claim_count: 4,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000455",
+              "WAL-CLM-DDDL-000524",
               "WAL-CLM-DDDL-000539",
+              "WAL-CLM-LETS-000399",
               "WAL-CLM-LETS-000460"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000469",
+              "WAL-CLM-RARE-000122"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-DDDL-000386"
             ]
           },
           {
@@ -72426,23 +73888,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             kind: "deficiency_sign",
             claim_ids: [
               "WAL-CLM-EPIGEN-000098",
-              "WAL-CLM-IMMORT-000064",
-              "WAL-CLM-RARE-000172"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-DDDL-000405",
-              "WAL-CLM-DDDL-000468"
-            ]
-          },
-          {
-            kind: "mechanism",
-            claim_ids: [
-              "WAL-CLM-DDDL-000379",
-              "WAL-CLM-DDDL-000475",
-              "WAL-CLM-IAIYH-000012"
+              "WAL-CLM-IMMORT-000064"
             ]
           },
           {
@@ -72452,21 +73898,26 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             ]
           }
         ],
-        record_claim_count: 9,
+        record_claim_count: 3,
         search: [
           {
             facet: "mechanism",
             claim_ids: [
+              "WAL-CLM-DDDL-000379",
               "WAL-CLM-DDDL-000469",
+              "WAL-CLM-DDDL-000475",
               "WAL-CLM-DDDL-000536",
-              "WAL-CLM-DDDL-000556"
+              "WAL-CLM-DDDL-000556",
+              "WAL-CLM-IAIYH-000012"
             ]
           },
           {
             facet: "protocol",
             claim_ids: [
+              "WAL-CLM-DDDL-000405",
               "WAL-CLM-DDDL-000460",
               "WAL-CLM-DDDL-000461",
+              "WAL-CLM-DDDL-000468",
               "WAL-CLM-DDDL-000470",
               "WAL-CLM-LETS-000461"
             ]
@@ -72475,6 +73926,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             facet: "warning",
             claim_ids: [
               "WAL-CLM-DDDL-000343"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000172"
             ]
           }
         ],
@@ -72538,7 +73995,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           }
         ],
         record_claim_count: 6,
-        search: [],
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000165"
+            ]
+          }
+        ],
         related_conditions: [
           "criminal_behavior",
           "blind_rage",
@@ -72587,16 +74051,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-IMMORT-000099",
               "WAL-CLM-LETS-000010"
             ]
-          },
+          }
+        ],
+        record_claim_count: 2,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000462"
             ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-RARE-000122"
+            ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
         related_conditions: [
           "anemia",
           "adhd",
@@ -72639,20 +74110,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "vitamin-b6"
         ],
-        record: [
-          {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000039"
-            ]
-          }
-        ],
-        record_claim_count: 1,
+        record: [],
+        record_claim_count: 0,
         search: [
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000265"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000039"
             ]
           }
         ],
@@ -72712,17 +74182,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         restore: [
           "sodium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "warning",
             claim_ids: [
-              "WAL-CLM-EPIGEN-000102",
               "WAL-CLM-RARE-000189"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000102"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "addisons_disease"
         ],
@@ -72765,21 +74240,39 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-EPIGEN-000041",
               "WAL-CLM-EPIGEN-000042"
             ]
+          }
+        ],
+        record_claim_count: 2,
+        search: [
+          {
+            facet: "stance",
+            claim_ids: [
+              "WAL-CLM-HELLS-000082"
+            ]
           },
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-HELLS-000093"
             ]
-          }
-        ],
-        record_claim_count: 3,
-        search: [
+          },
           {
             facet: "protocol",
             claim_ids: [
               "WAL-CLM-DDDL-000541",
               "WAL-CLM-LETS-000249"
+            ]
+          },
+          {
+            facet: "basics",
+            claim_ids: [
+              "WAL-CLM-HELLS-000095"
+            ]
+          },
+          {
+            facet: "big_question",
+            claim_ids: [
+              "WAL-CLM-HELLS-000083"
             ]
           },
           {
@@ -72822,16 +74315,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000343"
         ],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "protocol",
+            facet: "protocol",
             claim_ids: [
               "WAL-CLM-LETS-000343"
             ]
           }
         ],
-        record_claim_count: 1,
-        search: [],
         related_conditions: [
           "leptospirosis"
         ],
@@ -72857,21 +74350,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000035",
-              "WAL-CLM-RARE-000233"
-            ]
-          },
-          {
             kind: "protocol",
             claim_ids: [
               "WAL-CLM-EPIGEN-000015"
             ]
           }
         ],
-        record_claim_count: 3,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000035",
+              "WAL-CLM-RARE-000233"
+            ]
+          }
+        ],
         related_conditions: [
           "beriberi",
           "congestive_heart_failure",
@@ -72912,16 +74406,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             claim_ids: [
               "WAL-CLM-RARE-000269"
             ]
-          },
+          }
+        ],
+        record_claim_count: 1,
+        search: [
           {
-            kind: "prognosis",
+            facet: "stance",
             claim_ids: [
               "WAL-CLM-DDDL-000007"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "cardiomyopathy",
           "muscular_dystrophy",
@@ -72992,17 +74487,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "iodine",
           "selenium"
         ],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "deficiency_sign",
+            facet: "physiology",
             claim_ids: [
               "WAL-CLM-EPIGEN-000465",
               "WAL-CLM-IMMORT-000182"
             ]
           }
         ],
-        record_claim_count: 2,
-        search: [],
         related_conditions: [
           "hypothyroidism",
           "goiter",
@@ -73035,16 +74530,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "WAL-CLM-LETS-000466"
         ],
         restore: [],
-        record: [
+        record: [],
+        record_claim_count: 0,
+        search: [
           {
-            kind: "mechanism",
+            facet: "mechanism",
             claim_ids: [
               "WAL-CLM-IMMORT-000029"
             ]
-          }
-        ],
-        record_claim_count: 1,
-        search: [
+          },
           {
             facet: "protocol",
             claim_ids: [
@@ -73077,28 +74571,47 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         record: [
           {
-            kind: "deficiency_sign",
-            claim_ids: [
-              "WAL-CLM-EPIGEN-000031",
-              "WAL-CLM-RARE-000229"
-            ]
-          },
-          {
-            kind: "protocol",
-            claim_ids: [
-              "WAL-CLM-LETS-000328",
-              "WAL-CLM-LETS-000380"
-            ]
-          },
-          {
             kind: "mechanism",
             claim_ids: [
               "WAL-CLM-EPIGEN-000164"
             ]
           }
         ],
-        record_claim_count: 5,
-        search: [],
+        record_claim_count: 1,
+        search: [
+          {
+            facet: "mechanism",
+            claim_ids: [
+              "WAL-CLM-DDDL-000165"
+            ]
+          },
+          {
+            facet: "protocol",
+            claim_ids: [
+              "WAL-CLM-LETS-000328",
+              "WAL-CLM-LETS-000380"
+            ]
+          },
+          {
+            facet: "warning",
+            claim_ids: [
+              "WAL-CLM-DDDL-000169"
+            ]
+          },
+          {
+            facet: "physiology",
+            claim_ids: [
+              "WAL-CLM-EPIGEN-000031",
+              "WAL-CLM-RARE-000229"
+            ]
+          },
+          {
+            facet: "history",
+            claim_ids: [
+              "WAL-CLM-IMMORT-000286"
+            ]
+          }
+        ],
         related_conditions: [
           "night_blindness",
           "acne",
@@ -93255,8 +94768,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "diabetes",
         also_about: [
           "chromium",
-          "vanadium",
-          "selenium"
+          "vanadium"
         ],
         facet: "history",
         question: "How did Wallach first connect diabetes to a mineral deficiency?",
@@ -93455,9 +94967,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000016",
         subject: "chromium",
-        also_about: [
-          "vanadium"
-        ],
+        also_about: [],
         facet: "history",
         question: "Does chromium supplementation extend lifespan?",
         answer_short: "Yes \u2014 Wallach cites Gary Evans' study showing chromium lengthened lab animals' lifespan by 33.3%, upending the belief that only severe calorie restriction could extend life.",
@@ -93903,10 +95413,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000032",
         subject: "strontium",
-        also_about: [
-          "calcium",
-          "boron"
-        ],
+        also_about: [],
         facet: "warning",
         question: "Can a strontium deficiency cause osteoporosis?",
         answer_short: "Yes \u2014 Wallach ties a strontium shortage to the stubborn forms of osteoporosis and arthritis that don't respond to calcium and boron alone.",
@@ -93934,9 +95441,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000033",
         subject: "strontium",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is strontium?",
         answer_short: "A bone-seeking trace mineral that can stand in for calcium. Wallach considers it essential in mammals and ties its deficiency to calcium- and boron-resistant osteoporosis and arthritis.",
@@ -94134,8 +95639,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000040",
         subject: "zinc",
         also_about: [
-          "copper",
-          "iron",
           "veganism"
         ],
         facet: "sources",
@@ -94349,8 +95852,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000047",
         subject: "vanadium",
         also_about: [
-          "diabetes",
-          "chromium"
+          "diabetes"
         ],
         facet: "stance",
         question: "Can vanadium replace insulin for diabetes?",
@@ -94504,10 +96006,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "absorption",
         also_about: [
           "asthma",
-          "malabsorption",
-          "magnesium",
-          "manganese",
-          "omega-3"
+          "malabsorption"
         ],
         facet: "stance",
         question: "Are some 'diseases' really just malabsorption?",
@@ -95328,7 +96827,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         also_about: [
           "cholesterol",
           "arteriosclerosis",
-          "calcium",
           "liver_disease"
         ],
         facet: "warning",
@@ -95860,7 +97358,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000103",
         subject: "cruciferous_vegetables",
         also_about: [
-          "iodine",
           "hypothyroidism",
           "goiter"
         ],
@@ -96543,11 +98040,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000139",
         subject: "zinc",
-        also_about: [
-          "copper",
-          "selenium",
-          "vitamin-a"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is zinc?",
         answer_short: "In Wallach's framework, zinc is a foundational essential trace mineral the body must be given every day: no fewer than 70 metalloenzymes cannot function without it, so a shortage ripples across the body's whole chemistry.",
@@ -96630,8 +98123,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000144",
         subject: "zinc",
         also_about: [
-          "burns",
-          "vitamin-e"
+          "burns"
         ],
         facet: "uses",
         question: "Is zinc oxide good for sunburn and burns?",
@@ -97123,8 +98615,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "vitamin-a",
         also_about: [
           "cancer",
-          "carcinoma",
-          "vitamin-e"
+          "carcinoma"
         ],
         facet: "uses",
         question: "How does Wallach use vitamin A to fight cancer?",
@@ -97255,11 +98746,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000174",
         subject: "calcium",
-        also_about: [
-          "phosphorus",
-          "magnesium",
-          "vitamin-d"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is calcium?",
         answer_short: "Calcium is the fifth most abundant mineral in the earth's crust and the most abundant mineral in the human body \u2014 the structural mineral of bones and teeth that also powers muscle contraction, blood clotting, nerve signaling and the heartbeat.",
@@ -97340,8 +98827,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000178",
         subject: "calcium",
         also_about: [
-          "dairy",
-          "magnesium"
+          "dairy"
         ],
         facet: "sources",
         question: "Do you need dairy to get enough calcium?",
@@ -97786,7 +99272,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000200",
         subject: "chromium",
         also_about: [
-          "vanadium",
           "diabetes"
         ],
         facet: "mechanism",
@@ -97828,8 +99313,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000202",
         subject: "chromium",
         also_about: [
-          "obesity",
-          "vanadium"
+          "obesity"
         ],
         facet: "uses",
         question: "Does chromium picolinate help with weight loss?",
@@ -98023,7 +99507,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000212",
         subject: "vitamin-e",
         also_about: [
-          "vitamin-c",
           "longevity"
         ],
         facet: "history",
@@ -98207,8 +99690,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000221",
         subject: "vitamin-b3",
         also_about: [
-          "insomnia",
-          "tryptophan"
+          "insomnia"
         ],
         facet: "protocol",
         question: "Can niacin help with insomnia?",
@@ -98229,7 +99711,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "vanadium",
         also_about: [
           "diabetes",
-          "chromium",
           "hypoglycemia",
           "obesity"
         ],
@@ -98655,9 +100136,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000246",
         subject: "phosphorus",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is phosphorus?",
         answer_short: "Phosphorus is an extremely important essential mineral that Wallach says has more functions in the body than any other mineral, yet nutritionists ignore it because it is in nearly all foods.",
@@ -98676,9 +100155,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000247",
         subject: "phosphorus",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "How much phosphorus is in the human body and where is it stored?",
         answer_short: "The body holds about 800 grams of phosphorus \u2014 just under two pounds \u2014 with 700 grams locked in the bones and teeth as insoluble calcium phosphate.",
@@ -98721,9 +100198,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000249",
         subject: "phosphorus",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "sources",
         question: "How much phosphorus do we eat and how well is it absorbed?",
         answer_short: "Adults eat 1,000-1,500 mg of phosphorus a day, but absorb only 3-5% of metallic phosphorus, 40-50% of chelated forms, and up to 98% of organically bound colloidal phosphorus.",
@@ -98770,7 +100245,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "phosphorus",
         also_about: [
           "calcium",
-          "iron",
           "zinc"
         ],
         facet: "sources",
@@ -98853,9 +100327,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000255",
         subject: "sulfur",
-        also_about: [
-          "biotin"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "Which proteins in the body contain sulfur?",
         answer_short: "Sulfur is built into hemoglobin, hormones such as insulin and the adrenal cortical hormones, enzymes, and antibodies.",
@@ -98933,10 +100405,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000261",
         subject: "chloride",
         also_about: [
-          "sodium",
-          "potassium",
-          "achlorhydria",
-          "vitamin-b12"
+          "achlorhydria"
         ],
         facet: "basics",
         question: "What is Chloride?",
@@ -98982,10 +100451,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000264",
         subject: "chloride",
-        also_about: [
-          "potassium",
-          "sodium"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "What does the sweat test measure and is it really specific to cystic fibrosis?",
         answer_short: "It measures sodium, chloride, and potassium in sweat; Wallach says it is nonspecific, turning positive in 17 different diseases.",
@@ -99241,9 +100707,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "tyrosine",
         also_about: [
           "iodine",
-          "goiter",
-          "copper",
-          "molybdenum"
+          "goiter"
         ],
         facet: "physiology",
         question: "How does tyrosine relate to the thyroid and goiter?",
@@ -99307,10 +100771,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000279",
         subject: "valine",
         also_about: [
-          "lysine",
-          "threonine",
-          "leucine",
-          "isoleucine"
+          "threonine"
         ],
         facet: "uses",
         question: "What is valine's function in the body?",
@@ -99350,9 +100811,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000281",
         subject: "isoleucine",
         also_about: [
-          "leucine",
-          "valine",
-          "lysine",
           "threonine"
         ],
         facet: "uses",
@@ -99372,14 +100830,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000282",
         subject: "threonine",
-        also_about: [
-          "valine",
-          "lysine",
-          "leucine",
-          "isoleucine",
-          "tryptophan",
-          "phenylalanine"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "What does threonine do in the body?",
         answer_short: "In Wallach's function table, threonine's role is protein production\u2014it's a building block the body uses to manufacture its proteins, alongside valine, lysine, leucine, and isoleucine.",
@@ -99438,9 +100889,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000285",
         subject: "strontium",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "stance",
         question: "Does the body need strontium?",
         answer_short: "Wallach holds there is considerable evidence that strontium is an essential mineral in mammals, including humans.",
@@ -101107,8 +102556,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000350",
         subject: "kidney_stones",
         also_about: [
-          "calcium",
-          "phosphorus"
+          "calcium"
         ],
         facet: "mechanism",
         question: "Are kidney stones and bone spurs related?",
@@ -102476,9 +103924,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000401",
         subject: "sciatica",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "Can osteoporosis or bone spurs cause sciatica?",
         answer_short: "In its most severe form, Wallach says sciatica stems from advanced osteoporosis, bone spurs between the lumbar vertebrae, and vertebral arthritis \u2014 pointing at bone loss, not just a pinched nerve.",
@@ -102905,8 +104351,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000417",
         subject: "asthma",
         also_about: [
-          "food_allergy",
-          "chromium"
+          "food_allergy"
         ],
         facet: "protocol",
         question: "Can food allergies like milk, wheat, or soy trigger asthma, and how do I find out?",
@@ -103721,7 +105166,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         also_about: [
           "chromium",
           "vanadium",
-          "vitamin-d",
           "omega-3",
           "omega-6"
         ],
@@ -103756,9 +105200,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-DDDL-000447",
         subject: "gallstones",
         also_about: [
-          "high_cholesterol",
-          "chromium",
-          "vanadium"
+          "high_cholesterol"
         ],
         facet: "mechanism",
         question: "Does high cholesterol cause gallstones?",
@@ -107052,10 +108494,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-DDDL-000567",
         subject: "psoriasis",
-        also_about: [
-          "vitamin-a",
-          "vitamin-d"
-        ],
+        also_about: [],
         facet: "uses",
         question: "Are there topical or home remedies for psoriasis?",
         answer_short: "For the skin itself Wallach suggests palliative topicals \u2014 herbal washes, pureed onions, pureed cucumbers, and vitamin A & D creams.",
@@ -107239,8 +108678,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "periodontal_disease",
         also_about: [
           "receding_gums",
-          "calcium",
-          "phosphorus"
+          "calcium"
         ],
         facet: "mechanism",
         question: "Why do my teeth loosen and gums recede before I ever break a bone?",
@@ -108406,7 +109844,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000015",
         subject: "korsakoff",
         also_about: [
-          "selenium",
           "memory_loss"
         ],
         facet: "basics",
@@ -108752,7 +110189,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "absorption",
         also_about: [
           "hypochlorhydria",
-          "cobalt",
           "digestion"
         ],
         facet: "mechanism",
@@ -109570,10 +111006,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000050",
         subject: "leucine",
-        also_about: [
-          "isoleucine",
-          "valine"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is leucine?",
         answer_short: "Leucine is a branched-chain essential amino acid Wallach says is solely responsible for building muscle protein\u2014a catalyst for muscle growth that also switches on the mTOR kinase controlling cell growth.",
@@ -109627,9 +111060,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000052",
         subject: "methionine",
-        also_about: [
-          "taurine"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is methionine?",
         answer_short: "Methionine is a sulfur-containing essential amino acid; its derivative SAM is the body's main methyl donor, and it's the raw material the body uses to build cysteine, carnitine, taurine, lecithin and phosphatidylcholine.",
@@ -109657,8 +111088,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000053",
         subject: "phenylalanine",
         also_about: [
-          "tyrosine",
-          "copper"
+          "tyrosine"
         ],
         facet: "mechanism",
         question: "What does phenylalanine turn into in the body?",
@@ -110278,9 +111708,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000075",
         subject: "cerium",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "Does cerium act like calcium in the body?",
         answer_short: "Wallach says cerium can function much like calcium in all organisms \u2014 it deposits in bone and has been shown to stimulate metabolism.",
@@ -110398,9 +111826,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000079",
         subject: "dysprosium",
-        also_about: [
-          "holmium"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Where does the name dysprosium come from?",
         answer_short: "The name comes from the Greek word 'dysprositos,' meaning 'hard to get,' given by its discoverer after it was first identified in 1886.",
@@ -110424,11 +111850,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000080",
         subject: "erbium",
-        also_about: [
-          "terbium",
-          "yttrium",
-          "ytterbium"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Where does the name erbium come from?",
         answer_short: "Erbium is named for Ytterby, a village in Sweden, from the yttria that Carl Gustaf Mosander split into three fractions in 1843.",
@@ -110557,12 +111979,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000085",
         subject: "gadolinium",
-        also_about: [
-          "germanium",
-          "gallium",
-          "europium",
-          "terbium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is gadolinium?",
         answer_short: "Gadolinium is a rare-earth mineral Wallach counts among the trace elements, found naturally in rocks, plants and animals.",
@@ -110985,11 +112402,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000104",
         subject: "neodymium",
-        also_about: [
-          "praseodymium",
-          "cerium",
-          "samarium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is neodymium?",
         answer_short: "Neodymium is a 'light' rare-earth trace mineral that Wallach says is proven to enhance normal cell growth and double the lifespan of laboratory species.",
@@ -111015,7 +112428,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000105",
         subject: "nickel",
         also_about: [
-          "iron",
           "zinc"
         ],
         facet: "stance",
@@ -111207,9 +112619,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000110",
         subject: "vitamin-a",
-        also_about: [
-          "vitamin-b1"
-        ],
+        also_about: [],
         facet: "protocol",
         question: "How much vitamin A should I take daily?",
         answer_short: "Wallach's daily multiple recommends about 2,500 to 5,000 IU of vitamin A as retinol plus 5,000 to 25,000 IU as beta-carotene for adults and children over nine.",
@@ -111573,11 +112983,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000127",
         subject: "boron",
-        also_about: [
-          "calcium",
-          "copper",
-          "chromium"
-        ],
+        also_about: [],
         facet: "protocol",
         question: "How much boron should you take per day?",
         answer_short: "Wallach's daily supplement range for boron is 1 to 6 mg per 100 pounds of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
@@ -111748,10 +113154,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000134",
         subject: "manganese",
-        also_about: [
-          "magnesium",
-          "molybdenum"
-        ],
+        also_about: [],
         facet: "protocol",
         question: "How much manganese should I take each day?",
         answer_short: "In Wallach's Base Line Nutritional Supplement Program the True Supplement Need for manganese is 5 mg a day (vs. the 2.5 mg government RDA), with a 30-day pharmacologic dose range of 2 to 50 mg.",
@@ -111842,10 +113245,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000138",
         subject: "vanadium",
-        also_about: [
-          "chromium",
-          "selenium"
-        ],
+        also_about: [],
         facet: "protocol",
         question: "What is the recommended daily dose of vanadium?",
         answer_short: "Wallach's Epigenetics mineral table lists vanadium at 50-100 mcg per 100 pounds of body weight for adults and children. This figure is from the daily multiple table in his 2014 book Epigenetics.",
@@ -111868,13 +113268,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000139",
         subject: "zinc",
-        also_about: [
-          "chromium",
-          "vanadium",
-          "boron",
-          "calcium",
-          "copper"
-        ],
+        also_about: [],
         facet: "protocol",
         question: "How much zinc should I take a day?",
         answer_short: "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children. This figure is from the daily multiple table in his 2014 book Epigenetics.",
@@ -112304,7 +113698,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000160",
         subject: "cruciferous_vegetables",
         also_about: [
-          "iodine",
           "hypothyroidism",
           "goiter"
         ],
@@ -113003,8 +114396,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000188",
         subject: "selenium",
         also_about: [
-          "cystic_fibrosis",
-          "zinc"
+          "cystic_fibrosis"
         ],
         facet: "big_question",
         question: "Can cystic fibrosis actually be cured?",
@@ -113159,9 +114551,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000195",
         subject: "magnesium",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "warning",
         question: "Can you take too much magnesium?",
         answer_short: "Wallach's book reports that with healthy kidneys there is no evidence of magnesium toxicity even up to 6,000 mg a day \u2014 though he cautions that a true excess of magnesium can inhibit bone calcification.",
@@ -113210,9 +114600,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000197",
         subject: "omega-3",
-        also_about: [
-          "omega-6"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is Omega-3?",
         answer_short: "Omega-3 is one of the two fatty acids Wallach classes as truly essential \u2014 alpha-linolenic acid \u2014 a fat the body cannot make and must get from the diet.",
@@ -113274,10 +114662,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000200",
         subject: "omega-3",
-        also_about: [
-          "selenium",
-          "copper"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "Can low omega-3 cause blood clots or a heart attack?",
         answer_short: "Yes \u2014 Wallach lists coronary thrombosis as a disease caused by omega-3 deficiency, not by genetics.",
@@ -113339,9 +114724,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000203",
         subject: "omega-3",
-        also_about: [
-          "selenium"
-        ],
+        also_about: [],
         facet: "biography",
         question: "Why did Wallach take the FDA to court over omega-3?",
         answer_short: "Wallach was plaintiff in eight FDA lawsuits \u2014 up to the Supreme Court steps \u2014 to make information on omega-3, selenium, folic acid and antioxidants available to Americans.",
@@ -113406,9 +114789,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000206",
         subject: "vitamin-c",
-        also_about: [
-          "iron"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "What does vitamin C do in the body?",
         answer_short: "Vitamin C is a required cofactor for building collagen, connective tissue, cartilage, bones, teeth and blood vessels, and it improves iron absorption.",
@@ -113580,7 +114961,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000216",
         subject: "vitamin-a",
         also_about: [
-          "vitamin-d",
           "vitamin-e",
           "vitamin-k"
         ],
@@ -113654,8 +115034,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000220",
         subject: "vitamin-d",
         also_about: [
-          "calcium",
-          "phosphorus",
           "cholesterol"
         ],
         facet: "basics",
@@ -113718,8 +115096,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000223",
         subject: "vitamin-d",
         also_about: [
-          "rickets",
-          "vitamin-a"
+          "rickets"
         ],
         facet: "discovery",
         question: "How was vitamin D discovered to cure rickets?",
@@ -113761,8 +115138,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000226",
         subject: "iron",
         also_about: [
-          "anemia",
-          "copper"
+          "anemia"
         ],
         facet: "basics",
         question: "What is iron and what does it do in the body?",
@@ -113809,11 +115185,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000228",
         subject: "iron",
-        also_about: [
-          "selenium",
-          "copper",
-          "zinc"
-        ],
+        also_about: [],
         facet: "stance",
         question: "Is too much iron dangerous?",
         answer_short: "Wallach argues iron overload is falsely blamed for diseases like cirrhosis and diabetes; excess stored iron is actually caused by shortages of selenium, copper, and zinc.",
@@ -113890,9 +115262,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000232",
         subject: "calcium",
-        also_about: [
-          "phosphorus"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "How much calcium is in the human body and where is it stored?",
         answer_short: "Calcium is the most abundant mineral in the body\u2014about 1,200 g in men and 1,000 g in women\u2014with 99 percent of it stored in the bones and teeth.",
@@ -113928,8 +115298,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000234",
         subject: "calcium",
         also_about: [
-          "vitamin-d",
-          "phosphorus"
+          "vitamin-d"
         ],
         facet: "mechanism",
         question: "Does calcium need vitamin D to be absorbed?",
@@ -114084,10 +115453,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000242",
         subject: "vitamin-b2",
-        also_about: [
-          "vitamin-b6",
-          "tryptophan"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is Vitamin B2?",
         answer_short: "Vitamin B2 (riboflavin) is a water-soluble B vitamin that acts as a cofactor for the flavin coenzymes FMN and FAD, which the body needs for energy production.",
@@ -114105,10 +115471,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000243",
         subject: "vitamin-b2",
-        also_about: [
-          "vitamin-b6",
-          "tryptophan"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "What does vitamin B2 (riboflavin) do in the body?",
         answer_short: "Riboflavin is a cofactor for the flavin coenzymes FMN and FAD that drive oxidation-reduction reactions and energy production.",
@@ -114127,8 +115490,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000244",
         subject: "vitamin-b3",
         also_about: [
-          "pellagra",
-          "tryptophan"
+          "pellagra"
         ],
         facet: "basics",
         question: "What is niacin (vitamin B3)?",
@@ -114148,9 +115510,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000245",
         subject: "vitamin-b3",
-        also_about: [
-          "tryptophan"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "What does vitamin B3 (niacin) actually do in the body?",
         answer_short: "Niacin forms the coenzymes NAD and NADP, which cells use to release energy from carbohydrates, fats, and proteins.",
@@ -114447,7 +115807,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000260",
         subject: "vitamin-b9",
         also_about: [
-          "vitamin-b12",
           "anemia"
         ],
         facet: "basics",
@@ -114767,9 +116126,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000276",
         subject: "chromium",
-        also_about: [
-          "vanadium"
-        ],
+        also_about: [],
         facet: "sources",
         question: "How much chromium do you actually absorb from food?",
         answer_short: "Very little \u2014 50 to 100 mcg of inorganic chromium from food yields only 0.25 to 0.5 mcg usable, whereas 25 percent of chelated chromium is absorbed.",
@@ -114788,8 +116145,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000277",
         subject: "chromium",
         also_about: [
-          "diabetes",
-          "vanadium"
+          "diabetes"
         ],
         facet: "stance",
         question: "Is type 2 diabetes genetic or caused by a mineral deficiency?",
@@ -114826,9 +116182,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000279",
         subject: "vitamin-e",
-        also_about: [
-          "selenium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is Vitamin E?",
         answer_short: "Vitamin E is a fat-soluble antioxidant vitamin \u2014 actually a family of compounds called tocopherols \u2014 that protects cell membranes and red blood cells from oxidative damage.",
@@ -114949,10 +116303,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000285",
         subject: "vitamin-k",
-        also_about: [
-          "calcium",
-          "vitamin-d"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is Vitamin K?",
         answer_short: "Vitamin K is a fat-soluble vitamin your liver needs to make prothrombin and other blood-clotting proteins and to lay calcium down properly in bone \u2014 so it governs both normal clotting and bone strength.",
@@ -115157,9 +116508,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000298",
         subject: "inositol",
-        also_about: [
-          "choline"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is Inositol?",
         answer_short: "Inositol (myo-inositol) is a cyclic alcohol chemically similar to glucose that Wallach counts among the essential vitamins; in animals it is a major constituent of the phospholipids that build cell membranes.",
@@ -115176,9 +116525,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000299",
         subject: "inositol",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "How does inositol work in the body?",
         answer_short: "Myo-inositol triphosphate acts as a second messenger that mobilizes intracellular calcium in response to hormonal signals, and inositol is a building block of cell membranes.",
@@ -115211,10 +116558,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000301",
         subject: "inositol",
-        also_about: [
-          "choline",
-          "biotin"
-        ],
+        also_about: [],
         facet: "stance",
         question: "Does Wallach consider inositol a vitamin?",
         answer_short: "Yes \u2014 Wallach classifies inositol as one of the 16 essential vitamins for humans and non-human vertebrates.",
@@ -115389,10 +116733,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000310",
         subject: "germanium",
-        also_about: [
-          "silica",
-          "carbon"
-        ],
+        also_about: [],
         facet: "discovery",
         question: "Who discovered germanium and when?",
         answer_short: "Its existence was predicted by Mendeleev's periodic table, and the element was finally isolated in 1886 by a German chemist, Clemens Winkler, who named it germanium.",
@@ -115887,10 +117228,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000336",
         subject: "phosphorus",
         also_about: [
-          "calcium",
-          "zinc",
-          "copper",
-          "chromium",
           "veganism"
         ],
         facet: "stance",
@@ -115953,10 +117290,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000339",
         subject: "chloride",
-        also_about: [
-          "iodine",
-          "bromine"
-        ],
+        also_about: [],
         facet: "history",
         question: "Why is chlorine put in drinking water?",
         answer_short: "Since a 1918 U.S. decree, chlorine has disinfected public water\u2014Wallach notes it kills E. coli far better than bromine or iodine.",
@@ -115974,10 +117308,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000340",
         subject: "chloride",
-        also_about: [
-          "bromine",
-          "iodine"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Why is chlorine called chlorine, and what does the word mean?",
         answer_short: "Sir Humphry Davy named it in 1810 from the Greek 'chloros,' meaning green-yellow.",
@@ -115995,11 +117326,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000341",
         subject: "arginine",
-        also_about: [
-          "taurine",
-          "tyrosine",
-          "lysine"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is arginine?",
         answer_short: "Arginine is an amino acid Wallach counts among the essentials\u2014required for cell division, wound healing, ammonia excretion, immune support, and the availability of stored hormones.",
@@ -116095,11 +117422,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000347",
         subject: "taurine",
-        also_about: [
-          "methionine",
-          "arginine",
-          "tyrosine"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is taurine?",
         answer_short: "Taurine is an amino acid Wallach counts as essential -- a sulfur-based compound that conjugates bile acids, acts as an antioxidant, and is vital to the heart, muscles, eyes, and nervous system.",
@@ -116371,9 +117694,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000361",
         subject: "phenylalanine",
-        also_about: [
-          "tyrosine"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is phenylalanine?",
         answer_short: "Phenylalanine is one of the nine classic essential amino acids\u2014a nonpolar protein building block the body can't make and must get from the diet every day.",
@@ -116392,7 +117713,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         subject: "phenylalanine",
         also_about: [
           "arginine",
-          "taurine",
           "tyrosine"
         ],
         facet: "stance",
@@ -116507,7 +117827,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "WAL-CLM-EPIGEN-000368",
         subject: "tyrosine",
         also_about: [
-          "phenylalanine",
           "goiter"
         ],
         facet: "basics",
@@ -116576,10 +117895,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       {
         id: "WAL-CLM-EPIGEN-000372",
         subject: "lysine",
-        also_about: [
-          "arginine",
-          "histidine"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is lysine?",
         answer_short: "Lysine is an essential amino acid the body can't make and must get daily from the diet; it drives protein production and, through its derivative allysine, helps build the collagen and elastin that strengthen tissues and blood vessels.",
@@ -116720,10 +118036,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000381",
         subject: "leucine",
-        also_about: [
-          "isoleucine",
-          "valine"
-        ],
+        also_about: [],
         facet: "stance",
         question: "Is leucine an essential amino acid?",
         answer_short: "Yes\u2014Wallach lists leucine among the nine classic essential amino acids the body can't make itself and must get from the diet every day to prevent deficiency and disease.",
@@ -116746,14 +118059,7 @@ diarrhea, dermatitis, dementia, and death.`,
         id: "WAL-CLM-EPIGEN-000382",
         subject: "valine",
         also_about: [
-          "histidine",
-          "isoleucine",
-          "leucine",
-          "lysine",
-          "methionine",
-          "phenylalanine",
-          "threonine",
-          "tryptophan"
+          "threonine"
         ],
         facet: "stance",
         question: "Is valine an essential amino acid?",
@@ -116835,12 +118141,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000386",
         subject: "histidine",
-        also_about: [
-          "lysine",
-          "tryptophan",
-          "methionine",
-          "valine"
-        ],
+        also_about: [],
         facet: "stance",
         question: "Is histidine an essential amino acid?",
         answer_short: "Yes\u2014Wallach lists histidine among the nine classic essential amino acids, which the body can't make and must get from the diet every day to avoid deficiency disease.",
@@ -116895,10 +118196,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000389",
         subject: "isoleucine",
-        also_about: [
-          "leucine",
-          "valine"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is isoleucine?",
         answer_short: "Isoleucine is one of the nine classically essential amino acids\u2014an alpha amino acid with a hydrocarbon side chain that makes it hydrophobic, and the body uses it to build protein.",
@@ -116915,12 +118213,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000390",
         subject: "isoleucine",
-        also_about: [
-          "leucine",
-          "valine",
-          "lysine",
-          "tryptophan"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "Is isoleucine an essential amino acid?",
         answer_short: "Yes\u2014isoleucine is one of nine classically essential amino acids the human body cannot synthesize, so it must be eaten every day to prevent deficiency and disease.",
@@ -116959,16 +118252,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000392",
         subject: "threonine",
-        also_about: [
-          "histidine",
-          "isoleucine",
-          "leucine",
-          "lysine",
-          "methionine",
-          "phenylalanine",
-          "tryptophan",
-          "valine"
-        ],
+        also_about: [],
         facet: "stance",
         question: "Is threonine an essential amino acid?",
         answer_short: "Yes\u2014Wallach lists threonine among the nine classic essential amino acids the body can't make itself, so it must be eaten every day to prevent deficiency diseases.",
@@ -117166,9 +118450,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000400",
         subject: "gallium",
-        also_about: [
-          "iron"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "Does gallium act like iron in the body?",
         answer_short: "Wallach says gallium and iron-type (ferric) salts behave so alike in the body that gallium ions often stand in for iron ions in medical treatments.",
@@ -117420,9 +118702,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000412",
         subject: "bromine",
-        also_about: [
-          "iodine"
-        ],
+        also_about: [],
         facet: "discovery",
         question: "Who discovered bromine?",
         answer_short: "Wallach recounts that bromine was discovered independently by two chemists \u2014 Carl Jacob Lowig in 1825 and Antoine Balard in 1826.",
@@ -117463,9 +118743,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000414",
         subject: "lanthanum",
-        also_about: [
-          "cerium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is lanthanum?",
         answer_short: "Lanthanum (symbol La) is what Wallach calls a 'light' rare earth metal, one of the rare earths he counts among the body's essential minerals.",
@@ -117688,10 +118966,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000425",
         subject: "europium",
-        also_about: [
-          "erbium",
-          "dysprosium"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "Where is europium found in nature and in the body?",
         answer_short: "Europium is a plant-derived rare-earth trace mineral that spreads thinly through rocks, plants and animals -- and in land animals it concentrates in bone far more than in soft tissue.",
@@ -117811,9 +119086,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000431",
         subject: "yttrium",
-        also_about: [
-          "ytterbium"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "Is yttrium found in the human body?",
         answer_short: "Yes \u2014 Wallach says yttrium turns up in living tissue, accumulating in ferns among plants and settling into mammalian bone, teeth and liver.",
@@ -117898,10 +119171,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000435",
         subject: "tin",
-        also_about: [
-          "silica",
-          "germanium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is tin?",
         answer_short: "Tin (symbol Sn) is a trace mineral Wallach counts among the essential elements; chemically it sits in the fourth main group, resembling carbon, silica, germanium, and lead.",
@@ -118067,9 +119337,7 @@ diarrhea, dermatitis, dementia, and death.`,
       {
         id: "WAL-CLM-EPIGEN-000443",
         subject: "ytterbium",
-        also_about: [
-          "yttrium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is ytterbium?",
         answer_short: "Ytterbium (Yb) is a rare-earth trace element Wallach documents in rocks, soil, plants and animals -- and it concentrates in bone, teeth and liver.",
@@ -118190,7 +119458,6 @@ diarrhea, dermatitis, dementia, and death.`,
         subject: "acetylcholine",
         also_about: [
           "choline",
-          "vitamin-b5",
           "intelligence"
         ],
         facet: "basics",
@@ -118510,7 +119777,6 @@ diarrhea, dermatitis, dementia, and death.`,
           "leucine",
           "isoleucine",
           "valine",
-          "methionine",
           "threonine"
         ],
         facet: "mechanism",
@@ -119312,8 +120578,7 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
         id: "WAL-CLM-HELLS-000019",
         subject: "magnesium",
         also_about: [
-          "copper",
-          "iron"
+          "copper"
         ],
         facet: "sources",
         question: "Are cashews a good source of magnesium?",
@@ -119613,9 +120878,7 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
         id: "WAL-CLM-HELLS-000034",
         subject: "vitamin-b9",
         also_about: [
-          "anemia",
-          "vitamin-b12",
-          "iron"
+          "anemia"
         ],
         facet: "sources",
         question: "What foods are high in folic acid?",
@@ -119697,7 +120960,6 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
         id: "WAL-CLM-HELLS-000038",
         subject: "copper",
         also_about: [
-          "selenium",
           "zinc"
         ],
         facet: "sources",
@@ -119717,10 +120979,7 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
       {
         id: "WAL-CLM-HELLS-000039",
         subject: "copper",
-        also_about: [
-          "magnesium",
-          "iron"
-        ],
+        also_about: [],
         facet: "sources",
         question: "Are cashews a good source of copper?",
         answer_short: "Yes, Wallach notes a handful of cashews supplies about 30 percent of the recommended daily allowance of copper, along with magnesium and iron.",
@@ -119759,7 +121018,6 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
         id: "WAL-CLM-HELLS-000041",
         subject: "chromium",
         also_about: [
-          "vanadium",
           "diabetes",
           "hypoglycemia"
         ],
@@ -119785,9 +121043,7 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
       {
         id: "WAL-CLM-HELLS-000043",
         subject: "chromium",
-        also_about: [
-          "vanadium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "Which form of chromium is active in the body?",
         answer_short: "Only trivalent chromium is biologically active, and it does more than manage blood sugar \u2014 it also drives amino acid transport and protein synthesis.",
@@ -119808,8 +121064,6 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
         also_about: [
           "diabetes",
           "hypoglycemia",
-          "vanadium",
-          "nitrogen",
           "muscle_strength",
           "anxiety",
           "high_cholesterol"
@@ -119882,9 +121136,7 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
       {
         id: "WAL-CLM-HELLS-000047",
         subject: "potassium",
-        also_about: [
-          "sodium"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "What happens to animals that lack potassium?",
         answer_short: "Potassium-deficient rats turn hyper-alert and hyperactive and lick everything in sight \u2014 cage, equipment, each other, even urine.",
@@ -120058,9 +121310,7 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
       {
         id: "WAL-CLM-HELLS-000056",
         subject: "manganese",
-        also_about: [
-          "vitamin-e"
-        ],
+        also_about: [],
         facet: "sources",
         question: "What foods are high in manganese?",
         answer_short: "Hazelnuts (filberts) are a standout, with 24 nuts supplying ninety percent of the daily value for manganese.",
@@ -120077,12 +121327,7 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
       {
         id: "WAL-CLM-HELLS-000057",
         subject: "molybdenum",
-        also_about: [
-          "manganese",
-          "boron",
-          "copper",
-          "zinc"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "Is molybdenum essential for plants?",
         answer_short: "Wallach lists molybdenum among the micronutrients that plants require for optimal health.",
@@ -120121,8 +121366,7 @@ So aloe vera "helps" ulcers only in the sense that ancient Egyptian healers used
         id: "WAL-CLM-HELLS-000059",
         subject: "sodium",
         also_about: [
-          "chloride",
-          "vitamin-b12"
+          "chloride"
         ],
         facet: "mechanism",
         question: "Why does the body need salt?",
@@ -121565,7 +122809,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000004",
         subject: "amino_acids",
         also_about: [
-          "selenium",
           "protein",
           "muscle_strength"
         ],
@@ -121764,8 +123007,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000013",
         subject: "essential_nutrients",
         also_about: [
-          "colloidal_minerals",
-          "vitamin-a"
+          "colloidal_minerals"
         ],
         facet: "sources",
         question: "How depleted is the food supply?",
@@ -122247,9 +123489,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         subject: "arsenic",
         also_about: [
           "carpal_tunnel_syndrome",
-          "tmj",
-          "manganese",
-          "choline"
+          "tmj"
         ],
         facet: "physiology",
         question: "Can too little arsenic cause carpal tunnel syndrome?",
@@ -122348,10 +123588,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000042",
         subject: "boron",
-        also_about: [
-          "calcium",
-          "magnesium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is boron and what does it do?",
         answer_short: "Boron is one of Wallach's essential minerals \u2014 accepted as essential for humans only in 1990 \u2014 and its core job is bone metabolism, helping the body use calcium and magnesium and keeping the ovaries, testes and adrenals working properly.",
@@ -122507,9 +123744,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000051",
         subject: "macronutrients",
-        also_about: [
-          "magnesium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What are carbohydrates?",
         answer_short: "The body's convenient fuel (but not essential) - plants build them from CO2 and water by photosynthesis. Sized as single sugars, double sugars, and long chains like starch and fiber.",
@@ -122607,10 +123842,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         also_about: [
           "amino_acids",
           "nitrogen",
-          "phosphorus",
-          "iron",
-          "sulfur",
-          "cobalt",
           "protein",
           "muscle_strength"
         ],
@@ -122653,7 +123884,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000057",
         subject: "amino_acids",
         also_about: [
-          "vitamin-b3",
           "muscle_strength"
         ],
         facet: "mechanism",
@@ -123189,8 +124419,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         also_about: [
           "digestion",
           "absorption",
-          "vitamin-b12",
-          "sodium"
+          "vitamin-b12"
         ],
         facet: "mechanism",
         question: "Why can\u2019t I absorb vitamin B12?",
@@ -123306,8 +124535,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000085",
         subject: "cobalt",
         also_about: [
-          "iron",
-          "magnesium",
           "vitamin-b12"
         ],
         facet: "mechanism",
@@ -123533,9 +124760,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         subject: "ph",
         also_about: [
           "cesium",
-          "potassium",
-          "sodium",
-          "rubidium"
+          "potassium"
         ],
         facet: "basics",
         question: "What is cesium?",
@@ -123997,8 +125222,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000112",
         subject: "rare_earth_elements",
         also_about: [
-          "dysprosium",
-          "erbium"
+          "dysprosium"
         ],
         facet: "discovery",
         question: "What is dysprosium?",
@@ -124022,8 +125246,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000113",
         subject: "rare_earth_elements",
         also_about: [
-          "erbium",
-          "vanadium"
+          "erbium"
         ],
         facet: "uses",
         question: "What is erbium used for?",
@@ -124456,10 +125679,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000133",
         subject: "iron",
         also_about: [
-          "diabetes",
-          "selenium",
-          "copper",
-          "zinc"
+          "diabetes"
         ],
         facet: "warning",
         question: "Can you get too much iron?",
@@ -124491,9 +125711,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000134",
         subject: "gallium",
-        also_about: [
-          "aluminum"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is gallium - the metal that melts in your hand?",
         answer_short: "A soft, aluminum-like metal so low-melting it liquefies from your body heat, yet has the widest liquid range of any metal; named for Gallia (the Latin name for France).",
@@ -124570,8 +125788,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000137",
         subject: "rare_earth_elements",
         also_about: [
-          "gadolinium",
-          "germanium"
+          "gadolinium"
         ],
         facet: "sources",
         question: "Where is gadolinium found?",
@@ -124969,8 +126186,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         subject: "margarine",
         also_about: [
           "butter",
-          "dietary_oils",
-          "hydrogen"
+          "dietary_oils"
         ],
         facet: "stance",
         question: "Is margarine bad for you?",
@@ -125001,9 +126217,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000156",
         subject: "helium",
-        also_about: [
-          "hydrogen"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is helium?",
         answer_short: "The lightest noble gas -- so inert it forms no compounds and occurs pure in nature. After hydrogen it is the 2nd most abundant element in the universe (~7% of atoms). It was discovered on the sun before it was found on Earth -- seen in the sun's spectrum in 1868 and named from Greek Helios, 'sun.'",
@@ -125304,10 +126518,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000172",
         subject: "rare_earth_elements",
         also_about: [
-          "holmium",
-          "dysprosium",
-          "erbium",
-          "thulium"
+          "holmium"
         ],
         facet: "basics",
         question: "What is holmium?",
@@ -125566,8 +126777,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         subject: "hyperthyroidism",
         also_about: [
           "graves_disease",
-          "goiter",
-          "iodine"
+          "goiter"
         ],
         facet: "physiology",
         question: "What are the symptoms of an overactive thyroid (hyperthyroidism)?",
@@ -125699,10 +126909,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000188",
         subject: "potassium",
-        also_about: [
-          "sodium",
-          "lithium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is potassium, chemically?",
         answer_short: "A silver-white alkali metal so soft you can cut it with a knife - and is never found pure in nature; Davy first isolated it by electrolysis in 1807.",
@@ -126013,7 +127220,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000205",
         subject: "magnesium",
         also_about: [
-          "calcium",
           "arteriosclerosis"
         ],
         facet: "stance",
@@ -126070,9 +127276,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000207",
         subject: "magnesium",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "What does magnesium actually do in the body?",
         answer_short: "In Wallach's framework magnesium is required to produce and transfer energy, build proteins, contract your muscles, and fire your nerves \u2014 while too much of it can actually inhibit bone from calcifying.",
@@ -126263,7 +127467,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         subject: "phytates",
         also_about: [
           "calcium",
-          "iron",
           "zinc",
           "inositol"
         ],
@@ -127499,10 +128702,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000271",
         subject: "magnesium",
-        also_about: [
-          "calcium",
-          "potassium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is magnesium?",
         answer_short: "Magnesium is a mineral no living thing can do without. In Wallach's framework it switches on a vast number of the body's enzymes, carries out electro-chemical, catalytic and structural jobs, and is the metal atom at the center of the chlorophyll in every green plant.",
@@ -127527,10 +128727,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000272",
         subject: "magnesium",
-        also_about: [
-          "potassium",
-          "calcium"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "How much magnesium is in the human body?",
         answer_short: "Wallach puts total body magnesium at 20 to 28 grams in an adult, with about 60% locked in the bones and roughly a quarter in skeletal muscle.",
@@ -127593,9 +128790,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000275",
         subject: "magnesium",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "sources",
         question: "Is there magnesium in drinking water?",
         answer_short: "It can be very high: Wallach describes the Nicoyans' water in Costa Rica, filtered up through limestone bedrock, as so rich in calcium and magnesium it reportedly had to be diluted 50% just to be tested.",
@@ -127901,9 +129096,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000291",
         subject: "calcium",
-        also_about: [
-          "magnesium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "How is calcium absorbed in the body?",
         answer_short: "Calcium is absorbed mainly in the acidic duodenum, and absorption drops as the gut turns alkaline; metallic forms may yield only 1-3%, while colloidal or chelated forms reach up to 98%.",
@@ -127921,9 +129114,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000292",
         subject: "calcium",
-        also_about: [
-          "magnesium"
-        ],
+        also_about: [],
         facet: "sources",
         question: "Why doesn't calcium carbonate work well as a supplement?",
         answer_short: "Calcium carbonate is a metallic mineral that is barely absorbed \u2014 you'd have to take about 25 capsules a day to actually net 2,000 mg of usable calcium.",
@@ -128314,7 +129505,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000316",
         subject: "iodine",
         also_about: [
-          "tyrosine",
           "goiter",
           "hypothyroidism"
         ],
@@ -128335,10 +129525,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000317",
         subject: "iodine",
-        also_about: [
-          "iron",
-          "chromium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "Does the body absorb iodine well?",
         answer_short: "Yes, Wallach says the metallic form of iodine is absorbed at almost a 1:1 ratio, far better than iron (1:10) or chromium (1:100).",
@@ -128475,7 +129662,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         subject: "vitamin-k",
         also_about: [
           "osteoporosis",
-          "vitamin-d",
           "calcium"
         ],
         facet: "physiology",
@@ -128583,11 +129769,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000330",
         subject: "choline",
-        also_about: [
-          "methionine",
-          "inositol",
-          "vitamin-b12"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is choline?",
         answer_short: "Choline is an essential, vitamin-like nutrient the body cannot make in sufficient amounts on its own, needed to build cell membranes, carry fat out of the liver, and form the nerve-signal acetylcholine.",
@@ -128604,11 +129786,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000332",
         subject: "choline",
-        also_about: [
-          "biotin",
-          "vitamin-c",
-          "inositol"
-        ],
+        also_about: [],
         facet: "basics",
         question: "Is choline a vitamin?",
         answer_short: "Wallach groups choline with the water-soluble vitamins, alongside the B-complex, biotin and vitamin C.",
@@ -128756,7 +129934,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         subject: "flavonoids",
         also_about: [
           "hypertension",
-          "vitamin-c",
           "nitric-oxide"
         ],
         facet: "mechanism",
@@ -128879,11 +130056,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000346",
         subject: "germanium",
-        also_about: [
-          "silica",
-          "carbon",
-          "gallium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "Is germanium used in electronics or computers?",
         answer_short: "Germanium is a poor conductor classed as a semiconductor, and when 'doped' with trace elements it is used to make transistors and microcomputers.",
@@ -129150,9 +130323,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000362",
         subject: "cobalt",
-        also_about: [
-          "nickel"
-        ],
+        also_about: [],
         facet: "history",
         question: "Is cobalt magnetic and what is it used for?",
         answer_short: "Cobalt is easily magnetized and holds its magnetism at high temperatures; about a quarter of world production goes into 'alnico,' a super-magnetic alloy.",
@@ -129190,10 +130361,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000364",
         subject: "lithium",
-        also_about: [
-          "sodium",
-          "potassium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What kind of metal is lithium?",
         answer_short: "Lithium is an extremely reactive metal so light a small piece can float on water, and so reactive it must be stored in oil or kerosene.",
@@ -129320,10 +130488,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000372",
         subject: "sodium",
-        also_about: [
-          "chloride",
-          "potassium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is sodium?",
         answer_short: "Sodium is a soft, highly reactive silvery metal and the sixth most abundant element in the earth's crust, known best as sodium chloride \u2014 common table salt. Wallach treats it as an essential macro-mineral and one of the body's three indispensable electrolytes.",
@@ -129434,10 +130599,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000379",
         subject: "sulfur",
-        also_about: [
-          "methionine",
-          "selenium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is sulfur?",
         answer_short: "In Wallach's framework sulfur is one of the 60 essential minerals \u2014 a structural atom built into most proteins through the sulfur amino acids cystine, cysteine, and methionine.",
@@ -129455,9 +130617,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000380",
         subject: "sulfur",
-        also_about: [
-          "methionine"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "What does sulfur do in the body?",
         answer_short: "Sulfur is a structural atom in most proteins, carried by the sulfur amino acids cystine, cysteine, and methionine, and it is essential to glutathione.",
@@ -129497,7 +130657,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000382",
         subject: "sulfur",
         also_about: [
-          "selenium",
           "methionine"
         ],
         facet: "physiology",
@@ -129615,9 +130774,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000388",
         subject: "gallium",
-        also_about: [
-          "aluminum"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Where does the name gallium come from?",
         answer_short: "Gallium was named for Gallia, the Latin word for France, and was identified in 1875 by the chemist Paul-Emile Lecoq de Boisbaudran.",
@@ -129663,9 +130820,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000390",
         subject: "hydrogen",
-        also_about: [
-          "oxygen"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Where does the name hydrogen come from?",
         answer_short: "Hydrogen means 'water-creator' in Greek, because burning it in oxygen produces water.",
@@ -129684,9 +130839,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000391",
         subject: "hydrogen",
-        also_about: [
-          "oxygen"
-        ],
+        also_about: [],
         facet: "basics",
         question: "Is hydrogen gas flammable?",
         answer_short: "Yes, Wallach describes hydrogen as a colorless, odorless, tasteless but extremely flammable diatomic gas.",
@@ -129929,7 +131082,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000402",
         subject: "gold",
         also_about: [
-          "silver",
           "mercury"
         ],
         facet: "basics",
@@ -130076,9 +131228,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000409",
         subject: "terbium",
-        also_about: [
-          "yttrium"
-        ],
+        also_about: [],
         facet: "discovery",
         question: "Who discovered terbium and when?",
         answer_short: "Wallach records that terbium was discovered in 1843 by Carl Gustaf Mosander, who isolated its oxide from the mineral yttria.",
@@ -130120,9 +131270,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000411",
         subject: "rubidium",
-        also_about: [
-          "cesium"
-        ],
+        also_about: [],
         facet: "discovery",
         question: "Who discovered rubidium?",
         answer_short: "Rubidium was discovered in 1861 by German chemists Robert Bunsen and Gustav Kirchhoff, who spotted it by its deep-red spectral line.",
@@ -130165,9 +131313,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000413",
         subject: "nickel",
-        also_about: [
-          "iron"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is nickel?",
         answer_short: "Wallach describes nickel as a silvery metal and a rare element, making up only one one-hundredth of one percent of the earth's crust.",
@@ -130188,9 +131334,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000414",
         subject: "nickel",
-        also_about: [
-          "cobalt"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Where does the name nickel come from?",
         answer_short: "Wallach says nickel is a German word for Satan, from Kupfernickel, meaning 'Satan's copper.'",
@@ -130232,7 +131376,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000416",
         subject: "nickel",
         also_about: [
-          "cobalt",
           "cadmium"
         ],
         facet: "uses",
@@ -130298,9 +131441,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000419",
         subject: "neodymium",
-        also_about: [
-          "praseodymium"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Where does the name neodymium come from?",
         answer_short: "Welsbach coined 'neodymium' from two Greek words, neos ('new') and didymos ('twin'), after splitting the mineral didymium.",
@@ -130399,9 +131540,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000424",
         subject: "arsenic",
-        also_about: [
-          "sulfur"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is arsenic?",
         answer_short: "Arsenic is a semimetal or metalloid that occurs mostly in mineral compounds such as realgar and orpiment, both of which are mixes of arsenic and sulfur.",
@@ -130441,9 +131580,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000426",
         subject: "lutetium",
-        also_about: [
-          "ytterbium"
-        ],
+        also_about: [],
         facet: "discovery",
         question: "Who discovered lutetium?",
         answer_short: "Lutetium was discovered in 1907 by the Austrian mineralogist Carl Auer von Welsbach and the French scientist Georges Urbain, with American chemist Charles James believed to have found it independently the same year.",
@@ -130463,10 +131600,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000427",
         subject: "niobium",
-        also_about: [
-          "iron",
-          "manganese"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is niobium?",
         answer_short: "Wallach describes niobium as a soft, steel-gray metal found mainly in the ore columbite.",
@@ -130506,9 +131640,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000429",
         subject: "niobium",
-        also_about: [
-          "tantalum"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Where does the name niobium come from?",
         answer_short: "Wallach says the element was named niobium for the mythological goddess Niobe.",
@@ -130548,9 +131680,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000431",
         subject: "praseodymium",
-        also_about: [
-          "neodymium"
-        ],
+        also_about: [],
         facet: "discovery",
         question: "Who discovered praseodymium?",
         answer_short: "Praseodymium was isolated in 1885 by the Austrian baron Carl Auer von Welsbach, who split the mineral didymium into two new elements.",
@@ -130570,9 +131700,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000432",
         subject: "praseodymium",
-        also_about: [
-          "neodymium"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Where does the name praseodymium come from?",
         answer_short: "The name comes from the Greek 'prasios' (green) and 'didymos' (twin), for the green color of the element's oxide.",
@@ -130710,9 +131838,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000439",
         subject: "rhenium",
-        also_about: [
-          "molybdenum"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is rhenium?",
         answer_short: "Rhenium is one of the rarest elements on Earth \u2014 so scarce that a million pounds of ore yields only a single gram.",
@@ -130772,14 +131898,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000442",
         subject: "dysprosium",
-        also_about: [
-          "erbium",
-          "holmium",
-          "yttrium",
-          "ytterbium",
-          "thulium",
-          "lutetium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is dysprosium?",
         answer_short: "Dysprosium is a soft, shiny, silvery rare-earth metal \u2014 soft enough to be cut with a knife and fairly stable in air.",
@@ -130819,11 +131938,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000444",
         subject: "thulium",
-        also_about: [
-          "ytterbium",
-          "yttrium",
-          "erbium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is thulium?",
         answer_short: "Thulium is a soft, bright silvery 'heavy' rare-earth metal, so soft it can be cut with a knife, and one of the scarcest of the rare earths.",
@@ -130843,9 +131958,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000445",
         subject: "thulium",
-        also_about: [
-          "erbium"
-        ],
+        also_about: [],
         facet: "discovery",
         question: "Who discovered thulium?",
         answer_short: "Thulium was discovered in 1879 by the Swedish chemist Per Teodor Cleve, who isolated its greenish oxide from the mineral erbia.",
@@ -130945,9 +132058,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000450",
         subject: "ytterbium",
-        also_about: [
-          "yttrium"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Where does the name ytterbium come from?",
         answer_short: "Wallach says ytterbium was discovered in 1878 by French chemist Jean de Marignac and named after the small Swedish village of Ytterby.",
@@ -130969,9 +132080,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000451",
         subject: "holmium",
-        also_about: [
-          "dysprosium"
-        ],
+        also_about: [],
         facet: "discovery",
         question: "Who discovered holmium?",
         answer_short: "Two Swiss chemists first spotted holmium's spectral lines in 1878 but couldn't identify it, and Swedish chemist Per Teodor Cleve isolated and named it in 1879.",
@@ -131011,9 +132120,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000453",
         subject: "tantalum",
-        also_about: [
-          "niobium"
-        ],
+        also_about: [],
         facet: "etymology",
         question: "Where does the name tantalum come from?",
         answer_short: "Wallach recounts that the Swedish chemist Anders Gustav Ekeberg, who discovered the element in 1802, named it after Tantalos, the father of Niobe in Greek mythology.",
@@ -131074,9 +132181,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000456",
         subject: "hafnium",
-        also_about: [
-          "zirconium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "What is hafnium?",
         answer_short: "Hafnium is a bright, silvery-white metal so chemically bound to its 'twin' zirconium that the two are almost impossible to separate, and Wallach counts it among his essential trace minerals.",
@@ -131222,10 +132327,7 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
       {
         id: "WAL-CLM-IMMORT-000463",
         subject: "nitrates",
-        also_about: [
-          "nitrogen",
-          "iodine"
-        ],
+        also_about: [],
         facet: "warning",
         question: "Are nitrates in processed meat bad for you?",
         answer_short: "Salt compounds added to cured meats and canned food to block bacteria and keep meat red; Wallach warns the stomach converts them into cancer-causing nitrosamines and they suppress the thyroid, making them a goitrogen.",
@@ -131247,8 +132349,6 @@ Beyond the anecdote, Wallach doesn't treat ADD as a permanent ceiling on a perso
         id: "WAL-CLM-IMMORT-000464",
         subject: "nitrites",
         also_about: [
-          "nitrogen",
-          "iodine",
           "nitrates"
         ],
         facet: "warning",
@@ -131628,8 +132728,7 @@ Just as important is what to cut. Wallach says heavy use of vegetable oils \u201
         id: "WAL-CLM-IMMORT-000492",
         subject: "calcium",
         also_about: [
-          "iron",
-          "magnesium"
+          "iron"
         ],
         facet: "sources",
         question: "How much calcium and iron are in juniper ash?",
@@ -131655,7 +132754,6 @@ Just as important is what to cut. Wallach says heavy use of vegetable oils \u201
         id: "WAL-CLM-IMMORT-000493",
         subject: "potassium",
         also_about: [
-          "calcium",
           "iron",
           "copper",
           "zinc"
@@ -133458,11 +134556,7 @@ In his system both diseases are really mineral-deficiency diseases. He calls dia
       {
         id: "WAL-CLM-LETS-000047",
         subject: "chloride",
-        also_about: [
-          "sodium",
-          "potassium",
-          "calcium"
-        ],
+        also_about: [],
         facet: "protocol",
         question: "How much chloride do I need each day?",
         answer_short: "In his Base Line Nutritional Supplement Program, Wallach lists chloride at a True Supplement Need of 2,500 mg per day (30-day pharmacologic dose 500 to 2,500 mg), against a government RDA of 1,700 mg.",
@@ -133677,9 +134771,7 @@ In his system both diseases are really mineral-deficiency diseases. He calls dia
       {
         id: "WAL-CLM-LETS-000056",
         subject: "magnesium",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "protocol",
         question: "How much magnesium did Wallach set in his 1995 Base Line program?",
         answer_short: "In his Base Line Nutritional Supplement Program Wallach gives magnesium a daily maintenance need (True Supplement Need) of 1,000 mg, with a 30-day pharmacologic dose also of 1,000 mg \u2014 well above the government RDA of 350 mg, which he reprints only to argue against.",
@@ -134345,7 +135437,6 @@ understandable why they don't test for it`,
         id: "WAL-CLM-LETS-000084",
         subject: "light_therapy",
         also_about: [
-          "vitamin-d",
           "eczema"
         ],
         facet: "uses",
@@ -134405,9 +135496,7 @@ understandable why they don't test for it`,
       {
         id: "WAL-CLM-LETS-000086",
         subject: "light_therapy",
-        also_about: [
-          "vitamin-d"
-        ],
+        also_about: [],
         facet: "warning",
         question: "Is UV light therapy safe for the eyes?",
         answer_short: "Therapeutic UV is 'cool' (no heat) and helps skin diseases and arthritis while killing germs - but it can burn the eyes, so wear goggles or don't look at the lamp.",
@@ -134433,9 +135522,7 @@ understandable why they don't test for it`,
       {
         id: "WAL-CLM-LETS-000087",
         subject: "light_therapy",
-        also_about: [
-          "vitamin-d"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "How does UV therapy actually work?",
         answer_short: "Its rays span 500-3,100 Angstroms, peaking at 2,537 - the wavelength that gives UV its germicidal, skin-reddening and vitamin-D-making power; visible light is only ~5% of the output.",
@@ -137596,7 +138683,6 @@ doesn't like elevated oxygen levels`,
         subject: "cancer",
         also_about: [
           "vitamin-a",
-          "vitamin-e",
           "carcinoma"
         ],
         facet: "uses",
@@ -138049,8 +139135,7 @@ doesn't like elevated oxygen levels`,
         also_about: [
           "cerebral_palsy",
           "celiac_disease",
-          "vitamin-b6",
-          "copper"
+          "vitamin-b6"
         ],
         facet: "warning",
         question: "What causes cerebral palsy?",
@@ -140110,8 +141195,7 @@ as one pint for a child); repeat the dose in 15`,
         id: "WAL-CLM-LETS-000276",
         subject: "zinc",
         also_about: [
-          "iron",
-          "calcium"
+          "iron"
         ],
         facet: "physiology",
         question: "What do white spots on my fingernails mean?",
@@ -142003,7 +143087,6 @@ increase the animal protein to 120 gm day`,
         also_about: [
           "calcium",
           "magnesium",
-          "vitamin-a",
           "vitamin-b6"
         ],
         facet: "uses",
@@ -146677,8 +147760,7 @@ deaths, blood clots, sterility`,
         id: "WAL-CLM-LETS-000493",
         subject: "zinc",
         also_about: [
-          "acne",
-          "vitamin-a"
+          "acne"
         ],
         facet: "uses",
         question: "Does zinc help acne?",
@@ -146701,9 +147783,7 @@ deaths, blood clots, sterility`,
         subject: "zinc",
         also_about: [
           "thrush",
-          "candidiasis",
-          "selenium",
-          "vitamin-a"
+          "candidiasis"
         ],
         facet: "uses",
         question: "Does zinc help the immune system?",
@@ -147109,9 +148189,7 @@ deaths, blood clots, sterility`,
       {
         id: "WAL-CLM-LETS-000515",
         subject: "phosphorus",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "What is a normal phosphorus level on a blood test?",
         answer_short: "Wallach gives a normal blood phosphorus range of 3.1\u20134.5 mg%, kept within narrow limits by parathyroid hormone.",
@@ -147128,10 +148206,7 @@ deaths, blood clots, sterility`,
       {
         id: "WAL-CLM-LETS-000516",
         subject: "chloride",
-        also_about: [
-          "sodium",
-          "potassium"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "What is a normal chloride level in the blood?",
         answer_short: "Wallach gives a normal blood chloride range of 95\u2013110 mEq/L; low levels point to diarrhea, infection, diabetes, or weak adrenals.",
@@ -147837,9 +148912,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
       {
         id: "WAL-CLM-RARE-000026",
         subject: "sodium",
-        also_about: [
-          "chloride"
-        ],
+        also_about: [],
         facet: "stance",
         question: "Do you really need to eat less salt?",
         answer_short: "Wallach rejects the medical advice to eat little or no salt, arguing sodium is a craved necessity \u2014 shown by the salt block every rancher provides livestock and the snack-food industry that profits from the craving.",
@@ -148233,8 +149306,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
         subject: "chromium",
         also_about: [
           "vanadium",
-          "lithium",
-          "zinc"
+          "lithium"
         ],
         facet: "physiology",
         question: "What causes dark circles under the eyes?",
@@ -148270,8 +149342,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
         id: "WAL-CLM-RARE-000043",
         subject: "chromium",
         also_about: [
-          "vanadium",
-          "lithium"
+          "vanadium"
         ],
         facet: "big_question",
         question: "Do baby formulas contain chromium?",
@@ -148326,7 +149397,6 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
         id: "WAL-CLM-RARE-000045",
         subject: "down_syndrome",
         also_about: [
-          "zinc",
           "birth_defects"
         ],
         facet: "protocol",
@@ -148922,11 +149992,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
       {
         id: "WAL-CLM-RARE-000074",
         subject: "colloidal_minerals",
-        also_about: [
-          "chromium",
-          "iron",
-          "iodine"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "Why does the form of a mineral matter so much for absorption?",
         answer_short: "Because absorption efficiency varies enormously by form. Wallach ties it to the gap between how much of a mineral the body truly needs and how much you must eat to get it \u2014 for the metallic form the ratio runs from about 1:1 (iodine) to 1:100 (chromium) \u2014 so the most efficient form, plant-derived colloidal minerals, should be consumed.",
@@ -149064,8 +150130,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
         subject: "vanadium",
         also_about: [
           "diabetes",
-          "hypoglycemia",
-          "chromium"
+          "hypoglycemia"
         ],
         facet: "physiology",
         question: "Does hair analysis show a vanadium deficiency?",
@@ -149135,10 +150200,6 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
         subject: "hair-analysis",
         also_about: [
           "zinc",
-          "copper",
-          "calcium",
-          "magnesium",
-          "iron",
           "adrenal_fatigue"
         ],
         facet: "physiology",
@@ -149190,8 +150251,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
         id: "WAL-CLM-RARE-000086",
         subject: "zinc",
         also_about: [
-          "cadmium",
-          "copper"
+          "cadmium"
         ],
         facet: "warning",
         question: "Does smoking affect my zinc?",
@@ -149376,10 +150436,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
       {
         id: "WAL-CLM-RARE-000094",
         subject: "arsenic",
-        also_about: [
-          "zinc",
-          "selenium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "What does arsenic do in the body?",
         answer_short: "Wallach states arsenic is essential for newborn survival and neonatal growth, functioning in methyl-group metabolism and polyamine synthesis, a role modulated by minerals like zinc, selenium, arginine and choline.",
@@ -149489,8 +150546,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
         id: "WAL-CLM-RARE-000099",
         subject: "boron",
         also_about: [
-          "calcium",
-          "magnesium"
+          "calcium"
         ],
         facet: "mechanism",
         question: "Does boron help prevent bone loss?",
@@ -149600,9 +150656,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
       {
         id: "WAL-CLM-RARE-000103",
         subject: "bromine",
-        also_about: [
-          "iodine"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "How does bromine work in the body?",
         answer_short: "Wallach says bromine functions in the body through brominated amino acids, and holds there is strong evidence it is essential for mammals.",
@@ -150173,7 +151227,6 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
         subject: "chromium",
         also_about: [
           "vanadium",
-          "copper",
           "lithium"
         ],
         facet: "physiology",
@@ -150561,12 +151614,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
       {
         id: "WAL-CLM-RARE-000143",
         subject: "cadmium",
-        also_about: [
-          "zinc",
-          "copper",
-          "calcium",
-          "selenium"
-        ],
+        also_about: [],
         facet: "warning",
         question: "Is cadmium toxic, and what does it do in the body?",
         answer_short: "Wallach treats cadmium mainly as a toxic metal that builds up in the kidney and displaces four essential minerals \u2014 zinc, copper, calcium and selenium \u2014 from the enzymes that depend on them.",
@@ -150768,8 +151816,7 @@ Rather than naming a fixed list and stopping there, Wallach's point is that you 
         subject: "hyperthyroidism",
         also_about: [
           "graves_disease",
-          "goiter",
-          "iodine"
+          "goiter"
         ],
         facet: "physiology",
         question: "What are the signs of hyperthyroidism or Graves' disease?",
@@ -150854,8 +151901,7 @@ Goiter`,
         id: "WAL-CLM-RARE-000153",
         subject: "potassium",
         also_about: [
-          "sodium",
-          "calcium"
+          "sodium"
         ],
         facet: "mechanism",
         question: "How do potassium and sodium work together in the body?",
@@ -151027,9 +152073,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000160",
         subject: "depression",
-        also_about: [
-          "lithium"
-        ],
+        also_about: [],
         facet: "stance",
         question: "Is depression becoming more common over time?",
         answer_short: "Wallach reports that since 1915 the risk of clinical depression nearly doubles with each generation, with onset falling from the late 20s in 1935 to 15-20 by 1955, and one in four women and one in ten men affected.",
@@ -151186,8 +152230,7 @@ Goiter`,
         id: "WAL-CLM-RARE-000167",
         subject: "lithium",
         also_about: [
-          "vitamin-b12",
-          "vanadium"
+          "vitamin-b12"
         ],
         facet: "warning",
         question: "Does taking lithium affect vitamin B12 or other minerals?",
@@ -151212,9 +152255,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000169",
         subject: "magnesium",
-        also_about: [
-          "potassium"
-        ],
+        also_about: [],
         facet: "basics",
         question: "How much magnesium is in the body and where is it stored?",
         answer_short: "Wallach reports the adult body holds 20 to 28 grams of magnesium \u2014 about 60% in bone and 26% in skeletal muscle \u2014 with serum levels of 1.5 to 2.1 mEq/L, second only to potassium as an intracellular cation.",
@@ -151241,9 +152282,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000170",
         subject: "magnesium",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "What body processes depend on magnesium?",
         answer_short: "Wallach explains magnesium is required for energy production and transfer, protein synthesis, muscle contractility and nerve excitability and acts as a cofactor in countless enzymes; an excess inhibits bone calcification, and it balances calcium in muscle contraction.",
@@ -151402,8 +152441,7 @@ Goiter`,
         id: "WAL-CLM-RARE-000177",
         subject: "repetitive_motion_syndrome",
         also_about: [
-          "carpal_tunnel_syndrome",
-          "manganese"
+          "carpal_tunnel_syndrome"
         ],
         facet: "stance",
         question: "How much does repetitive stress injury cost?",
@@ -152039,9 +153077,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000199",
         subject: "hydrogen-peroxide",
-        also_about: [
-          "oxygen"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "How does the body use hydrogen peroxide to fight infection?",
         answer_short: "Wallach explains the body makes its own hydrogen peroxide: neutrophils produce it in organelles called peroxisomes to kill microbes, parasites and cancer cells, and the enzyme catalase breaks the excess into water and singlet oxygen.",
@@ -153278,9 +154314,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000245",
         subject: "silica",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "warning",
         question: "What are the signs of silica deficiency?",
         answer_short: "Wallach says silica deficiency shows up as dry brittle hair, brittle finger and toe nails, poor skin quality, poor calcium utilization, and arterial disease.",
@@ -153417,9 +154451,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000250",
         subject: "strontium",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "warning",
         question: "Is strontium radioactive or dangerous?",
         answer_short: "Natural strontium is a needed mineral; strontium-90 is a separate man-made radioactive fission product that does not occur in nature.",
@@ -153444,10 +154476,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000251",
         subject: "thulium",
-        also_about: [
-          "ytterbium",
-          "yttrium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "Does thulium help you live longer?",
         answer_short: "Wallach reports that thulium supplementation enhances the growth of normal cells and has doubled the lifespans of laboratory species.",
@@ -153590,9 +154619,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000259",
         subject: "yttrium",
-        also_about: [
-          "ytterbium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "Does yttrium help you live longer?",
         answer_short: "Wallach reports that yttrium enhances normal cell growth and doubles the life span of laboratory species.",
@@ -153931,10 +154958,7 @@ Goiter`,
         id: "WAL-CLM-RARE-000276",
         subject: "drug_safety_elderly",
         also_about: [
-          "calcium",
-          "magnesium",
           "lithium",
-          "chromium",
           "vanadium"
         ],
         facet: "warning",
@@ -153963,10 +154987,7 @@ Goiter`,
         id: "WAL-CLM-RARE-000277",
         subject: "drug_safety_elderly",
         also_about: [
-          "calcium",
-          "magnesium",
           "lithium",
-          "chromium",
           "vanadium"
         ],
         facet: "warning",
@@ -153995,9 +155016,7 @@ Goiter`,
         id: "WAL-CLM-RARE-000278",
         subject: "calcium",
         also_about: [
-          "magnesium",
           "lithium",
-          "chromium",
           "vanadium"
         ],
         facet: "protocol",
@@ -154031,11 +155050,6 @@ Goiter`,
         id: "WAL-CLM-RARE-000279",
         subject: "arthritis",
         also_about: [
-          "calcium",
-          "magnesium",
-          "boron",
-          "copper",
-          "selenium",
           "lithium",
           "gelatin",
           "chondroitin"
@@ -154075,8 +155089,7 @@ Goiter`,
         subject: "diabetes",
         also_about: [
           "chromium",
-          "vanadium",
-          "zinc"
+          "vanadium"
         ],
         facet: "warning",
         question: "Which diabetes drug is unsafe for older people?",
@@ -154110,9 +155123,6 @@ Goiter`,
         id: "WAL-CLM-RARE-000281",
         subject: "calcium",
         also_about: [
-          "magnesium",
-          "copper",
-          "selenium",
           "aspirin"
         ],
         facet: "protocol",
@@ -154146,7 +155156,6 @@ Goiter`,
         subject: "dementia",
         also_about: [
           "germanium",
-          "selenium",
           "lithium",
           "chromium",
           "calcium",
@@ -154217,9 +155226,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000285",
         subject: "lithium",
-        also_about: [
-          "calcium"
-        ],
+        also_about: [],
         facet: "protocol",
         question: "What can older people take instead of the anti-nausea drug Tigan?",
         answer_short: "Wallach lists the anti-nausea drug Trimethobenzamide (Tigan) as a poor choice for older patients \u2014 not very effective and prone to cause drowsiness, dizziness and falls \u2014 with bismuth, calcium and lithium as the mineral replacement.",
@@ -154248,8 +155255,6 @@ Goiter`,
         id: "WAL-CLM-RARE-000286",
         subject: "magnesium",
         also_about: [
-          "calcium",
-          "omega-3",
           "vitamin-b6"
         ],
         facet: "protocol",
@@ -154306,9 +155311,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000288",
         subject: "dysprosium",
-        also_about: [
-          "erbium"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "Does dysprosium build up in the body?",
         answer_short: "Wallach reports dysprosium occurs in terrestrial animals only in trace amounts (0.01 ppm), concentrated highest in the bones.",
@@ -154598,8 +155601,7 @@ Goiter`,
         subject: "hypertension",
         also_about: [
           "calcium",
-          "magnesium",
-          "boron"
+          "magnesium"
         ],
         facet: "physiology",
         question: "What deficiencies cause high blood pressure?",
@@ -154631,7 +155633,6 @@ Goiter`,
         subject: "bone_spurs",
         also_about: [
           "calcium",
-          "magnesium",
           "boron"
         ],
         facet: "physiology",
@@ -154693,8 +155694,7 @@ Goiter`,
         subject: "diabetes",
         also_about: [
           "chromium",
-          "vanadium",
-          "zinc"
+          "vanadium"
         ],
         facet: "physiology",
         question: "What deficiencies cause diabetes?",
@@ -154990,8 +155990,7 @@ Goiter`,
         subject: "selenium",
         also_about: [
           "antioxidants",
-          "free_radicals",
-          "vitamin-e"
+          "free_radicals"
         ],
         facet: "mechanism",
         question: "What does selenium actually do in the body?",
@@ -155078,12 +156077,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000327",
         subject: "zinc",
-        also_about: [
-          "selenium",
-          "molybdenum",
-          "cobalt",
-          "sulfur"
-        ],
+        also_about: [],
         facet: "sources",
         question: "What foods are a good source of zinc?",
         answer_short: "Wallach says eating organ meats like liver and kidney can significantly boost your zinc intake \u2014 along with selenium, sulfur, cobalt and molybdenum.",
@@ -155126,9 +156120,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000329",
         subject: "zinc",
-        also_about: [
-          "manganese"
-        ],
+        also_about: [],
         facet: "discovery",
         question: "How was zinc first discovered to be essential for life?",
         answer_short: "Wallach recounts that zinc was initially recognized as an essential element in the bread mold Aspergillus niger.",
@@ -155259,9 +156251,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000335",
         subject: "vitamin-a",
-        also_about: [
-          "vitamin-c"
-        ],
+        also_about: [],
         facet: "sources",
         question: "What's the best way to get beta carotene naturally?",
         answer_short: "Wallach says juicing is one of the greatest ways he knows to get fresh, natural beta carotene, though it can't supply the full spectrum of essential minerals.",
@@ -155300,9 +156290,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000337",
         subject: "iron",
-        also_about: [
-          "copper"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "Why do redheads have red hair?",
         answer_short: "Red hair gets its color from an iron-containing pigment, so redheads have relatively high iron in their hair.",
@@ -155319,9 +156307,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000338",
         subject: "iron",
-        also_about: [
-          "copper"
-        ],
+        also_about: [],
         facet: "sources",
         question: "Is the iron in cheap supplements just rust?",
         answer_short: "Often yes\u2014metallic forms like iron oxide are literally rust and only 8 to 12 percent absorbable, dropping to 3 to 5 percent after age 35\u201340.",
@@ -155380,9 +156366,7 @@ Goiter`,
         subject: "calcium",
         also_about: [
           "osteoporosis",
-          "arthritis",
-          "magnesium",
-          "manganese"
+          "arthritis"
         ],
         facet: "physiology",
         question: "Does an all-meat carnivore diet cause calcium deficiency?",
@@ -155536,9 +156520,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000349",
         subject: "chromium",
-        also_about: [
-          "selenium"
-        ],
+        also_about: [],
         facet: "sources",
         question: "What is chromium picolinate?",
         answer_short: "Chromium picolinate is a chelated form of chromium; chelated minerals are about 40% bioavailable, far better than metallic minerals.",
@@ -155595,10 +156577,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000353",
         subject: "potassium",
-        also_about: [
-          "calcium",
-          "magnesium"
-        ],
+        also_about: [],
         facet: "stance",
         question: "Is potassium one of the essential minerals the body needs?",
         answer_short: "Yes \u2014 Wallach lists potassium among 'The 60 Essential Elements, Metals and Minerals' the human body requires.",
@@ -155656,11 +156635,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000356",
         subject: "vitamin-e",
-        also_about: [
-          "selenium",
-          "zinc",
-          "vitamin-c"
-        ],
+        also_about: [],
         facet: "physiology",
         question: "Can a vitamin E deficiency cause intestinal disease?",
         answer_short: "Yes \u2014 Wallach lists vitamin E among the nutrient deficiencies that result in intestinal disease.",
@@ -155698,10 +156673,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000358",
         subject: "vanadium",
-        also_about: [
-          "chromium",
-          "selenium"
-        ],
+        also_about: [],
         facet: "history",
         question: "Was vanadium once considered toxic?",
         answer_short: "Wallach says vanadium was among soil elements once deemed totally toxic with no possibility of being essential, and that doctors made sure it stayed out of our food.",
@@ -155718,10 +156690,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000359",
         subject: "vanadium",
-        also_about: [
-          "zinc",
-          "copper"
-        ],
+        also_about: [],
         facet: "history",
         question: "Is vanadium found in living creatures?",
         answer_short: "Wallach notes that a vanadium respiratory compound was found in the blood of sea squirts, among the early discoveries of trace minerals in animals.",
@@ -155739,7 +156708,6 @@ Goiter`,
         id: "WAL-CLM-RARE-000360",
         subject: "manganese",
         also_about: [
-          "iron",
           "antioxidants"
         ],
         facet: "basics",
@@ -155800,9 +156768,7 @@ Goiter`,
         id: "WAL-CLM-RARE-000363",
         subject: "cobalt",
         also_about: [
-          "selenium",
-          "zinc",
-          "molybdenum"
+          "zinc"
         ],
         facet: "sources",
         question: "What foods are a good source of cobalt?",
@@ -155842,10 +156808,7 @@ Goiter`,
         id: "WAL-CLM-RARE-000365",
         subject: "lithium",
         also_about: [
-          "vanadium",
-          "selenium",
-          "silica",
-          "nickel"
+          "vanadium"
         ],
         facet: "discovery",
         question: "Is lithium an essential nutrient?",
@@ -155864,8 +156827,6 @@ Goiter`,
         id: "WAL-CLM-RARE-000366",
         subject: "molybdenum",
         also_about: [
-          "selenium",
-          "chromium",
           "vanadium"
         ],
         facet: "stance",
@@ -155959,10 +156920,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000371",
         subject: "sulfur",
-        also_about: [
-          "selenium",
-          "molybdenum"
-        ],
+        also_about: [],
         facet: "sources",
         question: "What foods are high in sulfur?",
         answer_short: "Wallach says organ meats such as liver and kidney can significantly increase the availability of sulfur, along with selenium, cobalt, molybdenum, and zinc.",
@@ -155979,12 +156937,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000372",
         subject: "sulfur",
-        also_about: [
-          "selenium",
-          "calcium",
-          "magnesium",
-          "zinc"
-        ],
+        also_about: [],
         facet: "stance",
         question: "Is sulfur an essential mineral the body needs?",
         answer_short: "Yes\u2014Wallach counts sulphur among the 60 essential elements, metals and minerals the body must obtain.",
@@ -156022,7 +156975,6 @@ Goiter`,
         id: "WAL-CLM-RARE-000374",
         subject: "chloride",
         also_about: [
-          "sodium",
           "potassium"
         ],
         facet: "physiology",
@@ -156043,9 +156995,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000375",
         subject: "chloride",
-        also_about: [
-          "sodium"
-        ],
+        also_about: [],
         facet: "mechanism",
         question: "What causes the body to lose chloride?",
         answer_short: "Wallach ties chloride (as NaCl) loss to conditions like cystic fibrosis and Addison's disease, which disturbs the body's acid-base balance.",
@@ -156084,9 +157034,7 @@ Goiter`,
       {
         id: "WAL-CLM-RARE-000377",
         subject: "chloride",
-        also_about: [
-          "sodium"
-        ],
+        also_about: [],
         facet: "sources",
         question: "Where does the body get chloride?",
         answer_short: "Wallach says ordinary table salt (sodium chloride) is the universal source of chloride ions.",
@@ -156146,7 +157094,6 @@ Goiter`,
         id: "WAL-CLM-RARE-000380",
         subject: "chloride",
         also_about: [
-          "sulfur",
           "mercury"
         ],
         facet: "history",
@@ -156415,8 +157362,7 @@ Goiter`,
         id: "WAL-CLM-RARE-000392",
         subject: "gold",
         also_about: [
-          "silver",
-          "copper"
+          "silver"
         ],
         facet: "discovery",
         question: "Was gold one of the first metals humans discovered?",
@@ -156583,8 +157529,6 @@ Goiter`,
         id: "WAL-CLM-RARE-000400",
         subject: "testosterone",
         also_about: [
-          "copper",
-          "chromium",
           "vanadium",
           "lithium"
         ],
@@ -186445,6 +187389,7 @@ Goiter`,
       <div class="kd-ep-k kd-ep-op__srclabel">${escHTML5(ui("kd_ep_pdm_srclabel"))}</div>
       ${head}${more}`;
   }
+  var FACET_CAP = 7;
   function renderFacetGroups(page) {
     if (page.search.length === 0) {
       return "";
@@ -186452,16 +187397,16 @@ Goiter`,
     const order = SEARCH_FACETS;
     const groups = [...page.search].sort((a, b) => order.indexOf(a.facet) - order.indexOf(b.facet));
     const html = groups.map((g) => {
-      const cards2 = g.claim_ids.map((id) => {
-        const c = getSearchClaim(id);
-        return c !== null ? renderSearchCard(c) : "";
-      }).join("");
-      if (cards2.length === 0) {
+      const claims = g.claim_ids.map((id) => getSearchClaim(id)).filter((c) => c !== null);
+      if (claims.length === 0) {
         return "";
       }
+      const shown = claims.slice(0, FACET_CAP).map((c) => renderSearchCard(c)).join("");
+      const rest = claims.slice(FACET_CAP);
+      const more = rest.length > 0 ? `<details class="kd-ep-more kd-ep-more--answers"><summary>See ${rest.length} more ${plural(rest.length, "answer")}</summary><div class="kd-ep-more__body">${rest.map((c) => renderSearchCard(c)).join("")}</div></details>` : "";
       return `<details class="kd-ep-facet" data-facet="${escHTML5(g.facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML5(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
-      <div class="kd-ep-facet__body">${cards2}</div>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML5(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${claims.length}</span></summary>
+      <div class="kd-ep-facet__body">${shown}${more}</div>
     </details>`;
     }).join("");
     if (html.length === 0) {
@@ -194602,7 +195547,9 @@ Render consistency fix (this commit):
 - Verified: chronic_fatigue condition page renders 13 enriched question cards (IN THE BODY / HOW IT WORKS / WHAT TO DO), 0 raw protocol blocks; 92/92 invariants; render_probe_search, _browse, _routing all exit 0.
 
 Remaining (chronicle/next-chunk.md): 22 DDDL dose claims (contradiction audit) + 162 unverified-book claims (frontface vision verification).
-` }, { id: "lg_mt02j9ix_80m13g", ts: "2026-08-19T07:29:15.897499-05:00", surface: "search", kind: "milestone", summary: "The 41 approved Engine-2 ruled claims are live in Ask Wallach with in-depth 'full answers' that explain each quote in plain English and carry Wallach's actual solution drawn from the whole corpus \u2014 a new answer_full search field; the sealed corpus is untouched.", detail: "The 41 ruled claims Luneth approved this session now front-face in Ask Wallach, and their 'full answer' is finally the real thing: not a one-line echo of the cryptic quote, but a plain-English explanation of what that quote means PLUS the actual Wallach solution \u2014 the doses, the foods, what to cut \u2014 gathered from across the whole corpus. And judged per claim: a 'can cataracts be reversed?' gets the full protocol; a 'what minerals are in wood ash?' stays two clean sentences. No padding either direction.\n\nTECH \u2014 chosen architecture (Option B): a new answer_full field lives beside answer_short in the hand-authored, unsealed eden/corpus/search-enrichment.json; the sealed atomic claim_text and the operational Full Record are UNTOUCHED (no re-seal, kv stays 476). search_index_derive.py sources the shipped search `answer` from answer_full when present. 41 enrichments merged; 2 catalog conditions (coronary_artery_disease, nystagmus) registered as search-entities. EPIGEN-000472 re-routed calcium\u2192insomnia to clear a no_duplicate_claims twin with 061 (its span \u2282 061's calcium-table span). CSS white-space:pre-line on the three answer containers renders answer_full's paragraph breaks. Provenance: 41-agent per-claim synthesis over per-claim corpus dossiers, then 41-agent adversarial \xA700.A verification (33 clean; 8 fixed \u2014 2 factual [RARE-404 duration blend, HELLS-097 '1958' attribution] + 6 decorative overreaches], plus hand spot-checks confirming the scariest specifics (097 since-1958/Walter Mertz, 496 Mycoplasma/250mcg diabetes, 494 Johns Hopkins 2004 78% study) all trace to sealed claims.\n\nVERIFY \u2014 board 92/92, 0 new reds; render_probe_search PASS (0 page errors); answer_full confirmed flowing into the index. DEFERRED \u2014 no styled screenshot possible in-session (preview snapshot / chrome ext unresponsive); the 28 needs_new_topic (curation) + 92 unsealed ruled claims remain. Next: front-face the 28 new-topic claims to the same answer_full bar." }];
+` }, { id: "lg_mt02j9ix_80m13g", ts: "2026-08-19T07:29:15.897499-05:00", surface: "search", kind: "milestone", summary: "The 41 approved Engine-2 ruled claims are live in Ask Wallach with in-depth 'full answers' that explain each quote in plain English and carry Wallach's actual solution drawn from the whole corpus \u2014 a new answer_full search field; the sealed corpus is untouched.", detail: "The 41 ruled claims Luneth approved this session now front-face in Ask Wallach, and their 'full answer' is finally the real thing: not a one-line echo of the cryptic quote, but a plain-English explanation of what that quote means PLUS the actual Wallach solution \u2014 the doses, the foods, what to cut \u2014 gathered from across the whole corpus. And judged per claim: a 'can cataracts be reversed?' gets the full protocol; a 'what minerals are in wood ash?' stays two clean sentences. No padding either direction.\n\nTECH \u2014 chosen architecture (Option B): a new answer_full field lives beside answer_short in the hand-authored, unsealed eden/corpus/search-enrichment.json; the sealed atomic claim_text and the operational Full Record are UNTOUCHED (no re-seal, kv stays 476). search_index_derive.py sources the shipped search `answer` from answer_full when present. 41 enrichments merged; 2 catalog conditions (coronary_artery_disease, nystagmus) registered as search-entities. EPIGEN-000472 re-routed calcium\u2192insomnia to clear a no_duplicate_claims twin with 061 (its span \u2282 061's calcium-table span). CSS white-space:pre-line on the three answer containers renders answer_full's paragraph breaks. Provenance: 41-agent per-claim synthesis over per-claim corpus dossiers, then 41-agent adversarial \xA700.A verification (33 clean; 8 fixed \u2014 2 factual [RARE-404 duration blend, HELLS-097 '1958' attribution] + 6 decorative overreaches], plus hand spot-checks confirming the scariest specifics (097 since-1958/Walter Mertz, 496 Mycoplasma/250mcg diabetes, 494 Johns Hopkins 2004 78% study) all trace to sealed claims.\n\nVERIFY \u2014 board 92/92, 0 new reds; render_probe_search PASS (0 page errors); answer_full confirmed flowing into the index. DEFERRED \u2014 no styled screenshot possible in-session (preview snapshot / chrome ext unresponsive); the 28 needs_new_topic (curation) + 92 unsealed ruled claims remain. Next: front-face the 28 new-topic claims to the same answer_full bar." }, { id: "lg_mt081qv3_mz0wq0", ts: "2026-08-19T10:03:36.255026-05:00", surface: "entity-pages+search", kind: "milestone", summary: "Killed the recurring 'page shows less than search' bug and gated it forever; then pruned nutrient pages down to genuinely-relevant facts (kept all treatment protocols) and capped categories at 7 with a See-more.", detail: `Fixed a recurring bug where a condition or nutrient's detail page showed FEWER facts than the site search found for the same thing, and locked it with an automated check so it can never silently come back. Then cleaned up the nutrient pages so they only show facts genuinely about that nutrient \u2014 dropping stray "What is [some other nutrient]?" entries and passing name-drops, while keeping every treatment the nutrient is actually part of. Also capped each category at 7 answers with a "See N more" button so a heavily-covered page stays scannable.
+
+ROOT CAUSE (completeness): entity_page_derive.search_sections bucketed a page's enriched claims by subject ONLY, while state/search.ts::claimsForSubject includes also_about \u2014 so ~1,086 also_about claim-instances were findable in search yet dropped from their pages (e.g. Wallach's selenium answer naming hypothyroidism was absent from the hypothyroidism page, and the exact query 'Can a selenium deficiency cause an underactive thyroid?' dead-ended). FIX: search_sections now includes also_about (subject OR also_about), matching claimsForSubject exactly; deterministic id-order within each facet. GATE: new entity_page_enriched_matches_search (consistency) independently re-derives claimsForSubject from the shipped search-index and asserts every one of the 601 condition/essential pages' enriched set == it (subset = search>page defect; superset = a page claim search can't reach). Negative test tools/test_entity_page_enriched_matches_search.py proves it bites (GREEN on real, RED on a dropped claim, RED on an extra). CLAUDE.md board total 92->93; external stays 23. | TASK 1 (scannability): entity-page.ts renderFacetGroups caps each Worth-Knowing facet at FACET_CAP=7 cards, overflow behind a native 'See N more answers' reveal (kd-ep-more--answers, a roomier variant in drawer-knowledge.css); the count badge keeps the true total (display cap, not data cap). render_probe_knowledge's 2 record-collapse assertions rewritten to test the heuristic RELATIONSHIP (kinds collapse iff record >=20) against the live count, so they survive record-size shifts. | TASK 2 (relevance prune, essentials only): 425 also_about removals from eden/corpus/search-enrichment.json \u2014 120 other-nutrient definitions ('What is strontium/boron/Vitamin K?') + 297 incidental name-drops ('How much phosphorus is in the body?') + 8 residual definition leaks (e.g. 'What is Vitamin E?' off selenium). ALL 455 condition-protocol claims KEPT (Luneth's call) so broad nutrients aren't gutted \u2014 vitamin C keeps its flu/infection/HIV uses (was 84% pruned under the strict rule, now 0). Lean-conservative keeps: electrolyte-group + omega-group claims + the cobalt<->B12 pair (9 deliberate). PROVENANCE: calcium pilot (1 agent, 160 claims) -> Luneth calibration (keep protocols only for the nutrient's own deficiency disease; lean conservative) -> 12-agent workflow over 1,483 claims across 83 essentials (809 strict removes) -> Luneth 'keep ALL protocols' decision -> filtered to definitions+incidental only -> reconciled by re-applying from clean HEAD -> +8 deterministic residual-definition cleanup. Conditions/Explore keep the full also_about breadth (unchanged). | VERIFY: node tools/build.mjs OK; board 93/93 (23 external / 26 consistency / 42 structural / 2 meta), 0 new reds; render_probe search/entity/knowledge PASS, 0 page errors; puppeteer shots confirm calcium leads 'What is calcium?' (was 'What is strontium?'), vitamin C 105 enriched incl flu/infection protocols, selenium clear of 'What is Vitamin E?'. | DEFERRED: full 425-removal audit list (final_removals.json) available on request, not committed; the 28 needs_new_topic + 92 unsealed ruled claims from the prior handoff still pending. NO SEAL (search-enrichment is the deliberately-unsealed working file; kv stays 476). Push: YES.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

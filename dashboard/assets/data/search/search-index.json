@@ -11219,8 +11219,7 @@
       "subject": "diabetes",
       "also_about": [
         "chromium",
-        "vanadium",
-        "selenium"
+        "vanadium"
       ],
       "facet": "history",
       "question": "How did Wallach first connect diabetes to a mineral deficiency?",
@@ -11419,9 +11418,7 @@
     {
       "id": "WAL-CLM-DDDL-000016",
       "subject": "chromium",
-      "also_about": [
-        "vanadium"
-      ],
+      "also_about": [],
       "facet": "history",
       "question": "Does chromium supplementation extend lifespan?",
       "answer_short": "Yes — Wallach cites Gary Evans' study showing chromium lengthened lab animals' lifespan by 33.3%, upending the belief that only severe calorie restriction could extend life.",
@@ -11867,10 +11864,7 @@
     {
       "id": "WAL-CLM-DDDL-000032",
       "subject": "strontium",
-      "also_about": [
-        "calcium",
-        "boron"
-      ],
+      "also_about": [],
       "facet": "warning",
       "question": "Can a strontium deficiency cause osteoporosis?",
       "answer_short": "Yes — Wallach ties a strontium shortage to the stubborn forms of osteoporosis and arthritis that don't respond to calcium and boron alone.",
@@ -11898,9 +11892,7 @@
     {
       "id": "WAL-CLM-DDDL-000033",
       "subject": "strontium",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is strontium?",
       "answer_short": "A bone-seeking trace mineral that can stand in for calcium. Wallach considers it essential in mammals and ties its deficiency to calcium- and boron-resistant osteoporosis and arthritis.",
@@ -12098,8 +12090,6 @@
       "id": "WAL-CLM-DDDL-000040",
       "subject": "zinc",
       "also_about": [
-        "copper",
-        "iron",
         "veganism"
       ],
       "facet": "sources",
@@ -12313,8 +12303,7 @@
       "id": "WAL-CLM-DDDL-000047",
       "subject": "vanadium",
       "also_about": [
-        "diabetes",
-        "chromium"
+        "diabetes"
       ],
       "facet": "stance",
       "question": "Can vanadium replace insulin for diabetes?",
@@ -12468,10 +12457,7 @@
       "subject": "absorption",
       "also_about": [
         "asthma",
-        "malabsorption",
-        "magnesium",
-        "manganese",
-        "omega-3"
+        "malabsorption"
       ],
       "facet": "stance",
       "question": "Are some 'diseases' really just malabsorption?",
@@ -13292,7 +13278,6 @@
       "also_about": [
         "cholesterol",
         "arteriosclerosis",
-        "calcium",
         "liver_disease"
       ],
       "facet": "warning",
@@ -13824,7 +13809,6 @@
       "id": "WAL-CLM-DDDL-000103",
       "subject": "cruciferous_vegetables",
       "also_about": [
-        "iodine",
         "hypothyroidism",
         "goiter"
       ],
@@ -14507,11 +14491,7 @@
     {
       "id": "WAL-CLM-DDDL-000139",
       "subject": "zinc",
-      "also_about": [
-        "copper",
-        "selenium",
-        "vitamin-a"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is zinc?",
       "answer_short": "In Wallach's framework, zinc is a foundational essential trace mineral the body must be given every day: no fewer than 70 metalloenzymes cannot function without it, so a shortage ripples across the body's whole chemistry.",
@@ -14594,8 +14574,7 @@
       "id": "WAL-CLM-DDDL-000144",
       "subject": "zinc",
       "also_about": [
-        "burns",
-        "vitamin-e"
+        "burns"
       ],
       "facet": "uses",
       "question": "Is zinc oxide good for sunburn and burns?",
@@ -15087,8 +15066,7 @@
       "subject": "vitamin-a",
       "also_about": [
         "cancer",
-        "carcinoma",
-        "vitamin-e"
+        "carcinoma"
       ],
       "facet": "uses",
       "question": "How does Wallach use vitamin A to fight cancer?",
@@ -15219,11 +15197,7 @@
     {
       "id": "WAL-CLM-DDDL-000174",
       "subject": "calcium",
-      "also_about": [
-        "phosphorus",
-        "magnesium",
-        "vitamin-d"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is calcium?",
       "answer_short": "Calcium is the fifth most abundant mineral in the earth's crust and the most abundant mineral in the human body — the structural mineral of bones and teeth that also powers muscle contraction, blood clotting, nerve signaling and the heartbeat.",
@@ -15304,8 +15278,7 @@
       "id": "WAL-CLM-DDDL-000178",
       "subject": "calcium",
       "also_about": [
-        "dairy",
-        "magnesium"
+        "dairy"
       ],
       "facet": "sources",
       "question": "Do you need dairy to get enough calcium?",
@@ -15750,7 +15723,6 @@
       "id": "WAL-CLM-DDDL-000200",
       "subject": "chromium",
       "also_about": [
-        "vanadium",
         "diabetes"
       ],
       "facet": "mechanism",
@@ -15792,8 +15764,7 @@
       "id": "WAL-CLM-DDDL-000202",
       "subject": "chromium",
       "also_about": [
-        "obesity",
-        "vanadium"
+        "obesity"
       ],
       "facet": "uses",
       "question": "Does chromium picolinate help with weight loss?",
@@ -15987,7 +15958,6 @@
       "id": "WAL-CLM-DDDL-000212",
       "subject": "vitamin-e",
       "also_about": [
-        "vitamin-c",
         "longevity"
       ],
       "facet": "history",
@@ -16171,8 +16141,7 @@
       "id": "WAL-CLM-DDDL-000221",
       "subject": "vitamin-b3",
       "also_about": [
-        "insomnia",
-        "tryptophan"
+        "insomnia"
       ],
       "facet": "protocol",
       "question": "Can niacin help with insomnia?",
@@ -16193,7 +16162,6 @@
       "subject": "vanadium",
       "also_about": [
         "diabetes",
-        "chromium",
         "hypoglycemia",
         "obesity"
       ],
@@ -16619,9 +16587,7 @@
     {
       "id": "WAL-CLM-DDDL-000246",
       "subject": "phosphorus",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is phosphorus?",
       "answer_short": "Phosphorus is an extremely important essential mineral that Wallach says has more functions in the body than any other mineral, yet nutritionists ignore it because it is in nearly all foods.",
@@ -16640,9 +16606,7 @@
     {
       "id": "WAL-CLM-DDDL-000247",
       "subject": "phosphorus",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "How much phosphorus is in the human body and where is it stored?",
       "answer_short": "The body holds about 800 grams of phosphorus — just under two pounds — with 700 grams locked in the bones and teeth as insoluble calcium phosphate.",
@@ -16685,9 +16649,7 @@
     {
       "id": "WAL-CLM-DDDL-000249",
       "subject": "phosphorus",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "How much phosphorus do we eat and how well is it absorbed?",
       "answer_short": "Adults eat 1,000-1,500 mg of phosphorus a day, but absorb only 3-5% of metallic phosphorus, 40-50% of chelated forms, and up to 98% of organically bound colloidal phosphorus.",
@@ -16734,7 +16696,6 @@
       "subject": "phosphorus",
       "also_about": [
         "calcium",
-        "iron",
         "zinc"
       ],
       "facet": "sources",
@@ -16817,9 +16778,7 @@
     {
       "id": "WAL-CLM-DDDL-000255",
       "subject": "sulfur",
-      "also_about": [
-        "biotin"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "Which proteins in the body contain sulfur?",
       "answer_short": "Sulfur is built into hemoglobin, hormones such as insulin and the adrenal cortical hormones, enzymes, and antibodies.",
@@ -16897,10 +16856,7 @@
       "id": "WAL-CLM-DDDL-000261",
       "subject": "chloride",
       "also_about": [
-        "sodium",
-        "potassium",
-        "achlorhydria",
-        "vitamin-b12"
+        "achlorhydria"
       ],
       "facet": "basics",
       "question": "What is Chloride?",
@@ -16946,10 +16902,7 @@
     {
       "id": "WAL-CLM-DDDL-000264",
       "subject": "chloride",
-      "also_about": [
-        "potassium",
-        "sodium"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "What does the sweat test measure and is it really specific to cystic fibrosis?",
       "answer_short": "It measures sodium, chloride, and potassium in sweat; Wallach says it is nonspecific, turning positive in 17 different diseases.",
@@ -17205,9 +17158,7 @@
       "subject": "tyrosine",
       "also_about": [
         "iodine",
-        "goiter",
-        "copper",
-        "molybdenum"
+        "goiter"
       ],
       "facet": "physiology",
       "question": "How does tyrosine relate to the thyroid and goiter?",
@@ -17271,10 +17222,7 @@
       "id": "WAL-CLM-DDDL-000279",
       "subject": "valine",
       "also_about": [
-        "lysine",
-        "threonine",
-        "leucine",
-        "isoleucine"
+        "threonine"
       ],
       "facet": "uses",
       "question": "What is valine's function in the body?",
@@ -17314,9 +17262,6 @@
       "id": "WAL-CLM-DDDL-000281",
       "subject": "isoleucine",
       "also_about": [
-        "leucine",
-        "valine",
-        "lysine",
         "threonine"
       ],
       "facet": "uses",
@@ -17336,14 +17281,7 @@
     {
       "id": "WAL-CLM-DDDL-000282",
       "subject": "threonine",
-      "also_about": [
-        "valine",
-        "lysine",
-        "leucine",
-        "isoleucine",
-        "tryptophan",
-        "phenylalanine"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "What does threonine do in the body?",
       "answer_short": "In Wallach's function table, threonine's role is protein production—it's a building block the body uses to manufacture its proteins, alongside valine, lysine, leucine, and isoleucine.",
@@ -17402,9 +17340,7 @@
     {
       "id": "WAL-CLM-DDDL-000285",
       "subject": "strontium",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "stance",
       "question": "Does the body need strontium?",
       "answer_short": "Wallach holds there is considerable evidence that strontium is an essential mineral in mammals, including humans.",
@@ -19071,8 +19007,7 @@
       "id": "WAL-CLM-DDDL-000350",
       "subject": "kidney_stones",
       "also_about": [
-        "calcium",
-        "phosphorus"
+        "calcium"
       ],
       "facet": "mechanism",
       "question": "Are kidney stones and bone spurs related?",
@@ -20440,9 +20375,7 @@
     {
       "id": "WAL-CLM-DDDL-000401",
       "subject": "sciatica",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "Can osteoporosis or bone spurs cause sciatica?",
       "answer_short": "In its most severe form, Wallach says sciatica stems from advanced osteoporosis, bone spurs between the lumbar vertebrae, and vertebral arthritis — pointing at bone loss, not just a pinched nerve.",
@@ -20869,8 +20802,7 @@
       "id": "WAL-CLM-DDDL-000417",
       "subject": "asthma",
       "also_about": [
-        "food_allergy",
-        "chromium"
+        "food_allergy"
       ],
       "facet": "protocol",
       "question": "Can food allergies like milk, wheat, or soy trigger asthma, and how do I find out?",
@@ -21685,7 +21617,6 @@
       "also_about": [
         "chromium",
         "vanadium",
-        "vitamin-d",
         "omega-3",
         "omega-6"
       ],
@@ -21720,9 +21651,7 @@
       "id": "WAL-CLM-DDDL-000447",
       "subject": "gallstones",
       "also_about": [
-        "high_cholesterol",
-        "chromium",
-        "vanadium"
+        "high_cholesterol"
       ],
       "facet": "mechanism",
       "question": "Does high cholesterol cause gallstones?",
@@ -25016,10 +24945,7 @@
     {
       "id": "WAL-CLM-DDDL-000567",
       "subject": "psoriasis",
-      "also_about": [
-        "vitamin-a",
-        "vitamin-d"
-      ],
+      "also_about": [],
       "facet": "uses",
       "question": "Are there topical or home remedies for psoriasis?",
       "answer_short": "For the skin itself Wallach suggests palliative topicals — herbal washes, pureed onions, pureed cucumbers, and vitamin A & D creams.",
@@ -25203,8 +25129,7 @@
       "subject": "periodontal_disease",
       "also_about": [
         "receding_gums",
-        "calcium",
-        "phosphorus"
+        "calcium"
       ],
       "facet": "mechanism",
       "question": "Why do my teeth loosen and gums recede before I ever break a bone?",
@@ -26370,7 +26295,6 @@
       "id": "WAL-CLM-EPIGEN-000015",
       "subject": "korsakoff",
       "also_about": [
-        "selenium",
         "memory_loss"
       ],
       "facet": "basics",
@@ -26716,7 +26640,6 @@
       "subject": "absorption",
       "also_about": [
         "hypochlorhydria",
-        "cobalt",
         "digestion"
       ],
       "facet": "mechanism",
@@ -27534,10 +27457,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000050",
       "subject": "leucine",
-      "also_about": [
-        "isoleucine",
-        "valine"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is leucine?",
       "answer_short": "Leucine is a branched-chain essential amino acid Wallach says is solely responsible for building muscle protein—a catalyst for muscle growth that also switches on the mTOR kinase controlling cell growth.",
@@ -27591,9 +27511,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000052",
       "subject": "methionine",
-      "also_about": [
-        "taurine"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is methionine?",
       "answer_short": "Methionine is a sulfur-containing essential amino acid; its derivative SAM is the body's main methyl donor, and it's the raw material the body uses to build cysteine, carnitine, taurine, lecithin and phosphatidylcholine.",
@@ -27621,8 +27539,7 @@
       "id": "WAL-CLM-EPIGEN-000053",
       "subject": "phenylalanine",
       "also_about": [
-        "tyrosine",
-        "copper"
+        "tyrosine"
       ],
       "facet": "mechanism",
       "question": "What does phenylalanine turn into in the body?",
@@ -28242,9 +28159,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000075",
       "subject": "cerium",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "Does cerium act like calcium in the body?",
       "answer_short": "Wallach says cerium can function much like calcium in all organisms — it deposits in bone and has been shown to stimulate metabolism.",
@@ -28362,9 +28277,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000079",
       "subject": "dysprosium",
-      "also_about": [
-        "holmium"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Where does the name dysprosium come from?",
       "answer_short": "The name comes from the Greek word 'dysprositos,' meaning 'hard to get,' given by its discoverer after it was first identified in 1886.",
@@ -28388,11 +28301,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000080",
       "subject": "erbium",
-      "also_about": [
-        "terbium",
-        "yttrium",
-        "ytterbium"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Where does the name erbium come from?",
       "answer_short": "Erbium is named for Ytterby, a village in Sweden, from the yttria that Carl Gustaf Mosander split into three fractions in 1843.",
@@ -28521,12 +28430,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000085",
       "subject": "gadolinium",
-      "also_about": [
-        "germanium",
-        "gallium",
-        "europium",
-        "terbium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is gadolinium?",
       "answer_short": "Gadolinium is a rare-earth mineral Wallach counts among the trace elements, found naturally in rocks, plants and animals.",
@@ -28949,11 +28853,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000104",
       "subject": "neodymium",
-      "also_about": [
-        "praseodymium",
-        "cerium",
-        "samarium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is neodymium?",
       "answer_short": "Neodymium is a 'light' rare-earth trace mineral that Wallach says is proven to enhance normal cell growth and double the lifespan of laboratory species.",
@@ -28979,7 +28879,6 @@
       "id": "WAL-CLM-EPIGEN-000105",
       "subject": "nickel",
       "also_about": [
-        "iron",
         "zinc"
       ],
       "facet": "stance",
@@ -29171,9 +29070,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000110",
       "subject": "vitamin-a",
-      "also_about": [
-        "vitamin-b1"
-      ],
+      "also_about": [],
       "facet": "protocol",
       "question": "How much vitamin A should I take daily?",
       "answer_short": "Wallach's daily multiple recommends about 2,500 to 5,000 IU of vitamin A as retinol plus 5,000 to 25,000 IU as beta-carotene for adults and children over nine.",
@@ -29537,11 +29434,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000127",
       "subject": "boron",
-      "also_about": [
-        "calcium",
-        "copper",
-        "chromium"
-      ],
+      "also_about": [],
       "facet": "protocol",
       "question": "How much boron should you take per day?",
       "answer_short": "Wallach's daily supplement range for boron is 1 to 6 mg per 100 pounds of body weight. This figure is from the daily multiple table in his 2014 book Epigenetics.",
@@ -29712,10 +29605,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000134",
       "subject": "manganese",
-      "also_about": [
-        "magnesium",
-        "molybdenum"
-      ],
+      "also_about": [],
       "facet": "protocol",
       "question": "How much manganese should I take each day?",
       "answer_short": "In Wallach's Base Line Nutritional Supplement Program the True Supplement Need for manganese is 5 mg a day (vs. the 2.5 mg government RDA), with a 30-day pharmacologic dose range of 2 to 50 mg.",
@@ -29806,10 +29696,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000138",
       "subject": "vanadium",
-      "also_about": [
-        "chromium",
-        "selenium"
-      ],
+      "also_about": [],
       "facet": "protocol",
       "question": "What is the recommended daily dose of vanadium?",
       "answer_short": "Wallach's Epigenetics mineral table lists vanadium at 50-100 mcg per 100 pounds of body weight for adults and children. This figure is from the daily multiple table in his 2014 book Epigenetics.",
@@ -29832,13 +29719,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000139",
       "subject": "zinc",
-      "also_about": [
-        "chromium",
-        "vanadium",
-        "boron",
-        "calcium",
-        "copper"
-      ],
+      "also_about": [],
       "facet": "protocol",
       "question": "How much zinc should I take a day?",
       "answer_short": "Wallach's daily supplement chart sets zinc at 15-30 mg per 100 pounds of body weight for adults and children. This figure is from the daily multiple table in his 2014 book Epigenetics.",
@@ -30268,7 +30149,6 @@
       "id": "WAL-CLM-EPIGEN-000160",
       "subject": "cruciferous_vegetables",
       "also_about": [
-        "iodine",
         "hypothyroidism",
         "goiter"
       ],
@@ -30967,8 +30847,7 @@
       "id": "WAL-CLM-EPIGEN-000188",
       "subject": "selenium",
       "also_about": [
-        "cystic_fibrosis",
-        "zinc"
+        "cystic_fibrosis"
       ],
       "facet": "big_question",
       "question": "Can cystic fibrosis actually be cured?",
@@ -31123,9 +31002,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000195",
       "subject": "magnesium",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "warning",
       "question": "Can you take too much magnesium?",
       "answer_short": "Wallach's book reports that with healthy kidneys there is no evidence of magnesium toxicity even up to 6,000 mg a day — though he cautions that a true excess of magnesium can inhibit bone calcification.",
@@ -31174,9 +31051,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000197",
       "subject": "omega-3",
-      "also_about": [
-        "omega-6"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is Omega-3?",
       "answer_short": "Omega-3 is one of the two fatty acids Wallach classes as truly essential — alpha-linolenic acid — a fat the body cannot make and must get from the diet.",
@@ -31238,10 +31113,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000200",
       "subject": "omega-3",
-      "also_about": [
-        "selenium",
-        "copper"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "Can low omega-3 cause blood clots or a heart attack?",
       "answer_short": "Yes — Wallach lists coronary thrombosis as a disease caused by omega-3 deficiency, not by genetics.",
@@ -31303,9 +31175,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000203",
       "subject": "omega-3",
-      "also_about": [
-        "selenium"
-      ],
+      "also_about": [],
       "facet": "biography",
       "question": "Why did Wallach take the FDA to court over omega-3?",
       "answer_short": "Wallach was plaintiff in eight FDA lawsuits — up to the Supreme Court steps — to make information on omega-3, selenium, folic acid and antioxidants available to Americans.",
@@ -31370,9 +31240,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000206",
       "subject": "vitamin-c",
-      "also_about": [
-        "iron"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "What does vitamin C do in the body?",
       "answer_short": "Vitamin C is a required cofactor for building collagen, connective tissue, cartilage, bones, teeth and blood vessels, and it improves iron absorption.",
@@ -31544,7 +31412,6 @@
       "id": "WAL-CLM-EPIGEN-000216",
       "subject": "vitamin-a",
       "also_about": [
-        "vitamin-d",
         "vitamin-e",
         "vitamin-k"
       ],
@@ -31618,8 +31485,6 @@
       "id": "WAL-CLM-EPIGEN-000220",
       "subject": "vitamin-d",
       "also_about": [
-        "calcium",
-        "phosphorus",
         "cholesterol"
       ],
       "facet": "basics",
@@ -31682,8 +31547,7 @@
       "id": "WAL-CLM-EPIGEN-000223",
       "subject": "vitamin-d",
       "also_about": [
-        "rickets",
-        "vitamin-a"
+        "rickets"
       ],
       "facet": "discovery",
       "question": "How was vitamin D discovered to cure rickets?",
@@ -31725,8 +31589,7 @@
       "id": "WAL-CLM-EPIGEN-000226",
       "subject": "iron",
       "also_about": [
-        "anemia",
-        "copper"
+        "anemia"
       ],
       "facet": "basics",
       "question": "What is iron and what does it do in the body?",
@@ -31773,11 +31636,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000228",
       "subject": "iron",
-      "also_about": [
-        "selenium",
-        "copper",
-        "zinc"
-      ],
+      "also_about": [],
       "facet": "stance",
       "question": "Is too much iron dangerous?",
       "answer_short": "Wallach argues iron overload is falsely blamed for diseases like cirrhosis and diabetes; excess stored iron is actually caused by shortages of selenium, copper, and zinc.",
@@ -31854,9 +31713,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000232",
       "subject": "calcium",
-      "also_about": [
-        "phosphorus"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "How much calcium is in the human body and where is it stored?",
       "answer_short": "Calcium is the most abundant mineral in the body—about 1,200 g in men and 1,000 g in women—with 99 percent of it stored in the bones and teeth.",
@@ -31892,8 +31749,7 @@
       "id": "WAL-CLM-EPIGEN-000234",
       "subject": "calcium",
       "also_about": [
-        "vitamin-d",
-        "phosphorus"
+        "vitamin-d"
       ],
       "facet": "mechanism",
       "question": "Does calcium need vitamin D to be absorbed?",
@@ -32048,10 +31904,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000242",
       "subject": "vitamin-b2",
-      "also_about": [
-        "vitamin-b6",
-        "tryptophan"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is Vitamin B2?",
       "answer_short": "Vitamin B2 (riboflavin) is a water-soluble B vitamin that acts as a cofactor for the flavin coenzymes FMN and FAD, which the body needs for energy production.",
@@ -32069,10 +31922,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000243",
       "subject": "vitamin-b2",
-      "also_about": [
-        "vitamin-b6",
-        "tryptophan"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "What does vitamin B2 (riboflavin) do in the body?",
       "answer_short": "Riboflavin is a cofactor for the flavin coenzymes FMN and FAD that drive oxidation-reduction reactions and energy production.",
@@ -32091,8 +31941,7 @@
       "id": "WAL-CLM-EPIGEN-000244",
       "subject": "vitamin-b3",
       "also_about": [
-        "pellagra",
-        "tryptophan"
+        "pellagra"
       ],
       "facet": "basics",
       "question": "What is niacin (vitamin B3)?",
@@ -32112,9 +31961,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000245",
       "subject": "vitamin-b3",
-      "also_about": [
-        "tryptophan"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "What does vitamin B3 (niacin) actually do in the body?",
       "answer_short": "Niacin forms the coenzymes NAD and NADP, which cells use to release energy from carbohydrates, fats, and proteins.",
@@ -32411,7 +32258,6 @@
       "id": "WAL-CLM-EPIGEN-000260",
       "subject": "vitamin-b9",
       "also_about": [
-        "vitamin-b12",
         "anemia"
       ],
       "facet": "basics",
@@ -32731,9 +32577,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000276",
       "subject": "chromium",
-      "also_about": [
-        "vanadium"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "How much chromium do you actually absorb from food?",
       "answer_short": "Very little — 50 to 100 mcg of inorganic chromium from food yields only 0.25 to 0.5 mcg usable, whereas 25 percent of chelated chromium is absorbed.",
@@ -32752,8 +32596,7 @@
       "id": "WAL-CLM-EPIGEN-000277",
       "subject": "chromium",
       "also_about": [
-        "diabetes",
-        "vanadium"
+        "diabetes"
       ],
       "facet": "stance",
       "question": "Is type 2 diabetes genetic or caused by a mineral deficiency?",
@@ -32790,9 +32633,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000279",
       "subject": "vitamin-e",
-      "also_about": [
-        "selenium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is Vitamin E?",
       "answer_short": "Vitamin E is a fat-soluble antioxidant vitamin — actually a family of compounds called tocopherols — that protects cell membranes and red blood cells from oxidative damage.",
@@ -32913,10 +32754,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000285",
       "subject": "vitamin-k",
-      "also_about": [
-        "calcium",
-        "vitamin-d"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is Vitamin K?",
       "answer_short": "Vitamin K is a fat-soluble vitamin your liver needs to make prothrombin and other blood-clotting proteins and to lay calcium down properly in bone — so it governs both normal clotting and bone strength.",
@@ -33121,9 +32959,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000298",
       "subject": "inositol",
-      "also_about": [
-        "choline"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is Inositol?",
       "answer_short": "Inositol (myo-inositol) is a cyclic alcohol chemically similar to glucose that Wallach counts among the essential vitamins; in animals it is a major constituent of the phospholipids that build cell membranes.",
@@ -33140,9 +32976,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000299",
       "subject": "inositol",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "How does inositol work in the body?",
       "answer_short": "Myo-inositol triphosphate acts as a second messenger that mobilizes intracellular calcium in response to hormonal signals, and inositol is a building block of cell membranes.",
@@ -33175,10 +33009,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000301",
       "subject": "inositol",
-      "also_about": [
-        "choline",
-        "biotin"
-      ],
+      "also_about": [],
       "facet": "stance",
       "question": "Does Wallach consider inositol a vitamin?",
       "answer_short": "Yes — Wallach classifies inositol as one of the 16 essential vitamins for humans and non-human vertebrates.",
@@ -33353,10 +33184,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000310",
       "subject": "germanium",
-      "also_about": [
-        "silica",
-        "carbon"
-      ],
+      "also_about": [],
       "facet": "discovery",
       "question": "Who discovered germanium and when?",
       "answer_short": "Its existence was predicted by Mendeleev's periodic table, and the element was finally isolated in 1886 by a German chemist, Clemens Winkler, who named it germanium.",
@@ -33851,10 +33679,6 @@
       "id": "WAL-CLM-EPIGEN-000336",
       "subject": "phosphorus",
       "also_about": [
-        "calcium",
-        "zinc",
-        "copper",
-        "chromium",
         "veganism"
       ],
       "facet": "stance",
@@ -33917,10 +33741,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000339",
       "subject": "chloride",
-      "also_about": [
-        "iodine",
-        "bromine"
-      ],
+      "also_about": [],
       "facet": "history",
       "question": "Why is chlorine put in drinking water?",
       "answer_short": "Since a 1918 U.S. decree, chlorine has disinfected public water—Wallach notes it kills E. coli far better than bromine or iodine.",
@@ -33938,10 +33759,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000340",
       "subject": "chloride",
-      "also_about": [
-        "bromine",
-        "iodine"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Why is chlorine called chlorine, and what does the word mean?",
       "answer_short": "Sir Humphry Davy named it in 1810 from the Greek 'chloros,' meaning green-yellow.",
@@ -33959,11 +33777,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000341",
       "subject": "arginine",
-      "also_about": [
-        "taurine",
-        "tyrosine",
-        "lysine"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is arginine?",
       "answer_short": "Arginine is an amino acid Wallach counts among the essentials—required for cell division, wound healing, ammonia excretion, immune support, and the availability of stored hormones.",
@@ -34059,11 +33873,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000347",
       "subject": "taurine",
-      "also_about": [
-        "methionine",
-        "arginine",
-        "tyrosine"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is taurine?",
       "answer_short": "Taurine is an amino acid Wallach counts as essential -- a sulfur-based compound that conjugates bile acids, acts as an antioxidant, and is vital to the heart, muscles, eyes, and nervous system.",
@@ -34335,9 +34145,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000361",
       "subject": "phenylalanine",
-      "also_about": [
-        "tyrosine"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is phenylalanine?",
       "answer_short": "Phenylalanine is one of the nine classic essential amino acids—a nonpolar protein building block the body can't make and must get from the diet every day.",
@@ -34356,7 +34164,6 @@
       "subject": "phenylalanine",
       "also_about": [
         "arginine",
-        "taurine",
         "tyrosine"
       ],
       "facet": "stance",
@@ -34471,7 +34278,6 @@
       "id": "WAL-CLM-EPIGEN-000368",
       "subject": "tyrosine",
       "also_about": [
-        "phenylalanine",
         "goiter"
       ],
       "facet": "basics",
@@ -34540,10 +34346,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000372",
       "subject": "lysine",
-      "also_about": [
-        "arginine",
-        "histidine"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is lysine?",
       "answer_short": "Lysine is an essential amino acid the body can't make and must get daily from the diet; it drives protein production and, through its derivative allysine, helps build the collagen and elastin that strengthen tissues and blood vessels.",
@@ -34683,10 +34486,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000381",
       "subject": "leucine",
-      "also_about": [
-        "isoleucine",
-        "valine"
-      ],
+      "also_about": [],
       "facet": "stance",
       "question": "Is leucine an essential amino acid?",
       "answer_short": "Yes—Wallach lists leucine among the nine classic essential amino acids the body can't make itself and must get from the diet every day to prevent deficiency and disease.",
@@ -34709,14 +34509,7 @@
       "id": "WAL-CLM-EPIGEN-000382",
       "subject": "valine",
       "also_about": [
-        "histidine",
-        "isoleucine",
-        "leucine",
-        "lysine",
-        "methionine",
-        "phenylalanine",
-        "threonine",
-        "tryptophan"
+        "threonine"
       ],
       "facet": "stance",
       "question": "Is valine an essential amino acid?",
@@ -34798,12 +34591,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000386",
       "subject": "histidine",
-      "also_about": [
-        "lysine",
-        "tryptophan",
-        "methionine",
-        "valine"
-      ],
+      "also_about": [],
       "facet": "stance",
       "question": "Is histidine an essential amino acid?",
       "answer_short": "Yes—Wallach lists histidine among the nine classic essential amino acids, which the body can't make and must get from the diet every day to avoid deficiency disease.",
@@ -34858,10 +34646,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000389",
       "subject": "isoleucine",
-      "also_about": [
-        "leucine",
-        "valine"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is isoleucine?",
       "answer_short": "Isoleucine is one of the nine classically essential amino acids—an alpha amino acid with a hydrocarbon side chain that makes it hydrophobic, and the body uses it to build protein.",
@@ -34878,12 +34663,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000390",
       "subject": "isoleucine",
-      "also_about": [
-        "leucine",
-        "valine",
-        "lysine",
-        "tryptophan"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "Is isoleucine an essential amino acid?",
       "answer_short": "Yes—isoleucine is one of nine classically essential amino acids the human body cannot synthesize, so it must be eaten every day to prevent deficiency and disease.",
@@ -34922,16 +34702,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000392",
       "subject": "threonine",
-      "also_about": [
-        "histidine",
-        "isoleucine",
-        "leucine",
-        "lysine",
-        "methionine",
-        "phenylalanine",
-        "tryptophan",
-        "valine"
-      ],
+      "also_about": [],
       "facet": "stance",
       "question": "Is threonine an essential amino acid?",
       "answer_short": "Yes—Wallach lists threonine among the nine classic essential amino acids the body can't make itself, so it must be eaten every day to prevent deficiency diseases.",
@@ -35129,9 +34900,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000400",
       "subject": "gallium",
-      "also_about": [
-        "iron"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "Does gallium act like iron in the body?",
       "answer_short": "Wallach says gallium and iron-type (ferric) salts behave so alike in the body that gallium ions often stand in for iron ions in medical treatments.",
@@ -35383,9 +35152,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000412",
       "subject": "bromine",
-      "also_about": [
-        "iodine"
-      ],
+      "also_about": [],
       "facet": "discovery",
       "question": "Who discovered bromine?",
       "answer_short": "Wallach recounts that bromine was discovered independently by two chemists — Carl Jacob Lowig in 1825 and Antoine Balard in 1826.",
@@ -35426,9 +35193,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000414",
       "subject": "lanthanum",
-      "also_about": [
-        "cerium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is lanthanum?",
       "answer_short": "Lanthanum (symbol La) is what Wallach calls a 'light' rare earth metal, one of the rare earths he counts among the body's essential minerals.",
@@ -35651,10 +35416,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000425",
       "subject": "europium",
-      "also_about": [
-        "erbium",
-        "dysprosium"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "Where is europium found in nature and in the body?",
       "answer_short": "Europium is a plant-derived rare-earth trace mineral that spreads thinly through rocks, plants and animals -- and in land animals it concentrates in bone far more than in soft tissue.",
@@ -35774,9 +35536,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000431",
       "subject": "yttrium",
-      "also_about": [
-        "ytterbium"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "Is yttrium found in the human body?",
       "answer_short": "Yes — Wallach says yttrium turns up in living tissue, accumulating in ferns among plants and settling into mammalian bone, teeth and liver.",
@@ -35861,10 +35621,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000435",
       "subject": "tin",
-      "also_about": [
-        "silica",
-        "germanium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is tin?",
       "answer_short": "Tin (symbol Sn) is a trace mineral Wallach counts among the essential elements; chemically it sits in the fourth main group, resembling carbon, silica, germanium, and lead.",
@@ -36030,9 +35787,7 @@
     {
       "id": "WAL-CLM-EPIGEN-000443",
       "subject": "ytterbium",
-      "also_about": [
-        "yttrium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is ytterbium?",
       "answer_short": "Ytterbium (Yb) is a rare-earth trace element Wallach documents in rocks, soil, plants and animals -- and it concentrates in bone, teeth and liver.",
@@ -36153,7 +35908,6 @@
       "subject": "acetylcholine",
       "also_about": [
         "choline",
-        "vitamin-b5",
         "intelligence"
       ],
       "facet": "basics",
@@ -36473,7 +36227,6 @@
         "leucine",
         "isoleucine",
         "valine",
-        "methionine",
         "threonine"
       ],
       "facet": "mechanism",
@@ -37221,8 +36974,7 @@
       "id": "WAL-CLM-HELLS-000019",
       "subject": "magnesium",
       "also_about": [
-        "copper",
-        "iron"
+        "copper"
       ],
       "facet": "sources",
       "question": "Are cashews a good source of magnesium?",
@@ -37522,9 +37274,7 @@
       "id": "WAL-CLM-HELLS-000034",
       "subject": "vitamin-b9",
       "also_about": [
-        "anemia",
-        "vitamin-b12",
-        "iron"
+        "anemia"
       ],
       "facet": "sources",
       "question": "What foods are high in folic acid?",
@@ -37606,7 +37356,6 @@
       "id": "WAL-CLM-HELLS-000038",
       "subject": "copper",
       "also_about": [
-        "selenium",
         "zinc"
       ],
       "facet": "sources",
@@ -37626,10 +37375,7 @@
     {
       "id": "WAL-CLM-HELLS-000039",
       "subject": "copper",
-      "also_about": [
-        "magnesium",
-        "iron"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "Are cashews a good source of copper?",
       "answer_short": "Yes, Wallach notes a handful of cashews supplies about 30 percent of the recommended daily allowance of copper, along with magnesium and iron.",
@@ -37668,7 +37414,6 @@
       "id": "WAL-CLM-HELLS-000041",
       "subject": "chromium",
       "also_about": [
-        "vanadium",
         "diabetes",
         "hypoglycemia"
       ],
@@ -37694,9 +37439,7 @@
     {
       "id": "WAL-CLM-HELLS-000043",
       "subject": "chromium",
-      "also_about": [
-        "vanadium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "Which form of chromium is active in the body?",
       "answer_short": "Only trivalent chromium is biologically active, and it does more than manage blood sugar — it also drives amino acid transport and protein synthesis.",
@@ -37717,8 +37460,6 @@
       "also_about": [
         "diabetes",
         "hypoglycemia",
-        "vanadium",
-        "nitrogen",
         "muscle_strength",
         "anxiety",
         "high_cholesterol"
@@ -37791,9 +37532,7 @@
     {
       "id": "WAL-CLM-HELLS-000047",
       "subject": "potassium",
-      "also_about": [
-        "sodium"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "What happens to animals that lack potassium?",
       "answer_short": "Potassium-deficient rats turn hyper-alert and hyperactive and lick everything in sight — cage, equipment, each other, even urine.",
@@ -37967,9 +37706,7 @@
     {
       "id": "WAL-CLM-HELLS-000056",
       "subject": "manganese",
-      "also_about": [
-        "vitamin-e"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "What foods are high in manganese?",
       "answer_short": "Hazelnuts (filberts) are a standout, with 24 nuts supplying ninety percent of the daily value for manganese.",
@@ -37986,12 +37723,7 @@
     {
       "id": "WAL-CLM-HELLS-000057",
       "subject": "molybdenum",
-      "also_about": [
-        "manganese",
-        "boron",
-        "copper",
-        "zinc"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "Is molybdenum essential for plants?",
       "answer_short": "Wallach lists molybdenum among the micronutrients that plants require for optimal health.",
@@ -38030,8 +37762,7 @@
       "id": "WAL-CLM-HELLS-000059",
       "subject": "sodium",
       "also_about": [
-        "chloride",
-        "vitamin-b12"
+        "chloride"
       ],
       "facet": "mechanism",
       "question": "Why does the body need salt?",
@@ -39462,7 +39193,6 @@
       "id": "WAL-CLM-IMMORT-000004",
       "subject": "amino_acids",
       "also_about": [
-        "selenium",
         "protein",
         "muscle_strength"
       ],
@@ -39661,8 +39391,7 @@
       "id": "WAL-CLM-IMMORT-000013",
       "subject": "essential_nutrients",
       "also_about": [
-        "colloidal_minerals",
-        "vitamin-a"
+        "colloidal_minerals"
       ],
       "facet": "sources",
       "question": "How depleted is the food supply?",
@@ -40144,9 +39873,7 @@
       "subject": "arsenic",
       "also_about": [
         "carpal_tunnel_syndrome",
-        "tmj",
-        "manganese",
-        "choline"
+        "tmj"
       ],
       "facet": "physiology",
       "question": "Can too little arsenic cause carpal tunnel syndrome?",
@@ -40245,10 +39972,7 @@
     {
       "id": "WAL-CLM-IMMORT-000042",
       "subject": "boron",
-      "also_about": [
-        "calcium",
-        "magnesium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is boron and what does it do?",
       "answer_short": "Boron is one of Wallach's essential minerals — accepted as essential for humans only in 1990 — and its core job is bone metabolism, helping the body use calcium and magnesium and keeping the ovaries, testes and adrenals working properly.",
@@ -40404,9 +40128,7 @@
     {
       "id": "WAL-CLM-IMMORT-000051",
       "subject": "macronutrients",
-      "also_about": [
-        "magnesium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What are carbohydrates?",
       "answer_short": "The body's convenient fuel (but not essential) - plants build them from CO2 and water by photosynthesis. Sized as single sugars, double sugars, and long chains like starch and fiber.",
@@ -40504,10 +40226,6 @@
       "also_about": [
         "amino_acids",
         "nitrogen",
-        "phosphorus",
-        "iron",
-        "sulfur",
-        "cobalt",
         "protein",
         "muscle_strength"
       ],
@@ -40550,7 +40268,6 @@
       "id": "WAL-CLM-IMMORT-000057",
       "subject": "amino_acids",
       "also_about": [
-        "vitamin-b3",
         "muscle_strength"
       ],
       "facet": "mechanism",
@@ -41086,8 +40803,7 @@
       "also_about": [
         "digestion",
         "absorption",
-        "vitamin-b12",
-        "sodium"
+        "vitamin-b12"
       ],
       "facet": "mechanism",
       "question": "Why can’t I absorb vitamin B12?",
@@ -41203,8 +40919,6 @@
       "id": "WAL-CLM-IMMORT-000085",
       "subject": "cobalt",
       "also_about": [
-        "iron",
-        "magnesium",
         "vitamin-b12"
       ],
       "facet": "mechanism",
@@ -41430,9 +41144,7 @@
       "subject": "ph",
       "also_about": [
         "cesium",
-        "potassium",
-        "sodium",
-        "rubidium"
+        "potassium"
       ],
       "facet": "basics",
       "question": "What is cesium?",
@@ -41894,8 +41606,7 @@
       "id": "WAL-CLM-IMMORT-000112",
       "subject": "rare_earth_elements",
       "also_about": [
-        "dysprosium",
-        "erbium"
+        "dysprosium"
       ],
       "facet": "discovery",
       "question": "What is dysprosium?",
@@ -41919,8 +41630,7 @@
       "id": "WAL-CLM-IMMORT-000113",
       "subject": "rare_earth_elements",
       "also_about": [
-        "erbium",
-        "vanadium"
+        "erbium"
       ],
       "facet": "uses",
       "question": "What is erbium used for?",
@@ -42353,10 +42063,7 @@
       "id": "WAL-CLM-IMMORT-000133",
       "subject": "iron",
       "also_about": [
-        "diabetes",
-        "selenium",
-        "copper",
-        "zinc"
+        "diabetes"
       ],
       "facet": "warning",
       "question": "Can you get too much iron?",
@@ -42388,9 +42095,7 @@
     {
       "id": "WAL-CLM-IMMORT-000134",
       "subject": "gallium",
-      "also_about": [
-        "aluminum"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is gallium - the metal that melts in your hand?",
       "answer_short": "A soft, aluminum-like metal so low-melting it liquefies from your body heat, yet has the widest liquid range of any metal; named for Gallia (the Latin name for France).",
@@ -42467,8 +42172,7 @@
       "id": "WAL-CLM-IMMORT-000137",
       "subject": "rare_earth_elements",
       "also_about": [
-        "gadolinium",
-        "germanium"
+        "gadolinium"
       ],
       "facet": "sources",
       "question": "Where is gadolinium found?",
@@ -42866,8 +42570,7 @@
       "subject": "margarine",
       "also_about": [
         "butter",
-        "dietary_oils",
-        "hydrogen"
+        "dietary_oils"
       ],
       "facet": "stance",
       "question": "Is margarine bad for you?",
@@ -42898,9 +42601,7 @@
     {
       "id": "WAL-CLM-IMMORT-000156",
       "subject": "helium",
-      "also_about": [
-        "hydrogen"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is helium?",
       "answer_short": "The lightest noble gas -- so inert it forms no compounds and occurs pure in nature. After hydrogen it is the 2nd most abundant element in the universe (~7% of atoms). It was discovered on the sun before it was found on Earth -- seen in the sun's spectrum in 1868 and named from Greek Helios, 'sun.'",
@@ -43201,10 +42902,7 @@
       "id": "WAL-CLM-IMMORT-000172",
       "subject": "rare_earth_elements",
       "also_about": [
-        "holmium",
-        "dysprosium",
-        "erbium",
-        "thulium"
+        "holmium"
       ],
       "facet": "basics",
       "question": "What is holmium?",
@@ -43463,8 +43161,7 @@
       "subject": "hyperthyroidism",
       "also_about": [
         "graves_disease",
-        "goiter",
-        "iodine"
+        "goiter"
       ],
       "facet": "physiology",
       "question": "What are the symptoms of an overactive thyroid (hyperthyroidism)?",
@@ -43596,10 +43293,7 @@
     {
       "id": "WAL-CLM-IMMORT-000188",
       "subject": "potassium",
-      "also_about": [
-        "sodium",
-        "lithium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is potassium, chemically?",
       "answer_short": "A silver-white alkali metal so soft you can cut it with a knife - and is never found pure in nature; Davy first isolated it by electrolysis in 1807.",
@@ -43910,7 +43604,6 @@
       "id": "WAL-CLM-IMMORT-000205",
       "subject": "magnesium",
       "also_about": [
-        "calcium",
         "arteriosclerosis"
       ],
       "facet": "stance",
@@ -43967,9 +43660,7 @@
     {
       "id": "WAL-CLM-IMMORT-000207",
       "subject": "magnesium",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "What does magnesium actually do in the body?",
       "answer_short": "In Wallach's framework magnesium is required to produce and transfer energy, build proteins, contract your muscles, and fire your nerves — while too much of it can actually inhibit bone from calcifying.",
@@ -44160,7 +43851,6 @@
       "subject": "phytates",
       "also_about": [
         "calcium",
-        "iron",
         "zinc",
         "inositol"
       ],
@@ -45396,10 +45086,7 @@
     {
       "id": "WAL-CLM-IMMORT-000271",
       "subject": "magnesium",
-      "also_about": [
-        "calcium",
-        "potassium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is magnesium?",
       "answer_short": "Magnesium is a mineral no living thing can do without. In Wallach's framework it switches on a vast number of the body's enzymes, carries out electro-chemical, catalytic and structural jobs, and is the metal atom at the center of the chlorophyll in every green plant.",
@@ -45424,10 +45111,7 @@
     {
       "id": "WAL-CLM-IMMORT-000272",
       "subject": "magnesium",
-      "also_about": [
-        "potassium",
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "How much magnesium is in the human body?",
       "answer_short": "Wallach puts total body magnesium at 20 to 28 grams in an adult, with about 60% locked in the bones and roughly a quarter in skeletal muscle.",
@@ -45490,9 +45174,7 @@
     {
       "id": "WAL-CLM-IMMORT-000275",
       "subject": "magnesium",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "Is there magnesium in drinking water?",
       "answer_short": "It can be very high: Wallach describes the Nicoyans' water in Costa Rica, filtered up through limestone bedrock, as so rich in calcium and magnesium it reportedly had to be diluted 50% just to be tested.",
@@ -45798,9 +45480,7 @@
     {
       "id": "WAL-CLM-IMMORT-000291",
       "subject": "calcium",
-      "also_about": [
-        "magnesium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "How is calcium absorbed in the body?",
       "answer_short": "Calcium is absorbed mainly in the acidic duodenum, and absorption drops as the gut turns alkaline; metallic forms may yield only 1-3%, while colloidal or chelated forms reach up to 98%.",
@@ -45818,9 +45498,7 @@
     {
       "id": "WAL-CLM-IMMORT-000292",
       "subject": "calcium",
-      "also_about": [
-        "magnesium"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "Why doesn't calcium carbonate work well as a supplement?",
       "answer_short": "Calcium carbonate is a metallic mineral that is barely absorbed — you'd have to take about 25 capsules a day to actually net 2,000 mg of usable calcium.",
@@ -46211,7 +45889,6 @@
       "id": "WAL-CLM-IMMORT-000316",
       "subject": "iodine",
       "also_about": [
-        "tyrosine",
         "goiter",
         "hypothyroidism"
       ],
@@ -46232,10 +45909,7 @@
     {
       "id": "WAL-CLM-IMMORT-000317",
       "subject": "iodine",
-      "also_about": [
-        "iron",
-        "chromium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "Does the body absorb iodine well?",
       "answer_short": "Yes, Wallach says the metallic form of iodine is absorbed at almost a 1:1 ratio, far better than iron (1:10) or chromium (1:100).",
@@ -46372,7 +46046,6 @@
       "subject": "vitamin-k",
       "also_about": [
         "osteoporosis",
-        "vitamin-d",
         "calcium"
       ],
       "facet": "physiology",
@@ -46480,11 +46153,7 @@
     {
       "id": "WAL-CLM-IMMORT-000330",
       "subject": "choline",
-      "also_about": [
-        "methionine",
-        "inositol",
-        "vitamin-b12"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is choline?",
       "answer_short": "Choline is an essential, vitamin-like nutrient the body cannot make in sufficient amounts on its own, needed to build cell membranes, carry fat out of the liver, and form the nerve-signal acetylcholine.",
@@ -46501,11 +46170,7 @@
     {
       "id": "WAL-CLM-IMMORT-000332",
       "subject": "choline",
-      "also_about": [
-        "biotin",
-        "vitamin-c",
-        "inositol"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "Is choline a vitamin?",
       "answer_short": "Wallach groups choline with the water-soluble vitamins, alongside the B-complex, biotin and vitamin C.",
@@ -46653,7 +46318,6 @@
       "subject": "flavonoids",
       "also_about": [
         "hypertension",
-        "vitamin-c",
         "nitric-oxide"
       ],
       "facet": "mechanism",
@@ -46776,11 +46440,7 @@
     {
       "id": "WAL-CLM-IMMORT-000346",
       "subject": "germanium",
-      "also_about": [
-        "silica",
-        "carbon",
-        "gallium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "Is germanium used in electronics or computers?",
       "answer_short": "Germanium is a poor conductor classed as a semiconductor, and when 'doped' with trace elements it is used to make transistors and microcomputers.",
@@ -47047,9 +46707,7 @@
     {
       "id": "WAL-CLM-IMMORT-000362",
       "subject": "cobalt",
-      "also_about": [
-        "nickel"
-      ],
+      "also_about": [],
       "facet": "history",
       "question": "Is cobalt magnetic and what is it used for?",
       "answer_short": "Cobalt is easily magnetized and holds its magnetism at high temperatures; about a quarter of world production goes into 'alnico,' a super-magnetic alloy.",
@@ -47087,10 +46745,7 @@
     {
       "id": "WAL-CLM-IMMORT-000364",
       "subject": "lithium",
-      "also_about": [
-        "sodium",
-        "potassium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What kind of metal is lithium?",
       "answer_short": "Lithium is an extremely reactive metal so light a small piece can float on water, and so reactive it must be stored in oil or kerosene.",
@@ -47217,10 +46872,7 @@
     {
       "id": "WAL-CLM-IMMORT-000372",
       "subject": "sodium",
-      "also_about": [
-        "chloride",
-        "potassium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is sodium?",
       "answer_short": "Sodium is a soft, highly reactive silvery metal and the sixth most abundant element in the earth's crust, known best as sodium chloride — common table salt. Wallach treats it as an essential macro-mineral and one of the body's three indispensable electrolytes.",
@@ -47331,10 +46983,7 @@
     {
       "id": "WAL-CLM-IMMORT-000379",
       "subject": "sulfur",
-      "also_about": [
-        "methionine",
-        "selenium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is sulfur?",
       "answer_short": "In Wallach's framework sulfur is one of the 60 essential minerals — a structural atom built into most proteins through the sulfur amino acids cystine, cysteine, and methionine.",
@@ -47352,9 +47001,7 @@
     {
       "id": "WAL-CLM-IMMORT-000380",
       "subject": "sulfur",
-      "also_about": [
-        "methionine"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "What does sulfur do in the body?",
       "answer_short": "Sulfur is a structural atom in most proteins, carried by the sulfur amino acids cystine, cysteine, and methionine, and it is essential to glutathione.",
@@ -47394,7 +47041,6 @@
       "id": "WAL-CLM-IMMORT-000382",
       "subject": "sulfur",
       "also_about": [
-        "selenium",
         "methionine"
       ],
       "facet": "physiology",
@@ -47512,9 +47158,7 @@
     {
       "id": "WAL-CLM-IMMORT-000388",
       "subject": "gallium",
-      "also_about": [
-        "aluminum"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Where does the name gallium come from?",
       "answer_short": "Gallium was named for Gallia, the Latin word for France, and was identified in 1875 by the chemist Paul-Emile Lecoq de Boisbaudran.",
@@ -47560,9 +47204,7 @@
     {
       "id": "WAL-CLM-IMMORT-000390",
       "subject": "hydrogen",
-      "also_about": [
-        "oxygen"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Where does the name hydrogen come from?",
       "answer_short": "Hydrogen means 'water-creator' in Greek, because burning it in oxygen produces water.",
@@ -47581,9 +47223,7 @@
     {
       "id": "WAL-CLM-IMMORT-000391",
       "subject": "hydrogen",
-      "also_about": [
-        "oxygen"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "Is hydrogen gas flammable?",
       "answer_short": "Yes, Wallach describes hydrogen as a colorless, odorless, tasteless but extremely flammable diatomic gas.",
@@ -47826,7 +47466,6 @@
       "id": "WAL-CLM-IMMORT-000402",
       "subject": "gold",
       "also_about": [
-        "silver",
         "mercury"
       ],
       "facet": "basics",
@@ -47973,9 +47612,7 @@
     {
       "id": "WAL-CLM-IMMORT-000409",
       "subject": "terbium",
-      "also_about": [
-        "yttrium"
-      ],
+      "also_about": [],
       "facet": "discovery",
       "question": "Who discovered terbium and when?",
       "answer_short": "Wallach records that terbium was discovered in 1843 by Carl Gustaf Mosander, who isolated its oxide from the mineral yttria.",
@@ -48017,9 +47654,7 @@
     {
       "id": "WAL-CLM-IMMORT-000411",
       "subject": "rubidium",
-      "also_about": [
-        "cesium"
-      ],
+      "also_about": [],
       "facet": "discovery",
       "question": "Who discovered rubidium?",
       "answer_short": "Rubidium was discovered in 1861 by German chemists Robert Bunsen and Gustav Kirchhoff, who spotted it by its deep-red spectral line.",
@@ -48062,9 +47697,7 @@
     {
       "id": "WAL-CLM-IMMORT-000413",
       "subject": "nickel",
-      "also_about": [
-        "iron"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is nickel?",
       "answer_short": "Wallach describes nickel as a silvery metal and a rare element, making up only one one-hundredth of one percent of the earth's crust.",
@@ -48085,9 +47718,7 @@
     {
       "id": "WAL-CLM-IMMORT-000414",
       "subject": "nickel",
-      "also_about": [
-        "cobalt"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Where does the name nickel come from?",
       "answer_short": "Wallach says nickel is a German word for Satan, from Kupfernickel, meaning 'Satan's copper.'",
@@ -48129,7 +47760,6 @@
       "id": "WAL-CLM-IMMORT-000416",
       "subject": "nickel",
       "also_about": [
-        "cobalt",
         "cadmium"
       ],
       "facet": "uses",
@@ -48195,9 +47825,7 @@
     {
       "id": "WAL-CLM-IMMORT-000419",
       "subject": "neodymium",
-      "also_about": [
-        "praseodymium"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Where does the name neodymium come from?",
       "answer_short": "Welsbach coined 'neodymium' from two Greek words, neos ('new') and didymos ('twin'), after splitting the mineral didymium.",
@@ -48296,9 +47924,7 @@
     {
       "id": "WAL-CLM-IMMORT-000424",
       "subject": "arsenic",
-      "also_about": [
-        "sulfur"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is arsenic?",
       "answer_short": "Arsenic is a semimetal or metalloid that occurs mostly in mineral compounds such as realgar and orpiment, both of which are mixes of arsenic and sulfur.",
@@ -48338,9 +47964,7 @@
     {
       "id": "WAL-CLM-IMMORT-000426",
       "subject": "lutetium",
-      "also_about": [
-        "ytterbium"
-      ],
+      "also_about": [],
       "facet": "discovery",
       "question": "Who discovered lutetium?",
       "answer_short": "Lutetium was discovered in 1907 by the Austrian mineralogist Carl Auer von Welsbach and the French scientist Georges Urbain, with American chemist Charles James believed to have found it independently the same year.",
@@ -48360,10 +47984,7 @@
     {
       "id": "WAL-CLM-IMMORT-000427",
       "subject": "niobium",
-      "also_about": [
-        "iron",
-        "manganese"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is niobium?",
       "answer_short": "Wallach describes niobium as a soft, steel-gray metal found mainly in the ore columbite.",
@@ -48403,9 +48024,7 @@
     {
       "id": "WAL-CLM-IMMORT-000429",
       "subject": "niobium",
-      "also_about": [
-        "tantalum"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Where does the name niobium come from?",
       "answer_short": "Wallach says the element was named niobium for the mythological goddess Niobe.",
@@ -48445,9 +48064,7 @@
     {
       "id": "WAL-CLM-IMMORT-000431",
       "subject": "praseodymium",
-      "also_about": [
-        "neodymium"
-      ],
+      "also_about": [],
       "facet": "discovery",
       "question": "Who discovered praseodymium?",
       "answer_short": "Praseodymium was isolated in 1885 by the Austrian baron Carl Auer von Welsbach, who split the mineral didymium into two new elements.",
@@ -48467,9 +48084,7 @@
     {
       "id": "WAL-CLM-IMMORT-000432",
       "subject": "praseodymium",
-      "also_about": [
-        "neodymium"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Where does the name praseodymium come from?",
       "answer_short": "The name comes from the Greek 'prasios' (green) and 'didymos' (twin), for the green color of the element's oxide.",
@@ -48607,9 +48222,7 @@
     {
       "id": "WAL-CLM-IMMORT-000439",
       "subject": "rhenium",
-      "also_about": [
-        "molybdenum"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is rhenium?",
       "answer_short": "Rhenium is one of the rarest elements on Earth — so scarce that a million pounds of ore yields only a single gram.",
@@ -48669,14 +48282,7 @@
     {
       "id": "WAL-CLM-IMMORT-000442",
       "subject": "dysprosium",
-      "also_about": [
-        "erbium",
-        "holmium",
-        "yttrium",
-        "ytterbium",
-        "thulium",
-        "lutetium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is dysprosium?",
       "answer_short": "Dysprosium is a soft, shiny, silvery rare-earth metal — soft enough to be cut with a knife and fairly stable in air.",
@@ -48716,11 +48322,7 @@
     {
       "id": "WAL-CLM-IMMORT-000444",
       "subject": "thulium",
-      "also_about": [
-        "ytterbium",
-        "yttrium",
-        "erbium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is thulium?",
       "answer_short": "Thulium is a soft, bright silvery 'heavy' rare-earth metal, so soft it can be cut with a knife, and one of the scarcest of the rare earths.",
@@ -48740,9 +48342,7 @@
     {
       "id": "WAL-CLM-IMMORT-000445",
       "subject": "thulium",
-      "also_about": [
-        "erbium"
-      ],
+      "also_about": [],
       "facet": "discovery",
       "question": "Who discovered thulium?",
       "answer_short": "Thulium was discovered in 1879 by the Swedish chemist Per Teodor Cleve, who isolated its greenish oxide from the mineral erbia.",
@@ -48842,9 +48442,7 @@
     {
       "id": "WAL-CLM-IMMORT-000450",
       "subject": "ytterbium",
-      "also_about": [
-        "yttrium"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Where does the name ytterbium come from?",
       "answer_short": "Wallach says ytterbium was discovered in 1878 by French chemist Jean de Marignac and named after the small Swedish village of Ytterby.",
@@ -48866,9 +48464,7 @@
     {
       "id": "WAL-CLM-IMMORT-000451",
       "subject": "holmium",
-      "also_about": [
-        "dysprosium"
-      ],
+      "also_about": [],
       "facet": "discovery",
       "question": "Who discovered holmium?",
       "answer_short": "Two Swiss chemists first spotted holmium's spectral lines in 1878 but couldn't identify it, and Swedish chemist Per Teodor Cleve isolated and named it in 1879.",
@@ -48908,9 +48504,7 @@
     {
       "id": "WAL-CLM-IMMORT-000453",
       "subject": "tantalum",
-      "also_about": [
-        "niobium"
-      ],
+      "also_about": [],
       "facet": "etymology",
       "question": "Where does the name tantalum come from?",
       "answer_short": "Wallach recounts that the Swedish chemist Anders Gustav Ekeberg, who discovered the element in 1802, named it after Tantalos, the father of Niobe in Greek mythology.",
@@ -48971,9 +48565,7 @@
     {
       "id": "WAL-CLM-IMMORT-000456",
       "subject": "hafnium",
-      "also_about": [
-        "zirconium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "What is hafnium?",
       "answer_short": "Hafnium is a bright, silvery-white metal so chemically bound to its 'twin' zirconium that the two are almost impossible to separate, and Wallach counts it among his essential trace minerals.",
@@ -49119,10 +48711,7 @@
     {
       "id": "WAL-CLM-IMMORT-000463",
       "subject": "nitrates",
-      "also_about": [
-        "nitrogen",
-        "iodine"
-      ],
+      "also_about": [],
       "facet": "warning",
       "question": "Are nitrates in processed meat bad for you?",
       "answer_short": "Salt compounds added to cured meats and canned food to block bacteria and keep meat red; Wallach warns the stomach converts them into cancer-causing nitrosamines and they suppress the thyroid, making them a goitrogen.",
@@ -49144,8 +48733,6 @@
       "id": "WAL-CLM-IMMORT-000464",
       "subject": "nitrites",
       "also_about": [
-        "nitrogen",
-        "iodine",
         "nitrates"
       ],
       "facet": "warning",
@@ -49511,8 +49098,7 @@
       "id": "WAL-CLM-IMMORT-000492",
       "subject": "calcium",
       "also_about": [
-        "iron",
-        "magnesium"
+        "iron"
       ],
       "facet": "sources",
       "question": "How much calcium and iron are in juniper ash?",
@@ -49538,7 +49124,6 @@
       "id": "WAL-CLM-IMMORT-000493",
       "subject": "potassium",
       "also_about": [
-        "calcium",
         "iron",
         "copper",
         "zinc"
@@ -51329,11 +50914,7 @@
     {
       "id": "WAL-CLM-LETS-000047",
       "subject": "chloride",
-      "also_about": [
-        "sodium",
-        "potassium",
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "protocol",
       "question": "How much chloride do I need each day?",
       "answer_short": "In his Base Line Nutritional Supplement Program, Wallach lists chloride at a True Supplement Need of 2,500 mg per day (30-day pharmacologic dose 500 to 2,500 mg), against a government RDA of 1,700 mg.",
@@ -51548,9 +51129,7 @@
     {
       "id": "WAL-CLM-LETS-000056",
       "subject": "magnesium",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "protocol",
       "question": "How much magnesium did Wallach set in his 1995 Base Line program?",
       "answer_short": "In his Base Line Nutritional Supplement Program Wallach gives magnesium a daily maintenance need (True Supplement Need) of 1,000 mg, with a 30-day pharmacologic dose also of 1,000 mg — well above the government RDA of 350 mg, which he reprints only to argue against.",
@@ -52210,7 +51789,6 @@
       "id": "WAL-CLM-LETS-000084",
       "subject": "light_therapy",
       "also_about": [
-        "vitamin-d",
         "eczema"
       ],
       "facet": "uses",
@@ -52270,9 +51848,7 @@
     {
       "id": "WAL-CLM-LETS-000086",
       "subject": "light_therapy",
-      "also_about": [
-        "vitamin-d"
-      ],
+      "also_about": [],
       "facet": "warning",
       "question": "Is UV light therapy safe for the eyes?",
       "answer_short": "Therapeutic UV is 'cool' (no heat) and helps skin diseases and arthritis while killing germs - but it can burn the eyes, so wear goggles or don't look at the lamp.",
@@ -52298,9 +51874,7 @@
     {
       "id": "WAL-CLM-LETS-000087",
       "subject": "light_therapy",
-      "also_about": [
-        "vitamin-d"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "How does UV therapy actually work?",
       "answer_short": "Its rays span 500-3,100 Angstroms, peaking at 2,537 - the wavelength that gives UV its germicidal, skin-reddening and vitamin-D-making power; visible light is only ~5% of the output.",
@@ -55422,7 +54996,6 @@
       "subject": "cancer",
       "also_about": [
         "vitamin-a",
-        "vitamin-e",
         "carcinoma"
       ],
       "facet": "uses",
@@ -55875,8 +55448,7 @@
       "also_about": [
         "cerebral_palsy",
         "celiac_disease",
-        "vitamin-b6",
-        "copper"
+        "vitamin-b6"
       ],
       "facet": "warning",
       "question": "What causes cerebral palsy?",
@@ -57868,8 +57440,7 @@
       "id": "WAL-CLM-LETS-000276",
       "subject": "zinc",
       "also_about": [
-        "iron",
-        "calcium"
+        "iron"
       ],
       "facet": "physiology",
       "question": "What do white spots on my fingernails mean?",
@@ -59743,7 +59314,6 @@
       "also_about": [
         "calcium",
         "magnesium",
-        "vitamin-a",
         "vitamin-b6"
       ],
       "facet": "uses",
@@ -64410,8 +63980,7 @@
       "id": "WAL-CLM-LETS-000493",
       "subject": "zinc",
       "also_about": [
-        "acne",
-        "vitamin-a"
+        "acne"
       ],
       "facet": "uses",
       "question": "Does zinc help acne?",
@@ -64434,9 +64003,7 @@
       "subject": "zinc",
       "also_about": [
         "thrush",
-        "candidiasis",
-        "selenium",
-        "vitamin-a"
+        "candidiasis"
       ],
       "facet": "uses",
       "question": "Does zinc help the immune system?",
@@ -64842,9 +64409,7 @@
     {
       "id": "WAL-CLM-LETS-000515",
       "subject": "phosphorus",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "What is a normal phosphorus level on a blood test?",
       "answer_short": "Wallach gives a normal blood phosphorus range of 3.1–4.5 mg%, kept within narrow limits by parathyroid hormone.",
@@ -64861,10 +64426,7 @@
     {
       "id": "WAL-CLM-LETS-000516",
       "subject": "chloride",
-      "also_about": [
-        "sodium",
-        "potassium"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "What is a normal chloride level in the blood?",
       "answer_short": "Wallach gives a normal blood chloride range of 95–110 mEq/L; low levels point to diarrhea, infection, diabetes, or weak adrenals.",
@@ -65564,9 +65126,7 @@
     {
       "id": "WAL-CLM-RARE-000026",
       "subject": "sodium",
-      "also_about": [
-        "chloride"
-      ],
+      "also_about": [],
       "facet": "stance",
       "question": "Do you really need to eat less salt?",
       "answer_short": "Wallach rejects the medical advice to eat little or no salt, arguing sodium is a craved necessity — shown by the salt block every rancher provides livestock and the snack-food industry that profits from the craving.",
@@ -65960,8 +65520,7 @@
       "subject": "chromium",
       "also_about": [
         "vanadium",
-        "lithium",
-        "zinc"
+        "lithium"
       ],
       "facet": "physiology",
       "question": "What causes dark circles under the eyes?",
@@ -65997,8 +65556,7 @@
       "id": "WAL-CLM-RARE-000043",
       "subject": "chromium",
       "also_about": [
-        "vanadium",
-        "lithium"
+        "vanadium"
       ],
       "facet": "big_question",
       "question": "Do baby formulas contain chromium?",
@@ -66053,7 +65611,6 @@
       "id": "WAL-CLM-RARE-000045",
       "subject": "down_syndrome",
       "also_about": [
-        "zinc",
         "birth_defects"
       ],
       "facet": "protocol",
@@ -66649,11 +66206,7 @@
     {
       "id": "WAL-CLM-RARE-000074",
       "subject": "colloidal_minerals",
-      "also_about": [
-        "chromium",
-        "iron",
-        "iodine"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "Why does the form of a mineral matter so much for absorption?",
       "answer_short": "Because absorption efficiency varies enormously by form. Wallach ties it to the gap between how much of a mineral the body truly needs and how much you must eat to get it — for the metallic form the ratio runs from about 1:1 (iodine) to 1:100 (chromium) — so the most efficient form, plant-derived colloidal minerals, should be consumed.",
@@ -66791,8 +66344,7 @@
       "subject": "vanadium",
       "also_about": [
         "diabetes",
-        "hypoglycemia",
-        "chromium"
+        "hypoglycemia"
       ],
       "facet": "physiology",
       "question": "Does hair analysis show a vanadium deficiency?",
@@ -66862,10 +66414,6 @@
       "subject": "hair-analysis",
       "also_about": [
         "zinc",
-        "copper",
-        "calcium",
-        "magnesium",
-        "iron",
         "adrenal_fatigue"
       ],
       "facet": "physiology",
@@ -66917,8 +66465,7 @@
       "id": "WAL-CLM-RARE-000086",
       "subject": "zinc",
       "also_about": [
-        "cadmium",
-        "copper"
+        "cadmium"
       ],
       "facet": "warning",
       "question": "Does smoking affect my zinc?",
@@ -67103,10 +66650,7 @@
     {
       "id": "WAL-CLM-RARE-000094",
       "subject": "arsenic",
-      "also_about": [
-        "zinc",
-        "selenium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "What does arsenic do in the body?",
       "answer_short": "Wallach states arsenic is essential for newborn survival and neonatal growth, functioning in methyl-group metabolism and polyamine synthesis, a role modulated by minerals like zinc, selenium, arginine and choline.",
@@ -67216,8 +66760,7 @@
       "id": "WAL-CLM-RARE-000099",
       "subject": "boron",
       "also_about": [
-        "calcium",
-        "magnesium"
+        "calcium"
       ],
       "facet": "mechanism",
       "question": "Does boron help prevent bone loss?",
@@ -67327,9 +66870,7 @@
     {
       "id": "WAL-CLM-RARE-000103",
       "subject": "bromine",
-      "also_about": [
-        "iodine"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "How does bromine work in the body?",
       "answer_short": "Wallach says bromine functions in the body through brominated amino acids, and holds there is strong evidence it is essential for mammals.",
@@ -67900,7 +67441,6 @@
       "subject": "chromium",
       "also_about": [
         "vanadium",
-        "copper",
         "lithium"
       ],
       "facet": "physiology",
@@ -68288,12 +67828,7 @@
     {
       "id": "WAL-CLM-RARE-000143",
       "subject": "cadmium",
-      "also_about": [
-        "zinc",
-        "copper",
-        "calcium",
-        "selenium"
-      ],
+      "also_about": [],
       "facet": "warning",
       "question": "Is cadmium toxic, and what does it do in the body?",
       "answer_short": "Wallach treats cadmium mainly as a toxic metal that builds up in the kidney and displaces four essential minerals — zinc, copper, calcium and selenium — from the enzymes that depend on them.",
@@ -68495,8 +68030,7 @@
       "subject": "hyperthyroidism",
       "also_about": [
         "graves_disease",
-        "goiter",
-        "iodine"
+        "goiter"
       ],
       "facet": "physiology",
       "question": "What are the signs of hyperthyroidism or Graves' disease?",
@@ -68566,8 +68100,7 @@
       "id": "WAL-CLM-RARE-000153",
       "subject": "potassium",
       "also_about": [
-        "sodium",
-        "calcium"
+        "sodium"
       ],
       "facet": "mechanism",
       "question": "How do potassium and sodium work together in the body?",
@@ -68739,9 +68272,7 @@
     {
       "id": "WAL-CLM-RARE-000160",
       "subject": "depression",
-      "also_about": [
-        "lithium"
-      ],
+      "also_about": [],
       "facet": "stance",
       "question": "Is depression becoming more common over time?",
       "answer_short": "Wallach reports that since 1915 the risk of clinical depression nearly doubles with each generation, with onset falling from the late 20s in 1935 to 15-20 by 1955, and one in four women and one in ten men affected.",
@@ -68898,8 +68429,7 @@
       "id": "WAL-CLM-RARE-000167",
       "subject": "lithium",
       "also_about": [
-        "vitamin-b12",
-        "vanadium"
+        "vitamin-b12"
       ],
       "facet": "warning",
       "question": "Does taking lithium affect vitamin B12 or other minerals?",
@@ -68924,9 +68454,7 @@
     {
       "id": "WAL-CLM-RARE-000169",
       "subject": "magnesium",
-      "also_about": [
-        "potassium"
-      ],
+      "also_about": [],
       "facet": "basics",
       "question": "How much magnesium is in the body and where is it stored?",
       "answer_short": "Wallach reports the adult body holds 20 to 28 grams of magnesium — about 60% in bone and 26% in skeletal muscle — with serum levels of 1.5 to 2.1 mEq/L, second only to potassium as an intracellular cation.",
@@ -68953,9 +68481,7 @@
     {
       "id": "WAL-CLM-RARE-000170",
       "subject": "magnesium",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "What body processes depend on magnesium?",
       "answer_short": "Wallach explains magnesium is required for energy production and transfer, protein synthesis, muscle contractility and nerve excitability and acts as a cofactor in countless enzymes; an excess inhibits bone calcification, and it balances calcium in muscle contraction.",
@@ -69114,8 +68640,7 @@
       "id": "WAL-CLM-RARE-000177",
       "subject": "repetitive_motion_syndrome",
       "also_about": [
-        "carpal_tunnel_syndrome",
-        "manganese"
+        "carpal_tunnel_syndrome"
       ],
       "facet": "stance",
       "question": "How much does repetitive stress injury cost?",
@@ -69751,9 +69276,7 @@
     {
       "id": "WAL-CLM-RARE-000199",
       "subject": "hydrogen-peroxide",
-      "also_about": [
-        "oxygen"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "How does the body use hydrogen peroxide to fight infection?",
       "answer_short": "Wallach explains the body makes its own hydrogen peroxide: neutrophils produce it in organelles called peroxisomes to kill microbes, parasites and cancer cells, and the enzyme catalase breaks the excess into water and singlet oxygen.",
@@ -70990,9 +70513,7 @@
     {
       "id": "WAL-CLM-RARE-000245",
       "subject": "silica",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "warning",
       "question": "What are the signs of silica deficiency?",
       "answer_short": "Wallach says silica deficiency shows up as dry brittle hair, brittle finger and toe nails, poor skin quality, poor calcium utilization, and arterial disease.",
@@ -71129,9 +70650,7 @@
     {
       "id": "WAL-CLM-RARE-000250",
       "subject": "strontium",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "warning",
       "question": "Is strontium radioactive or dangerous?",
       "answer_short": "Natural strontium is a needed mineral; strontium-90 is a separate man-made radioactive fission product that does not occur in nature.",
@@ -71156,10 +70675,7 @@
     {
       "id": "WAL-CLM-RARE-000251",
       "subject": "thulium",
-      "also_about": [
-        "ytterbium",
-        "yttrium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "Does thulium help you live longer?",
       "answer_short": "Wallach reports that thulium supplementation enhances the growth of normal cells and has doubled the lifespans of laboratory species.",
@@ -71302,9 +70818,7 @@
     {
       "id": "WAL-CLM-RARE-000259",
       "subject": "yttrium",
-      "also_about": [
-        "ytterbium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "Does yttrium help you live longer?",
       "answer_short": "Wallach reports that yttrium enhances normal cell growth and doubles the life span of laboratory species.",
@@ -71643,10 +71157,7 @@
       "id": "WAL-CLM-RARE-000276",
       "subject": "drug_safety_elderly",
       "also_about": [
-        "calcium",
-        "magnesium",
         "lithium",
-        "chromium",
         "vanadium"
       ],
       "facet": "warning",
@@ -71675,10 +71186,7 @@
       "id": "WAL-CLM-RARE-000277",
       "subject": "drug_safety_elderly",
       "also_about": [
-        "calcium",
-        "magnesium",
         "lithium",
-        "chromium",
         "vanadium"
       ],
       "facet": "warning",
@@ -71707,9 +71215,7 @@
       "id": "WAL-CLM-RARE-000278",
       "subject": "calcium",
       "also_about": [
-        "magnesium",
         "lithium",
-        "chromium",
         "vanadium"
       ],
       "facet": "protocol",
@@ -71743,11 +71249,6 @@
       "id": "WAL-CLM-RARE-000279",
       "subject": "arthritis",
       "also_about": [
-        "calcium",
-        "magnesium",
-        "boron",
-        "copper",
-        "selenium",
         "lithium",
         "gelatin",
         "chondroitin"
@@ -71787,8 +71288,7 @@
       "subject": "diabetes",
       "also_about": [
         "chromium",
-        "vanadium",
-        "zinc"
+        "vanadium"
       ],
       "facet": "warning",
       "question": "Which diabetes drug is unsafe for older people?",
@@ -71822,9 +71322,6 @@
       "id": "WAL-CLM-RARE-000281",
       "subject": "calcium",
       "also_about": [
-        "magnesium",
-        "copper",
-        "selenium",
         "aspirin"
       ],
       "facet": "protocol",
@@ -71858,7 +71355,6 @@
       "subject": "dementia",
       "also_about": [
         "germanium",
-        "selenium",
         "lithium",
         "chromium",
         "calcium",
@@ -71929,9 +71425,7 @@
     {
       "id": "WAL-CLM-RARE-000285",
       "subject": "lithium",
-      "also_about": [
-        "calcium"
-      ],
+      "also_about": [],
       "facet": "protocol",
       "question": "What can older people take instead of the anti-nausea drug Tigan?",
       "answer_short": "Wallach lists the anti-nausea drug Trimethobenzamide (Tigan) as a poor choice for older patients — not very effective and prone to cause drowsiness, dizziness and falls — with bismuth, calcium and lithium as the mineral replacement.",
@@ -71960,8 +71454,6 @@
       "id": "WAL-CLM-RARE-000286",
       "subject": "magnesium",
       "also_about": [
-        "calcium",
-        "omega-3",
         "vitamin-b6"
       ],
       "facet": "protocol",
@@ -72018,9 +71510,7 @@
     {
       "id": "WAL-CLM-RARE-000288",
       "subject": "dysprosium",
-      "also_about": [
-        "erbium"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "Does dysprosium build up in the body?",
       "answer_short": "Wallach reports dysprosium occurs in terrestrial animals only in trace amounts (0.01 ppm), concentrated highest in the bones.",
@@ -72310,8 +71800,7 @@
       "subject": "hypertension",
       "also_about": [
         "calcium",
-        "magnesium",
-        "boron"
+        "magnesium"
       ],
       "facet": "physiology",
       "question": "What deficiencies cause high blood pressure?",
@@ -72343,7 +71832,6 @@
       "subject": "bone_spurs",
       "also_about": [
         "calcium",
-        "magnesium",
         "boron"
       ],
       "facet": "physiology",
@@ -72405,8 +71893,7 @@
       "subject": "diabetes",
       "also_about": [
         "chromium",
-        "vanadium",
-        "zinc"
+        "vanadium"
       ],
       "facet": "physiology",
       "question": "What deficiencies cause diabetes?",
@@ -72702,8 +72189,7 @@
       "subject": "selenium",
       "also_about": [
         "antioxidants",
-        "free_radicals",
-        "vitamin-e"
+        "free_radicals"
       ],
       "facet": "mechanism",
       "question": "What does selenium actually do in the body?",
@@ -72790,12 +72276,7 @@
     {
       "id": "WAL-CLM-RARE-000327",
       "subject": "zinc",
-      "also_about": [
-        "selenium",
-        "molybdenum",
-        "cobalt",
-        "sulfur"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "What foods are a good source of zinc?",
       "answer_short": "Wallach says eating organ meats like liver and kidney can significantly boost your zinc intake — along with selenium, sulfur, cobalt and molybdenum.",
@@ -72838,9 +72319,7 @@
     {
       "id": "WAL-CLM-RARE-000329",
       "subject": "zinc",
-      "also_about": [
-        "manganese"
-      ],
+      "also_about": [],
       "facet": "discovery",
       "question": "How was zinc first discovered to be essential for life?",
       "answer_short": "Wallach recounts that zinc was initially recognized as an essential element in the bread mold Aspergillus niger.",
@@ -72971,9 +72450,7 @@
     {
       "id": "WAL-CLM-RARE-000335",
       "subject": "vitamin-a",
-      "also_about": [
-        "vitamin-c"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "What's the best way to get beta carotene naturally?",
       "answer_short": "Wallach says juicing is one of the greatest ways he knows to get fresh, natural beta carotene, though it can't supply the full spectrum of essential minerals.",
@@ -73012,9 +72489,7 @@
     {
       "id": "WAL-CLM-RARE-000337",
       "subject": "iron",
-      "also_about": [
-        "copper"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "Why do redheads have red hair?",
       "answer_short": "Red hair gets its color from an iron-containing pigment, so redheads have relatively high iron in their hair.",
@@ -73031,9 +72506,7 @@
     {
       "id": "WAL-CLM-RARE-000338",
       "subject": "iron",
-      "also_about": [
-        "copper"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "Is the iron in cheap supplements just rust?",
       "answer_short": "Often yes—metallic forms like iron oxide are literally rust and only 8 to 12 percent absorbable, dropping to 3 to 5 percent after age 35–40.",
@@ -73092,9 +72565,7 @@
       "subject": "calcium",
       "also_about": [
         "osteoporosis",
-        "arthritis",
-        "magnesium",
-        "manganese"
+        "arthritis"
       ],
       "facet": "physiology",
       "question": "Does an all-meat carnivore diet cause calcium deficiency?",
@@ -73248,9 +72719,7 @@
     {
       "id": "WAL-CLM-RARE-000349",
       "subject": "chromium",
-      "also_about": [
-        "selenium"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "What is chromium picolinate?",
       "answer_short": "Chromium picolinate is a chelated form of chromium; chelated minerals are about 40% bioavailable, far better than metallic minerals.",
@@ -73307,10 +72776,7 @@
     {
       "id": "WAL-CLM-RARE-000353",
       "subject": "potassium",
-      "also_about": [
-        "calcium",
-        "magnesium"
-      ],
+      "also_about": [],
       "facet": "stance",
       "question": "Is potassium one of the essential minerals the body needs?",
       "answer_short": "Yes — Wallach lists potassium among 'The 60 Essential Elements, Metals and Minerals' the human body requires.",
@@ -73368,11 +72834,7 @@
     {
       "id": "WAL-CLM-RARE-000356",
       "subject": "vitamin-e",
-      "also_about": [
-        "selenium",
-        "zinc",
-        "vitamin-c"
-      ],
+      "also_about": [],
       "facet": "physiology",
       "question": "Can a vitamin E deficiency cause intestinal disease?",
       "answer_short": "Yes — Wallach lists vitamin E among the nutrient deficiencies that result in intestinal disease.",
@@ -73410,10 +72872,7 @@
     {
       "id": "WAL-CLM-RARE-000358",
       "subject": "vanadium",
-      "also_about": [
-        "chromium",
-        "selenium"
-      ],
+      "also_about": [],
       "facet": "history",
       "question": "Was vanadium once considered toxic?",
       "answer_short": "Wallach says vanadium was among soil elements once deemed totally toxic with no possibility of being essential, and that doctors made sure it stayed out of our food.",
@@ -73430,10 +72889,7 @@
     {
       "id": "WAL-CLM-RARE-000359",
       "subject": "vanadium",
-      "also_about": [
-        "zinc",
-        "copper"
-      ],
+      "also_about": [],
       "facet": "history",
       "question": "Is vanadium found in living creatures?",
       "answer_short": "Wallach notes that a vanadium respiratory compound was found in the blood of sea squirts, among the early discoveries of trace minerals in animals.",
@@ -73451,7 +72907,6 @@
       "id": "WAL-CLM-RARE-000360",
       "subject": "manganese",
       "also_about": [
-        "iron",
         "antioxidants"
       ],
       "facet": "basics",
@@ -73512,9 +72967,7 @@
       "id": "WAL-CLM-RARE-000363",
       "subject": "cobalt",
       "also_about": [
-        "selenium",
-        "zinc",
-        "molybdenum"
+        "zinc"
       ],
       "facet": "sources",
       "question": "What foods are a good source of cobalt?",
@@ -73554,10 +73007,7 @@
       "id": "WAL-CLM-RARE-000365",
       "subject": "lithium",
       "also_about": [
-        "vanadium",
-        "selenium",
-        "silica",
-        "nickel"
+        "vanadium"
       ],
       "facet": "discovery",
       "question": "Is lithium an essential nutrient?",
@@ -73576,8 +73026,6 @@
       "id": "WAL-CLM-RARE-000366",
       "subject": "molybdenum",
       "also_about": [
-        "selenium",
-        "chromium",
         "vanadium"
       ],
       "facet": "stance",
@@ -73671,10 +73119,7 @@
     {
       "id": "WAL-CLM-RARE-000371",
       "subject": "sulfur",
-      "also_about": [
-        "selenium",
-        "molybdenum"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "What foods are high in sulfur?",
       "answer_short": "Wallach says organ meats such as liver and kidney can significantly increase the availability of sulfur, along with selenium, cobalt, molybdenum, and zinc.",
@@ -73691,12 +73136,7 @@
     {
       "id": "WAL-CLM-RARE-000372",
       "subject": "sulfur",
-      "also_about": [
-        "selenium",
-        "calcium",
-        "magnesium",
-        "zinc"
-      ],
+      "also_about": [],
       "facet": "stance",
       "question": "Is sulfur an essential mineral the body needs?",
       "answer_short": "Yes—Wallach counts sulphur among the 60 essential elements, metals and minerals the body must obtain.",
@@ -73734,7 +73174,6 @@
       "id": "WAL-CLM-RARE-000374",
       "subject": "chloride",
       "also_about": [
-        "sodium",
         "potassium"
       ],
       "facet": "physiology",
@@ -73755,9 +73194,7 @@
     {
       "id": "WAL-CLM-RARE-000375",
       "subject": "chloride",
-      "also_about": [
-        "sodium"
-      ],
+      "also_about": [],
       "facet": "mechanism",
       "question": "What causes the body to lose chloride?",
       "answer_short": "Wallach ties chloride (as NaCl) loss to conditions like cystic fibrosis and Addison's disease, which disturbs the body's acid-base balance.",
@@ -73796,9 +73233,7 @@
     {
       "id": "WAL-CLM-RARE-000377",
       "subject": "chloride",
-      "also_about": [
-        "sodium"
-      ],
+      "also_about": [],
       "facet": "sources",
       "question": "Where does the body get chloride?",
       "answer_short": "Wallach says ordinary table salt (sodium chloride) is the universal source of chloride ions.",
@@ -73858,7 +73293,6 @@
       "id": "WAL-CLM-RARE-000380",
       "subject": "chloride",
       "also_about": [
-        "sulfur",
         "mercury"
       ],
       "facet": "history",
@@ -74127,8 +73561,7 @@
       "id": "WAL-CLM-RARE-000392",
       "subject": "gold",
       "also_about": [
-        "silver",
-        "copper"
+        "silver"
       ],
       "facet": "discovery",
       "question": "Was gold one of the first metals humans discovered?",
@@ -74295,8 +73728,6 @@
       "id": "WAL-CLM-RARE-000400",
       "subject": "testosterone",
       "also_about": [
-        "copper",
-        "chromium",
         "vanadium",
         "lithium"
       ],
