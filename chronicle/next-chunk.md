@@ -1,19 +1,18 @@
 # ★★★ NEXT SESSION — READ THIS FIRST.
 
-**Board 94/94 green** (was 93; added `explore_entity_lede_authored`). Corpus **kv=476** (no re-seal — search-enrichment + search-entities are the deliberately-unsealed working files).
+**Board 94/94 green.** Corpus **kv=476** (no re-seal — this chunk touched only the R4 copy store + chronicle, no `eden/` pillar).
 
-## ✅ DONE 2026-08-19 — the 28 needs_new_topic claims front-faced + Explore topics got real headers (GATED)
-- **All 28 `needs_new_topic` claims are LIVE in Ask Wallach.** The flag over-counted (it only checked essentials/conditions, never the 94 concept/topic entities). Actual split: **15 → 3 NEW entities**, **13 → existing entities**. Each is a real Q + crisp `answer_short` + rich `answer_full`, all traced to the sealed verbatims.
-  - **NEW entities** (`eden/catalog/search-entities.json`): **chocolate** (482/513/516 + cross-links 502, EPIGEN-476), **resveratrol** (481/484/490/491/504/517), **hunza** (488/499/505/507/512/514).
-  - **FOLDS** (`eden/corpus/search-enrichment.json`): centenarian-cultures +509/510/518 · longevity +480/501/503/520/521 and +519 (religion → subject longevity, also_about faith_healing, Luneth: "both") · minerals +486/506/511 · colloidal_minerals +489.
-- **Explore-topic HEADER fix (Luneth-caught defect, now GATED forever):** `state/search.ts::entityLede` ALWAYS returned a claim's `answer_short`, so 141 explore heroes shipped answer-shaped headers (chocolate: "It's a mineral-deficiency signal…") and no gate caught it. FIX: `entity-copy.json` gained a `topics{}` section (hand-authored ledes, the calcium style); `entityLede()` prefers the hand lede. **New critical gate `explore_entity_lede_authored`** — a NEW explore entity (not grandfathered) is RED until a lede is authored (+9-case negative test). Authored 7 ledes (the 3 new + longevity/centenarian-cultures/colloidal_minerals/minerals). CLAUDE.md board 93→94.
-- **Glossary +10** (anandamide, phenylethylamine, glycemic index, pica, sirtuin, resveratrol, phytoalexin, chapatti, phytoestrogen, meta-analysis).
-- **✅ VISUAL SIGN-OFF DONE (2026-08-19):** Luneth eyeballed the chocolate/resveratrol/hunza pages — headers look good. (No in-session screenshot was possible — Browser pane won't display + file:// static snapshot — so this was confirmed on his machine.)
+## ✅ DONE 2026-08-19 — the lede backlog fully DRAINED (136 → 0)
+- **All 136 grandfathered Explore-topic entities now carry a hand-authored lede** in `dashboard/assets/data/entity-copy.json['topics']` (7 → 143). Each is a header-shaped line grounded ONLY in that entity’s own Wallach claims — no invented numbers.
+- **How:** a 74-agent author+adversarial-verify Workflow (37 load-balanced batches; script at scratchpad `author-ledes.workflow.js`, run `wf_218968ff-4ea`). Independent verifier caught **3 §00.A fails** (imported "Amish longevity" / "sleep hormone" / "over-the-counter") + **32 fidelity/shape revises** — all fixed with grounded rewrites; **+2 hand-fixes** (`low_carb_diet`, `water`: authored second-person the verifier missed). A deterministic number/name/quote trace-audit against every packet came back clean.
+- **`chronicle/lede-backlog.json` grandfathered emptied 136 → 0** — the `explore_entity_lede_authored` gate is now FULLY ENFORCING: any new unauthored explore entity → RED. Negative test PASS.
+- **Verified:** board 94/94; render_probe_knowledge + render_probe_entity PASS (PAGE_ERRORS 0; Mercury/Beef topic ledes render live). Luneth approved the full set; committed + logged.
+- Review artifact (all 136, grouped, with grounding): https://claude.ai/code/artifact/50f61990-652f-433d-88c2-072299920ec1
+- Biggest wins: the **5 pages that used to render a BLANK hero** (zero primary claims) — `intelligence`, `muscle_strength`, `healthy_foods`, `veganism`, `frequent_urination` — now have real ledes.
 
 ## ▶ NEXT TASK — options (ask Luneth)
-1. **The lede backlog: 136 explore entities still DERIVE their header** (`chronicle/lede-backlog.json`). The gate keeps it shrinking and blocks NEW offenders, but the existing 136 read anywhere from fine (basics-facet topics) to poor (e.g. `intermittent_fasting` opens mid-study-citation). Author hand ledes over time, worst-first.
-2. **The 92 UNSEALED unverified ruled claims:** recover from `temporary/claim-ruling-dashboard.html` ([[ruling-dashboard-is-recovery-source]]), seal, vision-verify, enrich — same pipeline, same `answer_full` bar.
-3. **8 `recovered_question:null`** from the prior worklist (mostly resolvable-subject ones already handled in the 41; confirm none dangling).
+1. **The 92 UNSEALED unverified ruled claims:** recover from `temporary/claim-ruling-dashboard.html` ([[ruling-dashboard-is-recovery-source]]), seal, vision-verify, enrich — same pipeline, same `answer_full` bar.
+2. **8 `recovered_question:null`** from the prior worklist (mostly resolvable-subject ones already handled in the 41; confirm none dangling).
 
 ## GENESIS
 `genesis` → run genesis.py, report the board, then ask which of the above to resume. New invariant red = the only response.

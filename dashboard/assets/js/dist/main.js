@@ -75283,6 +75283,414 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       minerals: {
         lede: "The elements Wallach calls the currency of life: of the 75 metals on the periodic table, at least 60 have a job in the human body, and running short on them is where he traces most disease back to."
+      },
+      absorption: {
+        lede: "The hinge of Wallach's whole model: health rides not on what is eaten but on what is actually absorbed \u2014 and he reads celiac-type gut damage, which can wipe out 85-90% of the intestine's absorptive surface, as malabsorption hiding behind names like diabetes, cancer and asthma."
+      },
+      acetylcholine: {
+        lede: "One of the body's most common neurotransmitters \u2014 the chemical messenger nerve cells fire across the gap to signal one another. The body assembles it in the central nervous system from choline, with coenzyme A, the active form of vitamin B5, driving the reaction."
+      },
+      amino_acids: {
+        lede: "The protein building blocks the body can't make for itself: Wallach counts 12 essential amino acids among his 90 nutrients, and warns that missing any one for long brings a specific deficiency disease \u2014 while some double as the raw material for niacin, serotonin, thyroid hormone and adrenaline."
+      },
+      antidepressants: {
+        lede: "America's leading antidepressant, Prozac, arrived in 1987 \u2014 and Wallach tracks its explosion: $350 million in sales by 1989, doctors writing 650,000 prescriptions a month, and projections topping a billion dollars by 1995."
+      },
+      antioxidants: {
+        lede: "The body's defense against the free radicals that oxidize its cells \u2014 but Wallach's signature point is they can't work alone: antioxidant enzymes like glutathione need mineral cofactors such as selenium, and combinations of them, not any one alone, are what raise a population's maximum lifespan."
+      },
+      "arachidonic-acid": {
+        lede: "A polyunsaturated fatty acid usually grouped with linoleic and linolenic as an 'essential fatty acid' \u2014 but Wallach counts only those two as truly essential, since the body builds arachidonic acid from linoleic acid, and these fats maintain cell-membrane integrity and carry fat through the blood."
+      },
+      aromatherapy: {
+        lede: "Massage with plant essential oils drawn from roots, flowers, leaves, bark and resin \u2014 what Wallach frames as herbal medicine, calling the oils pesticides, fungicides and hormone-like agents good for scars, acne and stretch marks, with named oils for everything from blood pressure to birth control."
+      },
+      "arsenic-trioxide": {
+        lede: "The notorious poison that became medicine: arsenic trioxide, turned into a medicine by 18th-century Thomas Fowler, has been used medicinally for roughly 500 years, most often against cancer, and in 2000 became an FDA-approved drug for acute promyelocytic leukemia, where low doses put patients into lasting remission."
+      },
+      aspirin: {
+        lede: "The everyday painkiller Wallach files under the arthritis 'treatment of choice' \u2014 it doesn't fix the underlying problem, he warns, and can cause gastric bleeding and even death, a dangerous side effect rarely mentioned."
+      },
+      ayurveda: {
+        lede: "The medical art Wallach calls possibly the most ancient of all \u2014 its name fusing 'life' and 'science,' recorded around 1200 BC \u2014 that reads the body as seven tissues held in balance by food and treats imbalances rather than diagnoses; Wallach says it taught medicine even to the Greeks, Pythagoras included."
+      },
+      be_your_own_doctor: {
+        lede: "Wallach's call to become one's own primary health care provider \u2014 pursuing conservative and alternative care before being 'cut, burned and poisoned' by orthodox medicine, treating prevention as the best insurance, and closing with his recurring refrain to 'separate medicine and state.'"
+      },
+      beef: {
+        lede: "What Wallach calls an unequaled source of animal protein and essential lipids \u2014 and one every long-lived people on earth eats \u2014 with a single rule: keep it no more than medium, since burnt fat turns to the heterocyclic amines he links to a 462% jump in breast-cancer risk."
+      },
+      berylliosis: {
+        lede: "A painful, sometimes fatal lung disease from inhaling beryllium oxide dust thrown off in mining and industry \u2014 the hazard is not the element in food but its powdered oxide; Wallach describes an acute form (chemical pneumonitis) and a chronic one that resembles pulmonary sarcoidosis."
+      },
+      bismuth: {
+        lede: "The pink in Pepto-Bismol \u2014 bismuth subsalicylate, used against ulcers and gut infection for over 8,000 years \u2014 carries Wallach's myth-buster: stomach ulcers were long blamed on stress, but the true cause turned out to be Helicobacter pylori, the bacterial cause Marshall and Warren proposed in 1983."
+      },
+      butter: {
+        lede: "A staple fat of the near-disease-free Hunza and Wallach's answer to margarine \u2014 he calls butter an absorption-enabler, a leading source of the fat-soluble vitamins A and D (and, grass-fed, the 'Activator X' now thought to be K2) the body needs to take up minerals at all."
+      },
+      cadmium: {
+        lede: "A soft heavy metal chemically close to zinc, which it can stand in for \u2014 but Wallach treats cadmium mainly as a kidney-accumulating toxin that displaces four essential minerals (zinc, copper, calcium, selenium) from the enzymes that depend on them, at about 23 micrograms per pack of cigarettes."
+      },
+      carbonated_beverages: {
+        lede: "Every carbonated soft drink \u2014 diet 'one-calorie' sodas included \u2014 is loaded with phosphates, and Wallach's steady warning is that this phosphorus load throws off the ideal 2:1 dietary calcium-to-phosphorus balance and, over the long haul, drives osteoporosis."
+      },
+      chicken: {
+        lede: "The poultry Wallach seats squarely inside a longevity diet \u2014 one of the animal foods he says every long-lived people eats, and why no strict vegan, in his telling, reaches 100 \u2014 while he draws a hard line at commercial fried chicken, lumping it with the processed foods the Blue Zones never had."
+      },
+      chiropractic: {
+        lede: "The drug-free, surgery-free physical medicine that blames many ills on 'subluxations' \u2014 misaligned vertebrae pressing on spinal nerves. Wallach calls it the West's most accepted alternative therapy: ancient manipulation that reached the West in 1895, and a 1987 antitrust winner over the AMA."
+      },
+      cholesterol: {
+        lede: "Not the villain of the low-fat era but what Wallach calls an essential nutrient \u2014 the raw material for every cell membrane, the steroid hormones, the brain's myelin, and vitamin D. He lists it beside the essential fatty acids and ties its deficiency to Alzheimer's, low testosterone and a flattened libido."
+      },
+      citrulline: {
+        lede: "The precursor the body turns into the amino acid arginine \u2014 Wallach's Epigenetics places it one step upstream, converted by two cytosolic enzymes (ASS and ASL) in a reaction so ATP-expensive he argues for supplying arginine directly to spare the cell's energy."
+      },
+      "coenzyme-a": {
+        lede: "The working form of vitamin B5 (pantothenic acid): Wallach reads coenzyme A as the body's acyl-group courier \u2014 the chemistry that pulls energy out of carbohydrates, builds and breaks down fatty acids, and forges sterols, steroid hormones, and the nerve signal acetylcholine."
+      },
+      colonics: {
+        lede: "The hydrotherapy Wallach reaches for to flush the die-off toxins of a chronic-infection cleanse \u2014 timed to the first two weeks of therapy, paired with liver flushes, and indicated as well for constipation and for detoxifying any chronic disease or liver ailment except infectious hepatitis."
+      },
+      color_therapy: {
+        lede: "Healing with colored lights and panels \u2014 recorded in Egypt's ancient light temples and echoed in Ayurvedic and Chinese medicine. Wallach maps a color to each ailment: blue for fever and burns, red for low blood pressure, green for ulcers and colds, and frames the whole practice as a form of light therapy."
+      },
+      "cranial-nerves": {
+        lede: "The nerves that pass through bony tunnels in the skull \u2014 where Wallach traces as many as 25 different diseases: skull osteoporosis, a universal mineral loss, narrows those tunnels and pinches the nerves, among them the accessory nerve that drives the neck and shoulders."
+      },
+      cruciferous_vegetables: {
+        lede: "Cabbage, broccoli, cauliflower, Brussels sprouts and kale \u2014 the vegetables Wallach classes as goitrogens, foods that interfere with normal thyroid metabolism in inordinate amounts, which is why his hypothyroidism protocol starts by cutting them out before adding thyroid support."
+      },
+      dairy: {
+        lede: "Wallach splits the dairy case: fresh whole milk, eggs and cheese rank among his rich sources of vitamin B12, while pasteurized milk \u2014 stripped of 40 to 90 percent of that B12 \u2014 he counts, with low-fat foods, among the 'displacing foods of modern commerce.'"
+      },
+      detox: {
+        lede: "Wallach's playbook for the toxic metals a modern body inevitably takes in: daily alfalfa, a monthly apple-juice liver flush and a yearly hair analysis to track the load, with selenium to blunt mercury and plant-derived colloidal minerals as the standing shield."
+      },
+      dialysis: {
+        lede: "The separation Wallach defines by size \u2014 dissolved salt, starch and sugar slip through a semi-permeable membrane while larger inorganic colloids cannot. It's how the 'artificial kidney' Dr. Willem Kolff built cleans the blood, and the principle behind why so few minerals cross the gut."
+      },
+      dietary_oils: {
+        lede: "The salad dressings, margarines and cooking oils Wallach ties to disease: heating or hydrogenating their polyunsaturated fats turns them into trans fats and rancid, free-radical-damaged cellular fat \u2014 with low selenium, what he calls the quickest route to heart attack and cancer."
+      },
+      digestion: {
+        lede: "Wallach's inversion of the usual story: most indigestion is too little stomach acid, not too much. He calls loss of acid (achlorhydria) 'perhaps the most significant aging phenomenon,' with 75 percent of people over 50 needing supplemental acid \u2014 and prescribes betaine HCl and pancreatic enzymes, not antacids."
+      },
+      "docosahexaenoic-acid": {
+        lede: "The omega-3 fatty acid Wallach ties straight to the brain: a low blood level of DHA flags low brain 5-HIAA \u2014 a serotonin breakdown marker \u2014 which he links directly to higher rates of depression and suicide. He counts it 'conditionally essential' and a support for memory and cognition."
+      },
+      drug_safety_elderly: {
+        lede: "What Wallach calls 'poly-pharmacy' \u2014 the inappropriate or piled-on prescriptions he says endanger a quarter or more of Americans over 65, from Valium to Seconal, many prescribed only to counteract an earlier drug's side effects; his fix is mineral replacement, not more sedatives."
+      },
+      eggs: {
+        lede: "Wallach's benchmark food: whole egg tops his protein chart at a chemical score of 100, and its cholesterol is the raw material he says rebuilds myelin and makes estrogen \u2014 so he prescribes eggs daily for nerve diseases and warns that fried eggs trigger 93% of gallbladder attacks."
+      },
+      emory_university: {
+        lede: "The Atlanta home of Wallach's turning point: at Emory's NIH- and NASA-funded Yerkes primate center, across from the CDC, he found the first non-human case of cystic fibrosis in a 1977 rhesus monkey, called it a congenital selenium deficiency \u2014 and by April 1978 was fired for saying so."
+      },
+      epigenetics: {
+        lede: "Wallach's assault on the genetic theory of disease \u2014 the study of how a cell reads its DNA, which he says most 'inherited' illness only reflects a nutrient-starved reading of. Supplying all 90 essentials, he argues, can prevent or reverse most disease rather than write it off as inherited fate."
+      },
+      essential_nutrients: {
+        lede: "The 90 nutrients Wallach counts as the cornerstone of health \u2014 60 minerals, 16 vitamins, 12 amino acids and 3 fatty acids \u2014 that he says DNA must have constant access to, each in optimal amounts and proper ratios, since depleted food can no longer supply them all."
+      },
+      estrogen: {
+        lede: "The hormone Wallach argues against replacing \u2014 for osteoporosis and in menopause alike \u2014 because it is known to cause breast and uterine cancer; he treats both not as estrogen deficiency but with minerals, stomach acid and diet, as the ovaries hand off hormone-making to the adrenals and liver."
+      },
+      faith_healing: {
+        lede: "Healing mediated through belief \u2014 laying-on-of-hands recorded in ancient China and Egypt and alive in Christianity today. Wallach notes 20 to 60 percent of patients improve on placebo when positive thought is induced, and that the Christian Scientists Mary Baker Eddy founded in 1879 outlive other Westerners."
+      },
+      fermented_foods: {
+        lede: "The soaked, sprouted, and fermented staples Wallach ties to the healthy traditional diets Weston Price documented \u2014 fermented vegetables, fruit, dairy, meats and condiments \u2014 whose abandonment for refined sugar, white flour and processed convenience foods he blames for physical degeneration."
+      },
+      fish: {
+        lede: "The food Wallach weighs rather than blanket-bans: fish liver and cod-liver oil rank among the richest sources of preformed vitamin A and among the few carrying the fat-soluble 'Activator X'; fish oil's EPA lifts protective HDL \u2014 set against the methyl mercury piling up in big predators like shark, tuna and swordfish."
+      },
+      fluoride: {
+        lede: "The most reactive halogen \u2014 and the mineral Wallach holds two ways at once: a genuine essential trace element (proven by Schwarz in 1972) that hardens tooth enamel, yet a water additive he calls 'still highly controversial' and ties to fluorosis, bone changes and cancer."
+      },
+      free_radicals: {
+        lede: "The molecules Wallach \u2014 quoting gerontologist Roy Walford \u2014 calls 'the great white sharks in the biochemical sea': unpaired-electron oxidants that attack cell walls and mitochondria, driving heart disease, cancer, Alzheimer's, cataracts and diabetes, and leaving the ceroid-lipofuscin pigment of age spots behind."
+      },
+      frequent_urination: {
+        lede: "The classic urgency and frequency Wallach reads as a zinc-shortage signal: as the prostate enlarges with age its tight capsule squeezes down on the neck of the bladder \u2014 so he treats the enlarged gland with zinc, flaxseed-oil EFAs, pumpkin seeds and fiber, beta-carotene and selenium."
+      },
+      "gamma-linolenic-acid": {
+        lede: "An omega-6 fatty acid Wallach files as 'conditionally essential' \u2014 one the body can normally make for itself but must get from the diet under certain conditions, set apart from the two he calls strictly essential, linoleic and alpha-linolenic acid."
+      },
+      "genetic-potential": {
+        lede: "The biological ceiling each species is built to reach \u2014 Wallach puts it at 145 years and roughly seven feet of height for humans \u2014 and his claim that reaching it is decided by minerals and nutrition, not genes: engineered flesh without minerals, he says, is a Mercedes run with no oil."
+      },
+      ginger: {
+        lede: "One of the herbs Wallach names against motion sickness \u2014 the carsickness, seasickness and air sickness that strikes with vertigo, nausea and a 'green at the gills' feeling \u2014 listing it as a preventive alongside the over-the-counter standbys of scopolamine patches and Dramamine."
+      },
+      ginkgo: {
+        lede: "The maidenhair-tree herb Wallach reaches for when blood isn't moving: he names it, alongside hawthorn, as specific for relieving angina by increasing blood flow through the coronary arteries, and folds it into his protocols for poor circulation and for memory loss and dementia."
+      },
+      glutathione: {
+        lede: "An antioxidant compound Wallach reaches for in his cataract protocol \u2014 where glutathione, dosed at just 40 mg a day, works alongside a larger 400 mg daily dose of the antioxidant l-cysteine."
+      },
+      gluten: {
+        lede: "The small-grain protein in wheat, barley, rye and oats that Wallach reads not as an allergy but a 'contact enteritis' \u2014 like poison ivy on the gut lining \u2014 that wears away the intestinal villi until the gut can no longer absorb; a 2009 Mayo study he cites puts a third of Americans intolerant."
+      },
+      gmo_foods: {
+        lede: "What Wallach calls 'Frankenstein Food' \u2014 genetically engineered crops he faults at the premise: a cell denied the essential nutrients, 'the basic stuff of life,' cannot reach the potential engineered into it, so he counts organic, non-GMO food among his core rules for longevity."
+      },
+      grilled_bbq_meat: {
+        lede: "The char is the hazard, not the meat: Wallach says the heterocyclic amines \u2014 free radicals born in well-done meat and burnt animal fat \u2014 can raise breast, prostate and colon cancer risk by as much as 462 percent over meat cooked medium-rare, which is why he warns never to eat it well done."
+      },
+      "hair-analysis": {
+        lede: "The mineral test Wallach reads instead of blood work: hair holds trace minerals and rare earths at 200 times blood levels \u2014 where reserves mask a raging deficiency \u2014 recording months of status, and he reads the ratios between them, like zinc-to-copper 8:1, as barometers of specific organ systems."
+      },
+      healthy_foods: {
+        lede: "The foods Wallach ranks highest for a long life: red meat as an unequaled protein source, whole egg as his benchmark for usable protein, plus butter and fermented foods from the traditional diets Weston Price documented \u2014 organic, non-GMO and mineral-rich, the way the longest-lived cultures eat."
+      },
+      helium: {
+        lede: "The lightest noble gas \u2014 so inert it forms no compound and occurs pure in nature, and after hydrogen the second most abundant element in the universe. Found on the sun before Earth and named for the Greek Helios; divers breathe it because it dissolves in blood far less than nitrogen, easing the bends."
+      },
+      herbal_medicine: {
+        lede: "The ancient practice of using plants to prevent and cure disease \u2014 the root, Wallach notes, of Chinese, Ayurvedic and American Indian medicine, traced back to Chinese pharmacopeias around 3000 BC \u2014 and the source, he adds, of more than 30% of today's orthodox drugs."
+      },
+      high_fructose_corn_syrup: {
+        lede: "The cheap industrial sweetener Wallach says took over the American food supply \u2014 cheaper, sweeter and easier to handle than sugar, so it landed in nearly every processed food in place of more nutritious ingredients; and reaching for it first, he reads as a chromium-and-vanadium shortage, not thirst."
+      },
+      home_remedies: {
+        lede: "The self-care Wallach frames around a single purpose \u2014 enough information to avoid unnecessary doctor and hospital visits \u2014 reaching from natural mosquito repellents like pennyroyal oil and 500 mg of vitamin B1 to herbal diuretics and laxatives such as senna and flaxseed."
+      },
+      homeopathy: {
+        lede: "The medical art Wallach traces to Samuel Hahnemann of Leipzig, built on two principles \u2014 'like cures like' and the 'minimum dose' \u2014 where, oddly, the more diluted the remedy the stronger the effect, even past the point (12C) where not one molecule of the original substance remains."
+      },
+      homosexuality: {
+        lede: "What Wallach calls a congenital event, not a choice: he groups homosexuality with intersex conditions as set in the embryonic brain \u2014 pointing to a smaller preoptic hypothalamus and twin studies that rule out a 'gay gene' \u2014 and traces its reported rise to declining minerals in farm soils."
+      },
+      honey: {
+        lede: "Not a health food but a sugar to eliminate \u2014 Wallach puts honey on his 'no' list beside table sugar and molasses, warns it flushes minerals from the body by 300% for 12 hours, and recounts a sensitive child whose one Feingold Diet slip, honey, left him atop a 40-foot dome."
+      },
+      hospital_dangers: {
+        lede: "Wallach's catalog of how dangerous hospitals are: an insurance survey found 970 of 1,000 billing wrong \u2014 every 'mistake' in their favor \u2014 up to half of new equipment defective on arrival, and a minimum 100,000 deaths a year from infections caught in the hospital itself."
+      },
+      "hydrogen-peroxide": {
+        lede: "The oxygen therapy Wallach traces to the body's own defenses \u2014 neutrophils make hydrogen peroxide to kill microbes, parasites and cancer cells \u2014 and, as food-grade H2O2 diluted or given IV, an alternative used since the Civil War for cancer, circulatory disease, emphysema, asthma and gangrene."
+      },
+      hydrotherapy: {
+        lede: "The healing art of water Wallach traces to Roman times and finds across every branch of medicine, orthodox included \u2014 cold baths for swelling, hot for soreness, mineral baths for arthritis, steam to draw out heavy metals, plus sitz baths, epsom salts and colonics."
+      },
+      "iatrogenic-medicine": {
+        lede: "Harm caused by the doctor rather than the disease. Wallach cites a 1991 Harvard study putting US hospital deaths from doctor-caused mishaps at 198,000 a year, and reports that doctors themselves \u2014 the founding observation behind 'Dead Doctors Don't Lie' \u2014 average only about 58 years."
+      },
+      immunotherapy: {
+        lede: "Wallach flips immunotherapy on its head \u2014 boosting immunity instead of suppressing it with chemo and cortisone \u2014 by cutting fried foods, margarine and sugar, treating allergies, and loading vitamins C and A, zinc, germanium, selenium and ginseng."
+      },
+      intelligence: {
+        lede: "Where Wallach treats intelligence not as a fixed trait but as a nutritional lever: zinc plus his full program raising Down's-syndrome IQ 15\u201320 points, while a shortfall of essential fatty acids lowers it in infants and lead poisoning strips it for good."
+      },
+      intermittent_fasting: {
+        lede: "Alternating fed days with complete fast days on a nutrient-rich diet \u2014 Wallach's 'under-nutrition without malnutrition' at work: he cites 1940s rats fasted by Carlson and Holzol that lived 20 to 30% longer, and Dr. Charles Goodrick's every-other-day rats that pushed maximum life span from 875 to 1,295 days."
+      },
+      intersex: {
+        lede: "The modern medical term for what was once called hermaphroditism \u2014 a wide range of congenital variations in sexual anatomy that Wallach traces to mineral or vitamin deficiency in the embryo, occurring by one estimate in up to 4% of births and, he holds, preventable with complete preconception nutrition."
+      },
+      keto_diet: {
+        lede: "The low-carb way of eating that cuts carbohydrates to about twenty grams a day to burn fat in ketosis \u2014 Wallach counts his own mineral-heavy 'See Food Diet' among the best, but says minerals matter far more than the carb-fat-protein ratio, since he blames obesity on mineral deficiency, not carbs."
+      },
+      korsakoff: {
+        lede: "What Wallach calls a 'false Alzheimer's' or 'cerebral beriberi' \u2014 recent-memory loss, marked by confabulation, that he traces to a single vitamin B1 (thiamine) deficiency from chronic alcoholism and sugar, and says reverses within a week on megadose thiamine."
+      },
+      krypton: {
+        lede: "The noble gas behind Superman's 'kryptonite' \u2014 in reality an unreactive, harmless element that Sir William Ramsay isolated in 1898 and named from the Greek for 'hidden,' and which Wallach says 'may in fact be an essential element for all vertebrates.'"
+      },
+      lactation_suppression: {
+        lede: "Wallach's two levers for drying up breast milk: goldenrod to ease engorgement and reduce supply, and Luperon \u2014 a posterior pituitary hormone \u2014 to stop milk production outright, though it may cause temporary menopausal symptoms."
+      },
+      lead: {
+        lede: "The metal Wallach places on both sides of a line: essential in parts-per-billion to turn RNA into DNA, yet toxic in excess \u2014 with more than 400,000 tons pumped into the American biosphere each year, insidiously poisoning over 38 million Americans."
+      },
+      light_therapy: {
+        lede: "Wallach's use of light as medicine: 'cool,' germicidal ultraviolet \u2014 peaking at 2,537 Angstroms \u2014 to raise vitamin D and fight skin diseases and arthritis, and infrared shone through a small cloth window onto a trigger point to pull white cells into a chronic wound."
+      },
+      low_carb_diet: {
+        lede: "Cutting the amount and type of carbohydrate to steady blood sugar and curb ravenous hunger \u2014 Wallach grants it can speed weight loss but warns that anyone making it their sole consideration is 'in for a rude awakening,' since obesity's real root is mineral deficiency, not carbohydrates."
+      },
+      ma_lan: {
+        lede: "Dr. Joel Wallach's wife and nine-book co-author \u2014 a Beijing-trained MD and microsurgeon who survived Cultural Revolution labor by eating river grass and mud, boasted a 95 percent success rate joining vessels as thin as a hair, and married Wallach on Valentine's Day, 1987."
+      },
+      macrobiotics: {
+        lede: "The 'brown rice' diet George Ohsawa built in 1946 Japan around balancing 'yin' and 'yang' foods draws its real successes, Wallach argues, from an accident of nutrition: dropping wheat removes the trigger for hidden gluten sensitivity, letting undiagnosed celiacs finally absorb minerals, vitamins and fats."
+      },
+      macronutrients: {
+        lede: "The big three energy nutrients \u2014 carbohydrates, fats and proteins \u2014 that Wallach walks through from photosynthesis to the peptide bond, with one heresy at the center: carbohydrates are not essential, since the body can build all the sugar it needs by reshuffling fats and proteins."
+      },
+      margarine: {
+        lede: "Butter's hardened stand-in \u2014 vegetable oil pumped full of hydrogen into trans fat \u2014 that Wallach turns on its head: sold by the medical trade as the safe choice to prevent hardened arteries, plaque and stroke, it is now known, he says, to be a direct cause of the very diseases it promised to prevent."
+      },
+      meat: {
+        lede: "What Wallach calls an unequaled source of animal protein and essential lipids \u2014 he ties the cholesterol in eggs and red meat to building the myelin sheath, notes every long-lived people on earth eats it, and adds one caveat: don't burn it well-done into cancer-linked heterocyclic amines."
+      },
+      mediterranean_diet: {
+        lede: "The olive-oil-and-fish way of eating Wallach calls 'legendary for its health benefits' in one book \u2014 and dismisses as an empty catch phrase in another, since he holds that no named diet makes the difference without daily supplementation of all 90 essential nutrients."
+      },
+      melatonin: {
+        lede: "A neurohormone the body builds down a chain Wallach traces from the amino acid tryptophan through serotonin to melatonin; he notes it only in passing, within his discussion of tryptophan, the sleep-aid amino acid it springs from."
+      },
+      mercury: {
+        lede: "The only metal liquid at room temperature \u2014 the old 'quicksilver' \u2014 and what Wallach reads as an accumulative poison that binds and cripples the body's enzymes: chiefly neurotoxic, concentrated by industry, fish and dental amalgam, with selenium as its one natural antidote."
+      },
+      microplastics: {
+        lede: "Modern plastic particles Wallach's books never name \u2014 yet they fall into a category he does address: xenobiotics, the foreign chemicals the body must clear, where he runs selenium (250\u2013500 mcg a day) and plant-derived colloidal minerals to blunt damage from heavy metals and pollution."
+      },
+      microwaving_food: {
+        lede: "The oven that cooks from the inside out \u2014 Wallach describes, without calling it good or bad, how ultra-short microwaves make a food's water molecules vibrate millions of times a second until the friction turns to heat; first marketed in the US in 1947, though early sales fell far short of hopes."
+      },
+      msg: {
+        lede: "The flavor enhancer behind what Wallach calls the 'Chinese restaurant syndrome' \u2014 a classic food allergy in which any contact with MSG sets off palpitations or a racing heart, at times alarming enough to be mistaken for a heart attack that passes before the ambulance arrives; his home pulse test flags it."
+      },
+      muscle_strength: {
+        lede: "Protein is the main stuff of muscle, and Wallach rates animal sources highest for building it \u2014 but his sharper claim is that muscle wasting and muscular dystrophy trace to a selenium shortage, not too little meat, and that a gluten-damaged gut can't absorb the mineral that fixes it."
+      },
+      naturopathy: {
+        lede: "A whole system of natural medicine \u2014 said to descend from Hippocrates the herbalist \u2014 that Wallach defines by its first principle, 'first do no harm,' and the body's own inherent healing power: herbs, hydrotherapy and homeopathy, but not major surgery or most drugs."
+      },
+      nausea: {
+        lede: "That queasy, sick-to-the-stomach urge to vomit \u2014 the upset Wallach settles with Pepto Bismol and Kaopectate alongside three herbs: artichoke, avens and peppermint."
+      },
+      negative_ion_therapy: {
+        lede: "Treating disease with negatively charged air particles \u2014 300\u20131,000 per cubic meter in pure outdoor air (more at the beach), but only 150\u2013500 in air-conditioned rooms. Wallach credits them with lowering heart rate and blood pressure, steadying brain rhythm, and easing asthma, allergies and cystic fibrosis."
+      },
+      nitrates: {
+        lede: "The salt compounds added to cured, preserved meats and canned foods to block bacteria and keep the meat red \u2014 but Wallach warns that in the acid of the stomach nitrates turn into nitrosamines, potential carcinogens, and act as goitrogens that suppress the thyroid."
+      },
+      "nitric-oxide": {
+        lede: "The circulation molecule the body builds from the amino acid arginine \u2014 Wallach's Epigenetics says making it lowers blood pressure and drives blood flow through narrowed, obstructed vessels, and he credits the flavanols in dark chocolate with boosting it to relax vessel muscle."
+      },
+      nitrites: {
+        lede: "The preservatives cured into bacon, ham and deli meats to block bacteria and keep the meat red \u2014 which Wallach warns the stomach's acid turns into cancer-causing nitrosamines that also suppress the thyroid, counting them among the goitrogens and dietary free radicals to avoid."
+      },
+      nobel_prize_nomination: {
+        lede: "The pinnacle of his career, he says: in 1990 the Association of Eclectic Physicians forwarded his name to Stockholm's Nobel Committee for the 1991 Prize in Medicine, for tying cystic fibrosis to a maternal selenium deficiency \u2014 a nod that later drew jealous rage from doctors on both sides of medicine."
+      },
+      noni_juice: {
+        lede: "A high-ORAC antioxidant juice \u2014 Wallach's Immortality table rates it at 398 per serving \u2014 that he lists among the antioxidant-rich fruits and pours over salad in place of oil on his See Food Diet."
+      },
+      obscure_elements: {
+        lede: "The little-known corners of the periodic table Wallach catalogs \u2014 actinium that glows like radium and gathers in bone, cesium named for its sky-blue spectral lines, hafnium hidden inside its zirconium 'twin' until 1923, and indium that shrieks when bent."
+      },
+      orac: {
+        lede: "The single lab number Wallach uses to score how strongly a food, drink or supplement neutralizes free radicals \u2014 Oxygen Radical Absorbance Capacity, a government-developed metric from NIH and Tufts scientists \u2014 which he turns into a daily target of 20,000 to 25,000 points for reaching 100."
+      },
+      ornithine: {
+        lede: "The amino acid Wallach pairs with L-arginine as a lever on aging: in significant doses the two prompt the pituitary to release human growth hormone \u2014 which he cites, via the New England Journal of Medicine, as reversing biological aging, from lost muscle and thinning skin to fading memory and sex drive."
+      },
+      painkillers: {
+        lede: "The pain and anti-inflammatory drugs \u2014 ibuprofen, Advil, Aleve \u2014 that Wallach says don't fix the underlying problem and can cause liver damage in up to ten percent of users, even as he cites a Johns Hopkins study crediting ibuprofen with a 60 percent lower Alzheimer's risk."
+      },
+      "pelvic-floor-exercises": {
+        lede: "The Kegel drill Wallach recommends for urinary incontinence, urgency and prenatal conditioning in both sexes: tighten the pelvic-floor muscles as if halting a bowel movement or the urine stream, several hundred a day."
+      },
+      ph: {
+        lede: "The razor-thin acid-base band the body defends: blood held between 7.36 and 7.44, a drop below 6.8 or a rise above 7.8 rapidly fatal \u2014 and the ground for what Wallach calls 'high-pH therapy,' flooding a cancer cell with cesium to turn its interior alkaline."
+      },
+      phytates: {
+        lede: "The mineral-blockers hiding in nuts, grain bran, seeds and whole wheat: phytic acid \u2014 inositol hexaphosphate \u2014 which Wallach calls a natural chelating substance that locks calcium, iron and zinc into insoluble complexes the body can't absorb, enough to defeat even supplemented calcium."
+      },
+      pork: {
+        lede: "A legitimate red meat, not a food to shun \u2014 Wallach notes every long-lived people eats it, the pork-eating Okinawans among them \u2014 but he draws a hard line at the cured kind: the nitrates and nitrites in ham, bacon and sausage act as goitrogens that can produce thyroid disease."
+      },
+      pregnancy_birth: {
+        lede: "Wallach's 'pet peeve' \u2014 that most birth defects trace not to genes or radiation but to a mother short on the 90 essential nutrients before conception and through the first 90 days, and that pregnancy itself is a normal process, safest and cheapest delivered at home."
+      },
+      protein: {
+        lede: "The body's tissue-builder \u2014 repairing muscle and forming enzymes, hormones and antibodies \u2014 which Wallach grades on two scales, chemical score and % utilization: whole egg tops every source at 100 and 94%, animal proteins outrank plant ones, and mixing plant sources fills their missing amino acids."
+      },
+      quackbusters: {
+        lede: "The self-appointed anti-quackery movement Wallach casts as a medical monopoly's attack dog: a private circle of doctors, founder Victor Herbert among them, he says organized to crush alternative-medicine rivals \u2014 and whose claim that a varied diet supplies every vitamin and mineral he flatly rejects."
+      },
+      radon: {
+        lede: "The odorless, colorless radioactive gas Wallach flags as a common household hazard: every isotope radioactive, carcinogenic and highly toxic to inhale \u2014 and, because nothing gives it away, detectable only with a test kit."
+      },
+      rare_earth_elements: {
+        lede: "The large family of chemically very similar metals \u2014 dysprosium, erbium, europium and the other lanthanides \u2014 widely scattered across the earth yet scarce, that the body carries in trace amounts and stores mostly in bone; Wallach cites lab studies where adding them to the diet doubled animals' lifespan."
+      },
+      "rda-critique": {
+        lede: "Wallach's case against the Recommended Dietary Allowance: it was set, he says, only to cover 'practically all healthy people' and does not apply to anyone with a health challenge or a full-blown disease \u2014 and the doses he counts as merely preventive already run well above it."
+      },
+      salt: {
+        lede: "Not a health hazard but a necessity, in Wallach's framing: sodium chloride is the raw material the stomach uses to make its acid, so salt-restricted diets breed achlorhydria and failed absorption \u2014 which is why his treatment often begins by putting salt back on food."
+      },
+      see_food_diet: {
+        lede: "Wallach's own low-carb, low-glycemic weight-loss plan \u2014 a pun on 'see food and eat it' \u2014 built on his claim that the real root cause of obesity is mineral deficiency, so once the body is saturated the cravings, pica and binge-eating that sink other diets simply disappear."
+      },
+      serotonin: {
+        lede: "A neurotransmitter that carries signals in the nervous system, built from the amino acid tryptophan via tryptophan hydroxylase and convertible onward into melatonin \u2014 which is why Wallach ties conditions that block tryptophan absorption, like gluten and lactose intolerance, to depression."
+      },
+      sexual_health: {
+        lede: "Where Wallach parts with the orthodox sexologist: he treats premature ejaculation as normal, preventable and curable \u2014 traced to high expectation, infrequency and friction, not guilt \u2014 and answers it with comfort between partners, frequent sex, good lubrication, plus ginseng and Zumbani as tonics."
+      },
+      shark_cartilage: {
+        lede: "A cancer therapy the Chinese have used for 5,000 years: Wallach says its angiostatin and endostatin starve a tumor by choking off the new capillaries it must grow to feed itself \u2014 dismissed as quackery, he argues, only until the same molecules could be patented."
+      },
+      "silver-nitrate": {
+        lede: "Silver nitrate \u2014 historically called 'lunar caustic' for silver's ancient link to the moon \u2014 carries centuries of medicinal use: a 17th-century purgative and laxative, a 19th-century cautery for wounds and tumors, and famously the single 2% drop placed in newborns' eyes from 1884 to prevent gonorrheal eye infection."
+      },
+      "soil-depletion": {
+        lede: "The mineral bankruptcy of the world's farmland \u2014 Wallach's cornerstone, built on 1936's U.S. Senate Document 264 and the 1992 Rio Earth Summit: soils that should hold 60 elements now run 'anemic,' 99% of Americans are mineral-deficient, and no stomach is big enough to eat the shortfall back."
+      },
+      somatic_therapies: {
+        lede: "The hands-on healing arts Wallach surveys \u2014 osteopathy, reflexology, Rolfing \u2014 that treat the body through the body: manipulating spine and tissue, working reflex 'zones' on the soles and palms, or breaking down bound connective tissue to correct posture."
+      },
+      stem_cells: {
+        lede: "Self-renewing cells that copy themselves or become other cell types \u2014 the fibroblasts Alexis Carrel grew from chicken hearts in 1912, dividing for 34 years. Wallach grants the science but holds the 90 essential nutrients, above all colloidal minerals, always beat stem cells at preventing and reversing disease."
+      },
+      sucralose: {
+        lede: "The no-calorie sweetener Wallach classes as natural \u2014 Sucralose, extracted from sugar cane, unlike man-made aspartame or saccharin \u2014 that in 2004 became America's number-one blended sweetener; used in moderation, he says, it's 'considered' safe."
+      },
+      sugar: {
+        lede: "Wallach reads a craving for sweets and soft drinks not as real hunger but as a sign of chromium and vanadium shortage \u2014 and warns that heavy sugar, carbonation, and caffeine work against the bones two ways at once, both blocking calcium's uptake and leaching it back out."
+      },
+      "supplement-dosing": {
+        lede: "Wallach's two-tier answer to how much to take: 'preventive doses' set well above the RDA but below the megavitamin range for everyday protection, with megavitamin levels held back for extraordinary situations and specific diseases."
+      },
+      testosterone: {
+        lede: "The male hormone Wallach treats as a nutrition problem, not just a gland one \u2014 built from cholesterol and, he says, kept at normal levels by the trace mineral boron, which supplementing can double; the puberty surge he calls, when it lands on mineral gaps and sugar, an explosive driver of teen violence."
+      },
+      thallium: {
+        lede: "A classic heavy-metal poison in Wallach's element catalog: he notes thallium accumulates in the mammalian kidney and is highly toxic to mammals, humans included \u2014 one of the toxic metals he flags strictly as a hazard, with no nutritional role."
+      },
+      the_salad_fork_trick: {
+        lede: "Wallach's one-move tactic for stripping the calories out of salad dressing \u2014 dipping the fork straight down into a side dish of dressing instead of pouring it on \u2014 drops a salad's dressing calories from about 1,000 to 50 while the taste stays."
+      },
+      tuna: {
+        lede: "The fish Wallach reaches for as his clearest example of hidden dietary lead: canned tuna tests at nearly double the lead of the same fish sold fresh, leached from the sealant on the can seams \u2014 and, as a large predator, it also concentrates neurotoxic methyl mercury."
+      },
+      twenty_thousand_autopsies: {
+        lede: "The comparative-pathology record at the foundation of Wallach's whole framework: more than 20,000 autopsies \u2014 over 17,500 animals across 454-plus species, plus 3,000 humans \u2014 from which he draws his central claim that every creature dying of 'natural causes' really dies of a nutritional deficiency disease."
+      },
+      urine_therapy: {
+        lede: "Injecting a patient's own urine \u2014 first centrifuged and filtered \u2014 back under the skin to boost immunity: Wallach frames it on the same principle as an allergist's shots, and says MD allergists used it for 50 years against allergies, asthma, migraine and arthritis, until prepared allergens turned a profit."
+      },
+      vaccines: {
+        lede: "What Wallach calls 'perhaps the greatest interface between government and freedom of choice': he opposes compulsory school-entry vaccine mandates, defends the religious exemption, and warns that many vaccination programs are suspected of carrying catastrophic diseases \u2014 some experts even tracing early HIV to them."
+      },
+      valerian: {
+        lede: "The calming herb Wallach names among those of value for anxiety and panic attacks \u2014 taken with betaine HCl before meals to aid digestion \u2014 and one he folds into his protocols for tachycardia and headache."
+      },
+      veganism: {
+        lede: "The meat-free diets Wallach flatly rejects: he says every long-lived people on earth eats red meat, and that unsupplemented strict vegans run 51 to 57 minerals short \u2014 enough, within five years, to bring grey hair, osteoporosis, anemia and even cancer, since plants can't manufacture minerals."
+      },
+      vitamins: {
+        lede: "The carbon-based compounds the body needs in tiny daily amounts but can't make itself \u2014 working as coenzymes that switch enzymes on, adding no calories and no body mass. Wallach counts 16 among his 90 essentials, and warns a shortfall in pregnancy invites catastrophic birth defects."
+      },
+      wallach: {
+        lede: "The trace-mineral researcher this whole framework is built on: nominated for a 1991 Nobel Prize for tracing cystic fibrosis to a selenium deficiency, co-author of the DSHEA law that keeps supplements legal as food, and hailed by his medal committee as one of epigenetics' first practitioners, if not founders."
+      },
+      water: {
+        lede: "Wallach's rules for what to drink: filtered, not distilled \u2014 'hungry' distilled water leaches minerals from the bones over time \u2014 and clean, slightly alkaline water (pH 7.5-8.5), though never with meals, where it would neutralize the stomach acid needed to digest."
+      },
+      xenon: {
+        lede: "The rare, chemically inert noble gas Wallach includes among his trace elements, present in nature only in vanishingly small amounts \u2014 with, he notes, one biological action: it binds to hemoglobin and myoglobin, producing the anesthetic effect behind its real-world use as an anesthetic gas."
+      },
+      yogurt: {
+        lede: "A food Wallach splits in two: whole-milk, live and Greek yogurt he counts among the staples of the longest-lived peoples \u2014 the Hunza and the Greek island of Symi \u2014 while low-fat and 98% fat-free versions he says are 'loaded with sugar' and lists among the sweetened foods to give up."
       }
     }
   };
@@ -196300,7 +196708,7 @@ Remaining (chronicle/next-chunk.md): 22 DDDL dose claims (contradiction audit) +
 
 ROOT CAUSE (completeness): entity_page_derive.search_sections bucketed a page's enriched claims by subject ONLY, while state/search.ts::claimsForSubject includes also_about \u2014 so ~1,086 also_about claim-instances were findable in search yet dropped from their pages (e.g. Wallach's selenium answer naming hypothyroidism was absent from the hypothyroidism page, and the exact query 'Can a selenium deficiency cause an underactive thyroid?' dead-ended). FIX: search_sections now includes also_about (subject OR also_about), matching claimsForSubject exactly; deterministic id-order within each facet. GATE: new entity_page_enriched_matches_search (consistency) independently re-derives claimsForSubject from the shipped search-index and asserts every one of the 601 condition/essential pages' enriched set == it (subset = search>page defect; superset = a page claim search can't reach). Negative test tools/test_entity_page_enriched_matches_search.py proves it bites (GREEN on real, RED on a dropped claim, RED on an extra). CLAUDE.md board total 92->93; external stays 23. | TASK 1 (scannability): entity-page.ts renderFacetGroups caps each Worth-Knowing facet at FACET_CAP=7 cards, overflow behind a native 'See N more answers' reveal (kd-ep-more--answers, a roomier variant in drawer-knowledge.css); the count badge keeps the true total (display cap, not data cap). render_probe_knowledge's 2 record-collapse assertions rewritten to test the heuristic RELATIONSHIP (kinds collapse iff record >=20) against the live count, so they survive record-size shifts. | TASK 2 (relevance prune, essentials only): 425 also_about removals from eden/corpus/search-enrichment.json \u2014 120 other-nutrient definitions ('What is strontium/boron/Vitamin K?') + 297 incidental name-drops ('How much phosphorus is in the body?') + 8 residual definition leaks (e.g. 'What is Vitamin E?' off selenium). ALL 455 condition-protocol claims KEPT (Luneth's call) so broad nutrients aren't gutted \u2014 vitamin C keeps its flu/infection/HIV uses (was 84% pruned under the strict rule, now 0). Lean-conservative keeps: electrolyte-group + omega-group claims + the cobalt<->B12 pair (9 deliberate). PROVENANCE: calcium pilot (1 agent, 160 claims) -> Luneth calibration (keep protocols only for the nutrient's own deficiency disease; lean conservative) -> 12-agent workflow over 1,483 claims across 83 essentials (809 strict removes) -> Luneth 'keep ALL protocols' decision -> filtered to definitions+incidental only -> reconciled by re-applying from clean HEAD -> +8 deterministic residual-definition cleanup. Conditions/Explore keep the full also_about breadth (unchanged). | VERIFY: node tools/build.mjs OK; board 93/93 (23 external / 26 consistency / 42 structural / 2 meta), 0 new reds; render_probe search/entity/knowledge PASS, 0 page errors; puppeteer shots confirm calcium leads 'What is calcium?' (was 'What is strontium?'), vitamin C 105 enriched incl flu/infection protocols, selenium clear of 'What is Vitamin E?'. | DEFERRED: full 425-removal audit list (final_removals.json) available on request, not committed; the 28 needs_new_topic + 92 unsealed ruled claims from the prior handoff still pending. NO SEAL (search-enrichment is the deliberately-unsealed working file; kv stays 476). Push: YES.` }, { id: "lg_mt0b919h_9r8mff", ts: "2026-08-19T11:33:15.173485-05:00", surface: "search+explore-headers", kind: "milestone", summary: "Front-faced the last 28 Engine-2 'new topic' facts (Hunza, resveratrol, chocolate, longevity lore, mineral sources) AND gave every Explore topic a hand-written header + a gate so no new topic can ship a claim-answer as its header again. Board 94/94.", detail: `Finished front-facing the last 28 Engine-2 'new topic' facts in Ask Wallach \u2014 the Hunza people, resveratrol / red wine / the French Paradox, chocolate, the Blue-Zones and longevity lore, and the traditional ways people got their minerals (glacial water, culinary ashes, kelp, Nile wheat) \u2014 each now a real searchable question-and-answer with a rich full answer. Also fixed a bug Luneth caught: every Explore topic page was using one of its CLAIMS' answers as the page HEADER (chocolate's read "It's a mineral-deficiency signal\u2026"), which reads as nonsense. Explore topics now get their own hand-written headers, the same as the nutrient pages, and a new automated gate makes a new topic impossible to ship without one.
 
-SCOPE: chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json needs_new_topic=28. The flag over-counted \u2014 it only checked essentials/conditions, not the 94 concept/topic entities. Actual: 15 claims -> 3 NEW entities, 13 -> existing entities. | NEW ENTITIES (eden/catalog/search-entities.json, unsealed \u2014 no golden hash): chocolate (substance; 482 stance, 513/516 mechanism; + cross-links 502 flavonoids & EPIGEN-476 menopause via also_about), resveratrol (substance; 481/504 big_question, 484/517 mechanism, 490 sources, 491 stance), hunza (concept; 488 stance, 499 mechanism, 505 history, 507 big_question, 512 discovery, 514 sources). | FOLDS (eden/corpus/search-enrichment.json): centenarian-cultures +509/510/518; longevity +480/501/503/520/521 and +519 (religion, subject longevity also_about faith_healing \u2014 Luneth: 'both'); minerals +486/506/511; colloidal_minerals +489. Every enriched claim carries question + crisp answer_short + rich multi-paragraph answer_full, all traced to the sealed verbatims (no invented numbers). 28 new enrichment entries; board's enriched_book_is_verified accounts 2495 (all 28 in claims_verified=711). | THE HEADER FIX (Luneth-caught defect): state/search.ts::entityLede ALWAYS returned a claim's answer_short (intro_claim or highest-facet), so 141 explore-page heroes shipped answer-shaped headers and NO gate caught it. FIX: core/schemas/entity-copy.ts gains an optional topics{} map; state/entity-copy.ts gains topicLede(); entityLede() now prefers the hand lede and falls back to the claim only for un-authored slugs. Authored 7 hand ledes (chocolate, resveratrol, hunza + the 4 fold targets longevity/centenarian-cultures/colloidal_minerals/minerals). | NEW GATE explore_entity_lede_authored (critical, consistency): every search-index entity of type not-in-{nutrient,condition} with >=1 claim must have entity-copy.topics[slug].lede OR be in the frozen backlog chronicle/lede-backlog.json. A NEW explore entity is not grandfathered => RED until authored (the 'never again' teeth Luneth asked for). Seeded 140, now 136 (7 authored). STRUCTURAL: proves a lede EXISTS, never that it reads well. Negative test tools/test_explore_entity_lede_authored.py (9 cases: the defect fires RED, blank lede fires, essential/condition/claimless/grandfathered spared). CLAUDE.md board total 93->94; external stays 23. | GLOSSARY (dashboard/assets/data/glossary.json, hand-authored R4, digit-free): +anandamide, phenylethylamine, glycemic index, pica, sirtuin, resveratrol, phytoalexin, chapatti, phytoestrogen, meta-analysis. | VERIFY: node tools/build.mjs OK (tsc clean); board 94/94 (23 ext / 27 consistency / 42 structural / 2 meta), 0 new reds; render_probe knowledge/search/entity PASS, 0 page errors. | LIMIT (honest): could NOT composite a live screenshot this session \u2014 Browser pane won't display + file:// renders as a static snapshot. All header + Q/short/full text was reviewed and approved by Luneth in chat; the pages use the established substance/topic template; VISUAL SIGN-OFF on his machine is still open. | NO SEAL: search-enrichment + search-entities are the deliberately-unsealed working files; corpus kv stays 476. | DEFERRED: the ~135-entity lede backlog (author over time, gate keeps it shrinking); the 92 unsealed prior-handoff ruled claims; the 8 recovered_question:null from the prior worklist not in this 28.` }];
+SCOPE: chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json needs_new_topic=28. The flag over-counted \u2014 it only checked essentials/conditions, not the 94 concept/topic entities. Actual: 15 claims -> 3 NEW entities, 13 -> existing entities. | NEW ENTITIES (eden/catalog/search-entities.json, unsealed \u2014 no golden hash): chocolate (substance; 482 stance, 513/516 mechanism; + cross-links 502 flavonoids & EPIGEN-476 menopause via also_about), resveratrol (substance; 481/504 big_question, 484/517 mechanism, 490 sources, 491 stance), hunza (concept; 488 stance, 499 mechanism, 505 history, 507 big_question, 512 discovery, 514 sources). | FOLDS (eden/corpus/search-enrichment.json): centenarian-cultures +509/510/518; longevity +480/501/503/520/521 and +519 (religion, subject longevity also_about faith_healing \u2014 Luneth: 'both'); minerals +486/506/511; colloidal_minerals +489. Every enriched claim carries question + crisp answer_short + rich multi-paragraph answer_full, all traced to the sealed verbatims (no invented numbers). 28 new enrichment entries; board's enriched_book_is_verified accounts 2495 (all 28 in claims_verified=711). | THE HEADER FIX (Luneth-caught defect): state/search.ts::entityLede ALWAYS returned a claim's answer_short (intro_claim or highest-facet), so 141 explore-page heroes shipped answer-shaped headers and NO gate caught it. FIX: core/schemas/entity-copy.ts gains an optional topics{} map; state/entity-copy.ts gains topicLede(); entityLede() now prefers the hand lede and falls back to the claim only for un-authored slugs. Authored 7 hand ledes (chocolate, resveratrol, hunza + the 4 fold targets longevity/centenarian-cultures/colloidal_minerals/minerals). | NEW GATE explore_entity_lede_authored (critical, consistency): every search-index entity of type not-in-{nutrient,condition} with >=1 claim must have entity-copy.topics[slug].lede OR be in the frozen backlog chronicle/lede-backlog.json. A NEW explore entity is not grandfathered => RED until authored (the 'never again' teeth Luneth asked for). Seeded 140, now 136 (7 authored). STRUCTURAL: proves a lede EXISTS, never that it reads well. Negative test tools/test_explore_entity_lede_authored.py (9 cases: the defect fires RED, blank lede fires, essential/condition/claimless/grandfathered spared). CLAUDE.md board total 93->94; external stays 23. | GLOSSARY (dashboard/assets/data/glossary.json, hand-authored R4, digit-free): +anandamide, phenylethylamine, glycemic index, pica, sirtuin, resveratrol, phytoalexin, chapatti, phytoestrogen, meta-analysis. | VERIFY: node tools/build.mjs OK (tsc clean); board 94/94 (23 ext / 27 consistency / 42 structural / 2 meta), 0 new reds; render_probe knowledge/search/entity PASS, 0 page errors. | LIMIT (honest): could NOT composite a live screenshot this session \u2014 Browser pane won't display + file:// renders as a static snapshot. All header + Q/short/full text was reviewed and approved by Luneth in chat; the pages use the established substance/topic template; VISUAL SIGN-OFF on his machine is still open. | NO SEAL: search-enrichment + search-entities are the deliberately-unsealed working files; corpus kv stays 476. | DEFERRED: the ~135-entity lede backlog (author over time, gate keeps it shrinking); the 92 unsealed prior-handoff ruled claims; the 8 recovered_question:null from the prior worklist not in this 28.` }, { id: "lg_mt0d97j7_ng28in", ts: "2026-08-19T12:29:22.531269-05:00", surface: "explore-ledes", kind: "milestone", summary: "Every Explore topic page now shows a hand-written headline. Authored all 136 remaining topic ledes \u2014 each grounded only in Wallach\u2019s own words \u2014 so the last auto-derived \u2018answer-shaped\u2019 headers are gone and the backlog is empty.", detail: "The Explore section has a page for every topic Wallach touches (foods, elements, practices, people). Its big headline at the top used to be BORROWED from one of the page\u2019s own question-answers, which read like an answer, not a title. Today the last 136 of those got a real, written-by-hand headline \u2014 and every one was written using only what Wallach himself says about that topic, never an outside fact.\n\nMECHANICS. Built 37 load-balanced source packets (each entity\u2019s own search-index claims) and ran a 74-agent Workflow (run wf_218968ff-4ea): 37 author agents drafted a header-lede per entity, each immediately handed to an INDEPENDENT verifier told to refute it \u2014 trace every number/date/name/quote to the packet (\xA700.A), and check header-shape/present-tense/attribution. Results: 101 pass, 32 revise, 3 fail. The 3 fails were real imported-fact catches (Amish framed as \u2018long-lived\u2019; melatonin \u2018sleep hormone\u2019 epithet not in corpus; nausea remedies tagged \u2018over-the-counter\u2019); the 32 revises were superlative overreach (\u2018richest\u2019\u2192\u2018rich\u2019, \u2018vanishing\u2019\u2192\u2018declining\u2019, \u2018founders\u2019\u2192\u2018practitioners, if not founders\u2019), second-person shape violations recast to third person, a fabricated \u2018which is why\u2019 causal link severed, and 3 length trims. All fixes use only packet material. My own regex+read backstop caught 2 MORE second-person slips the batch verifiers passed (low_carb_diet, water) which I hand-fixed. Then a deterministic per-entity token audit confirmed every number/date/proper-noun/quote in all 136 final ledes traces to its packet (the three apparent misses \u2014 \u2018America\u2019s\u2019\u2190\u2018U.S.\u2019, \u201817th-century\u2019\u21901637, \u2018EFAs\u2019\u2190\u2018essential fatty acids\u2019 \u2014 were faithful renderings).\n\nAPPLIED. Merged all 136 into entity-copy.json['topics'] (7\u2192143) via safe_write; emptied chronicle/lede-backlog.json grandfathered 136\u21920 so the explore_entity_lede_authored gate now fully enforces (a NEW unauthored explore entity is RED). Rebuilt (node tools/build.mjs). VERIFIED: board 94/94; the gate\u2019s negative test PASS; render_probe_knowledge + render_probe_entity PASS with PAGE_ERRORS 0, and the Mercury/Beef topic pages render their new ledes. The 5 formerly-BLANK heroes (intelligence, muscle_strength, healthy_foods, veganism, frequent_urination \u2014 zero primary claims) now carry real headers drawn from their also_about claims. Luneth reviewed the full set (review artifact 50f61990) and approved. No seal: nothing under eden/ was touched." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
