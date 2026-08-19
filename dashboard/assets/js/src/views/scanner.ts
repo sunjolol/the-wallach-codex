@@ -180,7 +180,6 @@ function renderScan(state: ScState, fileName: string | null, dataUrl: string | n
           <div class="vd-paste__lab">Or check an ingredients list</div>
           <textarea class="vd-paste__in" data-sc-paste rows="3" maxlength="4000" spellcheck="false" placeholder="Paste or type an ingredients list — e.g. water, modified tapioca starch, canola oil, salt. Or a single ingredient like wheat."></textarea>
           <button class="ds-btn-primary vd-paste__go" type="button" data-sc-paste-check>Check ingredients <span aria-hidden="true">&rarr;</span></button>
-          <div class="vd-paste__hint">The image scan above is for <b>supplement labels</b> (it reads nutrient amounts). For a <b>food</b>, paste its ingredients here — only ingredients Wallach says to avoid (gluten, seed oils, added sugar, MSG, sweeteners, modified / processed) are flagged; anything else reads neutral.</div>
         </div>
       </div>`);
   return `

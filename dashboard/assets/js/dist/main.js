@@ -19618,26 +19618,29 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           }
         }
       }
+      let effTerms = hits;
       if (cat === "gluten sources") {
-        const hardHits = hits.filter((h) => hardReject.has(h));
-        const oatHits = hits.filter((h) => OAT_DERIVED.has(h));
         const oatGfPre = /gluten[-\s]+free[^,]+\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b/i;
         const oatGfPost = /\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b[^,]+gluten[-\s]+free/i;
         const hasGFOatsAnchor = oatGfPre.test(text) || oatGfPost.test(text);
-        if (hardHits.length > 0) {
-          flag.nuance = `Hard gluten proteins detected: ${hardHits.map((t) => `"${t}"`).join(", ")}. Wallach-direct: wheat / barley / rye / malt / spelt are the actual gluten proteins. No softening \u2014 a gluten free oats declaration cannot shut off the trigger for actual gluten elsewhere on the label.`;
-        } else if (oatHits.length > 0) {
-          if (hasGFOatsAnchor) {
-            flag.nuance = `Oat-anchored gluten-free declaration detected on the label. Per the operational rule: once a brand certifies ANY oat ingredient as GF, they are operating in a GF-aware supply chain across all oat ingredients in that product. All oat hits (${oatHits.map((t) => `"${t}"`).join(", ")}) are presumed gluten-free. Flag softened.`;
-            flag.softened = true;
-          } else {
-            flag.nuance = `Oat ingredients detected (${oatHits.map((t) => `"${t}"`).join(", ")}) with no gluten free oats declaration on the label. Standard commercial oats carry real cross-contamination risk from shared supply chains. A gluten-free claim attached to a non-oat ingredient (e.g., gluten-free pasta) does NOT certify the oats. HARD REJECT until the brand certifies oat GF status.`;
+        if (hasGFOatsAnchor && hits.some((h) => OAT_DERIVED.has(h))) {
+          const remaining = hits.filter((h) => !OAT_DERIVED.has(h));
+          if (remaining.length === 0) {
+            continue;
           }
+          effTerms = remaining;
+          flag.terms = remaining;
+        }
+        const hardHits = effTerms.filter((h) => hardReject.has(h));
+        if (hardHits.length > 0) {
+          flag.nuance = `Hard gluten proteins detected: ${hardHits.map((t) => `"${t}"`).join(", ")}. Wallach-direct: wheat / barley / rye / malt / spelt are the actual gluten proteins. A gluten free oats declaration cannot shut off the trigger for actual gluten elsewhere on the label.`;
+        } else {
+          flag.nuance = `Oat ingredients detected (${effTerms.map((t) => `"${t}"`).join(", ")}) with no gluten free oats declaration on the label. Standard commercial oats carry real cross-contamination risk from shared supply chains. A gluten-free claim attached to a non-oat ingredient (e.g., gluten-free pasta) does NOT certify the oats. HARD REJECT until the brand certifies oat GF status.`;
         }
       }
-      const oatHardReject = cat === "gluten sources" && hits.some((h) => OAT_DERIVED.has(h)) && flag.softened !== true;
+      const oatHardReject = cat === "gluten sources" && effTerms.some((h) => OAT_DERIVED.has(h));
       let severity = "mild";
-      if (oatHardReject || hits.some((term) => hardReject.has(term))) {
+      if (oatHardReject || effTerms.some((term) => hardReject.has(term))) {
         severity = "hard";
       } else if (flag.softened === true) {
         severity = "softened";
@@ -197102,7 +197105,7 @@ WHAT CHANGED. (1) Oats now REJECT just like wheat, barley and rye -- they are al
 
 VERIFIED. tsc clean; board 94/94. A new permanent regression probe, tools/render_probe_scan_verdicts.js, runs 19 verdict scenarios (every case above plus mis-fire guards: buckwheat, olive oil, amaranth grain, reduced iron, orange blossom all correctly NOT flagged) and checks the removed copy is gone from the shipped bundle -- PASS. The existing scanner probes PASS. I captured three real result-card screenshots (a REJECT with dye+gluten+oil, a NEUTRAL redeemed seed oil, a clean ADD).
 
-STATUS: committed + logged, but the RESULT-CARD LOOK is a visual chunk that needs Luneth's eyes -- he was away -- so this is NOT signed off and NOT pushed yet. Screenshots are staged for his review; on his OK it gets pushed. No seal: nothing under eden/ was touched (the scanner corpus is clean-surface legacy data, not a sealed pillar).` }];
+STATUS: committed + logged, but the RESULT-CARD LOOK is a visual chunk that needs Luneth's eyes -- he was away -- so this is NOT signed off and NOT pushed yet. Screenshots are staged for his review; on his OK it gets pushed. No seal: nothing under eden/ was touched (the scanner corpus is clean-surface legacy data, not a sealed pillar).` }, { id: "lg_mt0gu82x_lvw0cm", ts: "2026-08-19T14:09:41.865421-05:00", surface: "scanner", kind: "note", summary: "Luneth signed off on the new Scanner verdict cards. Two tweaks: a 'gluten free oats' claim now hides the oats warning entirely (same as buckwheat), and the obsolete grey helper note under the ingredients box is gone.", detail: "He reviewed the three result-card screenshots (a REJECT, a redeemed-seed-oil NEUTRAL, a clean ADD) and approved the look. Two follow-up requests, both done:\n\n1. 'Gluten free oats' now shows NO warning at all \u2014 the same as buckwheat, which never matched. Previously a gluten-free-oats declaration produced a 'softened' oats flag; now the oats are cleared entirely and, if oats are the only gluten hit, the whole gluten flag is dropped. A real gluten grain (wheat, barley, rye) on the same label still flags hard on its own. Confirmed: scanning 'gluten free oats, almonds, water' returns zero anti-flags.\n\n2. Removed the obsolete grey note under the paste box ('The image scan above is for supplement labels\u2026 only ingredients Wallach says to avoid (gluten, seed oils, added sugar, MSG, sweeteners, modified/processed) are flagged'). It was out of date \u2014 it never mentioned the new dye rejects and still named the 'sweeteners' category that was dropped weeks ago \u2014 and the screen reads clearly without it.\n\nAlso fixed the new regression probe: it was grepping the built bundle (dist/main.js) for the removed copy, but the bundle inlines this very Creator's Log, whose text QUOTES those strings \u2014 a false alarm. It now greps the view SOURCE instead (the build-freshness gate makes source == shipped). Probe is up to 20 scenarios and PASSes; board 94/94. Both commits pushed." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -199038,7 +199041,6 @@ STATUS: committed + logged, but the RESULT-CARD LOOK is a visual chunk that need
           <div class="vd-paste__lab">Or check an ingredients list</div>
           <textarea class="vd-paste__in" data-sc-paste rows="3" maxlength="4000" spellcheck="false" placeholder="Paste or type an ingredients list \u2014 e.g. water, modified tapioca starch, canola oil, salt. Or a single ingredient like wheat."></textarea>
           <button class="ds-btn-primary vd-paste__go" type="button" data-sc-paste-check>Check ingredients <span aria-hidden="true">&rarr;</span></button>
-          <div class="vd-paste__hint">The image scan above is for <b>supplement labels</b> (it reads nutrient amounts). For a <b>food</b>, paste its ingredients here \u2014 only ingredients Wallach says to avoid (gluten, seed oils, added sugar, MSG, sweeteners, modified / processed) are flagged; anything else reads neutral.</div>
         </div>
       </div>`;
     return `

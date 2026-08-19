@@ -600,37 +600,40 @@ function antiFlags(label: ScanLabel, corpus: ScanCorpus): AntiFlag[] {
       }
     }
 
+    // effTerms = the terms that actually count against the product. Defaults to every hit; the gluten
+    // block below drops oats that a gluten-free-oats declaration has cleared.
+    let effTerms = hits;
+
     if (cat === 'gluten sources') {
-      // Hard gluten proteins = the gluten-category hits that sit on the unconditional hardRejectTerms
-      // list (data-driven; includes the ratified wheat-derivative grains). Oats are never on that list.
-      const hardHits = hits.filter(h => hardReject.has(h));
-      const oatHits = hits.filter(h => OAT_DERIVED.has(h));
+      // A gluten-free-oats declaration CLEARS the oats entirely -- no warning at all, exactly like
+      // buckwheat never matching (Luneth 2026-08-19). Any NON-oat gluten grain (wheat / barley / rye /
+      // malt / spelt) still flags on its own; oats WITHOUT a GF declaration are a HARD reject (item 1).
       const oatGfPre = /gluten[-\s]+free[^,]+\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b/i;
       const oatGfPost = /\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b[^,]+gluten[-\s]+free/i;
       const hasGFOatsAnchor = oatGfPre.test(text) || oatGfPost.test(text);
-
-      if (hardHits.length > 0) {
-        flag.nuance = `Hard gluten proteins detected: ${hardHits.map(t => `"${t}"`).join(', ')}. Wallach-direct: wheat / barley / rye / malt / spelt are the actual gluten proteins. No softening — a gluten free oats declaration cannot shut off the trigger for actual gluten elsewhere on the label.`;
+      if (hasGFOatsAnchor && hits.some(h => OAT_DERIVED.has(h))) {
+        const remaining = hits.filter(h => !OAT_DERIVED.has(h));
+        if (remaining.length === 0) {
+          continue; // oats-only + a GF-oats declaration => not a gluten source; show nothing at all
+        }
+        effTerms = remaining; // keep only the real gluten proteins (e.g. wheat) the GF claim can't clear
+        flag.terms = remaining;
       }
-      else if (oatHits.length > 0) {
-        if (hasGFOatsAnchor) {
-          flag.nuance = `Oat-anchored gluten-free declaration detected on the label. Per the operational rule: once a brand certifies ANY oat ingredient as GF, they are operating in a GF-aware supply chain across all oat ingredients in that product. All oat hits (${oatHits.map(t => `"${t}"`).join(', ')}) are presumed gluten-free. Flag softened.`;
-          flag.softened = true;
-        }
-        else {
-          flag.nuance = `Oat ingredients detected (${oatHits.map(t => `"${t}"`).join(', ')}) with no gluten free oats declaration on the label. Standard commercial oats carry real cross-contamination risk from shared supply chains. A gluten-free claim attached to a non-oat ingredient (e.g., gluten-free pasta) does NOT certify the oats. HARD REJECT until the brand certifies oat GF status.`;
-        }
+      const hardHits = effTerms.filter(h => hardReject.has(h));
+      if (hardHits.length > 0) {
+        flag.nuance = `Hard gluten proteins detected: ${hardHits.map(t => `"${t}"`).join(', ')}. Wallach-direct: wheat / barley / rye / malt / spelt are the actual gluten proteins. A gluten free oats declaration cannot shut off the trigger for actual gluten elsewhere on the label.`;
+      }
+      else {
+        flag.nuance = `Oat ingredients detected (${effTerms.map(t => `"${t}"`).join(', ')}) with no gluten free oats declaration on the label. Standard commercial oats carry real cross-contamination risk from shared supply chains. A gluten-free claim attached to a non-oat ingredient (e.g., gluten-free pasta) does NOT certify the oats. HARD REJECT until the brand certifies oat GF status.`;
       }
     }
 
-    // Oats are a HARD reject unless the label carries a gluten-free-oats declaration (Luneth 2026-08-19):
-    // wheat / barley / rye / oats are all hard gluten grains; the only exception is a "gluten free oats /
-    // bread" style claim, which the gluten block above marks as softened.
-    const oatHardReject = cat === 'gluten sources'
-      && hits.some(h => OAT_DERIVED.has(h)) && flag.softened !== true;
+    // Oats WITHOUT a GF declaration are a HARD reject (item 1); GF-cleared oats were already dropped
+    // from effTerms above, so this only fires on oats that genuinely remain.
+    const oatHardReject = cat === 'gluten sources' && effTerms.some(h => OAT_DERIVED.has(h));
 
     let severity: AntiFlag['severity'] = 'mild';
-    if (oatHardReject || hits.some(term => hardReject.has(term))) {
+    if (oatHardReject || effTerms.some(term => hardReject.has(term))) {
       severity = 'hard';
     }
     else if (flag.softened === true) {

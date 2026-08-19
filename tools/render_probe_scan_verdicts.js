@@ -23,7 +23,8 @@ const HITS4 = [N('Zinc', 15, 'mg'), N('Selenium', 100, 'mcg'), N('Copper', 1, 'm
 const CASES = [
   // item 1 — gluten grains / oats hard reject
   { t: 'organic oats -> REJECT', label: { ingredients: 'organic oats' }, expect: 'REJECT', flagHard: 'gluten sources' },
-  { t: 'gluten free oats -> not reject', label: { ingredients: 'gluten free oats' }, expectNot: 'REJECT', soft: 'gluten sources' },
+  { t: 'gluten free oats -> NO flag (like buckwheat)', label: { ingredients: 'gluten free oats' }, expectNot: 'REJECT', noflag: 'gluten sources' },
+  { t: 'wheat + GF oats -> REJECT (wheat still flags)', label: { ingredients: 'wheat flour, gluten free oats' }, expect: 'REJECT', flagHard: 'gluten sources' },
   { t: 'wheat flour -> REJECT', label: { ingredients: 'wheat flour, water' }, expect: 'REJECT', flagHard: 'gluten sources' },
   { t: 'buckwheat -> no gluten flag', label: { ingredients: 'buckwheat flour, water' }, noflag: 'gluten sources' },
   // item 2 — seed / fried oils redeemable
@@ -80,12 +81,16 @@ const CASES = [
     if (!ok) { console.log('FAIL', r.t, '-> verdict', r.verdict, JSON.stringify(r.by)); fails++; }
   }
 
-  // Result-card copy fixes must be gone from the shipped bundle (items 3,5,6,7); new display present (item 4).
-  const dist = fs.readFileSync(path.join(REPO, 'dashboard', 'assets', 'js', 'dist', 'main.js'), 'utf8');
-  const mustAbsent = ['Worth considering', 'Cited</span> Wallach corpus', 'Never merged into the sealed', 'a real start, not a full daily target'];
-  const mustPresent = ['reasonItems', 'vd-reason__it', 'artificial dyes'];
-  for (const s of mustAbsent) { if (dist.includes(s)) { console.log('FAIL bundle still has:', s); fails++; } }
-  for (const s of mustPresent) { if (!dist.includes(s)) { console.log('FAIL bundle missing:', s); fails++; } }
+  // Copy fixes must be gone from the VIEW SOURCE (items 3,5,6,7) and the new display present (item 4).
+  // NB: we grep SOURCE, not dist/main.js -- the bundle inlines the creators-log embed whose prose
+  // quotes the removed strings, so the bundle is not a clean signal. The build-fresh invariant makes
+  // source == shipped truth.
+  const viewSrc = fs.readFileSync(path.join(REPO, 'dashboard', 'assets', 'js', 'src', 'views', 'scanner.ts'), 'utf8');
+  const dataSrc = fs.readFileSync(path.join(REPO, 'dashboard', 'assets', 'data', 'scanner-corpus-data.json'), 'utf8');
+  const mustAbsentView = ['Worth considering', 'alignment per source-rule allowlist', 'Never merged into the sealed', 'a real start, not a full daily target', 'The image scan above is for', 'vd-paste__hint'];
+  for (const s of mustAbsentView) { if (viewSrc.includes(s)) { console.log('FAIL view source still has:', s); fails++; } }
+  for (const s of ['reasonItems', 'vd-reason__it']) { if (!viewSrc.includes(s)) { console.log('FAIL view source missing:', s); fails++; } }
+  if (!dataSrc.includes('artificial dyes')) { console.log('FAIL data missing: artificial dyes'); fails++; }
 
   console.log('PAGE_ERRORS', pageErrors.length, pageErrors.slice(0, 4).join(' | '));
   const pass = fails === 0 && pageErrors.length === 0;
