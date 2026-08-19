@@ -12,6 +12,7 @@ Luneth reviewed the REJECT / NEUTRAL / ADD result cards and approved (commit `39
 All 136 explore-topic ledes authored + verified; gate `explore_entity_lede_authored` fully enforcing. Artifact: https://claude.ai/code/artifact/50f61990-652f-433d-88c2-072299920ec1
 
 ## ▶ NEXT TASK — land the remaining 4 books (pipeline PROVEN on Hell's Kitchen)
+**★ READ FIRST — the full runbook (exact commands, every decision, every gotcha): `chronicle/ratify-unverified-2026-08-19/RUNBOOK.md`.** All at-risk data is committed there (Luneth's rulings, the 99 approved answers, candidates, scripts). Nothing lives only in scratchpad.
 Luneth ruled **approve all + push live** on the 99 rewritten `answer_full`s. Landing is per-book, end-to-end.
 **Hell's Kitchen DONE + LIVE** (below). Remaining: immortality (33), epigenetics (18), rare-earths (13), let's-play-doctor (15).
 All approved answers: `chronicle/ratify-unverified-2026-08-19/answer-fulls.json`; per-book slices in scratchpad recoverable from `author-input.json`.
