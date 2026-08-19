@@ -18848,6 +18848,189 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         "sulfur dioxide",
         "metabisulfite",
         "bisulfite"
+      ],
+      "artificial dyes": [
+        "Red 3",
+        "FD&C Red No. 3",
+        "FD&C Red #3",
+        "FD&C Red No 3",
+        "FDC Red 3",
+        "Erythrosine",
+        "Erythrosin",
+        "Erythrosine B",
+        "Erythrosine BS",
+        "Acid Red 51",
+        "E127",
+        "CI 45430",
+        "C.I. 45430",
+        "Red 40",
+        "FD&C Red No. 40",
+        "FD&C Red #40",
+        "FD&C Red No 40",
+        "FDC Red 40",
+        "Allura Red AC",
+        "Allura Red",
+        "E129",
+        "CI 16035",
+        "C.I. 16035",
+        "Yellow 5",
+        "FD&C Yellow No. 5",
+        "FD&C Yellow #5",
+        "FD&C Yellow No 5",
+        "FDC Yellow 5",
+        "Tartrazine",
+        "Acid Yellow 23",
+        "E102",
+        "CI 19140",
+        "C.I. 19140",
+        "Yellow 6",
+        "FD&C Yellow No. 6",
+        "FD&C Yellow #6",
+        "FD&C Yellow No 6",
+        "FDC Yellow 6",
+        "Sunset Yellow FCF",
+        "Sunset Yellow",
+        "Orange Yellow S",
+        "E110",
+        "CI 15985",
+        "C.I. 15985",
+        "Blue 1",
+        "FD&C Blue No. 1",
+        "FD&C Blue #1",
+        "FD&C Blue No 1",
+        "FDC Blue 1",
+        "Brilliant Blue FCF",
+        "Brilliant Blue",
+        "Acid Blue 9",
+        "E133",
+        "CI 42090",
+        "C.I. 42090",
+        "Blue 2",
+        "FD&C Blue No. 2",
+        "FD&C Blue #2",
+        "FD&C Blue No 2",
+        "FDC Blue 2",
+        "Indigo Carmine",
+        "Indigotine",
+        "Indigotin",
+        "Acid Blue 74",
+        "E132",
+        "CI 73015",
+        "C.I. 73015",
+        "Green 3",
+        "FD&C Green No. 3",
+        "FD&C Green #3",
+        "FD&C Green No 3",
+        "FDC Green 3",
+        "Fast Green FCF",
+        "Fast Green",
+        "E143",
+        "CI 42053",
+        "C.I. 42053",
+        "Orange B",
+        "CI 19235",
+        "C.I. 19235",
+        "Citrus Red No. 2",
+        "Citrus Red 2",
+        "Citrus Red #2",
+        "E121",
+        "CI 12156",
+        "C.I. 12156",
+        "FD&C Red No. 2",
+        "FD&C Red #2",
+        "Acid Red 27",
+        "E123",
+        "CI 16185",
+        "C.I. 16185",
+        "Ponceau 4R",
+        "Cochineal Red A",
+        "New Coccine",
+        "Acid Red 18",
+        "E124",
+        "CI 16255",
+        "C.I. 16255",
+        "Carmoisine",
+        "Azorubine",
+        "Azorubin",
+        "Acid Red 14",
+        "E122",
+        "CI 14720",
+        "C.I. 14720",
+        "Quinoline Yellow",
+        "Quinoline Yellow WS",
+        "Acid Yellow 3",
+        "E104",
+        "CI 47005",
+        "C.I. 47005",
+        "Patent Blue V",
+        "Acid Blue 3",
+        "E131",
+        "CI 42051",
+        "C.I. 42051",
+        "Green S",
+        "Lissamine Green B",
+        "Acid Green 50",
+        "Food Green 4",
+        "E142",
+        "CI 44090",
+        "C.I. 44090",
+        "Brilliant Black BN",
+        "Black PN",
+        "Food Black 1",
+        "E151",
+        "CI 28440",
+        "C.I. 28440",
+        "Brown HT",
+        "Chocolate Brown HT",
+        "Food Brown 3",
+        "E155",
+        "CI 20285",
+        "C.I. 20285",
+        "Brown FK",
+        "Kipper Brown",
+        "E154",
+        "Lithol Rubine BK",
+        "Litholrubine BK",
+        "E180",
+        "CI 12390",
+        "C.I. 12390",
+        "Orange GGN",
+        "E111",
+        "CI 15980",
+        "C.I. 15980",
+        "Ponceau SX",
+        "FD&C Red No. 4",
+        "FD&C Red #4",
+        "Scarlet GN",
+        "E125",
+        "CI 14700",
+        "Red 2G",
+        "Acid Red 1",
+        "E128",
+        "CI 18050",
+        "Ponceau 6R",
+        "E126",
+        "CI 16290",
+        "Fast Yellow AB",
+        "E105",
+        "CI 13015",
+        "Yellow 2G",
+        "E107",
+        "CI 18965",
+        "Indanthrene Blue RS",
+        "Indanthrone",
+        "E130",
+        "CI 69800",
+        "Benzyl Violet 4B",
+        "FD&C Violet No. 1",
+        "FD&C Violet #1",
+        "Acid Violet 49",
+        "Guinea Green B",
+        "FD&C Green No. 1",
+        "FD&C Green #1",
+        "Light Green SF Yellowish",
+        "FD&C Green No. 2",
+        "FD&C Green #2"
       ]
     },
     antiListNotes: {
@@ -18857,7 +19040,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       "gluten sources": "Wallach-direct on actual gluten proteins: wheat / barley / rye / malt / spelt \u2014 these are an unconditional hard reject regardless of marketing (a gluten source is never a 'save'). Oats flag by default (commercial supply chains carry cross-contamination risk). Operational rule: if ANY oat ingredient in the label is declared 'gluten-free' \u2014 in either word order ('gluten free oats' or 'oats (gluten free)') \u2014 ALL oat-derivatives in that product are presumed GF, because a brand certifying one oat ingredient operates in a GF-aware supply chain across the rest. A 'gluten-free' claim attached to a NON-oat ingredient (e.g., 'gluten-free pasta') does NOT certify oats. Hard gluten proteins appearing elsewhere still flag independently \u2014 no shutoff trick. Buckwheat is a pseudocereal, gluten-free despite the name. Ratified instances (Luneth 2026-08-16): triticale/semolina/durum/farina/graham/seitan/einkorn/kamut/bulgur/couscous/farro are all wheat- or gluten-protein grains -- same unconditional hard reject (wheat germ/bran/starch/flour and malt-* are already caught by the 'wheat'/'malt' word-match, so not duplicated). Second ratified batch (Luneth 2026-08-16): emmer (Wallach's own 'emmer wheat') / freekeh / panko / orzo / matzo / maida / atta -- wheat grains + wheat products, same unconditional hard reject; none was caught by the existing 'wheat' word-match. Skipped: udon (Wallach uses buckwheat udon in a recipe -- a nuance, not blanket gluten). panko/orzo have rare gluten-free reformulations that still hard-reject, consistent with 'a gluten source is never a save'.",
       "msg / glutamate": "Wallach-direct: MSG (monosodium glutamate) is a food ALLERGEN -- his 'Chinese restaurant syndrome' (heart palpitations / tachycardia in MSG-sensitive people), named repeatedly across Let's Play Doctor + Dead Doctors Don't Lie. That is the WHOLE of Wallach's glutamate stance; kept: monosodium glutamate + MSG (hard-reject). DROPPED 2026-08-16 as NOT-Wallach (back-check, source-rule): glutamic acid -- Wallach PRESCRIBES it ('amino acids glycine, alanine and glutamic acid at five grams each daily', a therapeutic amino acid), so flagging it violated 00.A; and the hidden-MSG list (yeast extract, hydrolyzed protein, hydrolyzed vegetable/soy protein, autolyzed yeast, monopotassium glutamate) -- mainstream hidden-MSG food chemistry with ZERO Wallach basis ('yeast extract' appears only as a lab culture medium; 'hydrolyzed protein' / 'free glutamate' / 'neurotoxin' never appear in a food context). The earlier note wrongly attributed all of that to Wallach.",
       "modified / processed": "Wallach is broadly anti-processed/refined food: 'no processed or white flours', 'processed white flour and sugar' (empty-calorie diets), and 'processed salt confuses the body' (Dead Doctors Don't Lie, 2011); 'genetically modified' is his 'Frankenstein Food' (DDDL). Modified starches (modified food / corn / tapioca starch) are refined/processed derivatives, so this maps Wallach's anti-processed stance onto 'modified' ingredients. NOTE: no Wallach verbatim uses the word 'modified' for an ingredient \u2014 this is an inference awaiting Luneth's severity ratification (serious flag vs unconditional hard reject). Ratified instances (Luneth 2026-08-16): enriched flour, bleached flour, white flour ('no processed or white flours'), and refined -- refined/processed flour derivatives (modified-* starches are already caught by the 'modified' word-match). +bioengineered (Luneth 2026-08-16) -- the US GMO label term, under Wallach's 'Frankenstein Food' / genetically-engineered-crops stance (DDDL/RE); 'genetically modified' is already caught by 'modified'.",
-      "preservatives / additives": "Wallach-direct: nitrate/nitrite are carcinogenic + goitrogenic -- 'read labels to exclude nitrates and nitrite' (Let's Play Doctor, goiter treatment; nitrates 'are carcinogenic as well as goitrogenic'), and nitrites are on his free-radical list (Immortality: 'fried foods, trans fats ... nitrites, alcohol, sugar'). sulfite is a food preservative Wallach ties to an 'asthma-like syndrome' (Let's Play Doctor / DDDL). Label forms: sodium/potassium nitrate + nitrite (cured meats); sulfites (the common 'Contains: sulfites' declaration), sodium sulfite (dried fruit, wine). Serious flag (Luneth-ratified 2026-08-16). Matcher note: the engine uses \\bkw\\b which does NOT match a plural, so singular AND plural are listed explicitly (nitrite/nitrites, nitrate/nitrates, sulfite/sulfites). NOT yet caught: 'sodium metabisulfite' / 'sulfur dioxide' (same sulfiting agent, different words) -- add as a later micro-batch if wanted. Sulfiting-agent variants added (Luneth 2026-08-16): sulfur dioxide, metabisulfite, bisulfite -- the SAME sulfiting agent Wallach condemns as 'sulfite', in the forms labels actually print (\\bkw\\b won't bridge them)."
+      "preservatives / additives": "Wallach-direct: nitrate/nitrite are carcinogenic + goitrogenic -- 'read labels to exclude nitrates and nitrite' (Let's Play Doctor, goiter treatment; nitrates 'are carcinogenic as well as goitrogenic'), and nitrites are on his free-radical list (Immortality: 'fried foods, trans fats ... nitrites, alcohol, sugar'). sulfite is a food preservative Wallach ties to an 'asthma-like syndrome' (Let's Play Doctor / DDDL). Label forms: sodium/potassium nitrate + nitrite (cured meats); sulfites (the common 'Contains: sulfites' declaration), sodium sulfite (dried fruit, wine). Serious flag (Luneth-ratified 2026-08-16). Matcher note: the engine uses \\bkw\\b which does NOT match a plural, so singular AND plural are listed explicitly (nitrite/nitrites, nitrate/nitrates, sulfite/sulfites). NOT yet caught: 'sodium metabisulfite' / 'sulfur dioxide' (same sulfiting agent, different words) -- add as a later micro-batch if wanted. Sulfiting-agent variants added (Luneth 2026-08-16): sulfur dioxide, metabisulfite, bisulfite -- the SAME sulfiting agent Wallach condemns as 'sulfite', in the forms labels actually print (\\bkw\\b won't bridge them).",
+      "artificial dyes": "Wallach-direct on food dyes: his hyperactivity / hyperkinesis protocol prescribes the Feingold diet -- 'avoid sugar, additives, food colors' -- as core treatment (Let's Play Doctor, hyperactivity; WAL-CLM-LETS-000305), he endorses the Feingold diet (which eliminates artificial colors) as 'a good place to start' for dyslexia / learning disorders (WAL-CLM-LETS-000257), and warns even it is not a complete shield (WAL-CLM-DDDL-000300). These synthetic certified dyes are the labeled instances of the 'food colors' Wallach says to avoid. Luneth-ratified HARD REJECT for ALL synthetic dyes (2026-08-19), regardless of individual naming or whether Wallach names each one. SCOPE: synthetic azo / triarylmethane / xanthene / indigoid / quinophthalone certified colours only -- the US FD&C set (Red 3/40, Yellow 5/6, Blue 1/2, Green 3, Orange B, Citrus Red 2) plus the international E-number synthetic dyes (Amaranth E123, Ponceau 4R E124, Carmoisine / Azorubine E122, Quinoline Yellow E104, Patent Blue V E131, Green S E142, Brilliant Black BN E151, Brown HT E155, and others), with FD&C No./#/FDC forms, E-numbers and Colour-Index (CI) numbers as match terms. EXCLUDED as natural / mineral colourants (NOT dyes, never flagged): caramel colour, carmine / cochineal (E120), annatto, beetroot red, turmeric / curcumin, paprika, anthocyanins, riboflavin, carotenes, titanium dioxide (E171), iron oxides. MISFIRE GUARDS (exact \\b word-boundary match only): bare 'Amaranth' is a GRAIN (amaranth flour) so it is matched ONLY via E123 / CI 16185 / 'FD&C Red No. 2', never the bare word; 'Green S' and 'Orange B' rely on the trailing word boundary so they cannot bleed into 'Green Salad' / 'Orange Blossom'. E111 is Orange GGN (a banned azo), NOT Orange B (Orange B carries no E-number) -- corrected here from an upstream mislabel."
     },
     hardRejectTerms: [
       "high fructose corn syrup",
@@ -18888,7 +19072,188 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       "orzo",
       "matzo",
       "maida",
-      "atta"
+      "atta",
+      "Red 3",
+      "FD&C Red No. 3",
+      "FD&C Red #3",
+      "FD&C Red No 3",
+      "FDC Red 3",
+      "Erythrosine",
+      "Erythrosin",
+      "Erythrosine B",
+      "Erythrosine BS",
+      "Acid Red 51",
+      "E127",
+      "CI 45430",
+      "C.I. 45430",
+      "Red 40",
+      "FD&C Red No. 40",
+      "FD&C Red #40",
+      "FD&C Red No 40",
+      "FDC Red 40",
+      "Allura Red AC",
+      "Allura Red",
+      "E129",
+      "CI 16035",
+      "C.I. 16035",
+      "Yellow 5",
+      "FD&C Yellow No. 5",
+      "FD&C Yellow #5",
+      "FD&C Yellow No 5",
+      "FDC Yellow 5",
+      "Tartrazine",
+      "Acid Yellow 23",
+      "E102",
+      "CI 19140",
+      "C.I. 19140",
+      "Yellow 6",
+      "FD&C Yellow No. 6",
+      "FD&C Yellow #6",
+      "FD&C Yellow No 6",
+      "FDC Yellow 6",
+      "Sunset Yellow FCF",
+      "Sunset Yellow",
+      "Orange Yellow S",
+      "E110",
+      "CI 15985",
+      "C.I. 15985",
+      "Blue 1",
+      "FD&C Blue No. 1",
+      "FD&C Blue #1",
+      "FD&C Blue No 1",
+      "FDC Blue 1",
+      "Brilliant Blue FCF",
+      "Brilliant Blue",
+      "Acid Blue 9",
+      "E133",
+      "CI 42090",
+      "C.I. 42090",
+      "Blue 2",
+      "FD&C Blue No. 2",
+      "FD&C Blue #2",
+      "FD&C Blue No 2",
+      "FDC Blue 2",
+      "Indigo Carmine",
+      "Indigotine",
+      "Indigotin",
+      "Acid Blue 74",
+      "E132",
+      "CI 73015",
+      "C.I. 73015",
+      "Green 3",
+      "FD&C Green No. 3",
+      "FD&C Green #3",
+      "FD&C Green No 3",
+      "FDC Green 3",
+      "Fast Green FCF",
+      "Fast Green",
+      "E143",
+      "CI 42053",
+      "C.I. 42053",
+      "Orange B",
+      "CI 19235",
+      "C.I. 19235",
+      "Citrus Red No. 2",
+      "Citrus Red 2",
+      "Citrus Red #2",
+      "E121",
+      "CI 12156",
+      "C.I. 12156",
+      "FD&C Red No. 2",
+      "FD&C Red #2",
+      "Acid Red 27",
+      "E123",
+      "CI 16185",
+      "C.I. 16185",
+      "Ponceau 4R",
+      "Cochineal Red A",
+      "New Coccine",
+      "Acid Red 18",
+      "E124",
+      "CI 16255",
+      "C.I. 16255",
+      "Carmoisine",
+      "Azorubine",
+      "Azorubin",
+      "Acid Red 14",
+      "E122",
+      "CI 14720",
+      "C.I. 14720",
+      "Quinoline Yellow",
+      "Quinoline Yellow WS",
+      "Acid Yellow 3",
+      "E104",
+      "CI 47005",
+      "C.I. 47005",
+      "Patent Blue V",
+      "Acid Blue 3",
+      "E131",
+      "CI 42051",
+      "C.I. 42051",
+      "Green S",
+      "Lissamine Green B",
+      "Acid Green 50",
+      "Food Green 4",
+      "E142",
+      "CI 44090",
+      "C.I. 44090",
+      "Brilliant Black BN",
+      "Black PN",
+      "Food Black 1",
+      "E151",
+      "CI 28440",
+      "C.I. 28440",
+      "Brown HT",
+      "Chocolate Brown HT",
+      "Food Brown 3",
+      "E155",
+      "CI 20285",
+      "C.I. 20285",
+      "Brown FK",
+      "Kipper Brown",
+      "E154",
+      "Lithol Rubine BK",
+      "Litholrubine BK",
+      "E180",
+      "CI 12390",
+      "C.I. 12390",
+      "Orange GGN",
+      "E111",
+      "CI 15980",
+      "C.I. 15980",
+      "Ponceau SX",
+      "FD&C Red No. 4",
+      "FD&C Red #4",
+      "Scarlet GN",
+      "E125",
+      "CI 14700",
+      "Red 2G",
+      "Acid Red 1",
+      "E128",
+      "CI 18050",
+      "Ponceau 6R",
+      "E126",
+      "CI 16290",
+      "Fast Yellow AB",
+      "E105",
+      "CI 13015",
+      "Yellow 2G",
+      "E107",
+      "CI 18965",
+      "Indanthrene Blue RS",
+      "Indanthrone",
+      "E130",
+      "CI 69800",
+      "Benzyl Violet 4B",
+      "FD&C Violet No. 1",
+      "FD&C Violet #1",
+      "Acid Violet 49",
+      "Guinea Green B",
+      "FD&C Green No. 1",
+      "FD&C Green #1",
+      "Light Green SF Yellowish",
+      "FD&C Green No. 2",
+      "FD&C Green #2"
     ],
     seriousAnti: [
       "fried oils / seed oils",
@@ -19229,6 +19594,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return goals;
   }
   var OAT_DERIVED = /* @__PURE__ */ new Set(["oats", "oat", "oatmeal", "oat flour", "oat syrup", "oat groats", "oat bran"]);
+  var REDEEMABLE_REJECT = /* @__PURE__ */ new Set(["fried oils / seed oils"]);
+  var REDEEM_MIN_HITS = 3;
   function antiFlags(label, corpus2) {
     const text = (label.ingredients ?? "").toLowerCase();
     const hardReject = new Set(corpus2.hardRejectTerms);
@@ -19264,23 +19631,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             flag.nuance = `Oat-anchored gluten-free declaration detected on the label. Per the operational rule: once a brand certifies ANY oat ingredient as GF, they are operating in a GF-aware supply chain across all oat ingredients in that product. All oat hits (${oatHits.map((t) => `"${t}"`).join(", ")}) are presumed gluten-free. Flag softened.`;
             flag.softened = true;
           } else {
-            flag.nuance = `Oat ingredients detected (${oatHits.map((t) => `"${t}"`).join(", ")}) with no gluten free oats declaration on the label. Standard commercial oats carry real cross-contamination risk from shared supply chains. A gluten-free claim attached to a non-oat ingredient (e.g., gluten-free pasta) does NOT certify the oats. Flag stays serious until brand certifies oat GF status.`;
+            flag.nuance = `Oat ingredients detected (${oatHits.map((t) => `"${t}"`).join(", ")}) with no gluten free oats declaration on the label. Standard commercial oats carry real cross-contamination risk from shared supply chains. A gluten-free claim attached to a non-oat ingredient (e.g., gluten-free pasta) does NOT certify the oats. HARD REJECT until the brand certifies oat GF status.`;
           }
         }
       }
+      const oatHardReject = cat === "gluten sources" && hits.some((h) => OAT_DERIVED.has(h)) && flag.softened !== true;
       let severity = "mild";
-      for (const term of hits) {
-        if (hardReject.has(term)) {
-          severity = "hard";
-          break;
-        }
-      }
-      if (severity !== "hard") {
-        if (corpus2.seriousAnti.includes(cat) && flag.softened !== true) {
-          severity = "serious";
-        } else if (flag.softened === true) {
-          severity = "softened";
-        }
+      if (oatHardReject || hits.some((term) => hardReject.has(term))) {
+        severity = "hard";
+      } else if (flag.softened === true) {
+        severity = "softened";
+      } else if (corpus2.seriousAnti.includes(cat)) {
+        severity = "serious";
       }
       flag.severity = severity;
       flags.push(flag);
@@ -19290,7 +19652,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   function containerFlag() {
     return [];
   }
-  function decideVerdict(alignment, gapFills, anti, conflicts, goals, corpus2) {
+  function decideVerdict(alignment, gapFills, anti, conflicts, goals, hits, corpus2) {
     const reasonsFor = [];
     const reasonsAgainst = [];
     if (alignment.score >= 1.5) {
@@ -19314,24 +19676,50 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         items: goals.slice(0, 4).map((g) => corpus2.goalDisplayNames[g] ?? g)
       });
     }
+    const fmtFlag = (f) => {
+      const terms = f.terms ?? [];
+      if (terms.length === 0) {
+        return f.category;
+      }
+      const shown = terms.slice(0, 2).map((t) => `"${t}"`).join(", ");
+      const more = terms.length > 2 ? ` +${terms.length - 2} more` : "";
+      return `${f.category} \u2014 ${shown}${more}`;
+    };
     const hardHits = anti.filter((f) => f.severity === "hard");
     const seriousHits = anti.filter((f) => f.severity === "serious");
     const softHits = anti.filter((f) => f.severity === "softened" || f.severity === "mild");
+    const redeemed = hits >= REDEEM_MIN_HITS;
+    const seedOilHits = seriousHits.filter((f) => REDEEMABLE_REJECT.has(f.category));
+    const nonSeedSerious = seriousHits.filter((f) => !REDEEMABLE_REJECT.has(f.category));
+    const unredeemedSeedOil = seedOilHits.length > 0 && !redeemed;
+    const offsetSeedOil = redeemed ? seedOilHits : [];
     if (hardHits.length > 0) {
-      reasonsAgainst.push({ label: "Hard-reject ingredients", items: hardHits.map((f) => f.category) });
+      reasonsAgainst.push({ label: "Hard-reject ingredients", items: hardHits.map(fmtFlag) });
     }
-    if (seriousHits.length > 0) {
-      reasonsAgainst.push({ label: "Serious anti-list flags", items: seriousHits.map((f) => f.category) });
+    if (nonSeedSerious.length > 0) {
+      reasonsAgainst.push({ label: "Serious anti-list flags", items: nonSeedSerious.map(fmtFlag) });
+    }
+    if (unredeemedSeedOil) {
+      reasonsAgainst.push({
+        label: "Seed / fried oil \u2014 rejected",
+        items: seedOilHits.map((f) => `${fmtFlag(f)} \xB7 needs 3+ essentials in a meaningful amount to be neutral (has ${hits})`)
+      });
+    }
+    if (offsetSeedOil.length > 0) {
+      reasonsAgainst.push({
+        label: "Seed / fried oil \u2014 offset to neutral",
+        items: offsetSeedOil.map((f) => `${fmtFlag(f)} \xB7 offset by ${hits} meaningful essential${hits === 1 ? "" : "s"} \u2014 neutral, never recommended`)
+      });
     }
     if (softHits.length > 0) {
-      reasonsAgainst.push({ label: "Mild / softened flags (nuance applied)", items: softHits.map((f) => f.category) });
+      reasonsAgainst.push({ label: "Mild / softened flags (nuance applied)", items: softHits.map(fmtFlag) });
     }
     const high = conflicts.filter((c) => c.severity === "high");
     if (high.length > 0) {
       reasonsAgainst.push({ label: "High-severity conflicts", items: high.map((c) => c.rule) });
     }
     let verdict;
-    if (high.length > 0 || hardHits.length > 0 || seriousHits.length >= 2) {
+    if (high.length > 0 || hardHits.length > 0 || unredeemedSeedOil || nonSeedSerious.length >= 2) {
       verdict = "REJECT";
     } else if (meaningful.length > 0 && seriousHits.length === 0 && !((alignment.aligned > 0 || alignment.misaligned > 0 || alignment.score > 0) && alignment.score < 1)) {
       verdict = "ADD";
@@ -19387,7 +19775,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const goals = matchGoals(label, corpus2);
     const anti = antiFlags(label, corpus2);
     const conflicts = containerFlag();
-    const { verdict, reasonsFor, reasonsAgainst } = decideVerdict(alignment, gapFills, anti, conflicts, goals, corpus2);
+    const { verdict, reasonsFor, reasonsAgainst } = decideVerdict(alignment, gapFills, anti, conflicts, goals, hitInfo.hits.length, corpus2);
     const result = {
       label,
       alignment,
@@ -196708,7 +197096,13 @@ Remaining (chronicle/next-chunk.md): 22 DDDL dose claims (contradiction audit) +
 
 ROOT CAUSE (completeness): entity_page_derive.search_sections bucketed a page's enriched claims by subject ONLY, while state/search.ts::claimsForSubject includes also_about \u2014 so ~1,086 also_about claim-instances were findable in search yet dropped from their pages (e.g. Wallach's selenium answer naming hypothyroidism was absent from the hypothyroidism page, and the exact query 'Can a selenium deficiency cause an underactive thyroid?' dead-ended). FIX: search_sections now includes also_about (subject OR also_about), matching claimsForSubject exactly; deterministic id-order within each facet. GATE: new entity_page_enriched_matches_search (consistency) independently re-derives claimsForSubject from the shipped search-index and asserts every one of the 601 condition/essential pages' enriched set == it (subset = search>page defect; superset = a page claim search can't reach). Negative test tools/test_entity_page_enriched_matches_search.py proves it bites (GREEN on real, RED on a dropped claim, RED on an extra). CLAUDE.md board total 92->93; external stays 23. | TASK 1 (scannability): entity-page.ts renderFacetGroups caps each Worth-Knowing facet at FACET_CAP=7 cards, overflow behind a native 'See N more answers' reveal (kd-ep-more--answers, a roomier variant in drawer-knowledge.css); the count badge keeps the true total (display cap, not data cap). render_probe_knowledge's 2 record-collapse assertions rewritten to test the heuristic RELATIONSHIP (kinds collapse iff record >=20) against the live count, so they survive record-size shifts. | TASK 2 (relevance prune, essentials only): 425 also_about removals from eden/corpus/search-enrichment.json \u2014 120 other-nutrient definitions ('What is strontium/boron/Vitamin K?') + 297 incidental name-drops ('How much phosphorus is in the body?') + 8 residual definition leaks (e.g. 'What is Vitamin E?' off selenium). ALL 455 condition-protocol claims KEPT (Luneth's call) so broad nutrients aren't gutted \u2014 vitamin C keeps its flu/infection/HIV uses (was 84% pruned under the strict rule, now 0). Lean-conservative keeps: electrolyte-group + omega-group claims + the cobalt<->B12 pair (9 deliberate). PROVENANCE: calcium pilot (1 agent, 160 claims) -> Luneth calibration (keep protocols only for the nutrient's own deficiency disease; lean conservative) -> 12-agent workflow over 1,483 claims across 83 essentials (809 strict removes) -> Luneth 'keep ALL protocols' decision -> filtered to definitions+incidental only -> reconciled by re-applying from clean HEAD -> +8 deterministic residual-definition cleanup. Conditions/Explore keep the full also_about breadth (unchanged). | VERIFY: node tools/build.mjs OK; board 93/93 (23 external / 26 consistency / 42 structural / 2 meta), 0 new reds; render_probe search/entity/knowledge PASS, 0 page errors; puppeteer shots confirm calcium leads 'What is calcium?' (was 'What is strontium?'), vitamin C 105 enriched incl flu/infection protocols, selenium clear of 'What is Vitamin E?'. | DEFERRED: full 425-removal audit list (final_removals.json) available on request, not committed; the 28 needs_new_topic + 92 unsealed ruled claims from the prior handoff still pending. NO SEAL (search-enrichment is the deliberately-unsealed working file; kv stays 476). Push: YES.` }, { id: "lg_mt0b919h_9r8mff", ts: "2026-08-19T11:33:15.173485-05:00", surface: "search+explore-headers", kind: "milestone", summary: "Front-faced the last 28 Engine-2 'new topic' facts (Hunza, resveratrol, chocolate, longevity lore, mineral sources) AND gave every Explore topic a hand-written header + a gate so no new topic can ship a claim-answer as its header again. Board 94/94.", detail: `Finished front-facing the last 28 Engine-2 'new topic' facts in Ask Wallach \u2014 the Hunza people, resveratrol / red wine / the French Paradox, chocolate, the Blue-Zones and longevity lore, and the traditional ways people got their minerals (glacial water, culinary ashes, kelp, Nile wheat) \u2014 each now a real searchable question-and-answer with a rich full answer. Also fixed a bug Luneth caught: every Explore topic page was using one of its CLAIMS' answers as the page HEADER (chocolate's read "It's a mineral-deficiency signal\u2026"), which reads as nonsense. Explore topics now get their own hand-written headers, the same as the nutrient pages, and a new automated gate makes a new topic impossible to ship without one.
 
-SCOPE: chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json needs_new_topic=28. The flag over-counted \u2014 it only checked essentials/conditions, not the 94 concept/topic entities. Actual: 15 claims -> 3 NEW entities, 13 -> existing entities. | NEW ENTITIES (eden/catalog/search-entities.json, unsealed \u2014 no golden hash): chocolate (substance; 482 stance, 513/516 mechanism; + cross-links 502 flavonoids & EPIGEN-476 menopause via also_about), resveratrol (substance; 481/504 big_question, 484/517 mechanism, 490 sources, 491 stance), hunza (concept; 488 stance, 499 mechanism, 505 history, 507 big_question, 512 discovery, 514 sources). | FOLDS (eden/corpus/search-enrichment.json): centenarian-cultures +509/510/518; longevity +480/501/503/520/521 and +519 (religion, subject longevity also_about faith_healing \u2014 Luneth: 'both'); minerals +486/506/511; colloidal_minerals +489. Every enriched claim carries question + crisp answer_short + rich multi-paragraph answer_full, all traced to the sealed verbatims (no invented numbers). 28 new enrichment entries; board's enriched_book_is_verified accounts 2495 (all 28 in claims_verified=711). | THE HEADER FIX (Luneth-caught defect): state/search.ts::entityLede ALWAYS returned a claim's answer_short (intro_claim or highest-facet), so 141 explore-page heroes shipped answer-shaped headers and NO gate caught it. FIX: core/schemas/entity-copy.ts gains an optional topics{} map; state/entity-copy.ts gains topicLede(); entityLede() now prefers the hand lede and falls back to the claim only for un-authored slugs. Authored 7 hand ledes (chocolate, resveratrol, hunza + the 4 fold targets longevity/centenarian-cultures/colloidal_minerals/minerals). | NEW GATE explore_entity_lede_authored (critical, consistency): every search-index entity of type not-in-{nutrient,condition} with >=1 claim must have entity-copy.topics[slug].lede OR be in the frozen backlog chronicle/lede-backlog.json. A NEW explore entity is not grandfathered => RED until authored (the 'never again' teeth Luneth asked for). Seeded 140, now 136 (7 authored). STRUCTURAL: proves a lede EXISTS, never that it reads well. Negative test tools/test_explore_entity_lede_authored.py (9 cases: the defect fires RED, blank lede fires, essential/condition/claimless/grandfathered spared). CLAUDE.md board total 93->94; external stays 23. | GLOSSARY (dashboard/assets/data/glossary.json, hand-authored R4, digit-free): +anandamide, phenylethylamine, glycemic index, pica, sirtuin, resveratrol, phytoalexin, chapatti, phytoestrogen, meta-analysis. | VERIFY: node tools/build.mjs OK (tsc clean); board 94/94 (23 ext / 27 consistency / 42 structural / 2 meta), 0 new reds; render_probe knowledge/search/entity PASS, 0 page errors. | LIMIT (honest): could NOT composite a live screenshot this session \u2014 Browser pane won't display + file:// renders as a static snapshot. All header + Q/short/full text was reviewed and approved by Luneth in chat; the pages use the established substance/topic template; VISUAL SIGN-OFF on his machine is still open. | NO SEAL: search-enrichment + search-entities are the deliberately-unsealed working files; corpus kv stays 476. | DEFERRED: the ~135-entity lede backlog (author over time, gate keeps it shrinking); the 92 unsealed prior-handoff ruled claims; the 8 recovered_question:null from the prior worklist not in this 28.` }, { id: "lg_mt0d97j7_ng28in", ts: "2026-08-19T12:29:22.531269-05:00", surface: "explore-ledes", kind: "milestone", summary: "Every Explore topic page now shows a hand-written headline. Authored all 136 remaining topic ledes \u2014 each grounded only in Wallach\u2019s own words \u2014 so the last auto-derived \u2018answer-shaped\u2019 headers are gone and the backlog is empty.", detail: "The Explore section has a page for every topic Wallach touches (foods, elements, practices, people). Its big headline at the top used to be BORROWED from one of the page\u2019s own question-answers, which read like an answer, not a title. Today the last 136 of those got a real, written-by-hand headline \u2014 and every one was written using only what Wallach himself says about that topic, never an outside fact.\n\nMECHANICS. Built 37 load-balanced source packets (each entity\u2019s own search-index claims) and ran a 74-agent Workflow (run wf_218968ff-4ea): 37 author agents drafted a header-lede per entity, each immediately handed to an INDEPENDENT verifier told to refute it \u2014 trace every number/date/name/quote to the packet (\xA700.A), and check header-shape/present-tense/attribution. Results: 101 pass, 32 revise, 3 fail. The 3 fails were real imported-fact catches (Amish framed as \u2018long-lived\u2019; melatonin \u2018sleep hormone\u2019 epithet not in corpus; nausea remedies tagged \u2018over-the-counter\u2019); the 32 revises were superlative overreach (\u2018richest\u2019\u2192\u2018rich\u2019, \u2018vanishing\u2019\u2192\u2018declining\u2019, \u2018founders\u2019\u2192\u2018practitioners, if not founders\u2019), second-person shape violations recast to third person, a fabricated \u2018which is why\u2019 causal link severed, and 3 length trims. All fixes use only packet material. My own regex+read backstop caught 2 MORE second-person slips the batch verifiers passed (low_carb_diet, water) which I hand-fixed. Then a deterministic per-entity token audit confirmed every number/date/proper-noun/quote in all 136 final ledes traces to its packet (the three apparent misses \u2014 \u2018America\u2019s\u2019\u2190\u2018U.S.\u2019, \u201817th-century\u2019\u21901637, \u2018EFAs\u2019\u2190\u2018essential fatty acids\u2019 \u2014 were faithful renderings).\n\nAPPLIED. Merged all 136 into entity-copy.json['topics'] (7\u2192143) via safe_write; emptied chronicle/lede-backlog.json grandfathered 136\u21920 so the explore_entity_lede_authored gate now fully enforces (a NEW unauthored explore entity is RED). Rebuilt (node tools/build.mjs). VERIFIED: board 94/94; the gate\u2019s negative test PASS; render_probe_knowledge + render_probe_entity PASS with PAGE_ERRORS 0, and the Mercury/Beef topic pages render their new ledes. The 5 formerly-BLANK heroes (intelligence, muscle_strength, healthy_foods, veganism, frequent_urination \u2014 zero primary claims) now carry real headers drawn from their also_about claims. Luneth reviewed the full set (review artifact 50f61990) and approved. No seal: nothing under eden/ was touched." }];
+SCOPE: chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json needs_new_topic=28. The flag over-counted \u2014 it only checked essentials/conditions, not the 94 concept/topic entities. Actual: 15 claims -> 3 NEW entities, 13 -> existing entities. | NEW ENTITIES (eden/catalog/search-entities.json, unsealed \u2014 no golden hash): chocolate (substance; 482 stance, 513/516 mechanism; + cross-links 502 flavonoids & EPIGEN-476 menopause via also_about), resveratrol (substance; 481/504 big_question, 484/517 mechanism, 490 sources, 491 stance), hunza (concept; 488 stance, 499 mechanism, 505 history, 507 big_question, 512 discovery, 514 sources). | FOLDS (eden/corpus/search-enrichment.json): centenarian-cultures +509/510/518; longevity +480/501/503/520/521 and +519 (religion, subject longevity also_about faith_healing \u2014 Luneth: 'both'); minerals +486/506/511; colloidal_minerals +489. Every enriched claim carries question + crisp answer_short + rich multi-paragraph answer_full, all traced to the sealed verbatims (no invented numbers). 28 new enrichment entries; board's enriched_book_is_verified accounts 2495 (all 28 in claims_verified=711). | THE HEADER FIX (Luneth-caught defect): state/search.ts::entityLede ALWAYS returned a claim's answer_short (intro_claim or highest-facet), so 141 explore-page heroes shipped answer-shaped headers and NO gate caught it. FIX: core/schemas/entity-copy.ts gains an optional topics{} map; state/entity-copy.ts gains topicLede(); entityLede() now prefers the hand lede and falls back to the claim only for un-authored slugs. Authored 7 hand ledes (chocolate, resveratrol, hunza + the 4 fold targets longevity/centenarian-cultures/colloidal_minerals/minerals). | NEW GATE explore_entity_lede_authored (critical, consistency): every search-index entity of type not-in-{nutrient,condition} with >=1 claim must have entity-copy.topics[slug].lede OR be in the frozen backlog chronicle/lede-backlog.json. A NEW explore entity is not grandfathered => RED until authored (the 'never again' teeth Luneth asked for). Seeded 140, now 136 (7 authored). STRUCTURAL: proves a lede EXISTS, never that it reads well. Negative test tools/test_explore_entity_lede_authored.py (9 cases: the defect fires RED, blank lede fires, essential/condition/claimless/grandfathered spared). CLAUDE.md board total 93->94; external stays 23. | GLOSSARY (dashboard/assets/data/glossary.json, hand-authored R4, digit-free): +anandamide, phenylethylamine, glycemic index, pica, sirtuin, resveratrol, phytoalexin, chapatti, phytoestrogen, meta-analysis. | VERIFY: node tools/build.mjs OK (tsc clean); board 94/94 (23 ext / 27 consistency / 42 structural / 2 meta), 0 new reds; render_probe knowledge/search/entity PASS, 0 page errors. | LIMIT (honest): could NOT composite a live screenshot this session \u2014 Browser pane won't display + file:// renders as a static snapshot. All header + Q/short/full text was reviewed and approved by Luneth in chat; the pages use the established substance/topic template; VISUAL SIGN-OFF on his machine is still open. | NO SEAL: search-enrichment + search-entities are the deliberately-unsealed working files; corpus kv stays 476. | DEFERRED: the ~135-entity lede backlog (author over time, gate keeps it shrinking); the 92 unsealed prior-handoff ruled claims; the 8 recovered_question:null from the prior worklist not in this 28.` }, { id: "lg_mt0d97j7_ng28in", ts: "2026-08-19T12:29:22.531269-05:00", surface: "explore-ledes", kind: "milestone", summary: "Every Explore topic page now shows a hand-written headline. Authored all 136 remaining topic ledes \u2014 each grounded only in Wallach\u2019s own words \u2014 so the last auto-derived \u2018answer-shaped\u2019 headers are gone and the backlog is empty.", detail: "The Explore section has a page for every topic Wallach touches (foods, elements, practices, people). Its big headline at the top used to be BORROWED from one of the page\u2019s own question-answers, which read like an answer, not a title. Today the last 136 of those got a real, written-by-hand headline \u2014 and every one was written using only what Wallach himself says about that topic, never an outside fact.\n\nMECHANICS. Built 37 load-balanced source packets (each entity\u2019s own search-index claims) and ran a 74-agent Workflow (run wf_218968ff-4ea): 37 author agents drafted a header-lede per entity, each immediately handed to an INDEPENDENT verifier told to refute it \u2014 trace every number/date/name/quote to the packet (\xA700.A), and check header-shape/present-tense/attribution. Results: 101 pass, 32 revise, 3 fail. The 3 fails were real imported-fact catches (Amish framed as \u2018long-lived\u2019; melatonin \u2018sleep hormone\u2019 epithet not in corpus; nausea remedies tagged \u2018over-the-counter\u2019); the 32 revises were superlative overreach (\u2018richest\u2019\u2192\u2018rich\u2019, \u2018vanishing\u2019\u2192\u2018declining\u2019, \u2018founders\u2019\u2192\u2018practitioners, if not founders\u2019), second-person shape violations recast to third person, a fabricated \u2018which is why\u2019 causal link severed, and 3 length trims. All fixes use only packet material. My own regex+read backstop caught 2 MORE second-person slips the batch verifiers passed (low_carb_diet, water) which I hand-fixed. Then a deterministic per-entity token audit confirmed every number/date/proper-noun/quote in all 136 final ledes traces to its packet (the three apparent misses \u2014 \u2018America\u2019s\u2019\u2190\u2018U.S.\u2019, \u201817th-century\u2019\u21901637, \u2018EFAs\u2019\u2190\u2018essential fatty acids\u2019 \u2014 were faithful renderings).\n\nAPPLIED. Merged all 136 into entity-copy.json['topics'] (7\u2192143) via safe_write; emptied chronicle/lede-backlog.json grandfathered 136\u21920 so the explore_entity_lede_authored gate now fully enforces (a NEW unauthored explore entity is RED). Rebuilt (node tools/build.mjs). VERIFIED: board 94/94; the gate\u2019s negative test PASS; render_probe_knowledge + render_probe_entity PASS with PAGE_ERRORS 0, and the Mercury/Beef topic pages render their new ledes. The 5 formerly-BLANK heroes (intelligence, muscle_strength, healthy_foods, veganism, frequent_urination \u2014 zero primary claims) now carry real headers drawn from their also_about claims. Luneth reviewed the full set (review artifact 50f61990) and approved. No seal: nothing under eden/ was touched." }, { id: "lg_mt0f5zt0_pmocsi", ts: "2026-08-19T13:22:51.780875-05:00", surface: "scanner", kind: "milestone", summary: "The label Scanner got tougher and clearer: gluten grains and oats plus ALL artificial food dyes are now hard rejects, seed/fried oils reject unless the product still delivers 3+ real nutrients, and every verdict now names the exact ingredient it flagged.", detail: `You scan a food label; the Scanner judges it against Wallach and says Add / Neutral / Reject. Nine refinements today made it stricter where Wallach is strict, and made its reasons impossible to misread.
+
+WHAT CHANGED. (1) Oats now REJECT just like wheat, barley and rye -- they are all gluten grains -- unless the label carries a 'gluten free oats' declaration (the one exception). 'Organic oats' used to slip through as neutral; not anymore. (2) Seed / fried oils (canola, soybean, sunflower, etc.) now REJECT on their own, BUT if the whole product still delivers at least 3 real nutrients in meaningful amounts, the oil is 'offset' and the verdict softens to NEUTRAL (never a recommendation). (8) ALL artificial food dyes are now a HARD reject -- a brand-new 'artificial dyes' list with 181 exact spellings (Red 40, Yellow 5, Blue 1, Tartrazine, the FD&C forms, the European E-numbers, the international azo dyes, the CI colour-index codes). Wallach DOES back this: in Let's Play Doctor his hyperactivity treatment is the Feingold diet -- 'avoid sugar, additives, food colors' (WAL-CLM-LETS-000305) -- so no source-rule override was needed. I researched the full dye list and guarded hard against mis-fires: bare 'Amaranth' (a grain) is matched only via its dye codes, and 'Green S'/'Orange B' can't bleed into 'Green Salad'/'Orange Blossom'. (4) When a bad ingredient is found, the card now shows the CATEGORY and the exact word it matched -- e.g. 'artificial dyes -- "Red 40"' -- each on its own line, so if it ever mis-fires you can see exactly why and overrule it. (3,5,6,7) Cut four bits of clutter: the meaningless 'Cited Wallach corpus' line, the 'Worth considering' tag under Neutral, the 'Never merged into the sealed canon' inside-baseball footnote, and the '\u2026a real start, not a full daily target' caption tail. (9) A seed oil that got rejected vs one that got offset now read as two clearly different reasons.
+
+VERIFIED. tsc clean; board 94/94. A new permanent regression probe, tools/render_probe_scan_verdicts.js, runs 19 verdict scenarios (every case above plus mis-fire guards: buckwheat, olive oil, amaranth grain, reduced iron, orange blossom all correctly NOT flagged) and checks the removed copy is gone from the shipped bundle -- PASS. The existing scanner probes PASS. I captured three real result-card screenshots (a REJECT with dye+gluten+oil, a NEUTRAL redeemed seed oil, a clean ADD).
+
+STATUS: committed + logged, but the RESULT-CARD LOOK is a visual chunk that needs Luneth's eyes -- he was away -- so this is NOT signed off and NOT pushed yet. Screenshots are staged for his review; on his OK it gets pushed. No seal: nothing under eden/ was touched (the scanner corpus is clean-surface legacy data, not a sealed pillar).` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -198574,7 +198968,7 @@ SCOPE: chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json needs_new_t
       return { head: "Aligns", sub: "Worth adding" };
     }
     if (v === "SAVE") {
-      return { head: "Neutral", sub: "Worth considering" };
+      return { head: "Neutral", sub: "" };
     }
     return { head: "Out", sub: "Doesn\u2019t fit the framework" };
   }
@@ -198805,17 +199199,24 @@ SCOPE: chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json needs_new_t
       </div>
     </section>`;
   }
+  function reasonItems(items, block) {
+    if (items === void 0 || items.length === 0) {
+      return "";
+    }
+    if (!block) {
+      return ` \u2014 ${escHTML14(items.join(", "))}`;
+    }
+    return `<span class="vd-reason__items">${items.map((it) => `<span class="vd-reason__it">${escHTML14(it)}</span>`).join("")}</span>`;
+  }
   function reasonRows(result) {
     const rows = [];
     for (const r of result.reasonsFor) {
-      const items = r.items !== void 0 && r.items.length > 0 ? ` \u2014 ${escHTML14(r.items.join(", "))}` : "";
-      rows.push(`<div class="vd-reason vd-reason--plus"><span class="vd-reason__m" aria-hidden="true">+</span><span class="vd-reason__t"><b>${escHTML14(r.label)}</b>${items}</span></div>`);
+      rows.push(`<div class="vd-reason vd-reason--plus"><span class="vd-reason__m" aria-hidden="true">+</span><span class="vd-reason__t"><b>${escHTML14(r.label)}</b>${reasonItems(r.items, false)}</span></div>`);
     }
     for (const r of result.reasonsAgainst) {
-      const items = r.items !== void 0 && r.items.length > 0 ? ` \u2014 ${escHTML14(r.items.join(", "))}` : "";
       const cls = /flag|reject|conflict/i.test(r.label) ? "vd-reason--flag" : "vd-reason--minus";
       const glyph = cls === "vd-reason--flag" ? "!" : "&minus;";
-      rows.push(`<div class="vd-reason ${cls}"><span class="vd-reason__m" aria-hidden="true">${glyph}</span><span class="vd-reason__t"><b>${escHTML14(r.label)}</b>${items}</span></div>`);
+      rows.push(`<div class="vd-reason ${cls}"><span class="vd-reason__m" aria-hidden="true">${glyph}</span><span class="vd-reason__t"><b>${escHTML14(r.label)}</b>${reasonItems(r.items, true)}</span></div>`);
     }
     return rows.join("");
   }
@@ -198849,15 +199250,14 @@ SCOPE: chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json needs_new_t
             <div class="vd-card__body">
               <div class="vd-judg">
                 <div class="vd-verdict__eyebrow" style="color:${tone}">The verdict</div>
-                <div class="vd-tier" role="img" aria-label="Verdict: ${escHTML14(head)} \u2014 ${escHTML14(sub)}">
+                <div class="vd-tier" role="img" aria-label="Verdict: ${escHTML14(head)}${sub ? ` \u2014 ${escHTML14(sub)}` : ""}">
                   ${tierChip("ADD", "Add", "aligns")}${tierChip("SAVE", "Save", "neutral")}${tierChip("REJECT", "Reject", "out")}
                 </div>
-                <h2 class="vd-verdict__h" style="color:${tone}">${head}<b>${sub}</b></h2>
+                <h2 class="vd-verdict__h" style="color:${tone}">${head}${sub ? `<b>${sub}</b>` : ""}</h2>
                 <p class="vd-verdict__deck">${result.hits > 0 ? `Meaningfully delivers ${result.hits} of your ${total} essential${result.hits === 1 ? "" : "s"}` : "Delivers no essential in a meaningful amount"}${flags > 0 ? `, and the ingredient scan flagged ${flags}.` : "."}</p>
                 <div class="vd-reasons">
                   <div class="vd-reasons__h">Why \u2014 grounded in Wallach doctrine</div>
                   ${reasonRows(result)}
-                  <div class="vd-cite"><span class="vd-cite__b">Cited</span> Wallach corpus \u2014 alignment per source-rule allowlist.</div>
                 </div>
               </div>
               <div class="vd-side">
@@ -198869,7 +199269,7 @@ SCOPE: chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json needs_new_t
                     <text class="vd-cov-gden" x="100" y="104" text-anchor="middle">OF ${total}</text>
                   </svg>
                 </div>
-                <div class="vd-cov-cap"><b>hit in a meaningful amount</b> \u2014 a real start, not a full daily target.</div>
+                <div class="vd-cov-cap"><b>hit in a meaningful amount</b></div>
                 <div class="vd-cov-facts">
                   <div class="vd-cov-fact"><b>${result.hitsStrong}</b><span>delivered strongly</span></div>
                   <div class="vd-cov-fact vd-cov-fact--flag"><b>${flags}</b><span>ingredient flag${flags === 1 ? "" : "s"}</span></div>
@@ -198882,7 +199282,6 @@ SCOPE: chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json needs_new_t
               <button class="vd-reject" type="button" data-sc-reject>${origin === "saved" ? "Delete" : "Reject"}</button>
               <div class="vd-foot__note">
                 <span class="vd-foot__prov"><span class="vd-yours">Yours \xB7 user-scanned</span> lands marked user-provided</span>
-                <span class="vd-foot__sub">Never merged into the sealed Wallach / Youngevity canon \u2014 your data, on your device.</span>
               </div>
             </div>
           </article>

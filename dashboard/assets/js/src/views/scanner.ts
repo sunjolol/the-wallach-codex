@@ -86,7 +86,7 @@ function verdictHeadline(v: Verdict): { head: string; sub: string } {
     return { head: 'Aligns', sub: 'Worth adding' };
   }
   if (v === 'SAVE') {
-    return { head: 'Neutral', sub: 'Worth considering' };
+    return { head: 'Neutral', sub: '' };
   }
   return { head: 'Out', sub: 'Doesn’t fit the framework' };
 }
@@ -367,17 +367,26 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
 
 // ─── STEP 3 · RESULT ─────────────────────────────────────────────────────────────
 
+function reasonItems(items: string[] | undefined, block: boolean): string {
+  if (items === undefined || items.length === 0) {
+    return '';
+  }
+  if (!block) {
+    return ` — ${escHTML(items.join(', '))}`;
+  }
+  // Each anti-flag term on its own bordered line so a mis-fire reads loud (Luneth item 4).
+  return `<span class="vd-reason__items">${items.map(it => `<span class="vd-reason__it">${escHTML(it)}</span>`).join('')}</span>`;
+}
+
 function reasonRows(result: ScanResult): string {
   const rows: string[] = [];
   for (const r of result.reasonsFor) {
-    const items = r.items !== undefined && r.items.length > 0 ? ` — ${escHTML(r.items.join(', '))}` : '';
-    rows.push(`<div class="vd-reason vd-reason--plus"><span class="vd-reason__m" aria-hidden="true">+</span><span class="vd-reason__t"><b>${escHTML(r.label)}</b>${items}</span></div>`);
+    rows.push(`<div class="vd-reason vd-reason--plus"><span class="vd-reason__m" aria-hidden="true">+</span><span class="vd-reason__t"><b>${escHTML(r.label)}</b>${reasonItems(r.items, false)}</span></div>`);
   }
   for (const r of result.reasonsAgainst) {
-    const items = r.items !== undefined && r.items.length > 0 ? ` — ${escHTML(r.items.join(', '))}` : '';
     const cls = /flag|reject|conflict/i.test(r.label) ? 'vd-reason--flag' : 'vd-reason--minus';
     const glyph = cls === 'vd-reason--flag' ? '!' : '&minus;';
-    rows.push(`<div class="vd-reason ${cls}"><span class="vd-reason__m" aria-hidden="true">${glyph}</span><span class="vd-reason__t"><b>${escHTML(r.label)}</b>${items}</span></div>`);
+    rows.push(`<div class="vd-reason ${cls}"><span class="vd-reason__m" aria-hidden="true">${glyph}</span><span class="vd-reason__t"><b>${escHTML(r.label)}</b>${reasonItems(r.items, true)}</span></div>`);
   }
   return rows.join('');
 }
@@ -414,15 +423,14 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
             <div class="vd-card__body">
               <div class="vd-judg">
                 <div class="vd-verdict__eyebrow" style="color:${tone}">The verdict</div>
-                <div class="vd-tier" role="img" aria-label="Verdict: ${escHTML(head)} — ${escHTML(sub)}">
+                <div class="vd-tier" role="img" aria-label="Verdict: ${escHTML(head)}${sub ? ` — ${escHTML(sub)}` : ''}">
                   ${tierChip('ADD', 'Add', 'aligns')}${tierChip('SAVE', 'Save', 'neutral')}${tierChip('REJECT', 'Reject', 'out')}
                 </div>
-                <h2 class="vd-verdict__h" style="color:${tone}">${head}<b>${sub}</b></h2>
+                <h2 class="vd-verdict__h" style="color:${tone}">${head}${sub ? `<b>${sub}</b>` : ''}</h2>
                 <p class="vd-verdict__deck">${result.hits > 0 ? `Meaningfully delivers ${result.hits} of your ${total} essential${result.hits === 1 ? '' : 's'}` : 'Delivers no essential in a meaningful amount'}${flags > 0 ? `, and the ingredient scan flagged ${flags}.` : '.'}</p>
                 <div class="vd-reasons">
                   <div class="vd-reasons__h">Why — grounded in Wallach doctrine</div>
                   ${reasonRows(result)}
-                  <div class="vd-cite"><span class="vd-cite__b">Cited</span> Wallach corpus — alignment per source-rule allowlist.</div>
                 </div>
               </div>
               <div class="vd-side">
@@ -434,7 +442,7 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
                     <text class="vd-cov-gden" x="100" y="104" text-anchor="middle">OF ${total}</text>
                   </svg>
                 </div>
-                <div class="vd-cov-cap"><b>hit in a meaningful amount</b> — a real start, not a full daily target.</div>
+                <div class="vd-cov-cap"><b>hit in a meaningful amount</b></div>
                 <div class="vd-cov-facts">
                   <div class="vd-cov-fact"><b>${result.hitsStrong}</b><span>delivered strongly</span></div>
                   <div class="vd-cov-fact vd-cov-fact--flag"><b>${flags}</b><span>ingredient flag${flags === 1 ? '' : 's'}</span></div>
@@ -447,7 +455,6 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
               <button class="vd-reject" type="button" data-sc-reject>${origin === 'saved' ? 'Delete' : 'Reject'}</button>
               <div class="vd-foot__note">
                 <span class="vd-foot__prov"><span class="vd-yours">Yours · user-scanned</span> lands marked user-provided</span>
-                <span class="vd-foot__sub">Never merged into the sealed Wallach / Youngevity canon — your data, on your device.</span>
               </div>
             </div>
           </article>

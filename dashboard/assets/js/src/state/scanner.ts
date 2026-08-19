@@ -569,6 +569,12 @@ function matchGoals(label: ScanLabel, corpus: ScanCorpus): string[] {
 
 const OAT_DERIVED = new Set(['oats', 'oat', 'oatmeal', 'oat flour', 'oat syrup', 'oat groats', 'oat bran']);
 
+/** Seed / fried oils are a REJECT on their own (Wallach's vegetable-oil stance, Luneth item 2)
+ *  UNLESS the whole label still delivers >= REDEEM_MIN_HITS essentials in a meaningful amount -- then
+ *  the flag is OFFSET to neutral (never recommended). A redeemable tier between hard and plain serious. */
+const REDEEMABLE_REJECT = new Set<string>(['fried oils / seed oils']);
+const REDEEM_MIN_HITS = 3;
+
 function antiFlags(label: ScanLabel, corpus: ScanCorpus): AntiFlag[] {
   const text = (label.ingredients ?? '').toLowerCase();
   const hardReject = new Set(corpus.hardRejectTerms);
@@ -612,25 +618,26 @@ function antiFlags(label: ScanLabel, corpus: ScanCorpus): AntiFlag[] {
           flag.softened = true;
         }
         else {
-          flag.nuance = `Oat ingredients detected (${oatHits.map(t => `"${t}"`).join(', ')}) with no gluten free oats declaration on the label. Standard commercial oats carry real cross-contamination risk from shared supply chains. A gluten-free claim attached to a non-oat ingredient (e.g., gluten-free pasta) does NOT certify the oats. Flag stays serious until brand certifies oat GF status.`;
+          flag.nuance = `Oat ingredients detected (${oatHits.map(t => `"${t}"`).join(', ')}) with no gluten free oats declaration on the label. Standard commercial oats carry real cross-contamination risk from shared supply chains. A gluten-free claim attached to a non-oat ingredient (e.g., gluten-free pasta) does NOT certify the oats. HARD REJECT until the brand certifies oat GF status.`;
         }
       }
     }
 
+    // Oats are a HARD reject unless the label carries a gluten-free-oats declaration (Luneth 2026-08-19):
+    // wheat / barley / rye / oats are all hard gluten grains; the only exception is a "gluten free oats /
+    // bread" style claim, which the gluten block above marks as softened.
+    const oatHardReject = cat === 'gluten sources'
+      && hits.some(h => OAT_DERIVED.has(h)) && flag.softened !== true;
+
     let severity: AntiFlag['severity'] = 'mild';
-    for (const term of hits) {
-      if (hardReject.has(term)) {
-        severity = 'hard';
-        break;
-      }
+    if (oatHardReject || hits.some(term => hardReject.has(term))) {
+      severity = 'hard';
     }
-    if (severity !== 'hard') {
-      if (corpus.seriousAnti.includes(cat) && flag.softened !== true) {
-        severity = 'serious';
-      }
-      else if (flag.softened === true) {
-        severity = 'softened';
-      }
+    else if (flag.softened === true) {
+      severity = 'softened';
+    }
+    else if (corpus.seriousAnti.includes(cat)) {
+      severity = 'serious';
     }
     flag.severity = severity;
     flags.push(flag);
@@ -651,6 +658,7 @@ function decideVerdict(
   anti: AntiFlag[],
   conflicts: Conflict[],
   goals: string[],
+  hits: number,
   corpus: ScanCorpus,
 ): { verdict: Verdict; reasonsFor: Reason[]; reasonsAgainst: Reason[] } {
   const reasonsFor: Reason[] = [];
@@ -680,17 +688,54 @@ function decideVerdict(
     });
   }
 
+  // Each anti-flag shows its CATEGORY and the exact matched term(s) so a mis-fire stays legible and the
+  // user can overrule it (Luneth item 4): "Serious anti-list flags -- fried oils / seed oils -- \"canola oil\"".
+  const fmtFlag = (f: AntiFlag): string => {
+    const terms = f.terms ?? [];
+    if (terms.length === 0) {
+      return f.category;
+    }
+    const shown = terms.slice(0, 2).map(t => `"${t}"`).join(', ');
+    const more = terms.length > 2 ? ` +${terms.length - 2} more` : '';
+    return `${f.category} \u2014 ${shown}${more}`;
+  };
+
   const hardHits = anti.filter(f => f.severity === 'hard');
   const seriousHits = anti.filter(f => f.severity === 'serious');
   const softHits = anti.filter(f => f.severity === 'softened' || f.severity === 'mild');
+
+  // Item 2: a seed / fried oil rejects on its own UNLESS the whole label still delivers
+  // >= REDEEM_MIN_HITS essentials in a meaningful amount -- then it is OFFSET to neutral (never
+  // recommended). Redemption clears the seed-oil flag from the reject tally but a serious flag still
+  // remains, so ADD stays blocked and the ceiling is neutral.
+  const redeemed = hits >= REDEEM_MIN_HITS;
+  const seedOilHits = seriousHits.filter(f => REDEEMABLE_REJECT.has(f.category));
+  const nonSeedSerious = seriousHits.filter(f => !REDEEMABLE_REJECT.has(f.category));
+  const unredeemedSeedOil = seedOilHits.length > 0 && !redeemed;
+  const offsetSeedOil = redeemed ? seedOilHits : [];
+
   if (hardHits.length > 0) {
-    reasonsAgainst.push({ label: 'Hard-reject ingredients', items: hardHits.map(f => f.category) });
+    reasonsAgainst.push({ label: 'Hard-reject ingredients', items: hardHits.map(fmtFlag) });
   }
-  if (seriousHits.length > 0) {
-    reasonsAgainst.push({ label: 'Serious anti-list flags', items: seriousHits.map(f => f.category) });
+  if (nonSeedSerious.length > 0) {
+    reasonsAgainst.push({ label: 'Serious anti-list flags', items: nonSeedSerious.map(fmtFlag) });
+  }
+  // The seed / fried oil rule, made legible in BOTH directions (item 2 + item 4): a lone seed oil
+  // rejects, but 3+ meaningful essentials offset it to neutral. The user sees which case fired and why.
+  if (unredeemedSeedOil) {
+    reasonsAgainst.push({
+      label: 'Seed / fried oil \u2014 rejected',
+      items: seedOilHits.map(f => `${fmtFlag(f)} \u00b7 needs 3+ essentials in a meaningful amount to be neutral (has ${hits})`),
+    });
+  }
+  if (offsetSeedOil.length > 0) {
+    reasonsAgainst.push({
+      label: 'Seed / fried oil \u2014 offset to neutral',
+      items: offsetSeedOil.map(f => `${fmtFlag(f)} \u00b7 offset by ${hits} meaningful essential${hits === 1 ? '' : 's'} \u2014 neutral, never recommended`),
+    });
   }
   if (softHits.length > 0) {
-    reasonsAgainst.push({ label: 'Mild / softened flags (nuance applied)', items: softHits.map(f => f.category) });
+    reasonsAgainst.push({ label: 'Mild / softened flags (nuance applied)', items: softHits.map(fmtFlag) });
   }
   const high = conflicts.filter(c => c.severity === 'high');
   if (high.length > 0) {
@@ -703,7 +748,7 @@ function decideVerdict(
   // ever earn ADD. When form IS assessed (a future product-DB-backed scan), score>=1.0 still holds.
   // No form judgment is fabricated; an unreadable dimension simply stops penalising the verdict.
   let verdict: Verdict;
-  if (high.length > 0 || hardHits.length > 0 || seriousHits.length >= 2) {
+  if (high.length > 0 || hardHits.length > 0 || unredeemedSeedOil || nonSeedSerious.length >= 2) {
     verdict = 'REJECT';
   }
   else if (meaningful.length > 0 && seriousHits.length === 0 && !((alignment.aligned > 0 || alignment.misaligned > 0 || alignment.score > 0) && alignment.score < 1.0)) {
@@ -793,7 +838,7 @@ function scan(label: ScanLabel, opts?: { logToRecent?: boolean }): ScanResult {
   const goals = matchGoals(label, corpus);
   const anti = antiFlags(label, corpus);
   const conflicts = containerFlag();
-  const { verdict, reasonsFor, reasonsAgainst } = decideVerdict(alignment, gapFills, anti, conflicts, goals, corpus);
+  const { verdict, reasonsFor, reasonsAgainst } = decideVerdict(alignment, gapFills, anti, conflicts, goals, hitInfo.hits.length, corpus);
   const result: ScanResult = {
     label,
     alignment,
