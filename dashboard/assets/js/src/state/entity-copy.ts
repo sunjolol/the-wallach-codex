@@ -35,3 +35,8 @@ export function essentialLede(slug: string): string {
 export function essentialWhy(slug: string): string {
   return data().essentials[slug]?.why ?? '';
 }
+
+/** Approved hero lede for an explore-topic entity (search-entities slug), or '' when none yet. */
+export function topicLede(slug: string): string {
+  return data().topics?.[slug]?.lede ?? '';
+}

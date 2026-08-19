@@ -12866,7 +12866,7 @@
       "category": "vitamin",
       "is_essential": true,
       "claim_count": 22,
-      "distinct_claim_count": 37,
+      "distinct_claim_count": 38,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -13012,6 +13012,7 @@
             "WAL-CLM-DDDL-000476",
             "WAL-CLM-DDDL-000565",
             "WAL-CLM-EPIGEN-000119",
+            "WAL-CLM-IMMORT-000510",
             "WAL-CLM-LETS-000074",
             "WAL-CLM-LETS-000139",
             "WAL-CLM-LETS-000413",

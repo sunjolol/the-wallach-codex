@@ -4289,6 +4289,52 @@ def check_frontface_verbatims_clean():
                   f"space, digit-in-word, subscript damage) with {n_exc} named exception(s), each carrying its evidence")
 
 
+def check_explore_entity_lede_authored():
+    """Every EXPLORE-page entity (a search-index entity of type concept/substance/topic/element/
+    person/event with >=1 resolving claim -- it renders knowledge-topic.ts, NOT an essential or a
+    condition page) must carry a HAND-AUTHORED lede in entity-copy.json['topics'][slug], UNLESS its
+    slug is in the frozen grandfathered backlog (chronicle/lede-backlog.json). Without a hand lede the
+    topic hero DERIVES its header from a claim's answer_short (state/search.ts::entityLede), which
+    reads as an answer, not a header (2026-08-19: the chocolate page was titled "It's a mineral-
+    deficiency signal..."). STRUCTURAL: this proves a lede EXISTS, never that it reads well (review).
+    The backlog only ever SHRINKS; a NEW explore entity is not in it, so it is RED until authored --
+    the "never again" teeth. memory: element-intro-what-is-claim."""
+    si_p = ROOT / "dashboard" / "assets" / "data" / "search" / "search-index.json"
+    ec_p = ROOT / "dashboard" / "assets" / "data" / "entity-copy.json"
+    led_p = ROOT / "chronicle" / "lede-backlog.json"
+    if not si_p.exists() or not ec_p.exists():
+        return True, "search-index/entity-copy not installed (bootstrap-guard)"
+    si = json.loads(si_p.read_text(encoding="utf-8"))
+    ents = si.get("entities", {}) or {}
+    claims = si.get("claims", [])
+    claim_iter = claims.values() if isinstance(claims, dict) else claims
+    have_claim = set()
+    for c in claim_iter:
+        s = c.get("subject")
+        if s:
+            have_claim.add(s)
+        for a in (c.get("also_about") or []):
+            have_claim.add(a)
+    explore = {slug for slug, e in ents.items()
+               if e.get("type") not in ("nutrient", "condition") and slug in have_claim}
+    ec = json.loads(ec_p.read_text(encoding="utf-8"))
+    topics = ec.get("topics", {}) or {}
+    authored = {s for s, v in topics.items()
+                if isinstance(v, dict) and (v.get("lede") or "").strip()}
+    grand = set()
+    if led_p.exists():
+        grand = set(json.loads(led_p.read_text(encoding="utf-8")).get("grandfathered", []))
+    missing = sorted(explore - authored - grand)
+    if missing:
+        sample = ", ".join(missing[:8])
+        return False, (f"{len(missing)} explore entity(ies) render a topic page with no hand-authored "
+                       f"lede and are not grandfathered -- author entity-copy.json['topics'] (only a "
+                       f"PRE-EXISTING one may be added to chronicle/lede-backlog.json): {sample}"
+                       f"{' ...' if len(missing) > 8 else ''}")
+    return True, (f"all {len(explore)} explore-page entities carry a hand lede "
+                  f"({len(authored)} authored) or are grandfathered ({len(explore & grand)} backlog)")
+
+
 def check_enriched_book_is_verified():
     """ROOT-CAUSE gate: a claim may not be FRONT-FACING (carry a search-enrichment entry) unless its
     book is verified, the claim itself is verified, or it is in the frozen grandfathered backlog.
@@ -7902,6 +7948,15 @@ INVARIANTS = [
         truth_anchor="every sealed claim verbatim + claim_text in eden/corpus/claims/ re-scanned each run against the four marker shapes the transcriptions actually contain",
         severity="critical",
         lesson_ref="2026-08-02 wave 1 of the front-facing page-read campaign -- three claims (EPIGEN-000124, -000125, IMMORT-000230) carried '===== Screenshot (675) -- Page 818 of 936 =====' INSIDE their verbatim, i.e. the app could render OCR scaffolding to a reader as Wallach's words. A page-reading agent hit ONE; a grep found the other two, which is why the gate enumerates the marker shapes the sources CONTAIN rather than the one shape someone happened to hit. The fix is never a source edit -- those separators are legitimate scaffolding in the .txt (932 in epigenetics, 510 in immortality) -- so this guards the CLAIM, not the book. ★ SECOND FINDING, from the repair: stripping the separator dropped two verbatims to 40 and 20 chars, under corpus_seal check #2's 60-char floor -- THE SCAFFOLDING HAD BEEN THE ONLY THING CLEARING THAT FLOOR, so a length gate was being satisfied by text the page never printed. Both were extended into genuinely adjacent rows of the same dose table. DELIBERATELY NOT policed: asterisk runs (3 in epigenetics) and underscore runs (5 in rare-earths), because a printed page can legitimately carry a rule of asterisks or an underscore blank. Negative test tools/test_verbatim_no_transcription_scaffolding.py (21 cases, incl. those two sparing cases)",
+    ),
+    Invariant(
+        name="explore_entity_lede_authored",
+        anchor_class="consistency",  # search-index entities x entity-copy topics x the frozen backlog -- file A vs file B
+        description="every explore-page entity (concept/substance/topic/element/person/event with >=1 search claim -- it renders knowledge-topic.ts, not an essential/condition page) carries a HAND-AUTHORED lede in entity-copy.json['topics'], UNLESS its slug is in the frozen grandfathered backlog (chronicle/lede-backlog.json). A NEW explore entity is not grandfathered, so it is RED until a lede is authored. STRUCTURAL: proves a lede EXISTS, never that it reads well",
+        check_fn=check_explore_entity_lede_authored,
+        truth_anchor="dashboard/assets/data/search/search-index.json entities+claims x entity-copy.json['topics'] x chronicle/lede-backlog.json, recomputed each run; the backlog only SHRINKS and can never cover a NEW entity",
+        severity="critical",
+        lesson_ref="2026-08-19 -- Luneth found the new chocolate topic page titled \"It's a mineral-deficiency signal...\": the topic hero (knowledge-topic.ts) had ALWAYS derived its header from a claim's answer_short (entityLede), so 141 explore pages shipped answer-shaped headers and NO gate caught it. Fix: entity-copy.json gains a 'topics' section (hand-authored ledes, the calcium style), entityLede prefers it, and this gate forces every NEW explore entity to ship one. The 140 pre-existing un-authored pages are an honest shrinking BACKLOG (chocolate authored same day). Negative test tools/test_explore_entity_lede_authored.py. memory: element-intro-what-is-claim",
     ),
     Invariant(
         name="enriched_book_is_verified",

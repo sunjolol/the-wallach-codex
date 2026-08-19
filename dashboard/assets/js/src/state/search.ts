@@ -32,6 +32,7 @@ import {
 } from '../core/schemas/index.js';
 import { facetLabel, kindCategory, kindLabel } from './copy.js';
 import { resolveClaims } from './corpus.js';
+import { topicLede } from './entity-copy.js';
 import {
   getConditionPage,
   getEssentialPage,
@@ -163,6 +164,15 @@ function softClamp(s: string, max: number): string {
  */
 const LEDE_MAX = 340;
 export function entityLede(subject: string): string {
+  // A hand-authored lede in entity-copy.json (the R4 approved-copy store) is the topic page's
+  // header OF RECORD and wins over any claim-derived line: a claim answer_short answers a question,
+  // it is not a page header (2026-08-19, Luneth — chocolate rendered "It's a mineral-deficiency
+  // signal…" as its title). The explore_entity_lede_authored gate requires one for every
+  // non-grandfathered explore entity, so the claim fallback below never surfaces for a new topic.
+  const authored = topicLede(subject);
+  if (authored.length > 0) {
+    return softClamp(authored, LEDE_MAX);
+  }
   const e = getEntity(subject);
   // A hand-picked lede claim wins when the facet-priority default is not the best overview for a
   // topic (e.g. cholesterol's "deficiency → disease states" line, or pork's clean red-meat stance).

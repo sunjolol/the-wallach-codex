@@ -38636,7 +38636,9 @@
   },
   "WAL-CLM-EPIGEN-000476": {
    "subject": "menopause",
-   "also_about": [],
+   "also_about": [
+    "chocolate"
+   ],
    "facet": "mechanism",
    "question": "Why do women crave chocolate and run low on minerals before menopause?",
    "answer_short": "Wallach says a lifetime of monthly periods, pregnancies, and breastfeeding drains minerals that men never lose, so women run more depleted — and chocolate is the number-one sweet craving in premenopausal women (39%, versus just 14% of men the same age).",
@@ -38911,7 +38913,8 @@
   "WAL-CLM-IMMORT-000502": {
    "subject": "flavonoids",
    "also_about": [
-    "cardiovascular_disease"
+    "cardiovascular_disease",
+    "chocolate"
    ],
    "facet": "mechanism",
    "question": "Is the fat in chocolate bad for your heart?",
@@ -39047,6 +39050,466 @@
    "topics": [
     "vitamin-b1",
     "nystagmus"
+   ]
+  },
+  "WAL-CLM-IMMORT-000482": {
+   "subject": "chocolate",
+   "also_about": [
+    "minerals"
+   ],
+   "facet": "stance",
+   "question": "Why do I crave chocolate?",
+   "answer_short": "It's a mineral-deficiency signal — the same pica drive as other odd cravings — not a true need for sugar.",
+   "answer_full": "Wallach reads a chocolate craving as a signal, not a weakness. His position is that when people crave chocolate they are really mineral deficient — the same pica drive (the urge to eat non-food things, or to binge on 'munchies') that he ties to a lack of trace minerals. The body is reaching for chocolate because it is short on the minerals chocolate is rich in, not because it truly needs sugar.\n\nHe also draws a sharp line between the kinds of chocolate. Bitter, dark, unsweetened chocolate has a very low glycemic index — up to 70% of its calories come from fat, and fat does not raise blood sugar — so the cocoa itself is not the problem; the sugar packed into sweet milk chocolate is. The takeaway that follows from his framework: answer the real need by getting your minerals (he favors plant-derived colloidal minerals as the base of his 90 essentials), and if you do reach for chocolate, choose the bitter dark kind over the sugary milk versions.",
+   "topics": [
+    "chocolate",
+    "chocolate craving",
+    "pica",
+    "mineral deficiency",
+    "cravings"
+   ]
+  },
+  "WAL-CLM-IMMORT-000513": {
+   "subject": "chocolate",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Does chocolate affect the brain like marijuana?",
+   "answer_short": "A little — chocolate's anandamide hits the same brain targets as THC, the active compound in marijuana.",
+   "answer_full": "There is a real, if minor, overlap, and it comes down to a single molecule. Wallach notes that chocolate contains anandamide — a neurotransmitter sometimes called the 'bliss molecule' — that targets the same brain structures reached by THC, the active ingredient in marijuana. That shared target is part of why a piece of good chocolate can carry a faint lift.\n\nWallach raises it as one of several brain-active compounds in chocolate, not as a reason to treat chocolate as a drug. It sits alongside phenylethylamine (PEA), the pleasure-center stimulant behind chocolate's 'feel-good' reputation — together they are a large part of why chocolate has such a pull on people, beyond simple taste.",
+   "topics": [
+    "chocolate",
+    "anandamide",
+    "brain chemistry",
+    "marijuana",
+    "neurotransmitter"
+   ]
+  },
+  "WAL-CLM-IMMORT-000516": {
+   "subject": "chocolate",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Why does chocolate make you feel good?",
+   "answer_short": "Its phenylethylamine (PEA) switches on the brain's pleasure centers — the buzz behind chocolate as a romantic gift.",
+   "answer_full": "Wallach points to phenylethylamine — PEA — as the important 'feel-good' phytochemical in chocolate. It is a neurotransmitter that stimulates the body's pleasure centers, and large amounts of it are associated with feelings of excitement, attraction, and even sexual pleasure. That, Wallach says, is exactly why chocolate became the traditional seductive gift: the box of chocolates handed over on Valentine's Day is trading on real brain chemistry.\n\nPEA is not the only reason chocolate has a grip on us. Wallach notes it works alongside anandamide, another chocolate neurotransmitter that reaches the same brain targets as the active compound in marijuana. So the pleasure of chocolate is a genuine neurochemical effect, not just a matter of sweetness or habit.",
+   "topics": [
+    "chocolate",
+    "phenylethylamine",
+    "pleasure",
+    "valentines",
+    "aphrodisiac"
+   ]
+  },
+  "WAL-CLM-IMMORT-000481": {
+   "subject": "resveratrol",
+   "also_about": [
+    "longevity"
+   ],
+   "facet": "big_question",
+   "question": "Does resveratrol extend lifespan?",
+   "answer_short": "In animals, yes — studies Wallach cites found resveratrol stretching lifespan by as much as 40%.",
+   "answer_full": "Wallach's answer is a qualified yes — at least in animals. He points to studies on the red-wine compound resveratrol that found it extending animal lifespans by as much as 40%, and notes these were no fringe reports: the Wall Street Journal and the New York Times both covered them in late October 2006, drawing on an original paper published in the journal Nature.\n\nWhat makes resveratrol interesting to Wallach is that the same coverage tied it to calorie-restricted diets — the classic longevity intervention that reliably stretches lifespan across species. Resveratrol appears to reach for that same longevity machinery without the fasting, which is why he treats it as one of the more promising anti-aging compounds to come out of ordinary food and drink.",
+   "topics": [
+    "resveratrol",
+    "red wine",
+    "lifespan",
+    "anti-aging",
+    "longevity"
+   ]
+  },
+  "WAL-CLM-IMMORT-000484": {
+   "subject": "resveratrol",
+   "also_about": [
+    "longevity"
+   ],
+   "facet": "mechanism",
+   "question": "How does resveratrol work in the body?",
+   "answer_short": "It switches on sirtuins (Sir-2), the same anti-aging enzymes triggered by a calorie-restricted diet.",
+   "answer_full": "Wallach explains that resveratrol appears to work, in animals and humans alike, by activating a family of enzymes called sirtuins — also written Sir-2. Those are the very proteins involved in the anti-aging effects of a calorie-restricted diet, so resveratrol seems to pull the same longevity lever without the fasting.\n\nThat shared pathway is the thread running through Wallach's interest in resveratrol: calorie restriction reliably extends lifespan in the lab, sirtuins are a big part of why, and resveratrol switches them on. It reframes red wine's old reputation as more than folklore — a real biochemical echo of the diet that slows aging.",
+   "topics": [
+    "resveratrol",
+    "sirtuins",
+    "sir-2",
+    "calorie restriction",
+    "mechanism"
+   ]
+  },
+  "WAL-CLM-IMMORT-000490": {
+   "subject": "resveratrol",
+   "also_about": [],
+   "facet": "sources",
+   "question": "What foods contain resveratrol?",
+   "answer_short": "Grape skins and seeds (muscadine, Pinot noir, Concord), plus Japanese knotweed, blueberries and peanuts.",
+   "answer_full": "Wallach locates resveratrol mainly in grape skins and seeds, and singles out three varieties that run especially high in it: muscadine, Pinot noir and Concord grapes. Because it concentrates in the skins, red wine — fermented on the skins — is a familiar source, which is much of why red wine gets the anti-aging credit rather than white.\n\nGrapes are not the only source, though. Wallach also names Japanese knotweed (Polygonum cuspidatum), blueberries and peanuts as foods that carry resveratrol, so it is not something confined to the wine glass.",
+   "topics": [
+    "resveratrol",
+    "grapes",
+    "red wine",
+    "peanuts",
+    "blueberries",
+    "food sources"
+   ]
+  },
+  "WAL-CLM-IMMORT-000491": {
+   "subject": "resveratrol",
+   "also_about": [
+    "longevity"
+   ],
+   "facet": "stance",
+   "question": "Why is red wine considered anti-aging?",
+   "answer_short": "Because of resveratrol — Wallach calls it the anti-aging substance behind both the 'Grape Cure' and the 'French Paradox.'",
+   "answer_full": "Red wine's anti-aging reputation, in Wallach's telling, comes down to one substance: resveratrol. He notes it is generally agreed across the scientific world that resveratrol — the anti-aging compound found in red wine — is the basis for both the old 'Grape Cure' and the celebrated 'French Paradox.'\n\nSo when people talk about red wine being good for you, Wallach's framing is that they are really talking about resveratrol: the same skin-borne grape compound that activates the sirtuin longevity pathway. The wine is just the delivery vehicle.",
+   "topics": [
+    "resveratrol",
+    "red wine",
+    "grape cure",
+    "french paradox",
+    "anti-aging"
+   ]
+  },
+  "WAL-CLM-IMMORT-000504": {
+   "subject": "resveratrol",
+   "also_about": [
+    "longevity"
+   ],
+   "facet": "big_question",
+   "question": "What is the French Paradox?",
+   "answer_short": "The French eat more fat than any culture yet rank third of 193 nations for health and longevity.",
+   "answer_full": "The 'French Paradox' is the puzzle that the French consume more fat per person than any other culture in the world, yet still rank third out of 193 nations for health and longevity — a contradiction American physicians named and have long puzzled over.\n\nWallach's resolution is resveratrol. The French drink red wine daily, and red wine carries the anti-aging compound that switches on the body's longevity pathway; in his framing the wine's resveratrol helps offset the fat, which is how a high-fat culture can still land near the top of the health tables.",
+   "topics": [
+    "french paradox",
+    "resveratrol",
+    "red wine",
+    "france",
+    "longevity",
+    "dietary fat"
+   ]
+  },
+  "WAL-CLM-IMMORT-000517": {
+   "subject": "resveratrol",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Why do some wines have more resveratrol than others?",
+   "answer_short": "Grapes in humid climates make more of it to fight fungus, so those wines carry more resveratrol.",
+   "answer_full": "It comes down to where the grapes grew. Wallach explains that grapes and wine from humid environments contain more resveratrol than those from arid ones — and the reason is defensive. Resveratrol is essentially a phytoalexin, a compound a plant makes to protect itself: grapes in damp climates, under heavier fungal pressure, produce more of it to repel the damaging molds, and that extra resveratrol ends up in the wine.\n\nSo a wine's resveratrol content is partly an accident of climate. The same grape variety can carry more or less of the compound depending on how humid — and how fungus-prone — the vineyard was.",
+   "topics": [
+    "resveratrol",
+    "phytoalexin",
+    "grapes",
+    "wine",
+    "humid climate",
+    "mechanism"
+   ]
+  },
+  "WAL-CLM-IMMORT-000488": {
+   "subject": "hunza",
+   "also_about": [
+    "centenarian-cultures"
+   ],
+   "facet": "stance",
+   "question": "What is the secret of the Hunza people's longevity?",
+   "answer_short": "Minerals — Wallach credits their glacial-'milk' irrigation and wood-ash compost, which flood the soil and diet with colloidal minerals.",
+   "answer_full": "For Wallach the Hunza are Exhibit A, and the secret he draws from them is minerals. He attributes their long, healthy lives to two habits that work the same way: they irrigated their terraced fields with highly mineralized 'Glacial Milk' — glacier-ground meltwater — and fertilized those fields with a wood-ash compost that recycles colloidal plant minerals back into the soil.\n\nThe result, in his telling, is a closed mineral loop: minerals wash down from the mountain in the water, crops take them up, the ash from cooking and heating fires returns them to the ground, and the people eat them again with every meal. It is the living version of Wallach's whole thesis — that health follows the minerals — which is why he returns to the Hunza again and again.",
+   "topics": [
+    "hunza",
+    "longevity",
+    "glacial milk",
+    "colloidal minerals",
+    "wood ash"
+   ]
+  },
+  "WAL-CLM-IMMORT-000499": {
+   "subject": "hunza",
+   "also_about": [
+    "colloidal_minerals"
+   ],
+   "facet": "mechanism",
+   "question": "What is Hunza 'Glacial Milk,' and why did it keep them healthy?",
+   "answer_short": "Mineral-laden glacier melt so rich it ran bluish-white; 2,300 years of drinking it gave the Hunza 60-plus minerals a day.",
+   "answer_full": "'Glacial Milk' is the name the Hunza gave their water — glacier meltwater so laden with minerals that it ran a cloudy, bluish white. Wallach explains that it pours out from under millions of tons of ice grinding against the parent rock of Mount Rakaposhi, and that grinding by the Ultar Glacier is what loads the water with more than 60 minerals.\n\nFor more than 2,300 years, generation after generation, the Hunza drank this water and irrigated their terraced fields with it, which Wallach says gave them an optimal daily intake of those 60-plus minerals without anyone planning it. It is, in his words, a literal 'land of milk and honey' — the mineral supply that underwrites the whole Hunza story.",
+   "topics": [
+    "glacial milk",
+    "hunza",
+    "minerals",
+    "rakaposhi",
+    "ultar glacier"
+   ]
+  },
+  "WAL-CLM-IMMORT-000505": {
+   "subject": "hunza",
+   "also_about": [
+    "longevity"
+   ],
+   "facet": "history",
+   "question": "Did the Hunza practice calorie restriction?",
+   "answer_short": "Yes — their diet was already lean, and each 'Starvation Springtime' food ran so low they ate just two or three meals a week.",
+   "answer_full": "Yes, though partly by necessity. Wallach points out that the Hunza already ate a calorie-restricted diet, and that each late spring their stored food reserves ran so low they went through a stretch they called 'Starvation Springtime' — a period when meals dropped to just two or three a week.\n\nHe frames this seasonal fasting as part of why they lived so long. Calorie restriction is the one dietary lever repeatedly shown to extend lifespan, and the Hunza practiced an extreme version of it every year — another thread tying their longevity back to the same anti-aging biology behind resveratrol and the sirtuins.",
+   "topics": [
+    "hunza",
+    "calorie restriction",
+    "starvation springtime",
+    "fasting",
+    "longevity"
+   ]
+  },
+  "WAL-CLM-IMMORT-000507": {
+   "subject": "hunza",
+   "also_about": [
+    "longevity",
+    "centenarian-cultures"
+   ],
+   "facet": "big_question",
+   "question": "How long do the Hunza people live?",
+   "answer_short": "Past the first year, Hunza typically live beyond 80 in excellent health — many into their 90s and past 100.",
+   "answer_full": "Remarkably long, by Wallach's account. He reports that among the Hunza, anyone who survives the first year of life typically lives beyond age eighty in excellent health, with significant numbers reaching their nineties and passing 100.\n\nJust as telling is what they die of. Doctors working in Hunza concluded that the main cause of premature death is not disease but accidents — landslides and falls from the sheer rock walls of the valley. Infant mortality from infection was real, but for those past infancy chronic disease is largely absent — which is exactly why Wallach treats the Hunza as evidence for his thesis rather than a curiosity.",
+   "topics": [
+    "hunza",
+    "lifespan",
+    "longevity",
+    "centenarians",
+    "how long do hunza live"
+   ]
+  },
+  "WAL-CLM-IMMORT-000512": {
+   "subject": "hunza",
+   "also_about": [
+    "longevity"
+   ],
+   "facet": "discovery",
+   "question": "What did McCarrison's Hunza-diet rat experiment show?",
+   "answer_short": "Rats fed the Hunza diet reached the equivalent of 55 human years disease-free, with no early deaths and no aggression.",
+   "answer_full": "Wallach cites a classic experiment by McCarrison. One group of rats was fed a typical Hunza diet — whole-grain chapattis, butter, legumes, raw carrots and cabbage, whole milk, eggs, meat and water — and given daily sunlight.\n\nWhen those rats reached 27 months of age, the equivalent of about 55 human years, they were examined: they were free of overt disease, none had died early, and they had lived together without aggression. Wallach offers it as clean evidence for his central claim — that diet, not genetic luck, determines health and longevity, because changing only the food reproduced the Hunza's health in the lab.",
+   "topics": [
+    "hunza",
+    "mccarrison",
+    "rat study",
+    "diet",
+    "longevity"
+   ]
+  },
+  "WAL-CLM-IMMORT-000514": {
+   "subject": "hunza",
+   "also_about": [
+    "salt"
+   ],
+   "facet": "sources",
+   "question": "What kind of salt do the Hunza eat?",
+   "answer_short": "Raw brown rock salt mined near the Shimshal and Muztagh Rivers — its color comes from trace minerals in the ancient deposit.",
+   "answer_full": "The Hunza eat an unrefined, raw brown rock salt, mined from hills near the Shimshal and Muztagh Rivers and used both in their tea and for cooking — nothing like the stripped white table salt of the modern diet.\n\nIts brown color is the point: it comes from the trace minerals left behind in the salt deposit when the ancient seas that formed it dried up. So even the Hunza's salt is a mineral source rather than just sodium chloride — one more way minerals turn up in everything they eat and drink.",
+   "topics": [
+    "hunza",
+    "salt",
+    "rock salt",
+    "trace minerals",
+    "brown salt"
+   ]
+  },
+  "WAL-CLM-IMMORT-000509": {
+   "subject": "centenarian-cultures",
+   "also_about": [],
+   "facet": "stance",
+   "question": "Are there really only four Blue Zones where people live past 100?",
+   "answer_short": "No — Wallach rejects Dan Buettner's 'only four,' insisting there are countless places where people commonly live past 100.",
+   "answer_full": "Wallach's answer is a flat no. He takes direct aim at Dan Buettner, author of The Blue Zones, who holds that there are only four places on earth where people reliably live past 100. Wallach calls that far too narrow a view, arguing there are in fact a practically infinite number of places where people commonly live beyond 100 years of age.\n\nThe disagreement matters to his thesis. If longevity clustered in just four magic spots, it would look like an accident of geography or genes; if it turns up wherever the conditions are right, it points to a cause you can reproduce anywhere — which for Wallach is a full supply of minerals and the rest of the essential nutrients.",
+   "topics": [
+    "blue zones",
+    "centenarians",
+    "dan buettner",
+    "longevity",
+    "live past 100"
+   ]
+  },
+  "WAL-CLM-IMMORT-000510": {
+   "subject": "centenarian-cultures",
+   "also_about": [
+    "vitamin-d"
+   ],
+   "facet": "protocol",
+   "question": "How much daily sun do the long-lived Costa Ricans get?",
+   "answer_short": "A daily 'sun-bathe' of 15 to 30 minutes, exposing the face, arms and legs.",
+   "answer_full": "Wallach notes that the long-lived Costa Ricans take a daily 'sun-bathe' — 15 to 30 minutes each day with the face, arms and legs exposed to the sun. It is a small, consistent habit rather than an occasional beach day.\n\nThe reason it earns a place in his longevity picture is vitamin D: sunlight on bare skin is how the body makes it, and Wallach treats vitamin D as essential to absorbing and placing the very minerals his framework is built on. A short daily dose of sun, in other words, is part of how these cultures keep the mineral machinery working.",
+   "topics": [
+    "costa rica",
+    "sunlight",
+    "vitamin d",
+    "sun bathing",
+    "longevity"
+   ]
+  },
+  "WAL-CLM-IMMORT-000518": {
+   "subject": "centenarian-cultures",
+   "also_about": [
+    "minerals"
+   ],
+   "facet": "sources",
+   "question": "What are 'culinary ashes,' and why did Okinawans eat them?",
+   "answer_short": "Rice-straw ashes stirred into noodle dough and rice — a direct dose of plant minerals Wallach counts in the Okinawa longevity secret.",
+   "answer_full": "When Wallach asked Okinawan centenarians about their diet, the women shared something he had not expected: they added rice-straw ashes to their noodle dough and to rice as they cooked it, because it gave a lovely yellow color and enhanced the flavor. Those ashes — 'culinary ashes' — are essentially plant minerals.\n\nSo without thinking of it as supplementing, the Okinawans were eating their minerals directly, cooked right into everyday food. Wallach counts these culinary ashes as part of the Okinawa longevity secret, the same mineral trick he finds in the Hunza's wood-ash compost and in salt 'cut' with ashes — different cultures, one underlying habit.",
+   "topics": [
+    "okinawa",
+    "culinary ashes",
+    "rice straw ash",
+    "plant minerals",
+    "longevity"
+   ]
+  },
+  "WAL-CLM-IMMORT-000480": {
+   "subject": "longevity",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "How much does calorie restriction extend lifespan?",
+   "answer_short": "In Wallach's rat example, a calorie-restricted longevity diet stretched lifespan from the usual three years to five.",
+   "answer_full": "Wallach points to calorie restriction on a well-formulated longevity diet as a proven lifespan extender. His striking example is a whole colony of rats fed this way: instead of the usual three-year rat lifespan, they lived to five — a jump of roughly two-thirds.\n\nHe folds this into his four basic principles of longevity, arguing that if humans applied them, almost all could live beyond 100. Calorie restriction is the most consistently proven of those levers in the lab, and it is the same anti-aging pathway — the sirtuins — that he says resveratrol switches on, tying the rat colony, red wine and the Hunza's 'Starvation Springtime' into one thread.",
+   "topics": [
+    "calorie restriction",
+    "lifespan",
+    "rats",
+    "longevity diet",
+    "anti-aging"
+   ]
+  },
+  "WAL-CLM-IMMORT-000501": {
+   "subject": "longevity",
+   "also_about": [],
+   "facet": "basics",
+   "question": "When does the aging process start?",
+   "answer_short": "At conception, Wallach says — aging runs unabated from the moment you're conceived until death.",
+   "answer_full": "Wallach's view is that aging is not something that switches on in middle age — it starts the moment you are conceived and never pauses. From that first instant the process runs forward unabated, at hourly, daily, weekly and annual rates, until the ultimate end: death.\n\nThe point is not fatalism but leverage. If aging is continuous from conception, then the nutritional choices that slow it matter at every stage of life, from a mother's diet before birth onward — which is exactly why Wallach treats preconception nutrition and lifelong mineral supply as longevity tools, not just old-age ones.",
+   "topics": [
+    "aging",
+    "when does aging start",
+    "conception",
+    "lifespan",
+    "longevity"
+   ]
+  },
+  "WAL-CLM-IMMORT-000503": {
+   "subject": "longevity",
+   "also_about": [
+    "essential_nutrients"
+   ],
+   "facet": "stance",
+   "question": "How many American deaths each year are diet-related?",
+   "answer_short": "The Surgeon General said 1.8 million of America's 2.2 million yearly deaths are diet-related — which Wallach says proves his 1968 thesis.",
+   "answer_full": "Wallach cites the U.S. Surgeon General's 2006 statement that of the 2.2 million deaths in America each year, 1.8 million — more than four in five — are diet-related. For him this is not a footnote but a vindication.\n\nBack in 1968 he had made a far bolder claim: that every animal and every human being that dies of natural causes is really dying of a nutritional deficiency disease. When the nation's top doctor put most American deaths down to diet nearly forty years later, Wallach read it as mainstream science finally catching up to what his autopsies had already shown him.",
+   "topics": [
+    "diet related deaths",
+    "surgeon general",
+    "nutritional deficiency",
+    "longevity",
+    "wallach thesis"
+   ]
+  },
+  "WAL-CLM-IMMORT-000520": {
+   "subject": "longevity",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "What are the non-invasive anti-aging options?",
+   "answer_short": "Wallach favors vitamin-mineral supplements, non-surgical facelifts, phyto-hormones and non-toxic cosmetics over surgery, chemical peels and BoTox.",
+   "answer_full": "Wallach's anti-aging advice leans away from the knife. He recommends learning to safely use the non-invasive tools — vitamin and mineral supplements, non-surgical facelifts, non-chemical peels, phyto-hormones (phyto-estrogens, phyto-progesterones, plus HGH and thyroid and adrenal support) and non-toxic cosmetics.\n\nHe sets these against the painful, riskier route of plastic surgery, chemical peels and BoTox. The logic follows his whole approach: fix aging from the inside with nutrition and gentle support first, rather than reaching for surgical fixes that treat only the surface.",
+   "topics": [
+    "anti-aging",
+    "non-invasive",
+    "phyto-hormones",
+    "supplements",
+    "cosmetics"
+   ]
+  },
+  "WAL-CLM-IMMORT-000521": {
+   "subject": "longevity",
+   "also_about": [],
+   "facet": "biography",
+   "question": "Did anyone really live to be 256 years old?",
+   "answer_short": "Wallach cites Li-Ching-Yun, a Chinese herbalist reportedly born 1677 and dead 1933 at age 256, having outlived 23 wives.",
+   "answer_full": "Wallach offers one arresting example of extreme longevity: Li-Ching-Yun, a Chinese herbalist from Kaihsien in Szechwan Province. By the account Wallach relays, Li was born in 1677, sold herbs for 100 years, outlived 23 wives, had 180 descendants, and died in 1933 at the age of 256.\n\nWallach presents it as a real-world exemplar rather than a proven fact — the figure is famous and unverifiable — but it fits his theme that a life built around herbs, plants and their minerals can stretch far past what we assume is the human limit.",
+   "topics": [
+    "li ching yun",
+    "256 years",
+    "extreme longevity",
+    "chinese herbalist",
+    "longevity"
+   ]
+  },
+  "WAL-CLM-IMMORT-000519": {
+   "subject": "longevity",
+   "also_about": [
+    "faith_healing"
+   ],
+   "facet": "big_question",
+   "question": "Does being religious help you live longer?",
+   "answer_short": "Wallach says yes — he cites a 42-study meta-analysis finding regular worship attendance added eight years to average lifespan.",
+   "answer_full": "Wallach holds that being religious measurably increases longevity, and he backs it with a specific figure: a meta-analysis of 42 studies covering 125,826 people (published by the American Psychological Association in 2000) found that regular attendance at a place of worship — church, synagogue, mosque or temple — added eight years to average lifespan and improved general health.\n\nHe offers it as one more non-nutritional lever on longevity, alongside diet, minerals and sunlight. The study measured attendance rather than any particular creed, so the finding Wallach reports is about the practice of regular worship and community, not one faith over another.",
+   "topics": [
+    "religion and longevity",
+    "worship",
+    "meta-analysis",
+    "lifespan",
+    "faith"
+   ]
+  },
+  "WAL-CLM-IMMORT-000486": {
+   "subject": "minerals",
+   "also_about": [
+    "colloidal_minerals"
+   ],
+   "facet": "history",
+   "question": "How did ancient people get all 60 essential minerals?",
+   "answer_short": "By 'cutting' scarce salt with wood, peat or kelp ashes — 'culinary ashes' that delivered the 60 essential minerals daily.",
+   "answer_full": "Wallach's answer is that they did it without knowing they were doing it. Salt was precious, so rather than eat it straight it was mixed, 'cut' and diluted with wood, peat or kelp ashes. With that one thrifty habit — extending salt with 'culinary ashes' — people from the beginning of time took in the 60 essential minerals every day, as a food supplement in all but name.\n\nIt is the same mechanism he finds across his longevity cultures: the Okinawans' rice-straw ash, the Hunza's wood-ash compost, and here the plain act of stretching salt with ash. Wallach's point is that a mineral supply modern diets have lost was, for most of history, simply built into how people cooked and ate.",
+   "topics": [
+    "culinary ashes",
+    "60 minerals",
+    "salt",
+    "wood ash",
+    "mineral supplement"
+   ]
+  },
+  "WAL-CLM-IMMORT-000489": {
+   "subject": "colloidal_minerals",
+   "also_about": [
+    "hunza"
+   ],
+   "facet": "basics",
+   "question": "What is Glacial Milk?",
+   "answer_short": "Glacier-ground meltwater — dissolved elements plus rock-flour colloids so tiny they need an electron microscope to see.",
+   "answer_full": "Glacial Milk, in Wallach's description, is a mixed liquid: partly a true solution of ionically dissolved elements, and partly a suspension of finely ground rock dust — 'rock flour' shaved from the living parent rock of the mountain by the grinding friction of the glacier.\n\nThe suspended minerals are what he calls 'metallic colloidal minerals,' and their defining feature is size: the average particle is about 7,000 times smaller than a red blood cell, so small it can be seen only under an electron microscope. That extreme fineness is the whole point — it is why Wallach treats glacier water, and colloidal plant minerals generally, as a form the body can actually take up.",
+   "topics": [
+    "glacial milk",
+    "colloidal minerals",
+    "rock flour",
+    "hunza",
+    "electron microscope"
+   ]
+  },
+  "WAL-CLM-IMMORT-000506": {
+   "subject": "minerals",
+   "also_about": [
+    "colloidal_minerals"
+   ],
+   "facet": "sources",
+   "question": "Why is kelp such a good source of minerals?",
+   "answer_short": "Kelp absorbs the ocean's dissolved minerals — Wallach estimates 200 million tons per cubic mile — and converts them into an organic form the body can use.",
+   "answer_full": "Wallach starts with the sea itself: chemists have long known that the oceans hold every naturally occurring element and mineral in dissolved form, and he puts the load at some 200,000,000 tons of elemental and mineral compounds in every cubic mile of seawater.\n\nKelp and algae grow in that mineral broth and take up those inorganic salts, converting them into a usable organic form. So eaten as a vegetable — or used as dried kelp or kelp ash — kelp becomes a significant source of dietary plant minerals, the ocean's mineral wealth repackaged into something the body can absorb.",
+   "topics": [
+    "kelp",
+    "seaweed",
+    "ocean minerals",
+    "plant minerals",
+    "algae"
+   ]
+  },
+  "WAL-CLM-IMMORT-000511": {
+   "subject": "minerals",
+   "also_about": [],
+   "facet": "history",
+   "question": "Why was Nile Valley wheat prized by ancient armies?",
+   "answer_short": "Its soil was so mineral-rich the wheat was legendary for strength and stamina — so Macedonia secured exclusive rights to it.",
+   "answer_full": "Wallach reframes a piece of ancient history as a mineral story. Behind a political treaty between Macedonia and Egypt, he says, was one prize: exclusive rights to the highly mineralized wheat of the Nile flood plains — grain legendary for the strength and stamina it gave the armies that ate it.\n\nMacedonia needed that Egyptian wheat to fuel its coming invasion of Asia. In Wallach's telling the annual Nile floods laid down mineral-rich silt, the wheat took those minerals up, and soldiers who ate it were, in effect, well-supplemented — an early example of his rule that the minerals in the soil end up deciding the vigor of the people.",
+   "topics": [
+    "nile wheat",
+    "macedonia",
+    "mineralized soil",
+    "stamina",
+    "history"
    ]
   }
  }

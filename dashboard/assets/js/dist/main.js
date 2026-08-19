@@ -5395,7 +5395,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }).passthrough();
   var EntityCopySchema = external_exports.object({
     essentials: external_exports.record(external_exports.string(), EntityCopyEntrySchema),
-    conditions: external_exports.record(external_exports.string(), EntityCopyEntrySchema)
+    conditions: external_exports.record(external_exports.string(), EntityCopyEntrySchema),
+    // Explore-page entities (concept/substance/topic/element/person/event) — their hand-authored
+    // hero lede. Optional so the store parses before any is written; the explore_entity_lede_authored
+    // gate is what actually requires one per non-grandfathered explore entity.
+    topics: external_exports.record(external_exports.string(), EntityCopyEntrySchema).optional()
   }).passthrough();
 
   // assets/js/src/core/schemas/home-curation.ts
@@ -41752,7 +41756,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "vitamin",
         is_essential: true,
         claim_count: 22,
-        distinct_claim_count: 37,
+        distinct_claim_count: 38,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -41898,6 +41902,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               "WAL-CLM-DDDL-000476",
               "WAL-CLM-DDDL-000565",
               "WAL-CLM-EPIGEN-000119",
+              "WAL-CLM-IMMORT-000510",
               "WAL-CLM-LETS-000074",
               "WAL-CLM-LETS-000139",
               "WAL-CLM-LETS-000413",
@@ -75256,7 +75261,30 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         why: "From Wallach's Epigenetics (2014): retinol 2,500\u20135,000 IU and \u03B2-carotene 5,000\u201325,000 IU. Taking the upper figure of each and converting at 0.3 mcg RAE per IU \u2248 1,500 mcg retinol + 7,500 mcg \u03B2-carotene = 9,000 mcg RAE/day."
       }
     },
-    conditions: {}
+    conditions: {},
+    topics: {
+      chocolate: {
+        lede: "Wallach reads a craving for chocolate as a mineral-shortage signal, not a sweet tooth \u2014 and rates bitter, low-glycemic dark cocoa, rich in brain-active compounds, well above sugary milk chocolate."
+      },
+      resveratrol: {
+        lede: "The red-wine antioxidant behind the 'French Paradox' and the old 'Grape Cure' \u2014 Wallach says it flips on the same anti-aging switch (the sirtuins) as a calorie-restricted diet, and studies show it stretching animal lifespans."
+      },
+      hunza: {
+        lede: "The remote Himalayan people Wallach holds up as living proof of his thesis: for 2,300 years they drank mineral-rich glacial 'milk' and grew food in wood-ash-fed soil \u2014 and routinely lived past 80, many past 100, nearly free of chronic disease."
+      },
+      longevity: {
+        lede: "Wallach's account of why some reach 100 in good health and others don't: not genes but minerals, a calorie-restricted diet, antioxidants, and avoiding the modern 'land mines' \u2014 the same levers he finds in every long-lived culture."
+      },
+      "centenarian-cultures": {
+        lede: "The world's longest-lived peoples \u2014 Hunza, Vilcabamba, Okinawa, the Blue Zones \u2014 and the one thing Wallach says they share: not good genes, but a daily flood of 60-plus minerals from glacial water, culinary ashes and mineral-rich soil."
+      },
+      colloidal_minerals: {
+        lede: "Plant-derived minerals ground so fine they stay suspended in liquid \u2014 the form Wallach says the body actually absorbs. It's why he points to glacial 'milk' and plant sources over rock and metal, and calls them the supplement to start with."
+      },
+      minerals: {
+        lede: "The elements Wallach calls the currency of life: of the 75 metals on the periodic table, at least 60 have a job in the human body, and running short on them is where he traces most disease back to."
+      }
+    }
   };
 
   // assets/js/src/state/entity-copy.ts
@@ -75274,6 +75302,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function essentialWhy(slug) {
     return data3().essentials[slug]?.why ?? "";
+  }
+  function topicLede(slug) {
+    return data3().topics?.[slug]?.lede ?? "";
   }
 
   // assets/data/glossary.json
@@ -83505,6 +83536,74 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         term: "zygote",
         plain: "a fertilized egg",
         category: "medical"
+      },
+      {
+        term: "anandamide",
+        plain: "a natural brain chemical, nicknamed the 'bliss molecule,' that binds the same receptors as the active compound in cannabis and is linked to feelings of contentment",
+        category: "biology"
+      },
+      {
+        term: "phenylethylamine",
+        plain: "a natural compound that acts as a mild stimulant in the brain, releasing chemicals tied to excitement and attraction",
+        category: "chemistry"
+      },
+      {
+        term: "glycemic index",
+        plain: "a measure of how quickly a food raises your blood sugar",
+        category: "nutrition"
+      },
+      {
+        term: "pica",
+        plain: "a craving to eat non-food items or unusual substances, often a sign the body is short on minerals",
+        category: "medical"
+      },
+      {
+        term: "sirtuin",
+        plain: "a family of enzymes (the sirtuin or SIR family) that help regulate aging and cell repair and are switched on by calorie restriction",
+        category: "biology",
+        aliases: [
+          "sirtuins",
+          "sir-2"
+        ]
+      },
+      {
+        term: "resveratrol",
+        plain: "a natural antioxidant found in grape skins and red wine, studied for anti-aging and heart-protective effects",
+        category: "chemistry",
+        aliases: []
+      },
+      {
+        term: "phytoalexin",
+        plain: "a compound a plant produces to defend itself against fungi and other attackers",
+        category: "biology",
+        aliases: [
+          "phytoalexins"
+        ]
+      },
+      {
+        term: "chapatti",
+        plain: "a simple unleavened flatbread made from whole-grain flour, a staple of the Hunza diet",
+        category: "nutrition",
+        aliases: [
+          "chapattis"
+        ]
+      },
+      {
+        term: "phytoestrogen",
+        plain: "a plant compound that acts like a mild form of the hormone estrogen in the body",
+        category: "biology",
+        aliases: [
+          "phytoestrogens",
+          "phyto-estrogen"
+        ]
+      },
+      {
+        term: "meta-analysis",
+        plain: "a study that statistically combines the results of many earlier studies to reach a stronger overall conclusion",
+        category: "science",
+        aliases: [
+          "meta analysis"
+        ]
       }
     ]
   };
@@ -85228,7 +85327,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "cultures that live longest"
         ],
         related: [],
-        claim_count: 2,
+        claim_count: 5,
         intro_claim: "WAL-CLM-RARE-000056"
       },
       cerebral_palsy: {
@@ -85480,6 +85579,31 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         claim_count: 19,
         symbol: "Cl"
+      },
+      chocolate: {
+        display_name: "Chocolate",
+        type: "substance",
+        synonyms: [
+          "chocolate",
+          "cocoa",
+          "cacao",
+          "dark chocolate",
+          "chocolate craving",
+          "chocolate cravings",
+          "why do i crave chocolate",
+          "craving chocolate",
+          "is chocolate healthy",
+          "is dark chocolate good for you",
+          "does chocolate make you happy"
+        ],
+        related: [
+          "minerals",
+          "sugar",
+          "antioxidants",
+          "flavonoids"
+        ],
+        claim_count: 3,
+        intro_claim: "WAL-CLM-IMMORT-000482"
       },
       cholesterol: {
         display_name: "Cholesterol",
@@ -85830,7 +85954,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "selenium",
           "essential_nutrients"
         ],
-        claim_count: 35
+        claim_count: 36
       },
       colonics: {
         display_name: "Colon Cleansing",
@@ -88222,6 +88346,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         claim_count: 3,
         intro_claim: "WAL-CLM-LETS-000477"
       },
+      hunza: {
+        display_name: "The Hunza",
+        type: "concept",
+        synonyms: [
+          "hunza",
+          "hunza people",
+          "hunzakut",
+          "hunza valley",
+          "hunza diet",
+          "hunza longevity",
+          "how long do hunza live",
+          "glacial milk"
+        ],
+        related: [
+          "centenarian-cultures",
+          "longevity",
+          "colloidal_minerals",
+          "minerals"
+        ],
+        claim_count: 6,
+        intro_claim: "WAL-CLM-IMMORT-000488"
+      },
       hydrogen: {
         display_name: "Hydrogen",
         common_name: "Hydrogen",
@@ -89449,7 +89595,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "be_your_own_doctor",
           "negative_ion_therapy"
         ],
-        claim_count: 23,
+        claim_count: 29,
         intro_claim: "WAL-CLM-IMMORT-000250"
       },
       low_carb_diet: {
@@ -90112,7 +90258,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "are minerals important"
         ],
         related: [],
-        claim_count: 10
+        claim_count: 13
       },
       mitral_valve_prolapse: {
         display_name: "Mitral Valve Prolapse",
@@ -91935,6 +92081,30 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         related: [],
         claim_count: 3
+      },
+      resveratrol: {
+        display_name: "Resveratrol",
+        type: "substance",
+        synonyms: [
+          "resveratrol",
+          "red wine compound",
+          "red wine antioxidant",
+          "grape antioxidant",
+          "resveratrol supplement",
+          "does resveratrol work",
+          "red wine anti-aging",
+          "french paradox",
+          "grape cure",
+          "sirtuins"
+        ],
+        related: [
+          "antioxidants",
+          "longevity",
+          "orac",
+          "free_radicals"
+        ],
+        claim_count: 6,
+        intro_claim: "WAL-CLM-IMMORT-000481"
       },
       rhenium: {
         display_name: "Rhenium",
@@ -120116,7 +120286,9 @@ Worth knowing: this describes where the conventional drug comes from and how it 
       {
         id: "WAL-CLM-EPIGEN-000476",
         subject: "menopause",
-        also_about: [],
+        also_about: [
+          "chocolate"
+        ],
         facet: "mechanism",
         question: "Why do women crave chocolate and run low on minerals before menopause?",
         answer_short: "Wallach says a lifetime of monthly periods, pregnancies, and breastfeeding drains minerals that men never lose, so women run more depleted \u2014 and chocolate is the number-one sweet craving in premenopausal women (39%, versus just 14% of men the same age).",
@@ -132645,6 +132817,67 @@ The encouraging part is that Wallach considers cataracts preventable and, in mos
         }
       },
       {
+        id: "WAL-CLM-IMMORT-000480",
+        subject: "longevity",
+        also_about: [],
+        facet: "mechanism",
+        question: "How much does calorie restriction extend lifespan?",
+        answer_short: "In Wallach's rat example, a calorie-restricted longevity diet stretched lifespan from the usual three years to five.",
+        answer: "Wallach points to calorie restriction on a well-formulated longevity diet as a proven lifespan extender. His striking example is a whole colony of rats fed this way: instead of the usual three-year rat lifespan, they lived to five \u2014 a jump of roughly two-thirds.\n\nHe folds this into his four basic principles of longevity, arguing that if humans applied them, almost all could live beyond 100. Calorie restriction is the most consistently proven of those levers in the lab, and it is the same anti-aging pathway \u2014 the sirtuins \u2014 that he says resveratrol switches on, tying the rat colony, red wine and the Hunza's 'Starvation Springtime' into one thread.",
+        verbatim: "if all humans were to employ the four basic principals of\nIMMORTALITY almost all could live beyond 100 years of age just as an entire colony of rats\non a perfect longevity diet with Calorie Restriction can live to be five years of age\ninstead of three years.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "calorie restriction",
+          "lifespan",
+          "rats",
+          "longevity diet",
+          "anti-aging"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000481",
+        subject: "resveratrol",
+        also_about: [
+          "longevity"
+        ],
+        facet: "big_question",
+        question: "Does resveratrol extend lifespan?",
+        answer_short: "In animals, yes \u2014 studies Wallach cites found resveratrol stretching lifespan by as much as 40%.",
+        answer: "Wallach's answer is a qualified yes \u2014 at least in animals. He points to studies on the red-wine compound resveratrol that found it extending animal lifespans by as much as 40%, and notes these were no fringe reports: the Wall Street Journal and the New York Times both covered them in late October 2006, drawing on an original paper published in the journal Nature.\n\nWhat makes resveratrol interesting to Wallach is that the same coverage tied it to calorie-restricted diets \u2014 the classic longevity intervention that reliably stretches lifespan across species. Resveratrol appears to reach for that same longevity machinery without the fasting, which is why he treats it as one of the more promising anti-aging compounds to come out of ordinary food and drink.",
+        verbatim: "The October 30, 2006 edition of the Wall Street Journal\nreported that studies on the red wine compound resveratrol\nextend animal lifespans by as much as 40%. Resveratrol was\nalso considered for its potential life extending properties in\nan article related to Calorie Restricted diets in the October\n31, 2006 edition of The New York Times - the scientific journal\nNature published the original article that was quoted by both\nnewspapers.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "resveratrol",
+          "red wine",
+          "lifespan",
+          "anti-aging",
+          "longevity"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000482",
+        subject: "chocolate",
+        also_about: [
+          "minerals"
+        ],
+        facet: "stance",
+        question: "Why do I crave chocolate?",
+        answer_short: "It's a mineral-deficiency signal \u2014 the same pica drive as other odd cravings \u2014 not a true need for sugar.",
+        answer: "Wallach reads a chocolate craving as a signal, not a weakness. His position is that when people crave chocolate they are really mineral deficient \u2014 the same pica drive (the urge to eat non-food things, or to binge on 'munchies') that he ties to a lack of trace minerals. The body is reaching for chocolate because it is short on the minerals chocolate is rich in, not because it truly needs sugar.\n\nHe also draws a sharp line between the kinds of chocolate. Bitter, dark, unsweetened chocolate has a very low glycemic index \u2014 up to 70% of its calories come from fat, and fat does not raise blood sugar \u2014 so the cocoa itself is not the problem; the sugar packed into sweet milk chocolate is. The takeaway that follows from his framework: answer the real need by getting your minerals (he favors plant-derived colloidal minerals as the base of his 90 essentials), and if you do reach for chocolate, choose the bitter dark kind over the sugary milk versions.",
+        verbatim: "When people crave chocolate, they are really mineral\ndeficient (pica, munchies, etc.). In fact, bitter, dark unsweetened\nchocolate has a very low glycemic index because up to 70% of\nthe chocolate\u2019s calories come from fat, and fat does not raise\nblood sugar.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "chocolate",
+          "chocolate craving",
+          "pica",
+          "mineral deficiency",
+          "cravings"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000483",
         subject: "calcium",
         also_about: [
@@ -132673,6 +132906,27 @@ The answer, then, is to stop the leak and rebuild the calcium. Cut back on soft 
         }
       },
       {
+        id: "WAL-CLM-IMMORT-000484",
+        subject: "resveratrol",
+        also_about: [
+          "longevity"
+        ],
+        facet: "mechanism",
+        question: "How does resveratrol work in the body?",
+        answer_short: "It switches on sirtuins (Sir-2), the same anti-aging enzymes triggered by a calorie-restricted diet.",
+        answer: "Wallach explains that resveratrol appears to work, in animals and humans alike, by activating a family of enzymes called sirtuins \u2014 also written Sir-2. Those are the very proteins involved in the anti-aging effects of a calorie-restricted diet, so resveratrol seems to pull the same longevity lever without the fasting.\n\nThat shared pathway is the thread running through Wallach's interest in resveratrol: calorie restriction reliably extends lifespan in the lab, sirtuins are a big part of why, and resveratrol switches them on. It reframes red wine's old reputation as more than folklore \u2014 a real biochemical echo of the diet that slows aging.",
+        verbatim: "Resveratrol appears to function in animals and humans\nby activating a family of enzymes called sirtuins (Sir-2) -\nthese proteins are involved in the same anti-aging effects as a\nCalorie Restricted diet.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "resveratrol",
+          "sirtuins",
+          "sir-2",
+          "calorie restriction",
+          "mechanism"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000485",
         subject: "cataracts",
         also_about: [],
@@ -132699,6 +132953,27 @@ Just as important is what to cut. Wallach says heavy use of vegetable oils \u201
         }
       },
       {
+        id: "WAL-CLM-IMMORT-000486",
+        subject: "minerals",
+        also_about: [
+          "colloidal_minerals"
+        ],
+        facet: "history",
+        question: "How did ancient people get all 60 essential minerals?",
+        answer_short: "By 'cutting' scarce salt with wood, peat or kelp ashes \u2014 'culinary ashes' that delivered the 60 essential minerals daily.",
+        answer: "Wallach's answer is that they did it without knowing they were doing it. Salt was precious, so rather than eat it straight it was mixed, 'cut' and diluted with wood, peat or kelp ashes. With that one thrifty habit \u2014 extending salt with 'culinary ashes' \u2014 people from the beginning of time took in the 60 essential minerals every day, as a food supplement in all but name.\n\nIt is the same mechanism he finds across his longevity cultures: the Okinawans' rice-straw ash, the Hunza's wood-ash compost, and here the plain act of stretching salt with ash. Wallach's point is that a mineral supply modern diets have lost was, for most of history, simply built into how people cooked and ate.",
+        verbatim: "salt was not squandered by simply eating it, it was mixed,\n\u201Ccut\u201D and diluted with wood, peat or kelp ashes. And so with\nthe simple act of \u201Cextending\u201D salt with \u201Cculinary\u201D ashes,\nhumans, from the beginning of time, unknowingly acquired\nthe 60 essential minerals daily as a food supplement.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "culinary ashes",
+          "60 minerals",
+          "salt",
+          "wood ash",
+          "mineral supplement"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000487",
         subject: "vitamin-b6",
         also_about: [
@@ -132723,6 +132998,89 @@ Just as important is what to cut. Wallach says heavy use of vegetable oils \u201
             "peripheral_neuropathy"
           ]
         }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000488",
+        subject: "hunza",
+        also_about: [
+          "centenarian-cultures"
+        ],
+        facet: "stance",
+        question: "What is the secret of the Hunza people's longevity?",
+        answer_short: "Minerals \u2014 Wallach credits their glacial-'milk' irrigation and wood-ash compost, which flood the soil and diet with colloidal minerals.",
+        answer: "For Wallach the Hunza are Exhibit A, and the secret he draws from them is minerals. He attributes their long, healthy lives to two habits that work the same way: they irrigated their terraced fields with highly mineralized 'Glacial Milk' \u2014 glacier-ground meltwater \u2014 and fertilized those fields with a wood-ash compost that recycles colloidal plant minerals back into the soil.\n\nThe result, in his telling, is a closed mineral loop: minerals wash down from the mountain in the water, crops take them up, the ash from cooking and heating fires returns them to the ground, and the people eat them again with every meal. It is the living version of Wallach's whole thesis \u2014 that health follows the minerals \u2014 which is why he returns to the Hunza again and again.",
+        verbatim: "The serendipitous irrigation of their terraced fields with\nthe common denominator of a highly mineralized \u201CGlacial\nMilk\u201D and the fertilization of their fields with an organic\ncompost rich with the recycled colloidal plant minerals found\nin wood ashes from their heating and cooking fires is the\nsecret of the Hunzas\u2019s long and fruitful lives.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "hunza",
+          "longevity",
+          "glacial milk",
+          "colloidal minerals",
+          "wood ash"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000489",
+        subject: "colloidal_minerals",
+        also_about: [
+          "hunza"
+        ],
+        facet: "basics",
+        question: "What is Glacial Milk?",
+        answer_short: "Glacier-ground meltwater \u2014 dissolved elements plus rock-flour colloids so tiny they need an electron microscope to see.",
+        answer: "Glacial Milk, in Wallach's description, is a mixed liquid: partly a true solution of ionically dissolved elements, and partly a suspension of finely ground rock dust \u2014 'rock flour' shaved from the living parent rock of the mountain by the grinding friction of the glacier.\n\nThe suspended minerals are what he calls 'metallic colloidal minerals,' and their defining feature is size: the average particle is about 7,000 times smaller than a red blood cell, so small it can be seen only under an electron microscope. That extreme fineness is the whole point \u2014 it is why Wallach treats glacier water, and colloidal plant minerals generally, as a form the body can actually take up.",
+        verbatim: "Glacial Milk is a mixed liquid, a solution of ionically\ndissolved elements and a suspension of finely ground rock\ndust (rock flour) shaved and ground from the living parent\nrock of the mountain by glacial friction. The suspended\nminerals in the Glacial Milk are referred to as \u201Cmetallic\ncolloidal minerals.\u201D The average particle size of these colloid\nparticles is 7,000 times smaller than a red blood cell - so small,\nthat they can only be visualized by an electron microscope.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "glacial milk",
+          "colloidal minerals",
+          "rock flour",
+          "hunza",
+          "electron microscope"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000490",
+        subject: "resveratrol",
+        also_about: [],
+        facet: "sources",
+        question: "What foods contain resveratrol?",
+        answer_short: "Grape skins and seeds (muscadine, Pinot noir, Concord), plus Japanese knotweed, blueberries and peanuts.",
+        answer: "Wallach locates resveratrol mainly in grape skins and seeds, and singles out three varieties that run especially high in it: muscadine, Pinot noir and Concord grapes. Because it concentrates in the skins, red wine \u2014 fermented on the skins \u2014 is a familiar source, which is much of why red wine gets the anti-aging credit rather than white.\n\nGrapes are not the only source, though. Wallach also names Japanese knotweed (Polygonum cuspidatum), blueberries and peanuts as foods that carry resveratrol, so it is not something confined to the wine glass.",
+        verbatim: "Resveratrol can be found in the skins, seeds; notable\ngrape varieties that contain high levels of resveratrol are\nmuscadine grapes, Pinot noir grapes and Concord grapes.\n\nResveratrol is also found in the Japanese Knotweed\n(Polygonum cuspidatum), blueberries and peanuts.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "resveratrol",
+          "grapes",
+          "red wine",
+          "peanuts",
+          "blueberries",
+          "food sources"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000491",
+        subject: "resveratrol",
+        also_about: [
+          "longevity"
+        ],
+        facet: "stance",
+        question: "Why is red wine considered anti-aging?",
+        answer_short: "Because of resveratrol \u2014 Wallach calls it the anti-aging substance behind both the 'Grape Cure' and the 'French Paradox.'",
+        answer: "Red wine's anti-aging reputation, in Wallach's telling, comes down to one substance: resveratrol. He notes it is generally agreed across the scientific world that resveratrol \u2014 the anti-aging compound found in red wine \u2014 is the basis for both the old 'Grape Cure' and the celebrated 'French Paradox.'\n\nSo when people talk about red wine being good for you, Wallach's framing is that they are really talking about resveratrol: the same skin-borne grape compound that activates the sirtuin longevity pathway. The wine is just the delivery vehicle.",
+        verbatim: "It is generally agreed throughout the scientific world\nthat resveratrol, the anti-aging substance found in red wines\nare the basis for the \u201CGrape Cure\u201D and the \u201CFrench Paradox.\u201D",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "resveratrol",
+          "red wine",
+          "grape cure",
+          "french paradox",
+          "anti-aging"
+        ]
       },
       {
         id: "WAL-CLM-IMMORT-000492",
@@ -132914,6 +133272,27 @@ So the fix runs in the same direction as the problem: swap the stripped white br
         }
       },
       {
+        id: "WAL-CLM-IMMORT-000499",
+        subject: "hunza",
+        also_about: [
+          "colloidal_minerals"
+        ],
+        facet: "mechanism",
+        question: "What is Hunza 'Glacial Milk,' and why did it keep them healthy?",
+        answer_short: "Mineral-laden glacier melt so rich it ran bluish-white; 2,300 years of drinking it gave the Hunza 60-plus minerals a day.",
+        answer: "'Glacial Milk' is the name the Hunza gave their water \u2014 glacier meltwater so laden with minerals that it ran a cloudy, bluish white. Wallach explains that it pours out from under millions of tons of ice grinding against the parent rock of Mount Rakaposhi, and that grinding by the Ultar Glacier is what loads the water with more than 60 minerals.\n\nFor more than 2,300 years, generation after generation, the Hunza drank this water and irrigated their terraced fields with it, which Wallach says gave them an optimal daily intake of those 60-plus minerals without anyone planning it. It is, in his words, a literal 'land of milk and honey' \u2014 the mineral supply that underwrites the whole Hunza story.",
+        verbatim: "The water originating from under the millions of tons\nof ice grinding on the parent rock of Mount Rakaposhi was so\nrich with minerals that it was bluish white, so white that the\noriginal people called it \u201CGlacial Milk.\u201D For generation after\ngeneration, crop after crop and year after year for more than\n2,300 years the Hunza people have drunk and irrigated their\nterraced fields with \u201CGlacial Milk,\u201D unwittingly assuring their\npeople of an optimal intake of the more than 60 minerals in\nthe \u201CGlacial Milk\u201D of the Ultar Glacier truely the \u201Cland of milk\nand honey\u201D!",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "glacial milk",
+          "hunza",
+          "minerals",
+          "rakaposhi",
+          "ultar glacier"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000500",
         subject: "coronary_artery_disease",
         also_about: [
@@ -132943,10 +133322,30 @@ Read the whole sentence, though, because one word carries it: moderate. Wallach 
         }
       },
       {
+        id: "WAL-CLM-IMMORT-000501",
+        subject: "longevity",
+        also_about: [],
+        facet: "basics",
+        question: "When does the aging process start?",
+        answer_short: "At conception, Wallach says \u2014 aging runs unabated from the moment you're conceived until death.",
+        answer: "Wallach's view is that aging is not something that switches on in middle age \u2014 it starts the moment you are conceived and never pauses. From that first instant the process runs forward unabated, at hourly, daily, weekly and annual rates, until the ultimate end: death.\n\nThe point is not fatalism but leverage. If aging is continuous from conception, then the nutritional choices that slow it matter at every stage of life, from a mother's diet before birth onward \u2014 which is exactly why Wallach treats preconception nutrition and lifelong mineral supply as longevity tools, not just old-age ones.",
+        verbatim: "The aging process starts the moment you are conceived and continues unabated,\nprogressing forward at varying speeds, and degrees at an hourly, daily, weekly and\nannual rate until the ultimate end of the process - death.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "aging",
+          "when does aging start",
+          "conception",
+          "lifespan",
+          "longevity"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000502",
         subject: "flavonoids",
         also_about: [
-          "cardiovascular_disease"
+          "cardiovascular_disease",
+          "chocolate"
         ],
         facet: "mechanism",
         question: "Is the fat in chocolate bad for your heart?",
@@ -132967,6 +133366,113 @@ Read the whole sentence, though, because one word carries it: moderate. Wallach 
             "cardiovascular_disease"
           ]
         }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000503",
+        subject: "longevity",
+        also_about: [
+          "essential_nutrients"
+        ],
+        facet: "stance",
+        question: "How many American deaths each year are diet-related?",
+        answer_short: "The Surgeon General said 1.8 million of America's 2.2 million yearly deaths are diet-related \u2014 which Wallach says proves his 1968 thesis.",
+        answer: "Wallach cites the U.S. Surgeon General's 2006 statement that of the 2.2 million deaths in America each year, 1.8 million \u2014 more than four in five \u2014 are diet-related. For him this is not a footnote but a vindication.\n\nBack in 1968 he had made a far bolder claim: that every animal and every human being that dies of natural causes is really dying of a nutritional deficiency disease. When the nation's top doctor put most American deaths down to diet nearly forty years later, Wallach read it as mainstream science finally catching up to what his autopsies had already shown him.",
+        verbatim: "In 2006, the U.S. Surgeon General said\nthat, \u201Cof the 2.2 million deaths in America each year, that 1.8\nmillion are diet related\u201D - this statement agrees with the 1968\nobservation of Dr. Wallach that, \u201CEvery animal and every\nhuman being that dies of natural causes dies of a nutritional\ndeficiency disease.\u201D",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "diet related deaths",
+          "surgeon general",
+          "nutritional deficiency",
+          "longevity",
+          "wallach thesis"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000504",
+        subject: "resveratrol",
+        also_about: [
+          "longevity"
+        ],
+        facet: "big_question",
+        question: "What is the French Paradox?",
+        answer_short: "The French eat more fat than any culture yet rank third of 193 nations for health and longevity.",
+        answer: "The 'French Paradox' is the puzzle that the French consume more fat per person than any other culture in the world, yet still rank third out of 193 nations for health and longevity \u2014 a contradiction American physicians named and have long puzzled over.\n\nWallach's resolution is resveratrol. The French drink red wine daily, and red wine carries the anti-aging compound that switches on the body's longevity pathway; in his framing the wine's resveratrol helps offset the fat, which is how a high-fat culture can still land near the top of the health tables.",
+        verbatim: "The French consume more fat per person than any other\nculture in the world, yet they rank third oneveryone\u2019s charts on\nhealth and longevity out of 193 nations. American physicians\ncall this amazing phenomina the \u201CFrench Paradox.\u201D",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "french paradox",
+          "resveratrol",
+          "red wine",
+          "france",
+          "longevity",
+          "dietary fat"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000505",
+        subject: "hunza",
+        also_about: [
+          "longevity"
+        ],
+        facet: "history",
+        question: "Did the Hunza practice calorie restriction?",
+        answer_short: "Yes \u2014 their diet was already lean, and each 'Starvation Springtime' food ran so low they ate just two or three meals a week.",
+        answer: "Yes, though partly by necessity. Wallach points out that the Hunza already ate a calorie-restricted diet, and that each late spring their stored food reserves ran so low they went through a stretch they called 'Starvation Springtime' \u2014 a period when meals dropped to just two or three a week.\n\nHe frames this seasonal fasting as part of why they lived so long. Calorie restriction is the one dietary lever repeatedly shown to extend lifespan, and the Hunza practiced an extreme version of it every year \u2014 another thread tying their longevity back to the same anti-aging biology behind resveratrol and the sirtuins.",
+        verbatim: "Adding to their already Calorie Restricted diet was\nthe fact that by late spring of each year the Hunzakut\u2019s\nfood reserves ran low, producing what they call \u201CStarvation\nSpringtime.\u201D Meals are reduced to a frequency of two to three\nmeals a week.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "hunza",
+          "calorie restriction",
+          "starvation springtime",
+          "fasting",
+          "longevity"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000506",
+        subject: "minerals",
+        also_about: [
+          "colloidal_minerals"
+        ],
+        facet: "sources",
+        question: "Why is kelp such a good source of minerals?",
+        answer_short: "Kelp absorbs the ocean's dissolved minerals \u2014 Wallach estimates 200 million tons per cubic mile \u2014 and converts them into an organic form the body can use.",
+        answer: "Wallach starts with the sea itself: chemists have long known that the oceans hold every naturally occurring element and mineral in dissolved form, and he puts the load at some 200,000,000 tons of elemental and mineral compounds in every cubic mile of seawater.\n\nKelp and algae grow in that mineral broth and take up those inorganic salts, converting them into a usable organic form. So eaten as a vegetable \u2014 or used as dried kelp or kelp ash \u2014 kelp becomes a significant source of dietary plant minerals, the ocean's mineral wealth repackaged into something the body can absorb.",
+        verbatim: "Chemists have realized, for centuries that, in the great\noceans there are dissolved all of the naturally occurring\nelements and minerals. It is estimated that each cubic mile\nof ocean contains 200,000,000 tons of elemental and mineral\ncompounds.\n\nKelp and algae growing in the sea takes up these\ninorganic salts and converts them into useable organic forms.\nWhen used as fertilizer (either as dried kelp or kelp ash) or\nadded directly to the diet as a vegetable, kelp is a significant\nsource of dietary plant minerals.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "kelp",
+          "seaweed",
+          "ocean minerals",
+          "plant minerals",
+          "algae"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000507",
+        subject: "hunza",
+        also_about: [
+          "longevity",
+          "centenarian-cultures"
+        ],
+        facet: "big_question",
+        question: "How long do the Hunza people live?",
+        answer_short: "Past the first year, Hunza typically live beyond 80 in excellent health \u2014 many into their 90s and past 100.",
+        answer: "Remarkably long, by Wallach's account. He reports that among the Hunza, anyone who survives the first year of life typically lives beyond age eighty in excellent health, with significant numbers reaching their nineties and passing 100.\n\nJust as telling is what they die of. Doctors working in Hunza concluded that the main cause of premature death is not disease but accidents \u2014 landslides and falls from the sheer rock walls of the valley. Infant mortality from infection was real, but for those past infancy chronic disease is largely absent \u2014 which is exactly why Wallach treats the Hunza as evidence for his thesis rather than a curiosity.",
+        verbatim: "Doctors practicing in Hunza today have concluded that\nthe main cause of premature death amongst the Hunzakut\npeople is from accidents, from landslides or falls from the shear\nrock walls. Infant mortality from infectious diseases have been\nreported; however, the average individual surviving past one\nyear of age lives beyond the age of eighty, in excellent health\nand significant numbers live into their nineties and past 100\nyears.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "hunza",
+          "lifespan",
+          "longevity",
+          "centenarians",
+          "how long do hunza live"
+        ]
       },
       {
         id: "WAL-CLM-IMMORT-000508",
@@ -132996,6 +133502,126 @@ Read the whole sentence, though, because one word carries it: moderate. Wallach 
         }
       },
       {
+        id: "WAL-CLM-IMMORT-000509",
+        subject: "centenarian-cultures",
+        also_about: [],
+        facet: "stance",
+        question: "Are there really only four Blue Zones where people live past 100?",
+        answer_short: "No \u2014 Wallach rejects Dan Buettner's 'only four,' insisting there are countless places where people commonly live past 100.",
+        answer: "Wallach's answer is a flat no. He takes direct aim at Dan Buettner, author of The Blue Zones, who holds that there are only four places on earth where people reliably live past 100. Wallach calls that far too narrow a view, arguing there are in fact a practically infinite number of places where people commonly live beyond 100 years of age.\n\nThe disagreement matters to his thesis. If longevity clustered in just four magic spots, it would look like an accident of geography or genes; if it turns up wherever the conditions are right, it points to a cause you can reproduce anywhere \u2014 which for Wallach is a full supply of minerals and the rest of the essential nutrients.",
+        verbatim: "Dan Buettner, author of the Blue Zones, believes that there are only four places on earth\nwhere people successfully live to be over 100 years of age. His is quite the simple view as\nthere are in fact literally an infinite number of places on earth where people commonly\nlive beyond 100 years of age",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "blue zones",
+          "centenarians",
+          "dan buettner",
+          "longevity",
+          "live past 100"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000510",
+        subject: "centenarian-cultures",
+        also_about: [
+          "vitamin-d"
+        ],
+        facet: "protocol",
+        question: "How much daily sun do the long-lived Costa Ricans get?",
+        answer_short: "A daily 'sun-bathe' of 15 to 30 minutes, exposing the face, arms and legs.",
+        answer: "Wallach notes that the long-lived Costa Ricans take a daily 'sun-bathe' \u2014 15 to 30 minutes each day with the face, arms and legs exposed to the sun. It is a small, consistent habit rather than an occasional beach day.\n\nThe reason it earns a place in his longevity picture is vitamin D: sunlight on bare skin is how the body makes it, and Wallach treats vitamin D as essential to absorbing and placing the very minerals his framework is built on. A short daily dose of sun, in other words, is part of how these cultures keep the mineral machinery working.",
+        verbatim: "The Costa Ricans take daily \u201Csun-bathes\u201D for 15 to 30\nminutes each day by exposing their faces, arms and legs.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "costa rica",
+          "sunlight",
+          "vitamin d",
+          "sun bathing",
+          "longevity"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000511",
+        subject: "minerals",
+        also_about: [],
+        facet: "history",
+        question: "Why was Nile Valley wheat prized by ancient armies?",
+        answer_short: "Its soil was so mineral-rich the wheat was legendary for strength and stamina \u2014 so Macedonia secured exclusive rights to it.",
+        answer: "Wallach reframes a piece of ancient history as a mineral story. Behind a political treaty between Macedonia and Egypt, he says, was one prize: exclusive rights to the highly mineralized wheat of the Nile flood plains \u2014 grain legendary for the strength and stamina it gave the armies that ate it.\n\nMacedonia needed that Egyptian wheat to fuel its coming invasion of Asia. In Wallach's telling the annual Nile floods laid down mineral-rich silt, the wheat took those minerals up, and soldiers who ate it were, in effect, well-supplemented \u2014 an early example of his rule that the minerals in the soil end up deciding the vigor of the people.",
+        verbatim: "but rather a political treaty between\nMacedonia and Egypt - the Macedonians wanted and got\nexclusive rights to the highly mineralized wheat from the Nile\nflood plains, wheat that was legendary in providing strength\nand stamina to the armies that ate it - Macedonia needed this\nEgyptian wheat to support its armies for the coming invasion\nof Asia!",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "nile wheat",
+          "macedonia",
+          "mineralized soil",
+          "stamina",
+          "history"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000512",
+        subject: "hunza",
+        also_about: [
+          "longevity"
+        ],
+        facet: "discovery",
+        question: "What did McCarrison's Hunza-diet rat experiment show?",
+        answer_short: "Rats fed the Hunza diet reached the equivalent of 55 human years disease-free, with no early deaths and no aggression.",
+        answer: "Wallach cites a classic experiment by McCarrison. One group of rats was fed a typical Hunza diet \u2014 whole-grain chapattis, butter, legumes, raw carrots and cabbage, whole milk, eggs, meat and water \u2014 and given daily sunlight.\n\nWhen those rats reached 27 months of age, the equivalent of about 55 human years, they were examined: they were free of overt disease, none had died early, and they had lived together without aggression. Wallach offers it as clean evidence for his central claim \u2014 that diet, not genetic luck, determines health and longevity, because changing only the food reproduced the Hunza's health in the lab.",
+        verbatim: "Group 1 - These rats were fed a typical Hunza diet\nof whole-grain chapattis, butter, legumes, raw carrots, raw\ncabbage, whole milk, eggs, meat, water and they were exposed\nto sunlight daily.\n\nWhen the rats reached the age of 27 months (the\nequivalent of 55 years in humans), they were killed and\nexamined: the rats were free of overt disease, there had not\nbeen any early mortality; the rats were alert yet lived together\nwithout aggression.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "hunza",
+          "mccarrison",
+          "rat study",
+          "diet",
+          "longevity"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000513",
+        subject: "chocolate",
+        also_about: [],
+        facet: "mechanism",
+        question: "Does chocolate affect the brain like marijuana?",
+        answer_short: "A little \u2014 chocolate's anandamide hits the same brain targets as THC, the active compound in marijuana.",
+        answer: "There is a real, if minor, overlap, and it comes down to a single molecule. Wallach notes that chocolate contains anandamide \u2014 a neurotransmitter sometimes called the 'bliss molecule' \u2014 that targets the same brain structures reached by THC, the active ingredient in marijuana. That shared target is part of why a piece of good chocolate can carry a faint lift.\n\nWallach raises it as one of several brain-active compounds in chocolate, not as a reason to treat chocolate as a drug. It sits alongside phenylethylamine (PEA), the pleasure-center stimulant behind chocolate's 'feel-good' reputation \u2014 together they are a large part of why chocolate has such a pull on people, beyond simple taste.",
+        verbatim: "Anandaminde is another neurotransmitter found\nin chocolate. This phytochemical targets the same brain\nstructures that are targeted by the active ingredient in\nmarijuana - THC.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "chocolate",
+          "anandamide",
+          "brain chemistry",
+          "marijuana",
+          "neurotransmitter"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000514",
+        subject: "hunza",
+        also_about: [
+          "salt"
+        ],
+        facet: "sources",
+        question: "What kind of salt do the Hunza eat?",
+        answer_short: "Raw brown rock salt mined near the Shimshal and Muztagh Rivers \u2014 its color comes from trace minerals in the ancient deposit.",
+        answer: "The Hunza eat an unrefined, raw brown rock salt, mined from hills near the Shimshal and Muztagh Rivers and used both in their tea and for cooking \u2014 nothing like the stripped white table salt of the modern diet.\n\nIts brown color is the point: it comes from the trace minerals left behind in the salt deposit when the ancient seas that formed it dried up. So even the Hunza's salt is a mineral source rather than just sodium chloride \u2014 one more way minerals turn up in everything they eat and drink.",
+        verbatim: "The Hunza salt supply is mined from hills near the\nShimshal and Muztagh Rivers and used in their tea and for\ncooking in its raw brown state (the color originates from the\ntrace minerals included in the salt deposit when the seas dried",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "hunza",
+          "salt",
+          "rock salt",
+          "trace minerals",
+          "brown salt"
+        ]
+      },
+      {
         id: "WAL-CLM-IMMORT-000515",
         subject: "diabetes",
         also_about: [
@@ -133020,6 +133646,125 @@ In his system both diseases are really mineral-deficiency diseases. He calls dia
             "obesity"
           ]
         }
+      },
+      {
+        id: "WAL-CLM-IMMORT-000516",
+        subject: "chocolate",
+        also_about: [],
+        facet: "mechanism",
+        question: "Why does chocolate make you feel good?",
+        answer_short: "Its phenylethylamine (PEA) switches on the brain's pleasure centers \u2014 the buzz behind chocolate as a romantic gift.",
+        answer: "Wallach points to phenylethylamine \u2014 PEA \u2014 as the important 'feel-good' phytochemical in chocolate. It is a neurotransmitter that stimulates the body's pleasure centers, and large amounts of it are associated with feelings of excitement, attraction, and even sexual pleasure. That, Wallach says, is exactly why chocolate became the traditional seductive gift: the box of chocolates handed over on Valentine's Day is trading on real brain chemistry.\n\nPEA is not the only reason chocolate has a grip on us. Wallach notes it works alongside anandamide, another chocolate neurotransmitter that reaches the same brain targets as the active compound in marijuana. So the pleasure of chocolate is a genuine neurochemical effect, not just a matter of sweetness or habit.",
+        verbatim: "An important phytochemical found in chocolate is\nphenylethylamine (PEA), this neurotransmitter stimulates the\nbody\u2019s pleasure centers. Large quantities of PEA are associated\nwith feelings of excitement, attraction and sexual pleasure. It\nis the affects of the PEA in chocolate that has caused chocolate\nto be given as a traditional seductive gift for Valentine\u2019s Day,",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "chocolate",
+          "phenylethylamine",
+          "pleasure",
+          "valentines",
+          "aphrodisiac"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000517",
+        subject: "resveratrol",
+        also_about: [],
+        facet: "mechanism",
+        question: "Why do some wines have more resveratrol than others?",
+        answer_short: "Grapes in humid climates make more of it to fight fungus, so those wines carry more resveratrol.",
+        answer: "It comes down to where the grapes grew. Wallach explains that grapes and wine from humid environments contain more resveratrol than those from arid ones \u2014 and the reason is defensive. Resveratrol is essentially a phytoalexin, a compound a plant makes to protect itself: grapes in damp climates, under heavier fungal pressure, produce more of it to repel the damaging molds, and that extra resveratrol ends up in the wine.\n\nSo a wine's resveratrol content is partly an accident of climate. The same grape variety can carry more or less of the compound depending on how humid \u2014 and how fungus-prone \u2014 the vineyard was.",
+        verbatim: "Grapes and wine grown in humid environments\nproduce more resveratrol than wines grown in more arid\nenvironments. The theory for this phenomena is that grapes\ngrown in humid environments produce more resveratrol in\norder to repell damaging fungi.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "resveratrol",
+          "phytoalexin",
+          "grapes",
+          "wine",
+          "humid climate",
+          "mechanism"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000518",
+        subject: "centenarian-cultures",
+        also_about: [
+          "minerals"
+        ],
+        facet: "sources",
+        question: "What are 'culinary ashes,' and why did Okinawans eat them?",
+        answer_short: "Rice-straw ashes stirred into noodle dough and rice \u2014 a direct dose of plant minerals Wallach counts in the Okinawa longevity secret.",
+        answer: "When Wallach asked Okinawan centenarians about their diet, the women shared something he had not expected: they added rice-straw ashes to their noodle dough and to rice as they cooked it, because it gave a lovely yellow color and enhanced the flavor. Those ashes \u2014 'culinary ashes' \u2014 are essentially plant minerals.\n\nSo without thinking of it as supplementing, the Okinawans were eating their minerals directly, cooked right into everyday food. Wallach counts these culinary ashes as part of the Okinawa longevity secret, the same mineral trick he finds in the Hunza's wood-ash compost and in salt 'cut' with ashes \u2014 different cultures, one underlying habit.",
+        verbatim: "And then the lady centenarians shared something we\nhadn\u2019t thought of, \u201CWe also added rice straw ashes to our\nnoodle dough and rice as we cooked them because it added\na wonderful yellow color and enhanced the flavor.\u201D Culinary\nashes (plant minerals) were part of the Okinawa secret!",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "okinawa",
+          "culinary ashes",
+          "rice straw ash",
+          "plant minerals",
+          "longevity"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000519",
+        subject: "longevity",
+        also_about: [
+          "faith_healing"
+        ],
+        facet: "big_question",
+        question: "Does being religious help you live longer?",
+        answer_short: "Wallach says yes \u2014 he cites a 42-study meta-analysis finding regular worship attendance added eight years to average lifespan.",
+        answer: "Wallach holds that being religious measurably increases longevity, and he backs it with a specific figure: a meta-analysis of 42 studies covering 125,826 people (published by the American Psychological Association in 2000) found that regular attendance at a place of worship \u2014 church, synagogue, mosque or temple \u2014 added eight years to average lifespan and improved general health.\n\nHe offers it as one more non-nutritional lever on longevity, alongside diet, minerals and sunlight. The study measured attendance rather than any particular creed, so the finding Wallach reports is about the practice of regular worship and community, not one faith over another.",
+        verbatim: "Being religious definitely increases one\u2019s longevity. In\na meta-analysis of 42 studies which examined 125,826 people\n(American Psychological Association in the year 2,000), it was\ndemonstrated that regular attendance at a place of worship\n(church, synagogue, mosque or temple) added eight years to\nthe average lifespan and improved general health.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "religion and longevity",
+          "worship",
+          "meta-analysis",
+          "lifespan",
+          "faith"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000520",
+        subject: "longevity",
+        also_about: [],
+        facet: "protocol",
+        question: "What are the non-invasive anti-aging options?",
+        answer_short: "Wallach favors vitamin-mineral supplements, non-surgical facelifts, phyto-hormones and non-toxic cosmetics over surgery, chemical peels and BoTox.",
+        answer: "Wallach's anti-aging advice leans away from the knife. He recommends learning to safely use the non-invasive tools \u2014 vitamin and mineral supplements, non-surgical facelifts, non-chemical peels, phyto-hormones (phyto-estrogens, phyto-progesterones, plus HGH and thyroid and adrenal support) and non-toxic cosmetics.\n\nHe sets these against the painful, riskier route of plastic surgery, chemical peels and BoTox. The logic follows his whole approach: fix aging from the inside with nutrition and gentle support first, rather than reaching for surgical fixes that treat only the surface.",
+        verbatim: "We believe that it is worth learning how to use and\napply non-invasive anti-aging vitamin-mineral supplements,\nnon-surgical facelifts, non-chemical peels, phyto-hormones\n(i.e. phyto-estrogens, phyto-progesterones, HGH, thyroid\nsupport, adrenal support, etc.) and beauty products and non-toxic cosmetics safely.",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "anti-aging",
+          "non-invasive",
+          "phyto-hormones",
+          "supplements",
+          "cosmetics"
+        ]
+      },
+      {
+        id: "WAL-CLM-IMMORT-000521",
+        subject: "longevity",
+        also_about: [],
+        facet: "biography",
+        question: "Did anyone really live to be 256 years old?",
+        answer_short: "Wallach cites Li-Ching-Yun, a Chinese herbalist reportedly born 1677 and dead 1933 at age 256, having outlived 23 wives.",
+        answer: "Wallach offers one arresting example of extreme longevity: Li-Ching-Yun, a Chinese herbalist from Kaihsien in Szechwan Province. By the account Wallach relays, Li was born in 1677, sold herbs for 100 years, outlived 23 wives, had 180 descendants, and died in 1933 at the age of 256.\n\nWallach presents it as a real-world exemplar rather than a proven fact \u2014 the figure is famous and unverifiable \u2014 but it fits his theme that a life built around herbs, plants and their minerals can stretch far past what we assume is the human limit.",
+        verbatim: "Li-Ching-Yun reportedly lived to the age of 256 years,\nhe outlived 23 wives and had 180 descendents! Li of Kaihsien,\nin the Province of Szechwan, China, was born in 1677; he sold\nherbs for 100 years; and died in 1933 at the age of 256 years",
+        page: null,
+        book_id: "immortality",
+        topics: [
+          "li ching yun",
+          "256 years",
+          "extreme longevity",
+          "chinese herbalist",
+          "longevity"
+        ]
       },
       {
         id: "WAL-CLM-IMMORT-000522",
@@ -157706,6 +158451,10 @@ Goiter`,
   }
   var LEDE_MAX = 340;
   function entityLede(subject) {
+    const authored = topicLede(subject);
+    if (authored.length > 0) {
+      return softClamp(authored, LEDE_MAX);
+    }
     const e = getEntity(subject);
     if (e !== null && e.intro_claim !== void 0) {
       const picked = getSearchClaim(e.intro_claim);
@@ -195549,7 +196298,9 @@ Render consistency fix (this commit):
 Remaining (chronicle/next-chunk.md): 22 DDDL dose claims (contradiction audit) + 162 unverified-book claims (frontface vision verification).
 ` }, { id: "lg_mt02j9ix_80m13g", ts: "2026-08-19T07:29:15.897499-05:00", surface: "search", kind: "milestone", summary: "The 41 approved Engine-2 ruled claims are live in Ask Wallach with in-depth 'full answers' that explain each quote in plain English and carry Wallach's actual solution drawn from the whole corpus \u2014 a new answer_full search field; the sealed corpus is untouched.", detail: "The 41 ruled claims Luneth approved this session now front-face in Ask Wallach, and their 'full answer' is finally the real thing: not a one-line echo of the cryptic quote, but a plain-English explanation of what that quote means PLUS the actual Wallach solution \u2014 the doses, the foods, what to cut \u2014 gathered from across the whole corpus. And judged per claim: a 'can cataracts be reversed?' gets the full protocol; a 'what minerals are in wood ash?' stays two clean sentences. No padding either direction.\n\nTECH \u2014 chosen architecture (Option B): a new answer_full field lives beside answer_short in the hand-authored, unsealed eden/corpus/search-enrichment.json; the sealed atomic claim_text and the operational Full Record are UNTOUCHED (no re-seal, kv stays 476). search_index_derive.py sources the shipped search `answer` from answer_full when present. 41 enrichments merged; 2 catalog conditions (coronary_artery_disease, nystagmus) registered as search-entities. EPIGEN-000472 re-routed calcium\u2192insomnia to clear a no_duplicate_claims twin with 061 (its span \u2282 061's calcium-table span). CSS white-space:pre-line on the three answer containers renders answer_full's paragraph breaks. Provenance: 41-agent per-claim synthesis over per-claim corpus dossiers, then 41-agent adversarial \xA700.A verification (33 clean; 8 fixed \u2014 2 factual [RARE-404 duration blend, HELLS-097 '1958' attribution] + 6 decorative overreaches], plus hand spot-checks confirming the scariest specifics (097 since-1958/Walter Mertz, 496 Mycoplasma/250mcg diabetes, 494 Johns Hopkins 2004 78% study) all trace to sealed claims.\n\nVERIFY \u2014 board 92/92, 0 new reds; render_probe_search PASS (0 page errors); answer_full confirmed flowing into the index. DEFERRED \u2014 no styled screenshot possible in-session (preview snapshot / chrome ext unresponsive); the 28 needs_new_topic (curation) + 92 unsealed ruled claims remain. Next: front-face the 28 new-topic claims to the same answer_full bar." }, { id: "lg_mt081qv3_mz0wq0", ts: "2026-08-19T10:03:36.255026-05:00", surface: "entity-pages+search", kind: "milestone", summary: "Killed the recurring 'page shows less than search' bug and gated it forever; then pruned nutrient pages down to genuinely-relevant facts (kept all treatment protocols) and capped categories at 7 with a See-more.", detail: `Fixed a recurring bug where a condition or nutrient's detail page showed FEWER facts than the site search found for the same thing, and locked it with an automated check so it can never silently come back. Then cleaned up the nutrient pages so they only show facts genuinely about that nutrient \u2014 dropping stray "What is [some other nutrient]?" entries and passing name-drops, while keeping every treatment the nutrient is actually part of. Also capped each category at 7 answers with a "See N more" button so a heavily-covered page stays scannable.
 
-ROOT CAUSE (completeness): entity_page_derive.search_sections bucketed a page's enriched claims by subject ONLY, while state/search.ts::claimsForSubject includes also_about \u2014 so ~1,086 also_about claim-instances were findable in search yet dropped from their pages (e.g. Wallach's selenium answer naming hypothyroidism was absent from the hypothyroidism page, and the exact query 'Can a selenium deficiency cause an underactive thyroid?' dead-ended). FIX: search_sections now includes also_about (subject OR also_about), matching claimsForSubject exactly; deterministic id-order within each facet. GATE: new entity_page_enriched_matches_search (consistency) independently re-derives claimsForSubject from the shipped search-index and asserts every one of the 601 condition/essential pages' enriched set == it (subset = search>page defect; superset = a page claim search can't reach). Negative test tools/test_entity_page_enriched_matches_search.py proves it bites (GREEN on real, RED on a dropped claim, RED on an extra). CLAUDE.md board total 92->93; external stays 23. | TASK 1 (scannability): entity-page.ts renderFacetGroups caps each Worth-Knowing facet at FACET_CAP=7 cards, overflow behind a native 'See N more answers' reveal (kd-ep-more--answers, a roomier variant in drawer-knowledge.css); the count badge keeps the true total (display cap, not data cap). render_probe_knowledge's 2 record-collapse assertions rewritten to test the heuristic RELATIONSHIP (kinds collapse iff record >=20) against the live count, so they survive record-size shifts. | TASK 2 (relevance prune, essentials only): 425 also_about removals from eden/corpus/search-enrichment.json \u2014 120 other-nutrient definitions ('What is strontium/boron/Vitamin K?') + 297 incidental name-drops ('How much phosphorus is in the body?') + 8 residual definition leaks (e.g. 'What is Vitamin E?' off selenium). ALL 455 condition-protocol claims KEPT (Luneth's call) so broad nutrients aren't gutted \u2014 vitamin C keeps its flu/infection/HIV uses (was 84% pruned under the strict rule, now 0). Lean-conservative keeps: electrolyte-group + omega-group claims + the cobalt<->B12 pair (9 deliberate). PROVENANCE: calcium pilot (1 agent, 160 claims) -> Luneth calibration (keep protocols only for the nutrient's own deficiency disease; lean conservative) -> 12-agent workflow over 1,483 claims across 83 essentials (809 strict removes) -> Luneth 'keep ALL protocols' decision -> filtered to definitions+incidental only -> reconciled by re-applying from clean HEAD -> +8 deterministic residual-definition cleanup. Conditions/Explore keep the full also_about breadth (unchanged). | VERIFY: node tools/build.mjs OK; board 93/93 (23 external / 26 consistency / 42 structural / 2 meta), 0 new reds; render_probe search/entity/knowledge PASS, 0 page errors; puppeteer shots confirm calcium leads 'What is calcium?' (was 'What is strontium?'), vitamin C 105 enriched incl flu/infection protocols, selenium clear of 'What is Vitamin E?'. | DEFERRED: full 425-removal audit list (final_removals.json) available on request, not committed; the 28 needs_new_topic + 92 unsealed ruled claims from the prior handoff still pending. NO SEAL (search-enrichment is the deliberately-unsealed working file; kv stays 476). Push: YES.` }];
+ROOT CAUSE (completeness): entity_page_derive.search_sections bucketed a page's enriched claims by subject ONLY, while state/search.ts::claimsForSubject includes also_about \u2014 so ~1,086 also_about claim-instances were findable in search yet dropped from their pages (e.g. Wallach's selenium answer naming hypothyroidism was absent from the hypothyroidism page, and the exact query 'Can a selenium deficiency cause an underactive thyroid?' dead-ended). FIX: search_sections now includes also_about (subject OR also_about), matching claimsForSubject exactly; deterministic id-order within each facet. GATE: new entity_page_enriched_matches_search (consistency) independently re-derives claimsForSubject from the shipped search-index and asserts every one of the 601 condition/essential pages' enriched set == it (subset = search>page defect; superset = a page claim search can't reach). Negative test tools/test_entity_page_enriched_matches_search.py proves it bites (GREEN on real, RED on a dropped claim, RED on an extra). CLAUDE.md board total 92->93; external stays 23. | TASK 1 (scannability): entity-page.ts renderFacetGroups caps each Worth-Knowing facet at FACET_CAP=7 cards, overflow behind a native 'See N more answers' reveal (kd-ep-more--answers, a roomier variant in drawer-knowledge.css); the count badge keeps the true total (display cap, not data cap). render_probe_knowledge's 2 record-collapse assertions rewritten to test the heuristic RELATIONSHIP (kinds collapse iff record >=20) against the live count, so they survive record-size shifts. | TASK 2 (relevance prune, essentials only): 425 also_about removals from eden/corpus/search-enrichment.json \u2014 120 other-nutrient definitions ('What is strontium/boron/Vitamin K?') + 297 incidental name-drops ('How much phosphorus is in the body?') + 8 residual definition leaks (e.g. 'What is Vitamin E?' off selenium). ALL 455 condition-protocol claims KEPT (Luneth's call) so broad nutrients aren't gutted \u2014 vitamin C keeps its flu/infection/HIV uses (was 84% pruned under the strict rule, now 0). Lean-conservative keeps: electrolyte-group + omega-group claims + the cobalt<->B12 pair (9 deliberate). PROVENANCE: calcium pilot (1 agent, 160 claims) -> Luneth calibration (keep protocols only for the nutrient's own deficiency disease; lean conservative) -> 12-agent workflow over 1,483 claims across 83 essentials (809 strict removes) -> Luneth 'keep ALL protocols' decision -> filtered to definitions+incidental only -> reconciled by re-applying from clean HEAD -> +8 deterministic residual-definition cleanup. Conditions/Explore keep the full also_about breadth (unchanged). | VERIFY: node tools/build.mjs OK; board 93/93 (23 external / 26 consistency / 42 structural / 2 meta), 0 new reds; render_probe search/entity/knowledge PASS, 0 page errors; puppeteer shots confirm calcium leads 'What is calcium?' (was 'What is strontium?'), vitamin C 105 enriched incl flu/infection protocols, selenium clear of 'What is Vitamin E?'. | DEFERRED: full 425-removal audit list (final_removals.json) available on request, not committed; the 28 needs_new_topic + 92 unsealed ruled claims from the prior handoff still pending. NO SEAL (search-enrichment is the deliberately-unsealed working file; kv stays 476). Push: YES.` }, { id: "lg_mt0b919h_9r8mff", ts: "2026-08-19T11:33:15.173485-05:00", surface: "search+explore-headers", kind: "milestone", summary: "Front-faced the last 28 Engine-2 'new topic' facts (Hunza, resveratrol, chocolate, longevity lore, mineral sources) AND gave every Explore topic a hand-written header + a gate so no new topic can ship a claim-answer as its header again. Board 94/94.", detail: `Finished front-facing the last 28 Engine-2 'new topic' facts in Ask Wallach \u2014 the Hunza people, resveratrol / red wine / the French Paradox, chocolate, the Blue-Zones and longevity lore, and the traditional ways people got their minerals (glacial water, culinary ashes, kelp, Nile wheat) \u2014 each now a real searchable question-and-answer with a rich full answer. Also fixed a bug Luneth caught: every Explore topic page was using one of its CLAIMS' answers as the page HEADER (chocolate's read "It's a mineral-deficiency signal\u2026"), which reads as nonsense. Explore topics now get their own hand-written headers, the same as the nutrient pages, and a new automated gate makes a new topic impossible to ship without one.
+
+SCOPE: chronicle/frontface-ocr/ruled-2026-08-18/enrich-worklist.json needs_new_topic=28. The flag over-counted \u2014 it only checked essentials/conditions, not the 94 concept/topic entities. Actual: 15 claims -> 3 NEW entities, 13 -> existing entities. | NEW ENTITIES (eden/catalog/search-entities.json, unsealed \u2014 no golden hash): chocolate (substance; 482 stance, 513/516 mechanism; + cross-links 502 flavonoids & EPIGEN-476 menopause via also_about), resveratrol (substance; 481/504 big_question, 484/517 mechanism, 490 sources, 491 stance), hunza (concept; 488 stance, 499 mechanism, 505 history, 507 big_question, 512 discovery, 514 sources). | FOLDS (eden/corpus/search-enrichment.json): centenarian-cultures +509/510/518; longevity +480/501/503/520/521 and +519 (religion, subject longevity also_about faith_healing \u2014 Luneth: 'both'); minerals +486/506/511; colloidal_minerals +489. Every enriched claim carries question + crisp answer_short + rich multi-paragraph answer_full, all traced to the sealed verbatims (no invented numbers). 28 new enrichment entries; board's enriched_book_is_verified accounts 2495 (all 28 in claims_verified=711). | THE HEADER FIX (Luneth-caught defect): state/search.ts::entityLede ALWAYS returned a claim's answer_short (intro_claim or highest-facet), so 141 explore-page heroes shipped answer-shaped headers and NO gate caught it. FIX: core/schemas/entity-copy.ts gains an optional topics{} map; state/entity-copy.ts gains topicLede(); entityLede() now prefers the hand lede and falls back to the claim only for un-authored slugs. Authored 7 hand ledes (chocolate, resveratrol, hunza + the 4 fold targets longevity/centenarian-cultures/colloidal_minerals/minerals). | NEW GATE explore_entity_lede_authored (critical, consistency): every search-index entity of type not-in-{nutrient,condition} with >=1 claim must have entity-copy.topics[slug].lede OR be in the frozen backlog chronicle/lede-backlog.json. A NEW explore entity is not grandfathered => RED until authored (the 'never again' teeth Luneth asked for). Seeded 140, now 136 (7 authored). STRUCTURAL: proves a lede EXISTS, never that it reads well. Negative test tools/test_explore_entity_lede_authored.py (9 cases: the defect fires RED, blank lede fires, essential/condition/claimless/grandfathered spared). CLAUDE.md board total 93->94; external stays 23. | GLOSSARY (dashboard/assets/data/glossary.json, hand-authored R4, digit-free): +anandamide, phenylethylamine, glycemic index, pica, sirtuin, resveratrol, phytoalexin, chapatti, phytoestrogen, meta-analysis. | VERIFY: node tools/build.mjs OK (tsc clean); board 94/94 (23 ext / 27 consistency / 42 structural / 2 meta), 0 new reds; render_probe knowledge/search/entity PASS, 0 page errors. | LIMIT (honest): could NOT composite a live screenshot this session \u2014 Browser pane won't display + file:// renders as a static snapshot. All header + Q/short/full text was reviewed and approved by Luneth in chat; the pages use the established substance/topic template; VISUAL SIGN-OFF on his machine is still open. | NO SEAL: search-enrichment + search-entities are the deliberately-unsealed working files; corpus kv stays 476. | DEFERRED: the ~135-entity lede backlog (author over time, gate keeps it shrinking); the 92 unsealed prior-handoff ruled claims; the 8 recovered_question:null from the prior worklist not in this 28.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

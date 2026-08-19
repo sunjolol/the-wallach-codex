@@ -26,5 +26,28 @@
       "why": "From Wallach's Epigenetics (2014): retinol 2,500–5,000 IU and β-carotene 5,000–25,000 IU. Taking the upper figure of each and converting at 0.3 mcg RAE per IU ≈ 1,500 mcg retinol + 7,500 mcg β-carotene = 9,000 mcg RAE/day."
     }
   },
-  "conditions": {}
+  "conditions": {},
+  "topics": {
+    "chocolate": {
+      "lede": "Wallach reads a craving for chocolate as a mineral-shortage signal, not a sweet tooth — and rates bitter, low-glycemic dark cocoa, rich in brain-active compounds, well above sugary milk chocolate."
+    },
+    "resveratrol": {
+      "lede": "The red-wine antioxidant behind the 'French Paradox' and the old 'Grape Cure' — Wallach says it flips on the same anti-aging switch (the sirtuins) as a calorie-restricted diet, and studies show it stretching animal lifespans."
+    },
+    "hunza": {
+      "lede": "The remote Himalayan people Wallach holds up as living proof of his thesis: for 2,300 years they drank mineral-rich glacial 'milk' and grew food in wood-ash-fed soil — and routinely lived past 80, many past 100, nearly free of chronic disease."
+    },
+    "longevity": {
+      "lede": "Wallach's account of why some reach 100 in good health and others don't: not genes but minerals, a calorie-restricted diet, antioxidants, and avoiding the modern 'land mines' — the same levers he finds in every long-lived culture."
+    },
+    "centenarian-cultures": {
+      "lede": "The world's longest-lived peoples — Hunza, Vilcabamba, Okinawa, the Blue Zones — and the one thing Wallach says they share: not good genes, but a daily flood of 60-plus minerals from glacial water, culinary ashes and mineral-rich soil."
+    },
+    "colloidal_minerals": {
+      "lede": "Plant-derived minerals ground so fine they stay suspended in liquid — the form Wallach says the body actually absorbs. It's why he points to glacial 'milk' and plant sources over rock and metal, and calls them the supplement to start with."
+    },
+    "minerals": {
+      "lede": "The elements Wallach calls the currency of life: of the 75 metals on the periodic table, at least 60 have a job in the human body, and running short on them is where he traces most disease back to."
+    }
+  }
 }

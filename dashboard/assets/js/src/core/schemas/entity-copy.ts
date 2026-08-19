@@ -18,10 +18,14 @@ export const EntityCopyEntrySchema = z.object({
   why: z.string().optional(),
 }).passthrough();
 
-/** The whole store — essentials + conditions maps of slug → approved copy. */
+/** The whole store — essentials + conditions + explore-topic maps of slug → approved copy. */
 export const EntityCopySchema = z.object({
   essentials: z.record(z.string(), EntityCopyEntrySchema),
   conditions: z.record(z.string(), EntityCopyEntrySchema),
+  // Explore-page entities (concept/substance/topic/element/person/event) — their hand-authored
+  // hero lede. Optional so the store parses before any is written; the explore_entity_lede_authored
+  // gate is what actually requires one per non-grandfathered explore entity.
+  topics: z.record(z.string(), EntityCopyEntrySchema).optional(),
 }).passthrough();
 
 export type EntityCopyEntry = z.infer<typeof EntityCopyEntrySchema>;

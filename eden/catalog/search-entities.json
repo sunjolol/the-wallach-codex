@@ -12449,6 +12449,74 @@
    "related": [
     "vitamin-b1"
    ]
+  },
+  "chocolate": {
+   "display_name": "Chocolate",
+   "type": "substance",
+   "synonyms": [
+    "chocolate",
+    "cocoa",
+    "cacao",
+    "dark chocolate",
+    "chocolate craving",
+    "chocolate cravings",
+    "why do i crave chocolate",
+    "craving chocolate",
+    "is chocolate healthy",
+    "is dark chocolate good for you",
+    "does chocolate make you happy"
+   ],
+   "related": [
+    "minerals",
+    "sugar",
+    "antioxidants",
+    "flavonoids"
+   ],
+   "intro_claim": "WAL-CLM-IMMORT-000482"
+  },
+  "resveratrol": {
+   "display_name": "Resveratrol",
+   "type": "substance",
+   "synonyms": [
+    "resveratrol",
+    "red wine compound",
+    "red wine antioxidant",
+    "grape antioxidant",
+    "resveratrol supplement",
+    "does resveratrol work",
+    "red wine anti-aging",
+    "french paradox",
+    "grape cure",
+    "sirtuins"
+   ],
+   "related": [
+    "antioxidants",
+    "longevity",
+    "orac",
+    "free_radicals"
+   ],
+   "intro_claim": "WAL-CLM-IMMORT-000481"
+  },
+  "hunza": {
+   "display_name": "The Hunza",
+   "type": "concept",
+   "synonyms": [
+    "hunza",
+    "hunza people",
+    "hunzakut",
+    "hunza valley",
+    "hunza diet",
+    "hunza longevity",
+    "how long do hunza live",
+    "glacial milk"
+   ],
+   "related": [
+    "centenarian-cultures",
+    "longevity",
+    "colloidal_minerals",
+    "minerals"
+   ],
+   "intro_claim": "WAL-CLM-IMMORT-000488"
   }
  }
 }

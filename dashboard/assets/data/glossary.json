@@ -8226,6 +8226,74 @@
    "term": "zygote",
    "plain": "a fertilized egg",
    "category": "medical"
+  },
+  {
+   "term": "anandamide",
+   "plain": "a natural brain chemical, nicknamed the 'bliss molecule,' that binds the same receptors as the active compound in cannabis and is linked to feelings of contentment",
+   "category": "biology"
+  },
+  {
+   "term": "phenylethylamine",
+   "plain": "a natural compound that acts as a mild stimulant in the brain, releasing chemicals tied to excitement and attraction",
+   "category": "chemistry"
+  },
+  {
+   "term": "glycemic index",
+   "plain": "a measure of how quickly a food raises your blood sugar",
+   "category": "nutrition"
+  },
+  {
+   "term": "pica",
+   "plain": "a craving to eat non-food items or unusual substances, often a sign the body is short on minerals",
+   "category": "medical"
+  },
+  {
+   "term": "sirtuin",
+   "plain": "a family of enzymes (the sirtuin or SIR family) that help regulate aging and cell repair and are switched on by calorie restriction",
+   "category": "biology",
+   "aliases": [
+    "sirtuins",
+    "sir-2"
+   ]
+  },
+  {
+   "term": "resveratrol",
+   "plain": "a natural antioxidant found in grape skins and red wine, studied for anti-aging and heart-protective effects",
+   "category": "chemistry",
+   "aliases": []
+  },
+  {
+   "term": "phytoalexin",
+   "plain": "a compound a plant produces to defend itself against fungi and other attackers",
+   "category": "biology",
+   "aliases": [
+    "phytoalexins"
+   ]
+  },
+  {
+   "term": "chapatti",
+   "plain": "a simple unleavened flatbread made from whole-grain flour, a staple of the Hunza diet",
+   "category": "nutrition",
+   "aliases": [
+    "chapattis"
+   ]
+  },
+  {
+   "term": "phytoestrogen",
+   "plain": "a plant compound that acts like a mild form of the hormone estrogen in the body",
+   "category": "biology",
+   "aliases": [
+    "phytoestrogens",
+    "phyto-estrogen"
+   ]
+  },
+  {
+   "term": "meta-analysis",
+   "plain": "a study that statistically combines the results of many earlier studies to reach a stronger overall conclusion",
+   "category": "science",
+   "aliases": [
+    "meta analysis"
+   ]
   }
  ]
 }
