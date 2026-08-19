@@ -4931,6 +4931,12 @@ def check_internal_refs_out_of_prose():
 # A pair here that STOPS firing is itself RED (see the stale check below): a
 # carve-out that blesses nothing is a lie left in the source.
 _DUPLICATE_KEEP_BOTH = {
+    frozenset({"WAL-CLM-HELLS-000101", "WAL-CLM-HELLS-000102"}):
+        "hypothyroidism/mechanism: one Wallach thyroid passage answering two different reader "
+        "questions -- 000101 'Can crash dieting or cutting carbs slow down your thyroid?' "
+        "(diet->thyroid hormone) and 000102 'Why does an underactive thyroid make you feel "
+        "cold?' (thyroid-as-thermostat, a sub-span). Both search-only. Ruled keep-both, "
+        "Luneth-approved 2026-08-19.",
     frozenset({"WAL-CLM-DDDL-000071", "WAL-CLM-DDDL-000137"}):
         "selenium / physiology, the same 155-char preconception-selenium sentence, quoted twice to "
         "answer two different questions: -000071 'Can selenium prevent muscular dystrophy?' "

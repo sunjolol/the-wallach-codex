@@ -131,7 +131,7 @@
   },
   "acne": {
     "display_name": "Acne",
-    "claim_count": 24,
+    "claim_count": 25,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000428",
@@ -164,6 +164,9 @@
         "WAL-CLM-DDDL-000440",
         "WAL-CLM-DDDL-000442",
         "WAL-CLM-LETS-000123"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-HELLS-000100"
       ]
     },
     "essentials_involved": [
@@ -183,6 +186,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -1335,10 +1339,11 @@
   },
   "asthma": {
     "display_name": "Asthma",
-    "claim_count": 16,
+    "claim_count": 18,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000477",
+        "WAL-CLM-HELLS-000112",
         "WAL-CLM-LETS-000109",
         "WAL-CLM-LETS-000111"
       ],
@@ -1363,7 +1368,8 @@
         "WAL-CLM-RARE-000202"
       ],
       "toxicity_signs": [
-        "WAL-CLM-DDDL-000420"
+        "WAL-CLM-DDDL-000420",
+        "WAL-CLM-HELLS-000113"
       ]
     },
     "essentials_involved": [
@@ -1388,6 +1394,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -1835,11 +1842,12 @@
   },
   "beriberi": {
     "display_name": "Beriberi",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-DDDL-000043",
         "WAL-CLM-EPIGEN-000035",
+        "WAL-CLM-HELLS-000115",
         "WAL-CLM-RARE-000233"
       ]
     },
@@ -1850,6 +1858,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "rare-earths"
     ]
   },
@@ -1900,7 +1909,7 @@
   },
   "birth_defects": {
     "display_name": "Birth Defects",
-    "claim_count": 28,
+    "claim_count": 29,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000002",
@@ -1939,6 +1948,9 @@
         "WAL-CLM-LETS-000359",
         "WAL-CLM-LETS-000368",
         "WAL-CLM-RARE-000045"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-HELLS-000100"
       ]
     },
     "essentials_involved": [
@@ -1961,6 +1973,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -3040,7 +3053,7 @@
   },
   "cataracts": {
     "display_name": "Cataracts",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000473",
@@ -3059,6 +3072,9 @@
         "WAL-CLM-DDDL-000593",
         "WAL-CLM-DDDL-000594",
         "WAL-CLM-DDDL-000605"
+      ],
+      "food_sources": [
+        "WAL-CLM-HELLS-000114"
       ],
       "interactions": [
         "WAL-CLM-RARE-000086"
@@ -3102,6 +3118,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -4387,7 +4404,7 @@
   },
   "dementia": {
     "display_name": "Dementia",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000468"
@@ -4398,6 +4415,7 @@
         "WAL-CLM-EPIGEN-000037",
         "WAL-CLM-EPIGEN-000040",
         "WAL-CLM-EPIGEN-000044",
+        "WAL-CLM-HELLS-000109",
         "WAL-CLM-LETS-000034",
         "WAL-CLM-RARE-000227",
         "WAL-CLM-RARE-000231",
@@ -4451,6 +4469,7 @@
     ],
     "books_cited": [
       "epigenetics",
+      "hells-kitchen",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6755,11 +6774,13 @@
   },
   "high_cholesterol": {
     "display_name": "High Cholesterol",
-    "claim_count": 15,
+    "claim_count": 20,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000446",
-        "WAL-CLM-DDDL-000447"
+        "WAL-CLM-DDDL-000447",
+        "WAL-CLM-HELLS-000104",
+        "WAL-CLM-HELLS-000105"
       ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
@@ -6776,9 +6797,16 @@
       "definitions": [
         "WAL-CLM-DDDL-000392"
       ],
+      "food_sources": [
+        "WAL-CLM-HELLS-000108"
+      ],
       "protocols": [
         "WAL-CLM-DDDL-000320",
+        "WAL-CLM-HELLS-000107",
         "WAL-CLM-LETS-000219"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-HELLS-000106"
       ]
     },
     "essentials_involved": [
@@ -6806,6 +6834,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor"
     ]
@@ -7226,7 +7255,7 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000377",
@@ -7239,6 +7268,7 @@
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-HELLS-000097",
+        "WAL-CLM-HELLS-000109",
         "WAL-CLM-IMMORT-000088",
         "WAL-CLM-LETS-000006",
         "WAL-CLM-LETS-000017"
@@ -10130,7 +10160,7 @@
   },
   "obesity": {
     "display_name": "Obesity",
-    "claim_count": 15,
+    "claim_count": 19,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000554"
@@ -10138,6 +10168,8 @@
       "causes": [
         "WAL-CLM-DDDL-000543",
         "WAL-CLM-EPIGEN-000011",
+        "WAL-CLM-HELLS-000120",
+        "WAL-CLM-HELLS-000123",
         "WAL-CLM-IMMORT-000012",
         "WAL-CLM-IMMORT-000019"
       ],
@@ -10148,6 +10180,8 @@
         "WAL-CLM-IMMORT-000131"
       ],
       "prevalence": [
+        "WAL-CLM-HELLS-000117",
+        "WAL-CLM-HELLS-000118",
         "WAL-CLM-IMMORT-000515"
       ],
       "protocols": [
@@ -11043,11 +11077,12 @@
   },
   "peripheral_neuropathy": {
     "display_name": "Peripheral Neuropathy",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000108",
+        "WAL-CLM-HELLS-000115",
         "WAL-CLM-IMMORT-000063",
         "WAL-CLM-IMMORT-000088"
       ],
@@ -11065,6 +11100,7 @@
       "chromium",
       "magnesium",
       "manganese",
+      "vitamin-b1",
       "vitamin-b12",
       "vitamin-b6",
       "zinc"
@@ -11073,6 +11109,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality"
     ]
   },
@@ -11259,7 +11296,7 @@
   },
   "pms": {
     "display_name": "Premenstrual Syndrome (PMS)",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000332",
@@ -11283,6 +11320,9 @@
         "WAL-CLM-DDDL-000389",
         "WAL-CLM-LETS-000388",
         "WAL-CLM-LETS-000402"
+      ],
+      "quotes": [
+        "WAL-CLM-HELLS-000111"
       ]
     },
     "essentials_involved": [
@@ -11307,6 +11347,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor",
       "rare-earths"

@@ -39511,6 +39511,304 @@
     "stamina",
     "history"
    ]
+  },
+  "WAL-CLM-HELLS-000100": {
+   "subject": "acne",
+   "also_about": [
+    "acne",
+    "birth_defects"
+   ],
+   "facet": "warning",
+   "question": "Is Accutane safe for acne?",
+   "answer_short": "Wallach's book warns Accutane — the standard prescription acne drug — is linked to birth defects; it cites FDA reviewer David Graham calling it a 20-year FDA failure whose sales should be immediately restricted.",
+   "answer_full": "No — in Wallach's Hell's Kitchen, Accutane is a cautionary tale, not a safe acne treatment. His book reports the drug is linked to birth defects and quotes FDA reviewer David Graham calling it a 20-year failure by the FDA whose sales should be immediately restricted.\n\nWhat makes this pointed in Wallach's framework is that he roots acne itself in a nutritional shortfall: acne is one of the skin signs he attributes to vitamin A deficiency (a nutrient needed for healthy skin). And that same vitamin A deficiency also sits on his list of causes of birth defects — so a drug that risks the very defects he ties to a nutrient shortage is being prescribed for a condition he'd treat as a fixable deficiency. In his view birth defects are largely preventable through nutrition, which is why he urges any sexually active woman onto a baseline vitamin-and-mineral program before pregnancy.",
+   "topics": [
+    "accutane",
+    "acne",
+    "birth_defects"
+   ]
+  },
+  "WAL-CLM-HELLS-000101": {
+   "subject": "hypothyroidism",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Can crash dieting or cutting carbs slow down your thyroid?",
+   "answer_short": "Yes -- Wallach says extreme calorie and carbohydrate restriction lowers your active thyroid hormone, so very strict dieting can work against your metabolism.",
+   "answer_full": "Yes — Wallach says both the calorie content and the carbohydrate content of your diet directly affect how the thyroid works. He describes the thyroid gland as a thermostat for the body's basal temperature and metabolic rate: eat more calories and carbs and the metabolically active thyroid hormones rise, while extreme restriction drives the level of active thyroid hormone down. So a severe crash diet or very-low-carb regimen can turn your own metabolism down at the very moment you're trying to burn fat.\n\nBecause the thyroid sets your baseline temperature, Wallach uses basal body temperature as a home read-out for whether it has slowed — a reading below 98.7°F points to an underactive thyroid. Checking for exactly that is one of the steps in his own weight-loss approach, so a sluggish thyroid gets caught rather than left to quietly stall the diet.",
+   "topics": [
+    "hypothyroidism"
+   ]
+  },
+  "WAL-CLM-HELLS-000102": {
+   "subject": "hypothyroidism",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Why does an underactive thyroid make you feel cold?",
+   "answer_short": "Wallach calls the thyroid the body's thermostat, setting your basal temperature and metabolic rate -- so when it runs slow, your temperature and metabolism drop and you feel cold.",
+   "answer_full": "Because the thyroid is your thermostat, and feeling cold is one of the clearest signs it has stopped working. Wallach describes the thyroid gland as functioning like a thermostat that sets the body's basal (resting) temperature and overall metabolic rate -- the pace at which you burn fuel and generate heat. When it runs slow, that setting drops: metabolism falls, less body heat gets produced, and you feel cold. Cold intolerance sits right on his list of hypothyroid symptoms, alongside fatigue, weight gain, hair loss and dry skin.\n\nWhy the thyroid slows in the first place, in his telling, usually traces back to iodine. The gland combines iodine with the amino acid (protein building block) tyrosine to manufacture thyroxin, the hormone that actually regulates body temperature and metabolism -- so when iodine runs short (something Wallach says is common, especially as people cut their salt intake on their doctors' advice), thyroxin falls and the thermostat is effectively set too low. Fittingly, the home test he points to is temperature itself: a basal body temperature below 98.7 degrees F flags an underactive thyroid.",
+   "topics": [
+    "hypothyroidism"
+   ]
+  },
+  "WAL-CLM-HELLS-000103": {
+   "subject": "osteoporosis",
+   "also_about": [
+    "sarcopenia"
+   ],
+   "facet": "protocol",
+   "question": "Does exercise help prevent bone loss?",
+   "answer_short": "Yes -- Wallach says even mild exercise increases muscle mass and bone density well into old age.",
+   "answer_full": "Yes — and Wallach's encouraging angle is that it's never too late. He says even mild exercise increases muscle mass and bone density well into old age, so the muscle wasting of sarcopenia and the thinning bone of osteoporosis aren't inevitable one-way streets with age.\n\nIn his framework, \"bone density\" is really the mineral packed into bone: he notes that about 99% of the body's calcium sits in the bones and teeth as hydroxyapatite — bone's hard mineral crystal — and he counts osteoporosis among the diseases of calcium deficiency. That's why he treats movement and minerals together rather than either alone. In his backache protocol, for instance, he pairs strengthening exercises for prevention with calcium (2,000 mg) and magnesium (800 mg) to rebuild bone — exercise to build the density, the minerals to supply what bone is built from.",
+   "topics": [
+    "osteoporosis",
+    "sarcopenia"
+   ]
+  },
+  "WAL-CLM-HELLS-000104": {
+   "subject": "cholesterol",
+   "also_about": [
+    "high_cholesterol"
+   ],
+   "facet": "mechanism",
+   "question": "Do trans fats raise your cholesterol?",
+   "answer_short": "Yes — Wallach cites that trans fats raise LDL and triglycerides while lowering protective HDL cholesterol.",
+   "answer_full": "Yes. Wallach cites Bruce Holub, Ph.D., a professor of nutrition at the University of Guelph in Canada, who lays out exactly how trans fats push cholesterol the wrong way: they raise your LDL — the \"bad\" cholesterol — along with triglycerides (fats in the blood), while at the same time lowering your protective HDL, the \"good\" cholesterol. Holub adds a further hit: trans fats also raise blood levels of lipoprotein a, and the more of that you carry, the greater your risk of heart disease.\n\nWhere do trans fats come from? Wallach explains that food-makers pump hydrogen gas into liquid vegetable oils (\"hydrogenation\") to harden them into margarine, and that process is what creates the trans fatty acids. His sharpest point is the irony: these hydrogenated oils were once sold by the medical trade as a safe butter substitute meant to prevent hardening of the arteries — yet he says they are now known to be a direct cause of the very arteriosclerosis, plaque buildup and stroke they were supposed to guard against.",
+   "topics": [
+    "cholesterol",
+    "high_cholesterol",
+    "trans fats"
+   ]
+  },
+  "WAL-CLM-HELLS-000105": {
+   "subject": "cholesterol",
+   "also_about": [
+    "high_cholesterol"
+   ],
+   "facet": "mechanism",
+   "question": "Is LDL a different, bad kind of cholesterol?",
+   "answer_short": "Wallach says LDL isn't a separate species of cholesterol — it's just ordinary cholesterol that's been oxidized and damaged for lack of antioxidants.",
+   "answer_full": "No — in Wallach's telling, LDL isn't a separate \"bad\" species of cholesterol at all. It's ordinary cholesterol that got damaged. All of your circulating cholesterol, he says, comes from the same source; the portion that isn't shielded by antioxidants gets oxidized by free radicals and turns into what the lab reports as LDL. He compares it to paint on a house — it all came from the same can, but the wall on the western side blisters, powders and flakes first because the setting sun bakes it with the most heat. LDL is just the cholesterol that took the damage, and Wallach says damaged cholesterol is what drives inflammation.\n\nThat reframes the problem as one of protection rather than of cholesterol itself. Wallach thinks antioxidants belong on the list of essential nutrients for exactly this reason: without them the body can't defend itself against dietary and environmental free radicals. So his logic points less at the cholesterol number and more at whether you're supplying enough antioxidants to keep that cholesterol from being oxidized in the first place.",
+   "topics": [
+    "cholesterol",
+    "high_cholesterol"
+   ]
+  },
+  "WAL-CLM-HELLS-000106": {
+   "subject": "cholesterol",
+   "also_about": [
+    "high_cholesterol"
+   ],
+   "facet": "warning",
+   "question": "Are cholesterol-lowering statin drugs dangerous?",
+   "answer_short": "Wallach warns they can be — the statin Baycol was pulled after causing fatal rhabdomyolysis, a muscle-breakdown disease.",
+   "answer_full": "Yes — Wallach considers them genuinely dangerous. His clearest example is Baycol, a statin made by Bayer that was pulled from the market after it caused rhabdomyolysis, a potentially fatal disease in which muscle tissue breaks down.\n\nBut in his telling the risk isn't just to muscle. Wallach argues the whole idea of driving cholesterol down is backwards: he says a cholesterol deficiency can itself produce Alzheimer's, so the drug meant to protect the heart ends up starving the brain. He goes as far as calling Alzheimer's a 'physician-caused' disease — produced, in part, by prescribing statins while also cutting dietary cholesterol and saturated fat and telling patients to avoid vitamin and mineral supplements. As backing, he points to an April 2012 FDA warning that statin drugs raise the risk of dementia (memory loss) and type 2 diabetes.",
+   "topics": [
+    "cholesterol",
+    "high_cholesterol",
+    "statins"
+   ]
+  },
+  "WAL-CLM-HELLS-000107": {
+   "subject": "cholesterol",
+   "also_about": [
+    "high_cholesterol"
+   ],
+   "facet": "protocol",
+   "question": "How can I lower my cholesterol without drugs?",
+   "answer_short": "Wallach says a full 90-nutrient program (chromium, vanadium, EFAs, niacin, antioxidants) plus a low-carb diet can bring cholesterol into the normal range.",
+   "answer_full": "Yes — Wallach says cholesterol can be brought back into the normal range (which he puts at 220-270) without drugs, by correcting what he sees as its real causes: low-fiber diets, refined sugar and flour, essential-fatty-acid deficiency, excess vitamin D, and too little exercise. His core approach is a complete supplement program supplying all 90 essential nutrients, leaning especially on chromium, vanadium, essential fatty acids, niacin (vitamin B-3), and antioxidants — selenium, green tea, vegetables and dark berries — paired with a low-carbohydrate diet.\n\nThe essential fatty acids do much of the direct work: these are the fats the body can't make for itself, and Wallach counts lowering blood cholesterol among their vitamin-like jobs. In his actual protocol the numbers are spelled out — niacin at 450 mg twice a day in time-release form, essential fatty acids at 5 g three times a day, chromium and vanadium at 250 mcg each, and selenium at 300 mcg — alongside regular exercise, oat bran or protein fiber, vitamin C to bowel tolerance, evening primrose, and a liver flush. One caution he adds: in his view LOW cholesterol can be as dangerous as high.",
+   "topics": [
+    "cholesterol",
+    "high_cholesterol"
+   ]
+  },
+  "WAL-CLM-HELLS-000108": {
+   "subject": "cholesterol",
+   "also_about": [
+    "high_cholesterol"
+   ],
+   "facet": "sources",
+   "question": "Do blueberries help lower cholesterol?",
+   "answer_short": "Wallach reports pterostilbene in blueberries matched or beat statins at lowering cholesterol, without the side effects.",
+   "answer_full": "Yes — Wallach points to pterostilbene, a cholesterol-regulating compound found in blueberries. He reports that in a head-to-head comparative study against statin drugs, pterostilbene equaled or even exceeded the drugs' cholesterol-lowering power — and did it without any of their negative side effects.\n\nFor Wallach, that last part is the whole point, because he takes a dim view of statins. He cites an April 2012 FDA warning that statin drugs raise the risk of dementia and type 2 diabetes, and he goes so far as to call Alzheimer's, in part, a 'physician-caused' disease — one that follows from prescribing statins (alongside cutting dietary cholesterol and skipping supplements). So a blueberry compound that matches the benefit while shedding the harm fits his broader argument that the safer route is nutritional. Pterostilbene isn't the only natural cholesterol-lowering agent he names, either: he also credits the trace mineral vanadium with inhibiting cholesterol synthesis and lowering blood cholesterol.",
+   "topics": [
+    "blueberries",
+    "cholesterol",
+    "high_cholesterol"
+   ]
+  },
+  "WAL-CLM-HELLS-000109": {
+   "subject": "chromium",
+   "also_about": [
+    "memory_loss",
+    "dementia",
+    "hypoglycemia"
+   ],
+   "facet": "physiology",
+   "question": "Can a chromium deficiency affect the brain?",
+   "answer_short": "Wallach lists brain disorders (dementia) among the signs of low chromium -- the same deficiency behind hypoglycemia and diabetes.",
+   "answer_full": "Yes. Wallach puts \"brain disorders (dementia)\" right on his list of the signs of chromium deficiency in humans — sitting alongside peripheral neuropathy (nerve damage) and a whole cluster of blood-sugar failures: hypoglycemia, elevated insulin and diabetes.\n\nThe reason a mineral shortage reaches the brain is that chromium's main job is blood-sugar control. Wallach describes it as a key part of the glucose tolerance factor (GTF) and essential to insulin working properly, so when chromium runs low the body loses its grip on blood sugar. That's why so much of what he ties to the deficiency is mental or behavioral: the resulting low blood sugar (hypoglycemia) carries symptoms like memory loss, irritability, depression, and an inability to think through simple problems. In his framing, dementia belongs to the same nutritionally-driven family of brain disorders he groups together as \"organic brain syndrome.\"\n\nPart of what drives the shortage is diet. Wallach says refined sugar and white flour flush chromium out through the urine — by as much as 300 percent — so a high-sugar diet quietly deepens the very deficiency that ends up reaching the brain.",
+   "topics": [
+    "chromium",
+    "dementia",
+    "hypoglycemia",
+    "memory_loss"
+   ]
+  },
+  "WAL-CLM-HELLS-000110": {
+   "subject": "constipation",
+   "also_about": [],
+   "facet": "sources",
+   "question": "What foods help relieve constipation?",
+   "answer_short": "Wallach's Hells Kitchen cookbook offers a seven-bean soup he calls a great laxative.",
+   "answer_full": "For constipation, Wallach's fix in his Hells Kitchen cookbook is dietary: a seven-bean soup he flags outright as a \"great laxative.\" It's built on beans — kidney, pinto and navy among them — simmered in water for at least 2 to 4 hours, adding more water as it cooks down. Rather than reaching for a laxative pill, he puts the remedy in the diet: a hearty bean soup you eat to keep things moving.",
+   "topics": [
+    "constipation"
+   ]
+  },
+  "WAL-CLM-HELLS-000111": {
+   "subject": "pms",
+   "also_about": [
+    "dysmenorrhea"
+   ],
+   "facet": "stance",
+   "question": "Are painkillers safe for period or PMS pain?",
+   "answer_short": "Wallach cautions against masking period pain with drugs: Vioxx, sold as an arthritis and PMS pain killer, was pulled from the market in 2004 after being linked to as many as 139,000 fatal U.S. heart attacks.",
+   "answer_full": "Wallach's answer is a warning: don't reach for a drug to mask period or PMS pain. His cautionary tale is Vioxx — a painkiller Merck marketed specifically for arthritis and PMS. On September 30, 2004, Merck (which he calls a \"$22 billion-a-year Pharma Giant\") pulled it from the market, and Wallach reports that between 1999 and 2004 as many as 139,000 fatal heart attacks in the United States were attributed to Vioxx prescriptions. His point is blunt: a pill sold for cramps was quietly killing people by the tens of thousands.\n\nThe deeper reason he'd steer you away from painkillers is that, in his framework, the pain has a nutritional root. Wallach lists premenstrual syndrome among the diseases he traces to calcium deficiency — one of no fewer than 147 conditions he attributes to a calcium deficiency or imbalance — so his instinct is to correct the shortfall rather than numb the symptom. He also recounts an older, gentler route to the same relief: Lydia Pinkham's herbal compound, built on an ancient Native American recipe and marketed for PMS and dysmenorrhea (painful periods), which worked so well it made her an American icon.",
+   "topics": [
+    "dysmenorrhea",
+    "pms"
+   ]
+  },
+  "WAL-CLM-HELLS-000112": {
+   "subject": "asthma",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Can eating the wrong fats or a low-fat diet make asthma worse?",
+   "answer_short": "Wallach says low-fat dieters who don't distinguish good fats from bad fats raise their risk of several conditions - asthma among them.",
+   "answer_full": "Yes — Wallach puts asthma on a short list of conditions he blames on getting fats wrong. His target is the low-fat dieter who leans on plant foods, cuts animal foods, and then fails to tell good fats from bad fats. That blind spot, he says, drives up the risk of several problems at once: stroke, Alzheimer's disease, seizure disorders and asthma.\n\nThe \"bad fats\" he means are the trans fats — the load that piles up from fried and overcooked foods, margarines, salad dressings, overused cooking oils and canned fish packed in oil. His point is that swearing off animal fat doesn't make you safe, because in his telling it's these processed and damaged fats, not the natural ones, that do the harm.\n\nAnd cutting animal foods carries its own price in his framework. He's firmly against going vegan — unsupplemented strict vegans, he warns, tend to develop grey hair, receding gums, osteoporosis, anemia, arthritis and even cancer within five years. A low-fat diet also works against you by blocking the absorption of fat-soluble nutrients like vitamin A, which the body can only take in alongside dietary fat.",
+   "topics": [
+    "asthma"
+   ]
+  },
+  "WAL-CLM-HELLS-000113": {
+   "subject": "asthma",
+   "also_about": [],
+   "facet": "warning",
+   "question": "Are asthma inhaler drugs like Serevent dangerous?",
+   "answer_short": "Wallach cites an FDA reviewer who said the asthma drug Serevent was shown with 90% certainty in a long UK trial to cause death from asthma, with reports of people dying clutching their inhaler.",
+   "answer_full": "Yes — Wallach treats these drugs as a real danger, and points to the inhaler Serevent as his example. He cites an FDA reviewer named Graham, who says a long-term trial in England showed, with 90 percent certainty, that Serevent causes death from asthma — meaning the drug taken to control asthma is tied to dying of it. Graham adds that there are case reports of people found dead still clutching their Serevent inhaler.\n\nFor Wallach this fits a larger pattern he argues throughout: the drug-safety system is backwards. He notes that the FDA once called the evidence for omega-3 fatty acids \"inconclusive\" and actually made it illegal to tell people that omega-3 supplements could lower their risk of stroke and sudden cardiac death — a restriction he fought for years and finally overturned in 2004. In his telling, a protective nutrient gets muzzled while a drug an FDA reviewer says causes asthma deaths stays on the shelf.",
+   "topics": [
+    "asthma"
+   ]
+  },
+  "WAL-CLM-HELLS-000114": {
+   "subject": "cataracts",
+   "also_about": [],
+   "facet": "sources",
+   "question": "What foods help prevent cataracts?",
+   "answer_short": "Wallach points to antioxidant-rich foods -- berries, red grapes, pomegranate, broccoli, kale, spinach, red bell peppers and green tea -- to fight the free radicals behind cataracts.",
+   "answer_full": "Wallach's answer is antioxidant-rich food. He places cataracts in a cluster of diseases driven by free radicals — reactive molecules that oxidize and damage cells — so his prevention strategy is to flood the body with antioxidants that quench them. The foods he names as carrying antioxidants in substantial quantities include fruits like blueberries, cherries, red grapes, raspberries, strawberries and pomegranate; vegetables like broccoli, kale, spinach, Brussels sprouts, beets and red bell peppers; and green tea (for its EGCG).\n\nTwo things sharpen this in his framework. First, he doesn't leave \"eat antioxidants\" vague — he scores a food's antioxidant strength by its ORAC value (Oxygen Radical Absorbance Capacity, a lab measure of how strongly it neutralizes free radicals) and sets a daily target of 20,000 to 25,000 ORAC points, the intake he ties directly to lowering cataract risk. Second, antioxidants don't work alone: he stresses that the antioxidant enzyme systems in every healthy cell need mineral cofactors to run — glutathione, for instance, requires selenium — so in his view getting the benefit of these foods is inseparable from getting the minerals that power them.",
+   "topics": [
+    "cataracts"
+   ]
+  },
+  "WAL-CLM-HELLS-000115": {
+   "subject": "vitamin-b1",
+   "also_about": [
+    "peripheral_neuropathy",
+    "beriberi"
+   ],
+   "facet": "physiology",
+   "question": "Can eating too much white rice cause nerve damage?",
+   "answer_short": "Wallach says yes -- beriberi, a nervous-system disease of weakness, numbness and paralysis, is caused by the loss of thiamine (vitamin B1) when the bran is polished off white rice.",
+   "answer_full": "Yes — and Wallach uses white rice as the founding story of the disease itself. The bran that gets polished off to turn rice white is exactly where the thiamine (vitamin B1) lives, so a diet built on polished white rice slowly starves the body of it. The result is beriberi, a nervous-system disease of weakness, numbness and paralysis — the name is Sinhalese for \"I cannot.\" Because thiamine is the cofactor the body uses to turn carbohydrates into energy, losing it strikes the tissues that run hottest: the nerves, but also the heart, so advanced cases bring congestive heart failure and life-threatening fluid in the lungs.\n\nWallach traces the proof to the Dutch physician Gerrit Grijns, who showed in 1901 that beriberi is caused by a deficiency — the missing nutrient being the thiamine removed with the bran. He adds the naval evidence: the Japanese ship Riuyo returned in 1883 with 25 sailors dead and 144 more stricken, and in 1884 the naval surgeon Kanekiro Takaki proved a polished-rice diet was the cause by preventing and curing it with a change of diet. The story even named the vitamin — Funk isolated a crystalline substance from rice polishings that cured beriberi, and because it was an amine essential to life he called it a \"vital amine,\" the root of the word \"vitamin.\" Left unchecked, Wallach says a thiamine deficiency reaches all the way to the mind, from mental confusion to the memory loss of Wernicke-Korsakoff syndrome.",
+   "topics": [
+    "beriberi",
+    "peripheral_neuropathy",
+    "thiamine",
+    "vitamin-b1"
+   ]
+  },
+  "WAL-CLM-HELLS-000117": {
+   "subject": "obesity",
+   "also_about": [],
+   "facet": "history",
+   "question": "Why are lower-income people more likely to be obese?",
+   "answer_short": "In Wallach's view the poor are fatter because the cheapest, most filling calories are high-carb, high-sugar foods, while wealthier, more-educated people eat more protein and take supplements.",
+   "answer_full": "Wallach's answer starts with the economics of calories: the cheapest way to fill your stomach at the grocery store is carbohydrates. High-carb, high-sugar foods are inexpensive, tasty, filling and everywhere, so on a tight budget they dominate the diet. He points to a stark income gradient — about one in four people below the poverty line is obese, versus one in six in households earning more than $67,000 a year (and one in three among minorities) — and adds that wealthier people tend to be more educated, and educated people eat more protein and take more supplements.\n\nBut the deeper mechanism, in his telling, is mineral deficiency driving appetite. He compares it to how ranchers fatten cattle: a steady stream of cheap carbohydrate feed turns a 40-pound calf into a 900-to-1,100-pound steer in a year. The catch is that the cattle also get optimal nutrients alongside the carbs, while people eating those same cheap carbs are mineral-deficient — and that deficiency, he argues, leaves them with an endless, ravenous hunger. Wallach calls the same drive 'pica': the body nibbling and overeating in a search for the trace minerals its empty-calorie diet never supplies. So in his view the poor aren't simply eating cheaper food — nutrient-poor calories keep the appetite switched on, feeding the cycle.",
+   "topics": [
+    "obesity"
+   ]
+  },
+  "WAL-CLM-HELLS-000118": {
+   "subject": "obesity",
+   "also_about": [],
+   "facet": "history",
+   "question": "Is obesity spreading to other countries as they modernize?",
+   "answer_short": "Wallach shows obesity rising worldwide as countries modernize; in Chinese cities it jumped from about 4% in the 1970s to 28% by 2000 as processed foods took over.",
+   "answer_full": "Yes — Wallach documents obesity spreading around the world in step with modernization, as traditional diets give way to processed convenience foods. His sharpest figure is China: in all Chinese cities, obesity rose from about four percent in the 1970s to twenty-eight percent by the year 2000 — the same span in which Shanghai's streets filled with automobiles instead of bicycles and KFC opened a drive-through restaurant in Beijing. He sees the same pattern in Africa, where in many areas obesity is now diagnosed in more children than classical malnutrition, and in Tunisia, whose urban population has switched to processed-flour breads.\n\nThe mechanism, in his telling, is what the modern diet is made of. As refined sugar, white flour and cheap industrial sweeteners like high-fructose corn syrup take over the food supply, they replace far more nutritious traditional foods — one of the ways, he says, the processed diet lost its nutrition. And Wallach argues those empty calories are exactly what drive the overeating: he claims most obese people binge because mineral-starved food triggers 'pica,' a constant nibbling as the body keeps searching for the trace minerals it isn't getting from the snack foods it's eating. On this view, obesity isn't simply too much food — it's too little nourishment inside the food.",
+   "topics": [
+    "obesity"
+   ]
+  },
+  "WAL-CLM-HELLS-000119": {
+   "subject": "obesity",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "Did eating less fat and more grains help or hurt our weight?",
+   "answer_short": "Wallach argues the low-fat, high-grain advice backfired because the refined white flour people ate (pasta, tortillas, buns) has essentially the same food value as white sugar.",
+   "answer_full": "It hurt, in Wallach's telling. He says people were \"stampeded\" into eating more grain and less fat on medical advice — but the grains they actually switched to were processed white flour: pasta, tortillas, hamburger buns. That flour, he says, has essentially the same food value as white sugar, so trading fat for it mostly swapped one problem for another. His blunt rhyme for it: the whiter the bread, the sooner you're dead.\n\nWallach's objection to refined flour goes past empty calories. He says a large intake of sugar and refined flour flushes as much as 300 percent more chromium and vanadium out through the urine — minerals whose deficiency he elsewhere links to hyperactivity and ADHD. And he files sugar and \"super-heated carbohydrates\" among the dietary \"land mines\" that keep people from reaching 100, noting that the remote Blue Zones stay healthy partly because they have little access to white flour, soft drinks or high-fructose corn syrup.",
+   "topics": [
+    "obesity"
+   ]
+  },
+  "WAL-CLM-HELLS-000120": {
+   "subject": "obesity",
+   "also_about": [],
+   "facet": "mechanism",
+   "question": "What really causes obesity in children?",
+   "answer_short": "Wallach says childhood obesity comes from mineral-deficiency pica, not TV, video games, or lack of outdoor play, and that giving kids more minerals would reverse it.",
+   "answer_full": "Wallach says the real driver of childhood obesity isn't TV, video games, or too little outdoor play — it's mineral-deficiency pica. Pica is the body's craving for non-food things (classically dirt) when it's starved of minerals, and Wallach reads it as a signal of a mineral shortfall rather than a behavior problem. He cites Dickens and Ford's finding that 25 percent of children eat dirt, but believes the true rate of mineral-deficiency pica in American kids is far higher — 80 to 100 percent. The catch is that social rules stop children from actually eating dirt, so the same mineral hunger gets redirected: instead of soil they reach for more soft drinks, more juice, more French fries, cookies, cake, and pasta — more calories all around. That excess, in his telling, is what puts on the weight.\n\nUnderneath the cravings he points to specific minerals. Pica is a classic sign of iron deficiency, and he says iron and phosphorus running low at the same time can drive an almost \"psychotic\" binge-eating and soft-drink rampage that ends in morbid obesity; the pull toward sweets and \"the munchies\" he ties to low chromium and vanadium, the two minerals he links most closely to blood-sugar control. Because the root cause is a deficiency, his fix is to correct it — mineral supplementation, including plant-derived colloidal minerals — rather than willpower, calorie restriction, or blaming the child.",
+   "topics": [
+    "obesity"
+   ]
+  },
+  "WAL-CLM-HELLS-000121": {
+   "subject": "obesity",
+   "also_about": [],
+   "facet": "protocol",
+   "question": "Why do high-protein, low-carb diets work for weight loss?",
+   "answer_short": "Wallach says high-protein, low-carb diets work partly because their iron and phosphorus quiet pica cravings, and adding full-spectrum plant minerals makes weight loss more dramatic and lasting.",
+   "answer_full": "Wallach says these diets work partly because animal protein naturally carries iron and phosphorus, and those minerals quiet \"pica\" — the craving he pins on mineral deficiency, iron in particular. Pica is what drives people to nibble ice, dirt, even lead-paint chips, and, most relevant to weight, high-calorie snack foods; that snack-food version of the craving is what he says actually causes weight gain and obesity. So a high-protein, modest-fat, low-carbohydrate diet works, in his account, partly by feeding the underlying mineral hunger that otherwise makes people binge on empty calories.\n\nBut Wallach treats that as only half the story. He argues the real root cause of obesity is mineral deficiency itself — in his own practice he reports overweight patients were mineral-deficient 100 percent of the time, and that roughly 90 percent of obese people overeat and binge because empty-calorie diets set off that mineral-seeking nibbling. His fix is to add a complete plant-derived mineral supplement to the weight program: he says doing so makes the loss more dramatic for everyone and easier to keep off, because it eliminates the cravings, binge-eating and \"stand in front of the open refrigerator\" munchies that make other diets fail.",
+   "topics": [
+    "obesity"
+   ]
+  },
+  "WAL-CLM-HELLS-000122": {
+   "subject": "obesity",
+   "also_about": [],
+   "facet": "stance",
+   "question": "Do diet sodas and artificial sweeteners help you lose weight?",
+   "answer_short": "Wallach cites research that diet drinks may not help weight loss because artificial sweeteners can blunt the body's sense of when to stop eating.",
+   "answer_full": "Probably not, in Wallach's telling. He points to research suggesting that artificially sweetened drinks may not actually help a weight-loss diet — because sweetness with no calories behind it can make it harder for the body to know when to stop eating. He cites a study in which rats were offered two identically flavored liquids, one high-calorie and one low-calorie, and reliably went for the high-calorie one, as if the body keeps chasing the calories the sweet taste promised.\n\nWallach gives a second reason to skip diet soda even though it's calorie-free: those \"one-calorie\" sodas are loaded with phosphates, which over time pull calcium out of the body and drive osteoporosis — he notes that doubling phosphate intake raises the calcium you lose in your urine by about 50 percent. So in his weight-loss guidance he tells people to drop carbonated soft drinks entirely, diet versions included.",
+   "topics": [
+    "obesity"
+   ]
+  },
+  "WAL-CLM-HELLS-000123": {
+   "subject": "minerals",
+   "also_about": [
+    "obesity"
+   ],
+   "facet": "mechanism",
+   "question": "Does it matter how many minerals I absorb versus how many I take?",
+   "answer_short": "Wallach stresses that for weight control what matters is not how many minerals you consume but how many you absorb.",
+   "answer_full": "Yes — for weight control Wallach says absorption is the deciding factor. He calls supplemental minerals the real prevention and cure for being overweight, but adds that all minerals are not created equal: it doesn't matter how many you swallow, only how many your body can actually take up and use.\n\nWhy some minerals absorb and others don't comes down to their form. A mineral ground out of rock is real, but living cells can't take it in; a plant's roots pull those rock minerals up from the soil and rebuild them, inside their own cells, into the form every living cell is actually built out of. That's why Wallach prizes plant-derived colloidal minerals — up to 98% of what you swallow is bio-available, meaning the body absorbs it rather than passing it straight through.\n\nThe reason this bites hardest with weight: Wallach says 90% of obese people overeat and binge because empty-calorie diets trigger 'pica' — a compulsive nibbling driven by the body's search for the trace minerals it's missing. Give the body minerals it can actually absorb and that hidden driver eases. It's one case of his wider rule — he rejects 'you are what you eat' in favor of 'you are what you absorb,' since supplying nutrients only helps if the gut can take them up.",
+   "topics": [
+    "minerals",
+    "obesity"
+   ]
   }
  }
 }

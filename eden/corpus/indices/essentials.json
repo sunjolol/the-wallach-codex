@@ -1639,12 +1639,13 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 80,
+    "claim_count": 81,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-HELLS-000097",
+        "WAL-CLM-HELLS-000109",
         "WAL-CLM-IMMORT-000088",
         "WAL-CLM-IMMORT-000089",
         "WAL-CLM-IMMORT-000344",
@@ -4911,11 +4912,12 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 25,
+    "claim_count": 26,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
         "WAL-CLM-EPIGEN-000035",
+        "WAL-CLM-HELLS-000115",
         "WAL-CLM-LETS-000034",
         "WAL-CLM-RARE-000233"
       ],
@@ -5098,6 +5100,7 @@
       "nervous_heart",
       "palpitations",
       "parkinsonism",
+      "peripheral_neuropathy",
       "tachycardia",
       "wernicke_korsakoff_syndrome"
     ],
@@ -5140,6 +5143,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "lets-play-doctor",
       "rare-earths"
     ]
