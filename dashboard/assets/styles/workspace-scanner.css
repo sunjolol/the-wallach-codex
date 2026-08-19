@@ -342,13 +342,11 @@
 
 /* Paste-an-ingredients checker (tweak-list): the idle-state text path beside image upload.
    Foods / single ingredients -> straight to a verdict via runScan (neutral unless a villain hits). */
-.vd-paste { margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--ds-rule); display: flex; flex-direction: column; gap: 8px; }
+.vd-paste { flex: 1 1 100%; margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--ds-rule); display: flex; flex-direction: column; gap: 8px; }
 .vd-paste__lab { font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ds-ink-soft); }
 .vd-paste__in { width: 100%; box-sizing: border-box; resize: vertical; min-height: 62px; font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.5; color: var(--ds-ink); background: var(--ds-paper-light); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); padding: 9px 11px; }
 .vd-paste__in:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ds-accent) 18%, transparent); }
 .vd-paste__go { align-self: flex-start; }
-.vd-paste__hint { font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); line-height: 1.6; letter-spacing: .02em; color: var(--ds-ink-faint); }
-.vd-paste__hint b { color: var(--ds-ink-soft); font-weight: 700; }
 
 /* Scanner legibility bump (tweak-list): lift the dense 0.6rem micro-labels to the 0.7rem
    --ds-text-mini tier + weight 700 (matching the Regimen bump), scoped to .vd so no other

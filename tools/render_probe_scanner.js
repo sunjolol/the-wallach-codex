@@ -40,6 +40,17 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
     const mount = document.getElementById('workspace-scanner-mount');
     const inMount = s => (mount ? mount.querySelectorAll(s).length : -1);
     const mountVisible = mount ? getComputedStyle(mount).display !== 'none' : false;
+    // Layout guard (regression 2026-08-19): the ingredients box (.vd-paste) must render FULL-WIDTH
+    // BELOW the upload zone (.vd-drop), never beside it. It has no explicit flex-basis-safety unless
+    // .vd-paste pins flex: 1 1 100%; a content change once shrank it and it jumped into a side column.
+    const drop = mount ? mount.querySelector('.vd-drop') : null;
+    const paste = mount ? mount.querySelector('.vd-paste') : null;
+    let pasteBelowDrop = null, pasteFullWidth = null;
+    if (drop && paste) {
+      const dr = drop.getBoundingClientRect(), pr = paste.getBoundingClientRect();
+      pasteBelowDrop = pr.top >= dr.bottom - 2;
+      pasteFullWidth = pr.width >= dr.width - 4;
+    }
     return {
       mountExists: !!mount,
       mountVisible,
@@ -49,6 +60,8 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
       newScan: inMount('.vd-newscan'),
       stepBadge: inMount('.vd-step__badge'),
       stepper: inMount('.vd-flow'),
+      pasteBelowDrop,
+      pasteFullWidth,
     };
   });
 
@@ -60,6 +73,7 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
     && info.vd >= 1 && info.scanStep >= 1 && info.dropZone >= 1
     && info.newScan >= 1 && info.stepBadge >= 1
     && info.stepper === 0
+    && info.pasteBelowDrop === true && info.pasteFullWidth === true
     && pageErrors.length === 0;
   console.log(ok ? 'PASS · scanner mounts Scan·Confirm·Result idle shell; no in-content stepper' : 'FAIL · scanner surface did not mount cleanly');
   await browser.close();

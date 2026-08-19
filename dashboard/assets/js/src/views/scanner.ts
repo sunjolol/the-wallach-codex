@@ -115,7 +115,7 @@ function renderScanning(): string {
               <span class="vd-prog__msg" data-prog-msg>Preparing the image…</span>
               <span class="vd-prog__pct" data-prog-pct></span>
             </div>
-            <div class="vd-prog__note">OCR runs locally — slow by design, nothing uploaded</div>
+            <div class="vd-prog__note">OCR runs locally — nothing uploaded</div>
           </div>
         </div>
       </div>`;
@@ -174,7 +174,7 @@ function renderScan(state: ScState, fileName: string | null, dataUrl: string | n
         <button class="vd-drop" type="button" data-sc-upload>
           <span class="vd-drop__ic" aria-hidden="true">&uarr;</span>
           <span class="vd-drop__t">Upload a label image</span>
-          <span class="vd-drop__n">or drop / paste an image here · OCR runs locally, slow by design, nothing uploaded</span>
+          <span class="vd-drop__n">or drop / paste an image here</span>
         </button>
         <div class="vd-paste">
           <div class="vd-paste__lab">Or check an ingredients list</div>
