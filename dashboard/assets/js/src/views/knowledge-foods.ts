@@ -16,8 +16,7 @@
  * villi / 03 contrast) so the whole tab reads as one instrument, not just the top. Restraint
  * governs the TONE (persuade through Wallach's own evidence, never nag).
  *
- * Reference for the visual language: the "Empower" calibration anchor (design-wisdom/
- * references/futuristic-tech-reference-empower-by-niteangel-depthcore.md) -- orange as a
+ * Reference for the visual language: the "Empower" calibration anchor -- orange as a
  * SIGNAL accent, tech precision + surreal-eloquent composition grafted onto warm cream
  * paper -- and the design-system primitives from the retired trace-mineral-tile-
  * detail mockup (the corner SCAN·NNN / WALLACH-CORP lockup, .ds-pull-stat, mono readouts,

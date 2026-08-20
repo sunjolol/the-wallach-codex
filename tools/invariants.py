@@ -724,7 +724,7 @@ def check_dashboard_dist_fresh():
     src_dir = ROOT / "dashboard" / "assets" / "js" / "src"
 
     if not dist_path.exists():
-        return False, f"dist/main.js missing — run `bash tools/build-dashboard.sh`"
+        return False, f"dist/main.js missing — run `node tools/build.mjs`"
     if not src_dir.exists():
         return True, "no src/ directory yet (pre-Round-1·A) — freshness check skipped"
 
@@ -742,7 +742,7 @@ def check_dashboard_dist_fresh():
         delta = newest_src - dist_mtime
         return False, (
             f"dist/main.js is STALE — newest src ({rel}) is {delta:.0f}s newer. "
-            f"Run `cd dashboard && bash ../tools/build-dashboard.sh` to rebuild."
+            f"Run `node tools/build.mjs` to rebuild."
         )
     return True, f"dist/main.js fresh — {len(ts_files)} .ts files, all older than dist"
 
@@ -1283,6 +1283,14 @@ def check_creators_log_archive_synced():
     return True, f"archive in sync — INDEX + {len(expected)} monthly digest(s)"
 
 
+def _books_present():
+    """True when the source book .txt files are present locally. They are NOT distributed in the
+    public repo (copyright); gates that read book bytes skip with a clear reason when absent, and
+    run in full when a developer places the sources back in eden/corpus/books/."""
+    d = ROOT / "eden" / "corpus" / "books"
+    return d.is_dir() and any(d.glob("*.txt"))
+
+
 def check_corpus_integrity():
     """Phase alpha — eden/corpus sealed claim-graph integrity. Delegates to the single
     implementation eden/tools/corpus_verify.py (one source of the 12 checks, no
@@ -1291,6 +1299,8 @@ def check_corpus_integrity():
     verify = ROOT / "eden" / "tools" / "corpus_verify.py"
     if not verify.exists():
         return True, "eden/tools/corpus_verify.py missing (corpus not installed; bootstrap-guard)"
+    if not _books_present():
+        return True, "book source .txt not distributed in the public repo (copyright) — corpus was sealed & integrity-verified pre-publish; place eden/corpus/books/*.txt locally to re-run"
     env = dict(os.environ)
     env.setdefault("PYTHONUTF8", "1")
     r = subprocess.run([sys.executable, str(verify)], capture_output=True, text=True, env=env)
@@ -3615,6 +3625,8 @@ def check_verbatim_names_mapped_conditions():
         return True, "eden/corpus not installed (bootstrap-guard)"
     sys.path.insert(0, str(ROOT / "eden" / "tools"))
     import verbatim_audit
+    if not _books_present():
+        return True, "book source .txt not distributed in the public repo (copyright); re-runs when eden/corpus/books/*.txt is placed locally"
     new = verbatim_audit.new_violations()
     tolerated = len(verbatim_audit.load_baseline())
     if new:
@@ -3681,6 +3693,8 @@ def check_umbrella_proxy_named():
     exception. Never fails. memory: condition-umbrella-taxonomy."""
     if not (ROOT / "eden" / "corpus" / "indices" / "conditions.json").exists():
         return True, "eden/corpus not installed (bootstrap-guard)"
+    if not _books_present():
+        return True, "book source .txt not distributed in the public repo (copyright); re-runs when eden/corpus/books/*.txt is placed locally"
     sys.path.insert(0, str(ROOT / "eden" / "tools"))
     import verbatim_audit
     m = verbatim_audit.proxy_named_mappings()
@@ -4293,7 +4307,7 @@ def check_explore_entity_lede_authored():
     """Every EXPLORE-page entity (a search-index entity of type concept/substance/topic/element/
     person/event with >=1 resolving claim -- it renders knowledge-topic.ts, NOT an essential or a
     condition page) must carry a HAND-AUTHORED lede in entity-copy.json['topics'][slug], UNLESS its
-    slug is in the frozen grandfathered backlog (chronicle/lede-backlog.json). Without a hand lede the
+    slug is in the frozen grandfathered backlog (tools/gate-fixtures/lede-backlog.json). Without a hand lede the
     topic hero DERIVES its header from a claim's answer_short (state/search.ts::entityLede), which
     reads as an answer, not a header (2026-08-19: the chocolate page was titled "It's a mineral-
     deficiency signal..."). STRUCTURAL: this proves a lede EXISTS, never that it reads well (review).
@@ -4301,7 +4315,7 @@ def check_explore_entity_lede_authored():
     the "never again" teeth. memory: element-intro-what-is-claim."""
     si_p = ROOT / "dashboard" / "assets" / "data" / "search" / "search-index.json"
     ec_p = ROOT / "dashboard" / "assets" / "data" / "entity-copy.json"
-    led_p = ROOT / "chronicle" / "lede-backlog.json"
+    led_p = ROOT / "tools" / "gate-fixtures" / "lede-backlog.json"
     if not si_p.exists() or not ec_p.exists():
         return True, "search-index/entity-copy not installed (bootstrap-guard)"
     si = json.loads(si_p.read_text(encoding="utf-8"))
@@ -4329,7 +4343,7 @@ def check_explore_entity_lede_authored():
         sample = ", ".join(missing[:8])
         return False, (f"{len(missing)} explore entity(ies) render a topic page with no hand-authored "
                        f"lede and are not grandfathered -- author entity-copy.json['topics'] (only a "
-                       f"PRE-EXISTING one may be added to chronicle/lede-backlog.json): {sample}"
+                       f"PRE-EXISTING one may be added to tools/gate-fixtures/lede-backlog.json): {sample}"
                        f"{' ...' if len(missing) > 8 else ''}")
     return True, (f"all {len(explore)} explore-page entities carry a hand lede "
                   f"({len(authored)} authored) or are grandfathered ({len(explore & grand)} backlog)")
@@ -4340,7 +4354,7 @@ def check_enriched_book_is_verified():
     book is verified, the claim itself is verified, or it is in the frozen grandfathered backlog.
     Blueprint §5 lock gate #2.
 
-    This is the gate whose absence caused the incident. Ledger: chronicle/frontface-ocr/verified.json.
+    This is the gate whose absence caused the incident. Ledger: tools/gate-fixtures/frontface-verified.json.
     A NEW enrichment on an unverified book is RED, so the original failure -- enriching from a raw
     book and promising to fix it later -- cannot recur. The escape hatch is per-claim: vision-verify
     the claim, add its id to claims_verified, then enrich it.
@@ -4350,7 +4364,7 @@ def check_enriched_book_is_verified():
     anywhere; the gate's own output is the live count). It is an honest BACKLOG, not a waiver: being
     in it asserts only 'this was already front-facing on 2026-08-02', never 'this is correct'. An id
     appearing in it that was not frozen there is RED."""
-    led_path = ROOT / "chronicle" / "frontface-ocr" / "verified.json"
+    led_path = ROOT / "tools" / "gate-fixtures" / "frontface-verified.json"
     enr_path = ROOT / "eden" / "corpus" / "search-enrichment.json"
     if not led_path.exists() or not enr_path.exists():
         return True, "verification ledger or enrichment not installed (bootstrap-guard)"
@@ -4423,6 +4437,8 @@ def check_book_source_clean():
     status_path = ROOT / "eden" / "tools" / "purity-status.json"
     if not status_path.exists():
         return True, "no purity-status.json — purification campaign not started"
+    if not _books_present():
+        return True, "book source .txt not distributed in the public repo (copyright) — purity verified pre-publish; place eden/corpus/books/*.txt locally to re-run"
     status = json.loads(status_path.read_text(encoding="utf-8")).get("books", {})
     regressions, note = [], []
     speller_ok = True
@@ -4462,6 +4478,8 @@ def check_mined_pages_clean():
         return True, "mined_page_audit.py not installed (bootstrap-guard)"
     sys.path.insert(0, str(ROOT / "eden" / "tools"))
     import mined_page_audit
+    if not _books_present():
+        return True, "book source .txt not distributed in the public repo (copyright); re-runs when eden/corpus/books/*.txt is placed locally"
     books = mined_page_audit.all_books()
     total = sum(len(v) for v in books.values())
     if total:
@@ -4503,6 +4521,8 @@ def check_mining_coverage_accounted():
     meta_p = ROOT / "eden" / "corpus" / "books-meta.json"
     if not ledger_p.exists():
         return True, "no mining-coverage.json -- coverage ledger not installed (bootstrap-guard)"
+    if not _books_present():
+        return True, "book source .txt not distributed in the public repo (copyright); re-runs when eden/corpus/books/*.txt is placed locally"
     ledger = json.loads(ledger_p.read_text(encoding="utf-8")).get("books", {})
     meta = json.loads(meta_p.read_text(encoding="utf-8"))["books"]
     marker_re = re.compile(r"=====\s*Screenshot\s*\((\d+)\)")
@@ -7960,16 +7980,16 @@ INVARIANTS = [
     Invariant(
         name="explore_entity_lede_authored",
         anchor_class="consistency",  # search-index entities x entity-copy topics x the frozen backlog -- file A vs file B
-        description="every explore-page entity (concept/substance/topic/element/person/event with >=1 search claim -- it renders knowledge-topic.ts, not an essential/condition page) carries a HAND-AUTHORED lede in entity-copy.json['topics'], UNLESS its slug is in the frozen grandfathered backlog (chronicle/lede-backlog.json). A NEW explore entity is not grandfathered, so it is RED until a lede is authored. STRUCTURAL: proves a lede EXISTS, never that it reads well",
+        description="every explore-page entity (concept/substance/topic/element/person/event with >=1 search claim -- it renders knowledge-topic.ts, not an essential/condition page) carries a HAND-AUTHORED lede in entity-copy.json['topics'], UNLESS its slug is in the frozen grandfathered backlog (tools/gate-fixtures/lede-backlog.json). A NEW explore entity is not grandfathered, so it is RED until a lede is authored. STRUCTURAL: proves a lede EXISTS, never that it reads well",
         check_fn=check_explore_entity_lede_authored,
-        truth_anchor="dashboard/assets/data/search/search-index.json entities+claims x entity-copy.json['topics'] x chronicle/lede-backlog.json, recomputed each run; the backlog only SHRINKS and can never cover a NEW entity",
+        truth_anchor="dashboard/assets/data/search/search-index.json entities+claims x entity-copy.json['topics'] x tools/gate-fixtures/lede-backlog.json, recomputed each run; the backlog only SHRINKS and can never cover a NEW entity",
         severity="critical",
         lesson_ref="2026-08-19 -- Luneth found the new chocolate topic page titled \"It's a mineral-deficiency signal...\": the topic hero (knowledge-topic.ts) had ALWAYS derived its header from a claim's answer_short (entityLede), so 141 explore pages shipped answer-shaped headers and NO gate caught it. Fix: entity-copy.json gains a 'topics' section (hand-authored ledes, the calcium style), entityLede prefers it, and this gate forces every NEW explore entity to ship one. The 140 pre-existing un-authored pages are an honest shrinking BACKLOG (chocolate authored same day). Negative test tools/test_explore_entity_lede_authored.py. memory: element-intro-what-is-claim",
     ),
     Invariant(
         name="enriched_book_is_verified",
         anchor_class="consistency",  # our file A vs our file B — catches drift, blind to a value wrong in both
-        description="a claim may not carry a search-enrichment entry (i.e. be front-facing) unless its book is in books_verified, its id is in claims_verified, or its id is in the frozen grandfathered backlog (chronicle/frontface-ocr/verified.json). A NEW enrichment on an unverified book is RED",
+        description="a claim may not carry a search-enrichment entry (i.e. be front-facing) unless its book is in books_verified, its id is in claims_verified, or its id is in the frozen grandfathered backlog (tools/gate-fixtures/frontface-verified.json). A NEW enrichment on an unverified book is RED",
         check_fn=check_enriched_book_is_verified,
         truth_anchor="eden/corpus/search-enrichment.json keys x the verification ledger x each claim's book_id from the sealed shards",
         severity="critical",

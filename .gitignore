@@ -28,3 +28,11 @@ engine/
 
 # Regenerable vision-verify page renders (rerender from the PDF via tools/frontface/render.py)
 chronicle/ratify-unverified-2026-08-19/*/pages/
+
+# Source book texts — copyrighted Wallach OCR, NOT distributed in the public repo.
+# Kept locally for the corpus derive + the two book-anchored gates; a fresh clone runs
+# without them (those gates skip with a clear reason). See eden/corpus/README.md.
+eden/corpus/books/*.txt
+
+# Rolling per-session dev handoff (genesis reads it locally; regenerated each session, never public).
+chronicle/next-chunk.md
