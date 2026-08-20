@@ -2,6 +2,12 @@
 
 **Board 94/94 green.** Corpus **kv=490**. The **ratify-unverified-book campaign is COMPLETE** — all 5 books landed (Hell's-Kitchen, Immortality, Rare-earths, Let's-Play-Doctor, **Epigenetics ✓** 2026-08-19). No active landing task; await direction.
 
+## ✅ DONE 2026-08-20 — DASHBOARD: DARK WASHOUT FIX + “WHY THIS NUMBER?” FOR ALL DOSED ESSENTIALS (no corpus change, kv still 490; commit 8cd1a674)
+- **Dark washout (root fix):** theme.css 4 dark category blocks (:root[data-theme=dark] .kd-essential-deep[data-category=...]) remapped --ds-accent/-deep but NOT --ds-accent-wash/-soft — the LIGHT category wash in drawer-knowledge.css (mineral #e3edf7; fatty_acid color-mix(--fam-story 13%,#fff), specificity (1,2,0)) out-specified block (A) and leaked into dark, so calcium’s .kd-ep-fam__step--turn card + omega’s .kd-ep-mirror--aside rendered as washed-out LIGHT boxes. Added translucent wash(16%)/soft(34%) remaps to all 4 dark blocks; brightened omega --aside eyebrow to color-mix(--ds-accent 60%,#fff). See [[dark-theme-token-remaps]].
+- **Copy:** view-copy.json ep_no_target reworded (drops the stale “until his dose tables are fully mined”; now points to the products below). Only the 12 aminos hit it; all have sources below (confirmed on-screen).
+- **Why-number:** entity-copy.json +30 why entries (was 6 → 36). Generated from sealed provenance + the live displayed target (nothing hand-typed), same template as the existing 5. NEW render probe tools/render_probe_why_targets.js asserts each why names its on-screen number (36/36 PASS) — a render probe, NOT a board gate.
+- **PARKED (recorded, do not raise):** (1) **phosphorus** was deliberately excluded from why-number — its book figure resolves to no on-screen target (30 essentials got a why, not 31). (2) The vitamin why blurbs use the descriptor **“daily-multiple recommendations”** (minerals use “mineral table”); Luneth shipped as-is but may prefer “vitamin table”/“daily supplement recommendations” — one-line regenerate via the gen_why template if so.
+
 ## ✅ DONE 2026-08-19 — EPIGENETICS LANDED (kv 486→490) [CAMPAIGN COMPLETE]
 **17 claims live** (sealed **WAL-CLM-EPIGEN-000481..000497**). Screenshot-spread book; full worked record in `chronicle/ratify-unverified-2026-08-19/epigenetics/` (landing-input, locate, vision-groups/results, corrected/anchor-verbatims, condition-remediation, finalize-raw, enrichment, idmap, resnap-fix-map).
 - **Dropped 1:** proposed 525 was a byte-identical claim_text dup of already-LIVE **469** (iodine+copper→varicose veins) → Luneth ruled drop (18→17). Its recovery dedup had marked it "FRESH" — the manual claim_text-vs-sealed pass caught it.
@@ -18,7 +24,7 @@ HELL'S-KITCHEN (kv 476→480), IMMORTALITY (kv 480→482, 523-547), RARE-EARTHS 
 **KEY LESSON (screenshot/PDF books):** our purified `.txt` can be CLEANER than the source's own OCR/text layer — when the printed PAGE has the typo and OURS is correct, HOLD ours + log the divergence, never restore the source error. (Epigenetics 524/541 confirmed it again: the recovered candidate was worse OCR than our .txt.)
 
 ## ▶ NEXT TASK — none active
-The unverified-book landing campaign is complete (all 5 books live + front-facing). Await Luneth's direction on what to build next.
+Unverified-book landing campaign complete; 2026-08-20 dashboard dark/why-number round shipped (commit 8cd1a674). Await Luneth's direction on what to build next.
 
 ## GENESIS
 `genesis` → run genesis.py, report the board, then ask which to resume. New invariant red = the only response.
