@@ -25,3 +25,6 @@ tools/frontface/work/
 # banks the candidate, its hash, the measured sizes and the trim plan). Kept ignored so a future
 # extraction can never reach git - a modern engine is 340-420 MB on disk.
 engine/
+
+# Regenerable vision-verify page renders (rerender from the PDF via tools/frontface/render.py)
+chronicle/ratify-unverified-2026-08-19/*/pages/
