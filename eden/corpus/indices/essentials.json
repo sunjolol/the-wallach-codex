@@ -1540,7 +1540,7 @@
     "display_name": "Boron",
     "canon_slug": "boron",
     "category": "mineral",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000275",
@@ -1557,6 +1557,7 @@
         "WAL-CLM-EPIGEN-000127"
       ],
       "mechanism": [
+        "WAL-CLM-EPIGEN-000483",
         "WAL-CLM-RARE-000099",
         "WAL-CLM-RARE-000403"
       ],
@@ -1608,7 +1609,7 @@
     "display_name": "Cobalt",
     "canon_slug": "cobalt",
     "category": "mineral",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000077",
@@ -1627,6 +1628,7 @@
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000044",
+        "WAL-CLM-EPIGEN-000486",
         "WAL-CLM-IMMORT-000080",
         "WAL-CLM-IMMORT-000081"
       ]
@@ -1929,7 +1931,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 71,
+    "claim_count": 72,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1941,6 +1943,7 @@
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-EPIGEN-000107",
         "WAL-CLM-EPIGEN-000469",
+        "WAL-CLM-EPIGEN-000488",
         "WAL-CLM-IMMORT-000099",
         "WAL-CLM-IMMORT-000101",
         "WAL-CLM-IMMORT-000102",
@@ -6649,13 +6652,14 @@
     "display_name": "Cholecalciferol",
     "canon_slug": "vitamin-d",
     "category": "vitamin",
-    "claim_count": 22,
+    "claim_count": 23,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-DDDL-000083"
       ],
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000032",
+        "WAL-CLM-EPIGEN-000494",
         "WAL-CLM-LETS-000039",
         "WAL-CLM-RARE-000230"
       ],

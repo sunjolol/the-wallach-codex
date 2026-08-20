@@ -1,0 +1,173 @@
+[
+  {
+    "id": "WAL-CLM-EPIGEN-000518",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Symptoms included painful seizures and spasms, diarrhea, paresthesia (itching\nand prickling), formication (a feeling that ants are crawling under the skin),\nvomiting, mania, psychosis, hallucinations, headaches, vertigo, and tinnitus. Dry\ngangrene is the result of vasoconstriction induced by the ergotamine-ergocristine\nalkaloids produced by the fungus.",
+    "numbers_confirmed": true,
+    "notes": "Found on Screenshot (339), right column of the left book page (p.130). Every word matches the page exactly; the compound 'ergotamine-ergocristine' matches letter-for-letter. No digits in this passage. Clean."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000538",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Symptoms included painful seizures and spasms, diarrhea, paresthesia (itching\nand prickling), formication (a feeling that ants are crawling under the skin),\nvomiting, mania, psychosis, hallucinations, headaches, vertigo, and tinnitus. Dry\ngangrene is the result of vasoconstriction induced by the ergotamine-ergocristine\nalkaloids produced by the fungus.",
+    "numbers_confirmed": true,
+    "notes": "Identical verbatim to WAL-CLM-EPIGEN-000518; same passage on Screenshot (339). All words and the 'ergotamine-ergocristine' name match the page. No digits present. Clean."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000555",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Symptoms included painful seizures and spasms, diarrhea, paresthesia (itching\nand prickling), formication (a feeling that ants are crawling under the skin),\nvomiting, mania, psychosis, hallucinations, headaches, vertigo, and tinnitus. Dry\ngangrene is the result of vasoconstriction induced by the ergotamine-ergocristine\nalkaloids produced by the fungus.",
+    "numbers_confirmed": true,
+    "notes": "Same passage on Screenshot (339). Our verbatim carries a leading stray single-quote character before 'Symptoms' that the page does not print - an OCR artifact, removed in corrected_verbatim; not a content defect. All words and 'ergotamine-ergocristine' otherwise match the page. No digits present."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000551",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "One month later, on June 11, Herman Pauling died suddenly of a perforated\ngastric ulcer complicated by peritonitis.",
+    "numbers_confirmed": true,
+    "notes": "Located on Screenshot (436), page 327, top of the left book page (second paragraph of the left column). Zoomed crop confirms the line reads exactly: 'One month later, on June 11, Herman Pauling died suddenly of a perforated gastric ulcer complicated by peritonitis.' The flagged number '11' (June 11) is confirmed on the page. Proper name 'Herman Pauling' and terms 'perforated gastric ulcer', 'peritonitis' all match. Our line break after 'perforated' coincides with the page's natural line wrap (layout artifact, not a content difference)."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000535",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "The nutritional approach to Alzheimer’s disease includes all\nof the anti-dementia nutritional supplementation and dietary changes\nemployed for the other three dementias (including eating no fried\nfoods, no processed meats, no oils; eat 4–6 eggs per hundred pounds\nof body weight per day, etc.)",
+    "numbers_confirmed": true,
+    "notes": "Found on Screenshot (560), right book page (p.581 of 936), numbered item 4 on Alzheimer's disease. Page reads: 'eat 4-6 eggs per hundred pounds of body weight per day, etc.), avoid all statin drugs'. Digits 4 and 6 both confirmed on the page (printed with an en-dash '4–6'); our verbatim's '4~6' is an OCR misread of that en-dash — numeric content ('4 to 6 eggs') is preserved, not a content defect, and this resolves the ocr-unverified-number flag. Also our trailing 'etc)' is printed 'etc.)' on the page (missing period) — trivial punctuation at the truncation boundary. Both corrected in corrected_verbatim. All other words (no fried foods, no processed meats, no oils; anti-dementia; other three dementias) match the page exactly."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000526",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "etc.), colicky babies, keratosis, eczema, dermatitis, psoriasis, rosacea, asthma,\nfibromyalgia, lupus, sarcoidosis, diabetes, kidney failure, kidney stones, arthritis,\nobesity, osteoporosis, periodontal disease, dementia, heart disease, hypertension,\nalopecia, macular degeneration, dental problems, cataracts, nutritional\nsecondary hyperparathyroidism, hypothyroidism, peripheral neuropathies, liver\n\ndisease, constipation, diarrhea, etc.\n\nSo you are what you absorb.",
+    "numbers_confirmed": true,
+    "notes": "Located on Screenshot (568), left book page, bottom of left column. Every disease term matches the page letter-for-letter (keratosis, eczema, dermatitis, psoriasis, rosacea, asthma, fibromyalgia, sarcoidosis, osteoporosis, periodontal disease, macular degeneration, nutritional secondary hyperparathyroidism, hypothyroidism, peripheral neuropathies, etc.) and the closer 'So you are what you absorb.' is exact. No numeric values in the passage to check. Only deviation: our window opens 'etc)' while the page prints 'etc.)' with a period after 'etc' inside the parenthesis — a punctuation/truncation artifact at the deliberate mid-sentence cut, not a content difference; corrected in corrected_verbatim."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000537",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "colicky babies, keratosis, eczema, dermatitis, psoriasis, rosacea, asthma,\nfibromyalgia, lupus, sarcoidosis, diabetes, kidney failure, kidney stones, arthritis,\nobesity, osteoporosis, periodontal disease, dementia, heart disease, hypertension,\nalopecia, macular degeneration, dental problems, cataracts, nutritional\nsecondary hyperparathyroidism, hypothyroidism, peripheral neuropathies, liver\n\ndisease, constipation, diarrhea, etc.\n\nSo you are what you absorb.",
+    "numbers_confirmed": true,
+    "notes": "Located on Screenshot (568), left book page, bottom of left column. Verbatim starts directly at 'colicky babies' and matches the page word-for-word through 'constipation, diarrhea, etc.' and 'So you are what you absorb.' 'constipation' is present and correctly spelled on the page. No numeric values to verify. No discrepancies."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000556",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "colicky babies, keratosis, eczema, dermatitis, psoriasis, rosacea, asthma,\nfibromyalgia, lupus, sarcoidosis, diabetes, kidney failure, kidney stones, arthritis,\nobesity, osteoporosis, periodontal disease, dementia, heart disease, hypertension,\nalopecia, macular degeneration, dental problems, cataracts, nutritional\nsecondary hyperparathyroidism, hypothyroidism, peripheral neuropathies, liver\n\ndisease, constipation, diarrhea, etc.\n\nSo you are what you absorb.",
+    "numbers_confirmed": true,
+    "notes": "Located on Screenshot (568), left book page, bottom of left column. Verbatim starts at 'colicky babies' and matches the page exactly; 'rosacea' is spelled 'rosacea' on the page (not 'rosea'/'roseola'). No numeric values to verify. No discrepancies."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000544",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Vitamin D-deficiency health problems include:\n\nFacial tics, Tourette's syndrome\nTwitches, muscle cramps\nTetany (full body cramp), convulsions\n\nChildhood rickets (rachitic rosary), bowed legs, knock-knees, pigeon chest,\nProfuse sweating\n\nRestless leg syndrome\n\nEnlarged wrists, osteopenia, osteoporosis, periodontal disease, arthritis,\nosteoarthritis, degenerative arthritis, “bone to bone” arthritis, bone spurs,\nKidney stones.",
+    "numbers_confirmed": true,
+    "notes": "List spans the bottom-left column and top-right column of Screenshot (574). All items match the printed page letter-for-letter: Facial tics/Tourette's syndrome; Twitches, muscle cramps; Tetany (full body cramp), convulsions; Childhood rickets (rachitic rosary), bowed legs, knock-knees, pigeon chest; Profuse sweating; Restless leg syndrome; Enlarged wrists, osteopenia, osteoporosis, periodontal disease, arthritis, osteoarthritis, degenerative arthritis, “bone to bone” arthritis, bone spurs; Kidney stones. No digits appear in this passage, so the numeric check passes trivially. Our verbatim correctly stops before the next list item 'Uterine fibroids'. Claim assertion (periodontal disease listed with osteoporosis, bone spurs, arthritis under vitamin D deficiency) is confirmed."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000521",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Boron is essential for bone metabolism, including the efficient use of calcium\nand magnesium and for the proper functioning of the ovaries, testes, and adrenal\nglands.",
+    "numbers_confirmed": true,
+    "notes": "Found in the right column of the left book page on Screenshot (601), first line of the second boron paragraph. Page reads: 'Boron is essential for bone metabolism, including the efficient use of calcium and magnesium and for the proper functioning of the ovaries, testes, and adrenal glands.' Our verbatim matches word-for-word. Only difference: our OCR added a stray period after 'adrenal' at the end of line 2 ('adrenal.') where the page prints 'adrenal glands.' with no period after 'adrenal' — a pure line-wrap/OCR artifact, not a content defect; removed in corrected_verbatim. No digits appear in this passage; all names (calcium, magnesium, ovaries, testes, adrenal) match the page exactly."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000517",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Osteoporosis (kyphosis, scoliosis,\nDowagers Hump, lordosis, Legg-\nPerthe's, spontaneous fractures)\n\nDeficiencies of: Mg, B, Cu, S,\nSe, St, Ac, Fl; Excess Fl, P, Cd,\ndietary lipids & NaCl",
+    "numbers_confirmed": true,
+    "notes": "Found on Screenshot (608), left book page, 'Common Calcium-Deficiency Diseases' table, first row (Disease + Complicating factors columns). Our verbatim matches the page letter-for-letter, including the chemical-symbol list 'Mg, B, Cu, S, Se, St, Ac, Fl; Excess Fl, P, Cd' — the page genuinely prints 'St' (not 'Sr'), 'Ac', and 'Fl'. Proper nouns 'Dowagers Hump' and 'Legg-Perthe's' (curly apostrophe) match. No digits present in this passage; nothing to reconcile. The known_ocr_flags (restless-leg link via 'same as osteoporosis', and Ac/Fl left unmapped) concern claim interpretation/linkage, not verbatim byte content, so they are not verbatim defects."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000533",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Cobalt is also a necessary cofactor for the production of thyroid\nhormone.",
+    "numbers_confirmed": true,
+    "notes": "Found on Screenshot (615), left book page, left column, in the paragraph beginning 'Cobalt excess in man (20 to 30 mg/day)...'. The page prints: 'Cobalt is also a necessary cofactor for the production of thyroid hormone.' This matches our verbatim word-for-word. Our line break between 'thyroid' and 'hormone' corresponds to the page's line wrap ('thyroid' ends a line, 'hormone.' begins the next). No digits or proper-noun spellings in this passage to mismatch; nothing changes content."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000536",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Diseases and Symptoms of Copper Deficiency\n\nWhite hair, gray hair, silver hair\n\nDry brittle hair (“steely wool” in sheep)",
+    "numbers_confirmed": true,
+    "notes": "Found on Screenshot (618), top of the left book page. The bold section heading 'Diseases and Symptoms of Copper Deficiency' and the first two list items 'White hair, gray hair, silver hair' and 'Dry brittle hair (“steely wool” in sheep)' match our verbatim exactly. No digits in this passage. Names/terms confirmed."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000543",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "This would not be the first time in medical history where the prevailing\nmedical thought for the cause of certain diseases was an infectious agent (i.e.,\nthis happened with scurvy, beriberi, pellagra, cardiomyopathy, gingivitis, Bell’s\npalsy, multiple sclerosis, etc.), when in fact the disease was caused by a nutritional\ndeficiency.",
+    "numbers_confirmed": true,
+    "notes": "Found on Screenshot (618), right book page (continuing the paragraph that begins '...with CJD.'). Every disease name matches the page letter-for-letter: scurvy, beriberi, pellagra, cardiomyopathy, gingivitis, Bell’s palsy, multiple sclerosis. Wording and punctuation ('(i.e.,', 'etc.),') match. No digits in this passage."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000539",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Symptoms of Hypothyroidism (Hashimoto's Disease)\n\nFatigue\nCold intolerance\n\nMuscle aches & pains\n\nHeavy or more frequent menstrual periods\nLow sex drive\n\nBrittle nails\n\nWeight gain\n\nHair loss\n\nMuscle cramps\n\nDepression",
+    "numbers_confirmed": true,
+    "notes": "Located on the right book page of Screenshot (626), under the printed heading 'Symptoms of Hypothyroidism (Hashimoto's Disease)'. Every line of our verbatim matches the page word-for-word: Fatigue / Cold intolerance / Muscle aches & pains (ampersand matches) / Heavy or more frequent menstrual periods / Low sex drive / Brittle nails / Weight gain / Hair loss / Muscle cramps / Depression. The list continues past our excerpt on the page (Constipation, Elevated blood cholesterol, Puffy face, Dry skin and hair, Inability to concentrate, Poor memory, Goiter, Infertility, Congenital birth defects (Cretinism)) but our stored verbatim stops at Depression, which is fine. No digits appear in this passage, so there are no numbers to mismatch. The blank lines in our verbatim are spacing/line-break artifacts, not content defects. The claim assertion — heavy or more frequent menstrual periods listed as a hypothyroidism/Hashimoto's symptom — is confirmed."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000524",
+    "located": true,
+    "verdict": "DEFECTS",
+    "defects": [
+      {
+        "ours": "alled",
+        "page_says": "called"
+      },
+      {
+        "ours": "amenorthea",
+        "page_says": "amenorrhea"
+      }
+    ],
+    "corrected_verbatim": "Others\nwere old family recipes that worked, such as that produced by Lydia Pinkums\ncalled “Lydia Pinkums’ Vegetable and Herbal Extract for Women's Complaints,”\nwhich was marketed in newspapers for PMS, dysmenorrhea, amenorrhea,\n\n\nmenopausal symptoms, and infertility.\n\nPinkums was a Quaker missionary and had used an ancient Native American\nherbal recipe as the basis of her patent medicine that was sold through\nnewspaper and magazine adds. This herbal product worked so well the Harvard\nGlee Club sang songs of her abilities to solve the problems of American women\nand she became an American icon.",
+    "numbers_confirmed": true,
+    "notes": "Passage found on Screenshot 654, LEFT book page (p.774), first two paragraphs of the left column. Verified at high magnification. Two genuine content defects: our 'alled' -> page prints 'called' (leading c dropped by OCR); our 'amenorthea' -> page prints 'amenorrhea' (rrh misread as th). Both flanking words match ('dysmenorrhea' correct). Two known_ocr_flags are FALSE ALARMS against the actual page: (1) the page genuinely prints 'Pinkums' (P-i-n-k-u-m-s) in all three occurrences, NOT 'Pinkham' -- Wallach's book itself misspells the historical name, so our byte-exact 'Pinkums' is correct; (2) the page genuinely prints 'magazine adds' with a double-d, NOT 'ads' -- so our 'adds' is correct. The double blank line between 'amenorrhea,' and 'menopausal symptoms' is a spacing/line-break artifact, not a content difference. No digits/numbers appear in this passage."
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000541",
+    "located": true,
+    "verdict": "DEFECTS",
+    "defects": [
+      {
+        "ours": "alled",
+        "page_says": "called"
+      },
+      {
+        "ours": "amenorthea",
+        "page_says": "amenorrhea"
+      }
+    ],
+    "corrected_verbatim": "Others\nwere old family recipes that worked, such as that produced by Lydia Pinkums\ncalled “Lydia Pinkums’ Vegetable and Herbal Extract for Women's Complaints,”\nwhich was marketed in newspapers for PMS, dysmenorrhea, amenorrhea,\n\n\nmenopausal symptoms, and infertility.",
+    "numbers_confirmed": true,
+    "notes": "Same passage as WAL-CLM-EPIGEN-000524 but truncated to the first paragraph only; found on Screenshot 654, LEFT book page (p.774). Despite known_ocr_flags='none', the stored verbatim carries the same two genuine defects vs the page: our 'alled' -> page 'called'; our 'amenorthea' -> page 'amenorrhea'. 'Lydia Pinkums'/'Pinkums' matches the page byte-for-byte (the page truly prints 'Pinkums', not 'Pinkham'). No digits/numbers in this passage. The double blank line before 'menopausal symptoms' is a layout artifact, not content."
+  }
+]

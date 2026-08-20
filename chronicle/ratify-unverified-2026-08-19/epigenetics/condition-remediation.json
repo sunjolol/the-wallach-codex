@@ -1,0 +1,157 @@
+{
+  "WAL-CLM-EPIGEN-000517": {
+    "mapped": [
+      "osteoporosis"
+    ],
+    "search_only": [],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000518": {
+    "mapped": [
+      "tinnitus"
+    ],
+    "search_only": [],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000521": {
+    "mapped": [],
+    "search_only": [
+      "erectile_dysfunction",
+      "low_testosterone"
+    ],
+    "unregistered": [
+      "low_testosterone"
+    ]
+  },
+  "WAL-CLM-EPIGEN-000524": {
+    "mapped": [
+      "menopause"
+    ],
+    "search_only": [],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000526": {
+    "mapped": [
+      "rosacea",
+      "eczema",
+      "psoriasis",
+      "dermatitis"
+    ],
+    "search_only": [
+      "acne"
+    ],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000533": {
+    "mapped": [],
+    "search_only": [
+      "hypothyroidism"
+    ],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000535": {
+    "mapped": [
+      "alzheimers",
+      "dementia"
+    ],
+    "search_only": [
+      "memory_loss"
+    ],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000536": {
+    "mapped": [
+      "gray_hair"
+    ],
+    "search_only": [
+      "alopecia"
+    ],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000537": {
+    "mapped": [
+      "constipation"
+    ],
+    "search_only": [
+      "malabsorption",
+      "gluten-intolerance"
+    ],
+    "unregistered": [
+      "gluten-intolerance"
+    ]
+  },
+  "WAL-CLM-EPIGEN-000538": {
+    "mapped": [
+      "vertigo",
+      "tinnitus"
+    ],
+    "search_only": [
+      "ergotism"
+    ],
+    "unregistered": [
+      "ergotism"
+    ]
+  },
+  "WAL-CLM-EPIGEN-000539": {
+    "mapped": [
+      "hypothyroidism"
+    ],
+    "search_only": [
+      "pms",
+      "menorrhagia"
+    ],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000541": {
+    "mapped": [
+      "pms",
+      "dysmenorrhea",
+      "amenorrhea"
+    ],
+    "search_only": [],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000543": {
+    "mapped": [
+      "gingivitis"
+    ],
+    "search_only": [
+      "periodontal_disease"
+    ],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000544": {
+    "mapped": [
+      "periodontal_disease"
+    ],
+    "search_only": [
+      "receding_gums"
+    ],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000551": {
+    "mapped": [
+      "peptic_ulcers"
+    ],
+    "search_only": [
+      "gastric_ulcer"
+    ],
+    "unregistered": [
+      "gastric_ulcer"
+    ]
+  },
+  "WAL-CLM-EPIGEN-000555": {
+    "mapped": [],
+    "search_only": [
+      "peripheral_neuropathy"
+    ],
+    "unregistered": []
+  },
+  "WAL-CLM-EPIGEN-000556": {
+    "mapped": [
+      "rosacea"
+    ],
+    "search_only": [],
+    "unregistered": []
+  }
+}

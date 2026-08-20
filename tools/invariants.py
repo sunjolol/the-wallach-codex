@@ -5099,6 +5099,8 @@ _DUPLICATE_KEEP_BOTH = {
         "constipation/protocol: one Wallach constipation-protocol span answering two different reader questions -- A (dose facet) asks 'How much fiber should you take for constipation?'; B asks 'What are natural herbal laxatives for constipation?'. The fiber facet routes on the condition because 'dietary-fiber' is not a registered search subject. Ruled keep-both (different questions on a shared span), Luneth-approved 2026-08-18.",
     frozenset({"WAL-CLM-DDDL-000595", "WAL-CLM-DDDL-000522"}):
         "gallstones/protocol: one Wallach gallbladder-protocol span answering two different reader questions -- A (dose facet) asks 'Does lecithin help with gallstones?'; B asks 'Which herbs are good for the gallbladder?'. The lecithin facet routes on the condition because 'lecithin' is not a registered search subject. Ruled keep-both (different questions on a shared span), Luneth-approved 2026-08-18.",
+    frozenset({"WAL-CLM-EPIGEN-000484", "WAL-CLM-EPIGEN-000479"}):
+        "menopause/history: one Wallach Lydia-Pinkham passage answering two different reader questions -- A (000479) asks \"What was Lydia Pinkham's herbal remedy for women's complaints?\"; B (000484) asks 'What did women use for menopause before modern medicine?'. B carries a distinct claim_text (the pre-modern-practice framing) on the shared full-paragraph span; both route to menopause/history. Ruled keep-both, Luneth-approved 2026-08-19.",
 }
 
 

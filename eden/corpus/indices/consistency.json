@@ -4500,6 +4500,10 @@
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-EPIGEN-000496",
+        "book": "epigenetics"
+      },
+      {
         "claim_id": "WAL-CLM-IMMORT-000359",
         "book": "immortality"
       },
@@ -4513,7 +4517,7 @@
       }
     ],
     "books_repeating": 3,
-    "claim_count": 27
+    "claim_count": 28
   },
   {
     "id": "CG-0015",
@@ -5463,12 +5467,16 @@
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-EPIGEN-000484",
+        "book": "epigenetics"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000317",
         "book": "rare-earths"
       }
     ],
     "books_repeating": 2,
-    "claim_count": 2
+    "claim_count": 3
   },
   {
     "id": "CG-0057",
@@ -5757,10 +5765,14 @@
       {
         "claim_id": "WAL-CLM-DDDL-000485",
         "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-EPIGEN-000482",
+        "book": "epigenetics"
       }
     ],
-    "books_repeating": 1,
-    "claim_count": 3
+    "books_repeating": 2,
+    "claim_count": 4
   },
   {
     "id": "CG-0070",

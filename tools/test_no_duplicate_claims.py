@@ -311,9 +311,11 @@ def main():
                 frozenset({"WAL-CLM-IMMORT-000135", "WAL-CLM-IMMORT-000389"}),
                 frozenset({"WAL-CLM-DDDL-000585", "WAL-CLM-DDDL-000387"}),
                 frozenset({"WAL-CLM-DDDL-000589", "WAL-CLM-DDDL-000497"}),
-                frozenset({"WAL-CLM-DDDL-000595", "WAL-CLM-DDDL-000522"})}
+                frozenset({"WAL-CLM-DDDL-000595", "WAL-CLM-DDDL-000522"}),
+                frozenset({"WAL-CLM-HELLS-000101", "WAL-CLM-HELLS-000102"}),
+                frozenset({"WAL-CLM-EPIGEN-000484", "WAL-CLM-EPIGEN-000479"})}
     pinned = set(SHIPPED_ALLOWLIST) == expected
-    print("%s allowlist_membership   expect=74 ruled pairs        got=%d pair(s)"
+    print("%s allowlist_membership   expect=76 ruled pairs        got=%d pair(s)"
           % ("ok  " if pinned else "FAIL", len(SHIPPED_ALLOWLIST)))
     if not pinned:
         fails.append(("allowlist_membership",

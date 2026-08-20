@@ -8304,6 +8304,11 @@
       "aliases": [
         "meta analysis"
       ]
+    },
+    {
+      "term": "peritonitis",
+      "plain": "inflammation of the lining of the abdomen",
+      "category": "medical"
     }
   ]
 }

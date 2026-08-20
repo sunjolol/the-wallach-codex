@@ -1,0 +1,342 @@
+[
+  {
+    "id": "WAL-CLM-EPIGEN-000517",
+    "drop_dup": false,
+    "needle_words": 26,
+    "located": true,
+    "shot": "Screenshot (608).png",
+    "shot_adj": [
+      "Screenshot (607).png",
+      "Screenshot (608).png",
+      "Screenshot (609).png"
+    ],
+    "coverage": 0.769,
+    "hunks": [
+      {
+        "tag": "delete",
+        "ours": "Dowagers Hump lordosis LeggPerthe's spontaneous fractures",
+        "pdf": "",
+        "ctx": "...Osteoporosis kyphosis scoliosis [[Dowagers Hump lordosis LeggPerthe's spontaneous fractures]] Deficiencies of Mg B Cu..."
+      },
+      {
+        "tag": "insert",
+        "ours": "",
+        "pdf": "Dowagers Hump lordosis Legg",
+        "ctx": "...of Mg B Cu S [[]] Se St Ac Fl Excess..."
+      },
+      {
+        "tag": "insert",
+        "ours": "",
+        "pdf": "Perthe's spontaneous fractures",
+        "ctx": "...Fl Excess Fl P Cd [[]] dietary lipids NaCl..."
+      }
+    ],
+    "run": 8,
+    "margin": 6
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000518",
+    "drop_dup": false,
+    "needle_words": 46,
+    "located": true,
+    "shot": "Screenshot (339).png",
+    "shot_adj": [
+      "Screenshot (338).png",
+      "Screenshot (339).png",
+      "Screenshot (340).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 46,
+    "margin": 43
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000521",
+    "drop_dup": false,
+    "needle_words": 26,
+    "located": true,
+    "shot": "Screenshot (601).png",
+    "shot_adj": [
+      "Screenshot (600).png",
+      "Screenshot (601).png",
+      "Screenshot (602).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 26,
+    "margin": 22
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000524",
+    "drop_dup": false,
+    "needle_words": 94,
+    "located": true,
+    "shot": "Screenshot (654).png",
+    "shot_adj": [
+      "Screenshot (653).png",
+      "Screenshot (654).png",
+      "Screenshot (655).png"
+    ],
+    "coverage": 0.979,
+    "hunks": [
+      {
+        "tag": "replace",
+        "ours": "alled",
+        "pdf": "called",
+        "ctx": "...that produced by Lydia Pinkums [[alled]] Lydia Pinkums' Vegetable and Herbal..."
+      },
+      {
+        "tag": "replace",
+        "ours": "amenorthea",
+        "pdf": "amenorrhea",
+        "ctx": "...in newspapers for PMS dysmenorrhea [[amenorthea]] menopausal symptoms and infertility Pinkums..."
+      }
+    ],
+    "run": 61,
+    "margin": 58
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000525",
+    "drop_dup": true,
+    "needle_words": 29,
+    "located": true,
+    "shot": "Screenshot (478).png",
+    "shot_adj": [
+      "Screenshot (477).png",
+      "Screenshot (478).png",
+      "Screenshot (479).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 29,
+    "margin": 26
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000526",
+    "drop_dup": false,
+    "needle_words": 49,
+    "located": true,
+    "shot": "Screenshot (568).png",
+    "shot_adj": [
+      "Screenshot (567).png",
+      "Screenshot (568).png",
+      "Screenshot (569).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 49,
+    "margin": 44
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000533",
+    "drop_dup": false,
+    "needle_words": 12,
+    "located": true,
+    "shot": "Screenshot (615).png",
+    "shot_adj": [
+      "Screenshot (614).png",
+      "Screenshot (615).png",
+      "Screenshot (616).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 12,
+    "margin": 10
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000535",
+    "drop_dup": false,
+    "needle_words": 46,
+    "located": true,
+    "shot": "Screenshot (560).png",
+    "shot_adj": [
+      "Screenshot (559).png",
+      "Screenshot (560).png",
+      "Screenshot (561).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 46,
+    "margin": 42
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000536",
+    "drop_dup": false,
+    "needle_words": 19,
+    "located": true,
+    "shot": "Screenshot (618).png",
+    "shot_adj": [
+      "Screenshot (617).png",
+      "Screenshot (618).png",
+      "Screenshot (619).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 19,
+    "margin": 16
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000537",
+    "drop_dup": false,
+    "needle_words": 48,
+    "located": true,
+    "shot": "Screenshot (568).png",
+    "shot_adj": [
+      "Screenshot (567).png",
+      "Screenshot (568).png",
+      "Screenshot (569).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 48,
+    "margin": 43
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000538",
+    "drop_dup": false,
+    "needle_words": 46,
+    "located": true,
+    "shot": "Screenshot (339).png",
+    "shot_adj": [
+      "Screenshot (338).png",
+      "Screenshot (339).png",
+      "Screenshot (340).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 46,
+    "margin": 43
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000539",
+    "drop_dup": false,
+    "needle_words": 29,
+    "located": true,
+    "shot": "Screenshot (626).png",
+    "shot_adj": [
+      "Screenshot (625).png",
+      "Screenshot (626).png",
+      "Screenshot (627).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 29,
+    "margin": 27
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000541",
+    "drop_dup": false,
+    "needle_words": 37,
+    "located": true,
+    "shot": "Screenshot (654).png",
+    "shot_adj": [
+      "Screenshot (653).png",
+      "Screenshot (654).png",
+      "Screenshot (655).png"
+    ],
+    "coverage": 0.946,
+    "hunks": [
+      {
+        "tag": "replace",
+        "ours": "alled",
+        "pdf": "called",
+        "ctx": "...that produced by Lydia Pinkums [[alled]] Lydia Pinkums' Vegetable and Herbal..."
+      },
+      {
+        "tag": "replace",
+        "ours": "amenorthea",
+        "pdf": "amenorrhea",
+        "ctx": "...in newspapers for PMS dysmenorrhea [[amenorthea]] menopausal symptoms and infertility..."
+      }
+    ],
+    "run": 17,
+    "margin": 15
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000543",
+    "drop_dup": false,
+    "needle_words": 51,
+    "located": true,
+    "shot": "Screenshot (618).png",
+    "shot_adj": [
+      "Screenshot (617).png",
+      "Screenshot (618).png",
+      "Screenshot (619).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 51,
+    "margin": 47
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000544",
+    "drop_dup": false,
+    "needle_words": 51,
+    "located": true,
+    "shot": "Screenshot (574).png",
+    "shot_adj": [
+      "Screenshot (573).png",
+      "Screenshot (574).png",
+      "Screenshot (575).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [
+      {
+        "tag": "insert",
+        "ours": "",
+        "pdf": "Page 610 of ETICS",
+        "ctx": "...Tetany full body cramp convulsions [[]] Childhood rickets rachitic rosary bowed..."
+      }
+    ],
+    "run": 33,
+    "margin": 29
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000551",
+    "drop_dup": false,
+    "needle_words": 18,
+    "located": true,
+    "shot": "Screenshot (436).png",
+    "shot_adj": [
+      "Screenshot (435).png",
+      "Screenshot (436).png",
+      "Screenshot (437).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 18,
+    "margin": 16
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000555",
+    "drop_dup": false,
+    "needle_words": 46,
+    "located": true,
+    "shot": "Screenshot (339).png",
+    "shot_adj": [
+      "Screenshot (338).png",
+      "Screenshot (339).png",
+      "Screenshot (340).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 46,
+    "margin": 43
+  },
+  {
+    "id": "WAL-CLM-EPIGEN-000556",
+    "drop_dup": false,
+    "needle_words": 48,
+    "located": true,
+    "shot": "Screenshot (568).png",
+    "shot_adj": [
+      "Screenshot (567).png",
+      "Screenshot (568).png",
+      "Screenshot (569).png"
+    ],
+    "coverage": 1.0,
+    "hunks": [],
+    "run": 48,
+    "margin": 43
+  }
+]

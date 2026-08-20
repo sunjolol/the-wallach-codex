@@ -613,7 +613,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 121,
-      "distinct_claim_count": 144,
+      "distinct_claim_count": 145,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -836,6 +836,7 @@
             "WAL-CLM-DDDL-000565",
             "WAL-CLM-DDDL-000599",
             "WAL-CLM-EPIGEN-000133",
+            "WAL-CLM-EPIGEN-000481",
             "WAL-CLM-LETS-000056",
             "WAL-CLM-LETS-000139",
             "WAL-CLM-LETS-000146",
@@ -2141,8 +2142,8 @@
       "symbol": "B",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 17,
-      "distinct_claim_count": 29,
+      "claim_count": 18,
+      "distinct_claim_count": 31,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2232,6 +2233,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000290",
             "WAL-CLM-EPIGEN-000312",
+            "WAL-CLM-EPIGEN-000483",
             "WAL-CLM-RARE-000099",
             "WAL-CLM-RARE-000275"
           ]
@@ -2258,6 +2260,7 @@
             "WAL-CLM-DDDL-000461",
             "WAL-CLM-DDDL-000462",
             "WAL-CLM-EPIGEN-000127",
+            "WAL-CLM-EPIGEN-000481",
             "WAL-CLM-LETS-000391"
           ]
         },
@@ -2315,8 +2318,8 @@
       "symbol": "Co",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 12,
-      "distinct_claim_count": 30,
+      "claim_count": 13,
+      "distinct_claim_count": 31,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2399,6 +2402,7 @@
           "claim_ids": [
             "WAL-CLM-EPIGEN-000077",
             "WAL-CLM-EPIGEN-000323",
+            "WAL-CLM-EPIGEN-000486",
             "WAL-CLM-IMMORT-000081",
             "WAL-CLM-IMMORT-000085",
             "WAL-CLM-IMMORT-000306"
@@ -2785,8 +2789,8 @@
       "symbol": "Cu",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 71,
-      "distinct_claim_count": 97,
+      "claim_count": 72,
+      "distinct_claim_count": 99,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2923,6 +2927,7 @@
             "WAL-CLM-EPIGEN-000063",
             "WAL-CLM-EPIGEN-000107",
             "WAL-CLM-EPIGEN-000469",
+            "WAL-CLM-EPIGEN-000488",
             "WAL-CLM-IMMORT-000100",
             "WAL-CLM-IMMORT-000105",
             "WAL-CLM-IMMORT-000106",
@@ -2983,6 +2988,7 @@
             "WAL-CLM-DDDL-000523",
             "WAL-CLM-DDDL-000524",
             "WAL-CLM-EPIGEN-000130",
+            "WAL-CLM-EPIGEN-000481",
             "WAL-CLM-LETS-000050",
             "WAL-CLM-LETS-000146",
             "WAL-CLM-LETS-000246",
@@ -12919,8 +12925,8 @@
       "symbol": "D3",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 22,
-      "distinct_claim_count": 38,
+      "claim_count": 23,
+      "distinct_claim_count": 39,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -13031,6 +13037,7 @@
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000032",
+            "WAL-CLM-EPIGEN-000494",
             "WAL-CLM-IMMORT-000287",
             "WAL-CLM-RARE-000230"
           ]
@@ -16322,6 +16329,7 @@
             "WAL-CLM-DDDL-000429",
             "WAL-CLM-DDDL-000441",
             "WAL-CLM-DDDL-000444",
+            "WAL-CLM-EPIGEN-000485",
             "WAL-CLM-LETS-000527"
           ]
         },
@@ -17258,7 +17266,7 @@
     "alzheimers": {
       "type": "condition",
       "name": "Alzheimers",
-      "claim_count": 11,
+      "claim_count": 12,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -17277,6 +17285,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000499",
         "WAL-CLM-EPIGEN-000016",
+        "WAL-CLM-EPIGEN-000487",
         "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000356"
       ],
@@ -17329,6 +17338,7 @@
             "WAL-CLM-DDDL-000294",
             "WAL-CLM-DDDL-000499",
             "WAL-CLM-EPIGEN-000016",
+            "WAL-CLM-EPIGEN-000487",
             "WAL-CLM-LETS-000130"
           ]
         },
@@ -17468,8 +17478,9 @@
     "amenorrhea": {
       "type": "condition",
       "name": "Amenorrhea",
-      "claim_count": 3,
+      "claim_count": 4,
       "books": [
+        "epigenetics",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -17517,25 +17528,27 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000492",
             "WAL-CLM-RARE-000361"
           ]
         }
       ],
       "related_conditions": [
-        "alopecia",
         "dysmenorrhea",
+        "alopecia",
         "hydrocephalus",
-        "menorrhagia"
+        "menorrhagia",
+        "pms"
       ],
       "related": [
+        "dysmenorrhea",
         "omega-3",
         "alopecia",
-        "dysmenorrhea",
         "hydrocephalus",
         "iron",
         "menorrhagia",
-        "selenium",
-        "vitamin-a"
+        "pms",
+        "selenium"
       ]
     },
     "anal_abscess": {
@@ -22563,6 +22576,8 @@
             "WAL-CLM-DDDL-000551",
             "WAL-CLM-DDDL-000555",
             "WAL-CLM-EPIGEN-000030",
+            "WAL-CLM-EPIGEN-000485",
+            "WAL-CLM-EPIGEN-000489",
             "WAL-CLM-IMMORT-000068"
           ]
         },
@@ -24302,9 +24317,10 @@
     "constipation": {
       "type": "condition",
       "name": "Constipation",
-      "claim_count": 9,
+      "claim_count": 10,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -24345,6 +24361,7 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000412",
+            "WAL-CLM-EPIGEN-000489",
             "WAL-CLM-RARE-000416"
           ]
         },
@@ -25492,7 +25509,7 @@
     "dementia": {
       "type": "condition",
       "name": "Dementia",
-      "claim_count": 20,
+      "claim_count": 21,
       "books": [
         "epigenetics",
         "hells-kitchen",
@@ -25510,6 +25527,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-EPIGEN-000013",
         "WAL-CLM-EPIGEN-000016",
+        "WAL-CLM-EPIGEN-000487",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000356",
         "WAL-CLM-LETS-000388",
@@ -25577,6 +25595,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000294",
             "WAL-CLM-EPIGEN-000016",
+            "WAL-CLM-EPIGEN-000487",
             "WAL-CLM-LETS-000243",
             "WAL-CLM-RARE-000282"
           ]
@@ -25935,7 +25954,7 @@
     "dermatitis": {
       "type": "condition",
       "name": "Dermatitis",
-      "claim_count": 31,
+      "claim_count": 32,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -26011,7 +26030,8 @@
         {
           "facet": "mechanism",
           "claim_ids": [
-            "WAL-CLM-DDDL-000572"
+            "WAL-CLM-DDDL-000572",
+            "WAL-CLM-EPIGEN-000485"
           ]
         },
         {
@@ -26930,9 +26950,10 @@
     "dysmenorrhea": {
       "type": "condition",
       "name": "Dysmenorrhea",
-      "claim_count": 3,
+      "claim_count": 4,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -26978,22 +26999,29 @@
             "WAL-CLM-LETS-000258",
             "WAL-CLM-LETS-000357"
           ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000484",
+            "WAL-CLM-EPIGEN-000492"
+          ]
         }
       ],
       "related_conditions": [
         "amenorrhea",
-        "menorrhagia",
-        "pms"
+        "pms",
+        "menorrhagia"
       ],
       "related": [
         "omega-3",
-        "calcium",
-        "vitamin-e",
         "amenorrhea",
+        "calcium",
+        "pms",
+        "vitamin-e",
         "iron",
         "magnesium",
-        "menorrhagia",
-        "omega-6"
+        "menorrhagia"
       ]
     },
     "dyspepsia": {
@@ -27262,7 +27290,7 @@
     "eczema": {
       "type": "condition",
       "name": "Eczema",
-      "claim_count": 28,
+      "claim_count": 29,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -27327,7 +27355,8 @@
             "WAL-CLM-DDDL-000158",
             "WAL-CLM-DDDL-000391",
             "WAL-CLM-DDDL-000480",
-            "WAL-CLM-DDDL-000572"
+            "WAL-CLM-DDDL-000572",
+            "WAL-CLM-EPIGEN-000485"
           ]
         },
         {
@@ -27892,6 +27921,12 @@
           "facet": "stance",
           "claim_ids": [
             "WAL-CLM-DDDL-000557"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000483"
           ]
         },
         {
@@ -28953,9 +28988,10 @@
     "gingivitis": {
       "type": "condition",
       "name": "Gingivitis",
-      "claim_count": 5,
+      "claim_count": 6,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "iaiyh",
         "lets-play-doctor"
       ],
@@ -28990,6 +29026,7 @@
         {
           "facet": "mechanism",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000493",
             "WAL-CLM-IAIYH-000003"
           ]
         },
@@ -29406,8 +29443,9 @@
     "gray_hair": {
       "type": "condition",
       "name": "Gray Hair",
-      "claim_count": 2,
+      "claim_count": 3,
       "books": [
+        "epigenetics",
         "immortality"
       ],
       "synonyms": [],
@@ -29428,6 +29466,7 @@
         {
           "facet": "physiology",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000488",
             "WAL-CLM-IMMORT-000543"
           ]
         }
@@ -29443,14 +29482,14 @@
         "cerebellar_hypoplasia"
       ],
       "related": [
+        "copper",
         "adhd",
         "anemia",
         "aneurysm",
         "arthritis",
         "autism",
         "blind_rage",
-        "brittle_hair",
-        "cerebellar_hypoplasia"
+        "brittle_hair"
       ]
     },
     "growing_pains": {
@@ -31843,7 +31882,7 @@
     "hypothyroidism": {
       "type": "condition",
       "name": "Hypothyroidism",
-      "claim_count": 16,
+      "claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -31890,6 +31929,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000023",
             "WAL-CLM-DDDL-000543",
+            "WAL-CLM-EPIGEN-000486",
             "WAL-CLM-HELLS-000101",
             "WAL-CLM-HELLS-000102",
             "WAL-CLM-IMMORT-000180"
@@ -31920,6 +31960,7 @@
             "WAL-CLM-DDDL-000457",
             "WAL-CLM-EPIGEN-000093",
             "WAL-CLM-EPIGEN-000465",
+            "WAL-CLM-EPIGEN-000491",
             "WAL-CLM-IMMORT-000182",
             "WAL-CLM-LETS-000013",
             "WAL-CLM-LETS-000538",
@@ -35390,7 +35431,14 @@
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "poor absorption",
+        "not absorbing nutrients",
+        "malabsorption",
+        "nutrient absorption problem",
+        "gut absorption issue",
+        "malabsorbtion"
+      ],
       "protocol_claim_ids": [],
       "restore": [
         "zinc"
@@ -35430,6 +35478,9 @@
             "WAL-CLM-DDDL-000555",
             "WAL-CLM-DDDL-000568",
             "WAL-CLM-EPIGEN-000030",
+            "WAL-CLM-EPIGEN-000485",
+            "WAL-CLM-EPIGEN-000489",
+            "WAL-CLM-EPIGEN-000497",
             "WAL-CLM-IMMORT-000284"
           ]
         },
@@ -35754,6 +35805,7 @@
             "WAL-CLM-DDDL-000294",
             "WAL-CLM-EPIGEN-000014",
             "WAL-CLM-EPIGEN-000016",
+            "WAL-CLM-EPIGEN-000487",
             "WAL-CLM-LETS-000130",
             "WAL-CLM-LETS-000243",
             "WAL-CLM-LETS-000333",
@@ -36040,7 +36092,7 @@
     "menopause": {
       "type": "condition",
       "name": "Menopause",
-      "claim_count": 16,
+      "claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -36060,6 +36112,7 @@
         "WAL-CLM-DDDL-000092",
         "WAL-CLM-DDDL-000517",
         "WAL-CLM-EPIGEN-000479",
+        "WAL-CLM-EPIGEN-000484",
         "WAL-CLM-LETS-000223",
         "WAL-CLM-RARE-000317"
       ],
@@ -36129,7 +36182,9 @@
         {
           "facet": "history",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000479"
+            "WAL-CLM-EPIGEN-000479",
+            "WAL-CLM-EPIGEN-000484",
+            "WAL-CLM-EPIGEN-000492"
           ]
         }
       ],
@@ -36156,8 +36211,9 @@
     "menorrhagia": {
       "type": "condition",
       "name": "Menorrhagia",
-      "claim_count": 1,
+      "claim_count": 2,
       "books": [
+        "epigenetics",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -36170,8 +36226,15 @@
         "selenium",
         "vitamin-e"
       ],
-      "record": [],
-      "record_claim_count": 0,
+      "record": [
+        {
+          "kind": "diagnostic_pattern",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000491"
+          ]
+        }
+      ],
+      "record_claim_count": 1,
       "search": [
         {
           "facet": "protocol",
@@ -36182,11 +36245,13 @@
       ],
       "related_conditions": [
         "amenorrhea",
-        "dysmenorrhea"
+        "dysmenorrhea",
+        "hypothyroidism"
       ],
       "related": [
         "amenorrhea",
         "dysmenorrhea",
+        "hypothyroidism",
         "iron",
         "omega-3",
         "selenium",
@@ -38454,7 +38519,7 @@
     "osteoporosis": {
       "type": "condition",
       "name": "Osteoporosis",
-      "claim_count": 43,
+      "claim_count": 44,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -38478,6 +38543,7 @@
         "WAL-CLM-DDDL-000462",
         "WAL-CLM-DDDL-000470",
         "WAL-CLM-DDDL-000523",
+        "WAL-CLM-EPIGEN-000481",
         "WAL-CLM-IAIYH-000004",
         "WAL-CLM-LETS-000391"
       ],
@@ -38556,6 +38622,7 @@
             "WAL-CLM-DDDL-000462",
             "WAL-CLM-DDDL-000470",
             "WAL-CLM-DDDL-000523",
+            "WAL-CLM-EPIGEN-000481",
             "WAL-CLM-HELLS-000103",
             "WAL-CLM-IAIYH-000004",
             "WAL-CLM-LETS-000051",
@@ -38586,6 +38653,7 @@
             "WAL-CLM-DDDL-000149",
             "WAL-CLM-EPIGEN-000032",
             "WAL-CLM-EPIGEN-000061",
+            "WAL-CLM-EPIGEN-000494",
             "WAL-CLM-IMMORT-000063",
             "WAL-CLM-IMMORT-000076",
             "WAL-CLM-IMMORT-000139",
@@ -39482,7 +39550,7 @@
     "peptic_ulcers": {
       "type": "condition",
       "name": "Peptic Ulcers",
-      "claim_count": 16,
+      "claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -39545,6 +39613,7 @@
           "facet": "warning",
           "claim_ids": [
             "WAL-CLM-DDDL-000520",
+            "WAL-CLM-EPIGEN-000495",
             "WAL-CLM-LETS-000005",
             "WAL-CLM-LETS-000007",
             "WAL-CLM-RARE-000417"
@@ -39599,7 +39668,7 @@
     "periodontal_disease": {
       "type": "condition",
       "name": "Periodontal Disease",
-      "claim_count": 12,
+      "claim_count": 13,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -39633,6 +39702,7 @@
           "kind": "deficiency_sign",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000032",
+            "WAL-CLM-EPIGEN-000494",
             "WAL-CLM-IMMORT-000063",
             "WAL-CLM-LETS-000004"
           ]
@@ -39644,7 +39714,7 @@
           ]
         }
       ],
-      "record_claim_count": 4,
+      "record_claim_count": 5,
       "search": [
         {
           "facet": "stance",
@@ -39656,6 +39726,7 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000574",
+            "WAL-CLM-EPIGEN-000493",
             "WAL-CLM-IAIYH-000003",
             "WAL-CLM-IMMORT-000544"
           ]
@@ -39792,6 +39863,7 @@
         {
           "facet": "warning",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000496",
             "WAL-CLM-IMMORT-000487"
           ]
         },
@@ -40218,7 +40290,7 @@
     "pms": {
       "type": "condition",
       "name": "Premenstrual Syndrome (PMS)",
-      "claim_count": 14,
+      "claim_count": 15,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -40306,6 +40378,13 @@
           "claim_ids": [
             "WAL-CLM-LETS-000498"
           ]
+        },
+        {
+          "facet": "history",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000484",
+            "WAL-CLM-EPIGEN-000492"
+          ]
         }
       ],
       "related_conditions": [
@@ -40314,9 +40393,9 @@
         "bells_palsy",
         "bone_spurs",
         "calcium_deposits",
+        "dysmenorrhea",
         "hypertension",
-        "low_back_pain",
-        "osteofibrosis"
+        "low_back_pain"
       ],
       "related": [
         "calcium",
@@ -40726,7 +40805,7 @@
     "psoriasis": {
       "type": "condition",
       "name": "Psoriasis",
-      "claim_count": 14,
+      "claim_count": 15,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -40771,7 +40850,8 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000391",
-            "WAL-CLM-DDDL-000480"
+            "WAL-CLM-DDDL-000480",
+            "WAL-CLM-EPIGEN-000485"
           ]
         },
         {
@@ -40817,12 +40897,12 @@
       "related_conditions": [
         "eczema",
         "atopic_dermatitis",
+        "dermatitis",
         "acne",
         "asthma",
         "bronchitis",
         "cough",
-        "depression",
-        "dermatitis"
+        "depression"
       ],
       "related": [
         "eczema",
@@ -40832,7 +40912,7 @@
         "vitamin-b9",
         "zinc",
         "copper",
-        "omega-6"
+        "dermatitis"
       ]
     },
     "psychosis": {
@@ -41354,6 +41434,12 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000574"
           ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000494"
+          ]
         }
       ],
       "related_conditions": [
@@ -41608,7 +41694,8 @@
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000383",
-            "WAL-CLM-DDDL-000414"
+            "WAL-CLM-DDDL-000414",
+            "WAL-CLM-EPIGEN-000481"
           ]
         },
         {
@@ -41978,9 +42065,10 @@
     "rosacea": {
       "type": "condition",
       "name": "Rosacea",
-      "claim_count": 12,
+      "claim_count": 14,
       "books": [
-        "dddl-3e-2011"
+        "dddl-3e-2011",
+        "epigenetics"
       ],
       "synonyms": [
         "acne rosacea",
@@ -42014,7 +42102,9 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000428",
             "WAL-CLM-DDDL-000429",
-            "WAL-CLM-DDDL-000444"
+            "WAL-CLM-DDDL-000444",
+            "WAL-CLM-EPIGEN-000485",
+            "WAL-CLM-EPIGEN-000497"
           ]
         },
         {
@@ -42038,7 +42128,10 @@
         }
       ],
       "related_conditions": [
-        "acne"
+        "acne",
+        "dermatitis",
+        "eczema",
+        "psoriasis"
       ],
       "related": [
         "acne",
@@ -42047,7 +42140,8 @@
         "vitamin-a",
         "vitamin-b6",
         "vitamin-e",
-        "zinc"
+        "zinc",
+        "dermatitis"
       ]
     },
     "roseola": {
@@ -44329,9 +44423,10 @@
     "tinnitus": {
       "type": "condition",
       "name": "Tinnitus",
-      "claim_count": 18,
+      "claim_count": 20,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "iaiyh",
         "immortality",
         "lets-play-doctor"
@@ -44380,6 +44475,7 @@
             "WAL-CLM-DDDL-000469",
             "WAL-CLM-DDDL-000475",
             "WAL-CLM-DDDL-000485",
+            "WAL-CLM-EPIGEN-000482",
             "WAL-CLM-IAIYH-000012"
           ]
         },
@@ -44401,6 +44497,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000009",
             "WAL-CLM-DDDL-000393",
+            "WAL-CLM-EPIGEN-000490",
             "WAL-CLM-LETS-000017"
           ]
         },
@@ -45406,7 +45503,7 @@
     "vertigo": {
       "type": "condition",
       "name": "Vertigo",
-      "claim_count": 18,
+      "claim_count": 19,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -45461,6 +45558,7 @@
             "WAL-CLM-DDDL-000475",
             "WAL-CLM-DDDL-000536",
             "WAL-CLM-DDDL-000556",
+            "WAL-CLM-EPIGEN-000482",
             "WAL-CLM-IAIYH-000012"
           ]
         },
@@ -45479,6 +45577,7 @@
           "facet": "warning",
           "claim_ids": [
             "WAL-CLM-DDDL-000343",
+            "WAL-CLM-EPIGEN-000490",
             "WAL-CLM-RARE-000418"
           ]
         },

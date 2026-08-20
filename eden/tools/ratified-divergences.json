@@ -2939,6 +2939,34 @@
      "new_in_claims": 5,
      "new_in_sources": 5
     }
+   },
+   {
+    "class_token": "Pinkums",
+    "ours": "Pinkham",
+    "page_prints": "Pinkums",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-19",
+    "evidence": "The Epigenetics book misspells the historical name Lydia E. Pinkham as 'Pinkums' in all 4 occurrences (the Lydia Pinkham 'Vegetable and Herbal Extract for Women's Complaints' passage p.774, three times, plus the back-matter index 'Pinkums, Lydia, 415'). Unambiguously the real person -- Quaker missionary, ancient Native American herbal recipe, sold via newspaper/magazine ads, became an 'American icon': Lydia E. Pinkham, maker of the famous Vegetable Compound. Corrected in the source under the book-typo doctrine and re-snapped 2026-08-19 (claims 479, 484, 492). Vision-confirmed at high magnification that the printed page truly prints 'Pinkums'. The possessive that the page prints 'Pinkums'' (apostrophe only, since the misprint ends in s) is held as 'Pinkham's' (apostrophe-s), the grammatical possessive of the corrected name -- so the front-facing quote reads 'Lydia Pinkham's Vegetable and Herbal Extract'.",
+    "measured_2026-08-19": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 11,
+     "new_in_sources": 7
+    }
+   },
+   {
+    "class_token": "magazine adds",
+    "ours": "magazine ads",
+    "page_prints": "magazine adds",
+    "decided_by": "Luneth",
+    "decided_at": "2026-08-19",
+    "evidence": "Same Lydia Pinkham passage (p.774): the book prints 'sold through newspaper and magazine adds' -- 'adds' is a plain typo for 'ads' (advertisements), made unambiguous by the adjacent 'newspaper' and the marketing context. Corrected under the book-typo doctrine and re-snapped 2026-08-19 (claims 479, 484).",
+    "measured_2026-08-19": {
+     "old_in_claims": 0,
+     "old_in_sources": 0,
+     "new_in_claims": 2,
+     "new_in_sources": 1
+    }
    }
   ],
   "★_the_ratification_found_the_class_was_incomplete": "MEASURING INSTEAD OF COPYING THE LOG CAUGHT A REAL GAP. When these entries were first written from the logged corrections, six of the 36 tokens still had surviving occurrences — and two were READER-FACING, inside sealed verbatims: WAL-CLM-IMMORT-000249 held 'resveratrols, catechens (EGCGs)' and WAL-CLM-RARE-000376 held 'this tissue salt is a constituant of every liquid and solid part of the body'. Six more sat in source text no claim quotes: 'thiamine - Bl' (hk), the index line 'vitamin Bl - 49, 73' sitting directly above 'vitamin B12' (lets-play-doctor), 'a major constituant of water' (rare-earths), 'hair and vitaligo' (epigenetics), 'the Hunza secret of longivity' (lets-play-doctor), and 'motherwort (Leo nurus cardiaca)' (dddl). ★ THE Bl SWEEP HAD BEEN dddl-ONLY: the build-log records '48 EDITS ACROSS ALL SIX BOOKS ... the whole class', but the same token was live in two other books and was never swept there. All 8 were corrected on 2026-08-03 under Luneth's class ratification (applying his decision consistently, not making a new one), each 'Bl' site first verified to name its vitamin adjacently — the standard the original 17 required, because a bare 'Bl'/'B,' can be boron or bismuth. Sealed kv=456. LESSON: 'whole class' in a log is a claim about the world and needs measuring like any other."
