@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "_doctrine": "The pre-registered condition catalog -- the SINGLE home for each condition's identity (display_name), umbrella->subtype structure (umbrella_of), and Wallach's synonym phrasings. Promoted 2026-07-05 (Phase B) from the emergent derived index + eden/tools/{condition-taxonomy,condition-synonyms}.json + corpus_derive DISPLAY_OVERRIDES (all retired). A claim may reference a condition slug ONLY if it appears here (references_resolve gate) -- closing the phantom-slug hole where a typo silently minted a condition. Hand-edited pillar: register a NEW condition here BEFORE mining a claim that maps to it. User is sole writer once sealed. SYNONYM MATCHING is OCR-folded, punctuation-insensitive, all-words-present; significant words of display_name + slug tokens are accepted implicitly, so list only DIFFERENT wordings. UMBRELLA_OF children must be real condition slugs (child->parent only; naming 'cancer' does NOT name 'leukemia'). display_name for the search-only slugs absent from the operational index is humanize(slug).",
-  "sealed_at": "2026-08-19T22:10:26+00:00",
+  "sealed_at": "2026-08-19T23:39:53+00:00",
   "counts": {
     "conditions": 524,
     "umbrellas": 7,
-    "with_synonyms": 142
+    "with_synonyms": 143
   },
   "conditions": {
     "abrasions": {
@@ -80,7 +80,11 @@
       "display_name": "Alkalosis"
     },
     "allergies": {
-      "display_name": "Allergies"
+      "display_name": "Allergies",
+      "synonyms": [
+        "allergic reactions",
+        "allergic reaction"
+      ]
     },
     "alopecia": {
       "display_name": "Alopecia",
@@ -696,7 +700,9 @@
     "diabetes": {
       "display_name": "Diabetes",
       "synonyms": [
-        "type 2 diabetes"
+        "type 2 diabetes",
+        "diabetic",
+        "diabetics"
       ]
     },
     "diaper_rash": {
@@ -1369,7 +1375,8 @@
       "display_name": "Low Libido",
       "synonyms": [
         "loss of libido",
-        "disinterested in sex"
+        "disinterested in sex",
+        "reduced libido"
       ]
     },
     "lung_cancer": {
@@ -1597,7 +1604,8 @@
         "childhood obesity",
         "gain weight",
         "overweight",
-        "weight problem"
+        "weight problem",
+        "obese"
       ]
     },
     "oligospermia": {

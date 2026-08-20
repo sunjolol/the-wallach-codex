@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "_doctrine": "The pre-registered symptom catalog -- the SINGLE home for each symptom's identity (display_name). Promoted 2026-07-05 (Phase B) from the emergent derived symptoms index. A claim may reference a symptom slug ONLY if it appears here (references_resolve gate). Hand-edited pillar: register a NEW symptom here BEFORE mining a claim that maps to it. User is sole writer once sealed. display_name for search-only slugs absent from the operational index is humanize(slug).",
-  "sealed_at": "2026-08-19T22:10:26+00:00",
+  "sealed_at": "2026-08-19T23:39:53+00:00",
   "counts": {
     "symptoms": 164
   },

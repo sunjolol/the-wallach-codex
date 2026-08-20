@@ -697,7 +697,7 @@
     "display_name": "Phosphorus",
     "canon_slug": "phosphorus",
     "category": "mineral",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-IMMORT-000213",
@@ -721,6 +721,7 @@
         "WAL-CLM-DDDL-000350",
         "WAL-CLM-DDDL-000574",
         "WAL-CLM-EPIGEN-000147",
+        "WAL-CLM-IMMORT-000544",
         "WAL-CLM-RARE-000209",
         "WAL-CLM-RARE-000403"
       ],
@@ -827,9 +828,10 @@
     "display_name": "Sulfur",
     "canon_slug": "sulfur",
     "category": "mineral",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_kind": {
       "deficiency_sign": [
+        "WAL-CLM-IMMORT-000535",
         "WAL-CLM-RARE-000223",
         "WAL-CLM-RARE-000275",
         "WAL-CLM-RARE-000303"
@@ -858,9 +860,11 @@
       "arthritis",
       "brittle_nails",
       "collagen_disease",
+      "degenerative_disc_disease",
       "joint_pain",
       "low_back_pain",
       "lupus",
+      "osteoarthritis",
       "osteoporosis",
       "sciatica",
       "sickle_cell_anemia"
@@ -5479,10 +5483,11 @@
     "display_name": "Pantothenic Acid",
     "canon_slug": "vitamin-b5",
     "category": "vitamin",
-    "claim_count": 11,
+    "claim_count": 12,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000038",
+        "WAL-CLM-IMMORT-000547",
         "WAL-CLM-LETS-000021",
         "WAL-CLM-RARE-000236"
       ],
@@ -5649,6 +5654,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "immortality",
       "lets-play-doctor",
       "rare-earths"
     ]
@@ -6093,7 +6099,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 40,
+    "claim_count": 41,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000040",
@@ -6125,7 +6131,8 @@
       "mechanism": [
         "WAL-CLM-DDDL-000044",
         "WAL-CLM-DDDL-000045",
-        "WAL-CLM-IMMORT-000306"
+        "WAL-CLM-IMMORT-000306",
+        "WAL-CLM-IMMORT-000546"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
@@ -6315,10 +6322,11 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 90,
+    "claim_count": 91,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000043",
+        "WAL-CLM-IMMORT-000545",
         "WAL-CLM-LETS-000038"
       ],
       "dose": [
@@ -7403,7 +7411,7 @@
     "display_name": "Flavonoids",
     "canon_slug": "flavonoids",
     "category": "vitamin",
-    "claim_count": 24,
+    "claim_count": 26,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000046",
@@ -7415,7 +7423,9 @@
       ],
       "mechanism": [
         "WAL-CLM-IMMORT-000495",
-        "WAL-CLM-IMMORT-000502"
+        "WAL-CLM-IMMORT-000502",
+        "WAL-CLM-IMMORT-000530",
+        "WAL-CLM-IMMORT-000534"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000505",
@@ -7476,6 +7486,7 @@
       "hay_fever",
       "hemorrhoids",
       "herpes_simplex",
+      "high_cholesterol",
       "immune_depression",
       "inflammation",
       "influenza",

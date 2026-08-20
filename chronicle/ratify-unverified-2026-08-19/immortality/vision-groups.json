@@ -1,0 +1,452 @@
+[
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (23).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (22).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (23).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (24).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000810",
+        "verbatim": "Cornaro was born into Italian nobility, he practiced “a\ndissolute, gluttonous life,” which lead to a disabling ill-health\nby the age of 37. Cornaro was morbidly obese, suffered from\ngout, “stomach fever,” cold temperatures (hypothyroidism)\nand generalized pain (arthritis, fibromyalgia, etc.).",
+        "claim_text": "Wallach points to Luigi Cornaro, whose dissolute, gluttonous life left him morbidly obese and suffering from gout by the age of 37, illustrating gout as a disease of intemperate living.",
+        "coverage": 0.976,
+        "auditor_flags": [
+          "ocr-unverified-number: 37"
+        ],
+        "number_flags": [],
+        "author_note": "Verbatim OCR \"lead to\" should read \"led to\" and \"cold temperatures (hypothyroidism)\" reads as cold intolerance Wallach attributes to hypothyroidism — rendered as plain correct language, not quoted. No fabricated facts: Cornaro cluster is from the verbatim; the diet-drives-disease survey is from tidbit WAL-CLM-EPIGEN-000028 and used only to support Wallach's general lifestyle-causes-disease thesis (it does not name gout)."
+      },
+      {
+        "id": "WAL-CLM-IMMORT-000811",
+        "verbatim": "Cornaro faithfully practiced this Calorie Restricted\ndietary routine for the rest of his life (he never retired, rather\nhe worked his estate from horseback, counseled members\nof the Paduan society as a revered elder and wrote books\non health until the end) - he became lean and his health\nprospered. Despite his sinful younger years, Cornaro lived\nto be 103 years of age and reported in his autobiography that,\n“he was high for his remaining sixty-six years.”",
+        "claim_text": "Wallach recounts that Luigi Cornaro faithfully kept a temperate, calorie-restricted diet for the rest of his life, became lean, saw his health prosper, and lived to be 103.",
+        "coverage": 0.922,
+        "auditor_flags": [
+          "ocr-unverified-number: 103"
+        ],
+        "number_flags": [],
+        "author_note": "§00.A scope flag: neither the verbatim nor any tidbit mentions gout or a gout-specific mechanism — the gout link exists only in the claim's `conditions` tag and `answer_short`. I therefore answered the documented diet-turnaround thesis (Cornaro + calorie restriction) and did NOT assert that Cornaro had or reversed gout, nor invent any gout mechanism. Also: the verbatim ends with an odd quoted phrase (\"he was high for his remaining sixty-six years\") — likely OCR/archaic damage for \"hale\" — so I did not quote or rely on it. All numbers used (1,250–1,800 cal; 150–175 lb; 25–50 years) are present verbatim in tidbits IMMORT-000255 and IMMORT-000259."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (25).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (24).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (25).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (26).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000809",
+        "verbatim": "Because most investigators of CR diets forget the\n\n“without malnutrition” piece it is not surprising that the lab\nanimals on unsupplemented CR diets develop diseases of\nmalnutrition including a significant drop in bone density,\nreduced libido, dysmenorr hea, infertility and wide fluctuations\nin body temperature.",
+        "claim_text": "Wallach warns that under-eating or a calorie-restricted diet without full nutrition brings on diseases of malnutrition — including reduced libido, menstrual problems, and infertility.",
+        "coverage": 0.889,
+        "auditor_flags": [
+          "raw-ocr-book",
+          "ocr-artifact in verbatim: 'dysmenorr hea' (broken 'dysmenorrhea') and 'CR' = calorie-restricted",
+          "gate-safe: verbatim contains 'reduced libido' -> matches erectile_dysfunction keyword 'libido'"
+        ],
+        "number_flags": [],
+        "author_note": "OCR flag: verbatim reads \"dysmenorr hea\" (broken line-wrap) = dysmenorrhea; written as the correct term and glossed as painful periods. The short quoted phrase \"totally disinterested in sex\" is a byte-exact slice of DDDL-000291; the fuller \"TV watching steer\" image was not pasted inline. All calorie numbers, the \"without malnutrition\" concept, and the cholesterol/testosterone mechanism are drawn only from the provided verbatim and tidbit_pool."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (35).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (34).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (35).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (36).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000817",
+        "verbatim": "Most vegans do not seriously supplement heavily and\ncorrectly with a special emphasis on minerals, and as a result\nstrict vegans develop grey hair, receding gums, periodontal\ndisease, blood sugar problems, arthritis, osteoporosis, anemia,\nhypertension, fibromyalgia, chronic fatigue syndrome, cancer,\nliver cirrhosis, cognitive, memory and emotional problems\nbefore five years has elapsed.",
+        "claim_text": "Wallach says strict vegans who do not supplement heavily and correctly with minerals develop grey hair, receding gums, anemia, and other problems before five years have elapsed.",
+        "coverage": 0.981,
+        "auditor_flags": [
+          "ocr-unverified-number: five years"
+        ],
+        "number_flags": [],
+        "author_note": ""
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (45).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (44).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (45).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (46).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000826",
+        "verbatim": "Deficiencies of pantothenic acid appear as dermatitis,\nburning sensations of the feet, pain in the arms and legs, loss of\nappetite, nausea and indigestion",
+        "claim_text": "Wallach attributes burning sensations of the feet and pain in the arms and legs to a deficiency of pantothenic acid (vitamin B5).",
+        "coverage": 0.958,
+        "auditor_flags": [
+          "raw-ocr-verbatim-best-effort-pending-resnap"
+        ],
+        "number_flags": [],
+        "author_note": "Verbatim is clean, no OCR damage. Mechanism (coenzyme A, energy from all three food groups, acetylcholine, water-soluble/daily resupply) drawn from IMMORT-000299 and EPIGEN-000038; companion signs (muscle cramps, depression, tachycardia, fainting) from EPIGEN-000038, which are consistent across the pool. No outside facts introduced."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (46).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (45).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (46).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (47).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000824",
+        "verbatim": "Deficiencies of vitamin B,, can occur when the stomach\npH (acid level) rises toward neutral or alkaline levels and/or\nwhen insufficient amounts of intrinsic factor are produced.\nSurgical resection of or the by-passing of the intrinsic factor-secreting portions of the stomach (fundus and cardia) or of\nthe ileum (celiac disease, Crohn’s disease, etc.) can produce\nvitamin B,, deficiency.\n\nVegans (vegetarians who consume only grains, fruit,\nvegetables and nuts to the complete exclusion of animal products\nand supplements) have an extremely low intake of vitamin B,,\nand are very likely to develop a vitamin B,, deficiency and a\nclassic megaloblastic anemia and a classic and progressive\ndemyelinating neuropathy unless they supplement.",
+        "claim_text": "Wallach says the B12 deficiency that drives a progressive demyelinating neuropathy can develop when stomach acid is too low, intrinsic factor is missing, celiac or Crohn's disease blocks absorption, or the diet is vegan.",
+        "coverage": 0.982,
+        "auditor_flags": [
+          "raw-ocr-verbatim-best-effort-pending-resnap",
+          "ocr-note: 'B,,' is OCR for B12"
+        ],
+        "number_flags": [
+          "12"
+        ],
+        "author_note": "OCR: verbatim renders vitamin B12 as \"B,,\" throughout — written correctly as B12. Salt-restricted-diet cause of low stomach acid and the betaine-HCl / injection / sublingual fixes come from tidbit_pool (IMMORT-000081, HELLS-000036, HELLS-000037), not the verbatim. Gloss of ileum as part of the small intestine supported by IMMORT-000083. Avoided \"on the plate\" per house style."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (47).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (46).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (47).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (48).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000821",
+        "verbatim": "A deficiency of vitamin C is characterized by general\nweakness, poor appetite and growth, anemia, tenderness,\nswollen and inflamed gums, bleeding gums, loose teeth,\nosteoporosis, swollen wrist and ankle joints,",
+        "claim_text": "Wallach says a vitamin C deficiency shows up as swollen and inflamed gums, bleeding gums and loose teeth, along with weakness, anemia and osteoporosis.",
+        "coverage": 1.0,
+        "auditor_flags": [
+          "raw-ocr-source"
+        ],
+        "number_flags": [],
+        "author_note": ""
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (109).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (108).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (109).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (110).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000820",
+        "verbatim": "Phosphorus is part of most proteins and as such\nbecomes problematic because elevated P intake increases Ca\nrequirements when “high protein diets” are consumed. Under\nthose circumstances P can aggravate osteoporosis, arthritis,\nhigh blood pressure, loosen teeth, periodontal disease, etc.\nPhosphorus is present as phytates in cereals and whole grain\nflours, therefore, if bread is made from unleavened flours, the\nphytic acid will complex with Ca, Fe, Zn, and other minerals\nfurther lowering their absorption rate.",
+        "claim_text": "Wallach warns that a high-protein diet and the phytates in cereals and whole-grain flours bind up calcium, iron, zinc and other minerals and lower their absorption, which can loosen teeth and drive periodontal disease.",
+        "coverage": 1.0,
+        "auditor_flags": [
+          "raw-ocr-source"
+        ],
+        "number_flags": [],
+        "author_note": "No OCR damage in the material used. All facts trace to the verbatim (phosphorus in proteins raises Ca requirement; loosens teeth/periodontal disease; phytates in unleavened whole-grain flour bind Ca/Fe/Zn) plus tidbits: RARE-000206 (high-protein diet raises P intake), IMMORT-000215 (phytates = phytic acid = inositol hexaphosphate; required-nutrient/dietary-negative framing), IMMORT-000068 (phytic acid binds calcium into insoluble unabsorbable salts)."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (115).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (114).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (115).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (116).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000806",
+        "verbatim": "Sulfur also occurs in carbohydrates such as heparin,\nan anticoagulant that concentrates in the liver and to lesser\ndegrees other tissues, chondroitin sulfate (cartilage, ligaments,\ntendon, discs, connective tissue, etc.), the vitamins thiamine\n(B,) and biotin have sulfur bound in their molecule.\n\nThe toxic characteristics of arsenic are the result of its\nability to combine with sulfhydryl groups.\n\nA deficiency of sulfur results in osteoarthritis,\nosteoporosis and a degeneration of cartilage, weakened\ntendons, weakened ligaments, erythematosis, sickle cell\nanemia, lupus and other “collagen diseases.”",
+        "claim_text": "Wallach says sulfur is built into the spinal discs, cartilage, tendons and ligaments as chondroitin sulfate, and a sulfur deficiency drives osteoarthritis, osteoporosis and degeneration of that connective tissue.",
+        "coverage": 1.0,
+        "auditor_flags": [],
+        "number_flags": [],
+        "author_note": "Verbatim has OCR damage: thiamine \"(B,)\" = B1, and \"erythematosis\" = erythematosus (as in lupus erythematosus). Neither term was used in the answer — kept focus on the spinal-disc/cartilage question — but flagging per §00.A. Dose (chondroitin sulfate/collagen/glucosamine sulfate 1,000 mg 3x/day) is from tidbit WAL-CLM-DDDL-000051; degenerative-arthritis framing and the Ca/Mg/boron/copper/sulfur cluster from WAL-CLM-RARE-000303 and -000223."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (165).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (164).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (165).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (166).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000734",
+        "verbatim": "Meditation has been shown to lower blood pressure,\nrelax one’s muscles, raise the circulating levels of DHEA (the\n“youth hormone”), lower age-inducing cortisol levels, and\ngenerally support the rejuvenating processes in the body.\n\nAccording to several studies, meditation reduces one’s\nrisk of cancer by 55% and heart disease by 80%.",
+        "claim_text": "Wallach endorses meditation as an anti-aging practice: it lowers blood pressure, raises DHEA (the 'youth hormone'), lowers age-inducing cortisol, and — per several studies he cites — cuts cancer risk by 55% and heart disease risk by 80%.",
+        "coverage": 0.882,
+        "auditor_flags": [
+          "ocr-unverified-number: 55%",
+          "ocr-unverified-number: 80%"
+        ],
+        "number_flags": [],
+        "author_note": "The other tidbits (vitamin E, calcium, flavonoids, vitamin D, salt) share no mechanism with meditation and would have been off-topic padding, so I drew only on DDDL-000006, whose aging→cancer/Alzheimer's/heart-disease framing genuinely parallels the meditation claim's cancer+heart-disease outcome and \"age-inducing cortisol\" language. No fabricated facts, doses, or framework names; both percentages (55%, 80%) and the DHEA/cortisol descriptors come verbatim from the source."
+      },
+      {
+        "id": "WAL-CLM-IMMORT-000814",
+        "verbatim": "Meditation has been shown to lower blood pressure,\nrelax one’s muscles, raise the circulating levels of DHEA (the\n“youth hormone”), lower age-inducing cortisol levels, and\ngenerally support the rejuvenating processes in the body.",
+        "claim_text": "Wallach says meditation has been shown to lower blood pressure, relax the muscles, raise DHEA, and lower cortisol.",
+        "coverage": 0.853,
+        "auditor_flags": [],
+        "number_flags": [],
+        "author_note": ""
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (173).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (172).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (173).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (174).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000815",
+        "verbatim": "They live in simple stone houses without electricity,\ntheir blood pressure is typically 104/72 at age 100;",
+        "claim_text": "Wallach reports the long-lived Caucasus peoples typically have a blood pressure of about 104/72 even at age 100.",
+        "coverage": 1.0,
+        "auditor_flags": [
+          "ocr-unverified-number: 104/72",
+          "ocr-unverified-number: 100"
+        ],
+        "number_flags": [],
+        "author_note": ""
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (175).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (174).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (175).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (176).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000738",
+        "verbatim": "Unfortunately\nin the 1940s, urban Navajo cooks used electricity and gas to\ncook and heat with and so began replacing “culinary” ashes\nwith the more available baking soda - thus began the transition\nfrom the slim wood ash using Navajo shepherds to the obese\nand diabetic baking soda using urban Navajo.",
+        "claim_text": "Wallach traces the Navajo shift into obesity and diabetes to a single 1940s substitution: as urban Navajo cooks moved to electricity and gas, they replaced the mineral-rich 'culinary' wood ash traditionally added to their food with more readily available (mineral-poor) baking soda, marking the transition from the slim wood-ash-using Navajo shepherds to the obese and diabetic baking-soda-using urban Navajo.",
+        "coverage": 1.0,
+        "auditor_flags": [
+          "ocr-damage: adjacent text 'wasmixed withsaltand/ or' spacing lost",
+          "ocr-unverified-number: 1940s (date of transition)"
+        ],
+        "number_flags": [],
+        "author_note": ""
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (184).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (183).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (184).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (185).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000816",
+        "verbatim": "Group 3 - McCarrison fed his third group of rat pups a\ntypical working class English diet of white bread, margarine,\nsugared tea, boiled vegetables, canned meat and cheap jams.\nThese rats developed “diseases of the lungs, diseases of the\nstomach and intestines, and diseases of the nerves - diseases\nfrom which one in every three sick persons among the\ninsured classes in England and Wales suffers. Additionally\nthese rats were nervous and apt to bite their attendants; they\nlived unhappily together, and by the sixteenth day of the\nexperiment they began to kill and eat the weaker ones among\nthem.”",
+        "claim_text": "Wallach cites McCarrison's feeding study in which rats raised on a nutrient-poor processed diet of white bread, margarine, sugared tea and canned meat became nervous, aggressive and unhappy, while well-nourished rats stayed calm.",
+        "coverage": 0.96,
+        "auditor_flags": [],
+        "number_flags": [],
+        "author_note": "Glossed \"chapattis\" (from tidbit IMMORT-000512) as \"whole-grain flatbread\" — a plain-language gloss, no new fact. No OCR damage in the verbatim (curly quotes only). All facts drawn from the verbatim (Group 3 processed diet) and tidbit IMMORT-000512 (the same study's Hunza-diet contrast group)."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (190).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (189).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (190).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (191).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000747",
+        "verbatim": "The 14 Hunza Practices limited to two “mukhanas” or hermaphrodites in the 2,300\nyear history of Hunza.",
+        "claim_text": "Wallach reports that congenital abnormality is virtually unknown among the Hunza - in the entire 2,300-year history of Hunza only two 'mukhanas' (hermaphrodites) have ever been recorded.",
+        "coverage": 0.778,
+        "auditor_flags": [
+          "ocr-unverified-number: two / 2,300 years",
+          "ocr-damage: two-column OCR merge - the subject 'Recorded birth defects are' is fused with the '14 Hunza Practices' list header; intended reading is 'Recorded birth defects are limited to two mukhanas or hermaphrodites in the 2,300 year history of Hunza'"
+        ],
+        "number_flags": [],
+        "author_note": "Verbatim appears OCR-garbled (\"The 14 Hunza Practices limited to two 'mukhanas'...\" does not parse as a sentence); I drew only the clean, unambiguous facts from it — two mukhanas/hermaphrodites recorded in Hunza's 2,300-year history — and did not use the mangled \"14 Hunza Practices\" fragment. The intersex-as-embryonic-deficiency mechanism, the \"genetic accident\" contrast, the longevity context, and the minerals/Fountain-of-Youth capstone all come from the named tidbit_pool claims. Intersex/hermaphrodite terms are named directly in the source material and central to the claim, so surfacing them here is warranted."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (198).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (197).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (198).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (199).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000752",
+        "verbatim": "Bitter melon, or Goya chample (Momordica charantia),\nis a staple in the Okinawan diet which we ate a lot of while\nvisiting Okinawa. Goya or bitter melon, which looks like a\ncucumber with warts, is thought to have been brought to\nthe Ryukyu Kingdom from old China during the Ming and\nManchu dy nasties. It is thought to have been used as a food\nstaple from around 1100 A.D. and as an added benefit it is\nknown to support healthy blood sugar levels in diabetics.",
+        "claim_text": "Wallach notes that bitter melon (Goya), a staple of the Okinawan diet, is known to support healthy blood sugar levels in diabetics.",
+        "coverage": 0.884,
+        "auditor_flags": [
+          "ocr-damage: 'dy nasties' printed for dynasties",
+          "source: raw-ocr unpurified"
+        ],
+        "number_flags": [],
+        "author_note": "Verbatim splits \"dynasties\" as \"dy nasties\" (hard line break); written as the correct plain word. No §00.A issues — every fact traces to the verbatim or tidbit_pool."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (211).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (210).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (211).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (212).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000757",
+        "verbatim": "In 1928, Johanna\nBrandt, a South African healer wrote a book entitled the Grape\nCure, a collection of diseases, including cancer, heart disease\nand diabetes, that would benefit from the consumption of\ndark red grapes - there was something in those red grapes!\nBrandt, however, was considered a charleton by local medical\nassociations and they chased her out of the United States.",
+        "claim_text": "Wallach traces red wine's longevity benefit back to the 1928 Grape Cure, in which South African healer Johanna Brandt claimed dark red grapes could benefit diseases including cancer, heart disease and diabetes; she was branded a charlatan and chased out of the United States, but Wallach's point is that 'there was something in those red grapes.'",
+        "coverage": 1.0,
+        "auditor_flags": [
+          "ocr-damage: 'charleton' printed for 'charlatan'",
+          "ocr-unverified-number: 1928"
+        ],
+        "number_flags": [],
+        "author_note": "§00.A flag: the provided answer_short attributes the Grape Cure to \"what we now call resveratrol,\" but resveratrol appears NOWHERE in the verbatim or tidbit_pool. I deliberately omitted that name and the \"resveratrol\" framing, keeping Wallach's own terms (\"something in those red grapes\") plus the sealed red-wine claim (IMMORT-000500). No OCR damage in the verbatim."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (213).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (212).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (213).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (214).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000764",
+        "verbatim": "In a study, which appeared in the November 11,\n2005, issue of the Journal of Biological Chemistry, investigators\ndemonstrated that resveratrol significantly lowers the levels\nof secreted and intracellular amyloid-beta (Abeta) peptides\nproduced from different cell lines.",
+        "claim_text": "Wallach cites a November 11, 2005 Journal of Biological Chemistry study showing that resveratrol significantly lowers the levels of both secreted and intracellular amyloid-beta (Abeta) peptides produced by different cell lines.",
+        "coverage": 0.816,
+        "auditor_flags": [
+          "ocr-unverified-number: November 11, 2005"
+        ],
+        "number_flags": [],
+        "author_note": "The verbatim names \"amyloid-beta (Abeta) peptides\" but does NOT itself state that these peptides form Alzheimer's plaques or cause the disease (the amyloid-cascade mechanism), so per §00.A I did not assert that link as a Wallach fact — I answered the literal question (resveratrol lowers Abeta) and framed the Alzheimer's relevance only through Wallach's own broader prevention material. \"Abeta\" preserved as written in the source. Glosses of \"secreted\"/\"intracellular\" are plain-language explanations of the verbatim's own terms, not added facts."
+      },
+      {
+        "id": "WAL-CLM-IMMORT-000767",
+        "verbatim": "However, after a year, the mice which were\nalso receiving the resveratrol were healthier, they did not\ndevelop the insulin resistance, heart disease or liver damage\nthat their counterparts did. In addition the mice getting the\nresveratrol had a 31% lower risk of death.",
+        "claim_text": "In a Harvard Medical School and National Institute of Aging mouse study Wallach cites, mice on a high-fat, high-calorie diet that also received resveratrol stayed healthier, avoiding the insulin resistance, heart disease and liver damage of their counterparts, and had a 31% lower risk of death.",
+        "coverage": 0.886,
+        "auditor_flags": [
+          "ocr-unverified-number: 31%"
+        ],
+        "number_flags": [],
+        "author_note": "Study attribution \"Harvard Medical School and National Institute of Aging\" is not in the verbatim slice (which begins \"However, after a year...\") but is carried by the sealed claim_text and the approved answer_short, so I preserved it. No OCR damage. Deliberately did NOT describe resveratrol's chemical class or dietary source (e.g. polyphenol/antioxidant/grapes/red wine) — none of that appears in the provided material; the cocoa and coffee tidbits are framed only as Wallach's parallel findings, not as a shared mechanism with resveratrol."
+      }
+    ]
+  },
+  {
+    "primary_shot": "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (222).png",
+    "screenshots": [
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (221).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (222).png",
+      "C:/Users/Light/Desktop/claude/health expert\\temporary/The Age Beaters and Their Universal Currency for Immortality by Joel D. Wallach and MA. LAN\\Screenshot (223).png"
+    ],
+    "claims": [
+      {
+        "id": "WAL-CLM-IMMORT-000771",
+        "verbatim": "Chocolate is a rich source of cocoagin, caffeine,\ntheobromine, flavanol and flavonoids. These compounds\nthermogenic (energy generating) properties and\nantioxidant properties that make bitter chocolate a great\nenergy generator, a great weight loss product and a super free\nradical neutralizing herb.",
+        "claim_text": "Wallach says chocolate is a rich source of cocoagin, caffeine, theobromine, flavanol and flavonoids - compounds that have both thermogenic (energy-generating) and antioxidant properties - making bitter chocolate, in his framing, a great energy generator, a great weight-loss product and a powerful free-radical-neutralizing herb.",
+        "coverage": 0.878,
+        "auditor_flags": [
+          "ocr-damage: OCR dropped the verb 'have' before 'thermogenic'; it appears out of position on a later line",
+          "ocr-damage: 'cocoagin' as printed"
+        ],
+        "number_flags": [],
+        "author_note": "OCR: verbatim reads \"These compounds thermogenic ... properties\" — the verb \"have\" is dropped; I wrote it as the compounds carrying/having thermogenic and antioxidant properties. No facts, numbers, or terms altered. Kept Wallach's own term \"cocoagin\" as written. ORAC 20,000-25,000/day is Wallach's optimal antioxidant intake figure (from the cataract tidbit) applied here as the general daily antioxidant target."
+      },
+      {
+        "id": "WAL-CLM-IMMORT-000772",
+        "verbatim": "Anthocyanins are unusual in that they prevent and\nrepair free radical damage to small blood vessels. Damage\nto blood vessel’s walls (inflammation) is the direct cause of\natherosclerosis, coronary thrombosisand stroke. Anthocyanins\ncan block histamine response, reduce the affects of allergic\nreactions, inflammation and irritation. Several studies showed\nthat anthocyanins can stop the inflammation associated with\narthritis, gastric ulcers, diabetes and cardiovascular disease.",
+        "claim_text": "Wallach describes anthocyanins - a subgroup of flavonoids - as unusual in that they prevent and repair free-radical damage to the small blood vessels, whose inflamed walls he calls the direct cause of atherosclerosis, coronary thrombosis and stroke. He says anthocyanins also block the histamine response and can stop the inflammation associated with arthritis, gastric ulcers, diabetes and cardiovascular disease.",
+        "coverage": 1.0,
+        "auditor_flags": [
+          "ocr-damage: 'thrombosisand' printed as one word",
+          "ocr-damage: 'affects' printed for 'effects'"
+        ],
+        "number_flags": [],
+        "author_note": "The current claim_text calls anthocyanins \"a subgroup of flavonoids,\" but that classification is not in the verbatim or any tidbit_pool claim, so I omitted it per §00.A (the flavonoid/bioflavonoid tidbits describe flavonoids generally and can't be safely applied to anthocyanins without that missing taxonomic link). Verbatim OCR issues (not quoted inline): \"coronary thrombosisand stroke\" is missing a space, and \"the affects of allergic reactions\" should read \"effects.\" Atherosclerosis and clot glosses are grounded in tidbit WAL-CLM-IMMORT-000155 (\"fatty-plaque buildup,\" \"blood clots, thrombosis\")."
+      },
+      {
+        "id": "WAL-CLM-IMMORT-000773",
+        "verbatim": "Catechins and epicatechins are phytonutrients that\nadd to chocolate’s disease relieving arsenal. Studies show\nthat catechins and epicatechins prevent the creation of\ncarcinogens, and they initiate and support the body’s inherent\n“detoxification” and defense processes.",
+        "claim_text": "Wallach says the catechins and epicatechins in chocolate prevent the creation of carcinogens and initiate and support the body's own detoxification and defense processes, adding them to what he calls chocolate's disease-relieving arsenal.",
+        "coverage": 0.971,
+        "auditor_flags": [],
+        "number_flags": [],
+        "author_note": ""
+      },
+      {
+        "id": "WAL-CLM-IMMORT-000777",
+        "verbatim": "Cacao butter, the fat in chocolate, is comprised of\nstearic acid (34%), palmitic acid (20%) and oleic acid (30%).\nBoth stearic and palmitic acids are saturated fats; oleic acid is\na mono-saturated fat that is also found in olive oil.",
+        "claim_text": "Wallach gives the fat composition of cacao butter, the fat in chocolate, as stearic acid (34%), palmitic acid (20%) and oleic acid (30%); stearic and palmitic are saturated fats, while oleic acid is a mono-unsaturated fat also found in olive oil.",
+        "coverage": 0.927,
+        "auditor_flags": [
+          "ocr-unverified-number: stearic acid 34%",
+          "ocr-unverified-number: palmitic acid 20%",
+          "ocr-unverified-number: oleic acid 30%"
+        ],
+        "number_flags": [],
+        "author_note": "OCR fix: verbatim reads \"oleic acid is a mono-saturated fat\" — corrected to \"mono-unsaturated\" (as the claim_text and tidbit HELLS-000067 both confirm; oleic acid is monounsaturated). No other §00.A issues; all fats, percentages, the Harvard 136-study review, stearic-acid metabolism point, and the three flavonoids come directly from the verbatim and IMMORT-000502."
+      },
+      {
+        "id": "WAL-CLM-IMMORT-000778",
+        "verbatim": "Studies published in the Journal of the American College\nof Nutrition, reported that chocolate does not raise cholesterol\nor increase LDL.\n\nIn a 2003 issue of the journal, Hypertension, it was\nreported that the flavanoids in cacao could help increase\nblood flow to the heart, brain, hands and legs.",
+        "claim_text": "Wallach cites studies reporting that chocolate does not raise cholesterol or increase LDL (Journal of the American College of Nutrition) and that the flavonoids in cacao can help increase blood flow to the heart, brain, hands and legs (Hypertension, 2003).",
+        "coverage": 0.878,
+        "auditor_flags": [],
+        "number_flags": [],
+        "author_note": "Verbatim OCR spells it \"flavanoids\"; corrected to the standard term \"flavonoids\" in the answer. All facts sourced: cholesterol/LDL and 2003 Hypertension blood-flow claims from the verbatim (self); stearic-acid mechanism, Harvard 136-study review, and the three named flavonoid classes from WAL-CLM-IMMORT-000502; the broader flavonoid cardiovascular actions (clotting/thrombus/platelet, atherosclerosis, blood pressure) from WAL-CLM-EPIGEN-000303. No LDL \"good/bad\" value framing added since the material does not state it."
+      },
+      {
+        "id": "WAL-CLM-IMMORT-000812",
+        "verbatim": "Anthocyanins are unusual in that they prevent and\nrepair free radical damage to small blood vessels. Damage\nto blood vessel’s walls (inflammation) is the direct cause of\natherosclerosis, coronary thrombosisand stroke. Anthocyanins\ncan block histamine response, reduce the affects of allergic\nreactions, inflammation and irritation.",
+        "claim_text": "Wallach says anthocyanins -- the pigments in deeply colored fruits -- can block the histamine response and reduce allergic reactions, inflammation, and irritation.",
+        "coverage": 1.0,
+        "auditor_flags": [
+          "ocr-typo-preserved: 'thrombosisand', 'the affects'"
+        ],
+        "number_flags": [],
+        "author_note": "OCR in verbatim: \"coronary thrombosisand stroke\" is missing a space (thrombosis and stroke); \"reduce the affects of allergic reactions\" should read \"effects\" — corrected in the answer. Wove in histidine-to-histamine context from WAL-CLM-DDDL-000280 to gloss what histamine is; skipped the acne-rosacea and salt/achlorhydria tidbits as unrelated to anthocyanins."
+      }
+    ]
+  }
+]

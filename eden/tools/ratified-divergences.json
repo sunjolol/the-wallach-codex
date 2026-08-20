@@ -2201,7 +2201,99 @@
     "batch_2026-08-02 item 21 reads 'hells-kitchen, 62 edits over 52 claims' with no per-claim record, so it cannot be verified from the log at all."
    ],
    "_how_it_was_verified": "Every applied correction was re-asserted PRESENT in the sealed shard after the seal — not merely the defect absent (handoff trap #4 / memory a-gate-can-be-green-because-of-the-defect). 34 assertions, 0 failures, plus a corpus-wide residue sweep proving all six old tokens are 0 in claims AND 0 in sources. Board 84/84, corpus_verify PASS at knowledge_version=455."
-  }
+  },
+  "batch_2026-08-19-immortality-landing": [
+   {
+    "claim": "WAL-CLM-IMMORT-000525",
+    "was": "The 14 Hunza Practices limited to two “mukhanas”",
+    "now": "Recorded birth defects are limited to two “mukhanas”",
+    "basis": "two-column OCR merge dropped the sentence subject (bottom of p.354) and fused the page header '14 Hunza Practices' onto the p.355 continuation; page reads 'Recorded birth defects are limited to two mukhanas or hermaphrodites in the 2,300 year history of Hunza'. vision-confirmed Screenshot (190). digits two/2,300 unchanged."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000526",
+    "was": "dy nasties",
+    "now": "dynasties",
+    "basis": "hard line-break split of 'dynasties'. vision-confirmed Screenshot (198)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000527",
+    "was": "charleton",
+    "now": "charlatan",
+    "basis": "page prints Wallach's misspelling 'charleton'; corrected per standing rule that clear Wallach/OCR misspellings are fixed. vision-confirmed the printed page reads 'charleton', Screenshot (211)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000530",
+    "was": "cocoagin",
+    "now": "cocoa",
+    "basis": "Luneth-ruled 2026-08-19: 'cocoagin' is meant to be 'cocoa'. page prints 'cocoagin', vision-confirmed Screenshot (222)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000530",
+    "was": "These compounds thermogenic (energy generating) properties",
+    "now": "These compounds have thermogenic (energy generating) properties",
+    "basis": "OCR dropped the verb 'have'; it prints out-of-position on a later line ('herb.\\n\\nhave'). page reads 'These compounds have thermogenic...'. vision-confirmed Screenshot (222)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000531 + WAL-CLM-IMMORT-000539",
+    "was": "coronary thrombosisand stroke",
+    "now": "coronary thrombosis and stroke",
+    "basis": "line-wrap fused 'thrombosis and' into one token; shared anthocyanins span. vision-confirmed Screenshot (222)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000531 + WAL-CLM-IMMORT-000539",
+    "was": "reduce the affects of allergic reactions",
+    "now": "reduce the effects of allergic reactions",
+    "basis": "wrong word 'affects'->'effects'; page prints 'affects' (Wallach error), corrected. shared anthocyanins span. vision-confirmed Screenshot (222)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000533",
+    "was": "oleic acid is a mono-saturated fat",
+    "now": "oleic acid is a mono-unsaturated fat",
+    "basis": "page prints typo 'mono-saturated' (no such class); oleic acid is monounsaturated (basic chemistry + corroborated by HELLS-000067). the three fat percentages (34/20/30%) unchanged and vision-confirmed. Screenshot (222)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000534",
+    "was": "flavanoids",
+    "now": "flavonoids",
+    "basis": "misspelling; page prints 'flavanoids'. vision-confirmed Screenshot (222)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000535",
+    "was": "thiamine (B,)",
+    "now": "thiamine (B1)",
+    "basis": "destroyed subscript: '(B,)' is OCR for thiamine B1. vision-confirmed Screenshot (115)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000535",
+    "was": "erythematosis",
+    "now": "erythematosus",
+    "basis": "Luneth-ruled 2026-08-19: misspelling of 'erythematosus' (as in lupus erythematosus). page prints 'erythematosis'. vision-confirmed Screenshot (115)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000536",
+    "was": "dysmenorr hea",
+    "now": "dysmenorrhea",
+    "basis": "line-wrap split of 'dysmenorrhea'. vision-confirmed Screenshot (25)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000537",
+    "was": "which lead to a disabling ill-health",
+    "now": "which led to a disabling ill-health",
+    "basis": "tense typo 'lead'->'led'; page prints 'lead'. vision-confirmed Screenshot (23)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000546",
+    "was": "vitamin B,, (x4)",
+    "now": "vitamin B12 (x4)",
+    "basis": "destroyed subscript: 'B,,' is OCR for B12, 4 occurrences within the span. vision-confirmed all four against the printed page, Screenshot (46)."
+   },
+   {
+    "claim": "WAL-CLM-IMMORT-000538",
+    "was": "he was high for his remaining sixty-six years",
+    "now": "he was high for his remaining sixty-six years (UNCHANGED - HELD)",
+    "basis": "Luneth-ruled 2026-08-19 after reading the page himself (Screenshot 23): NOT a typo. Wallach's figure of speech - Cornaro felt great ('high') for his last 66 years (103 - reform at 37), a nod to the dissolute 'high' living he had quit. PRESERVE byte-exact; do NOT 'correct' to 'hale' in any future audit."
+   }
+  ]
  },
  "_classes": [
   {

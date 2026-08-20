@@ -997,8 +997,8 @@
       "symbol": "P",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 18,
-      "distinct_claim_count": 34,
+      "claim_count": 19,
+      "distinct_claim_count": 35,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -1083,6 +1083,7 @@
             "WAL-CLM-DDDL-000344",
             "WAL-CLM-EPIGEN-000147",
             "WAL-CLM-IMMORT-000070",
+            "WAL-CLM-IMMORT-000544",
             "WAL-CLM-RARE-000209"
           ]
         },
@@ -1149,9 +1150,9 @@
         "arthritis",
         "kidney_stones",
         "osteoporosis",
+        "periodontal_disease",
         "pica",
-        "anorexia",
-        "anxiety"
+        "anorexia"
       ]
     },
     "sulfur": {
@@ -1161,8 +1162,8 @@
       "symbol": "S",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 12,
-      "distinct_claim_count": 26,
+      "claim_count": 13,
+      "distinct_claim_count": 27,
       "books": [
         "dddl-3e-2011",
         "immortality",
@@ -1235,6 +1236,7 @@
             "WAL-CLM-DDDL-000257",
             "WAL-CLM-IMMORT-000381",
             "WAL-CLM-IMMORT-000382",
+            "WAL-CLM-IMMORT-000535",
             "WAL-CLM-LETS-000495",
             "WAL-CLM-RARE-000223",
             "WAL-CLM-RARE-000303",
@@ -1284,8 +1286,10 @@
         "arthritis",
         "brittle_nails",
         "collagen_disease",
+        "degenerative_disc_disease",
         "joint_pain",
         "lupus",
+        "osteoarthritis",
         "osteoporosis",
         "sickle_cell_anemia"
       ],
@@ -1658,7 +1662,7 @@
       "category": "mineral",
       "is_essential": true,
       "claim_count": 147,
-      "distinct_claim_count": 197,
+      "distinct_claim_count": 198,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -1839,6 +1843,7 @@
             "WAL-CLM-IMMORT-000225",
             "WAL-CLM-IMMORT-000291",
             "WAL-CLM-IMMORT-000483",
+            "WAL-CLM-IMMORT-000544",
             "WAL-CLM-RARE-000099",
             "WAL-CLM-RARE-000106",
             "WAL-CLM-RARE-000275",
@@ -11703,11 +11708,12 @@
       "symbol": "B5",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 11,
-      "distinct_claim_count": 17,
+      "claim_count": 12,
+      "distinct_claim_count": 18,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -11778,6 +11784,7 @@
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000038",
+            "WAL-CLM-IMMORT-000547",
             "WAL-CLM-RARE-000236"
           ]
         },
@@ -12313,8 +12320,8 @@
       "symbol": "B12",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 40,
-      "distinct_claim_count": 73,
+      "claim_count": 41,
+      "distinct_claim_count": 74,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12410,6 +12417,7 @@
             "WAL-CLM-IMMORT-000080",
             "WAL-CLM-IMMORT-000356",
             "WAL-CLM-IMMORT-000357",
+            "WAL-CLM-IMMORT-000546",
             "WAL-CLM-LETS-000035",
             "WAL-CLM-RARE-000115",
             "WAL-CLM-RARE-000238"
@@ -12549,8 +12557,8 @@
       "symbol": "C",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 90,
-      "distinct_claim_count": 115,
+      "claim_count": 91,
+      "distinct_claim_count": 116,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12624,6 +12632,7 @@
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000207",
+            "WAL-CLM-IMMORT-000545",
             "WAL-CLM-LETS-000038",
             "WAL-CLM-LETS-000428",
             "WAL-CLM-LETS-000499"
@@ -14006,8 +14015,8 @@
       "symbol": "Fl",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 24,
-      "distinct_claim_count": 34,
+      "claim_count": 26,
+      "distinct_claim_count": 36,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -14086,7 +14095,9 @@
             "WAL-CLM-EPIGEN-000178",
             "WAL-CLM-IMMORT-000340",
             "WAL-CLM-IMMORT-000495",
-            "WAL-CLM-IMMORT-000502"
+            "WAL-CLM-IMMORT-000502",
+            "WAL-CLM-IMMORT-000530",
+            "WAL-CLM-IMMORT-000534"
           ]
         },
         {
@@ -16875,9 +16886,10 @@
     "allergies": {
       "type": "condition",
       "name": "Allergies",
-      "claim_count": 10,
+      "claim_count": 12,
       "books": [
         "dddl-3e-2011",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -16902,12 +16914,20 @@
         "vitamin-c",
         "zinc"
       ],
-      "record": [],
-      "record_claim_count": 0,
+      "record": [
+        {
+          "kind": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000531"
+          ]
+        }
+      ],
+      "record_claim_count": 1,
       "search": [
         {
           "facet": "mechanism",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000539",
             "WAL-CLM-RARE-000405"
           ]
         },
@@ -16953,22 +16973,23 @@
       ],
       "related_conditions": [
         "asthma",
-        "food_allergy",
         "arthritis",
+        "food_allergy",
+        "atherosclerosis",
         "cancer",
+        "cardiovascular_disease",
         "cystic_fibrosis",
-        "migraine",
-        "respiratory_disease"
+        "migraine"
       ],
       "related": [
         "asthma",
+        "arthritis",
         "flavonoids",
         "food_allergy",
         "vitamin-c",
-        "arthritis",
+        "atherosclerosis",
         "cancer",
-        "cystic_fibrosis",
-        "migraine"
+        "cardiovascular_disease"
       ]
     },
     "alopecia": {
@@ -17059,6 +17080,7 @@
             "WAL-CLM-EPIGEN-000038",
             "WAL-CLM-EPIGEN-000042",
             "WAL-CLM-IMMORT-000328",
+            "WAL-CLM-IMMORT-000543",
             "WAL-CLM-LETS-000003",
             "WAL-CLM-LETS-000044",
             "WAL-CLM-RARE-000264"
@@ -17242,7 +17264,8 @@
         {
           "facet": "mechanism",
           "claim_ids": [
-            "WAL-CLM-EPIGEN-000468"
+            "WAL-CLM-EPIGEN-000468",
+            "WAL-CLM-IMMORT-000528"
           ]
         },
         {
@@ -17641,6 +17664,8 @@
             "WAL-CLM-EPIGEN-000083",
             "WAL-CLM-IMMORT-000109",
             "WAL-CLM-IMMORT-000126",
+            "WAL-CLM-IMMORT-000543",
+            "WAL-CLM-IMMORT-000546",
             "WAL-CLM-LETS-000003",
             "WAL-CLM-LETS-000010",
             "WAL-CLM-LETS-000014",
@@ -18277,7 +18302,8 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000334",
-            "WAL-CLM-DDDL-000500"
+            "WAL-CLM-DDDL-000500",
+            "WAL-CLM-IMMORT-000542"
           ]
         },
         {
@@ -18534,7 +18560,7 @@
     "arthritis": {
       "type": "condition",
       "name": "Arthritis",
-      "claim_count": 39,
+      "claim_count": 40,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -18641,7 +18667,8 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000050",
             "WAL-CLM-DDDL-000451",
-            "WAL-CLM-IMMORT-000019"
+            "WAL-CLM-IMMORT-000019",
+            "WAL-CLM-IMMORT-000531"
           ]
         },
         {
@@ -18842,7 +18869,7 @@
     "atherosclerosis": {
       "type": "condition",
       "name": "Atherosclerosis",
-      "claim_count": 5,
+      "claim_count": 6,
       "books": [
         "epigenetics",
         "immortality",
@@ -18877,6 +18904,12 @@
       ],
       "record_claim_count": 4,
       "search": [
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000531"
+          ]
+        },
         {
           "facet": "warning",
           "claim_ids": [
@@ -19892,7 +19925,7 @@
     "birth_defects": {
       "type": "condition",
       "name": "Birth Defects",
-      "claim_count": 29,
+      "claim_count": 30,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -20014,6 +20047,7 @@
         {
           "facet": "history",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000525",
             "WAL-CLM-LETS-000480"
           ]
         }
@@ -20212,9 +20246,10 @@
     "bleeding_gums": {
       "type": "condition",
       "name": "Bleeding Gums",
-      "claim_count": 3,
+      "claim_count": 4,
       "books": [
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -20249,6 +20284,12 @@
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000164"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000545"
           ]
         }
       ],
@@ -21384,7 +21425,7 @@
     "cancer": {
       "type": "condition",
       "name": "Cancer",
-      "claim_count": 74,
+      "claim_count": 76,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -21407,6 +21448,7 @@
         "WAL-CLM-DDDL-000313",
         "WAL-CLM-EPIGEN-000078",
         "WAL-CLM-IMMORT-000096",
+        "WAL-CLM-IMMORT-000523",
         "WAL-CLM-LETS-000178",
         "WAL-CLM-LETS-000342",
         "WAL-CLM-LETS-000344",
@@ -21495,6 +21537,7 @@
             "WAL-CLM-IMMORT-000396",
             "WAL-CLM-IMMORT-000495",
             "WAL-CLM-IMMORT-000508",
+            "WAL-CLM-IMMORT-000532",
             "WAL-CLM-LETS-000180",
             "WAL-CLM-LETS-000181",
             "WAL-CLM-LETS-000182",
@@ -21523,6 +21566,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000313",
             "WAL-CLM-HELLS-000023",
+            "WAL-CLM-IMMORT-000523",
             "WAL-CLM-LETS-000111",
             "WAL-CLM-LETS-000178",
             "WAL-CLM-LETS-000342",
@@ -21549,6 +21593,12 @@
             "WAL-CLM-RARE-000231",
             "WAL-CLM-RARE-000269",
             "WAL-CLM-RARE-000355"
+          ]
+        },
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000527"
           ]
         },
         {
@@ -22044,7 +22094,7 @@
     "cardiovascular_disease": {
       "type": "condition",
       "name": "Cardiovascular Disease",
-      "claim_count": 4,
+      "claim_count": 9,
       "books": [
         "immortality",
         "lets-play-doctor",
@@ -22058,6 +22108,7 @@
         "heart problems"
       ],
       "protocol_claim_ids": [
+        "WAL-CLM-IMMORT-000523",
         "WAL-CLM-LETS-000295"
       ],
       "restore": [
@@ -22079,29 +22130,45 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-IMMORT-000496",
-            "WAL-CLM-IMMORT-000502"
+            "WAL-CLM-IMMORT-000502",
+            "WAL-CLM-IMMORT-000529",
+            "WAL-CLM-IMMORT-000531",
+            "WAL-CLM-IMMORT-000534"
           ]
         },
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000523",
             "WAL-CLM-LETS-000295"
+          ]
+        },
+        {
+          "facet": "basics",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000527"
           ]
         }
       ],
       "related_conditions": [
+        "cancer",
         "diabetes",
+        "allergies",
+        "arthritis",
+        "atherosclerosis",
         "heart_attack",
-        "rheumatoid_arthritis"
+        "high_cholesterol",
+        "insulin_resistance"
       ],
       "related": [
+        "cancer",
         "diabetes",
         "flavonoids",
+        "allergies",
+        "arthritis",
+        "atherosclerosis",
         "heart_attack",
-        "rheumatoid_arthritis",
-        "selenium",
-        "silica",
-        "vitamin-e"
+        "high_cholesterol"
       ]
     },
     "carpal_tunnel_syndrome": {
@@ -22432,6 +22499,12 @@
           "facet": "warning",
           "claim_ids": [
             "WAL-CLM-LETS-000210"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000546"
           ]
         },
         {
@@ -24792,6 +24865,12 @@
           "claim_ids": [
             "WAL-CLM-LETS-000238"
           ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000546"
+          ]
         }
       ],
       "related_conditions": [
@@ -25267,14 +25346,15 @@
     "degenerative_disc_disease": {
       "type": "condition",
       "name": "Degenerative Disc Disease",
-      "claim_count": 2,
+      "claim_count": 3,
       "books": [
         "immortality"
       ],
       "synonyms": [],
       "protocol_claim_ids": [],
       "restore": [
-        "copper"
+        "copper",
+        "sulfur"
       ],
       "record": [
         {
@@ -25291,7 +25371,14 @@
         }
       ],
       "record_claim_count": 2,
-      "search": [],
+      "search": [
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000535"
+          ]
+        }
+      ],
       "related_conditions": [
         "aneurysm",
         "arthritis",
@@ -25893,7 +25980,7 @@
     "diabetes": {
       "type": "condition",
       "name": "Diabetes",
-      "claim_count": 32,
+      "claim_count": 35,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -25910,6 +25997,7 @@
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000048",
         "WAL-CLM-DDDL-000049",
+        "WAL-CLM-IMMORT-000526",
         "WAL-CLM-LETS-000246",
         "WAL-CLM-LETS-000388",
         "WAL-CLM-RARE-000280"
@@ -25972,6 +26060,7 @@
             "WAL-CLM-IMMORT-000478",
             "WAL-CLM-IMMORT-000496",
             "WAL-CLM-IMMORT-000508",
+            "WAL-CLM-IMMORT-000524",
             "WAL-CLM-RARE-000255"
           ]
         },
@@ -25980,6 +26069,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000048",
             "WAL-CLM-DDDL-000225",
+            "WAL-CLM-IMMORT-000526",
             "WAL-CLM-LETS-000246",
             "WAL-CLM-LETS-000509"
           ]
@@ -26012,6 +26102,7 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000222",
             "WAL-CLM-HELLS-000041",
+            "WAL-CLM-IMMORT-000527",
             "WAL-CLM-LETS-000116"
           ]
         },
@@ -26047,16 +26138,16 @@
         "coronary_artery_disease",
         "depression",
         "high_cholesterol",
+        "obesity",
         "adhd",
-        "anxiety",
-        "arthritis"
+        "anxiety"
       ],
       "related": [
         "chromium",
         "vanadium",
         "hypoglycemia",
-        "zinc",
         "cancer",
+        "zinc",
         "coronary_artery_disease",
         "depression",
         "high_cholesterol"
@@ -29090,9 +29181,10 @@
     "gout": {
       "type": "condition",
       "name": "Gout",
-      "claim_count": 6,
+      "claim_count": 7,
       "books": [
         "dddl-3e-2011",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -29157,16 +29249,25 @@
           "claim_ids": [
             "WAL-CLM-RARE-000364"
           ]
+        },
+        {
+          "facet": "biography",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000537",
+            "WAL-CLM-IMMORT-000538"
+          ]
         }
       ],
       "related_conditions": [
-        "arthritis"
+        "arthritis",
+        "obesity"
       ],
       "related": [
         "arthritis",
         "vitamin-b9",
         "copper",
-        "molybdenum"
+        "molybdenum",
+        "obesity"
       ]
     },
     "graves_disease": {
@@ -29204,7 +29305,7 @@
     "gray_hair": {
       "type": "condition",
       "name": "Gray Hair",
-      "claim_count": 1,
+      "claim_count": 2,
       "books": [
         "immortality"
       ],
@@ -29222,7 +29323,14 @@
         }
       ],
       "record_claim_count": 1,
-      "search": [],
+      "search": [
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000543"
+          ]
+        }
+      ],
       "related_conditions": [
         "adhd",
         "anemia",
@@ -30202,7 +30310,7 @@
     "high_cholesterol": {
       "type": "condition",
       "name": "High Cholesterol",
-      "claim_count": 20,
+      "claim_count": 21,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -30260,7 +30368,8 @@
             "WAL-CLM-DDDL-000446",
             "WAL-CLM-DDDL-000447",
             "WAL-CLM-HELLS-000104",
-            "WAL-CLM-HELLS-000105"
+            "WAL-CLM-HELLS-000105",
+            "WAL-CLM-IMMORT-000534"
           ]
         },
         {
@@ -30867,7 +30976,14 @@
         }
       ],
       "record_claim_count": 3,
-      "search": [],
+      "search": [
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000542"
+          ]
+        }
+      ],
       "related_conditions": [
         "peripheral_neuropathy",
         "adhd",
@@ -31091,7 +31207,8 @@
             "WAL-CLM-DDDL-000476",
             "WAL-CLM-DDDL-000477",
             "WAL-CLM-DDDL-000478",
-            "WAL-CLM-DDDL-000483"
+            "WAL-CLM-DDDL-000483",
+            "WAL-CLM-IMMORT-000540"
           ]
         },
         {
@@ -31125,7 +31242,8 @@
           "facet": "history",
           "claim_ids": [
             "WAL-CLM-HELLS-000062",
-            "WAL-CLM-HELLS-000063"
+            "WAL-CLM-HELLS-000063",
+            "WAL-CLM-IMMORT-000541"
           ]
         }
       ],
@@ -32229,7 +32347,7 @@
     "infertility": {
       "type": "condition",
       "name": "Infertility",
-      "claim_count": 18,
+      "claim_count": 19,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -32315,6 +32433,7 @@
             "WAL-CLM-IMMORT-000201",
             "WAL-CLM-IMMORT-000319",
             "WAL-CLM-IMMORT-000349",
+            "WAL-CLM-IMMORT-000536",
             "WAL-CLM-LETS-000030",
             "WAL-CLM-LETS-000044",
             "WAL-CLM-RARE-000229",
@@ -32643,9 +32762,10 @@
     "insulin_resistance": {
       "type": "condition",
       "name": "Insulin Resistance",
-      "claim_count": 1,
+      "claim_count": 2,
       "books": [
-        "hells-kitchen"
+        "hells-kitchen",
+        "immortality"
       ],
       "synonyms": [],
       "protocol_claim_ids": [],
@@ -32657,6 +32777,12 @@
       "record_claim_count": 0,
       "search": [
         {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000529"
+          ]
+        },
+        {
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-HELLS-000097"
@@ -32665,14 +32791,18 @@
       ],
       "related_conditions": [
         "anxiety",
+        "cardiovascular_disease",
         "depression",
-        "hypoglycemia"
+        "hypoglycemia",
+        "liver_disease"
       ],
       "related": [
         "anxiety",
+        "cardiovascular_disease",
         "chromium",
         "depression",
         "hypoglycemia",
+        "liver_disease",
         "vanadium"
       ]
     },
@@ -34609,10 +34739,11 @@
     "liver_disease": {
       "type": "condition",
       "name": "Liver Disease",
-      "claim_count": 26,
+      "claim_count": 27,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -34689,7 +34820,8 @@
         {
           "facet": "mechanism",
           "claim_ids": [
-            "WAL-CLM-DDDL-000010"
+            "WAL-CLM-DDDL-000010",
+            "WAL-CLM-IMMORT-000529"
           ]
         },
         {
@@ -34842,7 +34974,7 @@
     "low_libido": {
       "type": "condition",
       "name": "Low Libido",
-      "claim_count": 1,
+      "claim_count": 2,
       "books": [
         "immortality"
       ],
@@ -34858,11 +34990,20 @@
         }
       ],
       "record_claim_count": 1,
-      "search": [],
+      "search": [
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000536"
+          ]
+        }
+      ],
       "related_conditions": [
+        "infertility",
         "menopause"
       ],
       "related": [
+        "infertility",
         "menopause"
       ]
     },
@@ -35290,6 +35431,18 @@
           "facet": "stance",
           "claim_ids": [
             "WAL-CLM-LETS-000082"
+          ]
+        },
+        {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000542"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000536"
           ]
         }
       ],
@@ -37068,9 +37221,10 @@
     "neuropathy": {
       "type": "condition",
       "name": "Neuropathy",
-      "claim_count": 4,
+      "claim_count": 5,
       "books": [
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -37119,6 +37273,7 @@
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000109",
+            "WAL-CLM-IMMORT-000546",
             "WAL-CLM-LETS-000035"
           ]
         }
@@ -37134,10 +37289,10 @@
         "geographic_tongue"
       ],
       "related": [
+        "vitamin-b12",
         "anemia",
         "bells_palsy",
         "calcium",
-        "vitamin-b12",
         "angular_stomatitis",
         "cheilosis",
         "dementia",
@@ -37420,7 +37575,7 @@
     "obesity": {
       "type": "condition",
       "name": "Obesity",
-      "claim_count": 19,
+      "claim_count": 21,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -37478,7 +37633,8 @@
             "WAL-CLM-HELLS-000120",
             "WAL-CLM-HELLS-000123",
             "WAL-CLM-IMMORT-000012",
-            "WAL-CLM-IMMORT-000019"
+            "WAL-CLM-IMMORT-000019",
+            "WAL-CLM-IMMORT-000524"
           ]
         },
         {
@@ -37538,7 +37694,8 @@
         {
           "facet": "biography",
           "claim_ids": [
-            "WAL-CLM-DDDL-000554"
+            "WAL-CLM-DDDL-000554",
+            "WAL-CLM-IMMORT-000537"
           ]
         }
       ],
@@ -37891,7 +38048,7 @@
     "osteoarthritis": {
       "type": "condition",
       "name": "Osteoarthritis",
-      "claim_count": 6,
+      "claim_count": 7,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -37902,6 +38059,7 @@
       "protocol_claim_ids": [],
       "restore": [
         "calcium",
+        "sulfur",
         "vitamin-a",
         "vitamin-d"
       ],
@@ -37939,6 +38097,12 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000050"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000535"
           ]
         },
         {
@@ -39163,10 +39327,11 @@
     "peptic_ulcers": {
       "type": "condition",
       "name": "Peptic Ulcers",
-      "claim_count": 15,
+      "claim_count": 16,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -39206,6 +39371,7 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000380",
+            "WAL-CLM-IMMORT-000531",
             "WAL-CLM-RARE-000101"
           ]
         },
@@ -39254,30 +39420,30 @@
         }
       ],
       "related_conditions": [
+        "arthritis",
         "hypertension",
         "kidney_disease",
         "liver_disease",
+        "allergies",
         "anorexia",
         "anxiety",
-        "arthritis",
-        "boils",
-        "breast_cancer"
+        "atherosclerosis"
       ],
       "related": [
+        "arthritis",
         "hypertension",
         "kidney_disease",
         "liver_disease",
+        "allergies",
         "anorexia",
         "anxiety",
-        "arthritis",
-        "boils",
-        "breast_cancer"
+        "atherosclerosis"
       ]
     },
     "periodontal_disease": {
       "type": "condition",
       "name": "Periodontal Disease",
-      "claim_count": 10,
+      "claim_count": 12,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -39334,7 +39500,8 @@
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000574",
-            "WAL-CLM-IAIYH-000003"
+            "WAL-CLM-IAIYH-000003",
+            "WAL-CLM-IMMORT-000544"
           ]
         },
         {
@@ -39350,6 +39517,13 @@
           "facet": "warning",
           "claim_ids": [
             "WAL-CLM-DDDL-000512"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-IMMORT-000543",
+            "WAL-CLM-IMMORT-000545"
           ]
         }
       ],
@@ -39368,10 +39542,10 @@
         "arthritis",
         "gingivitis",
         "osteoporosis",
+        "vitamin-c",
         "bone_spurs",
         "hypertension",
-        "insomnia",
-        "kidney_stones"
+        "insomnia"
       ]
     },
     "peripheral_arterial_disease": {
@@ -39469,7 +39643,8 @@
           "facet": "physiology",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000108",
-            "WAL-CLM-HELLS-000115"
+            "WAL-CLM-HELLS-000115",
+            "WAL-CLM-IMMORT-000547"
           ]
         }
       ],
@@ -42182,6 +42357,7 @@
         {
           "facet": "physiology",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000545",
             "WAL-CLM-LETS-000428"
           ]
         },
@@ -43149,6 +43325,7 @@
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-IMMORT-000523",
             "WAL-CLM-LETS-000438"
           ]
         }

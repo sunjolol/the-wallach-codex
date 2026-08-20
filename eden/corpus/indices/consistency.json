@@ -2240,6 +2240,10 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000533",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-RARE-000316",
         "book": "rare-earths"
       },
@@ -2269,7 +2273,7 @@
       }
     ],
     "books_repeating": 5,
-    "claim_count": 57
+    "claim_count": 58
   },
   {
     "id": "CG-0007",
@@ -3084,6 +3088,18 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000528",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000532",
+        "book": "immortality"
+      },
+      {
+        "claim_id": "WAL-CLM-IMMORT-000542",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000089",
         "book": "lets-play-doctor"
       },
@@ -3253,7 +3269,7 @@
       }
     ],
     "books_repeating": 7,
-    "claim_count": 221
+    "claim_count": 224
   },
   {
     "id": "CG-0009",
@@ -3358,6 +3374,10 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000538",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000502",
         "book": "lets-play-doctor"
       },
@@ -3387,7 +3407,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 31
+    "claim_count": 32
   },
   {
     "id": "CG-0010",
@@ -3674,6 +3694,10 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000541",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000511",
         "book": "lets-play-doctor"
       },
@@ -3695,7 +3719,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 39
+    "claim_count": 40
   },
   {
     "id": "CG-0012",
@@ -3940,6 +3964,10 @@
         "book": "immortality"
       },
       {
+        "claim_id": "WAL-CLM-IMMORT-000540",
+        "book": "immortality"
+      },
+      {
         "claim_id": "WAL-CLM-LETS-000376",
         "book": "lets-play-doctor"
       },
@@ -3977,7 +4005,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 68
+    "claim_count": 69
   },
   {
     "id": "CG-0013",
