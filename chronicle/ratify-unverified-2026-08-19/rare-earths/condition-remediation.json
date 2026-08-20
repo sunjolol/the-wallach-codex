@@ -1,0 +1,32 @@
+{
+  "proposed_synonyms": {
+    "hemorrhoids": [
+      "haemorrhoids"
+    ]
+  },
+  "search_only": {
+    "RARE-000446": [
+      "low_back_pain"
+    ],
+    "RARE-000447": [
+      "erectile_dysfunction"
+    ],
+    "RARE-000449": [
+      "acne"
+    ],
+    "RARE-000453": [
+      "allergies",
+      "food_allergy"
+    ],
+    "RARE-000457": [
+      "osteoporosis"
+    ],
+    "RARE-000466": [
+      "hyperactivity"
+    ]
+  },
+  "fully_search_only": [
+    "RARE-000449",
+    "RARE-000457"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "content_fixes": {
+    "WAL-CLM-RARE-000442": [
+      [
+        "B,,",
+        "B12"
+      ]
+    ],
+    "WAL-CLM-RARE-000448": [
+      [
+        "elastic tibers",
+        "elastic fibers"
+      ]
+    ],
+    "WAL-CLM-RARE-000449": [
+      [
+        "and\n‘suppuration",
+        "and\nsuppuration"
+      ]
+    ],
+    "WAL-CLM-RARE-000458": [
+      [
+        "cholesterol]",
+        "cholesterol"
+      ]
+    ],
+    "WAL-CLM-RARE-000470": [
+      [
+        "Armond",
+        "Armand"
+      ],
+      [
+        "dispepsia",
+        "dyspepsia"
+      ]
+    ],
+    "WAL-CLM-RARE-000471": [
+      [
+        "Roboxin",
+        "Robaxin"
+      ],
+      [
+        "Orphenidrine",
+        "Orphenadrine"
+      ]
+    ]
+  },
+  "keep_ours_divergences": {
+    "WAL-CLM-RARE-000443": [
+      [
+        "HYPOTHYROIDISM",
+        "HYPOTHYROISM"
+      ]
+    ],
+    "WAL-CLM-RARE-000447": [
+      [
+        "Jekyll",
+        "Jykell"
+      ],
+      [
+        "Bi-polar” disease",
+        "Bi-polar” disesase"
+      ],
+      [
+        "Hyperirritability",
+        "Hyperirratability"
+      ]
+    ],
+    "WAL-CLM-RARE-000457": [
+      [
+        "including",
+        "icluding"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,277 @@
+[
+ {
+  "id": "WAL-CLM-RARE-000442",
+  "verbatim_len": 288,
+  "needle_words": 43,
+  "page": 99,
+  "located": true,
+  "run": 43,
+  "margin": 40,
+  "aligned_words": 43,
+  "matched": 43,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-RARE-000443",
+  "verbatim_len": 213,
+  "needle_words": 29,
+  "page": 365,
+  "located": true,
+  "run": 26,
+  "margin": 24,
+  "aligned_words": 29,
+  "matched": 28,
+  "coverage": 0.966,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "replace",
+    "ours": "HYPOTHYROIDISM",
+    "pdf": "HYPOTHYROISM",
+    "ctx": "...SYMPTOMS of [[HYPOTHYROIDISM]] Hashimoto's Disease Fatigue Cold..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-RARE-000446",
+  "verbatim_len": 221,
+  "needle_words": 38,
+  "page": 191,
+  "located": true,
+  "run": 27,
+  "margin": 23,
+  "aligned_words": 38,
+  "matched": 38,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "insert",
+    "ours": "",
+    "pdf": "Disease Deficiemcy",
+    "ctx": "...Humans and Their Cause [[]] Osteoporosis Ca Mg B..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-RARE-000447",
+  "verbatim_len": 530,
+  "needle_words": 66,
+  "page": 329,
+  "located": true,
+  "run": 35,
+  "margin": 31,
+  "aligned_words": 66,
+  "matched": 63,
+  "coverage": 0.955,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "insert",
+    "ours": "",
+    "pdf": "Fig 11 6",
+    "ctx": "...Prediabetes Diabetes ulcers gangrene [[]] Hyperinsulinemia Hyperactivity Learning disabilities..."
+   },
+   {
+    "tag": "replace",
+    "ours": "Hyperirritability",
+    "pdf": "Hyperirratability",
+    "ctx": "...Learning disabilities ADD ADHD [[Hyperirritability]] Depression Manic depression Bi..."
+   },
+   {
+    "tag": "replace",
+    "ours": "disease",
+    "pdf": "disesase",
+    "ctx": "...Manic depression Bi polar [[disease]] Dr Jekyll Mr Hyde..."
+   },
+   {
+    "tag": "replace",
+    "ours": "Jekyll",
+    "pdf": "Jykell",
+    "ctx": "...Bi polar disease Dr [[Jekyll]] Mr Hyde rages Bad..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-RARE-000448",
+  "verbatim_len": 498,
+  "needle_words": 85,
+  "page": 293,
+  "located": true,
+  "run": 61,
+  "margin": 57,
+  "aligned_words": 85,
+  "matched": 84,
+  "coverage": 0.988,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "replace",
+    "ours": "tibers",
+    "pdf": "fibers",
+    "ctx": "...and in the elastic [[tibers]] of the skin muscular..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-RARE-000449",
+  "verbatim_len": 354,
+  "needle_words": 56,
+  "page": 293,
+  "located": true,
+  "run": 56,
+  "margin": 52,
+  "aligned_words": 56,
+  "matched": 56,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-RARE-000453",
+  "verbatim_len": 217,
+  "needle_words": 32,
+  "page": 297,
+  "located": true,
+  "run": 32,
+  "margin": 25,
+  "aligned_words": 32,
+  "matched": 32,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-RARE-000457",
+  "verbatim_len": 214,
+  "needle_words": 35,
+  "page": 395,
+  "located": true,
+  "run": 27,
+  "margin": 24,
+  "aligned_words": 35,
+  "matched": 34,
+  "coverage": 0.971,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "replace",
+    "ours": "including",
+    "pdf": "icludlng",
+    "ctx": "...have other mineral deficiencies [[including]] Ca Cu Cr V..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-RARE-000458",
+  "verbatim_len": 401,
+  "needle_words": 65,
+  "page": 496,
+  "located": true,
+  "run": 65,
+  "margin": 62,
+  "aligned_words": 65,
+  "matched": 65,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-RARE-000466",
+  "verbatim_len": 255,
+  "needle_words": 48,
+  "page": 123,
+  "located": true,
+  "run": 30,
+  "margin": 26,
+  "aligned_words": 48,
+  "matched": 47,
+  "coverage": 0.979,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "replace",
+    "ours": "breakfast",
+    "pdf": "breai fast",
+    "ctx": "...after a high sugar [[breakfast]] Simple method for diagnosing..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-RARE-000469",
+  "verbatim_len": 469,
+  "needle_words": 75,
+  "page": 57,
+  "located": true,
+  "run": 51,
+  "margin": 47,
+  "aligned_words": 75,
+  "matched": 74,
+  "coverage": 0.987,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "replace",
+    "ours": "10",
+    "pdf": "1",
+    "ctx": "...use For the next [[10]] years only the local..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-RARE-000470",
+  "verbatim_len": 580,
+  "needle_words": 90,
+  "page": 56,
+  "located": true,
+  "run": 90,
+  "margin": 87,
+  "aligned_words": 90,
+  "matched": 90,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-RARE-000471",
+  "verbatim_len": 292,
+  "needle_words": 31,
+  "page": 255,
+  "located": true,
+  "run": 3,
+  "margin": 1,
+  "aligned_words": 6,
+  "matched": 6,
+  "coverage": 0.194,
+  "head_skip": 4,
+  "tail_skip": 21,
+  "hunks": [
+   {
+    "tag": "insert",
+    "ours": "",
+    "pdf": "Tranquilizers Sleeping Aids Diazepam Valium Tranquilizer Addictive and too long acting causing drowsiness confusion and falls Chlordiazepoxide Librium Tranquilizer Too long acting causes falls Flurazepam Dalmane a sleeping aid Too long acting causes falls Meprobamate Miltown Deprol Equagesic Equanil Tranquilizer sometimes combined with an anti depressant or pain reliever Addictive too long acting causes falls Pentobarbital Nembutol Sedative Addictive long acting can cause falls Secobarbitol Seconal Addictive long acting causes falls Antidepressants Amitrlptyline Elavil Endep Etrafon Limbitrol Triavil Stops the ability to urinate causes dizziness and drowsiness causes falls Arthritis Drugs Indomethacin Indocin Can cause confusion and headaches Phenylbutazone Butazolidin risk of bone marrow toxicity Diabetes Drugs Chlorpropramide Diabinase Can cause dangerous fluid retention is excreted slowly overdose requires long intensive treatment period Ca Mg Li Cr Va avoid sugar natural and processed and caffeine Same as above Same as above Same as above Same as above Same as above Same as above",
+    "ctx": "...Spasm Relievers Mineral Replacement [[]] Ca Mg B Li..."
+   },
+   {
+    "tag": "insert",
+    "ours": "",
+    "pdf": "Cu Se",
+    "ctx": "...Replacement Ca Mg B [[]] Li Cyclobenzaprine Flexeril Causes..."
+   }
+  ]
+ }
+]

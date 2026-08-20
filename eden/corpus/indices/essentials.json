@@ -331,7 +331,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 118,
+    "claim_count": 120,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000053",
@@ -353,7 +353,8 @@
         "WAL-CLM-IMMORT-000271",
         "WAL-CLM-RARE-000169",
         "WAL-CLM-RARE-000173",
-        "WAL-CLM-RARE-000331"
+        "WAL-CLM-RARE-000331",
+        "WAL-CLM-RARE-000408"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000082",
@@ -381,7 +382,8 @@
         "WAL-CLM-RARE-000099",
         "WAL-CLM-RARE-000170",
         "WAL-CLM-RARE-000171",
-        "WAL-CLM-RARE-000403"
+        "WAL-CLM-RARE-000403",
+        "WAL-CLM-RARE-000416"
       ],
       "personal_anecdote": [
         "WAL-CLM-DDDL-000309"
@@ -572,6 +574,7 @@
     "conditions_treated": [
       "alcoholism",
       "angina",
+      "ankylosing_spondylitis",
       "anorexia",
       "anxiety",
       "arteriosclerosis",
@@ -595,6 +598,7 @@
       "celiac_disease",
       "cerebrovascular_disease",
       "congested_lungs",
+      "constipation",
       "convulsions",
       "crohns_disease",
       "dementia",
@@ -828,13 +832,16 @@
     "display_name": "Sulfur",
     "canon_slug": "sulfur",
     "category": "mineral",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-IMMORT-000535",
         "WAL-CLM-RARE-000223",
         "WAL-CLM-RARE-000275",
         "WAL-CLM-RARE-000303"
+      ],
+      "definition": [
+        "WAL-CLM-RARE-000408"
       ],
       "dose": [
         "WAL-CLM-LETS-000067"
@@ -857,7 +864,9 @@
     "deficiency_signs": [],
     "conditions_treated": [
       "anemia",
+      "ankylosing_spondylitis",
       "arthritis",
+      "bone_spurs",
       "brittle_nails",
       "collagen_disease",
       "degenerative_disc_disease",
@@ -1130,7 +1139,7 @@
     "display_name": "Calcium",
     "canon_slug": "calcium",
     "category": "mineral",
-    "claim_count": 147,
+    "claim_count": 150,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000074",
@@ -1146,7 +1155,8 @@
         "WAL-CLM-RARE-000275",
         "WAL-CLM-RARE-000303",
         "WAL-CLM-RARE-000304",
-        "WAL-CLM-RARE-000305"
+        "WAL-CLM-RARE-000305",
+        "WAL-CLM-RARE-000413"
       ],
       "definition": [
         "WAL-CLM-EPIGEN-000467",
@@ -1154,7 +1164,8 @@
         "WAL-CLM-IMMORT-000061",
         "WAL-CLM-IMMORT-000215",
         "WAL-CLM-LETS-000482",
-        "WAL-CLM-RARE-000105"
+        "WAL-CLM-RARE-000105",
+        "WAL-CLM-RARE-000408"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-DDDL-000451",
@@ -1206,7 +1217,8 @@
         "WAL-CLM-RARE-000403"
       ],
       "personal_anecdote": [
-        "WAL-CLM-DDDL-000309"
+        "WAL-CLM-DDDL-000309",
+        "WAL-CLM-RARE-000406"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000009",
@@ -1527,7 +1539,7 @@
     "display_name": "Boron",
     "canon_slug": "boron",
     "category": "mineral",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-RARE-000275",
@@ -1537,7 +1549,8 @@
       ],
       "definition": [
         "WAL-CLM-IMMORT-000042",
-        "WAL-CLM-IMMORT-000043"
+        "WAL-CLM-IMMORT-000043",
+        "WAL-CLM-RARE-000408"
       ],
       "dose": [
         "WAL-CLM-EPIGEN-000127"
@@ -1560,6 +1573,7 @@
     },
     "deficiency_signs": [],
     "conditions_treated": [
+      "ankylosing_spondylitis",
       "arthritis",
       "bone_spurs",
       "hypertension",
@@ -1643,7 +1657,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 81,
+    "claim_count": 84,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1659,14 +1673,17 @@
         "WAL-CLM-RARE-000042",
         "WAL-CLM-RARE-000118",
         "WAL-CLM-RARE-000307",
-        "WAL-CLM-RARE-000313"
+        "WAL-CLM-RARE-000313",
+        "WAL-CLM-RARE-000409",
+        "WAL-CLM-RARE-000413"
       ],
       "definition": [
         "WAL-CLM-HELLS-000041"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000081",
-        "WAL-CLM-RARE-000129"
+        "WAL-CLM-RARE-000129",
+        "WAL-CLM-RARE-000415"
       ],
       "dose": [
         "WAL-CLM-EPIGEN-000129",
@@ -1908,7 +1925,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 69,
+    "claim_count": 71,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1937,13 +1954,15 @@
         "WAL-CLM-RARE-000149",
         "WAL-CLM-RARE-000275",
         "WAL-CLM-RARE-000303",
-        "WAL-CLM-RARE-000308"
+        "WAL-CLM-RARE-000308",
+        "WAL-CLM-RARE-000413"
       ],
       "definition": [
         "WAL-CLM-DDDL-000386",
         "WAL-CLM-IMMORT-000098",
         "WAL-CLM-IMMORT-000105",
-        "WAL-CLM-IMMORT-000110"
+        "WAL-CLM-IMMORT-000110",
+        "WAL-CLM-RARE-000408"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000081",
@@ -2030,6 +2049,7 @@
       "adhd",
       "anemia",
       "aneurysm",
+      "ankylosing_spondylitis",
       "arthritis",
       "autism",
       "birth_defects",
@@ -3205,7 +3225,7 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 49,
+    "claim_count": 50,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -3216,7 +3236,8 @@
         "WAL-CLM-RARE-000039",
         "WAL-CLM-RARE-000042",
         "WAL-CLM-RARE-000307",
-        "WAL-CLM-RARE-000313"
+        "WAL-CLM-RARE-000313",
+        "WAL-CLM-RARE-000413"
       ],
       "diagnostic_pattern": [
         "WAL-CLM-RARE-000081",
@@ -3360,7 +3381,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 125,
+    "claim_count": 126,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -3376,7 +3397,8 @@
         "WAL-CLM-RARE-000044",
         "WAL-CLM-RARE-000264",
         "WAL-CLM-RARE-000268",
-        "WAL-CLM-RARE-000307"
+        "WAL-CLM-RARE-000307",
+        "WAL-CLM-RARE-000413"
       ],
       "definition": [
         "WAL-CLM-DDDL-000140",
@@ -6099,7 +6121,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 41,
+    "claim_count": 42,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000040",
@@ -6133,6 +6155,9 @@
         "WAL-CLM-DDDL-000045",
         "WAL-CLM-IMMORT-000306",
         "WAL-CLM-IMMORT-000546"
+      ],
+      "personal_anecdote": [
+        "WAL-CLM-RARE-000406"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000049",
@@ -6267,6 +6292,7 @@
       "liver_cirrhosis",
       "liver_disease",
       "meningocele",
+      "muscle_cramps",
       "neuralgia",
       "neuropathy",
       "peripheral_neuropathy",
@@ -8091,7 +8117,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 99,
+    "claim_count": 100,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -8112,6 +8138,9 @@
       ],
       "dose": [
         "WAL-CLM-DDDL-000115"
+      ],
+      "food_source": [
+        "WAL-CLM-RARE-000414"
       ],
       "mechanism": [
         "WAL-CLM-DDDL-000157",

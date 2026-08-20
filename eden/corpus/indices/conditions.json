@@ -230,7 +230,7 @@
   },
   "adhd": {
     "display_name": "Adhd",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-HELLS-000099"
@@ -256,7 +256,8 @@
         "WAL-CLM-DDDL-000395"
       ],
       "diagnostics": [
-        "WAL-CLM-DDDL-000489"
+        "WAL-CLM-DDDL-000489",
+        "WAL-CLM-RARE-000415"
       ]
     },
     "essentials_involved": [
@@ -270,7 +271,8 @@
       "dddl-3e-2011",
       "epigenetics",
       "hells-kitchen",
-      "immortality"
+      "immortality",
+      "rare-earths"
     ]
   },
   "adrenal_exhaustion": {
@@ -934,18 +936,26 @@
   },
   "ankylosing_spondylitis": {
     "display_name": "Ankylosing Spondylitis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-IMMORT-000063"
+      ],
+      "definitions": [
+        "WAL-CLM-RARE-000408"
       ]
     },
     "essentials_involved": [
-      "calcium"
+      "boron",
+      "calcium",
+      "copper",
+      "magnesium",
+      "sulfur"
     ],
     "other_substances_involved": [],
     "books_cited": [
-      "immortality"
+      "immortality",
+      "rare-earths"
     ]
   },
   "anorexia": {
@@ -2257,7 +2267,7 @@
   },
   "bone_spurs": {
     "display_name": "Bone Spurs",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000032",
@@ -2267,7 +2277,8 @@
         "WAL-CLM-RARE-000305"
       ],
       "definitions": [
-        "WAL-CLM-RARE-000105"
+        "WAL-CLM-RARE-000105",
+        "WAL-CLM-RARE-000408"
       ],
       "protocols": [
         "WAL-CLM-LETS-000168"
@@ -2278,6 +2289,7 @@
       "calcium",
       "copper",
       "magnesium",
+      "sulfur",
       "vitamin-c",
       "vitamin-d",
       "vitamin-e"
@@ -3169,7 +3181,7 @@
   },
   "celiac_disease": {
     "display_name": "Celiac Disease",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000551",
@@ -3183,7 +3195,8 @@
         "WAL-CLM-IMMORT-000083"
       ],
       "diagnostics": [
-        "WAL-CLM-RARE-000082"
+        "WAL-CLM-RARE-000082",
+        "WAL-CLM-RARE-000412"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000340",
@@ -3934,16 +3947,20 @@
   },
   "constipation": {
     "display_name": "Constipation",
-    "claim_count": 7,
+    "claim_count": 9,
     "claims_by_role": {
       "causes": [
-        "WAL-CLM-DDDL-000412"
+        "WAL-CLM-DDDL-000412",
+        "WAL-CLM-RARE-000416"
       ],
       "definitions": [
         "WAL-CLM-DDDL-000407"
       ],
       "doses": [
         "WAL-CLM-DDDL-000589"
+      ],
+      "interactions": [
+        "WAL-CLM-RARE-000417"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000497",
@@ -3954,7 +3971,9 @@
         "WAL-CLM-IMMORT-000498"
       ]
     },
-    "essentials_involved": [],
+    "essentials_involved": [
+      "magnesium"
+    ],
     "other_substances_involved": [
       "alder-buckthorn",
       "american-mandrake",
@@ -3971,7 +3990,8 @@
     "books_cited": [
       "dddl-3e-2011",
       "immortality",
-      "lets-play-doctor"
+      "lets-play-doctor",
+      "rare-earths"
     ]
   },
   "convulsions": {
@@ -6647,7 +6667,7 @@
   },
   "hemorrhoids": {
     "display_name": "Hemorrhoids",
-    "claim_count": 15,
+    "claim_count": 16,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000400",
@@ -6662,7 +6682,8 @@
       ],
       "definitions": [
         "WAL-CLM-DDDL-000370",
-        "WAL-CLM-DDDL-000386"
+        "WAL-CLM-DDDL-000386",
+        "WAL-CLM-RARE-000410"
       ],
       "diagnostics": [
         "WAL-CLM-DDDL-000424"
@@ -6696,7 +6717,8 @@
       "dddl-3e-2011",
       "epigenetics",
       "immortality",
-      "lets-play-doctor"
+      "lets-play-doctor",
+      "rare-earths"
     ]
   },
   "hepatitis": {
@@ -6809,7 +6831,7 @@
   },
   "high_cholesterol": {
     "display_name": "High Cholesterol",
-    "claim_count": 21,
+    "claim_count": 22,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000446",
@@ -6834,7 +6856,8 @@
         "WAL-CLM-DDDL-000392"
       ],
       "food_sources": [
-        "WAL-CLM-HELLS-000108"
+        "WAL-CLM-HELLS-000108",
+        "WAL-CLM-RARE-000414"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000320",
@@ -6873,7 +6896,8 @@
       "epigenetics",
       "hells-kitchen",
       "immortality",
-      "lets-play-doctor"
+      "lets-play-doctor",
+      "rare-earths"
     ]
   },
   "high_triglycerides": {
@@ -7433,7 +7457,7 @@
   },
   "hypothyroidism": {
     "display_name": "Hypothyroidism",
-    "claim_count": 15,
+    "claim_count": 16,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000023",
@@ -7450,7 +7474,8 @@
         "WAL-CLM-RARE-000150"
       ],
       "diagnostics": [
-        "WAL-CLM-DDDL-000390"
+        "WAL-CLM-DDDL-000390",
+        "WAL-CLM-RARE-000407"
       ],
       "prevalence": [
         "WAL-CLM-DDDL-000024"
@@ -7744,7 +7769,7 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 19,
+    "claim_count": 20,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000472"
@@ -7763,7 +7788,8 @@
         "WAL-CLM-RARE-000185",
         "WAL-CLM-RARE-000229",
         "WAL-CLM-RARE-000231",
-        "WAL-CLM-RARE-000270"
+        "WAL-CLM-RARE-000270",
+        "WAL-CLM-RARE-000409"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000069"
@@ -9800,8 +9826,11 @@
   },
   "muscle_cramps": {
     "display_name": "Muscle Cramps",
-    "claim_count": 9,
+    "claim_count": 11,
     "claims_by_role": {
+      "anecdotes": [
+        "WAL-CLM-RARE-000406"
+      ],
       "causes": [
         "WAL-CLM-DDDL-000369"
       ],
@@ -9815,6 +9844,9 @@
       "definitions": [
         "WAL-CLM-RARE-000105"
       ],
+      "diagnostics": [
+        "WAL-CLM-RARE-000407"
+      ],
       "protocols": [
         "WAL-CLM-DDDL-000383",
         "WAL-CLM-LETS-000374"
@@ -9826,6 +9858,7 @@
       "potassium",
       "selenium",
       "sodium",
+      "vitamin-b12",
       "vitamin-b5",
       "vitamin-d",
       "vitamin-e"
@@ -10521,7 +10554,7 @@
   },
   "osteoporosis": {
     "display_name": "Osteoporosis",
-    "claim_count": 42,
+    "claim_count": 43,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000133",
@@ -10550,7 +10583,8 @@
       "definitions": [
         "WAL-CLM-IAIYH-000002",
         "WAL-CLM-LETS-000001",
-        "WAL-CLM-RARE-000105"
+        "WAL-CLM-RARE-000105",
+        "WAL-CLM-RARE-000408"
       ],
       "diagnostics": [
         "WAL-CLM-DDDL-000399",
@@ -13703,7 +13737,7 @@
   },
   "varicose_veins": {
     "display_name": "Varicose Veins",
-    "claim_count": 13,
+    "claim_count": 14,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000051",
@@ -13714,7 +13748,8 @@
         "WAL-CLM-RARE-000122"
       ],
       "definitions": [
-        "WAL-CLM-DDDL-000386"
+        "WAL-CLM-DDDL-000386",
+        "WAL-CLM-RARE-000410"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000375",
@@ -13770,7 +13805,7 @@
   },
   "vertigo": {
     "display_name": "Vertigo",
-    "claim_count": 17,
+    "claim_count": 18,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000379",
@@ -13787,6 +13822,9 @@
       "diagnostics": [
         "WAL-CLM-DDDL-000556",
         "WAL-CLM-IMMORT-000168"
+      ],
+      "interactions": [
+        "WAL-CLM-RARE-000418"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000405",

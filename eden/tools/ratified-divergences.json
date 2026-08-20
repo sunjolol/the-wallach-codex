@@ -2293,6 +2293,74 @@
     "now": "he was high for his remaining sixty-six years (UNCHANGED - HELD)",
     "basis": "Luneth-ruled 2026-08-19 after reading the page himself (Screenshot 23): NOT a typo. Wallach's figure of speech - Cornaro felt great ('high') for his last 66 years (103 - reform at 37), a nod to the dissolute 'high' living he had quit. PRESERVE byte-exact; do NOT 'correct' to 'hale' in any future audit."
    }
+  ],
+  "batch_2026-08-19-rare-earths-landing": [
+   {
+    "claim": "WAL-CLM-RARE-000406",
+    "was": "numbness ( B,, deficiency)",
+    "now": "numbness ( B12 deficiency)",
+    "basis": "destroyed subscript: B,, is OCR for B12 (numbness cause). page prints true subscript B12; vision-confirmed p99. also de-hyphenated va-/nadium, defi-/ciency."
+   },
+   {
+    "claim": "WAL-CLM-RARE-000410",
+    "was": "elastic tibers",
+    "now": "elastic fibers",
+    "basis": "OCR t-for-f: page prints \"elastic fibers\"; vision-confirmed p293 (Table 11-1 Schuesslers 12 Cell Salts). The correct \"elastic fibers\" also appears later in the same verbatim."
+   },
+   {
+    "claim": "WAL-CLM-RARE-000411",
+    "was": "cell disintegration and ‘suppuration",
+    "now": "cell disintegration and suppuration",
+    "basis": "stray opening curly-quote before \"suppuration\" removed; vision-confirmed p293."
+   },
+   {
+    "claim": "WAL-CLM-RARE-000414",
+    "was": "properly process cholesterol] and",
+    "now": "properly process cholesterol and",
+    "basis": "stray OCR bracket after \"cholesterol\" removed; vision-confirmed p496."
+   },
+   {
+    "claim": "WAL-CLM-RARE-000416",
+    "was": "melan-/choly ... depres-/sion ... medi-/cine ... pur-/gative ... ac-/cepted",
+    "now": "melancholy ... depression ... medicine ... purgative ... accepted",
+    "basis": "de-hyphenated 5 justified-column line-break splits (front-facing span); vision-confirmed p57."
+   },
+   {
+    "claim": "WAL-CLM-RARE-000417",
+    "was": "Armond Trousseau ... dispepsia",
+    "now": "Armand Trousseau ... dyspepsia",
+    "basis": "proper-noun + word misspellings the page prints (Armond=Armand Trousseau the historical physician; dispepsia=dyspepsia) corrected per standing rule; vision-confirmed p56. also de-hyphenated 6 line-break splits (Trousseau, individual, noticed, functions, secretions, gastrointestinal)."
+   },
+   {
+    "claim": "WAL-CLM-RARE-000418",
+    "was": "Roboxin ... Orphenidrine",
+    "now": "Robaxin ... Orphenadrine",
+    "basis": "drug-name misspellings the page prints (Roboxin=Robaxin/methocarbamol; Orphenidrine=Orphenadrine) corrected; vision-confirmed p255."
+   },
+   {
+    "claim": "WAL-CLM-RARE-000407",
+    "was": "HYPOTHYROIDISM (we HOLD the correct form)",
+    "now": "HYPOTHYROIDISM",
+    "basis": "HELD/page-typo: the printed page prints \"HYPOTHYROISM\" (missing D) but our .txt already holds the correct \"HYPOTHYROIDISM\". Do NOT restore the page typo in a future audit. vision-confirmed p365."
+   },
+   {
+    "claim": "WAL-CLM-RARE-000409",
+    "was": "Jekyll / Bi-polar disease / Hyperirritability (we HOLD the correct forms)",
+    "now": "Jekyll / disease / Hyperirritability",
+    "basis": "HELD/page-typos: the page prints \"Jykell\", \"disesase\", \"Hyperirratability\"; our .txt holds the correct spellings. Do NOT restore the page typos. vision-confirmed p329."
+   },
+   {
+    "claim": "WAL-CLM-RARE-000413",
+    "was": "including (we HOLD the correct form)",
+    "now": "including",
+    "basis": "HELD/page-typo: the page prints \"icluding\"; our .txt holds \"including\". Do NOT restore. vision-confirmed p395."
+   },
+   {
+    "claim": "WAL-CLM-RARE-000415",
+    "was": "answer_short: \"90 minutes after\"",
+    "now": "answer_short: \"an hour and a half after\"",
+    "basis": "§00.A number hygiene (README-flagged): the source/verbatim says \"one and a half hours\", not \"90 minutes\" (a conversion). Reworded answer_short to Wallach's own wording. verbatim + answer_full already say \"one and a half / an hour and a half\". vision-confirmed p123."
+   }
   ]
  },
  "_classes": [
