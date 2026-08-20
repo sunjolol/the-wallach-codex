@@ -17,7 +17,6 @@ user-side; the agent invokes everything through bash.
 | File | What it does |
 |---|---|
 | `build.mjs` | The build: `tsc --noEmit` type-check + `esbuild` bundle of `dashboard/assets/js/src/` into one IIFE at `dist/main.js` (inlining the generated `assets/data/*.json`). The canonical build entry point. |
-| `build-dashboard.sh` | Thin bash wrapper around `build.mjs` (legacy convenience; `node tools/build.mjs` is the canonical invocation). |
 | `vendor-tesseract.js` | One-shot downloader that vendors Tesseract.js + language data into the dashboard's offline OCR folder. |
 | `render_probe.js` | Headless Coverage render check — drives the surface, asserts visible state, exits 0 / non-zero. |
 | `render_probe_seeded.js` | Coverage with a seeded regimen. |

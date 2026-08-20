@@ -31,6 +31,8 @@ Offline-first means every asset is vendored, pinned, and works forever with the 
 never meant small, static, or plain. The app targets one pinned browser engine, so use modern CSS and
 JS directly -- no fallbacks, no polyfills, no defensive coding for browsers that will never load it.
 
+> **Retired in the public cleanup:** the `design-wisdom/` capture library and the `chronicle/header-research/` dossiers this skill points to were removed. The visual vocabulary now lives in `dashboard/assets/styles/STYLE-GUIDE.md` and the shipped element headers; treat the directory pointers below as historical context, not live paths.
+
 **Start from dashboard/design-wisdom/, every time.** It holds 33 CodePen captures Luneth
 personally chose plus 
 eferences-data.json carrying his own notes -- a standing statement of his

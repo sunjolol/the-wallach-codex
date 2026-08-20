@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // ═══════════════════════════════════════════════════════════════════════════
-// build.mjs — cross-platform dashboard build (replaces tools/build-dashboard.sh)
+// build.mjs — cross-platform dashboard build
 // ═══════════════════════════════════════════════════════════════════════════
 // Usage:    node tools/build.mjs        OR    npm run build  (from dashboard/)
 // Output:   dashboard/assets/js/dist/main.js  (committed runtime contract)

@@ -144,7 +144,7 @@ export interface CoverageTile {
    * ∧ these contributors) — do not read this field as if it already were one.
    * Deliberately NOT built today: nothing consumes it yet, and the Coverage rail
    * that will needs a per-ITEM→tiles projection, which is a different shape. See
-   * chronicle/coverage-regimen-scanner-blueprint.md §5.
+   * the Coverage rail design (deferred).
    */
   contributesTo: string[];
   /**

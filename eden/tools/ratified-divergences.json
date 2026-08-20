@@ -1993,7 +1993,7 @@
     {
      "class": "destroyed B-vitamin subscript (B,2 / By, / Bg, / Bl, / B,, / vitamin B,)",
      "count": "185 occurrences across 5 books (epigenetics 75, immortality 53, rare-earths 47, dddl 8, hells-kitchen 2); only 7 reach a reader, in 6 claims",
-     "status": "3 page-read and FIXED (EPIGEN-000255 Bg->B6, EPIGEN-000267 B,2->B12 and By,->B12; IMMORT-000299 B.->B5 came from the wave). ★ PROVABLY NOT BATCH-FIXABLE, and the proof is inside the class: the identical token 'Bg,' is B5 in 'Pantothenic acid, aka vitamin Bg,' and B6 in 'Vitamin Bg, originally designated B3'. Separately, 'Bi, Ca, Li' in RARE-000285 is BISMUTH in a mineral-replacement list, not B1 -- the scanner false-fires on element symbols starting with B, exactly as a subscript rule would have turned boron into a vitamin. Scanner: tools/frontface/scan_b_subscripts.py"
+     "status": "3 page-read and FIXED (EPIGEN-000255 Bg->B6, EPIGEN-000267 B,2->B12 and By,->B12; IMMORT-000299 B.->B5 came from the wave). ★ PROVABLY NOT BATCH-FIXABLE, and the proof is inside the class: the identical token 'Bg,' is B5 in 'Pantothenic acid, aka vitamin Bg,' and B6 in 'Vitamin Bg, originally designated B3'. Separately, 'Bi, Ca, Li' in RARE-000285 is BISMUTH in a mineral-replacement list, not B1 -- the scanner false-fires on element symbols starting with B, exactly as a subscript rule would have turned boron into a vitamin. Scanner: the frontface subscript detector (retired with the OCR-correction campaign)"
     },
     {
      "class": "DDDL writes B1 as 'Bl'",

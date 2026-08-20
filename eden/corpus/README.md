@@ -16,8 +16,7 @@ corpus is the model the other pillars copy.
 
 Everything under `eden/corpus/` is Tier-1 canonical: sealed, hash-anchored,
 user-only-writer, loud-fail on drift. Non-canonical material is kept deliberately
-*outside* the corpus so it can never poison the canon — design references under
-`dashboard/design-wisdom/`, and Wallach content held out of the app under
+*outside* the corpus so it can never poison the canon — Wallach content held out of the app under
 `eden/fringe-knowledge/`. Anything that must be true lives here, in the sealed pillar.
 
 (A separate two-tier split lives *inside* the corpus at the claim level: **operational**
@@ -77,7 +76,7 @@ never hand-typed — `citations_reference_registry`).
 | `corpus_derive.py` | agent | `claims/*` → `indices/*` (pure; excludes `search-only` tier-2 claims from the operational indices) |
 | `corpus_resnap.py` | agent | after a sealed book `.txt` is corrected, relocate every claim's `char_offset` + recompute the book `content_sha256` (locator-only; no claim-content change) |
 | `corpus_embed.py` | agent | build the dashboard's embedded corpus JSON from the sealed shards (Zod-validated at load) |
-| `build_embeds.py` | agent | the **unified derive pipeline** — orchestrates `corpus_embed` + `targets_derive` (+ products in Phase F) into `eden/derived/` + `dashboard/assets/data/`; freshness-gated by `derived_artifacts_fresh` |
+| `build_embeds.py` | agent | the **unified derive pipeline** — orchestrates `corpus_embed` + `targets_derive` (+ products) into `eden/derived/` + `dashboard/assets/data/`; freshness-gated by `derived_artifacts_fresh` |
 | `corpus_verify.py` | agent (read-only) | the integrity checks; truth-anchored on book bytes; cannot lie |
 | `corpus_seal.py` | **user only** | promote drafts → claims, derive indices, recompute golden hashes, bump version |
 | `graphics_seal.py` / `graphics_verify.py` | user / agent | seal + read-only-verify the graphics manifest |

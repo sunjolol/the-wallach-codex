@@ -16,18 +16,11 @@ dashboard/assets/vendor/tesseract/
 # Source book screenshots (copyrighted Wallach page scans) — local OCR-verification ONLY. NEVER publish.
 temporary/
 
-# frontface OCR campaign: generated analysis (regenerates in seconds from the committed scripts).
-# The SCRIPTS and the expensive Tesseract output (tools/frontface/ocr-cache/) ARE committed.
-tools/frontface/work/
-
 # The pinned browser engine, if and when one is installed here. Currently ABSENT by decision:
 # the choice is deferred to the very end (chronicle/decisions/2026-08-03-pinned-engine-acquisition.md
 # banks the candidate, its hash, the measured sizes and the trim plan). Kept ignored so a future
 # extraction can never reach git - a modern engine is 340-420 MB on disk.
 engine/
-
-# Regenerable vision-verify page renders (rerender from the PDF via tools/frontface/render.py)
-chronicle/ratify-unverified-2026-08-19/*/pages/
 
 # Source book texts — copyrighted Wallach OCR, NOT distributed in the public repo.
 # Kept locally for the corpus derive + the two book-anchored gates; a fresh clone runs

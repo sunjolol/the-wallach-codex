@@ -24,7 +24,7 @@ Adding a new invariant:
   3. Reference the lesson/decision/protocol it ties back to in lesson_ref
 
 Promotion gate (engineering-doctrine §6 — verifiable invariants): whenever a
-new pitfall is recorded in the chronicle or a `.claude/rules/` file, the same
+new pitfall is recorded in the chronicle or a `.claude/skills/` file, the same
 patch must add an invariant here that would catch the next occurrence. No
 new pitfalls without detectors.
 """
@@ -4963,14 +4963,14 @@ _DUPLICATE_KEEP_BOTH = {
         "(essentials=[selenium], conditions=[muscular_dystrophy, keshan_disease]) and -000137 "
         "'Does selenium affect fertility and pregnancy?' (no operational mapping; its summary is "
         "the sterility / miscarriage / low-birth-weight / SIDS reproductive answer). Ruled "
-        "keep-both 2026-08-03 -- recorded in commit b3551834 and chronicle/next-chunk.md.",
+        "keep-both 2026-08-03 -- recorded in commit b3551834.",
     frozenset({"WAL-CLM-IMMORT-000135", "WAL-CLM-IMMORT-000389"}):
         "gallium / uses, where -000389's 152-char British-research sentence is the tail of "
         "-000135's 391-char paragraph. -000135 answers 'Does gallium help protect against brain "
         "cancer?' -- the whole essentiality-plus-metalloenzyme case (essentials=[gallium], "
         "conditions=[brain_cancer]); -000389 answers the narrower 'Can taking gallium during "
         "pregnancy lower a child's risk of brain cancer?' (conditions=[brain_cancer], no "
-        "essentials). Ruled keep-both 2026-08-03 -- commit b3551834 / chronicle/next-chunk.md.",
+        "essentials). Ruled keep-both 2026-08-03 -- commit b3551834.",
     frozenset({"WAL-CLM-DDDL-000071", "WAL-CLM-DDDL-000137"}):
         "selenium/physiology: one Wallach passage that answers two different reader questions -- A asks 'Can selenium prevent muscular dystrophy?'; B asks 'Does selenium affect fertility and pregnancy?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
     frozenset({"WAL-CLM-DDDL-000092", "WAL-CLM-DDDL-000517"}):
@@ -5564,7 +5564,7 @@ def _charter_name_is_wished(name, status_cell):
 def _charter_gates_present_impl(charter_text, live):
     """Charter R7 (the meta-gate) -- 'codify, don't promise': every gate the Charter presents
     as its proof must actually EXIST, or the rule must be labeled WISH (crack #2 fix,
-    2026-07-06). Parses the R1-R9 rule table in .claude/rules/charter.md; for each
+    2026-07-06). Parses the R1-R9 rule table in .claude/skills/charter/SKILL.md; for each
     backtick-quoted gate name in a rule's GATE column, that name must be (a) a live invariant
     here, (b) a known non-invariant enforcement mechanism (a verify tool / hook / lint rule),
     or (c) that GATE NAME must itself be marked WISH (an honestly-labeled promise).
@@ -5841,7 +5841,7 @@ def check_vendor_assets_pinned():
 
 # ---------------------------------------------------------------------------
 # Phase H0 -- entity-page redesign migration: the enforcement FLOOR (migration
-# blueprint chronicle/phase-h-migration-blueprint.md section 2, gate rows 1-3).
+# the Phase-H migration, gate rows 1-3).
 # Three gates landed BEFORE the surfaces so the app cannot be built with the
 # prototypes' shortcuts (inline prose, a hand-built entity map, demo scaffold).
 # Each is a thin path-binding wrapper over a param-taking _impl so
@@ -6404,7 +6404,7 @@ def check_entity_render_is_projection():
 #   (2) figure type drifting ABOVE the selenium standard. Selenium's shipped figure renders
 #       its labels at 12.0px and its element glyph at 17.6px (MEASURED headlessly, not
 #       chosen); an invented "bigger" scale reads as shouting beside it and was rejected.
-# The build playbook these enforce: .claude/rules/element-headers.md
+# The build playbook these enforce: .claude/skills/element-headers/SKILL.md
 _FIGURE_LABEL_PX = 12.0   # measured: selenium .kd-ep-fam__flabel renders at 12.0px on screen
 _FIGURE_GLYPH_PX = 17.6   # measured: selenium .kd-ep-fam__seglyph renders at 17.6px -- the CEILING
 _FIGURE_LABEL_CLASSES = ("__glabel", "__gsub", "__gname", "__gtag", "__gstop")
@@ -6436,7 +6436,7 @@ def check_element_header_complete():
     its why-this-number provenance. SCOPE, stated honestly: this binds on the elements that
     HAVE a header (the mechanism-clarity entries), not on all 91 -- the other essentials have
     no entity-copy entry yet, and gating them would be a red for work not yet started. That
-    remainder is a labelled WISH in .claude/rules/element-headers.md, not a silent gap.
+    remainder is a labelled WISH in .claude/skills/element-headers/SKILL.md, not a silent gap.
     Truth anchor: the two hand-authored store files' bytes, re-read each run."""
     base = ROOT / "dashboard" / "assets" / "data"
     mech_p, copy_p = base / "mechanism-clarity-data.json", base / "entity-copy.json"
@@ -6651,7 +6651,7 @@ def check_mechanism_blocks_wellformed():
 
     SCOPE, honestly: this proves the composed path cannot silently DROP a block or a figure. It says
     nothing about whether a header is well DESIGNED -- that is Luneth's visual sign-off
-    (.claude/rules/visual-verification.md), and the byte-identity of the three signed-off headers is
+    (.claude/skills/visual-verification/SKILL.md), and the byte-identity of the three signed-off headers is
     proven separately by tools/render_probe_mech_shape.js.
 
     Truth anchor: the schema .ts bytes x the view .ts bytes x the hand-authored store x the sealed
@@ -8079,7 +8079,7 @@ INVARIANTS = [
     Invariant(
         name="charter_gates_present",
         anchor_class="meta",  # checks a document about the gates / guards a currently-empty set
-        description="Charter R7 meta-gate -- every gate named in the R1-R9 table's Gate column in .claude/rules/charter.md must be a live invariant, a known enforcement mechanism (verify tool/hook/lint), or the rule must be labeled WISH; a named gate that neither exists nor is WISH means the Charter oversells its enforcement = RED",
+        description="Charter R7 meta-gate -- every gate named in the R1-R9 table's Gate column in .claude/skills/charter/SKILL.md must be a live invariant, a known enforcement mechanism (verify tool/hook/lint), or the rule must be labeled WISH; a named gate that neither exists nor is WISH means the Charter oversells its enforcement = RED",
         check_fn=check_charter_gates_present,
         truth_anchor="the parsed charter.md R1-R9 rule table (Gate + Status columns) x the live invariant name set + a fixed mechanism allowlist, recomputed each run",
         severity="critical",
@@ -8124,11 +8124,11 @@ INVARIANTS = [
     Invariant(
         name="element_header_complete",
         anchor_class="consistency",  # our mechanism store vs our entity-copy store -- catches a half-filled entry, not a wrong one
-        description="Every element shipping a composed mechanism header also ships BOTH its opening lede and its why-this-number provenance in entity-copy.json. Copper went live with `why` and no `lede`, and a partial entry looks identical to a complete one on the page. Scoped to elements that HAVE a header; the remaining essentials are a labelled WISH in .claude/rules/element-headers.md",
+        description="Every element shipping a composed mechanism header also ships BOTH its opening lede and its why-this-number provenance in entity-copy.json. Copper went live with `why` and no `lede`, and a partial entry looks identical to a complete one on the page. Scoped to elements that HAVE a header; the remaining essentials are a labelled WISH in .claude/skills/element-headers/SKILL.md",
         check_fn=check_element_header_complete,
         truth_anchor="the bytes of the two hand-authored stores (mechanism-clarity-data.json x entity-copy.json), re-read and cross-checked each run",
         severity="critical",
-        lesson_ref="Luneth caught copper's missing opening line after the header shipped; the why-this-number line had been missing on the live page for the same reason (the store held only calcium + selenium). Half-filled entries are invisible from the page. Negative test: tools/test_element_header_complete.py. Playbook: .claude/rules/element-headers.md",
+        lesson_ref="Luneth caught copper's missing opening line after the header shipped; the why-this-number line had been missing on the live page for the same reason (the store held only calcium + selenium). Half-filled entries are invisible from the page. Negative test: tools/test_element_header_complete.py. Playbook: .claude/skills/element-headers/SKILL.md",
     ),
     Invariant(
         name="figure_type_within_standard",
@@ -8137,7 +8137,7 @@ INVARIANTS = [
         check_fn=check_figure_type_within_standard,
         truth_anchor="drawer-knowledge.css bytes scanned each run against two sizes measured headlessly off the shipped selenium figure",
         severity="critical",
-        lesson_ref="Two rounds lost to figure type: first too small (the real cause was an ID-specificity width override losing the cascade, rendering an 800-unit viewBox at 560px -- scale 0.70, every label silently 30% smaller), then overcorrected to 15/17/18/32 above the selenium standard. Negative test: tools/test_figure_type_within_standard.py. Playbook: .claude/rules/element-headers.md",
+        lesson_ref="Two rounds lost to figure type: first too small (the real cause was an ID-specificity width override losing the cascade, rendering an 800-unit viewBox at 560px -- scale 0.70, every label silently 30% smaller), then overcorrected to 15/17/18/32 above the selenium standard. Negative test: tools/test_figure_type_within_standard.py. Playbook: .claude/skills/element-headers/SKILL.md",
     ),
     Invariant(
         name="mechanism_blocks_wellformed",
@@ -8146,7 +8146,7 @@ INVARIANTS = [
         check_fn=check_mechanism_blocks_wellformed,
         truth_anchor="the schema .ts bytes x the view .ts bytes x the hand-authored mechanism store x the sealed corpus shards, all re-read and cross-checked each run",
         severity="critical",
-        lesson_ref="Eight calcium header mockups were rejected because the SCHEMA was the template -- the required set (eyebrow/kill/figure/beats/quote) WAS the rejected chassis, so every 'bespoke' header regressed to it (Luneth 2026-07-30, Rule 0 in .claude/rules/element-headers.md). Freeing the shape means the data now decides which blocks render, which buys a new silent-failure class this gate closes. Negative test: tools/test_mechanism_blocks_wellformed.py. The byte-identity of the three signed-off headers is proven separately by tools/render_probe_mech_shape.js",
+        lesson_ref="Eight calcium header mockups were rejected because the SCHEMA was the template -- the required set (eyebrow/kill/figure/beats/quote) WAS the rejected chassis, so every 'bespoke' header regressed to it (Luneth 2026-07-30, Rule 0 in .claude/skills/element-headers/SKILL.md). Freeing the shape means the data now decides which blocks render, which buys a new silent-failure class this gate closes. Negative test: tools/test_mechanism_blocks_wellformed.py. The byte-identity of the three signed-off headers is proven separately by tools/render_probe_mech_shape.js",
     ),
     Invariant(
         name="mech_quote_trim_faithful",

@@ -70,7 +70,7 @@ FIAT_COVERED_SLUGS = frozenset({"hydrogen", "carbon", "nitrogen", "oxygen"})
 
 # Claims tagged `search-only` are the Ask-Wallach corpus and MUST NOT feed an operational
 # surface -- the Coverage goal strip is one. Mirrors the live `search_only_indices_excluded`
-# gate's boundary (.claude/rules/search-corpus.md).
+# gate's boundary (.claude/skills/corpus-mining/SKILL.md).
 SEARCH_ONLY_TAG = "search-only"
 
 

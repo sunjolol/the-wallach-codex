@@ -107,7 +107,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
    with the rule and the deck — a nameplate, not a title block. Shipping the markup without
    these rules (which happened first, and Luneth caught it on sight) falls back to the browser
    <h1> default: huge, title-case, no rule. Markup without its CSS is the unstyled-drawer
-   drift, and it is exactly what .claude/rules/visual-verification.md exists to stop. */
+   drift, and it is exactly what .claude/skills/visual-verification/SKILL.md exists to stop. */
 .topbar__breadcrumb { display: flex; align-items: baseline; gap: var(--ds-space-4); min-width: 0; }
 .np__name { font-family: var(--ds-font-display); font-size: 0.85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink); margin: 0; white-space: nowrap; }
 /* 34px hairline: 12px of accent, then rule. The one flash of orange in the nameplate. */

@@ -83,5 +83,5 @@ Luneth types `genesis`; run `PYTHONUTF8=1 python tools/genesis.py`, report, then
 resume** — never a flair-only boot. If a new invariant red appears, that is the only response. If he
 opens with substantive work instead, do a silent micro-check and proceed.
 
-The live handoff is `chronicle/next-chunk.md`. If anything here conflicts with an older document,
+The live handoff is `chronicle/next-chunk.md` (a local, gitignored per-session file, not committed). If anything here conflicts with an older document,
 older loses.
