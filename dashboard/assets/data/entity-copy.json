@@ -24,6 +24,96 @@
     "vitamin-a": {
       "lede": "The vitamin your eyes need to see in dim light — and, beyond vision, the one Wallach ties to healthy skin and mucous membranes, to bone and teeth, and to a lower risk of epithelial cancers.",
       "why": "From Wallach's Epigenetics (2014): retinol 2,500–5,000 IU and β-carotene 5,000–25,000 IU. Taking the upper figure of each and converting at 0.3 mcg RAE per IU ≈ 1,500 mcg retinol + 7,500 mcg β-carotene = 9,000 mcg RAE/day."
+    },
+    "sodium": {
+      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 3,300 mg."
+    },
+    "sulfur": {
+      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 500 mg."
+    },
+    "chloride": {
+      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 2,500 mg."
+    },
+    "potassium": {
+      "why": "From Wallach's Immortality (2008): a daily maintenance figure of 5,000 mg."
+    },
+    "boron": {
+      "why": "From Wallach's Epigenetics (2014) mineral table: 1–6 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 9.2 mg/day."
+    },
+    "chromium": {
+      "why": "From Wallach's Epigenetics (2014) mineral table: 200–400 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 620 mcg/day."
+    },
+    "germanium": {
+      "why": "From Wallach's Dead Doctors Don't Lie (2011): a recommended maintenance dose of 20–30 mg per day; the upper figure, 30 mg/day, is taken as the target."
+    },
+    "iron": {
+      "why": "From Wallach's Epigenetics (2014) mineral table: 15–30 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 46 mg/day."
+    },
+    "iodine": {
+      "why": "From Wallach's Epigenetics (2014) mineral table: 50–150 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 230 mcg/day."
+    },
+    "manganese": {
+      "why": "From Wallach's Epigenetics (2014) mineral table: 3–5 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 7.7 mg/day."
+    },
+    "molybdenum": {
+      "why": "From Wallach's Epigenetics (2014) mineral table: 10–25 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 38 mcg/day."
+    },
+    "silica": {
+      "why": "From Wallach's Epigenetics (2014) mineral table: 1–25 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 38 mg/day."
+    },
+    "vanadium": {
+      "why": "From Wallach's Epigenetics (2014) mineral table: 50–100 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 150 mcg/day."
+    },
+    "silver": {
+      "why": "From Wallach's Dead Doctors Don't Lie (2011): a recommended daily maintenance dose of 400 mcg."
+    },
+    "tin": {
+      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 500 mcg."
+    },
+    "vitamin-b1": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 10–100 mg; the upper figure, 100 mg/day, is taken as the target."
+    },
+    "vitamin-b2": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 10–50 mg; the upper figure, 50 mg/day, is taken as the target."
+    },
+    "vitamin-b3": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 10–100 mg; the upper figure, 100 mg/day, is taken as the target."
+    },
+    "vitamin-b5": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 25–100 mg; the upper figure, 100 mg/day, is taken as the target."
+    },
+    "vitamin-b6": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 25–100 mg; the upper figure, 100 mg/day, is taken as the target."
+    },
+    "vitamin-b9": {
+      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 1,000 mcg."
+    },
+    "vitamin-b12": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: a daily figure of 400 mcg."
+    },
+    "vitamin-c": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 250–1,000 mg; the upper figure, 1,000 mg/day, is taken as the target."
+    },
+    "vitamin-d": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 1,000–2,000 IU; taking the upper figure and converting at 40 IU per mcg ≈ 50 mcg/day."
+    },
+    "vitamin-e": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 100–200 IU; taking the upper figure and converting at 0.67 mg per IU ≈ 134 mg/day."
+    },
+    "vitamin-k": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 60–300 mcg; the upper figure, 300 mcg/day, is taken as the target."
+    },
+    "biotin": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 100–300 mcg; the upper figure, 300 mcg/day, is taken as the target."
+    },
+    "choline": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 10–100 mg; the upper figure, 100 mg/day, is taken as the target."
+    },
+    "inositol": {
+      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 90 mg."
+    },
+    "flavonoids": {
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 1,000–5,000 mg; the upper figure, 5,000 mg/day, is taken as the target."
     }
   },
   "conditions": {},

@@ -20703,7 +20703,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       ep_conditions_lead: "In Wallach's framework this nutrient is part of the protocol for {n} \u2014 open any for its full write-up, or search your own.",
       ep_coverage_of_target: "of Wallach's daily target",
       ep_empty_record: "No sealed Wallach claims for this one yet \u2014 the corpus is still being built out.",
-      ep_no_target: "No Wallach maintenance number for this one yet \u2014 an honest gap until his dose tables are fully mined.",
+      ep_no_target: "No fixed daily amount \u2014 Wallach never states an exact number for this one. For a practical guide to daily intake, see the recommended products below.",
       ep_non_essential: "NON-ESSENTIAL \u2014 the body can synthesize this, so it is not one of the 90. Shown for completeness; Youngevity includes it for cardiovascular balance and absorption.",
       ep_record_hint: "everything not shown above \xB7 advanced",
       ep_record_hint_cond: "everything not shown above, grouped",
@@ -76195,6 +76195,96 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       "vitamin-a": {
         lede: "The vitamin your eyes need to see in dim light \u2014 and, beyond vision, the one Wallach ties to healthy skin and mucous membranes, to bone and teeth, and to a lower risk of epithelial cancers.",
         why: "From Wallach's Epigenetics (2014): retinol 2,500\u20135,000 IU and \u03B2-carotene 5,000\u201325,000 IU. Taking the upper figure of each and converting at 0.3 mcg RAE per IU \u2248 1,500 mcg retinol + 7,500 mcg \u03B2-carotene = 9,000 mcg RAE/day."
+      },
+      sodium: {
+        why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 3,300 mg."
+      },
+      sulfur: {
+        why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 500 mg."
+      },
+      chloride: {
+        why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 2,500 mg."
+      },
+      potassium: {
+        why: "From Wallach's Immortality (2008): a daily maintenance figure of 5,000 mg."
+      },
+      boron: {
+        why: "From Wallach's Epigenetics (2014) mineral table: 1\u20136 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 9.2 mg/day."
+      },
+      chromium: {
+        why: "From Wallach's Epigenetics (2014) mineral table: 200\u2013400 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 620 mcg/day."
+      },
+      germanium: {
+        why: "From Wallach's Dead Doctors Don't Lie (2011): a recommended maintenance dose of 20\u201330 mg per day; the upper figure, 30 mg/day, is taken as the target."
+      },
+      iron: {
+        why: "From Wallach's Epigenetics (2014) mineral table: 15\u201330 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 46 mg/day."
+      },
+      iodine: {
+        why: "From Wallach's Epigenetics (2014) mineral table: 50\u2013150 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 230 mcg/day."
+      },
+      manganese: {
+        why: "From Wallach's Epigenetics (2014) mineral table: 3\u20135 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 7.7 mg/day."
+      },
+      molybdenum: {
+        why: "From Wallach's Epigenetics (2014) mineral table: 10\u201325 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 38 mcg/day."
+      },
+      silica: {
+        why: "From Wallach's Epigenetics (2014) mineral table: 1\u201325 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 38 mg/day."
+      },
+      vanadium: {
+        why: "From Wallach's Epigenetics (2014) mineral table: 50\u2013100 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 150 mcg/day."
+      },
+      silver: {
+        why: "From Wallach's Dead Doctors Don't Lie (2011): a recommended daily maintenance dose of 400 mcg."
+      },
+      tin: {
+        why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 500 mcg."
+      },
+      "vitamin-b1": {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 10\u2013100 mg; the upper figure, 100 mg/day, is taken as the target."
+      },
+      "vitamin-b2": {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 10\u201350 mg; the upper figure, 50 mg/day, is taken as the target."
+      },
+      "vitamin-b3": {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 10\u2013100 mg; the upper figure, 100 mg/day, is taken as the target."
+      },
+      "vitamin-b5": {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 25\u2013100 mg; the upper figure, 100 mg/day, is taken as the target."
+      },
+      "vitamin-b6": {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 25\u2013100 mg; the upper figure, 100 mg/day, is taken as the target."
+      },
+      "vitamin-b9": {
+        why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 1,000 mcg."
+      },
+      "vitamin-b12": {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: a daily figure of 400 mcg."
+      },
+      "vitamin-c": {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 250\u20131,000 mg; the upper figure, 1,000 mg/day, is taken as the target."
+      },
+      "vitamin-d": {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 1,000\u20132,000 IU; taking the upper figure and converting at 40 IU per mcg \u2248 50 mcg/day."
+      },
+      "vitamin-e": {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 100\u2013200 IU; taking the upper figure and converting at 0.67 mg per IU \u2248 134 mg/day."
+      },
+      "vitamin-k": {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 60\u2013300 mcg; the upper figure, 300 mcg/day, is taken as the target."
+      },
+      biotin: {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 100\u2013300 mcg; the upper figure, 300 mcg/day, is taken as the target."
+      },
+      choline: {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 10\u2013100 mg; the upper figure, 100 mg/day, is taken as the target."
+      },
+      inositol: {
+        why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 90 mg."
+      },
+      flavonoids: {
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 1,000\u20135,000 mg; the upper figure, 5,000 mg/day, is taken as the target."
       }
     },
     conditions: {},
@@ -200434,7 +200524,7 @@ Seal sequence: catalog_seal -> corpus_extract finalize (525-539) -> corpus_seal 
 
 Verification: board 94/94, 0 reds; corpus_verify PASS at kv 486; entity_page_enriched_matches_search green; all 15 spot-checked as surfacing on their intended entity pages.
 
-Campaign status: 4 of 5 unverified books landed (Hell's Kitchen, Immortality, Rare-earths, Let's-Play-Doctor). Remaining: epigenetics (~18, screenshot-spread like immortality -- reuse the immortality vision-fleet template). After epigenetics the campaign is complete.` }, { id: "lg_mt0vwwui_od7o3j", ts: "2026-08-19T21:11:41.514825-05:00", surface: "corpus", kind: "milestone", summary: "Landed the Epigenetics book \u2014 17 Wallach claims now live, completing the 5-book unverified-landing campaign (every Wallach book is now front-facing and searchable).", detail: "Epigenetics was the last of five \u201Cunverified\u201D Wallach books whose ruled claims we\u2019ve been landing one book at a time. With it live, all of Wallach\u2019s in-housed books now surface in Ask-Wallach search. The memorable part of this one: the book itself misspells a real person\u2019s name \u2014 Lydia Pinkham (of the famous Vegetable Compound) is printed \u201CPinkums\u201D throughout. The rule here is that we keep Wallach\u2019s genuine claims even when they disagree with the mainstream, but we DO fix clear typos and misspelled names using outside knowledge \u2014 so \u201CPinkums\u201D became \u201CPinkham\u201D (and its possessive \u201CPinkham\u2019s\u201D), and I wrote the change into the divergences ledger so a future page-check won\u2019t \u201Ccorrect\u201D it back to the book\u2019s error.\n\nkv 486\u2192490; sealed WAL-CLM-EPIGEN-000481..497 (17 claims). Pipeline: assemble keeps \u2192 question + claim_text dedup vs sealed \u2192 screenshot vision fleet \u2192 condition-mapping remediation \u2192 seal sequence.\n\nDISPOSITIONS. Dropped proposed 525 (byte-identical claim_text to already-live 469, iodine+copper\u2192varicose veins; the recovery\u2019s own dedup marked it FRESH \u2014 the manual claim_text-vs-sealed pass is what caught it). Keep-both: proposed 524\u2192sealed 484 (menopause/history) twins already-live 479 on the same Lydia-Pinkham passage; Luneth ruled keep-both and 484 was given a distinct claim_text (the \u2018what women used before modern medicine\u2019 framing vs 479\u2019s \u2018what the remedy was\u2019). Added the pair to _DUPLICATE_KEEP_BOTH with a pinned test, and reconciled a pre-existing drift found in passing: {HELLS-101,HELLS-102} was in the allowlist but missing from that test\u2019s membership pin (left by the HK landing; the test isn\u2019t one of the 94 board gates, so it had gone red unnoticed) \u2014 pin corrected 74\u219276.\n\nVISION. 12-agent screenshot fleet, one per book page, book on the LEFT ~48% of the dual-monitor captures. 15 VERIFIED-CLEAN, 2 \u2018DEFECTS\u2019 \u2014 both the Lydia passage, where our purified .txt was ALREADY cleaner than the recovered candidate (candidate carried alled/amenorthea; our source already read called/amenorrhea). Source .txt corrections, all page-true and re-snapped (0 BROKEN): Pinkums\u2192Pinkham x4 (incl. back-matter index) + magazine adds\u2192ads + possessive Pinkums\u2019\u2192Pinkham\u2019s (book_typo_divergences); 521 stray-period \u2018adrenal.\u2019\u2192\u2018adrenal\u2019, 526/535 etc.), 535 4~6\u21924\u20136 en-dash, 517 Legg-<nl>Perthe hyphen-split (kept the real hyphen, dropped the line-break newline).\n\nCATALOG. Sealed one condition synonym: menorrhagia += \u2018heavy or more frequent menstrual periods\u2019 / \u2018heavy menstrual periods\u2019 / \u2018heavy periods\u2019 (with_synonyms 144\u2192145) so 539 (\u2018could a thyroid problem be behind my heavy periods?\u2019) maps to the menorrhagia page. The exact phrase is required because the matcher does a contiguous substring test on the stopword-stripped verbatim.\n\nMAPPING. Conditions mapped where the quote names them, else search-only per the approved remediation policy. 3 claims fully search-only, subject-routed: 483 boron (ED/testosterone), 486 cobalt (hypothyroidism), 496 peripheral_neuropathy (ergot skin-tingling). 485 was re-subjected rosacea\u2192malabsorption to clear a duplicate-card collision with 497 (556, rosacea/mechanism) before sealing.\n\nSEAL ORDER: catalog_seal \u2192 finalize(481-497) \u2192 corpus_seal(487) \u2192 .txt fix + resnap --fix(6) \u2192 sync draft \u2192 reseal(488) \u2192 hyphen fix + resnap + reseal(489) \u2192 possessive fix + resnap + reseal(490) \u2192 whitelist + pinned test \u2192 claims_verified += 17 \u2192 merge enrichment \u2192 glossary(+peritonitis) \u2192 derive + embeds + build. Board 94/94 (0 new reds); test_no_duplicate_claims green (real corpus + membership pin); entity_page_enriched_matches_search green; keep-both pair spot-checked rendering as two distinct menopause cards." }];
+Campaign status: 4 of 5 unverified books landed (Hell's Kitchen, Immortality, Rare-earths, Let's-Play-Doctor). Remaining: epigenetics (~18, screenshot-spread like immortality -- reuse the immortality vision-fleet template). After epigenetics the campaign is complete.` }, { id: "lg_mt0vwwui_od7o3j", ts: "2026-08-19T21:11:41.514825-05:00", surface: "corpus", kind: "milestone", summary: "Landed the Epigenetics book \u2014 17 Wallach claims now live, completing the 5-book unverified-landing campaign (every Wallach book is now front-facing and searchable).", detail: "Epigenetics was the last of five \u201Cunverified\u201D Wallach books whose ruled claims we\u2019ve been landing one book at a time. With it live, all of Wallach\u2019s in-housed books now surface in Ask-Wallach search. The memorable part of this one: the book itself misspells a real person\u2019s name \u2014 Lydia Pinkham (of the famous Vegetable Compound) is printed \u201CPinkums\u201D throughout. The rule here is that we keep Wallach\u2019s genuine claims even when they disagree with the mainstream, but we DO fix clear typos and misspelled names using outside knowledge \u2014 so \u201CPinkums\u201D became \u201CPinkham\u201D (and its possessive \u201CPinkham\u2019s\u201D), and I wrote the change into the divergences ledger so a future page-check won\u2019t \u201Ccorrect\u201D it back to the book\u2019s error.\n\nkv 486\u2192490; sealed WAL-CLM-EPIGEN-000481..497 (17 claims). Pipeline: assemble keeps \u2192 question + claim_text dedup vs sealed \u2192 screenshot vision fleet \u2192 condition-mapping remediation \u2192 seal sequence.\n\nDISPOSITIONS. Dropped proposed 525 (byte-identical claim_text to already-live 469, iodine+copper\u2192varicose veins; the recovery\u2019s own dedup marked it FRESH \u2014 the manual claim_text-vs-sealed pass is what caught it). Keep-both: proposed 524\u2192sealed 484 (menopause/history) twins already-live 479 on the same Lydia-Pinkham passage; Luneth ruled keep-both and 484 was given a distinct claim_text (the \u2018what women used before modern medicine\u2019 framing vs 479\u2019s \u2018what the remedy was\u2019). Added the pair to _DUPLICATE_KEEP_BOTH with a pinned test, and reconciled a pre-existing drift found in passing: {HELLS-101,HELLS-102} was in the allowlist but missing from that test\u2019s membership pin (left by the HK landing; the test isn\u2019t one of the 94 board gates, so it had gone red unnoticed) \u2014 pin corrected 74\u219276.\n\nVISION. 12-agent screenshot fleet, one per book page, book on the LEFT ~48% of the dual-monitor captures. 15 VERIFIED-CLEAN, 2 \u2018DEFECTS\u2019 \u2014 both the Lydia passage, where our purified .txt was ALREADY cleaner than the recovered candidate (candidate carried alled/amenorthea; our source already read called/amenorrhea). Source .txt corrections, all page-true and re-snapped (0 BROKEN): Pinkums\u2192Pinkham x4 (incl. back-matter index) + magazine adds\u2192ads + possessive Pinkums\u2019\u2192Pinkham\u2019s (book_typo_divergences); 521 stray-period \u2018adrenal.\u2019\u2192\u2018adrenal\u2019, 526/535 etc.), 535 4~6\u21924\u20136 en-dash, 517 Legg-<nl>Perthe hyphen-split (kept the real hyphen, dropped the line-break newline).\n\nCATALOG. Sealed one condition synonym: menorrhagia += \u2018heavy or more frequent menstrual periods\u2019 / \u2018heavy menstrual periods\u2019 / \u2018heavy periods\u2019 (with_synonyms 144\u2192145) so 539 (\u2018could a thyroid problem be behind my heavy periods?\u2019) maps to the menorrhagia page. The exact phrase is required because the matcher does a contiguous substring test on the stopword-stripped verbatim.\n\nMAPPING. Conditions mapped where the quote names them, else search-only per the approved remediation policy. 3 claims fully search-only, subject-routed: 483 boron (ED/testosterone), 486 cobalt (hypothyroidism), 496 peripheral_neuropathy (ergot skin-tingling). 485 was re-subjected rosacea\u2192malabsorption to clear a duplicate-card collision with 497 (556, rosacea/mechanism) before sealing.\n\nSEAL ORDER: catalog_seal \u2192 finalize(481-497) \u2192 corpus_seal(487) \u2192 .txt fix + resnap --fix(6) \u2192 sync draft \u2192 reseal(488) \u2192 hyphen fix + resnap + reseal(489) \u2192 possessive fix + resnap + reseal(490) \u2192 whitelist + pinned test \u2192 claims_verified += 17 \u2192 merge enrichment \u2192 glossary(+peritonitis) \u2192 derive + embeds + build. Board 94/94 (0 new reds); test_no_duplicate_claims green (real corpus + membership pin); entity_page_enriched_matches_search green; keep-both pair spot-checked rendering as two distinct menopause cards." }, { id: "lg_mt1y0ile_ghn3is", ts: "2026-08-20T14:58:15.074501-05:00", surface: "dashboard", kind: "round-close", summary: "Fixed two dark-mode cards that rendered as washed-out light boxes (Calcium + Omega-9), reworded a stale \u201Cno dose\u201D message, and added a \u201Cwhy this number?\u201D hover to all 30 remaining dosed nutrients \u2014 each tracing its target to a Wallach book. Board 94/94.", detail: "Four fixes this round, all on the offline dashboard. Two were dark-mode display bugs where a card showed up as a pale light box with unreadable text; one was an out-of-date sentence; and the big one gave every nutrient with a Wallach dose a little \u201Cwhy this number?\u201D tooltip that explains, in one line, which book the number came from and how it was worked out.\n\nDARK WASHOUT (Calcium \u201CAbsorbable calcium\u201D card + Omega-9 note panel). Root cause: theme.css has four per-category dark blocks (:root[data-theme=\u201Cdark\u201D] .kd-essential-deep[data-category=\u2026], lines ~691\u2013706) that remap --ds-accent and --ds-accent-deep but never remapped --ds-accent-wash / --ds-accent-soft. drawer-knowledge.css defines LIGHT category washes (mineral --ds-accent-wash:#e3edf7; fatty_acid color-mix(--fam-story 13%,#fff)) at specificity (1,2,0), which out-specifies the systemic dark remap (block A, :root[data-theme=dark], (0,2,0)). So in dark the wash stayed light, and any surface that FILLS with it read as a light box with the light cream text on top: calcium\u2019s .kd-ep-fam__step--turn gradient (linear-gradient(165deg, var(--ds-accent-wash), var(--ds-paper-light))) and omega\u2019s .kd-ep-mirror--aside background (var(--ds-accent-wash)). Fix: added translucent --ds-accent-wash: color-mix(--ds-accent 16%, transparent) and --ds-accent-soft: color-mix(--ds-accent 34%, transparent) to all four dark category blocks, mirroring block (A) so a wash fill composites as a subtle dark tint. Also brightened the omega --aside eyebrow (Luneth: \u201Ctoo dark\u201D) to color-mix(--ds-accent 60%,#fff), scoped to :root[data-theme=dark] .kd-ep-mirror--aside .kd-ep-mirror__eyebrow. Verified via headless dark screenshots (calcium + omega fixed; vitamin-A + an amino page unregressed since those categories were touched too).\n\nCOPY. view-copy.json ep_no_target changed from \u201CNo Wallach maintenance number for this one yet \u2014 an honest gap until his dose tables are fully mined.\u201D to \u201CNo fixed daily amount \u2014 Wallach never states an exact number for this one. For a practical guide to daily intake, see the recommended products below.\u201D Confirmed on-screen that only the 12 amino acids hit this fallback and each renders a Best-Youngevity-sources list below, so \u201Cthe recommended products below\u201D always resolves (the structural elements carbon/hydrogen/nitrogen/oxygen route to a separate \u201CNone needed\u201D present-treatment).\n\nWHY-NUMBER. The hover mechanism already existed (essentialWhy(slug) \u2192 .kd-ep-why/.kd-ep-tip in renderAtAGlance) but only 6 of 37 dosed essentials had the copy. Authored the remaining 30 into entity-copy.json (phosphorus excluded \u2014 its book figure resolves to no on-screen number, so 30 not 31). Each blurb was generated from the sealed essentials-targets provenance plus the live displayed target read off the DOM \u2014 no number hand-typed \u2014 and follows the existing 5\u2019s voice: 8 bodyweight-scaled minerals (Epigenetics per-100-lb table \xD71.54 to a 154 lb adult); 7 flat minerals (LPD Base Line: sodium/sulfur/chloride/tin; Immortality: potassium; DDDL: germanium/silver); 15 vitamins from Epigenetics daily-multiple recommendations + LPD (folic acid, inositol), including the vitamin-D (40 IU per mcg) and vitamin-E (0.67 mg per IU) IU\u2192mass conversions. IMPORTANT non-defect noted: the derive-layer JSON range field holds the RAW pre-scale book figure (e.g. boron 1\u20136), while the app displays the scaled value (boron 9.2 mg) \u2014 checked on the real screen, the existing 5 blurbs match their displayed numbers; no contradiction.\n\nNEW GATE (\xA700.B). tools/render_probe_why_targets.js opens every essential that carries a why and asserts the tooltip renders and literally contains the on-screen target number \u2014 the truth anchor against why\u2194target drift (the number lives in two places: the coverage-computed target and the entity-copy prose). It is a render probe, not one of the 94 board invariants (the board is Python-only and cannot render the scaled/converted target), so it is honestly labeled as such.\n\nVERIFIED: node tools/build.mjs OK; invariants.py 94/94 (0 new reds); render probes why_targets (36/36), entity, omega, mechanism all PASS; dark screenshots of both card fixes and two hover tooltips. Files: theme.css, dashboard/assets/data/view-copy.json, dashboard/assets/data/entity-copy.json (+30, additions only), tools/render_probe_why_targets.js (new)." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

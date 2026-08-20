@@ -691,18 +691,31 @@
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="mineral"] {
   --ds-accent: #5b9fd6;
   --ds-accent-deep: color-mix(in srgb, #2b6fb0 60%, var(--ds-ink));
+  --ds-accent-wash: color-mix(in srgb, var(--ds-accent) 16%, transparent);
+  --ds-accent-soft: color-mix(in srgb, var(--ds-accent) 34%, transparent);
 }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="vitamin"] {
   --ds-accent: #ff9d5c;
   --ds-accent-deep: color-mix(in srgb, #ff7e3c 60%, var(--ds-ink));
+  --ds-accent-wash: color-mix(in srgb, var(--ds-accent) 16%, transparent);
+  --ds-accent-soft: color-mix(in srgb, var(--ds-accent) 34%, transparent);
 }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="amino_acid"] {
   --ds-accent: #7cc24e;
   --ds-accent-deep: color-mix(in srgb, #5aa82c 60%, var(--ds-ink));
+  --ds-accent-wash: color-mix(in srgb, var(--ds-accent) 16%, transparent);
+  --ds-accent-soft: color-mix(in srgb, var(--ds-accent) 34%, transparent);
 }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep[data-category="fatty_acid"] {
   --ds-accent: #a878e6;
   --ds-accent-deep: color-mix(in srgb, #8a52d6 60%, var(--ds-ink));
+  --ds-accent-wash: color-mix(in srgb, var(--ds-accent) 16%, transparent);
+  --ds-accent-soft: color-mix(in srgb, var(--ds-accent) 34%, transparent);
+}
+/* omega --aside eyebrow: brighten the small mono label so it reads clearly on the
+   dark panel (Luneth 2026-08-20: accent-deep purple was too dark as a label). */
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-mirror--aside .kd-ep-mirror__eyebrow {
+  color: color-mix(in srgb, var(--ds-accent) 60%, #fff);
 }
 :root[data-theme="dark"] #drawer-knowledge-mount .mkA-pt--up .mkA-pt__lead { color: color-mix(in srgb, #2f7a33 62%, var(--ds-ink)); }
 :root[data-theme="dark"] #drawer-knowledge-mount .mkA-pt--down .mkA-pt__lead { color: color-mix(in srgb, #b0442e 62%, var(--ds-ink)); }
