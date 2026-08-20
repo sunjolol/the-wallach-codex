@@ -145,7 +145,7 @@
         "acne vulgaris"
       ],
       "related": [],
-      "claim_count": 6
+      "claim_count": 7
     },
     "adhd": {
       "display_name": "Adhd",
@@ -489,7 +489,7 @@
         "stress and anxiety"
       ],
       "related": [],
-      "claim_count": 3
+      "claim_count": 4
     },
     "aphthous_stomatitis": {
       "display_name": "Aphthous Stomatitis",
@@ -3240,7 +3240,7 @@
       "related": [
         "dermatitis"
       ],
-      "claim_count": 11
+      "claim_count": 12
     },
     "eggs": {
       "display_name": "Eggs",
@@ -3744,7 +3744,7 @@
         "food reaction"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 3
     },
     "fractures": {
       "display_name": "Fractures",
@@ -4204,7 +4204,7 @@
         "painful big toe joint"
       ],
       "related": [],
-      "claim_count": 5
+      "claim_count": 6
     },
     "grilled_bbq_meat": {
       "display_name": "Grilled / BBQ meat",
@@ -4425,7 +4425,7 @@
         "rectal_itching",
         "bleeding_bowels"
       ],
-      "claim_count": 8
+      "claim_count": 9
     },
     "hepatitis": {
       "display_name": "Hepatitis",
@@ -4876,7 +4876,7 @@
         "hypoglycaemia"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 3
     },
     "hypotension": {
       "display_name": "Hypotension",
@@ -4922,7 +4922,7 @@
       "related": [
         "goiter"
       ],
-      "claim_count": 7
+      "claim_count": 8
     },
     "hysteria": {
       "display_name": "Hysteria",
@@ -6194,7 +6194,7 @@
         "muscle_cramps",
         "asthma"
       ],
-      "claim_count": 44,
+      "claim_count": 45,
       "symbol": "Mg"
     },
     "malnutrition": {
@@ -6596,7 +6596,7 @@
       "related": [
         "headache"
       ],
-      "claim_count": 4
+      "claim_count": 5
     },
     "minerals": {
       "display_name": "Minerals",
@@ -8929,7 +8929,7 @@
         "zoster"
       ],
       "related": [],
-      "claim_count": 4
+      "claim_count": 5
     },
     "silica": {
       "display_name": "Silica",
@@ -10021,6 +10021,22 @@
       ],
       "claim_count": 9
     },
+    "urinary_tract_infection": {
+      "display_name": "Urinary Tract Infection",
+      "type": "condition",
+      "synonyms": [
+        "uti",
+        "bladder infection",
+        "water infection",
+        "urine infection",
+        "cystitis",
+        "burning when peeing",
+        "burning pee",
+        "u.t.i"
+      ],
+      "related": [],
+      "claim_count": 1
+    },
     "urine_therapy": {
       "display_name": "Urine Therapy",
       "type": "topic",
@@ -10589,7 +10605,7 @@
         "alcoholism",
         "hypoglycemia"
       ],
-      "claim_count": 20
+      "claim_count": 21
     },
     "vitamin-b9": {
       "display_name": "Folate",
@@ -66476,6 +66492,435 @@
         ],
         "conditions": [
           "asthma"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000525",
+      "subject": "magnesium",
+      "also_about": [
+        "restless_leg_syndrome",
+        "insomnia"
+      ],
+      "facet": "mechanism",
+      "question": "Can low magnesium cause restless legs and sleeplessness?",
+      "answer_short": "Yes — Wallach lists restlessness, neuromuscular irritability, insomnia and muscle tremors among magnesium-deficiency signs.",
+      "answer": "Yes — twitchy, restless legs and sleepless nights sit right in Wallach's magnesium-deficiency picture, alongside nervousness, neuromuscular irritability, insomnia, and muscle tremors. The mechanism is a tug-of-war between two minerals: in his framework calcium is the muscle stimulator and magnesium is the relaxer, the one that lets a contracted muscle release. Run short on magnesium and the muscles and nerves stay over-excitable — legs that won't settle, tremors, and a nervous system too wired to fall asleep.\n\nThat same antagonism cuts the other way: an excess of calcium can itself induce magnesium-deficiency signs, which is why Wallach's protocols pair the two minerals rather than giving calcium alone. For muscle cramps and twitching legs specifically, his treatment is liquid plant-derived colloidal calcium, magnesium, and potassium, plus betaine HCl and pancreatic enzymes before meals to help the body absorb them. The wider cluster he ties to low magnesium runs from anxiety, confusion, and irritability to depression, hyperactivity, sound sensitivity (sonophobia), and muscle pain and weakness.",
+      "verbatim": "MAGNESIUM DEFICIENCY\nanxiety/confusion/irritability/\nrestlessness\nbirth defects\ndepression\nhyperactivity/sonophobia\nhypotension\nhypothermia\ninsomnia\nmuscle pain/muscle tremors/\nmuscle weakness\nnervousness/neuromuscular\nirritability",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "magnesium",
+        "magnesium deficiency",
+        "restless legs",
+        "insomnia",
+        "muscle tremors",
+        "nervousness",
+        "anxiety"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "magnesium"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000526",
+      "subject": "gout",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What is uric acid?",
+      "answer_short": "Uric acid is a marker of protein metabolism in the liver that spikes during gout attacks; Wallach gives a normal range of 4-8 mg% in men and 4.5-5.5 mg% in women.",
+      "answer": "Uric acid is what Wallach calls a \"barometer of protein metabolism\" in the liver — a blood marker of how well the body is handling protein. It matters most because it's the blood substance that climbs to high levels during a gout attack. Wallach puts the normal range at 4-8 mg% in men and 4.5-5.5 mg% in women.\n\nBecause the level tracks protein handling, it sits alongside another marker in his blood-chemistry guide: BUN (blood urea nitrogen), which gauges how well the liver and kidneys process the by-products of protein metabolism, with a normal range of 10-25 mg%. Read together, they give Wallach a read on how well the body is processing the protein it takes in.",
+      "verbatim": "Uric Acid is a barometer of protein metabolism in the liver. It is also the blood substance\nthat accumulates to high levels in attacks of\ngout. The normal range is 4-8 mg % in males\nand 4.5-5.5 mg % in females.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "uric acid",
+        "gout",
+        "protein metabolism",
+        "blood test",
+        "normal range",
+        "liver"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "gout"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000527",
+      "subject": "acne",
+      "also_about": [
+        "food_allergy"
+      ],
+      "facet": "mechanism",
+      "question": "Can dairy or wheat cause acne?",
+      "answer_short": "Wallach says food allergies — especially to wheat, milk, or soy — can be a contributing factor in acne, so it is worth testing whether cutting them clears your skin.",
+      "answer": "Not as the root cause, in Wallach's view — but yes, as a contributing factor worth ruling out. He lists food allergies, specifically to wheat, milk (dairy), and soy, among the things that can aggravate acne, and the practical way to test it is elimination: cut those foods and watch whether your skin clears. Alongside that he goes after digestion itself, using betaine HCl (a stomach-acid supplement) and pancreatic enzymes to better break down the foods behind the condition, and he has you drop fast foods along with fat and sugar.\n\nWhat he pins the skin problem on more fundamentally isn't dairy or wheat at all. In his acne rosacea program he calls the condition primarily an essential fatty acid deficiency combined with eating too much saturated and polyunsaturated fat — fried foods and margarine. So in his framework a food allergy is a real trigger to remove, but restoring the missing good fats is the deeper fix.",
+      "verbatim": "much saturated fat. Eliminate fast foods and\nother sources of fat and sugar. Check out the\nprobability of food allergies (i.e., wheat, milk,\nsoy); betaine HCl and pancreatic enzymes are",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "acne",
+        "dairy",
+        "wheat",
+        "milk",
+        "food allergies",
+        "saturated fat",
+        "betaine hcl",
+        "enzymes",
+        "skin"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000528",
+      "subject": "vitamin-b6",
+      "also_about": [
+        "acne",
+        "alopecia"
+      ],
+      "facet": "physiology",
+      "question": "Why is my skin so oily?",
+      "answer_short": "Wallach lists facial oiliness and acne as signs of vitamin B-6 (pyridoxine) deficiency, so oily, break-out-prone skin can be a B-6 clue.",
+      "answer": "Wallach reads oily skin as a deficiency clue: facial oiliness sits on his list of the signs of vitamin B-6 (pyridoxine) deficiency, right next to acne. So in his framework, a chronically greasy, break-out-prone face isn't just cosmetic — it's a flag that the body may be running short on B-6.\n\nHe never reads oiliness in isolation, though. It's one entry in a wider cluster he ties to low B-6: acne, cracked lip corners (cheilosis), a smooth, patchy 'geographic' tongue, hair loss, plus mood and nerve signs like depression, irritability and dizziness. A second cluster he links to the same vitamin includes seborrheic dermatitis — itchy, scaly skin — another skin sign in the same family. The more of these that turn up together, the more he'd suspect B-6.\n\nAnd B-6 is his lever for skin: where he lays out a full skin program — for acne rosacea — B-6 is one of the pillars, dosed at 100 mg three times a day.",
+      "verbatim": "PYRIDOXINE (B-6) DEFICIENCY\nacne\nalopecia\nanemia\nanorexia & nausea\narthritis\ncheilosis\nconjunctivitis\ndepression\ndizziness\nfacial oiliness\nfatigue",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "oily skin",
+        "facial oiliness",
+        "vitamin b6",
+        "pyridoxine",
+        "b6 deficiency",
+        "acne",
+        "cheilosis"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-b6"
+        ],
+        "conditions": [
+          "acne"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000529",
+      "subject": "hemorrhoids",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Do I need surgery for hemorrhoids?",
+      "answer_short": "Wallach uses whirlpool/Jacuzzi hydrotherapy on hemorrhoids, even thrombosed ones, and questions why anyone would risk surgery.",
+      "answer": "No — Wallach says surgery is rarely, if ever, necessary for hemorrhoids, and he openly asks why anyone would take on unnecessary, risky surgery when gentler measures work. To him hemorrhoids are simply varicose veins in the rectum and anus — veins that itch, bleed, hurt, and eventually clot (a \"thrombosed\" hemorrhoid). The real driver, he says, is a low-fiber diet and the constipation it causes: the straining to force out a hard, constipated stool balloons those veins outward, so the fix is to stop the straining rather than cut the veins out.\n\nHis plan starts with fiber and bowel regularity — enough fiber to produce two easy bowel movements a day, adding oat bran (two heaping tablespoons in eight ounces of juice or water before bed) if needed. On top of that he finds whirlpool or Jacuzzi hydrotherapy — a jet directed right at the hemorrhoidal tissue, twice a day — extremely useful, and says it helps even the clotted, thrombosed ones that would normally be sent to surgery. Hydrotherapy is old medicine in his telling: sitz baths for hemorrhoids go back to Roman times. He rounds it out with topical soothers — Preparation H, or herbal washes and compresses such as German chamomile, witch hazel, yarrow and horse chestnut. And because he treats hemorrhoids as fundamentally a weak-vein problem, he adds that plant-derived colloidal copper can make hemorrhoids — along with spider and varicose veins — go away, framing them as a reversible copper deficiency rather than something you have to remove.",
+      "verbatim": "We have also found that the \"hydrotherapy\" produced by the whirlpool or Jacuzzi\nis extremely useful for hemorrhoids (both\nsimple and thrombosed - why get unnecessary and risky surgery?!!)",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "hemorrhoids",
+        "surgery",
+        "hydrotherapy",
+        "jacuzzi",
+        "whirlpool",
+        "thrombosed",
+        "piles"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hemorrhoids"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000530",
+      "subject": "migraine",
+      "also_about": [
+        "headache"
+      ],
+      "facet": "protocol",
+      "question": "Is there a homeopathic remedy for migraines?",
+      "answer_short": "Wallach lists a homeopathic remedy he calls a great migraine remedy for the pattern of a headache that builds through the morning with flashes and zig-zags before the eyes and a craving for salt.",
+      "answer": "Yes. Among homeopathic options, Wallach singles out one he calls a \"great migraine remedy\" — but in homeopathy the remedy isn't chosen by a lab number, it's matched to a specific pattern of symptoms, and this one fits a very particular picture. You wake with the headache; it builds through the morning to a peak around 11:00 to noon, then eases off as the day gets cooler. You see flashes and zig-zags of light before the eyes, and using your eyes makes the headache worse. And there's a distinct craving for salt, often alongside a liking for beer, fish and milk and an aversion to meat, coffee and fat.\n\nThe salt craving isn't just a quirk on the list. Elsewhere Wallach treats a craving for salt as one of the most basic drives of all living organisms and a real signal worth heeding — he cites a 1940 case of a young boy with a \"morbid craving for salt\" whose body, it turned out, was correctly compensating for undiagnosed Addison's disease (adrenal insufficiency); it fits his \"wisdom of the body\" idea that cravings can point to a genuine physiological need. So in this remedy's picture, the pull toward salt reads as a meaningful clue, not an accident.",
+      "verbatim": "Great migraine headache remedy.\nWakes with headache, gets worse until 11:00\nor 12:00 noon then eases off as day gets cooler.\nFlashes and zig zags before eyes with headache. Headache worse with using eyes. Salt\ncraving, likes beer, fish and occasionally milk\nbut may have aversion to meat, coffee and fat.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "migraine",
+        "headache",
+        "homeopathic remedy",
+        "nat mur",
+        "natrum muriaticum",
+        "salt craving",
+        "cell salt"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "migraine",
+          "headache"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000531",
+      "subject": "food_allergy",
+      "also_about": [
+        "allergies"
+      ],
+      "facet": "physiology",
+      "question": "How can I test myself for food allergies at home?",
+      "answer_short": "Use the Coca pulse test: take your resting pulse, eat one food alone, then check again at 15, 30, and 60 minutes -- a jump of more than ten beats means you react to that food.",
+      "answer": "Yes — Wallach's do-it-yourself method is the Coca pulse test. Take your resting (base) pulse, eat just one food alone (milk only, wheat only, and so on), then recheck at 15, 30, and 60 minutes; if your pulse jumps more than ten beats, that food is an allergen for you. The logic is simple: contact with something you react to makes your heart rate — and therefore your pulse — climb, which is why he points to allergy to MSG, the \"Chinese restaurant syndrome,\" as the extreme example.\n\nBecause you test one food at a time, he suggests running it alongside a diet diary, since a reaction can be behavioral (even hyperactivity) and may not surface for minutes to a few hours after eating. What you're hunting for matters: Wallach ties food allergies to celiac-type damage in the intestine that blocks the absorption of essential nutrients, with wheat, cow's milk, and soy the classic culprits. Once you've pinned down the offenders, his approach is to eliminate or rotate them — and he notes it takes about 90 days for the injured gut to repair.",
+      "verbatim": "The easiest way to identify food allergies in\nyourself is the Coca Pulse Test. To perform\nthis test, you learn your base pulse rate then\neat a single food (i.e., milk only, wheat only,\netc.) and check your pulse 15, 30 and 60\nminutes after you eat the single food item; an\nelevation in pulse rate of more than ten beats\nis an indicator that you are allergic to that food.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "food allergy",
+        "self-test",
+        "pulse test",
+        "home test",
+        "allergies",
+        "food intolerance"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "allergies",
+          "food_allergy"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000532",
+      "subject": "hypoglycemia",
+      "also_about": [
+        "allergies",
+        "food_allergy",
+        "chromium"
+      ],
+      "facet": "mechanism",
+      "question": "Do food allergies cause low blood sugar?",
+      "answer_short": "Food allergies and low blood sugar travel together -- Wallach says the gut damage from allergies blocks chromium absorption, so a six-hour glucose test is worth doing.",
+      "answer": "Yes — Wallach says almost everyone with food allergies also has low blood sugar, and the two are linked through the gut. Food allergies produce celiac-type changes in the intestinal lining — the same kind of damage seen in celiac disease — and that injured gut can no longer absorb chromium efficiently. Since chromium is the trace mineral the body leans on to keep blood sugar steady, starving it of chromium lets blood sugar fall into hypoglycemia. Wallach adds vanadium to the list of minerals the damaged gut fails to absorb, and notes that a high intake of purified sugar and refined flour makes things worse — increasing urinary chromium loss by up to 300%.\n\nBecause a single fasting blood-sugar reading misses hypoglycemia in 98% of cases, he says the way to catch it is a six-hour glucose tolerance test (GTT), and warns that left untreated the condition frequently develops into diabetes. His fix pairs resolving the allergies with the two minerals he calls the 'magic bullets,' chromium and vanadium — dosing chromium at 50-200 micrograms three times daily.",
+      "verbatim": "Do a six-hour GTT as almost\neveryone with food allergies has hypoglycemia\nbecause the celiac changes in the intestine\nprevent the efficient absorption of chromium.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "food allergies",
+        "hypoglycemia",
+        "low blood sugar",
+        "chromium",
+        "celiac",
+        "gtt",
+        "glucose tolerance test",
+        "malabsorption"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium"
+        ],
+        "conditions": [
+          "allergies",
+          "food_allergy",
+          "hypoglycemia"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000533",
+      "subject": "food_allergy",
+      "also_about": [
+        "allergies"
+      ],
+      "facet": "protocol",
+      "question": "Can food allergies be reversed, and how long does it take?",
+      "answer_short": "Yes -- Wallach says the gut damage behind food allergies repairs in about 90 days, and it works even at age 100, so allergies aren't permanent.",
+      "answer": "Yes — Wallach says food allergies aren't permanent, because what's really driving them is repairable damage to the gut. In his account, offending foods inflame the intestinal lining and cause celiac-disease-type changes that block absorption of essential nutrients; heal that lining and the allergy resolves. He puts the repair at up to 90 days, and stresses the encouraging part — it happens even if you're 100 years old.\n\nThe reversal comes from getting the trigger foods out: identify the culprits with a pulse test, then avoid them — leaning on five-day rotation diets, urine therapy and patience while the gut mends. Wallach adds that intravenous hydrogen peroxide speeds the healing along.",
+      "verbatim": "urine therapy, five day rotation diets, avoidance of offending foods and patience!!!!! It\ntakes up to 90 days to repair the intestinal\ninjury (the good news is that repair will take\nplace even if you're 100 years old!!!). IV\nhydrogen peroxide speeds up the healing\nprocess.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "food allergies",
+        "reversed",
+        "rotation diet",
+        "urine therapy",
+        "90 days",
+        "intestinal repair",
+        "healing"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000534",
+      "subject": "eczema",
+      "also_about": [
+        "asthma",
+        "allergies"
+      ],
+      "facet": "physiology",
+      "question": "Can a blood test show my eczema is allergy-related?",
+      "answer_short": "Wallach points to basophils on a standard blood count -- they climb with chronic intestinal allergies, eczema, and asthma (the normal range is about 0-2%), so a high level supports the idea that a food allergy is behind your skin.",
+      "answer": "Yes — Wallach points to the basophils on a standard blood count. Basophils are one of the cell types a routine blood count measures, and he says their level rises in response to chronic intestinal allergies, eczema, and asthma (and sometimes to parasitic infestations). The normal range is 0-2%, so a basophil count pushed above that supports the idea that a food allergy is driving the skin.\n\nWhy would a blood marker of a gut allergy turn up in a skin condition? In Wallach's account they are the same problem. He says eczema is usually caused by food allergies — most often to cow's milk, wheat, and soy — and that the same allergic lesions appear in the lining of the small intestine as on the skin, so the raised basophils, the gut, and the rash all trace to one food reaction. Because parasites can lift the count too, he treats a high basophil level as a strong pointer rather than final proof; to pin down the exact culprit food he uses pulse tests and elimination diets.",
+      "verbatim": "Basophils (Baso) respond to chronic intestinal allergies, eczema, asthma and sometimes\nwith parasitic infestations. The normal range\nis 0-2%.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "basophils",
+        "blood test",
+        "eczema",
+        "asthma",
+        "allergies",
+        "cbc",
+        "white blood cells",
+        "parasites"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "eczema",
+          "asthma"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000535",
+      "subject": "hypoglycemia",
+      "also_about": [
+        "hyperirritability",
+        "anxiety",
+        "chromium",
+        "vanadium"
+      ],
+      "facet": "mechanism",
+      "question": "Why do I feel anxious and irritable after eating sugar?",
+      "answer_short": "Wallach explains that refined sugar and flour flush chromium out in the urine (up to 300%), causing low blood sugar whose symptoms include irritability, crying, palpitations and other nervous-emotional swings.",
+      "answer": "Wallach pins this on blood sugar and a mineral. Refined sugar and refined flour flush chromium — and vanadium — out of your body in the urine, by as much as 300%, and losing them drops your blood sugar (hypoglycemia). Wallach says the symptoms of low blood sugar are heavily emotional: irritability, crying, heart palpitations and other nervous-emotional swings. So the sugar that feels like a lift is actually stripping out the very minerals that steady blood sugar and setting up the crash.\n\nHe points to a second route to the same place — food allergies that cause celiac-type changes in the intestine, which block absorption of that same chromium and vanadium. And he warns it isn't harmless: untreated hypoglycemia, in his telling, very frequently develops into diabetes, which is why he calls the old warning that eating sugar leads to diabetes \"quite true.\"\n\nHis fix is to put the lost minerals back — chromium and vanadium, which he calls the \"magic bullets,\" at 50-200 micrograms three times a day with meals. To catch the problem in the first place he wants a six-hour glucose tolerance test, since a single fasting blood-sugar reading, he says, misses it 98% of the time.",
+      "verbatim": "The cause of\nhypoglycemia is almost always food allergies\nthat cause a malabsorption of chromium and\nvanadium as a result of celiac disease type\nchanges in the intestine and/or a large intake\nof purified sugar and refined flour which\nincreases the dumping of chromium in the\nurine as much as 300%. The old wives tales \"if\nyou eat sugar from the sugar bowl, you will\nsurely develop diabetes\" is then quite true as\nuntreated hypoglycemia will very frequently\ndevelop into diabetes!!! The symptoms of\nhypoglycemia are highly variable and may\ninclude emotional symptoms (i.e., hyperactivity, paranoia, schizophrenia, memory loss,\nirritability, hallucinations, depression, manic\ndepression, dyslexia, crying, learning disabilities, etc.), sleepiness, fatigue, heart palpitations, sweating, inability to do cognating tasks",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "sugar",
+        "anxiety",
+        "irritable",
+        "hypoglycemia",
+        "low blood sugar",
+        "chromium",
+        "vanadium",
+        "mood",
+        "diabetes"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "chromium",
+          "vanadium"
+        ],
+        "conditions": [
+          "hypoglycemia",
+          "hyperirritability"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000536",
+      "subject": "anxiety",
+      "also_about": [
+        "arthritis"
+      ],
+      "facet": "protocol",
+      "question": "Can color therapy help relieve anxiety?",
+      "answer_short": "In Wallach's survey of color therapy, yellow and violet are the colors used to ease anxiety (and arthritis) -- one of the gentler alternative options he lists.",
+      "answer": "Yes — in Wallach's survey of color therapy, yellow/violet is the color used to relieve anxiety (and arthritis). Color therapy, as he describes it, means using colored lights or panels to create a positive healing effect, and he treats it as another form of light therapy. Each color is matched to a condition: blue for high blood pressure and inflammation, red for low blood pressure, orange for gallstones and kidney stones, green for ulcers and colds — and yellow/violet for anxiety.\n\nWhy aim a color at a mood at all? Wallach notes it is well documented that our response to color is emotional while our response to shape is intellectual — which is the reasoning behind matching a color to something like anxiety. He traces the practice back a long way: it was originally recorded in the Greek Healing Temples of light and color at Heliopolis, Egypt, and color healing also appears in Ayurvedic and Traditional Chinese medicine.",
+      "verbatim": "therapy is considered by many to be another\nform of light therapy:\n1) Blue reduces BP, alleviates\nteething, boils, fever, inflammation,\ndysentery, colic, jaundice and heals\ncuts and burns\n2) Red alleviates \"hypo\"tension and\ncertain forms of paralysis\n3) Yellow/Violet alleviates anxiety\nand arthritis",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "color therapy",
+        "chromotherapy",
+        "light therapy",
+        "anxiety",
+        "blue",
+        "red",
+        "yellow",
+        "violet"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "anxiety"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000537",
+      "subject": "urinary_tract_infection",
+      "also_about": [
+        "cystitis"
+      ],
+      "facet": "physiology",
+      "question": "Can I test for a bladder infection at home?",
+      "answer_short": "Yes — Wallach says cheap over-the-counter urine dip sticks can tell you at home if you have a bladder or kidney infection (plus blood or sugar) for about $1.50 a test.",
+      "answer": "Yes. Wallach says testing your urine at home is as simple as checking your car's oil dipstick — and several brands of over-the-counter urine 'dip sticks' cost only about $1.50 a test. A single stick can flag a lot at once: a urinary infection of the bladder or kidney, blood in the urine (which can point to infection, stones or tumors), signs of blood-destructive disease, liver disease, kidney disease, and diabetes (sugar).\n\nIn Wallach's account, the way a stick reads an infection is through two markers — a positive nitrate test and many white blood cells in the urine. That pairing also lets you make sense of a scary result: he notes blood in the urine can come from a bladder infection or simply from menstruation, so if the nitrate test is negative and there are no white blood cells, the blood can be disregarded.",
+      "verbatim": "Urine testing is as simple as checking\nyour car's crankcase oil --just check the \"dip\nstick\"!! Several brands of urine \"dip sticks\" can\ntell you if you have a urinary infection (bladder\nor kidney), blood in your urine (infection,\nstones, tumors, etc.), indications of blood destructive diseases, liver disease, kidney disease, diabetes (sugar) all for about $1.50 per\ntest!!",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "bladder infection",
+        "urinary infection",
+        "home test",
+        "dip stick",
+        "urine test",
+        "uti",
+        "kidney infection",
+        "blood in urine"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "urinary_tract_infection"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000538",
+      "subject": "hypothyroidism",
+      "also_about": [
+        "raynauds_disease"
+      ],
+      "facet": "physiology",
+      "question": "Can an underactive thyroid cause cold hands and feet?",
+      "answer_short": "Wallach links chronically cold hands and feet to low thyroid; his home test is a morning basal temperature below 97.8 taken in the armpit, plus feeling slow in the morning.",
+      "answer": "Yes — Wallach counts chronically cold hands and feet as a classic sign of an underactive thyroid. The thyroid is essentially the body's thermostat: iodine combined with the amino acid tyrosine is manufactured into the hormone thyroxin, which regulates body temperature and general metabolism, so when the gland runs slow the whole body — extremities included — runs cold. He also names low thyroid function as one of the causes of poor circulation, which shows up as exactly this: cold hands and feet, plus numb, tingling fingers and toes.\n\nHis home test is a basal (resting) body temperature. Put a thermometer in your armpit first thing in the morning, before you stir out of bed — shake it down the night before and leave it on the nightstand so you don't move around first. A reading of 97.8 or below, especially alongside cold hands and feet and being slow in the morning, most likely means poor thyroid function. And Wallach stresses the gland needs all 90 essential nutrients to make thyroxin, not iodine alone.",
+      "verbatim": "your basal body temperature first thing in the\nmorning by placing a thermometer in your\naxilla (armpit) before stirring out of bed (be\nsure to shake down the thermometer the night\nbefore and place it on the night stand to\nprevent unnecessary movement); if your basal\nbody temperature is less than 97.8 or less, if\nyou have chronically cold hands and feet, and\nif you are slow in the morning, you most likely\nhave poor thyroid function.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "underactive thyroid",
+        "hypothyroidism",
+        "cold hands",
+        "cold feet",
+        "basal body temperature",
+        "thyroid",
+        "raynauds"
+      ]
+    },
+    {
+      "id": "WAL-CLM-LETS-000539",
+      "subject": "shingles",
+      "also_about": [],
+      "facet": "protocol",
+      "question": "Is there a homeopathic remedy for shingles pain?",
+      "answer_short": "Wallach lists the homeopathic remedy Rhus tox as a good remedy for shingles when the patient wants pain relief, applied with constant hot baths or applications.",
+      "answer": "Yes — Wallach lists the homeopathic remedy Rhus tox as a very good choice for shingles when the patient wants to relieve pain, and he pairs it with constant hot baths or applications, which he says improve the condition by about 75%.\n\nIt helps to know what shingles is in his telling: herpes zoster, the chronic, painful adult return of the same virus behind childhood chicken pox (varicella). It surfaces as clear, blister-like vesicles ringed by a small red zone, usually on the upper torso — a skin complaint, which is exactly the category Wallach files this remedy under. For the milder childhood form of the same virus he stays symptomatic too, dabbing vitamin E oil on each blister and using oatmeal baths and Caladryl lotion.",
+      "verbatim": "Very\ngood remedy for shingles when patient wants\nto relieve pain. Constant hot baths or applications which improves 75%. Skin complaints.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "shingles",
+        "homeopathic remedy",
+        "rhus tox",
+        "pain",
+        "herpes zoster",
+        "restless",
+        "hot baths"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "shingles"
         ]
       }
     },

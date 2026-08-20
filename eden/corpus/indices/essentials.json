@@ -331,7 +331,7 @@
     "display_name": "Magnesium",
     "canon_slug": "magnesium",
     "category": "mineral",
-    "claim_count": 120,
+    "claim_count": 121,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000053",
@@ -341,6 +341,7 @@
         "WAL-CLM-EPIGEN-000098",
         "WAL-CLM-IMMORT-000205",
         "WAL-CLM-LETS-000016",
+        "WAL-CLM-LETS-000525",
         "WAL-CLM-RARE-000172",
         "WAL-CLM-RARE-000275",
         "WAL-CLM-RARE-000303",
@@ -1657,7 +1658,7 @@
     "display_name": "Chromium",
     "canon_slug": "chromium",
     "category": "mineral",
-    "claim_count": 84,
+    "claim_count": 86,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -1696,6 +1697,8 @@
         "WAL-CLM-DDDL-000447",
         "WAL-CLM-DDDL-000547",
         "WAL-CLM-IMMORT-000091",
+        "WAL-CLM-LETS-000532",
+        "WAL-CLM-LETS-000535",
         "WAL-CLM-RARE-000043",
         "WAL-CLM-RARE-000074",
         "WAL-CLM-RARE-000117",
@@ -1809,6 +1812,7 @@
     "conditions_treated": [
       "adhd",
       "alcoholism",
+      "allergies",
       "alzheimers",
       "anemia",
       "anxiety",
@@ -3225,7 +3229,7 @@
     "display_name": "Vanadium",
     "canon_slug": "vanadium",
     "category": "mineral",
-    "claim_count": 50,
+    "claim_count": 51,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000017",
@@ -3256,6 +3260,7 @@
         "WAL-CLM-DDDL-000447",
         "WAL-CLM-DDDL-000547",
         "WAL-CLM-IMMORT-000478",
+        "WAL-CLM-LETS-000535",
         "WAL-CLM-RARE-000043",
         "WAL-CLM-RARE-000128",
         "WAL-CLM-RARE-000253",
@@ -3327,6 +3332,7 @@
       "high_cholesterol",
       "high_triglycerides",
       "hyperactivity",
+      "hyperirritability",
       "hypoglycemia",
       "hysteria",
       "insomnia",
@@ -5685,14 +5691,15 @@
     "display_name": "Pyridoxine",
     "canon_slug": "vitamin-b6",
     "category": "vitamin",
-    "claim_count": 62,
+    "claim_count": 63,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000039",
         "WAL-CLM-EPIGEN-000108",
         "WAL-CLM-IMMORT-000008",
         "WAL-CLM-LETS-000027",
-        "WAL-CLM-LETS-000210"
+        "WAL-CLM-LETS-000210",
+        "WAL-CLM-LETS-000528"
       ],
       "dose": [
         "WAL-CLM-DDDL-000590",

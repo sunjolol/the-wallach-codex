@@ -1,0 +1,274 @@
+[
+ {
+  "id": "WAL-CLM-LETS-000553",
+  "verbatim_len": 231,
+  "needle_words": 23,
+  "page": 58,
+  "located": true,
+  "run": 23,
+  "margin": 19,
+  "aligned_words": 23,
+  "matched": 23,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-LETS-000556",
+  "verbatim_len": 212,
+  "needle_words": 43,
+  "page": 46,
+  "located": true,
+  "run": 43,
+  "margin": 39,
+  "aligned_words": 43,
+  "matched": 43,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-LETS-000557",
+  "verbatim_len": 185,
+  "needle_words": 31,
+  "page": 94,
+  "located": true,
+  "run": 26,
+  "margin": 16,
+  "aligned_words": 31,
+  "matched": 30,
+  "coverage": 0.968,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "replace",
+    "ours": "HCl",
+    "pdf": "HC1",
+    "ctx": "...wheat milk soy betaine [[HCl]] and pancreatic enzymes are..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-LETS-000559",
+  "verbatim_len": 146,
+  "needle_words": 17,
+  "page": 59,
+  "located": true,
+  "run": 17,
+  "margin": 14,
+  "aligned_words": 17,
+  "matched": 17,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-LETS-000560",
+  "verbatim_len": 190,
+  "needle_words": 27,
+  "page": 40,
+  "located": true,
+  "run": 27,
+  "margin": 24,
+  "aligned_words": 27,
+  "matched": 27,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-LETS-000561",
+  "verbatim_len": 305,
+  "needle_words": 52,
+  "page": 76,
+  "located": true,
+  "run": 52,
+  "margin": 50,
+  "aligned_words": 52,
+  "matched": 52,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-LETS-000562",
+  "verbatim_len": 371,
+  "needle_words": 72,
+  "page": 137,
+  "located": true,
+  "run": 72,
+  "margin": 66,
+  "aligned_words": 72,
+  "matched": 72,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-LETS-000564",
+  "verbatim_len": 163,
+  "needle_words": 26,
+  "page": 137,
+  "located": true,
+  "run": 24,
+  "margin": 20,
+  "aligned_words": 26,
+  "matched": 26,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "insert",
+    "ours": "",
+    "pdf": "ofchromium Treatment",
+    "ctx": "...prevent the efficient absorption [[]] of chromium..."
+   },
+   {
+    "tag": "insert",
+    "ours": "",
+    "pdf": "food allergies includes religious use of the base line nutritional supplements be sure to use hypoallergenic supplements no corn wheat soy egg or milk avoid vaccinations that have egg blood or beef origins vitamin C to bowel tolerance levels vitamin A at 300 000 IU day as beta carotene bioflavonoids at 150 300 mg day zinc at 50 mg t i d essential fatty acids at 5 gm t i d seleniumat 200 meg t i d",
+    "ctx": "...the efficient absorption of [[]] chromium..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-LETS-000565",
+  "verbatim_len": 273,
+  "needle_words": 46,
+  "page": 137,
+  "located": true,
+  "run": 46,
+  "margin": 41,
+  "aligned_words": 46,
+  "matched": 46,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-LETS-000567",
+  "verbatim_len": 143,
+  "needle_words": 20,
+  "page": 45,
+  "located": true,
+  "run": 20,
+  "margin": 15,
+  "aligned_words": 20,
+  "matched": 20,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-LETS-000569",
+  "verbatim_len": 822,
+  "needle_words": 121,
+  "page": 145,
+  "located": true,
+  "run": 121,
+  "margin": 115,
+  "aligned_words": 121,
+  "matched": 121,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ },
+ {
+  "id": "WAL-CLM-LETS-000573",
+  "verbatim_len": 300,
+  "needle_words": 46,
+  "page": 70,
+  "located": true,
+  "run": 28,
+  "margin": 26,
+  "aligned_words": 46,
+  "matched": 45,
+  "coverage": 0.978,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "replace",
+    "ours": "burns",
+    "pdf": "bums",
+    "ctx": "...and heals cuts and [[burns]] 2 Red alleviates hypo..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-LETS-000575",
+  "verbatim_len": 377,
+  "needle_words": 59,
+  "page": 43,
+  "located": true,
+  "run": 39,
+  "margin": 36,
+  "aligned_words": 59,
+  "matched": 57,
+  "coverage": 0.966,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "replace",
+    "ours": "of urine",
+    "pdf": "ofurine",
+    "ctx": "...dip stick Several brands [[of urine]] dip sticks can tell..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-LETS-000576",
+  "verbatim_len": 434,
+  "needle_words": 77,
+  "page": 43,
+  "located": true,
+  "run": 41,
+  "margin": 37,
+  "aligned_words": 77,
+  "matched": 73,
+  "coverage": 0.948,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": [
+   {
+    "tag": "replace",
+    "ours": "unnecessary movement",
+    "pdf": "unnecessarymovement",
+    "ctx": "...night stand to prevent [[unnecessary movement]] ifyour basal body temperature..."
+   },
+   {
+    "tag": "replace",
+    "ours": "if you",
+    "pdf": "ifyou",
+    "ctx": "...hands and feet and [[if you]] are slow in the..."
+   }
+  ]
+ },
+ {
+  "id": "WAL-CLM-LETS-000577",
+  "verbatim_len": 139,
+  "needle_words": 21,
+  "page": 77,
+  "located": true,
+  "run": 21,
+  "margin": 19,
+  "aligned_words": 21,
+  "matched": 21,
+  "coverage": 1.0,
+  "head_skip": 0,
+  "tail_skip": 0,
+  "hunks": []
+ }
+]

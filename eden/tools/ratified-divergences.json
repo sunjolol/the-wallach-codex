@@ -2361,6 +2361,56 @@
     "now": "answer_short: \"an hour and a half after\"",
     "basis": "§00.A number hygiene (README-flagged): the source/verbatim says \"one and a half hours\", not \"90 minutes\" (a conversion). Reworded answer_short to Wallach's own wording. verbatim + answer_full already say \"one and a half / an hour and a half\". vision-confirmed p123."
    }
+  ],
+  "batch_2026-08-19-lets-play-doctor-landing": [
+   {
+    "claim": "WAL-CLM-LETS-000529",
+    "was": "whirlpool orJaccuzi",
+    "now": "whirlpool or Jacuzzi",
+    "basis": "page prints the misspelling Jaccuzi (for Jacuzzi) with a dropped space (orJaccuzi); corrected the brand name + space per standing rule; vision-confirmed p40. also de-hyphenated hydrotherapy, unnecessary."
+   },
+   {
+    "claim": "WAL-CLM-LETS-000530",
+    "was": "1 2:00 ... usingeyes ... eases offas day",
+    "now": "12:00 ... using eyes ... eases off as day",
+    "basis": "OCR split the time 12:00 as 1 2:00; dropped spaces in usingeyes / offas; all corrected; vision-confirmed p76 (11:00 and 12:00 both confirmed on page). de-hyphenated headache."
+   },
+   {
+    "claim": "WAL-CLM-LETS-000532",
+    "was": "eveiyone",
+    "now": "everyone",
+    "basis": "OCR typo eveiyone->everyone (r-for-i misread); vision-confirmed p137 at 4x zoom. six-hour GTT confirmed."
+   },
+   {
+    "claim": "WAL-CLM-LETS-000535",
+    "was": "memoiy loss",
+    "now": "memory loss",
+    "basis": "OCR typo memoiy->memory; vision-confirmed p145. de-hyphenated hyperactivity, disabilities, palpitations."
+   },
+   {
+    "claim": "WAL-CLM-LETS-000537",
+    "was": "tell you ifyou have",
+    "now": "tell you if you have",
+    "basis": "dropped space (ifyou->if you); vision-confirmed p43. $1.50 confirmed. de-hyphenated destructive, disease."
+   },
+   {
+    "claim": "WAL-CLM-LETS-000538",
+    "was": "ifyour basal",
+    "now": "if your basal",
+    "basis": "dropped space (ifyour->if your); vision-confirmed p43. 97.8 confirmed; page reads poor thyroid function (NOT Raynaud's) so 576 subject remapped to hypothyroidism."
+   },
+   {
+    "claim": "WAL-CLM-LETS-000526",
+    "was": "protein metabo-/lism",
+    "now": "protein metabolism",
+    "basis": "de-hyphenated justified-column line-split; vision-confirmed p46 (uric acid 4-8 / 4.5-5.5 mg% confirmed)."
+   },
+   {
+    "claim": "WAL-CLM-LETS-000525",
+    "was": "facet=physiology",
+    "now": "facet=mechanism",
+    "basis": "DEDUP-RESOLUTION (Luneth-ruled 2026-08-19): 553 quotes the same magnesium-deficiency table as already-live WAL-CLM-LETS-000016 (same subject magnesium, both physiology) -> no_duplicate_claims twin. 553 answer leads with the calcium/magnesium tug-of-war mechanism, so facet=mechanism is more accurate and separates the two cards. Not a verbatim change."
+   }
   ]
  },
  "_classes": [

@@ -1,0 +1,48 @@
+{
+  "content_fixes": {
+    "WAL-CLM-LETS-000564": [
+      [
+        "eveiyone",
+        "everyone"
+      ]
+    ],
+    "WAL-CLM-LETS-000569": [
+      [
+        "memoiy loss",
+        "memory loss"
+      ]
+    ],
+    "WAL-CLM-LETS-000561": [
+      [
+        "1 2:00",
+        "12:00"
+      ],
+      [
+        "with usingeyes",
+        "with using eyes"
+      ],
+      [
+        "eases offas day",
+        "eases off as day"
+      ]
+    ],
+    "WAL-CLM-LETS-000560": [
+      [
+        "whirlpool orJaccuzi",
+        "whirlpool or Jacuzzi"
+      ]
+    ],
+    "WAL-CLM-LETS-000575": [
+      [
+        "tell you ifyou have",
+        "tell you if you have"
+      ]
+    ],
+    "WAL-CLM-LETS-000576": [
+      [
+        "movement); ifyour basal",
+        "movement); if your basal"
+      ]
+    ]
+  }
+}

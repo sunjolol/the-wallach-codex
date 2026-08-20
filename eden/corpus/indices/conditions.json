@@ -131,7 +131,7 @@
   },
   "acne": {
     "display_name": "Acne",
-    "claim_count": 25,
+    "claim_count": 26,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000428",
@@ -146,6 +146,7 @@
         "WAL-CLM-LETS-000025",
         "WAL-CLM-LETS-000027",
         "WAL-CLM-LETS-000044",
+        "WAL-CLM-LETS-000528",
         "WAL-CLM-RARE-000229"
       ],
       "definitions": [
@@ -438,13 +439,14 @@
   },
   "allergies": {
     "display_name": "Allergies",
-    "claim_count": 12,
+    "claim_count": 14,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-IMMORT-000531",
         "WAL-CLM-IMMORT-000539",
         "WAL-CLM-LETS-000109",
         "WAL-CLM-LETS-000111",
+        "WAL-CLM-LETS-000532",
         "WAL-CLM-RARE-000405"
       ],
       "definitions": [
@@ -452,7 +454,8 @@
       ],
       "diagnostics": [
         "WAL-CLM-DDDL-000491",
-        "WAL-CLM-LETS-000129"
+        "WAL-CLM-LETS-000129",
+        "WAL-CLM-LETS-000531"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000531",
@@ -464,6 +467,7 @@
       ]
     },
     "essentials_involved": [
+      "chromium",
       "flavonoids",
       "omega-3",
       "vitamin-a",
@@ -1079,7 +1083,7 @@
   },
   "anxiety": {
     "display_name": "Anxiety",
-    "claim_count": 12,
+    "claim_count": 13,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000334",
@@ -1099,7 +1103,8 @@
       "protocols": [
         "WAL-CLM-DDDL-000078",
         "WAL-CLM-DDDL-000537",
-        "WAL-CLM-LETS-000142"
+        "WAL-CLM-LETS-000142",
+        "WAL-CLM-LETS-000536"
       ]
     },
     "essentials_involved": [
@@ -1353,7 +1358,7 @@
   },
   "asthma": {
     "display_name": "Asthma",
-    "claim_count": 18,
+    "claim_count": 19,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000477",
@@ -1371,6 +1376,9 @@
       ],
       "definitions": [
         "WAL-CLM-IMMORT-000053"
+      ],
+      "diagnostics": [
+        "WAL-CLM-LETS-000534"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000418"
@@ -5354,7 +5362,7 @@
   },
   "eczema": {
     "display_name": "Eczema",
-    "claim_count": 27,
+    "claim_count": 28,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000391",
@@ -5380,7 +5388,8 @@
         "WAL-CLM-IMMORT-000053"
       ],
       "diagnostics": [
-        "WAL-CLM-DDDL-000563"
+        "WAL-CLM-DDDL-000563",
+        "WAL-CLM-LETS-000534"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000394",
@@ -5901,7 +5910,7 @@
   },
   "food_allergy": {
     "display_name": "Food Allergy",
-    "claim_count": 15,
+    "claim_count": 17,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000356",
@@ -5910,6 +5919,7 @@
         "WAL-CLM-DDDL-000568",
         "WAL-CLM-LETS-000107",
         "WAL-CLM-LETS-000116",
+        "WAL-CLM-LETS-000532",
         "WAL-CLM-RARE-000405"
       ],
       "definitions": [
@@ -5918,7 +5928,8 @@
       ],
       "diagnostics": [
         "WAL-CLM-DDDL-000489",
-        "WAL-CLM-DDDL-000552"
+        "WAL-CLM-DDDL-000552",
+        "WAL-CLM-LETS-000531"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000129"
@@ -6285,10 +6296,13 @@
   },
   "gout": {
     "display_name": "Gout",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-IMMORT-000537"
+      ],
+      "causes": [
+        "WAL-CLM-LETS-000526"
       ],
       "contraindications": [
         "WAL-CLM-RARE-000181"
@@ -6450,7 +6464,7 @@
   },
   "headache": {
     "display_name": "Headache",
-    "claim_count": 4,
+    "claim_count": 5,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000475",
@@ -6458,7 +6472,8 @@
       ],
       "protocols": [
         "WAL-CLM-DDDL-000409",
-        "WAL-CLM-LETS-000293"
+        "WAL-CLM-LETS-000293",
+        "WAL-CLM-LETS-000530"
       ]
     },
     "essentials_involved": [
@@ -6667,7 +6682,7 @@
   },
   "hemorrhoids": {
     "display_name": "Hemorrhoids",
-    "claim_count": 16,
+    "claim_count": 17,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000400",
@@ -6687,6 +6702,9 @@
       ],
       "diagnostics": [
         "WAL-CLM-DDDL-000424"
+      ],
+      "prognosis": [
+        "WAL-CLM-LETS-000529"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000384",
@@ -7137,8 +7155,11 @@
   },
   "hyperirritability": {
     "display_name": "Hyperirritability",
-    "claim_count": 3,
+    "claim_count": 4,
     "claims_by_role": {
+      "causes": [
+        "WAL-CLM-LETS-000535"
+      ],
       "deficiency_signs": [
         "WAL-CLM-EPIGEN-000062",
         "WAL-CLM-EPIGEN-000108",
@@ -7147,12 +7168,14 @@
     },
     "essentials_involved": [
       "chromium",
+      "vanadium",
       "vitamin-b6"
     ],
     "other_substances_involved": [],
     "books_cited": [
       "epigenetics",
-      "immortality"
+      "immortality",
+      "lets-play-doctor"
     ]
   },
   "hyperkinesis": {
@@ -7316,13 +7339,15 @@
   },
   "hypoglycemia": {
     "display_name": "Hypoglycemia",
-    "claim_count": 19,
+    "claim_count": 21,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000377",
         "WAL-CLM-DDDL-000413",
         "WAL-CLM-DDDL-000547",
-        "WAL-CLM-IMMORT-000478"
+        "WAL-CLM-IMMORT-000478",
+        "WAL-CLM-LETS-000532",
+        "WAL-CLM-LETS-000535"
       ],
       "deficiency_signs": [
         "WAL-CLM-DDDL-000017",
@@ -9598,7 +9623,7 @@
   },
   "migraine": {
     "display_name": "Migraine",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000530",
@@ -9610,7 +9635,8 @@
         "WAL-CLM-RARE-000172"
       ],
       "protocols": [
-        "WAL-CLM-LETS-000364"
+        "WAL-CLM-LETS-000364",
+        "WAL-CLM-LETS-000530"
       ]
     },
     "essentials_involved": [
@@ -12543,7 +12569,7 @@
   },
   "shingles": {
     "display_name": "Shingles",
-    "claim_count": 10,
+    "claim_count": 11,
     "claims_by_role": {
       "definitions": [
         "WAL-CLM-DDDL-000328",
@@ -12561,7 +12587,8 @@
         "WAL-CLM-DDDL-000329",
         "WAL-CLM-LETS-000215",
         "WAL-CLM-LETS-000300",
-        "WAL-CLM-LETS-000432"
+        "WAL-CLM-LETS-000432",
+        "WAL-CLM-LETS-000539"
       ]
     },
     "essentials_involved": [
@@ -13628,11 +13655,12 @@
   },
   "urinary_tract_infection": {
     "display_name": "Urinary Tract Infection",
-    "claim_count": 5,
+    "claim_count": 6,
     "claims_by_role": {
       "diagnostics": [
         "WAL-CLM-DDDL-000540",
-        "WAL-CLM-DDDL-000575"
+        "WAL-CLM-DDDL-000575",
+        "WAL-CLM-LETS-000537"
       ],
       "protocols": [
         "WAL-CLM-DDDL-000544",
@@ -13650,6 +13678,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "immortality",
+      "lets-play-doctor",
       "rare-earths"
     ]
   },

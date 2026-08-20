@@ -1,0 +1,147 @@
+[
+  {
+    "id": "WAL-CLM-LETS-000560",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "We have also found that the \"hydro- therapy\" produced by the whirlpool or Jaccuzi is extremely useful for hemorrhoids (both simple and thrombosed - why get unneces- sary and risky surgery?!!)",
+    "numbers_confirmed": true,
+    "notes": "Located in the right column of p40 (printed page 28). Every content word matches the page. The page really does print the misspelling 'Jaccuzi' (for Jacuzzi), and our verbatim reproduces it exactly. Punctuation 'surgery?!!)' confirmed at 3x zoom (question mark + two exclamations + close paren). Only differences from the page are layout/OCR spacing artifacts, not content: our 'orJaccuzi' is fused whereas the page prints 'or Jaccuzi' with a space, and the line-break hyphens 'hydro- therapy' and 'unneces- sary' are line-wrap artifacts. No numbers appear anywhere in this passage (numbers_confirmed true vacuously). No named framework (e.g. Schuessler/tissue salts) is referenced. Note: the neighboring passage in the left column mentions 'B-12' as a hyphenated form (not a mangled subscript), but that is outside this claim."
+  },
+  {
+    "id": "WAL-CLM-LETS-000575",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Urine testing is as simple as checking your car's crankcase oil --just check the \"dip stick\"!! Several brands of urine \"dip sticks\" can tell you if you have a urinary infection (bladder or kidney), blood in your urine (infection, stones, tumors, etc.), indications of blood destructive diseases, liver disease, kidney disease, diabetes (sugar) all for about $1.50 per test!!",
+    "numbers_confirmed": true,
+    "notes": "Located left column, printed p.31 (p43.png). Number $1.50 printed exactly as stored. All names/terms match. Only wording differences are layout artifacts: our 'ifyou' is a spacing fusion of the page's 'if you'; 'de-structive' and 'dis-ease' are line-break hyphens (page reads destructive / disease). No content defect."
+  },
+  {
+    "id": "WAL-CLM-LETS-000576",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "your basal body temperature first thing in the morning by placing a thermometer in your axilla (armpit) before stirring out of bed (be sure to shake down the thermometer the night before and place it on the night stand to prevent unnecessary movement); if your basal body temperature is less than 97.8 or less, if you have chronically cold hands and feet, and if you are slow in the morning, you most likely have poor thyroid function.",
+    "numbers_confirmed": true,
+    "notes": "Located top of left column, printed p.31 (p43.png). Number 97.8 printed exactly as stored ('less than 97.8 or less' — page really does repeat 'or less'). Page names 'poor thyroid function', NOT Raynaud's, so the adjacent-condition flag is resolved: verbatim matches page. Only difference is our 'ifyour' spacing fusion vs page's 'if your' — layout artifact, not a defect."
+  },
+  {
+    "id": "WAL-CLM-LETS-000567",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Basophils (Baso) respond to chronic intestinal allergies, eczema, asthma and sometimes with parasitic infestations. The normal range is 0-2%.",
+    "numbers_confirmed": true,
+    "notes": "Found on p45 (printed page 33), right column, Basophils entry. The flagged number '0-2%' matches the page exactly. Our 'intesti- nal' corresponds to the page's line-break hyphen 'intesti-'/'nal' (layout artifact, not a defect). All names (Basophils, Baso, eczema, asthma, parasitic infestations) and all wording match the printed page. No content differences."
+  },
+  {
+    "id": "WAL-CLM-LETS-000556",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Uric Acid is a barometer of protein metabo- lism in the liver. It is also the blood substance that accumulates to high levels in attacks of gout. The normal range is 4-8 mg % in males and 4.5-5.5 mg % in females.",
+    "numbers_confirmed": true,
+    "notes": "Found on p46 (printed page 34), left column, 'Uric Acid' entry. Page prints 'protein metabo-lism' with a line-break hyphen; our 'metabo- lism' is the same word with the wrap rendered as a space (layout artifact, not a defect). Both flagged numbers confirmed exactly: '4-8 mg % in males' and '4.5-5.5 mg % in females'. No named framework (Schuessler/cell salts/tissue salts) appears near this passage. Every digit, name, and word matches the printed page."
+  },
+  {
+    "id": "WAL-CLM-LETS-000553",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "MAGNESIUM DEFICIENCY anxiety/confusion/irritability/ restlessness birth defects depression hyperactivity/sonophobia hypotension hypothermia insomnia muscle pain/muscle tremors/ muscle weakness nervousness/neuromuscular irritability",
+    "numbers_confirmed": true,
+    "notes": "Found in TABLE 6-1 on p58 (printed page 46), left column, MAGNESIUM DEFICIENCY block. Every word in our verbatim matches the printed page exactly. Line wraps on the page ('restlessness', 'muscle weakness', 'irritability' each wrap to the next line) are layout artifacts, not content differences. Our verbatim is a partial slice; the page's full list continues with SIDS / seizures / tachycardia/palpitations after 'nervousness/neuromuscular irritability', but omitting later lines from a slice is not a defect. No digits/numbers appear in this passage (numbers_confirmed=true vacuously). Only proper noun is the mineral name MAGNESIUM, which matches. No Schuessler/tissue-salts or other named framework appears on the page near this passage. Note: the claim_asserts extrapolates to 'restless legs / restless-leg' by clinical proximity, but the verbatim itself contains only 'restlessness' and 'muscle tremors', both printed on the page verbatim-clean."
+  },
+  {
+    "id": "WAL-CLM-LETS-000559",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "PYRIDOXINE (B-6) DEFICIENCY acne alopecia anemia anorexia & nausea arthritis cheilosis conjunctivitis depression dizziness facial oiliness fatigue",
+    "numbers_confirmed": true,
+    "notes": "Found in right column of p59 (printed page 47), under TABLE 6-1 Nutrient Deficiency/Toxicity Flow Chart (Continued). Header prints as 'PYRIDOXINE (B-6) DEFICIENCY' with a literal hyphen, NOT a true subscript B6 - our 'B-6' matches the page exactly. Every list item matches byte-for-byte: acne, alopecia, anemia, anorexia & nausea, arthritis, cheilosis, conjunctivitis, depression, dizziness, facial oiliness, fatigue. Our verbatim is a valid truncated slice ending at 'fatigue'; the page continues with geographic tongue, impaired wound healing, irritability (not included in our slice - not a defect). Both key assertions 'acne' and 'facial oiliness' confirmed on page. Only digit present is the '6' in B-6, confirmed. No named framework (Schuessler/tissue salts) referenced by this claim - N/A."
+  },
+  {
+    "id": "WAL-CLM-LETS-000573",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "therapy is considered by many to be another form of light therapy: 1) Blue reduces BP, alleviates teething, boils, fever, inflammation, dysentery, colic, jaundice and heals cuts and burns 2) Red alleviates \"hypo\"tension and certain forms of paralysis 3) Yellow/Violet alleviates anxiety and arthritis",
+    "numbers_confirmed": true,
+    "notes": "Located in right column of p70 (printed page 58) under the bold heading 'Color therapy'. Page prints the numbered list items 1)/2)/3) exactly as stored; all confirmed: '1) Blue reduces BP, alleviates teething, boils, fever, inflammation, dysentery, colic, jaundice and heals cuts and burns', '2) Red alleviates \"hypo\"tension and certain forms of paralysis', '3) Yellow/Violet alleviates anxiety and arthritis'. The three known_flags 'ocr-unverified-number 1/2/3' are the list numerals and all match. Our verbatim opens at 'therapy' -- the preceding word 'color' sits on the prior line as a wrap ('--color / therapy'); slicing at that boundary is a layout artifact, not a defect. No named framework (Schuessler/tissue salts) appears in this passage; it is plain 'color therapy'. The 'cell salts' phrase at the very top of the page belongs to an unrelated chiropractic section. Every digit and proper term matches the page."
+  },
+  {
+    "id": "WAL-CLM-LETS-000561",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Great migraine headache remedy. Wakes with headache, gets worse until 11:00 or 12:00 noon then eases off as day gets cooler. Flashes and zig zags before eyes with headache. Headache worse with usingeyes. Salt craving, likes beer, fish and occasionally milk but may have aversion to meat, coffee and fat.",
+    "numbers_confirmed": true,
+    "notes": "Passage found in right column of p.76 (printed p.64), Table 7-2, under the bold NAT MUR heading (which begins at bottom of left column and continues into the right column). Both numbers confirmed exactly on the page: '11:00' (matches ours exactly) and '12:00' (ours renders as '1 2:00' with an internal OCR space; digits are correct). Other differences are all trivial artifacts, not content defects: ours 'offas' vs page 'off as' (fused-word spacing artifact), ours 'head- ache' vs page 'headache' (line-break hyphen), and 'usingeyes' which OURS matches the page exactly since the book itself prints 'using eyes' fused as one word. Remedy-name check per section-heading flag: NAT MUR appears ONLY as the bold section heading, NOT within this verbatim passage; the claim_asserts does not name the remedy, so this is consistent and not a §00.A problem. No wrong digit, no wrong/misspelled proper noun, no meaning-changing dropped/added word."
+  },
+  {
+    "id": "WAL-CLM-LETS-000577",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "Very good remedy for shingles when patient wants to relieve pain. Constant hot baths or applications which improves 75%. Skin complaints.",
+    "numbers_confirmed": true,
+    "notes": "Found under the RHUS TOX entry, left column of page 65 (p77.png). Page reads: '...Very thirsty, very restless. Very good remedy for shingles when patient wants to relieve pain. Constant hot baths or applications which improves 75%. Skin complaints. Erysipelas after standing in cold wind...'. The number 75% matches the page exactly, resolving the ocr-unverified-number:75 flag. Our 'applica- tions' is a line-break hyphenation artifact (page splits 'applica-'/'tions' across two lines) -- layout only, not a content defect. Remedy name on page is heading 'RHUS TOX', which supports the claim's assertion about Rhus tox; the name appears directly as the entry heading, not merely in a caption. No content differences."
+  },
+  {
+    "id": "WAL-CLM-LETS-000557",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "much saturated fat. Eliminate fast foods and other sources of fat and sugar. Check out the probability of food allergies (i.e., wheat, milk, soy); betaine HCl and pancreatic enzymes are",
+    "numbers_confirmed": true,
+    "notes": "Located in the ACNE section on page 94 (printed page 82). Full page sentence: '...with a concurrent intake of too much saturated fat. Eliminate fast foods and other sources of fat and sugar. Check out the probability of food allergies (i.e., wheat, milk, soy); betaine HCl and pancreatic enzymes are of considerable benefit;...' Our verbatim (starting mid-word at 'much' from 'too much') matches the page exactly word-for-word and punctuation-for-punctuation. Proper nouns match: 'betaine HCl', 'wheat, milk, soy'. No digits appear in this passage, so no numeric check applies to the verbatim itself (surrounding doses on the page not part of this slice). No named framework such as Schuessler cell salts appears anywhere near the passage."
+  },
+  {
+    "id": "WAL-CLM-LETS-000562",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "The easiest way to identify food allergies in yourself is the Coca Pulse Test. To perform this test, you learn your base pulse rate then eat a single food (i.e., milk only, wheat only, etc.) and check your pulse 15, 30 and 60 minutes after you eat the single food item; an elevation in pulse rate of more than ten beats is an indicator that you are allergic to that food.",
+    "numbers_confirmed": true,
+    "notes": "p125 (p137.png) left column. Numbers 15, 30, 60 minutes and 'more than ten beats' all match the page exactly. Proper noun 'Coca Pulse Test' matches (capitalized on page). Full passage is byte-for-byte identical to the printed text; no defects."
+  },
+  {
+    "id": "WAL-CLM-LETS-000564",
+    "located": true,
+    "verdict": "DEFECTS",
+    "defects": [
+      {
+        "ours": "eveiyone",
+        "page_says": "everyone"
+      }
+    ],
+    "corrected_verbatim": "Do a six-hour GTT as almost everyone with food allergies has hypoglycemia because the celiac changes in the intestine prevent the efficient absorption of chromium.",
+    "numbers_confirmed": true,
+    "notes": "p125 (p137.png), bottom of left column. 'six-hour GTT' number confirmed correct. DEFECT: our stored verbatim reads 'eveiyone' but the page clearly prints 'everyone' (verified at 4x zoom on the isolated word: e-v-e-r-y-o-n-e with a distinct 'r'). The known_flag 'ocr-typo-preserved: eveiyone' is mistaken -- the page does NOT print a typo; 'eveiyone' is an OCR r->i misread that should be corrected to 'everyone'. No other differences: 'celiac changes in the intestine prevent the efficient absorption of chromium' matches exactly."
+  },
+  {
+    "id": "WAL-CLM-LETS-000565",
+    "located": true,
+    "verdict": "VERIFIED-CLEAN",
+    "defects": [],
+    "corrected_verbatim": "urine therapy, five day rotation diets, avoidance of offending foods and patience!!!!! It takes up to 90 days to repair the intestinal injury (the good news is that repair will take place even if you're 100 years old!!!). IV hydrogen peroxide speeds up the healing process.",
+    "numbers_confirmed": true,
+    "notes": "p125 (p137.png), right column. '90 days' and '100 years old' confirmed exactly. 'five day rotation diets' matches. Exclamation counts match the page: 'patience!!!!!' (5 marks) and 'old!!!)' (3 marks). Our slice begins mid-phrase at 'urine therapy'; the page reads 'autoimmune urine therapy, five day...' -- this is only where the stored slice starts, not a content difference. 'IV hydrogen peroxide speeds up the healing process' matches. Note the widen-needed flag is a mapping concern (condition token 'food allergies' lives in the paragraph above, 'Treatment of food allergies includes...'), not a verbatim content defect."
+  },
+  {
+    "id": "WAL-CLM-LETS-000569",
+    "located": true,
+    "verdict": "DEFECTS",
+    "defects": [
+      {
+        "ours": "memoiy loss",
+        "page_says": "memory loss"
+      }
+    ],
+    "corrected_verbatim": "The cause of hypoglycemia is almost always food allergies that cause a malabsorption of chromium and vanadium as a result of celiac disease type changes in the intestine and/or a large intake of purified sugar and refined flour which increases the dumping of chromium in the urine as much as 300%. The old wives tales \"if you eat sugar from the sugar bowl, you will surely develop diabetes\" is then quite true as untreated hypoglycemia will very frequently develop into diabetes!!! The symptoms of hypoglycemia are highly variable and may include emotional symptoms (i.e., hyperac- tivity, paranoia, schizophrenia, memory loss, irritability, hallucinations, depression, manic depression, dyslexia, crying, learning disabili- ties, etc.), sleepiness, fatigue, heart palpita- tions, sweating, inability to do cognating tasks",
+    "numbers_confirmed": true,
+    "notes": "Passage on p145 (printed page 133), left column, HYPOGLYCEMIA section. Flagged number 300 CONFIRMED: page reads 'increases the dumping of chromium in the urine as much as 300%.' One genuine defect: our text preserved an OCR misread 'memoiy loss' where the page clearly prints 'memory loss'. Line-break hyphens (hyperac-tivity, disabili-ties, palpita-tions) match the page's actual line wraps and are layout artifacts, not defects. All other words, the sugar-bowl quote, 'diabetes!!!' (three exclamation marks), the full symptom list, and 'cognating tasks' match the page exactly. No named framework (e.g. Schuessler/tissue salts) referenced in this claim."
+  }
+]
