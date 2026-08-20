@@ -32,17 +32,11 @@ user-side; the agent invokes everything through bash.
 
 | File | What it does |
 |---|---|
-| `genesis.py` | The session-boot ritual — prints the scoreboard (invariants · build parity · last Creator's Log entry · `build-log.md` tail) + the live `chronicle/next-chunk.md` hand-off. Triggered by typing `genesis` at session start. |
+| `genesis.py` | The session-boot ritual — prints the scoreboard (invariants · build parity · last Creator's Log entry · `build-log.md` tail) + the local `chronicle/next-chunk.md` hand-off. Triggered by typing `genesis` at session start. |
 | `safe_write.py` | The §17 atomic-verify write primitive (`replace`/`append`/`rewrite`/`check`). Every project-file write routes through it; direct write tools are hook-blocked. |
-| `invariants.py` | The integrity gate — runs the invariant manifest (currently 41). Round-close blocks on any NEW red beyond `.claude/invariant-baseline.json`. |
+| `invariants.py` | The integrity gate — runs the invariant manifest (currently 94). Round-close blocks on any NEW red beyond `.claude/invariant-baseline.json`. |
 | `creators_log.py` | CLI writer for the sacred, append-only Creator's Log (`chronicle/creators-log/log.jsonl` + generated `LOG.md`/`INDEX.md`/`digests/`): `append`/`verify`/`digest`/`list`. No delete path by design. |
 | `hooks/pre_write_guard.py` | PreToolUse (Edit/Write/MultiEdit) — blocks direct project-file writes; forces `safe_write`. Auto-protects any path with a `*.golden.sha256` sibling. |
 | `hooks/pre_bash_guard.py` | PreToolUse (Bash) — blocks catastrophic / §17-corrupting shell commands, bans bash writes into `eden/`, and protects the sacred Creator's Log. |
 | `hooks/post_write_verify.py` | PostToolUse (Bash) — scans for NUL bytes / UTF-8 round-trip / emptiness after writes. |
 | `hooks/stop_round_close.py` | Stop hook — hard-blocks declaring a round done with a NEW invariant red, a `build-log.md` line missing its Creator's Log entry, or a stale bundle (the ledger head not yet re-inlined into `dist/main.js`). |
-
-## Vestigial — retired in Phase F
-
-- `build_regimen_label_lookup.py` — builds the regimen ↔ label lookup by product name.
-  Superseded by the Phase-F Products pillar's derived lookups (folds into
-  `eden/tools/`); kept until Phase F lands.

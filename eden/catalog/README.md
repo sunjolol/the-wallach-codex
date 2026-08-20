@@ -14,19 +14,17 @@ from the emergent claim slugs + the scattered helper files (`condition-taxonomy.
   `eden/corpus/essentials-canon.json` (sealed there since Phase α). The corpus's own gate
   (`corpus_verify` #3) keeps every claim essential ⊆ canon.
 
-## The nutrient/ingredient vocabulary — deferred to Phase F
-`nutrients.json` was built in Phase B but **DELETED 2026-07-05 (D-c)** as too-basic
-duplication: its 91 canonical entries only re-copied `essentials-canon` names (Charter R3),
-and its 408 non-essential substance display names were byte-identical to the auto-humanized
-slug (so the derived indices are unchanged without it). The real nutrient/ingredient registry
-is rebuilt from scratch — richer, product-shaped — alongside the Youngevity Product DB in
-**Phase F**. Until then the substance (`other_substances`) half of `references_resolve` is
-dormant, and `catalog.py`'s `nutrient_*` accessors degrade to empty (the Phase-F seam).
+## The nutrient/ingredient vocabulary
+`nutrients.json` — the canonical nutrient/ingredient registry, rebuilt (richer,
+product-shaped) alongside the Youngevity Product DB in Phase F. Its canonical essentials map
+to `essentials-canon`; its non-essential substances (botanicals, actives) back the
+`other_substances` half of `references_resolve`. (An earlier, thinner nutrients.json from
+Phase B was deleted 2026-07-05 as too-basic duplication; this is the Phase-F rebuild.)
 
 ## Enforcement
 - **`references_resolve`** (invariant) — every claim condition/symptom slug must be
   registered here; an unregistered slug is RED (closes the phantom-slug hole). The substance
-  half is dormant until Phase F (see above).
+  half validates against `nutrients.json` (live since the Phase-F rebuild).
 - **`catalog_integrity`** (invariant → `eden/tools/catalog_verify.py`) — internal structure
   (counts, well-formed slugs, umbrella children resolve) and, once sealed, the golden hashes.
 - Sealed via **`eden/tools/catalog_seal.py`** (USER-ONLY). Each file carries a

@@ -81,7 +81,7 @@ last user-approved seal:
 
 Every ID a claim or product references must resolve to a real catalog/registry entry
 (`references_resolve` — the condition/symptom half is live; the substance half
-re-lights with the Phase-F Products pillar). Book citations reference the sealed
+is live since the Phase-F rebuild). Book citations reference the sealed
 registry (`books-meta.json`) by `book_id`, with the display composed, never
 hand-typed (`citations_reference_registry`). Prose stays in its designated homes,
 never in a fact field (`prose_contained`).

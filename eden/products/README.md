@@ -39,9 +39,9 @@ Strain/culture codes stay in `standardization`; the full label wording stays in 
 
 ## Registry
 Every ingredient/nutrient resolves to the rebuilt Catalog nutrient/botanical registry
-(`catalog/nutrients.json`, Phase F). Essentials map to the 91 (feed the cost-per-nutrient
+(`catalog/nutrients.json`). Essentials map to the 91 (feed the cost-per-nutrient
 coverage math for ALL 91); botanicals/actives get their own entries (power blend/ingredient
-search). Re-lights the dormant substance half of `references_resolve`.
+search). Backs the substance half of `references_resolve` (live).
 
 ## Enforcement (each LIVE + negative-tested in the same patch, R7)
 - `products_verify` (`eden/tools/products_verify.py`) — record structure + PROSE CONTAINMENT (R4).
