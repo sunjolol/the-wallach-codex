@@ -66,7 +66,7 @@ import {
   umbrellaChildren,
 } from '../state/corpus.js';
 import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialNameOf, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
-import { essentialLede, essentialWhy } from '../state/entity-copy.js';
+import { essentialLede, essentialSourcesNote, essentialWhy } from '../state/entity-copy.js';
 import { getConditionPage, getEssentialPage } from '../state/entity-page.js';
 import { glossaryDef } from '../state/glossary.js';
 import { type CoverageRec, rankProductsForCoverage } from '../state/recommender.js';
@@ -423,7 +423,7 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
     coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(status)}">● ${statusLabel(status)}</span></div>`;
   }
-  const sourcesHTML = showSources ? renderSourcesBlock(layoutKey) : '';
+  const sourcesHTML = showSources ? renderSourcesBlock(layoutKey, slug) : '';
   return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
@@ -446,7 +446,7 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
  * by the standard glance + the non-essential glance (omega-9 lists its label composition too — the
  * mg is what a product CONTAINS, never a target · §00.A). '' when no product carries it.
  */
-function renderSourcesBlock(layoutKey: string): string {
+function renderSourcesBlock(layoutKey: string, slug: string | null = null): string {
   // A label that DECLARES zero is a statement that the product contains none of this — 16 rows in
   // the shipped composition say exactly that (a "Sodium 0mg" nutrition panel, most of them). Such a
   // product is not a source, so it is not listed as one; it used to render as a "0 mg" row under
@@ -471,9 +471,14 @@ function renderSourcesBlock(layoutKey: string): string {
   const more = rest.length > 0
     ? `<details class="kd-ep-more"><summary>Show all ${sources.length} sources</summary><div class="kd-ep-more__body">${rest.map(s => srcRow(s, false)).join('')}</div></details>`
     : '';
+  // The diet note sits directly under the label, ABOVE the product rows: it is the answer to the
+  // question the rows provoke ("why is the best one only 3% of the target?"), so it has to arrive
+  // before the reader has finished being confused by them.
+  const note = slug !== null ? essentialSourcesNote(slug) : '';
+  const noteHtml = note.length > 0 ? `<p class="kd-ep-srcnote">${escHTML(note)}</p>` : '';
   return `<hr class="kd-ep-op__div">
       <div class="kd-ep-k kd-ep-op__srclabel">Best Youngevity sources</div>
-      ${head}${more}`;
+      ${noteHtml}${head}${more}`;
 }
 
 // ─── Plant-derived GROUP "at a glance" (every trace_pdm mineral, scored as one) ──
@@ -1744,7 +1749,7 @@ function renderMechanism(slug: string | null, layoutKey: string, category: strin
   return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}${variantMod}" data-category="${escHTML(category ?? '')}">
       ${body}
       <div class="kd-ep-fam__note">${escHTML(MECHANISM_CLARITY.disclaimer)}</div>
-      ${renderSourcesBlock(layoutKey)}
+      ${renderSourcesBlock(layoutKey, slug)}
     </section>`;
 }
 

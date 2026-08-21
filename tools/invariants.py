@@ -4735,7 +4735,8 @@ _PROSE_HOME_KEYS = {
     "hash_note", "source", "_source", "description", "question",
     "resolution", "_note", "rationale", "file", "authors", "sealed_at",
     "duration", "for_condition", "form",                       # dose free descriptors
-    "lede", "why",                                             # entity-copy approved lede + why-this-number
+    "lede", "why", "sourcesNote",                              # entity-copy approved lede, why-this-number,
+                                                               # and the diet note under Best-Youngevity-sources
     "_prose_container",                                        # a leaf under a _PROSE_CONTAINER_KEYS subtree
 }
 

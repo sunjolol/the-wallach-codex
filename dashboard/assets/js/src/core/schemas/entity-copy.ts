@@ -13,10 +13,18 @@
  */
 import { z } from 'zod';
 
-/** One entity's approved copy — both fields optional (an entity may have neither yet). */
+/** One entity's approved copy — every field optional (an entity may have none yet). */
 export const EntityCopyEntrySchema = z.object({
   lede: z.string().optional(),
   why: z.string().optional(),
+  /**
+   * A short note rendered under "Best Youngevity sources", for essentials Wallach routes mainly
+   * through the diet. Without it a user reading chloride's 2,500 mg target against a best product
+   * of 72 mg concludes the app is broken, when the honest answer is that Wallach names salt as the
+   * source. Hand-authored and approved like the other two, and grounded in his own sealed words —
+   * never a generic "eat well" line, and never carrying an amount he did not state.
+   */
+  sourcesNote: z.string().optional(),
 }).passthrough();
 
 /** The whole store — essentials + conditions + explore-topic maps of slug → approved copy. */

@@ -37,6 +37,15 @@ export function essentialWhy(slug: string): string {
   return data().essentials[slug]?.why ?? '';
 }
 
+/**
+ * Approved note for the "Best Youngevity sources" block, or '' when none is approved.
+ * Written only for essentials Wallach routes mainly through the diet, so a reader does not
+ * mistake a short product list for a broken app.
+ */
+export function essentialSourcesNote(slug: string): string {
+  return data().essentials[slug]?.sourcesNote ?? '';
+}
+
 /** Approved hero lede for an explore-topic entity (search-entities slug), or '' when none yet. */
 export function topicLede(slug: string): string {
   return data().topics?.[slug]?.lede ?? '';

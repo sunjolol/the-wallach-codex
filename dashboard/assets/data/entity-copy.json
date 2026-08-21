@@ -29,13 +29,16 @@
       "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 3,300 mg."
     },
     "sulfur": {
-      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 500 mg."
+      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 500 mg.",
+      "sourcesNote": "Wallach names one food route to sulfur: organ meats, liver and kidney in particular. He still gives sulphur its own daily line in his base-line supplement program, so he does not treat food alone as the answer — which is why the products below fall short of the target rather than meeting it."
     },
     "chloride": {
-      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 2,500 mg."
+      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 2,500 mg.",
+      "sourcesNote": "Wallach names ordinary table salt — sodium chloride — as the universal source of chloride ions. He says meat carries relatively large amounts of it, while grains, vegetables and fruit have little or none. He still gives chloride its own line in his base-line supplement program, so read a short product list here as the salt in your diet doing most of the work, not as nothing to do."
     },
     "potassium": {
-      "why": "From Wallach's Immortality (2008): a daily maintenance figure of 5,000 mg."
+      "why": "From Wallach's Immortality (2008): a daily maintenance figure of 5,000 mg.",
+      "sourcesNote": "Wallach says a natural potassium shortfall is highly unlikely, because all grains, fruits and vegetables tend to be rich in potassium — where he does see a deficiency, he puts it down to diuretics or to a diet whose only vegetable is chips and ketchup. He also records that a supplement is legally capped at 99 mg, far under the daily figure he calls for, so this one has to come mostly from what you eat."
     },
     "boron": {
       "why": "From Wallach's Epigenetics (2014) mineral table: 1–6 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 9.2 mg/day."
@@ -101,7 +104,8 @@
       "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 100–200 IU; taking the upper figure and converting at 0.67 mg per IU ≈ 134 mg/day."
     },
     "vitamin-k": {
-      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 60–300 mcg; the upper figure, 300 mcg/day, is taken as the target."
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 60–300 mcg; the upper figure, 300 mcg/day, is taken as the target.",
+      "sourcesNote": "Wallach says roughly half of your vitamin K requirement is produced by probiotic bacteria in your own colon, and that the K1 form is produced by plants. He calls deficiency uncommon except when the diet is low in green leafy vegetables, so read a shortfall here as a nudge toward greens rather than an alarm."
     },
     "biotin": {
       "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 100–300 mcg; the upper figure, 300 mcg/day, is taken as the target."
@@ -113,7 +117,8 @@
       "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 90 mg."
     },
     "flavonoids": {
-      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 1,000–5,000 mg; the upper figure, 5,000 mg/day, is taken as the target."
+      "why": "From Wallach's Epigenetics (2014) daily-multiple recommendations: 1,000–5,000 mg. Both figures are his, from the same passage. This is the one essential where the LOWER figure is posted: 1,000 mg/day. The 5,000 upper cannot be reached from any combination of Youngevity products — the richest single source carries 100 mg — so posting it would set a target nobody could act on.",
+      "sourcesNote": "Wallach says flavonoids are commonly found in cocoa, tea and wine, and among the world's longest-lived people he points to dark fruits and berries, yellow and red vegetables, cocoa, red wine, green tea and coffee. His own daily table still carries a bioflavonoid target, so this is a nutrient he expects to arrive mostly through what you eat."
     }
   },
   "conditions": {},

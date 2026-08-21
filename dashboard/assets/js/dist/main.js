@@ -5259,7 +5259,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   // assets/js/src/core/schemas/entity-copy.ts
   var EntityCopyEntrySchema = external_exports.object({
     lede: external_exports.string().optional(),
-    why: external_exports.string().optional()
+    why: external_exports.string().optional(),
+    /**
+     * A short note rendered under "Best Youngevity sources", for essentials Wallach routes mainly
+     * through the diet. Without it a user reading chloride's 2,500 mg target against a best product
+     * of 72 mg concludes the app is broken, when the honest answer is that Wallach names salt as the
+     * source. Hand-authored and approved like the other two, and grounded in his own sealed words —
+     * never a generic "eat well" line, and never carrying an amount he did not state.
+     */
+    sourcesNote: external_exports.string().optional()
   }).passthrough();
   var EntityCopySchema = external_exports.object({
     essentials: external_exports.record(external_exports.string(), EntityCopyEntrySchema),
@@ -73381,13 +73389,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 3,300 mg."
       },
       sulfur: {
-        why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 500 mg."
+        why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 500 mg.",
+        sourcesNote: "Wallach names one food route to sulfur: organ meats, liver and kidney in particular. He still gives sulphur its own daily line in his base-line supplement program, so he does not treat food alone as the answer \u2014 which is why the products below fall short of the target rather than meeting it."
       },
       chloride: {
-        why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 2,500 mg."
+        why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 2,500 mg.",
+        sourcesNote: "Wallach names ordinary table salt \u2014 sodium chloride \u2014 as the universal source of chloride ions. He says meat carries relatively large amounts of it, while grains, vegetables and fruit have little or none. He still gives chloride its own line in his base-line supplement program, so read a short product list here as the salt in your diet doing most of the work, not as nothing to do."
       },
       potassium: {
-        why: "From Wallach's Immortality (2008): a daily maintenance figure of 5,000 mg."
+        why: "From Wallach's Immortality (2008): a daily maintenance figure of 5,000 mg.",
+        sourcesNote: "Wallach says a natural potassium shortfall is highly unlikely, because all grains, fruits and vegetables tend to be rich in potassium \u2014 where he does see a deficiency, he puts it down to diuretics or to a diet whose only vegetable is chips and ketchup. He also records that a supplement is legally capped at 99 mg, far under the daily figure he calls for, so this one has to come mostly from what you eat."
       },
       boron: {
         why: "From Wallach's Epigenetics (2014) mineral table: 1\u20136 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 9.2 mg/day."
@@ -73453,7 +73464,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 100\u2013200 IU; taking the upper figure and converting at 0.67 mg per IU \u2248 134 mg/day."
       },
       "vitamin-k": {
-        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 60\u2013300 mcg; the upper figure, 300 mcg/day, is taken as the target."
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 60\u2013300 mcg; the upper figure, 300 mcg/day, is taken as the target.",
+        sourcesNote: "Wallach says roughly half of your vitamin K requirement is produced by probiotic bacteria in your own colon, and that the K1 form is produced by plants. He calls deficiency uncommon except when the diet is low in green leafy vegetables, so read a shortfall here as a nudge toward greens rather than an alarm."
       },
       biotin: {
         why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 100\u2013300 mcg; the upper figure, 300 mcg/day, is taken as the target."
@@ -73465,7 +73477,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         why: "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 90 mg."
       },
       flavonoids: {
-        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 1,000\u20135,000 mg; the upper figure, 5,000 mg/day, is taken as the target."
+        why: "From Wallach's Epigenetics (2014) daily-multiple recommendations: 1,000\u20135,000 mg. Both figures are his, from the same passage. This is the one essential where the LOWER figure is posted: 1,000 mg/day. The 5,000 upper cannot be reached from any combination of Youngevity products \u2014 the richest single source carries 100 mg \u2014 so posting it would set a target nobody could act on.",
+        sourcesNote: "Wallach says flavonoids are commonly found in cocoa, tea and wine, and among the world's longest-lived people he points to dark fruits and berries, yellow and red vegetables, cocoa, red wine, green tea and coffee. His own daily table still carries a bioflavonoid target, so this is a nutrient he expects to arrive mostly through what you eat."
       }
     },
     conditions: {},
@@ -73917,6 +73930,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function essentialWhy(slug) {
     return data3().essentials[slug]?.why ?? "";
+  }
+  function essentialSourcesNote(slug) {
+    return data3().essentials[slug]?.sourcesNote ?? "";
   }
   function topicLede(slug) {
     return data3().topics?.[slug]?.lede ?? "";
@@ -189286,7 +189302,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(status)}">\u25CF ${statusLabel(status)}</span></div>`;
     }
-    const sourcesHTML = showSources ? renderSourcesBlock(layoutKey) : "";
+    const sourcesHTML = showSources ? renderSourcesBlock(layoutKey, slug) : "";
     return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
@@ -189301,7 +189317,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     ${sourcesHTML}
   </div>`;
   }
-  function renderSourcesBlock(layoutKey) {
+  function renderSourcesBlock(layoutKey, slug = null) {
     const sources = rankedSourcesForEssential(layoutKey).filter((s) => s.amount > 0);
     if (sources.length === 0) {
       return "";
@@ -189320,9 +189336,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const rest = sources.filter((s) => !visibleIds.has(s.productId));
     const head = visible.map((s) => srcRow(s, s.productId === bestId)).join("");
     const more = rest.length > 0 ? `<details class="kd-ep-more"><summary>Show all ${sources.length} sources</summary><div class="kd-ep-more__body">${rest.map((s) => srcRow(s, false)).join("")}</div></details>` : "";
+    const note = slug !== null ? essentialSourcesNote(slug) : "";
+    const noteHtml = note.length > 0 ? `<p class="kd-ep-srcnote">${escHTML5(note)}</p>` : "";
     return `<hr class="kd-ep-op__div">
       <div class="kd-ep-k kd-ep-op__srclabel">Best Youngevity sources</div>
-      ${head}${more}`;
+      ${noteHtml}${head}${more}`;
   }
   function barFillClass(s) {
     return s === "covered" || s === "trace" ? " kd-ep-bar--met" : "";
@@ -190237,7 +190255,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}${variantMod}" data-category="${escHTML5(category ?? "")}">
       ${body}
       <div class="kd-ep-fam__note">${escHTML5(MECHANISM_CLARITY.disclaimer)}</div>
-      ${renderSourcesBlock(layoutKey)}
+      ${renderSourcesBlock(layoutKey, slug)}
     </section>`;
   }
   function pdmFigure() {
@@ -197860,7 +197878,50 @@ source row now reads 700 mcg where the golden holds 0.7 mg, and copper and vitam
 source rows because products declaring zero of a nutrient are no longer listed as sources
 of it. The mcg change is what he asked for. The zero-row change was my own inference. That
 golden exists to pin design he has approved, so re-capturing it is his decision and I have
-not made it for him.` }];
+not made it for him.` }, { id: "lg_mt2a2onp_e40l88", ts: "2026-08-20T20:35:51.637711-05:00", surface: "knowledge", kind: "design-decision", summary: "Five diet-routed nutrients now explain where Wallach says they come from, grounded in his own words and correcting the example lists. Golden re-captured; it exposed an 82% overstatement on zinc. Taurine and the vehicle crediting were not implemented.", detail: `Five nutrients - chloride, sulfur, flavonoids, vitamin K and potassium - now carry a
+short note on their detail page saying where Wallach says they actually come from. Without it,
+someone reading chloride's 2,500 mg target against a best product of 72 mg concludes the app is
+broken, when the honest answer is that he names salt as the source.
+
+The research corrected the owner's own examples rather than echoing them, which is what he asked
+for. Wallach names organ meats for sulfur - not eggs or turkey. For potassium he names grains,
+fruits and vegetables as categories and no individual food anywhere in seven books - no banana,
+no spinach. Flavonoids are cocoa, tea, wine, dark chocolate and dark fruits and berries; parsley
+and oregano appear nowhere.
+
+One framing point mattered more than the food lists. He asked for notes saying these come from
+food rather than from supplements, and the corpus contradicts that: all five keep their own line
+in his Base Line Nutritional Supplement Program. So each note says the diet does most of the work
+without claiming he thinks supplementation is unnecessary, because the second claim would put
+words in his mouth.
+
+The gate caught the first attempt. prose_contained refused prose in a fact field, which was
+right; sourcesNote is now a registered prose home beside lede and why - refined rather than
+exempted.
+
+The signed-off header golden was re-captured with approval, and the diff was read line by line
+before it was accepted. It held only the two intended changes, and it surfaced a defect nobody
+had reported: zinc's Ultimate Iodine row is 0.055 mg, which the old formatter rendered as
+"0.1 mg" - an 82% overstatement. It now reads 55 mcg. Selenium came back byte-identical, the
+control proving the re-capture touched only what it should have.
+
+Three research findings are recorded in the contradictions file, one of them a correction to my
+own earlier writing in that same file. I had proposed deriving per-element amounts from the
+plant-derived assay via ppm times 600 mg of solids. That formula is wrong by a factor of 49.3.
+The table is real - printed twice, in Epigenetics and as Rare Earths Table 10-5, byte-identical
+between the two, fully legible - so the belief that it was undisclosed was mistaken. But its
+basis is per litre of liquid, not per kilogram of solids, and six of its elements are given as
+grams per litre, which is not a parts-per-million figure at all. That per-litre reading is an
+inference from internal consistency rather than a sentence Wallach wrote, and it is recorded as
+an inference.
+
+Silver, germanium and silica came back presence-only with active counter-evidence: he lists
+colloidal silver and the plant-derived vehicle side by side as separate items, he doses germanium
+separately inside the very list that names the vehicle, and silica's stated sources are
+high-fibre diets and beer. Tin remains the only element with vehicle-supply language.
+
+Taurine was not implemented. Wallach states no daily amount for it, and the proposed 200 mg
+threshold traces to a Youngevity label, which is composition and can never drive a target.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
