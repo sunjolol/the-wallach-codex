@@ -46,6 +46,37 @@ export const CoverageTargetSchema = z.object({
    * rare-earth mineral meter. Resolution + no-cycle proof: mirrors_resolve (tools/invariants.py).
    */
   mirrors_slug: z.string().optional(),
+  /**
+   * True when Wallach names the plant-derived colloidal mineral vehicle as THIS essential's
+   * supply route, in his own words — tin is the only case: "tin from plant derived colloidal
+   * minerals" (WAL-CLM-LETS-000451, 1995; repeated in DDDL-000406/465/466, 2011), with
+   * DDDL-000287 recording his own use of it. Membership is hand-authored WITH citations in
+   * trace-mineral-vehicles.json and stamped here by targets_derive, which refuses to build on
+   * a citation that does not resolve.
+   *
+   * It is NOT presence on the humic-shale roster — that roster lists calcium, sodium and
+   * potassium, so presence cannot be the test and never becomes it.
+   *
+   * ★ TYPED, not left to passthrough, for the same reason as collective_group and
+   * mirrors_slug above: state/coverage.ts ROUTES on it.
+   */
+  vehicle_supplied: z.boolean().optional(),
+  /** The sealed claim ids proving the line above. Display + audit; classify does not read them. */
+  vehicle_claim_ids: z.array(z.string()).optional(),
+  /**
+   * A stated SAFE INTAKE where Wallach gives no required amount — what he says you CAN take.
+   * Silver is the only case: "Humans can consume 400 mcg of silver per day"
+   * (WAL-CLM-DDDL-000013), with no row in his Base Line table and, in Epigenetics 2014, an
+   * explicit "not required by any known biological system".
+   *
+   * It is NOT a `low` and must never be scored against: an essential carrying this has no
+   * numeric floor, so classify covers it on a genuine source. It is carried so the page can
+   * show what Wallach actually said — deleting his number would be its own dishonesty.
+   * Audited by amounts_wallach_only exactly like a target (it is still his figure).
+   */
+  ceiling: z.number().optional(),
+  /** Short kebab token naming why this is a ceiling. Gate-enforced; prose lives in the derive. */
+  ceiling_reason: z.string().optional(),
 }).passthrough();
 export type CoverageTarget = z.infer<typeof CoverageTargetSchema>;
 

@@ -65,5 +65,5 @@ the result. `dose_amount_in_verbatim` proves the dose number is present in the c
 `views_no_ciphered_data` extends it to render time, after the Coverage hero was caught scrambling
 Wallach's 90 into 30/80/94 four seconds in five.
 
-Scope, honestly: `amounts_wallach_only` reads 37 of 91 essentials (the numeric ones). The other 54
+Scope, honestly: `amounts_wallach_only` reads 37 of 91 essentials — 36 numeric targets plus silver's stated ceiling, which is audited identically because it is still Wallach's number. The other 54
 rest on this rule and review. That is a labeled WISH, not a covered case.

@@ -29,7 +29,7 @@ SOURCES + boundary (§00.A):
 There is NO Wallach number in this file. The saturating-adequacy term
 (min(1, delivered / wallach_target)) that makes "best source" mean *enough* rather
 than *most* is applied at runtime against the separately derived
-essentials-targets-data.json, where 37 of the 91 canon entries now carry a numeric
+essentials-targets-data.json, where 36 of the 91 canon entries now carry a numeric
 Wallach amount. Where an essential still has none, the runtime falls back to an
 amount-potency proxy (delivered / best-in-set) and reports that it did, rather than
 pretending a target existed. The gap is partial, not total.

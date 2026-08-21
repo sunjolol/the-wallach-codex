@@ -96,6 +96,9 @@
 .vd-cf-sec__hint { flex: 1 0 100%; font-family: var(--ds-font-serif); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); line-height: var(--ds-lh-normal); }
 
 .vd-nlist { display: flex; flex-direction: column; }
+.vd-nadd { align-self: flex-start; display: inline-flex; align-items: center; gap: var(--ds-space-2); margin-top: 11px; padding: 7px 14px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .04em; text-transform: uppercase; color: var(--ds-ink-medium); background: none; border: 1px dashed var(--ds-rule); border-radius: var(--ds-radius-pill); cursor: pointer; transition: border-color var(--ds-motion-fast) var(--ds-ease-out), color var(--ds-motion-fast) var(--ds-ease-out); }
+.vd-nadd:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
+.vd-nadd__p { font-size: var(--ds-text-sm); line-height: 1; }
 .vd-nrow { display: flex; flex-direction: column; gap: 9px; padding: 11px 0; border-bottom: 1px solid var(--ds-rule-soft); }
 .vd-nrow:last-child { border-bottom: 0; }
 .vd-nrow__main { display: grid; grid-template-columns: 20px minmax(0,1fr) auto minmax(0,1.25fr) auto; align-items: center; gap: var(--ds-space-3); }
@@ -337,7 +340,7 @@
 .vd-nrow__amt { display: inline-flex; align-items: center; gap: 5px; }
 .vd-amt, .vd-unit { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink); background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); padding: 4px 6px; transition: border-color var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out); }
 .vd-amt { width: 5.5ch; text-align: right; }
-.vd-unit { width: 4.5ch; }
+.vd-unit { width: 5.5ch; }
 .vd-amt:hover, .vd-unit:hover { border-color: var(--ds-rule-bright); }
 .vd-amt:focus, .vd-unit:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 2px var(--ds-accent-wash); }
 /* the verdict-card close now uses the canonical .ui-close (dashboard.css); only its spacing is scoped here. */

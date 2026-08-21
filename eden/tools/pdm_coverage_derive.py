@@ -12,13 +12,24 @@ source -- "Humic Shale is a plant derived colloidal nutritional supplement"
 14.0 ppm (rare-earths:20827, Table 10-5). Being FROM humic shale is what MAKES a mineral
 plant-derived; it is not an exception to it.
 
-The layout's PLANT DERIVED section and this metric BOTH hold 34 and cannot drift apart: both
-read target.kind. The SECTIONS ARE the dose structure itself (FOUNDATIONAL 5 / INDIVIDUALLY
-DOSED 21 / PLANT DERIVED 34), so tin and silver are no longer boundary cases -- they carry their
-own sealed Wallach doses and render in INDIVIDUALLY DOSED, where they score. Cobalt renders there
-too, but via target.kind 'mirrors': it states no amount of its own and inherits vitamin B12's
-verdict. state/coverage.ts branches on target.kind alone; the canon's coverage_kind remains only
-a FALLBACK.
+The layout's PLANT DERIVED section and this metric read the same target.kind. The SECTIONS ARE
+the dose structure itself (FOUNDATIONAL / INDIVIDUALLY DOSED / PLANT DERIVED). Cobalt renders in
+INDIVIDUALLY DOSED via target.kind 'mirrors': it states no amount of its own and inherits vitamin
+B12's verdict.
+
+★ TIN IS NOT A COUNTEREXAMPLE TO THIS GROUP -- it is a SECOND, INDEPENDENT ROUTE, and this
+docstring asserted the opposite until 2026-08-20. Tin keeps its own sealed 500 mcg dose and
+still renders in INDIVIDUALLY DOSED, where that number still scores. It ALSO carries
+target.vehicle_supplied, because Wallach names this vehicle as its supply route in his own
+words -- "tin from plant derived colloidal minerals" (WAL-CLM-LETS-000451, 1995; repeated in
+DDDL-000406/465/466, 2011), with DDDL-000287 recording his own hair regrowth using plant-derived
+liquid colloidal tin. No food source for tin is named anywhere in the seven books. So
+state/coverage.ts takes the BETTER of the vehicle verdict and the numeric one. The membership
+list and its citations live in trace-mineral-vehicles.json; this file does not own that rule.
+
+SILVER IS NOT IN THAT LIST. Wallach lists colloidal silver and the vehicle side by side as
+SEPARATE items, which would be redundant if the vehicle supplied silver. Presence on the
+humic-shale roster is not supply -- that roster also lists calcium.
 
 NOT "the rare earths" -- do not rename it back. 19 of these 34 are not rare earths by Wallach's
 own tagging: he header-tags exactly 15 of the 60 in Immortality's A-Z (cerium :5760 through

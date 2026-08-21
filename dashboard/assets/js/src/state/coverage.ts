@@ -710,6 +710,36 @@ export function essentialNameOf(slug: string): string {
   return readTargets().find(e => e.slug === slug)?.name ?? '';
 }
 
+/**
+ * The stated SAFE INTAKE for an essential Wallach gives no requirement for — or null.
+ *
+ * Silver is the only case today. The page needs it because the alternative reads as a lie:
+ * with no numeric target the glance falls through to "Wallach never states an exact number",
+ * and he DOES state one — 400 mcg — just as what you can take, not what you need.
+ * Returned from state (not read raw in the view) so the view holds no canonical number.
+ */
+export function essentialCeiling(slug: string): { amount: number; unit: string } | null {
+  const entry = readTargets().find(e => e.slug === slug);
+  if (entry === undefined) {
+    return null;
+  }
+  const parsed = CoverageTargetSchema.safeParse(entry.target);
+  if (!parsed.success || typeof parsed.data.ceiling !== 'number') {
+    return null;
+  }
+  return { amount: parsed.data.ceiling, unit: parsed.data.unit ?? '' };
+}
+
+/** Verdict strength, worst to best. Two INDEPENDENT routes to the same essential are
+ *  reconciled by taking the better one — never by summing them, which would double-count
+ *  a user who has both. '' (no verdict) must stay the floor so an unscored tile can only
+ *  ever be lifted, not dimmed. */
+const STATUS_RANK: Record<string, number> = { '': 0, gap: 1, present: 2, partial: 3, trace: 4, covered: 5 };
+
+function betterStatus(a: CoverageStatus, b: CoverageStatus): CoverageStatus {
+  return (STATUS_RANK[a] ?? 0) >= (STATUS_RANK[b] ?? 0) ? a : b;
+}
+
 function classify(
   target: CoverageTarget | null,
   d: Delivery,
@@ -800,6 +830,19 @@ function classify(
   // its 'covered' traces to a sealed Wallach claim, not to the present-by-default rule.
   if (target.low === 0) {
     return 'covered';
+  }
+  // ── VEHICLE-SUPPLIED ────────────────────────────────────────────────────────────
+  // Wallach names the plant-derived colloidal vehicle as THIS essential's supply route,
+  // in his own words (tin: "tin from plant derived colloidal minerals", two books 16 years
+  // apart, plus his own use of it). So a vehicle in the stack is a real Wallach-stated
+  // route to it, not an inference from the humic-shale roster — which lists calcium and
+  // therefore cannot be the test. Membership + citations live in trace-mineral-vehicles.json.
+  //
+  // ADDITIVE, never a replacement: the numeric path still runs and the BETTER verdict wins,
+  // so a declared item meeting the 500 mcg still covers with no vehicle present, and a
+  // vehicle still covers with nothing declared. Removing either side is a behaviour change.
+  if (target.vehicle_supplied === true) {
+    return betterStatus(pdmStatus, numericStatus(target, d));
   }
   // Numeric: hbsp · wallach · wallach_clinical · any kind carrying low/unit.
   return numericStatus(target, d);

@@ -16,7 +16,8 @@ TWO layers, backed by the hand-curated registry `eden/catalog/nutrients.json` (C
     aggregation + search group correctly. The products pillar stays byte-faithful to the labels;
     canonicalization lives HERE (registry layer), never lossily in-pillar.
 
-Design note: 37 of the 91 canon entries now carry a mined numeric Wallach target
+Design note: 36 of the 91 canon entries now carry a mined numeric Wallach target
+(silver's 400 mcg became a stated CEILING on 2026-08-20 — a safe intake, not a requirement)
 (essentials-targets-data.json), so the "% toward target" verdict is live for those and an
 honest gap for the rest. This resolver supplies IDENTITY only -- never an amount -- which is
 what composition aggregation, cost-per-nutrient and potency comparison need in both cases.

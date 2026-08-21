@@ -335,7 +335,8 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
                 <span class="vd-cf-sec__n" data-nutrient-count>${nutrientCountLabel(nutrients.length, mapped)}</span>
                 <span class="vd-cf-sec__hint">Every row is editable. Clean reads are mapped &check;; garbled reads show ranked suggestions — pick one, or keep as-is.</span>
               </div>
-              <div class="vd-nlist">${rows || '<div class="vd-nrow__covrow">No nutrient lines read — edit the ingredients below, or rescan.</div>'}</div>
+              <div class="vd-nlist">${rows || '<div class="vd-nrow__covrow">No nutrient lines read — add one below, edit the ingredients, or rescan.</div>'}</div>
+              <button class="vd-nadd" type="button" data-nadd><b class="vd-nadd__p" aria-hidden="true">+</b>Add a row we missed</button>
             </div>
             <div class="vd-cf-sec">
               <div class="vd-cf-sec__head">
@@ -676,8 +677,12 @@ export function mount(container: HTMLElement): MountHandle {
     input.click();
   };
 
-  /** Read the corrected label back out of the Confirm inputs + textarea. */
-  const readCorrectedLabel = (): ScanLabel => {
+  /** Read the corrected label back out of the Confirm inputs + textarea.
+   *  `keepBlank` retains a row whose name field is still empty. True ONLY when
+   *  re-rendering after "Add a row", so the row the user just created survives long
+   *  enough for them to type into it. At Confirm it stays false, because a nameless
+   *  row is not a nutrient and must never reach the scorer. */
+  const readCorrectedLabel = (keepBlank = false): ScanLabel => {
     const base = label ?? { name: 'Scanned label', nutrients: [], ingredients: '' };
     const nutrients = (base.nutrients ?? []).flatMap((n, i) => {
       if (removedRows.has(i)) {
@@ -690,7 +695,7 @@ export function mount(container: HTMLElement): MountHandle {
       const parsed = amtEl !== null ? Number.parseFloat(amtEl.value) : Number.NaN;
       const amount = Number.isFinite(parsed) ? parsed : n.amount;
       const unit = unitEl !== null && unitEl.value.trim().length > 0 ? unitEl.value.trim() : n.unit;
-      return next.length > 0 ? [{ ...n, name: next, amount, unit }] : [];
+      return next.length > 0 || keepBlank ? [{ ...n, name: next, amount, unit }] : [];
     });
     const ing = container.querySelector<HTMLTextAreaElement>('[data-ing]');
     const nameEl = container.querySelector<HTMLInputElement>('[data-sc-name]');
@@ -882,6 +887,21 @@ export function mount(container: HTMLElement): MountHandle {
         imageDataUrl = null;
         render();
       }
+      return;
+    }
+    // Add a row the OCR never produced — a line it missed, or an item whose label was never
+    // machine-readable to begin with. Unlike delete this MUST re-render, because a new row
+    // needs a real index the readback can find; so the edits already on screen are committed
+    // into `label` first or the repaint would discard them. Committing COMPACTS the indices,
+    // which is why removedRows resets with them — a stale index would drop the wrong row on
+    // the next readback.
+    if (t.closest('[data-nadd]') !== null && label !== null) {
+      const committed = readCorrectedLabel(true);
+      label = { ...committed, nutrients: [...(committed.nutrients ?? []), { name: '', unit: '' }] };
+      removedRows.clear();
+      render();
+      const nameInputs = container.querySelectorAll<HTMLInputElement>('.vd-edit[data-nedit]');
+      nameInputs[nameInputs.length - 1]?.focus();
       return;
     }
     // Per-row delete — record the original index so readCorrectedLabel drops it, then pull

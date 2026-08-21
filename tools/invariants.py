@@ -1647,14 +1647,34 @@ def _amounts_wallach_only_impl(embed_p, canon_p, claims_dir):
             v = None
         return v, scaled, errs
 
-    viol, numeric = [], 0
+    viol, numeric, ceilings = [], 0, 0
     for e in data.get("essentials", []):
         t = e.get("target") or {}
-        low = t.get("low")
-        if not isinstance(low, (int, float)):
-            continue
-        numeric += 1
         name = e.get("name", "?")
+        # A CEILING IS AUDITED EXACTLY LIKE A TARGET. It is still a Wallach number sitting
+        # in a fact field, so it must trace to his claim and recompute from the same chain;
+        # the only difference is which key holds it and what the app DOES with it. Letting
+        # a number escape audit by being renamed is not hypothetical -- silver's 400 mcg
+        # moved from `low` to `ceiling` on 2026-08-20 and this loop stopped seeing it while
+        # the board stayed green. A ceiling must ALSO declare a short reason token, for the
+        # same purpose lower_taken_reason serves: an undeclared reclassification and a
+        # silent drift are indistinguishable from here.
+        low = t.get("low")
+        if isinstance(low, (int, float)):
+            numeric += 1
+        else:
+            low = t.get("ceiling")
+            if not isinstance(low, (int, float)):
+                continue
+            reason = str(t.get("ceiling_reason") or "").strip()
+            if not reason:
+                viol.append(f"{name}: ceiling {low} carries no ceiling_reason")
+                continue
+            if " " in reason or len(reason) > 60:
+                viol.append(f"{name}: ceiling_reason must be a short kebab token, not prose "
+                            f"(the prose belongs in targets_derive.CEILING_NOT_TARGET): {reason[:50]!r}")
+                continue
+            ceilings += 1
         slug = name2slug.get(name)
         scid = t.get("source_claim_id")
         if not scid:
@@ -1717,8 +1737,9 @@ def _amounts_wallach_only_impl(embed_p, canon_p, claims_dir):
     if viol:
         return False, ("non-Wallach / unsourced / mis-derived amount(s) in essentials-targets-data "
                        "(R2 poison / broken chain): " + "; ".join(viol[:8]))
-    return True, (f"all {numeric} numeric coverage target(s) trace to a Wallach dose claim AND "
-                  "recompute exactly from its documented transform chain (R2 clean)")
+    return True, (f"all {numeric} numeric coverage target(s) + {ceilings} stated ceiling(s) trace "
+                  "to a Wallach dose claim AND recompute exactly from the documented transform "
+                  "chain (R2 clean)")
 
 
 # ---------------------------------------------------------------------------

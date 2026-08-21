@@ -65,7 +65,7 @@ import {
   resolveClaims,
   umbrellaChildren,
 } from '../state/corpus.js';
-import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialNameOf, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
+import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCeiling, essentialNameOf, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
 import { essentialLede, essentialSourcesNote, essentialWhy } from '../state/entity-copy.js';
 import { getConditionPage, getEssentialPage } from '../state/entity-page.js';
 import { glossaryDef } from '../state/glossary.js';
@@ -405,9 +405,16 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
   const whyHTML = why.length > 0
     ? `<span class="kd-ep-why">why this number?<span class="kd-ep-tip">${escHTML(why)}</span></span>`
     : '';
+  // A stated CEILING is not a target and must not be scored — but it is still a number
+  // Wallach wrote, so the honest-gap copy ("never states an exact number") would be false
+  // here in the OPPOSITE direction. Show the figure under its own label instead.
+  const ceiling = slug !== null ? essentialCeiling(slug) : null;
   const targetHTML = ivt !== null
     ? `<div class="kd-ep-v">${fmtTarget(ivt.targetLow)}${ivt.targetHigh !== ivt.targetLow ? '–' + fmtTarget(ivt.targetHigh) : ''}<small> ${escHTML(ivt.unit)}</small></div>`
-    : `<div class="kd-ep-gap">${escHTML(ui('ep_no_target'))}</div>`;
+    : ceiling !== null
+      ? `<div class="kd-ep-v">${fmtTarget(ceiling.amount)}<small> ${escHTML(ceiling.unit)}</small></div>
+        <div class="kd-ep-sub">${escHTML(ui('kd_ep_ceiling_note'))}</div>`
+      : `<div class="kd-ep-gap">${escHTML(ui('ep_no_target'))}</div>`;
   // Coverage: the live bar fed by REAL regimen delivery vs the Wallach target; a
   // trace essential (no numeric target) falls back to the covered/not-covered pill.
   let coverageHTML: string;
@@ -427,7 +434,7 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
   return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
-        <div class="kd-ep-k">Wallach daily target</div>
+        <div class="kd-ep-k">${ivt === null && ceiling !== null ? escHTML(ui('kd_ep_ceiling_label')) : 'Wallach daily target'}</div>
         ${targetHTML}
         ${whyHTML}
       </div>
@@ -452,8 +459,21 @@ function renderSourcesBlock(layoutKey: string, slug: string | null = null): stri
   // product is not a source, so it is not listed as one; it used to render as a "0 mg" row under
   // "Best Youngevity sources", which reads as a broken number rather than as the absence it is.
   const sources = rankedSourcesForEssential(layoutKey).filter(s => s.amount > 0);
+  // The diet note is read BEFORE the empty-sources exit, because the two are independent
+  // facts: "no product carries this" and "here is where it actually comes from". Germanium
+  // is the case that proves it — ZERO rows in the whole pillar, so the block used to vanish
+  // whole and take the note with it, leaving the one essential most in need of a where-from
+  // line as the only one that could never show one. With no rows the label cannot say "Best
+  // Youngevity sources" either, so it swaps; with neither rows nor note there is still
+  // genuinely nothing to render.
+  const note = slug !== null ? essentialSourcesNote(slug) : '';
+  const noteHtml = note.length > 0 ? `<p class="kd-ep-srcnote">${escHTML(note)}</p>` : '';
   if (sources.length === 0) {
-    return '';
+    return note.length === 0
+      ? ''
+      : `<hr class="kd-ep-op__div">
+      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML(ui('kd_ep_srcnote_label'))}</div>
+      ${noteHtml}`;
   }
   const bestId = bestValueProductId(sources);
   const bestIdx = bestId !== null ? sources.findIndex(s => s.productId === bestId) : -1;
@@ -471,11 +491,9 @@ function renderSourcesBlock(layoutKey: string, slug: string | null = null): stri
   const more = rest.length > 0
     ? `<details class="kd-ep-more"><summary>Show all ${sources.length} sources</summary><div class="kd-ep-more__body">${rest.map(s => srcRow(s, false)).join('')}</div></details>`
     : '';
-  // The diet note sits directly under the label, ABOVE the product rows: it is the answer to the
-  // question the rows provoke ("why is the best one only 3% of the target?"), so it has to arrive
-  // before the reader has finished being confused by them.
-  const note = slug !== null ? essentialSourcesNote(slug) : '';
-  const noteHtml = note.length > 0 ? `<p class="kd-ep-srcnote">${escHTML(note)}</p>` : '';
+  // The diet note (read above) sits directly under the label and ABOVE the product rows: it is
+  // the answer to the question the rows provoke ("why is the best one only 3% of the target?"),
+  // so it has to arrive before the reader has finished being confused by them.
   return `<hr class="kd-ep-op__div">
       <div class="kd-ep-k kd-ep-op__srclabel">Best Youngevity sources</div>
       ${noteHtml}${head}${more}`;

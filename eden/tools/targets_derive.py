@@ -50,6 +50,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent.parent
 CORPUS = ROOT / "eden" / "corpus"
 OUT_PATH = ROOT / "dashboard" / "assets" / "data" / "essentials-targets-data.json"
+VEHICLES_PATH = ROOT / "dashboard" / "assets" / "data" / "trace-mineral-vehicles.json"
 
 sys.path.insert(0, str(ROOT / "tools"))
 import safe_write  # noqa: E402
@@ -232,6 +233,37 @@ LOWER_OF_RANGE = {
 }
 
 
+# ── CEILING, NOT A TARGET ────────────────────────────────────────────────────────
+# The essential's only stated number is what Wallach says you CAN take, not what he says you
+# NEED. Posting such a figure as a daily target makes the board demand a number he never asked
+# anyone to reach — and then reads the shortfall back as a deficiency. That is a §00.A defect of
+# ROLE, not of value: the number is genuinely his, in the wrong column.
+#
+# SILVER is the only case, and the evidence is threefold:
+#   1. His one sentence is a TOLERANCE: "Humans can consume 400 mcg of silver per day"
+#      (WAL-CLM-DDDL-000013, Dead Doctors Don't Lie 3e 2011; printed identically in Immortality
+#      2008, WAL-CLM-IMMORT-000027). "Can consume", never "requires" — and he puts his own
+#      following word "deficiency" in scare quotes.
+#   2. SILVER HAS NO ROW in the Base Line Nutritional Supplement Program. That True Supplement
+#      Need table IS the source of tin's 500 mcg, sulphur's 500 mg and sodium's 3,300 mg. Its
+#      absence is not an OCR drop: WAL-CLM-LETS-000064 prints RIBOFLAVIN and SELENIUM adjacent,
+#      so alphabetically nothing sits between them.
+#   3. The NEWEST book denies the requirement outright: silver "is not required by any known
+#      biological system" (WAL-CLM-EPIGEN-000064, Epigenetics 2014). He counts it essential for
+#      its disinfectant and immune-stimulant role, not as an enzymatic need.
+# The only quantitative caution he attaches to silver is the UPPER end — argyria on chronic
+# overdose — which is exactly what a ceiling is for.
+#
+# The kind becomes dietary_with_clinical_lever WITH NO `low`, which is how state/coverage.ts
+# already scores taurine: covered on a genuine source, no threshold. The figure is NOT deleted —
+# it stays on the target as `ceiling` so the page can show what Wallach actually said.
+# Like LOWER_OF_RANGE above, the VALUE is a short stable token because it ships into a fact
+# field and prose_contained (R4) refuses prose there; the reasoning lives in this comment.
+CEILING_NOT_TARGET = {
+    "silver": "stated-as-safe-intake-not-a-requirement",
+}
+
+
 def _convert(slug: str, d: dict):
     """Apply end-of-range choice -> IU conversion -> weight-scaling -> rounding.
     Returns (value, unit_out, provenance)."""
@@ -263,6 +295,29 @@ def _convert(slug: str, d: dict):
     return value, unit_out, prov
 
 
+def _vehicle_supplied(claim_ids: set) -> dict:
+    """slug -> the claim ids proving Wallach names the plant-derived vehicle as its route.
+
+    The JUDGMENT is hand-authored in trace-mineral-vehicles.json (one home, R1); this only
+    reads it and REFUSES on a citation that does not resolve to a sealed claim. That check is
+    the whole point: without it an entry here would be an unfalsifiable green -- the exact
+    failure mode the 2026-08-20 contradiction file warned about ("no gate could ever catch
+    that being wrong"). A dangling id must stop the build, never be skipped."""
+    cfg = json.loads(VEHICLES_PATH.read_text(encoding="utf-8")).get("vehicle_supplied", {})
+    out = {}
+    for slug, entry in cfg.items():
+        if slug.startswith("_"):
+            continue
+        ids = list(entry.get("claim_ids") or [])
+        if not ids:
+            raise SystemExit(f"targets_derive: vehicle_supplied[{slug}] cites no claim")
+        missing = [i for i in ids if i not in claim_ids]
+        if missing:
+            raise SystemExit(f"targets_derive: vehicle_supplied[{slug}] cites unknown claim(s) {missing}")
+        out[slug] = ids
+    return out
+
+
 def build_data() -> dict:
     canon = json.loads((CORPUS / "essentials-canon.json").read_text(encoding="utf-8"))["essentials"]
     claims = _load_claims()
@@ -270,6 +325,7 @@ def build_data() -> dict:
                   json.loads((CORPUS / "books-meta.json").read_text(encoding="utf-8"))["books"]}
     doses = _maintenance_doses(claims, books_meta)
     collective = _collective_doses(claims)
+    vehicle_supplied = _vehicle_supplied({c["id"] for c in claims})
 
     essentials = []
     for e in canon:
@@ -319,8 +375,25 @@ def build_data() -> dict:
                 "range": {"low": p0["low"], "high": p0["high"], "unit": p0["unit"]},
                 "provenance": conv[0][2],
             }
+            # A stated SAFE INTAKE is not a target — see CEILING_NOT_TARGET. Dropping `low`
+            # is what changes the verdict: with no numeric floor, classify's
+            # dietary_with_clinical_lever branch covers on a genuine source instead of
+            # measuring against a number Wallach never asked for. The figure is KEPT as
+            # `ceiling` — this reclassifies what he said, it does not hide it.
+            if slug in CEILING_NOT_TARGET:
+                target["ceiling"] = target.pop("low")
+                target["kind"] = "dietary_with_clinical_lever"
+                target["ceiling_reason"] = CEILING_NOT_TARGET[slug]
+                target["source"] = (f"Wallach — {_book_display(books_meta, p0['book'])} — a stated "
+                                    f"safe intake, not a required amount")
             if parts:
                 target["parts"] = parts
+            # VEHICLE-SUPPLIED: Wallach names the plant-derived vehicle as this essential's
+            # supply route in his own words. The numeric target above STAYS -- this is an
+            # additional route, so state/coverage.ts takes the better of the two verdicts.
+            if slug in vehicle_supplied:
+                target["vehicle_supplied"] = True
+                target["vehicle_claim_ids"] = vehicle_supplied[slug]
             if others:
                 target["other_claims"] = [{
                     "claim_id": d["id"], "book": d["book"], "year": d["year"],

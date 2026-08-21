@@ -1,57 +1,192 @@
 {
-  "_purpose": "Trace/rare-mineral coverage — the CURATED one-off-rules layer (curated 2026-07-12). The 34 trace_pdm minerals (rare earths plus the other plant-derived traces) have no individual Wallach dose; instead they are covered as a group by plant-derived colloidal mineral intake, measured against Wallach's dose of the colloidal-mineral vehicle (1 fl oz per 100 lb/day, WAL-CLM-EPIGEN-000089). This file holds ONLY the editorial JUDGMENT — which products count as a trace/rare vehicle, their group, and whether their mg is derivable — never any amount. All amounts stay sourced from the sealed Products pillar (eden/products/products.json) and are joined in by eden/tools/pdm_coverage_derive.py, so nothing here duplicates a pillar number (R1/derive-don't-duplicate). Hand-authored, manifest 'accounted'.",
-  "goal_model": {
-    "wallach_dose_claim_id": "WAL-CLM-EPIGEN-000089",
-    "wallach_dose_text": "1 fl oz of liquid plant-derived colloidal minerals per 100 lb of body weight per day",
-    "reference_composition_product_id": "plant-derived-minerals",
-    "reference_serving_note": "The maintenance goal (mg) = Wallach's 1 fl oz/100 lb dose expressed in mg via the reference product's composition (Plant Derived Minerals(TM) = 600 mg solids per 1 fl oz serving — Youngevity COMPOSITION, read from the pillar, never hand-typed here), scaled to the 154 lb reference adult (targets_derive BODY_WEIGHT_LB) => ~924 mg/day = 100%."
+ "_purpose": "Trace/rare-mineral coverage — the CURATED one-off-rules layer (curated 2026-07-12). The 34 trace_pdm minerals (rare earths plus the other plant-derived traces) have no individual Wallach dose; instead they are covered as a group by plant-derived colloidal mineral intake, measured against Wallach's dose of the colloidal-mineral vehicle (1 fl oz per 100 lb/day, WAL-CLM-EPIGEN-000089). This file holds ONLY the editorial JUDGMENT — which products count as a trace/rare vehicle, their group, and whether their mg is derivable — never any amount. All amounts stay sourced from the sealed Products pillar (eden/products/products.json) and are joined in by eden/tools/pdm_coverage_derive.py, so nothing here duplicates a pillar number (R1/derive-don't-duplicate). Hand-authored, manifest 'accounted'.",
+ "goal_model": {
+  "wallach_dose_claim_id": "WAL-CLM-EPIGEN-000089",
+  "wallach_dose_text": "1 fl oz of liquid plant-derived colloidal minerals per 100 lb of body weight per day",
+  "reference_composition_product_id": "plant-derived-minerals",
+  "reference_serving_note": "The maintenance goal (mg) = Wallach's 1 fl oz/100 lb dose expressed in mg via the reference product's composition (Plant Derived Minerals(TM) = 600 mg solids per 1 fl oz serving — Youngevity COMPOSITION, read from the pillar, never hand-typed here), scaled to the 154 lb reference adult (targets_derive BODY_WEIGHT_LB) => ~924 mg/day = 100%."
+ },
+ "group_factors": {
+  "A": 1.0,
+  "B": 1.0,
+  "C": 1.0,
+  "D": 1.0,
+  "_flag_B": "Group B (red algae / Aquamin / Lithothamnion) counts 1:1 by DEFAULT, but this factor is the tunable knob: red-algae rare-earth content is NOT established by Wallach's mass-spec (Humic Shale) or Youngevity's published PDM composition, so its mg-equivalence to the Majestic-Earth goal is an ASSUMPTION pending a red-algae rare-earth citation or an explicit ruling. Change this one number to discount Group B."
+ },
+ "vehicle_name_patterns": [
+  "plant derived mineral",
+  "trace mineral",
+  "aquamin seaweed",
+  "peat bog clay",
+  "vilcabamba trace mineral"
+ ],
+ "_products_note": "mode 'amount' = the vehicle carries a derivable per-serving mg (nutrient row or blend total) that feeds Sigma mg / 924. mode 'present' = a vehicle IS present but its mg is not derivable (a no-amount other-ingredient carrier, or a trace portion buried in an inseparable proprietary blend) => the hollow/blue 'present' dot, contributes presence not math. group A = Majestic-Earth PDM/humic (Wallach + YGY confirmed full rare-earth spectrum); B = red algae/Aquamin (tunable, see _flag_B); C = Vilcabamba trace minerals; D = generic 'Trace Mineral Complex/Blend' (label-confirmed).",
+ "products": {
+  "plant-derived-minerals": {
+   "group": "A",
+   "mode": "amount",
+   "note": "GOLDEN STANDARD — 600 mg/serving defines 100% at 100 lb."
   },
-  "group_factors": {
-    "A": 1.0,
-    "B": 1.0,
-    "C": 1.0,
-    "D": 1.0,
-    "_flag_B": "Group B (red algae / Aquamin / Lithothamnion) counts 1:1 by DEFAULT, but this factor is the tunable knob: red-algae rare-earth content is NOT established by Wallach's mass-spec (Humic Shale) or Youngevity's published PDM composition, so its mg-equivalence to the Majestic-Earth goal is an ASSUMPTION pending a red-algae rare-earth citation or an explicit ruling. Change this one number to discount Group B."
+  "cheri-mins": {
+   "group": "A",
+   "mode": "amount",
+   "note": "PDM listed twice (nutrient + other-ing); the derive counts the quantified nutrient row only."
   },
-  "vehicle_name_patterns": [
-    "plant derived mineral",
-    "trace mineral",
-    "aquamin seaweed",
-    "peat bog clay",
-    "vilcabamba trace mineral"
-  ],
-  "_products_note": "mode 'amount' = the vehicle carries a derivable per-serving mg (nutrient row or blend total) that feeds Sigma mg / 924. mode 'present' = a vehicle IS present but its mg is not derivable (a no-amount other-ingredient carrier, or a trace portion buried in an inseparable proprietary blend) => the hollow/blue 'present' dot, contributes presence not math. group A = Majestic-Earth PDM/humic (Wallach + YGY confirmed full rare-earth spectrum); B = red algae/Aquamin (tunable, see _flag_B); C = Vilcabamba trace minerals; D = generic 'Trace Mineral Complex/Blend' (label-confirmed).",
-  "products": {
-    "plant-derived-minerals": { "group": "A", "mode": "amount", "note": "GOLDEN STANDARD — 600 mg/serving defines 100% at 100 lb." },
-    "cheri-mins": { "group": "A", "mode": "amount", "note": "PDM listed twice (nutrient + other-ing); the derive counts the quantified nutrient row only." },
-    "strawberry-kiwi-mins": { "group": "A", "mode": "amount" },
-    "ultimate-classic": { "group": "A", "mode": "amount", "note": "PDM listed twice; count the quantified row only." },
-    "ultimate-tangy-tangerine-liquid": { "group": "A", "mode": "amount" },
-    "ultra-body-toddy": { "group": "A", "mode": "amount", "note": "PDM listed twice; count the quantified row only." },
-    "bone-building-formula": { "group": "A", "mode": "amount" },
-    "rebound-fx-citrus-punch": { "group": "A", "mode": "amount", "note": "Powder/packs label (rebound-fx-citrus-punch_supp-facts_1225.jpg) — 120 mg itemized." },
-    "majestic-earth-mineral-stx": { "group": "A", "mode": "amount" },
-    "midnight-minerals-fulvic-mins": { "group": "A", "mode": "amount", "note": "Peat Bog Clay (humic/fulvic) 150 mg." },
-    "zinc-immune-support": { "group": "A", "mode": "amount", "note": "25 mg — far below the 924 goal; counts for completeness, not a real recommendation." },
-    "btt-2-0-citrus-peach-fusion": { "group": "B", "mode": "amount" },
-    "btt-2-0-citrus-peach-fusion-30-count-box": { "group": "B", "mode": "amount" },
-    "btt-2-0-tablets": { "group": "B", "mode": "amount" },
-    "beyond-tangy-tangerine-2-5-canister": { "group": "B", "mode": "amount" },
-    "beyond-tangy-tangerine-450g-canister": { "group": "B", "mode": "amount" },
-    "3-0-rise-and-restore": { "group": "B", "mode": "amount", "note": "ONE product, two components (Rise 50 mg + Restore 100 mg); the derive SUMS both = 150 mg (a two-part daily product). Flag if you want per-serving instead." },
-    "beyond-osteo-fx-powder": { "group": "B", "mode": "amount" },
-    "projoint-fx": { "group": "B", "mode": "amount" },
-    "ultimate-mineral-caps": { "mode": "amount", "rows": [ { "match": "plant derived trace mineral", "group": "A" }, { "match": "aquamin seaweed", "group": "B" } ], "note": "Two vehicle rows in different groups: 300 mg PDM (A) + 280 mg Aquamin (B). Split so the Group-B factor can weight the Aquamin portion independently." },
-    "viaviente": { "group": "C", "mode": "amount", "note": "Vilcabamba trace minerals 25 mg." },
-    "womens-fx": { "group": "D", "mode": "amount", "note": "Trace Mineral Complex 250 mg (with black cohosh)." },
-    "zinc-fx": { "group": "D", "mode": "amount", "note": "Trace Mineral Blend 25 mg." },
-    "cal-toddy": { "group": "A", "mode": "present", "note": "LABEL-FIX PENDING: the stored label is an older panel that does not quantify the plant-derived minerals, so this stays mode 'present'. If a corrected label quantifies them, it moves to mode 'amount' after the Products pillar is re-sealed." },
-    "beyond-osteo-fx-liquid": { "group": "A", "mode": "present", "note": "PDM in other_ingredients, no amount." },
-    "ultimate-osteo-fx": { "group": "A", "mode": "present", "note": "PDM in other_ingredients, no amount." },
-    "herbal-rainforest": { "group": "A", "mode": "present", "note": "Majestic Earth PDM in other_ingredients, no amount." },
-    "oxybody-cherry-berry": { "group": "A", "mode": "present", "note": "plant derived minerals in other_ingredients, no amount." },
-    "ultimate-oceans-gold": { "group": "B", "mode": "present", "note": "Trace portion inside the inseparable 1205 mg Ocean's Gold blend — present, but the blend total is not the trace mg (do NOT sum it)." },
-    "rebound-fx-can": { "group": "A", "mode": "present", "note": "Trace Mineral Blend inside the inseparable 440 mg proprietary blend (can label) — present, not isolable." },
-    "womens-hormonal-balancer": { "group": "C", "mode": "present", "note": "Proprietary Vilcabamba mineral blend (each <2% DV) in other_ingredients, no amount." }
+  "strawberry-kiwi-mins": {
+   "group": "A",
+   "mode": "amount"
+  },
+  "ultimate-classic": {
+   "group": "A",
+   "mode": "amount",
+   "note": "PDM listed twice; count the quantified row only."
+  },
+  "ultimate-tangy-tangerine-liquid": {
+   "group": "A",
+   "mode": "amount"
+  },
+  "ultra-body-toddy": {
+   "group": "A",
+   "mode": "amount",
+   "note": "PDM listed twice; count the quantified row only."
+  },
+  "bone-building-formula": {
+   "group": "A",
+   "mode": "amount"
+  },
+  "rebound-fx-citrus-punch": {
+   "group": "A",
+   "mode": "amount",
+   "note": "Powder/packs label (rebound-fx-citrus-punch_supp-facts_1225.jpg) — 120 mg itemized."
+  },
+  "majestic-earth-mineral-stx": {
+   "group": "A",
+   "mode": "amount"
+  },
+  "midnight-minerals-fulvic-mins": {
+   "group": "A",
+   "mode": "amount",
+   "note": "Peat Bog Clay (humic/fulvic) 150 mg."
+  },
+  "zinc-immune-support": {
+   "group": "A",
+   "mode": "amount",
+   "note": "25 mg — far below the 924 goal; counts for completeness, not a real recommendation."
+  },
+  "btt-2-0-citrus-peach-fusion": {
+   "group": "B",
+   "mode": "amount"
+  },
+  "btt-2-0-citrus-peach-fusion-30-count-box": {
+   "group": "B",
+   "mode": "amount"
+  },
+  "btt-2-0-tablets": {
+   "group": "B",
+   "mode": "amount"
+  },
+  "beyond-tangy-tangerine-2-5-canister": {
+   "group": "B",
+   "mode": "amount"
+  },
+  "beyond-tangy-tangerine-450g-canister": {
+   "group": "B",
+   "mode": "amount"
+  },
+  "3-0-rise-and-restore": {
+   "group": "B",
+   "mode": "amount",
+   "note": "ONE product, two components (Rise 50 mg + Restore 100 mg); the derive SUMS both = 150 mg (a two-part daily product). Flag if you want per-serving instead."
+  },
+  "beyond-osteo-fx-powder": {
+   "group": "B",
+   "mode": "amount"
+  },
+  "projoint-fx": {
+   "group": "B",
+   "mode": "amount"
+  },
+  "ultimate-mineral-caps": {
+   "mode": "amount",
+   "rows": [
+    {
+     "match": "plant derived trace mineral",
+     "group": "A"
+    },
+    {
+     "match": "aquamin seaweed",
+     "group": "B"
+    }
+   ],
+   "note": "Two vehicle rows in different groups: 300 mg PDM (A) + 280 mg Aquamin (B). Split so the Group-B factor can weight the Aquamin portion independently."
+  },
+  "viaviente": {
+   "group": "C",
+   "mode": "amount",
+   "note": "Vilcabamba trace minerals 25 mg."
+  },
+  "womens-fx": {
+   "group": "D",
+   "mode": "amount",
+   "note": "Trace Mineral Complex 250 mg (with black cohosh)."
+  },
+  "zinc-fx": {
+   "group": "D",
+   "mode": "amount",
+   "note": "Trace Mineral Blend 25 mg."
+  },
+  "cal-toddy": {
+   "group": "A",
+   "mode": "present",
+   "note": "LABEL-FIX PENDING: the stored label is an older panel that does not quantify the plant-derived minerals, so this stays mode 'present'. If a corrected label quantifies them, it moves to mode 'amount' after the Products pillar is re-sealed."
+  },
+  "beyond-osteo-fx-liquid": {
+   "group": "A",
+   "mode": "present",
+   "note": "PDM in other_ingredients, no amount."
+  },
+  "ultimate-osteo-fx": {
+   "group": "A",
+   "mode": "present",
+   "note": "PDM in other_ingredients, no amount."
+  },
+  "herbal-rainforest": {
+   "group": "A",
+   "mode": "present",
+   "note": "Majestic Earth PDM in other_ingredients, no amount."
+  },
+  "oxybody-cherry-berry": {
+   "group": "A",
+   "mode": "present",
+   "note": "plant derived minerals in other_ingredients, no amount."
+  },
+  "ultimate-oceans-gold": {
+   "group": "B",
+   "mode": "present",
+   "note": "Trace portion inside the inseparable 1205 mg Ocean's Gold blend — present, but the blend total is not the trace mg (do NOT sum it)."
+  },
+  "rebound-fx-can": {
+   "group": "A",
+   "mode": "present",
+   "note": "Trace Mineral Blend inside the inseparable 440 mg proprietary blend (can label) — present, not isolable."
+  },
+  "womens-hormonal-balancer": {
+   "group": "C",
+   "mode": "present",
+   "note": "Proprietary Vilcabamba mineral blend (each <2% DV) in other_ingredients, no amount."
   }
+ },
+ "vehicle_supplied": {
+  "_doctrine": "Essentials for which Wallach names the plant-derived colloidal mineral vehicle as the SUPPLY ROUTE in his own words. Membership requires a sealed claim in which he instructs the reader to obtain the element FROM the vehicle -- NOT mere presence on the humic-shale roster, which also lists calcium, sodium and potassium and so cannot be the test. These essentials KEEP their own Wallach dose and still cover numerically when a declared item meets it; the vehicle is an ADDITIONAL route, never a replacement. Owner-ratified 2026-08-20, reversing the 2026-08-19 dual-status ruling. Adding an entry here is a SOURCE-RULE act: it must cite the supply sentence, not an inference.",
+  "tin": {
+   "claim_ids": [
+    "WAL-CLM-LETS-000451",
+    "WAL-CLM-DDDL-000406",
+    "WAL-CLM-DDDL-000465",
+    "WAL-CLM-DDDL-000466",
+    "WAL-CLM-DDDL-000287"
+   ],
+   "note": "Two books 16 years apart carry the same instruction -- 'tin from plant derived colloidal minerals' (Let's Play Doctor 1995, LETS-000451; repeated in Dead Doctors Don't Lie 3e 2011, DDDL-000406/465/466) -- and DDDL-000287 records Wallach's own considerable hair regrowth using plant-derived liquid colloidal tin. A sweep of all seven books finds NO food source for tin anywhere, so the vehicle is the only supply route he ever names for it."
+  }
+ }
 }

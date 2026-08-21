@@ -26,11 +26,12 @@
       "why": "From Wallach's Epigenetics (2014): retinol 2,500–5,000 IU and β-carotene 5,000–25,000 IU. Taking the upper figure of each and converting at 0.3 mcg RAE per IU ≈ 1,500 mcg retinol + 7,500 mcg β-carotene = 9,000 mcg RAE/day."
     },
     "sodium": {
-      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 3,300 mg."
+      "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 3,300 mg.",
+      "sourcesNote": "Sodium comes almost entirely from salt — table salt itself, then salted and cured meats, cheese, olives, anchovies, soy sauce and most processed food. Wallach rejects the medical advice to eat little or no salt, and calls salt hunger one of the most basic cravings there is. He still gives sodium its own line in his base-line supplement program, but the salt in your diet does most of the work."
     },
     "sulfur": {
       "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 500 mg.",
-      "sourcesNote": "Wallach names one food route to sulfur: organ meats, liver and kidney in particular. He still gives sulphur its own daily line in his base-line supplement program, so he does not treat food alone as the answer — which is why the products below fall short of the target rather than meeting it."
+      "sourcesNote": "Eggs are the best everyday source of sulfur — it rides in the yolk and in the sulfur-bearing amino acids eggs are rich in. Garlic, onions and the cabbage family come next, and Wallach points to organ meats, liver and kidney in particular. The diet is the primary route here: what the catalogue carries below is a trace, not a supply."
     },
     "chloride": {
       "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 2,500 mg.",
@@ -38,7 +39,7 @@
     },
     "potassium": {
       "why": "From Wallach's Immortality (2008): a daily maintenance figure of 5,000 mg.",
-      "sourcesNote": "Wallach says a natural potassium shortfall is highly unlikely, because all grains, fruits and vegetables tend to be rich in potassium — where he does see a deficiency, he puts it down to diuretics or to a diet whose only vegetable is chips and ketchup. He also records that a supplement is legally capped at 99 mg, far under the daily figure he calls for, so this one has to come mostly from what you eat."
+      "sourcesNote": "The richest everyday sources are potatoes and sweet potatoes eaten with the skin, beans and lentils, avocado, spinach and other leafy greens, tomato, banana and coconut water. Wallach says a natural potassium shortfall is unlikely for exactly that reason, and puts the deficiencies he does see down to diuretics. He also records that a supplement is legally capped at 99 mg, far under the daily figure he calls for. Either way, this one comes mostly from what you eat."
     },
     "boron": {
       "why": "From Wallach's Epigenetics (2014) mineral table: 1–6 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 9.2 mg/day."
@@ -47,6 +48,7 @@
       "why": "From Wallach's Epigenetics (2014) mineral table: 200–400 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 620 mcg/day."
     },
     "germanium": {
+      "sourcesNote": "Wallach routes germanium through plants: he says it is found in significant amounts in mushrooms, ginseng and garlic. He draws a sharp line between everyday food, which carries only traces, and the germanium-accumulating plants — garlic, shiitake mushrooms, ginseng, watercress, aloe and chlorella — which run hundreds of times richer. This one is closed from your diet, not from the catalogue.",
       "why": "From Wallach's Dead Doctors Don't Lie (2011): a recommended maintenance dose of 20–30 mg per day; the upper figure, 30 mg/day, is taken as the target."
     },
     "iron": {
@@ -63,13 +65,13 @@
     },
     "silica": {
       "why": "From Wallach's Epigenetics (2014) mineral table: 1–25 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 38 mg/day.",
-      "sourcesNote": "No Youngevity product carries a meaningful amount of silica — the best available reaches only a few percent of this target, so expect to close this one outside the catalogue. The single food Wallach names as a significant source is beer, which sits awkwardly against his own insistence on avoiding barley; he also points to silicon supplementation directly. The tension there is his, and it is left as he wrote it rather than tidied away."
+      "sourcesNote": "Silica comes from plants that draw it up out of the soil. Brown rice is the richest everyday source — it sits in the bran, so the whole grain carries it and white rice does not — followed by cucumber skin, bell peppers, leafy greens and bananas. Wallach ties silica intake to high-fibre eating. The catalogue barely touches this one, so expect to close it from your diet."
     },
     "vanadium": {
       "why": "From Wallach's Epigenetics (2014) mineral table: 50–100 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult ≈ 150 mcg/day."
     },
     "silver": {
-      "why": "From Wallach's Dead Doctors Don't Lie (2011): a recommended daily maintenance dose of 400 mcg."
+      "why": "Wallach writes that humans can consume 400 mcg of silver a day — a safe intake, not a requirement. Silver has no row in his Base Line supplement table, and in Epigenetics (2014) he says it is not required by any known biological system."
     },
     "tin": {
       "why": "From Wallach's Let's Play Doctor (1995) Base Line program: a daily maintenance target of 500 mcg."

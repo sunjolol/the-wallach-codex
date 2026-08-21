@@ -38,6 +38,19 @@ def FLAV(d):
     return find(d, FLAV_NAME)["target"]
 
 
+SILVER_NAME = "Silver"
+
+
+def AG(d):
+    """Silver's target — the one essential posting a stated CEILING instead of a target.
+
+    Wallach writes "Humans can consume 400 mcg of silver per day" (WAL-CLM-DDDL-000013) — a
+    tolerance, not a requirement, and silver has no row in his Base Line table at all. The
+    number is still HIS, so it must survive the same trace + recompute as any target; only
+    its ROLE changed. These cases prove the gate did not stop looking when the key was renamed."""
+    return find(d, SILVER_NAME)["target"]
+
+
 VITA = "Vitamin A (Retinol / beta-carotene)"
 VITD = "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)"
 
@@ -85,6 +98,13 @@ CASES = [
                             "lower_taken_reason", "the upper end is unreachable by any product"),  "Flavonoids"),
     ("lower_both_ends", lambda d: FLAV(d)["provenance"].__setitem__("upper_taken", 5000.0),       "Flavonoids"),
     ("lower_value_off", lambda d: FLAV(d).__setitem__("low", 5000.0),                             "Flavonoids"),
+    # The CEILING reclassification (silver posts what Wallach says you CAN take, not a need).
+    # Each poison is a way that reclassification could rot into an unaudited number.
+    ("ceiling_no_reason",  lambda d: AG(d).pop("ceiling_reason"),                                 "Silver"),
+    ("ceiling_prose",      lambda d: AG(d).__setitem__(
+                               "ceiling_reason", "he says you can consume it, not that you need it"), "Silver"),
+    ("ceiling_value_off",  lambda d: AG(d).__setitem__("ceiling", 4000.0),                        "Silver"),
+    ("ceiling_trace_break", lambda d: AG(d)["provenance"].__setitem__("original_low", 250.0),     "Silver"),
 ]
 
 
