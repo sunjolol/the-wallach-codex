@@ -10,6 +10,7 @@ you point it at, and answers health questions out of seven of his books in his o
 It runs entirely on your computer. You open one file and it works — no install, no server, no account,
 no internet connection, and nothing about you ever leaves the machine.
 
+| At a glance | |
 |---|---|
 | **Runs from** | a single file, double-clicked. No install, no localhost, no build step. |
 | **Network use** | none, ever. There is no server to talk to and no endpoint to leak to. |
