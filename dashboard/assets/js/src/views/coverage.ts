@@ -676,8 +676,31 @@ function renderRail(items: ReturnType<typeof loadEffectiveRegimen>): string {
 
 // ─── Mount ────────────────────────────────────────────────────────────────
 
+/**
+ * Re-render without throwing the reader back to the top of the page.
+ *
+ * Both workspaces repaint by replacing `container.innerHTML`, and every dose step fires a
+ * recompute, so a `+` halfway down a 91-tile field used to scroll the page to the top and make
+ * the user find their place again. The three workspaces share ONE scroller (`.app-workspace`,
+ * dashboard.css), which is the element whose scrollTop has to survive the swap.
+ *
+ * Restored synchronously: the replacement content is the same shape as what it replaced, so the
+ * scroll height is already correct by the time this runs and the browser clamps nothing. A
+ * rAF here would paint the top of the page for one frame first -- which is the flash itself.
+ */
+function withScrollPreserved(container: HTMLElement, paint: () => void): void {
+  const scroller = container.closest<HTMLElement>('.app-workspace');
+  const keep = scroller !== null ? scroller.scrollTop : 0;
+  paint();
+  if (scroller !== null && keep > 0 && scroller.scrollTop !== keep) {
+    scroller.scrollTop = keep;
+  }
+}
+
 export function mount(container: HTMLElement): MountHandle {
-  const render = (): void => {
+  const render = (): void => { withScrollPreserved(container, paint); };
+
+  const paint = (): void => {
     // A stationary cursor over a just-removed goal x fires no mouseout, so a stale
     // body.focusing (the goal-hover dim) would otherwise stick through this rebuild. Clear it
     // first.

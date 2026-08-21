@@ -214,13 +214,39 @@ def _maintenance_doses(claims: list, books_meta: dict) -> dict:
     return out
 
 
+# Essentials that post the LOWER end of Wallach's stated range instead of the upper.
+# BOTH ends are Wallach's own numbers from the same sealed claim, so this is a choice WITHIN the
+# source rule, not an exception to it — the posted figure still traces to his book and his range.
+# Keep this dict tiny and always give the reason: it is the only place the "post the upper" policy
+# bends, and an unexplained entry here would read as drift.
+# The VALUE is a short stable token, because this dict's output ships into a fact field and
+# prose_contained (R4) rightly refuses prose there. The full reasoning lives in the comment on
+# each entry — in the generator, which is where someone asking "why is this one different?" looks.
+LOWER_OF_RANGE = {
+    # Wallach states 1,000-5,000 mg (WAL-CLM-EPIGEN-000126). The 5,000 upper is unreachable by any
+    # combination of catalog products: the best single source carries 100 mg and all four stacked
+    # reach 143 mg — 2.9% of it — so the tile could never leave 'gap' and the board would be posting
+    # a target no user could act on. The 1,000 lower end is Wallach's OWN figure from the SAME
+    # range, so the posted number still traces to his book. Owner-ratified 2026-08-20.
+    "flavonoids": "upper-unreachable-by-any-catalog-combination",
+}
+
+
 def _convert(slug: str, d: dict):
-    """Apply upper-of-range -> IU conversion -> weight-scaling -> rounding.
+    """Apply end-of-range choice -> IU conversion -> weight-scaling -> rounding.
     Returns (value, unit_out, provenance)."""
     upper = d["high"] if d["high"] is not None else d["low"]
     prov = {"original_low": d["low"], "original_high": d["high"],
-            "original_unit": d["unit"], "upper_taken": upper}
-    value, unit_out = upper, d["unit"]
+            "original_unit": d["unit"]}
+    if slug in LOWER_OF_RANGE and d["low"] is not None:
+        taken = d["low"]
+        prov["lower_taken"] = taken
+        prov["lower_taken_reason"] = LOWER_OF_RANGE[slug]
+    else:
+        taken = upper
+        prov["upper_taken"] = taken
+    upper = taken  # everything downstream scales the CHOSEN end of the range
+    value, unit_out = taken, d["unit"]
     conv = IU_CONVERSIONS.get((slug, d.get("form"))) or IU_CONVERSIONS.get((slug, None))
     if d["unit"] == "IU" and conv:
         factor, unit_out, src, detail = conv

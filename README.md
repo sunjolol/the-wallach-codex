@@ -183,7 +183,7 @@ node tools/probes/render_probe.js        # a headless render check
 
 `tools/build.mjs` installs its own dev dependencies on first run. **You do not need to build to run the
 app** — `dist/main.js` is committed, so a fresh clone opens and works immediately. Alongside the build,
-`tools/probes/` holds 37 headless render probes and `tools/tests/` 42 standalone Python
+`tools/probes/` holds 38 headless render probes and `tools/tests/` 44 standalone Python
 control tests.
 
 ### How the data flows

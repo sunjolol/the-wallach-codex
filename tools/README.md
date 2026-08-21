@@ -14,8 +14,8 @@ is run from the command line; nothing runs at app runtime.
 
 ```
 tools/            build + discipline scripts (the twelve files below)
-  probes/         37 headless Puppeteer render probes, hand-run
-  tests/          42 negative-control tests, hand-run
+  probes/         38 headless Puppeteer render probes, hand-run
+  tests/          44 negative-control tests, hand-run
   hooks/          the four enforcement hooks the harness wires in
   gate-fixtures/  frozen inputs a few gates and probes compare against
   canaries/       written on every board run to prove the write path (own README)
@@ -42,7 +42,7 @@ tools/            build + discipline scripts (the twelve files below)
 | `mockup_measure.js` | Rendered-geometry report for a standalone page — per-figure authored-vs-rendered scale, SVG text collisions, clipped labels, and a real-wheel scroll test. `hooks/post_write_verify.py` prints this command as the proof step after a standalone-page write. |
 | `style_diff.js` | Computed-style diff of a live surface vs a mockup — prints only the `getComputedStyle` deltas (the "measure, don't eyeball" visual gate). |
 
-Plus 27 further per-surface probes under `probes/` (element headers, the coverage classifier, the recycle
+Plus 28 further per-surface probes under `probes/` (element headers, the coverage classifier, the recycle
 bin, regimen slots, search, ORAC, reduced motion). Each states its scope in its own header
 comment; `head -20 tools/probes/render_probe_<name>.js` shows what it guards.
 
@@ -77,10 +77,10 @@ comment; `head -20 tools/probes/render_probe_<name>.js` shows what it guards.
 
 ## Render probes and negative tests
 
-`probes/render_probe_*.js` — 37 hand-run headless Puppeteer probes. Each file's header comment
+`probes/render_probe_*.js` — 38 hand-run headless Puppeteer probes. Each file's header comment
 states what it asserts and carries its own usage line. Read that header before trusting a
 probe's silence: some assert and exit non-zero, and `render_probe.js` only reports.
 
-`tests/test_*.py` — 42 hand-run negative controls. A negative control plants a defect and proves
+`tests/test_*.py` — 44 hand-run negative controls. A negative control plants a defect and proves
 the gate meant to catch it actually goes red; most are cited by name from the `lesson_ref`
 of the gate they prove. A gate with no negative control has never been shown able to fail.

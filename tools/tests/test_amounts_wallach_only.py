@@ -30,6 +30,14 @@ impl = inv._amounts_wallach_only_impl
 real = json.loads(EMBED.read_text(encoding="utf-8"))
 _tmp = Path(tempfile.mkdtemp(prefix="awo_negtest_"))
 
+FLAV_NAME = "Flavonoids / Bioflavonoids"
+
+
+def FLAV(d):
+    """The flavonoids target — the one essential that posts the LOWER end of a Wallach range."""
+    return find(d, FLAV_NAME)["target"]
+
+
 VITA = "Vitamin A (Retinol / beta-carotene)"
 VITD = "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)"
 
@@ -67,6 +75,16 @@ CASES = [
     ("part_value",    _part0,                                                                                 "Vitamin A"),
     ("no_provenance", lambda d: find(d, "Sulfur")["target"].pop("provenance"),                               "Sulfur"),
     ("bad_unit",      lambda d: find(d, "Sodium")["target"].__setitem__("unit", "g"),                        "Sodium"),
+    # The lower-of-range exception (flavonoids posts Wallach's 1,000 rather than his 5,000). Both
+    # ends are his own numbers from one claim, so the choice is legal — but it must be DECLARED and
+    # must still equal that end of the range exactly. Each poison below is a way the declaration
+    # could rot into "any number goes".
+    ("lower_not_low",   lambda d: FLAV(d)["provenance"].__setitem__("lower_taken", 1234.0),       "Flavonoids"),
+    ("lower_no_reason", lambda d: FLAV(d)["provenance"].pop("lower_taken_reason"),                "Flavonoids"),
+    ("lower_prose",     lambda d: FLAV(d)["provenance"].__setitem__(
+                            "lower_taken_reason", "the upper end is unreachable by any product"),  "Flavonoids"),
+    ("lower_both_ends", lambda d: FLAV(d)["provenance"].__setitem__("upper_taken", 5000.0),       "Flavonoids"),
+    ("lower_value_off", lambda d: FLAV(d).__setitem__("low", 5000.0),                             "Flavonoids"),
 ]
 
 

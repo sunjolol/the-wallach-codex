@@ -1600,8 +1600,26 @@ def _amounts_wallach_only_impl(embed_p, canon_p, claims_dir):
                         f"!= claim {claim['id']} dose {clow}-{chigh}")
         if prov.get("original_unit") != dz.get("unit"):
             errs.append(f"{name}: provenance unit {prov.get('original_unit')!r} != claim unit {dz.get('unit')!r}")
+        # The posted figure is normally the UPPER of Wallach's stated range. An essential may
+        # instead post the LOWER end, but only by declaring `lower_taken` WITH a written reason —
+        # both ends are his own numbers from the same claim, so either is Wallach-sourced, and the
+        # value must still equal that end of the range exactly. A provenance that records neither,
+        # both, or a reasonless `lower_taken` is RED: silence here would let any number through.
         exp_upper = chigh if chigh is not None else clow
-        if exp_upper is not None and not close(prov.get("upper_taken"), exp_upper):
+        took_lower = "lower_taken" in prov
+        if took_lower and "upper_taken" in prov:
+            errs.append(f"{name}: provenance records BOTH upper_taken and lower_taken — ambiguous")
+        elif took_lower:
+            reason = str(prov.get("lower_taken_reason") or "").strip()
+            if not reason:
+                errs.append(f"{name}: lower_taken carries no lower_taken_reason (an unexplained "
+                            f"end-of-range choice is indistinguishable from drift)")
+            elif " " in reason or len(reason) > 60:
+                errs.append(f"{name}: lower_taken_reason must be a short kebab token, not prose "
+                            f"(the prose belongs in targets_derive.LOWER_OF_RANGE): {reason[:50]!r}")
+            if clow is not None and not close(prov.get("lower_taken"), clow):
+                errs.append(f"{name}: lower_taken {prov.get('lower_taken')} != lower-of-range {clow}")
+        elif exp_upper is not None and not close(prov.get("upper_taken"), exp_upper):
             errs.append(f"{name}: upper_taken {prov.get('upper_taken')} != upper-of-range {exp_upper}")
         if "factor" in prov:
             legit = iu_factor.get(slug)
@@ -1618,7 +1636,7 @@ def _amounts_wallach_only_impl(embed_p, canon_p, claims_dir):
                 errs.append(f"{name}: scaled but claim {claim['id']} is not per-100lb")
         elif dz.get("per_body_weight") == "100lb":
             errs.append(f"{name}: claim {claim['id']} is per-100lb but no scale_factor recorded")
-        v = prov.get("upper_taken")
+        v = prov.get("lower_taken") if "lower_taken" in prov else prov.get("upper_taken")
         scaled = "scale_factor" in prov
         if isinstance(v, (int, float)):
             if "factor" in prov:
