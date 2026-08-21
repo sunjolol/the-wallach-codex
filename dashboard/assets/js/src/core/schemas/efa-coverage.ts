@@ -10,7 +10,7 @@
  * day in capsule form", WAL-CLM-DDDL-000115), and his EFAs are exactly two: "only
  * two (linoleic and linolenic) are designated as Essential Fatty Acids". So they are
  * scored as ONE group — the sum of each regimen product's efa_oil_mg over
- * goal.maintenance_mg — exactly as the 33 trace_pdm rare-earths share the PDM meter.
+ * goal.maintenance_mg — exactly as the 34 plant-derived trace minerals share the PDM meter.
  *
  * ★ efa_oil_mg is OIL mass, not the sum of the named fatty acids. Wallach writes
  * "essential fatty acids AS FLAXSEED OIL at 9 grams per day" — his 9 g counts oil,

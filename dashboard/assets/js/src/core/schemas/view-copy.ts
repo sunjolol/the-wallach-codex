@@ -1,5 +1,5 @@
 /**
- * core/schemas/view-copy.ts — the VIEW-prose content-store schema (Phase H0)
+ * core/schemas/view-copy.ts — the VIEW-prose content-store schema
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Validates dashboard/assets/data/view-copy.json — the single hand-authored home
@@ -23,13 +23,13 @@ export const ViewCopySchema = z.object({
   kind_labels: z.record(z.string()),
   /**
    * claim.kind → colour-category family (green/teal/amber/orange/violet/red), the locked
-   * colour language (redesign blueprint §6). TOTAL over the sealed kinds — gated by
+   * colour language. TOTAL over the sealed kinds — gated by
    * claim_category_mapping_total; state/copy.ts::kindCategory reads it.
    */
   kind_categories: z.record(z.string()),
   /** search facet → uppercase section header. */
   facet_labels: z.record(z.string()),
-  /** generic chrome copy by id; grows as views migrate (H2-H4). */
+  /** generic chrome copy by id — the single home for every view's chrome strings. */
   ui: z.record(z.string()),
 });
 export type ViewCopy = z.infer<typeof ViewCopySchema>;

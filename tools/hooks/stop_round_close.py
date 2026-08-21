@@ -2,15 +2,15 @@
 """
 stop_round_close.py — Stop hook. The round-close safety net.
 
-Fires when the agent finishes a turn. Intent (HANDOFF §7): stop a chunk from
-being declared "done" while a real regression is unaddressed.
+Fires when a turn finishes. Intent: stop a chunk from being declared "done"
+while a real regression is unaddressed.
 
 A Stop hook fires on EVERY turn and cannot tell "chunk close" from "status
 report", so a literal "run build+vitest+invariants every turn and block unless
-the full 5-item ritual passed" implementation would: (a) burn a full build on
-every turn — at odds with the project's token budget; (b) block on the Creator's
-Log step, which is CLI-unfireable until the file-mirror lands; (c) block on the
-known-stale, date-gated Tacitus reds. So this hook implements the INTENT safely:
+the whole seven-step round-close ritual passed" implementation would: (a) burn a
+full build on every turn — at odds with the project's token budget; and (b) block
+a mid-conversation turn on steps it has no business completing. So this hook
+implements the INTENT safely:
 
   * It does cheap work and stays SILENT unless real dashboard source/dist work is
     uncommitted — chat/plan/docs turns, post-commit states, and the ever-present
@@ -18,16 +18,17 @@ known-stale, date-gated Tacitus reds. So this hook implements the INTENT safely:
   * When source work IS in flight, it runs the invariant manifest ONCE and
     HARD-BLOCKS (exit 2) only on a GENUINELY NEW failure — a failing invariant
     whose name is not in the tolerated baseline (.claude/invariant-baseline.json).
-    The known date-gated reds never block.
-  * build / vitest / build-log / Creator's-Log are surfaced as REMINDERS, never a
-    block — the agent and the human own those; this hook owns "no new regression
-    ships."
+    A name listed there never blocks; that file is empty by design, so in practice
+    every red is a real regression.
+  * It ALSO hard-blocks two things a round-close cannot ship without: a build-log
+    line with no matching Creator's Log entry, and a Creator's Log entry that was
+    never re-inlined into dist/main.js. build / vitest / commit stay REMINDERS —
+    this hook owns "no new regression, and no silently stale ledger, ships."
 
-DEVIATIONS from HANDOFF §7 are deliberate and documented here + in the build-log.
-Revisit the hard-block scope once the Creator's-Log file-mirror exists and a
-cheap incremental build/test is available.
+The narrowed hard-block scope is deliberate. Revisit it if a cheap incremental
+build/test becomes available.
 
-Contract: stdin JSON {stop_hook_active, ...}. exit 2 = block (stderr to agent);
+Contract: stdin JSON {stop_hook_active, ...}. exit 2 = block (stderr to caller);
 exit 0 = allow. Fail-open on any internal error.
 Test seams: STOP_ROUND_CLOSE_FORCE=1 forces the source-work branch;
 STOP_ROUND_CLOSE_BASELINE=<path> overrides the baseline file.
@@ -116,8 +117,8 @@ def _tolerated():
     path = os.environ.get("STOP_ROUND_CLOSE_BASELINE") or str(BASELINE_FILE)
     try:
         data = json.loads(Path(path).read_text(encoding="utf-8"))
-        # Entries are R9 justification objects {invariant, reason, test} (gated by
-        # exceptions_justified); tolerate a bare-string entry too for forward-compat.
+        # Entries are justification objects {invariant, reason, test} (gated by the
+        # exceptions_justified invariant); tolerate a bare-string entry for forward-compat.
         return {e if isinstance(e, str) else e.get("invariant")
                 for e in data.get("tolerated_failures", [])}
     except Exception:
@@ -150,7 +151,7 @@ def main():
         )
         return
 
-    # Bundle-freshness gate (2026-07-02 silent-staleness fix). A Creator's Log entry
+    # Bundle-freshness gate. A Creator's Log entry
     # that fired but was never re-inlined into dist/main.js leaves the in-app Profile
     # log silently stale — the file:// app inlines the embed at BUILD time, not at
     # runtime. The rounds that hit this are doctrine/tooling closes with NO dashboard
@@ -212,7 +213,7 @@ def main():
         '  • npx vitest run "state/**" (if state/ changed)\n'
         f"  • append a chronicle/build-log.md line  {bl}\n"
         "  • commit (+ push) the chunk\n"
-        "  • Creator's Log event — fire one: python tools/creators_log.py append … (mirror landed in L1; round-close firing-enforcement pending)"
+        "  • Creator's Log event — fire one: python tools/creators_log.py append … (enforced above: a build-log line with no new ledger entry hard-blocks)"
     )
 
 

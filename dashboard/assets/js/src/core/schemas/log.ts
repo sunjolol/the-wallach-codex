@@ -2,14 +2,14 @@
  * core/schemas/log.ts — Creator's Log entry schema
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Schema for the Wallach Creator's Log: the §00-mandated audit trail of
+ * Schema for the Wallach Creator's Log: the append-only audit trail of
  * every round close, invariant pass/fail, incident, milestone, and note.
  *
- * The Round-close ritual (CLAUDE.md) requires one log entry per closed
- * round via `state/log.log()`. The Profile panel reads these entries to
- * surface the discipline audit trail back to Luneth.
+ * The round-close ritual (.claude/skills/round-close) requires one log entry per
+ * closed round via `state/log.log()`. The Profile panel reads these entries to
+ * surface the discipline audit trail back to the user.
  *
- * LS key: 'wallachCreatorsLog_v1' (auto-mirrored from state/log.ts)
+ * LS key: state/log.ts::CREATORS_LOG_KEY — the one declaration; never re-typed here.
  * Storage shape: { entries: LogEntry[] } — wrapping in an object so we
  * can add top-level metadata (last-prune, version, etc) without a
  * breaking schema change.
@@ -18,7 +18,8 @@
 
 import { z } from 'zod';
 
-/** Kinds of log events. Open list — add to this enum as new ones arise. */
+/** Kinds of log events. CLOSED at runtime — an unlisted kind fails the parse and drops the
+ *  whole log, so extend the enum here first, then use the new kind. */
 export const LogKindSchema = z.enum([
   'session-start',
   'session-end',

@@ -1,6 +1,6 @@
 /**
  * core/format.ts — tiny presentation formatters shared across views (layer: core).
- * Pure + dependency-free (core imports only zod, and this needs nothing).
+ * Pure and dependency-free — this module imports nothing at all.
  */
 
 /**

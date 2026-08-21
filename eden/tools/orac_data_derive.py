@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""orac_data_derive.py — the ORAC knowledge tab's canonical NUMBERS (Phase 2).
+"""orac_data_derive.py — the ORAC knowledge tab's canonical NUMBERS.
 
 Generates dashboard/assets/data/orac-data.json — every Wallach number the §02/§03/§08
 narrative sections of the ORAC knowledge tab display (the mirror-test decade table, the
@@ -8,8 +8,8 @@ calorie band, the payoff, and the longevity ceiling).
 
 THE RULE (Charter R1/R3 + §00.A): a Wallach number lives in exactly ONE home. It is
 NEVER hand-typed into a view or the view-copy prose store — that would be a second,
-ungated home, the exact shape of the mineral-tiers invention (a value sealed as canon
-that no gate could prove RIGHT). So this generator reads the numbers straight out of the
+ungated home, and a value can be sealed as canon, stay green forever, and still be wrong
+if no gate can prove it RIGHT. So this generator reads the numbers straight out of the
 sealed corpus and the view interpolates them; the framing PROSE (with {placeholders})
 lives in view-copy.json, the NUMBERS live here.
 
@@ -51,7 +51,7 @@ OUT_PATH = ROOT / "dashboard" / "assets" / "data" / "orac-data.json"
 sys.path.insert(0, str(ROOT / "tools"))
 import safe_write  # noqa: E402
 
-DASH = "–"  # en dash, matching the signed-off demo's ranges
+DASH = "–"  # en dash — the single character every rendered range uses
 
 
 def _load_claims_by_id() -> dict:

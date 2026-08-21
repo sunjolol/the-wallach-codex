@@ -1,5 +1,5 @@
 {
-  "_purpose": "Foods & Absorption tab curation -- the SPECIAL curated persuasive landing (the home-page-curation philosophy: this surface is hand-tuned; every other tab is pure formula). Editorial UI config, NOT canonical health data and NOT a pillar projection -- no generator, no Wallach source-rule obligation. hero_claims are the sealed crown-jewel search-claim IDs that anchor the landing's two-pronged thesis (resolved against the search index at render; a missing id is skipped). The two-column REMOVE/EAT good-vs-bad-foods contrast will be added here as remove[]/eat[] topic-slug lists in a later chunk, each still opening its own book-cited topic page.",
+  "_purpose": "Foods & Absorption tab curation -- the one deliberately hand-tuned landing surface; every other tab is pure formula. Editorial UI config, NOT canonical health data and NOT a pillar projection -- no generator, no Wallach source-rule obligation. hero_claims are the sealed crown-jewel search-claim IDs that anchor the landing's two-pronged thesis (resolved against the search index at render; a missing id is skipped). remove[] / eat[] / conditional[] are topic-slug lists driving the good-vs-bad-foods contrast; each slug opens its own book-cited topic page.",
   "hero_claims": [
     "WAL-CLM-EPIGEN-000140",
     "WAL-CLM-EPIGEN-000141",

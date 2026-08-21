@@ -1,20 +1,17 @@
 #!/usr/bin/env python3
-"""Render sealed claims in the ONE shape Luneth reviews them in.
+"""Render sealed claims in the ONE shape they are reviewed in.
 
 WHY THIS TOOL EXISTS -- read this before "improving" it.
 
 The review shape is: QUESTION -> SHORT ANSWER -> FULL ANSWER -> QUOTE, complete text,
-never truncated, never reordered, never collapsed into a table of ids. That instruction
-had to be re-sent roughly seven times, because it lived as one line among 135 memory
-entries and only reached a session if recall happened to fire on it. Restating it an
-eighth time would not have worked either.
+never truncated, never reordered, never collapsed into a table of ids. As a written
+instruction it kept being missed; as an interface it cannot be.
 
-So it stopped being an instruction and became an interface. This renderer CANNOT emit a
-summary, a table, or a truncated preview -- there is no flag for it, because the shape is
-the point. He approves THE CLAIM, so he has to see the claim.
+So this renderer CANNOT emit a summary, a table, or a truncated preview -- there is no
+flag for it, because the shape is the point. The reviewer approves THE CLAIM, so the
+claim is what has to be on screen.
 
-If a future session is about to hand him a list of claim ids, that session should be
-running this instead.
+Anything about to hand over a list of claim ids should be running this instead.
 
 USAGE
   python tools/claim_review.py --entity zinc
@@ -34,8 +31,8 @@ CORPUS = ROOT / "eden" / "corpus"
 
 def load_claims(draft=False):
     out = {}
-    # --draft reads the UNSEALED drafts. Review happens BEFORE corpus_seal (which is
-    # Luneth's act), so the sealed-only default could not show him what he is approving.
+    # --draft reads the UNSEALED drafts. Review happens BEFORE corpus_seal (a user-only
+    # act), so a sealed-only default could not show the reviewer what is being approved.
     sub = ("drafts", "*.draft.json") if draft else ("claims", "*.json")
     for p in sorted(glob.glob(str(CORPUS / sub[0] / sub[1]))):
         d = json.loads(pathlib.Path(p).read_text(encoding="utf-8"))
@@ -68,7 +65,8 @@ def load_books():
 
 
 def cite(claim, books):
-    """Compose the citation from the sealed registry. Never hand-typed (Charter R3)."""
+    """Compose the citation from the sealed books registry -- never hand-typed: one
+    source per fact, referenced by id."""
     loc = claim.get("locator") or {}
     bid = loc.get("book")
     b = books.get(bid, {})

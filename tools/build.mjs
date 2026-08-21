@@ -15,7 +15,7 @@
 //   4. Verifies the output exists + is non-empty
 //
 // Works identically on Windows PowerShell, macOS Terminal, Linux bash.
-// No shell-script dependency. The §00 cross-platform build.
+// No shell-script dependency — one build entry point on every platform.
 // ═══════════════════════════════════════════════════════════════════════════
 
 import { execSync } from 'node:child_process';

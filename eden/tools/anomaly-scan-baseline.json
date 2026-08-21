@@ -1,5 +1,5 @@
 {
-  "_doc": "Reviewed-OK allowlist for anomaly_scan.py — (detector, claim_id, term) tuples the report suppresses. Grows as Luneth clears false positives.",
+  "_doc": "Reviewed-OK allowlist for anomaly_scan.py — (detector, claim_id, term) tuples the report suppresses. Grows as reviewers clear false positives.",
   "allowed": [
     [
       "hormone_as_herb",

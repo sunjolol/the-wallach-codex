@@ -20,8 +20,8 @@ description: Read when closing a chunk, writing a commit, appending to the build
 
 ## Plain-language first, then the complete technicals
 Every build-log line, commit body, and Creator's Log `detail` **opens** with a short plain-language
-statement of what changed and why, in terms a non-expert can follow -- Luneth is learning to code,
-write it for him -- then a **blank line**, then the full technical record. The technicals stay whole;
+statement of what changed and why, in terms a non-expert can follow -- the reader may not be a
+programmer, so write it for them -- then a **blank line**, then the full technical record. The technicals stay whole;
 nothing is cut for brevity.
 
 **Honesty outranks format.** Never pad or invent a plain lead to satisfy the shape. A short true
@@ -49,7 +49,7 @@ never includes it; "clean up freely" is not grounds to remove one entry. If remo
 necessary, **stop and ask**. The sanctioned writer is `tools/creators_log.py append`, which has no
 delete path.
 
-Why it exists, in Luneth's words: *"The Roman Empire never died, in a sense, because of its logs."*
+Why it exists: *"The Roman Empire never died, in a sense, because of its logs."*
 History lives in two layers by design -- the public GitHub/build-log layer that teaches a future
 reader, and this local-first ledger that survives even if that layer vanishes.
 

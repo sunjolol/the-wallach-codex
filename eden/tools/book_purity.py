@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 """book_purity.py — scan a source book .txt for OCR/typographic defects.
 
-The scanner for the Source-Purification campaign (the "purify-then-mine" invert).
-anomaly_scan.py scans only surfaced CLAIMS; its docstring defers "a full book-text
-pass" — this IS that pass. Surfaces EVERY defect class of a book in ONE audited
-report so a book is brought to PRISTINE in a single sweep, never whack-a-mole
-([[perfect-entry-no-deferral]]). It becomes the engine for the future
-`book_source_clean` invariant (the gate that keeps a purified book pristine).
+The scanner half of source purification (the "purify-then-mine" invert); the applier
+is book_purify_apply.py. anomaly_scan.py covers only surfaced CLAIMS; this is the full
+book-text pass. Surfaces EVERY defect class of a book in ONE audited report so a book
+is brought to PRISTINE in a single sweep, never whack-a-mole. It IS the engine for the
+live `book_source_clean` invariant — tools/invariants.py imports this module and
+calls unresolved() for every book marked pristine — the gate that keeps a purified
+book pristine.
 
 NEVER auto-fixes — it FLAGS. Findings carry a disposition so the human eye and any
 future auto-fixer agree on what is mechanical vs judgment:
   AUTO   — high-confidence mechanical (whitespace, safe hyphen reflow). A script may
-           apply these; still shown so Luneth audits the sweep.
+           apply these; still shown so the sweep stays auditable.
   REVIEW — judgment (hard-hyphen keeps, spell flags, run-togethers, running headers,
-           completeness suspects) needing Luneth + (on doubt) the scanned PDF
-           ([[reading-and-correcting-scanned-pdfs]] · [[linguistic-logic-sweep]]).
+           completeness suspects) needing a human eye and, on doubt, the scanned
+           page image.
 
 Structural tokens are EXCLUDED from content scanning (never defects):
   - '#'-prefixed provenance header lines (book top matter this tool wrote/read).

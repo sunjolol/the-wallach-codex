@@ -4,8 +4,8 @@
 Sealing ratifies the hand-built product COMPOSITION as canonical and writes Eden's wall: after
 this, products.json carries a *.golden.sha256 sibling and the scanner/user path can never write
 it (products_hash_integrity RED-flags any drift). Like catalog_seal / corpus_seal, this is the
-human's act of ratifying state as truth; the agent runs it ONLY with explicit per-invocation
-approval. LF-normalized hash (clone/CRLF-stable; see .gitattributes).
+human's act of ratifying state as truth; it runs ONLY with the owner's explicit,
+per-invocation approval. LF-normalized hash (clone/CRLF-stable; see .gitattributes).
 
 Order:
   1. Refuse unless products_verify passes (structure + prose containment).
@@ -36,7 +36,7 @@ def lf_sha256(p: Path) -> str:
 
 def _guard_cli() -> None:
     """USER-ONLY arg guard: a bare invocation seals; ANY argument is rejected. Mirrors
-    corpus_seal._guard_cli (see the 2026-08-18 catalog_seal --help incident). argparse prints real
+    corpus_seal._guard_cli, against the same silent-seal-on---help failure. argparse prints real
     help on -h/--help and errors on unknown flags, so only a deliberate BARE run can seal.
     """
     argparse.ArgumentParser(

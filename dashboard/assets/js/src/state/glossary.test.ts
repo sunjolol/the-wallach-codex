@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import { glossaryDef, glossaryRegex } from './glossary.js';
 
-// Pins the separator-insensitive glossary matcher (Luneth 2026-07-22). The "Age Beater" gloss must
-// fire whether the running text writes it singular, plural, spaced, or HYPHENATED — the hyphen form
-// ("Age-Beater", how the full answer read) was the live bug that never lit the dotted underline.
+// Pins the separator-insensitive glossary matcher. The "Age Beater" gloss must fire whether
+// the running text writes it singular, plural, spaced, or HYPHENATED — a hyphenated form that
+// never lights the dotted underline is the failure this guards against.
 describe('glossary matcher - separator insensitivity', () => {
   const forms = ['Age Beaters', 'Age Beater', 'Age-Beater', 'age-beaters', 'Age  Beater'];
 
@@ -26,11 +26,11 @@ describe('glossary matcher - separator insensitivity', () => {
   });
 });
 
-describe('glossary matcher - apostrophe eponyms (Luneth 2026-07-22)', () => {
-  // Before this fix glossify scanned HTML-ESCAPED text, so a ' had already become
-  // &#39; and NO apostrophe term could ever gloss (Bell's Palsy, Meniere's, Wallach's
-  // Fibrous Dysplasia ...). glossify now scans raw text; the key widens ' to match
-  // either curly form too, so the same eponym resolves however the text writes it.
+describe('glossary matcher - apostrophe eponyms', () => {
+  // glossify must scan RAW text, never HTML-ESCAPED text: once a ' has become &#39; NO
+  // apostrophe term can gloss (Bell's Palsy, Meniere's, Wallach's Fibrous Dysplasia ...).
+  // The key also widens ' to match either curly form, so the same eponym resolves however
+  // the text writes it.
   it('resolves the possessive eponym, straight or curly apostrophe, to one def', () => {
     const straight = glossaryDef('Wallach\'s Fibrous Dysplasia');
     const curly = glossaryDef('Wallach’s Fibrous Dysplasia');

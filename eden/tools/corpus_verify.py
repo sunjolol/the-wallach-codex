@@ -15,7 +15,7 @@ Exit codes:
      (canon has 90 essential entries, book content hashes match books-meta, any present claims/indices)
      still ran and passed; the seal-gated checks were skipped. Distinct from FAIL.
 
-The agent MAY run this. It never writes anything.
+Read-only: it never writes anything, so it is safe to run at any time.
 """
 import hashlib
 import json
@@ -76,22 +76,21 @@ def _canon_slugs():
 
 
 def unresolved_references():
-    """references_resolve (Charter R3): claim condition/symptom/substance/about slugs NOT
+    """references_resolve: claim condition/symptom/substance/about slugs NOT
     registered in the Catalog pillar (eden/catalog/{conditions,symptoms,nutrients}.json) or the
     sealed canon. Returns [] when the catalog is absent (bootstrap-safe) or clean. Single source,
     called by both run_checks (#12) and the named references_resolve invariant.
 
-    `about` (2026-07-16) is the claim's SUBJECT -- what it is *about* -- as opposed to
-    `other_substances`, which is only what it MENTIONS. WHY a separate field rather than reusing
-    the tag: they are different facts and neither implies the other. Measured on the plant-derived
-    colloidal-mineral complex the day this landed: 16 claims carried `other_substances:
-    colloidal-minerals` whose own verbatim never names the complex (a miner's extraction window
-    bleeding in from a neighbouring A-Z entry), while 10 claims that DO name it were untagged --
-    6 of those from `rare-earths`, the book most about the complex. So the tag was wrong in BOTH
-    directions. Before this field, every consumer had to INFER aboutness from that tag or from a
-    regex over the verbatim; both proxies were silently wrong, and the coverage goal-strip shipped
-    a dark `healthy-weight` goal for it while Wallach's own OBESITY entry says "(Use colloidal
-    minerals)!". Aboutness is authored, never inferred.
+    `about` is the claim's SUBJECT -- what it is *about* -- as opposed to `other_substances`,
+    which is only what it MENTIONS. WHY a separate field rather than reusing the tag: they are
+    different facts and neither implies the other. Measured on the plant-derived colloidal-mineral
+    complex, the tag is wrong in BOTH directions -- dozens of claims carry it whose own verbatim
+    never names the complex (a miner's extraction window bleeding in from a neighbouring A-Z
+    entry), and dozens more that DO name it are untagged. Before this field, every consumer had to
+    INFER aboutness from that tag or from a regex over the verbatim; both proxies are silently
+    wrong in both directions, which is how a goal can end up dark for a condition Wallach
+    explicitly addresses -- his OBESITY entry ends "(Use colloidal minerals)!". Aboutness is
+    authored, never inferred.
 
     Resolves against canon | nutrients | conditions: a claim may be about an essential, a
     substance, or a disease. Mirrors the keyspace `search_index_derive.validate()` already uses
@@ -122,8 +121,8 @@ def unresolved_references():
                 for slug in c.get("other_substances", []):
                     if slug not in nutr_ok:
                         out.append(f"claim {cid} references unregistered substance '{slug}'")
-            # `about` is optional and absent on every pre-2026-07-16 claim; .get(...) or []
-            # keeps those silent rather than failing 1,359 claims for a field they predate.
+            # `about` is optional and absent on most claims; .get(...) or [] keeps those
+            # silent rather than failing every claim that predates the field.
             for slug in (c.get("about") or []):
                 if slug not in about_ok:
                     out.append(f"claim {cid} is `about` unregistered subject '{slug}'")
@@ -227,7 +226,7 @@ def run_checks(skip_index_derive_check=False):
             if dose is not None and not isinstance(dose, dict):
                 fails.append(f"[#11] claim {cid} dose must be null or an object, got {type(dose).__name__}")
 
-    # #12 references_resolve (Catalog pillar, Phase B): every claim condition/symptom/
+    # #12 references_resolve (Catalog pillar): every claim condition/symptom/
     # substance slug must be pre-registered in eden/catalog/{conditions,symptoms,nutrients}.json.
     # Skipped by the seal PRE-gate (skip_index_derive_check) for the SAME reason as #8: a draft
     # mapping edit / slug rename transiently mismatches the still-catalogued OLD shard state
@@ -271,7 +270,9 @@ def run_checks(skip_index_derive_check=False):
                 have = json.dumps(load_json(p), indent=2, ensure_ascii=False, sort_keys=True)
                 if want != have:
                     fails.append(f"[#8] {name}.json is not a clean derivation of claims/* (hand-edited or stale)")
-        except Exception as e:  # noqa: BLE001 — derive is allowed to be a stub in early phases
+        except Exception as e:  # noqa: BLE001 — a broken derive must degrade to an INFO here
+            # rather than mask the other checks. Nothing is lost: the seal FINAL gate re-runs the
+            # full run_checks, so a genuinely broken #8 still refuses the seal.
             infos.append(f"[#8] skipped (derive unavailable: {e})")
 
     # #10 no draft referenced by a sealed index

@@ -1,5 +1,5 @@
 {
-  "_purpose": "Trace/rare-mineral coverage — the CURATED one-off-rules layer (Luneth-approved 2026-07-12; chronicle/mineral-coverage-investigation.md). The 33 trace_pdm rare-earth minerals have no individual Wallach dose; instead they are covered as a group by plant-derived colloidal mineral intake, measured against Wallach's dose of the colloidal-mineral vehicle (1 fl oz per 100 lb/day, WAL-CLM-EPIGEN-000089). This file holds ONLY the editorial JUDGMENT — which products count as a trace/rare vehicle, their group, and whether their mg is derivable — never any amount. All amounts stay sourced from the sealed Products pillar (eden/products/products.json) and are joined in by eden/tools/pdm_coverage_derive.py, so nothing here duplicates a pillar number (R1/derive-don't-duplicate). Hand-authored, manifest 'accounted'.",
+  "_purpose": "Trace/rare-mineral coverage — the CURATED one-off-rules layer (curated 2026-07-12). The 34 trace_pdm minerals (rare earths plus the other plant-derived traces) have no individual Wallach dose; instead they are covered as a group by plant-derived colloidal mineral intake, measured against Wallach's dose of the colloidal-mineral vehicle (1 fl oz per 100 lb/day, WAL-CLM-EPIGEN-000089). This file holds ONLY the editorial JUDGMENT — which products count as a trace/rare vehicle, their group, and whether their mg is derivable — never any amount. All amounts stay sourced from the sealed Products pillar (eden/products/products.json) and are joined in by eden/tools/pdm_coverage_derive.py, so nothing here duplicates a pillar number (R1/derive-don't-duplicate). Hand-authored, manifest 'accounted'.",
   "goal_model": {
     "wallach_dose_claim_id": "WAL-CLM-EPIGEN-000089",
     "wallach_dose_text": "1 fl oz of liquid plant-derived colloidal minerals per 100 lb of body weight per day",
@@ -11,7 +11,7 @@
     "B": 1.0,
     "C": 1.0,
     "D": 1.0,
-    "_flag_B": "Group B (red algae / Aquamin / Lithothamnion) counts 1:1 by DEFAULT, but this factor is the tunable knob: red-algae rare-earth content is NOT established by Wallach's mass-spec (Humic Shale) or Youngevity's published PDM composition, so its mg-equivalence to the Majestic-Earth goal is an ASSUMPTION pending a red-algae rare-earth citation or a Luneth ruling. Change this one number to discount Group B."
+    "_flag_B": "Group B (red algae / Aquamin / Lithothamnion) counts 1:1 by DEFAULT, but this factor is the tunable knob: red-algae rare-earth content is NOT established by Wallach's mass-spec (Humic Shale) or Youngevity's published PDM composition, so its mg-equivalence to the Majestic-Earth goal is an ASSUMPTION pending a red-algae rare-earth citation or an explicit ruling. Change this one number to discount Group B."
   },
   "vehicle_name_patterns": [
     "plant derived mineral",
@@ -32,7 +32,7 @@
     "rebound-fx-citrus-punch": { "group": "A", "mode": "amount", "note": "Powder/packs label (rebound-fx-citrus-punch_supp-facts_1225.jpg) — 120 mg itemized." },
     "majestic-earth-mineral-stx": { "group": "A", "mode": "amount" },
     "midnight-minerals-fulvic-mins": { "group": "A", "mode": "amount", "note": "Peat Bog Clay (humic/fulvic) 150 mg." },
-    "zinc-immune-support": { "group": "A", "mode": "amount", "note": "25 mg — far below the 924 goal; counts for completeness, not a real recommendation (Luneth)." },
+    "zinc-immune-support": { "group": "A", "mode": "amount", "note": "25 mg — far below the 924 goal; counts for completeness, not a real recommendation." },
     "btt-2-0-citrus-peach-fusion": { "group": "B", "mode": "amount" },
     "btt-2-0-citrus-peach-fusion-30-count-box": { "group": "B", "mode": "amount" },
     "btt-2-0-tablets": { "group": "B", "mode": "amount" },
@@ -45,7 +45,7 @@
     "viaviente": { "group": "C", "mode": "amount", "note": "Vilcabamba trace minerals 25 mg." },
     "womens-fx": { "group": "D", "mode": "amount", "note": "Trace Mineral Complex 250 mg (with black cohosh)." },
     "zinc-fx": { "group": "D", "mode": "amount", "note": "Trace Mineral Blend 25 mg." },
-    "cal-toddy": { "group": "A", "mode": "present", "note": "LABEL-FIX PENDING: stored label is the old panel; Cal_Toddy_Facts.png (temporary/labels/) not yet applied. If the corrected label quantifies the PDM, this moves to mode 'amount' after re-seal." },
+    "cal-toddy": { "group": "A", "mode": "present", "note": "LABEL-FIX PENDING: the stored label is an older panel that does not quantify the plant-derived minerals, so this stays mode 'present'. If a corrected label quantifies them, it moves to mode 'amount' after the Products pillar is re-sealed." },
     "beyond-osteo-fx-liquid": { "group": "A", "mode": "present", "note": "PDM in other_ingredients, no amount." },
     "ultimate-osteo-fx": { "group": "A", "mode": "present", "note": "PDM in other_ingredients, no amount." },
     "herbal-rainforest": { "group": "A", "mode": "present", "note": "Majestic Earth PDM in other_ingredients, no amount." },

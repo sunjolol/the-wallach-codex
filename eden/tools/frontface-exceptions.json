@@ -1,5 +1,5 @@
 {
- "_doc": "Named exceptions for frontface_verbatims_clean (tools/invariants.py). Each entry is a FACTUAL CLAIM about the world and must carry a reason a reviewer can check; an entry with no reason is itself RED (memory: gate-exceptions-are-world-claims). EMPTY IS THE GOAL: an exception is a defect -- or a legitimate pattern -- we chose to live with, so the list shrinking is progress and it growing needs review. Each reason states its EVIDENCE TYPE: 'PAGE-VERIFIED' means the page image was read; anything weaker says so.",
+ "_doc": "Named exceptions for frontface_verbatims_clean (tools/invariants.py). Each entry is a FACTUAL CLAIM about the world and must carry a reason a reviewer can check; an entry with no reason is itself RED. EMPTY IS THE GOAL: an exception is a defect -- or a legitimate pattern -- we chose to live with, so the list shrinking is progress and it growing needs review. Each reason states its EVIDENCE TYPE: 'PAGE-VERIFIED' means the page image was read; anything weaker says so.",
  "_history": [
   {
    "claim_id": "WAL-CLM-LETS-000512",
@@ -17,7 +17,7 @@
   {
    "claim_id": "WAL-CLM-EPIGEN-000317",
    "detector": "digit_in_word",
-   "reason": "PAGE-VERIFIED (Epigenetics, Screenshot(601), 2026-08-02): the page itself prints 'were discovered in Death Valley in1881.' with no space. The book's own typo, faithfully transcribed. Whole-book typo repair is explicitly out of scope for this campaign (mandate §0)."
+   "reason": "PAGE-VERIFIED (Epigenetics, Screenshot(601), 2026-08-02): the page itself prints 'were discovered in Death Valley in1881.' with no space. The book's own typo, faithfully transcribed. Whole-book typo repair is out of scope for this gate, which polices front-facing text only."
   },
   {
    "claim_id": "WAL-CLM-DDDL-000112",

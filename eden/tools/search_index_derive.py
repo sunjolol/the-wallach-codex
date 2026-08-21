@@ -13,13 +13,13 @@ Joins the two hand-authored SOURCE files with the sealed corpus:
 into ONE derived artifact:
   - dashboard/assets/data/search/search-index.json  { books, entities, claims }
 
-R1: this artifact is registered in eden/derived/MANIFEST.json, so derived_artifacts_fresh
+This artifact is registered in eden/derived/MANIFEST.json, so derived_artifacts_fresh
 re-runs build_index() and byte-compares to disk — a hand-edit or stale build is un-shippable.
 build_index() is pure + deterministic (sorted). validate() (also called by the
 search_index_wellformed invariant) hard-fails on a bad facet, an unresolved subject/also_about,
 a missing authored field, a lowercase-initial question, or an empty derived answer/verbatim
-— so poison can never reach the shipped index. (The old "must be search-only" check is retired:
-search-only was killed 2026-07-27; an enriched claim may be dual-home tier-1.)
+— so poison can never reach the shipped index. (There is deliberately no "must be search-only"
+check: search is not a separate silo, and an enriched claim may also be operational tier-1.)
 
 §00.A: every answer/verbatim shipped here is a byte-faithful projection of a sealed Wallach
 claim; the derive never invents content, only re-homes + joins it.
@@ -29,7 +29,8 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent.parent
 
-# The closed facet taxonomy — MUST mirror core/schemas/search.ts SEARCH_FACETS (blueprint §4A).
+# The closed facet taxonomy — the same 13 facets as core/schemas/search.ts SEARCH_FACETS. Used for
+# membership only (validate()), so the order here is not significant; SEARCH_FACETS owns display order.
 SEARCH_FACETS = [
     'basics', 'warning', 'discovery', 'etymology', 'physiology', 'mechanism', 'sources',
     'uses', 'stance', 'protocol', 'history', 'big_question', 'biography',
@@ -37,14 +38,14 @@ SEARCH_FACETS = [
 
 # The runtime SearchEntitySchema.type enum — MUST mirror core/schemas/search.ts. The runtime
 # Zod REJECTS THE WHOLE INDEX on an unknown type -> EMPTY_INDEX fallback -> every enriched search
-# page blanks while the board stays GREEN (the Python derive validated everything else). Added
-# 2026-07-27 after type:'compound'/'food' shipped past this gate and emptied the search index
-# (mercury/ask/enriched all blank; only the corpus-embed-backed condition/essential pages survived).
+# page blanks while the board stays GREEN (the Python derive validated everything else). This gate
+# exists because an unrecognised entity type has shipped past validation before and emptied the whole
+# search index; only the corpus-embed-backed condition/essential pages survived.
 ENTITY_TYPES = ['element', 'nutrient', 'substance', 'condition', 'concept', 'topic', 'person', 'event']
 
 # Every authored `question` must read like a sentence a person would type -> it starts capitalized.
-# A lowercase-initial question is the tell of a machine-lowercased or half-authored entry (2026-07-27:
-# 25 shipped that way, hand-fixed to 0). Gated here so it can regress past neither the derive nor the
+# A lowercase-initial question is the tell of a machine-lowercased or half-authored entry; a batch
+# once shipped that way and had to be hand-fixed. Gated here so it can regress past neither the derive nor the
 # search_index_wellformed invariant. LOWERCASE_OK_PREFIXES allowlists the rare genuinely-lowercase
 # technical opener; extend it with a reason + a test case if one ever legitimately appears.
 LOWERCASE_OK_PREFIXES = ('pH', 'mRNA', 'tRNA', 'rRNA')
@@ -65,9 +66,9 @@ def _claims_by_id():
 
 
 def _derive_answer(claim_text):
-    """answer = claim_text minus the trailing ' In his words: "..."' verbatim tail (blueprint §8;
-    the tail's exact words already live in the separate `verbatim` layer). Byte-faithful otherwise —
-    the lead label (e.g. 'Mercury — the basics.') is KEPT (Luneth 2026-07-09)."""
+    """answer = claim_text minus the trailing ' In his words: "..."' verbatim tail (the tail's
+    exact words already live in the separate `verbatim` layer). Byte-faithful otherwise — the
+    lead label (e.g. 'Mercury — the basics.') is KEPT."""
     idx = claim_text.find(' In his words:')
     return claim_text[:idx].rstrip() if idx != -1 else claim_text
 
@@ -105,10 +106,9 @@ def validate(enr=None, reg=None, canon=None, claims_by_id=None):
         if c is None:
             errs.append(f'{cid}: enrichment references a claim id that does not exist')
             continue
-        # NOTE: an enriched claim may be search-only OR dual-home tier-1 (a claim that ALSO
-        # maps an operational condition/essential is BOTH searchable and tier-1 — search-corpus
-        # doctrine). So there is NO "must be search-only" check here: the tier-1 boundary runs the
-        # OTHER direction (search-only must not leak INTO the operational tabs — search_only_indices_excluded).
+        # NOTE: the search-only claim tier was retired -- every enriched claim may also be
+        # operationally mapped (dual-home tier-1). So there is no "must be search-only" check
+        # here, and no boundary gate in either direction.
         for fld in ('subject', 'facet', 'question', 'answer_short'):
             if not str(a.get(fld, '')).strip():
                 errs.append(f'{cid}: missing authored field {fld!r}')
@@ -241,17 +241,17 @@ def build_index():
             # Introduction) can't fit the search-index numeric page field (SearchClaimSchema
             # page: number|null). Passing the raw string fails the RUNTIME safeParse, which
             # empties the WHOLE index (state/search.ts EMPTY_INDEX fallback) -> Explore/Foods
-            # silently blank. Coerce any non-int page to null. (2026-07-21: RARE-000024, p.xix.)
+            # silently blank. Coerce any non-int page to null. (Real case: a Preface page 'xix'.)
             'page': (loc.get('page') if type(loc.get('page')) is int else None),
             'book_id': loc.get('book'),
             'topics': a.get('topics', []),
         }
         if a.get('see_also'):
             rec['see_also'] = a['see_also']
-        # tier1_link means "this claim ALSO feeds the operational tier-1 tabs" — true ONLY for a
-        # genuinely dual-home claim (NOT tagged search-only). A search-only claim may carry a
-        # conditions array for search matching, but it is excluded from the operational indices
-        # (search_only_indices_excluded), so it gets no ALSO-TIER-1 chips.
+        # tier1_link means "this claim ALSO feeds the operational tabs". The `search-only` tag
+        # marked a retired tier that was kept out of the operational indices; no sealed claim
+        # carries it now, so the guard below is defensive -- if the tag returns, such a claim
+        # keeps its conditions array for search matching but gets no ALSO-TIER-1 chips.
         tier1 = {}
         if 'search-only' not in c.get('tags', []):
             if c.get('essentials'):
@@ -277,8 +277,8 @@ def build_index():
     # veganism, healthy_foods. Without registering it here the hub is invisible to routing (entityInQuery /
     # entityHit / entityPhrases all iterate index().entities) and to the browse landing. A hub carries no
     # subject claims, so its claim_count is its also_about count. The flag is EXPLICIT (not "every entity
-    # that appears in some also_about") on purpose: 150+ conditions are referenced via also_about and would
-    # otherwise flood the registry/browse grid — only deliberately-authored hubs opt in. (2026-07-28)
+    # that appears in some also_about") on purpose: hundreds of conditions are referenced via also_about
+    # and would otherwise flood the registry/browse grid — only deliberately-authored hubs opt in.
     aa_counts = {}
     for a in enr.values():
         for s in a.get('also_about', []):
@@ -298,7 +298,7 @@ def build_index():
 
 
 def write_index():
-    """Regenerate the on-disk artifact via safe_write (§17). Used by build_embeds.py."""
+    """Regenerate the on-disk artifact via safe_write. Used by build_embeds.py."""
     import sys
     sys.path.insert(0, str(ROOT / 'tools'))
     import safe_write

@@ -4,27 +4,27 @@
  *
  * A curated, PERSUASIVE landing for Wallach's diet / absorption teaching -- the half of
  * his model that says the 90 essential nutrients only work if the gut can absorb them.
- * Designed to feel special and pull the reader in (Luneth 2026-07-13): an editorial hero
+ * Designed to feel special and pull the reader in: an editorial hero
  * whose corner type-lockup is a THREE-COLOUR artistic effect (dark scan-id + blue
- * THE FIRST STEP tag + bright-orange subject, calibrated to the "Empower" alien-tech
- * reference), a .ds-pull-stat kill-shot (the 115M prevalence beat), an illustrated villi
- * "scan" (damaged left, healthy right -- ROUNDED finger-shaped bars on a faint tech-grid,
- * organically jittered heights, and nutrient dots x-matched across both panels so the eye
- * reads the difference side-to-side), then a REMOVE <-> EAT good/bad-foods contrast, then
- * the sealed crown-jewel claims "in his own words". The three-colour scan motif anchors the
- * hero corner lockup; the body then breaks into demo-style numbered chapters (01 hero / 02
- * villi / 03 contrast) so the whole tab reads as one instrument, not just the top. Restraint
- * governs the TONE (persuade through Wallach's own evidence, never nag).
+ * THE FIRST STEP tag + bright-orange subject), a .ds-pull-stat kill-shot (the 115M
+ * prevalence beat), an illustrated villi "scan" (damaged left, healthy right -- ROUNDED
+ * finger-shaped bars on a faint tech-grid, organically jittered heights, and nutrient dots
+ * x-matched across both panels so the eye reads the difference side-to-side), then a
+ * REMOVE <-> EAT good/bad-foods contrast, then the stomach-acid and digestive-enzyme chapter
+ * that closes on the sealed crown-jewel claims "in his own words". The three-colour scan
+ * motif anchors the hero corner lockup; the body then breaks into numbered chapters (01 hero
+ * / 02 villi / 03 remove-vs-eat / 04 stomach acid, enzymes and the sealed claims) so the
+ * whole tab reads as one instrument, not just the top. Restraint governs the TONE (persuade
+ * through Wallach's own evidence, never nag).
  *
- * Reference for the visual language: the "Empower" calibration anchor -- orange as a
- * SIGNAL accent, tech precision + surreal-eloquent composition grafted onto warm cream
- * paper -- and the design-system primitives from the retired trace-mineral-tile-
- * detail mockup (the corner SCAN·NNN / WALLACH-CORP lockup, .ds-pull-stat, mono readouts,
- * the accent-notch rule). Translated to clean code -- NOT copied.
+ * Visual language: orange as a SIGNAL accent, tech precision + surreal-eloquent composition
+ * grafted onto warm cream paper, using the design-system primitives it shares with the other
+ * editorial surfaces (the corner SCAN·NNN / WALLACH-CORP lockup, .ds-pull-stat, mono readouts,
+ * the accent-notch rule).
  *
- * PURE PROJECTION (R1): no canonical value or per-topic literal. Thesis claims + food cards
+ * PURE PROJECTION: no canonical value or per-topic literal. Thesis claims + food cards
  * come from the curation config (state/foods-curation.ts) resolved against the search index;
- * each food's "why" is a sealed claim's answer (never hand-authored). Prose is contained (R4):
+ * each food's "why" is a sealed claim's answer (never hand-authored). Prose is contained:
  * framing strings come from view-copy via ui()/the facet label; Wallach's words are data
  * (escaped). The villi figure is a decorative SVG (deterministic jitter -- no Math.random, so
  * the render is stable for the probe). "villi" is the one glossary term (reuses the shared
@@ -51,7 +51,7 @@ function escHTML(s: unknown): string {
  * gloss-tooltip.ts) so the reader can learn what villi are on hover/tap. Escapes the raw copy
  * FIRST, then injects the author-controlled span around the (special-char-free) word -- safe
  * because the injected markup is a constant and the definition is escaped once. .kd-foods-term
- * gives it Luneth's louder treatment (bold, bright-orange, solid underline).
+ * gives it the louder treatment (bold, bright-orange, solid underline).
  */
 function withVilliGloss(raw: string): string {
   const def = escHTML(ui('kd_foods_villi_gloss'));
@@ -60,7 +60,7 @@ function withVilliGloss(raw: string): string {
 }
 
 /**
- * A demo-style numbered SECTION HEADER (breaks the tab into digestible chapters): a big orange
+ * A numbered SECTION HEADER (breaks the tab into digestible chapters): a big orange
  * display number, then the heading (with a dash-accented .ds-kicker when `kicker` is non-empty).
  * The heading markup is passed in so the hero keeps its Playfair headline while sections use .ds-h-section.
  */
@@ -81,8 +81,8 @@ function sectionHeader(num: string, kicker: string, headingHTML: string, extra: 
  * one system with the rest of Knowledge (basics -> teal, protocol -> green).
  */
 function facetSections(claims: SearchClaim[]): string {
-  // Absorption one-off (Luneth 2026-07-22): lead with "What to do" (protocol) — the gluten-free
-  // corrective is the most useful thing on this tab, so it sits above Basics; the rest stay canonical.
+  // Absorption one-off: lead with "What to do" (protocol) — the gluten-free corrective is the
+  // most useful thing on this tab, so it sits above Basics; the rest stay canonical.
   const order = ['protocol', ...SEARCH_FACETS.filter(f => f !== 'protocol')];
   return order.map((facet) => {
     const inFacet = claims.filter(c => c.facet === facet);
@@ -177,7 +177,8 @@ function collapseWS(s: string): string {
  * Repair the one OCR artifact in EPIGEN-000158's sealed verbatim for DISPLAY: an opening curly
  * quote (U+201C) closed by a straight quote. Normalise the trailing straight double-quote to a
  * right curly quote so the pull-quote reads clean. Words are untouched (byte-faithful) -- only the
- * mismatched quote GLYPH is fixed. FIXME: purify this at the source in the next corpus reseal.
+ * mismatched quote GLYPH is fixed. This is a display-time repair, not a source edit: the sealed
+ * text keeps the artifact until the source .txt is purified and the corpus resealed.
  */
 function fixQuoteGlyph(s: string): string {
   return s.replace(/"(\s*)$/, '”$1');
@@ -185,7 +186,7 @@ function fixQuoteGlyph(s: string): string {
 
 /**
  * The featured pull-quote under the villi scan: a REAL sealed Wallach verbatim (EPIGEN-000158,
- * corpus-sourced -> synced, R1) in the design-system .ds-pull-quote (giant orange quote glyph +
+ * corpus-sourced) in the design-system .ds-pull-quote (giant orange quote glyph +
  * textured highlighter). The page + citation come from the claim (never hand-typed); the highlight
  * runs from the config phrase to the end (the gluten -> "contact enteritis" mechanism). '' if unresolved.
  */
@@ -251,10 +252,12 @@ function emphasize(raw: string, sub: string, open: string, close: string): strin
   return `${e.slice(0, i)}${open}${s}${close}${e.slice(i + s.length)}`;
 }
 
-// The pH ladder plots three sealed Wallach values -- WAL-CLM-DDDL-000134: "the pH of secretions and
-// excretions ... range from 1.0 in stomach acid to 8.2 in pancreatic juice" plus the blood band
-// 7.36-7.44 from the same claim. Positions are pure geometry (pH -> y on a 0..14 scale); the numbers
-// and labels are prose from the content store. Decorative chrome -- no user data, stable render.
+// The pH ladder plots sealed Wallach values. The two anchor cards come from WAL-CLM-DDDL-000134:
+// "the pH of secretions and excretions ... range from 1.0 in stomach acid to 8.2 in pancreatic
+// juice". The defended blood band (7.36-7.44) is a DIFFERENT sealed claim -- WAL-CLM-RARE-000135
+// -- so do not re-attribute it to DDDL-000134. Positions are pure geometry (pH -> y on a 0..14
+// scale); the numbers and labels are prose from the content store. Decorative chrome -- no user
+// data, stable render.
 const PH_H = 500;
 const PH_PAD = 12;
 function phY(ph: number): number {
@@ -331,8 +334,8 @@ function fortressFig(state: 'ok' | 'bad'): string {
 }
 
 // The five Ultimate Enzymes tiles. `comp` names match the product's component rows (nutrients or the
-// pancreatin blend) so each amount is read LIVE from the Product DB, never hand-typed (R1 / S00.A:
-// Youngevity composition originates in the pillar). Editorial stage/name/blurb come from the content
+// pancreatin blend) so each amount is read LIVE from the Product DB, never hand-typed (§00.A:
+// Youngevity contributes composition only, never a target). Editorial stage/name/blurb come from the content
 // store; `prov` marks the dot -- 'w' Wallach-backed, 'p' a plant enzyme. Array of 5 (inline-data ok).
 const ENZ_TILES: { comp: string[]; nm: string; stage: string; blurb: string; prov: 'w' | 'p' }[] = [
   { comp: ['Betaine Hydrochloride'], nm: 'kd_foods_sec04_enz1_nm', stage: 'kd_foods_sec04_enz1_stage', blurb: 'kd_foods_sec04_enz1_blurb', prov: 'w' },
@@ -435,9 +438,10 @@ function sec04PullQuote(): string {
 }
 
 /**
- * The Absorption landing: editorial hero -> the .ds-pull-stat prevalence kill-shot -> the
- * villi "scan" (damaged left, healthy right) -> the REMOVE <-> EAT good/bad-foods contrast
- * (+ the "form, not the food" strip) -> the three sealed crown-jewel claims "in his own words".
+ * The Absorption landing: editorial hero (01) -> the .ds-pull-stat prevalence kill-shot -> the
+ * villi "scan" (damaged left, healthy right) (02) -> the REMOVE <-> EAT good/bad-foods contrast
+ * (+ the "form, not the food" strip) (03) -> stomach acid (04): the pH ladder, the fortress
+ * cutaway, the Ultimate Enzymes strip + CTA, and the sealed crown-jewel claims "in his own words".
  */
 export function renderFoodsTab(): string {
   const remove = foodsRemove();

@@ -2,8 +2,7 @@
  * views/profile.ts — the Profile console (identity + appearance + data)
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * The popup that opens from the rail profile chip. Ported live from the
- * signed-off "Command Card" demo (2026-08-13). It lets the user:
+ * The popup that opens from the rail profile chip. It lets the user:
  *   - set / change their NAME (the app's one free-text field; validated at the
  *     state chokepoint, rendered here via textContent/value — never innerHTML),
  *   - pick an AVATAR (a bundled offline preset, or an uploaded image that is
@@ -13,9 +12,11 @@
  *     applier, on the profile:changed cascade),
  *   - own their DATA — export a JSON backup, import one, or reset to guest.
  *
- * Every mutation routes through a NAMED state op in state/profile.ts (§31); this
- * view never writes localStorage. The three homes stay in sync because each op's
- * last line emits profile:changed and this view + main.ts both subscribe.
+ * Every mutation routes through a NAMED state op in state/profile.ts — the single
+ * localStorage chokepoint; this view never writes localStorage itself. This panel, the
+ * rail profile chip, and the <html data-theme data-accent> attributes stay in sync
+ * because each op's last line emits profile:changed, and this view + main.ts both
+ * subscribe.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -59,7 +60,7 @@ function pad2(n: number): string {
   return n < 10 ? `0${n}` : String(n);
 }
 
-/** Every preset id, derived from the family counts (aura-01 … world-08). */
+/** Every preset id, derived from the family counts (generic-01, men-01 … women-12). */
 function presetIds(): string[] {
   const ids: string[] = [];
   for (const f of FAMILIES) {
@@ -82,10 +83,10 @@ const IC = {
   trash: '<svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>',
 } as const;
 
-// ─── Creator's Log (re-homed) ───────────────────────────────────────────────
-// This is the CREATOR's identity panel, so the §00 discipline audit trail lives
-// here too — collapsed by default so it never crowds the identity controls. It
-// also keeps the log embed bundled + current (creators_log_bundle_synced).
+// ─── Creator's Log ─────────────────────────────────────────────────────────
+// The build/discipline audit trail renders inside this panel — collapsed by default
+// so it never crowds the identity controls. The creators_log_bundle_synced invariant
+// keeps the bundled log embed in step with the source log.
 function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => (({
     '&': '&amp;',
@@ -319,7 +320,7 @@ export function mount(container: HTMLElement): MountHandle {
       return;
     }
     const frag = document.createDocumentFragment();
-    // Upload leads the grid — the primary action is always first (Luneth 2026-08-14).
+    // Upload leads the grid — the primary action is always first.
     const up = document.createElement('button');
     up.className = 'pf-tile pf-tile--up';
     up.type = 'button';
@@ -429,7 +430,7 @@ export function mount(container: HTMLElement): MountHandle {
       const res = restore(env.data.data);
       if (res.skipped > 0) {
         // A partial write (most likely the ~5MB device quota) must NOT masquerade as a clean
-        // restore: surface it (the .pf-err region is a live-region now) and stay put rather
+        // restore: surface it (the .pf-err region is an aria-live alert) and stay put rather
         // than reloading into a half-applied state.
         showErr(`Import incomplete — ${res.skipped} item(s) could not be saved; this device may be out of room. ${res.restored} restored.`);
         return;
@@ -582,7 +583,7 @@ export function mount(container: HTMLElement): MountHandle {
   return {
     update: paintAll,
     unmount: (): void => {
-      // PROF-02: Esc/close removes the DOM with no native blur, so a typed-but-uncommitted
+      // Esc/close removes the DOM with no native blur, so a typed-but-uncommitted
       // name would be lost. Blur first — the change handler then commits only a real edit.
       nameEl?.blur();
       unsub();

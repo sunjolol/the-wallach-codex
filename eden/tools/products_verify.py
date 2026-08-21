@@ -2,12 +2,13 @@
 """products_verify.py — structural gate for the Youngevity Product DB (Pillar 2).
 
 Mirrors catalog_verify.py: proves every product record is well-formed PURE FACTS
-before it can seal. HARDENED against prose leakage (R4) — the ONLY long free-text
+before it can seal. HARDENED against prose leakage — the ONLY long free-text
 field allowed anywhere in the pillar is a blend's bounded `as_labeled` fidelity
 token (single line, capped); every other string must be a short structured token.
 
-Runs standalone today (pillar UNDER CONSTRUCTION); wires into tools/invariants.py
-as `products_verify` when the pillar is complete + sealed. Exit 0 = clean, 1 = RED.
+Wired into tools/invariants.py as the `products_verify` gate (which shells out to this
+file) and run by products_seal.py as both its pre- and post-seal gate. It also runs
+standalone. Exit 0 = clean, 1 = RED.
 """
 import json
 import re

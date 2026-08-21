@@ -10,7 +10,7 @@
 
 import { z } from 'zod';
 
-/** Verdict enum — legacy ADD/SAVE/REJECT (preserved verbatim). */
+/** Verdict enum — the three outcomes the scan verdict engine can return. */
 export const VerdictSchema = z.enum(['ADD', 'SAVE', 'REJECT']);
 
 /** A scanned product label as captured by the OCR pipeline. */

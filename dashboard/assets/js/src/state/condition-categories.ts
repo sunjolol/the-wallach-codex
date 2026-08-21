@@ -2,15 +2,16 @@
  * state/condition-categories.ts — read boundary for the condition→category curation
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Surfaces dashboard/assets/data/condition-categories.json to the Conditions tab:
- * each condition's body-system CATEGORY (label + colour) for the coloured card.
+ * Surfaces dashboard/assets/data/condition-categories.json to the condition surfaces
+ * (the Conditions tab, the knowledge corpus list, and the condition deep-view): each
+ * condition's body-system CATEGORY (label + colour) for the coloured card.
  * Inlined at build via esbuild JSON import and validated ONCE through the Zod
  * boundary; a bad/absent store reads as empty so a card falls back to no category
  * (graceful, never `undefined`).
  *
  * Pure reads only. Editorial ORGANISATION, not a Wallach claim/number — no §00.A
- * obligation. The 502 assignments are a curation layer (Luneth-approved 2026-07-22),
- * refined over time; a wrong category mis-colours a card, it never mis-states a fact.
+ * obligation. The 502 assignments are a reviewed curation layer, refined over time;
+ * a wrong category mis-colours a card, it never mis-states a fact.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 

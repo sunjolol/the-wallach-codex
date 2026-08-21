@@ -1,7 +1,7 @@
 /**
  * state/coverage.test.ts — the coverage matcher now credits via the registry resolver.
  *
- * Locks the A2 behavior: every Wallach target carries its canon slug, and matchEssential()
+ * Locks the resolver behaviour: every Wallach target carries its canon slug, and matchEssential()
  * routes a label name through the ONE resolver (core/nutrient-resolver.ts) → slug → target.
  * The headline shift is "Thiamin", which the old hand-rolled string matcher silently dropped
  * and now correctly credits to Vitamin B1. DOM-free: exercises only matchEssential + getTargets

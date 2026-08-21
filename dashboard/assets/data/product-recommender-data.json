@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "_meta": {
-    "purpose": "Per-essential RANKING INPUTS for the cost-per-nutrient recommender (state/recommender.ts scores these at runtime). Each candidate: amount (composition, canonical unit -- what the product CONTAINS), breadth (distinct essentials the product delivers), price (wholesale, the cost tuner). GENERATED from eden/products/products.json + prices.json via products_composition_derive -- never hand-edited (R1). §00.A: composition + price are DISPLAY/recommender data, never a Wallach target; there is no Wallach number here. Saturating adequacy (min(1, delivered/target)) awaits corpus dose-mining (blueprint b); until then the runtime ranks by amount-potency + breadth + value.",
+    "purpose": "Per-essential RANKING INPUTS for the cost-per-nutrient recommender (state/recommender.ts scores these at runtime). Each candidate: amount (composition, canonical unit -- what the product CONTAINS), breadth (distinct essentials the product delivers), price (wholesale, the cost tuner). GENERATED from eden/products/products.json + prices.json via products_composition_derive -- never hand-edited (R1). §00.A: composition + price are DISPLAY/recommender data, never a Wallach target; there is no Wallach number here. Saturating adequacy (min(1, delivered/target)) is applied at runtime against essentials-targets-data.json; where no Wallach amount is stated the runtime falls back to an amount-potency proxy and says so.",
     "source": "eden/products/products.json + eden/products/prices.json",
     "generator": "eden/tools/recommender_derive.py",
     "essential_count": 51,

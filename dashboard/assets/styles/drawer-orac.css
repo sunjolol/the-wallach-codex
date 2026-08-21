@@ -1,7 +1,7 @@
-/* ORAC knowledge tab — content styles (kd-orac-*). Ported byte-exact from the
-   signed-off temporary/orac-EDITED.html; every rule scoped to #drawer-knowledge-mount
-   to match the drawer convention and prevent cascade leakage. --ds-* tokens + local
-   --o-* / --sev-* palette only; no external resources. Loaded AFTER drawer-knowledge.css. */
+/* ORAC knowledge tab — content styles (kd-orac-*). Every rule is scoped to
+   #drawer-knowledge-mount to match the drawer convention and prevent cascade leakage.
+   --ds-* tokens plus the local --o- and --sev- palette only; no external resources.
+   Loaded AFTER drawer-knowledge.css. */
 #drawer-knowledge-mount .kd-orac { --o-spice: #12a150; --of-spice: #c05f24; --o-nut: #b5843f; --o-berry: #c03a68; --o-bean: #7f8a34; --o-juice: #158e9e; --o-wine: #7d4a86; --o-choc: #6b4327; --o-veg: #2f8f4e; --o-plum: #9a4f93; --o-leaf: #3fa83b; --sev-calm: #0ea5b7; --p0: color-mix(in srgb, var(--ds-accent-hot) 12%, #fff); --p1: color-mix(in srgb, var(--ds-accent-hot) 26%, #fff); --p2: color-mix(in srgb, var(--ds-accent-hot) 44%, #fff); --p3: color-mix(in srgb, var(--ds-accent-hot) 62%, #fff); --p4: color-mix(in srgb, var(--ds-accent-hot) 80%, #fff); --live: #2f7d4f; padding-bottom: 40px; }
 #drawer-knowledge-mount .kd-orac-hero { position: relative; padding: 16px 0 20px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
 #drawer-knowledge-mount .kd-orac-eyebrow { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--ds-space-5); font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 500; letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }

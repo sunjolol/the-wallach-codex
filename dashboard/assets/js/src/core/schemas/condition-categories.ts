@@ -24,9 +24,9 @@ export const ConditionCategoryDefSchema = z.object({
   icon: z.string().optional(),
 });
 
-/** Root shape of condition-categories.json (any `_`-prefixed header keys are ignored). */
+/** Root shape of condition-categories.json. */
 export const ConditionCategoriesSchema = z.object({
-  /** category-id → { label, colour }. */
+  /** category-id → { label, color, icon }. */
   categories: z.record(z.string(), ConditionCategoryDefSchema),
   /** condition-slug → category-id. */
   conditions: z.record(z.string(), z.string()),

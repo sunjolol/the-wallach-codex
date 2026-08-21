@@ -2,12 +2,12 @@
 """anomaly_scan.py — surface SUSPICIOUS spans in the sealed corpus for HUMAN review.
 
 NEVER auto-fixes. Emits a ranked report of candidate errors — a wrong word that
-looks legitimate — so Luneth can triage before finalizing. Heavy interpretation is
-required to fix these, but never automatic; this tool only FLAGS. Memory:
-`linguistic-logic-sweep`.
+looks legitimate — so a human can triage before finalizing. Heavy interpretation is
+required to fix these, but never automatic; this tool only FLAGS.
 
-The Zumba lesson (SESSION 35): "an herbal combination of testosterone (Zumba)" hid
-a mangled "Zumbani" (a real testosterone herb). Four detectors target that class:
+The case that motivates this tool: "an herbal combination of testosterone (Zumba)"
+hid a mangled "Zumbani" (a real testosterone herb). Three detectors target that class
+(a fourth, unknown_botanical, is designed but deferred — see below):
 
   hormone_as_herb   — a hormone in a botanical/herb slot ("testosterone (Zumba)",
                       "herbal combination of testosterone")
@@ -21,7 +21,7 @@ a mangled "Zumbani" (a real testosterone herb). Four detectors target that class
 
 Findings are keyed (detector, claim_id, term); an allowlist (anomaly-scan-baseline.json)
 suppresses reviewed-OK ones, so NEW findings stay loud. Scans claim_text + verbatim
-(the surfaced content); a full book-text pass is a later extension.
+(the surfaced content); the full book-text pass is book_purity.py.
 
 CLI:
   report [--book BOOK] [--detector NAME]   ranked findings (respects the allowlist)
@@ -185,7 +185,7 @@ def cmd_baseline():
     import safe_write
     payload = json.dumps(
         {"_doc": "Reviewed-OK allowlist for anomaly_scan.py — (detector, claim_id, term) "
-                 "tuples the report suppresses. Grows as Luneth clears false positives.",
+                 "tuples the report suppresses. Grows as reviewers clear false positives.",
          "allowed": sorted(list(k) for k in findings)},
         ensure_ascii=False, indent=2) + "\n"
     n = safe_write.safe_rewrite(BASELINE_PATH, payload)

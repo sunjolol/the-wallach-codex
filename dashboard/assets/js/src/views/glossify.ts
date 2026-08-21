@@ -4,11 +4,12 @@
  *
  * Wraps the FIRST occurrence of each glossary term in a `.gloss` dotted-underline
  * tooltip span (the definition rides in an escaped data-attribute; the shared
- * gloss-tooltip layer, wired once at boot, shows it on hover/tap). Used by BOTH the
- * Knowledge corpus view and the Search drawer so a reader meets the same explained
- * term everywhere — one implementation, no duplication (§00.B single-source).
+ * gloss-tooltip layer, wired once at boot, shows it on hover/tap). Used by the Knowledge
+ * entity pages (views/entity-page.ts), the ORAC view (views/knowledge-orac.ts) and the
+ * Search drawer (views/search.ts), so a reader meets the same explained term everywhere —
+ * one implementation, no duplication.
  *
- * Escape-per-segment (§00.B #5): the matcher runs against the RAW text, NOT a
+ * Escape-per-segment (escape by default): the matcher runs against the RAW text, NOT a
  * pre-escaped copy — so a term carrying an apostrophe or quote (e.g. "Wallach's
  * Fibrous Dysplasia") can match at all; when the scan ran on escaped text the ' had
  * already become &#39; and such a term could never fire. Every emitted piece — each
@@ -24,15 +25,8 @@ function escHTML(s: unknown): string {
 }
 
 /**
- * Wrap the FIRST occurrence of each glossary term in a `.gloss` tooltip span (dotted
- * underline; hover/tap shows the plain definition via the shared gloss-tooltip). The
- * scan runs on the RAW string; each gap and the matched word are HTML-escaped as they
- * are emitted. First-occurrence-per-block keeps a paragraph from becoming a field of
- * dotted words.
- */
-/**
  * Author-only inline emphasis: *phrase* -> <em>phrase</em>. Runs on ALREADY-ESCAPED text, so the
- * only markup it introduces is the <em> it controls and the inner phrase stays escaped (§00.B #5).
+ * only markup it introduces is the <em> it controls and the inner phrase stays escaped.
  * Opt-in via glossify's `emph` flag — OFF for corpus verbatims, so a literal asterisk in a quote is
  * never reinterpreted. Emphasis around a GLOSS term is not supported (it lives in the gaps between
  * gloss spans); the only current use is a non-glossed word ("before").
@@ -41,10 +35,17 @@ function emphasize(escaped: string): string {
   return escaped.replace(/\*([^*]+)\*/g, '<em>$1</em>');
 }
 
+/**
+ * Wrap the FIRST occurrence of each glossary term in a `.gloss` tooltip span (dotted
+ * underline; hover/tap shows the plain definition via the shared gloss-tooltip). The
+ * scan runs on the RAW string; each gap and the matched word are HTML-escaped as they
+ * are emitted. First-occurrence-per-block keeps a paragraph from becoming a field of
+ * dotted words.
+ */
 export function glossify(raw: string, emph = false): string {
   // Every gap segment is HTML-escaped; when emph is on it is ALSO run through emphasize (which only
-  // adds <em> around already-escaped text). emph defaults off, so every existing caller — including
-  // corpus verbatims — is byte-unchanged.
+  // adds <em> around already-escaped text). emph defaults OFF, so a corpus verbatim is never
+  // reinterpreted — a literal asterisk inside a quote stays a literal asterisk.
   const esc = (s: string): string => (emph ? emphasize(escHTML(s)) : escHTML(s));
   const re = glossaryRegex();
   if (re === null) {

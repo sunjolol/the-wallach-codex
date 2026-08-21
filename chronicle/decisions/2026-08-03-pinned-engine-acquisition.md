@@ -1,6 +1,6 @@
 # Decision: the pinned engine is chosen LAST — deferred, with the research banked
 
-_2026-08-03. Luneth's ruling after the engine was acquired, measured, and then deliberately removed._
+_2026-08-03. The owner's ruling after the engine was acquired, measured, and then deliberately removed._
 
 ★ **STATUS: NOTHING IS INSTALLED.** `engine/` was downloaded, verified, measured, leak-tested, and
 then **deleted** (428.9 MB) along with its 187.6 MB archive. Do not re-acquire it as part of routine
@@ -10,7 +10,7 @@ work. This file exists so the research never has to be repeated.
 **The browser is a finishing touch, not a foundation.** It gets picked at the very end, chosen
 against the features the dashboard actually ships — not chosen up front and then designed around.
 
-Reasons, in his words: it is clutter on the machine, clutter in GitHub, and it makes backups take
+The owner's reasons: it is clutter on the machine, clutter in GitHub, and it makes backups take
 much longer. And the technical reason it is safe to defer: **Chromium is effectively unlimited for
 our purposes**, so no design decision is waiting on this. Nothing we might build is at risk of being
 unsupported.
@@ -18,7 +18,7 @@ unsupported.
 **Preferred candidate when the time comes: Ungoogled Chromium, trimmed.** Not binding — the final
 pick is made against the shipped feature set.
 
-## Meanwhile: development and visual verification run in Luneth's own live browser
+## Meanwhile: development and visual verification run in the owner's own live browser
 There is no pinned engine to test against, so screenshots and visual sign-off happen in his everyday
 browser. The `2026-08-03-pinned-engine.md` licence to use modern CSS directly still stands — it was
 never contingent on the artifact existing.

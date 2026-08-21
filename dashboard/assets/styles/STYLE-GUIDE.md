@@ -1,24 +1,24 @@
 # Design System v3 — Style Guide
 
-_Read this BEFORE writing any new visual code for this dashboard, and BEFORE migrating any existing surface. This guide is the operational doctrine for `design-system.css`._
+_Read this BEFORE writing any new visual code for this dashboard, and BEFORE re-theming an existing surface. This guide is the operational doctrine for `design-system.css`._
 
 ---
 
 ## The four immovable rules
 
-1. **No external resources.** Every font, image, and asset is local. No `fonts.googleapis.com`. No CDN-loaded JS or CSS. The `check_no_external_style_resources` invariant enforces this. The one currently-allowed external — Tesseract.js for OCR — is carved out explicitly with a TODO to in-house in a future round.
+1. **No external resources.** Every font, image, and asset is local. No `fonts.googleapis.com`. No CDN-loaded JS or CSS. The `no_external_style_resources` invariant enforces this across `dashboard.html` and every stylesheet in this folder. There are no exceptions: the OCR engine (Tesseract.js) is vendored on-device under `assets/vendor/tesseract/`, so the app makes no network request at runtime.
 
 2. **No hardcoded visual values.** Every color, font, shadow, spacing comes from a `--ds-*` token — never a literal. (This rule is discipline + review, not yet a machine gate; the live design-system invariants are `no_external_style_resources`, `design_system_hash_integrity`, and `design_system_write_protection`.)
 
-3. **Re-theme, don't rewrite logic.** When migrating a surface, the BEHAVIOR stays intact. State models, invariants, event handlers, chokepoint helpers, regimen state mutations, scanner pipelines — all untouched. Only the visual layer changes. The safe fallback when uncertain: exact-copy-current-behavior, retheme only.
+3. **Re-theme, don't rewrite logic.** A visual change touches the visual layer only. State models, invariants, event handlers, chokepoint helpers, regimen state mutations, scanner pipelines — all untouched. The safe fallback when uncertain: keep current behavior exactly, restyle only.
 
-4. **No silent drift.** `design-system.css` is hash-anchored. The agent never writes this file after the sealing round. To extend the token vocabulary: open a co-work request; draft the addition in a side file; user copies it in.
+4. **No silent drift.** `design-system.css` is hash-anchored by `design-system.golden.sha256`, and that golden is in turn anchored to its git-committed value — so editing the file and re-sealing to match still surfaces as a visible golden change. Any change here is a deliberate, committed act by the repository owner. To extend the token vocabulary, draft the addition separately and have it applied and re-sealed.
 
 ---
 
 ## The design language in one paragraph
 
-This dashboard is a manuscript displayed by alien technology. The substrate is warm cream paper that invites you to stay a while. The ink is warm near-black, not cold gray. The single signal color is a bright orange — used to mark importance, never decoration. A cool cyan exists only in tech micro-details (corner crosshairs, status pulses, tiny readouts) — never in body text or large surfaces. Typography is editorial: Playfair Display for monumental headers, Merriweather for long-form prose, Crimson Pro for italic decks, Space Grotesk for UI chrome, JetBrains Mono for technical readouts. The composition is asymmetric, with strong hierarchy that carries the doctrine before the reader reads a word. The 98% pull-stat is the kill-shot — one per surface, never more.
+This dashboard is a manuscript displayed by alien technology. The substrate is warm cream paper that invites you to stay a while. The ink is warm near-black, not cold gray. The single signal color is a bright orange — used to mark importance, never decoration. A cool cyan exists only in tech micro-details (corner crosshairs, status pulses, tiny readouts) — never in body text or large surfaces. Typography is warm-futurist: Unbounded for monumental headers, Space Grotesk for prose and UI chrome, JetBrains Mono for technical readouts, with Playfair Display kept as one deliberate serif accent on the Wallach verbatim pull-quotes. (`design-system.css` still declares the original editorial serif stack; `type-futurist.css` loads after it and remaps the display and serif tokens to the live faces.) The composition is asymmetric, with strong hierarchy that carries the doctrine before the reader reads a word. The pull-stat is the kill-shot — one per surface, never more.
 
 ---
 
@@ -39,11 +39,13 @@ This dashboard is a manuscript displayed by alien technology. The substrate is w
 
 ### Typography stacks
 
-| Token | Family | Use for |
+**Live faces:** `type-futurist.css` loads after `design-system.css` and overrides the display and serif tokens at `:root`. `--ds-font-display` resolves to Unbounded; `--ds-font-serif` and `--ds-font-serif-light` both resolve to Space Grotesk. The Playfair / Merriweather / Crimson Pro values are the sealed token defaults, not what renders.
+
+| Token | Family (live — declared default) | Use for |
 |---|---|---|
-| `--ds-font-display` | Playfair Display | Hero titles, section headers, tile names, pull-quote prose |
-| `--ds-font-serif` | Merriweather | Body prose (1rem base, generous line-height) |
-| `--ds-font-serif-light` | Crimson Pro | Italic decks, secondary editorial voice, tagline subheads |
+| `--ds-font-display` | Unbounded — declared Playfair Display | Hero titles, section headers, tile names, pull-quote prose |
+| `--ds-font-serif` | Space Grotesk — declared Merriweather | Body prose (1rem base, generous line-height) |
+| `--ds-font-serif-light` | Space Grotesk — declared Crimson Pro | Italic decks, secondary editorial voice, tagline subheads |
 | `--ds-font-sans` | Space Grotesk | UI chrome — buttons, breadcrumbs, tabs, labels, kickers |
 | `--ds-font-mono` | JetBrains Mono | Tech readouts, technical labels, section numerals brackets, code |
 
@@ -70,7 +72,7 @@ Modular 4px-based scale. Use `--ds-space-N` for any margin/padding/gap. `--ds-sp
 ## The component vocabulary
 
 ### `.ds-canvas`
-Apply to the topmost surface of any new screen. Sets box-sizing inheritance, font defaults, color, antialiasing. The legacy dashboard doesn't have it yet; migration adds it surface by surface.
+Sets box-sizing inheritance, font defaults, color, antialiasing on the topmost surface of a screen. No shipped surface uses `.ds-canvas` today — the app shell in `dashboard.css` sets the same baseline itself. Treat it as available, not as current practice.
 
 ### Typography primitives
 Use `.ds-h-hero`, `.ds-h-section`, `.ds-h-subsection`, `.ds-h-tile-name`, `.ds-deck`, `.ds-body`, `.ds-kicker`, `.ds-eyebrow`, `.ds-tag-element`, `.ds-tag-readout`. Never set font properties inline.
@@ -91,7 +93,7 @@ Use `.ds-h-hero`, `.ds-h-section`, `.ds-h-subsection`, `.ds-h-tile-name`, `.ds-d
 `.ds-crosshairs` + `.ds-ch-tl/tr/bl/br` for the corner marks. `.ds-pulse` for status dots; add class `live` to animate, `tech`/`ok`/`warn`/`err` to color-shift. Use SPARINGLY — overuse turns the design into sci-fi cosplay.
 
 ### Pull-quote
-`.ds-pull-quote-wrap > .ds-pull-quote > p + footer`. Once or twice per long-form view. The curved-corner pseudo-element is the editorial signature.
+`.ds-pull-quote-wrap > .ds-pull-quote > p + footer`. Once or twice per long-form view. The oversized signal-accent opening-quote glyph on `::before` is the editorial signature — there is no decorative corner tail.
 
 ### Pull-stat
 `.ds-pull-stat > .ds-pull-stat__num + .ds-pull-stat__body`. The kill-shot stat block — used for the SINGLE load-bearing number per surface. Never two per view.
@@ -138,15 +140,14 @@ If you forget it, `<mark>` still works as plain text but loses the textured high
   > hr.ds-divider.ds-divider--editorial
   > .ds-badge (coverage)
   > .ds-body  (with mark on key phrase)
-  > a.ds-link-readmore
 ```
 
 ### A long-form editorial section
 
 ```
-section.ds-section
-  > header.ds-section-head: .ds-section-num + .ds-kicker + h2.ds-h-section
-  > .ds-body (with drop-cap on first ::first-letter only in FIRST section)
+section
+  > header: .ds-kicker + h2.ds-h-section
+  > .ds-body
   > .ds-pull-quote-wrap > .ds-pull-quote
   > .ds-body
 ```
@@ -156,8 +157,8 @@ section.ds-section
 ## Do's and don'ts
 
 ### Do
-- Use the tokens for everything. If a value isn't in the system, request it via co-work; don't inline.
-- Lean into restraint. One pull-quote, one drop-cap, one pull-stat per view. Restraint makes the moments that DO assert hit harder.
+- Use the tokens for everything. If a value isn't in the system, raise the gap with the repository owner; don't inline it.
+- Lean into restraint. One pull-quote, one pull-stat per view. Restraint makes the moments that DO assert hit harder.
 - Compose primitives. The chrome (`.ds-topbar` + `.ds-tabs` + `.ds-action-bar`) works for any interface surface.
 - Use tech micro-details to mark MEANING (live data, scanned surface, integrity status), not as decoration.
 
@@ -167,31 +168,40 @@ section.ds-section
 - Don't use two primaries on one surface.
 - Don't mix 3+ highlighter colors in one quote (rose, mint, warm — pick 2 max).
 - Don't put `--ds-tech` (cyan) on body text or large surfaces.
-- Don't use Frutiger Aero teal anywhere. That's the prior aesthetic, retired.
 
 ---
 
-## Migration procedure (per surface)
+## Re-theming procedure (per surface)
 
-When re-theming an existing surface to v3:
+When re-theming an existing surface:
 
 1. **Audit current styles.** Note every `color:`, `background:`, `font-family:`, `box-shadow:`, `padding:`, `margin:` value the surface uses.
-2. **Map to tokens.** For each value, find the corresponding `--ds-*` token. If no token exists for a needed value, STOP and surface the gap to the user — don't inline.
+2. **Map to tokens.** For each value, find the corresponding `--ds-*` token. If no token exists for a needed value, STOP and surface the gap to the repository owner — don't inline it.
 3. **Preserve behavior.** Don't touch state mutations, event handlers, invariants, or chokepoint helpers. Visual layer only.
-4. **Screenshot before/after.** Capture the surface in 2-3 key states. Compare against v3 reference (trace-minerals-popup-v3.html in outputs/).
-5. **Ship via safe_write.** Atomic update, paired with the log entry per closing-move-atomic doctrine.
-6. **Verify with invariants.** Run the full manifest. The 3 design-system invariants must pass (warn-mode for now, ERROR-mode after Round 3 of migration).
+4. **Screenshot before/after.** Capture the surface in 2-3 key states and compare them side by side. A DOM probe is not a visual check.
+5. **Ship it in one commit.** The style change and everything it depends on land together, never half-applied.
+6. **Verify with invariants.** Run the full manifest. The 3 design-system invariants must pass — all three are `critical`, so a failure REDs the board.
 
 ---
 
 ## Where things live
 
 ```
-dashboard/assets/styles/
-├── design-system.css                 # the single source of truth
+dashboard/assets/styles/         # the 11 stylesheets below are listed in
+                                 # dashboard.html load order — later wins
+├── design-system.css                 # sealed token vocabulary — the source of truth
 ├── design-system.golden.sha256       # the integrity hash anchor
-├── STYLE-GUIDE.md                    # this file
-└── CHANGELOG.md                      # versioned changes to the system
+├── dashboard.css                     # the app shell
+├── workspace-coverage.css            # the coverage workspace
+├── workspace-regimen.css             # the regimen workspace
+├── workspace-scanner.css             # the scanner workspace
+├── drawer-shared.css                 # chrome shared by every drawer
+├── drawer-knowledge.css              # the knowledge drawer
+├── drawer-orac.css                   # the ORAC drawer
+├── drawer-search.css                 # the search drawer
+├── type-futurist.css                 # remaps the display + serif font tokens
+├── theme.css                         # loads last: cream/dark mode + accent
+└── STYLE-GUIDE.md                    # this file
 
 dashboard/assets/fonts/
 ├── README.md                         # font procurement instructions
@@ -201,33 +211,29 @@ dashboard/assets/fonts/
 ├── CrimsonPro-VariableFont_wght.ttf           (+ -Italic)   │ families
 ├── SpaceGrotesk-VariableFont_wght.ttf                       │
 ├── JetBrainsMono-VariableFont_wght.ttf                      ┘
-├── ChakraPetch-{Regular,SemiBold,Bold}.ttf    ┐ 2 added in the
-└── BrunoAce-Regular.ttf                        ┘ v3.2 type pivot
-# in-housed as .ttf (design-system.css prefers .woff2, falls back to .ttf)
+├── Unbounded-VariableFont_wght.ttf             ┐ 3 added in the
+├── ChakraPetch-{Regular,SemiBold,Bold}.ttf     │ futurist type
+└── BrunoAce-Regular.ttf                        ┘ direction
+# Unbounded is the app's live display face (@font-face in type-futurist.css).
+# All in-housed as .ttf — every @font-face declares format('truetype') only;
+# no .woff2 variants are shipped or referenced anywhere in the repo.
 
 tools/invariants.py                   # 3 paired daily invariants:
-                                      #   check_no_external_style_resources
-                                      #   check_design_system_hash_integrity
-                                      #   check_design_system_write_protection
+                                      #   no_external_style_resources
+                                      #   design_system_hash_integrity
+                                      #   design_system_write_protection
 ```
 
 ---
 
 ## How this protects 4 years from now
 
-- **Hosted font CDN dies** → fonts are local, woff2/ttf both have 99%+ browser support that hasn't changed in a decade.
-- **CSS syntax gets deprecated** → we use stable specs (custom properties, color-mix, hsl-from, @property — all in CSS proper, not experimental).
-- **Agent silently drifts a style** → hash anchor catches it. User-only-writer enforces it.
-- **A future maintainer doesn't understand the language** → this guide + the inline comments in `design-system.css` + the v3 reference HTML in outputs/.
+- **Hosted font CDN dies** → fonts are local, and `.ttf` support hasn't changed in a decade.
+- **CSS syntax gets deprecated** → we use stable specs (custom properties, `color-mix()`, relative-color `hsl(from ...)` — all in CSS proper, not experimental).
+- **A style drifts silently** → the golden hash catches an edit, and the git-committed golden catches an edit paired with a quiet re-seal.
+- **A future maintainer doesn't understand the language** → this guide plus the inline comments in `design-system.css`.
 - **An external script disappears** → invariant fails loud at next audit listing the offending URL.
 
 ---
 
-## Provenance
-
-- v3 calibration reference: `outputs/trace-minerals-popup-v3.html` (user-approved 2026-06-21)
-- Retired aesthetic: Frutiger Aero (teal palette) — see `memory/user-prefs/aesthetic.md` historical block
-
----
-
-_Adopted: 2026-06-21. Last updated: 2026-06-21._
+_Adopted: 2026-06-21. Last updated: 2026-08-20._

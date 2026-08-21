@@ -1,5 +1,5 @@
 /**
- * core/schemas/home-curation.ts — the Home-tab curation-config schema (Phase H2)
+ * core/schemas/home-curation.ts — the Home-tab curation-config schema
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Validates dashboard/assets/data/home-curation.json — the hand-authored home for

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "_doctrine": "Runtime IDENTITY resolver map: nutrient label name -> canon slug. GENERATED from nutrient_resolve (registry essential_aliases + canon mineral/amino display names + fatty-acid FA_PATTERNS + stereo prefixes) so it cannot drift from the Python resolver. core/nutrient-resolver.ts mirrors resolve() over this; nutrient_resolver_parity + a vitest prove TS == Python. Composition-only (SS00.A): identity never sets a target.",
+  "_doctrine": "Runtime IDENTITY resolver map: nutrient label name -> canon slug. GENERATED from nutrient_resolve (registry essential_aliases + canon mineral/amino display names + fatty-acid FA_PATTERNS + stereo prefixes) so it cannot drift from the Python resolver. core/nutrient-resolver.ts mirrors resolve() over this; nutrient_resolver_parity + a vitest prove TS == Python. Composition-only (§00.A): identity never sets a target.",
   "vitamin_aliases": {
     "ascorbic acid": "vitamin-c",
     "bioflavonoids": "flavonoids",

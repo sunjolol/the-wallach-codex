@@ -1,49 +1,49 @@
-# Missing labels — genuine unique products with no label
+# Label coverage — which products have no label, and why
 
-_Running record. Luneth grabs these at the end. Bundles/paks and non-supplement items are NOT missing (no label expected)._
+_The record of how label coverage was accounted for while `products.json` was built. The
+build is finished and sealed; this file is kept because the two lists below are the standing
+answer to "why does that product have no label?", and because the matcher trap it documents
+will bite anyone who repeats the exercise._
 
-## How this is determined (reliable only at the END)
-The fuzzy matcher's first-pass "no-label" list is mostly FALSE NEGATIVES — the label exists in `temporary/labels/` but the matcher failed to assign it (abbreviations, no-separator filenames). Proven: Colloidal Silver, ZRadical, TruBoost, Vitali-C, RenuIQ, Body Balance, Kidsprinklz, Get-Go-N, FlexeoPlus, Flexi-Care, H.G.H., i26, Male Hormonal, Midnight Minerals, Omega, Pollen Burst, Rebound FX, S.M.A.R.T. FX, Ultimate CAL/CM/Daily/EFA/Gluco-Gel/Hair-Skin-Nails/Multi-EFA/Ocean's Gold/Vitamin-D3, VitalStart, Women's FX — all have labels it missed.
+## The matcher trap (read this before trusting any "no label" list)
 
-So the RELIABLE genuine-missing list = base-unique products still un-extracted AFTER all 204 labels are consumed. This file auto-finalizes at Phase-F end (products.json vs manifest, minus bundles + non-supplements). Everything below is PROVISIONAL.
+A fuzzy filename-to-product matcher's first-pass "no label found" list is mostly FALSE
+NEGATIVES: the label image exists, the matcher simply failed to assign it. Abbreviated product
+names and separator-less filenames are the two reliable causes. Dozens of products —
+Colloidal Silver, ZRadical, TruBoost, Vitali-C, RenuIQ, Body Balance, Kidsprinklz, Get-Go-N,
+FlexeoPlus, Flexi-Care, H.G.H., i26, Male Hormonal, Midnight Minerals, Omega, Pollen Burst,
+Rebound FX, S.M.A.R.T. FX, the whole Ultimate line, VitalStart, Women's FX — were flagged as
+label-less and every one of them had a label on disk.
 
-## Excluded — non-supplements (no label needed, per Luneth's exclude decision)
+A genuine missing-label list can therefore only be computed at the END, as `products.json`
+versus the product listing, minus bundles and non-supplements. Do not act on the intermediate
+list, and do not let a near-miss filename decide a product's identity: one label named for the
+mineral capsules was very nearly attached to the mineral stickpacks, which are a different
+product with a different formula.
+
+## Excluded — non-supplements (no label expected)
+
 - Makers Diet Revolution book (USBY100840)
 - EP2-Plus Stress Pendant (USEW000008)
 - Harmony Health EMR SMART Patch (USEW000007) + 3-Pack (USEW0073)
 - Quanta Water Catalyst 16 Oz (USEW000003)
 - Refrigerator eCrystal (USEW000005)
 
-## Confirmed bundles among the "ambiguous" (description lists component products → no label)
-Deluxe Nutritional Energy · Nutritional Alert Program · On-The-Go Healthy Body Start Pak 2.0 · Nutritional Energy Basics · Nutritional Energy Program · PigPak® · PigPak® Plus · Pollen Burst Combo · R&R + BB Combo · Power Pak · Premiere 30 Day Liver Pure Detox (Chocolate / French Vanilla) · Super Immune · Super Immune Plus · VitalStart Body Shield · Scholastic Enhancement · Baseline / Baseline Plus / Baseline Ultra · Chocolate/French Vanilla Weight Loss 150 · Healthy Weight Loss Chocolate/French Vanilla
+## Bundles (component products sold separately → no label of their own)
 
-## PROVISIONAL genuine-missing candidates (single products, no label seen yet — CONFIRM at end)
+Deluxe Nutritional Energy · Nutritional Alert Program · On-The-Go Healthy Body Start Pak 2.0 ·
+Nutritional Energy Basics · Nutritional Energy Program · PigPak® · PigPak® Plus · Pollen Burst
+Combo · R&R + BB Combo · Power Pak · Premiere 30 Day Liver Pure Detox (Chocolate / French
+Vanilla) · Super Immune · Super Immune Plus · VitalStart Body Shield · Scholastic Enhancement ·
+Baseline / Baseline Plus / Baseline Ultra · Chocolate/French Vanilla Weight Loss 150 · Healthy
+Weight Loss Chocolate/French Vanilla
 
-_★ 2026-07-07 — the known provisional list below is now FULLY RESOLVED: Luneth added the last 9 labels mid-session (Activated Charcoal, Imortalium, Majestic Earth Mineral STX, Multi-Collagen Peptide Gummies, Super Collagen Shot, Taheebo, TrueDetox Tea, XeraTest, CardioBeets) and they were extracted; the earlier bullets were resolved across prior batches. The TRUE remaining-missing list (if any) surfaces only at the Phase-F-end products.json-vs-manifest reconciliation, once ranges V–Z are also done. Bullets kept below for the historical record._
-- Activated Charcoal (USLF000112)
-- HOPE (Sta-Natural, ygy 577 / USSN000009) — RESOLVED 2026-07-07: Luneth supplied sn-hope label; extracted as `hope-sta-natural`. HOPE (Youngevity, ygy 10359 / USYG7000) = a BUNDLE (3 sold-separately products: Life Balance Menopause Support + Rejuvenate/Rewind/Restore + Women's Probiotic COMPLETE) → SKIP per standard bundle policy; its parts record individually.
-- Imortalium 120ct (USYG100080)
-- Majestic Earth Mineral STX - BOGO (USYG400401, ygy 10540) — the fuzzy matcher assigned it the `ult-mineral-caps` label, but that label is Ultimate Mineral Caps (sku 20691, extracted early as `ultimate-mineral-caps` in Batch 16). "STX" = the stick form; the BOGO's real (mineral-stick) label is absent, and its only manifest SKU is the BOGO promo itself. CONFIRM identity + supply the real label at end.
-- Manuka Force Lemon Honey Lozenges (USLF700002) — RESOLVED 2026-07-07: Luneth supplied `manuka-force-lemon-honey-lozenges_nfp_0126.jpg`; extracted as `manuka-force-lemon-honey-lozenges` (food-format lozenge).
-- Multi-Collagen Peptide Gummies (USYG100506)
-- Nano Balance (USLF700001) — RESOLVED 2026-07-07: Luneth supplied `nano-balance-tincture_1224_supp-facts.jpg`; extracted as `nano-balance` (glycerin-based liquid, Curcumin Complex Blend 500mg).
-- Plant Derived Minerals (13203) — RESOLVED 2026-07-07: Luneth supplied `13203_plant_derived_minerals_supfacts.jpg`; extracted as `plant-derived-minerals` (liquid, Majestic Earth Plant Derived Minerals 600mg).
-- Refresh FX (USYG103200) — RESOLVED 2026-07-07: Luneth supplied `refresh-fx_0126_supp-facts.jpg`; extracted as `refresh-fx`. [RESOLVED 2026-07-07: Thiamin corrected 7 mcg -> 7 mg (Luneth's call; 583% x 1.2 mg DV = exactly 7 mg).]
-- Root Beer Belly (USYG100000) — RESOLVED 2026-07-07: Luneth supplied `ygy-usyg100000-root-beer-belly-suppfacts-1012.jpg`; extracted as `root-beer-belly` (probiotic packet, 5 billion CFU).
-- RVB 350 (USRS000005) + RYL BETA550 (USRS000006) — RESOLVED 2026-07-07: Luneth supplied `rvb_350_supp-fact_1024.jpg` + `ryl_beta550_supp-fact_1024.jpg`; extracted as `rvb-350` (350mg beta-glucan) + `ryl-beta550` (550mg beta-glucan).
-- Super Collagen Shot (USYG300055)
-- Taheebo (USLF000120)
-- TrueDetox Tea 30ct (TL021PROD)
-- Ultimate Iron 26 (USYG70008) — RESOLVED 2026-07-07 (U5): Luneth mapped `iron_suppfacts_1025.jpg`; extracted as `ultimate-iron-26` (Optifolin folate + SloIron + moringa).
-- Ultimate ParaClear (20972) — RESOLVED 2026-07-07 (U5): Luneth mapped `ultimate-paracleanse_supp-facts_0426.jpg` (matcher missed it — 'paraCleanse' filename vs 'ParaClear' product); extracted as `ultimate-paraclear`.
-- Ultimate Super KB 90caps (67508) — RESOLVED 2026-07-07 (U5): Luneth mapped `ult_super_kb_supp_facts_0225.jpg`; extracted as `ultimate-super-kb` (kidney & bladder botanicals).
-- XeraTest Hormonal Support for Men (USYG100081)
-- Youngevity CardioBeets 195g (USYG100071)
-- FitShake Banana Cream (USYG300012, ygy 10599) — RESOLVED 2026-07-07: was genuinely absent at first check (correctly flagged missing); Luneth ADDED the label `banana-fitshake_pouch_0426_supp-facts_3.jpg` mid-session, then it was extracted as `fitshake-banana-cream` (name drops 'Youngevity'). [Supersedes an earlier note that wrongly blamed a keyword-search miss — the file did not exist yet.]
-- Super Greens Canister (USYG300001, ygy 953) — RESOLVED 2026-07-07: matcher false-negative — label `ygy-super-greens-powder_label-suppfacts_0523.jpg` was on disk; extracted as `super-greens-canister` (name drops 'Youngevity').
+A bundle is modeled as a reference to its base products; its parts carry the composition. The
+same rule covers plain multipacks — a 4-pack of an already-extracted sku is not a variant.
 
-_(Same-name clusters pending careful side-by-side label passes; not counted here yet. **Body Balance RESOLVED 2026-07-06:** base liquid (USLF000130) + Sticks powder (USLF070031) extracted; Body Balance Mix + Starter Pack + the '×N w/ TruBoost/VitalStart' listings are bundles (skip). **Osteo family RESOLVED 2026-07-06:** Beyond Osteo FX Liquid (USYG103210) + Powder (USYG103211), Osteo-Mag (21210), OsteoProCare (USLF000700V), Ultimate Osteo FX (13209) all extracted. **BTT / Tangy Tangerine line RESOLVED 2026-07-06:** all 6 base products extracted — 2.5 Canister, Original 450G (+ its 30-count box variant 23230), 2.0 CPF canister, 2.0 CPF 30-count box, 2.0 Tablets, Ultimate Liquid — no genuine-missing among them.) **Ultimate Mineral Caps RESOLVED 2026-07-07 (Batch 16 — extracted early from the M-range because the mislabeled `ult-mineral-caps` label is actually this product):** base 64-cap (sku 20691, ygy 751) is `ultimate-mineral-caps`; the 4-pack (20691C, ygy 752) is a plain multipack (not a variant, per the female/GH precedent). The U-range pass can skip it._ **Premium Muscadine Grape Seed (USNP000001, ygy 988) done EARLY 2026-07-07 (Batch 17)** — its label `usnp000001_...caps_suppfacts` was in hand alongside the N-range Nature's Pearl Muscadine Grape *Extract* syrup (7756); two distinct muscadine products. The P-range pass can skip the Grape Seed._
+## Outcome
 
-## Count-variants of extracted products (attach as variants[] when the pack-size label is obtained)
-- Ultimate EFA - 180 soft gels (21832, ygy 739) - same softgel formula as `ultimate-efa` (60-ct, sku 20641); RESOLVED 2026-07-07 (U5): Luneth mapped `21832_ult-efa-180_0520_panel-900x1200_1.jpg`; verified identical per-softgel formula; attached as a variants[] entry on `ultimate-efa`.
-- Ultimate Gluco-Gel - 120 Capsules (21251, ygy 581 & 6763) - same formula as `ultimate-gluco-gel` (240-ct, sku 21252); RESOLVED 2026-07-07 (U5): Luneth mapped `21251_ult-gluco-gel-120_1119_panel-900x1200_2.jpg`; verified identical per-serving formula; attached as a variants[] entry on `ultimate-gluco-gel`.
+Every product that was genuinely missing a label had one supplied and was then extracted from
+it, and the closing reconciliation of `products.json` against the listing left no unexplained
+gap. The sealed pillar is the record of what that produced; read the product count off
+`products.json`, not off this file.

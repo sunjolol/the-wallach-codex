@@ -3,24 +3,26 @@
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * THE ONLY PLACE in the codebase that calls `localStorage.{get,set,remove}Item`
- * directly (enforced by lint rule `no-restricted-globals` everywhere else).
+ * directly. The real enforcement is the chokepoint gate in tools/invariants.py, which
+ * turns the board RED; dashboard/eslint.config.js only adds an advisory
+ * `no-restricted-globals` WARNING, and a warning on its own stops nothing.
  *
  * Two layers of API:
  *
- *   - `get`/`set` — fast path, no schema validation. Used by legacy/scaffold
- *     code being ported over. Returns/accepts T directly. The cast is YOUR
- *     responsibility; bad LS data → bad typed data → bugs.
+ *   - `set` — fast path, no schema validation. Accepts T directly, so the cast is
+ *     YOUR responsibility: bad LS data → bad typed data → bugs. Only state/log.ts
+ *     still writes through it; prefer the validated pair below.
  *
  *   - `getValidated`/`setValidated` — §00 boundary discipline. Reads pass
  *     through Zod parse; bad data → null (read) or schema-invalid result
  *     (write). New code should always prefer these.
  *
- * Round 73 §17: every write goes through try-set → verify-read →
- * reject-on-mismatch. If storage can't confirm the value round-trips, the
- * write fails LOUDLY instead of silently dropping.
+ * Every write goes through try-set → verify-read → reject-on-mismatch. If storage
+ * can't confirm the value round-trips, the write fails LOUDLY instead of silently
+ * dropping.
  *
- * Round 150 §31: native `storage` event re-fires via core/events so other
- * surfaces re-render. Cross-tab sync with zero plumbing in receivers.
+ * The native `storage` event re-fires through core/events so other surfaces
+ * re-render — cross-tab sync with zero plumbing in receivers.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -60,8 +62,11 @@ function installNativeListener(): void {
         console.warn('[storage] handler error:', e);
       }
     }
-    // Route to the typed event bus for known regimen/coverage keys so views
-    // don't have to know about LS key naming conventions.
+    // Route the regimen keys to the typed event bus so views don't have to know about
+    // LS key naming conventions. Coverage is not routed here — it recomputes downstream
+    // by subscribing to the same regimen event. `lcRegimen_v1` is a retired key this
+    // build never writes; the branch is kept only so a pre-migration backup restored in
+    // another tab still triggers a re-render.
     if (ev.key.startsWith('rgSlot') || ev.key === 'lcRegimen_v1') {
       emit('regimen:changed', { slotId: ev.key, reason: 'restore' });
     }
@@ -87,34 +92,19 @@ export function set<T>(key: StorageKey, value: T): WriteResult {
   catch {
     return { ok: false, key, reason: 'quota-exceeded' };
   }
-  // Verify round-trip (Round 73 §17 atomic-write discipline)
+  // Verify round-trip: a write that cannot be read back is a failed write.
   if (localStorage.getItem(key) !== serialized) {
     return { ok: false, key, reason: 'verify-mismatch' };
   }
   return { ok: true, key };
 }
 
-/** Read a typed value back, or `null` if missing/corrupt. */
-export function get<T>(key: StorageKey): T | null {
-  const raw = localStorage.getItem(key);
-  if (raw === null) {
-    return null;
-  }
-  try {
-    return JSON.parse(raw) as T;
-  }
-  catch {
-    return null;
-  }
-}
-
 /**
  * Read + Zod-validate at the boundary. Returns the parsed value if both
  * JSON parsing AND schema validation succeed; `null` otherwise.
  *
- * This is the §00 substrate for "bad LS data never enters typed-land."
- * Use this for every new read; the unchecked `get<T>` is kept only for
- * legacy callers being incrementally ported over.
+ * This is the substrate for "bad LS data never enters typed-land." Use it for every
+ * read — it is the only read path that validates.
  */
 export function getValidated<T>(key: StorageKey, schema: z.ZodType<T>): T | null {
   const raw = localStorage.getItem(key);
@@ -170,26 +160,12 @@ export function onChange(handler: StorageChangeHandler): () => void {
   };
 }
 
-/** Best-effort estimate of LS usage in bytes. */
-export function estimateUsage(): number {
-  let total = 0;
-  for (let i = 0; i < localStorage.length; i++) {
-    const k = localStorage.key(i);
-    if (k === null) {
-      continue;
-    }
-    const v = localStorage.getItem(k) ?? '';
-    total += k.length + v.length;
-  }
-  return total * 2; // UTF-16 in most engines
-}
-
 /* --- BACKUP: whole-origin snapshot / restore (export <-> import) ------------
  * The app's data is 100% on-device; export/import is how the user MOVES or backs
  * it up (CLAUDE.md). Scoped to the app's own key prefixes so an export is clean
  * and a restore cannot write arbitrary keys. Restore writes the raw strings back
  * verbatim; every READ re-validates through getValidated, so a tampered value
- * degrades to null rather than entering typed-land (#7 graceful degradation). */
+ * degrades to null rather than entering typed-land (graceful degradation). */
 const APP_KEY_PREFIXES = ['wallach', 'rg', 'lc'] as const;
 
 function isAppKey(k: string): boolean {

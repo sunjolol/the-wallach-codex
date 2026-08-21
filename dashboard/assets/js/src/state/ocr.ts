@@ -1,11 +1,10 @@
 /**
- * state/ocr.ts — native OCR pipeline (image → ScanLabel)
+ * state/ocr.ts — OCR pipeline (image → ScanLabel)
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Turns a label image (data URL) into a ScanLabel the verdict engine can score.
- * Ported faithfully (Chunk 6c) from the pre-TS inline dashboard — the page no longer
- * loads inline JS, so loadTesseract · preprocessImage · runOcr · the OCR fuzzy-
- * correction pass · parseOcrText · the lcScanImage orchestrator all live here.
+ * Turns a label image (data URL) into a ScanLabel the verdict engine can score:
+ * loadTesseract · preprocessImage · runOcr · the OCR fuzzy-correction pass ·
+ * parseOcrText · the scanImage orchestrator all live here.
  *
  * Pipeline (scanImage):
  *   preprocessImage (canvas upscale → grayscale → gentle contrast) → runOcr
@@ -15,20 +14,25 @@
  *   unit + ingredients string + container hint) → parseLabel (→ ScanLabel) →
  *   runScan (state/scanner.ts — verdict + gap-fill + history + view re-render).
  *
- * The dictionaries (OCR_FUZZY_DICT + KNOWN_NUTRIENT_NAMES) are migrated VERBATIM
- * to assets/data/ocr-dict-data.json (Zod OcrDictSchema). §00.A: every term is
- * the legacy value unchanged; nothing here authors corpus data. The parser
- * regexes are case-insensitive (/i) ports; their character classes are written
- * lowercase + bounded so they read clean and cannot backtrack super-linearly,
- * which does not change which labels they match.
+ * The food/ingredient dictionary and the known-nutrient list live in
+ * assets/data/ocr-dict-data.json (fields `fuzzyDict` + `knownNutrientNames`,
+ * validated by OcrDictSchema). §00.A: nothing here authors nutrition data — the
+ * parser only reads what is printed on the label. The parser regexes are
+ * case-insensitive (/i); their character classes are written lowercase and
+ * bounded so they read clean and cannot backtrack super-linearly, which does not
+ * change which labels they match.
  *
  * Tesseract is the global `window.Tesseract` installed by the vendored script;
  * it is typed through a narrow interface and loaded lazily on first scan, so the
- * ~22MB WASM never loads until a label is actually dropped.
+ * OCR payload never loads until a label is actually dropped. That payload is a
+ * ~4-5MB WASM core plus the ~13MB compressed language model over http, or the
+ * ~17MB self-contained offline worker (model bundled) on file://.
  *
- * The bridge: window.lcScanImage = scanImage (legacy-style + drop/paste/upload
- * callers); window.lcParseLabel = parseLabel (lets a headless probe feed raw OCR
- * text straight to the parser and assert the ScanLabel, with no WASM at all).
+ * The bridge exists for headless probes: window.lcParseLabel = parseLabel feeds
+ * raw OCR text straight to the parser and asserts the ScanLabel with no WASM at
+ * all, while window.lcOcrToLabel and window.lcScanImage expose the full pipeline
+ * (the scanner-concurrency probe drives lcScanImage). The Scanner view imports
+ * ocrToLabel directly.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -106,7 +110,7 @@ function loadDict(): OcrDicts {
 /**
  * In-flight Tesseract-load promise, shared across concurrent callers. Without it, two
  * scans launched together (an upload and a paste) both see `window.Tesseract === undefined`
- * and each append a <script> tag; re-running the UMD clobbers the first worker\'s module
+ * and each append a <script> tag; re-running the UMD clobbers the first worker's module
  * state mid-init, so its recognize() never settles and the Scan step hangs on "Reading the
  * label…" forever. One shared promise means exactly one injection. Reset on error so a
  * later scan can retry.
@@ -261,14 +265,14 @@ const OCR_TIMEOUT_MS = 90_000;
 let modelReachable = false;
 
 /**
- * Fast reachability check for the OCR language model. On a plain file:// open (no
- * --allow-file-access-from-files) and when genuinely offline, the browser blocks fetch() of the
- * local model — the Tesseract worker's own fetch then fails as an UNCAUGHT rejection that never
- * settles createWorker, so the Scan step would hang on "Loading the language model…" forever.
- * Probing it here (we abort before streaming the 13MB body) turns that silent hang into a clear,
- * catchable error BEFORE we load ~8MB of WASM. Served over http/https (the online build) this
- * resolves normally; opened via the launcher's file-access flag it also resolves. Cached after the
- * first success, so it costs nothing on later scans.
+ * Fast reachability check for the OCR language model — the http/https path only. There the
+ * Tesseract worker fetches the model itself, and a fetch that fails inside the worker surfaces
+ * as an UNCAUGHT rejection that never settles createWorker, so the Scan step would hang on
+ * "Loading the language model…" forever. Probing it here (we abort before streaming the ~13MB
+ * body) turns that silent hang into a clear, catchable error BEFORE the WASM core loads. On
+ * file:// this is skipped entirely: fetch() of a local file is blocked there, so runOcr uses
+ * the self-contained offline worker with the model already bundled and there is nothing to
+ * probe. Cached after the first success, so it costs nothing on later scans.
  */
 async function assertModelReachable(): Promise<void> {
   if (modelReachable) {
@@ -352,7 +356,7 @@ async function runOcr(imageData: string, progress: ProgressFn): Promise<string> 
   }
   const recognize = async (url: string): Promise<string> => (await worker.recognize(url)).data.text;
   try {
-    // Pass 1 — full-res at the as-shot orientation (exactly what the app always did).
+    // Pass 1 — full-res at the as-shot orientation.
     const text0 = await recognize(processed);
     const s0 = scoreOcrOrientation(text0);
     // A recognizable label anchor (Nutrition/Supplement Facts, Ingredients, Calories…) means the
@@ -429,7 +433,7 @@ function ocrFuzzyFix(word: string): string {
     return word;
   }
   // A recognized nutrient-panel label (Copper, Manganese, Phosphorus...) must never be
-  // "corrected" to a look-alike food term -- that snapped Copper -> Pepper. #7-hits.
+  // "corrected" to a look-alike food term -- that snapped Copper -> Pepper.
   if (dict.knownLower.has(lower)) {
     return word;
   }
@@ -465,10 +469,9 @@ function ocrPostProcess(text: string): string {
 }
 
 // ─── Ranked suggestion candidates (the Confirm-step correction engine) ─────
-// Re-ported faithfully from the pre-TS suggestion engine (fca48c9d^, the recovered
-// legacy helper): the multi-path scorer + suspect walker that the Scan->Confirm
-// step surfaces as click-to-fix candidates. Only the PURE logic lives here; the
-// helper-panel DOM + word-replace UI belong to views/scanner.ts.
+// The multi-path scorer + suspect walker that the Scan->Confirm step surfaces as
+// click-to-fix candidates. Only the PURE logic lives here; the helper-panel DOM +
+// word-replace UI belong to views/scanner.ts.
 
 /** One ranked correction candidate — lower score is a better match. */
 export interface SuggestionCandidate {
@@ -478,7 +481,7 @@ export interface SuggestionCandidate {
 
 /**
  * Ranked correction candidates for one OCR-garbled word, against the food/
- * ingredient dictionary. Four scoring paths (verbatim from the legacy engine):
+ * ingredient dictionary. Four scoring paths:
  *   1. first-letter match + tight Levenshtein
  *   2. first-letter match + Jaccard char-overlap >= 0.4  (topineg -> tapioca)
  *   3. suffix match for prefix-eaten OCR  (REDIENTS -> INGREDIENTS)
@@ -599,7 +602,7 @@ export interface IngredientSuspect {
  * Suspect words in an ingredients line + their ranked candidates. Walks 3+-letter
  * words, skips exact dictionary hits (correct reads) and any caller-dismissed word,
  * caps at 12. Pure — the `dismissed` set is passed IN (the view owns dismiss state),
- * never a module global (the legacy code kept it global; the port makes it a param).
+ * never a module global, so two callers cannot leak dismissals into each other.
  */
 export function findIngredientSuspects(
   text: string,
@@ -645,7 +648,7 @@ export function findIngredientSuspects(
 
 // ─── Label parser (OCR text → ingredients · nutrients · container hint) ────
 
-/** Parse raw OCR text into structured label fields (legacy parseOcrText port). */
+/** Parse raw OCR text into structured label fields. */
 function parseOcrText(rawTextInput: string): ParsedOcr {
   const out: ParsedOcr = { containerHint: '', ingredients: '', nutrients: [] };
   const rawText = ocrPostProcess(rawTextInput);
@@ -831,7 +834,7 @@ function parseOcrText(rawTextInput: string): ParsedOcr {
   return out;
 }
 
-/** Build a ScanLabel from raw OCR text (legacy lcScanImage label shape). */
+/** Build a ScanLabel from raw OCR text. */
 function parseLabel(rawText: string): ScanLabel {
   const parsed = parseOcrText(rawText);
   return {
@@ -868,8 +871,9 @@ export async function ocrToLabel(dataUrl: string): Promise<{ label: ScanLabel; r
 }
 
 /**
- * One-shot image → OCR → parsed label → verdict (logged). Kept for the headless
- * probe + legacy callers; the live Confirm flow uses ocrToLabel + runScan instead.
+ * One-shot image → OCR → parsed label → verdict (logged). No in-app caller: the live
+ * Confirm flow uses ocrToLabel + runScan so the user can correct the reads first. This is
+ * the window.lcScanImage entry point the headless scanner-concurrency probe drives.
  */
 export async function scanImage(dataUrl: string): Promise<ScanResult | null> {
   const { label } = await ocrToLabel(dataUrl);

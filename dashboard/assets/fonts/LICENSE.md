@@ -6,15 +6,20 @@ All fonts in this directory are distributed under the **SIL Open Font License Ve
 
 ## Bundled fonts and attributions
 
+Each notice below is the exact copyright string carried in that font file's own `name`
+table (name ID 0), read out of the shipped `.ttf`. OFL 1.1 requires the notice to travel
+with the font, so this table must be updated whenever a font file is added or replaced.
+
 | Font Family | Copyright | License |
 |---|---|---|
-| **Playfair Display** | Copyright (c) Claus Eggers Sørensen | OFL-1.1 |
-| **Merriweather** | Copyright (c) Sorkin Type | OFL-1.1 |
-| **Crimson Pro** | Copyright (c) Sebastian Kosch (original), Jacques Le Bailly (Pro version) | OFL-1.1 |
-| **Space Grotesk** | Copyright (c) Florian Karsten | OFL-1.1 |
-| **JetBrains Mono** | Copyright (c) 2020 The JetBrains Mono Project Authors | OFL-1.1 |
-| **Chakra Petch** | Copyright (c) 2018 Cadson Demak | OFL-1.1 |
-| **Bruno Ace** | Copyright (c) 2022 The Bruno Ace Project Authors | OFL-1.1 |
+| **Playfair Display** | Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display), with Reserved Font Name "Playfair Display" | OFL-1.1 |
+| **Merriweather** | Copyright 2024 The Merriweather Project Authors (https://github.com/EbenSorkin/Merriweather4), with Reserved Font Name "Merriweather" | OFL-1.1 |
+| **Crimson Pro** | Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro) | OFL-1.1 |
+| **Space Grotesk** | Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk) | OFL-1.1 |
+| **JetBrains Mono** | Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono) | OFL-1.1 |
+| **Chakra Petch** | Copyright 2018 The Chakra Petch Project Authors (https://github.com/m4rc1e/Chakra-Petch) | OFL-1.1 |
+| **Bruno Ace** | Copyright 2023 The Bruno Ace Project Authors (https://github.com/googlefonts/Bruno-ace) | OFL-1.1 |
+| **Unbounded** | Copyright 2022 The Unbounded Project Authors (https://github.com/googlefonts/unbounded) | OFL-1.1 |
 
 Each font's original distribution includes its own `OFL.txt` from the upstream repo; those individual licenses are preserved as part of the source ZIPs available at the URLs in `README.md`.
 

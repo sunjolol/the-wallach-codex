@@ -1,8 +1,15 @@
 # ORAC 01–06 redesign — executable port spec
 
+> **STATUS: SHIPPED.** This port landed — `kd-orac-*` is live in `views/knowledge-orac.ts` and
+> `styles/drawer-orac.css`. The document is kept as the record of the reasoning; **the line ranges
+> below describe the pre-port files and no longer resolve** — both files have grown well past the
+> largest line number cited here. The demo it cites, `temporary/demos/orac-redesign-v2.html`, is
+> local-only and is not part of this repository.
+
 _2026-08-17. The signed-off demo `temporary/demos/orac-redesign-v2.html` is the spec.
-This turns it into a concrete port with your four fixes baked in. Held for a verification
-pass because it's a large interactive rebuild landing on the flagship tab — not blind-shipped._
+This turns it into a concrete port with the four review fixes baked in. It was held for a
+verification pass because it is a large interactive rebuild landing on the flagship tab — not
+blind-shipped._
 
 ## Boundary (do not violate)
 Port demo sections **01–06 only**. Everything from **07 (`renderSupplements`) onward STAYS

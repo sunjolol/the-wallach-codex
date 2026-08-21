@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
-"""build_embeds.py — the single derivation orchestrator (Phase C / blueprint D2).
+"""build_embeds.py — the single derivation orchestrator.
 
 ONE command that regenerates every GENERATED data artifact from the sealed
 pillars, in the order eden/derived/MANIFEST.json declares. Each artifact has
 exactly one pure generator (a module exposing build_fn() -> object and
-write_fn() -> writes the file via safe_write, §17). This tool imports each
+write_fn() -> writes the file via safe_write). This tool imports each
 generator and calls its write_fn; the derived_artifacts_fresh invariant then
 proves the on-disk artifacts equal a fresh build_fn() run, so shipping drift is
-impossible (R1).
+impossible.
 
 Why a manifest, not a hard-coded list: the freshness gate and this orchestrator
 iterate the SAME registry, so nothing is silently unchecked and nothing is
-regenerated that the gate does not also verify (D2). As Phase C folds each embed
-into the pipeline (targets_derive, the product embeds), it lands as one manifest
+regenerated that the gate does not also verify. A new embed lands as one manifest
 row + one generator module — the orchestrator and the gate pick it up for free.
 
-This absorbs the standalone generators over Phase C; today it drives corpus_embed
-(corpus-embed.json). Run after any pillar change, before `node tools/build.mjs`.
+It drives every generator the manifest registers — 15 artifacts today: the corpus
+embed, targets, the three coverage derives, the four product derives, the nutrient
+resolver embed, search, entity pages, and the three ORAC derives. Run after any
+pillar change, before `node tools/build.mjs`.
 
 Exit codes: 0 = all artifacts regenerated · 1 = a generator failed.
 """

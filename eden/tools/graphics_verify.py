@@ -3,7 +3,7 @@
 
 Each graphic's RAW-BYTE sha256 must equal its file_sha256 in graphics-manifest.json
 (graphics are binary, not LF-normalized). When the manifest is sealed, its own
-LF-content hash must match graphics-manifest.golden.sha256.
+LF-content hash must match graphics-manifest.json.golden.sha256.
 
 Exit: 0 sealed & healthy · 1 FAIL · 2 BOOTSTRAP (manifest not yet sealed; image
 hashes still checked). Never writes anything.

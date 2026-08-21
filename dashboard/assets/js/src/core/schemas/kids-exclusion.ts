@@ -4,7 +4,7 @@
  *
  * Validates dashboard/assets/data/kids-exclusion.json — the hand-authored curation
  * list of products that must never be RECOMMENDED because they are formulated for
- * children (Luneth 2026-07-16). Consumed via state/kids-exclusion.ts (esbuild JSON
+ * children. Consumed via state/kids-exclusion.ts (esbuild JSON
  * import + parse at load, same pattern as home-curation / foods-curation).
  *
  * Editorial CURATION config, NOT a Wallach fact — no dose, no number, no claim — so
@@ -17,8 +17,7 @@
  * them straight back into the recommendation ranking, looking exactly like success.
  * So this schema requires a NON-EMPTY list (`.min(1)`) and state/kids-exclusion.ts
  * THROWS on a parse failure rather than falling back to empty. A build that cannot
- * read this list must not ship — never trade fail-safe for fail-green
- * (memory: derive-elegance-is-not-user-truth).
+ * read this list must not ship — never trade fail-safe for fail-green.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 

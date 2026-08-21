@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "purpose": "VOLATILE commercial sidecar for the Product DB -- retail/wholesale price + BV/QV, keyed by ygy_id. Joined to products.json by ygy_id. §00.A: prices are commercial data (source:ygy), NEVER a Wallach claim, NEVER a target; they feed product display + the cost-per-nutrient recommender, never the coverage math. The YGY marketing `description` was STRIPPED 2026-07-08 (A1) -- product 'prose' now comes from book-mining claim->ingredient matching, not scraped copy (memory old-product-system-full-delete).",
-    "source": "temporary/ygy-products-full/ (saved listing mhtml) -> products_manifest.json",
+    "purpose": "VOLATILE commercial sidecar for the Product DB -- retail/wholesale price + BV/QV, keyed by ygy_id. Joined to products.json by ygy_id. §00.A: prices are commercial data (source:ygy), NEVER a Wallach claim, NEVER a target; they feed product display + the cost-per-nutrient recommender, never the coverage math. The Youngevity marketing `description` was removed from this sidecar: product prose now comes from matching Wallach's mined book claims to ingredients, never from scraped marketing copy, and a gate blocks the price join from re-importing it.",
+    "source": "Youngevity's public product listing, captured locally to an mhtml and reduced to a product manifest. Both the capture and the manifest are working files kept outside the repo, so this file is the shipped record of them.",
     "sealed": false,
     "note": "NOT golden-sealed — prices change over time; regenerate from a fresh listing capture without disturbing the sealed composition pillar.",
     "count": 432

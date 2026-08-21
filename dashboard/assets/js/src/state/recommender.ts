@@ -1,5 +1,5 @@
 /**
- * state/recommender.ts — the cost-per-nutrient "best source of X" ranker (A3)
+ * state/recommender.ts — the cost-per-nutrient "best source of X" ranker
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Ranks the Youngevity products that deliver a given essential, best first, for the
@@ -7,18 +7,16 @@
  * `product-recommender-data.json` (composition amount + breadth + wholesale price per
  * candidate) + Zod-validated at the boundary — no DOM, no localStorage, no state.
  *
- * The match score (design locked with Luneth 2026-07-08, memory
- * cost-per-nutrient-match-score):
+ * The match score:
  *
  *   score = W_ADEQ·adequacy + W_BREADTH·breadth + W_VALUE·value
  *
  * The KEYSTONE is SATURATING ADEQUACY — min(1, delivered/target) — so "best source"
  * means *enough* of the nutrient, not *most* of it (full credit at the target, ~zero
- * reward beyond → no over-dose bias). That needs a Wallach dose target. CORRECTED
- * 2026-07-15: this read "an honest gap for every essential until corpus dose-mining",
- * which is STALE — 34 essentials now carry a numeric target and views/knowledge-products.ts
- * passes it. The gap is real but PARTIAL. Where no target exists, the keystone falls back
- * to amount-POTENCY (delivered / best-in-set):
+ * reward beyond → no over-dose bias). That needs a Wallach dose target, and only some
+ * essentials carry one — views/knowledge-products.ts passes it through where it exists, so
+ * the gap is real but PARTIAL. Where no target exists, the keystone falls back to
+ * amount-POTENCY (delivered / best-in-set):
  * an honest "more is provisionally better" proxy that ranks by composition alone. §00.A:
  * potency is a composition ratio, NEVER a coverage verdict — it does not claim "enough".
  *
@@ -80,9 +78,9 @@ function breadthScore(n: number): number {
  *                   for the essentials with no Wallach number) for the amount-potency proxy.
  * @param targetUnit `targetLow`'s unit — REQUIRED to get target-based adequacy.
  *
- *   ★ WHY targetUnit IS NOT OPTIONAL-BY-CONVENIENCE (2026-07-15). The target's unit comes
+ *   ★ WHY targetUnit IS NOT OPTIONAL-BY-CONVENIENCE. The target's unit comes
  *   from Wallach; the candidates' unit comes from Youngevity labels. THEY DISAGREE: measured
- *   across the 34 essentials carrying both, 2 mismatch — boron (target mg, candidates mcg)
+ *   across the essentials carrying both, 2 mismatch — boron (target mg, candidates mcg)
  *   and silver (target mcg, candidates mg). This function used to divide the two raw numbers,
  *   so boron's adequacy saturated at 1.0 for EVERY candidate (truth ≈0.16–0.54) and silver's
  *   read ~0.0001 (truth ≈0.10). Adequacy is the 0.6 keystone, so the ranking silently
@@ -102,13 +100,14 @@ export function rankSources(
     return [];
   }
   const { unit } = entry;
-  // ★ THE KIDS FILTER — the ONE chokepoint for every recommendation surface (Luneth
-  // 2026-07-16). Every rec path (Coverage recs · condition pages · the element/entity
-  // detail view's BEST SOURCES) funnels through rankSources, so filtering here covers
-  // all of them; the Products TAB reads essentialSlugsByProduct() instead and is
-  // deliberately left whole, because kids products must stay discoverable in the
-  // database. See state/kids-exclusion.ts for why this is a read-time filter and not
-  // a derive-time one (both consumers share this artifact).
+  // ★ THE KIDS FILTER for this ranker. The Knowledge Essentials deep-dive's BEST SOURCES
+  // funnels through rankSources, so filtering here covers it. The Coverage/Regimen rail and
+  // the condition pages use rankProductsForCoverage instead and are filtered separately in
+  // coverageIndex() below — every rec path IS filtered, but there is MORE THAN ONE path, so
+  // neither filter may be deleted as redundant. The Products TAB reads
+  // essentialSlugsByProduct() and is deliberately left whole, because kids products must
+  // stay discoverable in the database. See state/kids-exclusion.ts for why this is a
+  // read-time filter and not a derive-time one (both consumers share this artifact).
   // FILTERED FIRST, ON PURPOSE: maxAmount (the potency-proxy denominator) and the
   // min/max cost-per-unit band below are computed over the candidate SET, so an
   // excluded product must be gone before they are derived — otherwise a kids product
@@ -199,8 +198,8 @@ let productEssentialsCache: Map<string, string[]> | null = null;
  *
  * ★ DELIBERATELY NOT KID-FILTERED — do not "fix" this to match rankSources.
  * This is the PRODUCTS DATABASE path, and kids products must stay discoverable there.
- * Luneth 2026-07-16: they are "better as a database item to be discovered in the
- * products tab of the knowledge drawer" — excluded from being RECOMMENDED, never
+ * They are better as a database item to be discovered in the products tab of the
+ * knowledge drawer — excluded from being RECOMMENDED, never
  * hidden from the catalogue. rankSources filters; this does not. That asymmetry IS
  * the requirement, and `kids_products_not_recommended` asserts BOTH halves — adding a
  * filter here would turn the gate RED, on purpose.
@@ -225,14 +224,13 @@ export function essentialSlugsByProduct(): Map<string, string[]> {
   return m;
 }
 
-// ─── The Coverage rail's recommender (2026-07-16, the live Coverage build) ───
+// ─── The Coverage rail's recommender ─────────────────────────────────
 //
 // rankSources answers "what is the best source of ONE essential?" (the Knowledge deep-dive's
 // BEST SOURCES). The Coverage rail asks a DIFFERENT question — "given everything I'm missing,
 // what ONE product should I add next?" — so it needs a cross-essential ranker. That did not
 // exist; this is it. Same score SHAPE (W_ADEQ/W_BREADTH/W_VALUE, saturating breadth) so the
-// two rankers speak one language (blueprint §5), RE-CREATED from the signed-off demo's
-// paintRecs on real state rather than lifted from it.
+// two rankers speak one language.
 //
 // ★ WHAT "ADEQUACY" MEANS HERE, and why it is NOT rankSources' adequacy. rankSources compares
 // a delivered AMOUNT to a Wallach target (min(1, delivered/target)) — a per-essential
@@ -241,18 +239,18 @@ export function essentialSlugsByProduct(): Map<string, string[]> {
 // it never claims one — a breadth-of-hit ratio, not a coverage verdict (§00.A: composition and
 // price are display/recommender inputs, never a target).
 //
-// ★ FILTERED FOR KIDS ON PURPOSE, AND FIRST. Every rec surface funnels through the kids
-// exclusion (Luneth 2026-07-16). The index below is built from already-filtered candidates so
+// ★ FILTERED FOR KIDS ON PURPOSE, AND FIRST. Every rec surface applies the kids exclusion.
+// The index below is built from already-filtered candidates so
 // an excluded product cannot define the yardstick (bestSupply/bestValue) the survivors are
 // scored against — the same ordering rankSources uses, for the same reason. The Products TAB
 // path (essentialSlugsByProduct) stays deliberately UNfiltered; that asymmetry IS the
 // requirement, and `kids_products_not_recommended` asserts both halves.
 
 // The vault's root is { _meta, products: { id: entry } } — the NAMES live under `products`,
-// not at the root. Mirrors state/coverage.ts:337's read of the same artifact, including its
-// root-fallback for the flat shape. Parsing the root and indexing it directly (the first cut
-// here) silently resolved EVERY id to undefined, so every rec card would have rendered its
-// raw product slug: a bug tsc cannot see, because the values are `unknown` either way.
+// not at the root. Mirrors state/coverage.ts::vaultNutrientsByName's read of the same
+// artifact, including its root-fallback for the flat shape. Parsing the root and indexing
+// it directly resolves EVERY id to undefined, so every rec card renders its raw product
+// slug: a bug tsc cannot see, because the values are `unknown` either way.
 const VAULT = ProductsLookupSchema.parse(
   (regimenLabelLookup as { products?: unknown }).products ?? regimenLabelLookup,
 );
@@ -262,7 +260,7 @@ export interface CoverageRec {
   productId: string;
   /** Display name, read from the generated product vault (never hand-typed). */
   name: string;
-  /** Wholesale price (USD) — the featured price everywhere, per Luneth's standing rule. */
+  /** Wholesale price (USD) — the featured price everywhere in this app. */
   price: number;
   /** How many of the WANTED essentials this product reaches. The card's "supplies N". */
   supplies: number;
@@ -287,8 +285,8 @@ interface ProductAgg {
  * The vault's values are mixed shapes (single entry / array of entries), which is why the
  * schema types them `unknown` and each value is validated on read. An unresolvable id falls
  * back to the id itself rather than throwing: a rec card with a raw slug is ugly and visible;
- * a crashed rail is not (graceful degradation, #7). Every one of the 155 recommender
- * product_ids resolves today — verified 2026-07-16 — so the fallback is a guard, not a path.
+ * a crashed rail is not (graceful degradation). All 155 recommender product_ids resolve
+ * against the current vault, so the fallback is a guard, not a path.
  */
 function productName(productId: string): string {
   const raw = VAULT[productId];
@@ -303,7 +301,7 @@ function productName(productId: string): string {
  * A vault product by id — the add path's source for the item's label.
  *
  * Lives here because this module already parses the vault, and a second parse elsewhere
- * would be a second home for one fact (R3). The Coverage rail's `+` needs a NAME and the
+ * would be a second home for one fact. The Coverage rail's `+` needs a NAME and the
  * nutrient rows to mint a RegimenItem, exactly as views/regimen.ts::addItem does from the
  * picker — the two add paths must produce the same shape or the field disagrees with itself.
  */
@@ -326,10 +324,10 @@ export function vaultEntry(productId: string): { name: string; nutrients: unknow
  * ★ WHY NAME IS THE JOIN, and it is not a shortcut: a live RegimenItem carries NO
  * product_id. Its identity IS `label.name` — that is what views/regimen.ts::addItem matches
  * the vault on, and what state/coverage.ts's auto-heal re-resolves composition by. The rail
- * asked "which products do I already own?" and the first cut here read `label.product_id`,
- * a field that does not exist — so `owned` was ALWAYS empty and a product you had just added
- * stayed at the top of its own recommendation list. Caught by the probe, not by tsc: the
- * label is a passthrough object, so the read typechecked and silently returned undefined.
+ * asked "which products do I already own?" — do NOT reach for `label.product_id`: it does
+ * not exist, so `owned` comes back ALWAYS empty and a product you just added stays at the
+ * top of its own recommendation list. tsc cannot catch it — the label is a passthrough
+ * object, so the read typechecks and silently returns undefined.
  */
 let nameToIdCache: Map<string, string> | null = null;
 function nameToId(): Map<string, string> {
@@ -395,12 +393,11 @@ function coverageIndex(): Map<string, ProductAgg> {
  *
  * @param input        The query.
  * @param input.want   The essential slugs to target. With goals set, the union of their
- *                     members; with none, the field's current gaps (blueprint §5: no goals →
- *                     rank by breadth across all 90 — honest and still useful).
+ *                     members; with none, the field's current gaps (with no goals set this
+ *                     ranks by breadth across all 90 — honest and still useful).
  * @param input.owned  product_ids already in the active slot. They LEAVE the list — which is
- *                     what makes it terminate with no stored list to fall out of sync (§5,
- *                     Luneth's #4: "remove an item → it reappears" is not a feature anyone
- *                     had to code).
+ *                     what makes it terminate, with no stored list to fall out of sync.
+ *                     "Remove an item and it reappears" then costs no code at all.
  * @param input.goals  The ACTIVE goals + their members, for the card's dots. Empty in
  *                     no-goal mode.
  * @param input.limit  Cards to return (the rail shows 4).
@@ -468,8 +465,8 @@ export function rankProductsForCoverage(input: {
       perTenDollars: perDollar(r) * 10,
     };
   });
-  // Tie-break on product_id so the order is DETERMINISTIC — Array.sort is not stable across
-  // equal scores, and a probe asserting the rec list must not flake.
+  // Tie-break on product_id so the order is DETERMINISTIC — it must not depend on the
+  // generated artifact's key order, and a probe asserting the rec list must not flake.
   scored.sort((a, b) => (b.score - a.score) || a.productId.localeCompare(b.productId));
   return scored.slice(0, limit);
 }

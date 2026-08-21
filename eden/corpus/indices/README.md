@@ -5,10 +5,15 @@ Derived, sealed indices over `../claims/*`. **Never hand-edited** — regenerate
 can never silently drift from the claims it summarizes.
 
 Generated (one per index, each with a `*.golden.sha256` sibling):
-- `essentials.json` — per-essential index (90 entries, point into claims by id)
-- `other-substances.json` — Wallach-emphasized non-essentials (germanium framing, etc.), partitioned
+- `essentials.json` — per-essential index (91 entries: the 90 essentials + omega-9; point into claims by id)
+- `other-substances.json` — Wallach-emphasized non-essentials (botanicals, drugs, actives — `acetaminophen`, `agrimony`, …), held disjoint from the canon by verify check #4
 - `conditions.json` — condition → cause + protocol + dose + prognosis
 - `symptoms.json` — symptom → likely-deficiency
 - `consistency.json` — cross-book repetition / evolution / contradiction graph
 
-All five are live, each a pure derivation of the sealed claim shards.
+All five are pure derivations of the sealed claim shards, regenerated and byte-compared at
+every seal. Two of them reach the app today: `corpus_embed.py` projects `essentials.json`
+and `conditions.json` into the dashboard embed. `other-substances.json` backs verify check
+#4 (the canon / non-canon partition). `symptoms.json` and `consistency.json` are derived and
+sealed but have no surface yet — they are kept because deleting a derived index fails verify
+check #8, and because they are the cheap half of a future surface.

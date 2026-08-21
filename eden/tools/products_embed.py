@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""products_embed.py — the product-vault embed generator (Phase F / blueprint D2).
+"""products_embed.py — the product-vault embed generator.
 
 Derives dashboard/assets/data/regimen-label-lookup.json — the per-product label
 vault read by the Regimen "Full edit" flow (views/regimen.ts) and the Knowledge
@@ -8,12 +8,11 @@ manifest generator contract the freshness gate + build_embeds iterate:
 
   build_embed() -> dict   (PURE; the derived_artifacts_fresh gate byte-compares it
                            to disk -- so it MUST be deterministic)
-  write_embed() -> int    (regenerates the on-disk artifact via safe_write, §17)
+  write_embed() -> int    (regenerates the on-disk artifact via safe_write)
 
-SOURCE: eden/products/products.json (Pillar 2). Phase F (A1, 2026-07-08) swapped
-the source off the retired transitional eden/eden-catalog.json -- the whole old
-product subsystem (catalog + scraped marketing prose + brand tiering) was deleted
-as poison (memory old-product-system-full-delete). Composition is COMPOSITION ONLY
+SOURCE: eden/products/products.json (Pillar 2). An earlier transitional catalog file
+was retired here: the whole old product subsystem (catalog + scraped marketing prose
++ brand tiering) was deleted as poison. Composition is COMPOSITION ONLY
 (§00.A): an amount is what a product CONTAINS, never a Wallach target.
 
 The vault carries ONLY what the two view consumers read -- a display name
@@ -28,9 +27,9 @@ components -- top-level nutrients[], plus blends[].ingredients[] and their
 sub_ingredients[] -- that carries a numeric amount + a unit. Blend-level totals
 are skipped (a proprietary-blend total is not attributable to one essential), and
 non-numeric label amounts ("<1", null) are skipped (not summable). Keeping blend
-ingredient amounts avoids the coverage undercount (memory typical-values-are-usable).
+ingredient amounts avoids the coverage undercount.
 
-DETERMINISTIC (R1): the artifact carries NO wall-clock timestamp, so a fresh
+DETERMINISTIC: the artifact carries NO wall-clock timestamp, so a fresh
 build_embed() always equals the on-disk artifact (the freshness gate's contract).
 """
 import json
@@ -122,7 +121,7 @@ def build_embed() -> dict:
 
 
 def write_embed() -> int:
-    """Regenerate the on-disk artifact via safe_write (§17). Returns byte count."""
+    """Regenerate the on-disk artifact via safe_write. Returns byte count."""
     ARTIFACT_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(build_embed(), ensure_ascii=False, indent=2)
     return safe_write.safe_rewrite(str(ARTIFACT_PATH), payload)

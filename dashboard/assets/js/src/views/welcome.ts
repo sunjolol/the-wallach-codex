@@ -2,34 +2,33 @@
  * views/welcome.ts — the arrival veil
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * The app's first screen: a name + goals, or "I'm just browsing". RE-CREATED 2026-07-16
- * from the signed-off demo (temporary/coverage-E-rail.html) on real state.
+ * The app's first screen: a name + goals, or "I'm just browsing".
  *
- * WHY IT EXISTS, in Luneth's words: "IF we can gather at least ONE piece of personal info
- * RIGHT AWAY, THE REST OF THE APP IS SUDDENLY MUCH MORE POWERFUL… people want things
- * PERSONALIZED not GENERALIZED."
+ * WHY IT EXISTS: one piece of personal information gathered on arrival — a name and a goal
+ * or two — is what lets every later surface speak to this user instead of to nobody. Without
+ * it the app can only ever be generic.
  *
  * ★ IT IS AN INVITATION, NOT A WALL. "I'm just browsing →" is always there, and it is what
- * keeps this from being a gate — nobody is ever locked out. The copy invites instead of
- * interrogating: "What are you here for?" was the actual complaint, and it is retired
- * (Luneth 2026-07-15: "'What are you here for?' sounds rude, 'Let's get started' is more
- * inviting. It was very simple all along and you blew it out of proportion").
+ * keeps this from being a gate — nobody is ever locked out. The copy must invite, never
+ * interrogate: an opening line that asks the user to justify their visit ("What are you here
+ * for?") reads as rude, so the headings live in the view-copy store and stay welcoming.
  *
  * ★ IT ASKS ONCE. The tri-state in state/profile.ts is the whole point:
  *     null            — never asked → show the veil
  *     {browsing:true} — the user CHOSE anonymity → never re-prompt (anonymous is a choice,
  *                       not an absence of one)
  *     {name:'…'}      — named → never re-prompt
- *   That is Luneth's "memory element so if someone picks their name and starts without
- *   being a 'guest', they don't have to re-do the prompt on refresh".
+ *   The point: a returning user — named or anonymous — never re-does this prompt on
+ *   refresh, because "anonymous" is recorded as a choice rather than as an absence.
  *
  * ★ NAME SAFETY — THE SINK, NOT THE FILTER. Every name render in this app goes through
  * .textContent, which assigns a TEXT NODE and does not parse HTML; `<img src=x
  * onerror=alert(1)>` lands on screen as those literal characters. validateUserName
- * (core/schemas/profile.ts) is layer two (§00.B #2), an ALLOWLIST that catches what
+ * (core/schemas/profile.ts) is the second, independent layer — an ALLOWLIST that catches what
  * textContent does not care about but a human does: bidi/RTL overrides, zero-width padding,
  * control chars that would corrupt the localStorage round-trip. A rejected name shows its
- * REASON — a bounded input needs a rejection path, not just a bound (#8, #1).
+ * REASON — a bounded input needs a rejection path, not just a bound, and no rejected write
+ * may fail silently.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -73,7 +72,7 @@ export function shouldShowWelcome(): boolean {
  *
  * @param host   The element to mount the veil into.
  * @param onDone Optional; called after state is written. Callers normally omit it — the
- *               §31 chokepoints already emit and every surface subscribes.
+ *               state chokepoints already emit and every surface subscribes.
  */
 export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
   const existing = loadUserProfile();
@@ -176,7 +175,7 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
       if (!reopen) {
         const res = saveUserProfile({ ...(raw !== '' ? { name: raw } : {}), browsing });
         if (!res.ok) {
-          // SHOW the reason — never drop the value silently (#1, #8).
+          // SHOW the reason — never drop the value silently.
           if (nameErr !== null) {
             nameErr.textContent = res.reason;
             nameErr.hidden = false;

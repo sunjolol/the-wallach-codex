@@ -1,10 +1,14 @@
 /* ═══════════════════════════════════════════════════════════════════════════════
  * drawer-shared.css — chrome for the Knowledge (kd-*) drawer
  * ──────────────────────────────────────────────────────────────────────────────
- * The common drawer shell (head · tabs · search · body · close · eyebrow ·
- * empty). Formerly shared with the Journey drawer, which was removed 2026-08-13;
- * only the Knowledge drawer renders this chrome now. Every rule is rooted at
+ * The drawer shell the Knowledge view renders: the panel itself, the search bar,
+ * the scrolling body and the empty-state line. Every rule is rooted at
  * #drawer-knowledge-mount so nothing here can leak onto another surface.
+ *
+ * NOTE: the .kd-head / .kd-tabs / .kd-tab / .kd-eyebrow / .kd-title / .kd-sub /
+ * .kd-close rules below are no longer rendered by anything — the drawer supplies
+ * its own header (.kd-knh, in drawer-knowledge.css) and a `ui-close` button. They
+ * should be deleted rather than maintained.
  *
  * Loaded after workspace-coverage.css (provides --ds-font-display-*), before
  * drawer-knowledge.css. Tokens come from design-system.css (sealed).

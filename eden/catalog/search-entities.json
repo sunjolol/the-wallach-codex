@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "_note": "SOURCE (hand-authored) entity registry for Search (blueprint §4B). Non-canon entities carry display_name/type/symbol here. Canon entities set canon_ref:true and OMIT display_name/symbol — the derive pulls those from eden/corpus/essentials-canon.json so a canonical name is never hand-duplicated (no_hand_duplicated_canonical). synonyms power retrieval; related are soft cross-link chips. Grows one entity at a time as we author.",
+ "_note": "SOURCE (hand-authored) entity registry for Search. Non-canon entities carry display_name/type/symbol here. Canon entities set canon_ref:true and OMIT display_name/symbol — the derive pulls those from eden/corpus/essentials-canon.json so a canonical name is never hand-duplicated (no_hand_duplicated_canonical); catalog_ref entities likewise pull display_name from eden/catalog/conditions.json. synonyms power retrieval; related are soft cross-link chips; intro_claim pins the lede claim for the entity page; hub:true registers an aggregation page whose claims attach via also_about rather than subject. NOT sealed -- it grows one entity at a time, so it is validated by the search_index_wellformed gate rather than anchored to a golden hash.",
  "entities": {
   "absorption": {
    "display_name": "Nutrient Absorption",

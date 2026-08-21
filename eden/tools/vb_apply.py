@@ -42,18 +42,17 @@ draft = json.loads(_draft_raw)
 by_id = {c["id"]: c for c in draft["claims"]}
 
 # Measure the draft's indent BEFORE any claim is mutated -- afterwards the original
-# bytes can no longer be reproduced, so the check has to happen here. This tool
-# shipped with indent=2 hardcoded while claims-lets-play-doctor.draft.json is
-# indent=1: one verbatim edit would have re-spaced all 510 claims, and corpus_seal
-# promotes the draft's own bytes onto the sealed shard. Measure, never assume.
-# (mine_batch.py and corpus_extract.py were fixed for this on 2026-08-05; this tool
-# was missed.)
+# bytes can no longer be reproduced, so the check has to happen here. A hardcoded indent
+# re-spaces every claim in the file, and corpus_seal promotes the draft's own bytes onto
+# the sealed shard, so the real edit disappears into a whole-file diff. Measure, never
+# assume.
 INDENT = next((n for n in (1, 2, 3, 4)
                if json.dumps(draft, indent=n, ensure_ascii=False) + "\n" == _draft_raw), None)
 if INDENT is None:
     # Name the likeliest cause: this compares against LF-joined output, so a
-    # CRLF draft fails all four indents even when its indent is fine. Measured
-    # 2026-08-06: hells-kitchen, iaiyh and rare-earths are indent=1 but CRLF.
+    # CRLF draft fails all four indents even when its indent is fine. This has happened
+    # to real drafts, so name it rather than leaving "no indent reproduces it" as the
+    # only clue.
     _crlf = "\r\n" in _draft_raw
     raise SystemExit(
         f"REFUSING TO WRITE {DRAFT}: no indent 1-4 reproduces it byte-exactly"
@@ -96,8 +95,8 @@ for cid, ed in spec.items():
             continue
         if len(new_vb) > 500:
             # SOFT-500 exceeded: allowed when completeness needs it, but ALWAYS
-            # surfaced so Luneth can spot-check (length rule 2026-07-01).
-            print(f"  NOTE {cid}: verbatim {len(new_vb)}c > soft-500 (allowed; INFORM Luneth)")
+            # surfaced for a human spot-check.
+            print(f"  NOTE {cid}: verbatim {len(new_vb)}c > soft-500 (allowed; flag for review)")
         c["verbatim"] = new_vb
         c["locator"]["char_offset"] = s
     # drops

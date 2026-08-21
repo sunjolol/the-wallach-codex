@@ -2,22 +2,25 @@
  * views/knowledge.ts — Knowledge drawer (overlay)
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Slide-in-from-left overlay drawer, 950px wide. Renders 5 tabs: Home /
- * Essentials / Conditions / Explore / Products.
+ * Slide-in-from-left overlay drawer, 950px wide. Six tabs appear in the header menu —
+ * Home / Absorption / ORAC / Conditions / Explore / Products. Essentials is a seventh
+ * live route with no menu button, reached from Home, the breadcrumb trail, and an
+ * essential's own page (see renderShell).
  *
  * The Essentials tab is layout-driven: it walks the SAME presentation layout
  * the Coverage periodic table uses (coverage-layout-data.json) for symbols +
  * category grouping, and joins the AUTHORITATIVE per-essential status from the
  * CoverageSnapshot (state/coverage.ts) — one source of truth for "covered". A
- * tile click expands an in-place deep-dive: Wallach's stance (quote + citation,
- * §00.A educational layer) + the YGY vault products that carry the essential
- * (resolved via the canonical matchEssential — no matcher drift).
+ * tile click expands an in-place deep-dive, which IS the shared data-driven entity page
+ * (views/entity-page.ts::renderEssentialPage) — the same page a Coverage card or an
+ * Ask-Wallach "Learn More" opens, so there is only one essential page to keep correct.
+ * Its Best-Youngevity-sources block ranks the vault through state/recommender.ts.
  *
  * §00 Zod boundary: data reads pass through schemas defined in
  * core/schemas/knowledge + core/schemas/coverage-layout before field access.
  *
- * Visual contract: the live view (its v3 mockup was retired 2026-08-13). Styling: drawer-shared.css
- * (chrome) + drawer-knowledge.css (kd-* content). Keyboard: rail "K" toggles;
+ * Styling: drawer-shared.css (drawer chrome) + drawer-knowledge.css (kd-* content) +
+ * drawer-orac.css (the ORAC tab). Keyboard: rail "K" toggles;
  * Esc closes (handler in main.ts).
  * ═══════════════════════════════════════════════════════════════════════════
  */
@@ -86,7 +89,7 @@ function tileSymbol(t: LayoutTile): string {
   return t.sym ?? t.letter ?? t.abbr ?? t.code ?? t.name.charAt(0).toUpperCase();
 }
 
-/** One tile as the demo's sh-tile grid renders it (symbol + name + claim count + coverage dot). */
+/** One tile in the sh-tile grid (symbol + name + claim count + coverage dot). */
 interface EssentialTile {
   /** Canonical name — join key into the CoverageSnapshot. */
   key: string;
@@ -102,10 +105,10 @@ interface EssentialTile {
   essential: boolean;
 }
 
-/** One subsection = a demo sh-subhead + its sh-tile grid (the 6 the demo shows). */
+/** One subsection = an sh-subhead + its sh-tile grid (six in total). */
 interface EssentialSubsection {
   label: string;
-  /** vitamins/aminos/fats use the wider tile grid (demo). */
+  /** vitamins/aminos/fats use the wider tile grid. */
   wide: boolean;
   items: EssentialTile[];
 }
@@ -126,7 +129,7 @@ const ESS_META: Map<string, EssMeta> = (() => {
   return m;
 })();
 
-/** Flatten the layout into the demo's 6 subsections (minerals split 3 ways + vitamins/aminos/fats). */
+/** Flatten the layout into its 6 subsections (minerals split 3 ways + vitamins/aminos/fats). */
 function buildSubsections(): EssentialSubsection[] {
   const out: EssentialSubsection[] = [];
   const toTile = (t: LayoutTile, cat: EssentialTile['category']): EssentialTile => {
@@ -156,9 +159,6 @@ function buildSubsections(): EssentialSubsection[] {
 }
 
 const ESS_SUBSECTIONS = buildSubsections();
-// The "90 ESSENTIAL" count that used to sit under this line was the Essentials TAB's subtitle.
-// The tab left the menu on 2026-07-23 and nothing else read the constant, so it went with it
-// rather than lingering as dead code. Coverage still owns and displays the count.
 
 // ─── Render helpers ────────────────────────────────────────────────────────
 
@@ -166,7 +166,7 @@ function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
 }
 
-// ── breadcrumb trail (ported from the signed-off demo; safeguards Luneth 2026-07-11) ──
+// ── breadcrumb trail ────────────────────────────────────────────
 // A BOUNDED, LOOP-FREE back-history, not an append-forever log:
 //  (1) trail[0] is always the ORIGIN-tab anchor — an unbreakable fallback to exit the detail;
 //  (2) re-visiting an entity already in the trail JUMPS BACK to it (openDetail/goCrumb truncate)
@@ -215,13 +215,13 @@ function renderCrumbs(trail: Crumb[]): string {
 // ─── Tab renderers ─────────────────────────────────────────────────────────
 
 function renderEssentialDeep(key: string, snapshot: CoverageSnapshot | null): string {
-  // The essential deep-view IS the data-driven entity page now (H2). Its lede + the short
-  // "why this number" hover come from the user-approved entity-copy store inside
+  // The essential deep-view IS the shared data-driven entity page. Its lede + the short
+  // "why this number" hover come from the entity-copy store inside
   // entity-page.ts; there is nothing to compute here.
   return renderEssentialPage(key, snapshot);
 }
 
-/** The demo's friendly sh-subhead wording (view-copy), keyed by the layout's own label. */
+/** The friendly sh-subhead wording (view-copy), keyed by the layout's own label. */
 const SEC_LABEL_KEY: Record<string, string> = {
   'FOUNDATIONAL': 'kd_esssec_foundational',
   'INDIVIDUALLY DOSED': 'kd_esssec_dosed',
@@ -273,9 +273,9 @@ function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: str
 function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null, trail: Crumb[]): string {
   const snapshot = getOrCompute();
   const productsCount = productCount();
-  // The 'essentials' TAB IS DELIBERATELY ABSENT FROM THIS LIST while remaining a live route
-  // (Luneth 2026-07-23). It duplicated Coverage, which is where the user already starts, so the
-  // menu item went and the surface stayed. It keeps exactly three doors: the Home tab's "open the
+  // The 'essentials' TAB IS DELIBERATELY ABSENT FROM THIS LIST while remaining a live route.
+  // It duplicated the Coverage workspace, which is where the user already starts, so the menu
+  // item went and the surface stayed. It keeps exactly three doors: the Home tab's "open the
   // full table →", the breadcrumb trail, and the "‹ All essentials" button on an essential's own
   // page. Do NOT "restore" it here — its absence is the feature; renderTab still serves it.
   const tabs = [
@@ -311,9 +311,11 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
 // ─── Search (per-tab DOM filter) ──────────────────────────────
 
 /**
- * Per active tab, the selector for the list items the search box filters. The
- * tabs render different item shapes (book rows / essential tiles / condition
- * rows / product rows / doctrine cards), so the query targets each by class.
+ * Per active tab, the selector for the list items the search box filters. The tabs render
+ * different item shapes (essential tiles / condition rows / Explore chips / product rows),
+ * so the query targets each by class. Only essentials/conditions/explore/products actually
+ * render a search box (see renderShell); the remaining entries exist so the map stays total
+ * over Tab and a tab that later grows a box has its selector already declared.
  */
 const KD_SEARCH_ITEM_SELECTOR: Record<Tab, string> = {
   home: '.kd-home',
@@ -327,9 +329,9 @@ const KD_SEARCH_ITEM_SELECTOR: Record<Tab, string> = {
 
 /**
  * Where each tab's item keeps its TITLE. The blob in `data-search` deliberately makes a row match on
- * content, which is what buries an exact title hit — searching "acne" matched every condition whose
- * claims mention acne and ranked them by claim count, so the Acne row itself sat far down the page
- * (Luneth 2026-07-23). Ranking needs the title alone, so it is read from here. `null` = the item's
+ * content, which is what buries an exact title hit — searching "acne" matches every condition whose
+ * claims mention acne and ranks them by claim count, so the Acne row itself sinks far down the page.
+ * Ranking needs the title alone, so it is read from here. `null` = the item's
  * own textContent IS the title (an Explore chip is just its label).
  */
 const KD_TITLE_SELECTOR: Record<Tab, string | null> = {
@@ -358,7 +360,7 @@ function restoreHoisted(): void {
   kdHoisted = [];
 }
 
-/** Max rows pinned at the top — 1 exact + up to 11 more (Luneth 2026-07-23). */
+/** Max rows pinned at the top — 1 exact match + up to 11 more. */
 const BEST_MATCH_MAX = 12;
 
 /**
@@ -415,11 +417,10 @@ function applyBestMatch(body: HTMLElement, tab: Tab, query: string): number {
     rows.appendChild(s.node);
   }
   // The open detail renders FIRST in the tab body, so this pinned block lands above it and the
-  // panel for a clicked result appears below the WHOLE list -- off-screen once the list is long
-  // (Luneth 2026-08-05: clicked the top "hyper" result, panel opened past nine other rows).
-  // Move it directly under the row it belongs to. The row already marks itself .is-selected, and
-  // the move is registered with kdHoisted so the next keystroke restores it instead of removing
-  // it with the block.
+  // panel for a clicked result would appear below the WHOLE list -- off-screen once the list is
+  // long. Move it directly under the row it belongs to. The row already marks itself .is-selected,
+  // and the move is registered with kdHoisted so the next keystroke restores it instead of
+  // removing it with the block.
   const detail = body.querySelector<HTMLElement>('.kd-essential-deep');
   const openRow = rows.querySelector<HTMLElement>('.is-selected');
   if (detail !== null && openRow !== null) {
@@ -743,7 +744,6 @@ export function mount(container: HTMLElement): DrawerHandle {
       // A topic renders as a full-body OVERLAY on top of whatever tab opened it (activeTab is left
       // untouched) so the back button returns you there — an Absorption card → back to Absorption,
       // an Explore chip → back to the all-topics grid (renderTab picks the label from the origin tab).
-      // topics are their own overlay with their own back — not part of the entity trail
       trail = [];
       render();
       return;
@@ -868,7 +868,7 @@ export function mount(container: HTMLElement): DrawerHandle {
   container.addEventListener('click', clickHandler);
 
   // Live search — delegated so it survives the innerHTML re-render. Filters the
-  // active tab's rows in place (the box was rendered but unwired before).
+  // active tab's rows in place.
   const inputHandler = (ev: Event): void => {
     const t = ev.target as HTMLElement | null;
     if (t === null) {
@@ -1006,10 +1006,9 @@ export function mount(container: HTMLElement): DrawerHandle {
         // openDetail('essential', ...) keys by the COVERAGE LAYOUT KEY ('Calcium', 'Vitamin A
         // (Retinol / beta-carotene)'), NOT the corpus slug ('calcium') — getEssentialByLayoutKey
         // is an exact map lookup, so a slug silently missed and renderEssentialPage fell to its
-        // "no sealed page record" fallback: an empty page titled with the raw slug. That is what
-        // Ask-Wallach's "Learn More" did for every essential from the day it shipped (measured
-        // 2026-07-23; the render probe only ever covered the condition + topic paths). Resolve
-        // here so EVERY caller — Learn More, related pills, Coverage cards — is fixed at once.
+        // "no sealed page record" fallback: an empty page titled with the raw slug. Resolve here
+        // so EVERY caller — Ask-Wallach "Learn More", related pills, Coverage cards — is fixed at
+        // once. A render probe that covers only the condition + topic paths cannot catch this.
         const lk = getEssentialBySlug(slug)?.layout_key;
         openDetail('essential', lk ?? slug);
         return;

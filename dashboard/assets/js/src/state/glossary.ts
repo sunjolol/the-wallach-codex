@@ -33,8 +33,8 @@ function escapeRegExp(s: string): string {
 }
 
 /** Canonical form of a glossary key / matched surface form: lower-cased, curly apostrophes
- *  folded to a straight ', and every whitespace-or-hyphen run collapsed to ONE space (Luneth
- *  2026-07-22). Stored keys AND lookup keys pass through this, so "Age-Beater", "Age  Beater"
+ *  folded to a straight ', and every whitespace-or-hyphen run collapsed to ONE space.
+ *  Stored keys AND lookup keys pass through this, so "Age-Beater", "Age  Beater"
  *  and "age beater" — and both apostrophe forms of an eponym — all resolve to one entry. */
 function normKey(s: string): string {
   return s.toLowerCase().replace(/[‘’]/g, '\'').replace(/[\s-]+/g, ' ').trim();
@@ -66,9 +66,9 @@ function index(): GlossIndex {
     // Leading \b anchors the start; a trailing (?!\w), not \b, ends the match, so
     // symbol-terminated unit keys ("mg%", "g%") also fire. For a word-ending key this is
     // identical to \b; but after "%" a \b would backwards demand a following word char, so
-    // a "%"-key could otherwise never match. memory: term-gloss-standard (units layer).
+    // a "%"-key could otherwise never match.
     // keyToPattern makes each key separator-insensitive so "age beater" also matches the
-    // hyphenated "Age-Beater" — the live bug where the full answer's dashed form never glossed.
+    // hyphenated "Age-Beater"; otherwise a hyphenated form in running text never glosses.
     const re = keys.length > 0
       ? new RegExp(`\\b(${keys.map(keyToPattern).join('|')})(?!\\w)`, 'gi')
       : null;

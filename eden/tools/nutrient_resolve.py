@@ -16,9 +16,10 @@ TWO layers, backed by the hand-curated registry `eden/catalog/nutrients.json` (C
     aggregation + search group correctly. The products pillar stays byte-faithful to the labels;
     canonicalization lives HERE (registry layer), never lossily in-pillar.
 
-Design note (2026-07-08): all 91 Wallach targets are currently honest gaps, so the
-"% toward target" verdict awaits corpus dose mining; this resolver already enables
-composition aggregation, cost-per-nutrient, and potency comparison.
+Design note: 37 of the 91 canon entries now carry a mined numeric Wallach target
+(essentials-targets-data.json), so the "% toward target" verdict is live for those and an
+honest gap for the rest. This resolver supplies IDENTITY only -- never an amount -- which is
+what composition aggregation, cost-per-nutrient and potency comparison need in both cases.
 
 CLI: `python nutrient_resolve.py report`  (validates every substance + known values +
 zero remaining collisions). Exit 0 = all resolved/classified + all assertions pass.
@@ -48,14 +49,14 @@ def canonical_unit(slug):
     if c == "amino_acid" or c == "fatty_acid": return "mg"
     # mcg-dosed vitamins keyed by SLUG (A, D, K, B12, folate/B9, biotin); the rest are mg.
     # (Earlier this dict was keyed by display_name -- retinol/cholecalciferol/... -- which never
-    #  matched the vitamin-* slugs, so it silently returned mg for all of them; fixed 2026-07-08.)
+    #  matched the vitamin-* slugs, so it silently returned mg for all of them.)
     if c == "vitamin": return "mcg" if slug in {
         "vitamin-a", "vitamin-d", "vitamin-k", "vitamin-b12", "vitamin-b9", "biotin"} else "mg"
     if c == "mineral": return "mcg" if slug in TRACE_MCG else "mg"
     return None
 
 # substance-specific IU -> mass. Standard USP/pharmacological factors -- these convert a
-# product's OWN label amount between units (faithful, like mg<->g), NEVER a Wallach amount (SS00.A):
+# product's OWN label amount between units (faithful, like mg<->g), NEVER a Wallach amount (§00.A):
 #   vitamin A: 1 IU = 0.3 mcg retinol (RAE basis; supplements list retinol/RAE)
 #   vitamin D: 1 IU = 0.025 mcg  (40 IU = 1 mcg)
 #   vitamin E: 1 IU = 0.67 mg    (natural d-alpha-tocopherol; dl-alpha synthetic would be 0.9)
@@ -66,7 +67,7 @@ def to_canonical(amount, unit, slug):
     """Convert a delivered (amount, unit) into the essential's canonical unit so a product's
     contribution is summable. Returns (amount_in_canonical, canonical_unit), or None when the
     value is not a mass we can aggregate (CFU/potency, or IU with no substance factor). IU->mass
-    uses the standard factor above -- a faithful unit change, never a new amount (SS00.A)."""
+    uses the standard factor above -- a faithful unit change, never a new amount (§00.A)."""
     if amount is None or slug is None:
         return None
     if not isinstance(amount, (int, float)):
@@ -94,7 +95,7 @@ STEREO_PREFIXES = ("l-", "d-", "dl-")
 # Fatty-acid family resolution: (essential slug, regex source). Hoisted to a module
 # constant so BOTH fa_of() AND the runtime-resolver embed (nutrient_resolver_embed.py)
 # read ONE source; the TS coverage matcher (core/nutrient-resolver.ts) mirrors these
-# exact patterns and the parity gate proves TS == this Python resolver (A2 2026-07-08).
+# exact patterns and the parity gate proves TS == this Python resolver.
 FA_PATTERNS = [
     ("omega-3", r'omega\s*3|alpha-linolenic|\bala\b|eicosapentaenoic|\bepa\b|docosahexaenoic|\bdha\b'),
     ("omega-6", r'omega\s*6|linoleic|\bla\b|gamma-linolenic|\bgla\b|arachidonic'),
@@ -104,7 +105,7 @@ FA_PATTERNS = [
 # an explicit "Omega-9" label is the omega-9/oleic (OA) slot, not omega-6 just because an
 # "arachidonic" appears; and hyphenated "Omega-3 Fatty Acids" (which FA_PATTERNS' omega\s*3
 # misses) resolves. Only 3/6/9 are canon families. Emitted to the artifact + mirrored in the
-# TS resolver + the parity gate (Luneth 2026-07-08).
+# TS resolver + the parity gate.
 OMEGA_DIGIT = re.compile(r"omega[-\s]*([369])")
 
 def strip_stereo(n):

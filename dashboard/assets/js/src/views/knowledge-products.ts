@@ -4,7 +4,7 @@
  *
  * The Products surface of the Knowledge drawer: the Products-tab list (ALL
  * products, each clickable), the full product detail panel (renderProductDeep),
- * and the essentials-deep-dive "FOUND IN YGY VAULT" chips (productsForEssential).
+ * and the essentials-deep-dive "BEST SOURCES · YGY VAULT" block (renderEssentialSources).
  * Split out of views/knowledge.ts the way knowledge-corpus.ts is — the drawer
  * shell/tabs live there, product rendering here. Layer `views`: imports only
  * state/ + core/ (+ the generated data artifact).
@@ -163,8 +163,8 @@ function essentialsSupplied(p: ProductDetail): number {
 }
 
 /**
- * One product card — the "ghost number" design shared with the Conditions tab (Luneth-approved
- * 2026-07-22), adapted for products: the faded number is essentials-supplied (of 90) in the
+ * One product card — the "ghost number" design shared with the Conditions tab, adapted for
+ * products: the faded number is essentials-supplied (of 90) in the
  * delivery-form colour, the chip is the FORM, the foot carries wholesale price + servings. A
  * targeted formula (supplies none of the 90) drops the ghost and reads "targeted formula" so the
  * grid never shows a sad "0". Click opens the full label panel (renderProductDeep).
@@ -216,13 +216,12 @@ export function renderProductsTab(selectedProduct: string | null, fromProductsTa
 
 // ─── Product detail panel (kd-ep entity page, delivery-form colour-coded) ────
 //
-// Rebuilt 2026-07-22 to the CONDITION-detail vocabulary (kd-ep-hero / seclabel /
-// lede / pill / back) so a product opens as a full entity page with breadcrumbs —
-// the demo's product-detail LAYOUT, restyled to the current type system and colour-
-// coded by DELIVERY FORM the way the condition detail is coded by body-system
-// category: the icon, the title, the card frame, and the scrollbar all take --form.
-// "At a glance" is a high-impact Unbounded hero; the Supplement Facts table ports
-// the demo faithfully (3-col label grid, macros, collapsible blends, other ingredients).
+// A product opens as a full entity page with breadcrumbs, using the CONDITION-detail
+// vocabulary (kd-ep-hero / seclabel / lede / pill / back) but colour-coded by DELIVERY
+// FORM the way the condition detail is coded by body-system category: the icon, the
+// title, the card frame, and the scrollbar all take --form. "At a glance" is a
+// high-impact Unbounded hero; the Supplement Facts table is a 3-col label grid with
+// macros, collapsible blends, and other ingredients.
 
 /**
  * Delivery-form → accent hex. The JS source of truth for a product's --form colour.
@@ -368,7 +367,7 @@ function pfBlend(b: ProductBlend): string {
   const body = ings.length > 0
     ? ings.map((i) => {
         // The label detail lives in STRUCTURED fields (form / standardization / part / latin), so show
-        // them all -- else "Grape seed extract" prints as "Grape seed" (Luneth 2026-07-24). Normalized
+        // them all -- else "Grape seed extract" prints as "Grape seed". Normalized
         // formatting (not byte-exact label wording); latin stays italic, the rest are faint qualifiers.
         const parts = [escHTML(i.name)];
         if (i.form !== undefined && i.form.length > 0) {
@@ -563,8 +562,8 @@ export interface RankedSourceRow extends RankedSource {
 
 /**
  * Numeric Wallach maintenance amount from a target's (unknown-typed) blob, or null.
- * Today every target is an honest gap (no `low`), so this returns null and the ranker
- * uses the amount-potency proxy; the moment dose-mining fills a `low`, adequacy lights up.
+ * Many essentials still have no mined `low`; those return null and the ranker falls back to the
+ * amount-potency proxy. Where a `low` exists, real enough-vs-target adequacy scoring is used.
  */
 function targetLowOf(target: unknown): number | null {
   if (target !== null && typeof target === 'object' && 'low' in target) {

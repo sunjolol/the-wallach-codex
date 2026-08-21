@@ -1,43 +1,35 @@
 /**
- * main.ts — dashboard entry point
+ * main.ts — the dashboard entry point.
  * ═══════════════════════════════════════════════════════════════════════════
+ * The single module esbuild bundles into assets/js/dist/main.js, and the only
+ * script dashboard.html loads. It wires the app shell: mounts each workspace
+ * view into its slot, drives the rail and the two drawers, opens the profile
+ * overlay, and paints the identity chip.
  *
- * Wires the shell. Mounts views. Sets up rail navigation.
+ * installRecomputeTrigger() runs once at boot so Coverage stays in sync with
+ * every Regimen mutation.
  *
- * Rail navigation mounts each workspace view into its own slot.
- *   - state/coverage.installRecomputeTrigger() runs once at boot so coverage
- *     stays in sync with regimen mutations.
+ * Note on module side effects: state/scanner.ts and state/ocr.ts install their
+ * window.lcScan* bridges at module load. They are NOT imported here — they
+ * reach the bundle through views/scanner.ts, which imports them directly.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-import * as eden from './core/eden.js';
 import * as events from './core/events.js';
-import * as sourceRule from './core/source-rule.js';
-import * as storage from './core/storage.js';
 
 import * as corpusState from './state/corpus.js';
 import { installRecomputeTrigger } from './state/coverage.js';
-import * as ocrState from './state/ocr.js';
 import * as profileState from './state/profile.js';
 import * as regimenState from './state/regimen.js';
-import * as scannerState from './state/scanner.js';
 
 import * as coverageView from './views/coverage.js';
 import * as knowledgeView from './views/knowledge.js';
-import * as paletteView from './views/palette.js';
 import * as profileView from './views/profile.js';
 import * as regimenView from './views/regimen.js';
 import * as scannerView from './views/scanner.js';
 import * as searchView from './views/search.js';
 import { initGlossTooltip } from './views/gloss-tooltip.js';
 import * as welcomeView from './views/welcome.js';
-
-/*
- * Reference all unused imports so they're held by the bundler (scaffolds
- * still throw on call — that's intended until their rounds land).
- */
-const _refs = { storage, events, eden, sourceRule, regimenState, scannerState, ocrState, regimenView, scannerView, knowledgeView, paletteView, profileView };
-void _refs;
 
 // ─── Rail navigation state ────────────────────────────────────────────────
 
@@ -50,7 +42,7 @@ interface MountedView {
 /** Tracks each workspace's mount handle for unmount on switch-away. */
 const mounted: Partial<Record<WorkspaceTarget, MountedView>> = {};
 
-/** NAV-02: per-workspace scrollTop — the three workspaces share one .app-workspace scroll
+/** Per-workspace scrollTop — the three workspaces share one .app-workspace scroll
  *  container, so switching views and back would otherwise dump you at the top. */
 const scrollByView: Partial<Record<WorkspaceTarget, number>> = {};
 let currentWorkspace: WorkspaceTarget | null = null;
@@ -72,8 +64,8 @@ function activateRailItem(target: WorkspaceTarget): void {
 
 /**
  * Per-workspace topbar identity (name + deck). The shell markup ships the Coverage
- * strings as the initial paint; every navigation repaints them here so Regimen and
- * Scanner no longer inherit the Coverage title/deck (each demo carries its own).
+ * strings as the initial paint; every navigation repaints them here, so Regimen and
+ * Scanner do not inherit the Coverage title/deck.
  */
 const WORKSPACE_HEADERS: Partial<Record<WorkspaceTarget, { name: string; deck: string }>> = {
   coverage: { name: 'Coverage', deck: 'Every essential Wallach named, measured against what you take.' },
@@ -96,7 +88,7 @@ function setTopbarHeader(target: WorkspaceTarget): void {
   }
 }
 
-// ─── Drawers (Knowledge · K) ──────────────────────────────
+// ─── Overlay drawers (Search · S, Knowledge · K) ───────────
 
 /** The structural subset of each view's DrawerHandle that the shell drives. */
 interface DrawerHandle {
@@ -139,7 +131,7 @@ function navigateTo(target: WorkspaceTarget): void {
   setTopbarHeader(target);
   events.emit('rail:navigate', { target });
 
-  // NAV-02: remember where you were in the outgoing view before hiding it.
+  // Remember where you were in the outgoing view before hiding it.
   const ws = document.querySelector<HTMLElement>('.app-workspace');
   if (ws !== null && currentWorkspace !== null && currentWorkspace !== target) {
     scrollByView[currentWorkspace] = ws.scrollTop;
@@ -212,7 +204,7 @@ function wireRail(): void {
   }
 }
 
-// ─── Drawer mounting + wiring (Knowledge · K) ──────────────────────────
+// ─── Drawer mounting + wiring (Search · S, Knowledge · K) ──────────────
 
 /** Mount every overlay drawer into its host once at boot. */
 function mountDrawers(): void {
@@ -255,7 +247,8 @@ function toggleDrawer(target: WorkspaceTarget): void {
   syncDrawerRail();
 }
 
-/** Esc closes any open drawer; a bare drawer key (K) toggles it. */
+/** Global keys: Esc closes any open drawer, bare 1/2/3 jump to a workspace, and a
+ *  bare drawer key (S/K) toggles that drawer. */
 function wireDrawerKeys(): void {
   document.addEventListener('keydown', (ev) => {
     if (ev.key === 'Escape') {
@@ -268,16 +261,16 @@ function wireDrawerKeys(): void {
     if (typing || ev.metaKey || ev.ctrlKey || ev.altKey) {
       return;
     }
-    // NAV-04: a blocking overlay (arrival veil / profile console) owns the screen — a bare-key
+    // A blocking overlay (arrival veil / profile console) owns the screen — a bare-key
     // drawer shortcut must not toggle a drawer behind it and leave it open once the modal closes.
     const modalOpen = (document.getElementById('welcomeHost')?.children.length ?? 0) > 0
       || document.querySelector('.pf-overlay') !== null;
     if (modalOpen) {
       return;
     }
-    // Bare digit keys 1/2/3 jump to the three workspaces (matches the relabelled rail
-    // chips). The mockup's ⌘1-3 never fired: every modifier is rejected just above and
-    // Cmd/Ctrl+digit is browser-reserved — so these are bare single keys, exactly like S/K.
+    // Bare digit keys 1/2/3 jump to the three workspaces, matching the rail chips.
+    // Deliberately unmodified: the guard just above rejects every modifier, and
+    // Cmd/Ctrl+digit is browser-reserved anyway — so these behave exactly like S/K.
     const workspaceByDigit: Partial<Record<string, WorkspaceTarget>> = { 1: 'coverage', 2: 'regimen', 3: 'scanner' };
     const digitTarget = workspaceByDigit[ev.key];
     if (digitTarget !== undefined) {
@@ -430,9 +423,9 @@ function bootstrap(): void {
     console.warn('[main] installRecomputeTrigger threw:', e);
   }
 
-  // Install the §31 bridges (window.* chokepoints + slot ops) so DOM handlers
-  // and headless probes can reach them. This was dead code until P3 — defined in
-  // state/regimen.ts but never called — so window.addSlot etc. were undefined.
+  // Publish the regimen chokepoints (the window.* slot ops) so inline DOM handlers and
+  // headless probes can reach them. state/regimen.ts only DEFINES them; without this
+  // call window.addSlot and friends are undefined.
   try {
     regimenState.installBridges();
   }
@@ -441,7 +434,7 @@ function bootstrap(): void {
   }
 
   wireRail();
-  // Cross-workspace jumps dispatched by views (coverage -> regimen, regimen -> scanner).
+  // Cross-workspace jumps dispatched by views via the `wallach:navigate` CustomEvent.
   window.addEventListener('wallach:navigate', (ev) => {
     const detail = (ev as CustomEvent<{ to?: string }>).detail;
     const to = detail?.to;
@@ -462,8 +455,8 @@ function bootstrap(): void {
   initGlossTooltip();
 
   /*
-   * Default landing: Coverage (the new view). Defer one tick so legacy JS
-   * finishes its own DOMContentLoaded work first.
+   * Default landing: Coverage. Deferred one tick so every listener registered above is
+   * installed before the first view mounts and starts emitting.
    */
   setTimeout(() => navigateTo('coverage'), 0);
 }
@@ -472,22 +465,21 @@ function bootstrap(): void {
 /**
  * Paint the rail's identity slot from persisted state.
  *
- * The shell used to hardcode the string "Luneth" (and the avatar "L") straight into
- * dashboard.html. That is a value living in the markup where nothing can reach it: it
- * cannot reflect a user's choice, it cannot be re-rendered, and it is wrong for every
- * user who is not Luneth. Luneth 2026-07-15: the browsing default is "You" on the profile
- * tab, "Codex" in the top-left brand slot -- both derived in ONE place
- * (state/profile.ts::displayName) so the two slots cannot drift apart.
+ * No identity string lives in dashboard.html. A name hardcoded into markup cannot
+ * reflect the user's choice, cannot be re-rendered, and is wrong for everyone who is
+ * not the person who typed it. The browsing defaults are "You" on the profile slot and
+ * "Codex" in the brand slot, both derived in ONE place (state/profile.ts::displayName)
+ * so the two slots cannot drift apart.
  *
  * Subscribes to `profile:changed` so a later name change repaints without the caller
- * having to remember to (§31: the cascade is the discipline).
+ * having to remember to — the cascade is the discipline.
  */
 function wireProfileIdentity(): void {
   const paint = (): void => {
     const p = profileState.loadUserProfile();
     document.title = profileState.displayTitle(p);
     // Appearance rides on <html>: theme + accent drive theme.css APP-WIDE, applied from this
-    // one place so the console, the rail, and every surface flip together (§31 cascade).
+    // one place so the console, the rail, and every surface flip together.
     document.documentElement.dataset['theme'] = profileState.themeOf(p);
     document.documentElement.dataset['accent'] = profileState.accentOf(p);
     const nameEl = document.getElementById('railProfileName');
@@ -518,10 +510,8 @@ function wireProfileIdentity(): void {
       subEl.textContent = `Corpus · ${corpusState.claimCount().toLocaleString()} entries`;
     }
     if (brandEl !== null) {
-      // The BRAND slot (2026-07-16). It hardcoded the literal "LUNETH" in dashboard.html
-      // — a value living in markup where nothing can reach it, and wrong for every user who
-      // is not Luneth. displayName's 'brand' slot existed for exactly this and had no
-      // caller; both slots derive from ONE place so they cannot drift apart.
+      // The brand slot. Derived, never a literal in markup — this and the profile slot
+      // come from ONE function (state/profile.ts::displayName) so they cannot drift apart.
       brandEl.textContent = profileState.displayName(p, 'brand');
     }
   };
@@ -531,16 +521,16 @@ function wireProfileIdentity(): void {
 
 /**
  * The arrival veil — mounted ONLY when the user has never been asked (state/profile.ts's
- * tri-state). Also re-openable as a goal picker: the Coverage strip's "+ ADD" fires
- * `wallach:open-welcome`, because a button labelled "+ ADD" that adds nothing is the
- * PROFILE lesson inverted — a label is a promise.
+ * tri-state). Also re-openable as a goal picker: the "+ ADD" controls in the Coverage
+ * strip and the Regimen view both fire `wallach:open-welcome`, because a button labelled
+ * "+ ADD" that adds nothing breaks the promise its label makes.
  */
 function wireWelcome(): void {
   const host = document.getElementById('welcomeHost');
   if (host === null) {
     return;
   }
-  // NO onDone re-render callback, deliberately: the veil's exit writes through the §31
+  // NO onDone re-render callback, deliberately: the veil's exit writes through the
   // chokepoints (saveUserProfile → 'profile:changed', saveRgUserGoals → 'regimen:changed'),
   // and both surfaces already subscribe. The cascade IS the discipline — a manual re-render
   // here would be a second, ad-hoc path doing what the chokepoint does for free, and it

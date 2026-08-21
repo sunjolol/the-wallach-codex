@@ -2,11 +2,12 @@
 # The compiled dist/main.js IS the runtime contract and IS committed.
 node_modules/
 
-# package-lock.json is deliberately COMMITTED (2026-08-03). It used to be ignored as
-# "toolchain only", but five runtime design libraries (motion, animejs, roughjs, d3,
-# lottie-web) now have exact versions the offline-forever guarantee depends on. Without
-# the lockfile a future `npm install` resolves different versions and the rebuild
-# silently diverges from what was verified.
+# package-lock.json is deliberately COMMITTED. It used to be ignored as "toolchain
+# only", but the whole toolchain now needs exact, reproducible versions: without the
+# lockfile a future `npm install` resolves different ones and the rebuild silently
+# diverges from what was verified. The five design libraries (motion, animejs, roughjs,
+# d3, lottie-web) are pinned here purely to fix the versions the checked-in browser
+# builds were cut from -- no source file imports them, so they never reach the bundle.
 
 # IDE noise
 .vscode/

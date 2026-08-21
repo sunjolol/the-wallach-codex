@@ -3,12 +3,10 @@
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Validates dashboard/assets/data/scanner-corpus-data.json — the Wallach
- * doctrine corpus the Scanner's verdict engine scores against. Migrated VERBATIM
- * (Chunk 6b) from the pre-TS inline dashboard (DIETARY_BASELINE · GOAL_KEYWORDS ·
- * NUTRIENT_TO_GOAL_MAP · GOAL_DISPLAY_NAMES · ANTI_LIST · ANTI_LIST_NOTES ·
- * HARD_REJECT_TERMS · SERIOUS_ANTI). §00.A: every number + every "why" citation
- * is the legacy value unchanged — this schema narrows the shape, it does not
- * author the data (Luneth owns the corpus).
+ * doctrine corpus the Scanner's verdict engine scores against — dietary baselines, goal
+ * keywords, the nutrient-to-goal map, and the anti-list with its notes and hard/serious
+ * tiers. §00.A: every number and every "why" citation is authored in the data file; this
+ * schema narrows the shape, it does not author the data.
  *
  * This is the NEW-data pattern (esbuild JSON import + Schema.parse at load),
  * same as coverage-layout-data.json.

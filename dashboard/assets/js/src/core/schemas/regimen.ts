@@ -1,5 +1,5 @@
 /**
- * core/schemas/regimen.ts — Zod schemas for §31 chokepoint LS keys
+ * core/schemas/regimen.ts — Zod schemas for the regimen localStorage keys
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Every regimen LS key has a Zod schema here. Reads go through `getValidated`
@@ -10,11 +10,11 @@
  * static types — `z.infer<typeof RegimenSchema>` gives you the TS type for
  * free, no parallel interface definitions to drift.
  *
- * P3 (2026-07-16) added the SLOT DOCUMENT (`SlotDocSchema`, LS key rgSlots_v1):
- * the single-key, single-writer home for the 1–4 named regimen slots, the
- * active-slot pointer, and the trash ring buffer. The legacy per-key schemas
- * below are KEPT — the P3 migration reads them once to build the Default slot,
- * and they remain the shape a rollback re-reads. See state/regimen.ts.
+ * The SLOT DOCUMENT (`SlotDocSchema`, LS key rgSlots_v1) is the single-key,
+ * single-writer home for the 1–4 named regimen slots, the active-slot pointer,
+ * and the trash ring buffers. The legacy per-key schemas below are KEPT — the
+ * one-time migration reads them once to build the Default slot, and they remain
+ * the shape a rollback re-reads. See state/regimen.ts.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -33,7 +33,7 @@ export const RegimenItemSchema = z.object({
   id: z.number(),
   label: RegimenLabelSchema,
   addedDate: z.string(), // ISO YYYY-MM-DD
-  provenance: z.string(), // user_scanned | user_manual | wishlist_promoted (USER). Gated by scanner_user_items_marked (§5.4 wall). The wallach_hbsp_default token retired with the base-seed removal (2026-07-14) — nothing mints it now.
+  provenance: z.string(), // user_scanned | user_manual | wishlist_promoted (USER). Gated by scanner_user_items_marked. The wallach_hbsp_default token retired with the base-seed removal — nothing mints it now.
 });
 
 /** The full regimen as stored in 'lcRegimen_v1'. */
@@ -53,7 +53,7 @@ export const RgRemovedSchema = z.array(z.number());
 /** User-selected goal keys as stored in 'rgUserGoals_v1'. */
 export const RgUserGoalsSchema = z.array(z.string());
 
-// ─── Slot document (P3, LS key 'rgSlots_v1') ──────────────────────────────────
+// ─── Slot document (LS key 'rgSlots_v1') ──────────────────────────────────────
 
 /**
  * Hard ceiling for a slot's display name.
@@ -66,11 +66,11 @@ export const RgUserGoalsSchema = z.array(z.string());
  * defence against script injection; this is the second layer — a bound with a
  * rejection PATH, never a silent truncation (engineering-doctrine #1, #8).
  *
- * NOTE: intentionally mirrors core/schemas/profile.ts's name safety rather than
- * importing it — the rename UI is out of P3 scope (the Regimen view burns at §7),
- * so P3 does not yet earn a shared text-safety module. If §7 grows a second
- * free-text surface, consolidate the two into one core primitive then. The
- * near-duplication is flagged here so it is fixed by intent, not discovered by drift.
+ * NOTE: this duplicates core/schemas/profile.ts's name safety rather than importing
+ * it. Both surfaces are live now (the profile name and the slot rename UI), so the
+ * two SHOULD be consolidated into one core text-safety primitive; until they are,
+ * any change to one MUST be mirrored in the other. Flagged here so the duplication
+ * is fixed by intent, not discovered by drift.
  */
 export const SLOT_NAME_MAX = 40;
 
@@ -97,7 +97,7 @@ export const SlotNameSchema = z
     message: 'A slot name cannot contain control characters.',
   });
 
-// ─── Slot colour palette (P4 — per-slot personal colour) ──────────────────────
+// ─── Slot colour palette ──────────────────────────────────────────────────────
 
 /**
  * Shape of dashboard/assets/data/slot-colours-data.json — the 14-hue slot palette
@@ -115,15 +115,16 @@ export const SlotColoursDataSchema = z.object({
 // fails the document → never triggers an auto-heal wipe). Palette membership is
 // enforced at the write boundary by the `setSlotColour` op, and the render falls
 // back to the default for anything off-palette. A refine/catch/enum here would
-// diverge the field's input vs output types (the default-divergence goals.ts
-// documents) and break SlotDoc assignability.
+// diverge the field's input vs output types (a z.default()/z.catch() makes the parsed
+// OUTPUT type non-optional while the INPUT type stays optional) and break SlotDoc
+// assignability.
 
 /**
- * One regimen slot — the §3 state model. `items` + `overrides` are the SAME
+ * One regimen slot. `items` + `overrides` are the SAME
  * shapes the legacy per-key stores used, reused verbatim so the coverage
  * consumers (which read only the return TYPES of the loaders) are untouched.
  *
- * P4 fields `colour` + `goals` are OPTIONAL: a pre-P4 stored slot lacks them and
+ * `colour` + `goals` are OPTIONAL: a slot stored before they shipped lacks them and
  * must still validate (else auto-heal would wipe the user's regimen). The state
  * layer backfills them in place on first read (colour → a palette hue, goals →
  * the legacy global goals) so downstream reads see them populated.
@@ -135,14 +136,14 @@ export const SlotSchema = z.object({
   overrides: OverridesMapSchema,
   createdAt: z.string(), // ISO YYYY-MM-DD
   editedAt: z.string(), // ISO YYYY-MM-DD
-  colour: z.string().optional(), // P4 — personal hue (palette enforced by setSlotColour, not here); absent on pre-P4 docs
-  goals: z.array(z.string()).optional(), // P4 — per-slot steering goals; absent on pre-P4 docs
+  colour: z.string().optional(), // personal hue (palette enforced by setSlotColour, not here); absent on older docs
+  goals: z.array(z.string()).optional(), // per-slot steering goals; absent on older docs
 });
 
 /**
  * A trashed regimen ITEM (individually removed from a slot). Deleted whole SAVES are a
  * SEPARATE bin (SlotTrashEntrySchema below); an item removed on its own restores to its
- * origin save if it still exists, else the active save (P5 recycle bin).
+ * origin save if it still exists, else the active save (the recycle bin).
  */
 export const TrashEntrySchema = z.object({
   item: RegimenItemSchema,
@@ -152,7 +153,7 @@ export const TrashEntrySchema = z.object({
 });
 
 /**
- * A trashed whole SAVE (P5 recycle bin). deleteSlot snapshots the ENTIRE slot — items,
+ * A trashed whole SAVE (the recycle bin). deleteSlot snapshots the ENTIRE slot — items,
  * overrides, colour, goals, timestamps — so a restore reproduces the exact pre-delete
  * state, not just the loose items. Capped at MAX_SLOT_TRASH (7), newest-first.
  */
@@ -205,7 +206,7 @@ export type Slot = z.infer<typeof SlotSchema>;
 export type SlotTrashEntry = z.infer<typeof SlotTrashEntrySchema>;
 export type SlotDoc = z.infer<typeof SlotDocSchema>;
 
-// ─── Per-slot export/import envelope (§7 — the untrusted-JSON import surface) ──
+// ─── Per-slot export/import envelope (the untrusted-JSON import surface) ───────
 /** Marks an exported single save so import can reject foreign / whole-backup JSON. */
 export const REGIMEN_SLOT_EXPORT_KIND = 'regimen-slot';
 /**

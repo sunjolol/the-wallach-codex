@@ -1,5 +1,5 @@
 {
-  "_purpose": "HAND-AUTHORED skeleton for the Coverage periodic table (crack #1 fix, 2026-07-06). Holds ONLY the editorial arrangement -- section/subsection chrome, per-tile codes/letters/abbrs/hints, the goals block -- plus each tile's `key` (a reference to a canon layout_key). The canon-owned fields (name; mineral sym/num) are NOT here; they are filled from essentials-canon by eden/tools/coverage_layout_derive.py, so the periodic table's canonical identity can never drift from the pillar. Edit THIS for layout/chrome; names+symbols come from the canon. Output: coverage-layout-data.json (generated).",
+  "_purpose": "HAND-AUTHORED skeleton for the Coverage periodic table. Holds ONLY the editorial arrangement -- section/subsection chrome, per-tile codes/letters/abbrs/hints, the goals block -- plus each tile's `key` (a reference to a canon layout_key). The canon-owned fields (name; mineral sym/num) are NOT here; they are filled from essentials-canon by eden/tools/coverage_layout_derive.py, so the periodic table's canonical identity can never drift from the pillar. Edit THIS for layout/chrome; names+symbols come from the canon. Output: coverage-layout-data.json (generated).",
   "sections": [
     {
       "num": "01",

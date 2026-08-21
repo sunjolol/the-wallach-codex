@@ -1,6 +1,6 @@
 {
   "book": "iaiyh",
-  "_doc": "Source-purification spec for It's All In Your Head (2020). Audited 2026-07-02 with Luneth. Policy: correct all typos uniformly (incl. verbatims); OCR + author typos both fixed; keep book's hyphenation; whole-book pristine incl. bibliography.",
+  "_doc": "Source-purification spec for It's All In Your Head (2020). Policy: correct all typos uniformly (incl. verbatims); OCR + author typos both fixed; keep book's hyphenation; whole-book pristine incl. bibliography.",
   "strip_running_header": {
     "text": "IT'S ALL IN YOUR HEAD!: HOW THE 12 CRANIAL NERVES IN YOUR HEAD EFFECT YOUR BODY'S HEALTH AND HOW TO FIX IT... WITHOUT A DOCTOR!",
     "keep_lines": [8, 13]

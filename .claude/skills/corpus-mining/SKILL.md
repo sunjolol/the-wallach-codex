@@ -1,6 +1,6 @@
 ---
 name: corpus-mining
-description: Read before mining a claim out of a Wallach book, enriching an entity for search, correcting a book source .txt, or sealing the corpus. Covers on-demand mining, the claim format Luneth reviews, the three homes a claim can live in, and the Ask-Wallach enrichment recipe.
+description: Read before mining a claim out of a Wallach book, enriching an entity for search, correcting a book source .txt, or sealing the corpus. Covers on-demand mining, the claim format the user reviews, the three homes a claim can live in, and the Ask-Wallach enrichment recipe.
 ---
 
 # Mining and the search corpus
@@ -10,7 +10,7 @@ Mining is **on demand**, per element or per condition -- never a front-to-back p
 still *proven*: `eden/tools/mining-coverage.json` plus `mining_coverage_accounted` is the denominator,
 and a book flips to complete only when every page is claim-bearing or reviewed-empty with a reason.
 
-The books are peppered with errors, so **Claude proposes, Luneth ratifies**. Read the
+The books are peppered with errors, so **Claude proposes, the user ratifies**. Read the
 `wallach-source-rule` skill first -- never guess, never guess silently, and `corpus_seal` is his act.
 
 ## ★ The claim review format -- show it in EXACTLY this shape
@@ -35,7 +35,7 @@ summary, or a truncated preview, you are about to repeat the most re-sent correc
 project's history.
 
 ## The input loop -- mine and purify in one pass
-1. Luneth pastes a section's PDF/OCR text.
+1. The user pastes a section's PDF/OCR text.
 2. Diff it against the sealed source `.txt`. The page image is the arbiter for numbers.
 3. Correct the `.txt` where it differs -> `corpus_resnap.py --write` -> re-seal. Purify as you mine,
    never as a later sweep.

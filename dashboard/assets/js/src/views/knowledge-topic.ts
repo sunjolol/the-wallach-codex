@@ -1,16 +1,15 @@
 /**
- * views/knowledge-topic.ts — the Explore topic/entity page (Phase H2)
+ * views/knowledge-topic.ts — the Explore topic/entity page
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * A faceted knowledge page for a NON-tier-1 entity (topic / concept / element /
- * substance / person) — the pages the Explore tab opens. A pristine re-creation of
- * the signed-off "topic page" mockup (2026-07-12): a hero (kicker + name + lede +
+ * substance / person) — the pages the Explore tab opens: a hero (kicker + name + lede +
  * related pills) over the SHARED faceted claim cards. The card renderer is reused
  * from views/entity-page.ts (one source of truth, already gated) so an Explore page
  * and an essential/condition page render Wallach's Q&A identically.
  *
- * PURE PROJECTION (R1): no canonical value or per-entity literal — every field
- * derives from the search index via state/search.ts. Prose is contained (R4): every
+ * PURE PROJECTION: no canonical value or per-entity literal — every field
+ * derives from the search index via state/search.ts. Prose is contained: every
  * visible string comes from the view-copy store via ui()/the facet label; entity
  * NAMES + Wallach's words are data (escaped), not prose.
  *
@@ -31,20 +30,15 @@ function escHTML(s: unknown): string {
 }
 
 /**
- * One related pill, routed to whichever page actually owns the slug (Luneth 2026-07-23 — the
- * "fill in the unclickable related bubbles" pass). Until now ONLY Explore-type entities were
- * clickable and every nutrient/condition pill rendered static, on the note that cross-routing was
- * "a later refinement"; those pages exist, so all three kinds navigate now:
+ * One related pill, routed to whichever page actually owns the slug:
  *   nutrient  → the essential detail page, by its COVERAGE LAYOUT KEY (not the slug — see the
  *               openEntity comment in knowledge.ts for why that distinction is load-bearing)
  *   condition → the condition detail page, by slug
  *   otherwise → the Explore topic overlay, by slug
- * A pill still renders STATIC when its target genuinely does not resolve — an unregistered slug,
- * or a nutrient/condition the corpus has no entry for. That is deliberate: a dead button that
- * looks live is worse than an honest static chip. The unroutable remainder is audited
- * out-of-band (search-index.json x corpus-embed.json) so a dead pill is a REPORTED gap:
- * 8 of 272 as of 2026-07-23 — digestion, epigenetics, margarine, ph, poultry, silicon,
- * villi, wheat — each a topic that simply has no page yet, not a broken link.
+ * A pill renders STATIC when its target genuinely does not resolve — an unregistered slug, or a
+ * nutrient/condition the corpus has no entry for. That is deliberate: a dead button that looks
+ * live is worse than an honest static chip. The unroutable remainder is audited out-of-band
+ * (search-index.json x corpus-embed.json) so a dead pill is a REPORTED gap, not a silent one.
  */
 function relPill(slug: string): string {
   const t = relTarget(slug);
@@ -57,19 +51,18 @@ function relPill(slug: string): string {
 /**
  * Resolve a related slug to the page that actually owns it, or null if nothing does.
  *
- * TWO REGISTRIES, and the pill must consult BOTH. The search entity registry holds 73 enriched
- * entities; the corpus holds 91 essentials + 502 conditions. Routing on the search registry alone
- * (the first cut of this fix) left 46 distinct pills dead — `selenium`, `zinc`, `vitamin-d`,
- * `cancer`, `osteoporosis`, `arthritis` and friends — every one of which HAS a page, just not a
- * registry entry. Slugs match the corpus RAW, underscores and all (`celiac_disease` IS the corpus
+ * TWO REGISTRIES, and the pill must consult BOTH. The search entity registry and the corpus
+ * (essentials + conditions) overlap but neither contains the other. Routing on the search
+ * registry alone leaves dozens of pills dead — `selenium`, `zinc`, `vitamin-d`, `cancer`,
+ * `osteoporosis`, `arthritis` and friends — every one of which HAS a page, just not a registry
+ * entry. Slugs match the corpus RAW, underscores and all (`celiac_disease` IS the corpus
  * condition slug), so no normalisation is involved and none should be added: a normaliser here
  * would silently paper over a genuine slug mismatch instead of surfacing it. The unroutable
- * remainder is audited out-of-band against search-index.json + corpus-embed.json (all 272
- * pills, not just rendered ones), so a dead pill is a reported gap, not a silent one.
+ * remainder is audited out-of-band against search-index.json + corpus-embed.json (every related
+ * slug, not just the rendered ones), so a dead pill is a reported gap, not a silent one.
  *
  * Registry type wins when present, so an entity that is BOTH a registry element and a corpus
- * essential (gold, hydrogen, potassium...) keeps opening the Explore topic page it opens today —
- * this fix only ADDS destinations, it never re-points a pill that already worked.
+ * essential (gold, hydrogen, potassium...) opens the Explore topic page, not the essential page.
  */
 function relTarget(slug: string): { attr: string; val: string } | null {
   const essAttr = (s: string): { attr: string; val: string } | null => {

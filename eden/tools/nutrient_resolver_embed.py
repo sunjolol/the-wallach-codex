@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """nutrient_resolver_embed.py -- project the registry's IDENTITY resolver into a runtime
 map the offline app inlines, so the Coverage matcher resolves nutrient label names to canon
-slugs through the SAME tables as the Python resolver (A2, 2026-07-08).
+slugs through the SAME tables as the Python resolver.
 
 ONE resolution truth. This artifact is GENERATED FROM nutrient_resolve: it emits exactly the
 tables resolve() consults -- the registry essential_aliases (nutrients.json), the canon
 mineral/amino display names (essentials-canon), the fatty-acid FA_PATTERNS, and the stereo
 prefixes -- so it cannot drift from the Python resolver. core/nutrient-resolver.ts reimplements
 resolve() over this map; the parity gate (nutrient_resolver_parity) + a vitest prove TS ==
-Python over every substance name in the pillar. Composition-only (SS00.A): identity resolution
+Python over every substance name in the pillar. Composition-only (§00.A): identity resolution
 never defines a Wallach amount.
 
 Two outputs:
@@ -44,7 +44,7 @@ def build_data() -> dict:
                       "mineral/amino display names + fatty-acid FA_PATTERNS + stereo prefixes) "
                       "so it cannot drift from the Python resolver. core/nutrient-resolver.ts "
                       "mirrors resolve() over this; nutrient_resolver_parity + a vitest prove "
-                      "TS == Python. Composition-only (SS00.A): identity never sets a target."),
+                      "TS == Python. Composition-only (§00.A): identity never sets a target."),
         "vitamin_aliases": dict(sorted(nr.VIT_ALIAS.items())),
         "mineral_aliases": dict(sorted(nr.MIN_ALIAS.items())),
         "mineral_names": dict(sorted(nr.MINERALS.items())),

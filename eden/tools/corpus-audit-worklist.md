@@ -1,6 +1,6 @@
 # Corpus audit worklist  (GENERATED -- regenerate with `python eden/tools/corpus_audit.py`)
 
-_The machine half of the mandatory pre-Phase-G full-corpus audit (memory: full-corpus-audit-before-phase-g). Every claim is pre-sorted into a TIER; each suspect carries a PROPOSED DISPOSITION -- a check to run, never a verdict. This file is regenerable scratch, not a sacred log._
+_The machine half of the mandatory full-corpus audit. Every claim is pre-sorted into a TIER; each suspect carries a PROPOSED DISPOSITION -- a check to run, never a verdict. This file is regenerable scratch, not a sacred log: every count below is a FROZEN SNAPSHOT of the corpus as it stood when the generator last ran, not the live corpus. Re-run the generator before trusting any number here._
 
 **Total claims:** 1203  ·  **suspect:** 36  ·  **needs-a-look:** 9  ·  **likely-fine:** 1158
 

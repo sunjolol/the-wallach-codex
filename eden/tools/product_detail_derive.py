@@ -9,14 +9,14 @@ build_embeds iterate:
 
   build_data() -> dict   (PURE; derived_artifacts_fresh byte-compares it to disk,
                           so it MUST be deterministic -- no wall-clock timestamp)
-  write_data() -> int    (regenerates the on-disk artifact via safe_write, §17)
+  write_data() -> int    (regenerates the on-disk artifact via safe_write)
 
 SOURCE: eden/products/products.json (composition, the sealed pillar) joined with
 eden/products/prices.json PRICE fields by ygy_id. This is DISPLAY data only
 (§00.A): an amount is what a product CONTAINS (never a Wallach target), and a
 price is an indicative YGY listing (source:ygy, volatile) -- neither ever feeds
-the coverage math. The marketing `description` was stripped from prices.json in
-A1 and is NEVER copied here (no_product_marketing_prose forbids the key anyway).
+the coverage math. The marketing `description` no longer exists in prices.json and
+is NEVER copied here (no_product_marketing_prose forbids the key anyway).
 
 Distinct from products_embed.py's slim regimen-label-lookup vault (that stays
 {canonical_name, nutrients} for the Regimen add-to-cartridge + coverage path).
@@ -45,7 +45,7 @@ _VARIANT_FIELDS = ("sku", "ygy_id", "name", "form")
 
 def _price_for(ygy_id, prices: dict):
     """The {retail, wholesale} listing for a product's ygy_id, or None. PRICE fields
-    ONLY -- the marketing description is never read (it was stripped in A1)."""
+    ONLY -- the marketing description is never read."""
     if ygy_id is None:
         return None
     entry = prices.get(str(ygy_id))
@@ -122,7 +122,7 @@ def build_data() -> dict:
 
 
 def write_data() -> int:
-    """Regenerate the on-disk artifact via safe_write (§17). Returns byte count."""
+    """Regenerate the on-disk artifact via safe_write. Returns byte count."""
     ARTIFACT_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(build_data(), ensure_ascii=False, indent=2)
     return safe_write.safe_rewrite(str(ARTIFACT_PATH), payload)

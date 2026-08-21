@@ -2,24 +2,20 @@
  * core/units.ts — the ONE unit converter (mass + IU) for the whole app
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * WHY THIS FILE EXISTS (2026-07-15). `toMg` + `IU_TO_MG` lived privately inside
- * `state/coverage.ts`. `state/recommender.ts` needed the same conversion and
- * could not have it: `eslint-plugin-boundaries` allows `state → core` only, so
- * state cannot import state. The two honest options were "duplicate the
- * converter" (an R3 violation — one source per fact) or "promote it to core".
- * The layer rule was right; this is the promotion. Both state modules now share
- * ONE conversion truth, and the next consumer gets it for free.
+ * WHY IT LIVES IN core/. `toMg` + `IU_TO_MG` are needed by BOTH `state/coverage.ts`
+ * and `state/recommender.ts`, and `eslint-plugin-boundaries` allows `state → core`
+ * only — state cannot import state. The two honest options were "duplicate the
+ * converter" (a violation of one-source-per-fact) or "promote it to core". This is the
+ * promotion, so both state modules share ONE conversion truth.
  *
- * The bug that forced it: `rankSources` divided a candidate's amount by a
- * Wallach target WITHOUT reconciling units. Measured across the 34 essentials
- * carrying both a numeric target and vault candidates, 2 disagree —
- * boron (target mg vs candidates mcg) and silver (target mcg vs candidates mg)
- * — so boron's adequacy saturated at 1.0 for every candidate and silver's read
- * ~0.0001. Adequacy is the 0.6 keystone of the match score, so the ranking
- * silently collapsed to breadth+price on exactly those two. `state/coverage.ts`
- * had been converting both sides correctly the whole time (`toMg(lowRaw,
- * target.unit)`), 20 lines from the ranker that was not — which is the tell
- * that this belonged in core from the start.
+ * WHY IT MATTERS. `rankSources` once divided a candidate's amount by a Wallach target
+ * WITHOUT reconciling units. Across the essentials carrying both a numeric target and
+ * product candidates, two disagreed — boron (target mg vs candidates mcg) and silver
+ * (target mcg vs candidates mg) — so boron's adequacy saturated at 1.0 for every
+ * candidate and silver's read ~0.0001. Adequacy is the 0.6 keystone of the match score,
+ * so the ranking silently collapsed to breadth+price on exactly those two. Convert BOTH
+ * sides of every ratio: a score computed across mismatched units fails silently, with
+ * no error and a plausible-looking number.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -29,7 +25,10 @@
  * so a product listing them in IU has to use the SAME physical factor to land in the same
  * mg-family the target lives in (§00.B #3 — one conversion truth across the Python/TS line).
  * Values are IU→mg: retinol/beta-carotene 0.3 mcg RAE/IU ÷1000; D 0.025 mcg/IU ÷1000; E 0.67 mg/IU.
- * The factors are pinned to these physical constants by the `amounts_wallach_only` gate.
+ * The `amounts_wallach_only` gate pins these constants on the PYTHON side
+ * (eden/tools/targets_derive.py). This TS copy is NOT gated — WISH, not enforced: no
+ * invariant reads this file, so a typo here would leave the board green. Check it
+ * against IU_CONVERSIONS by hand whenever either side changes.
  */
 export const IU_TO_MG: Record<string, number> = {
   'vitamin-a': 0.3 / 1000,
@@ -45,7 +44,7 @@ export function toMg(value: number, unit: string | undefined, slug?: string): { 
   const u = (unit ?? 'mg').toLowerCase().trim();
   if (u.includes('iu')) {
     // A/D/E: convert IU into the mg-family so an IU-listed product still counts toward its
-    // metric target (Phase G-1 residual). Other IU nutrients stay IU-family (no metric target).
+    // metric target. Other IU nutrients stay IU-family (they have no metric target).
     const f = slug !== undefined ? IU_TO_MG[slug] : undefined;
     return (f !== undefined) ? { v: value * f, u: 'mg' } : { v: value, u: 'iu' };
   }

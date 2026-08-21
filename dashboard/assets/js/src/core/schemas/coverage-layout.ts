@@ -2,12 +2,12 @@
  * core/schemas/coverage-layout.ts — periodic-table layout schema
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Validates dashboard/assets/data/coverage-layout-data.json — the v3.2
+ * Validates dashboard/assets/data/coverage-layout-data.json — the
  * periodic-table-of-essentials PRESENTATION layout (section grouping, atomic
  * numbers, symbols, display abbreviations). This is display metadata, not the
  * Wallach targets DB (that lives in essentials-targets-data.json and is the
- * user's to maintain). §00.B: this data was relocated out of views/coverage.ts
- * (the 91 hardcoded tile specs) into assets/data/ behind this schema.
+ * user's to maintain). §00.B: the 91 tile specs live in assets/data/ behind
+ * this schema, never as literals in a view.
  *
  * Coverage STATUS (covered / fillPercent) does NOT live here — it is joined in
  * at render time from the CoverageSnapshot (state/coverage.ts), keeping one
@@ -27,10 +27,11 @@ export const LayoutTileSchema = z.object({
    */
   key: z.string().min(1),
   /**
-   * Canon essential slug — the join key for GOAL MEMBERSHIP (goals carry slugs, tiles
-   * render display names, and the two DIVERGE for 16 of 91: canon `vitamin-c` renders
-   * `ASCORBIC ACID`). Derived from canon, never hand-typed. A name-based join here
-   * silently dropped every vitamin from every goal once already.
+   * Canon essential slug — the join key for GOAL MEMBERSHIP. Goals carry slugs, while the
+   * tile's `key` and its display `name` both diverge from it (16 of 91 keys and 12 of 91
+   * names: canon `vitamin-c` keys as `Vitamin C (Ascorbic Acid)` and renders `ASCORBIC
+   * ACID`). Derived from canon, never hand-typed. A name-based join here silently dropped
+   * every vitamin from every goal once already.
    */
   slug: z.string().min(1),
   /** Atomic number (minerals). */
@@ -95,23 +96,21 @@ export type LayoutSection = z.infer<typeof LayoutSectionSchema>;
  * are MEASURED AGAINST. A goal may change the first and may never change the second — the
  * denominator is always 90. So `members.length` must never be rendered as a fraction
  * ("bone 3/14" asserts that bone health IS 14 things, which inverts Wallach's thesis that
- * you need all 90 regardless). The old `total` was six hand-typed unsourced numbers no view
- * read, riding the derive into a MANIFEST-gated artifact so `derived_artifacts_fresh`
- * certified fabricated data as "fresh" (R8). It is deleted, not optional.
+ * you need all 90 regardless). A `total` field once lived here: six hand-typed unsourced
+ * numbers no view read, riding the derive into a MANIFEST-gated artifact so
+ * `derived_artifacts_fresh` certified fabricated data as "fresh". It is deleted, not
+ * optional — a freshness gate proves a number is CURRENT, never that it is SOURCED.
  *
- * WHERE THESE COME FROM (2026-07-16, the live Coverage build):
+ * WHERE THESE COME FROM:
  * - `id`/`name`/`conditions` are CURATION, hand-authored in coverage-layout-skeleton.json.
- *   Ours, explicitly not a Wallach claim — he enumerates no "goals". Luneth authors the real
- *   set; the 14 shipped today are a placeholder he rewrites (the machinery does not change).
- * - `members` is DERIVED, never hand-stored (R3): coverage_layout_derive.py intersects the
- *   sealed claims against each goal's Catalog condition slugs. The goal SET is ours; the
- *   MEMBERSHIP is Wallach's.
- * ! Supersedes this comment's old prediction that membership "will live in
- *   eden/catalog/goals.json, gated by references_resolve". It does not: the Catalog is a
- *   SEALED pillar, so a goals file there needs a seal sign-off per write-discipline rule 6,
- *   and the goal list is editorial curation that Luneth re-authors freely — sealing it would
- *   make every edit a ceremony. The skeleton (hand-authored, MANIFEST-registered, no seal) is
- *   the home; the derive is the gate.
+ *   Ours, explicitly not a Wallach claim — he enumerates no "goals". The set is editorial
+ *   and freely re-authorable (31 goals today); rewriting it does not change the machinery.
+ * - `members` is DERIVED, never hand-stored: coverage_layout_derive.py intersects the sealed
+ *   claims against each goal's Catalog condition slugs. The goal SET is ours; the MEMBERSHIP
+ *   is Wallach's.
+ * The skeleton (hand-authored, MANIFEST-registered, deliberately NOT sealed) is the home and
+ * the derive is the gate. Putting a goals file inside the SEALED Catalog instead would make
+ * every editorial edit a seal ceremony.
  */
 export const LayoutGoalSchema = z.object({
   id: z.string(),
@@ -125,17 +124,17 @@ export const LayoutGoalSchema = z.object({
   /**
    * Subsection ids this goal names AS A WHOLE — today only `plant-derived`. Derived, never
    * hand-stored: coverage_layout_derive.py emits it when a sealed claim whose OWN VERBATIM
-   * says "colloidal minerals" maps one of the goal's conditions (9 of the 14 today).
+   * says "colloidal minerals" maps one of the goal's conditions (20 of the 31 goals today).
    *
-   * ★ WHY A GROUP AND NOT 34 MEMBERS (Luneth's ruling, 2026-07-16): the plant-derived 34 have
-   * no individual Wallach amount and share ONE verdict off the colloidal-mineral bottle, so a
-   * ring on strontium is a to-do nobody can act on — they stay OUT of `members`
+   * ★ WHY A GROUP AND NOT 34 MEMBERS: the plant-derived 34 have no individual Wallach
+   * amount and share ONE verdict off the colloidal-mineral bottle, so a ring on strontium is
+   * a to-do nobody can act on — they stay OUT of `members`
    * (EXCLUDE_PLANT_DERIVED). But Wallach prescribes the COMPLEX by name for these conditions,
    * and the group is one thing you CAN do. One member, one marker. Ringing all 34 would light
-   * 37% of the field on 9 of 14 goals and make the goal system read as noise.
+   * 37% of the field on 20 of 31 goals and make the goal system read as noise.
    *
-   * OMITTED, never empty, on the 5 goals where he never names the complex (more energy,
-   * better sleep, blood-sugar, digestion, healthy weight) — an honest gap.
+   * OMITTED, never empty, on any goal where he never names the complex (11 of the 31
+   * today) — an honest gap, not a zero.
    */
   groups: z.array(z.string()).optional(),
 });

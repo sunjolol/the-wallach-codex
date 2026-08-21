@@ -4,7 +4,7 @@ _Highest-priority guidance for any review or verification step. Short by design:
 lives in CLAUDE.md, and the domain detail loads on demand from `.claude/skills/`._
 
 ## Reserve Important for real damage
-A finding is 🔴 **Important** only if it would break the dashboard, leak the user's data, violate a
+A finding is **Important** only if it would break the dashboard, leak the user's data, violate a
 prime directive, or be unrecoverable:
 
 - A **non-Wallach number** reaching the user as a recommended amount, dose, or target. This is the

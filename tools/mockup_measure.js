@@ -17,8 +17,8 @@
  *
  * And it PROVES THE PAGE SCROLLS, by scrolling it. A standalone page that links the app
  * CSS inherits `html, body { height:100%; overflow:hidden }` (dashboard.css:25 /
- * workspace-coverage.css:79) and is locked to the first viewport. That has reached
- * Luneth six times, every time past a green headless check, because element.screenshot()
+ * workspace-coverage.css:79) and is locked to the first viewport. This has shipped six
+ * times, every one past a green headless check, because element.screenshot()
  * and fullPage:true both capture regardless of root overflow. The only honest test is to
  * scroll and read scrollY back -- a computed-style check alone would still miss a page
  * locked some other way.
@@ -83,7 +83,7 @@ const path = require('path');
         scale: authored ? +(rendered / authored).toFixed(3) : null });
       const texts = [...svg.querySelectorAll('text')];
       // A label that runs off the viewBox is truncated on screen but collides with
-      // NOTHING, so the text-vs-text pass above cannot see it. Check the edges too.
+      // NOTHING, so the text-vs-text pass below cannot see it. Check the edges too.
       const vbx = svg.viewBox && svg.viewBox.baseVal;
       if (vbx && vbx.width) texts.forEach(t => {
         const bb = t.getBBox();

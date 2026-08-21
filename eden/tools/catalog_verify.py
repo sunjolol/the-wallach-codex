@@ -8,10 +8,10 @@ INTERNAL structure (the conditions + symptoms registries: well-formed slugs, umb
 children resolve); the cross-pillar corpus->catalog resolution (a claim slug must be
 catalogued) is the separate `references_resolve` gate.
 
-The nutrient/ingredient vocabulary is NOT here: nutrients.json was deleted 2026-07-05 (D-c)
-as too-basic duplication -- its 91 canonical entries only re-copied essentials-canon names,
-and its 408 substance display names were byte-identical to the auto-humanized slug. The real
-nutrient/ingredient registry is rebuilt from scratch with the Youngevity Product DB in Phase F.
+The nutrient/ingredient vocabulary IS verified here. An earlier version of nutrients.json was
+deleted as a duplicate of essentials-canon and rebuilt against the Youngevity Product DB; this
+tool checks its schema_version plus the essential_aliases / canonical_forms / nutrients blocks
+(412 substances) alongside the conditions + symptoms registries.
 
 All hashes are over LF-NORMALIZED UTF-8 content (clone/CRLF-stable).
 
@@ -20,7 +20,7 @@ Exit codes:
   1  FAIL -- a real violation (bad slug, dangling umbrella child...).
   2  BOOTSTRAP -- not yet sealed (no golden siblings). Structural checks still ran + passed.
 
-The agent MAY run this. It never writes anything.
+Read-only: it never writes anything, so it is safe to run at any time.
 """
 import hashlib
 import json
@@ -115,7 +115,7 @@ def run_checks():
             fails.append(f"[symp] {slug} missing display_name")
     _count(fails, "symptoms", symp, "symptoms", len(symptoms))
 
-    # ---- nutrients (Phase F registry: essential aliases + canonical forms + substance vocab) ----
+    # ---- nutrients (essential aliases + canonical forms + substance vocab) ----
     nutr = load(NUTR_PATH)
     if nutr.get("schema_version") != 1:
         fails.append("nutrients.json schema_version != 1")

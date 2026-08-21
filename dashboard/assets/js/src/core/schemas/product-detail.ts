@@ -39,9 +39,8 @@ export const ProductNutrientRowSchema = z.object({
 
 /**
  * One line inside a proprietary blend's indented ingredient list (label order = descending
- * amount per FDA). Present in the derived JSON but previously only tolerated via .passthrough();
- * typed now so the product-detail Supplement Facts can render the collapsible blend breakdown
- * (name + italic latin) the way a real label prints it. DISPLAY ONLY (§00.A) — composition.
+ * amount per FDA). Typed so the product-detail Supplement Facts can render the collapsible
+ * blend breakdown (name + italic latin) the way a real label prints it. DISPLAY ONLY (§00.A) — composition.
  */
 const ProductBlendIngredientSchema = z.object({
   name: z.string(),

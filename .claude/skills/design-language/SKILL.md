@@ -1,6 +1,6 @@
 ---
 name: design-language
-description: Read before designing any visual surface - element headers, the regimen/scanner/journal tabs, the profile system, or a new theme. Covers what is actually available (vendored libraries, a pinned engine, the mockup harness), the taste rubric a design is judged against, and what offline-first does and does not restrict.
+description: Read before designing any visual surface - element headers, the regimen/scanner tabs, the profile system, or a new theme. Covers what is actually available (vendored libraries, a pinned engine, the mockup harness), the taste rubric a design is judged against, and what offline-first does and does not restrict.
 ---
 
 # Design language
@@ -18,7 +18,7 @@ by 10.7x and routinely bypassed — so it was capping ambition without enforcing
 replacement tripwire sits at 8 MB and exists only to catch a runaway, never to simplify a design.
 
 ## What is available right now
-Vendored in `dashboard/assets/vendor/libs/`, hash-pinned in `vendor-manifest.json`, all MIT/ISC:
+Vendored in `tools/design-libs/`, hash-pinned in `vendor-manifest.json`, all MIT/ISC:
 
 | Library | Use |
 |---|---|
@@ -28,8 +28,9 @@ Vendored in `dashboard/assets/vendor/libs/`, hash-pinned in `vendor-manifest.jso
 | `d3` | data-driven figures, scales, layouts |
 | `lottie-web` | plays After Effects animations from JSON |
 
-The app bundle gets them from npm through esbuild. **Standalone mockups load the vendored copies
-directly** — the harness wires them in automatically. Want something not on this list? Vendor it the
+The app bundle does NOT use them — nothing under `assets/js/src/` imports any of these. They are
+design-time only: **standalone mockups load the vendored copies directly** — the harness
+(`tools/mockup_harness.py`) wires them in automatically. Want something not on this list? Vendor it the
 same way and add it to the manifest; the gate will pin it.
 
 ## The pinned engine

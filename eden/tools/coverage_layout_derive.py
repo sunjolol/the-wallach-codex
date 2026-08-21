@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """coverage_layout_derive.py -- derive the Coverage periodic-table layout from the
-sealed canon (Phase E, crack #1 deferred half, 2026-07-06).
+sealed canon.
 
 The Coverage tiles' CANONICAL fields (display name, and for minerals the atomic symbol +
 number) used to be hand-typed in coverage-layout-data.json -- a silent duplication of
@@ -11,15 +11,15 @@ plus each tile's `key` (a reference to a canon layout_key); this generator fills
 `name` from canon display_name (uppercased) and, for minerals, `sym`+`num` from canon. So the
 periodic table's canonical identity can never drift from the pillar again -- it IS the pillar.
 
-GOAL MEMBERSHIP (added 2026-07-16, the live Coverage build). The skeleton's goals block holds
+GOAL MEMBERSHIP. The skeleton's goals block holds
 only the CURATION -- {id, name, conditions[]} -- and this generator derives each goal's
 `members`: the canon essential slugs that Wallach's own sealed claims name for those
 conditions. WHY DERIVED AND NOT HAND-STORED: a hand-typed member list would duplicate a fact
-the corpus already owns (R3), and would rot silently as mining adds claims. The goal SET is
+the corpus already owns, and would rot silently as new claims are added. The goal SET is
 ours (curation, never a Wallach claim -- he enumerates no "goals"); the MEMBERSHIP is his.
 
   members(goal) = { essentials named by any sealed claim that maps >=1 of the goal's
-                    conditions }  MINUS the unactionable (see EXCLUDED_FROM_GOALS)
+                    conditions }  MINUS the unactionable (see "What a goal may NOT name" below)
 
 Contract (eden/derived/MANIFEST.json): build_data() -> the artifact object (pure, no write;
 the derived_artifacts_fresh gate compares json.loads(disk) == build_data()); write_data() ->
@@ -44,33 +44,29 @@ ARTIFACT = ROOT / "dashboard" / "assets" / "data" / "coverage-layout-data.json"
 # only name an essential the user can actually ACT on individually. Two classes cannot be:
 #
 # 1. The PLANT DERIVED 34 (`target.kind == "trace_pdm"`). Wallach states NO individual amount
-#    for these; they share ONE verdict off the colloidal-mineral bottle. The signed-off demo
-#    states the rule in its own words: "Wallach never itemises these, so they can never be
-#    'named for' a goal, but they are still required."
-#    ! MEASURED DELTA vs the demo (2026-07-16, flagged for Luneth): the demo's baked
-#      MEMBERSHIP does NOT actually honour its own rule -- it lists STRONTIUM (a trace_pdm
-#      element) under stronger-bones + less-joint-pain, off the real claim WAL-CLM-DDDL-000032
-#      ("Strontium deficiency is associated with certain calcium- and boron-resistant forms of
-#      osteoporosis and arthritis"). That claim is genuine; the inconsistency is the demo's.
-#      We follow the demo's STATED rule, not its generated data (demo = vision, not letter),
-#      so strontium is excluded here and the delta is logged for review. Flip
-#      EXCLUDE_PLANT_DERIVED to False to restore the demo's literal behaviour -- one line.
+#    for these; they share ONE verdict off the colloidal-mineral bottle. Because he never
+#    itemises them, they can never be "named for" a goal -- but they are still required.
+#    ! STRONTIUM is the case that tests this rule. A genuine sealed claim names it for bone
+#      and joint conditions (WAL-CLM-DDDL-000032, "Strontium deficiency is associated with
+#      certain calcium- and boron-resistant forms of osteoporosis and arthritis"), but
+#      strontium is plant-derived, so a goal ring on it would be a to-do nobody can act on
+#      individually. It is excluded here. Flip EXCLUDE_PLANT_DERIVED to False to make
+#      plant-derived elements goal-nameable again -- one line.
 #
-# 2. The fiat-covered FOUNDATIONAL 4 (hydrogen, carbon, nitrogen, oxygen). Forced `covered` on
-#    Luneth's say-so because you breathe -- there is nothing to take, so there is no goal to
-#    set. PHOSPHORUS is deliberately NOT here: its `covered` traces to a sealed Wallach claim
-#    (target.low == 0), not to the breathing fiat, so it stays goal-nameable exactly as the
-#    signed-off demo has it.
+# 2. The fiat-covered FOUNDATIONAL 4 (hydrogen, carbon, nitrogen, oxygen). Forced `covered`
+#    because you breathe them -- there is nothing to take, so there is no goal to set.
+#    PHOSPHORUS is deliberately NOT here: its `covered` traces to a sealed Wallach claim
+#    (target.low == 0), not to the breathing fiat, so it stays goal-nameable.
 #    ! THIS SET IS A MIRROR of FOUNDATIONAL_PRESENT_SLUGS in state/coverage.ts -- Python
 #      cannot import TypeScript, so the duplication is real and is GATED, not trusted:
 #      `goal_members_actionable` parses that constant out of coverage.ts and REDs if the two
-#      disagree (R3 by enforcement, R7 -- codify, don't promise).
+#      disagree -- the duplication is enforced, not merely promised.
 EXCLUDE_PLANT_DERIVED = True
 FIAT_COVERED_SLUGS = frozenset({"hydrogen", "carbon", "nitrogen", "oxygen"})
 
-# Claims tagged `search-only` are the Ask-Wallach corpus and MUST NOT feed an operational
-# surface -- the Coverage goal strip is one. Mirrors the live `search_only_indices_excluded`
-# gate's boundary (.claude/skills/corpus-mining/SKILL.md).
+# Legacy guard: the `search-only` claim tier was retired and no sealed claim carries the tag
+# any more. Kept as a no-op tripwire so a re-introduced tag cannot silently feed an
+# operational surface such as the Coverage goal strip. No invariant enforces it.
 SEARCH_ONLY_TAG = "search-only"
 
 
@@ -85,10 +81,11 @@ def _derive_tile(skel_tile: dict, cbk: dict) -> dict:
     sym <- symbol, num <- atomic_number. Every other field on the tile is editorial and
     passes through.
 
-    WHY `slug` (added 2026-07-16): goal `members` are canon SLUGS, while tiles are keyed by
+    WHY `slug`: goal `members` are canon SLUGS, while tiles are keyed by
     `key` (the layout_key) and rendered by display `name`. Without the slug on the tile the
     view would have to map names back to slugs by hand -- and the two DIVERGE for 16 of 91
-    (all 12 vitamins + all 3 omegas + flavonoids: canon 'vitamin-c' renders 'ASCORBIC ACID').
+    (the 12 lettered vitamins + flavonoids + all 3 omegas: canon 'vitamin-c' renders
+    'ASCORBIC ACID').
     That exact join silently lost every vitamin from every goal once already. Derived from
     canon, so it is gated, never hand-typed."""
     key = skel_tile["key"]
@@ -114,7 +111,7 @@ def _sealed_claims() -> list:
 
 
 def _unactionable_slugs() -> set:
-    """The essentials a goal may never name -- see EXCLUDED_FROM_GOALS in the module docstring.
+    """The essentials a goal may never name -- see "What a goal may NOT name" above.
 
     trace_pdm comes from essentials-targets-data.json rather than a hand list because
     "has no individual Wallach amount" is exactly what `target.kind` already records: the
@@ -129,7 +126,7 @@ def _unactionable_slugs() -> set:
     return out
 
 
-# ── The plant-derived GROUP as a goal member (2026-07-16, Luneth's ruling) ────────────
+# ── The plant-derived GROUP as a goal member ────────────────────────────────
 #
 # The PLANT DERIVED 34 can never be named INDIVIDUALLY (see EXCLUDE_PLANT_DERIVED above):
 # Wallach states no per-element amount and they share ONE verdict off the colloidal-mineral
@@ -141,26 +138,23 @@ def _unactionable_slugs() -> set:
 #                                        "colloidal minerals" maps >=1 of the goal's conditions
 #
 # ★ WHY THE VERBATIM AND NOT `other_substances: colloidal-minerals` (the obvious choice, and
-#   the wrong one -- measured 2026-07-16, do not "simplify" this back):
-#   1. THE TAG OVER-INCLUDES. It sits on claims where Wallach named a SINGLE colloidal
-#      ELEMENT -- "plant derived colloidal CALCIUM" (insomnia, LETS-000322), "plant derived
-#      colloidal SELENIUM" (cardiomyopathy, -000204), "liquid colloidal calcium, magnesium and
-#      potassium" (muscle cramps, -000374). Those are INDIVIDUALLY DOSED 21 members, not the
-#      group. "colloidal minerals" does not match any of them -- that is the whole point of
-#      the phrase, and the negative test pins all three.
-#   2. THE TAG CAN BE WRONG. LETS-000152 (backache) carries it only because the miner's
-#      window bled into the NEXT entry, where "Colloidal tin" appears under BALDNESS.
+#   the wrong one -- do not "simplify" this back):
+#   1. THE TAG OVER-INCLUDES. It also sits on claims where Wallach named a SINGLE colloidal
+#      ELEMENT -- "plant derived colloidal CALCIUM" (insomnia, LETS-000322), "liquid colloidal
+#      calcium, magnesium and potassium" (muscle cramps, LETS-000374). Those are individually
+#      dosed minerals with their own Wallach amounts, not the group. The phrase "colloidal
+#      minerals" matches neither of them -- that is the whole point of the phrase, and the
+#      negative test pins them (tools/tests/test_pdm_group_goals_wallach_sourced.py).
+#   2. THE TAG CAN BE WRONG. A miner's extraction window can bleed into the NEXT A-Z entry
+#      and pick up a substance the claim itself never discusses.
 #   3. Reading the claim's OWN verbatim makes neighbouring-entry bleed IMPOSSIBLE BY
-#      CONSTRUCTION. That bleed is not hypothetical: it produced 9 of the 12 rejections when
-#      this question was settled by READING all 28 candidate passages under a 76-agent
-#      adversarial panel (2026-07-16), and it silently corrupted four earlier character-window
-#      instruments that each returned a different answer (11 / 10 / 8 goals).
-#      That panel is this rule's VALIDATION, not its source: the rule independently
-#      reproduces the panel's 9 goals from the sealed corpus alone.
+#      CONSTRUCTION. That bleed is not hypothetical: it accounted for most of the false
+#      positives when every candidate passage was read by hand, and it silently corrupted
+#      four earlier character-window instruments that each returned a different answer.
 #
-# ★ HONEST LIMIT (R7): matching the WORDS does not prove the STANCE. A verbatim reading
-#   "colloidal minerals are useless for X" would match this rule. The adversarial read covered
-#   that for today's claims; no non-gaming gate can. This half rests on review, and says so
+# ★ HONEST LIMIT: matching the WORDS does not prove the STANCE. A verbatim reading "colloidal
+#   minerals are useless for X" would match this rule. Today's claims were read by hand to
+#   confirm none does; no non-gaming gate can prove it. This half rests on review, and says so
 #   rather than pretending the gate is stronger than it is.
 GROUP_ID = "plant-derived"
 _GROUP_RE = re.compile(r"colloidal\s+minerals?", re.I)
@@ -227,10 +221,10 @@ def _derive_goals(skel_goals: list, cbk: dict) -> list:
             )
         entry = {k: copy.deepcopy(v) for k, v in g.items()}
         entry["members"] = sorted(members)
-        # `groups` is OMITTED, never emitted empty: 5 of the 14 goals (more energy, better
-        # sleep, blood-sugar, digestion, healthy weight) have NO claim where Wallach names the
-        # complex for their conditions, and an absent key renders nothing rather than an empty
-        # marker. An honest gap, exactly like the 53 essentials with no stated amount.
+        # `groups` is OMITTED, never emitted empty: some goals have NO claim where Wallach
+        # names the complex for their conditions, and an absent key renders nothing rather
+        # than an empty marker. An honest gap, exactly like the essentials with no stated
+        # Wallach amount.
         if any(set(c.get("conditions") or []) & conds for c in group_claims):
             entry["groups"] = [GROUP_ID]
         out.append(entry)

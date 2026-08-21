@@ -12,9 +12,9 @@ daily calorie consumption or supplemented at the rate of 9 grams per day in caps
 EFAs are exactly two: "only two (linoleic and linolenic) are designated as Essential Fatty Acids"
 (L7171-7174). So 9 g is ONE budget shared by omega-3 + omega-6, never 9 g of each -- fanned out
 per-slug it silently asserts 18 g, and amounts_wallach_only certifies that GREEN because it
-audits each essential in isolation (proven 2026-07-15; see collective_doses_not_fanned).
+audits each essential in isolation (see the collective_doses_not_fanned gate).
 
-THE GOAL (SS00.A / R2). 9 g -> 9000 mg is a UNIT change of Wallach's own finished number, not a
+THE GOAL (§00.A / R2). 9 g -> 9000 mg is a UNIT change of Wallach's own finished number, not a
 new amount: he states the supplement figure himself, so nothing here supplies a reference. That
 is the whole reason no calorie basis appears in this file -- his "3 percent of total daily
 calorie consumption" is the SAME requirement expressed the other way, and re-deriving it against
@@ -28,7 +28,7 @@ credit intake against a requirement he never stated.
 
 TWO INPUTS, joined here (derive-don't-duplicate, R1):
   - eden/products/products.json (SEALED pillar) -- the COMPOSITION: each product's per-serving
-    fatty-acid mg. SS00.A: composition feeds the coverage math, never a target.
+    fatty-acid mg. §00.A: composition feeds the coverage math, never a target.
   - eden/corpus/claims/* (SEALED pillar) -- the GOAL: the Wallach dose claim, cited by id.
 Identity is delegated to nutrient_resolve.resolve() -- the ONE resolver (R3), which already
 knows ALA/EPA/DHA -> omega-3 and LA/GLA/arachidonic -> omega-6. No fatty-acid name list lives
@@ -120,8 +120,8 @@ def _efa_oil_mg(prod):
     softgel) demands ~12.7 g of oil to reach 9 g of molecules — 40% MORE than he asked for.
     Making his requirement harder because a stricter reading feels more defensible is the same
     error as re-deriving his 3%-of-calories against an FDA 2,000-kcal basis: it overrules a
-    number he wrote. (Claude shipped exactly that on 2026-07-15 and Luneth caught it: he had
-    already ruled "9 sounds much better to me", and the derive shipped 13.)
+    number he wrote. That mistake has been shipped here before: summing the molecules put 13 g
+    on screen where Wallach asks for 9.
 
     THE MEASURE: the label's own `total_fat` — these are oil softgels, and flax oil is ~100%
     fat, so total_fat IS the oil. Verified against the labels: omega 1 g == its 1000 mg blend

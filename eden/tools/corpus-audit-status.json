@@ -1,21 +1,21 @@
 {
-  "_purpose": "The STRUCTURAL lock for the mandatory full-corpus audit (memory: full-corpus-audit-before-phase-g). Charter R8 codified as a gate, not a promise: the whole corpus (all claims, every kind) must be audited BEFORE Phase G resumes book mining. The corpus_audit_gate invariant reads this file: while phase_g_unlocked is false, the live claim count may not EXCEED frozen_claim_count, so new claims cannot be mined onto unaudited data (RED the instant they are). This never reds the board during Phase E (count == frozen); it reds only when unaudited mining begins.",
+  "_purpose": "The STRUCTURAL lock for the mandatory full-corpus audit. Charter R8 codified as a gate, not a promise: the whole corpus (all claims, every kind) must be audited BEFORE Phase G resumes book mining. The corpus_audit_gate invariant reads this file: while phase_g_unlocked is false, the live claim count may not EXCEED frozen_claim_count, so new claims cannot be mined onto unaudited data (RED the instant they are). This never reds the board during Phase E (count == frozen); it reds only when unaudited mining begins.",
   "audit_complete": true,
   "phase_g_unlocked": true,
   "frozen_claim_count": 1203,
   "frozen_at": "2026-07-06",
-  "frozen_reason": "Corpus size at the moment the audit lock was installed (crack #4 fix, 2026-07-06). The 1203 existing claims were the audit's subject; re-anchored as the post-audit baseline at sign-off (unchanged, since the audit edited claims in place without adding/removing any). Phase G may now add MORE.",
+  "frozen_reason": "Corpus size at the moment the audit lock was installed. The 1203 existing claims were the audit's subject; re-anchored as the post-audit baseline at sign-off (unchanged, since the audit edited claims in place without adding/removing any). Phase G may now add MORE.",
   "signed_off_at": "2026-07-09",
   "signed_off_by": "Luneth",
   "signed_off_note": "Full-corpus pre-Phase-G audit signed off at knowledge_version 314. Decided unlock scope COMPLETE: Workstream A (Base-Line supplement table) + Workstream B (11 dose-mislabel reclassifications) + Tier-2 (incl. the silver 400 mg->mcg safety fix) + the owed whole-corpus dose-safety scan + internal-ref-in-prose cleanup (labeled-table-header view, kv 314) + a 23-claim stratified human spot-check. The corpus was already continuously gated green (integrity, verbatim-subset-of-source, OCR, citations, catalog-resolve, glosses, prose-contained); the sweep targeted the axes no machine checks. Phase G mining may now add claims above the frozen count.",
   "deferred_followups": [
-    "Deep linguistic/logic anomaly sweep (the 'Zumba'->'Zumbani' class of plausible-looking author errors) -- the deterministic anomaly surfacer + the heavy offline-LLM pass are FINALIZATION-phase work per memory linguistic-logic-sweep; the human-read portion was partly covered by the audit spot-check. Not a Phase-G blocker.",
-    "Book-source purification -- only 2 of 6 books pristine (iaiyh, DDDL); Immortality, Epigenetics, Let's-Play-Doctor, Rare-Earths still raw/purifying. Separate campaign gated by book_source_clean (memory: book-source-purification-campaign). Never an unlock blocker.",
-    "3 parked claim notes: WAL-CLM-IAIYH-000020 (a 'quote' whose claim_text asserts an award its verbatim doesn't cover); the germanium 'osteoarthritis' vs 'osteoporosis' wording (Epigenetics vs DDDL/RARE/Immortality) left faithful for Luneth to interpret; WAL-CLM-RARE-000048 selenium verbatim extension (1 mg selenite 3x/wk dose confirmed in-book, but this claim's verbatim quotes the study RESULTS not the dose sentence -- extend via vb_apply, no target impact)."
+    "Deep linguistic/logic anomaly sweep (the 'Zumba'->'Zumbani' class of plausible-looking author errors) -- the deterministic anomaly surfacer + the heavy offline-LLM pass are FINALIZATION-phase work; the human-read portion was partly covered by the audit spot-check. Not a Phase-G blocker.",
+    "Book-source purification -- only 2 of 6 books pristine (iaiyh, DDDL); Immortality, Epigenetics, Let's-Play-Doctor, Rare-Earths still raw/purifying. Tracked separately and gated by book_source_clean. Never an unlock blocker.",
+    "3 parked claim notes: WAL-CLM-IAIYH-000020 (a 'quote' whose claim_text asserts an award its verbatim doesn't cover); the germanium 'osteoarthritis' vs 'osteoporosis' wording (Epigenetics vs DDDL/RARE/Immortality) left faithful for a human to interpret; WAL-CLM-RARE-000048 selenium verbatim extension (1 mg selenite 3x/wk dose confirmed in-book, but this claim's verbatim quotes the study RESULTS not the dose sentence -- extend via vb_apply, no target impact)."
   ],
   "unlock_protocol": [
     "1. Run `PYTHONUTF8=1 python eden/tools/corpus_audit.py` to regenerate eden/tools/corpus-audit-worklist.md (every claim by kind, machine-flagged suspects).",
-    "2. Luneth reviews the worklist per-claim; corrections route through the normal draft->seal pipeline (source rule: heavy interpretation is never automatic).",
+    "2. A human reviews the worklist per-claim; corrections route through the normal draft->seal pipeline (source rule: heavy interpretation is never automatic).",
     "3. When the review is signed off, set audit_complete=true and phase_g_unlocked=true (and re-anchor frozen_claim_count to the post-audit count).",
     "4. Only then may Phase G mining add new claims."
   ],

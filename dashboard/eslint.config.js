@@ -9,12 +9,14 @@
 //     architecture. Cross-layer violations fail lint.
 //   - no-restricted-syntax bans large inline literals (the demo-data
 //     antipattern) outside assets/data/
-//   - max-lines: 800 (warn at 600) — god-file tripwire
+//   - max-lines: warn at 600, with blank lines + comments excluded — god-file tripwire
 //   - no-explicit-any: error — unknown at boundaries, narrow with Zod
 //
-// The §17 enforcement (direct localStorage access ban outside core/storage.ts)
-// is enforced by tools/invariants.py rather than ESLint because it requires
-// understanding chokepoint discipline that lint can't natively express.
+// The localStorage chokepoint rule (no direct localStorage access outside
+// core/storage.ts) is enforced in two places, and only one of them is a gate:
+// the no-restricted-globals rule below only WARNS, and is switched off entirely
+// for core/storage.ts itself, so lint alone cannot fail a build on it. The hard
+// check lives in tools/invariants.py -- that is the one that turns the board red.
 // ═══════════════════════════════════════════════════════════════════════════
 
 import antfu from '@antfu/eslint-config';

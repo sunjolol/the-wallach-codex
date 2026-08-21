@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""recommender_derive.py -- the cost-per-nutrient RECOMMENDER input artifact (A3, 2026-07-08).
+"""recommender_derive.py -- the cost-per-nutrient RECOMMENDER input artifact.
 
 Derives dashboard/assets/data/product-recommender-data.json -- the per-essential
 ranking INPUTS the "best source of nutrient X" recommender scores at runtime
@@ -8,8 +8,8 @@ the product delivers (composition), how many distinct essentials that product
 delivers (breadth), and an indicative wholesale price (the cost tuner).
 
 WHY inputs, not a score: the match-score weights (adequacy / breadth / value) are a
-transparent runtime tuner -- Luneth eyeballs real outputs and adjusts (memory
-cost-per-nutrient-match-score). Baking a float score here would (a) make the
+transparent runtime tuner: the weights are set by eyeballing real outputs and
+adjusting them. Baking a float score here would (a) make the
 artifact non-deterministic to re-tune and (b) hide the formula from the code that
 owns it. So this artifact carries only the deterministic raw facts; the curve lives
 in state/.
@@ -21,20 +21,22 @@ SOURCES + boundary (§00.A):
                Wallach target.
   - breadth <- the same composition rollup (distinct essentials a product delivers).
   - price   <- prices.json WHOLESALE (source:ygy, VOLATILE commercial data). Wholesale
-               is the featured price app-wide (Luneth 2026-07-11): almost every product
-               sells online at the member/wholesale rate, so it best reflects the real
+               is the featured price app-wide: almost every product sells online at
+               the member/wholesale rate, so it best reflects the real
                cost per dose. Retail (MSRP) stays in prices.json for reference. A cost
                tuner for the recommender ONLY -- it never touches the coverage math and
                is never a target.
 There is NO Wallach number in this file. The saturating-adequacy term
-(min(1, delivered / wallach_target)) that makes "best source" mean *enough* (not
-*most*) needs Wallach dose targets, which are all honest gaps until corpus
-dose-mining (blueprint task b). Until then the runtime ranks by amount-potency +
-breadth + value; adequacy lights up the moment a target carries a number.
+(min(1, delivered / wallach_target)) that makes "best source" mean *enough* rather
+than *most* is applied at runtime against the separately derived
+essentials-targets-data.json, where 37 of the 91 canon entries now carry a numeric
+Wallach amount. Where an essential still has none, the runtime falls back to an
+amount-potency proxy (delivered / best-in-set) and reports that it did, rather than
+pretending a target existed. The gap is partial, not total.
 
 Contract (eden/derived/MANIFEST.json): build_data() -> object (PURE + deterministic
 -- no timestamp, every list sorted -- so derived_artifacts_fresh byte-compares it to
-disk); write_data() -> regenerates the file via safe_write (§17).
+disk); write_data() -> regenerates the file via safe_write.
 """
 import json
 import sys
@@ -51,8 +53,8 @@ import products_composition_derive as comp  # noqa: E402
 
 def _wholesale_by_product(products: dict, prices: dict) -> dict:
     """product_id -> WHOLESALE price (float) or None, joined by ygy_id (same join key
-    product_detail_derive uses). Wholesale is the featured price app-wide (Luneth
-    2026-07-11): almost every product sells online at the member/wholesale rate, so it
+    product_detail_derive uses). Wholesale is the featured price app-wide: almost
+    every product sells online at the member/wholesale rate, so it
     best reflects the real cost per dose. Falls back to retail only if a product has no
     wholesale figure (none do today -- kept so the derive never silently drops a price)."""
     out: dict = {}
@@ -120,8 +122,9 @@ def build_data() -> dict:
                 "prices.json via products_composition_derive -- never hand-edited (R1). "
                 "§00.A: composition + price are DISPLAY/recommender data, never a "
                 "Wallach target; there is no Wallach number here. Saturating adequacy "
-                "(min(1, delivered/target)) awaits corpus dose-mining (blueprint b); "
-                "until then the runtime ranks by amount-potency + breadth + value."
+                "(min(1, delivered/target)) is applied at runtime against "
+                "essentials-targets-data.json; where no Wallach amount is stated the "
+                "runtime falls back to an amount-potency proxy and says so."
             ),
             "source": "eden/products/products.json + eden/products/prices.json",
             "generator": "eden/tools/recommender_derive.py",
@@ -134,7 +137,7 @@ def build_data() -> dict:
 
 
 def write_data() -> int:
-    """Regenerate the on-disk artifact via safe_write (§17). Returns byte count."""
+    """Regenerate the on-disk artifact via safe_write. Returns byte count."""
     sys.path.insert(0, str(ROOT / "tools"))
     from safe_write import safe_rewrite
     ARTIFACT_PATH.parent.mkdir(parents=True, exist_ok=True)

@@ -8,7 +8,7 @@ is byte-identical.
 
 Index files are pure top-level maps (slug -> entry), except consistency.json which is
 a list — matching eden/corpus/SCHEMA.md and the verifier's check #4 (other-substances
-top-level keys must be disjoint from the 90-canon).
+top-level keys must be disjoint from the canon slugs).
 """
 import json
 import sys
@@ -38,7 +38,7 @@ def humanize(slug: str) -> str:
     """Deterministic slug -> Title Case. Used for other-substances (not catalogued)
     and as the fallback for any condition/symptom slug not yet registered in the
     Catalog pillar. Curated condition/symptom display names live in the catalog
-    (single source, R3); e.g. "pms" -> "Premenstrual Syndrome (PMS)" is carried there,
+    (single source); e.g. "pms" -> "Premenstrual Syndrome (PMS)" is carried there,
     not here."""
     return slug.replace("_", " ").replace("-", " ").title()
 
@@ -61,14 +61,14 @@ def _by_kind(rel):
 def derive_indices(shards):
     """Map index-name -> index object, derived purely from the claim shards."""
     claims = _load_claims(shards)
-    # 2026-07-27 (Luneth): the "search-only" tier-2 exclusion was REMOVED ENTIRELY. Search is
-    # not a separate silo -- it pulls from the same three homes as every tab (essentials,
-    # conditions, explore). So every claim with an operational essentials[]/conditions[]/
-    # symptoms[] mapping feeds these indices (which drive "The Full Record" on each page);
-    # the enriched subset is layered on top as "Worth Knowing". No claim is hidden by a tag.
+    # NO TIER FILTER HERE, deliberately. Search is not a separate silo -- it pulls from the
+    # same three homes as every tab (essentials, conditions, explore). So every claim with an
+    # operational essentials[]/conditions[]/symptoms[] mapping feeds these indices (which
+    # drive "The Full Record" on each page); the enriched subset is layered on top as "Worth
+    # Knowing". No claim is hidden by a tag.
     canon = json.loads(CANON_PATH.read_text(encoding="utf-8"))["essentials"]
 
-    # ---- essentials index: all 90 canon slugs, in canon order ----
+    # ---- essentials index: every canon entry (91: the 90 essentials + omega-9), in canon order ----
     essentials = {}
     for ce in canon:
         slug = ce["slug"]

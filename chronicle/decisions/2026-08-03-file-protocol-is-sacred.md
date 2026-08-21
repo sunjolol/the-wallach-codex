@@ -1,6 +1,6 @@
 # Decision: `file://` is sacred — the app must always open in any browser
 
-_2026-08-03. Luneth's ruling, made after a full head-to-head against Electron and Tauri. **SETTLED.
+_2026-08-03. The owner's ruling, made after a full head-to-head against Electron and Tauri. **SETTLED.
 Do not re-raise, and do not propose an app shell again.**_
 
 ## The ruling
@@ -60,5 +60,5 @@ The pinned engine must be a **real browser**, which is what
 
 ## Consequence for design
 Every surface is still authored against the pinned engine's capabilities (per
-`2026-08-03-pinned-engine.md`), because that is what Luneth will actually look at. This ruling does
+`2026-08-03-pinned-engine.md`), because that is what the owner will actually look at. This ruling does
 not reinstate defensive coding for unknown browsers. It only guarantees the files remain openable.

@@ -1,13 +1,13 @@
 /* ═══════════════════════════════════════════════════════════════════════════
  * workspace-scanner.css — the Scanner workspace (Scan · Confirm · Result)
- * Everything scoped under .vd. PORTED VERBATIM from the design-approved demo
- * temporary/ready-to-be-ported/scanner-demo-3-verdict-r3.html (2026-08-13).
+ * Everything scoped under .vd. PORTED VERBATIM from the design-approved
+ * Scan · Confirm · Result demo page (not part of this repo).
  * Reuses the shared design-system + workspace-coverage classes already loaded
  * (.coverage-grid · .rail-panel · .rl-row · .rl-src · .ds-btn-*). The demo's
  * mockup-chrome + scroll-unlock CSS is NOT ported (the app shell owns those).
  * ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ═══ CONCEPT 3 · THE VERDICT — Scan·Confirm·Result · everything scoped under .vd ═══ */
+/* ═══ THE VERDICT — Scan·Confirm·Result · everything scoped under .vd ═══ */
 .vd { position: relative; z-index: 1; padding: var(--ds-space-4) var(--ds-space-7) var(--ds-space-7); display: flex; flex-direction: column; gap: var(--ds-space-6); }
 .vd *, .vd *::before, .vd *::after { box-sizing: border-box; }
 :where(.vd) button { -webkit-appearance: none; appearance: none; background: none; border: none; font: inherit; color: inherit; cursor: pointer; text-align: left; }
@@ -217,9 +217,10 @@
 .vd-cite__b { color: var(--ds-status-ok); background: var(--ds-ok-wash); padding: 2px 8px; border-radius: var(--ds-radius-pill); box-shadow: inset 0 0 0 1px var(--ds-status-ok-soft); font-weight: 700; }
 
 .vd-side { display: flex; flex-direction: column; gap: var(--ds-space-4); min-width: 0; }
-/* -- COVERAGE HERO * Concept B "Gap Arc" -- the result card side column (#7).
+/* -- COVERAGE HERO — the "gap arc" gauge in the result card's side column.
  *    A radial gauge whose large UNLIT arc is the gap (essentials still open);
- *    green is covered, the accent tick is this scan. Replaced concept A "Deficit Rail". */
+ *    green is covered, the accent tick is this scan. The gap, not the score, is
+ *    the reading: an unlit arc is the thing the user is here to close. */
 .vd-cov-gauge { display: grid; place-items: center; padding-top: 4px; }
 .vd-cov-svg { width: 100%; max-width: 290px; height: auto; overflow: visible; }
 .vd-cov-arc-base { fill: none; stroke: var(--ds-paper-darker); stroke-width: 15; stroke-linecap: round; }
@@ -260,7 +261,7 @@
 .vd-scan__img { width: 56px; height: 56px; flex: 0 0 auto; object-fit: cover; border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-rule); box-shadow: var(--ds-elev-1); }
 .vd-cf__refimg { width: 100%; max-width: 216px; display: block; border-radius: var(--ds-radius-xs); border: 1px solid var(--ds-ink-faint); box-shadow: var(--ds-elev-1); }
 
-/* ── Scan-in-progress indicator (concept C · staged) ─────────────────────────────
+/* ── Scan-in-progress indicator ──────────────────────────────────────────────────
    Rendered by views/scanner.renderScanning() and updated live by mount's onProgress
    from the OCR's real `lcscan:progress` events. Colour tracks the user's chosen accent. */
 .vd-drop--busy { cursor: default; }
@@ -295,18 +296,18 @@
 .vd-error__m { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); line-height: 1.6; color: var(--ds-ink-medium); }
 .vd-error__retry { flex: 0 0 auto; align-self: center; }
 
-/* ── Scanner redesign (2026-08-14): name field · re-openable rows · Saved shelf · couldn't-read ── */
+/* ── Scanner: name field · re-openable rows · Saved shelf · couldn't-read ── */
 .vd-cf-sec--name { padding-bottom: var(--ds-space-3); border-bottom: 1px dashed var(--ds-rule); margin-bottom: var(--ds-space-2); }
 .vd-cf-name__lab { display: block; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: 6px; }
 .vd-cf-name__in { width: 100%; box-sizing: border-box; font-family: var(--ds-font-serif); font-size: var(--ds-text-sm); font-weight: 600; color: var(--ds-ink); background: var(--ds-paper-light); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); padding: 0.6rem 0.75rem; }
 .vd-cf-name__in:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 3px var(--ds-accent-wash); }
 
-/* re-openable scan rows — genuinely clickable now, so a pointer cursor is honest (SCAN-05) */
+/* re-openable scan rows — genuinely clickable, so a pointer cursor is honest */
 .vd-rail .rl-row[data-sc-open] { cursor: pointer; position: relative; width: 100%; text-align: left; }
 .rl-row__x { position: absolute; top: 4px; right: 2px; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--ds-ink-faint); cursor: pointer; font-size: 15px; line-height: 1; }
 .rl-row__x:hover { background: var(--ds-paper-deep); color: var(--ds-status-warn); }
 
-/* the neutral "couldn't read" result (SCAN-01) — no verdict, an honest exit with a way out */
+/* the neutral "couldn't read" result — no verdict, an honest exit with a way out */
 .vd-card--unread { padding: var(--ds-space-6); }
 .vd-unread { display: flex; flex-direction: column; align-items: flex-start; gap: var(--ds-space-3); }
 .vd-unread__ic { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--ds-paper-deep); color: var(--ds-ink-soft); font-weight: 700; }
@@ -314,19 +315,19 @@
 .vd-unread__m { font-family: var(--ds-font-serif); font-size: var(--ds-text-sm); color: var(--ds-ink-soft); line-height: var(--ds-lh-normal); max-width: 52ch; }
 .vd-unread__cta { display: flex; gap: var(--ds-space-3); flex-wrap: wrap; margin-top: var(--ds-space-2); }
 
-/* inline Confirm scoring error (SCAN-07) */
+/* inline Confirm scoring error */
 .vd-cf__err { flex-basis: 100%; font-family: var(--ds-font-serif); font-size: var(--ds-text-xs); color: var(--ds-status-warn); }
 
-/* Scanner review R2 (2026-08-15) -- rail overlap/width/x, editable amounts, close x */
-/* R2-2/R2-3: the two stacked scanner rail panels must NOT inherit the shared .rail-panel
+/* Scanner rail — overlap/width/x, editable amounts, close x */
+/* The two stacked scanner rail panels must NOT inherit the shared .rail-panel
    position:sticky (they collided on scroll) nor its align-self:start (which shrank each to
    its content width in this flex column). Scoped to .vd-rail so the coverage rail is untouched. */
 .vd-rail .rail-panel { position: static; align-self: stretch; }
-/* R2-3: the remove x sat absolute over the verdict pill and was a 20px target. Reserve a right
+/* The remove x sat absolute over the verdict pill and was a 20px target. Reserve a right
    gutter on a saved (re-openable) row and seat a larger, centred x in it, clear of the pill. */
 .vd-rail .rl-row[data-sc-src="saved"] { padding-right: 44px; }
 .vd-rail .rl-row__rm { position: absolute; top: 50%; right: 9px; transform: translateY(-50%); }
-/* R2-5: editable nutrient amount + unit (were read-only spans). */
+/* Editable nutrient amount + unit — these were read-only spans. */
 .vd-nrow__amt { display: inline-flex; align-items: center; gap: 5px; }
 .vd-amt, .vd-unit { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink); background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); padding: 4px 6px; transition: border-color var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out); }
 .vd-amt { width: 5.5ch; text-align: right; }
@@ -336,11 +337,11 @@
 /* the verdict-card close now uses the canonical .ui-close (dashboard.css); only its spacing is scoped here. */
 .vd-card__top .ui-close { margin-left: 8px; }
 
-/* Hero/confirm step close (tweak-list): replaces the removed herotag; reuses the
-   canonical .ui-close, pinned to the top-right of the flex step header. */
+/* Hero/confirm step close — replaces the herotag that is no longer rendered; reuses
+   the canonical .ui-close, pinned to the top-right of the flex step header. */
 .vd-step__head .vd-step__close { margin-left: auto; align-self: flex-start; }
 
-/* Paste-an-ingredients checker (tweak-list): the idle-state text path beside image upload.
+/* Paste-an-ingredients checker — the idle-state text path beside image upload.
    Foods / single ingredients -> straight to a verdict via runScan (neutral unless a villain hits). */
 .vd-paste { flex: 1 1 100%; margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--ds-rule); display: flex; flex-direction: column; gap: 8px; }
 .vd-paste__lab { font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ds-ink-soft); }
@@ -348,7 +349,7 @@
 .vd-paste__in:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--ds-accent) 18%, transparent); }
 .vd-paste__go { align-self: flex-start; }
 
-/* Scanner legibility bump (tweak-list): lift the dense 0.6rem micro-labels to the 0.7rem
+/* Scanner legibility bump: lift the dense 0.6rem micro-labels to the 0.7rem
    --ds-text-mini tier + weight 700 (matching the Regimen bump), scoped to .vd so no other
    tab is touched — the token is overridden ON .vd, never repointed globally. Overflow-tight
    elements (fixed-ch nutrient inputs, verdict tier sub-labels, rail pills, ellipsis eyebrow)
@@ -357,14 +358,15 @@
 .vd :is(.vd-amt, .vd-unit, .vd-tier__c small, .vd-pill, .vd-card__eyebrow) { font-size: 0.6rem; }
 .vd :is(.vd-step__state, .vd-cf-sec__n, .vd-nrow__amt, .vd-nrow__map, .vd-sug__lab, .vd-ing__lab, .vd-ocr__hint, .vd-cf__ref-h, .vd-reasons__h, .vd-cite, .vd-foot__prov, .vd-when, .vd-prog__note, .vd-error__m, .vd-cf-name__lab) { font-weight: 700; }
 
-/* ── Scanner rows S10/S11/S12 (2026-08-16): thumbnail lightbox · per-row delete · live OCR panel ── */
-/* S11 — per-row delete. Trailing × in the last grid column; the name input column was narrowed
+/* ── Scanner rows: thumbnail lightbox · per-row delete · live OCR panel ── */
+/* Per-row delete. Trailing × in the last grid column; the name input column was narrowed
    (1.4fr → 1fr) to make room. Reuses the canonical .ui-close--sm, tuned smaller/quieter for a dense row. */
 .vd-nrow__del { justify-self: end; align-self: center; --uic-size: 24px; box-shadow: none; }
 .vd-nrow__del svg { width: 12px; height: 12px; }
 .vd-nrow__del:hover { color: var(--ds-status-err); border-color: color-mix(in srgb, var(--ds-status-err) 45%, transparent); background: var(--ds-status-err-soft); }
 
-/* S10 — the uploaded thumbnail / photo are click-to-enlarge triggers (verify the OCR vs the real label). */
+/* The uploaded thumbnail / photo are click-to-enlarge triggers — the user verifies the OCR
+   against the real label. */
 .vd-scan__imgbtn { display: inline-flex; padding: 0; border-radius: var(--ds-radius-sm); line-height: 0; cursor: zoom-in; transition: transform var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out); }
 .vd-scan__imgbtn:hover { transform: translateY(-1px); box-shadow: var(--ds-elev-2); }
 .vd-scan__imgbtn:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--ds-accent-wash); }
@@ -378,7 +380,7 @@
    .vd-lightbox scrim below and stay correct over any image. */
 .vd-cf__refzoom { position: absolute; bottom: 6px; right: 6px; display: inline-flex; align-items: center; gap: 4px; font-family: var(--ds-font-mono); font-size: 0.6rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #f3ead7; background: rgba(18, 14, 10, 0.78); padding: 3px 8px; border-radius: var(--ds-radius-pill); backdrop-filter: blur(2px); pointer-events: none; }
 
-/* S10 — full-size label lightbox. Mirrors the .pf-overlay scrim grammar (token-based, self-theming);
+/* Full-size label lightbox. Mirrors the .pf-overlay scrim grammar (token-based, self-theming);
    mounts to document.body so a view re-render cannot wipe it. Reuses the pf-fade keyframe (dashboard.css). */
 .vd-lightbox { position: fixed; inset: 0; z-index: 9200; display: grid; place-items: center; padding: clamp(20px, 5vh, 56px); cursor: zoom-out;
   background: radial-gradient(120% 90% at 50% -10%, color-mix(in srgb, var(--ds-accent) 12%, transparent), transparent 60%), rgba(18, 14, 10, 0.82);

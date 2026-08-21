@@ -6,20 +6,19 @@ Generates dashboard/assets/data/pdm-coverage-data.json — read by state/coverag
 Those 34 carry no individual Wallach dose; instead they are covered collectively by any
 plant-derived-mineral source in the regimen, measured Sigma(vehicle mg) / goal.
 
-WHY 34 (it was 33, and the canon said 35 -- the history is why this note exists). STRONTIUM
-joined the group 2026-07-15 when Luneth signed its canon coverage_kind 'unspecified' ->
-'trace_pdm' (kv=334). It belongs there on Wallach's OWN words: humic shale IS the plant-derived
+WHY STRONTIUM IS IN THIS GROUP, on Wallach's OWN words: humic shale IS the plant-derived
 source -- "Humic Shale is a plant derived colloidal nutritional supplement"
 (rare-earths-forbidden-cures.txt:20815) -- and his own assay of that shale lists Strontium at
 14.0 ppm (rare-earths:20827, Table 10-5). Being FROM humic shale is what MAKES a mineral
 plant-derived; it is not an exception to it.
 
-The layout's PLANT DERIVED section and this metric now BOTH hold 34 and cannot drift apart:
-both read target.kind. The old 33-vs-35 trap is gone at the ROOT, because the SECTIONS are now
-the dose structure itself (FOUNDATIONAL 4 / INDIVIDUALLY DOSED 22 / PLANT DERIVED 34) -- so
-cobalt, tin and silver are no longer boundary cases: they carry their own sealed Wallach doses,
-so they render in INDIVIDUALLY DOSED, where they score. state/coverage.ts branches on
-target.kind alone; the canon's coverage_kind remains only a FALLBACK.
+The layout's PLANT DERIVED section and this metric BOTH hold 34 and cannot drift apart: both
+read target.kind. The SECTIONS ARE the dose structure itself (FOUNDATIONAL 5 / INDIVIDUALLY
+DOSED 21 / PLANT DERIVED 34), so tin and silver are no longer boundary cases -- they carry their
+own sealed Wallach doses and render in INDIVIDUALLY DOSED, where they score. Cobalt renders there
+too, but via target.kind 'mirrors': it states no amount of its own and inherits vitamin B12's
+verdict. state/coverage.ts branches on target.kind alone; the canon's coverage_kind remains only
+a FALLBACK.
 
 NOT "the rare earths" -- do not rename it back. 19 of these 34 are not rare earths by Wallach's
 own tagging: he header-tags exactly 15 of the 60 in Immortality's A-Z (cerium :5760 through

@@ -1,10 +1,11 @@
 /**
- * core/schemas/entity-copy.ts — the per-entity APPROVED-copy store schema (Phase H2)
+ * core/schemas/entity-copy.ts — the per-entity APPROVED-copy store schema
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Validates dashboard/assets/data/entity-copy.json — the hand-authored, user-approved
- * lede + short "why this number" copy, keyed by canon slug (essentials) / catalog slug
- * (conditions). A designated R4 prose home: this text is NEVER auto-derived (a lede must
+ * lede + short "why this number" copy, keyed by canon slug (essentials) and search-entity
+ * slug (topics). The `conditions` map is reserved and currently empty — no accessor reads it.
+ * A designated prose home: this text is NEVER auto-derived (a lede must
  * faithfully summarize the corpus; a why must faithfully explain the target), so each is
  * written one at a time and approved. Read via state/entity-copy.ts; a bad/absent store
  * degrades to empty and the entity page shows no lede/why rather than a guess.

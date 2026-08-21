@@ -1,6 +1,6 @@
 {
-  "_note": "Ratchet baseline for the no_new_dead_code invariant (wired 2026-07-13). Each entry is a knip finding <kind>|<file>|<symbol> that EXISTS today as accepted migration-scaffolding debt (zero-runtime zod z.infer type aliases + state helpers reserved for pending rounds). The gate RED-flags any dead-code finding NOT listed here, so NEW orphaned code can never ship silently. This list may only SHRINK: delete a key here when you delete the dead code it names, then regenerate. Regenerate: python tools/... (gen_knip_baseline) or hand-prune.",
-  "count": 49,
+  "_note": "Ratchet baseline for the no_new_dead_code invariant. Each entry is a knip finding <kind>|<file>|<symbol> that exists today as accepted debt: zero-runtime zod z.infer type aliases, plus state helpers whose caller is not built yet. The gate RED-flags any dead-code finding NOT listed here, so new orphaned code can never ship silently. This list may only SHRINK -- delete a key here when you delete the dead code it names. There is no generator: regenerate by hand by running `npx knip --reporter json` from dashboard/, building <kind>|<file>|<symbol> keys the way tools/invariants.py::_knip_dead_keys does, and pasting the sorted result here.",
+  "count": 45,
   "accepted": [
     "exports|assets/js/src/core/events.ts|subscriberCount",
     "exports|assets/js/src/state/corpus.ts|knowledgeVersion",
@@ -52,10 +52,9 @@
     {
       "entry": "exports|assets/js/src/state/profile.ts|saveUserProfile",
       "added": "2026-07-15",
-      "by": "claude, with Luneth asleep — FLAGGED FOR REVIEW, not assumed",
-      "why": "The §31 chokepoint that WRITES the user's name has no caller yet, because the live app has no name UI: the arrival veil + click-to-rename are part of the Coverage-D integration Luneth explicitly deferred to his own visual pass. The READ path (loadUserProfile/displayName/displayInitial) IS wired and live in main.ts::wireProfileIdentity.",
-      "the_honest_problem": "This file's own _note says 'This list may only SHRINK'. Appending here is therefore a RATCHET LOOSENING, and R9 forbids a SILENT one. It is recorded here rather than done quietly. The three options were: (a) do not ship the writer -- but then validateUserName is dead too and 'name persistence' is not delivered at all; (b) build the rename UI -- which breaks visual-verification.md while the user is asleep; (c) this. The baseline's own stated category ('state helpers reserved for pending rounds') covers it, and it already carries exactly such entries (e.g. state/log.ts|clearLog).",
-      "how_to_retire": "When the arrival/rename UI lands, saveUserProfile gains its caller. DELETE this entry and the _ratchet_additions block; the ratchet then resumes shrinking-only. If Luneth would rather it never have been added, revert this key and remove saveUserProfile until its UI exists."
+      "why": "The storage chokepoint that WRITES the user's name had no caller at the time, because the app shipped no name UI yet. The READ path (loadUserProfile/displayName/displayInitial) was already wired and live in main.ts::wireProfileIdentity.",
+      "the_honest_problem": "This file's own _note says the list may only SHRINK, so appending here LOOSENED a shrink-only ratchet. A loosening must never be silent, which is why it is recorded here instead of being done quietly.",
+      "how_to_retire": "RETIREMENT CONDITION IS NOW MET: saveUserProfile has real callers (views/welcome.ts and views/profile.ts). Delete this entry, delete the matching saveUserProfile key from `accepted`, drop `count` to match, and delete this whole _ratchet_additions block -- the ratchet then resumes shrinking-only."
     }
   ]
 }

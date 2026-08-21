@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""corpus_audit.py -- the full-corpus audit HARNESS (crack #4 fix, 2026-07-06;
-pre-triage upgrade, 2026-07-08).
+"""corpus_audit.py -- the full-corpus audit HARNESS.
 
-The mandatory pre-Phase-G audit (memory: full-corpus-audit-before-phase-g) is human-
-judgment work -- mis-labels, off-source citations, presentation bugs -- that the source
-rule forbids an agent from resolving autonomously. This tool does the MACHINE-actionable
+The mandatory pre-mining audit is human-judgment work -- mis-labels, off-source
+citations, presentation bugs -- that the source rule forbids resolving autonomously.
+This tool does the MACHINE-actionable
 half: it reads every sealed claim shard and emits a reviewable WORKLIST that pre-sorts
 all claims into three tiers (SUSPECT / needs-a-look / likely-fine), and attaches to every
 suspect a PROPOSED DISPOSITION -- a suggested action, phrased as a check, never a verdict,
@@ -13,13 +12,13 @@ edits a claim.
 
 Pairs with:
   - eden/tools/corpus-audit-status.json -- the structural lock (frozen_claim_count).
-  - the corpus_audit_gate invariant -- blocks Phase G mining until phase_g_unlocked.
+  - the corpus_audit_gate invariant -- blocks further mining until phase_g_unlocked.
 
 Run: `PYTHONUTF8=1 python eden/tools/corpus_audit.py`  ->  regenerates the worklist,
 prints a summary. The worklist file is REGENERABLE (not sacred); it is the audit's
 scratch surface, refreshed each run.
 
-WHY the 2026-07-08 upgrade (the kickoff review found it): the old single flag
+WHY THE PRE-TRIAGE EXISTS: a single undifferentiated flag
 `dose_without_dose` conflated two very different things -- (a) valid RANGE doses stored
 as strings ("20-30", "5,000"), which the deriver parses correctly (a false alarm), and
 (b) genuinely mis-labelled dose claims (RDA / average-intake / toxicity / per-kg figures

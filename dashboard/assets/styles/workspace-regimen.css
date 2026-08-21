@@ -1,13 +1,13 @@
 /* ═══════════════════════════════════════════════════════════════════════════
  * workspace-regimen.css — the Regimen workspace (the Cockpit + save-slot switcher)
- * Everything scoped under .ck. PORTED VERBATIM from the design-approved demo
- * temporary/ready-to-be-ported/regimen-cockpit-slots-tray-v6.html + v7 polish (2026-08-13).
+ * Everything scoped under .ck. PORTED VERBATIM from the design-approved
+ * cockpit + save-slots + tray demo page (not part of this repo).
  * Reuses the shared design-system + workspace-coverage classes already loaded
  * (.coverage-grid · .goalstrip · .gchip · .recs · .rec · .rail-panel · .rl-row).
  * The demo's mockup-chrome + scroll-unlock CSS is NOT ported (the app shell owns those).
  * ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ═══ CONCEPT 1 · THE COCKPIT — premium health-tech ═══ everything scoped under .ck ═══ */
+/* ═══ THE COCKPIT — premium health-tech ═══ everything scoped under .ck ═══ */
 .ck { position: relative; z-index: 1; padding: var(--ds-space-4) var(--ds-space-7) var(--ds-space-7); display: flex; flex-direction: column; gap: var(--ds-space-6); }
 .ck *, .ck *::before, .ck *::after { box-sizing: border-box; }
 /* button reset kept BELOW class specificity (:where = 0) so styled buttons — .rec, .ck-slot,
@@ -19,8 +19,7 @@
 .ck-main { display: flex; flex-direction: column; gap: var(--ds-space-6); min-width: 0; }
 .ck-rail { display: flex; flex-direction: column; gap: var(--ds-space-5); }
 
-/* -- SAVE SLOTS (fuse: tray) -- */
-/* ══ SAVE SLOTS · Variant A — White footer tray ═══════════════════════════
+/* ══ SAVE SLOTS — white footer tray ═══════════════════════════════════════
    Top ~58% = bold saturated colour-block (name + Binder pencil top-right, big
    47/90 with meta on its baseline). Bottom ~42% = a full-width WHITE tray
    holding the progress bar + the 8 bright swatches. Active vs inactive is
@@ -373,7 +372,7 @@
   .ck-hero { padding: var(--ds-space-5); }
 }
 
-/* == Regimen right-rail redesign (Variant B, roster-first) ================= */
+/* == Regimen right-rail — roster-first ==================================== */
 .rr-results__info { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .rr-results__meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-status-ok); }
 .rr-row { display: grid; grid-template-columns: minmax(0,1fr) auto auto; align-items: center; gap: 12px; padding: 12px 2px; border-bottom: 1px solid var(--ds-rule-soft); }
@@ -480,13 +479,13 @@
 .rc-btn-primary:hover { background: var(--ds-accent-deep); }
 
 /* ============================================================
-   Legibility bump (tweak-list · regimen): raise the 0.6rem micro
-   labels to the 0.7rem --ds-text-mini tier at weight 700 so the
-   Regimen telemetry is readable. Shared classes (.recs__eyebrow,
-   .goalstrip__eyebrow, .rail-panel__*, .rail-empty small) are
-   raised via a .ck-scoped override so the Coverage tab is left
-   untouched; regimen-only .ck-* classes are re-declared here.
-   The token --ds-text-micro is NOT repointed (dozens of readers).
+   Legibility bump: raise the 0.6rem micro labels to the 0.7rem
+   --ds-text-mini tier at weight 700 so the Regimen telemetry is
+   readable. Shared classes (.recs__eyebrow, .goalstrip__eyebrow,
+   .rail-panel__*, .rail-empty small) are raised via a .ck-scoped
+   override so the Coverage tab is left untouched; regimen-only
+   .ck-* classes are re-declared here. The token --ds-text-micro
+   is NOT repointed (dozens of readers).
    ============================================================ */
 .ck .recs__eyebrow,
 .ck .goalstrip__eyebrow,
@@ -508,7 +507,7 @@
   font-size: var(--ds-text-mini);
 }
 
-/* Add-to-regimen confirmation flash (tweak-list): a product added from the Products
+/* Add-to-regimen confirmation flash: a product added from the Products
    tab jumps here and the matching Active-stack row pulses once so the add is visually
    confirmed. .rr-row--flash is toggled in the knowledge click handler after navigate,
    name-keyed via data-rr-name. Reduced-motion safe. */
@@ -520,7 +519,7 @@
 .rr-row--flash { animation: rr-flash 1.15s var(--ds-ease-out); border-radius: var(--ds-radius-sm); }
 @media (prefers-reduced-motion: reduce) { .rr-row--flash { animation: none; } }
 
-/* Per-slot import affordance (tweak-list §7): the empty-slot tile is now a <div>
+/* Per-slot import affordance: the empty-slot tile is a <div>
    (a <button> cannot legally nest the Import button) holding a full-size "add" core
    button + a small Import button below it. The tile's dashed/hover styling is
    unchanged — it moved from the old <button> to this <div> under the same class.

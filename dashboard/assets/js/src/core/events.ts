@@ -1,24 +1,28 @@
 /**
- * core/events.ts — typed pub/sub for the §31 cross-surface state sync system
+ * core/events.ts — the typed pub/sub behind cross-surface state sync
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * The mechanism behind the chokepoint cascade. When state/regimen.ts mutates
  * regimen LS, it fires a `regimen:changed` event here. Every view that cares
  * subscribes and re-renders.
  *
- * Why this matters architecturally:
- *   Before: `window.triggerRegimenRerender()` called from inside chokepoints,
- *           with comments reminding the author to remember to call it.
- *   After:  `emit('regimen:changed', payload)` is the chokepoint's last line.
- *           Subscribers register their interest declaratively.
+ * Why it is an event bus and not direct calls: a chokepoint's last line is
+ * `emit('regimen:changed', payload)`, and subscribers register their interest
+ * declaratively — so no mutation site has to remember which surfaces need to
+ * re-render. (state/coverage.ts and state/regimen.ts still wrap the older
+ * `window.triggerRegimenRerender` global as a compatibility shim, so that name
+ * is not gone — it is simply no longer how state reaches the views.)
  *
- * Cross-tab sync (Round 150): core/storage subscribes to native `storage`
+ * Cross-tab sync: core/storage subscribes to native `storage`
  * events and re-fires the corresponding typed event so views in tab B see a
  * write from tab A with zero extra plumbing.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-/** All event names the system can fire. Add here, then add the payload below. */
+/** Every event name the bus knows. Add here, then add the payload below.
+ *  Some names are declared ahead of a producer — nothing currently emits
+ *  'scanner:scan-cleared', 'eden:hash-mismatch' or 'storage:pressure-warn', so a
+ *  subscriber to any of those would wait forever. */
 export type EventName =
   | 'regimen:changed'
   | 'coverage:recomputed'
@@ -40,11 +44,15 @@ export interface EventPayloads {
   'scanner:scan-cleared': { captureId: string };
   'eden:hash-mismatch': { file: string; expected: string; actual: string };
   'storage:pressure-warn': { bytesUsed: number; bytesLimit: number };
+  /** Reserved extension point: main.ts::navigateTo emits this on every workspace
+   *  switch, but nothing subscribes today. */
   'rail:navigate': { target: 'coverage' | 'regimen' | 'scanner' | 'search' | 'knowledge' };
   'log:entry-added': { id: string; kind: string };
   /** The user named themselves, or chose to browse. Fired by the state/profile.ts
-   *  chokepoint; the name is painted in three slots (topbar · profile tab · avatar
-   *  initial), so a silent write would leave two of them stale. */
+   *  chokepoint; main.ts::wireProfileIdentity repaints four places from it — the
+   *  document title, the rail brand slot, the rail profile name and the avatar initial
+   *  — so a silent write would leave the rest stale. The topbar is NOT one of them: it
+   *  carries the workspace name/deck, painted from a different source. */
   'profile:changed': { name: string | null; browsing: boolean };
   /** Ask-Wallach → open the Knowledge drawer at an entity's page. 'condition'/'essential'/'product'
    *  open a detail page (openDetail); 'topic' opens the Explore topic overlay. Fired by views/search.ts
@@ -108,7 +116,8 @@ export function emit<E extends EventName>(event: E, payload: EventPayloads[E]): 
   }
 }
 
-/** Count of subscribers for an event (useful for debugging + tests). */
+/** Count of subscribers for an event. No caller today: it exists as an
+ *  introspection hook for debugging a missed re-render. */
 export function subscriberCount(event: EventName): number {
   return subscribers.get(event)?.size ?? 0;
 }

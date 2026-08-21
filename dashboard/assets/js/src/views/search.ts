@@ -78,7 +78,7 @@ const TYPE_ICON: Record<string, string> = {
 /**
  * Entity-SPECIFIC icon overrides (checked before the type icon) — for entities whose subject
  * deserves a bespoke mark. Color Therapy gets a full-colour 6-segment wheel (the one deliberately
- * NOT monochrome; drawer-search.css opts .sr-icon-wheel out of the mono stroke rule). Luneth 2026-07-09.
+ * NOT monochrome; drawer-search.css opts .sr-icon-wheel out of the mono stroke rule).
  */
 const ENTITY_ICON: Record<string, string> = {
   color_therapy: '<svg viewBox="0 0 24 24" class="sr-icon-wheel"><path fill="#e5484d" d="M12 12L12 3A9 9 0 0 1 19.79 7.5Z"/><path fill="#f5892a" d="M12 12L19.79 7.5A9 9 0 0 1 19.79 16.5Z"/><path fill="#ffc531" d="M12 12L19.79 16.5A9 9 0 0 1 12 21Z"/><path fill="#4ca259" d="M12 12L12 21A9 9 0 0 1 4.21 16.5Z"/><path fill="#4a7dff" d="M12 12L4.21 16.5A9 9 0 0 1 4.21 7.5Z"/><path fill="#9159f0" d="M12 12L4.21 7.5A9 9 0 0 1 12 3Z"/></svg>',
@@ -239,9 +239,9 @@ function renderQuestionResults(claims: SearchClaim[]): string {
 // ─── TOPIC page (exact-match entity → every answer, grouped by facet) ───────
 
 // A soft cap with a working reveal: the first `cap` rows show, the rest render collapsed behind a
-// "See N more" button that reveals them in place — the ONE truncation pattern across the surface, no
-// hard slice that silently drops rows (Luneth 2026-07-23: "no arbitrary truncation ... a working See
-// N more everywhere"). FAM_CAP governs a topic-page family group; MORE_CAP the ask "more answers".
+// "See N more" button that reveals them in place — the ONE truncation pattern across the surface.
+// Never a hard slice: no ranked answer may be silently dropped from a result set.
+// FAM_CAP governs a topic-page family group; MORE_CAP the ask "more answers".
 const FAM_CAP = 3;
 const MORE_CAP = 4;
 
@@ -298,7 +298,8 @@ function renderFamilyGroup(fam: EntityFamily): string {
  * A hero descriptor for the topic page, from EITHER the enriched search entity OR — when the query
  * resolved to the wider Knowledge universe (a condition/essential with no enriched search claims) —
  * that page's own record. This is the CATCH-ALL: a non-enriched entity ("cancer") still gets the
- * full Mercury-style hero + a "Learn More →" into its Knowledge page, instead of a dead-end.
+ * full symbol + name + type hero and a "Learn More →" into its Knowledge page, instead of a
+ * dead-end.
  */
 interface HeroSrc { name: string; type: string; symbol: string | null; synonyms: string[]; count: number }
 function heroFor(subject: string, e: SearchEntity | null): HeroSrc | null {
@@ -318,10 +319,10 @@ function heroFor(subject: string, e: SearchEntity | null): HeroSrc | null {
 
 /**
  * The Learn-More target kind — a Knowledge page this entity can open. Conditions + essentials open
- * their detail page; any OTHER resolved search entity opens its Explore topic overlay. So the button
- * now appears for basically every resolved topic (Luneth 2026-07-23: "Learn More should basically
- * ALWAYS appear because ANY topic has a full page by default"), self-healing as pages are authored.
- * Products land in the fast-follow (openDetail already routes 'product'; the emitter is what's to add).
+ * their detail page; any OTHER resolved search entity opens its Explore topic overlay, so the button
+ * appears for essentially every resolved topic and self-heals as more pages are authored.
+ * Products are deliberately absent: knowledge.ts::openDetail already routes 'product', but nothing
+ * resolves a product subject here, so this never returns it.
  */
 function learnKind(subject: string, e: SearchEntity | null): 'condition' | 'essential' | 'topic' | null {
   if (getConditionPage(subject) !== null) {
@@ -354,7 +355,7 @@ function renderTopicPage(subject: string): string {
   const n = total > 0 ? total : hero.count;
   const kind = learnKind(subject, e);
   // The WHOLE hero is the Learn-More hit target (name, glyph, meta, blank space) — data-aw-learnmore
-  // on the .ehero itself; the button stays as the visible cue (and keyboard focus). Luneth 2026-07-23.
+  // on the .ehero itself; the button stays as the visible cue (and keyboard focus).
   const heroCls = kind !== null ? 'ehero ehero--link' : 'ehero';
   const heroAttrs = kind !== null ? ` data-aw-learnmore="${escHTML(subject)}" data-aw-kind="${kind}"` : '';
   const learnMore = kind !== null
@@ -411,9 +412,10 @@ function renderBrowseCard(familyId: string, t: FamilyTopic): string {
 /**
  * The BROWSE page — reached by clicking a "kind of answer" card on the opening screen. It lists the
  * TOPICS that have that kind of answer, each a light card (micro-label + count + peek), so a family
- * with 159 answers browses as ~60 short cards — never a flood of answer bodies (the anti-lag choice:
- * no glossified answer text renders here). The five lens pills switch families in place; a card opens
- * that topic's full page. Colour + counts are data-driven; nothing is hand-catalogued.
+ * of hundreds of answers browses as a few hundred short cards — never a flood of answer bodies
+ * (the anti-lag choice: no glossified answer text renders here). The five lens pills switch
+ * families in place; a card opens that topic's full page. Colour + counts are data-driven;
+ * nothing is hand-catalogued.
  */
 function renderBrowse(familyId: string): string {
   const topics = familyTopics(familyId);
@@ -538,7 +540,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     lastKey = key;
     body.innerHTML = renderBody(result);
     // Every repaint starts at the top: a fresh topic/opening must not inherit the previous
-    // view's scroll offset (replacing innerHTML alone does not reset it). Luneth 2026-07-09.
+    // view's scroll offset (replacing innerHTML alone does not reset it).
     body.scrollTop = 0;
     syncNav();
   };
@@ -685,7 +687,7 @@ export function mount(container: HTMLElement): DrawerHandle {
       return;
     }
     // A "kind of answer" card (opening) OR a lens pill (browse) — both carry data-aw-family — opens
-    // or switches the browse page for that family. The five opening kcards were dead links until now.
+    // or switches the browse page for that family.
     const famEl = target.closest<HTMLElement>('[data-aw-family]');
     if (famEl !== null) {
       pushNav();
@@ -695,7 +697,8 @@ export function mount(container: HTMLElement): DrawerHandle {
     }
     // "Learn More →" → open this entity's Knowledge page: a condition/essential/product detail page,
     // or an Explore topic overlay for any other entity. main.ts does the single-drawer swap (close
-    // search, open Knowledge at the entity). 'product' is accepted ahead of its fast-follow emitter.
+    // search, open Knowledge at the entity). 'product' is accepted defensively — learnKind never
+    // emits it.
     const learnEl = target.closest<HTMLElement>('[data-aw-learnmore]');
     if (learnEl !== null) {
       const kind = learnEl.getAttribute('data-aw-kind');

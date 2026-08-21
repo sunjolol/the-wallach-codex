@@ -1,21 +1,20 @@
 /**
- * views/knowledge-home.ts — the Knowledge drawer's Home tab (Phase H2)
+ * views/knowledge-home.ts — the Knowledge drawer's Home tab
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * The landing tab — the drawer's front door. A pristine re-creation of the
- * signed-off demo's Home vision on REAL data: a hero (headline + live corpus
- * counts + a live-suggest search + curated hint chips); the three browse shelves
- * (essentials · conditions · explore) arrive in later chunks.
+ * The landing tab — the drawer's front door, on REAL data: a hero (headline + live
+ * corpus counts + a live-suggest search + curated hint chips) over three browse
+ * shelves — the essentials, common conditions, and an Explore topic preview.
  *
- * PURE PROJECTION (§00.B single-source / R1): holds no canonical value as a
- * literal. Counts derive from state accessors; every visible string comes from
- * the contained view-copy store via ui() (R4) — never inline prose, never the
- * demo's fixture data. Entity NAMES are data (escaped), not prose.
+ * PURE PROJECTION (§00.B single-source): holds no canonical value as a literal.
+ * Counts derive from state accessors; every visible string comes from the contained
+ * view-copy store via ui() — never inline prose, never fixture data. Entity NAMES
+ * are data (escaped), not prose.
  *
- * Chunk 2 wires the HERO. The live-suggest searches essentials + conditions
- * (both have entity pages that navigate today); topics join once their pages
- * exist. Results/hints emit the drawer's live data-kd-* nav contract and bubble
- * to the container-delegated handlers in knowledge.ts.
+ * The live-suggest searches essentials, conditions and Explore topics — all three have
+ * pages that navigate. Charged entities are never surfaced here (see homeMatches).
+ * Results/hints emit the drawer's live data-kd-* nav contract and bubble to the
+ * container-delegated handlers in knowledge.ts.
  *
  * Layer: views/ — reads state/ + core/, never writes localStorage.
  * ═══════════════════════════════════════════════════════════════════════════
@@ -45,10 +44,9 @@ function fmt(n: number): string {
 const SEARCH_SVG = '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>';
 
 /**
- * The curated placeholder hint chips (Home is a hand-tuned surface — Luneth
- * 2026-07-11). A small NAVIGABLE set for now (essentials + conditions have
- * pages); the eventual vision is the top-5 topics by entry-count, landing once
- * topic pages exist.
+ * The curated hint chips — Home is a hand-tuned surface, so this is a hand-picked set
+ * rather than a formula. Each chip must resolve to a page that navigates; hintChip
+ * renders nothing for a slug that does not resolve.
  */
 const HINTS: ReadonlyArray<{ kind: 'essential' | 'condition'; slug: string }> = [
   { kind: 'essential', slug: 'calcium' },
@@ -69,9 +67,9 @@ function hintChip(h: { kind: 'essential' | 'condition'; slug: string }): string 
   return `<button class="sh-hint" type="button" data-kd-condition="${escHTML(h.slug)}">${escHTML(conditionDisplayName(h.slug))}</button>`;
 }
 
-// ─── "The essentials" shelf (Chunk 3) ──────────────────────────
+// ─── "The essentials" shelf ───────────────────────────────────
 
-// The 4 category families in the demo's legend order; the tile + swatch colour
+// The 4 category families in legend order; the tile + swatch colour
 // is driven by data-cat via CSS (no colour literal in TS).
 const LEGEND_CATS = ['mineral', 'vitamin', 'amino_acid', 'fatty_acid'] as const;
 
@@ -84,8 +82,8 @@ function shelfTile(e: EssentialSummary): string {
 
 /**
  * The Home "The essentials" shelf — the top-18 essentials by claim count (pure
- * formula, most-to-least, per the Home-page philosophy), the demo's tile grid, and
- * the category colour legend. A tile opens the essential's page via the drawer's
+ * formula, most-to-least), the tile grid, and the category colour legend. A tile
+ * opens the essential's page via the drawer's
  * data-kd-essential contract.
  */
 function renderEssentialsShelf(): string {
@@ -97,7 +95,7 @@ function renderEssentialsShelf(): string {
     <div class="ep-legend"><span class="ep-legend__lbl">${escHTML(ui('kh_legend_label'))}</span>${legend}</div>`;
 }
 
-// ─── "Common conditions" shelf (Chunk 4) ───────────────────────
+// ─── "Common conditions" shelf ────────────────────────────
 
 /** One condition row: friendly name + "N claims · M nutrients"; opens the condition's page. */
 function condRow(c: ConditionSummary): string {
@@ -106,8 +104,8 @@ function condRow(c: ConditionSummary): string {
 
 /**
  * The Home "Common conditions" shelf — the top-8 conditions by claim count (pure
- * formula, most-to-least, per the Home-page philosophy), the demo's condition-row
- * grid. A row opens the condition's page via the drawer's data-kd-condition
+ * formula, most-to-least), the condition-row grid. A row opens the condition's
+ * page via the drawer's data-kd-condition
  * contract; the section link jumps to the full Conditions tab.
  */
 function renderConditionsShelf(): string {
@@ -118,7 +116,7 @@ function renderConditionsShelf(): string {
     <div class="sh-condgrid">${top.map(condRow).join('')}</div>`;
 }
 
-// ─── "Explore" preview shelf (Chunk 4b) ───────────────
+// ─── "Explore" preview shelf ─────────────────────────
 
 /** One Explore chip → opens that topic's page on the Explore tab (data-kd-topic; knowledge.ts). */
 function exploreChip(e: { slug: string; display_name: string }): string {
@@ -127,8 +125,8 @@ function exploreChip(e: { slug: string; display_name: string }): string {
 
 /**
  * The Home "Explore" preview — the curated topic-chip cloud (Home is the SPECIAL
- * curated surface, the home-page-curation philosophy). The selection is a hand-pick in
- * home-curation.json (currently the demo's featured 14 topic/concept entities), rendered
+ * curated surface). The selection is a hand-pick in home-curation.json (currently 14
+ * topic/concept entities), rendered
  * A-Z by name; a chip opens that topic's faceted page on the Explore tab, and the header
  * link jumps to the full Explore index. Empty curation renders nothing (graceful).
  */
@@ -141,7 +139,7 @@ function renderExploreShelf(): string {
     <div class="kd-explore-cloud">${topics.map(exploreChip).join('')}</div>`;
 }
 
-/** The Home landing tab — hero (Chunk 2) + essentials (Chunk 3) + conditions (Chunk 4a) + Explore preview (Chunk 4b). */
+/** The Home landing tab — hero + the essentials shelf + the conditions shelf + the Explore preview. */
 export function renderHomeTab(): string {
   const claims = listBooks().reduce((sum, b) => sum + (b.claim_count ?? 0), 0);
   const sub = ui('kh_hero_sub')
@@ -178,7 +176,7 @@ interface HomeMatch {
   startsWith: boolean;
 }
 
-/** Substring match over essentials + conditions (name OR spaced slug) — demo semantics. */
+/** Substring match over essentials, conditions and Explore topics (name, synonym, or spaced slug). */
 function homeMatches(query: string): HomeMatch[] {
   const q = query.trim().toLowerCase();
   if (q.length === 0) {
@@ -242,8 +240,8 @@ function resRow(m: HomeMatch, active: boolean): string {
 }
 
 /**
- * The live-suggest dropdown body for a query — grouped (Essentials, then
- * Conditions), best-match-first, capped at 10, the first row pre-highlighted.
+ * The live-suggest dropdown body for a query — grouped (Essentials, then Conditions,
+ * then Explore topics), best-match-first, capped at 10, the first row pre-highlighted.
  * Called by the drawer's delegated input/keydown handlers (knowledge.ts).
  */
 export function renderHomeSuggestions(query: string): string {

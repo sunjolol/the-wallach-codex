@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """tools/creators_log.py — CLI writer for the Creator's Log file-mirror.
 
-The Creator's Log is the §00 sacred audit trail (.claude/skills/round-close
-— "The two layers" + "The sacred covenant"). In-app it lives in localStorage via
-state/log.ts::log(); this tool is the CLI mirror that makes the Round-close
-ritual's step 5 fireable from the terminal and keeps the log in the repo as a
-committed, append-only teaching record.
+The Creator's Log is this project's append-only audit trail (see
+.claude/skills/round-close, "The covenant -- the Creator's Log is sacred"). In-app
+it lives in localStorage via dashboard/assets/js/src/state/log.ts::log(); this tool
+is the CLI mirror that makes the round-close log step fireable from the terminal and
+keeps the log in the repo as a committed, append-only teaching record.
 
 Layout (chronicle/creators-log/):
   log.jsonl  — THE canonical append-only ledger (one schema-valid JSON entry per
@@ -16,12 +16,14 @@ Layout (chronicle/creators-log/):
   digests/   — GENERATED per-month digests (YYYY-MM.md) holding the FULL history.
   README.md  — orientation + the sacred covenant + how to read/append.
 
-`append` auto-stamps id + ISO-8601 UTC ts, validates against the LogEntrySchema
-shape (mirrors core/schemas/log.ts), appends one JSON line through
-safe_write.safe_append (§17 atomic-verify), then regenerates LOG.md + the
-dashboard build-time embed (dashboard/assets/data/creators-log-embed.json). KINDS
-mirrors LogKindSchema — if that enum grows, update KINDS here in the same patch
-(the creators_log_well_formed invariant reuses verify_file() below).
+`append` auto-stamps id + an ISO-8601 machine-local ts (the UTC offset is carried;
+entries written before this stay UTC and still render that way), validates against
+the LogEntrySchema shape (mirrors dashboard/assets/js/src/core/schemas/log.ts),
+appends one JSON line through safe_write.safe_append (atomic write + byte readback),
+then regenerates LOG.md + the dashboard build-time embed
+(dashboard/assets/data/creators-log-embed.json). KINDS mirrors LogKindSchema — if that
+enum grows, update KINDS here in the same patch (the creators_log_well_formed invariant
+reuses verify_file() below).
 
 Usage:
   PYTHONUTF8=1 python tools/creators_log.py append --surface tools \\
@@ -50,7 +52,8 @@ INDEX_PATH = LOG_DIR / "INDEX.md"
 sys.path.insert(0, str(ROOT / "tools"))
 import safe_write  # noqa: E402
 
-# Mirrors core/schemas/log.ts::LogKindSchema — keep in sync (same patch).
+# Mirrors dashboard/assets/js/src/core/schemas/log.ts::LogKindSchema — keep in sync
+# (same patch).
 KINDS = (
     "session-start", "session-end", "round-close", "build", "invariant-pass",
     "invariant-fail", "incident", "milestone", "design-decision", "note",

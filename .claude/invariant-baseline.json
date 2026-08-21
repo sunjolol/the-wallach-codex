@@ -1,7 +1,7 @@
 {
   "tolerated_failures": [],
   "captured": "2026-07-06",
-  "board": "45/45 (crack-fix chunk: manifest-completeness + R7/R9 meta-gates + widened prose + corpus-audit lock)",
+  "board": "45/45 at capture -- this records only the board size on the day the baseline file was created; the board has since grown to 94 gates. Nothing re-checks this field, so read it as history, never as the current total.",
   "note": "Invariant failures stop_round_close.py tolerates without blocking a round-close (no NEW-regression block). EMPTY BY DESIGN: every red is a real regression. Any entry MUST be justified (Charter R9, gated by exceptions_justified): an object {invariant, reason, test}, never a bare name -- a reason-less exception is a silent loosening and is itself RED. stop_round_close.py reads each entry's `invariant` name.",
   "_entry_schema": {
     "invariant": "the live invariant name this exception tolerates",

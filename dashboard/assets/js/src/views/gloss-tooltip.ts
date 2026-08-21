@@ -2,7 +2,7 @@
  * views/gloss-tooltip.ts — shared hover/tap tooltip for glossary terms + fast [data-tip] hints
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * A `.gloss` term (emitted by glossify() in knowledge-corpus.ts) shows its
+ * A `.gloss` term (emitted by glossify() in views/glossify.ts) shows its
  * plain-language definition on hover (desktop), focus (keyboard), or tap (touch).
  * ONE tooltip element + delegated document listeners — no per-term wiring, so it
  * covers glossary terms in both claim summaries and Wallach verbatims, however many
@@ -102,8 +102,8 @@ export function initGlossTooltip(): void {
   document.addEventListener('click', (e) => {
     const el = glossTarget(e);
     if (el !== null) {
-      // KNOW-05: only toggle OFF when the SAME term is tapped again; tapping a different term
-      // switches the tip to it (was: any second tap dismissed, so switching took two taps).
+      // Only toggle OFF when the SAME term is tapped again; tapping a different term switches
+      // the tip straight to it, so moving between terms on touch never costs two taps.
       if (tip !== null && tip.hidden === false && el === activeEl) {
         hide();
       }

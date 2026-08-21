@@ -1,5 +1,5 @@
 {
-  "_purpose": "Hand-authored, USER-APPROVED per-entity lede + short 'why this number' copy (Charter R4 prose home). NEVER auto-derived: a lede must accurately summarize the Wallach corpus and a why must accurately explain how the target was reached, so each is written one at a time and approved by Luneth. An entity absent here shows NO lede / NO why (never a guessed one). Read via state/entity-copy.ts; on the clean surface (_CLEAN_SURFACE_STORES) with lede/why as prose homes. conditions{} fills in as condition pages land (H2 chunk 2).",
+  "_purpose": "Hand-authored, USER-APPROVED per-entity lede + short 'why this number' copy (Charter R4 prose home). NEVER auto-derived: a lede must accurately summarize the Wallach corpus and a why must accurately explain how the target was reached, so each is written one at a time and reviewed and approved before it ships. An entity absent here shows NO lede / NO why (never a guessed one). Read via state/entity-copy.ts; on the clean surface (_CLEAN_SURFACE_STORES) with lede/why as prose homes. conditions{} is reserved for per-condition copy and is currently empty.",
   "essentials": {
     "calcium": {
       "lede": "The most abundant mineral in your body — about 1 kg of you, 99% locked in bone and teeth, the last 1% running your muscles, nerves and heartbeat.",

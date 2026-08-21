@@ -1,18 +1,21 @@
 /**
- * views/entity-page.ts — the unified ENTITY PAGE render (Phase H2)
+ * views/entity-page.ts — the unified ENTITY PAGE render
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * The single presentation unit for an essential (Phase H2 chunk 1b; conditions +
- * products follow). A PURE PROJECTION of the generated entity-page artifact
- * (state/entity-page) joined with the sealed corpus + search index at render time
- * — this view holds no canonical value as a literal (§00.B single-source, R1) and
+ * The single presentation unit for an essential and for a condition (products keep
+ * their own detail panel in views/knowledge-products.ts). A PURE PROJECTION of the
+ * generated entity-page artifact (state/entity-page) joined with the sealed corpus +
+ * search index at render time — this view holds no canonical value as a literal
+ * (§00.B single-source) and
  * no per-entity content branch (entity_render_is_projection).
  *
- * Section order: back · hero · lede · "At a glance" (Wallach target + why-this-number
- * + live coverage bar + best sources) · "Worth knowing" (search facet cards) ·
- * "Need help with a condition?" (orange condition pills) · "Works with" (green
- * nutrient pills) · "The full record" (kind groups + keyword filter) · "Keep
- * exploring" (violet pills). Colour is data-driven: record kinds carry the family
+ * Section order: hero (with the back affordance) · lede · "At a glance" (Wallach target
+ * + why-this-number + live coverage bar + best sources) · the fatty-acid block, the
+ * mechanism hero and the plant-derived hero (each self-suppressing on elements without
+ * one) · "Worth knowing" (search facet cards) · "Need help with a condition?" (orange
+ * condition pills) · "Works with" (green nutrient pills) · "About the plant-derived
+ * group" · "The full record" (kind groups + keyword filter) · "Keep exploring" (violet
+ * pills). Colour is data-driven: record kinds carry the family
  * from state/copy::kindCategory in a data-family attr; search facets map to a family
  * in CSS by data-facet — the family word is NEVER a TS literal (view_category_not_hardcoded).
  *
@@ -21,8 +24,8 @@
  * drawer-knowledge.css apply. The "at a glance" card joins the live coverage tile
  * (tileOf) + the recommender ranking (rankedSourcesForEssential); it imports state/ +
  * knowledge-corpus/products but NEVER views/knowledge.ts (a cycle). The lede + the short
- * "why this number" hover come from the user-approved entity-copy store (state/entity-copy),
- * never auto-derived.
+ * "why this number" hover come from the entity-copy store (state/entity-copy), never
+ * auto-derived.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -79,9 +82,9 @@ function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>\x22\x27]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
 }
 
-// ─── Claim primitives (owned copy; the knowledge-corpus originals retire later) ──
-// Faithful port of the dose / Fig-8-1 / table-header rendering so a dose claim shows
-// a scannable value + column legend instead of an unlabeled run of numbers. The dose
+// ─── Claim primitives ─────────────────────────────────────
+// The dose / Fig-8-1 / table-header rendering, so a dose claim shows a scannable value
+// + column legend instead of an unlabeled run of numbers. The dose
 // + legend fragments keep the kd-claim__* class names so the perfected drawer-knowledge.css
 // rules apply verbatim (the entity card itself is the new kd-ep-claim namespace).
 
@@ -222,7 +225,7 @@ export function renderSearchCard(claim: SearchClaim): string {
 }
 
 /**
- * A record/statement card (neutral § badge): the truncated paraphrase summary →
+ * A record/statement card (same "?" badge, --record modifier): the truncated paraphrase summary →
  * full paraphrase + optional dose card / table header + Wallach's exact words +
  * citation. Resolves a CorpusClaim.
  */
@@ -236,7 +239,7 @@ function renderRecordClaim(claim: CorpusClaim, open = false): string {
   // The Full-Record filter (applyRecordFilter) matches the card's rendered TEXT, but a record
   // card never prints the enrichment QUESTION (the words a user would type) — only the paraphrase
   // + verbatim. Carry the question as a data-attr so the filter can match it too, without changing
-  // what the card shows (Luneth 2026-07-28; closes the RARE-000306 "no result" finding).
+  // what the card shows.
   const enrichQ = getSearchClaim(claim.id)?.question ?? '';
   const qAttr = enrichQ.length > 0 ? ` data-question="${escHTML(enrichQ)}"` : '';
   return `<details class="kd-ep-claim kd-ep-claim--record"${open ? ' open' : ''}${qAttr}>
@@ -341,7 +344,7 @@ function bestValueProductId(sources: RankedSourceRow[]): string | null {
   return best;
 }
 
-/** One best-source row (the demo's ep-src style) — clickable to the product detail panel. */
+/** One best-source row — clickable to the product detail panel. */
 function srcRow(s: RankedSourceRow, isBest: boolean): string {
   const price = s.price !== null ? `$${s.price.toFixed(2)}` : '—';
   const tag = isBest ? '<span class="kd-ep-vtag">best value</span>' : '';
@@ -355,7 +358,7 @@ function srcRow(s: RankedSourceRow, isBest: boolean): string {
 }
 
 function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageTile | null, status: CoverageStatus, snapshot: CoverageSnapshot | null, showSources = true): string {
-  // Plant-derived GROUP tiles carry no per-element dose — the 34 trace_pdm minerals share ONE
+  // Plant-derived GROUP tiles carry no per-element dose — the trace_pdm minerals share ONE
   // meter (Σ plant-derived vehicle mg vs the 924 mg Wallach group goal). Render the group
   // treatment, not the per-element target/pending logic.
   if (tile?.pdmGroup === true && snapshot?.pdmGroup != null) {
@@ -364,8 +367,8 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
   // A MIRROR states no amount of its own — Wallach's requirement for it is met through another
   // essential. Render the explanation IN PLACE of the target box: a tile with no number and no
   // reason is indistinguishable from one we simply have not mined yet, and that ambiguity is
-  // what this treatment exists to remove (Luneth 2026-07-15: the special case must be
-  // impossible to misread, so nobody supplements against a goal we never stated).
+  // what this treatment exists to remove: the special case must be impossible to misread,
+  // so nobody supplements against a goal we never stated.
   if (tile?.mirrorsOf != null && tile.mirrorsOf.length > 0) {
     return renderMirrorGlance(tile);
   }
@@ -385,7 +388,7 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
   const targetHTML = ivt !== null
     ? `<div class="kd-ep-v">${fmtTarget(ivt.targetLow)}${ivt.targetHigh !== ivt.targetLow ? '–' + fmtTarget(ivt.targetHigh) : ''}<small> ${escHTML(ivt.unit)}</small></div>`
     : `<div class="kd-ep-gap">${escHTML(ui('ep_no_target'))}</div>`;
-  // Coverage: the demo's ep-bar fed by REAL regimen delivery vs the Wallach target; a
+  // Coverage: the live bar fed by REAL regimen delivery vs the Wallach target; a
   // trace essential (no numeric target) falls back to the covered/not-covered pill.
   let coverageHTML: string;
   if (ivt !== null) {
@@ -417,11 +420,11 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
 }
 
 /**
- * The "Best Youngevity sources" list for an essential — the recommender ranking in the demo's
- * ep-src row style. Top 5, but if the best-value product ranks 6th or lower it is swapped into the
+ * The "Best Youngevity sources" list for an essential — the recommender ranking in the
+ * kd-ep-src row style. Top 5, but if the best-value product ranks 6th or lower it is swapped into the
  * last visible slot so its "best value" tag is ALWAYS shown, never buried under "Show all". Shared
  * by the standard glance + the non-essential glance (omega-9 lists its label composition too — the
- * mg is what a product CONTAINS, never a target · S00.A). '' when no product carries it.
+ * mg is what a product CONTAINS, never a target · §00.A). '' when no product carries it.
  */
 function renderSourcesBlock(layoutKey: string): string {
   const sources = rankedSourcesForEssential(layoutKey);
@@ -449,7 +452,7 @@ function renderSourcesBlock(layoutKey: string): string {
       ${head}${more}`;
 }
 
-// ─── Plant-derived GROUP "at a glance" (the 34 trace_pdm minerals, scored as one) ──
+// ─── Plant-derived GROUP "at a glance" (every trace_pdm mineral, scored as one) ──
 
 /** Green fill once the goal is met (covered), else the default orange "in progress". */
 function barFillClass(s: CoverageStatus): string {
@@ -494,7 +497,7 @@ function pdmSrcRow(s: { productId: string; name: string; mg: number }): string {
  * (c) the alert + a jump to the essential that actually carries the dose.
  *
  * §00.A: every sentence in the alert is Wallach's position, held single-copy in view-copy.json
- * (R4) — nothing here invents an amount, and the bar reads the mirrored tile's fill, never a
+ * — nothing here invents an amount, and the bar reads the mirrored tile's fill, never a
  * cobalt number. Cobalt is the only case today; the treatment keys off target.kind, not a slug.
  */
 function renderMirrorGlance(tile: CoverageTile): string {
@@ -541,9 +544,9 @@ function renderMirrorGlance(tile: CoverageTile): string {
  * honest "none needed" + WHY - never the generic "unmined gap" copy, which would read as "we just
  * have not gotten to it" for a value that is deliberately zero.
  *
- * S00.A: the zero variant cites Wallach's own table (a sealed claim); the structural variant makes
+ * §00.A: the zero variant cites Wallach's own table (a sealed claim); the structural variant makes
  * NO dose claim - it states the general fact (present from air/water/food) + our no-target design.
- * Both copies live single-copy in view-copy.json (R4).
+ * Both copies live single-copy in view-copy.json.
  */
 function renderPresentGlance(tile: CoverageTile): string {
   const body = tile.noTargetReason === 'present_stated_zero'
@@ -577,13 +580,14 @@ function renderPresentGlance(tile: CoverageTile): string {
  * conditional 3rd via an orange CTA to the Omega-6 page + explicit "what omega-9 is NOT" copy.
  * Rendered as a soft accent --aside callout so it reads as our note, not an essential's verdict.
  *
- * S00.A: every line is Wallach's stance or our stated presentation reason — no outside-world health
- * claim. Copy single-copy in view-copy.json (R4); the source mg below is composition, never a target.
+ * §00.A: every line is Wallach's stance or our stated presentation reason — no outside-world health
+ * claim. Copy single-copy in view-copy.json; the source mg below is composition, never a target.
  */
 function renderNonEssentialGlance(layoutKey: string): string {
   // The orange CTA points at OMEGA-6, because Wallach's real "third fatty acid" is arachidonic (a
-  // form of omega-6), NOT omega-9. Target = omega-6's canon layout_key (stable; render_probe_omega
-  // covers the jump). The --aside callout + eyebrow mark this as OUR note, not a Wallach essential.
+  // form of omega-6), NOT omega-9. Target = omega-6's canon layout_key, which must stay
+  // byte-identical to essentials-canon.json for the click handler to resolve it. The --aside
+  // callout + eyebrow mark this as OUR note, not a Wallach essential.
   const cta = `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="Omega-6 (Linoleic Acid / LA)">
         <span class="kd-ep-mirror__cta-nm">Omega-6</span>
         <span class="kd-ep-mirror__cta-go">${escHTML(ui('kd_ep_noness_cta'))}</span>
@@ -612,8 +616,8 @@ function renderNonEssentialGlance(layoutKey: string): string {
 }
 
 /**
- * The plant-derived group treatment: no per-element dose exists, so all 34 trace_pdm minerals
- * show the ONE shared meter (Σ vehicle mg vs the 924 mg group goal) + the group explanation.
+ * The plant-derived group treatment: no per-element dose exists, so every trace_pdm mineral
+ * shows the ONE shared meter (Σ vehicle mg vs the 924 mg group goal) + the group explanation.
  */
 function renderPdmGroupGlance(g: PdmGroupSummary): string {
   const prov = pdmGoalProvenance();
@@ -645,8 +649,8 @@ function renderPdmGroupGlance(g: PdmGroupSummary): string {
 }
 
 /** The plant-derived group's Best-Youngevity sources — deferred out of the "at a glance" meter to
- *  the BOTTOM of the how-it-works hero (Luneth 2026-07-21: products sit UNDER the enrichment, as on
- *  the omega pages). '' when no product carries a plant-derived vehicle. */
+ *  the BOTTOM of the how-it-works hero: products sit UNDER the enrichment, as on the omega
+ *  pages. '' when no product carries a plant-derived vehicle. */
 function renderPdmSourcesBlock(): string {
   const src = rankedPdmSources();
   if (src.length === 0) {
@@ -665,8 +669,8 @@ function renderPdmSourcesBlock(): string {
 
 // ─── "Worth knowing" — the faceted search cards ─────────────────────────────
 
-// Per-category display cap on the entity page's Worth-Knowing (Luneth 2026-08-19): a heavily-
-// enriched essential (Calcium ~160 cards) would otherwise render an endless wall, so the first
+// Per-category display cap on the entity page's Worth-Knowing: a heavily-enriched essential
+// (Calcium carries ~180) would otherwise render an endless wall, so the first
 // FACET_CAP answers show and the rest sit behind a native "See N more answers" reveal. A display
 // cap, never a data cap -- the header count stays the true total, and every claim is one click away.
 const FACET_CAP = 7;
@@ -710,22 +714,6 @@ function recordKindRank(k: string): number {
   return i === -1 ? RECORD_KIND_ORDER.length : i;
 }
 
-/**
- * GROUP-CLAIM propagation (plant-derived / trace_pdm only). Claims authored
- * `about: [colloidal-minerals]` describe the plant-derived complex AS A WHOLE, not any single
- * element. They render on all 34 plant-derived entity pages, stored ONCE (never copied 34x),
- * in a distinct section clearly labelled as SHARED so a reader does not mistake them for
- * strontium-specific content.
- *
- * ABOVE-THE-FOLD STRUCTURE (Luneth 2026-07-17): "any entry above The Full Record" MUST use
- * the engaging Question → Short Answer → expand for full answer + Wallach quote card — the
- * same shape Calcium's Worth-Knowing uses (renderSearchCard). We prefer the search-card path,
- * which requires the claim to have been enriched (search-enrichment.json entry with question +
- * answer_short + facet). A group claim that lacks enrichment gracefully falls back to the
- * corpus-shape card so a future addition never silently disappears — but the audible signal is
- * "enrich, or the card reads flat." Silent no-op on essentials that carry no group_record
- * (every non-trace_pdm slug).
- */
 /** Group claims whose kind is an actionable recommendation to TAKE the liquid (these get the
  * "Where to get it" product pointer). dose + protocol are the colloidal group's green kinds. */
 const ACTIONABLE_GROUP_KINDS = new Set<string>(['dose', 'protocol']);
@@ -735,7 +723,7 @@ const ACTIONABLE_GROUP_KINDS = new Set<string>(['dose', 'protocol']);
  * (green) block. Wallach's dose ("one ounce of plant-derived colloidal minerals per 100 lb") is
  * inert without a real source, so we surface the Youngevity plant-derived-mineral products
  * (rankedPdmSources — the SAME data the hero's best-sources block reads) right at the recommendation.
- * Green-only by design: a definition/mechanism/quote is not something a reader "gets" (Luneth 2026-07-21).
+ * Green-only by design: a definition/mechanism/quote is not something a reader "gets".
  */
 function renderGroupGetIt(): string {
   const src = rankedPdmSources();
@@ -753,14 +741,29 @@ function renderGroupGetIt(): string {
     </div>`;
 }
 
+/**
+ * GROUP-CLAIM propagation (plant-derived / trace_pdm only). Claims authored
+ * `about: [colloidal-minerals]` describe the plant-derived complex AS A WHOLE, not any single
+ * element. They render on every plant-derived entity page, stored ONCE (never copied per
+ * element), in a distinct section clearly labelled as SHARED so a reader does not mistake them
+ * for strontium-specific content.
+ *
+ * ABOVE-THE-FOLD STRUCTURE: any entry above The Full Record uses the engaging Question → Short
+ * Answer → expand for full answer + Wallach quote card — the same shape Calcium's Worth-Knowing
+ * uses (renderSearchCard). We prefer the search-card path, which requires the claim to have been
+ * enriched (search-enrichment.json entry with question + answer_short + facet). A group claim
+ * that lacks enrichment gracefully falls back to the corpus-shape card so a future addition never
+ * silently disappears — but the audible signal is "enrich, or the card reads flat." Silent no-op
+ * on essentials that carry no group_record (every non-trace_pdm slug).
+ */
 function renderGroupRecord(page: EssentialPage): string {
   const gr = page.group_record;
   if (gr === undefined || gr.length === 0) {
     return '';
   }
   // Grouped by enrichment FACET (HISTORY & LORE, SOURCES, HOW IT WORKS, ...), not claim kind
-  // (Luneth 2026-07-22): kind-grouping collapsed 22 of 32 shared cards into two adjacent teal
-  // blocks (the "wall of blue"). The facet buckets — the same taxonomy the "Worth knowing"
+  // kind-grouping clumps most shared cards into two adjacent teal blocks (the "wall of blue").
+  // The facet buckets — the same taxonomy the "Worth knowing"
   // section uses — spread them and give the history claim its own home. The derive owns BOTH the
   // grouping AND the bucket order (entity_page_derive.py GROUP_FACET_ORDER), so the buckets
   // render in artifact order — no re-sort here.
@@ -768,7 +771,7 @@ function renderGroupRecord(page: EssentialPage): string {
   let total = 0;
   // The "Where to get it" product pointer rides ONE bucket — the first carrying an actionable
   // (dose/protocol KIND) claim — so the same three products don't repeat down the section. Keyed
-  // on the claim KIND (via getClaim), never a facet-name literal (R7).
+  // on the claim KIND (via getClaim), never a facet-name literal.
   let getItPlaced = false;
   const facetsHTML = groups.map((g) => {
     let bucketActionable = false;
@@ -807,9 +810,9 @@ function renderGroupRecord(page: EssentialPage): string {
   if (total === 0) {
     return '';
   }
-  // "shared across the 34" is the single line that makes the propagation legible — without it, a
-  // reader on strontium's page could read "Wallach says the complex fixes obesity" as a claim
-  // Wallach made specifically about STRONTIUM (the confusion Luneth flagged).
+  // The "shared across" line is what makes the propagation legible — without it, a reader on
+  // strontium's page could read "Wallach says the complex fixes obesity" as a claim Wallach
+  // made specifically about STRONTIUM.
   return seclabel('About the plant-derived group', 'shared across the 34 plant-derived elements')
     + `<details class="kd-ep-record kd-ep-record--group" open>
         <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${total} ${plural(total, 'group claim')}</span><span class="kd-ep-facet__count">${total}</span></summary>
@@ -830,7 +833,7 @@ function renderRecord(record: EntityKindGroup[], claimCount: number, label: stri
   });
   const total = claimCount;
   // Few total claims (< 20) => expand every kind group by default; collapsing a 2-claim group
-  // is pointless friction (Luneth). Large records stay collapsed so they remain scannable.
+  // is pointless friction. Large records stay collapsed so they remain scannable.
   const openKinds = total < 20 ? ' open' : '';
   const kindsHTML = groups.map((g) => {
     const claims = resolveClaims(g.claim_ids);
@@ -900,8 +903,7 @@ function renderRelatedSection(page: EssentialPage): string {
 }
 
 // ─── Omega fatty-acid clarity (general reference, marked NOT a Wallach claim) ──
-// Kept from the prior deep-view so an omega essential still names its fatty-acid forms
-// (the source graphic mislabeled Omega-9). Only renders for an omega; Calcium etc. skip it.
+// Names an omega essential's fatty-acid forms. Only renders for an omega; Calcium etc. skip it.
 
 const FATTY_ACID_CLARITY = FattyAcidClaritySchema.parse(fattyAcidClarityData);
 const OMEGA_BY_FAMILY = new Map(FATTY_ACID_CLARITY.omegas.map(o => [o.family, o] as const));
@@ -959,7 +961,7 @@ function omega3Figure(fam: OmegaFamily): string {
 }
 
 /** The omega-3 "three forms" experience — the high-impact replacement for the old flat blue clarity
- *  box (Luneth 2026-07-21). Reuses the omega-6 .kd-ep-fam visual system: eyebrow + kill-shot + the
+ *  box. Reuses the omega-6 .kd-ep-fam visual system: eyebrow + kill-shot + the
  *  figure + the three forms as rich rows + the general-reference disclaimer. Its OWN Best-Youngevity
  *  sources ride BELOW via fattyAcidBlockFor (deferred from the glance). §00.A: general reference. */
 function renderOmega3Rich(fam: OmegaFamily): string {
@@ -985,9 +987,9 @@ function renderOmega3Rich(fam: OmegaFamily): string {
 // essential (linoleic + linolenic); arachidonic is "conditionally essential" — the body builds it
 // from linoleic (Epigenetics 2014 / Immortality 2008). This is the one page that tells that whole
 // story well: a deterministic triad figure (2 solid essentials + 1 dashed conditional) + numbered
-// steps + Wallach's OWN sealed quote (RARE-000109). Destination for the omega-9 CTA + the "3 fatty
-// acids" gloss. S00.A: explanatory copy is ours (view-copy R4, clearly framed); the quote is his,
-// pulled from the sealed claim (never hand-typed). Luneth 2026-07-20.
+// steps + Wallach's OWN sealed quote, pulled by the claim id the clarity data names. Destination
+// for the omega-9 CTA + the "3 fatty acids" gloss. §00.A: explanatory copy is ours (view-copy,
+// clearly framed); the quote is his, pulled from the sealed claim (never hand-typed).
 
 /** The triad SVG: ALA (ω-3) + LA (ω-6) solid essentials, AA (ω-6) dashed conditional, LA -> AA
  *  arrow ("makes"), bracket under the two. Deterministic (no Math.random) — stable for probes. */
@@ -1018,7 +1020,7 @@ function fatFamilyFigure(): string {
 }
 
 /** One numbered step (01/02/03). Body glossified so "arachidonic"/"conditionally essential" pick up
- *  the shared gloss hovers once they exist (Piece 3). */
+ *  the shared gloss hovers. */
 function fatFamilyStep(num: string, tKey: string, bKey: string): string {
   return `<div class="kd-ep-fam__step">
       <span class="kd-ep-fam__num">${escHTML(num)}</span>
@@ -1029,8 +1031,9 @@ function fatFamilyStep(num: string, tKey: string, bKey: string): string {
     </div>`;
 }
 
-/** Wallach's OWN designation statement, from the sealed claim DDDL-000063 (it names both the omega-3 and omega-6 acids).
- *  Verbatim + cite come from the claim, never hand-typed (R3). '' if the claim is unresolved. */
+/** A pull-quote built from ONE sealed claim, resolved by id at render — used by the mechanism
+ *  heroes, the omega-6 experience and the plant-derived hero.
+ *  Verbatim + cite come from the claim, never hand-typed. '' if the claim is unresolved. */
 function fatFamilyQuote(claimId: string | undefined, highlight: string | undefined, trim?: string, big = false): string {
   const c = claimId !== undefined ? getClaim(claimId) : null;
   if (c === null) {
@@ -1070,9 +1073,10 @@ function renderOmega6Experience(quoteClaim: string | undefined, highlight: strin
 // the first instance). Data-driven off mechanism-clarity-data.json, keyed by slug via MECH_BY_SLUG
 // (a Map built by .map — NO id-keyed literal, NO slug branch), so the entity page stays a pure
 // projection (entity_render_is_projection). A plain-language gloss of Wallach's OWN sealed claims:
-// eyebrow/kill/beats are our voice (segregated content, R4); his exact words + the stat figure are
-// pulled BY CLAIM ID at render. Reuses the .kd-ep-fam experience-hero, recoloured to the mechanism
-// facet's science-teal via data-facet (the colour is never a TS literal — view_category_not_hardcoded).
+// eyebrow/kill/beats are our voice (segregated content); his exact words + the stat figure are
+// pulled BY CLAIM ID at render. Reuses the .kd-ep-fam experience-hero, which takes the element's
+// CATEGORY accent from the data-category attr on the page container (the colour is never a TS
+// literal — view_category_not_hardcoded).
 
 /** The rancidity strip — deterministic (no Math.random, stable for probes): ONE fat bilayer that
  *  loses colour + order left→right (intact → Se guard at centre → rancid), with a grafted brown-gold
@@ -1183,7 +1187,7 @@ function reversalRailFigure(alt: string, labels: Record<string, string> | undefi
  *  themed --ds-* token would drift and stop being skin (same precedent as copper's four hair
  *  swatches). The white tip and the half-moon are CLIPPED to the nail path and the nail OUTLINE
  *  is stroked last, so neither can overshoot the nail bed by construction rather than by
- *  nudging coordinates (Luneth 2026-07-29 — it overshot when the tip was merely inset). */
+ *  nudging coordinates — an inset tip alone still overshot. */
 function nailSpotsFigure(alt: string, labels: Record<string, string> | undefined): string {
   const FINGERS = [{ x: 70, t: 34 }, { x: 133, t: 14 }, { x: 196, t: 26 }];
   const SPOTS = [
@@ -1219,7 +1223,7 @@ function nailSpotsFigure(alt: string, labels: Record<string, string> | undefined
 /** The metal-fingers figure: the same molecule twice, with the element's atoms built into it and
  *  without them. The bottom labels name what a bar IS and what does or does not happen to it —
  *  an earlier pass labelled the outcome "genes activated", which named nothing a reader could
- *  picture (Luneth 2026-07-29). Authored at SCALE 1 against the 700px --fork width. */
+ *  picture. Authored at SCALE 1 against the 700px --fork width. */
 function metalFingersFigure(alt: string, labels: Record<string, string> | undefined): string {
   const STOPS = [104, 180, 256];
   const side = (dx: number, on: boolean): string => {
@@ -1254,7 +1258,6 @@ function metalFingersFigure(alt: string, labels: Record<string, string> | undefi
     </svg>`;
 }
 
-/** Figure dispatch on a GENERIC key (never a slug) — keeps renderMechanism a pure projection. */
 /** The 10-vs-147 comparison (calcium): a small muted "~10" for any other mineral beside a giant
  *  gradient "147" for calcium. The two hero numerals are DISPLAY-tier (.kd-ep-fam__scalenum, sized
  *  like the pull-stat number and deliberately OUTSIDE the .kd-ep-fam__g* label/glyph family the 12px
@@ -1314,7 +1317,7 @@ function heartbeatFigure(alt: string, labels?: Record<string, string>): string {
  *  sunlit leaf (the solar panel), then glowing inside a featureless human silhouette where it now
  *  GIVES energy and is calcium's relaxer. A faint dashed arc closes the cycle back to the soil. The
  *  SAME teal Mg node (kd-ep-fam__gnode--el) recurs at every stage -- magnesium is the throughline.
- *  Every user-facing string is a label from the store (views_no_inline_prose, R4); the accent is
+ *  Every user-facing string is a label from the store (views_no_inline_prose); the accent is
  *  --kd-ep-fam (the mineral blue set by category), never a hardcoded colour
  *  (view_category_not_hardcoded). Depictive colours (soil brown, chlorophyll green, sun gold) are
  *  literal, the same licence the shipped figures take. Authored at SCALE 1 against the 700px --fork
@@ -1384,6 +1387,7 @@ function mgCycleFigure(alt: string, labels: Record<string, string> | undefined):
     </svg>`;
 }
 
+/** Figure dispatch on a GENERIC key (never a slug) — keeps renderMechanism a pure projection. */
 function mechanismFigure(key: string, alt: string, labels?: Record<string, string>): string {
   switch (key) {
     case 'rancidity':
@@ -1431,7 +1435,7 @@ function proportionField(f: MechField): string {
   return `<svg class="kd-ep-fam__fieldart" viewBox="0 0 ${12 + (f.columns - 1) * 12} ${12 + (rows - 1) * 12}" aria-hidden="true">${marks.join('')}</svg>${legend}`;
 }
 
-/** A split side's evidence: a sealed-claim quote pulled BY ID (R3 — never hand-typed) or a
+/** A split side's evidence: a sealed-claim quote pulled BY ID (never hand-typed) or a
  *  proportion field. '' when the side carries neither, or the claim does not resolve. */
 function mechEvidence(side: MechSide): string {
   if (side.field !== undefined) {
@@ -1442,8 +1446,8 @@ function mechEvidence(side: MechSide): string {
   // claim, shown in the quote style with the claim's COMPOSED cite so a reader can trace it -- but it
   // is NOT a verbatim quote (no quote marks). Its faithfulness to the source is HUMAN-REVIEWED, not
   // gated like quote_trim: Wallach's book prose does not always fit a card verbatim, so a tightened
-  // summary that says nothing he did not say may keep the source cite (Luneth's ruling 2026-07-30,
-  // logged to chronicle/contradictions/). A `note` with NO resolving claim stays plain prose. The
+  // summary that says nothing he did not say may keep the source cite. This is a deliberate,
+  // human-reviewed exception, not a gated one. A `note` with NO resolving claim stays plain prose. The
   // --sourced modifier marks it in the DOM as a paraphrase (renders identically) for later audit.
   if (side.note !== undefined && side.note.length > 0) {
     if (c !== null) {
@@ -1485,15 +1489,15 @@ function renderMechSplit(left: MechSide, right: MechSide): string {
 
 // ── The mechanism block emitters ─────────────────────────────────────────────────────────────────
 // One emitter per renderable unit. BOTH render paths call these, so the markup for a unit lives
-// exactly once (R3): the legacy path calls them in a fixed order, the composed path calls them in
+// exactly once: the legacy path calls them in a fixed order, the composed path calls them in
 // whatever order its data declares. Their whitespace is deliberately identical to what the legacy
-// template emitted inline, so the three signed-off headers render byte-for-byte unchanged — proven
-// against committed snapshots by tools/render_probe_mech_shape.js.
+// template emitted inline, so the snapshot-guarded headers render byte-for-byte unchanged —
+// proven against tools/gate-fixtures/mechanism-sections.json by tools/probes/render_probe_mech_shape.js.
 //
 // Line endings do NOT reach the DOM: this file is CRLF, but a template literal's CR-LF pairs are
 // normalised to LF when it is evaluated (ECMAScript), so every newline in these templates renders
 // as \n. Checked, because the first reading of the snapshot diff blamed the source endings — the
-// real cause was safe_write's text-mode write turning the snapshot file itself into CRLF.
+// real cause was the snapshot file's own line endings, not the source's — check the comparand first.
 
 // The separator the frame puts between blocks — a newline plus the frame's indent. Authored as a
 // template literal so it picks up this file's CRLF exactly like the frame does.
@@ -1568,7 +1572,7 @@ function mechStat(readout: string, value: string, label: string): string {
 }
 
 /** Controlled inline emphasis for composed prose that needs bold/italic (vitamin A's compare cards,
- *  explain callout, and curio body). Escape-by-default (§00.B #5): everything is HTML-escaped first,
+ *  explain callout, and curio body). Escape-by-default: everything is HTML-escaped first,
  *  then ONLY author-vetted <b>/<em> tags are re-enabled — so a stray '<' in real content stays inert
  *  and no raw author HTML is ever injected. */
 function mechInline(raw: string): string {
@@ -1627,8 +1631,8 @@ function mechSlotFigure(f: { key: string; alt: string; labels: Record<string, st
   return mechanismFigure(f.key, f.alt, f.labels);
 }
 
-/** The LEGACY order — the selenium-era sequence, unchanged, used by the three signed-off headers.
- *  Every optional slot self-suppresses to ''. This function now declares an ORDER and nothing else:
+/** The LEGACY order — the fixed sequence used by the entries that declare no `blocks`
+ *  (selenium, copper, zinc), unchanged. Every optional slot self-suppresses to ''. This function now declares an ORDER and nothing else:
  *  all of its markup comes from the shared emitters above, so there is no second copy to drift. */
 function renderMechLegacy(m: MechLegacy): string {
   const hook = m.hook !== undefined ? mechOpener(mechSlotFigure(m.hook.figure), m.hook.text, m.hook.pivot) : '';
@@ -1657,8 +1661,8 @@ function renderMechLegacy(m: MechLegacy): string {
 /** The COMPOSED order — emit exactly the blocks the entry declares, in the order it declares them.
  *  Nothing is required and nothing is implied: an entry may carry no beats, no stat, no quote, the
  *  quote first, or nothing but an annotated figure. This is the whole point of the block list — the
- *  legacy shape above could only ever be dressed differently, never re-shaped (Rule 0, after eight
- *  calcium mockups were rejected for being the same chassis). The switch is EXHAUSTIVE with no
+ *  legacy shape above could only ever be dressed differently, never re-shaped — which is why
+ *  the block list exists at all. The switch is EXHAUSTIVE with no
  *  default branch that returns '': adding a block type to the schema without a case here is a
  *  COMPILE error, not a block that silently renders nothing. */
 function renderMechBlocks(blocks: readonly MechBlock[]): string {
@@ -1697,10 +1701,10 @@ function renderMechBlocks(blocks: readonly MechBlock[]): string {
 }
 
 /** The per-element mechanism hero. Renders ONLY for a slug that has a mechanism-clarity entry
- *  (MECH_BY_SLUG.get → undefined for the other 90 → ''), so it self-suppresses with no per-slug
- *  branch.
+ *  (MECH_BY_SLUG.get → undefined for every essential without one → ''), so it self-suppresses
+ *  with no per-slug branch.
  *
- *  THE FRAME IS THE ONLY FIXED STRUCTURE (Rule 0, .claude/skills/element-headers): the tan
+ *  THE FRAME IS THE ONLY FIXED STRUCTURE: the tan
  *  `.kd-ep-fam` content box, the disclaimer, and the Best-Youngevity-sources dock at the bottom.
  *  What sits between them is either a data-declared block list or the legacy fixed order — the two
  *  differ ONLY in what decides the sequence, and both emit through the same emitters. */
@@ -1733,15 +1737,11 @@ function pdmFigure(): string {
     { x: 833, cx: 937.5, nameKey: 'kd_ep_pdm_fig_n4', solid: true },
   ];
   const nodes = NODES.map((n) => {
-    // Geometry chosen in SCREEN terms (Luneth 2026-07-21). KEY LESSON: this SVG scales to the figure's
-    // CSS width, so a user-unit delta is ~0.61x on screen — pick sizes for what LANDS on screen.
-    // WIDTH: boxes 209 wide = +20 screen px each vs the old 176. To keep the arrow GAPS and TEXT the
-    // same on screen, the viewBox grew 918 -> 1050 (all +132 goes into the 4 boxes; the three 66-unit
-    // gaps are held) AND the --pdm figure CSS width grew 560 -> 640, so the scale (~0.61) is unchanged.
-    // HEIGHT: box 76 (orig 60) grows LESS than the text (21px, orig 12.5) so the copy fills more of it.
-    // The 98%/Colloidal two-line stack (98% y75 + Colloidal y100) is block-centred with room to breathe;
-    // arrow captions sit at y24, ~7 screen px clear of the box tops. Single-line baseline y85 keeps the
-    // 21px name optically centred on the box centre (78).
+    // Geometry chosen in SCREEN terms. KEY LESSON: this SVG scales to the figure's CSS width
+    // (viewBox 1050 into a 640px box, ~0.61x), so pick sizes for what LANDS on screen, not for
+    // the user-unit number. The 98%/Colloidal two-line stack (98% y75 + Colloidal y100) is
+    // block-centred; arrow captions sit at y24, ~7 screen px clear of the box tops; the
+    // single-line baseline y85 keeps the 21px name optically centred on the box centre (78).
     const rect = `<rect class="kd-ep-fam__node kd-ep-fam__node--${n.solid ? 'solid' : 'soft'}" x="${n.x}" y="40" width="${W}" height="76" rx="12"/>`;
     const label = n.solid
       ? `<text class="kd-ep-fam__nabbr" x="${n.cx}" y="75" text-anchor="middle">${escHTML(ui('kd_ep_pdm_fig_n4stat'))}</text>
@@ -1765,11 +1765,11 @@ function pdmFigure(): string {
     </svg>`;
 }
 
-/** The plant-derived "how it works" HERO — the omega-style experience for the 34 plant-derived
+/** The plant-derived "how it works" HERO — the omega-style experience for the plant-derived
  *  minerals. Authored ONCE (view-copy + the sealed RARE-000061 quote) and rendered on every
  *  plant-derived page, gated on group_record (a DERIVED per-page datum, never a slug literal —
- *  R1 pure projection, entity_render_is_projection-safe). Reuses .kd-ep-fam + fatFamilyStep/Quote.
- *  §00.A: the step copy is our faithful summary (R4); every number traces to RARE-000061; the
+ *  a pure projection, entity_render_is_projection-safe). Reuses .kd-ep-fam + fatFamilyStep/Quote.
+ *  §00.A: the step copy is our faithful summary; every number traces to RARE-000061; the
  *  quote is Wallach's own sealed verbatim. Renders '' on non-plant-derived essentials. */
 function renderPdmClarity(page: EssentialPage): string {
   if (page.group_record === undefined || page.group_record.length === 0) {
@@ -1817,7 +1817,7 @@ function fatBlockOwnsSources(name: string): boolean {
   return fam !== undefined && (fam.experience === true || fam.crosslink === true);
 }
 
-/** Which fatty-acid block a page gets — driven by the clarity DATA, never a per-slug branch (R1
+/** Which fatty-acid block a page gets — driven by the clarity DATA, never a per-slug branch (a
  *  pure projection): omega-9 -> nothing (its own aside handles it); an omega whose data carries
  *  `experience` -> the family experience (which OWNS its sources, moved to the bottom); one carrying
  *  `crosslink` -> plain box + a link; else the plain forms box. Non-omega essentials get nothing. */
@@ -1837,7 +1837,7 @@ function fattyAcidBlockFor(layoutKey: string, name: string, tile: CoverageTile |
   const base = renderOmegaClarity(name);
   // Crosslink family (omega-3): forms box, then a prominent CTA to the full family experience,
   // then its OWN Best-Youngevity sources -- deferred out of the glance so forms + CTA sit ABOVE
-  // sources (Luneth 2026-07-20). fatBlockOwnsSources() drives the glance deferral off the flag.
+  // sources. fatBlockOwnsSources() drives the glance deferral off the flag.
   return fam.crosslink === true ? renderOmega3Rich(fam) + renderFamCTA() + renderSourcesBlock(layoutKey) : base;
 }
 
@@ -1851,8 +1851,8 @@ function backButton(): string {
 /**
  * Render the essential entity page. `layoutKey` is the Coverage/Knowledge join key
  * (e.g. 'Calcium'); the coverage meter + best sources join by it, while the page
- * body projects the slug-keyed artifact. `whyHTML` is the why-this-number box
- * computed in knowledge.ts (kept there to avoid an entity-page → knowledge cycle).
+ * body projects the slug-keyed artifact. The lede and the "why this number" hover
+ * are read from the entity-copy store inside renderAtAGlance, never auto-derived.
  */
 export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapshot | null): string {
   const corpusEss = getEssentialByLayoutKey(layoutKey);
@@ -1864,8 +1864,9 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
   const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot, !deferSources);
 
   if (page === null) {
-    // Graceful fallback: an essential with no sealed page record yet (e.g. the
-    // non-essential 91st). Coverage meter + sources still join by layoutKey.
+    // Graceful fallback: an essential the artifact has no record for. Every canon slug has one
+    // today, so this is a guard, not a live path — but never render `undefined`.
+    // Coverage meter + sources still join by layoutKey.
     const nm = escHTML(corpusEss?.common_name ?? layoutKey);
     return `<div class="kd-essential-deep kd-ep" data-category="${escHTML(corpusEss?.category ?? '')}" data-essential="${escHTML(slug ?? '')}">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${backButton()}</div>
@@ -1945,7 +1946,7 @@ export function applyRecordFilter(scope: HTMLElement, rawQuery: string): void {
       anyVisible = true;
     }
   });
-  // KNOW-02: when a keyword hides every claim, say so — the sibling list filter
+  // When a keyword hides every claim, say so — the sibling list filter
   // (applyKnowledgeSearch) injects a .kd-empty line; without one here the user faces a blank
   // gap with no signal the filter ran. Injected/removed in place, never a re-render.
   const emptyNote = scope.querySelector<HTMLElement>('.kd-ep-record-empty');
@@ -1966,23 +1967,23 @@ export function applyRecordFilter(scope: HTMLElement, rawQuery: string): void {
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
-// The CONDITION page (Phase H2, chunk 2 — the live Osteoporosis condition detail)
+// The CONDITION page
 // ═══════════════════════════════════════════════════════════════════════════
 //
 // A PURE PROJECTION of the generated condition record (state/entity-page →
 // conditions[slug]) joined with the sealed corpus at render time — same discipline
 // as renderEssentialPage (no canonical value as a literal, no per-condition branch:
-// osteoporosis is only the first slug styled, the renderer is data-driven and
-// degrades gracefully for a condition with fewer claims / no protocol).
+// the renderer is data-driven and degrades gracefully for a condition with
+// fewer claims / no protocol).
 //
-// Section order (the layout restyled to the live kd-ep-* system — Luneth 2026-07-22):
-//   hero (category-tinted) · synopsis lede · Wallach's protocol (the REAL sourced
-//   claims, NEVER composited — §00.A) · nutrients to restore (relationship-aware,
-//   glimpse-then-dive) · best products for this · the full picture (every claim,
-//   grouped + filterable) · related conditions · keep exploring.
+// Section order:
+//   hero (category-tinted) · umbrella-condition steer (umbrellas only) · synopsis lede ·
+//   "Worth knowing" (the REAL sourced claims, NEVER composited — §00.A) · nutrients to
+//   restore (relationship-aware, glimpse-then-dive) · best products for this · the full
+//   picture (every claim, grouped + filterable) · related conditions · keep exploring.
 //
 // Colour: the HERO carries the condition's body-system CATEGORY colour (continuity
-// with the ghost-number cards on the Conditions tab, Luneth's "hero-only" call); the
+// with the ghost-number cards on the Conditions tab — hero only); the
 // claim groups keep the standard family colours (kindCategory), so the claim language
 // stays consistent with the essentials page.
 
@@ -1994,8 +1995,7 @@ function conditionBackButton(): string {
 /**
  * The "broad category" steer atop an umbrella condition (cancer, dermatitis, …) —
  * points a browser at their specific subtype. Gated on a real subtype list + enough
- * claims to be worth it (thin umbrellas skip it). Ported from the old condition deep
- * view so the steer survives the redesign.
+ * claims to be worth it (thin umbrellas skip it).
  */
 const UMBRELLA_TIP_MIN_CLAIMS = 15;
 function conditionUmbrellaTip(slug: string, claimCount: number): string {
@@ -2015,7 +2015,7 @@ function nutrientPill(slug: string, cls: string): string {
 }
 
 /**
- * NUTRIENTS TO RESTORE — the relationship-aware hybrid (Luneth 2026-07-22): not a flat
+ * NUTRIENTS TO RESTORE — the relationship-aware hybrid: not a flat
  * unified list (loses the context of HOW each nutrient relates) and not a noisy three-up
  * split. A prominent glimpse — the directed "to restore" set, what to actually take —
  * then two collapsed lenses the reader can dive into: where the deficiency shows, and
@@ -2149,8 +2149,8 @@ export function renderConditionPage(slug: string): string {
   const page = getConditionPage(slug);
   const c = getCondition(slug);
   if (page === null) {
-    // Graceful fallback: a condition with no generated record (should not happen — all 502
-    // are derived — but never render `undefined`).
+    // Graceful fallback: not every catalog condition has a generated record, so this
+    // branch is a real path — render the name and an empty-record note, never `undefined`.
     const nm = escHTML(c?.display_name ?? humanizeSlug(slug));
     return `<div class="kd-essential-deep kd-ep kd-ep--cond">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${conditionBackButton()}</div>

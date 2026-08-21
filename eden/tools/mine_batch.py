@@ -8,10 +8,10 @@ The batch mining workflow has two halves; this tool is the missing second one:
 
 Why it exists: editing N draft claims used to mean N hand-staged safe_write calls (and a
 seal after each). This applies a whole BATCH of field edits in ONE validate-all-then-write
-pass (§00.B atomic + defense-in-depth), routed through safe_write.safe_rewrite (§17), so a
+pass (§00.B atomic + defense-in-depth), routed through safe_write.safe_rewrite, so a
 bulk remediation seals ONCE per batch, not once per edit.
 
-Scope — edits ONLY the agent-owned SEMANTIC fields:
+Scope — edits ONLY the hand-authored SEMANTIC fields:
     claim_text * kind * essentials * other_substances * conditions * symptoms *
     dose * tags * confidence
 It NEVER touches verbatim / char_offset / locator / id — those are snap-owned and guarded
@@ -120,11 +120,12 @@ def _fmt(v):
 def _detect_indent(raw: str, doc, path) -> int:
     """Return the indent that reproduces `raw` byte-exactly, or refuse to write.
 
-    The pillars are NOT uniform -- lets-play-doctor is indent=2 and the other six
-    drafts are indent=1 -- so a hardcoded indent silently reformats every file it
-    guesses wrong about. That happened: a one-field claim_text edit here rewrote the
-    entire lets-play-doctor draft, and corpus_seal promoted the reformat onto the
-    sealed shard, burying a 2-line change in 40,000 diff lines. Measure, never assume.
+    A hardcoded indent silently reformats every file it guesses wrong about. That
+    happened: a one-field claim_text edit here rewrote an entire draft, and corpus_seal
+    promoted the reformat onto the sealed shard, burying a two-line change in tens of
+    thousands of diff lines -- exactly when review matters most. Every shard is indent=1
+    today, but measuring is what makes it safe to be wrong about that. Measure, never
+    assume.
     """
     for n in (1, 2, 3, 4):
         if json.dumps(doc, indent=n, ensure_ascii=False) + "\n" == raw:
@@ -219,7 +220,7 @@ def cmd_selftest(args) -> int:
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="Transactional batch editor for draft claims (§17-routed).")
+    ap = argparse.ArgumentParser(description="Transactional batch editor for draft claims (safe_write-routed).")
     sub = ap.add_subparsers(dest="cmd", required=True)
     pa = sub.add_parser("apply", help="apply a batch of claim edits (validate-all-then-write)")
     pa.add_argument("--batch", required=True, help="path to the batch JSON")

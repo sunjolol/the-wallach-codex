@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """book_purify_apply.py — apply an AUDITED purification spec to a source book .txt.
 
-The deterministic applier half of the Source-Purification campaign (the scanner is
+The deterministic applier half of source purification (the scanner is
 book_purity.py). Driven by a per-book spec at eden/tools/purity-specs/<book>.json
 that RECORDS every correction + its rationale — the spec IS the audit trail, so a
 future reviewer sees exactly what changed and why.
@@ -14,17 +14,19 @@ Safety by construction:
   * The regex running-line stripper (`strip_running`) re-derives its target lines from
     the declared patterns and asserts each family's expected drop/strip count — a
     count mismatch aborts. Every stripped line is re-validated to look like a header.
-  * Writes route through safe_write (§17); default is a DRY report.
+  * Writes route through safe_write; default is a DRY report.
 
-It also AUTO-DERIVES the resnap --fix map: for any sealed verbatim containing a
-`find`, it applies the same replacements to produce the corrected verbatim, so a
-letter-fix propagates to every mined span mechanically (the RARE/LETS multiplier).
+It also AUTO-DERIVES the resnap --fix map: for any sealed verbatim touched by a spec's
+replacements, regex replacements or line fuses, it applies the same edits to produce the
+corrected verbatim, so one letter-fix propagates mechanically to every mined span that
+quotes it.
 
-Spec shape (all sections optional; applied in this order — replacements, strip_header,
-strip_running, line_fuses):
+Spec shape (all sections optional; applied in this order — replacements,
+regex_replacements, strip_running_header, strip_running, line_fuses, hyphen_reflow):
 {
   "book": "iaiyh",
   "replacements": [ {"find": "...", "repl": "...", "expect": 1, "word": false, "why": "..."} ],
+  "regex_replacements": [ {"pattern": "...", "repl": "...", "expect": 3, "why": "..."} ],
   "strip_running_header": {"text": "<exact header line>", "keep_lines": [8, 13]},
   "strip_running": {                         # regex running-header/footer strip (DDDL-class)
      "front_matter_end": 89,                 # never strip lines 1..N (title/copyright/TOC)
@@ -36,7 +38,9 @@ strip_running, line_fuses):
      "content_not_head": [12000, 12387],     # recto-shaped lines that are real content
      "expect": {"verso_drop": 39, "verso_strip": 154, "recto_drop": 167}
   },
-  "line_fuses": [ {"a": "reproduc", "b": "tion", "expect": 1, "why": "page-break split"} ]
+  "line_fuses": [ {"a": "reproduc", "b": "tion", "expect": 1, "why": "page-break split"} ],
+  "hyphen_reflow": [ {"find": "...", "repl": "...", "expect": 1, "why": "line-wrap rejoin"} ],
+  "flags": [ "<human ruling owed; reported by `dry --flags`, never auto-applied>" ]
 }
 
 CLI:

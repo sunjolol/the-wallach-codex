@@ -2,12 +2,11 @@
  * views/scanner.ts — the Scanner workspace (Scan · Confirm · Result)
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * RE-CREATED 2026-08-13 from the design-approved demo
- * temporary/ready-to-be-ported/scanner-demo-3-verdict-r3.html — on the real
- * engine, ADAPTED not transplanted. Supersedes the v3 single-screen theatrical
- * port (fake ms + a cipher animation).
+ * Built on the real OCR + scoring engine from an approved static design mockup.
+ * Nothing here is theatre: no invented timings and no decorative "decoding"
+ * animation — the progress you see is the real pipeline reporting on itself.
  *
- * THE REFRAME (Luneth): OCR is imperfect offline (local Tesseract), so the verdict
+ * THE REFRAME: OCR is imperfect offline (local Tesseract), so the verdict
  * is WITHHELD until the user confirms the reads:  1. SCAN → 2. CONFIRM → 3. RESULT.
  *
  * WHAT IS REAL (no fabrication):
@@ -15,16 +14,15 @@
  *     local, zero network, and it does NOT run the verdict.
  *   · CONFIRM is the hero: every read is editable; an unmapped nutrient shows the
  *     real top-4 findNutrientCandidates; garbled ingredient words show
- *     findIngredientSuspects (the recovered legacy suggestion engine); the Wallach
- *     flags come from the engine's antiFlags (scoreLabel, non-logging) with their
- *     own nuance text. NO fabricated confidence number — a read is mapped ✓ or not.
- *   · RESULT fires runScan(correctedLabel): the ADD/SAVE/REJECT verdict + reasons
- *     trace to Wallach doctrine only; the 47→55 coverage delta is coverageDeltaForLabel
- *     (the live snapshot + the label's own amounts, never a hand-typed number).
- *   · Adopt lands the item marked provenance 'user_scanned' (the §5.4 wall). Scan
+ *     findIngredientSuspects; the Wallach flags come from the engine's antiFlags
+ *     (scoreLabel, non-logging) with their own nuance text. NO fabricated confidence
+ *     number — a read is mapped ✓ or not.
+ *   · RESULT fires runScan(correctedLabel): the ADD/SAVE/REJECT verdict + its reasons
+ *     trace to Wallach doctrine only. The "+1" mark on a CONFIRM row comes from
+ *     coverageDeltaForLabel — the live snapshot plus the label's own amounts, never a
+ *     hand-typed number.
+ *   · Adopt lands the item marked provenance 'user_scanned' (the provenance wall). Scan
  *     history is the real FIFO (max 5). Every name is written via .textContent.
- *
- * §17 recovery: `git checkout HEAD -- dashboard/assets/js/src/views/scanner.ts`.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -96,7 +94,7 @@ function verdictHeadline(v: Verdict): { head: string; sub: string } {
 const SCAN_STEP_LABELS = ['Prepare', 'Load engine', 'Read label'];
 
 /**
- * The Scan step while OCR runs: the staged progress indicator (concept C), fed live by the
+ * The Scan step while OCR runs: the staged progress indicator, fed live by the
  * real `lcscan:progress` events — the stepper + bar update in place (see mount's onProgress),
  * never a full re-render. Setup phases show an indeterminate sweep; the read phase fills for real.
  */
@@ -122,8 +120,8 @@ function renderScanning(): string {
 }
 
 /** An honest, actionable failure card for the Scan step — shown instead of an infinite spinner when
- *  OCR can't load (the model fetch is blocked on a raw file:// open) or a read fails. Retry re-opens
- *  the file picker. */
+ *  the OCR engine or its language model can't load, or a read fails. Retry re-opens the file
+ *  picker. */
 function renderScanError(message: string): string {
   return `<div class="vd-error" role="alert">
       <span class="vd-error__ic" aria-hidden="true">!</span>
@@ -135,7 +133,9 @@ function renderScanError(message: string): string {
     </div>`;
 }
 
-/** Map an OCR failure to a plain, actionable line — a file:// model-fetch block gets specific guidance. */
+/** Map an OCR failure to a plain, actionable line. OCR_MODEL_UNREACHABLE can only be raised on the
+ *  http/https build, where the worker fetches the language model; a file:// open uses the offline
+ *  worker with the model bundled in and never reaches that branch. */
 function scanErrorMessage(e: unknown): string {
   const code = e instanceof Error ? e.message : String(e);
   if (code.includes('OCR_MODEL_UNREACHABLE')) {
@@ -373,7 +373,7 @@ function reasonItems(items: string[] | undefined, block: boolean): string {
   if (!block) {
     return ` — ${escHTML(items.join(', '))}`;
   }
-  // Each anti-flag term on its own bordered line so a mis-fire reads loud (Luneth item 4).
+  // Each anti-flag term on its own bordered line so a mis-fire reads loud.
   return `<span class="vd-reason__items">${items.map(it => `<span class="vd-reason__it">${escHTML(it)}</span>`).join('')}</span>`;
 }
 
@@ -460,8 +460,8 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
         </section>`;
 }
 
-/** SCAN-01: OCR read nothing — withhold the verdict (a REJECT here would judge the photo, not
- *  the product, violating section 00.A) and offer a way forward. */
+/** OCR read nothing — withhold the verdict (a REJECT here would be judging the photo, not the
+ *  product) and offer a way forward. */
 function renderUnreadable(): string {
   return `
     <section class="vd-step vd-step--result">
@@ -527,7 +527,7 @@ function scanRow(h: HistoryEntry, saved: boolean, index: number): string {
     </div>`;
 }
 
-/** The persistent rail: the durable Saved shelf (SCAN-04) over the auto Recent captures.
+/** The persistent rail: the durable Saved shelf over the auto Recent captures.
  *  Rendered in every state so a refresh always surfaces saved items; rows re-open on click. */
 function renderRail(): string {
   const saved = getSaved().map((h, i) => scanRow(h, true, i)).join('');
@@ -563,18 +563,18 @@ export function mount(container: HTMLElement): MountHandle {
   let imageDataUrl: string | null = null;
   let scanError: string | null = null;
   const dismissed = new Set<string>();
-  // S11: original indices the user deleted in Confirm. readCorrectedLabel skips these so a
-  // removed row can't be silently re-read from the stored label. Cleared on each fresh OCR.
+  // Original indices the user deleted in Confirm. readCorrectedLabel skips these so a removed
+  // row can't be silently re-read from the stored label. Cleared on each fresh OCR.
   const removedRows = new Set<number>();
-  // S10: the open full-label lightbox + an AbortController that unbinds its scrim/Escape listeners.
+  // The open full-label lightbox + an AbortController that unbinds its scrim/Escape listeners.
   let lightboxEl: HTMLElement | null = null;
   let lightboxAbort: AbortController | null = null;
-  // S12: debounce handle for the live "Possible OCR errors" refresh.
+  // Debounce handle for the live "Possible OCR errors" refresh.
   let suspectTimer = 0;
   // Live nutrient-row re-evaluation debounce (re-check a corrected read vs the essentials/known list).
   let nameTimer = 0;
-  // #6: where the shown verdict came from, so a re-opened SAVED item offers Delete (removes it
-  // from the shelf) instead of a meaningless Reject. A fresh scan / recent re-open stays Reject.
+  // Where the shown verdict came from, so a re-opened SAVED item offers Delete (removes it from
+  // the shelf) instead of a meaningless Reject. A fresh scan / recent re-open stays Reject.
   let resultOrigin: 'scan' | 'saved' | 'recent' = 'scan';
   let reopenedSavedId: number | null = null;
 
@@ -600,7 +600,8 @@ export function mount(container: HTMLElement): MountHandle {
   // read can never clobber the current one. This is what makes an upload + a paste fired
   // together safe: bumping the id + aborting the old reader means only the newest read
   // reaches Confirm, and state/ocr's shared Tesseract load stops the two from double-
-  // injecting the engine and wedging the worker (the old "Reading the label…" forever hang).
+  // injecting the engine and wedging the worker — a wedged worker leaves the Scan step stuck
+  // on "Reading the label…" forever.
   let scanSeq = 0;
   let activeReader: FileReader | null = null;
 
@@ -654,7 +655,7 @@ export function mount(container: HTMLElement): MountHandle {
         render();
       }).catch((e: unknown) => failScan(seq, e));
     });
-    // A FileReader error/abort previously had no handler, so an unreadable file left the
+    // A FileReader error/abort MUST have a handler: without one an unreadable file leaves the
     // Scan step stuck on "Reading the label…" forever. Route both to the guarded failScan
     // (a superseded reader's abort is dropped by the seq check, so it never resets state).
     reader.addEventListener('error', () => failScan(seq, reader.error));
@@ -680,7 +681,7 @@ export function mount(container: HTMLElement): MountHandle {
     const base = label ?? { name: 'Scanned label', nutrients: [], ingredients: '' };
     const nutrients = (base.nutrients ?? []).flatMap((n, i) => {
       if (removedRows.has(i)) {
-        return []; // S11: deleted by the user — drop it, never fall back to the stored read
+        return []; // deleted by the user — drop it, never fall back to the stored read
       }
       const input = container.querySelector<HTMLInputElement>(`[data-nedit="${i}"]`);
       const next = input !== null ? input.value.trim() : (typeof n.name === 'string' ? n.name : '');
@@ -699,7 +700,7 @@ export function mount(container: HTMLElement): MountHandle {
     return { ...base, name, nutrients, ingredients: ing !== null ? ing.value : (base.ingredients ?? '') };
   };
 
-  /** S12: recompute the "Possible OCR errors" panel + its count from the live ingredients
+  /** Recompute the "Possible OCR errors" panel + its count from the live ingredients
    *  textarea. The delegated debounced input calls this; dismiss/fix call it directly. */
   const refreshSuspects = (): void => {
     const host = container.querySelector<HTMLElement>('[data-ocr-host]');
@@ -715,7 +716,7 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
-  /** S11: after a row delete, keep the "N lines · M mapped · K to check" tally honest — recount
+  /** After a row delete, keep the "N lines · M mapped · K to check" tally honest — recount
    *  from the rows still in the DOM rather than re-render (which would discard in-flight edits). */
   const recountNutrients = (): void => {
     const rows = container.querySelectorAll('.vd-nlist .vd-nrow[data-nrow]');
@@ -797,7 +798,7 @@ export function mount(container: HTMLElement): MountHandle {
     recountNutrients();
   };
 
-  /** S10: dismiss the full-label lightbox and unbind its listeners via the AbortController. */
+  /** Dismiss the full-label lightbox and unbind its listeners via the AbortController. */
   const closeLightbox = (): void => {
     if (lightboxEl !== null) {
       lightboxEl.remove();
@@ -809,7 +810,7 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
-  /** S10: open the uploaded photo full-size so the user can verify the OCR against the real label.
+  /** Open the uploaded photo full-size so the user can verify the OCR against the real label.
    *  Mounts to document.body (the house .pf-overlay convention) so a view re-render can't wipe it. */
   const openLightbox = (): void => {
     if (imageDataUrl === null) {
@@ -852,7 +853,7 @@ export function mount(container: HTMLElement): MountHandle {
     if (t === null) {
       return;
     }
-    // S10: click the uploaded thumbnail / photo -> open it full-size to verify the OCR.
+    // Click the uploaded thumbnail / photo -> open it full-size to verify the OCR.
     if (t.closest('[data-sc-zoom]') !== null) {
       openLightbox();
       return;
@@ -883,7 +884,7 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
-    // S11: per-row delete — record the original index so readCorrectedLabel drops it, then pull
+    // Per-row delete — record the original index so readCorrectedLabel drops it, then pull
     // the row from the DOM and keep the line tally honest. No re-render (would lose other edits).
     const ndel = t.closest<HTMLElement>('[data-ndel]');
     if (ndel !== null) {
@@ -924,13 +925,13 @@ export function mount(container: HTMLElement): MountHandle {
       if (ta !== null && from !== undefined && to !== undefined) {
         ta.value = ta.value.replace(from, to);
       }
-      // S12: re-run the pass so the corrected word drops out and the count updates.
+      // Re-run the pass so the corrected word drops out and the count updates.
       refreshSuspects();
       return;
     }
     const idismiss = t.closest<HTMLElement>('[data-idismiss]');
     if (idismiss !== null) {
-      // S12: record the dismissal (lowercased, matching findIngredientSuspects) so a live
+      // Record the dismissal (lowercased, matching findIngredientSuspects) so a live
       // refresh keeps it gone, then recompute the panel.
       const w = idismiss.dataset['idismiss'];
       if (w !== undefined) {
@@ -951,7 +952,7 @@ export function mount(container: HTMLElement): MountHandle {
         render();
       }
       else {
-        // SCAN-07: scoring threw — say so inline instead of a dead button that does nothing.
+        // Scoring threw — say so inline instead of a dead button that does nothing.
         const cta = container.querySelector<HTMLElement>('.vd-cf__cta');
         if (cta !== null && cta.querySelector('.vd-cf__err') === null) {
           const err = document.createElement('div');
@@ -996,7 +997,7 @@ export function mount(container: HTMLElement): MountHandle {
     const openRow = t.closest<HTMLElement>('[data-sc-open]');
     if (openRow !== null) {
       // Resolve by (source list, index), NOT by id: two saved/recent entries can share a
-      // Date.now()-derived id (R2-7), and an id lookup re-opens the WRONG row. A row's
+      // Date.now()-derived id, and an id lookup re-opens the WRONG row. A row's
       // position in its own list is unambiguous, even for pre-existing colliding data.
       const src = openRow.dataset['scSrc'];
       const idx = Number(openRow.dataset['scIdx']);
@@ -1045,7 +1046,7 @@ export function mount(container: HTMLElement): MountHandle {
       return;
     }
     if (t.closest('[data-sc-reject]') !== null) {
-      // #6: a re-opened SAVED item's Delete removes it from the shelf; a fresh/recent Reject just closes.
+      // A re-opened SAVED item's Delete removes it from the shelf; a fresh/recent Reject just closes.
       if (resultOrigin === 'saved' && reopenedSavedId !== null) {
         removeSaved(reopenedSavedId);
       }
@@ -1071,7 +1072,7 @@ export function mount(container: HTMLElement): MountHandle {
     ev.preventDefault();
   };
   const pasteHandler = (ev: ClipboardEvent): void => {
-    // SCAN-06: this listener is on document and the Scanner is never unmounted (only hidden),
+    // This listener is on document and the Scanner is never unmounted (only hidden),
     // so a paste while another workspace is up would start a hidden background OCR. Ignore
     // paste unless the Scanner is actually on screen.
     if (container.offsetParent === null) {

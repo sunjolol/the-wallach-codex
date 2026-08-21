@@ -3,7 +3,7 @@ name: write-discipline
 description: Read before any project-file write, and before running bash or python against this repo. Covers the safe_write primitive that all writes must route through, the hook guards that block direct writes, and the three Windows-host quirks (UTF-8, cwd, line endings) that silently break payloads here.
 ---
 
-# Write discipline (section 17) + the Windows host
+# Write discipline + the Windows host
 
 ## The primitive
 Every project-file write routes through `tools/safe_write.py {replace | append | rewrite | check}`.
@@ -41,8 +41,9 @@ translated-newline space (LF -> CRLF on write, CRLF -> LF on read). The symmetry
 own verify a tautology: it passed while the disk differed from intent. If you meet these symptoms
 in an older log, this is why:
 
-- It **rewrote every LF file it touched to CRLF** -- the origin of this tree's 554-CRLF /
-  154-LF split, against a repo that stores LF (`core.autocrlf=input`).
+- It **rewrote every LF file it touched to CRLF** -- the origin of this tree's mixed line endings,
+  against a repo that stores LF (`core.autocrlf=input`). Measure the split before trusting any
+  count of it; it moves with every batch of files touched.
 - A CRLF -> LF repair was **structurally impossible**: the edit happened in LF space and the write
   re-CRLF'd it, yielding a byte-identical file and a cheerful `OK`.
 - A lone `\r` round-tripped to `\n` -- same length, different content, hence `intended=N landed=N`
@@ -53,7 +54,7 @@ in an older log, this is why:
 `os.open(O_BINARY)`. Its old reader omitted that flag, so on Windows it applied the same
 translation as the write it was auditing and stayed green through all of the above -- a truth
 anchor that shares the defect under test is not a truth anchor. Negative test:
-`tools/test_safe_write_byte_exact.py` re-breaks the primitive three ways and asserts the gate
+`tools/tests/test_safe_write_byte_exact.py` re-breaks the primitive three ways and asserts the gate
 goes red each time.
 
 **Still true regardless:** verify a write landed by asserting the CORRECTION IS PRESENT, not that

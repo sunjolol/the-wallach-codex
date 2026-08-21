@@ -1,17 +1,16 @@
 /**
- * views/knowledge-explore.ts — the Knowledge drawer's Explore tab (Phase H2)
+ * views/knowledge-explore.ts — the Knowledge drawer's Explore tab
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * The off-path index: every entity that is NOT an essential or a condition
  * (topics, concepts, elements, substances, people), grouped by type — the new
- * front-facing home for what used to live only in the search surface. A pristine
- * re-creation of the signed-off demo's Explore vision, projected from the REAL
- * search entity index (state/search.ts::entityList). A chip opens that entity's
+ * front-facing home for what used to live only in the search surface, projected
+ * from the REAL search entity index (state/search.ts::entityList). A chip opens that entity's
  * faceted page (views/knowledge-topic.ts), rendered as a shell-level overlay
  * (views/knowledge.ts) on top of whatever tab opened it, via the data-kd-topic contract.
  *
- * PURE PROJECTION (R1): no per-entity literal. Type-group headers come from the
- * view-copy content store (R4) via ui(); entity NAMES are data (escaped).
+ * PURE PROJECTION: no per-entity literal. Type-group headers come from the
+ * view-copy content store via ui(); entity NAMES are data (escaped).
  *
  * Layer: views/ — reads state/ + a sibling view, never writes localStorage.
  * ═══════════════════════════════════════════════════════════════════════════
@@ -36,7 +35,10 @@ const EXPLORE_TYPES: ReadonlyArray<{ type: string; key: string }> = [
 
 /**
  * The Explore projection: entities that are NOT essentials or conditions (those
- * have their own tabs). Their front-facing home is this tab.
+ * have their own tabs). NOTE: renderExploreTab only draws the five types in EXPLORE_TYPES,
+ * so any other type (today the single 'event' entity) is counted here — including in the
+ * tab's "N TOPICS" badge in knowledge.ts — but never rendered. Add the type to EXPLORE_TYPES
+ * or filter it out here; do not leave the count and the grid disagreeing.
  */
 export function exploreEntities(): EntitySummary[] {
   return entityList().filter(e => e.type !== 'nutrient' && e.type !== 'condition');
@@ -44,7 +46,7 @@ export function exploreEntities(): EntitySummary[] {
 
 /**
  * The hidden keyword blob the Explore filter matches against, so the tab searches CONTENT and not
- * just chip labels (Luneth 2026-07-23). Mirrors what condition rows already carry in `data-search`.
+ * just chip labels. Mirrors what condition rows already carry in `data-search`.
  *
  * Contents, in descending signal: the entity's lay SYNONYMS (how a person actually names the thing),
  * its claims' TOPIC tags, and its claims' QUESTION text — questions are phrased the way people

@@ -1,5 +1,5 @@
 /**
- * state/home-curation.ts — read boundary for the Home-tab curation config (Phase H2)
+ * state/home-curation.ts — read boundary for the Home-tab curation config
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Surfaces dashboard/assets/data/home-curation.json to the Home view: the SPECIAL
@@ -38,7 +38,7 @@ function data(): HomeCuration {
  * (home-curation.json), each resolved against the search entity index and returned
  * A-Z by display name (the SELECTION is curated; the ORDER is a formula, so a
  * hand-edit needn't keep the list sorted). A slug that resolves to nothing (a later
- * typo) is silently skipped — graceful degradation (§00.B #7), never a broken chip.
+ * typo) is silently skipped — graceful degradation, never a broken chip.
  */
 export function homeExploreTopics(): EntitySummary[] {
   const bySlug = new Map(entityList().map((e): [string, EntitySummary] => [e.slug, e]));

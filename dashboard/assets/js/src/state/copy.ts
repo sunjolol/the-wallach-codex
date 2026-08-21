@@ -1,10 +1,10 @@
 /**
- * state/copy.ts — read boundary for the VIEW-prose content store (Phase H0)
+ * state/copy.ts — read boundary for the VIEW-prose content store
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Surfaces dashboard/assets/data/view-copy.json to the views: the claim-kind and
  * search-facet display-label maps + generic UI chrome copy. The single home for
- * view prose (Charter R4) — a view imports a label by id here, never inlines it.
+ * view prose — a view imports a label by id here, never inlines it.
  *
  * The offline file:// app cannot fetch(), so the store is inlined at build via
  * esbuild JSON import and validated ONCE through the Zod boundary; a bad/absent
@@ -44,7 +44,7 @@ export function kindLabel(kind: string): string {
 
 /**
  * Colour-category family for a claim.kind (green/teal/amber/orange/violet/red), the
- * locked colour language (redesign blueprint §6) — the ONE place a view learns a
+ * locked colour language — the ONE place a view learns a
  * claim's colour, so a view never hardcodes a family literal (view_category_not_hardcoded).
  * Falls back to '' (no family, a neutral card) for an unmapped kind; the map is TOTAL over
  * the sealed kinds (claim_category_mapping_total), so the fallback is unreachable in practice.

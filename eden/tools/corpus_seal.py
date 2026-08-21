@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """corpus_seal.py — USER-ONLY. Seals eden/corpus as the new truth anchor.
 
-The agent (Claude) MAY NOT run this on the user's behalf without explicit
-per-invocation approval. Sealing is the human's act of
-ratifying corpus state as canonical.
+Sealing is the human's act of ratifying corpus state as canonical, so it must never
+be run on the owner's behalf without their explicit, per-invocation approval; approval
+given once never carries forward to a later run.
 
 What it does, in order:
   1. Refuses unless the always-valid checks pass (90 essential entries, book hashes match).
@@ -57,7 +57,7 @@ def _guard_cli() -> None:
 
     corpus_seal has NO options — it always seals the whole corpus. Historically it
     ignored argv entirely, so `corpus_seal.py --help` (an agent probing for usage) SILENTLY
-    RAN a full seal (2026-07-08 incident). argparse now prints real help on -h/--help and
+    RAN a full seal. argparse now prints real help on -h/--help and
     errors on any unknown flag, so only a deliberate BARE run can seal. Runs once at CLI
     start — zero cost to any build/derive/runtime path, and the normal seal command is
     unchanged.
@@ -75,15 +75,14 @@ def draft_offset_failures():
     """Refuse-to-promote guard: every DRAFT claim's char_offset must point at its verbatim
     in the CURRENT book text, checked BEFORE any promotion happens.
 
-    WHY this exists (codified 2026-07-24 after the 4th occurrence — S12, S44, 2026-07-17,
-    2026-07-24): `corpus_resnap --write` relocates offsets in the SHARD + books-meta ONLY,
+    WHY this exists (codified after the fourth occurrence): `corpus_resnap --write`
+    relocates offsets in the SHARD + books-meta ONLY,
     never the draft. Step 2 promotes draft -> shard, so sealing after a book-text edit
     without re-syncing the draft SILENTLY replaces resnap's corrected offsets with stale
     ones. The final corpus_verify does catch it — as N x check #9 — but only after the bad
     shard is already on disk, and the recovery (re-resnap, sync, re-seal) burns a whole
-    cycle. The memory `editing-sealed-corpus-claims` documented the correct order through
-    all four hits and prevented none of them: a memory is not a gate (§00.B "codify, don't
-    promise"). This is check #9's own logic moved AHEAD of the write, anchored to the same
+    cycle. A written note documented the correct order through all four hits and prevented
+    none of them: documentation is not a gate (§00.B "codify, don't promise"). This is check #9's own logic moved AHEAD of the write, anchored to the same
     external truth (the book bytes), so the failure mode cannot reach disk.
     """
     meta = json.loads(META_PATH.read_text(encoding="utf-8"))
@@ -160,7 +159,8 @@ def main() -> int:
             ip.write_text(json.dumps(obj, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
             sealed_indices.append(ip)
 
-    # recount claims AFTER promotion (the pre-promotion run_checks saw an empty claims/)
+    # recount claims AFTER promotion -- step 2 may have overwritten shards, so the
+    # claim count the pre-promotion run_checks saw is stale.
     n_claims = 0
     for s in shards:
         n_claims += len(json.loads(s.read_text(encoding="utf-8")).get("claims", []))

@@ -1,15 +1,15 @@
 // tools/style_diff.js — objective computed-style diff: the LIVE shell vs a mockup.
 //
 // Usage:  node tools/style_diff.js <mockupRelPath>
-//   (no default — the v3 proposal mockups were retired 2026-08-13; pass a mockup path)
+//   (the mockup path is required — there is no default)
 //
-// WHY THIS EXISTS (2026-06-23 lesson): when matching a surface to a v3 mockup,
+// WHY THIS EXISTS: when matching a surface to a mockup,
 // do NOT eyeball it and do NOT trust a CSS read — both mislead. This loads the
 // live dashboard.html AND the mockup headless, compares getComputedStyle() for a
 // selector list, and prints ONLY the deltas. Fix until `TOTAL DIFFS: 0`. Residual
 // diffs where the LIVE uses a correct --ds-* token vs the mockup's UNSET browser
-// default (black / Times New Roman) are the live being BETTER than the demo — keep
-// them. See .claude/skills/visual-verification "Getting to exact".
+// default (black / Times New Roman) are the live being BETTER than the mockup — keep
+// them. See .claude/skills/visual-verification, "Measure, do not eyeball".
 //
 // Edit SELS / PROPS for the surface you are matching.
 const path = require('path');

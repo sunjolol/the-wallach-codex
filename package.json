@@ -1,7 +1,8 @@
 {
   "name": "health-expert",
   "version": "1.0.0",
-  "description": "The Wallach Codex — root package. Exists only to hold puppeteer for the headless render probes (tools/render_probe*.js); the app + its build toolchain live in dashboard/.",
+  "description": "The Wallach Codex — root package. Exists only to hold puppeteer for the headless tools in tools/ (37 render probes plus mockup_measure.js and style_diff.js); the app + its build toolchain live in dashboard/.",
+  "license": "MIT",
   "private": true,
   "type": "commonjs",
   "devDependencies": {

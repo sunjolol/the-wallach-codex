@@ -1,7 +1,7 @@
 # Decision: the orphaned Creator's Log entry stays archived — SETTLED, do not re-raise
 
-_2026-08-03 12:40 CDT. Luneth's call, asked and answered. This file exists so the question never
-returns to the handoff._
+_2026-08-03 12:40 CDT. The owner's call, asked and answered. This file exists so the question is
+never re-opened in a later session._
 
 ## The decision
 **`lg_ms2ceijb_ae6lys` is NOT reconciled into master's ledger. It stays where it is, archived.**
@@ -21,7 +21,7 @@ The work it describes is **already in the codebase** — the probe fix landed. O
 was orphaned, never the change it narrates. Nothing is missing from the app.
 
 ## How it got orphaned
-It was written inside a git worktree that the 2026-08-03 doctor sweep purged (96.8 MB, stale). That
+It was written inside a git worktree that a 2026-08-03 cleanup sweep purged (96.8 MB, stale). That
 worktree's ledger copy held 692 entries; master's held 783. The entry existed only in the copy, so
 when the worktree went, master's ledger had never contained it.
 
@@ -45,5 +45,5 @@ pruning entries in the ledger. This entry was never in that ledger, and it has n
 it is retrievable forever from the tag.
 
 ## Consequence
-`chronicle/next-chunk.md` no longer lists this as awaiting a decision. The ledger's canonical entry
-count is master's, and the archived entry is deliberately outside it.
+This is no longer an open item. The ledger's canonical entry count is master's, and the archived
+entry is deliberately outside it.

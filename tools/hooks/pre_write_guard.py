@@ -2,11 +2,11 @@
 """
 pre_write_guard.py — PreToolUse hook for Edit | Write | MultiEdit.
 
-Enforces §17 at the source: no project file may be written by any tool other
-than tools/safe_write.py. The Edit / Write / MultiEdit tools have silently
-truncated project files 7+ times (see chronicle/contradictions/*§17*). This
-hook blocks them from touching anything under the repo root and points the
-agent at safe_write.py instead.
+Enforces the write discipline at the source: no project file may be written by
+any tool other than tools/safe_write.py. The Edit / Write / MultiEdit tools have
+silently truncated project files on this host more than once (the incidents are
+recorded under chronicle/contradictions/). This hook blocks them from touching
+anything under the repo root and points the caller at safe_write.py instead.
 
 Scratch space outside the repo root (the OS temp dir, /tmp) is allowed — that
 is where payloads are staged before a safe_write call.
@@ -17,10 +17,10 @@ safe_write.
 
 Contract (Claude Code hook protocol):
   stdin  : JSON { "tool_name", "tool_input": {...}, "cwd", ... }
-  exit 2 : BLOCK — the stderr message is shown to the agent.
+  exit 2 : BLOCK — the stderr message is shown to the caller.
   exit 0 : ALLOW.
 Fail-open: any internal error exits 0. A hook bug must never brick the session;
-defense-in-depth lives downstream in safe_write + invariants.
+defense in depth lives downstream in safe_write + invariants.
 """
 import json
 import sys
@@ -100,9 +100,9 @@ def main():
         return
 
     _block(
-        f"BLOCKED ({tool_name} -> {rel_posix}): §17 — project files may only be "
+        f"BLOCKED ({tool_name} -> {rel_posix}): project files may only be "
         f"written via tools/safe_write.py.\n"
-        f"Edit/Write/MultiEdit have silently truncated project files 7+ times on "
+        f"Edit/Write/MultiEdit have silently truncated project files on "
         f"this mount. Instead:\n"
         f"  1. Stage the new content in a scratch file under the OS temp dir "
         f"(outside the repo), or use --payload-stdin.\n"

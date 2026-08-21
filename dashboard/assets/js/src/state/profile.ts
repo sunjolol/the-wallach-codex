@@ -2,18 +2,17 @@
  * state/profile.ts -- the user's identity choice, persisted through one chokepoint
  * ===========================================================================
  *
- * Luneth, 2026-07-15: "add a memory element so if someone picks their name and
- * starts without being a 'guest', they don't have to re-do the prompt on
- * refresh" + "make sure they can click their name or profile to change their
- * name, same protections here on the inputs".
+ * The identity choice PERSISTS: a user who names themselves (or chooses to browse
+ * anonymously) is never re-prompted on refresh, and can click their name to rename with
+ * the same input protections.
  *
- * 2026-08-13: the profile grew from a name into a small IDENTITY console -- name,
- * avatar (a bundled preset or an uploaded image), and appearance (theme + primary
- * accent). All four still flow through the SAME single writer. That is the whole
- * point of the chokepoint (below): a second, ad-hoc writer can appear later and
- * nobody notices, because there is no named place the change was supposed to go.
+ * The profile is a small IDENTITY console -- name, avatar (a bundled preset or an uploaded
+ * image), and appearance (theme + primary accent). All four flow through the SAME single
+ * writer. That is the whole point of the chokepoint (below): a second, ad-hoc writer can
+ * appear later and nobody notices, because there is no named place the change was supposed
+ * to go.
  *
- * WHY A CHOKEPOINT (§31). Not ceremony. The rule is "all mutations of a sensitive
+ * WHY A CHOKEPOINT. Not ceremony. The rule is "all mutations of a sensitive
  * state surface flow through a small fixed set of NAMED helpers that emit a typed
  * event". The identity is painted in several slots (topbar brand, rail chip name,
  * rail avatar, browser-tab title) plus it drives the app-wide theme/accent on
@@ -29,7 +28,7 @@
  * The read is Zod-validated at the boundary (core/storage.ts::getValidated), so a
  * corrupted or hand-edited LS value cannot enter typed-land. If it fails to parse
  * we return null and the user is asked once more -- degrading to the ask is safe;
- * degrading to a half-parsed profile is not (graceful degradation, #7).
+ * degrading to a half-parsed profile is not (graceful degradation).
  * ===========================================================================
  */
 
@@ -61,7 +60,7 @@ export function loadUserProfile(): UserProfile | null {
 }
 
 /**
- * §31 chokepoint -- the ONE private writer of the profile key. Every named op below
+ * The chokepoint -- the ONE private writer of the profile key. Every named op below
  * delegates here. It verifies its own round-trip (setValidated) and NEVER reports
  * success on an unverified write, then emits `profile:changed` as its last line so
  * every identity/appearance slot repaints without the caller remembering to.
@@ -69,7 +68,7 @@ export function loadUserProfile(): UserProfile | null {
 function writeProfile(next: UserProfile): { ok: true } | { ok: false; reason: string } {
   const res = setValidated(USER_PROFILE_KEY, next, UserProfileSchema);
   if (!res.ok) {
-    // A bounded input needs a rejection PATH, not just a bound (#8, #1). Map the
+    // A bounded input needs a rejection PATH, not just a bound. Map the
     // storage reason to something a person can act on.
     const reason = res.reason === 'quota-exceeded'
       ? 'There is not enough room left on this device to save that.'
@@ -120,10 +119,10 @@ export function saveUserProfile(
 }
 
 /**
- * Choose an avatar: a bundled preset id ('aura-01') OR an uploaded image as a
- * data: URI. Pre-validated here so an oversized upload gets the specific "too
- * large" reason (the schema is the backstop; the UI downscales before it ever
- * gets here). Preserves name + appearance.
+ * Choose an avatar: a bundled preset id ('generic-01', 'men-NN', 'women-NN') OR an
+ * uploaded image as a data: URI. Pre-validated here so an oversized upload gets the
+ * specific "too large" reason (the schema is the backstop; the UI downscales before it
+ * ever gets here). Preserves name + appearance.
  */
 export function setAvatar(avatar: string): { ok: true } | { ok: false; reason: string } {
   const parsed = AvatarSchema.safeParse(avatar);
@@ -177,12 +176,11 @@ export function resetIdentity(): void {
 }
 
 /**
- * The name to DISPLAY, per Luneth's 2026-07-15 call: the "I'm just browsing"
- * default is no longer "Friend".
+ * The name to DISPLAY. A guest is never given a pseudo-name:
  *   slot 'profile'  -> "You"    (rail profile chip)
  *   slot 'brand'    -> "Codex"  (top-left, where a name would have gone)
  * A named user gets their own name in both. Kept here rather than in a view so the
- * two slots cannot drift apart (single source of truth, #3).
+ * two slots cannot drift apart (single source of truth).
  */
 export function displayName(profile: UserProfile | null, slot: 'profile' | 'brand'): string {
   if (profile?.name !== undefined && profile.name !== '') {
@@ -197,10 +195,10 @@ export function displayInitial(profile: UserProfile | null): string {
 }
 
 /**
- * The browser-tab title. Luneth 2026-08-13: keep "Health Journey" as the app's name, but
- * derive the possessive from the identity choice -- a named user gets "<Name>'s Health Journey";
- * a guest gets "Your Health Journey". Kept here (not in a view) so the title derives from the
- * same one place as the brand + profile slots and cannot drift (#3).
+ * The browser-tab title. "Health Journey" is the app's name; the possessive derives from
+ * the identity choice -- a named user gets "<Name>'s Health Journey"; a guest gets "Your
+ * Health Journey". Kept here (not in a view) so the title derives from the same one place
+ * as the brand + profile slots and cannot drift.
  */
 export function displayTitle(profile: UserProfile | null): string {
   if (profile?.name !== undefined && profile.name !== '') {

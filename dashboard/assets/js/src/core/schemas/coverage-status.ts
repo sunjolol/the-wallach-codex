@@ -6,9 +6,8 @@
  *   `EssentialSchema.target`        is `z.unknown()` (shape varies by kind)
  *   `RegimenLabelSchema.nutrients`  is `z.array(z.unknown())`
  *
- * state/coverage.ts narrows them HERE at the point of use, so the classifier
- * (faithful port of legacy classifyLive / computeLiveCoverage) reads typed
- * numbers without forcing a strict shape onto Luneth-owned data upstream.
+ * state/coverage.ts narrows them HERE at the point of use, so the classifier reads typed
+ * numbers without forcing a strict shape onto the hand-maintained targets DB upstream.
  * Both are `.passthrough()` — extra fields are preserved, never rejected.
  * ═══════════════════════════════════════════════════════════════════════════
  */
@@ -55,7 +54,7 @@ export const RegimenNutrientSchema = z.object({
   name: z.string(),
   amount: z.coerce.number(),
   unit: z.string().optional(),
-  /** Optional label form (e.g. "Omega 3") — feeds fatty-acid resolution (A2). */
+  /** Optional label form (e.g. "Omega 3") — feeds fatty-acid resolution. */
   form: z.string().nullable().optional(),
 }).passthrough();
 export type RegimenNutrient = z.infer<typeof RegimenNutrientSchema>;

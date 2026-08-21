@@ -1,5 +1,5 @@
 /**
- * state/recommender.test.ts — the cost-per-nutrient ranker (A3).
+ * state/recommender.test.ts — the cost-per-nutrient ranker.
  *
  * Locks the match-score behavior over the REAL generated product-recommender-data.json:
  *   - ranks best-first by score (a total order);
@@ -40,7 +40,7 @@ describe('recommender: cost-per-nutrient ranking', () => {
   });
 
   it('IGNORES a target passed without its unit — fail-safe, never a guessed compare', () => {
-    // 2026-07-15: the unit is REQUIRED for target-based adequacy. Omitting it used to mean
+    // The unit is REQUIRED for target-based adequacy. Omitting it used to mean
     // "assume the units match", which is exactly how boron divided mcg by mg. Now it falls
     // back to the potency proxy and SAYS SO via adequacyIsTarget:false.
     const ranked = rankSources(SLUG, 55);
@@ -133,28 +133,28 @@ describe('recommender: product → delivered-essentials index', () => {
 });
 
 /**
- * The kids exclusion (Luneth 2026-07-16) — the BEHAVIOURAL half.
+ * The kids exclusion — the BEHAVIOURAL half.
  *
  * `kids_products_not_recommended` is a STATIC gate: it proves the filter code exists and is
- * wired the right way round. It cannot prove the filter RUNS. That is the mineral-tiers
- * lesson (sealed, green, and wrong for three weeks) and the reason slot_invariants ships
- * beside a render probe. These tests run it against the REAL artifact.
+ * wired the right way round. It cannot prove the filter RUNS — a gate can be green because
+ * of the very defect it is meant to catch. These tests run the filter against the REAL
+ * artifact.
  *
  * NEGATIVE CONTROL BY CONSTRUCTION: each case asserts the excluded product is a genuine
  * candidate in the underlying data (via the unfiltered Products-tab index) and THEN absent
  * from the ranking. Without that first half, a passing test could just mean "kids-toddy
- * delivers no calcium" — proving nothing (memory: negative-control-or-it-proves-nothing).
+ * delivers no calcium" — proving nothing.
  */
 describe('recommender: kids products are excluded from recommendations, never from the DB', () => {
   // Read the REAL list rather than re-typing it: a hardcoded copy here would be a second
-  // home for the curation list (R3) that silently goes stale the day a 5th product is added
+  // home for the curation list that silently goes stale the day a 5th product is added
   // — the test would then pass while the new product went unchecked.
   const KIDS = excludedProductIds();
 
   it('anchors on the known list — non-empty, and containing the audited products', () => {
     // The ANTI-CIRCULARITY anchor. Every assertion below is driven BY the list, so an
     // emptied list would make them all vacuously true. This case is what makes them mean
-    // something: the list must actually be populated, with the 2026-07-16 audit's findings.
+    // something: the list must actually be populated with the audited products.
     expect(KIDS.length).toBeGreaterThanOrEqual(2);
     expect(KIDS).toContain('kids-toddy');
     expect(KIDS).toContain('kidsprinklz');
@@ -182,7 +182,7 @@ describe('recommender: kids products are excluded from recommendations, never fr
 
   it('still lists kids products in the Products-tab index (the database stays whole)', () => {
     const idx = essentialSlugsByProduct();
-    // Luneth: they are "better as a database item to be discovered in the products tab".
+    // They are better as a database item to be discovered in the products tab.
     // Excluded from being RECOMMENDED, never hidden from the catalogue.
     const present = KIDS.filter(k => (idx.get(k) ?? []).length > 0);
     expect(present.length).toBeGreaterThan(0);

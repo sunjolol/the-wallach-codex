@@ -3,31 +3,26 @@
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * The field (every essential Wallach named) + the rail (the CAUSATION behind every lit
- * tile). RE-CREATED 2026-07-16 from the signed-off demo `temporary/coverage-E-rail.html`
- * on real data + real state — never transplanted. Luneth: "we still shouldn't blindly copy
- * code since some of it will need to be adapted to work on the live surface (such as
- * increasing dosage changing counts)".
+ * tile). Built against real data and real state from an approved static design mockup.
  *
- * WHAT IS ADAPTED, NOT COPIED — the demo is DESIGN TRUTH, not a code donor:
- *   · The demo's dose stepper is INERT (its prototype data has no per-serving amounts).
- *     LIVE IT MUST MOVE THE COUNTS — Luneth's named example. It routes
- *     saveRgOverride(id, {scaling_factor}) → writeSlotDoc → 'regimen:changed' → recompute;
+ * WHAT IS ADAPTED, NOT COPIED — a mockup is DESIGN TRUTH, not a code donor:
+ *   · A mockup's dose stepper is INERT (its prototype data has no per-serving amounts).
+ *     LIVE IT MUST MOVE THE COUNTS. It routes saveRgOverride(id, {scaling_factor}) →
+ *     writeSlotDoc → 'regimen:changed' → recompute;
  *     state/coverage.ts::readScale already multiplies every delivered mg by that factor.
  *     No dose→coverage curve is invented here: the live math already exists.
- *   · The demo's status model is BINARY (a product "supplies" a tile → covered). The live
+ *   · A mockup's status model is BINARY (a product "supplies" a tile → covered). The live
  *     classifier is amount-based and lands on partial/present too. The binary rule is NOT
  *     ported; every verdict is read from the snapshot.
- *   · The demo interpolates product names into innerHTML. Here every NAME is written with
- *     .textContent (§00.B #5, escape by default) — the sink, not a filter, is the defence.
- *   · The demo's `+ ADD` chip has no handler at all. An inert button labelled "+ ADD" is
- *     the PROFILE lesson inverted (a label is a promise), so it opens the arrival veil as
- *     a goal picker.
+ *   · A mockup interpolates product names into innerHTML. Here every NAME is written with
+ *     .textContent — escape at the sink, never with a filter.
+ *   · A mockup's `+ ADD` chip has no handler at all. An inert button labelled "+ ADD" would
+ *     be a label promising something it cannot do, so here it opens the arrival veil as a
+ *     goal picker.
  *
  * THE GOAL RULE, inherited and unbreakable: a goal may change what you LOOK AT, or what
  * you're RECOMMENDED. It may NEVER change what you're MEASURED AGAINST. The denominator is
  * always 90 — the ledger is byte-identical before goals, after goals, and during hover.
- *
- * §17 lesson: corruption recovery for this file is `git checkout HEAD -- ...`.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -48,7 +43,8 @@ export interface MountHandle {
 
 const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
 
-/** The rail shows 4 recommendation cards (measured: the aside's budget at 1440×900). */
+/** The aside shows 4 recommendation cards above the regimen rail (measured: the aside's
+ *  vertical budget at 1440×900). */
 const REC_LIMIT = 4;
 
 // ─── Read helpers ─────────────────────────────────────────────────────────
@@ -82,9 +78,9 @@ function escHTML(s: unknown): string {
  * The user's chosen goals, resolved against the layout and capped at MAX_GOALS.
  *
  * Resolved (not trusted): a stored goal id that no longer exists in the layout is DROPPED,
- * because Luneth re-authors the goal list and a stale id must degrade to "not selected"
- * rather than render a chip with no members. Order follows the user's pick order, which is
- * what indexes the hue.
+ * because the goal list is re-authored in the layout data and a stale id must degrade to
+ * "not selected" rather than render a chip with no members. Order follows the user's pick
+ * order, which is what indexes the hue.
  */
 function activeGoals(): LayoutGoal[] {
   const chosen = loadRgUserGoals() ?? [];
@@ -109,7 +105,7 @@ function slugToTileKey(): Map<string, string> {
     const tiles = sec.subsections !== undefined ? sec.subsections.flatMap(s => s.tiles) : (sec.tiles ?? []);
     for (const t of tiles) {
       if (t.slug !== undefined) {
-        m.set(t.slug, t.name);
+        m.set(t.slug, t.key);
       }
     }
   }
@@ -123,13 +119,13 @@ function slugToTileKey(): Map<string, string> {
  * re-deriving anything, and the RING IS A REAL CHILD ELEMENT (`.tile__ring`) — never
  * ::after.
  *
- * ★ WHY THE RING IS ITS OWN ELEMENT (the 2026-07-16 bug, do not undo): `.tile.covered::after`
- * is ALREADY the status tick. An element has exactly ONE ::after, and `.tile.covered::after`
- * and `.tile[data-goals]::after` are both specificity (0,2,1) — so the cascade MERGED them
- * per-property instead of one winning, and the ring rendered at the TICK'S 14×5px. Goals own
- * the EDGE, status owns the INTERIOR: two channels, no collision.
+ * ★ WHY THE RING IS ITS OWN ELEMENT (do not collapse it back into a pseudo-element):
+ * `.tile.covered::after` is ALREADY the status tick. An element has exactly ONE ::after, and
+ * `.tile.covered::after` and `.tile[data-goals]::after` are both specificity (0,2,1) — so the
+ * cascade MERGES them per-property instead of one winning, and the ring renders at the tick's
+ * 14×5px. Goals own the EDGE, status owns the INTERIOR: two channels, no collision.
  *
- * ★ COVERED TAKES NO RING (Luneth, 2026-07-16) — enforced in CSS
+ * ★ COVERED TAKES NO RING — enforced in CSS
  * (`.tile.covered > .tile__ring { display: none }`), NOT by skipping the element here, so
  * `data-goals` survives on covered tiles and goal-HOVER still highlights them. The ring
  * marks a goal nutrient you have NOT covered: a to-do marker, not a badge.
@@ -206,24 +202,25 @@ function subCovered(sub: LayoutSubsection, snapshot: CoverageSnapshot | null): b
 /**
  * A subsection's GROUP goal-dots: ONE DOT PER GOAL that names the run — never a ring per tile.
  *
- * ★ WHY THE GROUP AND NOT 34 RINGS (Luneth's ruling, 2026-07-16): the plant-derived 34 share
- * ONE verdict off the colloidal-mineral bottle, so the group IS the unit — there is exactly one
- * thing to do about all 34. Ringing them individually would light 34 of 91 tiles on 9 of the 14
- * goals (~37% of the field on nearly every goal), and "having ALL tiles light up on every goal
- * will make the goal system feel cheap and pointless" (his words). The dots ride the LABEL,
- * which already reads "PLANT DERIVED · 34", so they read as a property of the run.
+ * ★ WHY THE GROUP AND NOT 34 RINGS: the plant-derived 34 share ONE verdict off the
+ * colloidal-mineral bottle, so the group IS the unit — there is exactly one thing to do about
+ * all 34. Ringing them individually would light 34 of the 91 tiles on the 20 of 31 goals that
+ * name the group — roughly 37% of the field on two goals out of every three — and a goal system
+ * where nearly everything lights on nearly every goal reads as cheap and means nothing. The dots
+ * ride the LABEL, which already reads "PLANT DERIVED · 34", so they read as a property of the
+ * run.
  *
- * ★ WHY DOTS AND NOT ONE GRADIENT BAR (Luneth, 2026-07-16 — this REPLACED a bar I shipped
- * first): a gradient MERGES N goals into one blob that cannot be decomposed, so it can never
- * answer "which goal is this for?" and needs a legend to mean anything. Separable dots can:
- * each carries `data-goal`, so hovering a goal chip isolates ITS dot (see onHover) and the
- * hover TEACHES what the indicator means instead of documenting it.
+ * ★ WHY DOTS AND NOT ONE GRADIENT BAR: a gradient MERGES N goals into one blob that cannot be
+ * decomposed, so it can never answer "which goal is this for?" and needs a legend to mean
+ * anything. Separable dots can: each carries `data-goal`, so hovering a goal chip isolates ITS
+ * dot (see onHover) and the hover TEACHES what the indicator means instead of documenting it.
  *
- * ★ AND WHY THIS IS NOT THE REC-CARD DOTS DELETED THE SAME DAY — the distinction is MEASURED,
- * not aesthetic, so do not "unify" the two: the rec dots lit ~100% of the time (every product
- * touches every goal), so they never varied and encoded nothing. These VARY — 9 of 14 goals
- * name the group, so on a 5-goal pick all five dots light only 6.3% of the time and the modal
- * case is 3 of 5. A dot here is a fact about YOUR goals; a dot there was a constant.
+ * ★ AND WHY THIS IS NOT THE SAME AS THE REC-CARD GOAL DOTS, which were removed — the distinction
+ * is MEASURED, not aesthetic, so do not "unify" the two: the rec dots lit almost every time (a
+ * broad product touches every goal), so they never varied and encoded nothing. These VARY — 20
+ * of the 31 goals name the group, so on a 5-goal pick all five dots light only ~9% of the time
+ * and the modal case is 3 of 5. A dot here is a fact about YOUR goals; a dot there was a
+ * constant.
  *
  * Hues come from GOAL_HUES by PICK order — the same index the tile ring uses, so one colour
  * means one goal everywhere on the field.
@@ -295,23 +292,23 @@ function renderSection(spec: LayoutSection, snapshot: CoverageSnapshot | null, g
  * The ledger — the colour key, with a live count per status and the reconciliation line.
  *
  * ★ THIS IS THE DENOMINATOR'S ONLY HOME, and it must be byte-identical before goals, after
- * goals, and during a goal hover. It counts the WHOLE field, never the goal subset. The old
- * goal cards' sin was never the goal, it was the denominator ("bone & skeletal 3/14"
- * asserts bone health IS 14 things, inverting Wallach's thesis).
+ * goals, and during a goal hover. It counts the WHOLE field, never the goal subset. A per-goal
+ * denominator ("Stronger bones 3/16") would assert that bone health IS those 16 things, which
+ * inverts Wallach's thesis — a goal may never shrink what you are measured against.
  *
- * The wording is the signed-off demo's: "GAP · ATTENTION" → "NOT COVERED" (gap read as a
- * hole in OUR data; it means Wallach gave a number and you are under it) and "NO WALLACH
- * TARGET" → "NO WALLACH NUMBER YET".
+ * Wording note: the gap row reads "NOT COVERED", not "GAP" — a gap reads as a hole in OUR data,
+ * when it actually means Wallach gave a number and you are under it. The empty row reads "NO
+ * WALLACH NUMBER YET" for the same reason: the silence is his, not a failed lookup.
  */
 function renderLedger(snapshot: CoverageSnapshot | null): string {
   const layoutTiles = LAYOUT.sections.flatMap(sec =>
     (sec.subsections !== undefined ? sec.subsections.flatMap(s => s.tiles) : (sec.tiles ?? [])));
   // ★ THE LEDGER COUNTS THE COUNTED, NOT THE SHOWN. omega-9 is `essential: false` — it is on
-  // the board for a reason Luneth labelled honestly as aesthetic ("3 is a better number than
-  // 2"), and Wallach names only two EFAs, so it can never carry a verdict. Counting all 91
-  // here made the five numbers sum to 91 while the reconciliation line beside them read "90
-  // counted" — a ledger contradicting itself two inches apart. essentialCount() has always
-  // filtered it; this must agree, or the two disagree on screen.
+  // the board for presentation only (the fatty-acid row reads better as three), and Wallach
+  // names only two EFAs, so it can never carry a verdict. Counting all 91 here made the five
+  // numbers sum to 91 while the reconciliation line beside them read "90 counted" — a ledger
+  // contradicting itself two inches apart. essentialCount() has always filtered it; this must
+  // agree, or the two disagree on screen.
   const countedKeys = new Set(layoutTiles.filter(t => t.essential !== false).map(t => t.key));
   const tiles = (snapshot?.tiles ?? []).filter(t => countedKeys.has(t.name));
   const n = (s: CoverageStatus): number => tiles.filter(t => t.status === s).length;
@@ -390,18 +387,24 @@ function renderGoalStrip(goals: LayoutGoal[]): string {
 /**
  * What the recommender should target.
  *
- * With goals: the union of their members (the demo's rule — the card's copy is "your goal
- * nutrients per $10 spent", not "your UNCOVERED goal nutrients"). With none: the field's
- * current gaps, so a goal-less user still gets an honest, useful list ranked by breadth
- * across all 90 (blueprint §5).
+ * With goals: the union of their members — the card's copy is "your goal nutrients per $10
+ * spent", not "your UNCOVERED goal nutrients", so the target is the whole goal, not its
+ * remainder. With none: the field's current gaps, so a goal-less user still gets an honest,
+ * useful list ranked by breadth across all 90.
  */
 function wantedSlugs(snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): string[] {
   if (goals.length > 0) {
     return [...new Set(goals.flatMap(g => g.members))];
   }
-  // Join snapshot-gap tiles back to slugs. The layout keys tiles by an UPPERCASE display
-  // name ('HYDROGEN') while the snapshot carries the Title-case target name ('Hydrogen'),
-  // so the reverse lookup must normalise case or every gap misses and want becomes [].
+  // Join snapshot-gap tiles back to slugs. Both sides key on the layout tile's `key` (the
+  // canonical target name), which is what CoverageSnapshot tiles carry as `name`. Do NOT map to
+  // the tile's DISPLAY name here: 16 of the 91 tiles show something different from their key
+  // (vitamin-c displays 'ASCORBIC ACID' against the key 'Vitamin C (Ascorbic Acid)'), and a
+  // display-name join silently dropped every one of them — all 12 vitamins, folate, flavonoids
+  // and the 3 omegas — so no vitamin gap could ever pull a recommendation in no-goal mode.
+  // The lower-casing is belt-and-braces; the keys already match exactly.
+  // Negative control: tools/tests/test_nogoal_wanted_join.py (plants the old display-name
+  // join and asserts it still loses exactly those 16).
   const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
   return (snapshot?.tiles ?? [])
     .filter(t => t.status === 'gap')
@@ -409,7 +412,7 @@ function wantedSlugs(snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): st
     .filter((s): s is string => s !== undefined);
 }
 
-/** The rec cards, built as DOM (names via textContent — §00.B #5, never innerHTML). */
+/** The rec cards, built as DOM (names via textContent, never innerHTML). */
 function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], goalMode: boolean): void {
   host.replaceChildren();
   const head = document.createElement('div');
@@ -434,25 +437,26 @@ function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], 
   };
 
   /**
-   * `cols` paints the card's BORDER only. The per-goal DOTS were deleted 2026-07-16.
+   * `cols` paints the card's BORDER only. There are no per-goal dots on a rec card.
    *
    * ★ WHY, measured rather than argued: the dots were a dead channel. `goalIds` (state/
-   * recommender.ts) lights a goal when the product delivers ANY ONE of its members — so 66 of
-   * 155 products lit ALL 14 goals, and every top-4 rec card lit all 5 picked goals. Identical
-   * rows carry no information.
+   * recommender.ts) lights a goal when the product delivers ANY ONE of its members — measured
+   * against the shipped data, 29 of the 155 recommender products light ALL 31 goals and 64 light
+   * 30 or more, so every top-ranked card lit every picked goal. Identical rows carry no
+   * information.
    *
    * ★ AND THE OBVIOUS FIX DOES NOT WORK — do not re-propose it: a %-of-target threshold was
    * measured at 10 / 25 / 50 AND 100 % of the Wallach target, and all four top cards still lit
-   * all five goals at every level. The ranker rewards breadth, so the products that REACH this
-   * list are broad multis, and a broad multi genuinely delivers a full target of SOMETHING in
-   * every goal. Weighting by contribution was measured too: the three broad multis land at
-   * 0.29–0.54 on every goal — five near-identical dots. The fact does not vary, so no encoding
-   * can show variation.
+   * every picked goal at every level. The ranker rewards breadth, so the products that REACH
+   * this list are broad multis, and a broad multi genuinely delivers a full target of SOMETHING
+   * in every goal. Weighting by contribution was measured too and landed the broad multis in one
+   * narrow band across every goal — near-identical dots again. The fact does not vary, so no
+   * encoding can show variation.
    *
-   * Luneth's call (2026-07-16): drop the dots, keep the border EXACTLY as it works today —
-   * "ANY recommendation is going to be good for ANY goal in 95%+ of cases", so the border is
-   * decorative + mostly-true and earns its keep where five identical dots did not. `goalIds`'
-   * ANY-member rule is therefore deliberately UNCHANGED: it is a border tint, not a claim.
+   * The border stays exactly as it works today: any recommendation is good for almost any goal,
+   * so a decorative, mostly-true tint earns its keep where five identical dots did not.
+   * `goalIds`' ANY-member rule is therefore deliberately UNCHANGED: it is a border tint, not a
+   * claim.
    */
   for (const r of recs) {
     const cols = r.goalIds.map(hueOf);
@@ -484,8 +488,8 @@ function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], 
     const val = document.createElement('span');
     val.className = 'rec__val rec__q';
     val.textContent = `${r.perTenDollars.toFixed(1)} / $10`;
-    // The explainer is a TWO-STAGE HOVER (card → dotted underline; numbers → the text).
-    // No standing paragraph — Luneth deleted it.
+    // The explainer is a TWO-STAGE HOVER (card → dotted underline; numbers → the text), so the
+    // card carries no standing paragraph of its own.
     const tip = document.createElement('span');
     tip.className = 'rec__tip';
     tip.textContent = ui('cov_rec_tip');
@@ -606,8 +610,8 @@ function readItemDose(item: ReturnType<typeof loadEffectiveRegimen>[number]): nu
 }
 
 /**
- * Servings/day for display. INTEGER STEPS, but a SOURCED FRACTIONAL DEFAULT is allowed
- * (Luneth, 2026-07-16) — Plant Derived Minerals is the ONE product Wallach doses by name
+ * Servings/day for display. INTEGER STEPS, but a SOURCED FRACTIONAL DEFAULT is allowed —
+ * Plant Derived Minerals is the ONE product Wallach doses by name
  * (1 fl oz/100 lb = 1.54 servings at 154 lb), and a pure-integer control could not express
  * his own number for it. So 1.54 shows as "1.54"; 2 shows as "2", not "2.00".
  */
@@ -618,9 +622,9 @@ function formatDose(n: number): string {
 function renderRail(items: ReturnType<typeof loadEffectiveRegimen>): string {
   const slots = loadSlots();
   const active = slots.slots.find(s => s.id === slots.activeSlot);
-  // D4: the ACTIVE SLOT'S NAME, read-only. No switcher — switching lives in Regimen. It is
-  // here so a user with four slots can never wonder which one they just changed. It is READ,
-  // never asserted: the old markup hardcoded "DAILY PROTOCOL" as if it were state.
+  // The ACTIVE SLOT'S NAME, read-only. No switcher — switching lives in Regimen. It is here so
+  // a user with four saves can never wonder which one they just changed, and it is READ from
+  // state rather than hardcoded: a fixed title would assert a fact the view does not know.
   const slotName = (active?.name ?? 'Default').toUpperCase();
   return `
     <div class="rail-panel">
@@ -643,8 +647,9 @@ function renderRail(items: ReturnType<typeof loadEffectiveRegimen>): string {
 
 export function mount(container: HTMLElement): MountHandle {
   const render = (): void => {
-    // COV-02: a stationary cursor over a just-removed goal x fires no mouseout, so a stale
-    // body.focusing (goal-hover dim) would otherwise stick through this rebuild. Clear first.
+    // A stationary cursor over a just-removed goal x fires no mouseout, so a stale
+    // body.focusing (the goal-hover dim) would otherwise stick through this rebuild. Clear it
+    // first.
     document.body.classList.remove('focusing');
     const snapshot = getOrCompute();
     const goals = activeGoals();
@@ -665,8 +670,9 @@ export function mount(container: HTMLElement): MountHandle {
       </div>
     `;
 
-    // The two name-bearing regions are built as DOM, not markup, so every product name is a
-    // text node (§00.B #5). They are filled AFTER the shell so the shell can stay a template.
+    // The two name-bearing regions are built as DOM, not markup, so every product name is a text
+    // node and can never be parsed as HTML. They are filled AFTER the shell so the shell can stay
+    // a template.
     const railList = container.querySelector<HTMLElement>('[data-rail-list]');
     if (railList !== null) {
       buildRailRows(railList, items);
@@ -734,12 +740,12 @@ export function mount(container: HTMLElement): MountHandle {
       window.dispatchEvent(new CustomEvent('wallach:navigate', { detail: { to: 'regimen' } }));
       return;
     }
-    // A tile opens that element's Knowledge page. This is the NEW entrance to the essential
-    // detail view now that the drawer's Essentials menu item is gone (Luneth 2026-07-23), so it
-    // has to work for every card — `data-tile` carries the LAYOUT key, which is exactly what the
-    // detail page is keyed by, but the event contract speaks slugs, so resolve it here rather
-    // than leaning on openEntity's fallback. Checked LAST so every action control above (goal
-    // add, row remove, dose steppers, recommendations) still wins inside a tile.
+    // A tile opens that element's Knowledge page. This is the ONLY entrance to the essential
+    // detail view, so it has to work for every card — `data-tile` carries the LAYOUT key, which
+    // is exactly what the detail page is keyed by, but the event contract speaks slugs, so
+    // resolve it here rather than leaning on openEntity's fallback. Checked LAST so every action
+    // control above (goal add, row remove, dose steppers, recommendations) still wins inside a
+    // tile.
     const tileEl = t.closest<HTMLElement>('[data-tile]');
     if (tileEl !== null) {
       const key = tileEl.dataset['tile'] ?? '';
@@ -761,9 +767,8 @@ export function mount(container: HTMLElement): MountHandle {
     const body = document.body;
     const tiles = container.querySelectorAll<HTMLElement>('.tile, .tile--vitamin, .tile--amino, .tile--fat');
     // The group dots focus on the SAME hover as the tiles. This is what earns dots over one
-    // gradient bar (Luneth, 2026-07-16): hovering a goal isolates ITS dot, so the hover TEACHES
-    // what the mark means. A merged gradient could never do this — there is no per-goal element
-    // in it to isolate.
+    // gradient bar: hovering a goal isolates ITS dot, so the hover TEACHES what the mark means.
+    // A merged gradient could never do this — there is no per-goal element in it to isolate.
     const dots = container.querySelectorAll<HTMLElement>('.essentials-subsection__goaldot');
     if (chip === null) {
       body.classList.remove('focusing');
@@ -807,31 +812,17 @@ export function mount(container: HTMLElement): MountHandle {
 }
 
 /**
- * The dose stepper — Luneth's named "increasing dosage changing counts".
- *
- * Whole-serving steps, floored at 1. It writes through the §31 chokepoint
- * (saveRgOverride → writeSlotDoc → 'regimen:changed'), which cascades a recompute; the view
- * re-renders off the event, so the counts MOVE. Nothing here computes coverage — the scale
- * is handed to the engine and the engine decides.
- *
- * ★ Stepping from a sourced fractional default (PDM's 1.54) yields 2.54, not 2: the step is
- * relative, so the user's Wallach-sourced starting point is preserved rather than silently
- * rounded away. Floor is 1 because a 0/day item is a REMOVED item, and removal has its own
- * one-click control that routes to the trash (an item at 0 would be invisible on the field
- * but still in the slot — a state with no honest rendering).
- */
-/**
- * The rec card's `+` — 1-click add. Luneth: discoverability of 1-click add is solved by a
- * `+` on each card, not by a second button that lies.
+ * The rec card's `+` — 1-click add. Discoverability is solved by a `+` on each card, not by a
+ * second button whose label promises something else.
  *
  * Resolves the vault id, mints the SAME RegimenItem shape as views/regimen.ts's vault picker
  * — provenance 'user_manual', because a vault-matched add IS an Eden product, not the user's
  * own scanned item (that distinction is what the EDEN/YOURS mark reads) — then delegates to
- * state/regimen.ts::addOrBumpRegimenItem, the ONE home of the §10 add-or-bump rule: a
- * same-named item already in the slot has its dose raised instead of a duplicate row (two rows
- * for one product would double-count it on the field). That helper routes through §31
- * (saveRgManual / saveRgOverride → writeSlotDoc → 'regimen:changed'), which cascades the
- * recompute; the view re-renders off the event, so the field relights and the product leaves
+ * state/regimen.ts::addOrBumpRegimenItem, the ONE home of the add-or-bump rule: a same-named
+ * item already in the slot has its dose raised instead of a duplicate row (two rows for one
+ * product would double-count it on the field). That helper routes through the regimen write
+ * chokepoint (saveRgManual / saveRgOverride → writeSlotDoc → 'regimen:changed'), which cascades
+ * the recompute; the view re-renders off the event, so the field relights and the product leaves
  * its own recommendation list.
  */
 function addVaultProduct(productId: string): void {
@@ -851,6 +842,20 @@ function addVaultProduct(productId: string): void {
   addOrBumpRegimenItem(item);
 }
 
+/**
+ * The dose stepper — this is what makes increasing a dose move the counts.
+ *
+ * Whole-serving steps, floored at 1. It writes through the single regimen write chokepoint
+ * (saveRgOverride → writeSlotDoc → 'regimen:changed'), which cascades a recompute; the view
+ * re-renders off the event, so the counts MOVE. Nothing here computes coverage — the scale
+ * is handed to the engine and the engine decides.
+ *
+ * ★ Stepping from a sourced fractional default (Plant Derived Minerals' 1.54) yields 2.54, not
+ * 2: the step is relative, so the user's Wallach-sourced starting point is preserved rather than
+ * silently rounded away. Floor is 1 because a 0/day item is a REMOVED item, and removal has its
+ * own one-click control that routes to the trash (an item at 0 would be invisible on the field
+ * but still in the slot — a state with no honest rendering).
+ */
 function bumpDose(id: string, delta: number): void {
   if (id === '') {
     return;

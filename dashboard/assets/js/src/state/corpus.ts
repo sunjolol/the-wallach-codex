@@ -55,13 +55,13 @@ export function knowledgeVersion(): number {
 /**
  * How many sealed claims the shipped corpus carries — the rail's "Corpus · N entries".
  *
- * ★ DERIVED, NEVER TYPED. The demo hardcoded "1,358" because it is a static mockup, with a
- * warning that it MUST derive in live: a count that is true today and frozen forever is a
- * lie with a delay, which is exactly what "EDEN v1 · sealed 8E594A01" was.
+ * ★ DERIVED, NEVER TYPED. A claim total written as a literal is true the day it is typed
+ * and a lie every day after, because the corpus grows on every re-seal. It must always be
+ * counted from the embed that actually shipped.
  *
- * ★ IT IS A COUNT, NOT THE SEAL VERSION. Luneth first picked "CORPUS · 336 ENTRIES" off an
- * ambiguous label — 336 was the knowledge_version (it bumps on every re-seal), not a number
- * of anything. Do not relabel a version as a count. That is what knowledgeVersion() is for.
+ * ★ IT IS A COUNT, NOT THE SEAL VERSION. knowledge_version bumps on every re-seal and is
+ * not a number of anything; labelling it "N entries" asserts a fact it does not carry. Use
+ * knowledgeVersion() when the version is what you want.
  */
 export function claimCount(): number {
   return Object.keys(corpus().claims).length;

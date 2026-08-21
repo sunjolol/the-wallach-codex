@@ -4,25 +4,27 @@
 // ═══════════════════════════════════════════════════════════════════════════
 // USAGE:    node tools/vendor-tesseract.js
 //
-// PURPOSE:  Honors the dashboard's 4-year-portability promise by pulling the
+// PURPOSE:  Honors the dashboard's offline-portability promise by pulling the
 //           OCR engine + English language model to local files. After this
 //           runs, the Scanner workspace can scan labels with zero internet
 //           dependency — works offline, works from file:// origin where
 //           browsers normally block https script loads.
 //
 // DOWNLOADS (~22MB total):
-//   - tesseract.min.js                  (main library, ~400KB)
-//   - worker.min.js                     (web worker, ~3MB)
-//   - tesseract-core-simd.wasm.js       (WASM core SIMD, ~6MB)
-//   - tesseract-core-simd-lstm.wasm.js  (WASM core LSTM, ~6MB)
-//   - eng.traineddata.gz                (English best-accuracy model, ~12MB)
+//   - tesseract.min.js                  (main library, ~65KB)
+//   - worker.min.js                     (web worker, ~120KB)
+//   - tesseract-core-simd.wasm.js       (WASM core SIMD, ~4.5MB)
+//   - tesseract-core-simd-lstm.wasm.js  (WASM core LSTM, ~3.8MB)
+//   - eng.traineddata.gz                (English best-accuracy model, ~12.8MB)
 //
 // TARGET DIR:  dashboard/assets/vendor/tesseract/
 //              dashboard/assets/vendor/tesseract/lang-data/
 //
-// The legacy-dashboard.js loadTesseract + runOcr functions are pre-patched
-// to point at these local paths instead of CDN. After running this script,
-// just refresh dashboard.html and OCR works.
+// The Scanner's OCR loader (dashboard/assets/js/src/state/ocr.ts) already points at
+// these local paths instead of a CDN: loadTesseract() injects tesseract.min.js, and the
+// createWorker() call sets corePath / langPath / workerPath to these vendored files.
+// After running this script, run `node tools/build.mjs` — step 3b bundles the model into
+// worker-offline.js, which the loader picks on a file:// origin — then refresh dashboard.html.
 //
 // SAFE TO RE-RUN: skips files that already exist on disk.
 // ═══════════════════════════════════════════════════════════════════════════

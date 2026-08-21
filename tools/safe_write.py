@@ -2,16 +2,16 @@
 """
 safe_write.py — universal atomic write primitive for the Wallach project.
 
-Round 73 (2026-06-15) adopted: replaces the Edit tool for ALL writes to
-project files in knowledge/, tools/, dashboard/, eden/, schemas/, chronicle/.
+The mandated path for ALL writes to project files under tools/, dashboard/,
+eden/ and chronicle/ — never an editor tool that writes the file directly.
 
-The Edit tool's silent-truncation pattern (lessons.md Rounds 22/41/43/54/56/
-71b/72/73) reports success while the on-disk file is partially written or
-unchanged. The bash mount + Python's file-handling is the disk-truth surface.
-This tool routes all writes through that surface and verifies them.
+Editor tools on this host have repeatedly reported success while the on-disk
+file was partially written or unchanged. Python's own file handling is the
+disk-truth surface; this tool routes every write through it and then re-reads
+the bytes to prove what actually landed.
 
-Doctrine §1 (no silent failures) + §2 (defense in depth) + §4 (atomic
-operations) + §6 (verifiable invariants) all instantiated in code.
+Instantiates four principles from .claude/skills/engineering-doctrine in code: no
+silent failures, defense in depth, atomic operations, verifiable invariants.
 
 Operations:
   - replace : find old_string (must be unique) and replace with new_string.
@@ -21,27 +21,28 @@ Operations:
   - rewrite : write payload as the full new file content.
   - check   : run integrity checks on a file without modifying it.
 
-BYTE-EXACT CONTRACT (2026-08-03)
-------------------------------
+BYTE-EXACT CONTRACT
+-------------------
 This tool is a transparent pipe: the bytes you hand it are the bytes that land.
 It performs NO newline translation in either direction, so what you stage is what
 is written, and its verify compares real disk bytes against real intended bytes.
 
-It did not always. Until 2026-08-03 every read and write here ran in Python's
+It did not always. Earlier versions ran every read and write in Python's
 translated-newline space (LF -> CRLF on write, CRLF -> LF on read). The round trip
 was symmetric, so the verify below passed while the disk bytes differed from intent.
 Three consequences, all reproduced before this fix:
 
-  * Every LF file it touched was silently rewritten to CRLF. That is the origin of
-    the working tree's 554-CRLF / 154-LF split, against a repo that stores LF.
+  * Every LF file it touched was silently rewritten to CRLF, against a repo that
+    stores LF (core.autocrlf=input). That is the origin of the working tree's
+    mixed line endings.
   * A CRLF -> LF repair was structurally impossible. The replacement happened in LF
     space and the write re-CRLF'd it, so the file came back byte-identical with OK.
   * A lone CR survived the write but read back as LF: same length, different content,
     which is the useless "intended=NB landed=NB" on a FAILING check.
 
 Sizes reported by this tool are TRUE BYTE counts. They used to be len() of a str
-(characters) printed as "B on disk", which is very likely what made an earlier session
-read a successful write as a no-op.
+(characters) printed as "B on disk" — a mismatch that can make a successful write
+read as a no-op.
 
 Because matching is now byte-exact, a payload staged with LF will NOT match a file
 holding CRLF. That failure is deliberate and loud: safe_replace names line endings as
@@ -55,7 +56,8 @@ All operations:
   4. Read <path>.tmp back from disk (raw bytes).
   5. Verify the on-disk BYTES match intent.
   6. Run file-type-specific parse / shape checks.
-  7. os.replace(<path>.tmp, <path>) — atomic on POSIX.
+  7. os.replace(<path>.tmp, <path>) — atomic within a filesystem, on POSIX and
+     Windows alike.
   8. Read <path> back one more time and verify final state.
   9. Print verification report.
 
@@ -68,12 +70,11 @@ CLI:
   python3 tools/safe_write.py rewrite <path> (--payload-file <f> | --payload-stdin)
   python3 tools/safe_write.py check   <path>
 
-Round 106 added --payload-stdin to prevent the shared-bare-name-tempfile
-collision pattern (surfaced by the 2026-06-17 vitality-check incident where
-two scheduled tasks both wrote /tmp/sentinel.json and the morning content
-silently bled into the afternoon write). Stdin has no filesystem state to
-collide. Prefer stdin for small-to-medium payloads in SKILL prompts; reserve
---payload-file for cases where the content is already on disk.
+--payload-stdin exists to prevent the shared-fixed-name-tempfile collision: two
+concurrent callers that stage to the same scratch path silently overwrite each
+other, and the loser's content is what lands. Stdin has no filesystem state to
+collide, so prefer it for small-to-medium payloads; reserve --payload-file for
+content that is already on disk.
 
 Python API:
   from tools.safe_write import safe_replace, safe_append, safe_rewrite, check_file
@@ -251,10 +252,10 @@ def _write_verify_swap(path: pathlib.Path, new_content: str, *,
     if intent_check is not None:
         intent_check(landed)
 
-    # Round 135 Cure A — pre-swap backup so we can roll back if a post-swap
-    # discipline-invariant check fails. The backup lives on the call stack only
-    # (not persisted) — restoring atomically uses _write_verify_swap recursively
-    # with skip_discipline=True to prevent infinite loops.
+    # Pre-swap backup so the write can be rolled back if the post-swap
+    # discipline-invariant check fails. The backup lives in memory only (never
+    # persisted); the rollback below writes it with a direct tmp + os.replace
+    # rather than re-entering this function, so the check cannot re-trigger itself.
     pre_swap_content = None
     if path.exists() and _should_run_discipline_checks(path):
         try:
@@ -275,11 +276,17 @@ def _write_verify_swap(path: pathlib.Path, new_content: str, *,
             f"This indicates a filesystem-level inconsistency."
         )
 
-    # 9. Cure A — post-swap discipline-invariant check (dashboard.html only).
-    # Runs the cheap discipline invariants (raw_key_surfacing, cross_iife_bare_refs).
-    # On CRITICAL failure: rolls back to pre-swap content atomically. Forces
-    # the agent to fix the violation BEFORE the change lands. Per Round 135
-    # operating-protocols.md §25 + the AskUserQuestion confirmation (strict mode).
+    # 9. Post-swap discipline-invariant check (dashboard/dashboard.html only).
+    # Runs the cheap gates named in _DISCIPLINE_INVARIANT_NAMES. On a CRITICAL
+    # failure the write is rolled back to the pre-swap content, so the violation has
+    # to be fixed in the payload before the change can land.
+    #
+    # DEAD AS CONFIGURED, stated rather than implied: both names in
+    # _DISCIPLINE_INVARIANT_NAMES were removed from tools/invariants.py, and
+    # `--only <unknown-name>` prints a line the parser below does not match. No
+    # critical is ever reported, so the rollback can never fire. Repoint the tuple at
+    # live gate names and re-prove it with a planted violation, or delete this block
+    # outright — do not read the code below as active protection until then.
     if _should_run_discipline_checks(path) and not _skip_discipline():
         try:
             ok, criticals, warnings = _run_post_write_discipline_check(path)
@@ -329,9 +336,14 @@ def _write_verify_swap(path: pathlib.Path, new_content: str, *,
 
 
 # ---------------------------------------------------------------------------
-# Round 135 Cure A — auto-invariant hook for dashboard.html writes
+# Post-write discipline-invariant hook for dashboard.html writes
 # ---------------------------------------------------------------------------
 
+# DEAD AS CONFIGURED: neither name exists in tools/invariants.py any more. Running
+# `--only <unknown-name>` prints a line the parser in _run_post_write_discipline_check
+# does not match, so no critical is ever reported and the rollback above can never
+# fire. Repoint this at live gate names and re-prove it with a planted violation, or
+# delete the post-swap discipline block outright — do not read it as live protection.
 _DISCIPLINE_INVARIANT_NAMES = ("raw_key_surfacing", "cross_iife_bare_refs")
 
 
@@ -529,14 +541,13 @@ def _read_payload(arg: str) -> str:
 
 def _resolve_payload(args, field_file: str = "payload_file",
                      field_stdin: str = "payload_stdin") -> str:
-    """Round 106 — read payload from --payload-file OR --payload-stdin.
+    """Read the payload from --payload-file OR --payload-stdin.
 
-    Stdin is preferred for SKILL prompts that would otherwise need shared
-    bare-name tempfiles (the /tmp/sentinel.json cross-run collision pattern
-    surfaced by the 2026-06-17 vitality-check incident). Stdin has no
-    filesystem state to collide; safe across concurrent SKILL invocations
-    by construction. File path remains supported for large payloads or
-    when caller already has the content on disk.
+    Stdin is preferred for callers that would otherwise stage to a shared
+    fixed-name tempfile: two concurrent runs writing the same scratch path
+    overwrite each other. Stdin has no filesystem state to collide and is safe
+    across concurrent invocations by construction. --payload-file remains
+    supported for large payloads or content already on disk.
     """
     file_arg = getattr(args, field_file, None)
     stdin_flag = getattr(args, field_stdin, False)
@@ -601,7 +612,7 @@ def _cmd_check(args) -> int:
 def main() -> int:
     p = argparse.ArgumentParser(
         prog="safe_write.py",
-        description="Universal atomic write primitive (Round 73 / §17)"
+        description="Universal atomic write primitive for this repo's project files"
     )
     sub = p.add_subparsers(dest="cmd", required=True)
 
@@ -623,7 +634,7 @@ def main() -> int:
     pa.add_argument("--payload-file",
                     help="File containing the payload (mutually exclusive with --payload-stdin)")
     pa.add_argument("--payload-stdin", action="store_true",
-                    help="Read payload from stdin (Round 106 — prevents shared-tempfile collisions)")
+                    help="Read payload from stdin (prevents shared-tempfile collisions)")
     pa.set_defaults(func=_cmd_append)
 
     pw = sub.add_parser("rewrite",
@@ -632,7 +643,7 @@ def main() -> int:
     pw.add_argument("--payload-file",
                     help="File containing the payload (mutually exclusive with --payload-stdin)")
     pw.add_argument("--payload-stdin", action="store_true",
-                    help="Read payload from stdin (Round 106 — prevents shared-tempfile collisions)")
+                    help="Read payload from stdin (prevents shared-tempfile collisions)")
     pw.set_defaults(func=_cmd_rewrite)
 
     pc = sub.add_parser("check",

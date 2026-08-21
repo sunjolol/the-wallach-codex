@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════
- * theme.css — the appearance layer (adopted 2026-08-13, Profile feature)
+ * theme.css — the appearance layer (surface palette + primary accent)
  * ───────────────────────────────────────────────────────────────────────────
  * STYLE ONLY, NEVER FUNCTION (design-language). The whole app is themed by
  * overriding the SEALED design-system.css tokens from a NON-sealed layer that
@@ -22,7 +22,7 @@
  * primary colour must not recolour what a nutrient category MEANS.
  * ═══════════════════════════════════════════════════════════════════════════ */
 
-/* ─── DARK (charcoal) — the planned first alternate, now real ───────────────── */
+/* ─── DARK (charcoal) surface palette ───────────────────────────────────────── */
 :root[data-theme="dark"] {
   --ds-paper:        #17130d;
   --ds-paper-light:  #221d15;
@@ -116,7 +116,7 @@
   --ds-rule-soft: #e8dfc6;
 }
 
-/* ─── DARK: the coverage registration grid — REMOVED entirely (tweak-list) ───
+/* ─── DARK: the coverage registration grid — REMOVED entirely ────────────────
  * On charcoal even the dimmed grid lines read as distracting, so the grid is
  * dropped in dark. The substrate fill + inset shadow live on the base
  * .essentials-host rule and stay; only the gradient lines go. */
@@ -125,7 +125,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * DARK-THEME REFINEMENTS (tweak-list) — scoped overrides only, no token repoint.
+ * DARK-THEME REFINEMENTS — scoped overrides only, no token repoint.
  * Each targets a surface authored for cream paper that stays luminous on charcoal
  * (a hardcoded #fff, a cream neumorphic highlight, or an opaque -wash/-soft token
  * dark never remaps). Fixes follow the regimen .ck-tag recipe: translucent
@@ -182,9 +182,7 @@
   color: color-mix(in srgb, var(--ds-status-err) 66%, var(--ds-ink));
 }
 
-/* (4) Coverage grid removal is handled by editing the .essentials-host block above. */
-
-/* (5) Covered coverage tiles — the white→pale-green plate + white top-light stay
+/* (4) Covered coverage tiles — the white→pale-green plate + white top-light stay
    bright on charcoal. Repaint as a green-tinted dark plate that keeps the bright
    rim (so "covered" still reads via plate + rim + name-strip); lift the glyph
    colours to bright green for contrast on the darker body. */
@@ -216,7 +214,7 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * SHADOWS FOLLOW THE PRIMARY (tweak-list, both themes) — the two derived accent
+ * SHADOWS FOLLOW THE PRIMARY (both themes) — the two derived accent
  * GLOW tokens and three sealed-file shadows were frozen to ember orange, so any
  * non-ember accent (amethyst, sapphire, …) left an orange halo behind a purple/
  * blue button. Redefine the glow tokens off --ds-accent (ember stays byte-
@@ -249,15 +247,16 @@
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * DARK READABILITY PASS (2026-08-17) — the systemic fix. An agentic sweep found
- * ~50 dark-mode defects that traced to a handful of "wash"/"soft"/"tech" token
- * families authored for cream paper that theme.css never remapped for dark, so
- * every hover/focus/status/wash consumer flashed a bright pale patch on charcoal.
+ * DARK READABILITY — the systemic fix. Most dark-mode defects traced to a handful
+ * of "wash"/"soft"/"tech" token families authored for cream paper that this file
+ * never remapped for dark, so every hover/focus/status/wash consumer flashed a
+ * bright pale patch on charcoal.
  * Remapping the TOKENS (translucent color-mix tints, the .vd-pill recipe) fixes
  * the majority at once; the rest are hardcoded #fff hovers, mark text, the
  * .ui-close cream glow, and constant-hue islands that need targeted overrides.
  * This block is LATER than the [data-accent] blocks, so the accent-wash/soft
- * remaps win at equal specificity. (Absorption + ORAC excluded — being redesigned.)
+ * remaps win at equal specificity. (The Absorption and ORAC surfaces are handled
+ * separately in blocks (K) and (L) below.)
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 /* (A) SYSTEMIC — recomposite the never-remapped wash/soft/tech tokens over dark.
@@ -360,12 +359,12 @@
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * (J) DARK FOREGROUND BRIGHTENING — full sweep (round 1). Colours tuned for cream
+ * (J) DARK FOREGROUND BRIGHTENING — full sweep. Colours tuned for cream
  * paper read too dark as TEXT/BORDER/ICON on charcoal. Every colour token is ALSO
  * used as a fill (hover / count-pill with light text on it), so we cannot blanket-
  * brighten a token: we brighten the FOREGROUND role and keep fills saturated. Bare
  * --ds-accent foreground routes to --ds-accent-deep (remapped bright in the (A) block).
- * ORAC internals are excluded — that surface is being redesigned. Orange/gold untouched.
+ * ORAC internals are handled separately in blocks (K) and (L) below. Orange/gold untouched.
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 /* (J1) Facet-family + entity-type tokens → bright light tints of their own hue, so every
@@ -423,7 +422,7 @@
  * (J5) DARK FOREGROUND BRIGHTENING - full sweep, generated overrides.
  * Routes every bare --ds-accent foreground to the bright --ds-accent-deep,
  * and status/tech/hardcoded foregrounds to color-mix(token 62%, --ds-ink).
- * Fills stay saturated. ORAC excluded (being redesigned).
+ * Fills stay saturated. ORAC is handled separately in blocks (K) and (L).
  * =================================================================== */
 
 /* ── shell: bare --ds-accent foregrounds → --ds-accent-deep ── */
@@ -490,7 +489,7 @@
    --ds-accent-deep is remapped FOREGROUND-bright for dark (block A: a pale light tint of
    the accent). The profile Done button used it as the deep end of a solid gradient FILL, so
    the whole button read pale + desaturated on every accent. Route that fill to the saturated
-   per-accent --ds-accent-hot (untouched by the sweep). See [[dark-theme-token-remaps]]. */
+   per-accent --ds-accent-hot (untouched by the sweep). */
 :root[data-theme="dark"] .pf-done {
   background: linear-gradient(140deg, color-mix(in srgb, var(--ds-accent) 82%, #fff), var(--ds-accent-hot));
 }
@@ -518,7 +517,7 @@
   border-color: var(--ds-accent);
 }
 
-/* (J9) Dark point-fixes on controls Luneth flagged (2026-08-17, batch 1). */
+/* (J9) Dark point-fixes on individual controls. */
 /* Primary buttons + the active scanner step badge: a light label on the accent fill
    (was --ds-paper-light = #221d15 in dark = dark-on-saturated). */
 :root[data-theme="dark"] .ds-btn-primary { color: #f3ead7; }
@@ -536,11 +535,11 @@
    (J4) had routed it to the accent. */
 :root[data-theme="dark"] #drawer-search-mount .fgroup__more { color: color-mix(in srgb, var(--k) 62%, var(--ds-ink)); }
 
-/* (J10) Dark border-darkening + condition-detail category borders (batch 2). */
+/* (J10) Dark border-darkening + condition-detail category borders. */
 /* Magnitude knob for the family/category BORDER darkening -- lower = darker/quieter. */
 :root[data-theme="dark"] { --dk-fam-a: 28%; }
 
-/* Item 8 -- condition detail: the box + hero-icon borders follow the CATEGORY colour (--cat),
+/* Condition detail: the box + hero-icon borders follow the CATEGORY colour (--cat),
    like the icon content and light theme, instead of the accent-deep the sweep forced on them. */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep.kd-ep.kd-ep--cond {
   border-color: var(--cat, var(--ds-accent-deep));
@@ -550,24 +549,24 @@
   border-color: color-mix(in srgb, var(--cat) 60%, var(--ds-rule));
 }
 
-/* Items 6/7 -- explore topic pills + the home essentials/condition left stripes: darken. */
+/* Explore topic pills + the home essentials/condition left stripes: darken. */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-explore-chip { border-color: color-mix(in srgb, var(--fam-story) var(--dk-fam-a), transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount .sh-tile::before { background: color-mix(in srgb, var(--cat) 50%, transparent); }
 
-/* Item 9 -- the coloured nutrient pills ("to restore" green, "explore" purple): darken borders. */
+/* The coloured nutrient pills ("to restore" green, "explore" purple): darken borders. */
 :root[data-theme="dark"] #drawer-knowledge-mount button.kd-ep-pill--nut { border-color: color-mix(in srgb, var(--fam-action) var(--dk-fam-a), transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount button.kd-ep-pill--explore { border-color: color-mix(in srgb, var(--fam-story) var(--dk-fam-a), transparent); }
 
-/* Item 11 -- "Wallach's protocol" claim cards: family text slightly darker (below). The LEFT
-   stripe is at 50% (matching the Home / all-essentials stripes, Luneth 2026-08-17); the [open],
-   badge + verbatim borders stay on the 28% --dk-fam-a knob. */
+/* "Wallach's protocol" claim cards: family text slightly darker (below). The LEFT stripe is
+   at 50%, matching the Home / all-essentials stripes; the [open], badge + verbatim borders
+   stay on the 28% --dk-fam-a knob. */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim { box-shadow: inset 4px 0 0 color-mix(in srgb, var(--kd-ep-fam, transparent) 50%, transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim[open] { border-color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-accent)) var(--dk-fam-a), transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim__badge { border-color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-tech)) var(--dk-fam-a), transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-claim__verbatim { border-left-color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-accent)) var(--dk-fam-a), transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount :is(.kd-ep-claim__short, .kd-ep-claim__full, .kd-ep-claim__cite, .kd-ep-claim__badge) { color: color-mix(in srgb, var(--kd-ep-fam, var(--ds-accent-deep)) 80%, #000); }
 
-/* (J11) Follow-ups (batch 2b): back-button category hover, product-detail category borders, HOME stripes -> 50%. */
+/* (J11) Follow-ups: back-button category hover, product-detail category borders, HOME stripes -> 50%. */
 /* Back button (.kd-ep-back = "< ALL CONDITIONS" / "< ALL PRODUCTS" / "< All essentials") hover
    follows the detail's category -- --cat on conditions/essentials, --form on products -- brightened
    for dark. The chained var() fallback in the base rule picks the right one per context. */
@@ -576,7 +575,8 @@
   color: color-mix(in srgb, var(--cat, var(--form, var(--ds-accent-deep))) 62%, var(--ds-ink));
 }
 /* Product detail: box + hero-icon borders follow the delivery-form colour (--form), the products'
-   category-analog -- same fix as item 8 for conditions (--cat). Both had accent-deep forced by the sweep. */
+   category-analog -- the same fix the condition rules above apply with --cat. Both had accent-deep
+   forced on them by the foreground-brightening block. */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-essential-deep.kd-ep.kd-ep--prod {
   border-color: var(--form, var(--ds-accent-deep));
   box-shadow: 0 4px 14px -3px color-mix(in srgb, var(--form, var(--ds-accent)) 22%, transparent);
@@ -713,7 +713,7 @@
   --ds-accent-soft: color-mix(in srgb, var(--ds-accent) 34%, transparent);
 }
 /* omega --aside eyebrow: brighten the small mono label so it reads clearly on the
-   dark panel (Luneth 2026-08-20: accent-deep purple was too dark as a label). */
+   dark panel — accent-deep is too dark at this size. */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-mirror--aside .kd-ep-mirror__eyebrow {
   color: color-mix(in srgb, var(--ds-accent) 60%, #fff);
 }
@@ -731,8 +731,8 @@
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-kind__count { color: #14100b; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   (K) Dark boxes the 2026-08-17 sweep left light. Absorption + ORAC were excluded
-   then as "being redesigned"; ORAC §08 STAYS as-is, so it is dark-fixed here.
+   (K) Dark fixes for the Absorption and ORAC §08 surfaces, which the systemic token
+   remaps above do not reach: hardcoded light fills and ink slabs that invert on charcoal.
    ═══════════════════════════════════════════════════════════════════════════ */
 /* 98% Colloidal PDM node: its --ds-accent-wash fill still read bright — pin a dark
    accent-tinted fill (the stroke is already handled by the grouped rule above). */
@@ -742,7 +742,7 @@
 :root[data-theme="dark"] .ds-pull-stat { --ds-ink: #1a1612; --ds-ink-medium: #3d342a; --ds-paper: #fffbf2; --ds-paper-light: #fffbf2; --ds-accent-soft: color-mix(in srgb, var(--ds-accent) 42%, #fffbf2); }
 /* Absorption "the twist" callout: hardcoded #f7ece6 → a faint status-tinted dark panel. */
 :root[data-theme="dark"] #drawer-knowledge-mount .sx-callout { background: color-mix(in srgb, var(--ds-status-err) 12%, var(--ds-paper-light)); }
-/* ORAC §08: five hardcoded rgb() boxes → dark, faintly tinted to their own semantic hue. */
+/* ORAC §08: four hardcoded rgb() box fills → dark, faintly tinted to their own semantic hue. */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-piece--diet { background: var(--ds-paper-deep); }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-force--a { background: color-mix(in srgb, var(--sev-calm) 12%, var(--ds-paper-light)); }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-force--b { background: color-mix(in srgb, var(--o-leaf) 12%, var(--ds-paper-light)); }
@@ -761,8 +761,8 @@
 :root[data-theme="dark"] #drawer-knowledge-mount .frt-cell--bad { background: var(--ds-paper-deep); }
 
 /* ═══════════════════════════════════════════════════════════════════════════
-   (L) ORAC §01–§06 redesign — dark overrides. The ported demo is light-only; these
-   flip the surfaces that assume a light ground. §08 (block K) stays as-is.
+   (L) ORAC §01–§06 — dark overrides. Those sections were authored light-only; these flip
+   the surfaces that assume a light ground. §08 is handled in block (K) above.
    ═══════════════════════════════════════════════════════════════════════════ */
 /* the two --ds-ink instrument bars (scrubber label + field control) invert to white on
    dark; re-pin them to a warm dark plate that still reads as a raised bar in dark mode. */

@@ -6,7 +6,9 @@
  * host is the SCRIM; .scr is the centered popup panel. Colour is DATA-DRIVEN — a result element
  * carries data-facet (family colour) or data-type (entity-type colour) and the maps below resolve
  * it to --k, so no view hardcodes a colour (view_category_not_hardcoded). Book sourcing stays
- * silent; the one serif (Playfair) is reserved for the verbatim pull-quote. Loaded last.
+ * silent; the one serif (Playfair) is reserved for the verbatim pull-quote. Loaded after the
+ * design system and the other drawers, but BEFORE type-futurist.css and theme.css — the font
+ * tokens and the theme/accent layer still shadow anything declared here.
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ─── OVERLAY: the mount host is the SCRIM; .scr is the centered popup panel ──
@@ -35,14 +37,11 @@
   align-items: flex-start;
   justify-content: center;
   padding: clamp(24px, 7vh, 88px) 20px 40px;
-  /* THE SCRIM: dark wash + a real backdrop blur. The blur was removed earlier on 2026-07-23 as the
-     cause of the recurring Ask-Wallach lag. That diagnosis was HALF right, and the wrong half cost us
-     the effect. Measured headless 2026-07-23 (devtools trace, 3s of hover agitation over an open
-     results page, negative-controlled): the blur RADIUS is not the cost — 7px, 60px and none all
-     traced identically (274-292ms). The cost is INVALIDATION. Seven ambient `infinite` animations
-     paint behind this scrim (ds-travel-top/-bottom, ds-stat-pulse, ds-numeric-glow, 2x
-     ds-pulse-animate; ds-scan-sweep was a seventh until it was deleted 2026-07-23) and the travellers
-     animate `left`/`right` — layout properties, so the compositor
+  /* THE SCRIM: dark wash + a real backdrop blur. The blur is NOT the cost it looks like. Measured
+     headless with a devtools trace over 3s of hover agitation on an open results page,
+     negative-controlled: the blur RADIUS is not the cost — 7px, 60px and none at all traced
+     identically (274-292ms). The cost is INVALIDATION. The ambient `infinite` animations painting
+     behind this scrim animate `left`/`right` — layout properties, so the compositor
      re-commits EVERY frame: 434 commits / 292ms of compositor work per 3s WITH NO BLUR AT ALL. Add a
      backdrop-filter and each of those 434 frames drags a full-viewport re-blur along with it. THAT is
      the lag. So the fix is to stop the invalidation, not to drop the blur: the freeze block below
@@ -51,7 +50,7 @@
      DO NOT re-add the blur without the freeze, and do not "optimize" by lowering the radius — the
      radius was never the problem. Caveat kept honest: headless renders the blur but charges no
      measurable time for it, so the -72% is proven and the resulting SMOOTHNESS is not — that was
-     signed off by eye. */
+     confirmed by eye. */
   background: rgba(18, 14, 10, 0.74);
   backdrop-filter: blur(var(--aw-scrim-blur));
   -webkit-backdrop-filter: blur(var(--aw-scrim-blur));
@@ -315,8 +314,8 @@ body:has(#drawer-search-mount.sr-open) :is(.app-topbar, .app-workspace, #drawer-
 
 /* ─── BROWSE-BY-KIND page (a "kind of answer" card → the topics inside it) ────
    Reached by clicking an opening kcard. Lists a family's TOPICS as light cards (facet micro-label +
-   in-family count + a peek), so a 159-answer family browses as ~60 short cards — never a flood of
-   glossified answer bodies (the anti-lag choice). Colour is DATA-DRIVEN (data-family → --k), the same
+   in-family count + a peek), so even the largest family browses as a few hundred short cards —
+   never a flood of glossified answer bodies (the anti-lag choice). Colour is DATA-DRIVEN (data-family → --k), the same
    five families the opening screen uses. Type is Unbounded (--ds-font-display) via type-futurist. */
 #drawer-search-mount .brow-head__back { flex: 0 0 auto; align-self: center; display: inline-flex; align-items: center; gap: 5px; font-family: var(--ds-font-display-interface); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.02em; color: var(--ds-ink-soft); background: transparent; border: 1px solid var(--ds-rule); border-radius: 999px; padding: 5px 13px; cursor: pointer; transition: all var(--ds-motion-fast) var(--ds-ease-out); white-space: nowrap; }
 #drawer-search-mount .brow-head__back:hover { border-color: var(--k); color: var(--k); background: color-mix(in srgb, var(--k) 8%, transparent); }

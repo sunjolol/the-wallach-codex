@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""vb_orphans.py — corpus-wide safety net for the Hybrid remediation policy.
+"""vb_orphans.py — corpus-wide safety net against orphaned condition mappings.
 
-Reads the current DRAFT shards (post-edit, pre-seal), replicates corpus_derive's
-"surfaces" rule (drop search-only), and for every condition slug reports whether
+Reads the current DRAFT shards (post-edit, pre-seal), applies the same "does it
+surface?" rule the indices use, and for every condition slug reports whether
 AT LEAST ONE of its surfacing claims NAMES it in the verbatim. An ORPHAN = a
 condition mapped by >=1 claim but named by NONE -> would show under a condition
-with zero verifiable evidence. The Hybrid rule forbids creating orphans (drop only
-when a sibling still names it; else split). Run after vb_apply --write, before seal.
+with zero verifiable evidence. The rule: never create an orphan -- drop a mapping
+only when a sibling claim still names the condition; otherwise split the claim.
+Run after vb_apply --write, before seal.
 
 Usage: python vb_orphans.py            (all books, drafts)
        python vb_orphans.py --sealed   (read sealed shards instead of drafts)
@@ -35,7 +36,9 @@ claims = []
 for s in sorted(src_dir.glob(pattern)):
     d = json.loads(s.read_text(encoding="utf-8"))
     claims.extend(d["claims"])
-# surfaces rule: exclude search-only
+# surfaces rule: a "search-only" claim would belong to the search corpus only. None
+# carry the tag today; the filter stays as a fail-safe so a re-introduced tag cannot
+# create a phantom orphan.
 surf = [c for c in claims if "search-only" not in c.get("tags", [])]
 
 # condition slug -> mapping claims

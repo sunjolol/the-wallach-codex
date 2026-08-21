@@ -1,17 +1,18 @@
 /* ============================================================================
-   type-futurist.css — the app's FUTURIST type direction (adopted 2026-07-13).
+   type-futurist.css — the app's FUTURIST type direction.
 
    Kills the serif display + body faces and swaps to Unbounded (display) + Space
-   Grotesk (body) app-wide, honoring the warm-futurism "Empower" reference. Loaded
-   LAST in dashboard.html so it overrides the token defaults.
+   Grotesk (body) app-wide, honoring the warm-futurism "Empower" reference. Loaded after
+   design-system.css and after every drawer/workspace sheet, so it overrides the token
+   defaults. Only theme.css loads after it, and theme.css declares no --ds-font- token —
+   check that before inserting any sheet below this one.
 
-   INTERIM BY DESIGN — this layer SUPERSEDES the --ds-font-* serif tokens that
-   design-system.css still declares (Playfair / Merriweather / Crimson). The sealed
-   design-system.css is intentionally left untouched here (no golden re-seal this
-   round). The next-session FONT SURVEY folds this direction into design-system.css
-   properly, audits every remaining serif instance + carve-out, then retires this
-   file. Until then: design-system's serif tokens are SUPERSEDED, not authoritative —
-   this file names the live faces.
+   THIS LAYER SUPERSEDES the --ds-font-* serif tokens that design-system.css still declares
+   (Playfair / Merriweather / Crimson). That sheet is sealed against a golden hash and is
+   deliberately left untouched here, so its serif tokens stay declared but are NOT
+   authoritative — this file names the live faces. Folding the direction into
+   design-system.css means auditing every remaining serif instance and carve-out first,
+   then re-cutting the seal.
    ============================================================================ */
 
 @font-face {
@@ -30,8 +31,10 @@
   --ds-font-serif-light: 'Space Grotesk', system-ui, sans-serif;
 }
 
-/* Four spots that hardcode 'Playfair Display' instead of the token (drawer-knowledge.css);
-   same specificity, loaded later, so these win without !important. */
+/* Four of the FIVE places where drawer-knowledge.css hardcodes 'Playfair Display' instead
+   of reading the token. The fifth, .kd-claim__verbatim, deliberately stays serif — it is a
+   Wallach verbatim, like the carve-out below. Same specificity, loaded later, so these win
+   without !important. */
 #drawer-knowledge-mount .kd-featured-citation__quote,
 #drawer-knowledge-mount .kd-featured-citation__quote::before,
 #drawer-knowledge-mount .kd-essential-tile__sym,
@@ -39,9 +42,11 @@
   font-family: 'Unbounded', 'Space Grotesk', system-ui, sans-serif;
 }
 
-/* CARVE-OUT: the crown-jewel Wallach verbatim pull-quotes keep the old Playfair — the one
-   deliberate serif accent — covering the Absorption ("second prong") villi quote AND the omega-6 fatty-acid-family quote
-   (body + the giant ::before glyph, which else falls through to Unbounded via --ds-font-display). */
+/* CARVE-OUT: the Wallach verbatim pull-quotes keep Playfair — the one deliberate serif
+   accent. Covers the Absorption page's pull-quotes (.kd-foods-pq, emitted more than once)
+   and the fatty-acid-family designation quote on the essentials pages (.kd-ep-fam__quote):
+   body + the giant ::before glyph, which would otherwise fall through to Unbounded via
+   --ds-font-display. */
 #drawer-knowledge-mount .kd-foods-pq .ds-pull-quote,
 #drawer-knowledge-mount .kd-foods-pq .ds-pull-quote::before,
 #drawer-knowledge-mount .kd-ep-fam__quote .ds-pull-quote,
@@ -49,8 +54,8 @@
   font-family: 'Playfair Display', 'Times New Roman', Georgia, serif;
 }
 
-/* Absorption-tab tuning for the new faces (Luneth review, 2026-07-13): Unbounded is wider +
-   heavier than Playfair, and Space Grotesk reads a touch light at 400. */
+/* Absorption-tab tuning for these faces: Unbounded is wider + heavier than Playfair, and
+   Space Grotesk reads a touch light at 400. */
 #drawer-knowledge-mount .kd-foods-hero__h { font-size: clamp(2rem, 4.4vw, 2.4rem); }   /* was max 3rem */
 #drawer-knowledge-mount .kd-foods-hero__deck { font-weight: 500; font-size: 1.1rem; }   /* was 400 / 1rem */
 #drawer-knowledge-mount .kd-foods-villi__intro { font-weight: 500; }                     /* was 400; size unchanged (wraps otherwise) */

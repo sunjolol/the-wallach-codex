@@ -1,6 +1,6 @@
 # Decision: the app targets one pinned browser engine
 
-_2026-08-03, during the doctor sweep. Recorded because it changes what every future design surface
+_2026-08-03. Recorded because it changes what every future design surface
 is allowed to assume._
 
 ## The decision
@@ -13,7 +13,7 @@ CSS and JS are used directly — container queries, `:has()`, view transitions, 
 animations, `color-mix()`, CSS nesting, backdrop-filter.
 
 ## Why
-Two reasons, both Luneth's.
+Two reasons, both the owner's.
 
 1. **Permanence.** A pinned browser cannot auto-update, so nothing can break underneath the app. The
    product promise is that it runs for years with no upkeep and cannot be broken by someone else's
@@ -41,7 +41,7 @@ The status above therefore still stands, and will for a while: the decision to p
 design choices NOW, while the artifact does not exist. That is deliberate — Chromium is effectively
 unlimited for our purposes, so nothing we might build is waiting on it.
 
-Meanwhile, visual verification runs in **Luneth's own live browser**.
+Meanwhile, visual verification runs in **the owner's own live browser**.
 
 Still a labelled WISH: whether an invariant could prove the shipped app actually RUNS under a pinned
 engine. No non-gaming machine check exists for it.

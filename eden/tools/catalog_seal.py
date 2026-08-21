@@ -2,7 +2,8 @@
 """catalog_seal.py -- USER-ONLY. Seals the Catalog pillar (eden/catalog/) as canonical.
 
 Like corpus_seal.py, sealing is the human's act of ratifying catalog state as
-truth. The agent (Claude) MAY NOT run this without explicit per-invocation approval.
+truth: it must never be run on the owner's behalf without their explicit, per-invocation
+approval, and approval given once never carries forward to a later run.
 
 What it does, in order:
   1. Refuses unless catalog_verify's structural checks pass.
@@ -42,7 +43,7 @@ def _guard_cli() -> None:
 
     catalog_seal has NO options -- it always seals the whole Catalog pillar. It historically
     ignored argv, so `catalog_seal.py --help` (an agent probing for usage) SILENTLY RAN a full
-    seal (2026-08-18 incident). argparse now prints real help on -h/--help and errors on any
+    seal. argparse now prints real help on -h/--help and errors on any
     unknown flag, so only a deliberate BARE run can seal. Mirrors corpus_seal._guard_cli.
     """
     argparse.ArgumentParser(

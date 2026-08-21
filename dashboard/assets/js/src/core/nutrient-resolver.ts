@@ -10,7 +10,7 @@
  * substance name, and nutrient-resolver.test.ts proves THIS code ≡ that fixture — together
  * TS ≡ Python.
  *
- * Before A2, state/coverage.ts held a hand-rolled string matcher independent of the registry
+ * state/coverage.ts once held a hand-rolled string matcher independent of the registry
  * (two resolution truths — e.g. "Thiamin" resolved to vitamin-b1 in the registry but silently
  * dropped in Coverage). This is now the single home (§00.B #3). Composition-only (§00.A):
  * identity resolution never defines a Wallach amount — units + targets live elsewhere.

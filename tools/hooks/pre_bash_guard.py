@@ -2,22 +2,22 @@
 """
 pre_bash_guard.py — PreToolUse hook for Bash.
 
-A deliberately NARROW blocklist for catastrophic or §17-corrupting shell
-commands. Everything not explicitly dangerous is allowed — a bash guard that
-cripples normal shell work is worse than none. Backed by defense-in-depth:
-safe_write, invariants, and the git recovery anchor.
+A deliberately NARROW blocklist for catastrophic or write-discipline-corrupting
+shell commands. Everything not explicitly dangerous is allowed — a bash guard that
+cripples normal shell work is worse than none. Backed by defense in depth:
+safe_write, invariants, and git history.
 
 BLOCKS (exit 2):
   • git push --force / -f (not --force-with-lease) — rewrites remote history
   • git reset --hard                               — destroys uncommitted work
   • git clean -d… -x/-X                            — nukes untracked + ignored
   • rm with -r and -f on a catastrophic target (/ ~ $HOME . ./ *)
-  • direct bash writes (> >> tee sed -i) into a banned project dir, or any
-    cp/mv/redirect touching design-system.css — the §17 corruption surface.
-    Use tools/safe_write.py instead. (safe_write.py invocations are exempt.)
+  • direct bash writes (> >> tee sed -i) into a guarded project dir, or any
+    cp/mv/redirect touching design-system.css — the corruption surface that
+    safe_write exists to close. (safe_write.py invocations are exempt.)
 
 Contract: stdin JSON {"tool_name":"Bash","tool_input":{"command":"..."}}.
-exit 2 = block (stderr shown to agent); exit 0 = allow. Fail-open on error.
+exit 2 = block (stderr shown to the caller); exit 0 = allow. Fail-open on error.
 """
 import json
 import re
@@ -75,12 +75,12 @@ def main():
             _block("rm -rf on a catastrophic target (/ ~ $HOME . ./ *). Scope the delete to a specific path.")
             return
 
-    # §17 direct bash write into a banned project dir, or sealed css
+    # Direct bash write into a guarded project dir, or into the sealed css
     if "safe_write.py" not in cmd:
         dirs = "|".join(BANNED_DIRS)
         if re.search(r"(?:>>?\s*|\btee\s+(?:-a\s+)?|\bsed\s+-i\S*\s+[^|]*?)['\"]?(?:%s)/" % dirs, cmd):
-            _block("direct bash write into a banned project dir (chronicle/ tools/ knowledge/ "
-                   "schemas/ eden/). This is the §17 corruption surface — "
+            _block("direct bash write into a guarded project dir (chronicle/ tools/ eden/). "
+                   "This is the corruption surface safe_write exists to close — "
                    "route through `python tools/safe_write.py {replace|append|rewrite}`.")
             return
         if re.search(r"(?:>>?|\btee\b|\bsed\s+-i|\bcp\b|\bmv\b)[^|]*design-system\.css", cmd):

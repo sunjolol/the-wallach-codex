@@ -1,31 +1,35 @@
+# ── Dependencies + build noise ───────────────────────────────────────────────
 node_modules/
-outputs/
-sessions/
-*.log
 .npm/
-dashboard/assets/js/dist/*.map
-archive/retired-june-21-2026/
-knowledge/wallach-transcripts
-
-# Python bytecode + transient artifacts
 __pycache__/
 *.pyc
+*.log
 *.payload.tmp
-dashboard/assets/vendor/tesseract/
+dashboard/assets/js/dist/*.map
 
-# Source book screenshots (copyrighted Wallach page scans) — local OCR-verification ONLY. NEVER publish.
-temporary/
+# ── Per-machine, never shared ────────────────────────────────────────────────
+.claude/settings.local.json
+.claude/worktrees/
 
-# The pinned browser engine, if and when one is installed here. Currently ABSENT by decision:
-# the choice is deferred to the very end (chronicle/decisions/2026-08-03-pinned-engine-acquisition.md
-# banks the candidate, its hash, the measured sizes and the trim plan). Kept ignored so a future
-# extraction can never reach git - a modern engine is 340-420 MB on disk.
-engine/
+# Rolling per-session development hand-off. Regenerated locally each session.
+chronicle/next-chunk.md
 
-# Source book texts — copyrighted Wallach OCR, NOT distributed in the public repo.
-# Kept locally for the corpus derive + the two book-anchored gates; a fresh clone runs
-# without them (those gates skip with a clear reason). See eden/corpus/README.md.
+# ── Not distributed, by decision ─────────────────────────────────────────────
+
+# The Wallach book texts. These are their authors' copyrighted work and are NOT
+# published here. They are kept locally for the corpus derive and for the two
+# book-anchored gates; a fresh clone runs without them and those gates skip with
+# a clear reason. See eden/corpus/README.md.
 eden/corpus/books/*.txt
 
-# Rolling per-session dev handoff (genesis reads it locally; regenerated each session, never public).
-chronicle/next-chunk.md
+# Page scans of those same books, used only to verify OCR locally.
+temporary/
+
+# Wallach material recorded in full but deliberately held out of the app and out
+# of the published repository. Kept on disk for review; nothing in the app or the
+# gates reads it.
+eden/fringe-knowledge/
+
+# A pinned browser engine, if one is ever installed here. Absent by decision — a
+# modern engine is 340-420 MB on disk, so it must never reach git.
+engine/

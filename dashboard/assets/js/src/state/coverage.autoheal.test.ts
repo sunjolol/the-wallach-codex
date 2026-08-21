@@ -1,5 +1,5 @@
 /**
- * state/coverage.autoheal.test.ts — the regimen snapshot auto-heal (memory: auto-heal-not-user-debug).
+ * state/coverage.autoheal.test.ts — the regimen snapshot auto-heal.
  *
  * A catalog-sourced regimen item stores a nutrient SNAPSHOT at add-time; if the sealed
  * Product DB later corrects a value, liveNutrients() re-reads the CURRENT composition

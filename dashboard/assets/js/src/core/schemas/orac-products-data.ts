@@ -8,7 +8,7 @@
  * These ORAC scores are YOUNGEVITY OFFICIAL, lab-tested per-serving values (source: ygy) —
  * NOT Wallach numbers and NOT parsed from the corpus. Product ORAC is composition /
  * measured-property data (what a serving delivers); §00.A lets Youngevity supply + surface
- * composition (Luneth-confirmed framing 2026-07-24). The numbers have ONE hand-authored home
+ * composition. The numbers have ONE hand-authored home
  * (orac-products-curation.json); the generator joins each product_id with the product pillar
  * for name+form and prices.json for the wholesale price, so nothing is re-typed in a view.
  *

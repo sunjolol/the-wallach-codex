@@ -3,22 +3,20 @@
  * ===========================================================================
  *
  * A curated, urgency-first landing for Wallach's antioxidant / ORAC teaching -- the
- * "slow the rusting" half of his longevity model. Signed-off design reference:
- * temporary/orac-EDITED.html (Luneth). Built in phases:
- *   Phase 1 (shipped): the editorial hero (01) + the full-record claims index (09).
- *   Phase 2 (THIS):   the narrative sections spliced BETWEEN hero and claims --
- *     the mirror-test (decade bars) + stolen-years (rank decline) urgency blocks,
- *     the damage chain (02), the daily target (03), and the four-pieces / forces /
- *     payoff (08). The food league-tables (04-07) await Phase-3 mining.
+ * "slow the rusting" half of his longevity model. The tab reads as nine numbered
+ * sections: the editorial hero and the mirror-test decade bars + stolen-years rank
+ * decline (01), the damage chain (02), the daily target (03), the food league-tables --
+ * reach / scale / the field (04-06), the Youngevity supplement table (07), the
+ * four-pieces / forces / payoff (08), and the full-record claims index (09).
  *
- * PURE PROJECTION (R1/R3/§00.A): no canonical value is a literal here. Every ORAC
+ * PURE PROJECTION (§00.A): no canonical value is a literal here. Every ORAC
  * NUMBER comes from state/orac.ts (orac-data.json, each value parsed by the generator
  * from a sealed claim's byte-faithful verbatim) and is interpolated into framing PROSE
- * that lives in view-copy.json (R4). The essentials count is essentialCount() (canon).
- * The claim cards come from the search index (oracClaims() -> the 31 ORAC-family claims);
- * the claim COUNT is oracClaims().length -- LIVE, never the demo's stale hardcoded "30".
+ * that lives in view-copy.json. The essentials count is essentialCount() (canon).
+ * The claim cards come from the search index (oracClaims()); the claim COUNT is
+ * oracClaims().length -- derived at render, never a hardcoded literal.
  * When orac-data is absent/invalid (defensive; it is byte-gated in practice) the narrative
- * sections are omitted and the tab still renders hero + live claims (§00.B #7).
+ * sections are omitted and the tab still renders hero + live claims.
  *
  * Layer: views/ -- reads state/ (search selectors + copy + orac numbers + essentials
  * count), never localStorage.
@@ -35,7 +33,7 @@ import { composeCite, composeShortCite, oracClaims } from '../state/search.js';
 import { glossify } from './glossify.js';
 import { FORM_COLORS, formFamilyFromForm } from './knowledge-products.js';
 
-const DASH = '–'; // en dash, matching the signed-off demo's numeric ranges
+const DASH = '–'; // en dash for numeric ranges
 
 /** Collapse a book verbatim's hard line-wraps into one clean line (mirrors entity-page). */
 function collapseWS(s: string): string {
@@ -90,7 +88,7 @@ function ordinal(n: number): string {
 }
 
 /**
- * A demo-style numbered SECTION HEADER: big display number + a pre-built kicker + the heading.
+ * A numbered SECTION HEADER: big display number + a pre-built kicker + the heading.
  * The heading text is a view-copy id; the number is structural chrome (not prose).
  */
 function sectionHeader(num: string, kickerHTML: string, headingKey: string): string {
@@ -170,7 +168,7 @@ function renderSteal(od: OracData): string {
   const s = od.stolen_years;
   const r = od.rankings;
   const last = r.points.length - 1;
-  // Ranks read in ink; only the newest (deepest decline) takes the accent, matching the demo.
+  // Ranks read in ink; only the newest (deepest decline) takes the accent.
   const cells = r.points.map((p, i) => {
     const style = i === last ? ' style="color:var(--ds-accent-deep)"' : '';
     return `<div class="kd-orac-rank__c">
@@ -248,7 +246,7 @@ function renderPieces(od: OracData): string {
   const cl = od.ceiling;
   const pay = od.payoff;
   const oracRange = `${t.low_display}${DASH}${t.high_display}`;
-  // Demo grid order: piece 1 (here), 3 (here), 2 (diet), 4 (diet).
+  // Grid order: piece 1 (here), 3 (here), 2 (diet), 4 (diet) -- the two "here" pieces lead.
   const pieces = oracPiece(1, 'here', { orac: oracRange })
     + oracPiece(3, 'here')
     + oracPiece(2, 'diet', { calories: cal.display })
@@ -325,7 +323,7 @@ function foodValue(display: string): number {
   return Number(String(display).replace(/[^0-9.]/g, ''));
 }
 
-// The plot's ONE mapping, ported from the signed-off demo. FLOOR/PLOT_MAX are axis layout
+// The plot's ONE mapping. PLOT_FLOOR/PLOT_MAX are axis layout
 // constants, not ORAC values: PLOT_MAX < 100 keeps the top dot clear of the right edge
 // without padding the rail, and FLOOR is the log axis's left anchor.
 const PLOT_FLOOR = 300;
@@ -343,8 +341,8 @@ function plotPos(v: number, max: number, mode: 'log' | 'lin'): number {
 }
 
 // Dots ride LOW in the lane; a collider is bumped a small step and alternated onto a second
-// vertical band so touching values stay individually hoverable (Luneth fix #2). All in %, so
-// the same numbers drive log and linear.
+// vertical band so touching values stay individually hoverable. All in %, so the same numbers
+// drive log and linear.
 const DOT_TOP_A = 64;
 const DOT_TOP_B = 40;
 const DOT_MIN_ADJ = 1.25;  // min centre-to-centre between neighbours (opposite bands allowed)
@@ -657,7 +655,7 @@ export function oracFieldClick(target: HTMLElement): boolean {
 /**
  * A product's delivery-form FAMILY + accent hex, pulled from the SAME source the product detail pages
  * use (knowledge-products FORM_COLORS / formFamilyFromForm) so a supplement's badge + bar colour-match
- * its own full product page (Luneth 2026-07-24). Empty hex -> the CSS fallback tint.
+ * its own full product page. Empty hex -> the CSS fallback tint.
  */
 function formInfo(form: string): { label: string; color: string } {
   const fam = formFamilyFromForm(form);
@@ -720,14 +718,14 @@ function renderNarrative(od: OracData, ofd: OracFoodsData | null, opd: OracProdu
     ${renderPieces(od)}`;
 }
 
-// ─── §09 · the full-record claims index (Phase 1) ────────────────────────────
+// ─── §09 · the full-record claims index ────────────────────────────────────
 
 /**
  * One record card -- a native <details> disclosure (no JS wiring; the browser toggles it).
- * Collapsed keeps the signed-off ORAC look (question + one-line answer + compact cite);
+ * Collapsed shows question + one-line answer + compact cite;
  * expanded reveals the fuller answer (when it adds to the short one), Wallach's exact words
  * (glossified), and the full citation. composeCite/composeShortCite compose from the registry
- * (R3), never hand-typed.
+ * never hand-typed.
  */
 function oracClaimCard(c: SearchClaim): string {
   const cite = composeCite(c);
@@ -750,8 +748,8 @@ function oracClaimCard(c: SearchClaim): string {
 }
 
 /**
- * Group the ORAC claims into facet sections, big-questions FIRST (the signed-off demo's lead)
- * then the canonical SEARCH_FACETS order. Section headers come from facetLabel() -- single-source,
+ * Group the ORAC claims into facet sections, big-questions FIRST then the canonical
+ * SEARCH_FACETS order. Section headers come from facetLabel() -- single-source,
  * the same labels every other Knowledge surface uses. Empty facets are skipped.
  */
 function oracClaimGroups(claims: SearchClaim[]): string {
@@ -769,8 +767,10 @@ function oracClaimGroups(claims: SearchClaim[]): string {
 }
 
 /**
- * The ORAC landing: the editorial hero -> the §02/§03/§08 narrative sections (Phase 2, live
- * numbers) -> the full-record claims index. The narrative is omitted if orac-data is missing.
+ * The ORAC landing: the editorial hero (01) -> the narrative sections 01-08 (mirror test,
+ * stolen years, damage chain, daily target, the food league-tables, the supplement table,
+ * four pieces / forces / payoff) -> the full-record claims index (09). The narrative is
+ * omitted if orac-data is missing.
  */
 export function renderOracTab(): string {
   const claims = oracClaims();

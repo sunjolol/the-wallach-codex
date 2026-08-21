@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """substance_triage.py -- the low-friction manager for the source-anchored substance triage buffer.
 
-WHY this exists (the design principle, Luneth 2026-07-08): make the HONEST path the path of
-LEAST resistance. During Phase-G mining, a claim may name a substance that has no slug in
+WHY this exists (the design principle): make the HONEST path the path of LEAST
+resistance. While mining, a claim may name a substance that has no slug in
 eden/catalog/nutrients.json -- a real new herb Wallach names, OR book-OCR garbage. The strict
 references_resolve gate reds on an unregistered other_substances slug, so without a relief valve
 the only exits from the red board are "heavy correct work now" or "cheat" (typo-pollute the
@@ -16,7 +16,7 @@ for later human review and records their disposition. The single registry stays 
 
 Buffer file: eden/tools/substance-triage-buffer.json  (staging scaffolding, NOT a pillar, NOT sealed).
 
-All writes route through safe_write.safe_rewrite (§17) -- validate-then-atomic-swap.
+All writes route through safe_write.safe_rewrite -- validate-then-atomic-swap.
 
 Subcommands (argparse; NOTHING mutates on --help or a bare invocation -- user-only-tools rule):
   park     --raw-name N --book B --locator L --context C [--claim-id ID]
@@ -28,8 +28,8 @@ Subcommands (argparse; NOTHING mutates on --help or a bare invocation -- user-on
   selftest
                Exercise park + resolve + id-assignment on a TEMP copy; never touches the real buffer.
 
-Resolution workflow (the review pass, per memory substance-registry-and-triage-buffer):
-  1. Batch-review each pending entry against the source IMAGE (verify-against-source-images).
+Resolution workflow (the review pass):
+  1. Batch-review each pending entry against the source page IMAGE, never against the OCR text.
   2. Real substance -> register the slug in eden/catalog/nutrients.json + re-seal the catalog,
      backfill it into the claim's other_substances via mine_batch, then `resolve --status resolved`.
   3. OCR garbage / not-a-substance -> `resolve --status rejected` with the reason.

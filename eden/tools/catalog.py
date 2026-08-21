@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 """catalog.py -- the single read point for the Catalog pillar (eden/catalog/*).
 
-The Catalog is a sealed, hand-edited pillar (blueprint Pillar 3): the canonical ID
+The Catalog is a sealed, hand-edited pillar (Pillar 3): the canonical ID
 registries both the Wallach Corpus and the Youngevity Product DB reference. Every
 consumer that needs a condition/symptom display name, the umbrella->subtype map, or
 the synonym phrasings reads them HERE -- never from a private copy -- so no fact lives
-in two places (Charter R3). Promoted 2026-07-05 (Phase B) from the emergent derived
-indices + eden/tools/{condition-taxonomy,condition-synonyms}.json (retired). The nutrient
-vocabulary once lived here too (nutrients.json) but was DELETED 2026-07-05 (D-c) as
-too-basic duplication (its 91 canonical names re-copied essentials-canon; its 408 substance
-names were byte-identical to the auto-humanized slug). The nutrient_* accessors below now
-degrade to empty and are the seam the Youngevity Product DB re-plugs in Phase F.
+in two places. The nutrient/substance vocabulary (nutrients.json) lives here too -- an
+earlier version of it was deleted as a duplicate of essentials-canon, then rebuilt against
+the Youngevity Product DB, and it is live again with 412 substances. The nutrient_*
+accessors below are load-bearing: corpus_derive.py reads nutrient_display() for
+other-substance display names, and corpus_verify.py reads nutrient_slugs() for the
+substance half of references_resolve.
 
 Loads are memoized once per process; the catalog is static during a derive/verify run.
 Every accessor degrades gracefully to empty/None if a catalog file is absent (bootstrap
@@ -66,9 +66,10 @@ def symptom_display(slug: str):
 
 
 def _nutrients() -> dict:
-    """slug -> {display_name, canon_slug} (memoized). nutrients.json was DELETED 2026-07-05
-    (D-c); until Phase F rebuilds the nutrient/ingredient registry this returns {} (bootstrap
-    guard), so nutrient_slugs()/nutrient_display() are dormant, not load-bearing."""
+    """slug -> {display_name, canon_slug} (memoized) from the nutrient/substance registry.
+    Returns {} only when eden/catalog/nutrients.json is absent (bootstrap guard). Load-bearing:
+    corpus_derive.py (other-substance display names) and corpus_verify.py (the substance half
+    of references_resolve)."""
     global _NUTR
     if _NUTR is None:
         _NUTR = json.loads(NUTR_PATH.read_text(encoding="utf-8")).get("nutrients", {}) if NUTR_PATH.exists() else {}

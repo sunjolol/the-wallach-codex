@@ -1,11 +1,12 @@
 # Wallach Knowledge Revamp — Proposal of Record
 
-> **Status:** Plan, awaiting Luneth's approval. **Not yet building.**
+> **Status:** BUILT. This plan was approved and executed; `eden/` exists as specified here.
+> Kept as the founding record of why the pillars are shaped this way.
 > **Author:** Claude Code (Opus 4.8), 2026-06-24. Revision of the Cowork handoff
-> (`C:\Users\Light\Desktop\claude\books\books\wallach-knowledge-revamp-handoff.md`).
+> (kept outside this repository).
 > **Precedence:** Where this conflicts with the Cowork handoff, this wins (it is
 > grounded in the actual codebase; the handoff was theoretical by its own admission).
-> Where it conflicts with CLAUDE.md / `.claude/rules/*`, those win.
+> Where it conflicts with CLAUDE.md / `.claude/skills/*`, those win.
 > **Locked inputs:** the handoff's §2 user decisions and §3 project constraints are
 > accepted unchanged except where explicitly refined below with rationale.
 
@@ -17,11 +18,11 @@
 2. **`eden/books/` does not exist yet** — the handoff assumed the books were already sealed in Eden. They sit outside the repo. Phase α's real step 0 is bringing them in.
 3. **The claim graph is named `eden/corpus/`, not `eden/knowledge/`** — to avoid a foot-gun name collision with the tier-2 repo-root `knowledge/`.
 4. **Verbatim is the load-bearing anchor; structured locators are best-effort.** The PDF-extracted books carry no reliable page markers. Verify checks the verbatim substring; the locator is convenience.
-5. **No separate `extract.py` + LLM-classification-cache subsystem.** Rejected as over-built. Extraction is agent-in-the-loop (the session agent drafts claim records; Luneth reviews chunk-by-chunk; `seal.py` promotes). That already *is* "LLM at extraction time, frozen as committed JSON."
+5. **No separate `extract.py` + LLM-classification-cache subsystem.** Rejected as over-built. Extraction is agent-in-the-loop (the session agent drafts claim records; the user reviews chunk-by-chunk; `seal.py` promotes). That already *is* "LLM at extraction time, frozen as committed JSON."
 6. **Claims are sharded per book**, so each book seals independently and the 5 inbound books are purely additive.
 7. **The hook surface is a near-no-op** — the existing golden-sibling auto-detection already protects every sealed file.
 8. **Your 5 hand-made graphics get a sealed tier-1 home** (`eden/graphics/`) and a §00.A contradiction protocol.
-9. **Total cleanup**, archived out-of-repo to `C:\Users\Light\Desktop\claude\legacy-wallach-knowledge\`, gated on migration (nothing deletes until its last live consumer is migrated).
+9. **Total cleanup**, archived out-of-repo to a local `legacy-wallach-knowledge/` folder, gated on migration (nothing deletes until its last live consumer is migrated).
 
 ---
 
@@ -52,7 +53,7 @@ One sealing discipline (hash-anchor + golden sibling + user-only-writer + read-o
 ## 2 · Locked (accepted from the handoff, unchanged)
 
 - **§2 user decisions L1–L10** — storage posture, chunk-by-chunk review, the four categorization axes, propose-freely on surfaces, dual-anchor locators, migrate-one-surface-at-a-time, one-proposal-then-phased, the 90 is always the 90, other-substances parallel-and-secondary, LLM-only-at-extraction.
-- **§3 project constraints** — §00.A source rule, §00.B 11 principles, §17 write discipline, §31 chokepoints, anti-fakery, round-close ritual, logging doctrine, visual-verification gate, offline-forever, size budgets, Wild West Mode.
+- **§3 project constraints** — the §00.A source rule, the engineering principles, write discipline, state chokepoints, anti-fakery, round-close ritual, logging doctrine, visual-verification gate, offline-forever, size budgets, Wild West Mode.
 - **The spine principle** — `claims` is the one mutable source at extraction time; all indices are pure derivations. No two surfaces can disagree because they're views of one graph.
 - **`essentials-canon` is the immutable 90** — locked once, every essentials reference is a slug from it, non-matching slug = build failure.
 - **other-substances partitioned by separate file**, not a flag — the file system enforces the partition (per L9).
@@ -111,7 +112,7 @@ eden/
     └── graphics-manifest.json     (+ .golden.sha256)       ← file_sha256 + provenance per image
 ```
 
-**Why `corpus/` not `knowledge/` (refines handoff §4):** the repo root still has a tier-2 `knowledge/`. Two dirs named `knowledge` (one sealed tier-1, one unsealed tier-2) is a self-documentation failure (§00.B #10). `eden/corpus/` reads as exactly what it is.
+**Why `corpus/` not `knowledge/` (refines handoff §4):** the repo root still has a tier-2 `knowledge/`. Two dirs named `knowledge` (one sealed tier-1, one unsealed tier-2) is a self-documentation failure. `eden/corpus/` reads as exactly what it is.
 
 **Why books are anchored via `books-meta.json` (not a per-book `.golden.sha256`):** one sealed manifest carrying each book's `file_sha256` is a single source of truth for "what the books were at last seal," and `corpus_verify.py` checks book bytes against it. Cleaner than N golden sidecars, and it's the same shape Eden already trusts.
 
@@ -145,12 +146,12 @@ The handoff's record shapes are accepted with three changes. Full Zod schemas la
           │             extraction, candidate flagging, char_offset computation.
           │             Emits drafts/claims-<book>.draft.json (skeleton) + report.
           ▼
-   AGENT PASS (the session Claude, in-conversation with Luneth)
+   AGENT PASS (the session Claude, in-conversation with the user)
           │  reads the book + the skeleton, writes claim records (kind, slugs,
           │  claim_text, verbatim, dose) to drafts/ via safe_write. THIS is the
           │  "LLM at extraction time" — its output is the committed draft JSON.
           ▼
-   USER REVIEW (Luneth, chunk-by-chunk) — visual-verification gate applies
+   USER REVIEW (the user, chunk-by-chunk) — visual-verification gate applies
           │  accept / edit / reject / defer each chunk; review_state advances.
           ▼
    corpus_seal.py  ← USER-ONLY
@@ -159,7 +160,7 @@ The handoff's record shapes are accepted with three changes. Full Zod schemas la
           │  bumps knowledge-version, runs corpus_verify.py as the last gate (refuses on any fail).
 ```
 
-**Determinism comes from the seal + hash, not a cache replayer.** Once sealed, a claim is plain JSON forever. **Runtime purity** is proven by one new invariant (`corpus_runtime_purity`) that greps `dist/main.js` for network/LLM/`fetch`-to-external patterns — same family as the existing `no_external_style_resources` invariant. The LLM (the agent) is **never on the source-rule allowlist**: it sorts passages; the *book* is always the source; Luneth reviews and overrides.
+**Determinism comes from the seal + hash, not a cache replayer.** Once sealed, a claim is plain JSON forever. **Runtime purity** is proven by one new invariant (`corpus_runtime_purity`) that greps `dist/main.js` for network/LLM/`fetch`-to-external patterns — same family as the existing `no_external_style_resources` invariant. The LLM (the agent) is **never on the source-rule allowlist**: it sorts passages; the *book* is always the source; the user reviews and overrides.
 
 If you later want a fully-automated, replayable extraction (for the 5 inbound books without an agent in the loop), that's a clean Phase-ζ add — but it should not block v1.
 
@@ -180,7 +181,7 @@ If you later want a fully-automated, replayable extraction (for the 5 inbound bo
 9. `locator.char_offset` (when present) points at the `verbatim` start (locator/verbatim agreement).
 10. No draft file is referenced by any sealed index (no orphan-draft leakage into canon).
 
-Check #8 is the §00.B #11 truth-anchor for the derived layer: the index can't drift from the claims because it's recomputed and compared, not trusted.
+Check #8 is the truth-anchor for the derived layer: the index can't drift from the claims because it's recomputed and compared, not trusted.
 
 ---
 
@@ -214,7 +215,7 @@ This keeps your graphics canonical while preserving the cornerstone's "no source
 
 ## 9 · Cleanup & archive plan (your "total cleanup")
 
-**Archive target (out of repo):** `C:\Users\Light\Desktop\claude\legacy-wallach-knowledge\` — one folder, browsable head-start reference, keeps the repo lean and the 94 MB of PDFs out of the tree.
+**Archive target (out of repo):** a local `legacy-wallach-knowledge/` folder — one folder, browsable head-start reference, keeps the repo lean and the 94 MB of PDFs out of the tree.
 
 **Rule (L6, non-negotiable):** nothing is archived/deleted until its **last live consumer** is migrated. Final cleanup chunk greps to prove zero consumers, then moves in one transaction, then render-probes every surface.
 
@@ -265,7 +266,7 @@ Surfaces #1–#4 are the spine. They slot into the **existing drawer architectur
 
 ### Concrete Phase α — the first round-close (for your approval)
 
-1. **Move books in** (agent, `safe_write rewrite` per file — they're new, no golden sibling, not blocked): `C:\Users\Light\Desktop\claude\books\books\*.txt` → `eden/corpus/books/`. (6 files, ~5 MB.)
+1. **Move books in** (agent, `safe_write rewrite` per file — they're new, no golden sibling, not blocked): the local book `.txt` sources → `eden/corpus/books/`. (6 files, ~5 MB.)
 2. **Move the 5 graphics** → `eden/graphics/` (binary copy — these need a non-safe_write path since they're images; I'll propose the exact mechanism at build time, likely a user-run or a reviewed `cp` since `safe_write` is text-oriented — flagging now so it's not a surprise).
 3. **Author skeletons via `safe_write`:** `eden/corpus/README.md`, `SCHEMA.md`, `books-meta.json` (6 entries, real `file_sha256`), `essentials-canon.json` (the 90, ported from `coverage-layout-data.json`'s essential set), `knowledge-version.json` (`{version: 0}`), empty `claims/` + `indices/` + `drafts/`, `graphics-manifest.json`.
 4. **Tools:** skeletons of `corpus_extract.py`, `corpus_derive.py`, `corpus_seal.py`, `corpus_verify.py`, `graphics_seal.py`, `graphics_verify.py` (verify fully implemented; extract/derive stubbed to "no claims yet").
@@ -305,7 +306,7 @@ Build-log line shape:
 ## 14 · What I need from you to start Phase α
 
 1. **Approve this proposal** (or mark edits). I do **not** build until you do.
-2. **Confirm the archive path** `C:\Users\Light\Desktop\claude\legacy-wallach-knowledge\` (or name another).
+2. **Confirm the archive path** (the local `legacy-wallach-knowledge/` folder, or name another).
 3. **Confirm `eden/corpus/` naming** (vs. the handoff's `eden/knowledge/`).
 4. **Note on graphics:** confirm you're comfortable admitting the 5 graphics as tier-1 by your source-owner authority (§8) rather than running the formal three-confirm override. Either is fine; I default to the former per your message.
 

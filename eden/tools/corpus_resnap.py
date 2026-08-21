@@ -3,7 +3,7 @@
 
 Why this exists
 ---------------
-The OCR-correction campaign edits eden/corpus/books/<book>.txt (de-hyphenate +
+Correcting a book's OCR text edits eden/corpus/books/<book>.txt (de-hyphenate +
 reflow + fix scan errors). Two sealed facts then go stale and must be repaired
 atomically BEFORE re-sealing, or corpus_verify refuses:
 
@@ -93,7 +93,7 @@ def relocate(book_text: str, sk_text: str, map_text: str, raw_vb: str):
     end = map_text[pos + len(sk_vb) - 1]
     # The skeleton anchors the FIRST and LAST alphanumeric only, so a verbatim's leading/trailing
     # NON-alphanumeric run (a closing period, quote, paren, "!!!!") falls OUTSIDE the anchor and
-    # would be silently dropped. Measured 2026-08-02: a de-hyphenation pass healed 77 claims and
+    # would be silently dropped. Measured: a de-hyphenation pass healed 77 claims and
     # 69 came back trimmed -- 68 lost a trailing '.'/'"'/')' and RARE-000342 lost all four of its
     # '!!!!' -- while FOUR also gained a stray leading letter. Nothing caught it: the healed text
     # is still a byte-exact substring of the source, so corpus_verify check #2, check #9 and the
@@ -181,8 +181,8 @@ def main() -> int:
     b["line_count"] = new_lines
     META_PATH.write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     if has_shard:
-        # indent=1 - the convention EVERY claims shard is stored in. This wrote indent=2 until
-        # 2026-08-10, so a resnap reformatted the whole shard and buried its real change
+        # indent=1 - the convention EVERY claims shard is stored in. Writing indent=2 here made
+        # a resnap reformat the whole shard and bury its real change
         # (a 250-line correction rendered as a 30,700-line diff) exactly when review matters most.
         shard_path.write_text(json.dumps(shard, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"  WROTE books-meta ({args.book}: bytes={new_bytes}, lines={new_lines}){' + shard' if has_shard else ' (no shard — hash only)'}.")

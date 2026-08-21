@@ -7,7 +7,7 @@ description: Read BEFORE touching any recommended amount, dose, range, daily tar
 
 ## The rule
 Every recommended amount, dose, range, daily target, deficiency indicator, or health claim the app
-displays traces to a Wallach book. No exceptions -- **including Luneth**, who has retracted his own
+displays traces to a Wallach book. No exceptions -- **including the owner of this project**, who has retracted his own
 lived experience when it conflicted with the corpus. This is the project's reason for existing and
 the thing that makes it legally defensible.
 
@@ -47,7 +47,7 @@ The books are riddled with OCR defects and real errors, so judgment is required 
   sweep. Deliberate divergences live in `eden/tools/ratified-divergences.json` -- check it before
   flagging a defect, and never "restore" one. Four are safety-critical dose divergences where the
   printed page would reintroduce a toxic dose.
-- Claude proposes, **Luneth ratifies**. Sealing is his act, which is why `corpus_seal` is user-only.
+- Claude proposes, **the user ratifies**. Sealing is the user's act, which is why `corpus_seal` is user-only.
 
 ## Changing this rule -- three turns, no shortcuts
 1. Surface it tagged `[WALLACH-SOURCE-RULE: PROPOSED VIOLATION]`, naming the breach and the precedent.
@@ -65,5 +65,5 @@ the result. `dose_amount_in_verbatim` proves the dose number is present in the c
 `views_no_ciphered_data` extends it to render time, after the Coverage hero was caught scrambling
 Wallach's 90 into 30/80/94 four seconds in five.
 
-Scope, honestly: `amounts_wallach_only` reads 38 of 91 essentials (the numeric ones). The other 53
+Scope, honestly: `amounts_wallach_only` reads 37 of 91 essentials (the numeric ones). The other 54
 rest on this rule and review. That is a labeled WISH, not a covered case.

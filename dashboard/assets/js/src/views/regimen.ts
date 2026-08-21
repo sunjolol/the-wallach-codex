@@ -2,31 +2,27 @@
  * views/regimen.ts — the Regimen workspace (the Cockpit + the save-slot switcher)
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * RE-CREATED 2026-08-13 from the design-approved demo
- * temporary/ready-to-be-ported/regimen-cockpit-slots-tray-v6.html — on real data
- * + real state, ADAPTED not transplanted (the demo is design truth, not a code
- * donor). The prior view was a fabricated scaffold (hand-authored SLOT_PLACEHOLDERS
- * / RECOMMENDATIONS / WISHLIST, no-op cart bridges); nothing of it survives.
+ * Built against real data and real state from an approved static design mockup. A
+ * mockup is DESIGN truth, not a code donor: nothing on this screen is a placeholder,
+ * and no number here is hand-authored.
  *
  * WHAT IS REAL (no fabrication, anti-fakery):
  *   · Slots come from loadSlots() (rgSlots_v1). Each save-slot's coverage is the
  *     SAME engine the gauge uses — coveredCountForItems(slot.items, slot.overrides) —
  *     so a saved slot's number equals what it reads once active (no drift).
  *   · The gauge / category cluster / 90-cell readout read the live CoverageSnapshot.
- *   · Goals are PER-SLOT (P4): loadRgUserGoals/saveRgUserGoals now read/write the
- *     active slot's goals, so each save steers its own recommendations.
+ *   · Goals are PER-SLOT: loadRgUserGoals/saveRgUserGoals read/write the active
+ *     slot's goals, so each save steers its own recommendations.
  *   · Recommendations are rankProductsForCoverage — PRODUCTS ONLY. Foods are a
- *     deferred sourced artifact (Luneth 2026-08-13); the layout is kept ready but
- *     no food row/number is invented here.
+ *     deferred sourced artifact; the layout is kept ready but no food row or
+ *     number is invented here.
  *   · Dose steppers route saveRgOverride(id, {scaling_factor}) → writeSlotDoc →
  *     'regimen:changed' → recompute; the counts move because the live math already
  *     multiplies delivered mg by that factor (no dose→coverage curve invented).
- *   · Product NAMES are written with .textContent (§00.B #5, escape at the sink).
+ *   · Product NAMES are written with .textContent (escape at the sink, never a filter).
  *
  * THE GOAL RULE (inherited, unbreakable): a goal changes what you LOOK AT / are
  * RECOMMENDED, never what you are MEASURED AGAINST. The denominator is always 90.
- *
- * §17 recovery: `git checkout HEAD -- dashboard/assets/js/src/views/regimen.ts`.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -80,12 +76,14 @@ export interface MountHandle {
 
 const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
 
-/** How many product recs the rail shows (measured against the aside budget). */
+/** How many product recs the main column's "Best next moves" row shows (measured against it). */
 const REC_LIMIT = 6;
-/** The switcher holds up to four save slots (MAX_SLOTS); Luneth: "4, not 5". */
+/** How many slot tiles the switcher paints. MUST equal state/regimen.ts's MAX_SLOTS — the state
+ *  layer refuses a fifth save, so a mismatch here paints an empty tile that can never be filled. */
 const SLOT_CAP = 4;
 
-/** The four category dots, in the demo's order + the sanctioned category hues. */
+/** The four category rows, in board order, with the house category hues (minerals blue, vitamins
+ *  orange, amino acids green, fatty acids purple). */
 const CATEGORY_ROWS = [
   { label: 'Minerals', bucket: 'other', hue: '#2b6fb0' },
   { label: 'Vitamins', bucket: 'vitamins', hue: '#c8781a' },
@@ -156,7 +154,7 @@ function relAge(iso: string): string {
   return weeks === 1 ? '1 week ago' : `${weeks} weeks ago`;
 }
 
-/** The active slot's chosen goals, resolved against the layout + capped (per-slot, P4). */
+/** The active slot's chosen goals, resolved against the layout and capped at MAX_GOALS. */
 function activeGoals(): LayoutGoal[] {
   const chosen = loadRgUserGoals() ?? [];
   const byId = new Map(LAYOUT.goals.map(g => [g.id, g]));
@@ -176,8 +174,9 @@ function activeGoals(): LayoutGoal[] {
 /**
  * canon slug → the tile KEY the CoverageSnapshot is keyed by (snapshot tile.name ===
  * the layout tile's `key`, the canonical name — NOT its display `name`, which diverges
- * for 16 of 90, e.g. vitamin-c renders "ASCORBIC ACID"). Using `key` makes the
- * goal-gap + no-goals recommender joins resolve for all 90, not just the 74 that match.
+ * beyond case for 16 of the 91 tiles, e.g. vitamin-c renders "ASCORBIC ACID"). Using
+ * `key` makes the goal-gap + no-goals recommender joins resolve for every tile, not
+ * just the 75 whose display name matches.
  */
 function slugToTileKey(): Map<string, string> {
   const m = new Map<string, string>();
@@ -227,9 +226,9 @@ interface FieldInfo {
 
 /**
  * Split the 90 counted essentials into covered · goal-gap · open. goal-gap =
- * an UNCOVERED essential that is a member of an active goal (the goals×coverage
- * intersection the demo's "6 goal-gap" shows). The denominator stays 90 — a goal
- * only re-colours the open cells, never changes what is measured.
+ * an UNCOVERED essential that is a member of an active goal (the goals × coverage
+ * intersection). The denominator stays 90 — a goal only re-colours the open cells,
+ * never changes what is measured.
  */
 function fieldInfo(goals: LayoutGoal[]): FieldInfo {
   const snapshot = getOrCompute();
@@ -254,8 +253,8 @@ function fieldInfo(goals: LayoutGoal[]): FieldInfo {
       cells.push({ cls: '', name: t.name });
     }
   }
-  // Luneth 2026-08-14: the readout was interleaved by canon order and illegible. Group it
-  // covered (green) -> goal-gap -> open (beige); the stable sort keeps canon order per block.
+  // Interleaved by canon order the readout is illegible, so group it covered (green) -> goal-gap
+  // -> open (beige); the stable sort keeps canon order inside each block.
   const rank = (c: string): number => (c === 'covered' ? 0 : c === 'goalgap' ? 1 : 2);
   cells.sort((a, b) => rank(a.cls) - rank(b.cls));
   return { covered, goalGap, open: counted.length - covered - goalGap, cells };
@@ -293,7 +292,8 @@ function readVault(): Map<string, RegimenVaultEntry> {
   return m;
 }
 
-/** Build a RegimenItem from a vault product (matched by name) + persist via §31. */
+/** Build a RegimenItem from a vault product (matched by name) + persist via the regimen write
+ *  chokepoint. */
 function addItem(rawName: string): AddOutcome | null {
   const product = readVault().get(rawName.trim().toLowerCase());
   if (product === undefined) {
@@ -692,8 +692,9 @@ function productSupplies(entry: RegimenVaultEntry): number {
 }
 
 /**
- * The add-a-product typeahead (#3): show the top 3 vault matches ONLY after the user types,
- * each an explicit row with an Add button. Replaces the every-product native datalist.
+ * The add-a-product typeahead: show the top 3 vault matches ONLY after the user types, each an
+ * explicit row with its own Add button — a native datalist of every product gave the user nothing
+ * to judge a match by.
  */
 function renderTypeahead(container: HTMLElement, query: string): void {
   const results = container.querySelector<HTMLElement>('[data-ta-results]');
@@ -781,9 +782,9 @@ function renderRail(): string {
 }
 
 /**
- * The inline "Delete this save?" confirm overlaid on a slot tile (#8a). A slot delete is
- * destructive — the save is gone and its items go to the trash — and it used to fire on the
- * first click of the tiny trash icon. Now it takes a deliberate second confirm.
+ * The inline "Delete this save?" confirm overlaid on a slot tile. A slot delete is destructive —
+ * the save is gone and its items go to the trash — so it takes a deliberate second confirm; a
+ * single click on a small trash icon is too cheap for it.
  */
 function buildSlotDeleteConfirm(id: string, itemCount: number): HTMLElement {
   const wrap = document.createElement('div');
@@ -822,18 +823,18 @@ export function mount(container: HTMLElement): MountHandle {
   let animated = false;
   let toastTimer: number | null = null;
   let recycleOpen = false;
-  // D2 "Replace a save": while all four slots are full, this holds the deletedAt key of the
-  // save being restored; recyclePick is the current save chosen to move to the bin. (§1 #8b)
+  // The "Replace a save" step: while all four slots are full, this holds the deletedAt key of the
+  // save being restored; recyclePick is the current save chosen to move to the bin.
   let recycleReplaceKey: string | null = null;
   let recyclePick: string | null = null;
 
-  /** Cap the active-stack panel to the console's height (measured, tracks any width). */
+  /** No-op that clears any stale max-height on the active-stack panel; the panel grows with its
+   *  content and scrolls with the page. Kept so the render/resize wiring stays valid. */
   const syncStackHeight = (): void => {
-    // The active-stack box now grows with its content and scrolls WITH the page (Luneth) — no
-    // console-height cap. The old cap read `.ck-console` height, which is 0 while the Regimen tab
-    // is hidden, so a re-render fired from another tab (adopting from the Scanner, or the goal
-    // veil's "I'm just browsing") collapsed the box to 0px — the #2 glitch + the browse bug.
-    // Kept as a no-op that clears any stale cap, so the render/resize wiring stays valid.
+    // Do NOT reintroduce a height cap read off `.ck-console`: that element measures 0 while the
+    // Regimen tab is hidden, so a re-render fired from another tab (adopting an item from the
+    // Scanner, or dismissing the goal veil with "I'm just browsing") collapsed this panel to 0px.
+    // The panel grows with its content and scrolls with the page instead.
     const stack = container.querySelector<HTMLElement>('.ck-rail .rail-panel');
     if (stack !== null) {
       stack.style.maxHeight = '';
@@ -864,7 +865,7 @@ export function mount(container: HTMLElement): MountHandle {
     requestAnimationFrame(step);
   };
 
-  /** Build the recycle-bin list view (style D1) from the live save + item bins, then show it. */
+  /** Build the recycle-bin list view from the live save + item bins, then show it. */
   const populateList = (): void => {
     const host = container.querySelector<HTMLElement>('[data-rc-host]');
     if (host === null) {
@@ -998,10 +999,10 @@ export function mount(container: HTMLElement): MountHandle {
   };
 
   /**
-   * The "Replace a save" step (style D2) — reached when the user hits Restore on a deleted save
-   * while all four slots are full. Lists the four current saves as a radio group; picking one and
-   * confirming swaps it into the bin as the restored save takes its place (restoreDeletedSlot with
-   * a replaceSlotId). UI-only — the swap itself is the state op's job (§31, batch 1).
+   * The "Replace a save" step — reached when the user hits Restore on a deleted save while all
+   * four slots are full. Lists the four current saves as a radio group; picking one and confirming
+   * swaps it into the bin as the restored save takes its place (restoreDeletedSlot with a
+   * replaceSlotId). UI-only — the swap itself is the state op's job.
    */
   const populateReplace = (key: string): void => {
     const host = container.querySelector<HTMLElement>('[data-rc-host]');
@@ -1010,7 +1011,8 @@ export function mount(container: HTMLElement): MountHandle {
     }
     const doc = loadSlots();
     const entry = (doc.slotTrash ?? []).find(e => e.deletedAt === key);
-    // The bin or the slot count changed under us (a parallel restore/delete) — fall back to D1.
+    // The bin or the slot count changed under us (a parallel restore/delete) — fall back to the
+    // list.
     if (entry === undefined || doc.slots.length < MAX_SLOTS) {
       recycleReplaceKey = null;
       recyclePick = null;
@@ -1125,7 +1127,7 @@ export function mount(container: HTMLElement): MountHandle {
     host.hidden = false;
   };
 
-  /** Show whichever recycle view is active — the D2 replace step, else the D1 list. */
+  /** Show whichever recycle view is active — the replace step, else the list. */
   const populateRecycle = (): void => {
     if (recycleReplaceKey !== null) {
       populateReplace(recycleReplaceKey);
@@ -1294,7 +1296,7 @@ export function mount(container: HTMLElement): MountHandle {
       const key = rcSlot.dataset['rcRestoreSlot'];
       if (key !== undefined) {
         if (loadSlots().slots.length >= MAX_SLOTS) {
-          // All four saves are full — open the D2 replace step instead of refusing.
+          // All four saves are full — open the replace step instead of refusing.
           recycleReplaceKey = key;
           recyclePick = null;
           populateRecycle();
@@ -1308,7 +1310,7 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
-    // — recycle D2: back to the list (the head back-arrow or the footer Cancel) —
+    // — replace step: back to the list (the head back-arrow or the footer Cancel) —
     if (target.closest('[data-rc-back]') !== null) {
       ev.stopPropagation();
       recycleReplaceKey = null;
@@ -1316,7 +1318,7 @@ export function mount(container: HTMLElement): MountHandle {
       populateRecycle();
       return;
     }
-    // — recycle D2: pick which current save moves to the bin —
+    // — replace step: pick which current save moves to the bin —
     const rcPick = target.closest<HTMLElement>('[data-rc-pick]');
     if (rcPick !== null) {
       ev.stopPropagation();
@@ -1327,13 +1329,13 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
-    // — recycle D2: confirm the swap (move the chosen save to the bin, restore this one) —
+    // — replace step: confirm the swap (move the chosen save to the bin, restore this one) —
     if (target.closest('[data-rc-replace]') !== null) {
       ev.stopPropagation();
       if (recycleReplaceKey !== null && recyclePick !== null) {
         const res = restoreDeletedSlot(recycleReplaceKey, recyclePick);
         if (res.ok) {
-          // The swap landed → regimen:changed re-renders and repopulates the list (D1).
+          // The swap landed → regimen:changed re-renders and repopulates the list.
           recycleReplaceKey = null;
           recyclePick = null;
         }
@@ -1377,7 +1379,7 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
-    // — slot delete: step 1 — show an inline confirm on the tile (never delete on first click, #8a) —
+    // — slot delete: step 1 — show an inline confirm on the tile (never delete on first click) —
     const del = target.closest<HTMLElement>('[data-slot-delete]');
     if (del !== null) {
       ev.stopPropagation();
@@ -1481,8 +1483,8 @@ export function mount(container: HTMLElement): MountHandle {
     // — remove item —
     const rowRemove = target.closest<HTMLElement>('[data-row-remove]');
     if (rowRemove !== null) {
-      // #4/#8: never a silent delete. Swap the row to an inline Keep/Remove confirm; Remove
-      // routes through saveRgRemoved, which moves the item to the restorable Trash.
+      // Never a silent delete. Swap the row to an inline Keep/Remove confirm; Remove routes
+      // through saveRgRemoved, which moves the item to the restorable Trash.
       const row = rowRemove.closest<HTMLElement>('.rr-row');
       const id = rowRemove.dataset['rowRemove'];
       if (row !== null && id !== undefined) {
@@ -1584,7 +1586,7 @@ export function mount(container: HTMLElement): MountHandle {
   const escHandler = (ev: KeyboardEvent): void => {
     if (ev.key === 'Escape' && recycleOpen) {
       if (recycleReplaceKey !== null) {
-        // In the D2 replace step, Escape backs out to the list first (not straight to closed).
+        // In the replace step, Escape backs out to the list first (not straight to closed).
         recycleReplaceKey = null;
         recyclePick = null;
         populateRecycle();

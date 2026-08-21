@@ -3,11 +3,12 @@
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Covers the two embedded JSON blocks the knowledge drawer reads:
- *   `essentials-targets-data` — Wallach targets DB (90 essentials + Omega-9) with stance + citations
+ *   `essentials-targets-data` — Wallach targets DB (90 essentials + Omega-9); each target
+ *                               carries kind + source, plus source_claim_id where a number is posted
  *   `regimen-label-lookup`    — product vault, keyed by id (mixed shapes)
  *
- * Both are read via getElementById + JSON.parse at the boundary; schemas
- * validate before any field access enters typed-land.
+ * Both are inlined at build via esbuild JSON import and validated through these
+ * schemas before any field access enters typed-land (state/coverage.ts).
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -16,16 +17,14 @@ import { z } from 'zod';
 /** A single essential entry from `essentials-targets-data`. */
 export const EssentialSchema = z.object({
   name: z.string(),
-  /** Canon slug — the join key to the registry resolver (added A2). */
+  /** Canon slug — the join key to the registry resolver. */
   slug: z.string(),
   category: z.string(),
   target: z.unknown().optional(),
+  // RETIRED: no entry in essentials-targets-data.json carries `wallach_stance` any more (the
+  // derive owns that artifact now) and no view reads it. The optional field is kept only so an
+  // old hand-edited artifact still parses; nothing gates its contents.
   wallach_stance: z.object({
-    // §00.A educational layer, two honest fields:
-    //   summary  — our modern-voice, plain-language reading of Wallach's position
-    //   verbatim — Wallach's exact words from `citation` (null when the cited
-    //              source is a Youngevity label with no quotable prose)
-    // The wallach_stance_verbatim_in_book invariant enforces verbatim ⊆ cited book.
     summary: z.string().optional(),
     verbatim: z.string().nullable().optional(),
     citation: z.string().optional(),

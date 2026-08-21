@@ -4,8 +4,8 @@
 A new Claude Code session opens with the word `genesis`; this prints the boot
 report so past depth is regained instantly: the integrity scoreboard, build
 parity, the latest Creator's Log entry, the build-log tail, and the live
-pass-off (chronicle/next-chunk.md — the rolling handoff). The genesis/ folder
-archives the original Cowork pass-off that shaped the project.
+pass-off (chronicle/next-chunk.md — a local, gitignored rolling handoff, absent on a
+fresh clone; the boot report degrades gracefully when it is missing).
 
 Read-only. After it runs, Claude reports + asks which task to resume — never a
 flair-only boot. Contract: CLAUDE.md "Genesis".
@@ -52,10 +52,10 @@ def invariants_status():
         reds = re.findall(r"^(?:FAIL|ERR )\s*\[[^\]]*\]\s*([A-Za-z0-9_]+):", out, re.M)
         m = re.search(r"(\d+)/(\d+) passed \((\d+) failed\)", out)
         status = f"{m.group(1)}/{m.group(2)} passed" if m else "ran (unparsed)"
-        # The anchor-class split, lifted from the board's own output. A bare "67/67 passed"
-        # at session boot is how bookkeeping got laundered into confidence every single
-        # session -- the agent read it out as if it were a statement about Wallach. It never
-        # was. Carry the breakdown here or the boot line re-tells the same lie.
+        # The anchor-class split, lifted from the board's own output. A bare all-green
+        # total at boot is how bookkeeping gets laundered into confidence: it reads as a
+        # statement about Wallach when it is a statement about our own files agreeing with
+        # each other. Carry the breakdown here or the boot line re-tells the same lie.
         ext = re.search(r"^\s+external\s+(\d+)/(\d+)", out, re.M)
         con = re.search(r"^\s+consistency\s+(\d+)/(\d+)", out, re.M)
         stru = re.search(r"^\s+structural\s+(\d+)/(\d+)", out, re.M)
@@ -111,11 +111,10 @@ def passoff():
     if start is None:
         return [l for l in lines[:14] if l.strip()]
     # The current handoff is ONLY the first "## LATEST" block. Terminate at the next
-    # "## " heading (older SUPERSEDED/LATEST blocks pile up below it) — NOT at the lone
-    # legacy "**Status" anchor ~1200 lines down, which swallowed every accumulated
-    # history block into the boot dump (the 2026-07-04 "genesis printed 438 KB"
-    # incident: no "## " cap + next-chunk.md grew unbounded). Hard-cap the slice as
-    # defense-in-depth so a future structural change can never re-trigger a whole dump.
+    # "## " heading, because superseded blocks pile up below it: anchoring on a rarer
+    # marker further down once swallowed the whole accumulated file into the boot dump
+    # (hundreds of KB of scrollback). The [:40] hard cap below is defense in depth, so a
+    # future structural change to next-chunk.md can never re-trigger a whole-file dump.
     end = next((i for i, l in enumerate(lines[start + 1:], start + 1) if l.startswith("## ")), len(lines))
     return [l for l in lines[start:end] if l.strip()][:40]
 

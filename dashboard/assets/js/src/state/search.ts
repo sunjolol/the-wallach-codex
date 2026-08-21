@@ -11,7 +11,7 @@
  * Pure reads + deterministic retrieval only — no mutation, no localStorage. This is the
  * offline "Ask-Wallach" resolver: it maps a plain-language query to a LANDING (browse all
  * entities), an ENTITY page (subject/synonym hit), or an ASK answer (best-matching claim),
- * field-weighted, no LLM (blueprint §6 — protects the never-breaks/fully-portable guarantee).
+ * field-weighted, no LLM — which is what protects the never-breaks / fully-portable guarantee.
  *
  * §00.A: every answer/verbatim here is a faithful projection of a sealed Wallach claim.
  * ═══════════════════════════════════════════════════════════════════════════
@@ -93,8 +93,9 @@ const ORAC_SUBJECTS: ReadonlySet<string> = new Set(['orac', 'antioxidants', 'fre
  * Every claim on the ORAC knowledge page: one of the four ORAC-family subjects AND actually
  * about ORAC (its subject IS orac, or 'orac' is in its also_about). The subject-set keeps out an
  * off-topic claim that merely also_abouts orac (e.g. an eggs-dosing claim); the also_about clause
- * keeps out longevity/antioxidant claims that never touch ORAC. 31 on today's index -- a LIVE
- * count, never the demo's stale hardcoded "30". Stable id order.
+ * keeps out longevity/antioxidant claims that never touch ORAC. The count is derived from the
+ * index at call time and is never hardcoded — a literal here would drift the moment a claim is
+ * mined. Stable id order.
  */
 export function oracClaims(): SearchClaim[] {
   return index().claims
@@ -155,7 +156,7 @@ function softClamp(s: string, max: number): string {
 }
 
 /**
- * The one-line "at a glance" intro for an entity page (Phase H2 follow-up, 2026-07-13). Every topic
+ * The one-line "at a glance" intro for an entity page. Every topic
  * gets one: the answer_short of its highest-priority available facet (semantic priority via
  * INTRO_ORDER_*, never array position), so a topic with no 'basics' claim still leads with a sensible
  * overview — a food's stance, a person's biography — instead of a blank hero. Soft-clamped so an
@@ -164,11 +165,12 @@ function softClamp(s: string, max: number): string {
  */
 const LEDE_MAX = 340;
 export function entityLede(subject: string): string {
-  // A hand-authored lede in entity-copy.json (the R4 approved-copy store) is the topic page's
-  // header OF RECORD and wins over any claim-derived line: a claim answer_short answers a question,
-  // it is not a page header (2026-08-19, Luneth — chocolate rendered "It's a mineral-deficiency
-  // signal…" as its title). The explore_entity_lede_authored gate requires one for every
-  // non-grandfathered explore entity, so the claim fallback below never surfaces for a new topic.
+  // A hand-authored lede in entity-copy.json (the approved-copy store) is the topic page's
+  // header OF RECORD and wins over any claim-derived line: a claim answer_short answers a
+  // question, it is not a page header — left to the fallback, chocolate rendered "It's a
+  // mineral-deficiency signal…" as its title. The explore_entity_lede_authored gate requires
+  // one for every non-grandfathered explore entity, so the claim fallback below never surfaces
+  // for a new topic.
   const authored = topicLede(subject);
   if (authored.length > 0) {
     return softClamp(authored, LEDE_MAX);
@@ -179,7 +181,7 @@ export function entityLede(subject: string): string {
   // The pick may be a claim PRIMARILY about another entity but genuinely also_about THIS one (e.g.
   // sexual_health opening with the Kegel claim whose primary home is pelvic-floor-exercises) — safe
   // because this is the DELIBERATE override path; the auto facet-priority path below still requires
-  // subject===entity, so a tangential also_about never auto-ledes. Derive-validated either way (Luneth 2026-07-27).
+  // subject===entity, so a tangential also_about never auto-ledes. Derive-validated either way.
   if (e !== null && e.intro_claim !== undefined) {
     const picked = getSearchClaim(e.intro_claim);
     if (picked !== null && (picked.subject === subject || picked.also_about.includes(subject))) {
@@ -222,7 +224,7 @@ export function entityList(): EntitySummary[] {
   });
 }
 
-/** Compose a display citation from the index's book meta + the claim's page (never hand-typed, R3). */
+/** Compose a display citation from the index's book meta + the claim's page (never hand-typed). */
 export function composeCite(claim: SearchClaim): string {
   const b = claim.book_id !== null ? index().books[claim.book_id] : undefined;
   if (b === undefined) {
@@ -286,7 +288,7 @@ export interface SearchResult {
  * trailing '?' ("...my iq?" -> "my iq"), an internal hyphen ("a-fib" -> "a fib") or apostrophe ("crohn's"
  * -> "crohn s") all normalize the same on both sides. tokenize() is intentionally NOT routed through this
  * (it already splits on non-alphanumerics); scoreClaim's substring reads the collapsed q, which is cleaner.
- * (2026-07-28: repairs the class of natural questions that ended in the entity word immediately before '?'.)
+ * This is what lets a natural question ending in the entity word immediately before '?' still route to it.
  */
 function matchKey(s: string): string {
   return s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').replace(/\s+/g, ' ').trim();
@@ -317,13 +319,14 @@ function entityHit(q: string): string | null {
 }
 
 /**
- * The WIDER exact-match: the full Knowledge universe beyond the ~73 enriched search entities —
- * every condition + essential page (state/entity-page, an already-gated shipped artifact). Matches
- * a query to a page slug by slug, spaced-slug, or display name (case-folded). This is what makes the
- * search a CATCH-ALL: typing "cancer" resolves the real condition page instead of falling through to
- * a tangential ask answer. Synonyms are not matched here yet (the page artifact's synonyms field is
- * still sparse — 2/502 conditions, 14/91 essentials — so name/slug is the reliable key; alias data is
- * a separate follow-up). entityHit (the enriched 73) is tried FIRST, so an enriched entity still wins.
+ * The WIDER exact-match: the full Knowledge universe beyond the search index's own entity
+ * registry — every condition + essential page (state/entity-page, an already-gated shipped
+ * artifact). Matches a query to a page slug by slug, spaced-slug, or display name
+ * (case-folded). This is what makes the search a CATCH-ALL: typing "cancer" resolves the real
+ * condition page instead of falling through to a tangential ask answer. Synonyms are
+ * deliberately NOT matched here — slug/name is the unambiguous key at this layer, so an alias
+ * routes only when it is a registered search-entity synonym. entityHit (the registry) is tried
+ * FIRST, so a registry entity still wins.
  */
 function wideEntityHit(q: string): string | null {
   for (const c of listConditionPages()) {
@@ -406,7 +409,7 @@ export function subjectFacetHints(subject: string, max = 4): string[] {
 /**
  * Charged topics that must NEVER ambush a searcher — surfaced only when the query EXPLICITLY names
  * one (its name/slug or an exact synonym), never via an incidental body word. The Explore tab keeps
- * them (a full index); this gate is search-results only, extensible with Luneth. (memory: charged-search-gate)
+ * them (a full index); this gate is search-results only.
  */
 const CHARGED: ReadonlySet<string> = new Set(['homosexuality', 'intersex']);
 /** Explicit charged terms beyond the entities' own synonyms, so the gate never misses a common word.
@@ -495,11 +498,11 @@ function entityInQuery(q: string): string | null {
 }
 
 /**
- * A generous ceiling on the ranked "more answers" — replaces the old hard cap that let the view show
- * only 4 with no way to reach the rest (Luneth 2026-07-23: "no arbitrary truncation"). Typical queries
- * return well under this over the ~321 enriched claims; an exact entity name routes to its topic page
- * instead, so this bound is NOT the "hundreds of entries" surface (that is the deferred inline-claims
- * pass). Every ranked hit up to the ceiling renders — first few visible, the rest behind "See N more".
+ * A generous ceiling on the ranked "more answers". An earlier hard cap let the view show only
+ * four with no way to reach the rest; there is no arbitrary truncation now. Typical queries
+ * return well under this ceiling over the indexed claim set, and an exact entity name routes to
+ * its topic page instead, so this bound is NOT the surface that would list hundreds of rows.
+ * Every ranked hit up to the ceiling renders — first few visible, the rest behind "See N more".
  */
 const ASK_ANSWER_LIMIT = 40;
 
@@ -554,18 +557,17 @@ function entityNameTokens(slug: string): Set<string> {
  * repeating it. We rank only the already-ranked answers ABOUT this subject on the intent tokens, and hero
  * the top; a claim heroes iff it genuinely tops intent (so "...when losing weight" still wins a weight-loss
  * query). Never hides a claim — every answer stays in the ranked "more answers" list. An empty intent (a
- * bare "what is X") returns the top claim unchanged. (memory: search-routing-verify-not-scoreclaim)
+ * bare "what is X") returns the top claim unchanged. Verify a routing change against
+ * resolveQuery end-to-end, never against scoreClaim alone — the hero is re-picked after ranking.
  */
 function heroByIntent(subject: string, best: SearchClaim, ranked: SearchClaim[], q: string): SearchClaim {
   const strip = entityNameTokens(subject);
   const intent = tokenize(q).filter(t => !strip.has(t));
   if (intent.length === 0) {
     // A BARE definitional query ("what are antioxidants") tokenizes down to the topic word ALONE,
-    // because tokenize() drops stopwords — so every claim about the topic scores IDENTICALLY (all
-    // seven antioxidant claims scored 23), and rankClaims' tie-break — claim id, ascending — picks
-    // the hero ALPHABETICALLY. That is how the weight-loss warning WAL-CLM-HELLS-000016 beat the
-    // definition WAL-CLM-IMMORT-000268 on "what are antioxidants": H sorts before I. Returning `best`
-    // here was therefore returning an arbitrary claim, not the top one. A bare definitional query is
+    // because tokenize() drops stopwords — so every claim about the topic scores IDENTICALLY, and
+    // the tie-break (claim id, ascending) would then hero whichever claim sorts first
+    // alphabetically rather than the best one. A bare definitional query is
     // asking for the DEFINITION, so hero the topic's `basics` answer when it has one.
     return ranked.find(c => c.facet === 'basics'
       && (c.subject === subject || c.also_about.includes(subject))) ?? best;
@@ -667,13 +669,7 @@ export function familyCounts(): FamilyCount[] {
 
 // ─── Entity answer assembly (the CATCH-ALL: ALL of an entity's claims, categorized) ──
 
-/**
- * The catch-all entity result. Gathers EVERY claim about an entity — the enriched Q&A slice (best)
- * PLUS the raw sealed corpus record — and groups them into the five browse FAMILIES (The Science ·
- * What To Do · Wallach's Take · Cautions · The Story), enriched-first within each. So "cancer" is
- * rich (its 65 claims, categorized) rather than a lone hero + a link. The old topic page showed only
- * the ~enriched slice, which left a non-enriched condition empty.
- */
+/** facet → browse-family id: FACET_FAMILIES inverted once, at module load. */
 const FACET_FAMILY: ReadonlyMap<string, string> = (() => {
   const m = new Map<string, string>();
   for (const fam of FACET_FAMILIES) {
@@ -776,10 +772,13 @@ export function entityExists(slug: string): boolean {
 }
 
 /**
- * ALL of an entity's answers, grouped into the five families, enriched-Q&A first then raw record.
- * Conditions/essentials draw from the entity-page record (raw) + search (enriched); a topic (a search
- * entity with no page) has only its enriched claims. Dedup by id so an enriched claim never doubles as
- * its own raw row.
+ * ALL of an entity's answers — the catch-all. Gathers EVERY claim about an entity (the enriched
+ * Q&A slice PLUS the raw sealed corpus record) and groups them into the five browse families
+ * (The Science · What To Do · Wallach's Take · Cautions · The Story), enriched-first within each,
+ * so a heavily-covered condition renders all of its claims categorized rather than one hero and
+ * a link, and a thinly-covered one is not left empty. Conditions/essentials draw from the
+ * entity-page record (raw) + search (enriched); a topic (a search entity with no page) has only
+ * its enriched claims. Dedup by id so an enriched claim never doubles as its own raw row.
  */
 export function entityFamilies(subject: string): EntityFamily[] {
   const cond = getConditionPage(subject);

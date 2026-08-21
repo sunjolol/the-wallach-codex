@@ -1,5 +1,5 @@
 {
-  "//": "TypeScript config for the Wallach dashboard. Strictest reasonable config by §00 design — the type system is the first enforcement layer. Layer rules: views/ → state/ → core/. Path aliases make cross-layer imports syntactic (relative ../../ imports across layers are banned by lint). The build artifact (dist/main.js) is what the browser loads; this config governs what's allowed in the .ts source.",
+  "//": "TypeScript config for the Wallach dashboard. Strictest reasonable config by §00 design — the type system is the first enforcement layer. Layer rules run in the dependency direction views/ -> state/ -> core/: a lower layer may never import a higher one, and eslint-plugin-boundaries is what enforces that. Import SYNTAX is not constrained -- the @core/@state/@views path aliases below are declared but the source currently uses relative imports throughout. The build artifact (dist/main.js) is what the browser loads; this config governs what's allowed in the .ts source.",
   "compilerOptions": {
     "target": "ES2022",
     "module": "ES2022",

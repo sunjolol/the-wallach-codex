@@ -4,26 +4,26 @@
 <meta charset="UTF-8">
 <!--
 ═══════════════════════════════════════════════════════════════════════════════
-  dashboard.html — Wallach Health Agent  (v3.27 · Round 1·B skeleton swap)
+  dashboard.html — The Wallach Codex — the app shell
 ═══════════════════════════════════════════════════════════════════════════════
-  This is the slim shell of the v3 dashboard. It loads:
-    1. design-system.css   — the sealed visual token vocabulary
-    2. dashboard.css       — app-shell layout (grid, drawer slots, palette)
-    3. dist/main.js        — new ES-module entry point
+  A pure shell: it carries no data, no logic and no inline blocks. It links the
+  11 stylesheets below (load order matters) and ONE script, assets/js/dist/main.js.
 
-  Pure shell: NO inline data blocks remain. Data is inlined into dist/main.js
-  by esbuild (JSON imports) or read from assets/data/*.json. The legacy inline
-  versions-data block, the 5 creators-log markdown blocks, and the unloaded
-  creators-log-handler.js were removed 2026-07-05 (Phase D-review) — their
-  content lives in git + chronicle/creators-log + assets/data/creators-log.
+  That bundle is emitted as an IIFE, not an ES module, so the page runs straight
+  from file:// with no server. Every byte of data it needs is inlined at build
+  time by esbuild as JSON imports from assets/data/, so nothing is fetched while
+  the app is running.
 
-  Architecture reference: see dashboard/ARCHITECTURE.md.
+  Architecture reference: see dashboard/README.md.
 
   CSP notes:
-    - REMOVED: the Google Fonts stylesheet CDN (was a 'style-src' allow)
-    - REMOVED: the Google Fonts static-font CDN (was a 'font-src' allow)
-    - Reason: all fonts now in-housed under assets/fonts/ (SIL OFL 1.1)
-    - Result: 0 external resources (Tesseract.js loaded dynamically when scan starts)
+    - No external origin is allowed at all: script, style, font and image
+      sources all resolve to 'self'. There is no CDN and no analytics.
+    - All fonts are in-housed under assets/fonts/ (SIL OFL 1.1), which is what
+      makes a font-src of 'self' alone sufficient.
+    - The 'wasm-unsafe-eval', blob: and worker-src allowances exist for the
+      vendored on-device OCR engine (assets/vendor/tesseract/), which the
+      Scanner loads from disk when a scan starts.
 ═══════════════════════════════════════════════════════════════════════════════
 -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data: blob:; connect-src 'self' blob: data:; worker-src 'self' blob:; child-src 'self' blob:; object-src 'none'; base-uri 'self';">
@@ -40,7 +40,9 @@
 <link rel="stylesheet" href="./assets/styles/drawer-knowledge.css">
 <link rel="stylesheet" href="./assets/styles/drawer-orac.css">
 <link rel="stylesheet" href="./assets/styles/drawer-search.css">
-<!-- Futurist type direction: Unbounded (display) + Space Grotesk (body). SUPERSEDES design-system.css's serif tokens pending the next-session font survey. See type-futurist.css. -->
+<!-- Futurist type direction: Unbounded (display) + Space Grotesk (body). Loads AFTER
+     design-system.css, so it SUPERSEDES that file's serif font tokens app-wide — the live
+     faces are named in type-futurist.css, not in the sealed token layer. -->
 <link rel="stylesheet" href="./assets/styles/type-futurist.css">
 <!-- Appearance layer: theme (cream/dark) + primary accent. Loads AFTER design-system.css so it
      shadows the sealed tokens under [data-theme]/[data-accent] on <html> (never edits them).
@@ -53,16 +55,17 @@
 <!-- ═══ APP SHELL ═════════════════════════════════════════════════════════ -->
 <div class="app-shell">
 
-  <!-- SYSTEM RAIL ── new chrome from v3 mockups -->
+  <!-- SYSTEM RAIL — the app's primary navigation -->
   <aside class="app-rail">
     <div class="rail__brand">
-      <!-- "WSC·1AB7" was a decorative hex serial dressed as a real one; the whole
-           fabricated-chrome family died with demo D. The product's actual name replaces it. -->
+      <!-- The brand mark is the product's actual name. No decorative serial belongs here:
+           a hex code dressed up as a real identifier asserts an identity the app does not
+           have, and every such flourish was removed for exactly that reason. -->
       <div class="rail__brand-mark">Wallach Codex</div>
       <div class="rail__brand-name" id="railBrandName">Codex</div>
       <!-- DERIVED at boot from the sealed corpus, never typed: a count that is true today
-           and frozen forever is a lie with a delay ("EDEN v1 · sealed 8E594A01" all over
-           again). Was "v3.27 · CODEX" — the BRAIN's version, not the app's. -->
+           and frozen into the markup forever is a lie with a delay. No app version string
+           belongs here either — the build stamps none, so any number shown would be invented. -->
       <div class="rail__brand-sub" id="railBrandSub"></div>
     </div>
     <div class="rail__section">
@@ -91,47 +94,46 @@
 
   <!-- TOPBAR -->
   <header class="app-topbar">
-    <!-- THE NAMEPLATE (demo D/E). "WS·01" was fabricated chrome — a workspace serial for a
-         workspace-numbering scheme that does not exist — and the ds-cipher scrambled the
-         word COVERAGE beside a real <h1> saying the same thing. The deck replaces the
-         "// where you are, what you're missing" tagline with what the surface IS. -->
+    <!-- THE NAMEPLATE. The <h1> names the surface and the deck says what that surface IS.
+         Nothing decorative goes here: a workspace serial would number a scheme that does
+         not exist, and a scrambled-cipher flourish would only repeat the <h1> beside it. -->
     <div class="topbar__breadcrumb">
       <h1 class="np__name">Coverage</h1>
       <span class="np__rule" aria-hidden="true"></span>
       <span class="np__deck">Every essential Wallach named, measured against what you take.</span>
     </div>
     <!-- The topbar's flexible middle column. NOT stray markup: .app-topbar is a 3-column grid
-         (auto | minmax(0,1fr) | auto) and this span IS the spacer that pushes Ask Wallach to
-         the far right, exactly as the signed-off demo has it. -->
+         (auto | minmax(0,1fr) | auto) and this empty span IS the spacer that pushes Ask Wallach
+         to the far right. Delete it and the topbar layout collapses. -->
     <span></span>
     <button class="topbar__ask topbar__ask--green" data-topbar-ask type="button" aria-label="Ask Wallach — open Search">
       <span class="topbar__ask-dot" aria-hidden="true"></span>
       <span class="topbar__ask-label">Ask Wallach</span>
       <span class="topbar__ask-kbd">S</span>
     </button>
-    <!-- TELEMETRY DELETED (demo D). "SYNCED" is impossible in an app with no network and no
-         backend — it reflected no sync state and could never say anything else. "CODEX
-         v3.27" was the BRAIN's version, not the app's. Both were chrome asserting a fact. -->
+    <!-- No sync/status or version chrome here, deliberately: the app has no network and no
+         backend, so a "SYNCED" indicator would be asserting a fact it cannot know, and the
+         build stamps no version for a version readout to display. -->
   </header>
 
   <!-- WORKSPACE — hosts the workspace mount slots -->
   <main class="app-workspace">
 
-    <!-- NEW MOUNT SLOTS — empty until views/ modules migrate in Round 2-5 -->
+    <!-- WORKSPACE MOUNT SLOTS — main.ts renders one workspace at a time into these -->
     <div id="workspace-coverage-mount"></div>
     <div id="workspace-regimen-mount"></div>
     <div id="workspace-scanner-mount"></div>
 
   </main>
 
-  <!-- FOOTER DELETED (demo D — "all 4 items were fabricated"). For the record, because a
-       future session must not "restore" it: "READY · all systems" reported no system;
-       "BUILD v3 · native" — build.mjs stamps no version; "// RENDERED WITH WALLACH·SYS
-       v3.27" named a product that does not exist; and "EDEN v1 · sealed 8E594A01" was a
-       MOCKUP LITERAL matching NONE of the 8 real goldens — a fake seal hash on a project
-       whose entire thesis is that seals are real. -->
+  <!-- No footer status strip, deliberately, and it must not be reintroduced: every line one
+       would carry is something this app cannot truthfully report at runtime. A readiness
+       readout monitors no system; a build version does not exist because the build stamps
+       none; and a seal hash typed into markup is a FAKE seal on a project whose whole thesis
+       is that seals are real and verifiable. Real seal hashes live in the .golden.sha256
+       files and are checked by the invariant board — never displayed as decoration. -->
 
-  <!-- OVERLAY MOUNT SLOTS — drawers + palette mount here in Round 5 -->
+  <!-- OVERLAY MOUNT SLOTS — the drawers mount here, above the workspace -->
   <div id="drawer-search-mount"></div>
   <!-- Textured-highlighter filter for <mark> (design-system.css filter: url(#ds-filter-rough)); required once per page. -->
   <svg width="0" height="0" aria-hidden="true" style="position: absolute;"><defs><filter id="ds-filter-rough"><feTurbulence type="fractalNoise" baseFrequency=".08" numOctaves="4"/><feDisplacementMap in="SourceGraphic" scale="5" /></filter></defs></svg>
@@ -145,8 +147,9 @@
      never be a wall that shows up for a user who already answered. -->
 <div id="welcomeHost"></div>
 
-<!-- IIFE format (not type="module") so opening dashboard.html via file:// works.
-     The build script emits IIFE; hand-bundled fallback is IIFE too. -->
+<!-- IIFE format, NOT type="module": a file:// page has a null origin, so the browser refuses
+     to load an ES module from disk. tools/build.mjs emits IIFE for that reason — changing the
+     output format would break double-click-to-open, which is the app's whole delivery model. -->
 <script src="./assets/js/dist/main.js"></script>
 
 </body>

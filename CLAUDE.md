@@ -6,9 +6,10 @@ _The operating contract. Everything else loads on demand._
 
 A single-page, offline-first health-coverage dashboard for Dr. Joel Wallach's framework. Opens from
 `file://`. No server, no backend, no accounts, no telemetry, **no network at runtime**. The user owns
-100% of their data on their device; export/import is JSON. Distributed as static files plus a pinned
-portable browser, so it cannot be taken offline or broken by an update, and runs for years with no
-upkeep.
+100% of their data on their device; export/import is JSON. Distributed as static files, so it cannot
+be taken offline or broken by an update, and runs for years with no upkeep. Pinning a portable
+browser alongside it is decided but **not yet acquired** — see
+`chronicle/decisions/2026-08-03-pinned-engine-acquisition.md`.
 
 `eden/` holds the three sealed, hand-edited data pillars — Wallach Corpus, Youngevity Product DB,
 shared Catalog. `eden/tools/` derives them into `dashboard/assets/data/*.json`; esbuild inlines that
@@ -17,7 +18,7 @@ into one bundle. `dashboard/dashboard.html` is a pure shell. The rest of the lay
 ## §00.A — Wallach is the only source of amounts (100/100)
 
 **Every recommended amount, dose, range, daily target, deficiency sign, and health claim traces to a
-Wallach book.** No exceptions — including Luneth, who has retracted his own experience against it.
+Wallach book.** No exceptions — including the owner of this project, who has retracted his own experience against it.
 The 7 books are registered in `eden/corpus/books-meta.json`; **that registry is the authority**, never
 a hand-typed citation and never a list memorized from a doc. Books only — no lectures or transcripts.
 
@@ -49,7 +50,7 @@ prefixed `⚠ PRIME DIRECTIVE CONFLICT`. A wins by default; silently picking is 
 `PYTHONUTF8=1 python tools/invariants.py` — 94 gates. Green means **nothing drifted**. It does *not*
 mean anything is right. Only the 23 gates anchored outside our own files (book bytes, physical
 constants, git) can catch a value that is wrong but self-consistent. Report the split, never hand
-Luneth the total as evidence about Wallach.
+over the total as evidence about Wallach.
 
 A seal proves a pillar has not **changed** — never that it is **right**. The canon's mineral tiers
 were mockup-derived, sealed, and green for three weeks.
@@ -58,8 +59,8 @@ were mockup-derived, sealed, and green for three weeks.
 
 1. **`corpus_seal` and `catalog_seal` are USER-ONLY.** Permission from a past session never carries
    forward. Ask every time.
-2. **Never build a live element header without explicit permission.** Demo-only until Luneth approves.
-3. **A DOM probe is not a visual check.** Screenshot it, then stop for his eyes.
+2. **Never build a live element header without explicit permission.** Demo-only until the user approves.
+3. **A DOM probe is not a visual check.** Screenshot it, then stop for human eyes.
 4. **A gate can be green *because of* the defect** — and can go red *because of* the correction. On a
    post-fix red, ask what was making it pass before.
 5. **Searching book text or a sealed verbatim literally is blind.** Both are byte-exact OCR with hard
@@ -79,9 +80,9 @@ Do not preload them all.
 
 ## Genesis
 
-Luneth types `genesis`; run `PYTHONUTF8=1 python tools/genesis.py`, report, then **ask which task to
-resume** — never a flair-only boot. If a new invariant red appears, that is the only response. If he
-opens with substantive work instead, do a silent micro-check and proceed.
+When the user types `genesis`, run `PYTHONUTF8=1 python tools/genesis.py`, report, then **ask which
+task to resume** — never a flair-only boot. If a new invariant red appears, that is the only
+response. If the user opens with substantive work instead, do a silent micro-check and proceed.
 
-The live handoff is `chronicle/next-chunk.md` (a local, gitignored per-session file, not committed). If anything here conflicts with an older document,
-older loses.
+The live handoff is `chronicle/next-chunk.md` (a local, gitignored per-session file, not committed).
+If anything here conflicts with an older document, older loses.

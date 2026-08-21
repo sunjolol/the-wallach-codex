@@ -14,36 +14,28 @@
  *                    verbatim, page, book_id, topics, tier1_link?} ] }
  *
  * `answer` + `verbatim` are byte-faithful projections of the sealed corpus; the schema
- * only VALIDATES shape — it never invents content. (Superseded the thin-slice mercury-slice
- * + hand search-entities drafts once the Mercury format was signed off, 2026-07-09.)
+ * only VALIDATES shape — it never invents content.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import { z } from 'zod';
 
 /**
- * The closed facet taxonomy (search-corpus doctrine §4A / blueprint §4A). MUST mirror
- * eden/tools/search_index_derive.py SEARCH_FACETS. Ordered as the entity page renders its
- * sections top-to-bottom, so state/view read the display order straight off this list (no
- * second 13-element literal, which would trip views_state_no_inline_data — this lives in
- * core, which is exempt). Gated by search_index_wellformed (facet ∈ this set) — which compares
- * TS vs Python as SETS, so this ORDER is display-only and free to change.
+ * The closed facet taxonomy. MUST mirror eden/tools/search_index_derive.py SEARCH_FACETS.
+ * Ordered as the entity page renders its sections top-to-bottom, so state/view read the
+ * display order straight off this list (no second 13-element literal, which would trip
+ * views_state_no_inline_data — this lives in core, which is exempt). Gated by
+ * search_index_wellformed (facet ∈ this set) — which compares TS vs Python as SETS, so
+ * this ORDER is display-only and free to change.
  *
- * ORDER IS COLOUR-DRIVEN (Luneth 2026-07-23, "option B"). Sections are tinted by FACET_FAMILIES
- * below, so an order that interleaves families renders as visual chaos. Two separate scatters were
- * measured and fixed:
- *   TAIL — ran uses(action) stance(stance) protocol(action) history(story) big_question(stance):
- *     green/purple/green/purple. `protocol` now sits beside `uses`, `big_question` beside `stance`.
- *   HEAD — ran basics(science) warning(signs) discovery(story) etymology(story) physiology(science)
- *     mechanism(science) sources(science), splitting SCIENCE in two around a purple wedge. That was
- *     the visible defect on essentials pages (hydrogen + potassium rendered blue/purple/blue/blue/
- *     purple). `discovery` + `etymology` moved down beside the other story facets: 3 switches -> 1.
- * WARNING DELIBERATELY STAYS AT POSITION 2 — clustering it with the other families would score one
- * switch better across all 12 multi-facet essentials (copper, the only one with a Cautions section)
- * and was rejected: a health caution must not sit below four other sections to buy one colour run.
- * Measured, not asserted: essentials went 16 -> 12 total switches, 0 pages worse.
- * Keep same-family facets adjacent when editing this list. Conditions override it via
- * FACET_ORDER_BY_TYPE and are deliberately NOT subject to this (stance-first, reviewed and kept).
+ * ORDER IS COLOUR-DRIVEN. Sections are tinted by FACET_FAMILIES below, so an order that
+ * interleaves families renders as visual chaos: `protocol` sits beside `uses`, `big_question`
+ * beside `stance`, and `discovery` + `etymology` sit with the other story facets. Keep
+ * same-family facets adjacent when editing this list.
+ * WARNING DELIBERATELY STAYS AT POSITION 2. Clustering it with the other families would score
+ * one colour switch better, at the cost of pushing a health caution below four other sections;
+ * that trade was rejected and the rule stands however the corpus grows. Conditions override
+ * this order via FACET_ORDER_BY_TYPE and are deliberately NOT subject to it (stance-first).
  */
 export const SEARCH_FACETS = [
   'basics', 'warning', 'physiology', 'mechanism', 'sources',
@@ -54,7 +46,7 @@ export type SearchFacet = z.infer<typeof SearchFacetSchema>;
 
 /**
  * The five colour FAMILIES grouping the 13 facets — the Ask-Wallach "browse by kind" opening
- * screen + result colour-coding (design signed off 2026-07-23). STRUCTURE only (grouping + display
+ * screen + result colour-coding. STRUCTURE only (grouping + display
  * order): the family COLOUR lives in CSS (--fam-* / --ds-accent, applied by data-family / data-facet,
  * never a TS colour literal -- view_category_not_hardcoded), and the family LABEL + sublabel live in
  * the view-copy prose store (R4; ui ids search_fam_<id>_{name,sub}). The five facet lists PARTITION
@@ -71,7 +63,7 @@ export const FACET_FAMILIES: readonly { readonly id: string; readonly facets: re
 ];
 
 /*
- * FACET display labels moved to the view-copy content store (Phase H0, R4 single-source):
+ * FACET display labels live in the view-copy content store, their single home:
  * dashboard/assets/data/view-copy.json `facet_labels`, read via state/copy.ts::facetLabel.
  * SEARCH_FACETS (the closed set) + FACET_ORDER_BY_TYPE (display order) stay here -- they are
  * structure, not display copy.
@@ -80,7 +72,7 @@ export const FACET_FAMILIES: readonly { readonly id: string; readonly facets: re
 /**
  * Per-entity-type facet DISPLAY order. A type absent here uses SEARCH_FACETS (the default order).
  * Conditions lead with Wallach's thesis (stance) → how-it-works → what-to-do → warnings, because a
- * disease page's compelling content is the cause + cure, not a diagnostic caution (Luneth 2026-07-09).
+ * disease page's compelling content is the cause + cure, not a diagnostic caution.
  * Each ordering MUST list all 13 facets so none is ever dropped from an entity page.
  */
 export const FACET_ORDER_BY_TYPE: Record<string, readonly SearchFacet[]> = {
@@ -91,8 +83,8 @@ export const FACET_ORDER_BY_TYPE: Record<string, readonly SearchFacet[]> = {
 };
 
 /**
- * Per-entity-type facet priority for the entity-page LEDE — the one-line "at a glance" intro
- * (Phase H2 follow-up, 2026-07-13). The lede is the answer_short of the highest-priority facet
+ * Per-entity-type facet priority for the entity-page LEDE — the one-line "at a glance" intro.
+ * The lede is the answer_short of the highest-priority facet
  * a topic actually has, chosen by SEMANTIC priority (never array position), so EVERY topic shows
  * an intro even without a 'basics' claim. Default leads with the "what/why is it" facets and
  * SINKS biography + warning: a non-person's biography claim is about a PERSON's involvement, not

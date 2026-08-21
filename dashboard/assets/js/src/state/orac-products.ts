@@ -9,7 +9,7 @@
  *
  * The offline file:// app cannot fetch(), so the artifact is inlined at build via esbuild JSON import
  * and validated ONCE through the Zod boundary. A bad/absent artifact reads as null so the caller can
- * DEGRADE GRACEFULLY (§00.B #7): the ORAC tab still renders its hero, narrative, food tables, and live
+ * DEGRADE GRACEFULLY: the ORAC tab still renders its hero, narrative, food tables, and live
  * claims, and the supplement section is simply omitted rather than rendering `undefined`. In practice
  * the artifact is present + valid (byte-gated by derived_artifacts_fresh), so null is the defensive path.
  *

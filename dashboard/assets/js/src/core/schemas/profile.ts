@@ -2,13 +2,11 @@
  * core/schemas/profile.ts -- the user's display name, bounded and validated
  * ===========================================================================
  *
- * WHY THIS IS ITS OWN SCHEMA AND NOT `z.string()`. Luneth, 2026-07-15:
- * "Protect the name input from code/script/hack attempts, ANY sort of input
- * makes me extremely cautious because I know this is one of the main main ways
- * hacks happen." He is right, and this is the ONLY free-text field in the whole
- * app -- everything else a user can enter is a number or a pick from a list. One
- * field is a small attack surface, not a zero one, and it is the field whose
- * value gets painted into the topbar, the profile tab, and an avatar initial.
+ * WHY THIS IS ITS OWN SCHEMA AND NOT `z.string()`. Free text is the one thing a user
+ * can type that is not a number or a pick from a list, and this app has exactly two
+ * such fields: this display name and the regimen slot name. Two fields is a small
+ * attack surface, not a zero one -- and this is the one whose value gets painted into
+ * the topbar, the profile tab, and an avatar initial.
  *
  * THE HONEST THREAT MODEL, stated so nobody over- or under-builds against it:
  *
@@ -133,8 +131,10 @@ export const AvatarSchema = z
     message: 'That image is too large to store on this device.',
   });
 
-/** True for a CURRENTLY-shipped preset id. Used to degrade a retired id to the default
- *  avatar at the render boundary (state/profile.ts::avatarSrcOf) rather than a broken image. */
+/** True for a well-FORMED preset id (family + two digits). Used at the render boundary
+ *  (state/profile.ts::avatarSrcOf) so a retired id from an old family degrades to the default
+ *  initial rather than a broken image. NOTE: it does not check that the id is one that
+ *  actually ships -- an in-family id past the shipped range still resolves to a missing PNG. */
 export function isPresetAvatar(s: string): boolean {
   return AVATAR_PRESET.test(s);
 }
@@ -158,7 +158,7 @@ export const UserProfileSchema = z.object({
    *  accent; the strict preset|data-URI shape is enforced on WRITE (setAvatar + AvatarSchema),
    *  and a retired/unknown id degrades to the default initial at avatarSrcOf. */
   avatar: StoredAvatarSchema.optional(),
-  /** Light/dark. Absent = cream (the default). */
+  /** Theme id -- 'cream' or 'dark'. Absent = cream (the default). */
   theme: z.enum(THEMES).optional(),
   /** Primary colour id. Absent = ember (the default). */
   accent: z.enum(ACCENTS).optional(),

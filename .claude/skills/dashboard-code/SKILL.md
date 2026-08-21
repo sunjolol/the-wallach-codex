@@ -32,7 +32,7 @@ No literal array or object over 10 elements inside `views/` or `state/`.
 for *registration* in `eden/derived/MANIFEST.json`. A hand-authored artifact being registered does
 not mean it is correct.
 
-## The state chokepoint (section 31)
+## The state chokepoint
 Regimen state is ONE atomic localStorage document, `rgSlots_v1`, holding
 `{version, slots[1..4], activeSlot, trash[<=20]}`. Why one key: localStorage has no cross-key
 transaction, so a slot switch, delete, or restore must be all-or-nothing.
@@ -63,4 +63,4 @@ brace-aware so the private writer cannot be swallowed into a neighbour) · `slot
 `no-restricted-globals` on `localStorage`.
 
 A gate that proves guard code *exists* does not prove it *runs* -- `slot_invariants` is static, and
-the runtime behaviour is proven by `tools/render_probe_slots.js`.
+the runtime behaviour is proven by `tools/probes/render_probe_slots.js`.

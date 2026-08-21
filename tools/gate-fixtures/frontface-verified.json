@@ -6,7 +6,7 @@
   "iaiyh"
  ],
  "_books_verified_why": {
-  "dddl-3e-2011": "audited-pristine (purity-status); BLUEPRINT §1 names it and iaiyh as the only two.",
+  "dddl-3e-2011": "audited-pristine (purity-status); it and iaiyh are the only two books at this grade.",
   "iaiyh": "audited-pristine (purity-status)."
  },
  "claims_verified": [
@@ -817,7 +817,7 @@
  ],
  "grandfathered": {
   "frozen_at": "2026-08-02",
-  "reason": "Enriched BEFORE this gate existed, from books whose source is not yet fully verified. An explicit BACKLOG, not a waiver: membership asserts only 'this was already front-facing on 2026-08-02', never 'this is correct'. It SHRINKS as claims move into claims_verified. 1,925 at freeze -> 1,900 (2026-08-02, earlier session) -> 1716 after the 2026-08-02 corroboration + vision campaign moved 184 page-read claims out. -> 1505 after the 2026-08-02 wave-1 tier-A page-read campaign moved 211 more whole-verbatim-read claims into claims_verified. -> 1292 after the 2026-08-02 wave-2 tier-B page-read campaign moved 213 more. -> 1283 after wave 3 moved 9 more.",
+  "reason": "Enriched BEFORE this gate existed, from books whose source is not yet fully verified. An explicit BACKLOG, not a waiver: membership asserts only 'this was already front-facing on 2026-08-02', never 'this is correct'. It SHRINKS as claims move into claims_verified -- read the gate's live output for the current count, never a number written here or anywhere else. The per-campaign tally lives in `history`.",
   "counts": {
    "epigenetics": 328,
    "hells-kitchen": 82,

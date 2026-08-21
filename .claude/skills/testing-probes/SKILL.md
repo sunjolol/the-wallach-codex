@@ -6,7 +6,7 @@ description: Read before authoring a render probe or unit test, or when deciding
 # Testing
 
 ## Render probes
-Headless puppeteer scripts in `tools/render_probe*.js`, one per surface or critical path. Each
+Headless puppeteer scripts in `tools/probes/render_probe*.js`, one per surface or critical path. Each
 navigates the surface, asserts **visible state**, and exits 0 or non-zero. A view chunk is not
 shipped until its probe passes.
 
@@ -27,7 +27,7 @@ chokepoint -> render probe. Both apply often enough that "both" is the common an
 **A DOM probe is not a visual check.** It compares text against text. It is blind to a stroke routed
 through a label, to a label painted before an opaque shape that covers it, and to anything simply
 being ugly. A needle drawn through a word passed every check and shipped. Screenshot it, then stop
-for Luneth's eyes -- see the `visual-verification` skill.
+for human eyes -- see the `visual-verification` skill.
 
 **A static gate proves guard code EXISTS, not that it RUNS.** Pair one with a probe that exercises
 the behavior, and ship a negative control proving the detector actually fires. A check that has never

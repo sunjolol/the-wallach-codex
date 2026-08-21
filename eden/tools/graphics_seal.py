@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """graphics_seal.py — USER-ONLY. Seals the sacred graphics manifest.
 
-Mirrors corpus_seal posture: the agent may not run this on the user's
-behalf without explicit per-invocation approval. Recomputes each graphic's RAW-BYTE
-sha256, refuses if any drifts from the manifest, then writes the manifest's
-LF-content hash to graphics-manifest.golden.sha256 and logs the seal.
+Mirrors corpus_seal posture: no automated process may run this on the owner's
+behalf without explicit per-invocation human approval. Recomputes each graphic's
+RAW-BYTE sha256, refuses if any drifts from the manifest, then writes the manifest's
+LF-content hash to graphics-manifest.json.golden.sha256 and logs the seal.
 """
 import argparse
 import datetime
@@ -34,8 +34,9 @@ def lf_sha256(p: Path) -> str:
 
 def _guard_cli() -> None:
     """USER-ONLY arg guard: a bare invocation seals; ANY argument is rejected. Mirrors
-    corpus_seal._guard_cli (see the 2026-08-18 catalog_seal --help incident). argparse prints real
-    help on -h/--help and errors on unknown flags, so only a deliberate BARE run can seal.
+    corpus_seal._guard_cli: a seal tool that ignores argv turns `--help` into a silent full
+    seal. argparse prints real help on -h/--help and errors on unknown flags, so only a
+    deliberate BARE run can seal.
     """
     argparse.ArgumentParser(
         prog="graphics_seal.py",

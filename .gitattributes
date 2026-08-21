@@ -1,4 +1,4 @@
-# Sealed Wallach corpus — line-ending + binary anchors (Phase α, 2026-06-24)
+# Sealed Wallach corpus — line-ending + binary anchors.
 #
 # All corpus text/JSON hashes (books-meta content_sha256, the *.golden.sha256 seals)
 # are computed over LF-normalized UTF-8 content, so they are clone/platform-stable.
@@ -11,10 +11,10 @@ eden/corpus/**/*.golden.sha256 text eol=lf
 # Sealed graphics are binary; file_sha256 = raw bytes. Never EOL-convert them.
 eden/graphics/*.jpg binary
 
-# The other sealed canonical: design-system.css (+ its golden). Added 2026-07-15.
-# Its gate now LF-normalizes before hashing, so this pin is DEFENCE IN DEPTH, not the fix —
-# it keeps the working tree from diverging from the LF blob git already stores. The seal was
-# broken precisely because nothing pinned this path: the css sat CRLF on disk, the golden
-# recorded that CRLF digest, and git had never stored those bytes.
+# The other sealed canonical: design-system.css (+ its golden). Its gate LF-normalizes before
+# hashing, so this pin is DEFENCE IN DEPTH, not the fix — it keeps the working tree from
+# diverging from the LF blob git already stores. The seal once broke precisely because nothing
+# pinned this path: the css sat CRLF on disk and the golden recorded that CRLF digest, so the
+# bytes git stored were never the bytes being hashed.
 dashboard/assets/styles/*.css text eol=lf
 dashboard/assets/styles/*.golden.sha256 text eol=lf

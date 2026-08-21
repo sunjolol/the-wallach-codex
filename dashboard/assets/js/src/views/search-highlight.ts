@@ -6,9 +6,9 @@
  * of the active query inside the elements the caller passes — scoped by
  * views/knowledge.ts::applyKnowledgeSearch to what's ON SCREEN (the visible rows
  * + any open deep-view), never the hidden rows. Pure DOM text-wrap: no re-render,
- * no SVG filter (the textured .ds-mark is for a few static author marks; this
- * paints live across many matches, so it stays a cheap flat background — Luneth
- * ruled lightweight, SESSION 35). Cleared + reapplied in place each keystroke.
+ * no SVG filter (the textured .ds-mark is for a few static author marks; this paints
+ * live across many matches on every keystroke, so it stays a cheap flat background).
+ * Cleared + reapplied in place each keystroke.
  *
  * Layer `views`; imports nothing of ours (generic DOM utilities).
  * ═══════════════════════════════════════════════════════════════════════════

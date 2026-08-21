@@ -74,11 +74,6 @@ export interface FoodCard {
 }
 
 /**
- * Pick a subject's most on-point one-line answer by facet priority (e.g. a REMOVE food leads
- * with its warning/mechanism; an EAT food with its protocol), falling back to its first claim.
- * The text is a sealed claim's answer_short -- faithful, never hand-authored.
- */
-/**
  * The card shows a claim's answer WITHOUT its question, so a leading "Yes -- "/"No -- "
  * (which answers the hidden question) reads oddly standing alone -- drop it.
  */
@@ -105,6 +100,11 @@ function teaser(s: string): string {
   return `${slice.slice(0, sp > 0 ? sp : CAP)}…`;
 }
 
+/**
+ * Pick a subject's most on-point one-line answer by facet priority (e.g. a REMOVE food leads
+ * with its warning/mechanism; an EAT food with its protocol), falling back to its first claim.
+ * The text is a sealed claim's answer_short -- faithful, never hand-authored.
+ */
 function pickWhy(slug: string, order: readonly string[]): string {
   const claims = claimsForSubject(slug);
   for (const facet of order) {

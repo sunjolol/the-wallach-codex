@@ -1,28 +1,29 @@
 /* ═══════════════════════════════════════════════════════════════════════════
  * drawer-knowledge.css — Knowledge drawer (views/knowledge.ts · kd-* vocabulary)
  * ───────────────────────────────────────────────────────────────────────────
- * Knowledge-SPECIFIC styling only. The shared drawer chrome (head · tabs ·
- * search · body · footer · close · action · eyebrow · empty) lives in
- * drawer-shared.css, which targets kd-* and MUST load before this
- * file. Here: the panel starting width (950px) + the four Knowledge tabs
- * (Corpus / Essentials / Products / Doctrine).
+ * Knowledge-SPECIFIC styling only. The shared drawer chrome (panel · search ·
+ * body · empty) lives in drawer-shared.css, which targets kd-* and MUST load
+ * before this file. Here: the panel starting width (950px) + the seven
+ * Knowledge routes (Home / Foods / ORAC / Essentials / Conditions / Explore /
+ * Products). Six of the seven appear in the tab bar; Essentials is reachable but
+ * deliberately unlisted, because Coverage is where a user already starts.
  *
- * Ported from the drawer-knowledge-v3 mockup (retired 2026-08-13). That mockup
- * uses generic .section-head / .book-row / .featured-citation / .essential-tile
- * / .product-row / .doctrine-card names that COLLIDE with the old dashboard styles (now removed)
- * (.essential-tile) + workspace-coverage.css (.essentials-grid); the live view
- * self-namespaces them as kd-* so no global can ever
- * leak in. Every selector is rooted at #drawer-knowledge-mount so nothing here
- * can leak out either (Sever-Safety). Tokens come from design-system.css (sealed).
- * Only the states the view actually renders are styled (no phantom variants).
+ * Class names are self-namespaced with a kd- prefix because the generic forms
+ * (.section-head, .book-row, .essential-tile, .product-row, .essentials-grid)
+ * collide with names already in use elsewhere — .essentials-grid is live in
+ * workspace-coverage.css. The prefix means no global can leak in. Almost every
+ * selector is rooted at #drawer-knowledge-mount so nothing here can leak out
+ * either; the deliberate exceptions are .gloss / .gloss-tip (the tooltip is
+ * appended to <body>, outside the drawer's clipping context) and .kd-foods-term
+ * — each is explained at its own rule. Tokens come from design-system.css (sealed).
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ─── PANEL WIDTH (the chrome base lives in drawer-shared.css) ────────────── */
 #drawer-knowledge-mount.kd-open { width: 950px; }
 
-/* ─── HEADER — compact single row (mark · pill-group tabs · close), a pristine
-       re-creation of the signed-off demo's .knh. Knowledge-specific: it REPLACES
-       the shared .kd-head/.kd-tabs block+grid chrome for this drawer
+/* ─── HEADER — compact single row (mark · pill-group tabs · close). This is the
+       ONLY drawer header the view renders; it supersedes drawer-shared.css's
+       .kd-head / .kd-tabs block+grid chrome, which nothing renders any more.
        ────────────────────────────────── */
 #drawer-knowledge-mount .kd-knh { display: flex; align-items: center; gap: var(--ds-space-5); padding: var(--ds-space-4) var(--ds-space-7); border-bottom: 1px solid var(--ds-rule-soft); position: relative; flex: 0 0 auto; }
 #drawer-knowledge-mount .kd-knh::after { content: ''; position: absolute; left: var(--ds-space-7); right: var(--ds-space-7); bottom: -1px; height: 1px; background: linear-gradient(to right, transparent, var(--ds-accent) 8%, transparent 22%, transparent 100%); }
@@ -35,7 +36,9 @@
 #drawer-knowledge-mount .kd-knh__tab.active { background: var(--ds-paper); color: var(--ds-accent-deep); box-shadow: 0 2px 6px rgba(26, 22, 18, .18), 0 0 0 1px var(--ds-rule-soft); }
 #drawer-knowledge-mount .kd-knh__end { flex: 0 0 auto; display: flex; justify-content: flex-end; }
 
-/* ─── SECTION HEADERS — used across all four content tabs ─────────────────── */
+/* ─── SECTION HEADERS — the Conditions and Products list headings; the search
+       filter treats them as headings alongside .sh-subhead and
+       .kd-explore-group__head ──────────────────────────────────────────────── */
 #drawer-knowledge-mount .kd-section-head {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
@@ -54,7 +57,8 @@
 /* ─── SEARCH FILTER · rows/heads the live query hides (views/knowledge.ts) ─── */
 #drawer-knowledge-mount .kd-hidden { display: none !important; }
 
-/* ─── CORPUS · featured citation ─────────────────────────────────────────── */
+/* ─── Featured citation — UNREACHABLE: no view renders .kd-featured-citation; its
+       only reference is a defensive querySelectorAll in views/knowledge.ts ─────── */
 #drawer-knowledge-mount .kd-featured-citation {
   background: linear-gradient(135deg, var(--ds-ink) 0%, var(--ds-ink-medium) 100%);
   border-radius: var(--ds-radius-md);
@@ -122,7 +126,7 @@
 }
 #drawer-knowledge-mount .kd-featured-citation__attr strong { color: var(--ds-accent-bright); font-weight: 600; }
 
-/* ─── CORPUS · book rows ─────────────────────────────────────────────────── */
+/* ─── Book rows — UNREACHABLE: nothing renders .kd-book-row (no tab lists books) ── */
 #drawer-knowledge-mount .kd-book-row {
   background: var(--ds-paper-light);
   border: 1px solid var(--ds-rule-soft);
@@ -241,7 +245,8 @@
   margin-top: auto;
 }
 
-/* ─── Overflow note ("+ N more") shown by Essentials / Products tabs ──────── */
+/* ─── Overflow note ("+ N more") — UNREACHABLE: nothing renders .kd-more. The
+       Products tab lists every product behind a .kd-section-head count instead ─── */
 #drawer-knowledge-mount .kd-more {
   font-family: var(--ds-font-mono);
   font-size: var(--ds-text-micro);
@@ -357,7 +362,7 @@
 }
 #drawer-knowledge-mount .kd-product-row__foot b { color: var(--ds-ink-medium); font-weight: 700; }
 
-/* ─── DOCTRINE · cards ───────────────────────────────────────────────────── */
+/* ─── Doctrine cards — UNREACHABLE: nothing renders .kd-doctrine-card ────────── */
 #drawer-knowledge-mount .kd-doctrine-card {
   background: var(--ds-paper-light);
   border: 1px solid var(--ds-rule-soft);
@@ -546,9 +551,11 @@
   margin-top: var(--ds-space-2);
 }
 #drawer-knowledge-mount .kd-essential-deep__source strong { color: var(--ds-accent-deep); font-weight: 600; }
-/* ─── "Why this number?" — collapsed target provenance under the meter (Phase G-1).
-       Wallach's stated range (upper-end framing), Vitamin A's two-part breakdown,
-       earlier-book figures, and the "his guidance evolved" gloss. ─── */
+/* ─── "Why this number?" — UNREACHABLE: superseded by .kd-ep-why / .kd-ep-tip
+       further down, which is what the entity page renders. Collapsed target
+       provenance under the meter: Wallach's stated range (upper-end framing),
+       Vitamin A's two-part breakdown, earlier-book figures, and the "his guidance
+       evolved" gloss. ─── */
 #drawer-knowledge-mount .kd-why { margin: var(--ds-space-2) 0 var(--ds-space-3); }
 #drawer-knowledge-mount .kd-why__summary {
   font-family: var(--ds-font-mono);
@@ -567,7 +574,7 @@
 #drawer-knowledge-mount .kd-why__body {
   display: flex; flex-direction: column; gap: var(--ds-space-2);
   font-family: var(--ds-font-sans);
-  font-size: 0.9375rem;   /* Luneth 2026-07-09: 15px-equiv upper tier (rem = scales with root) */
+  font-size: 0.9375rem;   /* 15px-equiv upper tier (rem = scales with root) */
   line-height: 1.5;
   color: var(--ds-ink-medium);
   background: var(--ds-accent-wash);
@@ -600,8 +607,7 @@
 #drawer-knowledge-mount .kd-why__gloss { color: var(--ds-ink-soft); font-style: italic; font-size: 0.8125rem; line-height: 1.45; }
 /* ─── Essentials deep-dive BEST SOURCES — the cost-per-nutrient recommender.
        Ranked vault products that deliver the essential; each row clicks through to
-       the product detail panel (data-kd-product). Replaced the old flat "FOUND IN
-       YGY VAULT" chip list (its chip styles are gone; see git history). ─── */
+       the product detail panel (data-kd-product). ─── */
 #drawer-knowledge-mount .kd-sources { display: flex; flex-direction: column; gap: var(--ds-space-1); margin-top: var(--ds-space-2); }
 #drawer-knowledge-mount .kd-source {
   display: flex; align-items: center; gap: var(--ds-space-2);
@@ -636,8 +642,8 @@
 /* Overflow BEST SOURCES rows — hidden until the expander toggles .is-expanded on the list. */
 #drawer-knowledge-mount .kd-source--extra { display: none; }
 #drawer-knowledge-mount .kd-sources.is-expanded .kd-source--extra { display: flex; }
-/* "Show N more sources" — a real, prominent button (was a faint static line): bold tech
-   type, a left accent bar, and a chevron that flips 180° when the overflow is open. */
+/* "Show N more sources" — a real, prominent button: bold tech type, a left accent
+   bar, and a chevron that flips 180° when the overflow is open. */
 #drawer-knowledge-mount .kd-source-more {
   display: flex; align-items: center; gap: var(--ds-space-2);
   width: 100%;
@@ -736,9 +742,9 @@
 
 /* ═══════════════════════════════════════════════════════════════════════════
  * CORPUS DEEP-DIVE — the sealed Wallach claim graph (eden/corpus), surfaced
- * inside the Essentials deep-dive (Phase ε). claim_text = neutral paraphrase,
- * verbatim = the exact book words (the §00.A source made visible), cite = the
- * primary. Rooted at #drawer-knowledge-mount (Sever-Safety); ds-* tokens only.
+ * inside the Essentials deep-dive. claim_text = neutral paraphrase,
+ * verbatim = the exact book words (the Wallach source made visible), cite = the
+ * primary. Rooted at #drawer-knowledge-mount so it cannot leak out; ds-* tokens only.
  * ═══════════════════════════════════════════════════════════════════════════ */
 #drawer-knowledge-mount .kd-corpus {
   margin-top: var(--ds-space-4);
@@ -840,7 +846,7 @@
   font-weight: 500;
   margin: 0;
 }
-/* Dose card (audit 2026-07-08): a bold, eye-scannable VALUE pill preceded by a label
+/* Dose card: a bold, eye-scannable VALUE pill preceded by a label
    naming what the number is ("True Supplement Need" for a Fig. 8-1 row). */
 #drawer-knowledge-mount .kd-claim__dose {
   display: flex;
@@ -942,7 +948,7 @@
   margin: var(--ds-space-2) 0 0;
 }
 
-/* ─── CORPUS · book-row states (Phase ε — data-driven from the sealed corpus) ──
+/* ─── Book-row states — UNREACHABLE with the book rows above; kept with them.
  * queued  = in-housed book, claims not yet extracted (muted count glyph).
  * planned = roadmap book, not yet in-housed (dashed + grayed, non-interactive). */
 #drawer-knowledge-mount .kd-book-row__count--queued { color: var(--ds-ink-faint); }
@@ -965,8 +971,9 @@
 #drawer-knowledge-mount .kd-book-row__count--soon { color: var(--ds-ink-faint); }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * CONDITIONS TAB (Phase ε.2) — list over indices/conditions.json + click-to-
- * expand deep view. The deep view REUSES .kd-essential-deep + the .kd-corpus__*
+ * CONDITIONS TAB — a list over the sealed corpus conditions (state/corpus.ts ->
+ * assets/data/corpus-embed.json, derived from eden/corpus/indices/conditions.json)
+ * + a click-to-expand deep view. The deep view REUSES .kd-essential-deep + the .kd-corpus__*
  * / .kd-claim vocabulary (claims grouped by role: causes/protocols/doses/...).
  * ═══════════════════════════════════════════════════════════════════════════ */
 #drawer-knowledge-mount .kd-conditions-grid {
@@ -1090,9 +1097,10 @@
   color: var(--ds-tech);
 }
 
-/* Intake-vs-Wallach-target meter -- compact deep-dive header readout (top-right).
-   Present only when Wallach states a numeric target; otherwise the status pill
-   alone stands (covered/not-covered), never an invented ratio. */
+/* Intake-vs-Wallach-target meter -- UNREACHABLE: the live coverage readout is
+   .kd-ep-bar / .kd-ep-sub on the entity page. Present only when Wallach states a
+   numeric target; otherwise the status pill alone stands (covered/not-covered),
+   never an invented ratio. */
 #drawer-knowledge-mount .kd-essential-deep__readout {
   display: flex;
   flex-direction: column;
@@ -1140,9 +1148,10 @@
   color: var(--ds-tech);
 }
 
-/* Book browser -- Corpus tab, a clicked book expands to all its tier-1 claims.
-   The home for tier-1 claims with no essential/condition (composition/dose
-   tables). Reuses the .kd-corpus claim styling; only the header differs. */
+/* Book browser -- NOT CURRENTLY REACHABLE: no tab renders a book row. Kept for a
+   future corpus-browsing surface, where a clicked book expands to all its tier-1
+   claims -- the home for tier-1 claims with no essential/condition (composition/
+   dose tables). Reuses the .kd-corpus claim styling; only the header differs. */
 #drawer-knowledge-mount .kd-book-deep { position: relative; padding-top: var(--ds-space-2); }
 #drawer-knowledge-mount .kd-book-deep__close {
   position: absolute; top: 0; right: 0;
@@ -1165,7 +1174,7 @@
   font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
   letter-spacing: var(--ds-track-wide, 0.04em); color: var(--ds-ink-soft); white-space: nowrap;
 }
-/* Book rows read as actionable now that a click opens them. */
+/* Book rows read as actionable when a click opens them. */
 #drawer-knowledge-mount .kd-book-row[data-kd-book] { cursor: pointer; }
 #drawer-knowledge-mount .kd-book-row[data-kd-book]:hover { background: var(--ds-paper-darker); }
 
@@ -1189,7 +1198,7 @@
   content: none;
 }
 
-/* ─── Glossary term tooltips (SESSION 39) ────────────────────────────────────
+/* ─── Glossary term tooltips — INTENTIONALLY UNSCOPED (no #id) ───────────────
    Dotted-underline glossary terms (emitted by the shared glossify(), used in BOTH the
    Knowledge + Search drawers); the
    floating .gloss-tip is appended to <body> (so it escapes drawer clipping). */
@@ -1221,12 +1230,12 @@
 }
 .gloss-tip[hidden] { display: none; }
 
-/* ─── PRODUCTS · detail panel (kd-ep entity page, colour-coded by DELIVERY FORM ──
-     Rebuilt 2026-07-22 from the demo's product-detail LAYOUT: a high-impact Unbounded "at a
-     glance" hero + a real-label Supplement Facts table, restyled to the current type system.
+/* ─── PRODUCTS · detail panel (kd-ep entity page, colour-coded by DELIVERY FORM) ──
+     A high-impact Unbounded "at a glance" hero + a real-label Supplement Facts table.
      Reuses the kd-ep-hero / seclabel / lede / pill vocabulary; the form tint (--form, set inline
-     per product) rides in via kd-ep--prod (near the kd-ep--cond rules). Clicking a product row
-     or an essentials "FOUND IN YGY VAULT" chip opens it. */
+     per product) rides in via kd-ep--prod, in the same section as the kd-ep--cond category
+     tinting. Clicking a product row, or a best-sources row on an essential's page
+     (.kd-ep-src / .kd-source), opens it. */
 
 /* At a glance — the impact hero: a big Unbounded essentials-supplied numeral in --form (echoing
    the card's ghost number), with the wholesale / per-serving / cost metrics beside it. */
@@ -1254,7 +1263,7 @@
 #drawer-knowledge-mount .kd-pf-glance__cap b { font-family: var(--ds-font-mono); color: var(--ds-ink); font-weight: 700; }
 #drawer-knowledge-mount .kd-pf-glance__metrics {
   /* content-sized columns spread across the metrics area (justify-content) so a long "per serving"
-     value borrows the blank space a short wholesale price leaves — no wrapping (Luneth 2026-07-22). */
+     value borrows the blank space a short wholesale price leaves — no wrapping. */
   display: grid; grid-template-columns: repeat(3, auto); justify-content: space-between; gap: var(--ds-space-4) var(--ds-space-5); align-content: center;
 }
 #drawer-knowledge-mount .kd-pf-metric { min-width: 0; }
@@ -1279,7 +1288,7 @@
 
 /* Supplement facts — one card per label component: head (title + serving meta), macro chips, the
    3-col nutrient table (Nutrient / Amount / %DV) with category-coloured rows, collapsible blends,
-   and the Other-ingredients footer. Ported from the demo, restyled to the current type system. */
+   and the Other-ingredients footer, restyled to the current type system. */
 #drawer-knowledge-mount .kd-pf-comp {
   border: 1px solid var(--ds-rule); background: var(--ds-paper-deep); border-radius: var(--ds-radius-md);
   padding: var(--ds-space-4) var(--ds-space-5); margin-bottom: var(--ds-space-3);
@@ -1347,12 +1356,11 @@
 #drawer-knowledge-mount .kd-pf-use { border-left: 3px solid var(--form, var(--fam-action)); background: var(--ds-paper-deep); border-radius: var(--ds-radius-sm); padding: var(--ds-space-3) var(--ds-space-4); font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink-medium); margin-bottom: 6px; line-height: 1.5; }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * ENTITY PAGE (kd-ep-* · Phase H2) — the unified essential deep-view.
- * Re-implements the signed-off D1 design in the drawer's own kd-* world (the
- * earlier demo leaned on drawer-search's sr-* classes; here it is self-contained
- * + purely additive). Reuses the perfected kd-meter / kd-source / kd-why /
- * kd-claim__dose|legend / kd-omega rules above. The H6 from-empty rebuild folds
- * every kd-* family together later. Colour families are the brighter D1 hues;
+ * ENTITY PAGE (kd-ep-*) — the unified essential deep-view.
+ * Self-contained in the drawer's own kd-* world (an earlier pass leaned on
+ * drawer-search's sr-* classes; this one is purely additive). Reuses the
+ * kd-source / kd-claim__dose|legend / kd-omega rules above. Colour families are
+ * the brighter accent hues;
  * violet is the only new hue — sealed design-system.css is untouched.
  * ═══════════════════════════════════════════════════════════════════════════ */
 #drawer-knowledge-mount {
@@ -1370,10 +1378,10 @@
   color: var(--ds-ink-soft); font-family: var(--ds-font-display-interface); font-size: 0.7rem;
   letter-spacing: var(--ds-track-wide); text-transform: uppercase; padding: 3px 9px;
   border-radius: var(--ds-radius-xs); cursor: pointer; transition: all var(--ds-motion-fast) var(--ds-ease-out);
-  white-space: nowrap; flex: 0 0 auto;   /* the back affordance is ALWAYS one line — the title shrinks, never this (Luneth 2026-07-22) */
+  white-space: nowrap; flex: 0 0 auto;   /* the back affordance is ALWAYS one line — the title shrinks, never this */
 }
 #drawer-knowledge-mount .kd-ep-back:hover { border-color: var(--cat, var(--form, var(--ds-accent))); color: var(--cat, var(--form, var(--ds-accent-deep))); }
-/* Back sits top-right of the hero line (closing = top-right), no extra vertical row (Luneth 2026-07-12). */
+/* Back sits top-right of the hero line (closing = top-right), no extra vertical row. */
 #drawer-knowledge-mount .kd-ep-hero .kd-ep-back { margin-left: auto; align-self: flex-start; }
 #drawer-knowledge-mount .kt-hero__top { display: flex; align-items: center; justify-content: space-between; gap: var(--ds-space-3); }
 
@@ -1434,7 +1442,7 @@
 #drawer-knowledge-mount .kd-ep-more > summary:hover { border-color: var(--ds-accent); color: var(--ds-accent-deep); }
 #drawer-knowledge-mount .kd-ep-more__body { margin-top: var(--ds-space-3); }
 /* The Worth-knowing per-category "See N more answers" reveal is roomier than the compact
-   pill/source reveals -- the detail screen has the space (Luneth 2026-08-19). */
+   pill/source reveals -- the detail screen has the space. */
 #drawer-knowledge-mount .kd-ep-more--answers > summary { font-size: var(--ds-text-sm); padding: .5rem 1rem; border-style: solid; }
 
 /* facet groups (Worth knowing) — one --kd-ep-fam var drives the accent, by data-facet */
@@ -1451,9 +1459,11 @@
 #drawer-knowledge-mount .kd-ep-facet[data-facet="warning"] { --kd-ep-fam: var(--fam-signs); }
 #drawer-knowledge-mount .kd-ep-facet[data-facet="protocol"] { --kd-ep-fam: var(--fam-action); }
 
-/* ══ Explore topic page (kt-*) + chip grid — Phase H2 (signed-off topic-page mockup, real data) ══
-   The 8 facet colours below EXTEND the 5 originals to all 13, colour-coding both this page and the
-   essential/condition "Worth knowing" section consistently (Wallach's-positions=orange, science=teal,
+/* ══ Explore topic page (kt-*) + chip grid ══════════════════════════════════════════════════
+   The rules below complete the facet colour set at 13. Only `basics` and `uses` are new; the six
+   that repeat physiology / mechanism / etymology / stance / history / biography restate the block
+   above and are redundant with it. The colour-coding is shared with the essential/condition
+   "Worth knowing" section so it reads the same on both (Wallach's-positions=orange, science=teal,
    what-to-do=green, story=violet). */
 #drawer-knowledge-mount .kd-ep-facet[data-facet="basics"] { --kd-ep-fam: var(--fam-science); }
 #drawer-knowledge-mount .kd-ep-facet[data-facet="physiology"] { --kd-ep-fam: var(--fam-science); }
@@ -1465,7 +1475,6 @@
 #drawer-knowledge-mount .kd-ep-facet[data-facet="biography"] { --kd-ep-fam: var(--fam-story); }
 
 #drawer-knowledge-mount .kt-page { padding: 2px 2px 40px; }
-/* (.kt-back retired — the topic back button now uses .kd-ep-back, top-right of the hero) */
 #drawer-knowledge-mount .kt-hero { padding: 6px 0 18px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: 6px; }
 #drawer-knowledge-mount .kt-kicker { display: inline-flex; align-items: center; gap: 8px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--fam-story); font-weight: 600; }
 #drawer-knowledge-mount .kt-kicker__dot { width: 6px; height: 6px; border-radius: 50%; background: var(--fam-story); }
@@ -1485,9 +1494,9 @@
 #drawer-knowledge-mount .kt-meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 14px; }
 /* ═══════════════════════════ ABSORPTION tab · the "second prong" landing (diet/absorption) ═══════════════════════════ */
 #drawer-knowledge-mount .kd-foods { --fam-science: #2f9dba; --fam-action: #5aa82c; --fam-story: #8a52d6; padding-bottom: 40px; }
-/* Foods section headings (02/03/04) trimmed from the design-system --ds-text-2xl (1.85rem) to 1.65rem (Luneth 2026-07-24). Scoped HERE, not in the SEALED design-system.css: .ds-h-section is a token-based primitive used only on this tab, so a surface override keeps the seal + type scale intact. */
+/* Foods section headings (02/03/04) trimmed from the design-system --ds-text-2xl (1.85rem) to 1.65rem. Scoped HERE, not in the SEALED design-system.css: .ds-h-section is a token-based primitive used only on this tab, so a surface override keeps the seal + type scale intact. */
 #drawer-knowledge-mount .kd-foods .ds-h-section { font-size: 1.65rem; }
-/* Section 04 pull-stat: a little more right padding so the last words ("acid too") don't wrap against the edge (Luneth 2026-07-24). Scoped here, not in the SEALED design-system.css .ds-pull-stat. */
+/* Section 04 pull-stat: a little more right padding so the last words ("acid too") don't wrap against the edge. Scoped here, not in the SEALED design-system.css .ds-pull-stat. */
 #drawer-knowledge-mount .kd-foods-enz .ds-pull-stat { padding-right: 2rem; }
 #drawer-knowledge-mount .kd-foods-hero { position: relative; padding: 16px 0 20px; border-bottom: 1px solid var(--ds-rule-soft); margin-bottom: var(--ds-space-5); }
 /* The corner lockup below the rule: the tech-blue tag then the dark scan-id, right-aligned. */
@@ -1497,7 +1506,7 @@
 #drawer-knowledge-mount .kd-foods-brand { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-tech); font-weight: 600; line-height: 1.5; }
 /* FIG-01 scan-id -- matches the FIG-02 section kicker's number style exactly (mono / micro /
    track-wider / uppercase / --ds-ink / weight 600) so the two FIG labels read as one system
-   (Luneth 2026-07-13, superseding the demo-SCAN-041 tracking). Dropped 3px below the callsign. */
+   so the two FIG labels read as one system. Dropped 3px below the callsign. */
 #drawer-knowledge-mount .kd-foods-scan { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink); font-weight: 600; line-height: 1.5; margin-top: 3px; }
 #drawer-knowledge-mount .kd-foods-eyebrow { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: var(--ds-space-5); font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); font-weight: 500; letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-soft); }
 #drawer-knowledge-mount .kd-foods-eyebrow__l { display: flex; align-items: center; gap: var(--ds-space-3); white-space: nowrap; }
@@ -1505,7 +1514,7 @@
 #drawer-knowledge-mount .kd-foods-eyebrow__r { color: var(--ds-accent); font-family: var(--ds-font-sans); font-weight: 600; letter-spacing: var(--ds-track-wider); white-space: nowrap; }
 #drawer-knowledge-mount .kd-foods-eyebrow__rule { height: 1px; background: linear-gradient(to right, var(--ds-rule) 0%, var(--ds-rule) 60%, var(--ds-accent) 65%, var(--ds-accent) 72%, var(--ds-rule) 76%, var(--ds-rule) 100%); }
 #drawer-knowledge-mount .kd-foods-hero__h { font-family: var(--ds-font-display); font-weight: 800; font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.06; letter-spacing: -0.015em; margin: 0; color: var(--ds-ink); }
-/* Demo-style numbered section header: big orange display number + optional kicker + heading (no L-brackets). */
+/* Numbered section header: big orange display number + optional kicker + heading (no L-brackets). */
 #drawer-knowledge-mount .kd-foods-sec { display: grid; grid-template-columns: auto 1fr; gap: var(--ds-space-5); align-items: end; margin: 0 0 var(--ds-space-4); }
 #drawer-knowledge-mount .kd-foods-sec--hero { align-items: start; margin-top: -14px; }
 #drawer-knowledge-mount .kd-foods-sec--hero .kd-foods-sec__num { margin-top: -0.22em; line-height: 0.82; }
@@ -1538,7 +1547,7 @@
 #drawer-knowledge-mount .kd-foods-villi__gridline { stroke: var(--ds-tech); stroke-width: 0.5; opacity: 0.16; }
 #drawer-knowledge-mount .kd-foods-villi__v { stroke-width: 0.9; stroke-linejoin: round; }
 /* The "villi" feature term reuses the shared .gloss tooltip wiring (class="gloss" ->
-   document-delegated hover-box) but Luneth wants it louder than a dotted gloss: bold,
+   document-delegated hover-box) but is deliberately louder than a dotted gloss: bold,
    bright-orange, SOLID underline. Deliberately UNSCOPED (no #id) so the global .gloss:hover
    (specificity 0,2,0) still wins the hover colour-deepen over this base rule. */
 .kd-foods-term { font-weight: 700; color: var(--ds-accent); border-bottom: 1.5px solid var(--ds-accent); }
@@ -1553,7 +1562,7 @@
 #drawer-knowledge-mount .kd-foods-villi__cap { font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); line-height: 1.45; }
 #drawer-knowledge-mount .kd-foods-villi__note { font-family: var(--ds-font-serif); font-style: italic; font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.6; margin-top: var(--ds-space-4); padding-left: var(--ds-space-4); border-left: 2px solid var(--ds-accent); }
 #drawer-knowledge-mount .kd-foods-villi__note cite { display: block; font-style: normal; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-top: 6px; }
-/* Featured pull-quote under the villi scan (design-system .ds-pull-quote). The page rides top-right (like the demo's PQ accent) in the tech-blue mono; the citation footer inherits from .ds-pull-quote. */
+/* Featured pull-quote under the villi scan (design-system .ds-pull-quote). The page number rides top-right in the tech-blue mono; the citation footer inherits from .ds-pull-quote. */
 #drawer-knowledge-mount .kd-foods-pq { margin: var(--ds-space-7) 0 var(--ds-space-6); }
 #drawer-knowledge-mount .kd-foods-pq__page { position: absolute; top: 0.7rem; right: 0.9rem; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-tech); letter-spacing: var(--ds-track-wide); text-transform: uppercase; font-style: normal; }
 #drawer-knowledge-mount .kd-foods-contrast { margin: var(--ds-space-6) 0; }
@@ -1634,8 +1643,7 @@
 #drawer-knowledge-mount .kd-foods-form__grid .kd-foods-item { margin-bottom: 0; }
 
 /* ═══════════════════════════ ABSORPTION §04 · pH ladder + fortress + Ultimate Enzymes CTA ═══════════════════════════ */
-/* The redesigned "You can't absorb what you can't break down" section (Luneth-approved 2026-07-24,
-   spec: the knowledge-foods-sec04 mockup, retired 2026-08-13). --sev-* live only under .kd-orac,
+/* The "You can't absorb what you can't break down" section. --sev-* live only under .kd-orac,
    so re-declare the two this section uses on the foods root. Every rule scoped like its neighbours. */
 #drawer-knowledge-mount .kd-foods { --sev-calm: #5a8ca8; --sev-crit: #8a2f2f; }
 
@@ -1817,7 +1825,9 @@
 #drawer-knowledge-mount .kd-ep-facet[data-facet="stance"] .kd-ep-claim__cite,
 #drawer-knowledge-mount .kd-ep-facet[data-facet="big_question"] .kd-ep-claim__cite { color: var(--ds-tech); }
 
-/* ── entity-page "at a glance": the demo's why-hover + coverage bar + source rows ── */
+/* ── entity-page "at a glance": why-hover + coverage bar + source rows. The bar is rendered
+   only when Wallach states a numeric target; with no target the status pill stands alone
+   (covered / not covered) — never an invented ratio. ── */
 #drawer-knowledge-mount .kd-ep-op__div { border: 0; border-top: 1px dashed var(--ds-rule); margin: var(--ds-space-4) 0; }
 #drawer-knowledge-mount .kd-ep-op__srclabel { margin-bottom: var(--ds-space-2); }
 #drawer-knowledge-mount .kd-ep-bar { height: 7px; background: var(--ds-paper-darker); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); overflow: hidden; margin-top: var(--ds-space-2); }
@@ -1827,8 +1837,7 @@
 #drawer-knowledge-mount .kd-ep-pdm-tag { font-family: var(--ds-font-mono); font-size: 9px; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); background: var(--ds-paper-darker); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); padding: 1px 7px; margin-left: 6px; vertical-align: 2px; }
 #drawer-knowledge-mount .kd-ep-pdm-note { font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.5; margin-top: var(--ds-space-4); padding-top: var(--ds-space-3); border-top: 1px dashed var(--ds-rule); }
 /* ── THE MIRROR treatment (cobalt → B12): a SHORT weighted explanation + a real destination.
-   Replaced a 11-line uniform-grey paragraph + a default list-row button (Luneth 2026-07-15:
-   "a wall of text is the opposite of clarity" / the CTA was "so basic and bad"). The fix is
+   Replaces a uniform-grey wall of text plus a default list-row button. The fix is
    hierarchy, not more words: an Unbounded lead states the verdict, the body carries the WHY at
    full ink weight, the nuance drops to a footnote, and the CTA becomes an accent bar that
    spans the column — the old one left the right half empty for no reason. */
@@ -1844,17 +1853,17 @@
 #drawer-knowledge-mount .kd-ep-mirror__cta-chev { font-family: var(--ds-font-mono); font-size: var(--ds-text-lg); line-height: 1; color: #fff; }
 /* Omega-9 "why it's here" aside — a presentation NOTE, not a Wallach essential. A soft accent
    callout + orange eyebrow so this tile is never mistaken for the conditional 3rd (arachidonic,
-   on the Omega-6 page). Luneth 2026-07-20. */
+   on the Omega-6 page). */
 #drawer-knowledge-mount .kd-ep-mirror--aside { border-top: 0; margin-top: var(--ds-space-4); padding: var(--ds-space-4) var(--ds-space-5); background: var(--ds-accent-wash); border-left: 3px solid var(--ds-accent); border-radius: var(--ds-radius-sm); }
 #drawer-knowledge-mount .kd-ep-mirror__eyebrow { color: var(--ds-accent-deep); margin-bottom: var(--ds-space-2); }
-/* Omega-6 "fatty-acid family" experience — the 2-vs-3 EFA explainer (Luneth 2026-07-20). */
+/* Omega-6 "fatty-acid family" experience — the 2-vs-3 EFA explainer. */
 #drawer-knowledge-mount .kd-ep-fam { margin-top: var(--ds-space-5); padding: var(--ds-space-5); background: var(--ds-paper-deep); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-md); }
 #drawer-knowledge-mount .kd-ep-fam__eyebrow { display: block; font-family: var(--ds-font-mono); font-size: 0.7rem; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-accent-deep); }
 #drawer-knowledge-mount .kd-ep-fam__kill { font-family: var(--ds-font-display); font-size: var(--ds-text-lg); font-weight: 700; letter-spacing: -0.02em; line-height: 1.12; color: var(--ds-ink); margin: var(--ds-space-1) 0 var(--ds-space-4); }
 #drawer-knowledge-mount .kd-ep-fam__figure { margin: 0 auto 19px; max-width: 560px; }
 /* The PDM figure carries 4 wider boxes (+20 screen px each). Its viewBox is 1050 (vs the omega 918),
    so this 640px width * (1/1050) keeps the same ~0.61 px/unit scale — the boxes render wider while the
-   arrow gaps, text, and height stay put. Scoped so the omega figure keeps its 560. Luneth 2026-07-21. */
+   arrow gaps, text, and height stay put. Scoped so the omega figure keeps its 560. */
 #drawer-knowledge-mount .kd-ep-fam__figure--pdm { max-width: 640px; }
 #drawer-knowledge-mount .kd-ep-fam__art { width: 100%; height: auto; display: block; }
 #drawer-knowledge-mount .kd-ep-fam__node--solid { fill: var(--ds-accent-wash); stroke: var(--ds-accent); stroke-width: 2; }
@@ -1870,8 +1879,8 @@
 #drawer-knowledge-mount .kd-ep-fam__arrowlbl { fill: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: 11px; }
 /* Plant-derived "how it works" figure ONLY (--pdm). Its 4-node figure (viewBox 1050) scales the
    shared node/arrow text down small on screen, so here it runs larger + heavier + higher-contrast
-   (ink, not ink-soft) so the info doesn't fade; scoped so the omega figures (Luneth's calibration
-   reference) stay as-is. Node names 21px, arrow captions 19px, weight 600. Luneth 2026-07-21. */
+   (ink, not ink-soft) so the info doesn't fade; scoped so the omega figures (the calibration
+   reference) stay as-is. Node names 21px, arrow captions 19px, weight 600. */
 #drawer-knowledge-mount .kd-ep-fam__art--pdm .kd-ep-fam__nname { fill: var(--ds-ink); font-size: 21px; font-weight: 600; }
 #drawer-knowledge-mount .kd-ep-fam__art--pdm .kd-ep-fam__arrowlbl { fill: var(--ds-ink-soft); font-size: 19px; font-weight: 600; }
 #drawer-knowledge-mount .kd-ep-fam__bracket { fill: none; stroke: var(--ds-accent); stroke-width: 1.5; }
@@ -1902,16 +1911,16 @@
 #drawer-knowledge-mount .kd-ep-src__chev { flex: 0 0 auto; font-family: var(--ds-font-mono); color: var(--ds-ink-faint); font-size: var(--ds-text-lg); line-height: 1; transition: color var(--ds-motion-fast) var(--ds-ease-out); }
 #drawer-knowledge-mount .kd-ep-src:hover .kd-ep-src__chev { color: var(--ds-accent); }
 #drawer-knowledge-mount .kd-ep-vtag { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); font-weight: 700; letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: #fff; background: var(--fam-action); border-radius: var(--ds-radius-xs); padding: 1px 6px; margin-left: 8px; }
-/* "why this number?" — dotted-underline hover tooltip (the demo's affordance) */
+/* "why this number?" — dotted-underline hover tooltip */
 #drawer-knowledge-mount .kd-ep-why { position: relative; display: inline-block; margin-top: var(--ds-space-2); font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); color: var(--ds-accent-deep); border-bottom: 1px dotted var(--ds-accent); cursor: help; }
 #drawer-knowledge-mount .kd-ep-why:hover { color: var(--ds-accent-deep); border-bottom-color: var(--ds-accent-deep); }
 #drawer-knowledge-mount .kd-ep-tip { display: none; position: absolute; z-index: 50; bottom: 150%; left: 0; width: 280px; padding: var(--ds-space-2) var(--ds-space-3); border-radius: var(--ds-radius-md); border: 1px solid var(--ds-accent-deep); background: var(--ds-ink); color: var(--ds-paper-light); font-family: var(--ds-font-sans); font-size: var(--ds-text-sm); line-height: 1.45; box-shadow: 0 10px 30px -8px rgba(0, 0, 0, .45); }
 #drawer-knowledge-mount .kd-ep-why:hover .kd-ep-tip { display: block; }
 
-/* ═══════════════════════════ HOME TAB · hero (Phase H2 chunk 2) ═══════════════════════════ */
+/* ═══════════════════════════ HOME TAB · hero ═══════════════════════════ */
 /* The Home tab's local family palette. The .kd-ep entity-page scope declares its own copy;
    the hero lives OUTSIDE .kd-ep, so .kd-home carries them for its subtree. Values mirror the
-   redesign colour language (blueprint §6). */
+   redesign colour language. */
 #drawer-knowledge-mount .kd-home{ --fam-science:#2f9dba; --fam-action:#5aa82c; --fam-story:#8a52d6; }
 
 #drawer-knowledge-mount .sh-hero{ text-align:center; padding:calc(var(--ds-space-7) - 15px) 0 var(--ds-space-5); }
@@ -1942,7 +1951,7 @@
 #drawer-knowledge-mount .sh-hint{ font-family:var(--ds-font-mono); font-size:9px; color:var(--ds-ink-soft); border:1px dashed var(--ds-rule); border-radius:var(--ds-radius-pill); padding:.25rem .6rem; cursor:pointer; background:none; }
 #drawer-knowledge-mount .sh-hint:hover{ border-color:var(--ds-accent); color:var(--ds-accent-deep); }
 
-/* Home "The essentials" shelf (Chunk 3): section label + tile grid + colour legend */
+/* Home "The essentials" shelf: section label + tile grid + colour legend */
 #drawer-knowledge-mount .ep-seclabel{ display:flex; align-items:center; gap:var(--ds-space-3); margin:var(--ds-space-6) 0 var(--ds-space-3); font-family:var(--ds-font-display); font-size:var(--ds-text-sm); font-weight:700; letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-ink); }
 #drawer-knowledge-mount .ep-seclabel::after{ content:''; flex:1; height:1px; background:var(--ds-rule-soft); }
 #drawer-knowledge-mount .ep-seclabel--tight{ margin-top:calc(var(--ds-space-6) - 15px); }
@@ -1989,14 +1998,14 @@
 #drawer-knowledge-mount .ep-legend__item{ display:inline-flex; align-items:center; gap:7px; font-family:var(--ds-font-mono); font-size:9px; letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-ink-soft); }
 #drawer-knowledge-mount .ep-legend__sw{ width:3px; height:14px; border-radius:2px; flex:0 0 auto; background:var(--cat); }
 
-/* Home "Common conditions" shelf — condition rows, most-cited first (Chunk 4). Re-created from the demo. */
+/* Home "Common conditions" shelf — condition rows, most-cited first. */
 #drawer-knowledge-mount .sh-condgrid{ display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:6px; }
 #drawer-knowledge-mount .sh-condrow{ display:flex; align-items:center; gap:var(--ds-space-2); padding:.55rem .75rem; cursor:pointer; background:var(--ds-paper-deep); border:1px solid var(--ds-rule-soft); border-radius:var(--ds-radius-sm); text-align:left; color:var(--ds-ink); border-left:3px solid var(--ds-accent); transition:border-color var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
 #drawer-knowledge-mount .sh-condrow:hover{ background:var(--ds-paper); border-color:var(--ds-accent); }
 #drawer-knowledge-mount .sh-condrow__nm{ font-family:var(--ds-font-display-interface); font-size:var(--ds-text-sm); font-weight:600; color:var(--ds-ink); }
 #drawer-knowledge-mount .sh-condrow:hover .sh-condrow__nm{ color:var(--ds-accent-deep); }
 #drawer-knowledge-mount .sh-condrow__ct{ margin-left:auto; font-family:var(--ds-font-mono); font-size:0.625rem; color:var(--ds-ink-soft); white-space:nowrap; }
-/* -- Essentials tab: demo sh-subhead sections + coverage dot + dot legend (chunk 6) -- */
+/* -- Essentials tab: sh-subhead sections + coverage dot + dot legend -- */
 #drawer-knowledge-mount .sh-subhead{ font-family:var(--ds-font-mono); font-size:var(--ds-text-micro); letter-spacing:var(--ds-track-wide); text-transform:uppercase; color:var(--ds-ink-faint); margin:var(--ds-space-4) 0 var(--ds-space-2); }
 #drawer-knowledge-mount .sh-subhead:first-of-type{ margin-top:var(--ds-space-2); }
 #drawer-knowledge-mount .sh-grid--wide{ grid-template-columns:repeat(auto-fill, minmax(120px, 1fr)); }
@@ -2013,7 +2022,7 @@
 
 /* ── "Where to get it" — actionability pointer under the plant-derived group's green (dose/protocol)
    block. Wallach's dose is inert without a real source; these link to the Youngevity plant-derived-
-   mineral products (data-kd-product -> detail panel). Green-only, fed by rankedPdmSources. (Luneth 2026-07-21). ── */
+   mineral products (data-kd-product -> detail panel). Green-only, fed by rankedPdmSources. ── */
 #drawer-knowledge-mount .kd-ep-getit { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 12px; padding-top: 12px; border-top: 1px dashed color-mix(in srgb, var(--fam-action, #5aa82c) 45%, transparent); }
 #drawer-knowledge-mount .kd-ep-getit__label { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); text-transform: uppercase; letter-spacing: var(--ds-track-wide); color: var(--fam-action, #5aa82c); font-weight: 600; }
 #drawer-knowledge-mount .kd-ep-getit__rows { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
@@ -2023,15 +2032,15 @@
 #drawer-knowledge-mount .kd-ep-getit__more { font-size: 0.72rem; color: var(--ds-ink-faint); font-style: italic; }
 
 /* ════════════════════════════════════════════════════════════════════════════
- * CONDITION detail page (kd-ep--cond) — Phase H2 chunk 2
+ * CONDITION detail page (kd-ep--cond)
  * Reuses the essential entity-page vocabulary (kd-ep-hero / seclabel / claim /
- * record / pills / src). Adds only: the CATEGORY-tinted hero (hero-only, Luneth's
- * call — the body-system colour rides in via --cat, set inline per condition; the
+ * record / pills / src). Adds only: the CATEGORY-tinted hero (hero-only — the
+ * body-system colour rides in via --cat, set inline per condition; the
  * claim groups keep the standard family colours), the relationship-aware nutrients
  * block, the featured-protocol wrapper, and the products list.
  * ════════════════════════════════════════════════════════════════════════════ */
 
-/* Hero HR stays the default subtle gray (the kd-ep-hero base 1px --ds-rule); the category colour lives in the icon + chip only (Luneth 2026-07-22). */
+/* Hero HR stays the default subtle gray (the kd-ep-hero base 1px --ds-rule); the category colour lives in the icon + chip only. */
 #drawer-knowledge-mount .kd-ep-hero__cat {
   display: inline-flex; align-items: center; gap: 6px; margin-bottom: 7px;
   font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
@@ -2090,7 +2099,6 @@
   justify-content: space-between; gap: var(--ds-space-3);
 }
 #drawer-knowledge-mount .kd-ep-nutri__rel > summary::-webkit-details-marker { display: none; }
-/* (the nutrient-lens chevron was replaced by the Expand/Collapse pill styled below) */
 #drawer-knowledge-mount .kd-ep-nutri__rel[open] > summary { margin-bottom: var(--ds-space-3); }
 #drawer-knowledge-mount .kd-ep-nutri__cloud { margin-top: 0; }
 
@@ -2101,7 +2109,7 @@
 /* Best products for this condition — reuses the kd-ep-src row */
 #drawer-knowledge-mount .kd-ep-prods { display: flex; flex-direction: column; gap: 4px; }
 
-/* ── Condition detail — round-2 refinements (Luneth 2026-07-22) ──────────────── */
+/* ── Condition detail — layout refinements ───────────────────────────────────── */
 
 /* Category ICON tile in the hero — the element [Ca] tile, but a body-system glyph in --cat */
 #drawer-knowledge-mount .kd-ep-hero__sym--cat {
@@ -2144,7 +2152,7 @@
 #drawer-knowledge-mount .kd-ep--cond .kd-ep-lede + .kd-ep-seclabel { margin-top: 25px; }
 
 /* ── breadcrumb rail — top of the drawer body. Our chrome language (mono micro, like the
-   back affordance), NOT the demo's inherited-serif look. Current crumb bold ink; the rest
+   back affordance), NOT an inherited-serif look. Current crumb bold ink; the rest
    are muted links; separators faint. ──────────────────────────────────────────── */
 #drawer-knowledge-mount .kd-crumbs {
   display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
@@ -2161,7 +2169,7 @@
 #drawer-knowledge-mount .kd-crumb--here { color: var(--ds-ink); font-weight: 700; }
 #drawer-knowledge-mount .kd-crumb__sep { color: var(--ds-ink-faint); }
 
-/* ── Condition detail — round-3 refinements (Luneth 2026-07-22) ──────────────── */
+/* ── Condition detail — hero and card refinements ────────────────────────────── */
 
 /* hero subline: category chip + counts on ONE line, wide "·" separator (not stacked) */
 #drawer-knowledge-mount .kd-ep-hero__subline { display: flex; flex-wrap: wrap; align-items: center; margin-top: 7px; }
@@ -2185,8 +2193,8 @@
 }
 
 /* ── PRODUCT detail (kd-ep--prod) — the condition detail's colour-coding, keyed on DELIVERY
-   FORM (--form, set inline per product) instead of body-system category. Per Luneth 2026-07-22
-   the product page colour-codes MORE than the condition (which keeps an ink title): here the
+   FORM (--form, set inline per product) instead of body-system category. The product page
+   colour-codes MORE than the condition (which keeps an ink title): here the
    ICON, the TITLE, the card frame, and the scrollbar all take --form. ─────────── */
 #drawer-knowledge-mount .kd-ep-hero__form {
   display: inline-flex; align-items: center; gap: 6px;
@@ -2223,7 +2231,7 @@
 /* ── Mechanism explainer hero (per-element "how it works"; selenium's rancidity mechanism is the
    first instance). Reuses .kd-ep-fam wholesale; the accent is the ELEMENT'S CATEGORY colour —
    mineral=blue · vitamin=orange · amino=green · omega=purple — so each category's detail screens
-   feel distinct + colour-coded (Luneth 2026-07-25). Every colour a design-system token → theme-aware. ── */
+   feel distinct + colour-coded. Every colour a design-system token → theme-aware. ── */
 /* the mechanism block adopts the screen's category accent (set on the .kd-essential-deep container) */
 #drawer-knowledge-mount .kd-ep-fam--mech { --kd-ep-fam: var(--ds-accent); }
 #drawer-knowledge-mount .kd-ep-fam--mech .kd-ep-fam__eyebrow { color: var(--kd-ep-fam); }
@@ -2272,7 +2280,7 @@
   letter-spacing: var(--ds-track-wide); text-transform: uppercase;
   color: var(--ds-ink-soft); line-height: 1.5; max-width: 40ch; }
 
-/* ── Composed mechanism header (copper, 2026-07-29) — the optional blocks a bespoke per-element
+/* ── Composed mechanism header (first built for copper) — the optional blocks a bespoke per-element
    header can carry on top of the selenium shape: a two-column split with evidence, a connective
    bridge line, a beats ROW, and figures in the slots before/after the beats. Every selector here
    is NEW, so selenium/omega/plant-derived render byte-identically.
@@ -2376,7 +2384,7 @@
 #drawer-knowledge-mount .kd-ep-fam__step--turn .kd-ep-fam__steptitle { color: var(--kd-ep-fam); }
 
 
-/* ── Element-header OPENER + CODA (zinc, 2026-07-29). NAMED __opener, NOT __hook: the beat
+/* ── Element-header OPENER + CODA (first built for zinc). NAMED __opener, NOT __hook: the beat
    payoff line above already owns .kd-ep-fam__hook, and reusing it silently restyled selenium's
    and copper's beat hooks into this grid (same ID specificity, mine landing later in the file). The hook opens the block on something the
    reader can check on their own body (zinc's white nail spots) before any mechanism is explained;
@@ -2399,7 +2407,7 @@
    they are literal values rather than --ds-* (a themed token would drift and stop being skin).
    Same precedent as the hair swatches above. FILL and OUTLINE are separate passes: the white tip
    and the half-moon are clipped to the nail and drawn between them, so the outline lands on top
-   and neither can overshoot the nail bed (Luneth 2026-07-29 — it overshot when merely inset). */
+   and neither can overshoot the nail bed (it overshot when merely inset). */
 #drawer-knowledge-mount .kd-ep-fam__skin     { fill: #f2c5a3; stroke: #ba8560; stroke-width: 1.4; }
 #drawer-knowledge-mount .kd-ep-fam__nail     { fill: #f9d7c2; stroke: none; }
 #drawer-knowledge-mount .kd-ep-fam__nailline { fill: none; stroke: #c08c66; stroke-width: 1.2; }
@@ -2426,7 +2434,7 @@
 /* -- Category theming: the whole detail screen adopts the element's CATEGORY accent by overriding
    the --ds-accent FAMILY on the container, so the hero tile, outer border, why-link, back button and
    the mechanism block all recolour together. minerals=blue; vitamins keep the default orange;
-   amino=green + omega=purple land when those elements are built (Luneth 2026-07-25). -- */
+   amino acids take green and fatty acids violet, from the same --fam-* hues. -- */
 #drawer-knowledge-mount .kd-essential-deep[data-category="mineral"] {
   --ds-accent: #2b6fb0; --ds-accent-bright: #5591cf; --ds-accent-hot: #1f60a0;
   --ds-accent-deep: #1e5088; --ds-accent-soft: #bcd3ea; --ds-accent-wash: #e3edf7;
@@ -2440,7 +2448,7 @@
   box-shadow: 0 4px 14px -3px rgba(255, 126, 60, 0.25);
 }
 /* Aminos = green, omegas = violet — derived from the canonical --fam-* category hues so no
-   detail screen ever follows the swappable accent (Luneth: elements always keep category colour). */
+   detail screen ever follows the swappable accent — elements always keep their category colour. */
 #drawer-knowledge-mount .kd-essential-deep[data-category="amino_acid"] {
   --ds-accent: var(--fam-action);
   --ds-accent-bright: color-mix(in srgb, var(--fam-action) 76%, #fff);
@@ -2461,18 +2469,17 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════════════════════════
-   CALCIUM (element #3) — bespoke figures + the CARD treatment for its split/beats. The card look is
+   CALCIUM — bespoke figures + the CARD treatment for its split/beats. The card look is
    SCOPED to .kd-ep-fam--cards (only calcium opts in, via `cards:true` on its composed entry), so the
-   signed-off selenium / copper / zinc headers render byte-for-byte unchanged (they never carry the
+   already-shipped selenium / copper / zinc headers render byte-for-byte unchanged (they never carry the
    class). Figures dispatch on generic keys (disease_scale, heartbeat) in views/entity-page.ts; their
    text is TIERED so the 12px mono LABELS stay in the .kd-ep-fam__g* family the figure-type gate
    governs, while the hero numerals / figure title / caption are DISPLAY / TITLE / CAPTION tiers
-   (like .kd-ep-fam__statnum) that legitimately sit outside it. Built 2026-07-30 from the signed-off
-   temporary/calcium-header-v5.html.
+   (like .kd-ep-fam__statnum) that legitimately sit outside it.
    ═══════════════════════════════════════════════════════════════════════════════════════════════ */
 
 /* Chakra Petch — in-housed; the futuristic-but-readable small-text face paired with Unbounded,
-   used for calcium's beat-hook payoff lines (Luneth 2026-07-30). */
+   used for calcium's beat-hook payoff lines. */
 @font-face { font-family: 'Chakra Petch'; font-weight: 400; font-style: normal; font-display: swap;
   src: url('../fonts/ChakraPetch-Regular.ttf') format('truetype'); }
 @font-face { font-family: 'Chakra Petch'; font-weight: 600; font-style: normal; font-display: swap;
@@ -2482,8 +2489,8 @@
 
 /* -- calcium figure text tiers -- */
 /* the 147 (base scalenum) is painted by its INLINE fill="url(#kd-ep-scale-num)" blue gradient; the
-   base class must NOT set fill or the CSS beats that presentation attribute (element-headers Rule 2)
-   and paints 147 grey. ink-faint belongs on the ~10 (--sm), the muted one. weight 700 = the mockup. */
+   base class must NOT set fill or the CSS beats that presentation attribute
+   and paints 147 grey. ink-faint belongs on the ~10 (--sm), the muted one. */
 #drawer-knowledge-mount .kd-ep-fam__scalenum { font-family: var(--ds-font-display); font-weight: 700; font-size: 116px; letter-spacing: -0.03em; }
 #drawer-knowledge-mount .kd-ep-fam__scalenum--sm { fill: var(--ds-ink-faint); font-size: 48px; font-weight: 700; letter-spacing: -0.02em; }
 #drawer-knowledge-mount .kd-ep-fam__scaledash { stroke: var(--ds-rule); stroke-width: 1; }
@@ -2493,11 +2500,11 @@
 #drawer-knowledge-mount .kd-ep-fam__ecgbase { fill: none; stroke: var(--kd-ep-fam); stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
 #drawer-knowledge-mount .kd-ep-fam__ecgglow { fill: none; stroke: #fff; stroke-width: 6.5; stroke-opacity: .24; stroke-linejoin: round; stroke-linecap: round; }
 #drawer-knowledge-mount .kd-ep-fam__ecgbeat { fill: none; stroke: #fff; stroke-width: 2.6; stroke-linejoin: round; stroke-linecap: round; }
-/* 10px of air above the heart figure (Luneth 2026-07-30). Base is 0-top / 19-bottom; the mockup's
-   .mk-heartfig{margin-top:42px} lost the cascade to the ID-scoped base rule so it rendered flush, and
-   42px (my first --cards port) read as too much -- 10px is the measured middle Luneth chose. */
+/* 10px of air above the heart figure. Base is 0-top / 19-bottom. An unscoped
+   .mk-heartfig{margin-top:42px} loses the cascade to the ID-scoped base rule and renders flush,
+   and 42px reads as too much -- 10px is the measured middle. */
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__split + .kd-ep-fam__figure { margin-top: 10px; }
-/* the connective bridge line runs tighter than the base 24/30/72ch (mockup .mk-bridge) */
+/* the connective bridge line runs tighter than the base 24/30/72ch */
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__bridge { margin: 22px 0 24px; padding-top: 16px; max-width: 74ch; }
 
 /* -- CARD TREATMENT (scoped to calcium) -- */
@@ -2511,10 +2518,10 @@
   border-radius: var(--ds-radius-lg); padding: 16px 18px 17px; box-shadow: 0 1px 3px rgba(43,111,176,.05); }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__splittx { margin: 0; }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__evnote { margin: 0; }
-/* card heads: mockup tightened the base (7px, no tracking); LEFT card ("When it's there") is accent */
+/* card heads: tightened against the base (7px, no tracking); LEFT card ("When it's there") is accent */
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__splithd { margin-bottom: 8px; letter-spacing: -0.01em; }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__split > .kd-ep-fam__splitcell:first-child .kd-ep-fam__splithd { color: var(--ds-accent); }
-/* evidence caption: mockup runs it smaller + wider-tracked than the base .7rem/.1em/10px */
+/* evidence caption: smaller + wider-tracked than the base .7rem/.1em/10px */
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__evcap { font-size: .66rem; letter-spacing: .11em; margin-bottom: 9px; }
 #drawer-knowledge-mount .kd-ep-fam--cards .kd-ep-fam__splitcell--ev {
   background: linear-gradient(158deg, var(--ds-paper), var(--ds-paper-darker)); border-left: 3px solid var(--kd-ep-fam); }
@@ -2561,7 +2568,7 @@
 /* ═══════════════════════════════════════════════════════════════════════════════════════════════
    MAGNESIUM cycle-of-life figure (mg_cycle) + big Unbounded beat numerals. Depictive colours (soil
    brown, chlorophyll green, sun gold) are literal like the shipped figures; the Mg atom + energy
-   bolt read the category accent via --kd-ep-fam (mineral blue), never hardcoded. Luneth-approved B1.
+   bolt read the category accent via --kd-ep-fam (mineral blue), never hardcoded.
    ═══════════════════════════════════════════════════════════════════════════════════════════════ */
 #drawer-knowledge-mount .kd-ep-fam__mgglyph   { fill: var(--kd-ep-fam); font-family: var(--ds-font-display); font-size: 15px; font-weight: 700; letter-spacing: .01em; }
 #drawer-knowledge-mount .kd-ep-fam__mgbody    { fill: #e8b393; }
@@ -2577,7 +2584,7 @@
 #drawer-knowledge-mount .kd-ep-fam__mgreturnhd{ fill: var(--ds-ink-faint); }
 
 /* Big Unbounded step numerals — opt-in via the composed beats block's `bignum`, so only this header
-   gets them and the signed-off headers keep their mono numbers (Luneth 2026-07-31). */
+   gets them and the already-shipped headers keep their mono numbers. */
 #drawer-knowledge-mount .kd-ep-fam__num--big { font-family: var(--ds-font-display); font-size: 2.7rem; font-weight: 700; line-height: 0.92; letter-spacing: -0.02em; align-self: flex-start; min-width: 1.1em; }
 #drawer-knowledge-mount .kd-ep-fam__step:has(.kd-ep-fam__num--big) { align-items: flex-start; }
 
@@ -2586,12 +2593,12 @@
 
 
 /* ═══════════════════════════════════════════════════════════════════════════════════════════════
-   VITAMIN A (element #6) — the β-carotene vs retinol TRADE-OFF cards + the "In practice" explainer
-   + the Egyptian "Did you know?" curio. Ported from the signed-off temporary/vitamin-a-header-r7.html
-   (Luneth, 2026-08-01). The mkA- and mk- class names are NEW (no collision with the shipped headers). Two
+   VITAMIN A — the β-carotene vs retinol TRADE-OFF cards + the "In practice" explainer
+   + the Egyptian "Did you know?" curio. The mkA- and mk- class names are NEW (no collision with
+   the already-shipped headers). Two
    SHARED classes are tightened — .kd-ep-fam__eyebrow + .kd-ep-fam__kill — so those are scoped under
-   .kd-ep-fam--vita (opt-in via the composed entry's `variant:"vita"`), leaving the 5 signed-off
-   headers byte-unchanged. Vitamin A keeps the DEFAULT orange accent (no [data-category="vitamin"]
+   .kd-ep-fam--vita (opt-in via the composed entry's `variant:"vita"`), leaving the five
+   already-shipped headers byte-unchanged. Vitamin A keeps the DEFAULT orange accent (no [data-category="vitamin"]
    override), so --kd-ep-fam resolves to orange; the green(+)/rust(−) PRO/CON chips are DEPICTIVE
    literals (good vs caution), like the shipped figures' literal colours.
    ═══════════════════════════════════════════════════════════════════════════════════════════════ */
@@ -2634,11 +2641,11 @@
 #drawer-knowledge-mount .mk-curio__body em { font-style: italic; }
 #drawer-knowledge-mount .mk-curio__cite { margin-top: 14px; font-family: var(--ds-font-mono); font-size: .66rem; letter-spacing: .05em; text-transform: uppercase; color: var(--ds-ink-faint); }
 
-/* vitamin A lede: one notch wider than the 69ch base so it doesn't break to an orphan word
-   (Luneth 2026-08-01). Scoped to this page via data-essential so no other lede changes. */
+/* vitamin A lede: one notch wider than the 69ch base so it doesn't break to an orphan word.
+   Scoped to this page via data-essential so no other lede changes. */
 #drawer-knowledge-mount .kd-essential-deep[data-essential="vitamin-a"] .kd-ep-lede { max-width: 72ch; }
 
-/* Product detail — stacked hero actions (tweak-list): the back control gains an
+/* Product detail — stacked hero actions: the back control gains an
    "Add to regimen" button beneath it, coloured by the product's supplement-type
    (--form on .kd-ep--prod; falls back to the primary accent for unmapped forms). */
 #drawer-knowledge-mount .kd-ep-actions {

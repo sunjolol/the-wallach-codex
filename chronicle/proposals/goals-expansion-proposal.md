@@ -1,7 +1,12 @@
-# Goals expansion — proposal for review (build later)
+# Goals expansion — proposal of record
 
-_2026-08-17. You chose **propose-first**: this maps the system, hands you a concrete
-buildable list, and a personalization brainstorm. Nothing is wired in until you approve._
+_2026-08-17. Maps the goal system, sets out a concrete buildable list, and a personalization
+brainstorm._
+
+> **STATUS: PARTIALLY SHIPPED.** The goal library has since grown from 14 to 31 (see
+> `dashboard/assets/data/coverage-layout-skeleton.json`); the remaining candidates below are
+> unbuilt. The 5-at-once cap still stands — `MAX_GOALS = GOAL_HUES.length` in
+> `core/goal-display.ts`.
 
 ## Why this is safe to grow
 
@@ -17,13 +22,12 @@ real `coverage_layout_derive.py` against all 2,162 sealed claims. **All 27 deriv
 non-empty member set** (member counts shown) — none will hard-fail. This is a floor, not a
 ceiling; counts grow as mining adds claims.
 
-## The one structural decision you owe first
+## The one structural decision that comes first
 
 `MAX_GOALS = GOAL_HUES.length = 5` (`core/goal-display.ts`). That caps how many goals a
 user may hold **at once** (each gets a pick-order hue on the field). It does **not** cap how
-many goals can *exist*. Going from 14 → 41 definable goals needs no hue change. But if you
-want users to track more than 5 at once, we add hues (or switch to a non-hue selection
-model). **Recommendation:** ship the larger library now (14 → up to 41), keep the 5-at-once
+many goals can *exist*. Going from 14 → 41 definable goals needs no hue change. Letting users
+track more than 5 at once does need more hues (or a switch to a non-hue selection model). **Recommendation:** ship the larger library now (14 → up to 41), keep the 5-at-once
 cap for this pass, and revisit the cap only if it feels tight in use.
 
 ---
@@ -88,7 +92,7 @@ Format: `id` · **name** · `conditions[]` · (derived members) · why.
 **General / Other**
 - `calm-inflammation` · **Calm inflammation** · inflammation, gout, bursitis · (14).
 
-**Flagged as thin (build-safe, just less rich — your call to keep/drop/merge):**
+**Flagged as thin (build-safe, just less rich — a keep / drop / merge call):**
 `adrenal-stress`, `autoimmune-support`, `heavy-metal-detox`.
 
 ## (C) Desirable but NOT buildable yet (needs mining first)
@@ -124,7 +128,7 @@ goals change *attention* not the denominator), ordered by leverage-to-effort:
 
 3. **Goal packs.** Curated multi-goal bundles ("Active 50+", "Desk worker", "New parent",
    "Winter defense") that select several goals at once. Cures choice-paralysis over a 41-goal
-   library and is the natural home for raising the 5-at-once cap if you want it.
+   library and is the natural home for raising the 5-at-once cap, if it is ever raised.
 
 4. **A "primary focus" goal that tilts the recommender.** Mark one active goal as primary and
    let `recommender.ts` weight its members up in product ranking. Attention, not denominator —
@@ -148,10 +152,10 @@ goals change *attention* not the denominator), ordered by leverage-to-effort:
 
 **My recommendation:** ship the +27 library, then build **symptom-first entry (#1)** and
 **life-stage presets (#2)** — together they turn goals from a menu into a conversation, which
-is exactly the "makes it personal" glue you're after, all on data that already exists.
+is exactly the "makes it personal" glue this is after, all on data that already exists.
 
-## Next step
-On your approval I: (1) paste the approved `{id,name,conditions[]}` blocks into
-`coverage-layout-skeleton.json`, (2) re-run the derive/build, (3) confirm 92/92 + the two goal
-gates, (4) screenshot the picker + field for your eyes. Tell me which of the 27 to keep, and
-whether to raise the 5-at-once cap.
+## Next step (the build recipe for whatever is still unbuilt)
+On approval: (1) paste the approved `{id,name,conditions[]}` blocks into
+`coverage-layout-skeleton.json`, (2) re-run the derive/build, (3) confirm a full green board plus
+the two goal gates, (4) screenshot the picker + field for human sign-off. The open questions are
+which of the remaining candidates to keep, and whether to raise the 5-at-once cap.

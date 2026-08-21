@@ -16,7 +16,7 @@ The shell overrides position/overflow ONLY, to put the drawer back into document
 It never touches width, padding, border or box-sizing -- the moment it does, the geometry
 stops being the real geometry and the mockup starts lying.
 
-MEASURED GEOMETRY (verify with --measure, do not trust this comment):
+MEASURED GEOMETRY (verify with `node tools/mockup_measure.js <path>`, never this comment):
   .kd-ep          screen   ~867px
   .kd-ep-fam      box       865px, padding var(--ds-space-5) = 24px a side
   => real ceiling for a FIGURE: 817px. The two shipped slots are exact: fork 700, rail 660.
@@ -62,7 +62,7 @@ def stylesheet_hrefs():
 
 
 def vendored_libs():
-    man = DASH / "assets" / "vendor" / "libs" / "vendor-manifest.json"
+    man = ROOT / "tools" / "design-libs" / "vendor-manifest.json"
     if not man.exists():
         return []
     return json.loads(man.read_text(encoding="utf-8")).get("libs", [])
@@ -76,7 +76,7 @@ SHELL_CSS = """
    `html, body { height: 100%; overflow: hidden }` for the fixed app shell. Any
    standalone page linking them inherits it and is LOCKED to the first viewport.
    Narrowing this to `overflow-x` does NOT undo it -- overflow-y stays hidden, which
-   is exactly how it has reached Luneth six times. Both axes, !important. */
+   is exactly how this defect keeps reaching a reader unnoticed. Both axes, !important. */
 html, body { height: auto !important; overflow: auto !important; }
 body { background: var(--ds-paper-deep); margin: 0; padding: 0 0 90px; }
 #drawer-knowledge-mount { position: relative; pointer-events: auto; }
@@ -95,7 +95,7 @@ def build(out: pathlib.Path, category: str, title: str, panels, depth: int):
     up = "../" * depth
     links = "\n".join(f'<link rel="stylesheet" href="{up}dashboard/{h}">'
                        for h in stylesheet_hrefs())
-    libs = "\n".join(f'<script src="{up}dashboard/{l["file"]}"></script>'
+    libs = "\n".join(f'<script src="{up}{l["file"]}"></script>'
                       for l in vendored_libs())
     lib_names = ", ".join(f'{l["package"]}@{l["version"]}' for l in vendored_libs())
 
@@ -134,7 +134,7 @@ def build(out: pathlib.Path, category: str, title: str, panels, depth: int):
     print(f"OK  {out} written ({len(html)} chars, {len(panels)} panel(s))")
     print(f"    stylesheets: {len(stylesheet_hrefs())} (read from dashboard.html)")
     print(f"    libraries:   {lib_names or '(none)'}")
-    print(f"    NEXT: open it, and never build live without Luneth's explicit approval.")
+    print("    NEXT: open it. A mockup is scaffolding -- it stays demo-only until the owner signs off on shipping it.")
 
 
 def main():
@@ -144,7 +144,7 @@ def main():
     ap.add_argument("--title", default="Design mockups")
     ap.add_argument("--panel", action="append", default=[],
                     help='"Label:path/to/fragment.html" (repeatable)')
-    ap.add_argument("--measure", help="report the TRUE rendered geometry of a shell")
+    ap.add_argument("--measure", help="print the node command that measures a shell's TRUE rendered geometry")
     a = ap.parse_args()
 
     if a.measure:

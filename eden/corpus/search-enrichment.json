@@ -1,6 +1,6 @@
 {
  "schema_version": 1,
- "_note": "SOURCE (hand-authored) for the Search subsystem — the AUTHORED fields per sealed search-only claim (subject/also_about/facet/question/answer_short/answer_full/topics). Everything else the Search index shows (answer, verbatim, page, tier1_link, composed cite) DERIVES from the sealed claim + books-meta via eden/tools/search_index_derive.py. Keyed by claim id. Enrichment for a claim id NOT tagged search-only, a bad facet, or an unresolved subject is caught by search_index_wellformed. NOT sealed yet (entity-by-entity build, reviewed with Luneth); mercury + calcium are the first two entities.",
+ "_note": "SOURCE (hand-authored) for the Search subsystem — the AUTHORED fields per enriched claim (subject/also_about/facet/question/answer_short/answer_full?/topics/see_also?). Everything else the Search index shows (answer, verbatim, page, tier1_link, composed cite) DERIVES from the sealed claim + books-meta via eden/tools/search_index_derive.py. Keyed by claim id; an enriched claim may also be tier-1 on an operational tab — enrichment is layered on top of a claim, never a separate silo. A bad facet, an unresolved subject, an unresolved also_about, a missing authored field or an empty derived answer is caught by search_index_wellformed. NOT sealed — it grows entity by entity under review, so that gate stands in for a golden hash.",
  "enrichment": {
   "WAL-CLM-DDDL-000008": {
    "subject": "diabetes",

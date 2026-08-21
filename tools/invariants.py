@@ -2,9 +2,9 @@
 """
 tools/invariants.py — declarative manifest of system-level invariants.
 
-Round 74 / 2026-06-15. Born from the user directive after Round 73's
-truncation audit: build a system that THINKS about and DETECTS what could
-be going wrong, rather than spot-fixing when it surfaces.
+Built after a source-truncation audit, on the principle that the system should
+DETECT what could be going wrong rather than spot-fix each failure as it
+surfaces.
 
 Each invariant has:
   - name        : stable identifier
@@ -12,10 +12,11 @@ Each invariant has:
   - check_fn    : callable returning (passed: bool, message: str)
   - truth_anchor: what the check is verified AGAINST (the external truth source)
   - severity    : 'critical' | 'warning' | 'info'
-  - lesson_ref  : which lesson/round this came from
-  - cadence     : 'daily' | 'weekly'
+  - lesson_ref  : the rule or incident this check came from
+  - cadence     : 'daily' | 'weekly'. NOTE: nothing currently declares 'weekly',
+                  so every invariant runs on the daily board and --weekly is a no-op.
 
-Engineering doctrine principle 11 (Round 74): every check pins to a truth
+Engineering doctrine principle 11: every check pins to a truth
 anchor that can't itself drift. Stale-to-stale equality is not truth.
 
 Adding a new invariant:
@@ -60,11 +61,12 @@ class Invariant:
     severity: str                 # 'critical' | 'warning' | 'info'
     # WHAT this gate anchors to. NO DEFAULT, deliberately: a new invariant that does not
     # declare its anchor class fails at import, so this can never be forgotten the way a
-    # documentation rule would be. Added 2026-07-15 because "67/67 green" was being read --
-    # and reported to the user at every session boot -- as a statement about WALLACH, when
-    # most of the board only ever proved our files agree with each other. A single integer
-    # laundered bookkeeping into confidence. The board is excellent at proving nothing
-    # DRIFTED and weak at proving anything is RIGHT; the score must say which.
+    # documentation rule would be. It exists because a bare "N of N green" was being read as
+    # a statement about WALLACH, when most of the board only ever proved our own files agree
+    # with each other. A single integer laundered bookkeeping into confidence. The board is
+    # excellent at proving nothing DRIFTED and weak at proving anything is RIGHT; the score
+    # must say which. (The count itself is derived, never written down here -- a total in
+    # prose is one gate away from being false.)
     #   'external'    — anchored to something OUTSIDE our own hand-maintained data: Wallach's
     #                   book bytes, a known physical constant, or git-committed history. Only
     #                   these can catch a value that is WRONG BUT CONSISTENT with our files.
@@ -111,7 +113,7 @@ def _lf_file_hash(path) -> str:
     EOL artifact. Every other sealed-text gate (corpus/catalog/products) already LF-normalized;
     this one was the sole holdout. Re-sealed to the LF digest in the same patch.
 
-    NOT a loosening (R9): the digest still changes on any real content edit. It stops changing
+    NOT a loosening: the digest still changes on any real content edit. It stops changing
     only for a difference git itself does not record."""
     p = pathlib.Path(path)
     if not p.exists():
@@ -125,9 +127,9 @@ def _read_via_os(path) -> bytes:
 
     ★ O_BINARY is load-bearing, not decoration. On Windows os.open defaults to TEXT mode,
     so os.read silently translates CRLF -> LF. Without this flag the read applied the SAME
-    newline translation as the write it was meant to audit, which is how safe_write_canary
-    stayed green from Round 73 to 2026-08-03 while safe_write rewrote every LF payload to
-    CRLF on disk. A truth anchor that shares the defect under test is not a truth anchor.
+    newline translation as the write it was meant to audit, which is how this canary stayed
+    green for months while safe_write rewrote every LF payload to CRLF on disk. A truth
+    anchor that shares the defect under test is not a truth anchor.
     os.O_BINARY does not exist on POSIX, where no translation happens either way."""
     fd = os.open(str(path), os.O_RDONLY | getattr(os, "O_BINARY", 0))
     try:
@@ -210,11 +212,11 @@ def check_safe_write_canary():
 
 def check_tools_py_parse():
     """All .py files in tools/ must parse via ast. Catches Edit-tool-style
-    silent truncation of Python source files (Round 54/56 pattern)."""
+    silent truncation of a Python source file by an editing tool."""
     tools_dir = ROOT / "tools"
     failures = []
     count = 0
-    for py in tools_dir.glob("*.py"):
+    for py in tools_dir.rglob("*.py"):
         count += 1
         try:
             ast.parse(py.read_text(encoding="utf-8"))
@@ -228,17 +230,16 @@ def check_tools_py_parse():
 
 
 def check_tools_no_null_bytes():
-    """All .py files in tools/ must contain zero NUL bytes. Catches the
-    Write-tool padding bug observed in Round 75 Pass A — Write produced a
-    Python source file with ~1 KB of trailing nulls past the actual content;
-    file passed cat/size checks but failed ast.parse with 'source code string
-    cannot contain null bytes'. Paired with lessons.md (2026-06-15 at 1:10 PM)
-    per protocol §18. Truth anchor: byte-level scan via Path.read_bytes() —
-    independent surface from the writer's in-memory cache (doctrine §11)."""
+    """All .py files in tools/ must contain zero NUL bytes. Catches a file-writer
+    padding bug: a write produced a Python source file with ~1 KB of trailing
+    NULs past the real content, which passed cat/size checks but failed
+    ast.parse with 'source code string cannot contain null bytes'. Truth anchor:
+    byte-level scan via Path.read_bytes() — an independent surface from the
+    writer's own in-memory cache (doctrine principle 11)."""
     tools_dir = ROOT / "tools"
     failures = []
     count = 0
-    for py in tools_dir.glob("*.py"):
+    for py in tools_dir.rglob("*.py"):
         count += 1
         try:
             data = py.read_bytes()
@@ -255,8 +256,9 @@ def check_tools_no_null_bytes():
 
 
 def check_critical_json_parse():
-    """All JSON files in schemas/ and dashboard/assets/data must parse. Catches
-    Edit-tool silent truncation of JSON (Round 73 versions.json event)."""
+    """Every JSON file under dashboard/assets/data must parse. Catches silent
+    truncation of a data file by an editing tool — a half-written JSON blob that
+    still looks plausible on disk but breaks the surface that loads it."""
     failures = []
     count = 0
     for d in ["schemas", "dashboard/assets/data"]:
@@ -277,8 +279,7 @@ def check_critical_json_parse():
 
 
 def check_cross_platform_python():
-    """Scan tools/*.py for cross-platform anti-patterns codified in v3.9
-    after Round 74 Phase A's Windows-crash discovery. Uses AST (not regex)
+    """Scan tools/*.py for cross-platform anti-patterns. Uses AST (not regex)
     so violations inside docstrings / string literals are correctly
     ignored — they're documentation, not code.
 
@@ -288,15 +289,16 @@ def check_cross_platform_python():
     3. datetime.utcnow() call
     4. subprocess.run/Popen call with literal "python3" in args
 
-    Round 74 Phase A discovered these the hard way when the first audit ran
-    on Windows. This invariant prevents recurrence."""
+    Every one of these is invisible on Linux and breaks the moment the
+    toolchain runs on Windows. This invariant prevents recurrence."""
     tools_dir = ROOT / "tools"
     violations = []
 
     # No file-level exemption — the check applies to itself (invariants.py).
     # Stronger discipline: the invariant file shouldn't violate its own rule.
     DOC_FILES = set()
-    ONE_SHOT_PREFIX = "round"      # round73_recovery.py, round74_essence_entries.py
+    ONE_SHOT_PREFIX = "round"      # one-shot recovery scripts. No file in tools/ carries
+                                   # this prefix today, so the skip below never fires.
 
     GLIBC_STRFTIME = ("%-I", "%-d", "%-m", "%-H", "%-M", "%-S", "%-l", "%-e", "%-j")
 
@@ -350,7 +352,7 @@ def check_cross_platform_python():
                         return True
         return False
 
-    for py in sorted(tools_dir.glob("*.py")):
+    for py in sorted(tools_dir.rglob("*.py")):
         if py.name in DOC_FILES:
             continue
         if py.name.startswith(ONE_SHOT_PREFIX) and "_" in py.name:
@@ -382,16 +384,23 @@ def check_cross_platform_python():
 
 
 def check_no_native_dialogs():
-    """Round 156 (filed Round 127) — Round 127 twice-burned design lesson:
-    no native browser dialogs (prompt/confirm/alert) in dashboard.html.
-    Discipline-only enforcement failed twice; structural escalation per
-    Round 118 'discipline → invariant' doctrine.
+    """No native browser dialogs (prompt/confirm/alert) in dashboard.html.
+    A blocking native dialog is unstyleable, unthemeable, and freezes the page;
+    the rule was broken twice under discipline alone, so it is a gate.
 
-    Method: mask non-JS script blocks + markdown / JSON-data embeds, then
-    scan canonical JS for prompt(/confirm(/alert( calls. Excludes string
-    literals + comments via simple heuristics.
+    Method: mask non-JS script blocks (markdown / JSON-data embeds), then scan
+    the remaining inline JS for prompt(/confirm(/alert( calls. String literals
+    and comments are excluded only heuristically, so false positives are
+    possible; suppress a known-OK site with a trailing `// no_native_dialogs: ok`.
 
-    Truth anchor: source-text scan of dashboard.html canonical JS body."""
+    KNOWN SCOPE LIMIT — read this before trusting a green: this scans ONLY
+    dashboard.html. That file is now a pure shell with a single external
+    <script src> and no inline JS, so this gate is currently VACUOUS. It does
+    not read dashboard/assets/js/src/**/*.ts or the built dist/main.js, where
+    all application code actually lives. Widen the scan to src/ before citing
+    this gate as proof that the app raises no native dialogs.
+
+    Truth anchor: source-text scan of dashboard.html."""
     dash = ROOT / "dashboard" / "dashboard.html"
     if not dash.exists():
         return True, "dashboard.html missing (bootstrap-guard)"
@@ -435,21 +444,21 @@ def check_no_native_dialogs():
     # Surface first 5 hits with line numbers
     sample = "; ".join(f"{n}() at line {ln}" for n, ln in hits[:5])
     return False, (
-        f"{len(hits)} native dialog call(s) detected — Round 127 design family. "
-        f"Route via showLcModal or showQuietToast instead. Sample: {sample}"
+        f"{len(hits)} native dialog call(s) detected — a blocking native dialog is "
+        f"unstyleable and freezes the page. Use the view's own in-page confirm/toast "
+        f"UI instead. Sample: {sample}"
     )
 
 
 # ---------------------------------------------------------------------------
-# Product vault — composition-only gate (Phase F / A1, 2026-07-08)
+# Product vault — composition-only gate
 # ---------------------------------------------------------------------------
-# The transitional eden-catalog.json -- and eden_hash_integrity that guarded it,
-# plus eden_build/seal/verify.py -- were DELETED in A1. That whole old product
-# subsystem carried scraped Youngevity marketing prose that had poisoned the
-# corpus. The product vault now derives from the SEALED Products pillar
-# (products.json, guarded by products_hash_integrity) as COMPOSITION ONLY. This
-# gate keeps it that way: marketing prose can never re-enter the vault (memory
-# old-product-system-full-delete; the stop-the-leak-before-building sever+enforce).
+# An earlier product subsystem carried scraped marketing prose, and that prose
+# leaked into the corpus. It was deleted wholesale. The product vault now derives
+# from the SEALED Products pillar (products.json, guarded by
+# products_hash_integrity) as COMPOSITION ONLY -- what a product contains, never
+# what it claims to do. This gate is the enforcement half of that severance:
+# marketing prose can never re-enter the vault.
 _VAULT_ARTIFACT = "dashboard/assets/data/regimen-label-lookup.json"
 _VAULT_PROSE_KEYS = {
     "what_it_does", "tagline", "features", "description", "brand_tier",
@@ -478,7 +487,8 @@ def _walk_forbidden_keys(node, hits, path=""):
 
 def check_no_product_marketing_prose():
     """The product SURFACES must be COMPOSITION ONLY -- no marketing prose can
-    re-enter (R7 sever + enforce; the A1 deletion made permanent). Two artifacts:
+    re-enter. Deleting the subsystem that leaked it removed the leak; this gate is
+    what makes the removal permanent. Two artifacts:
     (1) the slim vault (regimen-label-lookup.json) = {canonical_name,
     nutrients:[{name, amount, unit}]} under a STRICT key-allowlist (any extra key
     is RED); (2) the rich display artifact (product-detail-data.json) carries the
@@ -528,24 +538,22 @@ def check_no_product_marketing_prose():
 
 
 # ---------------------------------------------------------------------------
-# Design System v3 invariants (Round 160 — Phase 0)
+# Design-system invariants
 # ---------------------------------------------------------------------------
-# Three paired daily invariants guard the design system. They ENFORCE.
+# Three paired daily invariants guard the design system. They ENFORCE — there is
+# no mode knob, and there must never be one again.
 #
-# THE MODE KNOB WAS DELETED 2026-07-15. All three read a 'mode' from
-# tacitus/feature-flags.json[design_system_enforcement] -- a file, and a whole
-# tacitus/ directory, that DOES NOT EXIST. The lookup hit a bare `except` and
-# returned "warn", and in warn mode _ds_finalize() converted every violation into
-# a PASS. So three invariants declared severity="critical" were STRUCTURALLY
-# INCAPABLE of reddening the board. Proven: forging a hash mismatch returned
-# (True, "WARN (1 finding(s)) -- ...does not match golden..."). The header even
-# claimed "promotion criteria ... are documented in the feature flag itself" --
-# documented in a file that never existed. invariants.py was the only reader.
-# A knob whose off-switch is a missing file is not a knob, it is a disarm.
+# WHY NO KNOB. These three once read an enforcement 'mode' from a feature-flag
+# file. That file was deleted; the lookup hit a bare `except` and defaulted to
+# "warn"; and in warn mode the shared finalizer converted every violation into a
+# PASS. Three invariants declared severity="critical" were STRUCTURALLY INCAPABLE
+# of reddening the board — a forged hash mismatch returned (True, "WARN ...does
+# not match golden..."). A knob whose off-switch is a missing file is not a knob,
+# it is a disarm. Default-permissive on a missing config is the bug.
 
 
 def _ds_finalize(violations, success_msg):
-    """Violations -> FAIL. No violations -> PASS. No mode, no escape hatch (2026-07-15)."""
+    """Violations -> FAIL. No violations -> PASS. No mode, no escape hatch."""
     if not violations:
         return True, success_msg
     payload = "; ".join(violations[:5])
@@ -555,12 +563,16 @@ def _ds_finalize(violations, success_msg):
 
 
 def check_no_external_style_resources():
-    """Scan dashboard.html + dashboard/assets/styles/*.css
-    for external style/font/script imports. The 'no external resources' rule
-    is the foundation of long-term portability (Phase 0 doctrine).
+    """Scan dashboard.html + dashboard/assets/styles/*.css for external
+    style/font/script imports. The 'no external resources' rule is the
+    foundation of long-term portability: the app opens from file:// and must
+    never depend on a host that can disappear.
 
-    Currently-allowed external (explicit carve-out): cdn.jsdelivr.net/npm/tesseract
-    (Scanner OCR — TODO: in-house in a future round)."""
+    The regexes below carry a negative-lookahead carve-out for
+    cdn.jsdelivr.net/npm/tesseract. It is UNUSED today -- the Scanner's OCR
+    engine is vendored at dashboard/assets/vendor/tesseract/ and no scanned
+    file references the CDN. Remove the carve-out rather than let anything
+    grow back into it."""
     import re as _re
     EXTERNAL_PATTERNS = [
         (r"fonts\.googleapis\.com", "Google Fonts CSS"),
@@ -582,8 +594,7 @@ def check_no_external_style_resources():
 
     violations = []
     # Strip <script type="text/markdown"> block contents before scanning so
-    # markdown text that *mentions* external URLs in code samples (e.g. the
-    # saga, lessons, decisions notebook entries discussing the migration)
+    # markdown text that *mentions* external URLs in prose or code samples
     # does not trigger false positives. Only real <link>, <script src=>, and
     # @import URLs in actual CSS/HTML structural positions should fire.
     _MD_BLOCK_RE = _re.compile(
@@ -623,7 +634,7 @@ def check_design_system_hash_integrity():
     hash_path = ROOT / "dashboard" / "assets" / "styles" / "design-system.golden.sha256"
 
     if not css_path.exists():
-        return _ds_finalize(["design-system.css missing — Phase 0 ship incomplete"], "")
+        return _ds_finalize(["design-system.css missing — the sealed stylesheet is absent"], "")
 
     if not hash_path.exists():
         return True, "design-system.golden.sha256 not yet present — file unsealed (expected during early migration rounds)"
@@ -655,7 +666,7 @@ def check_design_system_write_protection():
     structurally BLIND to the tamper that actually matters: an agent edits the css AND
     re-seals the golden -- both files move together, hash_integrity stays green, and the
     user's sole-writer rule is broken invisibly. Only an anchor OUTSIDE the pair can see
-    that (§00.B #11: stale-to-stale equality is not truth; the same lesson that produced
+    that (stale-to-stale equality is not truth; the same lesson that produced
     creators_log_append_only's git anchor). git is that outside: HEAD's golden is a value
     the working tree cannot rewrite without a commit the user can see.
 
@@ -664,7 +675,7 @@ def check_design_system_write_protection():
     changed-but-uncommitted. That is the correct shape: it does not forbid re-sealing, it
     forbids re-sealing SILENTLY.
 
-    REPLACED 2026-07-15 (R9 -- re-codified with proof, not loosened). The old check compared
+    REPLACED -- re-codified with proof, never loosened. The old check compared
     MTIMES: `css_mtime > seal_mtime + 1`. Two defects, both fatal:
       (1) mtime is a LYING INSTRUMENT -- it moves on a touch, a git checkout, a no-op save.
           It was reporting a live "violation" (css touched 2 min after the golden was
@@ -714,19 +725,19 @@ def check_dashboard_dist_fresh():
     """The build artifact dashboard/assets/js/dist/main.js must be newer than
     every dashboard/assets/js/src/**/*.ts file. If the dist is stale, the
     runtime contract (what the browser loads) has drifted away from the
-    canonical TypeScript source. Added in Round 161 R1·A alongside the new
-    modular dashboard architecture.
+    canonical TypeScript source. dist/main.js is a BUILD ARTIFACT — never edit it;
+    edit src/ and run `node tools/build.mjs`.
 
-    Skipped in the strangler-fig pre-Round-2 era while src/ is all scaffolds
-    (dist is hand-written then; the freshness check kicks in once esbuild
-    starts overwriting dist from src on every edit)."""
+    The bootstrap branches below (no src/ directory, no .ts files) exist so a
+    fresh or partial checkout does not RED on a check that has nothing to
+    compare."""
     dist_path = ROOT / "dashboard" / "assets" / "js" / "dist" / "main.js"
     src_dir = ROOT / "dashboard" / "assets" / "js" / "src"
 
     if not dist_path.exists():
         return False, f"dist/main.js missing — run `node tools/build.mjs`"
     if not src_dir.exists():
-        return True, "no src/ directory yet (pre-Round-1·A) — freshness check skipped"
+        return True, "no src/ directory present — freshness check skipped (bootstrap)"
 
     ts_files = list(src_dir.rglob("*.ts"))
     if not ts_files:
@@ -756,10 +767,11 @@ def _max_inline_literal_elements(src: str) -> int:
     Ignores string + comment content and () call args. Not a parser — a cheap backstop for the
     §00.B 'no inline data' rule. Returns the max element estimate (top-level commas + 1).
 
-    ★ TIGHTENED 2026-07-15 (R9) — IT COUNTED STRUCTS AS DATA. Every `{...}` was measured by its
-    top-level comma count, so a RECORD SHAPE scored the same as a data blob. state/coverage.ts's
-    tile object sat at exactly 10 — the limit — purely because it has 10 fields; adding the two
-    cobalt mirror fields tripped a §00.B "inline data" RED on a struct containing no data at all.
+    ★ TIGHTENED — IT COUNTED STRUCTS AS DATA. Every `{...}` was measured by its
+    top-level comma count, so a RECORD SHAPE scored the same as a data blob. A tile
+    object in state/coverage.ts sat at exactly 10 — the limit — purely because it has
+    10 fields; adding two more tripped a §00.B "inline data" RED on a struct
+    containing no data at all.
     That is a misfire, and the rule it enforces does not say "no object may have 11 fields".
 
     THE DISTINCTION NOW DRAWN, and why it is the right one. The rule exists to stop CANONICAL
@@ -773,7 +785,7 @@ def _max_inline_literal_elements(src: str) -> int:
       - OBJECT literals count ONLY when at least HALF their top-level values are literal
         constants (string/number/boolean/null). A record of computed expressions is a shape,
         not a payload, and moving it to assets/data/ would be nonsense.
-    Proven by tools/test_views_state_no_inline_data.py: the 91-spec blob the rule was WRITTEN
+    Proven by tools/tests/test_views_state_no_inline_data.py: the 91-spec blob the rule was WRITTEN
     for still REDs (both as an array and as a >10-key literal map), while the tile struct passes.
     NOT a loosening — the data cases it was built to catch all still fire; only the shape cases
     it was never aimed at stop firing.
@@ -914,7 +926,7 @@ def check_views_state_no_inline_data():
 
 
 def check_creators_log_well_formed():
-    """Every line of chronicle/creators-log.jsonl is a schema-valid Creator's
+    """Every line of chronicle/creators-log/log.jsonl is a schema-valid Creator's
     Log entry. tools/creators_log.py is the sanctioned CLI producer; this
     invariant reuses its verify_file() as the audit-time defense-in-depth layer
     so a hand-edit or bad append can't silently corrupt the §00 audit trail.
@@ -972,8 +984,8 @@ def check_creators_log_append_only():
 
 
 def check_build_log_append_only():
-    """chronicle/build-log.md hardened to append-only 2026-07-04 (Luneth) to close
-    the gap the sacred ledger already covers. The committed file
+    """chronicle/build-log.md is append-only, on the same footing as the Creator's
+    Log: an editable build log is not a record. The committed file
     (`git show HEAD:chronicle/build-log.md`) must stay a line-PREFIX of the working
     file — every committed line still present, in order, at the start. Blocks any
     truncate / edit / reorder of past log content; APPENDS (new lines at the end)
@@ -1022,20 +1034,18 @@ def check_no_dead_legacy_paths():
     ingredient/stance generators that fed off them. Eden is the single source of
     truth; a re-reference is the exact contamination vector the sever eliminated
     (the old chain even fed stale book text into the live dashboard). Immutable
-    history is allowlisted -- chronicle/, genesis/, generated dist/, the
-    to-be-retired legacy-dashboard.js, this file's own token list, and the
-    embedded Creator's-Log / versions blocks inside dashboard.html (past-tense
+    history is allowlisted -- chronicle/, generated dist/, this file's own token
+    list, and the embedded Creator's-Log block inside dashboard.html (past-tense
     record, stripped before scanning). It records the past; it is not a live
     reference. Truth anchor: git-tracked file contents, scanned each run."""
     import subprocess
     FORBIDDEN = ["wallach-books", "books-clean", "wallach-refresh", "transcripts-clean",
                  "podcast-transcripts", "wallach-topic-notes", "youngevity-product-notes",
                  "health-resources", "catalog-index", "corpus-index"]
-    ALLOW_PREFIXES = ("chronicle/", "genesis/",
+    # The record of the past is allowed to name a severed path; live code is not.
+    ALLOW_PREFIXES = ("chronicle/",
                       "dashboard/assets/data/creators-log",
-                      "dashboard/assets/data/versions-data.json",
                       "dashboard/assets/js/dist/",
-                      "dashboard/assets/js/legacy-dashboard.js",
                       "tools/invariants.py")
     SKIP_EXT = (".png", ".jpg", ".jpeg", ".ttf", ".pdf", ".ico", ".bmp", ".gif", ".map")
     embed_re = re.compile(
@@ -1069,24 +1079,26 @@ def check_no_dead_legacy_paths():
 
 def check_no_operating_doc_contradiction():
     """No OPERATING DOC may present a structure the overhaul DELETED as if it were
-    live, nor point at a `.claude/rules/` file that no longer exists. Operating
-    docs = the steady-state contract a future session runs under: CLAUDE.md, every
-    .claude/rules/*.md, REVIEW.md. This extends no_dead_legacy_paths (which guards
+    live, nor point at a guidance file that no longer exists. Operating docs = the
+    steady-state contract a future session runs under: CLAUDE.md, REVIEW.md, and
+    every .claude/skills/*/SKILL.md. This extends no_dead_legacy_paths (which guards
     LIVE CODE against severed pre-Eden paths) to the DOC surface for the overhaul's
     own severances -- the deleted legacy dashboard (js/css/host) and the deleted
     wild-west-mode rule. Two machine-checkable halves:
       (1) forbidden-token scan -- an operating doc naming a deleted structure is a
           stale pointer that would send a future reader to something that is gone;
-      (2) rule-file pointer resolution -- every `.claude/rules/<name>.md` an
-          operating doc cites must resolve on disk (a dangling rule pointer = a
-          deleted/renamed rule the doc never got reconciled to).
-    NOT covered (WISH per R7 -- do NOT sell it as guarded): the SEMANTIC half, a
+      (2) guidance-pointer resolution -- every `.claude/skills/<name>` and every
+          legacy `.claude/rules/<name>.md` an operating doc cites must resolve on
+          disk (a dangling pointer = a deleted/renamed rule the doc never got
+          reconciled to). The `.claude/rules/` directory itself no longer exists;
+          that spelling is still resolved so a leftover pointer to it is caught
+          rather than silently ignored.
+    NOT covered (a labeled WISH -- do NOT sell it as guarded): the SEMANTIC half, a
     doc that contradicts the Charter's SUBSTANCE without naming a deleted structure
     (e.g. asserting a retired policy as current). That has no non-gaming machine
-    check; it rests on the Phase-A rules-audit discipline + review. Living/planning
-    docs that legitimately narrate the deletions in past/planning tense
-    (chronicle/*, the blueprint, genesis/*, next-chunk.md) are OUT of scope by
-    design -- scanning them would flag correct history. Truth anchor: operating-doc
+    check; it rests on review discipline. Living/planning docs that legitimately
+    narrate the deletions in past or planning tense (anything under chronicle/)
+    are OUT of scope by design -- scanning them would flag correct history. Truth anchor: operating-doc
     bytes + os-level file existence, recomputed each run."""
     forbidden = ["legacy-dashboard", "legacy-workspace-host", "wild-west-mode"]
     skills_dir = ROOT / ".claude" / "skills"
@@ -1143,8 +1155,8 @@ def check_board_claims_match_reality():
     §00.B rule 1 -- no canonical value lives in two hand-maintained places. The gate total
     and the external-anchor count are COMPUTED here and RETYPED in CLAUDE.md's "What a green
     board actually means" section: exactly the two-homes shape that rots. It did. The
-    2026-08-03 doctor sweep added 2 offline gates and CLAUDE.md silently kept saying
-    "85 gates / ~21 external" while the board ran 87 / 23.
+    contract has drifted before: gates were added to the board while CLAUDE.md went
+    on quoting the older totals.
 
     That section is the one place the contract explains what a green board is WORTH, so a
     stale number there misstates the size of the only anchor class that can catch a value
@@ -1292,7 +1304,7 @@ def _books_present():
 
 
 def check_corpus_integrity():
-    """Phase alpha — eden/corpus sealed claim-graph integrity. Delegates to the single
+    """eden/corpus sealed claim-graph integrity. Delegates to the single
     implementation eden/tools/corpus_verify.py (one source of the 12 checks, no
     duplication): exit 0 = sealed & healthy, 2 = BOOTSTRAP (unsealed; always-valid
     checks passed), 1 = FAIL. Truth-anchored on book bytes + golden hashes."""
@@ -1317,8 +1329,8 @@ def check_catalog_integrity():
     2 = BOOTSTRAP (unsealed; structural checks passed), 1 = FAIL. Verifies the catalog's
     internal structure (counts, well-formed slugs, umbrella children resolve); the
     cross-pillar claim->catalog resolution is the separate references_resolve gate.
-    (the nutrient registry nutrients.json returned in Phase F; it re-lights the substance half
-    of references_resolve.)"""
+    The nutrient registry nutrients.json is part of the same pillar; it lights the
+    substance half of references_resolve."""
     verify = ROOT / "eden" / "tools" / "catalog_verify.py"
     if not verify.exists():
         return True, "eden/tools/catalog_verify.py missing (catalog not installed; bootstrap-guard)"
@@ -1333,9 +1345,9 @@ def check_catalog_integrity():
 
 
 def check_references_resolve():
-    """Charter R3 -- references_resolve. Every condition/symptom slug a claim maps to MUST
+    """references_resolve. Every condition/symptom slug a claim maps to MUST
     be pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms}.json). This
-    closes the phantom-slug hole: before Phase B a typo'd slug ('diabtes') silently minted a
+    closes the phantom-slug hole: without it a typo'd slug ('diabtes') silently mints a
     brand-new condition in the derived index with nothing to catch it. Delegates to the single
     implementation eden/tools/corpus_verify.py::unresolved_references (one source, no
     duplication). Skipped (pass) until the catalog is installed (bootstrap-safe). Truth-anchored
@@ -1353,16 +1365,16 @@ def check_references_resolve():
     nutr_active = (ROOT / "eden" / "catalog" / "nutrients.json").exists()
     substance_note = (
         f"the substance (other_substances) half is ACTIVE: every claim substance resolves to "
-        f"nutrients.json ({len(catalog.nutrient_slugs())} substances registered, Phase F)"
+        f"nutrients.json ({len(catalog.nutrient_slugs())} substances registered)"
         if nutr_active else
-        "the substance (other_substances) half is DORMANT until Phase F rebuilds the nutrient registry")
+        "the substance (other_substances) half is DORMANT — eden/catalog/nutrients.json is not installed")
     return True, (f"all claim condition/symptom slugs resolve to the Catalog "
                   f"({len(catalog.condition_slugs())} conditions, {len(catalog.symptom_slugs())} symptoms); "
                   f"{substance_note}")
 
 
 def check_product_registry_resolves():
-    """Product-DB registry health (Phase F chunk 2). Delegates to the single implementation
+    """Product-DB registry health. Delegates to the single implementation
     eden/tools/nutrient_resolve.py, which for every quantified Product-DB substance resolves it
     to an essential slug OR classifies it as a botanical, collapses the botanical vocabulary to
     ZERO surface collisions, and asserts a bank of known identity + unit-conversion values
@@ -1425,9 +1437,10 @@ def check_products_hash_integrity():
 
 
 def check_corpus_runtime_purity():
-    """Phase alpha — the shipped dashboard bundle must make no LLM / external-network
-    call (offline-forever; proposal section 5). Greps dist/main.js for LLM-SDK +
-    API-endpoint markers. Same family as no_external_style_resources."""
+    """The shipped dashboard bundle must make no LLM / external-network call.
+    The app has no network at runtime, so any such marker in the bundle is a
+    breach of that promise. Greps dist/main.js for LLM-SDK + API-endpoint
+    markers. Same family as no_external_style_resources."""
     dist = ROOT / "dashboard" / "assets" / "js" / "dist" / "main.js"
     if not dist.exists():
         return True, "dist/main.js missing (build not present; bootstrap-guard)"
@@ -1444,13 +1457,14 @@ def check_corpus_runtime_purity():
 
 
 def check_derived_artifacts_fresh():
-    """R1 / blueprint D2 — every GENERATED data artifact listed in
+    """Every GENERATED data artifact listed in
     eden/derived/MANIFEST.json must equal a fresh run of its ONE pure generator
     over the sealed pillars. The offline file:// app inlines these into the bundle
     at build (esbuild JSON import), so a hand-edit or a stale build would make a
     surface lie. Regenerate via `python eden/tools/build_embeds.py`. Generalizes
-    the retired corpus_embed_synced to ALL manifest artifacts (grows through Phase
-    C: C2 adds essentials-targets-data, C3 the product embeds). Truth-anchored on a
+    the retired corpus_embed_synced to ALL manifest artifacts: the gate covers
+    whatever the manifest lists, so a newly added artifact is guarded the day it
+    enters the manifest and no gate edit is needed. Truth-anchored on a
     deterministic re-derive from the sealed source each run — never stale-to-stale."""
     import importlib.util as _ilu
     import json as _json
@@ -1504,10 +1518,11 @@ def check_derived_artifacts_fresh():
 
 
 def _amounts_wallach_only_impl(embed_p, canon_p, claims_dir):
-    """Charter R2 / §00.A — every NUMERIC coverage target in
-    dashboard/assets/data/essentials-targets-data.json is a Wallach dose, AND the posted
-    number is the DETERMINISTIC result of the documented transform chain applied to that
-    sealed Wallach dose. Two layers of proof (§00.B #2 defense in depth, #11 truth-anchoring):
+    """§00.A (Wallach is the only source of amounts) — every NUMERIC
+    coverage target in dashboard/assets/data/essentials-targets-data.json is a Wallach
+    dose, AND the posted number is the DETERMINISTIC result of the documented transform
+    chain applied to that sealed Wallach dose. Two layers of proof (§00.B defense in
+    depth + truth-anchoring):
 
       TRACE (the anchor) -- source_claim_id resolves to a sealed corpus `dose` claim mapping
         the essential's slug, AND provenance.original_{low,high,unit} EQUALS that claim's dose
@@ -1691,21 +1706,22 @@ def _amounts_wallach_only_impl(embed_p, canon_p, claims_dir):
 # ---------------------------------------------------------------------------
 # R2 / §00.A -- dose_amount_in_verbatim (2026-07-15)
 # ---------------------------------------------------------------------------
-# THE HOLE THIS CLOSES. Until 2026-07-15 nothing in the repo tied a claim's
-# structured `dose.amount` to the book text. amounts_wallach_only anchors a
-# target's provenance to the CLAIM's dose field -- which is ours, and was
-# unverified. corpus_integrity proves the VERBATIM is a substring of the book,
-# but never that the number we EXTRACTED matches the number printed beside it.
-# So the chain ran airtight from the rendered target back to the claim, and
-# then stopped. PROVEN 2026-07-15: a planted 10x sodium fabrication
-# (3,300 -> 33,000 mg) passed the whole board GREEN while the claim's own
-# verbatim still read "3,300 mg". This gate is that missing link.
+# THE HOLE THIS CLOSES. Nothing else in the repo ties a claim's structured
+# `dose.amount` to the book text. amounts_wallach_only anchors a target's
+# provenance to the CLAIM's dose field -- which is ours, and unverified.
+# corpus_integrity proves the VERBATIM is a substring of the book, but never
+# that the number we EXTRACTED matches the number printed beside it. So the
+# chain ran airtight from the rendered target back to the claim, and then
+# stopped. DEMONSTRATED with a planted 10x sodium fabrication (3,300 -> 33,000
+# mg): it passed the whole board GREEN while the claim's own verbatim still
+# read "3,300 mg". This gate is that missing link.
 #
 # THE THREE ADVERSARIAL BREAKS that shaped the design (each is now a pinned
-# case in tools/test_dose_amount_in_verbatim.py -- do not weaken without one):
+# case in tools/tests/test_dose_amount_in_verbatim.py -- do not weaken without one):
 #   1. CROSS-ROW BLEED. A verbatim span often carries the NEXT nutrient's table
 #      row. A naive presence check accepts any number in the span, so choline's
-#      600 could be "proven" by chromium's row. 37 of 86 spans name >1 nutrient.
+#      600 could be "proven" by chromium's row. A large minority of spans name
+#      more than one nutrient, so presence alone can never be sound.
 #   2. UNIT SWAP. LETS-000048 choline 600 mg re-tagged `mcg` (a 1000x UNDER-dose
 #      -- the invisible failure: an understated target silently marks a user
 #      covered) passed, because chromium's row supplies "300 to 600 mcg".
@@ -1732,12 +1748,13 @@ def _amounts_wallach_only_impl(embed_p, canon_p, claims_dir):
 #     not the corpus).
 #
 # NO BASELINE EXCEPTION. The original spec wanted one for LETS-000061
-# (phosphorus 0 / "PHOSPHORUS 800 mg 0.0 0.0"). An adversary proved that would
-# NEUTER THE WHOLE GATE: .claude/invariant-baseline.json is INVARIANT-scoped
+# (phosphorus 0 / "PHOSPHORUS 800 mg 0.0 0.0"). That would NEUTER THE WHOLE
+# GATE: .claude/invariant-baseline.json is INVARIANT-scoped
 # (stop_round_close.py::_tolerated returns a set of invariant NAMES), so one
-# entry tolerates all 86 claims. Handled in-gate instead: a unitless column is
-# accepted ONLY when the amount is zero (0 mg == 0 mcg; Wallach's "0.0" means no
-# supplemental need). A non-zero unitless column is unverifiable -> fail closed.
+# entry tolerates EVERY claim this gate checks. Handled in-gate instead: a
+# unitless column is accepted ONLY when the amount is zero (0 mg == 0 mcg;
+# "0.0" means no supplemental need). A non-zero unitless column is
+# unverifiable -> fail closed.
 #
 # Truth anchor: the claim's own verbatim bytes, which corpus_integrity
 # independently pins to the sealed book .txt. The two compose -- R5 proves the
@@ -2006,24 +2023,18 @@ def _dose_amount_in_verbatim_impl(claims, canon):
 
 
 # ---------------------------------------------------------------------------
-# §31 -- regimen_state_mutation_routing (RESTORED 2026-07-15)
+# Section 31 -- regimen_state_mutation_routing
 # ---------------------------------------------------------------------------
-# This gate was REMOVED 2026-07-05 (commit fca48c9d, the Phase-A legacy sever) and slated
-# to "return in Phase C". Phase C landed the SAME DAY. Phase F is done and the project is
-# in G/H. It was orphaned for ten days while CLAUDE.md went on stating flatly that "user
-# state persists to localStorage through the §31 chokepoint only" -- an unqualified claim
-# in the file loaded at every session boot, resting on a WARN-level lint rule and nothing
-# else. chokepoint-discipline.md was scrupulously honest about the gap (labeled WISH, R7);
-# the operating contract was not. That gap between an honest rule file and a confident
-# CLAUDE.md is the same disease as every other finding this session.
+# WHY THIS IS A GATE AND NOT A RULE. The contract states flatly that user state
+# reaches localStorage through the section-31 chokepoint only. For a stretch that
+# claim rested on a warn-level lint rule and nothing else -- an operating document
+# asserting an enforcement that did not exist. A rule that can be a gate must be
+# one, in the same patch.
 #
-# WHAT IT CHECKS NOW, and why not what the old one checked. The old gate's stated contract
-# was "every regimen LS key is registered in LS_SCHEMAS". LS_SCHEMAS DOES NOT EXIST -- it
-# died with the legacy dashboard. Restoring that check verbatim would have re-introduced a
-# gate asserting a structure that is gone (exactly what no_operating_doc_contradiction
-# guards docs against). So this gates the contract that is actually TRUE today:
+# WHAT IT CHECKS. The contract that is actually true today:
 #   (1) the five legacy chokepoints still EXIST as export functions (API preserved so the
-#       burning views keep compiling -- blueprint P3 "extends the five, does not replace them");
+#       existing views keep compiling -- the single writer EXTENDS the five, it does
+#       not replace them);
 #   (2) regimen state has exactly ONE writer -- setValidated(RG_SLOTS_KEY, ...) appears once,
 #       in the private writeSlotDoc -- and that writer EMITS the typed `regimen:changed`
 #       cascade (a silent writer would leave every subscriber stale);
@@ -2034,16 +2045,14 @@ def _dose_amount_in_verbatim_impl(claims, canon):
 #       WRITTEN -- they are read once by the migration, then inert;
 #   (5) `localStorage` is touched ONLY in core/storage.ts, and no view writes storage directly.
 #
-# P3 RE-CODIFICATION (2026-07-16, R9 -- tighten with proof, never silently loosen). The old
-# gate's 1-fn<->1-key<->direct-`set()` model does not fit N-ops -> one private writer -> one
-# key. Two of its clauses would have MISFIRED on the correct single-source design: clause 3a
-# (`if key not in body`) demanded each chokepoint NAME its key constant, which a delegating op
-# does not; and the body slice ran to the next `\nexport function`, so the private
-# `function writeSlotDoc` got SWALLOWED into whichever export textually preceded it -- a
-# placement-dependent false match, the exact fragility R9 exists to kill. The new impl uses a
-# length-preserving comment/string blanker + paren-then-brace body matching (below), so a
-# reorder of functions cannot change what it proves. tools/test_regimen_state_mutation_routing.py
-# pins both the good delegating shape and every real violation.
+# PLACEMENT-INDEPENDENT BY CONSTRUCTION — do not regress this. An earlier version
+# sliced each function's body up to the next `\nexport function`, so the private
+# `function writeSlotDoc` was SWALLOWED into whichever export textually preceded it:
+# a false match that depended on source ORDER. The current impl uses a
+# length-preserving comment/string blanker + paren-then-brace body matching (below),
+# so reordering functions cannot change what it proves.
+# tools/tests/test_regimen_state_mutation_routing.py pins both the good delegating shape
+# and every real violation.
 # The real localStorage API surface. Deliberately NOT r"\blocalStorage\s*\." -- see the note
 # in _regimen_state_mutation_routing_impl: that pattern matches the period ending a sentence
 # in a code comment.
@@ -2051,7 +2060,8 @@ _LS_API_RE = re.compile(
     r"\blocalStorage\s*(?:\.\s*(?:getItem|setItem|removeItem|clear|key|length)\b|\[)")
 
 
-# The five legacy chokepoints whose EXPORT must survive (API preservation, blueprint P3).
+# The five legacy chokepoints whose EXPORT must survive (API preservation: existing
+# callers keep compiling while every write routes through the one private writer).
 _S31_LEGACY_CHOKEPOINTS = (
     "persistRegimen", "saveRgOverride", "saveRgManual", "saveRgRemoved", "saveRgUserGoals",
 )
@@ -2147,7 +2157,7 @@ def _ts_fn_span(blanked, header_regex):
 
 def _regimen_state_mutation_routing_impl(regimen_src, storage_src, view_srcs):
     """Params are source strings so the negative test can drive planted code.
-    See the block comment above for the full P3 contract + why the model changed."""
+    See the block comment above for the full contract and why the model changed."""
     viol = []
     blanked = _blank_noncode(regimen_src)
 
@@ -2199,16 +2209,15 @@ def _regimen_state_mutation_routing_impl(regimen_src, storage_src, view_srcs):
                         f"mutation must reach the single writer")
 
     # (5) localStorage confined to core/storage.ts. Match the real LS API surface, NOT a
-    # bare `localStorage.` -- the first cut used r"\blocalStorage\s*\." and RED-flagged FIVE
+    # bare `localStorage.` -- an earlier cut used r"\blocalStorage\s*\." and RED-flagged FIVE
     # INNOCENT FILES by matching the FULL STOP in prose: "Pure reads only -- no mutation, no
     # localStorage. The corpus is canonical". Three of those comments were promising exactly
-    # the opposite of the violation they were accused of. Caught 2026-07-15 only by reading
-    # the flagged lines instead of trusting the gate's first output (memory:
-    # the-instrument-lies-before-the-eye). An over-firing gate teaches people to switch gates
-    # off, which is worse than the hole it guards.
+    # the opposite of the violation they were accused of, which only reading the flagged lines
+    # revealed. An over-firing gate teaches people to switch gates off, which is worse than
+    # the hole it guards.
     for rel, src in view_srcs:
         if _LS_API_RE.search(src):
-            viol.append(f"{rel} touches localStorage directly -- the S31/S17 chokepoint is "
+            viol.append(f"{rel} touches localStorage directly -- the storage chokepoint is "
                         f"core/storage.ts alone")
     if not re.search(r"localStorage\.setItem", storage_src):
         viol.append("core/storage.ts no longer writes localStorage -- the chokepoint moved; "
@@ -2221,8 +2230,9 @@ def _regimen_state_mutation_routing_impl(regimen_src, storage_src, view_srcs):
 
 
 def check_regimen_state_mutation_routing():
-    """§31 chokepoint discipline -- see the block comment above for the full contract and
-    why this does NOT restore the old LS_SCHEMAS check (that registry no longer exists)."""
+    """Storage-chokepoint discipline -- see the block comment above for the full contract:
+    every regimen mutation routes through one private writer, and only core/storage.ts is
+    allowed to touch localStorage."""
     src_dir = ROOT / "dashboard" / "assets" / "js" / "src"
     reg = src_dir / "state" / "regimen.ts"
     sto = src_dir / "core" / "storage.ts"
@@ -2240,9 +2250,9 @@ def check_regimen_state_mutation_routing():
 
 
 # ---------------------------------------------------------------------------
-# slot_invariants (NEW 2026-07-16, P3) -- the slot system's structural guards
+# slot_invariants -- the slot system's structural guards
 # ---------------------------------------------------------------------------
-# HONEST STATIC/RUNTIME SPLIT (R7). A Python gate reading TS SOURCE can prove the
+# HONEST STATIC/RUNTIME SPLIT. A Python gate reading TS SOURCE can prove the
 # enforcing CODE EXISTS; it cannot observe runtime state. So this STATIC gate proves:
 #   - SlotDocSchema enforces >=1 slot (.min(1)), <=4 (.max(4)), <=20 trash (.max(20)), <=7 slotTrash (.max(7)),
 #     and activeSlot-resolves (a superRefine naming activeSlot) -- at the Zod boundary,
@@ -2252,10 +2262,9 @@ def check_regimen_state_mutation_routing():
 #   - deleteSlot refuses the last slot (length <= 1 -> {ok:false}) AND reassigns activeSlot
 #     (promotes a survivor).
 # The runtime BEHAVIOUR (the 5th add is actually refused; deleting the active slot actually
-# promotes the lowest survivor) is proven by tools/render_probe_slots.js on the real file://
-# app. If that probe is NOT on the round-close board, invariants 2 + 4 rest on it as a WISH,
-# never sold as statically gated (the mineral-tiers lesson: a green static check is not proof
-# the code runs correctly).
+# promotes the lowest survivor) is proven by tools/probes/render_probe_slots.js on the real file://
+# app. If that probe is not run, invariants 2 + 4 are unenforced and must be labeled WISH,
+# never sold as statically gated: a green static check is not proof the code runs correctly.
 
 
 def _slot_invariants_impl(schema_src, regimen_src):
@@ -2328,7 +2337,7 @@ def _slot_invariants_impl(schema_src, regimen_src):
 
 
 def check_slot_invariants():
-    """P3 slot-system structural guards -- see the block comment above for the static/runtime
+    """Slot-system structural guards -- see the block comment above for the static/runtime
     split and why the runtime half rests on render_probe_slots.js."""
     src_dir = ROOT / "dashboard" / "assets" / "js" / "src"
     schema = src_dir / "core" / "schemas" / "regimen.ts"
@@ -2340,19 +2349,19 @@ def check_slot_invariants():
 
 
 # ---------------------------------------------------------------------------
-# essentials_canon_matches_graphic (2026-07-15) -- THE MEMBERSHIP ANCHOR
+# essentials_canon_matches_graphic -- THE MEMBERSHIP ANCHOR
 # ---------------------------------------------------------------------------
 # THE HOLE THIS CLOSES. essentials-canon.json's MEMBERSHIP -- which 91 substances are the
 # 90 essentials -- had no anchor outside our own app. Its own `provenance` field says it
 # plainly: "Bootstrapped 2026-06-24 from dashboard/assets/data/coverage-layout-data.json".
 # Traced back one more link, that layout came from
-# dashboard/components/workspace-coverage-v3.2-PROPOSAL.html -- a UI DESIGN MOCKUP, dated
-# three days before the canon. The tell: the canon's mineral order inside the invented
+# dashboard/components/workspace-coverage-v3.2-PROPOSAL.html (since deleted) -- a UI DESIGN
+# MOCKUP, dated three days before the canon. The tell: the canon's mineral order inside the invented
 # rare_trace tier is alphabetical BY ATOMIC SYMBOL (Ag, Al, As, Au, Ba, Be), which is how a
 # list is lifted off a rendered table, not authored from a source.
 #
 # Every existing gate was blind to this BY CONSTRUCTION. corpus_integrity + the golden
-# hashes prove the canon has not CHANGED (§00.B #11: stale-to-stale equality is not truth --
+# hashes prove the canon has not CHANGED (stale-to-stale equality is not truth --
 # sealing a fabrication makes it permanent, not correct). derived_artifacts_fresh proved the
 # layout regenerates from the canon, which was guaranteed: the canon was bootstrapped FROM
 # that artifact, so "zero diff" proved ring consistency, not truth. graphics_integrity
@@ -2362,7 +2371,7 @@ def check_slot_invariants():
 #   sealed JPG bytes  ->  the transcription (bound by source.file_sha256)  ->  the canon
 #      graphics_integrity          THIS GATE (both halves)            THIS GATE
 #
-# WHAT IS NOT PROVEN, and cannot be (R7 -- label it, do not sell it): that the transcription
+# WHAT IS NOT PROVEN, and cannot be -- label it, never sell it: that the transcription
 # is an accurate READING of the image. No machine checks that; it is human-verifiable by
 # opening the JPG. That is a real limit. It is still strictly better than the mockup: a
 # misread is visible to anyone who looks, whereas the mockup ancestry was invisible for
@@ -2448,7 +2457,7 @@ def check_essentials_canon_matches_graphic():
 
 
 def check_dose_amount_in_verbatim():
-    """Charter R2 / §00.A -- see the block comment above for the full contract, the three
+    """§00.A -- see the block comment above for the full contract, the three
     adversarial breaks that shaped it, and what it does NOT check."""
     canon = json.loads((ROOT / "eden/corpus/essentials-canon.json").read_text(encoding="utf-8"))
     claims = []
@@ -2459,7 +2468,7 @@ def check_dose_amount_in_verbatim():
 
 
 def check_amounts_wallach_only():
-    """Charter R2 / §00.A wrapper -- see _amounts_wallach_only_impl for the full contract.
+    """§00.A wrapper -- see _amounts_wallach_only_impl for the full contract.
     Thin path-binding shell over the impl so a negative test can drive the same logic with a
     tampered artifact (proving the gate goes RED on poison, not just green on truth)."""
     embed = ROOT / "dashboard" / "assets" / "data" / "essentials-targets-data.json"
@@ -2472,8 +2481,8 @@ def check_amounts_wallach_only():
 # fan to both. This is the ONLY exemption from collective_doses_not_fanned's fail-closed
 # arity check -- every entry needs a stated reason, and adding one is a deliberate act.
 #
-# ★ EMPTY SINCE 2026-07-15, AND ITS ONLY EVER ENTRY WAS A FABRICATION (R9 -- a tightening,
-# never a loosening). It read:
+# ★ EMPTY, AND ITS ONLY EVER ENTRY WAS A FABRICATION. Removing it was a tightening,
+# never a loosening. It read:
 #     cobalt/vitamin-b12: cobalt is the metal atom at the centre of the cobalamin molecule;
 #     Wallach's "250-400 mcg" is one intake described by both names, not a split budget.
 # That reason REFUTES ITSELF: "the metal atom at the centre of" is a PART-OF relation; "one
@@ -2482,8 +2491,8 @@ def check_amounts_wallach_only():
 # dose post a 400 mcg ELEMENTAL COBALT target, and because the exemption lived HERE, the gate
 # built to catch exactly that class reported green while it happened.
 # Both claims now carry dose.applies_to = ["vitamin-b12"] (the amount is B12's), so they map
-# one dosed essential each and need no exemption. Evidence + Luneth's ruling:
-# chronicle/contradictions/2026-07-15-cobalt-elemental-vs-b12.md
+# one dosed essential each and need no exemption. The evidence and the ruling that
+# removed the carve-out: chronicle/contradictions/2026-07-15-cobalt-elemental-vs-b12.md
 #
 # THE LESSON, for whoever is tempted to add the next entry: an exemption is a claim about the
 # WORLD, not a build fix. This one was chemistry nobody checked against the books, written
@@ -2501,11 +2510,12 @@ def _pdm_group_not_named_rare_earths_impl(copy_p, layout_p):
     scandium "a rare element" (:9514), NOT a rare earth. So 19 of the 34 in this group are not
     rare earths by his OWN tagging, and naming the group after them asserts a chemical
     hierarchy he does not hold -- the same invention as the deleted FOUNDATIONAL / MAJOR TRACE
-    / RARE TRACE tiers (killed 56145a4e). The affirmative kill is his own sentence,
-    hk.txt:7312-7314: "The concentration of trace elements in tissue or requirement levels does
+    / RARE TRACE tiers, since removed for exactly this reason. The affirmative kill is his own sentence,
+    hk.txt:7312-7314 (book sources are not distributed publicly -- see eden/corpus/README):
+    "The concentration of trace elements in tissue or requirement levels does
     not represent their relative importance as an essential nutrient."
 
-    WHY THIS GATE EXISTS AT ALL (2026-07-15): pdm_coverage_derive.py's docstring has said "do
+    WHY THIS GATE EXISTS AT ALL: pdm_coverage_derive.py's docstring has said "do
     not rename it back" since the group was created -- and the USER-FACING copy said "Rare Earth
     Minerals" and "of the rare-earth group goal" the whole time. A rule with no gate is a WISH
     (R7), and this one had already been broken on the only surface a user can see. The code
@@ -2586,20 +2596,20 @@ def _fn_body(src, name):
 def _kids_products_not_recommended_impl(excl_p, products_p, rec_src_p, rec_data_p):
     """Kids-formulated products may NEVER reach a recommendation surface — and MUST stay in the DB.
 
-    Luneth, 2026-07-16: "no kids products ever get recommended as items ... they are good but
-    no adult is ever going to take those and they're better as a database item to be discovered
-    in the products tab of the knowledge drawer ... kids will never use our app."
+    THE PRODUCT RULE: kids-formulated products are never RECOMMENDED as items -- no adult is
+    going to take them -- but they must STAY in the database, discoverable in the Products tab
+    of the knowledge drawer. The app's audience is adults; kids never use it directly.
 
     THE ASYMMETRY IS THE REQUIREMENT, so this gate asserts BOTH halves:
       rankSources (every rec surface funnels through it)      MUST filter.
       essentialSlugsByProduct (the Products-tab database path) MUST NOT.
     Filtering the second would "fix" the first into a violation — hiding kids products from the
-    catalogue he explicitly wants them discoverable in. Both directions are RED here.
+    catalogue where they must stay discoverable. Both directions are RED here.
 
     WHY IT IS NOT A DERIVE-TIME FILTER (and why this gate reads SOURCE, not just data): both
     consumers read the same generated product-recommender-data.json, so stripping kids products
     from the artifact would erase them from the Products tab too — elegant in the derive, a lie
-    on the screen (memory: derive-elegance-is-not-user-truth). The exclusion is therefore a
+    on the screen. The exclusion is therefore a
     read-time filter, which means it is exactly one careless refactor from vanishing. Hence a gate.
 
     THE FAIL-OPEN TRAP THIS CLOSES: every failure mode here is SILENT and looks like success —
@@ -2607,10 +2617,10 @@ def _kids_products_not_recommended_impl(excl_p, products_p, rec_src_p, rec_data_
     products simply start being recommended again. So an unresolvable id is RED (never skipped),
     and the anti-vacuity check below refuses to certify a filter that is filtering nothing.
 
-    SCOPE / HONEST LIMIT (R7): this proves the PLUMBING — the list resolves and the filter is
-    wired the right way round. It CANNOT prove the list is COMPLETE. That a 5th kids product
-    isn't sitting unlisted in the pillar rests on the 2026-07-16 sweep (all 217 label images +
-    all 215 marketing descriptions) and on Luneth's review — not on this check. Membership is a
+    SCOPE / HONEST LIMIT: this proves the PLUMBING — the list resolves and the filter is
+    wired the right way round. It CANNOT prove the list is COMPLETE. That no further kids
+    product is sitting unlisted in the pillar rests on a manual sweep of every product label
+    and marketing description, and on human review — not on this check. Membership is a
     curation judgment; only its enforcement is mechanical.
     """
     import json as _json
@@ -2662,12 +2672,12 @@ def _kids_products_not_recommended_impl(excl_p, products_p, rec_src_p, rec_data_
                        "to verify the Products-tab path is left whole")
     if "isExcludedFromRecommendations" in idx_body:
         return False, ("state/recommender.ts::essentialSlugsByProduct FILTERS kids products — that is "
-                       "the Products-tab DATABASE path, where Luneth requires them to stay "
+                       "the Products-tab DATABASE path, where they must stay "
                        "discoverable. Excluded from being RECOMMENDED, never hidden from the catalogue")
 
     # (d) ANTI-VACUITY. If no excluded product is even a candidate, the filter is filtering
-    #     nothing and this gate would certify a dead branch as green (memory:
-    #     negative-control-or-it-proves-nothing — a check that cannot fail proves nothing).
+    #     nothing and this gate would certify a dead branch as green — a check that cannot
+    #     fail proves nothing.
     live = []
     if rec_data_p.exists():
         rec = (_json.loads(rec_data_p.read_text(encoding="utf-8")) or {}).get("essentials", {})
@@ -2688,7 +2698,7 @@ def _kids_products_not_recommended_impl(excl_p, products_p, rec_src_p, rec_data_
 
 
 def _goal_members_actionable_impl(layout_p, targets_p, derive_p, coverage_ts_p):
-    """R7 gate for GOAL MEMBERSHIP (the live Coverage build, 2026-07-16).
+    """Gate for GOAL MEMBERSHIP on the Coverage board.
 
     A goal RING means "a goal nutrient you have NOT covered" -- a to-do marker. So a goal may
     only name an essential the user can actually ACT on individually. Two classes cannot be,
@@ -2696,19 +2706,19 @@ def _goal_members_actionable_impl(layout_p, targets_p, derive_p, coverage_ts_p):
 
       1. The PLANT DERIVED 34 (target.kind == 'trace_pdm'). Wallach states no individual
          amount for these; they share ONE verdict off the colloidal-mineral bottle, so a ring
-         on one is a to-do the user cannot do. The signed-off demo states the rule in its own
-         words ("Wallach never itemises these, so they can never be 'named for' a goal").
+         on one is a to-do the user cannot do: Wallach never itemises these, so they can never
+         be "named for" a goal.
       2. The fiat-covered FOUNDATIONAL 4 (H/C/N/O) -- forced covered because you breathe.
          Nothing to take, so there is no goal to set. PHOSPHORUS is deliberately NOT in this
-         class: its covered traces to a sealed Wallach claim (target.low == 0), not to the
-         fiat, so it stays goal-nameable exactly as the demo has it.
+         class: its covered status traces to a sealed Wallach claim (target.low == 0), not to
+         the fiat, so it stays goal-nameable.
 
     THE CHECK THAT EARNS THIS GATE'S KEEP is #3: coverage_layout_derive.py must MIRROR
     state/coverage.ts's FOUNDATIONAL_PRESENT_SLUGS, because Python cannot import TypeScript
     and the list is therefore written twice. A silent drift there would quietly change which
     essentials a goal may name, on a green board, with no other check watching -- the exact
-    shape of every expensive failure in this project. R3 by ENFORCEMENT, since it cannot be
-    R3 by construction.
+    shape of every expensive failure in this project. Single-source-of-truth by ENFORCEMENT,
+    since it cannot be single-source by construction.
     """
     import json as _json
     import re as _re
@@ -2793,7 +2803,7 @@ def check_goal_members_actionable():
 
 
 def _pdm_group_goals_wallach_sourced_impl(layout_p, claims_dir):
-    """R7/R2 gate for GROUP goal membership (the plant-derived dots, 2026-07-16).
+    """Gate for GROUP goal membership (the plant-derived dots on the Coverage board).
 
     THE RULE: the plant-derived 34 can never be named INDIVIDUALLY by a goal (Wallach states
     no per-element amount -- that half is `goal_members_actionable`). But he DOES prescribe the
@@ -2801,7 +2811,7 @@ def _pdm_group_goals_wallach_sourced_impl(layout_p, claims_dir):
     coverage-layout-data.json's `goals[].groups`. This gate proves every such claim of ours is
     HIS, and that we dropped none of his.
 
-    WHY IT RE-DERIVES INSTEAD OF TRUSTING THE ARTIFACT (§00.B #11): it recomputes membership
+    WHY IT RE-DERIVES INSTEAD OF TRUSTING THE ARTIFACT: it recomputes membership
     from the SEALED CLAIMS ITSELF and byte-compares to the posted `groups`. It deliberately
     does NOT import coverage_layout_derive -- a gate that asks the derive whether the derive was
     right is a derive bug silencing its own alarm.
@@ -2822,9 +2832,8 @@ def _pdm_group_goals_wallach_sourced_impl(layout_p, claims_dir):
     COMPLEX) matches; `colloidal calcium` / `colloidal selenium` / `colloidal tin` (a SINGLE
     element, which belongs to the INDIVIDUALLY DOSED 21) must NOT. Reading the claim's OWN
     verbatim -- not a window around it, and not its `other_substances` tag -- is what makes
-    neighbouring-entry bleed impossible: that bleed produced 9 of 12 false positives when this
-    was settled by reading, and it silently corrupted four character-window instruments that
-    each returned a different answer.
+    neighbouring-entry bleed impossible: a character window around a match reads the NEXT
+    entry's text and produces confident false positives.
 
     ★ HONEST LIMIT (R7, labelled not hidden): matching the WORDS does not prove the STANCE. A
     verbatim reading "colloidal minerals are useless for X" would satisfy this gate. That half
@@ -2925,11 +2934,11 @@ def check_pdm_group_goals_wallach_sourced():
 
 
 def _recommendations_not_stored_impl(src_dir, data_dir):
-    """R7 gate (blueprint SS5/SS11): a recommendation list is DERIVED, never STORED.
+    """A recommendation list is DERIVED at read time, never STORED.
 
-    This is not a performance rule. It is what makes Luneth's #4 structurally true rather
+    This is not a performance rule. It is what makes the requirement structurally true rather
     than defended-against: "remove an item -> it reappears in recommendations" is not a
-    feature anyone codes, because there is no stored list to fall out of sync. His
+    feature anyone codes, because there is no stored list to fall out of sync. The
     goal -> add -> remove-goal -> remove-item loop CANNOT exist if the list is a pure
     function of (goals, active slot, product DB).
 
@@ -2961,9 +2970,9 @@ def _recommendations_not_stored_impl(src_dir, data_dir):
     # 1. no LS key that stores recommendations.
     # ★ 'recommend', NOT 'rec': the first cut matched any "rec" substring and fired on
     # scanner.ts's `lcRecentScans_v1` -- RECENT SCANS, a legitimate recoverable buffer that has
-    # nothing to do with recommendations (blueprint SS8: "a new scan never silently destroys the
-    # last"). Over-firing on a real feature is how a gate gets deleted instead of fixed. R9:
-    # tightened + the case pinned in tools/test_recommendations_not_stored.py.
+    # nothing to do with recommendations (a new scan must never silently destroy the last).
+    # Over-firing on a real feature is how a gate gets deleted instead of fixed; the check was
+    # tightened with the case pinned in tools/tests/test_recommendations_not_stored.py.
     KEY_RE = _re.compile(r"""['"]([A-Za-z0-9_]*[Rr]ecommend[A-Za-z0-9_]*_v\d+)['"]""")
     for p in sorted(src_dir.rglob("*.ts")):
         for k in KEY_RE.findall(_strip_comments(p.read_text(encoding="utf-8"))):
@@ -3003,7 +3012,7 @@ def check_kids_products_not_recommended():
 
 
 def _mirrors_resolve_impl(embed_p, canon_p):
-    """R7 gate for the 'mirrors' target kind (Phase: cobalt, 2026-07-15).
+    """Gate for the 'mirrors' target kind.
 
     A mirroring essential states NO Wallach amount and carries another essential's verdict
     instead (cobalt -> vitamin-b12: "the requirement is for a cobalt complex known as
@@ -3012,7 +3021,7 @@ def _mirrors_resolve_impl(embed_p, canon_p):
     can never be ambiguous, circular, or silently wrong.
 
     FIVE CHECKS, all anchored to the SEALED canon rather than to the derive's opinion of it
-    (SS00.B #11), so a targets_derive bug cannot also silence this:
+    (stale-to-stale equality is not truth), so a targets_derive bug cannot also silence this:
       1. kind 'mirrors' carries a non-empty mirrors_slug -- else the view has nothing to point
          at and the tile falls statusless with no explanation.
       2. mirrors_slug RESOLVES to a real canon essential. A typo'd slug would leave the tile
@@ -3026,8 +3035,8 @@ def _mirrors_resolve_impl(embed_p, canon_p):
       5. The canon and the artifact AGREE on which essentials mirror -- a hand-edited artifact
          cannot introduce a mirror the pillar never declared.
 
-    ★ WHAT THIS GATE DOES NOT PROVE, stated plainly (R7 honesty): that cobalt SHOULD mirror
-    B12. That is an editorial call by Luneth on a source that says it BOTH ways -- Wallach also
+    ★ WHAT THIS GATE DOES NOT PROVE, stated plainly: that cobalt SHOULD mirror
+    B12. That is an editorial call on a source that says it BOTH ways -- Wallach also
     writes that cobalt is "also required as a necessary cofactor for the production of the
     thyroid hormone thyroxin" (immortality.txt:5946-5947, in 3 books). This gate is structural
     only; it cannot catch a wrong mirror, only an unresolvable one. The reasoning is recorded
@@ -3089,7 +3098,7 @@ def check_mirrors_resolve():
 
 
 def _collective_doses_not_fanned_impl(embed_p, claims_dir):
-    """Charter R2 (the half amounts_wallach_only is STRUCTURALLY BLIND TO).
+    """The half amounts_wallach_only is STRUCTURALLY BLIND TO.
 
     THE HOLE THIS CLOSES, proven on real data 2026-07-15 before it was written:
     Wallach states ONE amount for a CATEGORY -- "Essential fatty acids ... supplemented at
@@ -3108,7 +3117,8 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
     budget belongs in its own group artifact under its own recomputing goal gate (the
     pdm_goal_wallach_sourced shape); a number on a member essential is the fan-out.
 
-    Anchored to the SEALED claims, not to the derive's opinion of them (SS00.B #11): a
+    Anchored to the SEALED claims, not to the derive's opinion of them -- stale-to-stale
+    equality is not truth: a
     targets_derive bug that starts fanning again cannot also silence this, because the truth
     is read from eden/corpus/claims/* independently.
 
@@ -3119,7 +3129,7 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
     ★ This paragraph used to cite cobalt/vitamin-b12 as a legitimate fan ("ONE substance
     carries two names"). That was FALSE and it was the bug -- see _SAME_SUBSTANCE_SLUGS above.
 
-    THE FAIL-OPEN, CLOSED 2026-07-15 (R9). The check keyed ENTIRELY on `dose.collective_group`
+    THE FAIL-OPEN, SINCE CLOSED. The check keyed ENTIRELY on `dose.collective_group`
     -- a HAND-AUTHORED annotation -- and returned "no collective dose claims sealed (vacuously
     clean)" when it found none. So the gate protected against fan-out only for claims someone
     had REMEMBERED to annotate: mine a new shared-budget dose, forget the field, and the gate
@@ -3137,11 +3147,9 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
     instead of a silent fan-out discovered weeks later.
 
     ★ A THIRD ROUTE ONCE EXISTED AND WAS A FABRICATION: `_SAME_SUBSTANCE_SLUGS` (still read
-    below, permanently EMPTY) exempted cobalt/B12 because "cobalt is the metal atom at the
-    centre of cobalamin" -- PART-OF masquerading as IDENTITY. Purged 2026-07-15/16 after Luneth
-    ruled the question himself; the 2 claims now carry applies_to instead. Corrected 2026-08-03:
-    this paragraph still described them as a "same-substance pair" 18 days after they stopped
-    being one, and omitted applies_to entirely. Negative test: tools/test_collective_doses_not_fanned.py."""
+    below, permanently EMPTY) exempted cobalt/B12 on a PART-OF relation masquerading as
+    IDENTITY -- see the block comment on that tuple. The 2 claims carry applies_to instead.
+    Negative test: tools/tests/test_collective_doses_not_fanned.py."""
     import json as _json
     if not (embed_p.exists() and claims_dir.exists()):
         return True, "targets embed / corpus not installed (bootstrap-guard)"
@@ -3203,7 +3211,8 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
     # applies_to ENFORCED, not merely accepted: an essential the claim maps but does NOT dose
     # may carry no numeric target sourced from it. Without this the marker would be a comment
     # — the derive could ignore it and the gate would still say clean. Anchored to the sealed
-    # claims + the artifact, independently of targets_derive (§00.B #11).
+    # claims + the artifact, independently of targets_derive -- stale-to-stale
+    # equality is not truth.
     if scoped:
         art = _json.loads(embed_p.read_text(encoding="utf-8")) if embed_p.exists() else {}
         leaked = []
@@ -3251,7 +3260,7 @@ def _collective_doses_not_fanned_impl(embed_p, claims_dir):
 
 
 def check_collective_doses_not_fanned():
-    """Charter R2 wrapper -- see _collective_doses_not_fanned_impl for the full contract.
+    """Wrapper -- see _collective_doses_not_fanned_impl for the full contract.
     Thin path-binding shell so a negative test can drive the same logic on planted data."""
     return _collective_doses_not_fanned_impl(
         ROOT / "dashboard/assets/data/essentials-targets-data.json",
@@ -3260,7 +3269,7 @@ def check_collective_doses_not_fanned():
 
 
 def check_efa_goal_wallach_sourced():
-    """Charter R2 / §00.A — the essential-fatty-acid coverage GOAL (efa-coverage-data.json) is
+    """§00.A — the essential-fatty-acid coverage GOAL (efa-coverage-data.json) is
     Wallach's own number in a different unit. Recomputed here INDEPENDENTLY of
     efa_coverage_derive so a derive bug cannot slip both (§00.B #2/#11):
 
@@ -3277,8 +3286,8 @@ def check_efa_goal_wallach_sourced():
     form") in one sentence. Because he did the conversion himself, nothing here supplies a
     reference. Re-deriving 3% against the FDA 2,000-kcal label standard yields 6.67 g — which
     CONTRADICTS his stated 9 g, so the assumption would not fill a gap, it would overrule him
-    with an FDA convention. That is the same violation class as the Youngevity-label route
-    (source-rule review 2026-07-15). The rule this encodes: supply a reference ONLY when
+    with an FDA convention. That is the same violation class as the Youngevity-label route.
+    The rule this encodes: supply a reference ONLY when
     Wallach's own words cannot produce a number, NEVER to replace one he wrote.
 
     A fabricated goal, one sourced from a non-collective or non-dose claim, a members/claim
@@ -3343,7 +3352,7 @@ def check_efa_goal_wallach_sourced():
 
 
 def check_pdm_goal_wallach_sourced():
-    """Charter R2 / §00.A — the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach
+    """§00.A — the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach
     dose expressed in mg via product composition. Two layers (§00.B #2/#11), recomputed here
     INDEPENDENTLY of pdm_coverage_derive so a derive bug cannot slip both:
 
@@ -3438,7 +3447,7 @@ def check_pdm_goal_wallach_sourced():
 
 
 def check_nutrient_resolver_parity():
-    """A2 / §00.B #3 -- the runtime IDENTITY resolver == the Python source of truth.
+    """Single source of truth -- the runtime IDENTITY resolver == the Python source of truth.
     The Coverage matcher (core/nutrient-resolver.ts) resolves label names to canon slugs
     from the GENERATED nutrient-resolver-data.json. Two proofs over the REAL input universe
     (every distinct (name, form) in the sealed Products pillar):
@@ -3546,23 +3555,25 @@ def _search_index_nonnumeric_pages(shipped):
     page such as 'xix') passes every structural check but fails the runtime safeParse, which
     empties the WHOLE index (state/search.ts EMPTY_INDEX fallback) -> Explore/Foods/topics go
     silently blank. The derive coerces non-int pages to null; this proves the shipped artifact
-    did. 2026-07-21: RARE-000024 (p.xix) shipped a string page and blanked the search surfaces.
-    Driven by tools/test_search_index_wellformed.py."""
+    did. It has happened: WAL-CLM-RARE-000024 (p.xix) shipped a string page and blanked every
+    search surface.
+    Driven by tools/tests/test_search_index_wellformed.py."""
     return [c.get("id") for c in shipped.get("claims", [])
             if not (c.get("page") is None or type(c.get("page")) is int)]
 
 
 def check_search_index_wellformed():
-    """Search-corpus doctrine + Charter R4/R5 -- every ENRICHED search claim is STRUCTURED, not a
+    """Search-corpus doctrine -- every ENRICHED search claim is STRUCTURED, not a
     blob: the authored fields (subject/facet/question/answer_short) are present, facet is in the
     closed taxonomy, subject resolves to the entity registry OR essentials-canon, every also_about
     resolves to a registry/canon/condition slug, the DERIVED answer + sealed verbatim are
     non-empty, and the authored question starts capitalized (never a lowercase opener; 25 shipped
-    machine-lowercased 2026-07-27, hand-fixed to 0 + gated so it cannot regress). Delegates to eden/tools/search_index_derive.validate() -- the SAME check build_index()
+    machine-lowercased at one point, hand-fixed to 0 and gated so it cannot regress).
+    Delegates to eden/tools/search_index_derive.validate() -- the SAME check build_index()
     refuses to derive on -- so a bad facet / unresolved subject / empty answer can never reach the
     shipped search-index.json (R7: the gate ships with the derive; negative-tested by
-    tools/test_search_index_wellformed.py). Also cross-checks that the TS schema's SEARCH_FACETS
-    taxonomy has not drifted from the Python one (SS00.B #11 -- two surfaces, one truth). Validates
+    tools/tests/test_search_index_wellformed.py). Also cross-checks that the TS schema's SEARCH_FACETS
+    taxonomy has not drifted from the Python one (two surfaces, one truth). Validates
     ONLY the enriched claims that exist (entity-by-entity build), so the board stays green as
     entities are added; full-corpus search completeness is a later gate. Truth-anchored on the sealed
     claim shards x the hand-authored enrichment/registry, recomputed each run."""
@@ -3609,18 +3620,18 @@ def check_search_index_wellformed():
 
 
 def check_verbatim_names_mapped_conditions():
-    """Luneth rule (SESSION 31, 2026-07-01): a Wallach quote shown under a condition
+    """A Wallach quote shown under a condition
     MUST name that condition (or a registered synonym) in the SHOWN verbatim text --
     else the link is unverifiable (indistinguishable from a hallucination). This
-    guards against NEW/regressed violations while the measured 601-mapping backlog is
-    remediated: eden/tools/verbatim-audit-baseline.json allowlists the currently-known
-    violations, so ONLY new mappings whose verbatim does not name their condition fail.
+    guards against NEW/regressed violations while the known backlog is remediated:
+    eden/tools/verbatim-audit-baseline.json allowlists the currently-known violations (read
+    its `_count` for the live size), so ONLY new mappings whose verbatim does not name their
+    condition fail.
     The allowlist shrinks to {} as verbatims are extended / mappings dropped and the
     baseline is regenerated. Truth-anchored on the sealed shard verbatims x the derived
     conditions index (exactly what surfaces under a condition; search-only excluded),
     matched name-or-synonym via the Catalog pillar (eden/catalog/conditions.json). The matcher +
-    baseline logic live in eden/tools/verbatim_audit.py. See memory
-    verbatim-must-name-mapped-condition."""
+    baseline logic live in eden/tools/verbatim_audit.py."""
     if not (ROOT / "eden" / "corpus" / "indices" / "conditions.json").exists():
         return True, "eden/corpus not installed (bootstrap-guard)"
     sys.path.insert(0, str(ROOT / "eden" / "tools"))
@@ -3634,14 +3645,13 @@ def check_verbatim_names_mapped_conditions():
         return False, (f"{len(new)} NEW verbatim-names-condition violation(s) — a claim maps a "
                        f"condition its verbatim does not name: {sample}{' ...' if len(new) > 5 else ''} "
                        f"(extend the verbatim to name the condition, or drop the mapping, then "
-                       f"`python eden/tools/verbatim_audit.py baseline`). memory: "
-                       f"verbatim-must-name-mapped-condition")
+                       f"`python eden/tools/verbatim_audit.py baseline`)")
     return True, (f"0 new verbatim-names-condition violations ({tolerated} known baselined, "
                   f"shrinking as remediation runs)")
 
 
 def check_graphics_integrity():
-    """Phase alpha — the sacred hand-made graphics (eden/graphics) must match their
+    """The sacred hand-made graphics (eden/graphics) must match their
     sealed manifest. Delegates to eden/tools/graphics_verify.py: 0 = sealed & healthy,
     2 = BOOTSTRAP (manifest unsealed; image hashes still verified), 1 = FAIL."""
     verify = ROOT / "eden" / "tools" / "graphics_verify.py"
@@ -3658,14 +3668,13 @@ def check_graphics_integrity():
 
 
 def check_verbatim_over_soft_limit():
-    """Length rule (Luneth, 2026-07-01): completeness of truth/education OUTRANKS the
+    """Length rule: completeness of truth/education OUTRANKS the
     500-char verbatim limit. 500 is a SOFT threshold, not a truth-limiter — a verbatim
     MAY exceed it when the full faithful excerpt needs the room, up to a 1200 HARD
     ceiling (a load-time/file-size guard, enforced as critical by corpus_verify #2).
     This check is the INFORM surface: it lists every 501-1200 verbatim each board run so
-    the (allowed) over-soft cases stay visible for Luneth's spot-check, never hidden.
-    Informational — never fails here (the hard ceiling is corpus_verify's job).
-    memory: verbatim-length-rule."""
+    the (allowed) over-soft cases stay visible for a human spot-check, never hidden.
+    Informational — never fails here (the hard ceiling is corpus_verify's job)."""
     claims_dir = ROOT / "eden" / "corpus" / "claims"
     shards = sorted(claims_dir.glob("claims-*.json"))
     if not shards:
@@ -3681,16 +3690,16 @@ def check_verbatim_over_soft_limit():
     over.sort(key=lambda t: -t[1])
     sample = ", ".join(f"{cid}:{n}c" for cid, n in over[:6])
     return True, (f"{len(over)} verbatim(s) over soft-500 (ALLOWED when completeness needs it; "
-                  f"listed for Luneth review): {sample}{' ...' if len(over) > 6 else ''}")
+                  f"listed for review): {sample}{' ...' if len(over) > 6 else ''}")
 
 
 def check_umbrella_proxy_named():
-    """Umbrella named-by-proxy (Luneth SESSION 37): a broad 'library' condition (e.g.
+    """Umbrella named-by-proxy: a broad 'library' condition (e.g.
     cancer) is accepted as named when a claim's verbatim names a registered CHILD
     subtype (e.g. leukemia) via the Catalog pillar (eden/catalog/conditions.json, umbrella_of) — child->parent
     only. The exact-condition-named rule stays the DEFAULT; this info check LISTS every
     proxy-satisfied mapping each board run so a human eye stays on each umbrella
-    exception. Never fails. memory: condition-umbrella-taxonomy."""
+    exception. Never fails."""
     if not (ROOT / "eden" / "corpus" / "indices" / "conditions.json").exists():
         return True, "eden/corpus not installed (bootstrap-guard)"
     if not _books_present():
@@ -3706,13 +3715,12 @@ def check_umbrella_proxy_named():
 
 
 def check_claim_text_term_gloss():
-    """Term-gloss standard (Luneth SESSION 39): front-facing claim_text must never carry a
+    """Term-gloss standard: front-facing claim_text must never carry a
     garbled/obsolete botanical form (defects) or an obscure common name that has a simpler
     approved alternative (common_swaps); defects must ALSO be absent from the sacred verbatim
-    (they are blatant book errors, fixed everywhere per Luneth's ruling). The reviewed
+    (they are blatant book errors, corrected everywhere once ratified). The reviewed
     decisions are the single source of truth in eden/tools/term-gloss-lexicon.json; this check
-    enforces they never regress -- the machine guard against re-touching the same entry.
-    memory: term-gloss-standard, perfect-entry-no-deferral."""
+    enforces they never regress -- the machine guard against re-touching the same entry."""
     lex_path = ROOT / "eden" / "tools" / "term-gloss-lexicon.json"
     claims_dir = ROOT / "eden" / "corpus" / "claims"
     shards = sorted(claims_dir.glob("claims-*.json"))
@@ -3753,13 +3761,13 @@ def check_claim_text_term_gloss():
 # --- the OTHER direction: a ratified gloss REMOVED --------------------------------
 # check_claim_text_term_gloss guards one way only -- the superseded FROM-string must not
 # REAPPEAR. It is blind to the ratified TO-side gloss being DELETED, and the literal
-# FROM-key match misses any near-variant. Measured 2026-07-18: two pending audit fixes
-# proposed stripping ratified glosses ("land plants (notably Carya species)" dropping
-# hickory; "Canadian fleabane (Erigeron canadensis)" dropping horseweed) and NEITHER
-# tripped the existing gate -- both would have landed on a green 76/76 board. The audits
-# flagged each gloss as "an outside-world word Wallach never used", which is true and is
-# precisely WHY Luneth ratified it: the book prints bare Latin.
-# Extracted as helpers so tools/test_term_gloss_ratified_present.py can drive them directly.
+# # FROM-key match misses any near-variant. Two audit fixes once proposed stripping ratified
+# glosses ("land plants (notably Carya species)" dropping hickory; "Canadian fleabane
+# (Erigeron canadensis)" dropping horseweed) and NEITHER tripped the existing gate -- both
+# would have landed on a fully green board. Each audit flagged the gloss as "an outside-world
+# word Wallach never used", which is true and is precisely WHY it was ratified: the book
+# prints bare Latin, and a lay reader cannot use it.
+# Extracted as helpers so tools/tests/test_term_gloss_ratified_present.py can drive them directly.
 def _term_gloss_tokens(s):
     return set(re.findall(r"[A-Za-z][A-Za-z'-]{3,}", s or ""))
 
@@ -3812,14 +3820,13 @@ def _term_gloss_scan_ratified(rules, claims):
 
 
 def check_term_gloss_ratified_present():
-    """A Luneth-ratified term gloss may not be silently REMOVED from claim_text.
+    """A ratified term gloss may not be silently REMOVED from claim_text.
 
     Complement to check_claim_text_term_gloss (which only blocks the superseded form from
     reappearing). Where a common_swaps entry attaches a ratified common name to a Latin genus,
     any claim_text naming that genus must still carry the common name, and the superseded
-    common name must not return under a corrected binomial. R9: this is the tightening that
-    ships with the misfire it fixes.
-    memory: term-gloss-standard, the-green-board-means-nothing-drifted."""
+    common name must not return under a corrected binomial. This is the tightening that
+    ships in the same patch as the misfire it fixes."""
     lex_path = ROOT / "eden" / "tools" / "term-gloss-lexicon.json"
     claims_dir = ROOT / "eden" / "corpus" / "claims"
     shards = sorted(claims_dir.glob("claims-*.json"))
@@ -3845,18 +3852,18 @@ def check_term_gloss_ratified_present():
 # ANCHORED: the gate exists to catch smuggling — an unverifiable Wallach number in the one content
 # layer the §00.A source gates do not cover. Historical dates (1997, 1980s, "June 15, 1997") ARE
 # legitimate in product-history entries and are NOT health claims; year-shaped tokens are stripped
-# BEFORE the digit check so real health numbers still trip but dates pass (extended 2026-07-17, R9,
-# for the Mineral-Toddy / SupraLife / Rockland lineage entries).
+# BEFORE the digit check so real health numbers still trip but dates pass (extended to cover
+# the Mineral-Toddy / SupraLife / Rockland lineage entries).
 #
-# R9 REFINEMENT 2026-07-21 (Luneth's manual override + review): a number IS permitted when the entry
+# REFINEMENT, under reviewed override: a number IS permitted when the entry
 # declares a `number_exempt` block that ANCHORS it — a reason + claim_ids that (a) resolve to sealed
 # claims and (b) actually CONTAIN every digit-run in the definition. This turns "no numbers ever"
 # into "no UNANCHORED numbers": the smuggling hole stays closed (you cannot cite an unrelated claim;
 # the number must literally appear as a digit-run in the cited claim), while a hand-verified figure
 # like the plant-derived 98%-vs-8-12% bioavailability (WAL-CLM-RARE-000061) may render in the tooltip.
-# The number-is-SEMANTICALLY-faithful half rests on the human review recorded in `reason` (R7 WISH,
-# labeled): the gate proves the citation resolves AND the digits match, not that the sentence is true
-# to the source. Proved by tools/test_glossary_wellformed.py.
+# The number-is-SEMANTICALLY-faithful half rests on the human review recorded in `reason` (a
+# labeled WISH): the gate proves the citation resolves AND the digits match, not that the sentence is true
+# to the source. Proved by tools/tests/test_glossary_wellformed.py.
 _GLOSSARY_DATE_TOKEN = re.compile(
     r"\b(?:19|20)\d{2}s?\b"                         # 1997, 1990s
     r"|\b\d{1,2}(?=[,\s]+(?:19|20)\d{2})\b"         # 15 in "June 15, 1997" (comma OR space)
@@ -3871,14 +3878,14 @@ _GLOSSARY_DATE_TOKEN = re.compile(
 # check, same shape as the date exclusion. Deliberately NARROW: one A-K letter, an optional hyphen,
 # and 1-2 digits with NO intervening space, so a real dose standing beside a vitamin name still
 # trips - "B6 100 mg" strips the B6 and the 100 fires. Word-bounded, so the book's OCR token "HC1"
-# is untouched. Proved by tools/test_glossary_wellformed.py.
+# is untouched. Proved by tools/tests/test_glossary_wellformed.py.
 _GLOSSARY_VITAMIN_TOKEN = re.compile(r"\b[A-K]-?\d{1,2}\b")
 
 
 def _glossary_definition_has_smuggled_number(plain):
     """True iff `plain` still contains a digit after every year-shaped token AND every vitamin
     designation is stripped. Extracted so the negative test in
-    tools/test_glossary_wellformed.py can drive it directly."""
+    tools/tests/test_glossary_wellformed.py can drive it directly."""
     stripped = _GLOSSARY_VITAMIN_TOKEN.sub("", _GLOSSARY_DATE_TOKEN.sub("", plain))
     return bool(re.search(r"\d", stripped))
 
@@ -3904,7 +3911,7 @@ def _corpus_claim_digit_runs():
 def _glossary_number_exemption_valid(entry, runs_by_id):
     """A glossary definition carrying a number is legal ONLY with an anchored `number_exempt`.
     Returns (ok, why). Non-gameable: every digit-run in the definition must appear as a digit-run
-    in a cited, resolving sealed claim. Driven directly by tools/test_glossary_wellformed.py."""
+    in a cited, resolving sealed claim. Driven directly by tools/tests/test_glossary_wellformed.py."""
     ex = entry.get("number_exempt")
     if not isinstance(ex, dict):
         return False, "has a health number but no number_exempt block"
@@ -3931,7 +3938,7 @@ def _glossary_key_collisions(terms):
     The runtime matcher (dashboard/assets/js/src/state/glossary.ts) folds term + every alias
     into ONE lowercased Map, so a repeated key is a SILENT last-write-wins override -- the
     later entry's definition wins and the earlier one is dead, with no error. Returns a list of
-    human problem strings (empty == clean); driven directly by tools/test_glossary_wellformed.py.
+    human problem strings (empty == clean); driven directly by tools/tests/test_glossary_wellformed.py.
     2026-07-21 (task_4ba8c8bd): 'myelosclerosis' had a dedicated entry AND was an alias of
     'myelofibrosis' so the dedicated definition was dead; three others (meq/l, Supralife, glacial
     milk) were aliases equal to their own term's lowercase -- dead weight the Map collapses. The
@@ -3957,13 +3964,13 @@ def _glossary_key_collisions(terms):
 
 
 def check_glossary_wellformed():
-    """Glossary integrity (SESSION 39 Phase 1): dashboard/assets/data/glossary.json parses,
+    """Glossary integrity: dashboard/assets/data/glossary.json parses,
     every entry has a non-empty term + plain definition + category, every term+alias key is globally unique (the matcher folds them into one lowercased Map, so a collision silently overrides), and no
     definition asserts an UNANCHORED health number/dose (the glossary is the one content layer
     outside the §00.A source gates, so a bare number here would be an unverifiable Wallach claim).
     Historical dates pass; a health number trips UNLESS the entry declares an anchored
-    `number_exempt` (R9 2026-07-21, Luneth's reviewed override — the number must resolve to a cited
-    sealed claim that literally contains it). memory: term-gloss-standard."""
+    `number_exempt` (a reviewed override — the number must resolve to a cited sealed claim that
+    literally contains it)."""
     p = ROOT / "dashboard" / "assets" / "data" / "glossary.json"
     if not p.exists():
         return True, "glossary.json not installed (bootstrap-guard)"
@@ -4006,12 +4013,12 @@ def check_glossary_wellformed():
 # glossary_wellformed proves an entry is well-SHAPED and that its keys do not collide. It is
 # blind to a key that is a perfectly-formed COMMON ENGLISH WORD, which decorates hundreds of
 # unrelated sentences with an irrelevant tooltip. Measured 2026-08-02 across 9,211 front-facing
-# blocks (claim_text + verbatim + search answers + the mechanism/entity prose stores): the entry
+# # blocks (claim_text + verbatim + search answers + the mechanism/entity prose stores): the entry
 # "reduce in chemistry" ("to give electrons back to a molecule") could never match its own term,
 # and fired ONLY through its aliases -- "reduced" 105x and "reduction" 24x, every single one the
 # ordinary-English sense ("reduced immune status", "a reduction in inflammation markers"). 129
-# wrong tooltips, 0 right ones, on a green 80/80 board, for weeks. Luneth found it by reading the
-# page; no gate could have.
+# wrong tooltips, 0 right ones, on a fully green board, for weeks. It was found by reading the
+# rendered page; no gate could have.
 #
 # The lock is a reviewed DENYLIST in eden/tools/term-gloss-lexicon.json (the single source of
 # truth for term-gloss decisions), each key carrying the measurement that condemned it. Matching
@@ -4025,7 +4032,7 @@ def check_glossary_wellformed():
 # there is no non-gaming machine test for "is this key a common English word", and a frequency
 # floor would redden the many high-firing keys that are deliberate ('essential' 627x, 'chronic'
 # 137x). It closes the door behind a key a human has judged and removed. Finding the next one
-# stays a review job. Extracted as helpers so tools/test_glossary_keys_denylisted.py drives them.
+# stays a review job. Extracted as helpers so tools/tests/test_glossary_keys_denylisted.py drives them.
 def _glossary_norm_key(s):
     """The runtime's key normalization, mirrored (dashboard/assets/js/src/state/glossary.ts::normKey):
     lower-cased, curly apostrophes folded to straight, every whitespace-or-hyphen run collapsed to ONE
@@ -4059,7 +4066,7 @@ def check_glossary_keys_denylisted():
     Complement to check_glossary_wellformed (shape + collisions only, blind to a well-formed key
     that decorates the wrong words). The reviewed denylist lives in eden/tools/term-gloss-lexicon.json
     under `glossary_key_denylist`, each key carrying the measurement that condemned it.
-    memory: term-gloss-standard. Negative test: tools/test_glossary_keys_denylisted.py."""
+    Negative test: tools/tests/test_glossary_keys_denylisted.py."""
     gp = ROOT / "dashboard" / "assets" / "data" / "glossary.json"
     lex_path = ROOT / "eden" / "tools" / "term-gloss-lexicon.json"
     if not gp.exists() or not lex_path.exists():
@@ -4094,24 +4101,25 @@ _JARGON_SKIP = {
     "hypoallergenic", "allergenic", "photography", "orthotic", "glucogenic", "ketogenic",
     "proteinogenic", "pathogenic", "bronchogenic", "bronchiogenic", "glycolysis", "hemolysis",
     "paralysis", "clematitis", "vesiculosis", "oklahoma",
-    "arthritis",  # common word, gloss removed per Luneth 2026-07-27 (deemed too-basic)
+    "arthritis",  # matches the -itis pattern but is everyday English; too basic to gloss
 }
 
 
-# ── §5 LOCK GATES — the front-facing OCR campaign's two permanent guards ──────────────────
+# ── FRONT-FACING OCR: the two permanent guards ────────────────────────────────────────────
 # WHY THEY EXIST: claims were ENRICHED (made front-facing) from books whose source .txt was never
-# verified, and the rule "we fix source quotes as we enrich" was a promise with NO gate. Luneth found
-# raw OCR in user-facing quotes (WAL-CLM-RARE-000336: "tisk"/"rea"/"ancer"; WAL-CLM-LETS-000502:
-# "1 20" for 120). §00.B: a rule with no gate is a WISH. These two turn the two halves into gates.
+# verified, and the rule "we fix source quotes as we enrich" was a promise with NO gate. Raw OCR
+# was found live in user-facing quotes (WAL-CLM-RARE-000336: "tisk"/"rea"/"ancer";
+# WAL-CLM-LETS-000502: "1 20" for 120). §00.B: a rule with no gate is a WISH. These two turn the
+# two halves into gates.
 # A word wrap never crosses a BLANK line: "anti-\n\nNext paragraph" is a paragraph break, not a
 # split word. The first cut used \s* and over-fired on exactly that -- caught by this gate's own
-# negative-test sparing case (R9: tighten, never loosen). Horizontal whitespace only.
+# negative-test sparing case -- tighten, never loosen. Horizontal whitespace only.
 #
-# TIGHTENED 2026-08-02 (R9 again, same direction). The pattern allowed horizontal space AFTER
+# TIGHTENED again, in the same direction. The pattern allowed horizontal space AFTER
 # the newline but required the hyphen to ABUT it. Hell's Kitchen wraps with a space BEFORE the
 # newline, and it is the ONLY book that does (measured: hk.txt 1650 loose / 0 tight; every other
-# book the exact reverse). So this gate read 0 for that book and it was recorded as "0 hyphen
-# defects found; treat as clean". It was clean to a BLIND DETECTOR: 76 front-facing splits sat
+# book the exact reverse). So this gate read 0 for that book and the book was written off as
+# clean. It was clean only to a BLIND DETECTOR: 76 front-facing splits sat
 # inside it unseen (me-/dium, carcino-/gens, ribofla-/vin). Allowing the horizontal-space class on
 # BOTH sides keeps the blank-line exclusion intact -- a second newline still breaks the match, so
 # the original over-fire cannot return -- and catches exactly those 76, adding no new hit in any
@@ -4175,7 +4183,7 @@ _FF_SUBSCRIPT_DAMAGE = re.compile(
 
 def _frontface_defects(verbatim):
     """Detector classes that are MECHANICALLY decidable on a verbatim. Extracted so
-    tools/test_frontface_verbatims_clean.py drives them directly."""
+    tools/tests/test_frontface_verbatims_clean.py drives them directly."""
     v = verbatim or ""
     out = []
     if _FF_MID_WORD_HYPHEN.search(v):
@@ -4219,10 +4227,10 @@ _SCAFFOLDING = (
 def check_verbatim_no_transcription_scaffolding():
     """No sealed claim's verbatim or claim_text contains transcription scaffolding.
 
-    FOUND 2026-08-02 by wave 1 of the front-facing page-read campaign: three claims
-    (EPIGEN-000124, -000125, IMMORT-000230) carried `===== Screenshot (675) -- Page 818 of 936 =====`
-    INSIDE their verbatim, i.e. the app could render OCR scaffolding to a reader as though Wallach
-    had written it. A reader hit ONE of them; a grep found the other two.
+    THE DEFECT: three claims (EPIGEN-000124, -000125, IMMORT-000230) carried
+    `===== Screenshot (675) -- Page 818 of 936 =====` INSIDE their verbatim, i.e. the app could
+    render OCR scaffolding to a reader as though Wallach had written it. A reader hit ONE of them;
+    a grep found the other two -- which is why this is a gate and not a review item.
 
     The fix is never a source edit — those separators are legitimate scaffolding in the .txt (932 in
     epigenetics alone) and deleting them would corrupt the transcription. The repair is a verbatim
@@ -4259,20 +4267,20 @@ def check_verbatim_no_transcription_scaffolding():
 
 def check_frontface_verbatims_clean():
     """No sealed (front-facing) verbatim carries a mid-word line-break hyphen or a
-    mojibake/control character. Blueprint §5 lock gate #1.
+    mojibake/control character.
 
-    SCOPE, MEASURED 2026-08-02. EIGHT detector classes, all gated. The eighth, subscript_damage,
-    was added the same day after 36 destroyed vitamin subscripts were page-read and recovered. Two shipped first (hyphen split,
-    mojibake) because they reached zero immediately; the other five were held as labelled WISHes
-    until every residual hit had been read off its page image, then promoted the same day. That
+    SCOPE, stated honestly. EIGHT detector classes, all gated (the eighth, subscript_damage, was
+    added after 36 destroyed vitamin subscripts were page-read and recovered). Every residual hit
+    was read off its page image before its detector was promoted from WISH to enforced; that
     verification is what the exclusions encode -- ordinals, decades, vitamin designations, unit and
-    formula adjacency, table leader dots -- and what the 11 named exceptions record. Two of the six
-    residual cases turned out to be FAITHFUL, not defects: the page really does print "(Levamisol ,"
-    and really does print "in1881". Batch-fixing on the detector's say-so would have corrupted both.
+    formula adjacency, table leader dots -- and what the named exceptions record. Some residual
+    cases turn out to be FAITHFUL rather than defects: the page really does print "(Levamisol ,"
+    and really does print "in1881". Batch-fixing on the detector's say-so would corrupt both, so
+    every hit is verified against the page before it is treated as damage.
 
-    It CANNOT see the invisible class -- a valid-word swap ("side" for "vide", "Jute" for "lute").
-    Four of those were found by eye on 2026-08-02, every one inside a pair this gate would call
-    clean. Only the vision pass catches those; this gate holds the mechanical floor."""
+    It CANNOT see the invisible class -- a valid-word OCR swap ("side" for "vide", "Jute" for
+    "lute"). Four of those were found by eye, every one inside a pair this gate calls clean. Only
+    a human read catches those; this gate holds the mechanical floor."""
     exc_path = ROOT / "eden" / "tools" / "frontface-exceptions.json"
     claims_dir = ROOT / "eden" / "corpus" / "claims"
     shards = sorted(claims_dir.glob("claims-*.json"))
@@ -4309,10 +4317,10 @@ def check_explore_entity_lede_authored():
     condition page) must carry a HAND-AUTHORED lede in entity-copy.json['topics'][slug], UNLESS its
     slug is in the frozen grandfathered backlog (tools/gate-fixtures/lede-backlog.json). Without a hand lede the
     topic hero DERIVES its header from a claim's answer_short (state/search.ts::entityLede), which
-    reads as an answer, not a header (2026-08-19: the chocolate page was titled "It's a mineral-
-    deficiency signal..."). STRUCTURAL: this proves a lede EXISTS, never that it reads well (review).
-    The backlog only ever SHRINKS; a NEW explore entity is not in it, so it is RED until authored --
-    the "never again" teeth. memory: element-intro-what-is-claim."""
+    reads as an answer, not a header -- one topic page was titled "It's a mineral-deficiency
+    signal..." for exactly this reason. STRUCTURAL: this proves a lede EXISTS, never that it reads
+    well (that rests on review). The backlog only ever SHRINKS; a NEW explore entity is not in it,
+    so it is RED until authored -- the "never again" teeth."""
     si_p = ROOT / "dashboard" / "assets" / "data" / "search" / "search-index.json"
     ec_p = ROOT / "dashboard" / "assets" / "data" / "entity-copy.json"
     led_p = ROOT / "tools" / "gate-fixtures" / "lede-backlog.json"
@@ -4352,9 +4360,8 @@ def check_explore_entity_lede_authored():
 def check_enriched_book_is_verified():
     """ROOT-CAUSE gate: a claim may not be FRONT-FACING (carry a search-enrichment entry) unless its
     book is verified, the claim itself is verified, or it is in the frozen grandfathered backlog.
-    Blueprint §5 lock gate #2.
 
-    This is the gate whose absence caused the incident. Ledger: tools/gate-fixtures/frontface-verified.json.
+    Ledger: tools/gate-fixtures/frontface-verified.json.
     A NEW enrichment on an unverified book is RED, so the original failure -- enriching from a raw
     book and promising to fix it later -- cannot recur. The escape hatch is per-claim: vision-verify
     the claim, add its id to claims_verified, then enrich it.
@@ -4394,12 +4401,12 @@ def check_enriched_book_is_verified():
 
 
 def check_jargon_terms_glossed():
-    """Term-gloss coverage guard (SESSION 39 Phase 1): every medical-jargon word (a latinate
+    """Term-gloss coverage guard: every medical-jargon word (a latinate
     -osis/-itis/-emia/... term, minus a small common-word + botanical-fragment skip list) that
     appears in a front-facing claim_text SHOULD have a plain-language entry in glossary.json so
     the tooltip layer can explain it. Surfaced as a warning every board run so coverage grows and
     no un-glossed jargon is silently left behind (the heuristic can false-match a scientific name,
-    so this warns rather than hard-blocks). memory: term-gloss-standard, perfect-entry-no-deferral."""
+    so this warns rather than hard-blocks)."""
     gp = ROOT / "dashboard" / "assets" / "data" / "glossary.json"
     claims_dir = ROOT / "eden" / "corpus" / "claims"
     shards = sorted(claims_dir.glob("claims-*.json"))
@@ -4431,7 +4438,7 @@ def check_book_source_clean():
     """Every book marked 'pristine' in eden/tools/purity-status.json must scan to 0
     unresolved defects (book_purity after its per-book baseline) — a purified source
     .txt can never silently regress. raw/purifying books are listed informationally.
-    The Source-Purification campaign's 'never circle back to the same OCR' gate."""
+    The point is to never circle back to the same OCR damage twice."""
     sys.path.insert(0, str(ROOT / "eden" / "tools"))
     import book_purity
     status_path = ROOT / "eden" / "tools" / "purity-status.json"
@@ -4460,20 +4467,20 @@ def check_book_source_clean():
 
 
 def check_mined_pages_clean():
-    """Mined-page cleanliness gate (SESSION 44). Every screenshot page carrying a
+    """Mined-page cleanliness gate. Every screenshot page carrying a
     sealed claim, in a book that has entered the purification campaign (purity-status
     purifying|pristine), must be free of high-confidence OCR defects in its source
     .txt -- the tight, ~zero-false-positive classes: punctuation-spacing
     (space_before_punct / space_in_paren) and gibberish (repeated_char /
-    post_marker_fragment, e.g. "eee", "Sei ee a"). This turns "clean the books as we
-    go" from an advisory memory into a machine gate: a chunk cannot close having left
-    detectable garbage on a page it mined -- prose is rationalizable, a red board is
-    not. FP-heavy classes (spell proper nouns, run-togethers, double_space table
+    post_marker_fragment, e.g. "eee", "Sei ee a"). This turns "clean the books as you
+    go" from a convention into a machine gate: work cannot land having left
+    detectable garbage on a page it mined -- a convention is rationalizable, a red board
+    is not. FP-heavy classes (spell proper nouns, run-togethers, double_space table
     alignment) are deliberately OUT of scope (whole-book pristine sweep); reading-order
     scrambles no detector can catch stay covered by the paste cross-check. Genuine FPs
     are triaged (with a reason) in eden/tools/mined-page-triage.json. Truth-anchored on
-    sealed claim locators x deterministic book_purity detectors. memory:
-    perfect-entry-no-deferral. Detail: eden/tools/mined_page_audit.py."""
+    sealed claim locators x deterministic book_purity detectors.
+    Detail: eden/tools/mined_page_audit.py."""
     if not (ROOT / "eden" / "tools" / "mined_page_audit.py").exists():
         return True, "mined_page_audit.py not installed (bootstrap-guard)"
     sys.path.insert(0, str(ROOT / "eden" / "tools"))
@@ -4492,20 +4499,20 @@ def check_mined_pages_clean():
                              f"[{s['detector']}] {s['term']!r})")
         return False, (f"{total} OCR defect(s) on MINED source pages -- fix the source (or triage a "
                        f"genuine FP in mined-page-triage.json): {'; '.join(parts)} "
-                       f"(run: python eden/tools/mined_page_audit.py audit). memory: perfect-entry-no-deferral")
+                       f"(run: python eden/tools/mined_page_audit.py audit)")
     gated = ", ".join(sorted(mined_page_audit.gated_books())) or "(none)"
     return True, f"all mined source pages clean across campaign books [{gated}] (tight gibberish+spacing gate)"
 
 
 def check_mining_coverage_accounted():
-    """Coverage-accounting gate for book mining (Proposal A, 2026-07-07 -- the
-    page/section DENOMINATOR). For each book flagged mining_status:'complete' in
+    """Coverage-accounting gate for book mining -- the page/section DENOMINATOR.
+    For each book flagged mining_status:'complete' in
     eden/tools/mining-coverage.json, prove no WHOLESALE skip: every source page
     (screenshot-scheme books) or section (chapter-scheme books) is either
     claim-bearing or explicitly reviewed-empty WITH A REASON. Books still
     'incomplete' are reported informationally, NEVER RED -- exactly as
-    book_source_clean asserts only pristine books. Turns silent under-mining
-    (DDDL Appendix-B long tail; Immortality at 0 claims for ~40 sessions) into a
+    book_source_clean asserts only pristine books. Turns silent under-mining (a
+    long tail of unread appendix pages; a whole book sitting at 0 claims) into a
     red board AT COMPLETION instead of an invisible dropped thread. Claim-bearing
     pages auto-derive from sealed locator.char_offset -> the nearest preceding
     '===== Screenshot(N) =====' marker: ONE internally-consistent text-position
@@ -4514,8 +4521,7 @@ def check_mining_coverage_accounted():
     only human input is resolving zero-claim pages/sections with a reason
     (exceptions_justified pattern). Wholesale accounting only -- per-claim sub-page
     completeness stays with the corpus_audit end-pass; faithfulness is sampled by
-    the manual mining checkpoint. memory: dddl-undermined-remine,
-    immortality-mining-policy."""
+    the manual mining checkpoint."""
     import bisect
     ledger_p = ROOT / "eden" / "tools" / "mining-coverage.json"
     meta_p = ROOT / "eden" / "corpus" / "books-meta.json"
@@ -4589,13 +4595,12 @@ def check_mining_coverage_accounted():
                 info.append(f"{book_id}=incomplete(section-basis, {len(claims)} claims)")
     if failures:
         return False, ("book mining coverage gaps -- " + "; ".join(failures) +
-                       " (resolve in eden/tools/mining-coverage.json). memory: dddl-undermined-remine")
+                       " (resolve in eden/tools/mining-coverage.json)")
     return True, "book mining coverage accounted -- " + "; ".join(info)
 
 
 def check_substance_triage_accounted(buffer_path=None, coverage_path=None):
-    """Phase-G task-zero -- the substance triage buffer's accounting gate (design LOCKED
-    2026-07-08, memory substance-registry-and-triage-buffer). references_resolve reds on any claim
+    """The substance triage buffer's accounting gate. references_resolve reds on any claim
     other_substances slug not registered in eden/catalog/nutrients.json. Its relief valve is
     eden/tools/substance-triage-buffer.json: a substance with no registry slug is PARKED there with
     source context and left out of the claim FOR NOW, so mining never has to choose between
@@ -4667,47 +4672,39 @@ def check_substance_triage_accounted(buffer_path=None, coverage_path=None):
 
 
 # ---------------------------------------------------------------------------
-# Charter R3 / R4 gates (Phase D-c, 2026-07-05) -- citations, prose, dedup
+# Citation, prose and dedup gates
 # ---------------------------------------------------------------------------
-# The three gates the blueprint's Phase D prescribes (§6 / enforcement table 4.1).
-# They enforce Charter R3 (one source per fact, referenced by ID -- no value
-# hand-written twice) and R4 (prose contained in ONE compartment) over the CLEAN
-# Charter-governed surface: the Wallach Corpus pillar (claims + essentials-canon)
+# These three gates enforce two rules -- one source per fact, referenced by ID (no
+# value hand-written twice), and prose contained in ONE compartment -- over the
+# CLEAN governed surface: the Wallach Corpus pillar (claims + essentials-canon)
 # + the Catalog pillar (conditions/symptoms) + the corpus-DERIVED artifacts
 # (essentials-targets-data, coverage-layout-data). This is where the rules HOLD
 # today, so the gates have real teeth and stay green.
 #
-# OPTION-1 ALTITUDE (Luneth 2026-07-05): real teeth on the clean surface NOW;
-# the surfaces that are still legacy are a LABELED WISH (R7 -- documented, never
-# sold as guarded), extended when Phase E/F/G collapses them into the pipeline:
-#   * the prose-carrying legacy embeds (essentials-benefits-data,
-#     essentials-best-supplements, goal-recommendations-data, ingredients-embed,
-#     ingredients-quickref-data) were DELETED (blueprint §3.2/§6); scanner-corpus-data,
-#     ocr-dict-data were brought ONTO the clean surface (_CLEAN_SURFACE_LEGACY_DATA,
-#     crack #3; regimen-base-data was a third member until the base-seed removal deleted
-#     the artifact outright, 2026-07-14); and regimen-label-lookup is now
-#     COMPOSITION-ONLY (Phase F/A1) with its own dedicated gate no_product_marketing_prose;
-#   * what remains WISH -- the legacy view scaffold (views/regimen.ts + views/knowledge.ts
-#     placeholders) still carries hand-typed cites + inline educational prose.
-# REMOVED (2026-07-13): the Knowledge>Doctrine tab + its doctrine-data.json prose store were
-# dead (the tab was cut long ago; nothing rendered or imported the store) and were purged in
-# the dead-code sweep -- schema (core/schemas/doctrine.ts), barrel export, data file, MANIFEST
-# entry, and this gate's entry for it are all gone.
-# The FULL R4 (verbatim = a claim POINTER + a single-copy per-essential prose
-# store, blueprint Q3) also only becomes meaningful once clean post-mining stances
-# exist -- likewise WISH. None of that is sold as guarded here.
+# The altitude is deliberate: real teeth on the clean surface now, and everything
+# still outside it is a LABELED WISH -- documented, never sold as guarded. The
+# scanner-corpus and OCR-dictionary stores were brought ONTO the clean surface
+# (_CLEAN_SURFACE_LEGACY_DATA); the product label lookup is COMPOSITION-ONLY and
+# carries its own dedicated gate, no_product_marketing_prose.
+#
+# What remains a WISH, stated plainly so nobody reads these gates as covering it:
+#   * the un-migrated views (views/regimen.ts + views/knowledge.ts) still carry
+#     user-facing copy inline instead of in the view-copy store;
+#   * the FULL prose rule (verbatim = a claim POINTER plus a single-copy
+#     per-essential prose store) only becomes meaningful once clean post-mining
+#     stances exist.
 
 _CLEAN_SURFACE_DERIVED = (   # corpus-derived artifacts that are clean today
     "dashboard/assets/data/essentials-targets-data.json",
     "dashboard/assets/data/coverage-layout-data.json",
 )
-_CLEAN_SURFACE_STORES = (   # hand-edited designated prose stores clean today (blueprint §2.4)
-    "dashboard/assets/data/view-copy.json",  # VIEW-prose store: kind/facet labels + UI chrome (Phase H0)
-    "dashboard/assets/data/entity-copy.json",  # per-entity approved lede + why-this-number (Phase H2)
+_CLEAN_SURFACE_STORES = (   # hand-edited designated prose stores, clean today
+    "dashboard/assets/data/view-copy.json",  # VIEW-prose store: kind/facet labels + UI chrome
+    "dashboard/assets/data/entity-copy.json",  # per-entity approved lede + why-this-number
 )
-_CLEAN_SURFACE_LEGACY_DATA = (   # legacy hand-authored data now under the prose/citation gates (crack #3, 2026-07-06)
-    "dashboard/assets/data/scanner-corpus-data.json",  # scanner dietary baselines (Phase E/F)
-    "dashboard/assets/data/ocr-dict-data.json",        # OCR normalization dictionary (Phase E/F)
+_CLEAN_SURFACE_LEGACY_DATA = (   # hand-authored data since brought under the prose/citation gates
+    "dashboard/assets/data/scanner-corpus-data.json",  # scanner dietary baselines
+    "dashboard/assets/data/ocr-dict-data.json",        # OCR normalization dictionary
 )
 # Designated prose / free-descriptor homes -- the ONLY keys allowed to hold
 # prose-shaped text on the clean surface. This allowlist IS R4's "ONE compartment":
@@ -4720,8 +4717,8 @@ _PROSE_HOME_KEYS = {
     "hash_note", "source", "_source", "description", "question",
     "resolution", "_note", "rationale", "file", "authors", "sealed_at",
     "duration", "for_condition", "form",                       # dose free descriptors
-    "lede", "why",                                             # entity-copy approved lede + why-this-number (Phase H2)
-    "_prose_container",                                        # a leaf under a _PROSE_CONTAINER_KEYS subtree (crack #3)
+    "lede", "why",                                             # entity-copy approved lede + why-this-number
+    "_prose_container",                                        # a leaf under a _PROSE_CONTAINER_KEYS subtree
 }
 
 
@@ -4742,14 +4739,14 @@ def _clean_surface_files():
 
 
 _PROSE_CONTAINER_KEYS = {"antiListNotes", "ui"}  # whole subtrees that ARE one designated prose
-# home (its leaves are contained prose keyed by an entity name, not fact fields). Crack #3
-# (2026-07-06): scanner-corpus-data keeps its Wallach food-guidance PROSE in antiListNotes,
-# cleanly apart from the antiList fact arrays; recognize it so the fact arrays stay gated
-# while the contained prose gets its one home. (That prose still carries hand-authored
-# Wallach health claims + inline book-refs -- a Phase E/F scanner-rework item to source into
-# corpus claims; tracked in the blueprint, not gated here.)
-# "ui" (H2): the view-copy VIEW-prose store's chrome-copy subtree -- its ep_* leads/notes
-# are sentence-shaped prose BY DESIGN (R4's "one compartment" for view copy), so the whole
+# home (its leaves are contained prose keyed by an entity name, not fact fields).
+# "antiListNotes": scanner-corpus-data keeps its Wallach food-guidance PROSE there, cleanly
+# apart from the antiList fact arrays; recognize it so the fact arrays stay gated while the
+# contained prose gets its one home. KNOWN GAP, stated out loud: that prose still carries
+# hand-authored Wallach health claims and inline book-refs that have not been sourced into
+# corpus claims, and nothing here gates them.
+# "ui": the view-copy VIEW-prose store's chrome-copy subtree -- its ep_* leads/notes are
+# sentence-shaped prose BY DESIGN (the "one compartment" for view copy), so the whole
 # ui{} subtree is a prose home, never a fact field. Only view-copy.json carries a top-level "ui".
 
 
@@ -4769,7 +4766,7 @@ def _walk_strings(obj, key=None, in_prose=False):
 
 
 def check_citations_reference_registry():
-    """Charter R3 / the overhaul-trigger gate -- a book is referenced by book_id and its
+    """The citation gate -- a book is referenced by book_id and its
     display citation is COMPOSED from the sealed registry (books-meta.json), never hand-typed.
     Hand-typed citations (the ~200x drift where a cite said 1999 while the registry said 2011)
     are the exact failure this overhaul exists to kill. LIVE teeth over the CLEAN Charter
@@ -4778,10 +4775,10 @@ def check_citations_reference_registry():
     derived projection, so a title in a fact field is a hand-typed citation. Prose homes
     (verbatim/claim_text/...) are allowlisted: Wallach may name a book in his own words. The
     claim->book_id substring is also gated by corpus_verify #2 (this makes the rule explicit +
-    extends it to titles). OUT of scope (WISH, Phase E/F -- do NOT sell as
-    guarded): inline view prose (e.g. views/regimen.ts). The legacy DATA embeds (scanner / ocr)
-    are now COVERED after crack #3 widened the surface (2026-07-06; regimen-base was a third
-    until its artifact was deleted 2026-07-14). Truth-anchored on books-meta titles + book_ids x the
+    extends it to titles). OUT of scope (a labeled WISH -- do NOT sell as
+    guarded): inline view prose (e.g. views/regimen.ts). The hand-authored DATA stores
+    (scanner / ocr) ARE covered: the clean surface was widened to include them.
+    Truth-anchored on books-meta titles + book_ids x the
     clean-surface bytes, recomputed each run."""
     meta_p = ROOT / "eden" / "corpus" / "books-meta.json"
     if not meta_p.exists():
@@ -4809,22 +4806,21 @@ def check_citations_reference_registry():
                        + "; ".join(viol[:6]) + (" ..." if len(viol) > 6 else ""))
     return True, (f"all book references on the clean Charter surface use book_id + the sealed "
                   f"registry ({len(book_ids)} books); no hand-typed citation (legacy embeds + "
-                  f"views are a labeled WISH, Phase E/F)")
+                  f"views are a labeled WISH)")
 
 
 def check_prose_contained():
-    """Charter R4 -- prose lives in ONE designated compartment, never in a fact field. LIVE teeth
-    over the CLEAN Charter surface (corpus claims + canon + catalog + the corpus-derived
-    targets/coverage-layout artifacts + the legacy scanner/ocr data, crack #3):
+    """Prose lives in ONE designated compartment, never in a fact field. LIVE teeth
+    over the CLEAN governed surface (corpus claims + canon + catalog + the corpus-derived
+    targets/coverage-layout artifacts + the hand-authored scanner/ocr data):
     no prose-shaped string appears under a NON-prose key.
     Prose-shaped = >= 12 words OR a sentence boundary ('. X') in a > 40-char value. The designated
     prose/descriptor homes (_PROSE_HOME_KEYS: claim_text, verbatim, file-metadata prose, dose
-    descriptors) are R4's "ONE compartment" -- everything else must stay structured. Catches a
-    paragraph leaking into a slug/symbol/enum/numeric fact field. PARTIAL by design (R7): the FULL
-    R4 (verbatim = a claim POINTER + a single-copy per-essential prose store, blueprint Q3) only
-    matters once clean post-mining stances exist. The doctrine-store bodies are now the designated
-    prose home ("body" in _PROSE_HOME_KEYS) + on the clean surface; the legacy/orphaned data embeds +
-    views/regimen.ts inline prose stay WISH until Phase E/F collapses them -- not sold as guarded.
+    descriptors) are the "ONE compartment" -- everything else must stay structured. Catches a
+    paragraph leaking into a slug/symbol/enum/numeric fact field. PARTIAL by design, and labeled
+    so: the FULL rule (verbatim = a claim POINTER + a single-copy per-essential prose store) only
+    matters once clean post-mining stances exist. Inline prose still living in the un-migrated
+    views (views/regimen.ts) is a labeled WISH -- documented, never sold as guarded.
     Truth-anchored on the clean-surface bytes, recomputed each run."""
     def _prose_shaped(s):
         return len(s.split()) >= 12 or (len(s) > 40 and re.search(r"\. [A-Z]", s) is not None)
@@ -4840,12 +4836,12 @@ def check_prose_contained():
         return False, ("prose-shaped text in a fact field on the clean surface (R4) -- move it to a "
                        "designated prose home: " + "; ".join(viol[:6]) + (" ..." if len(viol) > 6 else ""))
     return True, (f"no prose in a fact field across {len(files)} clean-surface file(s); prose stays "
-                  f"in its designated homes (full prose-store R4 + inline view prose are a WISH, "
-                  f"Phase E/F)")
+                  f"in its designated homes (the full prose-store form + inline view prose are "
+                  f"a labeled WISH)")
 
 
 def check_internal_refs_out_of_prose():
-    """front-facing-human-first / Charter R4 -- an internal book NAVIGATION ref (Table/Fig/page N)
+    """front-facing-human-first -- an internal book NAVIGATION ref (Table/Fig/page N)
     is provenance, not reader content, so it NEVER appears in a claim_text (the reader-facing
     summary): provenance rides on the source-ref tag (surfaced as a labeled attribution HEADER) and
     in the verbatim quote. Any ref token in ANY claim_text is RED. The 44 Rare-Earths/Immortality
@@ -4879,12 +4875,12 @@ def check_internal_refs_out_of_prose():
 # ---------------------------------------------------------------------------
 # THE DEFECT THIS EXISTS FOR, written out in full because a gate whose origin is
 # forgotten is a gate the next reader loosens:
-#   2026-08-03. Luneth opened the Vitamin A entity page and saw TWO near-identical
+#   A reader opened the Vitamin A entity page and saw TWO near-identical
 #   "What is Vitamin A?" cards. One extraction had emitted a TRUNCATED take and a
 #   FULL take of the same span -- WAL-CLM-EPIGEN-000213 (128 chars) and -000214
 #   (481 chars), identical char_offset 1065286, identical extracted_at, identical
 #   subject/facet -- and both survived to the reader. 13 duplicates were removed
-#   corpus-wide (commit b3551834, kv=458). An 84-gate board caught NONE of it. The
+#   corpus-wide (commit b3551834). The board was fully green throughout. The
 #   class was found by a human looking at a screen, which is not a control.
 #
 # TWO MECHANISMS, both measured in the real metadata, both must be caught:
@@ -4906,8 +4902,9 @@ def check_internal_refs_out_of_prose():
 # (selenium/warning) and DDDL-000096 (dietary_oils/mechanism) quote the same bytes
 # to say different things. What makes a duplicate READER-VISIBLE is landing on the
 # SAME entity page under the SAME heading: `subject` routes both cards to one page,
-# `facet` groups them into one section. Measured 2026-08-03 over the sealed corpus:
-# containment + same subject + same facet = 2 pairs; containment alone = 209.
+# `facet` groups them into one section. Measured over the sealed corpus, the full
+# four-part signature fires on a small fraction of the pairs that containment alone
+# would flag -- two orders of magnitude fewer.
 #
 # WHY CONTAINMENT AND NOT OVERLAP: partial overlap is how ADJACENT claims look. The
 # Let's-Play-Doctor base-line dose table gives 5 same-subject/same-facet pairs at
@@ -4918,19 +4915,19 @@ def check_internal_refs_out_of_prose():
 # None exists today; if one ever ships, TIGHTEN with the measurement, do not guess a
 # threshold now (a % floor picked without evidence would red-board those 9).
 #
-# WHY STRING CONTAINMENT, NOT SPAN ARITHMETIC: measured identical today (2 pairs
-# either way, 0 divergence, and every one of the 2,255 verbatims sits exactly at its
-# stated char_offset). String containment wins because it is anchored on the claim's
+# WHY STRING CONTAINMENT, NOT SPAN ARITHMETIC: both were measured over the sealed corpus and
+# agreed exactly -- same pairs, zero divergence, every verbatim sitting at its stated
+# char_offset. String containment wins because it is anchored on the claim's
 # OWN bytes -- if a resnap ever drifted an offset, span arithmetic would quietly stop
 # firing, and a gate that goes silent when the data gets WORSE is the failure mode
 # this board keeps re-learning.
 #
 # TWO REJECTED DESIGNS, recorded so they are not re-proposed:
-#   * A BASELINE EXCEPTION. The handoff specified the two keep-both pairs go in
-#     .claude/invariant-baseline.json. They must NOT: that file is INVARIANT-scoped
-#     (stop_round_close.py::_tolerated returns a set of invariant NAMES), so one
-#     entry tolerates EVERY duplicate this gate will ever find -- it would ship the
-#     gate pre-neutered. Same trap already proven for dose_amount_in_verbatim; see
+#   * A BASELINE EXCEPTION. The obvious move is to park keep-both pairs in
+#     .claude/invariant-baseline.json. They must NOT go there: that file is
+#     INVARIANT-scoped (stop_round_close.py::_tolerated returns a set of invariant
+#     NAMES), so one entry tolerates EVERY duplicate this gate will ever find -- it
+#     would ship the gate pre-neutered. Same trap already proven for dose_amount_in_verbatim; see
 #     the "NO BASELINE EXCEPTION" note above _DOSE_UNIT_SYN. Handled in-gate instead.
 #   * "SPARE THE PAIR IF ONLY ONE IS OPERATIONALLY MAPPED." Tempting, because in BOTH
 #     approved pairs exactly one member carries `essentials`. Rejected: it is an n=2
@@ -4944,10 +4941,10 @@ def check_internal_refs_out_of_prose():
 
 # Pairs that trip the signature and are nonetheless correct. Each entry is a claim
 # about the WORLD (these two really do answer different reader questions), not a
-# build fix -- see the _SAME_SUBSTANCE_SLUGS lesson above (tools/invariants.py:2376):
+# build fix -- see the `_SAME_SUBSTANCE_SLUGS` lesson earlier in this file:
 # the one exemption this repo ever wrote into gate source was a fabrication that
 # refuted itself in its own reason, and it sat green for weeks. Every
-# entry states the two questions and is pinned in tools/test_no_duplicate_claims.py.
+# entry states the two questions and is pinned in tools/tests/test_no_duplicate_claims.py.
 # A pair here that STOPS firing is itself RED (see the stale check below): a
 # carve-out that blesses nothing is a lie left in the source.
 _DUPLICATE_KEEP_BOTH = {
@@ -4955,172 +4952,168 @@ _DUPLICATE_KEEP_BOTH = {
         "hypothyroidism/mechanism: one Wallach thyroid passage answering two different reader "
         "questions -- 000101 'Can crash dieting or cutting carbs slow down your thyroid?' "
         "(diet->thyroid hormone) and 000102 'Why does an underactive thyroid make you feel "
-        "cold?' (thyroid-as-thermostat, a sub-span). Both search-only. Ruled keep-both, "
-        "Luneth-approved 2026-08-19.",
+        "cold?' (thyroid-as-thermostat, a sub-span). Both search-only. Ruled keep-both: "
+        "two different reader questions on a shared span.",
     frozenset({"WAL-CLM-DDDL-000071", "WAL-CLM-DDDL-000137"}):
         "selenium / physiology, the same 155-char preconception-selenium sentence, quoted twice to "
         "answer two different questions: -000071 'Can selenium prevent muscular dystrophy?' "
         "(essentials=[selenium], conditions=[muscular_dystrophy, keshan_disease]) and -000137 "
         "'Does selenium affect fertility and pregnancy?' (no operational mapping; its summary is "
         "the sterility / miscarriage / low-birth-weight / SIDS reproductive answer). Ruled "
-        "keep-both 2026-08-03 -- recorded in commit b3551834.",
+        "keep-both -- recorded in commit b3551834.",
     frozenset({"WAL-CLM-IMMORT-000135", "WAL-CLM-IMMORT-000389"}):
         "gallium / uses, where -000389's 152-char British-research sentence is the tail of "
         "-000135's 391-char paragraph. -000135 answers 'Does gallium help protect against brain "
         "cancer?' -- the whole essentiality-plus-metalloenzyme case (essentials=[gallium], "
         "conditions=[brain_cancer]); -000389 answers the narrower 'Can taking gallium during "
         "pregnancy lower a child's risk of brain cancer?' (conditions=[brain_cancer], no "
-        "essentials). Ruled keep-both 2026-08-03 -- commit b3551834.",
-    frozenset({"WAL-CLM-DDDL-000071", "WAL-CLM-DDDL-000137"}):
-        "selenium/physiology: one Wallach passage that answers two different reader questions -- A asks 'Can selenium prevent muscular dystrophy?'; B asks 'Does selenium affect fertility and pregnancy?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "essentials). Ruled keep-both -- recorded in commit b3551834.",
     frozenset({"WAL-CLM-DDDL-000092", "WAL-CLM-DDDL-000517"}):
-        "menopause/protocol: one Wallach passage that answers two different reader questions -- A asks 'Should women take estrogen supplements for menopause?'; B asks 'How much calcium and magnesium should you take during menopause?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "menopause/protocol: one Wallach passage that answers two different reader questions -- A asks 'Should women take estrogen supplements for menopause?'; B asks 'How much calcium and magnesium should you take during menopause?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000115", "WAL-CLM-DDDL-000427"}):
-        "omega-3/protocol: one Wallach passage that answers two different reader questions -- A asks 'How much omega-3 or essential fatty acids should I take per day?'; B asks 'How much essential fatty acid should you take for rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "omega-3/protocol: one Wallach passage that answers two different reader questions -- A asks 'How much omega-3 or essential fatty acids should I take per day?'; B asks 'How much essential fatty acid should you take for rosacea?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000168", "WAL-CLM-DDDL-000436"}):
-        "vitamin-a/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Wallach treat acne with vitamin A?'; B asks 'Does vitamin A help clear up rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "vitamin-a/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Wallach treat acne with vitamin A?'; B asks 'Does vitamin A help clear up rosacea?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000337", "WAL-CLM-DDDL-000430"}):
-        "rosacea/protocol: one Wallach passage that answers two different reader questions -- A asks \"What is Wallach's full treatment for acne rosacea?\"; B asks 'Is rosacea connected to poor digestion?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "rosacea/protocol: one Wallach passage that answers two different reader questions -- A asks \"What is Wallach's full treatment for acne rosacea?\"; B asks 'Is rosacea connected to poor digestion?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000337", "WAL-CLM-DDDL-000440"}):
-        "rosacea/protocol: one Wallach passage that answers two different reader questions -- A asks \"What is Wallach's full treatment for acne rosacea?\"; B asks 'Does sunlight or UV light help rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "rosacea/protocol: one Wallach passage that answers two different reader questions -- A asks \"What is Wallach's full treatment for acne rosacea?\"; B asks 'Does sunlight or UV light help rosacea?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000354", "WAL-CLM-DDDL-000434"}):
-        "cataracts/protocol: one Wallach passage that answers two different reader questions -- A asks 'How do you treat cataracts caused by diabetes?'; B asks 'What does Wallach recommend for cataracts?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "cataracts/protocol: one Wallach passage that answers two different reader questions -- A asks 'How do you treat cataracts caused by diabetes?'; B asks 'What does Wallach recommend for cataracts?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000356", "WAL-CLM-DDDL-000450"}):
-        "hypertension/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies cause high blood pressure?'; B asks 'What causes high blood pressure according to Wallach?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies cause high blood pressure?'; B asks 'What causes high blood pressure according to Wallach?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000356", "WAL-CLM-DDDL-000451"}):
-        "hypertension/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies cause high blood pressure?'; B asks 'Why do high blood pressure, arthritis, and kidney stones so often go together?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies cause high blood pressure?'; B asks 'Why do high blood pressure, arthritis, and kidney stones so often go together?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000357", "WAL-CLM-DDDL-000452"}):
-        "peptic_ulcers/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can a peptic ulcer be cured for good?'; B asks 'What does Wallach recommend for peptic or stomach ulcers?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "peptic_ulcers/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can a peptic ulcer be cured for good?'; B asks 'What does Wallach recommend for peptic or stomach ulcers?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000385", "WAL-CLM-DDDL-000448"}):
-        "irritable_bowel_syndrome/protocol: one Wallach passage that answers two different reader questions -- A asks 'What should I eat for IBS?'; B asks 'Should I take digestive enzymes for IBS?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "irritable_bowel_syndrome/protocol: one Wallach passage that answers two different reader questions -- A asks 'What should I eat for IBS?'; B asks 'Should I take digestive enzymes for IBS?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000385", "WAL-CLM-DDDL-000474"}):
-        "irritable_bowel_syndrome/protocol: one Wallach passage that answers two different reader questions -- A asks 'What should I eat for IBS?'; B asks 'What foods should I avoid with IBS?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "irritable_bowel_syndrome/protocol: one Wallach passage that answers two different reader questions -- A asks 'What should I eat for IBS?'; B asks 'What foods should I avoid with IBS?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000394", "WAL-CLM-DDDL-000459"}):
-        "alopecia/protocol: one Wallach passage that answers two different reader questions -- A asks 'Why does Wallach recommend digestive enzymes for hair loss?'; B asks 'Can cutting out wheat and dairy help with hair loss?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "alopecia/protocol: one Wallach passage that answers two different reader questions -- A asks 'Why does Wallach recommend digestive enzymes for hair loss?'; B asks 'Can cutting out wheat and dairy help with hair loss?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000463"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'Does flaxseed oil help with high blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'Does flaxseed oil help with high blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000471"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'Does CoQ10 help lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'Does CoQ10 help lower blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000476"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'How does Wallach treat high blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'How does Wallach treat high blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000477"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'What herbs does Wallach recommend for high blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'What herbs does Wallach recommend for high blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000478"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000397", "WAL-CLM-DDDL-000483"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can losing weight lower my blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000406", "WAL-CLM-DDDL-000465"}):
-        "tinnitus/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do essential fatty acids or fish and flax oils help tinnitus?'; B asks 'Does zinc help tinnitus?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "tinnitus/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do essential fatty acids or fish and flax oils help tinnitus?'; B asks 'Does zinc help tinnitus?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000406", "WAL-CLM-DDDL-000466"}):
-        "tinnitus/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do essential fatty acids or fish and flax oils help tinnitus?'; B asks 'Can poor digestion cause tinnitus, and do digestive enzymes help?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "tinnitus/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do essential fatty acids or fish and flax oils help tinnitus?'; B asks 'Can poor digestion cause tinnitus, and do digestive enzymes help?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000408", "WAL-CLM-DDDL-000481"}):
-        "uterine_fibroids/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Dr. Wallach treat uterine fibroids?'; B asks 'What foods should I avoid with uterine fibroids?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "uterine_fibroids/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Dr. Wallach treat uterine fibroids?'; B asks 'What foods should I avoid with uterine fibroids?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000408", "WAL-CLM-DDDL-000488"}):
-        "uterine_fibroids/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Dr. Wallach treat uterine fibroids?'; B asks 'Can I shrink uterine fibroids without a hysterectomy?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "uterine_fibroids/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Dr. Wallach treat uterine fibroids?'; B asks 'Can I shrink uterine fibroids without a hysterectomy?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000411", "WAL-CLM-DDDL-000485"}):
-        "tinnitus/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies cause tinnitus?'; B asks 'Can heavy metals like lead or mercury cause tinnitus?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "tinnitus/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies cause tinnitus?'; B asks 'Can heavy metals like lead or mercury cause tinnitus?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000415", "WAL-CLM-DDDL-000458"}):
-        "uterine_fibroids/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes uterine fibroids?'; B asks 'Are uterine fibroids related to fibrocystic breast disease?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "uterine_fibroids/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes uterine fibroids?'; B asks 'Are uterine fibroids related to fibrocystic breast disease?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000421", "WAL-CLM-DDDL-000467"}):
-        "chronic_fatigue/protocol: one Wallach passage that answers two different reader questions -- A asks \"What foods should I avoid if I'm always tired?\"; B asks 'What does Wallach recommend for chronic fatigue?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "chronic_fatigue/protocol: one Wallach passage that answers two different reader questions -- A asks \"What foods should I avoid if I'm always tired?\"; B asks 'What does Wallach recommend for chronic fatigue?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000428", "WAL-CLM-DDDL-000429"}):
-        "rosacea/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes acne rosacea?'; B asks 'Can food allergies make rosacea worse?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "rosacea/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes acne rosacea?'; B asks 'Can food allergies make rosacea worse?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000428", "WAL-CLM-DDDL-000444"}):
-        "rosacea/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes acne rosacea?'; B asks 'Can hormones or menopause trigger rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "rosacea/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes acne rosacea?'; B asks 'Can hormones or menopause trigger rosacea?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000429", "WAL-CLM-DDDL-000444"}):
-        "rosacea/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies make rosacea worse?'; B asks 'Can hormones or menopause trigger rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "rosacea/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Can food allergies make rosacea worse?'; B asks 'Can hormones or menopause trigger rosacea?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000430", "WAL-CLM-DDDL-000440"}):
-        "rosacea/protocol: one Wallach passage that answers two different reader questions -- A asks 'Is rosacea connected to poor digestion?'; B asks 'Does sunlight or UV light help rosacea?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "rosacea/protocol: one Wallach passage that answers two different reader questions -- A asks 'Is rosacea connected to poor digestion?'; B asks 'Does sunlight or UV light help rosacea?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000431", "WAL-CLM-DDDL-000432"}):
-        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'Is cranberry juice good for an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'Is cranberry juice good for an enlarged prostate?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000431", "WAL-CLM-DDDL-000495"}):
-        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'Does vitamin C help an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'Does vitamin C help an enlarged prostate?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000431", "WAL-CLM-DDDL-000498"}):
-        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'How much selenium should a man take for prostate health?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'How much selenium should a man take for prostate health?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000431", "WAL-CLM-DDDL-000501"}):
-        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does saw palmetto help an enlarged prostate?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000432", "WAL-CLM-DDDL-000495"}):
-        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Is cranberry juice good for an enlarged prostate?'; B asks 'Does vitamin C help an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Is cranberry juice good for an enlarged prostate?'; B asks 'Does vitamin C help an enlarged prostate?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000432", "WAL-CLM-DDDL-000498"}):
-        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Is cranberry juice good for an enlarged prostate?'; B asks 'How much selenium should a man take for prostate health?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Is cranberry juice good for an enlarged prostate?'; B asks 'How much selenium should a man take for prostate health?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000432", "WAL-CLM-DDDL-000501"}):
-        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Is cranberry juice good for an enlarged prostate?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Is cranberry juice good for an enlarged prostate?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000445", "WAL-CLM-DDDL-000523"}):
-        "joint_pain/protocol: one Wallach passage that answers two different reader questions -- A asks 'What does Wallach recommend for joint pain?'; B asks 'What supplements help rebuild worn spinal joints and cartilage?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "joint_pain/protocol: one Wallach passage that answers two different reader questions -- A asks 'What does Wallach recommend for joint pain?'; B asks 'What supplements help rebuild worn spinal joints and cartilage?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000448", "WAL-CLM-DDDL-000474"}):
-        "irritable_bowel_syndrome/protocol: one Wallach passage that answers two different reader questions -- A asks 'Should I take digestive enzymes for IBS?'; B asks 'What foods should I avoid with IBS?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "irritable_bowel_syndrome/protocol: one Wallach passage that answers two different reader questions -- A asks 'Should I take digestive enzymes for IBS?'; B asks 'What foods should I avoid with IBS?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000449", "WAL-CLM-DDDL-000516"}):
-        "menopause/physiology: one Wallach passage that answers two different reader questions -- A asks 'Does menopause cause vaginal dryness and bladder problems?'; B asks 'What are the symptoms of menopause?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "menopause/physiology: one Wallach passage that answers two different reader questions -- A asks 'Does menopause cause vaginal dryness and bladder problems?'; B asks 'What are the symptoms of menopause?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000450", "WAL-CLM-DDDL-000451"}):
-        "hypertension/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes high blood pressure according to Wallach?'; B asks 'Why do high blood pressure, arthritis, and kidney stones so often go together?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/mechanism: one Wallach passage that answers two different reader questions -- A asks 'What causes high blood pressure according to Wallach?'; B asks 'Why do high blood pressure, arthritis, and kidney stones so often go together?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000460", "WAL-CLM-DDDL-000461"}):
-        "vertigo/protocol: one Wallach passage that answers two different reader questions -- A asks \"What does Wallach recommend for Wallach's Vertigo?\"; B asks \"How do you treat Wallach's vertigo naturally?\". Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "vertigo/protocol: one Wallach passage that answers two different reader questions -- A asks \"What does Wallach recommend for Wallach's Vertigo?\"; B asks \"How do you treat Wallach's vertigo naturally?\". Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000463", "WAL-CLM-DDDL-000471"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'Does CoQ10 help lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'Does CoQ10 help lower blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000463", "WAL-CLM-DDDL-000477"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'What herbs does Wallach recommend for high blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'What herbs does Wallach recommend for high blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000463", "WAL-CLM-DDDL-000478"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000463", "WAL-CLM-DDDL-000483"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does flaxseed oil help with high blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000465", "WAL-CLM-DDDL-000466"}):
-        "tinnitus/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does zinc help tinnitus?'; B asks 'Can poor digestion cause tinnitus, and do digestive enzymes help?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "tinnitus/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does zinc help tinnitus?'; B asks 'Can poor digestion cause tinnitus, and do digestive enzymes help?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000471", "WAL-CLM-DDDL-000477"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does CoQ10 help lower blood pressure?'; B asks 'What herbs does Wallach recommend for high blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does CoQ10 help lower blood pressure?'; B asks 'What herbs does Wallach recommend for high blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000471", "WAL-CLM-DDDL-000478"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does CoQ10 help lower blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does CoQ10 help lower blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000471", "WAL-CLM-DDDL-000483"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does CoQ10 help lower blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does CoQ10 help lower blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000476", "WAL-CLM-DDDL-000483"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Wallach treat high blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'How does Wallach treat high blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000477", "WAL-CLM-DDDL-000478"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'What herbs does Wallach recommend for high blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'What herbs does Wallach recommend for high blood pressure?'; B asks 'What foods should I eat or avoid to lower blood pressure?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000477", "WAL-CLM-DDDL-000483"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'What herbs does Wallach recommend for high blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'What herbs does Wallach recommend for high blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000478", "WAL-CLM-DDDL-000483"}):
-        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'What foods should I eat or avoid to lower blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "hypertension/protocol: one Wallach passage that answers two different reader questions -- A asks 'What foods should I eat or avoid to lower blood pressure?'; B asks 'How does Dr. Wallach say to lower high blood pressure naturally?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000481", "WAL-CLM-DDDL-000488"}):
-        "uterine_fibroids/protocol: one Wallach passage that answers two different reader questions -- A asks 'What foods should I avoid with uterine fibroids?'; B asks 'Can I shrink uterine fibroids without a hysterectomy?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "uterine_fibroids/protocol: one Wallach passage that answers two different reader questions -- A asks 'What foods should I avoid with uterine fibroids?'; B asks 'Can I shrink uterine fibroids without a hysterectomy?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000482", "WAL-CLM-DDDL-000559"}):
-        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can folic acid help eczema?'; B asks 'Does zinc help eczema?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Can folic acid help eczema?'; B asks 'Does zinc help eczema?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000490", "WAL-CLM-DDDL-000492"}):
-        "endometriosis/uses: one Wallach passage that answers two different reader questions -- A asks 'What herbs are recommended for endometriosis discomfort?'; B asks 'Can natural progesterone help with endometriosis?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "endometriosis/uses: one Wallach passage that answers two different reader questions -- A asks 'What herbs are recommended for endometriosis discomfort?'; B asks 'Can natural progesterone help with endometriosis?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000490", "WAL-CLM-DDDL-000577"}):
-        "endometriosis/uses: one Wallach passage that answers two different reader questions -- A asks 'What herbs are recommended for endometriosis discomfort?'; B asks 'How can severe endometriosis growths be removed?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "endometriosis/uses: one Wallach passage that answers two different reader questions -- A asks 'What herbs are recommended for endometriosis discomfort?'; B asks 'How can severe endometriosis growths be removed?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000492", "WAL-CLM-DDDL-000577"}):
-        "endometriosis/uses: one Wallach passage that answers two different reader questions -- A asks 'Can natural progesterone help with endometriosis?'; B asks 'How can severe endometriosis growths be removed?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "endometriosis/uses: one Wallach passage that answers two different reader questions -- A asks 'Can natural progesterone help with endometriosis?'; B asks 'How can severe endometriosis growths be removed?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000494", "WAL-CLM-DDDL-000578"}):
-        "endometriosis/mechanism: one Wallach passage that answers two different reader questions -- A asks 'How does endometrial tissue end up outside the uterus?'; B asks 'Which organs can endometriosis affect?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "endometriosis/mechanism: one Wallach passage that answers two different reader questions -- A asks 'How does endometrial tissue end up outside the uterus?'; B asks 'Which organs can endometriosis affect?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000494", "WAL-CLM-DDDL-000581"}):
-        "endometriosis/mechanism: one Wallach passage that answers two different reader questions -- A asks 'How does endometrial tissue end up outside the uterus?'; B asks 'What causes endometriosis?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "endometriosis/mechanism: one Wallach passage that answers two different reader questions -- A asks 'How does endometrial tissue end up outside the uterus?'; B asks 'What causes endometriosis?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000495", "WAL-CLM-DDDL-000498"}):
-        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin C help an enlarged prostate?'; B asks 'How much selenium should a man take for prostate health?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin C help an enlarged prostate?'; B asks 'How much selenium should a man take for prostate health?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000495", "WAL-CLM-DDDL-000501"}):
-        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin C help an enlarged prostate?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin C help an enlarged prostate?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000498", "WAL-CLM-DDDL-000501"}):
-        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'How much selenium should a man take for prostate health?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "benign_prostatic_hyperplasia/uses: one Wallach passage that answers two different reader questions -- A asks 'How much selenium should a man take for prostate health?'; B asks 'Which amino acids does Wallach use for an enlarged prostate?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000529", "WAL-CLM-DDDL-000571"}):
-        "erectile_dysfunction/protocol: one Wallach passage that answers two different reader questions -- A asks 'Are there self-help or sex-therapy techniques for erectile dysfunction you can do at home?'; B asks 'Do minerals or supplements actually help with impotence?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "erectile_dysfunction/protocol: one Wallach passage that answers two different reader questions -- A asks 'Are there self-help or sex-therapy techniques for erectile dysfunction you can do at home?'; B asks 'Do minerals or supplements actually help with impotence?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000531", "WAL-CLM-DDDL-000562"}):
-        "allergies/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do vitamin C and bioflavonoids help with allergies?'; B asks 'Can fixing my digestion help with allergies?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "allergies/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do vitamin C and bioflavonoids help with allergies?'; B asks 'Can fixing my digestion help with allergies?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000532", "WAL-CLM-DDDL-000548"}):
-        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin A help eczema?'; B asks 'Do digestive enzymes help eczema?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin A help eczema?'; B asks 'Do digestive enzymes help eczema?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000532", "WAL-CLM-DDDL-000563"}):
-        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin A help eczema?'; B asks 'How do I find out which foods trigger my eczema?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Does vitamin A help eczema?'; B asks 'How do I find out which foods trigger my eczema?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000548", "WAL-CLM-DDDL-000563"}):
-        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do digestive enzymes help eczema?'; B asks 'How do I find out which foods trigger my eczema?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "eczema/protocol: one Wallach passage that answers two different reader questions -- A asks 'Do digestive enzymes help eczema?'; B asks 'How do I find out which foods trigger my eczema?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000578", "WAL-CLM-DDDL-000581"}):
-        "endometriosis/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Which organs can endometriosis affect?'; B asks 'What causes endometriosis?'. Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
-    frozenset({"WAL-CLM-IMMORT-000135", "WAL-CLM-IMMORT-000389"}):
-        "gallium/uses: one Wallach passage that answers two different reader questions -- A asks 'Does gallium help protect against brain cancer?'; B asks \"Can taking gallium during pregnancy lower a child's risk of brain cancer?\". Ruled keep-both (different questions on a shared span, resnapped to name the condition), Luneth-approved 2026-08-18.",
+        "endometriosis/mechanism: one Wallach passage that answers two different reader questions -- A asks 'Which organs can endometriosis affect?'; B asks 'What causes endometriosis?'. Ruled keep-both: two different reader questions on a shared span, resnapped so each names its condition.",
     frozenset({"WAL-CLM-DDDL-000585", "WAL-CLM-DDDL-000387"}):
-        "psoriasis/protocol: one Wallach psoriasis-protocol span answering two different reader questions -- A (dose facet) asks 'Does lecithin help psoriasis?'; B asks 'Which minerals help psoriasis?'. The lecithin facet routes on the condition because 'lecithin' is not a registered search subject. Ruled keep-both (different questions on a shared span), Luneth-approved 2026-08-18.",
+        "psoriasis/protocol: one Wallach psoriasis-protocol span answering two different reader questions -- A (dose facet) asks 'Does lecithin help psoriasis?'; B asks 'Which minerals help psoriasis?'. The lecithin facet routes on the condition because 'lecithin' is not a registered search subject. Ruled keep-both: two different reader questions on a shared span.",
     frozenset({"WAL-CLM-DDDL-000589", "WAL-CLM-DDDL-000497"}):
-        "constipation/protocol: one Wallach constipation-protocol span answering two different reader questions -- A (dose facet) asks 'How much fiber should you take for constipation?'; B asks 'What are natural herbal laxatives for constipation?'. The fiber facet routes on the condition because 'dietary-fiber' is not a registered search subject. Ruled keep-both (different questions on a shared span), Luneth-approved 2026-08-18.",
+        "constipation/protocol: one Wallach constipation-protocol span answering two different reader questions -- A (dose facet) asks 'How much fiber should you take for constipation?'; B asks 'What are natural herbal laxatives for constipation?'. The fiber facet routes on the condition because 'dietary-fiber' is not a registered search subject. Ruled keep-both: two different reader questions on a shared span.",
     frozenset({"WAL-CLM-DDDL-000595", "WAL-CLM-DDDL-000522"}):
-        "gallstones/protocol: one Wallach gallbladder-protocol span answering two different reader questions -- A (dose facet) asks 'Does lecithin help with gallstones?'; B asks 'Which herbs are good for the gallbladder?'. The lecithin facet routes on the condition because 'lecithin' is not a registered search subject. Ruled keep-both (different questions on a shared span), Luneth-approved 2026-08-18.",
+        "gallstones/protocol: one Wallach gallbladder-protocol span answering two different reader questions -- A (dose facet) asks 'Does lecithin help with gallstones?'; B asks 'Which herbs are good for the gallbladder?'. The lecithin facet routes on the condition because 'lecithin' is not a registered search subject. Ruled keep-both: two different reader questions on a shared span.",
     frozenset({"WAL-CLM-EPIGEN-000484", "WAL-CLM-EPIGEN-000479"}):
-        "menopause/history: one Wallach Lydia-Pinkham passage answering two different reader questions -- A (000479) asks \"What was Lydia Pinkham's herbal remedy for women's complaints?\"; B (000484) asks 'What did women use for menopause before modern medicine?'. B carries a distinct claim_text (the pre-modern-practice framing) on the shared full-paragraph span; both route to menopause/history. Ruled keep-both, Luneth-approved 2026-08-19.",
+        "menopause/history: one Wallach Lydia-Pinkham passage answering two different reader questions -- A (000479) asks \"What was Lydia Pinkham's herbal remedy for women's complaints?\"; B (000484) asks 'What did women use for menopause before modern medicine?'. B carries a distinct claim_text (the pre-modern-practice framing) on the shared full-paragraph span; both route to menopause/history. Ruled keep-both, reviewed and approved.",
 }
 
 
@@ -5191,7 +5184,7 @@ def _no_duplicate_claims_impl(claims, enrichment, approved=None):
 
 
 def check_no_duplicate_claims():
-    """Charter R3 (one source per fact) / R7 -- see the block comment above _DUPLICATE_KEEP_BOTH for
+    """One source per fact -- see the block comment above _DUPLICATE_KEEP_BOTH for
     the 2026-08-03 vitamin-A twin-card defect this was written for, the two duplication mechanisms,
     why containment alone is NOT the signature, and the two designs that were rejected. Thin
     path-binding shell over the impl so the negative test can drive the same logic with the real
@@ -5213,14 +5206,13 @@ def check_no_duplicate_claims():
 # search_no_twin_questions -- one PAGE, one question (the CROSS-BOOK twin)
 # ---------------------------------------------------------------------------
 # THE DEFECT, in full, because the last twin-card gate was written too NARROW and
-# the reader walked back into the wall three days later:
-#   2026-08-07. After a three-day duplicate-review campaign (274 rulings, 88 claims
-#   removed, board 89/89 green), Luneth opened the Vitamin D entity page and it STILL
-#   had twins: "Can too much vitamin D be dangerous?" beside "Can too much vitamin D
+# the same class walked back onto the screen days later:
+#   After a full duplicate review had run to a green board, a reader opened the
+#   Vitamin D entity page and it STILL had twins: "Can too much vitamin D be dangerous?" beside "Can too much vitamin D
 #   be harmful?", and "What are the symptoms of vitamin D deficiency?" beside "What
 #   are the signs of vitamin D deficiency?". Two clusters, one page, green board.
 #
-# WHY no_duplicate_claims (2026-08-03) COULD NOT SEE IT -- its signature is
+# WHY no_duplicate_claims COULD NOT SEE IT -- its signature is
 #   same book . verbatim CONTAINMENT . same subject . same facet.
 # These twins break THREE of those four: they are CROSS-BOOK (dddl vs lets;
 # epigenetics vs lets), their verbatims do NOT contain each other (different book
@@ -5233,7 +5225,7 @@ def check_no_duplicate_claims():
 #
 # WHERE THE DUPLICATION LIVES -- NOT in the claims. Two "signs of X deficiency"
 # claims from two books are legitimately different records, both true to their
-# source; the claim-level campaign correctly left them alone. The duplication is in
+# source, and the claim-level review correctly left them alone. The duplication is in
 # the QUESTION the app mints per claim in search-enrichment.json: two claims -> two
 # cards -> two near-identical questions on ONE page. So the gate reads the AUTHORED
 # questions, grouped by the page they render on (enrichment subject).
@@ -5245,8 +5237,8 @@ def check_no_duplicate_claims():
 # dropping the subject's own name tokens, and folding a SMALL, EXPLICIT synonym set
 # measured from the real corpus (signs=symptoms, dangerous=harmful=toxic,
 # deficiency=low=lack, disease=disorder, cause=caused). Fold-EQUALITY, not fuzzy
-# distance. Measured 2026-08-07 over the 2159 authored questions: 19 fold-equal
-# pairs across 17 subjects, ALL of them real twins -- the allowlist below is EMPTY
+# distance. When the signature was measured across the authored question set, every
+# fold-equal pair it found was a real twin -- which is why the allowlist below is EMPTY
 # by design. Only 'does'/'did' are dropped, NOT 'do': keeping 'do' as a content word
 # means "what IS X" (definition) and "what does X DO" (function) reduce to DIFFERENT
 # signatures, so the one shape that first looked like a false positive
@@ -5257,8 +5249,8 @@ def check_no_duplicate_claims():
 # deficiency?" -- a bone-specific take vs the general one, or a COMPOUND question
 # like "what does X do, and what are the signs of low X?") is NOT fold-equal and
 # escapes this gate. Those need a human ruling (merge vs keep-as-distinct-subquery)
-# a machine cannot make without guessing a threshold. ~130 such borderline pairs
-# were measured 2026-08-07 and are being reviewed by hand; if a hard, recurring
+# a machine cannot make without guessing a threshold. Roughly a hundred such
+# borderline pairs exist and are handled by review; if a hard, recurring
 # shape emerges, TIGHTEN with that evidence -- do not guess a floor now. also_about
 # cross-page collisions are likewise out of v1 scope; subject-primary only.
 #
@@ -5362,10 +5354,10 @@ def _search_no_twin_questions_impl(enrichment, approved=None):
 
 
 def check_search_no_twin_questions():
-    """Charter R3 (one source per fact) / R7 -- the CROSS-BOOK sibling of no_duplicate_claims. See the
+    """One source per fact -- the CROSS-BOOK sibling of no_duplicate_claims. See the
     block comment above _TWIN_QUESTION_KEEP_BOTH for the 2026-08-07 vitamin-D twin the same-book gate
     could not see, and why fold-equality is the signature. Thin path-binding shell over the impl so
-    tools/test_search_no_twin_questions.py can drive the logic with the real twin planted back in."""
+    tools/tests/test_search_no_twin_questions.py can drive the logic with the real twin planted back in."""
     enr_p = ROOT / "eden" / "corpus" / "search-enrichment.json"
     if not enr_p.exists():
         return True, "eden/corpus/search-enrichment.json missing (bootstrap-guard)"
@@ -5374,15 +5366,16 @@ def check_search_no_twin_questions():
 
 
 def check_no_hand_duplicated_canonical():
-    """Charter R3 -- no canonical value is hand-written twice; the pillar is the single hand-edited
+    """No canonical value is hand-written twice; the pillar is the single hand-edited
     home, and derived copies are proven fresh (derived_artifacts_fresh IS R3's 'derived copies only'
     clause). LIVE teeth: the 90/91 canonical essential display_names live ONLY in essentials-canon.json
     among HAND-EDITED files -- no other hand-edited pillar file (catalog conditions/symptoms) may
-    re-store one as a field value. This is exactly the duplication the deleted nutrients.json committed
-    (91 names re-copied from canon, 2026-07-05 D-c); the gate makes re-introducing that class RED.
+    re-store one as a field value. This is exactly the duplication a since-deleted nutrient registry
+    committed (every canon name re-copied by hand); the gate makes re-introducing that class RED.
     Generated artifacts are EXEMPT -- a display_name in corpus-embed is a DERIVED copy gated fresh by
     derived_artifacts_fresh. Truth-anchored on essentials-canon x the other hand-edited pillar files,
-    recomputed each run. WISH (Phase F): extend to every pillar identity field once the Product DB lands."""
+    KNOWN SCOPE LIMIT: it covers the canon's display names, not every identity field in every
+    pillar; widening it to the Products pillar is a labeled WISH, not something this gate does."""
     canon_p = ROOT / "eden" / "corpus" / "essentials-canon.json"
     if not canon_p.exists():
         return True, "essentials-canon.json missing (bootstrap-guard)"
@@ -5406,19 +5399,18 @@ def check_no_hand_duplicated_canonical():
 
 
 # ---------------------------------------------------------------------------
-# Eden's WALL (Phase E, blueprint §5.4) -- scanner_user_items_marked
+# Eden's WALL -- scanner_user_items_marked
 # ---------------------------------------------------------------------------
 # The scanner lets a user add ANY item to THEIR regimen, but a user/scanned item can
 # NEVER masquerade as Wallach/Youngevity canonical, nor leak into a sealed pillar or a
-# generated artifact. Three USER provenance tokens are the wall's subject. (The
-# wallach_hbsp_default token retired 2026-07-14 with the regimen-base-data seed -- no
-# non-user provenance is minted in code or data now.)
+# generated artifact. Three USER provenance tokens are the wall's subject; no non-user
+# provenance is minted anywhere in code or data.
 _USER_PROVENANCE = ("user_scanned", "user_manual", "wishlist_promoted")
 _PROV_RE = re.compile(r"provenance:\s*['\"]([^'\"]+)['\"]")
 
 
 def check_scanner_user_items_marked():
-    """Blueprint §5.4 -- EDEN'S WALL. A user/scanner-added regimen item is MARKED
+    """EDEN'S WALL. A user/scanner-added regimen item is MARKED
     user-provided (provenance) so it can never masquerade as canonical, and it never
     leaks into a sealed pillar or an operational artifact. Two clauses, both
     truth-anchored on committed bytes (recomputed each run):
@@ -5431,8 +5423,8 @@ def check_scanner_user_items_marked():
           proving a scanned/user item never got baked into canonical data. The
           append-only Creator's Log narrative (creators-log*) is EXCLUDED: it
           legitimately discusses these tokens as project history.
-    R7: shipped with the wall it governs; proven with a negative test (a user token
-    injected into an artifact, or a masquerade provenance minted in code, -> RED)."""
+    Shipped with the wall it governs, and proven with a negative test: a user token
+    injected into an artifact, or a masquerade provenance minted in code, must RED."""
     viol = []
 
     # (A1) the schema still requires the provenance marker.
@@ -5482,7 +5474,7 @@ def check_scanner_user_items_marked():
 
 
 def check_data_artifacts_accounted():
-    """Charter R1 -- the manifest-COMPLETENESS gate (crack #1 fix, 2026-07-06).
+    """The manifest-COMPLETENESS gate.
     derived_artifacts_fresh proves the files LISTED in eden/derived/MANIFEST.json are fresh;
     it does NOT prove the list is COMPLETE. This closes that hole: every
     dashboard/assets/data/*.json must appear either in the manifest's `artifacts` (derived +
@@ -5533,7 +5525,7 @@ def _charter_name_is_wished(name, status_cell):
     A WISH clause runs from a `WISH` marker to the next LIVE / PARTIAL / LANDED marker (or
     end of cell); the name must appear INSIDE such a clause. TWO loosenings were removed
     here on 2026-07-15 (R9: re-codify with proof, never loosen silently). Both were caught
-    by tools/test_charter_gates_present.py, which measures the gate rather than trusting it:
+    by tools/tests/test_charter_gates_present.py, which measures the gate rather than trusting it:
 
     (1) PER-ROW -> PER-NAME. The old test was `"WISH" in status_cell or "WISH" in gate_cell`,
         so ANY rule whose status prose merely MENTIONED the word excused EVERY gate name in
@@ -5562,20 +5554,20 @@ def _charter_name_is_wished(name, status_cell):
 
 
 def _charter_gates_present_impl(charter_text, live):
-    """Charter R7 (the meta-gate) -- 'codify, don't promise': every gate the Charter presents
-    as its proof must actually EXIST, or the rule must be labeled WISH (crack #2 fix,
-    2026-07-06). Parses the R1-R9 rule table in .claude/skills/charter/SKILL.md; for each
+    """The meta-gate -- 'codify, don't promise': every gate the Charter presents
+    as its proof must actually EXIST, or the rule must be labeled WISH.
+    Parses the rule table in .claude/skills/charter/SKILL.md; for each
     backtick-quoted gate name in a rule's GATE column, that name must be (a) a live invariant
     here, (b) a known non-invariant enforcement mechanism (a verify tool / hook / lint rule),
     or (c) that GATE NAME must itself be marked WISH (an honestly-labeled promise).
 
-    TIGHTENED 2026-07-15 (R9: a misfiring gate is fixed by re-codifying, never a silent
-    loosening). The exemption used to be PER-ROW: `is_wish = "WISH" in status_cell or "WISH"
+    TIGHTENED once -- a misfiring gate is fixed by re-codifying, never by a silent
+    loosening. The exemption used to be PER-ROW: `is_wish = "WISH" in status_cell or "WISH"
     in gate_cell`, so ANY rule whose status prose merely CONTAINED the word "WISH" had EVERY
     gate name in its column skipped from existence-checking. R2 was exempt not because it was
     unenforced but because its status says a gate "LANDED" and uses the word in passing.
-    Measured by negative control: a planted fake gate name was caught in R6 and R9 ONLY --
-    2 of 9 rules, 22%. The gate then reported "all 9 Charter rules name real gates or are
+    Measured by negative control: a planted fake gate name was caught in only 2 of the 9
+    rules, 22%. The gate then reported "all 9 Charter rules name real gates or are
     labeled WISH", which READS as verification of 9 and WAS verification of 2. The meta-gate
     whose entire purpose is "the Charter can no longer oversell its own enforcement" was
     overselling its own enforcement by 350%. This is the exact failure mode R7 exists to
@@ -5588,10 +5580,10 @@ def _charter_gates_present_impl(charter_text, live):
 
     NOT covered (WISH, not sold as guarded): SEMANTIC verification that a present gate actually
     ENFORCES its rule -- no non-gaming machine check exists; that rests on review. Also not
-    covered: the Charter's PROSE outside the R1-R9 table (this parses rule rows only; a stale
-    "future gate" claim in the How-to-use prose is invisible here -- that is how charter.md:29
-    called a LIVE critical gate "future" until 2026-07-15). Truth-anchored on the charter.md
-    table x the live invariant names, recomputed each run."""
+    covered: the Charter's PROSE outside the R1-R9 table. This parses rule rows only, so a stale
+    "future gate" claim written in the surrounding prose is invisible here — a rule can still
+    oversell itself outside the table. Truth-anchored on the Charter skill's rule table x the
+    live invariant names, recomputed each run."""
     KNOWN_MECHANISMS = {
         "corpus_verify", "catalog_verify", "book_purity", "mine", "mine_batch",
         "stop_round_close", "pre_write_guard", "post_write_verify", "pre_bash_guard",
@@ -5635,13 +5627,12 @@ def _charter_gates_present_impl(charter_text, live):
 
 
 def check_charter_gates_present():
-    """Charter R7 meta-gate wrapper -- see _charter_gates_present_impl for the full contract
+    """Meta-gate wrapper -- see _charter_gates_present_impl for the full contract
     and the 2026-07-15 per-row -> per-name tightening."""
     charter = ROOT / ".claude" / "skills" / "charter" / "SKILL.md"
-    # HARDENED 2026-08-03 (skills migration). This used to `return True` on a missing
-    # charter as a "bootstrap-guard" -- which meant DELETING the Charter turned its own
-    # meta-gate green. A gate that passes because its subject vanished is the exact
-    # failure mode next-chunk trap #3 names. Missing is now RED.
+    # This used to `return True` on a missing charter as a "bootstrap-guard" -- which meant
+    # DELETING the Charter turned its own meta-gate green. A gate that passes because its
+    # subject vanished is not a passing gate. Missing is now RED.
     if not charter.exists():
         return False, (".claude/skills/charter/SKILL.md missing — the Charter's own "
                        "meta-gate cannot pass when the Charter is gone")
@@ -5650,11 +5641,11 @@ def check_charter_gates_present():
 
 
 def check_exceptions_justified():
-    """Charter R9 -- 'refinements are codified too, never a silent loosening' (crack #2 fix,
-    2026-07-06). Every tolerated invariant failure in .claude/invariant-baseline.json must
+    """Refinements are codified too, never a silent loosening.
+    Every tolerated invariant failure in .claude/invariant-baseline.json must
     carry a JUSTIFICATION: an object with an `invariant` (the live gate it excepts), a
     non-empty `reason`, and a `test` reference (the proof the tolerated case is genuinely
-    correct). A bare-string or reason-less exception is exactly the silent loosening R9
+    correct). A bare-string or reason-less exception is exactly the silent loosening this
     forbids -- RED. An empty baseline is vacuously green (nothing to justify), but the gate
     stands so the NEXT exception must be justified. Paired reader: tools/hooks/
     stop_round_close.py tolerates the SAME entries by their `invariant` name. Truth-anchored
@@ -5692,17 +5683,17 @@ def check_exceptions_justified():
 
 
 def check_corpus_audit_gate():
-    """Charter R8 / memory full-corpus-audit-before-phase-g -- the MANDATORY full-corpus claim
-    audit (all claims, every kind) that must run BEFORE Phase G resumes book mining, made
-    STRUCTURAL instead of a memory that can be forgotten (crack #4 fix, 2026-07-06).
+    """The MANDATORY full-corpus claim audit (all claims, every kind) that must
+    run BEFORE book mining resumes, made STRUCTURAL instead of a convention that can be
+    forgotten.
     eden/tools/corpus-audit-status.json records a `frozen_claim_count` (the corpus size at
     freeze) and a `phase_g_unlocked` flag. While the audit is NOT signed off
     (phase_g_unlocked=false), the live corpus claim count may not EXCEED the frozen count --
     i.e. new claims cannot be mined onto unaudited data. Growing the corpus is BLOCKED (RED)
     until either the audit signs off (set phase_g_unlocked=true after the corpus_audit.py
-    worklist + Luneth's per-claim review) or the freeze baseline is deliberately re-anchored.
-    count == frozen -> pass (audit owed, Phase G locked); count < frozen (a deletion) -> pass.
-    This never reds the board during Phase E; it reds the instant unaudited mining begins.
+    worklist and a per-claim human review) or the freeze baseline is deliberately re-anchored.
+    count == frozen -> pass (audit owed, mining locked); count < frozen (a deletion) -> pass.
+    It never reds the board for standing still; it reds the instant unaudited mining begins.
     Truth-anchored on the live shard claim count x the frozen baseline, recomputed each run."""
     import json as _json
     status_p = ROOT / "eden" / "tools" / "corpus-audit-status.json"
@@ -5724,16 +5715,14 @@ def check_corpus_audit_gate():
     if count > frozen:
         return False, (f"PHASE G LOCKED -- corpus grew to {count} claims (frozen at {frozen}) without "
                        f"the mandatory full-corpus audit sign-off; new claims may not land on unaudited "
-                       f"data. Run eden/tools/corpus_audit.py, review, then set phase_g_unlocked=true. "
-                       f"(memory: full-corpus-audit-before-phase-g)")
-    note = "audit OWED, Phase G LOCKED" if count == frozen else f"corpus shrank to {count} (was {frozen})"
+                       f"data. Run eden/tools/corpus_audit.py, review, then set phase_g_unlocked=true.")
+    note = "audit OWED, mining LOCKED" if count == frozen else f"corpus shrank to {count} (was {frozen})"
     return True, f"corpus audit gate holding -- {count} claims vs freeze {frozen}; {note}"
 
 
-# ── Offline integrity (2026-08-03) ───────────────────────────────────────────
-# Replaces the retired `dist/main.js gzipped <= 250 KB` size-limit budget, which was
-# measured at 2.67 MB (10.7x over) and had therefore been failing-and-bypassed rather
-# than enforcing. Size was a proxy; these check the actual promise -- the app loads
+# ── Offline integrity ────────────────────────────────────────────────────────
+# A bundle SIZE budget is only a proxy for offline-first, and a proxy that is routinely
+# bypassed enforces nothing. These gates check the actual promise instead -- the app loads
 # nothing off-machine, and every asset it does load is present and pinned.
 _NET_LOAD_PATTERNS = [
     # constructs that would actually FETCH at runtime. Deliberately NOT a bare
@@ -5761,7 +5750,7 @@ def _shipped_surfaces():
 def check_offline_no_runtime_network():
     """Nothing the shipped app LOADS may point off-machine. The project's core promise is
     that it cannot be taken offline or broken by someone else's server, so a CDN script, a
-    remote font, a live API call or a websocket is a a breach of the product, not a style
+    remote font, a live API call or a websocket is a breach of the product, not a style
     nit.
 
     SCOPE, stated honestly: this matches LOAD CONSTRUCTS (fetch/WebSocket/importScripts/
@@ -5804,12 +5793,12 @@ def check_vendor_assets_pinned():
     slightly off" with nothing in the console. Truth anchor: file bytes + os-level
     existence, recomputed each run."""
     problems = []
-    man_p = ROOT / "dashboard" / "assets" / "vendor" / "libs" / "vendor-manifest.json"
+    man_p = ROOT / "tools" / "design-libs" / "vendor-manifest.json"
     checked = 0
     if man_p.exists():
         man = json.loads(man_p.read_text(encoding="utf-8"))
         for lib in man.get("libs", []):
-            f = ROOT / "dashboard" / lib["file"]
+            f = ROOT / lib["file"]
             if not f.exists():
                 problems.append(f"vendored lib MISSING: {lib['file']}")
                 continue
@@ -5840,30 +5829,28 @@ def check_vendor_assets_pinned():
 
 
 # ---------------------------------------------------------------------------
-# Phase H0 -- entity-page redesign migration: the enforcement FLOOR (migration
-# the Phase-H migration, gate rows 1-3).
-# Three gates landed BEFORE the surfaces so the app cannot be built with the
-# prototypes' shortcuts (inline prose, a hand-built entity map, demo scaffold).
-# Each is a thin path-binding wrapper over a param-taking _impl so
-# tools/test_<name>.py can drive the same logic against planted poison (the
-# committed negative test, per the amounts_wallach_only pattern).
+# Entity-page migration: the enforcement FLOOR
+# ---------------------------------------------------------------------------
+# Three gates landed BEFORE the surfaces they guard, so the app could not be built
+# with the prototypes' shortcuts (inline prose, a hand-built entity map, demo
+# scaffold). Each is a thin path-binding wrapper over a param-taking _impl so
+# tools/tests/test_<name>.py can drive the same logic against planted poison (the
+# committed negative test, on the amounts_wallach_only pattern).
 #
 # views_no_inline_prose + entity_render_is_projection are SURFACE-SCOPED to a
-# growing allowlist (mirroring _clean_surface_files): the lists are EMPTY in H0
-# because no entity surface exists yet (the render is built in H2), so both are
-# vacuously green on the real tree. Each migrated view is APPENDED to its list
-# in the SAME patch that cleans it (H2-H4). The negative tests prove the gates
-# FIRE regardless of the (currently empty) real scope. This is the honest
-# floor-first form (R7): the mechanism is live + tested now; its reach grows as
-# the surfaces land. no_stub_render_paths is active immediately (green today,
-# stays green) -- it blocks pasting prototype scaffold into any shipped view/css.
+# growing allowlist (mirroring _clean_surface_files). Each migrated view is
+# APPENDED to its list in the SAME patch that cleans it, so the gate's reach
+# grows with the surface instead of waiting for it. The negative tests prove the
+# gates FIRE independently of how much real scope the lists currently hold --
+# which is what keeps a short list honest rather than reassuring.
+# no_stub_render_paths is active over everything: it blocks pasting prototype
+# scaffold into any shipped view or stylesheet.
 # ---------------------------------------------------------------------------
 
 # The (growing) CLEAN-view surface. A file listed here is asserted prose-free --
-# every user-facing string lives in the view-copy content store via state/copy.ts
-# (R4). NOT empty -- 4 views are migrated + BINDING as of Phase H1; H2/H3/H4 append the
-# rest. (Corrected 2026-07-15: this read "EMPTY in H0" long after the surface grew, which
-# UNDERSELLS a live gate -- a reader could delete it as vacuous. Read the tuple, not this.)
+# every user-facing string lives in the view-copy content store via state/copy.ts.
+# NOT empty and NOT vacuous: every file below BINDS. Read the tuple, never a count
+# written in prose -- a number here is one migration away from being a lie.
 _CLEAN_VIEW_FILES: tuple = (
     "dashboard/assets/js/src/views/entity-page.ts",
     "dashboard/assets/js/src/views/knowledge-home.ts",
@@ -5874,8 +5861,8 @@ _CLEAN_VIEW_FILES: tuple = (
 
 # The entity-render view file(s). Asserted a PURE PROJECTION of the generated
 # entity-page artifact: no object literal keyed by a real entity id, no per-entity
-# content branch. NOT empty -- 2 views are BINDING as of Phase H1. (Corrected 2026-07-15:
-# read "EMPTY in H0" while the tuple already held 2 real files.)
+# content branch. This tuple is NOT empty and the gate BINDS on every file in it --
+# read the tuple, never a count written in prose.
 _ENTITY_VIEW_FILES: tuple = (
     "dashboard/assets/js/src/views/entity-page.ts",
     "dashboard/assets/js/src/views/knowledge-topic.ts",
@@ -5883,7 +5870,7 @@ _ENTITY_VIEW_FILES: tuple = (
 
 # Prototype/demo scaffold markers that must NEVER reach a shipped view or css
 # (they live only in gitignored temporary/*.html). Distinctive enough not to
-# false-positive on legitimate view/css content (verified clean at H0 landing).
+# false-positive on legitimate view/css content (verified clean when the gate landed).
 _STUB_SCAFFOLD_TOKENS = (
     "kn-stub", "sh-stub", "next chunk", "real build", "demo wires",
     "PROTOTYPE", "exemplar",
@@ -5924,9 +5911,9 @@ def _has_cipher_class(attrs: str) -> bool:
     return m is not None and "ds-cipher" in m.group("cls").split()
 
 
-# Identifiers a view imports FROM the state/core layers. Per CLAUDE.md's data flow
-# (pillars -> generators -> core/ -> state/ -> views/), anything crossing that boundary IS
-# real data; anything defined locally in the view is chrome. That boundary is the gate's rule.
+# Identifiers a view imports FROM the state/ or core/ layers. The project's data flow runs
+# pillars -> generators -> core/ -> state/ -> views/, so anything crossing that import boundary
+# IS real data; anything defined locally in the view is chrome. That boundary is the gate's rule.
 _DATA_IMPORT_RE = re.compile(
     r"import\s*\{(?P<names>[^}]*)\}\s*from\s*['\"][^'\"]*/(?:state|core)/[^'\"]*['\"]",
     re.DOTALL,
@@ -6002,8 +5989,8 @@ def check_views_no_ciphered_data():
     """§00.A -- the decorative .ds-cipher glyph-scrambler may never wrap REAL data.
 
     WHY THIS EXISTS (2026-07-14): views/coverage.ts wrapped essentialCount() -- the
-    canon-derived count of Wallach's 90 essentials -- in .ds-cipher. The engine
-    (views/coverage.ts::startCipherEngine) replaces a random character every 1s tick and
+    canon-derived count of Wallach's 90 essentials -- in .ds-cipher. That decorative engine
+    replaced a random character every 1s tick and
     only restores the true text every 5th tick, so the app's headline fact rendered as
     30 / 80 / 94 four seconds in five. Measured live before the fix:
     ["80","90","30","90","90","91","90","94"]. A decorative animation was fabricating a
@@ -6044,7 +6031,7 @@ def _no_stub_render_paths_impl(files):
 
 
 def check_no_stub_render_paths():
-    """Phase H0 gate: no prototype/demo scaffold (kn-stub / sh-stub / 'next chunk'
+    """No prototype/demo scaffold (kn-stub / sh-stub / 'next chunk'
     / 'real build' / 'demo wires' / PROTOTYPE / exemplar) survives into a shipped
     view (.ts) or stylesheet (.css). The migration re-implements the prototypes'
     design; it must never paste their scaffolding. Truth anchor: git-tracked
@@ -6140,13 +6127,13 @@ def check_css_comment_no_premature_close():
     """A '*/' inside a CSS comment body closes the comment EARLY; the parser then reads the
     author's comment tail as CSS and error-recovers by discarding the next rule -- silently.
 
-    WHY THIS EXISTS (2026-08-17): a dark-theme fix appended a theme.css comment reading
+    WHY THIS EXISTS: a dark-theme fix appended a theme.css comment reading
     '... The base --ds-status-*/--ds-accent-deep are left alone ...'. The '*/' in
     '--ds-status-*/' ended the comment; the '.rr-btn--danger' rule right after it was eaten
-    by error-recovery and never applied -- and the (then 91-gate) board stayed fully GREEN,
+    by error-recovery and never applied -- and the board stayed fully GREEN,
     because nothing checked CSS comment balance. Caught only by reading the live CSSOM
-    (getComputedStyle showed the rule absent). The recurring css-comment-star-slash-drops-rule
-    footgun; now a gate, not just a memory.
+    (getComputedStyle showed the rule absent). A recurring footgun; now a gate, not a
+    convention.
 
     Truth anchor: a comment/string-state tokenizer scan of the git-tracked shipped
     stylesheets, each run."""
@@ -6231,7 +6218,7 @@ def _looks_like_prose(s: str) -> bool:
 def _views_no_inline_prose_impl(files):
     """RED if any (relpath, text) clean view file holds a prose-shaped string
     literal. `files` = iterable of (relpath, text). User-facing prose belongs in
-    the view-copy content store (R4), referenced by id -- never inline in a view."""
+    the view-copy content store, referenced by id -- never inline in a view."""
     files = list(files)
     viol = []
     for rel, text in files:
@@ -6239,19 +6226,19 @@ def _views_no_inline_prose_impl(files):
             if _looks_like_prose(lit):
                 viol.append(f"{rel}: {lit.strip()[:60]!r}")
     if viol:
-        return False, ("prose-shaped string literal inline in a clean view (R4 -- move it to the "
+        return False, ("prose-shaped string literal inline in a clean view (move it to the "
                        "view-copy store via state/copy.ts): " + "; ".join(viol[:6])
                        + (" ..." if len(viol) > 6 else ""))
-    return True, f"no inline prose across {len(files)} clean view file(s) (surface grows H2-H4)"
+    return True, f"no inline prose across {len(files)} clean view file(s)"
 
 
 def check_views_no_inline_prose():
-    """Phase H0 gate (R4, the code-side complement of prose_contained): no
+    """The code-side complement of prose_contained: no
     user-facing prose lives as a string literal inside a CLEAN view file -- it
     belongs in the view-copy content store, referenced by id (state/copy.ts).
-    Surface-scoped: _CLEAN_VIEW_FILES holds the views migrated so far (4, BINDING
-    as of 2026-07-15) and grows as each remaining view is migrated (H2-H4); the negative
-    test proves the gate fires. NOT vacuous -- read the tuple, not this line. Truth anchor: the
+    Surface-scoped: `_CLEAN_VIEW_FILES` lists the views migrated onto the copy store so far and
+    grows as each remaining view is migrated; the negative test proves the gate fires regardless
+    of that list's size. NOT vacuous -- read the tuple, not this line. Truth anchor: the
     .ts bytes of the declared clean-view files, scanned each run."""
     files = []
     for rel in _CLEAN_VIEW_FILES:
@@ -6347,12 +6334,12 @@ def _entity_render_is_projection_impl(files, entity_ids):
     the negative test. Closes the sub-10-element hole views_state_no_inline_data
     cannot see (a 2-key content map keyed by entity ids)."""
     files = list(files)
-    # HYPHENS + DIGIT-LEADING IDS ARE LOAD-BEARING (fixed 2026-07-15, R9).
+    # HYPHENS + DIGIT-LEADING IDS ARE LOAD-BEARING.
     # These classes were [A-Za-z][A-Za-z0-9_]* / [A-Za-z0-9_]+ -- no hyphen -- so
-    # 208 of the 947 real entity ids (22%) could NOT be matched: `slug === 'omega-9'`
-    # sailed through GREEN while `slug === 'calcium'` reddened. A per-entity branch on
-    # any hyphenated id was a free pass, i.e. the gate enforced R1 on 78% of its own
-    # surface and said nothing about the rest. The class must ALSO open with
+    # roughly a fifth of the real entity ids -- every hyphenated one -- could NOT be
+    # matched: `slug === 'omega-9'` sailed through GREEN while `slug === 'calcium'`
+    # reddened. A per-entity branch on any hyphenated id was a free pass, so the gate
+    # bound most of its own surface and said nothing about the rest. The class must ALSO open with
     # [A-Za-z0-9], not [A-Za-z]: two real ids start with a digit
     # ('18-and-20-daily-super-blend', '3-0-rise-and-restore'), and a letter-only
     # opener would still have missed exactly those. Not a false-positive risk: a
@@ -6373,16 +6360,16 @@ def _entity_render_is_projection_impl(files, entity_ids):
     if viol:
         return False, ("entity view is NOT a pure projection -- hardcoded per-entity content "
                        "(must read from the generated entity-page artifact): " + "; ".join(viol[:6]))
-    return True, f"entity view is a pure projection across {len(files)} file(s) (surface grows in H2)"
+    return True, f"entity view is a pure projection across {len(files)} file(s)"
 
 
 def check_entity_render_is_projection():
-    """Phase H0 gate (R1): the entity-render view is a PURE PROJECTION of the
+    """The entity-render view is a PURE PROJECTION of the
     generated entity-page artifact -- never a hand-built map keyed by entity ids,
     never a per-entity content branch. Closes the sub-10-element hole
     views_state_no_inline_data cannot see. Surface-scoped: _ENTITY_VIEW_FILES holds
-    the entity views built so far (2, BINDING as of 2026-07-15) and grows in the same
-    patch; the negative test proves the gate fires. NOT vacuous -- read the tuple. Truth anchor: the real entity-id sets
+    the entity views built so far, every one of them BINDING, and grows in the same
+    patch as a new one; the negative test proves the gate fires. NOT vacuous -- read the tuple. Truth anchor: the real entity-id sets
     from the pillars x the entity-view .ts bytes, recomputed each run."""
     ids = _entity_id_set()
     files = []
@@ -6403,7 +6390,7 @@ def check_entity_render_is_projection():
 #       complete one, so nothing surfaced it until the user noticed the missing opening line.
 #   (2) figure type drifting ABOVE the selenium standard. Selenium's shipped figure renders
 #       its labels at 12.0px and its element glyph at 17.6px (MEASURED headlessly, not
-#       chosen); an invented "bigger" scale reads as shouting beside it and was rejected.
+#       chosen); a larger invented scale reads as shouting beside it.
 # The build playbook these enforce: .claude/skills/element-headers/SKILL.md
 _FIGURE_LABEL_PX = 12.0   # measured: selenium .kd-ep-fam__flabel renders at 12.0px on screen
 _FIGURE_GLYPH_PX = 17.6   # measured: selenium .kd-ep-fam__seglyph renders at 17.6px -- the CEILING
@@ -6436,7 +6423,7 @@ def check_element_header_complete():
     its why-this-number provenance. SCOPE, stated honestly: this binds on the elements that
     HAVE a header (the mechanism-clarity entries), not on all 91 -- the other essentials have
     no entity-copy entry yet, and gating them would be a red for work not yet started. That
-    remainder is a labelled WISH in .claude/skills/element-headers/SKILL.md, not a silent gap.
+    remainder is an acknowledged coverage gap, not a claim that every essential is done.
     Truth anchor: the two hand-authored store files' bytes, re-read each run."""
     base = ROOT / "dashboard" / "assets" / "data"
     mech_p, copy_p = base / "mechanism-clarity-data.json", base / "entity-copy.json"
@@ -6473,8 +6460,9 @@ def _figure_type_within_standard_impl(css_text):
 def check_figure_type_within_standard():
     """Element-figure label type matches the MEASURED selenium standard and nothing exceeds its
     glyph. This is the SOURCE-side half; the RENDERED half (scale == 1, so a declared px is a
-    screen px, plus a pairwise label-collision check) is proven per element by
-    tools/render_probe_copper.js -- a declared size means nothing if the figure renders at a
+    screen px, plus a pairwise label-collision check) is proven only where a render probe exists --
+    tools/probes/render_probe_copper.js covers copper and re-checks selenium, so a figure with no probe
+    has no rendered proof. A declared size means nothing if the figure renders at a
     fraction of its viewBox. Truth anchor: drawer-knowledge.css bytes, scanned each run."""
     p = ROOT / "dashboard" / "assets" / "styles" / "drawer-knowledge.css"
     if not p.exists():
@@ -6484,10 +6472,11 @@ def check_figure_type_within_standard():
 
 def _mech_span(src, opener):
     """The balanced-paren text of ONE declaration: from `opener` to the paren that closes the call it
-    opens. Paren-MATCHED rather than scanned to a fixed closer string: the first cut looked for a
-    literal "\n);" which the real declaration (ending "\n]);") never contains, so the span silently
-    ran to end-of-file and any z.literal() declared later would have answered for this vocabulary.
-    It passed only because no such literal existed yet. Pinned by the ghost-literal test case."""
+    opens. Paren-MATCHED rather than scanned to a fixed closer string: a scan for a literal
+    newline followed by ");" never matches the real declaration, which ends with a newline
+    followed by "]);" -- so the span would silently run to end-of-file and any z.literal()
+    declared later would answer for this vocabulary. That passed only while no such literal
+    existed. Pinned by the ghost-literal test case."""
     i = src.find(opener)
     if i < 0:
         return ""
@@ -6640,7 +6629,7 @@ def _mechanism_blocks_wellformed_impl(store, schema_src, view_src, claim_ids):
 
 
 def check_mechanism_blocks_wellformed():
-    """The element-header block list is well-formed (2026-07-30, the composed-shape gate).
+    """The element-header block list is well-formed (the composed-shape gate).
 
     Three things, each anchored outside the thing it checks: (a) the schema's block vocabulary and
     renderMechBlocks' dispatch are the SAME set, in both directions -- a type declared with no case
@@ -6650,9 +6639,10 @@ def check_mechanism_blocks_wellformed():
     they never had.
 
     SCOPE, honestly: this proves the composed path cannot silently DROP a block or a figure. It says
-    nothing about whether a header is well DESIGNED -- that is Luneth's visual sign-off
-    (.claude/skills/visual-verification/SKILL.md), and the byte-identity of the three signed-off headers is
-    proven separately by tools/render_probe_mech_shape.js.
+    nothing about whether a header is well DESIGNED -- that is a human visual sign-off
+    (.claude/skills/visual-verification/SKILL.md), and the byte-identity of the signed-off headers
+    (whichever are recorded in tools/gate-fixtures/mechanism-sections.json) is proven separately by
+    tools/probes/render_probe_mech_shape.js.
 
     Truth anchor: the schema .ts bytes x the view .ts bytes x the hand-authored store x the sealed
     corpus shards, all re-read each run."""
@@ -6666,9 +6656,9 @@ def check_mechanism_blocks_wellformed():
     claim_ids = set()
     for shard in sorted((ROOT / "eden" / "corpus" / "claims").glob("claims-*.json")):
         for c in (json.loads(shard.read_text(encoding="utf-8")).get("claims") or []):
-            # The sealed shard field is `id`, NOT `claim_id`. Written as claim_id first, which
-            # loaded an EMPTY set and reddened all 26 real references -- a gate lying about clean
-            # data. Caught only by running it; hence the negative test's positive-control case.
+            # The sealed shard field is `id`, NOT `claim_id`. Reading the wrong key loads an
+            # EMPTY id set, which reddens every real reference -- a gate lying about clean data,
+            # and invisible without running it. Hence the negative test's positive-control case.
             if isinstance(c, dict) and c.get("id"):
                 claim_ids.add(str(c["id"]))
     return _mechanism_blocks_wellformed_impl(
@@ -6702,7 +6692,7 @@ def _mech_quote_trims(store):
                     side_trims(b, f"{slug}.blocks[{n}]")
                 elif b.get("type") == "quote" and b.get("trim"):
                     # A composed standalone pull-quote may trim its verbatim too -- policed here so a
-                    # trimmed quote behind a real cite can only TRIM Wallach, never fabricate (R7).
+                    # trimmed quote behind a real cite can only TRIM Wallach, never fabricate.
                     out.append((f"{slug}.blocks[{n}]", b.get("claim"), str(b["trim"])))
             continue
         side_trims(m.get("split"), f"{slug}.split")
@@ -6784,7 +6774,7 @@ def _kind_label_covers_corpus_impl(store_path, claims_dir):
 
 
 def check_kind_label_covers_corpus():
-    """Phase H0 (§00.B codify-don't-promise / R4): every distinct claim.kind present in
+    """Codify, don't promise: every distinct claim.kind present in
     the sealed corpus has a display label in the view-copy content store, so the entity
     page can never render a raw/blank kind header. Truth anchor: the distinct kinds in the
     sealed claim shards x view-copy.json kind_labels keys, recomputed each run."""
@@ -6800,13 +6790,12 @@ _DOSE_PROGRAMME_STATED = re.compile(r"base.?line|daily multiple|\b(?:19|20)\d\d\
 def _dose_answers_state_their_programme_impl(claims_dir, enrichment_path):
     """RED unless every GENERAL-PROGRAMME dose card names the programme or the year it came from.
 
-    27 of 91 essentials carry two or more different general-programme dose numbers, almost all of
+    A quarter of the essentials carry two or more different general-programme dose numbers, almost all of
     them Wallach's 1995 Base Line table against his 2014 Epigenetics daily multiple. When the
     reader-facing answer states a bare number, those land side by side on one element as rival
     answers to a single question -- which is exactly how vitamin D came to show four different IU
-    figures under WHAT TO DO (Luneth, 2026-08-05: "there's literally 4 claims ALL saying completely
-    different things"). Naming the programme is what makes supersession legible instead of looking
-    like a contradiction.
+    figures under WHAT TO DO on one page, reading as four claims contradicting each other. Naming
+    the programme is what makes supersession legible instead of looking like a contradiction.
 
     Scope is deliberately narrow: only claims whose dose.for_condition marks a general programme.
     A condition-scoped therapeutic dose ("400 IU orally b.i.d." for rickets) is not a rival to a
@@ -6844,8 +6833,8 @@ def _dose_answers_state_their_programme_impl(claims_dir, enrichment_path):
 
 
 def check_dose_answers_state_their_programme():
-    """Every general-programme dose card names its programme or year (R7 -- the 2026-08-05
-    supersession-legibility rule, shipped as a gate rather than a WISH)."""
+    """Every general-programme dose card names its programme or year -- the
+    supersession-legibility rule, shipped as a gate rather than an unenforced promise."""
     return _dose_answers_state_their_programme_impl(
         ROOT / "eden" / "corpus" / "claims",
         ROOT / "eden" / "corpus" / "search-enrichment.json")
@@ -6893,7 +6882,7 @@ def _claim_category_mapping_total_impl(store_path, claims_dir):
 
 
 def check_claim_category_mapping_total():
-    """Phase H1 gate (R7 / redesign colour language §6): the claim.kind -> colour-category map
+    """The claim.kind -> colour-category map
     in the view-copy content store (kind_categories) is TOTAL over the sealed corpus kinds and
     exact -- every distinct sealed claim.kind maps to exactly one of the six locked colour
     families (green/teal/amber/orange/violet/red), no default/fallback branch, no stale entry
@@ -6921,15 +6910,14 @@ def _view_category_not_hardcoded_impl(files):
         return False, ("entity view assigns a colour by a hardcoded family literal instead of the "
                        "kind->category map (read it via state/copy.ts::kindCategory): "
                        + "; ".join(viol[:6]))
-    return True, (f"no hardcoded colour-family literal across {len(files)} entity-view file(s) "
-                  "(surface grows in H2)")
+    return True, f"no hardcoded colour-family literal across {len(files)} entity-view file(s)"
 
 
 def check_view_category_not_hardcoded():
-    """Phase H1 gate (R7): the entity view reads a claim's colour CATEGORY from the map
+    """The entity view reads a claim's colour CATEGORY from the map
     (view-copy kind_categories via state/copy.ts::kindCategory) and never hardcodes a colour
-    family per claim/kind. Surface-scoped: _ENTITY_VIEW_FILES holds 2 real entity views and
-    BINDS on them as of 2026-07-15; it grows in the same patch as each new view. NOT vacuous. Truth
+    family per claim/kind. Surface-scoped: _ENTITY_VIEW_FILES lists the entity views this
+    BINDS on; it grows in the same patch as each new view. NOT vacuous. Truth
     anchor: the entity-view .ts bytes scanned each run for a standalone family-word literal."""
     files = []
     for rel in _ENTITY_VIEW_FILES:
@@ -6939,7 +6927,7 @@ def check_view_category_not_hardcoded():
     return _view_category_not_hardcoded_impl(files)
 
 
-# ── H1 pill relation -- keep in sync with eden/tools/entity_page_derive.py (R9: a rule change
+# ── Pill relation -- keep in sync with eden/tools/entity_page_derive.py; a rule change must
 # updates BOTH, with proof). entity_pills_justified recomputes the relation INDEPENDENTLY here
 # so it proves every posted pill is backed even if the generator's logic regressed
 # (derived_artifacts_fresh only proves the artifact matches the generator, not that the
@@ -7010,7 +6998,7 @@ def _entity_pills_justified_impl(artifact, embed):
 
 
 def check_entity_pills_justified():
-    """Phase H1 gate (R7 / migration blueprint §1.2 item (i)): every PILL on a generated entity
+    """Every PILL on a generated entity
     page (a condition's restore nutrients, an essential's help-with conditions + works-with
     partners) traces to a qualifying source claim. The essentials[]-union leak produces exactly
     an UNjustified pill -- a nutrient flattened in from a DIFFERENT condition in a multi-condition
@@ -7051,11 +7039,11 @@ def _no_positional_hero_impl(artifact, embed_claims, view_files):
 
 
 def check_no_positional_hero():
-    """Phase H1 gate (prominence, migration blueprint §1.2 item (iii)): the entity page's CURATED
+    """Prominence: the entity page's CURATED
     PRIMARY 'what to do' slot is never auto-filled by a reference-table row, and the hero/primary
     claim is never chosen by array position. DATA half (binds now): no condition's
-    protocol_claim_ids contains a base-line-program / dose-table claim. VIEW half (surface-scoped,
-    _ENTITY_VIEW_FILES holds 2 real views, BINDING as of 2026-07-15): no `claims[0]`/`record[0]`
+    protocol_claim_ids contains a base-line-program / dose-table claim. VIEW half (surface-scoped
+    to the views listed in _ENTITY_VIEW_FILES, and BINDING on them): no `claims[0]`/`record[0]`
     hero pattern. Truth anchor: entity-page-data.json protocol_claim_ids x corpus-embed
     base_line_table + the entity-view .ts bytes, recomputed each run."""
     artifact = json.loads((ROOT / "dashboard" / "assets" / "data" / "entity-page-data.json")
@@ -7123,9 +7111,9 @@ def check_entity_page_enriched_matches_search():
     claims the live search finds for that entity -- state/search.ts::claimsForSubject (subject OR
     also_about). The page and the search derive the "claims about this entity" set by two separate
     code paths (entity_page_derive.search_sections vs search.ts), and they silently drifted: the
-    page used subject-only, so 1,086 also_about claim-instances were findable in search yet absent
-    from their pages (Luneth 2026-08-19: "not a single condition page should have less than its
-    search"). This recomputes claimsForSubject independently from the shipped index and RED-flags
+    page used subject-only, so over a thousand also_about claim-instances were findable in search
+    yet absent from their own pages. The rule: no entity page may ever show fewer claims than its
+    own search. This recomputes claimsForSubject independently from the shipped index and RED-flags
     any page whose enriched set differs. Truth anchor: entity-page-data.json search sections x an
     independent claimsForSubject re-derivation from search-index.json, recomputed each run."""
     artifact = json.loads((ROOT / "dashboard" / "assets" / "data" / "entity-page-data.json")
@@ -7135,11 +7123,11 @@ def check_entity_page_enriched_matches_search():
     return _entity_page_enriched_matches_search_impl(artifact, search_index)
 
 
-# --- Dead-code gate (forever-fix, 2026-07-13) ------------------------------
+# --- Dead-code gate ---------------------------------------------------------
 # knip (dashboard/knip.json, configured with the real entry graph: main.ts + tests) is run here
-# as a board gate so an orphaned export/file/type can never ship silently again -- the exact
-# failure that left the removed Corpus + Doctrine tab code in the tree through multiple hand
-# "audits" (the detector sat in package.json but was never wired to enforcement).
+# as a board gate so an orphaned export/file/type can never ship silently. A detector that only
+# sits in package.json as an npm script is not enforcement: hand audits repeatedly missed the
+# orphaned code a removed feature left behind, until knip was wired into the board.
 _KNIP_BASELINE = ROOT / "dashboard" / "knip-baseline.json"
 
 
@@ -7181,7 +7169,7 @@ def _knip_dead_keys(data):
 
 
 def check_no_new_dead_code():
-    """Forever-gate for dead code (2026-07-13). knip analyses the real import graph (main.ts +
+    """Forever-gate for dead code. knip analyses the real import graph (main.ts +
     tests); this gate RED-flags any unused file/export/type NOT frozen in the ratchet baseline
     (dashboard/knip-baseline.json), so a removed feature can never leave orphaned code behind
     unnoticed again. The baseline is the known migration-scaffolding debt and may only SHRINK; a
@@ -7205,7 +7193,7 @@ def check_no_new_dead_code():
 
 
 # ---------------------------------------------------------------------------
-# workspace-coverage.css dead-rule fence (2026-08-11)
+# workspace-coverage.css dead-rule fence
 # ---------------------------------------------------------------------------
 # WHY THIS GATE EXISTS. workspace-coverage.css had accreted TWO whole superseded UI
 # generations (the coverage-hero/coverage-stat/coverage-console/goal-chip layout and the
@@ -7213,13 +7201,12 @@ def check_no_new_dead_code():
 # ~425 lines that NO live code referenced and only demos under temporary/ still pulled in,
 # so those demos rendered ancient, revamped-away styling. Nothing caught it: knip
 # (no_new_dead_code) reads the TS/JS entry graph and is structurally BLIND to CSS-rule
-# liveness. This gate is the fence Luneth asked for (2026-08-11): every class-bearing
-# selector in the sheet must trace to a LIVE reference, or sit on the allowlist WITH A
-# REASON. It REDs the moment a revamp orphans a rule, or a dead rule is pasted back from a
+# liveness. This gate is that fence: every class-bearing selector in the sheet must
+# trace to a LIVE reference, or sit on the allowlist WITH A REASON. It REDs the moment a revamp orphans a rule, or a dead rule is pasted back from a
 # demo.
 #
-# FALSE-POSITIVE TRAPS THIS CLASSIFIER MUST NOT FALL INTO (each cost a real debugging pass
-# during the audit that built it -- mirrors tools' css_deadscan method):
+# FALSE-POSITIVE TRAPS THIS CLASSIFIER MUST NOT FALL INTO (each one cost a real debugging
+# pass during the audit that built this gate):
 #   1. SUBSTRING. `.coverage-stat` lives inside the filename coverage-status.ts -> bounded
 #      tokens only, over the class-char alphabet [A-Za-z0-9_-].
 #   2. DATA-DRIVEN CLASSES. `.essentials-grid--minerals` / `.tile--vitamin` reach the DOM as
@@ -7230,16 +7217,16 @@ def check_no_new_dead_code():
 #      reference. Comments are stripped before matching.
 # The classifier is deliberately CONSERVATIVE on the live side (a bare identifier run counts
 # as live): its job is to catch a wholly-orphaned rule, never to cry wolf on a class that is
-# merely hard to see. The exhaustive audit -- not this gate -- is what proved the 51 dead.
+# merely hard to see. The exhaustive audit -- not this gate -- is what proved those rules dead.
 
 _WC_CSS_REL = "dashboard/assets/styles/workspace-coverage.css"
 
 # Intentionally-dormant styling kept in the sheet ON PURPOSE. Each key is a class token that
-# is currently unreferenced BY DESIGN, with the reason it stays. NOT an R9 loosening: it
+# is currently unreferenced BY DESIGN, with the reason it stays. This is not a blanket
 # names specific tokens, so adding any NEW dead class still REDs the gate.
 _WC_DEAD_RULE_ALLOWLIST = {
-    "is-foundation":  "plant-derived FOUNDATION-block marker. The THIRD tile state (Luneth's "
-                      "call) is designed but the coverage view does not yet apply the class; kept "
+    "is-foundation":  "plant-derived FOUNDATION-block marker. The THIRD tile state is "
+                      "designed but the coverage view does not yet apply the class; kept "
                       "as a wire-up-later hook. Delete both this entry and the .is-foundation rule "
                       "together if the concept is dropped.",
 }
@@ -7345,8 +7332,8 @@ def _wc_selector_classes(css_text):
 
 def _wc_keyframe_orphans(css_text, all_css_texts):
     """@keyframes DEFINED in this sheet but referenced by no animation:/animation-name: in
-    ANY shipped stylesheet. Deleting a rule can orphan the keyframe it animated (ds-numeric-
-    glow, deleted with .coverage-stat__num on 2026-08-11)."""
+    ANY shipped stylesheet. Deleting a rule can orphan the keyframe it animated, which a
+    class-liveness scan alone would never see."""
     defined = set(re.findall(r"@keyframes\s+([A-Za-z0-9_-]+)", css_text))
     used = set()
     for t in all_css_texts:
@@ -7374,7 +7361,8 @@ def _workspace_coverage_no_dead_rules_impl(css_text, runs, stubs, data_refs, all
     problems = []
     if unexpected:
         problems.append(
-            "dead class rule(s) with no live reference in src/dashboard.html/coverage-layout "
+            "dead class rule(s) with no live reference in dashboard/dashboard.html, the "
+            "coverage-layout "
             "data/dynamic construction -- delete them, or if intentionally dormant add to "
             "_WC_DEAD_RULE_ALLOWLIST with a reason: "
             + ", ".join("." + c for c in unexpected))
@@ -7390,15 +7378,16 @@ def _workspace_coverage_no_dead_rules_impl(css_text, runs, stubs, data_refs, all
 
 
 def check_workspace_coverage_no_dead_rules():
-    """FENCE (Luneth, 2026-08-11): no class-selector rule in workspace-coverage.css may be
-    dead. A rule is dead when none of its class tokens is referenced by any LIVE surface --
+    """FENCE: no class-selector rule in workspace-coverage.css may be dead. A rule is dead
+    when none of its class tokens is referenced by any LIVE surface --
     src/**/*.ts (non-test, comment-stripped), dashboard.html, a class-valued field in the
-    coverage-layout data family, or dynamic `prefix-${...}` construction. Two documented
-    dormant items are allowlisted WITH REASONS (_WC_DEAD_RULE_ALLOWLIST); a NEW dead class,
+    coverage-layout data family, or dynamic `prefix-${...}` construction. Deliberately dormant classes are
+    allowlisted WITH REASONS in _WC_DEAD_RULE_ALLOWLIST (read the dict for the current set);
+    a NEW dead class,
     or a keyframe defined-here-and-animated-nowhere, REDs the board. Scope is class rules +
-    this sheet's keyframes -- NOT custom-property/@font-face liveness, which the 2026-07-14
-    font-token disaster showed cannot be judged from this sheet alone (a token is read
-    THROUGH by 89 rules across 6 stylesheets). Truth anchor: the sheet's bytes vs the live
+    this sheet's keyframes -- NOT custom-property/@font-face liveness, which cannot be judged
+    from one sheet: a single design token is read THROUGH by dozens of rules spread across
+    every stylesheet, so its absence here proves nothing. Truth anchor: the sheet's bytes vs the live
     reference surface, re-derived each run."""
     css_path = ROOT / _WC_CSS_REL
     if not css_path.exists():
@@ -7435,7 +7424,7 @@ INVARIANTS = [
         check_fn=check_safe_write_canary,
         truth_anchor="tools/canaries/safe-write-probe.txt raw bytes via os.open(O_BINARY) + os.read",
         severity="critical",
-        lesson_ref="Round 73 §17 (Edit-tool ban) + 2026-08-03 — the newline round-trip made safe_write's own verify a tautology, and this gate's reader shared the defect",
+        lesson_ref="the newline round-trip made safe_write's own verify a tautology, and this gate's reader shared the same defect until it was forced to read raw disk bytes",
     ),
     Invariant(
         name="tools_py_parse",
@@ -7444,7 +7433,7 @@ INVARIANTS = [
         check_fn=check_tools_py_parse,
         truth_anchor="Python ast.parse",
         severity="critical",
-        lesson_ref="Round 54/56 — Edit-tool truncation on .py files",
+        lesson_ref="an editing tool silently truncated a .py source file mid-write",
     ),
     Invariant(
         name="tools_no_null_bytes",
@@ -7453,16 +7442,16 @@ INVARIANTS = [
         check_fn=check_tools_no_null_bytes,
         truth_anchor="byte-level scan via Path.read_bytes()",
         severity="critical",
-        lesson_ref="Round 75 Pass A — Write-tool null-padding bug",
+        lesson_ref="a writing tool padded a .py source file with trailing NUL bytes; the file passed size and cat checks but failed ast.parse",
     ),
     Invariant(
         name="critical_json_parse",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="All JSON files in schemas/ and dashboard/assets/data must parse",
+        description="All JSON files in dashboard/assets/data must parse (the scan list still names a schemas/ directory that no longer exists; that leg is a no-op)",
         check_fn=check_critical_json_parse,
         truth_anchor="json.loads",
         severity="critical",
-        lesson_ref="Round 73 — versions.json truncation event",
+        lesson_ref="a generated JSON artifact was silently truncated mid-write and nothing noticed until it failed to parse at runtime",
     ),
     Invariant(
         name="views_state_no_inline_data",
@@ -7471,43 +7460,43 @@ INVARIANTS = [
         check_fn=check_views_state_no_inline_data,
         truth_anchor="dashboard/assets/js/src/{views,state}/**/*.ts literal scan",
         severity="critical",
-        lesson_ref="2026-06-21 §00.B incident — 91 hardcoded tile specs in views/coverage.ts; report remediation items 7-8 (lint-warn -> invariant-block)",
+        lesson_ref="91 hardcoded tile specs shipped inline in views/coverage.ts; a lint warning did not stop it, so it was promoted to a blocking gate",
     ),
     Invariant(
         name="cross_platform_python",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="Scan tools/*.py for cross-platform anti-patterns (encoding-less open, %-I strftime, utcnow, python3 literal)",
         check_fn=check_cross_platform_python,
-        truth_anchor="v3.9 brain pitfall on cross-platform Python — five rules codified in Round 74",
+        truth_anchor="AST parse of every tools/*.py, recomputed each run — the codified anti-patterns are matched on the parse tree, not on source text",
         severity="warning",
-        lesson_ref="Round 74 Phase A — cp1252 crash on Windows + %-I strftime crash",
+        lesson_ref="a cp1252 decode crash and a %-I strftime crash, both invisible on Linux, the first time the toolchain ran on Windows",
     ),
     Invariant(
         name="no_native_dialogs",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="dashboard.html must not use native alert() / confirm() / prompt() — route through showLcModal / showQuietToast",
+        description="dashboard.html must not use native alert() / confirm() / prompt(). KNOWN SCOPE LIMIT: dashboard.html is now a pure shell with one external <script> and no inline JS, so this gate is currently VACUOUS — the app's JS lives in src/*.ts and dist/main.js, neither of which it reads",
         check_fn=check_no_native_dialogs,
         truth_anchor="dashboard.html scan for unparenthesized alert/confirm/prompt call sites",
         severity="warning",
-        lesson_ref="Round 127 — design family; native dialogs break the modal contract + theme + accessibility flow",
+        lesson_ref="a blocking native dialog is unstyleable and unthemeable, freezes the page, and breaks the accessibility flow; the rule was broken twice under discipline alone, so it became a gate",
     ),
     Invariant(
         name="no_product_marketing_prose",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="the product surfaces are composition-only -- the slim vault (regimen-label-lookup.json) under a strict key-allowlist + the rich display artifact (product-detail-data.json) scanned for any marketing-prose key anywhere; prose can never re-enter (R7)",
+        description="the product surfaces are composition-only -- the slim vault (regimen-label-lookup.json) under a strict key-allowlist + the rich display artifact (product-detail-data.json) scanned for any marketing-prose key anywhere; prose can never re-enter",
         check_fn=check_no_product_marketing_prose,
         truth_anchor="strict key-allowlist over regimen-label-lookup.json + recursive marketing-key scan over product-detail-data.json (both generated), recomputed each run",
         severity="critical",
-        lesson_ref="Phase F / A1 (2026-07-08) -- the old product subsystem's scraped YGY marketing prose poisoned the corpus; A1 deleted it + this gate keeps prose from re-entering the vault (memory old-product-system-full-delete; stop-the-leak-before-building sever+enforce).",
+        lesson_ref="a previous product subsystem carried scraped Youngevity marketing prose that contaminated the corpus. Deleting that subsystem removed the leak; this gate is what keeps prose from re-entering the vault, because severing a source without enforcing the boundary only delays the next leak.",
     ),
     Invariant(
         name="no_external_style_resources",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="dashboard.html + dashboard/assets/styles/*.css + tacitus/dashboard/index.html must not import external fonts/CSS/scripts (Tesseract.js in-housed Round 161 sealing)",
+        description="dashboard.html + dashboard/assets/styles/*.css must not import external fonts/CSS/scripts",
         check_fn=check_no_external_style_resources,
         truth_anchor="static regex scan against fonts.googleapis.com / fonts.gstatic.com / cdn.jsdelivr.net / cdnjs / unpkg / pro.fontawesome.com / external <link>+<script>+@import",
         severity="critical",
-        lesson_ref="Round 160 Phase 0 + Round 161 sealing — long-term portability requires zero external resources; promoted warn → critical after Tesseract in-housed + all 6 surfaces migrated",
+        lesson_ref="long-term portability requires zero external resources: the app opens from file:// and must never depend on a host that can disappear. Promoted warn → critical once the OCR engine was vendored locally.",
     ),
     Invariant(
         name="css_comment_no_premature_close",
@@ -7516,25 +7505,25 @@ INVARIANTS = [
         check_fn=check_css_comment_no_premature_close,
         truth_anchor="comment/string-state tokenizer scan of the git-tracked dashboard/assets/styles/*.css, recomputed each run",
         severity="critical",
-        lesson_ref="2026-08-17 dark nits — a '--ds-status-*/' glob in a theme.css comment closed the comment early and dropped .rr-btn--danger while the board stayed green; caught via live CSSOM. Memory css-comment-star-slash-drops-rule.",
+        lesson_ref="a token glob written with a trailing star-slash inside a theme.css comment closed the comment early and silently dropped the rule after it (.rr-btn--danger) while the board stayed green; it was caught only by reading the live CSSOM",
     ),
     Invariant(
         name="design_system_hash_integrity",
         anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
-        description="dashboard/assets/styles/design-system.css hash matches design-system.golden.sha256 (sealed Round 161)",
+        description="dashboard/assets/styles/design-system.css hash matches design-system.golden.sha256",
         check_fn=check_design_system_hash_integrity,
-        truth_anchor="LF-normalized SHA-256 of design-system.css vs the golden file, recomputed each run. Do not hardcode a hash in prose — read the file. (Corrected 2026-07-15 TWICE: this field first named a stale hash, cdf0ebd4..., long dead; it then said 'raw-byte', which was accurate but was itself the defect — raw-byte hashing anchored the seal to a CRLF working tree git never stored, so the gate was green only on the sealing machine and would RED on any fresh clone. Now LF-normalized, matching every other sealed-text gate.)",
+        truth_anchor="LF-normalized SHA-256 of design-system.css vs the golden file, recomputed each run. Do not hardcode a hash in prose — read the file. LF-normalization is load-bearing: hashing RAW bytes anchors the seal to whatever line endings the sealing machine happened to have, so the gate goes green only there and REDs on every fresh clone.",
         severity="critical",
-        lesson_ref="Round 161 sealing — Eden pattern applied to design tokens; math doesn't lie",
+        lesson_ref="the sealed-pillar pattern applied to design tokens: a hash cannot be talked out of a mismatch",
     ),
     Invariant(
         name="design_system_write_protection",
         anchor_class="external",  # git-committed golden — the anchor OUTSIDE the css/golden pair
-        description="design-system.css must not be modified after the golden hash sealing time (user-only-writer rule, sealed Round 161)",
+        description="design-system.css's golden hash may not be silently re-sealed: the working *.golden.sha256 must equal the git-committed one, so an edit to the css plus a re-seal cannot hide itself (user-only-writer rule)",
         check_fn=check_design_system_write_protection,
-        truth_anchor="`git show HEAD:dashboard/assets/styles/design-system.golden.sha256` vs the working golden — git-committed history is the anchor OUTSIDE the css/golden pair, so an agent that edits the css AND re-seals cannot hide it (hash_integrity is blind to that by construction). Fails closed if git is unreachable. (Corrected 2026-07-15: this field still advertised the deleted mtime comparison.)",
+        truth_anchor="`git show HEAD:dashboard/assets/styles/design-system.golden.sha256` vs the working golden — git-committed history is the anchor OUTSIDE the css/golden pair, so editing the css AND re-sealing cannot hide it (hash_integrity is blind to that by construction). Fails closed if git is unreachable.",
         severity="critical",
-        lesson_ref="Round 161 sealing — Eden write-protection pattern applied; agent reads only, user writes only",
+        lesson_ref="the sealed-pillar write-protection pattern applied to the design system: reads are free, writes are the owner's",
     ),
     Invariant(
         name="dashboard_dist_fresh",
@@ -7543,7 +7532,7 @@ INVARIANTS = [
         check_fn=check_dashboard_dist_fresh,
         truth_anchor="mtime(dist/main.js) vs max(mtime(src/**/*.ts)) — stale dist means the runtime is behind the source",
         severity="warning",
-        lesson_ref="Round 161 R1·A — committed build artifact must not be stale relative to its source; otherwise we ship a runtime contract that doesn't match the canonical .ts truth",
+        lesson_ref="a committed build artifact must not be stale relative to its source; otherwise the shipped runtime contract does not match the canonical .ts truth",
     ),
     Invariant(
         name="creators_log_well_formed",
@@ -7552,7 +7541,7 @@ INVARIANTS = [
         check_fn=check_creators_log_well_formed,
         truth_anchor="tools/creators_log.py::verify_file() applied to chronicle/creators-log/log.jsonl — the same validator the CLI writer uses",
         severity="warning",
-        lesson_ref="Creator's-Log file-mirror (logging-doctrine rule 6) — the §00 audit trail must stay machine-valid so the Phase-2 boot-merge can ingest it; defense-in-depth second layer over the CLI writer's write-time validation",
+        lesson_ref="the audit trail must stay machine-valid so the app can ingest it at boot; a second validation layer over the CLI writer's write-time check, because a hand-edited line would otherwise reach the ledger unvalidated",
     ),
     Invariant(
         name="creators_log_append_only",
@@ -7561,34 +7550,34 @@ INVARIANTS = [
         check_fn=check_creators_log_append_only,
         truth_anchor="git show HEAD:chronicle/creators-log/log.jsonl must be a line-prefix of the working file — git-committed history is the immutable anchor",
         severity="critical",
-        lesson_ref="Creator's Log sacred covenant (logging-doctrine) — a broad delete authorization never includes the ledger; this is the git-anchored teeth that block any removal/mutation of a past entry at round-close",
+        lesson_ref="the ledger is append-only by covenant: a broad delete authorization never includes it. This is the git-anchored teeth that block any removal or mutation of a past entry.",
     ),
     Invariant(
         name="build_log_append_only",
         anchor_class="external",  # git-committed history
-        description="chronicle/build-log.md is append-only — committed lines are never deleted, truncated, edited, or reordered (hardened 2026-07-04; appends always allowed)",
+        description="chronicle/build-log.md is append-only — committed lines are never deleted, truncated, edited, or reordered (appends always allowed)",
         check_fn=check_build_log_append_only,
         truth_anchor="git show HEAD:chronicle/build-log.md must be a line-prefix of the working file — git-committed history is the immutable anchor",
         severity="critical",
-        lesson_ref="Luneth 2026-07-04: build-log had no append-only teeth (only §17 write-discipline), so a rewrite could silently truncate it. Mirrors creators_log_append_only so the public-teaching log layer is git-anchored too; a deliberate archival split must re-anchor in the same patch.",
+        lesson_ref="the build log had no append-only teeth — only write discipline — so a rewrite could silently truncate it. Mirrors creators_log_append_only so the public-teaching log layer is git-anchored too; a deliberate archival split must re-anchor in the same patch.",
     ),
     Invariant(
         name="no_dead_legacy_paths",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
         description="no live code/data/active-doc references a severed pre-Eden legacy path (wallach-books, books-clean, wallach-refresh, transcripts-clean, podcast-transcripts, wallach-topic-notes, youngevity-product-notes, health-resources, catalog-index, corpus-index)",
         check_fn=check_no_dead_legacy_paths,
-        truth_anchor="git ls-files contents scanned each run; immutable history (chronicle/, genesis/, dist/, legacy-dashboard.js, the embedded Creator's-Log/versions blocks) allowlisted -- it records the past, it is not a live reference",
+        truth_anchor="git ls-files contents scanned each run; immutable history (chronicle/, generated dist/, the embedded Creator's-Log block) allowlisted -- it records the past, it is not a live reference",
         severity="critical",
-        lesson_ref="Luneth 2026-07-04 full pre-Eden sever: the old book PDFs + transcript scraper + ingredient/stance generators were still poisoning the system (even feeding stale book text into the live dashboard). This guard makes re-introduction impossible -- 'no chance of them ever being referenced again' turned into a machine check per §00.B.",
+        lesson_ref="the pre-Eden chain -- old book PDFs, a transcript scraper, and the ingredient/stance generators that fed off them -- was still poisoning the system, even feeding stale book text into the live dashboard. Severing it was not enough on its own: this guard turns 'never referenced again' from an intention into a machine check.",
     ),
     Invariant(
         name="no_operating_doc_contradiction",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="no operating doc (CLAUDE.md, .claude/rules/*.md, REVIEW.md) names an overhaul-DELETED structure (legacy dashboard js/css/host, the wild-west-mode rule) as live, nor points at a non-existent .claude/rules/*.md; the semantic 'contradicts the Charter's substance' half is a labeled WISH resting on the rules-audit discipline (R7)",
+        description="no operating doc (CLAUDE.md, REVIEW.md, .claude/skills/*/SKILL.md) names an overhaul-DELETED structure (legacy dashboard js/css/host, the wild-west-mode rule) as live, nor points at a non-existent .claude/skills/<name> or legacy .claude/rules/*.md file; the semantic 'contradicts the Charter's substance' half is a labeled WISH resting on review discipline",
         check_fn=check_no_operating_doc_contradiction,
-        truth_anchor="operating-doc bytes + os-level existence of every cited .claude/rules/*.md, scanned each run; living/planning docs (chronicle/, the blueprint, genesis/, next-chunk) are OUT of scope -- they narrate the deletions in past/planning tense",
+        truth_anchor="operating-doc bytes + os-level existence of every cited skill or legacy rule pointer, scanned each run; living/planning docs (anything under chronicle/) are OUT of scope -- they narrate the deletions in past tense",
         severity="critical",
-        lesson_ref="Blueprint S8 / Phase A governance audit (Charter R1/R7) -- the rules that guide the work rot too; after the legacy-dashboard sever + wild-west-mode deletion, a machine gate keeps any operating doc from silently pointing a future session at a structure that no longer exists. Extends no_dead_legacy_paths from live-code to the doc surface; the semantic Charter-contradiction half stays a labeled WISH (no non-gaming machine check yet).",
+        lesson_ref="the rules that guide the work rot too. After the legacy-dashboard sever and the wild-west-mode deletion, a machine gate keeps any operating doc from silently pointing a future reader at a structure that no longer exists. Extends no_dead_legacy_paths from live code to the doc surface; the semantic contradiction half stays a labeled WISH, because no machine check for it survives being gamed.",
     ),
     Invariant(
         name="board_claims_match_reality",
@@ -7597,7 +7586,7 @@ INVARIANTS = [
         check_fn=check_board_claims_match_reality,
         truth_anchor="len(INVARIANTS) + the anchor_class census vs CLAUDE.md bytes, recomputed each run",
         severity="critical",
-        lesson_ref="2026-08-03 — the doctor sweep added 2 offline gates and CLAUDE.md kept saying '85 gates / ~21 external' while the board ran 87/23. The contract's own account of what a green board is WORTH had drifted, in the one section that exists to stop the total being oversold as evidence about Wallach.",
+        lesson_ref="gates were added to the board while CLAUDE.md went on quoting the older totals. The contract's own account of what a green board is WORTH had drifted, in the one section that exists to stop the total being oversold as evidence about Wallach.",
     ),
     Invariant(
         name="creators_log_digest_synced",
@@ -7615,7 +7604,7 @@ INVARIANTS = [
         check_fn=check_creators_log_embed_synced,
         truth_anchor="json.loads(dashboard/assets/data/creators-log-embed.json) == tools/creators_log.py::read_entries() over chronicle/creators-log/log.jsonl",
         severity="warning",
-        lesson_ref="Creator's Log L2 (dashboard boot-merge) — the file:// app inlines the ledger at build; this catches a stale build or hand-edit that would make the in-app Profile log lie",
+        lesson_ref="the file:// app inlines the ledger at build; this catches a stale build or hand-edit that would make the in-app Profile log lie",
     ),
     Invariant(
         name="creators_log_bundle_synced",
@@ -7633,7 +7622,7 @@ INVARIANTS = [
         check_fn=check_creators_log_archive_synced,
         truth_anchor="tools/creators_log.py::render_index()/render_month() vs INDEX.md + digests/*.md; month set derived from log.jsonl",
         severity="warning",
-        lesson_ref="Creator's Log Chunk N (navigability) — as the ledger grows the full history lives in monthly digests; this keeps them + the index byte-true to the canonical jsonl so deep history never silently drifts",
+        lesson_ref="as the ledger grows the full history lives in monthly digests; this keeps them and the index byte-true to the canonical jsonl so deep history never silently drifts",
     ),
     Invariant(
         name="corpus_integrity",
@@ -7642,7 +7631,7 @@ INVARIANTS = [
         check_fn=check_corpus_integrity,
         truth_anchor="eden/tools/corpus_verify.py — substring/hash checks over eden/corpus/books bytes + *.golden.sha256; deterministic, cannot lie",
         severity="critical",
-        lesson_ref="Wallach Knowledge Revamp Phase alpha (2026-06-24) — Eden gains a second sealed wing; the corpus is the single source of Wallach claim-truth and must fail loud on drift",
+        lesson_ref="the corpus is the single source of Wallach claim-truth and must fail loud on drift; sealing it is what makes every downstream number traceable",
     ),
     Invariant(
         name="corpus_runtime_purity",
@@ -7651,70 +7640,70 @@ INVARIANTS = [
         check_fn=check_corpus_runtime_purity,
         truth_anchor="grep of dashboard/assets/js/dist/main.js for LLM-SDK + API-endpoint markers",
         severity="critical",
-        lesson_ref="Wallach Knowledge Revamp Phase alpha (2026-06-24) — L10 portability guarantee: extraction may use an LLM, the runtime never may (offline-forever)",
+        lesson_ref="the portability guarantee: extraction may use an LLM, the runtime never may. The shipped app has no network, so an SDK marker in the bundle means the guarantee has already been broken.",
     ),
     Invariant(
         name="derived_artifacts_fresh",
         anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
-        description="every GENERATED data artifact in eden/derived/MANIFEST.json equals a fresh run of its one pure generator over the sealed pillars (R1 / blueprint D2) — a hand-edit or stale build of any listed artifact is RED; generalizes the retired corpus_embed_synced, grows through Phase C",
+        description="every GENERATED data artifact in eden/derived/MANIFEST.json equals a fresh run of its one pure generator over the sealed pillars — a hand-edit or stale build of any listed artifact is RED; generalizes the retired corpus_embed_synced, and covers whatever the manifest lists",
         check_fn=check_derived_artifacts_fresh,
         truth_anchor="for each manifest artifact: json.loads(on-disk) == generator.build_fn() re-derived from the sealed pillars each run (no stale-to-stale compare)",
         severity="critical",
-        lesson_ref="Blueprint Phase C / D2 (2026-07-05) — the ~200x hand-typed-citation drift that triggered the overhaul; one freshness gate over a manifest registry means no derived file can silently drift from the pillars. Replaces the standalone corpus_embed_synced (folded in). memory: overhaul-blueprint-active-plan",
+        lesson_ref="hand-typed values drifted from their source roughly 200 times before this existed. One freshness gate over a manifest registry means no derived file can silently drift from the pillars. Replaces the standalone corpus_embed_synced, folded in.",
     ),
     Invariant(
         name="amounts_wallach_only",
         anchor_class="external",  # known physical constants (0.3 / 0.025 / 0.67, 154/100) + the sealed claim dose. NOTE: only the CONSTANTS are external; the base amount rests on dose_amount_in_verbatim
-        description="every numeric coverage target in essentials-targets-data.json carries a source_claim_id resolving to a sealed Wallach dose claim that maps the essential (Charter R2 / §00.A) -- a Youngevity-sourced or unsourced amount is RED (the poison purge)",
+        description="every numeric coverage target in essentials-targets-data.json carries a source_claim_id resolving to a sealed Wallach dose claim that maps the essential (§00.A) -- a Youngevity-sourced or unsourced amount is RED",
         check_fn=check_amounts_wallach_only,
         truth_anchor="dashboard/assets/data/essentials-targets-data.json numeric targets x sealed corpus dose claims (eden/corpus/claims/*), joined by essentials-canon layout_key->slug, recomputed each run",
         severity="critical",
-        lesson_ref="Blueprint Phase C / Charter R2 (2026-07-05) -- the poison purge: targets used to sum Youngevity Healthy Body Start Pak labels, letting Youngevity define recommended amounts; now every number is a Wallach dose claim carrying its source_claim_id. memory: wallach-drives-recommendations-youngevity-composition",
+        lesson_ref="targets used to sum Youngevity Healthy Body Start Pak labels, which let a supplement vendor define the recommended amounts. Now every number is a Wallach dose claim carrying its source_claim_id: Youngevity contributes composition, never a target.",
     ),
     Invariant(
         name="dose_amount_in_verbatim",
         anchor_class="external",  # the claim's own verbatim bytes, which corpus_integrity pins to the book
-        description="every claim's structured dose.amount is literally present in that claim's OWN verbatim -- unit-adjacent, scoped to the claim's own table row, and (where for_condition names the column) at the right column index. The link R2 was missing: amounts_wallach_only anchors a target to the CLAIM's dose field, which is ours; this anchors that field to the book text",
+        description="every claim's structured dose.amount is literally present in that claim's OWN verbatim -- unit-adjacent, scoped to the claim's own table row, and (where for_condition names the column) at the right column index. This is the link that was missing: amounts_wallach_only anchors a target to the CLAIM's dose field, which is ours; this anchors that field to the book text",
         check_fn=check_dose_amount_in_verbatim,
-        truth_anchor="the claim's own verbatim bytes -- which corpus_integrity independently pins to the sealed book .txt. R5 proves the quote is the book's; this proves the number is the quote's; amounts_wallach_only proves the target is the number's. Recomputed each run.",
+        truth_anchor="the claim's own verbatim bytes -- which corpus_integrity independently pins to the sealed book .txt. corpus_integrity proves the quote is the book's; this proves the number is the quote's; amounts_wallach_only proves the target is the number's. Recomputed each run.",
         severity="critical",
-        lesson_ref="2026-07-15 (Luneth-authorized): PROVEN by experiment that a planted 10x sodium fabrication (3,300 -> 33,000 mg) passed the ENTIRE board green while the claim's verbatim still read '3,300 mg' -- nothing tied dose.amount to the book. Adversaries then broke the first design 3 ways (cross-row bleed 72/86; a 1000x choline mg->mcg swap off chromium's row; in-row column bleed), all closed by row-scoping + positional column checks and pinned in tools/test_dose_amount_in_verbatim.py. The board was excellent at proving nothing DRIFTED and weak at proving anything is RIGHT; this is the first gate that reads Wallach's printed number.",
+        lesson_ref="PROVEN by experiment: a planted 10x sodium fabrication (3,300 -> 33,000 mg) passed the ENTIRE board green while the claim's verbatim still read '3,300 mg' -- nothing tied dose.amount to the book. Adversaries then broke the first design 3 ways (cross-row bleed 72/86; a 1000x choline mg->mcg swap off chromium's row; in-row column bleed), all closed by row-scoping + positional column checks and pinned in tools/tests/test_dose_amount_in_verbatim.py. The board was excellent at proving nothing DRIFTED and weak at proving anything is RIGHT; this is the first gate that reads Wallach's printed number.",
     ),
     Invariant(
         name="essentials_canon_matches_graphic",
         anchor_class="external",  # the sealed authority GRAPHIC -- the first anchor the canon's membership has ever had outside our own app
-        description="essentials-canon.json's MEMBERSHIP (which 91 substances, and how many per category) matches a byte-bound transcription of the sealed authority graphic (eden/graphics/90-nutrients-front.jpg — Luneth's ruling: THE 90/91 source). Membership only; the fatty-acid sub-names deliberately diverge per an adjudicated contradiction report",
+        description="essentials-canon.json's MEMBERSHIP (which 91 substances, and how many per category) matches a byte-bound transcription of the sealed authority graphic (eden/graphics/90-nutrients-front.jpg — the ruled 90/91 source). Membership only; the fatty-acid sub-names deliberately diverge per an adjudicated contradiction report",
         check_fn=check_essentials_canon_matches_graphic,
-        truth_anchor="the sealed JPG's raw bytes -> the transcription bound to them via source.file_sha256 -> the canon. graphics_integrity seals the image; this gate binds the transcription to the image AND the canon to the transcription. NOT proven (R7): that the transcription READS the image correctly — human-verifiable only, by opening the JPG",
+        truth_anchor="the sealed JPG's raw bytes -> the transcription bound to them via source.file_sha256 -> the canon. graphics_integrity seals the image; this gate binds the transcription to the image AND the canon to the transcription. NOT proven, and labeled so: that the transcription READS the image correctly — human-verifiable only, by opening the JPG",
         severity="critical",
-        lesson_ref="2026-07-15: the canon's membership + tier partition + mineral symbols were bootstrapped from dashboard/components/workspace-coverage-v3.2-PROPOSAL.html — a UI DESIGN MOCKUP — three days before the canon existed; the canon's own provenance field said so in plain text and nobody read it. The tell: rare_trace order is alphabetical BY ATOMIC SYMBOL, which is how a list is lifted off a rendered table. Every gate was blind BY CONSTRUCTION: corpus_integrity proves the canon hasn't CHANGED (sealing a fabrication makes it permanent, not correct), derived_artifacts_fresh proved the layout regenerates from the canon — guaranteed, since the canon came FROM that artifact — and graphics_integrity sha256s the JPG but cannot read membership out of an image. The membership turned out to be RIGHT (zero diff on all 4 categories, first run), which is exactly why nobody caught that it had no anchor. The graphic also prints all 60 minerals FLAT, A-Z, with no tiers — independent corroboration that FOUNDATIONAL/MAJOR TRACE/RARE TRACE is invention.",
+        lesson_ref="the canon's membership + tier partition + mineral symbols were bootstrapped from a UI DESIGN MOCKUP (dashboard/components/workspace-coverage-v3.2-PROPOSAL.html, since deleted) dated three days before the canon existed; the canon's own provenance field said so in plain text and nobody read it. The tell: rare_trace order is alphabetical BY ATOMIC SYMBOL, which is how a list is lifted off a rendered table. Every gate was blind BY CONSTRUCTION: corpus_integrity proves the canon hasn't CHANGED (sealing a fabrication makes it permanent, not correct), derived_artifacts_fresh proved the layout regenerates from the canon — guaranteed, since the canon came FROM that artifact — and graphics_integrity sha256s the JPG but cannot read membership out of an image. The membership turned out to be RIGHT (zero diff on all 4 categories, first run), which is exactly why nobody caught that it had no anchor. The graphic also prints all 60 minerals FLAT, A-Z, with no tiers — independent corroboration that FOUNDATIONAL/MAJOR TRACE/RARE TRACE is invention.",
     ),
     Invariant(
         name="regimen_state_mutation_routing",
         anchor_class="structural",  # shape + wellformedness only -- proves the five named writers exist and emit, not that what they write is correct
-        description="§31 slot model (P3): regimen state lives in ONE atomic document (rgSlots_v1) with ONE writer (private writeSlotDoc via setValidated, which EMITS regimen:changed). The five legacy chokepoints (persistRegimen, saveRgOverride, saveRgManual, saveRgRemoved, saveRgUserGoals) still EXIST as exports so the burning views compile; the four slot-backed ones DELEGATE to writeSlotDoc; saveRgUserGoals is the one GLOBAL chokepoint (own key + direct emit). The four retired keys (lcRegimen/rgOverrides/rgManual/rgRemoved) are never written. localStorage is touched only in core/storage.ts and never by a view",
+        description="the slot model: regimen state lives in ONE atomic document (rgSlots_v1) with ONE writer (private writeSlotDoc via setValidated, which EMITS regimen:changed). The five legacy chokepoints (persistRegimen, saveRgOverride, saveRgManual, saveRgRemoved, saveRgUserGoals) still EXIST as exports so the burning views compile; the four slot-backed ones DELEGATE to writeSlotDoc; saveRgUserGoals is the one GLOBAL chokepoint (own key + direct emit). The four retired keys (lcRegimen/rgOverrides/rgManual/rgRemoved) are never written. localStorage is touched only in core/storage.ts and never by a view",
         check_fn=check_regimen_state_mutation_routing,
         truth_anchor="the .ts bytes of state/regimen.ts + core/storage.ts + every other src/**/*.ts, scanned each run. NOT the old LS_SCHEMAS check -- that registry died with the legacy dashboard, and restoring it would assert a structure that no longer exists",
         severity="critical",
-        lesson_ref="Removed 2026-07-05 (fca48c9d) 'to return in Phase C'. Phase C landed the SAME DAY; Phase F finished; nobody noticed for 10 days. Meanwhile CLAUDE.md:43 stated flatly that user state persists 'through the §31 chokepoint only' -- unqualified, in the file loaded at every boot -- while the only actual enforcement was an ESLint rule at WARN, which does not fail anything. chokepoint-discipline.md WAS honest (labeled WISH per R7); the operating contract was not. A gate promised 'next phase' is a gate nobody re-checks: the phase passes and the promise stays. P3 (2026-07-16) re-codified this gate for the single-writer slot model -- setValidated(RG_SLOTS_KEY) is the one writer, the four slot-backed chokepoints delegate, the four old keys are retired write-free -- with brace-aware body matching so the private writer can no longer be swallowed into a neighbouring export (the placement-dependent misfire R9 exists to kill).",
+        lesson_ref="this gate was once removed 'to return next phase'. That phase landed the same day, the one after it finished, and nobody noticed for ten days -- while the operating contract stated flatly that user state persists through the chokepoint only, and the only actual enforcement was an ESLint rule at WARN, which fails nothing. A gate promised for later is a gate nobody re-checks: the deadline passes and the promise stays. It was re-codified for the single-writer slot model -- setValidated(RG_SLOTS_KEY) is the one writer, the four slot-backed chokepoints delegate, the four old keys are retired write-free -- with brace-aware body matching so the private writer can no longer be swallowed into a neighbouring export.",
     ),
     Invariant(
         name="slot_invariants",
         anchor_class="structural",  # proves the slot-system guard CODE exists; the runtime behaviour is render_probe_slots.js
-        description="P3 slot system: SlotDocSchema enforces >=1 slot, <=4 slots, <=20 trash entries, and activeSlot-always-resolves at the Zod boundary (read AND write); writeSlotDoc re-validates on write; addSlot refuses the 5th slot with a reason; deleteSlot refuses the last slot and reassigns activeSlot (promotes a survivor). STATIC: proves the enforcing code EXISTS; the runtime behaviour is proven by render_probe_slots.js (R7)",
+        description="the slot system: SlotDocSchema enforces >=1 slot, <=4 slots, <=20 trash entries, and activeSlot-always-resolves at the Zod boundary (read AND write); writeSlotDoc re-validates on write; addSlot refuses the 5th slot with a reason; deleteSlot refuses the last slot and reassigns activeSlot (promotes a survivor). STATIC: proves the enforcing code EXISTS; the runtime behaviour is proven by tools/probes/render_probe_slots.js",
         check_fn=check_slot_invariants,
-        truth_anchor="the .ts bytes of core/schemas/regimen.ts (the SlotDocSchema guards) + state/regimen.ts (the addSlot/deleteSlot refusal + promotion code), scanned each run. NOT proof the code RUNS correctly -- that is render_probe_slots.js on the real file:// app (labelled WISH here per R7 if that probe is off the board)",
+        truth_anchor="the .ts bytes of core/schemas/regimen.ts (the SlotDocSchema guards) + state/regimen.ts (the addSlot/deleteSlot refusal + promotion code), scanned each run. NOT proof the code RUNS correctly -- that is tools/probes/render_probe_slots.js on the real file:// app, and if that probe is off the board the runtime half is an unlabeled gap",
         severity="critical",
-        lesson_ref="P3 (2026-07-16). Blueprint invariants 1-4 (>=1 slot, activeSlot resolves, <=4 slots refused-with-reason, mutations route S31) each become a gate (R7 codify-don't-promise). The static half is here; invariants 2+4 (promote-on-delete-active, activeSlot resolves after a delete) genuinely need the runtime probe -- a Python-reads-TS gate cannot observe them, and selling static presence as runtime correctness is exactly the mineral-tiers failure.",
+        lesson_ref="each of the four slot rules (>=1 slot, activeSlot always resolves, the 5th slot refused with a reason, mutations routed through the one writer) becomes a gate rather than a convention. The static half is here; promote-on-delete-active and activeSlot-resolves-after-delete genuinely need the runtime probe -- a Python-reads-TypeScript gate cannot observe them, and selling static presence as runtime correctness is how a fabricated value stays sealed and green.",
     ),
     Invariant(
         name="collective_doses_not_fanned",
         anchor_class="external",  # the sealed dose claims, read independently of the derive
-        description="Charter R2, the half amounts_wallach_only is structurally blind to: a Wallach dose stated for a GROUP (dose.collective_group — e.g. 'essential fatty acids ... 9 grams per day', WAL-CLM-DDDL-000115, which maps BOTH omega-3 and omega-6) must NEVER be fanned into a per-essential number. Fanned out, one 9 g claim posts 9 g to EACH omega = 18 g of board target from a 9 g source — and R2 certifies it GREEN, because it audits each essential in isolation and both targets genuinely trace and recompute. A numeric target sourced from a collective claim is RED",
+        description="the half amounts_wallach_only is structurally blind to: a Wallach dose stated for a GROUP (dose.collective_group — e.g. 'essential fatty acids ... 9 grams per day', WAL-CLM-DDDL-000115, which maps BOTH omega-3 and omega-6) must NEVER be fanned into a per-essential number. Fanned out, one 9 g claim posts 9 g to EACH omega = 18 g of board target from a 9 g source — and R2 certifies it GREEN, because it audits each essential in isolation and both targets genuinely trace and recompute. A numeric target sourced from a collective claim is RED",
         check_fn=check_collective_doses_not_fanned,
         truth_anchor="eden/corpus/claims/* sealed dose claims carrying dose.collective_group x essentials-targets-data.json target.source_claim_id + target.low, read independently of targets_derive so a derive that starts fanning again cannot silence its own gate",
         severity="critical",
-        lesson_ref="Omega EFA target (2026-07-15) — PROVEN before the gate was written: with the 9 g claim sealed, the derive emitted omega-3=9 g AND omega-6=9 g (18 g total) and amounts_wallach_only returned 'all 40 numeric coverage target(s) trace ... (R2 clean)'. Every existing gate passed while the number was double what Wallach wrote. chronicle/contradictions/2026-07-15-omega-efa-target-source.md",
+        lesson_ref="PROVEN before the gate was written: with the 9 g collective claim sealed, the derive emitted omega-3=9 g AND omega-6=9 g (18 g total) and amounts_wallach_only reported every numeric target tracing cleanly. Every existing gate passed while the board's number was double what Wallach wrote. Adjudicated in chronicle/contradictions/2026-07-15-omega-efa-target-source.md",
     ),
     Invariant(
         name="pdm_group_not_named_rare_earths",
@@ -7723,48 +7712,48 @@ INVARIANTS = [
         check_fn=check_pdm_group_not_named_rare_earths,
         truth_anchor="dashboard/assets/data/view-copy.json ui.kd_ep_pdm_* label fields + coverage-layout-data.json section labels. HONEST LIMIT: this is a CONSISTENCY anchor, not an external one — it pins our copy to our own doctrine. The doctrine itself is anchored externally (hk.txt:7312-7314, immortality.txt:5760-10233), but this check cannot read the books; it can only stop the label drifting back",
         severity="warning",
-        lesson_ref="2026-07-15 — pdm_coverage_derive.py's docstring said 'do not rename it back' from the day the group was created, and the USER-FACING copy said 'Rare Earth Minerals' + 'of the rare-earth group goal' the entire time. The code comment governed the code; NOTHING governed the label, so the one surface a user can actually see carried the invention the whole campaign existed to delete. Found in passing during the cobalt fix. A rule with no gate is a WISH (R7) — and this WISH had already been broken where it mattered most.",
+        lesson_ref="pdm_coverage_derive.py's docstring said 'do not rename it back' from the day the group was created, and the USER-FACING copy said 'Rare Earth Minerals' and 'of the rare-earth group goal' the entire time. The code comment governed the code; NOTHING governed the label, so the one surface a user can actually see carried the invention the work existed to delete. A rule with no gate is a WISH — and this one had already been broken where it mattered most.",
     ),
     Invariant(
         name="goal_members_actionable",
         anchor_class="consistency",  # our derive vs our canon/targets vs our TS — see the honest limit
         description="A goal may only name an essential the user can ACT on individually, because the ring MEANS 'a goal nutrient you have NOT covered' — a to-do marker. Asserts that no goal's derived `members` contains (a) a trace_pdm essential (the PLANT DERIVED 34 state no individual Wallach amount and share ONE verdict off the colloidal bottle, so a ring on one is a to-do nobody can do) or (b) a fiat-covered foundational slug (H/C/N/O — nothing to take, so no goal to set; PHOSPHORUS is deliberately NOT in that class, its covered traces to a sealed claim via target.low==0). Also: every member resolves to a real tile on the board, no goal is empty, and NO goal carries a `total` — membership is what you LOOK AT, a total is a DENOMINATOR, and the denominator is always 90. ★ THE CHECK THAT EARNS ITS KEEP: coverage_layout_derive.py's FIAT_COVERED_SLUGS must MATCH state/coverage.ts's FOUNDATIONAL_PRESENT_SLUGS — Python cannot import TypeScript, so that list is written twice, and this is the only thing watching the seam",
         check_fn=check_goal_members_actionable,
-        truth_anchor="dashboard/assets/data/coverage-layout-data.json goals[].members × essentials-targets-data.json target.kind (for trace_pdm) × eden/tools/coverage_layout_derive.py FIAT_COVERED_SLUGS × dashboard/assets/js/src/state/coverage.ts FOUNDATIONAL_PRESENT_SLUGS. HONEST LIMIT (R7): CONSISTENCY, not external. It proves membership obeys the rule and that the two fiat lists agree; it CANNOT prove the goal SET is right — the 14 goals are OUR curation (Wallach enumerates no 'goals'), a placeholder Luneth re-authors. Only their enforcement is mechanical",
+        truth_anchor="dashboard/assets/data/coverage-layout-data.json goals[].members × essentials-targets-data.json target.kind (for trace_pdm) × eden/tools/coverage_layout_derive.py FIAT_COVERED_SLUGS × dashboard/assets/js/src/state/coverage.ts FOUNDATIONAL_PRESENT_SLUGS. HONEST LIMIT: CONSISTENCY, not external. It proves membership obeys the rule and that the two fiat lists agree; it CANNOT prove the goal SET is right — the goal set is OUR curation (Wallach enumerates no 'goals') and is re-authored by hand. Only its enforcement is mechanical",
         severity="critical",
-        lesson_ref="2026-07-16 — the live Coverage build. The signed-off demo STATES this rule in its own comment ('Wallach never itemises these, so they can never be named for a goal') and its own baked MEMBERSHIP then BREAKS it: STRONTIUM (a trace_pdm element) is listed under stronger-bones + less-joint-pain, off the real claim WAL-CLM-DDDL-000032. The claim is genuine; the demo's data simply was not filtered. We follow the demo's STATED rule over its generated data (demo = vision, not letter) and the delta is logged for Luneth. ★ The FIAT-DRIFT check exists because the H/C/N/O list is duplicated across a language boundary — the exact silent-divergence shape that let the mineral tiers sit sealed and green for three weeks. R3 by enforcement, since it cannot be R3 by construction.",
+        lesson_ref="the signed-off demo STATES this rule in its own comment ('Wallach never itemises these, so they can never be named for a goal') and its own baked MEMBERSHIP then BREAKS it: STRONTIUM (a trace_pdm element) is listed under stronger-bones + less-joint-pain, off the real claim WAL-CLM-DDDL-000032. The claim is genuine; the demo's data simply was not filtered. We follow the demo's STATED rule over its generated data (a demo is the vision, not the letter) and the delta is logged for review. ★ The FIAT-DRIFT check exists because the H/C/N/O list is duplicated across a language boundary — the exact silent-divergence shape that let the mineral tiers sit sealed and green for three weeks. One source per fact, held by enforcement here because it cannot be held by construction.",
     ),
     Invariant(
         name="pdm_group_goals_wallach_sourced",
         anchor_class="external",  # recomputed from the SEALED claims, independently of the derive
-        description="every goal that names the plant-derived GROUP (coverage-layout-data.json goals[].groups) traces to a sealed Wallach claim whose OWN verbatim says 'colloidal minerals' and maps one of the goal's conditions; the converse too (a dropped attribution REDs), plus every group id resolves to a layout subsection and the rule is non-vacuous. HONEST LIMIT (R7): proves PROVENANCE, never the STANCE — a verbatim saying the complex is USELESS for X would satisfy it",
+        description="every goal that names the plant-derived GROUP (coverage-layout-data.json goals[].groups) traces to a sealed Wallach claim whose OWN verbatim says 'colloidal minerals' and maps one of the goal's conditions; the converse too (a dropped attribution REDs), plus every group id resolves to a layout subsection and the rule is non-vacuous. HONEST LIMIT: proves PROVENANCE, never the STANCE — a verbatim saying the complex is USELESS for X would satisfy it",
         check_fn=check_pdm_group_goals_wallach_sourced,
         truth_anchor="eden/corpus/claims/*.json sealed verbatims (themselves book-anchored by corpus_verify's verbatim-at-char_offset check) x coverage-layout-data.json goals[].groups, recomputed each run WITHOUT importing coverage_layout_derive so a derive bug cannot silence its own gate",
         severity="critical",
-        lesson_ref="2026-07-16 — Luneth: 'can we attribute specific benefits to the group as a whole?' Wallach prescribes the colloidal-mineral COMPLEX by name for 9 of the 14 goals, so the GROUP is goal-nameable even though the 34 individually are not (goal_members_actionable). The rule reads his OWN verbatim, not our `other_substances` tag: the tag over-includes single-element colloidals (colloidal CALCIUM/SELENIUM/TIN) and can be flat wrong (LETS-000152 carries it from a window that bled into BALDNESS's 'Colloidal tin'). Neighbouring-entry bleed produced 9 of 12 false positives under a 76-agent adversarial read and corrupted four character-window instruments that each returned a different answer (11/10/8 goals); reading the claim's own verbatim makes it impossible by construction. The repair that made this possible: 9 verbatims were truncated at the ~500 soft limit, cutting Wallach's colloidal sentence out of his own quote (kv=339).",
+        lesson_ref="the question this answers is whether specific benefits can be attributed to the group as a whole. Wallach prescribes the colloidal-mineral COMPLEX by name for a large share of the goals, so the GROUP is goal-nameable even though the 34 individually are not (goal_members_actionable). The rule reads his OWN verbatim, not our `other_substances` tag: the tag over-includes single-element colloidals (colloidal CALCIUM/SELENIUM/TIN) and can be flat wrong (LETS-000152 carries it from a window that bled into BALDNESS's 'Colloidal tin'). Neighbouring-entry bleed produced 9 of 12 false positives under a 76-agent adversarial read and corrupted four character-window instruments that each returned a different answer (11/10/8 goals); reading the claim's own verbatim makes it impossible by construction. The repair that made this possible: 9 verbatims were truncated at the ~500 soft limit, cutting Wallach's colloidal sentence out of his own quote (kv=339).",
     ),
     Invariant(
         name="recommendations_not_stored",
         anchor_class="structural",  # code shape + artifact naming
-        description="A recommendation list is DERIVED at read time, never STORED (blueprint §5/§11). Not a performance rule: it is what makes Luneth's #4 structurally true rather than defended-against — 'remove an item → it reappears in recommendations' is not a feature anyone codes, because there is no stored list to fall out of sync, and his goal→add→remove-goal→remove-item loop CANNOT exist when the list is a pure function of (goals, active slot, product DB). Asserts no rec-shaped localStorage key anywhere in src/, no rec-list artifact in assets/data/, and that state/recommender.ts is PURE (no localStorage, no core/storage import) — if the ranker COULD persist, the rule would rest on it choosing not to",
+        description="A recommendation list is DERIVED at read time, never STORED. Not a performance rule: it is what makes the no-zombie-recommendation guarantee structurally true rather than defended-against — 'remove an item and it reappears in recommendations' is not a feature anyone codes, and the goal→add→remove-goal→remove-item loop that produces it CANNOT exist when the list is a pure function of (goals, active slot, product DB). Asserts no rec-shaped localStorage key anywhere in src/, no rec-list artifact in assets/data/, and that state/recommender.ts is PURE (no localStorage, no core/storage import) — if the ranker COULD persist, the rule would rest on it choosing not to",
         check_fn=check_recommendations_not_stored,
-        truth_anchor="dashboard/assets/js/src/**/*.ts SOURCE (key shapes + the ranker's imports) × dashboard/assets/data/*.json (artifact names). HONEST LIMIT (R7): it proves nothing is stored under a rec-SHAPED name — a stored list under an unrelated key would slip. product-recommender-data.json is deliberately exempt: it is RANKING INPUT (composition + wholesale price), not a stored list",
+        truth_anchor="dashboard/assets/js/src/**/*.ts SOURCE (key shapes + the ranker's imports) × dashboard/assets/data/*.json (artifact names). HONEST LIMIT: it proves nothing is stored under a rec-SHAPED name — a stored list under an unrelated key would slip. product-recommender-data.json is deliberately exempt: it is RANKING INPUT (composition + wholesale price), not a stored list",
         severity="warning",
-        lesson_ref="2026-07-16 — the live Coverage build. The rule was authored in the blueprint (§5, §11) and shipped with its gate in the same patch (R7) rather than as a WISH, because the failure is invisible: a cached rec list would look identical on screen the moment it was written and only diverge later, which is exactly the class of bug the user reports as 'items keep coming back'.",
+        lesson_ref="the rule shipped with its gate in the same patch rather than as a WISH, because the failure is invisible: a cached rec list looks identical on screen the moment it is written and only diverges later, which is exactly the class of bug a user reports as 'items keep coming back'.",
     ),
     Invariant(
         name="kids_products_not_recommended",
         anchor_class="structural",  # code shape + our list vs the sealed pillar — see the honest limit
-        description="Kids-formulated products may NEVER be offered as a RECOMMENDATION, and MUST stay discoverable in the Products database (Luneth 2026-07-16: 'no kids products ever get recommended as items ... they are good but no adult is ever going to take those and they're better as a database item to be discovered in the products tab ... kids will never use our app'). THE ASYMMETRY IS THE REQUIREMENT, so BOTH halves are asserted: state/recommender.ts::rankSources — the one function every rec surface funnels through (Coverage recs, condition pages, the element/entity detail view's BEST SOURCES) — MUST filter through isExcludedFromRecommendations; essentialSlugsByProduct, the Products-TAB database path, MUST NOT (filtering it would hide them from the catalogue he wants them found in). Also proves every excluded product_id resolves in the sealed pillar (a typo silently un-excludes) and that at least one is a live recommender candidate (anti-vacuity — a filter over nothing certifies nothing). Function bodies are matched BRACE-AWARE so a filter in a neighbouring function cannot satisfy the scan",
+        description="Kids-formulated products may NEVER be offered as a RECOMMENDATION, and MUST stay discoverable in the Products database. No adult is going to take a children's formulation, so recommending one is noise; but the product is still a real catalogue item and hiding it would be a different lie. THE ASYMMETRY IS THE REQUIREMENT, so BOTH halves are asserted: state/recommender.ts::rankSources — the one function every rec surface funnels through (Coverage recs, condition pages, the element/entity detail view's BEST SOURCES) — MUST filter through isExcludedFromRecommendations; essentialSlugsByProduct, the Products-TAB database path, MUST NOT (filtering it would hide them from the catalogue where they must stay findable). Also proves every excluded product_id resolves in the sealed pillar (a typo silently un-excludes) and that at least one is a live recommender candidate (anti-vacuity — a filter over nothing certifies nothing). Function bodies are matched BRACE-AWARE so a filter in a neighbouring function cannot satisfy the scan",
         check_fn=check_kids_products_not_recommended,
-        truth_anchor="dashboard/assets/data/kids-exclusion.json product_ids x eden/products/products.json (sealed pillar) for resolution, x dashboard/assets/data/product-recommender-data.json for liveness, x dashboard/assets/js/src/state/recommender.ts SOURCE for the wiring. HONEST LIMIT (R7): this anchors the PLUMBING, not the MEMBERSHIP. It cannot prove the list is COMPLETE — that no 5th kids product sits unlisted rests on the 2026-07-16 sweep (all 217 label images + all 215 marketing descriptions) and Luneth's review. Curation is a judgment; only its enforcement is mechanical",
+        truth_anchor="dashboard/assets/data/kids-exclusion.json product_ids x eden/products/products.json (sealed pillar) for resolution, x dashboard/assets/data/product-recommender-data.json for liveness, x dashboard/assets/js/src/state/recommender.ts SOURCE for the wiring. HONEST LIMIT: this anchors the PLUMBING, not the MEMBERSHIP. It cannot prove the list is COMPLETE — that no further kids product sits unlisted rests on a manual sweep of every label image and every marketing description, plus review. Curation is a judgment; only its enforcement is mechanical",
         severity="critical",
-        lesson_ref="2026-07-16 — LIVE, not hypothetical: in demo E with 3 goals Kid's Toddy ranked #1 (it wins on value precisely because it is cheap) and the real recommender uses the same score. WHY A CURATED LIST AND NOT A RULE: the Products pillar has NO audience/category field (D8 reversed adding one) and no description at all, so nothing in the data can answer the question — membership is a judgment, which is why it is Luneth's and not a heuristic's. ★ THE LINE HE DREW: FORMULATED for children, not merely MARKETED to them. Claude proposed FOUR on marketing copy and was OVERRULED down to two — cheri-mins + strawberry-kiwi-mins carry explicitly kid-directed copy ('No more tantrums... back to playtime') but ARE the adult Plant Derived Minerals composition, chemically identical to the adult bottle, so an adult can take them: 'cheri-mins and strawberry-kiwi-mins are not kids products' (Luneth). Do not re-add them by re-reading that copy. ★ A name regex is rejected on measurement, not taste: it over-fires ('Kidney & Bladder Support' matches 'kid'; FlexeoPlus says 'grandkids' and is FOR grandparents; 'Toddy' is a DRINK, not 'toddler' — Ultra Body Toddy and Cal Toddy are adult) and under-fires. Luneth himself read 'toddy' as 'toddler' and named Ultra Body Toddy for exclusion; the label refuted it and he corrected his own premise: 'that is my mistake. Good catch.'",
+        lesson_ref="LIVE, not hypothetical: with three goals selected, a children's product ranked #1 in the real recommender -- it wins on value precisely because it is cheap. WHY A CURATED LIST AND NOT A RULE: the Products pillar has NO audience or category field and no description at all, so nothing in the data can answer the question; membership is a judgment call, and the list records the judgment. ★ THE LINE: FORMULATED for children, not merely MARKETED to them. Two candidates proposed on marketing copy alone were rejected -- cheri-mins and strawberry-kiwi-mins carry explicitly kid-directed copy ('No more tantrums... back to playtime') but ARE the adult Plant Derived Minerals composition, chemically identical to the adult bottle, so an adult can take them. Do not re-add them by re-reading that copy. ★ A name regex is rejected on measurement, not taste: it over-fires ('Kidney & Bladder Support' matches 'kid'; FlexeoPlus says 'grandkids' and is FOR grandparents; 'Toddy' is a DRINK, not 'toddler' -- Ultra Body Toddy and Cal Toddy are adult) and under-fires. Reading 'toddy' as 'toddler' is exactly the mistake the regex would make, and a human made it first; the label refuted it.",
     ),
     Invariant(
         name="mirrors_resolve",
         anchor_class="external",  # the sealed canon's routing, read independently of the derive
-        description="R7 gate for the 'mirrors' target kind: an essential that states NO Wallach amount and carries ANOTHER essential's verdict (cobalt -> vitamin-b12 — 'the requirement is for a cobalt complex known as cyanocobalamine or vitamin B12', immortality.txt:5882-5885; no book states an elemental cobalt amount, all 7 swept). Proves the mirror (1) names a slug, (2) that resolves in the sealed canon, (3) that is not ITSELF a mirror (no chain/cycle — coverage.ts does a single hop), (4) posts NO numeric low (the R2 half: a number here IS the 400 mcg defect returning, and amounts_wallach_only cannot see it because it skips non-numeric targets), and (5) that canon + artifact agree on WHICH essentials mirror. STRUCTURAL ONLY: it cannot prove cobalt SHOULD mirror B12 — that is Luneth's editorial call on a two-sided source, recorded in the contradictions doc, not certified here",
+        description="the 'mirrors' target kind: an essential that states NO Wallach amount and carries ANOTHER essential's verdict (cobalt -> vitamin-b12 — 'the requirement is for a cobalt complex known as cyanocobalamine or vitamin B12', immortality.txt:5882-5885; no book states an elemental cobalt amount, all 7 swept). Proves the mirror (1) names a slug, (2) that resolves in the sealed canon, (3) that is not ITSELF a mirror (no chain/cycle — coverage.ts does a single hop), (4) posts NO numeric low (a number here IS the 400 mcg elemental-cobalt defect returning, and amounts_wallach_only cannot see it because it skips non-numeric targets), and (5) that canon + artifact agree on WHICH essentials mirror. STRUCTURAL ONLY: it cannot prove cobalt SHOULD mirror B12 — that is an editorial call on a two-sided source, recorded in the contradictions doc, not certified here",
         check_fn=check_mirrors_resolve,
         truth_anchor="eden/corpus/essentials-canon.json (sealed) coverage_kind + mirrors_slug x essentials-targets-data.json target.kind/mirrors_slug/low, read independently of targets_derive so a derive bug cannot silence its own gate",
         severity="critical",
@@ -7773,7 +7762,7 @@ INVARIANTS = [
     Invariant(
         name="efa_goal_wallach_sourced",
         anchor_class="external",  # the sealed collective dose claim, recomputed independently
-        description="the essential-fatty-acid coverage GOAL (efa-coverage-data.json) is Wallach's own number in a different unit (Charter R2 / §00.A): goal.source_claim_id resolves to a sealed dose claim whose dose.collective_group matches and whose essentials ARE goal.members, and maintenance_mg recomputes exactly from that dose x 1000 (g->mg). ★ No calorie basis appears in the chain BY DESIGN — Wallach states both the 3%-of-calories rate AND the finished 9 g supplement figure, so nothing is supplied here; re-deriving 3% against the FDA 2,000-kcal standard would yield 6.67 g and OVERRULE the number he wrote. A fabricated goal, a members/claim mismatch, or arithmetic drift is RED",
+        description="the essential-fatty-acid coverage GOAL (efa-coverage-data.json) is Wallach's own number in a different unit (§00.A): goal.source_claim_id resolves to a sealed dose claim whose dose.collective_group matches and whose essentials ARE goal.members, and maintenance_mg recomputes exactly from that dose x 1000 (g->mg). ★ No calorie basis appears in the chain BY DESIGN — Wallach states both the 3%-of-calories rate AND the finished 9 g supplement figure, so nothing is supplied here; re-deriving 3% against the FDA 2,000-kcal standard would yield 6.67 g and OVERRULE the number he wrote. A fabricated goal, a members/claim mismatch, or arithmetic drift is RED",
         check_fn=check_efa_goal_wallach_sourced,
         truth_anchor="efa-coverage-data.json goal x the sealed collective dose claim (eden/corpus/claims/*), recomputed each run independently of efa_coverage_derive",
         severity="critical",
@@ -7782,20 +7771,20 @@ INVARIANTS = [
     Invariant(
         name="pdm_goal_wallach_sourced",
         anchor_class="external",  # the sealed dose claim + reference product composition
-        description="the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach dose expressed in mg via composition (Charter R2 / §00.A): goal.source_claim_id resolves to a sealed dose claim, and maintenance recomputes from that dose x the reference product's pillar composition x 154 lb — a fabricated or non-Wallach-sourced goal is RED",
+        description="the trace/rare coverage GOAL (pdm-coverage-data.json) is a Wallach dose expressed in mg via composition (§00.A): goal.source_claim_id resolves to a sealed dose claim, and maintenance recomputes from that dose x the reference product's pillar composition x 154 lb — a fabricated or non-Wallach-sourced goal is RED",
         check_fn=check_pdm_goal_wallach_sourced,
         truth_anchor="pdm-coverage-data.json goal x the sealed dose claim (eden/corpus/claims/*) x the reference product composition (eden/products/products.json), recomputed each run independently of pdm_coverage_derive",
         severity="critical",
-        lesson_ref="Trace/rare coverage build (2026-07-12) — the 33 rare-earths are scored against Wallach's colloidal-mineral dose (1 fl oz/100 lb, WAL-CLM-EPIGEN-000089) expressed in mg via composition; this gate proves that goal is a Wallach dose, not a Youngevity target (source-rule review 2026-07-12). memory: trace-rare-mineral-coverage-investigation",
+        lesson_ref="the 33 rare-earths are scored as one group against Wallach's colloidal-mineral dose (1 fl oz per 100 lb, WAL-CLM-EPIGEN-000089) expressed in mg via composition; this gate proves that goal is a Wallach dose, not a Youngevity target",
     ),
     Invariant(
         name="nutrient_resolver_parity",
         anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
-        description="A2 / SS00.B #3 -- the runtime identity resolver (core/nutrient-resolver.ts, reading nutrient-resolver-data.json) == the Python source of truth nutrient_resolve.resolve(): the committed parity fixture is FRESH vs live resolve() AND an artifact-driven resolver reproduces resolve() on every distinct pillar substance name; with the vitest (TS == fixture) this proves the TS runtime matcher == the Python resolver (one resolution truth, no drift across the boundary)",
+        description="the runtime identity resolver (core/nutrient-resolver.ts, reading nutrient-resolver-data.json) == the Python source of truth nutrient_resolve.resolve(): the committed parity fixture is FRESH vs live resolve() AND an artifact-driven resolver reproduces resolve() on every distinct pillar substance name; with the vitest (TS == fixture) this proves the TS runtime matcher == the Python resolver (one resolution truth, no drift across the boundary)",
         check_fn=check_nutrient_resolver_parity,
         truth_anchor="every distinct (name,form) in eden/products/products.json -> nutrient_resolve.resolve() re-derived each run, compared to the committed core/__fixtures__/nutrient-resolver-fixture.json AND to an artifact-driven resolver over nutrient-resolver-data.json",
         severity="critical",
-        lesson_ref="A2 (2026-07-08) -- unified the runtime Coverage matcher onto the registry resolver: state/coverage.ts held a hand-rolled string matcher independent of eden/tools/nutrient_resolve.py (two resolution truths; it silently dropped Thiamin -> Vitamin B1). This gate proves the single resolver cannot drift across the Python/TS boundary. memory: substance-registry-and-triage-buffer / overhaul-blueprint-active-plan",
+        lesson_ref="the runtime Coverage matcher was unified onto the registry resolver: state/coverage.ts held a hand-rolled string matcher independent of eden/tools/nutrient_resolve.py, so there were two resolution truths and the hand-rolled one silently dropped Thiamin -> Vitamin B1. This gate proves the single resolver cannot drift across the Python/TypeScript boundary.",
     ),
     Invariant(
         name="search_index_wellformed",
@@ -7804,7 +7793,7 @@ INVARIANTS = [
         check_fn=check_search_index_wellformed,
         truth_anchor="eden/corpus/search-enrichment.json x registry/canon/conditions via search_index_derive.validate() + the TS schema SEARCH_FACETS literal",
         severity="critical",
-        lesson_ref="Search G-7 (2026-07-09) -- de-blobbed faceted search template (mercury+calcium first entities); negative test tools/test_search_index_wellformed.py",
+        lesson_ref="Search G-7 (2026-07-09) -- de-blobbed faceted search template (mercury+calcium first entities); negative test tools/tests/test_search_index_wellformed.py",
     ),
     Invariant(
         name="verbatim_names_mapped_conditions",
@@ -7813,7 +7802,7 @@ INVARIANTS = [
         check_fn=check_verbatim_names_mapped_conditions,
         truth_anchor="sealed shard verbatims x derived conditions index (what surfaces under a condition), name-or-synonym via the Catalog pillar (eden/catalog/conditions.json); allowlist eden/tools/verbatim-audit-baseline.json",
         severity="critical",
-        lesson_ref="SESSION 31 (2026-07-01) — Luneth: a quote shown under a condition must NAME it or the link is unverifiable; regressed because it was prose not a machine guard; memory verbatim-must-name-mapped-condition",
+        lesson_ref="a quote shown under a condition must NAME it or the link is unverifiable -- indistinguishable from a hallucination. The rule regressed while it was prose rather than a machine guard.",
     ),
     Invariant(
         name="verbatim_over_soft_limit",
@@ -7822,7 +7811,7 @@ INVARIANTS = [
         check_fn=check_verbatim_over_soft_limit,
         truth_anchor="sealed shard verbatim lengths",
         severity="info",
-        lesson_ref="SESSION 37 (2026-07-01) — Luneth: completeness of truth/education outranks a char limit; the 500 cap is a load-time/file-size guard, exceed it when needed, but ALWAYS inform; memory verbatim-length-rule",
+        lesson_ref="completeness of truth outranks a character limit: the 500 cap is a load-time and file-size guard, so exceed it when the faithful excerpt needs the room -- but ALWAYS surface the over-soft cases rather than hiding them",
     ),
     Invariant(
         name="umbrella_proxy_named",
@@ -7831,25 +7820,25 @@ INVARIANTS = [
         check_fn=check_umbrella_proxy_named,
         truth_anchor="the Catalog pillar umbrella_of (eden/catalog/conditions.json) x sealed shard verbatims x conditions index",
         severity="info",
-        lesson_ref="SESSION 37 (2026-07-01) — Luneth: keep specific subtypes as own tags AND surface under the umbrella; make logical child->parent exceptions but notify per case; memory condition-umbrella-taxonomy",
+        lesson_ref="specific subtypes keep their own tags AND surface under the umbrella condition; child->parent exceptions are legitimate but each one is reported so a human eye stays on it",
     ),
     Invariant(
         name="references_resolve",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="every condition/symptom slug a claim maps to is pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms}.json); an unregistered slug (typo / phantom condition) is RED -- closes the phantom-slug hole. The substance (other_substances) half is now ACTIVE (Phase F): every claim substance must resolve to eden/catalog/nutrients.json, else RED",
+        description="every condition/symptom slug a claim maps to is pre-registered in the Catalog pillar (eden/catalog/{conditions,symptoms}.json); an unregistered slug (typo / phantom condition) is RED -- closes the phantom-slug hole. The substance (other_substances) half is ACTIVE too: every claim substance must resolve to eden/catalog/nutrients.json, else RED",
         check_fn=check_references_resolve,
         truth_anchor="sealed claim shards (eden/corpus/claims/*) x the catalog registries (eden/catalog/*), recomputed each run via corpus_verify.unresolved_references -- no stale-to-stale comparison",
         severity="critical",
-        lesson_ref="Blueprint Phase B / Charter R3 -- promoting conditions+symptoms from emergent-claim-slugs to a pre-registered catalog: before this a typo'd slug silently minted a condition in the derived index with nothing to catch it. memory: overhaul-blueprint-active-plan",
+        lesson_ref="conditions and symptoms were promoted from emergent claim slugs to a pre-registered catalog: before that, a typo'd slug silently minted a brand-new condition in the derived index with nothing to catch it",
     ),
     Invariant(
         name="product_registry_resolves",
         anchor_class="external",  # a known identity/unit-conversion value bank, re-derived
-        description="every quantified Product-DB substance resolves to an essential (one of the 91) OR is classified as a botanical, the botanical vocabulary collapses to ZERO surface-form collisions, and a bank of known identity + unit-conversion values holds -- proves eden/catalog/nutrients.json + nutrient_resolve keep the Products pillar machine-readable (Phase F chunk 2)",
+        description="every quantified Product-DB substance resolves to an essential (one of the 91) OR is classified as a botanical, the botanical vocabulary collapses to ZERO surface-form collisions, and a bank of known identity + unit-conversion values holds -- proves eden/catalog/nutrients.json + nutrient_resolve keep the Products pillar machine-readable",
         check_fn=check_product_registry_resolves,
         truth_anchor="deterministic re-run of eden/tools/nutrient_resolve.py over the sealed products.json x catalog/nutrients.json each run (exit 0 = all resolve/classify + zero collisions + known values); no stale-to-stale comparison",
         severity="critical",
-        lesson_ref="Phase F chunk 2 (2026-07-08) -- externalizing the resolver's alias table to the Catalog pillar + canonicalizing the botanical vocabulary; the unit-conversion self-checks immediately caught a latent canonical_unit bug (mcg vitamins keyed by display-name, not slug). memory: substance-registry-and-triage-buffer",
+        lesson_ref="the resolver's alias table was externalized to the Catalog pillar and the botanical vocabulary canonicalized; the unit-conversion self-checks immediately caught a latent canonical_unit bug (mcg vitamins keyed by display-name instead of slug)",
     ),
     Invariant(
         name="products_verify",
@@ -7858,7 +7847,7 @@ INVARIANTS = [
         check_fn=check_products_verify,
         truth_anchor="deterministic re-run of eden/tools/products_verify.py over the sealed products.json each run (exit 0 = clean); no stale-to-stale comparison",
         severity="critical",
-        lesson_ref="Phase F seal (2026-07-08) -- promoting the products build-time verifier to a live board gate at the pillar seal, mirroring corpus_integrity/catalog_integrity. memory: phase-f-product-db-underway",
+        lesson_ref="the products build-time verifier was promoted to a live board gate when the pillar was sealed, mirroring corpus_integrity and catalog_integrity",
     ),
     Invariant(
         name="products_hash_integrity",
@@ -7867,7 +7856,7 @@ INVARIANTS = [
         check_fn=check_products_hash_integrity,
         truth_anchor="math -- deterministic LF-normalized SHA-256 of products.json vs the locked golden, recomputed each run (clone/CRLF-stable)",
         severity="critical",
-        lesson_ref="Phase F seal (2026-07-08) -- the sealed-canonical rule extended to Pillar 2; sealing is the user's act (products_seal.py), the golden is the anti-tamper anchor. memory: phase-f-product-db-underway",
+        lesson_ref="the sealed-canonical rule extended to the Products pillar; sealing is the owner's act (products_seal.py) and the golden hash is the anti-tamper anchor",
     ),
     Invariant(
         name="catalog_integrity",
@@ -7876,7 +7865,7 @@ INVARIANTS = [
         check_fn=check_catalog_integrity,
         truth_anchor="deterministic re-parse of eden/catalog/* + the essentials-canon slug set + golden hashes (LF-normalized), recomputed each run via eden/tools/catalog_verify.py; 0=sealed&healthy, 2=bootstrap, 1=fail",
         severity="critical",
-        lesson_ref="Blueprint Phase B -- the Catalog is a sealed pillar (Pillar 3); its own integrity gate mirrors corpus_integrity so a hand-edit that breaks a count, dangles an umbrella child, or points canon_slug at a non-essential is caught at the board, not downstream. memory: overhaul-blueprint-active-plan",
+        lesson_ref="the Catalog is a sealed pillar; its own integrity gate mirrors corpus_integrity so a hand-edit that breaks a count, dangles an umbrella child, or points canon_slug at a non-essential is caught at the board, not downstream",
     ),
     Invariant(
         name="book_source_clean",
@@ -7885,7 +7874,7 @@ INVARIANTS = [
         check_fn=check_book_source_clean,
         truth_anchor="deterministic re-scan of the sealed book .txt each run (book_purity detectors + per-book purity-baselines allowlist); no stale-to-stale comparison",
         severity="critical",
-        lesson_ref="Source-Purification campaign (2026-07-02) -- Luneth: we kept circling back because source .txt fixes were deferred; purify each book to pristine FIRST then GUARD it so we never re-fight the same OCR; memory book-source-purification-campaign",
+        lesson_ref="deferred source .txt fixes meant the same OCR damage got re-fought on every pass. Purify each book to pristine FIRST, then GUARD it, so a correction never has to be made twice.",
     ),
     Invariant(
         name="mined_pages_clean",
@@ -7894,7 +7883,7 @@ INVARIANTS = [
         check_fn=check_mined_pages_clean,
         truth_anchor="sealed claim locator.screenshot x deterministic book_purity detectors, re-scanned each run; genuine FPs triaged in eden/tools/mined-page-triage.json",
         severity="critical",
-        lesson_ref="SESSION 44 (2026-07-04) -- Luneth: I keep catching you deferring OCR garbage on pages we just mined; advisory memories are rationalizable, so make it a red-board gate on the pages we actually touch; memory perfect-entry-no-deferral",
+        lesson_ref="OCR garbage kept being left behind on pages that had just been mined. An advisory convention is rationalizable in the moment, so this is a red-board gate scoped to exactly the pages the work touched.",
     ),
     Invariant(
         name="mining_coverage_accounted",
@@ -7903,7 +7892,7 @@ INVARIANTS = [
         check_fn=check_mining_coverage_accounted,
         truth_anchor="sealed claim locator.char_offset -> nearest ===== Screenshot(N) ===== marker in the book .txt (one text-position basis, NOT the inconsistent locator.screenshot), re-derived each run vs the book's marker set; reviewed-empty reasons per the exceptions_justified pattern",
         severity="critical",
-        lesson_ref="Proposal A (2026-07-07) -- Luneth: silent under-mining (DDDL Appendix-B long tail, Immortality 0 claims for ~40 sessions) forced whole-book re-mines; give book mining the same coverage-accounting leg the product label-gate gives products, asserted only at completion so it never falsely reds the legitimately-incomplete corpus; memory dddl-undermined-remine + immortality-mining-policy",
+        lesson_ref="silent under-mining (a long tail of appendix pages skipped; one whole book left at zero claims) is invisible until it forces a full re-mine. Book mining gets the same coverage-accounting leg products get, asserted only at completion so it never falsely reds a corpus that is legitimately incomplete.",
     ),
     Invariant(
         name="substance_triage_accounted",
@@ -7912,7 +7901,7 @@ INVARIANTS = [
         check_fn=check_substance_triage_accounted,
         truth_anchor="eden/tools/substance-triage-buffer.json x the mining-coverage.json completion flags, recomputed each run -- the gate NEVER reads the buffer for resolution (single registry, no drift), only for accounting; no stale-to-stale comparison",
         severity="critical",
-        lesson_ref="Phase-G task-zero (2026-07-09) -- Luneth: make the honest path the path of LEAST resistance; a legitimate low-effort third exit (park the unmatched substance) drains the incentive to typo-pollute the registry or silently under-capture. Mirrors mining_coverage_accounted (teeth at completion, quiet while incomplete). memory: substance-registry-and-triage-buffer",
+        lesson_ref="make the honest path the path of LEAST resistance: a legitimate low-effort third exit (park the unmatched substance) drains the incentive to typo-pollute the registry or silently under-capture. Mirrors mining_coverage_accounted -- teeth at completion, quiet while incomplete.",
     ),
     Invariant(
         name="graphics_integrity",
@@ -7921,7 +7910,7 @@ INVARIANTS = [
         check_fn=check_graphics_integrity,
         truth_anchor="eden/tools/graphics_verify.py — raw-byte sha256 of each image vs graphics-manifest.json; manifest vs golden",
         severity="critical",
-        lesson_ref="Wallach Knowledge Revamp Phase alpha (2026-06-24) — Wing 3; Luneth's user-authored Wallach-derived graphics admitted Tier-1 by source-owner authority (proposal section 8)",
+        lesson_ref="the owner-authored, Wallach-derived graphics are admitted as a first-tier source by source-owner authority; sealing them keeps that admission auditable",
     ),
     Invariant(
         name="claim_text_term_gloss",
@@ -7930,16 +7919,16 @@ INVARIANTS = [
         check_fn=check_claim_text_term_gloss,
         truth_anchor="eden/tools/term-gloss-lexicon.json {defects, common_swaps} scanned against every sealed claim_text (+ verbatim for defects)",
         severity="critical",
-        lesson_ref="SESSION 39 (2026-07-02) -- Luneth mandate: every reader-facing term gets a minimal common gloss (common-word-first) and source nomenclature defects get fixed; enforce so summaries never drift back into a fixed loop; memory term-gloss-standard + perfect-entry-no-deferral",
+        lesson_ref="every reader-facing term gets a minimal common-word-first gloss, and source nomenclature defects get corrected at the source. Enforced so a fixed entry cannot drift back and be fixed again.",
     ),
     Invariant(
         name="term_gloss_ratified_present",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="a Luneth-ratified common-name gloss may not be REMOVED from claim_text: where a common_swaps entry anchors a common name to a Latin genus, any claim naming that genus still carries the name, and the superseded name does not return under a corrected binomial",
+        description="a ratified common-name gloss may not be REMOVED from claim_text: where a common_swaps entry anchors a common name to a Latin genus, any claim naming that genus still carries the name, and the superseded name does not return under a corrected binomial",
         check_fn=check_term_gloss_ratified_present,
         truth_anchor="eden/tools/term-gloss-lexicon.json common_swaps -> genus-anchored rules, scanned against every sealed claim_text",
         severity="critical",
-        lesson_ref="2026-07-18 bulk-sweep verify pass -- two pending audit fixes proposed stripping ratified glosses (EPIGEN-000097 hickory/Carya, LETS-000253 horseweed/Erigeron) and NEITHER tripped claim_text_term_gloss, whose literal FROM-key match misses near-variants; both would have landed on a green 76/76 board. R9 tightening shipped with the misfire it fixes; negative test tools/test_term_gloss_ratified_present.py",
+        lesson_ref="during a bulk-sweep verify pass, two proposed audit fixes would have stripped ratified glosses (EPIGEN-000097 hickory/Carya, LETS-000253 horseweed/Erigeron) and NEITHER tripped claim_text_term_gloss, whose literal FROM-key match misses near-variants; both would have landed on a green 76/76 board. R9 tightening shipped with the misfire it fixes; negative test tools/tests/test_term_gloss_ratified_present.py",
     ),
     Invariant(
         name="glossary_wellformed",
@@ -7948,7 +7937,7 @@ INVARIANTS = [
         check_fn=check_glossary_wellformed,
         truth_anchor="dashboard/assets/data/glossary.json structural scan",
         severity="critical",
-        lesson_ref="SESSION 39 (2026-07-02) -- glossary/tooltip layer Phase 1; plain-language term definitions carry no §00.A obligation but must never assert a number; memory term-gloss-standard",
+        lesson_ref="the glossary/tooltip layer carries plain-language definitions, which take on no §00.A obligation -- but a number in one would be an unverifiable Wallach claim, so an unanchored number is RED",
     ),
     Invariant(
         name="glossary_keys_denylisted",
@@ -7957,7 +7946,7 @@ INVARIANTS = [
         check_fn=check_glossary_keys_denylisted,
         truth_anchor="eden/tools/term-gloss-lexicon.json glossary_key_denylist x every term+alias key in dashboard/assets/data/glossary.json, normalized exactly as state/glossary.ts::normKey does at runtime",
         severity="critical",
-        lesson_ref="2026-08-02 -- the entry 'reduce in chemistry' could never match its own term and fired only via its aliases: measured across 9,211 front-facing blocks, 'reduced' decorated 105 sentences and 'reduction' 24, every one the ordinary-English sense and none the chemistry sense (129 wrong tooltips, 0 right), on a green 80/80 board. glossary_wellformed saw a perfectly-shaped entry; only Luneth reading the page caught it. R7-labeled limit: this closes the door behind a key a human removed, it does NOT discover the next common word (a frequency floor would redden deliberate high-firing keys like 'essential' 627x). Negative test tools/test_glossary_keys_denylisted.py",
+        lesson_ref="the entry 'reduce in chemistry' could never match its own term and fired only via its aliases: measured across 9,211 front-facing blocks, 'reduced' decorated 105 sentences and 'reduction' 24, every one the ordinary-English sense and none the chemistry sense (129 wrong tooltips, 0 right), on a fully green board. glossary_wellformed saw a perfectly-shaped entry; it was caught only by a human reading the rendered page. LABELED LIMIT: this closes the door behind a key a human removed, it does NOT discover the next common word (a frequency floor would redden deliberate high-firing keys like 'essential' 627x). Negative test tools/tests/test_glossary_keys_denylisted.py",
     ),
     Invariant(
         name="frontface_verbatims_clean",
@@ -7966,7 +7955,7 @@ INVARIANTS = [
         check_fn=check_frontface_verbatims_clean,
         truth_anchor="every sealed claim verbatim in eden/corpus/claims/ re-scanned each run, minus the reasoned exception list",
         severity="critical",
-        lesson_ref="2026-08-02 front-facing OCR campaign, BLUEPRINT §5 lock gate #1 -- Luneth found raw OCR in user-facing quotes (RARE-000336 tisk/rea/ancer; LETS-000502 '1 20' for 120). 180 line-break hyphens fixed across 91 quotes, then 5 further classes promoted the same day once every residual hit was read off its page image. HONEST LIMITS, both measured: (1) it cannot see the INVISIBLE class -- four valid-word swaps (side/vide, tine/rine, Jute/lute, ties/ries) were found by EYE, every one inside a pair this gate calls clean; (2) it sees only the letter-digit and camelCase EDGES of the DROPPED-SPACE class caused by tight justification (page: 'magnesium at 2,000 mg', ours: 'at2,000'), whose letter-letter cases (andelectrolytes, ratherthan) are invisible to every detector here and whose size is UNMEASURED -- an attempted vocabulary measurement returned 387 candidates that were almost all legitimate words. Negative test tools/test_frontface_verbatims_clean.py",
+        lesson_ref="raw OCR damage was found in user-facing quotes (RARE-000336 tisk/rea/ancer; LETS-000502 '1 20' for 120). 180 line-break hyphens were fixed across 91 quotes, then 5 further classes were promoted once every residual hit had been read off its page image. HONEST LIMITS, both measured: (1) it cannot see the INVISIBLE class -- four valid-word swaps (side/vide, tine/rine, Jute/lute, ties/ries) were found by EYE, every one inside a pair this gate calls clean; (2) it sees only the letter-digit and camelCase EDGES of the DROPPED-SPACE class caused by tight justification (page: 'magnesium at 2,000 mg', ours: 'at2,000'), whose letter-letter cases (andelectrolytes, ratherthan) are invisible to every detector here and whose size is UNMEASURED -- an attempted vocabulary measurement returned 387 candidates that were almost all legitimate words. Negative test tools/tests/test_frontface_verbatims_clean.py",
     ),
     Invariant(
         name="verbatim_no_transcription_scaffolding",
@@ -7975,7 +7964,7 @@ INVARIANTS = [
         check_fn=check_verbatim_no_transcription_scaffolding,
         truth_anchor="every sealed claim verbatim + claim_text in eden/corpus/claims/ re-scanned each run against the four marker shapes the transcriptions actually contain",
         severity="critical",
-        lesson_ref="2026-08-02 wave 1 of the front-facing page-read campaign -- three claims (EPIGEN-000124, -000125, IMMORT-000230) carried '===== Screenshot (675) -- Page 818 of 936 =====' INSIDE their verbatim, i.e. the app could render OCR scaffolding to a reader as Wallach's words. A page-reading agent hit ONE; a grep found the other two, which is why the gate enumerates the marker shapes the sources CONTAIN rather than the one shape someone happened to hit. The fix is never a source edit -- those separators are legitimate scaffolding in the .txt (932 in epigenetics, 510 in immortality) -- so this guards the CLAIM, not the book. ★ SECOND FINDING, from the repair: stripping the separator dropped two verbatims to 40 and 20 chars, under corpus_seal check #2's 60-char floor -- THE SCAFFOLDING HAD BEEN THE ONLY THING CLEARING THAT FLOOR, so a length gate was being satisfied by text the page never printed. Both were extended into genuinely adjacent rows of the same dose table. DELIBERATELY NOT policed: asterisk runs (3 in epigenetics) and underscore runs (5 in rare-earths), because a printed page can legitimately carry a rule of asterisks or an underscore blank. Negative test tools/test_verbatim_no_transcription_scaffolding.py (21 cases, incl. those two sparing cases)",
+        lesson_ref="on the first front-facing page-read pass, three claims (EPIGEN-000124, -000125, IMMORT-000230) carried '===== Screenshot (675) -- Page 818 of 936 =====' INSIDE their verbatim, i.e. the app could render OCR scaffolding to a reader as Wallach's words. A page-reading agent hit ONE; a grep found the other two, which is why the gate enumerates the marker shapes the sources CONTAIN rather than the one shape someone happened to hit. The fix is never a source edit -- those separators are legitimate scaffolding in the .txt (932 in epigenetics, 510 in immortality) -- so this guards the CLAIM, not the book. ★ SECOND FINDING, from the repair: stripping the separator dropped two verbatims to 40 and 20 chars, under corpus_seal check #2's 60-char floor -- THE SCAFFOLDING HAD BEEN THE ONLY THING CLEARING THAT FLOOR, so a length gate was being satisfied by text the page never printed. Both were extended into genuinely adjacent rows of the same dose table. DELIBERATELY NOT policed: asterisk runs (3 in epigenetics) and underscore runs (5 in rare-earths), because a printed page can legitimately carry a rule of asterisks or an underscore blank. Negative test tools/tests/test_verbatim_no_transcription_scaffolding.py (21 cases, incl. those two sparing cases)",
     ),
     Invariant(
         name="explore_entity_lede_authored",
@@ -7984,7 +7973,7 @@ INVARIANTS = [
         check_fn=check_explore_entity_lede_authored,
         truth_anchor="dashboard/assets/data/search/search-index.json entities+claims x entity-copy.json['topics'] x tools/gate-fixtures/lede-backlog.json, recomputed each run; the backlog only SHRINKS and can never cover a NEW entity",
         severity="critical",
-        lesson_ref="2026-08-19 -- Luneth found the new chocolate topic page titled \"It's a mineral-deficiency signal...\": the topic hero (knowledge-topic.ts) had ALWAYS derived its header from a claim's answer_short (entityLede), so 141 explore pages shipped answer-shaped headers and NO gate caught it. Fix: entity-copy.json gains a 'topics' section (hand-authored ledes, the calcium style), entityLede prefers it, and this gate forces every NEW explore entity to ship one. The 140 pre-existing un-authored pages are an honest shrinking BACKLOG (chocolate authored same day). Negative test tools/test_explore_entity_lede_authored.py. memory: element-intro-what-is-claim",
+        lesson_ref="a topic page shipped titled \"It's a mineral-deficiency signal...\": the topic hero (knowledge-topic.ts) had ALWAYS derived its header from a claim's answer_short (entityLede), so 141 explore pages shipped answer-shaped headers and NO gate caught it. A claim's answer_short answers a question; it is not a page header. Fix: entity-copy.json gains a 'topics' section of hand-authored ledes, entityLede prefers it, and this gate forces every NEW explore entity to ship one. The pre-existing un-authored pages are an honest shrinking BACKLOG. Negative test tools/tests/test_explore_entity_lede_authored.py",
     ),
     Invariant(
         name="enriched_book_is_verified",
@@ -7993,7 +7982,7 @@ INVARIANTS = [
         check_fn=check_enriched_book_is_verified,
         truth_anchor="eden/corpus/search-enrichment.json keys x the verification ledger x each claim's book_id from the sealed shards",
         severity="critical",
-        lesson_ref="2026-08-02, BLUEPRINT §5 lock gate #2 -- THE ROOT CAUSE. Claims were enriched from books officially 'raw' in purity-status.json on the promise that quotes get fixed as we enrich; the promise had no gate and was not kept, and nothing caught it. This makes it impossible: you cannot newly front-face a quote from an unverified book. The grandfathered claims (1,925 at freeze) are an honest BACKLOG asserting only 'already front-facing on 2026-08-02', never 'correct'; the count SHRINKS as ids move into claims_verified, so read the gate's live output rather than any number written down elsewhere. Negative test tools/test_enriched_book_is_verified.py",
+        lesson_ref="2026-08-02, BLUEPRINT §5 lock gate #2 -- THE ROOT CAUSE. Claims were enriched from books officially 'raw' in purity-status.json on the promise that quotes get fixed as we enrich; the promise had no gate and was not kept, and nothing caught it. This makes it impossible: you cannot newly front-face a quote from an unverified book. The grandfathered claims (1,925 at freeze) are an honest BACKLOG asserting only 'already front-facing on 2026-08-02', never 'correct'; the count SHRINKS as ids move into claims_verified, so read the gate's live output rather than any number written down elsewhere. Negative test tools/tests/test_enriched_book_is_verified.py",
     ),
     Invariant(
         name="jargon_terms_glossed",
@@ -8002,34 +7991,34 @@ INVARIANTS = [
         check_fn=check_jargon_terms_glossed,
         truth_anchor="_JARGON_SUFFIX matches in every sealed claim_text vs glossary.json keys+aliases",
         severity="warning",
-        lesson_ref="SESSION 39 (2026-07-02) -- Luneth 'nothing behind me': glossary coverage guard so no un-glossed jargon slips; warning (heuristic can false-match a scientific name); memory term-gloss-standard + perfect-entry-no-deferral",
+        lesson_ref="a coverage guard so no un-glossed jargon slips past; kept at warning severity because the heuristic can false-match a scientific name",
     ),
     Invariant(
         name="citations_reference_registry",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="on the CLEAN Charter surface (corpus claims + canon + catalog + corpus-derived targets/coverage-layout), every claim's locator.book resolves to a books-meta book_id and no fact field carries a hand-typed book TITLE -- book refs are IDs, display citations are composed from the sealed registry (Charter R3, the overhaul-trigger anti-drift gate). Legacy embeds + views are a labeled WISH (Phase E/F)",
+        description="on the CLEAN Charter surface (corpus claims + canon + catalog + corpus-derived targets/coverage-layout), every claim's locator.book resolves to a books-meta book_id and no fact field carries a hand-typed book TITLE -- book refs are IDs, display citations are composed from the sealed registry. Inline view prose is a labeled WISH, not covered here",
         check_fn=check_citations_reference_registry,
         truth_anchor="eden/corpus/books-meta.json titles + book_ids x the clean-surface bytes (corpus claims/canon + catalog + essentials-targets-data/coverage-layout-data), recomputed each run; prose homes allowlisted",
         severity="critical",
-        lesson_ref="Blueprint Phase D / Charter R3 + enforcement table 4.1 (2026-07-05) -- the ~200x hand-typed citations (a cite said 1999 while books-meta said 2011) triggered the whole overhaul; this makes 'book refs = book_id, display composed from the registry' a machine gate on the surface where it holds today. Option-1 altitude (Luneth): real teeth on the clean surface now, legacy embeds/views WISH until E/F. memory: overhaul-blueprint-active-plan",
+        lesson_ref="roughly 200 hand-typed citations had drifted from the registry (a cite said 1999 while books-meta said 2011). This makes 'book refs = book_id, display composed from the registry' a machine gate on the surface where the rule holds today: real teeth on the clean surface now, the rest labeled WISH rather than implied.",
     ),
     Invariant(
         name="prose_contained",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="on the CLEAN Charter surface, no prose-shaped string (>=12 words or a sentence boundary) appears under a NON-prose key -- prose lives in ONE designated compartment (claim_text/verbatim + file-metadata + dose descriptors), never in a fact field (Charter R4). Full R4 (verbatim=pointer + per-essential prose store) + legacy embeds/views are a labeled WISH",
+        description="on the CLEAN Charter surface, no prose-shaped string (>=12 words or a sentence boundary) appears under a NON-prose key -- prose lives in ONE designated compartment (claim_text/verbatim + file-metadata + dose descriptors), never in a fact field. The full form of the rule (verbatim = a pointer plus a per-essential prose store) and the inline view prose are a labeled WISH",
         check_fn=check_prose_contained,
         truth_anchor="the clean-surface bytes (corpus claims/canon + catalog + essentials-targets-data/coverage-layout-data) x the _PROSE_HOME_KEYS allowlist, recomputed each run",
         severity="critical",
-        lesson_ref="Blueprint Phase D / Charter R4 + enforcement table 4.1 (2026-07-05) -- prose leaking into a fact field is how the rotten layer baked hand-typed summaries into data; this contains it on the clean surface. PARTIAL by design (R7): the full prose-store R4 only matters once clean post-mining stances exist, and the legacy embeds/inline-view prose are WISH until E/F. memory: overhaul-blueprint-active-plan",
+        lesson_ref="prose leaking into a fact field is how hand-typed summaries got baked into data in the first place; this contains it on the clean surface. PARTIAL by design and labeled so: the full prose-store form only matters once clean post-mining stances exist, and inline view prose remains a WISH.",
     ),
     Invariant(
         name="internal_refs_out_of_prose",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="front-facing-human-first / Charter R4 -- NO internal book navigation ref (Table/Fig/page N) appears in any claim_text (the reader-facing summary); provenance rides on the source-ref tag (surfaced as a labeled header) + the verbatim quote, never the summary prose. The 44 Rare-Earths/Immortality table claims + the 33 Base-Line dose summaries were cleaned; any ref left in a claim_text is RED",
+        description="front-facing-human-first -- NO internal book navigation ref (Table/Fig/page N) appears in any claim_text (the reader-facing summary); provenance rides on the source-ref tag (surfaced as a labeled header) + the verbatim quote, never the summary prose. The 44 Rare-Earths/Immortality table claims + the 33 Base-Line dose summaries were cleaned; any ref left in a claim_text is RED",
         check_fn=check_internal_refs_out_of_prose,
         truth_anchor="every sealed claim's claim_text, recomputed each run",
         severity="critical",
-        lesson_ref="2026-07-09 pre-Phase-G audit (memory: labeled-table-header-view, front-facing-human-first) -- Luneth flagged render-time regex REWRITING of prose as a bad-habit trap; the durable fix cleans the sealed claim_text + moves the label to a structured tag->header, and this gate keeps refs out of reader summaries going forward (Phase G). Luneth 2026-07-09 also had the 33 Base-Line dose summaries stripped so the whole corpus is ref-free in prose.",
+        lesson_ref="rewriting prose with a render-time regex hides the defect instead of fixing it. The durable fix cleans the sealed claim_text and moves the label to a structured tag that renders as a header; this gate keeps navigation refs out of reader summaries from then on. The 33 base-line dose summaries were stripped in the same pass, so the whole corpus is ref-free in prose.",
     ),
     Invariant(
         name="no_duplicate_claims",
@@ -8038,7 +8027,7 @@ INVARIANTS = [
         check_fn=check_no_duplicate_claims,
         truth_anchor="the sealed claim verbatims (eden/corpus/claims/claims-*.json) x subject/facet from eden/corpus/search-enrichment.json, bucketed by book+subject+facet and containment-tested pairwise, recomputed each run; a keep-both exception that stops firing is itself RED",
         severity="critical",
-        lesson_ref="2026-08-03 twin-card incident -- Luneth found two near-identical 'What is Vitamin A?' cards on one entity page; EPIGEN-000213/-000214 were a truncated and a full take of the same span, same offset, same extracted_at, and 13 duplicates were removed corpus-wide (commit b3551834). An 84-gate board caught none of it: the class was found by a human looking at a screen, which is not a control. Negative test: tools/test_no_duplicate_claims.py (replants the real vitamin-A pair). memory: a-gate-can-be-green-because-of-the-defect, negative-control-or-it-proves-nothing",
+        lesson_ref="two near-identical 'What is Vitamin A?' cards rendered on one entity page; EPIGEN-000213/-000214 were a truncated and a full take of the same span, same offset, same extracted_at, and 13 duplicates were removed corpus-wide. A fully green board caught none of it: the class was found by a human looking at a screen, which is not a control. Negative test: tools/tests/test_no_duplicate_claims.py replants the real vitamin-A pair.",
     ),
     Invariant(
         name="search_no_twin_questions",
@@ -8047,88 +8036,88 @@ INVARIANTS = [
         check_fn=check_search_no_twin_questions,
         truth_anchor="the hand-authored questions in eden/corpus/search-enrichment.json x their subject, normalized (drop function words + subject-name tokens, fold an explicit synonym set) and fold-compared pairwise within each subject, recomputed each run; a keep-both exception that stops firing is itself RED",
         severity="critical",
-        lesson_ref="2026-08-07 vitamin-D twin recurrence -- after a 3-day duplicate campaign the entity page STILL rendered signs/symptoms + dangerous/harmful twins because no_duplicate_claims keys on same-book verbatim containment and these are cross-book, different-content, synonym-worded. 19 fold-equal pairs across 17 subjects the day the gate landed, ALL real twins (allowlist empty; keeping 'do' as a content word separates 'what IS X' from 'what does X DO'). Negative test: tools/test_search_no_twin_questions.py replants the real vitamin-D signs/symptoms pair. memory: duplicate-gate-blind-three-ways, a-gate-can-be-green-because-of-the-defect",
+        lesson_ref="even after a dedicated duplicate sweep, the entity page STILL rendered signs/symptoms and dangerous/harmful twins, because no_duplicate_claims keys on same-book verbatim containment and these pairs are cross-book, different-content and synonym-worded. 19 fold-equal pairs across 17 subjects existed the day this gate landed, ALL real twins (the allowlist is empty; keeping 'do' as a content word separates 'what IS X' from 'what does X DO'). Negative test: tools/tests/test_search_no_twin_questions.py replants the real vitamin-D signs/symptoms pair.",
     ),
     Invariant(
         name="no_hand_duplicated_canonical",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="the 90/91 canonical essential display_names live ONLY in essentials-canon.json among hand-edited files -- no other hand-edited pillar file (catalog conditions/symptoms) re-stores one as a field value (Charter R3, 'no value hand-written twice'); derived copies (corpus-embed) are exempt, gated fresh by derived_artifacts_fresh",
+        description="the 90/91 canonical essential display_names live ONLY in essentials-canon.json among hand-edited files -- no other hand-edited pillar file (catalog conditions/symptoms) re-stores one as a field value -- no value is hand-written twice; derived copies (corpus-embed) are exempt, gated fresh by derived_artifacts_fresh",
         check_fn=check_no_hand_duplicated_canonical,
         truth_anchor="essentials-canon.json display_names x every string leaf of the other hand-edited pillar files (catalog conditions/symptoms), recomputed each run",
         severity="critical",
-        lesson_ref="Blueprint Phase D / Charter R3 + enforcement table 4.1 (2026-07-05) -- the deleted nutrients.json hand-duplicated all 91 canonical names (D-c); this gate makes re-introducing that class of duplication RED. WISH (Phase F): extend to every pillar identity field once the Product DB lands. memory: overhaul-blueprint-active-plan",
+        lesson_ref="a since-deleted nutrient registry hand-duplicated every canonical name; this gate makes re-introducing that class of duplication RED. Widening it to every identity field in every pillar is a labeled WISH, not something this gate does.",
     ),
     Invariant(
         name="scanner_user_items_marked",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="Eden's WALL (blueprint §5.4): a user/scanner-added regimen item is provenance-marked user-provided (user_scanned/user_manual/wishlist_promoted) so it can never masquerade as Wallach/Youngevity canonical, and no user token ever appears in a sealed pillar or an operational generated artifact -- the scanner writes only the user's localStorage, never a pillar",
+        description="Eden's WALL: a user/scanner-added regimen item is provenance-marked user-provided (user_scanned/user_manual/wishlist_promoted) so it can never masquerade as Wallach/Youngevity canonical, and no user token ever appears in a sealed pillar or an operational generated artifact -- the scanner writes only the user's localStorage, never a pillar",
         check_fn=check_scanner_user_items_marked,
         truth_anchor="dashboard/assets/js/src provenance literals + RegimenItemSchema x a user-token scan of eden/{corpus,catalog}/*.json & dashboard/assets/data/*.json (excl. append-only creators-log narrative), recomputed each run",
         severity="critical",
-        lesson_ref="Blueprint Phase E -- §5.4 (2026-07-06): Eden's wall -- the scanner lets a user add ANY item to THEIR regimen but can NEVER modify the sealed pillars; this codifies 'user items flagged, never enter pillars/indices' (R7). memory: overhaul-blueprint-active-plan",
+        lesson_ref="the scanner lets a user add ANY item to THEIR regimen but can NEVER modify the sealed pillars. This codifies the wall as a gate: user items are flagged and never enter a pillar or a generated index.",
     ),
     Invariant(
         name="data_artifacts_accounted",
         anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
-        description="Charter R1 completeness half -- every dashboard/assets/data/*.json is registered in eden/derived/MANIFEST.json, either in `artifacts` (derived + freshness-gated) or in `accounted` (hand-authored/externally-gated, each with a disposition + reason); a data file in neither list is RED (no silent hand-maintained artifact can ship)",
+        description="the completeness half -- every dashboard/assets/data/*.json is registered in eden/derived/MANIFEST.json, either in `artifacts` (derived + freshness-gated) or in `accounted` (hand-authored/externally-gated, each with a disposition + reason); a data file in neither list is RED (no silent hand-maintained artifact can ship)",
         check_fn=check_data_artifacts_accounted,
         truth_anchor="the on-disk glob of dashboard/assets/data/*.json x the MANIFEST.json artifacts+accounted registries, recomputed each run",
         severity="critical",
-        lesson_ref="Crack #1 (2026-07-06 vision-vs-reality audit): derived_artifacts_fresh proved the LISTED artifacts fresh but nothing proved the list COMPLETE -- coverage-layout-data + 3 others were hand-maintained outside the gate. This forces every data file into a visible bucket. memory: overhaul-blueprint-active-plan",
+        lesson_ref="derived_artifacts_fresh proved the LISTED artifacts fresh, but nothing proved the list COMPLETE -- coverage-layout-data and three others were being hand-maintained outside the gate entirely. This forces every data file into a visible bucket.",
     ),
     Invariant(
         name="charter_gates_present",
         anchor_class="meta",  # checks a document about the gates / guards a currently-empty set
-        description="Charter R7 meta-gate -- every gate named in the R1-R9 table's Gate column in .claude/skills/charter/SKILL.md must be a live invariant, a known enforcement mechanism (verify tool/hook/lint), or the rule must be labeled WISH; a named gate that neither exists nor is WISH means the Charter oversells its enforcement = RED",
+        description="the meta-gate -- every gate named in the Gate column of the rule table in .claude/skills/charter/SKILL.md must be a live invariant, a known enforcement mechanism (verify tool / hook / lint), or the rule must be labeled WISH; a named gate that neither exists nor is WISH means the Charter oversells its own enforcement = RED",
         check_fn=check_charter_gates_present,
         truth_anchor="the parsed charter.md R1-R9 rule table (Gate + Status columns) x the live invariant name set + a fixed mechanism allowlist, recomputed each run",
         severity="critical",
-        lesson_ref="Crack #2 (2026-07-06): R7 ('codify, don't promise') was itself only a WISH -- nothing verified the Charter's gate column named real gates. This makes the Charter unable to lie about its own enforcement. Semantic 'the gate truly enforces the rule' stays review-only (labeled). memory: overhaul-blueprint-active-plan",
+        lesson_ref="'codify, don't promise' was itself only a promise -- nothing verified that the Charter's gate column named real gates. This makes the Charter unable to lie about its own enforcement. The semantic half, whether a named gate truly enforces its rule, stays review-only and is labeled as such.",
     ),
     Invariant(
         name="exceptions_justified",
         anchor_class="meta",  # checks a document about the gates / guards a currently-empty set
-        description="Charter R9 -- every tolerated failure in .claude/invariant-baseline.json is a justification object {invariant, reason, test}; a bare-string or reason-less/test-less exception is a silent loosening = RED. Empty baseline is vacuously clean but the gate stands for the next exception",
+        description="every tolerated failure in .claude/invariant-baseline.json is a justification object {invariant, reason, test}; a bare-string or reason-less/test-less exception is a silent loosening = RED. Empty baseline is vacuously clean but the gate stands for the next exception",
         check_fn=check_exceptions_justified,
         truth_anchor="the tolerated_failures list in .claude/invariant-baseline.json x the live invariant names, recomputed each run; paired reader stop_round_close.py tolerates the same entries by their `invariant` name",
         severity="critical",
-        lesson_ref="Crack #2 (2026-07-06): R9 ('refinements are codified too, never a silent loosening') was a WISH -- the baseline could hold an unjustified exception with nothing to catch it. Now every exception must carry its reason + a proving test. memory: overhaul-blueprint-active-plan",
+        lesson_ref="'refinements are codified too, never a silent loosening' was a promise -- the baseline could hold an unjustified exception with nothing to catch it. Now every exception must carry its reason and a proving test.",
     ),
     Invariant(
         name="corpus_audit_gate",
         anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
-        description="Charter R8 / the mandatory pre-Phase-G full-corpus audit made STRUCTURAL: while eden/tools/corpus-audit-status.json has phase_g_unlocked=false, the live claim count may not exceed frozen_claim_count -- new claims cannot be mined onto unaudited data (RED the instant they are). Green while count==freeze (audit owed, Phase G locked); unblocks on audit sign-off",
+        description="the mandatory full-corpus audit made STRUCTURAL: while eden/tools/corpus-audit-status.json has phase_g_unlocked=false, the live claim count may not exceed frozen_claim_count -- new claims cannot be mined onto unaudited data (RED the instant they are). Green while count==freeze (audit owed, mining locked); unblocks on audit sign-off",
         check_fn=check_corpus_audit_gate,
         truth_anchor="the live corpus shard claim count x frozen_claim_count in eden/tools/corpus-audit-status.json, recomputed each run",
         severity="critical",
-        lesson_ref="Crack #4 (2026-07-06): the full 1203-claim audit owed before Phase G rested on a memory that could be forgotten. This codifies it -- mining new claims onto unaudited data is structurally blocked until sign-off. Harness: eden/tools/corpus_audit.py. memory: full-corpus-audit-before-phase-g",
+        lesson_ref="the full-corpus audit owed before mining resumes rested on a note that could be forgotten. This codifies it: mining new claims onto unaudited data is structurally blocked until sign-off. Harness: eden/tools/corpus_audit.py.",
     ),
     Invariant(
         name="views_no_inline_prose",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="Phase H0 / R4 code-side -- no user-facing prose lives as a string literal inside a CLEAN view file; it belongs in the view-copy content store (state/copy.ts), referenced by id. Surface-scoped: _CLEAN_VIEW_FILES is EMPTY in H0 and grows as each view is migrated (H2-H4); the negative test proves the gate fires",
+        description="the code-side half -- no user-facing prose lives as a string literal inside a CLEAN view file; it belongs in the view-copy content store (state/copy.ts), referenced by id. Surface-scoped: _CLEAN_VIEW_FILES lists the views migrated so far and BINDS on them (read the tuple, not this line); it grows as each further view is migrated. NOT vacuous; the negative test proves the gate fires",
         check_fn=check_views_no_inline_prose,
         truth_anchor="the .ts bytes of the declared clean-view files (_CLEAN_VIEW_FILES) scanned each run; a growing allowlist mirroring _clean_surface_files",
         severity="critical",
-        lesson_ref="Phase H migration blueprint section 2 gate row 1 -- the #1 R4 WISH (no inline view prose) becomes a live gate landed BEFORE the surfaces so they cannot be built with inline copy. Negative test: tools/test_views_no_inline_prose.py. Semantic 'is it the RIGHT prose' stays review.",
+        lesson_ref="'no inline view prose' was the longest-standing WISH; it becomes a live gate, landed BEFORE the surfaces so they could not be built with inline copy in the first place. Negative test: tools/tests/test_views_no_inline_prose.py. Whether the prose is the RIGHT prose stays a review question.",
     ),
     Invariant(
         name="entity_render_is_projection",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="Phase H0 / R1 -- the entity-render view is a pure projection of the generated entity-page artifact: no object literal keyed by a real entity id, no per-entity content branch. Closes the sub-10-element hole views_state_no_inline_data cannot see. Surface-scoped (_ENTITY_VIEW_FILES): EMPTY in H0, grows in H2; negative test proves it fires",
+        description="the entity-render view is a pure projection of the generated entity-page artifact: no object literal keyed by a real entity id, no per-entity content branch. Closes the sub-10-element hole views_state_no_inline_data cannot see. Surface-scoped (_ENTITY_VIEW_FILES): BINDING on the entity views listed there -- read the tuple -- and it grows in the same patch as each new view; negative test proves it fires",
         check_fn=check_entity_render_is_projection,
         truth_anchor="the real entity-id sets from the pillars (canon slugs + catalog condition/symptom ids + product ids) x the entity-view .ts bytes, recomputed each run",
         severity="critical",
-        lesson_ref="Phase H migration blueprint section 2 gate row 2 -- a hand-built {calcium:{...},osteoporosis:{...}} content map (2 keys) slips under the >10-element inline-data gate; this closes it. Negative test: tools/test_entity_render_is_projection.py.",
+        lesson_ref="a hand-built {calcium:{...},osteoporosis:{...}} content map is only 2 keys, so it slips under the >10-element inline-data gate; this closes that hole. Negative test: tools/tests/test_entity_render_is_projection.py.",
     ),
     Invariant(
         name="element_header_complete",
         anchor_class="consistency",  # our mechanism store vs our entity-copy store -- catches a half-filled entry, not a wrong one
-        description="Every element shipping a composed mechanism header also ships BOTH its opening lede and its why-this-number provenance in entity-copy.json. Copper went live with `why` and no `lede`, and a partial entry looks identical to a complete one on the page. Scoped to elements that HAVE a header; the remaining essentials are a labelled WISH in .claude/skills/element-headers/SKILL.md",
+        description="Every element shipping a composed mechanism header also ships BOTH its opening lede and its why-this-number provenance in entity-copy.json. Copper went live with `why` and no `lede`, and a partial entry looks identical to a complete one on the page. Scoped to elements that HAVE a header; the remaining essentials are an acknowledged coverage gap, not a claim that every essential is done",
         check_fn=check_element_header_complete,
         truth_anchor="the bytes of the two hand-authored stores (mechanism-clarity-data.json x entity-copy.json), re-read and cross-checked each run",
         severity="critical",
-        lesson_ref="Luneth caught copper's missing opening line after the header shipped; the why-this-number line had been missing on the live page for the same reason (the store held only calcium + selenium). Half-filled entries are invisible from the page. Negative test: tools/test_element_header_complete.py. Playbook: .claude/skills/element-headers/SKILL.md",
+        lesson_ref="copper's missing opening line was caught only after the header had shipped, and the why-this-number line had been missing on the live page for the same reason -- the store held entries for only two essentials. A half-filled entry is invisible from the page itself. Negative test: tools/tests/test_element_header_complete.py. Playbook: .claude/skills/element-headers/SKILL.md",
     ),
     Invariant(
         name="figure_type_within_standard",
@@ -8137,7 +8126,7 @@ INVARIANTS = [
         check_fn=check_figure_type_within_standard,
         truth_anchor="drawer-knowledge.css bytes scanned each run against two sizes measured headlessly off the shipped selenium figure",
         severity="critical",
-        lesson_ref="Two rounds lost to figure type: first too small (the real cause was an ID-specificity width override losing the cascade, rendering an 800-unit viewBox at 560px -- scale 0.70, every label silently 30% smaller), then overcorrected to 15/17/18/32 above the selenium standard. Negative test: tools/test_figure_type_within_standard.py. Playbook: .claude/skills/element-headers/SKILL.md",
+        lesson_ref="two passes were lost to figure type: first too small (the real cause was an ID-specificity width override losing the cascade, rendering an 800-unit viewBox at 560px -- scale 0.70, every label silently 30% smaller), then overcorrected to 15/17/18/32 above the selenium standard. Negative test: tools/tests/test_figure_type_within_standard.py. Playbook: .claude/skills/element-headers/SKILL.md",
     ),
     Invariant(
         name="mechanism_blocks_wellformed",
@@ -8146,7 +8135,7 @@ INVARIANTS = [
         check_fn=check_mechanism_blocks_wellformed,
         truth_anchor="the schema .ts bytes x the view .ts bytes x the hand-authored mechanism store x the sealed corpus shards, all re-read and cross-checked each run",
         severity="critical",
-        lesson_ref="Eight calcium header mockups were rejected because the SCHEMA was the template -- the required set (eyebrow/kill/figure/beats/quote) WAS the rejected chassis, so every 'bespoke' header regressed to it (Luneth 2026-07-30, Rule 0 in .claude/skills/element-headers/SKILL.md). Freeing the shape means the data now decides which blocks render, which buys a new silent-failure class this gate closes. Negative test: tools/test_mechanism_blocks_wellformed.py. The byte-identity of the three signed-off headers is proven separately by tools/render_probe_mech_shape.js",
+        lesson_ref="eight calcium header mockups were rejected because the SCHEMA was the template -- the required set (eyebrow/kill/figure/beats/quote) WAS the rejected chassis, so every 'bespoke' header regressed to it. Freeing the shape means the data now decides which blocks render, which buys a new silent-failure class this gate closes. Negative test: tools/tests/test_mechanism_blocks_wellformed.py. The byte-identity of the three signed-off headers is proven separately by tools/probes/render_probe_mech_shape.js",
     ),
     Invariant(
         name="mech_quote_trim_faithful",
@@ -8155,7 +8144,7 @@ INVARIANTS = [
         check_fn=check_mech_quote_trim_faithful,
         truth_anchor="the sealed corpus claim shards (verbatim bytes), re-read each run and substring-matched against the hand-authored quote_trim",
         severity="critical",
-        lesson_ref="Luneth's ruling (2026-07-30): a card can trim a quote into prose to drop an unwanted trailing sentence while keeping the real cite -- 'still LITERAL Wallach quotes, we're just trimming where the quote stops'. Codifying the 'literal' half so it cannot later become fabrication behind a real cite. Negative test: tools/test_mech_quote_trim_faithful.py",
+        lesson_ref="a card may trim a quote to drop an unwanted trailing sentence while keeping the real cite -- the text stays a literal Wallach quote, only its end moves. This codifies the literal half so a trim cannot quietly become fabrication behind a real citation. Negative test: tools/tests/test_mech_quote_trim_faithful.py",
     ),
     Invariant(
         name="views_no_ciphered_data",
@@ -8164,70 +8153,70 @@ INVARIANTS = [
         check_fn=check_views_no_ciphered_data,
         truth_anchor="git-tracked dashboard/assets/js/src/views/*.ts bytes scanned each run; git-unavailable fails open LOUD, never a silent green",
         severity="critical",
-        lesson_ref="A number with an impeccable SOURCE can still be fabricated at RENDER time -- no existing gate watched the presentation layer for this. Negative test: tools/test_views_no_ciphered_data.py.",
+        lesson_ref="A number with an impeccable SOURCE can still be fabricated at RENDER time -- no existing gate watched the presentation layer for this. Negative test: tools/tests/test_views_no_ciphered_data.py.",
     ),
     Invariant(
         name="no_stub_render_paths",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="Phase H0 -- no prototype/demo scaffold token (kn-stub, sh-stub, 'next chunk', 'real build', 'demo wires', PROTOTYPE, exemplar) survives into a shipped view (.ts) or stylesheet (.css); the migration re-implements the prototypes' design, never pastes their scaffolding",
+        description="no prototype/demo scaffold token (kn-stub, sh-stub, 'next chunk', 'real build', 'demo wires', PROTOTYPE, exemplar) survives into a shipped view (.ts) or stylesheet (.css); the migration re-implements the prototypes' design, never pastes their scaffolding",
         check_fn=check_no_stub_render_paths,
         truth_anchor="git-tracked dashboard/assets/js/src/views/*.ts + dashboard/assets/styles/*.css bytes scanned each run; git-unavailable fails open LOUD, never a silent green",
         severity="critical",
-        lesson_ref="Phase H migration blueprint section 2 gate row 3 (same mechanism as no_dead_legacy_paths) -- the demos inline prose+data+stubs for speed; this gate blocks copying a stub render path or demo mark into the app. Negative test: tools/test_no_stub_render_paths.py.",
+        lesson_ref="the prototypes inline prose, data and stubs for speed; this gate (same mechanism as no_dead_legacy_paths) blocks copying a stub render path or a demo mark into the shipped app. Negative test: tools/tests/test_no_stub_render_paths.py.",
     ),
     Invariant(
         name="kind_label_covers_corpus",
         anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
-        description="Phase H0 / R4 -- every distinct claim.kind in the sealed corpus (14 today) has a display label in the view-copy content store's kind_labels; a missing label would render a raw/blank kind header on the entity page",
+        description="every distinct claim.kind in the sealed corpus has a display label in the view-copy content store's kind_labels; a missing label would render a raw or blank kind header on the entity page. The set of kinds is read from the corpus, never counted in prose",
         check_fn=check_kind_label_covers_corpus,
         truth_anchor="distinct claim.kind values in the sealed claim shards x dashboard/assets/data/view-copy.json kind_labels keys, recomputed each run",
         severity="critical",
-        lesson_ref="Phase H migration blueprint section 2 (content-store) -- the 'centralize the display-label maps' item, gated per codify-don't-promise: the kind map cannot be exhaustively typed (claim.kind is an open z.string()), so a truth-anchored invariant proves coverage instead. Negative test: tools/test_kind_label_covers_corpus.py.",
+        lesson_ref="the display-label maps are centralized, and the rule ships with its gate: the kind map cannot be exhaustively typed (claim.kind is an open z.string()), so a truth-anchored invariant proves coverage instead. Negative test: tools/tests/test_kind_label_covers_corpus.py.",
     ),
     Invariant(
         name="dose_answers_state_their_programme",
         anchor_class="consistency",  # our sealed claims vs our enrichment store — catches drift, not a born-wrong number
-        description="Every general-programme dose card (dose.for_condition marking a base-line/daily-multiple/maintenance programme) names the programme or the year its number came from. 27 of 91 essentials carry rival general-programme figures -- mostly the 1995 Base Line table against the 2014 Epigenetics daily multiple -- and a bare number makes them read as rival answers to one question. Condition-scoped therapeutic doses are out of scope",
+        description="Every general-programme dose card (dose.for_condition marking a base-line/daily-multiple/maintenance programme) names the programme or the year its number came from. A quarter of the essentials carry rival general-programme figures -- mostly the 1995 Base Line table against the 2014 Epigenetics daily multiple -- and a bare number makes them read as rival answers to one question. Condition-scoped therapeutic doses are out of scope",
         check_fn=check_dose_answers_state_their_programme,
         truth_anchor="sealed claim shards (kind/dose.amount/dose.for_condition) x eden/corpus/search-enrichment.json answer_short, recomputed each run",
         severity="critical",
-        lesson_ref="Luneth 2026-08-05, on reading vitamin D's WHAT TO DO: 'there's literally 4 claims ALL saying completely different things'. Three of the four were correctly scoped claims whose reader-facing text had dropped the scope. Fixed across 27 answers + 16 superseded questions; gated here so it cannot regress. Negative test: tools/test_dose_answers_state_their_programme.py.",
+        lesson_ref="vitamin D's WHAT TO DO rendered four dose claims that read as four contradictions. Three of the four were correctly scoped claims whose reader-facing text had dropped the scope, so a maintenance target and a therapeutic dose sat side by side as rival answers to one question. Fixed across 27 answers and 16 superseded questions, then gated so it cannot regress. Negative test: tools/tests/test_dose_answers_state_their_programme.py.",
     ),
     Invariant(
         name="claim_category_mapping_total",
         anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
-        description="Phase H1 / redesign colour language §6 -- the claim.kind -> colour-category map (view-copy.json kind_categories) is TOTAL and exact over the sealed corpus kinds: every distinct sealed kind maps to exactly one of the six locked families (green/teal/amber/orange/violet/red), no default branch, no stale entry for a vanished kind. A new/dropped kind reddens the board rather than rendering a wrong/absent colour",
+        description="the claim.kind -> colour-category map (view-copy.json kind_categories) is TOTAL and exact over the sealed corpus kinds: every distinct sealed kind maps to exactly one of the six locked families (green/teal/amber/orange/violet/red), no default branch, no stale entry for a vanished kind. A new/dropped kind reddens the board rather than rendering a wrong/absent colour",
         check_fn=check_claim_category_mapping_total,
         truth_anchor="distinct claim.kind in the sealed claim shards x dashboard/assets/data/view-copy.json kind_categories keys+values, recomputed each run",
         severity="critical",
-        lesson_ref="Phase H migration blueprint section 2 gate 'claim_category_mapping_total' + section 1.2 item (ii) -- the kind->colour map must be total (no fallback) so a claim can never render with a mis-derived colour. Negative test: tools/test_claim_category_mapping_total.py.",
+        lesson_ref="the kind->colour map must be TOTAL, with no fallback branch, so a claim can never render with a mis-derived colour and a new kind reddens the board instead of quietly picking a default. Negative test: tools/tests/test_claim_category_mapping_total.py.",
     ),
     Invariant(
         name="view_category_not_hardcoded",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="Phase H1 -- the entity view reads a claim's colour CATEGORY from the map (view-copy kind_categories via state/copy.ts::kindCategory), never a hardcoded family literal per claim/kind. Surface-scoped: _ENTITY_VIEW_FILES is EMPTY in H1 (render built in H2), grows in the same patch; negative test proves it fires",
+        description="the entity view reads a claim's colour CATEGORY from the map (view-copy kind_categories via state/copy.ts::kindCategory), never a hardcoded family literal per claim/kind. Surface-scoped: _ENTITY_VIEW_FILES lists the entity views this BINDS on -- read the tuple -- and it grows in the same patch as each new view; negative test proves it fires",
         check_fn=check_view_category_not_hardcoded,
         truth_anchor="the entity-view .ts bytes (_ENTITY_VIEW_FILES) scanned each run for a standalone colour-family-word string literal",
         severity="critical",
-        lesson_ref="Phase H migration blueprint section 2 gate 'view_category_not_hardcoded' + section 1.2 item (ii)(2) -- colour is assigned via the total kind->category table, never a per-claim literal, so category logic stays single-source. Negative test: tools/test_view_category_not_hardcoded.py.",
+        lesson_ref="colour is assigned via the total kind->category table, never a per-claim literal, so the category logic stays single-source and cannot fork between the data and the view. Negative test: tools/tests/test_view_category_not_hardcoded.py.",
     ),
     Invariant(
         name="entity_pills_justified",
         anchor_class="external",  # an independent re-derivation from corpus-embed claims
-        description="Phase H1 -- every PILL on a generated entity page (a condition's restore nutrients, an essential's help-with conditions + works-with partners) traces to a qualifying source claim. The essentials[]-union leak produces exactly an UNjustified pill (a nutrient flattened in from a DIFFERENT condition in a multi-condition claim); this gate recomputes the directed maps() + interaction relations independently and RED-flags any posted pill with no backing. Defense in depth beyond derived_artifacts_fresh (which only proves the artifact matches the generator)",
+        description="every PILL on a generated entity page (a condition's restore nutrients, an essential's help-with conditions + works-with partners) traces to a qualifying source claim. The essentials[]-union leak produces exactly an UNjustified pill (a nutrient flattened in from a DIFFERENT condition in a multi-condition claim); this gate recomputes the directed maps() + interaction relations independently and RED-flags any posted pill with no backing. Defense in depth beyond derived_artifacts_fresh (which only proves the artifact matches the generator)",
         check_fn=check_entity_pills_justified,
         truth_anchor="dashboard/assets/data/entity-page-data.json pills x an independent re-derivation from corpus-embed claims, recomputed each run",
         severity="critical",
-        lesson_ref="Phase H migration blueprint section 1.2 item (i) + section 4 H1 -- the systematic essentials[]-union fix, gated. The 5 D2 misfits (Zinc/Chromium/Selenium/Tin/Vanadium on osteoporosis) + the D1 phantom works-with pills leaked via a many-to-many shotgun claim; this proves no such pill survives. Negative test: tools/test_entity_pills_justified.py.",
+        lesson_ref="the essentials[]-union fix, gated. Five misfit nutrients (Zinc, Chromium, Selenium, Tin, Vanadium on osteoporosis) and a set of phantom works-with pills leaked in via a single many-to-many claim: a nutrient named for one condition was flattened onto another in the same claim. This proves no such pill survives. Negative test: tools/tests/test_entity_pills_justified.py.",
     ),
     Invariant(
         name="no_positional_hero",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="Phase H1 (prominence) -- the entity page's curated primary 'what to do' slot is never auto-filled by a reference-table row (a base-line-program / dose-table claim in protocol_claim_ids), and the hero/primary is never chosen by array position. DATA half binds now; the VIEW half is surface-scoped (_ENTITY_VIEW_FILES holds 2 real views and BINDS on them as of 2026-07-15)",
+        description="the entity page's curated primary 'what to do' slot is never auto-filled by a reference-table row (a base-line-program / dose-table claim in protocol_claim_ids), and the hero/primary is never chosen by array position. The DATA half binds unconditionally; the VIEW half is surface-scoped to _ENTITY_VIEW_FILES and BINDS on every file listed there -- read the tuple, not a count in prose",
         check_fn=check_no_positional_hero,
         truth_anchor="entity-page-data.json protocol_claim_ids x corpus-embed base_line_table + the entity-view .ts bytes scanned for a claims[0]/record[0] hero, recomputed each run",
         severity="critical",
-        lesson_ref="Phase H migration blueprint section 1.2 item (iii) + section 2 gate 'no-positional-hero' -- the fluoride base-line dose-table row was promoted into the default-open GREEN 'what to do' slot, contradicting the page's own 'avoid fluoride'. A table row is never a curated recommendation. Negative test: tools/test_no_positional_hero.py.",
+        lesson_ref="a fluoride base-line dose-table row was promoted into the default-open GREEN 'what to do' slot purely because it came first, contradicting the same page's 'avoid fluoride'. A reference-table row is never a curated recommendation. Negative test: tools/tests/test_no_positional_hero.py.",
     ),
     Invariant(
         name="entity_page_enriched_matches_search",
@@ -8236,7 +8225,7 @@ INVARIANTS = [
         check_fn=check_entity_page_enriched_matches_search,
         truth_anchor="dashboard/assets/data/entity-page-data.json search sections x an independent claimsForSubject (subject OR also_about) re-derivation from search-index.json, recomputed each run",
         severity="critical",
-        lesson_ref="Luneth 2026-08-19 (repeat report): 'the search is showing more claims than the full topic page ... NOT A SINGLE CONDITION PAGE SHOULD HAVE LESS THAN ITS SEARCH'. Root cause: entity_page_derive.search_sections bucketed enriched claims by subject ONLY, while search.ts::claimsForSubject includes also_about -- so an also_about claim (Wallach's selenium answer naming hypothyroidism) was findable in search but absent from the hypothyroidism page. Fixed by including also_about in search_sections; gated here so the two derivations can never drift again. Negative test: tools/test_entity_page_enriched_matches_search.py.",
+        lesson_ref="search surfaced more claims than the full topic page did -- no condition page should ever show less than its own search. Root cause: entity_page_derive.search_sections bucketed enriched claims by subject ONLY, while search.ts::claimsForSubject includes also_about -- so an also_about claim (Wallach's selenium answer naming hypothyroidism) was findable in search but absent from the hypothyroidism page. Fixed by including also_about in search_sections; gated here so the two derivations can never drift again. Negative test: tools/tests/test_entity_page_enriched_matches_search.py.",
     ),
     Invariant(
         name="offline_no_runtime_network",
@@ -8250,7 +8239,7 @@ INVARIANTS = [
     Invariant(
         name="vendor_assets_pinned",
         anchor_class="external",  # anchored outside our own data — file bytes + os-level existence
-        description="every vendored library in assets/vendor/libs/ matches the sha256 recorded in vendor-manifest.json, and every local url(...) in shipped CSS resolves on disk",
+        description="every vendored design library in tools/design-libs/ matches the sha256 recorded in vendor-manifest.json, and every local url(...) in shipped CSS resolves on disk",
         check_fn=check_vendor_assets_pinned,
         truth_anchor="sha256 of each vendored file recomputed from disk x the committed manifest, plus os-level existence of every local CSS asset reference",
         severity="critical",
@@ -8263,7 +8252,7 @@ INVARIANTS = [
         check_fn=check_workspace_coverage_no_dead_rules,
         truth_anchor="workspace-coverage.css class selectors x the live reference surface (src + dashboard.html + coverage-layout data + dynamic stubs) + styles/*.css animation refs, re-derived each run",
         severity="critical",
-        lesson_ref="2026-08-11 dead-CSS purge (Luneth: 'I am tired of you telling me code is clean when it is not'). 51 dead class rules across two superseded UI generations (coverage-hero/stat/console/goal-chip + regimen-rail) plus a deleted footer, ~425 lines, that only demos still pulled in. knip (no_new_dead_code) is blind to CSS. Non-vacuous: an empty allowlist REDs on .is-foundation, and a synthetic .zzz-dead class REDs.",
+        lesson_ref="a dead-CSS purge, prompted by the app being called clean when it was not. 51 dead class rules across two superseded UI generations (coverage-hero/stat/console/goal-chip + regimen-rail) plus a deleted footer, ~425 lines, that only demos still pulled in. knip (no_new_dead_code) is blind to CSS. Non-vacuous: an empty allowlist REDs on .is-foundation, and a synthetic .zzz-dead class REDs.",
     ),
 ]
 
@@ -8272,8 +8261,10 @@ INVARIANTS = [
 # ---------------------------------------------------------------------------
 
 def list_invariants(weekly: bool = False):
-    """Return all invariants. If weekly=True, include weekly-cadence entries
-    alongside daily ones (some weekly invariants are paired with daily)."""
+    """Return the invariants to run. weekly=True also includes weekly-cadence entries.
+
+    NOTE: no invariant currently declares cadence='weekly', so both branches return
+    the same list and --weekly cannot change the result today."""
     if weekly:
         return list(INVARIANTS)
     return [i for i in INVARIANTS if i.cadence == "daily"]
@@ -8282,17 +8273,17 @@ def list_invariants(weekly: bool = False):
 def _anchor_class_report(by_class):
     """The honest half of the score.
 
-    "67/67 green" is a true sentence that was doing a false job. It was reported at every
-    session boot and read -- by the user, and restated by the agent -- as a statement about
-    WALLACH. It never was. Most of the board proves our files agree with each other, which
-    is a statement about our bookkeeping. On 2026-07-15 a planted 10x sodium fabrication
-    passed all 66 gates green, because not one of them read Wallach's printed number.
+    A bare "N/N green" is a true sentence that does a false job. Read at a glance -- and
+    restated by anyone summarising it -- it lands as a statement about WALLACH. It never was.
+    Most of the board proves our files agree with each other, which is a statement about our
+    bookkeeping: a planted 10x sodium fabrication once passed every gate green, because not
+    one of them read Wallach's printed number.
 
     A single integer cannot carry that distinction, so it stops being the whole story here.
     This prints what each pass actually rests on. It is not a smaller number for its own
     sake -- consistency and structural gates catch real regressions and are worth keeping --
-    it is a labelled one, so nobody (including the agent) can spend structural passes as if
-    they were evidence about the source."""
+    it is a labelled one, so nobody can spend structural passes as if they were evidence
+    about the source."""
     order = ("external", "consistency", "structural", "meta")
     gloss = {
         "external":    "anchored OUTSIDE our own data (book bytes · physical constants · git). "
@@ -8321,8 +8312,8 @@ def _anchor_class_report(by_class):
 def main():
     # Windows stdout/stderr default to cp1252, which raises UnicodeEncodeError
     # on the non-ASCII glyphs (arrows, command symbols) many invariant messages
-    # carry; the prior sessions never hit it because they ran in a UTF-8 Linux
-    # sandbox. Force UTF-8 on our own streams and export it so child processes
+    # carry; a UTF-8 Linux host never hits it, so the failure is host-specific.
+    # Force UTF-8 on our own streams and export it so child processes
     # we spawn inherit it, so the audit runs to completion on every host.
     os.environ.setdefault("PYTHONUTF8", "1")
     os.environ.setdefault("PYTHONIOENCODING", "utf-8")
@@ -8336,7 +8327,7 @@ def main():
     import argparse
     ap = argparse.ArgumentParser(description="Run the invariant manifest")
     ap.add_argument("--weekly", action="store_true",
-                    help="include weekly-cadence invariants")
+                    help="include weekly-cadence invariants (no-op today: nothing declares one)")
     ap.add_argument("--only", type=str, default=None,
                     help="run a single named invariant")
     ap.add_argument("--list", action="store_true",

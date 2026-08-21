@@ -9,8 +9,9 @@
  *
  * §00.A: `amount` is what a product CONTAINS (composition) and `price` is a volatile
  * wholesale listing — recommender/display data, never a Wallach target. No Wallach number
- * lives here; the saturating-adequacy curve reads a target supplied at runtime, which is
- * an honest gap until corpus dose-mining lands.
+ * lives here; the saturating-adequacy curve reads a Wallach target supplied at runtime by the
+ * caller. Where no target has been mined for an essential, the ranker falls back to an
+ * amount-potency proxy — a real but PARTIAL gap, not a total one (see state/recommender.ts).
  * ═══════════════════════════════════════════════════════════════════════════
  */
 

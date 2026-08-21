@@ -8,26 +8,24 @@
  * verbatim, R3). Keyed as an ARRAY (built into a Map by .map) so no id-keyed literal — the entity
  * page stays a pure projection (entity_render_is_projection). Mirrors fatty-acid-clarity.ts.
  *
- * TWO SHAPES live here, and the second one is the whole point (2026-07-30):
+ * TWO SHAPES live here, and the second one is the whole point:
  *   • LEGACY — `MechanismSchema`. A fixed skeleton plus optional extras, emitted by
  *     renderMechanism in ONE hard-coded order. Selenium, copper and zinc are this shape and are
  *     signed off; the legacy schema and its render path are deliberately UNCHANGED.
  *   • COMPOSED — `MechComposedSchema`. An ORDERED, self-describing `blocks` list: the entry names
  *     its own blocks in its own sequence and may omit ANY of them.
  *
- * WHY the composed shape exists: the legacy REQUIRED set (eyebrow · kill · figure · figure_alt ·
- * beats · quote_claim) IS the chassis eight calcium mockups were rejected for — "you keep following
- * the same structure/template… stop constraining yourself under this template" (Luneth 2026-07-30,
- * now Rule 0 in .claude/skills/element-headers). Everything that LOOKED like design freedom —
- * hook, split, bridge, the two figure slots, coda, stat — was an optional extra bolted onto that one
- * skeleton, and the renderer fixed their order, so a "bespoke" header could only ever wear different
- * clothes on the same body. Playbook prose could not fix that: the STRUCTURE had to be able to say a
- * different shape. A composed entry can carry no beats, no stat, no quote, the quote first, or
- * nothing but an annotated figure.
+ * WHY the composed shape exists: in the legacy shape every apparent design freedom — hook, split,
+ * bridge, the two figure slots, coda, stat — was an OPTIONAL EXTRA bolted onto one REQUIRED
+ * skeleton (eyebrow · kill · figure · figure_alt · beats · quote_claim) whose order the renderer
+ * fixed, so a "bespoke" header could only ever wear different clothes on the same body. Authoring
+ * guidance cannot fix that — only the STRUCTURE can say a different shape. A composed entry can
+ * carry no beats, no stat, no quote, the quote first, or nothing but an annotated figure.
  *
- * What stays fixed is only what Rule 0 fixes, and NONE of it lives in the block list: the opening
- * lede and the why-this-number line live in entity-copy.json, and the width + the tan content box +
- * the Best-Youngevity-sources dock are the frame renderMechanism emits AROUND the blocks.
+ * What stays fixed is only the surrounding FRAME, and NONE of it lives in the block list: the
+ * opening lede and the why-this-number line live in entity-copy.json, and the width + the tan
+ * content box + the Best-Youngevity-sources dock are what renderMechanism emits AROUND the
+ * blocks. See .claude/skills/element-headers for the authoring guidance.
  *
  * In-figure LABELS live here too (`labels`), never as view literals — views_no_inline_prose (R4)
  * puts every user-facing string in this store.
@@ -99,8 +97,8 @@ const MechSideSchema = z.object({
   // A prose evidence card. ALONE it renders as plain prose. PAIRED with quote_claim (and no
   // quote_trim) it is a SOURCED PARAPHRASE — our tightened summary of that claim, shown in the quote
   // style with the claim's composed cite so a reader can trace it, but NOT a verbatim quote (no
-  // quote marks; faithfulness human-reviewed, not gated — Luneth's ruling 2026-07-30). Mutually
-  // exclusive with quote_trim, which is the gated-verbatim path.
+  // quote marks). Its faithfulness is HUMAN-REVIEWED and NOT machine-gated. Mutually exclusive
+  // with quote_trim, which is the gated-verbatim path (mech_quote_trim_faithful).
   note: z.string().optional(),
 }).passthrough();
 
@@ -144,12 +142,12 @@ const MechanismSchema = z.object({
 
 // ── THE COMPOSED SHAPE: an ordered, self-describing block list ────────────────────────────────
 // Each block declares its OWN type, so the data — not the renderer — decides which blocks exist
-// and in what order. Every type below maps 1:1 onto a unit the renderer already draws: this patch
-// frees the ORDER and the SELECTION, it does not invent new visual vocabulary (that is a per-element
-// design decision Luneth picks, and a new type is then one case in the block dispatch).
+// and in what order. Every type below maps 1:1 onto a unit the renderer already draws: the block
+// list frees the ORDER and the SELECTION, it does not invent visual vocabulary. A genuinely new
+// visual unit means a new type HERE and a new case in the block dispatch, in the same patch.
 
-/** The figure width slot. REQUIRED and CLOSED on purpose (R9 codification of a trap that cost two
- *  rounds): the base rule `#drawer-knowledge-mount .kd-ep-fam__figure { max-width: 560px }` is an
+/** The figure width slot. REQUIRED and CLOSED on purpose: the base rule
+ *  `#drawer-knowledge-mount .kd-ep-fam__figure { max-width: 560px }` is an
  *  ID selector, so a figure with no matching-specificity width override silently renders at 560px
  *  — scale < 1, and every label inside is quietly shrunk with nothing wrong in the source. Naming
  *  the slot from a closed set means a typo is a LOUD parse failure instead. Values are the shipped
@@ -217,7 +215,7 @@ const MechBlockSchema = z.discriminatedUnion('type', [
     big: z.boolean().optional(),
     highlight: z.string().optional(),
   }).passthrough(),
-  // The two-column COMPARE block — two trade-off cards side by side (vitamin A #6, 2026-08-01).
+  // The two-column COMPARE block — two trade-off cards side by side.
   z.object({
     type: z.literal('compare'),
     left: MechCompareCardSchema,
@@ -267,8 +265,10 @@ export const MechanismClaritySchema = z.object({
   mechanisms: z.array(z.union([MechComposedSchema, MechanismSchema])),
 }).passthrough();
 
-// Only the types the view actually consumes are exported — an unused alias is dead code
-// (no_new_dead_code catches it). A figure slot flows through renderMechanism inline.
+// Exported types are the ones the view consumes by name, plus MechComposed, which must be
+// exported for isComposedMech's type predicate to be nameable. A figure slot flows through
+// renderMechanism inline. Note no_new_dead_code only reds on NEW unused exports — the
+// pre-existing ones are frozen in dashboard/knip-baseline.json.
 export type MechField = z.infer<typeof MechFieldSchema>;
 export type MechSide = z.infer<typeof MechSideSchema>;
 export type MechBlock = z.infer<typeof MechBlockSchema>;

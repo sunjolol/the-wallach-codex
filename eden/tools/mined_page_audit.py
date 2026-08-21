@@ -3,10 +3,10 @@
 
 A page you have mined (sealed a claim on) must carry ZERO high-confidence OCR
 defects in its source .txt, or the round-close board goes red. This turns "clean
-the books as we go" from an advisory memory into a machine gate: you cannot close a
-chunk that left detectable garbage on a page you touched. (SESSION 44 — the fix for
-the recurring reflexive-deferral defect: prose is advisory and rationalizable; only
-a red board is not. memory: perfect-entry-no-deferral.)
+the books as we go" from an advisory note into a machine gate: you cannot close a
+chunk that left detectable garbage on a page you touched. A rule that lives only in
+prose is advisory and gets rationalised away; a red board is not, so this rule ships
+as a gate.
 
 Scope is deliberately TIGHT (~zero false positive) — only detector classes that are
 almost always real defects and never legitimate text:
@@ -16,13 +16,12 @@ double_space is deliberately NOT gated: (a) the verbatim render path collapses e
 whitespace run (collapseWS in views/knowledge-corpus.ts), so book double-spaces can
 never reach the screen — there is no forward-facing risk to guard; and (b) page-level
 double-space gating would wrongly flag legitimate data-table column alignment. It stays
-a book_purity finding for the whole-book sweep. (SESSION 44 decision.)
+a book_purity finding for the whole-book sweep.
 The FP-heavy classes (spell_flag proper nouns, digit_in_word, run_together,
 hyphen_wrap) are NOT gated here — they stay judgment work for the whole-book pristine
 sweep, because gating them would breed rubber-stamp allowlisting. Reading-order
-scrambles (all real words, wrong order) no detector can catch; those remain covered
-by the paste cross-check method. See memory: pdf-paste-ocr-method,
-book-source-purification-campaign, linguistic-logic-sweep.
+scrambles (all real words, wrong order) no detector can catch; those are only found by
+reading the scanned page against the text, which no gate can do for you.
 
 'Mined page' = a screenshot page carrying >=1 sealed claim, derived from the sealed
 claims' locator.screenshot — truth-anchored on the shipped artifact, unhideable.
@@ -30,7 +29,7 @@ Books whose claims use a non-screenshot locator scheme (kindle_location) have no
 mined pages here and are not gated by this tool (a char-offset-window variant is the
 documented follow-up); immortality/epigenetics/iaiyh are screenshot-scheme.
 
-The gate applies only to books that have ENTERED the purification campaign
+The gate applies only to books that have ENTERED source purification
 (purity-status purifying|pristine), mirroring book_source_clean (which gates only
 pristine books): a 'raw' book carries expected OCR backlog on every page, so its
 mined-page cleanliness is enforced when it enters purification, not before. This keeps
@@ -61,7 +60,7 @@ GATED = {
     "repeated_char", "post_marker_fragment",  # OCR gibberish ("eee", "Sei ee a")
 }
 
-# The gate applies to books that have entered the purification campaign; a 'raw'
+# The gate applies to books that have entered source purification; a 'raw'
 # book's mined-page backlog is enforced when it enters purification (see module doc).
 GATED_STATUS = {"purifying", "pristine"}
 PURITY_STATUS_PATH = HERE / "purity-status.json"

@@ -88,26 +88,29 @@ def _slim_claim(c: dict) -> dict:
         "conditions": c.get("conditions", []),
         "symptoms": c.get("symptoms", []),
         "confidence": c.get("confidence", "medium"),
-        # tier lets non-index surfaces (the book browser) distinguish tier-1
-        # operational claims from tier-2 search-only ones, which are stripped
-        # from the derived indices but still ride in the claims map.
+        # tier is 1 for every claim today. The `search-only` tag marked a retired
+        # tier-2 that was kept out of the derived indices; no sealed claim carries it
+        # any more (search reads the same claims every tab does). The projection stays
+        # so a reintroduced tag surfaces to non-index surfaces such as the book browser
+        # rather than passing silently as operational.
         "tier": 2 if "search-only" in c.get("tags", []) else 1,
     }
     label = _source_table_label(c.get("tags", []))
     if label:
         out["source_table"] = label
     # base_line_table: a Base-Line-Program / dose-TABLE reference row (e.g. the Fig. 8-1
-    # supplement-program table). The entity page's PROMINENCE rule (H1) uses this to keep a
+    # supplement-program table). The entity page's PROMINENCE rule uses this to keep a
     # reference-table row out of a curated primary slot -- a table row is not a curated
-    # recommendation (the fluoride-under-"what to do" defect). Same tags->display projection
+    # recommendation, and one landing under "what to do" reads as advice Wallach never
+    # gave. Same tags->display projection
     # as source_table; the runtime needs the flag, not the raw tag list.
     tags = c.get("tags", [])
     if "base-line-program" in tags or "dose-table" in tags:
         out["base_line_table"] = True
-    # `about` (R3 · references_resolve): the claim's SUBJECT (canon | nutrient | condition slug).
-    # Absent on every pre-2026-07-16 claim; emit only when present so the embed stays byte-identical
-    # for the older 1,354 claims. The entity-page derive reads this to route group claims
-    # (about: colloidal-minerals) onto the 34 plant-derived element pages without re-inferring
+    # `about` (gated by references_resolve): the claim's SUBJECT (canon | nutrient | condition slug).
+    # Optional, and absent on most claims; emit only when present so the embed stays byte-identical
+    # for every claim that predates the field. The entity-page derive reads this to route group
+    # claims (about: colloidal-minerals) onto the plant-derived element pages without re-inferring
     # aboutness from a fragile regex (the metallic trap — the string "colloidal minerals" appears
     # in Wallach's recommendation AND in his counter-example, so word-matching cannot distinguish).
     if c.get("about"):
@@ -141,7 +144,7 @@ def build_embed() -> dict:
     for c in claims.values():
         book_claim_count[c["book"]] = book_claim_count.get(c["book"], 0) + 1
 
-    # ---- essentials: full canon set (90), each joined with layout_key + symbol ----
+    # ---- essentials: every canon entry (91: the 90 essentials + omega-9), joined with layout_key + symbol ----
     essentials = {}
     for slug, entry in ess_idx.items():
         ce = canon_by_slug.get(slug, {})
@@ -228,7 +231,7 @@ def render() -> str:
 
 
 def write_embed() -> int:
-    """Regenerate dashboard/assets/data/corpus-embed.json via safe_write (§17)."""
+    """Regenerate dashboard/assets/data/corpus-embed.json via safe_write."""
     EMBED_PATH.parent.mkdir(parents=True, exist_ok=True)
     return safe_write.safe_rewrite(EMBED_PATH, render())
 

@@ -4,11 +4,11 @@
  *
  * The Conditions TAB of the Knowledge drawer: the ghost-number card grid
  * (renderConditionsTab / renderConditionRow) + the coverage-tile lookup (tileOf)
- * shared with the essentials page. Split out of views/knowledge.ts (Phase ε.2)
- * so each file stays one cohesive concern.
+ * shared with the essentials page. Split out of views/knowledge.ts so each file
+ * stays one cohesive concern.
  *
  * The condition DETAIL view is no longer here: it moved to the unified entity page
- * (views/entity-page.ts::renderConditionPage, Phase H2 chunk 2) so a condition reuses
+ * (views/entity-page.ts::renderConditionPage) so a condition reuses
  * the same kd-ep-* vocabulary as an essential. This file still OWNS the two condition
  * derivations that page reuses — `conditionSynopsis` (the Wallach nutrient lead-in) and
  * `essentialsInRoles` (the deficiency/treat/also split) — plus `familiarEssentialName`;
@@ -72,7 +72,7 @@ function conditionSearchKeywords(c: CorpusCondition): string {
 }
 
 /**
- * One condition card — the "ghost number" design (Luneth-approved 2026-07-22): a big
+ * One condition card — the "ghost number" design: a big
  * faded claim-count in the condition's body-system colour behind an Unbounded name,
  * over a category chip + a claim/nutrient count line. `--cat` carries the category
  * colour into the CSS (chip + ghost + hover/selected accent); an unmapped condition
@@ -164,8 +164,8 @@ export function conditionSynopsis(c: CorpusCondition): string {
 
 /**
  * Conditions in the order the tab presents them: most-written-about first
- * (claim_count desc), alphabetical within a tie — the demo's "sorted by how much
- * Wallach wrote". Presentation-only; the derive keeps conditions A–Z.
+ * (claim_count desc), alphabetical within a tie — the "sorted by how much Wallach
+ * wrote" head rendered below. Presentation-only; the derive keeps conditions A–Z.
  */
 function conditionsByWeight(conditions: readonly CorpusCondition[]): CorpusCondition[] {
   return [...conditions].sort((a, b) =>

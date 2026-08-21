@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """vb_propose.py — for each violating claim in a book, measure the minimal source
-span that would NAME every currently-mapped condition (+symptom), so I can decide
-extend-vs-drop and author anchors. Read-only.
+span that would NAME every currently-mapped condition (+symptom), to support an
+extend-vs-drop decision and clean anchor authoring. Read-only.
 
 For each mapped condition/symptom, we locate its name in the RAW book text within a
 search window around the claim's char_offset, using a whitespace-flexible regex over
 the accepted phrases (display name, slug tokens, synonyms). Reports:
   - span [lo,hi] covering current-verbatim ∪ all found names, its char length
   - which conditions are NOT found in-window (candidates to drop / extend-far)
-  - the raw span text (so I can pick clean anchors)
+  - the raw span text (for picking clean anchors)
 Usage: python vb_propose.py <book_id> [claim_id]
 """
 import re

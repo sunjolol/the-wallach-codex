@@ -9,13 +9,12 @@
  * colors, no new fonts, no new shadows — only the application layout that
  * arranges design-system primitives.
  *
- * SAFE to edit. NOT sealed. Mocked first in v3 component proposals; promoted
- * here in Round 1·B and refined per workspace migration in Rounds 2–5.
+ * SAFE to edit. NOT sealed — unlike design-system.css, which is pinned by a golden hash.
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ─── Page-level chrome ─────────────────────────────────────────────────── */
 
-/* [v3-contain] Global box model + text rendering — the new shell OWNS these
+/* Global box model + text rendering — the app shell OWNS these
    instead of relying on a global leaked `* {box-sizing}` and
    `html,body {font-smoothing}`. The shell declares its own baseline so nothing external can
    regress it. design-system.css scopes box-sizing/smoothing to
@@ -25,7 +24,7 @@
 html, body { height: 100%; overflow: hidden; }
 body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-sans); color: var(--ds-ink); line-height: 1.55; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-/* Stylized scrollbar — orange gradient, 70% of browser default */
+/* Stylized scrollbar — tracks the chosen accent, ~70% the width of the browser default */
 .app-shell { scrollbar-width: thin; scrollbar-color: var(--ds-accent) var(--ds-paper-darker); }
 .app-shell *::-webkit-scrollbar { width: 11px; height: 11px; }
 .app-shell *::-webkit-scrollbar-track { background: var(--ds-paper-darker); border-radius: var(--ds-radius-pill); }
@@ -90,24 +89,25 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 
 /* ─── Topbar ────────────────────────────────────────────────────────────── */
 
-/* ★ THREE COLUMNS: nameplate | flexible spacer | Ask Wallach at the FAR RIGHT (the demo's
-   `auto minmax(0,1fr) auto`). WAS `auto 1fr 380px` — that 380px third column was sized for
-   the telemetry block ("SYNCED · CODEX v3.27"), which is DELETED as fabricated chrome. With
-   only two items left, the button landed at the START of the 1fr middle column and floated in
-   the middle of the bar. minmax(0,1fr) — not 1fr — so a long deck can shrink instead of
-   pushing the button off. The empty <span> in dashboard.html IS the spacer; it is not stray. */
+/* ★ THREE COLUMNS: nameplate | flexible spacer | Ask Wallach at the FAR RIGHT
+   (`auto minmax(0,1fr) auto`). The third column is `auto`, not a fixed width: there is no
+   status or telemetry block here and there cannot be one — the app has no network and no
+   backend, so a sync indicator or a version readout would be asserting a fact it cannot know.
+   With only two items in the bar, a fixed third column left the button at the START of the
+   middle column, floating mid-bar. minmax(0,1fr) — not 1fr — so a long deck can shrink
+   instead of pushing the button off. The empty <span> in dashboard.html IS the spacer; it is
+   not stray markup. */
 .app-topbar { grid-area: topbar; background: var(--ds-paper); border-bottom: 1px solid var(--ds-rule-soft); padding: var(--ds-space-4) var(--ds-space-7); display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: var(--ds-space-5); align-items: center; position: relative; }
 .app-topbar::after { content:''; position:absolute; left: var(--ds-space-7); right: var(--ds-space-7); bottom:-1px; height:1px; background: linear-gradient(to right, transparent 0%, var(--ds-accent) 6%, var(--ds-accent) 13%, transparent 15%, transparent 85%, var(--ds-tech) 88%, var(--ds-tech) 92%, transparent 95%); }
-/* ── THE NAMEPLATE (ported from the signed-off demo, 2026-07-16) ───────────────────────
+/* ── THE NAMEPLATE ─────────────────────────────────────────────────────────────────
    Replaces .topbar__workspace-tag / .topbar__title / .topbar__sub, whose markup is DELETED:
    "WS·01" was a serial for a workspace-numbering scheme that does not exist, and a ds-cipher
    scrambled the word COVERAGE beside a real <h1> already saying it.
 
-   ★ The name is SMALL and uppercase (1.05rem), not a display heading. It sits on ONE baseline
-   with the rule and the deck — a nameplate, not a title block. Shipping the markup without
-   these rules (which happened first, and Luneth caught it on sight) falls back to the browser
-   <h1> default: huge, title-case, no rule. Markup without its CSS is the unstyled-drawer
-   drift, and it is exactly what .claude/skills/visual-verification/SKILL.md exists to stop. */
+   ★ The name is SMALL and uppercase (0.85rem), not a display heading. It sits on ONE baseline
+   with the rule and the deck — a nameplate, not a title block. Ship this markup without these
+   rules and it falls back to the browser <h1> default: huge, title-case, no rule. Port markup
+   and its CSS in the same change; half a port is the unstyled-drawer regression. */
 .topbar__breadcrumb { display: flex; align-items: baseline; gap: var(--ds-space-4); min-width: 0; }
 .np__name { font-family: var(--ds-font-display); font-size: 0.85rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--ds-ink); margin: 0; white-space: nowrap; }
 /* 34px hairline: 12px of accent, then rule. The one flash of orange in the nameplate. */
@@ -139,11 +139,16 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .topbar__ask-kbd { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ask-accent-deep); border: 1px solid var(--ask-accent); border-radius: var(--ds-radius-xs); padding: 1px 6px; opacity: 0.85; }
 /* GREEN accents (default). Delete this class in the HTML for a plain matching (orange) button. */
 .topbar__ask--green { --ask-accent: var(--ds-status-ok); --ask-accent-deep: var(--ds-status-ok); --ask-wash: var(--ds-status-ok-soft); --ask-soft: var(--ds-status-ok-soft); }
-/* ── ASK WALLACH — Luneth 2026-07-15: "pretty easy to miss, let's use the Unbounded font
-   which I think will make this pop more". --ds-font-display IS Unbounded (type-futurist.css
-   repoints it off Playfair and loads LAST, so it wins — do not hardcode the family). Scoped
-   to the LABEL only: the dot, the kbd, and the button's own colour/border are untouched. */
+/* ── ASK WALLACH label: set in --ds-font-display so the pill reads louder than the
+   surrounding interface type. That token resolves to Unbounded — type-futurist.css repoints
+   it off Playfair and loads after design-system.css, so it wins; do not hardcode the family.
+   Scoped to the LABEL only: the dot, the kbd, and the button's own colour/border are
+   untouched. */
 .topbar__ask-label { font-family: var(--ds-font-display); font-weight: 600; letter-spacing: .01em; }
+
+/* Telemetry chips — UNREACHABLE: the markup was removed along with the footer strip below, for
+   the same reason. The app has no network and no backend, so there is no live status to report
+   and no honest way to render one. */
 .telemetry__item { display:inline-flex; align-items:center; gap: var(--ds-space-1); }
 .telemetry__item strong { color: var(--ds-ink); font-weight: 600; }
 .telemetry__item .pulse-dot { width:6px; height:6px; border-radius:50%; background: var(--ds-status-ok); margin-right:4px; box-shadow: 0 0 6px var(--ds-status-ok-soft); }
@@ -155,7 +160,9 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .app-workspace::before { content:''; position:fixed; inset:0; background: radial-gradient(circle at 20% 30%, color-mix(in srgb, var(--ds-accent) 4%, transparent) 0%, transparent 50%), radial-gradient(circle at 80% 70%, rgba(26,22,18,0.04) 0%, transparent 50%); pointer-events: none; z-index: 0; }
 
 
-/* ─── Footer (telemetry strip) ──────────────────────────────────────────── */
+/* ─── Footer strip — UNREACHABLE: the markup was removed. There is no status or
+       telemetry footer and there cannot be one; the app has no network and no
+       backend, so it would be asserting a state it cannot know. ─────────────── */
 
 .app-footer { grid-area: footer; background: var(--ds-ink); color: var(--ds-paper); padding: var(--ds-space-3) var(--ds-space-7); display: flex; align-items: center; gap: var(--ds-space-6); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; position: relative; z-index: 2; }
 .app-footer::before { content:''; position:absolute; top:0; left: var(--ds-space-7); right: var(--ds-space-7); height:1px; background: linear-gradient(to right, transparent 0%, var(--ds-tech) 4%, var(--ds-tech) 10%, transparent 12%); }
@@ -166,12 +173,12 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .footer__signature { color: var(--ds-tech); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; }
 
 
-/* ─── Mount slots for views (filled by Round 2-5 migrations) ────────────── */
+/* ─── Workspace + overlay mount slots ───────────────────────────────────── */
 
 #workspace-coverage-mount,
 #workspace-regimen-mount,
 #workspace-scanner-mount {
-  display: none;  /* hidden until that workspace's view migrates */
+  display: none;  /* resting state: the router shows exactly one workspace and hides the rest */
 }
 
 #drawer-knowledge-mount,
@@ -189,10 +196,9 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 /* ===========================================================================
    Profile console (views/profile.ts) -- the identity + appearance popup
    ---------------------------------------------------------------------------
-   Ported live from the signed-off "Command Card" demo (2026-08-13). The console
-   is entirely token-based, so the app-wide theme layer (theme.css) flips it to
-   charcoal and the accent swatches retint --ds-accent globally -- it themes
-   itself for free. Scrim + card grammar mirror Ask-Wallach.
+   The console is entirely token-based, so the app-wide theme layer (theme.css) flips it to
+   charcoal and the accent swatches retint --ds-accent globally -- it themes itself for free.
+   Scrim + card grammar mirror Ask-Wallach.
    =========================================================================== */
 
 .pf-overlay {
@@ -302,8 +308,8 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 
 .pf-hidden { display: none !important; }
 
-/* Creator's Log -- re-homed into the console, collapsed by default (the §00 audit trail
-   belongs with the creator's identity; it stays out of the way until opened). */
+/* Creator's Log -- lives in the console, collapsed by default: the audit trail belongs with
+   the creator's identity, and it stays out of the way until opened. */
 .pf-log { margin-top: 22px; border-top: 1px solid var(--ds-rule-soft); }
 .pf-log__sum { list-style: none; cursor: pointer; padding: 13px 2px 4px; font-family: var(--ds-font-mono); font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ds-ink-soft); display: flex; align-items: center; gap: 8px; }
 .pf-log__sum::-webkit-details-marker { display: none; }
@@ -319,7 +325,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .pf-logentry__sum { font-family: var(--ds-font-display-interface, var(--ds-font-sans)); font-size: 0.8rem; font-weight: 600; color: var(--ds-ink); margin: 0; }
 .pf-logentry__detail { margin-top: 4px; font-family: var(--ds-font-sans); font-size: 0.74rem; color: var(--ds-ink-soft); line-height: 1.45; white-space: pre-wrap; }
 
-/* Rail profile chip: clickable affordance (the real cream hover lives with the rail styles above). */
+/* Rail profile chip: clickable affordance. The hover fill itself lives with the rail styles above. */
 .rail__profile { transition: background var(--ds-motion-fast) var(--ds-ease-out); border-radius: var(--ds-radius-sm); }
 .rail__profile:focus-visible { outline: 2px solid var(--ds-accent); outline-offset: 2px; }
 /* The rail avatar becomes an <img> once a preset/upload is chosen; keep the round frame either way. */
@@ -327,13 +333,13 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 
 
 /* ═══ RESPONSIVE FALLBACK ═════════════════════════════════
-   Desktop (default, > 1160px) is UNCHANGED. Every rule below is a max-width
-   query that only applies on smaller viewports (Luneth 2026-07-06: keep the
-   1920 desktop look exactly; degrade gracefully on smaller devices). */
+   Desktop (default, > 1160px) is UNCHANGED — the 1920 layout is the reference design. Every
+   rule below is a max-width query that only applies on smaller viewports, degrading
+   gracefully rather than re-laying-out the desktop view. */
 
 @media (max-width: 1160px) {
-  /* the protocol panel stacks below content (workspace-coverage.css); release the
-     topbar panel reserve, let the search flex, and drop the redundant subtitle */
+  /* the protocol panel stacks below content (workspace-coverage.css); the topbar keeps its
+     three-column grid at this breakpoint */
   .app-topbar { grid-template-columns: auto minmax(0, 1fr) auto; }
   .topbar__sub { display: none; }
 }
@@ -349,7 +355,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 }
 
 @media (max-width: 560px) {
-  /* phone: trim chrome so the periodic table stays the focus (search kept) */
+  /* phone: trim chrome so the coverage field stays the focus (the Ask Wallach button stays) */
   .app-topbar { padding: var(--ds-space-3) var(--ds-space-4); gap: var(--ds-space-3);
                 grid-template-columns: minmax(0, 1fr) auto; }
   .topbar__breadcrumb { display: none; }
@@ -358,9 +364,9 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 }
 
 /* == Canonical close / dismiss control ===================================
-   ONE close button for the whole app (was 8+ ad-hoc x in different sizes/styles).
-   Mirrors the Ask-Wallach search-popup close (.scr-nav): a round, softly-shadowed
-   button with an 18px SVG X. Hover accents ORANGE (the primary accent), not green.
+   ONE close button for the whole app. Mirrors the Ask-Wallach search-popup close (.scr-nav):
+   a round, softly-shadowed button with an 18px SVG X. Hover follows the primary accent — NOT
+   the Ask-Wallach green — so a close never reads as part of the search chrome.
    Always an SVG X, never a text glyph, so weight + alignment are identical everywhere.
      .ui-close      standard 34px (panel / card / modal close)
      .ui-close--sm  28px (inline row / chip remove) */

@@ -10,10 +10,9 @@
  *     whole OCR text for, to recover data when PSM-6 collapses the panel into a
  *     single line and the per-line regex can't anchor.
  *
- * Migrated VERBATIM (Chunk 6c) from the pre-TS inline dashboard (OCR_FUZZY_DICT +
- * KNOWN_NUTRIENT_NAMES); the runtime dedups fuzzyDict into a Set, so duplicate
- * source terms are preserved here unchanged. §00.A: this schema narrows the
- * shape, it does not author the data (Luneth owns the corpus).
+ * The runtime dedups fuzzyDict into a Set, so duplicate source terms are preserved here
+ * unchanged rather than cleaned up. §00.A: this schema narrows the shape, it does not
+ * author the data.
  *
  * NEW-data pattern (esbuild JSON import + Schema.parse at load), same as
  * scanner-corpus-data.json / coverage-layout-data.json.

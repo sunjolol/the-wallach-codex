@@ -1,21 +1,17 @@
 /* ═══════════════════════════════════════════════════════════════════════════
  * workspace-coverage.css — Coverage workspace styles + shared chrome
  * ═══════════════════════════════════════════════════════════════════════════
- * EXTRACTED from the workspace-coverage-v3.2 mockup (retired 2026-08-13)
- * on 2026-06-21 (Round 26 · task #20 visual fidelity sweep).
- *
  * Three blocks:
- *   1. Workspace chrome (fonts, :root tokens, ds-cipher / ds-border-travel) —
- *      shared by every
- *      view, lives here for now until extracted into design-system.css
- *      by the user (sealed-canonical writer rule).
- *   2. SKIPPED — .app-shell / .app-rail / .app-topbar already styled by
- *      dashboard.css. Pulling them in would collide.
+ *   1. Workspace chrome (fonts, :root tokens, .ds-border-travel) — shared by every
+ *      view. It lives here rather than in design-system.css because that sheet is
+ *      sealed against a golden hash and is only re-cut deliberately.
+ *   2. .app-shell / .app-rail / .app-topbar are deliberately NOT restyled here —
+ *      dashboard.css owns them, and duplicating them would collide.
  *   3. Coverage workspace styles — .coverage-grid, .coverage-workspace,
  *      .tile, .essentials-*, .goalstrip, .rail-panel etc.
  *
  * Load order in dashboard.html: AFTER dashboard.css
- * so workspace styles win on the new coverage mount.
+ * so workspace styles win on the coverage mount.
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 /* ─── Block 1: shared chrome (fonts, tokens, ds-* decorations) ───────── */
@@ -25,19 +21,20 @@
  * ⚠ THESE TWO TOKENS ARE APP-WIDE, NOT LOCAL TO COVERAGE. This sheet loads globally, so
  * this :root block is the ONLY definition of --ds-font-display-interface /
  * --ds-font-display-artifact anywhere (the sealed design-system.css never declared them).
- * Rules across five stylesheets read them — drawer-knowledge, drawer-search,
- * drawer-shared, dashboard, and this file. (The Journey drawer, formerly a reader, was removed 2026-08-13.)
+ * Rules in EIGHT stylesheets read them — dashboard, drawer-knowledge, drawer-orac,
+ * drawer-search, drawer-shared, workspace-coverage, workspace-regimen, workspace-scanner.
+ * Re-count before trusting this line.
  *
- * DO NOT REPOINT THESE WITHOUT CHECKING THE TOKEN'S READERS. On 2026-07-14 they were
- * repointed to Unbounded and these @font-face blocks deleted, on the belief the faces were
- * dead. They were not — every one of those 89 rules silently flipped, and the Knowledge
+ * DO NOT REPOINT THESE WITHOUT CHECKING THE TOKEN'S READERS. They were once repointed to
+ * Unbounded and these @font-face blocks deleted, on the belief the faces were dead. They
+ * were not — every one of those hundred-odd rules silently flipped, and the Knowledge
  * drawer + side menus regressed badly. The "proof" that the faces were unused was circular:
  * it grepped font-family declarations, which resolve THROUGH these very tokens. Grepping a
  * face NAME can never prove a token-indirected face is unused. Grep the token's readers.
  *
- * Chakra Petch is the sharp-angled geometric interface face (Luneth, 2026-07-14: it is the
- * one with "the good geometry we discussed"). Unbounded is applied per-element where wanted,
- * never by hijacking these tokens.
+ * Chakra Petch is the sharp-angled geometric interface face, chosen deliberately rather
+ * than inherited. Unbounded is applied per-element where wanted, never by hijacking these
+ * tokens.
  * ═══════════════════════════════════════════════════════════════════════════ */
 @font-face {
   font-family: 'Chakra Petch';
@@ -80,7 +77,7 @@ html, body { height: 100%; overflow: hidden; }
 body { margin: 0; background: var(--ds-paper-deep); }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * STYLIZED SCROLLBAR (proposed for design-system.css)
+ * STYLIZED SCROLLBAR — app-wide, not local to Coverage.
  * Applies to every scrolling element within .app-shell. ~11px wide (≈70% of
  * the default 16px), accent-orange thumb on cream-darker track, pill radius.
  * The browser default ugly bar is gone — every necessary scroll becomes a
@@ -120,8 +117,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * AMBIENT ANIMATION PRIMITIVES (proposed for design-system.css)
- * All gated by prefers-reduced-motion via existing design-system.css rule.
+ * AMBIENT ANIMATION PRIMITIVE — the border-travel sweep. App-wide, not local to Coverage.
+ * Capped by the prefers-reduced-motion block in design-system.css, which limits animation
+ * ITERATIONS as well as duration (shortening an `infinite` animation only speeds it up).
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 
@@ -199,9 +197,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
    Replaces the chemistry-only periodic table with Wallach's 90 essentials
    organized by function: 60 Minerals · 16 Vitamins · 12 Amino Acids · 3 Fatty
    Acids (91 TILES — Omega-9 renders for completeness but is essential:false in the
-   layout and excluded from the count; the old "92" here was simply wrong). Each section has its own header, divider, grid density, and tile
-   variant. Mineral tiles carry the real atomic number + symbol from canon; the
-   other three sections use positional codes (V-01 / AA-01 / F-01).
+   layout and excluded from the count). Each section has its own header, divider, grid
+   density, and tile variant. Mineral tiles carry the real atomic number + symbol from
+   canon; the other three sections use positional codes (V-01 / AA-01 / F-01).
    ═════════════════════════════════════════════════════════════════════════ */
 
 
@@ -258,9 +256,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 
 /* Section divider — broken hairline with a signal-accent dash.
-   The blue --ds-tech corner L-brackets that sat on each end were removed 2026-07-14
-   (Luneth: "remove all of the blue L shapes"); they also contradicted the project design
-   bar, which rules out L-brackets outright. */
+   No corner L-brackets on the ends: the project's design bar rules out L-brackets
+   outright, and the blue --ds-tech ones tried here read as a second signal competing with
+   the dash. */
 .essentials-section__divider {
   position: relative;
   height: 1px;
@@ -299,16 +297,16 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .essentials-subsection__count {
   color: var(--ds-accent-deep);
   font-weight: 700;
-  /* Breathing room before the group dots (Luneth, 2026-07-16). Harmless on the two subsections
-     with no dots: their `hint` is `margin-left: auto`, so this only eats 3px of auto space and
-     nothing moves. */
+  /* Breathing room before the group dots. Harmless on the two subsections with no dots:
+     their `hint` is `margin-left: auto`, so this only eats 3px of auto space and nothing
+     moves. */
   margin-right: 3px;
 }
-/* ★ THE GROUP GOAL-DOTS — one dot per goal that names the plant-derived run (Luneth, 2026-07-16).
-   Wallach prescribes the colloidal-mineral COMPLEX by name for 9 of the 14 goals but states no
-   per-element amount, so the 34 share ONE verdict and the GROUP is the unit: mark the run, not
-   the 34 tiles ("having ALL tiles light up on every goal will make the goal system feel cheap
-   and pointless").
+/* ★ THE GROUP GOAL-DOTS — one dot per goal that names the plant-derived run.
+   Wallach prescribes the colloidal-mineral COMPLEX by name for most goals but states no
+   per-element amount, so the 34 share ONE verdict and the GROUP is the unit: mark the run,
+   not the 34 tiles. Lighting all 34 on every goal would make the goal system read as free
+   credit.
    DOTS, not one gradient bar (which is what shipped first and was replaced): a gradient merges
    N goals into a blob that cannot be decomposed, so hovering a goal cannot isolate its share.
    Each dot is its own element carrying data-goal, so the hover TEACHES the indicator instead of
@@ -322,8 +320,8 @@ body { margin: 0; background: var(--ds-paper-deep); }
   align-items: center;
   align-self: center;
   flex: none;
-  /* Optical alignment against the uppercase mono label (Luneth, 2026-07-16): centring on the
-     flex line sits the dots a touch high against the cap-height, so nudge them down. */
+  /* Optical alignment against the uppercase mono label: centring on the flex line sits the
+     dots a touch high against the cap-height, so nudge them down. */
   margin-top: 2px;
 }
 .essentials-subsection__goaldot {
@@ -353,11 +351,10 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * THE PLATE LANGUAGE — coverage states as physical depth (2026-07-14)
+ * THE PLATE LANGUAGE — coverage states as physical depth
  * ═══════════════════════════════════════════════════════════════════════════
- * WHY THIS REPLACED THE OLD STATE COLOURS (Luneth: "it all reads as noise and none of
- * it feels satisfying when something is covered"). The old system was diagnosed, not
- * guessed:
+ * WHY THIS REPLACED THE OLD STATE COLOURS: the old palette read as noise, and nothing felt
+ * satisfying when it was covered. The old system was diagnosed, not guessed:
  *
  *   1. COVERED was --ds-accent orange — the SAME hue the whole app paints its ambient
  *      chrome in (scan line, border travel, buttons, scrollbar, pulse dot, section
@@ -373,8 +370,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
  * So green here is not a new invention — it is the app's own existing covered colour,
  * and --ds-status-ok was already in the sealed token set, unused by this surface.
  *
- * THE IDEA — "lifted off the underwiring" (Luneth, from the Empower calibration
- * reference): coverage IS elevation. The substrate is a
+ * THE IDEA — "lifted off the underwiring": coverage IS elevation. The substrate is a
  * recessed machined field; a covered plate RISES out of it — whitest, highest, green-
  * rimmed, carrying the white top-light those reference plates have. Depth does the
  * talking, so orange stops being a state and returns to being the signal accent the
@@ -385,22 +381,21 @@ body { margin: 0; background: var(--ds-paper-deep); }
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 :root {
-  /* PROPOSED green scale — mirrors the accent scale's shape exactly (deep/base/bright/
-     soft/wash). The sealed design-system.css declares only --ds-status-ok + -ok-soft;
-     these three complete it. Declared HERE and not in the sealed file on purpose: same
-     pattern type-futurist.css used for the Unbounded pivot — prototype in the workspace
-     sheet, fold into the sealed canonical with Luneth's sign-off + a golden re-seal.
-     INTERIM BY DESIGN. */
+  /* Green scale — mirrors the accent scale's shape (deep/base/bright/soft/wash). The
+     sealed design-system.css declares only --ds-status-ok + --ds-status-ok-soft; these
+     three complete the family. They live here rather than there because that sheet is
+     hash-sealed; fold them in on the next re-cut. */
   --ds-ok-deep:   #3d6129;
   --ds-ok-bright: #7cb356;
   --ds-ok-wash:   #eef5e6;
 
-  /* ── COVERED TREATMENT TOGGLE (Luneth chose A, 2026-07-14) ─────────────────
+  /* ── COVERED TREATMENT TOGGLE — A is what ships ────────────────────────────
      A = SATURATED: the green fills the name strip. Loud, unmissable.
      B = RESTRAINED: luminosity + lift + a rim carry it; the strip stays quiet.
-     Flip to B by setting data-covered-variant='b' on .coverage-grid (the :root:has
-     rule below re-points --cov-strip-bg/fg). Kept live because the A/B was judged on
-     a mockup, and the real page at 90-tile density is the only honest test. */
+     No code sets this attribute: it is an author-only switch. Hand-set
+     data-covered-variant='b' on .coverage-grid to see B (the :root:has rule below
+     re-points --cov-strip-bg/fg). Kept because the choice was made on a mockup, and the
+     field at full tile density is the only honest test of it. */
   --cov-strip-bg:   var(--ds-status-ok);
   --cov-strip-fg:   #ffffff;
 }
@@ -411,12 +406,12 @@ body { margin: 0; background: var(--ds-paper-deep); }
 
 /* ── THE SUBSTRATE — the "underwiring" the plates lift off ──────────────────
    Recessed, warm, faintly machined. NOT dark: literal dark tubing/wiring under the
-   tiles would look absurd on web (Luneth said so explicitly) — the depth comes from an
+   tiles would look absurd on web — the depth comes from an
    inset shadow + a hairline registration grid, which is the FEEL without the costume. */
 .essentials-host {
-  /* position/overflow now host the .ds-border-travel edge sweep, whose pseudo-elements run
-     -30% → 130% and must be clipped by this box. (They hosted the .ds-scan-line sweep too until
-     that was deleted 2026-07-23; do not drop them — border-travel still needs both.) */
+  /* position/overflow host the .ds-border-travel edge sweep, whose pseudo-elements run
+     -30% → 130% and must be clipped by this box. Do not drop either declaration — the
+     sweep escapes the card without them. */
   position: relative;
   overflow: hidden;
   background: var(--ds-paper-darker);
@@ -427,10 +422,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
     inset 0 0 0 1px var(--ds-rule);
   /* The registration grid is DELIBERATELY at the edge of perception — rule-soft on
      paper-darker is a ~3-value delta, and that is the point: it should register as texture,
-     never as a pattern competing with 91 plates. This matches the signed-off
-     coverage-plates mockup (retired 2026-08-13) byte-for-byte. A background-blend-mode: multiply was added
-     here after sign-off (my call, not asked for) to "fix" the subtlety; it made the grid
-     dominate the surface. Subtlety was never the defect. Do not re-strengthen this. */
+     never as a pattern competing with 91 plates. A background-blend-mode: multiply was
+     once added here to "fix" the subtlety; it made the grid dominate the surface.
+     Subtlety was never the defect. Do not re-strengthen this. */
   background-image:
     linear-gradient(var(--ds-rule-soft) 1px, transparent 1px),
     linear-gradient(90deg, var(--ds-rule-soft) 1px, transparent 1px);
@@ -445,9 +439,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .essentials-grid--fats     { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--ds-space-3); }
 
 /* ── THE PLATE CHASSIS — one shared body for all four families ──────────────
-   Previously .tile / .tile--vitamin / .tile--amino each re-declared a byte-identical
-   chassis (and .tile was declared TWICE, 13 lines apart, the second silently resetting
-   aspect-ratio + padding). One chassis, four silhouettes.
+   One chassis, four silhouettes — the four family classes share this body rather than
+   each re-declaring it, which is how a duplicate .tile block once ended up silently
+   resetting aspect-ratio and padding.
    DEFAULT = DORMANT: sunk INTO the substrate. Quiet, unlit, never alarming — at a fresh
    start most plates are dormant, so this state must be restful by design. */
 .tile,
@@ -477,7 +471,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
 /* ── FAMILY SILHOUETTES — one rounded corner per family, mirroring the reference plates.
    The only per-family difference; sizing is identical, so layout is untouched.
 
-   WHY RADIUS AND NOT A CHAMFER: these were clip-path chamfers until 2026-07-14, and their
+   WHY RADIUS AND NOT A CHAMFER: these were clip-path chamfers once, and their
    diagonals rendered with NO border — clip-path cannot carry one. An inset ring follows the
    border-box rectangle, so a clipped diagonal is always bare; that is a CSS limitation, not
    a tunable value, and every workaround (4x drop-shadow outline, layered rim/surface
@@ -518,11 +512,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .tile--amino > *,
 .tile--fat > * { position: relative; z-index: 1; }
 
-/* ── GLYPHS + LABEL STRIP — sizing/typography unchanged from the v3 contract.
-   The old comments here asserted a serif alchemy-reference lineage for these glyphs. That
-   went stale on 2026-07-13, when type-futurist.css remapped --ds-font-display to Unbounded
-   app-wide: the glyphs render futurist, not serif. A drifted comment deceives the next
-   reader and wastes an auditor's time, so it is deleted rather than carried forward. */
+/* ── GLYPHS + LABEL STRIP — the sizing/typography here is a fixed contract; do not retune
+   it to taste. These glyphs read --ds-font-display, which type-futurist.css repoints to
+   Unbounded app-wide, so they render futurist rather than serif. */
 .tile__num,
 .tile__code {
   font-family: var(--ds-font-mono);
@@ -561,9 +553,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
 
 /* ── GAP — a Wallach target exists, nothing is delivered.
    ONE amber signal tick on the leading edge, NOT a red flood: at a bare start most
-   numeric targets are gaps, and a wall of alarm on first open is exactly what Luneth
-   ruled out. Previously this styling existed ONLY for mineral .tile — a vitamin, amino
-   or fat in deficit rendered identical to a pending one. Now every family gets it. */
+   numeric targets are gaps, and a wall of alarm on first open is the wrong first
+   impression. All four families carry it — a vitamin, amino or fat in deficit must never
+   render identical to a pending one. */
 .tile.gap,
 .tile--vitamin.gap,
 .tile--amino.gap,
@@ -625,10 +617,10 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .tile--fat.covered {
   background: linear-gradient(180deg, #ffffff 0%, #fdfff9 55%, var(--ds-ok-wash) 100%);
   transform: translateY(-2px);
-  /* ORDER IS LOad-BEARING: box-shadow paints first-listed on TOP. The rim must precede the
-     white top-light, or the light paints over the rim's top edge and the plate renders with
-     no top border (the 2026-07-14 bug). The light is offset to y=1..2 with a -1px spread so
-     it sits UNDER the rim rather than fighting it. */
+  /* ORDER IS LOAD-BEARING: box-shadow paints first-listed on TOP. The rim must precede the
+     white top-light, or the light paints over the rim's top edge and the plate renders
+     with no top border. The light is offset to y=1..2 with a -1px spread so it sits UNDER
+     the rim rather than fighting it. */
   box-shadow:
     inset 0 0 0 1px var(--ds-ok-bright),
     inset 0 2px 0 -1px rgba(255, 255, 255, 0.95),
@@ -651,20 +643,18 @@ body { margin: 0; background: var(--ds-paper-deep); }
   color: var(--cov-strip-fg);
   border-top-color: var(--ds-status-ok);
 }
-/* ── THE ORANGE SLIT IS GONE (Luneth, 2026-07-16). It used to paint a 14x3 accent stripe on
-   the top edge of every covered tile — "orange rides the WINNER as an accent, rather than
-   being the state." He called it: the covered state already says covered THREE ways (the
-   green plate, the green rim, the green name strip), and the tile EDGE belongs to goal
+/* ── NO ORANGE SLIT ON COVERED TILES. It used to paint a 14x3 accent stripe on the top
+   edge of every covered tile. It is gone on purpose: the covered state already says covered
+   THREE ways (green plate, green rim, green name strip), and the tile EDGE belongs to goal
    membership, not to status. The slit was status borrowing the edge.
 
-   The declaration is removed rather than the rule, per his exact instruction, so the box is
-   now transparent and paints nothing. The rule is INERT — kept only because he asked for the
-   one declaration; say the word and it goes entirely.
+   The declaration is removed rather than the rule, so the box is transparent and paints
+   nothing. The rule is INERT and can be deleted outright.
 
-   ★ This is also what made the ring bug so hard to see: `.tile.covered::after` and the demo's
-   goal ring `.tile[data-goals]::after` are the SAME pseudo-element at IDENTICAL specificity
-   (0,2,1), so they merged per-property and the tick's width/height collapsed the ring to
-   14x5px on every covered+goal tile. The ring now owns its own element; this rule no longer
+   ★ It also masked a ring bug: `.tile.covered::after` and the goal ring
+   `.tile[data-goals]::after` are the SAME pseudo-element at IDENTICAL specificity (0,2,1),
+   so they merged per-property and the tick's width/height collapsed the ring to 14x5px on
+   every covered+goal tile. The ring now owns its own element, so this rule no longer
    collides with anything either way. */
 .tile.covered::after,
 .tile--vitamin.covered::after,
@@ -750,18 +740,16 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 
 
-/* ★ NO PADDING, and no gap. This is a BARE mount wrapper: in the signed-off demo the
-   goalstrip and .cov-d are direct children of .app-workspace, and .cov-d owns the page
-   padding. Keeping the old padding here PADDED THE PAGE TWICE (40px + 40px each side = 160px
-   eaten), which cost the field 80px and, at 1920, a WHOLE COLUMN — 10 where the demo renders
-   11. Measured against the demo itself rather than argued: demo E is 776px/6 cols at 1440 and
-   1256px/11 at 1920; live matched only after this rule stopped competing with .cov-d.
-   The vertical rhythm belongs to .goalstrip + .cov-d, exactly as the demo has it. */
+/* ★ NO PADDING, and no gap. This is a BARE mount wrapper: .goalstrip and .cov-d are direct
+   children of .app-workspace, and .cov-d owns the page padding. Keeping the old padding here
+   PADDED THE PAGE TWICE (40px + 40px each side = 160px eaten), which cost the field 80px
+   and, at 1920, a WHOLE COLUMN — 10 rendered where 11 fit. Measured rather than argued: the
+   target is 776px/6 cols at 1440 and 1256px/11 at 1920, and live matched only after this
+   rule stopped competing with .cov-d. The vertical rhythm belongs to .goalstrip + .cov-d. */
 .coverage-workspace {
   display: flex;
   flex-direction: column;
-  /* ── THE SURROUND (Luneth, 2026-07-16: "the background behind each of the boxes is too
-     dark, give it the same color as the demo"). MEASURED, in real pixels, not eyeballed:
+  /* ── THE SURROUND. MEASURED, in real pixels, not eyeballed:
      the surround painted rgb(242,231,207) live vs rgb(250,245,232) in the demo, while the
      tan box itself is rgb(235,226,196) in BOTH — the box was never the problem.
      ★ THE ACTUAL DEFECT was inverted figure/ground: live's SURROUND (242,231,207) was
@@ -772,8 +760,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
      .app-workspace::before is a viewport-FIXED radial veil that tints whatever is under it.
      ★ WHY SCOPED HERE AND NOT ON .app-workspace (which is what the demo does): the veil is
      `position:fixed; inset:0`, so it covers the TOPBAR too — that is why live's topbar reads
-     (249,244,231) where the demo's reads (250,245,232). Luneth kept the live topbar
-     explicitly ("I prefer the live color"), so the veil must SURVIVE. z-index 1 lifts this
+     (249,244,231). That topbar tint is wanted, so the veil must SURVIVE. z-index 1 lifts this
      workspace above the veil (z:0) without deleting it, leaving the topbar's tint intact and
      every other tab untouched. Doing it the demo's way would have silently changed both.
      ★ The stacking context this opens is SAFE and was re-measured: .goalstrip (z5) stays
@@ -791,32 +778,34 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 
 
-/* ═══ RESPONSIVE FALLBACK — desktop (> 1160px) UNCHANGED ════════════
-   (minmax(0,1fr) == 1fr when content fits, so 1920 is byte-identical.) */
+/* ═══ RESPONSIVE FALLBACK ══════════════════════════════════════════
+   ⚠ CURRENTLY INERT. The live view nests the grid as .cov-d > .coverage-grid, and
+   `.cov-d .coverage-grid` (further down this file) outranks these bare-class rules at
+   every width; the 100px tile track further down also carries !important. To make narrow
+   layouts work again, these selectors must be raised to `.cov-d .coverage-grid` and that
+   !important removed. Until then nothing below this line has any effect. */
 @media (max-width: 1160px) {
-  .coverage-grid { grid-template-columns: minmax(0, 1fr); }   /* protocol panel stacks below */
+  .coverage-grid { grid-template-columns: minmax(0, 1fr); }   /* intended: protocol panel stacks below */
 }
 @media (max-width: 640px) {
   .coverage-grid { padding: var(--ds-space-4); gap: var(--ds-space-4); }
   .essentials-grid--minerals, .essentials-grid--vitamins, .essentials-grid--aminos {
-    grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));   /* smaller tiles fit more per row */
+    grid-template-columns: repeat(auto-fill, minmax(58px, 1fr));   /* intended: smaller tiles fit more per row */
   }
 }
 
 
 /* ═══════════════════════════════════════════════════════════════════════════
- * UNBOUNDED CARVE-OUTS — the exact surfaces Luneth kept futurist (2026-07-14)
+ * UNBOUNDED CARVE-OUTS — the exact surfaces that stay futurist
  * ═══════════════════════════════════════════════════════════════════════════
  * Unbounded is opted in ONE SELECTOR AT A TIME, deliberately. It must never be applied by
- * repointing --ds-font-display-interface: that token is read by 89 rules across 6
- * stylesheets (drawer-knowledge alone has 34), so changing it reskins the entire app
- * silently. That is precisely what happened this day and had to be reverted.
+ * repointing --ds-font-display-interface: that token is read by roughly ninety rules
+ * across eight stylesheets (drawer-knowledge alone has ~36), so changing it reskins the
+ * entire app silently. That has happened once already and had to be reverted.
  *
- * var(--ds-font-display) resolves to Unbounded via type-futurist.css, which loads last and
- * owns that token; --ds-font-display-interface stays Chakra Petch for everything else.
- *
- * NOT in this list, on Luneth's explicit instruction: .goal-card__name ("bone & skeletal")
- * and .goal-card__progress — "those were better before".
+ * var(--ds-font-display) resolves to Unbounded via type-futurist.css, which loads after
+ * every other sheet that touches these tokens and owns that one;
+ * --ds-font-display-interface stays Chakra Petch for everything else.
  * ═══════════════════════════════════════════════════════════════════════════ */
 .essentials-section__title {   /* 01 MINERALS · 02 VITAMINS · 03 AMINO ACIDS · 04 FATTY ACIDS */
   font-family: var(--ds-font-display);
@@ -824,30 +813,27 @@ body { margin: 0; background: var(--ds-paper-deep); }
 
 
 /* ══════════════════════════════════════════════════════════════════════════════
-   THE COVERAGE WORKSPACE — ported 2026-07-16 from the signed-off demo
-   (temporary/coverage-E-rail.html) when the live build shipped.
+   THE COVERAGE WORKSPACE
 
-   The demo linked THIS stylesheet and layered these rules on top of it; they now live
-   here, where they belong. Ported verbatim, comments included: the comments record
+   These rules were prototyped on a standalone demo page that linked this stylesheet, then
+   moved here where they belong. The comments came across with them on purpose: they record
    decisions (the ::after ring collision, covered-takes-no-ring, why the grid uses integer
    tracks) that cost real debugging and must never be re-derived from scratch.
 
-   NOT ported, on purpose: the demo's own "MOCKUP-ONLY" shell block, the dead :root goal
-   palette (the live palette is core/goal-display.ts — one home), the shell nameplate /
-   Ask-Wallach chrome, and the not-yet-built inline rename.
+   Deliberately left behind: the prototype's mockup-only shell and its dead :root goal
+   palette — the live goal palette is core/goal-display.ts, and it has exactly one home.
    ══════════════════════════════════════════════════════════════════════════════ */
 
 /* ── THE GOAL STRIP — your goals, not a question ──────────────────────────
-   This is the thing Luneth wanted "up top". It is NOT the old console: it does not
+   It sits up top, and it is NOT a console: it does not
    ask, it REPORTS what you already told the welcome screen, and every chip does
    something (hover = focus). It carries no count — that is the whole discipline. */
 .goalstrip {
   display: flex; align-items: center; gap: var(--ds-space-4);
   padding: var(--ds-space-4) var(--ds-space-7);
   flex-wrap: wrap;
-  /* STICKY — Luneth 2026-07-15: "make goals at the top sticky so you can continue to
-     hover to highlight as you scroll down". Hover-focus is the strip's whole job, and
-     it was unreachable the moment you scrolled to the tile you wanted to look at.
+  /* STICKY — hover-focus is the strip's whole job, and it was unreachable the moment you
+     scrolled to the tile you wanted to look at, so the strip has to follow you down.
      MEASURED, not assumed: the scroller is main.app-workspace (overflow-y:auto,
      scrollHeight 1701 > clientHeight 1132) and .goalstrip is its DIRECT child, so
      top:0 pins to the workspace. The document itself does not scroll at all here
@@ -857,9 +843,8 @@ body { margin: 0; background: var(--ds-paper-deep); }
      the chips. var(--ds-paper) is the workspace's own fill (measured rgb(250,245,232)
      == #faf5e8), so the strip reads as part of the page rather than a floating bar.
 
-     ★ z-index 5, NOT the demo's 20 — a LIVE-ONLY correction (Luneth, 2026-07-16: "when you
-     open a drawer the sticky goals doesn't get covered"). The demo has NO DRAWERS, so its 20
-     was chosen against nothing: it only ever had to beat the field. Live, the Search (S) and
+     ★ z-index 5, NOT 20. A value chosen only to beat the tile field is chosen against
+     nothing: the strip has to sit below the overlays too. The Search (S) and
      Knowledge (K) drawers mount at z-index 10, and .app-workspace is `position:relative` with
      `z-index:auto` — so it creates NO stacking context, and the strip's 20 competed DIRECTLY
      against the drawers and won. Measured, not reasoned: with the drawer open,
@@ -897,38 +882,35 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 .gchip:hover { border-color: var(--gc); color: var(--ds-ink); box-shadow: 0 0 0 2px color-mix(in srgb, var(--gc) 22%, transparent); }
 .gchip__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gc); flex: 0 0 auto; }
-/* Uppercase labels have no descenders, so the flex row centers the box but the glyphs read high vs the dot + pill; nudge the label (only) down 1px (Luneth 2026-07-21). */
+/* Uppercase labels have no descenders, so the flex row centers the box but the glyphs read
+   high vs the dot + pill; nudge the label (only) down 1px. */
 .gchip__label { position: relative; top: 1px; }
 .gchip--add { color: var(--ds-ink-faint); border-style: dashed; }
 
 
 
-/* ── THE GRID — integer columns, and both of Luneth's notes fall out of one change.
+/* ── THE GRID — integer columns. Two separate complaints fall out of one change.
    WAS: repeat(auto-fill, minmax(82px, 1fr)); gap: 5px
-   -> 1fr divided 1208px by 13 into FRACTIONAL widths at FRACTIONAL positions
+   -> 1fr divided the host by 13 into FRACTIONAL widths at FRACTIONAL positions
       (88.297px @ left 1123.766). The ring then straddled half-pixels and the browser
       rounded each edge independently, so one side — usually the right — lost a subpixel.
       That is the "thinner right border" on Mg / Ca / Se: not a ring bug, a GRID bug.
       It only showed on gradient tiles because that is where the ring is visible at all.
    NOW: a fixed 100px column + a 9px gap.
 
-   ★ CORRECTION 2026-07-15 — the paragraph above measured a bare 1920 viewport and
-   forgot the SCROLLBAR. Luneth's maximized 1920 window has a ~15px classic scrollbar,
-   so the layout viewport is 1905 and this host's content box is 1193px, NOT 1208. At
-   1193 a 92px track fits ELEVEN columns, not twelve: 11*92 + 10*9 = 1102, stranding
-   91px on the right. So the "5px slack, it still fills the width" claim described a
-   viewport that does not exist on his machine, and what he actually saw was a dead
-   strip almost a full tile wide. The tiles never reached the right edge.
+   ★ MEASURE THE REAL VIEWPORT, NOT THE NOMINAL ONE. A first pass measured a bare 1920
+   and forgot the SCROLLBAR. With a ~15px classic scrollbar the layout viewport is 1905
+   and this host's content box is 1193px, NOT 1208. At 1193 a 92px track fits ELEVEN
+   columns, not twelve: 11*92 + 10*9 = 1102, stranding 91px on the right — a dead strip
+   almost a full tile wide. "5px slack, it still fills the width" described a viewport
+   nobody actually has, and the tiles never reached the right edge.
 
    Why 100px — it is the WIDEST track that still fits 11 columns in 1193 (101px drops
-   to 10). ★ 2026-07-15: one leg of this reasoning DIED and the conclusion survives
-   anyway. It used to add "which wraps the 11-tile FOUNDATIONAL row and orphans one";
-   FOUNDATIONAL is now 5 tiles, so no row-wrap argument rides on it. 100px is kept on
-   its OTHER two legs, which the re-group does not touch:
+   to 10). It rests on legs that regrouping the sections does not touch:
      · integer track -> integer positions -> the ring rasterises evenly on all 4 sides
      · CHOLECALCIFEROL measures 86.27px inside an 88px label box at a 92px tile: 1.73px
        of air TOTAL, under 1px a side, and the tightest label of all 88 by 6x. That is
-       the "too tight against the edges" Luneth flagged. At 100px it gets 9.73px, which
+       the "too tight against the edges" complaint. At 100px it gets 9.73px, which
        lands on PHYLLOQUINONE's 10.79px — the next-tightest label, i.e. the field's own
        normal rather than an invented target.
      · every section keeps the row shape it has at 92px
@@ -956,8 +938,8 @@ body { margin: 0; background: var(--ds-paper-deep); }
    same time without either statement corrupting the other: status owns the tile
    INTERIOR, goals own its EDGE.
 
-   ★ ONE GEOMETRY FOR BOTH (Luneth 2026-07-14: "the gradient borders should have the
-   same thickness and glow the single goal tiles do"). They diverged because single used
+   ★ ONE GEOMETRY FOR BOTH — a multi-goal gradient ring must read at the same thickness
+   and glow as a single-goal ring. They diverged because single used
    box-shadow (spread OUTSIDE the border-box) and multi used border-image (INSIDE it,
    since box-sizing:border-box) — same 2.5px, opposite sides of the edge, so they read as
    different weights and only one glowed. Now BOTH ride the same ::after ring; a single
@@ -991,8 +973,8 @@ body { margin: 0; background: var(--ds-paper-deep); }
   border-radius: 0 0 var(--ds-radius-xs) var(--ds-radius-xs);
 }
 /* ★ THE RING IS ITS OWN ELEMENT — it used to be ::after, and that was the bug.
-   `.tile.covered::after` is ALREADY the status TICK (a 14x3 accent bar,
-   workspace-coverage.css:765-782). An element has exactly ONE ::after, and the two rules
+   `.tile.covered::after` is ALREADY the status TICK (the 14x3 accent bar declared under
+   "NO ORANGE SLIT ON COVERED TILES" above). An element has exactly ONE ::after, and the two rules
    match at IDENTICAL specificity — .tile.covered::after and .tile[data-goals]::after are
    both (0,2,1) — so the cascade MERGED them per-property instead of one winning: the ring
    won `background` + `inset` (it is later in source), the tick won `width:14px` +
@@ -1004,16 +986,15 @@ body { margin: 0; background: var(--ds-paper-deep); }
      PHOSPHORUS (covered + 2 goals) ::after = 14x5,   goal gradient, opacity .9   <- collapsed
      COBALT     (gap + 1 goal)      ::after = 105x85, goal gradient, opacity 1    <- correct
      HYDROGEN   (covered, no goal)  ::after = 14x3,   accent, no mask             <- the tick
-   21 of the field's tiles were covered AND goal-mapped, so 21 rings were collapsed at once.
-   That is why the demo made this loud: the rail flips ~30 tiles to covered, and every one of
-   them that carried a goal lost its ring simultaneously.
+   Every tile that was covered AND goal-mapped lost its ring at once, so the defect only
+   became loud once a single action could flip dozens of tiles to covered together.
 
-   THE FIX IS THE DESIGN'S OWN RULE. The signed-off vision says: "goal membership on the tile
-   EDGE; status owns the tile INTERIOR — two channels, no collision." They were sharing one
-   channel. Giving the ring a real element restores BOTH: status keeps its tick everywhere,
-   goals keep their ring everywhere, at every status. Resetting the leaked properties on
-   ::after instead was rejected — it would have silently deleted the covered tick from exactly
-   the goal-mapped tiles, trading a visible bug for an invisible one. */
+   THE FIX IS THE DESIGN'S OWN RULE: "goal membership on the tile EDGE; status owns the
+   tile INTERIOR — two channels, no collision." They were sharing one channel. Giving the
+   ring a real element restores BOTH: status keeps its tick everywhere, goals keep their
+   ring everywhere, at every status. Resetting the leaked properties on ::after instead was
+   rejected — it would have silently deleted the covered tick from exactly the goal-mapped
+   tiles, trading a visible bug for an invisible one. */
 .tile > .tile__ring, .tile--vitamin > .tile__ring,
 .tile--amino > .tile__ring, .tile--fat > .tile__ring {
   position: absolute;
@@ -1027,15 +1008,13 @@ body { margin: 0; background: var(--ds-paper-deep); }
   pointer-events: none;
   z-index: 3;
 }
-/* The segmented variant is GONE — Luneth chose the gradient (2026-07-14). Keeping a dead
-   toggle would leave two answers on screen to a question he already settled. */
 
 
-/* ── THE X — Luneth asked where the space comes from. Answer: it is ALWAYS
-   there, just invisible. Reserving the slot means revealing it costs 0px of
-   layout shift, and hiding it until hover means 5 chips don't wear 5 permanent
-   X's. A confirm-delete MODE was considered and rejected: removing a goal is one
-   click to undo (+ ADD), so it is not destructive enough to earn a mode. */
+/* ── THE X — where does the space come from? It is ALWAYS there, just invisible.
+   Reserving the slot means revealing it costs 0px of layout shift, and hiding it until
+   hover means 5 chips don't wear 5 permanent X's. A confirm-delete MODE was considered and
+   rejected: removing a goal is one click to undo (+ ADD), so it is not destructive enough
+   to earn a mode. */
 .gchip__x { --uic-size: 20px; margin-right: -3px; opacity: 0; transition: opacity .14s; }
 .gchip:hover .gchip__x { opacity: 1; }
 
@@ -1045,7 +1024,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
    SAME gradient language as the plates, so "this product serves 3 of your goals" is
    said once, in one vocabulary, in two places.
    ★ HONESTY: "supplies N" is a count of what the PRODUCT contains, never "N of M" —
-   no denominator, so it cannot become the goal card we deleted. Price is WHOLESALE
+   no denominator, so it cannot slide back into being a score. Price is WHOLESALE
    (the featured price). */
 .recs { margin-bottom: var(--ds-space-5); }
 .recs__head { display: flex; align-items: baseline; gap: var(--ds-space-3); margin-bottom: var(--ds-space-4); }
@@ -1064,23 +1043,22 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .rec__meta { display: flex; align-items: baseline; gap: 9px; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .06em; color: var(--ds-ink-soft); }
 .rec__price { color: var(--ds-ink); font-weight: 700; }
 .rec__val { color: var(--ds-status-ok); font-weight: 700; }
-/* .rec__dots / .rec__dot DELETED 2026-07-16 with the goal dots they styled (see the WHY in
-   views/coverage.ts::buildRecs). The card's goal colour survives as the BORDER — `--recRing`
-   on `.rec` above — which is the channel Luneth kept. */
+/* The card's goal colour rides the BORDER — `--recRing` on `.rec` above — and nothing else.
+   There are deliberately no per-goal dots on a rec card; see views/coverage.ts::buildRecs. */
 .recs__note { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .05em; margin-top: 8px; line-height: 1.5; }
 
 
 
 
 /* ── FOUNDATION — the PLANT DERIVED block ─────────────────────────────────
-   Luneth's call: a THIRD state, not an absence. These 34 can never be "named for"
+   A THIRD state, not an absence. These 34 can never be "named for"
    a goal because Wallach never itemises them — he doses the BOTTLE (one ounce per
    100 lb/day), not the elements. So they render as always-required rather than as
    unrelated-to-you. That costs nothing and stops the field implying 34 essentials
    don't matter.
-   ★ 2026-07-15 — was "the PDM rare-earth block ... these 33". Both were wrong.
+   ★ THE GROUP IS 34, AND IT IS NOT THE "RARE EARTHS". Two corrections worth keeping:
    (a) 33 -> 34: STRONTIUM belongs here (trace_pdm, no individual amount); it used to
-       sit in the invented MAJOR TRACE tier.
+       sit in an invented MAJOR TRACE tier.
    (b) "rare-earth" is a MISNOMER for this group. Wallach tags ~15 of the 60 as rare
        earths in Immortality's A-Z; 19 of these 34 are NOT rare earths by his own
        tagging. The group is defined by having NO INDIVIDUAL DOSE — nothing else. */
@@ -1090,7 +1068,7 @@ body { margin: 0; background: var(--ds-paper-deep); }
 }
 
 /* ── BRAND NAME OVERFLOW — a long name PAINTS OUTSIDE THE RAIL without this.
-   Found 2026-07-15 by rendering an 18-char name, not by reading the CSS. Names with a
+   Found by rendering an 18-char name, not by reading the CSS. Names with a
    space ("Maximilian Alexand") wrap on their own; an unbroken one ("Wolfeschlegelstei")
    has NO break opportunity, so the glyphs run past the rail edge into the workspace.
    ★ THE MEASUREMENT LIED AND THE SCREENSHOT DID NOT: getBoundingClientRect().right
@@ -1139,10 +1117,9 @@ body { margin: 0; background: var(--ds-paper-deep); }
 
 
 /* ── WELCOME ──────────────────────────────────────────────────────────────
-   Luneth: unskippable, blurs the field behind it, takes a NAME + at least one goal
-   OR "just browsing". The escape hatch is what keeps this an invitation rather than
-   a wall — nobody is ever locked out, and the copy invites instead of interrogating
-   ("what are you here for?" was the actual complaint, all along). */
+   Unskippable, blurs the field behind it, takes a NAME + at least one goal OR
+   "just browsing". The escape hatch is what keeps this an invitation rather than a wall —
+   nobody is ever locked out, and the copy invites instead of interrogating. */
 .wc-veil { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; background: rgba(26,22,18,.30); backdrop-filter: blur(9px) saturate(.9); }
 .wc { position: relative; width: min(760px, 92vw); max-height: 90vh; overflow: auto; background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: 6px; box-shadow: 0 40px 90px -20px rgba(26,22,18,.5); padding: var(--ds-space-6) var(--ds-space-7); }
 .wc__x { position: absolute; top: var(--ds-space-5); right: var(--ds-space-5); }
@@ -1168,13 +1145,14 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .wc__go:disabled { opacity: .35; cursor: not-allowed; }
 
 
-/* ── THE DAILY-PROTOCOL RAIL (blueprint §6) ────────────────────────────────
+/* ── THE DAILY-PROTOCOL RAIL ───────────────────────────────────────────────
    Its job is unchanged: the CAUSATION behind every lit tile. What is NEW here is
    that it now carries the stack itself — rows, an inline dose, a 1-click remove —
    and ONE button. MANAGE + ADD ITEM both died: adding is 1-click from a
    recommendation card and removing is 1-click per row, so both were redundant as
    named, and "ADD ITEM" that navigates instead of adding is a label that lies.
-   Measured budget: 290px inner width, ~594px of list at 1440x900 => 8-10 rows. */
+   Measured budget: 290px inner width, ~570px of list at 1440x900 => 8-10 rows
+   (the ~570px follows from the `max-height: calc(100vh - 330px)` below). */
 .rail-panel__head { border-bottom: 1px solid var(--ds-rule-soft); padding-bottom: var(--ds-space-4); }
 .rail-panel__slot { color: var(--ds-ink); font-weight: 700; }
 
@@ -1188,13 +1166,13 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .rl-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 8px; padding: 9px 0; border-bottom: 1px solid var(--ds-rule-soft); }
 .rl-row:last-child { border-bottom: 0; }
 /* Names front-load identity and back-load packaging ("- 60 tablets", "[QTY: 60]"),
-   so truncating from the END is safe: 52 of 155 real names exceed 30 chars. */
+   so truncating from the END is safe: 71 of the 215 real product names exceed 30 chars. */
 .rl-row__name { grid-column: 1; min-width: 0; font-family: var(--ds-font-display); font-size: .78rem; font-weight: 700; color: var(--ds-ink); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .rl-row__x { grid-column: 2; grid-row: 1; align-self: start; background: none; border: 0; cursor: pointer; padding: 0 0 0 6px; font-size: .72rem; line-height: 1.3; color: var(--ds-ink-faint); transition: color .14s; }
 .rl-row__x:hover { color: var(--ds-status-warn); }
 .rl-row__foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; }
 
-/* The Eden-vs-your-own mark. Deliberately QUIET — Luneth: "not a strong one." */
+/* The Eden-vs-your-own mark. Deliberately QUIET — a provenance note, not a status signal. */
 .rl-src { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .08em; color: var(--ds-ink-faint); }
 .rl-src.is-own { color: var(--ds-tech); }
 
@@ -1214,16 +1192,17 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .rec:hover .rec__add { background: var(--ds-ink); border-color: var(--ds-ink); color: var(--ds-paper); }
 
 
-/* ── THE EXPLAINER IS A HOVER NOW (Luneth 2026-07-16). It used to be a permanent
-   four-line paragraph under the cards explaining the ranking score. It earned its space
-   once — the first time you read it — and then it was just weight, sitting under every
-   card forever. TWO-STAGE DISCLOSURE, his design:
+/* ── THE EXPLAINER IS A HOVER. It used to be a permanent four-line paragraph under the
+   cards explaining the ranking score. It earned its space once — the first time you read
+   it — and then it was just weight, sitting under every card forever. TWO-STAGE
+   DISCLOSURE:
      1. hover the CARD  -> the dotted underline appears, saying "there is more here"
      2. hover the TEXT  -> the explanation itself
-   The underline is deliberately NOT always-on: his call, and he is right — a permanent
-   dotted rule under every number is the same clutter in a thinner font.
-   Implemented with a following-sibling selector (`~`) rather than :has(), so it does not
-   rest on a selector the offline browser might not ship. */
+   The underline is deliberately NOT always-on — a permanent dotted rule under every number
+   is the same clutter in a thinner font.
+   Implemented with a following-sibling selector (`~`) rather than :has() — the simpler
+   selector is sufficient here. Note that this sheet does use :has() elsewhere (the covered
+   treatment toggle), so :has() availability is not the constraint; this is a preference. */
 .rec__meta { position: relative; }
 .rec__q { border-bottom: 1px dotted transparent; transition: border-color .14s; cursor: help; }
 .rec:hover .rec__q { border-bottom-color: var(--ds-ink-faint); }
@@ -1247,42 +1226,42 @@ body { margin: 0; background: var(--ds-paper-deep); }
    style cannot see occlusion. The probe now does an elementFromPoint hit-test as well. */
 .rec:hover { z-index: 41; }
 
-/* ★★ TRIED AND REVERTED 2026-07-16 — THE GOAL SLIT, and the rule it taught. Luneth wanted the
-   old orange slit back on covered tiles, re-purposed to show WHICH goals a covered nutrient
-   serves: 14px per goal, up to 5, centred, gradient when multi-colour. It was built, measured
-   (width = 14px x goals, real multi-colour blends, clean revert) and looked at — then he cut it:
-   "I'm being far too explicit with this and trying to do 'everything at once' which risks
-   'doing nothing because people just check out mentally due to all the noise'."
+/* ★★ THE GOAL SLIT WAS TRIED AND REJECTED, and the rule it taught. The idea was to
+   re-purpose the old orange slit on covered tiles to show WHICH goals a covered nutrient
+   serves: 14px per goal, up to 5, centred, gradient when multi-colour. It was built and
+   measured (width = 14px x goals, real multi-colour blends, clean revert) and then cut for
+   being too explicit — trying to say everything at once risks saying nothing, because the
+   reader checks out mentally in the noise.
 
-   ★ THE DURABLE RULE HE STATED, which outranks the experiment and should govern this whole
-   surface: **"the main thing people need to focus on is what they're NOT getting — that is much
-   more in-line with the goals of the app (to help people get healthier and fix deficiencies)."**
-   The field is not a scoreboard for wins. It is a map of gaps. Every pixel spent decorating a
-   COVERED tile is spent arguing against that, which is why the covered tile keeps getting
-   quieter with each pass — the orange slit went, the ring went, the glow went, and the goal
-   slit did not survive either. Goal↔essential membership stays exactly where he put it: a
-   DISCOVERABLE, revealed by hovering a goal (the opacity channel), not a permanent badge.
-   Do not re-add a standing mark to covered tiles without re-opening this with him first. */
+   ★ THE DURABLE RULE, which outranks the experiment and governs this whole surface:
+   **the main thing people need to focus on is what they are NOT getting.** That is what the
+   app is for — helping people find and fix deficiencies. The field is not a scoreboard for
+   wins; it is a map of gaps. Every pixel spent decorating a COVERED tile argues against
+   that, which is why the covered tile keeps getting quieter with each pass: the orange slit
+   went, the ring went, the glow went, and the goal slit did not survive either.
+   Goal↔essential membership stays a DISCOVERABLE, revealed by hovering a goal (the opacity
+   channel), never a permanent badge. Do not re-add a standing mark to covered tiles without
+   re-opening this decision explicitly. */
 
 
-/* ── COVERED TAKES NO RING (Luneth, 2026-07-16, after sitting with it): "it's just too busy
-   now and doesn't mesh well with the green style for covered. Let's remove that ring entirely
-   for covered nutrients (but they still highlight if you hover a goal)."
+/* ── COVERED TAKES NO RING. A gradient ring on a covered tile reads as busy against the
+   green plate, so covered nutrients lose the ring entirely — they still highlight when you
+   hover a goal.
 
-   It is the same instinct that killed the orange slit an hour earlier, and it is right: a
+   It is the same instinct that removed the orange slit: a
    covered plate ALREADY says covered three ways — green plate, green rim, green name strip —
    so wrapping it in a coloured gradient is a fourth voice arguing with the first three. The
    ring earns its keep on tiles that have nothing else to say.
 
-   ★ THE HIGHLIGHT SURVIVES UNTOUCHED, exactly as he asked, because goal-hover is a SEPARATE
+   ★ THE HIGHLIGHT SURVIVES UNTOUCHED, because goal-hover is a SEPARATE
    CHANNEL: it fades every non-member to opacity .22 (`.focusing .tile:not(.is-focus)`), it
    does not paint members. So a covered tile still stands out when you hover its goal — it is
    the rest of the field that recedes. Nothing in this rule touches that.
 
-   ★ WHY CSS AND NOT JS: status changes (add/remove a product) run through paintStatus, which
-   does NOT re-run paintField — so a JS guard would leave a stale ring on a tile that just
-   turned covered. A declarative rule cannot go stale: the moment `.covered` lands, the ring
-   is gone, whichever paint put it there. */
+   ★ WHY CSS AND NOT JS: a JS guard has to be re-run by whatever repaints the field, and it
+   will eventually be reached by a repaint path that does not re-run it — leaving a stale
+   ring on a tile that just turned covered. A declarative rule cannot go stale: the moment
+   `.covered` lands, the ring is gone, whichever paint put it there. */
 .tile.covered > .tile__ring, .tile--vitamin.covered > .tile__ring,
 .tile--amino.covered > .tile__ring, .tile--fat.covered > .tile__ring { display: none; }
 

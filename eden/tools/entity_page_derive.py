@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""eden/tools/entity_page_derive.py — the per-entity page view-model (Phase H0 + H1).
+"""eden/tools/entity_page_derive.py — the per-entity page view-model.
 
 Projects the pillars into ONE lean per-entity record per essential + condition so the
-redesigned entity view (H2) reads a pure projection, never a hand-built map. LEAN by
+redesigned entity view reads a pure projection, never a hand-built map. LEAN by
 design: each record carries claim IDs + derived extras (co-occurrence related, per-
 condition protocol claims, a derived one-liner, the pill relations), NOT claim text —
 the text / verbatim / citation resolve at render from corpus-embed.json + search-index.json
@@ -10,10 +10,10 @@ the text / verbatim / citation resolve at render from corpus-embed.json + search
 and best-sources ranking (recommender) stay where they already live; this artifact does
 not duplicate them.
 
-H1 (derivation correctness, migration blueprint §4 H1 + §1.2) — LANDED here:
+DERIVATION CORRECTNESS — the three rules this file enforces:
   * works_with (essential pages) = genuine interaction partners (essentials sharing a
-    kind='interaction' claim), NOT the raw co-occurrence set (killing the "interacts with
-    41" inflation + the phantom pills).
+    kind='interaction' claim), NOT the raw co-occurrence set — co-occurrence inflates the
+    partner list into the dozens and renders pills for pairs that share no interaction claim.
   * conditions (essential pages) / restore (condition pages) = the DIRECTED nutrient<->
     condition relation `maps(E,C)`, which fixes the essentials[]-union leak: a pill appears
     only when the essential genuinely maps to THIS entity, never via the flatten across a
@@ -45,10 +45,10 @@ ARTIFACT_PATH = ROOT / "dashboard" / "assets" / "data" / "entity-page-data.json"
 sys.path.insert(0, str(ROOT / "tools"))
 import safe_write  # noqa: E402
 
-# Display-ordering heuristics — mirror the TS consts (knowledge-corpus.ts CORPUS_KIND_PRIORITY,
-# core/schemas/search.ts SEARCH_FACETS + FACET_ORDER_BY_TYPE). These are display ORDER, not
-# canonical data; centralized with the entity view when it lands (H2). Any kind/facet not
-# listed sorts after, alphabetically, so a new kind never silently vanishes.
+# Display-ordering heuristics. The FACET orders mirror core/schemas/search.ts (SEARCH_FACETS and
+# FACET_ORDER_BY_TYPE); KIND_PRIORITY has no TS counterpart and lives only here. These are display
+# ORDER, not canonical data. Any kind/facet not listed sorts after, alphabetically, so a new kind
+# never silently vanishes.
 KIND_PRIORITY = ["dose", "deficiency_sign", "toxicity_sign", "protocol", "mechanism", "prognosis"]
 # MIRRORS core/schemas/search.ts SEARCH_FACETS (the default display order). Same-family facets
 # are kept ADJACENT so the coloured sections do not interleave — see that file's comment.
@@ -57,19 +57,19 @@ FACET_DEFAULT = ["basics", "warning", "physiology", "mechanism", "sources",
                  "history", "biography"]
 FACET_CONDITION = ["stance", "mechanism", "protocol", "warning", "physiology", "basics",
                    "sources", "uses", "history", "big_question", "biography", "discovery", "etymology"]
-# The plant-derived GROUP section's OWN facet display order (Luneth 2026-07-22): FACET_DEFAULT's
-# order, minus the folded-away "protocol" bucket. USES keeps its FACET_DEFAULT slot; only the dose
-# card leads WITHIN uses. Distinct const from FACET_DEFAULT so the group section's order CAN diverge
-# from "Worth knowing" — it currently does not, because it had the same colour-interleaving defect
-# (2026-07-23) and takes the same option-B clustering: families contiguous, Cautions kept at #2.
+# The plant-derived GROUP section's OWN facet display order: FACET_DEFAULT's order, minus the
+# folded-away "protocol" bucket. USES keeps its FACET_DEFAULT slot; only the dose card leads WITHIN
+# uses. Distinct const from FACET_DEFAULT so the group section's order CAN diverge from "Worth
+# knowing" — it currently does not, because it needs the same clustering to avoid colour
+# interleaving: same-family facets contiguous, Cautions kept at position 2.
 GROUP_FACET_ORDER = ["basics", "warning", "physiology", "mechanism", "sources", "uses",
                      "stance", "big_question", "discovery", "etymology", "history", "biography"]
 RELATED_MAX = 8
 
-# ── H1 pill derivation — the directed nutrient<->condition relation ──
+# ── Pill derivation — the directed nutrient<->condition relation ──
 # A "restore" pill (condition page) / "need help with a condition?" pill (essential page)
 # appears ONLY when the essential genuinely maps to the entity. Never the essentials[]-union
-# flatten across a multi-condition claim (the Audit-B leak).
+# flatten across a multi-condition claim, which pairs every essential with every condition.
 PILL_DIRECTED_KINDS = frozenset({"protocol", "dose"})           # a directed prescription — always maps
 PILL_ASSOC_KINDS = frozenset({"deficiency_sign", "prognosis"})  # focused nutrient<->condition tie — unless shotgun
 SHOTGUN_ESS = 3   # a claim with >= SHOTGUN_ESS essentials AND >= SHOTGUN_COND conditions is a
@@ -93,9 +93,8 @@ def _record_minus_enriched(groups: list, enriched: set) -> list:
 
     A claim that is BOTH operationally mapped and enriched used to render TWICE on one page --
     once as a raw corpus card in the record, once as the enriched Q&A card above it. Showing the
-    unenriched duplicate when an enriched one exists is noise (Luneth 2026-08-05), and it also made
-    the header's claim tally (distinct) disagree with the rows a reader can actually count:
-    vitamin D published 28 over 36 rendered rows.
+    unenriched duplicate when an enriched one exists is noise, and it also made the header's
+    claim tally (distinct) disagree with the rows a reader can actually count.
 
     Kind groups that empty out are dropped entirely. An entity whose every mapped claim is enriched
     ends with NO record section -- renderRecord already returns '' for an empty record, so the
@@ -181,7 +180,7 @@ def build_data() -> dict:
         items.sort(key=lambda t: (-t[1], t[0]))     # count desc, slug asc — deterministic
         return [o for o, _ in items[:RELATED_MAX]]
 
-    # ── H1: the DIRECTED nutrient<->condition relation `maps(E,C)` (the essentials[]-union fix) ──
+    # ── The DIRECTED nutrient<->condition relation `maps(E,C)` (the essentials[]-union fix) ──
     def _is_shotgun(c):
         return (len(c.get("essentials", [])) >= SHOTGUN_ESS
                 and len(c.get("conditions", [])) >= SHOTGUN_COND)
@@ -205,7 +204,7 @@ def build_data() -> dict:
                 ess_conditions.setdefault(e, set()).add(s)
                 cond_essentials.setdefault(s, set()).add(e)
 
-    # ── H1: "works with" (essential pages) = genuine interaction partners, NOT co-occurrence ──
+    # ── "works with" (essential pages) = genuine interaction partners, NOT co-occurrence ──
     works_with: dict = {}
     for c in claims.values():
         if c.get("kind") == "interaction":
@@ -230,11 +229,10 @@ def build_data() -> dict:
         return [{"kind": k, "claim_ids": by_kind[k]} for k in _ordered(by_kind, KIND_PRIORITY)]
 
     def protocol_claim_ids(slug):
-        """protocol + non-table dose claims mapping this condition (protocol first) — the real
-        per-condition protocol summary source (replaces the generic boilerplate). PROMINENCE
-        rule (H1): a base-line-program / dose-table reference row is NOT a curated
-        recommendation, so it never auto-fills this curated primary slot (the fluoride-under-
-        'what to do' defect)."""
+        """protocol + non-table dose claims mapping this condition (protocol first) — the
+        per-condition protocol summary source. PROMINENCE rule: a base-line-program /
+        dose-table reference row is NOT a curated recommendation, so it never auto-fills this
+        curated primary slot — otherwise a table row lands under "what to do"."""
         out = [cid for cid, c in claims.items()
                if slug in c.get("conditions", []) and c.get("kind") == "protocol"]
         out += [cid for cid, c in claims.items()
@@ -243,23 +241,26 @@ def build_data() -> dict:
         return out
 
     # ── GROUP-CLAIM PROPAGATION for the plant-derived (trace_pdm) essentials ──
-    # A claim authored `about: [colloidal-minerals]` names its SUBJECT explicitly (R3 · authored,
-    # not inferred from a fragile regex over the verbatim — the metallic trap makes word-matching
-    # unsafe here: Wallach uses the same "colloidal minerals" string for both his recommendation
-    # and his rock-flour counter-example). Every such claim propagates onto every trace_pdm element
-    # page as a SHARED group record, stored once (never copied 34x) and rendered in a distinct
+    # A claim authored `about: [colloidal-minerals]` names its SUBJECT explicitly — authored, not
+    # inferred by word-matching the verbatim, which cannot distinguish Wallach's recommendation of
+    # "colloidal minerals" from his rock-flour counter-example using the same words. (The goal
+    # strip in coverage_layout_derive.py reads the verbatim instead, because it must reject the
+    # `other_substances` tag, which over-includes single-element claims; `about` did not exist when
+    # that rule was written and is the stronger signal wherever it is present.) Every such claim
+    # propagates onto every trace_pdm element page as a SHARED group record, stored once (never
+    # copied per element) and rendered in a distinct
     # section so a user does not read it as strontium-specific content. The Colloidal Minerals
     # topic page (Explore) is a separate home fed by search-enrichment.json — not this artifact.
-    # Grouped by ENRICHMENT FACET, not claim KIND (Luneth 2026-07-22): kind-grouping collapsed
-    # 22 of 32 group cards into two adjacent teal blocks (definition + mechanism = the "wall of
-    # blue") and stranded "Which peoples live to 120-140" under DEFINITION though its facet is
-    # "history". The facet taxonomy (the same buckets the search "Worth knowing" section uses)
-    # spreads the cards across ~11 varied categories and gives HISTORY & LORE its own home. An
+    # Grouped by ENRICHMENT FACET, not claim KIND: kind-grouping collapsed most group cards into
+    # two adjacent same-colour blocks (definition + mechanism) and stranded story content such as
+    # "Which peoples live to 120-140" under DEFINITION though its facet is "history". The facet
+    # taxonomy (the same buckets the search "Worth knowing" section uses) spreads the cards across
+    # roughly ten varied categories and gives HISTORY & LORE its own home. An
     # un-enriched group claim (no search card, hence no facet) falls to a trailing "other" bucket
     # so a future addition never silently vanishes.
     #
-    # Two curation calls (Luneth 2026-07-22): the lone "protocol" (WHAT TO DO) card folds into
-    # "uses" as its FIRST entry (the dose leads the practical bucket — no one-card category); and
+    # Two curation rules: the lone "protocol" (WHAT TO DO) card folds into "uses" as its FIRST
+    # entry (the dose leads the practical bucket — no one-card category); and
     # bucket order follows GROUP_FACET_ORDER (FACET_DEFAULT minus the folded protocol, history
     # directly above biography). The view renders in this order without re-sorting, so it lives HERE.
     facet_by_id = {sc["id"]: sc["facet"] for sc in si_claims}
@@ -296,12 +297,11 @@ def build_data() -> dict:
         si_ent = si_entities.get(slug, {})
         search_secs = search_sections(slug, "essential")
         # distinct_claim_count = the TILE/HERO count: how many distinct claims a reader actually sees
-        # on the element-SPECIFIC surfaces = The Full Record UNION Worth Knowing. Since 2026-08-05
-        # the record EXCLUDES anything already enriched, so the two sets are DISJOINT by construction
-        # and this number now equals the rows a reader can count -- it used to publish 28 over 36
-        # rendered rows on vitamin D. It DELIBERATELY excludes group_record -- the ~33 plant-derived
-        # claims are SHARED across all 34 trace_pdm elements and rendered under "shared across the
-        # 34", so counting them would make every rare-earth tile read ~identical (Luneth 2026-07-30).
+        # on the element-SPECIFIC surfaces = The Full Record UNION Worth Knowing. The record
+        # EXCLUDES anything already enriched, so the two sets are DISJOINT by construction and this
+        # number equals the rows a reader can count. It DELIBERATELY excludes group_record -- those
+        # plant-derived claims are SHARED across every trace_pdm element and rendered in their own
+        # section, so counting them would make every rare-earth tile read ~identical.
         # claim_count stays the OPERATIONAL total (every essentials-mapped claim, enriched or not);
         # record_claim_count is what labels "The full record - All N claims".
         rec_ids = {cid for ids in cbk.values() for cid in ids}
@@ -322,8 +322,8 @@ def build_data() -> dict:
             "record": record_secs,
             "record_claim_count": sum(len(g["claim_ids"]) for g in record_secs),
             "search": search_secs,
-            "conditions": sorted(ess_conditions.get(slug, set())),   # directed pills (H1)
-            "works_with": sorted(works_with.get(slug, set())),       # interaction partners (H1)
+            "conditions": sorted(ess_conditions.get(slug, set())),   # directed pills
+            "works_with": sorted(works_with.get(slug, set())),       # interaction partners
             "related": related(slug),                                # co-occurrence (keep-exploring)
         }
         # Group claims render ONLY on plant-derived (trace_pdm) tiles; every other essential omits
@@ -348,7 +348,7 @@ def build_data() -> dict:
             "books": ccorp.get("books_cited", []),
             "synonyms": si_ent.get("synonyms", []),
             "protocol_claim_ids": protocol_claim_ids(slug),
-            "restore": sorted(cond_essentials.get(slug, set())),     # directed pills (H1)
+            "restore": sorted(cond_essentials.get(slug, set())),     # directed pills
             "record": crecord,
             "record_claim_count": sum(len(g["claim_ids"]) for g in crecord),
             "search": csearch,
@@ -373,7 +373,7 @@ def build_data() -> dict:
 
 
 def write_data() -> int:
-    """Regenerate the on-disk artifact via safe_write (§17). Returns byte count."""
+    """Regenerate the on-disk artifact via safe_write. Returns byte count."""
     ARTIFACT_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = json.dumps(build_data(), ensure_ascii=False, indent=2)
     return safe_write.safe_rewrite(str(ARTIFACT_PATH), payload)

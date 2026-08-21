@@ -2,18 +2,17 @@
  * state/log.ts — Creator's Log chokepoint
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * The §00-mandated audit trail. Round-close ritual writes one entry here
- * via `log()`. Profile panel reads via `getEntries()`.
+ * The audit trail, read-only in the app. Round-close entries are written by the CLI
+ * to chronicle/creators-log/log.jsonl and reach the app through the build-time embed;
+ * `log()` below is the in-app writer and currently has no caller. The profile panel
+ * reads via `getEntries()`.
  *
  * Discipline:
  *   - Every write goes through `log()` — the single chokepoint.
- *   - Every write fires `log:entry-added` so the profile panel can re-render.
+ *   - Every write fires `log:entry-added` so any subscriber can re-render.
  *   - Every read goes through the Zod boundary (`getValidated`).
  *   - Auto-prune: cap at LOG_RETENTION entries (FIFO). Older entries fall off
  *     when the cap is exceeded so this LS key never grows unboundedly.
- *
- * §00 prime-directive note: this log IS the discipline audit trail. If the
- * cadence of round-close entries drops, that's a §00 violation signal.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
@@ -36,10 +35,6 @@ export const LOG_RETENTION = 2000;
 
 // ─── Read API — Zod-validated boundary ────────────────────────────────────
 
-/**
- * All entries, newest first. Bad LS data → empty array (never enters
- * typed-land unvalidated).
- */
 /**
  * The build-time embed of the canonical file ledger
  * (chronicle/creators-log/log.jsonl) — the CLI-fired entries (round closes,
@@ -101,9 +96,9 @@ export interface LogInput {
 }
 
 /**
- * Append a Creator's Log entry. Auto-stamps id + ts. Emits
- * `log:entry-added` for the profile panel to re-render. Auto-prunes to
- * LOG_RETENTION entries.
+ * Append a Creator's Log entry. Auto-stamps id + ts. Emits `log:entry-added` so any
+ * subscriber can re-render — nothing subscribes today; it is an extension point.
+ * Auto-prunes to LOG_RETENTION entries.
  *
  * This is the ONLY sanctioned writer to wallachCreatorsLog_v1.
  */

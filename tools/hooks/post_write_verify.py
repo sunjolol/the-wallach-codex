@@ -4,11 +4,10 @@ post_write_verify.py — PostToolUse hook for Bash.
 
 Independent corruption re-scan of every project file written via safe_write.
 safe_write already does atomic-rename + readback + UTF-8/null verification AT
-write time; this hook re-reads the file a moment LATER to catch the §17
-incident-#5 class: corruption that appears AFTER a verified write with no
-identified trigger (filesystem indexer, sync daemon, the Win<->Linux mount
-layer). Detection is this hook's job; the git anchor (v0.0.0-pre-cleanup) is the
-recovery.
+write time; this hook re-reads the file a moment LATER to catch the class of
+corruption that appears AFTER a verified write with no identified trigger
+(filesystem indexer, sync daemon, the Windows<->POSIX mount layer). Detection is
+this hook's job; git history is the recovery.
 
 Why Bash (not Edit|Write|MultiEdit): pre_write_guard BLOCKS those tools from
 touching repo files, so every real repo write is a `python tools/safe_write.py`
@@ -17,14 +16,14 @@ lines out of the command's stdout and scans exactly those paths.
 
 Per-file checks (open 'rb'):
   - no NUL byte (b"\\x00")        — the mass-corruption signature
-  - decodes as UTF-8 round-trip  — caught incident #4 (mid-char cut at byte 2638)
+  - decodes as UTF-8 round-trip  — catches a write cut mid-multibyte-character
   - non-empty                    — caught truncation-to-zero
   - .html only: the standalone-page SCROLL UNLOCK is present (see below)
 
 Contract: stdin JSON {tool_name:"Bash", tool_input:{command}, tool_response:…}.
-exit 2 = surface the corruption to the agent (with a git-checkout recovery hint).
+exit 2 = surface the corruption to the caller (with a git-checkout recovery hint).
 exit 0 = clean / not-applicable. Fail-open on any internal error — a hook bug
-must never brick the session; defense-in-depth lives in safe_write + the anchor.
+must never brick the session; defense in depth lives in safe_write and git history.
 """
 import json
 import re
@@ -34,8 +33,8 @@ from pathlib import Path
 REPO_ROOT = Path(__file__).resolve().parents[2]
 # safe_write prints e.g. "OK   chronicle/build-log.md — appended (52211 B on disk)".
 # The (?!\[) guard skips invariants.py lines ("OK   [critical] name: … — …") that
-# share the em-dash shape but are NOT safe_write paths (else they parse as a bogus
-# path that then "vanished" — a false PostToolUse block, SESSION 37).
+# share the em-dash shape but are NOT safe_write paths — without it they parse as a
+# bogus path that then "vanished", producing a false PostToolUse block.
 OK_LINE = re.compile(r"^OK\s+(?!\[)(\S.*?)\s+—", re.MULTILINE)
 
 # ── standalone-page scroll lock ────────────────────────────────────────────
@@ -43,10 +42,10 @@ OK_LINE = re.compile(r"^OK\s+(?!\[)(\S.*?)\s+—", re.MULTILINE)
 #     html, body { height: 100%; overflow: hidden; }
 # — correct for the fixed app shell, where the drawers scroll internally. ANY
 # standalone page (a temporary/ demo, a mockup) that links an app stylesheet
-# inherits it and is LOCKED to the first viewport: Luneth opens it and cannot
+# inherits it and is LOCKED to the first viewport: the reader opens it and cannot
 # reach anything below the fold.
 #
-# This has shipped to him SIX times. It kept passing headless verification because
+# This has shipped repeatedly. It kept passing headless verification because
 # element.screenshot() and fullPage:true both capture the full element REGARDLESS of
 # root overflow — the instrument shared the blind spot with the defect. Writing
 # `overflow-x: hidden` does not undo it either; overflow-y stays hidden.
@@ -75,7 +74,7 @@ def _scroll_lock_defect(rel_path, data):
     return (
         f"{rel_path}: links the app stylesheets but declares no scroll unlock. "
         "dashboard.css:25 and workspace-coverage.css:79 both set "
-        "`html, body {{ height:100%; overflow:hidden }}`, so this page is LOCKED to "
+        "`html, body { height:100%; overflow:hidden }`, so this page is LOCKED to "
         "the first viewport."
     )
 

@@ -1,5 +1,5 @@
 /**
- * core/nutrient-resolver.test.ts — the TS half of the A2 parity proof.
+ * core/nutrient-resolver.test.ts — the TypeScript half of the resolver parity proof.
  *
  * The nutrient_resolver_parity invariant proves the resolver ARTIFACT + the committed fixture
  * both equal the Python nutrient_resolve.resolve(). THIS test proves the TS resolveSlug() reads
@@ -25,7 +25,7 @@ describe('nutrient-resolver: TS resolveSlug ≡ Python resolve() (via the shared
     expect(fixture.length).toBeGreaterThan(1000);
   });
 
-  it('locks the headline resolutions A2 relies on', () => {
+  it('locks the headline resolutions Coverage relies on', () => {
     expect(resolveSlug('Thiamin')).toBe('vitamin-b1'); // used to drop under the old matcher
     // Parenthetical label forms (base-foundation regimen + OCR scans) must also resolve.
     expect(resolveSlug('Vitamin B1 (Thiamine)')).toBe('vitamin-b1');

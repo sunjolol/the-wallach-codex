@@ -1,6 +1,6 @@
 {
   "book": "dddl-3e-2011",
-  "_doc": "Source-purification spec for Dead Doctors Don't Lie (3rd ed, 2011). Built SESSION 42. Policy [[correct-everything-uniformly]] + [[book-source-purification-campaign]]: fix all OCR/typos uniformly, strip running headers/footers, keep book hyphenation + title/TOC. Scientific-name and semantic calls are in 'flags' for Luneth's audit.",
+  "_doc": "Source-purification spec for Dead Doctors Don't Lie (3rd ed, 2011). Policy: fix all OCR/typos uniformly, strip running headers/footers, keep book hyphenation + title/TOC. Scientific-name and semantic calls are in 'flags' for human audit.",
   "replacements": [
     {
       "find": "botde",
@@ -749,7 +749,7 @@
       "find": "Zumba",
       "repl": "Zumbani",
       "expect": 4,
-      "why": "mangled testosterone herb (Lippia javanica); Luneth LETS precedent"
+      "why": "mangled testosterone herb (Lippia javanica); follows the LETS precedent"
     },
     {
       "find": "diverticulae",
@@ -1091,7 +1091,7 @@
       "find": "Bio-\norganic",
       "repl": "Bioorganic",
       "expect": 1,
-      "why": "reflow -> 'Bioorganic' (Luneth-ruled)"
+      "why": "reflow -> 'Bioorganic' (human-ruled)"
     },
     {
       "find": "Landouzy-\nDejerine",
@@ -1115,7 +1115,7 @@
       "find": "age-\nbeaters",
       "repl": "Age Beaters",
       "expect": 1,
-      "why": "reflow -> 'Age Beaters' (Luneth-ruled)"
+      "why": "reflow -> 'Age Beaters' (human-ruled)"
     },
     {
       "find": "all-\nknowing",
@@ -1151,13 +1151,13 @@
       "find": "bionic-\nparts",
       "repl": "bionic parts",
       "expect": 1,
-      "why": "reflow -> 'bionic parts' (Luneth-ruled)"
+      "why": "reflow -> 'bionic parts' (human-ruled)"
     },
     {
       "find": "buy-\nout",
       "repl": "buyout",
       "expect": 1,
-      "why": "reflow -> 'buyout' (Luneth-ruled)"
+      "why": "reflow -> 'buyout' (human-ruled)"
     },
     {
       "find": "co-\nauthor",
@@ -1223,7 +1223,7 @@
       "find": "mid-\nway",
       "repl": "midway",
       "expect": 1,
-      "why": "reflow -> 'midway' (Luneth-ruled)"
+      "why": "reflow -> 'midway' (human-ruled)"
     },
     {
       "find": "milk-\ncontaining",
@@ -1265,7 +1265,7 @@
       "find": "puss-\nfilled",
       "repl": "pus-filled",
       "expect": 1,
-      "why": "reflow -> 'pus-filled' (Luneth-ruled)"
+      "why": "reflow -> 'pus-filled' (human-ruled)"
     },
     {
       "find": "quick-\nfrozen",
@@ -1360,7 +1360,7 @@
     "Convallaria epithet magalis/megalis/mejalis -> majalis (lily-of-the-valley)",
     "Digitalis purpura->purpurea (foxglove; book also spells purpurea correctly elsewhere)",
     "Hellebores niger->Helleborus niger",
-    "Zumba->Zumbani x4 (testosterone-herb combos; your SESSION-35 LETS ruling)",
+    "Zumba->Zumbani x4 (testosterone-herb combos; follows the LETS ruling)",
     "diverticulae->diverticula (medical plural)",
     "quincies->quinsies (peritonsillar abscess plural)",
     "cyanocobabalamine->cyanocobalamin (OCR)",
@@ -1375,7 +1375,7 @@
     "Bare numbers KEPT (possible table/ad content, not page numbers): '1982' (disease-incidence table L8656), '21' (back-matter ad L14663).",
     "UNVERIFIABLE, left faithful + flagged (no clean DDDL scan exists — EPUB-PDF carries the same garble; dose/value-safety = do NOT guess): '3-g percent' hemoglobin range from Lanzkowsky 1959 ('ranged from 3-g percent to 10.9 percent, mean 7.89±2.64' — could be 3.0/3.6/'3 g'). Baselined pending your ruling or the original paper.",
     "KEPT as printed (proper noun / notation): 'KiahSien' (Chinese place, Li Ching-Yuen); 'IFN(y)' (interferon-gamma notation).",
-    "BULLET MARKERS FIXED (Luneth-ruled •): 68 deficiency-symptom-list bullets OCR'd as '( ' (x55) / '< ' (x12) / wrapped (x1) -> '• '; the 2 real non-bullet cases ('( chenopodiaceae', 'doctors )') trimmed as parens. The '< 0.1 ppm' comparison left intact.",
-    "48 hyphen-wraps REFLOWED (Luneth-ruled SESSION 42, no-defer): joined word-\\nword; kept the hyphen for real compounds (life-threatening, beta-carotene, criss-cross); overrides = midway/Bioorganic/buyout/'bionic parts'/'Age Beaters'; caught the puss->pus typo (x4)."
+    "BULLET MARKERS FIXED (ruled: •): 68 deficiency-symptom-list bullets OCR'd as '( ' (x55) / '< ' (x12) / wrapped (x1) -> '• '; the 2 real non-bullet cases ('( chenopodiaceae', 'doctors )') trimmed as parens. The '< 0.1 ppm' comparison left intact.",
+    "48 hyphen-wraps REFLOWED (human-ruled, no-defer): joined word-\\nword; kept the hyphen for real compounds (life-threatening, beta-carotene, criss-cross); overrides = midway/Bioorganic/buyout/'bionic parts'/'Age Beaters'; caught the puss->pus typo (x4)."
   ]
 }

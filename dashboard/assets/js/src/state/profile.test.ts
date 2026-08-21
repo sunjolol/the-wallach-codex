@@ -2,9 +2,8 @@
  * state/profile.test.ts -- the name field is the app's ONLY free-text input
  * ===========================================================================
  *
- * Luneth, 2026-07-15: "Protect the name input from code/script/hack attempts, ANY
- * sort of input makes me extremely cautious because I know this is one of the main
- * main ways hacks happen."
+ * The name field is the only place a user types free text into this app, so it gets
+ * real scrutiny -- but in the right layer.
  *
  * These tests pin the HONEST threat model, in both directions -- what is defended
  * AND what is defended by something else. A security test that only shows green on
@@ -100,7 +99,7 @@ describe('validateUserName -- what it rejects, with a REASON', () => {
     expect(validateUserName('a\u2066b').ok).toBe(false);
   });
 
-  it('always gives a reason -- never a silent drop (doctrine #1, #8)', () => {
+  it('always gives a reason -- never a silent drop', () => {
     for (const bad of ['', 'x'.repeat(999), 'a\u0007b']) {
       const r = validateUserName(bad);
       expect(r.ok).toBe(false);
@@ -125,7 +124,7 @@ describe('UserProfileSchema -- the persisted shape', () => {
   it('REJECTS a stored profile whose name is corrupt -- the read boundary', () => {
     // A hand-edited or corrupted LS value must not enter typed-land. loadUserProfile
     // returns null here and the user is asked once more: degrading to the ask is
-    // safe, degrading to a half-parsed profile is not (#7 graceful degradation).
+    // safe, degrading to a half-parsed profile is not (graceful degradation).
     const p = { name: 'x'.repeat(500), browsing: false, chosenAt: '2026-07-15' };
     expect(UserProfileSchema.safeParse(p).success).toBe(false);
   });

@@ -1,22 +1,22 @@
 #!/usr/bin/env python3
 """products_composition_derive.py -- derive the product COMPOSITION rollup from the sealed
-Products pillar via the nutrient registry (Phase F chunk 2, 2026-07-08).
+Products pillar via the nutrient registry.
 
 Two authoritative rollups the registry enables, both DERIVED (never hand-edited):
   - essentials: per essential (of the 91), which products deliver it + how much, summed per
     product and converted to the essential's canonical unit (nutrient_resolve.to_canonical).
     Powers cost-per-nutrient ("cheapest product for my selenium goal") +, later, the Coverage
     delivery when the runtime matcher is unified onto the registry (it will read THIS -- so the
-    pillar's resolution has ONE authoritative home; that is the deferred blueprint-B groundwork).
+    pillar's resolution has ONE authoritative home).
   - botanicals: the canonical botanical/active search vocabulary (canonicalize + slug_of),
     each -> the products that contain it. Powers blend/ingredient search.
 
 Nutrient panel rows AND blend ingredients are distinct label entries -> both summed (additive).
 Sub-ingredients (actives named inside a blend ingredient) are currently all botanicals, so they
-never double-count an essential; they are included for completeness (memory: typical-values-are-usable).
+never double-count an essential; they are included for completeness.
 
-DETERMINISTIC (R1): no timestamp; every list sorted; amounts rounded (4dp). Composition only
-(SS00.A): an `amount` is what a product CONTAINS, never a Wallach target.
+DETERMINISTIC: no timestamp; every list sorted; amounts rounded (4dp). Composition only
+(§00.A): an `amount` is what a product CONTAINS, never a Wallach target.
 
 Contract (eden/derived/MANIFEST.json): build_data() -> object (pure; the derived_artifacts_fresh
 gate compares json.loads(disk) == build_data()); write_data() -> regenerates via safe_write.
@@ -75,7 +75,7 @@ def build_data() -> dict:
             continue
         # best source first: amount DESC, product_id ASC as the deterministic tiebreak. This is
         # the RAW highest-first view; the intelligent match-score recommender (saturating adequacy
-        # + breadth + banded cost) is a Phase-G feature -- see memory cost-per-nutrient-match-score.
+        # + breadth + banded cost) is a separate ranking feature, not this rollup.
         products = sorted(
             ({"product_id": pid, "amount": round(v["amount"], 4), "rows": v["rows"]}
              for pid, v in ess[slug].items()),

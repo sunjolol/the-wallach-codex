@@ -1,11 +1,12 @@
 /**
- * state/entity-copy.ts — read boundary for the per-entity APPROVED-copy store (Phase H2)
+ * state/entity-copy.ts — read boundary for the per-entity APPROVED-copy store
  * ═══════════════════════════════════════════════════════════════════════════
  *
  * Surfaces dashboard/assets/data/entity-copy.json (hand-authored, user-approved) to the
- * entity page: the lede + short "why this number" text per entity. Inlined at build via
- * esbuild JSON import, validated ONCE through the Zod boundary; a bad/absent store reads
- * as empty so every accessor returns '' and the page renders no lede/why (never a guess).
+ * entity pages: the lede + short "why this number" text per essential/condition, plus the
+ * hero lede per explore-topic entity. Inlined at build via esbuild JSON import, validated
+ * ONCE through the Zod boundary; a bad/absent store reads as empty so every accessor
+ * returns '' and the page renders no lede/why (never a guess).
  *
  * Pure reads. This is approved editorial copy about the corpus, not a Wallach number, so
  * it carries no §00.A obligation — but each string is written + approved to be faithful.

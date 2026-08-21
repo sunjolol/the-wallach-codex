@@ -1,13 +1,12 @@
 /**
- * state/scanner.ts — scan history + native OCR/verdict pipeline
+ * state/scanner.ts — scan history + the label scoring engine
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Owns the Scanner surface's state: the scan-history FIFO + the native scoring
- * engine (Chunk 6b). The OCR → parse → verdict pipeline used to live in
- * the pre-TS inline dashboard (window.lcScan), but the page no longer loads it, so
- * the math lives here now — a faithful port. Every NUMBER + every doctrine
- * string still comes from Luneth's corpus (scanner-corpus-data.json, migrated
- * verbatim) and the Wallach targets DB; §00.A holds, nothing is invented.
+ * Owns the Scanner surface's state: the scan-history FIFO, the durable Saved
+ * shelf, and the engine that turns a parsed label into a verdict. Every NUMBER
+ * and every doctrine string comes from the sealed corpus
+ * (scanner-corpus-data.json) and the Wallach targets DB; §00.A holds, nothing
+ * here invents an amount.
  *
  * Pipeline (scan):
  *   alignmentScore (form-alignment tally) · gapFillFor (per-nutrient gap-fill %
@@ -16,33 +15,35 @@
  *   nutrient goal inclusion) · antiFlags (anti-list with gluten/oat/high-oleic
  *   nuance) · decideVerdict (ADD/SAVE/REJECT ladder).
  *
- * gapFill's "current" = the assumed dietary baseline (corpus.dietaryBaseline,
- * verbatim) + the live regimen delivery from state/coverage.currentDelivery() —
- * i.e. legacy getEffectiveCoverage with the dead window.computeLiveCoverage
- * swapped for the migrated regimen state.
+ * gapFill's "current" = the assumed dietary baseline (corpus.dietaryBaseline)
+ * plus the live regimen delivery from state/coverage.currentDelivery(), so a
+ * label is always scored against what the user already takes.
  *
- * Deliberate deviations from the legacy runtime (documented for Luneth's
- * end-pass): (1) matchGoals reads ess.target.low (the Round-99 shape) — legacy
- * matchGoalsRich read the pre-shape ess.low (then undefined → pctOfTarget never
- * fired), so goal-matching here actually evaluates nutrient meaningfulness;
- * (2) container conflicts are inert (OCR labels carry no container metadata);
- * (3) the Eden-severance guard is omitted (scanned product labels are never
- * Eden corpus items by construction).
+ * Known limits, deliberate: container conflicts are inert — an OCR'd label
+ * carries no container metadata, so containerFlag() always returns none. Goal
+ * matching reads ess.target.low, so a goal counts as served only when the
+ * nutrient is present in a meaningful fraction of the Wallach target.
  *
  * LS keys:
- *   'lcRecentScans_v1' — scan history (FIFO list, dedup by label.name, ≤5)
+ *   'lcRecentScans_v1' — auto scan history (FIFO, newest first, cap 5). NO
+ *                        name-dedup: container names are low-cardinality
+ *                        ('capsule', 'powder'), so deduping by name collapsed
+ *                        genuinely distinct products.
+ *   'lcSavedScans_v1'  — the durable Saved shelf (user-curated, never
+ *                        auto-evicted).
  *
- * §00 Zod boundary: getHistory() reads through getValidated against
- * HistoryShapeSchema; writes go through setValidated. Bad LS data → empty
- * array, never enters typed-land.
+ * Both keys are read through getValidated and written through setValidated, so
+ * corrupted localStorage degrades to an empty list instead of entering
+ * typed-land unvalidated.
  *
- * The bridge: window.lcScan = scan (legacy-style callers + the regimen adopt
- * path + headless probes route through the native engine); window.lcLastResult
- * holds the most recent UI scan for views/scanner.ts.
+ * The bridge: window.lcScan = scan, so a headless probe can drive the scoring
+ * engine without importing the module; window.lcLastResult mirrors the most
+ * recent logged result for the same inspection purpose. In-app callers import
+ * runScan / scoreLabel directly.
  *
- * Legacy verdicts (preserved verbatim):
+ * Verdicts:
  *   'ADD'    — strong fit, recommend adopting into regimen
- *   'SAVE'   — worth considering, with caveats; goes to wishlist
+ *   'SAVE'   — worth considering, with caveats; can be kept on the Saved shelf
  *   'REJECT' — has flags; don't adopt
  * ═══════════════════════════════════════════════════════════════════════════
  */
@@ -72,18 +73,18 @@ import {
 
 export const RECENT_SCANS_KEY = 'lcRecentScans_v1';
 
-/** The durable Saved shelf (SCAN-04) — items the user explicitly "Save for later". Separate
+/** The durable Saved shelf — items the user explicitly "Save for later". Separate
  *  from the auto RECENT_SCANS FIFO: no eviction on new scans, only removed by the user. */
 export const SAVED_SCANS_KEY = 'lcSavedScans_v1';
 
-/** Faithful to legacy MAX_RECENT — the history is capped at 5 entries. */
+/** The auto history is capped at 5 entries. */
 const MAX_RECENT = 5;
 
 /** Cap the durable Saved shelf generously; it is user-curated, not auto-churned. */
 const MAX_SAVED = 100;
 
 /** Container-hint tokens the OCR parser emits when no product name is legible — humanised for
- *  display so a raw 'aluminum_can' never surfaces as a product name (SCAN-02). */
+ *  display so a raw 'aluminum_can' never surfaces as a product name. */
 const CONTAINER_LABELS = new Map<string, string>([
   ['aluminum_can', 'Canned drink'],
   ['can', 'Canned drink'],
@@ -150,9 +151,9 @@ export interface ScanResult {
   reasonsAgainst: Reason[];
   sparseNutrients?: boolean;
   sparseIngredients?: boolean;
-  /** #7-hits (Luneth 2026-08-16): essentials this label delivers a meaningful amount of
-   *  (>= HIT_THRESHOLD of the WALLACH daily target -- never RDV; only the ~38 dosed
-   *  essentials are eligible). A food-quality signal, distinct from coverage (full targets). */
+  /** Essentials this label delivers a meaningful amount of (>= HIT_THRESHOLD of the WALLACH
+   *  daily target -- never an RDV; only the essentials that carry a Wallach dose are
+   *  eligible). A food-quality signal, distinct from coverage, which needs the full target. */
   hits: number;
   hitEssentials: string[];
   hitsStrong: number;
@@ -222,24 +223,12 @@ export function getHistory(): HistoryEntry[] {
   return getValidated(RECENT_SCANS_KEY, HistoryShapeSchema)?.items ?? [];
 }
 
-/** Last scan, if any — useful for "show the most recent verdict" view. */
-export function getLastScan(): HistoryEntry | null {
-  return getHistory()[0] ?? null;
-}
-
-/** The durable Saved shelf, newest first (SCAN-04). Bad LS data → empty. */
+/** The durable Saved shelf, newest first. Bad LS data → empty. */
 export function getSaved(): HistoryEntry[] {
   return getValidated(SAVED_SCANS_KEY, HistoryShapeSchema)?.items ?? [];
 }
 
-let lastResult: ScanResult | null = null;
-
-/** The most recent scan result (in-memory) — views/scanner.ts renders from this. */
-export function getLastResult(): ScanResult | null {
-  return lastResult;
-}
-
-// ─── Unit math (legacy normalize / formatAmt / unitConv ports) ─────────────
+// ─── Unit math (normalize · unit conversion) ─────────────────────────
 
 /** Normalize an amount to a comparison family: mass→mcg base, IU→iu. */
 function normalize(amount: number, unit: string | undefined): Norm | null {
@@ -311,7 +300,7 @@ function essTarget(ess: Essential): CoverageTarget | null {
 
 // ─── Alignment ──────────────────────────────────────────────────────────────
 
-/** Tally per-nutrient form alignment into a 0..2 score (legacy alignmentScore). */
+/** Tally per-nutrient form alignment into a 0..2 score. */
 function alignmentScore(nutrients: ScanNutrient[]): Alignment {
   let a = 0;
   let p = 0;
@@ -388,18 +377,17 @@ function getEffectiveCoverage(): EffectiveCov {
   return base;
 }
 
-/** #7-hits: >= this fraction of the WALLACH daily target counts as a meaningful "hit"
- *  (Luneth 2026-08-16, grounded on real pumpkin-seed numbers). A DISPLAY threshold, always
- *  measured against the Wallach target (section 00.A) -- never an RDV/DV. */
+/** >= this fraction of the WALLACH daily target counts as a meaningful "hit". A DISPLAY
+ *  threshold, always measured against the Wallach target -- never an RDV/DV. */
 const HIT_THRESHOLD = 0.03;
-/** #7-hits: >= this fraction of the Wallach target is a STRONG hit (matches the 'Meaningful
+/** >= this fraction of the Wallach target is a STRONG hit (matches the 'Meaningful
  *  gap-fill' reason's >=10% cut). A depth signal atop the breadth count. */
 const HIT_STRONG = 0.10;
 
 /** Essentials this label delivers a meaningful amount of: >= HIT_THRESHOLD of the Wallach
  *  target, per serving, UNCAPPED by current coverage (a stable property of the food, not of
- *  your regimen). Only the ~38 essentials with a Wallach dose are eligible; where Wallach is
- *  silent there is no target to measure against, so it cannot be a hit (an honest gap). */
+ *  your regimen). Only the essentials that carry a Wallach dose are eligible; where Wallach
+ *  is silent there is no target to measure against, so it cannot be a hit (an honest gap). */
 function meaningfulHits(nutrients: ScanNutrient[], dailyServings: number): { hits: string[]; strong: number } {
   const hit = new Set<string>();
   const strong = new Set<string>();
@@ -459,12 +447,12 @@ function gapFillFor(n: ScanNutrient, dailyServings: number, effectiveCov: Effect
   };
 }
 
-// ─── Projected coverage delta (the Scan → Result "47 → 55" readout) ──────────
+// ─── Projected coverage delta (the Scan → Result before/after readout) ──────
 
 /**
  * The projected coverage delta if this label's confirmed reads were adopted, in the
  * Coverage tab's OWN frame so the numbers agree across surfaces: `before` is the live
- * snapshot coveredCount (the 47/90 the user sees everywhere), and an essential counts
+ * snapshot coveredCount (the covered-of-90 figure the user sees everywhere), and an essential counts
  * as ADDED only when the scan's own amount actually crosses its Wallach targetLow on a
  * tile that is not already covered. No fabrication — every number is the live coverage
  * snapshot plus the label's user-provided amounts. Conservative by design: a nutrient
@@ -565,11 +553,11 @@ function matchGoals(label: ScanLabel, corpus: ScanCorpus): string[] {
   return goals;
 }
 
-// ─── Anti-list flags (legacy antiFlags port, nuance preserved) ─────────────
+// ─── Anti-list flags (with the gluten / oat / high-oleic nuance) ───────────
 
 const OAT_DERIVED = new Set(['oats', 'oat', 'oatmeal', 'oat flour', 'oat syrup', 'oat groats', 'oat bran']);
 
-/** Seed / fried oils are a REJECT on their own (Wallach's vegetable-oil stance, Luneth item 2)
+/** Seed / fried oils are a REJECT on their own (Wallach's vegetable-oil stance)
  *  UNLESS the whole label still delivers >= REDEEM_MIN_HITS essentials in a meaningful amount -- then
  *  the flag is OFFSET to neutral (never recommended). A redeemable tier between hard and plain serious. */
 const REDEEMABLE_REJECT = new Set<string>(['fried oils / seed oils']);
@@ -606,8 +594,8 @@ function antiFlags(label: ScanLabel, corpus: ScanCorpus): AntiFlag[] {
 
     if (cat === 'gluten sources') {
       // A gluten-free-oats declaration CLEARS the oats entirely -- no warning at all, exactly like
-      // buckwheat never matching (Luneth 2026-08-19). Any NON-oat gluten grain (wheat / barley / rye /
-      // malt / spelt) still flags on its own; oats WITHOUT a GF declaration are a HARD reject (item 1).
+      // buckwheat never matching. Any NON-oat gluten grain (wheat / barley / rye /
+      // malt / spelt) still flags on its own; oats WITHOUT a GF declaration are a HARD reject.
       const oatGfPre = /gluten[-\s]+free[^,]+\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b/i;
       const oatGfPost = /\b(?:oats|oat|oatmeal|oat\s+flour|oat\s+groats|oat\s+bran|oat\s+syrup)\b[^,]+gluten[-\s]+free/i;
       const hasGFOatsAnchor = oatGfPre.test(text) || oatGfPost.test(text);
@@ -628,7 +616,7 @@ function antiFlags(label: ScanLabel, corpus: ScanCorpus): AntiFlag[] {
       }
     }
 
-    // Oats WITHOUT a GF declaration are a HARD reject (item 1); GF-cleared oats were already dropped
+    // Oats WITHOUT a GF declaration are a HARD reject; GF-cleared oats were already dropped
     // from effTerms above, so this only fires on oats that genuinely remain.
     const oatHardReject = cat === 'gluten sources' && effTerms.some(h => OAT_DERIVED.has(h));
 
@@ -653,7 +641,7 @@ function containerFlag(): Conflict[] {
   return [];
 }
 
-// ─── Verdict ladder (legacy decideVerdict port) ────────────────────────────
+// ─── Verdict ladder ──────────────────────────────────────────────
 
 function decideVerdict(
   alignment: Alignment,
@@ -692,7 +680,7 @@ function decideVerdict(
   }
 
   // Each anti-flag shows its CATEGORY and the exact matched term(s) so a mis-fire stays legible and the
-  // user can overrule it (Luneth item 4): "Serious anti-list flags -- fried oils / seed oils -- \"canola oil\"".
+  // user can overrule it: "Serious anti-list flags -- fried oils / seed oils -- \"canola oil\"".
   const fmtFlag = (f: AntiFlag): string => {
     const terms = f.terms ?? [];
     if (terms.length === 0) {
@@ -707,7 +695,7 @@ function decideVerdict(
   const seriousHits = anti.filter(f => f.severity === 'serious');
   const softHits = anti.filter(f => f.severity === 'softened' || f.severity === 'mild');
 
-  // Item 2: a seed / fried oil rejects on its own UNLESS the whole label still delivers
+  // A seed / fried oil rejects on its own UNLESS the whole label still delivers
   // >= REDEEM_MIN_HITS essentials in a meaningful amount -- then it is OFFSET to neutral (never
   // recommended). Redemption clears the seed-oil flag from the reject tally but a serious flag still
   // remains, so ADD stays blocked and the ceiling is neutral.
@@ -723,7 +711,7 @@ function decideVerdict(
   if (nonSeedSerious.length > 0) {
     reasonsAgainst.push({ label: 'Serious anti-list flags', items: nonSeedSerious.map(fmtFlag) });
   }
-  // The seed / fried oil rule, made legible in BOTH directions (item 2 + item 4): a lone seed oil
+  // The seed / fried oil rule, made legible in BOTH directions: a lone seed oil
   // rejects, but 3+ meaningful essentials offset it to neutral. The user sees which case fired and why.
   if (unredeemedSeedOil) {
     reasonsAgainst.push({
@@ -745,7 +733,7 @@ function decideVerdict(
     reasonsAgainst.push({ label: 'High-severity conflicts', items: high.map(c => c.rule) });
   }
 
-  // R2-4 (Luneth-ratified 'neutral', section 00.A): a scanned label carries NO form_alignment
+  // Ratified rule (§00.A): a scanned label carries NO form_alignment
   // (a photo cannot state chemical form), so alignmentScore is 0 for every real scan. The ADD
   // gate must therefore NOT require form when form is unassessed -- else no scanned product could
   // ever earn ADD. When form IS assessed (a future product-DB-backed scan), score>=1.0 still holds.
@@ -761,7 +749,7 @@ function decideVerdict(
     verdict = 'SAVE';
   }
   else {
-    // Ingredient-checker default (Luneth-ratified): "nothing bad found" reads NEUTRAL,
+    // Ingredient-checker default: "nothing bad found" reads NEUTRAL,
     // never a bare REJECT. Only a hard flag / 2+ serious / high conflict rejects (above), so
     // a clean paste or a nutrient-less food is NEUTRAL, not "rejected".
     verdict = 'SAVE';
@@ -774,7 +762,7 @@ function decideVerdict(
 /** Monotonic id minter for scan-history entries (saved + recent). Date.now() alone collides
  *  when two scans land in the same millisecond, and the retired Date.now()+random(1000) scheme
  *  collided whenever two saves fell within ~1s -- a colliding saved id made a re-opened row
- *  resolve to the WRONG entry (R2-7), so adopting the second saved scan silently re-added the
+ *  resolve to the WRONG entry, so adopting the second saved scan silently re-added the
  *  first. Strictly-increasing ids remove the collision at the source. */
 let _lastScanId = 0;
 function nextScanId(): number {
@@ -784,7 +772,7 @@ function nextScanId(): number {
 
 /**
  * Persist a scan to the auto FIFO history, newest first, cap MAX_RECENT.
- * SCAN-03: no name-dedup — scanned labels share a few low-cardinality container names
+ * No name-dedup — scanned labels share a few low-cardinality container names
  * ('capsule', 'powder'), so deduping by name collapsed genuinely distinct products. Each
  * capture carries a unique id, so distinct scans each keep a slot up to the cap.
  */
@@ -803,7 +791,7 @@ function pushRecentScan(label: ScanLabel, result: ScanResult): void {
   setValidated(RECENT_SCANS_KEY, { items: items.slice(0, MAX_RECENT) }, HistoryShapeSchema);
 }
 
-/** Add a scan to the durable Saved shelf (SCAN-04). Newest first, cap MAX_SAVED. Returns the
+/** Add a scan to the durable Saved shelf. Newest first, cap MAX_SAVED. Returns the
  *  new entry's id so the caller can reflect a 'saved' state. */
 export function saveScan(label: ScanLabel, result: ScanResult): number {
   const shape = getValidated(SAVED_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
@@ -816,14 +804,14 @@ export function saveScan(label: ScanLabel, result: ScanResult): number {
   return id;
 }
 
-/** Remove one saved scan by id (the shelf × affordance, SCAN-04). */
+/** Remove one saved scan by id (the shelf × affordance). */
 export function removeSaved(id: number): void {
   const shape = getValidated(SAVED_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
   setValidated(SAVED_SCANS_KEY, { items: shape.items.filter(i => i.id !== id) }, HistoryShapeSchema);
 }
 
 /**
- * Score a label through the native engine. logToRecent (default true) logs to
+ * Score a label through the scoring engine. logToRecent (default true) logs to
  * history, stashes the UI result, and emits scanner:scan-complete; the regimen
  * adopt path passes false to reuse scoring without polluting the log.
  */
@@ -860,7 +848,6 @@ function scan(label: ScanLabel, opts?: { logToRecent?: boolean }): ScanResult {
   result.sparseIngredients = (label.ingredients ?? '').trim().length === 0;
   if (cfg.logToRecent) {
     pushRecentScan(label, result);
-    lastResult = result;
     (window as LegacyWindow).lcLastResult = result;
     emit('scanner:scan-complete', { captureId: String(Date.now()), verdict: mapVerdict(verdict) });
   }
@@ -868,7 +855,7 @@ function scan(label: ScanLabel, opts?: { logToRecent?: boolean }): ScanResult {
 }
 
 /**
- * Run a scan through the native engine. Always logs to history. Emits
+ * Run a scan through the scoring engine. Always logs to history. Emits
  * `scanner:scan-complete` so subscribers re-render. Returns null on failure.
  */
 export function runScan(label: ScanLabel): ScanResult | null {
@@ -896,7 +883,7 @@ export function scoreLabel(label: ScanLabel): ScanResult | null {
   }
 }
 
-/** Map legacy ADD/SAVE/REJECT → the simpler aligns/partial/out event payload. */
+/** Map the ADD/SAVE/REJECT verdict → the simpler aligns/partial/out event payload. */
 function mapVerdict(v: Verdict): 'aligns' | 'partial' | 'out' {
   if (v === 'ADD') {
     return 'aligns';
@@ -907,7 +894,7 @@ function mapVerdict(v: Verdict): 'aligns' | 'partial' | 'out' {
   return 'out';
 }
 
-// ─── The bridge — expose the native engine for legacy-style callers + probes ──
+// ─── The bridge — expose the scoring engine for headless probes ───────────
 
 if (typeof window !== 'undefined') {
   (window as LegacyWindow).lcScan = scan;

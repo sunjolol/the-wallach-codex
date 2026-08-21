@@ -1,5 +1,5 @@
 {
-  "_purpose": "Home-tab curated selections — the SPECIAL curated front-door surface (Luneth hand-picks; the home-page-curation philosophy). Editorial UI config, NOT canonical health data and NOT a pillar projection, so it lives here hand-authored (manifest 'accounted') rather than derived. Slugs are nav keys resolved against the search entity index at render; order here is free (the view sorts A-Z by display name). Explicitly temporary — may later flip to a top-N-by-claims formula.",
+  "_purpose": "Home-tab curated selections — the hand-picked front-door surface; every other tab is pure formula. Editorial UI config, NOT canonical health data and NOT a pillar projection, so it lives here hand-authored (manifest 'accounted') rather than derived. Slugs are nav keys resolved against the search entity index at render; order here is free (the view sorts A-Z by display name).",
   "explore_preview": [
     "amino_acids",
     "aromatherapy",

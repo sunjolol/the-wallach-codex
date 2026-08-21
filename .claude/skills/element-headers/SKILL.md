@@ -31,15 +31,14 @@ Offline-first means every asset is vendored, pinned, and works forever with the 
 never meant small, static, or plain. The app targets one pinned browser engine, so use modern CSS and
 JS directly -- no fallbacks, no polyfills, no defensive coding for browsers that will never load it.
 
-> **Retired in the public cleanup:** the `design-wisdom/` capture library and the `chronicle/header-research/` dossiers this skill points to were removed. The visual vocabulary now lives in `dashboard/assets/styles/STYLE-GUIDE.md` and the shipped element headers; treat the directory pointers below as historical context, not live paths.
-
-**Start from dashboard/design-wisdom/, every time.** It holds 33 CodePen captures Luneth
-personally chose plus 
-eferences-data.json carrying his own notes -- a standing statement of his
-taste. Their titles are the brief: crazy good animation effect, 3D-feeling effect on a 2D plane, a
-liquid thermometer with a movable slider, bold magazine-style, high-end editorial typography,
-brutalist high-end, brownian tendrils, plasma sphere, radial wave rays. **Not opening that folder,
-and shipping flat static SVG instead, has now caused three rejections** (Vitamin D, B6, manganese r3).
+> **Retired in the public cleanup:** the `design-wisdom/` capture library (33 hand-picked CodePen
+> captures) and the `chronicle/header-research/` dossiers this skill used to point at were removed.
+> The visual vocabulary now lives in `dashboard/assets/styles/STYLE-GUIDE.md` and the shipped
+> element headers. **The brief those captures set still stands**: crazy-good animation effect, a
+> 3D-feeling effect on a 2D plane, a liquid thermometer with a movable slider, bold magazine-style
+> high-end editorial typography, brutalist high-end, brownian tendrils, plasma sphere, radial wave
+> rays. **Shipping flat static SVG instead has caused three rejections** -- that is the failure the
+> brief exists to prevent.
 
 **Never start from a previous header file or its CSS class vocabulary.** Copying the last approved
 header's classes carries its 15px/11.5px label sizes and fixed-width SVG into the new one, and that is
@@ -53,13 +52,10 @@ real photography. Ask what would make someone *stop scrolling*.
 ## The process -- unchanged, and it works
 1. Build **4 genuinely distinct mockups** -- different layout AND different illustration, each
    bespoke. Not four variations of one idea.
-2. **Luneth picks** one, or a mix. He drives this part and he enjoys it.
-3. Build the winner into the live entity page -- **only after he approves it. Never build live
+2. **A human picks** one, or a mix. That choice is not the agent's to make.
+3. Build the winner into the live entity page -- **only after it is approved. Never build live
    without explicit permission.**
-4. **STOP for his visual sign-off** before logging or committing.
-
-Read the dossier first if one exists -- `chronicle/header-research/` holds grounded head-starts for
-many of the remaining elements.
+4. **STOP for human visual sign-off** before logging or committing.
 
 **Generate the mockup shell, never hand-build it:**
 ```bash
@@ -100,8 +96,7 @@ box-sizing -- or the geometry stops being the real geometry.
 
 ## The two things that cause almost every rejection
 
-Four rounds have now died on one or both of these (Vitamin D, B6, manganese r3, phosphorus r1).
-They are cheap to avoid and expensive to miss.
+Four rounds have died on one or both of these. They are cheap to avoid and expensive to miss.
 
 ### 1. SCALE. `.kd-ep-fam__kill` is pinned to 1.14rem by an ID rule.
 `#drawer-knowledge-mount .kd-ep-fam__kill { font-size: var(--ds-text-lg) }` -- so a headline written
@@ -112,18 +107,17 @@ pinned; the approved sets run headlines at 2.5-3.2rem and numerals at 4.5-6.4rem
 
 ### 2. NEVER DRAW THE NOUN IN YOUR OWN HEADLINE.
 A broccoli headline with drawn broccoli under it, a glowing-lump headline with a drawn glowing lump --
-that is the corniness, and rendering it in canvas instead of SVG does not save it. Verdict on
-phosphorus r1: *"absolutely hideously ugly and childish illustration."* **Nothing in
-`dashboard/design-wisdom/` or in `dashboard/components/trace-mineral-tile-detail.html` (the BAR) is a
-picture of an object.** The whole vocabulary is two things: editorial-technical typography (colour-split
-headlines, oversized accent numerals, drop caps, corner-bracket frames, mono chrome) and ABSTRACT
+that is the corniness, and rendering it in canvas instead of SVG does not save it. The verdict on
+one such round was that the illustration read as ugly and childish. **Nothing in the approved
+vocabulary is a picture of an object.** The whole vocabulary is two things: editorial-technical
+typography (colour-split headlines, oversized accent numerals, drop caps, corner-bracket frames, mono chrome) and ABSTRACT
 luminous/generative fields (plasma, glow, particle drift). If a figure wants light, light the TYPE --
 phosphorus C lights the word PHOSPHORUS itself and draws no object at all.
 
 ⚠ **`type-futurist.css` loads LAST and overrides the faces.** `--ds-font-display` becomes Unbounded and
 `--ds-font-serif` becomes Space Grotesk, so the bar's Playfair magazine look is NOT available in the
 drawer. Copy the bar's RELATIONSHIPS, not its font stack. Repointing that token is a design-system
-change [[token-indirection-grep-the-readers]].
+change -- grep every reader of the token before repointing it, never repoint it in place.
 
 ## What has failed before -- and why
 Not a list of bans. These are diagnosed failures, so you can avoid the cause rather than the shape.

@@ -2,8 +2,8 @@
  * core/schemas/index.ts — barrel export for all Zod schemas
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Single import point for callers: `import { RegimenSchema } from '@core/schemas'`.
- * As new state surfaces gain schemas, they're added here.
+ * Convenience import point for most callers: `import { RegimenSchema } from '@core/schemas'`.
+ * backup.ts and profile.ts are deliberately absent — their consumers import them by path.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """corpus_extract.py — deterministic extraction tooling for one book.
 
-The DETERMINISTIC half of the agent-in-the-loop pipeline (proposal §5). It never
+The DETERMINISTIC half of the authoring pipeline. It never
 calls an LLM and never decides what a claim means. Two subcommands:
 
   prescan  — read-only survey of a book (paragraph + dose-candidate counts).
@@ -12,9 +12,9 @@ calls an LLM and never decides what a claim means. Two subcommands:
              WAL-CLM id, validate, and emit drafts/claims-<book>.draft.json plus a
              human-readable drafts/reports/<book>.report.md review surface.
 
-The agent authors meaning; this tool guarantees every stored verbatim is real book
-text. The book is always the source. Luneth reviews the report; corpus_seal.py
-(user/dev-run) promotes the reviewed draft into claims/.
+The author supplies the meaning; this tool guarantees every stored verbatim is real
+book text. The book is always the source. A human reviews the report; corpus_seal.py
+(user-run) promotes the reviewed draft into claims/.
 
 Usage:
   python eden/tools/corpus_extract.py prescan  --book dddl-3e-2011
@@ -184,8 +184,8 @@ def cmd_finalize(args) -> int:
             "superseded_by": None,
             "extracted_at": now, "reviewed_at": None, "reviewed_by": None,
         }
-        # `about` is the claim's SUBJECT (Charter R3 · references_resolve validates the slug against
-        # canon | nutrients | conditions). Emit only when non-empty so pre-2026-07-16 claims stay shaped
+        # `about` is the claim's SUBJECT (references_resolve validates the slug against
+        # canon | nutrients | conditions). Emit only when non-empty so claims that predate the field stay shaped
         # exactly as before and the field never appears as noise on claims that don't need it.
         if rc.get("about"):
             claim["about"] = rc["about"]

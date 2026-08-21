@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "purpose": "VOLATILE safety sidecar — Youngevity label WARNINGS (contraindications / cautions), hand-extracted from label images during composition extraction. source:ygy, quarantined like the description (§00.A: NEVER a Wallach claim or a target; feeds product-display safety surfacing + search only). Joined to products.json by ygy_id.",
+    "purpose": "VOLATILE safety sidecar — Youngevity label WARNINGS (contraindications / cautions), hand-extracted from label images during composition extraction. source:ygy, quarantined like the description (§00.A: NEVER a Wallach claim or a target). NOT YET CONSUMED -- no surface, generator or gate reads this file today; it is captured label data held for a future product-safety surface, and if that surface is built it joins to products.json by ygy_id.",
     "sealed": false,
     "note": "Not golden-sealed. Only products whose label carries a warning appear here."
   },
