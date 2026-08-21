@@ -73422,7 +73422,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         why: "From Wallach's Epigenetics (2014) mineral table: 10\u201325 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 38 mcg/day."
       },
       silica: {
-        why: "From Wallach's Epigenetics (2014) mineral table: 1\u201325 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 38 mg/day."
+        why: "From Wallach's Epigenetics (2014) mineral table: 1\u201325 mg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 38 mg/day.",
+        sourcesNote: "No Youngevity product carries a meaningful amount of silica \u2014 the best available reaches only a few percent of this target, so expect to close this one outside the catalogue. The single food Wallach names as a significant source is beer, which sits awkwardly against his own insistence on avoiding barley; he also points to silicon supplementation directly. The tension there is his, and it is left as he wrote it rather than tidied away."
       },
       vanadium: {
         why: "From Wallach's Epigenetics (2014) mineral table: 50\u2013100 mcg per 100 lb of body weight; taking the upper figure scaled to a 154 lb adult \u2248 150 mcg/day."
@@ -197921,7 +197922,34 @@ separately inside the very list that names the vehicle, and silica's stated sour
 high-fibre diets and beer. Tin remains the only element with vehicle-supply language.
 
 Taurine was not implemented. Wallach states no daily amount for it, and the proposed 200 mg
-threshold traces to a Youngevity label, which is composition and can never drive a target.` }];
+threshold traces to a Youngevity label, which is composition and can never drive a target.` }, { id: "lg_mt2akc4q_zcwth8", ts: "2026-08-20T20:49:35.210282-05:00", surface: "coverage", kind: "incident", summary: "Taurine already works - measured, not inferred - so the proposed 200 mg threshold was unnecessary and would have been more restrictive. Germanium has no product data at all. Silica note added.", detail: `Three findings, two of which correct me.
+
+TAURINE NEEDED NOTHING. It is already covered the moment any source carrying it is in the
+regimen - no amount threshold at all. Two products carry a taurine row: Rebound FX at 200 mg
+and Ultimate Cardio STX at 120 mg. Driving the real app proved it: adding Rebound FX moves
+amino acids from 0 of 12 to 1 of 12 and the taurine tile turns covered. The proposed 200 mg
+rule would have been more restrictive than what already ships, because it would have excluded
+the 120 mg product.
+
+I got there after three wrong turns worth recording. I queried the product file at the top
+level and announced that no product lists taurine - the nutrient rows live one level down,
+under components. I then mis-parsed the resolver artifact and announced taurine was missing
+from it - it is there. Both mistakes were reasoning about data instead of driving the app,
+and one headless run settled what three rounds of inference had got wrong.
+
+GERMANIUM HAS NO PRODUCT DATA AT ALL - zero occurrences in the entire product pillar. Silver
+appears on exactly two products, both standalone colloidal silvers. The owner reports that
+both are listed as ingredients on the Youngevity pages for the liquid plant-derived products;
+our records for those carry only an aggregate "Plant Derived Minerals" row. If the labels do
+list them, that is a composition gap rather than a doctrine question, because Youngevity
+composition is an allowed source. But the product pillar is sealed and only he can write it,
+so it waits on his label data rather than on my inference.
+
+THE SILICA NOTE says plainly that no Youngevity product supplies a meaningful amount. The one
+food Wallach names is beer, which sits against his own insistence on avoiding barley. The note
+leaves that tension as his rather than tidying it away, and leaves out the brown rice the
+owner suggested - that is his inference, not Wallach's sentence, and the source rule binds him
+too.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
