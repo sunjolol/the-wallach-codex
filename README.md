@@ -5,12 +5,11 @@
 Dr. Joel Wallach's framework holds that the body needs **90 essential nutrients** every day, and that a
 great deal of chronic illness traces back to the ones you never get. The Wallach Codex turns that list
 into a live map of your own nutrition: it grades everything you take against all 90, judges any label
-you point it at, and answers health questions out of his seven books in his own words.
+you point it at, and answers health questions out of seven of his books in his own words.
 
 It runs entirely on your computer. You open one file and it works — no install, no server, no account,
 no internet connection, and nothing about you ever leaves the machine.
 
-|  |  |
 |---|---|
 | **Runs from** | a single file, double-clicked. No install, no localhost, no build step. |
 | **Network use** | none, ever. There is no server to talk to and no endpoint to leak to. |
@@ -119,16 +118,16 @@ browser like an ordinary page and works with the internet unplugged. Bookmark it
 **The first time.** It asks for your first name and what you would like to work on. Both are optional —
 there is an **"I'm just browsing →"** button beside them, and it only ever asks once.
 
-**Getting around.** Everything lives in the dark rail down the left edge:
+**Getting around.** Everything lives in the side panel down the left edge:
 
 | Where | What | Key |
 |---|---|---|
-| Rail, top — *Workspaces* | **Coverage** — your 90-nutrient map | <kbd>1</kbd> |
+| Side panel, top — *Workspaces* | **Coverage** — your 90-nutrient map | <kbd>1</kbd> |
 | | **Regimen** — your supplement stacks | <kbd>2</kbd> |
 | | **Scanner** — read and judge a label | <kbd>3</kbd> |
-| Rail, below — *Drawers* | **Search** — Ask Wallach | <kbd>S</kbd> |
+| Side Panel, below — *Drawers* | **Search** — Ask Wallach | <kbd>S</kbd> |
 | | **Knowledge** — the library | <kbd>K</kbd> |
-| Rail, very bottom | **Your profile** — the round avatar with your name and *SETTINGS · PROFILE* under it | click it |
+| Side panel, very bottom | **Your profile** — the round avatar with your name and *SETTINGS · PROFILE* under it | click it |
 | Top bar, far right | **Ask Wallach** — the green pill | <kbd>S</kbd> |
 
 The single keys work anywhere except while you are typing. <kbd>Esc</kbd> closes any drawer or panel.
