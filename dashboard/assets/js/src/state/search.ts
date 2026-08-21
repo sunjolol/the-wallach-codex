@@ -43,10 +43,25 @@ import {
 const EMPTY_INDEX: SearchIndex = { books: {}, entities: {}, claims: [] };
 
 let indexCache: SearchIndex | null = null;
+/**
+ * Where the WEB build's fetched copy lands — the single heaviest artifact in the tree.
+ * That build stubs `searchIndexJson` to the empty shape and ships the real file for
+ * state/data-split.ts to pull. Null in the file:// build, which reads the import.
+ */
+let injectedIndex: unknown = null;
+
+/**
+ * Accept the fetched search index. Clearing the cache forces the next read back through
+ * the same Zod boundary the inlined path uses — a fetched index is not more trusted.
+ */
+export function hydrateSearchIndex(raw: unknown): void {
+  injectedIndex = raw;
+  indexCache = null;
+}
 
 function index(): SearchIndex {
   if (indexCache === null) {
-    const parsed = SearchIndexSchema.safeParse(searchIndexJson);
+    const parsed = SearchIndexSchema.safeParse(injectedIndex ?? searchIndexJson);
     indexCache = parsed.success ? parsed.data : EMPTY_INDEX;
   }
   return indexCache;

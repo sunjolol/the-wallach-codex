@@ -32,6 +32,7 @@ export type EventName =
   | 'storage:pressure-warn'
   | 'rail:navigate'
   | 'log:entry-added'
+  | 'corpus:hydrated'
   | 'profile:changed'
   | 'knowledge:open-entity'
   | 'drawer:toggled';
@@ -48,6 +49,10 @@ export interface EventPayloads {
    *  switch, but nothing subscribes today. */
   'rail:navigate': { target: 'coverage' | 'regimen' | 'scanner' | 'search' | 'knowledge' };
   'log:entry-added': { id: string; kind: string };
+  /** The web build's corpus arrived over the wire. Anything that renders a number
+   *  DERIVED from the corpus must repaint here, because before this fires the count is
+   *  unknown rather than zero. Never fires in the file build — the embed is inlined. */
+  'corpus:hydrated': { claimCount: number };
   /** The user named themselves, or chose to browse. Fired by the state/profile.ts
    *  chokepoint; main.ts::wireProfileIdentity repaints four places from it — the
    *  document title, the rail brand slot, the rail profile name and the avatar initial

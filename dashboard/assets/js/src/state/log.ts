@@ -43,9 +43,27 @@ export const LOG_RETENTION = 2000;
  * never throw into the app.
  */
 let cachedEmbed: LogEntry[] | null = null;
+/**
+ * Where the WEB build's fetched copy lands. That build stubs `creatorsLogEmbed` to an empty
+ * array and ships the real file for state/data-split.ts to pull after first paint (it is the
+ * single heaviest thing in the bundle). Stays null in the file:// build, which never calls
+ * hydrateLogEmbed and reads the inlined import directly.
+ */
+let injectedEmbed: unknown = null;
+
+/**
+ * Accept the fetched creator's-log embed. Clearing the parse cache is the point: the next
+ * read re-validates through the same Zod boundary the inlined path uses, so a payload that
+ * arrived over the wire gets no more trust than one that arrived in the bundle.
+ */
+export function hydrateLogEmbed(raw: unknown): void {
+  injectedEmbed = raw;
+  cachedEmbed = null;
+}
+
 function embeddedEntries(): LogEntry[] {
   if (cachedEmbed === null) {
-    const parsed = LogEmbedSchema.safeParse(creatorsLogEmbed);
+    const parsed = LogEmbedSchema.safeParse(injectedEmbed ?? creatorsLogEmbed);
     cachedEmbed = parsed.success ? parsed.data : [];
   }
   return cachedEmbed;

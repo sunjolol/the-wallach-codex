@@ -5820,6 +5820,60 @@ def check_offline_no_runtime_network():
                   f"({len(_NET_LOAD_PATTERNS)} load constructs guarded)")
 
 
+def check_split_data_manifest_agrees():
+    """The web build stubs certain assets/data/ artifacts OUT of the bundle and ships them as
+    plain files for state/data-split.ts to fetch after first paint. THREE things must agree, or
+    a dataset silently empties ON THE WEB ONLY -- a defect no file:// run can ever see, because
+    on file:// the artifact is still inlined and everything looks perfect:
+
+      tools/esbuild_web.mjs         SPLIT_ARTIFACTS  what is stubbed, and what build_web.py ships
+      state/.../data-split.ts       SplitKey union   what the app is willing to ask for
+      dashboard/assets/data/*.json  the file         what actually exists to be shipped
+
+    A key stubbed but not declared is a payload dropped with no fetch to replace it. A key
+    declared but not stubbed is a file fetched for nothing, still inlined, paid for twice.
+
+    Truth anchor: the three files' bytes, re-read each run."""
+    mjs_path = ROOT / "tools" / "esbuild_web.mjs"
+    ts_path = ROOT / "dashboard" / "assets" / "js" / "src" / "state" / "data-split.ts"
+    for p in (mjs_path, ts_path):
+        if not p.exists():
+            return False, f"the web-build split is half-present: {p.relative_to(ROOT).as_posix()} is missing"
+    return _split_data_manifest_agrees_impl(
+        mjs_path.read_text(encoding="utf-8"),
+        ts_path.read_text(encoding="utf-8"),
+        lambda key: (ROOT / "dashboard" / "assets" / "data" / f"{key}.json").exists(),
+    )
+
+
+def _split_data_manifest_agrees_impl(mjs_text, ts_text, artifact_exists):
+    """The comparison, separated from the file reads so the negative test can drive it with
+    tampered inputs. `artifact_exists` is a callable(key) -> bool rather than a directory, so a
+    test can plant a declared-but-absent artifact without touching the real tree."""
+    mjs_keys = set(re.findall(r"\{\s*key:\s*'([^']+)'", mjs_text))
+    union = re.search(r"export type SplitKey\s*=\s*([^;]+);", ts_text)
+    if union is None:
+        return False, "state/data-split.ts: the SplitKey union is gone or reshaped -- this gate is blind until it is restored"
+    ts_keys = set(re.findall(r"'([^']+)'", union.group(1)))
+    if not mjs_keys:
+        return False, "tools/esbuild_web.mjs: SPLIT_ARTIFACTS is empty or unreadable -- nothing would be stubbed"
+    if mjs_keys != ts_keys:
+        stubbed_only = sorted(mjs_keys - ts_keys)
+        declared_only = sorted(ts_keys - mjs_keys)
+        return False, (
+            "split manifest disagrees -- "
+            f"stubbed but never declared (payload dropped, nothing fetches it): {stubbed_only or 'none'}; "
+            f"declared but never stubbed (fetched AND inlined): {declared_only or 'none'}"
+        )
+    absent = [k for k in sorted(mjs_keys) if not artifact_exists(k)]
+    if absent:
+        return False, f"split artifact(s) declared but absent from assets/data/: {absent}"
+    return True, (
+        f"{len(mjs_keys)} split artifact(s) agree across esbuild_web.mjs, data-split.ts and assets/data/: "
+        f"{sorted(mjs_keys)}"
+    )
+
+
 def check_vendor_assets_pinned():
     """Every vendored library matches the sha256 recorded in its manifest, and every local
     url(...) in shipped CSS resolves on disk.
@@ -8275,6 +8329,15 @@ INVARIANTS = [
         truth_anchor="the bytes of the files the browser actually opens from file://, re-read each run",
         severity="critical",
         lesson_ref="2026-08-03 doctor sweep — replaces the retired `dist/main.js gzipped <= 250 KB` size-limit budget, which measured 2.67 MB (10.7x over) and had been failing-and-bypassed rather than enforcing. Size was a proxy that also capped design ambition; this gates the actual promise (cannot be taken offline or broken by someone else's server) while vendored libraries are now explicitly allowed.",
+    ),
+    Invariant(
+        name="split_data_manifest_agrees",
+        anchor_class="consistency",  # our file A vs our file B vs the artifact on disk
+        description="the web build's split artifacts agree in all three places that must know about them: SPLIT_ARTIFACTS in tools/esbuild_web.mjs (what is stubbed out of the bundle and shipped as a file), the SplitKey union in state/data-split.ts (what the app will fetch), and the artifact's actual presence in dashboard/assets/data/",
+        check_fn=check_split_data_manifest_agrees,
+        truth_anchor="the bytes of tools/esbuild_web.mjs, state/data-split.ts and the assets/data/ artifacts, re-read each run",
+        severity="critical",
+        lesson_ref="2026-08-20 web port. The file:// build inlines every artifact because a page opened from disk cannot fetch(); the web build stubs the heavy ones out and fetches them instead. That split is invisible to every existing check: on file:// the artifact is still inlined, so a key stubbed out of the web bundle with no matching fetch declaration would render an EMPTY Creator's Log on the website while the local build stayed perfect. Two hand-maintained lists that must agree is exactly the shape 00.B.1 forbids leaving ungated. Negative test: tools/tests/test_split_data_manifest.py.",
     ),
     Invariant(
         name="vendor_assets_pinned",

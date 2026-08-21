@@ -60,6 +60,9 @@ const esbuildCmd = [
   '--format=iife',
   '--target=es2022',
   '--platform=browser',
+  // The file:// build inlines every artifact — state/data-split.ts must stay dormant here.
+  // tools/esbuild_web.mjs sets this true for the web build, which fetches them instead.
+  '--define:__SPLIT_DATA__=false',
   '--sourcemap',
   `--outfile="${OUT}"`,
 ].join(' ');

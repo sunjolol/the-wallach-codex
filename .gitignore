@@ -33,3 +33,10 @@ eden/fringe-knowledge/
 # A pinned browser engine, if one is ever installed here. Absent by decision — a
 # modern engine is 340-420 MB on disk, so it must never reach git.
 engine/
+
+# The packaged WEBSITE build (tools/build_web.py). Derived entirely from dashboard/,
+# regenerated in one command, and ~36 MB — so it is built, not committed.
+dist-web/
+
+# The upload bundle built from dist-web/. Same reasoning: derived, regenerated in one command.
+dist-web.zip

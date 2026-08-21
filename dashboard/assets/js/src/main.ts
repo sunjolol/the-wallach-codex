@@ -18,7 +18,11 @@
 import * as events from './core/events.js';
 
 import * as corpusState from './state/corpus.js';
+import { hydrateCorpus } from './state/corpus.js';
 import { installRecomputeTrigger } from './state/coverage.js';
+import { loadSplit, prefetchSplit, SPLIT_DATA } from './state/data-split.js';
+import { hydrateLogEmbed } from './state/log.js';
+import { hydrateSearchIndex } from './state/search.js';
 import * as profileState from './state/profile.js';
 import * as regimenState from './state/regimen.js';
 
@@ -230,14 +234,45 @@ function syncDrawerRail(): void {
 }
 
 /**
+ * Pull the corpus + search index in the web build, hydrate them, and tell the rail its
+ * derived count is knowable now. Idempotent: loadSplit caches per key, so the second and
+ * later calls are the same settled promise and the hydrators are cheap re-parses.
+ */
+async function ensureKnowledgeData(): Promise<void> {
+  if (!SPLIT_DATA) {
+    return;
+  }
+  const [corpusRaw, indexRaw] = await Promise.all([
+    loadSplit('corpus-embed'),
+    loadSplit('search/search-index'),
+  ]);
+  if (corpusRaw !== null) {
+    hydrateCorpus(corpusRaw);
+    events.emit('corpus:hydrated', { claimCount: corpusState.claimCount() });
+  }
+  if (indexRaw !== null) {
+    hydrateSearchIndex(indexRaw);
+  }
+}
+
+/**
  * Toggle one drawer. Only one overlay is open at a time, so opening one closes
  * the others first.
  */
-function toggleDrawer(target: WorkspaceTarget): void {
+async function toggleDrawer(target: WorkspaceTarget): Promise<void> {
   const handle = drawerHandles.get(target);
   if (handle === undefined) {
     return;
   }
+  /*
+   * Search and Knowledge are the only surfaces that read the corpus or the search index,
+   * which is what makes them splittable at all — Coverage, Regimen and Scanner never touch
+   * either. The web build fetches both, so wait here before opening: the drawer's open()
+   * calls render() every time, so data that lands before this resolves is data the first
+   * paint of the drawer already has. Boot prefetched them, so this is normally settled.
+   * No-op in the file build.
+   */
+  await ensureKnowledgeData();
   for (const [other, h] of drawerHandles) {
     if (other !== target) {
       h.close();
@@ -328,12 +363,25 @@ function hideProfilePanel(): void {
   }
 }
 
-function showProfilePanel(): void {
+async function showProfilePanel(): Promise<void> {
   if (profileOverlay !== null) {
     return;
   }
-  // Remember what to hand focus back to on close (a11y focus-restore).
+  // Remember what to hand focus back to on close (a11y focus-restore). Captured BEFORE the
+  // await below — read after it, this would see wherever focus drifted while the fetch ran.
   profileTrigger = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+  /*
+   * The web build ships the Creator's Log as a fetched file instead of ~1 MB of first paint,
+   * so the panel waits for it here. Boot already prefetched it, so this is normally an
+   * already-settled promise; a cold miss pays the wait once. No-op in the file build, where
+   * the embed is inlined and SPLIT_DATA is false.
+   */
+  if (SPLIT_DATA) {
+    const raw = await loadSplit('creators-log-embed');
+    if (raw !== null) {
+      hydrateLogEmbed(raw);
+    }
+  }
   const overlay = document.createElement('div');
   overlay.className = 'pf-overlay';
   overlay.addEventListener('click', (ev) => {
@@ -385,7 +433,7 @@ function wireTopbarSearch(): void {
   if (btn === null) {
     return;
   }
-  btn.addEventListener('click', () => toggleDrawer('search'));
+  btn.addEventListener('click', () => void toggleDrawer('search'));
 }
 
 function wireProfileChip(): void {
@@ -396,11 +444,11 @@ function wireProfileChip(): void {
   chip.style.cursor = 'pointer';
   chip.setAttribute('role', 'button');
   chip.setAttribute('tabindex', '0');
-  chip.addEventListener('click', () => showProfilePanel());
+  chip.addEventListener('click', () => void showProfilePanel());
   chip.addEventListener('keydown', (ev) => {
     if (ev.key === 'Enter' || ev.key === ' ') {
       ev.preventDefault();
-      showProfilePanel();
+      void showProfilePanel();
     }
   });
   document.addEventListener('keydown', (ev) => {
@@ -459,6 +507,18 @@ function bootstrap(): void {
    * installed before the first view mounts and starts emitting.
    */
   setTimeout(() => navigateTo('coverage'), 0);
+
+  /*
+   * Web build only: pull the split artifacts now that the first view is queued. Starting
+   * here rather than at module scope is the whole point — they must never compete with
+   * first paint, only fill in behind it.
+   */
+  prefetchSplit(['creators-log-embed', 'corpus-embed', 'search/search-index']);
+  /*
+   * Hydrate as soon as they land rather than only on the first drawer open, so the rail's
+   * derived corpus count fills itself in without the user having to go looking for it.
+   */
+  void ensureKnowledgeData();
 }
 
 
@@ -506,8 +566,15 @@ function wireProfileIdentity(): void {
     }
     const subEl = document.getElementById('railBrandSub');
     if (subEl !== null) {
-      // Derived from the sealed corpus at boot — see state/corpus.ts::claimCount.
-      subEl.textContent = `Corpus · ${corpusState.claimCount().toLocaleString()} entries`;
+      /*
+       * Derived from the sealed corpus — see state/corpus.ts::claimCount. In the web build
+       * the corpus arrives over the wire, and until it does the count is UNKNOWN, not zero:
+       * printing "Corpus · 0 entries" would assert a number the app does not have. Show the
+       * bare label instead and repaint on 'corpus:hydrated'.
+       */
+      subEl.textContent = corpusState.isLoaded()
+        ? `Corpus · ${corpusState.claimCount().toLocaleString()} entries`
+        : 'Corpus';
     }
     if (brandEl !== null) {
       // The brand slot. Derived, never a literal in markup — this and the profile slot
@@ -517,6 +584,8 @@ function wireProfileIdentity(): void {
   };
   paint();
   events.on('profile:changed', paint);
+  // The corpus count is derived, so it cannot be painted until the corpus exists.
+  events.on('corpus:hydrated', paint);
 }
 
 /**

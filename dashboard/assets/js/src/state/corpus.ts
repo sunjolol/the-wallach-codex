@@ -37,11 +37,40 @@ const EMPTY_CORPUS: CorpusEmbed = {
 };
 
 let cached: CorpusEmbed | null = null;
+/**
+ * Where the WEB build's fetched copy lands. That build stubs `corpusEmbed` to the empty
+ * shape and ships the real file for state/data-split.ts to pull; see data-split.ts for why.
+ * Stays null in the file:// build, which reads the inlined import directly.
+ */
+let injected: unknown = null;
+
+/**
+ * Accept the fetched corpus embed. Clearing the parse cache is the point: the next read
+ * re-validates through the same Zod boundary the inlined path uses, so a payload that came
+ * over the wire earns no more trust than one that came in the bundle.
+ */
+export function hydrateCorpus(raw: unknown): void {
+  injected = raw;
+  cached = null;
+}
+
+/**
+ * Whether the corpus actually carries claims yet.
+ *
+ * ★ Callers must not print a COUNT before this is true. In the web build the corpus arrives
+ * over the wire, and until it does `claimCount()` is not 0 — it is UNKNOWN. Rendering
+ * "Corpus · 0 entries" states a fact the app does not have, which is the anti-fakery rule,
+ * not a cosmetic one. Derived from the data rather than tracked in a flag, so there is no
+ * second piece of state to drift out of step with the first.
+ */
+export function isLoaded(): boolean {
+  return Object.keys(corpus().claims).length > 0;
+}
 
 /** The validated corpus embed (parsed once; bad/absent embed → empty). */
 function corpus(): CorpusEmbed {
   if (cached === null) {
-    const parsed = CorpusEmbedSchema.safeParse(corpusEmbed);
+    const parsed = CorpusEmbedSchema.safeParse(injected ?? corpusEmbed);
     cached = parsed.success ? parsed.data : EMPTY_CORPUS;
   }
   return cached;
