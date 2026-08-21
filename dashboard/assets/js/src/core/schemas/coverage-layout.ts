@@ -104,7 +104,7 @@ export type LayoutSection = z.infer<typeof LayoutSectionSchema>;
  * WHERE THESE COME FROM:
  * - `id`/`name`/`conditions` are CURATION, hand-authored in coverage-layout-skeleton.json.
  *   Ours, explicitly not a Wallach claim — he enumerates no "goals". The set is editorial
- *   and freely re-authorable (31 goals today); rewriting it does not change the machinery.
+ *   and freely re-authorable (30 goals today); rewriting it does not change the machinery.
  * - `members` is DERIVED, never hand-stored: coverage_layout_derive.py intersects the sealed
  *   claims against each goal's Catalog condition slugs. The goal SET is ours; the MEMBERSHIP
  *   is Wallach's.
@@ -124,16 +124,16 @@ export const LayoutGoalSchema = z.object({
   /**
    * Subsection ids this goal names AS A WHOLE — today only `plant-derived`. Derived, never
    * hand-stored: coverage_layout_derive.py emits it when a sealed claim whose OWN VERBATIM
-   * says "colloidal minerals" maps one of the goal's conditions (20 of the 31 goals today).
+   * says "colloidal minerals" maps one of the goal's conditions (20 of the 30 goals today).
    *
    * ★ WHY A GROUP AND NOT 34 MEMBERS: the plant-derived 34 have no individual Wallach
    * amount and share ONE verdict off the colloidal-mineral bottle, so a ring on strontium is
    * a to-do nobody can act on — they stay OUT of `members`
    * (EXCLUDE_PLANT_DERIVED). But Wallach prescribes the COMPLEX by name for these conditions,
    * and the group is one thing you CAN do. One member, one marker. Ringing all 34 would light
-   * 37% of the field on 20 of 31 goals and make the goal system read as noise.
+   * 37% of the field on 20 of 30 goals and make the goal system read as noise.
    *
-   * OMITTED, never empty, on any goal where he never names the complex (11 of the 31
+   * OMITTED, never empty, on any goal where he never names the complex (10 of the 30
    * today) — an honest gap, not a zero.
    */
   groups: z.array(z.string()).optional(),

@@ -264,10 +264,17 @@
 .ck-console__label b { color: var(--ds-ink); font-weight: 700; }
 .ck-console__tag { margin-left: auto; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); }
 
-.ck-hero { display: flex; flex-wrap: wrap; gap: var(--ds-space-7); align-items: center; padding: var(--ds-space-7) var(--ds-space-7) var(--ds-space-6); }
+/* Vertical padding trimmed to --ds-space-5 top and bottom (was 7 and 6). The horizontal
+   40px stays: it is what keeps the gauge off the panel edge and the cluster off the
+   right rule. Outer padding is the cheapest height to give back — it costs no legibility. */
+.ck-hero { display: flex; flex-wrap: wrap; gap: var(--ds-space-6); align-items: center; padding: var(--ds-space-5) var(--ds-space-7); }
 
 /* the gauge */
-.ck-gauge { position: relative; width: 252px; height: 252px; flex: 0 0 auto; margin: 0 auto; }
+/* 200px, down from 252. The gauge — not the category cluster (~189px) — is what sets the
+   hero's height, so this is the single change that buys real space rather than shaving
+   a label. The numeral below scales with it to keep the dial-to-digit ratio intact;
+   shrinking the ring alone would leave a number that looks stranded in it. */
+.ck-gauge { position: relative; width: 200px; height: 200px; flex: 0 0 auto; margin: 0 auto; }
 .ck-gauge__svg { width: 100%; height: 100%; display: block; overflow: visible; }
 .ck-gauge__face { fill: var(--ds-paper); }
 .ck-gauge__facering { fill: none; stroke: var(--ds-rule-soft); stroke-width: 1; }
@@ -277,7 +284,7 @@
 .ck-gauge__arc--cov { stroke: url(#ck-cov-grad); stroke-dasharray: 52.222 100; stroke-dashoffset: 0; }
 .ck-gauge__arc--gap { stroke: var(--ds-accent); stroke-dasharray: 6.667 100; stroke-dashoffset: 0; opacity: 1; }
 .ck-gauge__center { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; pointer-events: none; }
-.ck-gauge__num { font-family: var(--ds-font-display-artifact); font-size: 3.8rem; line-height: .86; color: var(--ds-ink); font-variant-numeric: tabular-nums; }
+.ck-gauge__num { font-family: var(--ds-font-display-artifact); font-size: 3rem; line-height: .86; color: var(--ds-ink); font-variant-numeric: tabular-nums; }
 .ck-gauge__den { font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-soft); }
 .ck-gauge__den b { color: var(--ds-ok-deep); font-weight: 700; }
 @media (prefers-reduced-motion: no-preference) {
@@ -288,7 +295,9 @@
 @keyframes ck-gapin { 0%,72% { opacity: 0; } 100% { opacity: 1; } }
 
 /* the category cluster */
-.ck-cluster { flex: 1 1 280px; min-width: 250px; display: flex; flex-direction: column; gap: var(--ds-space-4); }
+/* 12px between rows rather than 16. Six gaps, so 24px — and at this size the category
+   rows still read as a list rather than a block, which is the line not to cross. */
+.ck-cluster { flex: 1 1 280px; min-width: 250px; display: flex; flex-direction: column; gap: var(--ds-space-3); }
 .ck-cluster__head { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wider); text-transform: uppercase; color: var(--ds-ink-faint); }
 .ck-cat { display: grid; grid-template-columns: 128px 1fr auto; align-items: center; gap: 12px; }
 .ck-cat__id { display: inline-flex; align-items: center; gap: 8px; min-width: 0; }
@@ -307,8 +316,12 @@
 .ck-legend__sw--not { background: var(--ds-rule); }
 
 /* the 90-essential raw readout — subordinate telemetry beneath the gauge */
-.ck-readout { padding: var(--ds-space-5) var(--ds-space-7) var(--ds-space-6); border-top: 1px solid var(--ds-rule-soft); background: var(--ds-paper); }
-.ck-readout__label { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: var(--ds-space-3); }
+/* 16/40/20, down from 24/40/32. The square field below is a dense block already; the
+   padding around it was doing the work of a margin. Its 5px grid gap is deliberately
+   NOT reduced — the squares are aspect-ratio 1 in a 45-column grid, so a smaller gap
+   makes each square WIDER and the block TALLER. Measured, not assumed. */
+.ck-readout { padding: var(--ds-space-4) var(--ds-space-7) 20px; border-top: 1px solid var(--ds-rule-soft); background: var(--ds-paper); }
+.ck-readout__label { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: var(--ds-track-wide); text-transform: uppercase; color: var(--ds-ink-faint); margin-bottom: 8px; }
 .ck-readout__label b { color: var(--ds-ink-soft); font-weight: 700; }
 .ck-readout__field { display: grid; grid-template-columns: repeat(45, minmax(0, 1fr)); gap: 5px; }
 .ck-readout__field i { aspect-ratio: 1; border-radius: 2px; background: var(--ds-paper-shadow); box-shadow: inset 0 0 0 1px var(--ds-rule-soft); transition: transform .1s ease, box-shadow .1s ease; }

@@ -1,0 +1,29 @@
+{
+  "_purpose": "Products never offered as a RECOMMENDATION because a newer version of the same supplement has replaced them. Editorial CURATION config — OURS, not a Wallach claim and not a pillar projection — so it lives here hand-authored (manifest 'accounted') rather than derived. It changes only what we SHOW; it never touches a target, a dose, a price or a composition, and no number lives in this file.",
+  "_the_rule": "The owner's ruling (2026-08-21): \"BTT 2.5 is the ONLY BTT powder that should be recommended ever, and BTT 2.0 Tablets should also be recommended. ALL other BTT/Tangy Tangerine products should not show up as recommendations ever because they are redundant against 2.5 + the tablets.\" Recommending two versions of one supplement is not a richer list, it is a list that contradicts itself — and on the Coverage rail it also burns one of the nine product slots that tab will ever spend.",
+  "_scope": "Excluded from every RECOMMENDATION surface — the Coverage rail, the Regimen console, the condition pages, and the essentials deep-dive's BEST SOURCES. The ONE place a superseded product stays fully present is the Products database (the Knowledge drawer's Products tab), where it is still a real catalogue item somebody may already own. Same asymmetry as kids-exclusion.json, for the same reason: not-recommended is not the same as hidden.",
+  "_why_not_derived": "Nothing in the sealed Products pillar says which product supersedes which. There is no version field, no successor field and no discontinued flag — the relationship lives in Youngevity's product line history and in the owner's judgment, so it is recorded here rather than inferred. A name/version heuristic is REJECTED: '2.5' > '2.0' happens to sort correctly for this pair, but the pillar also holds BTT Original (450 g), Ultimate Tangy Tangerine and two BTT 2.0 packagings, and no string rule distinguishes 'newer formula' from 'different product' or 'different packaging' among them.",
+  "superseded": [
+    {
+      "product_id": "btt-2-0-citrus-peach-fusion",
+      "superseded_by": "beyond-tangy-tangerine-2-5-canister",
+      "evidence": "BTT 2.0 Citrus Peach Fusion is the 2.0-formula powder canister (1 scoop / 16 g); Beyond Tangy Tangerine 2.5 Canister is the same product line's later formula in the same form (1 scoop / 16 g). Both are offerable recommender candidates covering 33 and 35 essentials respectively, so without this exclusion the ranker will offer both versions of one supplement in the same list."
+    },
+    {
+      "product_id": "beyond-tangy-tangerine-450g-canister",
+      "superseded_by": "beyond-tangy-tangerine-2-5-canister",
+      "evidence": "BTT Original 450 g canister (powder, 2 scoops / 15 g) is the earliest formula in the line. Beyond Tangy Tangerine 2.5 is the current powder. Both were live recommender candidates: a driven session offered BTT Original alongside 2.5 in the same list, which is the exact two-versions-of-one-supplement outcome this file exists to prevent."
+    },
+    {
+      "product_id": "btt-2-0-citrus-peach-fusion-30-count-box",
+      "superseded_by": "beyond-tangy-tangerine-2-5-canister",
+      "evidence": "The same BTT 2.0 formula as the canister, packaged as 30 single-serve stick packs (1 stick pack / 16 g) instead of a scoop. Packaging, not formula — and the formula it packages is the superseded one."
+    },
+    {
+      "product_id": "ultimate-tangy-tangerine-liquid",
+      "superseded_by": "beyond-tangy-tangerine-2-5-canister",
+      "evidence": "Ultimate Tangy Tangerine liquid (1 fl oz) is a further variant of the same line. Redundant against BTT 2.5 plus BTT 2.0 Tablets, which together already cover the powder and tablet forms."
+    }
+  ],
+  "_the_line_in_full": "Six products in the sealed pillar match BTT / Tangy / Tangerine by id or name, and all six were live recommender candidates. SURVIVING: beyond-tangy-tangerine-2-5-canister (the powder) and btt-2-0-tablets (the tablet). RETIRED: BTT Original 450 g, BTT 2.0 Citrus Peach Fusion canister, its 30-count stick-pack box, and Ultimate Tangy Tangerine liquid. Enumerate the pillar again before assuming this list is still complete — a new variant would be recommendable the day it lands."
+}

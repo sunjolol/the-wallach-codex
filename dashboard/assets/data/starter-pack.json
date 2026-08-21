@@ -1,0 +1,29 @@
+{
+  "_purpose": "The STARTER PACK — the fixed, ordered products every user is offered FIRST, before any scored recommendation. Editorial CURATION config, OURS and explicitly NOT a Wallach claim and NOT a pillar projection; no generator. It changes only the ORDER in which we surface products; it never touches a target, a dose, a composition, or a price. §00.A: no number lives here.",
+  "_the_rule": "The owner's ruling (2026-08-21): 'we need to make this a manual ordering system … THEN at that point it recommends a max of 4 more products that best fill the MOST remaining gaps, whether they are goals or not, this is a better system and gets everyone on the same start pack that covers MOST things'. The scored ranker was producing near-identical lists across every goal (measured: 124 card slots across all 31 goals were filled by only 12 distinct products), because the breadth term reads each product's GLOBAL breadth and so is identical no matter which goal is picked. A curated opening order is the deliberate answer to that, not a workaround.",
+  "_order_is_the_array": "RANK IS ARRAY ORDER. There is deliberately no `rank` field — a position stored twice is a position that can disagree with itself (§00.B.1). To reorder the pack, reorder the array.",
+  "_names_deliberately_absent": "No display name and no price is stored here. The sealed Products pillar is their one home (Charter R3); the rec card reads both through the generated vault at render time, so a repriced or renamed product needs no edit in this file. The `starter_pack_resolves` invariant REDs on an id that does not resolve against the pillar, so a typo cannot silently drop a pin.",
+  "_what_pinning_does_NOT_do": "A pin is an ORDER, not a claim and not an exemption. Pinned products are still filtered by the kids exclusion, still disappear once the user owns them (which is what makes the list terminate), and still carry no assertion that they cover anything — the card's `supplies N` is computed from composition exactly as it is for a scored card.",
+  "pinned": [
+    {
+      "product_id": "ultimate-classic",
+      "note": "Opens the pack. The owner's stated reason: 'it covers not only PDM but many other sources' — the plant-derived vehicle plus broad vitamin/amino coverage in one bottle, which is why it leads rather than a tablet multi."
+    },
+    {
+      "product_id": "ultimate-daily",
+      "note": "Ultimate Daily - 180 Tablets. Disambiguated by the owner on 2026-08-21 from 'ultimate-daily-classic' (90 tablets) and 'ultimate-daily-capsules' — he named the plain 180-tablet product."
+    },
+    {
+      "product_id": "beyond-tangy-tangerine-2-5-canister",
+      "note": "BTT 2.5 canister — the powdered vehicle, named by the owner in canister form specifically (not the 30-count box or the original 450 g)."
+    },
+    {
+      "product_id": "ultimate-efa-plus",
+      "note": "Ultimate EFA Plus - 90 soft gels. The EFA leg of the pack; the EFA tiles grade off a shared 9,000 mg aggregate rather than per-essential amounts, so an oil belongs in the opening order."
+    },
+    {
+      "product_id": "btt-2-0-tablets",
+      "note": "BTT 2.0 Tablets - 120 Tablets. Closes the pack."
+    }
+  ]
+}

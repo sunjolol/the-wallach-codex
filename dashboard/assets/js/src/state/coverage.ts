@@ -915,6 +915,13 @@ function buildTiles(items: RegimenItem[], overrides: OverridesMap): BuiltTiles {
     // NOT `|| wallach_collective` — that alias fed the omegas into the rare-earth
     // meter (see classify). trace_pdm is the ONLY kind the PDM aggregate scores.
     const isPdm = t?.kind === 'trace_pdm';
+    // The EFA pair grades off the SHARED 9,000 mg aggregate, the same shape as the
+    // plant-derived 34 off 924 mg — so it needs the same goal-relative fill. Keyed on the
+    // group, never on the kind alone: `wallach_collective` is deliberately routed per
+    // group (see classify), because a collective that fell through to a neighbouring
+    // group's meter once rendered OMEGA-3 covered off two mineral products carrying zero
+    // fatty acids.
+    const isEfa = t?.kind === 'wallach_collective' && t.collective_group === 'essential-fatty-acids';
     let intakeVsTarget: CoverageTile['intakeVsTarget'] = null;
     if (isPdm) {
       // The rare-earth group reads Σ vehicle mg against the ONE shared goal (the meter
@@ -960,8 +967,18 @@ function buildTiles(items: RegimenItem[], overrides: OverridesMap): BuiltTiles {
       name: entry.name,
       status,
       covered: status === 'covered' || status === 'trace',
-      fillPercent: isPdm ? (PDM_GOAL > 0 ? pdm.totalMg / PDM_GOAL : 0) : deliveryRatio(t, status, d),
-      contributesTo: isPdm ? pdm.sources : d.sources,
+      // Both aggregate meters fill against their own goal; everything else measures its
+      // own delivery against its own Wallach low. deliveryRatio cannot serve the
+      // aggregates: they carry no numeric `low`, so it returns a binary 0/1 and the bar
+      // snaps from empty to full instead of showing progress.
+      fillPercent: isPdm
+        ? (PDM_GOAL > 0 ? pdm.totalMg / PDM_GOAL : 0)
+        : isEfa
+          ? (EFA_GOAL > 0 ? efa.totalMg / EFA_GOAL : 0)
+          : deliveryRatio(t, status, d),
+      // Same reasoning for the sources line: an EFA tile's contributors are the products
+      // feeding the shared oil total, not this one tile's own nutrient rows.
+      contributesTo: isPdm ? pdm.sources : isEfa ? efa.sources : d.sources,
       aggregateVehicle: isPdm && status === 'covered',
       intakeVsTarget,
       noTargetReason,

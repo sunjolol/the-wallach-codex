@@ -24,6 +24,10 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const KIDS = require(path.join(ROOT, 'dashboard/assets/data/kids-exclusion.json'));
+// DERIVED, never snapshotted: read the same curation file the app reads, so re-ordering
+// the pack updates this probe's expectation automatically instead of turning it red.
+const PACK = require(path.join(ROOT, 'dashboard/assets/data/starter-pack.json'))
+  .pinned.map(p => p.product_id);
 
 const readState = () => {
   const n = (label) => {
@@ -74,7 +78,22 @@ const readState = () => {
   const s0 = await page.evaluate(readState);
   checks.push(['the rail reads the ACTIVE SLOT name (D4)', s0.slot === 'DEFAULT']);
   checks.push(['the empty field is 5 covered (HCNO fiat + the phosphorus zero target)', s0.covered === 5]);
-  checks.push(['4 recommendation cards', s0.recs.length === 4]);
+  // 3 = REC_PAGE in views/coverage.ts. There is no pager: the list ADVANCES instead —
+  // adding one of the three removes it (owned products are filtered out) and the next
+  // surfaces in its place, up to the nine-product budget the Coverage tab will ever spend.
+  checks.push(['3 recommendation cards', s0.recs.length === 3]);
+  checks.push(['no pager control — the list advances rather than pages',
+    (await page.$('[data-recs-more]')) === null]);
+
+  // ★ THE STARTER PACK LEADS, IN ITS CURATED ORDER. A fresh field owns nothing, so the first
+  // cards must be the pack — if scoring were still deciding the opening, this is the check
+  // that would catch it.
+  const packNames = await page.evaluate((ids) => ids.map((id) => {
+    const el = document.querySelector(`[data-rec-add="${id}"] .rec__name`);
+    return el ? el.textContent : null;
+  }), PACK.slice(0, 3));
+  checks.push(['the first 3 cards ARE the first 3 pinned products, in order',
+    packNames.every(Boolean) && JSON.stringify(packNames) === JSON.stringify(s0.recs)]);
 
   // ── ADD via the rec card + ────────────────────────────────────────────────
   await page.click('.rec');
@@ -91,7 +110,13 @@ const readState = () => {
   const s2 = await page.evaluate(readState);
   checks.push(['the dose stepper reads 2 per day', s2.dose === '2']);
   checks.push(['INCREASING THE DOSE MOVES THE COUNTS', s2.covered > s1.covered]);
-  checks.push(['more covered means fewer not-covered', s2.gap < s1.gap]);
+  // ★ THE LAW IS "TILES MOVE TOWARD COVERED", NOT "GAP SHRINKS". A dose increase can only
+  // move essentials the product actually DELIVERS, and those sit in PARTIAL. GAP holds the
+  // essentials it does not contain at all, which no dose can reach — so asserting gap alone
+  // was an accident of whichever product happened to rank first. Measured here: covered
+  // 12 -> 49, partial 49 -> 12, gap 14 -> 14 (37 tiles moved partial -> covered).
+  checks.push(['more covered means fewer NOT-YET-covered',
+    (s2.partial + s2.gap) < (s1.partial + s1.gap)]);
 
   // ── reversible, exactly ───────────────────────────────────────────────────
   await page.click('[data-dose-down]');

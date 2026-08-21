@@ -1,0 +1,16 @@
+{
+  "_purpose": "Per-product STARTING QUANTITIES for the dose stepper, in the product's own units, where one label serving is not the right place to start. Editorial CURATION config — OURS. Every product not listed here starts at exactly ONE LABEL SERVING, which adds no number of anyone's: it is Youngevity's own stated serving read off the label.",
+  "_what_this_is_NOT": "★ NOT A WALLACH DOSE, and nothing here may ever become one. §00.A governs every recommended amount the app displays, and a pre-filled quantity is displayed. So every entry MUST carry a `provenance` from the closed set below, no entry may carry a source_claim_id, and no entry may be described as Wallach's. The Wallach numbers stay exactly where they were: the coverage tiles still grade delivery against the corpus targets, so a starting quantity below a Wallach target shows as a PARTIAL bar rather than being hidden.",
+  "_provenance_kinds": {
+    "container_life": "Derived from Youngevity's own container arithmetic — servings_per_container divided by 30 days — so a bottle lasts a month. A packaging fact, not a health claim. The user can step it to anything."
+  },
+  "_the_ruling": "Luneth, 2026-08-21, asked for Ultimate EFA Plus to start at 3/day: \"3 being the minimum you'd want to take per day because that's a 30 day supply, same as the others\". Raised with him as the one number in the batch that comes from neither the product label nor a Wallach book; he ratified it with that trade-off in front of him, choosing it over 9/day (which is Wallach's own 9,000 mg EFA target and would empty a 90-softgel bottle in 10 days) and over 1/day (the bare label serving).",
+  "defaults": [
+    {
+      "product_id": "ultimate-efa-plus",
+      "units_per_day": 3,
+      "provenance": "container_life",
+      "note": "90 softgels / 30 days = 3 per day. The label serving is 1 softgel, so this is three servings — 3,000 mg of the 9,000 mg the corpus states for the EFA pair. The omega-3 and omega-6 tiles therefore open at roughly a third full, which is the honest picture: the shortfall is visible on the board rather than assumed away."
+    }
+  ]
+}

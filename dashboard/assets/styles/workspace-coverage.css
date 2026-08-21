@@ -1168,20 +1168,35 @@ body { margin: 0; background: var(--ds-paper-deep); }
 /* Names front-load identity and back-load packaging ("- 60 tablets", "[QTY: 60]"),
    so truncating from the END is safe: 71 of the 215 real product names exceed 30 chars. */
 .rl-row__name { grid-column: 1; min-width: 0; font-family: var(--ds-font-display); font-size: .78rem; font-weight: 700; color: var(--ds-ink); line-height: 1.3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.rl-row__x { grid-column: 2; grid-row: 1; align-self: start; background: none; border: 0; cursor: pointer; padding: 0 0 0 6px; font-size: .72rem; line-height: 1.3; color: var(--ds-ink-faint); transition: color .14s; }
-.rl-row__x:hover { color: var(--ds-status-warn); }
-.rl-row__foot { grid-column: 1 / -1; display: flex; align-items: center; gap: 8px; }
+/* Spans BOTH grid rows and centres, so it sits against the row as a whole rather than
+   hanging off the first line. Sizing/hover come from .ui-close--sm (20px, accent on
+   hover) -- matching the goal chips, minus their hover-to-reveal. */
+/* `span 2`, NOT `1 / -1`: with no grid-template-rows the explicit grid has no row lines,
+   so -1 cannot reach the implicit second row and the span silently collapsed to row 1 --
+   which centred the X on the NAME line, 11px high. Measured, not eyeballed; the
+   screenshot looked plausible. */
+.rl-row__x { grid-column: 2; grid-row: 1 / span 2; align-self: center; --uic-size: 20px; }
+/* Column 1, row 2 EXPLICITLY. It used to span `1 / -1` and auto-place, which was fine
+   while the X occupied only row 1 -- but once the X spans both rows, a full-width foot
+   can no longer find a free row and auto-places into a THIRD row, leaving the X centred
+   above it. Pinning both is what actually centres the X against the row. */
+.rl-row__foot { grid-column: 1; grid-row: 2; display: flex; align-items: center; gap: 8px; }
 
 /* The Eden-vs-your-own mark. Deliberately QUIET — a provenance note, not a status signal. */
 .rl-src { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .08em; color: var(--ds-ink-faint); }
 .rl-src.is-own { color: var(--ds-tech); }
 
-.rl-dose { margin-left: auto; display: inline-flex; align-items: center; gap: 1px; }
+/* Left-aligned: with the EDEN mark gone there is nothing to push it away from, and a
+   right-floated control on a variable-width panel never lines up with the row above it. */
+.rl-dose { display: inline-flex; align-items: center; gap: 1px; }
 .rl-dose__b { width: 17px; height: 17px; display: grid; place-items: center; padding: 0; cursor: pointer; background: var(--ds-paper); border: 1px solid var(--ds-rule); color: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: .7rem; line-height: 1; border-radius: 2px; transition: border-color .14s, color .14s; }
 .rl-dose__b:hover { border-color: var(--ds-ink-faint); color: var(--ds-ink); }
 .rl-dose__b:disabled { opacity: .3; cursor: not-allowed; }
 .rl-dose__n { min-width: 15px; text-align: center; font-family: var(--ds-font-mono); font-size: .72rem; font-weight: 700; color: var(--ds-ink); }
-.rl-dose__u { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .06em; }
+/* .7rem, set here rather than by moving --ds-text-micro: that token is design-system-wide
+   and every micro label in the app rides it. The 7px is breathing room after the + so the
+   unit reads as a label, not as part of the button cluster. */
+.rl-dose__u { margin-left: 7px; font-family: var(--ds-font-mono); font-size: .7rem; color: var(--ds-ink-faint); letter-spacing: .06em; }
 
 .rail-panel__full { width: 100%; }
 

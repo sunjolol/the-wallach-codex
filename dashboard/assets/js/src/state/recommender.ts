@@ -31,6 +31,7 @@ import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { ProductEntrySchema, ProductsLookupSchema, RecommenderDataSchema } from '../core/schemas/index.js';
 import { toMg } from '../core/units.js';
 import { isExcludedFromRecommendations } from './kids-exclusion.js';
+import { isSupersededProduct } from './superseded-products.js';
 
 // ─── Weights + curves (the tuner) ──────────────────────────────────────────
 const W_ADEQ = 0.6; // keystone: adequacy (or the potency proxy until targets exist)
@@ -41,6 +42,13 @@ const W_VALUE = 0.1; // banded cost tuner: only re-orders near-ties, never upsel
 // from 30→35 essentials barely moves the score (the diminishing-returns curve the design
 // calls for — a 35-nutrient multi isn't "7× better" than a 5-nutrient one).
 const BREADTH_HALF = 5;
+
+/**
+ * The floor of the PINNED score band. Every scored card is strictly < 1 (the three weights
+ * sum to 1 and `breadthScore` never reaches it), so any base >= 1 keeps the whole starter
+ * pack above the whole scored tail. 2 leaves the band obvious at a glance in a debugger.
+ */
+const PIN_SCORE_BASE = 2;
 
 const DATA = RecommenderDataSchema.parse(recommenderData);
 
@@ -112,7 +120,9 @@ export function rankSources(
   // min/max cost-per-unit band below are computed over the candidate SET, so an
   // excluded product must be gone before they are derived — otherwise a kids product
   // it no longer ranks would still silently skew every surviving product's score.
-  const candidates = entry.candidates.filter(c => !isExcludedFromRecommendations(c.product_id));
+  const candidates = entry.candidates.filter(
+    c => !isExcludedFromRecommendations(c.product_id) && !isSupersededProduct(c.product_id),
+  );
   if (candidates.length === 0) {
     return [];
   }
@@ -181,7 +191,9 @@ export function rankSources(
 export function hasSources(slug: string): boolean {
   const entry = DATA.essentials[slug];
   return entry !== undefined
-    && entry.candidates.some(c => !isExcludedFromRecommendations(c.product_id));
+    && entry.candidates.some(
+      c => !isExcludedFromRecommendations(c.product_id) && !isSupersededProduct(c.product_id),
+    );
 }
 
 // ─── Product → delivered-essentials index (for the Products-tab search) ──────
@@ -268,6 +280,21 @@ export interface CoverageRec {
   breadth: number;
   /** Which of the ACTIVE goals this product touches — the card's coloured dots. */
   goalIds: string[];
+  /**
+   * True iff this card came from the curated STARTER PACK (state/starter-pack.ts) rather
+   * than from the scorer. Pinned cards hold their position by curation, not by `score`.
+   */
+  pinned: boolean;
+  /**
+   * The sort key that produced this card's position.
+   *
+   * Scored cards sit strictly BELOW 1: the three weights sum to exactly 1 and
+   * `breadthScore` is asymptotic to 1 without reaching it, so the weighted sum cannot.
+   * Pinned cards carry a synthetic score ABOVE that band, descending with pack order.
+   * That keeps `score` meaning ONE thing for every card in the list — "the key this
+   * position came from" — instead of a real number on some rows and a placeholder on
+   * others.
+   */
   score: number;
   /** `supplies` per $10 — the card's DISPLAYED value figure, not the sort key. */
   perTenDollars: number;
@@ -305,7 +332,9 @@ function productName(productId: string): string {
  * nutrient rows to mint a RegimenItem, exactly as views/regimen.ts::addItem does from the
  * picker — the two add paths must produce the same shape or the field disagrees with itself.
  */
-export function vaultEntry(productId: string): { name: string; nutrients: unknown[] } | null {
+export function vaultEntry(
+  productId: string,
+): { name: string; nutrients: unknown[]; servingUnits: number | null; servingUnit: string | null } | null {
   const raw = VAULT[productId];
   const parsed = ProductEntrySchema.safeParse(Array.isArray(raw) ? raw[0] : raw);
   if (!parsed.success) {
@@ -315,7 +344,15 @@ export function vaultEntry(productId: string): { name: string; nutrients: unknow
   if (name === undefined || name === '') {
     return null;
   }
-  return { name, nutrients: parsed.data.nutrients ?? [] };
+  // The unit facts ride along so the add paths can stamp them onto the item's label — the
+  // stepper reads them from there, not from the vault, because a scanned item has a label
+  // and no vault entry at all.
+  return {
+    name,
+    nutrients: parsed.data.nutrients ?? [],
+    servingUnits: parsed.data.serving_units ?? null,
+    servingUnit: parsed.data.serving_unit ?? null,
+  };
 }
 
 /**
@@ -368,7 +405,9 @@ function coverageIndex(): Map<string, ProductAgg> {
   const m = new Map<string, ProductAgg>();
   for (const [slug, entry] of Object.entries(DATA.essentials)) {
     for (const c of entry.candidates) {
-      if (isExcludedFromRecommendations(c.product_id)) {
+      // TWO curated exclusions, one filter point. Both must run BEFORE the yardsticks are
+      // derived, or an excluded product still defines the scale the survivors are scored on.
+      if (isExcludedFromRecommendations(c.product_id) || isSupersededProduct(c.product_id)) {
         continue;
       }
       const agg = m.get(c.product_id);
@@ -400,7 +439,31 @@ function coverageIndex(): Map<string, ProductAgg> {
  *                     "Remove an item and it reappears" then costs no code at all.
  * @param input.goals  The ACTIVE goals + their members, for the card's dots. Empty in
  *                     no-goal mode.
- * @param input.limit  Cards to return (the rail shows 4).
+ * @param input.limit  Cards to return.
+ * @param input.pinned The curated STARTER PACK, in offer order (state/starter-pack.ts).
+ *                     Emitted FIRST, ahead of anything scored — and still subject to the
+ *                     owned and kids filters, because a pin is an ORDER, not an exemption.
+ * @param input.greedy Subtract each emitted product's essentials from the outstanding set
+ *                     before choosing the next card. Opt-in; see below.
+ *
+ * ★ WHY GREEDY EXISTS, and why it is OPT-IN rather than the default.
+ * One-shot scoring ranks every product against the SAME want-set, so the top cards come back
+ * near-duplicates: broad multis that each reach most of what you want, and each other's
+ * essentials too. Measured against the shipped data, 124 card slots across every goal were
+ * filled by only 12 distinct products. Greedy consumes what a card delivers before scoring
+ * the next one, so card 2 answers "what does card 1 leave behind?" — the list stops
+ * repeating itself and starts spanning.
+ * It is OPT-IN because the condition pages (views/entity-page.ts) ask a genuinely different
+ * question — "which products are best for THIS condition?" — where a spanning set would be
+ * wrong and the honest answer really is "these are all good for it". Non-greedy therefore
+ * takes the ORIGINAL one-shot path below, unchanged, rather than a loop that happens to
+ * agree: both relative terms are rescaled by the surviving set, so an iterative non-greedy
+ * loop would silently re-order that shipped surface.
+ *
+ * ★ WHAT `supplies` MEANS UNDER GREEDY. It counts what is STILL OUTSTANDING when the card is
+ * offered, not the original want — so it reads "this adds N you do not have yet", and the
+ * number matches the order. A pack product that adds nothing new honestly shows 0 rather
+ * than re-counting what the card above it already covered.
  *
  * Pure: no DOM, no localStorage, no stored output — `recommendations_not_stored` gates that a
  * recommendation list is never persisted.
@@ -410,63 +473,163 @@ export function rankProductsForCoverage(input: {
   owned?: readonly string[];
   goals?: readonly { id: string; members: readonly string[] }[];
   limit?: number;
+  pinned?: readonly string[];
+  greedy?: boolean;
 }): CoverageRec[] {
-  const want = new Set(input.want);
   const owned = new Set(input.owned ?? []);
   const goals = input.goals ?? [];
   const limit = input.limit ?? 4;
-  if (want.size === 0) {
+  const greedy = input.greedy ?? false;
+  const pins = input.pinned ?? [];
+  /** The essentials still unaccounted for. Greedy shrinks this as each card is emitted. */
+  const outstanding = new Set(input.want);
+  if (outstanding.size === 0) {
     return [];
   }
 
-  const rows: Omit<CoverageRec, 'score' | 'perTenDollars'>[] = [];
-  for (const [productId, agg] of coverageIndex()) {
-    if (owned.has(productId)) {
-      continue;
-    }
-    let supplies = 0;
+  const index = coverageIndex();
+  const out: CoverageRec[] = [];
+  const emitted = new Set<string>();
+
+  /** How many still-outstanding essentials this product reaches. */
+  const suppliesOf = (agg: ProductAgg): number => {
+    let n = 0;
     for (const slug of agg.essentials) {
-      if (want.has(slug)) {
-        supplies += 1;
+      if (outstanding.has(slug)) {
+        n += 1;
       }
     }
-    if (supplies === 0) {
-      continue;
-    }
-    rows.push({
+    return n;
+  };
+
+  const goalIdsFor = (agg: ProductAgg): string[] =>
+    goals.filter(g => g.members.some(m => agg.essentials.has(m))).map(g => g.id);
+
+  const perDollarOf = (price: number, supplies: number): number =>
+    (price > 0 ? supplies / price : 0);
+
+  /** Push one card built against the CURRENT outstanding set, then consume what it covers. */
+  const emit = (productId: string, agg: ProductAgg, score: number, isPinned: boolean): void => {
+    const supplies = suppliesOf(agg);
+    out.push({
       productId,
       name: productName(productId),
       price: agg.price,
       supplies,
       breadth: agg.breadth,
-      goalIds: goals.filter(g => g.members.some(m => agg.essentials.has(m))).map(g => g.id),
+      goalIds: goalIdsFor(agg),
+      pinned: isPinned,
+      score,
+      perTenDollars: perDollarOf(agg.price, supplies) * 10,
     });
-  }
-  if (rows.length === 0) {
-    return [];
+    emitted.add(productId);
+    if (greedy) {
+      for (const slug of agg.essentials) {
+        outstanding.delete(slug);
+      }
+    }
+  };
+
+  // ── 1. THE STARTER PACK, in curated order, ahead of anything scored ──────────────────
+  //
+  // A pin the user already owns is SKIPPED, not held — that is what lets the pack drain as
+  // they work through it, and it is the same rule that makes the scored tail terminate.
+  // A pin missing from the index is skipped silently ON PURPOSE: the index is kid-filtered,
+  // so this is the one place the kids exclusion must still win over curation.
+  for (let i = 0; i < pins.length && out.length < limit; i += 1) {
+    const productId = pins[i];
+    if (productId === undefined || owned.has(productId) || emitted.has(productId)) {
+      continue;
+    }
+    const agg = index.get(productId);
+    if (agg === undefined) {
+      continue;
+    }
+    // Above the scored band (strictly < 1) and descending with pack order.
+    emit(productId, agg, PIN_SCORE_BASE - i / (pins.length + 1), true);
   }
 
-  // Both relative terms are derived AFTER filtering (kids + owned), on purpose: an excluded or
-  // already-owned product must not define the yardstick the survivors are scored against.
-  const bestSupply = rows.reduce((m, r) => (r.supplies > m ? r.supplies : m), 0);
-  const perDollar = (r: { supplies: number; price: number }): number =>
-    (r.price > 0 ? r.supplies / r.price : 0);
-  const bestValue = rows.reduce((m, r) => {
-    const v = perDollar(r);
-    return v > m ? v : m;
-  }, 0);
+  /** Score one candidate against the current relative yardsticks. */
+  const scoreOf = (
+    supplies: number, breadth: number, price: number, bestSupply: number, bestValue: number,
+  ): number => {
+    const adequacy = bestSupply > 0 ? supplies / bestSupply : 0;
+    const value = bestValue > 0 ? perDollarOf(price, supplies) / bestValue : 0;
+    return W_ADEQ * adequacy + W_BREADTH * breadthScore(breadth) + W_VALUE * value;
+  };
 
-  const scored: CoverageRec[] = rows.map((r) => {
-    const adequacy = bestSupply > 0 ? r.supplies / bestSupply : 0;
-    const value = bestValue > 0 ? perDollar(r) / bestValue : 0;
-    return {
-      ...r,
-      score: W_ADEQ * adequacy + W_BREADTH * breadthScore(r.breadth) + W_VALUE * value,
-      perTenDollars: perDollar(r) * 10,
-    };
+  /** Every not-yet-emitted product reaching at least one still-outstanding essential. */
+  const candidates = (): { productId: string; agg: ProductAgg; supplies: number }[] => {
+    const rows: { productId: string; agg: ProductAgg; supplies: number }[] = [];
+    for (const [productId, agg] of index) {
+      if (owned.has(productId) || emitted.has(productId)) {
+        continue;
+      }
+      const supplies = suppliesOf(agg);
+      if (supplies === 0) {
+        continue;
+      }
+      rows.push({ productId, agg, supplies });
+    }
+    return rows;
+  };
+
+  // Both relative terms are derived AFTER filtering (kids + owned + already-emitted), on
+  // purpose: an excluded, owned or already-shown product must not define the yardstick the
+  // survivors are scored against.
+  const yardsticks = (
+    rows: { agg: ProductAgg; supplies: number }[],
+  ): { bestSupply: number; bestValue: number } => ({
+    bestSupply: rows.reduce((m, r) => (r.supplies > m ? r.supplies : m), 0),
+    bestValue: rows.reduce((m, r) => {
+      const v = perDollarOf(r.agg.price, r.supplies);
+      return v > m ? v : m;
+    }, 0),
   });
+
+  // ── 2a. THE SCORED TAIL — greedy: re-score against what is left after every pick ─────
+  if (greedy) {
+    while (out.length < limit && outstanding.size > 0) {
+      const rows = candidates();
+      if (rows.length === 0) {
+        break;
+      }
+      const { bestSupply, bestValue } = yardsticks(rows);
+      // Tie-break on product_id so the order is DETERMINISTIC — it must not depend on the
+      // generated artifact's key order, and a probe asserting the rec list must not flake.
+      let best = rows[0]!;
+      let bestScore = scoreOf(best.supplies, best.agg.breadth, best.agg.price, bestSupply, bestValue);
+      for (const r of rows) {
+        const s = scoreOf(r.supplies, r.agg.breadth, r.agg.price, bestSupply, bestValue);
+        if (s > bestScore || (s === bestScore && r.productId.localeCompare(best.productId) < 0)) {
+          best = r;
+          bestScore = s;
+        }
+      }
+      emit(best.productId, best.agg, bestScore, false);
+    }
+    return out;
+  }
+
+  // ── 2b. THE SCORED TAIL — one-shot: the ORIGINAL path, behaviour-preserved ───────────
+  const rows = candidates();
+  if (rows.length === 0) {
+    return out;
+  }
+  const { bestSupply, bestValue } = yardsticks(rows);
+  const scored: CoverageRec[] = rows.map(r => ({
+    productId: r.productId,
+    name: productName(r.productId),
+    price: r.agg.price,
+    supplies: r.supplies,
+    breadth: r.agg.breadth,
+    goalIds: goalIdsFor(r.agg),
+    pinned: false,
+    score: scoreOf(r.supplies, r.agg.breadth, r.agg.price, bestSupply, bestValue),
+    perTenDollars: perDollarOf(r.agg.price, r.supplies) * 10,
+  }));
   // Tie-break on product_id so the order is DETERMINISTIC — it must not depend on the
   // generated artifact's key order, and a probe asserting the rec list must not flake.
   scored.sort((a, b) => (b.score - a.score) || a.productId.localeCompare(b.productId));
-  return scored.slice(0, limit);
+  return out.concat(scored).slice(0, limit);
 }

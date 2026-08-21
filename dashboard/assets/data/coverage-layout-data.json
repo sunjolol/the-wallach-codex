@@ -1280,7 +1280,11 @@
         "athletes_foot",
         "boils",
         "impetigo",
-        "infection"
+        "infection",
+        "common_cold",
+        "colds",
+        "influenza",
+        "tonsillitis"
       ],
       "members": [
         "flavonoids",
@@ -1288,6 +1292,7 @@
         "lysine",
         "omega-3",
         "omega-6",
+        "potassium",
         "selenium",
         "silver",
         "vitamin-a",
@@ -1350,25 +1355,6 @@
       ],
       "groups": [
         "plant-derived"
-      ]
-    },
-    {
-      "id": "fewer-colds-flu",
-      "name": "Fewer colds & flu",
-      "category": "Digestion, immunity & breathing",
-      "conditions": [
-        "common_cold",
-        "colds",
-        "influenza",
-        "tonsillitis"
-      ],
-      "members": [
-        "flavonoids",
-        "potassium",
-        "selenium",
-        "vitamin-a",
-        "vitamin-c",
-        "zinc"
       ]
     },
     {

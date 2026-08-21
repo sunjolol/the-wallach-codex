@@ -79,14 +79,20 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
   // Re-opened as a GOAL PICKER (the strip's "+ ADD") once a profile exists: the name is
   // already settled, so it is not asked for again and only the goals gate the button.
   const reopen = existing !== null;
-  let chosen: string[] = [...(loadRgUserGoals() ?? [])].slice(0, MAX_GOALS);
+  // A saved goal id the layout no longer defines (one retired or merged into another) is
+  // DROPPED here, not carried: it renders no chip on any surface, so it can never be
+  // deselected, yet it would keep occupying one of the MAX_GOALS slots for good.
+  const knownGoalIds = new Set(LAYOUT.goals.map(g => g.id));
+  let chosen: string[] = [...(loadRgUserGoals() ?? [])]
+    .filter(id => knownGoalIds.has(id))
+    .slice(0, MAX_GOALS);
 
   const chip = (g: (typeof LAYOUT.goals)[number]): string =>
     `<button class="wc-goal" type="button" data-goal="${escHTML(g.id)}">`
     + `<span class="wc-goal__dot"></span>${escHTML(g.name)}</button>`;
 
   // Group the goals by their editorial category (first-seen order) so the picker reads as
-  // labelled shelves, not one undifferentiated wall — 31 goals need the structure. A goal with
+  // labelled shelves, not one undifferentiated wall — 30 goals need the structure. A goal with
   // no category (older skeleton) falls under a single unlabelled group, so this never drops one.
   const catOrder: string[] = [];
   const chipsByCat = new Map<string, string[]>();

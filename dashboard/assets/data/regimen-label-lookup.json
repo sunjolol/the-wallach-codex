@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "purpose": "Per-product label vault keyed by product_id -- a display name + the product's quantified nutrient rows {name, amount, unit}. Read by the Regimen Full-edit flow + the Knowledge Products tab. GENERATED from eden/products/products.json by eden/tools/products_embed.py -- never hand-edited (R1). Composition only (§00.A); NO marketing prose (no_product_marketing_prose).",
+    "purpose": "Per-product label vault keyed by product_id -- a display name, the product's quantified nutrient rows {name, amount, unit}, and (for single-component products whose serving is countable) serving_units + serving_unit: how many tablets/capsules/softgels make ONE label serving, so the dose stepper can say '2 tablets /day' instead of a bare '1'. Those two are DISPLAY facts read off the label's own serving_size -- no amount depends on them and no coverage math changes. Read by the Regimen Full-edit flow + the Knowledge Products tab. GENERATED from eden/products/products.json by eden/tools/products_embed.py -- never hand-edited (R1). Composition only (§00.A); NO marketing prose (no_product_marketing_prose).",
     "source": "eden/products/products.json",
     "generator": "eden/tools/products_embed.py",
     "product_count": 215
@@ -286,7 +286,9 @@
           "amount": 25.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "gummy"
     },
     "beyond-hot-chocolate": {
       "canonical_name": "Beyond Hot Chocolate™ - 360G Canister",
@@ -441,7 +443,9 @@
           "amount": 5.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "gummy"
     },
     "beyond-tangy-tangerine-2-5-canister": {
       "canonical_name": "Beyond Tangy Tangerine® (BTT) 2.5 Canister",
@@ -921,7 +925,9 @@
           "amount": 1.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "bio-fuel": {
       "canonical_name": "Bio Fuel",
@@ -1119,7 +1125,9 @@
           "amount": 500.0,
           "unit": "mcg"
         }
-      ]
+      ],
+      "serving_units": 5,
+      "serving_unit": "capsule"
     },
     "btt-2-0-citrus-peach-fusion": {
       "canonical_name": "BTT 2.0 Citrus Peach Fusion",
@@ -1739,7 +1747,9 @@
           "amount": 500.0,
           "unit": "million CFU"
         }
-      ]
+      ],
+      "serving_units": 4,
+      "serving_unit": "tablet"
     },
     "c-fx": {
       "canonical_name": "C-Fx™ - 90 capsules",
@@ -1764,7 +1774,9 @@
           "amount": 10.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "cal-mag-100": {
       "canonical_name": "CAL/MAG 100",
@@ -1853,7 +1865,9 @@
     },
     "cell-shield-rtq": {
       "canonical_name": "Cell Shield RTQ™ - 60 capsules",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "cheri-mins": {
       "canonical_name": "Cheri-Mins™ - 32 fl oz",
@@ -2121,7 +2135,9 @@
     },
     "digestwel-plus": {
       "canonical_name": "Digestwel+",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 1,
+      "serving_unit": "tablet"
     },
     "electrofuel": {
       "canonical_name": "ElectroFuel™",
@@ -2265,7 +2281,9 @@
           "amount": 25.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "tablet"
     },
     "osteoprocare": {
       "canonical_name": "OsteoProCare®",
@@ -2380,7 +2398,9 @@
           "amount": 1.5,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "ultimate-osteo-fx": {
       "canonical_name": "Ultimate Osteo fx™ - 32 fl oz",
@@ -2669,7 +2689,9 @@
           "amount": 110.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "gi-cleanse": {
       "canonical_name": "G.I. Cleanse",
@@ -2828,7 +2850,9 @@
           "amount": 200.0,
           "unit": "mcg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "tablet"
     },
     "hgh-amino-acid-blend": {
       "canonical_name": "H.G.H. Amino Acid Blend - 180 capsules",
@@ -2873,7 +2897,9 @@
           "amount": 128.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 6,
+      "serving_unit": "capsule"
     },
     "harmony-drops": {
       "canonical_name": "Harmony Drops 15 Ml Bottle",
@@ -2920,7 +2946,9 @@
     },
     "hope-sta-natural": {
       "canonical_name": "HOPE",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "i26-banana-coconut-chewables": {
       "canonical_name": "i26 Hyperimmune Egg Banana Coconut Chewables",
@@ -2930,7 +2958,9 @@
           "amount": 20.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 3,
+      "serving_unit": "tablet"
     },
     "i26-french-vanilla-chewables": {
       "canonical_name": "i26® French Vanilla Chewables - 45 Tablets",
@@ -2945,7 +2975,9 @@
           "amount": 4500.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 3,
+      "serving_unit": "tablet"
     },
     "i26-hyperimmune-egg-135-capsules": {
       "canonical_name": "i26® Hyperimmune Egg - 135 Capsules",
@@ -2955,7 +2987,9 @@
           "amount": 4500.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 9,
+      "serving_unit": "capsule"
     },
     "i26-hyperimmune-egg-powder-canister": {
       "canonical_name": "i26 Hyperimmune Egg Powder - 31 Day Supply - Canister",
@@ -2979,7 +3013,9 @@
           "amount": 200.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "immune-support": {
       "canonical_name": "Immune Support",
@@ -2993,7 +3029,9 @@
           "amount": 50.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "caplet"
     },
     "integris-coq10-plus-e": {
       "canonical_name": "Integris® - Coq10 Plus E",
@@ -3013,7 +3051,9 @@
           "amount": 5.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "integris-vitamin-k2": {
       "canonical_name": "Integris® - Vitamin K2",
@@ -3023,7 +3063,9 @@
           "amount": 100.0,
           "unit": "mcg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "i26-hyperimmune-egg-powder-french-vanilla": {
       "canonical_name": "i26 Hyperimmune Egg Powder – French Vanilla",
@@ -3252,7 +3294,9 @@
     },
     "killer-biotic-fx": {
       "canonical_name": "Killer Biotic FX® - 60 capsules",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "kidney-bladder-support": {
       "canonical_name": "Kidney & Bladder Support",
@@ -3361,7 +3405,9 @@
           "amount": 4.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "life-solubles-rice-bran": {
       "canonical_name": "Life Solubles (360 g) Rice Bran",
@@ -3519,7 +3565,9 @@
           "amount": 280.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "male-hormonal-support": {
       "canonical_name": "Male Hormonal Support",
@@ -3538,7 +3586,9 @@
           "amount": 150.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "msm-ultra": {
       "canonical_name": "MSM Ultra® (180 Caplets)",
@@ -3553,7 +3603,9 @@
           "amount": 3000.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 3,
+      "serving_unit": "caplet"
     },
     "manuka-force-lemon-honey-lozenges": {
       "canonical_name": "Manuka Force™ Lemon Honey Lozenges",
@@ -3563,7 +3615,9 @@
           "amount": 0.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "lozenge"
     },
     "natures-pearl-muscadine-grape-extract": {
       "canonical_name": "Nature's Pearl® Premium Muscadine Grape Extract",
@@ -3592,7 +3646,9 @@
           "amount": 650.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "nano-balance": {
       "canonical_name": "Nano Balance™",
@@ -3656,7 +3712,9 @@
           "amount": 250.0,
           "unit": "mcg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "omega": {
       "canonical_name": "Omega™ - 120 Softgels",
@@ -3671,7 +3729,9 @@
           "amount": 120.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "softgel"
     },
     "oxybody-cherry-berry": {
       "canonical_name": "Oxybody™ Cherry Berry - 32 fl oz",
@@ -3774,7 +3834,9 @@
           "amount": 220.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "softgel"
     },
     "projoint-fx": {
       "canonical_name": "ProJoint FX™",
@@ -3854,15 +3916,21 @@
           "amount": 113.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 3,
+      "serving_unit": "capsule"
     },
     "projoba-profemme": {
       "canonical_name": "ProJoba Profemme™ - 60 tablets",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 2,
+      "serving_unit": "tablet"
     },
     "projoba-prostat": {
       "canonical_name": "Projoba Prostat - 60 tablets",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 2,
+      "serving_unit": "tablet"
     },
     "purmeric": {
       "canonical_name": "Purmeric™ - 60 Organic Capsules",
@@ -3877,7 +3945,9 @@
           "amount": 10.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "plant-derived-minerals": {
       "canonical_name": "Plant Derived Minerals™",
@@ -4121,7 +4191,9 @@
     },
     "pollen-burst-plus-daily-liver": {
       "canonical_name": "Pollen Burst™ Plus - Daily Liver Formula - 60 tablets",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 2,
+      "serving_unit": "tablet"
     },
     "pollen-burst-tabs": {
       "canonical_name": "Pollen Burst™ Tabs - 60 tablets",
@@ -4131,7 +4203,9 @@
           "amount": 68.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "tablet"
     },
     "rebound-fx-citrus-punch": {
       "canonical_name": "Rebound FX™ Citrus Punch Sports Energy Drink",
@@ -4426,7 +4500,9 @@
           "amount": 5.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "renu-iq": {
       "canonical_name": "Renu iQ™",
@@ -4688,11 +4764,15 @@
     },
     "rvb-350": {
       "canonical_name": "RVB 350 (Beta 1, 3/1, 6-Glucan)",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ryl-beta550": {
       "canonical_name": "RYL BETA550 (Beta-1, 3/1, 6-Glucan)",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "sleep-eze": {
       "canonical_name": "Sleep Eze™",
@@ -4732,7 +4812,9 @@
           "amount": 2.5,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "cleanse-fx": {
       "canonical_name": "Slender Fx™ Cleanse Fx™",
@@ -4767,7 +4849,9 @@
           "amount": 100.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "keto-power-up": {
       "canonical_name": "Slender FX™ Keto Power Up™",
@@ -4787,7 +4871,9 @@
           "amount": 75.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "slender-fx-meal-replacement-shake": {
       "canonical_name": "Slender FX™ Meal Replacement Shake - French Vanilla",
@@ -4982,7 +5068,9 @@
           "amount": 200.0,
           "unit": "mcg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "smart-stiks": {
       "canonical_name": "SMART Stiks™",
@@ -5132,7 +5220,9 @@
           "amount": 50.0,
           "unit": "mcg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "tablet"
     },
     "sta-balanced": {
       "canonical_name": "Sta-Balanced™",
@@ -5162,7 +5252,9 @@
           "amount": 10.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "sta-cardio": {
       "canonical_name": "Sta-Cardio®",
@@ -5212,7 +5304,9 @@
           "amount": 10.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "sta-clear": {
       "canonical_name": "Sta-Clear",
@@ -5282,7 +5376,9 @@
           "amount": 25.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "sta-energized-plus": {
       "canonical_name": "Sta-Energized PLUS™",
@@ -5302,7 +5398,9 @@
           "amount": 360.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "sta-natural-plant-shake": {
       "canonical_name": "Sta-Natural® Plant-Based Protein Shake - Vanilla",
@@ -5432,7 +5530,9 @@
           "amount": 250.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "sta-vital": {
       "canonical_name": "Sta-Vital®",
@@ -5552,11 +5652,15 @@
           "amount": 12.5,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "sta-young": {
       "canonical_name": "Sta-Young™",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "tazza-di-vita-cafe-ganoderma": {
       "canonical_name": "Tazza Di Vita™ Café Ganoderma",
@@ -5821,7 +5925,9 @@
           "amount": 3.75,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-cardio-fx": {
       "canonical_name": "Ultimate Cardio FX™ - 60 capsules",
@@ -5856,7 +5962,9 @@
           "amount": 20.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "ultimate-cardio-stx": {
       "canonical_name": "Ultimate Cardio STX™ 30ct Box",
@@ -6104,11 +6212,15 @@
     },
     "ultimate-cm-plus": {
       "canonical_name": "Ultimate CM Plus™ - 90 capsules",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 3,
+      "serving_unit": "capsule"
     },
     "ultimate-colon-fx": {
       "canonical_name": "Ultimate Colon Fx™",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-colloidal-silver": {
       "canonical_name": "Ultimate Colloidal Silver™",
@@ -6178,7 +6290,9 @@
           "amount": 200.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 4,
+      "serving_unit": "capsule"
     },
     "ultimate-daily": {
       "canonical_name": "Ultimate Daily - 180 Tablets",
@@ -6318,7 +6432,9 @@
           "amount": 45.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "tablet"
     },
     "ultimate-daily-capsules": {
       "canonical_name": "Ultimate Daily Capsules",
@@ -6443,7 +6559,9 @@
           "amount": 31.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "ultimate-daily-classic": {
       "canonical_name": "Ultimate Daily Classic™ - 90 tablets",
@@ -6618,7 +6736,9 @@
           "amount": 4.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 3,
+      "serving_unit": "tablet"
     },
     "ultimate-digest-fx": {
       "canonical_name": "Ultimate Digest FX™",
@@ -6633,7 +6753,9 @@
           "amount": 500.0,
           "unit": "million CFU"
         }
-      ]
+      ],
+      "serving_units": 3,
+      "serving_unit": "capsule"
     },
     "ultimate-efa": {
       "canonical_name": "Ultimate EFA™ - 60 soft gels",
@@ -6663,7 +6785,9 @@
           "amount": 16.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "softgel"
     },
     "ultimate-efa-plus": {
       "canonical_name": "Ultimate EFA Plus™ - 90 soft gels",
@@ -6698,7 +6822,9 @@
           "amount": 114.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "softgel"
     },
     "ultimate-multi-efa": {
       "canonical_name": "Ultimate Multi-EFA™ - 90 soft-gels",
@@ -6713,7 +6839,9 @@
           "amount": 45.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "softgel"
     },
     "ultimate-enzymes": {
       "canonical_name": "Ultimate Enzymes™ - 120 capsules",
@@ -6743,7 +6871,9 @@
           "amount": 33.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-flora-fx": {
       "canonical_name": "Ultimate Flora FX™ - 60 capsules",
@@ -6753,7 +6883,9 @@
           "amount": 1334.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "ultimate-gluco-gel": {
       "canonical_name": "Ultimate Gluco-Gel™ - 240 Capsules",
@@ -6773,7 +6905,9 @@
           "amount": 500.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "ultimate-hair-skin-nails": {
       "canonical_name": "Ultimate Hair, Skin and Nails Formula™ - 60 capsules",
@@ -6858,7 +6992,9 @@
           "amount": 20.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "ultimate-hormone-fx": {
       "canonical_name": "Ultimate Hormone FX™",
@@ -6913,7 +7049,9 @@
           "amount": 25.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-king-calcium": {
       "canonical_name": "Ultimate King Calcium™ - 90 chewable tablets",
@@ -6953,7 +7091,9 @@
           "amount": 1.8,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 3,
+      "serving_unit": "tablet"
     },
     "ultimate-memory-fx": {
       "canonical_name": "Ultimate Memory FX™ - 60 capsules",
@@ -7033,7 +7173,9 @@
           "amount": 1.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-microbiome": {
       "canonical_name": "Ultimate Microbiome™",
@@ -7098,7 +7240,9 @@
           "amount": 400.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-niacin-plus": {
       "canonical_name": "Ultimate Niacin Plus™",
@@ -7108,7 +7252,9 @@
           "amount": 500.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "tablet"
     },
     "ultimate-paraclear": {
       "canonical_name": "Ultimate ParaClear™",
@@ -7128,11 +7274,15 @@
           "amount": 180.0,
           "unit": "mcg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "ultimate-super-kb": {
       "canonical_name": "Ultimate Super KB™ - 90 capsules",
-      "nutrients": []
+      "nutrients": [],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-selenium": {
       "canonical_name": "Ultimate Selenium",
@@ -7177,7 +7327,9 @@
           "amount": 100.0,
           "unit": "mcg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-zinc": {
       "canonical_name": "Ultimate Zinc™",
@@ -7257,7 +7409,9 @@
           "amount": 1.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-nightly-essense": {
       "canonical_name": "Ultimate Nightly Essense - 62 capsules",
@@ -7337,7 +7491,9 @@
           "amount": 720.0,
           "unit": "million CFU"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "ultimate-oceans-gold": {
       "canonical_name": "Ultimate Ocean's Gold™ - 60 Capsules",
@@ -7357,7 +7513,9 @@
           "amount": 5.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "ultimate-vision-fx": {
       "canonical_name": "Ultimate Vision FX™ - 60 capsules",
@@ -7402,7 +7560,9 @@
           "amount": 4.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "capsule"
     },
     "ultra-body-toddy": {
       "canonical_name": "Ultra Body Toddy™",
@@ -7572,7 +7732,9 @@
           "amount": 30.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-vitamin-d3-2500": {
       "canonical_name": "Ultimate™ Vitamin D3 2500IU Caps",
@@ -7592,7 +7754,9 @@
           "amount": 30.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "ultimate-smart-fx": {
       "canonical_name": "Ultimate S.M.A.R.T. FX™ - 60 soft gel capsules",
@@ -7607,7 +7771,9 @@
           "amount": 50.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "softgel"
     },
     "ultimate-iodine": {
       "canonical_name": "Ultimate Iodine™",
@@ -7782,7 +7948,9 @@
           "amount": 40.0,
           "unit": "mcg"
         }
-      ]
+      ],
+      "serving_units": 4,
+      "serving_unit": "tablet"
     },
     "majestic-earth-mineral-stx": {
       "canonical_name": "Majestic Earth® Mineral STX™",
@@ -7832,7 +8000,9 @@
           "amount": 0.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "gummy"
     },
     "super-collagen-shot": {
       "canonical_name": "Super Collagen Shot",
@@ -7987,7 +8157,9 @@
           "amount": 140.0,
           "unit": "iu"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "tablet"
     },
     "cardiobeets": {
       "canonical_name": "CardioBeets™ (195 g)",
@@ -8197,7 +8369,9 @@
           "amount": 42.8,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 4,
+      "serving_unit": "capsule"
     },
     "womens-probiotic-complete": {
       "canonical_name": "Women's Probiotic COMPLETE",
@@ -8207,7 +8381,9 @@
           "amount": 50.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "capsule"
     },
     "xerafem": {
       "canonical_name": "XeraFem™ Hormonal Support for Women",
@@ -8272,7 +8448,9 @@
           "amount": 140.0,
           "unit": "iu"
         }
-      ]
+      ],
+      "serving_units": 2,
+      "serving_unit": "tablet"
     },
     "zinc-fx": {
       "canonical_name": "Zinc Fx (30 Lozenges)",
@@ -8287,7 +8465,9 @@
           "amount": 25.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "lozenge"
     },
     "zradical-liquid": {
       "canonical_name": "ZRadical™ (32 fl oz)",
@@ -8506,7 +8686,9 @@
           "amount": 25.0,
           "unit": "mg"
         }
-      ]
+      ],
+      "serving_units": 1,
+      "serving_unit": "lozenge"
     },
     "saxi-super-juice": {
       "canonical_name": "SaXi™ Super Juice +",

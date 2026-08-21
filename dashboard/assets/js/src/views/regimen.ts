@@ -42,7 +42,10 @@ import {
   SlotExportEnvelopeSchema,
 } from '../core/schemas/index.js';
 import { coveredCountForItems, essentialCount, getOrCompute, matchEssential } from '../state/coverage.js';
+import { atMinimumDose, doseCount, doseUnitLabel, doseUnitsOf } from '../core/dose-units.js';
+import { defaultServingsFor } from '../state/dose-defaults.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage } from '../state/recommender.js';
+import { starterPackIds } from '../state/starter-pack.js';
 import {
   addOrBumpRegimenItem,
   type AddOutcome,
@@ -76,8 +79,22 @@ export interface MountHandle {
 
 const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
 
-/** How many product recs the main column's "Best next moves" row shows (measured against it). */
-const REC_LIMIT = 6;
+/**
+ * How many product recs the main column's "Best next moves" row shows: the whole curated
+ * starter pack, then the scored gap-fills behind it.
+ *
+ * DERIVED from the pack rather than written down — a hand-typed number here would
+ * disagree with the pack the day a sixth product is pinned.
+ *
+ * ★ NOT the Coverage cap. Coverage's 9 is a CEILING on how many products that tab will ever
+ * put in a regimen; this is just how many cards the row shows at once. The console is meant
+ * to keep producing until the field is closed, which is the next pass.
+ *
+ * ★ THREE, leaving room for three FOOD cards above them — six recommendations visible, foods
+ * first. The foods half is not built yet (it waits on a source-rule ruling), so today the row
+ * shows three products and nothing above them.
+ */
+const REC_LIMIT = 3;
 /** How many slot tiles the switcher paints. MUST equal state/regimen.ts's MAX_SLOTS — the state
  *  layer refuses a fifth save, so a mismatch here paints an empty tile that can never be filled. */
 const SLOT_CAP = 4;
@@ -299,9 +316,21 @@ function addItem(rawName: string): AddOutcome | null {
   if (product === undefined) {
     return null;
   }
+  // This path matches the vault by NAME, so recover the id the way every other surface
+  // does. Without it the two add paths mint DIFFERENT items for the same product — which is
+  // precisely how this one silently missed the curated starting quantities.
+  const productId = productIdsForNames([rawName])[0] ?? '';
+  const servingUnits = typeof product.serving_units === 'number' ? product.serving_units : null;
   const item: RegimenItem = {
     id: Date.now(),
-    label: { name: product.canonical_name ?? product.name ?? rawName, nutrients: product.nutrients ?? [] },
+    label: {
+      name: product.canonical_name ?? product.name ?? rawName,
+      nutrients: product.nutrients ?? [],
+      ...(servingUnits !== null
+        ? { serving_units: servingUnits, serving_unit: product.serving_unit }
+        : {}),
+      servings: defaultServingsFor(productId, servingUnits),
+    },
     addedDate: new Date().toISOString().slice(0, 10),
     provenance: 'user_manual',
   };
@@ -538,14 +567,17 @@ function renderGoals(goals: LayoutGoal[]): string {
 // ─── Recommendations (products only) + active stack + add card (DOM) ──────────
 
 function wantedSlugs(goals: LayoutGoal[]): string[] {
-  if (goals.length > 0) {
-    return [...new Set(goals.flatMap(g => g.members))];
-  }
+  // Goals no longer decide WHAT is offered — only how the cards are tinted. The owner's
+  // ruling (2026-08-21): the gap-fills target "the MOST remaining gaps, whether they are
+  // goals or not". Mirrors views/coverage.ts::wantedSlugs; the two must not diverge.
+  void goals;
   const snapshot = getOrCompute();
   // Normalise case on the join: layout tiles are keyed UPPERCASE ('HYDROGEN'), the snapshot
   // carries the Title-case target name ('Hydrogen'). Without this every gap misses -> want [].
   const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
-  return snapshot.tiles.filter(t => t.status === 'gap').map(t => keyToSlug.get(t.name.toLowerCase())).filter((s): s is string => s !== undefined);
+  // OUTSTANDING is "not covered", not "gap": `gap` excludes `partial`, `present` and the
+  // blank status, all three of which are still genuinely unfinished. Matches views/coverage.ts.
+  return snapshot.tiles.filter(t => t.status !== 'covered').map(t => keyToSlug.get(t.name.toLowerCase())).filter((s): s is string => s !== undefined);
 }
 
 function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[]): void {
@@ -647,10 +679,13 @@ function buildRailRows(host: HTMLElement, items: RegimenItem[]): void {
     minus.dataset['doseDown'] = id;
     minus.setAttribute('aria-label', 'Fewer');
     minus.textContent = '−';
-    minus.disabled = dose <= 1;
+    // `dose` is SERVINGS; the stepper speaks the product's own units. Mirrors views/coverage.ts
+    // — the two render the same control and must not disagree about what the number means.
+    const units = doseUnitsOf(item.label);
+    minus.disabled = atMinimumDose(dose, units);
     const nEl = document.createElement('span');
     nEl.className = 'rr-dose__n';
-    nEl.textContent = formatDose(dose);
+    nEl.textContent = formatDose(doseCount(dose, units));
     const plus = document.createElement('button');
     plus.className = 'rr-dose__b';
     plus.type = 'button';
@@ -659,7 +694,7 @@ function buildRailRows(host: HTMLElement, items: RegimenItem[]): void {
     plus.textContent = '+';
     const unit = document.createElement('span');
     unit.className = 'rr-dose__u';
-    unit.textContent = '/day';
+    unit.textContent = doseUnitLabel(doseCount(dose, units), units);
     doseEl.append(minus, nEl, plus, unit);
     row.appendChild(doseEl);
 
@@ -1209,6 +1244,8 @@ export function mount(container: HTMLElement): MountHandle {
         owned: productIdsForNames(items.map(i => (typeof i.label.name === 'string' ? i.label.name : ''))),
         goals: goals.map(g => ({ id: g.id, members: g.members })),
         limit: REC_LIMIT,
+        pinned: starterPackIds(),
+        greedy: true,
       });
       buildRecs(recGrid, recs, goals);
     }

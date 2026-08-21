@@ -43,6 +43,11 @@ export const ProductEntrySchema = z.object({
   name: z.string().optional(),
   brand: z.string().optional(),
   nutrients: z.array(z.unknown()).optional(),
+  /** Discrete units in ONE label serving (2 for "2 tablets"). Absent when the serving has no
+   *  countable unit — liquids, powders — in which case 1 dose = 1 serving, as before. */
+  serving_units: z.number().int().positive().optional(),
+  /** Singular noun for one unit ("tablet"). Present iff serving_units is. */
+  serving_unit: z.string().optional(),
 }).passthrough();
 
 /**

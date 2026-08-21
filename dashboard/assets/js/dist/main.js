@@ -4428,16 +4428,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     /**
      * Subsection ids this goal names AS A WHOLE — today only `plant-derived`. Derived, never
      * hand-stored: coverage_layout_derive.py emits it when a sealed claim whose OWN VERBATIM
-     * says "colloidal minerals" maps one of the goal's conditions (20 of the 31 goals today).
+     * says "colloidal minerals" maps one of the goal's conditions (20 of the 30 goals today).
      *
      * ★ WHY A GROUP AND NOT 34 MEMBERS: the plant-derived 34 have no individual Wallach
      * amount and share ONE verdict off the colloidal-mineral bottle, so a ring on strontium is
      * a to-do nobody can act on — they stay OUT of `members`
      * (EXCLUDE_PLANT_DERIVED). But Wallach prescribes the COMPLEX by name for these conditions,
      * and the group is one thing you CAN do. One member, one marker. Ringing all 34 would light
-     * 37% of the field on 20 of 31 goals and make the goal system read as noise.
+     * 37% of the field on 20 of 30 goals and make the goal system read as noise.
      *
-     * OMITTED, never empty, on any goal where he never names the complex (11 of the 31
+     * OMITTED, never empty, on any goal where he never names the complex (10 of the 30
      * today) — an honest gap, not a zero.
      */
     groups: external_exports.array(external_exports.string()).optional()
@@ -4521,7 +4521,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   var RegimenVaultEntrySchema = external_exports.object({
     canonical_name: external_exports.string().optional(),
     name: external_exports.string().optional(),
-    nutrients: external_exports.array(external_exports.unknown()).optional()
+    nutrients: external_exports.array(external_exports.unknown()).optional(),
+    /** Discrete units in ONE label serving (2 for "2 tablets"). Absent when the serving has no
+     *  countable unit — liquids, powders — in which case 1 dose = 1 serving, as before. */
+    serving_units: external_exports.number().int().positive().optional(),
+    /** Singular noun for one unit ("tablet"). Present iff serving_units is. */
+    serving_unit: external_exports.string().optional()
   }).passthrough();
 
   // assets/js/src/core/schemas/glossary.ts
@@ -4568,7 +4573,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     canonical_name: external_exports.string().optional(),
     name: external_exports.string().optional(),
     brand: external_exports.string().optional(),
-    nutrients: external_exports.array(external_exports.unknown()).optional()
+    nutrients: external_exports.array(external_exports.unknown()).optional(),
+    /** Discrete units in ONE label serving (2 for "2 tablets"). Absent when the serving has no
+     *  countable unit — liquids, powders — in which case 1 dose = 1 serving, as before. */
+    serving_units: external_exports.number().int().positive().optional(),
+    /** Singular noun for one unit ("tablet"). Present iff serving_units is. */
+    serving_unit: external_exports.string().optional()
   }).passthrough();
   var ProductsLookupSchema = external_exports.record(external_exports.string(), external_exports.unknown());
 
@@ -5372,6 +5382,75 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
      * indistinguishable from "the filter is broken", and would fail open.
      */
     excluded: external_exports.array(KidsExclusionEntrySchema).min(1)
+  });
+
+  // assets/js/src/core/schemas/starter-pack.ts
+  var StarterPackEntrySchema = external_exports.object({
+    /**
+     * Canon product id — MUST resolve against eden/products/products.json. The display name
+     * and price are deliberately NOT stored here (Charter R3: the sealed pillar is their one
+     * home); the rec card reads both through the generated vault at render time. The
+     * `starter_pack_resolves` invariant resolves every id and REDs on an unknown one, so a
+     * typo cannot silently drop a pin from the pack.
+     */
+    product_id: external_exports.string().min(1),
+    /**
+     * WHY this product holds this position. Editorial rationale for a future maintainer —
+     * NOT user-facing copy, and deliberately not rendered anywhere. Any text shown to a user
+     * about a product goes through the reviewed copy surfaces, not through this file.
+     */
+    note: external_exports.string().min(1)
+  });
+  var StarterPackSchema = external_exports.object({
+    /**
+     * The pinned products, IN THE ORDER THEY ARE OFFERED. Non-empty by construction: an
+     * empty pack is indistinguishable from "the pack is broken" and would fail open into
+     * the pure scored ranking.
+     */
+    pinned: external_exports.array(StarterPackEntrySchema).min(1)
+  });
+
+  // assets/js/src/core/schemas/superseded-products.ts
+  var SupersededEntrySchema = external_exports.object({
+    /**
+     * Canon product id of the RETIRED product — MUST resolve against the sealed pillar. The
+     * `superseded_products_not_recommended` invariant REDs on an unknown id, so a typo cannot
+     * silently un-exclude it.
+     */
+    product_id: external_exports.string().min(1),
+    /**
+     * Canon product id of the product that REPLACED it. Required, not optional: excluding
+     * something without naming its replacement leaves a hole in the catalogue and no way to
+     * check the exclusion still makes sense. The gate proves this one resolves AND is not
+     * itself superseded.
+     */
+    superseded_by: external_exports.string().min(1),
+    /** WHY these are two versions of one supplement, in terms of the pillar's own record. */
+    evidence: external_exports.string().min(1)
+  });
+  var SupersededProductsSchema = external_exports.object({
+    /** Non-empty by construction — an empty list is indistinguishable from a broken filter. */
+    superseded: external_exports.array(SupersededEntrySchema).min(1)
+  });
+
+  // assets/js/src/core/schemas/dose-defaults.ts
+  var DoseProvenanceSchema = external_exports.enum(["container_life"]);
+  var DoseDefaultEntrySchema = external_exports.object({
+    /** Canon product id — MUST resolve against the sealed pillar. */
+    product_id: external_exports.string().min(1),
+    /**
+     * Starting quantity in the product's OWN units (tablets, capsules, softgels) — or in
+     * servings where the product has no discrete unit. A positive integer; the stepper floors
+     * at one unit, so zero would mean "removed", which has its own control.
+     */
+    units_per_day: external_exports.number().int().positive(),
+    /** Required. See the note above — this is what keeps the number honest. */
+    provenance: DoseProvenanceSchema,
+    /** Human reasoning, including what the quantity does and does not reach. */
+    note: external_exports.string().min(1)
+  });
+  var DoseDefaultsSchema = external_exports.object({
+    defaults: external_exports.array(DoseDefaultEntrySchema).min(1)
   });
 
   // assets/js/src/core/schemas/pdm-coverage.ts
@@ -6941,7 +7020,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "athletes_foot",
           "boils",
           "impetigo",
-          "infection"
+          "infection",
+          "common_cold",
+          "colds",
+          "influenza",
+          "tonsillitis"
         ],
         members: [
           "flavonoids",
@@ -6949,6 +7032,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           "lysine",
           "omega-3",
           "omega-6",
+          "potassium",
           "selenium",
           "silver",
           "vitamin-a",
@@ -7011,25 +7095,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         groups: [
           "plant-derived"
-        ]
-      },
-      {
-        id: "fewer-colds-flu",
-        name: "Fewer colds & flu",
-        category: "Digestion, immunity & breathing",
-        conditions: [
-          "common_cold",
-          "colds",
-          "influenza",
-          "tonsillitis"
-        ],
-        members: [
-          "flavonoids",
-          "potassium",
-          "selenium",
-          "vitamin-a",
-          "vitamin-c",
-          "zinc"
         ]
       },
       {
@@ -7707,7 +7772,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   // assets/data/regimen-label-lookup.json
   var regimen_label_lookup_default = {
     _meta: {
-      purpose: "Per-product label vault keyed by product_id -- a display name + the product's quantified nutrient rows {name, amount, unit}. Read by the Regimen Full-edit flow + the Knowledge Products tab. GENERATED from eden/products/products.json by eden/tools/products_embed.py -- never hand-edited (R1). Composition only (\xA700.A); NO marketing prose (no_product_marketing_prose).",
+      purpose: "Per-product label vault keyed by product_id -- a display name, the product's quantified nutrient rows {name, amount, unit}, and (for single-component products whose serving is countable) serving_units + serving_unit: how many tablets/capsules/softgels make ONE label serving, so the dose stepper can say '2 tablets /day' instead of a bare '1'. Those two are DISPLAY facts read off the label's own serving_size -- no amount depends on them and no coverage math changes. Read by the Regimen Full-edit flow + the Knowledge Products tab. GENERATED from eden/products/products.json by eden/tools/products_embed.py -- never hand-edited (R1). Composition only (\xA700.A); NO marketing prose (no_product_marketing_prose).",
       source: "eden/products/products.json",
       generator: "eden/tools/products_embed.py",
       product_count: 215
@@ -7993,7 +8058,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 25,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "gummy"
       },
       "beyond-hot-chocolate": {
         canonical_name: "Beyond Hot Chocolate\u2122 - 360G Canister",
@@ -8148,7 +8215,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 5,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "gummy"
       },
       "beyond-tangy-tangerine-2-5-canister": {
         canonical_name: "Beyond Tangy Tangerine\xAE (BTT) 2.5 Canister",
@@ -8628,7 +8697,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 1,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "bio-fuel": {
         canonical_name: "Bio Fuel",
@@ -8826,7 +8897,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 500,
             unit: "mcg"
           }
-        ]
+        ],
+        serving_units: 5,
+        serving_unit: "capsule"
       },
       "btt-2-0-citrus-peach-fusion": {
         canonical_name: "BTT 2.0 Citrus Peach Fusion",
@@ -9446,7 +9519,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 500,
             unit: "million CFU"
           }
-        ]
+        ],
+        serving_units: 4,
+        serving_unit: "tablet"
       },
       "c-fx": {
         canonical_name: "C-Fx\u2122 - 90 capsules",
@@ -9471,7 +9546,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 10,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "cal-mag-100": {
         canonical_name: "CAL/MAG 100",
@@ -9560,7 +9637,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       "cell-shield-rtq": {
         canonical_name: "Cell Shield RTQ\u2122 - 60 capsules",
-        nutrients: []
+        nutrients: [],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "cheri-mins": {
         canonical_name: "Cheri-Mins\u2122 - 32 fl oz",
@@ -9828,7 +9907,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       "digestwel-plus": {
         canonical_name: "Digestwel+",
-        nutrients: []
+        nutrients: [],
+        serving_units: 1,
+        serving_unit: "tablet"
       },
       electrofuel: {
         canonical_name: "ElectroFuel\u2122",
@@ -9972,7 +10053,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 25,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "tablet"
       },
       osteoprocare: {
         canonical_name: "OsteoProCare\xAE",
@@ -10087,7 +10170,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 1.5,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "ultimate-osteo-fx": {
         canonical_name: "Ultimate Osteo fx\u2122 - 32 fl oz",
@@ -10376,7 +10461,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 110,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "gi-cleanse": {
         canonical_name: "G.I. Cleanse",
@@ -10535,7 +10622,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 200,
             unit: "mcg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "tablet"
       },
       "hgh-amino-acid-blend": {
         canonical_name: "H.G.H. Amino Acid Blend - 180 capsules",
@@ -10580,7 +10669,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 128,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 6,
+        serving_unit: "capsule"
       },
       "harmony-drops": {
         canonical_name: "Harmony Drops 15 Ml Bottle",
@@ -10627,7 +10718,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       "hope-sta-natural": {
         canonical_name: "HOPE",
-        nutrients: []
+        nutrients: [],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "i26-banana-coconut-chewables": {
         canonical_name: "i26 Hyperimmune Egg Banana Coconut Chewables",
@@ -10637,7 +10730,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 20,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 3,
+        serving_unit: "tablet"
       },
       "i26-french-vanilla-chewables": {
         canonical_name: "i26\xAE French Vanilla Chewables - 45 Tablets",
@@ -10652,7 +10747,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 4500,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 3,
+        serving_unit: "tablet"
       },
       "i26-hyperimmune-egg-135-capsules": {
         canonical_name: "i26\xAE Hyperimmune Egg - 135 Capsules",
@@ -10662,7 +10759,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 4500,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 9,
+        serving_unit: "capsule"
       },
       "i26-hyperimmune-egg-powder-canister": {
         canonical_name: "i26 Hyperimmune Egg Powder - 31 Day Supply - Canister",
@@ -10686,7 +10785,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 200,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "immune-support": {
         canonical_name: "Immune Support",
@@ -10700,7 +10801,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 50,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "caplet"
       },
       "integris-coq10-plus-e": {
         canonical_name: "Integris\xAE - Coq10 Plus E",
@@ -10720,7 +10823,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 5,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "integris-vitamin-k2": {
         canonical_name: "Integris\xAE - Vitamin K2",
@@ -10730,7 +10835,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 100,
             unit: "mcg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "i26-hyperimmune-egg-powder-french-vanilla": {
         canonical_name: "i26 Hyperimmune Egg Powder \u2013 French Vanilla",
@@ -10959,7 +11066,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       "killer-biotic-fx": {
         canonical_name: "Killer Biotic FX\xAE - 60 capsules",
-        nutrients: []
+        nutrients: [],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "kidney-bladder-support": {
         canonical_name: "Kidney & Bladder Support",
@@ -11068,7 +11177,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 4,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "life-solubles-rice-bran": {
         canonical_name: "Life Solubles (360 g) Rice Bran",
@@ -11226,7 +11337,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 280,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "male-hormonal-support": {
         canonical_name: "Male Hormonal Support",
@@ -11245,7 +11358,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 150,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "msm-ultra": {
         canonical_name: "MSM Ultra\xAE (180 Caplets)",
@@ -11260,7 +11375,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 3e3,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 3,
+        serving_unit: "caplet"
       },
       "manuka-force-lemon-honey-lozenges": {
         canonical_name: "Manuka Force\u2122 Lemon Honey Lozenges",
@@ -11270,7 +11387,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 0,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "lozenge"
       },
       "natures-pearl-muscadine-grape-extract": {
         canonical_name: "Nature's Pearl\xAE Premium Muscadine Grape Extract",
@@ -11299,7 +11418,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 650,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "nano-balance": {
         canonical_name: "Nano Balance\u2122",
@@ -11363,7 +11484,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 250,
             unit: "mcg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       omega: {
         canonical_name: "Omega\u2122 - 120 Softgels",
@@ -11378,7 +11501,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 120,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "softgel"
       },
       "oxybody-cherry-berry": {
         canonical_name: "Oxybody\u2122 Cherry Berry - 32 fl oz",
@@ -11481,7 +11606,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 220,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "softgel"
       },
       "projoint-fx": {
         canonical_name: "ProJoint FX\u2122",
@@ -11561,15 +11688,21 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 113,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 3,
+        serving_unit: "capsule"
       },
       "projoba-profemme": {
         canonical_name: "ProJoba Profemme\u2122 - 60 tablets",
-        nutrients: []
+        nutrients: [],
+        serving_units: 2,
+        serving_unit: "tablet"
       },
       "projoba-prostat": {
         canonical_name: "Projoba Prostat - 60 tablets",
-        nutrients: []
+        nutrients: [],
+        serving_units: 2,
+        serving_unit: "tablet"
       },
       purmeric: {
         canonical_name: "Purmeric\u2122 - 60 Organic Capsules",
@@ -11584,7 +11717,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 10,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "plant-derived-minerals": {
         canonical_name: "Plant Derived Minerals\u2122",
@@ -11828,7 +11963,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       "pollen-burst-plus-daily-liver": {
         canonical_name: "Pollen Burst\u2122 Plus - Daily Liver Formula - 60 tablets",
-        nutrients: []
+        nutrients: [],
+        serving_units: 2,
+        serving_unit: "tablet"
       },
       "pollen-burst-tabs": {
         canonical_name: "Pollen Burst\u2122 Tabs - 60 tablets",
@@ -11838,7 +11975,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 68,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "tablet"
       },
       "rebound-fx-citrus-punch": {
         canonical_name: "Rebound FX\u2122 Citrus Punch Sports Energy Drink",
@@ -12133,7 +12272,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 5,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "renu-iq": {
         canonical_name: "Renu iQ\u2122",
@@ -12395,11 +12536,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       "rvb-350": {
         canonical_name: "RVB 350 (Beta 1, 3/1, 6-Glucan)",
-        nutrients: []
+        nutrients: [],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ryl-beta550": {
         canonical_name: "RYL BETA550 (Beta-1, 3/1, 6-Glucan)",
-        nutrients: []
+        nutrients: [],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "sleep-eze": {
         canonical_name: "Sleep Eze\u2122",
@@ -12439,7 +12584,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 2.5,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "cleanse-fx": {
         canonical_name: "Slender Fx\u2122 Cleanse Fx\u2122",
@@ -12474,7 +12621,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 100,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "keto-power-up": {
         canonical_name: "Slender FX\u2122 Keto Power Up\u2122",
@@ -12494,7 +12643,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 75,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "slender-fx-meal-replacement-shake": {
         canonical_name: "Slender FX\u2122 Meal Replacement Shake - French Vanilla",
@@ -12689,7 +12840,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 200,
             unit: "mcg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "smart-stiks": {
         canonical_name: "SMART Stiks\u2122",
@@ -12839,7 +12992,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 50,
             unit: "mcg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "tablet"
       },
       "sta-balanced": {
         canonical_name: "Sta-Balanced\u2122",
@@ -12869,7 +13024,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 10,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "sta-cardio": {
         canonical_name: "Sta-Cardio\xAE",
@@ -12919,7 +13076,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 10,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "sta-clear": {
         canonical_name: "Sta-Clear",
@@ -12989,7 +13148,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 25,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "sta-energized-plus": {
         canonical_name: "Sta-Energized PLUS\u2122",
@@ -13009,7 +13170,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 360,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "sta-natural-plant-shake": {
         canonical_name: "Sta-Natural\xAE Plant-Based Protein Shake - Vanilla",
@@ -13139,7 +13302,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 250,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "sta-vital": {
         canonical_name: "Sta-Vital\xAE",
@@ -13259,11 +13424,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 12.5,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "sta-young": {
         canonical_name: "Sta-Young\u2122",
-        nutrients: []
+        nutrients: [],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "tazza-di-vita-cafe-ganoderma": {
         canonical_name: "Tazza Di Vita\u2122 Caf\xE9 Ganoderma",
@@ -13528,7 +13697,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 3.75,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-cardio-fx": {
         canonical_name: "Ultimate Cardio FX\u2122 - 60 capsules",
@@ -13563,7 +13734,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 20,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "ultimate-cardio-stx": {
         canonical_name: "Ultimate Cardio STX\u2122 30ct Box",
@@ -13811,11 +13984,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       "ultimate-cm-plus": {
         canonical_name: "Ultimate CM Plus\u2122 - 90 capsules",
-        nutrients: []
+        nutrients: [],
+        serving_units: 3,
+        serving_unit: "capsule"
       },
       "ultimate-colon-fx": {
         canonical_name: "Ultimate Colon Fx\u2122",
-        nutrients: []
+        nutrients: [],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-colloidal-silver": {
         canonical_name: "Ultimate Colloidal Silver\u2122",
@@ -13885,7 +14062,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 200,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 4,
+        serving_unit: "capsule"
       },
       "ultimate-daily": {
         canonical_name: "Ultimate Daily - 180 Tablets",
@@ -14025,7 +14204,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 45,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "tablet"
       },
       "ultimate-daily-capsules": {
         canonical_name: "Ultimate Daily Capsules",
@@ -14150,7 +14331,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 31,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "ultimate-daily-classic": {
         canonical_name: "Ultimate Daily Classic\u2122 - 90 tablets",
@@ -14325,7 +14508,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 4,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 3,
+        serving_unit: "tablet"
       },
       "ultimate-digest-fx": {
         canonical_name: "Ultimate Digest FX\u2122",
@@ -14340,7 +14525,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 500,
             unit: "million CFU"
           }
-        ]
+        ],
+        serving_units: 3,
+        serving_unit: "capsule"
       },
       "ultimate-efa": {
         canonical_name: "Ultimate EFA\u2122 - 60 soft gels",
@@ -14370,7 +14557,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 16,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "softgel"
       },
       "ultimate-efa-plus": {
         canonical_name: "Ultimate EFA Plus\u2122 - 90 soft gels",
@@ -14405,7 +14594,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 114,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "softgel"
       },
       "ultimate-multi-efa": {
         canonical_name: "Ultimate Multi-EFA\u2122 - 90 soft-gels",
@@ -14420,7 +14611,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 45,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "softgel"
       },
       "ultimate-enzymes": {
         canonical_name: "Ultimate Enzymes\u2122 - 120 capsules",
@@ -14450,7 +14643,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 33,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-flora-fx": {
         canonical_name: "Ultimate Flora FX\u2122 - 60 capsules",
@@ -14460,7 +14655,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 1334,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "ultimate-gluco-gel": {
         canonical_name: "Ultimate Gluco-Gel\u2122 - 240 Capsules",
@@ -14480,7 +14677,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 500,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "ultimate-hair-skin-nails": {
         canonical_name: "Ultimate Hair, Skin and Nails Formula\u2122 - 60 capsules",
@@ -14565,7 +14764,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 20,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "ultimate-hormone-fx": {
         canonical_name: "Ultimate Hormone FX\u2122",
@@ -14620,7 +14821,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 25,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-king-calcium": {
         canonical_name: "Ultimate King Calcium\u2122 - 90 chewable tablets",
@@ -14660,7 +14863,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 1.8,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 3,
+        serving_unit: "tablet"
       },
       "ultimate-memory-fx": {
         canonical_name: "Ultimate Memory FX\u2122 - 60 capsules",
@@ -14740,7 +14945,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 1,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-microbiome": {
         canonical_name: "Ultimate Microbiome\u2122",
@@ -14805,7 +15012,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 400,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-niacin-plus": {
         canonical_name: "Ultimate Niacin Plus\u2122",
@@ -14815,7 +15024,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 500,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "tablet"
       },
       "ultimate-paraclear": {
         canonical_name: "Ultimate ParaClear\u2122",
@@ -14835,11 +15046,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 180,
             unit: "mcg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "ultimate-super-kb": {
         canonical_name: "Ultimate Super KB\u2122 - 90 capsules",
-        nutrients: []
+        nutrients: [],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-selenium": {
         canonical_name: "Ultimate Selenium",
@@ -14884,7 +15099,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 100,
             unit: "mcg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-zinc": {
         canonical_name: "Ultimate Zinc\u2122",
@@ -14964,7 +15181,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 1,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-nightly-essense": {
         canonical_name: "Ultimate Nightly Essense - 62 capsules",
@@ -15044,7 +15263,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 720,
             unit: "million CFU"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "ultimate-oceans-gold": {
         canonical_name: "Ultimate Ocean's Gold\u2122 - 60 Capsules",
@@ -15064,7 +15285,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 5,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "ultimate-vision-fx": {
         canonical_name: "Ultimate Vision FX\u2122 - 60 capsules",
@@ -15109,7 +15332,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 4,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "capsule"
       },
       "ultra-body-toddy": {
         canonical_name: "Ultra Body Toddy\u2122",
@@ -15279,7 +15504,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 30,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-vitamin-d3-2500": {
         canonical_name: "Ultimate\u2122 Vitamin D3 2500IU Caps",
@@ -15299,7 +15526,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 30,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       "ultimate-smart-fx": {
         canonical_name: "Ultimate S.M.A.R.T. FX\u2122 - 60 soft gel capsules",
@@ -15314,7 +15543,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 50,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "softgel"
       },
       "ultimate-iodine": {
         canonical_name: "Ultimate Iodine\u2122",
@@ -15489,7 +15720,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 40,
             unit: "mcg"
           }
-        ]
+        ],
+        serving_units: 4,
+        serving_unit: "tablet"
       },
       "majestic-earth-mineral-stx": {
         canonical_name: "Majestic Earth\xAE Mineral STX\u2122",
@@ -15539,7 +15772,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 0,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "gummy"
       },
       "super-collagen-shot": {
         canonical_name: "Super Collagen Shot",
@@ -15694,7 +15929,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 140,
             unit: "iu"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "tablet"
       },
       cardiobeets: {
         canonical_name: "CardioBeets\u2122 (195 g)",
@@ -15904,7 +16141,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 42.8,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 4,
+        serving_unit: "capsule"
       },
       "womens-probiotic-complete": {
         canonical_name: "Women's Probiotic COMPLETE",
@@ -15914,7 +16153,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 50,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "capsule"
       },
       xerafem: {
         canonical_name: "XeraFem\u2122 Hormonal Support for Women",
@@ -15979,7 +16220,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 140,
             unit: "iu"
           }
-        ]
+        ],
+        serving_units: 2,
+        serving_unit: "tablet"
       },
       "zinc-fx": {
         canonical_name: "Zinc Fx (30 Lozenges)",
@@ -15994,7 +16237,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 25,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "lozenge"
       },
       "zradical-liquid": {
         canonical_name: "ZRadical\u2122 (32 fl oz)",
@@ -16213,7 +16458,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             amount: 25,
             unit: "mg"
           }
-        ]
+        ],
+        serving_units: 1,
+        serving_unit: "lozenge"
       },
       "saxi-super-juice": {
         canonical_name: "SaXi\u2122 Super Juice +",
@@ -17490,6 +17737,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         status = classified;
       }
       const isPdm = t?.kind === "trace_pdm";
+      const isEfa = t?.kind === "wallach_collective" && t.collective_group === "essential-fatty-acids";
       let intakeVsTarget = null;
       if (isPdm) {
         if (pdm.totalMg > 0) {
@@ -17525,8 +17773,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         name: entry.name,
         status,
         covered: status === "covered" || status === "trace",
-        fillPercent: isPdm ? PDM_GOAL > 0 ? pdm.totalMg / PDM_GOAL : 0 : deliveryRatio(t, status, d),
-        contributesTo: isPdm ? pdm.sources : d.sources,
+        // Both aggregate meters fill against their own goal; everything else measures its
+        // own delivery against its own Wallach low. deliveryRatio cannot serve the
+        // aggregates: they carry no numeric `low`, so it returns a binary 0/1 and the bar
+        // snaps from empty to full instead of showing progress.
+        fillPercent: isPdm ? PDM_GOAL > 0 ? pdm.totalMg / PDM_GOAL : 0 : isEfa ? EFA_GOAL > 0 ? efa.totalMg / EFA_GOAL : 0 : deliveryRatio(t, status, d),
+        // Same reasoning for the sources line: an EFA tile's contributors are the products
+        // feeding the shared oil total, not this one tile's own nutrient rows.
+        contributesTo: isPdm ? pdm.sources : isEfa ? efa.sources : d.sources,
         aggregateVehicle: isPdm && status === "covered",
         intakeVsTarget,
         noTargetReason
@@ -22904,7 +23158,7 @@ The site does NOT yet tell a file:// user that localStorage is per-origin and th
 appear on the website \u2014 a returning user currently sees an empty board and will conclude their data
 is gone, which is the highest-value copy change outstanding. Mobile is entirely untested and is the
 next session's task. The live site's Creator's Log will read 911 until the next deploy, because this
-very entry lands in the ledger after the upload.` }];
+very entry lands in the ledger after the upload.` }, { id: "lg_mt3d1j34_ubjo2v", ts: "2026-08-21T14:46:42.784233-05:00", surface: "coverage/regimen", kind: "round-close", summary: "Everyone now starts on the same five-product pack instead of a scorer that gave every goal the same answer, the dose counts tablets rather than servings, and the omega bars finally move when you change it.", detail: 'The recommendation engine had a quiet failure: it gave nearly the same answer no matter which health goal you picked. Not a bug exactly \u2014 it was ranking correctly, but the question had the same answer for everyone, so 124 recommendation slots across every goal were filled by only twelve distinct products. The fix is two-part. A curated starting set of five products now opens the list in a fixed order, the same for everyone, so the opening is a deliberate choice rather than an accident of arithmetic. Behind it, each further recommendation is now chosen for what the ones above it did NOT cover, so the list spans your gaps instead of repeating itself.\n\nThe dose stepper also stopped lying by omission. It counted servings and printed a bare number, so a product whose serving is two tablets showed "1". The maths was right, but read "1" as one tablet, step it to two, and you have quietly asked for four. It now counts the product\'s own units and says so \u2014 "2 tablets/day". Nobody\'s coverage number moved: the same amount is delivered, it is just finally labelled.\n\nAnd the omega bars now fill as you raise an oil\'s dose, instead of sitting empty and then snapping full.\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nGOAL MERGE. `fewer-colds-flu` retired into `stronger-immunity` (31 -> 30 goals). All four conditions absorbed, because `colds` is the ONLY carrier of potassium \u2014 via WAL-CLM-LETS-000225 \u2014 and dropping it as a near-duplicate of `common_cold` would have deleted potassium from the merged goal with no gate going red. Members re-derived: 15 -> 16, potassium present. Three MEASURED comment figures were re-measured rather than edited by eye; the all-five-dots probability moved 9% -> 11%, the product-breadth counts did not move at all. Fixed a latent defect while there: views/welcome.ts never resolved saved goal ids against the layout, so a retired id would render no chip, could never be deselected, and would hold one of five goal slots forever.\n\nTHE STARTER PACK. New curated starter-pack.json (kids-exclusion pattern, fail-loud). Root cause of the sameness, measured not argued: `goalIds` is computed in the ranker and never enters the score, and the breadth term reads each product\'s GLOBAL breadth \u2014 so it cannot vary by goal. Greedy gap-fill is OPT-IN; the non-greedy path is the original one-shot code byte-preserved, because the condition pages ask a different question and both relative terms rescale with the surviving set.\n\nCAPS. Coverage: three at a time, no pager \u2014 the list ADVANCES, since an added product leaves it and the next surfaces. Capped by a budget of nine minus the Youngevity products already in the regimen; driven end to end, owned 0->9 offered 9->0. Nothing persisted; `owned` is derived every paint.\n\nSUPERSEDED PRODUCTS. Four of six BTT/Tangy Tangerine products retired against BTT 2.5. Found by DRIVING the app rather than by grep: BTT Original was offered beside BTT 2.5 in a real session. Kept as a separate curation from kids-exclusion, whose gate and docs are specifically about children\'s formulations.\n\nTHE EFA BARS. fillPercent had a branch only for the plant-derived aggregate; everything else fell through to a ratio that needs a numeric target and otherwise returns a binary 0/1. So the omega tiles snapped empty-to-full. Now mirrors the PDM branch. 33/44/56/67% at doses 3-6.\n\nDOSE IN UNITS. serving_units/serving_unit derived from each label\'s own serving_size, single-component countable products only (98 of 98 solid components parse; 91 of 215 qualify; the five multi-component ones get none because no single count is true for them). Stored amounts stay per-serving and readScale still returns servings \u2014 only the displayed count and step size changed.\n\n\u2605 HIS PREMISE WAS WRONG AND WAS CORRECTED WITH EVIDENCE RATHER THAN IMPLEMENTED. He asked for the default to become 2 because the amounts were "per unit". They are not: Ultimate Daily\'s vitamin A is stored as 1,200 mcg with pct_dv 133, and 1200/900 = 133%, so 1,200 mcg IS the two-tablet amount. 96% of nutrient rows corroborate per-serving once BOTH FDA Daily-Value eras are allowed \u2014 the apparent mismatches were pre-2016 label columns, not a per-unit split. Implementing his request literally would have computed four tablets a day. Likewise "Ultimate Daily adds 2" was the greedy delta, not a dose artifact: Ultimate Classic already covers 22 of its 24 essentials, and the only two it brings are iodine and methionine.\n\n\xA700.A. Ultimate EFA Plus defaulting to 3/day was RAISED as the one number from neither the product label nor a Wallach book \u2014 container arithmetic, 90 softgels over 30 days \u2014 and RATIFIED by him against 9/day (which IS Wallach\'s 9,000 mg EFA figure) and 1/day (the bare label serving). Recorded with provenance `container_life`. The tiles still grade against the corpus target, so the shortfall shows as a third-full bar rather than being hidden.\n\nTHREE NEW GATES, 95 -> 98, each shipped in the same patch as the thing it governs. starter_pack_resolves was NEGATIVE-CONTROLLED \u2014 all seven planted defects go red. superseded_products_not_recommended asserts both halves of the asymmetry. dose_defaults_are_not_wallach keeps a curated starting quantity from ever acquiring Wallach\'s authority: the provenance vocabulary is closed and has no wallach member, and no entry may carry a claim id.\n\nTHE GATES CAUGHT TWO REAL BUGS OF MINE. dose_defaults_are_not_wallach found that the Regimen add path matches the vault by NAME and so never applied the curated quantities at all. no_new_dead_code found two speculative exports, deleted rather than baselined. And no_product_marketing_prose went red on the two new vault keys \u2014 refined, not widened: the keys are admitted WITH their values pinned, because a bare allowlist entry would have left a free string in the one gate whose whole job is keeping prose out.\n\nA PROBE ASSERTION WAS WRONG, NOT MY CHANGE. `s2.gap < s1.gap` after a dose step was never the law \u2014 it only ever passed by accident of which product ranked first. A dose increase can only move essentials the product CONTAINS, and those sit in PARTIAL. Measured: covered 12 -> 49, partial 49 -> 12, gap 14 -> 14. Now asserts (partial + gap) falls.\n\nRAIL POLISH \u2014 and the screenshot lied twice. `grid-row: 1 / -1` cannot reach implicit rows without grid-template-rows, so the span silently collapsed to row 1 and centred the close button on the NAME line, 11px high. Fixing that to `span 2` still measured -11, because the full-width footer could then find no free row and auto-placed into a THIRD one. Only computed styles caught either. Pinning the footer to an explicit cell is what actually centred it.\n\nREGIMEN PANEL. The gauge \u2014 not the category cluster beside it \u2014 was what set the panel\'s height, so it was the only cut that bought real space: 252 -> 200px, numeral scaled with it. The readout\'s grid gap was deliberately NOT reduced; the squares are aspect-ratio 1 in a 45-column grid, so a smaller gap makes each square wider and the block taller. Measured, not assumed. "Best next moves" climbed from ~860 to 764 and the first card now sits fully inside a 900px fold.\n\nNO SEALED PILLAR WAS TOUCHED, so no seal ceremony was required or performed.\n\nBLOCKED: the foods recommendation system on both tabs sits at turn 1 of the three-turn source-rule protocol. He chose to admit an outside food-composition table, which the closed allowlist does not permit; turn 2 must be a later turn. The repo holds ZERO per-food nutrient composition, all 77 sealed food_source claims carry a null dose, and a direct probe of all seven book texts (~5.7M chars) found approximately ONE food-to-amount datapoint. That is a data problem no mining campaign can close.' }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -100442,11 +100696,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       cov_rail_eyebrow: "Current regimen",
       cov_rail_full: "FULL REGIMEN \u2192",
       cov_rail_title: "DAILY PROTOCOL",
-      cov_rec_tip: "\u201Csupplies\u201D = how many of your goal\u2019s essentials this product carries; \u201C/ $10\u201D = your goal nutrients per $10 spent. Click the card to add it.",
-      cov_recs_done_field: "Nothing left to add for this field \u2014 every essential a product could reach is covered.",
-      cov_recs_done_goals: "Nothing left to add for this goal set \u2014 every essential a product could reach is covered.",
-      cov_recs_goal_eyebrow: "Based on your goals",
-      cov_recs_nogoal_eyebrow: "Recommended \xB7 widest coverage first",
+      cov_rec_tip: "\u201Cadds\u201D = essentials you are still missing that this product would newly cover; \u201C/ $10\u201D = those per $10 spent. The first few are the same starting set for everyone. Click the card to add it.",
+      cov_recs_cap_reached: "That is the full starting set from here \u2014 nine products is as far as this tab goes. Browse the rest in the Products tab any time.",
+      cov_recs_done_field: "Nothing left to add \u2014 every essential a product could reach is already covered.",
+      cov_recs_eyebrow: "Based on your goals",
       ep_conditions_lead: "In Wallach's framework this nutrient is part of the protocol for {n} \u2014 open any for its full write-up, or search your own.",
       ep_coverage_of_target: "of Wallach's daily target",
       ep_empty_record: "No sealed Wallach claims for this one yet \u2014 the corpus is still being built out.",
@@ -148438,6 +148691,33 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return isPresetAvatar(a) ? presetSrc(a) : null;
   }
 
+  // assets/js/src/core/dose-units.ts
+  function doseUnitsOf(label) {
+    const l = label ?? {};
+    const n = l["serving_units"];
+    const noun = l["serving_unit"];
+    const perServing = typeof n === "number" && Number.isFinite(n) && n > 0 ? n : null;
+    return {
+      perServing,
+      noun: perServing !== null && typeof noun === "string" && noun !== "" ? noun : null
+    };
+  }
+  function doseCount(servings, u) {
+    return u.perServing !== null ? servings * u.perServing : servings;
+  }
+  function doseUnitLabel(count, u) {
+    const noun = u.noun ?? "serving";
+    return `${noun}${count === 1 ? "" : "s"}/day`;
+  }
+  function stepDose(servings, delta, u) {
+    const per = u.perServing !== null ? u.perServing : 1;
+    const stepServings = 1 / per;
+    return Math.max(stepServings, servings + delta * stepServings);
+  }
+  function atMinimumDose(servings, u) {
+    return doseCount(servings, u) <= 1;
+  }
+
   // assets/js/src/core/format.ts
   function plural(n, one, many = `${one}s`) {
     return n === 1 ? one : many;
@@ -148446,6 +148726,37 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   // assets/js/src/core/goal-display.ts
   var GOAL_HUES = ["#7c5cff", "#12a594", "#d6409f", "#3e63dd", "#f76b15"];
   var MAX_GOALS = GOAL_HUES.length;
+
+  // assets/data/dose-defaults.json
+  var dose_defaults_default = {
+    _purpose: "Per-product STARTING QUANTITIES for the dose stepper, in the product's own units, where one label serving is not the right place to start. Editorial CURATION config \u2014 OURS. Every product not listed here starts at exactly ONE LABEL SERVING, which adds no number of anyone's: it is Youngevity's own stated serving read off the label.",
+    _what_this_is_NOT: "\u2605 NOT A WALLACH DOSE, and nothing here may ever become one. \xA700.A governs every recommended amount the app displays, and a pre-filled quantity is displayed. So every entry MUST carry a `provenance` from the closed set below, no entry may carry a source_claim_id, and no entry may be described as Wallach's. The Wallach numbers stay exactly where they were: the coverage tiles still grade delivery against the corpus targets, so a starting quantity below a Wallach target shows as a PARTIAL bar rather than being hidden.",
+    _provenance_kinds: {
+      container_life: "Derived from Youngevity's own container arithmetic \u2014 servings_per_container divided by 30 days \u2014 so a bottle lasts a month. A packaging fact, not a health claim. The user can step it to anything."
+    },
+    _the_ruling: `Luneth, 2026-08-21, asked for Ultimate EFA Plus to start at 3/day: "3 being the minimum you'd want to take per day because that's a 30 day supply, same as the others". Raised with him as the one number in the batch that comes from neither the product label nor a Wallach book; he ratified it with that trade-off in front of him, choosing it over 9/day (which is Wallach's own 9,000 mg EFA target and would empty a 90-softgel bottle in 10 days) and over 1/day (the bare label serving).`,
+    defaults: [
+      {
+        product_id: "ultimate-efa-plus",
+        units_per_day: 3,
+        provenance: "container_life",
+        note: "90 softgels / 30 days = 3 per day. The label serving is 1 softgel, so this is three servings \u2014 3,000 mg of the 9,000 mg the corpus states for the EFA pair. The omega-3 and omega-6 tiles therefore open at roughly a third full, which is the honest picture: the shortfall is visible on the board rather than assumed away."
+      }
+    ]
+  };
+
+  // assets/js/src/state/dose-defaults.ts
+  var DATA = DoseDefaultsSchema.parse(dose_defaults_default);
+  var BY_ID = new Map(
+    DATA.defaults.map((d) => [d.product_id, d.units_per_day])
+  );
+  function defaultServingsFor(productId, servingUnits) {
+    const units = BY_ID.get(productId);
+    if (units === void 0) {
+      return 1;
+    }
+    return servingUnits !== null && servingUnits > 0 ? units / servingUnits : units;
+  }
 
   // assets/data/product-recommender-data.json
   var product_recommender_data_default = {
@@ -155320,10 +155631,48 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   };
 
   // assets/js/src/state/kids-exclusion.ts
-  var DATA = KidsExclusionSchema.parse(kids_exclusion_default);
-  var EXCLUDED = new Set(DATA.excluded.map((e) => e.product_id));
+  var DATA2 = KidsExclusionSchema.parse(kids_exclusion_default);
+  var EXCLUDED = new Set(DATA2.excluded.map((e) => e.product_id));
   function isExcludedFromRecommendations(productId) {
     return EXCLUDED.has(productId);
+  }
+
+  // assets/data/superseded-products.json
+  var superseded_products_default = {
+    _purpose: "Products never offered as a RECOMMENDATION because a newer version of the same supplement has replaced them. Editorial CURATION config \u2014 OURS, not a Wallach claim and not a pillar projection \u2014 so it lives here hand-authored (manifest 'accounted') rather than derived. It changes only what we SHOW; it never touches a target, a dose, a price or a composition, and no number lives in this file.",
+    _the_rule: `The owner's ruling (2026-08-21): "BTT 2.5 is the ONLY BTT powder that should be recommended ever, and BTT 2.0 Tablets should also be recommended. ALL other BTT/Tangy Tangerine products should not show up as recommendations ever because they are redundant against 2.5 + the tablets." Recommending two versions of one supplement is not a richer list, it is a list that contradicts itself \u2014 and on the Coverage rail it also burns one of the nine product slots that tab will ever spend.`,
+    _scope: "Excluded from every RECOMMENDATION surface \u2014 the Coverage rail, the Regimen console, the condition pages, and the essentials deep-dive's BEST SOURCES. The ONE place a superseded product stays fully present is the Products database (the Knowledge drawer's Products tab), where it is still a real catalogue item somebody may already own. Same asymmetry as kids-exclusion.json, for the same reason: not-recommended is not the same as hidden.",
+    _why_not_derived: "Nothing in the sealed Products pillar says which product supersedes which. There is no version field, no successor field and no discontinued flag \u2014 the relationship lives in Youngevity's product line history and in the owner's judgment, so it is recorded here rather than inferred. A name/version heuristic is REJECTED: '2.5' > '2.0' happens to sort correctly for this pair, but the pillar also holds BTT Original (450 g), Ultimate Tangy Tangerine and two BTT 2.0 packagings, and no string rule distinguishes 'newer formula' from 'different product' or 'different packaging' among them.",
+    superseded: [
+      {
+        product_id: "btt-2-0-citrus-peach-fusion",
+        superseded_by: "beyond-tangy-tangerine-2-5-canister",
+        evidence: "BTT 2.0 Citrus Peach Fusion is the 2.0-formula powder canister (1 scoop / 16 g); Beyond Tangy Tangerine 2.5 Canister is the same product line's later formula in the same form (1 scoop / 16 g). Both are offerable recommender candidates covering 33 and 35 essentials respectively, so without this exclusion the ranker will offer both versions of one supplement in the same list."
+      },
+      {
+        product_id: "beyond-tangy-tangerine-450g-canister",
+        superseded_by: "beyond-tangy-tangerine-2-5-canister",
+        evidence: "BTT Original 450 g canister (powder, 2 scoops / 15 g) is the earliest formula in the line. Beyond Tangy Tangerine 2.5 is the current powder. Both were live recommender candidates: a driven session offered BTT Original alongside 2.5 in the same list, which is the exact two-versions-of-one-supplement outcome this file exists to prevent."
+      },
+      {
+        product_id: "btt-2-0-citrus-peach-fusion-30-count-box",
+        superseded_by: "beyond-tangy-tangerine-2-5-canister",
+        evidence: "The same BTT 2.0 formula as the canister, packaged as 30 single-serve stick packs (1 stick pack / 16 g) instead of a scoop. Packaging, not formula \u2014 and the formula it packages is the superseded one."
+      },
+      {
+        product_id: "ultimate-tangy-tangerine-liquid",
+        superseded_by: "beyond-tangy-tangerine-2-5-canister",
+        evidence: "Ultimate Tangy Tangerine liquid (1 fl oz) is a further variant of the same line. Redundant against BTT 2.5 plus BTT 2.0 Tablets, which together already cover the powder and tablet forms."
+      }
+    ],
+    _the_line_in_full: "Six products in the sealed pillar match BTT / Tangy / Tangerine by id or name, and all six were live recommender candidates. SURVIVING: beyond-tangy-tangerine-2-5-canister (the powder) and btt-2-0-tablets (the tablet). RETIRED: BTT Original 450 g, BTT 2.0 Citrus Peach Fusion canister, its 30-count stick-pack box, and Ultimate Tangy Tangerine liquid. Enumerate the pillar again before assuming this list is still complete \u2014 a new variant would be recommendable the day it lands."
+  };
+
+  // assets/js/src/state/superseded-products.ts
+  var DATA3 = SupersededProductsSchema.parse(superseded_products_default);
+  var RETIRED = new Set(DATA3.superseded.map((e) => e.product_id));
+  function isSupersededProduct(productId) {
+    return RETIRED.has(productId);
   }
 
   // assets/js/src/state/recommender.ts
@@ -155331,17 +155680,20 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   var W_BREADTH = 0.3;
   var W_VALUE = 0.1;
   var BREADTH_HALF = 5;
-  var DATA2 = RecommenderDataSchema.parse(product_recommender_data_default);
+  var PIN_SCORE_BASE = 2;
+  var DATA4 = RecommenderDataSchema.parse(product_recommender_data_default);
   function breadthScore(n) {
     return n / (n + BREADTH_HALF);
   }
   function rankSources(slug, targetLow = null, targetUnit = null) {
-    const entry = DATA2.essentials[slug];
+    const entry = DATA4.essentials[slug];
     if (entry === void 0 || entry.candidates.length === 0) {
       return [];
     }
     const { unit } = entry;
-    const candidates = entry.candidates.filter((c) => !isExcludedFromRecommendations(c.product_id));
+    const candidates = entry.candidates.filter(
+      (c) => !isExcludedFromRecommendations(c.product_id) && !isSupersededProduct(c.product_id)
+    );
     if (candidates.length === 0) {
       return [];
     }
@@ -155381,7 +155733,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return productEssentialsCache;
     }
     const m = /* @__PURE__ */ new Map();
-    for (const [slug, entry] of Object.entries(DATA2.essentials)) {
+    for (const [slug, entry] of Object.entries(DATA4.essentials)) {
       for (const c of entry.candidates) {
         const arr = m.get(c.product_id);
         if (arr === void 0) {
@@ -155415,7 +155767,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     if (name === void 0 || name === "") {
       return null;
     }
-    return { name, nutrients: parsed.data.nutrients ?? [] };
+    return {
+      name,
+      nutrients: parsed.data.nutrients ?? [],
+      servingUnits: parsed.data.serving_units ?? null,
+      servingUnit: parsed.data.serving_unit ?? null
+    };
   }
   var nameToIdCache = null;
   function nameToId() {
@@ -155442,9 +155799,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return coverageIndexCache;
     }
     const m = /* @__PURE__ */ new Map();
-    for (const [slug, entry] of Object.entries(DATA2.essentials)) {
+    for (const [slug, entry] of Object.entries(DATA4.essentials)) {
       for (const c of entry.candidates) {
-        if (isExcludedFromRecommendations(c.product_id)) {
+        if (isExcludedFromRecommendations(c.product_id) || isSupersededProduct(c.product_id)) {
           continue;
         }
         const agg = m.get(c.product_id);
@@ -155463,61 +155820,172 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return m;
   }
   function rankProductsForCoverage(input) {
-    const want = new Set(input.want);
     const owned = new Set(input.owned ?? []);
     const goals = input.goals ?? [];
     const limit = input.limit ?? 4;
-    if (want.size === 0) {
+    const greedy = input.greedy ?? false;
+    const pins = input.pinned ?? [];
+    const outstanding = new Set(input.want);
+    if (outstanding.size === 0) {
       return [];
     }
-    const rows = [];
-    for (const [productId, agg] of coverageIndex()) {
-      if (owned.has(productId)) {
-        continue;
-      }
-      let supplies = 0;
+    const index3 = coverageIndex();
+    const out = [];
+    const emitted = /* @__PURE__ */ new Set();
+    const suppliesOf = (agg) => {
+      let n = 0;
       for (const slug of agg.essentials) {
-        if (want.has(slug)) {
-          supplies += 1;
+        if (outstanding.has(slug)) {
+          n += 1;
         }
       }
-      if (supplies === 0) {
-        continue;
-      }
-      rows.push({
+      return n;
+    };
+    const goalIdsFor = (agg) => goals.filter((g) => g.members.some((m) => agg.essentials.has(m))).map((g) => g.id);
+    const perDollarOf = (price, supplies) => price > 0 ? supplies / price : 0;
+    const emit2 = (productId, agg, score, isPinned) => {
+      const supplies = suppliesOf(agg);
+      out.push({
         productId,
         name: productName(productId),
         price: agg.price,
         supplies,
         breadth: agg.breadth,
-        goalIds: goals.filter((g) => g.members.some((m) => agg.essentials.has(m))).map((g) => g.id)
+        goalIds: goalIdsFor(agg),
+        pinned: isPinned,
+        score,
+        perTenDollars: perDollarOf(agg.price, supplies) * 10
       });
+      emitted.add(productId);
+      if (greedy) {
+        for (const slug of agg.essentials) {
+          outstanding.delete(slug);
+        }
+      }
+    };
+    for (let i = 0; i < pins.length && out.length < limit; i += 1) {
+      const productId = pins[i];
+      if (productId === void 0 || owned.has(productId) || emitted.has(productId)) {
+        continue;
+      }
+      const agg = index3.get(productId);
+      if (agg === void 0) {
+        continue;
+      }
+      emit2(productId, agg, PIN_SCORE_BASE - i / (pins.length + 1), true);
     }
-    if (rows.length === 0) {
-      return [];
-    }
-    const bestSupply = rows.reduce((m, r) => r.supplies > m ? r.supplies : m, 0);
-    const perDollar = (r) => r.price > 0 ? r.supplies / r.price : 0;
-    const bestValue = rows.reduce((m, r) => {
-      const v = perDollar(r);
-      return v > m ? v : m;
-    }, 0);
-    const scored = rows.map((r) => {
-      const adequacy = bestSupply > 0 ? r.supplies / bestSupply : 0;
-      const value = bestValue > 0 ? perDollar(r) / bestValue : 0;
-      return {
-        ...r,
-        score: W_ADEQ * adequacy + W_BREADTH * breadthScore(r.breadth) + W_VALUE * value,
-        perTenDollars: perDollar(r) * 10
-      };
+    const scoreOf = (supplies, breadth, price, bestSupply2, bestValue2) => {
+      const adequacy = bestSupply2 > 0 ? supplies / bestSupply2 : 0;
+      const value = bestValue2 > 0 ? perDollarOf(price, supplies) / bestValue2 : 0;
+      return W_ADEQ * adequacy + W_BREADTH * breadthScore(breadth) + W_VALUE * value;
+    };
+    const candidates = () => {
+      const rows2 = [];
+      for (const [productId, agg] of index3) {
+        if (owned.has(productId) || emitted.has(productId)) {
+          continue;
+        }
+        const supplies = suppliesOf(agg);
+        if (supplies === 0) {
+          continue;
+        }
+        rows2.push({ productId, agg, supplies });
+      }
+      return rows2;
+    };
+    const yardsticks = (rows2) => ({
+      bestSupply: rows2.reduce((m, r) => r.supplies > m ? r.supplies : m, 0),
+      bestValue: rows2.reduce((m, r) => {
+        const v = perDollarOf(r.agg.price, r.supplies);
+        return v > m ? v : m;
+      }, 0)
     });
+    if (greedy) {
+      while (out.length < limit && outstanding.size > 0) {
+        const rows2 = candidates();
+        if (rows2.length === 0) {
+          break;
+        }
+        const { bestSupply: bestSupply2, bestValue: bestValue2 } = yardsticks(rows2);
+        let best = rows2[0];
+        let bestScore = scoreOf(best.supplies, best.agg.breadth, best.agg.price, bestSupply2, bestValue2);
+        for (const r of rows2) {
+          const s = scoreOf(r.supplies, r.agg.breadth, r.agg.price, bestSupply2, bestValue2);
+          if (s > bestScore || s === bestScore && r.productId.localeCompare(best.productId) < 0) {
+            best = r;
+            bestScore = s;
+          }
+        }
+        emit2(best.productId, best.agg, bestScore, false);
+      }
+      return out;
+    }
+    const rows = candidates();
+    if (rows.length === 0) {
+      return out;
+    }
+    const { bestSupply, bestValue } = yardsticks(rows);
+    const scored = rows.map((r) => ({
+      productId: r.productId,
+      name: productName(r.productId),
+      price: r.agg.price,
+      supplies: r.supplies,
+      breadth: r.agg.breadth,
+      goalIds: goalIdsFor(r.agg),
+      pinned: false,
+      score: scoreOf(r.supplies, r.agg.breadth, r.agg.price, bestSupply, bestValue),
+      perTenDollars: perDollarOf(r.agg.price, r.supplies) * 10
+    }));
     scored.sort((a, b) => b.score - a.score || a.productId.localeCompare(b.productId));
-    return scored.slice(0, limit);
+    return out.concat(scored).slice(0, limit);
+  }
+
+  // assets/data/starter-pack.json
+  var starter_pack_default = {
+    _purpose: "The STARTER PACK \u2014 the fixed, ordered products every user is offered FIRST, before any scored recommendation. Editorial CURATION config, OURS and explicitly NOT a Wallach claim and NOT a pillar projection; no generator. It changes only the ORDER in which we surface products; it never touches a target, a dose, a composition, or a price. \xA700.A: no number lives here.",
+    _the_rule: "The owner's ruling (2026-08-21): 'we need to make this a manual ordering system \u2026 THEN at that point it recommends a max of 4 more products that best fill the MOST remaining gaps, whether they are goals or not, this is a better system and gets everyone on the same start pack that covers MOST things'. The scored ranker was producing near-identical lists across every goal (measured: 124 card slots across all 31 goals were filled by only 12 distinct products), because the breadth term reads each product's GLOBAL breadth and so is identical no matter which goal is picked. A curated opening order is the deliberate answer to that, not a workaround.",
+    _order_is_the_array: "RANK IS ARRAY ORDER. There is deliberately no `rank` field \u2014 a position stored twice is a position that can disagree with itself (\xA700.B.1). To reorder the pack, reorder the array.",
+    _names_deliberately_absent: "No display name and no price is stored here. The sealed Products pillar is their one home (Charter R3); the rec card reads both through the generated vault at render time, so a repriced or renamed product needs no edit in this file. The `starter_pack_resolves` invariant REDs on an id that does not resolve against the pillar, so a typo cannot silently drop a pin.",
+    _what_pinning_does_NOT_do: "A pin is an ORDER, not a claim and not an exemption. Pinned products are still filtered by the kids exclusion, still disappear once the user owns them (which is what makes the list terminate), and still carry no assertion that they cover anything \u2014 the card's `supplies N` is computed from composition exactly as it is for a scored card.",
+    pinned: [
+      {
+        product_id: "ultimate-classic",
+        note: "Opens the pack. The owner's stated reason: 'it covers not only PDM but many other sources' \u2014 the plant-derived vehicle plus broad vitamin/amino coverage in one bottle, which is why it leads rather than a tablet multi."
+      },
+      {
+        product_id: "ultimate-daily",
+        note: "Ultimate Daily - 180 Tablets. Disambiguated by the owner on 2026-08-21 from 'ultimate-daily-classic' (90 tablets) and 'ultimate-daily-capsules' \u2014 he named the plain 180-tablet product."
+      },
+      {
+        product_id: "beyond-tangy-tangerine-2-5-canister",
+        note: "BTT 2.5 canister \u2014 the powdered vehicle, named by the owner in canister form specifically (not the 30-count box or the original 450 g)."
+      },
+      {
+        product_id: "ultimate-efa-plus",
+        note: "Ultimate EFA Plus - 90 soft gels. The EFA leg of the pack; the EFA tiles grade off a shared 9,000 mg aggregate rather than per-essential amounts, so an oil belongs in the opening order."
+      },
+      {
+        product_id: "btt-2-0-tablets",
+        note: "BTT 2.0 Tablets - 120 Tablets. Closes the pack."
+      }
+    ]
+  };
+
+  // assets/js/src/state/starter-pack.ts
+  var DATA5 = StarterPackSchema.parse(starter_pack_default);
+  var PINNED = DATA5.pinned.map((e) => e.product_id);
+  function starterPackIds() {
+    return PINNED;
+  }
+  function starterPackSize() {
+    return PINNED.length;
   }
 
   // assets/js/src/views/coverage.ts
   var LAYOUT2 = CoverageLayoutSchema.parse(coverage_layout_data_default);
-  var REC_LIMIT = 4;
+  var REC_PAGE = 3;
+  var REC_GAP_FILL = 4;
+  var REC_MAX = starterPackSize() + REC_GAP_FILL;
   function tileFor(key, snapshot2) {
     return snapshot2?.tiles.find((t) => t.name === key);
   }
@@ -155742,33 +156210,32 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   `;
   }
   function wantedSlugs(snapshot2, goals) {
-    if (goals.length > 0) {
-      return [...new Set(goals.flatMap((g) => g.members))];
-    }
+    void goals;
     const keyToSlug = new Map([...slugToTargetKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
-    return (snapshot2?.tiles ?? []).filter((t) => t.status === "gap").map((t) => keyToSlug.get(t.name.toLowerCase())).filter((s) => s !== void 0);
+    return (snapshot2?.tiles ?? []).filter((t) => t.status !== "covered").map((t) => keyToSlug.get(t.name.toLowerCase())).filter((s) => s !== void 0);
   }
-  function buildRecs(host, recs, goals, goalMode) {
+  function buildRecs(host, recs, goals, capReached) {
     host.replaceChildren();
     const head = document.createElement("div");
     head.className = "recs__head";
     const eyebrow = document.createElement("span");
     eyebrow.className = "recs__eyebrow";
-    eyebrow.textContent = ui(goalMode ? "cov_recs_goal_eyebrow" : "cov_recs_nogoal_eyebrow");
+    eyebrow.textContent = ui("cov_recs_eyebrow");
     head.appendChild(eyebrow);
     host.appendChild(head);
     if (recs.length === 0) {
       const note = document.createElement("p");
       note.className = "recs__note";
-      note.textContent = ui(goalMode ? "cov_recs_done_goals" : "cov_recs_done_field");
+      note.textContent = ui(capReached ? "cov_recs_cap_reached" : "cov_recs_done_field");
       host.appendChild(note);
       return;
     }
+    const page = recs.slice(0, REC_PAGE);
     const hueOf = (id) => {
       const i = goals.findIndex((g) => g.id === id);
       return GOAL_HUES[i] ?? GOAL_HUES[0];
     };
-    for (const r of recs) {
+    for (const r of page) {
       const cols = r.goalIds.map(hueOf);
       const ring = cols.length === 0 ? "linear-gradient(var(--ds-rule), var(--ds-rule))" : cols.length === 1 ? `linear-gradient(${cols[0]}, ${cols[0]})` : `linear-gradient(140deg, ${cols.join(", ")})`;
       const card = document.createElement("button");
@@ -155787,7 +156254,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       price.textContent = `$${r.price.toFixed(2)}`;
       const supplies = document.createElement("span");
       supplies.className = "rec__q";
-      supplies.textContent = `supplies ${r.supplies}`;
+      supplies.textContent = `adds ${r.supplies}`;
       const val = document.createElement("span");
       val.className = "rec__val rec__q";
       val.textContent = `${r.perTenDollars.toFixed(1)} / $10`;
@@ -155829,19 +156296,20 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       nameEl.title = label;
       row.appendChild(nameEl);
       const x = document.createElement("button");
-      x.className = "rl-row__x";
+      x.className = "ui-close ui-close--sm rl-row__x";
       x.type = "button";
       x.dataset["rowRemove"] = id;
       x.setAttribute("aria-label", `Remove ${label}`);
-      x.textContent = "\u2715";
+      x.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
       row.appendChild(x);
       const foot = document.createElement("div");
       foot.className = "rl-row__foot";
-      const src = document.createElement("span");
-      const own = item.provenance === "user_scanned";
-      src.className = `rl-src${own ? " is-own" : ""}`;
-      src.textContent = own ? "YOURS" : "EDEN";
-      foot.appendChild(src);
+      if (item.provenance === "user_scanned") {
+        const src = document.createElement("span");
+        src.className = "rl-src is-own";
+        src.textContent = "YOURS";
+        foot.appendChild(src);
+      }
       const doseEl = document.createElement("span");
       doseEl.className = "rl-dose";
       const minus = document.createElement("button");
@@ -155850,10 +156318,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       minus.dataset["doseDown"] = id;
       minus.setAttribute("aria-label", "Fewer");
       minus.textContent = "\u2212";
-      minus.disabled = dose <= 1;
+      const units = doseUnitsOf(item.label);
+      minus.disabled = atMinimumDose(dose, units);
       const nEl = document.createElement("span");
       nEl.className = "rl-dose__n";
-      nEl.textContent = formatDose(dose);
+      nEl.textContent = formatDose(doseCount(dose, units));
       const plus = document.createElement("button");
       plus.className = "rl-dose__b";
       plus.type = "button";
@@ -155862,7 +156331,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       plus.textContent = "+";
       const unit = document.createElement("span");
       unit.className = "rl-dose__u";
-      unit.textContent = "/day";
+      unit.textContent = doseUnitLabel(doseCount(dose, units), units);
       doseEl.append(minus, nEl, plus, unit);
       foot.appendChild(doseEl);
       row.appendChild(foot);
@@ -155945,13 +156414,16 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         const owned = productIdsForNames(
           items.map((i) => typeof i.label.name === "string" ? i.label.name : "").filter(Boolean)
         );
-        const recs = rankProductsForCoverage({
+        const budget = Math.max(0, REC_MAX - owned.length);
+        const recs = budget === 0 ? [] : rankProductsForCoverage({
           want: wantedSlugs(snapshot2, goals),
           owned,
           goals: goals.map((g) => ({ id: g.id, members: g.members })),
-          limit: REC_LIMIT
+          limit: budget,
+          pinned: starterPackIds(),
+          greedy: true
         });
-        buildRecs(recsHost, recs, goals, goals.length > 0);
+        buildRecs(recsHost, recs, goals, budget === 0);
       }
     };
     const onClick = (ev) => {
@@ -156051,7 +156523,16 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
     const item = {
       id: Date.now(),
-      label: { name: entry.name, nutrients: entry.nutrients },
+      label: {
+        name: entry.name,
+        nutrients: entry.nutrients,
+        // The unit facts live on the LABEL, not looked up from the vault at render time: a
+        // scanned item has a label and no vault entry, so the stepper must read one place.
+        ...entry.servingUnits !== null ? { serving_units: entry.servingUnits, serving_unit: entry.servingUnit } : {},
+        // `servings` is the dose in SERVINGS — the unit readScale and the coverage math speak.
+        // One label serving unless the product is curated otherwise; see state/dose-defaults.
+        servings: defaultServingsFor(productId, entry.servingUnits)
+      },
       addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
       provenance: "user_manual"
     };
@@ -156065,7 +156546,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     if (item === void 0) {
       return;
     }
-    const next = Math.max(1, readItemDose(item) + delta);
+    const next = stepDose(readItemDose(item), delta, doseUnitsOf(item.label));
     saveRgOverride(id, { scaling_factor: next });
   }
 
@@ -198678,7 +199159,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
 
   // assets/js/src/views/regimen.ts
   var LAYOUT4 = CoverageLayoutSchema.parse(coverage_layout_data_default);
-  var REC_LIMIT2 = 6;
+  var REC_LIMIT = 3;
   var SLOT_CAP = 4;
   var CATEGORY_ROWS = [
     { label: "Minerals", bucket: "other", hue: "#2b6fb0" },
@@ -198843,9 +199324,16 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     if (product === void 0) {
       return null;
     }
+    const productId = productIdsForNames([rawName])[0] ?? "";
+    const servingUnits = typeof product.serving_units === "number" ? product.serving_units : null;
     const item = {
       id: Date.now(),
-      label: { name: product.canonical_name ?? product.name ?? rawName, nutrients: product.nutrients ?? [] },
+      label: {
+        name: product.canonical_name ?? product.name ?? rawName,
+        nutrients: product.nutrients ?? [],
+        ...servingUnits !== null ? { serving_units: servingUnits, serving_unit: product.serving_unit } : {},
+        servings: defaultServingsFor(productId, servingUnits)
+      },
       addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
       provenance: "user_manual"
     };
@@ -199051,12 +199539,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     </div>`;
   }
   function wantedSlugs2(goals) {
-    if (goals.length > 0) {
-      return [...new Set(goals.flatMap((g) => g.members))];
-    }
+    void goals;
     const snapshot2 = getOrCompute();
     const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
-    return snapshot2.tiles.filter((t) => t.status === "gap").map((t) => keyToSlug.get(t.name.toLowerCase())).filter((s) => s !== void 0);
+    return snapshot2.tiles.filter((t) => t.status !== "covered").map((t) => keyToSlug.get(t.name.toLowerCase())).filter((s) => s !== void 0);
   }
   function buildRecs2(host, recs, goals) {
     host.replaceChildren();
@@ -199152,10 +199638,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       minus.dataset["doseDown"] = id;
       minus.setAttribute("aria-label", "Fewer");
       minus.textContent = "\u2212";
-      minus.disabled = dose <= 1;
+      const units = doseUnitsOf(item.label);
+      minus.disabled = atMinimumDose(dose, units);
       const nEl = document.createElement("span");
       nEl.className = "rr-dose__n";
-      nEl.textContent = formatDose3(dose);
+      nEl.textContent = formatDose3(doseCount(dose, units));
       const plus = document.createElement("button");
       plus.className = "rr-dose__b";
       plus.type = "button";
@@ -199164,7 +199651,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       plus.textContent = "+";
       const unit = document.createElement("span");
       unit.className = "rr-dose__u";
-      unit.textContent = "/day";
+      unit.textContent = doseUnitLabel(doseCount(dose, units), units);
       doseEl.append(minus, nEl, plus, unit);
       row.appendChild(doseEl);
       const x = document.createElement("button");
@@ -199631,7 +200118,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           want: wantedSlugs2(goals),
           owned: productIdsForNames(items.map((i) => typeof i.label.name === "string" ? i.label.name : "")),
           goals: goals.map((g) => ({ id: g.id, members: g.members })),
-          limit: REC_LIMIT2
+          limit: REC_LIMIT,
+          pinned: starterPackIds(),
+          greedy: true
         });
         buildRecs2(recGrid, recs, goals);
       }
@@ -204451,7 +204940,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function mount7(host, onDone) {
     const existing = loadUserProfile();
     const reopen = existing !== null;
-    let chosen = [...loadRgUserGoals() ?? []].slice(0, MAX_GOALS);
+    const knownGoalIds = new Set(LAYOUT5.goals.map((g) => g.id));
+    let chosen = [...loadRgUserGoals() ?? []].filter((id) => knownGoalIds.has(id)).slice(0, MAX_GOALS);
     const chip2 = (g) => `<button class="wc-goal" type="button" data-goal="${escHTML16(g.id)}"><span class="wc-goal__dot"></span>${escHTML16(g.name)}</button>`;
     const catOrder = [];
     const chipsByCat = /* @__PURE__ */ new Map();

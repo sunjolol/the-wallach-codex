@@ -28,13 +28,16 @@
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import { emit, on } from '../core/events.js';
+import { atMinimumDose, doseCount, doseUnitLabel, doseUnitsOf, stepDose } from '../core/dose-units.js';
 import { plural } from '../core/format.js';
 import { GOAL_HUES, MAX_GOALS } from '../core/goal-display.js';
 import { CoverageLayoutSchema, type LayoutGoal, type LayoutSection, type LayoutSubsection, type LayoutTile, type RegimenItem } from '../core/schemas/index.js';
 import { ui } from '../state/copy.js';
+import { defaultServingsFor } from '../state/dose-defaults.js';
 import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCount, getOrCompute } from '../state/coverage.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage, vaultEntry } from '../state/recommender.js';
 import { addOrBumpRegimenItem, loadEffectiveRegimen, loadRgUserGoals, loadSlots, saveRgOverride, saveRgRemoved, saveRgUserGoals } from '../state/regimen.js';
+import { starterPackIds, starterPackSize } from '../state/starter-pack.js';
 
 export interface MountHandle {
   update: () => void;
@@ -43,9 +46,40 @@ export interface MountHandle {
 
 const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
 
-/** The aside shows 4 recommendation cards above the regimen rail (measured: the aside's
- *  vertical budget at 1440×900). */
-const REC_LIMIT = 4;
+/**
+ * How many rec cards the aside shows. Three, because the aside's vertical budget at 1440×900
+ * was measured at four cards and a foods block is planned directly beneath this one — so the
+ * products block can no longer spend the whole column.
+ *
+ * ★ THERE IS NO "SHOW MORE". The list does not need paging because it ADVANCES: add one of
+ * the three and it leaves the list (owned products are filtered out), so the next surfaces in
+ * its place. A pager on top of that was two ways to see the same nine products.
+ */
+const REC_PAGE = 3;
+
+/**
+ * How many SCORED cards may follow the curated starter pack. The owner's cap (2026-08-21):
+ * "a max of 4 more products that best fill the MOST remaining gaps".
+ */
+const REC_GAP_FILL = 4;
+
+/**
+ * How many Youngevity products Coverage will EVER put in a regimen: the whole starter pack,
+ * then the gap-fills. The owner's cap (2026-08-21) — "it can only ever recommend 9 total
+ * youngevity products from the coverage tab, once 9 youngevity supplements/products are in
+ * your regimen, it no longer recommends more."
+ *
+ * ★ IT COUNTS WHAT YOU OWN, NOT WHAT THE RAIL HAS SHOWN. The budget below is this number
+ * minus the vault products already in the active slot, so browsing costs nothing and only
+ * ADDING spends it. Nothing about the cap is persisted — `owned` is derived from the regimen
+ * on every paint, which is what keeps `recommendations_not_stored` true: remove a product and
+ * both the budget and the product itself come straight back.
+ *
+ * DERIVED, never written down — a hand-typed 9 would silently disagree the day a sixth
+ * product is pinned. Coverage-only; the Regimen console deliberately keeps producing until
+ * the field is closed.
+ */
+const REC_MAX = starterPackSize() + REC_GAP_FILL;
 
 // ─── Read helpers ─────────────────────────────────────────────────────────
 
@@ -235,7 +269,7 @@ function subCovered(sub: LayoutSubsection, snapshot: CoverageSnapshot | null): b
  *
  * ★ WHY THE GROUP AND NOT 34 RINGS: the plant-derived 34 share ONE verdict off the
  * colloidal-mineral bottle, so the group IS the unit — there is exactly one thing to do about
- * all 34. Ringing them individually would light 34 of the 91 tiles on the 20 of 31 goals that
+ * all 34. Ringing them individually would light 34 of the 91 tiles on the 20 of 30 goals that
  * name the group — roughly 37% of the field on two goals out of every three — and a goal system
  * where nearly everything lights on nearly every goal reads as cheap and means nothing. The dots
  * ride the LABEL, which already reads "PLANT DERIVED · 34", so they read as a property of the
@@ -249,7 +283,7 @@ function subCovered(sub: LayoutSubsection, snapshot: CoverageSnapshot | null): b
  * ★ AND WHY THIS IS NOT THE SAME AS THE REC-CARD GOAL DOTS, which were removed — the distinction
  * is MEASURED, not aesthetic, so do not "unify" the two: the rec dots lit almost every time (a
  * broad product touches every goal), so they never varied and encoded nothing. These VARY — 20
- * of the 31 goals name the group, so on a 5-goal pick all five dots light only ~9% of the time
+ * of the 30 goals name the group, so on a 5-goal pick all five dots light only ~11% of the time
  * and the modal case is 3 of 5. A dot here is a fact about YOUR goals; a dot there was a
  * constant.
  *
@@ -418,16 +452,21 @@ function renderGoalStrip(goals: LayoutGoal[]): string {
 /**
  * What the recommender should target.
  *
- * With goals: the union of their members — the card's copy is "your goal nutrients per $10
- * spent", not "your UNCOVERED goal nutrients", so the target is the whole goal, not its
- * remainder. With none: the field's current gaps, so a goal-less user still gets an honest,
- * useful list ranked by breadth across all 90.
+ * ★ EVERY ESSENTIAL STILL OUTSTANDING — and deliberately NOT the goal's members.
+ * The owner's ruling (2026-08-21): the gap-fill cards should target "the MOST remaining
+ * gaps, whether they are goals or not". Scoping the want-set to goal members meant the rail
+ * kept offering products for essentials the user had already covered, while real holes
+ * outside the goal went unmentioned. Goals still tint the cards (`goalIds` → the coloured
+ * ring) — they no longer decide WHAT is offered. This does not touch the goal rule in this
+ * file's header: the denominator is still 90, before goals, after goals and during hover.
+ *
+ * ★ OUTSTANDING IS "NOT COVERED", not "gap". Those differ: `gap` excludes `partial`,
+ * `present` and the blank status, all three of which are still genuinely unfinished. Using
+ * `gap` alone hid every partially-filled essential from the recommender.
  */
 function wantedSlugs(snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): string[] {
-  if (goals.length > 0) {
-    return [...new Set(goals.flatMap(g => g.members))];
-  }
-  // Join snapshot-gap tiles back to slugs. Both sides key on the layout tile's `key` (the
+  void goals;
+  // Join outstanding tiles back to slugs. Both sides key on the layout tile's `key` (the
   // canonical target name), which is what CoverageSnapshot tiles carry as `name`. Do NOT map to
   // the tile's DISPLAY name here: 16 of the 91 tiles show something different from their key
   // (vitamin-c displays 'ASCORBIC ACID' against the key 'Vitamin C (Ascorbic Acid)'), and a
@@ -438,29 +477,35 @@ function wantedSlugs(snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): st
   // join and asserts it still loses exactly those 16).
   const keyToSlug = new Map([...slugToTargetKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
   return (snapshot?.tiles ?? [])
-    .filter(t => t.status === 'gap')
+    .filter(t => t.status !== 'covered')
     .map(t => keyToSlug.get(t.name.toLowerCase()))
     .filter((s): s is string => s !== undefined);
 }
 
 /** The rec cards, built as DOM (names via textContent, never innerHTML). */
-function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], goalMode: boolean): void {
+function buildRecs(
+  host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], capReached: boolean,
+): void {
   host.replaceChildren();
   const head = document.createElement('div');
   head.className = 'recs__head';
   const eyebrow = document.createElement('span');
   eyebrow.className = 'recs__eyebrow';
-  eyebrow.textContent = ui(goalMode ? 'cov_recs_goal_eyebrow' : 'cov_recs_nogoal_eyebrow');
+  eyebrow.textContent = ui('cov_recs_eyebrow');
   head.appendChild(eyebrow);
   host.appendChild(head);
 
   if (recs.length === 0) {
     const note = document.createElement('p');
     note.className = 'recs__note';
-    note.textContent = ui(goalMode ? 'cov_recs_done_goals' : 'cov_recs_done_field');
+    // Two DIFFERENT endings, and conflating them would lie in one direction or the other:
+    // hitting the cap does not mean the field is closed, and closing the field is not the cap.
+    note.textContent = ui(capReached ? 'cov_recs_cap_reached' : 'cov_recs_done_field');
     host.appendChild(note);
     return;
   }
+
+  const page = recs.slice(0, REC_PAGE);
 
   const hueOf = (id: string): string => {
     const i = goals.findIndex(g => g.id === id);
@@ -472,8 +517,8 @@ function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], 
    *
    * ★ WHY, measured rather than argued: the dots were a dead channel. `goalIds` (state/
    * recommender.ts) lights a goal when the product delivers ANY ONE of its members — measured
-   * against the shipped data, 29 of the 155 recommender products light ALL 31 goals and 64 light
-   * 30 or more, so every top-ranked card lit every picked goal. Identical rows carry no
+   * against the shipped data, 29 of the 155 recommender products light ALL 30 goals and 64 light
+   * 29 or more, so every top-ranked card lit every picked goal. Identical rows carry no
    * information.
    *
    * ★ AND THE OBVIOUS FIX DOES NOT WORK — do not re-propose it: a %-of-target threshold was
@@ -489,7 +534,7 @@ function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], 
    * `goalIds`' ANY-member rule is therefore deliberately UNCHANGED: it is a border tint, not a
    * claim.
    */
-  for (const r of recs) {
+  for (const r of page) {
     const cols = r.goalIds.map(hueOf);
     const ring = cols.length === 0
       ? 'linear-gradient(var(--ds-rule), var(--ds-rule))'
@@ -515,7 +560,7 @@ function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], 
     price.textContent = `$${r.price.toFixed(2)}`;
     const supplies = document.createElement('span');
     supplies.className = 'rec__q';
-    supplies.textContent = `supplies ${r.supplies}`;
+    supplies.textContent = `adds ${r.supplies}`;
     const val = document.createElement('span');
     val.className = 'rec__val rec__q';
     val.textContent = `${r.perTenDollars.toFixed(1)} / $10`;
@@ -537,7 +582,8 @@ function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], 
 
 /**
  * The protocol rows. Name truncated FROM THE END (names back-load packaging — measured: 33%
- * exceed 30 chars, longest 69), a quiet EDEN/YOURS mark, an inline dose stepper, 1-click
+ * exceed 30 chars, longest 69), a YOURS mark on the user's own scans, an inline dose
+ * stepper counting the product's own units, 1-click
  * remove.
  *
  * ★ NO "this item covers N tiles" claim. The field is six inches away and would contradict
@@ -573,20 +619,30 @@ function buildRailRows(host: HTMLElement, items: ReturnType<typeof loadEffective
     row.appendChild(nameEl);
 
     const x = document.createElement('button');
-    x.className = 'rl-row__x';
+    // The same control the Regimen rail and the goal chips already use, so "remove" looks
+    // like one thing across the app. Unlike the goal chip's, it is NOT hover-revealed: a
+    // regimen row is a thing you remove, and a control that only exists on hover cannot be
+    // found on a touch surface at all.
+    x.className = 'ui-close ui-close--sm rl-row__x';
     x.type = 'button';
     x.dataset['rowRemove'] = id;
     x.setAttribute('aria-label', `Remove ${label}`);
-    x.textContent = '✕';
+    x.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
     row.appendChild(x);
 
     const foot = document.createElement('div');
     foot.className = 'rl-row__foot';
-    const src = document.createElement('span');
-    const own = item.provenance === 'user_scanned';
-    src.className = `rl-src${own ? ' is-own' : ''}`;
-    src.textContent = own ? 'YOURS' : 'EDEN';
-    foot.appendChild(src);
+    // ONLY the user's own scanned items are marked. "EDEN" was inside baseball — it named an
+    // internal pillar to someone who has no reason to know one exists, and it appeared on
+    // nearly every row, so it carried no information either. YOURS stays: that one IS worth
+    // knowing, because a scanned item's numbers came off a label the user photographed rather
+    // than from the product database.
+    if (item.provenance === 'user_scanned') {
+      const src = document.createElement('span');
+      src.className = 'rl-src is-own';
+      src.textContent = 'YOURS';
+      foot.appendChild(src);
+    }
 
     const doseEl = document.createElement('span');
     doseEl.className = 'rl-dose';
@@ -596,10 +652,13 @@ function buildRailRows(host: HTMLElement, items: ReturnType<typeof loadEffective
     minus.dataset['doseDown'] = id;
     minus.setAttribute('aria-label', 'Fewer');
     minus.textContent = '−';
-    minus.disabled = dose <= 1;
+    // `dose` is SERVINGS; the stepper speaks the product's own units. For a liquid or powder
+    // the two are the same number and every line below is a no-op.
+    const units = doseUnitsOf(item.label);
+    minus.disabled = atMinimumDose(dose, units);
     const nEl = document.createElement('span');
     nEl.className = 'rl-dose__n';
-    nEl.textContent = formatDose(dose);
+    nEl.textContent = formatDose(doseCount(dose, units));
     const plus = document.createElement('button');
     plus.className = 'rl-dose__b';
     plus.type = 'button';
@@ -608,7 +667,7 @@ function buildRailRows(host: HTMLElement, items: ReturnType<typeof loadEffective
     plus.textContent = '+';
     const unit = document.createElement('span');
     unit.className = 'rl-dose__u';
-    unit.textContent = '/day';
+    unit.textContent = doseUnitLabel(doseCount(dose, units), units);
     doseEl.append(minus, nEl, plus, unit);
     foot.appendChild(doseEl);
 
@@ -739,13 +798,19 @@ export function mount(container: HTMLElement): MountHandle {
       const owned = productIdsForNames(
         items.map(i => (typeof i.label.name === 'string' ? i.label.name : '')).filter(Boolean),
       );
-      const recs = rankProductsForCoverage({
+      // What is LEFT of the cap. `owned` is the regimen resolved to vault product ids, so
+      // its length IS the count of Youngevity products the user holds. At zero the rail stops
+      // offering entirely and says why — silently rendering nothing would read as a bug.
+      const budget = Math.max(0, REC_MAX - owned.length);
+      const recs = budget === 0 ? [] : rankProductsForCoverage({
         want: wantedSlugs(snapshot, goals),
         owned,
         goals: goals.map(g => ({ id: g.id, members: g.members })),
-        limit: REC_LIMIT,
+        limit: budget,
+        pinned: starterPackIds(),
+        greedy: true,
       });
-      buildRecs(recsHost, recs, goals, goals.length > 0);
+      buildRecs(recsHost, recs, goals, budget === 0);
     }
   };
 
@@ -871,7 +936,7 @@ export function mount(container: HTMLElement): MountHandle {
  *
  * Resolves the vault id, mints the SAME RegimenItem shape as views/regimen.ts's vault picker
  * — provenance 'user_manual', because a vault-matched add IS an Eden product, not the user's
- * own scanned item (that distinction is what the EDEN/YOURS mark reads) — then delegates to
+ * own scanned item (that distinction is what the YOURS mark reads) — then delegates to
  * state/regimen.ts::addOrBumpRegimenItem, the ONE home of the add-or-bump rule: a same-named
  * item already in the slot has its dose raised instead of a duplicate row (two rows for one
  * product would double-count it on the field). That helper routes through the regimen write
@@ -889,7 +954,18 @@ function addVaultProduct(productId: string): void {
   }
   const item: RegimenItem = {
     id: Date.now(),
-    label: { name: entry.name, nutrients: entry.nutrients },
+    label: {
+      name: entry.name,
+      nutrients: entry.nutrients,
+      // The unit facts live on the LABEL, not looked up from the vault at render time: a
+      // scanned item has a label and no vault entry, so the stepper must read one place.
+      ...(entry.servingUnits !== null
+        ? { serving_units: entry.servingUnits, serving_unit: entry.servingUnit }
+        : {}),
+      // `servings` is the dose in SERVINGS — the unit readScale and the coverage math speak.
+      // One label serving unless the product is curated otherwise; see state/dose-defaults.
+      servings: defaultServingsFor(productId, entry.servingUnits),
+    },
     addedDate: new Date().toISOString().slice(0, 10),
     provenance: 'user_manual',
   };
@@ -918,6 +994,9 @@ function bumpDose(id: string, delta: number): void {
   if (item === undefined) {
     return;
   }
-  const next = Math.max(1, readItemDose(item) + delta);
+  // Step by ONE UNIT, not one serving: on a 4-tablet serving the old floor trapped the user
+  // at four tablets when they may want one. Still stored as servings — the coverage math is
+  // untouched by any of this.
+  const next = stepDose(readItemDose(item), delta, doseUnitsOf(item.label));
   saveRgOverride(id, { scaling_factor: next });
 }

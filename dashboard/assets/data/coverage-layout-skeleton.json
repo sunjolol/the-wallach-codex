@@ -630,7 +630,11 @@
         "athletes_foot",
         "boils",
         "impetigo",
-        "infection"
+        "infection",
+        "common_cold",
+        "colds",
+        "influenza",
+        "tonsillitis"
       ]
     },
     {
@@ -653,17 +657,6 @@
         "cystic_fibrosis",
         "atopic_asthma",
         "cough"
-      ]
-    },
-    {
-      "id": "fewer-colds-flu",
-      "name": "Fewer colds & flu",
-      "category": "Digestion, immunity & breathing",
-      "conditions": [
-        "common_cold",
-        "colds",
-        "influenza",
-        "tonsillitis"
       ]
     },
     {

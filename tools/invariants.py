@@ -464,7 +464,14 @@ _VAULT_PROSE_KEYS = {
     "what_it_does", "tagline", "features", "description", "brand_tier",
     "dose_text", "non_essentials_parsed", "summary", "blurb", "marketing",
 }
-_VAULT_PRODUCT_KEYS = {"canonical_name", "nutrients"}
+# serving_units / serving_unit are LABEL FACTS, not prose: how many discrete units make one
+# label serving, and the singular noun for one of them. They let the dose stepper say
+# "2 tablets /day" instead of a bare "1", which was ambiguous in the dangerous direction.
+# They are admitted here WITH their values pinned below (a positive int, and a noun from the
+# closed set) — a bare allowlist entry would leave serving_unit a free string, which is a
+# prose-shaped hole in the one gate whose whole job is keeping prose out.
+_VAULT_PRODUCT_KEYS = {"canonical_name", "nutrients", "serving_units", "serving_unit"}
+_VAULT_UNIT_NOUNS = {"tablet", "capsule", "caplet", "softgel", "gummy", "lozenge", "chewable"}
 _VAULT_NUTRIENT_KEYS = {"name", "amount", "unit"}
 _DETAIL_ARTIFACT = "dashboard/assets/data/product-detail-data.json"
 
@@ -509,6 +516,18 @@ def check_no_product_marketing_prose():
         if extra:
             prose = extra & _VAULT_PROSE_KEYS
             problems.append(f"{pid}: {'MARKETING-PROSE ' if prose else ''}unexpected key(s) {sorted(extra)}")
+        # The two admitted label facts are value-pinned, so neither can become a prose slot.
+        su = rec.get("serving_units")
+        un = rec.get("serving_unit")
+        if su is not None and (not isinstance(su, int) or isinstance(su, bool) or su <= 0):
+            problems.append(f"{pid}: serving_units must be a positive integer, got {su!r}")
+        if un is not None and un not in _VAULT_UNIT_NOUNS:
+            problems.append(
+                f"{pid}: serving_unit {un!r} is not one of the closed unit nouns "
+                f"{sorted(_VAULT_UNIT_NOUNS)} -- a free string here is a prose hole"
+            )
+        if (su is None) != (un is None):
+            problems.append(f"{pid}: serving_units and serving_unit must appear together")
         for row in rec.get("nutrients", []) or []:
             if not isinstance(row, dict):
                 problems.append(f"{pid}: a nutrient row is not an object")
@@ -3048,6 +3067,330 @@ def check_kids_products_not_recommended():
         ROOT / "dashboard/assets/js/src/state/recommender.ts",
         ROOT / "dashboard/assets/data/product-recommender-data.json",
     )
+
+
+def _starter_pack_resolves_impl(pack_p, products_p, kids_p, rec_data_p, view_ps):
+    """The curated STARTER PACK must be real, offerable, and actually wired in.
+
+    The pack is an ORDER, not a claim: it states no dose, no amount and no health claim, so
+    §00.A does not reach it. What it CAN do is fail silently, and in four ways that all look
+    identical on screen — the rail just quietly reverts to pure scoring:
+
+      1. A pinned id that does not exist in the sealed pillar. A typo.
+      2. A pinned id with no row in product-recommender-data.json. rankProductsForCoverage
+         looks the id up in a kid-filtered index and `continue`s past a miss WITHOUT a
+         diagnostic, so this pin never renders and nothing anywhere says so.
+      3. A pinned id that is ALSO on the kids-exclusion list. Two curations disagreeing; the
+         exclusion wins (correctly), and the pin vanishes.
+      4. The pack existing but no surface passing it. The list is perfect and unused.
+
+    None of the four is visible: a shorter list of broad multis is exactly what the rail
+    looked like BEFORE the pack existed. Hence a gate rather than review.
+
+    HONEST LIMIT — read this before trusting the green. This anchors the PLUMBING, not the
+    MEMBERSHIP. It cannot prove these are the RIGHT five products or the right order; that is
+    the owner's editorial judgment (2026-08-21), recorded in the artifact's `_the_rule`, and
+    no gate can certify it. What is mechanical here is only that every pin is real, reachable,
+    un-shadowed and consumed.
+    """
+    fails = []
+    pack = json.loads(pack_p.read_text(encoding="utf-8"))
+    pins = [e["product_id"] for e in pack.get("pinned", [])]
+
+    if not pins:
+        return False, ("starter-pack.json declares no pinned products — an empty pack fails OPEN "
+                       "into the pure scoring it exists to replace")
+
+    dupes = sorted({p for p in pins if pins.count(p) > 1})
+    if dupes:
+        fails.append(f"starter pack repeats a product: {dupes}")
+
+    pillar = json.loads(products_p.read_text(encoding="utf-8"))
+    prods = pillar["products"] if isinstance(pillar, dict) and "products" in pillar else pillar
+    pillar_ids = set(prods) if isinstance(prods, dict) else {p.get("id") for p in prods}
+    unknown = [p for p in pins if p not in pillar_ids]
+    if unknown:
+        fails.append(f"pinned product_id(s) absent from the sealed pillar: {unknown}")
+
+    kids = json.loads(kids_p.read_text(encoding="utf-8"))
+    kid_ids = {e["product_id"] for e in kids.get("excluded", [])}
+    clash = [p for p in pins if p in kid_ids]
+    if clash:
+        fails.append(
+            f"pinned product_id(s) also on the kids-exclusion list: {clash} — the exclusion "
+            "wins at read time, so the pin would silently never render"
+        )
+
+    # Anti-vacuity: a pin with no candidate row can never be offered. rankProductsForCoverage
+    # skips an index miss without a diagnostic, so this is the failure that looks like success.
+    rec = json.loads(rec_data_p.read_text(encoding="utf-8"))
+    offerable = set()
+    for entry in rec.get("essentials", {}).values():
+        for c in entry.get("candidates", []):
+            offerable.add(c.get("product_id"))
+    unoffered = [p for p in pins if p not in offerable]
+    if unoffered:
+        fails.append(
+            f"pinned product_id(s) with no row in product-recommender-data.json: {unoffered} — "
+            "the ranker would skip them silently and the pack would be short with no error"
+        )
+
+    # The pack must actually be CONSUMED. A perfect, unused list is the fourth failure.
+    for p in view_ps:
+        src = p.read_text(encoding="utf-8")
+        if "rankProductsForCoverage(" not in src:
+            continue
+        if not re.search(r"pinned:\s*starterPackIds\(\)", src):
+            fails.append(
+                f"{p.name} calls rankProductsForCoverage but never passes "
+                "`pinned: starterPackIds()` — the pack exists and this surface ignores it"
+            )
+
+    if fails:
+        return False, "; ".join(fails[:5])
+    return True, (
+        f"starter pack: {len(pins)} pinned product(s) all resolve in the sealed pillar, all "
+        f"carry a recommender candidate row, none is kids-excluded, none repeats, and "
+        f"{len(view_ps)} rec surface(s) pass the pack through"
+    )
+
+
+def check_starter_pack_resolves():
+    """Thin path-binding shell so a negative test can drive the impl on planted copies."""
+    return _starter_pack_resolves_impl(
+        ROOT / "dashboard/assets/data/starter-pack.json",
+        ROOT / "eden/products/products.json",
+        ROOT / "dashboard/assets/data/kids-exclusion.json",
+        ROOT / "dashboard/assets/data/product-recommender-data.json",
+        [
+            ROOT / "dashboard/assets/js/src/views/coverage.ts",
+            ROOT / "dashboard/assets/js/src/views/regimen.ts",
+        ],
+    )
+
+
+def _superseded_products_not_recommended_impl(sup_p, products_p, pack_p, rec_src_p, rec_data_p):
+    """A product a newer version replaced may never be RECOMMENDED — and must stay in the DB.
+
+    Recommending both versions of one supplement is not a richer list, it is a list that
+    contradicts itself, and on the Coverage rail it also burns one of the nine slots that tab
+    will ever spend. The failure modes are all silent:
+
+      1. A retired id that does not resolve in the sealed pillar. A typo un-excludes it.
+      2. A `superseded_by` that does not resolve — we removed a product and pointed at
+         nothing, so nobody can check the exclusion still makes sense.
+      3. A `superseded_by` that is ITSELF superseded — the replacement is also retired, so the
+         list quietly recommends nothing in that line at all.
+      4. A retired id that is ALSO in the starter pack. Two curations flatly disagreeing; the
+         exclusion wins at read time and the pin silently never renders.
+      5. A recommendation path that does not apply the filter.
+
+    THE ASYMMETRY IS THE REQUIREMENT, exactly as for kids products: excluded from every
+    RECOMMENDATION path, and deliberately NOT filtered out of essentialSlugsByProduct — the
+    Products-tab database path — because a superseded product is still a real catalogue item
+    somebody may already own. Filtering that would "fix" this gate into a different lie.
+
+    HONEST LIMIT: this anchors the PLUMBING, not the MEMBERSHIP. It cannot prove the list is
+    complete, nor that 2.5 genuinely supersedes 2.0 — that is the owner's judgment about a
+    product line, recorded in the artifact, and no gate can certify it.
+    """
+    import json as _json
+    fails = []
+    sup = _json.loads(sup_p.read_text(encoding="utf-8"))
+    entries = sup.get("superseded", [])
+    if not entries:
+        return False, ("superseded-products.json declares no entries — an empty exclusion list "
+                       "fails OPEN, putting both versions of a supplement back in one ranking")
+
+    pillar = _json.loads(products_p.read_text(encoding="utf-8"))
+    prods = pillar["products"] if isinstance(pillar, dict) and "products" in pillar else pillar
+    pillar_ids = set(prods) if isinstance(prods, dict) else {p.get("id") for p in prods}
+    retired = {e["product_id"] for e in entries}
+
+    for e in entries:
+        pid, by = e["product_id"], e["superseded_by"]
+        if pid not in pillar_ids:
+            fails.append(f"superseded product_id absent from the sealed pillar: {pid}")
+        if by not in pillar_ids:
+            fails.append(f"superseded_by absent from the sealed pillar: {by} (for {pid})")
+        if by in retired:
+            fails.append(
+                f"{pid} is superseded by {by}, which is ITSELF superseded — the whole line "
+                "would drop out of every recommendation with no replacement offered"
+            )
+        if by == pid:
+            fails.append(f"{pid} supersedes itself")
+
+    pack = _json.loads(pack_p.read_text(encoding="utf-8"))
+    pins = {e["product_id"] for e in pack.get("pinned", [])}
+    clash = sorted(retired & pins)
+    if clash:
+        fails.append(
+            f"product(s) both PINNED in the starter pack and marked superseded: {clash} — the "
+            "exclusion wins at read time, so the pin would silently never render"
+        )
+
+    # Anti-vacuity: an exclusion over a product no ranker could offer certifies nothing.
+    rec = _json.loads(rec_data_p.read_text(encoding="utf-8"))
+    offerable = set()
+    for entry in rec.get("essentials", {}).values():
+        for c in entry.get("candidates", []):
+            offerable.add(c.get("product_id"))
+    if not (retired & offerable):
+        fails.append(
+            "no superseded product is a live recommender candidate — a filter over nothing "
+            "proves nothing; either the list is stale or the ids are wrong"
+        )
+
+    # BOTH halves of the asymmetry, read off the source.
+    src = rec_src_p.read_text(encoding="utf-8")
+    rank_body = _fn_body(src, "rankSources")
+    if rank_body is None:
+        fails.append("could not locate rankSources in state/recommender.ts")
+    elif "isSupersededProduct" not in rank_body:
+        fails.append("rankSources does not filter through isSupersededProduct")
+    db_body = _fn_body(src, "essentialSlugsByProduct")
+    if db_body is None:
+        fails.append("could not locate essentialSlugsByProduct in state/recommender.ts")
+    elif "isSupersededProduct" in db_body:
+        fails.append(
+            "essentialSlugsByProduct (the Products-TAB database path) filters superseded "
+            "products — it MUST NOT: they stay discoverable in the catalogue"
+        )
+    if "isSupersededProduct" not in src:
+        fails.append("state/recommender.ts never imports or calls isSupersededProduct")
+
+    if fails:
+        return False, "; ".join(fails[:5])
+    return True, (
+        f"superseded products: {len(entries)} entry(ies) resolve in the sealed pillar, each "
+        f"names a live replacement, none is pinned, and the recommendation paths filter them "
+        f"while the Products-tab database path deliberately does not"
+    )
+
+
+def check_superseded_products_not_recommended():
+    """Thin path-binding shell so a negative test can drive the impl on planted copies."""
+    return _superseded_products_not_recommended_impl(
+        ROOT / "dashboard/assets/data/superseded-products.json",
+        ROOT / "eden/products/products.json",
+        ROOT / "dashboard/assets/data/starter-pack.json",
+        ROOT / "dashboard/assets/js/src/state/recommender.ts",
+        ROOT / "dashboard/assets/data/product-recommender-data.json",
+    )
+
+
+def _dose_defaults_are_not_wallach_impl(defaults_p, vault_p, schema_p, view_ps):
+    """A pre-filled dose is a DISPLAYED amount, so it must never look like Wallach's.
+
+    §00.A governs every recommended amount the app displays. A starting quantity in the dose
+    stepper is displayed and is acted on, so it is in scope — but it is legitimately NOT a
+    Wallach number: it is where the user begins, not what the corpus says they need. Wallach's
+    figures stay TARGETS, and the tile still grades delivery against them, so a starting
+    quantity short of a target renders as a partial bar rather than hiding the gap.
+
+    What this gate makes structurally impossible is the drift from one to the other:
+
+      1. An entry with no provenance, or a provenance outside the closed vocabulary.
+      2. A 'wallach' member appearing in that vocabulary. There must never be one — a Wallach
+         amount reaches the app as a target, never as a pre-filled quantity.
+      3. A source_claim_id (or any claim/source-shaped key) inside an entry, which would make
+         a curated number cite the corpus for something the corpus never said.
+      4. A redundant entry — one whose quantity already equals the product's label serving.
+         Those are the default anyway, and an entry that changes nothing is an entry nobody
+         will re-examine when it later starts changing something.
+      5. An add path that ignores the table, leaving a curated quantity that never applies.
+
+    HONEST LIMIT: this cannot judge whether 3/day is a GOOD starting quantity. That is the
+    owner's editorial call, recorded with its reasoning in the artifact. What is mechanical
+    here is only that it stays honestly labelled as his and never acquires Wallach's authority.
+    """
+    import json as _json
+    import re as _re
+    fails = []
+    doc = _json.loads(defaults_p.read_text(encoding="utf-8"))
+    entries = doc.get("defaults", [])
+    if not entries:
+        return False, "dose-defaults.json declares no entries (remove the file instead)"
+
+    # (2) the closed vocabulary, read off the SCHEMA source -- the runtime's own contract.
+    schema_src = schema_p.read_text(encoding="utf-8")
+    m = _re.search(r"DoseProvenanceSchema\s*=\s*z\.enum\(\[([^\]]*)\]\)", schema_src)
+    if m is None:
+        fails.append("could not find DoseProvenanceSchema's enum in the schema source")
+        allowed = set()
+    else:
+        allowed = {t.strip().strip("'\"") for t in m.group(1).split(",") if t.strip()}
+        if any("wallach" in a.lower() for a in allowed):
+            fails.append(
+                f"DoseProvenanceSchema admits a Wallach provenance {sorted(allowed)} — a "
+                "Wallach amount reaches the app as a TARGET, never as a pre-filled quantity"
+            )
+
+    vault = _json.loads(vault_p.read_text(encoding="utf-8")).get("products", {})
+
+    for e in entries:
+        pid = e.get("product_id", "")
+        rec = vault.get(pid)
+        if rec is None:
+            fails.append(f"dose default for an unknown product: {pid}")
+            continue
+        # (1) provenance present and inside the vocabulary
+        prov = e.get("provenance")
+        if prov not in allowed:
+            fails.append(f"{pid}: provenance {prov!r} is not in the closed set {sorted(allowed)}")
+        # (3) nothing claim-shaped may live in an entry
+        bad_keys = [k for k in e if _re.search(r"claim|wallach|corpus", k, _re.I)]
+        if bad_keys:
+            fails.append(
+                f"{pid}: entry carries {bad_keys} — a curated starting quantity may not cite "
+                "the corpus for a number the corpus never stated"
+            )
+        # (4) an entry that equals the label serving changes nothing
+        units = e.get("units_per_day")
+        per_serving = rec.get("serving_units", 1)
+        if units == per_serving:
+            fails.append(
+                f"{pid}: units_per_day {units} already equals one label serving — that is the "
+                "default for every unlisted product, so the entry is redundant"
+            )
+        if not isinstance(units, int) or units <= 0:
+            fails.append(f"{pid}: units_per_day must be a positive integer, got {units!r}")
+
+    # (5) both add paths must consult the table
+    for p in view_ps:
+        src = p.read_text(encoding="utf-8")
+        if "provenance: 'user_manual'" not in src:
+            continue
+        if "defaultServingsFor(" not in src:
+            fails.append(
+                f"{p.name} mints regimen items but never calls defaultServingsFor — the "
+                "curated starting quantities would silently never apply there"
+            )
+
+    if fails:
+        return False, "; ".join(fails[:5])
+    return True, (
+        f"dose defaults: {len(entries)} curated starting quantity(ies), each provenance-tagged "
+        f"from the closed set {sorted(allowed)} (no wallach member), none claim-cited, none "
+        f"redundant with its label serving, and both add paths apply them"
+    )
+
+
+def check_dose_defaults_are_not_wallach():
+    """Thin path-binding shell so a negative test can drive the impl on planted copies."""
+    return _dose_defaults_are_not_wallach_impl(
+        ROOT / "dashboard/assets/data/dose-defaults.json",
+        ROOT / "dashboard/assets/data/regimen-label-lookup.json",
+        ROOT / "dashboard/assets/js/src/core/schemas/dose-defaults.ts",
+        [
+            ROOT / "dashboard/assets/js/src/views/coverage.ts",
+            ROOT / "dashboard/assets/js/src/views/regimen.ts",
+        ],
+    )
+
+
+
 
 
 def _mirrors_resolve_impl(embed_p, canon_p):
@@ -7843,6 +8186,33 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/kids-exclusion.json product_ids x eden/products/products.json (sealed pillar) for resolution, x dashboard/assets/data/product-recommender-data.json for liveness, x dashboard/assets/js/src/state/recommender.ts SOURCE for the wiring. HONEST LIMIT: this anchors the PLUMBING, not the MEMBERSHIP. It cannot prove the list is COMPLETE — that no further kids product sits unlisted rests on a manual sweep of every label image and every marketing description, plus review. Curation is a judgment; only its enforcement is mechanical",
         severity="critical",
         lesson_ref="LIVE, not hypothetical: with three goals selected, a children's product ranked #1 in the real recommender -- it wins on value precisely because it is cheap. WHY A CURATED LIST AND NOT A RULE: the Products pillar has NO audience or category field and no description at all, so nothing in the data can answer the question; membership is a judgment call, and the list records the judgment. ★ THE LINE: FORMULATED for children, not merely MARKETED to them. Two candidates proposed on marketing copy alone were rejected -- cheri-mins and strawberry-kiwi-mins carry explicitly kid-directed copy ('No more tantrums... back to playtime') but ARE the adult Plant Derived Minerals composition, chemically identical to the adult bottle, so an adult can take them. Do not re-add them by re-reading that copy. ★ A name regex is rejected on measurement, not taste: it over-fires ('Kidney & Bladder Support' matches 'kid'; FlexeoPlus says 'grandkids' and is FOR grandparents; 'Toddy' is a DRINK, not 'toddler' -- Ultra Body Toddy and Cal Toddy are adult) and under-fires. Reading 'toddy' as 'toddler' is exactly the mistake the regex would make, and a human made it first; the label refuted it.",
+    ),
+    Invariant(
+        name="dose_defaults_are_not_wallach",
+        anchor_class="structural",  # our curated table vs its own schema, the vault and the add paths
+        description="A pre-filled DOSE is a displayed amount, so §00.A reaches it — but a starting quantity is legitimately not a Wallach figure: it is where the user begins, not what the corpus says they need. This gate makes the drift from one to the other structurally impossible. Asserts: every entry in dose-defaults.json carries a `provenance` from the CLOSED vocabulary declared in core/schemas/dose-defaults.ts; that vocabulary contains NO wallach member (a Wallach amount reaches the app as a TARGET, never as a pre-filled quantity); no entry carries a claim/corpus/wallach-shaped key, so a curated number can never cite the corpus for something it never said; every product_id resolves in the generated vault; every units_per_day is a positive integer that DIFFERS from the product's own label serving (an entry equal to the default changes nothing today and is the kind of dormant entry nobody re-examines when it later starts changing something); and both add paths call defaultServingsFor, so a curated quantity cannot silently fail to apply. HONEST LIMIT: it cannot judge whether a starting quantity is a GOOD one — that is the owner's editorial call, recorded with its reasoning in the artifact",
+        check_fn=check_dose_defaults_are_not_wallach,
+        truth_anchor="dashboard/assets/data/dose-defaults.json x core/schemas/dose-defaults.ts (the enum, read from source) x dashboard/assets/data/regimen-label-lookup.json (product resolution + label serving units) x views/coverage.ts + views/regimen.ts SOURCE for the add paths. Recomputed each run",
+        severity="critical",
+        lesson_ref="shipped in the SAME patch as the table (§00.B.2). The first entry — ultimate-efa-plus at 3/day — is container arithmetic (90 softgels over 30 days) and was raised with the owner as the one number in its batch coming from neither the product label nor a Wallach book; he ratified it against 9/day (which IS Wallach's 9,000 mg EFA figure) and 1/day (the bare label serving). That is exactly the shape §00.A exists to keep visible: the number is fine, and it must never stop being labelled as his rather than Wallach's. Note the tile still grades delivery against the corpus target, so this default renders the omega pair at roughly a third — the shortfall stays on screen instead of being assumed away.",
+    ),
+    Invariant(
+        name="superseded_products_not_recommended",
+        anchor_class="structural",  # our curated list vs the sealed pillar + the artifact + the source
+        description="A product a NEWER VERSION of the same supplement has replaced may never be offered as a RECOMMENDATION, and MUST stay discoverable in the Products database. Offering both versions of one product is not a richer list, it is a list that contradicts itself — and on Coverage it burns one of the nine slots that tab will ever spend. THE ASYMMETRY IS THE REQUIREMENT, so BOTH halves are asserted: rankSources (every rec surface funnels through it) MUST filter through isSupersededProduct; essentialSlugsByProduct, the Products-TAB database path, MUST NOT (someone may already own the older version and come looking for it). Also proves every retired id resolves in the SEALED pillar, that each names a `superseded_by` which resolves and is not ITSELF superseded (else the whole product line silently drops out with no replacement), that no retired id is also PINNED in the starter pack (the exclusion wins at read time, so the pin would never render), and anti-vacuity — at least one retired id is a live recommender candidate. HONEST LIMIT: plumbing, not membership; that 2.5 supersedes 2.0 is the owner's judgment about a product line and no gate can certify it",
+        check_fn=check_superseded_products_not_recommended,
+        truth_anchor="dashboard/assets/data/superseded-products.json ids x eden/products/products.json (sealed pillar) for resolution, x dashboard/assets/data/product-recommender-data.json for liveness, x dashboard/assets/data/starter-pack.json for the curation clash, x dashboard/assets/js/src/state/recommender.ts SOURCE for both halves of the wiring. Recomputed each run",
+        severity="critical",
+        lesson_ref="shipped in the SAME patch as the curation (§00.B.2). The owner's ruling, 2026-08-21: \"never recommend the BTT 2.0 canister, since the 2.5 supersedes it and no one is going to take 2 versions of 1 supplement\". Kept as a SECOND list rather than folded into kids-exclusion.json, whose file, schema, state module and critical gate are all specifically about products formulated for children — widening a well-documented rule to save one file is how a rule stops meaning anything. A name/version heuristic is rejected on the same grounds the kids name-regex was: the pillar also holds BTT Original, Ultimate Tangy Tangerine and two BTT 2.0 packagings, and no string rule separates 'newer formula' from 'different product' or 'different packaging' among them.",
+    ),
+    Invariant(
+        name="starter_pack_resolves",
+        anchor_class="structural",  # our curated list vs the sealed pillar + the artifact + the call sites
+        description="the curated STARTER PACK (dashboard/assets/data/starter-pack.json) — the fixed, ordered products every user is offered ahead of anything scored — must be real, offerable and consumed. Proves: every pinned product_id resolves in the SEALED pillar (a typo would silently drop a pin); every pin has a candidate row in product-recommender-data.json, because rankProductsForCoverage skips an index miss WITHOUT a diagnostic and a short pack looks exactly like a healthy one; no pin is also on the kids-exclusion list (the exclusion correctly wins at read time, so a clash silently deletes the pin); no pin is repeated; the pack is non-empty (an empty pack fails OPEN into the pure scoring it exists to replace); and both rec surfaces that call rankProductsForCoverage actually pass `pinned: starterPackIds()` — a perfect list nobody reads is the fourth silent failure. HONEST LIMIT: this anchors the PLUMBING, not the MEMBERSHIP — it cannot prove these are the right five products or the right order, which is the owner's editorial judgment and not a mechanical fact",
+        check_fn=check_starter_pack_resolves,
+        truth_anchor="dashboard/assets/data/starter-pack.json product_ids x eden/products/products.json (sealed pillar) for existence, x dashboard/assets/data/product-recommender-data.json for offerability, x dashboard/assets/data/kids-exclusion.json for the curation clash, x views/coverage.ts + views/regimen.ts SOURCE for the wiring. Recomputed each run",
+        severity="critical",
+        lesson_ref="shipped in the SAME patch as the pack (§00.B.2: a rule that can be a gate IS one), because all four failure modes are invisible — every one of them just makes the rail look the way it looked BEFORE the pack existed, which is the definition of a defect no screenshot can catch. The pack itself exists because the scorer could not differentiate: measured against the shipped data, 124 card slots across every goal were filled by only 12 distinct products, since the breadth term reads each product's GLOBAL breadth and therefore cannot vary by goal.",
     ),
     Invariant(
         name="mirrors_resolve",
