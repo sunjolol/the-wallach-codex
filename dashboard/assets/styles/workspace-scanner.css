@@ -304,8 +304,14 @@
 
 /* re-openable scan rows — genuinely clickable, so a pointer cursor is honest */
 .vd-rail .rl-row[data-sc-open] { cursor: pointer; position: relative; width: 100%; text-align: left; }
-.rl-row__x { position: absolute; top: 4px; right: 2px; width: 20px; height: 20px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; color: var(--ds-ink-faint); cursor: pointer; font-size: 15px; line-height: 1; }
-.rl-row__x:hover { background: var(--ds-paper-deep); color: var(--ds-status-warn); }
+/* NOTE: an unscoped rule for the shared row-remove class used to sit here, absolutely
+   positioning it. Nothing in this workspace ever emitted that class -- the Scanner rail removes
+   with .rl-row__rm -- but this sheet loads AFTER workspace-coverage.css at equal specificity, so
+   it silently captured the COVERAGE Daily Protocol rail's per-row remove buttons, tore them out
+   of their row grid and stacked every one of them on a single spot at the panel's top-right. The
+   one visible X then deleted whichever row happened to be on top. Removed.
+   Anything added here that styles a shared .rl- class MUST be scoped to .vd-rail, exactly like
+   the rules above and below this note. Pinned by tools/tests/test_shared_rl_rules_scoped.py. */
 
 /* the neutral "couldn't read" result — no verdict, an honest exit with a way out */
 .vd-card--unread { padding: var(--ds-space-6); }

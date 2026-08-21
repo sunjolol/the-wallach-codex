@@ -25358,14 +25358,28 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     return out;
   }
-  function slugToTileKey() {
-    const m = /* @__PURE__ */ new Map();
+  function layoutTiles2() {
+    const out = [];
     for (const sec of LAYOUT2.sections) {
       const tiles = sec.subsections !== void 0 ? sec.subsections.flatMap((s) => s.tiles) : sec.tiles ?? [];
-      for (const t of tiles) {
-        if (t.slug !== void 0) {
-          m.set(t.slug, t.key);
-        }
+      out.push(...tiles);
+    }
+    return out;
+  }
+  function slugToTileName() {
+    const m = /* @__PURE__ */ new Map();
+    for (const t of layoutTiles2()) {
+      if (t.slug !== void 0) {
+        m.set(t.slug, t.name);
+      }
+    }
+    return m;
+  }
+  function slugToTargetKey() {
+    const m = /* @__PURE__ */ new Map();
+    for (const t of layoutTiles2()) {
+      if (t.slug !== void 0) {
+        m.set(t.slug, t.key);
       }
     }
     return m;
@@ -25470,12 +25484,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   `;
   }
   function renderLedger(snapshot2) {
-    const layoutTiles2 = LAYOUT2.sections.flatMap((sec) => sec.subsections !== void 0 ? sec.subsections.flatMap((s) => s.tiles) : sec.tiles ?? []);
-    const countedKeys = new Set(layoutTiles2.filter((t) => t.essential !== false).map((t) => t.key));
+    const layoutTiles3 = LAYOUT2.sections.flatMap((sec) => sec.subsections !== void 0 ? sec.subsections.flatMap((s) => s.tiles) : sec.tiles ?? []);
+    const countedKeys = new Set(layoutTiles3.filter((t) => t.essential !== false).map((t) => t.key));
     const tiles = (snapshot2?.tiles ?? []).filter((t) => countedKeys.has(t.name));
     const n = (s) => tiles.filter((t) => t.status === s).length;
     const counted = snapshot2?.totalCount ?? essentialCount();
-    const shown = layoutTiles2.length;
+    const shown = layoutTiles3.length;
     const rows = [
       ["covered", ui("cov_ledger_covered"), n("covered")],
       ["partial", ui("cov_ledger_partial"), n("partial")],
@@ -25535,7 +25549,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     if (goals.length > 0) {
       return [...new Set(goals.flatMap((g) => g.members))];
     }
-    const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
+    const keyToSlug = new Map([...slugToTargetKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
     return (snapshot2?.tiles ?? []).filter((t) => t.status === "gap").map((t) => keyToSlug.get(t.name.toLowerCase())).filter((s) => s !== void 0);
   }
   function buildRecs(host, recs, goals, goalMode) {
@@ -25774,7 +25788,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       const tileEl = t.closest("[data-tile]");
       if (tileEl !== null) {
         const key = tileEl.dataset["tile"] ?? "";
-        const slug = [...slugToTileKey()].find(([, k]) => k === key)?.[0];
+        const slug = [...slugToTileName()].find(([, n]) => n === key)?.[0];
         if (slug !== void 0) {
           emit("knowledge:open-entity", { kind: "essential", slug });
         }
@@ -25796,9 +25810,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       if (goal === void 0) {
         return;
       }
-      const keys = new Set(goal.members.map((s) => slugToTileKey().get(s)).filter(Boolean));
+      const names = new Set(goal.members.map((s) => slugToTileName().get(s)).filter(Boolean));
       body.classList.add("focusing");
-      tiles.forEach((x) => x.classList.toggle("is-focus", keys.has(x.dataset["tile"] ?? "")));
+      tiles.forEach((x) => x.classList.toggle("is-focus", names.has(x.dataset["tile"] ?? "")));
       dots.forEach((x) => x.classList.toggle("is-focus", x.dataset["goal"] === goal.id));
     };
     render();
@@ -189180,6 +189194,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const r = n >= 100 ? Math.round(n) : Math.round(n * 10) / 10;
     return r.toLocaleString("en-US");
   }
+  function fmtAmount(n, unit) {
+    if (unit === "mg" && Number.isFinite(n) && n > 0 && n < 1) {
+      return { value: fmtTarget(n * 1e3), unit: "mcg" };
+    }
+    return { value: fmtTarget(n), unit };
+  }
   function seclabel(label, hint) {
     const h = hint !== void 0 && hint.length > 0 ? `<span class="kd-ep-seclabel__hint">${escHTML5(hint)}</span>` : "";
     return `<div class="kd-ep-seclabel">${escHTML5(label)}${h}</div>`;
@@ -189221,7 +189241,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML5(s.productId)}">
       <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
       <span class="kd-ep-src__nm">${escHTML5(s.name)}${tag}</span>
-      <span class="kd-ep-src__amt">${fmtTarget(s.amount)} ${escHTML5(s.unit)}</span>
+      <span class="kd-ep-src__amt">${fmtAmount(s.amount, s.unit).value} ${escHTML5(fmtAmount(s.amount, s.unit).unit)}</span>
       <span class="kd-ep-src__pr">${price}</span>
       <span class="kd-ep-src__chev">\u203A</span>
     </button>`;
@@ -189271,7 +189291,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   </div>`;
   }
   function renderSourcesBlock(layoutKey) {
-    const sources = rankedSourcesForEssential(layoutKey);
+    const sources = rankedSourcesForEssential(layoutKey).filter((s) => s.amount > 0);
     if (sources.length === 0) {
       return "";
     }
@@ -197755,7 +197775,44 @@ in place because deleting them is a visual risk that deserves eyes. safe_write.p
 post-write discipline check names two gates that no longer exist, so its rollback can never
 fire. And eden/tools/purity-status.json lists six of the seven books, leaving Hell's
 Kitchen's source text unchecked by that gate -- deliberately NOT guessed, because whether
-that OCR is raw or pristine is a factual claim about the book, not something to infer.` }, { id: "lg_mt26trit_335whh", ts: "2026-08-20T19:04:56.597083-05:00", surface: "coverage", kind: "incident", summary: "Fixed a Coverage join bug that made vitamin gaps invisible to the no-goal recommender: the lookup matched the tile display name, not the canonical name, silently dropping 16 of 91 tiles. New negative control pins it.", detail: "With no goals selected, Coverage turns the gaps showing on the board back into\nnutrient ids so the recommender knows what to aim at. That lookup was matching on the\nlabel printed on the tile rather than the nutrient's canonical name -- and for 16 of the\n91 those are different strings. Every vitamin was silently skipped, so a vitamin gap\ncould never produce a product suggestion. Nothing went red, because the mineral gaps\nresolved fine and the rail still filled with cards.\n\nviews/coverage.ts::slugToTileKey mapped slug -> t.name (the DISPLAY name), while a\nCoverageSnapshot tile carries the layout tile's `key` -- the canonical target name --\nper state/coverage.ts:262. wantedSlugs() lower-cased both sides, which rescued the 75\ntiles that differ only in case and concealed the rest. The 16 that diverge further are\nall twelve vitamins plus folate, flavonoids and the three omegas: 'RETINOL' was being\nmatched against 'Vitamin A (Retinol / beta-carotene)'. views/regimen.ts:188 already\nmapped to t.key and was right all along; coverage.ts now matches it.\n\nThe proof is a negative control rather than a render probe, deliberately. The defect was\nan ABSENCE, and a DOM probe cannot distinguish \"silently dropped\" from \"the recommender\nhad nothing to suggest\" -- which is exactly why this survived a green board and a passing\nprobe suite. tools/tests/test_nogoal_wanted_join.py replays the join over the shipped\nlayout data, asserts nothing is dropped when joining on `key`, then PLANTS the old\ndisplay-name join and asserts it still loses exactly those 16. It also pins the source\nline, so reverting the fix reddens the test instead of passing quietly.\n\nThis changes what the app does: with no goals set, the Coverage rail will now recommend\nproducts against vitamin gaps, which it has never done. Approved before making the\nchange, and flagged for a look on screen." }];
+that OCR is raw or pristine is a factual claim about the book, not something to infer.` }, { id: "lg_mt26trit_335whh", ts: "2026-08-20T19:04:56.597083-05:00", surface: "coverage", kind: "incident", summary: "Fixed a Coverage join bug that made vitamin gaps invisible to the no-goal recommender: the lookup matched the tile display name, not the canonical name, silently dropping 16 of 91 tiles. New negative control pins it.", detail: "With no goals selected, Coverage turns the gaps showing on the board back into\nnutrient ids so the recommender knows what to aim at. That lookup was matching on the\nlabel printed on the tile rather than the nutrient's canonical name -- and for 16 of the\n91 those are different strings. Every vitamin was silently skipped, so a vitamin gap\ncould never produce a product suggestion. Nothing went red, because the mineral gaps\nresolved fine and the rail still filled with cards.\n\nviews/coverage.ts::slugToTileKey mapped slug -> t.name (the DISPLAY name), while a\nCoverageSnapshot tile carries the layout tile's `key` -- the canonical target name --\nper state/coverage.ts:262. wantedSlugs() lower-cased both sides, which rescued the 75\ntiles that differ only in case and concealed the rest. The 16 that diverge further are\nall twelve vitamins plus folate, flavonoids and the three omegas: 'RETINOL' was being\nmatched against 'Vitamin A (Retinol / beta-carotene)'. views/regimen.ts:188 already\nmapped to t.key and was right all along; coverage.ts now matches it.\n\nThe proof is a negative control rather than a render probe, deliberately. The defect was\nan ABSENCE, and a DOM probe cannot distinguish \"silently dropped\" from \"the recommender\nhad nothing to suggest\" -- which is exactly why this survived a green board and a passing\nprobe suite. tools/tests/test_nogoal_wanted_join.py replays the join over the shipped\nlayout data, asserts nothing is dropped when joining on `key`, then PLANTS the old\ndisplay-name join and asserts it still loses exactly those 16. It also pins the source\nline, so reverting the fix reddens the test instead of passing quietly.\n\nThis changes what the app does: with no goals set, the Coverage rail will now recommend\nproducts against vitamin gaps, which it has never done. Approved before making the\nchange, and flagged for a look on screen." }, { id: "lg_mt2854wq_f0wbfd", ts: "2026-08-20T19:41:46.778689-05:00", surface: "coverage", kind: "incident", summary: "Fixed four reported defects: the Daily Protocol delete X (an unscoped rule in the scanner stylesheet captured it), tile click-through (my own regression from the vitamin fix), silver rendering as 0 mg, and declared-zero products listed as sources.", detail: `Four defects the owner hit, one of them mine.
+
+THE DELETE X. On the Coverage tab's Daily Protocol box, every item's remove button was
+stacked on a single point at the panel's top-right, so the one X you could see deleted
+whichever row happened to be on top. The cause was in a third file entirely:
+workspace-scanner.css carried an unscoped rule for the shared row-remove class, and
+because that sheet loads after the coverage sheet at identical specificity, it captured
+the Coverage rail's buttons and absolutely-positioned all of them to the same spot.
+Measured: all three at (1537,492), outside the panel. The Scanner does not even use that
+class, and every neighbouring rule in that block is correctly scoped to .vd-rail -- that
+one line had lost its prefix. That is why fixing this once before did not hold: nothing
+was wrong in either file you would think to look at. A new test now forbids a workspace
+sheet from declaring a bare rule for a class another workspace owns, with a negative
+control that replants the exact rule and an over-fire control that must spare a properly
+scoped one.
+
+THE TILE CLICK. This one I broke earlier today and it is worth being plain about.
+slugToTileKey() had three callers serving two different contracts -- the DOM matches on
+the tile's display name, the coverage snapshot matches on the canonical key. Fixing the
+vitamin recommender by repointing that one map silently broke the tile click-through, which
+is the only entrance to an essential's detail page, and the goal hover with it, for exactly
+the same 16 tiles. There are now two maps with the contract stated on each, and the test
+pins both plus all three call sites.
+
+THE 0 MG. Colloidal silver lists 0.04 mg and the sources row rounded it to "0 mg" -- the
+app asserting a product contains none of the thing it was recommending it for. Sub-milligram
+composition figures now render in mcg, which is the unit such a quantity is written in
+everywhere else. Silver reads 40 mcg and 13 mcg. Separately, 16 candidates carry an amount
+of exactly zero -- a label declaring "Sodium 0mg" -- and those are no longer listed as
+sources at all, because a product that declares none of a nutrient is not a source of it.
+
+NOT REPRODUCED, AND SAID SO. The owner also reports that amino acids and fatty acids never
+cover on a non-default regimen slot. A fresh profile shows 11 of 12 amino acids covered on
+BOTH the default slot and a second one, whether the slot is created programmatically or by
+clicking the empty slot tile, using the product he named. The mechanism I most suspected -- a
+non-slot-scoped legacy storage key -- is dead: the coverage math reads none. Rather than
+guess, his exported backup is needed so the real slot document can be loaded and the
+difference found.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -198342,7 +198399,7 @@ that OCR is raw or pristine is a factual claim about the book, not something to 
     }
     return out;
   }
-  function slugToTileKey2() {
+  function slugToTileKey() {
     const m = /* @__PURE__ */ new Map();
     for (const sec of LAYOUT4.sections) {
       const tiles = sec.subsections !== void 0 ? sec.subsections.flatMap((s) => s.tiles) : sec.tiles ?? [];
@@ -198373,7 +198430,7 @@ that OCR is raw or pristine is a factual claim about the book, not something to 
   function fieldInfo(goals) {
     const snapshot2 = getOrCompute();
     const goalSlugs = new Set(goals.flatMap((g) => g.members));
-    const nameToSlug = new Map([...slugToTileKey2()].map(([slug, name]) => [name, slug]));
+    const nameToSlug = new Map([...slugToTileKey()].map(([slug, name]) => [name, slug]));
     const counted = snapshot2.tiles.filter((t) => t.noTargetReason !== "non_essential");
     let covered = 0;
     let goalGap = 0;
@@ -198640,7 +198697,7 @@ that OCR is raw or pristine is a factual claim about the book, not something to 
       return [...new Set(goals.flatMap((g) => g.members))];
     }
     const snapshot2 = getOrCompute();
-    const keyToSlug = new Map([...slugToTileKey2()].map(([slug, key]) => [key.toLowerCase(), slug]));
+    const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
     return snapshot2.tiles.filter((t) => t.status === "gap").map((t) => keyToSlug.get(t.name.toLowerCase())).filter((s) => s !== void 0);
   }
   function buildRecs2(host, recs, goals) {

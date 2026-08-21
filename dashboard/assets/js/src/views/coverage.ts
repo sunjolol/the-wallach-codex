@@ -99,14 +99,45 @@ function activeGoals(): LayoutGoal[] {
 }
 
 /** canon slug → the layout label the tiles are keyed by (tiles carry the display name). */
-function slugToTileKey(): Map<string, string> {
-  const m = new Map<string, string>();
+function layoutTiles(): { slug?: string; name: string; key: string }[] {
+  const out: { slug?: string; name: string; key: string }[] = [];
   for (const sec of LAYOUT.sections) {
     const tiles = sec.subsections !== undefined ? sec.subsections.flatMap(s => s.tiles) : (sec.tiles ?? []);
-    for (const t of tiles) {
-      if (t.slug !== undefined) {
-        m.set(t.slug, t.key);
-      }
+    out.push(...tiles);
+  }
+  return out;
+}
+
+/**
+ * slug -> the tile's DISPLAY name. This is what `data-tile` carries (see renderTile), so it is
+ * the map for anything matching against the DOM: the tile click-through and the goal hover.
+ *
+ * ⚠ NOT interchangeable with slugToTargetKey below. 16 of the 91 tiles display something other
+ * than their canonical key ('RETINOL' vs 'Vitamin A (Retinol / beta-carotene)'), so using the
+ * wrong one silently matches nothing for exactly those 16 -- all 12 vitamins, folate, flavonoids
+ * and the 3 omegas. Both directions of that mistake have shipped; both are pinned by
+ * tools/tests/test_nogoal_wanted_join.py.
+ */
+function slugToTileName(): Map<string, string> {
+  const m = new Map<string, string>();
+  for (const t of layoutTiles()) {
+    if (t.slug !== undefined) {
+      m.set(t.slug, t.name);
+    }
+  }
+  return m;
+}
+
+/**
+ * slug -> the tile's canonical `key`. A CoverageSnapshot tile carries this as its `name`
+ * (state/coverage.ts buildTiles), so this is the map for anything matching against SNAPSHOT
+ * data. See the warning on slugToTileName.
+ */
+function slugToTargetKey(): Map<string, string> {
+  const m = new Map<string, string>();
+  for (const t of layoutTiles()) {
+    if (t.slug !== undefined) {
+      m.set(t.slug, t.key);
     }
   }
   return m;
@@ -405,7 +436,7 @@ function wantedSlugs(snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): st
   // The lower-casing is belt-and-braces; the keys already match exactly.
   // Negative control: tools/tests/test_nogoal_wanted_join.py (plants the old display-name
   // join and asserts it still loses exactly those 16).
-  const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
+  const keyToSlug = new Map([...slugToTargetKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
   return (snapshot?.tiles ?? [])
     .filter(t => t.status === 'gap')
     .map(t => keyToSlug.get(t.name.toLowerCase()))
@@ -749,7 +780,7 @@ export function mount(container: HTMLElement): MountHandle {
     const tileEl = t.closest<HTMLElement>('[data-tile]');
     if (tileEl !== null) {
       const key = tileEl.dataset['tile'] ?? '';
-      const slug = [...slugToTileKey()].find(([, k]) => k === key)?.[0];
+      const slug = [...slugToTileName()].find(([, n]) => n === key)?.[0];
       if (slug !== undefined) {
         emit('knowledge:open-entity', { kind: 'essential', slug });
       }
@@ -780,9 +811,9 @@ export function mount(container: HTMLElement): MountHandle {
     if (goal === undefined) {
       return;
     }
-    const keys = new Set(goal.members.map(s => slugToTileKey().get(s)).filter(Boolean));
+    const names = new Set(goal.members.map(s => slugToTileName().get(s)).filter(Boolean));
     body.classList.add('focusing');
-    tiles.forEach(x => x.classList.toggle('is-focus', keys.has(x.dataset['tile'] ?? '')));
+    tiles.forEach(x => x.classList.toggle('is-focus', names.has(x.dataset['tile'] ?? '')));
     // A goal Wallach never names the complex for has NO dot here, so nothing focuses — which is
     // itself the honest answer ("this group does nothing for that goal"), not a missing state.
     dots.forEach(x => x.classList.toggle('is-focus', x.dataset['goal'] === goal.id));

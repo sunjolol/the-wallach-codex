@@ -293,6 +293,26 @@ function fmtTarget(n: number): string {
   return r.toLocaleString('en-US');
 }
 
+/**
+ * An amount rendered in the unit it actually reads in.
+ *
+ * fmtTarget rounds to one decimal, so a genuine sub-milligram amount collapses to "0": colloidal
+ * silver lists 0.04 mg and the row said "0 mg", asserting the product contains none of the thing
+ * it is being recommended FOR. Composition is stored in the essential's canonical unit, which is
+ * mg for silver even though Wallach's target for it is stated in mcg.
+ *
+ * The rule: below 1 mg, express in mcg. That is the unit such a quantity is written in everywhere
+ * else — a label, the target, a claim — so it is the honest presentation, not a cosmetic one. The
+ * value is unchanged; only its unit and scale move. Nothing rescales upward: mcg stays mcg, so a
+ * figure already sized to its unit is left exactly as authored.
+ */
+function fmtAmount(n: number, unit: string): { value: string; unit: string } {
+  if (unit === 'mg' && Number.isFinite(n) && n > 0 && n < 1) {
+    return { value: fmtTarget(n * 1000), unit: 'mcg' };
+  }
+  return { value: fmtTarget(n), unit };
+}
+
 // ─── Section building blocks ────────────────────────────────────────────────
 
 /** A section divider label + optional muted hint (short chrome copy; not prose). */
@@ -351,7 +371,7 @@ function srcRow(s: RankedSourceRow, isBest: boolean): string {
   return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML(s.productId)}">
       <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
       <span class="kd-ep-src__nm">${escHTML(s.name)}${tag}</span>
-      <span class="kd-ep-src__amt">${fmtTarget(s.amount)} ${escHTML(s.unit)}</span>
+      <span class="kd-ep-src__amt">${fmtAmount(s.amount, s.unit).value} ${escHTML(fmtAmount(s.amount, s.unit).unit)}</span>
       <span class="kd-ep-src__pr">${price}</span>
       <span class="kd-ep-src__chev">›</span>
     </button>`;
@@ -427,7 +447,11 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
  * mg is what a product CONTAINS, never a target · §00.A). '' when no product carries it.
  */
 function renderSourcesBlock(layoutKey: string): string {
-  const sources = rankedSourcesForEssential(layoutKey);
+  // A label that DECLARES zero is a statement that the product contains none of this — 16 rows in
+  // the shipped composition say exactly that (a "Sodium 0mg" nutrition panel, most of them). Such a
+  // product is not a source, so it is not listed as one; it used to render as a "0 mg" row under
+  // "Best Youngevity sources", which reads as a broken number rather than as the absence it is.
+  const sources = rankedSourcesForEssential(layoutKey).filter(s => s.amount > 0);
   if (sources.length === 0) {
     return '';
   }

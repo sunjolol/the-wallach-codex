@@ -74,12 +74,22 @@ print("%s vitamins_resolve       expect=%d resolve       got=%d" %
 if not ok:
     fails.append("vitamin tiles unresolved: %s" % missing)
 
-# 4. Pin the source so a revert cannot pass quietly.
-pinned = "m.set(t.slug, t.key);" in VIEW and "m.set(t.slug, t.name);" not in VIEW
-print("%s source_pinned          expect=maps to t.key   got=%s" %
-      ("ok  " if pinned else "FAIL", "t.key" if pinned else "t.name"))
-if not pinned:
-    fails.append("views/coverage.ts slugToTileKey no longer maps to t.key")
+# 4. Pin BOTH maps and BOTH contracts. One map served two contracts once, and repointing it to
+#    satisfy the snapshot side silently broke the DOM side: the tile click-through (the ONLY
+#    entrance to an essential's detail page) and the goal hover both stopped matching, for the
+#    same 16 tiles. Each pin below is the exact call site, so either mistake reddens this test.
+PINS = [
+    ("slugToTileName maps to t.name",   "function slugToTileName" in VIEW and "m.set(t.slug, t.name);" in VIEW),
+    ("slugToTargetKey maps to t.key",   "function slugToTargetKey" in VIEW and "m.set(t.slug, t.key);" in VIEW),
+    ("wantedSlugs -> slugToTargetKey",  "slugToTargetKey()].map(([slug, key])" in VIEW),
+    ("tile click  -> slugToTileName",   "[...slugToTileName()].find(([, n]) => n === key)" in VIEW),
+    ("goal hover  -> slugToTileName",   "slugToTileName().get(s)" in VIEW),
+    ("retired slugToTileKey is gone",   "slugToTileKey" not in VIEW),
+]
+for label, ok in PINS:
+    print("%s %-32s %s" % ("ok  " if ok else "FAIL", label, "" if ok else "<-- BROKEN"))
+    if not ok:
+        fails.append("views/coverage.ts: " + label)
 
 print()
 if fails:
