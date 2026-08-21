@@ -30,6 +30,7 @@ import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { on } from '../core/events.js';
 import { GOAL_HUES, MAX_GOALS } from '../core/goal-display.js';
+import { isUserSupplied } from '../core/provenance.js';
 import { BACKUP_APP_ID } from '../core/schemas/backup.js';
 import {
   CoverageLayoutSchema,
@@ -653,7 +654,7 @@ function buildRailRows(host: HTMLElement, items: RegimenItem[]): void {
     const id = String(item.id);
     const label = typeof item.label.name === 'string' ? item.label.name : '?';
     const dose = readItemDose(item);
-    const own = item.provenance === 'user_scanned';
+    const own = isUserSupplied(item.provenance);
     const row = document.createElement('div');
     row.className = 'rr-row';
     row.dataset['rowId'] = id;

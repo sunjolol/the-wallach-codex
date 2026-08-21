@@ -33,7 +33,7 @@ export const RegimenItemSchema = z.object({
   id: z.number(),
   label: RegimenLabelSchema,
   addedDate: z.string(), // ISO YYYY-MM-DD
-  provenance: z.string(), // user_scanned | user_manual | wishlist_promoted (USER). Gated by scanner_user_items_marked. The wallach_hbsp_default token retired with the base-seed removal — nothing mints it now.
+  provenance: z.string(), // user_scanned | user_typed | user_manual | wishlist_promoted (USER). Gated by scanner_user_items_marked; core/provenance.ts says which of them mean the USER supplied the numbers. The wallach_hbsp_default token retired with the base-seed removal — nothing mints it now.
 });
 
 /** The full regimen as stored in 'lcRegimen_v1'. */

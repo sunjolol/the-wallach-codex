@@ -31,6 +31,7 @@ import { emit, on } from '../core/events.js';
 import { atMinimumDose, doseCount, doseUnitLabel, doseUnitsOf, stepDose } from '../core/dose-units.js';
 import { plural } from '../core/format.js';
 import { GOAL_HUES, MAX_GOALS } from '../core/goal-display.js';
+import { isUserSupplied } from '../core/provenance.js';
 import { CoverageLayoutSchema, type LayoutGoal, type LayoutSection, type LayoutSubsection, type LayoutTile, type RegimenItem } from '../core/schemas/index.js';
 import { ui } from '../state/copy.js';
 import { defaultServingsFor } from '../state/dose-defaults.js';
@@ -632,12 +633,12 @@ function buildRailRows(host: HTMLElement, items: ReturnType<typeof loadEffective
 
     const foot = document.createElement('div');
     foot.className = 'rl-row__foot';
-    // ONLY the user's own scanned items are marked. "EDEN" was inside baseball — it named an
+    // ONLY the user's own items are marked. "EDEN" was inside baseball — it named an
     // internal pillar to someone who has no reason to know one exists, and it appeared on
     // nearly every row, so it carried no information either. YOURS stays: that one IS worth
-    // knowing, because a scanned item's numbers came off a label the user photographed rather
-    // than from the product database.
-    if (item.provenance === 'user_scanned') {
+    // knowing, because such an item's numbers came off a label the user photographed or typed
+    // in themselves, rather than from the product database.
+    if (isUserSupplied(item.provenance)) {
       const src = document.createElement('span');
       src.className = 'rl-src is-own';
       src.textContent = 'YOURS';

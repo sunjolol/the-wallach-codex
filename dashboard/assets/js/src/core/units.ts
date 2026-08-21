@@ -36,23 +36,137 @@ export const IU_TO_MG: Record<string, number> = {
   'vitamin-e': 0.67,
 };
 
+/** The mass units the app compares in. */
+export type MassUnit = 'mcg' | 'mg' | 'g' | 'kg' | 'oz' | 'lb';
+/** Every unit `canonicalUnit` can resolve: the mass family plus IU (an activity unit). */
+export type CanonicalUnit = MassUnit | 'iu';
+
+/**
+ * Resolve however a unit was WRITTEN to what it MEANS — the one home for unit spelling.
+ *
+ * ★ WHY THIS EXISTS. The scanner's Confirm grid is typed by hand, and people write
+ * "milligrams", "micrograms", "ounces". Every reader in the app used to test units by exact
+ * string or by a short prefix list, so those spellings behaved in two different bad ways:
+ * state/scanner.ts's `normalize` returned null and the nutrient vanished from the hit count
+ * and the gap-fill with no error at all, while `toMg` fell through to its mg default — so a
+ * hand-typed "500 micrograms" was credited as 500 MILLIGRAMS, a 1000x overstatement of a
+ * dose, rendered as a confident number.
+ *
+ * ★ ORDER IS THE WHOLE TRICK. "micrograms" contains "grams" and starts the same way as
+ * "milligrams". Micro is tested before milli and both before plain grams; get that order
+ * wrong and the 1000x error comes straight back. A FLUID ounce is a volume and is refused
+ * outright rather than being quietly weighed.
+ *
+ * Returns null for anything not recognised — including deliberate non-masses like "million
+ * CFU" and "mL". Callers decide what null means; `toMg` keeps its documented legacy
+ * fallback (unknown -> mg-family) so no existing product's arithmetic moves.
+ */
+export function canonicalUnit(raw: string | undefined): CanonicalUnit | null {
+  // Punctuation and repeated spaces collapse first, so "I.U.", "mcg  RAE" and "MICROGRAMS"
+  // all reach the same tests.
+  const u = (raw ?? '').toLowerCase().replace(/[.,()/]/g, ' ').replace(/\s+/g, ' ').trim();
+  if (u === '') {
+    return null;
+  }
+  if (u.startsWith('fl ') || u.includes('fluid')) {
+    return null; // a fluid ounce is a VOLUME — never weigh it
+  }
+  if (/^i ?u\b/.test(u) || u.includes('international unit')) {
+    return 'iu';
+  }
+  if (u.startsWith('mcg') || u.startsWith('ug') || u.startsWith('microgram') || u.includes('μg') || u.includes('µg')) {
+    return 'mcg';
+  }
+  if (u.startsWith('mg') || u.startsWith('milligram')) {
+    return 'mg';
+  }
+  if (u.startsWith('kg') || u.startsWith('kilogram')) {
+    return 'kg';
+  }
+  if (u === 'g' || u.startsWith('g ') || u.startsWith('gram') || u.startsWith('gm')) {
+    return 'g';
+  }
+  if (u.startsWith('oz') || u.startsWith('ounce')) {
+    return 'oz';
+  }
+  if (u.startsWith('lb') || u.startsWith('pound')) {
+    return 'lb';
+  }
+  return null;
+}
+
+/**
+ * The abbreviation to SHOW for a resolved unit, or null when the text is not a plain
+ * one-word unit. A qualifier must survive: "mcg RAE" resolves to mcg for arithmetic but is
+ * NOT rewritten to "mcg" on screen, because RAE is a real distinction a reader may want.
+ */
+export function unitAbbreviation(raw: string | undefined): CanonicalUnit | null {
+  const text = (raw ?? '').trim();
+  if (text === '' || /\s/.test(text)) {
+    return null; // more than one token — leave the author's wording alone
+  }
+  return canonicalUnit(text);
+}
+
+// ─── The three exact ladders ────────────────────────────────────────────────
+// Three, not one shared factor, and deliberately so: `v * 0.001` and `v / 1000` disagree in
+// the last bit for ~13% of doubles, and the mcg base, the mg base and the reverse leg each
+// need their own exact expression to reproduce the arithmetic that shipped. They are pinned
+// against each other by core/units.test.ts, which also proves every unit string present in
+// the product data converts EXACTLY as it did before this file existed -- toBe, not
+// toBeCloseTo, because that is the whole claim.
+
+/** `value` in `unit`, expressed in MILLIGRAMS. */
+export function massToMg(value: number, unit: MassUnit): number {
+  switch (unit) {
+    case 'mcg': return value / 1000;
+    case 'mg': return value;
+    case 'g': return value * 1000;
+    case 'kg': return value * 1000000;
+    case 'oz': return value * 28349.523125; // international avoirdupois ounce, exact by definition
+    case 'lb': return value * 453592.37; // 16 oz, exact by definition
+  }
+}
+
+/** `value` in `unit`, expressed in MICROGRAMS. */
+export function massToMcg(value: number, unit: MassUnit): number {
+  switch (unit) {
+    case 'mcg': return value;
+    case 'mg': return value * 1000;
+    case 'g': return value * 1000000;
+    case 'kg': return value * 1000000000;
+    case 'oz': return value * 28349523.125;
+    case 'lb': return value * 453592370;
+  }
+}
+
+/** `mg` milligrams, expressed in `unit`. */
+export function mgToMass(mg: number, unit: MassUnit): number {
+  switch (unit) {
+    case 'mcg': return mg * 1000;
+    case 'mg': return mg;
+    case 'g': return mg / 1000;
+    case 'kg': return mg / 1000000;
+    case 'oz': return mg / 28349.523125;
+    case 'lb': return mg / 453592.37;
+  }
+}
+
 /** Convert an amount to a common unit. Faithful legacy `toMg`: IU stays IU. */
 export function toMg(value: number, unit: string | undefined, slug?: string): { v: number; u: 'mg' | 'iu' } {
-  // Robust unit parse: labels/regimen snapshots carry SUFFIXED units ("mcg RAE", "mg NE",
-  // "mcg DFE") and micro-sign variants. Match by token/prefix, not exact string, so a
-  // "mcg RAE" can never fall through to the mg default and inflate 1000x (the Vitamin A bug).
-  const u = (unit ?? 'mg').toLowerCase().trim();
-  if (u.includes('iu')) {
+  // Labels and regimen snapshots carry SUFFIXED units ("mcg RAE", "mg NE", "mcg DFE"),
+  // micro-sign variants, and — since hand-entry — long-form words. canonicalUnit owns all of
+  // that, so a "mcg RAE" or a "micrograms" can never fall through to the mg default and
+  // inflate 1000x (the Vitamin A bug).
+  const canon = canonicalUnit(unit ?? 'mg');
+  if (canon === 'iu') {
     // A/D/E: convert IU into the mg-family so an IU-listed product still counts toward its
     // metric target. Other IU nutrients stay IU-family (they have no metric target).
     const f = slug !== undefined ? IU_TO_MG[slug] : undefined;
     return (f !== undefined) ? { v: value * f, u: 'mg' } : { v: value, u: 'iu' };
   }
-  if (u.startsWith('mcg') || u.startsWith('ug') || u.includes('μg') || u.includes('µg')) {
-    return { v: value / 1000, u: 'mg' };
+  if (canon === null) {
+    return { v: value, u: 'mg' }; // unknown ("million CFU", "mL") -> mg-family, as it always has
   }
-  if (u === 'g' || u.startsWith('gram')) {
-    return { v: value * 1000, u: 'mg' };
-  }
-  return { v: value, u: 'mg' }; // 'mg' + 'mg RAE'/'mg NE' + unknown -> mg-family
+  return { v: massToMg(value, canon), u: 'mg' };
 }

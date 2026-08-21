@@ -4643,7 +4643,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     addedDate: external_exports.string(),
     // ISO YYYY-MM-DD
     provenance: external_exports.string()
-    // user_scanned | user_manual | wishlist_promoted (USER). Gated by scanner_user_items_marked. The wallach_hbsp_default token retired with the base-seed removal — nothing mints it now.
+    // user_scanned | user_typed | user_manual | wishlist_promoted (USER). Gated by scanner_user_items_marked; core/provenance.ts says which of them mean the USER supplied the numbers. The wallach_hbsp_default token retired with the base-seed removal — nothing mints it now.
   });
   var RegimenSchema = external_exports.object({
     items: external_exports.array(RegimenItemSchema)
@@ -4742,6 +4742,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     name: external_exports.string().max(200),
     brand: external_exports.string().max(200).optional(),
     servings: external_exports.union([external_exports.string(), external_exports.number()]).optional(),
+    entry: external_exports.enum(["scanned", "typed"]).optional(),
     nutrients: external_exports.array(external_exports.object({
       name: external_exports.string().max(120),
       amount: external_exports.number().optional(),
@@ -16691,6 +16692,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return null;
   }
 
+  // assets/js/src/core/provenance.ts
+  var USER_SUPPLIED_PROVENANCE = ["user_scanned", "user_typed"];
+  function isUserSupplied(provenance) {
+    return USER_SUPPLIED_PROVENANCE.includes(provenance);
+  }
+
   // assets/js/src/core/storage.ts
   var subscribers2 = /* @__PURE__ */ new Set();
   var nativeListenerInstalled = false;
@@ -16834,19 +16841,103 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     "vitamin-d": 0.025 / 1e3,
     "vitamin-e": 0.67
   };
+  function canonicalUnit(raw) {
+    const u = (raw ?? "").toLowerCase().replace(/[.,()/]/g, " ").replace(/\s+/g, " ").trim();
+    if (u === "") {
+      return null;
+    }
+    if (u.startsWith("fl ") || u.includes("fluid")) {
+      return null;
+    }
+    if (/^i ?u\b/.test(u) || u.includes("international unit")) {
+      return "iu";
+    }
+    if (u.startsWith("mcg") || u.startsWith("ug") || u.startsWith("microgram") || u.includes("\u03BCg") || u.includes("\xB5g")) {
+      return "mcg";
+    }
+    if (u.startsWith("mg") || u.startsWith("milligram")) {
+      return "mg";
+    }
+    if (u.startsWith("kg") || u.startsWith("kilogram")) {
+      return "kg";
+    }
+    if (u === "g" || u.startsWith("g ") || u.startsWith("gram") || u.startsWith("gm")) {
+      return "g";
+    }
+    if (u.startsWith("oz") || u.startsWith("ounce")) {
+      return "oz";
+    }
+    if (u.startsWith("lb") || u.startsWith("pound")) {
+      return "lb";
+    }
+    return null;
+  }
+  function unitAbbreviation(raw) {
+    const text = (raw ?? "").trim();
+    if (text === "" || /\s/.test(text)) {
+      return null;
+    }
+    return canonicalUnit(text);
+  }
+  function massToMg(value, unit) {
+    switch (unit) {
+      case "mcg":
+        return value / 1e3;
+      case "mg":
+        return value;
+      case "g":
+        return value * 1e3;
+      case "kg":
+        return value * 1e6;
+      case "oz":
+        return value * 28349.523125;
+      // international avoirdupois ounce, exact by definition
+      case "lb":
+        return value * 453592.37;
+    }
+  }
+  function massToMcg(value, unit) {
+    switch (unit) {
+      case "mcg":
+        return value;
+      case "mg":
+        return value * 1e3;
+      case "g":
+        return value * 1e6;
+      case "kg":
+        return value * 1e9;
+      case "oz":
+        return value * 28349523125e-3;
+      case "lb":
+        return value * 453592370;
+    }
+  }
+  function mgToMass(mg, unit) {
+    switch (unit) {
+      case "mcg":
+        return mg * 1e3;
+      case "mg":
+        return mg;
+      case "g":
+        return mg / 1e3;
+      case "kg":
+        return mg / 1e6;
+      case "oz":
+        return mg / 28349.523125;
+      case "lb":
+        return mg / 453592.37;
+    }
+  }
   function toMg(value, unit, slug) {
-    const u = (unit ?? "mg").toLowerCase().trim();
-    if (u.includes("iu")) {
+    const canon = canonicalUnit(unit ?? "mg");
+    if (canon === "iu") {
       const f = slug !== void 0 ? IU_TO_MG[slug] : void 0;
       return f !== void 0 ? { v: value * f, u: "mg" } : { v: value, u: "iu" };
     }
-    if (u.startsWith("mcg") || u.startsWith("ug") || u.includes("\u03BCg") || u.includes("\xB5g")) {
-      return { v: value / 1e3, u: "mg" };
+    if (canon === null) {
+      return { v: value, u: "mg" };
     }
-    if (u === "g" || u.startsWith("gram")) {
-      return { v: value * 1e3, u: "mg" };
-    }
-    return { v: value, u: "mg" };
+    return { v: massToMg(value, canon), u: "mg" };
   }
 
   // assets/data/slot-colours-data.json
@@ -17443,7 +17534,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   }
   function liveNutrients(item) {
     const snapshot2 = Array.isArray(item.label.nutrients) ? item.label.nutrients : [];
-    if (item.provenance === "user_scanned") {
+    if (isUserSupplied(item.provenance)) {
       return snapshot2;
     }
     const name = typeof item.label.name === "string" ? item.label.name.toLowerCase() : "";
@@ -23158,7 +23249,37 @@ The site does NOT yet tell a file:// user that localStorage is per-origin and th
 appear on the website \u2014 a returning user currently sees an empty board and will conclude their data
 is gone, which is the highest-value copy change outstanding. Mobile is entirely untested and is the
 next session's task. The live site's Creator's Log will read 911 until the next deploy, because this
-very entry lands in the ledger after the upload.` }, { id: "lg_mt3d1j34_ubjo2v", ts: "2026-08-21T14:46:42.784233-05:00", surface: "coverage/regimen", kind: "round-close", summary: "Everyone now starts on the same five-product pack instead of a scorer that gave every goal the same answer, the dose counts tablets rather than servings, and the omega bars finally move when you change it.", detail: 'The recommendation engine had a quiet failure: it gave nearly the same answer no matter which health goal you picked. Not a bug exactly \u2014 it was ranking correctly, but the question had the same answer for everyone, so 124 recommendation slots across every goal were filled by only twelve distinct products. The fix is two-part. A curated starting set of five products now opens the list in a fixed order, the same for everyone, so the opening is a deliberate choice rather than an accident of arithmetic. Behind it, each further recommendation is now chosen for what the ones above it did NOT cover, so the list spans your gaps instead of repeating itself.\n\nThe dose stepper also stopped lying by omission. It counted servings and printed a bare number, so a product whose serving is two tablets showed "1". The maths was right, but read "1" as one tablet, step it to two, and you have quietly asked for four. It now counts the product\'s own units and says so \u2014 "2 tablets/day". Nobody\'s coverage number moved: the same amount is delivered, it is just finally labelled.\n\nAnd the omega bars now fill as you raise an oil\'s dose, instead of sitting empty and then snapping full.\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nGOAL MERGE. `fewer-colds-flu` retired into `stronger-immunity` (31 -> 30 goals). All four conditions absorbed, because `colds` is the ONLY carrier of potassium \u2014 via WAL-CLM-LETS-000225 \u2014 and dropping it as a near-duplicate of `common_cold` would have deleted potassium from the merged goal with no gate going red. Members re-derived: 15 -> 16, potassium present. Three MEASURED comment figures were re-measured rather than edited by eye; the all-five-dots probability moved 9% -> 11%, the product-breadth counts did not move at all. Fixed a latent defect while there: views/welcome.ts never resolved saved goal ids against the layout, so a retired id would render no chip, could never be deselected, and would hold one of five goal slots forever.\n\nTHE STARTER PACK. New curated starter-pack.json (kids-exclusion pattern, fail-loud). Root cause of the sameness, measured not argued: `goalIds` is computed in the ranker and never enters the score, and the breadth term reads each product\'s GLOBAL breadth \u2014 so it cannot vary by goal. Greedy gap-fill is OPT-IN; the non-greedy path is the original one-shot code byte-preserved, because the condition pages ask a different question and both relative terms rescale with the surviving set.\n\nCAPS. Coverage: three at a time, no pager \u2014 the list ADVANCES, since an added product leaves it and the next surfaces. Capped by a budget of nine minus the Youngevity products already in the regimen; driven end to end, owned 0->9 offered 9->0. Nothing persisted; `owned` is derived every paint.\n\nSUPERSEDED PRODUCTS. Four of six BTT/Tangy Tangerine products retired against BTT 2.5. Found by DRIVING the app rather than by grep: BTT Original was offered beside BTT 2.5 in a real session. Kept as a separate curation from kids-exclusion, whose gate and docs are specifically about children\'s formulations.\n\nTHE EFA BARS. fillPercent had a branch only for the plant-derived aggregate; everything else fell through to a ratio that needs a numeric target and otherwise returns a binary 0/1. So the omega tiles snapped empty-to-full. Now mirrors the PDM branch. 33/44/56/67% at doses 3-6.\n\nDOSE IN UNITS. serving_units/serving_unit derived from each label\'s own serving_size, single-component countable products only (98 of 98 solid components parse; 91 of 215 qualify; the five multi-component ones get none because no single count is true for them). Stored amounts stay per-serving and readScale still returns servings \u2014 only the displayed count and step size changed.\n\n\u2605 HIS PREMISE WAS WRONG AND WAS CORRECTED WITH EVIDENCE RATHER THAN IMPLEMENTED. He asked for the default to become 2 because the amounts were "per unit". They are not: Ultimate Daily\'s vitamin A is stored as 1,200 mcg with pct_dv 133, and 1200/900 = 133%, so 1,200 mcg IS the two-tablet amount. 96% of nutrient rows corroborate per-serving once BOTH FDA Daily-Value eras are allowed \u2014 the apparent mismatches were pre-2016 label columns, not a per-unit split. Implementing his request literally would have computed four tablets a day. Likewise "Ultimate Daily adds 2" was the greedy delta, not a dose artifact: Ultimate Classic already covers 22 of its 24 essentials, and the only two it brings are iodine and methionine.\n\n\xA700.A. Ultimate EFA Plus defaulting to 3/day was RAISED as the one number from neither the product label nor a Wallach book \u2014 container arithmetic, 90 softgels over 30 days \u2014 and RATIFIED by him against 9/day (which IS Wallach\'s 9,000 mg EFA figure) and 1/day (the bare label serving). Recorded with provenance `container_life`. The tiles still grade against the corpus target, so the shortfall shows as a third-full bar rather than being hidden.\n\nTHREE NEW GATES, 95 -> 98, each shipped in the same patch as the thing it governs. starter_pack_resolves was NEGATIVE-CONTROLLED \u2014 all seven planted defects go red. superseded_products_not_recommended asserts both halves of the asymmetry. dose_defaults_are_not_wallach keeps a curated starting quantity from ever acquiring Wallach\'s authority: the provenance vocabulary is closed and has no wallach member, and no entry may carry a claim id.\n\nTHE GATES CAUGHT TWO REAL BUGS OF MINE. dose_defaults_are_not_wallach found that the Regimen add path matches the vault by NAME and so never applied the curated quantities at all. no_new_dead_code found two speculative exports, deleted rather than baselined. And no_product_marketing_prose went red on the two new vault keys \u2014 refined, not widened: the keys are admitted WITH their values pinned, because a bare allowlist entry would have left a free string in the one gate whose whole job is keeping prose out.\n\nA PROBE ASSERTION WAS WRONG, NOT MY CHANGE. `s2.gap < s1.gap` after a dose step was never the law \u2014 it only ever passed by accident of which product ranked first. A dose increase can only move essentials the product CONTAINS, and those sit in PARTIAL. Measured: covered 12 -> 49, partial 49 -> 12, gap 14 -> 14. Now asserts (partial + gap) falls.\n\nRAIL POLISH \u2014 and the screenshot lied twice. `grid-row: 1 / -1` cannot reach implicit rows without grid-template-rows, so the span silently collapsed to row 1 and centred the close button on the NAME line, 11px high. Fixing that to `span 2` still measured -11, because the full-width footer could then find no free row and auto-placed into a THIRD one. Only computed styles caught either. Pinning the footer to an explicit cell is what actually centred it.\n\nREGIMEN PANEL. The gauge \u2014 not the category cluster beside it \u2014 was what set the panel\'s height, so it was the only cut that bought real space: 252 -> 200px, numeral scaled with it. The readout\'s grid gap was deliberately NOT reduced; the squares are aspect-ratio 1 in a 45-column grid, so a smaller gap makes each square wider and the block taller. Measured, not assumed. "Best next moves" climbed from ~860 to 764 and the first card now sits fully inside a 900px fold.\n\nNO SEALED PILLAR WAS TOUCHED, so no seal ceremony was required or performed.\n\nBLOCKED: the foods recommendation system on both tabs sits at turn 1 of the three-turn source-rule protocol. He chose to admit an outside food-composition table, which the closed allowlist does not permit; turn 2 must be a later turn. The repo holds ZERO per-food nutrient composition, all 77 sealed food_source claims carry a null dose, and a direct probe of all seven book texts (~5.7M chars) found approximately ONE food-to-amount datapoint. That is a data problem no mining campaign can close.' }];
+very entry lands in the ledger after the upload.` }, { id: "lg_mt3d1j34_ubjo2v", ts: "2026-08-21T14:46:42.784233-05:00", surface: "coverage/regimen", kind: "round-close", summary: "Everyone now starts on the same five-product pack instead of a scorer that gave every goal the same answer, the dose counts tablets rather than servings, and the omega bars finally move when you change it.", detail: 'The recommendation engine had a quiet failure: it gave nearly the same answer no matter which health goal you picked. Not a bug exactly \u2014 it was ranking correctly, but the question had the same answer for everyone, so 124 recommendation slots across every goal were filled by only twelve distinct products. The fix is two-part. A curated starting set of five products now opens the list in a fixed order, the same for everyone, so the opening is a deliberate choice rather than an accident of arithmetic. Behind it, each further recommendation is now chosen for what the ones above it did NOT cover, so the list spans your gaps instead of repeating itself.\n\nThe dose stepper also stopped lying by omission. It counted servings and printed a bare number, so a product whose serving is two tablets showed "1". The maths was right, but read "1" as one tablet, step it to two, and you have quietly asked for four. It now counts the product\'s own units and says so \u2014 "2 tablets/day". Nobody\'s coverage number moved: the same amount is delivered, it is just finally labelled.\n\nAnd the omega bars now fill as you raise an oil\'s dose, instead of sitting empty and then snapping full.\n\n\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\n\nGOAL MERGE. `fewer-colds-flu` retired into `stronger-immunity` (31 -> 30 goals). All four conditions absorbed, because `colds` is the ONLY carrier of potassium \u2014 via WAL-CLM-LETS-000225 \u2014 and dropping it as a near-duplicate of `common_cold` would have deleted potassium from the merged goal with no gate going red. Members re-derived: 15 -> 16, potassium present. Three MEASURED comment figures were re-measured rather than edited by eye; the all-five-dots probability moved 9% -> 11%, the product-breadth counts did not move at all. Fixed a latent defect while there: views/welcome.ts never resolved saved goal ids against the layout, so a retired id would render no chip, could never be deselected, and would hold one of five goal slots forever.\n\nTHE STARTER PACK. New curated starter-pack.json (kids-exclusion pattern, fail-loud). Root cause of the sameness, measured not argued: `goalIds` is computed in the ranker and never enters the score, and the breadth term reads each product\'s GLOBAL breadth \u2014 so it cannot vary by goal. Greedy gap-fill is OPT-IN; the non-greedy path is the original one-shot code byte-preserved, because the condition pages ask a different question and both relative terms rescale with the surviving set.\n\nCAPS. Coverage: three at a time, no pager \u2014 the list ADVANCES, since an added product leaves it and the next surfaces. Capped by a budget of nine minus the Youngevity products already in the regimen; driven end to end, owned 0->9 offered 9->0. Nothing persisted; `owned` is derived every paint.\n\nSUPERSEDED PRODUCTS. Four of six BTT/Tangy Tangerine products retired against BTT 2.5. Found by DRIVING the app rather than by grep: BTT Original was offered beside BTT 2.5 in a real session. Kept as a separate curation from kids-exclusion, whose gate and docs are specifically about children\'s formulations.\n\nTHE EFA BARS. fillPercent had a branch only for the plant-derived aggregate; everything else fell through to a ratio that needs a numeric target and otherwise returns a binary 0/1. So the omega tiles snapped empty-to-full. Now mirrors the PDM branch. 33/44/56/67% at doses 3-6.\n\nDOSE IN UNITS. serving_units/serving_unit derived from each label\'s own serving_size, single-component countable products only (98 of 98 solid components parse; 91 of 215 qualify; the five multi-component ones get none because no single count is true for them). Stored amounts stay per-serving and readScale still returns servings \u2014 only the displayed count and step size changed.\n\n\u2605 HIS PREMISE WAS WRONG AND WAS CORRECTED WITH EVIDENCE RATHER THAN IMPLEMENTED. He asked for the default to become 2 because the amounts were "per unit". They are not: Ultimate Daily\'s vitamin A is stored as 1,200 mcg with pct_dv 133, and 1200/900 = 133%, so 1,200 mcg IS the two-tablet amount. 96% of nutrient rows corroborate per-serving once BOTH FDA Daily-Value eras are allowed \u2014 the apparent mismatches were pre-2016 label columns, not a per-unit split. Implementing his request literally would have computed four tablets a day. Likewise "Ultimate Daily adds 2" was the greedy delta, not a dose artifact: Ultimate Classic already covers 22 of its 24 essentials, and the only two it brings are iodine and methionine.\n\n\xA700.A. Ultimate EFA Plus defaulting to 3/day was RAISED as the one number from neither the product label nor a Wallach book \u2014 container arithmetic, 90 softgels over 30 days \u2014 and RATIFIED by him against 9/day (which IS Wallach\'s 9,000 mg EFA figure) and 1/day (the bare label serving). Recorded with provenance `container_life`. The tiles still grade against the corpus target, so the shortfall shows as a third-full bar rather than being hidden.\n\nTHREE NEW GATES, 95 -> 98, each shipped in the same patch as the thing it governs. starter_pack_resolves was NEGATIVE-CONTROLLED \u2014 all seven planted defects go red. superseded_products_not_recommended asserts both halves of the asymmetry. dose_defaults_are_not_wallach keeps a curated starting quantity from ever acquiring Wallach\'s authority: the provenance vocabulary is closed and has no wallach member, and no entry may carry a claim id.\n\nTHE GATES CAUGHT TWO REAL BUGS OF MINE. dose_defaults_are_not_wallach found that the Regimen add path matches the vault by NAME and so never applied the curated quantities at all. no_new_dead_code found two speculative exports, deleted rather than baselined. And no_product_marketing_prose went red on the two new vault keys \u2014 refined, not widened: the keys are admitted WITH their values pinned, because a bare allowlist entry would have left a free string in the one gate whose whole job is keeping prose out.\n\nA PROBE ASSERTION WAS WRONG, NOT MY CHANGE. `s2.gap < s1.gap` after a dose step was never the law \u2014 it only ever passed by accident of which product ranked first. A dose increase can only move essentials the product CONTAINS, and those sit in PARTIAL. Measured: covered 12 -> 49, partial 49 -> 12, gap 14 -> 14. Now asserts (partial + gap) falls.\n\nRAIL POLISH \u2014 and the screenshot lied twice. `grid-row: 1 / -1` cannot reach implicit rows without grid-template-rows, so the span silently collapsed to row 1 and centred the close button on the NAME line, 11px high. Fixing that to `span 2` still measured -11, because the full-width footer could then find no free row and auto-placed into a THIRD one. Only computed styles caught either. Pinning the footer to an explicit cell is what actually centred it.\n\nREGIMEN PANEL. The gauge \u2014 not the category cluster beside it \u2014 was what set the panel\'s height, so it was the only cut that bought real space: 252 -> 200px, numeral scaled with it. The readout\'s grid gap was deliberately NOT reduced; the squares are aspect-ratio 1 in a 45-column grid, so a smaller gap makes each square wider and the block taller. Measured, not assumed. "Best next moves" climbed from ~860 to 764 and the first card now sits fully inside a 900px fold.\n\nNO SEALED PILLAR WAS TOUCHED, so no seal ceremony was required or performed.\n\nBLOCKED: the foods recommendation system on both tabs sits at turn 1 of the three-turn source-rule protocol. He chose to admit an outside food-composition table, which the closed allowlist does not permit; turn 2 must be a later turn. The repo holds ZERO per-food nutrient composition, all 77 sealed food_source claims carry a null dose, and a direct probe of all seven book texts (~5.7M chars) found approximately ONE food-to-amount datapoint. That is a data problem no mining campaign can close.' }, { id: "lg_mt3fi9tb_fy3jfh", ts: "2026-08-21T15:55:43.151017-05:00", surface: "scanner", kind: "round-close", summary: 'Scanner hand-entry shipped: an item can now be added without a photo, on the same Confirm grid with honest copy. Two silent bugs closed on the way \u2014 a typed item could have its amounts replaced by sealed composition, and "micrograms" was read as milligrams.', detail: `You can now add something to the scanner without photographing it. A small "or add it by hand" link sits under the New Scan button; it opens the same review grid a scan opens, with one blank row to type into. Everywhere the app used to say "what we read" it now says "what you entered", because on this path nothing was read \u2014 no photo, no OCR.
+
+Two silent bugs were found while building it, and both are the kind that show a confident wrong number rather than an error. First: if you typed a product name that happened to match a Youngevity product, your own typed amounts were quietly replaced by the sealed product database. Second: typing "micrograms" instead of "mcg" either dropped the nutrient from the count entirely or credited it as MILLIgrams \u2014 a thousandfold overstatement of a dose. Both are fixed, and both now have machine gates so they cannot come back unnoticed.
+
+TECHNICAL RECORD
+
+ENTRY POINT. views/scanner.ts renderScan's idle branch wraps the button in .vd-newscan-wrap, a column flex child of the already-stretched .vd-scan row, so New Scan SHARES the row height with the link under it: 104.4 -> 81.1px, the cut being exactly the link plus the gap. No height literal, so nothing can drift out of step with the drop zone beside it. data-sc-manual mints {name:'', entry:'typed', nutrients:[{name:'',unit:''}], ingredients:''} and enters state 'confirming'. Confirm was ALREADY a complete editable nutrient grid (mapping, +1 marks, candidate suggestions, ingredient flags), so hand-entry reuses that surface rather than forking a second form that could drift from it.
+
+THE DISCRIMINATOR. ScanLabelSchema gains \`entry: z.enum(['scanned','typed']).optional()\`. ABSENT means scanned \u2014 the only reading a stored label could have before hand-entry existed \u2014 so old localStorage keeps its true meaning with no migration. It drives the step-1 card, the Confirm copy, the CTA, the empty-state, the Saved/Recent rail mark, the verdict foot note and the adopted item's provenance. The pasted-ingredients path is marked 'typed' as well: it was claiming "decoded locally" over a line the user pasted in themselves.
+
+THE PROVENANCE TRAP \u2014 AND WHY THE HANDOFF'S RECOMMENDED FIX WAS WRONG. chronicle/next-chunk.md said to mint \`user_manual\` and widen liveNutrients' fork to include it. That would have BROKEN catalog auto-heal: \`user_manual\` is exactly what a vault-matched add mints, and state/coverage.autoheal.test.ts asserts those items MUST re-read the live vault. Taken instead: a fourth token \`user_typed\`, plus ONE home for the question in core/provenance.ts (USER_SUPPLIED_PROVENANCE + isUserSupplied). The three hand-typed \`=== 'user_scanned'\` comparisons \u2014 state/coverage.ts:385 liveNutrients, views/coverage.ts:640 YOURS, views/regimen.ts:656 "Your own" \u2014 all delegate to it now. The adopt path spreads TWO literals rather than one ternary ON PURPOSE: scanner_user_items_marked reads provenance LITERALS out of the source, so a computed token would have made the mint invisible to the one gate whose job is policing it.
+
+NEW GATE (98 -> 99). user_supplied_provenance_single_home, consistency, critical. RED on any provenance-vs-token-literal comparison anywhere in dashboard/assets/js/src outside core/provenance.ts, and RED if that file loses either export. Negative test tools/tests/test_user_supplied_provenance_single_home.py drives 8 cases through an extracted impl. Case 4 \u2014 reversed operands, \`'user_typed' === item.provenance\` \u2014 FAILED on its first run and exposed a real hole in my own regex (\`\\w*provenance\` cannot match \`item.provenance\`), fixed to \`[\\w.]*provenance\\b\`. The gate's negative test caught the gate.
+
+LONG-FORM UNITS. core/units.ts gains canonicalUnit() as the ONE home for unit spelling, plus three EXACT ladders (massToMg / massToMcg / mgToMass). Three, and not one shared multiplicative factor, because \`v * 0.001\` and \`v / 1000\` disagree in the last bit for ~13% of doubles \u2014 measured over 200,000 random values plus 48 real label amounts \u2014 and reproducing the shipped arithmetic bit-for-bit was a requirement, not a preference. Before this, state/scanner.ts::normalize matched 'mcg'|'mg'|'g'|'iu' EXACTLY, so a long form returned null and the nutrient vanished from meaningfulHits, gapFillFor and the Confirm row's +1 with no error anywhere; and toMg fell through to its mg default, crediting "500 micrograms" as 500 milligrams. Now understood: milligram(s), microgram(s), \xB5g/\u03BCg/ug, gram(s)/gm, kilogram(s), ounce(s), pound(s), international unit(s), and every abbreviation. A FLUID ounce is REFUSED \u2014 it is a volume, and weighing it would be inventing a number. Ounce and pound use their exact legal definitions (28349.523125 mg, 453592.37 mg): physical constants, not doses, so nothing here touches the Wallach source rule. A committed unit field rewrites a SINGLE-WORD long form to its abbreviation (unitAbbreviation); "mcg RAE" keeps its qualifier because RAE is a real distinction.
+
+NOTHING ALREADY SHIPPING MOVED. All 8 distinct unit strings in the product data \u2014 mg (2536), mcg (693), g (373), million CFU (26), billion CFU (20), IU (14), iu (12), mL (1) \u2014 convert identically. core/units.test.ts re-states the legacy expressions as literals and compares with toBe, not toBeCloseTo. "million CFU" and "mL" still take the documented unknown -> mg-family fallback they always took.
+
+FIXED AS FOUND. (1) A blank row rendered as \`!\` NOT RECOGNIZED, scolding the user for a field just handed to them \u2014 new neutral is-blank state with placeholders, and the same wart on the OCR path's "Add a row" is gone. (2) "1 lines", and an untouched row counted as "1 to check" \u2014 blank rows now excluded from the tally in BOTH renderConfirm and recountNutrients. (3) Confirming an entirely empty entry called runScan and dropped an "Untitled item" row into Recent wearing a verdict the app had just declined to give \u2014 now scoreLabel, which does not write history. (4) An empty "Your uploaded photo" box rendered whenever dataUrl was null, reading as a failed upload \u2014 the aside is conditional now.
+
+LAYOUT, AND THE MEASUREMENT THAT DROVE IT. The Confirm edit column is 660px with no photo but only 380px when the 248px photo panel sits beside it. A media query CANNOT see this \u2014 the viewport is 1440px either way. The original five-column row squeezed the NAME input to 42.7px ("Vitamin C" rendering as "Vit"), the mapping to 53.4px, and the row to 169.9px tall. The fix is UPSTREAM: .vd-cf__grid now RESERVES the photo column whether or not a photo exists, so the edit column is ONE width and the row simply fills it \u2014 no cap, nothing to keep in step. Final, identical in both states at 1440px: edit column 380, row 380 (fills it), name 129 (1fr), amount 83, unit 83, all on one line, all left-aligned, all font-weight 500 at 0.95rem. Only the mapping sits below. Two false starts on the way, both corrected by him: a three-line row (the amount pair wrapped to its own line \u2014 an unrequested liberty) and a max-width cap that stopped the row short of the column.
+
+VERIFIED. build OK; 99/99 invariants (23 external / 29 consistency / 45 structural / 2 meta); 66 vitest, up from 51 (15 new in core/units.test.ts, 1 new autoheal case); render_probe_scanner extended from 8 to 20 assertions and PASSES \u2014 including "kept the TYPED amount, not the vault composition", "minted user_typed", "nothing claims a read", "the row fills the edit column", "the photo column stays reserved with no photo", and an mcg-vs-micrograms EQUIVALENCE (same verdict, same hit count, rather than a hard-coded number that would rot when a Wallach target changes); adopt / slots / mirror / pdm_presence / seeded all PASS; test_user_supplied_provenance_single_home 8/8; eslint at BASELINE (140 fixable errors before and after); 0 page errors on every driven run.
+
+THREE NEGATIVE CONTROLS RUN AND CONFIRMED RED. (a) user_typed removed from USER_SUPPLIED_PROVENANCE -> the autoheal test reports 1200 mg where the user typed 7. (b) The microgram branch removed from canonicalUnit -> the probe reports hits 0 and the field stuck on "micrograms". (c) A provenance-literal comparison replanted -> the new gate REDs.
+
+THE SCANNED PATH WAS PROVEN UNMOVED, not assumed. A canvas-generated Supplement Facts image was driven through the REAL vendored Tesseract: "Confirm what we read", photo panel present, 4 lines read, 4 mapped, and a legacy history entry carrying no \`entry\` field still reads as a scan.
+
+NO SEALED PILLAR WAS TOUCHED, so no seal ceremony was required or performed.
+
+WHAT REMAINS. The foods recommendation system on Regimen + Coverage is still BLOCKED at turn 1 of the three-turn source-rule protocol (chronicle/contradictions/2026-08-21-usda-food-composition-third-source.md); turn 2 must be a LATER turn and is the next task. Regimen never-exhausting + the "you've covered all 90" completion state + the Products-tab link is not started. nutrientcodex.com has NOT been redeployed this round, so the live site does not yet carry hand-entry.`, metadata: { chunk: "scanner-hand-entry", board: "99/99", gates_added: ["user_supplied_provenance_single_home"], tests: { vitest: 66, probe_assertions: 20 }, files: ["dashboard/assets/js/src/core/provenance.ts", "dashboard/assets/js/src/core/units.ts", "dashboard/assets/js/src/core/units.test.ts", "dashboard/assets/js/src/core/schemas/scanner.ts", "dashboard/assets/js/src/core/schemas/regimen.ts", "dashboard/assets/js/src/state/scanner.ts", "dashboard/assets/js/src/state/coverage.ts", "dashboard/assets/js/src/state/coverage.autoheal.test.ts", "dashboard/assets/js/src/views/scanner.ts", "dashboard/assets/js/src/views/coverage.ts", "dashboard/assets/js/src/views/regimen.ts", "dashboard/assets/styles/workspace-scanner.css", "tools/invariants.py", "tools/tests/test_user_supplied_provenance_single_home.py", "tools/probes/render_probe_scanner.js"] } }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -156304,7 +156425,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       row.appendChild(x);
       const foot = document.createElement("div");
       foot.className = "rl-row__foot";
-      if (item.provenance === "user_scanned") {
+      if (isUserSupplied(item.provenance)) {
         const src = document.createElement("span");
         src.className = "rl-src is-own";
         src.textContent = "YOURS";
@@ -199614,7 +199735,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const id = String(item.id);
       const label = typeof item.label.name === "string" ? item.label.name : "?";
       const dose = readItemDose2(item);
-      const own = item.provenance === "user_scanned";
+      const own = isUserSupplied(item.provenance);
       const row = document.createElement("div");
       row.className = "rr-row";
       row.dataset["rowId"] = id;
@@ -202266,50 +202387,28 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     if (typeof amount !== "number" || Number.isNaN(amount)) {
       return null;
     }
-    const u = (unit ?? "").toLowerCase().trim();
-    if (u === "mcg") {
-      return { family: "mass_mcg", value: amount };
+    const canon = canonicalUnit(unit);
+    if (canon === null) {
+      return null;
     }
-    if (u === "mg") {
-      return { family: "mass_mcg", value: amount * 1e3 };
-    }
-    if (u === "g") {
-      return { family: "mass_mcg", value: amount * 1e6 };
-    }
-    if (u === "iu") {
+    if (canon === "iu") {
       return { family: "iu", value: amount };
     }
-    return null;
+    return { family: "mass_mcg", value: massToMcg(amount, canon) };
   }
   function unitConv(value, fromUnit, toUnit) {
-    const f = (fromUnit ?? "").toLowerCase();
-    const tu = (toUnit ?? "").toLowerCase();
-    if (f === tu) {
+    const f = canonicalUnit(fromUnit);
+    const t = canonicalUnit(toUnit);
+    if (f === null || t === null) {
+      return (fromUnit ?? "").toLowerCase().trim() === (toUnit ?? "").toLowerCase().trim() ? value : null;
+    }
+    if (f === t) {
       return value;
     }
-    if (f === "iu" || tu === "iu") {
+    if (f === "iu" || t === "iu") {
       return null;
     }
-    let mg;
-    if (f === "mg") {
-      mg = value;
-    } else if (f === "mcg") {
-      mg = value / 1e3;
-    } else if (f === "g") {
-      mg = value * 1e3;
-    } else {
-      return null;
-    }
-    if (tu === "mg") {
-      return mg;
-    }
-    if (tu === "mcg") {
-      return mg * 1e3;
-    }
-    if (tu === "g") {
-      return mg / 1e3;
-    }
-    return null;
+    return mgToMass(massToMg(value, f), t);
   }
   function matchKeyword(text, kw) {
     const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -203425,11 +203524,23 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
     return "Something went wrong while reading that image. Try a clearer photo, or scan again.";
   }
-  function renderScan(state, fileName, dataUrl) {
+  function isTyped(label) {
+    return label !== null && label.entry === "typed";
+  }
+  function renderScan(state, fileName, dataUrl, typed) {
     const done = state === "confirming" || state === "result";
     const badge = done ? "is-done" : "is-active";
-    const stateChip = done ? '<span class="vd-step__state is-done">Done &check;</span>' : state === "scanning" ? '<span class="vd-step__state is-active">Reading\u2026</span>' : '<span class="vd-step__state is-active">Start here</span>';
-    const body = done ? `<div class="vd-scan">
+    const stateChip = done ? `<span class="vd-step__state is-done">${typed ? "By hand" : "Done &check;"}</span>` : state === "scanning" ? '<span class="vd-step__state is-active">Reading\u2026</span>' : '<span class="vd-step__state is-active">Start here</span>';
+    const doneBody = typed ? `<div class="vd-scan">
+        <button class="ds-btn-primary vd-newscan" type="button" data-sc-new><b aria-hidden="true">+</b> New Scan</button>
+        <div class="vd-scan__thumb">
+          <div class="vd-scan__meta">
+            <span class="vd-scan__file">No photo \u2014 entered by hand</span>
+            <span class="vd-scan__done">&check; nothing was read by OCR</span>
+            <span class="vd-yours">Yours \xB7 typed in</span>
+          </div>
+        </div>
+      </div>` : `<div class="vd-scan">
         <button class="ds-btn-primary vd-newscan" type="button" data-sc-new><b aria-hidden="true">+</b> New Scan</button>
         <div class="vd-scan__thumb">
           ${dataUrl !== null ? `<button class="vd-scan__imgbtn" type="button" data-sc-zoom title="See the full label \u2014 click to enlarge"><img class="vd-scan__img" src="${escHTML14(dataUrl)}" alt="Your scanned label \u2014 click to enlarge"></button>` : ""}
@@ -203439,8 +203550,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
             <span class="vd-yours">Yours \xB7 user-scanned</span>
           </div>
         </div>
-      </div>` : state === "scanning" ? renderScanning() : `<div class="vd-scan">
-        <button class="ds-btn-primary vd-newscan" type="button" data-sc-upload><b aria-hidden="true">+</b> New Scan</button>
+      </div>`;
+    const body = done ? doneBody : state === "scanning" ? renderScanning() : `<div class="vd-scan">
+        <div class="vd-newscan-wrap">
+          <button class="ds-btn-primary vd-newscan" type="button" data-sc-upload><b aria-hidden="true">+</b> New Scan</button>
+          <button class="vd-manual" type="button" data-sc-manual>or add it by hand</button>
+        </div>
         <button class="vd-drop" type="button" data-sc-upload>
           <span class="vd-drop__ic" aria-hidden="true">&uarr;</span>
           <span class="vd-drop__t">Upload a label image</span>
@@ -203457,8 +203572,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <div class="vd-step__head">
         <span class="vd-step__badge ${badge}">1</span>
         <div class="vd-step__ttlwrap">
-          <div class="vd-step__ttl">Scan a label</div>
-          <div class="vd-step__sub">Upload or drop a photo \u2014 decoded on your machine, nothing uploaded.</div>
+          <div class="vd-step__ttl">${typed ? "Added by hand" : "Scan a label"}</div>
+          <div class="vd-step__sub">${typed ? "No photo and no OCR \u2014 you type the panel, we judge exactly that." : "Upload or drop a photo \u2014 decoded on your machine, nothing uploaded."}</div>
         </div>
         ${stateChip}
       </div>
@@ -203468,6 +203583,18 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function nutrientRow(n, i, added, covered) {
     const name = typeof n.name === "string" ? n.name : "";
     const del = `<button class="ui-close ui-close--sm vd-nrow__del" type="button" data-ndel="${i}" aria-label="Remove this row" title="Remove this row">${CLOSE_SVG}</button>`;
+    if (name.trim() === "") {
+      return `
+      <div class="vd-nrow is-blank" data-nrow="${i}" data-nmap="blank">
+        <div class="vd-nrow__main">
+          <span class="vd-nrow__g">&middot;</span>
+          <input class="vd-edit" maxlength="60" value="" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient name">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
+          <span class="vd-nrow__map"><span class="vd-nrow__cov">\xB7 type a name from the label</span></span>
+          ${del}
+        </div>
+      </div>`;
+    }
     const ess = matchEssential(name);
     if (ess !== null) {
       const plus = added.has(ess.name) ? '<span class="vd-nrow__r">+1</span>' : covered.has(ess.name) ? '<span class="vd-nrow__cov">\xB7 already covered</span>' : '<span class="vd-nrow__cov">\xB7 counts toward your 90</span>';
@@ -203475,8 +203602,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <div class="vd-nrow is-ok" data-nrow="${i}" data-nmap="essential">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
-          <input class="vd-edit" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
-          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" aria-label="Unit (editable)"></span>
+          <input class="vd-edit" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML14(ess.name)}</b>${plus}</span>
           ${del}
         </div>
@@ -203487,8 +203614,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <div class="vd-nrow is-ok is-untracked" data-nrow="${i}" data-nmap="untracked">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
-          <input class="vd-edit" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
-          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" aria-label="Unit (editable)"></span>
+          <input class="vd-edit" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__cov">\xB7 read OK \xB7 not one of the 90</span></span>
           ${del}
         </div>
@@ -203500,8 +203627,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     <div class="vd-nrow is-warn" data-nrow="${i}" data-nmap="warn">
       <div class="vd-nrow__main">
         <span class="vd-nrow__g">!</span>
-        <input class="vd-edit is-warn" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" aria-label="Garbled read (editable)">
-        <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" aria-label="Unit (editable)"></span>
+        <input class="vd-edit is-warn" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Garbled read (editable)">
+        <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
         <span class="vd-nrow__map vd-nrow__map--pending">not recognized \xB7 pick a match or edit</span>
         ${del}
       </div>
@@ -203530,9 +203657,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <button class="ui-close ui-close--sm vd-ocr__x" type="button" data-idismiss="${escHTML14(s.word)}" title="Dismiss" aria-label="Dismiss">${CLOSE_SVG}</button>
     </div>`;
   }
-  function suspectPanelHTML(suspects) {
+  function suspectPanelHTML(suspects, typed) {
     return suspects.length > 0 ? `<div class="vd-ocr">
-        <div class="vd-ocr__head"><span class="vd-ocr__t">Possible OCR errors</span><span class="vd-ocr__hint">Click a suggestion to fix, or &times; to dismiss</span></div>
+        <div class="vd-ocr__head"><span class="vd-ocr__t">${typed ? "Possible typos" : "Possible OCR errors"}</span><span class="vd-ocr__hint">Click a suggestion to fix, or &times; to dismiss</span></div>
         ${suspects.map(suspectCard).join("")}
       </div>` : "";
   }
@@ -203540,73 +203667,81 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `${n} suspect word${n === 1 ? "" : "s"}`;
   }
   function nutrientCountLabel(total, mapped) {
-    return `${total} lines \xB7 ${mapped} mapped \xB7 ${total - mapped} to check`;
+    if (total === 0) {
+      return "no rows yet";
+    }
+    return `${total} line${total === 1 ? "" : "s"} \xB7 ${mapped} mapped \xB7 ${total - mapped} to check`;
   }
   function renderConfirm(label, dismissed, dataUrl) {
+    const typed = label.entry === "typed";
     const nutrients = label.nutrients ?? [];
     const delta = coverageDeltaForLabel(label);
     const added = new Set(delta.addedEssentials);
     const coveredNames = new Set(getOrCompute().tiles.filter((t) => t.covered).map((t) => t.name));
     const mapped = nutrients.filter((n) => matchEssential(typeof n.name === "string" ? n.name : "") !== null).length;
+    const counted = nutrients.filter((n) => (typeof n.name === "string" ? n.name : "").trim() !== "").length;
     const rows = nutrients.map((n, i) => nutrientRow(n, i, added, coveredNames)).join("");
     const ingredients = label.ingredients ?? "";
     const suspects = findIngredientSuspects(ingredients, dismissed, getAntiIngredientWords());
-    const suspectPanel = suspectPanelHTML(suspects);
+    const suspectPanel = suspectPanelHTML(suspects, typed);
     const preview = scoreLabel(label);
     const flags = preview?.anti ?? [];
     const flagPanel = flags.length > 0 ? `<div class="vd-flags">
         <div class="vd-flags__head"><span class="vd-flags__t">Ingredient flags \xB7 Wallach doctrine</span><span class="vd-flags__note">These surface once the reads are confirmed \u2014 and only the ingredients scan catches them, never the nutrition panel.</span></div>
         ${flags.map(flagRow).join("")}
       </div>` : "";
+    const photoPanel = dataUrl !== null ? `<aside class="vd-cf__ref">
+            <div class="vd-cf__ref-h">Your uploaded photo</div>
+            <button class="vd-cf__refbtn" type="button" data-sc-zoom title="See the full label \u2014 click to enlarge"><img class="vd-cf__refimg" src="${escHTML14(dataUrl)}" alt="Your uploaded label \u2014 click to enlarge"><span class="vd-cf__refzoom" aria-hidden="true">&#10530;&nbsp;Enlarge</span></button>
+          </aside>` : "";
+    const nameValue = typed && label.name.trim() === "" ? "" : humanizeName(label.name);
+    const emptyRows = typed ? '<div class="vd-nrow__covrow">No rows yet \u2014 add one below, or just enter the ingredients.</div>' : '<div class="vd-nrow__covrow">No nutrient lines read \u2014 add one below, edit the ingredients, or rescan.</div>';
     return `
     <section class="vd-step vd-step--hero">
       <div class="vd-step__head">
         <span class="vd-step__badge is-active">2</span>
         <div class="vd-step__ttlwrap">
-          <div class="vd-step__ttl">Confirm what we read</div>
-          <div class="vd-step__sub">OCR is imperfect \u2014 fix any misread word before we judge it.</div>
+          <div class="vd-step__ttl">${typed ? "Enter what the label says" : "Confirm what we read"}</div>
+          <div class="vd-step__sub">${typed ? "Type the panel yourself \u2014 we judge exactly what you enter, nothing more." : "OCR is imperfect \u2014 fix any misread word before we judge it."}</div>
         </div>
-        <button class="ui-close vd-step__close" type="button" data-sc-clear aria-label="Cancel this scan" title="Cancel scan">${CLOSE_SVG}</button>
+        <button class="ui-close vd-step__close" type="button" data-sc-clear aria-label="${typed ? "Cancel this entry" : "Cancel this scan"}" title="${typed ? "Cancel entry" : "Cancel scan"}">${CLOSE_SVG}</button>
       </div>
       <div class="vd-cf">
         <div class="vd-cf__grid">
           <div class="vd-cf__edits">
             <div class="vd-cf-sec vd-cf-sec--name">
               <label class="vd-cf-name__lab" for="vd-sc-name">Product name</label>
-              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name maxlength="80" value="${escHTML14(humanizeName(label.name))}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
-              <span class="vd-cf-sec__hint">Name it so your saved items and regimen read cleanly \u2014 not a raw container guess.</span>
+              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name maxlength="80" value="${escHTML14(nameValue)}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
+              <span class="vd-cf-sec__hint">${typed ? "Name it so your saved items and regimen read cleanly." : "Name it so your saved items and regimen read cleanly \u2014 not a raw container guess."}</span>
             </div>
             <div class="vd-cf-sec">
               <div class="vd-cf-sec__head">
-                <span class="vd-cf-sec__t">Supplement Facts \u2014 what we read</span>
-                <span class="vd-cf-sec__n" data-nutrient-count>${nutrientCountLabel(nutrients.length, mapped)}</span>
-                <span class="vd-cf-sec__hint">Every row is editable. Clean reads are mapped &check;; garbled reads show ranked suggestions \u2014 pick one, or keep as-is.</span>
+                <span class="vd-cf-sec__t">Supplement Facts \u2014 what ${typed ? "you entered" : "we read"}</span>
+                <span class="vd-cf-sec__n" data-nutrient-count>${nutrientCountLabel(counted, mapped)}</span>
+                <span class="vd-cf-sec__hint">${typed ? "One nutrient per row. A name we recognize maps &check; and counts toward your 90; anything else offers the closest matches." : "Every row is editable. Clean reads are mapped &check;; garbled reads show ranked suggestions \u2014 pick one, or keep as-is."}</span>
               </div>
-              <div class="vd-nlist">${rows || '<div class="vd-nrow__covrow">No nutrient lines read \u2014 add one below, edit the ingredients, or rescan.</div>'}</div>
-              <button class="vd-nadd" type="button" data-nadd><b class="vd-nadd__p" aria-hidden="true">+</b>Add a row we missed</button>
+              <div class="vd-nlist">${rows || emptyRows}</div>
+              <button class="vd-nadd" type="button" data-nadd><b class="vd-nadd__p" aria-hidden="true">+</b>${typed ? "Add another row" : "Add a row we missed"}</button>
             </div>
             <div class="vd-cf-sec">
               <div class="vd-cf-sec__head">
-                <span class="vd-cf-sec__t">Other ingredients \u2014 what we read</span>
+                <span class="vd-cf-sec__t">Other ingredients \u2014 what ${typed ? "you entered" : "we read"}</span>
                 <span class="vd-cf-sec__n" data-suspect-count>${suspectCountLabel(suspects.length)}</span>
-                <span class="vd-cf-sec__hint">These never appear on the nutrition panel \u2014 only an ingredients scan can catch a gluten source or a seed oil.</span>
+                <span class="vd-cf-sec__hint">These never appear on the nutrition panel \u2014 only the ingredients list can catch a bad ingredient such as a gluten source.</span>
               </div>
               <div>
-                <label class="vd-ing__lab" for="vd-ing">Ingredients line (editable)</label>
+                <label class="vd-ing__lab" for="vd-ing">${typed ? "Ingredients line" : "Ingredients line (editable)"}</label>
                 <textarea id="vd-ing" class="vd-ing" rows="2" maxlength="4000" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML14(ingredients)}</textarea>
               </div>
               <div class="vd-ocr-host" data-ocr-host>${suspectPanel}</div>
               ${flagPanel}
             </div>
           </div>
-          <aside class="vd-cf__ref">
-            <div class="vd-cf__ref-h">Your uploaded photo</div>
-            ${dataUrl !== null ? `<button class="vd-cf__refbtn" type="button" data-sc-zoom title="See the full label \u2014 click to enlarge"><img class="vd-cf__refimg" src="${escHTML14(dataUrl)}" alt="Your uploaded label \u2014 click to enlarge"><span class="vd-cf__refzoom" aria-hidden="true">&#10530;&nbsp;Enlarge</span></button>` : ""}
-          </aside>
+          ${photoPanel}
         </div>
         <div class="vd-cf__cta">
-          <button class="ds-btn-primary" type="button" data-sc-confirm>Confirm scan <span aria-hidden="true">&rarr;</span> verdict</button>
-          <span class="vd-cf__ctanote">Locks your corrections, then judges the confirmed reads against the Wallach corpus. No verdict is shown until you confirm.</span>
+          <button class="ds-btn-primary" type="button" data-sc-confirm>${typed ? "Judge what I entered" : "Confirm scan"} <span aria-hidden="true">&rarr;</span>${typed ? "" : " verdict"}</button>
+          ${typed ? "" : '<span class="vd-cf__ctanote">Locks your corrections, then judges the confirmed reads against the Wallach corpus. No verdict is shown until you confirm.</span>'}
         </div>
       </div>
     </section>`;
@@ -203638,6 +203773,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const total = essentialCount();
     const name = humanizeName(result.label.name);
     const flags = result.anti.length;
+    const typed = result.label.entry === "typed";
     const tierChip = (key, big, small) => {
       const on2 = result.verdict === key;
       return `<span class="vd-tier__c tier-${key === "ADD" ? "add" : key === "SAVE" ? "save" : "out"}${on2 ? " is-on" : ""}"${on2 ? ` style="background:${tone};color:${key === "SAVE" ? "var(--ds-ink)" : "var(--ds-paper-light)"}"` : ""}>${big}<small>${small}</small></span>`;
@@ -203648,7 +203784,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
             <span class="vd-step__badge is-active">3</span>
             <div class="vd-step__ttlwrap">
               <div class="vd-step__ttl">The verdict</div>
-              <div class="vd-step__sub">Fires only now \u2014 judged on the reads you confirmed.</div>
+              <div class="vd-step__sub">Fires only now \u2014 judged on ${typed ? "exactly what you entered" : "the reads you confirmed"}.</div>
             </div>
             <span class="vd-step__state is-active">Result</span>
           </div>
@@ -203666,7 +203802,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
                   ${tierChip("ADD", "Add", "aligns")}${tierChip("SAVE", "Save", "neutral")}${tierChip("REJECT", "Reject", "out")}
                 </div>
                 <h2 class="vd-verdict__h" style="color:${tone}">${head}${sub ? `<b>${sub}</b>` : ""}</h2>
-                <p class="vd-verdict__deck">${result.hits > 0 ? `Meaningfully delivers ${result.hits} of your ${total} essential${result.hits === 1 ? "" : "s"}` : "Delivers no essential in a meaningful amount"}${flags > 0 ? `, and the ingredient scan flagged ${flags}.` : "."}</p>
+                <p class="vd-verdict__deck">${result.hits > 0 ? `Meaningfully delivers ${result.hits} of your ${total} essential${result.hits === 1 ? "" : "s"}` : "Delivers no essential in a meaningful amount"}${flags > 0 ? `, and the ${typed ? "ingredients you entered" : "ingredient scan"} flagged ${flags}.` : "."}</p>
                 <div class="vd-reasons">
                   <div class="vd-reasons__h">Why \u2014 grounded in Wallach doctrine</div>
                   ${reasonRows(result)}
@@ -203693,31 +203829,30 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
               <button class="ds-btn-ghost" type="button" data-sc-save>Save for later</button>
               <button class="vd-reject" type="button" data-sc-reject>${origin === "saved" ? "Delete" : "Reject"}</button>
               <div class="vd-foot__note">
-                <span class="vd-foot__prov"><span class="vd-yours">Yours \xB7 user-scanned</span> lands marked user-provided</span>
+                <span class="vd-foot__prov"><span class="vd-yours">Yours \xB7 ${typed ? "typed in" : "user-scanned"}</span> lands marked user-provided</span>
               </div>
             </div>
           </article>
         </section>`;
   }
-  function renderUnreadable() {
+  function renderUnreadable(typed) {
     return `
     <section class="vd-step vd-step--result">
       <div class="vd-step__head">
         <span class="vd-step__badge is-active">3</span>
         <div class="vd-step__ttlwrap">
-          <div class="vd-step__ttl">Couldn't read this label</div>
-          <div class="vd-step__sub">No verdict \u2014 we couldn't make out enough to judge it fairly.</div>
+          <div class="vd-step__ttl">${typed ? "Nothing to judge yet" : "Couldn't read this label"}</div>
+          <div class="vd-step__sub">${typed ? "No verdict \u2014 the panel and the ingredients line are both empty." : "No verdict \u2014 we couldn't make out enough to judge it fairly."}</div>
         </div>
-        <span class="vd-step__state is-active">No read</span>
+        <span class="vd-step__state is-active">${typed ? "Nothing entered" : "No read"}</span>
       </div>
       <article class="vd-card vd-card--unread">
         <div class="vd-unread">
           <span class="vd-unread__ic" aria-hidden="true">?</span>
-          <div class="vd-unread__t">We couldn't read the nutrition panel or the ingredients on this image.</div>
-          <p class="vd-unread__m">A verdict here would be about the photo, not the product \u2014 so we're withholding it. Try a sharper, straight-on photo, or add the reads yourself.</p>
+          <div class="vd-unread__t">${typed ? "No nutrient rows and no ingredients were entered." : "We couldn't read the nutrition panel or the ingredients on this image."}</div>
+          <p class="vd-unread__m">${typed ? "We are withholding a verdict because there is nothing to judge \u2014 not because the product failed. Add what the label says and confirm again." : "A verdict here would be about the photo, not the product \u2014 so we're withholding it. Try a sharper, straight-on photo, or add the reads yourself."}</p>
           <div class="vd-unread__cta">
-            <button class="ds-btn-primary" type="button" data-sc-upload>Scan a clearer image</button>
-            <button class="ds-btn-ghost" type="button" data-sc-edit>Edit the reads</button>
+            ${typed ? '<button class="ds-btn-primary" type="button" data-sc-edit>Add the details</button><button class="ds-btn-ghost" type="button" data-sc-upload>Scan a photo instead</button>' : '<button class="ds-btn-primary" type="button" data-sc-upload>Scan a clearer image</button><button class="ds-btn-ghost" type="button" data-sc-edit>Edit the reads</button>'}
           </div>
         </div>
       </article>
@@ -203752,7 +203887,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     <div class="rl-row vd-hrow" data-sc-open="${h.id}" data-sc-src="${saved ? "saved" : "recent"}" data-sc-idx="${index3}" role="button" tabindex="0" title="Re-open this verdict">
       <div class="rl-row__name">${escHTML14(humanizeName(h.label.name))}</div>
       ${verdictPill(h.verdict)}
-      <div class="rl-row__foot"><span class="rl-src is-own">Yours \xB7 user-scanned</span><span class="vd-when">${escHTML14(relAge2(h.ts))}</span></div>
+      <div class="rl-row__foot"><span class="rl-src is-own">Yours \xB7 ${h.label.entry === "typed" ? "typed in" : "user-scanned"}</span><span class="vd-when">${escHTML14(relAge2(h.ts))}</span></div>
       ${rm}
     </div>`;
   }
@@ -203796,13 +203931,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     let reopenedSavedId = null;
     const render = () => {
       let main = "";
+      const typed = isTyped(label);
       if (state === "result" && result !== null) {
         const unreadable = result.sparseNutrients === true && result.sparseIngredients === true;
-        main = renderScan(state, fileName, imageDataUrl) + (unreadable ? renderUnreadable() : renderResult(result, resultOrigin));
+        main = renderScan(state, fileName, imageDataUrl, typed) + (unreadable ? renderUnreadable(typed) : renderResult(result, resultOrigin));
       } else if (state === "confirming" && label !== null) {
-        main = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
+        main = renderScan(state, fileName, imageDataUrl, typed) + renderConfirm(label, dismissed, imageDataUrl);
       } else {
-        main = (scanError !== null ? renderScanError(scanError) : "") + renderScan(state, fileName, imageDataUrl);
+        main = (scanError !== null ? renderScanError(scanError) : "") + renderScan(state, fileName, imageDataUrl, typed);
       }
       container.innerHTML = `<div class="vd"><div class="coverage-grid"><div class="vd-main">${main}</div>${renderRail3()}</div></div>`;
     };
@@ -203884,7 +204020,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       });
       const ing = container.querySelector("[data-ing]");
       const nameEl = container.querySelector("[data-sc-name]");
-      const name = nameEl !== null && nameEl.value.trim().length > 0 ? nameEl.value.trim() : typeof base.name === "string" ? base.name : "Scanned label";
+      const entered = nameEl !== null ? nameEl.value.trim() : "";
+      const stored = typeof base.name === "string" ? base.name.trim() : "";
+      const name = entered.length > 0 ? entered : stored.length > 0 ? stored : "Untitled item";
       return { ...base, name, nutrients, ingredients: ing !== null ? ing.value : base.ingredients ?? "" };
     };
     const refreshSuspects = () => {
@@ -203894,7 +204032,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         return;
       }
       const suspects = findIngredientSuspects(ta.value, dismissed, getAntiIngredientWords());
-      host.innerHTML = suspectPanelHTML(suspects);
+      host.innerHTML = suspectPanelHTML(suspects, isTyped(label));
       const countEl = container.querySelector("[data-suspect-count]");
       if (countEl !== null) {
         countEl.textContent = suspectCountLabel(suspects.length);
@@ -203905,8 +204043,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       let total = 0;
       let mapped = 0;
       for (const r of rows) {
+        const kind = r.getAttribute("data-nmap");
+        if (kind === "blank") {
+          continue;
+        }
         total++;
-        if (r.getAttribute("data-nmap") === "essential") {
+        if (kind === "essential") {
           mapped++;
         }
       }
@@ -203927,7 +204069,18 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const main = rowEl.querySelector(".vd-nrow__main");
       rowEl.querySelector(".vd-sug")?.remove();
       const ess = matchEssential(name);
-      if (ess !== null) {
+      if (name === "") {
+        rowEl.className = "vd-nrow is-blank";
+        rowEl.dataset["nmap"] = "blank";
+        input.classList.remove("is-warn");
+        if (glyph !== null) {
+          glyph.innerHTML = "&middot;";
+        }
+        if (map !== null) {
+          map.className = "vd-nrow__map";
+          map.innerHTML = '<span class="vd-nrow__cov">\xB7 type a name from the label</span>';
+        }
+      } else if (ess !== null) {
         rowEl.className = "vd-nrow is-ok";
         rowEl.dataset["nmap"] = "essential";
         input.classList.remove("is-warn");
@@ -204029,13 +204182,26 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         pickImage();
         return;
       }
+      if (t.closest("[data-sc-manual]") !== null) {
+        label = { name: "", entry: "typed", nutrients: [{ name: "", unit: "" }], ingredients: "" };
+        dismissed.clear();
+        removedRows.clear();
+        fileName = null;
+        imageDataUrl = null;
+        scanError = null;
+        result = null;
+        state = "confirming";
+        render();
+        container.querySelector("[data-sc-name]")?.focus();
+        return;
+      }
       if (t.closest("[data-sc-paste-check]") !== null) {
         const ta = container.querySelector("[data-sc-paste]");
         const text = ta !== null ? ta.value.trim() : "";
         if (text.length === 0) {
           return;
         }
-        const pasted = { name: "Pasted ingredients", nutrients: [], ingredients: text };
+        const pasted = { name: "Pasted ingredients", entry: "typed", nutrients: [], ingredients: text };
         const r = runScan(pasted);
         if (r !== null) {
           label = pasted;
@@ -204108,7 +204274,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       }
       if (t.closest("[data-sc-confirm]") !== null) {
         label = readCorrectedLabel();
-        const r = runScan(label);
+        const nothingToJudge = (label.nutrients ?? []).length === 0 && (label.ingredients ?? "").trim() === "";
+        const r = nothingToJudge ? scoreLabel(label) : runScan(label);
         if (r !== null) {
           result = r;
           state = "result";
@@ -204133,7 +204300,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           id: Date.now(),
           label: { name: typeof lbl.name === "string" ? lbl.name : "Scanned label", nutrients: lbl.nutrients ?? [] },
           addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
-          provenance: "user_scanned"
+          // Both tokens are USER-supplied, so core/provenance stops the coverage auto-heal from
+          // replacing these amounts with sealed composition when the typed name collides with a
+          // vault product. Two spread LITERALS rather than one ternary on purpose: Eden's wall
+          // (scanner_user_items_marked) reads provenance literals out of this source, and a
+          // computed token would make the mint invisible to the gate that polices it.
+          ...lbl.entry === "typed" ? { provenance: "user_typed" } : { provenance: "user_scanned" }
         };
         const r = addOrBumpRegimenItem(item);
         const btn = t.closest("[data-sc-adopt]");
@@ -204271,6 +204443,17 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         }
       }
     };
+    const changeHandler = (ev) => {
+      const target = ev.target;
+      if (target === null || !target.matches(".vd-unit[data-uedit]")) {
+        return;
+      }
+      const el = target;
+      const abbr = unitAbbreviation(el.value);
+      if (abbr !== null && abbr !== el.value.trim()) {
+        el.value = abbr;
+      }
+    };
     const inputHandler = (ev) => {
       const target = ev.target;
       if (target === null) {
@@ -204292,6 +204475,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     render();
     container.addEventListener("click", clickHandler);
     container.addEventListener("input", inputHandler);
+    container.addEventListener("change", changeHandler);
     container.addEventListener("dragover", dragHandler);
     container.addEventListener("drop", dropHandler);
     document.addEventListener("paste", pasteHandler);
@@ -204314,6 +204498,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         window.clearTimeout(nameTimer);
         container.removeEventListener("click", clickHandler);
         container.removeEventListener("input", inputHandler);
+        container.removeEventListener("change", changeHandler);
         container.removeEventListener("dragover", dragHandler);
         container.removeEventListener("drop", dropHandler);
         document.removeEventListener("paste", pasteHandler);

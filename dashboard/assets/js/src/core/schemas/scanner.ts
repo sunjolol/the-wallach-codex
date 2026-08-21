@@ -13,11 +13,20 @@ import { z } from 'zod';
 /** Verdict enum — the three outcomes the scan verdict engine can return. */
 export const VerdictSchema = z.enum(['ADD', 'SAVE', 'REJECT']);
 
-/** A scanned product label as captured by the OCR pipeline. */
+/**
+ * A product label as captured by the OCR pipeline — or typed in by hand.
+ *
+ * `entry` records WHICH, because every surface downstream tells the user where the numbers
+ * came from and would otherwise have to guess: the Confirm step's copy ("what we read" vs
+ * "what you entered"), the Saved/Recent rail's mark, and the regimen provenance the adopt
+ * path mints. ABSENT means 'scanned' — the reading every label stored before hand-entry
+ * existed, so old localStorage keeps its true meaning with no migration.
+ */
 export const ScanLabelSchema = z.object({
   name: z.string().max(200),
   brand: z.string().max(200).optional(),
   servings: z.union([z.string(), z.number()]).optional(),
+  entry: z.enum(['scanned', 'typed']).optional(),
   nutrients: z.array(z.object({
     name: z.string().max(120),
     amount: z.number().optional(),

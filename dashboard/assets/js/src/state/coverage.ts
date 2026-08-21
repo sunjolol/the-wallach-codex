@@ -63,6 +63,7 @@ import efaCoverageData from '../../../data/efa-coverage-data.json';
 import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { emit, on } from '../core/events.js';
 import { resolveSlug } from '../core/nutrient-resolver.js';
+import { isUserSupplied } from '../core/provenance.js';
 import {
   CoverageLayoutSchema,
   type CoverageTarget,
@@ -377,12 +378,17 @@ function vaultNutrientsByName(): Map<string, unknown[]> {
 /**
  * The composition to credit for an item: the LIVE vault nutrients when the item
  * came from the catalog and still matches a product (auto-heal), else the item's
- * own stored snapshot (user-scanned / custom items and the base foundation keep
+ * own stored snapshot (user-supplied and custom items and the base foundation keep
  * their data). No write-back -- the heal is a read-time re-resolution.
+ *
+ * The user-supplied test is core/provenance's, never a token compared here: a scanned
+ * OR typed item's amounts are the user's own reading of a label, and healing one whose
+ * name happens to collide with a vault product would REPLACE those amounts with sealed
+ * composition — silently, with no error and no mark on screen.
  */
 export function liveNutrients(item: RegimenItem): unknown[] {
   const snapshot = Array.isArray(item.label.nutrients) ? item.label.nutrients : [];
-  if (item.provenance === 'user_scanned') {
+  if (isUserSupplied(item.provenance)) {
     return snapshot;
   }
   const name = typeof item.label.name === 'string' ? item.label.name.toLowerCase() : '';

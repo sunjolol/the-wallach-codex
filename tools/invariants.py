@@ -5786,9 +5786,12 @@ def check_no_hand_duplicated_canonical():
 # ---------------------------------------------------------------------------
 # The scanner lets a user add ANY item to THEIR regimen, but a user/scanned item can
 # NEVER masquerade as Wallach/Youngevity canonical, nor leak into a sealed pillar or a
-# generated artifact. Three USER provenance tokens are the wall's subject; no non-user
-# provenance is minted anywhere in code or data.
-_USER_PROVENANCE = ("user_scanned", "user_manual", "wishlist_promoted")
+# generated artifact. Four USER provenance tokens are the wall's subject; no non-user
+# provenance is minted anywhere in code or data. TWO of them (user_scanned, user_typed)
+# additionally mean the USER supplied the numbers -- that narrower set lives in
+# dashboard/assets/js/src/core/provenance.ts and is policed by
+# user_supplied_provenance_single_home, a different gate with a different job.
+_USER_PROVENANCE = ("user_scanned", "user_typed", "user_manual", "wishlist_promoted")
 _PROV_RE = re.compile(r"provenance:\s*['\"]([^'\"]+)['\"]")
 
 
@@ -5799,8 +5802,10 @@ def check_scanner_user_items_marked():
     truth-anchored on committed bytes (recomputed each run):
       (A) FLAGGED -- RegimenItemSchema requires `provenance`, and every provenance
           LITERAL in the app source is a recognized USER token (user_scanned /
-          user_manual / wishlist_promoted). No view/state code mints a regimen item
-          marked as anything canonical.
+          user_typed / user_manual / wishlist_promoted). No view/state code mints a
+          regimen item marked as anything canonical. This clause reads LITERALS, so a
+          mint that computes its token is invisible to it -- the scanner's two-branch
+          adopt spreads two literals for exactly that reason.
       (B) CONTAINED -- no USER token appears in a sealed pillar (eden/corpus,
           eden/catalog) or an operational generated artifact (assets/data/*.json),
           proving a scanned/user item never got baked into canonical data. The
@@ -5854,6 +5859,74 @@ def check_scanner_user_items_marked():
     return True, ("Eden's wall holds -- RegimenItemSchema requires provenance, every code provenance "
                   f"literal is a user token {_USER_PROVENANCE}, and no user token appears in any pillar "
                   "or operational artifact (scanned/manual items stay user-provided, never canonical)")
+
+
+_PROV_HOME = "dashboard/assets/js/src/core/provenance.ts"
+# A comparison of an item's provenance against a bare token literal. This is the shape that
+# drifts: three such tests existed, a fourth token landed, and any one of them left behind
+# would silently render sealed composition where the user's own typed amounts belong.
+_PROV_COMPARE_RE = re.compile(
+    r"""provenance\s*(?:===|!==|==|!=)\s*['"][a-z_]+['"]|['"][a-z_]+['"]\s*(?:===|!==|==|!=)\s*[\w.]*provenance\b""",
+    re.IGNORECASE,
+)
+
+
+def _user_supplied_single_home_impl(home_src, files):
+    """The rule, over (home file source, [(rel, src), ...]). Extracted so
+    tools/tests/test_user_supplied_provenance_single_home.py can drive it against planted
+    poison instead of trusting a green line."""
+    viol = []
+    if home_src is None:
+        return False, f"{_PROV_HOME} is missing -- the single home for isUserSupplied is gone"
+    for needed in ("export const USER_SUPPLIED_PROVENANCE", "export function isUserSupplied"):
+        if needed not in home_src:
+            viol.append(f"{_PROV_HOME}: lost `{needed}` -- callers would have nothing to delegate to")
+    for rel, src in files:
+        for line_no, line in enumerate(src.splitlines(), 1):
+            if _PROV_COMPARE_RE.search(line):
+                viol.append(f"{rel}:{line_no}: compares provenance against a token literal -- "
+                            f"call isUserSupplied() from {_PROV_HOME} instead, so a new token "
+                            f"cannot be honoured in one surface and forgotten in another")
+    if viol:
+        return False, ("user-supplied provenance is decided in more than one place: "
+                       + "; ".join(viol[:6]) + (" ..." if len(viol) > 6 else ""))
+    return True, ("one home holds the user-supplied test -- core/provenance.ts exports "
+                  "USER_SUPPLIED_PROVENANCE + isUserSupplied, and no other app source file "
+                  "compares provenance against a token literal (auto-heal + both YOURS marks "
+                  "delegate, so a new token cannot be honoured by some surfaces and not others)")
+
+
+def check_user_supplied_provenance_single_home():
+    """ONE HOME for "did the USER supply these numbers?". Eden's wall
+    (scanner_user_items_marked) proves every provenance token is a user token; it says
+    nothing about which of them mean the user TYPED or SCANNED the amounts, as opposed to
+    picking a catalog product whose amounts belong to the sealed Product DB. That narrower
+    question is asked in three places that must never disagree -- the auto-heal fork in
+    state/coverage.ts and the YOURS marks in views/coverage.ts + views/regimen.ts -- and it
+    is answered in exactly one: core/provenance.ts::isUserSupplied.
+
+    RED on any comparison of `provenance` against a bare token literal anywhere in
+    dashboard/assets/js/src outside that one file (tests excluded -- a test asserting a
+    specific token is the point). Also RED if the home file loses either export.
+
+    WHY THIS IS A GATE AND NOT A NOTE: when user_typed landed, three hand-typed
+    `=== 'user_scanned'` tests had to change together. Missing the auto-heal one would
+    have replaced a user's typed amounts with sealed composition -- silently, with no
+    error, and with a coverage tile flipping on the strength of it. Truth anchor: the .ts
+    bytes of dashboard/assets/js/src, scanned each run.
+    Negative test: tools/tests/test_user_supplied_provenance_single_home.py."""
+    src_root = ROOT / "dashboard" / "assets" / "js" / "src"
+    if not src_root.exists():
+        return True, "app source not installed (bootstrap-guard)"
+    home = ROOT / _PROV_HOME
+    home_src = home.read_text(encoding="utf-8") if home.exists() else None
+    files = []
+    for p in sorted(src_root.rglob("*.ts")):
+        rel = p.relative_to(ROOT).as_posix()
+        if rel == _PROV_HOME or p.name.endswith(".test.ts"):
+            continue
+        files.append((rel, p.read_text(encoding="utf-8")))
+    return _user_supplied_single_home_impl(home_src, files)
 
 
 def check_data_artifacts_accounted():
@@ -8514,11 +8587,20 @@ INVARIANTS = [
     Invariant(
         name="scanner_user_items_marked",
         anchor_class="structural",  # shape + wellformedness only — says nothing about whether a value is correct
-        description="Eden's WALL: a user/scanner-added regimen item is provenance-marked user-provided (user_scanned/user_manual/wishlist_promoted) so it can never masquerade as Wallach/Youngevity canonical, and no user token ever appears in a sealed pillar or an operational generated artifact -- the scanner writes only the user's localStorage, never a pillar",
+        description="Eden's WALL: a user/scanner-added regimen item is provenance-marked user-provided (user_scanned/user_typed/user_manual/wishlist_promoted) so it can never masquerade as Wallach/Youngevity canonical, and no user token ever appears in a sealed pillar or an operational generated artifact -- the scanner writes only the user's localStorage, never a pillar",
         check_fn=check_scanner_user_items_marked,
         truth_anchor="dashboard/assets/js/src provenance literals + RegimenItemSchema x a user-token scan of eden/{corpus,catalog}/*.json & dashboard/assets/data/*.json (excl. append-only creators-log narrative), recomputed each run",
         severity="critical",
         lesson_ref="the scanner lets a user add ANY item to THEIR regimen but can NEVER modify the sealed pillars. This codifies the wall as a gate: user items are flagged and never enter a pillar or a generated index.",
+    ),
+    Invariant(
+        name="user_supplied_provenance_single_home",
+        anchor_class="consistency",  # our file A vs our file B — catches drift, not a born-wrong value
+        description="the test for \"did the USER supply these numbers?\" lives ONLY in core/provenance.ts (USER_SUPPLIED_PROVENANCE + isUserSupplied); no other app source file compares provenance against a token literal, so the coverage auto-heal fork and both YOURS marks can never honour a new token in one surface and forget it in another",
+        check_fn=check_user_supplied_provenance_single_home,
+        truth_anchor="the .ts bytes of dashboard/assets/js/src (tests excluded) x the exports of core/provenance.ts, recomputed each run",
+        severity="critical",
+        lesson_ref="user_typed landed with three hand-typed `=== 'user_scanned'` tests already in the tree. Missing the auto-heal one would have replaced a user's own typed amounts with sealed vault composition -- silently, no error, and a coverage tile flipping on the strength of it.",
     ),
     Invariant(
         name="data_artifacts_accounted",

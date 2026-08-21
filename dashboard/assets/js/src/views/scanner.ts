@@ -9,6 +9,13 @@
  * THE REFRAME: OCR is imperfect offline (local Tesseract), so the verdict
  * is WITHHELD until the user confirms the reads:  1. SCAN → 2. CONFIRM → 3. RESULT.
  *
+ * BY HAND: a label with no photo (unreadable, no camera, or just faster to type) enters at
+ * step 2 with one blank row. The Confirm step is already a full editable nutrient grid, so
+ * hand-entry is the SAME surface, not a second one — what changes is that every line of copy
+ * saying "what we read" has to say "what you entered", because nothing was read. The label
+ * carries `entry: 'typed'` so every surface downstream (this view, the Saved/Recent rail, the
+ * regimen provenance) says so without guessing.
+ *
  * WHAT IS REAL (no fabrication):
  *   · SCAN decodes the image with the vendored Tesseract (state/ocr.ocrToLabel) —
  *     local, zero network, and it does NOT run the verdict.
@@ -21,13 +28,16 @@
  *     trace to Wallach doctrine only. The "+1" mark on a CONFIRM row comes from
  *     coverageDeltaForLabel — the live snapshot plus the label's own amounts, never a
  *     hand-typed number.
- *   · Adopt lands the item marked provenance 'user_scanned' (the provenance wall). Scan
- *     history is the real FIFO (max 5). Every name is written via .textContent.
+ *   · Adopt lands the item marked user-supplied — 'user_scanned' off a photo, 'user_typed'
+ *     by hand (the provenance wall; core/provenance.ts holds which tokens mean "the user's
+ *     own numbers", so the coverage auto-heal never overwrites them). Scan history is the
+ *     real FIFO (max 5). Every name is written via .textContent.
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
 import type { RegimenItem, ScanLabel } from '../core/schemas/index.js';
 import { on } from '../core/events.js';
+import { unitAbbreviation } from '../core/units.js';
 import { essentialCount, getOrCompute, matchEssential } from '../state/coverage.js';
 import {
   findIngredientSuspects,
@@ -147,16 +157,34 @@ function scanErrorMessage(e: unknown): string {
   return 'Something went wrong while reading that image. Try a clearer photo, or scan again.';
 }
 
-function renderScan(state: ScState, fileName: string | null, dataUrl: string | null): string {
+/** True when this label's numbers were typed in rather than read off a photo. An ABSENT
+ *  `entry` means scanned — the only reading a stored label could have before hand-entry
+ *  existed, so history written by an older build keeps its true meaning. */
+function isTyped(label: ScanLabel | null): boolean {
+  return label !== null && label.entry === 'typed';
+}
+
+function renderScan(state: ScState, fileName: string | null, dataUrl: string | null, typed: boolean): string {
   const done = state === 'confirming' || state === 'result';
   const badge = done ? 'is-done' : 'is-active';
   const stateChip = done
-    ? '<span class="vd-step__state is-done">Done &check;</span>'
+    ? `<span class="vd-step__state is-done">${typed ? 'By hand' : 'Done &check;'}</span>`
     : (state === 'scanning'
         ? '<span class="vd-step__state is-active">Reading…</span>'
         : '<span class="vd-step__state is-active">Start here</span>');
-  const body = done
+  // Hand-entry skipped the camera entirely, so this card must not claim a photo was decoded.
+  const doneBody = typed
     ? `<div class="vd-scan">
+        <button class="ds-btn-primary vd-newscan" type="button" data-sc-new><b aria-hidden="true">+</b> New Scan</button>
+        <div class="vd-scan__thumb">
+          <div class="vd-scan__meta">
+            <span class="vd-scan__file">No photo — entered by hand</span>
+            <span class="vd-scan__done">&check; nothing was read by OCR</span>
+            <span class="vd-yours">Yours · typed in</span>
+          </div>
+        </div>
+      </div>`
+    : `<div class="vd-scan">
         <button class="ds-btn-primary vd-newscan" type="button" data-sc-new><b aria-hidden="true">+</b> New Scan</button>
         <div class="vd-scan__thumb">
           ${dataUrl !== null ? `<button class="vd-scan__imgbtn" type="button" data-sc-zoom title="See the full label — click to enlarge"><img class="vd-scan__img" src="${escHTML(dataUrl)}" alt="Your scanned label — click to enlarge"></button>` : ''}
@@ -166,11 +194,16 @@ function renderScan(state: ScState, fileName: string | null, dataUrl: string | n
             <span class="vd-yours">Yours · user-scanned</span>
           </div>
         </div>
-      </div>`
+      </div>`;
+  const body = done
+    ? doneBody
     : (state === 'scanning'
         ? renderScanning()
         : `<div class="vd-scan">
-        <button class="ds-btn-primary vd-newscan" type="button" data-sc-upload><b aria-hidden="true">+</b> New Scan</button>
+        <div class="vd-newscan-wrap">
+          <button class="ds-btn-primary vd-newscan" type="button" data-sc-upload><b aria-hidden="true">+</b> New Scan</button>
+          <button class="vd-manual" type="button" data-sc-manual>or add it by hand</button>
+        </div>
         <button class="vd-drop" type="button" data-sc-upload>
           <span class="vd-drop__ic" aria-hidden="true">&uarr;</span>
           <span class="vd-drop__t">Upload a label image</span>
@@ -187,8 +220,8 @@ function renderScan(state: ScState, fileName: string | null, dataUrl: string | n
       <div class="vd-step__head">
         <span class="vd-step__badge ${badge}">1</span>
         <div class="vd-step__ttlwrap">
-          <div class="vd-step__ttl">Scan a label</div>
-          <div class="vd-step__sub">Upload or drop a photo — decoded on your machine, nothing uploaded.</div>
+          <div class="vd-step__ttl">${typed ? 'Added by hand' : 'Scan a label'}</div>
+          <div class="vd-step__sub">${typed ? 'No photo and no OCR — you type the panel, we judge exactly that.' : 'Upload or drop a photo — decoded on your machine, nothing uploaded.'}</div>
         </div>
         ${stateChip}
       </div>
@@ -201,6 +234,21 @@ function renderScan(state: ScState, fileName: string | null, dataUrl: string | n
 function nutrientRow(n: Nutrient, i: number, added: Set<string>, covered: Set<string>): string {
   const name = typeof n.name === 'string' ? n.name : '';
   const del = `<button class="ui-close ui-close--sm vd-nrow__del" type="button" data-ndel="${i}" aria-label="Remove this row" title="Remove this row">${CLOSE_SVG}</button>`;
+  // A row nobody has typed into yet -- the one a hand-entry opens with, or the one "Add a row"
+  // just created. Running it through the garbled-read branch would greet the user with
+  // "NOT RECOGNIZED" over an empty box, scolding them for a field they were handed a moment ago.
+  if (name.trim() === '') {
+    return `
+      <div class="vd-nrow is-blank" data-nrow="${i}" data-nmap="blank">
+        <div class="vd-nrow__main">
+          <span class="vd-nrow__g">&middot;</span>
+          <input class="vd-edit" maxlength="60" value="" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient name">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
+          <span class="vd-nrow__map"><span class="vd-nrow__cov">· type a name from the label</span></span>
+          ${del}
+        </div>
+      </div>`;
+  }
   const ess = matchEssential(name);
   if (ess !== null) {
     const plus = added.has(ess.name) ? '<span class="vd-nrow__r">+1</span>' : (covered.has(ess.name) ? '<span class="vd-nrow__cov">· already covered</span>' : '<span class="vd-nrow__cov">· counts toward your 90</span>');
@@ -208,8 +256,8 @@ function nutrientRow(n: Nutrient, i: number, added: Set<string>, covered: Set<st
       <div class="vd-nrow is-ok" data-nrow="${i}" data-nmap="essential">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
-          <input class="vd-edit" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
-          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" aria-label="Unit (editable)"></span>
+          <input class="vd-edit" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML(ess.name)}</b>${plus}</span>
           ${del}
         </div>
@@ -222,8 +270,8 @@ function nutrientRow(n: Nutrient, i: number, added: Set<string>, covered: Set<st
       <div class="vd-nrow is-ok is-untracked" data-nrow="${i}" data-nmap="untracked">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
-          <input class="vd-edit" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" aria-label="Nutrient read (editable)">
-          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" aria-label="Unit (editable)"></span>
+          <input class="vd-edit" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__cov">· read OK · not one of the 90</span></span>
           ${del}
         </div>
@@ -236,8 +284,8 @@ function nutrientRow(n: Nutrient, i: number, added: Set<string>, covered: Set<st
     <div class="vd-nrow is-warn" data-nrow="${i}" data-nmap="warn">
       <div class="vd-nrow__main">
         <span class="vd-nrow__g">!</span>
-        <input class="vd-edit is-warn" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" aria-label="Garbled read (editable)">
-        <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" aria-label="Unit (editable)"></span>
+        <input class="vd-edit is-warn" maxlength="60" value="${escHTML(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Garbled read (editable)">
+        <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML(String(n.amount ?? ''))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML(n.unit ?? '')}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
         <span class="vd-nrow__map vd-nrow__map--pending">not recognized · pick a match or edit</span>
         ${del}
       </div>
@@ -272,10 +320,10 @@ function suspectCard(s: IngredientSuspect): string {
     </div>`;
 }
 
-function suspectPanelHTML(suspects: IngredientSuspect[]): string {
+function suspectPanelHTML(suspects: IngredientSuspect[], typed: boolean): string {
   return suspects.length > 0
     ? `<div class="vd-ocr">
-        <div class="vd-ocr__head"><span class="vd-ocr__t">Possible OCR errors</span><span class="vd-ocr__hint">Click a suggestion to fix, or &times; to dismiss</span></div>
+        <div class="vd-ocr__head"><span class="vd-ocr__t">${typed ? 'Possible typos' : 'Possible OCR errors'}</span><span class="vd-ocr__hint">Click a suggestion to fix, or &times; to dismiss</span></div>
         ${suspects.map(suspectCard).join('')}
       </div>`
     : '';
@@ -287,20 +335,30 @@ function suspectCountLabel(n: number): string {
 }
 
 function nutrientCountLabel(total: number, mapped: number): string {
-  return `${total} lines · ${mapped} mapped · ${total - mapped} to check`;
+  if (total === 0) {
+    return 'no rows yet';
+  }
+  return `${total} line${total === 1 ? '' : 's'} · ${mapped} mapped · ${total - mapped} to check`;
 }
 
 function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string | null): string {
+  // Nothing was READ on a hand-entered label, so every "what we read" line has to say
+  // "what you entered". The grid, the mapping and the flags are identical — only the copy
+  // and the photo panel differ, which is why hand-entry reuses this surface rather than
+  // forking a second one that could drift away from it.
+  const typed = label.entry === 'typed';
   const nutrients = label.nutrients ?? [];
   const delta = coverageDeltaForLabel(label);
   const added = new Set(delta.addedEssentials);
   const coveredNames = new Set(getOrCompute().tiles.filter(t => t.covered).map(t => t.name));
   const mapped = nutrients.filter(n => matchEssential(typeof n.name === 'string' ? n.name : '') !== null).length;
+  // Blank rows are scaffolding, not lines to check -- recountNutrients skips them identically.
+  const counted = nutrients.filter(n => (typeof n.name === 'string' ? n.name : '').trim() !== '').length;
   const rows = nutrients.map((n, i) => nutrientRow(n, i, added, coveredNames)).join('');
 
   const ingredients = label.ingredients ?? '';
   const suspects = findIngredientSuspects(ingredients, dismissed, getAntiIngredientWords());
-  const suspectPanel = suspectPanelHTML(suspects);
+  const suspectPanel = suspectPanelHTML(suspects, typed);
 
   const preview = scoreLabel(label);
   const flags = preview?.anti ?? [];
@@ -311,55 +369,67 @@ function renderConfirm(label: ScanLabel, dismissed: Set<string>, dataUrl: string
       </div>`
     : '';
 
+  // No photo means no photo PANEL — an empty "Your uploaded photo" box beside a hand-typed
+  // panel reads as a failed upload. Its COLUMN is still held open (see .vd-cf__grid), so the
+  // edit fields are the same width whether or not a thumbnail is sitting beside them.
+  const photoPanel = dataUrl !== null
+    ? `<aside class="vd-cf__ref">
+            <div class="vd-cf__ref-h">Your uploaded photo</div>
+            <button class="vd-cf__refbtn" type="button" data-sc-zoom title="See the full label — click to enlarge"><img class="vd-cf__refimg" src="${escHTML(dataUrl)}" alt="Your uploaded label — click to enlarge"><span class="vd-cf__refzoom" aria-hidden="true">&#10530;&nbsp;Enlarge</span></button>
+          </aside>`
+    : '';
+  // A hand-entry starts nameless, and humanizeName turns an empty name into "Scanned label" —
+  // which would both prefill a lie and hide the placeholder that asks for the real one.
+  const nameValue = typed && label.name.trim() === '' ? '' : humanizeName(label.name);
+  const emptyRows = typed
+    ? '<div class="vd-nrow__covrow">No rows yet — add one below, or just enter the ingredients.</div>'
+    : '<div class="vd-nrow__covrow">No nutrient lines read — add one below, edit the ingredients, or rescan.</div>';
   return `
     <section class="vd-step vd-step--hero">
       <div class="vd-step__head">
         <span class="vd-step__badge is-active">2</span>
         <div class="vd-step__ttlwrap">
-          <div class="vd-step__ttl">Confirm what we read</div>
-          <div class="vd-step__sub">OCR is imperfect — fix any misread word before we judge it.</div>
+          <div class="vd-step__ttl">${typed ? 'Enter what the label says' : 'Confirm what we read'}</div>
+          <div class="vd-step__sub">${typed ? 'Type the panel yourself — we judge exactly what you enter, nothing more.' : 'OCR is imperfect — fix any misread word before we judge it.'}</div>
         </div>
-        <button class="ui-close vd-step__close" type="button" data-sc-clear aria-label="Cancel this scan" title="Cancel scan">${CLOSE_SVG}</button>
+        <button class="ui-close vd-step__close" type="button" data-sc-clear aria-label="${typed ? 'Cancel this entry' : 'Cancel this scan'}" title="${typed ? 'Cancel entry' : 'Cancel scan'}">${CLOSE_SVG}</button>
       </div>
       <div class="vd-cf">
         <div class="vd-cf__grid">
           <div class="vd-cf__edits">
             <div class="vd-cf-sec vd-cf-sec--name">
               <label class="vd-cf-name__lab" for="vd-sc-name">Product name</label>
-              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name maxlength="80" value="${escHTML(humanizeName(label.name))}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
-              <span class="vd-cf-sec__hint">Name it so your saved items and regimen read cleanly — not a raw container guess.</span>
+              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name maxlength="80" value="${escHTML(nameValue)}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
+              <span class="vd-cf-sec__hint">${typed ? 'Name it so your saved items and regimen read cleanly.' : 'Name it so your saved items and regimen read cleanly — not a raw container guess.'}</span>
             </div>
             <div class="vd-cf-sec">
               <div class="vd-cf-sec__head">
-                <span class="vd-cf-sec__t">Supplement Facts — what we read</span>
-                <span class="vd-cf-sec__n" data-nutrient-count>${nutrientCountLabel(nutrients.length, mapped)}</span>
-                <span class="vd-cf-sec__hint">Every row is editable. Clean reads are mapped &check;; garbled reads show ranked suggestions — pick one, or keep as-is.</span>
+                <span class="vd-cf-sec__t">Supplement Facts — what ${typed ? 'you entered' : 'we read'}</span>
+                <span class="vd-cf-sec__n" data-nutrient-count>${nutrientCountLabel(counted, mapped)}</span>
+                <span class="vd-cf-sec__hint">${typed ? 'One nutrient per row. A name we recognize maps &check; and counts toward your 90; anything else offers the closest matches.' : 'Every row is editable. Clean reads are mapped &check;; garbled reads show ranked suggestions — pick one, or keep as-is.'}</span>
               </div>
-              <div class="vd-nlist">${rows || '<div class="vd-nrow__covrow">No nutrient lines read — add one below, edit the ingredients, or rescan.</div>'}</div>
-              <button class="vd-nadd" type="button" data-nadd><b class="vd-nadd__p" aria-hidden="true">+</b>Add a row we missed</button>
+              <div class="vd-nlist">${rows || emptyRows}</div>
+              <button class="vd-nadd" type="button" data-nadd><b class="vd-nadd__p" aria-hidden="true">+</b>${typed ? 'Add another row' : 'Add a row we missed'}</button>
             </div>
             <div class="vd-cf-sec">
               <div class="vd-cf-sec__head">
-                <span class="vd-cf-sec__t">Other ingredients — what we read</span>
+                <span class="vd-cf-sec__t">Other ingredients — what ${typed ? 'you entered' : 'we read'}</span>
                 <span class="vd-cf-sec__n" data-suspect-count>${suspectCountLabel(suspects.length)}</span>
-                <span class="vd-cf-sec__hint">These never appear on the nutrition panel — only an ingredients scan can catch a gluten source or a seed oil.</span>
+                <span class="vd-cf-sec__hint">These never appear on the nutrition panel — only the ingredients list can catch a bad ingredient such as a gluten source.</span>
               </div>
               <div>
-                <label class="vd-ing__lab" for="vd-ing">Ingredients line (editable)</label>
+                <label class="vd-ing__lab" for="vd-ing">${typed ? 'Ingredients line' : 'Ingredients line (editable)'}</label>
                 <textarea id="vd-ing" class="vd-ing" rows="2" maxlength="4000" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML(ingredients)}</textarea>
               </div>
               <div class="vd-ocr-host" data-ocr-host>${suspectPanel}</div>
               ${flagPanel}
             </div>
           </div>
-          <aside class="vd-cf__ref">
-            <div class="vd-cf__ref-h">Your uploaded photo</div>
-            ${dataUrl !== null ? `<button class="vd-cf__refbtn" type="button" data-sc-zoom title="See the full label — click to enlarge"><img class="vd-cf__refimg" src="${escHTML(dataUrl)}" alt="Your uploaded label — click to enlarge"><span class="vd-cf__refzoom" aria-hidden="true">&#10530;&nbsp;Enlarge</span></button>` : ''}
-          </aside>
+          ${photoPanel}
         </div>
         <div class="vd-cf__cta">
-          <button class="ds-btn-primary" type="button" data-sc-confirm>Confirm scan <span aria-hidden="true">&rarr;</span> verdict</button>
-          <span class="vd-cf__ctanote">Locks your corrections, then judges the confirmed reads against the Wallach corpus. No verdict is shown until you confirm.</span>
+          <button class="ds-btn-primary" type="button" data-sc-confirm>${typed ? 'Judge what I entered' : 'Confirm scan'} <span aria-hidden="true">&rarr;</span>${typed ? '' : ' verdict'}</button>
+          ${typed ? '' : '<span class="vd-cf__ctanote">Locks your corrections, then judges the confirmed reads against the Wallach corpus. No verdict is shown until you confirm.</span>'}
         </div>
       </div>
     </section>`;
@@ -397,6 +467,7 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
   const total = essentialCount();
   const name = humanizeName(result.label.name);
   const flags = result.anti.length;
+  const typed = result.label.entry === 'typed';
 
   const tierChip = (key: Verdict, big: string, small: string): string => {
     const on = result.verdict === key;
@@ -409,7 +480,7 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
             <span class="vd-step__badge is-active">3</span>
             <div class="vd-step__ttlwrap">
               <div class="vd-step__ttl">The verdict</div>
-              <div class="vd-step__sub">Fires only now — judged on the reads you confirmed.</div>
+              <div class="vd-step__sub">Fires only now — judged on ${typed ? 'exactly what you entered' : 'the reads you confirmed'}.</div>
             </div>
             <span class="vd-step__state is-active">Result</span>
           </div>
@@ -427,7 +498,7 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
                   ${tierChip('ADD', 'Add', 'aligns')}${tierChip('SAVE', 'Save', 'neutral')}${tierChip('REJECT', 'Reject', 'out')}
                 </div>
                 <h2 class="vd-verdict__h" style="color:${tone}">${head}${sub ? `<b>${sub}</b>` : ''}</h2>
-                <p class="vd-verdict__deck">${result.hits > 0 ? `Meaningfully delivers ${result.hits} of your ${total} essential${result.hits === 1 ? '' : 's'}` : 'Delivers no essential in a meaningful amount'}${flags > 0 ? `, and the ingredient scan flagged ${flags}.` : '.'}</p>
+                <p class="vd-verdict__deck">${result.hits > 0 ? `Meaningfully delivers ${result.hits} of your ${total} essential${result.hits === 1 ? '' : 's'}` : 'Delivers no essential in a meaningful amount'}${flags > 0 ? `, and the ${typed ? 'ingredients you entered' : 'ingredient scan'} flagged ${flags}.` : '.'}</p>
                 <div class="vd-reasons">
                   <div class="vd-reasons__h">Why — grounded in Wallach doctrine</div>
                   ${reasonRows(result)}
@@ -454,34 +525,38 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): 
               <button class="ds-btn-ghost" type="button" data-sc-save>Save for later</button>
               <button class="vd-reject" type="button" data-sc-reject>${origin === 'saved' ? 'Delete' : 'Reject'}</button>
               <div class="vd-foot__note">
-                <span class="vd-foot__prov"><span class="vd-yours">Yours · user-scanned</span> lands marked user-provided</span>
+                <span class="vd-foot__prov"><span class="vd-yours">Yours · ${typed ? 'typed in' : 'user-scanned'}</span> lands marked user-provided</span>
               </div>
             </div>
           </article>
         </section>`;
 }
 
-/** OCR read nothing — withhold the verdict (a REJECT here would be judging the photo, not the
- *  product) and offer a way forward. */
-function renderUnreadable(): string {
+/** Nothing to judge — withhold the verdict and offer a way forward. Two causes, and they are
+ *  NOT the same failure: OCR made out nothing on the photo (a REJECT here would be judging the
+ *  photo, not the product), or a hand-entry was confirmed with every field still blank. Telling
+ *  someone who typed nothing that we "couldn't read this label" would blame a camera they never
+ *  used. */
+function renderUnreadable(typed: boolean): string {
   return `
     <section class="vd-step vd-step--result">
       <div class="vd-step__head">
         <span class="vd-step__badge is-active">3</span>
         <div class="vd-step__ttlwrap">
-          <div class="vd-step__ttl">Couldn't read this label</div>
-          <div class="vd-step__sub">No verdict — we couldn't make out enough to judge it fairly.</div>
+          <div class="vd-step__ttl">${typed ? 'Nothing to judge yet' : 'Couldn\'t read this label'}</div>
+          <div class="vd-step__sub">${typed ? 'No verdict — the panel and the ingredients line are both empty.' : 'No verdict — we couldn\'t make out enough to judge it fairly.'}</div>
         </div>
-        <span class="vd-step__state is-active">No read</span>
+        <span class="vd-step__state is-active">${typed ? 'Nothing entered' : 'No read'}</span>
       </div>
       <article class="vd-card vd-card--unread">
         <div class="vd-unread">
           <span class="vd-unread__ic" aria-hidden="true">?</span>
-          <div class="vd-unread__t">We couldn't read the nutrition panel or the ingredients on this image.</div>
-          <p class="vd-unread__m">A verdict here would be about the photo, not the product — so we're withholding it. Try a sharper, straight-on photo, or add the reads yourself.</p>
+          <div class="vd-unread__t">${typed ? 'No nutrient rows and no ingredients were entered.' : 'We couldn\'t read the nutrition panel or the ingredients on this image.'}</div>
+          <p class="vd-unread__m">${typed ? 'We are withholding a verdict because there is nothing to judge — not because the product failed. Add what the label says and confirm again.' : 'A verdict here would be about the photo, not the product — so we\'re withholding it. Try a sharper, straight-on photo, or add the reads yourself.'}</p>
           <div class="vd-unread__cta">
-            <button class="ds-btn-primary" type="button" data-sc-upload>Scan a clearer image</button>
-            <button class="ds-btn-ghost" type="button" data-sc-edit>Edit the reads</button>
+            ${typed
+              ? '<button class="ds-btn-primary" type="button" data-sc-edit>Add the details</button><button class="ds-btn-ghost" type="button" data-sc-upload>Scan a photo instead</button>'
+              : '<button class="ds-btn-primary" type="button" data-sc-upload>Scan a clearer image</button><button class="ds-btn-ghost" type="button" data-sc-edit>Edit the reads</button>'}
           </div>
         </div>
       </article>
@@ -523,7 +598,7 @@ function scanRow(h: HistoryEntry, saved: boolean, index: number): string {
     <div class="rl-row vd-hrow" data-sc-open="${h.id}" data-sc-src="${saved ? 'saved' : 'recent'}" data-sc-idx="${index}" role="button" tabindex="0" title="Re-open this verdict">
       <div class="rl-row__name">${escHTML(humanizeName(h.label.name))}</div>
       ${verdictPill(h.verdict)}
-      <div class="rl-row__foot"><span class="rl-src is-own">Yours · user-scanned</span><span class="vd-when">${escHTML(relAge(h.ts))}</span></div>
+      <div class="rl-row__foot"><span class="rl-src is-own">Yours · ${h.label.entry === 'typed' ? 'typed in' : 'user-scanned'}</span><span class="vd-when">${escHTML(relAge(h.ts))}</span></div>
       ${rm}
     </div>`;
 }
@@ -581,15 +656,16 @@ export function mount(container: HTMLElement): MountHandle {
 
   const render = (): void => {
     let main = '';
+    const typed = isTyped(label);
     if (state === 'result' && result !== null) {
       const unreadable = result.sparseNutrients === true && result.sparseIngredients === true;
-      main = renderScan(state, fileName, imageDataUrl) + (unreadable ? renderUnreadable() : renderResult(result, resultOrigin));
+      main = renderScan(state, fileName, imageDataUrl, typed) + (unreadable ? renderUnreadable(typed) : renderResult(result, resultOrigin));
     }
     else if (state === 'confirming' && label !== null) {
-      main = renderScan(state, fileName, imageDataUrl) + renderConfirm(label, dismissed, imageDataUrl);
+      main = renderScan(state, fileName, imageDataUrl, typed) + renderConfirm(label, dismissed, imageDataUrl);
     }
     else {
-      main = (scanError !== null ? renderScanError(scanError) : '') + renderScan(state, fileName, imageDataUrl);
+      main = (scanError !== null ? renderScanError(scanError) : '') + renderScan(state, fileName, imageDataUrl, typed);
     }
     // The rail (Saved + Recent) is a persistent aside in every state, so a refresh always
     // surfaces saved items — the whole point of the shelf. renderRail reads live state each paint.
@@ -699,9 +775,12 @@ export function mount(container: HTMLElement): MountHandle {
     });
     const ing = container.querySelector<HTMLTextAreaElement>('[data-ing]');
     const nameEl = container.querySelector<HTMLInputElement>('[data-sc-name]');
-    const name = nameEl !== null && nameEl.value.trim().length > 0
-      ? nameEl.value.trim()
-      : (typeof base.name === 'string' ? base.name : 'Scanned label');
+    // A hand-entry starts nameless, so the stored fallback can be empty too — and an unnamed
+    // row in Saved/Recent or in the regimen is unusable. Land a real word rather than ''.
+    const entered = nameEl !== null ? nameEl.value.trim() : '';
+    const stored = typeof base.name === 'string' ? base.name.trim() : '';
+    const name = entered.length > 0 ? entered : (stored.length > 0 ? stored : 'Untitled item');
+    // The spread carries `entry` through: a corrected label must not forget it was typed.
     return { ...base, name, nutrients, ingredients: ing !== null ? ing.value : (base.ingredients ?? '') };
   };
 
@@ -714,7 +793,7 @@ export function mount(container: HTMLElement): MountHandle {
       return;
     }
     const suspects = findIngredientSuspects(ta.value, dismissed, getAntiIngredientWords());
-    host.innerHTML = suspectPanelHTML(suspects);
+    host.innerHTML = suspectPanelHTML(suspects, isTyped(label));
     const countEl = container.querySelector('[data-suspect-count]');
     if (countEl !== null) {
       countEl.textContent = suspectCountLabel(suspects.length);
@@ -728,8 +807,12 @@ export function mount(container: HTMLElement): MountHandle {
     let total = 0;
     let mapped = 0;
     for (const r of rows) {
+      const kind = r.getAttribute('data-nmap');
+      if (kind === 'blank') {
+        continue; // an untouched row is not a line to check -- matches renderConfirm's tally
+      }
       total++;
-      if (r.getAttribute('data-nmap') === 'essential') {
+      if (kind === 'essential') {
         mapped++;
       }
     }
@@ -754,7 +837,19 @@ export function mount(container: HTMLElement): MountHandle {
     const main = rowEl.querySelector('.vd-nrow__main');
     rowEl.querySelector('.vd-sug')?.remove();
     const ess = matchEssential(name);
-    if (ess !== null) {
+    if (name === '') {
+      rowEl.className = 'vd-nrow is-blank';
+      rowEl.dataset['nmap'] = 'blank';
+      input.classList.remove('is-warn');
+      if (glyph !== null) {
+        glyph.innerHTML = '&middot;';
+      }
+      if (map !== null) {
+        map.className = 'vd-nrow__map';
+        map.innerHTML = '<span class="vd-nrow__cov">· type a name from the label</span>';
+      }
+    }
+    else if (ess !== null) {
       rowEl.className = 'vd-nrow is-ok';
       rowEl.dataset['nmap'] = 'essential';
       input.classList.remove('is-warn');
@@ -867,6 +962,24 @@ export function mount(container: HTMLElement): MountHandle {
       pickImage();
       return;
     }
+    // Add an item BY HAND — no photo, no OCR. It enters at the CONFIRM step, because that step
+    // is already a complete editable nutrient grid (mapping, +1 marks, suggestions, ingredient
+    // flags); a separate "manual entry" form would be a second copy of it, free to drift. One
+    // blank row so there is something to type into immediately. `entry: 'typed'` is what stops
+    // every surface downstream from claiming something was read.
+    if (t.closest('[data-sc-manual]') !== null) {
+      label = { name: '', entry: 'typed', nutrients: [{ name: '', unit: '' }], ingredients: '' };
+      dismissed.clear();
+      removedRows.clear();
+      fileName = null;
+      imageDataUrl = null;
+      scanError = null;
+      result = null;
+      state = 'confirming';
+      render();
+      container.querySelector<HTMLInputElement>('[data-sc-name]')?.focus();
+      return;
+    }
     // Paste / type an ingredients list (or a single ingredient) -> straight to a verdict.
     // No OCR/confirm needed: the user typed it. runScan reuses the same antiFlags engine, so
     // gluten/seed-oil/modified/etc. reject and everything else reads NEUTRAL (the neutral default).
@@ -876,7 +989,9 @@ export function mount(container: HTMLElement): MountHandle {
       if (text.length === 0) {
         return;
       }
-      const pasted: ScanLabel = { name: 'Pasted ingredients', nutrients: [], ingredients: text };
+      // 'typed' because it is: nothing was photographed and nothing was decoded. Without it
+      // the step-1 card claims "decoded locally" over a line the user pasted in themselves.
+      const pasted: ScanLabel = { name: 'Pasted ingredients', entry: 'typed', nutrients: [], ingredients: text };
       const r = runScan(pasted);
       if (r !== null) {
         label = pasted;
@@ -963,7 +1078,12 @@ export function mount(container: HTMLElement): MountHandle {
     // confirm → verdict
     if (t.closest('[data-sc-confirm]') !== null) {
       label = readCorrectedLabel();
-      const r = runScan(label);
+      // Nothing entered and nothing read: the Result step WITHHOLDS a verdict, so there is no
+      // verdict to remember either. scoreLabel scores without writing history; runScan always
+      // writes. Otherwise every empty confirm drops an "Untitled item" row into Recent whose
+      // pill states a verdict the app just declined to give.
+      const nothingToJudge = (label.nutrients ?? []).length === 0 && (label.ingredients ?? '').trim() === '';
+      const r = nothingToJudge ? scoreLabel(label) : runScan(label);
       if (r !== null) {
         result = r;
         state = 'result';
@@ -991,7 +1111,12 @@ export function mount(container: HTMLElement): MountHandle {
         id: Date.now(),
         label: { name: typeof lbl.name === 'string' ? lbl.name : 'Scanned label', nutrients: lbl.nutrients ?? [] },
         addedDate: new Date().toISOString().slice(0, 10),
-        provenance: 'user_scanned',
+        // Both tokens are USER-supplied, so core/provenance stops the coverage auto-heal from
+        // replacing these amounts with sealed composition when the typed name collides with a
+        // vault product. Two spread LITERALS rather than one ternary on purpose: Eden's wall
+        // (scanner_user_items_marked) reads provenance literals out of this source, and a
+        // computed token would make the mint invisible to the gate that polices it.
+        ...(lbl.entry === 'typed' ? { provenance: 'user_typed' } : { provenance: 'user_scanned' }),
       };
       const r = addOrBumpRegimenItem(item);
       const btn = t.closest<HTMLButtonElement>('[data-sc-adopt]');
@@ -1147,6 +1272,23 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
+  /** A committed unit field shows the abbreviation the app matched it to, so "milligrams"
+   *  visibly becomes "mg" rather than leaving the reader to wonder whether it was understood.
+   *  Only a SINGLE-WORD long form is rewritten: "mcg RAE" keeps its qualifier, and anything
+   *  core/units does not recognize ("million CFU") is left exactly as typed. Fires on change,
+   *  never on input — rewriting mid-keystroke would fight the person typing. */
+  const changeHandler = (ev: Event): void => {
+    const target = ev.target as HTMLElement | null;
+    if (target === null || !target.matches('.vd-unit[data-uedit]')) {
+      return;
+    }
+    const el = target as HTMLInputElement;
+    const abbr = unitAbbreviation(el.value);
+    if (abbr !== null && abbr !== el.value.trim()) {
+      el.value = abbr;
+    }
+  };
+
   // Debounced live refresh: the OCR-errors panel (ingredients textarea) AND the nutrient rows.
   const inputHandler = (ev: Event): void => {
     const target = ev.target as HTMLElement | null;
@@ -1170,6 +1312,7 @@ export function mount(container: HTMLElement): MountHandle {
   render();
   container.addEventListener('click', clickHandler);
   container.addEventListener('input', inputHandler);
+  container.addEventListener('change', changeHandler);
   container.addEventListener('dragover', dragHandler);
   container.addEventListener('drop', dropHandler);
   document.addEventListener('paste', pasteHandler);
@@ -1193,6 +1336,7 @@ export function mount(container: HTMLElement): MountHandle {
       window.clearTimeout(nameTimer);
       container.removeEventListener('click', clickHandler);
       container.removeEventListener('input', inputHandler);
+      container.removeEventListener('change', changeHandler);
       container.removeEventListener('dragover', dragHandler);
       container.removeEventListener('drop', dropHandler);
       document.removeEventListener('paste', pasteHandler);

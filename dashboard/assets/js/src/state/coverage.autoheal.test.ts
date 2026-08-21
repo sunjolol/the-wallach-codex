@@ -4,7 +4,14 @@
  * A catalog-sourced regimen item stores a nutrient SNAPSHOT at add-time; if the sealed
  * Product DB later corrects a value, liveNutrients() re-reads the CURRENT composition
  * from the vault by exact canonical name, so the number self-corrects with no re-adding.
- * User-scanned items (and anything whose name isn't a live product) keep their own data.
+ * USER-SUPPLIED items (scanned off a photo or typed in by hand) keep their own data, as does
+ * anything whose name isn't a live product.
+ *
+ * The name-collision cases below are the ones that matter: they are the only place the heal
+ * can do harm. A user-supplied item whose name happens to match a vault product would have
+ * the user's OWN amounts replaced by sealed composition -- silently, with no error and no
+ * mark on screen. core/provenance.ts::isUserSupplied is what stops it, and every token it
+ * covers needs a case here.
  * DOM-free: liveNutrients is pure over the bundled vault + the item (no localStorage).
  */
 
@@ -56,6 +63,15 @@ describe('coverage: regimen snapshot auto-heal (liveNutrients)', () => {
       label: { name: VAULT_NAME, nutrients: staleCalcium },
     }));
     expect(calciumOf(kept)).toBe(1); // untouched
+    expect(kept).toBe(staleCalcium);
+  });
+
+  it('never heals a hand-typed item either — typing a vault name must not replace the typed amounts', () => {
+    const kept = liveNutrients(item({
+      provenance: 'user_typed',
+      label: { name: VAULT_NAME, nutrients: staleCalcium },
+    }));
+    expect(calciumOf(kept)).toBe(1); // the user's own number, not the vault's 1200
     expect(kept).toBe(staleCalcium);
   });
 

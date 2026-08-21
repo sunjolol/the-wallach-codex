@@ -64,6 +64,7 @@ import {
   type Verdict,
 } from '../core/schemas/index.js';
 import { getValidated, setValidated } from '../core/storage.js';
+import { canonicalUnit, massToMcg, massToMg, mgToMass } from '../core/units.js';
 import {
   currentDelivery,
   getOrCompute,
@@ -230,60 +231,46 @@ export function getSaved(): HistoryEntry[] {
 
 // ─── Unit math (normalize · unit conversion) ─────────────────────────
 
-/** Normalize an amount to a comparison family: mass→mcg base, IU→iu. */
+/**
+ * Normalize an amount to a comparison family: mass→mcg base, IU→iu.
+ *
+ * The unit SPELLING is core/units' job, not this function's. It used to be an exact-string
+ * ladder over 'mcg' | 'mg' | 'g' | 'iu', which meant a hand-typed "milligrams" returned null
+ * and the nutrient silently vanished from meaningfulHits, gapFillFor and the Confirm row's
+ * +1 — mapped to an essential on screen, contributing nothing, with no error anywhere.
+ * Null still means "not a comparable quantity" (probiotic CFU counts, mL); it no longer
+ * means "spelled it out".
+ */
 function normalize(amount: number, unit: string | undefined): Norm | null {
   if (typeof amount !== 'number' || Number.isNaN(amount)) {
     return null;
   }
-  const u = (unit ?? '').toLowerCase().trim();
-  if (u === 'mcg') {
-    return { family: 'mass_mcg', value: amount };
+  const canon = canonicalUnit(unit);
+  if (canon === null) {
+    return null;
   }
-  if (u === 'mg') {
-    return { family: 'mass_mcg', value: amount * 1000 };
-  }
-  if (u === 'g') {
-    return { family: 'mass_mcg', value: amount * 1000000 };
-  }
-  if (u === 'iu') {
+  if (canon === 'iu') {
     return { family: 'iu', value: amount };
   }
-  return null;
+  return { family: 'mass_mcg', value: massToMcg(amount, canon) };
 }
 
 /** Convert a value between mass units / IU. Returns null for incompatible pairs. */
 function unitConv(value: number, fromUnit: string | undefined, toUnit: string | undefined): number | null {
-  const f = (fromUnit ?? '').toLowerCase();
-  const tu = (toUnit ?? '').toLowerCase();
-  if (f === tu) {
+  const f = canonicalUnit(fromUnit);
+  const t = canonicalUnit(toUnit);
+  if (f === null || t === null) {
+    // Two identical UNRECOGNIZED units still convert to themselves — "million CFU" to
+    // "million CFU" is the identity, which is what the raw-string compare here always did.
+    return (fromUnit ?? '').toLowerCase().trim() === (toUnit ?? '').toLowerCase().trim() ? value : null;
+  }
+  if (f === t) {
     return value;
   }
-  if (f === 'iu' || tu === 'iu') {
+  if (f === 'iu' || t === 'iu') {
     return null;
   }
-  let mg: number;
-  if (f === 'mg') {
-    mg = value;
-  }
-  else if (f === 'mcg') {
-    mg = value / 1000;
-  }
-  else if (f === 'g') {
-    mg = value * 1000;
-  }
-  else {
-    return null;
-  }
-  if (tu === 'mg') {
-    return mg;
-  }
-  if (tu === 'mcg') {
-    return mg * 1000;
-  }
-  if (tu === 'g') {
-    return mg / 1000;
-  }
-  return null;
+  return mgToMass(massToMg(value, f), t);
 }
 
 /** Word-boundary keyword match — prevents "buckwheat" matching "wheat". */

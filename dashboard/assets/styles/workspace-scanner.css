@@ -57,6 +57,15 @@
 .vd-scan { display: flex; flex-wrap: wrap; gap: var(--ds-space-4); align-items: stretch; }
 .vd-newscan { font-size: var(--ds-text-sm); padding: 0 var(--ds-space-6); display: inline-flex; align-items: center; gap: 10px; flex: 0 0 auto; white-space: nowrap; }
 .vd-newscan b { font-family: var(--ds-font-mono); font-weight: 700; font-size: var(--ds-text-md); }
+/* Hand-entry, offered under the scan button. The wrapper is ALSO what makes New Scan shorter:
+   .vd-scan is align-items:stretch, so the wrapper takes the row's full height and the button
+   now shares it with the link. The cut is exactly the link plus the gap -- there is no height
+   number here to drift out of step with the drop zone beside it. */
+.vd-newscan-wrap { flex: 0 0 auto; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.vd-newscan-wrap .vd-newscan { flex: 1 1 auto; justify-content: center; }
+.vd-manual { align-self: center; padding: 0; background: none; border: 0; cursor: pointer; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .03em; color: var(--ds-ink-faint); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--ds-rule); transition: color var(--ds-motion-fast) var(--ds-ease-out); }
+.vd-manual:hover { color: var(--ds-accent); text-decoration-color: var(--ds-accent-soft); }
+.vd-manual:focus-visible { outline: none; border-radius: var(--ds-radius-xs); box-shadow: 0 0 0 3px var(--ds-accent-wash); }
 .vd-drop { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; justify-content: center; gap: 5px; padding: var(--ds-space-4) var(--ds-space-5);
   border: 2px dashed var(--ds-rule-bright); border-radius: var(--ds-radius-lg); background: var(--ds-paper); text-align: center;
   transition: border-color var(--ds-motion-base) var(--ds-ease-out), background var(--ds-motion-base) var(--ds-ease-out); }
@@ -88,6 +97,10 @@
 .vd-cf { display: flex; flex-direction: column; gap: var(--ds-space-5); }
 .vd-cf__grid { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,248px); gap: var(--ds-space-6); align-items: start; }
 @media (max-width: 1080px) { .vd-cf__grid { grid-template-columns: minmax(0,1fr); } }
+/* The photo column is RESERVED, not conditional. A hand-entry has no thumbnail to put in it,
+   but collapsing it would make the edit fields a different width than they are on a scan --
+   and then a nutrient row would have to be two sizes, or be capped at some number that matches
+   neither. One width for the fields, always, set by where the thumbnail goes. */
 .vd-cf__edits { display: flex; flex-direction: column; gap: var(--ds-space-6); min-width: 0; }
 .vd-cf-sec { display: flex; flex-direction: column; gap: var(--ds-space-3); }
 .vd-cf-sec__head { display: flex; align-items: baseline; gap: var(--ds-space-3) var(--ds-space-4); flex-wrap: wrap; padding-bottom: var(--ds-space-2); border-bottom: 1px solid var(--ds-rule); }
@@ -101,12 +114,33 @@
 .vd-nadd__p { font-size: var(--ds-text-sm); line-height: 1; }
 .vd-nrow { display: flex; flex-direction: column; gap: 9px; padding: 11px 0; border-bottom: 1px solid var(--ds-rule-soft); }
 .vd-nrow:last-child { border-bottom: 0; }
-.vd-nrow__main { display: grid; grid-template-columns: 20px minmax(0,1fr) auto minmax(0,1.25fr) auto; align-items: center; gap: var(--ds-space-3); }
-@media (max-width: 620px) { .vd-nrow__main { grid-template-columns: 20px 1fr auto; } .vd-nrow__amt, .vd-nrow__map { grid-column: 2; } .vd-nrow__del { grid-column: 3; grid-row: 1; } }
+/* ── A Confirm row: three inputs on top, the mapping verdict on its own line under them. ──
+   MEASURED, not guessed. One line of five columns is what shipped, and it collapses: the
+   Confirm grid gives the edit column 660px when there is no photo but only 380px when the
+   uploaded photo takes its 248px panel. At 380px the five-column row squeezed the NAME input
+   -- the most important field on the surface -- to 42.7px ("Vitamin C" rendered as "Vit"),
+   the mapping to 53.4px, and the row itself to 169.9px tall as that mapping wrapped four ways.
+   A media query cannot see this: the viewport is 1440px in both cases, only the COLUMN differs.
+   The fix is upstream, in .vd-cf__grid: the photo column is reserved either way, so the edit
+   column is ONE width and a row simply fills it. No cap here, and nothing to keep in step.
+
+   The three inputs stay on one line. The amount and the unit are a fixed pair; the NAME takes
+   whatever is left, which is what makes the row fill the column instead of stopping short of
+   it. Only the MAPPING sits below: it is the longest string and the least urgent, and inline
+   at 53px it wrapped four ways and took the row to 169.9px tall. Explicit areas, so DOM order
+   can never re-place a cell. */
+.vd-nrow__main { display: grid; grid-template-columns: 20px minmax(0,1fr) auto 24px; grid-template-areas: "g name amt del" ". map map map"; align-items: center; gap: 7px var(--ds-space-3); }
+.vd-nrow__main > .vd-nrow__g { grid-area: g; }
+.vd-nrow__main > .vd-edit { grid-area: name; }
+.vd-nrow__main > .vd-nrow__amt { grid-area: amt; }
+.vd-nrow__main > .vd-nrow__map { grid-area: map; }
+.vd-nrow__main > .vd-nrow__del { grid-area: del; }
 .vd-nrow__g { width: 20px; height: 20px; border-radius: var(--ds-radius-circle); display: grid; place-items: center; font-family: var(--ds-font-mono); font-size: 11px; font-weight: 700; flex: 0 0 auto; }
 .vd-nrow.is-ok .vd-nrow__g { background: var(--ds-ok-wash); color: var(--ds-ok-deep); box-shadow: inset 0 0 0 1px var(--ds-status-ok-soft); }
 .vd-nrow.is-warn .vd-nrow__g { background: var(--ds-status-warn-soft); color: var(--ds-status-warn); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-status-warn) 40%, transparent); }
 .vd-nrow.is-unknown .vd-nrow__g { background: var(--ds-status-err-soft); color: var(--ds-status-err); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-status-err) 35%, transparent); }
+/* An untouched row: quiet, not a warning. It has nothing to say until it is typed into. */
+.vd-nrow.is-blank .vd-nrow__g { background: var(--ds-paper-deep); color: var(--ds-ink-faint); box-shadow: inset 0 0 0 1px var(--ds-rule); }
 .vd-edit { width: 100%; min-width: 0; font-family: var(--ds-font-display-interface); font-size: var(--ds-text-xs); font-weight: 600; letter-spacing: .01em; color: var(--ds-ink); background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); padding: 6px 10px;
   transition: border-color var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out), background var(--ds-motion-fast) var(--ds-ease-out); }
 .vd-edit:hover { border-color: var(--ds-rule-bright); }
@@ -339,8 +373,14 @@
 /* Editable nutrient amount + unit — these were read-only spans. */
 .vd-nrow__amt { display: inline-flex; align-items: center; gap: 5px; }
 .vd-amt, .vd-unit { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink); background: var(--ds-paper); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-sm); padding: 4px 6px; transition: border-color var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out); }
-.vd-amt { width: 5.5ch; text-align: right; }
-.vd-unit { width: 5.5ch; }
+/* Wide enough for their own placeholders at the size below -- "Amount" is 6 characters and
+   "Measurement" is 11, and a placeholder that clips is worse than none: it reads as a bug and
+   still fails to say what the box is for. `ch` so the two track the font-size, and border-box
+   padding is added on top rather than eating into the text. */
+/* Equal, fixed, and left-aligned like every other field. Fixed because they are the pair the
+   name measures itself against: the name column is 1fr, so whatever these two do not take is
+   what it fills. Wide enough for "Amount" and "Unit" at the size below, plus 10px of air. */
+.vd-amt, .vd-unit { width: 83px; text-align: left; }
 .vd-amt:hover, .vd-unit:hover { border-color: var(--ds-rule-bright); }
 .vd-amt:focus, .vd-unit:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 2px var(--ds-accent-wash); }
 /* the verdict-card close now uses the canonical .ui-close (dashboard.css); only its spacing is scoped here. */
@@ -364,7 +404,13 @@
    elements (fixed-ch nutrient inputs, verdict tier sub-labels, rail pills, ellipsis eyebrow)
    are held at 0.6rem so the tight grids do not reflow. */
 .vd { --ds-text-micro: var(--ds-text-mini); }
-.vd :is(.vd-amt, .vd-unit, .vd-tier__c small, .vd-pill, .vd-card__eyebrow) { font-size: 0.6rem; }
+.vd :is(.vd-tier__c small, .vd-pill, .vd-card__eyebrow) { font-size: 0.6rem; }
+/* The nutrient row's three inputs read at one size. They were 0.6rem/xs -- annotation scale --
+   on the one surface where typing into them IS the task, so an empty row said nothing about
+   what belonged in it. Scoped to .vd-nrow so the Confirm grid changes and nothing else does. */
+.vd .vd-nrow :is(.vd-edit, .vd-amt, .vd-unit) { font-size: 0.95rem; font-weight: 500; }
+.vd .vd-nrow :is(.vd-amt, .vd-unit) { padding: 5px 7px; }
+.vd .vd-nrow .vd-edit { padding: 6px 11px; }
 .vd :is(.vd-step__state, .vd-cf-sec__n, .vd-nrow__amt, .vd-nrow__map, .vd-sug__lab, .vd-ing__lab, .vd-ocr__hint, .vd-cf__ref-h, .vd-reasons__h, .vd-cite, .vd-foot__prov, .vd-when, .vd-prog__note, .vd-error__m, .vd-cf-name__lab) { font-weight: 700; }
 
 /* ── Scanner rows: thumbnail lightbox · per-row delete · live OCR panel ── */
