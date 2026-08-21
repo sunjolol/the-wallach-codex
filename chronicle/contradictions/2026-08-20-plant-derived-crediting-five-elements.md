@@ -1,7 +1,11 @@
 # 2026-08-20 — Crediting chloride / germanium / sulfur / silica to the plant-derived meter
 
-**Status: SURFACED, NOT ACTIONED. Awaiting the owner's ruling.**
-**Tag: `[WALLACH-SOURCE-RULE: PROPOSED VIOLATION]` — turn 1 of the three-turn protocol.**
+**Status: CLOSED 2026-08-20 (evening) — see "RESOLVED" at the foot of this file.**
+**The body below is the ORIGINAL evidence trail and is kept verbatim, including the parts it got
+wrong. Read the resolution before acting on anything here: three of the four questions turned out
+to need NO source-rule override, and germanium's "presence-only" finding was backwards.**
+**Superseded tag: `[WALLACH-SOURCE-RULE: PROPOSED VIOLATION]` — turn 1 of the three-turn protocol.
+The override was never needed; the rulings implement Wallach rather than overriding him.**
 
 ## The instruction
 > "Chloride, Germanium, Sulfur, Silica, and Tin have NO product sources. They should be treated
@@ -108,3 +112,93 @@ Flipping `coverage_kind` in the canon alone would change **nothing**: `targets_d
 dose branch whenever a sealed dose claim exists and only falls through to canon's `coverage_kind`
 when none does. All five carry doses. Moving them to the group meter needs a code change giving
 canon precedence over the dose branch — not a one-field data edit.
+
+---
+
+# RESOLVED 2026-08-20 (evening). All four questions answered by the owner. Do not re-litigate.
+
+**Status: CLOSED.** Everything above this line is the evidence trail that led here; it stands as
+written, including the parts that turned out to be wrong. Below is what was actually ruled and
+shipped in commit `972ade59`.
+
+## The correction that changed the shape of the whole question
+
+The file above concluded these were all one question. **They were four different questions**, and
+three of them needed no source-rule override at all. What settled it was reading Wallach's *own
+assay of the vehicle*, and then the *role* of each stated number, rather than arguing about
+presence.
+
+### The assay — measured, and it kills the "optimal amounts" premise outright
+
+The owner's stated premise was that the liquid PDM products "contain them in optimal amounts."
+Wallach's own spark-source mass-spec of humic shale — printed TWICE, byte-identical between the
+Epigenetics ch.18 printing and Rare Earths Table 10-5 — gives:
+
+| element | ppm in the table | delivered at his own dose (1.54 fl oz/day, 154 lb) | his target | coverage |
+|---|---|---|---|---|
+| silver | 0.2 | 9.1 mcg | 400 mcg | **2.3%** |
+| tin | 0.03 | 1.4 mcg | 500 mcg | **0.27%** |
+| germanium | **<0.01** | <0.46 mcg | 30 mg | **0.0015%** |
+
+Reading ppm as mg/kg of solids instead of mg/L of liquid makes every figure ~50x WORSE, not better.
+Both readings agree. Germanium's own entry is *below detection*. So "the formula contains them in
+optimal amounts" is contradicted by Wallach's own book, and crediting the vehicle on that premise
+would have been the unfalsifiable green this file warned about.
+
+## TIN — VEHICLE-SUPPLIED. Not an override; this IMPLEMENTS him.
+
+The file above already found the key fact and under-weighted it. A sweep of all 7 books finds **no
+food source for tin anywhere**, while the vehicle is named as its route in **two books sixteen years
+apart** — `WAL-CLM-LETS-000451` (1995) and `WAL-CLM-DDDL-000406/465/466` (2011) — plus
+`WAL-CLM-DDDL-000287`, where he records his own hair regrowth *using plant-derived liquid colloidal
+tin*. That is a supply instruction, not presence on a roster.
+
+**This REVERSES the 2026-08-19 dual-status ruling**, at the owner's direction. Tin keeps its own
+500 mcg dose and still covers numerically; the vehicle is an ADDITIONAL route and `classify()` takes
+the better of the two verdicts. Membership + citations live in `trace-mineral-vehicles.json`
+(`vehicle_supplied`), and `targets_derive._vehicle_supplied` refuses to build on a citation that
+does not resolve to a sealed claim — the gate this file said was missing.
+
+## SILVER — the 400 mcg was never a requirement. A defect of ROLE, not of value.
+
+The board had been demanding 400 mcg/day, so the best product in the catalogue looked like it needed
+ten servings. Three findings:
+
+1. His only sentence is a **tolerance**: *"Humans can consume 400 mcg of silver per day"*
+   (`WAL-CLM-DDDL-000013`; identical in Immortality 2008 as `IMMORT-000027`). "Can consume", never
+   "requires" — and he puts his own following "deficiency" in scare quotes.
+2. **Silver has NO ROW in the Base Line Nutritional Supplement Program** — the True Supplement Need
+   table that IS the source of tin's 500 mcg, sulphur's 500 mg, sodium's 3,300 mg. Not an OCR drop:
+   `WAL-CLM-LETS-000064` prints RIBOFLAVIN and SELENIUM adjacent, so nothing sits between them.
+3. The **newest** book denies the requirement outright: silver *"is not required by any known
+   biological system"* (`WAL-CLM-EPIGEN-000064`, Epigenetics 2014).
+
+Shipped as `CEILING_NOT_TARGET` — the target carries `ceiling` with no `low`, so it covers on a
+genuine source (Colloidal Silver at 40 mcg now covers it) and the page shows the figure labelled as
+the upper limit it is. **Silver is NOT vehicle-supplied** and a PDM bottle does not cover it.
+
+## GERMANIUM — diet-routed, and the file above had this backwards too
+
+"PRESENCE-ONLY with active COUNTER-evidence" was the wrong frame. Wallach names germanium foods
+explicitly: *"found in significant amounts in a variety of plants including mushrooms, ginseng,
+garlic"* (`WAL-CLM-LETS-000183`), with `EPIGEN-000309` / `RARE-000013` putting the
+germanium-accumulating plants at **100 to 2,000 ppm** against traces in ordinary food. It got a diet
+note like the other diet-routed essentials. No product carries germanium, so the sources block was
+taught to render on a note alone.
+
+## CHLORIDE / SULFUR / SILICA — unchanged, and the reasoning above still holds
+
+None of these are vehicle-supplied. They carry diet notes naming real food sources.
+
+## The gate hole this created, recorded because it proves the file's own warning
+
+Moving silver's number from `low` to `ceiling` **removed it from §00.A audit and the board stayed
+94/94** — green *because of* the change. `amounts_wallach_only` now audits a ceiling identically and
+requires a short kebab `ceiling_reason`; 4 new negative controls, 17/17.
+
+## What is STILL open
+
+The 90/90 composition gap for **silver and germanium**. Neither has a product row in the pillar
+(germanium has zero occurrences in the whole file). That is a COMPOSITION-DATA question needing the
+owner's Youngevity label figures and a USER-ONLY seal — not a doctrine question, and not answered
+here.
