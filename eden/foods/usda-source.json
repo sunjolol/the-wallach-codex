@@ -1,0 +1,188 @@
+{
+ "_purpose": "The pinned OUTSIDE composition source for the foods recommender. USDA FoodData Central, SR Legacy release 2018-04 -- a US Government work in the public domain. It supplies COMPOSITION ONLY: how much of a nutrient is in a food, and how much a household portion weighs. It supplies NO target, dose, range, daily amount, deficiency sign or health claim -- every denominator in this app remains Dr. Wallach's. Ruled admissible by Luneth on 2026-08-21; see chronicle/contradictions/2026-08-21-usda-food-composition-third-source.md for the full reasoning, including that Wallach himself quantifies foods in USDA units (Hell's Kitchen: cashews, pistachios, hazelnuts) and cites USDA food tables by name (Immortality), and that this project already ships the USDA's 277-food ORAC list on his citation.",
+ "_archive_is_gitignored": "The 6 MB archive itself is NOT committed (see .gitignore). It is re-downloadable in one command from `url` and verified against `sha256`. The rows this app actually uses are committed byte-exact in usda-extract.csv, so the composition gate runs on a fresh clone with no download.",
+ "dataset": "FoodData Central -- SR Legacy",
+ "release": "2018-04",
+ "url": "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+ "retrieved": "2026-08-21",
+ "publisher": "U.S. Department of Agriculture, Agricultural Research Service",
+ "licence": "Public domain (17 U.S.C. 105 -- work of the U.S. Government). No attribution required; attributed anyway.",
+ "archive": {
+  "filename": "FoodData_Central_sr_legacy_food_csv_2018-04.zip",
+  "sha256": "b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+  "bytes": 6074592
+ },
+ "members_read": {
+  "food.csv": {
+   "sha256": "de8b0390058db4f102368c9fbdfde144790b480ff4cb0507c0e060ef99805dee",
+   "bytes": 793104,
+   "role": "fdc_id -> description, food_category_id"
+  },
+  "food_nutrient.csv": {
+   "sha256": "6d07e6fc062b09750c4d95112be5a5cdb56a2346efcfd0c96b7a7d705812d4bd",
+   "bytes": 36366059,
+   "role": "(fdc_id, nutrient_id) -> amount per 100 g. THE composition numbers."
+  },
+  "food_portion.csv": {
+   "sha256": "6332e29da61e13f7bd950b759461af73303c76e8b0e64dc9df4e41d5347cf3d1",
+   "bytes": 918790,
+   "role": "portion id -> gram_weight for a household measure. THE serving sizes."
+  },
+  "nutrient.csv": {
+   "sha256": "466ab9d011094cc1ad8d939b246693988b56817c42d0e40a98820723695c6084",
+   "bytes": 21464,
+   "role": "nutrient_id -> name, unit_name"
+  },
+  "food_category.csv": {
+   "sha256": "a8e05c18cf010d44303f2a02765637a21f9ad621f90b4f811ab4a4a436cfedd9",
+   "bytes": 997,
+   "role": "food_category_id -> description"
+  },
+  "measure_unit.csv": {
+   "sha256": "c1396ffebbe6337260fe4de6276aa91847c7f41ff31a4f69080764a5b36ba155",
+   "bytes": 1955,
+   "role": "measure_unit_id -> name, for rendering a portion label"
+  }
+ },
+ "nutrient_map": {
+  "_purpose": "The ONLY place a Wallach essential slug is bound to a USDA nutrient id. One home (Charter R3). `usda_unit` is copied from nutrient.csv and the gate re-reads it -- it is never assumed. An essential absent from this map has NO USDA composition and is therefore unreachable by any food, which is stated honestly rather than filled in.",
+  "sodium": {
+   "nutrient_id": "1093",
+   "usda_unit": "MG"
+  },
+  "magnesium": {
+   "nutrient_id": "1090",
+   "usda_unit": "MG"
+  },
+  "potassium": {
+   "nutrient_id": "1092",
+   "usda_unit": "MG"
+  },
+  "calcium": {
+   "nutrient_id": "1087",
+   "usda_unit": "MG"
+  },
+  "copper": {
+   "nutrient_id": "1098",
+   "usda_unit": "MG"
+  },
+  "iron": {
+   "nutrient_id": "1089",
+   "usda_unit": "MG"
+  },
+  "manganese": {
+   "nutrient_id": "1101",
+   "usda_unit": "MG"
+  },
+  "selenium": {
+   "nutrient_id": "1103",
+   "usda_unit": "UG"
+  },
+  "zinc": {
+   "nutrient_id": "1095",
+   "usda_unit": "MG"
+  },
+  "vitamin-a": {
+   "nutrient_id": "1106",
+   "usda_unit": "UG",
+   "note": "Retinol Activity Equivalents, the form Wallach's mcg target is stated in."
+  },
+  "vitamin-b1": {
+   "nutrient_id": "1165",
+   "usda_unit": "MG"
+  },
+  "vitamin-b2": {
+   "nutrient_id": "1166",
+   "usda_unit": "MG"
+  },
+  "vitamin-b3": {
+   "nutrient_id": "1167",
+   "usda_unit": "MG"
+  },
+  "vitamin-b5": {
+   "nutrient_id": "1170",
+   "usda_unit": "MG"
+  },
+  "vitamin-b6": {
+   "nutrient_id": "1175",
+   "usda_unit": "MG"
+  },
+  "vitamin-b9": {
+   "nutrient_id": "1177",
+   "usda_unit": "UG",
+   "note": "Folate, total."
+  },
+  "vitamin-b12": {
+   "nutrient_id": "1178",
+   "usda_unit": "UG"
+  },
+  "vitamin-c": {
+   "nutrient_id": "1162",
+   "usda_unit": "MG"
+  },
+  "vitamin-d": {
+   "nutrient_id": "1114",
+   "usda_unit": "UG",
+   "note": "D2 + D3."
+  },
+  "vitamin-e": {
+   "nutrient_id": "1109",
+   "usda_unit": "MG",
+   "note": "alpha-tocopherol."
+  },
+  "vitamin-k": {
+   "nutrient_id": "1185",
+   "usda_unit": "UG",
+   "note": "Phylloquinone (K1)."
+  },
+  "choline": {
+   "nutrient_id": "1180",
+   "usda_unit": "MG",
+   "note": "Choline, total."
+  }
+ },
+ "no_usda_composition": {
+  "_purpose": "Essentials that carry a numeric Wallach target but which SR Legacy does not measure. They are listed so the gap is explicit and auditable rather than silently absent. ★ THIS IS A GAP IN *THIS* SOURCE, NOT A VERDICT ON THE FOOD WORLD. On 2026-08-21 Luneth ruled that other reputable published sources may be pinned to reach them; iodine, flavonoids and silica are reached that way today, bound in eden/foods/sources/sources.json's `nutrient_bindings`, which is authoritative for any slug it names. The rest of this list still has no food source anywhere we hold and is still stated as a gap. NEVER fill one from a source that is not pinned, sha256-checked and re-extractable by the gate.",
+  "slugs": [
+   "sulfur",
+   "chloride",
+   "boron",
+   "chromium",
+   "germanium",
+   "iodine",
+   "molybdenum",
+   "silica",
+   "vanadium",
+   "tin",
+   "biotin",
+   "inositol",
+   "flavonoids"
+  ]
+ },
+ "display": "USDA FoodData Central",
+ "_display_why": "The words the CARD uses for this source in the provenance gloss that sits on the number. Kept here, not in a view: a source name hand-typed into TypeScript is a second home for a fact (R3), and it is how a card keeps saying 'USDA' about a number that stopped coming from USDA.",
+ "support_nutrients": {
+  "_purpose": "USDA nutrients the EXTRACT must carry that are NOT credited to any essential. They are not in nutrient_map because nothing on screen is measured against them; they are inputs to arithmetic. Keeping them in a separate list is what stops one from ever being mistaken for a Wallach-targeted essential (section 00.A).",
+  "water": {
+   "nutrient_id": "1051",
+   "usda_unit": "G",
+   "why": "Doleman 2017 publishes sulphur in umoles per gram of FREEZE-DRIED sample and never prints a moisture percentage, so the fresh-weight number a person needs has to be derived: dry_matter_fraction = 1 - water/100. This is that water."
+  },
+  "linoleic": {
+   "nutrient_id": "1269",
+   "usda_unit": "G",
+   "why": "PUFA 18:2 — linoleic acid, one of Wallach's two essential fatty acids ('only two (linoleic and linolenic) are designated as Essential Fatty Acids'). The AGGREGATE 18:2 is used, not the specific 1316 (18:2 n-6 c,c): aggregate covers 186 of 190 catalog foods where the specific form covers 26."
+  },
+  "linolenic": {
+   "nutrient_id": "1270",
+   "usda_unit": "G",
+   "why": "PUFA 18:3 — linolenic acid, the other EFA. Aggregate for the same reason as 18:2: 1404 (the specific ALA) covers only 33 of 190 foods."
+  },
+  "conjugated_linoleic": {
+   "nutrient_id": "1311",
+   "usda_unit": "G",
+   "why": "PUFA 18:2 CLAs — SUBTRACTED from the 18:2 aggregate, because the aggregate includes it and conjugated linoleic acid is not the essential fatty acid Wallach names. 0-0.7% of 18:2 in the nuts and seeds that qualify."
+  },
+  "_efa_why_here": "These three are NOT in nutrient_map and must never be: omega-3 and omega-6 carry no individual Wallach target — he states ONE amount for the essential fatty acids as a category — so a food credited against either would be measured against a number that does not exist. They are inputs to the EFA aggregate instead, which is the same shape the 34 plant-derived minerals already use."
+ }
+}

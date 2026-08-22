@@ -15,9 +15,11 @@
  *   nutrient goal inclusion) · antiFlags (anti-list with gluten/oat/high-oleic
  *   nuance) · decideVerdict (ADD/SAVE/REJECT ladder).
  *
- * gapFill's "current" = the assumed dietary baseline (corpus.dietaryBaseline)
- * plus the live regimen delivery from state/coverage.currentDelivery(), so a
- * label is always scored against what the user already takes.
+ * gapFill's "current" = the live regimen delivery from
+ * state/coverage.currentDelivery(), so a label is always scored against what the
+ * user already takes. The 26-entry ASSUMED DIETARY BASELINE that used to be added
+ * on top was retired on 2026-08-21 (owner ruling) when the real food catalog
+ * landed — see getEffectiveCoverage for why.
  *
  * Known limits, deliberate: container conflicts are inert — an OCR'd label
  * carries no container metadata, so containerFlag() always returns none. Goal
@@ -316,19 +318,30 @@ function alignmentScore(nutrients: ScanNutrient[]): Alignment {
 
 // ─── Gap-fill ────────────────────────────────────────────────────────────────
 
-/** Effective current coverage = dietary baseline (verbatim) + live regimen delivery. */
+/**
+ * Effective current coverage = what the user's REGIMEN actually delivers. Nothing else.
+ *
+ * ★ THE ASSUMED DIETARY BASELINE WAS RETIRED HERE (2026-08-21, owner ruling). This function
+ * used to ADD a 26-entry table of assumed daily dietary intake before measuring the gap, and
+ * then subtract the total from a Wallach target. Those 26 numbers were not Wallach's, not
+ * USDA's, and carried no provenance field at all — `chronicle/build-log.md` records only that
+ * they were migrated byte-for-byte out of a legacy JS literal, never where they came from.
+ * No gate could see them, and they made every gap look smaller than it was.
+ *
+ * It was removed in the same patch that landed the real food catalog, because the two are
+ * two hand-maintained homes for one fact — "how much of X a normal diet supplies" — which is
+ * Charter R3's exact prohibition. The food catalog answers that question with a byte-exact
+ * join into a pinned source and a gate that can prove it; the baseline answered it with
+ * numbers nobody could source. Keeping both would have meant shipping the ungated one anyway.
+ *
+ * EXPECTED EFFECT: gap-fill percentages go DOWN (gaps are now shown at full size) and the
+ * scanner's ADD verdicts become slightly more generous at the >= 10% gate. Both are the
+ * honest readings. If you want a diet credited here, add the FOOD to the regimen — that
+ * path is now real.
+ */
 function getEffectiveCoverage(): EffectiveCov {
-  const corpus = loadScanCorpus();
   const targets = getTargets();
   const live = currentDelivery();
-
-  const dbByTargetName: EffectiveCov = {};
-  for (const [dbKey, dbEntry] of Object.entries(corpus.dietaryBaseline)) {
-    const matched = matchEssential(dbKey);
-    if (matched !== null) {
-      dbByTargetName[matched.name] = { amount: dbEntry.amount, unit: dbEntry.unit };
-    }
-  }
 
   const base: EffectiveCov = {};
   for (const t of targets) {
@@ -338,13 +351,6 @@ function getEffectiveCoverage(): EffectiveCov {
     }
     const targetUnit = (tgt.unit ?? 'mg').toLowerCase();
     let amount = 0;
-    const dbEntry = dbByTargetName[t.name];
-    if (dbEntry !== undefined) {
-      const conv = unitConv(dbEntry.amount, dbEntry.unit, targetUnit);
-      if (conv !== null) {
-        amount += conv;
-      }
-    }
     const liveEntry = live.get(t.name);
     if (liveEntry !== undefined) {
       if (targetUnit === 'iu') {

@@ -1,0 +1,9495 @@
+{
+ "foods": {
+  "1": "Milk, whole, fluid",
+  "2": "Milk, reduced fat, fluid",
+  "3": "Milk, chocolate, reduced fat, fluid",
+  "4": "Milk, skim, fluid",
+  "10": "Cheese, American, processed",
+  "12": "Cheese, cheddar (sharp/mild)",
+  "13": "Beef, ground, pan-cooked",
+  "17": "Ham, cured (not canned), baked",
+  "18": "Pork chop, pan-cooked with oil",
+  "19": "Pork sausage (link/patty), pan-cooked",
+  "20": "Pork bacon, oven-cooked",
+  "22": "Lamb chop, pan-cooked with oil",
+  "26": "Turkey breast, oven-roasted",
+  "28": "Frankfurter (all beef/beef and pork), boiled",
+  "29": "Luncheon meat, bologna",
+  "34": "Fish sticks or patty, frozen, oven-cooked",
+  "37": "Eggs, hard-boiled",
+  "39": "Pork and beans, canned",
+  "42": "Lima beans, immature, frozen, boiled",
+  "46": "Peas, green, frozen, boiled",
+  "47": "Peanut butter, creamy",
+  "48": "Peanuts, dry roasted, salted",
+  "50": "Rice, white, enriched, cooked",
+  "51": "Oatmeal, plain, quick, cooked",
+  "52": "Cream of wheat (farina), enriched, cooked",
+  "53": "Corn/hominy grits, enriched, cooked",
+  "54": "Corn, frozen, boiled",
+  "55": "Corn, canned, drained solids",
+  "58": "Bread, white, enriched, pre-sliced",
+  "60": "Cornbread, homemade",
+  "62": "Bread, whole wheat, pre-sliced",
+  "63": "Tortilla, flour",
+  "65": "Muffin, blueberry",
+  "66": "Crackers, saltine",
+  "67": "Chips, tortilla",
+  "69": "Noodles, egg, enriched, boiled",
+  "71": "Cereal, corn flakes",
+  "74": "Cereal, bran with raisins",
+  "75": "Cereal, crisped rice",
+  "77": "Cereal, oat ring",
+  "78": "Apple, red, with peel, raw",
+  "79": "Orange, raw",
+  "80": "Banana, raw",
+  "81": "Watermelon, raw/frozen",
+  "83": "Peach, raw/frozen",
+  "84": "Applesauce, bottled",
+  "85": "Pear, with peel, raw",
+  "86": "Strawberry, raw/frozen",
+  "87": "Fruit cocktail, canned in light syrup, solids and liquids",
+  "88": "Grapes, seedless, red/green, raw",
+  "89": "Cantaloupe, raw/frozen",
+  "92": "Grapefruit, raw",
+  "95": "Raisins",
+  "97": "Avocado, raw",
+  "99": "Juice, apple, bottled",
+  "100": "Juice, grapefruit, bottled/cartoned",
+  "108": "Collards, fresh/frozen, boiled",
+  "109": "Lettuce, iceberg, raw",
+  "113": "Broccoli, fresh/frozen, boiled",
+  "114": "Celery, raw",
+  "115": "Asparagus, fresh/frozen, boiled",
+  "116": "Cauliflower, fresh/frozen, boiled",
+  "117": "Tomato, raw",
+  "121": "Green beans, fresh/frozen, boiled",
+  "122": "Green beans, canned, drained solids",
+  "123": "Cucumber, peeled, raw",
+  "125": "Pepper, bell, green, raw",
+  "126": "Squash, winter, fresh/frozen, boiled",
+  "128": "Onion, mature, raw",
+  "130": "Mushrooms, canned, drained solids",
+  "136": "Potato, peeled, boiled",
+  "137": "Potato, with peel, baked",
+  "138": "Chips, potato",
+  "145": "Chili con carne with beans, canned",
+  "146": "Macaroni and cheese, prepared from boxed mix",
+  "152": "Chicken potpie, frozen, heated",
+  "155": "Soup, chicken noodle, canned, condensed, prepared with water",
+  "156": "Soup, tomato, canned, condensed, prepared with water",
+  "161": "Pickles, dill, cucumber",
+  "162": "Margarine, salted",
+  "164": "Butter, salted",
+  "166": "Mayonnaise",
+  "167": "Cream, half and half",
+  "168": "Cream substitute, non-dairy, liquid",
+  "169": "Sugar, white, granulated",
+  "170": "Syrup, pancake",
+  "172": "Honey",
+  "173": "Ketchup, tomato",
+  "178": "Cake, chocolate with chocolate icing",
+  "183": "Cookies, chocolate chip",
+  "184": "Cookies, sandwich, with cr\u00e8me filling",
+  "185": "Pie, apple, fresh/frozen",
+  "186": "Pie, pumpkin, fresh/frozen",
+  "187": "Candy bar, milk chocolate, plain",
+  "190": "Gelatin dessert, strawberry",
+  "191": "Carbonated beverage, cola, regular",
+  "193": "Fruit drink, from powder",
+  "194": "Carbonated beverage, cola, diet",
+  "197": "Tea, brewed from tea bag",
+  "198": "Beer",
+  "200": "Alcohol, distilled, whiskey/scotch",
+  "205": "BF, beef and broth/gravy",
+  "211": "BF, vegetables and beef",
+  "212": "BF, vegetables and chicken",
+  "214": "BF, chicken noodle dinner",
+  "215": "BF, pasta, tomato and beef",
+  "216": "BF, turkey and rice",
+  "218": "BF, carrots",
+  "219": "BF, green beans",
+  "220": "BF, mixed vegetables",
+  "221": "BF, sweet potatoes",
+  "223": "BF, peas",
+  "225": "BF, applesauce",
+  "226": "BF, peaches",
+  "227": "BF, pears",
+  "230": "BF, juice, apple",
+  "235": "Yogurt, lowfat, fruit-flavored",
+  "236": "Cheese, Swiss",
+  "237": "Cream cheese",
+  "239": "Luncheon meat, ham",
+  "240": "Chicken breast, oven-roasted, skin removed",
+  "241": "Chicken nuggets, fast-food",
+  "244": "Shrimp, pre-cooked, shells removed, no tails",
+  "249": "Bagel, plain, toasted",
+  "250": "English muffin, plain, toasted",
+  "251": "Crackers, graham",
+  "252": "Crackers, butter-type",
+  "256": "Juice, pineapple, canned",
+  "257": "Juice, grape, bottled",
+  "258": "Potatoes, French fries, fast-food",
+  "263": "Brussels sprouts, fresh/frozen, boiled",
+  "264": "Mushrooms, raw",
+  "265": "Eggplant, fresh, peeled, boiled",
+  "268": "Mixed vegetables, frozen, boiled",
+  "286": "Ice cream, vanilla",
+  "288": "Popsicle, fruit-flavored",
+  "290": "Doughnut, cake-type, plain",
+  "291": "Brownie",
+  "292": "Cookies, sugar",
+  "293": "Candy, hard",
+  "294": "Pretzels, hard, salted",
+  "295": "Syrup, chocolate-flavored",
+  "296": "Jelly, grape",
+  "298": "Mustard, yellow, plain",
+  "299": "Olives, black, pitted",
+  "300": "Sour cream",
+  "305": "Coffee, brewed from ground",
+  "307": "Fruit drink (5% - 25% juice), canned or bottled",
+  "313": "BF, bananas",
+  "317": "BF, teething biscuits",
+  "318": "Salmon, steaks/fillets, baked",
+  "320": "BF, squash",
+  "323": "BF, cereal, oatmeal, dry, prepared with water",
+  "324": "BF, cereal, rice, dry, prepared with water",
+  "328": "BF, turkey and broth/gravy",
+  "332": "Cottage cheese, creamed, reduced fat",
+  "334": "Beef steak, loin/sirloin, oven-roasted",
+  "336": "Chicken breast, fried with skin, fast-food",
+  "337": "Chicken thigh, oven-roasted, skin removed",
+  "338": "Chicken leg, fried with skin, fast-food",
+  "339": "Catfish, pan-cooked with oil",
+  "340": "Tuna, canned in water, drained solids",
+  "341": "Beans, refried, canned",
+  "343": "Seeds, sunflower, shelled, salted, roasted",
+  "344": "Pancakes, frozen, heated",
+  "345": "Breakfast tart/toaster pastry",
+  "347": "Spaghetti, enriched, boiled",
+  "350": "Fruit juice blend (100% juice), canned/bottled",
+  "351": "Juice, cranberry cocktail, bottled",
+  "352": "Juice, orange, bottled/cartoned",
+  "356": "Carrot, baby, raw",
+  "357": "Lettuce, leaf, raw",
+  "359": "Salsa, tomato, bottled",
+  "367": "Soup, ramen noodles, prepared with water",
+  "369": "Cake, white with white icing",
+  "371": "Candy bar, chocolate, nougat, with nuts",
+  "372": "Popcorn, microwave, butter-flavored",
+  "374": "Brown gravy, canned or bottled",
+  "377": "Salad dressing, Italian, regular",
+  "378": "Oil, olive",
+  "379": "Oil, vegetable",
+  "380": "Water, bottled, mineral/spring",
+  "385": "Sorbet, fruit-flavored",
+  "386": "Cinnamon roll, iced",
+  "387": "Cod, baked",
+  "388": "Tilapia, baked",
+  "389": "Salami, dry/hard",
+  "390": "Turkey, ground, pan-cooked",
+  "391": "Cheese, Monterey jack",
+  "392": "Cheese, mozzarella",
+  "393": "Ice cream, chocolate",
+  "394": "Milk shake, vanilla, fast-food",
+  "396": "Pineapple, raw/frozen",
+  "397": "Sweet potato, baked, peel removed",
+  "398": "Blueberries, raw",
+  "399": "Biscuits, fast-food",
+  "400": "Tortilla, corn",
+  "401": "Bread, white roll/bun (hamburger/hotdog)",
+  "402": "Rice, brown, cooked",
+  "403": "Walnuts, shelled",
+  "404": "Pizza, cheese, fast-food",
+  "405": "Sauce, barbecue",
+  "406": "Cabbage, raw",
+  "407": "Zucchini, fresh/frozen, boiled",
+  "408": "Spinach, raw",
+  "409": "Yogurt, frozen, vanilla",
+  "410": "Eggplant, baked with peel",
+  "411": "Kale, fresh, pan-cooked",
+  "412": "Mango, raw/frozen",
+  "413": "Garlic, raw",
+  "414": "Cashews, salted",
+  "500": "Alcohol, distilled, vodka",
+  "501": "Wine, red",
+  "502": "Wine, white",
+  "503": "Beverage, almond (non-dairy)",
+  "504": "Beverage, coconut water",
+  "505": "Beverage, energy",
+  "506": "Beverage, soy (non-dairy)",
+  "507": "Beverage, sports",
+  "508": "Carbonated beverage, lemon-lime, regular",
+  "509": "Meal replacement, liquid RTD, vanilla",
+  "510": "Powder, protein",
+  "511": "Candies, fruit snacks",
+  "512": "Cereal, granola",
+  "513": "Cereal, oat ring, honey",
+  "514": "Cereal, shredded wheat, frosted",
+  "515": "Cereal, whole wheat, cooked",
+  "516": "Salad dressing, ranch, low-calorie",
+  "517": "Salad dressing, ranch, regular",
+  "518": "Sauce, soy",
+  "519": "Sauce, tomato, canned",
+  "520": "Sauce, tomato, pasta",
+  "521": "Yogurt, lowfat, vanilla",
+  "522": "Quinoa, cooked",
+  "523": "Granola bar",
+  "524": "Juice, lemon",
+  "525": "Juice, tomato-vegetable",
+  "526": "Almonds, shelled",
+  "527": "Beans, black, canned, drained solids",
+  "528": "Beans, kidney, canned, drained solids",
+  "529": "Beans, pinto, canned, drained solids",
+  "530": "Beans, white, canned, drained solids",
+  "531": "Crackers, cheese",
+  "532": "Broth, chicken, cartoned",
+  "533": "Soup, broccoli cheese, canned, condensed, prepared with water",
+  "534": "Soup, clam chowder, New England, canned, ready to serve",
+  "535": "Soup, cream of mushroom, canned, condensed, prepared with water",
+  "536": "Soup, cream of potato, canned, condensed, prepared with water",
+  "537": "Soup, vegetable beef, canned, ready to serve",
+  "538": "Soup, vegetable, canned, ready to serve",
+  "539": "Pasta, rice noodles, cooked",
+  "540": "Pasta, whole wheat, cooked",
+  "541": "Pie crust",
+  "542": "Pudding, ready-to-eat, chocolate",
+  "543": "Luncheon meat, turkey",
+  "544": "Veggie burger",
+  "545": "Beans, garbanzo (chickpeas), canned, drained solids",
+  "546": "Lentils, dry, cooked",
+  "547": "Tofu, firm, plain, drained solids",
+  "701": "BF, cereal, mixed, dry, prepared with water",
+  "711": "BF, juice, pear",
+  "712": "BF, juice, grape",
+  "721": "BF, fruit yogurt dessert",
+  "728": "BF, vegetables and turkey",
+  "730": "BF, apples with berries",
+  "731": "BF, apples with fruit other than berries",
+  "732": "BF, macaroni and cheese with vegetables",
+  "733": "BF, finger foods, puffed snack",
+  "734": "BF, infant formula, milk-based, powdered, prepared with water",
+  "735": "BF, infant formula, soy-based, powdered, prepared with water",
+  "736": "BF, prunes",
+  "737": "BF, ravioli, cheese-filled, with tomato sauce",
+  "738": "BF, water, baby, bottled",
+  "740": "BF, mango, glass jar",
+  "741": "BF, mango, pouch",
+  "742": "BF, banana, blackberry & blueberry, plastic jar",
+  "743": "BF, banana & strawberry, glass jar",
+  "744": "BF, banana & blueberry, pouch",
+  "745": "BF, banana, apple & pear, plastic jar",
+  "746": "BF, organic pears & spinach, pouch",
+  "747": "BF, peas & spinach, glass jar",
+  "748": "BF, sweet potato, apple & spinach, pouch",
+  "749": "BF, pear, blueberry, apple & avocado, pouch",
+  "750": "BF, peas, green beans & avocado, pouch",
+  "751": "BF, apple, spinach & avocado, bowl/pouch",
+  "753": "BF, organic yogurt, apple, pumpkin, cinnamon & quinoa, pouch",
+  "754": "BF, turkey, quinoa, apple & sweet potato, pouch",
+  "755": "BF, apple & sweet potato with cinnamon, pouch",
+  "756": "BF, apple, sweet potato & pineapple, pouch",
+  "757": "BF, sweet potato, apple & corn, pouch",
+  "758": "BF, pumpkin, banana, papaya & cardamom, bowl",
+  "759": "BF, mango, carrot & turmeric, bowl",
+  "760": "BF, pear, mango, avocado, pouch",
+  "761": "BF, mango, yellow zucchini, corn & turmeric, pouch",
+  "762": "BF, juice, mixed fruit",
+  "763": "BF, yogurt, peach pear",
+  "764": "BF, cereal, oatmeal, dry",
+  "765": "BF, cereal, rice, dry",
+  "766": "BF, cereal, mixed, dry",
+  "767": "BF, infant formula, milk-based, powdered",
+  "768": "BF, infant formula, soy-based, powdered",
+  "900": "Flour, white, all-purpose",
+  "902": "Baking powder",
+  "903": "Breadcrumbs",
+  "904": "Salt, sea",
+  "909": "Salt, iodized",
+  "910": "Cocoa powder"
+ },
+ "values": {
+  "1": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 29.963,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 47.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 3.9556,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.1,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "2": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 32.8519,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 42.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 3.9259,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.4,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "3": {
+   "chromium": {
+    "mean": 1.9185,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 4.3,
+    "nonzero": 16
+   },
+   "iodine": {
+    "mean": 29.7407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 44.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 3.9704,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.6,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.4122,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.1,
+    "nonzero": 22
+   }
+  },
+  "4": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 32.4074,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 44.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 3.5963,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "10": {
+   "chromium": {
+    "mean": 31.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 45.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 50.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 17.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 19.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 14.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 17.0,
+    "nonzero": 3
+   }
+  },
+  "12": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 43.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 57.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 9.4259,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 12.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "13": {
+   "chromium": {
+    "mean": 3.463,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 60.0,
+    "nonzero": 5
+   },
+   "iodine": {
+    "mean": 7.8444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 19.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "17": {
+   "chromium": {
+    "mean": 2.2222,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.7741,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.9,
+    "nonzero": 6
+   },
+   "molybdenum": {
+    "mean": 0.1333,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.6,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "18": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.4741,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.8,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "19": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 4.2037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 11.0,
+    "nonzero": 20
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.1963,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.8,
+    "nonzero": 4
+   }
+  },
+  "20": {
+   "chromium": {
+    "mean": 2.963,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.9556,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.7,
+    "nonzero": 7
+   },
+   "molybdenum": {
+    "mean": 1.0852,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 4.3,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "22": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 2.6407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 12.0,
+    "nonzero": 17
+   },
+   "molybdenum": {
+    "mean": 0.1148,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.1,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "26": {
+   "chromium": {
+    "mean": 0.2185,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.9,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 5.8926,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 61.0,
+    "nonzero": 13
+   },
+   "molybdenum": {
+    "mean": 0.2593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.8,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.0481,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.3,
+    "nonzero": 1
+   }
+  },
+  "28": {
+   "chromium": {
+    "mean": 1.15,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 55.3091,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 1000.0,
+    "nonzero": 19
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "29": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 18.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 28.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 5.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.4,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "34": {
+   "chromium": {
+    "mean": 26.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 50.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 64.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 18.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 21.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "37": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 67.3333,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 120.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 17.3259,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 45.0,
+    "nonzero": 26
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "39": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 43.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 57.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "42": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 39.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 42.0,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "46": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 31.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 41.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.3667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.1,
+    "nonzero": 1
+   }
+  },
+  "47": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 86.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 130.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.5667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.7,
+    "nonzero": 1
+   }
+  },
+  "48": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 73.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 84.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "50": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2333,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.3,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 24.4815,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 37.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "51": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 15.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 16.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "52": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 3.5333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 6.1,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "53": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "54": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.0,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.6296,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.8,
+    "nonzero": 4
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "55": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 1.0667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.2,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "58": {
+   "chromium": {
+    "mean": 1.2926,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 5
+   },
+   "iodine": {
+    "mean": 267.3815,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 650.0,
+    "nonzero": 23
+   },
+   "molybdenum": {
+    "mean": 20.8889,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 26.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.9667,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.7,
+    "nonzero": 15
+   }
+  },
+  "60": {
+   "chromium": {
+    "mean": 20.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 38.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 49.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 17.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 18.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 1.7,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.2,
+    "nonzero": 3
+   }
+  },
+  "62": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 128.2185,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 610.0,
+    "nonzero": 18
+   },
+   "molybdenum": {
+    "mean": 32.6667,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 47.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.563,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.6,
+    "nonzero": 13
+   }
+  },
+  "63": {
+   "chromium": {
+    "mean": 3.0074,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 10
+   },
+   "iodine": {
+    "mean": 0.4074,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.5,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 22.1481,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 31.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.9407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.1,
+    "nonzero": 18
+   }
+  },
+  "65": {
+   "chromium": {
+    "mean": 0.2074,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.6,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 11.4074,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 19.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 11.9778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 21.0,
+    "nonzero": 26
+   },
+   "vanadium": {
+    "mean": 0.0481,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.3,
+    "nonzero": 1
+   }
+  },
+  "66": {
+   "chromium": {
+    "mean": 1.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 33.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 41.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 1.1,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.9,
+    "nonzero": 2
+   }
+  },
+  "67": {
+   "chromium": {
+    "mean": 4.5333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 3.7,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.5,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 16.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 18.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "69": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 4.1667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.4,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 4.4333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.1,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 1.0333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.7,
+    "nonzero": 2
+   }
+  },
+  "71": {
+   "chromium": {
+    "mean": 4.7667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.6,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 16.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 16.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "74": {
+   "chromium": {
+    "mean": 16.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 56.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 64.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 2.2333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.5,
+    "nonzero": 2
+   }
+  },
+  "75": {
+   "chromium": {
+    "mean": 5.1333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 82.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 91.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.0,
+    "nonzero": 1
+   }
+  },
+  "77": {
+   "chromium": {
+    "mean": 11.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 126.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 150.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 2.9667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.9,
+    "nonzero": 3
+   }
+  },
+  "78": {
+   "chromium": {
+    "mean": 0.2037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.5,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.0593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.6,
+    "nonzero": 4
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "79": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.1407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.0,
+    "nonzero": 8
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "80": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2296,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.5,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 4.0778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 18
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "81": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.137,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.8,
+    "nonzero": 7
+   },
+   "molybdenum": {
+    "mean": 0.1519,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 4.1,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "83": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2185,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 10
+   },
+   "molybdenum": {
+    "mean": 0.1556,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 4.2,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "84": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "85": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0852,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.7,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 0.137,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.7,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "86": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.6,
+    "nonzero": 18
+   },
+   "molybdenum": {
+    "mean": 8.3259,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 24
+   },
+   "vanadium": {
+    "mean": 0.0852,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 2
+   }
+  },
+  "87": {
+   "chromium": {
+    "mean": 4.0333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 6.6,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.2,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.3,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 3.1333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 9.4,
+    "nonzero": 1
+   }
+  },
+  "88": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3667,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.1,
+    "nonzero": 20
+   },
+   "molybdenum": {
+    "mean": 0.1444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.9,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.1,
+    "nonzero": 1
+   }
+  },
+  "89": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2815,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.3,
+    "nonzero": 15
+   },
+   "molybdenum": {
+    "mean": 0.5926,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.4,
+    "nonzero": 4
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "92": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.1222,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.7,
+    "nonzero": 9
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "95": {
+   "chromium": {
+    "mean": 5.2,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 8.1,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 9.7,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 2.9,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.0,
+    "nonzero": 3
+   }
+  },
+  "97": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2185,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.4,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.2778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.5,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "99": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.1667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.5,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "100": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 15.7333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 46.0,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "108": {
+   "chromium": {
+    "mean": 0.2778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.5,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.7481,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.4,
+    "nonzero": 4
+   },
+   "molybdenum": {
+    "mean": 9.8111,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 67.0,
+    "nonzero": 20
+   },
+   "vanadium": {
+    "mean": 0.3889,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.4,
+    "nonzero": 7
+   }
+  },
+  "109": {
+   "chromium": {
+    "mean": 0.3704,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.137,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.5,
+    "nonzero": 6
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "113": {
+   "chromium": {
+    "mean": 1.1111,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.6148,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.7,
+    "nonzero": 19
+   },
+   "molybdenum": {
+    "mean": 2.6222,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 9.4,
+    "nonzero": 13
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "114": {
+   "chromium": {
+    "mean": 0.2556,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.9,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 1.9333,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 8.9,
+    "nonzero": 24
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "115": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.0037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.9,
+    "nonzero": 25
+   },
+   "molybdenum": {
+    "mean": 0.6852,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.3,
+    "nonzero": 5
+   },
+   "vanadium": {
+    "mean": 0.5407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.7,
+    "nonzero": 9
+   }
+  },
+  "116": {
+   "chromium": {
+    "mean": 2.2222,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 60.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.7,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.0,
+    "nonzero": 18
+   },
+   "molybdenum": {
+    "mean": 0.2222,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "117": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 10
+   },
+   "molybdenum": {
+    "mean": 2.7333,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 11.0,
+    "nonzero": 15
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "121": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.7926,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 20
+   },
+   "molybdenum": {
+    "mean": 21.963,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 86.0,
+    "nonzero": 24
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "122": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 6.6,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "123": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.4926,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.1,
+    "nonzero": 23
+   },
+   "molybdenum": {
+    "mean": 3.6222,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 8.9,
+    "nonzero": 19
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "125": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2481,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.7,
+    "nonzero": 11
+   },
+   "molybdenum": {
+    "mean": 1.0222,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.3,
+    "nonzero": 5
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "126": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.9556,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.3,
+    "nonzero": 22
+   },
+   "molybdenum": {
+    "mean": 1.9407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.4,
+    "nonzero": 11
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "128": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2963,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.6,
+    "nonzero": 14
+   },
+   "molybdenum": {
+    "mean": 0.4296,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 4.4,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "130": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "136": {
+   "chromium": {
+    "mean": 0.2333,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.3,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 2.3704,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 64.0,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 2.563,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 9.5,
+    "nonzero": 13
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "137": {
+   "chromium": {
+    "mean": 0.4593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.9,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.3296,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.2,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 6.1407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 17.0,
+    "nonzero": 21
+   },
+   "vanadium": {
+    "mean": 3.2815,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 16.0,
+    "nonzero": 25
+   }
+  },
+  "138": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 14.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 17.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "145": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 41.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 58.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.6,
+    "nonzero": 2
+   }
+  },
+  "146": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 16.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 18.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 7.7333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.3,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "152": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 4.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 9.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 11.7,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 15.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "155": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.7667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.9,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "156": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.6,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.9,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 2.2,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 6.6,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "161": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.4,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "162": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "164": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 4.4333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.9,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "166": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 3.4333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.1,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "167": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 28.5556,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 39.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 4.1667,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.4,
+    "nonzero": 21
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "168": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.5,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.6,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "169": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "170": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.1333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.4,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "172": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.8,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.7,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 3.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.6,
+    "nonzero": 3
+   }
+  },
+  "173": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.8333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 4.9333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 9.0,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.3667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.1,
+    "nonzero": 1
+   }
+  },
+  "178": {
+   "chromium": {
+    "mean": 25.5556,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 27
+   },
+   "iodine": {
+    "mean": 8.3407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 17.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 8.6852,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 13.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 3.1444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 4.5,
+    "nonzero": 27
+   }
+  },
+  "183": {
+   "chromium": {
+    "mean": 26.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 17.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 18.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 6.2333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.9,
+    "nonzero": 3
+   }
+  },
+  "184": {
+   "chromium": {
+    "mean": 46.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 60.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 18.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 26.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 5.3,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 6.2,
+    "nonzero": 3
+   }
+  },
+  "185": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 16.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 19.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "186": {
+   "chromium": {
+    "mean": 1.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 21.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 23.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 14.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 17.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.4667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.4,
+    "nonzero": 1
+   }
+  },
+  "187": {
+   "chromium": {
+    "mean": 43.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 50.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 43.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 50.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 11.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 11.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 3.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.1,
+    "nonzero": 3
+   }
+  },
+  "190": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.0333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.4,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "191": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.5,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.2133,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.64,
+    "nonzero": 1
+   }
+  },
+  "193": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "194": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.6,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.2833,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.85,
+    "nonzero": 1
+   }
+  },
+  "197": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "198": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.8333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.4533,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.83,
+    "nonzero": 2
+   }
+  },
+  "200": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "205": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.225,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 2.1,
+    "nonzero": 6
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "211": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 7.5333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.8,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "212": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.9,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 6.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.8,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "214": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.325,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 7.2,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 9.9,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "215": {
+   "chromium": {
+    "mean": 2.4375,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 8.6,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 2.125,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 4.6,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 7.7125,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 9.7,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "216": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.625,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 1.8,
+    "nonzero": 7
+   },
+   "molybdenum": {
+    "mean": 5.85,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 7.1,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "218": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 14,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.55,
+    "n": 14,
+    "unit": "ug/100g",
+    "max": 1.4,
+    "nonzero": 11
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 14,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 14,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "219": {
+   "chromium": {
+    "mean": 0.625,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 5.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.4375,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 5.4125,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 7.3,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "220": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.5125,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.9,
+    "nonzero": 7
+   },
+   "molybdenum": {
+    "mean": 8.4125,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 17.0,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.15,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 1
+   }
+  },
+  "221": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.45,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.8,
+    "nonzero": 7
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "223": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 20.875,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 33.0,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "225": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "226": {
+   "chromium": {
+    "mean": 1.0182,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 9.7,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.1091,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 0.9,
+    "nonzero": 6
+   },
+   "molybdenum": {
+    "mean": 0.1409,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 3.1,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.5455,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 1.3,
+    "nonzero": 11
+   }
+  },
+  "227": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.1375,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 1.1,
+    "nonzero": 1
+   }
+  },
+  "230": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.625,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 2.0,
+    "nonzero": 4
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "235": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 27.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 29.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 2.5,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.0,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "236": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 150.5185,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 440.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 7.437,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 9.8,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "237": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 24.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 27.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 6.5333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.6,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "239": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.0,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "240": {
+   "chromium": {
+    "mean": 0.7407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 1.0185,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 8.1,
+    "nonzero": 7
+   },
+   "molybdenum": {
+    "mean": 3.0259,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.0,
+    "nonzero": 17
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "241": {
+   "chromium": {
+    "mean": 9.7963,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 22
+   },
+   "iodine": {
+    "mean": 0.4815,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.8,
+    "nonzero": 4
+   },
+   "molybdenum": {
+    "mean": 10.9593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 15.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "244": {
+   "chromium": {
+    "mean": 0.6741,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.3,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 14.1111,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.7889,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.4,
+    "nonzero": 10
+   }
+  },
+  "249": {
+   "chromium": {
+    "mean": 2.1852,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 9
+   },
+   "iodine": {
+    "mean": 0.2852,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 27.4444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 37.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.137,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.7,
+    "nonzero": 2
+   }
+  },
+  "250": {
+   "chromium": {
+    "mean": 5.0444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 13
+   },
+   "iodine": {
+    "mean": 0.5481,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.0,
+    "nonzero": 4
+   },
+   "molybdenum": {
+    "mean": 23.8148,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.7407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.1,
+    "nonzero": 10
+   }
+  },
+  "251": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 58.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 61.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "252": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 46.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 50.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 1
+   }
+  },
+  "256": {
+   "chromium": {
+    "mean": 4.6333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.3,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.1333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.4,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.23,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.69,
+    "nonzero": 1
+   }
+  },
+  "257": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.4,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.5,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 5.5333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.3,
+    "nonzero": 3
+   }
+  },
+  "258": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.5407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.3,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 5.8926,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 12.0,
+    "nonzero": 24
+   },
+   "vanadium": {
+    "mean": 0.1111,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.8,
+    "nonzero": 2
+   }
+  },
+  "263": {
+   "chromium": {
+    "mean": 0.2259,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.1,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 7.7407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 14.0,
+    "nonzero": 26
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "264": {
+   "chromium": {
+    "mean": 0.5481,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 9.5,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.2778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.1,
+    "nonzero": 19
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "265": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2833,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 1.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "268": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 10.2,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 15.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "286": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 36.5926,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 47.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 8.337,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 15.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.1704,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.2,
+    "nonzero": 3
+   }
+  },
+  "288": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 226.7667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 530.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "290": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 6.2,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.2,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 13.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 16.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "291": {
+   "chromium": {
+    "mean": 23.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 7.5,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 9.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 14.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 18.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 1.5333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.3,
+    "nonzero": 2
+   }
+  },
+  "292": {
+   "chromium": {
+    "mean": 1.7333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.2,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 2.3,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.4,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 23.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 27.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.7,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.1,
+    "nonzero": 2
+   }
+  },
+  "293": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.5,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.8,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 7.5,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 9.3,
+    "nonzero": 3
+   }
+  },
+  "294": {
+   "chromium": {
+    "mean": 2.3667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.1,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 45.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 48.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "295": {
+   "chromium": {
+    "mean": 50.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 60.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.4667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.7,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 2.3667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.6,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 5.2333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.2,
+    "nonzero": 3
+   }
+  },
+  "296": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.6,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 2.5667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.8,
+    "nonzero": 3
+   }
+  },
+  "298": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 7.6,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 1.7333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.0,
+    "nonzero": 3
+   }
+  },
+  "299": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 1.8,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.0,
+    "nonzero": 3
+   }
+  },
+  "300": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 29.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 33.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 7.2,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.7,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "305": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "307": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.0333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.2167,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.65,
+    "nonzero": 1
+   }
+  },
+  "313": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2625,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 1.7,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "317": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 25.75,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 28.0,
+    "nonzero": 8
+   },
+   "molybdenum": {
+    "mean": 35.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 50.0,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 2.625,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 3.8,
+    "nonzero": 8
+   }
+  },
+  "318": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 12.1593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 29.0,
+    "nonzero": 26
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.1667,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.4,
+    "nonzero": 3
+   }
+  },
+  "320": {
+   "chromium": {
+    "mean": 10.8375,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 7
+   },
+   "iodine": {
+    "mean": 0.525,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 3.4,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 8.0,
+    "nonzero": 6
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "323": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 22.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 22.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "324": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 13,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 13,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 14.3846,
+    "n": 13,
+    "unit": "ug/100g",
+    "max": 21.0,
+    "nonzero": 13
+   },
+   "vanadium": {
+    "mean": 0.1,
+    "n": 13,
+    "unit": "ug/100g",
+    "max": 1.3,
+    "nonzero": 1
+   }
+  },
+  "328": {
+   "chromium": {
+    "mean": 0.65,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 5.2,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 1.175,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 2.5,
+    "nonzero": 7
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "332": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 42.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 47.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 5.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 6.6,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "334": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 4.8519,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 8.4,
+    "nonzero": 26
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "336": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 3.863,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 23
+   },
+   "molybdenum": {
+    "mean": 7.937,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 15.0,
+    "nonzero": 26
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "337": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.7444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 9.5,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 4.1593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.8,
+    "nonzero": 21
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "338": {
+   "chromium": {
+    "mean": 0.2333,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.3,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 2.3778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.7,
+    "nonzero": 19
+   },
+   "molybdenum": {
+    "mean": 8.7185,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 15.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "339": {
+   "chromium": {
+    "mean": 0.9481,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 2.9667,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.6,
+    "nonzero": 17
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "340": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 10.5667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 12.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "341": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.8333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.5,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 61.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 64.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "343": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 30.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "344": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 6.6,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.2,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 21.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 22.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "345": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 16.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 18.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "347": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.9333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.8,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 8.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 11.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "350": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.2,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.4,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.1067,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.32,
+    "nonzero": 1
+   }
+  },
+  "351": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.7,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "352": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 2.6,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.3,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "356": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.4926,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.6,
+    "nonzero": 4
+   },
+   "molybdenum": {
+    "mean": 0.1407,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.8,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 1
+   }
+  },
+  "357": {
+   "chromium": {
+    "mean": 0.7444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 8.7,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 1.0889,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 8.0,
+    "nonzero": 26
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 1.6926,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 5.5,
+    "nonzero": 19
+   }
+  },
+  "359": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.8,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.9,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 6.7333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.6,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "367": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 5.4667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.9,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "369": {
+   "chromium": {
+    "mean": 1.2444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 5
+   },
+   "iodine": {
+    "mean": 19.8593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 310.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 5.2,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 9.8,
+    "nonzero": 22
+   },
+   "vanadium": {
+    "mean": 0.2556,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.5,
+    "nonzero": 6
+   }
+  },
+  "371": {
+   "chromium": {
+    "mean": 3.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 17.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 19.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 21.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.4667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.4,
+    "nonzero": 1
+   }
+  },
+  "372": {
+   "chromium": {
+    "mean": 20.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.8333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.5,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 26.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "374": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.2,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.3,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "377": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.5667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.6,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.5333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.6,
+    "nonzero": 1
+   }
+  },
+  "378": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.5,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "379": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "380": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.2,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.3,
+    "nonzero": 11
+   }
+  },
+  "385": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.7,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.6,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.8,
+    "nonzero": 1
+   }
+  },
+  "386": {
+   "chromium": {
+    "mean": 0.7296,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.2,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 3.7704,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 12.0,
+    "nonzero": 19
+   },
+   "molybdenum": {
+    "mean": 13.4815,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 18.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.3852,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.5,
+    "nonzero": 9
+   }
+  },
+  "387": {
+   "chromium": {
+    "mean": 0.3222,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 8.7,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 169.5556,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 330.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 0.4444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 12.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.1667,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 4
+   }
+  },
+  "388": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 6.9296,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 81.0,
+    "nonzero": 26
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "389": {
+   "chromium": {
+    "mean": 1.063,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 9.6852,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 48.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 0.1667,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 4.5,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.6667,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 18.0,
+    "nonzero": 1
+   }
+  },
+  "390": {
+   "chromium": {
+    "mean": 2.3333,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 6
+   },
+   "iodine": {
+    "mean": 3.8593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 17.0,
+    "nonzero": 15
+   },
+   "molybdenum": {
+    "mean": 0.9259,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 4.2,
+    "nonzero": 7
+   },
+   "vanadium": {
+    "mean": 0.1593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.6,
+    "nonzero": 3
+   }
+  },
+  "391": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 41.2593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 77.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 8.6037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "392": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 50.037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 67.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 8.0778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 1
+   }
+  },
+  "393": {
+   "chromium": {
+    "mean": 18.8889,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 27
+   },
+   "iodine": {
+    "mean": 31.4074,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 42.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 7.7,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 11.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 2.5704,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 4.3,
+    "nonzero": 27
+   }
+  },
+  "394": {
+   "chromium": {
+    "mean": 13.0556,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 60.0,
+    "nonzero": 14
+   },
+   "iodine": {
+    "mean": 36.037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 47.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 5.037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.6,
+    "nonzero": 24
+   },
+   "vanadium": {
+    "mean": 0.437,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.1,
+    "nonzero": 9
+   }
+  },
+  "396": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3111,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.3,
+    "nonzero": 16
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "397": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.5296,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.2,
+    "nonzero": 23
+   },
+   "molybdenum": {
+    "mean": 2.8222,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 13.0,
+    "nonzero": 9
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "398": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 14
+   },
+   "molybdenum": {
+    "mean": 0.9259,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 12.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.537,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.1,
+    "nonzero": 9
+   }
+  },
+  "399": {
+   "chromium": {
+    "mean": 0.2519,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 6.8,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 8.7778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 14.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 18.6667,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 32.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.5481,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 10
+   }
+  },
+  "400": {
+   "chromium": {
+    "mean": 2.0852,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 7
+   },
+   "iodine": {
+    "mean": 0.3185,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.6,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 15.0741,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 32.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.3111,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 2.4,
+    "nonzero": 5
+   }
+  },
+  "401": {
+   "chromium": {
+    "mean": 0.9593,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 403.3963,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1400.0,
+    "nonzero": 20
+   },
+   "molybdenum": {
+    "mean": 20.7778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 28.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.5037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.0,
+    "nonzero": 4
+   }
+  },
+  "402": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 24.8519,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "403": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 16.4545,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 22.0,
+    "nonzero": 22
+   },
+   "vanadium": {
+    "mean": 0.0545,
+    "n": 22,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 1
+   }
+  },
+  "404": {
+   "chromium": {
+    "mean": 0.2778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.5,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 11.7815,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 17.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 17.4815,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 22.0,
+    "nonzero": 27
+   },
+   "vanadium": {
+    "mean": 0.3778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 1.5,
+    "nonzero": 9
+   }
+  },
+  "405": {
+   "chromium": {
+    "mean": 1.1444,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 9.8,
+    "nonzero": 4
+   },
+   "iodine": {
+    "mean": 2.6704,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 6.2704,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 11.0,
+    "nonzero": 25
+   },
+   "vanadium": {
+    "mean": 1.7333,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 3.7,
+    "nonzero": 22
+   }
+  },
+  "406": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 6.5037,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 14.0,
+    "nonzero": 24
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "407": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.5778,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 4.6,
+    "nonzero": 17
+   },
+   "molybdenum": {
+    "mean": 4.963,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 14.0,
+    "nonzero": 21
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "408": {
+   "chromium": {
+    "mean": 8.5259,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 19
+   },
+   "iodine": {
+    "mean": 6.7111,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 27
+   },
+   "molybdenum": {
+    "mean": 5.8259,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 8.4,
+    "nonzero": 23
+   },
+   "vanadium": {
+    "mean": 3.0074,
+    "n": 27,
+    "unit": "ug/100g",
+    "max": 7.9,
+    "nonzero": 27
+   }
+  },
+  "409": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 26,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 46.0,
+    "n": 26,
+    "unit": "ug/100g",
+    "max": 76.0,
+    "nonzero": 26
+   },
+   "molybdenum": {
+    "mean": 7.8423,
+    "n": 26,
+    "unit": "ug/100g",
+    "max": 15.0,
+    "nonzero": 24
+   },
+   "vanadium": {
+    "mean": 0.1269,
+    "n": 26,
+    "unit": "ug/100g",
+    "max": 1.1,
+    "nonzero": 3
+   }
+  },
+  "410": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 21,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.5905,
+    "n": 21,
+    "unit": "ug/100g",
+    "max": 1.4,
+    "nonzero": 15
+   },
+   "molybdenum": {
+    "mean": 4.4762,
+    "n": 21,
+    "unit": "ug/100g",
+    "max": 13.0,
+    "nonzero": 16
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 21,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "411": {
+   "chromium": {
+    "mean": 2.8333,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 1.8333,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 4.4,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 21.9333,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 53.0,
+    "nonzero": 6
+   },
+   "vanadium": {
+    "mean": 0.7167,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 2.9,
+    "nonzero": 2
+   }
+  },
+  "412": {
+   "chromium": {
+    "mean": 0.9,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 5.4,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.0667,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 0.4,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "413": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.9833,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 3.1,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 10.1,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 17.0,
+    "nonzero": 6
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 6,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "414": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 26.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 26.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "500": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "501": {
+   "chromium": {
+    "mean": 0.9667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.9,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 2.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.3,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.7667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.3,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 9.2667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 12.0,
+    "nonzero": 3
+   }
+  },
+  "502": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.9333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 7.5333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 9.0,
+    "nonzero": 3
+   }
+  },
+  "503": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.7667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.9,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.9667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.7,
+    "nonzero": 2
+   }
+  },
+  "504": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.5667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.8,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "505": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.1333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.4,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "506": {
+   "chromium": {
+    "mean": 3.3,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 6.5,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 2.8333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 88.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 96.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 2.0333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.4,
+    "nonzero": 3
+   }
+  },
+  "507": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "508": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.3,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.5,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "509": {
+   "chromium": {
+    "mean": 8.7333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 19.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 20.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 26.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "510": {
+   "chromium": {
+    "mean": 30.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 97.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 150.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 99.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 110.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 3.2667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.6,
+    "nonzero": 3
+   }
+  },
+  "511": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.6333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.9,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "512": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 10.7667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 13.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 73.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 81.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "513": {
+   "chromium": {
+    "mean": 13.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 86.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 97.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 3.3,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.7,
+    "nonzero": 3
+   }
+  },
+  "514": {
+   "chromium": {
+    "mean": 16.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 65.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 82.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 1.1667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.2,
+    "nonzero": 2
+   }
+  },
+  "515": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 5.6,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "516": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 7.7667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 8.2,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 3.1667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.8,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 1.6333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.0,
+    "nonzero": 3
+   }
+  },
+  "517": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 6.7,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.2,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 2.6,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.2,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "518": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.5,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.6,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 37.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 41.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 2.5,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.0,
+    "nonzero": 3
+   }
+  },
+  "519": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.7333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 8.9333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 9.1,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "520": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.6,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.1,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 5.4,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 6.3,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 1.1667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.3,
+    "nonzero": 3
+   }
+  },
+  "521": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 34.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 37.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 3.2333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.9,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "522": {
+   "chromium": {
+    "mean": 10.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 6.9667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 9.2,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.5,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.5,
+    "nonzero": 1
+   }
+  },
+  "523": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.0,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 67.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 74.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "524": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.5333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.2,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "525": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.7667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.3,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 4.9333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 6.2,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "526": {
+   "chromium": {
+    "mean": 11.5667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 46.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 53.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "527": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 75.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 84.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "528": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 60.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 61.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "529": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.9333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.8,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 66.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 85.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "530": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 54.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 65.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "531": {
+   "chromium": {
+    "mean": 3.8333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 6.3,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 10.5667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 18.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 21.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 26.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.0,
+    "nonzero": 1
+   }
+  },
+  "532": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.7,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.9,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "533": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 4.6333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 4.8,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "534": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 10.9333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 10.7667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 14.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.6,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.8,
+    "nonzero": 1
+   }
+  },
+  "535": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 2.2,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.3,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "536": {
+   "chromium": {
+    "mean": 2.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 6.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 3.2667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.7,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 2.2333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.5,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "537": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.8333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.9,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 2.3,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.6,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "538": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.9,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.9,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 5.7333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.9,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "539": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.8667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 6.3333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.6,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "540": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 10.6333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 12.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "541": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 1.1667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.5,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 14.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 16.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "542": {
+   "chromium": {
+    "mean": 6.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 13.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 15.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 1.0333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 3.1,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.9,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.4,
+    "nonzero": 2
+   }
+  },
+  "543": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 3.4667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.4,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "544": {
+   "chromium": {
+    "mean": 6.1333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 9.5333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 11.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 25.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 37.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 1.7,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.9,
+    "nonzero": 3
+   }
+  },
+  "545": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 95.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 95.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "546": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 37.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 37.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "547": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 25.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 25.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "701": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 11.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 11.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "711": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0875,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.4,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "712": {
+   "chromium": {
+    "mean": 0.3125,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 2.5,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.4875,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.6,
+    "nonzero": 8
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.565,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 1.1,
+    "nonzero": 5
+   }
+  },
+  "721": {
+   "chromium": {
+    "mean": 2.5,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 27.5,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 32.0,
+    "nonzero": 8
+   },
+   "molybdenum": {
+    "mean": 5.0125,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 6.0,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "728": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 2.9714,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 6.7,
+    "nonzero": 6
+   },
+   "molybdenum": {
+    "mean": 6.1571,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 6.8,
+    "nonzero": 7
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "730": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "731": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.225,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.5,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "732": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 7.625,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 8.8,
+    "nonzero": 8
+   },
+   "molybdenum": {
+    "mean": 5.8375,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 8.3,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "733": {
+   "chromium": {
+    "mean": 19.3,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 8
+   },
+   "iodine": {
+    "mean": 0.325,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 2.6,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 41.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 48.0,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "734": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 16.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 16.0,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "735": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 15.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 15.0,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "736": {
+   "chromium": {
+    "mean": 1.0375,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 8.3,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 1.0375,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 2.4,
+    "nonzero": 8
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "737": {
+   "chromium": {
+    "mean": 4.9,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 5
+   },
+   "iodine": {
+    "mean": 4.55,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 5.8,
+    "nonzero": 8
+   },
+   "molybdenum": {
+    "mean": 11.475,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 13.0,
+    "nonzero": 8
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "738": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 8,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "740": {
+   "chromium": {
+    "mean": 4.08,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 8.8,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.38,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.4,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "741": {
+   "chromium": {
+    "mean": 7.76,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 5
+   },
+   "iodine": {
+    "mean": 0.64,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.7,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "742": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.16,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.8,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 1.3,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 3.3,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "743": {
+   "chromium": {
+    "mean": 1.02,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 5.1,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.2,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.4,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 4.36,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 6.0,
+    "nonzero": 5
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "744": {
+   "chromium": {
+    "mean": 10.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 4
+   },
+   "iodine": {
+    "mean": 0.62,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.9,
+    "nonzero": 4
+   },
+   "molybdenum": {
+    "mean": 5.92,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 7.4,
+    "nonzero": 5
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "745": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "746": {
+   "chromium": {
+    "mean": 7.92,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 4
+   },
+   "iodine": {
+    "mean": 0.7,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 1.0,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 0.68,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 3.4,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "747": {
+   "chromium": {
+    "mean": 20.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 74.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 74.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 3.3,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 3.3,
+    "nonzero": 1
+   }
+  },
+  "748": {
+   "chromium": {
+    "mean": 36.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 60.0,
+    "nonzero": 5
+   },
+   "iodine": {
+    "mean": 1.06,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 1.3,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 11.42,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 15.0,
+    "nonzero": 5
+   },
+   "vanadium": {
+    "mean": 0.32,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 1.6,
+    "nonzero": 1
+   }
+  },
+  "749": {
+   "chromium": {
+    "mean": 3.64,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.36,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.6,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "750": {
+   "chromium": {
+    "mean": 17.5,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 5
+   },
+   "iodine": {
+    "mean": 0.4,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.5,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 31.8,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 50.0,
+    "nonzero": 5
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "751": {
+   "chromium": {
+    "mean": 9.6,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 5
+   },
+   "iodine": {
+    "mean": 2.5,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 2.7,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 3.06,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 4.3,
+    "nonzero": 4
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "753": {
+   "chromium": {
+    "mean": 10.05,
+    "n": 4,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 4
+   },
+   "iodine": {
+    "mean": 10.725,
+    "n": 4,
+    "unit": "ug/100g",
+    "max": 13.0,
+    "nonzero": 4
+   },
+   "molybdenum": {
+    "mean": 4.625,
+    "n": 4,
+    "unit": "ug/100g",
+    "max": 6.0,
+    "nonzero": 4
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 4,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "754": {
+   "chromium": {
+    "mean": 7.52,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 9.9,
+    "nonzero": 5
+   },
+   "iodine": {
+    "mean": 0.66,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.7,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 3.56,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 4.3,
+    "nonzero": 5
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "755": {
+   "chromium": {
+    "mean": 24.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 40.0,
+    "nonzero": 5
+   },
+   "iodine": {
+    "mean": 0.12,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.3,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 2.36,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 4.7,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "756": {
+   "chromium": {
+    "mean": 1.14,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 5.7,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.54,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.7,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 1.74,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 4.6,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.46,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 2
+   }
+  },
+  "757": {
+   "chromium": {
+    "mean": 3.38,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 0.8,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.9,
+    "nonzero": 5
+   },
+   "molybdenum": {
+    "mean": 4.82,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 5.7,
+    "nonzero": 5
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "758": {
+   "chromium": {
+    "mean": 16.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 30.0,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 0.2,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.3,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 5.1667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 7.2,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 1.2667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.2,
+    "nonzero": 2
+   }
+  },
+  "759": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.7,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 0.7,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.6,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 1
+   }
+  },
+  "760": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.12,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.6,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 5,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "761": {
+   "chromium": {
+    "mean": 5.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 1.45,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 1.6,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "762": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "763": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 32.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 37.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 4.6333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 5.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "764": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.4143,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 2.9,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 111.1429,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 140.0,
+    "nonzero": 7
+   },
+   "vanadium": {
+    "mean": 1.5,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 1.8,
+    "nonzero": 7
+   }
+  },
+  "765": {
+   "chromium": {
+    "mean": 20.0,
+    "n": 9,
+    "unit": "ug/100g",
+    "max": 20.0,
+    "nonzero": 9
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 9,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 64.8889,
+    "n": 9,
+    "unit": "ug/100g",
+    "max": 73.0,
+    "nonzero": 9
+   },
+   "vanadium": {
+    "mean": 3.5444,
+    "n": 9,
+    "unit": "ug/100g",
+    "max": 3.8,
+    "nonzero": 9
+   }
+  },
+  "766": {
+   "chromium": {
+    "mean": 2.7429,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 7.6,
+    "nonzero": 3
+   },
+   "iodine": {
+    "mean": 1.0,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 3.9,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 71.5714,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 78.0,
+    "nonzero": 7
+   },
+   "vanadium": {
+    "mean": 2.4714,
+    "n": 7,
+    "unit": "ug/100g",
+    "max": 3.5,
+    "nonzero": 7
+   }
+  },
+  "767": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 115.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 130.0,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 19.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 19.0,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "768": {
+   "chromium": {
+    "mean": 7.0,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 9.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 97.5,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 98.0,
+    "nonzero": 2
+   },
+   "molybdenum": {
+    "mean": 29.5,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 31.0,
+    "nonzero": 2
+   },
+   "vanadium": {
+    "mean": 1.75,
+    "n": 2,
+    "unit": "ug/100g",
+    "max": 1.9,
+    "nonzero": 2
+   }
+  },
+  "900": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.8333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 2.5,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 28.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 31.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "902": {
+   "chromium": {
+    "mean": 600.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 600.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 76.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 76.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 35.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 35.0,
+    "nonzero": 1
+   }
+  },
+  "903": {
+   "chromium": {
+    "mean": 5.0333,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 10.0,
+    "nonzero": 2
+   },
+   "iodine": {
+    "mean": 111.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 180.0,
+    "nonzero": 3
+   },
+   "molybdenum": {
+    "mean": 36.6667,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 37.0,
+    "nonzero": 3
+   },
+   "vanadium": {
+    "mean": 0.4,
+    "n": 3,
+    "unit": "ug/100g",
+    "max": 1.2,
+    "nonzero": 1
+   }
+  },
+  "904": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "909": {
+   "chromium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "iodine": {
+    "mean": 8900.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 8900.0,
+    "nonzero": 1
+   },
+   "molybdenum": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "vanadium": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   }
+  },
+  "910": {
+   "chromium": {
+    "mean": 370.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 370.0,
+    "nonzero": 1
+   },
+   "iodine": {
+    "mean": 0.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 0.0,
+    "nonzero": 0
+   },
+   "molybdenum": {
+    "mean": 43.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 43.0,
+    "nonzero": 1
+   },
+   "vanadium": {
+    "mean": 44.0,
+    "n": 1,
+    "unit": "ug/100g",
+    "max": 44.0,
+    "nonzero": 1
+   }
+  }
+ }
+}

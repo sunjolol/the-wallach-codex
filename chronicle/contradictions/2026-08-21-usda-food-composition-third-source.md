@@ -1,122 +1,170 @@
-# 2026-08-21 — Admitting an outside food-composition table as a third source
+# 2026-08-21 — USDA food composition as a composition source
 
-**Status: RAISED, awaiting the turn-gap. Not approved, not implemented.**
-Triggered by: Luneth, 2026-08-21, choosing "Quantitative — admit USDA composition" when asked what
-shape the foods recommender should take.
-Flag tag issued in chat: `[WALLACH-SOURCE-RULE: PROPOSED VIOLATION]`.
+**Status: CLOSED BY OWNER RULING — NOT a source-rule breach. Implemented the same day.**
+Raised by Claude, 2026-08-21. Ruled on by Luneth, 2026-08-21, in the same session.
+Flag tag issued in chat: `[WALLACH-SOURCE-RULE: PROPOSED VIOLATION]` (turns 1 and 2 both fired).
 
-## In plain terms
+> **The three-turn override was NOT completed, and deliberately so.** It does not apply. The
+> owner ruled — with the breach argument in full view — that admitting a per-food composition
+> table is not a change to §00.A at all. His reasoning is recorded below and is supported by
+> evidence that the original raise had missed. The phrase `APPROVE SOURCE-RULE OVERRIDE` was
+> never given and was never needed. **This is not a precedent for skipping the protocol; it is
+> a finding that this particular question was outside it.**
 
-Luneth wants the app to recommend foods, not just products — foods ranked by how much of a remaining
-gap each one actually closes, so a new user can cover all 90 from a handful of recommendations. That
-needs a number for how much of nutrient X is in one serving of food Y.
+## What was raised
 
-That number exists nowhere in this project and cannot be produced from the sealed sources. So the
-proposal is to bring in an outside food-composition table (USDA FoodData Central or equivalent) and
-let it supply those numbers — on the same footing Youngevity composition already occupies.
+Luneth wants the app to recommend foods, not just products — ranked by how much of a remaining
+gap each closes, so a new user can cover the 90 from a handful of recommendations. That needs a
+number for how much of nutrient X is in one serving of food Y. That number existed nowhere in
+this project and cannot be produced from the sealed sources: of 77 sealed `food_source` claims,
+**zero** carry a dose object, only 13 of the 90 essentials are named by any of them, and a regex
+probe of all seven book `.txt` sources (~5.7M chars) found approximately **one** genuine
+food-to-amount datapoint.
 
-The reason this stops here: the allowlist is written closed, and its composition clause names
-Youngevity specifically. A third composition source is not in it, however reasonable it is.
+The concern was that the allowlist is written closed and its composition clause names Youngevity
+specifically, so a third composition source looked like an amendment rather than an
+interpretation.
 
-## The proposal
+## The ruling, in the owner's words
 
-Admit an outside per-food nutrient-composition table as a **composition-only** source: valid for what
-a food *contains*, never for what anyone *should take*. Every target stays Wallach's. The food number
-would be a numerator measured against a Wallach denominator — the same arithmetic role a Youngevity
-label already plays.
+> "This is not a source rule override, Wallach already suggests foods for the same essentials
+> we're suggesting foods for, we're simply quantifying and qualifying what those foods are
+> WITHIN the Wallach framework of good foods vs bad foods, his lists are not exhaustive but his
+> reasoning is. […] If I said to 'add oats as a source' THAT would be a violation, but I'm not
+> saying this […] even Wallach himself references USDA sources for such purposes so again we
+> are doing nothing he doesn't do himself."
 
-Scope requested: enough foods to close the 90, ranked, appearing beside recommended products on both
-the Regimen and Coverage tabs.
+## The evidence that settles it — verified in the corpus, not asserted
 
-## The rule it conflicts with
+The original raise argued from the shape of the rule. It missed three facts that were sitting in
+the sealed corpus the whole time:
 
-`.claude/skills/wallach-source-rule/SKILL.md`, **The allowlist**, verbatim:
+1. **Wallach quantifies foods in USDA units himself.** *Hell's Kitchen*: a handful of cashews at
+   *20 percent of the USDA recommended daily allowance* of magnesium, 30% copper, 10% iron; a
+   handful of pistachios at *twenty five percent of the USDA recommended daily value* for B6;
+   24 hazelnuts at *ninety percent* of the USDA daily value for manganese, 20% vitamin E.
+2. **He cites USDA food tables by name.** *Immortality* references *"a USDA vitamin-A food
+   table"* and a USDA database comparing vitamin and mineral levels in common foods between 1975
+   and 2004.
+3. **This project already ships a USDA per-food composition table, on his citation.** The USDA's
+   277-food ORAC list, which he cites in *Immortality*, is derived into the app today by
+   `eden/tools/orac_foods_derive.py`. The original raise cited that file only as a *methodology
+   model* and failed to notice it is itself the precedent.
 
-> A source is valid only if it is one of:
-> 1. **A Wallach book**, with year. [...]
-> 2. **A Youngevity primary** (label, official product page, official statement) — token `ygy` —
->    **valid for product COMPOSITION only.** What a product contains. Never a recommended amount.
+**The app is therefore stricter than Wallach's own text**, not looser: he measures those foods
+against the USDA denominator; the app measures them against his.
 
-"Valid only if it is one of" is closed. USDA food composition is neither 1 nor 2.
+## Why this is inside §00.A rather than an exception to it
 
-Note what the **Not allowed** list does and does not say. It names *"USDA RDI/DRI/DV"* — reference
-**intakes**, i.e. targets. It does not name USDA food **composition**. That asymmetry is the whole
-argument for this being inside the existing spirit, and it is exactly why it must not be resolved
-quietly: absence from the prohibition is not presence in a closed allowlist.
+§00.A's subject, verbatim, is *"every recommended amount, dose, range, daily target, deficiency
+sign, and health claim."* A food's composition is none of those — it is a **numerator**, the
+same arithmetic role a Youngevity label already plays on the product side. Every denominator in
+the shipped feature is read from `essentials-targets-data.json`, which `amounts_wallach_only`
+already audits. No target, dose, range, deficiency sign or health claim comes from USDA.
 
-## Why it is genuinely arguable (the strongest case for it)
+The eligibility layer is *purely* Wallach: a food is admitted only after passing his own
+remove-list (no gluten grain, no refined sugar, no carbonated drinks, no processed meat, no
+refined seed oils), enforced against `foods-curation.json` and the scanner's 210 hard-reject
+terms. Foods he endorses — eggs, beef, pork, chicken, organ meats, nuts, seeds, vegetables — are
+deliberately well represented, and eggs are pinned first at his instruction.
 
-1. It adds no target. Composition is a numerator; §00.A's subject is amounts, doses, ranges, daily
-   targets, deficiency signs and health claims. None of those would come from USDA.
-2. Youngevity composition already occupies precisely this role, and the rule permits it *because*
-   composition is not a target.
-3. Wallach's own food figures are unusable: of 77 sealed `food_source` claims, **zero** carry a dose
-   object; only 13 of the 90 essentials are named by any of them; and a direct regex probe of all
-   seven book `.txt` sources (~5.7M chars) found approximately **one** genuine food-to-amount
-   datapoint. The honest gap here is total. No mining campaign closes it.
-4. The owner has already ruled food-first (2026-08-10 recommendation ladder, step 1), and eight
-   essentials already ship user-approved food notes in `entity-copy.json`.
+## The residual risk, and what was built to contain it
 
-## Why it is still a breach (the strongest case against)
+The ruling settles the SOURCE question. It does not by itself settle the **verdict** question:
+a food number that flips a coverage tile reads to a user as an adequacy claim. Four containments
+shipped in the same patch, and none of them are promises:
 
-1. The allowlist is closed and names Youngevity by name. Reading a second composition source into it
-   is an amendment, not an interpretation.
-2. **"Retired and now poison"** in the same skill: deriving a target by summing Youngevity labels at
-   a stated serving count. The failure mode was composition quietly acquiring authority it was never
-   granted. A food table ranked, sorted and displayed as "this closes your gap" is the same drift
-   with a different supplier.
-3. **No gate can see it.** `amounts_wallach_only` reads `essentials-targets-data.json` and audits 37
-   of 91 targets. A food *numerator* changes a tile's verdict without touching any target, so the
-   entire §00.A gate family is structurally blind to a wrong food number. A green board would bless
-   it — the mineral-tiers failure mode named in CLAUDE.md, at larger scale.
-4. Scale: ~100–300 foods × ~35 quantified fields is roughly 3,500–10,500 numbers, none of them
-   Wallach's, shipped under an app whose entire premise is that its numbers are his.
-5. Silent-green hazard: 18 tiles cover on the mere **presence** of a source, with no amount compared
-   (`state/coverage.ts:751,767`). Foods entering as regimen sources would flip those green without a
-   single number being checked — a §00.A-relevant outcome through a non-numeric path.
+1. **`food_composition_traces_to_source`** (critical, anchor_class `external`, the board's 24th
+   external gate). Every shipped per-food value joins byte-exact into the pinned USDA source by
+   `(fdc_id, nutrient_id)`, carries the source's own unparsed string, reproduces its own
+   arithmetic, uses a portion belonging to that food, and is measured against a numeric Wallach
+   target. Negative test: `tools/tests/test_food_composition_traces_to_source.py`, 11 cases
+   including a unit swap, a borrowed portion, a hand-edited extract line and a re-pointed
+   archive hash — all verified RED.
+2. **The presence-tile hazard is closed at the DATA layer.** The derive emits a row only for an
+   essential carrying a numeric Wallach target, so a food *cannot name* silver, any of the twelve
+   amino acids, or a trace_pdm mineral. Measured: **13 of the 90 counted tiles** turn green on
+   the mere presence of a source, and every protein-bearing food names several aminos — one egg
+   entry would have turned a dozen tiles green with zero amount math. Clause 3 of the gate REDs
+   if that ever changes, and case 6b of the negative test proves clause 3 fires.
+3. **Provenance is on the number, not in a footnote.** Every food amount carries a
+   dotted-underline gloss reading "USDA food composition, measured against Dr. Wallach's daily
+   target for this nutrient." Provenance token `food_catalog`, added to Eden's wall as a fifth
+   USER token (a food is an item the user put in their own regimen); containment re-verified.
+4. **`dietaryBaseline` was retired in the same patch.** 26 unsourced non-Wallach numbers were
+   being added to assumed intake and subtracted from Wallach targets in shipped code, with no
+   provenance and no gate. Two hand-maintained homes for "how much of X a normal diet supplies"
+   is Charter R3's exact prohibition; the food catalog now answers that question with a byte-exact
+   join and a gate that can prove it.
 
-## Precedent
+## The honest gaps, stated rather than filled
 
-- **2026-07-19 — government RDA for unlisted nutrients.** Same shape, and the closest match on file.
-  It stopped at step 1; the phrase `APPROVE SOURCE-RULE OVERRIDE` was never given, and a
-  non-breaching alternative was taken instead. Luneth's own words there: *"This is not permission to
-  do it elsewhere, these should be handled on a decision-by-decision basis."*
-- **2026-07-24 — digestive-enzymes non-Wallach sentence.** Also withdrawn in favour of a
-  non-breaching formulation. The containment gate was deliberately **not** built so that the
-  exception would not look available.
-- **2026-08-08 — the USDA richest-foods table.** A USDA per-food nutrient table was already built
-  once, at Luneth's request. Permitted only as: demo-only, nothing shipped, labelled loud as
-  REFERENCE-not-Wallach, anchored to a Wallach target, and never a ranking or coverage input. That is
-  the current ceiling of what has been allowed, and this proposal exceeds it on every axis.
-- **The project has never completed a source-rule override.** Two proposed, two withdrawn. In both
-  cases the winning move was found by looking harder for a formulation that did not breach.
+- **13 essentials carrying a numeric Wallach target have NO USDA composition at all**: sulfur,
+  chloride, boron, chromium, germanium, iodine, molybdenum, silica, vanadium, tin, biotin,
+  inositol, flavonoids. They are listed in `eden/foods/usda-source.json` under
+  `no_usda_composition`. No food can ever move those tiles. Nothing was filled in from elsewhere.
+- **Three more get zero qualifying foods** at the 7% threshold — vitamin B1, B6 and E — because
+  Wallach's targets for them (100 mg, 100 mg, 134 mg) are pharmacologic. No food on earth
+  delivers 7% of 100 mg of thiamin in one serving. That is a real finding, not a data gap.
+- Foods therefore reach **19 of 91** tiles. Products cover the rest; 90/90 is unaffected.
+- **EFA-from-foods is PARKED, not decided.** The EFA meter measures oil mass (`total_fat`)
+  because Wallach's 9 g is *"essential fatty acids as flaxseed oil"*. Applying total-fat to whole
+  foods would credit salmon's ~12 g of fat against a 9 g flaxseed-oil goal and cover both omega
+  tiles off one fillet. Routing foods there needs a ruling on what the denominator means.
 
-## What would have to be true for this to be safe
+## What this does NOT license
 
-Not a decision for Claude; recorded so the ruling can be made with the cost visible.
+Per Luneth's own words on the 2026-07-19 government-RDA question, which still stand: *"This is
+not permission to do it elsewhere, these should be handled on a decision-by-decision basis."*
+This ruling covers **per-food composition, as a numerator, filtered by Wallach's own food
+doctrine**. It does not admit USDA RDI/DRI/DV as a target for anything, which the 2026-07-19
+ruling refused and which remains refused.
 
-1. A purpose-built gate, since no existing one can see this. The working model is
-   `eden/tools/orac_foods_derive.py`: every number a byte-exact join key into its source, one home
-   per value, the curation file numbers-free.
-2. A provenance token distinct from `ygy` and from Wallach, surfaced in the UI wherever a food number
-   appears — not a footnote.
-3. A ruling on whether food delivery **counts toward coverage** or is **display-only**. The
-   2026-08-08 precedent was display-only; this proposal is not.
-4. A ruling on the 18 presence-covered tiles, which need no number to turn green.
-5. Reconciliation with `scanner-corpus-data.json`'s 26-entry `dietaryBaseline` — already a set of
-   unsourced non-Wallach dietary numbers subtracted from Wallach targets in shipped code. Two
-   hand-maintained homes for "how much of X a normal diet supplies" is Charter R3's exact
-   prohibition, and that baseline's own provenance is currently unstated.
+---
 
-## Protocol state
+## UPDATE — 2026-08-21, later the same day: three of the thirteen gaps closed
 
-- [x] **Turn 1** — surfaced in chat tagged `[WALLACH-SOURCE-RULE: PROPOSED VIOLATION]`, breach and
-      precedent named. 2026-08-21.
-- [ ] **Turn 2** — a *later* turn: Luneth confirms he understands the rule, the breach and the
-      precedent. The turn gap is mandatory and cannot be collapsed.
-- [ ] **Turn 3** — Luneth gives the exact phrase `APPROVE SOURCE-RULE OVERRIDE`. Nothing else counts
-      — not "yes", not "go ahead", not "approved", and not a menu selection.
+Nothing above is retracted; two sentences in it stopped being true within hours of being
+written, and a record that quietly keeps them is worse than one that says so.
 
-Until turn 3, no food composition number is acquired, staged, derived, or rendered. The unblocked
-dashboard work (goal merge, recommender pins and caps, scanner manual-add) proceeds independently and
-is not gated on this.
+**What changed.** Luneth ruled, after the gap-source campaign
+(`chronicle/2026-08-21-food-sourcing-campaign.md`), that other reputable published sources may
+be pinned alongside SR Legacy to reach essentials it does not measure at all, and that two match
+tiers ship with **the surface saying which**:
+
+- **EXACT** — the two tables joined by an id both carry (the NDB number, which
+  `sr_legacy_food.csv` maps every catalog food to). No human judgment in the join.
+- **APPROXIMATE** — joined by the source's own food NAME, one human decision per pair, each
+  recorded in `foods-catalog-curation.json` with the reasoning that accepted it.
+
+The tier is **derived from the join**, never typed, and `food_composition_traces_to_source` REDs
+an EXACT tier sitting on a name join.
+
+**The two sentences that are now wrong, corrected:**
+
+1. *"13 essentials … have NO USDA composition at all … No food can ever move those tiles.
+   Nothing was filled in from elsewhere."*
+   The first clause still holds — SR Legacy still measures none of them. The rest does not.
+   **Three now have a food source**: iodine (USDA/FDA/ODS iodine database, EXACT, 10 foods),
+   flavonoids (USDA flavonoid + proanthocyanidin databases, EXACT, 10 foods) and silica
+   (Powell 2005, APPROXIMATE, 9 foods). Ten remain unbound.
+   ⚠ And "unbound" is not "unmeasurable": **sulfur, chloride, biotin and molybdenum are
+   measured by AFCD**, a source already pinned and on disk that nothing reads yet. They are
+   listed as gaps because a piece of work is not done, not because the food world is silent.
+   Boron rests on a table that is not pinned at all yet.
+
+2. *"Foods therefore reach 19 of 91 tiles."*
+   **22 of 91.** The three measurable-but-unreached tiles are unchanged and unchanged in kind:
+   vitamin B1, B6 and E, whose Wallach targets are pharmacologic.
+
+**Also changed since the entry above:** the provenance gloss no longer says "USDA food
+composition" — it names the actual source it is glossing, read from the artifact rather than
+typed in the view, and an APPROXIMATE amount additionally carries an `≈` mark and a sentence
+saying what the hand-pairing does and does not mean.
+
+**Unchanged:** §00.A. Every denominator is still Wallach's, every new number is still
+composition (a numerator), and no target, dose, range, deficiency sign or health claim comes
+from any of these sources. "What this does NOT license", below, applies to them word for word.
+
+**Still parked:** EFA-from-foods. A denominator was derived during the campaign and approved,
+but nothing is wired, and the reasoning in the entry above is still the reasoning.

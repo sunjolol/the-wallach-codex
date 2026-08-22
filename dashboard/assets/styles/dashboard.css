@@ -384,3 +384,151 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .ui-close svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; pointer-events: none; }
 .ui-close--sm { --uic-size: 28px; box-shadow: 1px 1px 4px rgba(150, 126, 84, 0.14), -1px -1px 4px rgba(255, 252, 244, 0.8); }
 .ui-close--sm svg { width: 14px; height: 14px; }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * FOOD SOURCES — the food-recommendation block
+ * Shared by the Regimen console (ABOVE the products) and the Coverage rail
+ * (BELOW them). Built by views/foods-block.ts. Lives HERE, in the shared layer,
+ * because both workspaces render it — putting it in either workspace sheet would
+ * make it invisible on the other tab or, worse, leak across via a bare selector
+ * (the `.rl-` incident). Every rule below is `.fs-`-prefixed and owned by this file.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+.fs-block { margin: var(--ds-space-4) 0 var(--ds-space-5); }
+
+/* The separator: one dotted rule with the label CUT INTO it, not sitting above it.
+   Costs a single line of vertical space — the constraint that picked this shape over a
+   heading — while making the food/supplement boundary unmissable. The label sits on the
+   page background, so the rule appears to pass behind it. */
+.fs-rule {
+  display: flex; align-items: center; gap: var(--ds-space-3);
+  margin-bottom: var(--ds-space-3);
+}
+.fs-rule::after {
+  content: ''; flex: 1 1 auto; height: 0;
+  border-top: 1px dotted var(--ds-rule-bright);
+}
+.fs-rule__label {
+  flex: 0 0 auto;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--ds-ink-faint);
+}
+
+/* The SAME track definition the Regimen console's product grid uses
+   (workspace-regimen.css `.ck-recgrid`), on purpose: the two blocks are meant to read as
+   one six-card row split by a labelled rule, so their columns must line up.
+   `auto-fill` + `minmax(300px, 1fr)` also does the right thing unaided in Coverage's
+   ~280px rail — it collapses to a single column there — so one rule serves both tabs
+   and there is no width literal to drift. */
+/* ═══ THE FOOD TILE — design F, signed off 2026-08-21 ═══════════════════════
+   The record is chronicle/decisions/2026-08-21-food-tile-F-approved.html, which keeps its
+   own .lb-* classes and is never edited: it is what render_probe_food_tile.js holds this
+   app against. These rules are that design under the prefix this block already owns —
+   shipping a second generic two-letter namespace into a sheet that loads over every
+   workspace is how a bare `.rl-` rule once stacked Coverage's delete buttons.
+
+   A title BAR spans the full 340px so a long name gets the whole width instead of competing
+   with a verdict column; the control sits in the bar at the name's optical centre, so it
+   reads as "this row's action" and cannot drift when the body grows a chip row. */
+
+/* CATEGORY COLOUR, ONE HOME. The card reads the canon's own category straight off the data
+   (`--fs-cat-<category>`), so no category-to-colour table exists in TypeScript as well as
+   here. Amino acids have no entry on purpose: a food can never credit one, because they
+   cover on PRESENCE and carry no numeric Wallach target. */
+.fs-grid {
+  --fs-cat-minerals: #2b6fb0;
+  --fs-cat-vitamins: #ff7e3c;
+  --fs-cat-fatty_acids: #7d4a86;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 8px;
+}
+.fs-tile {
+  box-sizing: border-box; overflow: hidden;
+  background: var(--ds-paper-light); border-radius: var(--ds-radius-sm);
+  box-shadow: inset 0 0 0 1px var(--ds-rule-soft), 0 1px 4px -2px rgba(26, 22, 18, .20);
+}
+/* ── title bar ── */
+.fs-bar {
+  display: grid; grid-template-columns: 1fr 30px; column-gap: 8px; align-items: center;
+  padding: 6px 8px 6px 10px;
+  background: color-mix(in srgb, var(--acc) 7%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--acc) 22%, transparent);
+  border-left: 3px solid var(--acc);
+}
+.fs-bar__txt { min-width: 0; }
+.fs-tile__name {
+  font: 600 13px/1.2 var(--ds-font-display, sans-serif); color: var(--ds-ink);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.fs-tile__meta {
+  font: 400 9px/1.25 var(--ds-font-mono, monospace); color: var(--ds-ink-soft);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.fs-tile__meta b { color: var(--ds-ink-medium); font-weight: 700; }
+.fs-a { display: grid; place-items: center; }
+.fs-ctl--add:hover {
+  background: var(--ds-ink); border-color: var(--ds-ink); color: var(--ds-paper);
+}
+/* ── body ── */
+.fs-tile__body {
+  display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: start;
+  padding: 7px 10px 8px;
+}
+/* THE PROVENANCE GLOSS sits on the NUMBER, not on the block — a block-level notice is a
+   footnote and this is not allowed to be one. Same affordance the app uses for a glossed
+   scientific term, and it rides on every chip too, because every chip is a number. */
+.fs-lead {
+  text-align: left; padding-right: 9px; border-right: 1px solid var(--ds-rule-soft);
+  cursor: help;
+}
+.fs-lead__pct {
+  font: 700 21px/.88 var(--ds-font-display, sans-serif); color: var(--acc);
+  letter-spacing: -.035em;
+}
+.fs-lead__pct sup { font-size: 10px; top: -.65em; }
+.fs-lead__pct--approx::after { content: ' ≈'; font-size: 11px; opacity: .55; }
+.fs-lead__of {
+  margin-top: 2px; font: 700 8px/1.2 var(--ds-font-mono, monospace); letter-spacing: .05em;
+  text-transform: uppercase; color: var(--ds-ink); white-space: nowrap;
+  border-bottom: 1px dotted var(--ds-ink-faint);
+}
+.fs-chips { display: flex; flex-wrap: wrap; gap: 3px; padding-top: 1px; }
+.fs-chip {
+  display: inline-flex; align-items: baseline; gap: 3px; white-space: nowrap;
+  padding: 1px 6px 2px; border-radius: var(--ds-radius-pill); cursor: help;
+  font: 700 8px/1.4 var(--ds-font-mono, monospace); letter-spacing: .03em;
+  color: color-mix(in srgb, var(--c) 76%, #000);
+  background: color-mix(in srgb, var(--c) 14%, transparent);
+}
+.fs-chip u { text-decoration: none; font-weight: 400; opacity: .75; }
+/* THE APPROXIMATE MARK — the same glyph on the chip and on the lead, so the two teach one
+   symbol. It is a prompt to read the gloss, never the explanation itself. */
+.fs-chip--approx::after { content: '≈'; opacity: .55; font-weight: 400; }
+.fs-more {
+  align-self: center; padding: 1px 3px; white-space: nowrap;
+  font: 700 8px/1.4 var(--ds-font-mono, monospace); color: var(--ds-ink-soft);
+}
+.fs-note {
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  color: var(--ds-ink-faint); letter-spacing: .05em;
+  margin: 0 0 var(--ds-space-3); line-height: 1.5;
+}
+.fs-note--egg { color: var(--ds-ink-soft); }
+.fs-prize { color: var(--ds-accent-deep); text-decoration: underline dotted; }
+
+/* The finish-line button under the Regimen console's "all 90 covered" note. Deliberately
+   quiet — it is an invitation to keep browsing, not a call to action, because the user has
+   just been told they are DONE. */
+.ck-recs__go {
+  display: inline-block; margin-top: var(--ds-space-3);
+  padding: 6px 12px; cursor: pointer;
+  background: none; border: 1px dashed var(--ds-rule-bright);
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  letter-spacing: .1em; text-transform: uppercase; color: var(--ds-ink-soft);
+  transition: border-color .14s, color .14s;
+}
+.ck-recs__go:hover { border-color: var(--ds-ink-faint); color: var(--ds-ink); }

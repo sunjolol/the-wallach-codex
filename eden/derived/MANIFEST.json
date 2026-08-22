@@ -204,6 +204,29 @@
         "dashboard/assets/data/orac-products-curation.json"
       ],
       "note": "The ORAC knowledge tab's section-07 'Best Supplement Sources' (Youngevity product ORAC), read by views/knowledge-orac.ts via state/orac-products.ts (esbuild JSON import). These per-serving ORAC scores are YOUNGEVITY OFFICIAL lab values (source: ygy), NOT Wallach numbers and NOT in the corpus -- product ORAC is composition/measured-property data (§00.A lets Youngevity supply+surface composition; this framing is confirmed, not a source-rule override). Unlike orac-foods there is no sealed verbatim to parse, so the numbers have ONE hand-authored home: orac-products-curation.json (accounted). orac_products_derive.py JOINS each product_id with the sealed product pillar (canonical name + delivery form) and prices.json (wholesale price, by ygy_id); build_data() HARD-FAILS (ProductsError) if a curated product_id has no pillar record, no component form, or no wholesale price -- a silent drop reddens the board. Deterministic (sorted keys, NO timestamp) so build_fn byte-compares to disk."
+    },
+    {
+      "artifact": "dashboard/assets/data/foods-composition-data.json",
+      "generator": "eden/tools/foods_composition_derive.py",
+      "build_fn": "build_data",
+      "write_fn": "write_data",
+      "compare": "json",
+      "inputs": [
+        "eden/foods/usda-source.json",
+        "eden/foods/extract/food.csv",
+        "eden/foods/extract/food_nutrient.csv",
+        "eden/foods/extract/food_portion.csv",
+        "eden/foods/extract/nutrient.csv",
+        "eden/foods/extract/sr_legacy_food.csv",
+        "eden/foods/sources/sources.json",
+        "eden/foods/candidates/iodine-usda-ods-r4.json",
+        "eden/foods/candidates/flavonoids-usda-r33.json",
+        "eden/foods/candidates/proanthocyanidins-usda-r2.json",
+        "eden/foods/candidates/silicon-powell-2005.json",
+        "dashboard/assets/data/foods-catalog-curation.json",
+        "dashboard/assets/data/essentials-targets-data.json"
+      ],
+      "note": "The FOOD half of the coverage recommender: per-serving nutrient amounts for the FOOD SOURCES blocks on Regimen and Coverage. COMPOSITION (a numerator) joins byte-exact out of the pinned USDA SR Legacy source and, for essentials SR Legacy does not measure at all, out of the second sources pinned in eden/foods/sources/sources.json; every TARGET it is measured against is Wallach s, read from essentials-targets-data.json. A food is credited only where one realistic serving delivers >= 7% of his daily target AND the essential carries a NUMERIC Wallach target - so a food can never satisfy a presence-covered tile (silver, the 12 amino acids) or a trace_pdm tile. Admitted by owner ruling 2026-08-21, chronicle/contradictions/2026-08-21-usda-food-composition-third-source.md; the second sources and the two match tiers by the ruling recorded in sources.json's _ruling. EVERY row carries its own provenance and tier: EXACT where the two tables were joined by an id both carry (NDB), APPROXIMATE where they were joined by the source s own food NAME - a human decision recorded per pair in the curation with its reasoning. The tier is DERIVED FROM THE JOIN, never typed, and food_composition_traces_to_source REDs an EXACT tier on a name join, re-adds every summed total from its components, and re-runs each extractor against its sha256-pinned payload to prove the committed candidate. build_data() hard-fails on an unresolvable fdc_id/portion_id/NDB/match key, a portion belonging to another food, a usda_unit that disagrees with nutrient.csv, a summed total that disagrees with the extractor s own, an essential bound to two sources at once, or any curated food that credits nothing. Deterministic (sorted keys, NO timestamp)."
     }
   ],
   "_accounted_purpose": "The COMPLETENESS half of R1 (crack #1 fix, 2026-07-06). derived_artifacts_fresh proves the `artifacts` above are fresh; it does NOT prove the list is complete. The data_artifacts_accounted invariant requires EVERY dashboard/assets/data/*.json to appear either in `artifacts` (derived + freshness-gated) or here in `accounted` (hand-authored or gated by a dedicated invariant), each with a disposition + reason. A data file in neither list is RED -- no silently-added hand-maintained artifact can ship. disposition = hand_authored | externally_gated.",
@@ -307,6 +330,11 @@
       "file": "dashboard/assets/data/dose-defaults.json",
       "disposition": "hand_authored",
       "reason": "Per-product STARTING QUANTITIES for the dose stepper, where one label serving is not the right place to open. Editorial CURATION config, OURS; no generator. Every product NOT listed starts at exactly one label serving — Youngevity's own stated serving, which introduces no number of ours. ★ §00.A: a pre-filled quantity IS displayed, so each entry must carry a `provenance` from a CLOSED vocabulary that deliberately has no 'wallach' member, and the `dose_defaults_are_not_wallach` invariant (critical) REDs on an unknown provenance, on any source_claim_id appearing in the file, and on any Wallach reference — a starting quantity may never masquerade as a corpus dose. Wallach numbers stay TARGETS: the tiles still grade delivery against them, so a starting quantity short of a target renders as a partial bar instead of hiding the gap. The one entry today (ultimate-efa-plus, 3/day) is container arithmetic — 90 softgels over 30 days — raised with the owner as the batch's only non-label, non-Wallach number and ratified by him against the alternatives of 9/day (Wallach's 9,000 mg EFA target) and 1/day (the bare label serving)."
+    },
+    {
+      "file": "dashboard/assets/data/foods-catalog-curation.json",
+      "disposition": "hand_authored",
+      "reason": "The food catalog s CURATION - which foods may be recommended, what each is called, which USDA portion is one serving, and (since 2026-08-21) which row of a NAME-JOINED second source each food pairs with. NUMBERS-FREE by contract: every fdc_id, portion_id and matches[].key is a byte-exact join key into a pinned source, and the amounts are derived from those keys by eden/tools/foods_composition_derive.py, never typed here. A `matches` entry is a HUMAN decision - a name matcher proposes, a person accepts - so each carries the reasoning that accepted it, and food_composition_traces_to_source REDs any shipped name-joined row whose key or reasoning is not here. Editorial judgment only (selection, naming, portion choice, the eggs-first pin, and the pairs), filtered against Wallach s own remove[] food rules before admission."
     }
   ]
 }

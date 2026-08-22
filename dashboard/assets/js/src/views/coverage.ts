@@ -36,7 +36,9 @@ import { CoverageLayoutSchema, type LayoutGoal, type LayoutSection, type LayoutS
 import { ui } from '../state/copy.js';
 import { defaultServingsFor } from '../state/dose-defaults.js';
 import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCount, getOrCompute } from '../state/coverage.js';
+import { rankFoodsForCoverage } from '../state/foods.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage, vaultEntry } from '../state/recommender.js';
+import { addCatalogFood, buildFoodsBlock } from './foods-block.js';
 import { addOrBumpRegimenItem, loadEffectiveRegimen, loadRgUserGoals, loadSlots, saveRgOverride, saveRgRemoved, saveRgUserGoals } from '../state/regimen.js';
 import { starterPackIds, starterPackSize } from '../state/starter-pack.js';
 
@@ -81,6 +83,20 @@ const REC_GAP_FILL = 4;
  * the field is closed.
  */
 const REC_MAX = starterPackSize() + REC_GAP_FILL;
+
+/** How many FOOD cards the aside shows at once. Three, matching REC_PAGE, so the two
+ *  blocks read as one list split by a labelled rule. */
+const FOOD_PAGE = 3;
+
+/**
+ * How many foods Coverage will EVER put in a regimen. The owner's cap (2026-08-21):
+ * "on the coverage tab a foods section below products, 3 at a time, 12 max".
+ *
+ * ★ COVERAGE-ONLY. The Regimen console deliberately never exhausts its foods list — once
+ * the field is closed it switches to education ranking and keeps going. Do not "make these
+ * consistent": the difference is the ruling.
+ */
+const FOOD_MAX = 12;
 
 // ─── Read helpers ─────────────────────────────────────────────────────────
 
@@ -777,6 +793,7 @@ export function mount(container: HTMLElement): MountHandle {
             ${renderField(snapshot, goals)}
             <aside class="cov-aside">
               <div class="recs" data-recs></div>
+              <div class="fs-block" data-foodsblock></div>
               ${renderRail(items)}
             </aside>
           </div>
@@ -812,6 +829,28 @@ export function mount(container: HTMLElement): MountHandle {
         greedy: true,
       });
       buildRecs(recsHost, recs, goals, budget === 0);
+    }
+    const foodsHost = container.querySelector<HTMLElement>('[data-foodsblock]');
+    if (foodsHost !== null) {
+      // Coverage's foods are CAPPED where the Regimen console's are not — the owner's
+      // rule (2026-08-21): "a foods section BELOW products, 3 at a time, 12 max". Same
+      // shape as REC_MAX above and counted the same way: it counts what you OWN, not what
+      // the rail has shown, so browsing costs nothing and only ADDING spends it.
+      const ownedFoods = items
+        .map(i => i.label['food_id'])
+        .filter((v): v is string => typeof v === 'string');
+      const foodBudget = Math.max(0, FOOD_MAX - ownedFoods.length);
+      const foodRecs = foodBudget === 0 ? [] : rankFoodsForCoverage({
+        want: wantedSlugs(snapshot, goals),
+        owned: ownedFoods,
+        goals: goals.map(g => ({ id: g.id, members: g.members })),
+        limit: Math.min(FOOD_PAGE, foodBudget),
+        greedy: true,
+      });
+      buildFoodsBlock(foodsHost, foodRecs, {
+        ownedCount: ownedFoods.length,
+        capReached: foodBudget === 0,
+      });
     }
   };
 
@@ -854,6 +893,11 @@ export function mount(container: HTMLElement): MountHandle {
     const rec = t.closest<HTMLElement>('[data-rec-add]');
     if (rec !== null) {
       addVaultProduct(rec.dataset['recAdd'] ?? '');
+      return;
+    }
+    const foodCard = t.closest<HTMLElement>('[data-food-add]');
+    if (foodCard !== null) {
+      addCatalogFood(foodCard.dataset['foodAdd'] ?? '');
       return;
     }
     if (t.closest('[data-full-regimen]') !== null) {

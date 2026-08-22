@@ -66,6 +66,8 @@ export interface DrawerHandle {
   /** Open the drawer directly at an entity's page — the Ask-Wallach "Learn More" entry point.
    *  condition/essential/product open a detail page; 'topic' opens the Explore topic overlay. */
   openEntity: (kind: 'essential' | 'condition' | 'product' | 'topic', slug: string) => void;
+  /** Open the drawer at a whole tab, with no entity selected. See 'knowledge:open-tab'. */
+  openTab: (tab: Tab) => void;
   isOpen: () => boolean;
 }
 
@@ -987,6 +989,18 @@ export function mount(container: HTMLElement): DrawerHandle {
     open,
     close,
     toggle,
+    openTab: (tab: Tab): void => {
+      open();
+      // A tab jump selects NOTHING — clearing every selection is what makes this land on
+      // the tab's index instead of re-opening whatever detail page was last viewed.
+      selectedEssential = null;
+      selectedCondition = null;
+      selectedProduct = null;
+      selectedTopic = null;
+      trail = [];
+      activeTab = tab;
+      render();
+    },
     openEntity: (kind: 'essential' | 'condition' | 'product' | 'topic', slug: string): void => {
       open();
       if (kind === 'topic') {

@@ -1,0 +1,162 @@
+[
+ {
+  "food": "Spring onion",
+  "saa_umol_g_dry": "23.6",
+  "other_s_umol_g_dry": "65.3"
+ },
+ {
+  "food": "Red onion",
+  "saa_umol_g_dry": "12.7",
+  "other_s_umol_g_dry": "108.6"
+ },
+ {
+  "food": "Brown onion",
+  "saa_umol_g_dry": "9.3",
+  "other_s_umol_g_dry": "67.7"
+ },
+ {
+  "food": "Leek",
+  "saa_umol_g_dry": "27.5",
+  "other_s_umol_g_dry": "93.5"
+ },
+ {
+  "food": "Garlic",
+  "saa_umol_g_dry": "26.5",
+  "other_s_umol_g_dry": "225.8"
+ },
+ {
+  "food": "Parsnip",
+  "saa_umol_g_dry": "12.8",
+  "other_s_umol_g_dry": "7.6"
+ },
+ {
+  "food": "Potato",
+  "saa_umol_g_dry": "20.9",
+  "other_s_umol_g_dry": "17.5"
+ },
+ {
+  "food": "Sweet potato",
+  "saa_umol_g_dry": "23.8",
+  "other_s_umol_g_dry": "5.7"
+ },
+ {
+  "food": "Green pepper",
+  "saa_umol_g_dry": "19.5",
+  "other_s_umol_g_dry": "37.2"
+ },
+ {
+  "food": "Courgette",
+  "saa_umol_g_dry": "43.1",
+  "other_s_umol_g_dry": "16.1"
+ },
+ {
+  "food": "Carrot",
+  "saa_umol_g_dry": "13.0",
+  "other_s_umol_g_dry": "17.8"
+ },
+ {
+  "food": "Tomato",
+  "saa_umol_g_dry": "25.1",
+  "other_s_umol_g_dry": "17.3"
+ },
+ {
+  "food": "Sugar snap peas",
+  "saa_umol_g_dry": "26.3",
+  "other_s_umol_g_dry": "32.6"
+ },
+ {
+  "food": "Dwarf beans",
+  "saa_umol_g_dry": "32.5",
+  "other_s_umol_g_dry": "20.5"
+ },
+ {
+  "food": "Lettuce",
+  "saa_umol_g_dry": "26.1",
+  "other_s_umol_g_dry": "25.1"
+ },
+ {
+  "food": "Wild rocket",
+  "saa_umol_g_dry": "82.4",
+  "other_s_umol_g_dry": "469.1"
+ },
+ {
+  "food": "Radish",
+  "saa_umol_g_dry": "17.8",
+  "other_s_umol_g_dry": "18.3"
+ },
+ {
+  "food": "Savoy cabbage",
+  "saa_umol_g_dry": "40.7",
+  "other_s_umol_g_dry": "148.0"
+ },
+ {
+  "food": "Cauliflower",
+  "saa_umol_g_dry": "44.3",
+  "other_s_umol_g_dry": "145.6"
+ },
+ {
+  "food": "Broccoli",
+  "saa_umol_g_dry": "56.1",
+  "other_s_umol_g_dry": "218.5"
+ },
+ {
+  "food": "Sweetheart cabbage",
+  "saa_umol_g_dry": "28.5",
+  "other_s_umol_g_dry": "70.1"
+ },
+ {
+  "food": "Curly leaf kale",
+  "saa_umol_g_dry": "49.4",
+  "other_s_umol_g_dry": "259.5"
+ },
+ {
+  "food": "Braeburn apple",
+  "saa_umol_g_dry": "3.8",
+  "other_s_umol_g_dry": "0.7"
+ },
+ {
+  "food": "Cooked ham",
+  "saa_umol_g_dry": "140.2",
+  "other_s_umol_g_dry": "35.1"
+ },
+ {
+  "food": "Minced beef",
+  "saa_umol_g_dry": "117.9",
+  "other_s_umol_g_dry": "39.9"
+ },
+ {
+  "food": "Chicken breast",
+  "saa_umol_g_dry": "247.6",
+  "other_s_umol_g_dry": "6.6"
+ },
+ {
+  "food": "Cod",
+  "saa_umol_g_dry": "288.8",
+  "other_s_umol_g_dry": "51.1"
+ },
+ {
+  "food": "Eggs",
+  "saa_umol_g_dry": "232.6",
+  "other_s_umol_g_dry": "7.8"
+ },
+ {
+  "food": "Long grain rice",
+  "saa_umol_g_dry": "31.2",
+  "other_s_umol_g_dry": "2.8"
+ },
+ {
+  "food": "Spaghetti",
+  "saa_umol_g_dry": "37.8",
+  "other_s_umol_g_dry": "4.9"
+ },
+ {
+  "food": "Plain flour",
+  "saa_umol_g_dry": "35.2",
+  "other_s_umol_g_dry": "3.1"
+ },
+ {
+  "food": "White bread",
+  "saa_umol_g_dry": "31.8",
+  "other_s_umol_g_dry": "38.9"
+ }
+]

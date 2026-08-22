@@ -108,15 +108,23 @@ def _record_minus_enriched(groups: list, enriched: set) -> list:
     return out
 
 
-def _vehicle_slugs() -> set:
-    """Essentials the plant-derived vehicle supplies, from the vehicle registry.
+def _vehicle_hero_slugs() -> set:
+    """Essentials whose page earns the plant-derived HERO, from the vehicle registry.
 
     Read from dashboard/assets/data/trace-mineral-vehicles.json rather than hand-listed, so
     adding a vehicle-supplied essential lights its hero automatically and no slug literal
-    lives in this file (entity_render_is_projection-safe)."""
+    lives in this file (entity_render_is_projection-safe).
+
+    ★ MEMBERSHIP IS NOT THE HERO. An entry may set "hero": false to take the COVERAGE route
+    while its page stays editorially plain -- a PDM bottle still covers it in
+    state/coverage.ts, but no plant-derived header and no explainer text render. Vanadium is
+    the first such entry (owner instruction, 2026-08-21): it is already covered numerically by
+    declared products, so the vehicle is an extra route rather than a story its page must tell.
+    Absent flag means true, so tin and germanium are unaffected."""
     p = ROOT / "dashboard" / "assets" / "data" / "trace-mineral-vehicles.json"
     cfg = json.loads(p.read_text(encoding="utf-8")).get("vehicle_supplied", {})
-    return {k for k in cfg if not k.startswith("_")}
+    return {k for k, v in cfg.items()
+            if not k.startswith("_") and (v or {}).get("hero", True) is not False}
 
 
 def build_data() -> dict:
@@ -345,7 +353,9 @@ def build_data() -> dict:
         # trace_pdm. Germanium states no amount and so is NOT trace_pdm (that kind would give it
         # the 924 mg group meter and strip its goal borders), but the vehicle is its only route,
         # so it earns the same hero. Derived from the vehicle registry, never a slug literal.
-        if (e.get("coverage_kind") == "trace_pdm" or e["slug"] in _vehicle_slugs()) and group_record:
+        # An entry flagged "hero": false is excluded HERE ONLY -- it still covers off a vehicle.
+        if (e.get("coverage_kind") == "trace_pdm"
+                or e["slug"] in _vehicle_hero_slugs()) and group_record:
             rec["group_record"] = group_record
         essentials_out[slug] = rec
 

@@ -101,6 +101,7 @@ interface DrawerHandle {
   isOpen: () => boolean;
   /** Knowledge only — open the drawer at an entity page (Ask-Wallach "Learn More"). */
   openEntity?: (kind: 'essential' | 'condition' | 'product' | 'topic', slug: string) => void;
+  openTab?: (tab: 'home' | 'foods' | 'orac' | 'essentials' | 'conditions' | 'explore' | 'products') => void;
 }
 
 /** One overlay drawer: a rail target, its mount slot, and a bare-key toggle. */
@@ -333,6 +334,13 @@ function wireSearchToKnowledge(): void {
   events.on('knowledge:open-entity', ({ kind, slug }) => {
     closeAllDrawers();
     drawerHandles.get('knowledge')?.openEntity?.(kind, slug);
+    syncDrawerRail();
+  });
+  // Same single-drawer swap, but landing on a TAB. The Regimen console's completion
+  // state uses it to send a fully-covered user to Products.
+  events.on('knowledge:open-tab', ({ tab }) => {
+    closeAllDrawers();
+    drawerHandles.get('knowledge')?.openTab?.(tab);
     syncDrawerRail();
   });
 }

@@ -35,6 +35,7 @@ export type EventName =
   | 'corpus:hydrated'
   | 'profile:changed'
   | 'knowledge:open-entity'
+  | 'knowledge:open-tab'
   | 'drawer:toggled';
 
 /** Payload shape per event name. Add a case here when adding an event. */
@@ -64,6 +65,12 @@ export interface EventPayloads {
    *  "Learn More" — now for basically any resolved entity (the catch-all); main.ts does the
    *  single-drawer swap (close search, open Knowledge, select the entity). */
   'knowledge:open-entity': { kind: 'essential' | 'condition' | 'product' | 'topic'; slug: string };
+  /** Open the Knowledge drawer at a whole TAB rather than at one entity. Fired by the
+   *  Regimen console's "all 90 covered" completion state, whose button sends the user to
+   *  Products to keep browsing. Distinct from knowledge:open-entity because there is no
+   *  entity to select — `wallach:navigate` cannot serve here, since it only reaches the
+   *  three WORKSPACES and Products is a drawer tab. */
+  'knowledge:open-tab': { tab: 'home' | 'foods' | 'orac' | 'essentials' | 'conditions' | 'explore' | 'products' };
   /** An overlay drawer opened or closed, from ANY path — the rail button, the bare
    *  key, Esc, or the drawer's own [X]. The rail's active highlight is derived state:
    *  before this event the shell re-synced it only on the paths IT drove, so closing

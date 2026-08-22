@@ -15,13 +15,6 @@
 
 import { z } from 'zod';
 
-/** One assumed-dietary-intake entry (mass/IU per day). */
-export const DietaryBaselineEntrySchema = z.object({
-  amount: z.number(),
-  unit: z.string(),
-});
-export type DietaryBaselineEntry = z.infer<typeof DietaryBaselineEntrySchema>;
-
 /** One Wallach-anchored nutrient→goal mapping with its why-snippet. */
 export const NutrientGoalEntrySchema = z.object({
   nutrient: z.string(),
@@ -31,7 +24,6 @@ export type NutrientGoalEntry = z.infer<typeof NutrientGoalEntrySchema>;
 
 /** Root shape of scanner-corpus-data.json. */
 export const ScanCorpusSchema = z.object({
-  dietaryBaseline: z.record(z.string(), DietaryBaselineEntrySchema),
   goalKeywords: z.record(z.string(), z.array(z.string())),
   nutrientToGoalMap: z.record(z.string(), z.array(NutrientGoalEntrySchema)),
   goalDisplayNames: z.record(z.string(), z.string()),

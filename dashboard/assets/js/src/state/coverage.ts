@@ -63,7 +63,7 @@ import efaCoverageData from '../../../data/efa-coverage-data.json';
 import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { emit, on } from '../core/events.js';
 import { resolveSlug } from '../core/nutrient-resolver.js';
-import { isUserSupplied } from '../core/provenance.js';
+import { isFoodCatalog, isUserSupplied } from '../core/provenance.js';
 import {
   CoverageLayoutSchema,
   type CoverageTarget,
@@ -78,6 +78,7 @@ import {
 } from '../core/schemas/index.js';
 import { onChange } from '../core/storage.js';
 import { toMg } from '../core/units.js';
+import { foodEfaOilMg, foodNutrientRows } from './foods.js';
 import {
   loadEffectiveRegimen,
   loadRgOverrides,
@@ -391,6 +392,15 @@ export function liveNutrients(item: RegimenItem): unknown[] {
   if (isUserSupplied(item.provenance)) {
     return snapshot;
   }
+  // A catalog FOOD heals from the food catalog, never from the product vault. It must not
+  // fall through to the name lookup below: food display names are curated ("Butter",
+  // "Salt") and a collision with a Youngevity product name would silently credit that
+  // PRODUCT's composition to a plate of food. Keyed by id for that reason, not by name.
+  if (isFoodCatalog(item.provenance)) {
+    const foodId = item.label['food_id'];
+    const rows = typeof foodId === 'string' ? foodNutrientRows(foodId) : [];
+    return rows.length > 0 ? rows : snapshot;
+  }
   const name = typeof item.label.name === 'string' ? item.label.name.toLowerCase() : '';
   return vaultNutrientsByName().get(name) ?? snapshot;
 }
@@ -566,7 +576,14 @@ function efaAggregate(items: RegimenItem[], overrides: OverridesMap): EfaDeliver
   const sources: string[] = [];
   for (const item of items) {
     const name = typeof item.label.name === 'string' ? item.label.name.toLowerCase() : '';
-    const mg = map.get(name);
+    // ★ A FOOD ENTERS THIS METER IN OIL, LIKE A PRODUCT. Wallach's dose is nine grams of
+    // FLAXSEED OIL, so the meter counts oil mass; USDA measures a food's linoleic and
+    // linolenic ACID. state/foods.ts converts through the composition of the oil he named
+    // (read from the pinned archive), so both currencies arrive here already the same one.
+    // Converting HERE instead would put that conversion in two places.
+    // Owner ruling, Luneth 2026-08-22: convert foods to oil-equivalent, ONE meter.
+    const foodId = item.label['food_id'];
+    const mg = typeof foodId === 'string' ? foodEfaOilMg(foodId) : map.get(name);
     if (mg === undefined || mg <= 0) {
       continue;
     }

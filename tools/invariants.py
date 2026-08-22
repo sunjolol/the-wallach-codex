@@ -5782,16 +5782,662 @@ def check_no_hand_duplicated_canonical():
 
 
 # ---------------------------------------------------------------------------
+
+
+# ---------------------------------------------------------------------------
+# food_composition_traces_to_source
+# ---------------------------------------------------------------------------
+# THE PROBLEM THIS EXISTS FOR. Until 2026-08-21 this app shipped zero per-food nutrient
+# numbers. The foods recommender ships ~2,000 of them, and NOT ONE is Wallach's -- they are
+# USDA composition (a numerator) measured against his target (the denominator). The whole
+# §00.A gate family is structurally BLIND to them: `amounts_wallach_only` reads
+# essentials-targets-data.json and audits targets, and a food number changes a tile's verdict
+# without touching a single target. A wrong food number would sail past a 99/99 green board
+# exactly the way the mineral tiers did -- sealed, green, and wrong for three weeks.
+#
+# WHAT THIS GATE PROVES, and what it does NOT. It proves FIDELITY TO SOURCE: every number on
+# screen is the number in the pinned USDA file, joined by a byte-exact key, with the
+# arithmetic reproduced from scratch. It CANNOT prove USDA is right about a food -- that is
+# the same honest limit `essentials_canon_matches_graphic` carries, and it is stated in the
+# gate's own truth_anchor rather than left for a reader to discover.
+_FOOD_UNIT_TO_MG = {"MG": 1.0, "UG": 0.001, "G": 1000.0}
+_FOOD_WALLACH_TO_MG = {"mg": 1.0, "mcg": 0.001, "g": 1000.0}
+_FOOD_ARCHIVE_ROOT = "FoodData_Central_sr_legacy_food_csv_2018-04/"
+
+
+def _food_rows(path):
+    """DictReader over a committed extract member."""
+    import csv
+    import io
+    return list(csv.DictReader(io.StringIO(path.read_text(encoding="utf-8"))))
+
+
+def _food_bindings(second_p):
+    """slug -> binding, from sources.json's ONE home. Underscore keys are prose."""
+    import json
+    doc = json.loads(second_p.read_text(encoding="utf-8"))
+    block = doc.get("nutrient_bindings") or {}
+    return ({k: v for k, v in block.items() if not k.startswith("_")},
+            doc.get("sources") or {})
+
+
+# Sulphur's atomic mass, g/mol. The gate's OWN copy of a PHYSICAL CONSTANT, held here so
+# that editing the one in sources.json REDs rather than silently rescaling every Doleman
+# number. Same treatment the vitamin conversion factors get.
+_FOOD_S_ATOMIC_MASS = 32.06
+
+
+def _food_part_value(part, row):
+    """(value_string, n_rows) for one candidate row -- the gate's OWN re-derivation.
+
+    Deliberately re-implemented rather than imported from the generator. A gate that calls the
+    code it audits proves only that the code is self-consistent; the mineral tiers were
+    self-consistent for three weeks.
+
+    Three shapes: one CELL, a sum of component ROWS (USDA's per-compound flavonoid rows), or a
+    sum of named FIELDS of one row (Doleman splits sulphur into amino-acid and other).
+    """
+    from decimal import Decimal
+    kind = part["value_kind"]
+    if kind == "cell":
+        raw = row.get(part["value_field"])
+        raw = "" if raw is None else str(raw).strip()
+        return (raw or None), 0
+    if kind == "sum_fields":
+        total, n = Decimal(0), 0
+        for f in part["value_fields"]:
+            v = str(row.get(f) or "").strip()
+            if v == "":
+                continue
+            total += Decimal(v)
+            n += 1
+        # A half-present row is not a smaller number, it is an unreadable one.
+        return (str(total) if n == len(part["value_fields"]) else None), n
+    total, n = Decimal(0), 0
+    for c in (row.get(part["rows_field"]) or []):
+        v = str(c.get(part["value_field"]) or "").strip()
+        if v == "":
+            continue
+        total += Decimal(v)
+        n += 1
+    return (str(total) if n else None), n
+
+
+def _food_part_mg(part, value, water):
+    """(mg per 100 g of food, error) for one part's value -- the gate's own arithmetic.
+
+    Most parts publish per 100 g already. Doleman publishes umoles per gram of FREEZE-DRIED
+    sample, so its rows declare a conversion that needs the PAIRED food's USDA water content:
+
+        mg S / 100 g fresh = umol_per_g_dry x 32.06 ug/umol x (1 - water/100) x 0.1
+    """
+    convert = part.get("convert")
+    if convert is None:
+        return float(value) * _FOOD_UNIT_TO_MG[part["unit"]], None
+    if convert != "dry_umol_per_g_to_mg_per_100g_fresh":
+        return None, f"unknown convert {convert!r}"
+    if water is None:
+        return None, ("this food carries no USDA water value, so the dry-weight conversion "
+                      "cannot be reproduced -- a missing moisture is a missing conversion")
+    dry = 1.0 - float(water) / 100.0
+    if not 0.0 < dry <= 1.0:
+        return None, f"USDA water {water} g/100 g gives a dry-matter fraction of {dry:g}"
+    return float(value) * _FOOD_S_ATOMIC_MASS * dry * 0.1, None
+
+
+def _food_index_part(part, rows):
+    """Index a candidate by its join key. NDB is zero-padded to five on BOTH sides."""
+    out = {}
+    for r in rows:
+        v = r.get(part["join_field"])
+        keys = v if isinstance(v, list) else ([v] if v else [])
+        for k in keys:
+            out.setdefault(str(k).zfill(5) if part["join_kind"] == "ndb" else str(k), r)
+    return out
+
+
+def _food_composition_impl(source_p, curation_p, artifact_p, extract_dir, archive_p,
+                           second_p=None, candidate_dir=None, payload_dir=None, notes=None):
+    """Seven clauses. Returns a list of violation strings (empty == green).
+
+    `notes`, when a list is passed, collects what clause 7 could NOT check and why -- a
+    missing payload, a missing PDF reader. The summary prints it, because a clause that
+    quietly skipped is indistinguishable on a green board from a clause that passed.
+    """
+    import csv
+    import hashlib
+    import io
+    import json
+    import tempfile
+    import zipfile
+    from decimal import Decimal
+
+    second_p = second_p or (ROOT / "eden" / "foods" / "sources" / "sources.json")
+    candidate_dir = candidate_dir or (ROOT / "eden" / "foods" / "candidates")
+    payload_dir = payload_dir or (ROOT / "eden" / "foods" / "sources")
+
+    viol = []
+    source = json.loads(source_p.read_text(encoding="utf-8"))
+    curation = json.loads(curation_p.read_text(encoding="utf-8"))
+    artifact = json.loads(artifact_p.read_text(encoding="utf-8"))
+    nutrient_map = {k: v for k, v in source["nutrient_map"].items() if not k.startswith("_")}
+    bindings, pins = _food_bindings(second_p)
+    curated_by_id = {f["id"]: f for f in curation["foods"]}
+
+    for member in ("food.csv", "food_nutrient.csv", "food_portion.csv", "nutrient.csv",
+                   "sr_legacy_food.csv"):
+        if not (extract_dir / member).exists():
+            return [f"the committed extract is missing {member} -- the gate cannot run, and a "
+                    f"gate that cannot run must never be silently green"]
+
+    comp = {}
+    for r in _food_rows(extract_dir / "food_nutrient.csv"):
+        comp.setdefault(r["fdc_id"], {})[r["nutrient_id"]] = r["amount"]
+    portions = {r["id"]: r for r in _food_rows(extract_dir / "food_portion.csv")}
+    nutrients_meta = {r["id"]: r for r in _food_rows(extract_dir / "nutrient.csv")}
+    ndb_of = {r["fdc_id"]: r["NDB_number"].zfill(5)
+              for r in _food_rows(extract_dir / "sr_legacy_food.csv")}
+    # USDA "Water, g per 100 g" -- NOT an essential and never credited as one; it is the
+    # denominator term in Doleman's dry-to-fresh conversion. Declared in usda-source.json's
+    # support_nutrients, which is deliberately separate from nutrient_map.
+    water_id = ((source.get("support_nutrients") or {}).get("water") or {}).get("nutrient_id")
+
+    # ── (C6a) one essential, one composition home ───────────────────────────
+    both = sorted(set(nutrient_map) & set(bindings))
+    if both:
+        viol.append(f"{both} are bound to BOTH the USDA nutrient_map and a second source -- "
+                    f"one essential, one composition home (R3)")
+
+    # every candidate file, indexed once, and the gate's own re-read of its rows
+    cand_rows, indexes = {}, {}
+    for slug, b in bindings.items():
+        for part in b["parts"]:
+            cp = candidate_dir / part["candidate"]
+            if not cp.exists():
+                viol.append(f"{slug}: the committed candidate {part['candidate']} is missing -- "
+                            f"it is the only copy of the extracted rows on a clone without the "
+                            f"gitignored payloads")
+                continue
+            rows = json.loads(cp.read_text(encoding="utf-8"))
+            cand_rows[part["candidate"]] = rows
+            indexes[(slug, part["candidate"])] = _food_index_part(part, rows)
+
+    # ── (C3) the DENOMINATOR is Wallach's, for every credited essential ──────
+    # This is the §00.A clause. It also proves, structurally, that no food can name a
+    # presence-covered essential (silver, the 12 amino acids) or a trace_pdm mineral:
+    # those carry no numeric wallach target, so a row naming one REDs here.
+    targets = {}
+    doc = json.loads((ROOT / "dashboard" / "assets" / "data"
+                      / "essentials-targets-data.json").read_text(encoding="utf-8"))
+    for e in doc["essentials"]:
+        t = e.get("target") or {}
+        if t.get("kind") == "wallach" and isinstance(t.get("low"), (int, float)) \
+                and t["low"] > 0 and t.get("unit"):
+            targets[e["slug"]] = (float(t["low"]), t["unit"])
+
+    qualify = artifact["_meta"]["qualify_fraction"]
+
+    # ── (C5) NO SILENT DROP, both directions ────────────────────────────────
+    curated_ids = {f["id"] for f in curation["foods"]}
+    shipped_ids = {f["id"] for f in artifact["foods"]}
+    for missing in sorted(curated_ids - shipped_ids):
+        viol.append(f"curated food '{missing}' is absent from the artifact -- a curated food "
+                    f"that silently fails to derive must RED, never vanish")
+    for extra in sorted(shipped_ids - curated_ids):
+        viol.append(f"artifact food '{extra}' is not in the curation -- a food nobody curated "
+                    f"must not ship")
+
+    for food in artifact["foods"]:
+        fid = str(food["fdc_id"])
+        name = food.get("name", food.get("id"))
+
+        # ── (C1) the PORTION joins, and belongs to THIS food ────────────────
+        p = portions.get(str(food["portion_id"]))
+        if p is None:
+            viol.append(f"{name}: portion_id {food['portion_id']} does not resolve in the extract")
+            continue
+        if p["fdc_id"] != fid:
+            viol.append(f"{name}: portion_id {food['portion_id']} belongs to fdc_id "
+                        f"{p['fdc_id']}, not {fid} -- a portion cannot be borrowed from "
+                        f"another food")
+            continue
+        if abs(float(p["gram_weight"]) - float(food["grams"])) > 1e-9:
+            viol.append(f"{name}: artifact says {food['grams']} g but the source portion row "
+                        f"says {p['gram_weight']} g")
+
+        for row in food["nutrients"]:
+            slug = row["slug"]
+            prov = row.get("provenance")
+            if not isinstance(prov, dict) or not prov.get("source_id"):
+                viol.append(f"{name}/{slug}: no provenance block -- every shipped number must "
+                            f"name the source it came from and the tier it was joined at")
+                continue
+
+            # ── (C3) measured against WALLACH's number ──────────────────────
+            tgt = targets.get(slug)
+            if tgt is None:
+                viol.append(f"{name}/{slug}: credited against an essential with NO numeric "
+                            f"Wallach target -- a food may only be measured against his "
+                            f"number (§00.A), and this is also how a presence-covered tile "
+                            f"is kept unreachable by any food")
+                continue
+            low, wunit = tgt
+            if row["unit"] != wunit:
+                viol.append(f"{name}/{slug}: artifact unit '{row['unit']}' but Wallach's "
+                            f"target is stated in '{wunit}'")
+                continue
+
+            if prov["source_id"] == "usda-sr-legacy":
+                m = nutrient_map.get(slug)
+                if m is None:
+                    viol.append(f"{name}/{slug}: credited to the USDA source but not in "
+                                f"usda-source.json's nutrient_map")
+                    continue
+
+                # ── (C1) the VALUE is byte-identical to its own source row ──
+                raw = (comp.get(fid) or {}).get(m["nutrient_id"])
+                if raw is None:
+                    viol.append(f"{name}/{slug}: no (fdc_id {fid}, nutrient_id "
+                                f"{m['nutrient_id']}) row in the extract")
+                    continue
+                if raw != row["per_100g"]:
+                    viol.append(f"{name}/{slug}: artifact per_100g '{row['per_100g']}' is not "
+                                f"byte-identical to the source's '{raw}'")
+                    continue
+
+                # the USDA unit is RE-READ from nutrient.csv, never trusted from the map
+                nmeta = nutrients_meta.get(m["nutrient_id"])
+                if nmeta is None:
+                    viol.append(f"{name}/{slug}: nutrient_id {m['nutrient_id']} missing from "
+                                f"the extract's nutrient.csv")
+                    continue
+                if nmeta["unit_name"] != row.get("usda_unit"):
+                    viol.append(f"{name}/{slug}: artifact usda_unit '{row.get('usda_unit')}' "
+                                f"but nutrient.csv says '{nmeta['unit_name']}' -- a unit swap "
+                                f"(mg vs mcg) is a 1000x error that reads perfectly plausible")
+                    continue
+                if prov.get("tier") != "EXACT":
+                    viol.append(f"{name}/{slug}: a USDA id join is EXACT by construction, but "
+                                f"the row claims tier {prov.get('tier')!r}")
+                    continue
+                mg = (float(raw) * _FOOD_UNIT_TO_MG[row["usda_unit"]]
+                      * (float(p["gram_weight"]) / 100.0))
+
+            else:
+                # ── (C6) SECOND SOURCE: the same proof, one link longer ─────
+                b = bindings.get(slug)
+                if b is None:
+                    viol.append(f"{name}/{slug}: credited to '{prov['source_id']}' but no "
+                                f"binding for this essential exists in sources.json -- a "
+                                f"number with no declared route to a pinned payload")
+                    continue
+                # A row may name the BINDING (when its parts sum into one number) or the
+                # PART that supplied it (when only one part is used). Anything else is a
+                # citation to a source that had no hand in this number. Which of the two is
+                # correct for THIS food is settled precisely by clause C6d below, once the
+                # parts have actually been resolved.
+                known = {b["source_id"]} | {q["source_id"] for q in b["parts"]}
+                if prov["source_id"] not in known:
+                    viol.append(f"{name}/{slug}: row says source '{prov['source_id']}' but the "
+                                f"binding says '{b['source_id']}' and its parts say "
+                                f"{sorted(q['source_id'] for q in b['parts'])}")
+                    continue
+
+                # ★ TIER IS DERIVED FROM THE JOIN. This is the clause that keeps the label
+                #   from quietly becoming a lie: a name-joined pair is a human decision and
+                #   is APPROXIMATE forever, however good the match looks on the page.
+                kinds = {q["join_kind"] for q in b["parts"]}
+                expected_tier = "APPROXIMATE" if "name" in kinds else "EXACT"
+                if prov.get("tier") != expected_tier or b["tier"] != expected_tier:
+                    viol.append(f"{name}/{slug}: joined by {sorted(kinds)} so the tier must be "
+                                f"{expected_tier}, but the row says {prov.get('tier')!r} and "
+                                f"the binding says {b['tier']!r} -- only an id join may be EXACT")
+                    continue
+
+                join = str(prov.get("join") or "")
+                jkind, _, jkey = join.partition(":")
+                if jkind not in kinds or jkey == "":
+                    viol.append(f"{name}/{slug}: provenance join {join!r} does not name one of "
+                                f"this binding's join kinds {sorted(kinds)}")
+                    continue
+
+                # ── (C6b) an APPROXIMATE pair is a HUMAN decision, and the human's key and
+                #     reasoning must be in the curation. An artifact row cannot invent one.
+                if jkind == "name":
+                    # Pairs are curated per SOURCE, and for a multi-source binding that
+                    # means per PART -- the row names the part that actually supplied it.
+                    cur = curated_by_id.get(food["id"]) or {}
+                    match = (cur.get("matches") or {}).get(prov["source_id"])
+                    if match is None:
+                        viol.append(f"{name}/{slug}: joined by name to {jkey!r} but the "
+                                    f"curation records no pair for '{prov['source_id']}' -- a "
+                                    f"name pair must be a human decision, never a matcher's")
+                        continue
+                    if match.get("key") != jkey:
+                        viol.append(f"{name}/{slug}: joined to {jkey!r} but the curation pairs "
+                                    f"it with {match.get('key')!r}")
+                        continue
+                    if not match.get("why") or prov.get("why") != match["why"]:
+                        viol.append(f"{name}/{slug}: an APPROXIMATE pair must carry the "
+                                    f"curation's own reasoning; the artifact's `why` and the "
+                                    f"curation's disagree or are empty")
+                        continue
+                    # ★ A CONSERVATIVE PICK MUST STAY LABELLED. Where the source measured
+                    #   several varieties the curation took the LOWEST, and the card says so.
+                    #   Dropping the flag turns a floor into what reads as a reading of this
+                    #   exact item -- a quieter overstatement than a wrong number, and harder
+                    #   to see.
+                    if bool(match.get("conservative")) != bool(prov.get("conservative")):
+                        viol.append(f"{name}/{slug}: the curation marks this pair "
+                                    f"conservative={bool(match.get('conservative'))} but the "
+                                    f"artifact says {bool(prov.get('conservative'))} -- a "
+                                    f"lowest-of-varieties number must stay labelled as one")
+                        continue
+
+                # ── (C6c) HOW THE PARTS COMBINE. Confusing these double-counts:
+                #     `sum`   parts measure DIFFERENT things and add (flavonoid classes)
+                #     `first` parts measure the SAME thing and only one may be used (AFCD
+                #             and Doleman both measure sulphur), tried in declared order.
+                combine = b.get("combine", "sum" if len(b["parts"]) > 1 else "first")
+                if len(b["parts"]) > 1 and "combine" not in b:
+                    viol.append(f"{name}/{slug}: the binding has {len(b['parts'])} parts and "
+                                f"no `combine` -- whether they SUM or whether the FIRST wins "
+                                f"is the difference between a number and double it")
+                    continue
+                if row["provenance"].get("combine") not in (None, combine):
+                    viol.append(f"{name}/{slug}: row says combine "
+                                f"{row['provenance'].get('combine')!r} but the binding says "
+                                f"{combine!r}")
+                    continue
+
+                water = None
+                if water_id is not None:
+                    w = (comp.get(fid) or {}).get(water_id)
+                    water = float(w) if w not in (None, "") else None
+
+                got, err = [], None
+                for part in b["parts"]:
+                    key = ndb_of.get(fid) if part["join_kind"] == "ndb" else None
+                    if part["join_kind"] == "name":
+                        cur = curated_by_id.get(food["id"]) or {}
+                        pm = (cur.get("matches") or {}).get(part["source_id"])
+                        if pm is None:
+                            continue
+                        key = pm["key"]
+                    idx = indexes.get((slug, part["candidate"]))
+                    if idx is None or key is None:
+                        continue
+                    crow = idx.get(key)
+                    if crow is None:
+                        continue
+                    val, _n = _food_part_value(part, crow)
+                    if val is None:
+                        continue
+                    mg_part, err = _food_part_mg(part, val, water)
+                    if err is not None:
+                        break
+                    got.append((part, key, val, mg_part))
+                    if combine == "first":
+                        break
+                if err is not None:
+                    viol.append(f"{name}/{slug}: {err}")
+                    continue
+                if not got:
+                    viol.append(f"{name}/{slug}: no row for join {join!r} in any candidate of "
+                                f"'{b['source_id']}' -- the shipped number has no source row")
+                    continue
+
+                # ── (C6d) THE ROW MUST NAME THE PART IT ACTUALLY USED. With `first`, two
+                #     sources are in play and a card that credits the wrong one is a
+                #     citation error nobody can see on screen.
+                win = got[0][0]
+                want_source = win["source_id"] if combine == "first" else b["source_id"]
+                if prov["source_id"] != want_source:
+                    viol.append(f"{name}/{slug}: row credits '{prov['source_id']}' but the "
+                                f"{combine} binding resolves to '{want_source}' for this food")
+                    continue
+                want_unit = win["unit"] if combine == "first" else b["unit"]
+                if row.get("source_unit") != want_unit:
+                    viol.append(f"{name}/{slug}: artifact source_unit "
+                                f"{row.get('source_unit')!r} but the source publishes "
+                                f"{want_unit!r} -- a unit swap is a 1000x error that reads "
+                                f"perfectly plausible")
+                    continue
+                if got[0][0]["join_kind"] != jkind or got[0][1] != jkey:
+                    viol.append(f"{name}/{slug}: row joins {join!r} but the binding resolves "
+                                f"to {got[0][0]['join_kind']}:{got[0][1]}")
+                    continue
+
+                expected = (str(sum((Decimal(g[2]) for g in got), Decimal(0)))
+                            if len(got) > 1 else got[0][2])
+                if expected != row["per_100g"]:
+                    viol.append(f"{name}/{slug}: artifact per_100g '{row['per_100g']}' is not "
+                                f"what the candidate row(s) give ('{expected}')")
+                    continue
+
+                # ── (C6e) A DECLARED CONVERSION IS RE-DONE, AND ITS WORKING RE-CHECKED.
+                #     The constant is the gate's own copy, so editing the one in
+                #     sources.json REDs instead of silently rescaling every value.
+                if win.get("convert") is not None:
+                    w = row["provenance"].get("working") or {}
+                    if w.get("umol_per_g_dry") != got[0][2] or \
+                            w.get("water_g_per_100g") != str(water):
+                        viol.append(f"{name}/{slug}: the provenance `working` does not show "
+                                    f"the terms this number was actually built from "
+                                    f"({got[0][2]} umol/g dry, water {water})")
+                        continue
+                mg = sum(g[3] for g in got) * (float(p["gram_weight"]) / 100.0)
+
+            # ── (C2) the ARITHMETIC reproduces from the source string(s) ────
+            amount = mg / _FOOD_WALLACH_TO_MG[wunit]
+            fraction = mg / (low * _FOOD_WALLACH_TO_MG[wunit])
+            if abs(amount - float(row["amount"])) > max(1e-4, abs(amount) * 1e-6):
+                viol.append(f"{name}/{slug}: artifact amount {row['amount']} does not "
+                            f"reproduce from the source ({amount:.6g} expected)")
+            if abs(fraction - float(row["fraction"])) > 1e-4:
+                viol.append(f"{name}/{slug}: artifact fraction {row['fraction']} does not "
+                            f"reproduce from the source ({fraction:.6g} expected)")
+            if fraction < qualify - 1e-9:
+                viol.append(f"{name}/{slug}: credited at {fraction:.1%}, under the artifact's "
+                            f"own {qualify:.0%} qualify_fraction")
+
+    # ── (C4) the EXTRACT is FAITHFUL to the pinned archive ──────────────────
+    # Skips when the 6 MB archive is absent, exactly as the two book-anchored gates skip
+    # without the book texts -- a fresh clone still runs the other clauses against the
+    # committed extract and candidates.
+    if archive_p.exists():
+        digest = hashlib.sha256(archive_p.read_bytes()).hexdigest()
+        if digest != source["archive"]["sha256"]:
+            viol.append(f"the pinned archive's sha256 has changed ({digest[:12]}... vs the "
+                        f"declared {source['archive']['sha256'][:12]}...). Re-read the source "
+                        f"and re-derive; do NOT re-point the hash to whatever is on disk")
+        else:
+            with zipfile.ZipFile(archive_p) as z:
+                for member in ("food.csv", "food_nutrient.csv", "food_portion.csv",
+                               "nutrient.csv", "sr_legacy_food.csv"):
+                    archive_lines = set(
+                        z.read(_FOOD_ARCHIVE_ROOT + member).decode("utf-8-sig").splitlines())
+                    for line in (extract_dir / member).read_text(encoding="utf-8").splitlines():
+                        if line not in archive_lines:
+                            viol.append(f"extract/{member}: a committed line is NOT present "
+                                        f"byte-for-byte in the pinned archive -- the extract "
+                                        f"has been edited by hand: {line[:70]}")
+                            break
+
+    # ── (C7) the CANDIDATE is FAITHFUL to its pinned payload ────────────────
+    # The second sources are PDFs and spreadsheets, so there is no byte-exact line to commit
+    # the way extract/*.csv is committed for the archive. The chain is closed the other way:
+    # the payload's sha256 is pinned, the extractor is deterministic, and this clause RE-RUNS
+    # the extractor against the payload and byte-compares its output to the committed
+    # candidate. Skips per-part when the gitignored payload is absent (a fresh clone) or when
+    # the PDF reader is not installed -- both stated in the summary, never silently.
+    reruns = 0
+    seen = set()
+    for slug, b in bindings.items():
+        for part in b["parts"]:
+            if part["candidate"] in seen:
+                continue
+            seen.add(part["candidate"])
+            payload = payload_dir / part["payload"]
+            pin = pins.get(part["payload"])
+            if pin is None:
+                viol.append(f"{slug}: payload {part['payload']} is not pinned in sources.json "
+                            f"-- an unpinned payload has no url and no sha256 to check")
+                continue
+            if not payload.exists():
+                if notes is not None:
+                    notes.append(f"{part['candidate']} unre-extracted (payload absent)")
+                continue
+            digest = hashlib.sha256(payload.read_bytes()).hexdigest()
+            if digest != pin["sha256"]:
+                viol.append(f"{part['payload']}: sha256 is {digest[:12]}... but sources.json "
+                            f"pins {pin['sha256'][:12]}.... Re-read the source and re-extract; "
+                            f"do NOT re-point the hash to whatever is on disk")
+                continue
+            extractor = ROOT / part["extractor"]
+            if not extractor.exists():
+                viol.append(f"{slug}: extractor {part['extractor']} is missing, so the "
+                            f"committed candidate cannot be reproduced from the payload")
+                continue
+            if part.get("reader") == "pdf":
+                try:
+                    import fitz  # noqa: F401
+                except Exception:
+                    # Only the PDF-backed parts need it. Gating the spreadsheet part on a
+                    # PDF reader would silently stop re-extracting AFCD on any host without
+                    # PyMuPDF -- a clause quietly narrowing itself is how a gate stops
+                    # meaning what its name says.
+                    if notes is not None:
+                        notes.append(f"{part['candidate']} unre-extracted (no pymupdf)")
+                    continue
+            with tempfile.TemporaryDirectory() as td:
+                td = pathlib.Path(td)
+                src = payload
+                if part.get("zip_member"):
+                    with zipfile.ZipFile(payload) as z:
+                        src = td / "member"
+                        src.write_bytes(z.read(part["zip_member"]))
+                out = td / "fresh.json"
+                r = subprocess.run([sys.executable, str(extractor), str(src), str(out)],
+                                   cwd=str(ROOT), capture_output=True,
+                                   env={**os.environ, "PYTHONUTF8": "1"})
+                if r.returncode != 0 or not out.exists():
+                    viol.append(f"{slug}: re-running {part['extractor']} against the pinned "
+                                f"payload failed ({r.returncode}), so the committed candidate "
+                                f"is unproven: {r.stderr.decode('utf-8', 'replace')[:120]}")
+                    continue
+                fresh = hashlib.sha256(out.read_bytes()).hexdigest()
+                held = hashlib.sha256((candidate_dir / part["candidate"]).read_bytes()).hexdigest()
+                if fresh != held:
+                    viol.append(f"candidates/{part['candidate']} is NOT what "
+                                f"{part['extractor']} produces from the pinned payload -- the "
+                                f"committed numbers have been edited by hand")
+                    continue
+                reruns += 1
+    if notes is not None:
+        notes.insert(0, f"{reruns} candidate(s) re-extracted from their pinned payload")
+    return viol
+
+
+def check_food_composition_traces_to_source():
+    """Every per-food nutrient number this app SHIPS is the number in a pinned outside
+    source, joined by a byte-exact key, with the arithmetic reproduced from scratch --
+    and every target it is measured against is Wallach's.
+
+    SEVEN clauses, each with its own RED:
+      (1) JOIN + BYTES -- (fdc_id, nutrient_id) resolves in the committed extract and the
+          artifact's `per_100g` is byte-identical to the source's own string; the portion
+          resolves AND belongs to this food; grams match the portion row; the USDA unit is
+          re-read from nutrient.csv rather than trusted from the map (a mg/mcg swap is a
+          1000x error that reads perfectly plausible on screen).
+      (2) ARITHMETIC -- amount and fraction are recomputed from (per_100g, grams, unit) and
+          byte-compared, and nothing ships under the artifact's own qualify_fraction.
+      (3) WALLACH DENOMINATOR (§00.A) -- every credited essential carries a NUMERIC Wallach
+          target and the artifact's unit is the unit he states it in. This is also what
+          keeps a food structurally unable to touch a presence-covered tile (silver, the
+          twelve amino acids) or a trace_pdm mineral: they have no numeric target, so a row
+          naming one REDs here rather than turning a tile green with nothing compared.
+      (4) EXTRACT vs ARCHIVE -- the archive's sha256 matches the pin and every committed
+          extract line appears byte-for-byte inside it. Skips when the gitignored 6 MB
+          archive is absent, as the book-anchored gates do.
+      (5) NO SILENT DROP -- curation and artifact agree in BOTH directions.
+      (6) SECOND SOURCE -- a row from a source other than SR Legacy names a binding that
+          exists in sources.json, reproduces its value from the committed candidate rows
+          (summed in decimal where the source publishes components), carries the unit the
+          binding declares, and carries a TIER DERIVED FROM ITS JOIN: an id join may be
+          EXACT, a name join is APPROXIMATE forever. A name pair must additionally exist in
+          the curation with the same key and the same human reasoning -- an artifact row can
+          never invent a pair a matcher proposed and nobody accepted.
+      (7) CANDIDATE vs PAYLOAD -- each second source's payload matches its pinned sha256 AND
+          re-running its extractor against that payload reproduces the committed candidate
+          byte-for-byte. Skips per-part when the gitignored payload is absent or the PDF
+          reader is not installed, and says so in the summary rather than passing quietly.
+
+    HONEST LIMIT, stated rather than implied: this proves fidelity to what we COPIED. It
+    cannot prove USDA, ODS, Powell or any other table is right about a food, and it cannot
+    see a food that is correctly transcribed but badly chosen -- and for an APPROXIMATE row
+    it cannot prove the two tables are describing the same food at all, only that a human
+    said so and left their reasoning. Same class of proof as essentials_canon_matches_graphic.
+    """
+    import json as _json
+    source_p = ROOT / "eden" / "foods" / "usda-source.json"
+    curation_p = ROOT / "dashboard" / "assets" / "data" / "foods-catalog-curation.json"
+    artifact_p = ROOT / "dashboard" / "assets" / "data" / "foods-composition-data.json"
+    second_p = ROOT / "eden" / "foods" / "sources" / "sources.json"
+    extract_dir = ROOT / "eden" / "foods" / "extract"
+    archive_p = (ROOT / "eden" / "foods"
+                 / "FoodData_Central_sr_legacy_food_csv_2018-04.zip")
+
+    for p in (source_p, curation_p, artifact_p, second_p):
+        if not p.exists():
+            return False, f"{p.relative_to(ROOT).as_posix()} is missing"
+
+    notes = []
+    viol = _food_composition_impl(source_p, curation_p, artifact_p, extract_dir, archive_p,
+                                  second_p=second_p, notes=notes)
+    if viol:
+        return False, ("food composition does not trace to source: " + "; ".join(viol[:6])
+                       + (f" ... (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+
+    art = _json.loads(artifact_p.read_text(encoding="utf-8"))
+    rows = sum(len(f["nutrients"]) for f in art["foods"])
+    second = sum(1 for f in art["foods"] for r in f["nutrients"]
+                 if r["provenance"]["source_id"] != "usda-sr-legacy")
+    approx = sum(1 for f in art["foods"] for r in f["nutrients"]
+                 if r["provenance"]["tier"] == "APPROXIMATE")
+    anchored = "archive-anchored" if archive_p.exists() else "extract-only (archive absent)"
+    return True, (f"{rows} per-food composition value(s) across {len(art['foods'])} food(s) each "
+                  f"join byte-exact to a pinned source and reproduce their own arithmetic; "
+                  f"{second} come from a second source ({approx} APPROXIMATE, each a curated "
+                  f"pair carrying its reasoning) and re-extract byte-identically from their "
+                  f"pinned payloads; every denominator is a numeric Wallach target "
+                  f"({anchored}; {'; '.join(notes)})")
+
+
 # Eden's WALL -- scanner_user_items_marked
 # ---------------------------------------------------------------------------
 # The scanner lets a user add ANY item to THEIR regimen, but a user/scanned item can
 # NEVER masquerade as Wallach/Youngevity canonical, nor leak into a sealed pillar or a
-# generated artifact. Four USER provenance tokens are the wall's subject; no non-user
+# generated artifact. FIVE USER provenance tokens are the wall's subject; no non-user
 # provenance is minted anywhere in code or data. TWO of them (user_scanned, user_typed)
 # additionally mean the USER supplied the numbers -- that narrower set lives in
 # dashboard/assets/js/src/core/provenance.ts and is policed by
 # user_supplied_provenance_single_home, a different gate with a different job.
-_USER_PROVENANCE = ("user_scanned", "user_typed", "user_manual", "wishlist_promoted")
+#
+# ★ 'food_catalog' JOINED THE SET on 2026-08-21, when the food recommender landed. The
+# wall's subject is "an item the USER put in their OWN regimen", and a food the user picked
+# off the FOOD SOURCES block is exactly that -- the same standing as 'user_manual', which is
+# what a vault-matched product add mints. It is emphatically NOT a claim that the item is
+# canonical Wallach data, and clause (B) below still forbids it from ever appearing in a
+# pillar or an artifact, which is the property that actually matters. The two differ only in
+# WHERE the item heals from: 'user_manual' re-reads the product vault by name, 'food_catalog'
+# re-reads foods-composition-data.json by id (state/coverage.ts::liveNutrients).
+#
+# ★ WIDENING THIS TUPLE IS NOT THE WAY TO SILENCE THIS GATE. It is an allowlist of the kinds
+# of thing a USER can add. If a future token names something the app asserts on Wallach's
+# authority, it does NOT belong here -- that is the masquerade the wall exists to stop.
+_USER_PROVENANCE = ("user_scanned", "user_typed", "user_manual", "wishlist_promoted",
+                    "food_catalog")
 _PROV_RE = re.compile(r"provenance:\s*['\"]([^'\"]+)['\"]")
 
 
@@ -8592,6 +9238,15 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/js/src provenance literals + RegimenItemSchema x a user-token scan of eden/{corpus,catalog}/*.json & dashboard/assets/data/*.json (excl. append-only creators-log narrative), recomputed each run",
         severity="critical",
         lesson_ref="the scanner lets a user add ANY item to THEIR regimen but can NEVER modify the sealed pillars. This codifies the wall as a gate: user items are flagged and never enter a pillar or a generated index.",
+    ),
+    Invariant(
+        name="food_composition_traces_to_source",
+        anchor_class="external",  # bound to the pinned USDA source bytes, outside our hand-maintained data
+        description="every per-food nutrient number the app SHIPS joins byte-exact into the pinned USDA SR Legacy source ((fdc_id, nutrient_id) -> the source's own unparsed `per_100g` string), reproduces its own arithmetic from (per_100g, portion grams, unit), carries a portion that belongs to THAT food, and is measured against a NUMERIC WALLACH target -- which is also what makes a presence-covered tile (silver, the twelve amino acids) and a trace_pdm mineral structurally unreachable by any food",
+        check_fn=check_food_composition_traces_to_source,
+        truth_anchor="the committed bytes of eden/foods/extract/*.csv, byte-compared against the sha256-pinned USDA archive when it is present, x essentials-targets-data.json's Wallach targets -- recomputed each run. PROVES FIDELITY TO SOURCE, NOT CORRECTNESS: it cannot prove USDA is right about a food, only that we copied it exactly. Same honest limit essentials_canon_matches_graphic carries.",
+        severity="critical",
+        lesson_ref="the app shipped ZERO per-food numbers until 2026-08-21 and now ships ~2,000, none of them Wallach's. amounts_wallach_only audits TARGETS and is structurally blind to a food NUMERATOR, which changes a tile's verdict without touching any target -- so a wrong food number would pass a 99/99 green board exactly as the mockup-derived mineral tiers did for three weeks.",
     ),
     Invariant(
         name="user_supplied_provenance_single_home",

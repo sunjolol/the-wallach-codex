@@ -25,6 +25,25 @@
 export const USER_SUPPLIED_PROVENANCE: readonly string[] = ['user_scanned', 'user_typed'];
 
 /**
+ * A food added from the curated food catalog (state/foods.ts).
+ *
+ * ★ DELIBERATELY *NOT* IN USER_SUPPLIED_PROVENANCE. A food's numbers are USDA composition
+ * joined to a Wallach target — nobody typed them — so a saved food MUST re-read the live
+ * catalog on every paint, exactly as a vault product re-reads the vault. Marking it
+ * user-supplied would freeze a stale snapshot: a corrected portion or a re-derived source
+ * would never reach a regimen that already holds the food, silently and with no error.
+ */
+export const FOOD_CATALOG_PROVENANCE = 'food_catalog';
+
+/**
+ * True when the item is a food from the curated catalog, whose numbers heal from
+ * foods-composition-data.json rather than from the product vault.
+ */
+export function isFoodCatalog(provenance: string): boolean {
+  return provenance === FOOD_CATALOG_PROVENANCE;
+}
+
+/**
  * True when the item's nutrient numbers are the USER's own reading of a label — scanned
  * from a photo or typed by hand. Such an item keeps its own snapshot forever and carries
  * the YOURS mark; anything else is a catalog product and heals from the live vault.

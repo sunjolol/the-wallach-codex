@@ -40,3 +40,27 @@ dist-web/
 
 # The upload bundle built from dist-web/. Same reasoning: derived, regenerated in one command.
 dist-web.zip
+
+# The USDA FoodData Central SR Legacy archive (eden/foods/). Public-domain US
+# government data, but 6 MB of zipped CSV that is re-downloadable in one command
+# from the URL + sha256 pinned in eden/foods/usda-source.json. The byte-exact
+# EXTRACT of the rows this app actually uses IS committed, so the composition
+# gate runs on a fresh clone; the full archive is only needed to re-derive.
+eden/foods/*.zip
+
+# ── Outside food-composition source PAYLOADS (eden/foods/sources/) ───────────
+# Same policy the seven Wallach books run under: the BYTES stay out of the repo, the
+# NUMBERS we extracted are committed. Two reasons, and only one of them is size:
+#   1. COPYRIGHT. Powell 2005 is a Cambridge University Press PDF. Facts are not
+#      copyrightable and the extracted values are ours to ship; the article is not.
+#   2. WEIGHT. 27 MB of government spreadsheets and archives, all re-downloadable
+#      from the URL + sha256 pinned in eden/foods/sources/sources.json.
+# Every extractor reads a payload if present and the committed extraction if not, so a
+# fresh clone works with nothing downloaded.
+eden/foods/sources/**/*.zip
+eden/foods/sources/**/*.pdf
+eden/foods/sources/**/*.xlsx
+eden/foods/sources/**/*.xls
+eden/foods/sources/**/*.csv
+eden/foods/sources/**/*.xml
+eden/foods/sources/**/*.html

@@ -28,7 +28,7 @@
 
 import coverageLayoutData from '../../../data/coverage-layout-data.json';
 import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
-import { on } from '../core/events.js';
+import { emit, on } from '../core/events.js';
 import { GOAL_HUES, MAX_GOALS } from '../core/goal-display.js';
 import { isUserSupplied } from '../core/provenance.js';
 import { BACKUP_APP_ID } from '../core/schemas/backup.js';
@@ -45,7 +45,9 @@ import {
 import { coveredCountForItems, essentialCount, getOrCompute, matchEssential } from '../state/coverage.js';
 import { atMinimumDose, doseCount, doseUnitLabel, doseUnitsOf } from '../core/dose-units.js';
 import { defaultServingsFor } from '../state/dose-defaults.js';
+import { rankFoodsForCoverage } from '../state/foods.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage } from '../state/recommender.js';
+import { addCatalogFood, buildFoodsBlock } from './foods-block.js';
 import { starterPackIds } from '../state/starter-pack.js';
 import {
   addOrBumpRegimenItem,
@@ -96,6 +98,11 @@ const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
  * shows three products and nothing above them.
  */
 const REC_LIMIT = 3;
+/** How many FOOD cards sit above the products. Three, so the row shows six in total —
+ *  foods first (owner ruling, 2026-08-21). Matched to REC_LIMIT deliberately: the two
+ *  blocks are meant to read as one six-card row split by a labelled rule, not as a big
+ *  block and a small one. */
+const FOOD_LIMIT = 3;
 /** How many slot tiles the switcher paints. MUST equal state/regimen.ts's MAX_SLOTS — the state
  *  layer refuses a fifth save, so a mismatch here paints an empty tile that can never be filled. */
 const SLOT_CAP = 4;
@@ -581,7 +588,9 @@ function wantedSlugs(goals: LayoutGoal[]): string[] {
   return snapshot.tiles.filter(t => t.status !== 'covered').map(t => keyToSlug.get(t.name.toLowerCase())).filter((s): s is string => s !== undefined);
 }
 
-function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[]): void {
+function buildRecs(
+  host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], allCovered: boolean,
+): void {
   host.replaceChildren();
   const hueOf = (id: string): string => {
     const i = goals.findIndex(g => g.id === id);
@@ -590,8 +599,21 @@ function buildRecs(host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[]):
   if (recs.length === 0) {
     const note = document.createElement('p');
     note.className = 'ck-recs__note';
-    note.textContent = 'No product fills a gap right now — your stack already reaches these.';
+    // TWO different endings, and conflating them would lie in one direction or the other.
+    // "No product fits" happens all the time with an unfinished field; "all 90 covered" is
+    // the actual finish line and it earns a different sentence AND a way onward.
+    note.textContent = allCovered
+      ? 'All 90 essentials are now covered — no more recommendations needed.'
+      : 'No product fills a gap right now — your stack already reaches these.';
     host.appendChild(note);
+    if (allCovered) {
+      const go = document.createElement('button');
+      go.className = 'ck-recs__go';
+      go.type = 'button';
+      go.dataset['openProducts'] = '1';
+      go.textContent = 'Explore the Products tab';
+      host.appendChild(go);
+    }
     return;
   }
   for (const r of recs) {
@@ -1215,6 +1237,12 @@ export function mount(container: HTMLElement): MountHandle {
   const paint = (): void => {
     const goals = activeGoals();
     const field = fieldInfo(goals);
+    // ★ NOT `wantedSlugs(goals).length === 0`. That filters EVERY layout tile, and omega-9
+    // is flagged `essential: false` and capped at 'present' — it can never read covered, so
+    // that test would never fire and the finish line would be unreachable. fieldInfo already
+    // drops non-essential tiles, so its count is the true 90 and it agrees with the readout
+    // the user is looking at.
+    const allCovered = field.covered >= essentialCount();
     container.innerHTML = `
       <div class="ck">
         ${renderSlots()}
@@ -1222,6 +1250,7 @@ export function mount(container: HTMLElement): MountHandle {
           <div class="coverage-main ck-main">
             ${renderConsole(field)}
             ${renderGoals(goals)}
+            <div class="fs-block" data-foodsblock></div>
             <div class="recs ck-recs" data-rise="4">
               <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><span class="ck-recs__note">Products, ranked by your goals</span></div>
               <div class="ck-recgrid" data-recgrid></div>
@@ -1248,7 +1277,29 @@ export function mount(container: HTMLElement): MountHandle {
         pinned: starterPackIds(),
         greedy: true,
       });
-      buildRecs(recGrid, recs, goals);
+      buildRecs(recGrid, recs, goals, allCovered);
+    }
+    const foodsHost = container.querySelector<HTMLElement>('[data-foodsblock]');
+    if (foodsHost !== null) {
+      // The console's foods list DELIBERATELY never exhausts. Once the wanted set is
+      // closed it switches to education ranking (most nutritious first) and keeps going
+      // until the catalog itself runs out — owner ruling, 2026-08-21. Seeing the catalog
+      // IS the point, so `want` being empty is a MODE CHANGE here, not a stop.
+      const ownedFoods = items
+        .map(i => i.label['food_id'])
+        .filter((v): v is string => typeof v === 'string');
+      const foodRecs = rankFoodsForCoverage({
+        want: wantedSlugs(goals),
+        owned: ownedFoods,
+        goals: goals.map(g => ({ id: g.id, members: g.members })),
+        limit: FOOD_LIMIT,
+        greedy: true,
+        education: allCovered,
+      });
+      buildFoodsBlock(foodsHost, foodRecs, {
+        education: allCovered,
+        ownedCount: ownedFoods.length,
+      });
     }
     if (recycleOpen) {
       populateRecycle();
@@ -1515,6 +1566,20 @@ export function mount(container: HTMLElement): MountHandle {
       if (name !== undefined) {
         addItem(name);
       }
+      return;
+    }
+    // — all-90-covered → the Products tab —
+    // `wallach:navigate` cannot serve this: it reaches only the three WORKSPACES, and
+    // Products is a tab inside the Knowledge drawer. Hence 'knowledge:open-tab'.
+    const openProducts = target.closest<HTMLElement>('[data-open-products]');
+    if (openProducts !== null) {
+      emit('knowledge:open-tab', { tab: 'products' });
+      return;
+    }
+    // — food add —
+    const foodAdd = target.closest<HTMLElement>('[data-food-add]');
+    if (foodAdd !== null) {
+      addCatalogFood(foodAdd.dataset['foodAdd'] ?? '');
       return;
     }
     // — typeahead add —

@@ -1,0 +1,7955 @@
+[
+ {
+  "db_id": "91",
+  "ndb_numbers": [
+   "01001"
+  ],
+  "fdc_ids": [],
+  "tds_no": "164",
+  "description": "Butter, salted",
+  "n": "11",
+  "iodine_mcg_per_100g": "4.6",
+  "sd": "0.6",
+  "min": "3.7",
+  "max": "5.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "359",
+  "ndb_numbers": [
+   "01192"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Cheese product, made with 2% reduced fat milk",
+  "n": "1",
+  "iodine_mcg_per_100g": "54",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2013",
+  "page": 1
+ },
+ {
+  "db_id": "24",
+  "ndb_numbers": [
+   "01253"
+  ],
+  "fdc_ids": [
+   "100297"
+  ],
+  "tds_no": "10",
+  "description": "Cheese, American, processed",
+  "n": "37",
+  "iodine_mcg_per_100g": "57",
+  "sd": "18",
+  "min": "29",
+  "max": "112",
+  "sources": "FDA/USDAC",
+  "years": "2020,2023",
+  "page": 1
+ },
+ {
+  "db_id": "25",
+  "ndb_numbers": [
+   "01009"
+  ],
+  "fdc_ids": [],
+  "tds_no": "12",
+  "description": "Cheese, cheddar (sharp/mild)",
+  "n": "38",
+  "iodine_mcg_per_100g": "46",
+  "sd": "13",
+  "min": "27",
+  "max": "106",
+  "sources": "FDA/USDA",
+  "years": "2013,2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "450",
+  "ndb_numbers": [
+   "01019"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Cheese, feta, whole milk, crumbled",
+  "n": "8",
+  "iodine_mcg_per_100g": "48",
+  "sd": "21",
+  "min": "30",
+  "max": "76",
+  "sources": "USDA",
+  "years": "2022",
+  "page": 1
+ },
+ {
+  "db_id": "190",
+  "ndb_numbers": [
+   "01025"
+  ],
+  "fdc_ids": [
+   "100296"
+  ],
+  "tds_no": "391",
+  "description": "Cheese, Monterey Jack",
+  "n": "36",
+  "iodine_mcg_per_100g": "40",
+  "sd": "15",
+  "min": "12",
+  "max": "77",
+  "sources": "FDA/USDAC",
+  "years": "2017-2020,2023",
+  "page": 1
+ },
+ {
+  "db_id": "191",
+  "ndb_numbers": [
+   "01029"
+  ],
+  "fdc_ids": [],
+  "tds_no": "392",
+  "description": "Cheese, mozzarella",
+  "n": "30",
+  "iodine_mcg_per_100g": "51",
+  "sd": "10.0",
+  "min": "27",
+  "max": "67",
+  "sources": "FDA/USDA",
+  "years": "2013,2017-2020",
+  "page": 1
+ },
+ {
+  "db_id": "349",
+  "ndb_numbers": [
+   "01032"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Cheese, parmesan, grated",
+  "n": "9",
+  "iodine_mcg_per_100g": "82",
+  "sd": "38",
+  "min": "45",
+  "max": "175",
+  "sources": "USDA",
+  "years": "2013,2022",
+  "page": 1
+ },
+ {
+  "db_id": "348",
+  "ndb_numbers": [
+   "43379"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Cheese, processed, Swiss, low fat",
+  "n": "1",
+  "iodine_mcg_per_100g": "60",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2012",
+  "page": 1
+ },
+ {
+  "db_id": "491",
+  "ndb_numbers": [
+   "01035"
+  ],
+  "fdc_ids": [
+   "100298"
+  ],
+  "tds_no": "",
+  "description": "Cheese, provolone",
+  "n": "8",
+  "iodine_mcg_per_100g": "64",
+  "sd": "13",
+  "min": "39",
+  "max": "83",
+  "sources": "USDAC",
+  "years": "2023",
+  "page": 1
+ },
+ {
+  "db_id": "350",
+  "ndb_numbers": [
+   "01036"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Cheese, ricotta, whole milk",
+  "n": "1",
+  "iodine_mcg_per_100g": "66",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 1
+ },
+ {
+  "db_id": "127",
+  "ndb_numbers": [
+   "01040"
+  ],
+  "fdc_ids": [],
+  "tds_no": "236",
+  "description": "Cheese, Swiss",
+  "n": "35",
+  "iodine_mcg_per_100g": "137",
+  "sd": "113",
+  "min": "33",
+  "max": "440",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "494",
+  "ndb_numbers": [
+   "01267"
+  ],
+  "fdc_ids": [
+   "100301"
+  ],
+  "tds_no": "",
+  "description": "Cheese, queso cotija",
+  "n": "7",
+  "iodine_mcg_per_100g": "65",
+  "sd": "33",
+  "min": "18",
+  "max": "114",
+  "sources": "USDAC",
+  "years": "2023",
+  "page": 1
+ },
+ {
+  "db_id": "492",
+  "ndb_numbers": [
+   "01228"
+  ],
+  "fdc_ids": [
+   "100300"
+  ],
+  "tds_no": "",
+  "description": "Cheese, queso fresco",
+  "n": "8",
+  "iodine_mcg_per_100g": "80",
+  "sd": "38",
+  "min": "24",
+  "max": "125",
+  "sources": "USDAC",
+  "years": "2023",
+  "page": 1
+ },
+ {
+  "db_id": "493",
+  "ndb_numbers": [],
+  "fdc_ids": [
+   "100299"
+  ],
+  "tds_no": "",
+  "description": "Cheese, queso oaxaca",
+  "n": "8",
+  "iodine_mcg_per_100g": "46",
+  "sd": "40",
+  "min": "12",
+  "max": "135",
+  "sources": "",
+  "years": "2023",
+  "page": 1
+ },
+ {
+  "db_id": "161",
+  "ndb_numbers": [
+   "01015"
+  ],
+  "fdc_ids": [],
+  "tds_no": "332",
+  "description": "Cottage cheese, creamed, reduced fat",
+  "n": "11",
+  "iodine_mcg_per_100g": "37",
+  "sd": "7.2",
+  "min": "25",
+  "max": "47",
+  "sources": "FDA/USDA",
+  "years": "2013,2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "489",
+  "ndb_numbers": [
+   "01012"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Cottage cheese, full fat, small or large curd",
+  "n": "10",
+  "iodine_mcg_per_100g": "46",
+  "sd": "13",
+  "min": "20",
+  "max": "63",
+  "sources": "USDA",
+  "years": "2022",
+  "page": 1
+ },
+ {
+  "db_id": "128",
+  "ndb_numbers": [
+   "01017"
+  ],
+  "fdc_ids": [],
+  "tds_no": "237",
+  "description": "Cream cheese",
+  "n": "18",
+  "iodine_mcg_per_100g": "36",
+  "sd": "11",
+  "min": "21",
+  "max": "55",
+  "sources": "FDA/USDA",
+  "years": "2016-2020,2022",
+  "page": 1
+ },
+ {
+  "db_id": "94",
+  "ndb_numbers": [
+   "01068"
+  ],
+  "fdc_ids": [],
+  "tds_no": "168",
+  "description": "Cream substitute, non-dairy, fluid",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "0.2",
+  "min": "0.4",
+  "max": "1.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "351",
+  "ndb_numbers": [
+   "01053"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Cream, heavy whipping, fluid",
+  "n": "9",
+  "iodine_mcg_per_100g": "21",
+  "sd": "7.0",
+  "min": "5.3",
+  "max": "30",
+  "sources": "USDA",
+  "years": "2013,2022",
+  "page": 1
+ },
+ {
+  "db_id": "93",
+  "ndb_numbers": [
+   "01049"
+  ],
+  "fdc_ids": [],
+  "tds_no": "167",
+  "description": "Cream, half & half",
+  "n": "36",
+  "iodine_mcg_per_100g": "29",
+  "sd": "6.1",
+  "min": "18",
+  "max": "46",
+  "sources": "FDA/USDA",
+  "years": "2013,2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "362",
+  "ndb_numbers": [
+   "01258"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Egg, white, dried, stabilized, glucose reduced",
+  "n": "15",
+  "iodine_mcg_per_100g": "34",
+  "sd": "11",
+  "min": "22",
+  "max": "59",
+  "sources": "USDA",
+  "years": "2018",
+  "page": 1
+ },
+ {
+  "db_id": "358",
+  "ndb_numbers": [
+   "01172"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Egg, white, raw, frozen, pasteurized",
+  "n": "6",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "0.0",
+  "min": "1.5",
+  "max": "1.5",
+  "sources": "USDA",
+  "years": "2018",
+  "page": 1
+ },
+ {
+  "db_id": "355",
+  "ndb_numbers": [
+   "01133"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Egg, whole, dried",
+  "n": "17",
+  "iodine_mcg_per_100g": "274",
+  "sd": "53",
+  "min": "202",
+  "max": "407",
+  "sources": "USDA",
+  "years": "2018",
+  "page": 1
+ },
+ {
+  "db_id": "353",
+  "ndb_numbers": [
+   "01123"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Egg, whole, raw, fresh",
+  "n": "24",
+  "iodine_mcg_per_100g": "49",
+  "sd": "21",
+  "min": "27",
+  "max": "115",
+  "sources": "USDA",
+  "years": "2019",
+  "page": 1
+ },
+ {
+  "db_id": "357",
+  "ndb_numbers": [
+   "01171"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Egg, whole, raw, frozen, pasteurized",
+  "n": "14",
+  "iodine_mcg_per_100g": "62",
+  "sd": "14",
+  "min": "45",
+  "max": "81",
+  "sources": "USDA",
+  "years": "2018",
+  "page": 1
+ },
+ {
+  "db_id": "356",
+  "ndb_numbers": [
+   "01137"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Egg, yolk, dried",
+  "n": "17",
+  "iodine_mcg_per_100g": "349",
+  "sd": "66",
+  "min": "261",
+  "max": "437",
+  "sources": "USDA",
+  "years": "2018",
+  "page": 1
+ },
+ {
+  "db_id": "354",
+  "ndb_numbers": [
+   "01126"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Egg, yolk, raw, frozen, pasteurized",
+  "n": "15",
+  "iodine_mcg_per_100g": "177",
+  "sd": "53",
+  "min": "76",
+  "max": "267",
+  "sources": "USDA",
+  "years": "2018",
+  "page": 1
+ },
+ {
+  "db_id": "34",
+  "ndb_numbers": [
+   "01129"
+  ],
+  "fdc_ids": [],
+  "tds_no": "37",
+  "description": "Eggs, hard-boiled",
+  "n": "35",
+  "iodine_mcg_per_100g": "61",
+  "sd": "30",
+  "min": "14",
+  "max": "120",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "336",
+  "ndb_numbers": [
+   "01132"
+  ],
+  "fdc_ids": [],
+  "tds_no": "35",
+  "description": "Eggs, scrambled with oil",
+  "n": "7",
+  "iodine_mcg_per_100g": "43",
+  "sd": "13",
+  "min": "20",
+  "max": "57",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 1
+ },
+ {
+  "db_id": "192",
+  "ndb_numbers": [
+   "19270"
+  ],
+  "fdc_ids": [],
+  "tds_no": "393",
+  "description": "Ice cream, chocolate",
+  "n": "28",
+  "iodine_mcg_per_100g": "32",
+  "sd": "4.8",
+  "min": "24",
+  "max": "42",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 1
+ },
+ {
+  "db_id": "341",
+  "ndb_numbers": [
+   "01243"
+  ],
+  "fdc_ids": [],
+  "tds_no": "177",
+  "description": "Ice cream, lowfat, vanilla",
+  "n": "7",
+  "iodine_mcg_per_100g": "45",
+  "sd": "9.8",
+  "min": "27",
+  "max": "56",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 1
+ },
+ {
+  "db_id": "143",
+  "ndb_numbers": [
+   "19095"
+  ],
+  "fdc_ids": [],
+  "tds_no": "286",
+  "description": "Ice cream, regular (not lowfat), vanilla",
+  "n": "34",
+  "iodine_mcg_per_100g": "38",
+  "sd": "5.8",
+  "min": "26",
+  "max": "53",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "446",
+  "ndb_numbers": [
+   "01088"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Milk, buttermilk, lowfat",
+  "n": "8",
+  "iodine_mcg_per_100g": "34",
+  "sd": "5.3",
+  "min": "26",
+  "max": "42",
+  "sources": "USDA",
+  "years": "2022",
+  "page": 1
+ },
+ {
+  "db_id": "22",
+  "ndb_numbers": [
+   "01103"
+  ],
+  "fdc_ids": [],
+  "tds_no": "3",
+  "description": "Milk, chocolate, lowfat, fluid",
+  "n": "37",
+  "iodine_mcg_per_100g": "30",
+  "sd": "6.8",
+  "min": "17",
+  "max": "44",
+  "sources": "FDA/USDA",
+  "years": "2014,2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "21",
+  "ndb_numbers": [
+   "01079"
+  ],
+  "fdc_ids": [],
+  "tds_no": "2",
+  "description": "Milk, reduced fat (2%), fluid",
+  "n": "59",
+  "iodine_mcg_per_100g": "36",
+  "sd": "13",
+  "min": "20",
+  "max": "103",
+  "sources": "FDA/USDA",
+  "years": "2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "352",
+  "ndb_numbers": [
+   "01082"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Milk, lowfat (1%), fluid",
+  "n": "24",
+  "iodine_mcg_per_100g": "36",
+  "sd": "15",
+  "min": "13",
+  "max": "85",
+  "sources": "USDA",
+  "years": "2018",
+  "page": 1
+ },
+ {
+  "db_id": "23",
+  "ndb_numbers": [
+   "01085"
+  ],
+  "fdc_ids": [],
+  "tds_no": "4",
+  "description": "Milk, skim, fluid",
+  "n": "59",
+  "iodine_mcg_per_100g": "34",
+  "sd": "9.2",
+  "min": "15",
+  "max": "65",
+  "sources": "FDA/USDA",
+  "years": "2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "20",
+  "ndb_numbers": [
+   "01077"
+  ],
+  "fdc_ids": [],
+  "tds_no": "1",
+  "description": "Milk, whole, fluid",
+  "n": "59",
+  "iodine_mcg_per_100g": "34",
+  "sd": "11",
+  "min": "17",
+  "max": "84",
+  "sources": "FDA/USDA",
+  "years": "2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "154",
+  "ndb_numbers": [
+   "01056"
+  ],
+  "fdc_ids": [],
+  "tds_no": "300",
+  "description": "Sour cream",
+  "n": "18",
+  "iodine_mcg_per_100g": "31",
+  "sd": "5.8",
+  "min": "22",
+  "max": "48",
+  "sources": "FDA/USDA",
+  "years": "2016-2020,2022",
+  "page": 1
+ },
+ {
+  "db_id": "290",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "333",
+  "description": "Sour cream dip, any flavor",
+  "n": "7",
+  "iodine_mcg_per_100g": "25",
+  "sd": "6.1",
+  "min": "16",
+  "max": "31",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 1
+ },
+ {
+  "db_id": "295",
+  "ndb_numbers": [
+   "01298"
+  ],
+  "fdc_ids": [],
+  "tds_no": "409",
+  "description": "Yogurt, frozen, vanilla",
+  "n": "27",
+  "iodine_mcg_per_100g": "46",
+  "sd": "9.4",
+  "min": "26",
+  "max": "76",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 1
+ },
+ {
+  "db_id": "447",
+  "ndb_numbers": [
+   "01293"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Yogurt, Greek, whole milk, plain",
+  "n": "8",
+  "iodine_mcg_per_100g": "42",
+  "sd": "19",
+  "min": "17",
+  "max": "79",
+  "sources": "USDA",
+  "years": "2022",
+  "page": 1
+ },
+ {
+  "db_id": "361",
+  "ndb_numbers": [
+   "01256"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Yogurt, Greek, plain, nonfat",
+  "n": "6",
+  "iodine_mcg_per_100g": "51",
+  "sd": "3.5",
+  "min": "45",
+  "max": "56",
+  "sources": "USDA",
+  "years": "2013",
+  "page": 1
+ },
+ {
+  "db_id": "363",
+  "ndb_numbers": [
+   "01284"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Yogurt, Greek, strawberry, lowfat",
+  "n": "1",
+  "iodine_mcg_per_100g": "42",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2014",
+  "page": 1
+ },
+ {
+  "db_id": "364",
+  "ndb_numbers": [
+   "01285"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Yogurt, Greek, strawberry, nonfat",
+  "n": "2",
+  "iodine_mcg_per_100g": "41",
+  "sd": "",
+  "min": "39",
+  "max": "43",
+  "sources": "USDA",
+  "years": "2007",
+  "page": 1
+ },
+ {
+  "db_id": "365",
+  "ndb_numbers": [
+   "01286"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Yogurt, Greek, vanilla, nonfat",
+  "n": "2",
+  "iodine_mcg_per_100g": "51",
+  "sd": "",
+  "min": "49",
+  "max": "52",
+  "sources": "USDA",
+  "years": "2014",
+  "page": 1
+ },
+ {
+  "db_id": "126",
+  "ndb_numbers": [
+   "01122"
+  ],
+  "fdc_ids": [],
+  "tds_no": "235",
+  "description": "Yogurt, fruit-flavored, lowfat",
+  "n": "11",
+  "iodine_mcg_per_100g": "31",
+  "sd": "6.5",
+  "min": "23",
+  "max": "43",
+  "sources": "FDA/USDA",
+  "years": "2013,2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "490",
+  "ndb_numbers": [
+   "01117"
+  ],
+  "fdc_ids": [
+   "100295"
+  ],
+  "tds_no": "",
+  "description": "Yogurt, regular, plain, nonfat",
+  "n": "8",
+  "iodine_mcg_per_100g": "59",
+  "sd": "36",
+  "min": "33",
+  "max": "146",
+  "sources": "USDAC",
+  "years": "2023",
+  "page": 1
+ },
+ {
+  "db_id": "222",
+  "ndb_numbers": [
+   "01220"
+  ],
+  "fdc_ids": [],
+  "tds_no": "521",
+  "description": "Yogurt, vanilla, lowfat",
+  "n": "3",
+  "iodine_mcg_per_100g": "34",
+  "sd": "3.0",
+  "min": "31",
+  "max": "37",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 1
+ },
+ {
+  "db_id": "448",
+  "ndb_numbers": [
+   "01116"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Yogurt, whole milk, plain",
+  "n": "8",
+  "iodine_mcg_per_100g": "32",
+  "sd": "12",
+  "min": "22",
+  "max": "57",
+  "sources": "USDA",
+  "years": "2022",
+  "page": 1
+ },
+ {
+  "db_id": "487",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "902",
+  "description": "Baking powder",
+  "n": "1",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "FDA",
+  "years": "2020",
+  "page": 1
+ },
+ {
+  "db_id": "488",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "910",
+  "description": "Cocoa powder",
+  "n": "1",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "FDA",
+  "years": "2020",
+  "page": 1
+ },
+ {
+  "db_id": "19",
+  "ndb_numbers": [
+   "02047"
+  ],
+  "fdc_ids": [],
+  "tds_no": "909",
+  "description": "Salt, table, iodized",
+  "n": "26",
+  "iodine_mcg_per_100g": "5213",
+  "sd": "1329",
+  "min": "3410",
+  "max": "8900",
+  "sources": "FDA/USDA",
+  "years": "2017-2018,2020",
+  "page": 1
+ },
+ {
+  "db_id": "372",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Sea salt, iodized",
+  "n": "9",
+  "iodine_mcg_per_100g": "4663",
+  "sd": "1143",
+  "min": "2250",
+  "max": "6080",
+  "sources": "USDA",
+  "years": "2018",
+  "page": 1
+ },
+ {
+  "db_id": "373",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "904",
+  "description": "Sea salt, non-iodized",
+  "n": "28",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "1.5",
+  "sources": "FDA/USDA",
+  "years": "2018,2020",
+  "page": 1
+ },
+ {
+  "db_id": "273",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "532",
+  "description": "Broth, chicken, ready-to-use from carton",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.2",
+  "min": "0.5",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 1
+ },
+ {
+  "db_id": "180",
+  "ndb_numbers": [
+   "06116"
+  ],
+  "fdc_ids": [],
+  "tds_no": "374",
+  "description": "Brown gravy, canned or bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "0.3",
+  "min": "1.0",
+  "max": "2.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 1
+ },
+ {
+  "db_id": "412",
+  "ndb_numbers": [
+   "27052"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Dip, salsa con queso (salsa with cheese) and ODS-NIH Database for the Iodine Content",
+  "n": "6",
+  "iodine_mcg_per_100g": "19",
+  "sd": "14",
+  "min": "7.4",
+  "max": "47",
+  "sources": "USDA",
+  "years": "2012-2013",
+  "page": 1
+ },
+ {
+  "db_id": "98",
+  "ndb_numbers": [
+   "11935"
+  ],
+  "fdc_ids": [],
+  "tds_no": "173",
+  "description": "Ketchup, tomato, bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "1.0",
+  "sd": "0.4",
+  "min": "0.6",
+  "max": "1.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "152",
+  "ndb_numbers": [
+   "02046"
+  ],
+  "fdc_ids": [],
+  "tds_no": "298",
+  "description": "Mustard, yellow, plain",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "177",
+  "ndb_numbers": [
+   "06164"
+  ],
+  "fdc_ids": [],
+  "tds_no": "359",
+  "description": "Salsa, tomato, bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "1.6",
+  "sd": "0.8",
+  "min": "0.0",
+  "max": "2.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "203",
+  "ndb_numbers": [
+   "06150"
+  ],
+  "fdc_ids": [],
+  "tds_no": "405",
+  "description": "Sauce, barbecue, bottled",
+  "n": "27",
+  "iodine_mcg_per_100g": "2.7",
+  "sd": "1.3",
+  "min": "0.9",
+  "max": "7.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 2
+ },
+ {
+  "db_id": "366",
+  "ndb_numbers": [
+   "06179"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Sauce, fish, ready-to-serve",
+  "n": "1",
+  "iodine_mcg_per_100g": "21",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 2
+ },
+ {
+  "db_id": "219",
+  "ndb_numbers": [
+   "16123",
+   "16124"
+  ],
+  "fdc_ids": [],
+  "tds_no": "518",
+  "description": "Sauce, soy",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.1",
+  "min": "0.4",
+  "max": "0.6",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 2
+ },
+ {
+  "db_id": "12",
+  "ndb_numbers": [
+   "27050"
+  ],
+  "fdc_ids": [],
+  "tds_no": "373",
+  "description": "Sauce, sweet & sour, bottled",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.4",
+  "min": "0.4",
+  "max": "1.5",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 2
+ },
+ {
+  "db_id": "221",
+  "ndb_numbers": [
+   "06931"
+  ],
+  "fdc_ids": [],
+  "tds_no": "520",
+  "description": "Sauce, tomato pasta, bottled Soup, bean with bacon/pork, canned, condensed,",
+  "n": "3",
+  "iodine_mcg_per_100g": "1.6",
+  "sd": "0.4",
+  "min": "1.3",
+  "max": "2.1",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 2
+ },
+ {
+  "db_id": "5",
+  "ndb_numbers": [
+   "06404"
+  ],
+  "fdc_ids": [],
+  "tds_no": "283",
+  "description": "prepared with water",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.1",
+  "min": "0.1",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 2
+ },
+ {
+  "db_id": "274",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "533",
+  "description": "Soup, broccoli cheese, canned, ready to eat (RTE)",
+  "n": "3",
+  "iodine_mcg_per_100g": "4.6",
+  "sd": "0.2",
+  "min": "4.5",
+  "max": "4.8",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 2
+ },
+ {
+  "db_id": "246",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "155",
+  "description": "Soup, chicken noodle, canned, ready to eat (RTE) Soup, clam chowder, New England, canned, ready to",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "0.2",
+  "min": "0.7",
+  "max": "1.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "230",
+  "ndb_numbers": [
+   "06030"
+  ],
+  "fdc_ids": [],
+  "tds_no": "534",
+  "description": "eat (RTE) Soup, clam chowder, New England, canned,",
+  "n": "3",
+  "iodine_mcg_per_100g": "11",
+  "sd": "7.9",
+  "min": "6.3",
+  "max": "20",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 2
+ },
+ {
+  "db_id": "319",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "285",
+  "description": "condensed, prepared with whole milk Soup, cream of mushroom, canned, ready to eat",
+  "n": "7",
+  "iodine_mcg_per_100g": "20",
+  "sd": "5.1",
+  "min": "13",
+  "max": "27",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 2
+ },
+ {
+  "db_id": "275",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "535",
+  "description": "(RTE)",
+  "n": "3",
+  "iodine_mcg_per_100g": "2.2",
+  "sd": "0.1",
+  "min": "2.1",
+  "max": "2.3",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 2
+ },
+ {
+  "db_id": "276",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "536",
+  "description": "Soup, cream of potato, canned, ready to eat (RTE)",
+  "n": "3",
+  "iodine_mcg_per_100g": "3.3",
+  "sd": "0.4",
+  "min": "3.0",
+  "max": "3.7",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 2
+ },
+ {
+  "db_id": "262",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "367",
+  "description": "Soup, ramen noodles, prepared with water",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "247",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "156",
+  "description": "Soup, tomato, canned, ready to eat (RTE)",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.2",
+  "min": "0.3",
+  "max": "1.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "231",
+  "ndb_numbers": [
+   "06742"
+  ],
+  "fdc_ids": [],
+  "tds_no": "537",
+  "description": "Soup, vegetable beef, canned, ready to eat (RTE) Soup, vegetable beef, canned, condensed, prepared",
+  "n": "3",
+  "iodine_mcg_per_100g": "1.8",
+  "sd": "1.1",
+  "min": "0.8",
+  "max": "2.9",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 2
+ },
+ {
+  "db_id": "312",
+  "ndb_numbers": [
+   "06471"
+  ],
+  "fdc_ids": [],
+  "tds_no": "157",
+  "description": "with water",
+  "n": "7",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "0.4",
+  "min": "0.8",
+  "max": "2.0",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 2
+ },
+ {
+  "db_id": "277",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "538",
+  "description": "Soup, vegetable, canned, ready to eat (RTE)",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "0.0",
+  "min": "0.9",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 2
+ },
+ {
+  "db_id": "302",
+  "ndb_numbers": [
+   "03165"
+  ],
+  "fdc_ids": [],
+  "tds_no": "730",
+  "description": "Baby food, apples with berries",
+  "n": "8",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.3",
+  "sources": "FDA",
+  "years": "2016-2017,2020",
+  "page": 2
+ },
+ {
+  "db_id": "240",
+  "ndb_numbers": [
+   "03163"
+  ],
+  "fdc_ids": [],
+  "tds_no": "731",
+  "description": "Baby food, apples with fruit other than berries",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "122",
+  "ndb_numbers": [
+   "03117"
+  ],
+  "fdc_ids": [],
+  "tds_no": "225",
+  "description": "Baby food, applesauce Baby food, apple and sweet potato with cinnamon,",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "473",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "755",
+  "description": "pouch",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.3",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "470",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "751",
+  "description": "Baby food, apple, spinach and avocado, bowl/pouch Baby food, apple, sweet potato and pineapple,",
+  "n": "5",
+  "iodine_mcg_per_100g": "2.5",
+  "sd": "0.2",
+  "min": "2.3",
+  "max": "2.7",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "474",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "756",
+  "description": "pouch",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.2",
+  "min": "0.4",
+  "max": "0.7",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "298",
+  "ndb_numbers": [
+   "03143"
+  ],
+  "fdc_ids": [],
+  "tds_no": "717",
+  "description": "Baby food, apricots with mixed fruit",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.1",
+  "min": "0.2",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 2
+ },
+ {
+  "db_id": "157",
+  "ndb_numbers": [
+   "43546"
+  ],
+  "fdc_ids": [],
+  "tds_no": "313",
+  "description": "Baby food, bananas",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "463",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "744",
+  "description": "Baby food, banana and blueberry, pouch",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "462",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "743",
+  "description": "Baby food, banana and strawberry, glass jar",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "464",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "745",
+  "description": "Baby food, banana, apple and pear, plastic jar Baby food, banana, blackberry and blueberry, plastic",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "461",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "742",
+  "description": "jar",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "0.8",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "123",
+  "ndb_numbers": [
+   "03131"
+  ],
+  "fdc_ids": [],
+  "tds_no": "226",
+  "description": "Baby food, peaches",
+  "n": "29",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "124",
+  "ndb_numbers": [
+   "03133"
+  ],
+  "fdc_ids": [],
+  "tds_no": "227",
+  "description": "Baby food, pears",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "296",
+  "ndb_numbers": [
+   "03159"
+  ],
+  "fdc_ids": [],
+  "tds_no": "713",
+  "description": "Baby food, pears and pineapple",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.3",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 2
+ },
+ {
+  "db_id": "465",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "746",
+  "description": "Baby food, organic pears and spinach, pouch Baby food, pear, blueberry, apple and avocado,",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.2",
+  "min": "0.5",
+  "max": "1.0",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "468",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "749",
+  "description": "pouch",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.1",
+  "min": "0.3",
+  "max": "0.6",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "478",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "760",
+  "description": "Baby food, pear, mango, avocado, pouch",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "0.6",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "297",
+  "ndb_numbers": [
+   "03170"
+  ],
+  "fdc_ids": [],
+  "tds_no": "714",
+  "description": "Baby food, plums/prunes with apples or pears",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "0.7",
+  "min": "0.0",
+  "max": "2.2",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 2
+ },
+ {
+  "db_id": "241",
+  "ndb_numbers": [
+   "03139"
+  ],
+  "fdc_ids": [],
+  "tds_no": "736",
+  "description": "Baby food, prunes",
+  "n": "8",
+  "iodine_mcg_per_100g": "1.0",
+  "sd": "0.6",
+  "min": "0.5",
+  "max": "2.4",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 2
+ },
+ {
+  "db_id": "477",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "759",
+  "description": "Baby food, mango, carrot and turmeric, bowl",
+  "n": "2",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "",
+  "min": "0.7",
+  "max": "0.7",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "459",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "740",
+  "description": "Baby food, mango, glass jar",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.0",
+  "min": "0.3",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "460",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "741",
+  "description": "Baby food, mango, pouch Baby food, mango, yellow zucchini, corn and",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "0.1",
+  "min": "0.6",
+  "max": "0.7",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "479",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "761",
+  "description": "turmeric, pouch",
+  "n": "2",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "",
+  "min": "1.3",
+  "max": "1.6",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "125",
+  "ndb_numbers": [
+   "03166"
+  ],
+  "fdc_ids": [],
+  "tds_no": "230",
+  "description": "Baby food, juice, apple",
+  "n": "15",
+  "iodine_mcg_per_100g": "1.0",
+  "sd": "1.2",
+  "min": "0.0",
+  "max": "3.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "237",
+  "ndb_numbers": [
+   "44074"
+  ],
+  "fdc_ids": [],
+  "tds_no": "712",
+  "description": "Baby food, juice, grape",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.8",
+  "sd": "0.5",
+  "min": "0.3",
+  "max": "1.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "236",
+  "ndb_numbers": [
+   "43408"
+  ],
+  "fdc_ids": [],
+  "tds_no": "711",
+  "description": "Baby food, juice, pear",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "1.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 2
+ },
+ {
+  "db_id": "480",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "762",
+  "description": "Baby food, juice, mixed fruit and ODS-NIH Database for the Iodine Content",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 2
+ },
+ {
+  "db_id": "117",
+  "ndb_numbers": [
+   "03100"
+  ],
+  "fdc_ids": [],
+  "tds_no": "218",
+  "description": "Baby food, carrots",
+  "n": "21",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "118",
+  "ndb_numbers": [
+   "03092"
+  ],
+  "fdc_ids": [],
+  "tds_no": "219",
+  "description": "Baby food, green beans",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "121",
+  "ndb_numbers": [
+   "03121"
+  ],
+  "fdc_ids": [],
+  "tds_no": "223",
+  "description": "Baby food, peas",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "466",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "747",
+  "description": "Baby food, peas and spinach, glass jar",
+  "n": "1",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 3
+ },
+ {
+  "db_id": "469",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "750",
+  "description": "Baby food, peas, green beans and avocado, pouch Baby food, pumpkin, banana, papaya and",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.1",
+  "min": "0.3",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 3
+ },
+ {
+  "db_id": "476",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "758",
+  "description": "cardamom, bowl",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.3",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 3
+ },
+ {
+  "db_id": "159",
+  "ndb_numbers": [
+   "03105"
+  ],
+  "fdc_ids": [],
+  "tds_no": "320",
+  "description": "Baby food, squash",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "120",
+  "ndb_numbers": [
+   "03109"
+  ],
+  "fdc_ids": [],
+  "tds_no": "221",
+  "description": "Baby food, sweet potatoes",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "475",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "757",
+  "description": "Baby food, sweet potato, apple and corn, pouch",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.8",
+  "sd": "0.2",
+  "min": "0.5",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 3
+ },
+ {
+  "db_id": "467",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "748",
+  "description": "Baby food, sweet potato, apple and spinach, pouch",
+  "n": "5",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "0.3",
+  "min": "0.8",
+  "max": "1.3",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 3
+ },
+ {
+  "db_id": "119",
+  "ndb_numbers": [
+   "03279"
+  ],
+  "fdc_ids": [],
+  "tds_no": "220",
+  "description": "Baby food, vegetables, mixed",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "482",
+  "ndb_numbers": [
+   "03189"
+  ],
+  "fdc_ids": [],
+  "tds_no": "764",
+  "description": "Baby food, cereal, oatmeal, dry",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "1.1",
+  "min": "0.0",
+  "max": "2.9",
+  "sources": "FDA",
+  "years": "2019-2020",
+  "page": 3
+ },
+ {
+  "db_id": "483",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "765",
+  "description": "Baby food, cereal, rice, dry",
+  "n": "9",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2019-2020",
+  "page": 3
+ },
+ {
+  "db_id": "484",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "766",
+  "description": "Baby food, cereal, mixed, dry",
+  "n": "7",
+  "iodine_mcg_per_100g": "1.0",
+  "sd": "1.7",
+  "min": "0.0",
+  "max": "3.9",
+  "sources": "FDA",
+  "years": "2019-2020",
+  "page": 3
+ },
+ {
+  "db_id": "278",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "701",
+  "description": "Baby food, cereal, mixed, prepared with water Baby food, cereal, oatmeal with fruit, prepared with",
+  "n": "8",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.1",
+  "sources": "FDA",
+  "years": "2016-2018",
+  "page": 3
+ },
+ {
+  "db_id": "300",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "725",
+  "description": "water",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.1",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 3
+ },
+ {
+  "db_id": "258",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "323",
+  "description": "Baby food, cereal, oatmeal, prepared with water",
+  "n": "8",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2016-2018",
+  "page": 3
+ },
+ {
+  "db_id": "259",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "324",
+  "description": "Baby food, cereal, rice, prepared with water Baby food, organic yogurt, apple, pumpkin,",
+  "n": "20",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.3",
+  "sources": "FDA",
+  "years": "2016-2019",
+  "page": 3
+ },
+ {
+  "db_id": "471",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "753",
+  "description": "cinnamon and quinoa, pouch",
+  "n": "4",
+  "iodine_mcg_per_100g": "11",
+  "sd": "2.1",
+  "min": "8.8",
+  "max": "13",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 3
+ },
+ {
+  "db_id": "238",
+  "ndb_numbers": [
+   "43523"
+  ],
+  "fdc_ids": [],
+  "tds_no": "721",
+  "description": "Baby food, fruit yogurt dessert",
+  "n": "15",
+  "iodine_mcg_per_100g": "23",
+  "sd": "5.5",
+  "min": "14",
+  "max": "32",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "481",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "763",
+  "description": "Baby food, yogurt, peach pear",
+  "n": "3",
+  "iodine_mcg_per_100g": "33",
+  "sd": "3.8",
+  "min": "30",
+  "max": "37",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 3
+ },
+ {
+  "db_id": "257",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "317",
+  "description": "Baby food, biscuits, teething",
+  "n": "15",
+  "iodine_mcg_per_100g": "20",
+  "sd": "8.0",
+  "min": "3.0",
+  "max": "28",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "299",
+  "ndb_numbers": [
+   "03214"
+  ],
+  "fdc_ids": [],
+  "tds_no": "723",
+  "description": "Baby food, cookies, arrowroot",
+  "n": "8",
+  "iodine_mcg_per_100g": "8.9",
+  "sd": "2.2",
+  "min": "6.1",
+  "max": "13",
+  "sources": "FDA/USDA",
+  "years": "2015-2017",
+  "page": 3
+ },
+ {
+  "db_id": "280",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "733",
+  "description": "Baby food, finger foods, puffed snack Baby food, finger food, baked product, cereal,",
+  "n": "8",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.9",
+  "min": "0.0",
+  "max": "2.6",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 3
+ },
+ {
+  "db_id": "432",
+  "ndb_numbers": [
+   "42284"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "fortified",
+  "n": "1",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2014",
+  "page": 3
+ },
+ {
+  "db_id": "114",
+  "ndb_numbers": [
+   "03069"
+  ],
+  "fdc_ids": [],
+  "tds_no": "214",
+  "description": "Baby food, chicken noodle dinner",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.7",
+  "min": "0.0",
+  "max": "2.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "301",
+  "ndb_numbers": [
+   "43008"
+  ],
+  "fdc_ids": [],
+  "tds_no": "726",
+  "description": "Baby food, chicken with rice",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.5",
+  "min": "0.0",
+  "max": "1.3",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 3
+ },
+ {
+  "db_id": "279",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "732",
+  "description": "Baby food, macaroni and cheese with vegetables",
+  "n": "14",
+  "iodine_mcg_per_100g": "7.0",
+  "sd": "1.3",
+  "min": "4.2",
+  "max": "8.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "115",
+  "ndb_numbers": [
+   "03045"
+  ],
+  "fdc_ids": [],
+  "tds_no": "215",
+  "description": "Baby food, pasta, tomato and beef",
+  "n": "15",
+  "iodine_mcg_per_100g": "2.0",
+  "sd": "1.4",
+  "min": "0.0",
+  "max": "4.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "242",
+  "ndb_numbers": [
+   "03046"
+  ],
+  "fdc_ids": [],
+  "tds_no": "737",
+  "description": "Baby food, ravioli, cheese-filled, with tomato sauce",
+  "n": "8",
+  "iodine_mcg_per_100g": "4.6",
+  "sd": "0.6",
+  "min": "3.7",
+  "max": "5.8",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 3
+ },
+ {
+  "db_id": "111",
+  "ndb_numbers": [
+   "03002"
+  ],
+  "fdc_ids": [],
+  "tds_no": "205",
+  "description": "Baby food, beef and broth/gravy",
+  "n": "15",
+  "iodine_mcg_per_100g": "1.3",
+  "sd": "0.8",
+  "min": "0.0",
+  "max": "3.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "343",
+  "ndb_numbers": [
+   "03013"
+  ],
+  "fdc_ids": [],
+  "tds_no": "207",
+  "description": "Baby food, chicken and broth/gravy",
+  "n": "7",
+  "iodine_mcg_per_100g": "28",
+  "sd": "8.2",
+  "min": "11",
+  "max": "35",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 3
+ },
+ {
+  "db_id": "160",
+  "ndb_numbers": [
+   "03016"
+  ],
+  "fdc_ids": [],
+  "tds_no": "328",
+  "description": "Baby food, turkey and broth/gravy",
+  "n": "15",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "0.5",
+  "min": "0.0",
+  "max": "2.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "116",
+  "ndb_numbers": [
+   "03083"
+  ],
+  "fdc_ids": [],
+  "tds_no": "216",
+  "description": "Baby food, turkey and rice Baby food, turkey, quinoa, apple and sweet potato,",
+  "n": "15",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "472",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "754",
+  "description": "pouch",
+  "n": "5",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.1",
+  "min": "0.6",
+  "max": "0.7",
+  "sources": "FDA",
+  "years": "2019",
+  "page": 3
+ },
+ {
+  "db_id": "112",
+  "ndb_numbers": [
+   "03055"
+  ],
+  "fdc_ids": [],
+  "tds_no": "211",
+  "description": "Baby food, vegetables and beef",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "113",
+  "ndb_numbers": [
+   "03073"
+  ],
+  "fdc_ids": [],
+  "tds_no": "212",
+  "description": "Baby food, vegetables and chicken",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "239",
+  "ndb_numbers": [
+   "03085"
+  ],
+  "fdc_ids": [],
+  "tds_no": "728",
+  "description": "Baby food, vegetables and turkey",
+  "n": "14",
+  "iodine_mcg_per_100g": "2.1",
+  "sd": "2.4",
+  "min": "0.0",
+  "max": "6.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "485",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "767",
+  "description": "Baby food, infant formula, milk-based, powdered",
+  "n": "2",
+  "iodine_mcg_per_100g": "115",
+  "sd": "",
+  "min": "100",
+  "max": "130",
+  "sources": "FDA",
+  "years": "2019-2020",
+  "page": 3
+ },
+ {
+  "db_id": "486",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "768",
+  "description": "Baby food, infant formula, soy-based, powdered Baby food, Infant formula, milk-based, iron fortified,",
+  "n": "2",
+  "iodine_mcg_per_100g": "98",
+  "sd": "",
+  "min": "97",
+  "max": "98",
+  "sources": "FDA",
+  "years": "2019-2020",
+  "page": 3
+ },
+ {
+  "db_id": "249",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "4",
+  "description": "ready-to-feed",
+  "n": "8",
+  "iodine_mcg_per_100g": "13",
+  "sd": "1.7",
+  "min": "12",
+  "max": "16",
+  "sources": "FDA",
+  "years": "2016-2018",
+  "page": 3
+ },
+ {
+  "db_id": "321",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "5",
+  "description": "Baby food, Infant formula, soy-based, ready-to-feed",
+  "n": "8",
+  "iodine_mcg_per_100g": "11",
+  "sd": "4.4",
+  "min": "0.6",
+  "max": "15",
+  "sources": "FDA",
+  "years": "2016-2018",
+  "page": 3
+ },
+ {
+  "db_id": "283",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "738",
+  "description": "Baby food, water, baby, bottled",
+  "n": "8",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 3
+ },
+ {
+  "db_id": "90",
+  "ndb_numbers": [
+   "04691"
+  ],
+  "fdc_ids": [],
+  "tds_no": "162",
+  "description": "Margarine, salted",
+  "n": "10",
+  "iodine_mcg_per_100g": "1.2",
+  "sd": "1.5",
+  "min": "0.0",
+  "max": "3.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "92",
+  "ndb_numbers": [
+   "04018"
+  ],
+  "fdc_ids": [],
+  "tds_no": "166",
+  "description": "Mayonnaise, regular, bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "5.3",
+  "sd": "1.6",
+  "min": "2.6",
+  "max": "7.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "182",
+  "ndb_numbers": [
+   "04053"
+  ],
+  "fdc_ids": [],
+  "tds_no": "378",
+  "description": "Oil, olive",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "183",
+  "ndb_numbers": [
+   "04044"
+  ],
+  "fdc_ids": [],
+  "tds_no": "379",
+  "description": "Oil, vegetable",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 3
+ },
+ {
+  "db_id": "433",
+  "ndb_numbers": [
+   "43016"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Salad dressing, coleslaw, bottled Salad dressing, creamy/buttermilk type, low-calorie,",
+  "n": "1",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 3
+ },
+ {
+  "db_id": "329",
+  "ndb_numbers": [
+   "43215"
+  ],
+  "fdc_ids": [],
+  "tds_no": "376",
+  "description": "bottled and ODS-NIH Database for the Iodine Content Salad dressing, creamy/buttermilk type, regular,",
+  "n": "7",
+  "iodine_mcg_per_100g": "13",
+  "sd": "2.0",
+  "min": "9.2",
+  "max": "15",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 3
+ },
+ {
+  "db_id": "328",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "375",
+  "description": "bottled",
+  "n": "7",
+  "iodine_mcg_per_100g": "8.4",
+  "sd": "1.6",
+  "min": "7.1",
+  "max": "12",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 4
+ },
+ {
+  "db_id": "181",
+  "ndb_numbers": [
+   "04114"
+  ],
+  "fdc_ids": [],
+  "tds_no": "377",
+  "description": "Salad dressing, Italian, regular, bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.4",
+  "min": "0.4",
+  "max": "1.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "217",
+  "ndb_numbers": [
+   "04640"
+  ],
+  "fdc_ids": [],
+  "tds_no": "516",
+  "description": "Salad dressing, ranch, low-calorie, bottled",
+  "n": "3",
+  "iodine_mcg_per_100g": "7.8",
+  "sd": "0.4",
+  "min": "7.5",
+  "max": "8.2",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 4
+ },
+ {
+  "db_id": "218",
+  "ndb_numbers": [
+   "04639"
+  ],
+  "fdc_ids": [],
+  "tds_no": "517",
+  "description": "Salad dressing, ranch, regular, bottled",
+  "n": "6",
+  "iodine_mcg_per_100g": "9.9",
+  "sd": "5.1",
+  "min": "5.9",
+  "max": "19",
+  "sources": "FDA/USDA",
+  "years": "2013,2018-2020",
+  "page": 4
+ },
+ {
+  "db_id": "54",
+  "ndb_numbers": [
+   "09003"
+  ],
+  "fdc_ids": [],
+  "tds_no": "78",
+  "description": "Apple, red, with peel, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "59",
+  "ndb_numbers": [
+   "09020"
+  ],
+  "fdc_ids": [],
+  "tds_no": "84",
+  "description": "Applesauce, bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "324",
+  "ndb_numbers": [
+   "09026"
+  ],
+  "fdc_ids": [],
+  "tds_no": "348",
+  "description": "Apricots, canned in heavy/light syrup",
+  "n": "7",
+  "iodine_mcg_per_100g": "6.2",
+  "sd": "5.0",
+  "min": "1.3",
+  "max": "15",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 4
+ },
+ {
+  "db_id": "67",
+  "ndb_numbers": [
+   "09037"
+  ],
+  "fdc_ids": [],
+  "tds_no": "97",
+  "description": "Avocado, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.7",
+  "min": "0.0",
+  "max": "3.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "56",
+  "ndb_numbers": [
+   "09040"
+  ],
+  "fdc_ids": [],
+  "tds_no": "80",
+  "description": "Banana, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.6",
+  "min": "0.0",
+  "max": "3.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "196",
+  "ndb_numbers": [
+   "09050"
+  ],
+  "fdc_ids": [],
+  "tds_no": "398",
+  "description": "Blueberries, raw",
+  "n": "28",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 4
+ },
+ {
+  "db_id": "64",
+  "ndb_numbers": [
+   "09181"
+  ],
+  "fdc_ids": [],
+  "tds_no": "89",
+  "description": "Cantaloupe, raw/frozen",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "1.3",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "62",
+  "ndb_numbers": [
+   "09099"
+  ],
+  "fdc_ids": [],
+  "tds_no": "87",
+  "description": "Fruit cocktail, canned in light syrup",
+  "n": "10",
+  "iodine_mcg_per_100g": "3.9",
+  "sd": "3.1",
+  "min": "0.0",
+  "max": "10",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "65",
+  "ndb_numbers": [
+   "09111"
+  ],
+  "fdc_ids": [],
+  "tds_no": "92",
+  "description": "Grapefruit, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "63",
+  "ndb_numbers": [
+   "09132"
+  ],
+  "fdc_ids": [],
+  "tds_no": "88",
+  "description": "Grapes, seedless, red/green, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "1.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "453",
+  "ndb_numbers": [
+   "09176"
+  ],
+  "fdc_ids": [],
+  "tds_no": "412",
+  "description": "Mango, raw/frozen",
+  "n": "6",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2020",
+  "page": 4
+ },
+ {
+  "db_id": "153",
+  "ndb_numbers": [
+   "09193"
+  ],
+  "fdc_ids": [],
+  "tds_no": "299",
+  "description": "Olives, black, pitted",
+  "n": "10",
+  "iodine_mcg_per_100g": "2.1",
+  "sd": "1.6",
+  "min": "0.0",
+  "max": "5.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "55",
+  "ndb_numbers": [
+   "09200"
+  ],
+  "fdc_ids": [],
+  "tds_no": "79",
+  "description": "Orange, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "1.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "345",
+  "ndb_numbers": [
+   "09239"
+  ],
+  "fdc_ids": [],
+  "tds_no": "254",
+  "description": "Peach, canned in light/medium syrup",
+  "n": "7",
+  "iodine_mcg_per_100g": "6.2",
+  "sd": "3.6",
+  "min": "1.3",
+  "max": "10",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 4
+ },
+ {
+  "db_id": "58",
+  "ndb_numbers": [
+   "09236"
+  ],
+  "fdc_ids": [],
+  "tds_no": "83",
+  "description": "Peach, raw/frozen",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "2.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "346",
+  "ndb_numbers": [
+   "09256"
+  ],
+  "fdc_ids": [],
+  "tds_no": "255",
+  "description": "Pear, canned in light syrup",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.0",
+  "min": "0.1",
+  "max": "0.2",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 4
+ },
+ {
+  "db_id": "60",
+  "ndb_numbers": [
+   "09252"
+  ],
+  "fdc_ids": [],
+  "tds_no": "85",
+  "description": "Pear, with peel, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "309",
+  "ndb_numbers": [
+   "09354"
+  ],
+  "fdc_ids": [],
+  "tds_no": "93",
+  "description": "Pineapple, canned in juice",
+  "n": "7",
+  "iodine_mcg_per_100g": "1.8",
+  "sd": "2.3",
+  "min": "0.6",
+  "max": "7.1",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 4
+ },
+ {
+  "db_id": "194",
+  "ndb_numbers": [
+   "09266"
+  ],
+  "fdc_ids": [],
+  "tds_no": "396",
+  "description": "Pineapple, raw/frozen",
+  "n": "28",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "2.3",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 4
+ },
+ {
+  "db_id": "66",
+  "ndb_numbers": [
+   "09298"
+  ],
+  "fdc_ids": [],
+  "tds_no": "95",
+  "description": "Raisins",
+  "n": "10",
+  "iodine_mcg_per_100g": "1.7",
+  "sd": "1.3",
+  "min": "0.0",
+  "max": "3.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "61",
+  "ndb_numbers": [
+   "09316"
+  ],
+  "fdc_ids": [],
+  "tds_no": "86",
+  "description": "Strawberries, raw/frozen",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "1.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "57",
+  "ndb_numbers": [
+   "09326"
+  ],
+  "fdc_ids": [],
+  "tds_no": "81",
+  "description": "Watermelon, raw/frozen",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "74",
+  "ndb_numbers": [
+   "11012"
+  ],
+  "fdc_ids": [],
+  "tds_no": "115",
+  "description": "Asparagus, fresh/frozen, boiled",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "0.7",
+  "min": "0.0",
+  "max": "3.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "340",
+  "ndb_numbers": [
+   "11084"
+  ],
+  "fdc_ids": [],
+  "tds_no": "131",
+  "description": "Beets, canned",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.4",
+  "min": "0.1",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 4
+ },
+ {
+  "db_id": "72",
+  "ndb_numbers": [
+   "11742"
+  ],
+  "fdc_ids": [],
+  "tds_no": "113",
+  "description": "Broccoli, fresh/frozen, boiled",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.6",
+  "min": "0.0",
+  "max": "2.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "140",
+  "ndb_numbers": [
+   "11099"
+  ],
+  "fdc_ids": [],
+  "tds_no": "263",
+  "description": "Brussels sprouts, fresh/frozen, boiled",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "331",
+  "ndb_numbers": [
+   "11110"
+  ],
+  "fdc_ids": [],
+  "tds_no": "110",
+  "description": "Cabbage, fresh, boiled",
+  "n": "8",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.3",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 4
+ },
+ {
+  "db_id": "204",
+  "ndb_numbers": [
+   "11109"
+  ],
+  "fdc_ids": [],
+  "tds_no": "406",
+  "description": "Cabbage, raw",
+  "n": "27",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 4
+ },
+ {
+  "db_id": "175",
+  "ndb_numbers": [
+   "11960"
+  ],
+  "fdc_ids": [],
+  "tds_no": "356",
+  "description": "Carrot, baby, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "1.1",
+  "min": "0.0",
+  "max": "3.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "313",
+  "ndb_numbers": [
+   "11125"
+  ],
+  "fdc_ids": [],
+  "tds_no": "259",
+  "description": "Carrot, fresh, peeled, boiled",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.6",
+  "min": "0.0",
+  "max": "1.6",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 4
+ },
+ {
+  "db_id": "75",
+  "ndb_numbers": [
+   "11136"
+  ],
+  "fdc_ids": [],
+  "tds_no": "116",
+  "description": "Cauliflower, fresh/frozen, boiled",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "0.7",
+  "min": "0.0",
+  "max": "3.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "73",
+  "ndb_numbers": [
+   "11143"
+  ],
+  "fdc_ids": [],
+  "tds_no": "114",
+  "description": "Celery, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "1.7",
+  "sd": "2.1",
+  "min": "0.0",
+  "max": "8.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "70",
+  "ndb_numbers": [
+   "11162"
+  ],
+  "fdc_ids": [],
+  "tds_no": "108",
+  "description": "Collards, fresh/frozen, boiled",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.8",
+  "sd": "1.8",
+  "min": "0.0",
+  "max": "7.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "45",
+  "ndb_numbers": [
+   "11172"
+  ],
+  "fdc_ids": [],
+  "tds_no": "55",
+  "description": "Corn, canned, drained solids",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "44",
+  "ndb_numbers": [
+   "11179"
+  ],
+  "fdc_ids": [],
+  "tds_no": "54",
+  "description": "Corn, frozen, boiled",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "1.2",
+  "min": "0.0",
+  "max": "7.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "79",
+  "ndb_numbers": [
+   "11206"
+  ],
+  "fdc_ids": [],
+  "tds_no": "123",
+  "description": "Cucumber, peeled, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "2.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "315",
+  "ndb_numbers": [
+   "11210"
+  ],
+  "fdc_ids": [],
+  "tds_no": "265",
+  "description": "Eggplant, fresh, without peel, boiled",
+  "n": "14",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "1.0",
+  "sources": "FDA",
+  "years": "2016-2018",
+  "page": 4
+ },
+ {
+  "db_id": "250",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "410",
+  "description": "Eggplant, with peel, baked",
+  "n": "21",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "0.5",
+  "min": "0.0",
+  "max": "1.4",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 4
+ },
+ {
+  "db_id": "454",
+  "ndb_numbers": [
+   "11215"
+  ],
+  "fdc_ids": [],
+  "tds_no": "413",
+  "description": "Garlic, raw",
+  "n": "6",
+  "iodine_mcg_per_100g": "1.0",
+  "sd": "1.5",
+  "min": "0.0",
+  "max": "3.1",
+  "sources": "FDA",
+  "years": "2020",
+  "page": 4
+ },
+ {
+  "db_id": "78",
+  "ndb_numbers": [
+   "11729"
+  ],
+  "fdc_ids": [],
+  "tds_no": "122",
+  "description": "Green beans, canned, drained solids",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.5",
+  "min": "0.0",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "77",
+  "ndb_numbers": [
+   "11061"
+  ],
+  "fdc_ids": [],
+  "tds_no": "121",
+  "description": "Green beans, fresh/frozen, boiled",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "0.7",
+  "min": "0.0",
+  "max": "2.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "452",
+  "ndb_numbers": [
+   "11236"
+  ],
+  "fdc_ids": [],
+  "tds_no": "411",
+  "description": "Kale, fresh, pan-cooked",
+  "n": "6",
+  "iodine_mcg_per_100g": "1.8",
+  "sd": "2.1",
+  "min": "0.0",
+  "max": "4.4",
+  "sources": "FDA",
+  "years": "2020",
+  "page": 4
+ },
+ {
+  "db_id": "71",
+  "ndb_numbers": [
+   "11252"
+  ],
+  "fdc_ids": [],
+  "tds_no": "109",
+  "description": "Lettuce, iceberg, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "176",
+  "ndb_numbers": [
+   "11253"
+  ],
+  "fdc_ids": [],
+  "tds_no": "357",
+  "description": "Lettuce, leaf, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "1.4",
+  "min": "0.0",
+  "max": "8.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "36",
+  "ndb_numbers": [
+   "11032"
+  ],
+  "fdc_ids": [],
+  "tds_no": "42",
+  "description": "Lima beans, immature, frozen, boiled",
+  "n": "9",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2019",
+  "page": 4
+ },
+ {
+  "db_id": "142",
+  "ndb_numbers": [
+   "11584"
+  ],
+  "fdc_ids": [],
+  "tds_no": "268",
+  "description": "Mixed vegetables, frozen, boiled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "141",
+  "ndb_numbers": [
+   "11260"
+  ],
+  "fdc_ids": [],
+  "tds_no": "264",
+  "description": "Mushrooms, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "1.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "451",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "130",
+  "description": "Mushrooms, canned, drained solids",
+  "n": "1",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "FDA",
+  "years": "2020",
+  "page": 4
+ },
+ {
+  "db_id": "434",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Nori, seaweed, dried",
+  "n": "3",
+  "iodine_mcg_per_100g": "2317",
+  "sd": "618",
+  "min": "1640",
+  "max": "2850",
+  "sources": "USDA",
+  "years": "2018",
+  "page": 4
+ },
+ {
+  "db_id": "317",
+  "ndb_numbers": [
+   "11279"
+  ],
+  "fdc_ids": [],
+  "tds_no": "267",
+  "description": "Okra, fresh/frozen, boiled",
+  "n": "7",
+  "iodine_mcg_per_100g": "1.0",
+  "sd": "0.6",
+  "min": "0.3",
+  "max": "1.8",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 4
+ },
+ {
+  "db_id": "82",
+  "ndb_numbers": [
+   "11282"
+  ],
+  "fdc_ids": [],
+  "tds_no": "128",
+  "description": "Onion, mature, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "37",
+  "ndb_numbers": [
+   "11313"
+  ],
+  "fdc_ids": [],
+  "tds_no": "46",
+  "description": "Peas, green, fresh/frozen, boiled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "80",
+  "ndb_numbers": [
+   "11333"
+  ],
+  "fdc_ids": [],
+  "tds_no": "125",
+  "description": "Pepper, bell, green, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.5",
+  "min": "0.0",
+  "max": "2.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "89",
+  "ndb_numbers": [
+   "11937"
+  ],
+  "fdc_ids": [],
+  "tds_no": "161",
+  "description": "Pickles, dill, cucumber boiled1",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.5",
+  "min": "0.3",
+  "max": "1.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "83",
+  "ndb_numbers": [
+   "11367"
+  ],
+  "fdc_ids": [],
+  "tds_no": "136",
+  "description": "Potato, peeled,",
+  "n": "34",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "84",
+  "ndb_numbers": [
+   "11674"
+  ],
+  "fdc_ids": [],
+  "tds_no": "137",
+  "description": "Potato, with peel, baked and ODS-NIH Database for the Iodine Content",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "1.4",
+  "min": "0.0",
+  "max": "7.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 4
+ },
+ {
+  "db_id": "293",
+  "ndb_numbers": [
+   "11371"
+  ],
+  "fdc_ids": [],
+  "tds_no": "354",
+  "description": "Potatoes, mashed, prepared from fresh",
+  "n": "7",
+  "iodine_mcg_per_100g": "6.2",
+  "sd": "3.6",
+  "min": "3.8",
+  "max": "14",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 5
+ },
+ {
+  "db_id": "220",
+  "ndb_numbers": [
+   "11549"
+  ],
+  "fdc_ids": [],
+  "tds_no": "9",
+  "description": "Sauce, tomato, canned/bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "0.5",
+  "min": "0.0",
+  "max": "1.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "1",
+  "ndb_numbers": [
+   "11458"
+  ],
+  "fdc_ids": [],
+  "tds_no": "107",
+  "description": "Spinach, fresh/frozen, boiled",
+  "n": "8",
+  "iodine_mcg_per_100g": "3.9",
+  "sd": "2.9",
+  "min": "1.0",
+  "max": "8.1",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 5
+ },
+ {
+  "db_id": "206",
+  "ndb_numbers": [
+   "11457"
+  ],
+  "fdc_ids": [],
+  "tds_no": "408",
+  "description": "Spinach, raw",
+  "n": "27",
+  "iodine_mcg_per_100g": "6.7",
+  "sd": "7.3",
+  "min": "1.6",
+  "max": "40",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "332",
+  "ndb_numbers": [
+   "11468"
+  ],
+  "fdc_ids": [],
+  "tds_no": "124",
+  "description": "Squash, summer, fresh/frozen, boiled",
+  "n": "8",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.1",
+  "min": "0.1",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 5
+ },
+ {
+  "db_id": "205",
+  "ndb_numbers": [
+   "11478"
+  ],
+  "fdc_ids": [],
+  "tds_no": "407",
+  "description": "Squash, summer, zucchini, fresh/frozen, boiled Squash, winter (Hubbard or acorn), fresh/frozen,",
+  "n": "27",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "1.0",
+  "min": "0.0",
+  "max": "4.6",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "81",
+  "ndb_numbers": [
+   "11644"
+  ],
+  "fdc_ids": [],
+  "tds_no": "126",
+  "description": "boiled",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.8",
+  "sd": "1.1",
+  "min": "0.0",
+  "max": "5.3",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "195",
+  "ndb_numbers": [
+   "11508"
+  ],
+  "fdc_ids": [],
+  "tds_no": "397",
+  "description": "Sweet potato, baked, peel removed",
+  "n": "28",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "1.5",
+  "min": "0.0",
+  "max": "6.2",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 5
+ },
+ {
+  "db_id": "325",
+  "ndb_numbers": [
+   "11514"
+  ],
+  "fdc_ids": [],
+  "tds_no": "358",
+  "description": "Sweet potato, canned",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.8",
+  "min": "0.0",
+  "max": "2.3",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 5
+ },
+ {
+  "db_id": "76",
+  "ndb_numbers": [
+   "11529"
+  ],
+  "fdc_ids": [],
+  "tds_no": "117",
+  "description": "Tomato, raw",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "316",
+  "ndb_numbers": [
+   "11567"
+  ],
+  "fdc_ids": [],
+  "tds_no": "266",
+  "description": "Turnip, fresh/frozen, boiled",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 5
+ },
+ {
+  "db_id": "270",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "527",
+  "description": "Beans, black, canned, drained",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "456",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "545",
+  "description": "Beans, garbanzo (chickpeas), canned, drained solids",
+  "n": "1",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "FDA",
+  "years": "2020",
+  "page": 5
+ },
+ {
+  "db_id": "271",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "528",
+  "description": "Beans, kidney, canned, drained",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "228",
+  "ndb_numbers": [
+   "16146"
+  ],
+  "fdc_ids": [],
+  "tds_no": "529",
+  "description": "Beans, pinto, canned, drained",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "1.6",
+  "min": "0.0",
+  "max": "2.8",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "304",
+  "ndb_numbers": [
+   "16043"
+  ],
+  "fdc_ids": [],
+  "tds_no": "38",
+  "description": "Beans, pinto, from dry, boiled",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.2",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 5
+ },
+ {
+  "db_id": "167",
+  "ndb_numbers": [
+   "16103"
+  ],
+  "fdc_ids": [],
+  "tds_no": "341",
+  "description": "Beans, refried, canned",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.8",
+  "sd": "0.8",
+  "min": "0.0",
+  "max": "2.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "272",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "530",
+  "description": "Beans, white, canned, drained",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "1.5",
+  "min": "0.0",
+  "max": "2.6",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "323",
+  "ndb_numbers": [
+   "16050"
+  ],
+  "fdc_ids": [],
+  "tds_no": "342",
+  "description": "Beans, white, from dry, boiled",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 5
+ },
+ {
+  "db_id": "35",
+  "ndb_numbers": [
+   "16009"
+  ],
+  "fdc_ids": [],
+  "tds_no": "39",
+  "description": "Beans, with pork, canned",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "457",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "546",
+  "description": "Lentils, dry, cooked",
+  "n": "1",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "FDA",
+  "years": "2020",
+  "page": 5
+ },
+ {
+  "db_id": "38",
+  "ndb_numbers": [
+   "16167"
+  ],
+  "fdc_ids": [],
+  "tds_no": "47",
+  "description": "Peanut butter, smooth/creamy",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "39",
+  "ndb_numbers": [
+   "16090"
+  ],
+  "fdc_ids": [],
+  "tds_no": "48",
+  "description": "Peanuts, dry roasted, salted",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.5",
+  "min": "0.0",
+  "max": "1.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "458",
+  "ndb_numbers": [
+   "16126"
+  ],
+  "fdc_ids": [],
+  "tds_no": "547",
+  "description": "Tofu, firm, plain, drained solids",
+  "n": "1",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "FDA",
+  "years": "2020",
+  "page": 5
+ },
+ {
+  "db_id": "18",
+  "ndb_numbers": [
+   "43137"
+  ],
+  "fdc_ids": [],
+  "tds_no": "544",
+  "description": "Veggie burger, soy based, baked",
+  "n": "3",
+  "iodine_mcg_per_100g": "9.5",
+  "sd": "1.6",
+  "min": "7.9",
+  "max": "11",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "227",
+  "ndb_numbers": [
+   "12061"
+  ],
+  "fdc_ids": [],
+  "tds_no": "526",
+  "description": "Almonds, shelled",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "455",
+  "ndb_numbers": [
+   "12586"
+  ],
+  "fdc_ids": [],
+  "tds_no": "414",
+  "description": "Nuts, cashew, oil roasted, with salt added",
+  "n": "1",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "FDA",
+  "years": "2020",
+  "page": 5
+ },
+ {
+  "db_id": "168",
+  "ndb_numbers": [
+   "12537"
+  ],
+  "fdc_ids": [],
+  "tds_no": "343",
+  "description": "Seeds, sunflower, shelled, salted, roasted",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "201",
+  "ndb_numbers": [
+   "12155"
+  ],
+  "fdc_ids": [],
+  "tds_no": "403",
+  "description": "Walnuts, shelled",
+  "n": "23",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 5
+ },
+ {
+  "db_id": "110",
+  "ndb_numbers": [
+   "14003"
+  ],
+  "fdc_ids": [],
+  "tds_no": "198",
+  "description": "Alcohol, beer",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "0.5",
+  "min": "0.2",
+  "max": "2.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "207",
+  "ndb_numbers": [
+   "14051"
+  ],
+  "fdc_ids": [],
+  "tds_no": "500",
+  "description": "Alcohol, distilled, vodka",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "248",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "200",
+  "description": "Alcohol, distilled, whiskey/scotch",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "342",
+  "ndb_numbers": [
+   "14084"
+  ],
+  "fdc_ids": [],
+  "tds_no": "1/502",
+  "description": "Alcohol, wine, red/white",
+  "n": "13",
+  "iodine_mcg_per_100g": "1.6",
+  "sd": "0.7",
+  "min": "0.7",
+  "max": "3.3",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "210",
+  "ndb_numbers": [
+   "14091"
+  ],
+  "fdc_ids": [],
+  "tds_no": "503",
+  "description": "Beverage, almond",
+  "n": "9",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.3",
+  "min": "0.1",
+  "max": "0.9",
+  "sources": "FDA/USDAC",
+  "years": "2020-2022",
+  "page": 5
+ },
+ {
+  "db_id": "211",
+  "ndb_numbers": [
+   "14090"
+  ],
+  "fdc_ids": [],
+  "tds_no": "504",
+  "description": "Beverage, coconut water",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "0.2",
+  "min": "0.4",
+  "max": "0.8",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "212",
+  "ndb_numbers": [
+   "14060"
+  ],
+  "fdc_ids": [],
+  "tds_no": "505",
+  "description": "Beverage, energy",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "213",
+  "ndb_numbers": [
+   "16222"
+  ],
+  "fdc_ids": [],
+  "tds_no": "506",
+  "description": "Beverage, soy, shelf stable Beverage, soy, shelf stable (with seaweed or",
+  "n": "6",
+  "iodine_mcg_per_100g": "1.3",
+  "sd": "1.2",
+  "min": "0.3",
+  "max": "3.0",
+  "sources": "FDA/USDAc",
+  "years": "2019-2022",
+  "page": 5
+ },
+ {
+  "db_id": "445",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "seaweed derivative)",
+  "n": "2",
+  "iodine_mcg_per_100g": "4.9",
+  "sd": "",
+  "min": "2.9",
+  "max": "6.9",
+  "sources": "FDA/USDAC",
+  "years": "2018,2022",
+  "page": 5
+ },
+ {
+  "db_id": "264",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "507",
+  "description": "Beverage, sports Beverage, chocolate malt powder, prepared with 1%",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "374",
+  "ndb_numbers": [
+   "14164"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "milk, fortified",
+  "n": "1",
+  "iodine_mcg_per_100g": "28",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2014",
+  "page": 5
+ },
+ {
+  "db_id": "108",
+  "ndb_numbers": [
+   "14416"
+  ],
+  "fdc_ids": [],
+  "tds_no": "194",
+  "description": "Carbonated beverage, cola, low-calorie",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "106",
+  "ndb_numbers": [
+   "14148"
+  ],
+  "fdc_ids": [],
+  "tds_no": "191",
+  "description": "Carbonated beverage, cola, regular",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "320",
+  "ndb_numbers": [
+   "14144"
+  ],
+  "fdc_ids": [],
+  "tds_no": "8",
+  "description": "Carbonated beverage, fruit-flavored",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "155",
+  "ndb_numbers": [
+   "14209"
+  ],
+  "fdc_ids": [],
+  "tds_no": "305",
+  "description": "Coffee, brewed from ground",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.3",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "13",
+  "ndb_numbers": [
+   "14201"
+  ],
+  "fdc_ids": [],
+  "tds_no": "381",
+  "description": "Coffee, decaffeinated, from ground",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.1",
+  "min": "0.1",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 5
+ },
+ {
+  "db_id": "173",
+  "ndb_numbers": [
+   "14242"
+  ],
+  "fdc_ids": [],
+  "tds_no": "351",
+  "description": "Cranberry juice cocktail, canned/bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "0.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "156",
+  "ndb_numbers": [
+   "14651"
+  ],
+  "fdc_ids": [],
+  "tds_no": "307",
+  "description": "Fruit drink (5% - 25% juice), canned/bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.3",
+  "min": "0.3",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "107",
+  "ndb_numbers": [
+   "14541"
+  ],
+  "fdc_ids": [],
+  "tds_no": "193",
+  "description": "Fruit drink from powder, reconstituted",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "68",
+  "ndb_numbers": [
+   "09400"
+  ],
+  "fdc_ids": [],
+  "tds_no": "99",
+  "description": "Juice, apple, bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.6",
+  "min": "0.0",
+  "max": "1.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "172",
+  "ndb_numbers": [
+   "09444"
+  ],
+  "fdc_ids": [],
+  "tds_no": "350",
+  "description": "Juice, fruit blend (100% juice), canned/bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.8",
+  "sd": "0.3",
+  "min": "0.4",
+  "max": "1.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "138",
+  "ndb_numbers": [
+   "09130"
+  ],
+  "fdc_ids": [],
+  "tds_no": "257",
+  "description": "Juice, grape, bottled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.2",
+  "min": "0.1",
+  "max": "0.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "69",
+  "ndb_numbers": [
+   "09123"
+  ],
+  "fdc_ids": [],
+  "tds_no": "100",
+  "description": "Juice, grapefruit, bottle/carton",
+  "n": "10",
+  "iodine_mcg_per_100g": "5.1",
+  "sd": "14",
+  "min": "0.0",
+  "max": "46",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 5
+ },
+ {
+  "db_id": "225",
+  "ndb_numbers": [
+   "09152"
+  ],
+  "fdc_ids": [],
+  "tds_no": "524",
+  "description": "Juice, lemon, bottled and ODS-NIH Database for the Iodine Content",
+  "n": "3",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "1.6",
+  "min": "0.0",
+  "max": "3.2",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 5
+ },
+ {
+  "db_id": "174",
+  "ndb_numbers": [
+   "09207"
+  ],
+  "fdc_ids": [],
+  "tds_no": "352",
+  "description": "Juice, orange, bottle/carton Juice, orange, from frozen concentrate,",
+  "n": "10",
+  "iodine_mcg_per_100g": "8.5",
+  "sd": "7.9",
+  "min": "1.6",
+  "max": "24",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 6
+ },
+ {
+  "db_id": "338",
+  "ndb_numbers": [
+   "09209"
+  ],
+  "fdc_ids": [],
+  "tds_no": "98",
+  "description": "reconstituted",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.2",
+  "min": "0.2",
+  "max": "0.7",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 6
+ },
+ {
+  "db_id": "137",
+  "ndb_numbers": [
+   "09409"
+  ],
+  "fdc_ids": [],
+  "tds_no": "256",
+  "description": "Juice, pineapple, canned",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 6
+ },
+ {
+  "db_id": "339",
+  "ndb_numbers": [
+   "09294"
+  ],
+  "fdc_ids": [],
+  "tds_no": "103",
+  "description": "Juice, prune, bottled",
+  "n": "7",
+  "iodine_mcg_per_100g": "1.3",
+  "sd": "1.3",
+  "min": "0.4",
+  "max": "3.2",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 6
+ },
+ {
+  "db_id": "314",
+  "ndb_numbers": [
+   "11886"
+  ],
+  "fdc_ids": [],
+  "tds_no": "261",
+  "description": "Juice, tomato, bottled",
+  "n": "7",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "0.3",
+  "min": "0.7",
+  "max": "1.4",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 6
+ },
+ {
+  "db_id": "226",
+  "ndb_numbers": [
+   "11578"
+  ],
+  "fdc_ids": [],
+  "tds_no": "525",
+  "description": "Juice, tomato-vegetable, bottled",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.8",
+  "sd": "0.5",
+  "min": "0.4",
+  "max": "1.3",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 6
+ },
+ {
+  "db_id": "310",
+  "ndb_numbers": [
+   "14293"
+  ],
+  "fdc_ids": [],
+  "tds_no": "105",
+  "description": "Lemonade, from frozen concentrate, reconstituted Meal replacement, liquid, ready to drink (RTD),",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.2",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 6
+ },
+ {
+  "db_id": "322",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "509",
+  "description": "assorted flavors",
+  "n": "10",
+  "iodine_mcg_per_100g": "39",
+  "sd": "41",
+  "min": "18",
+  "max": "143",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 6
+ },
+ {
+  "db_id": "215",
+  "ndb_numbers": [
+   "14066"
+  ],
+  "fdc_ids": [],
+  "tds_no": "510",
+  "description": "Powder, protein",
+  "n": "3",
+  "iodine_mcg_per_100g": "98",
+  "sd": "46",
+  "min": "67",
+  "max": "150",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 6
+ },
+ {
+  "db_id": "109",
+  "ndb_numbers": [
+   "14355"
+  ],
+  "fdc_ids": [],
+  "tds_no": "197",
+  "description": "Tea, brewed from tea bag",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 6
+ },
+ {
+  "db_id": "14",
+  "ndb_numbers": [
+   "14352"
+  ],
+  "fdc_ids": [],
+  "tds_no": "382",
+  "description": "Tea, decaffeinated, brewed from tea bag",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.2",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 6
+ },
+ {
+  "db_id": "184",
+  "ndb_numbers": [
+   "14555"
+  ],
+  "fdc_ids": [],
+  "tds_no": "380",
+  "description": "Water, mineral/spring, bottled",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "1.3",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 6
+ },
+ {
+  "db_id": "439",
+  "ndb_numbers": [
+   "14411"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Water, tap, drinking2",
+  "n": "40",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "2.0",
+  "min": "0.0",
+  "max": "11",
+  "sources": "USDA",
+  "years": "2003",
+  "page": 6
+ },
+ {
+  "db_id": "389",
+  "ndb_numbers": [
+   "15141"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Crustaceans, crab, blue, canned",
+  "n": "3",
+  "iodine_mcg_per_100g": "38",
+  "sd": "12",
+  "min": "27",
+  "max": "52",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "500",
+  "ndb_numbers": [],
+  "fdc_ids": [
+   "100330"
+  ],
+  "tds_no": "",
+  "description": "Crustaceans, crab, blue, lump, pasteurized",
+  "n": "8",
+  "iodine_mcg_per_100g": "45",
+  "sd": "9.4",
+  "min": "29",
+  "max": "61",
+  "sources": "USDAC",
+  "years": "2023",
+  "page": 6
+ },
+ {
+  "db_id": "390",
+  "ndb_numbers": [
+   "15148"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Crustaceans, lobster, northern, cooked, moist heat",
+  "n": "3",
+  "iodine_mcg_per_100g": "185",
+  "sd": "44",
+  "min": "139",
+  "max": "226",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "391",
+  "ndb_numbers": [
+   "15149"
+  ],
+  "fdc_ids": [
+   "100327"
+  ],
+  "tds_no": "",
+  "description": "Crustaceans, shrimp, mixed species, raw Crustaceans, shrimp, precooked, shell removed, no",
+  "n": "17",
+  "iodine_mcg_per_100g": "14",
+  "sd": "11",
+  "min": "4.1",
+  "max": "39",
+  "sources": "USDAC",
+  "years": "2008,2016,2023",
+  "page": 6
+ },
+ {
+  "db_id": "132",
+  "ndb_numbers": [
+   "15151"
+  ],
+  "fdc_ids": [],
+  "tds_no": "244",
+  "description": "tail",
+  "n": "39",
+  "iodine_mcg_per_100g": "15",
+  "sd": "10",
+  "min": "3.4",
+  "max": "55",
+  "sources": "FDA/USDA",
+  "years": "2008,2016-2020",
+  "page": 6
+ },
+ {
+  "db_id": "33",
+  "ndb_numbers": [
+   "15027"
+  ],
+  "fdc_ids": [],
+  "tds_no": "34",
+  "description": "Fish sticks or patty, frozen, oven-cooked",
+  "n": "14",
+  "iodine_mcg_per_100g": "67",
+  "sd": "28",
+  "min": "25",
+  "max": "134",
+  "sources": "FDA/USDA",
+  "years": "2020",
+  "page": 6
+ },
+ {
+  "db_id": "499",
+  "ndb_numbers": [
+   "15234"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, catfish, farmed, raw",
+  "n": "8",
+  "iodine_mcg_per_100g": "1.9",
+  "sd": "0.8",
+  "min": "1.1",
+  "max": "3.6",
+  "sources": "USDAC",
+  "years": "2023",
+  "page": 6
+ },
+ {
+  "db_id": "165",
+  "ndb_numbers": [
+   "15235"
+  ],
+  "fdc_ids": [],
+  "tds_no": "339",
+  "description": "Fish, catfish, pan-cooked with oil",
+  "n": "35",
+  "iodine_mcg_per_100g": "3.2",
+  "sd": "2.5",
+  "min": "0.0",
+  "max": "8.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 6
+ },
+ {
+  "db_id": "498",
+  "ndb_numbers": [],
+  "fdc_ids": [
+   "100328"
+  ],
+  "tds_no": "",
+  "description": "Fish, cod, Atlantic, wild, raw",
+  "n": "8",
+  "iodine_mcg_per_100g": "114",
+  "sd": "116",
+  "min": "23",
+  "max": "361",
+  "sources": "USDAC",
+  "years": "2023",
+  "page": 6
+ },
+ {
+  "db_id": "186",
+  "ndb_numbers": [
+   "15192"
+  ],
+  "fdc_ids": [],
+  "tds_no": "387",
+  "description": "Fish, cod, baked",
+  "n": "28",
+  "iodine_mcg_per_100g": "172",
+  "sd": "63",
+  "min": "88",
+  "max": "330",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 6
+ },
+ {
+  "db_id": "375",
+  "ndb_numbers": [
+   "15019"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, cod, Pacific, raw",
+  "n": "7",
+  "iodine_mcg_per_100g": "131",
+  "sd": "68",
+  "min": "51",
+  "max": "241",
+  "sources": "USDA",
+  "years": "2007-2008",
+  "page": 6
+ },
+ {
+  "db_id": "376",
+  "ndb_numbers": [
+   "15028"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, flatfish (flounder and sole species), raw",
+  "n": "4",
+  "iodine_mcg_per_100g": "14",
+  "sd": "3.9",
+  "min": "11",
+  "max": "20",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "377",
+  "ndb_numbers": [
+   "15033"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, haddock, raw",
+  "n": "3",
+  "iodine_mcg_per_100g": "227",
+  "sd": "88",
+  "min": "138",
+  "max": "314",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "378",
+  "ndb_numbers": [
+   "15036"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, halibut, Atlantic and Pacific, raw",
+  "n": "5",
+  "iodine_mcg_per_100g": "8.0",
+  "sd": "1.3",
+  "min": "7.4",
+  "max": "10",
+  "sources": "USDA",
+  "years": "2003,2008",
+  "page": 6
+ },
+ {
+  "db_id": "379",
+  "ndb_numbers": [
+   "15057"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, ocean perch, Atlantic, raw",
+  "n": "4",
+  "iodine_mcg_per_100g": "9.3",
+  "sd": "2.2",
+  "min": "7.4",
+  "max": "12",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "396",
+  "ndb_numbers": [
+   "15266"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, pollock, Alaska, raw",
+  "n": "3",
+  "iodine_mcg_per_100g": "44",
+  "sd": "8.7",
+  "min": "37",
+  "max": "54",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "380",
+  "ndb_numbers": [
+   "15070"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, rockfish, Pacific, mixed species, raw",
+  "n": "3",
+  "iodine_mcg_per_100g": "14",
+  "sd": "4.8",
+  "min": "11",
+  "max": "20",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "496",
+  "ndb_numbers": [
+   "15236"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, salmon, Atlantic, farmed, raw",
+  "n": "8",
+  "iodine_mcg_per_100g": "3.2",
+  "sd": "1.3",
+  "min": "1.5",
+  "max": "5.6",
+  "sources": "",
+  "years": "2023",
+  "page": 6
+ },
+ {
+  "db_id": "421",
+  "ndb_numbers": [
+   "35171"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, salmon, chum, dried (Alaska Native)",
+  "n": "1",
+  "iodine_mcg_per_100g": "38",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2004",
+  "page": 6
+ },
+ {
+  "db_id": "395",
+  "ndb_numbers": [
+   "15260"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, salmon, pink, canned, drained solids",
+  "n": "2",
+  "iodine_mcg_per_100g": "14",
+  "sd": "",
+  "min": "7.4",
+  "max": "21",
+  "sources": "USDA",
+  "years": "2008,2010",
+  "page": 6
+ },
+ {
+  "db_id": "381",
+  "ndb_numbers": [
+   "15083"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, salmon, pink, raw",
+  "n": "5",
+  "iodine_mcg_per_100g": "26",
+  "sd": "16",
+  "min": "12",
+  "max": "50",
+  "sources": "USDA",
+  "years": "2007-2008",
+  "page": 6
+ },
+ {
+  "db_id": "384",
+  "ndb_numbers": [
+   "15087"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, salmon, sockeye, canned, drained solids",
+  "n": "1",
+  "iodine_mcg_per_100g": "22",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2010",
+  "page": 6
+ },
+ {
+  "db_id": "382",
+  "ndb_numbers": [
+   "15085"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, salmon, sockeye, raw",
+  "n": "2",
+  "iodine_mcg_per_100g": "14",
+  "sd": "",
+  "min": "12",
+  "max": "17",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "495",
+  "ndb_numbers": [],
+  "fdc_ids": [
+   "100324"
+  ],
+  "tds_no": "",
+  "description": "Fish, salmon, sockeye, wild, raw",
+  "n": "8",
+  "iodine_mcg_per_100g": "18",
+  "sd": "1.7",
+  "min": "16",
+  "max": "21",
+  "sources": "USDAC",
+  "years": "2023",
+  "page": 6
+ },
+ {
+  "db_id": "158",
+  "ndb_numbers": [
+   "15237"
+  ],
+  "fdc_ids": [],
+  "tds_no": "318",
+  "description": "Fish, salmon, steaks/fillets, baked",
+  "n": "35",
+  "iodine_mcg_per_100g": "13",
+  "sd": "7.1",
+  "min": "0.0",
+  "max": "29",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 6
+ },
+ {
+  "db_id": "422",
+  "ndb_numbers": [
+   "35184"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, smelt, dried (Alaska Native)",
+  "n": "1",
+  "iodine_mcg_per_100g": "216",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2004",
+  "page": 6
+ },
+ {
+  "db_id": "371",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, swai, cooked",
+  "n": "2",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "",
+  "min": "7.4",
+  "max": "7.4",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 6
+ },
+ {
+  "db_id": "385",
+  "ndb_numbers": [
+   "15110"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, swordfish, raw",
+  "n": "4",
+  "iodine_mcg_per_100g": "20",
+  "sd": "3.8",
+  "min": "16",
+  "max": "25",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "187",
+  "ndb_numbers": [
+   "15262"
+  ],
+  "fdc_ids": [],
+  "tds_no": "388",
+  "description": "Fish, tilapia, baked",
+  "n": "28",
+  "iodine_mcg_per_100g": "6.9",
+  "sd": "15",
+  "min": "0.0",
+  "max": "81",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 6
+ },
+ {
+  "db_id": "497",
+  "ndb_numbers": [],
+  "fdc_ids": [
+   "100326"
+  ],
+  "tds_no": "",
+  "description": "Fish, tilapia, farmed, raw",
+  "n": "8",
+  "iodine_mcg_per_100g": "4.1",
+  "sd": "3.2",
+  "min": "0.9",
+  "max": "11",
+  "sources": "USDAC",
+  "years": "2023",
+  "page": 6
+ },
+ {
+  "db_id": "386",
+  "ndb_numbers": [
+   "15115"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, trout, rainbow, wild, raw",
+  "n": "1",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "166",
+  "ndb_numbers": [
+   "15121"
+  ],
+  "fdc_ids": [],
+  "tds_no": "340",
+  "description": "Fish, tuna, canned in water, drained",
+  "n": "15",
+  "iodine_mcg_per_100g": "8.7",
+  "sd": "1.8",
+  "min": "6.6",
+  "max": "12",
+  "sources": "FDA/USDA",
+  "years": "2020",
+  "page": 6
+ },
+ {
+  "db_id": "388",
+  "ndb_numbers": [
+   "15118"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, tuna, fresh, bluefin, cooked, dry heat",
+  "n": "4",
+  "iodine_mcg_per_100g": "23",
+  "sd": "4.4",
+  "min": "18",
+  "max": "28",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "387",
+  "ndb_numbers": [
+   "15117"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, tuna, fresh, bluefin, raw Fish, whitefish, broad, including head, eyes, cheeks",
+  "n": "4",
+  "iodine_mcg_per_100g": "18",
+  "sd": "5.9",
+  "min": "12",
+  "max": "26",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "420",
+  "ndb_numbers": [
+   "35091"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "and soft bones (Alaska Native), raw Mollusks, clam, mixed species, canned, drained",
+  "n": "1",
+  "iodine_mcg_per_100g": "34",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2005",
+  "page": 6
+ },
+ {
+  "db_id": "392",
+  "ndb_numbers": [
+   "15160"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "solids",
+  "n": "4",
+  "iodine_mcg_per_100g": "67",
+  "sd": "9.1",
+  "min": "58",
+  "max": "78",
+  "sources": "USDA",
+  "years": "2007",
+  "page": 6
+ },
+ {
+  "db_id": "393",
+  "ndb_numbers": [
+   "15169"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Mollusks, oyster, eastern, wild, cooked, moist heat",
+  "n": "3",
+  "iodine_mcg_per_100g": "109",
+  "sd": "26",
+  "min": "81",
+  "max": "132",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "394",
+  "ndb_numbers": [
+   "15172"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Mollusks, scallop, mixed species, raw",
+  "n": "4",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "0.0",
+  "min": "7.4",
+  "max": "7.4",
+  "sources": "USDA",
+  "years": "2008",
+  "page": 6
+ },
+ {
+  "db_id": "16",
+  "ndb_numbers": [
+   "20081"
+  ],
+  "fdc_ids": [],
+  "tds_no": "900",
+  "description": "Flour, white, all-purpose and ODS-NIH Database for the Iodine Content",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.8",
+  "sd": "1.4",
+  "min": "0.0",
+  "max": "2.5",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 6
+ },
+ {
+  "db_id": "53",
+  "ndb_numbers": [
+   "20110"
+  ],
+  "fdc_ids": [],
+  "tds_no": "69",
+  "description": "Noodles, egg, enriched, boiled Pasta, enriched, boiled in water with iodized salt",
+  "n": "10",
+  "iodine_mcg_per_100g": "3.7",
+  "sd": "1.2",
+  "min": "1.7",
+  "max": "5.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "347",
+  "ndb_numbers": [
+   "20321"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "using amount per pasta label",
+  "n": "4",
+  "iodine_mcg_per_100g": "22",
+  "sd": "6.6",
+  "min": "13",
+  "max": "28",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 7
+ },
+ {
+  "db_id": "232",
+  "ndb_numbers": [
+   "20134"
+  ],
+  "fdc_ids": [],
+  "tds_no": "539",
+  "description": "Pasta, rice noodles, cooked",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "1.5",
+  "min": "0.0",
+  "max": "2.6",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 7
+ },
+ {
+  "db_id": "171",
+  "ndb_numbers": [
+   "20121"
+  ],
+  "fdc_ids": [],
+  "tds_no": "347",
+  "description": "Pasta, spaghetti, enriched, boiled",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.9",
+  "min": "0.0",
+  "max": "2.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "233",
+  "ndb_numbers": [
+   "20125"
+  ],
+  "fdc_ids": [],
+  "tds_no": "540",
+  "description": "Pasta, whole wheat, cooked",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 7
+ },
+ {
+  "db_id": "223",
+  "ndb_numbers": [
+   "20137"
+  ],
+  "fdc_ids": [],
+  "tds_no": "522",
+  "description": "Quinoa, cooked",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 7
+ },
+ {
+  "db_id": "200",
+  "ndb_numbers": [
+   "20041"
+  ],
+  "fdc_ids": [],
+  "tds_no": "402",
+  "description": "Rice, brown, cooked",
+  "n": "28",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 7
+ },
+ {
+  "db_id": "40",
+  "ndb_numbers": [
+   "20051"
+  ],
+  "fdc_ids": [],
+  "tds_no": "50",
+  "description": "Rice, white, enriched, cooked",
+  "n": "34",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "1.1",
+  "min": "0.0",
+  "max": "6.3",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "254",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "74",
+  "description": "Cereal, bran with raisins",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.6",
+  "min": "0.0",
+  "max": "1.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "253",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "71",
+  "description": "Cereal, corn flakes",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "43",
+  "ndb_numbers": [
+   "08091"
+  ],
+  "fdc_ids": [],
+  "tds_no": "53",
+  "description": "Cereal, corn/hominy grits, enriched, cooked",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "42",
+  "ndb_numbers": [
+   "08169"
+  ],
+  "fdc_ids": [],
+  "tds_no": "52",
+  "description": "Cereal, cream of wheat (farina), enriched, cooked",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "255",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "75",
+  "description": "Cereal, crisped rice",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "0.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "306",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "72",
+  "description": "Cereal, fruit-flavored, sweetened4",
+  "n": "6",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.3",
+  "min": "0.2",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 7
+ },
+ {
+  "db_id": "266",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "512",
+  "description": "Cereal, granola",
+  "n": "3",
+  "iodine_mcg_per_100g": "11",
+  "sd": "2.4",
+  "min": "8.3",
+  "max": "13",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 7
+ },
+ {
+  "db_id": "308",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "76",
+  "description": "Cereal, granola with raisins",
+  "n": "7",
+  "iodine_mcg_per_100g": "14",
+  "sd": "4.0",
+  "min": "9.4",
+  "max": "20",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 7
+ },
+ {
+  "db_id": "256",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "77",
+  "description": "Cereal, oat ring",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.5",
+  "min": "0.0",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "267",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "513",
+  "description": "Cereal, oat ring, honey",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 7
+ },
+ {
+  "db_id": "41",
+  "ndb_numbers": [
+   "08121"
+  ],
+  "fdc_ids": [],
+  "tds_no": "51",
+  "description": "Cereal, oatmeal, plain, cooked",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "307",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "73",
+  "description": "Cereal, shredded wheat",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.1",
+  "sd": "0.2",
+  "min": "0.0",
+  "max": "0.6",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 7
+ },
+ {
+  "db_id": "268",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "514",
+  "description": "Cereal, shredded wheat, frosted",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 7
+ },
+ {
+  "db_id": "269",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "515",
+  "description": "Cereal, whole wheat, cooked",
+  "n": "3",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.0",
+  "min": "0.0",
+  "max": "0.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 7
+ },
+ {
+  "db_id": "133",
+  "ndb_numbers": [
+   "18001"
+  ],
+  "fdc_ids": [],
+  "tds_no": "249",
+  "description": "Bagel, plain, toasted",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "1.7",
+  "min": "0.0",
+  "max": "9.3",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "305",
+  "ndb_numbers": [
+   "18015"
+  ],
+  "fdc_ids": [],
+  "tds_no": "61",
+  "description": "Biscuits, refrigerated-type, baked",
+  "n": "8",
+  "iodine_mcg_per_100g": "2.5",
+  "sd": "1.6",
+  "min": "0.7",
+  "max": "5.6",
+  "sources": "FDA/USDA",
+  "years": "2013,2016-2017",
+  "page": 7
+ },
+ {
+  "db_id": "344",
+  "ndb_numbers": [
+   "28397"
+  ],
+  "fdc_ids": [],
+  "tds_no": "248",
+  "description": "Bread, multigrain5",
+  "n": "4",
+  "iodine_mcg_per_100g": "1.8",
+  "sd": "2.0",
+  "min": "0.0",
+  "max": "4.4",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 7
+ },
+ {
+  "db_id": "337",
+  "ndb_numbers": [
+   "18060"
+  ],
+  "fdc_ids": [],
+  "tds_no": "64",
+  "description": "Bread, rye",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.6",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 7
+ },
+ {
+  "db_id": "199",
+  "ndb_numbers": [
+   "18350"
+  ],
+  "fdc_ids": [],
+  "tds_no": "401",
+  "description": "Bread, white roll/bun (hamburger/hotdog)6 Bread, white roll/bun (hamburger/hotdog), with",
+  "n": "16",
+  "iodine_mcg_per_100g": "2.4",
+  "sd": "3.3",
+  "min": "0.0",
+  "max": "10.0",
+  "sources": "FDA/USDA",
+  "years": "2017-2020",
+  "page": 7
+ },
+ {
+  "db_id": "442",
+  "ndb_numbers": [
+   "18350"
+  ],
+  "fdc_ids": [],
+  "tds_no": "401*",
+  "description": "iodate dough conditioner",
+  "n": "16",
+  "iodine_mcg_per_100g": "1060",
+  "sd": "342",
+  "min": "480",
+  "max": "1730",
+  "sources": "FDA/USDA",
+  "years": "2017-2020",
+  "page": 7
+ },
+ {
+  "db_id": "46",
+  "ndb_numbers": [
+   "18069"
+  ],
+  "fdc_ids": [],
+  "tds_no": "58",
+  "description": "Bread, white, enriched, pre-sliced7 Bread, white, enriched, pre-sliced, with iodate dough",
+  "n": "15",
+  "iodine_mcg_per_100g": "1.8",
+  "sd": "2.7",
+  "min": "0.0",
+  "max": "9.5",
+  "sources": "FDA/USDA",
+  "years": "2020",
+  "page": 7
+ },
+ {
+  "db_id": "440",
+  "ndb_numbers": [
+   "18069"
+  ],
+  "fdc_ids": [],
+  "tds_no": "58*",
+  "description": "conditioner",
+  "n": "19",
+  "iodine_mcg_per_100g": "592",
+  "sd": "198",
+  "min": "350",
+  "max": "1178",
+  "sources": "FDA/USDA",
+  "years": "2013,2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "48",
+  "ndb_numbers": [
+   "18075"
+  ],
+  "fdc_ids": [],
+  "tds_no": "62",
+  "description": "Bread, whole-wheat, commercially prepared8 Bread, whole-wheat, commercially prepared, with",
+  "n": "21",
+  "iodine_mcg_per_100g": "1.9",
+  "sd": "2.5",
+  "min": "0.0",
+  "max": "9.5",
+  "sources": "FDA/USDA",
+  "years": "2013,2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "441",
+  "ndb_numbers": [
+   "18075"
+  ],
+  "fdc_ids": [],
+  "tds_no": "62*",
+  "description": "iodate dough conditioner",
+  "n": "8",
+  "iodine_mcg_per_100g": "546",
+  "sd": "214",
+  "min": "340",
+  "max": "1010",
+  "sources": "FDA/USDA",
+  "years": "2016,2018-2019",
+  "page": 7
+ },
+ {
+  "db_id": "15",
+  "ndb_numbers": [
+   "18079"
+  ],
+  "fdc_ids": [],
+  "tds_no": "903",
+  "description": "Breadcrumbs",
+  "n": "3",
+  "iodine_mcg_per_100g": "112",
+  "sd": "68",
+  "min": "45",
+  "max": "180",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 7
+ },
+ {
+  "db_id": "170",
+  "ndb_numbers": [
+   "18362"
+  ],
+  "fdc_ids": [],
+  "tds_no": "345",
+  "description": "Breakfast tart/toaster pastry9",
+  "n": "9",
+  "iodine_mcg_per_100g": "2.3",
+  "sd": "2.2",
+  "min": "0.0",
+  "max": "5.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "146",
+  "ndb_numbers": [
+   "18151"
+  ],
+  "fdc_ids": [],
+  "tds_no": "291",
+  "description": "Brownie, commercially prepared Cake, chocolate with chocolate icing, commercially",
+  "n": "10",
+  "iodine_mcg_per_100g": "9.7",
+  "sd": "12",
+  "min": "0.9",
+  "max": "42",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "99",
+  "ndb_numbers": [
+   "18096"
+  ],
+  "fdc_ids": [],
+  "tds_no": "178",
+  "description": "prepared10 Cake, white with white icing, commercially",
+  "n": "34",
+  "iodine_mcg_per_100g": "8.1",
+  "sd": "2.6",
+  "min": "3.1",
+  "max": "17",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "263",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "369",
+  "description": "prepared11 Cake, yellow with chocolate frosting, commercially",
+  "n": "33",
+  "iodine_mcg_per_100g": "13",
+  "sd": "15",
+  "min": "2.7",
+  "max": "72",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "399",
+  "ndb_numbers": [
+   "18140"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "prepared",
+  "n": "3",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "0.0",
+  "min": "7.4",
+  "max": "7.4",
+  "sources": "USDA",
+  "years": "2011",
+  "page": 7
+ },
+ {
+  "db_id": "185",
+  "ndb_numbers": [
+   "18964"
+  ],
+  "fdc_ids": [],
+  "tds_no": "386",
+  "description": "Cinnamon roll, from package, iced",
+  "n": "30",
+  "iodine_mcg_per_100g": "3.8",
+  "sd": "3.3",
+  "min": "0.0",
+  "max": "12",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 7
+ },
+ {
+  "db_id": "100",
+  "ndb_numbers": [
+   "18160"
+  ],
+  "fdc_ids": [],
+  "tds_no": "183",
+  "description": "Cookies, from package, chocolate chip",
+  "n": "11",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "1.0",
+  "min": "0.0",
+  "max": "2.7",
+  "sources": "FDA/USDA",
+  "years": "2012,2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "101",
+  "ndb_numbers": [
+   "18166"
+  ],
+  "fdc_ids": [],
+  "tds_no": "184",
+  "description": "Cookies, from package, sandwich with crème filling",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "147",
+  "ndb_numbers": [
+   "18204"
+  ],
+  "fdc_ids": [],
+  "tds_no": "292",
+  "description": "Cookies, from package, sugar12",
+  "n": "8",
+  "iodine_mcg_per_100g": "4.7",
+  "sd": "2.7",
+  "min": "0.0",
+  "max": "8.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "47",
+  "ndb_numbers": [
+   "18024"
+  ],
+  "fdc_ids": [],
+  "tds_no": "60",
+  "description": "Cornbread, homemade Cornbread, from dry mix, prepared with 2% milk,",
+  "n": "10",
+  "iodine_mcg_per_100g": "27",
+  "sd": "12",
+  "min": "12",
+  "max": "49",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "398",
+  "ndb_numbers": [
+   "18023"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "margarine, and eggs",
+  "n": "1",
+  "iodine_mcg_per_100g": "17",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2012",
+  "page": 7
+ },
+ {
+  "db_id": "136",
+  "ndb_numbers": [
+   "18229"
+  ],
+  "fdc_ids": [],
+  "tds_no": "252",
+  "description": "Crackers, butter-type",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "229",
+  "ndb_numbers": [
+   "18214"
+  ],
+  "fdc_ids": [],
+  "tds_no": "531",
+  "description": "Crackers, cheese, regular",
+  "n": "4",
+  "iodine_mcg_per_100g": "11",
+  "sd": "5.5",
+  "min": "4.7",
+  "max": "18",
+  "sources": "FDA/USDA",
+  "years": "2009,2018-2020",
+  "page": 7
+ },
+ {
+  "db_id": "135",
+  "ndb_numbers": [
+   "18173"
+  ],
+  "fdc_ids": [],
+  "tds_no": "251",
+  "description": "Crackers, graham",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "0.8",
+  "min": "0.0",
+  "max": "2.6",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "51",
+  "ndb_numbers": [
+   "18228"
+  ],
+  "fdc_ids": [],
+  "tds_no": "66",
+  "description": "Crackers, saltine",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "0.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "145",
+  "ndb_numbers": [
+   "18248"
+  ],
+  "fdc_ids": [],
+  "tds_no": "290",
+  "description": "Doughnut, cake-type, plain, commercially prepared",
+  "n": "10",
+  "iodine_mcg_per_100g": "15",
+  "sd": "15",
+  "min": "5.1",
+  "max": "41",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "134",
+  "ndb_numbers": [
+   "18437"
+  ],
+  "fdc_ids": [],
+  "tds_no": "250",
+  "description": "English muffin, plain, toasted and ODS-NIH Database for the Iodine Content",
+  "n": "35",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "2.8",
+  "min": "0.0",
+  "max": "15",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 7
+ },
+ {
+  "db_id": "50",
+  "ndb_numbers": [
+   "18274"
+  ],
+  "fdc_ids": [],
+  "tds_no": "65",
+  "description": "Muffin, blueberry, commercially prepared",
+  "n": "35",
+  "iodine_mcg_per_100g": "12",
+  "sd": "4.8",
+  "min": "5.3",
+  "max": "35",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "169",
+  "ndb_numbers": [
+   "18936"
+  ],
+  "fdc_ids": [],
+  "tds_no": "344",
+  "description": "Pancakes, frozen, heated",
+  "n": "12",
+  "iodine_mcg_per_100g": "6.7",
+  "sd": "1.7",
+  "min": "3.2",
+  "max": "10",
+  "sources": "FDA/USDA",
+  "years": "2013,2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "234",
+  "ndb_numbers": [
+   "18335"
+  ],
+  "fdc_ids": [],
+  "tds_no": "541",
+  "description": "Pie crust, commercially prepared",
+  "n": "3",
+  "iodine_mcg_per_100g": "1.2",
+  "sd": "2.0",
+  "min": "0.0",
+  "max": "3.5",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 8
+ },
+ {
+  "db_id": "102",
+  "ndb_numbers": [
+   "18443"
+  ],
+  "fdc_ids": [],
+  "tds_no": "185",
+  "description": "Pie, apple, fresh/frozen, commercially prepared",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.5",
+  "min": "0.0",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "103",
+  "ndb_numbers": [
+   "18326"
+  ],
+  "fdc_ids": [],
+  "tds_no": "186",
+  "description": "Pie, pumpkin, fresh/frozen, commercially prepared",
+  "n": "10",
+  "iodine_mcg_per_100g": "22",
+  "sd": "3.4",
+  "min": "18",
+  "max": "30",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "3",
+  "ndb_numbers": [
+   "18244"
+  ],
+  "fdc_ids": [],
+  "tds_no": "182",
+  "description": "Sweet roll/Danish pastry",
+  "n": "4",
+  "iodine_mcg_per_100g": "6.0",
+  "sd": "1.4",
+  "min": "4.4",
+  "max": "7.7",
+  "sources": "FDA",
+  "years": "2016",
+  "page": 8
+ },
+ {
+  "db_id": "198",
+  "ndb_numbers": [
+   "18363"
+  ],
+  "fdc_ids": [],
+  "tds_no": "400",
+  "description": "Tortilla, corn",
+  "n": "28",
+  "iodine_mcg_per_100g": "0.3",
+  "sd": "0.9",
+  "min": "0.0",
+  "max": "3.6",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 8
+ },
+ {
+  "db_id": "49",
+  "ndb_numbers": [
+   "18970"
+  ],
+  "fdc_ids": [],
+  "tds_no": "63",
+  "description": "Tortilla, flour",
+  "n": "34",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "1.4",
+  "min": "0.0",
+  "max": "7.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "216",
+  "ndb_numbers": [
+   "19919"
+  ],
+  "fdc_ids": [],
+  "tds_no": "511",
+  "description": "Candy, fruit snacks",
+  "n": "3",
+  "iodine_mcg_per_100g": "1.6",
+  "sd": "2.8",
+  "min": "0.0",
+  "max": "4.9",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 8
+ },
+ {
+  "db_id": "178",
+  "ndb_numbers": [
+   "19155"
+  ],
+  "fdc_ids": [],
+  "tds_no": "371",
+  "description": "Candy bar (chocolate, nougat, and nuts)",
+  "n": "10",
+  "iodine_mcg_per_100g": "17",
+  "sd": "2.9",
+  "min": "14",
+  "max": "22",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "104",
+  "ndb_numbers": [
+   "19120"
+  ],
+  "fdc_ids": [],
+  "tds_no": "187",
+  "description": "Candy bar, milk chocolate, plain",
+  "n": "10",
+  "iodine_mcg_per_100g": "46",
+  "sd": "5.9",
+  "min": "35",
+  "max": "54",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "148",
+  "ndb_numbers": [
+   "19107"
+  ],
+  "fdc_ids": [],
+  "tds_no": "293",
+  "description": "Candy, hard, assorted flavors",
+  "n": "10",
+  "iodine_mcg_per_100g": "7.8",
+  "sd": "13",
+  "min": "0.0",
+  "max": "35",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "85",
+  "ndb_numbers": [
+   "19411"
+  ],
+  "fdc_ids": [],
+  "tds_no": "138",
+  "description": "Chips, potato Chips, potato, made from dried potatoes, cheese-",
+  "n": "10",
+  "iodine_mcg_per_100g": "2.3",
+  "sd": "3.6",
+  "min": "0.0",
+  "max": "9.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "402",
+  "ndb_numbers": [
+   "19412"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "flavor",
+  "n": "1",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2012",
+  "page": 8
+ },
+ {
+  "db_id": "52",
+  "ndb_numbers": [
+   "25028"
+  ],
+  "fdc_ids": [],
+  "tds_no": "67",
+  "description": "Chips, corn/tortilla",
+  "n": "10",
+  "iodine_mcg_per_100g": "1.8",
+  "sd": "1.6",
+  "min": "0.1",
+  "max": "4.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "105",
+  "ndb_numbers": [
+   "19173"
+  ],
+  "fdc_ids": [],
+  "tds_no": "190",
+  "description": "Gelatin dessert, assorted flavors, prepared",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.4",
+  "min": "0.1",
+  "max": "1.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "224",
+  "ndb_numbers": [
+   "19015"
+  ],
+  "fdc_ids": [],
+  "tds_no": "523",
+  "description": "Granola bar",
+  "n": "3",
+  "iodine_mcg_per_100g": "1.9",
+  "sd": "1.6",
+  "min": "0.0",
+  "max": "3.0",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 8
+ },
+ {
+  "db_id": "327",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "370",
+  "description": "Granola bar, with raisins",
+  "n": "7",
+  "iodine_mcg_per_100g": "2.0",
+  "sd": "1.6",
+  "min": "0.6",
+  "max": "4.6",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 8
+ },
+ {
+  "db_id": "97",
+  "ndb_numbers": [
+   "19296"
+  ],
+  "fdc_ids": [],
+  "tds_no": "172",
+  "description": "Honey",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.4",
+  "min": "0.3",
+  "max": "1.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "151",
+  "ndb_numbers": [
+   "19300"
+  ],
+  "fdc_ids": [],
+  "tds_no": "296",
+  "description": "Jelly, assorted flavors fruit-flavored13",
+  "n": "10",
+  "iodine_mcg_per_100g": "1.0",
+  "sd": "0.6",
+  "min": "0.2",
+  "max": "2.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "144",
+  "ndb_numbers": [
+   "19283"
+  ],
+  "fdc_ids": [],
+  "tds_no": "288",
+  "description": "Popsicle,",
+  "n": "3",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "1.2",
+  "min": "0.3",
+  "max": "2.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "179",
+  "ndb_numbers": [
+   "25026"
+  ],
+  "fdc_ids": [],
+  "tds_no": "372",
+  "description": "Popcorn, microwave, butter-flavored",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.8",
+  "min": "0.0",
+  "max": "2.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "149",
+  "ndb_numbers": [
+   "19047"
+  ],
+  "fdc_ids": [],
+  "tds_no": "294",
+  "description": "Pretzels, hard, salted",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "0.4",
+  "min": "0.0",
+  "max": "1.2",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "235",
+  "ndb_numbers": [
+   "19183"
+  ],
+  "fdc_ids": [],
+  "tds_no": "542",
+  "description": "Pudding, ready-to-eat, chocolate Pudding, ready-to-eat, assorted flavors other than",
+  "n": "3",
+  "iodine_mcg_per_100g": "14",
+  "sd": "1.2",
+  "min": "13",
+  "max": "15",
+  "sources": "FDA",
+  "years": "2018-2020",
+  "page": 8
+ },
+ {
+  "db_id": "326",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "368",
+  "description": "chocolate",
+  "n": "7",
+  "iodine_mcg_per_100g": "4.7",
+  "sd": "1.9",
+  "min": "3.0",
+  "max": "7.6",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 8
+ },
+ {
+  "db_id": "401",
+  "ndb_numbers": [
+   "19193"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Pudding, rice, ready-to-eat",
+  "n": "1",
+  "iodine_mcg_per_100g": "28",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2012",
+  "page": 8
+ },
+ {
+  "db_id": "289",
+  "ndb_numbers": [
+   "19097"
+  ],
+  "fdc_ids": [],
+  "tds_no": "287",
+  "description": "Sherbet, fruit-flavored14",
+  "n": "3",
+  "iodine_mcg_per_100g": "15",
+  "sd": "0.7",
+  "min": "14",
+  "max": "15",
+  "sources": "FDA",
+  "years": "2016",
+  "page": 8
+ },
+ {
+  "db_id": "330",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "385",
+  "description": "Sorbet, fruit-flavored",
+  "n": "6",
+  "iodine_mcg_per_100g": "0.8",
+  "sd": "0.6",
+  "min": "0.0",
+  "max": "1.8",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 8
+ },
+ {
+  "db_id": "95",
+  "ndb_numbers": [
+   "19335"
+  ],
+  "fdc_ids": [],
+  "tds_no": "169",
+  "description": "Sugar, white, granulated",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.0",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.3",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "150",
+  "ndb_numbers": [
+   "19348"
+  ],
+  "fdc_ids": [],
+  "tds_no": "295",
+  "description": "Syrup, chocolate",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "0.6",
+  "min": "0.3",
+  "max": "2.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "96",
+  "ndb_numbers": [
+   "19129"
+  ],
+  "fdc_ids": [],
+  "tds_no": "170",
+  "description": "Syrup, pancake",
+  "n": "10",
+  "iodine_mcg_per_100g": "0.2",
+  "sd": "0.1",
+  "min": "0.0",
+  "max": "0.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "284",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "269",
+  "description": "Beef stroganoff with noodles, homemade",
+  "n": "7",
+  "iodine_mcg_per_100g": "6.2",
+  "sd": "1.0",
+  "min": "5.3",
+  "max": "8.1",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 8
+ },
+ {
+  "db_id": "88",
+  "ndb_numbers": [
+   "22906"
+  ],
+  "fdc_ids": [],
+  "tds_no": "152",
+  "description": "Chicken potpie, frozen, heated",
+  "n": "10",
+  "iodine_mcg_per_100g": "3.6",
+  "sd": "2.1",
+  "min": "1.9",
+  "max": "9.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "86",
+  "ndb_numbers": [
+   "22904"
+  ],
+  "fdc_ids": [],
+  "tds_no": "145",
+  "description": "Chili con carne with beans, canned",
+  "n": "10",
+  "iodine_mcg_per_100g": "1.7",
+  "sd": "1.0",
+  "min": "0.0",
+  "max": "2.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "294",
+  "ndb_numbers": [
+   "21127"
+  ],
+  "fdc_ids": [],
+  "tds_no": "355",
+  "description": "Coleslaw, mayonnaise-type, from grocery/deli",
+  "n": "7",
+  "iodine_mcg_per_100g": "1.8",
+  "sd": "0.8",
+  "min": "1.0",
+  "max": "2.8",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 8
+ },
+ {
+  "db_id": "411",
+  "ndb_numbers": [
+   "22973"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Corn dogs, frozen, prepared",
+  "n": "1",
+  "iodine_mcg_per_100g": "24",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2011",
+  "page": 8
+ },
+ {
+  "db_id": "6",
+  "ndb_numbers": [
+   "22977"
+  ],
+  "fdc_ids": [],
+  "tds_no": "361",
+  "description": "Lasagna with meat, frozen, heated",
+  "n": "7",
+  "iodine_mcg_per_100g": "8.4",
+  "sd": "1.1",
+  "min": "7.0",
+  "max": "9.8",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 8
+ },
+ {
+  "db_id": "418",
+  "ndb_numbers": [
+   "32019"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Lasagna, cheese, frozen, unprepared",
+  "n": "5",
+  "iodine_mcg_per_100g": "11",
+  "sd": "3.4",
+  "min": "7.4",
+  "max": "15",
+  "sources": "USDA",
+  "years": "2012-2013",
+  "page": 8
+ },
+ {
+  "db_id": "87",
+  "ndb_numbers": [
+   "22960"
+  ],
+  "fdc_ids": [],
+  "tds_no": "146",
+  "description": "Macaroni and cheese, prepared from box mix",
+  "n": "17",
+  "iodine_mcg_per_100g": "19",
+  "sd": "4.5",
+  "min": "11",
+  "max": "29",
+  "sources": "FDA/USDA",
+  "years": "2012,2016-2020",
+  "page": 8
+ },
+ {
+  "db_id": "291",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "346",
+  "description": "Macaroni salad, from grocery/deli",
+  "n": "7",
+  "iodine_mcg_per_100g": "3.2",
+  "sd": "1.2",
+  "min": "1.9",
+  "max": "5.3",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 8
+ },
+ {
+  "db_id": "245",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "148",
+  "description": "Meatloaf, beef, homemade Pasta mix, classic cheeseburger macaroni,",
+  "n": "7",
+  "iodine_mcg_per_100g": "16",
+  "sd": "11",
+  "min": "8.1",
+  "max": "34",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 8
+ },
+ {
+  "db_id": "416",
+  "ndb_numbers": [
+   "32008"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "unprepared",
+  "n": "1",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2013",
+  "page": 8
+ },
+ {
+  "db_id": "417",
+  "ndb_numbers": [
+   "32010"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Pasta mix, Italian lasagna, unprepared",
+  "n": "2",
+  "iodine_mcg_per_100g": "11",
+  "sd": "",
+  "min": "7.4",
+  "max": "15",
+  "sources": "USDA",
+  "years": "2013",
+  "page": 8
+ },
+ {
+  "db_id": "409",
+  "ndb_numbers": [
+   "21505"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Pizza, cheese topping, thin crust, frozen, baked",
+  "n": "7",
+  "iodine_mcg_per_100g": "23",
+  "sd": "5.0",
+  "min": "16",
+  "max": "29",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 8
+ },
+ {
+  "db_id": "410",
+  "ndb_numbers": [
+   "22971"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Potato salad with egg",
+  "n": "5",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "0.0",
+  "min": "1.5",
+  "max": "1.5",
+  "sources": "USDA",
+  "years": "2010,2017",
+  "page": 8
+ },
+ {
+  "db_id": "292",
+  "ndb_numbers": [
+   "21140"
+  ],
+  "fdc_ids": [],
+  "tds_no": "353",
+  "description": "Potato salad, mayonnaise-type, from grocery/deli",
+  "n": "7",
+  "iodine_mcg_per_100g": "2.6",
+  "sd": "1.7",
+  "min": "0.0",
+  "max": "5.0",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 8
+ },
+ {
+  "db_id": "244",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "142",
+  "description": "Spaghetti with meat sauce, homemade",
+  "n": "7",
+  "iodine_mcg_per_100g": "1.8",
+  "sd": "0.6",
+  "min": "1.0",
+  "max": "2.6",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 8
+ },
+ {
+  "db_id": "438",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Sushi, California roll",
+  "n": "3",
+  "iodine_mcg_per_100g": "31",
+  "sd": "9.5",
+  "min": "20",
+  "max": "37",
+  "sources": "USDA",
+  "years": "2009",
+  "page": 8
+ },
+ {
+  "db_id": "415",
+  "ndb_numbers": [
+   "32007"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Taquitos, frozen, beef and cheese, oven-heated",
+  "n": "1",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2012",
+  "page": 8
+ },
+ {
+  "db_id": "414",
+  "ndb_numbers": [
+   "32006"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Taquitos, frozen, chicken and cheese, oven-heated",
+  "n": "1",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2012",
+  "page": 8
+ },
+ {
+  "db_id": "285",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "272",
+  "description": "Tuna noodle casserole, homemade",
+  "n": "7",
+  "iodine_mcg_per_100g": "16",
+  "sd": "9.3",
+  "min": "11",
+  "max": "36",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 8
+ },
+ {
+  "db_id": "419",
+  "ndb_numbers": [
+   "32037"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Turnover, pepperoni pizza",
+  "n": "1",
+  "iodine_mcg_per_100g": "21",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 8
+ },
+ {
+  "db_id": "197",
+  "ndb_numbers": [
+   "21142"
+  ],
+  "fdc_ids": [],
+  "tds_no": "399",
+  "description": "Biscuits, fast food and ODS-NIH Database for the Iodine Content Burrito with beef, beans and cheese, from Mexican",
+  "n": "32",
+  "iodine_mcg_per_100g": "9.1",
+  "sd": "2.5",
+  "min": "6.0",
+  "max": "17",
+  "sources": "FDA/USDA",
+  "years": "2017-2020",
+  "page": 8
+ },
+ {
+  "db_id": "10",
+  "ndb_numbers": [
+   "21064"
+  ],
+  "fdc_ids": [],
+  "tds_no": "365",
+  "description": "carry-out",
+  "n": "7",
+  "iodine_mcg_per_100g": "5.4",
+  "sd": "2.2",
+  "min": "2.7",
+  "max": "9.8",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "162",
+  "ndb_numbers": [
+   "21469"
+  ],
+  "fdc_ids": [],
+  "tds_no": "336",
+  "description": "Chicken breast, fried, with skin, fast food15",
+  "n": "33",
+  "iodine_mcg_per_100g": "3.8",
+  "sd": "2.1",
+  "min": "0.0",
+  "max": "10.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "164",
+  "ndb_numbers": [
+   "21470"
+  ],
+  "fdc_ids": [],
+  "tds_no": "338",
+  "description": "Chicken leg, fried, with skin, fast food",
+  "n": "35",
+  "iodine_mcg_per_100g": "2.3",
+  "sd": "1.7",
+  "min": "0.0",
+  "max": "7.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "131",
+  "ndb_numbers": [
+   "21229"
+  ],
+  "fdc_ids": [],
+  "tds_no": "241",
+  "description": "Chicken nuggets, fast food",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "1.6",
+  "min": "0.0",
+  "max": "7.3",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "303",
+  "ndb_numbers": [
+   "01110"
+  ],
+  "fdc_ids": [],
+  "tds_no": "7",
+  "description": "Milk shake, chocolate, fast food",
+  "n": "7",
+  "iodine_mcg_per_100g": "35",
+  "sd": "9.4",
+  "min": "23",
+  "max": "45",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "193",
+  "ndb_numbers": [
+   "01111"
+  ],
+  "fdc_ids": [],
+  "tds_no": "394",
+  "description": "Milk shake, vanilla, fast food Pizza, cheese and pepperoni, regular crust, from",
+  "n": "28",
+  "iodine_mcg_per_100g": "36",
+  "sd": "5.8",
+  "min": "22",
+  "max": "47",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 9
+ },
+ {
+  "db_id": "318",
+  "ndb_numbers": [
+   "21302"
+  ],
+  "fdc_ids": [],
+  "tds_no": "281",
+  "description": "pizza carry-out",
+  "n": "11",
+  "iodine_mcg_per_100g": "12",
+  "sd": "4.4",
+  "min": "7.1",
+  "max": "20",
+  "sources": "FDA/USDA",
+  "years": "2010,2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "202",
+  "ndb_numbers": [
+   "21299"
+  ],
+  "fdc_ids": [],
+  "tds_no": "404",
+  "description": "Pizza, cheese, fast food",
+  "n": "30",
+  "iodine_mcg_per_100g": "12",
+  "sd": "2.9",
+  "min": "5.7",
+  "max": "17",
+  "sources": "FDA/USDA",
+  "years": "2010,2017-2020",
+  "page": 9
+ },
+ {
+  "db_id": "435",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Pizza, crust only, fast food",
+  "n": "9",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "0.0",
+  "min": "1.5",
+  "max": "1.5",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 9
+ },
+ {
+  "db_id": "408",
+  "ndb_numbers": [
+   "21484"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Pizza, with sausage topping, regular crust, fast food",
+  "n": "1",
+  "iodine_mcg_per_100g": "13",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2010",
+  "page": 9
+ },
+ {
+  "db_id": "139",
+  "ndb_numbers": [
+   "21138"
+  ],
+  "fdc_ids": [],
+  "tds_no": "258",
+  "description": "Potatoes, French fries, fast food",
+  "n": "35",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "2.1",
+  "min": "0.0",
+  "max": "10",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "2",
+  "ndb_numbers": [
+   "21112"
+  ],
+  "fdc_ids": [],
+  "tds_no": "147",
+  "description": "Sandwich, hamburger, single, large patty, fast food Sandwich, cheeseburger, double, regular patty,",
+  "n": "7",
+  "iodine_mcg_per_100g": "3.3",
+  "sd": "1.4",
+  "min": "2.0",
+  "max": "5.9",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "406",
+  "ndb_numbers": [
+   "21092"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "plain, fast food Sandwich, cheeseburger, double, regular patty, fast",
+  "n": "8",
+  "iodine_mcg_per_100g": "11",
+  "sd": "2.7",
+  "min": "7.4",
+  "max": "15",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 9
+ },
+ {
+  "db_id": "443",
+  "ndb_numbers": [
+   "21092"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "food (bun w iodate dough conditioner) Sandwich, cheeseburger, single, large patty, fast",
+  "n": "4",
+  "iodine_mcg_per_100g": "279",
+  "sd": "96",
+  "min": "164",
+  "max": "392",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 9
+ },
+ {
+  "db_id": "286",
+  "ndb_numbers": [
+   "21096"
+  ],
+  "fdc_ids": [],
+  "tds_no": "275",
+  "description": "food",
+  "n": "9",
+  "iodine_mcg_per_100g": "10",
+  "sd": "2.2",
+  "min": "7.4",
+  "max": "15",
+  "sources": "FDA/USDA",
+  "years": "2013,2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "11",
+  "ndb_numbers": [
+   "21490"
+  ],
+  "fdc_ids": [],
+  "tds_no": "366",
+  "description": "Sandwich, chicken filet (broiled) sandwich, fast food Sandwich, egg, cheese, and ham on English muffin,",
+  "n": "7",
+  "iodine_mcg_per_100g": "1.8",
+  "sd": "1.6",
+  "min": "0.4",
+  "max": "4.5",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "288",
+  "ndb_numbers": [
+   "21021"
+  ],
+  "fdc_ids": [],
+  "tds_no": "278",
+  "description": "fast food",
+  "n": "8",
+  "iodine_mcg_per_100g": "25",
+  "sd": "5.9",
+  "min": "16",
+  "max": "32",
+  "sources": "FDA/USDA",
+  "years": "2012,2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "287",
+  "ndb_numbers": [
+   "21105"
+  ],
+  "fdc_ids": [],
+  "tds_no": "276",
+  "description": "Sandwich, fish, fast food",
+  "n": "10",
+  "iodine_mcg_per_100g": "36",
+  "sd": "12",
+  "min": "23",
+  "max": "60",
+  "sources": "FDA/USDA",
+  "years": "2013,2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "405",
+  "ndb_numbers": [
+   "21059"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Shrimp, breaded and fried, fast food Taco/tostada with beef and cheese, from Mexican",
+  "n": "2",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "",
+  "min": "7.4",
+  "max": "7.4",
+  "sources": "USDA",
+  "years": "2010",
+  "page": 9
+ },
+ {
+  "db_id": "4",
+  "ndb_numbers": [
+   "21486"
+  ],
+  "fdc_ids": [],
+  "tds_no": "279",
+  "description": "carry-out Restaurants)",
+  "n": "7",
+  "iodine_mcg_per_100g": "7.0",
+  "sd": "2.7",
+  "min": "4.4",
+  "max": "12",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "7",
+  "ndb_numbers": [
+   "36603"
+  ],
+  "fdc_ids": [],
+  "tds_no": "362",
+  "description": "Beef with vegetables in sauce, restaurant, Chinese",
+  "n": "7",
+  "iodine_mcg_per_100g": "4.3",
+  "sd": "5.2",
+  "min": "0.6",
+  "max": "16",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "428",
+  "ndb_numbers": [
+   "36050"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Cheese enchilada, restaurant, Mexican",
+  "n": "1",
+  "iodine_mcg_per_100g": "16",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2013",
+  "page": 9
+ },
+ {
+  "db_id": "429",
+  "ndb_numbers": [
+   "36052"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Cheese quesadilla, restaurant, Mexican Cheese ravioli with marinara sauce, restaurant,",
+  "n": "1",
+  "iodine_mcg_per_100g": "23",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2013",
+  "page": 9
+ },
+ {
+  "db_id": "430",
+  "ndb_numbers": [
+   "36055"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Italian Chicken with vegetables in sauce, restaurant,",
+  "n": "1",
+  "iodine_mcg_per_100g": "22",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2013",
+  "page": 9
+ },
+ {
+  "db_id": "8",
+  "ndb_numbers": [
+   "36626"
+  ],
+  "fdc_ids": [],
+  "tds_no": "363",
+  "description": "Chinese Fish fillet, parmesan crusted tilapia, restaurant,",
+  "n": "7",
+  "iodine_mcg_per_100g": "3.8",
+  "sd": "4.6",
+  "min": "0.8",
+  "max": "13",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "444",
+  "ndb_numbers": [
+   "36033"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "family style",
+  "n": "1",
+  "iodine_mcg_per_100g": "13",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "",
+  "page": 9
+ },
+ {
+  "db_id": "436",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fish, salmon, grilled, restaurant",
+  "n": "1",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 9
+ },
+ {
+  "db_id": "423",
+  "ndb_numbers": [
+   "36012"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Fried mozzarella sticks, restaurant, family style",
+  "n": "3",
+  "iodine_mcg_per_100g": "38",
+  "sd": "4.1",
+  "min": "34",
+  "max": "42",
+  "sources": "USDA",
+  "years": "2013",
+  "page": 9
+ },
+ {
+  "db_id": "9",
+  "ndb_numbers": [
+   "36602"
+  ],
+  "fdc_ids": [],
+  "tds_no": "364",
+  "description": "Fried rice, meatless, restaurant, Chinese",
+  "n": "7",
+  "iodine_mcg_per_100g": "5.5",
+  "sd": "5.6",
+  "min": "1.2",
+  "max": "17",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "427",
+  "ndb_numbers": [
+   "36041"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Lasagna with meat, restaurant, Italian Macaroni & cheese, from kids' menu, restaurant,",
+  "n": "1",
+  "iodine_mcg_per_100g": "28",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2013",
+  "page": 9
+ },
+ {
+  "db_id": "425",
+  "ndb_numbers": [
+   "36017"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "family style",
+  "n": "10",
+  "iodine_mcg_per_100g": "22",
+  "sd": "7.4",
+  "min": "13",
+  "max": "32",
+  "sources": "USDA",
+  "years": "2013,2017",
+  "page": 9
+ },
+ {
+  "db_id": "431",
+  "ndb_numbers": [
+   "36620"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Shrimp and vegetables, restaurant, Chinese",
+  "n": "1",
+  "iodine_mcg_per_100g": "1.5",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2009",
+  "page": 9
+ },
+ {
+  "db_id": "32",
+  "ndb_numbers": [
+   "07959"
+  ],
+  "fdc_ids": [],
+  "tds_no": "29",
+  "description": "Bologna (beef/pork)",
+  "n": "10",
+  "iodine_mcg_per_100g": "26",
+  "sd": "9.7",
+  "min": "13",
+  "max": "44",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "31",
+  "ndb_numbers": [
+   "07949"
+  ],
+  "fdc_ids": [],
+  "tds_no": "28",
+  "description": "Frankfurter, beef/pork, boiled16",
+  "n": "28",
+  "iodine_mcg_per_100g": "8.8",
+  "sd": "12",
+  "min": "0.0",
+  "max": "60",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "369",
+  "ndb_numbers": [
+   "07945"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Frankfurter, beef, heated",
+  "n": "2",
+  "iodine_mcg_per_100g": "7.4",
+  "sd": "",
+  "min": "7.4",
+  "max": "7.4",
+  "sources": "USDA",
+  "years": "2010",
+  "page": 9
+ },
+ {
+  "db_id": "261",
+  "ndb_numbers": [
+   "07081"
+  ],
+  "fdc_ids": [],
+  "tds_no": "3",
+  "description": "Luncheon meat (chicken/turkey)",
+  "n": "10",
+  "iodine_mcg_per_100g": "3.5",
+  "sd": "1.7",
+  "min": "0.0",
+  "max": "5.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "129",
+  "ndb_numbers": [
+   "07028"
+  ],
+  "fdc_ids": [],
+  "tds_no": "239",
+  "description": "Luncheon meat, ham",
+  "n": "10",
+  "iodine_mcg_per_100g": "1.2",
+  "sd": "0.9",
+  "min": "0.0",
+  "max": "3.0",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "188",
+  "ndb_numbers": [
+   "07072"
+  ],
+  "fdc_ids": [],
+  "tds_no": "389",
+  "description": "Salami, dry/hard",
+  "n": "31",
+  "iodine_mcg_per_100g": "10",
+  "sd": "9.4",
+  "min": "2.5",
+  "max": "48",
+  "sources": "FDA/USDA",
+  "years": "2011,2017-2020",
+  "page": 9
+ },
+ {
+  "db_id": "243",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "30",
+  "description": "Salami, luncheon-meat type (not hard)",
+  "n": "7",
+  "iodine_mcg_per_100g": "12",
+  "sd": "8.0",
+  "min": "3.5",
+  "max": "23",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 9
+ },
+ {
+  "db_id": "367",
+  "ndb_numbers": [
+   "07019"
+  ],
+  "fdc_ids": [],
+  "tds_no": "",
+  "description": "Sausage, pork, chorizo, raw",
+  "n": "1",
+  "iodine_mcg_per_100g": "30",
+  "sd": "",
+  "min": "",
+  "max": "",
+  "sources": "USDA",
+  "years": "2017",
+  "page": 9
+ },
+ {
+  "db_id": "28",
+  "ndb_numbers": [
+   "07953"
+  ],
+  "fdc_ids": [],
+  "tds_no": "19",
+  "description": "Sausage, pork, oven-cooked",
+  "n": "35",
+  "iodine_mcg_per_100g": "4.2",
+  "sd": "2.9",
+  "min": "0.0",
+  "max": "11",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "130",
+  "ndb_numbers": [
+   "05064"
+  ],
+  "fdc_ids": [],
+  "tds_no": "240",
+  "description": "Chicken breast, oven-roasted (skin removed)",
+  "n": "35",
+  "iodine_mcg_per_100g": "1.2",
+  "sd": "1.9",
+  "min": "0.0",
+  "max": "8.1",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "163",
+  "ndb_numbers": [
+   "05098"
+  ],
+  "fdc_ids": [],
+  "tds_no": "337",
+  "description": "Chicken thigh, oven-roasted (skin removed)",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.9",
+  "sd": "1.8",
+  "min": "0.0",
+  "max": "9.5",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "30",
+  "ndb_numbers": [
+   "05192"
+  ],
+  "fdc_ids": [],
+  "tds_no": "26",
+  "description": "Turkey breast, oven-roasted",
+  "n": "35",
+  "iodine_mcg_per_100g": "4.8",
+  "sd": "13",
+  "min": "0.0",
+  "max": "61",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 9
+ },
+ {
+  "db_id": "189",
+  "ndb_numbers": [
+   "05306"
+  ],
+  "fdc_ids": [],
+  "tds_no": "390",
+  "description": "Turkey, ground, pan-cooked and ODS-NIH Database for the Iodine Content",
+  "n": "28",
+  "iodine_mcg_per_100g": "3.9",
+  "sd": "4.6",
+  "min": "0.0",
+  "max": "17",
+  "sources": "FDA",
+  "years": "2017-2020",
+  "page": 9
+ },
+ {
+  "db_id": "26",
+  "ndb_numbers": [
+   "10136"
+  ],
+  "fdc_ids": [],
+  "tds_no": "17",
+  "description": "Ham, cured (not canned), baked",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.7",
+  "sd": "1.4",
+  "min": "0.0",
+  "max": "5.9",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 10
+ },
+ {
+  "db_id": "29",
+  "ndb_numbers": [
+   "10860"
+  ],
+  "fdc_ids": [],
+  "tds_no": "20",
+  "description": "Pork bacon, oven-cooked",
+  "n": "35",
+  "iodine_mcg_per_100g": "1.1",
+  "sd": "1.7",
+  "min": "0.0",
+  "max": "7.7",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 10
+ },
+ {
+  "db_id": "27",
+  "ndb_numbers": [
+   "10179"
+  ],
+  "fdc_ids": [],
+  "tds_no": "18",
+  "description": "Pork chop, pan-cooked with oil",
+  "n": "35",
+  "iodine_mcg_per_100g": "0.5",
+  "sd": "1.3",
+  "min": "0.0",
+  "max": "6.8",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 10
+ },
+ {
+  "db_id": "333",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "21",
+  "description": "Pork roast, loin, oven-roasted",
+  "n": "7",
+  "iodine_mcg_per_100g": "0.4",
+  "sd": "0.3",
+  "min": "0.0",
+  "max": "0.9",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 10
+ },
+ {
+  "db_id": "335",
+  "ndb_numbers": [
+   "17204"
+  ],
+  "fdc_ids": [],
+  "tds_no": "27",
+  "description": "Beef/calf, liver, pan-cooked with oil",
+  "n": "7",
+  "iodine_mcg_per_100g": "16",
+  "sd": "5.0",
+  "min": "7.7",
+  "max": "22",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 10
+ },
+ {
+  "db_id": "251",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "13",
+  "description": "Beef, ground, pan-cooked",
+  "n": "35",
+  "iodine_mcg_per_100g": "7.5",
+  "sd": "3.0",
+  "min": "3.3",
+  "max": "19",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 10
+ },
+ {
+  "db_id": "334",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "14",
+  "description": "Beef roast, chuck, oven-roasted",
+  "n": "8",
+  "iodine_mcg_per_100g": "3.8",
+  "sd": "2.2",
+  "min": "1.8",
+  "max": "8.2",
+  "sources": "FDA",
+  "years": "2016-2017",
+  "page": 10
+ },
+ {
+  "db_id": "260",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "334",
+  "description": "Beef steak, loin/sirloin, broiled",
+  "n": "34",
+  "iodine_mcg_per_100g": "4.7",
+  "sd": "1.7",
+  "min": "0.0",
+  "max": "8.4",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 10
+ },
+ {
+  "db_id": "252",
+  "ndb_numbers": [],
+  "fdc_ids": [],
+  "tds_no": "22",
+  "description": "Lamb chop, pan-cooked with oil as zero (0), with trace values between the LOD and LOQ reported",
+  "n": "35",
+  "iodine_mcg_per_100g": "2.5",
+  "sd": "2.7",
+  "min": "0.0",
+  "max": "12",
+  "sources": "FDA",
+  "years": "2016-2020",
+  "page": 10
+ }
+]

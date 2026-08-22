@@ -4717,16 +4717,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   });
 
   // assets/js/src/core/schemas/scanner-corpus.ts
-  var DietaryBaselineEntrySchema = external_exports.object({
-    amount: external_exports.number(),
-    unit: external_exports.string()
-  });
   var NutrientGoalEntrySchema = external_exports.object({
     nutrient: external_exports.string(),
     why: external_exports.string()
   });
   var ScanCorpusSchema = external_exports.object({
-    dietaryBaseline: external_exports.record(external_exports.string(), DietaryBaselineEntrySchema),
     goalKeywords: external_exports.record(external_exports.string(), external_exports.array(external_exports.string())),
     nutrientToGoalMap: external_exports.record(external_exports.string(), external_exports.array(NutrientGoalEntrySchema)),
     goalDisplayNames: external_exports.record(external_exports.string(), external_exports.string()),
@@ -5467,6 +5462,158 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       pdm_mg: external_exports.number(),
       present: external_exports.boolean()
     }).passthrough())
+  }).passthrough();
+
+  // assets/js/src/core/schemas/foods-composition.ts
+  var FoodValuePartSchema = external_exports.object({
+    /** The candidate file this part was read from, by stem. */
+    source: external_exports.string(),
+    /** How many component rows were summed. */
+    rows: external_exports.number(),
+    /** This part's own total, as the decimal string the generator produced. */
+    total: external_exports.string()
+  }).passthrough();
+  var FoodProvenanceSchema = external_exports.object({
+    /** 'usda-sr-legacy', or the second source's id from sources.json. */
+    source_id: external_exports.string(),
+    /**
+     * EXACT — joined by an id both tables carry, no human judgment in the join.
+     * APPROXIMATE — joined by the source's own food name, one human decision per pair.
+     * Derived from the join in the generator, never typed per row.
+     */
+    tier: external_exports.enum(["EXACT", "APPROXIMATE"]),
+    /** The join that produced this row, e.g. 'ndb:09042' or 'name:Dates, dried'. */
+    join: external_exports.string(),
+    /** 'cell' — one cell of the source. 'sum' — Σ of component rows (see `parts`). */
+    value_kind: external_exports.string(),
+    /** Present when value_kind is 'sum'. */
+    parts: external_exports.array(FoodValuePartSchema).optional(),
+    /** APPROXIMATE only: the human reasoning that accepted this pair. */
+    why: external_exports.string().optional(),
+    /**
+     * True when the source measured SEVERAL VARIETIES of what our generic row calls one food
+     * (red and green lentils, smooth and fibrous mango) and the curation took the LOWEST.
+     * The card says so: an understated number that reads as an exact one is a quieter kind of
+     * overstatement than a wrong number, and harder to notice.
+     */
+    conservative: external_exports.boolean().optional()
+  }).passthrough();
+  var FoodNutrientSchema = external_exports.object({
+    /** The canon essential slug this row credits. Always one with a numeric Wallach target. */
+    slug: external_exports.string(),
+    /** Amount in ONE serving, expressed in Wallach's own unit for this essential. */
+    amount: external_exports.number(),
+    /** Wallach's unit for this essential ('mg' | 'mcg'), copied from his target. */
+    unit: external_exports.string(),
+    /** amount / Wallach's daily target. >= the artifact's qualify_fraction, by construction. */
+    fraction: external_exports.number(),
+    /** True at or above the artifact's strong_fraction — the UI's "strong source" mark. */
+    strong: external_exports.boolean(),
+    /** The source row's own text, UNPARSED where the source prints one cell. Never parse it. */
+    per_100g: external_exports.string(),
+    /** Where this number came from and how far it can be trusted. Present on EVERY row. */
+    provenance: FoodProvenanceSchema,
+    /** USDA rows only: the USDA unit the per_100g figure is in ('MG' | 'UG'). */
+    usda_unit: external_exports.string().optional(),
+    /** USDA rows only: nutrient_id — the other half of the join key. */
+    nutrient_id: external_exports.string().optional(),
+    /** Second-source rows only: the unit the source publishes its value in. */
+    source_unit: external_exports.string().optional()
+  }).passthrough();
+  var FoodSchema = external_exports.object({
+    /** Stable slug, from the curation. The regimen stores this, not the name. */
+    id: external_exports.string(),
+    /** Display name, hand-curated. Never USDA's raw description. */
+    name: external_exports.string(),
+    category: external_exports.string(),
+    /** USDA join keys, carried so any number on screen can be traced back. */
+    fdc_id: external_exports.string(),
+    usda_description: external_exports.string(),
+    portion_id: external_exports.string(),
+    /** USDA's own words for the serving ('1 cup', '3 oz', '1 large'). */
+    portion_label: external_exports.string(),
+    grams: external_exports.number(),
+    nutrients: external_exports.array(FoodNutrientSchema),
+    /**
+     * Essential-fatty-acid delivery, in the currency Wallach's dose is stated in: grams of
+     * FLAXSEED OIL. Absent on a food with no measured 18:2 or 18:3.
+     *
+     * ★ WHY NOT A NUTRIENT ROW. omega-3 and omega-6 carry no individual Wallach target — he
+     * states ONE amount for the essential fatty acids as a category — so a food credited
+     * against either would be measured against a number that does not exist, and the
+     * composition gate REDs exactly that. The EFAs share one meter instead, the same shape the
+     * 34 plant-derived minerals already use.
+     */
+    efa: external_exports.object({
+      /** Actual linoleic + linolenic delivered by one serving, CLA subtracted. */
+      acid_mg: external_exports.number(),
+      /** That acid re-expressed as the flaxseed oil it would take to supply it. */
+      oil_equivalent_mg: external_exports.number()
+    }).passthrough().optional(),
+    /** How many essentials this food credits overall. */
+    breadth: external_exports.number(),
+    /** Sum of fractions — the education-mode ranking key ("most nutritious first"). */
+    strength: external_exports.number()
+  }).passthrough();
+  var FoodsCompositionSchema = external_exports.object({
+    _meta: external_exports.object({
+      /** The fraction of a Wallach target one serving must deliver to be credited (0.07). */
+      qualify_fraction: external_exports.number(),
+      /** At or above this fraction the food is a STRONG source (0.20). */
+      strong_fraction: external_exports.number(),
+      /** The essentials any pinned source can measure — the only ones a food can ever move. */
+      essentials_measurable: external_exports.array(external_exports.string()),
+      /**
+       * slug → the SHORT display name a tile chip can hold, plus the canon's own category.
+       * Derived from the canon in the generator, never typed in a view (R3). `category` is
+       * passed through unmapped so the card picks its colour straight from it and no
+       * category-to-colour table exists in two places.
+       */
+      essential_display: external_exports.record(external_exports.object({
+        label: external_exports.string(),
+        category: external_exports.string()
+      }).passthrough()),
+      /**
+       * The essentials that come from a source OTHER than SR Legacy, by slug: which source,
+       * at which tier, and the words the surface uses for it. `display` lives in the data
+       * because a source name hand-typed into a view is a second home for a fact (R3) — and
+       * it is exactly how a card would keep saying "USDA" about a number that stopped coming
+       * from USDA.
+       */
+      second_sources: external_exports.record(external_exports.object({
+        source_id: external_exports.string(),
+        tier: external_exports.enum(["EXACT", "APPROXIMATE"])
+      }).passthrough()),
+      /**
+       * source_id → the words the card uses for that source. Keyed by SOURCE, not by
+       * essential, because one essential can resolve to either of two publications depending
+       * on the food — sulfur reads from AFCD where AFCD measured it and from Doleman where it
+       * did not — and the card has to name the one that actually supplied the number.
+       */
+      source_display: external_exports.record(external_exports.string()),
+      /**
+       * Essentials with a numeric Wallach target that are NOT BOUND to any composition source.
+       * Carried so the gap is legible on screen rather than silently absent. No food can cover
+       * these today; only a product can.
+       *
+       * ★ "NOT BOUND" IS NOT "NOT MEASURABLE". Four of them — sulfur, chloride, biotin,
+       * molybdenum — are measured by a source already pinned in sources.json that nothing
+       * reads yet. They are listed here because the binding work is not done, not because the
+       * food world has nothing to say about them. Never let this list read as a finding.
+       */
+      essentials_without_composition: external_exports.array(external_exports.string()),
+      /**
+       * Flaxseed oil's own EFA fraction, read from the pinned archive — the bridge between
+       * what USDA measures in a food (acid) and what Wallach's dose is stated in (oil).
+       */
+      efa_reference: external_exports.object({
+        efa_fraction: external_exports.number(),
+        label: external_exports.string(),
+        category: external_exports.string()
+      }).passthrough(),
+      food_count: external_exports.number()
+    }).passthrough(),
+    foods: external_exports.array(FoodSchema)
   }).passthrough();
 
   // assets/js/src/core/schemas/efa-coverage.ts
@@ -7427,7 +7574,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   };
 
   // assets/data/essentials-targets-data.json
-  var essentials_targets_data_default = { _purpose: "Per-essential Wallach coverage targets. GENERATED by eden/tools/targets_derive.py from essentials-canon + sealed corpus dose claims. Numeric targets are Wallach-only, books-only (R2); the posted number is the UPPER of Wallach's newest stated maintenance range, unit-normalized to Youngevity units + (minerals) scaled to 154 lb. The full range + transform live in `range`/`provenance`; older books in `other_claims`. Never hand-edit; run eden/tools/build_embeds.py.", essentials: [{ category: "minerals", name: "Hydrogen", slug: "hydrogen", target: { kind: "dietary", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Carbon", slug: "carbon", target: { kind: "dietary", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Nitrogen", slug: "nitrogen", target: { kind: "dietary", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Oxygen", slug: "oxygen", target: { kind: "unspecified", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Sodium", slug: "sodium", target: { kind: "wallach", low: 3300, period: "daily", provenance: { original_high: null, original_low: 3300, original_unit: "mg", upper_taken: 3300 }, range: { high: null, low: 3300, unit: "mg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000066", unit: "mg" } }, { category: "minerals", name: "Magnesium", slug: "magnesium", target: { kind: "wallach", low: 770, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000056", high: null, low: 1e3, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 500, original_low: 250, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 500 }, range: { high: 500, low: 250, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000133", unit: "mg" } }, { category: "minerals", name: "Phosphorus", slug: "phosphorus", target: { kind: "wallach", low: 0, period: "daily", provenance: { original_high: null, original_low: 0, original_unit: "mg", upper_taken: 0 }, range: { high: null, low: 0, unit: "mg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000061", unit: "mg" } }, { category: "minerals", name: "Sulfur", slug: "sulfur", target: { kind: "wallach", low: 500, period: "daily", provenance: { original_high: null, original_low: 500, original_unit: "mg", upper_taken: 500 }, range: { high: null, low: 500, unit: "mg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000067", unit: "mg" } }, { category: "minerals", name: "Chloride", slug: "chloride", target: { kind: "wallach", low: 2500, period: "daily", provenance: { original_high: null, original_low: 2500, original_unit: "mg", upper_taken: 2500 }, range: { high: null, low: 2500, unit: "mg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000047", unit: "mg" } }, { category: "minerals", name: "Potassium", slug: "potassium", target: { kind: "wallach", low: 5e3, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000062", high: null, low: 5500, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: null, original_low: 5e3, original_unit: "mg", upper_taken: 5e3 }, range: { high: null, low: 5e3, unit: "mg" }, source: "Wallach \u2014 Immortality (Wallach, 2008)", source_claim_id: "WAL-CLM-IMMORT-000193", unit: "mg" } }, { category: "minerals", name: "Calcium", slug: "calcium", target: { kind: "wallach", low: 1500, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000046", high: null, low: 2e3, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 1e3, original_low: 600, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 1e3 }, range: { high: 1e3, low: 600, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000128", unit: "mg" } }, { category: "minerals", name: "Boron", slug: "boron", target: { kind: "wallach", low: 9.2, period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 6, original_low: 1, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 6 }, range: { high: 6, low: 1, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000127", unit: "mg" } }, { category: "minerals", name: "Cobalt", slug: "cobalt", target: { kind: "mirrors", mirrors_slug: "vitamin-b12", source: "Wallach framework \u2014 no separate amount is stated for this essential; his position is that the requirement is met through vitamin b12, so it carries that verdict" } }, { category: "minerals", name: "Chromium", slug: "chromium", target: { kind: "wallach", low: 620, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000049", high: null, low: 200, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 400, original_low: 200, original_unit: "mcg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 400 }, range: { high: 400, low: 200, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000129", unit: "mcg" } }, { category: "minerals", name: "Copper", slug: "copper", target: { kind: "wallach", low: 3.1, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000050", high: 4, low: 3, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 2, original_low: 1, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 2 }, range: { high: 2, low: 1, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000130", unit: "mg" } }, { category: "minerals", name: "Germanium", slug: "germanium", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)", vehicle_claim_ids: ["WAL-CLM-HELLS-000069"], vehicle_supplied: true } }, { category: "minerals", name: "Iron", slug: "iron", target: { kind: "wallach", low: 46, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000055", high: null, low: 45, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 30, original_low: 15, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 30 }, range: { high: 30, low: 15, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000132", unit: "mg" } }, { category: "minerals", name: "Iodine", slug: "iodine", target: { kind: "wallach", low: 230, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000054", high: null, low: 250, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 150, original_low: 50, original_unit: "mcg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 150 }, range: { high: 150, low: 50, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000131", unit: "mcg" } }, { category: "minerals", name: "Manganese", slug: "manganese", target: { kind: "wallach", low: 7.7, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000057", high: null, low: 5, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 5, original_low: 3, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 5 }, range: { high: 5, low: 3, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000134", unit: "mg" } }, { category: "minerals", name: "Molybdenum", slug: "molybdenum", target: { kind: "wallach", low: 38, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000058", high: null, low: 500, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 25, original_low: 10, original_unit: "mcg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 25 }, range: { high: 25, low: 10, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000135", unit: "mcg" } }, { category: "minerals", name: "Selenium", slug: "selenium", target: { kind: "wallach", low: 310, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000065", high: null, low: 200, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 200, original_low: 100, original_unit: "mcg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 200 }, range: { high: 200, low: 100, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000136", unit: "mcg" } }, { category: "minerals", name: "Silica", slug: "silica", target: { kind: "wallach", low: 38, other_claims: [{ book: "rare-earths", claim_id: "WAL-CLM-RARE-000246", high: 500, low: 200, source: "Rare Earths: Forbidden Cures (Wallach, 1994)", unit: "mg", year: 1994 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 25, original_low: 1, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 25 }, range: { high: 25, low: 1, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000137", unit: "mg" } }, { category: "minerals", name: "Strontium", slug: "strontium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Vanadium", slug: "vanadium", target: { kind: "wallach", low: 150, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000070", high: null, low: 500, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 100, original_low: 50, original_unit: "mcg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 100 }, range: { high: 100, low: 50, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000138", unit: "mcg" } }, { category: "minerals", name: "Zinc", slug: "zinc", target: { kind: "wallach", low: 46, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000077", high: null, low: 25, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 30, original_low: 15, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 30 }, range: { high: 30, low: 15, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000139", unit: "mg" } }, { category: "minerals", name: "Silver", slug: "silver", target: { ceiling: 400, ceiling_reason: "stated-as-safe-intake-not-a-requirement", kind: "dietary_with_clinical_lever", period: "daily", provenance: { original_high: null, original_low: 400, original_unit: "mcg", upper_taken: 400 }, range: { high: null, low: 400, unit: "mcg" }, source: "Wallach \u2014 Dead Doctors Don't Lie (Wallach, 2011) \u2014 a stated safe intake, not a required amount", source_claim_id: "WAL-CLM-DDDL-000013", unit: "mcg" } }, { category: "minerals", name: "Aluminum", slug: "aluminum", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Arsenic", slug: "arsenic", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Gold", slug: "gold", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Barium", slug: "barium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Beryllium", slug: "beryllium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Bromine", slug: "bromine", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Cerium", slug: "cerium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Cesium", slug: "cesium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Dysprosium", slug: "dysprosium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Erbium", slug: "erbium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Europium", slug: "europium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Gallium", slug: "gallium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Gadolinium", slug: "gadolinium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Hafnium", slug: "hafnium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Holmium", slug: "holmium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Lanthanum", slug: "lanthanum", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Lithium", slug: "lithium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Lutetium", slug: "lutetium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Niobium", slug: "niobium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Neodymium", slug: "neodymium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Nickel", slug: "nickel", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Praseodymium", slug: "praseodymium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Rubidium", slug: "rubidium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Rhenium", slug: "rhenium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Scandium", slug: "scandium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Samarium", slug: "samarium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Tin", slug: "tin", target: { kind: "wallach", low: 500, period: "daily", provenance: { original_high: null, original_low: 500, original_unit: "mcg", upper_taken: 500 }, range: { high: null, low: 500, unit: "mcg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000069", unit: "mcg", vehicle_claim_ids: ["WAL-CLM-LETS-000451", "WAL-CLM-DDDL-000406", "WAL-CLM-DDDL-000465", "WAL-CLM-DDDL-000466", "WAL-CLM-DDDL-000287"], vehicle_supplied: true } }, { category: "minerals", name: "Tantalum", slug: "tantalum", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Terbium", slug: "terbium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Titanium", slug: "titanium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Thulium", slug: "thulium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Yttrium", slug: "yttrium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Ytterbium", slug: "ytterbium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Zirconium", slug: "zirconium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "vitamins", name: "Vitamin A (Retinol / beta-carotene)", slug: "vitamin-a", target: { kind: "wallach", low: 9e3, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000071", high: null, low: 5e3, source: "Let's Play Doctor (Wallach, 1995)", unit: "IU", year: 1995 }], parts: [{ claim_id: "WAL-CLM-EPIGEN-000110", form: "retinol", provenance: { factor: 0.3, factor_source: "USP: 1 IU retinol = 0.3 mcg RAE", original_high: 5e3, original_low: 2500, original_unit: "IU", unit_detail: "RAE", upper_taken: 5e3 }, range: { high: 5e3, low: 2500, unit: "IU" }, unit: "mcg", value: 1500 }, { claim_id: "WAL-CLM-EPIGEN-000111", form: "beta-carotene", provenance: { factor: 0.3, factor_source: "USP: 1 IU supplemental beta-carotene = 0.3 mcg RAE", original_high: 25e3, original_low: 5e3, original_unit: "IU", unit_detail: "RAE", upper_taken: 25e3 }, range: { high: 25e3, low: 5e3, unit: "IU" }, unit: "mcg", value: 7500 }], period: "daily", provenance: { factor: 0.3, factor_source: "USP: 1 IU retinol = 0.3 mcg RAE", original_high: 5e3, original_low: 2500, original_unit: "IU", unit_detail: "RAE", upper_taken: 5e3 }, range: { high: 5e3, low: 2500, unit: "IU" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000110", unit: "mcg" } }, { category: "vitamins", name: "Vitamin B1 (Thiamine)", slug: "vitamin-b1", target: { kind: "wallach", low: 100, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000068", high: null, low: 50, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 100, original_low: 10, original_unit: "mg", upper_taken: 100 }, range: { high: 100, low: 10, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000112", unit: "mg" } }, { category: "vitamins", name: "Vitamin B2 (Riboflavin)", slug: "vitamin-b2", target: { kind: "wallach", low: 50, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000064", high: null, low: 50, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 50, original_low: 10, original_unit: "mg", upper_taken: 50 }, range: { high: 50, low: 10, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000113", unit: "mg" } }, { category: "vitamins", name: "Vitamin B3 (Niacin)", slug: "vitamin-b3", target: { kind: "wallach", low: 100, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000059", high: null, low: 50, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 100, original_low: 10, original_unit: "mg", upper_taken: 100 }, range: { high: 100, low: 10, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000114", unit: "mg" } }, { category: "vitamins", name: "Vitamin B5 (Pantothenic Acid)", slug: "vitamin-b5", target: { kind: "wallach", low: 100, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000060", high: null, low: 50, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 100, original_low: 25, original_unit: "mg", upper_taken: 100 }, range: { high: 100, low: 25, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000115", unit: "mg" } }, { category: "vitamins", name: "Vitamin B6 (Pyridoxine)", slug: "vitamin-b6", target: { kind: "wallach", low: 100, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000063", high: null, low: 50, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 100, original_low: 25, original_unit: "mg", upper_taken: 100 }, range: { high: 100, low: 25, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000116", unit: "mg" } }, { category: "vitamins", name: "Folic Acid (Folate)", slug: "vitamin-b9", target: { kind: "wallach", low: 1e3, period: "daily", provenance: { original_high: null, original_low: 1e3, original_unit: "mcg", upper_taken: 1e3 }, range: { high: null, low: 1e3, unit: "mcg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000052", unit: "mcg" } }, { category: "vitamins", name: "Vitamin B12 (Cobalamin)", slug: "vitamin-b12", target: { kind: "wallach", low: 400, other_claims: [{ book: "immortality", claim_id: "WAL-CLM-IMMORT-000084", high: 400, low: 250, source: "Immortality (Wallach, 2008)", unit: "mcg", year: 2008 }, { book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000072", high: null, low: 200, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }, { book: "rare-earths", claim_id: "WAL-CLM-RARE-000014", high: 400, low: 250, source: "Rare Earths: Forbidden Cures (Wallach, 1994)", unit: "mcg", year: 1994 }], period: "daily", provenance: { original_high: null, original_low: 400, original_unit: "mcg", upper_taken: 400 }, range: { high: null, low: 400, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000117", unit: "mcg" } }, { category: "vitamins", name: "Vitamin C (Ascorbic Acid)", slug: "vitamin-c", target: { kind: "wallach", low: 1e3, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000073", high: null, low: 1e3, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 1e3, original_low: 250, original_unit: "mg", upper_taken: 1e3 }, range: { high: 1e3, low: 250, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000118", unit: "mg" } }, { category: "vitamins", name: "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)", slug: "vitamin-d", target: { kind: "wallach", low: 50, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000074", high: null, low: 275, source: "Let's Play Doctor (Wallach, 1995)", unit: "IU", year: 1995 }], period: "daily", provenance: { factor: 0.025, factor_source: "1 mcg vitamin D = 40 IU", original_high: 2e3, original_low: 1e3, original_unit: "IU", upper_taken: 2e3 }, range: { high: 2e3, low: 1e3, unit: "IU" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000119", unit: "mcg" } }, { category: "vitamins", name: "Vitamin E (Tocopherol)", slug: "vitamin-e", target: { kind: "wallach", low: 134, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000075", high: null, low: 400, source: "Let's Play Doctor (Wallach, 1995)", unit: "IU", year: 1995 }], period: "daily", provenance: { factor: 0.67, factor_source: "1 IU natural d-alpha-tocopherol = 0.67 mg", original_high: 200, original_low: 100, original_unit: "IU", upper_taken: 200 }, range: { high: 200, low: 100, unit: "IU" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000120", unit: "mg" } }, { category: "vitamins", name: "Vitamin K (Phylloquinone)", slug: "vitamin-k", target: { kind: "wallach", low: 300, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000076", high: null, low: 140, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { original_high: 300, original_low: 60, original_unit: "mcg", upper_taken: 300 }, range: { high: 300, low: 60, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000121", unit: "mcg" } }, { category: "vitamins", name: "Biotin", slug: "biotin", target: { kind: "wallach", low: 300, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000045", high: null, low: 200, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { original_high: 300, original_low: 100, original_unit: "mcg", upper_taken: 300 }, range: { high: 300, low: 100, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000122", unit: "mcg" } }, { category: "vitamins", name: "Choline", slug: "choline", target: { kind: "wallach", low: 100, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000048", high: null, low: 600, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 100, original_low: 10, original_unit: "mg", upper_taken: 100 }, range: { high: 100, low: 10, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000124", unit: "mg" } }, { category: "vitamins", name: "Inositol", slug: "inositol", target: { kind: "wallach", low: 90, period: "daily", provenance: { original_high: null, original_low: 90, original_unit: "mg", upper_taken: 90 }, range: { high: null, low: 90, unit: "mg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000053", unit: "mg" } }, { category: "vitamins", name: "Flavonoids / Bioflavonoids", slug: "flavonoids", target: { kind: "wallach", low: 1e3, period: "daily", provenance: { lower_taken: 1e3, lower_taken_reason: "upper-unreachable-by-any-catalog-combination", original_high: 5e3, original_low: 1e3, original_unit: "mg" }, range: { high: 5e3, low: 1e3, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000126", unit: "mg" } }, { category: "amino_acids", name: "Arginine", slug: "arginine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Taurine", slug: "taurine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Histidine", slug: "histidine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Isoleucine", slug: "isoleucine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Leucine", slug: "leucine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Lysine", slug: "lysine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Methionine", slug: "methionine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Phenylalanine", slug: "phenylalanine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Threonine", slug: "threonine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Tryptophan", slug: "tryptophan", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Tyrosine", slug: "tyrosine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Valine", slug: "valine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "fatty_acids", name: "Omega-3 (Alpha-Linolenic Acid / ALA)", slug: "omega-3", target: { collective_group: "essential-fatty-acids", kind: "wallach_collective", source: "Wallach \u2014 Dead Doctors Don't Lie (Wallach, 2011) \u2014 one shared amount for the essential fatty acids group, not a per-essential amount", source_claim_id: "WAL-CLM-DDDL-000115" } }, { category: "fatty_acids", name: "Omega-6 (Linoleic Acid / LA)", slug: "omega-6", target: { collective_group: "essential-fatty-acids", kind: "wallach_collective", source: "Wallach \u2014 Dead Doctors Don't Lie (Wallach, 2011) \u2014 one shared amount for the essential fatty acids group, not a per-essential amount", source_claim_id: "WAL-CLM-DDDL-000115" } }, { category: "fatty_acids", name: "Omega-9 (Oleic Acid / OA)", slug: "omega-9", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }] };
+  var essentials_targets_data_default = { _purpose: "Per-essential Wallach coverage targets. GENERATED by eden/tools/targets_derive.py from essentials-canon + sealed corpus dose claims. Numeric targets are Wallach-only, books-only (R2); the posted number is the UPPER of Wallach's newest stated maintenance range, unit-normalized to Youngevity units + (minerals) scaled to 154 lb. The full range + transform live in `range`/`provenance`; older books in `other_claims`. Never hand-edit; run eden/tools/build_embeds.py.", essentials: [{ category: "minerals", name: "Hydrogen", slug: "hydrogen", target: { kind: "dietary", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Carbon", slug: "carbon", target: { kind: "dietary", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Nitrogen", slug: "nitrogen", target: { kind: "dietary", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Oxygen", slug: "oxygen", target: { kind: "unspecified", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Sodium", slug: "sodium", target: { kind: "wallach", low: 3300, period: "daily", provenance: { original_high: null, original_low: 3300, original_unit: "mg", upper_taken: 3300 }, range: { high: null, low: 3300, unit: "mg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000066", unit: "mg" } }, { category: "minerals", name: "Magnesium", slug: "magnesium", target: { kind: "wallach", low: 770, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000056", high: null, low: 1e3, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 500, original_low: 250, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 500 }, range: { high: 500, low: 250, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000133", unit: "mg" } }, { category: "minerals", name: "Phosphorus", slug: "phosphorus", target: { kind: "wallach", low: 0, period: "daily", provenance: { original_high: null, original_low: 0, original_unit: "mg", upper_taken: 0 }, range: { high: null, low: 0, unit: "mg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000061", unit: "mg" } }, { category: "minerals", name: "Sulfur", slug: "sulfur", target: { kind: "wallach", low: 500, period: "daily", provenance: { original_high: null, original_low: 500, original_unit: "mg", upper_taken: 500 }, range: { high: null, low: 500, unit: "mg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000067", unit: "mg" } }, { category: "minerals", name: "Chloride", slug: "chloride", target: { kind: "wallach", low: 2500, period: "daily", provenance: { original_high: null, original_low: 2500, original_unit: "mg", upper_taken: 2500 }, range: { high: null, low: 2500, unit: "mg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000047", unit: "mg" } }, { category: "minerals", name: "Potassium", slug: "potassium", target: { kind: "wallach", low: 5e3, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000062", high: null, low: 5500, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: null, original_low: 5e3, original_unit: "mg", upper_taken: 5e3 }, range: { high: null, low: 5e3, unit: "mg" }, source: "Wallach \u2014 Immortality (Wallach, 2008)", source_claim_id: "WAL-CLM-IMMORT-000193", unit: "mg" } }, { category: "minerals", name: "Calcium", slug: "calcium", target: { kind: "wallach", low: 1500, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000046", high: null, low: 2e3, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 1e3, original_low: 600, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 1e3 }, range: { high: 1e3, low: 600, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000128", unit: "mg" } }, { category: "minerals", name: "Boron", slug: "boron", target: { kind: "wallach", low: 9.2, period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 6, original_low: 1, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 6 }, range: { high: 6, low: 1, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000127", unit: "mg" } }, { category: "minerals", name: "Cobalt", slug: "cobalt", target: { kind: "mirrors", mirrors_slug: "vitamin-b12", source: "Wallach framework \u2014 no separate amount is stated for this essential; his position is that the requirement is met through vitamin b12, so it carries that verdict" } }, { category: "minerals", name: "Chromium", slug: "chromium", target: { kind: "wallach", low: 620, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000049", high: null, low: 200, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 400, original_low: 200, original_unit: "mcg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 400 }, range: { high: 400, low: 200, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000129", unit: "mcg" } }, { category: "minerals", name: "Copper", slug: "copper", target: { kind: "wallach", low: 3.1, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000050", high: 4, low: 3, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 2, original_low: 1, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 2 }, range: { high: 2, low: 1, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000130", unit: "mg" } }, { category: "minerals", name: "Germanium", slug: "germanium", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)", vehicle_claim_ids: ["WAL-CLM-HELLS-000069"], vehicle_supplied: true } }, { category: "minerals", name: "Iron", slug: "iron", target: { kind: "wallach", low: 46, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000055", high: null, low: 45, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 30, original_low: 15, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 30 }, range: { high: 30, low: 15, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000132", unit: "mg" } }, { category: "minerals", name: "Iodine", slug: "iodine", target: { kind: "wallach", low: 230, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000054", high: null, low: 250, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 150, original_low: 50, original_unit: "mcg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 150 }, range: { high: 150, low: 50, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000131", unit: "mcg" } }, { category: "minerals", name: "Manganese", slug: "manganese", target: { kind: "wallach", low: 7.7, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000057", high: null, low: 5, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 5, original_low: 3, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 5 }, range: { high: 5, low: 3, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000134", unit: "mg" } }, { category: "minerals", name: "Molybdenum", slug: "molybdenum", target: { kind: "wallach", low: 38, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000058", high: null, low: 500, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 25, original_low: 10, original_unit: "mcg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 25 }, range: { high: 25, low: 10, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000135", unit: "mcg" } }, { category: "minerals", name: "Selenium", slug: "selenium", target: { kind: "wallach", low: 310, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000065", high: null, low: 200, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 200, original_low: 100, original_unit: "mcg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 200 }, range: { high: 200, low: 100, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000136", unit: "mcg" } }, { category: "minerals", name: "Silica", slug: "silica", target: { kind: "wallach", low: 38, other_claims: [{ book: "rare-earths", claim_id: "WAL-CLM-RARE-000246", high: 500, low: 200, source: "Rare Earths: Forbidden Cures (Wallach, 1994)", unit: "mg", year: 1994 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 25, original_low: 1, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 25 }, range: { high: 25, low: 1, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000137", unit: "mg" } }, { category: "minerals", name: "Strontium", slug: "strontium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Vanadium", slug: "vanadium", target: { kind: "wallach", low: 150, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000070", high: null, low: 500, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 100, original_low: 50, original_unit: "mcg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 100 }, range: { high: 100, low: 50, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000138", unit: "mcg", vehicle_claim_ids: ["WAL-CLM-HELLS-000069"], vehicle_supplied: true } }, { category: "minerals", name: "Zinc", slug: "zinc", target: { kind: "wallach", low: 46, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000077", high: null, low: 25, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { body_weight_basis: "154 lb (70 kg reference); source stated per 100 lb", original_high: 30, original_low: 15, original_unit: "mg", rounding: "2 significant figures", scale_factor: 1.54, upper_taken: 30 }, range: { high: 30, low: 15, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000139", unit: "mg" } }, { category: "minerals", name: "Silver", slug: "silver", target: { ceiling: 400, ceiling_reason: "stated-as-safe-intake-not-a-requirement", kind: "dietary_with_clinical_lever", period: "daily", provenance: { original_high: null, original_low: 400, original_unit: "mcg", upper_taken: 400 }, range: { high: null, low: 400, unit: "mcg" }, source: "Wallach \u2014 Dead Doctors Don't Lie (Wallach, 2011) \u2014 a stated safe intake, not a required amount", source_claim_id: "WAL-CLM-DDDL-000013", unit: "mcg" } }, { category: "minerals", name: "Aluminum", slug: "aluminum", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Arsenic", slug: "arsenic", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Gold", slug: "gold", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Barium", slug: "barium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Beryllium", slug: "beryllium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Bromine", slug: "bromine", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Cerium", slug: "cerium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Cesium", slug: "cesium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Dysprosium", slug: "dysprosium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Erbium", slug: "erbium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Europium", slug: "europium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Gallium", slug: "gallium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Gadolinium", slug: "gadolinium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Hafnium", slug: "hafnium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Holmium", slug: "holmium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Lanthanum", slug: "lanthanum", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Lithium", slug: "lithium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Lutetium", slug: "lutetium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Niobium", slug: "niobium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Neodymium", slug: "neodymium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Nickel", slug: "nickel", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Praseodymium", slug: "praseodymium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Rubidium", slug: "rubidium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Rhenium", slug: "rhenium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Scandium", slug: "scandium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Samarium", slug: "samarium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Tin", slug: "tin", target: { kind: "wallach", low: 500, period: "daily", provenance: { original_high: null, original_low: 500, original_unit: "mcg", upper_taken: 500 }, range: { high: null, low: 500, unit: "mcg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000069", unit: "mcg", vehicle_claim_ids: ["WAL-CLM-LETS-000451", "WAL-CLM-DDDL-000406", "WAL-CLM-DDDL-000465", "WAL-CLM-DDDL-000466", "WAL-CLM-DDDL-000287"], vehicle_supplied: true } }, { category: "minerals", name: "Tantalum", slug: "tantalum", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Terbium", slug: "terbium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Titanium", slug: "titanium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Thulium", slug: "thulium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Yttrium", slug: "yttrium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Ytterbium", slug: "ytterbium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "minerals", name: "Zirconium", slug: "zirconium", target: { kind: "trace_pdm", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "vitamins", name: "Vitamin A (Retinol / beta-carotene)", slug: "vitamin-a", target: { kind: "wallach", low: 9e3, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000071", high: null, low: 5e3, source: "Let's Play Doctor (Wallach, 1995)", unit: "IU", year: 1995 }], parts: [{ claim_id: "WAL-CLM-EPIGEN-000110", form: "retinol", provenance: { factor: 0.3, factor_source: "USP: 1 IU retinol = 0.3 mcg RAE", original_high: 5e3, original_low: 2500, original_unit: "IU", unit_detail: "RAE", upper_taken: 5e3 }, range: { high: 5e3, low: 2500, unit: "IU" }, unit: "mcg", value: 1500 }, { claim_id: "WAL-CLM-EPIGEN-000111", form: "beta-carotene", provenance: { factor: 0.3, factor_source: "USP: 1 IU supplemental beta-carotene = 0.3 mcg RAE", original_high: 25e3, original_low: 5e3, original_unit: "IU", unit_detail: "RAE", upper_taken: 25e3 }, range: { high: 25e3, low: 5e3, unit: "IU" }, unit: "mcg", value: 7500 }], period: "daily", provenance: { factor: 0.3, factor_source: "USP: 1 IU retinol = 0.3 mcg RAE", original_high: 5e3, original_low: 2500, original_unit: "IU", unit_detail: "RAE", upper_taken: 5e3 }, range: { high: 5e3, low: 2500, unit: "IU" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000110", unit: "mcg" } }, { category: "vitamins", name: "Vitamin B1 (Thiamine)", slug: "vitamin-b1", target: { kind: "wallach", low: 100, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000068", high: null, low: 50, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 100, original_low: 10, original_unit: "mg", upper_taken: 100 }, range: { high: 100, low: 10, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000112", unit: "mg" } }, { category: "vitamins", name: "Vitamin B2 (Riboflavin)", slug: "vitamin-b2", target: { kind: "wallach", low: 50, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000064", high: null, low: 50, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 50, original_low: 10, original_unit: "mg", upper_taken: 50 }, range: { high: 50, low: 10, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000113", unit: "mg" } }, { category: "vitamins", name: "Vitamin B3 (Niacin)", slug: "vitamin-b3", target: { kind: "wallach", low: 100, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000059", high: null, low: 50, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 100, original_low: 10, original_unit: "mg", upper_taken: 100 }, range: { high: 100, low: 10, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000114", unit: "mg" } }, { category: "vitamins", name: "Vitamin B5 (Pantothenic Acid)", slug: "vitamin-b5", target: { kind: "wallach", low: 100, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000060", high: null, low: 50, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 100, original_low: 25, original_unit: "mg", upper_taken: 100 }, range: { high: 100, low: 25, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000115", unit: "mg" } }, { category: "vitamins", name: "Vitamin B6 (Pyridoxine)", slug: "vitamin-b6", target: { kind: "wallach", low: 100, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000063", high: null, low: 50, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 100, original_low: 25, original_unit: "mg", upper_taken: 100 }, range: { high: 100, low: 25, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000116", unit: "mg" } }, { category: "vitamins", name: "Folic Acid (Folate)", slug: "vitamin-b9", target: { kind: "wallach", low: 1e3, period: "daily", provenance: { original_high: null, original_low: 1e3, original_unit: "mcg", upper_taken: 1e3 }, range: { high: null, low: 1e3, unit: "mcg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000052", unit: "mcg" } }, { category: "vitamins", name: "Vitamin B12 (Cobalamin)", slug: "vitamin-b12", target: { kind: "wallach", low: 400, other_claims: [{ book: "immortality", claim_id: "WAL-CLM-IMMORT-000084", high: 400, low: 250, source: "Immortality (Wallach, 2008)", unit: "mcg", year: 2008 }, { book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000072", high: null, low: 200, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }, { book: "rare-earths", claim_id: "WAL-CLM-RARE-000014", high: 400, low: 250, source: "Rare Earths: Forbidden Cures (Wallach, 1994)", unit: "mcg", year: 1994 }], period: "daily", provenance: { original_high: null, original_low: 400, original_unit: "mcg", upper_taken: 400 }, range: { high: null, low: 400, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000117", unit: "mcg" } }, { category: "vitamins", name: "Vitamin C (Ascorbic Acid)", slug: "vitamin-c", target: { kind: "wallach", low: 1e3, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000073", high: null, low: 1e3, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 1e3, original_low: 250, original_unit: "mg", upper_taken: 1e3 }, range: { high: 1e3, low: 250, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000118", unit: "mg" } }, { category: "vitamins", name: "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)", slug: "vitamin-d", target: { kind: "wallach", low: 50, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000074", high: null, low: 275, source: "Let's Play Doctor (Wallach, 1995)", unit: "IU", year: 1995 }], period: "daily", provenance: { factor: 0.025, factor_source: "1 mcg vitamin D = 40 IU", original_high: 2e3, original_low: 1e3, original_unit: "IU", upper_taken: 2e3 }, range: { high: 2e3, low: 1e3, unit: "IU" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000119", unit: "mcg" } }, { category: "vitamins", name: "Vitamin E (Tocopherol)", slug: "vitamin-e", target: { kind: "wallach", low: 134, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000075", high: null, low: 400, source: "Let's Play Doctor (Wallach, 1995)", unit: "IU", year: 1995 }], period: "daily", provenance: { factor: 0.67, factor_source: "1 IU natural d-alpha-tocopherol = 0.67 mg", original_high: 200, original_low: 100, original_unit: "IU", upper_taken: 200 }, range: { high: 200, low: 100, unit: "IU" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000120", unit: "mg" } }, { category: "vitamins", name: "Vitamin K (Phylloquinone)", slug: "vitamin-k", target: { kind: "wallach", low: 300, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000076", high: null, low: 140, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { original_high: 300, original_low: 60, original_unit: "mcg", upper_taken: 300 }, range: { high: 300, low: 60, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000121", unit: "mcg" } }, { category: "vitamins", name: "Biotin", slug: "biotin", target: { kind: "wallach", low: 300, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000045", high: null, low: 200, source: "Let's Play Doctor (Wallach, 1995)", unit: "mcg", year: 1995 }], period: "daily", provenance: { original_high: 300, original_low: 100, original_unit: "mcg", upper_taken: 300 }, range: { high: 300, low: 100, unit: "mcg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000122", unit: "mcg" } }, { category: "vitamins", name: "Choline", slug: "choline", target: { kind: "wallach", low: 100, other_claims: [{ book: "lets-play-doctor", claim_id: "WAL-CLM-LETS-000048", high: null, low: 600, source: "Let's Play Doctor (Wallach, 1995)", unit: "mg", year: 1995 }], period: "daily", provenance: { original_high: 100, original_low: 10, original_unit: "mg", upper_taken: 100 }, range: { high: 100, low: 10, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000124", unit: "mg" } }, { category: "vitamins", name: "Inositol", slug: "inositol", target: { kind: "wallach", low: 90, period: "daily", provenance: { original_high: null, original_low: 90, original_unit: "mg", upper_taken: 90 }, range: { high: null, low: 90, unit: "mg" }, source: "Wallach \u2014 Let's Play Doctor (Wallach, 1995)", source_claim_id: "WAL-CLM-LETS-000053", unit: "mg" } }, { category: "vitamins", name: "Flavonoids / Bioflavonoids", slug: "flavonoids", target: { kind: "wallach", low: 1e3, period: "daily", provenance: { lower_taken: 1e3, lower_taken_reason: "upper-unreachable-by-any-catalog-combination", original_high: 5e3, original_low: 1e3, original_unit: "mg" }, range: { high: 5e3, low: 1e3, unit: "mg" }, source: "Wallach \u2014 Epigenetics: The Death of the Genetic Theory of Disease Transmission (Wallach, 2014)", source_claim_id: "WAL-CLM-EPIGEN-000126", unit: "mg" } }, { category: "amino_acids", name: "Arginine", slug: "arginine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Taurine", slug: "taurine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Histidine", slug: "histidine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Isoleucine", slug: "isoleucine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Leucine", slug: "leucine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Lysine", slug: "lysine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Methionine", slug: "methionine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Phenylalanine", slug: "phenylalanine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Threonine", slug: "threonine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Tryptophan", slug: "tryptophan", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Tyrosine", slug: "tyrosine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "amino_acids", name: "Valine", slug: "valine", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }, { category: "fatty_acids", name: "Omega-3 (Alpha-Linolenic Acid / ALA)", slug: "omega-3", target: { collective_group: "essential-fatty-acids", kind: "wallach_collective", source: "Wallach \u2014 Dead Doctors Don't Lie (Wallach, 2011) \u2014 one shared amount for the essential fatty acids group, not a per-essential amount", source_claim_id: "WAL-CLM-DDDL-000115" } }, { category: "fatty_acids", name: "Omega-6 (Linoleic Acid / LA)", slug: "omega-6", target: { collective_group: "essential-fatty-acids", kind: "wallach_collective", source: "Wallach \u2014 Dead Doctors Don't Lie (Wallach, 2011) \u2014 one shared amount for the essential fatty acids group, not a per-essential amount", source_claim_id: "WAL-CLM-DDDL-000115" } }, { category: "fatty_acids", name: "Omega-9 (Oleic Acid / OA)", slug: "omega-9", target: { kind: "dietary_with_clinical_lever", source: "Wallach framework \u2014 no maintenance amount stated (honest gap; blueprint \xA77.1)" } }] };
 
   // assets/data/pdm-coverage-data.json
   var pdm_coverage_data_default = {
@@ -16689,6 +16836,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
 
   // assets/js/src/core/provenance.ts
   var USER_SUPPLIED_PROVENANCE = ["user_scanned", "user_typed"];
+  var FOOD_CATALOG_PROVENANCE = "food_catalog";
+  function isFoodCatalog(provenance) {
+    return provenance === FOOD_CATALOG_PROVENANCE;
+  }
   function isUserSupplied(provenance) {
     return USER_SUPPLIED_PROVENANCE.includes(provenance);
   }
@@ -16933,6 +17084,18701 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return { v: value, u: "mg" };
     }
     return { v: massToMg(value, canon), u: "mg" };
+  }
+
+  // assets/data/foods-composition-data.json
+  var foods_composition_data_default = {
+    _meta: {
+      efa_reference: {
+        _label_why: "The one display string in this artifact that is NOT derived from the canon. The essential-fatty-acid GROUP has no canonical short name -- omega-3 and omega-6 have their own, the group has only 'essential-fatty-acids' -- and the signed-off tile demo showed 'Omega EFAs'. The canon-derived alternative, 'Essential Fatty Acids', is 21 characters and would blow out the lead column's nowrap label on a 340px card. The demo's label is used and the reason is written down.",
+        category: "fatty_acids",
+        description: "Oil, flaxseed, cold pressed",
+        efa_fraction: 0.67695,
+        fdc_id: "167702",
+        label: "Omega EFAs",
+        linoleic_g_per_100g: "14.327",
+        linolenic_g_per_100g: "53.368"
+      },
+      essential_display: {
+        biotin: {
+          category: "vitamins",
+          label: "Biotin"
+        },
+        calcium: {
+          category: "minerals",
+          label: "Calcium"
+        },
+        chloride: {
+          category: "minerals",
+          label: "Chloride"
+        },
+        choline: {
+          category: "vitamins",
+          label: "Choline"
+        },
+        copper: {
+          category: "minerals",
+          label: "Copper"
+        },
+        flavonoids: {
+          category: "vitamins",
+          label: "Flavonoids"
+        },
+        iodine: {
+          category: "minerals",
+          label: "Iodine"
+        },
+        iron: {
+          category: "minerals",
+          label: "Iron"
+        },
+        magnesium: {
+          category: "minerals",
+          label: "Magnesium"
+        },
+        manganese: {
+          category: "minerals",
+          label: "Manganese"
+        },
+        molybdenum: {
+          category: "minerals",
+          label: "Molybdenum"
+        },
+        potassium: {
+          category: "minerals",
+          label: "Potassium"
+        },
+        selenium: {
+          category: "minerals",
+          label: "Selenium"
+        },
+        silica: {
+          category: "minerals",
+          label: "Silica"
+        },
+        sodium: {
+          category: "minerals",
+          label: "Sodium"
+        },
+        sulfur: {
+          category: "minerals",
+          label: "Sulfur"
+        },
+        "vitamin-a": {
+          category: "vitamins",
+          label: "Vitamin A"
+        },
+        "vitamin-b1": {
+          category: "vitamins",
+          label: "Vitamin B1"
+        },
+        "vitamin-b12": {
+          category: "vitamins",
+          label: "Vitamin B12"
+        },
+        "vitamin-b2": {
+          category: "vitamins",
+          label: "Vitamin B2"
+        },
+        "vitamin-b3": {
+          category: "vitamins",
+          label: "Vitamin B3"
+        },
+        "vitamin-b5": {
+          category: "vitamins",
+          label: "Vitamin B5"
+        },
+        "vitamin-b6": {
+          category: "vitamins",
+          label: "Vitamin B6"
+        },
+        "vitamin-b9": {
+          category: "vitamins",
+          label: "Folic Acid"
+        },
+        "vitamin-c": {
+          category: "vitamins",
+          label: "Vitamin C"
+        },
+        "vitamin-d": {
+          category: "vitamins",
+          label: "Vitamin D2 + D3"
+        },
+        "vitamin-e": {
+          category: "vitamins",
+          label: "Vitamin E"
+        },
+        "vitamin-k": {
+          category: "vitamins",
+          label: "Vitamin K"
+        },
+        zinc: {
+          category: "minerals",
+          label: "Zinc"
+        }
+      },
+      essentials_measurable: [
+        "biotin",
+        "calcium",
+        "chloride",
+        "choline",
+        "copper",
+        "flavonoids",
+        "iodine",
+        "iron",
+        "magnesium",
+        "manganese",
+        "molybdenum",
+        "potassium",
+        "selenium",
+        "silica",
+        "sodium",
+        "sulfur",
+        "vitamin-a",
+        "vitamin-b1",
+        "vitamin-b12",
+        "vitamin-b2",
+        "vitamin-b3",
+        "vitamin-b5",
+        "vitamin-b6",
+        "vitamin-b9",
+        "vitamin-c",
+        "vitamin-d",
+        "vitamin-e",
+        "vitamin-k",
+        "zinc"
+      ],
+      essentials_without_composition: [
+        "boron",
+        "chromium",
+        "germanium",
+        "inositol",
+        "tin",
+        "vanadium"
+      ],
+      food_count: 192,
+      qualify_fraction: 0.07,
+      second_sources: {
+        biotin: {
+          source_id: "afcd-au-r3",
+          tier: "APPROXIMATE"
+        },
+        chloride: {
+          source_id: "afcd-au-r3",
+          tier: "APPROXIMATE"
+        },
+        flavonoids: {
+          source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+          tier: "EXACT"
+        },
+        iodine: {
+          source_id: "iodine-usda-ods-r4",
+          tier: "EXACT"
+        },
+        molybdenum: {
+          source_id: "afcd-au-r3",
+          tier: "APPROXIMATE"
+        },
+        silica: {
+          source_id: "silicon-powell-2005",
+          tier: "APPROXIMATE"
+        },
+        sulfur: {
+          source_id: "afcd-au-r3+doleman-2017",
+          tier: "APPROXIMATE"
+        }
+      },
+      source: {
+        archive_sha256: "b80817294b8850530aaedf2e515c02593b1824f763a0ff356e5c2081643e6fd0",
+        dataset: "FoodData Central -- SR Legacy",
+        display: "USDA FoodData Central",
+        licence: "Public domain (17 U.S.C. 105 -- work of the U.S. Government). No attribution required; attributed anyway.",
+        release: "2018-04",
+        url: "https://fdc.nal.usda.gov/fdc-datasets/FoodData_Central_sr_legacy_food_csv_2018-04.zip"
+      },
+      source_display: {
+        "afcd-au-r3": "the Australian Food Composition Database",
+        "doleman-2017": "Doleman 2017 (Food Chemistry)",
+        "flavonoid-usda-r33": "the USDA flavonoid database",
+        "flavonoid-usda-r33+proanthocyanidin-r2": "the USDA flavonoid and proanthocyanidin databases",
+        "iodine-usda-ods-r4": "the USDA/FDA/ODS iodine database",
+        "proanthocyanidin-usda-r2": "the USDA proanthocyanidin database",
+        "silicon-powell-2005": "Powell\u2019s 2005 silicon database (British Journal of Nutrition)",
+        "usda-sr-legacy": "USDA FoodData Central"
+      },
+      strong_fraction: 0.2
+    },
+    _purpose: "GENERATED by eden/tools/foods_composition_derive.py. Per-serving nutrient amounts for the FOOD SOURCES blocks on the Regimen and Coverage tabs. COMPOSITION comes from the pinned USDA SR Legacy source and from the second sources pinned in eden/foods/sources/sources.json (all numerators); every TARGET it is measured against is Dr. Wallach's, read from essentials-targets-data.json. A food is credited for an essential only when one serving delivers at least the qualify_fraction of his daily target, and only for essentials carrying a NUMERIC Wallach target -- never for a tile that covers on presence alone. Every row carries its own provenance and match tier. Never hand-edit; run eden/tools/build_embeds.py.",
+    foods: [
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 120.95,
+          linoleic_g_per_100g: "0.022",
+          linolenic_g_per_100g: "0.037",
+          oil_equivalent_mg: 178.669
+        },
+        fdc_id: "170128",
+        grams: 205,
+        id: "acorn-squash-baked",
+        name: "Acorn squash, baked",
+        nutrients: [
+          {
+            amount: 88.15,
+            fraction: 0.1145,
+            nutrient_id: "1090",
+            per_100g: "43",
+            provenance: {
+              join: "fdc:170128/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 895.85,
+            fraction: 0.1792,
+            nutrient_id: "1092",
+            per_100g: "437",
+            provenance: {
+              join: "fdc:170128/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 492,
+            fraction: 0.1491,
+            nutrient_id: "1093",
+            per_100g: "240",
+            provenance: {
+              join: "fdc:170128/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86099",
+        portion_label: "1 cup, cubes",
+        strength: 0.4428,
+        usda_description: "Squash, winter, acorn, cooked, baked, with salt"
+      },
+      {
+        breadth: 1,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 2177.92,
+          linoleic_g_per_100g: "13.605",
+          linolenic_g_per_100g: "0.007",
+          oil_equivalent_mg: 3217.2539
+        },
+        fdc_id: "168588",
+        grams: 16,
+        id: "almond-butter",
+        name: "Almond butter",
+        nutrients: [
+          {
+            amount: 8.336,
+            fraction: 0.0834,
+            nutrient_id: "1180",
+            per_100g: "52.1",
+            provenance: {
+              join: "fdc:168588/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83375",
+        portion_label: "1 tbsp",
+        strength: 0.0834,
+        usda_description: "Nuts, almond butter, plain, without salt added"
+      },
+      {
+        breadth: 5,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 3494.1375,
+          conjugated_linoleic_g_per_100g: "0.002",
+          linoleic_g_per_100g: "12.324",
+          linolenic_g_per_100g: "0.003",
+          oil_equivalent_mg: 5161.5887
+        },
+        fdc_id: "170567",
+        grams: 28.35,
+        id: "almonds",
+        name: "Almonds",
+        nutrients: [
+          {
+            amount: 14.7704,
+            fraction: 0.1477,
+            nutrient_id: "1180",
+            per_100g: "52.1",
+            provenance: {
+              join: "fdc:170567/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2923,
+            fraction: 0.0943,
+            nutrient_id: "1098",
+            per_100g: "1.031",
+            provenance: {
+              join: "fdc:170567/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 76.545,
+            fraction: 0.0994,
+            nutrient_id: "1090",
+            per_100g: "270",
+            provenance: {
+              join: "fdc:170567/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.6177,
+            fraction: 0.0802,
+            nutrient_id: "1101",
+            per_100g: "2.179",
+            provenance: {
+              join: "fdc:170567/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 11.5952,
+            fraction: 0.3051,
+            per_100g: "40.9",
+            provenance: {
+              join: "name:Nut, almond, with skin, raw, unsalted",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both raw almonds with skin."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          }
+        ],
+        portion_id: "86867",
+        portion_label: "1 oz (23 whole kernels)",
+        strength: 0.7267,
+        usda_description: "Nuts, almonds"
+      },
+      {
+        breadth: 2,
+        category: "Fruits",
+        fdc_id: "168202",
+        grams: 169,
+        id: "apple",
+        name: "Apple",
+        nutrients: [
+          {
+            amount: 8.619,
+            fraction: 0.0862,
+            nutrient_id: "1180",
+            per_100g: "5.1",
+            provenance: {
+              join: "fdc:168202/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 151.086,
+            fraction: 0.1511,
+            per_100g: "89.40",
+            provenance: {
+              combine: "sum",
+              join: "ndb:09501",
+              parts: [
+                {
+                  rows: 18,
+                  source: "flavonoids-usda-r33",
+                  total: "10.33"
+                },
+                {
+                  rows: 5,
+                  source: "proanthocyanidins-usda-r2",
+                  total: "79.07"
+                }
+              ],
+              source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+              tier: "EXACT",
+              value_kind: "sum"
+            },
+            slug: "flavonoids",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "82658",
+        portion_label: "1 medium",
+        strength: 0.2373,
+        usda_description: "Apples, raw, golden delicious, with skin"
+      },
+      {
+        breadth: 1,
+        category: "Fruits",
+        efa: {
+          acid_mg: 119.35,
+          linoleic_g_per_100g: "0.077",
+          linolenic_g_per_100g: "0",
+          oil_equivalent_mg: 176.3055
+        },
+        fdc_id: "171697",
+        grams: 155,
+        id: "apricots",
+        name: "Apricots",
+        nutrients: [
+          {
+            amount: 401.45,
+            fraction: 0.0803,
+            nutrient_id: "1092",
+            per_100g: "259",
+            provenance: {
+              join: "fdc:171697/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "89209",
+        portion_label: "1 cup, halves",
+        strength: 0.0803,
+        usda_description: "Apricots, raw"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 120.12,
+          linoleic_g_per_100g: "0.105",
+          linolenic_g_per_100g: "0.038",
+          oil_equivalent_mg: 177.4429
+        },
+        fdc_id: "169311",
+        grams: 84,
+        id: "artichoke-cooked",
+        name: "Artichoke, cooked",
+        nutrients: [
+          {
+            amount: 28.896,
+            fraction: 0.289,
+            nutrient_id: "1180",
+            per_100g: "34.4",
+            provenance: {
+              join: "fdc:169311/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 248.64,
+            fraction: 0.0753,
+            nutrient_id: "1093",
+            per_100g: "296",
+            provenance: {
+              join: "fdc:169311/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 74.76,
+            fraction: 0.0748,
+            nutrient_id: "1177",
+            per_100g: "89",
+            provenance: {
+              join: "fdc:169311/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84636",
+        portion_label: "0.5 cup hearts",
+        strength: 0.4391,
+        usda_description: "Artichokes, (globe or french), cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 94.5,
+          linoleic_g_per_100g: "0.076",
+          linolenic_g_per_100g: "0.029",
+          oil_equivalent_mg: 139.5967
+        },
+        fdc_id: "168390",
+        grams: 90,
+        id: "asparagus-cooked",
+        name: "Asparagus, cooked",
+        nutrients: [
+          {
+            amount: 23.49,
+            fraction: 0.2349,
+            nutrient_id: "1180",
+            per_100g: "26.1",
+            provenance: {
+              join: "fdc:168390/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 134.1,
+            fraction: 0.1341,
+            nutrient_id: "1177",
+            per_100g: "149",
+            provenance: {
+              join: "fdc:168390/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 45.54,
+            fraction: 0.1518,
+            nutrient_id: "1185",
+            per_100g: "50.6",
+            provenance: {
+              join: "fdc:168390/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83018",
+        portion_label: "0.5 cup",
+        strength: 0.5208,
+        usda_description: "Asparagus, cooked, boiled, drained"
+      },
+      {
+        breadth: 5,
+        category: "Fruits",
+        efa: {
+          acid_mg: 2446.64,
+          linoleic_g_per_100g: "1.674",
+          linolenic_g_per_100g: "0.125",
+          oil_equivalent_mg: 3614.2108
+        },
+        fdc_id: "171706",
+        grams: 136,
+        id: "avocado",
+        name: "Avocado",
+        nutrients: [
+          {
+            amount: 19.312,
+            fraction: 0.1931,
+            nutrient_id: "1180",
+            per_100g: "14.2",
+            provenance: {
+              join: "fdc:171706/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2312,
+            fraction: 0.0746,
+            nutrient_id: "1098",
+            per_100g: "0.17",
+            provenance: {
+              join: "fdc:171706/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 689.52,
+            fraction: 0.1379,
+            nutrient_id: "1092",
+            per_100g: "507",
+            provenance: {
+              join: "fdc:171706/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 121.04,
+            fraction: 0.121,
+            nutrient_id: "1177",
+            per_100g: "89",
+            provenance: {
+              join: "fdc:171706/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 28.56,
+            fraction: 0.0952,
+            nutrient_id: "1185",
+            per_100g: "21",
+            provenance: {
+              join: "fdc:171706/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "89229",
+        portion_label: "1 fruit, without skin and seed",
+        strength: 0.6218,
+        usda_description: "Avocados, raw, California"
+      },
+      {
+        breadth: 4,
+        category: "Fruits",
+        efa: {
+          acid_mg: 110.96,
+          linoleic_g_per_100g: "0.046",
+          linolenic_g_per_100g: "0.027",
+          oil_equivalent_mg: 163.9117
+        },
+        fdc_id: "173944",
+        grams: 152,
+        id: "banana",
+        name: "Banana",
+        nutrients: [
+          {
+            amount: 14.896,
+            fraction: 0.149,
+            nutrient_id: "1180",
+            per_100g: "9.8",
+            provenance: {
+              join: "fdc:173944/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.712,
+            fraction: 0.124,
+            per_100g: "3.1",
+            provenance: {
+              conservative: true,
+              join: "name:Banana, lady finger or sugar, peeled, raw",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD measures cavendish and lady-finger bananas; our USDA row is the generic 'Bananas, raw'. The lower is taken."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 544.16,
+            fraction: 0.1088,
+            nutrient_id: "1092",
+            per_100g: "358",
+            provenance: {
+              join: "fdc:173944/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 7.2504,
+            fraction: 0.1908,
+            per_100g: "4.77",
+            provenance: {
+              join: "name:Banana, raw",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Same fruit, both raw."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "93517",
+        portion_label: '1 extra large (9" or longer)',
+        strength: 0.5726,
+        usda_description: "Bananas, raw"
+      },
+      {
+        breadth: 1,
+        category: "Spices & herbs",
+        efa: {
+          acid_mg: 20.617,
+          linoleic_g_per_100g: "0.073",
+          linolenic_g_per_100g: "0.316",
+          oil_equivalent_mg: 30.4557
+        },
+        fdc_id: "172232",
+        grams: 5.3,
+        id: "basil-fresh",
+        name: "Basil, fresh",
+        nutrients: [
+          {
+            amount: 21.9844,
+            fraction: 0.0733,
+            nutrient_id: "1185",
+            per_100g: "414.8",
+            provenance: {
+              join: "fdc:172232/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "90126",
+        portion_label: "2 tbsp, chopped",
+        strength: 0.0733,
+        usda_description: "Basil, fresh"
+      },
+      {
+        breadth: 2,
+        category: "Beef",
+        efa: {
+          acid_mg: 688.5,
+          linoleic_g_per_100g: "0.58",
+          linolenic_g_per_100g: "0.23",
+          oil_equivalent_mg: 1017.0618
+        },
+        fdc_id: "168665",
+        grams: 85,
+        id: "beef-brisket",
+        name: "Beef brisket",
+        nutrients: [
+          {
+            amount: 83.725,
+            fraction: 0.8372,
+            nutrient_id: "1180",
+            per_100g: "98.5",
+            provenance: {
+              join: "fdc:168665/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.9045,
+            fraction: 0.1066,
+            nutrient_id: "1095",
+            per_100g: "5.77",
+            provenance: {
+              join: "fdc:168665/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83526",
+        portion_label: "3 oz",
+        strength: 0.9438,
+        usda_description: 'Beef, brisket, whole, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, braised'
+      },
+      {
+        breadth: 4,
+        category: "Beef",
+        efa: {
+          acid_mg: 641.75,
+          linoleic_g_per_100g: "0.736",
+          linolenic_g_per_100g: "0.019",
+          oil_equivalent_mg: 948.0021
+        },
+        fdc_id: "169448",
+        grams: 85,
+        id: "beef-heart",
+        name: "Beef heart",
+        nutrients: [
+          {
+            amount: 194.48,
+            fraction: 1.9448,
+            nutrient_id: "1180",
+            per_100g: "228.8",
+            provenance: {
+              join: "fdc:169448/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4752,
+            fraction: 0.1533,
+            nutrient_id: "1098",
+            per_100g: "0.559",
+            provenance: {
+              join: "fdc:169448/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 5.423,
+            fraction: 0.1179,
+            nutrient_id: "1089",
+            per_100g: "6.38",
+            provenance: {
+              join: "fdc:169448/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 33.065,
+            fraction: 0.1067,
+            nutrient_id: "1103",
+            per_100g: "38.9",
+            provenance: {
+              join: "fdc:169448/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84889",
+        portion_label: "3 oz",
+        strength: 2.3227,
+        usda_description: "Beef, variety meats and by-products, heart, cooked, simmered"
+      },
+      {
+        breadth: 5,
+        category: "Beef",
+        efa: {
+          acid_mg: 550.8,
+          linoleic_g_per_100g: "0.626",
+          linolenic_g_per_100g: "0.022",
+          oil_equivalent_mg: 813.6495
+        },
+        fdc_id: "169450",
+        grams: 85,
+        id: "beef-kidney",
+        name: "Beef kidney",
+        nutrients: [
+          {
+            amount: 436.22,
+            fraction: 4.3622,
+            nutrient_id: "1180",
+            per_100g: "513.2",
+            provenance: {
+              join: "fdc:169450/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4794,
+            fraction: 0.1546,
+            nutrient_id: "1098",
+            per_100g: "0.564",
+            provenance: {
+              join: "fdc:169450/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.93,
+            fraction: 0.1072,
+            nutrient_id: "1089",
+            per_100g: "5.8",
+            provenance: {
+              join: "fdc:169450/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 142.8,
+            fraction: 0.4606,
+            nutrient_id: "1103",
+            per_100g: "168",
+            provenance: {
+              join: "fdc:169450/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 70.55,
+            fraction: 0.0706,
+            nutrient_id: "1177",
+            per_100g: "83",
+            provenance: {
+              join: "fdc:169450/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84892",
+        portion_label: "3 oz",
+        strength: 5.1552,
+        usda_description: "Beef, variety meats and by-products, kidneys, cooked, simmered"
+      },
+      {
+        breadth: 9,
+        category: "Beef",
+        fdc_id: "168626",
+        grams: 85,
+        id: "beef-liver",
+        name: "Beef liver",
+        nutrients: [
+          {
+            amount: 362.1,
+            fraction: 3.621,
+            nutrient_id: "1180",
+            per_100g: "426",
+            provenance: {
+              join: "fdc:168626/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 12.1405,
+            fraction: 3.9163,
+            nutrient_id: "1098",
+            per_100g: "14.283",
+            provenance: {
+              join: "fdc:168626/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 5.559,
+            fraction: 0.1208,
+            nutrient_id: "1089",
+            per_100g: "6.54",
+            provenance: {
+              join: "fdc:168626/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 30.685,
+            fraction: 0.099,
+            nutrient_id: "1103",
+            per_100g: "36.1",
+            provenance: {
+              join: "fdc:168626/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 8025.7,
+            fraction: 0.8917,
+            nutrient_id: "1106",
+            per_100g: "9442",
+            provenance: {
+              join: "fdc:168626/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 59.993,
+            fraction: 0.15,
+            nutrient_id: "1178",
+            per_100g: "70.58",
+            provenance: {
+              join: "fdc:168626/nutrient:1178",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b12",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 14.8962,
+            fraction: 0.149,
+            nutrient_id: "1167",
+            per_100g: "17.525",
+            provenance: {
+              join: "fdc:168626/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 215.05,
+            fraction: 0.215,
+            nutrient_id: "1177",
+            per_100g: "253",
+            provenance: {
+              join: "fdc:168626/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 4.505,
+            fraction: 0.0979,
+            nutrient_id: "1095",
+            per_100g: "5.3",
+            provenance: {
+              join: "fdc:168626/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83447",
+        portion_label: "3 oz",
+        strength: 9.2607,
+        usda_description: "Beef, variety meats and by-products, liver, cooked, braised"
+      },
+      {
+        breadth: 2,
+        category: "Beef",
+        efa: {
+          acid_mg: 524.45,
+          linoleic_g_per_100g: "0.526",
+          linolenic_g_per_100g: "0.091",
+          oil_equivalent_mg: 774.7249
+        },
+        fdc_id: "170598",
+        grams: 85,
+        id: "beef-tongue",
+        name: "Beef tongue",
+        nutrients: [
+          {
+            amount: 131.75,
+            fraction: 1.3175,
+            nutrient_id: "1180",
+            per_100g: "155",
+            provenance: {
+              join: "fdc:170598/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.4765,
+            fraction: 0.0756,
+            nutrient_id: "1095",
+            per_100g: "4.09",
+            provenance: {
+              join: "fdc:170598/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86927",
+        portion_label: "3 oz",
+        strength: 1.3931,
+        usda_description: "Beef, variety meats and by-products, tongue, cooked, simmered"
+      },
+      {
+        breadth: 8,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 102.24,
+          linoleic_g_per_100g: "0.065",
+          linolenic_g_per_100g: "0.006",
+          oil_equivalent_mg: 151.0304
+        },
+        fdc_id: "168508",
+        grams: 144,
+        id: "beet-greens-cooked",
+        name: "Beet greens, cooked",
+        nutrients: [
+          {
+            amount: 164.16,
+            fraction: 0.1094,
+            nutrient_id: "1087",
+            per_100g: "114",
+            provenance: {
+              join: "fdc:168508/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 61.2,
+            fraction: 0.612,
+            nutrient_id: "1180",
+            per_100g: "42.5",
+            provenance: {
+              join: "fdc:168508/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3614,
+            fraction: 0.1166,
+            nutrient_id: "1098",
+            per_100g: "0.251",
+            provenance: {
+              join: "fdc:168508/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 97.92,
+            fraction: 0.1272,
+            nutrient_id: "1090",
+            per_100g: "68",
+            provenance: {
+              join: "fdc:168508/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.7402,
+            fraction: 0.0961,
+            nutrient_id: "1101",
+            per_100g: "0.514",
+            provenance: {
+              join: "fdc:168508/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1308.96,
+            fraction: 0.2618,
+            nutrient_id: "1092",
+            per_100g: "909",
+            provenance: {
+              join: "fdc:168508/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 686.88,
+            fraction: 0.2081,
+            nutrient_id: "1093",
+            per_100g: "477",
+            provenance: {
+              join: "fdc:168508/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 696.96,
+            fraction: 2.3232,
+            nutrient_id: "1185",
+            per_100g: "484",
+            provenance: {
+              join: "fdc:168508/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83212",
+        portion_label: '1 cup (1" pieces)',
+        strength: 3.8544,
+        usda_description: "Beet greens, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 1,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 53.55,
+          linoleic_g_per_100g: "0.058",
+          linolenic_g_per_100g: "0.005",
+          oil_equivalent_mg: 79.1048
+        },
+        fdc_id: "168506",
+        grams: 85,
+        id: "beets-cooked",
+        name: "Beets, cooked",
+        nutrients: [
+          {
+            amount: 242.25,
+            fraction: 0.0734,
+            nutrient_id: "1093",
+            per_100g: "285",
+            provenance: {
+              join: "fdc:168506/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83209",
+        portion_label: "0.5 cup slices",
+        strength: 0.0734,
+        usda_description: "Beets, cooked, boiled. drained, with salt"
+      },
+      {
+        breadth: 2,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 199.75,
+          linoleic_g_per_100g: "0.205",
+          linolenic_g_per_100g: "0.03",
+          oil_equivalent_mg: 295.0735
+        },
+        fdc_id: "172599",
+        grams: 85,
+        id: "bison-ribeye",
+        name: "Bison ribeye",
+        nutrients: [
+          {
+            amount: 35.785,
+            fraction: 0.1154,
+            nutrient_id: "1103",
+            per_100g: "42.1",
+            provenance: {
+              join: "fdc:172599/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 4.2585,
+            fraction: 0.0926,
+            nutrient_id: "1095",
+            per_100g: "5.01",
+            provenance: {
+              join: "fdc:172599/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90936",
+        portion_label: "1 serving ( 3 oz )",
+        strength: 0.208,
+        usda_description: 'Game meat, bison, ribeye, separable lean only, 1" steak, cooked, broiled'
+      },
+      {
+        breadth: 8,
+        category: "Legumes",
+        efa: {
+          acid_mg: 397.32,
+          linoleic_g_per_100g: "0.126",
+          linolenic_g_per_100g: "0.105",
+          oil_equivalent_mg: 586.9267
+        },
+        fdc_id: "175237",
+        grams: 172,
+        id: "black-beans-cooked",
+        name: "Black beans, cooked",
+        nutrients: [
+          {
+            amount: 56.072,
+            fraction: 0.5607,
+            nutrient_id: "1180",
+            per_100g: "32.6",
+            provenance: {
+              join: "fdc:175237/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3595,
+            fraction: 0.116,
+            nutrient_id: "1098",
+            per_100g: "0.209",
+            provenance: {
+              join: "fdc:175237/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.612,
+            fraction: 0.0785,
+            nutrient_id: "1089",
+            per_100g: "2.1",
+            provenance: {
+              join: "fdc:175237/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 120.4,
+            fraction: 0.1564,
+            nutrient_id: "1090",
+            per_100g: "70",
+            provenance: {
+              join: "fdc:175237/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.7637,
+            fraction: 0.0992,
+            nutrient_id: "1101",
+            per_100g: "0.444",
+            provenance: {
+              join: "fdc:175237/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 610.6,
+            fraction: 0.1221,
+            nutrient_id: "1092",
+            per_100g: "355",
+            provenance: {
+              join: "fdc:175237/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 407.64,
+            fraction: 0.1235,
+            nutrient_id: "1093",
+            per_100g: "237",
+            provenance: {
+              join: "fdc:175237/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 256.28,
+            fraction: 0.2563,
+            nutrient_id: "1177",
+            per_100g: "149",
+            provenance: {
+              join: "fdc:175237/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95879",
+        portion_label: "1 cup",
+        strength: 1.5127,
+        usda_description: "Beans, black, mature seeds, cooked, boiled, with salt"
+      },
+      {
+        breadth: 8,
+        category: "Legumes",
+        efa: {
+          acid_mg: 386.46,
+          linoleic_g_per_100g: "0.143",
+          linolenic_g_per_100g: "0.083",
+          oil_equivalent_mg: 570.8841
+        },
+        fdc_id: "175252",
+        grams: 171,
+        id: "black-eyed-peas-cooked",
+        name: "Black-eyed peas, cooked",
+        nutrients: [
+          {
+            amount: 55.062,
+            fraction: 0.5506,
+            nutrient_id: "1180",
+            per_100g: "32.2",
+            provenance: {
+              join: "fdc:175252/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4583,
+            fraction: 0.1478,
+            nutrient_id: "1098",
+            per_100g: "0.268",
+            provenance: {
+              join: "fdc:175252/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.2921,
+            fraction: 0.0933,
+            nutrient_id: "1089",
+            per_100g: "2.51",
+            provenance: {
+              join: "fdc:175252/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 90.63,
+            fraction: 0.1177,
+            nutrient_id: "1090",
+            per_100g: "53",
+            provenance: {
+              join: "fdc:175252/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.8122,
+            fraction: 0.1055,
+            nutrient_id: "1101",
+            per_100g: "0.475",
+            provenance: {
+              join: "fdc:175252/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 475.38,
+            fraction: 0.0951,
+            nutrient_id: "1092",
+            per_100g: "278",
+            provenance: {
+              join: "fdc:175252/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 410.4,
+            fraction: 0.1244,
+            nutrient_id: "1093",
+            per_100g: "240",
+            provenance: {
+              join: "fdc:175252/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 355.68,
+            fraction: 0.3557,
+            nutrient_id: "1177",
+            per_100g: "208",
+            provenance: {
+              join: "fdc:175252/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95897",
+        portion_label: "1 cup",
+        strength: 1.5901,
+        usda_description: "Cowpeas, common (blackeyes, crowder, southern), mature seeds, cooked, boiled, with salt"
+      },
+      {
+        breadth: 5,
+        category: "Fruits",
+        efa: {
+          acid_mg: 403.2,
+          linoleic_g_per_100g: "0.186",
+          linolenic_g_per_100g: "0.094",
+          oil_equivalent_mg: 595.6127
+        },
+        fdc_id: "173946",
+        grams: 144,
+        id: "blackberries",
+        name: "Blackberries",
+        nutrients: [
+          {
+            amount: 12.24,
+            fraction: 0.1224,
+            nutrient_id: "1180",
+            per_100g: "8.5",
+            provenance: {
+              join: "fdc:173946/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2376,
+            fraction: 0.0766,
+            nutrient_id: "1098",
+            per_100g: "0.165",
+            provenance: {
+              join: "fdc:173946/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 240.7824,
+            fraction: 0.2408,
+            per_100g: "167.21",
+            provenance: {
+              combine: "sum",
+              join: "ndb:09042",
+              parts: [
+                {
+                  rows: 19,
+                  source: "flavonoids-usda-r33",
+                  total: "147.63"
+                },
+                {
+                  rows: 5,
+                  source: "proanthocyanidins-usda-r2",
+                  total: "19.58"
+                }
+              ],
+              source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+              tier: "EXACT",
+              value_kind: "sum"
+            },
+            slug: "flavonoids",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 0.9302,
+            fraction: 0.1208,
+            nutrient_id: "1101",
+            per_100g: "0.646",
+            provenance: {
+              join: "fdc:173946/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 28.512,
+            fraction: 0.095,
+            nutrient_id: "1185",
+            per_100g: "19.8",
+            provenance: {
+              join: "fdc:173946/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93521",
+        portion_label: "1 cup",
+        strength: 0.6556,
+        usda_description: "Blackberries, raw"
+      },
+      {
+        breadth: 2,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 226.8,
+          linoleic_g_per_100g: "0.536",
+          linolenic_g_per_100g: "0.264",
+          oil_equivalent_mg: 335.0321
+        },
+        fdc_id: "172175",
+        grams: 28.35,
+        id: "blue-cheese",
+        name: "Blue cheese",
+        nutrients: [
+          {
+            amount: 149.688,
+            fraction: 0.0998,
+            nutrient_id: "1087",
+            per_100g: "528",
+            provenance: {
+              join: "fdc:172175/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 324.891,
+            fraction: 0.0985,
+            nutrient_id: "1093",
+            per_100g: "1146",
+            provenance: {
+              join: "fdc:172175/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90017",
+        portion_label: "1 oz",
+        strength: 0.1983,
+        usda_description: "Cheese, blue"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 122.4,
+          linoleic_g_per_100g: "0.031",
+          linolenic_g_per_100g: "0.041",
+          oil_equivalent_mg: 180.811
+        },
+        fdc_id: "168517",
+        grams: 170,
+        id: "bok-choy-cooked",
+        name: "Bok choy, cooked",
+        nutrients: [
+          {
+            amount: 158.1,
+            fraction: 0.1054,
+            nutrient_id: "1087",
+            per_100g: "93",
+            provenance: {
+              join: "fdc:168517/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 20.57,
+            fraction: 0.2057,
+            nutrient_id: "1180",
+            per_100g: "12.1",
+            provenance: {
+              join: "fdc:168517/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 630.7,
+            fraction: 0.1261,
+            nutrient_id: "1092",
+            per_100g: "371",
+            provenance: {
+              join: "fdc:168517/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 459,
+            fraction: 0.1391,
+            nutrient_id: "1093",
+            per_100g: "270",
+            provenance: {
+              join: "fdc:168517/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 57.8,
+            fraction: 0.1927,
+            nutrient_id: "1185",
+            per_100g: "34",
+            provenance: {
+              join: "fdc:168517/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83228",
+        portion_label: "1 cup, shredded",
+        strength: 0.769,
+        usda_description: "Cabbage, chinese (pak-choi), cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 7,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 238,
+          linoleic_g_per_100g: "0.051",
+          linolenic_g_per_100g: "0.119",
+          oil_equivalent_mg: 351.5769
+        },
+        fdc_id: "168510",
+        grams: 140,
+        id: "broccoli-cooked",
+        name: "Broccoli, cooked",
+        nutrients: [
+          {
+            amount: 56.14,
+            fraction: 0.5614,
+            nutrient_id: "1180",
+            per_100g: "40.1",
+            provenance: {
+              join: "fdc:168510/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 9.66,
+            fraction: 0.2542,
+            per_100g: "6.9",
+            provenance: {
+              join: "name:Broccoli, fresh, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled and drained. AFCD's BAKED broccoli reads 76% against this row's 25% \u2014 a 3x spread on cooking method alone, which is exactly why the state has to match and not merely the vegetable."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 410.2,
+            fraction: 0.082,
+            nutrient_id: "1092",
+            per_100g: "293",
+            provenance: {
+              join: "fdc:168510/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 366.8,
+            fraction: 0.1112,
+            nutrient_id: "1093",
+            per_100g: "262",
+            provenance: {
+              join: "fdc:168510/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 151.2,
+            fraction: 0.1512,
+            nutrient_id: "1177",
+            per_100g: "108",
+            provenance: {
+              join: "fdc:168510/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 90.86,
+            fraction: 0.0909,
+            nutrient_id: "1162",
+            per_100g: "64.9",
+            provenance: {
+              join: "fdc:168510/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 197.54,
+            fraction: 0.6585,
+            nutrient_id: "1185",
+            per_100g: "141.1",
+            provenance: {
+              join: "fdc:168510/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83216",
+        portion_label: '1 stalk, small (5" long)',
+        strength: 1.9094,
+        usda_description: "Broccoli, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 2,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 197.2,
+          linoleic_g_per_100g: "0.031",
+          linolenic_g_per_100g: "0.201",
+          oil_equivalent_mg: 291.3066
+        },
+        fdc_id: "170382",
+        grams: 85,
+        id: "broccoli-rabe-cooked",
+        name: "Broccoli rabe, cooked",
+        nutrients: [
+          {
+            amount: 28.56,
+            fraction: 0.2856,
+            nutrient_id: "1180",
+            per_100g: "33.6",
+            provenance: {
+              join: "fdc:170382/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 217.6,
+            fraction: 0.7253,
+            nutrient_id: "1185",
+            per_100g: "256",
+            provenance: {
+              join: "fdc:170382/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86538",
+        portion_label: "1 NLEA serving",
+        strength: 1.0109,
+        usda_description: "Broccoli raab, cooked"
+      },
+      {
+        breadth: 7,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 291.4,
+          linoleic_g_per_100g: "0.059",
+          linolenic_g_per_100g: "0.129",
+          oil_equivalent_mg: 430.4602
+        },
+        fdc_id: "169332",
+        grams: 155,
+        id: "brussels-sprouts-cooked",
+        name: "Brussels sprouts, cooked",
+        nutrients: [
+          {
+            amount: 28.055,
+            fraction: 0.2806,
+            nutrient_id: "1180",
+            per_100g: "18.1",
+            provenance: {
+              join: "fdc:169332/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 20.15,
+            fraction: 0.5303,
+            per_100g: "13",
+            provenance: {
+              join: "name:Brussels sprout, fresh, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled and drained; ours from frozen, theirs from fresh."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 449.5,
+            fraction: 0.0899,
+            nutrient_id: "1092",
+            per_100g: "290",
+            provenance: {
+              join: "fdc:169332/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 401.45,
+            fraction: 0.1217,
+            nutrient_id: "1093",
+            per_100g: "259",
+            provenance: {
+              join: "fdc:169332/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 156.55,
+            fraction: 0.1566,
+            nutrient_id: "1177",
+            per_100g: "101",
+            provenance: {
+              join: "fdc:169332/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 70.835,
+            fraction: 0.0708,
+            nutrient_id: "1162",
+            per_100g: "45.7",
+            provenance: {
+              join: "fdc:169332/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 299.925,
+            fraction: 0.9998,
+            nutrient_id: "1185",
+            per_100g: "193.5",
+            provenance: {
+              join: "fdc:169332/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84662",
+        portion_label: "1 cup",
+        strength: 2.2497,
+        usda_description: "Brussels sprouts, frozen, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 4,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 77.9,
+          linoleic_g_per_100g: "0.014",
+          linolenic_g_per_100g: "0.024",
+          oil_equivalent_mg: 115.075
+        },
+        fdc_id: "170130",
+        grams: 205,
+        id: "butternut-squash-baked",
+        name: "Butternut squash, baked",
+        nutrients: [
+          {
+            amount: 59.45,
+            fraction: 0.0772,
+            nutrient_id: "1090",
+            per_100g: "29",
+            provenance: {
+              join: "fdc:170130/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 582.2,
+            fraction: 0.1164,
+            nutrient_id: "1092",
+            per_100g: "284",
+            provenance: {
+              join: "fdc:170130/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 492,
+            fraction: 0.1491,
+            nutrient_id: "1093",
+            per_100g: "240",
+            provenance: {
+              join: "fdc:170130/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1143.9,
+            fraction: 0.1271,
+            nutrient_id: "1106",
+            per_100g: "558",
+            provenance: {
+              join: "fdc:170130/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86101",
+        portion_label: "1 cup, cubes",
+        strength: 0.4698,
+        usda_description: "Squash, winter, butternut, cooked, baked, with salt"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 15.13,
+          linoleic_g_per_100g: "0.017",
+          linolenic_g_per_100g: "0",
+          oil_equivalent_mg: 22.3502
+        },
+        fdc_id: "169975",
+        grams: 89,
+        id: "cabbage-raw",
+        name: "Cabbage, raw",
+        nutrients: [
+          {
+            amount: 9.523,
+            fraction: 0.0952,
+            nutrient_id: "1180",
+            per_100g: "10.7",
+            provenance: {
+              join: "fdc:169975/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 6.675,
+            fraction: 0.1757,
+            per_100g: "7.5",
+            provenance: {
+              join: "name:Cabbage, white, raw",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both raw. AFCD's white cabbage is what USDA calls plain 'Cabbage' \u2014 the common green head."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 67.64,
+            fraction: 0.2255,
+            nutrient_id: "1185",
+            per_100g: "76",
+            provenance: {
+              join: "fdc:169975/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "85791",
+        portion_label: "1 cup, chopped",
+        strength: 0.4964,
+        usda_description: "Cabbage, raw"
+      },
+      {
+        breadth: 5,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 90.1,
+          linoleic_g_per_100g: "0.057",
+          linolenic_g_per_100g: "0.049",
+          oil_equivalent_mg: 133.097
+        },
+        fdc_id: "175135",
+        grams: 85,
+        id: "canned-salmon-with-bones",
+        name: "Canned salmon with bones",
+        nutrients: [
+          {
+            amount: 211.65,
+            fraction: 0.1411,
+            nutrient_id: "1087",
+            per_100g: "249",
+            provenance: {
+              join: "fdc:175135/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 72.25,
+            fraction: 0.7225,
+            nutrient_id: "1180",
+            per_100g: "85",
+            provenance: {
+              join: "fdc:175135/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 36.805,
+            fraction: 0.1187,
+            nutrient_id: "1103",
+            per_100g: "43.3",
+            provenance: {
+              join: "fdc:175135/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 332.35,
+            fraction: 0.1007,
+            nutrient_id: "1093",
+            per_100g: "391",
+            provenance: {
+              join: "fdc:175135/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 8.16,
+            fraction: 0.1632,
+            nutrient_id: "1114",
+            per_100g: "9.6",
+            provenance: {
+              join: "fdc:175135/nutrient:1114",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-d",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95714",
+        portion_label: "3 oz",
+        strength: 1.2462,
+        usda_description: "Fish, salmon, chum, canned, drained solids with bone"
+      },
+      {
+        breadth: 2,
+        category: "Fruits",
+        efa: {
+          acid_mg: 111.78,
+          linoleic_g_per_100g: "0.035",
+          linolenic_g_per_100g: "0.046",
+          oil_equivalent_mg: 165.123
+        },
+        fdc_id: "169092",
+        grams: 138,
+        id: "cantaloupe",
+        name: "Cantaloupe",
+        nutrients: [
+          {
+            amount: 10.488,
+            fraction: 0.1049,
+            nutrient_id: "1180",
+            per_100g: "7.6",
+            provenance: {
+              join: "fdc:169092/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 368.46,
+            fraction: 0.0737,
+            nutrient_id: "1092",
+            per_100g: "267",
+            provenance: {
+              join: "fdc:169092/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "84216",
+        portion_label: "10 cantaloupe balls",
+        strength: 0.1786,
+        usda_description: "Melons, cantaloupe, raw"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 130.56,
+          linoleic_g_per_100g: "0.1",
+          linolenic_g_per_100g: "0.002",
+          oil_equivalent_mg: 192.8651
+        },
+        fdc_id: "170393",
+        grams: 128,
+        id: "carrots-raw",
+        name: "Carrots, raw",
+        nutrients: [
+          {
+            amount: 11.264,
+            fraction: 0.1126,
+            nutrient_id: "1180",
+            per_100g: "8.8",
+            provenance: {
+              join: "fdc:170393/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 409.6,
+            fraction: 0.0819,
+            nutrient_id: "1092",
+            per_100g: "320",
+            provenance: {
+              join: "fdc:170393/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1068.8,
+            fraction: 0.1188,
+            nutrient_id: "1106",
+            per_100g: "835",
+            provenance: {
+              join: "fdc:170393/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86555",
+        portion_label: "1 cup chopped",
+        strength: 0.3133,
+        usda_description: "Carrots, raw"
+      },
+      {
+        breadth: 4,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 2217.2535,
+          linoleic_g_per_100g: "7.66",
+          linolenic_g_per_100g: "0.161",
+          oil_equivalent_mg: 3275.3579
+        },
+        fdc_id: "169421",
+        grams: 28.35,
+        id: "cashews-dry-roasted",
+        name: "Cashews, dry roasted",
+        nutrients: [
+          {
+            amount: 17.2935,
+            fraction: 0.1729,
+            nutrient_id: "1180",
+            per_100g: "61",
+            provenance: {
+              join: "fdc:169421/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.6294,
+            fraction: 0.203,
+            nutrient_id: "1098",
+            per_100g: "2.22",
+            provenance: {
+              join: "fdc:169421/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 73.71,
+            fraction: 0.0957,
+            nutrient_id: "1090",
+            per_100g: "260",
+            provenance: {
+              join: "fdc:169421/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 11.34,
+            fraction: 0.2984,
+            per_100g: "40",
+            provenance: {
+              join: "name:Nut, cashew, roasted, salted",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both roasted. AFCD's is salted and ours is not; salt adds sodium, not molybdenum. Lands under the threshold."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          }
+        ],
+        portion_id: "84834",
+        portion_label: "1 oz",
+        strength: 0.77,
+        usda_description: "Nuts, cashew nuts, dry roasted, with salt added"
+      },
+      {
+        breadth: 1,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 897.6,
+          linoleic_g_per_100g: "0.969",
+          linolenic_g_per_100g: "0.087",
+          oil_equivalent_mg: 1325.9473
+        },
+        fdc_id: "175166",
+        grams: 85,
+        id: "catfish-cooked",
+        name: "Catfish, cooked",
+        nutrients: [
+          {
+            amount: 66.895,
+            fraction: 0.6689,
+            nutrient_id: "1180",
+            per_100g: "78.7",
+            provenance: {
+              join: "fdc:175166/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "95785",
+        portion_label: "3 oz",
+        strength: 0.6689,
+        usda_description: "Fish, catfish, channel, farmed, cooked, dry heat"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 189,
+          linoleic_g_per_100g: "0.024",
+          linolenic_g_per_100g: "0.081",
+          oil_equivalent_mg: 279.1934
+        },
+        fdc_id: "168521",
+        grams: 180,
+        id: "cauliflower-cooked",
+        name: "Cauliflower, cooked",
+        nutrients: [
+          {
+            amount: 60.3,
+            fraction: 0.603,
+            nutrient_id: "1180",
+            per_100g: "33.5",
+            provenance: {
+              join: "fdc:168521/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 7.38,
+            fraction: 0.1942,
+            per_100g: "4.0999999999999996",
+            provenance: {
+              join: "name:Cauliflower, fresh, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled and drained; ours is from frozen, theirs from fresh."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 457.2,
+            fraction: 0.1385,
+            nutrient_id: "1093",
+            per_100g: "254",
+            provenance: {
+              join: "fdc:168521/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 73.8,
+            fraction: 0.0738,
+            nutrient_id: "1177",
+            per_100g: "41",
+            provenance: {
+              join: "fdc:168521/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 21.42,
+            fraction: 0.0714,
+            nutrient_id: "1185",
+            per_100g: "11.9",
+            provenance: {
+              join: "fdc:168521/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83236",
+        portion_label: '1 cup (1" pieces)',
+        strength: 1.0809,
+        usda_description: "Cauliflower, frozen, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 1,
+        category: "Vegetables",
+        fdc_id: "169341",
+        grams: 155,
+        id: "celeriac-cooked",
+        name: "Celeriac, cooked",
+        nutrients: [
+          {
+            amount: 460.35,
+            fraction: 0.1395,
+            nutrient_id: "1093",
+            per_100g: "297",
+            provenance: {
+              join: "fdc:169341/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "84676",
+        portion_label: "1 cup pieces",
+        strength: 0.1395,
+        usda_description: "Celeriac, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 79.79,
+          linoleic_g_per_100g: "0.079",
+          linolenic_g_per_100g: "0",
+          oil_equivalent_mg: 117.8669
+        },
+        fdc_id: "169988",
+        grams: 101,
+        id: "celery-raw",
+        name: "Celery, raw",
+        nutrients: [
+          {
+            amount: 232.3,
+            fraction: 0.0929,
+            per_100g: "230",
+            provenance: {
+              join: "name:Celery, fresh, raw",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both raw."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 8.989,
+            fraction: 0.2366,
+            per_100g: "8.9",
+            provenance: {
+              join: "name:Celery, fresh, raw",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both raw."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 29.593,
+            fraction: 0.0986,
+            nutrient_id: "1185",
+            per_100g: "29.3",
+            provenance: {
+              join: "fdc:169988/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "85824",
+        portion_label: "1 cup chopped",
+        strength: 0.4281,
+        usda_description: "Celery, raw"
+      },
+      {
+        breadth: 2,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 313.32,
+          conjugated_linoleic_g_per_100g: "0.166",
+          linoleic_g_per_100g: "1.171",
+          linolenic_g_per_100g: "0.114",
+          oil_equivalent_mg: 462.8407
+        },
+        fdc_id: "173414",
+        grams: 28,
+        id: "cheddar-cheese",
+        name: "Cheddar cheese",
+        nutrients: [
+          {
+            amount: 198.8,
+            fraction: 0.1325,
+            nutrient_id: "1087",
+            per_100g: "710",
+            provenance: {
+              join: "fdc:173414/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 298.76,
+            fraction: 0.1195,
+            per_100g: "1067",
+            provenance: {
+              join: "name:Cheese, cheddar, natural, regular fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "NATURAL cheddar, not AFCD's processed row \u2014 ours is natural cheddar."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "92472",
+        portion_label: "1 slice (1 oz)",
+        strength: 0.252,
+        usda_description: "Cheese, cheddar (Includes foods for USDA's Food Distribution Program)"
+      },
+      {
+        breadth: 2,
+        category: "Fruits",
+        efa: {
+          acid_mg: 74.2,
+          linoleic_g_per_100g: "0.027",
+          linolenic_g_per_100g: "0.026",
+          oil_equivalent_mg: 109.6093
+        },
+        fdc_id: "171719",
+        grams: 140,
+        id: "cherries",
+        name: "Cherries",
+        nutrients: [
+          {
+            amount: 8.54,
+            fraction: 0.0854,
+            nutrient_id: "1180",
+            per_100g: "6.1",
+            provenance: {
+              join: "fdc:171719/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 82.586,
+            fraction: 0.0826,
+            per_100g: "58.99",
+            provenance: {
+              combine: "sum",
+              join: "ndb:09070",
+              parts: [
+                {
+                  rows: 20,
+                  source: "flavonoids-usda-r33",
+                  total: "44.36"
+                },
+                {
+                  rows: 5,
+                  source: "proanthocyanidins-usda-r2",
+                  total: "14.63"
+                }
+              ],
+              source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+              tier: "EXACT",
+              value_kind: "sum"
+            },
+            slug: "flavonoids",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "89257",
+        portion_label: "1 NLEA serving",
+        strength: 0.168,
+        usda_description: "Cherries, sweet, raw"
+      },
+      {
+        breadth: 1,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 58.401,
+          linoleic_g_per_100g: "0.186",
+          linolenic_g_per_100g: "0.02",
+          oil_equivalent_mg: 86.2708
+        },
+        fdc_id: "168590",
+        grams: 28.35,
+        id: "chestnuts-roasted",
+        name: "Japanese chestnuts, roasted",
+        nutrients: [
+          {
+            amount: 0.5854,
+            fraction: 0.076,
+            nutrient_id: "1101",
+            per_100g: "2.065",
+            provenance: {
+              join: "fdc:168590/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83378",
+        portion_label: "1 oz",
+        strength: 0.076,
+        usda_description: "Nuts, chestnuts, japanese, roasted"
+      },
+      {
+        breadth: 5,
+        category: "Poultry",
+        efa: {
+          acid_mg: 533.2,
+          linoleic_g_per_100g: "0.59",
+          linolenic_g_per_100g: "0.03",
+          oil_equivalent_mg: 787.6505
+        },
+        fdc_id: "171477",
+        grams: 86,
+        id: "chicken-breast-roasted",
+        name: "Chicken breast, roasted",
+        nutrients: [
+          {
+            amount: 73.358,
+            fraction: 0.7336,
+            nutrient_id: "1180",
+            per_100g: "85.3",
+            provenance: {
+              join: "fdc:171477/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 2.838,
+            fraction: 0.0747,
+            per_100g: "3.3",
+            provenance: {
+              join: "name:Chicken, breast, lean flesh, baked, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Our USDA row is breast meat only, roasted; this is lean flesh baked with no added fat. AFCD's grilled and fried rows read higher and are not borrowed."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 23.736,
+            fraction: 0.0766,
+            nutrient_id: "1103",
+            per_100g: "27.6",
+            provenance: {
+              join: "fdc:171477/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 243.4823,
+            fraction: 0.487,
+            per_100g: "254.2",
+            provenance: {
+              combine: "first",
+              join: "name:Chicken breast",
+              parts: [
+                {
+                  rows: 2,
+                  source: "sulfur-doleman-2017",
+                  total: "254.2"
+                }
+              ],
+              source_id: "doleman-2017",
+              tier: "APPROXIMATE",
+              value_kind: "sum_fields",
+              why: "Doleman pan-fried the fillet without fat; our USDA row is breast meat only, roasted. Both dry heat, no fat added, no skin. \u26A0 AFCD measures no sulphur in chicken breast at all, so this is the only route to it.",
+              working: {
+                arithmetic: "254.2 umol/g dry x 32.06 ug/umol x 0.3474 dry matter x 0.1 = 283.1189 mg/100 g fresh",
+                dry_matter_fraction: 0.3474,
+                umol_per_g_dry: "254.2",
+                water_g_per_100g: "65.26"
+              }
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 11.7923,
+            fraction: 0.1179,
+            nutrient_id: "1167",
+            per_100g: "13.712",
+            provenance: {
+              join: "fdc:171477/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "88819",
+        portion_label: "0.5 breast, bone and skin removed",
+        strength: 1.4898,
+        usda_description: "Chicken, broilers or fryers, breast, meat only, cooked, roasted"
+      },
+      {
+        breadth: 9,
+        category: "Poultry",
+        fdc_id: "174491",
+        grams: 85,
+        id: "chicken-liver",
+        name: "Chicken liver",
+        nutrients: [
+          {
+            amount: 277.78,
+            fraction: 2.7778,
+            nutrient_id: "1180",
+            per_100g: "326.8",
+            provenance: {
+              join: "fdc:174491/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4547,
+            fraction: 0.1467,
+            nutrient_id: "1098",
+            per_100g: "0.535",
+            provenance: {
+              join: "fdc:174491/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 10.948,
+            fraction: 0.238,
+            nutrient_id: "1089",
+            per_100g: "12.88",
+            provenance: {
+              join: "fdc:174491/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 74.97,
+            fraction: 0.2418,
+            nutrient_id: "1103",
+            per_100g: "88.2",
+            provenance: {
+              join: "fdc:174491/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 3651.6,
+            fraction: 0.4057,
+            nutrient_id: "1106",
+            per_100g: "4296",
+            provenance: {
+              join: "fdc:174491/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 11.8362,
+            fraction: 0.1184,
+            nutrient_id: "1167",
+            per_100g: "13.925",
+            provenance: {
+              join: "fdc:174491/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 7.0677,
+            fraction: 0.0707,
+            nutrient_id: "1170",
+            per_100g: "8.315",
+            provenance: {
+              join: "fdc:174491/nutrient:1170",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b5",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 476,
+            fraction: 0.476,
+            nutrient_id: "1177",
+            per_100g: "560",
+            provenance: {
+              join: "fdc:174491/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 3.4085,
+            fraction: 0.0741,
+            nutrient_id: "1095",
+            per_100g: "4.01",
+            provenance: {
+              join: "fdc:174491/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "94449",
+        portion_label: "3 oz",
+        strength: 4.5492,
+        usda_description: "Chicken, liver, all classes, cooked, pan-fried"
+      },
+      {
+        breadth: 2,
+        category: "Poultry",
+        efa: {
+          acid_mg: 1296.25,
+          conjugated_linoleic_g_per_100g: "0.008",
+          linoleic_g_per_100g: "1.46",
+          linolenic_g_per_100g: "0.073",
+          oil_equivalent_mg: 1914.8386
+        },
+        fdc_id: "172388",
+        grams: 85,
+        id: "chicken-thigh-roasted",
+        name: "Chicken thigh, roasted",
+        nutrients: [
+          {
+            amount: 61.03,
+            fraction: 0.6103,
+            nutrient_id: "1180",
+            per_100g: "71.8",
+            provenance: {
+              join: "fdc:172388/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 23.035,
+            fraction: 0.0743,
+            nutrient_id: "1103",
+            per_100g: "27.1",
+            provenance: {
+              join: "fdc:172388/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "90511",
+        portion_label: "3 oz",
+        strength: 0.6846,
+        usda_description: "Chicken, broilers or fryers, thigh, meat only, cooked, roasted"
+      },
+      {
+        breadth: 10,
+        category: "Legumes",
+        efa: {
+          acid_mg: 1895.84,
+          linoleic_g_per_100g: "1.113",
+          linolenic_g_per_100g: "0.043",
+          oil_equivalent_mg: 2800.5613
+        },
+        fdc_id: "173799",
+        grams: 164,
+        id: "chickpeas-cooked",
+        name: "Chickpeas, cooked",
+        nutrients: [
+          {
+            amount: 506.76,
+            fraction: 0.2027,
+            per_100g: "309",
+            provenance: {
+              join: "name:Chickpea, dried, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled from dry. AFCD's dry chickpea row reads ~3x higher and is not borrowed \u2014 nobody eats them dry."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 70.192,
+            fraction: 0.7019,
+            nutrient_id: "1180",
+            per_100g: "42.8",
+            provenance: {
+              join: "fdc:173799/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.5773,
+            fraction: 0.1862,
+            nutrient_id: "1098",
+            per_100g: "0.352",
+            provenance: {
+              join: "fdc:173799/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.7396,
+            fraction: 0.103,
+            nutrient_id: "1089",
+            per_100g: "2.89",
+            provenance: {
+              join: "fdc:173799/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 78.72,
+            fraction: 0.1022,
+            nutrient_id: "1090",
+            per_100g: "48",
+            provenance: {
+              join: "fdc:173799/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1.6892,
+            fraction: 0.2194,
+            nutrient_id: "1101",
+            per_100g: "1.03",
+            provenance: {
+              join: "fdc:173799/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 477.24,
+            fraction: 0.0954,
+            nutrient_id: "1092",
+            per_100g: "291",
+            provenance: {
+              join: "fdc:173799/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 398.52,
+            fraction: 0.1208,
+            nutrient_id: "1093",
+            per_100g: "243",
+            provenance: {
+              join: "fdc:173799/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 70.52,
+            fraction: 0.141,
+            per_100g: "43",
+            provenance: {
+              combine: "first",
+              join: "name:Chickpea, dried, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled from dry. AFCD's dry chickpea row reads ~3x higher and is not borrowed \u2014 nobody eats them dry."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 282.08,
+            fraction: 0.2821,
+            nutrient_id: "1177",
+            per_100g: "172",
+            provenance: {
+              join: "fdc:173799/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93272",
+        portion_label: "1 cup",
+        strength: 2.1547,
+        usda_description: "Chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, with salt"
+      },
+      {
+        breadth: 4,
+        category: "Beef",
+        efa: {
+          acid_mg: 583.95,
+          linoleic_g_per_100g: "0.477",
+          linolenic_g_per_100g: "0.21",
+          oil_equivalent_mg: 862.6191
+        },
+        fdc_id: "168667",
+        grams: 85,
+        id: "chuck-pot-roast",
+        name: "Chuck pot roast",
+        nutrients: [
+          {
+            amount: 97.495,
+            fraction: 0.975,
+            nutrient_id: "1180",
+            per_100g: "114.7",
+            provenance: {
+              join: "fdc:168667/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 24.055,
+            fraction: 0.0776,
+            nutrient_id: "1103",
+            per_100g: "28.3",
+            provenance: {
+              join: "fdc:168667/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 119,
+            fraction: 0.238,
+            per_100g: "140",
+            provenance: {
+              combine: "first",
+              join: "name:Beef, casserole meat, boneless, chuck, lean, casseroled, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Boneless chuck in both, slow-cooked in both, and our USDA row is trimmed to 0 inch fat, which is what AFCD calls lean."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 5.933,
+            fraction: 0.129,
+            nutrient_id: "1095",
+            per_100g: "6.98",
+            provenance: {
+              join: "fdc:168667/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83530",
+        portion_label: "3 oz",
+        strength: 1.4196,
+        usda_description: 'Beef, chuck, arm pot roast, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, braised'
+      },
+      {
+        breadth: 6,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 34,
+          linoleic_g_per_100g: "0.032",
+          linolenic_g_per_100g: "0.008",
+          oil_equivalent_mg: 50.2253
+        },
+        fdc_id: "171975",
+        grams: 85,
+        id: "clams-cooked",
+        name: "Clams, cooked",
+        nutrients: [
+          {
+            amount: 0.5848,
+            fraction: 0.1886,
+            nutrient_id: "1098",
+            per_100g: "0.688",
+            provenance: {
+              join: "fdc:171975/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.85,
+            fraction: 0.1104,
+            nutrient_id: "1101",
+            per_100g: "1",
+            provenance: {
+              join: "fdc:171975/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 533.8,
+            fraction: 0.1068,
+            nutrient_id: "1092",
+            per_100g: "628",
+            provenance: {
+              join: "fdc:171975/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 54.4,
+            fraction: 0.1755,
+            nutrient_id: "1103",
+            per_100g: "64",
+            provenance: {
+              join: "fdc:171975/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 1021.7,
+            fraction: 0.3096,
+            nutrient_id: "1093",
+            per_100g: "1202",
+            provenance: {
+              join: "fdc:171975/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 84.0565,
+            fraction: 0.2101,
+            nutrient_id: "1178",
+            per_100g: "98.89",
+            provenance: {
+              join: "fdc:171975/nutrient:1178",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b12",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "89661",
+        portion_label: "3 oz",
+        strength: 1.101,
+        usda_description: "Mollusks, clam, mixed species, cooked, moist heat"
+      },
+      {
+        breadth: 1,
+        category: "Spices & herbs",
+        efa: {
+          acid_mg: 66.864,
+          conjugated_linoleic_g_per_100g: "0.058",
+          linoleic_g_per_100g: "2.657",
+          linolenic_g_per_100g: "0.585",
+          oil_equivalent_mg: 98.7724
+        },
+        fdc_id: "171321",
+        grams: 2.1,
+        id: "cloves-ground",
+        name: "Cloves, ground",
+        nutrients: [
+          {
+            amount: 1.2627,
+            fraction: 0.164,
+            nutrient_id: "1101",
+            per_100g: "60.127",
+            provenance: {
+              join: "fdc:171321/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "88431",
+        portion_label: "1 tsp",
+        strength: 0.164,
+        usda_description: "Spices, cloves, ground"
+      },
+      {
+        breadth: 1,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 164.7,
+          linoleic_g_per_100g: "0.366",
+          linolenic_g_per_100g: "0",
+          oil_equivalent_mg: 243.2971
+        },
+        fdc_id: "170169",
+        grams: 45,
+        id: "coconut-raw",
+        name: "Coconut, raw",
+        nutrients: [
+          {
+            amount: 0.675,
+            fraction: 0.0877,
+            nutrient_id: "1101",
+            per_100g: "1.5",
+            provenance: {
+              join: "fdc:170169/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86165",
+        portion_label: '1 piece (2" x 2" x 1/2")',
+        strength: 0.0877,
+        usda_description: "Nuts, coconut meat, raw"
+      },
+      {
+        breadth: 3,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 5.95,
+          linoleic_g_per_100g: "0.006",
+          linolenic_g_per_100g: "0.001",
+          oil_equivalent_mg: 8.7894
+        },
+        fdc_id: "171956",
+        grams: 85,
+        id: "cod",
+        name: "Cod",
+        nutrients: [
+          {
+            amount: 71.145,
+            fraction: 0.7114,
+            nutrient_id: "1180",
+            per_100g: "83.7",
+            provenance: {
+              join: "fdc:171956/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 31.96,
+            fraction: 0.1031,
+            nutrient_id: "1103",
+            per_100g: "37.6",
+            provenance: {
+              join: "fdc:171956/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 223.0438,
+            fraction: 0.4461,
+            per_100g: "339.9",
+            provenance: {
+              combine: "first",
+              join: "name:Cod",
+              parts: [
+                {
+                  rows: 2,
+                  source: "sulfur-doleman-2017",
+                  total: "339.9"
+                }
+              ],
+              source_id: "doleman-2017",
+              tier: "APPROXIMATE",
+              value_kind: "sum_fields",
+              why: "Doleman pan-fried a boneless fillet without fat; our USDA row is Atlantic cod cooked by dry heat. \u26A0 AFCD's only cod is SMOKED cod, whose chloride is brine \u2014 this is the only honest route to cod.",
+              working: {
+                arithmetic: "339.9 umol/g dry x 32.06 ug/umol x 0.2408 dry matter x 0.1 = 262.4044 mg/100 g fresh",
+                dry_matter_fraction: 0.2408,
+                umol_per_g_dry: "339.9",
+                water_g_per_100g: "75.92"
+              }
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          }
+        ],
+        portion_id: "89622",
+        portion_label: "3 oz",
+        strength: 1.2606,
+        usda_description: "Fish, cod, Atlantic, cooked, dry heat"
+      },
+      {
+        breadth: 6,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 309.7,
+          linoleic_g_per_100g: "0.07",
+          linolenic_g_per_100g: "0.093",
+          oil_equivalent_mg: 457.4932
+        },
+        fdc_id: "168523",
+        grams: 190,
+        id: "collard-greens-cooked",
+        name: "Collard greens, cooked",
+        nutrients: [
+          {
+            amount: 267.9,
+            fraction: 0.1786,
+            nutrient_id: "1087",
+            per_100g: "141",
+            provenance: {
+              join: "fdc:168523/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 72.96,
+            fraction: 0.7296,
+            nutrient_id: "1180",
+            per_100g: "38.4",
+            provenance: {
+              join: "fdc:168523/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.969,
+            fraction: 0.1258,
+            nutrient_id: "1101",
+            per_100g: "0.51",
+            provenance: {
+              join: "fdc:168523/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 478.8,
+            fraction: 0.1451,
+            nutrient_id: "1093",
+            per_100g: "252",
+            provenance: {
+              join: "fdc:168523/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 722,
+            fraction: 0.0802,
+            nutrient_id: "1106",
+            per_100g: "380",
+            provenance: {
+              join: "fdc:168523/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 772.54,
+            fraction: 2.5751,
+            nutrient_id: "1185",
+            per_100g: "406.6",
+            provenance: {
+              join: "fdc:168523/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83238",
+        portion_label: "1 cup, chopped",
+        strength: 3.8344,
+        usda_description: "Collards, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 5,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 137.86,
+          linoleic_g_per_100g: "0.105",
+          linolenic_g_per_100g: "0.017",
+          oil_equivalent_mg: 203.6487
+        },
+        fdc_id: "172179",
+        grams: 113,
+        id: "cottage-cheese",
+        name: "Cottage cheese",
+        nutrients: [
+          {
+            amount: 590.99,
+            fraction: 0.2364,
+            per_100g: "523",
+            provenance: {
+              join: "name:Cheese, cottage",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Same cheese, both as sold."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 20.792,
+            fraction: 0.2079,
+            nutrient_id: "1180",
+            per_100g: "18.4",
+            provenance: {
+              join: "fdc:172179/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 51.98,
+            fraction: 0.226,
+            per_100g: "46",
+            provenance: {
+              join: "ndb:01012",
+              source_id: "iodine-usda-ods-r4",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 5.876,
+            fraction: 0.1546,
+            per_100g: "5.2",
+            provenance: {
+              join: "name:Cheese, cottage",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Same cheese, both as sold."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 355.95,
+            fraction: 0.1079,
+            nutrient_id: "1093",
+            per_100g: "315",
+            provenance: {
+              join: "fdc:172179/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90034",
+        portion_label: "4 oz",
+        strength: 0.9328,
+        usda_description: "Cheese, cottage, creamed, large or small curd"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        fdc_id: "169351",
+        grams: 105,
+        id: "dandelion-greens-cooked",
+        name: "Dandelion greens, cooked",
+        nutrients: [
+          {
+            amount: 147,
+            fraction: 0.098,
+            nutrient_id: "1087",
+            per_100g: "140",
+            provenance: {
+              join: "fdc:169351/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 28.98,
+            fraction: 0.2898,
+            nutrient_id: "1180",
+            per_100g: "27.6",
+            provenance: {
+              join: "fdc:169351/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 294,
+            fraction: 0.0891,
+            nutrient_id: "1093",
+            per_100g: "280",
+            provenance: {
+              join: "fdc:169351/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 763.35,
+            fraction: 0.0848,
+            nutrient_id: "1106",
+            per_100g: "727",
+            provenance: {
+              join: "fdc:169351/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 376.845,
+            fraction: 1.2562,
+            nutrient_id: "1185",
+            per_100g: "358.9",
+            provenance: {
+              join: "fdc:169351/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84692",
+        portion_label: "1 cup, chopped",
+        strength: 1.8179,
+        usda_description: "Dandelion greens, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 5,
+        category: "Fruits",
+        efa: {
+          acid_mg: 27.93,
+          linoleic_g_per_100g: "0.016",
+          linolenic_g_per_100g: "0.003",
+          oil_equivalent_mg: 41.2586
+        },
+        fdc_id: "171726",
+        grams: 147,
+        id: "dates",
+        name: "Dates",
+        nutrients: [
+          {
+            amount: 9.261,
+            fraction: 0.0926,
+            nutrient_id: "1180",
+            per_100g: "6.3",
+            provenance: {
+              join: "fdc:171726/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3028,
+            fraction: 0.0977,
+            nutrient_id: "1098",
+            per_100g: "0.206",
+            provenance: {
+              join: "fdc:171726/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 63.21,
+            fraction: 0.0821,
+            nutrient_id: "1090",
+            per_100g: "43",
+            provenance: {
+              join: "fdc:171726/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 964.32,
+            fraction: 0.1929,
+            nutrient_id: "1092",
+            per_100g: "656",
+            provenance: {
+              join: "fdc:171726/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 24.4167,
+            fraction: 0.6425,
+            per_100g: "16.61",
+            provenance: {
+              join: "name:Dates, dried",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Powell's only dates row. Our catalog entry is deglet noor, also a dried date -- USDA sells no fresh date row."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          }
+        ],
+        portion_id: "89264",
+        portion_label: "1 cup, chopped",
+        strength: 1.1078,
+        usda_description: "Dates, deglet noor"
+      },
+      {
+        breadth: 2,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 462,
+          linoleic_g_per_100g: "0.558",
+          linolenic_g_per_100g: "0.102",
+          oil_equivalent_mg: 682.4729
+        },
+        fdc_id: "172189",
+        grams: 70,
+        id: "duck-egg",
+        name: "Duck egg",
+        nutrients: [
+          {
+            amount: 184.38,
+            fraction: 1.8438,
+            nutrient_id: "1180",
+            per_100g: "263.4",
+            provenance: {
+              join: "fdc:172189/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 25.48,
+            fraction: 0.0822,
+            nutrient_id: "1103",
+            per_100g: "36.4",
+            provenance: {
+              join: "fdc:172189/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "90055",
+        portion_label: "1 egg",
+        strength: 1.926,
+        usda_description: "Egg, duck, whole, fresh, raw"
+      },
+      {
+        breadth: 8,
+        category: "Poultry",
+        efa: {
+          acid_mg: 6314.5,
+          linoleic_g_per_100g: "3.36",
+          linolenic_g_per_100g: "0.29",
+          oil_equivalent_mg: 9327.8676
+        },
+        fdc_id: "172409",
+        grams: 173,
+        id: "duck-roasted",
+        name: "Duck, roasted",
+        nutrients: [
+          {
+            amount: 178.19,
+            fraction: 0.0713,
+            per_100g: "103",
+            provenance: {
+              join: "name:Duck, lean flesh, skin & fat, baked, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Meat AND skin in both, roasted/baked with no added fat. AFCD's skinless row reads higher and is not borrowed \u2014 ours includes the skin."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 87.192,
+            fraction: 0.8719,
+            nutrient_id: "1180",
+            per_100g: "50.4",
+            provenance: {
+              join: "fdc:172409/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3927,
+            fraction: 0.1267,
+            nutrient_id: "1098",
+            per_100g: "0.227",
+            provenance: {
+              join: "fdc:172409/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.671,
+            fraction: 0.1015,
+            nutrient_id: "1089",
+            per_100g: "2.7",
+            provenance: {
+              join: "fdc:172409/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 352.92,
+            fraction: 0.0706,
+            nutrient_id: "1092",
+            per_100g: "204",
+            provenance: {
+              join: "fdc:172409/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 34.6,
+            fraction: 0.1116,
+            nutrient_id: "1103",
+            per_100g: "20",
+            provenance: {
+              join: "fdc:172409/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 240.47,
+            fraction: 0.4809,
+            per_100g: "139",
+            provenance: {
+              combine: "first",
+              join: "name:Duck, lean flesh, skin & fat, baked, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Meat AND skin in both, roasted/baked with no added fat. AFCD's skinless row reads higher and is not borrowed \u2014 ours includes the skin."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 8.3473,
+            fraction: 0.0835,
+            nutrient_id: "1167",
+            per_100g: "4.825",
+            provenance: {
+              join: "fdc:172409/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90568",
+        portion_label: "1 unit (yield from 1 lb ready-to-cook duck)",
+        strength: 1.918,
+        usda_description: "Duck, domesticated, meat and skin, cooked, roasted"
+      },
+      {
+        breadth: 8,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 3332.5,
+          conjugated_linoleic_g_per_100g: "0",
+          linoleic_g_per_100g: "1.792",
+          linolenic_g_per_100g: "0.358",
+          oil_equivalent_mg: 4922.8156
+        },
+        fdc_id: "168411",
+        grams: 155,
+        id: "edamame",
+        name: "Edamame",
+        nutrients: [
+          {
+            amount: 87.265,
+            fraction: 0.8727,
+            nutrient_id: "1180",
+            per_100g: "56.3",
+            provenance: {
+              join: "fdc:168411/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.5347,
+            fraction: 0.1725,
+            nutrient_id: "1098",
+            per_100g: "0.345",
+            provenance: {
+              join: "fdc:168411/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.5185,
+            fraction: 0.0765,
+            nutrient_id: "1089",
+            per_100g: "2.27",
+            provenance: {
+              join: "fdc:168411/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 99.2,
+            fraction: 0.1288,
+            nutrient_id: "1090",
+            per_100g: "64",
+            provenance: {
+              join: "fdc:168411/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1.5872,
+            fraction: 0.2061,
+            nutrient_id: "1101",
+            per_100g: "1.024",
+            provenance: {
+              join: "fdc:168411/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 675.8,
+            fraction: 0.1352,
+            nutrient_id: "1092",
+            per_100g: "436",
+            provenance: {
+              join: "fdc:168411/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 482.05,
+            fraction: 0.4821,
+            nutrient_id: "1177",
+            per_100g: "311",
+            provenance: {
+              join: "fdc:168411/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 41.385,
+            fraction: 0.138,
+            nutrient_id: "1185",
+            per_100g: "26.7",
+            provenance: {
+              join: "fdc:168411/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83053",
+        portion_label: "1 cup",
+        strength: 2.2119,
+        usda_description: "Edamame, frozen, prepared"
+      },
+      {
+        breadth: 4,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 611.5,
+          linoleic_g_per_100g: "1.188",
+          linolenic_g_per_100g: "0.035",
+          oil_equivalent_mg: 903.3163
+        },
+        fdc_id: "173424",
+        grams: 50,
+        id: "egg",
+        name: "Egg",
+        nutrients: [
+          {
+            amount: 146.9,
+            fraction: 1.469,
+            nutrient_id: "1180",
+            per_100g: "293.8",
+            provenance: {
+              join: "fdc:173424/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 30.5,
+            fraction: 0.1326,
+            per_100g: "61",
+            provenance: {
+              join: "ndb:01129",
+              source_id: "iodine-usda-ods-r4",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 2.75,
+            fraction: 0.0724,
+            per_100g: "5.5",
+            provenance: {
+              join: "name:Egg, chicken, whole, hard-boiled",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Our USDA row is 'Egg, whole, cooked, hard-boiled' and this is AFCD's hard-boiled row \u2014 the same food in the same state. AFCD's RAW egg row shows sulphur where the boiled one does not, and it is not borrowed: a raw figure on a boiled egg is a different measurement."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 97.8047,
+            fraction: 0.1956,
+            per_100g: "240.4",
+            provenance: {
+              combine: "first",
+              join: "name:Eggs",
+              parts: [
+                {
+                  rows: 2,
+                  source: "sulfur-doleman-2017",
+                  total: "240.4"
+                }
+              ],
+              source_id: "doleman-2017",
+              tier: "APPROXIMATE",
+              value_kind: "sum_fields",
+              why: "Doleman boiled medium free-range eggs; our USDA row is whole egg, cooked, hard-boiled. The same food in the same state. AFCD's hard-boiled egg measures no sulphur.",
+              working: {
+                arithmetic: "240.4 umol/g dry x 32.06 ug/umol x 0.2538 dry matter x 0.1 = 195.6093 mg/100 g fresh",
+                dry_matter_fraction: 0.2538,
+                umol_per_g_dry: "240.4",
+                water_g_per_100g: "74.62"
+              }
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "92500",
+        portion_label: "1 large",
+        strength: 1.8696,
+        usda_description: "Egg, whole, cooked, hard-boiled"
+      },
+      {
+        breadth: 1,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 618.97,
+          linoleic_g_per_100g: "3.538",
+          linolenic_g_per_100g: "0.103",
+          oil_equivalent_mg: 914.3511
+        },
+        fdc_id: "172184",
+        grams: 17,
+        id: "egg-yolk",
+        name: "Egg yolk",
+        nutrients: [
+          {
+            amount: 139.434,
+            fraction: 1.3943,
+            nutrient_id: "1180",
+            per_100g: "820.2",
+            provenance: {
+              join: "fdc:172184/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90045",
+        portion_label: "1 large",
+        strength: 1.3943,
+        usda_description: "Egg, yolk, raw, fresh"
+      },
+      {
+        breadth: 2,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 92.07,
+          linoleic_g_per_100g: "0.078",
+          linolenic_g_per_100g: "0.015",
+          oil_equivalent_mg: 136.0071
+        },
+        fdc_id: "169352",
+        grams: 99,
+        id: "eggplant-cooked",
+        name: "Eggplant, cooked",
+        nutrients: [
+          {
+            amount: 9.306,
+            fraction: 0.0931,
+            nutrient_id: "1180",
+            per_100g: "9.4",
+            provenance: {
+              join: "fdc:169352/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 236.61,
+            fraction: 0.0717,
+            nutrient_id: "1093",
+            per_100g: "239",
+            provenance: {
+              join: "fdc:169352/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "84693",
+        portion_label: '1 cup (1" cubes)',
+        strength: 0.1648,
+        usda_description: "Eggplant, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 3,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 119.85,
+          linoleic_g_per_100g: "0.109",
+          linolenic_g_per_100g: "0.032",
+          oil_equivalent_mg: 177.0441
+        },
+        fdc_id: "174427",
+        grams: 85,
+        id: "elk-steak",
+        name: "Elk steak",
+        nutrients: [
+          {
+            amount: 3.366,
+            fraction: 0.0732,
+            nutrient_id: "1089",
+            per_100g: "3.96",
+            provenance: {
+              join: "fdc:174427/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 7.633,
+            fraction: 0.0763,
+            nutrient_id: "1167",
+            per_100g: "8.98",
+            provenance: {
+              join: "fdc:174427/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.335,
+            fraction: 0.0942,
+            nutrient_id: "1095",
+            per_100g: "5.1",
+            provenance: {
+              join: "fdc:174427/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "94350",
+        portion_label: "1 serving ( 3 oz )",
+        strength: 0.2437,
+        usda_description: "Game meat, elk, loin, separable lean only, cooked, broiled"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 121.5,
+          linoleic_g_per_100g: "0.069",
+          linolenic_g_per_100g: "0.012",
+          oil_equivalent_mg: 179.4815
+        },
+        fdc_id: "168413",
+        grams: 150,
+        id: "escarole-cooked",
+        name: "Escarole, cooked",
+        nutrients: [
+          {
+            amount: 23.1,
+            fraction: 0.231,
+            nutrient_id: "1180",
+            per_100g: "15.4",
+            provenance: {
+              join: "fdc:168413/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.5775,
+            fraction: 0.075,
+            nutrient_id: "1101",
+            per_100g: "0.385",
+            provenance: {
+              join: "fdc:168413/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 367.5,
+            fraction: 0.0735,
+            nutrient_id: "1092",
+            per_100g: "245",
+            provenance: {
+              join: "fdc:168413/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 117,
+            fraction: 0.117,
+            nutrient_id: "1177",
+            per_100g: "78",
+            provenance: {
+              join: "fdc:168413/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 317.85,
+            fraction: 1.0595,
+            nutrient_id: "1185",
+            per_100g: "211.9",
+            provenance: {
+              join: "fdc:168413/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83056",
+        portion_label: "1 cup",
+        strength: 1.556,
+        usda_description: "Escarole, cooked, boiled, drained, no salt added"
+      },
+      {
+        breadth: 7,
+        category: "Legumes",
+        efa: {
+          acid_mg: 278.8,
+          linoleic_g_per_100g: "0.152",
+          linolenic_g_per_100g: "0.012",
+          oil_equivalent_mg: 411.8473
+        },
+        fdc_id: "173798",
+        grams: 170,
+        id: "fava-beans-cooked",
+        name: "Fava beans, cooked",
+        nutrients: [
+          {
+            amount: 52.02,
+            fraction: 0.5202,
+            nutrient_id: "1180",
+            per_100g: "30.6",
+            provenance: {
+              join: "fdc:173798/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4403,
+            fraction: 0.142,
+            nutrient_id: "1098",
+            per_100g: "0.259",
+            provenance: {
+              join: "fdc:173798/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 73.1,
+            fraction: 0.0949,
+            nutrient_id: "1090",
+            per_100g: "43",
+            provenance: {
+              join: "fdc:173798/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.7157,
+            fraction: 0.0929,
+            nutrient_id: "1101",
+            per_100g: "0.421",
+            provenance: {
+              join: "fdc:173798/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 455.6,
+            fraction: 0.0911,
+            nutrient_id: "1092",
+            per_100g: "268",
+            provenance: {
+              join: "fdc:173798/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 409.7,
+            fraction: 0.1242,
+            nutrient_id: "1093",
+            per_100g: "241",
+            provenance: {
+              join: "fdc:173798/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 176.8,
+            fraction: 0.1768,
+            nutrient_id: "1177",
+            per_100g: "104",
+            provenance: {
+              join: "fdc:173798/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93271",
+        portion_label: "1 cup",
+        strength: 1.2421,
+        usda_description: "Broadbeans (fava beans), mature seeds, cooked, boiled, with salt"
+      },
+      {
+        breadth: 4,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 395.46,
+          linoleic_g_per_100g: "0.169",
+          linolenic_g_per_100g: "0",
+          oil_equivalent_mg: 584.179
+        },
+        fdc_id: "169385",
+        grams: 234,
+        id: "fennel-raw",
+        name: "Fennel, raw",
+        nutrients: [
+          {
+            amount: 114.66,
+            fraction: 0.0764,
+            nutrient_id: "1087",
+            per_100g: "49",
+            provenance: {
+              join: "fdc:169385/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 30.888,
+            fraction: 0.3089,
+            nutrient_id: "1180",
+            per_100g: "13.2",
+            provenance: {
+              join: "fdc:169385/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 968.76,
+            fraction: 0.1938,
+            nutrient_id: "1092",
+            per_100g: "414",
+            provenance: {
+              join: "fdc:169385/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 146.952,
+            fraction: 0.4898,
+            nutrient_id: "1185",
+            per_100g: "62.8",
+            provenance: {
+              join: "fdc:169385/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84767",
+        portion_label: "1 bulb",
+        strength: 1.0689,
+        usda_description: "Fennel, bulb, raw"
+      },
+      {
+        breadth: 2,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 167.5485,
+          linoleic_g_per_100g: "0.326",
+          linolenic_g_per_100g: "0.265",
+          oil_equivalent_mg: 247.505
+        },
+        fdc_id: "173420",
+        grams: 28.35,
+        id: "feta",
+        name: "Feta",
+        nutrients: [
+          {
+            amount: 139.7655,
+            fraction: 0.0932,
+            nutrient_id: "1087",
+            per_100g: "493",
+            provenance: {
+              join: "fdc:173420/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 322.9065,
+            fraction: 0.0979,
+            nutrient_id: "1093",
+            per_100g: "1139",
+            provenance: {
+              join: "fdc:173420/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "92490",
+        portion_label: "1 oz",
+        strength: 0.1911,
+        usda_description: "Cheese, feta"
+      },
+      {
+        breadth: 3,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 64.6,
+          linoleic_g_per_100g: "0.055",
+          linolenic_g_per_100g: "0.021",
+          oil_equivalent_mg: 95.428
+        },
+        fdc_id: "174197",
+        grams: 85,
+        id: "flounder-cooked",
+        name: "Flounder, cooked",
+        nutrients: [
+          {
+            amount: 67.915,
+            fraction: 0.6792,
+            nutrient_id: "1180",
+            per_100g: "79.9",
+            provenance: {
+              join: "fdc:174197/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 27.71,
+            fraction: 0.0894,
+            nutrient_id: "1103",
+            per_100g: "32.6",
+            provenance: {
+              join: "fdc:174197/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 308.55,
+            fraction: 0.0935,
+            nutrient_id: "1093",
+            per_100g: "363",
+            provenance: {
+              join: "fdc:174197/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "93913",
+        portion_label: "3 oz",
+        strength: 0.8621,
+        usda_description: "Fish, flatfish (flounder and sole species), cooked, dry heat"
+      },
+      {
+        breadth: 3,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 363.56,
+          linoleic_g_per_100g: "0.109",
+          linolenic_g_per_100g: "0.04",
+          oil_equivalent_mg: 537.0559
+        },
+        fdc_id: "171278",
+        grams: 244,
+        id: "goat-milk",
+        name: "Goat milk",
+        nutrients: [
+          {
+            amount: 326.96,
+            fraction: 0.218,
+            nutrient_id: "1087",
+            per_100g: "134",
+            provenance: {
+              join: "fdc:171278/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 39.04,
+            fraction: 0.3904,
+            nutrient_id: "1180",
+            per_100g: "16",
+            provenance: {
+              join: "fdc:171278/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 497.76,
+            fraction: 0.0996,
+            nutrient_id: "1092",
+            per_100g: "204",
+            provenance: {
+              join: "fdc:171278/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "88350",
+        portion_label: "1 cup",
+        strength: 0.708,
+        usda_description: "Milk, goat, fluid, with added vitamin D"
+      },
+      {
+        breadth: 3,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 127.5,
+          linoleic_g_per_100g: "0.13",
+          linolenic_g_per_100g: "0.02",
+          oil_equivalent_mg: 188.3448
+        },
+        fdc_id: "175304",
+        grams: 85,
+        id: "goat-roasted",
+        name: "Goat, roasted",
+        nutrients: [
+          {
+            amount: 90.44,
+            fraction: 0.9044,
+            nutrient_id: "1180",
+            per_100g: "106.4",
+            provenance: {
+              join: "fdc:175304/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2576,
+            fraction: 0.0831,
+            nutrient_id: "1098",
+            per_100g: "0.303",
+            provenance: {
+              join: "fdc:175304/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.4795,
+            fraction: 0.0974,
+            nutrient_id: "1095",
+            per_100g: "5.27",
+            provenance: {
+              join: "fdc:175304/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "95996",
+        portion_label: "3 oz",
+        strength: 1.0849,
+        usda_description: "Game meat, goat, cooked, roasted"
+      },
+      {
+        breadth: 2,
+        category: "Fruits",
+        efa: {
+          acid_mg: 55.2,
+          linoleic_g_per_100g: "0.019",
+          linolenic_g_per_100g: "0.005",
+          oil_equivalent_mg: 81.5422
+        },
+        fdc_id: "173033",
+        grams: 230,
+        id: "grapefruit",
+        name: "Grapefruit",
+        nutrients: [
+          {
+            amount: 17.71,
+            fraction: 0.1771,
+            nutrient_id: "1180",
+            per_100g: "7.7",
+            provenance: {
+              join: "fdc:173033/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 79.12,
+            fraction: 0.0791,
+            nutrient_id: "1162",
+            per_100g: "34.4",
+            provenance: {
+              join: "fdc:173033/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "91838",
+        portion_label: "1 cup sections, with juice",
+        strength: 0.2562,
+        usda_description: "Grapefruit, raw, pink and red and white, all areas"
+      },
+      {
+        breadth: 2,
+        category: "Fruits",
+        efa: {
+          acid_mg: 72.48,
+          linoleic_g_per_100g: "0.037",
+          linolenic_g_per_100g: "0.011",
+          oil_equivalent_mg: 107.0685
+        },
+        fdc_id: "174683",
+        grams: 151,
+        id: "grapes",
+        name: "Grapes",
+        nutrients: [
+          {
+            amount: 8.456,
+            fraction: 0.0846,
+            nutrient_id: "1180",
+            per_100g: "5.6",
+            provenance: {
+              join: "fdc:174683/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 22.046,
+            fraction: 0.0735,
+            nutrient_id: "1185",
+            per_100g: "14.6",
+            provenance: {
+              join: "fdc:174683/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "94748",
+        portion_label: "1 cup",
+        strength: 0.1581,
+        usda_description: "Grapes, red or green (European type, such as Thompson seedless), raw"
+      },
+      {
+        breadth: 3,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 128,
+          conjugated_linoleic_g_per_100g: "0.008",
+          linoleic_g_per_100g: "0.065",
+          linolenic_g_per_100g: "0.007",
+          oil_equivalent_mg: 189.0834
+        },
+        fdc_id: "170903",
+        grams: 200,
+        id: "greek-yogurt",
+        name: "Greek yogurt, lowfat",
+        nutrients: [
+          {
+            amount: 230,
+            fraction: 0.1533,
+            nutrient_id: "1087",
+            per_100g: "115",
+            provenance: {
+              join: "fdc:170903/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 30.4,
+            fraction: 0.304,
+            nutrient_id: "1180",
+            per_100g: "15.2",
+            provenance: {
+              join: "fdc:170903/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 24.8,
+            fraction: 0.08,
+            nutrient_id: "1103",
+            per_100g: "12.4",
+            provenance: {
+              join: "fdc:170903/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "87526",
+        portion_label: "1 container (7 oz)",
+        strength: 0.5373,
+        usda_description: "Yogurt, Greek, plain, lowfat"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 181.25,
+          linoleic_g_per_100g: "0.056",
+          linolenic_g_per_100g: "0.089",
+          oil_equivalent_mg: 267.745
+        },
+        fdc_id: "169321",
+        grams: 125,
+        id: "green-beans-cooked",
+        name: "Green beans, cooked",
+        nutrients: [
+          {
+            amount: 21.125,
+            fraction: 0.2112,
+            nutrient_id: "1180",
+            per_100g: "16.9",
+            provenance: {
+              join: "fdc:169321/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 40.25,
+            fraction: 1.0592,
+            per_100g: "32.200000000000003",
+            provenance: {
+              join: "name:Bean, green, fresh, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled and drained. AFCD's 'cooked, no added fat' row reads higher and is not borrowed \u2014 ours is boiled."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 10.9125,
+            fraction: 0.2872,
+            per_100g: "8.73",
+            provenance: {
+              join: "name:Beans, green or French, fresh, boiled",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "The GENERIC green-bean row. Powell also prints Kenyan/fine beans (a thinner cultivar of the same species, 10.00) and runner beans (a different species, Phaseolus coccineus). USDA 'Beans, snap, green' is Phaseolus vulgaris, so the generic row is the pair and the higher cultivar row is not borrowed."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 298.75,
+            fraction: 0.0905,
+            nutrient_id: "1093",
+            per_100g: "239",
+            provenance: {
+              join: "fdc:169321/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 59.875,
+            fraction: 0.1996,
+            nutrient_id: "1185",
+            per_100g: "47.9",
+            provenance: {
+              join: "fdc:169321/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84651",
+        portion_label: "1 cup",
+        strength: 1.8477,
+        usda_description: "Beans, snap, green, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 9,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 161.6,
+          linoleic_g_per_100g: "0.082",
+          linolenic_g_per_100g: "0.019",
+          oil_equivalent_mg: 238.7178
+        },
+        fdc_id: "170102",
+        grams: 160,
+        id: "green-peas-cooked",
+        name: "Green peas, cooked",
+        nutrients: [
+          {
+            amount: 47.52,
+            fraction: 0.4752,
+            nutrient_id: "1180",
+            per_100g: "29.7",
+            provenance: {
+              join: "fdc:170102/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2768,
+            fraction: 0.0893,
+            nutrient_id: "1098",
+            per_100g: "0.173",
+            provenance: {
+              join: "fdc:170102/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 62.4,
+            fraction: 0.081,
+            nutrient_id: "1090",
+            per_100g: "39",
+            provenance: {
+              join: "fdc:170102/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.84,
+            fraction: 0.1091,
+            nutrient_id: "1101",
+            per_100g: "0.525",
+            provenance: {
+              join: "fdc:170102/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 20.32,
+            fraction: 0.5347,
+            per_100g: "12.7",
+            provenance: {
+              join: "name:Pea, green, fresh, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both fresh peas, boiled and drained."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 433.6,
+            fraction: 0.0867,
+            nutrient_id: "1092",
+            per_100g: "271",
+            provenance: {
+              join: "fdc:170102/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 382.4,
+            fraction: 0.1159,
+            nutrient_id: "1093",
+            per_100g: "239",
+            provenance: {
+              join: "fdc:170102/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 100.8,
+            fraction: 0.1008,
+            nutrient_id: "1177",
+            per_100g: "63",
+            provenance: {
+              join: "fdc:170102/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 41.44,
+            fraction: 0.1381,
+            nutrient_id: "1185",
+            per_100g: "25.9",
+            provenance: {
+              join: "fdc:170102/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86051",
+        portion_label: "1 cup",
+        strength: 1.7308,
+        usda_description: "Peas, green, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 2,
+        category: "Beef",
+        efa: {
+          acid_mg: 347.65,
+          linoleic_g_per_100g: "0.4",
+          linolenic_g_per_100g: "0.009",
+          oil_equivalent_mg: 513.5534
+        },
+        fdc_id: "174034",
+        grams: 85,
+        id: "ground-beef",
+        name: "Ground beef",
+        nutrients: [
+          {
+            amount: 77.69,
+            fraction: 0.7769,
+            nutrient_id: "1180",
+            per_100g: "91.4",
+            provenance: {
+              join: "fdc:174034/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 5.627,
+            fraction: 0.1223,
+            nutrient_id: "1095",
+            per_100g: "6.62",
+            provenance: {
+              join: "fdc:174034/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "93669",
+        portion_label: "3 oz",
+        strength: 0.8992,
+        usda_description: "Beef, ground, 85% lean meat / 15% fat, crumbles, cooked, pan-browned"
+      },
+      {
+        breadth: 3,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 304.3,
+          linoleic_g_per_100g: "0.313",
+          linolenic_g_per_100g: "0.045",
+          oil_equivalent_mg: 449.5162
+        },
+        fdc_id: "173847",
+        grams: 85,
+        id: "ground-bison",
+        name: "Ground bison",
+        nutrients: [
+          {
+            amount: 82.62,
+            fraction: 0.8262,
+            nutrient_id: "1180",
+            per_100g: "97.2",
+            provenance: {
+              join: "fdc:173847/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 26.435,
+            fraction: 0.0853,
+            nutrient_id: "1103",
+            per_100g: "31.1",
+            provenance: {
+              join: "fdc:173847/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 4.539,
+            fraction: 0.0987,
+            nutrient_id: "1095",
+            per_100g: "5.34",
+            provenance: {
+              join: "fdc:173847/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "93365",
+        portion_label: "3 oz",
+        strength: 1.0102,
+        usda_description: "Bison, ground, grass-fed, cooked"
+      },
+      {
+        breadth: 2,
+        category: "Poultry",
+        efa: {
+          acid_mg: 1630.3,
+          linoleic_g_per_100g: "1.818",
+          linolenic_g_per_100g: "0.1",
+          oil_equivalent_mg: 2408.3019
+        },
+        fdc_id: "171117",
+        grams: 85,
+        id: "ground-chicken",
+        name: "Ground chicken",
+        nutrients: [
+          {
+            amount: 50.15,
+            fraction: 0.5015,
+            nutrient_id: "1180",
+            per_100g: "59",
+            provenance: {
+              join: "fdc:171117/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 575.45,
+            fraction: 0.1151,
+            nutrient_id: "1092",
+            per_100g: "677",
+            provenance: {
+              join: "fdc:171117/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "88004",
+        portion_label: "3 oz crumbled",
+        strength: 0.6166,
+        usda_description: "Chicken, ground, crumbles, cooked, pan-browned"
+      },
+      {
+        breadth: 4,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 1130.5,
+          linoleic_g_per_100g: "1.07",
+          linolenic_g_per_100g: "0.26",
+          oil_equivalent_mg: 1669.9904
+        },
+        fdc_id: "172544",
+        grams: 85,
+        id: "ground-lamb",
+        name: "Ground lamb",
+        nutrients: [
+          {
+            amount: 79.39,
+            fraction: 0.7939,
+            nutrient_id: "1180",
+            per_100g: "93.4",
+            provenance: {
+              join: "fdc:172544/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 23.545,
+            fraction: 0.076,
+            nutrient_id: "1103",
+            per_100g: "27.7",
+            provenance: {
+              join: "fdc:172544/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 110.5,
+            fraction: 0.221,
+            per_100g: "130",
+            provenance: {
+              combine: "first",
+              join: "name:Lamb, mince, stir-fried, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Mince IS ground lamb. Ours is broiled and AFCD's stir-fried \u2014 both dry heat with no added fat, which is the part that moves the number."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 3.9695,
+            fraction: 0.0863,
+            nutrient_id: "1095",
+            per_100g: "4.67",
+            provenance: {
+              join: "fdc:172544/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90819",
+        portion_label: "3 oz",
+        strength: 1.1772,
+        usda_description: "Lamb, ground, cooked, broiled"
+      },
+      {
+        breadth: 3,
+        category: "Pork",
+        efa: {
+          acid_mg: 1453.5,
+          linoleic_g_per_100g: "1.64",
+          linolenic_g_per_100g: "0.07",
+          oil_equivalent_mg: 2147.1305
+        },
+        fdc_id: "167903",
+        grams: 85,
+        id: "ground-pork",
+        name: "Ground pork",
+        nutrients: [
+          {
+            amount: 75.055,
+            fraction: 0.7505,
+            nutrient_id: "1180",
+            per_100g: "88.3",
+            provenance: {
+              join: "fdc:167903/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 30.09,
+            fraction: 0.0971,
+            nutrient_id: "1103",
+            per_100g: "35.4",
+            provenance: {
+              join: "fdc:167903/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 212.5,
+            fraction: 0.425,
+            per_100g: "250",
+            provenance: {
+              combine: "first",
+              join: "name:Pork, mince, as purchased, fried, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Mince IS ground pork; cooked in both, no fat added in either."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          }
+        ],
+        portion_id: "82191",
+        portion_label: "3 oz",
+        strength: 1.2726,
+        usda_description: "Pork, fresh, ground, cooked"
+      },
+      {
+        breadth: 3,
+        category: "Poultry",
+        efa: {
+          acid_mg: 2280.55,
+          conjugated_linoleic_g_per_100g: "0.017",
+          linoleic_g_per_100g: "2.556",
+          linolenic_g_per_100g: "0.144",
+          oil_equivalent_mg: 3368.8603
+        },
+        fdc_id: "171506",
+        grams: 85,
+        id: "ground-turkey",
+        name: "Ground turkey",
+        nutrients: [
+          {
+            amount: 66.47,
+            fraction: 0.6647,
+            nutrient_id: "1180",
+            per_100g: "78.2",
+            provenance: {
+              join: "fdc:171506/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 26.435,
+            fraction: 0.0853,
+            nutrient_id: "1103",
+            per_100g: "31.1",
+            provenance: {
+              join: "fdc:171506/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 7.4154,
+            fraction: 0.0742,
+            nutrient_id: "1167",
+            per_100g: "8.724",
+            provenance: {
+              join: "fdc:171506/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "88876",
+        portion_label: "3 oz",
+        strength: 0.8242,
+        usda_description: "Turkey, Ground, cooked"
+      },
+      {
+        breadth: 4,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 306,
+          linoleic_g_per_100g: "0.262",
+          linolenic_g_per_100g: "0.098",
+          oil_equivalent_mg: 452.0275
+        },
+        fdc_id: "172603",
+        grams: 85,
+        id: "ground-venison",
+        name: "Ground venison",
+        nutrients: [
+          {
+            amount: 86.615,
+            fraction: 0.8662,
+            nutrient_id: "1180",
+            per_100g: "101.9",
+            provenance: {
+              join: "fdc:172603/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 253.3,
+            fraction: 0.5066,
+            per_100g: "298",
+            provenance: {
+              combine: "first",
+              join: "name:Venison, mince, premium, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Mince IS ground venison; cooked in both."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 7.8684,
+            fraction: 0.0787,
+            nutrient_id: "1167",
+            per_100g: "9.257",
+            provenance: {
+              join: "fdc:172603/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.42,
+            fraction: 0.0961,
+            nutrient_id: "1095",
+            per_100g: "5.2",
+            provenance: {
+              join: "fdc:172603/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90945",
+        portion_label: "1 serving ( 3 oz )",
+        strength: 1.5476,
+        usda_description: "Game meat, deer, ground, cooked, pan-broiled"
+      },
+      {
+        breadth: 5,
+        category: "Fruits",
+        efa: {
+          acid_mg: 660,
+          linoleic_g_per_100g: "0.288",
+          linolenic_g_per_100g: "0.112",
+          oil_equivalent_mg: 974.9612
+        },
+        fdc_id: "173044",
+        grams: 165,
+        id: "guava",
+        name: "Guava",
+        nutrients: [
+          {
+            amount: 12.54,
+            fraction: 0.1254,
+            nutrient_id: "1180",
+            per_100g: "7.6",
+            provenance: {
+              join: "fdc:173044/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3795,
+            fraction: 0.1224,
+            nutrient_id: "1098",
+            per_100g: "0.23",
+            provenance: {
+              join: "fdc:173044/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 688.05,
+            fraction: 0.1376,
+            nutrient_id: "1092",
+            per_100g: "417",
+            provenance: {
+              join: "fdc:173044/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 80.85,
+            fraction: 0.0809,
+            nutrient_id: "1177",
+            per_100g: "49",
+            provenance: {
+              join: "fdc:173044/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 376.695,
+            fraction: 0.3767,
+            nutrient_id: "1162",
+            per_100g: "228.3",
+            provenance: {
+              join: "fdc:173044/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "91858",
+        portion_label: "1 cup",
+        strength: 0.843,
+        usda_description: "Guavas, common, raw"
+      },
+      {
+        breadth: 2,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 17.85,
+          linoleic_g_per_100g: "0.019",
+          linolenic_g_per_100g: "0.002",
+          oil_equivalent_mg: 26.3683
+        },
+        fdc_id: "174198",
+        grams: 85,
+        id: "haddock-cooked",
+        name: "Haddock, cooked",
+        nutrients: [
+          {
+            amount: 67.66,
+            fraction: 0.6766,
+            nutrient_id: "1180",
+            per_100g: "79.6",
+            provenance: {
+              join: "fdc:174198/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 26.945,
+            fraction: 0.0869,
+            nutrient_id: "1103",
+            per_100g: "31.7",
+            provenance: {
+              join: "fdc:174198/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93915",
+        portion_label: "3 oz",
+        strength: 0.7635,
+        usda_description: "Fish, haddock, cooked, dry heat"
+      },
+      {
+        breadth: 4,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 45.9,
+          linoleic_g_per_100g: "0.041",
+          linolenic_g_per_100g: "0.013",
+          oil_equivalent_mg: 67.8041
+        },
+        fdc_id: "174201",
+        grams: 85,
+        id: "halibut-cooked",
+        name: "Halibut, cooked",
+        nutrients: [
+          {
+            amount: 63.835,
+            fraction: 0.6383,
+            nutrient_id: "1180",
+            per_100g: "75.1",
+            provenance: {
+              join: "fdc:174201/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 448.8,
+            fraction: 0.0898,
+            nutrient_id: "1092",
+            per_100g: "528",
+            provenance: {
+              join: "fdc:174201/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 47.09,
+            fraction: 0.1519,
+            nutrient_id: "1103",
+            per_100g: "55.4",
+            provenance: {
+              join: "fdc:174201/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 4.93,
+            fraction: 0.0986,
+            nutrient_id: "1114",
+            per_100g: "5.8",
+            provenance: {
+              join: "fdc:174201/nutrient:1114",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-d",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93921",
+        portion_label: "3 oz",
+        strength: 0.9786,
+        usda_description: "Fish, halibut, Atlantic and Pacific, cooked, dry heat"
+      },
+      {
+        breadth: 6,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 2245.32,
+          linoleic_g_per_100g: "7.833",
+          linolenic_g_per_100g: "0.087",
+          oil_equivalent_mg: 3316.8181
+        },
+        fdc_id: "170581",
+        grams: 28.35,
+        id: "hazelnuts",
+        name: "Hazelnuts",
+        nutrients: [
+          {
+            amount: 22.3965,
+            fraction: 0.0747,
+            per_100g: "79",
+            provenance: {
+              join: "name:Nut, hazelnut, raw, unsalted",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both raw."
+            },
+            slug: "biotin",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 12.9276,
+            fraction: 0.1293,
+            nutrient_id: "1180",
+            per_100g: "45.6",
+            provenance: {
+              join: "fdc:170581/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.489,
+            fraction: 0.1578,
+            nutrient_id: "1098",
+            per_100g: "1.725",
+            provenance: {
+              join: "fdc:170581/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 142.541,
+            fraction: 0.1425,
+            per_100g: "502.79",
+            provenance: {
+              combine: "sum",
+              join: "ndb:12120",
+              parts: [
+                {
+                  rows: 18,
+                  source: "flavonoids-usda-r33",
+                  total: "11.96"
+                },
+                {
+                  rows: 5,
+                  source: "proanthocyanidins-usda-r2",
+                  total: "490.83"
+                }
+              ],
+              source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+              tier: "EXACT",
+              value_kind: "sum"
+            },
+            slug: "flavonoids",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 1.7506,
+            fraction: 0.2274,
+            nutrient_id: "1101",
+            per_100g: "6.175",
+            provenance: {
+              join: "fdc:170581/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 36.855,
+            fraction: 0.0737,
+            per_100g: "130",
+            provenance: {
+              combine: "first",
+              join: "name:Nut, hazelnut, raw, unsalted",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both raw."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "86899",
+        portion_label: "1 oz (21 whole kernels)",
+        strength: 0.8054,
+        usda_description: "Nuts, hazelnuts or filberts"
+      },
+      {
+        breadth: 4,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 294.92,
+          linoleic_g_per_100g: "0.183",
+          linolenic_g_per_100g: "0.019",
+          oil_equivalent_mg: 435.6599
+        },
+        fdc_id: "168569",
+        grams: 146,
+        id: "hearts-of-palm-canned",
+        name: "Hearts of palm, canned",
+        nutrients: [
+          {
+            amount: 4.5698,
+            fraction: 0.0993,
+            nutrient_id: "1089",
+            per_100g: "3.13",
+            provenance: {
+              join: "fdc:168569/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 55.48,
+            fraction: 0.0721,
+            nutrient_id: "1090",
+            per_100g: "38",
+            provenance: {
+              join: "fdc:168569/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 2.0352,
+            fraction: 0.2643,
+            nutrient_id: "1101",
+            per_100g: "1.394",
+            provenance: {
+              join: "fdc:168569/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 621.96,
+            fraction: 0.1885,
+            nutrient_id: "1093",
+            per_100g: "426",
+            provenance: {
+              join: "fdc:168569/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83344",
+        portion_label: "1 cup",
+        strength: 0.6242,
+        usda_description: "Hearts of palm, canned"
+      },
+      {
+        breadth: 4,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 11184.3,
+          conjugated_linoleic_g_per_100g: "0.202",
+          linoleic_g_per_100g: "27.459",
+          linolenic_g_per_100g: "10.024",
+          oil_equivalent_mg: 16521.6043
+        },
+        fdc_id: "170148",
+        grams: 30,
+        id: "hemp-seeds",
+        name: "Hemp seeds",
+        nutrients: [
+          {
+            amount: 0.48,
+            fraction: 0.1548,
+            nutrient_id: "1098",
+            per_100g: "1.6",
+            provenance: {
+              join: "fdc:170148/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 210,
+            fraction: 0.2727,
+            nutrient_id: "1090",
+            per_100g: "700",
+            provenance: {
+              join: "fdc:170148/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 2.28,
+            fraction: 0.2961,
+            nutrient_id: "1101",
+            per_100g: "7.6",
+            provenance: {
+              join: "fdc:170148/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 360,
+            fraction: 0.072,
+            nutrient_id: "1092",
+            per_100g: "1200",
+            provenance: {
+              join: "fdc:170148/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86132",
+        portion_label: "3 tbsp",
+        strength: 0.7956,
+        usda_description: "Seeds, hemp seed, hulled"
+      },
+      {
+        breadth: 2,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 271.15,
+          linoleic_g_per_100g: "0.246",
+          linolenic_g_per_100g: "0.073",
+          oil_equivalent_mg: 400.5466
+        },
+        fdc_id: "174233",
+        grams: 85,
+        id: "herring-cooked",
+        name: "Herring, cooked",
+        nutrients: [
+          {
+            amount: 460.7,
+            fraction: 0.0921,
+            nutrient_id: "1092",
+            per_100g: "542",
+            provenance: {
+              join: "fdc:174233/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 39.78,
+            fraction: 0.1283,
+            nutrient_id: "1103",
+            per_100g: "46.8",
+            provenance: {
+              join: "fdc:174233/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93989",
+        portion_label: "3 oz",
+        strength: 0.2204,
+        usda_description: "Fish, herring, Pacific, cooked, dry heat"
+      },
+      {
+        breadth: 3,
+        category: "Fruits",
+        efa: {
+          acid_mg: 94.4,
+          linoleic_g_per_100g: "0.026",
+          linolenic_g_per_100g: "0.033",
+          oil_equivalent_mg: 139.449
+        },
+        fdc_id: "169911",
+        grams: 160,
+        id: "honeydew-melon",
+        name: "Honeydew melon",
+        nutrients: [
+          {
+            amount: 12.16,
+            fraction: 0.1216,
+            nutrient_id: "1180",
+            per_100g: "7.6",
+            provenance: {
+              join: "fdc:169911/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 364.8,
+            fraction: 0.073,
+            nutrient_id: "1092",
+            per_100g: "228",
+            provenance: {
+              join: "fdc:169911/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 2.912,
+            fraction: 0.0766,
+            per_100g: "1.82",
+            provenance: {
+              join: "name:Melon, (cantaloupe, honeydew, galia)",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "The same single melon row, which names honeydew. See cantaloupe -- both our melons rest on one pooled measurement, which is the source's choice, not ours."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "85658",
+        portion_label: '1 wedge (1/8 of 6" to 7" dia melon)',
+        strength: 0.2712,
+        usda_description: "Melons, honeydew, raw"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 691.48,
+          linoleic_g_per_100g: "0.255",
+          linolenic_g_per_100g: "0.331",
+          oil_equivalent_mg: 1021.4639
+        },
+        fdc_id: "169355",
+        grams: 118,
+        id: "kale-cooked",
+        name: "Kale, cooked",
+        nutrients: [
+          {
+            amount: 177,
+            fraction: 0.118,
+            nutrient_id: "1087",
+            per_100g: "150",
+            provenance: {
+              join: "fdc:169355/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.6396,
+            fraction: 0.0831,
+            nutrient_id: "1101",
+            per_100g: "0.542",
+            provenance: {
+              join: "fdc:169355/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 297.36,
+            fraction: 0.0901,
+            nutrient_id: "1093",
+            per_100g: "252",
+            provenance: {
+              join: "fdc:169355/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 76.7,
+            fraction: 0.0767,
+            nutrient_id: "1177",
+            per_100g: "65",
+            provenance: {
+              join: "fdc:169355/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 493.83,
+            fraction: 1.6461,
+            nutrient_id: "1185",
+            per_100g: "418.5",
+            provenance: {
+              join: "fdc:169355/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84696",
+        portion_label: "1 cup",
+        strength: 2.014,
+        usda_description: "Kale, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 9,
+        category: "Legumes",
+        efa: {
+          acid_mg: 486.75,
+          linoleic_g_per_100g: "0.107",
+          linolenic_g_per_100g: "0.168",
+          oil_equivalent_mg: 719.0339
+        },
+        fdc_id: "175242",
+        grams: 177,
+        id: "kidney-beans-cooked",
+        name: "Kidney beans, cooked",
+        nutrients: [
+          {
+            amount: 53.985,
+            fraction: 0.5398,
+            nutrient_id: "1180",
+            per_100g: "30.5",
+            provenance: {
+              join: "fdc:175242/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4283,
+            fraction: 0.1382,
+            nutrient_id: "1098",
+            per_100g: "0.242",
+            provenance: {
+              join: "fdc:175242/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 5.2038,
+            fraction: 0.1131,
+            nutrient_id: "1089",
+            per_100g: "2.94",
+            provenance: {
+              join: "fdc:175242/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 79.65,
+            fraction: 0.1034,
+            nutrient_id: "1090",
+            per_100g: "45",
+            provenance: {
+              join: "fdc:175242/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.8443,
+            fraction: 0.1096,
+            nutrient_id: "1101",
+            per_100g: "0.477",
+            provenance: {
+              join: "fdc:175242/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 713.31,
+            fraction: 0.1427,
+            nutrient_id: "1092",
+            per_100g: "403",
+            provenance: {
+              join: "fdc:175242/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 421.26,
+            fraction: 0.1277,
+            nutrient_id: "1093",
+            per_100g: "238",
+            provenance: {
+              join: "fdc:175242/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 60.18,
+            fraction: 0.1204,
+            per_100g: "34",
+            provenance: {
+              combine: "first",
+              join: "name:Bean, red kidney, dried, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled from dry."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 230.1,
+            fraction: 0.2301,
+            nutrient_id: "1177",
+            per_100g: "130",
+            provenance: {
+              join: "fdc:175242/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95884",
+        portion_label: "1 cup",
+        strength: 1.625,
+        usda_description: "Beans, kidney, red, mature seeds, cooked, boiled, with salt"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 361.5,
+          linoleic_g_per_100g: "0.104",
+          linolenic_g_per_100g: "0.137",
+          oil_equivalent_mg: 534.0129
+        },
+        fdc_id: "170392",
+        grams: 150,
+        id: "kimchi",
+        name: "Kimchi",
+        nutrients: [
+          {
+            amount: 23.25,
+            fraction: 0.2325,
+            nutrient_id: "1180",
+            per_100g: "15.5",
+            provenance: {
+              join: "fdc:170392/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.75,
+            fraction: 0.0815,
+            nutrient_id: "1089",
+            per_100g: "2.5",
+            provenance: {
+              join: "fdc:170392/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 747,
+            fraction: 0.2264,
+            nutrient_id: "1093",
+            per_100g: "498",
+            provenance: {
+              join: "fdc:170392/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 78,
+            fraction: 0.078,
+            nutrient_id: "1177",
+            per_100g: "52",
+            provenance: {
+              join: "fdc:170392/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 65.4,
+            fraction: 0.218,
+            nutrient_id: "1185",
+            per_100g: "43.6",
+            provenance: {
+              join: "fdc:170392/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86554",
+        portion_label: "1 cup",
+        strength: 0.8364,
+        usda_description: "Cabbage, kimchi"
+      },
+      {
+        breadth: 4,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 28.9,
+          linoleic_g_per_100g: "0.02",
+          linolenic_g_per_100g: "0.014",
+          oil_equivalent_mg: 42.6915
+        },
+        fdc_id: "174202",
+        grams: 85,
+        id: "king-crab-cooked",
+        name: "King crab, cooked",
+        nutrients: [
+          {
+            amount: 1.0047,
+            fraction: 0.3241,
+            nutrient_id: "1098",
+            per_100g: "1.182",
+            provenance: {
+              join: "fdc:174202/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 34,
+            fraction: 0.1097,
+            nutrient_id: "1103",
+            per_100g: "40",
+            provenance: {
+              join: "fdc:174202/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 911.2,
+            fraction: 0.2761,
+            nutrient_id: "1093",
+            per_100g: "1072",
+            provenance: {
+              join: "fdc:174202/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 6.477,
+            fraction: 0.1408,
+            nutrient_id: "1095",
+            per_100g: "7.62",
+            provenance: {
+              join: "fdc:174202/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "93924",
+        portion_label: "3 oz",
+        strength: 0.8507,
+        usda_description: "Crustaceans, crab, alaska king, cooked, moist heat"
+      },
+      {
+        breadth: 4,
+        category: "Fruits",
+        efa: {
+          acid_mg: 426.24,
+          linoleic_g_per_100g: "0.246",
+          linolenic_g_per_100g: "0.042",
+          oil_equivalent_mg: 629.6477
+        },
+        fdc_id: "168153",
+        grams: 148,
+        id: "kiwifruit",
+        name: "Kiwifruit",
+        nutrients: [
+          {
+            amount: 11.544,
+            fraction: 0.1154,
+            nutrient_id: "1180",
+            per_100g: "7.8",
+            provenance: {
+              join: "fdc:168153/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 461.76,
+            fraction: 0.0924,
+            nutrient_id: "1092",
+            per_100g: "312",
+            provenance: {
+              join: "fdc:168153/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 137.196,
+            fraction: 0.1372,
+            nutrient_id: "1162",
+            per_100g: "92.7",
+            provenance: {
+              join: "fdc:168153/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 59.644,
+            fraction: 0.1988,
+            nutrient_id: "1185",
+            per_100g: "40.3",
+            provenance: {
+              join: "fdc:168153/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "82568",
+        portion_label: "1 NLEA serving",
+        strength: 0.5438,
+        usda_description: "Kiwifruit, green, raw"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 82.5,
+          linoleic_g_per_100g: "0.022",
+          linolenic_g_per_100g: "0.028",
+          oil_equivalent_mg: 121.8702
+        },
+        fdc_id: "169357",
+        grams: 165,
+        id: "kohlrabi-cooked",
+        name: "Kohlrabi, cooked",
+        nutrients: [
+          {
+            amount: 21.78,
+            fraction: 0.2178,
+            nutrient_id: "1180",
+            per_100g: "13.2",
+            provenance: {
+              join: "fdc:169357/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2178,
+            fraction: 0.0703,
+            nutrient_id: "1098",
+            per_100g: "0.132",
+            provenance: {
+              join: "fdc:169357/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 561,
+            fraction: 0.1122,
+            nutrient_id: "1092",
+            per_100g: "340",
+            provenance: {
+              join: "fdc:169357/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 424.05,
+            fraction: 0.1285,
+            nutrient_id: "1093",
+            per_100g: "257",
+            provenance: {
+              join: "fdc:169357/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 89.1,
+            fraction: 0.0891,
+            nutrient_id: "1162",
+            per_100g: "54",
+            provenance: {
+              join: "fdc:169357/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "84698",
+        portion_label: "1 cup slices",
+        strength: 0.6179,
+        usda_description: "Kohlrabi, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 2,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 1368.5,
+          linoleic_g_per_100g: "1.26",
+          linolenic_g_per_100g: "0.35",
+          oil_equivalent_mg: 2021.5673
+        },
+        fdc_id: "172489",
+        grams: 85,
+        id: "lamb-chop",
+        name: "Lamb chop",
+        nutrients: [
+          {
+            amount: 79.73,
+            fraction: 0.7973,
+            nutrient_id: "1180",
+            per_100g: "93.8",
+            provenance: {
+              join: "fdc:172489/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 23.29,
+            fraction: 0.0751,
+            nutrient_id: "1103",
+            per_100g: "27.4",
+            provenance: {
+              join: "fdc:172489/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "90710",
+        portion_label: "3 oz",
+        strength: 0.8724,
+        usda_description: 'Lamb, loin, separable lean and fat, trimmed to 1/4" fat, choice, cooked, broiled'
+      },
+      {
+        breadth: 5,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 297.5,
+          linoleic_g_per_100g: "0.26",
+          linolenic_g_per_100g: "0.09",
+          oil_equivalent_mg: 439.4712
+        },
+        fdc_id: "174355",
+        grams: 85,
+        id: "lamb-kidneys",
+        name: "Lamb kidneys",
+        nutrients: [
+          {
+            amount: 0.3145,
+            fraction: 0.1015,
+            nutrient_id: "1098",
+            per_100g: "0.37",
+            provenance: {
+              join: "fdc:174355/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 10.54,
+            fraction: 0.2291,
+            nutrient_id: "1089",
+            per_100g: "12.4",
+            provenance: {
+              join: "fdc:174355/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 185.98,
+            fraction: 0.5999,
+            nutrient_id: "1103",
+            per_100g: "218.8",
+            provenance: {
+              join: "fdc:174355/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 67.065,
+            fraction: 0.1677,
+            nutrient_id: "1178",
+            per_100g: "78.9",
+            provenance: {
+              join: "fdc:174355/nutrient:1178",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b12",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 3.23,
+            fraction: 0.0702,
+            nutrient_id: "1095",
+            per_100g: "3.8",
+            provenance: {
+              join: "fdc:174355/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "94206",
+        portion_label: "3 oz",
+        strength: 1.1684,
+        usda_description: "Lamb, variety meats and by-products, kidneys, cooked, braised"
+      },
+      {
+        breadth: 9,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 833,
+          linoleic_g_per_100g: "0.81",
+          linolenic_g_per_100g: "0.17",
+          oil_equivalent_mg: 1230.5192
+        },
+        fdc_id: "172533",
+        grams: 85,
+        id: "lamb-liver",
+        name: "Lamb liver",
+        nutrients: [
+          {
+            amount: 8.3555,
+            fraction: 2.6953,
+            nutrient_id: "1098",
+            per_100g: "9.83",
+            provenance: {
+              join: "fdc:172533/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 8.67,
+            fraction: 0.1885,
+            nutrient_id: "1089",
+            per_100g: "10.2",
+            provenance: {
+              join: "fdc:172533/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 98.685,
+            fraction: 0.3183,
+            nutrient_id: "1103",
+            per_100g: "116.1",
+            provenance: {
+              join: "fdc:172533/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 6614.7,
+            fraction: 0.735,
+            nutrient_id: "1106",
+            per_100g: "7782",
+            provenance: {
+              join: "fdc:172533/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 72.845,
+            fraction: 0.1821,
+            nutrient_id: "1178",
+            per_100g: "85.7",
+            provenance: {
+              join: "fdc:172533/nutrient:1178",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b12",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 3.9015,
+            fraction: 0.078,
+            nutrient_id: "1166",
+            per_100g: "4.59",
+            provenance: {
+              join: "fdc:172533/nutrient:1166",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b2",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 14.178,
+            fraction: 0.1418,
+            nutrient_id: "1167",
+            per_100g: "16.68",
+            provenance: {
+              join: "fdc:172533/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 340,
+            fraction: 0.34,
+            nutrient_id: "1177",
+            per_100g: "400",
+            provenance: {
+              join: "fdc:172533/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 4.7855,
+            fraction: 0.104,
+            nutrient_id: "1095",
+            per_100g: "5.63",
+            provenance: {
+              join: "fdc:172533/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90798",
+        portion_label: "3 oz",
+        strength: 4.783,
+        usda_description: "Lamb, variety meats and by-products, liver, cooked, pan-fried"
+      },
+      {
+        breadth: 3,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 782,
+          linoleic_g_per_100g: "0.73",
+          linolenic_g_per_100g: "0.19",
+          oil_equivalent_mg: 1155.1813
+        },
+        fdc_id: "172482",
+        grams: 85,
+        id: "lamb-shank",
+        name: "Lamb shank",
+        nutrients: [
+          {
+            amount: 93.5,
+            fraction: 0.935,
+            nutrient_id: "1180",
+            per_100g: "110",
+            provenance: {
+              join: "fdc:172482/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 26.01,
+            fraction: 0.0839,
+            nutrient_id: "1103",
+            per_100g: "30.6",
+            provenance: {
+              join: "fdc:172482/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 6.5365,
+            fraction: 0.1421,
+            nutrient_id: "1095",
+            per_100g: "7.69",
+            provenance: {
+              join: "fdc:172482/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90697",
+        portion_label: "3 oz",
+        strength: 1.161,
+        usda_description: 'Lamb, foreshank, separable lean and fat, trimmed to 1/4" fat, choice, cooked, braised'
+      },
+      {
+        breadth: 2,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 137.64,
+          linoleic_g_per_100g: "0.045",
+          linolenic_g_per_100g: "0.066",
+          oil_equivalent_mg: 203.3237
+        },
+        fdc_id: "168535",
+        grams: 124,
+        id: "leeks-cooked",
+        name: "Leeks, cooked",
+        nutrients: [
+          {
+            amount: 305.04,
+            fraction: 0.0924,
+            nutrient_id: "1093",
+            per_100g: "246",
+            provenance: {
+              join: "fdc:168535/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 31.496,
+            fraction: 0.105,
+            nutrient_id: "1185",
+            per_100g: "25.4",
+            provenance: {
+              join: "fdc:168535/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83256",
+        portion_label: "1 leek",
+        strength: 0.1974,
+        usda_description: "Leeks, (bulb and lower leaf-portion), cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 3,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 960.5,
+          linoleic_g_per_100g: "0.9",
+          linolenic_g_per_100g: "0.23",
+          oil_equivalent_mg: 1418.864
+        },
+        fdc_id: "174312",
+        grams: 85,
+        id: "leg-of-lamb",
+        name: "Leg of lamb",
+        nutrients: [
+          {
+            amount: 81.855,
+            fraction: 0.8185,
+            nutrient_id: "1180",
+            per_100g: "96.3",
+            provenance: {
+              join: "fdc:174312/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 23.12,
+            fraction: 0.0746,
+            nutrient_id: "1103",
+            per_100g: "27.2",
+            provenance: {
+              join: "fdc:174312/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 3.74,
+            fraction: 0.0813,
+            nutrient_id: "1095",
+            per_100g: "4.4",
+            provenance: {
+              join: "fdc:174312/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "94120",
+        portion_label: "3 oz",
+        strength: 0.9744,
+        usda_description: 'Lamb, leg, whole (shank and sirloin), separable lean and fat, trimmed to 1/4" fat, choice, cooked, roasted'
+      },
+      {
+        breadth: 9,
+        category: "Legumes",
+        efa: {
+          acid_mg: 344.52,
+          linoleic_g_per_100g: "0.137",
+          linolenic_g_per_100g: "0.037",
+          oil_equivalent_mg: 508.9298
+        },
+        fdc_id: "175254",
+        grams: 198,
+        id: "lentils-cooked",
+        name: "Lentils, cooked",
+        nutrients: [
+          {
+            amount: 64.746,
+            fraction: 0.6475,
+            nutrient_id: "1180",
+            per_100g: "32.7",
+            provenance: {
+              join: "fdc:175254/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.497,
+            fraction: 0.1603,
+            nutrient_id: "1098",
+            per_100g: "0.251",
+            provenance: {
+              join: "fdc:175254/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 6.5934,
+            fraction: 0.1433,
+            nutrient_id: "1089",
+            per_100g: "3.33",
+            provenance: {
+              join: "fdc:175254/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 71.28,
+            fraction: 0.0926,
+            nutrient_id: "1090",
+            per_100g: "36",
+            provenance: {
+              join: "fdc:175254/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.9781,
+            fraction: 0.127,
+            nutrient_id: "1101",
+            per_100g: "0.494",
+            provenance: {
+              join: "fdc:175254/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 730.62,
+            fraction: 0.1461,
+            nutrient_id: "1092",
+            per_100g: "369",
+            provenance: {
+              join: "fdc:175254/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.861,
+            fraction: 0.1016,
+            per_100g: "1.95",
+            provenance: {
+              conservative: true,
+              join: "name:Lentils, green and brown, boiled",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Powell measures two lentils \u2014 red at 4.42 and green/brown at 1.95 mg/100 g \u2014 and our USDA row is the generic 'Lentils, mature seeds, cooked', which says nothing about colour. The LOWER is taken: it is true of whichever lentil is on the plate, where taking red would only be true of red. Dropping lentils instead, which is what this curation did for one day, told the user lentils contain no silica at all \u2014 a claim both of Powell's rows contradict."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 471.24,
+            fraction: 0.1428,
+            nutrient_id: "1093",
+            per_100g: "238",
+            provenance: {
+              join: "fdc:175254/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 358.38,
+            fraction: 0.3584,
+            nutrient_id: "1177",
+            per_100g: "181",
+            provenance: {
+              join: "fdc:175254/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95899",
+        portion_label: "1 cup",
+        strength: 1.9196,
+        usda_description: "Lentils, mature seeds, cooked, boiled, with salt"
+      },
+      {
+        breadth: 9,
+        category: "Legumes",
+        efa: {
+          acid_mg: 319.6,
+          linoleic_g_per_100g: "0.118",
+          linolenic_g_per_100g: "0.052",
+          oil_equivalent_mg: 472.1176
+        },
+        fdc_id: "173802",
+        grams: 188,
+        id: "lima-beans-cooked",
+        name: "Lima beans, cooked",
+        nutrients: [
+          {
+            amount: 61.1,
+            fraction: 0.611,
+            nutrient_id: "1180",
+            per_100g: "32.5",
+            provenance: {
+              join: "fdc:173802/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4418,
+            fraction: 0.1425,
+            nutrient_id: "1098",
+            per_100g: "0.235",
+            provenance: {
+              join: "fdc:173802/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.4932,
+            fraction: 0.0977,
+            nutrient_id: "1089",
+            per_100g: "2.39",
+            provenance: {
+              join: "fdc:173802/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 80.84,
+            fraction: 0.105,
+            nutrient_id: "1090",
+            per_100g: "43",
+            provenance: {
+              join: "fdc:173802/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.9701,
+            fraction: 0.126,
+            nutrient_id: "1101",
+            per_100g: "0.516",
+            provenance: {
+              join: "fdc:173802/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 955.04,
+            fraction: 0.191,
+            nutrient_id: "1092",
+            per_100g: "508",
+            provenance: {
+              join: "fdc:173802/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 447.44,
+            fraction: 0.1356,
+            nutrient_id: "1093",
+            per_100g: "238",
+            provenance: {
+              join: "fdc:173802/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 48.88,
+            fraction: 0.0978,
+            per_100g: "26",
+            provenance: {
+              combine: "first",
+              join: "name:Bean, lima, dried, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled from dry."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 156.04,
+            fraction: 0.156,
+            nutrient_id: "1177",
+            per_100g: "83",
+            provenance: {
+              join: "fdc:173802/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93276",
+        portion_label: "1 cup",
+        strength: 1.6626,
+        usda_description: "Lima beans, large, mature seeds, cooked, boiled, with salt"
+      },
+      {
+        breadth: 9,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 124.7,
+          conjugated_linoleic_g_per_100g: "0.002",
+          linoleic_g_per_100g: "0.038",
+          linolenic_g_per_100g: "0.05",
+          oil_equivalent_mg: 184.2086
+        },
+        fdc_id: "174209",
+        grams: 145,
+        id: "lobster-cooked",
+        name: "Lobster, cooked",
+        nutrients: [
+          {
+            amount: 139.2,
+            fraction: 0.0928,
+            nutrient_id: "1087",
+            per_100g: "96",
+            provenance: {
+              join: "fdc:174209/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 117.305,
+            fraction: 1.1731,
+            nutrient_id: "1180",
+            per_100g: "80.9",
+            provenance: {
+              join: "fdc:174209/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 2.2475,
+            fraction: 0.725,
+            nutrient_id: "1098",
+            per_100g: "1.55",
+            provenance: {
+              join: "fdc:174209/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 268.25,
+            fraction: 1.1663,
+            per_100g: "185",
+            provenance: {
+              join: "ndb:15148",
+              source_id: "iodine-usda-ods-r4",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 62.35,
+            fraction: 0.081,
+            nutrient_id: "1090",
+            per_100g: "43",
+            provenance: {
+              join: "fdc:174209/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 105.995,
+            fraction: 0.3419,
+            nutrient_id: "1103",
+            per_100g: "73.1",
+            provenance: {
+              join: "fdc:174209/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 704.7,
+            fraction: 0.2135,
+            nutrient_id: "1093",
+            per_100g: "486",
+            provenance: {
+              join: "fdc:174209/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 423.4,
+            fraction: 0.8468,
+            per_100g: "292",
+            provenance: {
+              combine: "first",
+              join: "name:Lobster or crayfish, flesh, purchased steamed, poached or boiled, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Lobster flesh in both, moist-heat cooked in both."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 5.8725,
+            fraction: 0.1277,
+            nutrient_id: "1095",
+            per_100g: "4.05",
+            provenance: {
+              join: "fdc:174209/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "93937",
+        portion_label: "1 cup",
+        strength: 4.7681,
+        usda_description: "Crustaceans, lobster, northern, cooked, moist heat"
+      },
+      {
+        breadth: 4,
+        category: "Fruits",
+        efa: {
+          acid_mg: 250.8,
+          linoleic_g_per_100g: "0.067",
+          linolenic_g_per_100g: "0.065",
+          oil_equivalent_mg: 370.4853
+        },
+        fdc_id: "169086",
+        grams: 190,
+        id: "lychee",
+        name: "Lychee",
+        nutrients: [
+          {
+            amount: 13.49,
+            fraction: 0.1349,
+            nutrient_id: "1180",
+            per_100g: "7.1",
+            provenance: {
+              join: "fdc:169086/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2812,
+            fraction: 0.0907,
+            nutrient_id: "1098",
+            per_100g: "0.148",
+            provenance: {
+              join: "fdc:169086/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.61,
+            fraction: 0.095,
+            per_100g: "1.9",
+            provenance: {
+              join: "name:Lychee, peeled, raw",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both raw, both peeled."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 135.85,
+            fraction: 0.1358,
+            nutrient_id: "1162",
+            per_100g: "71.5",
+            provenance: {
+              join: "fdc:169086/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "84200",
+        portion_label: "1 cup",
+        strength: 0.4564,
+        usda_description: "Litchis, raw"
+      },
+      {
+        breadth: 2,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 424.9665,
+          linoleic_g_per_100g: "1.303",
+          linolenic_g_per_100g: "0.196",
+          oil_equivalent_mg: 627.7665
+        },
+        fdc_id: "168598",
+        grams: 28.35,
+        id: "macadamia-nuts-roasted",
+        name: "Macadamia nuts, roasted",
+        nutrients: [
+          {
+            amount: 12.6441,
+            fraction: 0.1264,
+            nutrient_id: "1180",
+            per_100g: "44.6",
+            provenance: {
+              join: "fdc:168598/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.8607,
+            fraction: 0.1118,
+            nutrient_id: "1101",
+            per_100g: "3.036",
+            provenance: {
+              join: "fdc:168598/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83393",
+        portion_label: "1 oz (10-12 kernels)",
+        strength: 0.2382,
+        usda_description: "Nuts, macadamia nuts, dry roasted, with salt added"
+      },
+      {
+        breadth: 5,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 181.05,
+          linoleic_g_per_100g: "0.149",
+          linolenic_g_per_100g: "0.064",
+          oil_equivalent_mg: 267.4496
+        },
+        fdc_id: "171994",
+        grams: 85,
+        id: "mackerel-cooked",
+        name: "Mackerel, cooked",
+        nutrients: [
+          {
+            amount: 71.06,
+            fraction: 0.7106,
+            nutrient_id: "1180",
+            per_100g: "83.6",
+            provenance: {
+              join: "fdc:171994/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 442.85,
+            fraction: 0.0886,
+            nutrient_id: "1092",
+            per_100g: "521",
+            provenance: {
+              join: "fdc:171994/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 39.78,
+            fraction: 0.1283,
+            nutrient_id: "1103",
+            per_100g: "46.8",
+            provenance: {
+              join: "fdc:171994/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 9.067,
+            fraction: 0.0907,
+            nutrient_id: "1167",
+            per_100g: "10.667",
+            provenance: {
+              join: "fdc:171994/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 9.69,
+            fraction: 0.1938,
+            nutrient_id: "1114",
+            per_100g: "11.4",
+            provenance: {
+              join: "fdc:171994/nutrient:1114",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-d",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "89703",
+        portion_label: "3 oz",
+        strength: 1.212,
+        usda_description: "Fish, mackerel, Pacific and jack, mixed species, cooked, dry heat"
+      },
+      {
+        breadth: 3,
+        category: "Fruits",
+        efa: {
+          acid_mg: 115.5,
+          linoleic_g_per_100g: "0.019",
+          linolenic_g_per_100g: "0.051",
+          oil_equivalent_mg: 170.6182
+        },
+        fdc_id: "169910",
+        grams: 165,
+        id: "mango",
+        name: "Mango",
+        nutrients: [
+          {
+            amount: 12.54,
+            fraction: 0.1254,
+            nutrient_id: "1180",
+            per_100g: "7.6",
+            provenance: {
+              join: "fdc:169910/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.3,
+            fraction: 0.0868,
+            per_100g: "2.00",
+            provenance: {
+              conservative: true,
+              join: "name:Mango, fresh, raw, \uFB01brous",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Powell measures smooth mango at 3.15 and fibrous at 2.00 mg/100 g; our USDA row is the generic 'Mangos, raw'. The lower is taken for the same reason as lentils."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 70.95,
+            fraction: 0.0709,
+            nutrient_id: "1177",
+            per_100g: "43",
+            provenance: {
+              join: "fdc:169910/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "85651",
+        portion_label: "1 cup pieces",
+        strength: 0.2831,
+        usda_description: "Mangos, raw"
+      },
+      {
+        breadth: 2,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 216.8775,
+          linoleic_g_per_100g: "0.393",
+          linolenic_g_per_100g: "0.372",
+          oil_equivalent_mg: 320.3745
+        },
+        fdc_id: "170845",
+        grams: 28.35,
+        id: "mozzarella",
+        name: "Mozzarella",
+        nutrients: [
+          {
+            amount: 143.1675,
+            fraction: 0.0954,
+            nutrient_id: "1087",
+            per_100g: "505",
+            provenance: {
+              join: "fdc:170845/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 56.7,
+            fraction: 0.1134,
+            per_100g: "200",
+            provenance: {
+              combine: "first",
+              join: "name:Cheese, mozzarella",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Same cheese, both as sold."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "87382",
+        portion_label: "1 oz",
+        strength: 0.2088,
+        usda_description: "Cheese, mozzarella, whole milk"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 39.68,
+          linoleic_g_per_100g: "0.023",
+          linolenic_g_per_100g: "0.009",
+          oil_equivalent_mg: 58.6159
+        },
+        fdc_id: "168499",
+        grams: 124,
+        id: "mung-bean-sprouts-cooked",
+        name: "Mung bean sprouts, cooked",
+        nutrients: [
+          {
+            amount: 12.276,
+            fraction: 0.1228,
+            nutrient_id: "1180",
+            per_100g: "9.9",
+            provenance: {
+              join: "fdc:168499/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 305.04,
+            fraction: 0.0924,
+            nutrient_id: "1093",
+            per_100g: "246",
+            provenance: {
+              join: "fdc:168499/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 28.148,
+            fraction: 0.0938,
+            nutrient_id: "1185",
+            per_100g: "22.7",
+            provenance: {
+              join: "fdc:168499/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83197",
+        portion_label: "1 cup",
+        strength: 0.309,
+        usda_description: "Mung beans, mature seeds, sprouted, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 4,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 64.6,
+          linoleic_g_per_100g: "0.036",
+          linolenic_g_per_100g: "0.04",
+          oil_equivalent_mg: 95.428
+        },
+        fdc_id: "174217",
+        grams: 85,
+        id: "mussels-cooked",
+        name: "Mussels, cooked",
+        nutrients: [
+          {
+            amount: 5.712,
+            fraction: 0.1242,
+            nutrient_id: "1089",
+            per_100g: "6.72",
+            provenance: {
+              join: "fdc:174217/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 5.78,
+            fraction: 0.7506,
+            nutrient_id: "1101",
+            per_100g: "6.8",
+            provenance: {
+              join: "fdc:174217/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 76.16,
+            fraction: 0.2457,
+            nutrient_id: "1103",
+            per_100g: "89.6",
+            provenance: {
+              join: "fdc:174217/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 313.65,
+            fraction: 0.095,
+            nutrient_id: "1093",
+            per_100g: "369",
+            provenance: {
+              join: "fdc:174217/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "93960",
+        portion_label: "3 oz",
+        strength: 1.2155,
+        usda_description: "Mollusks, mussel, blue, cooked, moist heat"
+      },
+      {
+        breadth: 4,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 64.4,
+          linoleic_g_per_100g: "0.024",
+          linolenic_g_per_100g: "0.022",
+          oil_equivalent_mg: 95.1326
+        },
+        fdc_id: "170503",
+        grams: 140,
+        id: "mustard-greens-cooked",
+        name: "Mustard greens, cooked",
+        nutrients: [
+          {
+            amount: 165.2,
+            fraction: 0.1101,
+            nutrient_id: "1087",
+            per_100g: "118",
+            provenance: {
+              join: "fdc:170503/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 352.8,
+            fraction: 0.1069,
+            nutrient_id: "1093",
+            per_100g: "252",
+            provenance: {
+              join: "fdc:170503/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 737.8,
+            fraction: 0.082,
+            nutrient_id: "1106",
+            per_100g: "527",
+            provenance: {
+              join: "fdc:170503/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 829.78,
+            fraction: 2.7659,
+            nutrient_id: "1185",
+            per_100g: "592.7",
+            provenance: {
+              join: "fdc:170503/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86772",
+        portion_label: "1 cup, chopped",
+        strength: 3.0649,
+        usda_description: "Mustard greens, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 9,
+        category: "Legumes",
+        efa: {
+          acid_mg: 10867.5,
+          linoleic_g_per_100g: "5.476",
+          linolenic_g_per_100g: "0.734",
+          oil_equivalent_mg: 16053.6229
+        },
+        fdc_id: "172443",
+        grams: 175,
+        id: "natto",
+        name: "Natto",
+        nutrients: [
+          {
+            amount: 379.75,
+            fraction: 0.2532,
+            nutrient_id: "1087",
+            per_100g: "217",
+            provenance: {
+              join: "fdc:172443/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 99.75,
+            fraction: 0.9975,
+            nutrient_id: "1180",
+            per_100g: "57",
+            provenance: {
+              join: "fdc:172443/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1.1673,
+            fraction: 0.3765,
+            nutrient_id: "1098",
+            per_100g: "0.667",
+            provenance: {
+              join: "fdc:172443/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 15.05,
+            fraction: 0.3272,
+            nutrient_id: "1089",
+            per_100g: "8.6",
+            provenance: {
+              join: "fdc:172443/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 201.25,
+            fraction: 0.2614,
+            nutrient_id: "1090",
+            per_100g: "115",
+            provenance: {
+              join: "fdc:172443/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 2.674,
+            fraction: 0.3473,
+            nutrient_id: "1101",
+            per_100g: "1.528",
+            provenance: {
+              join: "fdc:172443/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1275.75,
+            fraction: 0.2551,
+            nutrient_id: "1092",
+            per_100g: "729",
+            provenance: {
+              join: "fdc:172443/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 40.425,
+            fraction: 0.1348,
+            nutrient_id: "1185",
+            per_100g: "23.1",
+            provenance: {
+              join: "fdc:172443/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 5.3025,
+            fraction: 0.1153,
+            nutrient_id: "1095",
+            per_100g: "3.03",
+            provenance: {
+              join: "fdc:172443/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90631",
+        portion_label: "1 cup",
+        strength: 3.0683,
+        usda_description: "Natto"
+      },
+      {
+        breadth: 9,
+        category: "Legumes",
+        efa: {
+          acid_mg: 289.38,
+          linoleic_g_per_100g: "0.069",
+          linolenic_g_per_100g: "0.09",
+          oil_equivalent_mg: 427.4762
+        },
+        fdc_id: "173794",
+        grams: 182,
+        id: "navy-beans-cooked",
+        name: "Navy beans, cooked",
+        nutrients: [
+          {
+            amount: 125.58,
+            fraction: 0.0837,
+            nutrient_id: "1087",
+            per_100g: "69",
+            provenance: {
+              join: "fdc:173794/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 81.354,
+            fraction: 0.8135,
+            nutrient_id: "1180",
+            per_100g: "44.7",
+            provenance: {
+              join: "fdc:173794/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3822,
+            fraction: 0.1233,
+            nutrient_id: "1098",
+            per_100g: "0.21",
+            provenance: {
+              join: "fdc:173794/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.2952,
+            fraction: 0.0934,
+            nutrient_id: "1089",
+            per_100g: "2.36",
+            provenance: {
+              join: "fdc:173794/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 96.46,
+            fraction: 0.1253,
+            nutrient_id: "1090",
+            per_100g: "53",
+            provenance: {
+              join: "fdc:173794/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.9591,
+            fraction: 0.1246,
+            nutrient_id: "1101",
+            per_100g: "0.527",
+            provenance: {
+              join: "fdc:173794/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 707.98,
+            fraction: 0.1416,
+            nutrient_id: "1092",
+            per_100g: "389",
+            provenance: {
+              join: "fdc:173794/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 431.34,
+            fraction: 0.1307,
+            nutrient_id: "1093",
+            per_100g: "237",
+            provenance: {
+              join: "fdc:173794/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 254.8,
+            fraction: 0.2548,
+            nutrient_id: "1177",
+            per_100g: "140",
+            provenance: {
+              join: "fdc:173794/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93266",
+        portion_label: "1 cup",
+        strength: 1.8909,
+        usda_description: "Beans, navy, mature seeds, cooked, boiled, with salt"
+      },
+      {
+        breadth: 7,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 15.3,
+          linoleic_g_per_100g: "0.018",
+          linolenic_g_per_100g: "0",
+          oil_equivalent_mg: 22.6014
+        },
+        fdc_id: "174249",
+        grams: 85,
+        id: "octopus-cooked",
+        name: "Octopus, cooked",
+        nutrients: [
+          {
+            amount: 68.85,
+            fraction: 0.6885,
+            nutrient_id: "1180",
+            per_100g: "81",
+            provenance: {
+              join: "fdc:174249/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.6281,
+            fraction: 0.2026,
+            nutrient_id: "1098",
+            per_100g: "0.739",
+            provenance: {
+              join: "fdc:174249/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 8.109,
+            fraction: 0.1763,
+            nutrient_id: "1089",
+            per_100g: "9.54",
+            provenance: {
+              join: "fdc:174249/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 535.5,
+            fraction: 0.1071,
+            nutrient_id: "1092",
+            per_100g: "630",
+            provenance: {
+              join: "fdc:174249/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 76.16,
+            fraction: 0.2457,
+            nutrient_id: "1103",
+            per_100g: "89.6",
+            provenance: {
+              join: "fdc:174249/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 391,
+            fraction: 0.1185,
+            nutrient_id: "1093",
+            per_100g: "460",
+            provenance: {
+              join: "fdc:174249/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 30.6,
+            fraction: 0.0765,
+            nutrient_id: "1178",
+            per_100g: "36",
+            provenance: {
+              join: "fdc:174249/nutrient:1178",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b12",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "94020",
+        portion_label: "3 oz",
+        strength: 1.6152,
+        usda_description: "Mollusks, octopus, common, cooked, moist heat"
+      },
+      {
+        breadth: 2,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 36.8,
+          linoleic_g_per_100g: "0.045",
+          linolenic_g_per_100g: "0.001",
+          oil_equivalent_mg: 54.3615
+        },
+        fdc_id: "170098",
+        grams: 80,
+        id: "okra-cooked",
+        name: "Okra, cooked",
+        nutrients: [
+          {
+            amount: 7.44,
+            fraction: 0.0744,
+            nutrient_id: "1180",
+            per_100g: "9.3",
+            provenance: {
+              join: "fdc:170098/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 32,
+            fraction: 0.1067,
+            nutrient_id: "1185",
+            per_100g: "40",
+            provenance: {
+              join: "fdc:170098/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86037",
+        portion_label: "0.5 cup slices",
+        strength: 0.1811,
+        usda_description: "Okra, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 2,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 27.2,
+          linoleic_g_per_100g: "0.013",
+          linolenic_g_per_100g: "0.004",
+          oil_equivalent_mg: 40.1802
+        },
+        fdc_id: "170000",
+        grams: 160,
+        id: "onions-raw",
+        name: "Onions, raw",
+        nutrients: [
+          {
+            amount: 9.76,
+            fraction: 0.0976,
+            nutrient_id: "1180",
+            per_100g: "6.1",
+            provenance: {
+              join: "fdc:170000/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 43.0132,
+            fraction: 0.086,
+            per_100g: "77.0",
+            provenance: {
+              combine: "first",
+              conservative: true,
+              join: "name:Brown onion",
+              parts: [
+                {
+                  rows: 2,
+                  source: "sulfur-doleman-2017",
+                  total: "77.0"
+                }
+              ],
+              source_id: "doleman-2017",
+              tier: "APPROXIMATE",
+              value_kind: "sum_fields",
+              why: "Doleman measured brown (77.0 umol/g dry) and red (121.3) mature onions raw; our USDA row is the generic 'Onions, raw' and says which neither. The LOWER is taken. Doleman's spring onion is a different food and lives on our scallions entry, not here.",
+              working: {
+                arithmetic: "77.0 umol/g dry x 32.06 ug/umol x 0.1089 dry matter x 0.1 = 26.8833 mg/100 g fresh",
+                dry_matter_fraction: 0.1089,
+                umol_per_g_dry: "77.0",
+                water_g_per_100g: "89.11"
+              }
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "85855",
+        portion_label: "1 cup, chopped",
+        strength: 0.1836,
+        usda_description: "Onions, raw"
+      },
+      {
+        breadth: 1,
+        category: "Fruits",
+        efa: {
+          acid_mg: 32.75,
+          linoleic_g_per_100g: "0.018",
+          linolenic_g_per_100g: "0.007",
+          oil_equivalent_mg: 48.3788
+        },
+        fdc_id: "169097",
+        grams: 131,
+        id: "orange",
+        name: "Orange",
+        nutrients: [
+          {
+            amount: 11.004,
+            fraction: 0.11,
+            nutrient_id: "1180",
+            per_100g: "8.4",
+            provenance: {
+              join: "fdc:169097/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "84230",
+        portion_label: '1 fruit (2-5/8" dia)',
+        strength: 0.11,
+        usda_description: "Oranges, raw, all commercial varieties"
+      },
+      {
+        breadth: 6,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 203.15,
+          conjugated_linoleic_g_per_100g: "0.011",
+          linoleic_g_per_100g: "0.082",
+          linolenic_g_per_100g: "0.168",
+          oil_equivalent_mg: 300.096
+        },
+        fdc_id: "171980",
+        grams: 85,
+        id: "oysters-cooked",
+        name: "Oysters, cooked",
+        nutrients: [
+          {
+            amount: 110.5,
+            fraction: 1.105,
+            nutrient_id: "1180",
+            per_100g: "130",
+            provenance: {
+              join: "fdc:171980/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.851,
+            fraction: 1.5648,
+            nutrient_id: "1098",
+            per_100g: "5.707",
+            provenance: {
+              join: "fdc:171980/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 92.65,
+            fraction: 0.4028,
+            per_100g: "109",
+            provenance: {
+              join: "ndb:15169",
+              source_id: "iodine-usda-ods-r4",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 7.8285,
+            fraction: 0.1702,
+            nutrient_id: "1089",
+            per_100g: "9.21",
+            provenance: {
+              join: "fdc:171980/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 33.575,
+            fraction: 0.1083,
+            nutrient_id: "1103",
+            per_100g: "39.5",
+            provenance: {
+              join: "fdc:171980/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 66.81,
+            fraction: 1.4524,
+            nutrient_id: "1095",
+            per_100g: "78.6",
+            provenance: {
+              join: "fdc:171980/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "89671",
+        portion_label: "3 oz",
+        strength: 4.8035,
+        usda_description: "Mollusks, oyster, eastern, wild, cooked, moist heat"
+      },
+      {
+        breadth: 2,
+        category: "Fruits",
+        efa: {
+          acid_mg: 84.1,
+          linoleic_g_per_100g: "0.011",
+          linolenic_g_per_100g: "0.047",
+          oil_equivalent_mg: 124.2337
+        },
+        fdc_id: "169926",
+        grams: 145,
+        id: "papaya",
+        name: "Papaya",
+        nutrients: [
+          {
+            amount: 8.845,
+            fraction: 0.0884,
+            nutrient_id: "1180",
+            per_100g: "6.1",
+            provenance: {
+              join: "fdc:169926/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 88.305,
+            fraction: 0.0883,
+            nutrient_id: "1162",
+            per_100g: "60.9",
+            provenance: {
+              join: "fdc:169926/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "85692",
+        portion_label: '1 cup 1" pieces',
+        strength: 0.1767,
+        usda_description: "Papayas, raw"
+      },
+      {
+        breadth: 3,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 324.6075,
+          conjugated_linoleic_g_per_100g: "0.136",
+          linoleic_g_per_100g: "1.175",
+          linolenic_g_per_100g: "0.106",
+          oil_equivalent_mg: 479.5147
+        },
+        fdc_id: "171247",
+        grams: 28.35,
+        id: "parmesan-grated",
+        name: "Parmesan, grated",
+        nutrients: [
+          {
+            amount: 241.8255,
+            fraction: 0.1612,
+            nutrient_id: "1087",
+            per_100g: "853",
+            provenance: {
+              join: "fdc:171247/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 23.247,
+            fraction: 0.1011,
+            per_100g: "82",
+            provenance: {
+              join: "ndb:01032",
+              source_id: "iodine-usda-ods-r4",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 511.434,
+            fraction: 0.155,
+            nutrient_id: "1093",
+            per_100g: "1804",
+            provenance: {
+              join: "fdc:171247/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "88263",
+        portion_label: "1 oz",
+        strength: 0.4173,
+        usda_description: "Cheese, parmesan, grated"
+      },
+      {
+        breadth: 1,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 4.674,
+          linoleic_g_per_100g: "0.115",
+          linolenic_g_per_100g: "0.008",
+          oil_equivalent_mg: 6.9045
+        },
+        fdc_id: "170416",
+        grams: 3.8,
+        id: "parsley-fresh",
+        name: "Parsley, fresh",
+        nutrients: [
+          {
+            amount: 62.32,
+            fraction: 0.2077,
+            nutrient_id: "1185",
+            per_100g: "1640",
+            provenance: {
+              join: "fdc:170416/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86608",
+        portion_label: "1 tbsp",
+        strength: 0.2077,
+        usda_description: "Parsley, fresh"
+      },
+      {
+        breadth: 1,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 34.32,
+          linoleic_g_per_100g: "0.041",
+          linolenic_g_per_100g: "0.003",
+          oil_equivalent_mg: 50.698
+        },
+        fdc_id: "170009",
+        grams: 78,
+        id: "parsnips-cooked",
+        name: "Parsnips, cooked",
+        nutrients: [
+          {
+            amount: 21.06,
+            fraction: 0.2106,
+            nutrient_id: "1180",
+            per_100g: "27",
+            provenance: {
+              join: "fdc:170009/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "85888",
+        portion_label: "0.5 cup slices",
+        strength: 0.2106,
+        usda_description: "Parsnips, cooked, boiled, drained, without salt"
+      },
+      {
+        breadth: 2,
+        category: "Fruits",
+        efa: {
+          acid_mg: 132.44,
+          linoleic_g_per_100g: "0.084",
+          linolenic_g_per_100g: "0.002",
+          oil_equivalent_mg: 195.6422
+        },
+        fdc_id: "169928",
+        grams: 154,
+        id: "peach",
+        name: "Peach",
+        nutrients: [
+          {
+            amount: 9.394,
+            fraction: 0.0939,
+            nutrient_id: "1180",
+            per_100g: "6.1",
+            provenance: {
+              join: "fdc:169928/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 112.728,
+            fraction: 0.1127,
+            per_100g: "73.20",
+            provenance: {
+              combine: "sum",
+              join: "ndb:09236",
+              parts: [
+                {
+                  rows: 19,
+                  source: "flavonoids-usda-r33",
+                  total: "11.40"
+                },
+                {
+                  rows: 5,
+                  source: "proanthocyanidins-usda-r2",
+                  total: "61.80"
+                }
+              ],
+              source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+              tier: "EXACT",
+              value_kind: "sum"
+            },
+            slug: "flavonoids",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "85697",
+        portion_label: "1 cup slices",
+        strength: 0.2066,
+        usda_description: "Peaches, yellow, raw"
+      },
+      {
+        breadth: 3,
+        category: "Legumes",
+        efa: {
+          acid_mg: 2759.022,
+          conjugated_linoleic_g_per_100g: "0.009",
+          linoleic_g_per_100g: "9.715",
+          linolenic_g_per_100g: "0.026",
+          oil_equivalent_mg: 4075.6659
+        },
+        fdc_id: "173806",
+        grams: 28.35,
+        id: "peanuts-dry-roasted",
+        name: "Peanuts, dry-roasted",
+        nutrients: [
+          {
+            amount: 28.35,
+            fraction: 0.0945,
+            per_100g: "100",
+            provenance: {
+              conservative: true,
+              join: "name:Nut, peanut, without skin, roasted, with oil, unsalted",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD has no dry-roasted peanut; this is roasted in oil, and the oil dilutes everything per 100 g, so it is a floor for our dry-roasted row."
+            },
+            slug: "biotin",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 18.3141,
+            fraction: 0.1831,
+            nutrient_id: "1180",
+            per_100g: "64.6",
+            provenance: {
+              join: "fdc:173806/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 45.36,
+            fraction: 0.0907,
+            per_100g: "160",
+            provenance: {
+              combine: "first",
+              conservative: true,
+              join: "name:Nut, peanut, without skin, roasted, with oil, unsalted",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD has no dry-roasted peanut; this is roasted in oil, and the oil dilutes everything per 100 g, so it is a floor for our dry-roasted row."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "93281",
+        portion_label: "1 oz",
+        strength: 0.3683,
+        usda_description: "Peanuts, all types, dry-roasted, without salt"
+      },
+      {
+        breadth: 2,
+        category: "Fruits",
+        efa: {
+          acid_mg: 167.32,
+          linoleic_g_per_100g: "0.093",
+          linolenic_g_per_100g: "0.001",
+          oil_equivalent_mg: 247.1674
+        },
+        fdc_id: "169118",
+        grams: 178,
+        id: "pear",
+        name: "Pear",
+        nutrients: [
+          {
+            amount: 9.078,
+            fraction: 0.0908,
+            nutrient_id: "1180",
+            per_100g: "5.1",
+            provenance: {
+              join: "fdc:169118/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 72.4282,
+            fraction: 0.0724,
+            per_100g: "40.69",
+            provenance: {
+              combine: "sum",
+              join: "ndb:09252",
+              parts: [
+                {
+                  rows: 20,
+                  source: "flavonoids-usda-r33",
+                  total: "8.01"
+                },
+                {
+                  rows: 5,
+                  source: "proanthocyanidins-usda-r2",
+                  total: "32.68"
+                }
+              ],
+              source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+              tier: "EXACT",
+              value_kind: "sum"
+            },
+            slug: "flavonoids",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "84275",
+        portion_label: "1 medium",
+        strength: 0.1632,
+        usda_description: "Pears, raw"
+      },
+      {
+        breadth: 4,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 6127.569,
+          linoleic_g_per_100g: "20.628",
+          linolenic_g_per_100g: "0.986",
+          oil_equivalent_mg: 9051.7306
+        },
+        fdc_id: "170182",
+        grams: 28.35,
+        id: "pecans",
+        name: "Pecans",
+        nutrients: [
+          {
+            amount: 11.4818,
+            fraction: 0.1148,
+            nutrient_id: "1180",
+            per_100g: "40.5",
+            provenance: {
+              join: "fdc:170182/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3402,
+            fraction: 0.1097,
+            nutrient_id: "1098",
+            per_100g: "1.2",
+            provenance: {
+              join: "fdc:170182/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 144.8231,
+            fraction: 0.1448,
+            per_100g: "510.84",
+            provenance: {
+              combine: "sum",
+              join: "ndb:12142",
+              parts: [
+                {
+                  rows: 18,
+                  source: "flavonoids-usda-r33",
+                  total: "34.01"
+                },
+                {
+                  rows: 5,
+                  source: "proanthocyanidins-usda-r2",
+                  total: "476.83"
+                }
+              ],
+              source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+              tier: "EXACT",
+              value_kind: "sum"
+            },
+            slug: "flavonoids",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 1.2758,
+            fraction: 0.1657,
+            nutrient_id: "1101",
+            per_100g: "4.5",
+            provenance: {
+              join: "fdc:170182/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86190",
+        portion_label: "1 oz (19 halves)",
+        strength: 0.535,
+        usda_description: "Nuts, pecans"
+      },
+      {
+        breadth: 2,
+        category: "Fruits",
+        efa: {
+          acid_mg: 72.24,
+          linoleic_g_per_100g: "0.039",
+          linolenic_g_per_100g: "0.004",
+          oil_equivalent_mg: 106.7139
+        },
+        fdc_id: "169941",
+        grams: 168,
+        id: "persimmon",
+        name: "Persimmon",
+        nutrients: [
+          {
+            amount: 12.768,
+            fraction: 0.1277,
+            nutrient_id: "1180",
+            per_100g: "7.6",
+            provenance: {
+              join: "fdc:169941/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.5964,
+            fraction: 0.0775,
+            nutrient_id: "1101",
+            per_100g: "0.355",
+            provenance: {
+              join: "fdc:169941/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "85724",
+        portion_label: '1 fruit (2-1/2" dia)',
+        strength: 0.2052,
+        usda_description: "Persimmons, japanese, raw"
+      },
+      {
+        breadth: 4,
+        category: "Fruits",
+        efa: {
+          acid_mg: 66.4,
+          linoleic_g_per_100g: "0.023",
+          linolenic_g_per_100g: "0.017",
+          oil_equivalent_mg: 98.087
+        },
+        fdc_id: "169124",
+        grams: 166,
+        id: "pineapple",
+        name: "Pineapple",
+        nutrients: [
+          {
+            amount: 9.13,
+            fraction: 0.0913,
+            nutrient_id: "1180",
+            per_100g: "5.5",
+            provenance: {
+              join: "fdc:169124/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1.5388,
+            fraction: 0.1998,
+            nutrient_id: "1101",
+            per_100g: "0.927",
+            provenance: {
+              join: "fdc:169124/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 6.5238,
+            fraction: 0.1717,
+            per_100g: "3.93",
+            provenance: {
+              join: "name:Pineapple, fresh, raw",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Powell's only FRESH pineapple row. The canned-in-juice and canned-in-syrup rows are different products and are not used."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 79.348,
+            fraction: 0.0793,
+            nutrient_id: "1162",
+            per_100g: "47.8",
+            provenance: {
+              join: "fdc:169124/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "84289",
+        portion_label: '1 slice (4-2/3" dia x 3/4" thick)',
+        strength: 0.5421,
+        usda_description: "Pineapple, raw, all varieties"
+      },
+      {
+        breadth: 7,
+        category: "Legumes",
+        efa: {
+          acid_mg: 401.85,
+          linoleic_g_per_100g: "0.098",
+          linolenic_g_per_100g: "0.137",
+          oil_equivalent_mg: 593.6184
+        },
+        fdc_id: "175200",
+        grams: 171,
+        id: "pinto-beans-cooked",
+        name: "Pinto beans, cooked",
+        nutrients: [
+          {
+            amount: 60.363,
+            fraction: 0.6036,
+            nutrient_id: "1180",
+            per_100g: "35.3",
+            provenance: {
+              join: "fdc:175200/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3745,
+            fraction: 0.1208,
+            nutrient_id: "1098",
+            per_100g: "0.219",
+            provenance: {
+              join: "fdc:175200/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.5739,
+            fraction: 0.0777,
+            nutrient_id: "1089",
+            per_100g: "2.09",
+            provenance: {
+              join: "fdc:175200/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 85.5,
+            fraction: 0.111,
+            nutrient_id: "1090",
+            per_100g: "50",
+            provenance: {
+              join: "fdc:175200/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.7746,
+            fraction: 0.1006,
+            nutrient_id: "1101",
+            per_100g: "0.453",
+            provenance: {
+              join: "fdc:175200/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 745.56,
+            fraction: 0.1491,
+            nutrient_id: "1092",
+            per_100g: "436",
+            provenance: {
+              join: "fdc:175200/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 294.12,
+            fraction: 0.2941,
+            nutrient_id: "1177",
+            per_100g: "172",
+            provenance: {
+              join: "fdc:175200/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95832",
+        portion_label: "1 cup",
+        strength: 1.4569,
+        usda_description: "Beans, pinto, mature seeds, cooked, boiled, without salt"
+      },
+      {
+        breadth: 2,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 3781.0395,
+          linoleic_g_per_100g: "13.125",
+          linolenic_g_per_100g: "0.212",
+          oil_equivalent_mg: 5585.4044
+        },
+        fdc_id: "169426",
+        grams: 28.35,
+        id: "pistachios-dry-roasted",
+        name: "Pistachios, dry roasted",
+        nutrients: [
+          {
+            amount: 20.2419,
+            fraction: 0.2024,
+            nutrient_id: "1180",
+            per_100g: "71.4",
+            provenance: {
+              join: "fdc:169426/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3666,
+            fraction: 0.1182,
+            nutrient_id: "1098",
+            per_100g: "1.293",
+            provenance: {
+              join: "fdc:169426/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "84844",
+        portion_label: "1 oz (49 kernels)",
+        strength: 0.3206,
+        usda_description: "Nuts, pistachio nuts, dry roasted, with salt added"
+      },
+      {
+        breadth: 4,
+        category: "Fruits",
+        fdc_id: "169131",
+        grams: 139,
+        id: "plantain-baked",
+        name: "Plantain, baked",
+        nutrients: [
+          {
+            amount: 17.653,
+            fraction: 0.1765,
+            nutrient_id: "1180",
+            per_100g: "12.7",
+            provenance: {
+              join: "fdc:169131/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 56.99,
+            fraction: 0.074,
+            nutrient_id: "1090",
+            per_100g: "41",
+            provenance: {
+              join: "fdc:169131/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 663.03,
+            fraction: 0.1326,
+            nutrient_id: "1092",
+            per_100g: "477",
+            provenance: {
+              join: "fdc:169131/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 73.67,
+            fraction: 0.0737,
+            nutrient_id: "1177",
+            per_100g: "53",
+            provenance: {
+              join: "fdc:169131/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84304",
+        portion_label: "1 cup",
+        strength: 0.4568,
+        usda_description: "Plantains, yellow, baked"
+      },
+      {
+        breadth: 2,
+        category: "Spices & herbs",
+        efa: {
+          acid_mg: 2513.984,
+          linoleic_g_per_100g: "28.295",
+          linolenic_g_per_100g: "0.273",
+          oil_equivalent_mg: 3713.6923
+        },
+        fdc_id: "171330",
+        grams: 8.8,
+        id: "poppy-seeds",
+        name: "Poppy seeds",
+        nutrients: [
+          {
+            amount: 126.544,
+            fraction: 0.0844,
+            nutrient_id: "1087",
+            per_100g: "1438",
+            provenance: {
+              join: "fdc:171330/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.5902,
+            fraction: 0.0767,
+            nutrient_id: "1101",
+            per_100g: "6.707",
+            provenance: {
+              join: "fdc:171330/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "88450",
+        portion_label: "1 tbsp",
+        strength: 0.1611,
+        usda_description: "Spices, poppy seed"
+      },
+      {
+        breadth: 7,
+        category: "Pork",
+        efa: {
+          acid_mg: 391,
+          linoleic_g_per_100g: "0.42",
+          linolenic_g_per_100g: "0.04",
+          oil_equivalent_mg: 577.5907
+        },
+        fdc_id: "167863",
+        grams: 85,
+        id: "pork-liver",
+        name: "Pork liver",
+        nutrients: [
+          {
+            amount: 0.5389,
+            fraction: 0.1738,
+            nutrient_id: "1098",
+            per_100g: "0.634",
+            provenance: {
+              join: "fdc:167863/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 15.232,
+            fraction: 0.3311,
+            nutrient_id: "1089",
+            per_100g: "17.92",
+            provenance: {
+              join: "fdc:167863/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 57.375,
+            fraction: 0.1851,
+            nutrient_id: "1103",
+            per_100g: "67.5",
+            provenance: {
+              join: "fdc:167863/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 4594.25,
+            fraction: 0.5105,
+            nutrient_id: "1106",
+            per_100g: "5405",
+            provenance: {
+              join: "fdc:167863/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 7.1698,
+            fraction: 0.0717,
+            nutrient_id: "1167",
+            per_100g: "8.435",
+            provenance: {
+              join: "fdc:167863/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 138.55,
+            fraction: 0.1386,
+            nutrient_id: "1177",
+            per_100g: "163",
+            provenance: {
+              join: "fdc:167863/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 5.712,
+            fraction: 0.1242,
+            nutrient_id: "1095",
+            per_100g: "6.72",
+            provenance: {
+              join: "fdc:167863/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "82113",
+        portion_label: "3 oz",
+        strength: 1.535,
+        usda_description: "Pork, fresh, variety meats and by-products, liver, cooked, braised"
+      },
+      {
+        breadth: 3,
+        category: "Pork",
+        efa: {
+          acid_mg: 2198.95,
+          linoleic_g_per_100g: "2.471",
+          linolenic_g_per_100g: "0.116",
+          oil_equivalent_mg: 3248.3197
+        },
+        fdc_id: "168377",
+        grams: 85,
+        id: "pork-ribs",
+        name: "Pork ribs",
+        nutrients: [
+          {
+            amount: 70.55,
+            fraction: 0.7055,
+            nutrient_id: "1180",
+            per_100g: "83",
+            provenance: {
+              join: "fdc:168377/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 28.645,
+            fraction: 0.0924,
+            nutrient_id: "1103",
+            per_100g: "33.7",
+            provenance: {
+              join: "fdc:168377/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 210.8,
+            fraction: 0.4216,
+            per_100g: "248",
+            provenance: {
+              combine: "first",
+              conservative: true,
+              join: "name:Pork, spare ribs, untrimmed, baked, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Ribs in both, roasted/baked in both. Ours is lean only and AFCD's is untrimmed; fat carries almost no sulphur, so the untrimmed figure is the floor for a lean rib."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          }
+        ],
+        portion_id: "82988",
+        portion_label: "3 oz",
+        strength: 1.2195,
+        usda_description: "Pork loin, fresh, backribs, bone-in, cooked-roasted, lean only"
+      },
+      {
+        breadth: 3,
+        category: "Pork",
+        efa: {
+          acid_mg: 1606.5,
+          linoleic_g_per_100g: "1.82",
+          linolenic_g_per_100g: "0.07",
+          oil_equivalent_mg: 2373.1442
+        },
+        fdc_id: "167844",
+        grams: 85,
+        id: "pork-shoulder-roasted",
+        name: "Pork shoulder, roasted",
+        nutrients: [
+          {
+            amount: 68,
+            fraction: 0.68,
+            nutrient_id: "1180",
+            per_100g: "80",
+            provenance: {
+              join: "fdc:167844/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 28.39,
+            fraction: 0.0916,
+            nutrient_id: "1103",
+            per_100g: "33.4",
+            provenance: {
+              join: "fdc:167844/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 204.85,
+            fraction: 0.4097,
+            per_100g: "241",
+            provenance: {
+              combine: "first",
+              join: "name:Pork, forequarter shoulder roast, untrimmed, BBQ'd, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Shoulder roast in both, cooked in both, and UNTRIMMED \u2014 which is what our USDA row's 'separable lean and fat' means. AFCD's lean row reads higher and is not borrowed."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          }
+        ],
+        portion_id: "82078",
+        portion_label: "3 oz",
+        strength: 1.1813,
+        usda_description: "Pork, fresh, shoulder, whole, separable lean and fat, cooked, roasted"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 280.72,
+          conjugated_linoleic_g_per_100g: "0",
+          linoleic_g_per_100g: "0.232",
+          linolenic_g_per_100g: "0",
+          oil_equivalent_mg: 414.6835
+        },
+        fdc_id: "169243",
+        grams: 121,
+        id: "portabella-mushrooms-grilled",
+        name: "Portabella mushrooms, grilled",
+        nutrients: [
+          {
+            amount: 39.688,
+            fraction: 0.3969,
+            nutrient_id: "1180",
+            per_100g: "32.8",
+            provenance: {
+              join: "fdc:169243/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4707,
+            fraction: 0.1518,
+            nutrient_id: "1098",
+            per_100g: "0.389",
+            provenance: {
+              join: "fdc:169243/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 528.77,
+            fraction: 0.1058,
+            nutrient_id: "1092",
+            per_100g: "437",
+            provenance: {
+              join: "fdc:169243/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 26.499,
+            fraction: 0.0855,
+            nutrient_id: "1103",
+            per_100g: "21.9",
+            provenance: {
+              join: "fdc:169243/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 7.5685,
+            fraction: 0.0757,
+            nutrient_id: "1167",
+            per_100g: "6.255",
+            provenance: {
+              join: "fdc:169243/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "84501",
+        portion_label: "1 cup sliced",
+        strength: 0.8157,
+        usda_description: "Mushrooms, portabella, grilled"
+      },
+      {
+        breadth: 2,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 82.88,
+          linoleic_g_per_100g: "0.043",
+          linolenic_g_per_100g: "0.013",
+          oil_equivalent_mg: 122.4315
+        },
+        fdc_id: "170093",
+        grams: 148,
+        id: "potato-baked",
+        name: "Potato, baked",
+        nutrients: [
+          {
+            amount: 21.904,
+            fraction: 0.219,
+            nutrient_id: "1180",
+            per_100g: "14.8",
+            provenance: {
+              join: "fdc:170093/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 791.8,
+            fraction: 0.1584,
+            nutrient_id: "1092",
+            per_100g: "535",
+            provenance: {
+              join: "fdc:170093/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86027",
+        portion_label: "1 NLEA serving",
+        strength: 0.3774,
+        usda_description: "Potatoes, baked, flesh and skin, without salt"
+      },
+      {
+        breadth: 2,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 215.32,
+          linoleic_g_per_100g: "0.494",
+          linolenic_g_per_100g: "0.275",
+          oil_equivalent_mg: 318.0737
+        },
+        fdc_id: "170850",
+        grams: 28,
+        id: "provolone",
+        name: "Provolone",
+        nutrients: [
+          {
+            amount: 211.68,
+            fraction: 0.1411,
+            nutrient_id: "1087",
+            per_100g: "756",
+            provenance: {
+              join: "fdc:170850/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 17.92,
+            fraction: 0.0779,
+            per_100g: "64",
+            provenance: {
+              join: "ndb:01035",
+              source_id: "iodine-usda-ods-r4",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          }
+        ],
+        portion_id: "87399",
+        portion_label: "1 slice (1 oz)",
+        strength: 0.219,
+        usda_description: "Cheese, provolone"
+      },
+      {
+        breadth: 5,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 5583.816,
+          conjugated_linoleic_g_per_100g: "0.005",
+          linoleic_g_per_100g: "19.59",
+          linolenic_g_per_100g: "0.111",
+          oil_equivalent_mg: 8248.491
+        },
+        fdc_id: "169415",
+        grams: 28.35,
+        id: "pumpkin-seeds-roasted",
+        name: "Pumpkin seeds, roasted",
+        nutrients: [
+          {
+            amount: 17.8605,
+            fraction: 0.1786,
+            nutrient_id: "1180",
+            per_100g: "63",
+            provenance: {
+              join: "fdc:169415/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3615,
+            fraction: 0.1166,
+            nutrient_id: "1098",
+            per_100g: "1.275",
+            provenance: {
+              join: "fdc:169415/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 155.925,
+            fraction: 0.2025,
+            nutrient_id: "1090",
+            per_100g: "550",
+            provenance: {
+              join: "fdc:169415/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1.2729,
+            fraction: 0.1653,
+            nutrient_id: "1101",
+            per_100g: "4.49",
+            provenance: {
+              join: "fdc:169415/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 51.03,
+            fraction: 1.3429,
+            per_100g: "180",
+            provenance: {
+              conservative: true,
+              join: "name:Seed, pumpkin, hulled & dried",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD measures hulled DRIED pepitas; ours are roasted. Roasting drives off the last of the moisture, so the roasted figure can only be higher \u2014 the dried one is the floor."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          }
+        ],
+        portion_id: "84822",
+        portion_label: "1 oz",
+        strength: 2.0059,
+        usda_description: "Seeds, pumpkin and squash seed kernels, roasted, with salt added"
+      },
+      {
+        breadth: 3,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 1394,
+          linoleic_g_per_100g: "1.3",
+          linolenic_g_per_100g: "0.34",
+          oil_equivalent_mg: 2059.2363
+        },
+        fdc_id: "174346",
+        grams: 85,
+        id: "rabbit-stewed",
+        name: "Rabbit, stewed",
+        nutrients: [
+          {
+            amount: 103.02,
+            fraction: 1.0302,
+            nutrient_id: "1180",
+            per_100g: "121.2",
+            provenance: {
+              join: "fdc:174346/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 32.725,
+            fraction: 0.1056,
+            nutrient_id: "1103",
+            per_100g: "38.5",
+            provenance: {
+              join: "fdc:174346/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 221,
+            fraction: 0.442,
+            per_100g: "260",
+            provenance: {
+              combine: "first",
+              join: "name:Rabbit, flesh, casseroled, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Casseroled IS stewed; flesh only in both."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          }
+        ],
+        portion_id: "94188",
+        portion_label: "3 oz",
+        strength: 1.5778,
+        usda_description: "Game meat, rabbit, domesticated, composite of cuts, cooked, stewed"
+      },
+      {
+        breadth: 2,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 55.68,
+          linoleic_g_per_100g: "0.017",
+          linolenic_g_per_100g: "0.031",
+          oil_equivalent_mg: 82.2513
+        },
+        fdc_id: "169276",
+        grams: 116,
+        id: "radishes-raw",
+        name: "Radishes, raw",
+        nutrients: [
+          {
+            amount: 7.54,
+            fraction: 0.0754,
+            nutrient_id: "1180",
+            per_100g: "6.5",
+            provenance: {
+              join: "fdc:169276/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 74.2284,
+            fraction: 0.0742,
+            per_100g: "63.99",
+            provenance: {
+              combine: "sum",
+              join: "ndb:11429",
+              parts: [
+                {
+                  rows: 19,
+                  source: "flavonoids-usda-r33",
+                  total: "63.99"
+                },
+                {
+                  rows: 5,
+                  source: "proanthocyanidins-usda-r2",
+                  total: "0.00"
+                }
+              ],
+              source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+              tier: "EXACT",
+              value_kind: "sum"
+            },
+            slug: "flavonoids",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "84582",
+        portion_label: "1 cup slices",
+        strength: 0.1496,
+        usda_description: "Radishes, raw"
+      },
+      {
+        breadth: 4,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 567.8,
+          linoleic_g_per_100g: "0.588",
+          linolenic_g_per_100g: "0.08",
+          oil_equivalent_mg: 838.7621
+        },
+        fdc_id: "173718",
+        grams: 85,
+        id: "rainbow-trout-cooked",
+        name: "Rainbow trout, cooked",
+        nutrients: [
+          {
+            amount: 65.96,
+            fraction: 0.6596,
+            nutrient_id: "1180",
+            per_100g: "77.6",
+            provenance: {
+              join: "fdc:173718/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 382.5,
+            fraction: 0.0765,
+            nutrient_id: "1092",
+            per_100g: "450",
+            provenance: {
+              join: "fdc:173718/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 23.885,
+            fraction: 0.077,
+            nutrient_id: "1103",
+            per_100g: "28.1",
+            provenance: {
+              join: "fdc:173718/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 16.15,
+            fraction: 0.323,
+            nutrient_id: "1114",
+            per_100g: "19",
+            provenance: {
+              join: "fdc:173718/nutrient:1114",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-d",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93178",
+        portion_label: "3 oz",
+        strength: 1.1361,
+        usda_description: "Fish, trout, rainbow, farmed, cooked, dry heat"
+      },
+      {
+        breadth: 3,
+        category: "Fruits",
+        efa: {
+          acid_mg: 461.25,
+          linoleic_g_per_100g: "0.249",
+          linolenic_g_per_100g: "0.126",
+          oil_equivalent_mg: 681.3649
+        },
+        fdc_id: "167755",
+        grams: 123,
+        id: "raspberries",
+        name: "Raspberries",
+        nutrients: [
+          {
+            amount: 15.129,
+            fraction: 0.1513,
+            nutrient_id: "1180",
+            per_100g: "12.3",
+            provenance: {
+              join: "fdc:167755/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 101.4996,
+            fraction: 0.1015,
+            per_100g: "82.52",
+            provenance: {
+              combine: "sum",
+              join: "ndb:09302",
+              parts: [
+                {
+                  rows: 20,
+                  source: "flavonoids-usda-r33",
+                  total: "55.57"
+                },
+                {
+                  rows: 5,
+                  source: "proanthocyanidins-usda-r2",
+                  total: "26.95"
+                }
+              ],
+              source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+              tier: "EXACT",
+              value_kind: "sum"
+            },
+            slug: "flavonoids",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 0.8241,
+            fraction: 0.107,
+            nutrient_id: "1101",
+            per_100g: "0.67",
+            provenance: {
+              join: "fdc:167755/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "81905",
+        portion_label: "1 cup",
+        strength: 0.3598,
+        usda_description: "Raspberries, raw"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 255.84,
+          linoleic_g_per_100g: "0.1",
+          linolenic_g_per_100g: "0.056",
+          oil_equivalent_mg: 377.9304
+        },
+        fdc_id: "170108",
+        grams: 164,
+        id: "red-bell-pepper-raw",
+        name: "Red bell pepper, raw",
+        nutrients: [
+          {
+            amount: 9.184,
+            fraction: 0.0918,
+            nutrient_id: "1180",
+            per_100g: "5.6",
+            provenance: {
+              join: "fdc:170108/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 75.44,
+            fraction: 0.0754,
+            nutrient_id: "1177",
+            per_100g: "46",
+            provenance: {
+              join: "fdc:170108/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 209.428,
+            fraction: 0.2094,
+            nutrient_id: "1162",
+            per_100g: "127.7",
+            provenance: {
+              join: "fdc:170108/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86065",
+        portion_label: '1 large (2-1/4 per pound, approx 3-3/4" long, 3" dia.)',
+        strength: 0.3766,
+        usda_description: "Peppers, sweet, red, raw"
+      },
+      {
+        breadth: 2,
+        category: "Beef",
+        efa: {
+          acid_mg: 362.1,
+          linoleic_g_per_100g: "0.346",
+          linolenic_g_per_100g: "0.08",
+          oil_equivalent_mg: 534.8992
+        },
+        fdc_id: "169556",
+        grams: 85,
+        id: "ribeye-steak",
+        name: "Beef ribeye",
+        nutrients: [
+          {
+            amount: 25.585,
+            fraction: 0.0825,
+            nutrient_id: "1103",
+            per_100g: "30.1",
+            provenance: {
+              join: "fdc:169556/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 4.301,
+            fraction: 0.0935,
+            nutrient_id: "1095",
+            per_100g: "5.06",
+            provenance: {
+              join: "fdc:169556/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "85100",
+        portion_label: "3 oz",
+        strength: 0.176,
+        usda_description: 'Beef, rib eye, small end (ribs 10-12), separable lean and fat, trimmed to 0" fat, select, cooked, broiled'
+      },
+      {
+        breadth: 4,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 436.48,
+          conjugated_linoleic_g_per_100g: "0.047",
+          linoleic_g_per_100g: "0.356",
+          linolenic_g_per_100g: "0.043",
+          oil_equivalent_mg: 644.7744
+        },
+        fdc_id: "170851",
+        grams: 124,
+        id: "ricotta",
+        name: "Ricotta",
+        nutrients: [
+          {
+            amount: 255.44,
+            fraction: 0.1703,
+            nutrient_id: "1087",
+            per_100g: "206",
+            provenance: {
+              join: "fdc:170851/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 21.7,
+            fraction: 0.217,
+            nutrient_id: "1180",
+            per_100g: "17.5",
+            provenance: {
+              join: "fdc:170851/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 81.84,
+            fraction: 0.3558,
+            per_100g: "66",
+            provenance: {
+              join: "ndb:01036",
+              source_id: "iodine-usda-ods-r4",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 4.34,
+            fraction: 0.1142,
+            per_100g: "3.5",
+            provenance: {
+              join: "name:Cheese, ricotta",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Same cheese, both as sold."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          }
+        ],
+        portion_id: "87401",
+        portion_label: "0.5 cup",
+        strength: 0.8573,
+        usda_description: "Cheese, ricotta, whole milk"
+      },
+      {
+        breadth: 4,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 51,
+          linoleic_g_per_100g: "0.046",
+          linolenic_g_per_100g: "0.014",
+          oil_equivalent_mg: 75.3379
+        },
+        fdc_id: "175131",
+        grams: 85,
+        id: "rockfish-cooked",
+        name: "Rockfish, cooked",
+        nutrients: [
+          {
+            amount: 66.895,
+            fraction: 0.6689,
+            nutrient_id: "1180",
+            per_100g: "78.7",
+            provenance: {
+              join: "fdc:175131/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 396.95,
+            fraction: 0.0794,
+            nutrient_id: "1092",
+            per_100g: "467",
+            provenance: {
+              join: "fdc:175131/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 64.77,
+            fraction: 0.2089,
+            nutrient_id: "1103",
+            per_100g: "76.2",
+            provenance: {
+              join: "fdc:175131/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 3.91,
+            fraction: 0.0782,
+            nutrient_id: "1114",
+            per_100g: "4.6",
+            provenance: {
+              join: "fdc:175131/nutrient:1114",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-d",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95706",
+        portion_label: "3 oz",
+        strength: 1.0354,
+        usda_description: "Fish, rockfish, Pacific, mixed species, cooked, dry heat"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 136,
+          linoleic_g_per_100g: "0.047",
+          linolenic_g_per_100g: "0.113",
+          oil_equivalent_mg: 200.9011
+        },
+        fdc_id: "169247",
+        grams: 85,
+        id: "romaine-lettuce",
+        name: "Romaine lettuce",
+        nutrients: [
+          {
+            amount: 8.415,
+            fraction: 0.0842,
+            nutrient_id: "1180",
+            per_100g: "9.9",
+            provenance: {
+              join: "fdc:169247/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 115.6,
+            fraction: 0.1156,
+            nutrient_id: "1177",
+            per_100g: "136",
+            provenance: {
+              join: "fdc:169247/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 87.125,
+            fraction: 0.2904,
+            nutrient_id: "1185",
+            per_100g: "102.5",
+            provenance: {
+              join: "fdc:169247/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84510",
+        portion_label: "1 NLEA serving",
+        strength: 0.4902,
+        usda_description: "Lettuce, cos or romaine, raw"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 161.5,
+          linoleic_g_per_100g: "0.038",
+          linolenic_g_per_100g: "0.057",
+          oil_equivalent_mg: 238.5701
+        },
+        fdc_id: "168455",
+        grams: 170,
+        id: "rutabaga-cooked",
+        name: "Rutabaga, cooked",
+        nutrients: [
+          {
+            amount: 25.84,
+            fraction: 0.2584,
+            nutrient_id: "1180",
+            per_100g: "15.2",
+            provenance: {
+              join: "fdc:168455/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 367.2,
+            fraction: 0.0734,
+            nutrient_id: "1092",
+            per_100g: "216",
+            provenance: {
+              join: "fdc:168455/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.689,
+            fraction: 0.0971,
+            per_100g: "2.17",
+            provenance: {
+              join: "name:Swede, fresh, boiled",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Swede IS rutabaga (Brassica napus); both boiled."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "83123",
+        portion_label: "1 cup, cubes",
+        strength: 0.4289,
+        usda_description: "Rutabagas, cooked, boiled, drained, without salt"
+      },
+      {
+        breadth: 3,
+        category: "Spices & herbs",
+        fdc_id: "173468",
+        grams: 6,
+        id: "salt",
+        name: "Salt",
+        nutrients: [
+          {
+            amount: 3672,
+            fraction: 1.4688,
+            per_100g: "61200",
+            provenance: {
+              join: "name:Salt, table, iodised",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD publishes iodised and non-iodised table salt at the identical 61,200 mg chloride per 100 g \u2014 salt IS sodium chloride, so this is a composition fact, not a sample. Iodised is taken because that is what our catalog entry is."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 312.78,
+            fraction: 1.3599,
+            per_100g: "5213",
+            provenance: {
+              join: "ndb:02047",
+              source_id: "iodine-usda-ods-r4",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 2325.48,
+            fraction: 0.7047,
+            nutrient_id: "1093",
+            per_100g: "38758",
+            provenance: {
+              join: "fdc:173468/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "92594",
+        portion_label: "1 tsp",
+        strength: 3.5334,
+        usda_description: "Salt, table"
+      },
+      {
+        breadth: 6,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 318.62,
+          linoleic_g_per_100g: "0.123",
+          linolenic_g_per_100g: "0.235",
+          oil_equivalent_mg: 470.6699
+        },
+        fdc_id: "175140",
+        grams: 89,
+        id: "sardines-canned-with-bones",
+        name: "Sardines, canned with bones",
+        nutrients: [
+          {
+            amount: 213.6,
+            fraction: 0.1424,
+            nutrient_id: "1087",
+            per_100g: "240",
+            provenance: {
+              join: "fdc:175140/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 67.64,
+            fraction: 0.6764,
+            nutrient_id: "1180",
+            per_100g: "76",
+            provenance: {
+              join: "fdc:175140/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2421,
+            fraction: 0.0781,
+            nutrient_id: "1098",
+            per_100g: "0.272",
+            provenance: {
+              join: "fdc:175140/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 36.134,
+            fraction: 0.1166,
+            nutrient_id: "1103",
+            per_100g: "40.6",
+            provenance: {
+              join: "fdc:175140/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 368.46,
+            fraction: 0.1117,
+            nutrient_id: "1093",
+            per_100g: "414",
+            provenance: {
+              join: "fdc:175140/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.272,
+            fraction: 0.0854,
+            nutrient_id: "1114",
+            per_100g: "4.8",
+            provenance: {
+              join: "fdc:175140/nutrient:1114",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-d",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95728",
+        portion_label: "1 cup",
+        strength: 1.2106,
+        usda_description: "Fish, sardine, Pacific, canned in tomato sauce, drained solids with bone"
+      },
+      {
+        breadth: 1,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 74,
+          linoleic_g_per_100g: "0.07",
+          linolenic_g_per_100g: "0.004",
+          oil_equivalent_mg: 109.3138
+        },
+        fdc_id: "170005",
+        grams: 100,
+        id: "scallions-raw",
+        name: "Scallions, raw",
+        nutrients: [
+          {
+            amount: 207,
+            fraction: 0.69,
+            nutrient_id: "1185",
+            per_100g: "207",
+            provenance: {
+              join: "fdc:170005/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "85878",
+        portion_label: "1 cup, chopped",
+        strength: 0.69,
+        usda_description: "Onions, spring or scallions (includes tops and bulb), raw"
+      },
+      {
+        breadth: 2,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 17,
+          linoleic_g_per_100g: "0.014",
+          linolenic_g_per_100g: "0.006",
+          oil_equivalent_mg: 25.1126
+        },
+        fdc_id: "167742",
+        grams: 85,
+        id: "scallops-cooked",
+        name: "Scallops, cooked",
+        nutrients: [
+          {
+            amount: 94.095,
+            fraction: 0.9409,
+            nutrient_id: "1180",
+            per_100g: "110.7",
+            provenance: {
+              join: "fdc:167742/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 566.95,
+            fraction: 0.1718,
+            nutrient_id: "1093",
+            per_100g: "667",
+            provenance: {
+              join: "fdc:167742/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "81878",
+        portion_label: "3 oz",
+        strength: 1.1127,
+        usda_description: "Mollusks, scallop, (bay and sea), cooked, steamed"
+      },
+      {
+        breadth: 6,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 5958.3195,
+          linoleic_g_per_100g: "20.654",
+          linolenic_g_per_100g: "0.363",
+          oil_equivalent_mg: 8801.7128
+        },
+        fdc_id: "170151",
+        grams: 28.35,
+        id: "sesame-seeds-roasted",
+        name: "Sesame seeds, roasted",
+        nutrients: [
+          {
+            amount: 280.3815,
+            fraction: 0.1869,
+            nutrient_id: "1087",
+            per_100g: "989",
+            provenance: {
+              join: "fdc:170151/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.7002,
+            fraction: 0.2259,
+            nutrient_id: "1098",
+            per_100g: "2.47",
+            provenance: {
+              join: "fdc:170151/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.1845,
+            fraction: 0.091,
+            nutrient_id: "1089",
+            per_100g: "14.76",
+            provenance: {
+              join: "fdc:170151/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 100.926,
+            fraction: 0.1311,
+            nutrient_id: "1090",
+            per_100g: "356",
+            provenance: {
+              join: "fdc:170151/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.7076,
+            fraction: 0.0919,
+            nutrient_id: "1101",
+            per_100g: "2.496",
+            provenance: {
+              join: "fdc:170151/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 59.535,
+            fraction: 0.1191,
+            per_100g: "210",
+            provenance: {
+              combine: "first",
+              join: "name:Seed, sesame, unsalted",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD does not state a roast; sesame seed is sesame seed, and roasting drives off a little water, so if anything this reads low."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "86137",
+        portion_label: "1 oz",
+        strength: 0.8459,
+        usda_description: "Seeds, sesame seeds, whole, roasted and toasted"
+      },
+      {
+        breadth: 4,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 49.3,
+          linoleic_g_per_100g: "0.031",
+          linolenic_g_per_100g: "0.003",
+          oil_equivalent_mg: 72.8266
+        },
+        fdc_id: "170097",
+        grams: 145,
+        id: "shiitake-mushrooms-cooked",
+        name: "Shiitake mushrooms, cooked",
+        nutrients: [
+          {
+            amount: 116,
+            fraction: 1.16,
+            nutrient_id: "1180",
+            per_100g: "80",
+            provenance: {
+              join: "fdc:170097/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1.2992,
+            fraction: 0.4191,
+            nutrient_id: "1098",
+            per_100g: "0.896",
+            provenance: {
+              join: "fdc:170097/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 35.96,
+            fraction: 0.116,
+            nutrient_id: "1103",
+            per_100g: "24.8",
+            provenance: {
+              join: "fdc:170097/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 348,
+            fraction: 0.1055,
+            nutrient_id: "1093",
+            per_100g: "240",
+            provenance: {
+              join: "fdc:170097/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86035",
+        portion_label: "1 cup pieces",
+        strength: 1.8006,
+        usda_description: "Mushrooms, shiitake, cooked, with salt"
+      },
+      {
+        breadth: 1,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 16.15,
+          conjugated_linoleic_g_per_100g: "0",
+          linoleic_g_per_100g: "0.018",
+          linolenic_g_per_100g: "0.001",
+          oil_equivalent_mg: 23.857
+        },
+        fdc_id: "175180",
+        grams: 85,
+        id: "shrimp-cooked",
+        name: "Shrimp, cooked",
+        nutrients: [
+          {
+            amount: 0.3221,
+            fraction: 0.1039,
+            nutrient_id: "1098",
+            per_100g: "0.379",
+            provenance: {
+              join: "fdc:175180/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "95807",
+        portion_label: "3 oz",
+        strength: 0.1039,
+        usda_description: "Crustaceans, shrimp, cooked"
+      },
+      {
+        breadth: 3,
+        category: "Beef",
+        efa: {
+          acid_mg: 420.75,
+          linoleic_g_per_100g: "0.368",
+          linolenic_g_per_100g: "0.127",
+          oil_equivalent_mg: 621.5378
+        },
+        fdc_id: "168727",
+        grams: 85,
+        id: "sirloin-steak",
+        name: "Sirloin steak",
+        nutrients: [
+          {
+            amount: 87.295,
+            fraction: 0.873,
+            nutrient_id: "1180",
+            per_100g: "102.7",
+            provenance: {
+              join: "fdc:168727/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 24.82,
+            fraction: 0.0801,
+            nutrient_id: "1103",
+            per_100g: "29.2",
+            provenance: {
+              join: "fdc:168727/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 4.1395,
+            fraction: 0.09,
+            nutrient_id: "1095",
+            per_100g: "4.87",
+            provenance: {
+              join: "fdc:168727/nutrient:1095",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "zinc",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83655",
+        portion_label: "3 oz",
+        strength: 1.0431,
+        usda_description: 'Beef, top sirloin, steak, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, broiled'
+      },
+      {
+        breadth: 6,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 160,
+          linoleic_g_per_100g: "0.085",
+          linolenic_g_per_100g: "0.015",
+          oil_equivalent_mg: 236.3542
+        },
+        fdc_id: "170509",
+        grams: 160,
+        id: "snow-peas-cooked",
+        name: "Snow peas, cooked",
+        nutrients: [
+          {
+            amount: 27.84,
+            fraction: 0.2784,
+            nutrient_id: "1180",
+            per_100g: "17.4",
+            provenance: {
+              join: "fdc:170509/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 60.16,
+            fraction: 1.5832,
+            per_100g: "37.6",
+            provenance: {
+              join: "name:Snow pea, fresh, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled and drained."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 384,
+            fraction: 0.0768,
+            nutrient_id: "1092",
+            per_100g: "240",
+            provenance: {
+              join: "fdc:170509/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 384,
+            fraction: 0.1164,
+            nutrient_id: "1093",
+            per_100g: "240",
+            provenance: {
+              join: "fdc:170509/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 76.64,
+            fraction: 0.0766,
+            nutrient_id: "1162",
+            per_100g: "47.9",
+            provenance: {
+              join: "fdc:170509/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 40,
+            fraction: 0.1333,
+            nutrient_id: "1185",
+            per_100g: "25",
+            provenance: {
+              join: "fdc:170509/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86780",
+        portion_label: "1 cup",
+        strength: 2.2647,
+        usda_description: "Peas, edible-podded, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 5,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 210.8,
+          linoleic_g_per_100g: "0.19",
+          linolenic_g_per_100g: "0.058",
+          oil_equivalent_mg: 311.3967
+        },
+        fdc_id: "173692",
+        grams: 85,
+        id: "sockeye-salmon-cooked",
+        name: "Sockeye salmon, cooked",
+        nutrients: [
+          {
+            amount: 95.71,
+            fraction: 0.9571,
+            nutrient_id: "1180",
+            per_100g: "112.6",
+            provenance: {
+              join: "fdc:173692/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 370.6,
+            fraction: 0.0741,
+            nutrient_id: "1092",
+            per_100g: "436",
+            provenance: {
+              join: "fdc:173692/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 30.175,
+            fraction: 0.0973,
+            nutrient_id: "1103",
+            per_100g: "35.5",
+            provenance: {
+              join: "fdc:173692/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 8.6045,
+            fraction: 0.086,
+            nutrient_id: "1167",
+            per_100g: "10.123",
+            provenance: {
+              join: "fdc:173692/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 14.195,
+            fraction: 0.2839,
+            nutrient_id: "1114",
+            per_100g: "16.7",
+            provenance: {
+              join: "fdc:173692/nutrient:1114",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-d",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93121",
+        portion_label: "3 oz",
+        strength: 1.4984,
+        usda_description: "Fish, salmon, sockeye, cooked, dry heat"
+      },
+      {
+        breadth: 9,
+        category: "Legumes",
+        efa: {
+          acid_mg: 8708.36,
+          linoleic_g_per_100g: "4.465",
+          linolenic_g_per_100g: "0.598",
+          oil_equivalent_mg: 12864.1111
+        },
+        fdc_id: "174271",
+        grams: 172,
+        id: "soybeans-cooked",
+        name: "Soybeans, cooked",
+        nutrients: [
+          {
+            amount: 175.44,
+            fraction: 0.117,
+            nutrient_id: "1087",
+            per_100g: "102",
+            provenance: {
+              join: "fdc:174271/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 81.7,
+            fraction: 0.817,
+            nutrient_id: "1180",
+            per_100g: "47.5",
+            provenance: {
+              join: "fdc:174271/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.7,
+            fraction: 0.2258,
+            nutrient_id: "1098",
+            per_100g: "0.407",
+            provenance: {
+              join: "fdc:174271/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 8.8408,
+            fraction: 0.1922,
+            nutrient_id: "1089",
+            per_100g: "5.14",
+            provenance: {
+              join: "fdc:174271/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 147.92,
+            fraction: 0.1921,
+            nutrient_id: "1090",
+            per_100g: "86",
+            provenance: {
+              join: "fdc:174271/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1.4173,
+            fraction: 0.1841,
+            nutrient_id: "1101",
+            per_100g: "0.824",
+            provenance: {
+              join: "fdc:174271/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 885.8,
+            fraction: 0.1772,
+            nutrient_id: "1092",
+            per_100g: "515",
+            provenance: {
+              join: "fdc:174271/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 92.88,
+            fraction: 0.0929,
+            nutrient_id: "1177",
+            per_100g: "54",
+            provenance: {
+              join: "fdc:174271/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 33.024,
+            fraction: 0.1101,
+            nutrient_id: "1185",
+            per_100g: "19.2",
+            provenance: {
+              join: "fdc:174271/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "94059",
+        portion_label: "1 cup",
+        strength: 2.1084,
+        usda_description: "Soybeans, mature cooked, boiled, without salt"
+      },
+      {
+        breadth: 2,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 193.75,
+          linoleic_g_per_100g: "0.047",
+          linolenic_g_per_100g: "0.078",
+          oil_equivalent_mg: 286.2102
+        },
+        fdc_id: "170539",
+        grams: 155,
+        id: "spaghetti-squash-cooked",
+        name: "Spaghetti squash, cooked",
+        nutrients: [
+          {
+            amount: 11.625,
+            fraction: 0.1163,
+            nutrient_id: "1180",
+            per_100g: "7.5",
+            provenance: {
+              join: "fdc:170539/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 393.7,
+            fraction: 0.1193,
+            nutrient_id: "1093",
+            per_100g: "254",
+            provenance: {
+              join: "fdc:170539/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86821",
+        portion_label: "1 cup",
+        strength: 0.2356,
+        usda_description: "Squash, winter, spaghetti, cooked, boiled, drained, or baked, with salt"
+      },
+      {
+        breadth: 13,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 196.2,
+          linoleic_g_per_100g: "0.017",
+          linolenic_g_per_100g: "0.092",
+          oil_equivalent_mg: 289.8294
+        },
+        fdc_id: "170531",
+        grams: 180,
+        id: "spinach-cooked",
+        name: "Spinach, cooked",
+        nutrients: [
+          {
+            amount: 244.8,
+            fraction: 0.1632,
+            nutrient_id: "1087",
+            per_100g: "136",
+            provenance: {
+              join: "fdc:170531/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 360,
+            fraction: 0.144,
+            per_100g: "200",
+            provenance: {
+              join: "name:Spinach, Mature English, fresh, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled and drained. AFCD's BABY spinach row is raw and is not borrowed."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 35.46,
+            fraction: 0.3546,
+            nutrient_id: "1180",
+            per_100g: "19.7",
+            provenance: {
+              join: "fdc:170531/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3132,
+            fraction: 0.101,
+            nutrient_id: "1098",
+            per_100g: "0.174",
+            provenance: {
+              join: "fdc:170531/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 6.426,
+            fraction: 0.1397,
+            nutrient_id: "1089",
+            per_100g: "3.57",
+            provenance: {
+              join: "fdc:170531/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 156.6,
+            fraction: 0.2034,
+            nutrient_id: "1090",
+            per_100g: "87",
+            provenance: {
+              join: "fdc:170531/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1.683,
+            fraction: 0.2186,
+            nutrient_id: "1101",
+            per_100g: "0.935",
+            provenance: {
+              join: "fdc:170531/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 838.8,
+            fraction: 0.1678,
+            nutrient_id: "1092",
+            per_100g: "466",
+            provenance: {
+              join: "fdc:170531/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 9.216,
+            fraction: 0.2425,
+            per_100g: "5.12",
+            provenance: {
+              join: "name:Spinach, fresh, boiled",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Same vegetable, both boiled."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 550.8,
+            fraction: 0.1669,
+            nutrient_id: "1093",
+            per_100g: "306",
+            provenance: {
+              join: "fdc:170531/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 943.2,
+            fraction: 0.1048,
+            nutrient_id: "1106",
+            per_100g: "524",
+            provenance: {
+              join: "fdc:170531/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 262.8,
+            fraction: 0.2628,
+            nutrient_id: "1177",
+            per_100g: "146",
+            provenance: {
+              join: "fdc:170531/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 888.48,
+            fraction: 2.9616,
+            nutrient_id: "1185",
+            per_100g: "493.6",
+            provenance: {
+              join: "fdc:170531/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86811",
+        portion_label: "1 cup",
+        strength: 5.2309,
+        usda_description: "Spinach, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 8,
+        category: "Legumes",
+        efa: {
+          acid_mg: 323.4,
+          linoleic_g_per_100g: "0.137",
+          linolenic_g_per_100g: "0.028",
+          oil_equivalent_mg: 477.731
+        },
+        fdc_id: "175257",
+        grams: 196,
+        id: "split-peas-cooked",
+        name: "Split peas, cooked",
+        nutrients: [
+          {
+            amount: 64.288,
+            fraction: 0.6429,
+            nutrient_id: "1180",
+            per_100g: "32.8",
+            provenance: {
+              join: "fdc:175257/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3548,
+            fraction: 0.1144,
+            nutrient_id: "1098",
+            per_100g: "0.181",
+            provenance: {
+              join: "fdc:175257/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 70.56,
+            fraction: 0.0916,
+            nutrient_id: "1090",
+            per_100g: "36",
+            provenance: {
+              join: "fdc:175257/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.7762,
+            fraction: 0.1008,
+            nutrient_id: "1101",
+            per_100g: "0.396",
+            provenance: {
+              join: "fdc:175257/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 709.52,
+            fraction: 0.1419,
+            nutrient_id: "1092",
+            per_100g: "362",
+            provenance: {
+              join: "fdc:175257/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 466.48,
+            fraction: 0.1414,
+            nutrient_id: "1093",
+            per_100g: "238",
+            provenance: {
+              join: "fdc:175257/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 72.52,
+            fraction: 0.145,
+            per_100g: "37",
+            provenance: {
+              combine: "first",
+              join: "name:Pea, split, dried, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both boiled from dry."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 127.4,
+            fraction: 0.1274,
+            nutrient_id: "1177",
+            per_100g: "65",
+            provenance: {
+              join: "fdc:175257/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95902",
+        portion_label: "1 cup",
+        strength: 1.5054,
+        usda_description: "Peas, split, mature seeds, cooked, boiled, with salt"
+      },
+      {
+        breadth: 4,
+        category: "Fruits",
+        efa: {
+          acid_mg: 227.85,
+          linoleic_g_per_100g: "0.09",
+          linolenic_g_per_100g: "0.065",
+          oil_equivalent_mg: 336.5832
+        },
+        fdc_id: "167762",
+        grams: 147,
+        id: "strawberries",
+        name: "Strawberries",
+        nutrients: [
+          {
+            amount: 8.379,
+            fraction: 0.0838,
+            nutrient_id: "1180",
+            per_100g: "5.7",
+            provenance: {
+              join: "fdc:167762/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 162.5967,
+            fraction: 0.1626,
+            per_100g: "110.61",
+            provenance: {
+              combine: "sum",
+              join: "ndb:09316",
+              parts: [
+                {
+                  rows: 16,
+                  source: "flavonoids-usda-r33",
+                  total: "5.38"
+                },
+                {
+                  rows: 5,
+                  source: "proanthocyanidins-usda-r2",
+                  total: "105.23"
+                }
+              ],
+              source_id: "flavonoid-usda-r33+proanthocyanidin-r2",
+              tier: "EXACT",
+              value_kind: "sum"
+            },
+            slug: "flavonoids",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 0.5674,
+            fraction: 0.0737,
+            nutrient_id: "1101",
+            per_100g: "0.386",
+            provenance: {
+              join: "fdc:167762/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 86.436,
+            fraction: 0.0864,
+            nutrient_id: "1162",
+            per_100g: "58.8",
+            provenance: {
+              join: "fdc:167762/nutrient:1162",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-c",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "81928",
+        portion_label: "1 NLEA serving",
+        strength: 0.4065,
+        usda_description: "Strawberries, raw"
+      },
+      {
+        breadth: 2,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 235.8,
+          linoleic_g_per_100g: "0.049",
+          linolenic_g_per_100g: "0.082",
+          oil_equivalent_mg: 348.3271
+        },
+        fdc_id: "170125",
+        grams: 180,
+        id: "summer-squash-cooked",
+        name: "Summer squash, cooked",
+        nutrients: [
+          {
+            amount: 14.22,
+            fraction: 0.1422,
+            nutrient_id: "1180",
+            per_100g: "7.9",
+            provenance: {
+              join: "fdc:170125/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 426.6,
+            fraction: 0.1293,
+            nutrient_id: "1093",
+            per_100g: "237",
+            provenance: {
+              join: "fdc:170125/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86096",
+        portion_label: "1 cup slices",
+        strength: 0.2715,
+        usda_description: "Squash, summer, all varieties, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 7,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 9313.2585,
+          linoleic_g_per_100g: "32.782",
+          linolenic_g_per_100g: "0.069",
+          oil_equivalent_mg: 13757.6756
+        },
+        fdc_id: "169417",
+        grams: 28.35,
+        id: "sunflower-seeds-dry-roasted",
+        name: "Sunflower seeds, dry roasted",
+        nutrients: [
+          {
+            amount: 15.6209,
+            fraction: 0.1562,
+            nutrient_id: "1180",
+            per_100g: "55.1",
+            provenance: {
+              join: "fdc:169417/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.5188,
+            fraction: 0.1674,
+            nutrient_id: "1098",
+            per_100g: "1.83",
+            provenance: {
+              join: "fdc:169417/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.5982,
+            fraction: 0.0777,
+            nutrient_id: "1101",
+            per_100g: "2.11",
+            provenance: {
+              join: "fdc:169417/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 10.773,
+            fraction: 0.2835,
+            per_100g: "38",
+            provenance: {
+              join: "name:Seed, sunflower",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD does not state a roast. Same as sesame: roasting can only concentrate, so this reads low if it is wrong at all."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 22.4815,
+            fraction: 0.0725,
+            nutrient_id: "1103",
+            per_100g: "79.3",
+            provenance: {
+              join: "fdc:169417/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 1703.268,
+            fraction: 0.5161,
+            nutrient_id: "1093",
+            per_100g: "6008",
+            provenance: {
+              join: "fdc:169417/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 56.7,
+            fraction: 0.1134,
+            per_100g: "200",
+            provenance: {
+              combine: "first",
+              join: "name:Seed, sunflower",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD does not state a roast. Same as sesame: roasting can only concentrate, so this reads low if it is wrong at all."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "84826",
+        portion_label: "1 oz",
+        strength: 1.3868,
+        usda_description: "Seeds, sunflower seed kernels from shell, dry roasted, with salt added"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 948.28,
+          linoleic_g_per_100g: "0.586",
+          linolenic_g_per_100g: "0.018",
+          oil_equivalent_mg: 1400.8125
+        },
+        fdc_id: "168540",
+        grams: 157,
+        id: "sweet-corn-cooked",
+        name: "White corn on the cob",
+        nutrients: [
+          {
+            amount: 45.687,
+            fraction: 0.4569,
+            nutrient_id: "1180",
+            per_100g: "29.1",
+            provenance: {
+              join: "fdc:168540/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 395.64,
+            fraction: 0.0791,
+            nutrient_id: "1092",
+            per_100g: "252",
+            provenance: {
+              join: "fdc:168540/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 397.21,
+            fraction: 0.1204,
+            nutrient_id: "1093",
+            per_100g: "253",
+            provenance: {
+              join: "fdc:168540/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83275",
+        portion_label: "1 cup cut",
+        strength: 0.6564,
+        usda_description: "Corn, sweet, white, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 6,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 192,
+          linoleic_g_per_100g: "0.09",
+          linolenic_g_per_100g: "0.006",
+          oil_equivalent_mg: 283.6251
+        },
+        fdc_id: "168483",
+        grams: 200,
+        id: "sweet-potato-baked",
+        name: "Sweet potato, baked",
+        nutrients: [
+          {
+            amount: 26.2,
+            fraction: 0.262,
+            nutrient_id: "1180",
+            per_100g: "13.1",
+            provenance: {
+              join: "fdc:168483/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.322,
+            fraction: 0.1039,
+            nutrient_id: "1098",
+            per_100g: "0.161",
+            provenance: {
+              join: "fdc:168483/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 54,
+            fraction: 0.0701,
+            nutrient_id: "1090",
+            per_100g: "27",
+            provenance: {
+              join: "fdc:168483/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.994,
+            fraction: 0.1291,
+            nutrient_id: "1101",
+            per_100g: "0.497",
+            provenance: {
+              join: "fdc:168483/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 950,
+            fraction: 0.19,
+            nutrient_id: "1092",
+            per_100g: "475",
+            provenance: {
+              join: "fdc:168483/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1922,
+            fraction: 0.2136,
+            nutrient_id: "1106",
+            per_100g: "961",
+            provenance: {
+              join: "fdc:168483/nutrient:1106",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-a",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "83168",
+        portion_label: "1 cup",
+        strength: 0.9687,
+        usda_description: "Sweet potato, cooked, baked in skin, flesh, without salt"
+      },
+      {
+        breadth: 10,
+        category: "Vegetables",
+        fdc_id: "169343",
+        grams: 175,
+        id: "swiss-chard-cooked",
+        name: "Swiss chard, cooked",
+        nutrients: [
+          {
+            amount: 535.5,
+            fraction: 0.2142,
+            per_100g: "306",
+            provenance: {
+              join: "name:Silverbeet, fresh, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Silverbeet IS Swiss chard; both boiled and drained."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 50.225,
+            fraction: 0.5022,
+            nutrient_id: "1180",
+            per_100g: "28.7",
+            provenance: {
+              join: "fdc:169343/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2853,
+            fraction: 0.092,
+            nutrient_id: "1098",
+            per_100g: "0.163",
+            provenance: {
+              join: "fdc:169343/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.955,
+            fraction: 0.086,
+            nutrient_id: "1089",
+            per_100g: "2.26",
+            provenance: {
+              join: "fdc:169343/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 150.5,
+            fraction: 0.1955,
+            nutrient_id: "1090",
+            per_100g: "86",
+            provenance: {
+              join: "fdc:169343/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.5845,
+            fraction: 0.0759,
+            nutrient_id: "1101",
+            per_100g: "0.334",
+            provenance: {
+              join: "fdc:169343/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 14.875,
+            fraction: 0.3914,
+            per_100g: "8.5",
+            provenance: {
+              join: "name:Silverbeet, fresh, boiled, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Silverbeet IS Swiss chard; both boiled and drained."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 960.75,
+            fraction: 0.1921,
+            nutrient_id: "1092",
+            per_100g: "549",
+            provenance: {
+              join: "fdc:169343/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 726.25,
+            fraction: 0.2201,
+            nutrient_id: "1093",
+            per_100g: "415",
+            provenance: {
+              join: "fdc:169343/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 572.775,
+            fraction: 1.9093,
+            nutrient_id: "1185",
+            per_100g: "327.3",
+            provenance: {
+              join: "fdc:169343/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "84679",
+        portion_label: "1 cup, chopped",
+        strength: 3.8787,
+        usda_description: "Chard, swiss, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 2,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 295.12,
+          conjugated_linoleic_g_per_100g: "0.161",
+          linoleic_g_per_100g: "1.086",
+          linolenic_g_per_100g: "0.129",
+          oil_equivalent_mg: 435.9554
+        },
+        fdc_id: "171251",
+        grams: 28,
+        id: "swiss-cheese",
+        name: "Swiss cheese",
+        nutrients: [
+          {
+            amount: 249.2,
+            fraction: 0.1661,
+            nutrient_id: "1087",
+            per_100g: "890",
+            provenance: {
+              join: "fdc:171251/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 38.36,
+            fraction: 0.1668,
+            per_100g: "137",
+            provenance: {
+              join: "ndb:01040",
+              source_id: "iodine-usda-ods-r4",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          }
+        ],
+        portion_id: "88276",
+        portion_label: "1 slice (1 oz)",
+        strength: 0.3329,
+        usda_description: "Cheese, swiss"
+      },
+      {
+        breadth: 5,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 103.7,
+          linoleic_g_per_100g: "0.088",
+          linolenic_g_per_100g: "0.034",
+          oil_equivalent_mg: 153.1871
+        },
+        fdc_id: "173704",
+        grams: 85,
+        id: "swordfish-cooked",
+        name: "Swordfish, cooked",
+        nutrients: [
+          {
+            amount: 65.875,
+            fraction: 0.6587,
+            nutrient_id: "1180",
+            per_100g: "77.5",
+            provenance: {
+              join: "fdc:173704/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 424.15,
+            fraction: 0.0848,
+            nutrient_id: "1092",
+            per_100g: "499",
+            provenance: {
+              join: "fdc:173704/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 58.225,
+            fraction: 0.1878,
+            nutrient_id: "1103",
+            per_100g: "68.5",
+            provenance: {
+              join: "fdc:173704/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 7.8659,
+            fraction: 0.0787,
+            nutrient_id: "1167",
+            per_100g: "9.254",
+            provenance: {
+              join: "fdc:173704/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 14.11,
+            fraction: 0.2822,
+            nutrient_id: "1114",
+            per_100g: "16.6",
+            provenance: {
+              join: "fdc:173704/nutrient:1114",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-d",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "93143",
+        portion_label: "3 oz",
+        strength: 1.2922,
+        usda_description: "Fish, swordfish, cooked, dry heat"
+      },
+      {
+        breadth: 4,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 6673.59,
+          linoleic_g_per_100g: "23.133",
+          linolenic_g_per_100g: "0.407",
+          oil_equivalent_mg: 9858.3204
+        },
+        fdc_id: "170189",
+        grams: 28.35,
+        id: "tahini",
+        name: "Tahini",
+        nutrients: [
+          {
+            amount: 120.771,
+            fraction: 0.0805,
+            nutrient_id: "1087",
+            per_100g: "426",
+            provenance: {
+              join: "fdc:170189/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 7.3143,
+            fraction: 0.0731,
+            nutrient_id: "1180",
+            per_100g: "25.8",
+            provenance: {
+              join: "fdc:170189/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4564,
+            fraction: 0.1472,
+            nutrient_id: "1098",
+            per_100g: "1.61",
+            provenance: {
+              join: "fdc:170189/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 56.7,
+            fraction: 0.1134,
+            per_100g: "200",
+            provenance: {
+              combine: "first",
+              join: "name:Tahini, sesame seed pulp",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Same product."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "86210",
+        portion_label: "1 oz",
+        strength: 0.4142,
+        usda_description: "Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)"
+      },
+      {
+        breadth: 2,
+        category: "Fruits",
+        efa: {
+          acid_mg: 79.2,
+          linoleic_g_per_100g: "0.048",
+          linolenic_g_per_100g: "0.018",
+          oil_equivalent_mg: 116.9953
+        },
+        fdc_id: "169105",
+        grams: 120,
+        id: "tangerine",
+        name: "Tangerine",
+        nutrients: [
+          {
+            amount: 12.24,
+            fraction: 0.1224,
+            nutrient_id: "1180",
+            per_100g: "10.2",
+            provenance: {
+              join: "fdc:169105/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.024,
+            fraction: 0.0796,
+            per_100g: "2.52",
+            provenance: {
+              join: "name:Clementines, raw, without skin",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "A clementine is a mandarin cultivar, which is what USDA's tangerine row is; both raw, both peeled."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "84250",
+        portion_label: '1 large (2-3/4" dia)',
+        strength: 0.202,
+        usda_description: "Tangerines, (mandarin oranges), raw"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 60.72,
+          linoleic_g_per_100g: "0.032",
+          linolenic_g_per_100g: "0.014",
+          oil_equivalent_mg: 89.6964
+        },
+        fdc_id: "170543",
+        grams: 132,
+        id: "taro-cooked",
+        name: "Taro, cooked",
+        nutrients: [
+          {
+            amount: 28.116,
+            fraction: 0.2812,
+            nutrient_id: "1180",
+            per_100g: "21.3",
+            provenance: {
+              join: "fdc:170543/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2653,
+            fraction: 0.0856,
+            nutrient_id: "1098",
+            per_100g: "0.201",
+            provenance: {
+              join: "fdc:170543/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.5927,
+            fraction: 0.077,
+            nutrient_id: "1101",
+            per_100g: "0.449",
+            provenance: {
+              join: "fdc:170543/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 638.88,
+            fraction: 0.1278,
+            nutrient_id: "1092",
+            per_100g: "484",
+            provenance: {
+              join: "fdc:170543/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 331.32,
+            fraction: 0.1004,
+            nutrient_id: "1093",
+            per_100g: "251",
+            provenance: {
+              join: "fdc:170543/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86826",
+        portion_label: "1 cup slices",
+        strength: 0.672,
+        usda_description: "Taro, cooked, with salt"
+      },
+      {
+        breadth: 6,
+        category: "Legumes",
+        efa: {
+          acid_mg: 7138,
+          linoleic_g_per_100g: "4.052",
+          linolenic_g_per_100g: "0.248",
+          oil_equivalent_mg: 10544.3533
+        },
+        fdc_id: "174272",
+        grams: 166,
+        id: "tempeh",
+        name: "Tempeh",
+        nutrients: [
+          {
+            amount: 184.26,
+            fraction: 0.1228,
+            nutrient_id: "1087",
+            per_100g: "111",
+            provenance: {
+              join: "fdc:174272/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.9296,
+            fraction: 0.2999,
+            nutrient_id: "1098",
+            per_100g: "0.56",
+            provenance: {
+              join: "fdc:174272/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.482,
+            fraction: 0.0974,
+            nutrient_id: "1089",
+            per_100g: "2.7",
+            provenance: {
+              join: "fdc:174272/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 134.46,
+            fraction: 0.1746,
+            nutrient_id: "1090",
+            per_100g: "81",
+            provenance: {
+              join: "fdc:174272/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 2.158,
+            fraction: 0.2803,
+            nutrient_id: "1101",
+            per_100g: "1.3",
+            provenance: {
+              join: "fdc:174272/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 683.92,
+            fraction: 0.1368,
+            nutrient_id: "1092",
+            per_100g: "412",
+            provenance: {
+              join: "fdc:174272/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "94061",
+        portion_label: "1 cup",
+        strength: 1.1118,
+        usda_description: "Tempeh"
+      },
+      {
+        breadth: 2,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 287.1,
+          linoleic_g_per_100g: "0.285",
+          linolenic_g_per_100g: "0.045",
+          oil_equivalent_mg: 424.1081
+        },
+        fdc_id: "175177",
+        grams: 87,
+        id: "tilapia-cooked",
+        name: "Tilapia, cooked",
+        nutrients: [
+          {
+            amount: 44.631,
+            fraction: 0.4463,
+            nutrient_id: "1180",
+            per_100g: "51.3",
+            provenance: {
+              join: "fdc:175177/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 47.328,
+            fraction: 0.1527,
+            nutrient_id: "1103",
+            per_100g: "54.4",
+            provenance: {
+              join: "fdc:175177/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95804",
+        portion_label: "1 fillet",
+        strength: 0.599,
+        usda_description: "Fish, tilapia, cooked, dry heat"
+      },
+      {
+        breadth: 6,
+        category: "Legumes",
+        efa: {
+          acid_mg: 2061.36,
+          linoleic_g_per_100g: "1.469",
+          linolenic_g_per_100g: "0.167",
+          oil_equivalent_mg: 3045.0698
+        },
+        fdc_id: "172448",
+        grams: 126,
+        id: "tofu-firm",
+        name: "Tofu, firm",
+        nutrients: [
+          {
+            amount: 253.26,
+            fraction: 0.1688,
+            nutrient_id: "1087",
+            per_100g: "201",
+            provenance: {
+              join: "fdc:172448/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 35.406,
+            fraction: 0.3541,
+            nutrient_id: "1180",
+            per_100g: "28.1",
+            provenance: {
+              join: "fdc:172448/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.2684,
+            fraction: 0.0866,
+            nutrient_id: "1098",
+            per_100g: "0.213",
+            provenance: {
+              join: "fdc:172448/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.7875,
+            fraction: 0.1023,
+            nutrient_id: "1101",
+            per_100g: "0.625",
+            provenance: {
+              join: "fdc:172448/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 85.68,
+            fraction: 2.2547,
+            per_100g: "68",
+            provenance: {
+              join: "name:Tofu (soy bean curd), firm, as purchased",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both firm tofu as purchased."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 3.7296,
+            fraction: 0.0981,
+            per_100g: "2.96",
+            provenance: {
+              join: "name:Tofu Milk and milk products",
+              source_id: "silicon-powell-2005",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Same product. Powell does not state firmness. The key carries 'Milk and milk products' because the next section heading bleeds into this PDF line; kept byte-exact so the gate can join it."
+            },
+            slug: "silica",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "90638",
+        portion_label: "0.5 cup",
+        strength: 3.0646,
+        usda_description: "Tofu, firm, prepared with calcium sulfate and magnesium chloride (nigari)"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 123.67,
+          linoleic_g_per_100g: "0.08",
+          linolenic_g_per_100g: "0.003",
+          oil_equivalent_mg: 182.6871
+        },
+        fdc_id: "170457",
+        grams: 149,
+        id: "tomato-raw",
+        name: "Tomato, raw",
+        nutrients: [
+          {
+            amount: 9.983,
+            fraction: 0.0998,
+            nutrient_id: "1180",
+            per_100g: "6.7",
+            provenance: {
+              join: "fdc:170457/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 4.172,
+            fraction: 0.1098,
+            per_100g: "2.8",
+            provenance: {
+              join: "name:Tomato, common, raw",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD's COMMON tomato \u2014 the generic row \u2014 not its cherry tomato, which reads double. \u26A0 A name matcher proposed 'Sauce, tomato, commercial' here, which would have shipped 83% chloride off the sauce's added salt."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 353.13,
+            fraction: 0.0706,
+            nutrient_id: "1092",
+            per_100g: "237",
+            provenance: {
+              join: "fdc:170457/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86681",
+        portion_label: "1 cup cherry tomatoes",
+        strength: 0.2802,
+        usda_description: "Tomatoes, red, ripe, raw, year round average"
+      },
+      {
+        breadth: 5,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 107.1,
+          linoleic_g_per_100g: "0.055",
+          linolenic_g_per_100g: "0.071",
+          oil_equivalent_mg: 158.2096
+        },
+        fdc_id: "175158",
+        grams: 85,
+        id: "tuna-canned-in-water",
+        name: "Tuna, canned in water",
+        nutrients: [
+          {
+            amount: 430.95,
+            fraction: 0.1724,
+            per_100g: "507",
+            provenance: {
+              join: "name:Tuna, unflavoured, canned in water, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Canned in water and drained in both, unflavoured in both."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 24.905,
+            fraction: 0.2491,
+            nutrient_id: "1180",
+            per_100g: "29.3",
+            provenance: {
+              join: "fdc:175158/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 55.845,
+            fraction: 0.1801,
+            nutrient_id: "1103",
+            per_100g: "65.7",
+            provenance: {
+              join: "fdc:175158/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 320.45,
+            fraction: 0.0971,
+            nutrient_id: "1093",
+            per_100g: "377",
+            provenance: {
+              join: "fdc:175158/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 187,
+            fraction: 0.374,
+            per_100g: "220",
+            provenance: {
+              combine: "first",
+              join: "name:Tuna, unflavoured, canned in water, drained",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Canned in water and drained in both, unflavoured in both."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          }
+        ],
+        portion_id: "95767",
+        portion_label: "3 oz",
+        strength: 1.0727,
+        usda_description: "Fish, tuna, white, canned in water, drained solids"
+      },
+      {
+        breadth: 4,
+        category: "Poultry",
+        efa: {
+          acid_mg: 382.5,
+          conjugated_linoleic_g_per_100g: "0.001",
+          linoleic_g_per_100g: "0.431",
+          linolenic_g_per_100g: "0.02",
+          oil_equivalent_mg: 565.0343
+        },
+        fdc_id: "171496",
+        grams: 85,
+        id: "turkey-breast-roasted",
+        name: "Turkey breast, roasted",
+        nutrients: [
+          {
+            amount: 71.74,
+            fraction: 0.7174,
+            nutrient_id: "1180",
+            per_100g: "84.4",
+            provenance: {
+              join: "fdc:171496/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 25.67,
+            fraction: 0.0828,
+            nutrient_id: "1103",
+            per_100g: "30.2",
+            provenance: {
+              join: "fdc:171496/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 221,
+            fraction: 0.442,
+            per_100g: "260",
+            provenance: {
+              combine: "first",
+              join: "name:Turkey, breast, lean flesh, baked, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Breast meat only in both, roasted/baked with no added fat."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 9.9875,
+            fraction: 0.0999,
+            nutrient_id: "1167",
+            per_100g: "11.75",
+            provenance: {
+              join: "fdc:171496/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "88856",
+        portion_label: "3 oz",
+        strength: 1.3421,
+        usda_description: "Turkey, whole, breast, meat only, cooked, roasted"
+      },
+      {
+        breadth: 4,
+        category: "Poultry",
+        efa: {
+          acid_mg: 1275.85,
+          conjugated_linoleic_g_per_100g: "0.01",
+          linoleic_g_per_100g: "1.436",
+          linolenic_g_per_100g: "0.075",
+          oil_equivalent_mg: 1884.7034
+        },
+        fdc_id: "171532",
+        grams: 85,
+        id: "turkey-thigh-roasted",
+        name: "Turkey thigh, roasted",
+        nutrients: [
+          {
+            amount: 195.5,
+            fraction: 0.0782,
+            per_100g: "230",
+            provenance: {
+              join: "name:Turkey, hindquarter, lean flesh, baked, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD publishes the HINDQUARTER \u2014 thigh plus drumstick \u2014 where ours is thigh alone. Same bird, same dark meat, same state; the cut boundary is the approximation, and it is why this is not EXACT tier."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 81.43,
+            fraction: 0.8143,
+            nutrient_id: "1180",
+            per_100g: "95.8",
+            provenance: {
+              join: "fdc:171532/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 26.69,
+            fraction: 0.0861,
+            nutrient_id: "1103",
+            per_100g: "31.4",
+            provenance: {
+              join: "fdc:171532/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 246.5,
+            fraction: 0.493,
+            per_100g: "290",
+            provenance: {
+              combine: "first",
+              join: "name:Turkey, hindquarter, lean flesh, baked, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD publishes the HINDQUARTER \u2014 thigh plus drumstick \u2014 where ours is thigh alone. Same bird, same dark meat, same state; the cut boundary is the approximation, and it is why this is not EXACT tier."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          }
+        ],
+        portion_id: "88938",
+        portion_label: "3 oz",
+        strength: 1.4716,
+        usda_description: "Turkey, thigh, from whole bird, meat only, roasted"
+      },
+      {
+        breadth: 1,
+        category: "Spices & herbs",
+        efa: {
+          acid_mg: 22.68,
+          linoleic_g_per_100g: "0.672",
+          linolenic_g_per_100g: "0.084",
+          oil_equivalent_mg: 33.5032
+        },
+        fdc_id: "172231",
+        grams: 3,
+        id: "turmeric-ground",
+        name: "Turmeric, ground",
+        nutrients: [
+          {
+            amount: 0.594,
+            fraction: 0.0771,
+            nutrient_id: "1101",
+            per_100g: "19.8",
+            provenance: {
+              join: "fdc:172231/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "90123",
+        portion_label: "1 tsp",
+        strength: 0.0771,
+        usda_description: "Spices, turmeric, ground"
+      },
+      {
+        breadth: 5,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 132.48,
+          linoleic_g_per_100g: "0.028",
+          linolenic_g_per_100g: "0.064",
+          oil_equivalent_mg: 195.7013
+        },
+        fdc_id: "170139",
+        grams: 144,
+        id: "turnip-greens-cooked",
+        name: "Turnip greens, cooked",
+        nutrients: [
+          {
+            amount: 197.28,
+            fraction: 0.1315,
+            nutrient_id: "1087",
+            per_100g: "137",
+            provenance: {
+              join: "fdc:170139/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3643,
+            fraction: 0.1175,
+            nutrient_id: "1098",
+            per_100g: "0.253",
+            provenance: {
+              join: "fdc:170139/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 381.6,
+            fraction: 0.1156,
+            nutrient_id: "1093",
+            per_100g: "265",
+            provenance: {
+              join: "fdc:170139/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 169.92,
+            fraction: 0.1699,
+            nutrient_id: "1177",
+            per_100g: "118",
+            provenance: {
+              join: "fdc:170139/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 529.344,
+            fraction: 1.7645,
+            nutrient_id: "1185",
+            per_100g: "367.6",
+            provenance: {
+              join: "fdc:170139/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "86119",
+        portion_label: "1 cup, chopped",
+        strength: 2.299,
+        usda_description: "Turnip greens, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 2,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 63.96,
+          linoleic_g_per_100g: "0.009",
+          linolenic_g_per_100g: "0.032",
+          oil_equivalent_mg: 94.4826
+        },
+        fdc_id: "170547",
+        grams: 156,
+        id: "turnips-cooked",
+        name: "Turnips, cooked",
+        nutrients: [
+          {
+            amount: 13.572,
+            fraction: 0.1357,
+            nutrient_id: "1180",
+            per_100g: "8.7",
+            provenance: {
+              join: "fdc:170547/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 446.16,
+            fraction: 0.1352,
+            nutrient_id: "1093",
+            per_100g: "286",
+            provenance: {
+              join: "fdc:170547/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86833",
+        portion_label: "1 cup, cubes",
+        strength: 0.2709,
+        usda_description: "Turnips, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 1,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 344.25,
+          linoleic_g_per_100g: "0.393",
+          linolenic_g_per_100g: "0.012",
+          oil_equivalent_mg: 508.5309
+        },
+        fdc_id: "172650",
+        grams: 85,
+        id: "veal-chop",
+        name: "Veal chop",
+        nutrients: [
+          {
+            amount: 118.15,
+            fraction: 1.1815,
+            nutrient_id: "1180",
+            per_100g: "139",
+            provenance: {
+              join: "fdc:172650/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "91005",
+        portion_label: "3 oz",
+        strength: 1.1815,
+        usda_description: "Veal, loin, chop, separable lean and fat, cooked, grilled"
+      },
+      {
+        breadth: 2,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 86.7,
+          conjugated_linoleic_g_per_100g: "0.009",
+          linoleic_g_per_100g: "0.107",
+          linolenic_g_per_100g: "0.004",
+          oil_equivalent_mg: 128.0745
+        },
+        fdc_id: "174880",
+        grams: 85,
+        id: "veal-cutlet",
+        name: "Veal cutlet",
+        nutrients: [
+          {
+            amount: 135.915,
+            fraction: 1.3591,
+            nutrient_id: "1180",
+            per_100g: "159.9",
+            provenance: {
+              join: "fdc:174880/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 8.585,
+            fraction: 0.0858,
+            nutrient_id: "1167",
+            per_100g: "10.1",
+            provenance: {
+              join: "fdc:174880/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "95064",
+        portion_label: "3 oz",
+        strength: 1.4449,
+        usda_description: "Veal, leg, top round, cap off, cutlet, boneless, cooked, grilled"
+      },
+      {
+        breadth: 3,
+        category: "Lamb, veal & game",
+        efa: {
+          acid_mg: 416.5,
+          linoleic_g_per_100g: "0.4",
+          linolenic_g_per_100g: "0.09",
+          oil_equivalent_mg: 615.2596
+        },
+        fdc_id: "175085",
+        grams: 85,
+        id: "venison-roasted",
+        name: "Venison, roasted",
+        nutrients: [
+          {
+            amount: 0.255,
+            fraction: 0.0823,
+            nutrient_id: "1098",
+            per_100g: "0.3",
+            provenance: {
+              join: "fdc:175085/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 3.7995,
+            fraction: 0.0826,
+            nutrient_id: "1089",
+            per_100g: "4.47",
+            provenance: {
+              join: "fdc:175085/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 249.05,
+            fraction: 0.4981,
+            per_100g: "293",
+            provenance: {
+              combine: "first",
+              conservative: true,
+              join: "name:Venison, leg medallion, lean, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Our USDA row is a composite of deer cuts, roasted. AFCD publishes a leg medallion and a mince, both cooked; the medallion is the cut (not the ground) and is also the lower of the two."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          }
+        ],
+        portion_id: "95585",
+        portion_label: "3 oz",
+        strength: 0.663,
+        usda_description: "Game meat, deer, cooked, roasted"
+      },
+      {
+        breadth: 3,
+        category: "Nuts & seeds",
+        efa: {
+          acid_mg: 13373.5455,
+          linoleic_g_per_100g: "38.093",
+          linolenic_g_per_100g: "9.08",
+          oil_equivalent_mg: 19755.5883
+        },
+        fdc_id: "170187",
+        grams: 28.35,
+        id: "walnuts",
+        name: "Walnuts",
+        nutrients: [
+          {
+            amount: 11.1132,
+            fraction: 0.1111,
+            nutrient_id: "1180",
+            per_100g: "39.2",
+            provenance: {
+              join: "fdc:170187/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4496,
+            fraction: 0.145,
+            nutrient_id: "1098",
+            per_100g: "1.586",
+            provenance: {
+              join: "fdc:170187/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.9679,
+            fraction: 0.1257,
+            nutrient_id: "1101",
+            per_100g: "3.414",
+            provenance: {
+              join: "fdc:170187/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86206",
+        portion_label: "1 oz (14 halves)",
+        strength: 0.3818,
+        usda_description: "Nuts, walnuts, english"
+      },
+      {
+        breadth: 9,
+        category: "Legumes",
+        efa: {
+          acid_mg: 272.08,
+          linoleic_g_per_100g: "0.083",
+          linolenic_g_per_100g: "0.069",
+          oil_equivalent_mg: 401.9204
+        },
+        fdc_id: "175249",
+        grams: 179,
+        id: "white-beans-cooked",
+        name: "White beans, cooked",
+        nutrients: [
+          {
+            amount: 161.1,
+            fraction: 0.1074,
+            nutrient_id: "1087",
+            per_100g: "90",
+            provenance: {
+              join: "fdc:175249/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 62.829,
+            fraction: 0.6283,
+            nutrient_id: "1180",
+            per_100g: "35.1",
+            provenance: {
+              join: "fdc:175249/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.5137,
+            fraction: 0.1657,
+            nutrient_id: "1098",
+            per_100g: "0.287",
+            provenance: {
+              join: "fdc:175249/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 6.623,
+            fraction: 0.144,
+            nutrient_id: "1089",
+            per_100g: "3.7",
+            provenance: {
+              join: "fdc:175249/nutrient:1089",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iron",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 112.77,
+            fraction: 0.1465,
+            nutrient_id: "1090",
+            per_100g: "63",
+            provenance: {
+              join: "fdc:175249/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1.1384,
+            fraction: 0.1478,
+            nutrient_id: "1101",
+            per_100g: "0.636",
+            provenance: {
+              join: "fdc:175249/nutrient:1101",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "manganese",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1004.19,
+            fraction: 0.2008,
+            nutrient_id: "1092",
+            per_100g: "561",
+            provenance: {
+              join: "fdc:175249/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 433.18,
+            fraction: 0.1313,
+            nutrient_id: "1093",
+            per_100g: "242",
+            provenance: {
+              join: "fdc:175249/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 144.99,
+            fraction: 0.145,
+            nutrient_id: "1177",
+            per_100g: "81",
+            provenance: {
+              join: "fdc:175249/nutrient:1177",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b9",
+            strong: false,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "95893",
+        portion_label: "1 cup",
+        strength: 1.8168,
+        usda_description: "Beans, white, mature seeds, cooked, boiled, with salt"
+      },
+      {
+        breadth: 4,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 280.8,
+          linoleic_g_per_100g: "0.179",
+          linolenic_g_per_100g: "0.001",
+          oil_equivalent_mg: 414.8017
+        },
+        fdc_id: "168537",
+        grams: 156,
+        id: "white-mushrooms-cooked",
+        name: "White mushrooms, cooked",
+        nutrients: [
+          {
+            amount: 31.824,
+            fraction: 0.3182,
+            nutrient_id: "1180",
+            per_100g: "20.4",
+            provenance: {
+              join: "fdc:168537/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.7862,
+            fraction: 0.2536,
+            nutrient_id: "1098",
+            per_100g: "0.504",
+            provenance: {
+              join: "fdc:168537/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 555.36,
+            fraction: 0.1111,
+            nutrient_id: "1092",
+            per_100g: "356",
+            provenance: {
+              join: "fdc:168537/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 371.28,
+            fraction: 0.1125,
+            nutrient_id: "1093",
+            per_100g: "238",
+            provenance: {
+              join: "fdc:168537/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "83260",
+        portion_label: "1 cup pieces",
+        strength: 0.7954,
+        usda_description: "Mushrooms, white, cooked, boiled, drained, with salt"
+      },
+      {
+        breadth: 5,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 331.84,
+          linoleic_g_per_100g: "0.083",
+          linolenic_g_per_100g: "0.053",
+          oil_equivalent_mg: 490.1987
+        },
+        fdc_id: "171266",
+        grams: 244,
+        id: "whole-milk",
+        name: "Whole milk",
+        nutrients: [
+          {
+            amount: 290.36,
+            fraction: 0.1936,
+            nutrient_id: "1087",
+            per_100g: "119",
+            provenance: {
+              join: "fdc:171266/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 244,
+            fraction: 0.0976,
+            per_100g: "100",
+            provenance: {
+              join: "name:Milk, cow, fluid, regular fat (~3.5%)",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Our USDA row is producer milk at 3.7% fat; AFCD's regular-fat cow milk is ~3.5%. Same product, same state, essentially the same fat."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
+            amount: 7.076,
+            fraction: 0.1862,
+            per_100g: "2.9",
+            provenance: {
+              join: "name:Milk, cow, fluid, regular fat (~3.5%)",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Our USDA row is producer milk at 3.7% fat; AFCD's regular-fat cow milk is ~3.5%. Same product, same state, essentially the same fat."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 368.44,
+            fraction: 0.0737,
+            nutrient_id: "1092",
+            per_100g: "151",
+            provenance: {
+              join: "fdc:171266/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 68.32,
+            fraction: 0.1366,
+            per_100g: "28",
+            provenance: {
+              combine: "first",
+              join: "name:Milk, cow, fluid, regular fat (~3.5%)",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Our USDA row is producer milk at 3.7% fat; AFCD's regular-fat cow milk is ~3.5%. Same product, same state, essentially the same fat."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          }
+        ],
+        portion_id: "88318",
+        portion_label: "1 cup",
+        strength: 0.6877,
+        usda_description: "Milk, producer, fluid, 3.7% milkfat"
+      },
+      {
+        breadth: 4,
+        category: "Dairy & eggs",
+        efa: {
+          acid_mg: 225.4,
+          linoleic_g_per_100g: "0.065",
+          linolenic_g_per_100g: "0.027",
+          oil_equivalent_mg: 332.964
+        },
+        fdc_id: "171284",
+        grams: 245,
+        id: "whole-milk-yogurt",
+        name: "Whole-milk yogurt",
+        nutrients: [
+          {
+            amount: 296.45,
+            fraction: 0.1976,
+            nutrient_id: "1087",
+            per_100g: "121",
+            provenance: {
+              join: "fdc:171284/nutrient:1087",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "calcium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 37.24,
+            fraction: 0.3724,
+            nutrient_id: "1180",
+            per_100g: "15.2",
+            provenance: {
+              join: "fdc:171284/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 78.4,
+            fraction: 0.3409,
+            per_100g: "32",
+            provenance: {
+              join: "ndb:01116",
+              source_id: "iodine-usda-ods-r4",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 379.75,
+            fraction: 0.076,
+            nutrient_id: "1092",
+            per_100g: "155",
+            provenance: {
+              join: "fdc:171284/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "88365",
+        portion_label: "1 cup (8 fl oz)",
+        strength: 0.9869,
+        usda_description: "Yogurt, plain, whole milk"
+      },
+      {
+        breadth: 3,
+        category: "Vegetables",
+        efa: {
+          acid_mg: 80.24,
+          linoleic_g_per_100g: "0.05",
+          linolenic_g_per_100g: "0.009",
+          oil_equivalent_mg: 118.5316
+        },
+        fdc_id: "170551",
+        grams: 136,
+        id: "yam-cooked",
+        name: "Yam, cooked",
+        nutrients: [
+          {
+            amount: 22.032,
+            fraction: 0.2203,
+            nutrient_id: "1180",
+            per_100g: "16.2",
+            provenance: {
+              join: "fdc:170551/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 911.2,
+            fraction: 0.1822,
+            nutrient_id: "1092",
+            per_100g: "670",
+            provenance: {
+              join: "fdc:170551/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 331.84,
+            fraction: 0.1006,
+            nutrient_id: "1093",
+            per_100g: "244",
+            provenance: {
+              join: "fdc:170551/nutrient:1093",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "sodium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "86839",
+        portion_label: "1 cup, cubes",
+        strength: 0.5031,
+        usda_description: "Yam, cooked, boiled, drained, or baked, with salt"
+      },
+      {
+        breadth: 4,
+        category: "Fish & shellfish",
+        efa: {
+          acid_mg: 21.25,
+          linoleic_g_per_100g: "0.023",
+          linolenic_g_per_100g: "0.002",
+          oil_equivalent_mg: 31.3908
+        },
+        fdc_id: "172006",
+        grams: 85,
+        id: "yellowfin-tuna-cooked",
+        name: "Yellowfin tuna, cooked",
+        nutrients: [
+          {
+            amount: 65.96,
+            fraction: 0.6596,
+            nutrient_id: "1180",
+            per_100g: "77.6",
+            provenance: {
+              join: "fdc:172006/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 447.95,
+            fraction: 0.0896,
+            nutrient_id: "1092",
+            per_100g: "527",
+            provenance: {
+              join: "fdc:172006/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 91.97,
+            fraction: 0.2967,
+            nutrient_id: "1103",
+            per_100g: "108.2",
+            provenance: {
+              join: "fdc:172006/nutrient:1103",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "selenium",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          },
+          {
+            amount: 18.7595,
+            fraction: 0.1876,
+            nutrient_id: "1167",
+            per_100g: "22.07",
+            provenance: {
+              join: "fdc:172006/nutrient:1167",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-b3",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "89724",
+        portion_label: "3 oz",
+        strength: 1.2335,
+        usda_description: "Fish, tuna, yellowfin, fresh, cooked, dry heat"
+      }
+    ]
+  };
+
+  // assets/data/foods-catalog-curation.json
+  var foods_catalog_curation_default = {
+    _purpose: "The FOOD CATALOG's hand-authored curation -- WHICH foods the Regimen and Coverage tabs may recommend, what each is CALLED, and WHICH USDA portion counts as one serving. Read by eden/tools/foods_composition_derive.py, which joins every row into the pinned USDA SR Legacy source to produce foods-composition-data.json.",
+    _numbers_free: "\u2605 THIS FILE CONTAINS NO NUTRIENT NUMBERS AND MUST NEVER CONTAIN ONE. Every `fdc_id` and `portion_id` is a byte-exact join key into the pinned source; the amounts are derived from those keys and are proven against the source by the `food_composition_traces_to_source` gate. A number typed here would be a second, ungated home for a value (Charter R3) -- exactly the failure mode that let the mineral tiers sit sealed, green and wrong for three weeks.",
+    _doctrine: "Every food here was filtered against Wallach's own food rules before it was admitted: no gluten grain (wheat, barley, rye, oats), no refined sugar, no carbonated drinks, no processed meats, no refined seed oils -- the remove[] list in foods-curation.json, enforced in shipped code by the scanner's hard-reject terms. Foods he explicitly endorses (eggs, butter, beef, chicken, pork, salt, organ meats, nuts, seeds, vegetables) are deliberately well represented. Dairy is CONDITIONAL in his framework -- present, not pushed.",
+    _selection_rule: "A food earns a place only if one realistic serving delivers at least the derive's qualify_fraction (7%, set by Luneth on 2026-08-21) of Wallach's daily target for at least one essential. The derive HARD-FAILS on any food here that qualifies for nothing, so this list cannot silently accumulate dead weight.",
+    pinned: {
+      _purpose: "Foods that hold their position by curation rather than by score, in this order, the same way the product starter pack does. Eggs are first by Luneth's ruling (2026-08-21): a near-universal food Wallach explicitly endorses, and the single best first move for a new user.",
+      ids: [
+        "egg"
+      ]
+    },
+    foods: [
+      {
+        id: "acorn-squash-baked",
+        name: "Acorn squash, baked",
+        category: "Vegetables",
+        fdc_id: "170128",
+        portion_id: "86099"
+      },
+      {
+        id: "almond-butter",
+        name: "Almond butter",
+        category: "Nuts & seeds",
+        fdc_id: "168588",
+        portion_id: "83375"
+      },
+      {
+        id: "almonds",
+        name: "Almonds",
+        category: "Nuts & seeds",
+        fdc_id: "170567",
+        portion_id: "86867",
+        matches: {
+          "afcd-au-r3": {
+            key: "Nut, almond, with skin, raw, unsalted",
+            why: "Both raw almonds with skin."
+          }
+        }
+      },
+      {
+        id: "apple",
+        name: "Apple",
+        category: "Fruits",
+        fdc_id: "168202",
+        portion_id: "82658",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Apples, eating, raw",
+            why: "Our row is USDA raw apple with skin. Powell's other apple row is cooking apples, peeled and cooked -- a different food in a different state."
+          },
+          "afcd-au-r3": {
+            key: "Apple, granny-smith, unpeeled, raw",
+            why: "AFCD measures granny smith unpeeled and red-skin peeled; ours is golden delicious with skin. The unpeeled row matches our peel, and it is also the lower. Lands under the threshold.",
+            conservative: true
+          },
+          "doleman-2017": {
+            key: "Braeburn apple",
+            why: "Doleman measured Braeburn and our USDA row is golden delicious; both raw, both with skin. Lands under the threshold."
+          }
+        }
+      },
+      {
+        id: "apricots",
+        name: "Apricots",
+        category: "Fruits",
+        fdc_id: "171697",
+        portion_id: "89209",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Apricots, fresh",
+            why: "Same fruit, both fresh and raw."
+          }
+        }
+      },
+      {
+        id: "artichoke-cooked",
+        name: "Artichoke, cooked",
+        category: "Vegetables",
+        fdc_id: "169311",
+        portion_id: "84636"
+      },
+      {
+        id: "asparagus-cooked",
+        name: "Asparagus, cooked",
+        category: "Vegetables",
+        fdc_id: "168390",
+        portion_id: "83018"
+      },
+      {
+        id: "avocado",
+        name: "Avocado",
+        category: "Fruits",
+        fdc_id: "171706",
+        portion_id: "89229",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Avocado, fresh",
+            why: "Same fruit, both raw."
+          }
+        }
+      },
+      {
+        id: "banana",
+        name: "Banana",
+        category: "Fruits",
+        fdc_id: "173944",
+        portion_id: "93517",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Banana, raw",
+            why: "Same fruit, both raw."
+          },
+          "afcd-au-r3": {
+            key: "Banana, lady finger or sugar, peeled, raw",
+            why: "AFCD measures cavendish and lady-finger bananas; our USDA row is the generic 'Bananas, raw'. The lower is taken.",
+            conservative: true
+          }
+        }
+      },
+      {
+        id: "basil-fresh",
+        name: "Basil, fresh",
+        category: "Spices & herbs",
+        fdc_id: "172232",
+        portion_id: "90126"
+      },
+      {
+        id: "beef-brisket",
+        name: "Beef brisket",
+        category: "Beef",
+        fdc_id: "168665",
+        portion_id: "83526"
+      },
+      {
+        id: "beef-heart",
+        name: "Beef heart",
+        category: "Beef",
+        fdc_id: "169448",
+        portion_id: "84889"
+      },
+      {
+        id: "beef-kidney",
+        name: "Beef kidney",
+        category: "Beef",
+        fdc_id: "169450",
+        portion_id: "84892"
+      },
+      {
+        id: "beef-liver",
+        name: "Beef liver",
+        category: "Beef",
+        fdc_id: "168626",
+        portion_id: "83447"
+      },
+      {
+        id: "beef-tongue",
+        name: "Beef tongue",
+        category: "Beef",
+        fdc_id: "170598",
+        portion_id: "86927"
+      },
+      {
+        id: "beet-greens-cooked",
+        name: "Beet greens, cooked",
+        category: "Vegetables",
+        fdc_id: "168508",
+        portion_id: "83212"
+      },
+      {
+        id: "beets-cooked",
+        name: "Beets, cooked",
+        category: "Vegetables",
+        fdc_id: "168506",
+        portion_id: "83209"
+      },
+      {
+        id: "bison-ribeye",
+        name: "Bison ribeye",
+        category: "Lamb, veal & game",
+        fdc_id: "172599",
+        portion_id: "90936"
+      },
+      {
+        id: "black-beans-cooked",
+        name: "Black beans, cooked",
+        category: "Legumes",
+        fdc_id: "175237",
+        portion_id: "95879"
+      },
+      {
+        id: "black-eyed-peas-cooked",
+        name: "Black-eyed peas, cooked",
+        category: "Legumes",
+        fdc_id: "175252",
+        portion_id: "95897"
+      },
+      {
+        id: "blackberries",
+        name: "Blackberries",
+        category: "Fruits",
+        fdc_id: "173946",
+        portion_id: "93521",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Blackberries, raw",
+            why: "Same fruit, both raw."
+          }
+        }
+      },
+      {
+        id: "blue-cheese",
+        name: "Blue cheese",
+        category: "Dairy & eggs",
+        fdc_id: "172175",
+        portion_id: "90017",
+        matches: {
+          "afcd-au-r3": {
+            key: "Cheese, blue vein",
+            why: "Same cheese. Lands under the threshold."
+          }
+        }
+      },
+      {
+        id: "bok-choy-cooked",
+        name: "Bok choy, cooked",
+        category: "Vegetables",
+        fdc_id: "168517",
+        portion_id: "83228"
+      },
+      {
+        id: "broccoli-cooked",
+        name: "Broccoli, cooked",
+        category: "Vegetables",
+        fdc_id: "168510",
+        portion_id: "83216",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Broccoli, green, fresh, boiled",
+            why: "Same vegetable, both boiled. Powell's is calabrese/green broccoli, which is what USDA 'Broccoli, cooked' is."
+          },
+          "afcd-au-r3": {
+            key: "Broccoli, fresh, boiled, drained",
+            why: "Both boiled and drained. AFCD's BAKED broccoli reads 76% against this row's 25% \u2014 a 3x spread on cooking method alone, which is exactly why the state has to match and not merely the vegetable."
+          }
+        }
+      },
+      {
+        id: "broccoli-rabe-cooked",
+        name: "Broccoli rabe, cooked",
+        category: "Vegetables",
+        fdc_id: "170382",
+        portion_id: "86538"
+      },
+      {
+        id: "brussels-sprouts-cooked",
+        name: "Brussels sprouts, cooked",
+        category: "Vegetables",
+        fdc_id: "169332",
+        portion_id: "84662",
+        matches: {
+          "afcd-au-r3": {
+            key: "Brussels sprout, fresh, boiled, drained",
+            why: "Both boiled and drained; ours from frozen, theirs from fresh."
+          }
+        }
+      },
+      {
+        id: "butternut-squash-baked",
+        name: "Butternut squash, baked",
+        category: "Vegetables",
+        fdc_id: "170130",
+        portion_id: "86101"
+      },
+      {
+        id: "cabbage-raw",
+        name: "Cabbage, raw",
+        category: "Vegetables",
+        fdc_id: "169975",
+        portion_id: "85791",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Cabbage, red, fresh, raw",
+            why: "Powell measures red (0.28), savoy (0.71) and white (0.53) cabbage with no generic row; USDA's 'Cabbage, raw' is common green cabbage. The lowest is taken. It lands well under the 7% threshold, so no card shows it \u2014 the pair is recorded anyway, because a pair that exists only when it helps is a biased pair.",
+            conservative: true
+          },
+          "afcd-au-r3": {
+            key: "Cabbage, white, raw",
+            why: "Both raw. AFCD's white cabbage is what USDA calls plain 'Cabbage' \u2014 the common green head."
+          },
+          "doleman-2017": {
+            key: "Sweetheart cabbage",
+            why: "Doleman measured savoy (188.7 umol/g dry) and sweetheart (98.6) cabbage, both raw; our USDA row is generic raw cabbage and says which neither. The LOWER is taken \u2014 it is true whichever head is on the board. Savoy would have shipped at 8.4%; this lands under the threshold at 4.4%, and the pair is recorded anyway.",
+            conservative: true
+          }
+        }
+      },
+      {
+        id: "canned-salmon-with-bones",
+        name: "Canned salmon with bones",
+        category: "Fish & shellfish",
+        fdc_id: "175135",
+        portion_id: "95714"
+      },
+      {
+        id: "cantaloupe",
+        name: "Cantaloupe",
+        category: "Fruits",
+        fdc_id: "169092",
+        portion_id: "84216",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Melon, (cantaloupe, honeydew, galia)",
+            why: "Powell publishes ONE melon row covering cantaloupe, honeydew and galia, and it names cantaloupe. Honeydew pairs to the same row for the same reason: the source treats the three as one measurement, so both our melons rest on it."
+          }
+        }
+      },
+      {
+        id: "carrots-raw",
+        name: "Carrots, raw",
+        category: "Vegetables",
+        fdc_id: "170393",
+        portion_id: "86555",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Carrots, new and old, fresh, raw",
+            why: "Same vegetable, both raw; Powell's row deliberately spans both ages."
+          },
+          "doleman-2017": {
+            key: "Carrot",
+            why: "Both raw. Lands under the threshold."
+          }
+        }
+      },
+      {
+        id: "cashews-dry-roasted",
+        name: "Cashews, dry roasted",
+        category: "Nuts & seeds",
+        fdc_id: "169421",
+        portion_id: "84834",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Cashew nuts, roasted",
+            why: "Same nut, both roasted."
+          },
+          "afcd-au-r3": {
+            key: "Nut, cashew, roasted, salted",
+            why: "Both roasted. AFCD's is salted and ours is not; salt adds sodium, not molybdenum. Lands under the threshold."
+          }
+        }
+      },
+      {
+        id: "catfish-cooked",
+        name: "Catfish, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "175166",
+        portion_id: "95785"
+      },
+      {
+        id: "cauliflower-cooked",
+        name: "Cauliflower, cooked",
+        category: "Vegetables",
+        fdc_id: "168521",
+        portion_id: "83236",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Cauli\uFB02ower, fresh, boiled",
+            why: "Same vegetable, both boiled."
+          },
+          "afcd-au-r3": {
+            key: "Cauliflower, fresh, boiled, drained",
+            why: "Both boiled and drained; ours is from frozen, theirs from fresh."
+          }
+        }
+      },
+      {
+        id: "celeriac-cooked",
+        name: "Celeriac, cooked",
+        category: "Vegetables",
+        fdc_id: "169341",
+        portion_id: "84676"
+      },
+      {
+        id: "celery-raw",
+        name: "Celery, raw",
+        category: "Vegetables",
+        fdc_id: "169988",
+        portion_id: "85824",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Celery, fresh, raw",
+            why: "Same vegetable, both raw."
+          },
+          "afcd-au-r3": {
+            key: "Celery, fresh, raw",
+            why: "Both raw."
+          }
+        }
+      },
+      {
+        id: "cheddar-cheese",
+        name: "Cheddar cheese",
+        category: "Dairy & eggs",
+        fdc_id: "173414",
+        portion_id: "92472",
+        matches: {
+          "afcd-au-r3": {
+            key: "Cheese, cheddar, natural, regular fat",
+            why: "NATURAL cheddar, not AFCD's processed row \u2014 ours is natural cheddar."
+          }
+        }
+      },
+      {
+        id: "cherries",
+        name: "Cherries",
+        category: "Fruits",
+        fdc_id: "171719",
+        portion_id: "89257",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Cherries, raw, without stone",
+            why: "Same fruit, both raw; USDA's sweet-cherry row is also stoned weight."
+          }
+        }
+      },
+      {
+        id: "chestnuts-roasted",
+        name: "Japanese chestnuts, roasted",
+        category: "Nuts & seeds",
+        fdc_id: "168590",
+        portion_id: "83378"
+      },
+      {
+        id: "chicken-breast-roasted",
+        name: "Chicken breast, roasted",
+        category: "Poultry",
+        fdc_id: "171477",
+        portion_id: "88819",
+        matches: {
+          "afcd-au-r3": {
+            key: "Chicken, breast, lean flesh, baked, no added fat",
+            why: "Our USDA row is breast meat only, roasted; this is lean flesh baked with no added fat. AFCD's grilled and fried rows read higher and are not borrowed."
+          },
+          "doleman-2017": {
+            key: "Chicken breast",
+            why: "Doleman pan-fried the fillet without fat; our USDA row is breast meat only, roasted. Both dry heat, no fat added, no skin. \u26A0 AFCD measures no sulphur in chicken breast at all, so this is the only route to it."
+          }
+        }
+      },
+      {
+        id: "chicken-liver",
+        name: "Chicken liver",
+        category: "Poultry",
+        fdc_id: "174491",
+        portion_id: "94449"
+      },
+      {
+        id: "chicken-thigh-roasted",
+        name: "Chicken thigh, roasted",
+        category: "Poultry",
+        fdc_id: "172388",
+        portion_id: "90511"
+      },
+      {
+        id: "chickpeas-cooked",
+        name: "Chickpeas, cooked",
+        category: "Legumes",
+        fdc_id: "173799",
+        portion_id: "93272",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Chickpeas, canned or dried and boiled",
+            why: "Same legume, both boiled from dry."
+          },
+          "afcd-au-r3": {
+            key: "Chickpea, dried, boiled, drained",
+            why: "Both boiled from dry. AFCD's dry chickpea row reads ~3x higher and is not borrowed \u2014 nobody eats them dry."
+          }
+        }
+      },
+      {
+        id: "chuck-pot-roast",
+        name: "Chuck pot roast",
+        category: "Beef",
+        fdc_id: "168667",
+        portion_id: "83530",
+        matches: {
+          "afcd-au-r3": {
+            key: "Beef, casserole meat, boneless, chuck, lean, casseroled, no added fat",
+            why: "Boneless chuck in both, slow-cooked in both, and our USDA row is trimmed to 0 inch fat, which is what AFCD calls lean."
+          }
+        }
+      },
+      {
+        id: "clams-cooked",
+        name: "Clams, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "171975",
+        portion_id: "89661"
+      },
+      {
+        id: "cloves-ground",
+        name: "Cloves, ground",
+        category: "Spices & herbs",
+        fdc_id: "171321",
+        portion_id: "88431"
+      },
+      {
+        id: "coconut-raw",
+        name: "Coconut, raw",
+        category: "Nuts & seeds",
+        fdc_id: "170169",
+        portion_id: "86165"
+      },
+      {
+        id: "cod",
+        name: "Cod",
+        category: "Fish & shellfish",
+        fdc_id: "171956",
+        portion_id: "89622",
+        matches: {
+          "doleman-2017": {
+            key: "Cod",
+            why: "Doleman pan-fried a boneless fillet without fat; our USDA row is Atlantic cod cooked by dry heat. \u26A0 AFCD's only cod is SMOKED cod, whose chloride is brine \u2014 this is the only honest route to cod."
+          }
+        }
+      },
+      {
+        id: "collard-greens-cooked",
+        name: "Collard greens, cooked",
+        category: "Vegetables",
+        fdc_id: "168523",
+        portion_id: "83238"
+      },
+      {
+        id: "cottage-cheese",
+        name: "Cottage cheese",
+        category: "Dairy & eggs",
+        fdc_id: "172179",
+        portion_id: "90034",
+        matches: {
+          "afcd-au-r3": {
+            key: "Cheese, cottage",
+            why: "Same cheese, both as sold."
+          }
+        }
+      },
+      {
+        id: "dandelion-greens-cooked",
+        name: "Dandelion greens, cooked",
+        category: "Vegetables",
+        fdc_id: "169351",
+        portion_id: "84692"
+      },
+      {
+        id: "dates",
+        name: "Dates",
+        category: "Fruits",
+        fdc_id: "171726",
+        portion_id: "89264",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Dates, dried",
+            why: "Powell's only dates row. Our catalog entry is deglet noor, also a dried date -- USDA sells no fresh date row."
+          }
+        }
+      },
+      {
+        id: "duck-egg",
+        name: "Duck egg",
+        category: "Dairy & eggs",
+        fdc_id: "172189",
+        portion_id: "90055"
+      },
+      {
+        id: "duck-roasted",
+        name: "Duck, roasted",
+        category: "Poultry",
+        fdc_id: "172409",
+        portion_id: "90568",
+        matches: {
+          "afcd-au-r3": {
+            key: "Duck, lean flesh, skin & fat, baked, no added fat",
+            why: "Meat AND skin in both, roasted/baked with no added fat. AFCD's skinless row reads higher and is not borrowed \u2014 ours includes the skin."
+          }
+        }
+      },
+      {
+        id: "edamame",
+        name: "Edamame",
+        category: "Vegetables",
+        fdc_id: "168411",
+        portion_id: "83053"
+      },
+      {
+        id: "egg",
+        name: "Egg",
+        category: "Dairy & eggs",
+        fdc_id: "173424",
+        portion_id: "92500",
+        matches: {
+          "afcd-au-r3": {
+            key: "Egg, chicken, whole, hard-boiled",
+            why: "Our USDA row is 'Egg, whole, cooked, hard-boiled' and this is AFCD's hard-boiled row \u2014 the same food in the same state. AFCD's RAW egg row shows sulphur where the boiled one does not, and it is not borrowed: a raw figure on a boiled egg is a different measurement."
+          },
+          "doleman-2017": {
+            key: "Eggs",
+            why: "Doleman boiled medium free-range eggs; our USDA row is whole egg, cooked, hard-boiled. The same food in the same state. AFCD's hard-boiled egg measures no sulphur."
+          }
+        }
+      },
+      {
+        id: "egg-yolk",
+        name: "Egg yolk",
+        category: "Dairy & eggs",
+        fdc_id: "172184",
+        portion_id: "90045"
+      },
+      {
+        id: "eggplant-cooked",
+        name: "Eggplant, cooked",
+        category: "Vegetables",
+        fdc_id: "169352",
+        portion_id: "84693",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Aubergine, fresh, boiled Table 1. Continued Food description",
+            why: "Aubergine IS eggplant; both boiled. The key carries 'Table 1. Continued Food description' because the paper's repeated table header bleeds into this PDF line; kept byte-exact so the gate can join it."
+          }
+        }
+      },
+      {
+        id: "elk-steak",
+        name: "Elk steak",
+        category: "Lamb, veal & game",
+        fdc_id: "174427",
+        portion_id: "94350"
+      },
+      {
+        id: "escarole-cooked",
+        name: "Escarole, cooked",
+        category: "Vegetables",
+        fdc_id: "168413",
+        portion_id: "83056"
+      },
+      {
+        id: "fava-beans-cooked",
+        name: "Fava beans, cooked",
+        category: "Legumes",
+        fdc_id: "173798",
+        portion_id: "93271"
+      },
+      {
+        id: "fennel-raw",
+        name: "Fennel, raw",
+        category: "Vegetables",
+        fdc_id: "169385",
+        portion_id: "84767"
+      },
+      {
+        id: "feta",
+        name: "Feta",
+        category: "Dairy & eggs",
+        fdc_id: "173420",
+        portion_id: "92490",
+        matches: {
+          "afcd-au-r3": {
+            key: "Cheese, fetta (feta)",
+            why: "AFCD spells it fetta. Same cheese. Lands under the threshold."
+          }
+        }
+      },
+      {
+        id: "flounder-cooked",
+        name: "Flounder, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "174197",
+        portion_id: "93913"
+      },
+      {
+        id: "goat-milk",
+        name: "Goat milk",
+        category: "Dairy & eggs",
+        fdc_id: "171278",
+        portion_id: "88350"
+      },
+      {
+        id: "goat-roasted",
+        name: "Goat, roasted",
+        category: "Lamb, veal & game",
+        fdc_id: "175304",
+        portion_id: "95996"
+      },
+      {
+        id: "grapefruit",
+        name: "Grapefruit",
+        category: "Fruits",
+        fdc_id: "173033",
+        portion_id: "91838",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Grapefruit, raw",
+            why: "Same fruit, both raw."
+          }
+        }
+      },
+      {
+        id: "grapes",
+        name: "Grapes",
+        category: "Fruits",
+        fdc_id: "174683",
+        portion_id: "94748",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Grapes, green and red",
+            why: "Same fruit; Powell's row spans both colours, as USDA's 'Grapes, red or green' does."
+          }
+        }
+      },
+      {
+        id: "greek-yogurt",
+        name: "Greek yogurt, lowfat",
+        category: "Dairy & eggs",
+        fdc_id: "170903",
+        portion_id: "87526"
+      },
+      {
+        id: "green-beans-cooked",
+        name: "Green beans, cooked",
+        category: "Vegetables",
+        fdc_id: "169321",
+        portion_id: "84651",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Beans, green or French, fresh, boiled",
+            why: "The GENERIC green-bean row. Powell also prints Kenyan/fine beans (a thinner cultivar of the same species, 10.00) and runner beans (a different species, Phaseolus coccineus). USDA 'Beans, snap, green' is Phaseolus vulgaris, so the generic row is the pair and the higher cultivar row is not borrowed."
+          },
+          "afcd-au-r3": {
+            key: "Bean, green, fresh, boiled, drained",
+            why: "Both boiled and drained. AFCD's 'cooked, no added fat' row reads higher and is not borrowed \u2014 ours is boiled."
+          }
+        }
+      },
+      {
+        id: "green-peas-cooked",
+        name: "Green peas, cooked",
+        category: "Vegetables",
+        fdc_id: "170102",
+        portion_id: "86051",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Peas, fresh, boiled",
+            why: "USDA's row is fresh peas boiled; Powell's frozen and petit-pois rows are different products and are not used."
+          },
+          "afcd-au-r3": {
+            key: "Pea, green, fresh, boiled, drained",
+            why: "Both fresh peas, boiled and drained."
+          }
+        }
+      },
+      {
+        id: "ground-beef",
+        name: "Ground beef",
+        category: "Beef",
+        fdc_id: "174034",
+        portion_id: "93669"
+      },
+      {
+        id: "ground-bison",
+        name: "Ground bison",
+        category: "Lamb, veal & game",
+        fdc_id: "173847",
+        portion_id: "93365"
+      },
+      {
+        id: "ground-chicken",
+        name: "Ground chicken",
+        category: "Poultry",
+        fdc_id: "171117",
+        portion_id: "88004"
+      },
+      {
+        id: "ground-lamb",
+        name: "Ground lamb",
+        category: "Lamb, veal & game",
+        fdc_id: "172544",
+        portion_id: "90819",
+        matches: {
+          "afcd-au-r3": {
+            key: "Lamb, mince, stir-fried, no added fat",
+            why: "Mince IS ground lamb. Ours is broiled and AFCD's stir-fried \u2014 both dry heat with no added fat, which is the part that moves the number."
+          }
+        }
+      },
+      {
+        id: "ground-pork",
+        name: "Ground pork",
+        category: "Pork",
+        fdc_id: "167903",
+        portion_id: "82191",
+        matches: {
+          "afcd-au-r3": {
+            key: "Pork, mince, as purchased, fried, no added fat",
+            why: "Mince IS ground pork; cooked in both, no fat added in either."
+          }
+        }
+      },
+      {
+        id: "ground-turkey",
+        name: "Ground turkey",
+        category: "Poultry",
+        fdc_id: "171506",
+        portion_id: "88876"
+      },
+      {
+        id: "ground-venison",
+        name: "Ground venison",
+        category: "Lamb, veal & game",
+        fdc_id: "172603",
+        portion_id: "90945",
+        matches: {
+          "afcd-au-r3": {
+            key: "Venison, mince, premium, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",
+            why: "Mince IS ground venison; cooked in both."
+          }
+        }
+      },
+      {
+        id: "guava",
+        name: "Guava",
+        category: "Fruits",
+        fdc_id: "173044",
+        portion_id: "91858"
+      },
+      {
+        id: "haddock-cooked",
+        name: "Haddock, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "174198",
+        portion_id: "93915"
+      },
+      {
+        id: "halibut-cooked",
+        name: "Halibut, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "174201",
+        portion_id: "93921"
+      },
+      {
+        id: "hazelnuts",
+        name: "Hazelnuts",
+        category: "Nuts & seeds",
+        fdc_id: "170581",
+        portion_id: "86899",
+        matches: {
+          "afcd-au-r3": {
+            key: "Nut, hazelnut, raw, unsalted",
+            why: "Both raw."
+          }
+        }
+      },
+      {
+        id: "hearts-of-palm-canned",
+        name: "Hearts of palm, canned",
+        category: "Vegetables",
+        fdc_id: "168569",
+        portion_id: "83344"
+      },
+      {
+        id: "hemp-seeds",
+        name: "Hemp seeds",
+        category: "Nuts & seeds",
+        fdc_id: "170148",
+        portion_id: "86132"
+      },
+      {
+        id: "herring-cooked",
+        name: "Herring, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "174233",
+        portion_id: "93989"
+      },
+      {
+        id: "honeydew-melon",
+        name: "Honeydew melon",
+        category: "Fruits",
+        fdc_id: "169911",
+        portion_id: "85658",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Melon, (cantaloupe, honeydew, galia)",
+            why: "The same single melon row, which names honeydew. See cantaloupe -- both our melons rest on one pooled measurement, which is the source's choice, not ours."
+          }
+        }
+      },
+      {
+        id: "kale-cooked",
+        name: "Kale, cooked",
+        category: "Vegetables",
+        fdc_id: "169355",
+        portion_id: "84696"
+      },
+      {
+        id: "kidney-beans-cooked",
+        name: "Kidney beans, cooked",
+        category: "Legumes",
+        fdc_id: "175242",
+        portion_id: "95884",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Red kidney beans, canned or dried and boiled",
+            why: "Same legume, both boiled from dry."
+          },
+          "afcd-au-r3": {
+            key: "Bean, red kidney, dried, boiled, drained",
+            why: "Both boiled from dry."
+          }
+        }
+      },
+      {
+        id: "kimchi",
+        name: "Kimchi",
+        category: "Vegetables",
+        fdc_id: "170392",
+        portion_id: "86554"
+      },
+      {
+        id: "king-crab-cooked",
+        name: "King crab, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "174202",
+        portion_id: "93924"
+      },
+      {
+        id: "kiwifruit",
+        name: "Kiwifruit",
+        category: "Fruits",
+        fdc_id: "168153",
+        portion_id: "82568",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Kiwi fruit, raw, without skin",
+            why: "Same fruit, both raw, both flesh-only."
+          }
+        }
+      },
+      {
+        id: "kohlrabi-cooked",
+        name: "Kohlrabi, cooked",
+        category: "Vegetables",
+        fdc_id: "169357",
+        portion_id: "84698"
+      },
+      {
+        id: "lamb-chop",
+        name: "Lamb chop",
+        category: "Lamb, veal & game",
+        fdc_id: "172489",
+        portion_id: "90710"
+      },
+      {
+        id: "lamb-kidneys",
+        name: "Lamb kidneys",
+        category: "Lamb, veal & game",
+        fdc_id: "174355",
+        portion_id: "94206"
+      },
+      {
+        id: "lamb-liver",
+        name: "Lamb liver",
+        category: "Lamb, veal & game",
+        fdc_id: "172533",
+        portion_id: "90798"
+      },
+      {
+        id: "lamb-shank",
+        name: "Lamb shank",
+        category: "Lamb, veal & game",
+        fdc_id: "172482",
+        portion_id: "90697"
+      },
+      {
+        id: "leeks-cooked",
+        name: "Leeks, cooked",
+        category: "Vegetables",
+        fdc_id: "168535",
+        portion_id: "83256",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Leeks, fresh, boiled",
+            why: "Same vegetable, both boiled."
+          }
+        }
+      },
+      {
+        id: "leg-of-lamb",
+        name: "Leg of lamb",
+        category: "Lamb, veal & game",
+        fdc_id: "174312",
+        portion_id: "94120"
+      },
+      {
+        id: "lentils-cooked",
+        name: "Lentils, cooked",
+        category: "Legumes",
+        fdc_id: "175254",
+        portion_id: "95899",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Lentils, green and brown, boiled",
+            why: "Powell measures two lentils \u2014 red at 4.42 and green/brown at 1.95 mg/100 g \u2014 and our USDA row is the generic 'Lentils, mature seeds, cooked', which says nothing about colour. The LOWER is taken: it is true of whichever lentil is on the plate, where taking red would only be true of red. Dropping lentils instead, which is what this curation did for one day, told the user lentils contain no silica at all \u2014 a claim both of Powell's rows contradict.",
+            conservative: true
+          }
+        }
+      },
+      {
+        id: "lima-beans-cooked",
+        name: "Lima beans, cooked",
+        category: "Legumes",
+        fdc_id: "173802",
+        portion_id: "93276",
+        matches: {
+          "afcd-au-r3": {
+            key: "Bean, lima, dried, boiled, drained",
+            why: "Both boiled from dry."
+          }
+        }
+      },
+      {
+        id: "lobster-cooked",
+        name: "Lobster, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "174209",
+        portion_id: "93937",
+        matches: {
+          "afcd-au-r3": {
+            key: "Lobster or crayfish, flesh, purchased steamed, poached or boiled, no added fat",
+            why: "Lobster flesh in both, moist-heat cooked in both."
+          }
+        }
+      },
+      {
+        id: "lychee",
+        name: "Lychee",
+        category: "Fruits",
+        fdc_id: "169086",
+        portion_id: "84200",
+        matches: {
+          "afcd-au-r3": {
+            key: "Lychee, peeled, raw",
+            why: "Both raw, both peeled."
+          }
+        }
+      },
+      {
+        id: "macadamia-nuts-roasted",
+        name: "Macadamia nuts, roasted",
+        category: "Nuts & seeds",
+        fdc_id: "168598",
+        portion_id: "83393"
+      },
+      {
+        id: "mackerel-cooked",
+        name: "Mackerel, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "171994",
+        portion_id: "89703"
+      },
+      {
+        id: "mango",
+        name: "Mango",
+        category: "Fruits",
+        fdc_id: "169910",
+        portion_id: "85651",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Mango, fresh, raw, \uFB01brous",
+            why: "Powell measures smooth mango at 3.15 and fibrous at 2.00 mg/100 g; our USDA row is the generic 'Mangos, raw'. The lower is taken for the same reason as lentils.",
+            conservative: true
+          }
+        }
+      },
+      {
+        id: "mozzarella",
+        name: "Mozzarella",
+        category: "Dairy & eggs",
+        fdc_id: "170845",
+        portion_id: "87382",
+        matches: {
+          "afcd-au-r3": {
+            key: "Cheese, mozzarella",
+            why: "Same cheese, both as sold."
+          }
+        }
+      },
+      {
+        id: "mung-bean-sprouts-cooked",
+        name: "Mung bean sprouts, cooked",
+        category: "Vegetables",
+        fdc_id: "168499",
+        portion_id: "83197"
+      },
+      {
+        id: "mussels-cooked",
+        name: "Mussels, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "174217",
+        portion_id: "93960"
+      },
+      {
+        id: "mustard-greens-cooked",
+        name: "Mustard greens, cooked",
+        category: "Vegetables",
+        fdc_id: "170503",
+        portion_id: "86772"
+      },
+      {
+        id: "natto",
+        name: "Natto",
+        category: "Legumes",
+        fdc_id: "172443",
+        portion_id: "90631"
+      },
+      {
+        id: "navy-beans-cooked",
+        name: "Navy beans, cooked",
+        category: "Legumes",
+        fdc_id: "173794",
+        portion_id: "93266"
+      },
+      {
+        id: "octopus-cooked",
+        name: "Octopus, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "174249",
+        portion_id: "94020"
+      },
+      {
+        id: "okra-cooked",
+        name: "Okra, cooked",
+        category: "Vegetables",
+        fdc_id: "170098",
+        portion_id: "86037"
+      },
+      {
+        id: "onions-raw",
+        name: "Onions, raw",
+        category: "Vegetables",
+        fdc_id: "170000",
+        portion_id: "85855",
+        matches: {
+          "doleman-2017": {
+            key: "Brown onion",
+            conservative: true,
+            why: "Doleman measured brown (77.0 umol/g dry) and red (121.3) mature onions raw; our USDA row is the generic 'Onions, raw' and says which neither. The LOWER is taken. Doleman's spring onion is a different food and lives on our scallions entry, not here."
+          },
+          "afcd-au-r3": {
+            key: "Onion, mature, white skinned, peeled, fresh, raw",
+            conservative: true,
+            why: "AFCD measures brown, red and white mature onions raw; ours is the generic raw onion. The LOWEST is taken, which is white \u2014 and it lands under the threshold, where brown would have shipped molybdenum at 8.4%. The pair is recorded anyway: a pair that exists only when it helps is a biased pair."
+          }
+        }
+      },
+      {
+        id: "orange",
+        name: "Orange",
+        category: "Fruits",
+        fdc_id: "169097",
+        portion_id: "84230"
+      },
+      {
+        id: "oysters-cooked",
+        name: "Oysters, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "171980",
+        portion_id: "89671"
+      },
+      {
+        id: "papaya",
+        name: "Papaya",
+        category: "Fruits",
+        fdc_id: "169926",
+        portion_id: "85692",
+        matches: {
+          "afcd-au-r3": {
+            key: "Papaya, yellow, peeled, raw",
+            why: "AFCD measures pawpaw, red papaya and yellow papaya; ours is the generic 'Papayas, raw'. The lowest is taken. Lands under the threshold.",
+            conservative: true
+          }
+        }
+      },
+      {
+        id: "parmesan-grated",
+        name: "Parmesan, grated",
+        category: "Dairy & eggs",
+        fdc_id: "171247",
+        portion_id: "88263"
+      },
+      {
+        id: "parsley-fresh",
+        name: "Parsley, fresh",
+        category: "Vegetables",
+        fdc_id: "170416",
+        portion_id: "86608",
+        matches: {
+          "afcd-au-r3": {
+            key: "Parsley, continental, fresh, raw",
+            why: "Both fresh and raw. Lands under the threshold."
+          }
+        }
+      },
+      {
+        id: "parsnips-cooked",
+        name: "Parsnips, cooked",
+        category: "Vegetables",
+        fdc_id: "170009",
+        portion_id: "85888",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Parsnips, fresh, peeled, boiled",
+            why: "Same vegetable, both boiled."
+          }
+        }
+      },
+      {
+        id: "peach",
+        name: "Peach",
+        category: "Fruits",
+        fdc_id: "169928",
+        portion_id: "85697",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Peaches, fresh, raw",
+            why: "Same fruit, both raw."
+          }
+        }
+      },
+      {
+        id: "peanuts-dry-roasted",
+        name: "Peanuts, dry-roasted",
+        category: "Legumes",
+        fdc_id: "173806",
+        portion_id: "93281",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Groundnuts, roasted and salted",
+            why: "Groundnut IS peanut, and both are roasted. Powell's is salted and ours is not; salt adds sodium, not silicon."
+          },
+          "afcd-au-r3": {
+            key: "Nut, peanut, without skin, roasted, with oil, unsalted",
+            why: "AFCD has no dry-roasted peanut; this is roasted in oil, and the oil dilutes everything per 100 g, so it is a floor for our dry-roasted row.",
+            conservative: true
+          }
+        }
+      },
+      {
+        id: "pear",
+        name: "Pear",
+        category: "Fruits",
+        fdc_id: "169118",
+        portion_id: "84275",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Pears, raw",
+            why: "Same fruit, both raw."
+          }
+        }
+      },
+      {
+        id: "pecans",
+        name: "Pecans",
+        category: "Nuts & seeds",
+        fdc_id: "170182",
+        portion_id: "86190"
+      },
+      {
+        id: "persimmon",
+        name: "Persimmon",
+        category: "Fruits",
+        fdc_id: "169941",
+        portion_id: "85724"
+      },
+      {
+        id: "pineapple",
+        name: "Pineapple",
+        category: "Fruits",
+        fdc_id: "169124",
+        portion_id: "84289",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Pineapple, fresh, raw",
+            why: "Powell's only FRESH pineapple row. The canned-in-juice and canned-in-syrup rows are different products and are not used."
+          }
+        }
+      },
+      {
+        id: "pinto-beans-cooked",
+        name: "Pinto beans, cooked",
+        category: "Legumes",
+        fdc_id: "175200",
+        portion_id: "95832"
+      },
+      {
+        id: "pistachios-dry-roasted",
+        name: "Pistachios, dry roasted",
+        category: "Nuts & seeds",
+        fdc_id: "169426",
+        portion_id: "84844"
+      },
+      {
+        id: "plantain-baked",
+        name: "Plantain, baked",
+        category: "Fruits",
+        fdc_id: "169131",
+        portion_id: "84304"
+      },
+      {
+        id: "poppy-seeds",
+        name: "Poppy seeds",
+        category: "Spices & herbs",
+        fdc_id: "171330",
+        portion_id: "88450"
+      },
+      {
+        id: "pork-liver",
+        name: "Pork liver",
+        category: "Pork",
+        fdc_id: "167863",
+        portion_id: "82113"
+      },
+      {
+        id: "pork-ribs",
+        name: "Pork ribs",
+        category: "Pork",
+        fdc_id: "168377",
+        portion_id: "82988",
+        matches: {
+          "afcd-au-r3": {
+            key: "Pork, spare ribs, untrimmed, baked, no added fat",
+            why: "Ribs in both, roasted/baked in both. Ours is lean only and AFCD's is untrimmed; fat carries almost no sulphur, so the untrimmed figure is the floor for a lean rib.",
+            conservative: true
+          }
+        }
+      },
+      {
+        id: "pork-shoulder-roasted",
+        name: "Pork shoulder, roasted",
+        category: "Pork",
+        fdc_id: "167844",
+        portion_id: "82078",
+        matches: {
+          "afcd-au-r3": {
+            key: "Pork, forequarter shoulder roast, untrimmed, BBQ'd, no added fat",
+            why: "Shoulder roast in both, cooked in both, and UNTRIMMED \u2014 which is what our USDA row's 'separable lean and fat' means. AFCD's lean row reads higher and is not borrowed."
+          }
+        }
+      },
+      {
+        id: "portabella-mushrooms-grilled",
+        name: "Portabella mushrooms, grilled",
+        category: "Vegetables",
+        fdc_id: "169243",
+        portion_id: "84501"
+      },
+      {
+        id: "potato-baked",
+        name: "Potato, baked",
+        category: "Vegetables",
+        fdc_id: "170093",
+        portion_id: "86027"
+      },
+      {
+        id: "provolone",
+        name: "Provolone",
+        category: "Dairy & eggs",
+        fdc_id: "170850",
+        portion_id: "87399"
+      },
+      {
+        id: "pumpkin-seeds-roasted",
+        name: "Pumpkin seeds, roasted",
+        category: "Nuts & seeds",
+        fdc_id: "169415",
+        portion_id: "84822",
+        matches: {
+          "afcd-au-r3": {
+            key: "Seed, pumpkin, hulled & dried",
+            why: "AFCD measures hulled DRIED pepitas; ours are roasted. Roasting drives off the last of the moisture, so the roasted figure can only be higher \u2014 the dried one is the floor.",
+            conservative: true
+          }
+        }
+      },
+      {
+        id: "rabbit-stewed",
+        name: "Rabbit, stewed",
+        category: "Lamb, veal & game",
+        fdc_id: "174346",
+        portion_id: "94188",
+        matches: {
+          "afcd-au-r3": {
+            key: "Rabbit, flesh, casseroled, no added fat",
+            why: "Casseroled IS stewed; flesh only in both."
+          }
+        }
+      },
+      {
+        id: "radishes-raw",
+        name: "Radishes, raw",
+        category: "Vegetables",
+        fdc_id: "169276",
+        portion_id: "84582",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Radish, fresh",
+            why: "Same vegetable, both raw."
+          },
+          "doleman-2017": {
+            key: "Radish",
+            why: "Both raw. Lands under the threshold."
+          }
+        }
+      },
+      {
+        id: "rainbow-trout-cooked",
+        name: "Rainbow trout, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "173718",
+        portion_id: "93178"
+      },
+      {
+        id: "raspberries",
+        name: "Raspberries",
+        category: "Fruits",
+        fdc_id: "167755",
+        portion_id: "81905",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Raspberries, fresh, raw",
+            why: "Same fruit, both raw."
+          }
+        }
+      },
+      {
+        id: "red-bell-pepper-raw",
+        name: "Red bell pepper, raw",
+        category: "Vegetables",
+        fdc_id: "170108",
+        portion_id: "86065",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Peppers, red, fresh, raw",
+            why: "Same vegetable, same colour, both raw."
+          }
+        }
+      },
+      {
+        id: "ribeye-steak",
+        name: "Beef ribeye",
+        category: "Beef",
+        fdc_id: "169556",
+        portion_id: "85100"
+      },
+      {
+        id: "ricotta",
+        name: "Ricotta",
+        category: "Dairy & eggs",
+        fdc_id: "170851",
+        portion_id: "87401",
+        matches: {
+          "afcd-au-r3": {
+            key: "Cheese, ricotta",
+            why: "Same cheese, both as sold."
+          }
+        }
+      },
+      {
+        id: "rockfish-cooked",
+        name: "Rockfish, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "175131",
+        portion_id: "95706"
+      },
+      {
+        id: "romaine-lettuce",
+        name: "Romaine lettuce",
+        category: "Vegetables",
+        fdc_id: "169247",
+        portion_id: "84510",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Lettuce, little gem, fresh, raw",
+            why: "Little gem is a cos/romaine cultivar -- the only romaine-type row Powell prints. Iceberg, lamb's, rocket and mixed leaves are other lettuces and are not borrowed."
+          },
+          "doleman-2017": {
+            key: "Lettuce",
+            why: "Doleman's row is generic lettuce and ours is cos/romaine; both raw. Lands under the threshold."
+          }
+        }
+      },
+      {
+        id: "rutabaga-cooked",
+        name: "Rutabaga, cooked",
+        category: "Vegetables",
+        fdc_id: "168455",
+        portion_id: "83123",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Swede, fresh, boiled",
+            why: "Swede IS rutabaga (Brassica napus); both boiled."
+          }
+        }
+      },
+      {
+        id: "salt",
+        name: "Salt",
+        category: "Spices & herbs",
+        fdc_id: "173468",
+        portion_id: "92594",
+        matches: {
+          "afcd-au-r3": {
+            key: "Salt, table, iodised",
+            why: "AFCD publishes iodised and non-iodised table salt at the identical 61,200 mg chloride per 100 g \u2014 salt IS sodium chloride, so this is a composition fact, not a sample. Iodised is taken because that is what our catalog entry is."
+          }
+        }
+      },
+      {
+        id: "sardines-canned-with-bones",
+        name: "Sardines, canned with bones",
+        category: "Fish & shellfish",
+        fdc_id: "175140",
+        portion_id: "95728"
+      },
+      {
+        id: "scallions-raw",
+        name: "Scallions, raw",
+        category: "Vegetables",
+        fdc_id: "170005",
+        portion_id: "85878",
+        matches: {
+          "doleman-2017": {
+            key: "Spring onion",
+            why: "Spring onion IS the scallion; both raw, both including tops and bulb. Lands under the threshold at 5.8% and is recorded anyway."
+          }
+        }
+      },
+      {
+        id: "scallops-cooked",
+        name: "Scallops, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "167742",
+        portion_id: "81878"
+      },
+      {
+        id: "sesame-seeds-roasted",
+        name: "Sesame seeds, roasted",
+        category: "Nuts & seeds",
+        fdc_id: "170151",
+        portion_id: "86137",
+        matches: {
+          "afcd-au-r3": {
+            key: "Seed, sesame, unsalted",
+            why: "AFCD does not state a roast; sesame seed is sesame seed, and roasting drives off a little water, so if anything this reads low."
+          }
+        }
+      },
+      {
+        id: "shiitake-mushrooms-cooked",
+        name: "Shiitake mushrooms, cooked",
+        category: "Vegetables",
+        fdc_id: "170097",
+        portion_id: "86035"
+      },
+      {
+        id: "shrimp-cooked",
+        name: "Shrimp, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "175180",
+        portion_id: "95807"
+      },
+      {
+        id: "sirloin-steak",
+        name: "Sirloin steak",
+        category: "Beef",
+        fdc_id: "168727",
+        portion_id: "83655"
+      },
+      {
+        id: "snow-peas-cooked",
+        name: "Snow peas, cooked",
+        category: "Vegetables",
+        fdc_id: "170509",
+        portion_id: "86780",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Mange-tout, fresh, boiled Marrow, fresh, raw",
+            why: "Mange-tout IS the edible-podded pea USDA calls snow peas; both boiled. The key carries 'Marrow, fresh, raw' because the paper's next row title bleeds into this line in the PDF -- the KEY is noisy, the VALUE is mange-tout's, and the key is kept byte-exact so the gate can join it."
+          },
+          "afcd-au-r3": {
+            key: "Snow pea, fresh, boiled, drained",
+            why: "Both boiled and drained."
+          }
+        }
+      },
+      {
+        id: "sockeye-salmon-cooked",
+        name: "Sockeye salmon, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "173692",
+        portion_id: "93121"
+      },
+      {
+        id: "soybeans-cooked",
+        name: "Soybeans, cooked",
+        category: "Legumes",
+        fdc_id: "174271",
+        portion_id: "94059",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Soya beans, dried and boiled",
+            why: "Same legume, both boiled from dry."
+          }
+        }
+      },
+      {
+        id: "spaghetti-squash-cooked",
+        name: "Spaghetti squash, cooked",
+        category: "Vegetables",
+        fdc_id: "170539",
+        portion_id: "86821"
+      },
+      {
+        id: "spinach-cooked",
+        name: "Spinach, cooked",
+        category: "Vegetables",
+        fdc_id: "170531",
+        portion_id: "86811",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Spinach, fresh, boiled",
+            why: "Same vegetable, both boiled."
+          },
+          "afcd-au-r3": {
+            key: "Spinach, Mature English, fresh, boiled, drained",
+            why: "Both boiled and drained. AFCD's BABY spinach row is raw and is not borrowed."
+          }
+        }
+      },
+      {
+        id: "split-peas-cooked",
+        name: "Split peas, cooked",
+        category: "Legumes",
+        fdc_id: "175257",
+        portion_id: "95902",
+        matches: {
+          "afcd-au-r3": {
+            key: "Pea, split, dried, boiled, drained",
+            why: "Both boiled from dry."
+          }
+        }
+      },
+      {
+        id: "strawberries",
+        name: "Strawberries",
+        category: "Fruits",
+        fdc_id: "167762",
+        portion_id: "81928",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Strawberries, raw",
+            why: "Same fruit, both raw."
+          }
+        }
+      },
+      {
+        id: "summer-squash-cooked",
+        name: "Summer squash, cooked",
+        category: "Vegetables",
+        fdc_id: "170125",
+        portion_id: "86096"
+      },
+      {
+        id: "sunflower-seeds-dry-roasted",
+        name: "Sunflower seeds, dry roasted",
+        category: "Nuts & seeds",
+        fdc_id: "169417",
+        portion_id: "84826",
+        matches: {
+          "afcd-au-r3": {
+            key: "Seed, sunflower",
+            why: "AFCD does not state a roast. Same as sesame: roasting can only concentrate, so this reads low if it is wrong at all."
+          }
+        }
+      },
+      {
+        id: "sweet-corn-cooked",
+        name: "White corn on the cob",
+        category: "Vegetables",
+        fdc_id: "168540",
+        portion_id: "83275",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Sweetcorn, on the cob, fresh, boiled",
+            why: "Same vegetable, both on the cob and boiled."
+          }
+        }
+      },
+      {
+        id: "sweet-potato-baked",
+        name: "Sweet potato, baked",
+        category: "Vegetables",
+        fdc_id: "168483",
+        portion_id: "83168"
+      },
+      {
+        id: "swiss-chard-cooked",
+        name: "Swiss chard, cooked",
+        category: "Vegetables",
+        fdc_id: "169343",
+        portion_id: "84679",
+        matches: {
+          "afcd-au-r3": {
+            key: "Silverbeet, fresh, boiled, drained",
+            why: "Silverbeet IS Swiss chard; both boiled and drained."
+          }
+        }
+      },
+      {
+        id: "swiss-cheese",
+        name: "Swiss cheese",
+        category: "Dairy & eggs",
+        fdc_id: "171251",
+        portion_id: "88276"
+      },
+      {
+        id: "swordfish-cooked",
+        name: "Swordfish, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "173704",
+        portion_id: "93143"
+      },
+      {
+        id: "tahini",
+        name: "Tahini",
+        category: "Nuts & seeds",
+        fdc_id: "170189",
+        portion_id: "86210",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Tahini Beverages\u2020\u2021",
+            why: "Same product. The key carries 'Beverages' because the paper's next SECTION HEADING bleeds into this line in the PDF; kept byte-exact so the gate can join it."
+          },
+          "afcd-au-r3": {
+            key: "Tahini, sesame seed pulp",
+            why: "Same product."
+          }
+        }
+      },
+      {
+        id: "tangerine",
+        name: "Tangerine",
+        category: "Fruits",
+        fdc_id: "169105",
+        portion_id: "84250",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Clementines, raw, without skin",
+            why: "A clementine is a mandarin cultivar, which is what USDA's tangerine row is; both raw, both peeled."
+          }
+        }
+      },
+      {
+        id: "taro-cooked",
+        name: "Taro, cooked",
+        category: "Vegetables",
+        fdc_id: "170543",
+        portion_id: "86826"
+      },
+      {
+        id: "tempeh",
+        name: "Tempeh",
+        category: "Legumes",
+        fdc_id: "174272",
+        portion_id: "94061"
+      },
+      {
+        id: "tilapia-cooked",
+        name: "Tilapia, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "175177",
+        portion_id: "95804"
+      },
+      {
+        id: "tofu-firm",
+        name: "Tofu, firm",
+        category: "Legumes",
+        fdc_id: "172448",
+        portion_id: "90638",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Tofu Milk and milk products",
+            why: "Same product. Powell does not state firmness. The key carries 'Milk and milk products' because the next section heading bleeds into this PDF line; kept byte-exact so the gate can join it."
+          },
+          "afcd-au-r3": {
+            key: "Tofu (soy bean curd), firm, as purchased",
+            why: "Both firm tofu as purchased."
+          }
+        }
+      },
+      {
+        id: "tomato-raw",
+        name: "Tomato, raw",
+        category: "Vegetables",
+        fdc_id: "170457",
+        portion_id: "86681",
+        matches: {
+          "afcd-au-r3": {
+            key: "Tomato, common, raw",
+            why: "AFCD's COMMON tomato \u2014 the generic row \u2014 not its cherry tomato, which reads double. \u26A0 A name matcher proposed 'Sauce, tomato, commercial' here, which would have shipped 83% chloride off the sauce's added salt."
+          },
+          "doleman-2017": {
+            key: "Tomato",
+            why: "Both raw. Lands under the threshold."
+          }
+        }
+      },
+      {
+        id: "tuna-canned-in-water",
+        name: "Tuna, canned in water",
+        category: "Fish & shellfish",
+        fdc_id: "175158",
+        portion_id: "95767",
+        matches: {
+          "afcd-au-r3": {
+            key: "Tuna, unflavoured, canned in water, drained",
+            why: "Canned in water and drained in both, unflavoured in both."
+          }
+        }
+      },
+      {
+        id: "turkey-breast-roasted",
+        name: "Turkey breast, roasted",
+        category: "Poultry",
+        fdc_id: "171496",
+        portion_id: "88856",
+        matches: {
+          "afcd-au-r3": {
+            key: "Turkey, breast, lean flesh, baked, no added fat",
+            why: "Breast meat only in both, roasted/baked with no added fat."
+          }
+        }
+      },
+      {
+        id: "turkey-thigh-roasted",
+        name: "Turkey thigh, roasted",
+        category: "Poultry",
+        fdc_id: "171532",
+        portion_id: "88938",
+        matches: {
+          "afcd-au-r3": {
+            key: "Turkey, hindquarter, lean flesh, baked, no added fat",
+            why: "AFCD publishes the HINDQUARTER \u2014 thigh plus drumstick \u2014 where ours is thigh alone. Same bird, same dark meat, same state; the cut boundary is the approximation, and it is why this is not EXACT tier."
+          }
+        }
+      },
+      {
+        id: "turmeric-ground",
+        name: "Turmeric, ground",
+        category: "Spices & herbs",
+        fdc_id: "172231",
+        portion_id: "90123"
+      },
+      {
+        id: "turnip-greens-cooked",
+        name: "Turnip greens, cooked",
+        category: "Vegetables",
+        fdc_id: "170139",
+        portion_id: "86119"
+      },
+      {
+        id: "turnips-cooked",
+        name: "Turnips, cooked",
+        category: "Vegetables",
+        fdc_id: "170547",
+        portion_id: "86833",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Turnips, fresh, peeled, boiled",
+            why: "Same vegetable, both boiled."
+          }
+        }
+      },
+      {
+        id: "veal-chop",
+        name: "Veal chop",
+        category: "Lamb, veal & game",
+        fdc_id: "172650",
+        portion_id: "91005"
+      },
+      {
+        id: "veal-cutlet",
+        name: "Veal cutlet",
+        category: "Lamb, veal & game",
+        fdc_id: "174880",
+        portion_id: "95064"
+      },
+      {
+        id: "venison-roasted",
+        name: "Venison, roasted",
+        category: "Lamb, veal & game",
+        fdc_id: "175085",
+        portion_id: "95585",
+        matches: {
+          "afcd-au-r3": {
+            key: "Venison, leg medallion, lean, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",
+            why: "Our USDA row is a composite of deer cuts, roasted. AFCD publishes a leg medallion and a mince, both cooked; the medallion is the cut (not the ground) and is also the lower of the two.",
+            conservative: true
+          }
+        }
+      },
+      {
+        id: "walnuts",
+        name: "Walnuts",
+        category: "Nuts & seeds",
+        fdc_id: "170187",
+        portion_id: "86206"
+      },
+      {
+        id: "white-beans-cooked",
+        name: "White beans, cooked",
+        category: "Legumes",
+        fdc_id: "175249",
+        portion_id: "95893"
+      },
+      {
+        id: "white-mushrooms-cooked",
+        name: "White mushrooms, cooked",
+        category: "Vegetables",
+        fdc_id: "168537",
+        portion_id: "83260"
+      },
+      {
+        id: "whole-milk",
+        name: "Whole milk",
+        category: "Dairy & eggs",
+        fdc_id: "171266",
+        portion_id: "88318",
+        matches: {
+          "afcd-au-r3": {
+            key: "Milk, cow, fluid, regular fat (~3.5%)",
+            why: "Our USDA row is producer milk at 3.7% fat; AFCD's regular-fat cow milk is ~3.5%. Same product, same state, essentially the same fat."
+          }
+        }
+      },
+      {
+        id: "whole-milk-yogurt",
+        name: "Whole-milk yogurt",
+        category: "Dairy & eggs",
+        fdc_id: "171284",
+        portion_id: "88365"
+      },
+      {
+        id: "yam-cooked",
+        name: "Yam, cooked",
+        category: "Vegetables",
+        fdc_id: "170551",
+        portion_id: "86839",
+        matches: {
+          "silicon-powell-2005": {
+            key: "Yam, fresh, peeled, boiled Snack foods",
+            why: "Same vegetable; USDA's row is 'boiled, drained, or baked' and Powell's is boiled. The key carries 'Snack foods' because the next section heading bleeds into this PDF line; kept byte-exact so the gate can join it."
+          }
+        }
+      },
+      {
+        id: "yellowfin-tuna-cooked",
+        name: "Yellowfin tuna, cooked",
+        category: "Fish & shellfish",
+        fdc_id: "172006",
+        portion_id: "89724"
+      }
+    ],
+    _matches_purpose: "\u2605 STILL NUMBERS-FREE. `matches` binds a food to a row in a SECOND composition source by the source's own food NAME, because those sources publish no id our catalog shares. A name join is a human decision, so each one carries the reasoning that accepted it and every value it produces is APPROXIMATE tier FOREVER \u2014 the gate REDs an EXACT tier sitting on a name join. THE PAIR RULE: same food, same state. Where the source measures SEVERAL VARIETIES of what our generic row calls one food \u2014 red and green lentils, smooth and fibrous mango, three cabbages \u2014 take the LOWEST and set `conservative`, which makes the card say so. \u26D4 DO NOT DROP THE FOOD. That is what this file did for one day, and Luneth overruled it on 2026-08-22: a blank card does not read as 'we could not choose', it reads as 'not a source', which is a stronger claim than the one being avoided and a false one \u2014 every Powell lentil row measures silicon in lentils. The lowest variety is true whichever kind is on the plate, can only understate, and asserts no absence that is not there. A pair is recorded even when it lands under the threshold and shows nothing, because a pair that exists only when it helps is a biased pair.",
+    _afcd_refused: {
+      "bok-choy-cooked": "AFCD has steamed and fried; ours is boiled.",
+      "canned-salmon-with-bones": "AFCD has pink canned salmon (chloride, no sulphur) and red canned salmon (sulphur, no chloride); ours is chum. Which row to take is not a variety question the lowest-value rule can answer.",
+      "chicken-thigh-roasted": "AFCD's BAKED thigh \u2014 the row that matches our state \u2014 measures none of these four. Its raw and fried rows do, and are not borrowed.",
+      "coconut-raw": "AFCD's coconut is grated and desiccated; ours is raw meat.",
+      "eggplant-cooked": "AFCD has raw and roasted; ours is boiled.",
+      "greek-yogurt": "AFCD has natural regular-fat yoghurt; Greek yoghurt is strained and is a different product.",
+      "kale-cooked": "AFCD has kale RAW (64%) and FRIED (91%); ours is boiled. Boiling adds water, so either would read high on a boiled kale.",
+      "lamb-chop": "AFCD's loin chop is LEAN (42% sulphur); our USDA row is lean AND fat. Fat carries almost no sulphur, so the lean figure reads high on a fatty chop.",
+      "leg-of-lamb": "Same trim mismatch: AFCD's lean leg roast (22%) against our lean-and-fat row. AFCD's untrimmed leg roast measures no sulphur at all.",
+      "macadamia-nuts-roasted": "AFCD's macadamia is raw; ours is roasted.",
+      "oysters-cooked": "AFCD's oyster rows are all RAW (sulphur 54-67%); ours is moist-heat cooked. The richest sulphur food in reach, and refused for it.",
+      "parmesan-grated": "AFCD's dried finely-grated parmesan \u2014 the row that matches ours \u2014 measures none of these four. Its FRESH parmesan is a different product.",
+      "potato-baked": "AFCD's baked potatoes are PEELED; ours is flesh and skin.",
+      "sweet-potato-baked": "AFCD has raw and baked but peeled; ours is baked in skin."
+    },
+    _doleman_refused: {
+      "broccoli-cooked": "Doleman analysed broccoli RAW; ours is boiled. Boiling leaches sulphate and glucosinolates, so a raw dry-basis figure reads high on a boiled crucifer. It would have shipped at 27%.",
+      "cauliflower-cooked": "Raw in Doleman, boiled in ours. Same leaching argument. 13%.",
+      "green-beans-cooked": "Doleman's dwarf beans are raw; ours are boiled.",
+      "ground-beef": "Doleman analysed minced beef AS PURCHASED \u2014 raw \u2014 and our USDA row is cooked and pan-browned. It would have shipped at 38%.",
+      "kale-cooked": "Raw in Doleman, boiled in ours. Same leaching argument. 24%.",
+      "leeks-cooked": "Raw in Doleman, boiled in ours.",
+      "parsnips-cooked": "Raw in Doleman, boiled in ours.",
+      "potato-baked": "Raw in Doleman, baked in ours.",
+      "red-bell-pepper-raw": "Doleman measured GREEN pepper; ours is red. Both raw, but a green pepper is an unripe fruit and is not the same food.",
+      "snow-peas-cooked": "Doleman measured sugar snap peas, raw; ours are snow peas, boiled \u2014 a different pod and a different state.",
+      "sweet-potato-baked": "Raw in Doleman, baked in ours."
+    },
+    _gap_champions_refused: {
+      garlic: "REFUSED 2026-08-22, and it is the food the campaign most wanted. Doleman measures garlic at 252.3 umoles/g DRY \u2014 the highest allium in its table \u2014 and Wallach names garlic by name on germanium's own page. But a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his 500 mg sulphur target: under the 7% bar. Only a whole cup of raw garlic (136 g) clears anything, and nobody eats that. AFCD measures garlic for none of the four gap nutrients, and germanium \u2014 the thing Wallach actually names it for \u2014 carries no numeric target for a food to be measured against. Stretching the portion to admit it is what the derive's own error message forbids. Garlic is a flavouring, not a serving, and the number says so."
+    }
+  };
+
+  // assets/js/src/state/foods.ts
+  var DATA = FoodsCompositionSchema.parse(foods_composition_data_default);
+  var BY_ID = new Map(DATA.foods.map((f) => [f.id, f]));
+  var PINNED = (foods_catalog_curation_default.pinned?.ids ?? []).filter((id) => BY_ID.has(id));
+  var W_ADEQ = 0.6 / 0.9;
+  var W_BREADTH = 0.3 / 0.9;
+  var BREADTH_HALF = 5;
+  function foodCatalogSize() {
+    return DATA.foods.length;
+  }
+  function foodById(id) {
+    return BY_ID.get(id);
+  }
+  function foodNutrientRows(id) {
+    const food = BY_ID.get(id);
+    if (food === void 0) {
+      return [];
+    }
+    return food.nutrients.map((n) => ({ name: n.slug, amount: n.amount, unit: n.unit }));
+  }
+  function sourceWordsFor(sourceId) {
+    return DATA._meta.source_display[sourceId] ?? sourceId;
+  }
+  var DISPLAY = DATA._meta.essential_display;
+  var EFA_GOAL_MG = EfaCoverageSchema.parse(efa_coverage_data_default).goal.maintenance_mg;
+  var EFA_SLUG = "essential-fatty-acids";
+  function foodEfaOilMg(id) {
+    return BY_ID.get(id)?.efa?.oil_equivalent_mg ?? 0;
+  }
+  function hitsOf(food) {
+    const floor = Math.round(DATA._meta.qualify_fraction * 100);
+    const rows = food.nutrients.map((n) => ({
+      slug: n.slug,
+      label: DISPLAY[n.slug]?.label ?? n.slug,
+      category: DISPLAY[n.slug]?.category ?? "",
+      pct: Math.round(n.fraction * 100),
+      tier: n.provenance.tier,
+      source: sourceWordsFor(n.provenance.source_id),
+      conservative: n.provenance.conservative === true
+    }));
+    if (food.efa !== void 0 && EFA_GOAL_MG > 0) {
+      const pct = Math.round(food.efa.oil_equivalent_mg / EFA_GOAL_MG * 100);
+      if (pct >= floor) {
+        rows.push({
+          slug: EFA_SLUG,
+          label: DATA._meta.efa_reference.label,
+          category: DATA._meta.efa_reference.category,
+          pct,
+          tier: "EXACT",
+          source: sourceWordsFor("usda-sr-legacy"),
+          conservative: false
+        });
+      }
+    }
+    return rows.sort((a, b) => b.pct - a.pct || a.slug.localeCompare(b.slug));
+  }
+  function rankFoodsForCoverage(input) {
+    const owned = new Set(input.owned ?? []);
+    const goals = input.goals ?? [];
+    const limit = input.limit ?? 3;
+    const greedy = input.greedy ?? true;
+    const education = input.education ?? false;
+    const outstanding = new Set(input.want);
+    const available = DATA.foods.filter((f) => !owned.has(f.id));
+    if (available.length === 0) {
+      return [];
+    }
+    const suppliesOf = (f) => {
+      let n = 0;
+      for (const row of f.nutrients) {
+        if (outstanding.has(row.slug)) {
+          n += 1;
+        }
+      }
+      return n;
+    };
+    const goalIdsFor = (f) => goals.filter((g) => g.members.some((m) => f.nutrients.some((n) => n.slug === m))).map((g) => g.id);
+    const out = [];
+    const emitted = /* @__PURE__ */ new Set();
+    const emit2 = (food, score, isPinned) => {
+      const hits = hitsOf(food);
+      out.push({
+        foodId: food.id,
+        name: food.name,
+        category: food.category,
+        portionLabel: food.portion_label,
+        grams: food.grams,
+        supplies: suppliesOf(food),
+        breadth: hits.length,
+        goalIds: goalIdsFor(food),
+        pinned: isPinned,
+        score,
+        hits
+      });
+      emitted.add(food.id);
+      if (greedy) {
+        for (const row of food.nutrients) {
+          outstanding.delete(row.slug);
+        }
+      }
+    };
+    let pinRank = 0;
+    for (const id of PINNED) {
+      if (out.length >= limit) {
+        break;
+      }
+      const food = BY_ID.get(id);
+      if (food === void 0 || owned.has(id)) {
+        continue;
+      }
+      if (!education && suppliesOf(food) === 0) {
+        continue;
+      }
+      emit2(food, 100 - pinRank, true);
+      pinRank += 1;
+    }
+    while (out.length < limit) {
+      let bestFood = null;
+      let bestScore = -1;
+      let bestSupply = 0;
+      for (const f of available) {
+        if (emitted.has(f.id)) {
+          continue;
+        }
+        const s = suppliesOf(f);
+        if (s > bestSupply) {
+          bestSupply = s;
+        }
+      }
+      for (const f of available) {
+        if (emitted.has(f.id)) {
+          continue;
+        }
+        const supplies = suppliesOf(f);
+        if (!education && supplies === 0) {
+          continue;
+        }
+        const adequacy = bestSupply > 0 ? supplies / bestSupply : 0;
+        const breadth = f.breadth / (f.breadth + BREADTH_HALF);
+        const score = education ? f.strength : W_ADEQ * adequacy + W_BREADTH * breadth;
+        if (score > bestScore) {
+          bestScore = score;
+          bestFood = f;
+        }
+      }
+      if (bestFood === null) {
+        break;
+      }
+      emit2(bestFood, bestScore, false);
+    }
+    return out;
   }
 
   // assets/data/slot-colours-data.json
@@ -17532,6 +36378,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     if (isUserSupplied(item.provenance)) {
       return snapshot2;
     }
+    if (isFoodCatalog(item.provenance)) {
+      const foodId = item.label["food_id"];
+      const rows = typeof foodId === "string" ? foodNutrientRows(foodId) : [];
+      return rows.length > 0 ? rows : snapshot2;
+    }
     const name = typeof item.label.name === "string" ? item.label.name.toLowerCase() : "";
     return vaultNutrientsByName().get(name) ?? snapshot2;
   }
@@ -17627,7 +36478,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const sources = [];
     for (const item of items) {
       const name = typeof item.label.name === "string" ? item.label.name.toLowerCase() : "";
-      const mg = map.get(name);
+      const foodId = item.label["food_id"];
+      const mg = typeof foodId === "string" ? foodEfaOilMg(foodId) : map.get(name);
       if (mg === void 0 || mg <= 0) {
         continue;
       }
@@ -23277,7 +42129,99 @@ THE SCANNED PATH WAS PROVEN UNMOVED, not assumed. A canvas-generated Supplement 
 
 NO SEALED PILLAR WAS TOUCHED, so no seal ceremony was required or performed.
 
-WHAT REMAINS. The foods recommendation system on Regimen + Coverage is still BLOCKED at turn 1 of the three-turn source-rule protocol (chronicle/contradictions/2026-08-21-usda-food-composition-third-source.md); turn 2 must be a LATER turn and is the next task. Regimen never-exhausting + the "you've covered all 90" completion state + the Products-tab link is not started. nutrientcodex.com has NOT been redeployed this round, so the live site does not yet carry hand-entry.`, metadata: { chunk: "scanner-hand-entry", board: "99/99", gates_added: ["user_supplied_provenance_single_home"], tests: { vitest: 66, probe_assertions: 20 }, files: ["dashboard/assets/js/src/core/provenance.ts", "dashboard/assets/js/src/core/units.ts", "dashboard/assets/js/src/core/units.test.ts", "dashboard/assets/js/src/core/schemas/scanner.ts", "dashboard/assets/js/src/core/schemas/regimen.ts", "dashboard/assets/js/src/state/scanner.ts", "dashboard/assets/js/src/state/coverage.ts", "dashboard/assets/js/src/state/coverage.autoheal.test.ts", "dashboard/assets/js/src/views/scanner.ts", "dashboard/assets/js/src/views/coverage.ts", "dashboard/assets/js/src/views/regimen.ts", "dashboard/assets/styles/workspace-scanner.css", "tools/invariants.py", "tools/tests/test_user_supplied_provenance_single_home.py", "tools/probes/render_probe_scanner.js"] } }, { id: "lg_mt3n22mm_y79jy1", ts: "2026-08-21T19:27:04.270628-05:00", surface: "corpus", kind: "design-decision", summary: "Five germanium PROTOCOL claims deleted outright (150 mg b.i.d. = 300 mg/day, and 50 mg/day). Ruled undeliverable and discrediting rather than mistyped. Hepatitis's claim kept - its only protocol, lowest figure.", detail: "Luneth 2026-08-21: the protocol germanium figures are not typos and must not be 'corrected' into fiction -- they are unactionable at any scale and were deleted. Removed: WAL-CLM-DDDL-000070, WAL-CLM-DDDL-000232, WAL-CLM-DDDL-000499, WAL-CLM-LETS-000130, WAL-CLM-LETS-000319, plus their search-enrichment entries. Full text archived at chronicle/contradictions/2026-08-21-germanium-protocol-claims-deleted.json. WAL-CLM-LETS-000298 (hepatitis) KEPT by explicit ruling: hepatitis's only protocol claim and the lowest germanium figure of the six. Verified before deleting: none of the five was a source_claim_id for any target; Alzheimer's keeps 3 other protocols, infertility 1. Shards 581->578 (dddl) and 521->519 (lets). Indices and goldens both require corpus_seal, which is user-only.", metadata: { deleted: ["WAL-CLM-DDDL-000070", "WAL-CLM-DDDL-000232", "WAL-CLM-DDDL-000499", "WAL-CLM-LETS-000130", "WAL-CLM-LETS-000319"], kept: "WAL-CLM-LETS-000298", divergence_entry: 72 } }, { id: "lg_mt3npw10_5twlus", ts: "2026-08-21T19:45:35.460724-05:00", surface: "corpus", kind: "design-decision", summary: "Germanium now carries NO Wallach amount: all 3 dose claims deleted, and it joins the plant-derived mineral group so a PDM bottle covers it - the same route tin takes.", detail: "Luneth 2026-08-21. The printed maintenance figure (20-30 mg/day) could not be verified as a maintenance dose at all -- it may be a pharmacologic statement -- so rather than ship a number, the three germanium dose claims were DELETED (WAL-CLM-DDDL-000011, WAL-CLM-IMMORT-000140, WAL-CLM-RARE-000012). Section 00.A prescribes exactly this: an honest gap beats a fabricated or borrowed number. Numeric Wallach targets 35 -> 34. An earlier 10x correction of those figures was made and then fully reverted, book .txt included, before any seal -- it is deliberately not recorded as history because it never persisted. Germanium's canon coverage_kind moved unspecified -> trace_pdm: it sits on Wallach's own humic-shale roster (WAL-CLM-HELLS-000069) and now has no individual dose, which IS the group's definition, so it scores off the 924 mg plant-derived meter and lights up when a PDM product is in the regimen. Group 35 -> 36. Its stale 'why this number' hover was removed from entity-copy. Seven germanium PROTOCOL claims were deleted separately; hepatitis (WAL-CLM-LETS-000298) and immune-depression (WAL-CLM-LETS-000311) kept as their conditions' only protocols.", metadata: { deleted: ["WAL-CLM-DDDL-000011", "WAL-CLM-IMMORT-000140", "WAL-CLM-RARE-000012"], canon: "germanium unspecified -> trace_pdm", group: "35 -> 36" } }, { id: "lg_mt3ojxh9_nel5hp", ts: "2026-08-21T20:08:57.021269-05:00", surface: "corpus", kind: "round-close", summary: "Round closed: germanium committed alone (2c41730e), corpus resealed at kv=491. The foods work stays UNCOMMITTED by owner instruction until it is complete.", detail: "Germanium now states no amount, keeps its 7 goal borders and the plant-derived illustration, and is covered by a PDM bottle - verified in-app (Ultimate Classic: blank -> partial, matching tin). 10 germanium claims deleted; hepatitis and immune-depression protocols kept as their conditions' only ones. An earlier 10x dose correction was fully reverted, book .txt included, before sealing. Board 99/99 on the germanium-only tree, 100/100 with foods in place, 77/77 tests. The foods half (190 USDA foods, a new external-anchored composition gate, the FOOD SOURCES blocks, the Products-tab route, dietaryBaseline retired) was split out of the commit by hand: two files were genuinely mixed (state/coverage.ts and dist/main.js) and were reverted to a germanium-only state for the build, then restored. Luneth: the foods surface still cannot tell a user WHICH nutrients a food covers ('adds 10' on spinach), and needs demos designed before more building, plus exact amounts mined for all ~200 foods.", metadata: { commit: "2c41730e", knowledge_version: 491, board: "99/99 germanium-only, 100/100 with foods", foods: "uncommitted by instruction" } }];
+WHAT REMAINS. The foods recommendation system on Regimen + Coverage is still BLOCKED at turn 1 of the three-turn source-rule protocol (chronicle/contradictions/2026-08-21-usda-food-composition-third-source.md); turn 2 must be a LATER turn and is the next task. Regimen never-exhausting + the "you've covered all 90" completion state + the Products-tab link is not started. nutrientcodex.com has NOT been redeployed this round, so the live site does not yet carry hand-entry.`, metadata: { chunk: "scanner-hand-entry", board: "99/99", gates_added: ["user_supplied_provenance_single_home"], tests: { vitest: 66, probe_assertions: 20 }, files: ["dashboard/assets/js/src/core/provenance.ts", "dashboard/assets/js/src/core/units.ts", "dashboard/assets/js/src/core/units.test.ts", "dashboard/assets/js/src/core/schemas/scanner.ts", "dashboard/assets/js/src/core/schemas/regimen.ts", "dashboard/assets/js/src/state/scanner.ts", "dashboard/assets/js/src/state/coverage.ts", "dashboard/assets/js/src/state/coverage.autoheal.test.ts", "dashboard/assets/js/src/views/scanner.ts", "dashboard/assets/js/src/views/coverage.ts", "dashboard/assets/js/src/views/regimen.ts", "dashboard/assets/styles/workspace-scanner.css", "tools/invariants.py", "tools/tests/test_user_supplied_provenance_single_home.py", "tools/probes/render_probe_scanner.js"] } }, { id: "lg_mt3n22mm_y79jy1", ts: "2026-08-21T19:27:04.270628-05:00", surface: "corpus", kind: "design-decision", summary: "Five germanium PROTOCOL claims deleted outright (150 mg b.i.d. = 300 mg/day, and 50 mg/day). Ruled undeliverable and discrediting rather than mistyped. Hepatitis's claim kept - its only protocol, lowest figure.", detail: "Luneth 2026-08-21: the protocol germanium figures are not typos and must not be 'corrected' into fiction -- they are unactionable at any scale and were deleted. Removed: WAL-CLM-DDDL-000070, WAL-CLM-DDDL-000232, WAL-CLM-DDDL-000499, WAL-CLM-LETS-000130, WAL-CLM-LETS-000319, plus their search-enrichment entries. Full text archived at chronicle/contradictions/2026-08-21-germanium-protocol-claims-deleted.json. WAL-CLM-LETS-000298 (hepatitis) KEPT by explicit ruling: hepatitis's only protocol claim and the lowest germanium figure of the six. Verified before deleting: none of the five was a source_claim_id for any target; Alzheimer's keeps 3 other protocols, infertility 1. Shards 581->578 (dddl) and 521->519 (lets). Indices and goldens both require corpus_seal, which is user-only.", metadata: { deleted: ["WAL-CLM-DDDL-000070", "WAL-CLM-DDDL-000232", "WAL-CLM-DDDL-000499", "WAL-CLM-LETS-000130", "WAL-CLM-LETS-000319"], kept: "WAL-CLM-LETS-000298", divergence_entry: 72 } }, { id: "lg_mt3npw10_5twlus", ts: "2026-08-21T19:45:35.460724-05:00", surface: "corpus", kind: "design-decision", summary: "Germanium now carries NO Wallach amount: all 3 dose claims deleted, and it joins the plant-derived mineral group so a PDM bottle covers it - the same route tin takes.", detail: "Luneth 2026-08-21. The printed maintenance figure (20-30 mg/day) could not be verified as a maintenance dose at all -- it may be a pharmacologic statement -- so rather than ship a number, the three germanium dose claims were DELETED (WAL-CLM-DDDL-000011, WAL-CLM-IMMORT-000140, WAL-CLM-RARE-000012). Section 00.A prescribes exactly this: an honest gap beats a fabricated or borrowed number. Numeric Wallach targets 35 -> 34. An earlier 10x correction of those figures was made and then fully reverted, book .txt included, before any seal -- it is deliberately not recorded as history because it never persisted. Germanium's canon coverage_kind moved unspecified -> trace_pdm: it sits on Wallach's own humic-shale roster (WAL-CLM-HELLS-000069) and now has no individual dose, which IS the group's definition, so it scores off the 924 mg plant-derived meter and lights up when a PDM product is in the regimen. Group 35 -> 36. Its stale 'why this number' hover was removed from entity-copy. Seven germanium PROTOCOL claims were deleted separately; hepatitis (WAL-CLM-LETS-000298) and immune-depression (WAL-CLM-LETS-000311) kept as their conditions' only protocols.", metadata: { deleted: ["WAL-CLM-DDDL-000011", "WAL-CLM-IMMORT-000140", "WAL-CLM-RARE-000012"], canon: "germanium unspecified -> trace_pdm", group: "35 -> 36" } }, { id: "lg_mt3ojxh9_nel5hp", ts: "2026-08-21T20:08:57.021269-05:00", surface: "corpus", kind: "round-close", summary: "Round closed: germanium committed alone (2c41730e), corpus resealed at kv=491. The foods work stays UNCOMMITTED by owner instruction until it is complete.", detail: "Germanium now states no amount, keeps its 7 goal borders and the plant-derived illustration, and is covered by a PDM bottle - verified in-app (Ultimate Classic: blank -> partial, matching tin). 10 germanium claims deleted; hepatitis and immune-depression protocols kept as their conditions' only ones. An earlier 10x dose correction was fully reverted, book .txt included, before sealing. Board 99/99 on the germanium-only tree, 100/100 with foods in place, 77/77 tests. The foods half (190 USDA foods, a new external-anchored composition gate, the FOOD SOURCES blocks, the Products-tab route, dietaryBaseline retired) was split out of the commit by hand: two files were genuinely mixed (state/coverage.ts and dist/main.js) and were reverted to a germanium-only state for the build, then restored. Luneth: the foods surface still cannot tell a user WHICH nutrients a food covers ('adds 10' on spinach), and needs demos designed before more building, plus exact amounts mined for all ~200 foods.", metadata: { commit: "2c41730e", knowledge_version: 491, board: "99/99 germanium-only, 100/100 with foods", foods: "uncommitted by instruction" } }, { id: "lg_mt3uw7oq_a175t2", ts: "2026-08-21T23:06:27.818850-05:00", surface: "foods/sourcing", kind: "round-close", summary: "Every essential that food is the main route to now has at least four real foods behind it, each with a number from a named source. Eight gaps filled, EFAs unparked at 52 foods, and a plant-derived mineral bottle now counts towards vanadium.", detail: `Until today the app could tell you that a food helped, but for eight of the essentials
+it had no number to show you at all -- sulfur, silica, chloride, flavonoids, boron, iodine,
+molybdenum and biotin were simply blank, because the one database we used does not measure them.
+This round went and found the numbers. Eleven outside sources were tracked down, checked, and
+pinned so anyone can fetch the same file and confirm we copied it correctly. Every one of those
+eight now has at least four foods behind it, and often many more.
+
+Two of the results were surprises. The essential fatty acids had been reachable from 52 different
+foods the whole time -- one ounce of walnuts covers more than twice a day's worth -- but the app
+had no honest way to measure a whole food against a dose Wallach states as flaxseed oil, so it
+said nothing. That is now solved using his own number and the composition of the very oil he
+names. And the flavonoid figures we already had were quietly too low, because USDA publishes a
+sixth class of flavonoid in a separate database that we had never read; adding it took the count
+of qualifying foods from two to ten.
+
+Three gaps turned out not to need food at all. Chromium, vanadium and inositol are covered by the
+supplements, which was checked against the actual product labels rather than assumed. Vanadium
+also gained a second route: a plant-derived colloidal mineral bottle now counts towards it.
+
+SOURCES ACQUIRED AND PINNED (eden/foods/sources/sources.json -- URL + sha256 + licence each;
+payloads gitignored, extracted numbers committed, same policy the books run under):
+  USDA/FDA/ODS-NIH Iodine DB R4 -- 478 rows; 293 carry BOTH an NDB and a TDS number, a published
+    crosswalk between the two food lists
+  UK CoFID 2021 -- 2,887 foods; chloride + biotin ("N" = not measured, "Tr" = trace, neither is 0)
+  FDA TDS FY18-20 + Elements 1991-2017 -- 307 foods; Cr/I/Mo/V
+  USDA Flavonoid R3.3 -- 510 foods, 3,592 compound rows
+  USDA Proanthocyanidin R2 -- 283 foods, the SIXTH flavonoid class
+  USDA Isoflavone R2.1 -- acquired, NOT yet extracted
+  Powell 2005 (Br J Nutr 94:804-812) -- 207 UK foods, silicon; Cambridge copyright, gitignored
+  CIQUAL 2020 -- 67 constituents; only chloride/iodine/selenium of our list
+  AFCD Release 3 -- 1,588 foods x 272 columns; sulphur measured DIRECTLY per 100 g
+
+DERIVED DENOMINATORS, both stated so they can be rechecked:
+  SULFUR -- Doleman 2017 publishes umol/g DRY weight with no moisture percentages, so
+    mg/100 g fresh = umol/g x 32.06 x dry-matter-fraction x 0.1, moisture read from the pinned
+    USDA archive. APPROXIMATE tier by construction: their sample's sulphur, a different sample's
+    moisture, no ID joining them. Superseded in part the same day -- AFCD measures sulphur
+    directly, so it is now a second and better source.
+  EFA (was PARKED, not decided) -- USDA measures flaxseed oil at 14.327 g linoleic + 53.368 g
+    linolenic = 67.70% EFA, so Wallach's 9 g of flaxseed oil delivers 6.093 g of actual LA+ALA.
+    Derived from his own dose and the oil he names. Avoids demanding 9 g of PURE EFA, which would
+    have made his requirement ~40% harder, and total fat never enters, so a salmon fillet cannot
+    cover both omega tiles off its 12 g of fat. 52 of 190 foods clear 7%, 31 strong.
+
+VANADIUM (shipped, board green): trace-mineral-vehicles.json gains vanadium citing
+WAL-CLM-HELLS-000069 -- the same sealed humic-shale roster verbatim germanium cites -- plus
+Youngevity's published 77-mineral PDM composition roster, verified against the vendor listing
+rather than taken from a paste. Recorded plainly as an OWNER RULING and NOT a supply-sentence
+pass; that test still stands unchanged for every other essential. Follows the TIN model (keeps
+its own 150 mcg target, vehicle is an additional route), not germanium's sole-route model. A new
+per-entry "hero": false flag, read by entity_page_derive._vehicle_hero_slugs(), lets it take the
+coverage route with NO plant-derived header and NO explainer text -- the owner's explicit
+instruction. Verified in-app and screenshot-signed-off.
+
+FOOD TILE: design F approved by the owner and persisted to
+chronicle/decisions/2026-08-21-food-tile-F-approved.html, with the rebuildable fragment at
+eden/tools/foods/food-tile-F.fragment. Max 7 essentials then "+N", never more than 3 chip rows,
+one 28px control shell for both + and x.
+
+THREE DEFECTS THE PROBES CAUGHT THAT THE EYE DID NOT:
+  1. The chip fit ran in FALLBACK-FONT metrics -- chips measured narrow, "fitted" in three rows,
+     then grew when the display face loaded and spilled to a fourth, hidden by a max-height belt.
+     Two of 190 cards failed exactly that way. Now waits on document.fonts.ready.
+  2. The approved page was MOVED rather than generated at its destination, so its relative
+     stylesheet paths broke and the controls silently rendered 16x21 instead of 28x28.
+  3. A guard test matched its own banner string inside <script> via body.textContent instead of
+     querying the element, and reported the banner present on both pages. The instrument was
+     wrong, not the guard.
+
+CORRECTIONS -- logged in the round that found them, so the next session cannot inherit them:
+  - FDA TDS has NEVER measured boron or tin. Checked across all 49 analytes, 1991-2020. The prior
+    handoff named TDS as the boron source; it is not.
+  - Sulfur IS partly sourceable, contradicting the prior "NOT PUBLISHED - authors only".
+  - Chromium is NOT categorically food-unreachable. I said so too strongly from FDA TDS data;
+    AFCD measures abalone at 392.5 ug/100 g (63% of target) and ocean trout at 118-163 -- foods
+    the TDS sample frame never included. The sample frame's limits should have been flagged
+    before generalising from it.
+  - The widely-repeated "mussels 128 ug/100 g chromium" is unsupported by all five sources
+    checked; AFCD records no chromium value for mussel at all. Mussels ARE notable, for iodine
+    (267.8 ug/100 g).
+
+VERIFIED: board 100/100 (24 external / 29 consistency / 45 structural / 2 meta, zero new reds);
+dashboard build OK; render_probe_vanadium.js PASS with a negative control proving the pre-ruling
+world still renders gap and that the vehicle does NOT leak onto chromium or selenium;
+render_probe_pdm_presence.js PASS; render_probe_food_tile.js PASS over all 190 foods.
+
+NOT DONE, and stated rather than skipped: the new source data is NOT integrated into
+foods-composition-data.json or its gate, so the shipped tile still carries only the 19 USDA
+nutrients; design F is approved but NOT wired; the USDA Isoflavone DB is acquired but unextracted;
+Phenol-Explorer is unreachable (its TLS certificate covers *.wishartlab.com, not
+phenol-explorer.eu -- not bypassed); Clements & Darnell 1980 for inositol is paywalled at every
+free route tried, and phytate tables are NOT a substitute because phytate-bound inositol is poorly
+absorbed. The foods feature remains uncommitted on purpose, per the standing tree rule.` }, { id: "lg_mt4hzfua_ehu7cg", ts: "2026-08-22T09:52:49.522998-05:00", surface: "foods/second-sources", kind: "round-close", summary: "Seven of the thirteen essentials no food could reach now have real foods behind them, every food number says which published source it came from and how firmly, and the approved tile design is live.", detail: 'Until this round, thirteen of the ninety essentials had no food a person could eat to move them \u2014 the app could only ever say "take a supplement". Seven of those now name real foods, and the numbers on screen say where each came from. Iodine points at iodised salt, lobster and ricotta; molybdenum at tofu, snow peas and pumpkin seeds; sulphur at lobster, venison, turkey and chicken breast; silica at dates, green beans and spinach; chloride at salt, cottage cheese and chard; flavonoids at blackberries and strawberries; biotin at peanuts and hazelnuts. Walnuts, which the app scored at zero for essential fatty acids yesterday, are now worth 220% of Dr. Wallach\'s daily dose.\n\nHover any number on a food card and it names the publication it came from. Where two tables had to be matched up by food NAME rather than by a shared id, the number carries a small "\u2248" and says plainly that a person paired the two by hand \u2014 a close stand-in, not a measurement of that exact item.\n\nThe half of this round worth remembering is what was REFUSED. Garlic \u2014 the food the campaign most wanted, the richest allium in the literature, and one Dr. Wallach names by name \u2014 did not make it: a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his sulphur target. It is a flavouring, not a serving. Oysters at 54-67% sulphur were refused because that source measures them raw and ours is cooked. Lamb chop at 42% was refused because their cut is lean and ours is lean and fat, and fat carries almost no sulphur. Boron was acquired, pinned and extracted, then deliberately not used at all: no source we hold measures boron per 100 g, and the one table that exists is per serving without ever saying what a serving weighs. Twenty-five refusals in total, each written down with its reasoning so nobody re-derives the hope.\n\nTHE TECHNICAL RECORD\n\nSECOND-SOURCE SPINE. eden/foods/sources/sources.json gained `nutrient_bindings` \u2014 the ONE home for how a pinned payload becomes a number: payload -> extractor -> committed candidate -> join kind -> value kind -> unit -> the words the card uses. Three value shapes: `cell` (one cell, byte-exact), `sum` (Sigma of component ROWS \u2014 USDA\'s per-compound flavonoid rows), `sum_fields` (Sigma of named FIELDS \u2014 Doleman splits sulphur in two). All sums in DECIMAL, never float: \'147.63\' + \'19.58\' must be \'167.21\' on every host because that string is what the gate re-derives. sr_legacy_food.csv (the fdc_id->NDB bridge) and USDA water/18:2/18:3/CLA joined the committed extract as `support_nutrients`, deliberately NOT nutrient_map, so an arithmetic input can never be mistaken for a Wallach-targeted essential.\n\nTIER IS DERIVED FROM THE JOIN, NEVER TYPED. An id join may be EXACT; a name join is APPROXIMATE forever. The gate REDs the other combination in EITHER the row or the binding, and REDs a name-joined row whose key or reasoning is not in the curation \u2014 a matcher\'s proposal cannot ship as though a person had accepted it.\n\nTWO SOURCES FOR ONE ESSENTIAL. Bindings declare `combine`: `sum` where parts measure DIFFERENT things (USDA publishes proanthocyanidins separately from the other flavonoid classes, and omitting them understated every total \u2014 2 qualifying foods became 10), or `first` where they measure the SAME thing and only one may win. Sulphur is `first`: AFCD primary because it measures directly per 100 g, Doleman second because its dry-weight value must be married to a moisture from a different sample. They are complementary rather than competing \u2014 AFCD supplies 24 foods, Doleman fills the three it has nothing for (chicken breast, cod, egg). The derive REFUSES to guess: a multi-part binding with no `combine` hard-fails.\n\nDOLEMAN, PINNED. Europe PMC serves the CC BY paper as JATS XML, so Table 1 comes out of real table cells rather than PDF coordinates. All 32 rows matched the values that had been hand-typed into convert_sulfur.py exactly \u2014 they were right; pinning makes them provable. That script is retired. The dry-to-fresh conversion (umol/g dry x 32.06 x dry-matter x 0.1) happens at derive time because the dry-matter fraction depends on which catalog food the row was paired with; every shipped row carries the umol/g, the water, the fraction and the arithmetic as a sentence. 32.06 lives in the binding AND independently in the gate, so editing one REDs.\n\nTHE PAIR RULE, CORRECTED MID-ROUND BY LUNETH. My rule dropped any food whose source measured several varieties, which made the app assert "lentils contain no silica" \u2014 a claim every one of that source\'s lentil rows contradicts. His words: "Lentils DO have silica, ALL of them... Claiming lentils have no silica when they do would be the worst possible option." The rule conflated WHICH measurement to attach (genuinely ambiguous) with WHETHER THE FOOD CONTAINS IT (not ambiguous). A blank card reads as "not a source", which is a stronger claim than the ambiguity being avoided, and a false one. Replaced with: take the LOWEST variety and SAY SO \u2014 `conservative` in the curation, carried to the card, which appends "It is the lowest of the varieties that source measured, so it holds whichever kind you eat." A poison case REDs if that flag is dropped.\n\nDESIGN F WIRED. The signed-off record keeps its .lb-* classes and is never edited; the app ships the same design under .fs-*, because a generic two-letter namespace in a sheet that loads over every workspace is how a bare `.rl-` rule once stacked Coverage\'s delete buttons. Chip colours come from the canon\'s own category, read off the data. Short labels are DERIVED from the canon (drop every parenthetical, drop a "/ alternative" tail) rather than 29 hand-typed strings; the first attempt split at the first parenthesis and produced "Vitamin D2", silently dropping half of what that tile covers \u2014 caught before it shipped. render_probe_food_tile.js now holds BOTH the record (190 foods) and the shipped app (120 tiles, clicked through the real control) to the same five clauses.\n\nEFA-FROM-FOODS. The meter matched regimen items by canonical name against the PRODUCT table, so a food matched nothing and walnuts moved the omega tiles by zero. Foods now enter the same meter converted to OIL \u2014 his dose is nine grams of flaxseed oil, and USDA measures a food\'s linoleic and linolenic ACID; summing them is adding pounds to kilograms. The bridge is his own dose read through the oil he named (USDA\'s cold-pressed flaxseed oil, 14.327 + 53.368 g per 100 g), read from the pinned archive at derive time, never typed. 52 of 192 foods now feed it.\n\nNEGATIVE CONTROLS, 11 -> 31. New: edited second-source value; tier upgraded in the row or in the binding; pair missing from the curation; reasoning dropped; `conservative` dropped; joined to a row the human did not pair; unit swap; re-labelled source; deleted binding leaving numbers with no route home; edited COMPONENT of a summed total; hand-edited candidate; re-pointed payload hash; parts summed instead of one winning; multi-part binding with no `combine`; row crediting the wrong publication; conversion swapped; working no longer showing its terms. Clause 7 re-runs each extractor against its sha256-pinned payload and byte-compares \u2014 all six reproduce.\n\nTWO PROBE DEFECTS FOUND AND FIXED. The EFA probe\'s first negative control was meaningless: walking the food list to reach salt added every food first. Rebuilt to add one food the tile ITSELF says carries an EFA chip, with a no-add navigation as the control. And the tile probe was checking the "+N" badge against the meta line\'s "N of 90" \u2014 a second rendering of the same fact; checking a badge against its sibling proves only that two renderings agree. The tile now publishes data-hits.\n\nCLEANED BEFORE COMMIT. Three files removed rather than shipped: a superseded sulfur candidate, a dead demo merge, and mk_sources.py \u2014 which knew nothing about bindings, combine, per-part displays or the boron finding, so re-running it would have silently erased all of them.\n\nVERIFICATION. Board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), 79 unit tests, 31 gate poison cases, 5 render probes, build fresh. NO SEAL TAKEN AND NONE NEEDED: eden/corpus, eden/catalog and eden/products are untouched this round; knowledge_version stays 491, 2601 claims, 7 books.\n\nDEFERRED. Copy review \u2014 none of the foods copy has been through Luneth. Two chip labels differ from the demo\'s mock data because the canon says "Vitamin D2 + D3" and "Folic Acid". Design F\'s remove state is unwired because the ranker never lists an owned food. `strength` still counts nutrient rows only, so education-mode ordering under-ranks the EFA-rich foods.' }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -148587,12 +167531,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   };
 
   // assets/js/src/state/dose-defaults.ts
-  var DATA = DoseDefaultsSchema.parse(dose_defaults_default);
-  var BY_ID = new Map(
-    DATA.defaults.map((d) => [d.product_id, d.units_per_day])
+  var DATA2 = DoseDefaultsSchema.parse(dose_defaults_default);
+  var BY_ID2 = new Map(
+    DATA2.defaults.map((d) => [d.product_id, d.units_per_day])
   );
   function defaultServingsFor(productId, servingUnits) {
-    const units = BY_ID.get(productId);
+    const units = BY_ID2.get(productId);
     if (units === void 0) {
       return 1;
     }
@@ -155472,8 +174416,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   };
 
   // assets/js/src/state/kids-exclusion.ts
-  var DATA2 = KidsExclusionSchema.parse(kids_exclusion_default);
-  var EXCLUDED = new Set(DATA2.excluded.map((e) => e.product_id));
+  var DATA3 = KidsExclusionSchema.parse(kids_exclusion_default);
+  var EXCLUDED = new Set(DATA3.excluded.map((e) => e.product_id));
   function isExcludedFromRecommendations(productId) {
     return EXCLUDED.has(productId);
   }
@@ -155510,24 +174454,24 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   };
 
   // assets/js/src/state/superseded-products.ts
-  var DATA3 = SupersededProductsSchema.parse(superseded_products_default);
-  var RETIRED = new Set(DATA3.superseded.map((e) => e.product_id));
+  var DATA4 = SupersededProductsSchema.parse(superseded_products_default);
+  var RETIRED = new Set(DATA4.superseded.map((e) => e.product_id));
   function isSupersededProduct(productId) {
     return RETIRED.has(productId);
   }
 
   // assets/js/src/state/recommender.ts
-  var W_ADEQ = 0.6;
-  var W_BREADTH = 0.3;
+  var W_ADEQ2 = 0.6;
+  var W_BREADTH2 = 0.3;
   var W_VALUE = 0.1;
-  var BREADTH_HALF = 5;
+  var BREADTH_HALF2 = 5;
   var PIN_SCORE_BASE = 2;
-  var DATA4 = RecommenderDataSchema.parse(product_recommender_data_default);
+  var DATA5 = RecommenderDataSchema.parse(product_recommender_data_default);
   function breadthScore(n) {
-    return n / (n + BREADTH_HALF);
+    return n / (n + BREADTH_HALF2);
   }
   function rankSources(slug, targetLow = null, targetUnit = null) {
-    const entry = DATA4.essentials[slug];
+    const entry = DATA5.essentials[slug];
     if (entry === void 0 || entry.candidates.length === 0) {
       return [];
     }
@@ -155551,7 +174495,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const bScore = breadthScore(c.breadth);
       const cpu = cpuOf(c.price, c.amount);
       const vScore = cpu === null || maxCpu === minCpu ? 0.5 : (maxCpu - cpu) / (maxCpu - minCpu);
-      const score = W_ADEQ * adequacy + W_BREADTH * bScore + W_VALUE * vScore;
+      const score = W_ADEQ2 * adequacy + W_BREADTH2 * bScore + W_VALUE * vScore;
       return {
         productId: c.product_id,
         amount: c.amount,
@@ -155574,7 +174518,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return productEssentialsCache;
     }
     const m = /* @__PURE__ */ new Map();
-    for (const [slug, entry] of Object.entries(DATA4.essentials)) {
+    for (const [slug, entry] of Object.entries(DATA5.essentials)) {
       for (const c of entry.candidates) {
         const arr = m.get(c.product_id);
         if (arr === void 0) {
@@ -155640,7 +174584,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return coverageIndexCache;
     }
     const m = /* @__PURE__ */ new Map();
-    for (const [slug, entry] of Object.entries(DATA4.essentials)) {
+    for (const [slug, entry] of Object.entries(DATA5.essentials)) {
       for (const c of entry.candidates) {
         if (isExcludedFromRecommendations(c.product_id) || isSupersededProduct(c.product_id)) {
           continue;
@@ -155718,7 +174662,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const scoreOf = (supplies, breadth, price, bestSupply2, bestValue2) => {
       const adequacy = bestSupply2 > 0 ? supplies / bestSupply2 : 0;
       const value = bestValue2 > 0 ? perDollarOf(price, supplies) / bestValue2 : 0;
-      return W_ADEQ * adequacy + W_BREADTH * breadthScore(breadth) + W_VALUE * value;
+      return W_ADEQ2 * adequacy + W_BREADTH2 * breadthScore(breadth) + W_VALUE * value;
     };
     const candidates = () => {
       const rows2 = [];
@@ -155781,6 +174725,209 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return out.concat(scored).slice(0, limit);
   }
 
+  // assets/js/src/views/foods-block.ts
+  var RULE_LABEL = "FOOD SOURCES";
+  var CHIP_CAP = 7;
+  var MAX_CHIP_ROWS = 3;
+  var PRIZE_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+  var ADD_PATH = "M12 6v12M6 12h12";
+  function ruleWithLabel() {
+    const rule = document.createElement("div");
+    rule.className = "fs-rule";
+    const label = document.createElement("span");
+    label.className = "fs-rule__label";
+    label.textContent = RULE_LABEL;
+    rule.appendChild(label);
+    return rule;
+  }
+  function glossFor(hit) {
+    const base = `Food composition from ${hit.source}, measured against Dr. Wallach\u2019s daily target for this nutrient.`;
+    const floor = hit.conservative ? " It is the lowest of the varieties that source measured, so it holds whichever kind you eat." : "";
+    if (hit.tier !== "APPROXIMATE") {
+      return base + floor;
+    }
+    return `${base} \u2248 That source lists foods by name rather than by the id our catalog uses, so this food was paired with theirs by hand \u2014 a close stand-in, not a measurement of this exact item.${floor}`;
+  }
+  function rowCount(host) {
+    const tops = /* @__PURE__ */ new Set();
+    for (const child of Array.from(host.children)) {
+      tops.add(Math.round(child.offsetTop));
+    }
+    return tops.size;
+  }
+  function chipNode(hit) {
+    const chip2 = document.createElement("span");
+    chip2.className = hit.tier === "APPROXIMATE" ? "fs-chip fs-chip--approx" : "fs-chip";
+    chip2.style.setProperty("--c", `var(--fs-cat-${hit.category})`);
+    chip2.title = glossFor(hit);
+    chip2.append(document.createTextNode(`${hit.label.toUpperCase()} `));
+    const pct = document.createElement("u");
+    pct.textContent = `${hit.pct}%`;
+    chip2.appendChild(pct);
+    return chip2;
+  }
+  function fitChips(host, chips) {
+    const paint = (n2) => {
+      host.replaceChildren();
+      for (const hit of chips.slice(0, n2)) {
+        host.appendChild(chipNode(hit));
+      }
+      if (n2 < chips.length) {
+        const more = document.createElement("span");
+        more.className = "fs-more";
+        more.textContent = `+${chips.length - n2}`;
+        host.appendChild(more);
+      }
+    };
+    let n = Math.min(CHIP_CAP, chips.length);
+    paint(n);
+    while (n > 0 && rowCount(host) > MAX_CHIP_ROWS) {
+      n -= 1;
+      paint(n);
+    }
+  }
+  function tileFor(rec) {
+    const lead = rec.hits[0];
+    const tile = document.createElement("div");
+    tile.className = "fs-tile";
+    tile.dataset["hits"] = String(rec.hits.length);
+    if (lead !== void 0) {
+      tile.style.setProperty("--acc", `var(--fs-cat-${lead.category})`);
+    }
+    const bar = document.createElement("div");
+    bar.className = "fs-bar";
+    const txt = document.createElement("div");
+    txt.className = "fs-bar__txt";
+    const name = document.createElement("div");
+    name.className = "fs-tile__name";
+    name.textContent = rec.name;
+    name.title = rec.name;
+    const meta = document.createElement("div");
+    meta.className = "fs-tile__meta";
+    meta.append(document.createTextNode(`${rec.portionLabel} \xB7 `));
+    const breadth = document.createElement("b");
+    breadth.textContent = String(rec.breadth);
+    meta.appendChild(breadth);
+    meta.append(document.createTextNode(" of 90"));
+    txt.append(name, meta);
+    const act = document.createElement("div");
+    act.className = "fs-a";
+    const add = document.createElement("button");
+    add.className = "ui-close ui-close--sm fs-ctl fs-ctl--add";
+    add.type = "button";
+    add.dataset["foodAdd"] = rec.foodId;
+    add.setAttribute("aria-label", `Add ${rec.name}`);
+    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svg.setAttribute("viewBox", "0 0 24 24");
+    svg.setAttribute("aria-hidden", "true");
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", ADD_PATH);
+    svg.appendChild(path);
+    add.appendChild(svg);
+    act.appendChild(add);
+    bar.append(txt, act);
+    const body = document.createElement("div");
+    body.className = "fs-tile__body";
+    let chipHost = null;
+    if (lead !== void 0) {
+      const leadEl = document.createElement("div");
+      leadEl.className = "fs-lead";
+      leadEl.title = glossFor(lead);
+      const pct = document.createElement("div");
+      pct.className = lead.tier === "APPROXIMATE" ? "fs-lead__pct fs-lead__pct--approx" : "fs-lead__pct";
+      pct.append(document.createTextNode(String(lead.pct)));
+      const sup = document.createElement("sup");
+      sup.textContent = "%";
+      pct.appendChild(sup);
+      const of = document.createElement("div");
+      of.className = "fs-lead__of";
+      of.textContent = lead.label;
+      leadEl.append(pct, of);
+      chipHost = document.createElement("div");
+      chipHost.className = "fs-chips";
+      body.append(leadEl, chipHost);
+    }
+    tile.append(bar, body);
+    return { tile, chipHost };
+  }
+  function addCatalogFood(foodId) {
+    if (foodId === "") {
+      return;
+    }
+    const food = foodById(foodId);
+    if (food === void 0) {
+      return;
+    }
+    const item = {
+      id: Date.now(),
+      label: {
+        name: food.name,
+        food_id: food.id,
+        portion_label: food.portion_label,
+        nutrients: food.nutrients.map((n) => ({ name: n.slug, amount: n.amount, unit: n.unit })),
+        servings: 1
+      },
+      addedDate: (/* @__PURE__ */ new Date()).toISOString().slice(0, 10),
+      provenance: FOOD_CATALOG_PROVENANCE
+    };
+    addOrBumpRegimenItem(item);
+  }
+  function buildFoodsBlock(host, recs, opts = {}) {
+    host.replaceChildren();
+    host.appendChild(ruleWithLabel());
+    if (recs.length === 0 && (opts.ownedCount ?? 0) >= foodCatalogSize()) {
+      const egg = document.createElement("p");
+      egg.className = "fs-note fs-note--egg";
+      egg.append(document.createTextNode(
+        "Well, for some reason you added ALL of the foods in our database, not sure why you did that but\u2026 "
+      ));
+      const link = document.createElement("a");
+      link.className = "fs-prize";
+      link.href = PRIZE_URL;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.textContent = "click here";
+      egg.appendChild(link);
+      egg.append(document.createTextNode(" to collect your prize!"));
+      host.appendChild(egg);
+      return;
+    }
+    if (recs.length === 0) {
+      const note = document.createElement("p");
+      note.className = "fs-note";
+      note.textContent = opts.capReached === true ? "That\u2019s the last food this tab will suggest \u2014 the rest live on your Regimen." : "No food moves a remaining gap \u2014 what\u2019s left needs a supplement.";
+      host.appendChild(note);
+      return;
+    }
+    if (opts.education === true) {
+      const note = document.createElement("p");
+      note.className = "fs-note";
+      note.textContent = "Your 90 are covered \u2014 these are simply the most nutritious foods.";
+      host.appendChild(note);
+    }
+    const grid = document.createElement("div");
+    grid.className = "fs-grid";
+    const pending = [];
+    for (const rec of recs) {
+      const { tile, chipHost } = tileFor(rec);
+      grid.appendChild(tile);
+      if (chipHost !== null) {
+        pending.push({ host: chipHost, chips: rec.hits.slice(1) });
+      }
+    }
+    host.appendChild(grid);
+    const fit = () => {
+      for (const p of pending) {
+        fitChips(p.host, p.chips);
+      }
+    };
+    if (document.fonts !== void 0) {
+      void document.fonts.ready.then(fit);
+    } else {
+      fit();
+    }
+  }
+
   // assets/data/starter-pack.json
   var starter_pack_default = {
     _purpose: "The STARTER PACK \u2014 the fixed, ordered products every user is offered FIRST, before any scored recommendation. Editorial CURATION config, OURS and explicitly NOT a Wallach claim and NOT a pillar projection; no generator. It changes only the ORDER in which we surface products; it never touches a target, a dose, a composition, or a price. \xA700.A: no number lives here.",
@@ -155813,13 +174960,13 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   };
 
   // assets/js/src/state/starter-pack.ts
-  var DATA5 = StarterPackSchema.parse(starter_pack_default);
-  var PINNED = DATA5.pinned.map((e) => e.product_id);
+  var DATA6 = StarterPackSchema.parse(starter_pack_default);
+  var PINNED2 = DATA6.pinned.map((e) => e.product_id);
   function starterPackIds() {
-    return PINNED;
+    return PINNED2;
   }
   function starterPackSize() {
-    return PINNED.length;
+    return PINNED2.length;
   }
 
   // assets/js/src/views/coverage.ts
@@ -155827,11 +174974,13 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   var REC_PAGE = 3;
   var REC_GAP_FILL = 4;
   var REC_MAX = starterPackSize() + REC_GAP_FILL;
-  function tileFor(key, snapshot2) {
+  var FOOD_PAGE = 3;
+  var FOOD_MAX = 12;
+  function tileFor2(key, snapshot2) {
     return snapshot2?.tiles.find((t) => t.name === key);
   }
   function tileStatusFor(key, snapshot2) {
-    return tileFor(key, snapshot2)?.status ?? "";
+    return tileFor2(key, snapshot2)?.status ?? "";
   }
   function tileFillPercent(tile) {
     if (tile === void 0 || tile.status !== "partial") {
@@ -155890,7 +175039,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return m;
   }
   function renderTile(spec, tileClass, snapshot2, goals) {
-    const tile = tileFor(spec.key, snapshot2);
+    const tile = tileFor2(spec.key, snapshot2);
     const status = tile?.status ?? "";
     const hitIdx = goals.map((g, i) => spec.slug !== void 0 && g.members.includes(spec.slug) ? i : -1).filter((i) => i >= 0);
     const cls = [tileClass, status, hitIdx.length > 1 ? "tile--blend" : ""].filter(Boolean).join(" ");
@@ -156240,6 +175389,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
             ${renderField(snapshot2, goals)}
             <aside class="cov-aside">
               <div class="recs" data-recs></div>
+              <div class="fs-block" data-foodsblock></div>
               ${renderRail(items)}
             </aside>
           </div>
@@ -156265,6 +175415,22 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           greedy: true
         });
         buildRecs(recsHost, recs, goals, budget === 0);
+      }
+      const foodsHost = container.querySelector("[data-foodsblock]");
+      if (foodsHost !== null) {
+        const ownedFoods = items.map((i) => i.label["food_id"]).filter((v) => typeof v === "string");
+        const foodBudget = Math.max(0, FOOD_MAX - ownedFoods.length);
+        const foodRecs = foodBudget === 0 ? [] : rankFoodsForCoverage({
+          want: wantedSlugs(snapshot2, goals),
+          owned: ownedFoods,
+          goals: goals.map((g) => ({ id: g.id, members: g.members })),
+          limit: Math.min(FOOD_PAGE, foodBudget),
+          greedy: true
+        });
+        buildFoodsBlock(foodsHost, foodRecs, {
+          ownedCount: ownedFoods.length,
+          capReached: foodBudget === 0
+        });
       }
     };
     const onClick = (ev) => {
@@ -156299,6 +175465,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const rec = t.closest("[data-rec-add]");
       if (rec !== null) {
         addVaultProduct(rec.dataset["recAdd"] ?? "");
+        return;
+      }
+      const foodCard = t.closest("[data-food-add]");
+      if (foodCard !== null) {
+        addCatalogFood(foodCard.dataset["foodAdd"] ?? "");
         return;
       }
       if (t.closest("[data-full-regimen]") !== null) {
@@ -198501,6 +217672,16 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       open,
       close,
       toggle,
+      openTab: (tab) => {
+        open();
+        selectedEssential = null;
+        selectedCondition = null;
+        selectedProduct = null;
+        selectedTopic = null;
+        trail = [];
+        activeTab = tab;
+        render();
+      },
       openEntity: (kind, slug) => {
         open();
         if (kind === "topic") {
@@ -199001,6 +218182,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   // assets/js/src/views/regimen.ts
   var LAYOUT4 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   var REC_LIMIT = 3;
+  var FOOD_LIMIT = 3;
   var SLOT_CAP = 4;
   var CATEGORY_ROWS = [
     { label: "Minerals", bucket: "other", hue: "#2b6fb0" },
@@ -199385,7 +218567,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const keyToSlug = new Map([...slugToTileKey()].map(([slug, key]) => [key.toLowerCase(), slug]));
     return snapshot2.tiles.filter((t) => t.status !== "covered").map((t) => keyToSlug.get(t.name.toLowerCase())).filter((s) => s !== void 0);
   }
-  function buildRecs2(host, recs, goals) {
+  function buildRecs2(host, recs, goals, allCovered) {
     host.replaceChildren();
     const hueOf = (id) => {
       const i = goals.findIndex((g) => g.id === id);
@@ -199394,8 +218576,16 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     if (recs.length === 0) {
       const note = document.createElement("p");
       note.className = "ck-recs__note";
-      note.textContent = "No product fills a gap right now \u2014 your stack already reaches these.";
+      note.textContent = allCovered ? "All 90 essentials are now covered \u2014 no more recommendations needed." : "No product fills a gap right now \u2014 your stack already reaches these.";
       host.appendChild(note);
+      if (allCovered) {
+        const go = document.createElement("button");
+        go.className = "ck-recs__go";
+        go.type = "button";
+        go.dataset["openProducts"] = "1";
+        go.textContent = "Explore the Products tab";
+        host.appendChild(go);
+      }
       return;
     }
     for (const r of recs) {
@@ -199931,6 +219121,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const paint = () => {
       const goals = activeGoals2();
       const field = fieldInfo(goals);
+      const allCovered = field.covered >= essentialCount();
       container.innerHTML = `
       <div class="ck">
         ${renderSlots()}
@@ -199938,6 +219129,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           <div class="coverage-main ck-main">
             ${renderConsole(field)}
             ${renderGoals(goals)}
+            <div class="fs-block" data-foodsblock></div>
             <div class="recs ck-recs" data-rise="4">
               <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><span class="ck-recs__note">Products, ranked by your goals</span></div>
               <div class="ck-recgrid" data-recgrid></div>
@@ -199963,7 +219155,23 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           pinned: starterPackIds(),
           greedy: true
         });
-        buildRecs2(recGrid, recs, goals);
+        buildRecs2(recGrid, recs, goals, allCovered);
+      }
+      const foodsHost = container.querySelector("[data-foodsblock]");
+      if (foodsHost !== null) {
+        const ownedFoods = items.map((i) => i.label["food_id"]).filter((v) => typeof v === "string");
+        const foodRecs = rankFoodsForCoverage({
+          want: wantedSlugs2(goals),
+          owned: ownedFoods,
+          goals: goals.map((g) => ({ id: g.id, members: g.members })),
+          limit: FOOD_LIMIT,
+          greedy: true,
+          education: allCovered
+        });
+        buildFoodsBlock(foodsHost, foodRecs, {
+          education: allCovered,
+          ownedCount: ownedFoods.length
+        });
       }
       if (recycleOpen) {
         populateRecycle();
@@ -200201,6 +219409,16 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         if (name !== void 0) {
           addItem(name);
         }
+        return;
+      }
+      const openProducts = target.closest("[data-open-products]");
+      if (openProducts !== null) {
+        emit("knowledge:open-tab", { tab: "products" });
+        return;
+      }
+      const foodAdd = target.closest("[data-food-add]");
+      if (foodAdd !== null) {
+        addCatalogFood(foodAdd.dataset["foodAdd"] ?? "");
         return;
       }
       const taAdd = target.closest("[data-ta-add]");
@@ -200945,112 +220163,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
 
   // assets/data/scanner-corpus-data.json
   var scanner_corpus_data_default = {
-    dietaryBaseline: {
-      Calcium: {
-        amount: 110,
-        unit: "mg"
-      },
-      Copper: {
-        amount: 0.4,
-        unit: "mg"
-      },
-      Iodine: {
-        amount: 121,
-        unit: "mcg"
-      },
-      Iron: {
-        amount: 1.6,
-        unit: "mg"
-      },
-      Magnesium: {
-        amount: 85,
-        unit: "mg"
-      },
-      Manganese: {
-        amount: 0.5,
-        unit: "mg"
-      },
-      Phosphorus: {
-        amount: 727,
-        unit: "mg"
-      },
-      Potassium: {
-        amount: 108,
-        unit: "mg"
-      },
-      Selenium: {
-        amount: 81.2,
-        unit: "mcg"
-      },
-      Sodium: {
-        amount: 1275,
-        unit: "mg"
-      },
-      Zinc: {
-        amount: 4,
-        unit: "mg"
-      },
-      "Vitamin A (Retinol / beta-carotene)": {
-        amount: 130,
-        unit: "mcg"
-      },
-      "Vitamin B2 (Riboflavin)": {
-        amount: 0.4,
-        unit: "mg"
-      },
-      "Vitamin B3 (Niacin)": {
-        amount: 17,
-        unit: "mg"
-      },
-      "Vitamin B5 (Pantothenic Acid)": {
-        amount: 2.4,
-        unit: "mg"
-      },
-      "Vitamin B6 (Pyridoxine)": {
-        amount: 1.2,
-        unit: "mg"
-      },
-      "Vitamin B12 (Cobalamin)": {
-        amount: 4.2,
-        unit: "mcg"
-      },
-      "Vitamin C (Ascorbic Acid)": {
-        amount: 67.5,
-        unit: "mg"
-      },
-      "Vitamin D2 (Ergocalciferol) + D3 (Cholecalciferol)": {
-        amount: 681,
-        unit: "iu"
-      },
-      "Vitamin K (Menaquinone = K2)": {
-        amount: 9,
-        unit: "mcg"
-      },
-      Biotin: {
-        amount: 10,
-        unit: "mcg"
-      },
-      Choline: {
-        amount: 147,
-        unit: "mg"
-      },
-      "Folic Acid (Folate)": {
-        amount: 24,
-        unit: "mcg"
-      },
-      "Omega-3 (Alpha-Linolenic Acid / ALA)": {
-        amount: 1e3,
-        unit: "mg"
-      },
-      "Omega-6 (Linoleic Acid / LA)": {
-        amount: 1e3,
-        unit: "mg"
-      },
-      "Omega-9 (Oleic Acid / OA)": {
-        amount: 1e3,
-        unit: "mg"
-      }
-    },
     goalKeywords: {
       cognition: [
         "cogniti",
@@ -202161,16 +221273,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return { score, aligned: a, total, misaligned: m };
   }
   function getEffectiveCoverage() {
-    const corpus2 = loadScanCorpus();
     const targets = getTargets();
     const live = currentDelivery();
-    const dbByTargetName = {};
-    for (const [dbKey, dbEntry] of Object.entries(corpus2.dietaryBaseline)) {
-      const matched = matchEssential(dbKey);
-      if (matched !== null) {
-        dbByTargetName[matched.name] = { amount: dbEntry.amount, unit: dbEntry.unit };
-      }
-    }
     const base = {};
     for (const t of targets) {
       const tgt = essTarget(t);
@@ -202179,13 +221283,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       }
       const targetUnit = (tgt.unit ?? "mg").toLowerCase();
       let amount = 0;
-      const dbEntry = dbByTargetName[t.name];
-      if (dbEntry !== void 0) {
-        const conv = unitConv(dbEntry.amount, dbEntry.unit, targetUnit);
-        if (conv !== null) {
-          amount += conv;
-        }
-      }
       const liveEntry = live.get(t.name);
       if (liveEntry !== void 0) {
         if (targetUnit === "iu") {
@@ -205201,6 +224298,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     on("knowledge:open-entity", ({ kind, slug }) => {
       closeAllDrawers();
       drawerHandles.get("knowledge")?.openEntity?.(kind, slug);
+      syncDrawerRail();
+    });
+    on("knowledge:open-tab", ({ tab }) => {
+      closeAllDrawers();
+      drawerHandles.get("knowledge")?.openTab?.(tab);
       syncDrawerRail();
     });
   }
