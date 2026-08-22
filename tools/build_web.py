@@ -46,6 +46,7 @@ from __future__ import annotations
 
 import hashlib
 import io
+import json
 import os
 import re
 import shutil
@@ -111,6 +112,15 @@ if proc.returncode != 0 or not tmp_js.exists():
 js_bytes = tmp_js.read_bytes()
 js_name = f'main.{digest(js_bytes)}.js'
 tmp_js.rename(js_dir / js_name)
+# The bundle carries the hashed filenames of the split artifacts (esbuild_web.mjs computes
+# them and bakes them in as a --define), and writes them out here so step 5b knows what to
+# name the files. Read it from the SIDECAR rather than re-hashing: two independent hashers
+# that ever drift would produce a bundle asking for a file nobody shipped.
+sidecar = js_dir / 'main.tmp.js.split-manifest.json'
+if not sidecar.exists():
+    die('esbuild_web.mjs wrote no split manifest — the bundle would fetch un-hashed names')
+split_manifest = json.loads(sidecar.read_text(encoding='utf-8'))
+sidecar.unlink()  # never ship it: it is build scaffolding, not an asset
 ok(f'bundle · {js_name} ({sizeof(len(js_bytes))})')
 
 # --- 3. fonts: TTF -> WOFF2 -----------------------------------------------
@@ -184,16 +194,27 @@ mjs = (ROOT / 'tools/esbuild_web.mjs').read_text(encoding='utf-8')
 split_keys = re.findall(r"\{\s*key:\s*'([^']+)'", mjs)
 if not split_keys:
     die('esbuild_web.mjs: SPLIT_ARTIFACTS unreadable — its shape changed')
+# ★ THE NAMES COME FROM THE BUNDLE, NOT FROM HERE. The app fetches whatever esbuild_web.mjs
+# baked into it, so this loop's only job is to make those names exist. A key the bundle never
+# named is a file the app will never ask for; a name whose hash is not this file's hash is a
+# fetch that 404s. Both hard-fail rather than shipping a build that is quietly broken on the
+# web only — the exact class of defect the split has always been able to hide.
+missing = [k for k in split_keys if not isinstance(split_manifest.get(k), str)]
+if missing:
+    die(f'the bundle named no shipped file for: {", ".join(missing)}')
 split_bytes = 0
 for key in split_keys:
     src = DASH / 'assets/data' / f'{key}.json'
     if not src.exists():
         die(f'split artifact declared but missing on disk: {src}')
-    dest = OUT / 'assets' / 'data' / f'{key}.json'
+    want = digest(src.read_bytes())
+    dest = OUT / 'assets' / 'data' / split_manifest[key]
+    if f'.{want}.' not in dest.name:
+        die(f'{key}: the bundle asks for {dest.name}, which does not carry this file\'s hash ({want})')
     dest.parent.mkdir(parents=True, exist_ok=True)
     shutil.copy2(src, dest)
     split_bytes += dest.stat().st_size
-ok(f'split artifacts · {len(split_keys)} shipped ({sizeof(split_bytes)}) — fetched, not inlined')
+ok(f'split artifacts · {len(split_keys)} shipped ({sizeof(split_bytes)}) — hashed, fetched, not inlined')
 
 # --- 6. index.html --------------------------------------------------------
 say('Writing index.html…')
@@ -225,6 +246,19 @@ ok('index.html')
 # reach them. Fix is Site Tools -> Speed -> Caching -> NGINX Direct Delivery OFF; Apache then
 # serves static files, these rules apply, and brotli still works (verified, byte-identical
 # wire sizes before and after).
+#
+# ★★ AND THERE IS A SECOND CACHE IN FRONT, WHICH THESE RULES DO NOT REACH. Measured on the
+# live host 2026-08-22, after a deploy: every response carries `x-proxy-cache`, and the three
+# split artifacts came back HIT with the PREVIOUS deploy's bytes — a fresh bundle reading a
+# superseded corpus (knowledge_version 490 while 491 sat on disk), with no error anywhere and
+# the claim count on screen simply wrong. `fetch(url, {cache:'reload'})` and `{cache:'no-store'}`
+# both still returned HIT: those directives govern the BROWSER, not an upstream proxy.
+# Flushing Site Tools -> Speed -> Caching cleared it, but a manual step you can silently forget
+# is not a fix. The artifacts are therefore CONTENT-HASHED as of 2026-08-22 (step 5b), which is
+# why `json` joins the immutable group below — the three JSON files are now the only .json
+# shipped, and every one of them carries its own hash. Nothing here is cache-invalidated ever
+# again; a change is simply a different object. The JS and CSS were never stale through any of
+# this, for exactly that reason.
 #
 # ! VERIFY ON THE LIVE HOST AFTER EVERY DEPLOY — a host setting can silently revert this.
 # The one-line proof that these rules are live at all (no server default emits these two):
@@ -269,7 +303,7 @@ AddType font/woff2 .woff2
 # a change produces a new name. index.html must NEVER be cached hard — it is what points at the
 # hashed names, and a stale copy would pin users to an old build forever.
 <IfModule mod_headers.c>
-  <FilesMatch "\\.(js|css|woff2|png|jpe?g|svg|webp|wasm)$">
+  <FilesMatch "\\.(js|css|json|woff2|png|jpe?g|svg|webp|wasm)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   <FilesMatch "\\.(html|gz)$">

@@ -6930,9 +6930,35 @@ def _split_data_manifest_agrees_impl(mjs_text, ts_text, artifact_exists):
     absent = [k for k in sorted(mjs_keys) if not artifact_exists(k)]
     if absent:
         return False, f"split artifact(s) declared but absent from assets/data/: {absent}"
+    # ---- the CACHE CONTRACT, added 2026-08-22 after it failed in production ----------
+    # These three ship under names carrying their own content hash, and the app fetches the
+    # name the build baked into it. That is not a nicety: with FIXED names, SiteGround's proxy
+    # served the previous deploy's corpus for hours after an upload (`x-proxy-cache: HIT`,
+    # Last-Modified a day stale) while the bundle beside it was current -- a live site
+    # answering from knowledge_version 490 with 491 on disk, no error anywhere, and a claim
+    # count on screen that was simply wrong. `cache: 'reload'` and `cache: 'no-store'` did not
+    # shift it, because those govern the BROWSER and not an upstream proxy.
+    #
+    # A regression here is invisible twice over: it cannot fail on file://, where nothing is
+    # fetched at all, and on the web it does not error -- it just serves yesterday. So the two
+    # halves of the mechanism are asserted statically, in the only place a reader would look.
+    if "__SPLIT_MANIFEST__" not in mjs_text:
+        return False, ("tools/esbuild_web.mjs no longer defines __SPLIT_MANIFEST__ -- the web build "
+                       "would ship artifacts the app cannot name, or fall back to FIXED names a "
+                       "proxy is free to serve stale (the 2026-08-22 incident)")
+    if "__SPLIT_MANIFEST__" not in ts_text:
+        return False, ("state/data-split.ts no longer reads __SPLIT_MANIFEST__ -- it would fetch a "
+                       "fixed name again, which is exactly what let a stale corpus reach readers "
+                       "on 2026-08-22")
+    # The literal that WAS the bug. Its return would mean the manifest is declared and ignored,
+    # which reads as fixed and is the one shape no header can protect.
+    if "`./assets/data/${key}.json`" in ts_text:
+        return False, ("state/data-split.ts fetches `./assets/data/${key}.json` -- a FIXED name. "
+                       "It must go through the hashed manifest (pathFor), or a cache in front can "
+                       "pin readers to a superseded artifact with no error anywhere")
     return True, (
-        f"{len(mjs_keys)} split artifact(s) agree across esbuild_web.mjs, data-split.ts and assets/data/: "
-        f"{sorted(mjs_keys)}"
+        f"{len(mjs_keys)} split artifact(s) agree across esbuild_web.mjs, data-split.ts and assets/data/, "
+        f"and ship content-hashed: {sorted(mjs_keys)}"
     )
 
 

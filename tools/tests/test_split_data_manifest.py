@@ -97,9 +97,41 @@ if ok:
 if victim is not None and len(keys) < 1:
     failures.append("the real SPLIT_ARTIFACTS list is empty — nothing is being split")
 
+# ---- THE CACHE CONTRACT (added 2026-08-22, after it failed in production) ------------------
+# The split artifacts ship under content-hashed names and the app fetches the name the build
+# baked into it. With FIXED names, SiteGround's proxy served the previous deploy's corpus for
+# hours after an upload while the bundle beside it was current: a live site answering from
+# knowledge_version 490 with 491 on disk, no error anywhere, and the claim count on screen
+# simply wrong. `cache: 'reload'` and `cache: 'no-store'` did not shift it — those govern the
+# BROWSER, not an upstream proxy.
+#
+# Each poison below is a way that could come back. None of them can fail on file://, where
+# nothing is fetched at all, and none of them ERROR on the web — they just serve yesterday.
+# That is precisely why they need a test rather than a comment.
+
+# (7) THE BUNDLER STOPS INJECTING THE NAMES -> RED.
+ok, msg = impl(mjs.replace("__SPLIT_MANIFEST__", "__GONE__"), ts, all_present)
+if ok:
+    failures.append("expected RED when esbuild_web.mjs stops defining __SPLIT_MANIFEST__, got GREEN")
+elif "__SPLIT_MANIFEST__" not in msg:
+    failures.append(f"RED message should name the missing define: {msg}")
+
+# (8) THE APP STOPS READING THEM -> RED. Injected and ignored is the same as not injected.
+ok, msg = impl(mjs, ts.replace("__SPLIT_MANIFEST__", "__GONE__"), all_present)
+if ok:
+    failures.append("expected RED when data-split.ts stops reading __SPLIT_MANIFEST__, got GREEN")
+
+# (9) THE EXACT LITERAL THAT CAUSED THE INCIDENT COMES BACK -> RED. This one is the shape that
+#     looks harmless in review: a fixed path, reading perfectly, quietly un-cacheable-safely.
+ok, msg = impl(mjs, ts + "\nfetch(`./assets/data/${key}.json`)", all_present)
+if ok:
+    failures.append("expected RED when data-split.ts fetches a FIXED ./assets/data/${key}.json, got GREEN")
+elif "FIXED" not in msg:
+    failures.append(f"RED message should call the name FIXED: {msg}")
+
 if failures:
     print("FAIL — the gate stopped biting:")
     for f in failures:
         print(f"  · {f}")
     sys.exit(1)
-print(f"OK — greens on the real {len(keys)} artifact(s) and reds on all 5 drift shapes")
+print(f"OK — greens on the real {len(keys)} artifact(s) and reds on all 8 drift shapes")

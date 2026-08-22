@@ -23,6 +23,8 @@
 // precisely the class of defect a file:// test run cannot see.
 // ═══════════════════════════════════════════════════════════════════════════
 
+import { createHash } from 'node:crypto';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -51,6 +53,41 @@ export const SPLIT_ARTIFACTS = [
   { key: 'search/search-index', empty: '{"books":{},"entities":{},"claims":[]}' },
 ];
 
+/**
+ * key → the FILENAME the web build ships, carrying that artifact's own content hash.
+ *
+ * ★ WHY THESE ARE HASHED AT ALL. Everything else the web build emits is content-hashed
+ * already, and tools/build_web.py says why in as many words: "a changed file gets a changed
+ * name … there is no cache to invalidate, ever." These three were the one place that promise
+ * was not kept — stable names, changing contents — and on 2026-08-22 it came due: SiteGround's
+ * proxy served the PREVIOUS deploy's corpus-embed.json for hours after an upload
+ * (`x-proxy-cache: HIT`, Last-Modified a day stale), so the live site answered from
+ * knowledge_version 490 while 491 sat on disk beside a fresh bundle. Ten claims that the new
+ * seal had removed were publicly readable and the claim count on screen was wrong.
+ *
+ * ★ AND WHY Cache-Control WAS NOT THE FIX. The obvious repair is a must-revalidate header,
+ * and it does not work: `fetch(url, {cache: 'reload'})` and `{cache: 'no-store'}` both still
+ * came back `x-proxy-cache: HIT`. Those directives govern the BROWSER's cache; an upstream
+ * proxy's own object store is under no obligation to honour them. A new filename is the only
+ * instruction every layer must obey, because it is not an instruction — it is a different
+ * object. The JS and CSS were never stale through any of this, for exactly that reason.
+ *
+ * The digest matches build_web.py's `digest()` (sha256, first 10 hex), but the two never
+ * compute it independently: this function is the single source and build_web.py reads the
+ * manifest this file writes.
+ */
+function splitManifest() {
+  const out = {};
+  for (const { key } of SPLIT_ARTIFACTS) {
+    const src = resolve(DASH, 'assets/data', `${key}.json`);
+    const hash = createHash('sha256').update(readFileSync(src)).digest('hex').slice(0, 10);
+    // `key` may carry a directory ('search/search-index'), and it must survive into the name
+    // so the shipped path still matches what the manifest tells the app to fetch.
+    out[key] = `${key}.${hash}.json`;
+  }
+  return out;
+}
+
 /** Replace each split artifact's contents with its empty shape, before esbuild reads it. */
 const splitDataPlugin = {
   name: 'split-data',
@@ -69,6 +106,17 @@ if (outfile === undefined) {
   process.exit(1);
 }
 
+// Computed BEFORE the bundle, because the bundle has to carry it: the app cannot fetch a
+// hashed name it was not told. That ordering is what makes the chain airtight — index.html is
+// never cached hard, it names the hashed bundle, and the bundle names the hashed artifacts.
+const manifest = splitManifest();
+for (const { key } of SPLIT_ARTIFACTS) {
+  if (typeof manifest[key] !== 'string') {
+    console.error(`✗ ${key}: no hashed filename computed — the artifact is missing or unreadable`);
+    process.exit(1);
+  }
+}
+
 const result = await build({
   entryPoints: [resolve(DASH, 'assets/js/src/main.ts')],
   bundle: true,
@@ -77,7 +125,8 @@ const result = await build({
   platform: 'browser',
   minify: true,
   outfile,
-  define: { __SPLIT_DATA__: 'true' },
+  // A define's value is raw JS source text, so a JSON object literal is exactly right here.
+  define: { __SPLIT_DATA__: 'true', __SPLIT_MANIFEST__: JSON.stringify(manifest) },
   plugins: [splitDataPlugin],
   logLevel: 'warning',
   metafile: true,
@@ -99,4 +148,8 @@ for (const { key } of SPLIT_ARTIFACTS) {
     process.exit(1);
   }
 }
-console.log(`✓ web bundle · ${SPLIT_ARTIFACTS.length} artifact(s) stubbed out`);
+// The sidecar is how build_web.py learns which names to write the files under. Emitting it
+// rather than having that script re-derive the hashes keeps ONE implementation of the naming:
+// two independent hashers that drift produce a bundle asking for a file nobody shipped.
+writeFileSync(`${outfile}.split-manifest.json`, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
+console.log(`✓ web bundle · ${SPLIT_ARTIFACTS.length} artifact(s) stubbed out, hashed and named`);

@@ -33,6 +33,7 @@
 
 /** esbuild --define. Declared, never bundled — see the header. */
 declare const __SPLIT_DATA__: boolean;
+declare const __SPLIT_MANIFEST__: Record<string, string>;
 
 /**
  * True only in the web build. `typeof` rather than a bare read so a build that omits the
@@ -53,6 +54,35 @@ export type SplitKey =
   | 'creators-log-embed'
   | 'search/search-index';
 
+/**
+ * key → the filename the web build actually shipped, content-hashed by tools/esbuild_web.mjs
+ * and injected here as a --define. Empty in the file build, where nothing is fetched at all.
+ *
+ * ★ THE HASH IS THE CACHE CONTRACT. These artifacts used to ship under fixed names, and on
+ * 2026-08-22 SiteGround's proxy served the previous deploy's corpus for hours after an upload
+ * — a fresh bundle reading a superseded corpus, with no error anywhere. `cache: 'reload'` and
+ * `cache: 'no-store'` did not shift it, because those govern the browser and not an upstream
+ * proxy. A changed name is the only instruction every layer must obey. See the long note in
+ * tools/esbuild_web.mjs.
+ */
+const MANIFEST: Partial<Record<SplitKey, string>>
+  = typeof __SPLIT_MANIFEST__ === 'object' && __SPLIT_MANIFEST__ !== null
+    ? __SPLIT_MANIFEST__
+    : {};
+
+/**
+ * Where `key` actually lives.
+ *
+ * The un-hashed fallback is for a build that armed __SPLIT_DATA__ but not the manifest — the
+ * shape every web build shipped before 2026-08-22. It cannot happen through build_web.py,
+ * which hard-fails if the bundle names a file it did not write, and esbuild_web.mjs hard-fails
+ * if a hash cannot be computed; the fallback exists so the failure is a 404 on one artifact
+ * rather than a malformed URL, and it is deliberately NOT a silent success.
+ */
+function pathFor(key: SplitKey): string {
+  return `./assets/data/${MANIFEST[key] ?? `${key}.json`}`;
+}
+
 /** One in-flight (or settled) promise per key, so N callers cause exactly one request. */
 const requests = new Map<SplitKey, Promise<unknown>>();
 
@@ -69,7 +99,7 @@ export function loadSplit(key: SplitKey): Promise<unknown> {
   if (running !== undefined) {
     return running;
   }
-  const request = fetch(`./assets/data/${key}.json`)
+  const request = fetch(pathFor(key))
     .then(async (res): Promise<unknown> => {
       if (!res.ok) {
         console.warn(`[data-split] ${key}: HTTP ${res.status}`);
