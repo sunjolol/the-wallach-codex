@@ -30,6 +30,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Your Health Journey</title>
 
+<!-- ═══ Favicon ═══════════════════════════════════════════════════════════
+     Declared rather than left to a root favicon.ico. A page that declares no icon makes
+     every browser probe /favicon.ico on its own, which was the only 404 on the live site.
+     Two PNGs, so the 16px tab strip is not a downscale of the 32px art. They live under
+     assets/ like every other image, so img-src 'self' already covers them and no
+     root-level file is needed — which matters because the web build ships the CONTENTS
+     of dist-web/, and a root file would be one more thing to remember to drag. -->
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+
 <!-- ═══ Stylesheets (load order matters) ═══════════════════════════════════ -->
 <link rel="stylesheet" href="./assets/styles/design-system.css">
 <link rel="stylesheet" href="./assets/styles/dashboard.css">

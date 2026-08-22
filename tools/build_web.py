@@ -59,8 +59,9 @@ DASH = ROOT / 'dashboard'
 OUT = ROOT / 'dist-web'
 
 # Copied verbatim. Paths under these are referenced BY CODE (state/ocr.ts corePath/langPath/
-# workerPath, views/profile.ts avatar src), so they must keep their exact names -- do not hash them.
-VERBATIM_DIRS = ['assets/avatars', 'assets/vendor']
+# workerPath, views/profile.ts avatar src) or BY THE SHELL (the favicon <link>s in
+# dashboard.html), so they must keep their exact names -- do not hash them.
+VERBATIM_DIRS = ['assets/avatars', 'assets/favicons', 'assets/vendor']
 # Never shipped to the web. Each entry has a reason in the module docstring above.
 EXCLUDE_NAMES = {'worker-offline.js'}
 EXCLUDE_SUFFIX = {'.map'}
@@ -307,6 +308,14 @@ AddType font/woff2 .woff2
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   <FilesMatch "\\.(html|gz)$">
+    Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  # The favicons are the one image with a FIXED name that might actually be replaced, and the
+  # year-long rule above would pin a stale icon on every returning visitor -- the same shape of
+  # trap that served a superseded corpus on 2026-08-22. They are ~2 KB each, so a conditional
+  # request costs nothing and a new icon reaches everyone on their next load. This block is
+  # LATER, so it wins for these two files only.
+  <FilesMatch "^favicon-.*\\.png$">
     Header set Cache-Control "public, max-age=0, must-revalidate"
   </FilesMatch>
 </IfModule>
