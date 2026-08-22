@@ -279,44 +279,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-DDDL-000011",
-   "kind": "dose",
-   "essentials": [
-    "germanium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "The recommended maintenance dose for germanium is 20–30 mg per day (50–100 mg/day is used for serious illness requiring increased oxygenation).",
-   "verbatim": "Twenty to 30 mg per day is the recommended maintenance dose for\ngermanium. Fifty to 100 mg per day doses are commonly used when an\nindividual has a serious illness that requires an increased oxygen level in\nthe body.",
-   "locator": {
-    "book": "dddl-3e-2011",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 533900
-   },
-   "dose": {
-    "amount": "20-30",
-    "unit": "mg",
-    "period": "daily",
-    "form": null,
-    "duration": null,
-    "for_condition": "maintenance"
-   },
-   "tags": [
-    "dose-table"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-24T17:27:11+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-DDDL-000013",
    "kind": "dose",
    "essentials": [
@@ -2045,43 +2007,6 @@
    },
    "dose": null,
    "tags": [],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-24T18:00:30+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-DDDL-000070",
-   "kind": "protocol",
-   "essentials": [
-    "arginine",
-    "zinc",
-    "selenium",
-    "vitamin-a",
-    "germanium"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "infertility"
-   ],
-   "symptoms": [],
-   "claim_text": "Infertility protocol: EFA 5 g three times daily, L-arginine 500 mg three times daily, zinc, selenium 250 mcg/day, vitamin A 100,000 International Units/day for 30 days then 25,000 International Units/day, and germanium 50 mg/day.",
-   "verbatim": "EFA at 5 gm t.i.d., l-arginine at 500 mg t.i.d., zinc at 15 mg t.i.d., selenium\nat 250 mcg/day, vitamin A at 100,000 IU/day for 30 days then drop to\n25,000 IU/day, germanium at 50 mg/day",
-   "locator": {
-    "book": "dddl-3e-2011",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 817365
-   },
-   "dose": null,
-   "tags": [
-    "protocol"
-   ],
    "confidence": "high",
    "review_state": "draft",
    "superseded_by": null,
@@ -7139,39 +7064,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-DDDL-000232",
-   "kind": "protocol",
-   "essentials": [],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "In Wallach's Alzheimer's protocol, treatment includes germanium given intramuscularly -- 5 ml of standard solution every other day for 24 days -- followed by oral germanium at 150 mg twice daily (b.i.d.), alongside the baseline nutritional supplements.",
-   "verbatim": "Treatment should include germanium IM 5 ml of standard solution every\nother day for 24 days followed by oral germanium at 150 mg b.i.d.",
-   "locator": {
-    "book": "dddl-3e-2011",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 617039
-   },
-   "dose": null,
-   "tags": [
-    "germanium",
-    "alzheimers",
-    "brain-health",
-    "protocol",
-    "dosage"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-27T01:51:11+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-DDDL-000233",
    "kind": "definition",
    "essentials": [],
@@ -11408,42 +11300,6 @@
     "ocr-flagged"
    ],
    "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-08-18T08:19:54+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-DDDL-000361",
-   "kind": "protocol",
-   "essentials": [
-    "vitamin-c",
-    "vitamin-a",
-    "zinc",
-    "germanium",
-    "selenium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Wallach reframes immunotherapy as boosting rather than suppressing immunity, using avoidance of fried foods/margarine/sugar, allergen and rotation regimens, vitamin C to bowel tolerance, vitamin A 300,000 IU/day as beta-carotene, zinc 15 mg t.i.d., germanium 50 mg/day, selenium 300 mcg/day, and ginseng.",
-   "verbatim": "Treatment to provide immunotherapy includes avoiding fried foods,\nmargarines, and sugar (natural and processed),\nsublingual allergens regimen for allergies, autoimmune urine therapy,\navoidance of food allergens, rotation diets, vitamin C to bowel tolerance,\nvitamin A at 300,000 IU/day as beta-carotene, zinc at 15 mg t.i.d.,\ngermanium at 50 mg/day orally or IM, selenium at 300 mcg/day orally, IV\nor IM, acupuncture, and herbs to include ginseng (Panax ginseng).",
-   "locator": {
-    "book": "dddl-3e-2011",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 809854
-   },
-   "dose": null,
-   "tags": [
-    "materia-medica",
-    "long-tail"
-   ],
-   "confidence": "medium",
    "review_state": "draft",
    "superseded_by": null,
    "extracted_at": "2026-08-18T08:19:54+00:00",
@@ -16059,42 +15915,6 @@
    "tags": [
     "condition-enrichment",
     "wave1"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-08-18T19:05:41+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
-   "id": "WAL-CLM-DDDL-000499",
-   "kind": "protocol",
-   "essentials": [
-    "vitamin-b1",
-    "vitamin-e",
-    "selenium"
-   ],
-   "other_substances": [],
-   "conditions": [
-    "alzheimers"
-   ],
-   "symptoms": [],
-   "claim_text": "For Alzheimer's, Wallach recommends lecithin 2,500 mg t.i.d. (or phosphatidyl choline), baseline colloidal minerals with betaine HCl and pancreatic enzymes, vitamin B1 200 mg t.i.d., vitamin E 2000 IU daily, selenium 500 mcg daily, and eating soft-scrambled eggs daily plus 72 oz. red meat each month to replace the cholesterol needed to rebuild myelin.",
-   "verbatim": "1979, it appears to be due to a cholesterol and fat deficiency. Alzheimer’s\ndisease is not genetic.\nTreatment should include germanium IM 5 ml of standard solution every\nother day for 24 days followed by oral germanium at 150 mg b.i.d.,\nHydergine, 6-12 mg/day, piracetam/choline 1.6 grams q.i.d., vasopressin\n(Diapid) at a rate of one whiff in each nostril q.i.d. which delivers a total\ndaily dose of 12-16 units of U.S.P. Posterior Pituitary, and centro-phenoxine\n(Lucidril) 6.2-8.0 gram/day. Lecithin at 2,500 mg t.i.d. is very useful at all\nstages though phosphatidyl choline is more efficient. Don’t forget the\nbaseline nutritional supplements including colloidal minerals plus betaine\nHCl and pancreatic enzymes 75-200 mg t.i.d.. Oral and IV H2O2 may be\nhelpful, 200 mg vitamin B1 t.i.d., vitamin E at 2000 iu daily, 500 mcg\nselenium daily and IV chelation will be of value. Eat soft-scrambled (not\nfried) eggs every day and 72 oz. red meat each month to replace cholesterol\nneeded to rebuild myelin.",
-   "locator": {
-    "book": "dddl-3e-2011",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 616939
-   },
-   "dose": null,
-   "tags": [
-    "materia-medica",
-    "long-tail"
    ],
    "confidence": "high",
    "review_state": "draft",

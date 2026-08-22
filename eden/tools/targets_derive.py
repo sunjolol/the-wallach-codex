@@ -434,6 +434,16 @@ def build_data() -> dict:
                     f"{e['mirrors_slug'].replace('-', ' ')}, so it carries that verdict"
                 )
 
+        # VEHICLE-SUPPLIED, for an essential that states NO amount. The numeric branch above
+        # attaches this too, where the vehicle is an ADDITIONAL route beside a Wallach dose
+        # (tin). Germanium is the other case: it has no dose at all, so the vehicle is its
+        # ONLY route -- and without attaching it here the flag never reached the target and a
+        # plant-derived bottle moved the tile by zero. Membership + its justification live in
+        # trace-mineral-vehicles.json; nothing is decided here.
+        if slug in vehicle_supplied and "vehicle_supplied" not in target:
+            target["vehicle_supplied"] = True
+            target["vehicle_claim_ids"] = vehicle_supplied[slug]
+
         essentials.append({"name": name, "slug": slug, "category": category, "target": target})
 
     return {

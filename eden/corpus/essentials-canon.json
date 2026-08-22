@@ -197,7 +197,7 @@
    "symbol": "Ge",
    "layout_key": "Germanium",
    "essential": true,
-   "coverage_kind": "unspecified"
+   "coverage_kind": "dietary_with_clinical_lever"
   },
   {
    "slug": "iron",

@@ -837,9 +837,6 @@
         "vitamin-c",
         "vitamin-e",
         "zinc"
-      ],
-      "groups": [
-        "plant-derived"
       ]
     },
     {
@@ -1501,10 +1498,8 @@
         "menopause"
       ],
       "members": [
-        "arginine",
         "calcium",
         "chromium",
-        "germanium",
         "magnesium",
         "omega-3",
         "omega-6",

@@ -822,6 +822,18 @@ function classify(
     if (target.low !== undefined && target.low > 0) {
       return numericStatus(target, d);
     }
+    // ★ GERMANIUM'S UNIQUE CASE. An essential can state NO amount and still have the
+    // plant-derived vehicle as a real supply route. Without this branch the function
+    // returned here and never reached the vehicle_supplied check further down, so a
+    // PDM bottle moved the tile by zero — which is what made germanium the only tile in
+    // the app unreachable by anything at all.
+    //
+    // Unlike tin, there is no numeric side to take the better of: the vehicle IS the only
+    // measured route. Presence still wins on its own, so a scanned item declaring
+    // germanium covers it with no vehicle present, exactly as the amino acids behave.
+    if (target.vehicle_supplied === true) {
+      return betterStatus(pdmStatus, hasSrc ? 'covered' : '');
+    }
     return hasSrc ? 'covered' : '';
   }
   // A target of ZERO is Wallach saying "take none", and it is MET by taking none. You cannot

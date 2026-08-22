@@ -365,44 +365,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-RARE-000012",
-   "kind": "dose",
-   "essentials": [
-    "germanium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "Wallach gives a germanium maintenance dose of 20-30 mg/day; 50-100 mg/day is commonly used when an individual has a serious illness that requires an increased oxygen level in the body.",
-   "verbatim": "50 to 100 mg per day are commonly used\nwhen an individual has a serious illness that\nrequires an increased oxygen level in the\nbody.",
-   "locator": {
-    "book": "rare-earths",
-    "scheme": "chapter_page",
-    "chapter": null,
-    "page": null,
-    "screenshot": null,
-    "kindle_location": null,
-    "char_offset": 810931
-   },
-   "dose": {
-    "amount": "50-100",
-    "unit": "mg",
-    "period": "daily",
-    "form": null,
-    "duration": null,
-    "for_condition": "serious illness (increased oxygen demand)"
-   },
-   "tags": [
-    "germanium-dose"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-06-24T20:33:28+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-RARE-000013",
    "kind": "food_source",
    "essentials": [

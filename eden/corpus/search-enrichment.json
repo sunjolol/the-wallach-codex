@@ -12374,22 +12374,6 @@
     "prevention"
    ]
   },
-  "WAL-CLM-DDDL-000232": {
-   "subject": "germanium",
-   "also_about": [
-    "memory_loss",
-    "alzheimers"
-   ],
-   "facet": "protocol",
-   "question": "How is germanium used to treat Alzheimer's disease?",
-   "answer_short": "Wallach's Alzheimer's protocol includes germanium IM (5 ml of standard solution every other day for 24 days), then oral germanium at 150 mg twice a day.",
-   "topics": [
-    "alzheimers",
-    "brain-health",
-    "protocol",
-    "dosage"
-   ]
-  },
   "WAL-CLM-DDDL-000233": {
    "subject": "germanium",
    "also_about": [
@@ -13307,18 +13291,6 @@
     "insulin",
     "blood sugar",
     "adult onset diabetes"
-   ]
-  },
-  "WAL-CLM-DDDL-000011": {
-   "subject": "germanium",
-   "also_about": [],
-   "facet": "protocol",
-   "question": "How much germanium should I take a day?",
-   "answer_short": "The recommended maintenance dose is 20 to 30 mg per day; 50 to 100 mg per day is common when serious illness calls for higher oxygen levels in the body. This figure is from his 2011 book Dead Doctors Don't Lie.",
-   "topics": [
-    "dosage",
-    "supplements",
-    "protocol"
    ]
   },
   "WAL-CLM-EPIGEN-000134": {
@@ -20094,26 +20066,6 @@
     "brain-health"
    ]
   },
-  "WAL-CLM-LETS-000130": {
-   "subject": "alzheimers",
-   "also_about": [
-    "memory_loss",
-    "germanium",
-    "choline",
-    "vitamin-e"
-   ],
-   "facet": "protocol",
-   "question": "What is Wallach's full treatment protocol for Alzheimer's disease?",
-   "answer_short": "Wallach's Alzheimer's regimen: germanium (5 ml injected every other day for 24 days, then 150 mg oral twice daily), hydergine 6-12 mg/day, piracetam/choline 1.6 g four times a day, vasopressin nasal spray, centrophenoxine, lecithin 2,500 mg three times a day, the baseline 90 nutrients with colloidal minerals, betaine HCl and pancreatic enzymes, oral and IV hydrogen peroxide, vitamin B-1 200 mg three times a day, vitamin E 1,200 IU/day, and IV chelation.",
-   "topics": [
-    "alzheimers",
-    "dementia",
-    "memory-loss",
-    "protocol",
-    "germanium",
-    "brain-health"
-   ]
-  },
   "WAL-CLM-LETS-000356": {
    "subject": "memory_loss",
    "also_about": [
@@ -26804,28 +26756,6 @@
     "fertility"
    ]
   },
-  "WAL-CLM-DDDL-000070": {
-   "subject": "infertility",
-   "also_about": [
-    "arginine",
-    "zinc",
-    "selenium",
-    "vitamin-a",
-    "germanium"
-   ],
-   "facet": "protocol",
-   "question": "What supplements does Wallach recommend for infertility?",
-   "answer_short": "Wallach's infertility protocol is essential fatty acids, L-arginine, zinc, selenium, vitamin A (100,000 IU/day for 30 days then 25,000), and germanium.",
-   "topics": [
-    "infertility",
-    "fertility",
-    "conceiving",
-    "arginine",
-    "zinc",
-    "selenium",
-    "germanium"
-   ]
-  },
   "WAL-CLM-LETS-000273": {
    "subject": "infertility",
    "also_about": [
@@ -26844,32 +26774,6 @@
     "selenium",
     "protein",
     "malabsorption"
-   ]
-  },
-  "WAL-CLM-LETS-000319": {
-   "subject": "infertility",
-   "also_about": [
-    "omega-3",
-    "zinc",
-    "selenium",
-    "vitamin-a",
-    "germanium",
-    "arginine",
-    "garlic",
-    "ginseng"
-   ],
-   "facet": "protocol",
-   "question": "How does Wallach treat infertility?",
-   "answer_short": "Wallach's dedicated infertility protocol is the baseline program with plant-derived colloidal minerals, resolving food allergies, a high-protein diet, essential fatty acids, L-arginine, zinc, selenium, vitamin A, germanium, acupuncture, and herbs (ginseng, leek, garlic).",
-   "topics": [
-    "infertility",
-    "fertility",
-    "conceiving",
-    "colloidal minerals",
-    "arginine",
-    "zinc",
-    "selenium",
-    "food allergies"
    ]
   },
   "WAL-CLM-DDDL-000024": {
@@ -27651,20 +27555,6 @@
     "fatigue",
     "cancer",
     "low energy"
-   ]
-  },
-  "WAL-CLM-IMMORT-000140": {
-   "subject": "germanium",
-   "also_about": [],
-   "facet": "protocol",
-   "question": "How much germanium should you take daily?",
-   "answer_short": "Wallach recommends a maintenance dose of 20 to 30 mg of germanium per day, with 50 to 100 mg per day commonly used for a serious germanium deficiency. This figure is from his 2008 book Immortality.",
-   "topics": [
-    "germanium",
-    "germanium dose",
-    "maintenance dose",
-    "daily germanium",
-    "supplement"
    ]
   },
   "WAL-CLM-LETS-000183": {
@@ -29950,30 +29840,6 @@
     "base line program",
     "pharmacologic dose",
     "rda"
-   ]
-  },
-  "WAL-CLM-LETS-000313": {
-   "subject": "selenium",
-   "also_about": [
-    "vitamin-c",
-    "vitamin-a",
-    "zinc",
-    "germanium",
-    "ginseng",
-    "chemotherapy"
-   ],
-   "facet": "protocol",
-   "question": "How does Wallach strengthen the immune system naturally?",
-   "answer_short": "Wallach's immunotherapy strengthens immunity against all invaders (for cancer, arthritis, food allergies, MS, lupus, and ALS) using Immu-Stim, vitamin C to bowel tolerance, vitamin A at 300,000 IU/day as beta carotene, zinc 50 mg three times daily, germanium 50 mg/day, selenium 1,000 mcg/day, sublingual allergens, rotation diets, acupuncture, and ginseng.",
-   "topics": [
-    "immune system",
-    "immunotherapy",
-    "cancer",
-    "arthritis",
-    "multiple sclerosis",
-    "lupus",
-    "als",
-    "food allergies"
    ]
   },
   "WAL-CLM-LETS-000038": {
@@ -35694,27 +35560,6 @@
     "essential-fatty-acids"
    ]
   },
-  "WAL-CLM-DDDL-000361": {
-   "subject": "immunotherapy",
-   "also_about": [
-    "vitamin-c",
-    "vitamin-a",
-    "zinc",
-    "germanium",
-    "selenium"
-   ],
-   "facet": "protocol",
-   "question": "What is Wallach's approach to immunotherapy?",
-   "answer_short": "Rather than immune-suppressing chemo and cortisone, boost immunity by avoiding fried foods/margarine/sugar, treating allergies, and taking vitamin C, vitamin A, zinc, germanium, selenium and ginseng.",
-   "topics": [
-    "immune-health",
-    "immunotherapy",
-    "vitamin-a",
-    "zinc",
-    "germanium",
-    "selenium"
-   ]
-  },
   "WAL-CLM-DDDL-000374": {
    "subject": "lactation_suppression",
    "also_about": [],
@@ -36880,25 +36725,6 @@
     "mens-health",
     "prostate",
     "selenium"
-   ]
-  },
-  "WAL-CLM-DDDL-000499": {
-   "subject": "alzheimers",
-   "also_about": [
-    "vitamin-b1",
-    "vitamin-e",
-    "selenium"
-   ],
-   "facet": "protocol",
-   "question": "What does Wallach recommend for Alzheimer's disease?",
-   "answer_short": "Lecithin 2,500 mg t.i.d., germanium, vitamin B1 200 mg t.i.d., vitamin E 2000 IU, selenium 500 mcg daily, colloidal minerals with betaine HCl and pancreatic enzymes, plus daily eggs and 72 oz red meat monthly to rebuild myelin.",
-   "topics": [
-    "brain-health",
-    "memory",
-    "dementia",
-    "cholesterol",
-    "myelin",
-    "lecithin"
    ]
   },
   "WAL-CLM-DDDL-000500": {

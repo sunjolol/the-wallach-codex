@@ -4473,45 +4473,6 @@
    "reviewed_by": null
   },
   {
-   "id": "WAL-CLM-IMMORT-000140",
-   "kind": "dose",
-   "essentials": [
-    "germanium"
-   ],
-   "other_substances": [],
-   "conditions": [],
-   "symptoms": [],
-   "claim_text": "How much germanium to take. Wallach's recommended maintenance dose is 20 to 30 mg per day; higher doses of 50 to 100 mg per day are commonly used when someone has a serious germanium deficiency.",
-   "verbatim": "Twenty to 30 mg per day is the recommended\nmaintenance dose for germanium. Fifty to 100 mg per day\ndoses are commonly used when an individual has a serious\ngermanium deficiency.",
-   "locator": {
-    "book": "immortality",
-    "scheme": "screenshot",
-    "chapter": null,
-    "page": 146,
-    "screenshot": 86,
-    "kindle_location": null,
-    "char_offset": 264489
-   },
-   "dose": {
-    "amount": "20-30",
-    "unit": "mg",
-    "period": "daily",
-    "form": null,
-    "duration": null,
-    "for_condition": "maintenance"
-   },
-   "tags": [
-    "germanium",
-    "dose"
-   ],
-   "confidence": "high",
-   "review_state": "draft",
-   "superseded_by": null,
-   "extracted_at": "2026-07-04T13:07:59+00:00",
-   "reviewed_at": null,
-   "reviewed_by": null
-  },
-  {
    "id": "WAL-CLM-IMMORT-000141",
    "kind": "mechanism",
    "essentials": [

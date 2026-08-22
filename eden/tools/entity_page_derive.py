@@ -108,6 +108,17 @@ def _record_minus_enriched(groups: list, enriched: set) -> list:
     return out
 
 
+def _vehicle_slugs() -> set:
+    """Essentials the plant-derived vehicle supplies, from the vehicle registry.
+
+    Read from dashboard/assets/data/trace-mineral-vehicles.json rather than hand-listed, so
+    adding a vehicle-supplied essential lights its hero automatically and no slug literal
+    lives in this file (entity_render_is_projection-safe)."""
+    p = ROOT / "dashboard" / "assets" / "data" / "trace-mineral-vehicles.json"
+    cfg = json.loads(p.read_text(encoding="utf-8")).get("vehicle_supplied", {})
+    return {k for k in cfg if not k.startswith("_")}
+
+
 def build_data() -> dict:
     embed = _load(CORPUS_EMBED)
     si = _load(SEARCH_INDEX)
@@ -329,7 +340,12 @@ def build_data() -> dict:
         # Group claims render ONLY on plant-derived (trace_pdm) tiles; every other essential omits
         # the field entirely (schema is .optional()) so the artifact stays byte-identical for the
         # 56 non-trace_pdm essentials.
-        if e.get("coverage_kind") == "trace_pdm" and group_record:
+        # The plant-derived hero (illustration + group story + Best-Youngevity sources) belongs
+        # to any essential the VEHICLE supplies -- not only the 34 that carry coverage_kind
+        # trace_pdm. Germanium states no amount and so is NOT trace_pdm (that kind would give it
+        # the 924 mg group meter and strip its goal borders), but the vehicle is its only route,
+        # so it earns the same hero. Derived from the vehicle registry, never a slug literal.
+        if (e.get("coverage_kind") == "trace_pdm" or e["slug"] in _vehicle_slugs()) and group_record:
             rec["group_record"] = group_record
         essentials_out[slug] = rec
 

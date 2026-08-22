@@ -675,7 +675,7 @@
   },
   "betaine-hcl": {
     "display_name": "Betaine Hcl",
-    "claim_count": 52,
+    "claim_count": 51,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000347"
@@ -683,7 +683,6 @@
       "protocol": [
         "WAL-CLM-LETS-000122",
         "WAL-CLM-LETS-000123",
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000131",
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000140",
@@ -740,7 +739,6 @@
       "alcoholism",
       "alopecia",
       "als",
-      "alzheimers",
       "anemia",
       "anorexia",
       "anorexia_nervosa",
@@ -1614,10 +1612,9 @@
   },
   "centrophenoxine": {
     "display_name": "Centrophenoxine",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
@@ -1925,7 +1922,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 58,
+    "claim_count": 56,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-DDDL-000116",
@@ -1940,7 +1937,6 @@
       ],
       "protocol": [
         "WAL-CLM-LETS-000122",
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000145",
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000147",
@@ -1966,7 +1962,6 @@
         "WAL-CLM-LETS-000285",
         "WAL-CLM-LETS-000311",
         "WAL-CLM-LETS-000315",
-        "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000322",
         "WAL-CLM-LETS-000340",
         "WAL-CLM-LETS-000348",
@@ -1994,7 +1989,6 @@
     },
     "conditions_treated": [
       "achlorhydria",
-      "alzheimers",
       "arteriosclerosis",
       "arthritis",
       "asthma",
@@ -2027,7 +2021,6 @@
       "high_triglycerides",
       "immune_depression",
       "impotence",
-      "infertility",
       "insomnia",
       "keshan_disease",
       "lead_poisoning",
@@ -3290,7 +3283,7 @@
   },
   "garlic": {
     "display_name": "Garlic",
-    "claim_count": 8,
+    "claim_count": 7,
     "claims_by_kind": {
       "protocol": [
         "WAL-CLM-LETS-000126",
@@ -3298,7 +3291,6 @@
         "WAL-CLM-LETS-000147",
         "WAL-CLM-LETS-000225",
         "WAL-CLM-LETS-000318",
-        "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000395",
         "WAL-CLM-LETS-000444"
       ]
@@ -3310,7 +3302,6 @@
       "atopic_asthma",
       "colds",
       "infection",
-      "infertility",
       "parasites",
       "tapeworms"
     ],
@@ -3428,7 +3419,7 @@
   },
   "ginseng": {
     "display_name": "Ginseng",
-    "claim_count": 9,
+    "claim_count": 7,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000263"
@@ -3437,10 +3428,8 @@
         "WAL-CLM-LETS-000222",
         "WAL-CLM-LETS-000308",
         "WAL-CLM-LETS-000311",
-        "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000315",
         "WAL-CLM-LETS-000316",
-        "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000386"
       ]
     },
@@ -3450,7 +3439,6 @@
       "immune_depression",
       "impotence",
       "incontinence",
-      "infertility",
       "intermittent_claudication",
       "oligospermia"
     ],
@@ -3880,10 +3868,9 @@
   },
   "hydergine": {
     "display_name": "Hydergine",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
@@ -4063,10 +4050,9 @@
   },
   "immu-stim": {
     "display_name": "Immu Stim",
-    "claim_count": 2,
+    "claim_count": 1,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000318"
       ]
     },
@@ -4529,14 +4515,13 @@
   },
   "lecithin": {
     "display_name": "Lecithin",
-    "claim_count": 9,
+    "claim_count": 8,
     "claims_by_kind": {
       "dose": [
         "WAL-CLM-DDDL-000585",
         "WAL-CLM-DDDL-000595"
       ],
       "protocol": [
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000220",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000246",
@@ -4546,7 +4531,6 @@
       ]
     },
     "conditions_treated": [
-      "alzheimers",
       "chorea",
       "dementia",
       "diabetes",
@@ -4556,21 +4540,6 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
-      "lets-play-doctor"
-    ]
-  },
-  "leek": {
-    "display_name": "Leek",
-    "claim_count": 1,
-    "claims_by_kind": {
-      "protocol": [
-        "WAL-CLM-LETS-000319"
-      ]
-    },
-    "conditions_treated": [
-      "infertility"
-    ],
-    "books_cited": [
       "lets-play-doctor"
     ]
   },
@@ -5577,14 +5546,13 @@
   },
   "pancreatic-enzymes": {
     "display_name": "Pancreatic Enzymes",
-    "claim_count": 45,
+    "claim_count": 44,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-LETS-000347"
       ],
       "protocol": [
         "WAL-CLM-LETS-000123",
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000131",
         "WAL-CLM-LETS-000140",
         "WAL-CLM-LETS-000147",
@@ -5634,7 +5602,6 @@
       "alcoholism",
       "alopecia",
       "als",
-      "alzheimers",
       "anorexia",
       "anorexia_nervosa",
       "asthma",
@@ -5996,10 +5963,9 @@
   },
   "piracetam": {
     "display_name": "Piracetam",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"
@@ -7459,10 +7425,9 @@
   },
   "vasopressin": {
     "display_name": "Vasopressin",
-    "claim_count": 4,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000243",
         "WAL-CLM-LETS-000333",
         "WAL-CLM-LETS-000356"

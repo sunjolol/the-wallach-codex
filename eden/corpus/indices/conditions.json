@@ -584,7 +584,7 @@
   },
   "alzheimers": {
     "display_name": "Alzheimers",
-    "claim_count": 12,
+    "claim_count": 10,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-EPIGEN-000468"
@@ -600,35 +600,26 @@
         "WAL-CLM-IMMORT-000494"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000499",
         "WAL-CLM-EPIGEN-000016",
         "WAL-CLM-EPIGEN-000487",
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000356"
       ]
     },
     "essentials_involved": [
       "choline",
       "chromium",
-      "germanium",
       "omega-3",
       "selenium",
-      "vitamin-b1",
       "vitamin-e"
     ],
     "other_substances_involved": [
       "b-complex",
-      "betaine-hcl",
       "centrophenoxine",
-      "colloidal-minerals",
       "hydergine",
-      "lecithin",
-      "pancreatic-enzymes",
       "piracetam",
       "vasopressin"
     ],
     "books_cited": [
-      "dddl-3e-2011",
       "epigenetics",
       "immortality",
       "lets-play-doctor",
@@ -7815,7 +7806,7 @@
   },
   "infertility": {
     "display_name": "Infertility",
-    "claim_count": 20,
+    "claim_count": 18,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000472"
@@ -7841,15 +7832,11 @@
         "WAL-CLM-DDDL-000069"
       ],
       "protocols": [
-        "WAL-CLM-DDDL-000070",
-        "WAL-CLM-LETS-000273",
-        "WAL-CLM-LETS-000319"
+        "WAL-CLM-LETS-000273"
       ]
     },
     "essentials_involved": [
-      "arginine",
       "chromium",
-      "germanium",
       "lithium",
       "nitrogen",
       "omega-3",
@@ -7861,10 +7848,6 @@
     ],
     "other_substances_involved": [
       "betaine-hcl",
-      "colloidal-minerals",
-      "garlic",
-      "ginseng",
-      "leek",
       "pancreatic-enzymes"
     ],
     "books_cited": [

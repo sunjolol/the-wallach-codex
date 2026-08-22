@@ -2161,7 +2161,7 @@
     "display_name": "Germanium",
     "canon_slug": "germanium",
     "category": "mineral",
-    "claim_count": 26,
+    "claim_count": 18,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-IMMORT-000139",
@@ -2172,11 +2172,6 @@
         "WAL-CLM-IMMORT-000138",
         "WAL-CLM-IMMORT-000142",
         "WAL-CLM-IMMORT-000146"
-      ],
-      "dose": [
-        "WAL-CLM-DDDL-000011",
-        "WAL-CLM-IMMORT-000140",
-        "WAL-CLM-RARE-000012"
       ],
       "food_source": [
         "WAL-CLM-DDDL-000114",
@@ -2189,15 +2184,10 @@
         "WAL-CLM-LETS-000183"
       ],
       "protocol": [
-        "WAL-CLM-DDDL-000070",
-        "WAL-CLM-DDDL-000361",
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000201",
         "WAL-CLM-LETS-000221",
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000311",
-        "WAL-CLM-LETS-000313",
-        "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000344",
         "WAL-CLM-RARE-000282"
       ]
@@ -2215,7 +2205,6 @@
       }
     ],
     "conditions_treated": [
-      "alzheimers",
       "arthritis",
       "cancer",
       "candidiasis",
@@ -2223,19 +2212,15 @@
       "dementia",
       "hepatitis",
       "immune_depression",
-      "infertility",
       "leukemia",
       "liver_disease",
       "osteoporosis"
     ],
     "interacts_with": [
-      "arginine",
       "calcium",
-      "choline",
       "chromium",
       "gallium",
       "lithium",
-      "omega-3",
       "oxygen",
       "selenium",
       "vanadium",
@@ -2245,7 +2230,6 @@
       "vitamin-b3",
       "vitamin-b9",
       "vitamin-c",
-      "vitamin-e",
       "zinc"
     ],
     "books_cited": [
@@ -2820,7 +2804,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 135,
+    "claim_count": 130,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-EPIGEN-000177"
@@ -2890,21 +2874,18 @@
       "protocol": [
         "WAL-CLM-DDDL-000054",
         "WAL-CLM-DDDL-000056",
-        "WAL-CLM-DDDL-000070",
         "WAL-CLM-DDDL-000081",
         "WAL-CLM-DDDL-000085",
         "WAL-CLM-DDDL-000320",
         "WAL-CLM-DDDL-000323",
         "WAL-CLM-DDDL-000325",
         "WAL-CLM-DDDL-000331",
-        "WAL-CLM-DDDL-000361",
         "WAL-CLM-DDDL-000363",
         "WAL-CLM-DDDL-000387",
         "WAL-CLM-DDDL-000408",
         "WAL-CLM-DDDL-000434",
         "WAL-CLM-DDDL-000456",
         "WAL-CLM-DDDL-000498",
-        "WAL-CLM-DDDL-000499",
         "WAL-CLM-DDDL-000509",
         "WAL-CLM-DDDL-000533",
         "WAL-CLM-DDDL-000579",
@@ -2938,11 +2919,9 @@
         "WAL-CLM-LETS-000295",
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000311",
-        "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000316",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
-        "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000321",
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000334",
@@ -3390,7 +3369,7 @@
     "display_name": "Zinc",
     "canon_slug": "zinc",
     "category": "mineral",
-    "claim_count": 126,
+    "claim_count": 122,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000039",
@@ -3445,7 +3424,6 @@
       "protocol": [
         "WAL-CLM-DDDL-000049",
         "WAL-CLM-DDDL-000055",
-        "WAL-CLM-DDDL-000070",
         "WAL-CLM-DDDL-000080",
         "WAL-CLM-DDDL-000085",
         "WAL-CLM-DDDL-000325",
@@ -3453,7 +3431,6 @@
         "WAL-CLM-DDDL-000345",
         "WAL-CLM-DDDL-000346",
         "WAL-CLM-DDDL-000351",
-        "WAL-CLM-DDDL-000361",
         "WAL-CLM-DDDL-000363",
         "WAL-CLM-DDDL-000387",
         "WAL-CLM-DDDL-000434",
@@ -3502,10 +3479,8 @@
         "WAL-CLM-LETS-000307",
         "WAL-CLM-LETS-000308",
         "WAL-CLM-LETS-000311",
-        "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000314",
         "WAL-CLM-LETS-000318",
-        "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000324",
         "WAL-CLM-LETS-000328",
@@ -4707,7 +4682,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 83,
+    "claim_count": 79,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -4733,14 +4708,12 @@
       ],
       "protocol": [
         "WAL-CLM-DDDL-000056",
-        "WAL-CLM-DDDL-000070",
         "WAL-CLM-DDDL-000085",
         "WAL-CLM-DDDL-000325",
         "WAL-CLM-DDDL-000336",
         "WAL-CLM-DDDL-000337",
         "WAL-CLM-DDDL-000345",
         "WAL-CLM-DDDL-000346",
-        "WAL-CLM-DDDL-000361",
         "WAL-CLM-DDDL-000363",
         "WAL-CLM-DDDL-000389",
         "WAL-CLM-DDDL-000436",
@@ -4769,11 +4742,9 @@
         "WAL-CLM-LETS-000280",
         "WAL-CLM-LETS-000282",
         "WAL-CLM-LETS-000311",
-        "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000314",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
-        "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000324",
         "WAL-CLM-LETS-000325",
         "WAL-CLM-LETS-000328",
@@ -4911,7 +4882,6 @@
       "xerophthalmia"
     ],
     "interacts_with": [
-      "arginine",
       "biotin",
       "calcium",
       "chromium",
@@ -4947,7 +4917,7 @@
     "display_name": "Thiamine",
     "canon_slug": "vitamin-b1",
     "category": "vitamin",
-    "claim_count": 26,
+    "claim_count": 24,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000043",
@@ -4968,9 +4938,7 @@
       ],
       "protocol": [
         "WAL-CLM-DDDL-000434",
-        "WAL-CLM-DDDL-000499",
         "WAL-CLM-EPIGEN-000014",
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000142",
         "WAL-CLM-LETS-000159",
         "WAL-CLM-LETS-000203",
@@ -5119,7 +5087,6 @@
       }
     ],
     "conditions_treated": [
-      "alzheimers",
       "anorexia",
       "anxiety",
       "beriberi",
@@ -6358,7 +6325,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 91,
+    "claim_count": 89,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000043",
@@ -6384,7 +6351,6 @@
         "WAL-CLM-DDDL-000329",
         "WAL-CLM-DDDL-000331",
         "WAL-CLM-DDDL-000345",
-        "WAL-CLM-DDDL-000361",
         "WAL-CLM-DDDL-000363",
         "WAL-CLM-DDDL-000434",
         "WAL-CLM-DDDL-000495",
@@ -6435,7 +6401,6 @@
         "WAL-CLM-LETS-000300",
         "WAL-CLM-LETS-000308",
         "WAL-CLM-LETS-000311",
-        "WAL-CLM-LETS-000313",
         "WAL-CLM-LETS-000314",
         "WAL-CLM-LETS-000317",
         "WAL-CLM-LETS-000318",
@@ -6794,7 +6759,7 @@
     "display_name": "Tocopherol",
     "canon_slug": "vitamin-e",
     "category": "vitamin",
-    "claim_count": 86,
+    "claim_count": 84,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000089",
@@ -6828,14 +6793,12 @@
         "WAL-CLM-DDDL-000442",
         "WAL-CLM-DDDL-000455",
         "WAL-CLM-DDDL-000456",
-        "WAL-CLM-DDDL-000499",
         "WAL-CLM-DDDL-000506",
         "WAL-CLM-DDDL-000524",
         "WAL-CLM-DDDL-000533",
         "WAL-CLM-DDDL-000579",
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000126",
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000146",
         "WAL-CLM-LETS-000148",
@@ -7033,7 +6996,6 @@
       "chromium",
       "copper",
       "flavonoids",
-      "germanium",
       "inositol",
       "iodine",
       "iron",
@@ -7295,7 +7257,7 @@
     "display_name": "Choline",
     "canon_slug": "choline",
     "category": "vitamin",
-    "claim_count": 15,
+    "claim_count": 14,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000044"
@@ -7311,7 +7273,6 @@
         "WAL-CLM-DDDL-000331",
         "WAL-CLM-DDDL-000351",
         "WAL-CLM-LETS-000120",
-        "WAL-CLM-LETS-000130",
         "WAL-CLM-LETS-000159",
         "WAL-CLM-LETS-000220",
         "WAL-CLM-LETS-000243",
@@ -7355,7 +7316,6 @@
       "calcium",
       "chromium",
       "copper",
-      "germanium",
       "lithium",
       "magnesium",
       "manganese",
@@ -7570,7 +7530,7 @@
     "display_name": "Arginine",
     "canon_slug": "arginine",
     "category": "amino_acid",
-    "claim_count": 7,
+    "claim_count": 5,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-DDDL-000275",
@@ -7581,9 +7541,7 @@
         "WAL-CLM-EPIGEN-000047"
       ],
       "protocol": [
-        "WAL-CLM-DDDL-000070",
-        "WAL-CLM-LETS-000207",
-        "WAL-CLM-LETS-000319"
+        "WAL-CLM-LETS-000207"
       ]
     },
     "deficiency_signs": [],
@@ -7592,20 +7550,16 @@
       "cataracts",
       "erectile_dysfunction",
       "goiter",
-      "infertility",
       "macular_degeneration",
       "peripheral_arterial_disease"
     ],
     "interacts_with": [
       "chromium",
       "flavonoids",
-      "germanium",
       "inositol",
-      "omega-3",
       "selenium",
       "taurine",
       "tyrosine",
-      "vitamin-a",
       "vitamin-b1",
       "vitamin-b2",
       "vitamin-b3",
@@ -8128,7 +8082,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 100,
+    "claim_count": 99,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -8213,7 +8167,6 @@
         "WAL-CLM-LETS-000293",
         "WAL-CLM-LETS-000310",
         "WAL-CLM-LETS-000316",
-        "WAL-CLM-LETS-000319",
         "WAL-CLM-LETS-000320",
         "WAL-CLM-LETS-000324",
         "WAL-CLM-LETS-000348",
@@ -8379,14 +8332,12 @@
       "weight_loss"
     ],
     "interacts_with": [
-      "arginine",
       "biotin",
       "calcium",
       "choline",
       "chromium",
       "copper",
       "flavonoids",
-      "germanium",
       "histidine",
       "iodine",
       "iron",

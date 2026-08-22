@@ -187,6 +187,12 @@
     "WAL-CLM-DDDL-000287"
    ],
    "note": "Two books 16 years apart carry the same instruction -- 'tin from plant derived colloidal minerals' (Let's Play Doctor 1995, LETS-000451; repeated in Dead Doctors Don't Lie 3e 2011, DDDL-000406/465/466) -- and DDDL-000287 records Wallach's own considerable hair regrowth using plant-derived liquid colloidal tin. A sweep of all seven books finds NO food source for tin anywhere, so the vehicle is the only supply route he ever names for it."
+  },
+  "germanium": {
+   "claim_ids": [
+    "WAL-CLM-HELLS-000069"
+   ],
+   "note": "★ ADMITTED BY OWNER RULING (Luneth, 2026-08-21), NOT by the supply-sentence test above. Wallach names germanium on his own humic-shale roster (WAL-CLM-HELLS-000069, 'Essential Minerals Found in a High Quality Humic Shale'), but nowhere writes 'germanium from plant derived colloidal minerals' the way he does for tin. The roster alone is explicitly NOT the test for the other entries, and that rule still stands for them -- it exists because the roster also lists calcium, sodium and potassium, which all have their own routes. Germanium is the deliberate exception: after its three dose claims were deleted it has NO Wallach amount and NO other covering path of any kind -- it was the only tile in the app unreachable by anything. The plant-derived vehicle is the sole route Wallach associates with it at all. UNIQUE TREATMENT: unlike every other entry here, germanium carries NO numeric target, so the vehicle is its ONLY numeric route rather than an additional one, and it keeps coverage_kind 'dietary_with_clinical_lever' so it stays goal-nameable and shows the amino-style 'no maintenance amount stated' disclaimer instead of the 924 mg group meter. Do not generalise this entry to another essential without a fresh ruling."
   }
  }
 }
