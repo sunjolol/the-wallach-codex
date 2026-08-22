@@ -45,7 +45,7 @@ import {
 import { coveredCountForItems, essentialCount, getOrCompute, matchEssential } from '../state/coverage.js';
 import { atMinimumDose, doseCount, doseUnitLabel, doseUnitsOf } from '../core/dose-units.js';
 import { defaultServingsFor } from '../state/dose-defaults.js';
-import { rankFoodsForCoverage } from '../state/foods.js';
+import { foodCatalogSize, foodCategories, rankFoodsForCoverage } from '../state/foods.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage } from '../state/recommender.js';
 import { addCatalogFood, buildFoodsBlock } from './foods-block.js';
 import { starterPackIds } from '../state/starter-pack.js';
@@ -103,22 +103,6 @@ const REC_LIMIT = 3;
  *  blocks are meant to read as one six-card row split by a labelled rule, not as a big
  *  block and a small one. */
 const FOOD_LIMIT = 3;
-/**
- * The most PAGES the console's pager will list. Ninety foods, thirty squares — one row of
- * the column, where sixty-four wrapped to two and read as clutter (owner's call,
- * 2026-08-22).
- *
- * ★ IT CAPS THE COUNT, NOT THE REACH. The pool is still `catalog minus what you own`, so the
- * square count falls below thirty on its own once fewer than ninety foods remain unowned,
- * and climbs back the moment one is removed. The cap only stops it going ABOVE thirty; every
- * other page number on screen is still derived from the live pool, never stored.
- *
- * ★ AND IT DOES NOT SHORTEN THE LIST. Adding a food removes it from the pool and the next
- * enters, so the whole catalog stays reachable exactly as the 2026-08-21 ruling intended.
- * Coverage is deliberately NOT capped: its arrows cost one row whatever the count, so they
- * walk all sixty-four (owner, 2026-08-22).
- */
-const FOOD_PAGE_CAP = 30;
 /** How many slot tiles the switcher paints. MUST equal state/regimen.ts's MAX_SLOTS — the state
  *  layer refuses a fifth save, so a mismatch here paints an empty tile that can never be filled. */
 const SLOT_CAP = 4;
@@ -898,6 +882,12 @@ export function mount(container: HTMLElement): MountHandle {
   /** Which page of FOOD SOURCES the console is showing. Session-only and deliberately not
    *  persisted: it is where the reader's eye is, not a preference they set. */
   let foodPage = 0;
+  /** The FOOD SOURCES filter — one catalog category ('' = all) and a name query. Session-only
+   *  for the same reason the page is: it is where the reader is looking right now, not a
+   *  setting they chose, and a filter that outlived a reload would hide most of the catalog
+   *  from someone who had forgotten they set it. */
+  let foodCategory = '';
+  let foodQuery = '';
   let toastTimer: number | null = null;
   let recycleOpen = false;
   // The "Replace a save" step: while all four slots are full, this holds the deletedAt key of the
@@ -1230,6 +1220,53 @@ export function mount(container: HTMLElement): MountHandle {
     }
   };
 
+  /**
+   * Repaint ONLY the FOOD SOURCES block.
+   *
+   * ★ WHY NOT render(). The filter box lives INSIDE the block, and render() replaces the
+   * whole workspace — so every keystroke would destroy the input being typed into and hand
+   * the caret back to <body>. Repainting one subtree keeps that element alive long enough
+   * for buildFoodsBlock to put the cursor back where it was. The page buttons come through
+   * here too, so ONE path paints this block and the pool arithmetic has no second copy.
+   */
+  const paintFoods = (): void => {
+    const foodsHost = container.querySelector<HTMLElement>('[data-foodsblock]');
+    if (foodsHost === null) {
+      return;
+    }
+    const goals = activeGoals();
+    // The same test paint() makes, for the same reason — see the note there about omega-9.
+    const allCovered = fieldInfo(goals).covered >= essentialCount();
+    const ownedFoods = loadEffectiveRegimen()
+      .map(i => i.label['food_id'])
+      .filter((v): v is string => typeof v === 'string');
+    // ★ THE WHOLE CATALOG, EVERY PAINT — and the REQUEST IS THE POOL. Asking for
+    // foodCatalogSize() is what keeps the page count DERIVED: the ranker returns fewer only
+    // when foods are owned or the filter narrows things, so the pager's last number is always
+    // a true count of what is actually there and nothing about it is ever stored. The old
+    // thirty-page cap is gone with the squares that needed it — a windowed pager lists
+    // sixty-four pages in one row (owner's shape, 2026-08-22).
+    const foodPool = rankFoodsForCoverage({
+      want: wantedSlugs(goals),
+      owned: ownedFoods,
+      goals: goals.map(g => ({ id: g.id, members: g.members })),
+      limit: foodCatalogSize(),
+      category: foodCategory,
+      query: foodQuery,
+    });
+    const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_LIMIT));
+    // The pool re-ranks on every paint and SHRINKS as foods are added or the filter bites, so
+    // the page the reader is on can stop existing. Clamp to the last real page rather than
+    // paint an empty block that reads as "no foods left".
+    foodPage = Math.min(foodPage, foodPages - 1);
+    buildFoodsBlock(foodsHost, foodPool.slice(foodPage * FOOD_LIMIT, (foodPage + 1) * FOOD_LIMIT), {
+      education: allCovered,
+      ownedCount: ownedFoods.length,
+      pager: { page: foodPage, pages: foodPages, kind: 'numbers' },
+      filter: { categories: foodCategories(), category: foodCategory, query: foodQuery },
+    });
+  };
+
   const render = (): void => { withScrollPreserved(container, paint); };
 
   const paint = (): void => {
@@ -1277,40 +1314,7 @@ export function mount(container: HTMLElement): MountHandle {
       });
       buildRecs(recGrid, recs, goals, allCovered);
     }
-    const foodsHost = container.querySelector<HTMLElement>('[data-foodsblock]');
-    if (foodsHost !== null) {
-      // The console's foods list DELIBERATELY never exhausts. Once the wanted set is
-      // closed it switches to education ranking (most nutritious first) and keeps going
-      // until the catalog itself runs out — owner ruling, 2026-08-21. Seeing the catalog
-      // IS the point, so `want` being empty is a MODE CHANGE here, not a stop.
-      const ownedFoods = items
-        .map(i => i.label['food_id'])
-        .filter((v): v is string => typeof v === 'string');
-      // ★ THIRTY PAGES' WORTH, EVERY PAINT — and the CAP IS THE REQUEST. Asking for exactly
-      // FOOD_LIMIT * FOOD_PAGE_CAP is what makes the count self-adjusting: the ranker returns
-      // fewer than ninety only when fewer than ninety foods are left unowned, so the squares
-      // thin out as the regimen fills and come straight back when something is removed. No
-      // second rule decides the page count, and nothing is stored. (~0.8 ms, measured.)
-      const foodPool = rankFoodsForCoverage({
-        want: wantedSlugs(goals),
-        owned: ownedFoods,
-        goals: goals.map(g => ({ id: g.id, members: g.members })),
-        limit: FOOD_LIMIT * FOOD_PAGE_CAP,
-        greedy: true,
-        education: allCovered,
-        browse: true,
-      });
-      const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_LIMIT));
-      // The pool re-ranks on every paint and SHRINKS as foods are added, so the page the
-      // reader is on can stop existing. Clamp to the last real page rather than paint an
-      // empty block that reads as "no foods left".
-      foodPage = Math.min(foodPage, foodPages - 1);
-      buildFoodsBlock(foodsHost, foodPool.slice(foodPage * FOOD_LIMIT, (foodPage + 1) * FOOD_LIMIT), {
-        education: allCovered,
-        ownedCount: ownedFoods.length,
-        pager: { page: foodPage, pages: foodPages, kind: 'squares' },
-      });
-    }
+    paintFoods();
     if (recycleOpen) {
       populateRecycle();
     }
@@ -1600,7 +1604,7 @@ export function mount(container: HTMLElement): MountHandle {
       // clamp to the last page and look like the pager jumping for no reason.
       if (Number.isFinite(n) && n >= 0) {
         foodPage = n;
-        render();
+        paintFoods();
       }
       return;
     }
@@ -1730,8 +1734,27 @@ export function mount(container: HTMLElement): MountHandle {
 
   const inputHandler = (ev: Event): void => {
     const it = ev.target as HTMLElement | null;
-    if (it !== null && it.matches('[data-add-input]')) {
+    if (it === null) {
+      return;
+    }
+    if (it.matches('[data-add-input]')) {
       renderTypeahead(container, (it as HTMLInputElement).value);
+      return;
+    }
+    // — the FOOD SOURCES filter. Both controls reset to page one: a narrowed pool has fewer
+    // pages, and staying on page forty of a two-page list would read as the filter having
+    // found nothing at all. A <select> fires `input` as well as `change`, so one handler
+    // serves both controls.
+    if (it.matches('[data-food-q]')) {
+      foodQuery = (it as HTMLInputElement).value;
+      foodPage = 0;
+      paintFoods();
+      return;
+    }
+    if (it.matches('[data-food-cat]')) {
+      foodCategory = (it as HTMLSelectElement).value;
+      foodPage = 0;
+      paintFoods();
     }
   };
 

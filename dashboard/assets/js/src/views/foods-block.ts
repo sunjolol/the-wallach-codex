@@ -35,6 +35,7 @@
 
 import { FOOD_CATALOG_PROVENANCE } from '../core/provenance.js';
 import type { RegimenItem } from '../core/schemas/index.js';
+import { ui } from '../state/copy.js';
 import { foodById, foodCatalogSize, type FoodHit, type FoodRec } from '../state/foods.js';
 import { addOrBumpRegimenItem } from '../state/regimen.js';
 
@@ -52,9 +53,20 @@ const PRIZE_URL = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 /** Design F's add control: the app's own 28px shell, differing only by its SVG path. */
 const ADD_PATH = 'M12 6v12M6 12h12';
 
-/** The pager's two arrows. Single glyphs, so they inherit the mono face like the squares. */
+/** The pager's two arrows. Single glyphs, so they inherit the mono face like the numbers. */
 const PAGER_PREV = '‹';
 const PAGER_NEXT = '›';
+/** What stands between two page numbers that are not neighbours. */
+const PAGER_GAP = '…';
+/**
+ * How many page numbers the moving window holds.
+ *
+ * ★ THE WINDOW STARTS AT THE CURRENT PAGE, it does not centre on it — the owner's shape,
+ * 2026-08-22: "1 2 3 4 5 … 64" on page one, and "1 … 20 21 22 23 24 … 64" on page twenty.
+ * It only slides backwards when the end of the list would otherwise cut it short, so the
+ * last page reads "1 … 60 61 62 63 64" instead of a lonely "1 … 64".
+ */
+const PAGER_WINDOW = 5;
 
 export interface FoodsBlockOptions {
   /**
@@ -77,10 +89,19 @@ export interface FoodsBlockOptions {
    * already uses.
    *
    * `kind` picks the shape, not the behaviour: `arrows` on Coverage, whose list is short
-   * and bounded by what may still be added, `squares` in the Regimen console, where the
+   * and bounded by what may still be added, `numbers` in the Regimen console, where the
    * reader can jump straight to a page (owner's choice, 2026-08-22).
    */
-  pager?: { page: number; pages: number; kind: 'arrows' | 'squares' };
+  pager?: { page: number; pages: number; kind: 'arrows' | 'numbers' };
+  /**
+   * The category + name filter, if this caller offers one. Sits at the RIGHT of the pager's
+   * row (owner's layout, 2026-08-22: pager left, filter right).
+   *
+   * ★ THE CALLER OWNS THE FILTER TOO, for the same reason it owns the page — and it must
+   * apply the filter to the POOL it ranks, never to the slice it passes here, or the pager
+   * would count pages that no longer exist.
+   */
+  filter?: { categories: readonly string[]; category: string; query: string };
 }
 
 function ruleWithLabel(): HTMLElement {
@@ -133,43 +154,168 @@ function pagerButton(label: string, page: number, disabled: boolean): HTMLButton
 }
 
 /**
+ * Which page numbers the numbered pager lists, in order — a `null` is an ellipsis.
+ *
+ * The first and last pages are ALWAYS listed, because they are the two a reader reaches for
+ * without counting; everything else is the window described at PAGER_WINDOW. An ellipsis is
+ * emitted only where the numbers on either side of it are genuinely not neighbours, so the
+ * pager never prints "1 … 2" — a gap mark over no gap is chrome that lies.
+ */
+function windowedPages(page: number, pages: number): (number | null)[] {
+  const last = pages - 1;
+  const start = Math.max(0, Math.min(page, last - (PAGER_WINDOW - 1)));
+  const end = Math.min(last, start + PAGER_WINDOW - 1);
+  const out: (number | null)[] = [0];
+  if (start > 1) {
+    out.push(null);
+  }
+  for (let i = Math.max(start, 1); i <= Math.min(end, last - 1); i += 1) {
+    out.push(i);
+  }
+  if (end < last - 1) {
+    out.push(null);
+  }
+  if (last > 0) {
+    out.push(last);
+  }
+  return out;
+}
+
+function pagerGap(): HTMLElement {
+  const gap = document.createElement('span');
+  gap.className = 'fs-pager__gap';
+  gap.textContent = PAGER_GAP;
+  gap.setAttribute('aria-hidden', 'true');
+  return gap;
+}
+
+function arrow(label: string, page: number, disabled: boolean, aria: string): HTMLButtonElement {
+  const b = pagerButton(label, page, disabled);
+  b.classList.add('fs-pager__b--arrow');
+  b.setAttribute('aria-label', aria);
+  return b;
+}
+
+/**
  * The pager, or null when there is nothing to page to.
  *
  * ★ NEVER PAINTED OVER A SINGLE PAGE. A pager is a claim that more exists; rendering one
- * for a one-page list is that claim made falsely, and the foods list is often one page —
- * in gap-fill mode the greedy ranker exhausts after a handful of foods by design.
+ * for a one-page list is that claim made falsely, and the foods list is one page whenever a
+ * filter narrows the catalog to a handful.
  */
 function pagerNode(p: NonNullable<FoodsBlockOptions['pager']>): HTMLElement | null {
   if (p.pages < 2) {
     return null;
   }
   const nav = document.createElement('nav');
-  nav.className = 'fs-pager';
-  nav.setAttribute('aria-label', 'More foods');
+  // The modifier is what lets the Regimen console size its pager up without touching
+  // Coverage's (owner, 2026-08-22: "only for the regimen tab, coverage stays the same").
+  // Scoping that off `.fs-controls` instead would tie a control's SIZE to whether a
+  // filter happens to sit beside it, which is a coincidence, not a reason.
+  nav.className = `fs-pager fs-pager--${p.kind}`;
+  nav.setAttribute('aria-label', ui('fs_pager_label'));
+  const prev = arrow(PAGER_PREV, p.page - 1, p.page <= 0, ui('fs_pager_prev'));
+  const next = arrow(PAGER_NEXT, p.page + 1, p.page >= p.pages - 1, ui('fs_pager_next'));
   if (p.kind === 'arrows') {
-    const prev = pagerButton(PAGER_PREV, p.page - 1, p.page <= 0);
-    prev.classList.add('fs-pager__b--arrow');
-    prev.setAttribute('aria-label', 'Previous foods');
     // The readout is what makes the arrows honest: without it a disabled arrow is the only
     // signal that the list has ended, and the reader cannot tell how far it went.
     const at = document.createElement('span');
     at.className = 'fs-pager__at';
     at.textContent = `${p.page + 1} / ${p.pages}`;
-    const next = pagerButton(PAGER_NEXT, p.page + 1, p.page >= p.pages - 1);
-    next.classList.add('fs-pager__b--arrow');
-    next.setAttribute('aria-label', 'More foods');
     nav.append(prev, at, next);
     return nav;
   }
-  for (let i = 0; i < p.pages; i += 1) {
+  nav.appendChild(prev);
+  for (const i of windowedPages(p.page, p.pages)) {
+    if (i === null) {
+      nav.appendChild(pagerGap());
+      continue;
+    }
     const b = pagerButton(String(i + 1), i, false);
-    b.setAttribute('aria-label', `Foods, page ${i + 1} of ${p.pages}`);
+    b.setAttribute('aria-label', ui('fs_pager_page').replace('{n}', String(i + 1)).replace('{of}', String(p.pages)));
     if (i === p.page) {
       b.setAttribute('aria-current', 'page');
     }
     nav.appendChild(b);
   }
+  nav.appendChild(next);
   return nav;
+}
+
+/** The category picker + name box, at the right of the pager's row. */
+function filterNode(f: NonNullable<FoodsBlockOptions['filter']>): HTMLElement {
+  const wrap = document.createElement('div');
+  wrap.className = 'fs-filter';
+
+  const sel = document.createElement('select');
+  sel.className = 'fs-filter__cat';
+  sel.dataset['foodCat'] = '';
+  sel.setAttribute('aria-label', ui('fs_filter_cat_label'));
+  const all = document.createElement('option');
+  all.value = '';
+  all.textContent = ui('fs_filter_all');
+  sel.appendChild(all);
+  // The options are the catalog's OWN categories, read from state — never a list written
+  // down here, which would keep offering a category the day its last food left (R3).
+  for (const c of f.categories) {
+    const o = document.createElement('option');
+    o.value = c;
+    o.textContent = c;
+    sel.appendChild(o);
+  }
+  sel.value = f.category;
+
+  const q = document.createElement('input');
+  q.className = 'fs-filter__q';
+  q.type = 'search';
+  q.dataset['foodQ'] = '';
+  q.maxLength = 40;
+  q.placeholder = ui('fs_filter_find');
+  q.value = f.query;
+  q.setAttribute('aria-label', ui('fs_filter_q_label'));
+
+  wrap.append(sel, q);
+  return wrap;
+}
+
+/**
+ * Where the reader's cursor was inside this block, so a repaint can put it back.
+ *
+ * ★ WHY THIS EXISTS. The filter box lives INSIDE the block, and the block repaints on every
+ * keystroke so the pager can recount its pages against the narrowed pool. Without this the
+ * input the reader is typing into is destroyed mid-word and the caret lands on <body>.
+ * Same class of problem as views/scroll-keep.ts, and the same answer: measure, repaint,
+ * restore.
+ */
+interface FocusMark { attr: string; start: number; end: number }
+
+function markFocus(host: HTMLElement): FocusMark | null {
+  const el = document.activeElement;
+  if (el === null || !host.contains(el)) {
+    return null;
+  }
+  if (el instanceof HTMLInputElement && el.hasAttribute('data-food-q')) {
+    const end = el.value.length;
+    return { attr: 'data-food-q', start: el.selectionStart ?? end, end: el.selectionEnd ?? end };
+  }
+  if (el instanceof HTMLSelectElement && el.hasAttribute('data-food-cat')) {
+    return { attr: 'data-food-cat', start: 0, end: 0 };
+  }
+  return null;
+}
+
+function restoreFocus(host: HTMLElement, mark: FocusMark | null): void {
+  if (mark === null) {
+    return;
+  }
+  const el = host.querySelector<HTMLElement>(`[${mark.attr}]`);
+  if (el === null) {
+    return;
+  }
+  el.focus();
+  if (el instanceof HTMLInputElement) {
+    el.setSelectionRange(mark.start, mark.end);
+  }
 }
 
 /** How many distinct rows the chips actually occupy, measured from their laid-out tops. */
@@ -344,11 +490,40 @@ export function addCatalogFood(foodId: string): void {
 export function buildFoodsBlock(
   host: HTMLElement, recs: FoodRec[], opts: FoodsBlockOptions = {},
 ): void {
+  const mark = markFocus(host);
   host.replaceChildren();
   host.appendChild(ruleWithLabel());
 
+  const filter = opts.filter;
+  const filterActive = filter !== undefined && (filter.category !== '' || filter.query !== '');
+
+  /**
+   * The pager and the filter share one row — pager left, filter right (owner's layout,
+   * 2026-08-22). The row is painted whenever EITHER exists, and in particular whenever the
+   * filter does: a filter that narrows the list to nothing must still be on screen, or the
+   * reader is stranded with no way to undo it.
+   */
+  const appendControls = (): void => {
+    const nav = opts.pager !== undefined ? pagerNode(opts.pager) : null;
+    if (filter === undefined) {
+      if (nav !== null) {
+        host.appendChild(nav);
+      }
+      return;
+    }
+    const row = document.createElement('div');
+    row.className = 'fs-controls';
+    if (nav !== null) {
+      row.appendChild(nav);
+    }
+    row.appendChild(filterNode(filter));
+    host.appendChild(row);
+  };
+
   // ── the exhaustion easter egg ──────────────────────────────────────────────
   // Only reachable by adding EVERY food in the catalog, which no ordinary use will ever do.
+  // No controls under it: the pool is empty because the user owns all of it, and neither a
+  // page nor a filter can change that.
   if (recs.length === 0 && (opts.ownedCount ?? 0) >= foodCatalogSize()) {
     const egg = document.createElement('p');
     egg.className = 'fs-note fs-note--egg';
@@ -371,12 +546,17 @@ export function buildFoodsBlock(
   if (recs.length === 0) {
     const note = document.createElement('p');
     note.className = 'fs-note';
-    // Two different endings, and conflating them would lie in one direction or the other:
-    // hitting Coverage's cap is not the same as running out of useful foods.
-    note.textContent = opts.capReached === true
-      ? 'That’s the last food this tab will suggest — the rest live on your Regimen.'
-      : 'No food moves a remaining gap — what’s left needs a supplement.';
+    // THREE different endings, and conflating any two would lie in one direction or another:
+    // a filter matching nothing is not the tab's cap, and neither of those is the catalog
+    // having nothing left that moves a gap.
+    note.textContent = filterActive
+      ? ui('fs_filter_none')
+      : (opts.capReached === true
+          ? 'That’s the last food this tab will suggest — the rest live on your Regimen.'
+          : 'No food moves a remaining gap — what’s left needs a supplement.');
     host.appendChild(note);
+    appendControls();
+    restoreFocus(host, mark);
     return;
   }
 
@@ -399,12 +579,8 @@ export function buildFoodsBlock(
   }
   host.appendChild(grid);
 
-  if (opts.pager !== undefined) {
-    const nav = pagerNode(opts.pager);
-    if (nav !== null) {
-      host.appendChild(nav);
-    }
-  }
+  appendControls();
+  restoreFocus(host, mark);
 
   // ★ MEASURE AFTER THE DISPLAY FACE LOADS, never before — see the header. `fonts.ready`
   // resolves immediately once the face is in, so this costs nothing on later paints.

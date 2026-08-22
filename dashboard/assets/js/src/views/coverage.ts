@@ -828,15 +828,14 @@ export function mount(container: HTMLElement): MountHandle {
       // tab will ever PUT IN a regimen, and that is still enforced above — at budget zero the
       // block says so and offers nothing. Up to that point the arrows reach every food we
       // hold (owner ruling, 2026-08-22), because a cap on what you may take is not a reason
-      // to hide what exists. The first cards are unchanged: `browse` only extends the tail
-      // past where the gap-fill walk runs dry.
+      // to hide what exists. Asking for the whole catalog is what makes that true, and it is
+      // one ranked list end to end — there is no longer a gap-fill head and a browse tail
+      // (owner ruling, 2026-08-22; see state/foods.ts).
       const foodPool = foodBudget === 0 ? [] : rankFoodsForCoverage({
         want: wantedSlugs(snapshot, goals),
         owned: ownedFoods,
         goals: goals.map(g => ({ id: g.id, members: g.members })),
         limit: foodCatalogSize(),
-        greedy: true,
-        browse: true,
       });
       const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_PAGE));
       // The pool re-ranks on every paint and SHRINKS as foods are added, so the page the

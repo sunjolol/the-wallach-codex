@@ -100,8 +100,10 @@ const MAX_ADDS = 90;          // the catalog is 190 foods; the mark surfaces lon
   });
 
   // Drive the list forward through the real control until an APPROXIMATE card shows up.
-  // The recommender is greedy, so adding the first card advances the list — the same way a
-  // person using the app would reach it.
+  // Adding a card removes that food from the pool, so the list advances — the same way a
+  // person using the app would reach it. (It used to advance for a second reason too: the
+  // walk was greedy. That went with the 2026-08-22 re-ordering; this still works because
+  // `owned` has always left the pool.)
   let approx = null;
   let exact = null;
   let adds = 0;

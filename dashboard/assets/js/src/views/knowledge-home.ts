@@ -23,10 +23,12 @@
 import { plural } from '../core/format.js';
 import { ui } from '../state/copy.js';
 import { conditionDisplayName, getEssentialBySlug, listBooks, listConditions } from '../state/corpus.js';
-import { essentialGlyph } from '../state/coverage.js';
+import { essentialCount, essentialGlyph } from '../state/coverage.js';
 import { type ConditionSummary, type EssentialSummary, listConditionPages, listEssentialPages } from '../state/entity-page.js';
+import { listFoods } from '../state/foods.js';
 import { homeExploreTopics } from '../state/home-curation.js';
 import { entityList, getEntity, isChargedEntity } from '../state/search.js';
+import { productSuggestItems } from './knowledge-products.js';
 
 // The char class uses hex escapes \x22 \x27 for " and ' rather than the literal
 // quotes: the clean-view prose scanner (views_no_inline_prose) has no regex parser,
@@ -167,12 +169,21 @@ export function renderHomeTab(): string {
 
 // ─── Live-suggest ───────────────────────────────────────────────────────────
 
+type HomeKind = 'essential' | 'condition' | 'topic' | 'product' | 'food';
+
 interface HomeMatch {
-  kind: 'essential' | 'condition' | 'topic';
+  kind: HomeKind;
   name: string;
   navAttr: string;
   navVal: string;
   claimCount: number;
+  /**
+   * What the row says on its right, where an essential says "N claims". A product and a
+   * food have no claims to count — the corpus is about NUTRIENTS, not about SKUs — so they
+   * carry their own readout rather than printing a zero that would read as "nothing has
+   * been written about this".
+   */
+  meta?: string;
   startsWith: boolean;
 }
 
@@ -212,6 +223,44 @@ function homeMatches(query: string): HomeMatch[] {
   // chips use — so a hit opens the topic overlay. Charged entities (homosexuality/intersex) are
   // never surfaced in live-suggest (they stay browsable only on the Explore tab) — the same
   // never-ambush rule the main search gate enforces.
+  // ── the vault + the food catalog ────────────────────────────────────────────
+  // Both are NAME matches only. Their tab already carries a keyword search over label
+  // ingredients and nutrients; repeating that here would flood a ten-row panel with every
+  // product that happens to contain the thing you typed.
+  const suppliedMeta = (n: number): string =>
+    (n > 0
+      ? ui('kh_meta_supplied').replace('{n}', String(n)).replace('{of}', String(essentialCount()))
+      : ui('kh_meta_targeted'));
+  for (const p of productSuggestItems()) {
+    const nm = p.name.toLowerCase();
+    if (nm.includes(q)) {
+      out.push({
+        kind: 'product',
+        name: p.name,
+        navAttr: 'data-kd-product',
+        navVal: p.id,
+        claimCount: 0,
+        meta: suppliedMeta(p.supplied),
+        startsWith: nm.startsWith(q),
+      });
+    }
+  }
+  for (const f of listFoods()) {
+    const nm = f.name.toLowerCase();
+    // The CATEGORY matches too, so "legume" and "shellfish" answer with the foods in them
+    // — the word a person is most likely to reach for that is not a food's own name.
+    if (nm.includes(q) || f.category.toLowerCase().includes(q)) {
+      out.push({
+        kind: 'food',
+        name: f.name,
+        navAttr: 'data-kd-food',
+        navVal: f.id,
+        claimCount: 0,
+        meta: `${f.portion_label} · ${f.category}`,
+        startsWith: nm.startsWith(q),
+      });
+    }
+  }
   for (const t of entityList()) {
     if (t.type === 'nutrient' || t.type === 'condition' || taken.has(t.slug) || isChargedEntity(t.slug)) {
       continue;
@@ -236,7 +285,35 @@ function byRelevance(a: HomeMatch, b: HomeMatch): number {
 
 /** One suggestion row — the nav attr doubles as the dot-colour key (CSS-driven, no colour literal). */
 function resRow(m: HomeMatch, active: boolean): string {
-  return `<button class="sh-res${active ? ' active' : ''}" type="button" ${m.navAttr}="${escHTML(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML(m.name)}</span><span class="sh-res__meta">${m.claimCount} claim${m.claimCount === 1 ? '' : 's'}</span></button>`;
+  const meta = m.meta ?? `${m.claimCount} claim${m.claimCount === 1 ? '' : 's'}`;
+  return `<button class="sh-res${active ? ' active' : ''}" type="button" ${m.navAttr}="${escHTML(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML(m.name)}</span><span class="sh-res__meta">${escHTML(meta)}</span></button>`;
+}
+
+/** How many rows the panel shows, and the fewest any matching KIND may be cut to. */
+const SHOWN_MAX = 10;
+const GROUP_FLOOR = 2;
+
+/**
+ * Fill the panel in group order without letting an early group starve a later one.
+ *
+ * ★ WHY NOT A FLAT slice(0, 10). Five kinds now compete for ten rows, and a plain cap taken
+ * in group order means a query like "vitamin" — which matches a dozen essentials — pushes
+ * every product and food off a panel they legitimately answered. Every group that matched
+ * anything keeps at least GROUP_FLOOR rows; the slack goes to the earlier groups, which is
+ * what keeps essentials leading.
+ */
+function pickShown(groups: readonly HomeMatch[][]): HomeMatch[] {
+  const out: HomeMatch[] = [];
+  for (let i = 0; i < groups.length; i += 1) {
+    const g = groups[i] ?? [];
+    if (g.length === 0) {
+      continue;
+    }
+    const laterNonEmpty = groups.slice(i + 1).filter(x => x.length > 0).length;
+    const room = SHOWN_MAX - out.length - (laterNonEmpty * GROUP_FLOOR);
+    out.push(...g.slice(0, Math.min(g.length, Math.max(GROUP_FLOOR, room))));
+  }
+  return out.slice(0, SHOWN_MAX);
 }
 
 /**
@@ -249,14 +326,16 @@ export function renderHomeSuggestions(query: string): string {
   if (matches.length === 0) {
     return `<div class="sh-res__empty">${escHTML(ui('kh_search_empty'))}</div>`;
   }
-  const shown = [
-    ...matches.filter(m => m.kind === 'essential').sort(byRelevance),
-    ...matches.filter(m => m.kind === 'condition').sort(byRelevance),
-    ...matches.filter(m => m.kind === 'topic').sort(byRelevance),
-  ].slice(0, 10);
+  const shown = pickShown([
+    matches.filter(m => m.kind === 'essential').sort(byRelevance),
+    matches.filter(m => m.kind === 'condition').sort(byRelevance),
+    matches.filter(m => m.kind === 'topic').sort(byRelevance),
+    matches.filter(m => m.kind === 'product').sort(byRelevance),
+    matches.filter(m => m.kind === 'food').sort(byRelevance),
+  ]);
   let html = '';
   let idx = 0;
-  const group = (label: string, kind: 'essential' | 'condition' | 'topic'): void => {
+  const group = (label: string, kind: HomeKind): void => {
     const rows = shown.filter(m => m.kind === kind);
     if (rows.length === 0) {
       return;
@@ -270,5 +349,7 @@ export function renderHomeSuggestions(query: string): string {
   group(ui('kh_group_essentials'), 'essential');
   group(ui('kh_group_conditions'), 'condition');
   group(ui('kh_group_topics'), 'topic');
+  group(ui('kh_group_products'), 'product');
+  group(ui('kh_group_foods'), 'food');
   return html;
 }

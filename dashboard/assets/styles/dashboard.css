@@ -535,16 +535,18 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
    views/coverage.ts: that list ADVANCES, because adding a product removes it. The foods
    list advances the same way — but ADDING is not BROWSING, and a reader who wants to see
    what else is there had no way to look without first putting something in their regimen.
-   Two shapes off ONE builder (owner's choice, 2026-08-22): ‹ › on Coverage, whose list is
-   short and bounded by what may still be added, and numbered squares in the Regimen
-   console. Painted only when a second page exists — a pager over one page is chrome that
-   lies about there being more. */
+   Two shapes off ONE builder (owner's choice, 2026-08-22): ‹ › with an N / N readout on
+   Coverage, whose list is short and bounded by what may still be added, and a WINDOWED
+   numbered pager in the Regimen console — the first page, the last, and the five from
+   wherever you are, with an ellipsis wherever two of them are not neighbours. Painted only
+   when a second page exists — a pager over one page is chrome that lies about there being
+   more. */
 .fs-pager {
-  /* WRAPS ON PURPOSE. The console lists a square for EVERY page — about sixty-four of them
-     once the whole catalog is browsable — which is more than one row of the column can hold.
-     Owner's call, 2026-08-22: all of them listed, not a window with ellipses. */
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
-  gap: 4px; margin-top: 8px;
+  /* ONE ROW, ALWAYS. The window is at most ten items wide however deep the catalog gets, so
+     this no longer wraps — which is exactly what let the thirty-page cap go (owner's shape,
+     2026-08-22, reversing the same day's all-of-them-listed). */
+  display: flex; align-items: center; justify-content: center;
+  gap: 4px; margin-top: 8px; min-width: 0;
 }
 .fs-pager__b {
   box-sizing: border-box; display: grid; place-items: center;
@@ -560,10 +562,65 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
    box, so trimming a pixel of padding off the bottom lifts the glyph without moving the
    button, its border, or the row's baseline. */
 .fs-pager__b--arrow { font-size: 12px; padding-bottom: 2px; }
+/* THE CONSOLE'S PAGER IS THE BIG ONE, and only it — Coverage's row is tight and stays at
+   18px (owner, 2026-08-22). 22px square at 12px type, so the numbers sit level with the
+   filter boxes beside them instead of reading as a smaller instrument. The arrows keep
+   their one step over the digits: they were 12 against 10, and a chevron drawn at the
+   digits' own size reads weaker than the digits. */
+.fs-pager--numbers .fs-pager__b { min-width: 22px; height: 22px; font-size: 12px; }
+.fs-pager--numbers .fs-pager__b--arrow { font-size: 14px; }
 .fs-pager__b:hover:not(:disabled) { color: var(--ds-accent-deep); border-color: var(--ds-accent); }
 .fs-pager__b:disabled { opacity: .38; cursor: default; }
 .fs-pager__b[aria-current="page"] { color: var(--ds-paper); background: var(--ds-accent); border-color: var(--ds-accent); }
 .fs-pager__at { padding: 0 2px; font-family: var(--ds-font-mono); font-size: 11px; letter-spacing: .06em; color: var(--ds-ink-faint); }
+/* The mark between two page numbers that are NOT neighbours. Not a button and never
+   focusable: there is no single page it could mean. */
+.fs-pager__gap {
+  padding: 0 2px; font-family: var(--ds-font-mono); font-size: 12px; line-height: 1;
+  color: var(--ds-ink-faint); user-select: none;
+}
+
+/* ── THE CONTROLS ROW — pager left, filter right (owner's layout, 2026-08-22) ──────────
+   Only the Regimen console builds this row. Coverage appends its arrows straight to the
+   block and keeps them centred, so its one-line pager is untouched. The row exists so the
+   filter costs no vertical space at all: it moves onto a line the pager was already using. */
+.fs-controls {
+  /* END-ALIGNED, NOT SPACE-BETWEEN. The pager DISAPPEARS whenever the pool fits one page —
+     which a filter makes happen constantly — and space-between then slid the filter across
+     to the left edge, moving the box out from under the cursor mid-word. The pager claims
+     the empty space with an auto margin instead, so the filter never moves. */
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: 8px; margin-top: 8px;
+}
+/* In the row the pager gives up its own margin — the row sets the rhythm — and sits LEFT
+   rather than centred, because a centred pager beside a right-aligned filter reads as two
+   controls that missed each other. */
+.fs-controls .fs-pager { margin-top: 0; margin-right: auto; justify-content: flex-start; }
+.fs-filter { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; }
+/* Both controls are the pager button's own shell — same height, same border, same mono
+   face — so the row reads as one instrument rather than a pager with form fields bolted on.
+
+   ★ THE BREATHING ROOM IS HEIGHT, NOT VERTICAL PADDING, and that is not a style
+   preference. These are border-box, so `height: 22px` + `padding: 5px 0` leaves the
+   content box 22 - 2 border - 10 padding = 10px for a 12px line — and a <select> given
+   less room than its own text renders EMPTY. (Tried exactly that on 2026-08-22 and the
+   dropdown's label vanished.) At 22px tall with no vertical padding the 12px line centres
+   with 4px clear above and below, which is the same air the padding was reaching for and
+   cannot collapse. Only ever add vertical padding here after removing the height. */
+.fs-filter__cat, .fs-filter__q {
+  box-sizing: border-box; height: 22px; padding: 0 6px;
+  font: 400 12px/1 var(--ds-font-mono, monospace); letter-spacing: .03em;
+  color: var(--ds-ink-soft); background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule); border-radius: 3px;
+}
+/* Wide enough to hold a real food name while you type it — "canned salmon with bones"
+   is 25 characters and the catalog is full of them (owner's measure, 2026-08-22). */
+.fs-filter__q { width: 225px; }
+.fs-filter__cat:hover, .fs-filter__q:hover { border-color: var(--ds-accent); }
+.fs-filter__cat:focus, .fs-filter__q:focus {
+  outline: none; color: var(--ds-ink); border-color: var(--ds-accent);
+}
+.fs-filter__q::placeholder { color: var(--ds-ink-faint); }
 
 /* The finish-line button under the Regimen console's "all 90 covered" note. Deliberately
    quiet — it is an invitation to keep browsing, not a call to action, because the user has

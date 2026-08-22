@@ -182,20 +182,29 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     const heads = root ? [...root.querySelectorAll('.kd-section-head')].map(e => e.textContent.trim()) : [];
     const head = heads.find(t => /PRODUCTS/.test(t)) || '';
     const m = head.match(/ALL\s+(\d+)\s+PRODUCTS/) || head.match(/PRODUCTS\s*·\s*(\d+)/);
+    // THE TAB HOLDS TWO KINDS since 2026-08-22 — vault products and catalog foods, one
+    // grid, sorted together. Both counts come out of the head and both must match what is
+    // actually rendered, or the head is advertising a catalog the grid does not hold.
+    const mf = head.match(/\+\s+(\d+)\s+FOODS/);
     const rows = root ? [...root.querySelectorAll('.kd-product-row__name')].map(e => e.textContent.trim()) : [];
     const clickable = root ? root.querySelectorAll('.kd-product-row[data-kd-product]').length : 0;
+    const foodRows = root ? root.querySelectorAll('.kd-product-row--food').length : 0;
+    const foodClickable = root ? root.querySelectorAll('.kd-product-row[data-kd-food]').length : 0;
     return {
       head,
       count: m ? parseInt(m[1], 10) : 0,
+      foodCount: mf ? parseInt(mf[1], 10) : 0,
       rowCount: rows.length,
       clickable,
+      foodRows,
+      foodClickable,
       firstNames: rows.slice(0, 3),
       anyUnnamed: rows.some(n => n === '(unnamed)' || n === ''),
     };
   });
 
   // 3b. Click a product row -> the full detail panel opens (price band + label components).
-  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-product-row[data-kd-product]')?.click());
+  await page.evaluate(() => document.querySelector('#drawer-knowledge-mount .kd-product-row[data-kd-product]')?.click()); // a PRODUCT row, not merely the first card
   await wait(250);
   const productDeep = await page.evaluate(() => {
     const root = document.getElementById('drawer-knowledge-mount');
@@ -529,8 +538,9 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     ['home: condition row meta = "N claims · M nutrients"', /\d+ claims? · \d+ nutrients?/.test(homeConds.firstMeta)],
     ['home search: Explore topic surfaces (testosterone -> data-kd-topic result)', homeTopicSearch.hasTopic === true],
     ['products count parsed from head', products.count > 0],
-    ['products: ALL listed (no 30 cap)', products.rowCount === products.count && products.rowCount >= 200],
-    ['products: every row is clickable', products.clickable === products.rowCount],
+    ['products: ALL listed (no 30 cap)', products.rowCount === products.count + products.foodCount && products.rowCount >= 200],
+    ['products: the head\'s food count matches the food rows', products.foodCount === products.foodRows && products.foodRows > 0],
+    ['products: every row is clickable', products.clickable + products.foodClickable === products.rowCount],
     ['no unnamed product rows', products.anyUnnamed === false],
     ['product row opens the kd-ep--prod detail (hero name + at-a-glance + supplement facts, form-tinted)', productDeep.shown === true && productDeep.hasName === true && productDeep.hasGlance === true && productDeep.hasComponent === true && productDeep.hasFactsOrBlend === true && productDeep.formTinted === true],
     ['essentials BEST SOURCES list renders (Magnesium)', chipToProduct.srcCount > 0],

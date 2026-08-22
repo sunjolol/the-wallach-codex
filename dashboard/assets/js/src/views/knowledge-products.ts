@@ -28,6 +28,7 @@ import { getEssentialBySlug } from '../state/corpus.js';
 import { essentialCount, getTargets } from '../state/coverage.js';
 import { getEssentialPage } from '../state/entity-page.js';
 import { essentialSlugsByProduct, type RankedSource, rankSources } from '../state/recommender.js';
+import { foodGridItems, renderFoodDeep, renderFoodRow } from './knowledge-food-sheet.js';
 
 function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
@@ -59,9 +60,19 @@ export function getProduct(id: string): ProductDetail | null {
   return cachedById?.get(id) ?? null;
 }
 
-/** Number of products in the vault — the Products-tab count. */
-export function productCount(): number {
-  return listProducts().length;
+/**
+ * Every vault product, shaped for Home's live-suggest: what to call it, where it goes, and
+ * how much of the 90 it delivers.
+ *
+ * Replaces productCount(), which nothing rendered — see the note on the tab list in
+ * views/knowledge.ts.
+ */
+export function productSuggestItems(): { id: string; name: string; supplied: number }[] {
+  return listProducts().map(p => ({
+    id: p.product_id,
+    name: p.name,
+    supplied: essentialsSupplied(p),
+  }));
 }
 
 // ─── Formatting helpers ────────────────────────────────────────────────────
@@ -190,27 +201,92 @@ function renderProductRow(p: ProductDetail, selected: string | null): string {
     </div>`;
 }
 
-/**
- * Products-tab order: most-comprehensive first (essentials supplied desc), targeted formulas
- * after, alphabetical within a tie — the coverage story leads, as the Conditions tab leads
- * with most-written-about. Presentation-only; listProducts stays A–Z for other readers.
- */
-function productsByBreadth(products: ProductDetail[]): ProductDetail[] {
-  return [...products].sort((a, b) =>
-    essentialsSupplied(b) - essentialsSupplied(a)
-    || a.name.localeCompare(b.name));
+/** Which half of the catalog the tab is showing. The tab's own control, not a search. */
+export type CatalogKind = 'all' | 'products' | 'foods';
+
+/** One card in the mixed grid, carrying only what the ORDER needs. */
+interface CatalogEntry {
+  name: string;
+  supplied: number;
+  html: string;
 }
 
-export function renderProductsTab(selectedProduct: string | null, fromProductsTab = true): string {
-  const products = listProducts();
-  if (products.length === 0) {
+/**
+ * The three-way control above the grid (owner ruling, 2026-08-22: "filter it on the products
+ * tab itself").
+ *
+ * ★ IT SHARES THE HEAD'S ROW BUT NOT THE HEAD (owner's layout, 2026-08-22 — one line, not
+ * two). applyKnowledgeSearch hides a section head whose every row has been filtered away,
+ * so a control INSIDE one would vanish at exactly the moment a reader needed it to undo
+ * what they had just done. It is a SIBLING inside `.kd-catbar` instead: same row, same
+ * baseline, and it survives the head being hidden. The bar also carries the margins the
+ * head used to own, so the grid sits exactly where it sat before this control existed.
+ */
+function catalogFilter(kind: CatalogKind): string {
+  const b = (id: CatalogKind, label: string): string =>
+    `<button class="kd-catfilter__b${id === kind ? ' is-on' : ''}" data-kd-catfilter="${id}" type="button"${id === kind ? ' aria-current="true"' : ''}>${escHTML(label)}</button>`;
+  return `<div class="kd-catfilter" role="group" aria-label="Show">${b('all', 'All')}${b('products', 'Products')}${b('foods', 'Foods')}</div>`;
+}
+
+/**
+ * The mixed catalog: every Youngevity product and every catalog food, most-comprehensive
+ * first (essentials supplied desc), alphabetical within a tie — the coverage story leads,
+ * as the Conditions tab leads with most-written-about. Presentation-only; listProducts
+ * stays A–Z for other readers.
+ *
+ * ★ ONE ORDER OVER BOTH KINDS, not products-then-foods. A food that carries thirteen of the
+ * ninety belongs above a product that carries nine, and the grid's whole claim is that its
+ * position means breadth. Segregating them would make the sort a lie about half the grid.
+ */
+function catalogEntries(kind: CatalogKind, selectedProduct: string | null, selectedFood: string | null): CatalogEntry[] {
+  const out: CatalogEntry[] = [];
+  if (kind !== 'foods') {
+    for (const p of listProducts()) {
+      out.push({
+        name: p.name,
+        supplied: essentialsSupplied(p),
+        html: renderProductRow(p, selectedProduct),
+      });
+    }
+  }
+  if (kind !== 'products') {
+    for (const f of foodGridItems()) {
+      out.push({ name: f.name, supplied: f.supplied, html: renderFoodRow(f.id, selectedFood) });
+    }
+  }
+  return out.sort((a, b) => (b.supplied - a.supplied) || a.name.localeCompare(b.name));
+}
+
+export function renderProductsTab(
+  selectedProduct: string | null,
+  selectedFood: string | null = null,
+  kind: CatalogKind = 'all',
+  fromProductsTab = true,
+): string {
+  const nProducts = listProducts().length;
+  const nFoods = foodGridItems().length;
+  if (nProducts === 0 && nFoods === 0) {
     return '<div class="kd-empty">— no products loaded —</div>';
   }
-  const deepHTML = selectedProduct !== null ? renderProductDeep(selectedProduct, fromProductsTab) : '';
-  const rowsHTML = productsByBreadth(products).map(p => renderProductRow(p, selectedProduct)).join('');
+  // A FOOD DETAIL WINS OVER A PRODUCT ONE because opening either clears the other in
+  // knowledge.ts; the order here only decides what a stale pair would render, and a stale
+  // pair should show the thing that was clicked last.
+  const deepHTML = selectedFood !== null
+    ? renderFoodDeep(selectedFood, fromProductsTab)
+    : (selectedProduct !== null ? renderProductDeep(selectedProduct, fromProductsTab) : '');
+  const rowsHTML = catalogEntries(kind, selectedProduct, selectedFood).map(e => e.html).join('');
+  // Every count DERIVED, so the head cannot go on advertising a number the grid stopped
+  // holding — and it names the halves separately rather than summing them, because a
+  // product and a food are not the same kind of thing to have 407 of.
+  const head = kind === 'foods'
+    ? `ALL ${nFoods} FOODS`
+    : (kind === 'products' ? `ALL ${nProducts} PRODUCTS` : `ALL ${nProducts} PRODUCTS + ${nFoods} FOODS`);
   return `
     ${deepHTML}
-    <div class="kd-section-head">ALL ${products.length} PRODUCTS · SORTED BY ESSENTIALS SUPPLIED</div>
+    <div class="kd-catbar">
+      <div class="kd-section-head">${head} · SORTED BY ESSENTIALS SUPPLIED</div>
+      ${catalogFilter(kind)}
+    </div>
     <div class="kd-products-grid">${rowsHTML}</div>`;
 }
 

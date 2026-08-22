@@ -264,6 +264,59 @@
   gap: var(--ds-space-2);
   margin-top: var(--ds-space-3);
 }
+/* ─── THE PRODUCTS/FOODS/ALL CONTROL, on the section head's own row ──────────────
+   The tab holds two KINDS of thing since 2026-08-22, and a reader who wants only one of
+   them should not have to type a word that happens to match it. Deliberately quiet: it
+   narrows a list, it is not the tab's subject.
+
+   ★ THE BAR CARRIES THE HEAD'S OLD MARGINS, and the head inside it carries none. That is
+   what keeps the grid exactly where it was before this control existed (owner, 2026-08-22:
+   "make sure the top space is the same as before") — a control on its own line cost a
+   whole row of vertical space and pushed everything under it down. */
+#drawer-knowledge-mount .kd-catbar {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-4);
+  /* END-ALIGNED with an auto margin on the head rather than space-between: the SEARCH can
+     hide the head (see the note in knowledge-products.ts), and space-between would then
+     slide the control across to the left edge, moving it out from under the cursor. */
+  justify-content: flex-end;
+  margin: var(--ds-space-4) 0 var(--ds-space-3);
+}
+#drawer-knowledge-mount .kd-catbar:first-child { margin-top: 0; }
+#drawer-knowledge-mount .kd-catbar .kd-section-head { margin: 0 auto 0 0; min-width: 0; }
+#drawer-knowledge-mount .kd-catfilter {
+  display: flex;
+  gap: 4px;
+  flex: 0 0 auto;
+  /* ★ THE PILLS DO NOT SET THE ROW'S HEIGHT. They stand 21px against the head's 15px
+     line, which pushed the whole grid down 6px — measured, not guessed. The negative
+     block margin takes their margin box back to the head's height, so the bar is
+     exactly as tall as the head alone was and the grid lands where it always did; the
+     pills still PAINT at 21px, overflowing 3px into margin that was already empty. */
+  margin: -3px 0;
+}
+#drawer-knowledge-mount .kd-catfilter__b {
+  box-sizing: border-box;
+  padding: 3px 10px;
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-text-micro);
+  letter-spacing: var(--ds-track-wide);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--ds-ink-soft);
+  background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule);
+  border-radius: var(--ds-radius-pill);
+  cursor: pointer;
+  transition: color var(--ds-motion-fast) var(--ds-ease-out), border-color var(--ds-motion-fast) var(--ds-ease-out);
+}
+#drawer-knowledge-mount .kd-catfilter__b:hover { color: var(--ds-ink); border-color: var(--ds-accent); }
+#drawer-knowledge-mount .kd-catfilter__b.is-on {
+  color: var(--ds-paper);
+  background: var(--ds-accent);
+  border-color: var(--ds-accent);
+}
 /* delivery-form colour — set per card via [data-form]; drives ghost + chip + hover/selected.
    The product-native analog of the conditions' --cat body-system colour. */
 #drawer-knowledge-mount .kd-product-row[data-form="liquid"]   { --form: #3f8fa8; }
@@ -274,6 +327,13 @@
 #drawer-knowledge-mount .kd-product-row[data-form="tea"]      { --form: #9a7b3c; }
 #drawer-knowledge-mount .kd-product-row[data-form="topical"]  { --form: #6a6f77; }
 #drawer-knowledge-mount .kd-product-row[data-form="other"]    { --form: var(--ds-ink-soft); }
+/* A CATALOG FOOD IS NOT A DELIVERY FORM, so it takes its hue from a class rather than
+   from [data-form]. Rust, because the seven product colours occupy cyan, amber, green,
+   indigo, pink, olive and grey — red is the only family left, and the whole job of this
+   value is to be unmistakable in a grid holding both kinds. Mirrored in JS as
+   FOOD_COLOR (views/knowledge-food-sheet.ts) for the scrollbar bridge, the same way
+   FORM_COLORS mirrors the map above. */
+#drawer-knowledge-mount .kd-product-row--food { --form: #b0442e; }
 /* Product card — the "ghost number" design shared with the Conditions tab: a big faded
    essentials-supplied count in the delivery-form colour (--form) behind an Unbounded name +
    a form chip. Targeted formulas render with no ghost (view omits it), staying calm. */
@@ -1947,6 +2007,11 @@
 #drawer-knowledge-mount .sh-res[data-kd-essential] .sh-res__dot{ background:var(--fam-science); }
 #drawer-knowledge-mount .sh-res[data-kd-condition] .sh-res__dot{ background:var(--ds-accent); }
 #drawer-knowledge-mount .sh-res[data-kd-topic] .sh-res__dot{ background:var(--fam-story); }
+/* The two kinds the panel learned on 2026-08-22. A product takes the neutral vault ink
+   (it has no ONE delivery-form colour to speak for it in a mixed list); a food takes the
+   same rust its card wears on the Products tab, so the dot and the card agree. */
+#drawer-knowledge-mount .sh-res[data-kd-product] .sh-res__dot{ background:var(--ds-ink-soft); }
+#drawer-knowledge-mount .sh-res[data-kd-food] .sh-res__dot{ background:#b0442e; }
 #drawer-knowledge-mount .sh-res__nm{ font-family:var(--ds-font-display-interface); font-size:var(--ds-text-sm); font-weight:600; color:var(--ds-ink); }
 #drawer-knowledge-mount .sh-res__meta{ margin-left:auto; font-family:var(--ds-font-mono); font-size:9px; color:var(--ds-ink-faint); }
 #drawer-knowledge-mount .sh-res__empty{ padding:var(--ds-space-3); color:var(--ds-ink-soft); font-size:var(--ds-text-sm); }
@@ -2649,8 +2714,14 @@
 #drawer-knowledge-mount .kd-essential-deep[data-essential="vitamin-a"] .kd-ep-lede { max-width: 72ch; }
 
 /* Product detail — stacked hero actions: the back control gains an
-   "Add to regimen" button beneath it, coloured by the product's supplement-type
-   (--form on .kd-ep--prod; falls back to the primary accent for unmapped forms). */
+   "Add to regimen" button beneath it, coloured by --form — the product's supplement type,
+   or a food's rust — falling back to the primary accent where --form is unset.
+
+   ★ BOTH SHEET KINDS, and the reason it is written down: this was scoped to .kd-ep--prod
+   alone, so when the food sheet landed on 2026-08-22 its Add button fell straight through
+   to the browser default and shipped looking unstyled. Nothing failed — a button with no
+   rule still renders, still clicks, and still passes every probe that asks whether it is
+   there. Any THIRD kind of entity page must be added here in the same patch. */
 #drawer-knowledge-mount .kd-ep-actions {
   margin-left: auto;
   align-self: flex-start;
@@ -2660,9 +2731,10 @@
   gap: var(--ds-space-2);
 }
 #drawer-knowledge-mount .kd-ep-actions .kd-ep-back { margin-left: 0; align-self: auto; }
-#drawer-knowledge-mount .kd-ep--prod .kd-ep-add-regimen {
+#drawer-knowledge-mount .kd-ep--prod .kd-ep-add-regimen,
+#drawer-knowledge-mount .kd-ep--food .kd-ep-add-regimen {
   /* Twin of .kd-ep-back's geometry (Chakra, micro, track-wide, uppercase, 3px 9px, radius-xs,
-     1px border) but SOLID-filled in the product's category colour so it reads as the action. */
+     1px border) but SOLID-filled in the entity's own colour so it reads as the action. */
   font-family: var(--ds-font-display-interface);
   font-size: 0.7rem;
   font-weight: 600;
@@ -2677,7 +2749,8 @@
   white-space: nowrap;
   transition: filter var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out);
 }
-#drawer-knowledge-mount .kd-ep--prod .kd-ep-add-regimen:hover {
+#drawer-knowledge-mount .kd-ep--prod .kd-ep-add-regimen:hover,
+#drawer-knowledge-mount .kd-ep--food .kd-ep-add-regimen:hover {
   filter: brightness(1.06);
   box-shadow: 0 3px 10px -3px color-mix(in srgb, var(--form, var(--ds-accent)) 55%, transparent);
 }

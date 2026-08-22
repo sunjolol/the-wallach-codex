@@ -33612,2034 +33612,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     ]
   };
 
-  // assets/data/foods-catalog-curation.json
-  var foods_catalog_curation_default = {
-    _purpose: "The FOOD CATALOG's hand-authored curation -- WHICH foods the Regimen and Coverage tabs may recommend, what each is CALLED, and WHICH USDA portion counts as one serving. Read by eden/tools/foods_composition_derive.py, which joins every row into the pinned USDA SR Legacy source to produce foods-composition-data.json.",
-    _numbers_free: "\u2605 THIS FILE CONTAINS NO NUTRIENT NUMBERS AND MUST NEVER CONTAIN ONE. Every `fdc_id` and `portion_id` is a byte-exact join key into the pinned source; the amounts are derived from those keys and are proven against the source by the `food_composition_traces_to_source` gate. A number typed here would be a second, ungated home for a value (Charter R3) -- exactly the failure mode that let the mineral tiers sit sealed, green and wrong for three weeks.",
-    _doctrine: "Every food here was filtered against Wallach's own food rules before it was admitted: no gluten grain (wheat, barley, rye, oats), no refined sugar, no carbonated drinks, no processed meats, no refined seed oils -- the remove[] list in foods-curation.json, enforced in shipped code by the scanner's hard-reject terms. Foods he explicitly endorses (eggs, butter, beef, chicken, pork, salt, organ meats, nuts, seeds, vegetables) are deliberately well represented. Dairy is CONDITIONAL in his framework -- present, not pushed.",
-    _selection_rule: "A food earns a place only if one realistic serving delivers at least the derive's qualify_fraction (7%, set by Luneth on 2026-08-21) of Wallach's daily target for at least one essential. The derive HARD-FAILS on any food here that qualifies for nothing, so this list cannot silently accumulate dead weight.",
-    pinned: {
-      _purpose: "Foods that hold their position by curation rather than by score, in this order, the same way the product starter pack does. Eggs are first by Luneth's ruling (2026-08-21): a near-universal food Wallach explicitly endorses, and the single best first move for a new user.",
-      ids: [
-        "egg"
-      ]
-    },
-    foods: [
-      {
-        id: "acorn-squash-baked",
-        name: "Acorn squash, baked",
-        category: "Vegetables",
-        fdc_id: "170128",
-        portion_id: "86099"
-      },
-      {
-        id: "almond-butter",
-        name: "Almond butter",
-        category: "Nuts & seeds",
-        fdc_id: "168588",
-        portion_id: "83375"
-      },
-      {
-        id: "almonds",
-        name: "Almonds",
-        category: "Nuts & seeds",
-        fdc_id: "170567",
-        portion_id: "86867",
-        matches: {
-          "afcd-au-r3": {
-            key: "Nut, almond, with skin, raw, unsalted",
-            why: "Both raw almonds with skin."
-          }
-        }
-      },
-      {
-        id: "apple",
-        name: "Apple",
-        category: "Fruits",
-        fdc_id: "168202",
-        portion_id: "82658",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Apples, eating, raw",
-            why: "Our row is USDA raw apple with skin. Powell's other apple row is cooking apples, peeled and cooked -- a different food in a different state."
-          },
-          "afcd-au-r3": {
-            key: "Apple, granny-smith, unpeeled, raw",
-            why: "AFCD measures granny smith unpeeled and red-skin peeled; ours is golden delicious with skin. The unpeeled row matches our peel, and it is also the lower. Lands under the threshold.",
-            conservative: true
-          },
-          "doleman-2017": {
-            key: "Braeburn apple",
-            why: "Doleman measured Braeburn and our USDA row is golden delicious; both raw, both with skin. Lands under the threshold."
-          }
-        }
-      },
-      {
-        id: "apricots",
-        name: "Apricots",
-        category: "Fruits",
-        fdc_id: "171697",
-        portion_id: "89209",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Apricots, fresh",
-            why: "Same fruit, both fresh and raw."
-          }
-        }
-      },
-      {
-        id: "artichoke-cooked",
-        name: "Artichoke, cooked",
-        category: "Vegetables",
-        fdc_id: "169311",
-        portion_id: "84636"
-      },
-      {
-        id: "asparagus-cooked",
-        name: "Asparagus, cooked",
-        category: "Vegetables",
-        fdc_id: "168390",
-        portion_id: "83018"
-      },
-      {
-        id: "avocado",
-        name: "Avocado",
-        category: "Fruits",
-        fdc_id: "171706",
-        portion_id: "89229",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Avocado, fresh",
-            why: "Same fruit, both raw."
-          }
-        }
-      },
-      {
-        id: "banana",
-        name: "Banana",
-        category: "Fruits",
-        fdc_id: "173944",
-        portion_id: "93517",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Banana, raw",
-            why: "Same fruit, both raw."
-          },
-          "afcd-au-r3": {
-            key: "Banana, lady finger or sugar, peeled, raw",
-            why: "AFCD measures cavendish and lady-finger bananas; our USDA row is the generic 'Bananas, raw'. The lower is taken.",
-            conservative: true
-          }
-        }
-      },
-      {
-        id: "basil-fresh",
-        name: "Basil, fresh",
-        category: "Spices & herbs",
-        fdc_id: "172232",
-        portion_id: "90126"
-      },
-      {
-        id: "beef-brisket",
-        name: "Beef brisket",
-        category: "Beef",
-        fdc_id: "168665",
-        portion_id: "83526"
-      },
-      {
-        id: "beef-heart",
-        name: "Beef heart",
-        category: "Beef",
-        fdc_id: "169448",
-        portion_id: "84889"
-      },
-      {
-        id: "beef-kidney",
-        name: "Beef kidney",
-        category: "Beef",
-        fdc_id: "169450",
-        portion_id: "84892"
-      },
-      {
-        id: "beef-liver",
-        name: "Beef liver",
-        category: "Beef",
-        fdc_id: "168626",
-        portion_id: "83447"
-      },
-      {
-        id: "beef-tongue",
-        name: "Beef tongue",
-        category: "Beef",
-        fdc_id: "170598",
-        portion_id: "86927"
-      },
-      {
-        id: "beet-greens-cooked",
-        name: "Beet greens, cooked",
-        category: "Vegetables",
-        fdc_id: "168508",
-        portion_id: "83212"
-      },
-      {
-        id: "beets-cooked",
-        name: "Beets, cooked",
-        category: "Vegetables",
-        fdc_id: "168506",
-        portion_id: "83209"
-      },
-      {
-        id: "bison-ribeye",
-        name: "Bison ribeye",
-        category: "Lamb, veal & game",
-        fdc_id: "172599",
-        portion_id: "90936"
-      },
-      {
-        id: "black-beans-cooked",
-        name: "Black beans, cooked",
-        category: "Legumes",
-        fdc_id: "175237",
-        portion_id: "95879"
-      },
-      {
-        id: "black-eyed-peas-cooked",
-        name: "Black-eyed peas, cooked",
-        category: "Legumes",
-        fdc_id: "175252",
-        portion_id: "95897"
-      },
-      {
-        id: "blackberries",
-        name: "Blackberries",
-        category: "Fruits",
-        fdc_id: "173946",
-        portion_id: "93521",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Blackberries, raw",
-            why: "Same fruit, both raw."
-          }
-        }
-      },
-      {
-        id: "blue-cheese",
-        name: "Blue cheese",
-        category: "Dairy & eggs",
-        fdc_id: "172175",
-        portion_id: "90017",
-        matches: {
-          "afcd-au-r3": {
-            key: "Cheese, blue vein",
-            why: "Same cheese. Lands under the threshold."
-          }
-        }
-      },
-      {
-        id: "bok-choy-cooked",
-        name: "Bok choy, cooked",
-        category: "Vegetables",
-        fdc_id: "168517",
-        portion_id: "83228"
-      },
-      {
-        id: "broccoli-cooked",
-        name: "Broccoli, cooked",
-        category: "Vegetables",
-        fdc_id: "168510",
-        portion_id: "83216",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Broccoli, green, fresh, boiled",
-            why: "Same vegetable, both boiled. Powell's is calabrese/green broccoli, which is what USDA 'Broccoli, cooked' is."
-          },
-          "afcd-au-r3": {
-            key: "Broccoli, fresh, boiled, drained",
-            why: "Both boiled and drained. AFCD's BAKED broccoli reads 76% against this row's 25% \u2014 a 3x spread on cooking method alone, which is exactly why the state has to match and not merely the vegetable."
-          }
-        }
-      },
-      {
-        id: "broccoli-rabe-cooked",
-        name: "Broccoli rabe, cooked",
-        category: "Vegetables",
-        fdc_id: "170382",
-        portion_id: "86538"
-      },
-      {
-        id: "brussels-sprouts-cooked",
-        name: "Brussels sprouts, cooked",
-        category: "Vegetables",
-        fdc_id: "169332",
-        portion_id: "84662",
-        matches: {
-          "afcd-au-r3": {
-            key: "Brussels sprout, fresh, boiled, drained",
-            why: "Both boiled and drained; ours from frozen, theirs from fresh."
-          }
-        }
-      },
-      {
-        id: "butternut-squash-baked",
-        name: "Butternut squash, baked",
-        category: "Vegetables",
-        fdc_id: "170130",
-        portion_id: "86101"
-      },
-      {
-        id: "cabbage-raw",
-        name: "Cabbage, raw",
-        category: "Vegetables",
-        fdc_id: "169975",
-        portion_id: "85791",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Cabbage, red, fresh, raw",
-            why: "Powell measures red (0.28), savoy (0.71) and white (0.53) cabbage with no generic row; USDA's 'Cabbage, raw' is common green cabbage. The lowest is taken. It lands well under the 7% threshold, so no card shows it \u2014 the pair is recorded anyway, because a pair that exists only when it helps is a biased pair.",
-            conservative: true
-          },
-          "afcd-au-r3": {
-            key: "Cabbage, white, raw",
-            why: "Both raw. AFCD's white cabbage is what USDA calls plain 'Cabbage' \u2014 the common green head."
-          },
-          "doleman-2017": {
-            key: "Sweetheart cabbage",
-            why: "Doleman measured savoy (188.7 umol/g dry) and sweetheart (98.6) cabbage, both raw; our USDA row is generic raw cabbage and says which neither. The LOWER is taken \u2014 it is true whichever head is on the board. Savoy would have shipped at 8.4%; this lands under the threshold at 4.4%, and the pair is recorded anyway.",
-            conservative: true
-          }
-        }
-      },
-      {
-        id: "canned-salmon-with-bones",
-        name: "Canned salmon with bones",
-        category: "Fish & shellfish",
-        fdc_id: "175135",
-        portion_id: "95714"
-      },
-      {
-        id: "cantaloupe",
-        name: "Cantaloupe",
-        category: "Fruits",
-        fdc_id: "169092",
-        portion_id: "84216",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Melon, (cantaloupe, honeydew, galia)",
-            why: "Powell publishes ONE melon row covering cantaloupe, honeydew and galia, and it names cantaloupe. Honeydew pairs to the same row for the same reason: the source treats the three as one measurement, so both our melons rest on it."
-          }
-        }
-      },
-      {
-        id: "carrots-raw",
-        name: "Carrots, raw",
-        category: "Vegetables",
-        fdc_id: "170393",
-        portion_id: "86555",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Carrots, new and old, fresh, raw",
-            why: "Same vegetable, both raw; Powell's row deliberately spans both ages."
-          },
-          "doleman-2017": {
-            key: "Carrot",
-            why: "Both raw. Lands under the threshold."
-          }
-        }
-      },
-      {
-        id: "cashews-dry-roasted",
-        name: "Cashews, dry roasted",
-        category: "Nuts & seeds",
-        fdc_id: "169421",
-        portion_id: "84834",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Cashew nuts, roasted",
-            why: "Same nut, both roasted."
-          },
-          "afcd-au-r3": {
-            key: "Nut, cashew, roasted, salted",
-            why: "Both roasted. AFCD's is salted and ours is not; salt adds sodium, not molybdenum. Lands under the threshold."
-          }
-        }
-      },
-      {
-        id: "catfish-cooked",
-        name: "Catfish, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "175166",
-        portion_id: "95785"
-      },
-      {
-        id: "cauliflower-cooked",
-        name: "Cauliflower, cooked",
-        category: "Vegetables",
-        fdc_id: "168521",
-        portion_id: "83236",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Cauli\uFB02ower, fresh, boiled",
-            why: "Same vegetable, both boiled."
-          },
-          "afcd-au-r3": {
-            key: "Cauliflower, fresh, boiled, drained",
-            why: "Both boiled and drained; ours is from frozen, theirs from fresh."
-          }
-        }
-      },
-      {
-        id: "celeriac-cooked",
-        name: "Celeriac, cooked",
-        category: "Vegetables",
-        fdc_id: "169341",
-        portion_id: "84676"
-      },
-      {
-        id: "celery-raw",
-        name: "Celery, raw",
-        category: "Vegetables",
-        fdc_id: "169988",
-        portion_id: "85824",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Celery, fresh, raw",
-            why: "Same vegetable, both raw."
-          },
-          "afcd-au-r3": {
-            key: "Celery, fresh, raw",
-            why: "Both raw."
-          }
-        }
-      },
-      {
-        id: "cheddar-cheese",
-        name: "Cheddar cheese",
-        category: "Dairy & eggs",
-        fdc_id: "173414",
-        portion_id: "92472",
-        matches: {
-          "afcd-au-r3": {
-            key: "Cheese, cheddar, natural, regular fat",
-            why: "NATURAL cheddar, not AFCD's processed row \u2014 ours is natural cheddar."
-          }
-        }
-      },
-      {
-        id: "cherries",
-        name: "Cherries",
-        category: "Fruits",
-        fdc_id: "171719",
-        portion_id: "89257",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Cherries, raw, without stone",
-            why: "Same fruit, both raw; USDA's sweet-cherry row is also stoned weight."
-          }
-        }
-      },
-      {
-        id: "chestnuts-roasted",
-        name: "Japanese chestnuts, roasted",
-        category: "Nuts & seeds",
-        fdc_id: "168590",
-        portion_id: "83378"
-      },
-      {
-        id: "chicken-breast-roasted",
-        name: "Chicken breast, roasted",
-        category: "Poultry",
-        fdc_id: "171477",
-        portion_id: "88819",
-        matches: {
-          "afcd-au-r3": {
-            key: "Chicken, breast, lean flesh, baked, no added fat",
-            why: "Our USDA row is breast meat only, roasted; this is lean flesh baked with no added fat. AFCD's grilled and fried rows read higher and are not borrowed."
-          },
-          "doleman-2017": {
-            key: "Chicken breast",
-            why: "Doleman pan-fried the fillet without fat; our USDA row is breast meat only, roasted. Both dry heat, no fat added, no skin. \u26A0 AFCD measures no sulphur in chicken breast at all, so this is the only route to it."
-          }
-        }
-      },
-      {
-        id: "chicken-liver",
-        name: "Chicken liver",
-        category: "Poultry",
-        fdc_id: "174491",
-        portion_id: "94449"
-      },
-      {
-        id: "chicken-thigh-roasted",
-        name: "Chicken thigh, roasted",
-        category: "Poultry",
-        fdc_id: "172388",
-        portion_id: "90511"
-      },
-      {
-        id: "chickpeas-cooked",
-        name: "Chickpeas, cooked",
-        category: "Legumes",
-        fdc_id: "173799",
-        portion_id: "93272",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Chickpeas, canned or dried and boiled",
-            why: "Same legume, both boiled from dry."
-          },
-          "afcd-au-r3": {
-            key: "Chickpea, dried, boiled, drained",
-            why: "Both boiled from dry. AFCD's dry chickpea row reads ~3x higher and is not borrowed \u2014 nobody eats them dry."
-          }
-        }
-      },
-      {
-        id: "chuck-pot-roast",
-        name: "Chuck pot roast",
-        category: "Beef",
-        fdc_id: "168667",
-        portion_id: "83530",
-        matches: {
-          "afcd-au-r3": {
-            key: "Beef, casserole meat, boneless, chuck, lean, casseroled, no added fat",
-            why: "Boneless chuck in both, slow-cooked in both, and our USDA row is trimmed to 0 inch fat, which is what AFCD calls lean."
-          }
-        }
-      },
-      {
-        id: "clams-cooked",
-        name: "Clams, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "171975",
-        portion_id: "89661"
-      },
-      {
-        id: "cloves-ground",
-        name: "Cloves, ground",
-        category: "Spices & herbs",
-        fdc_id: "171321",
-        portion_id: "88431"
-      },
-      {
-        id: "coconut-raw",
-        name: "Coconut, raw",
-        category: "Nuts & seeds",
-        fdc_id: "170169",
-        portion_id: "86165"
-      },
-      {
-        id: "cod",
-        name: "Cod",
-        category: "Fish & shellfish",
-        fdc_id: "171956",
-        portion_id: "89622",
-        matches: {
-          "doleman-2017": {
-            key: "Cod",
-            why: "Doleman pan-fried a boneless fillet without fat; our USDA row is Atlantic cod cooked by dry heat. \u26A0 AFCD's only cod is SMOKED cod, whose chloride is brine \u2014 this is the only honest route to cod."
-          }
-        }
-      },
-      {
-        id: "collard-greens-cooked",
-        name: "Collard greens, cooked",
-        category: "Vegetables",
-        fdc_id: "168523",
-        portion_id: "83238"
-      },
-      {
-        id: "cottage-cheese",
-        name: "Cottage cheese",
-        category: "Dairy & eggs",
-        fdc_id: "172179",
-        portion_id: "90034",
-        matches: {
-          "afcd-au-r3": {
-            key: "Cheese, cottage",
-            why: "Same cheese, both as sold."
-          }
-        }
-      },
-      {
-        id: "dandelion-greens-cooked",
-        name: "Dandelion greens, cooked",
-        category: "Vegetables",
-        fdc_id: "169351",
-        portion_id: "84692"
-      },
-      {
-        id: "dates",
-        name: "Dates",
-        category: "Fruits",
-        fdc_id: "171726",
-        portion_id: "89264",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Dates, dried",
-            why: "Powell's only dates row. Our catalog entry is deglet noor, also a dried date -- USDA sells no fresh date row."
-          }
-        }
-      },
-      {
-        id: "duck-egg",
-        name: "Duck egg",
-        category: "Dairy & eggs",
-        fdc_id: "172189",
-        portion_id: "90055"
-      },
-      {
-        id: "duck-roasted",
-        name: "Duck, roasted",
-        category: "Poultry",
-        fdc_id: "172409",
-        portion_id: "90568",
-        matches: {
-          "afcd-au-r3": {
-            key: "Duck, lean flesh, skin & fat, baked, no added fat",
-            why: "Meat AND skin in both, roasted/baked with no added fat. AFCD's skinless row reads higher and is not borrowed \u2014 ours includes the skin."
-          }
-        }
-      },
-      {
-        id: "edamame",
-        name: "Edamame",
-        category: "Vegetables",
-        fdc_id: "168411",
-        portion_id: "83053"
-      },
-      {
-        id: "egg",
-        name: "Egg",
-        category: "Dairy & eggs",
-        fdc_id: "173424",
-        portion_id: "92500",
-        matches: {
-          "afcd-au-r3": {
-            key: "Egg, chicken, whole, hard-boiled",
-            why: "Our USDA row is 'Egg, whole, cooked, hard-boiled' and this is AFCD's hard-boiled row \u2014 the same food in the same state. AFCD's RAW egg row shows sulphur where the boiled one does not, and it is not borrowed: a raw figure on a boiled egg is a different measurement."
-          },
-          "doleman-2017": {
-            key: "Eggs",
-            why: "Doleman boiled medium free-range eggs; our USDA row is whole egg, cooked, hard-boiled. The same food in the same state. AFCD's hard-boiled egg measures no sulphur."
-          }
-        }
-      },
-      {
-        id: "egg-yolk",
-        name: "Egg yolk",
-        category: "Dairy & eggs",
-        fdc_id: "172184",
-        portion_id: "90045"
-      },
-      {
-        id: "eggplant-cooked",
-        name: "Eggplant, cooked",
-        category: "Vegetables",
-        fdc_id: "169352",
-        portion_id: "84693",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Aubergine, fresh, boiled Table 1. Continued Food description",
-            why: "Aubergine IS eggplant; both boiled. The key carries 'Table 1. Continued Food description' because the paper's repeated table header bleeds into this PDF line; kept byte-exact so the gate can join it."
-          }
-        }
-      },
-      {
-        id: "elk-steak",
-        name: "Elk steak",
-        category: "Lamb, veal & game",
-        fdc_id: "174427",
-        portion_id: "94350"
-      },
-      {
-        id: "escarole-cooked",
-        name: "Escarole, cooked",
-        category: "Vegetables",
-        fdc_id: "168413",
-        portion_id: "83056"
-      },
-      {
-        id: "fava-beans-cooked",
-        name: "Fava beans, cooked",
-        category: "Legumes",
-        fdc_id: "173798",
-        portion_id: "93271"
-      },
-      {
-        id: "fennel-raw",
-        name: "Fennel, raw",
-        category: "Vegetables",
-        fdc_id: "169385",
-        portion_id: "84767"
-      },
-      {
-        id: "feta",
-        name: "Feta",
-        category: "Dairy & eggs",
-        fdc_id: "173420",
-        portion_id: "92490",
-        matches: {
-          "afcd-au-r3": {
-            key: "Cheese, fetta (feta)",
-            why: "AFCD spells it fetta. Same cheese. Lands under the threshold."
-          }
-        }
-      },
-      {
-        id: "flounder-cooked",
-        name: "Flounder, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "174197",
-        portion_id: "93913"
-      },
-      {
-        id: "goat-milk",
-        name: "Goat milk",
-        category: "Dairy & eggs",
-        fdc_id: "171278",
-        portion_id: "88350"
-      },
-      {
-        id: "goat-roasted",
-        name: "Goat, roasted",
-        category: "Lamb, veal & game",
-        fdc_id: "175304",
-        portion_id: "95996"
-      },
-      {
-        id: "grapefruit",
-        name: "Grapefruit",
-        category: "Fruits",
-        fdc_id: "173033",
-        portion_id: "91838",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Grapefruit, raw",
-            why: "Same fruit, both raw."
-          }
-        }
-      },
-      {
-        id: "grapes",
-        name: "Grapes",
-        category: "Fruits",
-        fdc_id: "174683",
-        portion_id: "94748",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Grapes, green and red",
-            why: "Same fruit; Powell's row spans both colours, as USDA's 'Grapes, red or green' does."
-          }
-        }
-      },
-      {
-        id: "greek-yogurt",
-        name: "Greek yogurt, lowfat",
-        category: "Dairy & eggs",
-        fdc_id: "170903",
-        portion_id: "87526"
-      },
-      {
-        id: "green-beans-cooked",
-        name: "Green beans, cooked",
-        category: "Vegetables",
-        fdc_id: "169321",
-        portion_id: "84651",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Beans, green or French, fresh, boiled",
-            why: "The GENERIC green-bean row. Powell also prints Kenyan/fine beans (a thinner cultivar of the same species, 10.00) and runner beans (a different species, Phaseolus coccineus). USDA 'Beans, snap, green' is Phaseolus vulgaris, so the generic row is the pair and the higher cultivar row is not borrowed."
-          },
-          "afcd-au-r3": {
-            key: "Bean, green, fresh, boiled, drained",
-            why: "Both boiled and drained. AFCD's 'cooked, no added fat' row reads higher and is not borrowed \u2014 ours is boiled."
-          }
-        }
-      },
-      {
-        id: "green-peas-cooked",
-        name: "Green peas, cooked",
-        category: "Vegetables",
-        fdc_id: "170102",
-        portion_id: "86051",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Peas, fresh, boiled",
-            why: "USDA's row is fresh peas boiled; Powell's frozen and petit-pois rows are different products and are not used."
-          },
-          "afcd-au-r3": {
-            key: "Pea, green, fresh, boiled, drained",
-            why: "Both fresh peas, boiled and drained."
-          }
-        }
-      },
-      {
-        id: "ground-beef",
-        name: "Ground beef",
-        category: "Beef",
-        fdc_id: "174034",
-        portion_id: "93669"
-      },
-      {
-        id: "ground-bison",
-        name: "Ground bison",
-        category: "Lamb, veal & game",
-        fdc_id: "173847",
-        portion_id: "93365"
-      },
-      {
-        id: "ground-chicken",
-        name: "Ground chicken",
-        category: "Poultry",
-        fdc_id: "171117",
-        portion_id: "88004"
-      },
-      {
-        id: "ground-lamb",
-        name: "Ground lamb",
-        category: "Lamb, veal & game",
-        fdc_id: "172544",
-        portion_id: "90819",
-        matches: {
-          "afcd-au-r3": {
-            key: "Lamb, mince, stir-fried, no added fat",
-            why: "Mince IS ground lamb. Ours is broiled and AFCD's stir-fried \u2014 both dry heat with no added fat, which is the part that moves the number."
-          }
-        }
-      },
-      {
-        id: "ground-pork",
-        name: "Ground pork",
-        category: "Pork",
-        fdc_id: "167903",
-        portion_id: "82191",
-        matches: {
-          "afcd-au-r3": {
-            key: "Pork, mince, as purchased, fried, no added fat",
-            why: "Mince IS ground pork; cooked in both, no fat added in either."
-          }
-        }
-      },
-      {
-        id: "ground-turkey",
-        name: "Ground turkey",
-        category: "Poultry",
-        fdc_id: "171506",
-        portion_id: "88876"
-      },
-      {
-        id: "ground-venison",
-        name: "Ground venison",
-        category: "Lamb, veal & game",
-        fdc_id: "172603",
-        portion_id: "90945",
-        matches: {
-          "afcd-au-r3": {
-            key: "Venison, mince, premium, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",
-            why: "Mince IS ground venison; cooked in both."
-          }
-        }
-      },
-      {
-        id: "guava",
-        name: "Guava",
-        category: "Fruits",
-        fdc_id: "173044",
-        portion_id: "91858"
-      },
-      {
-        id: "haddock-cooked",
-        name: "Haddock, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "174198",
-        portion_id: "93915"
-      },
-      {
-        id: "halibut-cooked",
-        name: "Halibut, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "174201",
-        portion_id: "93921"
-      },
-      {
-        id: "hazelnuts",
-        name: "Hazelnuts",
-        category: "Nuts & seeds",
-        fdc_id: "170581",
-        portion_id: "86899",
-        matches: {
-          "afcd-au-r3": {
-            key: "Nut, hazelnut, raw, unsalted",
-            why: "Both raw."
-          }
-        }
-      },
-      {
-        id: "hearts-of-palm-canned",
-        name: "Hearts of palm, canned",
-        category: "Vegetables",
-        fdc_id: "168569",
-        portion_id: "83344"
-      },
-      {
-        id: "hemp-seeds",
-        name: "Hemp seeds",
-        category: "Nuts & seeds",
-        fdc_id: "170148",
-        portion_id: "86132"
-      },
-      {
-        id: "herring-cooked",
-        name: "Herring, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "174233",
-        portion_id: "93989"
-      },
-      {
-        id: "honeydew-melon",
-        name: "Honeydew melon",
-        category: "Fruits",
-        fdc_id: "169911",
-        portion_id: "85658",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Melon, (cantaloupe, honeydew, galia)",
-            why: "The same single melon row, which names honeydew. See cantaloupe -- both our melons rest on one pooled measurement, which is the source's choice, not ours."
-          }
-        }
-      },
-      {
-        id: "kale-cooked",
-        name: "Kale, cooked",
-        category: "Vegetables",
-        fdc_id: "169355",
-        portion_id: "84696"
-      },
-      {
-        id: "kidney-beans-cooked",
-        name: "Kidney beans, cooked",
-        category: "Legumes",
-        fdc_id: "175242",
-        portion_id: "95884",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Red kidney beans, canned or dried and boiled",
-            why: "Same legume, both boiled from dry."
-          },
-          "afcd-au-r3": {
-            key: "Bean, red kidney, dried, boiled, drained",
-            why: "Both boiled from dry."
-          }
-        }
-      },
-      {
-        id: "kimchi",
-        name: "Kimchi",
-        category: "Vegetables",
-        fdc_id: "170392",
-        portion_id: "86554"
-      },
-      {
-        id: "king-crab-cooked",
-        name: "King crab, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "174202",
-        portion_id: "93924"
-      },
-      {
-        id: "kiwifruit",
-        name: "Kiwifruit",
-        category: "Fruits",
-        fdc_id: "168153",
-        portion_id: "82568",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Kiwi fruit, raw, without skin",
-            why: "Same fruit, both raw, both flesh-only."
-          }
-        }
-      },
-      {
-        id: "kohlrabi-cooked",
-        name: "Kohlrabi, cooked",
-        category: "Vegetables",
-        fdc_id: "169357",
-        portion_id: "84698"
-      },
-      {
-        id: "lamb-chop",
-        name: "Lamb chop",
-        category: "Lamb, veal & game",
-        fdc_id: "172489",
-        portion_id: "90710"
-      },
-      {
-        id: "lamb-kidneys",
-        name: "Lamb kidneys",
-        category: "Lamb, veal & game",
-        fdc_id: "174355",
-        portion_id: "94206"
-      },
-      {
-        id: "lamb-liver",
-        name: "Lamb liver",
-        category: "Lamb, veal & game",
-        fdc_id: "172533",
-        portion_id: "90798"
-      },
-      {
-        id: "lamb-shank",
-        name: "Lamb shank",
-        category: "Lamb, veal & game",
-        fdc_id: "172482",
-        portion_id: "90697"
-      },
-      {
-        id: "leeks-cooked",
-        name: "Leeks, cooked",
-        category: "Vegetables",
-        fdc_id: "168535",
-        portion_id: "83256",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Leeks, fresh, boiled",
-            why: "Same vegetable, both boiled."
-          }
-        }
-      },
-      {
-        id: "leg-of-lamb",
-        name: "Leg of lamb",
-        category: "Lamb, veal & game",
-        fdc_id: "174312",
-        portion_id: "94120"
-      },
-      {
-        id: "lentils-cooked",
-        name: "Lentils, cooked",
-        category: "Legumes",
-        fdc_id: "175254",
-        portion_id: "95899",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Lentils, green and brown, boiled",
-            why: "Powell measures two lentils \u2014 red at 4.42 and green/brown at 1.95 mg/100 g \u2014 and our USDA row is the generic 'Lentils, mature seeds, cooked', which says nothing about colour. The LOWER is taken: it is true of whichever lentil is on the plate, where taking red would only be true of red. Dropping lentils instead, which is what this curation did for one day, told the user lentils contain no silica at all \u2014 a claim both of Powell's rows contradict.",
-            conservative: true
-          }
-        }
-      },
-      {
-        id: "lima-beans-cooked",
-        name: "Lima beans, cooked",
-        category: "Legumes",
-        fdc_id: "173802",
-        portion_id: "93276",
-        matches: {
-          "afcd-au-r3": {
-            key: "Bean, lima, dried, boiled, drained",
-            why: "Both boiled from dry."
-          }
-        }
-      },
-      {
-        id: "lobster-cooked",
-        name: "Lobster, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "174209",
-        portion_id: "93937",
-        matches: {
-          "afcd-au-r3": {
-            key: "Lobster or crayfish, flesh, purchased steamed, poached or boiled, no added fat",
-            why: "Lobster flesh in both, moist-heat cooked in both."
-          }
-        }
-      },
-      {
-        id: "lychee",
-        name: "Lychee",
-        category: "Fruits",
-        fdc_id: "169086",
-        portion_id: "84200",
-        matches: {
-          "afcd-au-r3": {
-            key: "Lychee, peeled, raw",
-            why: "Both raw, both peeled."
-          }
-        }
-      },
-      {
-        id: "macadamia-nuts-roasted",
-        name: "Macadamia nuts, roasted",
-        category: "Nuts & seeds",
-        fdc_id: "168598",
-        portion_id: "83393"
-      },
-      {
-        id: "mackerel-cooked",
-        name: "Mackerel, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "171994",
-        portion_id: "89703"
-      },
-      {
-        id: "mango",
-        name: "Mango",
-        category: "Fruits",
-        fdc_id: "169910",
-        portion_id: "85651",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Mango, fresh, raw, \uFB01brous",
-            why: "Powell measures smooth mango at 3.15 and fibrous at 2.00 mg/100 g; our USDA row is the generic 'Mangos, raw'. The lower is taken for the same reason as lentils.",
-            conservative: true
-          }
-        }
-      },
-      {
-        id: "mozzarella",
-        name: "Mozzarella",
-        category: "Dairy & eggs",
-        fdc_id: "170845",
-        portion_id: "87382",
-        matches: {
-          "afcd-au-r3": {
-            key: "Cheese, mozzarella",
-            why: "Same cheese, both as sold."
-          }
-        }
-      },
-      {
-        id: "mung-bean-sprouts-cooked",
-        name: "Mung bean sprouts, cooked",
-        category: "Vegetables",
-        fdc_id: "168499",
-        portion_id: "83197"
-      },
-      {
-        id: "mussels-cooked",
-        name: "Mussels, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "174217",
-        portion_id: "93960"
-      },
-      {
-        id: "mustard-greens-cooked",
-        name: "Mustard greens, cooked",
-        category: "Vegetables",
-        fdc_id: "170503",
-        portion_id: "86772"
-      },
-      {
-        id: "natto",
-        name: "Natto",
-        category: "Legumes",
-        fdc_id: "172443",
-        portion_id: "90631"
-      },
-      {
-        id: "navy-beans-cooked",
-        name: "Navy beans, cooked",
-        category: "Legumes",
-        fdc_id: "173794",
-        portion_id: "93266"
-      },
-      {
-        id: "octopus-cooked",
-        name: "Octopus, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "174249",
-        portion_id: "94020"
-      },
-      {
-        id: "okra-cooked",
-        name: "Okra, cooked",
-        category: "Vegetables",
-        fdc_id: "170098",
-        portion_id: "86037"
-      },
-      {
-        id: "onions-raw",
-        name: "Onions, raw",
-        category: "Vegetables",
-        fdc_id: "170000",
-        portion_id: "85855",
-        matches: {
-          "doleman-2017": {
-            key: "Brown onion",
-            conservative: true,
-            why: "Doleman measured brown (77.0 umol/g dry) and red (121.3) mature onions raw; our USDA row is the generic 'Onions, raw' and says which neither. The LOWER is taken. Doleman's spring onion is a different food and lives on our scallions entry, not here."
-          },
-          "afcd-au-r3": {
-            key: "Onion, mature, white skinned, peeled, fresh, raw",
-            conservative: true,
-            why: "AFCD measures brown, red and white mature onions raw; ours is the generic raw onion. The LOWEST is taken, which is white \u2014 and it lands under the threshold, where brown would have shipped molybdenum at 8.4%. The pair is recorded anyway: a pair that exists only when it helps is a biased pair."
-          }
-        }
-      },
-      {
-        id: "orange",
-        name: "Orange",
-        category: "Fruits",
-        fdc_id: "169097",
-        portion_id: "84230"
-      },
-      {
-        id: "oysters-cooked",
-        name: "Oysters, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "171980",
-        portion_id: "89671"
-      },
-      {
-        id: "papaya",
-        name: "Papaya",
-        category: "Fruits",
-        fdc_id: "169926",
-        portion_id: "85692",
-        matches: {
-          "afcd-au-r3": {
-            key: "Papaya, yellow, peeled, raw",
-            why: "AFCD measures pawpaw, red papaya and yellow papaya; ours is the generic 'Papayas, raw'. The lowest is taken. Lands under the threshold.",
-            conservative: true
-          }
-        }
-      },
-      {
-        id: "parmesan-grated",
-        name: "Parmesan, grated",
-        category: "Dairy & eggs",
-        fdc_id: "171247",
-        portion_id: "88263"
-      },
-      {
-        id: "parsley-fresh",
-        name: "Parsley, fresh",
-        category: "Vegetables",
-        fdc_id: "170416",
-        portion_id: "86608",
-        matches: {
-          "afcd-au-r3": {
-            key: "Parsley, continental, fresh, raw",
-            why: "Both fresh and raw. Lands under the threshold."
-          }
-        }
-      },
-      {
-        id: "parsnips-cooked",
-        name: "Parsnips, cooked",
-        category: "Vegetables",
-        fdc_id: "170009",
-        portion_id: "85888",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Parsnips, fresh, peeled, boiled",
-            why: "Same vegetable, both boiled."
-          }
-        }
-      },
-      {
-        id: "peach",
-        name: "Peach",
-        category: "Fruits",
-        fdc_id: "169928",
-        portion_id: "85697",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Peaches, fresh, raw",
-            why: "Same fruit, both raw."
-          }
-        }
-      },
-      {
-        id: "peanuts-dry-roasted",
-        name: "Peanuts, dry-roasted",
-        category: "Legumes",
-        fdc_id: "173806",
-        portion_id: "93281",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Groundnuts, roasted and salted",
-            why: "Groundnut IS peanut, and both are roasted. Powell's is salted and ours is not; salt adds sodium, not silicon."
-          },
-          "afcd-au-r3": {
-            key: "Nut, peanut, without skin, roasted, with oil, unsalted",
-            why: "AFCD has no dry-roasted peanut; this is roasted in oil, and the oil dilutes everything per 100 g, so it is a floor for our dry-roasted row.",
-            conservative: true
-          }
-        }
-      },
-      {
-        id: "pear",
-        name: "Pear",
-        category: "Fruits",
-        fdc_id: "169118",
-        portion_id: "84275",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Pears, raw",
-            why: "Same fruit, both raw."
-          }
-        }
-      },
-      {
-        id: "pecans",
-        name: "Pecans",
-        category: "Nuts & seeds",
-        fdc_id: "170182",
-        portion_id: "86190"
-      },
-      {
-        id: "persimmon",
-        name: "Persimmon",
-        category: "Fruits",
-        fdc_id: "169941",
-        portion_id: "85724"
-      },
-      {
-        id: "pineapple",
-        name: "Pineapple",
-        category: "Fruits",
-        fdc_id: "169124",
-        portion_id: "84289",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Pineapple, fresh, raw",
-            why: "Powell's only FRESH pineapple row. The canned-in-juice and canned-in-syrup rows are different products and are not used."
-          }
-        }
-      },
-      {
-        id: "pinto-beans-cooked",
-        name: "Pinto beans, cooked",
-        category: "Legumes",
-        fdc_id: "175200",
-        portion_id: "95832"
-      },
-      {
-        id: "pistachios-dry-roasted",
-        name: "Pistachios, dry roasted",
-        category: "Nuts & seeds",
-        fdc_id: "169426",
-        portion_id: "84844"
-      },
-      {
-        id: "plantain-baked",
-        name: "Plantain, baked",
-        category: "Fruits",
-        fdc_id: "169131",
-        portion_id: "84304"
-      },
-      {
-        id: "poppy-seeds",
-        name: "Poppy seeds",
-        category: "Spices & herbs",
-        fdc_id: "171330",
-        portion_id: "88450"
-      },
-      {
-        id: "pork-liver",
-        name: "Pork liver",
-        category: "Pork",
-        fdc_id: "167863",
-        portion_id: "82113"
-      },
-      {
-        id: "pork-ribs",
-        name: "Pork ribs",
-        category: "Pork",
-        fdc_id: "168377",
-        portion_id: "82988",
-        matches: {
-          "afcd-au-r3": {
-            key: "Pork, spare ribs, untrimmed, baked, no added fat",
-            why: "Ribs in both, roasted/baked in both. Ours is lean only and AFCD's is untrimmed; fat carries almost no sulphur, so the untrimmed figure is the floor for a lean rib.",
-            conservative: true
-          }
-        }
-      },
-      {
-        id: "pork-shoulder-roasted",
-        name: "Pork shoulder, roasted",
-        category: "Pork",
-        fdc_id: "167844",
-        portion_id: "82078",
-        matches: {
-          "afcd-au-r3": {
-            key: "Pork, forequarter shoulder roast, untrimmed, BBQ'd, no added fat",
-            why: "Shoulder roast in both, cooked in both, and UNTRIMMED \u2014 which is what our USDA row's 'separable lean and fat' means. AFCD's lean row reads higher and is not borrowed."
-          }
-        }
-      },
-      {
-        id: "portabella-mushrooms-grilled",
-        name: "Portabella mushrooms, grilled",
-        category: "Vegetables",
-        fdc_id: "169243",
-        portion_id: "84501"
-      },
-      {
-        id: "potato-baked",
-        name: "Potato, baked",
-        category: "Vegetables",
-        fdc_id: "170093",
-        portion_id: "86027"
-      },
-      {
-        id: "provolone",
-        name: "Provolone",
-        category: "Dairy & eggs",
-        fdc_id: "170850",
-        portion_id: "87399"
-      },
-      {
-        id: "pumpkin-seeds-roasted",
-        name: "Pumpkin seeds, roasted",
-        category: "Nuts & seeds",
-        fdc_id: "169415",
-        portion_id: "84822",
-        matches: {
-          "afcd-au-r3": {
-            key: "Seed, pumpkin, hulled & dried",
-            why: "AFCD measures hulled DRIED pepitas; ours are roasted. Roasting drives off the last of the moisture, so the roasted figure can only be higher \u2014 the dried one is the floor.",
-            conservative: true
-          }
-        }
-      },
-      {
-        id: "rabbit-stewed",
-        name: "Rabbit, stewed",
-        category: "Lamb, veal & game",
-        fdc_id: "174346",
-        portion_id: "94188",
-        matches: {
-          "afcd-au-r3": {
-            key: "Rabbit, flesh, casseroled, no added fat",
-            why: "Casseroled IS stewed; flesh only in both."
-          }
-        }
-      },
-      {
-        id: "radishes-raw",
-        name: "Radishes, raw",
-        category: "Vegetables",
-        fdc_id: "169276",
-        portion_id: "84582",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Radish, fresh",
-            why: "Same vegetable, both raw."
-          },
-          "doleman-2017": {
-            key: "Radish",
-            why: "Both raw. Lands under the threshold."
-          }
-        }
-      },
-      {
-        id: "rainbow-trout-cooked",
-        name: "Rainbow trout, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "173718",
-        portion_id: "93178"
-      },
-      {
-        id: "raspberries",
-        name: "Raspberries",
-        category: "Fruits",
-        fdc_id: "167755",
-        portion_id: "81905",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Raspberries, fresh, raw",
-            why: "Same fruit, both raw."
-          }
-        }
-      },
-      {
-        id: "red-bell-pepper-raw",
-        name: "Red bell pepper, raw",
-        category: "Vegetables",
-        fdc_id: "170108",
-        portion_id: "86065",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Peppers, red, fresh, raw",
-            why: "Same vegetable, same colour, both raw."
-          }
-        }
-      },
-      {
-        id: "ribeye-steak",
-        name: "Beef ribeye",
-        category: "Beef",
-        fdc_id: "169556",
-        portion_id: "85100"
-      },
-      {
-        id: "ricotta",
-        name: "Ricotta",
-        category: "Dairy & eggs",
-        fdc_id: "170851",
-        portion_id: "87401",
-        matches: {
-          "afcd-au-r3": {
-            key: "Cheese, ricotta",
-            why: "Same cheese, both as sold."
-          }
-        }
-      },
-      {
-        id: "rockfish-cooked",
-        name: "Rockfish, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "175131",
-        portion_id: "95706"
-      },
-      {
-        id: "romaine-lettuce",
-        name: "Romaine lettuce",
-        category: "Vegetables",
-        fdc_id: "169247",
-        portion_id: "84510",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Lettuce, little gem, fresh, raw",
-            why: "Little gem is a cos/romaine cultivar -- the only romaine-type row Powell prints. Iceberg, lamb's, rocket and mixed leaves are other lettuces and are not borrowed."
-          },
-          "doleman-2017": {
-            key: "Lettuce",
-            why: "Doleman's row is generic lettuce and ours is cos/romaine; both raw. Lands under the threshold."
-          }
-        }
-      },
-      {
-        id: "rutabaga-cooked",
-        name: "Rutabaga, cooked",
-        category: "Vegetables",
-        fdc_id: "168455",
-        portion_id: "83123",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Swede, fresh, boiled",
-            why: "Swede IS rutabaga (Brassica napus); both boiled."
-          }
-        }
-      },
-      {
-        id: "salt",
-        name: "Salt",
-        category: "Spices & herbs",
-        fdc_id: "173468",
-        portion_id: "92594",
-        matches: {
-          "afcd-au-r3": {
-            key: "Salt, table, iodised",
-            why: "AFCD publishes iodised and non-iodised table salt at the identical 61,200 mg chloride per 100 g \u2014 salt IS sodium chloride, so this is a composition fact, not a sample. Iodised is taken because that is what our catalog entry is."
-          }
-        }
-      },
-      {
-        id: "sardines-canned-with-bones",
-        name: "Sardines, canned with bones",
-        category: "Fish & shellfish",
-        fdc_id: "175140",
-        portion_id: "95728"
-      },
-      {
-        id: "scallions-raw",
-        name: "Scallions, raw",
-        category: "Vegetables",
-        fdc_id: "170005",
-        portion_id: "85878",
-        matches: {
-          "doleman-2017": {
-            key: "Spring onion",
-            why: "Spring onion IS the scallion; both raw, both including tops and bulb. Lands under the threshold at 5.8% and is recorded anyway."
-          }
-        }
-      },
-      {
-        id: "scallops-cooked",
-        name: "Scallops, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "167742",
-        portion_id: "81878"
-      },
-      {
-        id: "sesame-seeds-roasted",
-        name: "Sesame seeds, roasted",
-        category: "Nuts & seeds",
-        fdc_id: "170151",
-        portion_id: "86137",
-        matches: {
-          "afcd-au-r3": {
-            key: "Seed, sesame, unsalted",
-            why: "AFCD does not state a roast; sesame seed is sesame seed, and roasting drives off a little water, so if anything this reads low."
-          }
-        }
-      },
-      {
-        id: "shiitake-mushrooms-cooked",
-        name: "Shiitake mushrooms, cooked",
-        category: "Vegetables",
-        fdc_id: "170097",
-        portion_id: "86035"
-      },
-      {
-        id: "shrimp-cooked",
-        name: "Shrimp, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "175180",
-        portion_id: "95807"
-      },
-      {
-        id: "sirloin-steak",
-        name: "Sirloin steak",
-        category: "Beef",
-        fdc_id: "168727",
-        portion_id: "83655"
-      },
-      {
-        id: "snow-peas-cooked",
-        name: "Snow peas, cooked",
-        category: "Vegetables",
-        fdc_id: "170509",
-        portion_id: "86780",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Mange-tout, fresh, boiled Marrow, fresh, raw",
-            why: "Mange-tout IS the edible-podded pea USDA calls snow peas; both boiled. The key carries 'Marrow, fresh, raw' because the paper's next row title bleeds into this line in the PDF -- the KEY is noisy, the VALUE is mange-tout's, and the key is kept byte-exact so the gate can join it."
-          },
-          "afcd-au-r3": {
-            key: "Snow pea, fresh, boiled, drained",
-            why: "Both boiled and drained."
-          }
-        }
-      },
-      {
-        id: "sockeye-salmon-cooked",
-        name: "Sockeye salmon, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "173692",
-        portion_id: "93121"
-      },
-      {
-        id: "soybeans-cooked",
-        name: "Soybeans, cooked",
-        category: "Legumes",
-        fdc_id: "174271",
-        portion_id: "94059",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Soya beans, dried and boiled",
-            why: "Same legume, both boiled from dry."
-          }
-        }
-      },
-      {
-        id: "spaghetti-squash-cooked",
-        name: "Spaghetti squash, cooked",
-        category: "Vegetables",
-        fdc_id: "170539",
-        portion_id: "86821"
-      },
-      {
-        id: "spinach-cooked",
-        name: "Spinach, cooked",
-        category: "Vegetables",
-        fdc_id: "170531",
-        portion_id: "86811",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Spinach, fresh, boiled",
-            why: "Same vegetable, both boiled."
-          },
-          "afcd-au-r3": {
-            key: "Spinach, Mature English, fresh, boiled, drained",
-            why: "Both boiled and drained. AFCD's BABY spinach row is raw and is not borrowed."
-          }
-        }
-      },
-      {
-        id: "split-peas-cooked",
-        name: "Split peas, cooked",
-        category: "Legumes",
-        fdc_id: "175257",
-        portion_id: "95902",
-        matches: {
-          "afcd-au-r3": {
-            key: "Pea, split, dried, boiled, drained",
-            why: "Both boiled from dry."
-          }
-        }
-      },
-      {
-        id: "strawberries",
-        name: "Strawberries",
-        category: "Fruits",
-        fdc_id: "167762",
-        portion_id: "81928",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Strawberries, raw",
-            why: "Same fruit, both raw."
-          }
-        }
-      },
-      {
-        id: "summer-squash-cooked",
-        name: "Summer squash, cooked",
-        category: "Vegetables",
-        fdc_id: "170125",
-        portion_id: "86096"
-      },
-      {
-        id: "sunflower-seeds-dry-roasted",
-        name: "Sunflower seeds, dry roasted",
-        category: "Nuts & seeds",
-        fdc_id: "169417",
-        portion_id: "84826",
-        matches: {
-          "afcd-au-r3": {
-            key: "Seed, sunflower",
-            why: "AFCD does not state a roast. Same as sesame: roasting can only concentrate, so this reads low if it is wrong at all."
-          }
-        }
-      },
-      {
-        id: "sweet-corn-cooked",
-        name: "White corn on the cob",
-        category: "Vegetables",
-        fdc_id: "168540",
-        portion_id: "83275",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Sweetcorn, on the cob, fresh, boiled",
-            why: "Same vegetable, both on the cob and boiled."
-          }
-        }
-      },
-      {
-        id: "sweet-potato-baked",
-        name: "Sweet potato, baked",
-        category: "Vegetables",
-        fdc_id: "168483",
-        portion_id: "83168"
-      },
-      {
-        id: "swiss-chard-cooked",
-        name: "Swiss chard, cooked",
-        category: "Vegetables",
-        fdc_id: "169343",
-        portion_id: "84679",
-        matches: {
-          "afcd-au-r3": {
-            key: "Silverbeet, fresh, boiled, drained",
-            why: "Silverbeet IS Swiss chard; both boiled and drained."
-          }
-        }
-      },
-      {
-        id: "swiss-cheese",
-        name: "Swiss cheese",
-        category: "Dairy & eggs",
-        fdc_id: "171251",
-        portion_id: "88276"
-      },
-      {
-        id: "swordfish-cooked",
-        name: "Swordfish, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "173704",
-        portion_id: "93143"
-      },
-      {
-        id: "tahini",
-        name: "Tahini",
-        category: "Nuts & seeds",
-        fdc_id: "170189",
-        portion_id: "86210",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Tahini Beverages\u2020\u2021",
-            why: "Same product. The key carries 'Beverages' because the paper's next SECTION HEADING bleeds into this line in the PDF; kept byte-exact so the gate can join it."
-          },
-          "afcd-au-r3": {
-            key: "Tahini, sesame seed pulp",
-            why: "Same product."
-          }
-        }
-      },
-      {
-        id: "tangerine",
-        name: "Tangerine",
-        category: "Fruits",
-        fdc_id: "169105",
-        portion_id: "84250",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Clementines, raw, without skin",
-            why: "A clementine is a mandarin cultivar, which is what USDA's tangerine row is; both raw, both peeled."
-          }
-        }
-      },
-      {
-        id: "taro-cooked",
-        name: "Taro, cooked",
-        category: "Vegetables",
-        fdc_id: "170543",
-        portion_id: "86826"
-      },
-      {
-        id: "tempeh",
-        name: "Tempeh",
-        category: "Legumes",
-        fdc_id: "174272",
-        portion_id: "94061"
-      },
-      {
-        id: "tilapia-cooked",
-        name: "Tilapia, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "175177",
-        portion_id: "95804"
-      },
-      {
-        id: "tofu-firm",
-        name: "Tofu, firm",
-        category: "Legumes",
-        fdc_id: "172448",
-        portion_id: "90638",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Tofu Milk and milk products",
-            why: "Same product. Powell does not state firmness. The key carries 'Milk and milk products' because the next section heading bleeds into this PDF line; kept byte-exact so the gate can join it."
-          },
-          "afcd-au-r3": {
-            key: "Tofu (soy bean curd), firm, as purchased",
-            why: "Both firm tofu as purchased."
-          }
-        }
-      },
-      {
-        id: "tomato-raw",
-        name: "Tomato, raw",
-        category: "Vegetables",
-        fdc_id: "170457",
-        portion_id: "86681",
-        matches: {
-          "afcd-au-r3": {
-            key: "Tomato, common, raw",
-            why: "AFCD's COMMON tomato \u2014 the generic row \u2014 not its cherry tomato, which reads double. \u26A0 A name matcher proposed 'Sauce, tomato, commercial' here, which would have shipped 83% chloride off the sauce's added salt."
-          },
-          "doleman-2017": {
-            key: "Tomato",
-            why: "Both raw. Lands under the threshold."
-          }
-        }
-      },
-      {
-        id: "tuna-canned-in-water",
-        name: "Tuna, canned in water",
-        category: "Fish & shellfish",
-        fdc_id: "175158",
-        portion_id: "95767",
-        matches: {
-          "afcd-au-r3": {
-            key: "Tuna, unflavoured, canned in water, drained",
-            why: "Canned in water and drained in both, unflavoured in both."
-          }
-        }
-      },
-      {
-        id: "turkey-breast-roasted",
-        name: "Turkey breast, roasted",
-        category: "Poultry",
-        fdc_id: "171496",
-        portion_id: "88856",
-        matches: {
-          "afcd-au-r3": {
-            key: "Turkey, breast, lean flesh, baked, no added fat",
-            why: "Breast meat only in both, roasted/baked with no added fat."
-          }
-        }
-      },
-      {
-        id: "turkey-thigh-roasted",
-        name: "Turkey thigh, roasted",
-        category: "Poultry",
-        fdc_id: "171532",
-        portion_id: "88938",
-        matches: {
-          "afcd-au-r3": {
-            key: "Turkey, hindquarter, lean flesh, baked, no added fat",
-            why: "AFCD publishes the HINDQUARTER \u2014 thigh plus drumstick \u2014 where ours is thigh alone. Same bird, same dark meat, same state; the cut boundary is the approximation, and it is why this is not EXACT tier."
-          }
-        }
-      },
-      {
-        id: "turmeric-ground",
-        name: "Turmeric, ground",
-        category: "Spices & herbs",
-        fdc_id: "172231",
-        portion_id: "90123"
-      },
-      {
-        id: "turnip-greens-cooked",
-        name: "Turnip greens, cooked",
-        category: "Vegetables",
-        fdc_id: "170139",
-        portion_id: "86119"
-      },
-      {
-        id: "turnips-cooked",
-        name: "Turnips, cooked",
-        category: "Vegetables",
-        fdc_id: "170547",
-        portion_id: "86833",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Turnips, fresh, peeled, boiled",
-            why: "Same vegetable, both boiled."
-          }
-        }
-      },
-      {
-        id: "veal-chop",
-        name: "Veal chop",
-        category: "Lamb, veal & game",
-        fdc_id: "172650",
-        portion_id: "91005"
-      },
-      {
-        id: "veal-cutlet",
-        name: "Veal cutlet",
-        category: "Lamb, veal & game",
-        fdc_id: "174880",
-        portion_id: "95064"
-      },
-      {
-        id: "venison-roasted",
-        name: "Venison, roasted",
-        category: "Lamb, veal & game",
-        fdc_id: "175085",
-        portion_id: "95585",
-        matches: {
-          "afcd-au-r3": {
-            key: "Venison, leg medallion, lean, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",
-            why: "Our USDA row is a composite of deer cuts, roasted. AFCD publishes a leg medallion and a mince, both cooked; the medallion is the cut (not the ground) and is also the lower of the two.",
-            conservative: true
-          }
-        }
-      },
-      {
-        id: "walnuts",
-        name: "Walnuts",
-        category: "Nuts & seeds",
-        fdc_id: "170187",
-        portion_id: "86206"
-      },
-      {
-        id: "white-beans-cooked",
-        name: "White beans, cooked",
-        category: "Legumes",
-        fdc_id: "175249",
-        portion_id: "95893"
-      },
-      {
-        id: "white-mushrooms-cooked",
-        name: "White mushrooms, cooked",
-        category: "Vegetables",
-        fdc_id: "168537",
-        portion_id: "83260"
-      },
-      {
-        id: "whole-milk",
-        name: "Whole milk",
-        category: "Dairy & eggs",
-        fdc_id: "171266",
-        portion_id: "88318",
-        matches: {
-          "afcd-au-r3": {
-            key: "Milk, cow, fluid, regular fat (~3.5%)",
-            why: "Our USDA row is producer milk at 3.7% fat; AFCD's regular-fat cow milk is ~3.5%. Same product, same state, essentially the same fat."
-          }
-        }
-      },
-      {
-        id: "whole-milk-yogurt",
-        name: "Whole-milk yogurt",
-        category: "Dairy & eggs",
-        fdc_id: "171284",
-        portion_id: "88365"
-      },
-      {
-        id: "yam-cooked",
-        name: "Yam, cooked",
-        category: "Vegetables",
-        fdc_id: "170551",
-        portion_id: "86839",
-        matches: {
-          "silicon-powell-2005": {
-            key: "Yam, fresh, peeled, boiled Snack foods",
-            why: "Same vegetable; USDA's row is 'boiled, drained, or baked' and Powell's is boiled. The key carries 'Snack foods' because the next section heading bleeds into this PDF line; kept byte-exact so the gate can join it."
-          }
-        }
-      },
-      {
-        id: "yellowfin-tuna-cooked",
-        name: "Yellowfin tuna, cooked",
-        category: "Fish & shellfish",
-        fdc_id: "172006",
-        portion_id: "89724"
-      }
-    ],
-    _matches_purpose: "\u2605 STILL NUMBERS-FREE. `matches` binds a food to a row in a SECOND composition source by the source's own food NAME, because those sources publish no id our catalog shares. A name join is a human decision, so each one carries the reasoning that accepted it and every value it produces is APPROXIMATE tier FOREVER \u2014 the gate REDs an EXACT tier sitting on a name join. THE PAIR RULE: same food, same state. Where the source measures SEVERAL VARIETIES of what our generic row calls one food \u2014 red and green lentils, smooth and fibrous mango, three cabbages \u2014 take the LOWEST and set `conservative`, which makes the card say so. \u26D4 DO NOT DROP THE FOOD. That is what this file did for one day, and Luneth overruled it on 2026-08-22: a blank card does not read as 'we could not choose', it reads as 'not a source', which is a stronger claim than the one being avoided and a false one \u2014 every Powell lentil row measures silicon in lentils. The lowest variety is true whichever kind is on the plate, can only understate, and asserts no absence that is not there. A pair is recorded even when it lands under the threshold and shows nothing, because a pair that exists only when it helps is a biased pair.",
-    _afcd_refused: {
-      "bok-choy-cooked": "AFCD has steamed and fried; ours is boiled.",
-      "canned-salmon-with-bones": "AFCD has pink canned salmon (chloride, no sulphur) and red canned salmon (sulphur, no chloride); ours is chum. Which row to take is not a variety question the lowest-value rule can answer.",
-      "chicken-thigh-roasted": "AFCD's BAKED thigh \u2014 the row that matches our state \u2014 measures none of these four. Its raw and fried rows do, and are not borrowed.",
-      "coconut-raw": "AFCD's coconut is grated and desiccated; ours is raw meat.",
-      "eggplant-cooked": "AFCD has raw and roasted; ours is boiled.",
-      "greek-yogurt": "AFCD has natural regular-fat yoghurt; Greek yoghurt is strained and is a different product.",
-      "kale-cooked": "AFCD has kale RAW (64%) and FRIED (91%); ours is boiled. Boiling adds water, so either would read high on a boiled kale.",
-      "lamb-chop": "AFCD's loin chop is LEAN (42% sulphur); our USDA row is lean AND fat. Fat carries almost no sulphur, so the lean figure reads high on a fatty chop.",
-      "leg-of-lamb": "Same trim mismatch: AFCD's lean leg roast (22%) against our lean-and-fat row. AFCD's untrimmed leg roast measures no sulphur at all.",
-      "macadamia-nuts-roasted": "AFCD's macadamia is raw; ours is roasted.",
-      "oysters-cooked": "AFCD's oyster rows are all RAW (sulphur 54-67%); ours is moist-heat cooked. The richest sulphur food in reach, and refused for it.",
-      "parmesan-grated": "AFCD's dried finely-grated parmesan \u2014 the row that matches ours \u2014 measures none of these four. Its FRESH parmesan is a different product.",
-      "potato-baked": "AFCD's baked potatoes are PEELED; ours is flesh and skin.",
-      "sweet-potato-baked": "AFCD has raw and baked but peeled; ours is baked in skin."
-    },
-    _doleman_refused: {
-      "broccoli-cooked": "Doleman analysed broccoli RAW; ours is boiled. Boiling leaches sulphate and glucosinolates, so a raw dry-basis figure reads high on a boiled crucifer. It would have shipped at 27%.",
-      "cauliflower-cooked": "Raw in Doleman, boiled in ours. Same leaching argument. 13%.",
-      "green-beans-cooked": "Doleman's dwarf beans are raw; ours are boiled.",
-      "ground-beef": "Doleman analysed minced beef AS PURCHASED \u2014 raw \u2014 and our USDA row is cooked and pan-browned. It would have shipped at 38%.",
-      "kale-cooked": "Raw in Doleman, boiled in ours. Same leaching argument. 24%.",
-      "leeks-cooked": "Raw in Doleman, boiled in ours.",
-      "parsnips-cooked": "Raw in Doleman, boiled in ours.",
-      "potato-baked": "Raw in Doleman, baked in ours.",
-      "red-bell-pepper-raw": "Doleman measured GREEN pepper; ours is red. Both raw, but a green pepper is an unripe fruit and is not the same food.",
-      "snow-peas-cooked": "Doleman measured sugar snap peas, raw; ours are snow peas, boiled \u2014 a different pod and a different state.",
-      "sweet-potato-baked": "Raw in Doleman, baked in ours."
-    },
-    _gap_champions_refused: {
-      garlic: "REFUSED 2026-08-22, and it is the food the campaign most wanted. Doleman measures garlic at 252.3 umoles/g DRY \u2014 the highest allium in its table \u2014 and Wallach names garlic by name on germanium's own page. But a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his 500 mg sulphur target: under the 7% bar. Only a whole cup of raw garlic (136 g) clears anything, and nobody eats that. AFCD measures garlic for none of the four gap nutrients, and germanium \u2014 the thing Wallach actually names it for \u2014 carries no numeric target for a food to be measured against. Stretching the portion to admit it is what the derive's own error message forbids. Garlic is a flavouring, not a serving, and the number says so."
-    }
-  };
-
   // assets/js/src/state/foods.ts
   var DATA = FoodsCompositionSchema.parse(foods_composition_data_default);
   var BY_ID = new Map(DATA.foods.map((f) => [f.id, f]));
-  var PINNED = (foods_catalog_curation_default.pinned?.ids ?? []).filter((id) => BY_ID.has(id));
-  var W_ADEQ = 0.6 / 0.9;
-  var W_BREADTH = 0.3 / 0.9;
-  var BREADTH_HALF = 5;
   function foodCatalogSize() {
     return DATA.foods.length;
   }
   function foodById(id) {
     return BY_ID.get(id);
+  }
+  function foodQualifyPct() {
+    return Math.round(DATA._meta.qualify_fraction * 100);
+  }
+  function listFoods() {
+    return DATA.foods;
+  }
+  function foodHits(id) {
+    const food = BY_ID.get(id);
+    return food === void 0 ? [] : hitsOf(food);
+  }
+  function foodCategories() {
+    return [...new Set(DATA.foods.map((f) => f.category))].sort((a, b) => a.localeCompare(b));
   }
   function foodNutrientRows(id) {
     const food = BY_ID.get(id);
@@ -35664,6 +33657,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       label: DISPLAY[n.slug]?.label ?? n.slug,
       category: DISPLAY[n.slug]?.category ?? "",
       pct: Math.round(n.fraction * 100),
+      amount: n.amount,
+      unit: n.unit,
       tier: n.provenance.tier,
       source: sourceWordsFor(n.provenance.source_id),
       conservative: n.provenance.conservative === true
@@ -35676,6 +33671,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           label: DATA._meta.efa_reference.label,
           category: DATA._meta.efa_reference.category,
           pct,
+          // The EFA group's amount is FLAXSEED OIL, not the acid the source measured —
+          // the same currency EFA_GOAL_MG is in, because that is the only pair of numbers
+          // it is honest to print beside each other. The unit is mg by construction: the
+          // goal field the percentage divides by is `maintenance_mg`.
+          amount: food.efa.oil_equivalent_mg,
+          unit: "mg",
           tier: "EXACT",
           source: sourceWordsFor("usda-sr-legacy"),
           conservative: false
@@ -35684,18 +33685,36 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     return rows.sort((a, b) => b.pct - a.pct || a.slug.localeCompare(b.slug));
   }
+  function goalGapSlugs(want, goals) {
+    const outstanding = new Set(want);
+    const gaps = /* @__PURE__ */ new Set();
+    for (const g of goals) {
+      for (const m of g.members) {
+        if (outstanding.has(m)) {
+          gaps.add(m);
+        }
+      }
+    }
+    return gaps;
+  }
+  function matchesQuery(food, query) {
+    if (query === "") {
+      return true;
+    }
+    return food.name.toLowerCase().includes(query) || food.category.toLowerCase().includes(query);
+  }
   function rankFoodsForCoverage(input) {
     const owned = new Set(input.owned ?? []);
     const goals = input.goals ?? [];
     const limit = input.limit ?? 3;
-    const greedy = input.greedy ?? true;
-    const education = input.education ?? false;
-    const browse = input.browse ?? false;
+    const category = input.category ?? "";
+    const query = (input.query ?? "").trim().toLowerCase();
     const outstanding = new Set(input.want);
-    const available = DATA.foods.filter((f) => !owned.has(f.id));
+    const available = DATA.foods.filter((f) => !owned.has(f.id) && (category === "" || f.category === category) && matchesQuery(f, query));
     if (available.length === 0) {
       return [];
     }
+    const goalGaps = goalGapSlugs(input.want, goals);
     const suppliesOf = (f) => {
       let n = 0;
       for (const row of f.nutrients) {
@@ -35706,9 +33725,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return n;
     };
     const goalIdsFor = (f) => goals.filter((g) => g.members.some((m) => f.nutrients.some((n) => n.slug === m))).map((g) => g.id);
+    const goalFillOf = (f) => {
+      let filled = 0;
+      for (const row of f.nutrients) {
+        if (goalGaps.has(row.slug)) {
+          filled += Math.min(row.fraction, 1);
+        }
+      }
+      return filled / goalGaps.size;
+    };
+    const byGoal = goalGaps.size > 0;
+    const scored = available.map((f) => ({ food: f, key: byGoal ? goalFillOf(f) : f.strength }));
+    scored.sort((a, b) => b.key - a.key || b.food.strength - a.food.strength || a.food.id.localeCompare(b.food.id));
     const out = [];
-    const emitted = /* @__PURE__ */ new Set();
-    const emit2 = (food, score, isPinned) => {
+    for (const { food, key } of scored) {
+      if (out.length >= limit) {
+        break;
+      }
       const hits = hitsOf(food);
       out.push({
         foodId: food.id,
@@ -35719,74 +33752,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         supplies: suppliesOf(food),
         breadth: hits.length,
         goalIds: goalIdsFor(food),
-        pinned: isPinned,
-        score,
+        score: key,
         hits
       });
-      emitted.add(food.id);
-      if (greedy) {
-        for (const row of food.nutrients) {
-          outstanding.delete(row.slug);
-        }
-      }
-    };
-    let pinRank = 0;
-    for (const id of PINNED) {
-      if (out.length >= limit) {
-        break;
-      }
-      const food = BY_ID.get(id);
-      if (food === void 0 || owned.has(id)) {
-        continue;
-      }
-      if (!education && suppliesOf(food) === 0) {
-        continue;
-      }
-      emit2(food, 100 - pinRank, true);
-      pinRank += 1;
-    }
-    while (out.length < limit) {
-      let bestFood = null;
-      let bestScore = -1;
-      let bestSupply = 0;
-      for (const f of available) {
-        if (emitted.has(f.id)) {
-          continue;
-        }
-        const s = suppliesOf(f);
-        if (s > bestSupply) {
-          bestSupply = s;
-        }
-      }
-      for (const f of available) {
-        if (emitted.has(f.id)) {
-          continue;
-        }
-        const supplies = suppliesOf(f);
-        if (!education && supplies === 0) {
-          continue;
-        }
-        const adequacy = bestSupply > 0 ? supplies / bestSupply : 0;
-        const breadth = f.breadth / (f.breadth + BREADTH_HALF);
-        const score = education ? f.strength : W_ADEQ * adequacy + W_BREADTH * breadth;
-        if (score > bestScore) {
-          bestScore = score;
-          bestFood = f;
-        }
-      }
-      if (bestFood === null) {
-        break;
-      }
-      emit2(bestFood, bestScore, false);
-    }
-    if (browse && out.length < limit) {
-      const rest = available.filter((f) => !emitted.has(f.id)).sort((a, b) => b.strength - a.strength || a.id.localeCompare(b.id));
-      for (const food of rest) {
-        if (out.length >= limit) {
-          break;
-        }
-        emit2(food, food.strength, false);
-      }
     }
     return out;
   }
@@ -42237,7 +40205,7 @@ phenol-explorer.eu -- not bypassed); Clements & Darnell 1980 for inositol is pay
 free route tried, and phytate tables are NOT a substitute because phytate-bound inositol is poorly
 absorbed. The foods feature remains uncommitted on purpose, per the standing tree rule.` }, { id: "lg_mt4hzfua_ehu7cg", ts: "2026-08-22T09:52:49.522998-05:00", surface: "foods/second-sources", kind: "round-close", summary: "Seven of the thirteen essentials no food could reach now have real foods behind them, every food number says which published source it came from and how firmly, and the approved tile design is live.", detail: 'Until this round, thirteen of the ninety essentials had no food a person could eat to move them \u2014 the app could only ever say "take a supplement". Seven of those now name real foods, and the numbers on screen say where each came from. Iodine points at iodised salt, lobster and ricotta; molybdenum at tofu, snow peas and pumpkin seeds; sulphur at lobster, venison, turkey and chicken breast; silica at dates, green beans and spinach; chloride at salt, cottage cheese and chard; flavonoids at blackberries and strawberries; biotin at peanuts and hazelnuts. Walnuts, which the app scored at zero for essential fatty acids yesterday, are now worth 220% of Dr. Wallach\'s daily dose.\n\nHover any number on a food card and it names the publication it came from. Where two tables had to be matched up by food NAME rather than by a shared id, the number carries a small "\u2248" and says plainly that a person paired the two by hand \u2014 a close stand-in, not a measurement of that exact item.\n\nThe half of this round worth remembering is what was REFUSED. Garlic \u2014 the food the campaign most wanted, the richest allium in the literature, and one Dr. Wallach names by name \u2014 did not make it: a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his sulphur target. It is a flavouring, not a serving. Oysters at 54-67% sulphur were refused because that source measures them raw and ours is cooked. Lamb chop at 42% was refused because their cut is lean and ours is lean and fat, and fat carries almost no sulphur. Boron was acquired, pinned and extracted, then deliberately not used at all: no source we hold measures boron per 100 g, and the one table that exists is per serving without ever saying what a serving weighs. Twenty-five refusals in total, each written down with its reasoning so nobody re-derives the hope.\n\nTHE TECHNICAL RECORD\n\nSECOND-SOURCE SPINE. eden/foods/sources/sources.json gained `nutrient_bindings` \u2014 the ONE home for how a pinned payload becomes a number: payload -> extractor -> committed candidate -> join kind -> value kind -> unit -> the words the card uses. Three value shapes: `cell` (one cell, byte-exact), `sum` (Sigma of component ROWS \u2014 USDA\'s per-compound flavonoid rows), `sum_fields` (Sigma of named FIELDS \u2014 Doleman splits sulphur in two). All sums in DECIMAL, never float: \'147.63\' + \'19.58\' must be \'167.21\' on every host because that string is what the gate re-derives. sr_legacy_food.csv (the fdc_id->NDB bridge) and USDA water/18:2/18:3/CLA joined the committed extract as `support_nutrients`, deliberately NOT nutrient_map, so an arithmetic input can never be mistaken for a Wallach-targeted essential.\n\nTIER IS DERIVED FROM THE JOIN, NEVER TYPED. An id join may be EXACT; a name join is APPROXIMATE forever. The gate REDs the other combination in EITHER the row or the binding, and REDs a name-joined row whose key or reasoning is not in the curation \u2014 a matcher\'s proposal cannot ship as though a person had accepted it.\n\nTWO SOURCES FOR ONE ESSENTIAL. Bindings declare `combine`: `sum` where parts measure DIFFERENT things (USDA publishes proanthocyanidins separately from the other flavonoid classes, and omitting them understated every total \u2014 2 qualifying foods became 10), or `first` where they measure the SAME thing and only one may win. Sulphur is `first`: AFCD primary because it measures directly per 100 g, Doleman second because its dry-weight value must be married to a moisture from a different sample. They are complementary rather than competing \u2014 AFCD supplies 24 foods, Doleman fills the three it has nothing for (chicken breast, cod, egg). The derive REFUSES to guess: a multi-part binding with no `combine` hard-fails.\n\nDOLEMAN, PINNED. Europe PMC serves the CC BY paper as JATS XML, so Table 1 comes out of real table cells rather than PDF coordinates. All 32 rows matched the values that had been hand-typed into convert_sulfur.py exactly \u2014 they were right; pinning makes them provable. That script is retired. The dry-to-fresh conversion (umol/g dry x 32.06 x dry-matter x 0.1) happens at derive time because the dry-matter fraction depends on which catalog food the row was paired with; every shipped row carries the umol/g, the water, the fraction and the arithmetic as a sentence. 32.06 lives in the binding AND independently in the gate, so editing one REDs.\n\nTHE PAIR RULE, CORRECTED MID-ROUND BY LUNETH. My rule dropped any food whose source measured several varieties, which made the app assert "lentils contain no silica" \u2014 a claim every one of that source\'s lentil rows contradicts. His words: "Lentils DO have silica, ALL of them... Claiming lentils have no silica when they do would be the worst possible option." The rule conflated WHICH measurement to attach (genuinely ambiguous) with WHETHER THE FOOD CONTAINS IT (not ambiguous). A blank card reads as "not a source", which is a stronger claim than the ambiguity being avoided, and a false one. Replaced with: take the LOWEST variety and SAY SO \u2014 `conservative` in the curation, carried to the card, which appends "It is the lowest of the varieties that source measured, so it holds whichever kind you eat." A poison case REDs if that flag is dropped.\n\nDESIGN F WIRED. The signed-off record keeps its .lb-* classes and is never edited; the app ships the same design under .fs-*, because a generic two-letter namespace in a sheet that loads over every workspace is how a bare `.rl-` rule once stacked Coverage\'s delete buttons. Chip colours come from the canon\'s own category, read off the data. Short labels are DERIVED from the canon (drop every parenthetical, drop a "/ alternative" tail) rather than 29 hand-typed strings; the first attempt split at the first parenthesis and produced "Vitamin D2", silently dropping half of what that tile covers \u2014 caught before it shipped. render_probe_food_tile.js now holds BOTH the record (190 foods) and the shipped app (120 tiles, clicked through the real control) to the same five clauses.\n\nEFA-FROM-FOODS. The meter matched regimen items by canonical name against the PRODUCT table, so a food matched nothing and walnuts moved the omega tiles by zero. Foods now enter the same meter converted to OIL \u2014 his dose is nine grams of flaxseed oil, and USDA measures a food\'s linoleic and linolenic ACID; summing them is adding pounds to kilograms. The bridge is his own dose read through the oil he named (USDA\'s cold-pressed flaxseed oil, 14.327 + 53.368 g per 100 g), read from the pinned archive at derive time, never typed. 52 of 192 foods now feed it.\n\nNEGATIVE CONTROLS, 11 -> 31. New: edited second-source value; tier upgraded in the row or in the binding; pair missing from the curation; reasoning dropped; `conservative` dropped; joined to a row the human did not pair; unit swap; re-labelled source; deleted binding leaving numbers with no route home; edited COMPONENT of a summed total; hand-edited candidate; re-pointed payload hash; parts summed instead of one winning; multi-part binding with no `combine`; row crediting the wrong publication; conversion swapped; working no longer showing its terms. Clause 7 re-runs each extractor against its sha256-pinned payload and byte-compares \u2014 all six reproduce.\n\nTWO PROBE DEFECTS FOUND AND FIXED. The EFA probe\'s first negative control was meaningless: walking the food list to reach salt added every food first. Rebuilt to add one food the tile ITSELF says carries an EFA chip, with a no-add navigation as the control. And the tile probe was checking the "+N" badge against the meta line\'s "N of 90" \u2014 a second rendering of the same fact; checking a badge against its sibling proves only that two renderings agree. The tile now publishes data-hits.\n\nCLEANED BEFORE COMMIT. Three files removed rather than shipped: a superseded sulfur candidate, a dead demo merge, and mk_sources.py \u2014 which knew nothing about bindings, combine, per-part displays or the boron finding, so re-running it would have silently erased all of them.\n\nVERIFICATION. Board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), 79 unit tests, 31 gate poison cases, 5 render probes, build fresh. NO SEAL TAKEN AND NONE NEEDED: eden/corpus, eden/catalog and eden/products are untouched this round; knowledge_version stays 491, 2601 claims, 7 books.\n\nDEFERRED. Copy review \u2014 none of the foods copy has been through Luneth. Two chip labels differ from the demo\'s mock data because the canon says "Vitamin D2 + D3" and "Folic Acid". Design F\'s remove state is unwired because the ranker never lists an owned food. `strength` still counts nutrient rows only, so education-mode ordering under-ranks the EFA-rich foods.' }, { id: "lg_mt4k9syv_b4sq3h", ts: "2026-08-22T10:56:52.327146-05:00", surface: "dashboard/style", kind: "round-close", summary: "Seven owner-reported style items shipped across Coverage and the Regimen console \u2014 and the first of them, a servings step throwing the reader to the top, was a SECOND scroller the probe had never measured, so it had been passing over the defect all along.", detail: "Changing how many servings of something you take no longer throws you back to the top of your list, the food cards are readable in dark mode instead of near-black text on charcoal, and you can now page through every food we hold rather than only ever seeing the first three. Plus a pass of type and spacing across both tabs, all seven items from the owner's list and two rounds of refinement on top.\n\nWHAT LANDED, in his order. (1) THE SCROLL JUMP WAS A SECOND SCROLLER. The page scroller (.app-workspace) was already guarded; the Daily Protocol rail is its OWN scroller ([data-rail-list], max-height + overflow-y:auto) rebuilt through replaceChildren, and nothing guarded it \u2014 with more rows than fit, stepping the servings on a row near the bottom snapped the rail back to row one. Measured 572 -> 0 before, 572 -> 572 after, on both tabs. The guard was duplicated verbatim in coverage.ts and regimen.ts, so it moved to the new views/scroll-keep.ts; the Keep-after-delete path rebuilds the rail in place and now routes through it too. (2) DARK MODE ON THE FOOD TILES \u2014 theme.css block (M). Three defects, all of them ones that file had already named once: a cream-tuned category hue used as small text (mineral blue #2b6fb0 reads ~2.1:1 on the tile), a chip whose ink was mixed toward #000, and a + control whose hover was background:--ds-ink \u2014 which IS the light token in dark, so it flashed white. Hues brightened by the (J1) recipe with the MEANING untouched (minerals blue, vitamins orange, fatty acids purple); the chip's ink now mixes toward var(--ds-ink), which is correct in BOTH themes with no override and shifts cream by ~6/255 per channel. (3) TYPE ON THE TILE: chips 8 -> 10px, the lead label 8 -> 10px, the serving line 9 -> 10px, +N follows the chips. (4) PAGING, and the reason there was none: the RANKER stopped at seven foods, not the pager. Each emitted card consumes its essentials from the outstanding set, so the greedy walk runs dry after about seven \u2014 correct for a recommendation, wrong for a pager. state/foods.ts gained a `browse` tail: when the gap-fill walk ends, rank the remainder by nutrient density (the key education mode already uses) and keep going. The recommendation itself is unchanged; only the tail extends. It is a SORT, not another argmax loop, with an id tiebreak so equal-strength foods cannot swap places between paints. (5) 'Based on your goals' -> 'Supplements \u2014 based on your goals'. (6) 'Add or scan a product to light the field' -> 'Add a food or supplement to begin', at 0.7rem \u2014 and it exposed a leading bug my own change made visible: as an inline the <small> took its line box from .rail-empty's 24.8px strut, so two wrapped lines sat 24.8px apart under 11.2px type. Now display:block with its own line-height. (7) THE CONSOLE COLUMN'S RHYTHM. .ck-main sets one 32px gap between every child and the shared .fs-block added 16px above and 24px below on top of it \u2014 48px and 56px where every other seam is 32px. Dropped inside .ck only; Coverage's aside keeps the shared margins. FOOD SOURCES was the column's third section heading still at 0.6rem/400 next to two siblings at 0.7rem/700 (it shipped after that legibility bump); all three now measure 11.2px/700/1.68px. 'Best next moves' gained the foods heading's dotted rule, cut between the eyebrow and its note \u2014 an <i> rather than a pseudo because .recs__head has a second child. \xB7 REFINEMENT ROUND TWO (owner, same session): browsing must reach the WHOLE catalog, so both tabs now page the full 192. Coverage walks all 64 pages with the arrows; the console's pager is capped at 30 squares, and THE CAP IS THE REQUEST (limit = FOOD_LIMIT * FOOD_PAGE_CAP), so the count is still derived from the live pool and never stored: it holds at 30 through 103 foods owned, falls to 29/28/26 at 105/110/115, and returns to 30 when the regimen is cleared \u2014 walked, not reasoned about. Coverage's ADD cap (FOOD_MAX = 12) is unchanged and still enforced; only browsing is uncapped, because a cap on what you may take is not a reason to hide what exists. Thirty squares fit one row where sixty-four wrapped to two. Sizes: page squares 10px, arrows 12px, the 'N / 64' readout 11px, and the arrows lifted 1px via padding-bottom on a place-items:center grid \u2014 which moves the GLYPH without moving the button, its border, or the row's baseline (A/B'd at 8x). \xB7 REFINEMENT ROUND THREE: lead label to 10px with the pills; .fs-note (both tabs, including the exhaustion egg), Coverage's .recs__note and the .ck-recs__go button raised to 0.7rem, weight left at 400 because they are sentences and 700 mono prose reads as shouting. The fourth string he named \u2014 'All 90 essentials are now covered' \u2014 was ALREADY 0.7rem/700; it rides .ck-recs__note, which the console's legibility bump covers. Measured before touching anything, so it was left alone rather than re-set to the value it already had. \xB7 THE GATE WAS BLIND, AND IT WAS BLIND TWICE. render_probe_dose_scroll.js had been PASSING over the rail defect for as long as the rail has existed, because it only ever read .app-workspace \u2014 and it was clicking document.querySelector('[data-dose-up]') unscoped, so with both workspaces in the DOM its 'regimen' pass was clicking Coverage's HIDDEN stepper and watching the Regimen page react. It now scopes every click to the workspace under test, asserts the element is visible first, and measures BOTH scrollers, 10 checks. Its old fixed scrollTop of 500 also sat within 50px of the bottom of the regimen page, so it passed on headroom alone; when item 7 spent 40px of that headroom the probe went red over correct behaviour. It now scrolls to the middle and asserts the honest rule: the reader stays exactly where they were, unless the content no longer reaches that far, in which case they land at the new end. \xB7 PERFORMANCE, MEASURED BEFORE COMMITTING TO THE DESIGN, because he asked whether whole-catalog paging would lag: 1.54 ms to build all 192 recs, 0.19 ms for the old 24, 7-8 ms for a page click end to end (that is the whole innerHTML swap, not the ranking). Nothing is cached and nothing can go stale. \xB7 FILES: dashboard/assets/js/src/views/scroll-keep.ts (new), views/foods-block.ts, views/coverage.ts, views/regimen.ts, state/foods.ts, assets/styles/dashboard.css, theme.css, workspace-coverage.css, workspace-regimen.css, assets/data/view-copy.json, tools/probes/render_probe_dose_scroll.js. \xB7 FIXED AS FOUND: a comment in regimen.ts still claimed the foods half 'is not built yet (it waits on a source-rule ruling)' \u2014 it shipped 2026-08-22. \xB7 VERIFICATION: board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), no new reds; 79 unit tests; render probes dose_scroll (10 checks, both scrollers), food_tile (120 shipped tiles walked, all five design-F clauses hold at 10px chips), foods, efa_foods, food_tier, coverage_add_remove (33 checks); build fresh; eslint at HEAD parity on every touched file (foods 2, foods-block 7, regimen 8, coverage 12 \u2014 all pre-existing, none added). Screenshots in temporary/, signed off by Luneth. The terminal states were REACHED, not planted: 192 foods added for the exhaustion egg, 90/90 covered for the finish line. \xB7 NO SEAL TAKEN AND NONE NEEDED \u2014 eden/corpus, eden/catalog and eden/products are untouched; knowledge_version stays 491. No number, dose, target or claim was touched this round; every denominator on screen is still Wallach's.\n\nDEFERRED / KNOWN: the app now differs DELIBERATELY from the signed-off design-F record (chronicle/decisions/2026-08-21-food-tile-F-approved.html) on type size \u2014 the record is never edited, the owner asked for the larger type, and the probe's five clauses still hold on both. .fs-note is shared, so raising it also raised 'No food moves a remaining gap' and 'That's the last food this tab will suggest' \u2014 same class, same role, and he was told. The 'Add a food or supplement to begin' line still wraps to two lines with 'begin' alone on the second. PRE-EXISTING, NOT TOUCHED: the EXPLORE THE PRODUCTS TAB button is a grid item in .ck-recgrid, so display:inline-block is blockified and it stretches to a full cell instead of hugging its text; raised with him, left alone. Still queued from last round: the foods copy review, and the two chip labels where canon says 'Vitamin D2 + D3' and 'Folic Acid' where the demo said 'Vitamin D' and 'Folate'.", metadata: { chunk: "style-pass-2026-08-22", board: "100/100", items: 7, probes: ["dose_scroll", "food_tile", "foods", "efa_foods", "food_tier", "coverage_add_remove"] } }, { id: "lg_mt4ro9c3_mfesr8", ts: "2026-08-22T14:24:04.035147-05:00", surface: "web/cache-contract", kind: "incident", summary: "The live site served a superseded corpus behind a fresh bundle \u2014 no error, just a wrong claim count \u2014 because three artifacts shipped under fixed names. They are content-hashed now, and the contract is gated with three poisons that each red it on demand.", detail: "The website was serving yesterday's copy of the knowledge base while showing today's app \u2014 no error, nothing broken-looking, just a claim count that was wrong and ten claims back on the page that had been removed. The three big data files now carry their own fingerprint in their filename, so a changed file is a different file and no cache anywhere can hand out an old one again.\n\nWHAT HAPPENED, MEASURED. After the 2026-08-22 upload the live site read 'Search 2,611 sourced claims' where the local build reads 2,601 \u2014 three runs each, deterministic. The live page's own fetch of assets/data/corpus-embed.json returned knowledge_version 490 with 2611 claims; the shipped seal is 491 with 2601. curl of the SAME URL returned the correct file and sha256-matched the build, so the two disagreed on identical bytes on disk. The headers settled it: `x-proxy-cache: HIT`, Last-Modified a day stale, ETag sizing the PREVIOUS deploy's file (0x2d44c5 = 2966725 B against the new 2953976 B). All three split artifacts were stale; index.html was a proxy MISS and every content-hashed asset was fresh. No service worker (checked: 0 registrations, no controller). \u2605 AND Cache-Control WAS NOT THE FIX. fetch(url,{cache:'reload'}) and {cache:'no-store'} both still returned HIT \u2014 those directives govern the BROWSER's cache; an upstream proxy's own object store is under no obligation to honour them. A flush cleared it, but a manual step that can be silently forgotten is not a fix: forgetting it produces a wrong site that looks perfectly fine. \xB7 THE FIX: the three artifacts are now CONTENT-HASHED like the JS and CSS have always been. tools/esbuild_web.mjs owns the naming (sha256, first 10 hex, matching build_web.py's digest()), bakes the map into the bundle as --define:__SPLIT_MANIFEST__, and writes a sidecar manifest that build_web.py reads to name the shipped files. ONE hasher, not two: two independent implementations that drift produce a bundle asking for a file nobody shipped. state/data-split.ts fetches pathFor(key) off that manifest instead of a fixed `./assets/data/${key}.json`. build_web.py hard-fails if the bundle names a file it did not write, or if a name does not carry that file's actual hash; esbuild_web.mjs hard-fails if a hash cannot be computed. The chain is now airtight end to end: index.html is never cached hard (must-revalidate, and verified a proxy MISS) \u2192 it names the hashed bundle \u2192 the bundle names the hashed artifacts \u2192 all three change name on any change. `json` therefore joins the immutable one-year group in .htaccess; those three are the only .json the web build ships and every one now carries its own hash. \xB7 GATED IN THE SAME PATCH (\xA700.B.2). split_data_manifest_agrees gained the cache contract: esbuild_web.mjs must define __SPLIT_MANIFEST__, data-split.ts must read it, and the literal `./assets/data/${key}.json` must not return. Three poisons added to tools/tests/test_split_data_manifest.py, which now reds on 8 drift shapes instead of 5 \u2014 each one drove the gate red on demand, so it is not vacuous. A regression here is invisible twice: it cannot fail on file:// (nothing is fetched) and it does not ERROR on the web (it just serves yesterday), which is exactly why it needed a gate and not a comment. \xB7 FILES: tools/esbuild_web.mjs, tools/build_web.py, dashboard/assets/js/src/state/data-split.ts, tools/invariants.py, tools/tests/test_split_data_manifest.py. \xB7 VERIFIED: web build ships corpus-embed.2154893117.json, search/search-index.169c48eae2.json, creators-log-embed.da1bb55373.json (the corpus hash matches the sha256 taken independently off the live host); served over real http, the app made ZERO requests to an un-hashed path, all three returned 200, and it hydrated to 2,601 claims / 7 books with search answering from the hashed index. The sidecar manifest is deleted before packaging \u2014 0 build-scaffolding files ship. File build unaffected (SPLIT_DATA=false, nothing fetched): dashboard reads 2,601 across three runs. Board 100/100, 79 unit tests, dose_scroll 10 checks, food_tile all five clauses, tsc clean, eslint at HEAD parity on data-split.ts (2 = 2). \xB7 ALSO CLOSED THIS ROUND: the foods copy review. Every string was read in its exact rendered form \u2014 the four gloss variants, the eight source names, 'Omega EFAs', the serving line, the three block notes \u2014 and NOTHING was changed. Owner ruled the two disputed chip labels stay as canon derives them ('Vitamin D2 + D3', 'Folic Acid'); the demo's shorter mock-data wording is declined, because hand-writing them would put those names in a second place to drift. Both items the 2026-08-22 handoff had parked are now closed.\n\nDEFERRED: the site declares NO favicon \u2014 not in dashboard.html and not in index.html \u2014 so every visitor's browser probes /favicon.ico, 404s, and the tab shows a generic globe. It is the only 404 on the live site. Raised with the owner, not taken. \u26A0 STILL TRUE AND WORTH KNOWING: .htaccess only applies while NGINX Direct Delivery is OFF, and a host setting can revert it \u2014 the one-line proof after every deploy is that x-content-type-options and referrer-policy appear on the bare domain (they do today), and that Content-Encoding is ABSENT on eng.traineddata.gz (it is). The proxy cache in front is a SEPARATE layer from Direct Delivery and is the one this patch defeats.", metadata: { chunk: "split-artifact-hashing-2026-08-22", board: "100/100", gate: "split_data_manifest_agrees", poisons: 8, stale_seal_served: 490, shipped_seal: 491 } }, { id: "lg_mt4sshc6_qtppo1", ts: "2026-08-22T14:55:20.646791-05:00", surface: "web/favicon", kind: "build", summary: "The site declared no tab icon at all, so every browser probed /favicon.ico and 404ed. Luneth's two PNGs are wired into both distributions \u2014 and kept OUT of the year-long cache group, because a fixed name that can be replaced is the trap we fixed today.", detail: `The site had no tab icon at all, so every visitor's browser asked for one, got nothing, and showed a generic globe. Luneth drew two and they are now wired into both the download and the website.
 
-Two PNGs he authored (16x16 and 32x32, RGBA) at dashboard/assets/favicons/, declared as <link rel="icon"> in dashboard.html \u2014 the shell had NO icon declaration of any kind, which is why browsers were probing /favicon.ico and 404ing. Two sizes rather than one so the tab strip is not a downscale of the larger art. They sit under assets/ like every other image, so the existing CSP img-src 'self' covers them and no root-level file is needed \u2014 which matters because the web deploy is 'upload the CONTENTS of dist-web/', and a root file would be one more thing to remember to drag. \xB7 build_web.py ships them: 'assets/favicons' joins VERBATIM_DIRS, copied under their exact names because the shell references them by path. \xB7 \u2605 AND THEY ARE DELIBERATELY NOT IMMUTABLE. .png sits in the year-long cache group, and a favicon is the one image with a FIXED name that might actually be REPLACED \u2014 the same shape of trap that served a superseded corpus earlier today. A later FilesMatch pins ^favicon-.*\\.png$ to must-revalidate instead; at ~2 KB a conditional request costs nothing and a new icon reaches everyone on their next load. \xB7 VERIFIED by driving BOTH distributions: the icons are declared, the 32x32 is fetched 200 image/png, and there are now ZERO requests to /favicon.ico, ZERO responses >=400 and ZERO console errors on the web build over real http AND on the file:// download. Board 100/100, 79 unit tests, dose_scroll 10 checks.`, metadata: { chunk: "favicon-2026-08-22", board: "100/100", sizes: ["16x16", "32x32"] } }];
+Two PNGs he authored (16x16 and 32x32, RGBA) at dashboard/assets/favicons/, declared as <link rel="icon"> in dashboard.html \u2014 the shell had NO icon declaration of any kind, which is why browsers were probing /favicon.ico and 404ing. Two sizes rather than one so the tab strip is not a downscale of the larger art. They sit under assets/ like every other image, so the existing CSP img-src 'self' covers them and no root-level file is needed \u2014 which matters because the web deploy is 'upload the CONTENTS of dist-web/', and a root file would be one more thing to remember to drag. \xB7 build_web.py ships them: 'assets/favicons' joins VERBATIM_DIRS, copied under their exact names because the shell references them by path. \xB7 \u2605 AND THEY ARE DELIBERATELY NOT IMMUTABLE. .png sits in the year-long cache group, and a favicon is the one image with a FIXED name that might actually be REPLACED \u2014 the same shape of trap that served a superseded corpus earlier today. A later FilesMatch pins ^favicon-.*\\.png$ to must-revalidate instead; at ~2 KB a conditional request costs nothing and a new icon reaches everyone on their next load. \xB7 VERIFIED by driving BOTH distributions: the icons are declared, the 32x32 is fetched 200 image/png, and there are now ZERO requests to /favicon.ico, ZERO responses >=400 and ZERO console errors on the web build over real http AND on the file:// download. Board 100/100, 79 unit tests, dose_scroll 10 checks.`, metadata: { chunk: "favicon-2026-08-22", board: "100/100", sizes: ["16x16", "32x32"] } }, { id: "lg_mt4y0vv2_w4ix4j", ts: "2026-08-22T17:21:50.798179-05:00", surface: "foods/order+pager+catalog", kind: "round-close", summary: "Foods get one honest order, a real pager with a filter, and a full nutrition label in the Knowledge drawer beside the products.", detail: "Three changes to how foods work. The list of foods on the Regimen tab is no longer in a puzzling order \u2014 it now leads with whichever food fills the most of whatever you have picked as a goal and still have missing, or with the most nutritious food overall when you have picked nothing. Paging through the catalog got a normal pager (1 2 3 4 5 \u2026 64) with a category picker and a name box beside it, so finding a food is a few seconds rather than a few dozen clicks. And every food in the catalog now appears in the Knowledge drawer alongside the Youngevity products, in its own colour, with a full nutrition label behind it.\n\n\u2605 THE ORDER (state/foods.ts, rewritten). Owner ruling 2026-08-22 REVERSES two earlier ones: the eggs pin (2026-08-21) and the greedy walk are both gone, and goals now drive the food order where wantedSlugs() still deliberately ignores them for products. ONE sort key over the whole catalog: with goals chosen it is the share of the OUTSTANDING goal targets a serving fills \u2014 \u03A3 min(fraction, 1) over goal \u2229 want, over |goal \u2229 want| \u2014 capped per nutrient because 500% of one target has not filled five. With no goals, or with every goal nutrient already covered, it is `strength` (the food's own \u03A3 of Wallach fractions), which is 'most nutritious first'. Ties fall to strength then to the id, so the order is TOTAL and cannot reshuffle between paints. `greedy`, `education` and `browse` are gone from the signature; `category` and `query` replace them, applied to the POOL so the pager's page count stays derived. The score is a sort key and is never rendered, so its denominator has only to be constant across candidates \u2014 a goal naming omega-3 (which no row can credit) dilutes every candidate identically. THIS APPLIES TO COVERAGE TOO: one shared ranker, and two different orders for the same list on two tabs would be worse. \xB7 \u2605 THE PAGER (views/foods-block.ts + dashboard.css). Windowed, and the window STARTS at the current page rather than centring \u2014 the owner's literal shape: '1 2 3 4 5 \u2026 64' on page one, '1 \u2026 20 21 22 23 24 \u2026 64' on page twenty. It slides back only at the end, so the last page reads '1 \u2026 60 61 62 63 64' instead of a lonely '1 \u2026 64'. An ellipsis is emitted only between genuine non-neighbours. FOOD_PAGE_CAP=30 is GONE with the squares that needed it (that cap existed because 64 wrapped to two rows); regimen.ts now requests foodCatalogSize() and the page count is derived from the live pool. Coverage keeps its \u2039 N/N \u203A arrows, scoped via a new .fs-pager--numbers modifier rather than off .fs-controls \u2014 sizing must not depend on whether a filter happens to sit beside it. \xB7 \u2605 THE FILTER. Category select (the catalog's own 11, derived \u2014 never a written list) plus a name box, pager left / filter right. views/regimen.ts gained paintFoods(), which repaints ONLY the block: render() replaces the whole workspace, so every keystroke would destroy the input being typed into. buildFoodsBlock marks and restores the caret across its own repaint. TWO defects were found by screenshot and both are now gated: (1) with a one-page pool the pager vanishes and space-between slid the filter to the left edge, out from under the cursor \u2014 now flex-end with an auto margin on the pager; (2) a filter matching nothing said 'No food moves a remaining gap', which is a different claim \u2014 there is now a third terminal string and the controls row is painted even when the list is empty, so the reader can undo it. \xB7 \u2605 SIZING (owner's second pass). Filter boxes and the numbered pager at 12px/22px, name box 225px. His own attempt at 12px vertical padding blanked the <select>: border-box + height:18px + 24px of padding leaves a NEGATIVE content box and a select given less room than its text renders empty. Expressed as height instead, where it cannot collapse; the comment says so. Measured: row, nav, select, input and button all exactly 22px; Coverage measured unchanged at 18px/12px. \xB7 \u2605 FOODS IN THE KNOWLEDGE DRAWER (views/knowledge-food-sheet.ts, new). 192 foods mixed into the Products grid on the SAME card as a product \u2014 same ghost number, same three lines \u2014 differing only in the FOOD chip and a rust --form (#b0442e) set from a class, not [data-form], because a food is not a delivery form. Rust because the seven form colours occupy cyan, amber, green, indigo, pink, olive and grey; red is the only family left. ONE order over both kinds by essentials supplied, where a food's count is hits.length \u2014 the same number its tile prints, so no food claims two breadths on two surfaces. An ALL/PRODUCTS/FOODS control shares the section head's ROW but is a SIBLING of it inside .kd-catbar, because applyKnowledgeSearch hides a head whose rows are all filtered away. \xB7 \u2605 THE NUTRIENT SHEET. Hero, at-a-glance, then a real label: Nutrient / Amount / % OF TARGET. The third column is WALLACH'S target, never the FDA's %DV \u2014 a product's label column is the Daily Value because that is what the manufacturer printed, and swapping one in for the other would be the quietest \xA700.A breach on any surface. Rows link to the essential's page, carry the tile's own provenance gloss, and mark \u2248 (name-paired) and floor (lowest variety). The sheet states its OWN limits: only rows at foodQualifyPct()% or more of a Wallach target ever entered the catalog, and no calorie or macro source is pinned \u2014 so their absence is a gap in what we hold, not a claim about the food. FoodHit gained amount+unit so a label can print a number and not just a bar. \xB7 \u2605 HOME LIVE-SUGGEST answers with Products and Foods groups. A per-group floor keeps a query like 'vitamin' (a dozen essentials) from starving the kinds it also matched. \xB7 \u26A0 DEAD CODE FOUND AND REMOVED. (1) state/foods.ts claimed a gate `food_catalog_pins_resolve` REDs on an unresolvable pin 'at build time'. NO SUCH GATE EXISTS in tools/invariants.py \u2014 it was a WISH written as enforced (R7), and it has read that way since the food recommender landed. Gone with the pin. (2) The drawer's tab list computed a `count` for four tabs that tabsHTML has never rendered, including a productCount() call on every paint; productCount() was then dead and is replaced by productSuggestItems(). (3) The board's own no_new_dead_code gate caught an unused export of mine mid-build (foodCatalogCount) and it was removed. \xB7 \u26A0 AND ONE THAT SHIPPED. The food sheet's 'Add to regimen' button was UNSTYLED \u2014 .kd-ep-add-regimen's fill rule was scoped to .kd-ep--prod, so the food sheet fell through to the browser default. The owner caught it by eye. Nothing failed: a button with no rule still renders, still clicks, and passes every check that asks whether it EXISTS, which is exactly what my probe asked. The gate is now a CROSS-SHEET comparison (font, size, weight, transform, padding, radius, colour must match the product sheet; fill must be real and differ), and the negative control re-broke it: 7 of 8 checks went red (Arial 13.3px 400, no transform, 1px 6px, 0px radius, black) and green again on restore. The 8th ('filled, not transparent') stayed green because a UA default button has a grey fill \u2014 that clause is the weak one and is noted.\n\nFILES: state/foods.ts (rewritten), state/foods.test.ts (19 tests, ordering expectations recomputed from the artifact rather than written down), views/foods-block.ts, views/regimen.ts, views/coverage.ts, views/knowledge.ts, views/knowledge-products.ts, views/knowledge-home.ts, views/knowledge-food-sheet.ts (NEW), styles/dashboard.css, styles/drawer-knowledge.css, data/view-copy.json (+13 keys), data/foods-catalog-curation.json (the `pinned` block removed, `_pinned_retired` recording the reversal beside it \u2014 dead curation that looks live is data someone rewires), tools/probes/render_probe_food_pager.js (NEW), tools/probes/render_probe_food_catalog.js (NEW), tools/probes/render_probe_knowledge.js (taught to count both kinds), tools/probes/render_probe_food_tier.js (a drifted 'the recommender is greedy' comment).\n\nVERIFIED: board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), 85 unit tests, tsc clean, eslint at or below HEAD parity on every touched file (foods.ts 2\u21920, foods-block 7=7, regimen 8=8, coverage 12=12, knowledge 6=6, knowledge-products 0=0, knowledge-home 0=0, foods.test 13\u219210, the new view file at 0). Probes: food_pager 30 checks, food_catalog 44 checks, knowledge, knowledge_filter, entity, orac_supplements, search_routing, foods, food_tile, food_tier, efa_foods, dose_scroll \u2014 all PASS. MEASURED, not eyeballed: the controls row and every control in it at 22px with the filter's right edge on the block's; the catalog control adds 0px to the section head's row and the grid's top is unmoved (A/B'd by unwrapping the bar back to the pre-change structure in the live DOM). Screenshotted in BOTH themes and signed off by Luneth.\n\nDEFERRED / KNOWN: a windowed pager can only step to a page it LISTS, so reaching page 40 is ~10 clicks \u2014 inherent to the shape asked for, and the filter is the fast path. Foods rank below products in the mixed grid because products genuinely supply more of the 90 (best product 35, best food 13), so the two kinds meet around the 13-and-below band. The rust hue is one line to change if he wants another." }, { id: "lg_mt4y6gs2_tabi1s", ts: "2026-08-22T17:26:11.186792-05:00", surface: "web/probe", kind: "milestone", summary: "The website build is now driven by a probe before upload, comparing its rendered corpus counts against the download build rather than trusting headers.", detail: "The website build now gets checked by a machine before it is uploaded. Until today nothing ever opened it \u2014 the download was tested and the website was assumed to match. That assumption is exactly what let the site quietly serve yesterday's knowledge base earlier this month while every technical signal said it was fine.\n\ntools/probes/render_probe_web_build.js (NEW). Serves dist-web/ over a real http server on 127.0.0.1 (an ephemeral port \u2014 a fixed one fails with EADDRINUSE against its own previous run in TIME_WAIT and reads as a broken build) and drives it with puppeteer. file:// would not exercise the fetch path at all, which is the entire point: the web build STUBS the three split artifacts out of the bundle and fetches them, so a regression there is invisible on the download and silent on the web. \xB7 \u2605 THE METHOD IS A COMPARISON, NOT AN ASSERTION ABOUT A NUMBER. The corpus counts are read off the RENDERED page in BOTH distributions \u2014 the file build, where the corpus is inlined at build time, and the web build, where it is fetched \u2014 and required to agree. No literal to go stale, and a build hydrating from the wrong artifact cannot agree with the one that inlines it. That is the diagnostic the 2026-08-22 incident called for and did not have: `curl` and the page's own fetch() of ONE url returned DIFFERENT BYTES, so headers proved nothing. \xB7 ALSO ASSERTED: zero 4xx/5xx, zero page errors, and that every fetched assets/data/*.json carries a content hash \u2014 a fixed name is a name a cache can serve a stale copy of, which is the whole reason those three carry a digest. Then the surfaces the CSS rewrite could break: the Regimen pager + filter, the mixed catalog with its head agreeing with its grid, a food sheet with Wallach's target column, and the Add button still carrying its fill through the stylesheet rewrite-and-hash pass. \xB7 VERIFIED: 13 checks, all PASS against the dist-web built this round \u2014 both distributions read 2,601 claims / 7 books (matching seal 491), 3 artifacts fetched and 0 un-hashed. \xB7 HONEST LIMIT, stated rather than implied: the local server is NOT a model of SiteGround. The production cache contract lives in .htaccess and can only be verified against the live domain \u2014 this proves the BUILD is sound before upload, never that the host serves it right." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -119485,6 +117453,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       ep_record_label_cond: "The full picture",
       ep_record_note: "Grouped by type \u2014 open a group, then a claim, for Wallach's exact words and citation.",
       ep_works_with_lead: "Nutrients rarely work alone \u2014 Wallach names {n} this one partners with.",
+      fs_filter_all: "All foods",
+      fs_filter_cat_label: "Filter foods by category",
+      fs_filter_find: "Find a food\u2026",
+      fs_filter_none: "No food in the catalog matches that filter.",
+      fs_filter_q_label: "Find a food by name",
+      fs_pager_label: "More foods",
+      fs_pager_next: "More foods",
+      fs_pager_page: "Foods, page {n} of {of}",
+      fs_pager_prev: "Previous foods",
       kd_best_match: "Best match",
       kd_claim_dose_appliesto: "for {name}",
       kd_covlegend_covered: "covered",
@@ -119796,6 +117773,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       kh_explore_link: "see all topics \u2192",
       kh_group_conditions: "Conditions",
       kh_group_essentials: "Essentials",
+      kh_group_foods: "Foods",
+      kh_group_products: "Products",
       kh_group_topics: "Explore",
       kh_hero_headline: "Everything Wallach taught, in one place.",
       kh_hero_placeholder: "Try \u201Cselenium\u201D, \u201Costeoporosis\u201D, or \u201Ccolloidal minerals\u201D\u2026",
@@ -119805,6 +117784,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       kh_legend_label: "colour key",
       kh_legend_mineral: "Minerals",
       kh_legend_vitamin: "Vitamins",
+      kh_meta_supplied: "{n} of {of} essentials",
+      kh_meta_targeted: "targeted formula",
       kh_search_empty: "No match \u2014 try a broader word.",
       kt_back: "\u2039 All topics",
       kt_back_generic: "\u2039 Go back",
@@ -174477,14 +172458,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
 
   // assets/js/src/state/recommender.ts
-  var W_ADEQ2 = 0.6;
-  var W_BREADTH2 = 0.3;
+  var W_ADEQ = 0.6;
+  var W_BREADTH = 0.3;
   var W_VALUE = 0.1;
-  var BREADTH_HALF2 = 5;
+  var BREADTH_HALF = 5;
   var PIN_SCORE_BASE = 2;
   var DATA5 = RecommenderDataSchema.parse(product_recommender_data_default);
   function breadthScore(n) {
-    return n / (n + BREADTH_HALF2);
+    return n / (n + BREADTH_HALF);
   }
   function rankSources(slug, targetLow = null, targetUnit = null) {
     const entry = DATA5.essentials[slug];
@@ -174511,7 +172492,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const bScore = breadthScore(c.breadth);
       const cpu = cpuOf(c.price, c.amount);
       const vScore = cpu === null || maxCpu === minCpu ? 0.5 : (maxCpu - cpu) / (maxCpu - minCpu);
-      const score = W_ADEQ2 * adequacy + W_BREADTH2 * bScore + W_VALUE * vScore;
+      const score = W_ADEQ * adequacy + W_BREADTH * bScore + W_VALUE * vScore;
       return {
         productId: c.product_id,
         amount: c.amount,
@@ -174678,7 +172659,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const scoreOf = (supplies, breadth, price, bestSupply2, bestValue2) => {
       const adequacy = bestSupply2 > 0 ? supplies / bestSupply2 : 0;
       const value = bestValue2 > 0 ? perDollarOf(price, supplies) / bestValue2 : 0;
-      return W_ADEQ2 * adequacy + W_BREADTH2 * breadthScore(breadth) + W_VALUE * value;
+      return W_ADEQ * adequacy + W_BREADTH * breadthScore(breadth) + W_VALUE * value;
     };
     const candidates = () => {
       const rows2 = [];
@@ -174749,6 +172730,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   var ADD_PATH = "M12 6v12M6 12h12";
   var PAGER_PREV = "\u2039";
   var PAGER_NEXT = "\u203A";
+  var PAGER_GAP = "\u2026";
+  var PAGER_WINDOW = 5;
   function ruleWithLabel() {
     const rule = document.createElement("div");
     rule.className = "fs-rule";
@@ -174775,35 +172758,125 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     b.disabled = disabled;
     return b;
   }
+  function windowedPages(page, pages) {
+    const last = pages - 1;
+    const start = Math.max(0, Math.min(page, last - (PAGER_WINDOW - 1)));
+    const end = Math.min(last, start + PAGER_WINDOW - 1);
+    const out = [0];
+    if (start > 1) {
+      out.push(null);
+    }
+    for (let i = Math.max(start, 1); i <= Math.min(end, last - 1); i += 1) {
+      out.push(i);
+    }
+    if (end < last - 1) {
+      out.push(null);
+    }
+    if (last > 0) {
+      out.push(last);
+    }
+    return out;
+  }
+  function pagerGap() {
+    const gap = document.createElement("span");
+    gap.className = "fs-pager__gap";
+    gap.textContent = PAGER_GAP;
+    gap.setAttribute("aria-hidden", "true");
+    return gap;
+  }
+  function arrow(label, page, disabled, aria) {
+    const b = pagerButton(label, page, disabled);
+    b.classList.add("fs-pager__b--arrow");
+    b.setAttribute("aria-label", aria);
+    return b;
+  }
   function pagerNode(p) {
     if (p.pages < 2) {
       return null;
     }
     const nav = document.createElement("nav");
-    nav.className = "fs-pager";
-    nav.setAttribute("aria-label", "More foods");
+    nav.className = `fs-pager fs-pager--${p.kind}`;
+    nav.setAttribute("aria-label", ui("fs_pager_label"));
+    const prev = arrow(PAGER_PREV, p.page - 1, p.page <= 0, ui("fs_pager_prev"));
+    const next = arrow(PAGER_NEXT, p.page + 1, p.page >= p.pages - 1, ui("fs_pager_next"));
     if (p.kind === "arrows") {
-      const prev = pagerButton(PAGER_PREV, p.page - 1, p.page <= 0);
-      prev.classList.add("fs-pager__b--arrow");
-      prev.setAttribute("aria-label", "Previous foods");
       const at = document.createElement("span");
       at.className = "fs-pager__at";
       at.textContent = `${p.page + 1} / ${p.pages}`;
-      const next = pagerButton(PAGER_NEXT, p.page + 1, p.page >= p.pages - 1);
-      next.classList.add("fs-pager__b--arrow");
-      next.setAttribute("aria-label", "More foods");
       nav.append(prev, at, next);
       return nav;
     }
-    for (let i = 0; i < p.pages; i += 1) {
+    nav.appendChild(prev);
+    for (const i of windowedPages(p.page, p.pages)) {
+      if (i === null) {
+        nav.appendChild(pagerGap());
+        continue;
+      }
       const b = pagerButton(String(i + 1), i, false);
-      b.setAttribute("aria-label", `Foods, page ${i + 1} of ${p.pages}`);
+      b.setAttribute("aria-label", ui("fs_pager_page").replace("{n}", String(i + 1)).replace("{of}", String(p.pages)));
       if (i === p.page) {
         b.setAttribute("aria-current", "page");
       }
       nav.appendChild(b);
     }
+    nav.appendChild(next);
     return nav;
+  }
+  function filterNode(f) {
+    const wrap = document.createElement("div");
+    wrap.className = "fs-filter";
+    const sel = document.createElement("select");
+    sel.className = "fs-filter__cat";
+    sel.dataset["foodCat"] = "";
+    sel.setAttribute("aria-label", ui("fs_filter_cat_label"));
+    const all = document.createElement("option");
+    all.value = "";
+    all.textContent = ui("fs_filter_all");
+    sel.appendChild(all);
+    for (const c of f.categories) {
+      const o = document.createElement("option");
+      o.value = c;
+      o.textContent = c;
+      sel.appendChild(o);
+    }
+    sel.value = f.category;
+    const q = document.createElement("input");
+    q.className = "fs-filter__q";
+    q.type = "search";
+    q.dataset["foodQ"] = "";
+    q.maxLength = 40;
+    q.placeholder = ui("fs_filter_find");
+    q.value = f.query;
+    q.setAttribute("aria-label", ui("fs_filter_q_label"));
+    wrap.append(sel, q);
+    return wrap;
+  }
+  function markFocus(host) {
+    const el = document.activeElement;
+    if (el === null || !host.contains(el)) {
+      return null;
+    }
+    if (el instanceof HTMLInputElement && el.hasAttribute("data-food-q")) {
+      const end = el.value.length;
+      return { attr: "data-food-q", start: el.selectionStart ?? end, end: el.selectionEnd ?? end };
+    }
+    if (el instanceof HTMLSelectElement && el.hasAttribute("data-food-cat")) {
+      return { attr: "data-food-cat", start: 0, end: 0 };
+    }
+    return null;
+  }
+  function restoreFocus(host, mark) {
+    if (mark === null) {
+      return;
+    }
+    const el = host.querySelector(`[${mark.attr}]`);
+    if (el === null) {
+      return;
+    }
+    el.focus();
+    if (el instanceof HTMLInputElement) {
+      el.setSelectionRange(mark.start, mark.end);
+    }
   }
   function rowCount(host) {
     const tops = /* @__PURE__ */ new Set();
@@ -174930,8 +173003,27 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     addOrBumpRegimenItem(item);
   }
   function buildFoodsBlock(host, recs, opts = {}) {
+    const mark = markFocus(host);
     host.replaceChildren();
     host.appendChild(ruleWithLabel());
+    const filter = opts.filter;
+    const filterActive = filter !== void 0 && (filter.category !== "" || filter.query !== "");
+    const appendControls = () => {
+      const nav = opts.pager !== void 0 ? pagerNode(opts.pager) : null;
+      if (filter === void 0) {
+        if (nav !== null) {
+          host.appendChild(nav);
+        }
+        return;
+      }
+      const row = document.createElement("div");
+      row.className = "fs-controls";
+      if (nav !== null) {
+        row.appendChild(nav);
+      }
+      row.appendChild(filterNode(filter));
+      host.appendChild(row);
+    };
     if (recs.length === 0 && (opts.ownedCount ?? 0) >= foodCatalogSize()) {
       const egg = document.createElement("p");
       egg.className = "fs-note fs-note--egg";
@@ -174952,8 +173044,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     if (recs.length === 0) {
       const note = document.createElement("p");
       note.className = "fs-note";
-      note.textContent = opts.capReached === true ? "That\u2019s the last food this tab will suggest \u2014 the rest live on your Regimen." : "No food moves a remaining gap \u2014 what\u2019s left needs a supplement.";
+      note.textContent = filterActive ? ui("fs_filter_none") : opts.capReached === true ? "That\u2019s the last food this tab will suggest \u2014 the rest live on your Regimen." : "No food moves a remaining gap \u2014 what\u2019s left needs a supplement.";
       host.appendChild(note);
+      appendControls();
+      restoreFocus(host, mark);
       return;
     }
     if (opts.education === true) {
@@ -174973,12 +173067,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       }
     }
     host.appendChild(grid);
-    if (opts.pager !== void 0) {
-      const nav = pagerNode(opts.pager);
-      if (nav !== null) {
-        host.appendChild(nav);
-      }
-    }
+    appendControls();
+    restoreFocus(host, mark);
     const fit = () => {
       for (const p of pending) {
         fitChips(p.host, p.chips);
@@ -175042,12 +173132,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
 
   // assets/js/src/state/starter-pack.ts
   var DATA6 = StarterPackSchema.parse(starter_pack_default);
-  var PINNED2 = DATA6.pinned.map((e) => e.product_id);
+  var PINNED = DATA6.pinned.map((e) => e.product_id);
   function starterPackIds() {
-    return PINNED2;
+    return PINNED;
   }
   function starterPackSize() {
-    return PINNED2.length;
+    return PINNED.length;
   }
 
   // assets/js/src/views/coverage.ts
@@ -175498,9 +173588,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           want: wantedSlugs(snapshot2, goals),
           owned: ownedFoods,
           goals: goals.map((g) => ({ id: g.id, members: g.members })),
-          limit: foodCatalogSize(),
-          greedy: true,
-          browse: true
+          limit: foodCatalogSize()
         });
         const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_PAGE));
         foodPage = Math.min(foodPage, foodPages - 1);
@@ -213610,8 +211698,147 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
   };
 
-  // assets/js/src/views/knowledge-products.ts
+  // assets/js/src/views/knowledge-food-sheet.ts
   function escHTML4(s) {
+    return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
+  }
+  var FOOD_COLOR = "#b0442e";
+  function foodScrollTint(id) {
+    return foodById(id) !== void 0 ? FOOD_COLOR : "";
+  }
+  function foodName(id) {
+    return foodById(id)?.name ?? "";
+  }
+  function fmtAmount(n) {
+    const rounded = Math.round(n * 100) / 100;
+    if (rounded === 0 && n > 0) {
+      return n.toPrecision(3);
+    }
+    return String(rounded);
+  }
+  function foodSearchBlob(food, hits) {
+    const parts = [food.name, food.category, food.usda_description, food.portion_label];
+    for (const h of hits) {
+      parts.push(h.label, h.slug, h.slug.replace(/-/g, " "));
+    }
+    return parts.join(" ");
+  }
+  function foodGridItems() {
+    return listFoods().map((f) => ({ id: f.id, name: f.name, supplied: foodHits(f.id).length }));
+  }
+  function renderFoodRow(id, selected) {
+    const food = foodById(id);
+    if (food === void 0) {
+      return "";
+    }
+    const hits = foodHits(id);
+    const cls = `kd-product-row kd-product-row--food${id === selected ? " is-selected" : ""}`;
+    const lead = `<b>of ${essentialCount()}</b> essentials`;
+    const foot = [lead, food.portion_label].filter((s) => s.length > 0).join(" \xB7 ");
+    const ghost = hits.length > 0 ? `<div class="kd-product-row__ghost" aria-hidden="true">${hits.length}</div>` : "";
+    return `
+    <div class="${cls}" data-kd-food="${escHTML4(id)}" data-search="${escHTML4(foodSearchBlob(food, hits))}" role="button" tabindex="0">
+      ${ghost}
+      <div class="kd-product-row__cat"><i></i>FOOD</div>
+      <h4 class="kd-product-row__name">${escHTML4(food.name)}</h4>
+      <div class="kd-product-row__foot">${foot}</div>
+    </div>`;
+  }
+  var FOOD_GLYPH = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20c0-8 5-13 15-14 1 10-4 15-11 15H4z"/><path d="M4 20c3-5 7-8 11-9.5"/></svg>';
+  function glossFor2(hit) {
+    const base = `Food composition from ${hit.source}, measured against Dr. Wallach\u2019s daily target for this nutrient.`;
+    const floor = hit.conservative ? " It is the lowest of the varieties that source measured, so it holds whichever kind you eat." : "";
+    if (hit.tier !== "APPROXIMATE") {
+      return base + floor;
+    }
+    return `${base} \u2248 That source lists foods by name rather than by the id our catalog uses, so this food was paired with theirs by hand \u2014 a close stand-in, not a measurement of this exact item.${floor}`;
+  }
+  function labelRow(hit) {
+    const page = getEssentialPage(hit.slug);
+    const layoutKey = getEssentialBySlug(hit.slug)?.layout_key ?? "";
+    const linked = page !== null && layoutKey.length > 0;
+    const cat = page?.category ?? "";
+    const nav = linked ? `${cat.length > 0 ? ` data-cat="${escHTML4(cat)}"` : ""} data-kd-essential="${escHTML4(layoutKey)}" role="button" tabindex="0"` : "";
+    const go = linked ? '<span class="kd-pf-nrow__go">\u203A</span>' : "";
+    const approx = hit.tier === "APPROXIMATE" ? '<span class="kd-pf-nrow__ex">\u2248</span>' : "";
+    const floor = hit.conservative ? '<span class="kd-pf-nrow__ex">floor</span>' : "";
+    return `<div class="kd-pf-nrow${linked ? " kd-pf-nrow--link" : ""}"${nav} title="${escHTML4(glossFor2(hit))}">
+      <span class="kd-pf-nrow__nm">${escHTML4(hit.label)}${go}${approx}${floor}</span>
+      <span class="kd-pf-nrow__amt">${escHTML4(fmtAmount(hit.amount))} ${escHTML4(hit.unit)}</span>
+      <span class="kd-pf-nrow__dv">${hit.pct}%</span>
+    </div>`;
+  }
+  function sourceLine(hits) {
+    const counts = /* @__PURE__ */ new Map();
+    for (const h of hits) {
+      counts.set(h.source, (counts.get(h.source) ?? 0) + 1);
+    }
+    const approx = hits.filter((h) => h.tier === "APPROXIMATE").length;
+    const named = [...counts.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([name, n]) => `${name} (${n} value${n === 1 ? "" : "s"})`).join(" \xB7 ");
+    const pairNote = approx > 0 ? ` \xB7 ${approx} paired by name rather than by id (\u2248)` : "";
+    return `SOURCE \xB7 ${named}${pairNote} \u2014 composition measured against Dr. Wallach\u2019s own daily targets (\xA700.A \xB7 a food never sets a target)`;
+  }
+  function foodGlance(food, hits) {
+    const lead = hits[0];
+    const sources = new Set(hits.map((h) => h.source)).size;
+    const metric = (k, v, sub) => `<div class="kd-pf-metric"><div class="kd-pf-metric__k">${escHTML4(k)}</div><div class="kd-pf-metric__v">${escHTML4(v)}</div>${sub.length > 0 ? `<div class="kd-pf-metric__sub">${escHTML4(sub)}</div>` : ""}</div>`;
+    const hero = hits.length > 0 ? `<div class="kd-pf-glance__num">${hits.length}</div>
+        <div class="kd-pf-glance__cap"><b>of ${essentialCount()}</b> Wallach essentials<br>one serving reaches</div>` : `<div class="kd-pf-glance__kill">No<br>numbers</div>
+        <div class="kd-pf-glance__cap">nothing our pinned sources measure<br>clears the floor for this food</div>`;
+    const metrics = [
+      metric("Serving", food.portion_label, `${food.grams} g`),
+      metric("Strongest", lead !== void 0 ? `${lead.pct}%` : "\u2014", lead !== void 0 ? lead.label : ""),
+      metric("Measured by", String(sources), sources === 1 ? "pinned source" : "pinned sources")
+    ].join("");
+    return `<div class="kd-ep-seclabel">At a glance <span class="kd-ep-seclabel__hint">what one serving delivers</span></div>
+    <div class="kd-pf-glance">
+      <div class="kd-pf-glance__hero">${hero}</div>
+      <div class="kd-pf-glance__metrics">${metrics}</div>
+    </div>
+    <div class="kd-pf-note">Composition from a pinned outside table, measured against Dr. Wallach\u2019s own daily target for each nutrient \u2014 what the food contains, never a target it sets (\xA700.A).</div>`;
+  }
+  function renderFoodDeep(id, fromProductsTab = true) {
+    const food = foodById(id);
+    if (food === void 0) {
+      return "";
+    }
+    const hits = foodHits(id);
+    const floorPct = foodQualifyPct();
+    const rows = hits.map(labelRow).join("");
+    const lede = `One serving is ${escHTML4(food.portion_label)} (${food.grams} g). This label carries ${hits.length} of Dr. Wallach\u2019s ${essentialCount()} essentials, each measured against his own daily target.`;
+    return `<div class="kd-essential-deep kd-ep kd-ep--food" style="--form:${FOOD_COLOR}">
+    <div class="kd-ep-hero">
+      <div class="kd-ep-hero__sym kd-ep-hero__sym--form">${FOOD_GLYPH}</div>
+      <div class="kd-ep-hero__idblock">
+        <h1 class="kd-ep-hero__name">${escHTML4(food.name)}</h1>
+        <div class="kd-ep-hero__subline">
+          <div class="kd-ep-hero__form"><i></i>FOOD</div>
+          <span class="kd-ep-hero__sep">\xB7</span>
+          <span class="kd-ep-hero__meta">${escHTML4(food.category)} \xB7 FDC ${escHTML4(food.fdc_id)}</span>
+        </div>
+      </div>
+      <div class="kd-ep-actions">
+        <button class="kd-ep-back" data-kd-action="food-close" type="button">${fromProductsTab ? "\u2039 All products" : "\u2039 Go back"}</button>
+        <button class="kd-ep-add-regimen" data-kd-action="add-regimen" data-add-food="${escHTML4(id)}" type="button">Add to regimen \u203A</button>
+      </div>
+    </div>
+    <p class="kd-ep-lede">${lede}</p>
+    ${foodGlance(food, hits)}
+    <div class="kd-ep-seclabel">Nutrition facts <span class="kd-ep-seclabel__hint">per serving</span></div>
+    <div class="kd-pf-comp">
+      <div class="kd-pf-comp__head"><span class="kd-pf-comp__title">${escHTML4(food.portion_label)}</span><span class="kd-pf-comp__meta">${food.grams} g \xB7 ${hits.length} nutrient${hits.length === 1 ? "" : "s"}</span></div>
+      <div class="kd-pf-nhead"><span>Nutrient</span><span>Amount</span><span>% of target</span></div>
+      ${rows}
+      <div class="kd-pf-sub">As the source describes it</div>
+      <div class="kd-pf-other">${escHTML4(food.usda_description)}</div>
+    </div>
+    <div class="kd-pf-note">Every nutrient a pinned source measures at ${floorPct}% or more of one of Wallach\u2019s daily targets. Not a complete nutrition label: anything under that floor never entered the catalog, and no calorie or macronutrient source is pinned at all \u2014 so their absence here is a gap in what we hold, not a claim about the food.</div>
+    <div class="kd-corpus__foot">${escHTML4(sourceLine(hits))}</div>
+  </div>`;
+  }
+
+  // assets/js/src/views/knowledge-products.ts
+  function escHTML5(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   var cachedProducts = null;
@@ -213634,8 +211861,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     ensureLoaded();
     return cachedById?.get(id) ?? null;
   }
-  function productCount() {
-    return listProducts().length;
+  function productSuggestItems() {
+    return listProducts().map((p) => ({
+      id: p.product_id,
+      name: p.name,
+      supplied: essentialsSupplied(p)
+    }));
   }
   function fmtAmt(a) {
     return a === void 0 || a === null ? "" : String(a);
@@ -213708,26 +211939,50 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const foot = [lead, price, serv].filter((s) => s.length > 0).join(" \xB7 ");
     const ghost = supplied > 0 ? `<div class="kd-product-row__ghost" aria-hidden="true">${supplied}</div>` : "";
     return `
-    <div class="${cls}" data-form="${fam}" data-kd-product="${escHTML4(p.product_id)}" data-search="${escHTML4(productSearchBlob(p))}" role="button" tabindex="0">
+    <div class="${cls}" data-form="${fam}" data-kd-product="${escHTML5(p.product_id)}" data-search="${escHTML5(productSearchBlob(p))}" role="button" tabindex="0">
       ${ghost}
-      <div class="kd-product-row__cat"><i></i>${escHTML4(fam.toUpperCase())}</div>
-      <h4 class="kd-product-row__name">${escHTML4(p.name)}</h4>
+      <div class="kd-product-row__cat"><i></i>${escHTML5(fam.toUpperCase())}</div>
+      <h4 class="kd-product-row__name">${escHTML5(p.name)}</h4>
       <div class="kd-product-row__foot">${foot}</div>
     </div>`;
   }
-  function productsByBreadth(products) {
-    return [...products].sort((a, b) => essentialsSupplied(b) - essentialsSupplied(a) || a.name.localeCompare(b.name));
+  function catalogFilter(kind) {
+    const b = (id, label) => `<button class="kd-catfilter__b${id === kind ? " is-on" : ""}" data-kd-catfilter="${id}" type="button"${id === kind ? ' aria-current="true"' : ""}>${escHTML5(label)}</button>`;
+    return `<div class="kd-catfilter" role="group" aria-label="Show">${b("all", "All")}${b("products", "Products")}${b("foods", "Foods")}</div>`;
   }
-  function renderProductsTab(selectedProduct, fromProductsTab = true) {
-    const products = listProducts();
-    if (products.length === 0) {
+  function catalogEntries(kind, selectedProduct, selectedFood) {
+    const out = [];
+    if (kind !== "foods") {
+      for (const p of listProducts()) {
+        out.push({
+          name: p.name,
+          supplied: essentialsSupplied(p),
+          html: renderProductRow(p, selectedProduct)
+        });
+      }
+    }
+    if (kind !== "products") {
+      for (const f of foodGridItems()) {
+        out.push({ name: f.name, supplied: f.supplied, html: renderFoodRow(f.id, selectedFood) });
+      }
+    }
+    return out.sort((a, b) => b.supplied - a.supplied || a.name.localeCompare(b.name));
+  }
+  function renderProductsTab(selectedProduct, selectedFood = null, kind = "all", fromProductsTab = true) {
+    const nProducts = listProducts().length;
+    const nFoods = foodGridItems().length;
+    if (nProducts === 0 && nFoods === 0) {
       return '<div class="kd-empty">\u2014 no products loaded \u2014</div>';
     }
-    const deepHTML = selectedProduct !== null ? renderProductDeep(selectedProduct, fromProductsTab) : "";
-    const rowsHTML = productsByBreadth(products).map((p) => renderProductRow(p, selectedProduct)).join("");
+    const deepHTML = selectedFood !== null ? renderFoodDeep(selectedFood, fromProductsTab) : selectedProduct !== null ? renderProductDeep(selectedProduct, fromProductsTab) : "";
+    const rowsHTML = catalogEntries(kind, selectedProduct, selectedFood).map((e) => e.html).join("");
+    const head = kind === "foods" ? `ALL ${nFoods} FOODS` : kind === "products" ? `ALL ${nProducts} PRODUCTS` : `ALL ${nProducts} PRODUCTS + ${nFoods} FOODS`;
     return `
     ${deepHTML}
-    <div class="kd-section-head">ALL ${products.length} PRODUCTS \xB7 SORTED BY ESSENTIALS SUPPLIED</div>
+    <div class="kd-catbar">
+      <div class="kd-section-head">${head} \xB7 SORTED BY ESSENTIALS SUPPLIED</div>
+      ${catalogFilter(kind)}
+    </div>
     <div class="kd-products-grid">${rowsHTML}</div>`;
   }
   var FORM_COLORS = {
@@ -213788,48 +212043,48 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   var PRODUCT_GLYPH = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>';
   function pfNutrientRow(n, byNorm) {
-    const unit = n.unit !== null && n.unit !== void 0 && n.unit.length > 0 ? ` ${escHTML4(n.unit)}` : "";
+    const unit = n.unit !== null && n.unit !== void 0 && n.unit.length > 0 ? ` ${escHTML5(n.unit)}` : "";
     const amt = fmtAmt(n.amount);
-    const amtHTML = amt.length > 0 ? `${escHTML4(amt)}${unit}` : "";
-    const iu = n.label_iu !== null && n.label_iu !== void 0 ? ` \xB7 ${escHTML4(String(n.label_iu))} IU` : "";
-    const detail = n.unit_detail !== void 0 && n.unit_detail.length > 0 ? ` <span class="kd-pf-nrow__ex">(${escHTML4(n.unit_detail)})</span>` : "";
-    const form = n.form !== void 0 && n.form.length > 0 ? `<span class="kd-pf-nrow__form">${escHTML4(n.form)}</span>` : "";
+    const amtHTML = amt.length > 0 ? `${escHTML5(amt)}${unit}` : "";
+    const iu = n.label_iu !== null && n.label_iu !== void 0 ? ` \xB7 ${escHTML5(String(n.label_iu))} IU` : "";
+    const detail = n.unit_detail !== void 0 && n.unit_detail.length > 0 ? ` <span class="kd-pf-nrow__ex">(${escHTML5(n.unit_detail)})</span>` : "";
+    const form = n.form !== void 0 && n.form.length > 0 ? `<span class="kd-pf-nrow__form">${escHTML5(n.form)}</span>` : "";
     const dvRaw = n.pct_dv;
-    const dv = dvRaw !== null && dvRaw !== void 0 && String(dvRaw).length > 0 ? `${escHTML4(String(dvRaw))}%` : '<span title="Daily Value not established">\u2020</span>';
+    const dv = dvRaw !== null && dvRaw !== void 0 && String(dvRaw).length > 0 ? `${escHTML5(String(dvRaw))}%` : '<span title="Daily Value not established">\u2020</span>';
     const rowNorm = normNutrientName(n.name);
     const bt = rowBToken(n, rowNorm);
     const match = byNorm.get(rowNorm) ?? (bt !== null ? byNorm.get(bt) : void 0);
     const linked = match !== void 0 && match.category.length > 0;
-    const nav = linked ? ` data-cat="${escHTML4(match.category)}" data-kd-essential="${escHTML4(match.layoutKey)}" role="button" tabindex="0"` : match !== void 0 ? ` data-kd-essential="${escHTML4(match.layoutKey)}" role="button" tabindex="0"` : "";
+    const nav = linked ? ` data-cat="${escHTML5(match.category)}" data-kd-essential="${escHTML5(match.layoutKey)}" role="button" tabindex="0"` : match !== void 0 ? ` data-kd-essential="${escHTML5(match.layoutKey)}" role="button" tabindex="0"` : "";
     const cls = match !== void 0 ? " kd-pf-nrow--link" : "";
     const go = match !== void 0 ? '<span class="kd-pf-nrow__go">\u203A</span>' : "";
     return `<div class="kd-pf-nrow${cls}"${nav}>
-      <span class="kd-pf-nrow__nm">${escHTML4(n.name)}${detail}${go}${form}</span>
+      <span class="kd-pf-nrow__nm">${escHTML5(n.name)}${detail}${go}${form}</span>
       <span class="kd-pf-nrow__amt">${amtHTML}${iu}</span>
       <span class="kd-pf-nrow__dv">${dv}</span>
     </div>`;
   }
   function pfBlend(b) {
-    const name = b.name !== void 0 && b.name.length > 0 ? escHTML4(b.name) : "Proprietary blend";
-    const total = b.total != null && b.total.amount != null ? `${escHTML4(fmtAmt(b.total.amount))}${b.total.unit != null ? ` ${escHTML4(b.total.unit)}` : ""}` : "";
-    const cfu = b.total_cfu != null && b.total_cfu.amount != null ? `${escHTML4(fmtAmt(b.total_cfu.amount))}${b.total_cfu.unit != null ? ` ${escHTML4(b.total_cfu.unit)}` : ""}` : "";
+    const name = b.name !== void 0 && b.name.length > 0 ? escHTML5(b.name) : "Proprietary blend";
+    const total = b.total != null && b.total.amount != null ? `${escHTML5(fmtAmt(b.total.amount))}${b.total.unit != null ? ` ${escHTML5(b.total.unit)}` : ""}` : "";
+    const cfu = b.total_cfu != null && b.total_cfu.amount != null ? `${escHTML5(fmtAmt(b.total_cfu.amount))}${b.total_cfu.unit != null ? ` ${escHTML5(b.total_cfu.unit)}` : ""}` : "";
     const ings = b.ingredients ?? [];
     const body = ings.length > 0 ? ings.map((i) => {
-      const parts = [escHTML4(i.name)];
+      const parts = [escHTML5(i.name)];
       if (i.form !== void 0 && i.form.length > 0) {
-        parts.push(`<span class="kd-pf-ing__q">${escHTML4(i.form)}</span>`);
+        parts.push(`<span class="kd-pf-ing__q">${escHTML5(i.form)}</span>`);
       }
       if (i.part !== void 0 && i.part.length > 0) {
-        parts.push(`<span class="kd-pf-ing__q">${escHTML4(i.part)}</span>`);
+        parts.push(`<span class="kd-pf-ing__q">${escHTML5(i.part)}</span>`);
       }
       if (i.standardization !== void 0 && i.standardization.length > 0) {
-        parts.push(`<span class="kd-pf-ing__q">(${escHTML4(i.standardization)})</span>`);
+        parts.push(`<span class="kd-pf-ing__q">(${escHTML5(i.standardization)})</span>`);
       }
       if (i.latin !== void 0 && i.latin.length > 0) {
-        parts.push(`<i>(${escHTML4(i.latin)})</i>`);
+        parts.push(`<i>(${escHTML5(i.latin)})</i>`);
       }
       return parts.join(" ");
-    }).join(" \xB7 ") : b.as_labeled !== void 0 ? escHTML4(b.as_labeled) : "";
+    }).join(" \xB7 ") : b.as_labeled !== void 0 ? escHTML5(b.as_labeled) : "";
     const count = ings.length > 0 ? `${ings.length} ingredient${ings.length === 1 ? "" : "s"}` : "";
     const meta = [total.length > 0 ? total : cfu, count].filter((s) => s.length > 0).join(" \xB7 ");
     return `<details class="kd-pf-blend">
@@ -213851,8 +212106,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         continue;
       }
       const unit = val.unit;
-      const u = typeof unit === "string" ? escHTML4(unit) : "";
-      chips.push(`<span class="kd-pf-macro"><b>${escHTML4(String(amount))}${u}</b><span>${escHTML4(key.replace(/_/g, " "))}</span></span>`);
+      const u = typeof unit === "string" ? escHTML5(unit) : "";
+      chips.push(`<span class="kd-pf-macro"><b>${escHTML5(String(amount))}${u}</b><span>${escHTML5(key.replace(/_/g, " "))}</span></span>`);
     }
     return chips.length > 0 ? `<div class="kd-pf-macros">${chips.join("")}</div>` : "";
   }
@@ -213864,7 +212119,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       c.servings_per_container !== null && c.servings_per_container !== void 0 ? `${String(c.servings_per_container)} serving${String(c.servings_per_container) === "1" ? "" : "s"}` : ""
     ].filter((s) => s.length > 0).join(" \xB7 ");
     let h = `<div class="kd-pf-comp">
-      <div class="kd-pf-comp__head"><span class="kd-pf-comp__title">${escHTML4(title)}</span><span class="kd-pf-comp__meta">${escHTML4(metaBits)}</span></div>`;
+      <div class="kd-pf-comp__head"><span class="kd-pf-comp__title">${escHTML5(title)}</span><span class="kd-pf-comp__meta">${escHTML5(metaBits)}</span></div>`;
     h += pfMacros(c.macros);
     const nuts = c.nutrients ?? [];
     if (nuts.length > 0) {
@@ -213877,7 +212132,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       h += blends.map(pfBlend).join("");
     }
     if (c.other_ingredients !== void 0 && c.other_ingredients.length > 0) {
-      h += `<div class="kd-pf-sub">Other ingredients</div><div class="kd-pf-other">${escHTML4(c.other_ingredients.join(", "))}</div>`;
+      h += `<div class="kd-pf-sub">Other ingredients</div><div class="kd-pf-other">${escHTML5(c.other_ingredients.join(", "))}</div>`;
     }
     return `${h}</div>`;
   }
@@ -213893,10 +212148,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const hero = supplied > 0 ? `<div class="kd-pf-glance__num">${supplied}</div>
         <div class="kd-pf-glance__cap"><b>of ${essentialCount()}</b> Wallach essentials<br>delivered on this label</div>` : `<div class="kd-pf-glance__kill">Targeted<br>formula</div>
         <div class="kd-pf-glance__cap">a focused botanical outside<br>the 90 core essentials</div>`;
-    const metric = (k, v, sub) => `<div class="kd-pf-metric"><div class="kd-pf-metric__k">${escHTML4(k)}</div><div class="kd-pf-metric__v">${v}</div>${sub.length > 0 ? `<div class="kd-pf-metric__sub">${escHTML4(sub)}</div>` : ""}</div>`;
+    const metric = (k, v, sub) => `<div class="kd-pf-metric"><div class="kd-pf-metric__k">${escHTML5(k)}</div><div class="kd-pf-metric__v">${v}</div>${sub.length > 0 ? `<div class="kd-pf-metric__sub">${escHTML5(sub)}</div>` : ""}</div>`;
     const metrics = [
       metric("Wholesale", wholesale !== null ? `$${fmtMoney(wholesale)}` : "\u2014", retail !== null ? `$${fmtMoney(retail)} retail` : ""),
-      metric("Per serving", serving.length > 0 ? escHTML4(serving) : "\u2014", spc !== null ? `${spc} per container` : ""),
+      metric("Per serving", serving.length > 0 ? escHTML5(serving) : "\u2014", spc !== null ? `${spc} per container` : ""),
       metric("Cost / serving", perServe !== null ? `$${fmtMoney(perServe)}` : "\u2014", perServe !== null ? "wholesale \xF7 servings" : "")
     ].join("");
     return `<div class="kd-ep-seclabel">At a glance <span class="kd-ep-seclabel__hint">what\u2019s on the label</span></div>
@@ -213921,7 +212176,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const c0 = comps[0];
     const nNut = comps.reduce((s, c) => s + (c.nutrients?.length ?? 0), 0);
     const nBlend = comps.reduce((s, c) => s + (c.blends?.length ?? 0), 0);
-    const sku = p.sku !== void 0 && p.sku.length > 0 ? ` \xB7 SKU ${escHTML4(p.sku)}` : "";
+    const sku = p.sku !== void 0 && p.sku.length > 0 ? ` \xB7 SKU ${escHTML5(p.sku)}` : "";
     const supplied_list = suppliedEssentials(p.product_id);
     const byNorm = /* @__PURE__ */ new Map();
     for (const e of supplied_list) {
@@ -213936,29 +212191,29 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const spcTxt = spcVal !== null && spcVal !== void 0 ? `, ${String(spcVal)} serving${String(spcVal) === "1" ? "" : "s"} per container` : "";
     const blendPhrase = nBlend > 0 ? `${nBlend} whole-food blend${nBlend === 1 ? "" : "s"}` : "";
     const labelSentence = nNut > 0 ? ` The label lists ${nNut} nutrient${nNut === 1 ? "" : "s"}${blendPhrase.length > 0 ? ` across ${blendPhrase}` : ""}.` : blendPhrase.length > 0 ? ` The label is built from ${blendPhrase}.` : "";
-    const lede = `A ${escHTML4(forms.length > 0 ? forms : "Youngevity")} supplement \u2014 one serving is ${escHTML4(servingTxt)}${escHTML4(spcTxt)}.${labelSentence}`;
+    const lede = `A ${escHTML5(forms.length > 0 ? forms : "Youngevity")} supplement \u2014 one serving is ${escHTML5(servingTxt)}${escHTML5(spcTxt)}.${labelSentence}`;
     const factsHead = `<div class="kd-ep-seclabel">Supplement facts${multi ? ` <span class="kd-ep-seclabel__hint">${comps.length} components</span>` : ""}</div>`;
     const factsHTML = comps.map((c) => pfComponent(c, multi, byNorm)).join("");
     const dirs = comps.map((c) => c.directions).filter((d) => d !== void 0 && d.length > 0);
-    const dirHTML = dirs.length > 0 ? `<div class="kd-ep-seclabel">How to use it</div>${dirs.map((d) => `<div class="kd-pf-use">${escHTML4(d)}</div>`).join("")}` : "";
+    const dirHTML = dirs.length > 0 ? `<div class="kd-ep-seclabel">How to use it</div>${dirs.map((d) => `<div class="kd-pf-use">${escHTML5(d)}</div>`).join("")}` : "";
     const pills = [...supplied_list].sort((a, b) => a.name.localeCompare(b.name));
     const pillsHTML = pills.length > 0 ? `<div class="kd-ep-seclabel">Essentials on this label</div>
       <p class="kd-ep-lead">This product delivers <b>${pills.length}</b> of Wallach\u2019s 90 essentials that have their own page \u2014 tap one to read it.</p>
-      <div class="kd-ep-cloud">${pills.map((e) => `<button class="kd-ep-pill kd-ep-pill--nut" type="button" data-kd-essential="${escHTML4(e.layoutKey)}">${escHTML4(e.name)}</button>`).join("")}</div>` : "";
+      <div class="kd-ep-cloud">${pills.map((e) => `<button class="kd-ep-pill kd-ep-pill--nut" type="button" data-kd-essential="${escHTML5(e.layoutKey)}">${escHTML5(e.name)}</button>`).join("")}</div>` : "";
     return `<div class="kd-essential-deep kd-ep kd-ep--prod"${famStyle}>
     <div class="kd-ep-hero">
       <div class="kd-ep-hero__sym kd-ep-hero__sym--form">${PRODUCT_GLYPH}</div>
       <div class="kd-ep-hero__idblock">
-        <h1 class="kd-ep-hero__name">${escHTML4(p.name)}</h1>
+        <h1 class="kd-ep-hero__name">${escHTML5(p.name)}</h1>
         <div class="kd-ep-hero__subline">
-          <div class="kd-ep-hero__form"><i></i>${escHTML4(fam.toUpperCase())}</div>
+          <div class="kd-ep-hero__form"><i></i>${escHTML5(fam.toUpperCase())}</div>
           <span class="kd-ep-hero__sep">\xB7</span>
           <span class="kd-ep-hero__meta">Youngevity product${sku}</span>
         </div>
       </div>
       <div class="kd-ep-actions">
         <button class="kd-ep-back" data-kd-action="product-close" type="button">${fromProductsTab ? "\u2039 All products" : "\u2039 Go back"}</button>
-        <button class="kd-ep-add-regimen" data-kd-action="add-regimen" data-add-product="${escHTML4(id)}" type="button">Add to regimen \u203A</button>
+        <button class="kd-ep-add-regimen" data-kd-action="add-regimen" data-add-product="${escHTML5(id)}" type="button">Add to regimen \u203A</button>
       </div>
     </div>
     <p class="kd-ep-lede">${lede}</p>
@@ -213997,7 +212252,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
 
   // assets/js/src/views/entity-page.ts
-  function escHTML5(s) {
+  function escHTML6(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function collapseWS(s) {
@@ -214023,9 +212278,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function glossCol(term) {
     const def = glossaryDef(term);
     if (def === null) {
-      return escHTML5(term);
+      return escHTML6(term);
     }
-    return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML5(term)}: ${escHTML5(def)}" data-def="${escHTML5(def)}">${escHTML5(term)}</span>`;
+    return `<span class="gloss" tabindex="0" role="button" aria-label="${escHTML6(term)}: ${escHTML6(def)}" data-def="${escHTML6(def)}">${escHTML6(term)}</span>`;
   }
   function renderFig81Legend() {
     const cols = ["RDA", "True Supplement Need", "30-Day Pharmacologic"].map(glossCol).join(" \xB7 ");
@@ -214065,14 +212320,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return "";
     }
     const label = doseContextLabel(claim);
-    const labelHTML = label.length > 0 ? `<span class="kd-claim__dose-label">${escHTML5(label)}</span>` : "";
+    const labelHTML = label.length > 0 ? `<span class="kd-claim__dose-label">${escHTML6(label)}</span>` : "";
     return `
-      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML5(value)}</span></div>`;
+      <div class="kd-claim__dose">${labelHTML}<span class="kd-claim__dose-value">${escHTML6(value)}</span></div>`;
   }
   function renderRefHeader(label) {
     return `
       <div class="kd-claim__legend" role="note">
-        <span class="kd-claim__legend-eyebrow">${escHTML5(label)}</span>
+        <span class="kd-claim__legend-eyebrow">${escHTML6(label)}</span>
         <span class="kd-claim__legend-cols">as printed in Wallach's book</span>
       </div>`;
   }
@@ -214084,20 +212339,20 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function renderSearchCard(claim) {
     const cite = composeCite(claim);
-    const tags = claim.topics.map((t) => `<span class="kd-ep-tag">#${escHTML5(t)}</span>`).join("");
-    const preview = claim.answer_short.length > 0 ? `<span class="kd-ep-claim__preview">${escHTML5(claim.answer_short)}</span>` : "";
-    const short = claim.answer_short.length > 0 ? `<div class="kd-ep-claim__short">${escHTML5(claim.answer_short)}</div>` : "";
+    const tags = claim.topics.map((t) => `<span class="kd-ep-tag">#${escHTML6(t)}</span>`).join("");
+    const preview = claim.answer_short.length > 0 ? `<span class="kd-ep-claim__preview">${escHTML6(claim.answer_short)}</span>` : "";
+    const short = claim.answer_short.length > 0 ? `<div class="kd-ep-claim__short">${escHTML6(claim.answer_short)}</div>` : "";
     return `<details class="kd-ep-claim">
     <summary class="kd-ep-claim__summary">
       <span class="kd-ep-claim__badge">?</span>
-      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML5(claim.question)}</span>${preview}</span>
+      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML6(claim.question)}</span>${preview}</span>
       <span class="kd-ep-claim__chev">\u25B8</span>
     </summary>
     <div class="kd-ep-claim__body">
       ${short}
       ${claim.answer.trim() === claim.answer_short.trim() ? "" : `<div class="kd-ep-claim__answer">${glossify(claim.answer)}</div>`}
       <blockquote class="kd-ep-claim__verbatim">\u201C${glossify(collapseWS(claim.verbatim))}\u201D</blockquote>
-      ${cite.length > 0 ? `<div class="kd-ep-claim__cite">\u2014 Dr. Joel Wallach \xB7 ${escHTML5(cite)}</div>` : ""}
+      ${cite.length > 0 ? `<div class="kd-ep-claim__cite">\u2014 Dr. Joel Wallach \xB7 ${escHTML6(cite)}</div>` : ""}
       ${tags.length > 0 ? `<div class="kd-ep-claim__tags">${tags}</div>` : ""}
     </div>
   </details>`;
@@ -214108,11 +212363,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const shownVerbatim = isTable ? fig81OwnRow(claim.verbatim) : collapseWS(claim.verbatim);
     const verbatimCls = isTable ? "kd-ep-claim__verbatim kd-ep-claim__verbatim--rows" : "kd-ep-claim__verbatim";
     const enrichQ = getSearchClaim(claim.id)?.question ?? "";
-    const qAttr = enrichQ.length > 0 ? ` data-question="${escHTML5(enrichQ)}"` : "";
+    const qAttr = enrichQ.length > 0 ? ` data-question="${escHTML6(enrichQ)}"` : "";
     return `<details class="kd-ep-claim kd-ep-claim--record"${open ? " open" : ""}${qAttr}>
     <summary class="kd-ep-claim__summary">
       <span class="kd-ep-claim__badge">?</span>
-      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML5(truncate(claim.claim_text, 116))}</span><span class="kd-ep-claim__full">${glossify(claim.claim_text)}</span></span>
+      <span class="kd-ep-claim__qblock"><span class="kd-ep-claim__q">${escHTML6(truncate(claim.claim_text, 116))}</span><span class="kd-ep-claim__full">${glossify(claim.claim_text)}</span></span>
       <span class="kd-ep-claim__chev">\u25B8</span>
     </summary>
     <div class="kd-ep-claim__body">
@@ -214120,7 +212375,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       ${isTable ? renderFig81Legend() : ""}
       ${refLabel !== null ? renderRefHeader(refLabel) : ""}
       <blockquote class="${verbatimCls}">${glossify(shownVerbatim)}</blockquote>
-      <div class="kd-ep-claim__cite">CITED \xB7 ${escHTML5(getBookLabel(claim.book))}</div>
+      <div class="kd-ep-claim__cite">CITED \xB7 ${escHTML6(getBookLabel(claim.book))}</div>
     </div>
   </details>`;
   }
@@ -214153,18 +212408,18 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const r = n >= 100 ? Math.round(n) : Math.round(n * 10) / 10;
     return r.toLocaleString("en-US");
   }
-  function fmtAmount(n, unit) {
+  function fmtAmount2(n, unit) {
     if (unit === "mg" && Number.isFinite(n) && n > 0 && n < 1) {
       return { value: fmtTarget(n * 1e3), unit: "mcg" };
     }
     return { value: fmtTarget(n), unit };
   }
   function seclabel(label, hint) {
-    const h = hint !== void 0 && hint.length > 0 ? `<span class="kd-ep-seclabel__hint">${escHTML5(hint)}</span>` : "";
-    return `<div class="kd-ep-seclabel">${escHTML5(label)}${h}</div>`;
+    const h = hint !== void 0 && hint.length > 0 ? `<span class="kd-ep-seclabel__hint">${escHTML6(hint)}</span>` : "";
+    return `<div class="kd-ep-seclabel">${escHTML6(label)}${h}</div>`;
   }
   function pill(display, attr, val, cls) {
-    return `<button class="kd-ep-pill ${cls}" type="button" ${attr}="${escHTML5(val)}">${escHTML5(display)}</button>`;
+    return `<button class="kd-ep-pill ${cls}" type="button" ${attr}="${escHTML6(val)}">${escHTML6(display)}</button>`;
   }
   function pillCloud(pills, showN) {
     const head = pills.slice(0, showN).join("");
@@ -214197,10 +212452,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function srcRow(s, isBest) {
     const price = s.price !== null ? `$${s.price.toFixed(2)}` : "\u2014";
     const tag = isBest ? '<span class="kd-ep-vtag">best value</span>' : "";
-    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML5(s.productId)}">
+    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML6(s.productId)}">
       <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
-      <span class="kd-ep-src__nm">${escHTML5(s.name)}${tag}</span>
-      <span class="kd-ep-src__amt">${fmtAmount(s.amount, s.unit).value} ${escHTML5(fmtAmount(s.amount, s.unit).unit)}</span>
+      <span class="kd-ep-src__nm">${escHTML6(s.name)}${tag}</span>
+      <span class="kd-ep-src__amt">${fmtAmount2(s.amount, s.unit).value} ${escHTML6(fmtAmount2(s.amount, s.unit).unit)}</span>
       <span class="kd-ep-src__pr">${price}</span>
       <span class="kd-ep-src__chev">\u203A</span>
     </button>`;
@@ -214220,18 +212475,18 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
     const ivt = tile?.intakeVsTarget ?? null;
     const why = slug !== null ? essentialWhy(slug) : "";
-    const whyHTML = why.length > 0 ? `<span class="kd-ep-why">why this number?<span class="kd-ep-tip">${escHTML5(why)}</span></span>` : "";
+    const whyHTML = why.length > 0 ? `<span class="kd-ep-why">why this number?<span class="kd-ep-tip">${escHTML6(why)}</span></span>` : "";
     const ceiling = slug !== null ? essentialCeiling(slug) : null;
-    const targetHTML = ivt !== null ? `<div class="kd-ep-v">${fmtTarget(ivt.targetLow)}${ivt.targetHigh !== ivt.targetLow ? "\u2013" + fmtTarget(ivt.targetHigh) : ""}<small> ${escHTML5(ivt.unit)}</small></div>` : ceiling !== null ? `<div class="kd-ep-v">${fmtTarget(ceiling.amount)}<small> ${escHTML5(ceiling.unit)}</small></div>
-        <div class="kd-ep-sub">${escHTML5(ui("kd_ep_ceiling_note"))}</div>` : `<div class="kd-ep-gap">${escHTML5(ui("ep_no_target"))}</div>`;
+    const targetHTML = ivt !== null ? `<div class="kd-ep-v">${fmtTarget(ivt.targetLow)}${ivt.targetHigh !== ivt.targetLow ? "\u2013" + fmtTarget(ivt.targetHigh) : ""}<small> ${escHTML6(ivt.unit)}</small></div>` : ceiling !== null ? `<div class="kd-ep-v">${fmtTarget(ceiling.amount)}<small> ${escHTML6(ceiling.unit)}</small></div>
+        <div class="kd-ep-sub">${escHTML6(ui("kd_ep_ceiling_note"))}</div>` : `<div class="kd-ep-gap">${escHTML6(ui("ep_no_target"))}</div>`;
     let coverageHTML;
     if (ivt !== null) {
       const pct = Math.max(0, Math.round((tile?.fillPercent ?? 0) * 100));
       const barPct = Math.min(100, pct);
       coverageHTML = `<div class="kd-ep-k">Your coverage</div>
-        <div class="kd-ep-v">${fmtTarget(ivt.deliveredAmount)}<small> / ${fmtTarget(ivt.targetLow)} ${escHTML5(ivt.unit)}</small></div>
+        <div class="kd-ep-v">${fmtTarget(ivt.deliveredAmount)}<small> / ${fmtTarget(ivt.targetLow)} ${escHTML6(ivt.unit)}</small></div>
         <div class="kd-ep-bar${barFillClass(status)}"><i style="width:${barPct}%"></i></div>
-        <div class="kd-ep-sub">${pct}% ${escHTML5(ui("ep_coverage_of_target"))}</div>`;
+        <div class="kd-ep-sub">${pct}% ${escHTML6(ui("ep_coverage_of_target"))}</div>`;
     } else {
       coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(status)}">\u25CF ${statusLabel(status)}</span></div>`;
@@ -214240,7 +212495,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
-        <div class="kd-ep-k">${ivt === null && ceiling !== null ? escHTML5(ui("kd_ep_ceiling_label")) : "Wallach daily target"}</div>
+        <div class="kd-ep-k">${ivt === null && ceiling !== null ? escHTML6(ui("kd_ep_ceiling_label")) : "Wallach daily target"}</div>
         ${targetHTML}
         ${whyHTML}
       </div>
@@ -214254,10 +212509,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function renderSourcesBlock(layoutKey, slug = null) {
     const sources = rankedSourcesForEssential(layoutKey).filter((s) => s.amount > 0);
     const note = slug !== null ? essentialSourcesNote(slug) : "";
-    const noteHtml = note.length > 0 ? `<p class="kd-ep-srcnote">${escHTML5(note)}</p>` : "";
+    const noteHtml = note.length > 0 ? `<p class="kd-ep-srcnote">${escHTML6(note)}</p>` : "";
     if (sources.length === 0) {
       return note.length === 0 ? "" : `<hr class="kd-ep-op__div">
-      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML5(ui("kd_ep_srcnote_label"))}</div>
+      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML6(ui("kd_ep_srcnote_label"))}</div>
       ${noteHtml}`;
     }
     const bestId = bestValueProductId(sources);
@@ -214301,9 +212556,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return "not covered";
   }
   function pdmSrcRow(s) {
-    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML5(s.productId)}">
+    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML6(s.productId)}">
       <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
-      <span class="kd-ep-src__nm">${escHTML5(s.name)}</span>
+      <span class="kd-ep-src__nm">${escHTML6(s.name)}</span>
       <span class="kd-ep-src__amt">${fmtTarget(s.mg)} mg</span>
       <span class="kd-ep-src__chev">\u203A</span>
     </button>`;
@@ -214313,28 +212568,28 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const short = src.replace(/\s*\([^)]*\)\s*$/, "").trim();
     const pct = Math.max(0, Math.round(tile.fillPercent * 100));
     const barPct = Math.min(100, pct);
-    const cta = src.length > 0 ? `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="${escHTML5(src)}">
-        <span class="kd-ep-mirror__cta-nm">${escHTML5(short)}</span>
-        <span class="kd-ep-mirror__cta-go">${escHTML5(ui("kd_ep_mirror_cta"))}</span>
+    const cta = src.length > 0 ? `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="${escHTML6(src)}">
+        <span class="kd-ep-mirror__cta-nm">${escHTML6(short)}</span>
+        <span class="kd-ep-mirror__cta-go">${escHTML6(ui("kd_ep_mirror_cta"))}</span>
         <span class="kd-ep-mirror__cta-chev" aria-hidden="true">\u203A</span>
       </button>` : "";
     return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
-        <div class="kd-ep-k">${escHTML5(ui("kd_ep_mirror_targetlabel"))}</div>
-        <div class="kd-ep-gap">${escHTML5(ui("kd_ep_mirror_notarget"))}</div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_mirror_targetlabel"))}</div>
+        <div class="kd-ep-gap">${escHTML6(ui("kd_ep_mirror_notarget"))}</div>
       </div>
       <div>
-        <div class="kd-ep-k">${escHTML5(ui("kd_ep_mirror_covlabel"))} <span class="kd-ep-pdm-tag">${escHTML5(fillTokens("kd_ep_mirror_via", { name: short }))}</span></div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_mirror_covlabel"))} <span class="kd-ep-pdm-tag">${escHTML6(fillTokens("kd_ep_mirror_via", { name: short }))}</span></div>
         <div class="kd-ep-v">${pct}<small>%</small></div>
         <div class="kd-ep-bar${barFillClass(tile.status)}"><i style="width:${barPct}%"></i></div>
-        <div class="kd-ep-sub">${escHTML5(fillTokens("kd_ep_mirror_covof", { name: short }))}</div>
+        <div class="kd-ep-sub">${escHTML6(fillTokens("kd_ep_mirror_covof", { name: short }))}</div>
       </div>
     </div>
     <div class="kd-ep-mirror">
-      <div class="kd-ep-mirror__lead">${escHTML5(ui("kd_ep_mirror_lead"))}</div>
-      <div class="kd-ep-mirror__body">${escHTML5(ui("kd_ep_mirror_body"))}</div>
-      <div class="kd-ep-mirror__foot">${escHTML5(ui("kd_ep_mirror_foot"))}</div>
+      <div class="kd-ep-mirror__lead">${escHTML6(ui("kd_ep_mirror_lead"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML6(ui("kd_ep_mirror_body"))}</div>
+      <div class="kd-ep-mirror__foot">${escHTML6(ui("kd_ep_mirror_foot"))}</div>
       ${cta}
     </div>
   </div>`;
@@ -214344,43 +212599,43 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
-        <div class="kd-ep-k">${escHTML5(ui("kd_ep_present_targetlabel"))}</div>
-        <div class="kd-ep-gap">${escHTML5(ui("kd_ep_present_notarget"))}</div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_present_targetlabel"))}</div>
+        <div class="kd-ep-gap">${escHTML6(ui("kd_ep_present_notarget"))}</div>
       </div>
       <div>
-        <div class="kd-ep-k">${escHTML5(ui("kd_ep_present_covlabel"))}</div>
-        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(tile.status)}">\u25CF ${escHTML5(statusLabel(tile.status))}</span></div>
-        <div class="kd-ep-sub">${escHTML5(ui("kd_ep_present_sub"))}</div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_present_covlabel"))}</div>
+        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(tile.status)}">\u25CF ${escHTML6(statusLabel(tile.status))}</span></div>
+        <div class="kd-ep-sub">${escHTML6(ui("kd_ep_present_sub"))}</div>
       </div>
     </div>
     <div class="kd-ep-mirror">
-      <div class="kd-ep-mirror__lead">${escHTML5(ui("kd_ep_present_lead"))}</div>
-      <div class="kd-ep-mirror__body">${escHTML5(body)}</div>
+      <div class="kd-ep-mirror__lead">${escHTML6(ui("kd_ep_present_lead"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML6(body)}</div>
     </div>
   </div>`;
   }
   function renderNonEssentialGlance(layoutKey) {
     const cta = `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="Omega-6 (Linoleic Acid / LA)">
         <span class="kd-ep-mirror__cta-nm">Omega-6</span>
-        <span class="kd-ep-mirror__cta-go">${escHTML5(ui("kd_ep_noness_cta"))}</span>
+        <span class="kd-ep-mirror__cta-go">${escHTML6(ui("kd_ep_noness_cta"))}</span>
         <span class="kd-ep-mirror__cta-chev" aria-hidden="true">\u203A</span>
       </button>`;
     return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
-        <div class="kd-ep-k">${escHTML5(ui("kd_ep_noness_targetlabel"))}</div>
-        <div class="kd-ep-gap">${escHTML5(ui("kd_ep_noness_notarget"))}</div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_noness_targetlabel"))}</div>
+        <div class="kd-ep-gap">${escHTML6(ui("kd_ep_noness_notarget"))}</div>
       </div>
       <div>
-        <div class="kd-ep-k">${escHTML5(ui("kd_ep_noness_covlabel"))}</div>
-        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill kd-essential-deep__status-pill--pending">${escHTML5(ui("kd_ep_noness_covword"))}</span></div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_noness_covlabel"))}</div>
+        <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill kd-essential-deep__status-pill--pending">${escHTML6(ui("kd_ep_noness_covword"))}</span></div>
       </div>
     </div>
     <div class="kd-ep-mirror kd-ep-mirror--aside">
-      <div class="kd-ep-k kd-ep-mirror__eyebrow">${escHTML5(ui("kd_ep_noness_eyebrow"))}</div>
-      <div class="kd-ep-mirror__lead">${escHTML5(ui("kd_ep_noness_lead"))}</div>
-      <div class="kd-ep-mirror__body">${escHTML5(ui("kd_ep_noness_body"))}</div>
-      <div class="kd-ep-mirror__body">${escHTML5(ui("kd_ep_noness_body2"))}</div>
+      <div class="kd-ep-k kd-ep-mirror__eyebrow">${escHTML6(ui("kd_ep_noness_eyebrow"))}</div>
+      <div class="kd-ep-mirror__lead">${escHTML6(ui("kd_ep_noness_lead"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML6(ui("kd_ep_noness_body"))}</div>
+      <div class="kd-ep-mirror__body">${escHTML6(ui("kd_ep_noness_body2"))}</div>
       ${cta}
     </div>
     ${renderSourcesBlock(layoutKey)}
@@ -214400,18 +212655,18 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
-        <div class="kd-ep-k">${escHTML5(ui("kd_ep_pdm_targetlabel"))}</div>
+        <div class="kd-ep-k">${escHTML6(ui("kd_ep_pdm_targetlabel"))}</div>
         <div class="kd-ep-v">${fmtTarget(g.goalMg)}<small> mg / day</small></div>
-        <span class="kd-ep-why">${escHTML5(ui("kd_ep_pdm_calc_q"))}<span class="kd-ep-tip">${escHTML5(tip2)}</span></span>
+        <span class="kd-ep-why">${escHTML6(ui("kd_ep_pdm_calc_q"))}<span class="kd-ep-tip">${escHTML6(tip2)}</span></span>
       </div>
       <div>
-        <div class="kd-ep-k">Your coverage <span class="kd-ep-pdm-tag">${escHTML5(ui("kd_ep_pdm_grouptag"))}</span></div>
+        <div class="kd-ep-k">Your coverage <span class="kd-ep-pdm-tag">${escHTML6(ui("kd_ep_pdm_grouptag"))}</span></div>
         <div class="kd-ep-v">${fmtTarget(g.deliveredMg)}<small> / ${fmtTarget(g.goalMg)} mg</small></div>
         <div class="kd-ep-bar${barFillClass(g.status)}"><i style="width:${barPct}%"></i></div>
-        <div class="kd-ep-sub">${pct}% ${escHTML5(ui("kd_ep_pdm_covof"))} \u2014 ${escHTML5(pdmVerdictWord(g.status))}</div>
+        <div class="kd-ep-sub">${pct}% ${escHTML6(ui("kd_ep_pdm_covof"))} \u2014 ${escHTML6(pdmVerdictWord(g.status))}</div>
       </div>
     </div>
-    <div class="kd-ep-pdm-note">${escHTML5(ui("kd_ep_pdm_note"))}</div>
+    <div class="kd-ep-pdm-note">${escHTML6(ui("kd_ep_pdm_note"))}</div>
   </div>`;
   }
   function renderPdmSourcesBlock() {
@@ -214424,7 +212679,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const rest = src.slice(TOP);
     const more = rest.length > 0 ? `<details class="kd-ep-more"><summary>Show all ${src.length} sources</summary><div class="kd-ep-more__body">${rest.map((s) => pdmSrcRow(s)).join("")}</div></details>` : "";
     return `<hr class="kd-ep-op__div">
-      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML5(ui("kd_ep_pdm_srclabel"))}</div>
+      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML6(ui("kd_ep_pdm_srclabel"))}</div>
       ${head}${more}`;
   }
   var FACET_CAP = 7;
@@ -214442,8 +212697,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const shown = claims.slice(0, FACET_CAP).map((c) => renderSearchCard(c)).join("");
       const rest = claims.slice(FACET_CAP);
       const more = rest.length > 0 ? `<details class="kd-ep-more kd-ep-more--answers"><summary>See ${rest.length} more ${plural(rest.length, "answer")}</summary><div class="kd-ep-more__body">${rest.map((c) => renderSearchCard(c)).join("")}</div></details>` : "";
-      return `<details class="kd-ep-facet" data-facet="${escHTML5(g.facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML5(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${claims.length}</span></summary>
+      return `<details class="kd-ep-facet" data-facet="${escHTML6(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML6(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${claims.length}</span></summary>
       <div class="kd-ep-facet__body">${shown}${more}</div>
     </details>`;
     }).join("");
@@ -214465,7 +212720,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
     const TOP = 3;
     const rows = src.slice(0, TOP).map(
-      (s) => `<button class="kd-ep-getit__prod" type="button" data-kd-product="${escHTML5(s.productId)}">${escHTML5(s.name)}<span class="kd-ep-getit__chev">\u203A</span></button>`
+      (s) => `<button class="kd-ep-getit__prod" type="button" data-kd-product="${escHTML6(s.productId)}">${escHTML6(s.name)}<span class="kd-ep-getit__chev">\u203A</span></button>`
     ).join("");
     const more = src.length > TOP ? `<span class="kd-ep-getit__more">+${src.length - TOP} more above</span>` : "";
     return `<div class="kd-ep-getit">
@@ -214507,8 +212762,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       if (getIt.length > 0) {
         getItPlaced = true;
       }
-      return `<details class="kd-ep-facet" data-facet="${escHTML5(g.facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML5(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
+      return `<details class="kd-ep-facet" data-facet="${escHTML6(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML6(facetLabel(g.facet))}</span><span class="kd-ep-facet__count">${g.claim_ids.length}</span></summary>
       <div class="kd-ep-facet__body">${cards2}${getIt}</div>
     </details>`;
     }).join("");
@@ -214539,8 +212794,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         return "";
       }
       const cards2 = claims.map((cl) => renderRecordClaim(cl)).join("");
-      return `<details class="kd-ep-kind"${openKinds} data-family="${escHTML5(kindCategory(g.kind))}">
-      <summary><span class="kd-ep-kind__label">${escHTML5(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${claims.length}</span></summary>
+      return `<details class="kd-ep-kind"${openKinds} data-family="${escHTML6(kindCategory(g.kind))}">
+      <summary><span class="kd-ep-kind__label">${escHTML6(kindLabel(g.kind))}</span><span class="kd-ep-kind__count">${claims.length}</span></summary>
       <div class="kd-ep-kind__body">${cards2}</div>
     </details>`;
     }).join("");
@@ -214548,7 +212803,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">All ${total} ${plural(total, "claim")}</span><span class="kd-ep-facet__count">${total}</span></summary>
         <div class="kd-ep-record__body">
           <div class="kd-ep-filterbar"><span class="kd-ep-filterbar__icon">\u2315</span><input class="kd-ep-filter" type="text" maxlength="120" placeholder="Filter these ${total} ${plural(total, "claim")} by keyword\u2026"></div>
-          <div class="kd-ep-record-note">${escHTML5(ui("ep_record_note"))}</div>
+          <div class="kd-ep-record-note">${escHTML6(ui("ep_record_note"))}</div>
           ${kindsHTML}
         </div>
       </details>`;
@@ -214559,7 +212814,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
     const pills = page.conditions.map((slug) => pill(conditionDisplayName(slug), "data-kd-condition", slug, "kd-ep-pill--cond"));
     const lead = leadWithCount("ep_conditions_lead", page.conditions.length, "condition");
-    return seclabel("Need help with a condition?") + (lead.length > 0 ? `<p class="kd-ep-lead">${escHTML5(lead)}</p>` : "") + pillCloud(pills, 12);
+    return seclabel("Need help with a condition?") + (lead.length > 0 ? `<p class="kd-ep-lead">${escHTML6(lead)}</p>` : "") + pillCloud(pills, 12);
   }
   function renderWorksWithSection(page) {
     if (page.works_with.length === 0) {
@@ -214570,7 +212825,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return pill(essentialDisplayName(slug), "data-kd-essential", lk, "kd-ep-pill--nut");
     });
     const lead = leadWithCount("ep_works_with_lead", page.works_with.length, "nutrient");
-    return seclabel("Works with") + (lead.length > 0 ? `<p class="kd-ep-lead">${escHTML5(lead)}</p>` : "") + pillCloud(pills, 12);
+    return seclabel("Works with") + (lead.length > 0 ? `<p class="kd-ep-lead">${escHTML6(lead)}</p>` : "") + pillCloud(pills, 12);
   }
   function renderRelatedSection(page) {
     if (page.related.length === 0) {
@@ -214585,7 +212840,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       if (cond !== null) {
         return pill(cond.display_name, "data-kd-condition", slug, "kd-ep-pill--explore");
       }
-      return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML5(humanizeSlug(slug))}</span>`;
+      return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML6(humanizeSlug(slug))}</span>`;
     }).join("");
     return seclabel("Keep exploring") + `<div class="kd-ep-cloud">${pills}</div>`;
   }
@@ -214605,19 +212860,19 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
     const rows = fam.acids.map((a) => `
       <li class="kd-omega__row">
-        <span class="kd-omega__abbr">${escHTML5(a.abbr)}</span>
+        <span class="kd-omega__abbr">${escHTML6(a.abbr)}</span>
         <div class="kd-omega__body">
-          <span class="kd-omega__name">${escHTML5(a.name)}${a.primary ? ' <em class="kd-omega__primary">primary</em>' : ""}</span>
-          <span class="kd-omega__desc">${escHTML5(a.description)}</span>
+          <span class="kd-omega__name">${escHTML6(a.name)}${a.primary ? ' <em class="kd-omega__primary">primary</em>' : ""}</span>
+          <span class="kd-omega__desc">${escHTML6(a.description)}</span>
         </div>
       </li>`).join("");
     return `
     <div class="kd-omega">
       <div class="kd-omega__head">
-        <span class="kd-omega__title">${escHTML5(fam.label)} \xB7 FATTY-ACID FORMS</span>
+        <span class="kd-omega__title">${escHTML6(fam.label)} \xB7 FATTY-ACID FORMS</span>
       </div>
       <ul class="kd-omega__list">${rows}</ul>
-      <div class="kd-omega__note">${escHTML5(FATTY_ACID_CLARITY.disclaimer)}</div>
+      <div class="kd-omega__note">${escHTML6(FATTY_ACID_CLARITY.disclaimer)}</div>
     </div>`;
   }
   function omega3Figure(fam) {
@@ -214628,35 +212883,35 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const shortName = a.name.replace(/\s+Acid$/i, "");
       const src = (a.source ?? "").toUpperCase();
       return `
-      <text class="kd-ep-fam__nfam${solid ? "" : " kd-ep-fam__nfam--cond"}" x="${XC[i]}" y="24" text-anchor="middle">${escHTML5(src)}</text>
+      <text class="kd-ep-fam__nfam${solid ? "" : " kd-ep-fam__nfam--cond"}" x="${XC[i]}" y="24" text-anchor="middle">${escHTML6(src)}</text>
       <rect class="kd-ep-fam__node kd-ep-fam__node--${solid ? "solid" : "soft"}" x="${XN[i]}" y="38" width="168" height="72" rx="12"/>
-      <text class="kd-ep-fam__nabbr${solid ? "" : " kd-ep-fam__nabbr--cond"}" x="${XC[i]}" y="80" text-anchor="middle">${escHTML5(a.abbr)}</text>
-      <text class="kd-ep-fam__nname" x="${XC[i]}" y="98" text-anchor="middle">${escHTML5(shortName)}</text>
-      ${solid ? `<text class="kd-ep-fam__bracketlbl" x="${XC[i]}" y="134" text-anchor="middle">${escHTML5(ui("kd_ep_o3_ala_tag"))}</text>` : ""}`;
+      <text class="kd-ep-fam__nabbr${solid ? "" : " kd-ep-fam__nabbr--cond"}" x="${XC[i]}" y="80" text-anchor="middle">${escHTML6(a.abbr)}</text>
+      <text class="kd-ep-fam__nname" x="${XC[i]}" y="98" text-anchor="middle">${escHTML6(shortName)}</text>
+      ${solid ? `<text class="kd-ep-fam__bracketlbl" x="${XC[i]}" y="134" text-anchor="middle">${escHTML6(ui("kd_ep_o3_ala_tag"))}</text>` : ""}`;
     }).join("");
     return `<svg class="kd-ep-fam__art" viewBox="0 0 680 150" role="img" aria-label="The three forms of omega-3: ALA from plants, the essential one; EPA and DHA from the sea">${nodes}</svg>`;
   }
   function renderOmega3Rich(fam) {
     const rows = fam.acids.map((a) => `
       <div class="kd-ep-fam__step">
-        <span class="kd-ep-fam__num">${escHTML5(a.abbr)}</span>
+        <span class="kd-ep-fam__num">${escHTML6(a.abbr)}</span>
         <div class="kd-ep-fam__stepbody">
-          <div class="kd-ep-fam__steptitle">${escHTML5(a.name)}</div>
-          <div class="kd-ep-fam__steptext">${escHTML5(a.description)}</div>
+          <div class="kd-ep-fam__steptitle">${escHTML6(a.name)}</div>
+          <div class="kd-ep-fam__steptext">${escHTML6(a.description)}</div>
         </div>
       </div>`).join("");
     return `<section class="kd-ep-fam">
-      <span class="kd-ep-fam__eyebrow">${escHTML5(ui("kd_ep_o3_eyebrow"))}</span>
-      <h3 class="kd-ep-fam__kill">${escHTML5(ui("kd_ep_o3_kill"))}</h3>
+      <span class="kd-ep-fam__eyebrow">${escHTML6(ui("kd_ep_o3_eyebrow"))}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML6(ui("kd_ep_o3_kill"))}</h3>
       <div class="kd-ep-fam__figure">${omega3Figure(fam)}</div>
       <div class="kd-ep-fam__steps">${rows}</div>
-      <div class="kd-ep-fam__note">${escHTML5(FATTY_ACID_CLARITY.disclaimer)}</div>
+      <div class="kd-ep-fam__note">${escHTML6(FATTY_ACID_CLARITY.disclaimer)}</div>
     </section>`;
   }
   function fatFamilyFigure() {
-    const arrow = escHTML5(ui("kd_ep_fam_arrow"));
-    const bracket = escHTML5(ui("kd_ep_fam_bracket"));
-    const condtag = escHTML5(ui("kd_ep_fam_condtag"));
+    const arrow2 = escHTML6(ui("kd_ep_fam_arrow"));
+    const bracket = escHTML6(ui("kd_ep_fam_bracket"));
+    const condtag = escHTML6(ui("kd_ep_fam_condtag"));
     return `<svg class="kd-ep-fam__art" viewBox="0 0 680 166" role="img" aria-label="Three fatty acids: two essential (linolenic, linoleic) and one conditional (arachidonic)">
       <defs><marker id="fam-arrow" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path class="kd-ep-fam__arrowhead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
       <text class="kd-ep-fam__nfam" x="100" y="26" text-anchor="middle">\u03C9-3</text>
@@ -214672,7 +212927,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <text class="kd-ep-fam__nname" x="340" y="98" text-anchor="middle">Linoleic</text>
       <text class="kd-ep-fam__nname" x="580" y="98" text-anchor="middle">Arachidonic</text>
       <path class="kd-ep-fam__arrowline" d="M430 72 L490 72" marker-end="url(#fam-arrow)"/>
-      <text class="kd-ep-fam__arrowlbl" x="460" y="62" text-anchor="middle">${arrow}</text>
+      <text class="kd-ep-fam__arrowlbl" x="460" y="62" text-anchor="middle">${arrow2}</text>
       <path class="kd-ep-fam__bracket" d="M16 126 L16 134 L424 134 L424 126"/>
       <text class="kd-ep-fam__bracketlbl" x="220" y="152" text-anchor="middle">${bracket}</text>
       <text class="kd-ep-fam__condtag" x="580" y="132" text-anchor="middle">${condtag}</text>
@@ -214680,9 +212935,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function fatFamilyStep(num2, tKey, bKey) {
     return `<div class="kd-ep-fam__step">
-      <span class="kd-ep-fam__num">${escHTML5(num2)}</span>
+      <span class="kd-ep-fam__num">${escHTML6(num2)}</span>
       <div class="kd-ep-fam__stepbody">
-        <div class="kd-ep-fam__steptitle">${escHTML5(ui(tKey))}</div>
+        <div class="kd-ep-fam__steptitle">${escHTML6(ui(tKey))}</div>
         <div class="kd-ep-fam__steptext">${glossify(collapseWS(ui(bKey)))}</div>
       </div>
     </div>`;
@@ -214698,14 +212953,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `<div class="ds-pull-quote-wrap kd-ep-fam__quote${big ? " kd-ep-fam__quote--big" : ""}">
       <blockquote class="ds-pull-quote">
         <p>${body}</p>
-        <footer>\u2014 Dr. Joel Wallach \xB7 ${escHTML5(getBookLabel(c.book))}</footer>
+        <footer>\u2014 Dr. Joel Wallach \xB7 ${escHTML6(getBookLabel(c.book))}</footer>
       </blockquote>
     </div>`;
   }
   function renderOmega6Experience(quoteClaim, highlight, layoutKey) {
     return `<section class="kd-ep-fam">
-      <span class="kd-ep-fam__eyebrow">${escHTML5(ui("kd_ep_fam_eyebrow"))}</span>
-      <h3 class="kd-ep-fam__kill">${escHTML5(ui("kd_ep_fam_kill"))}</h3>
+      <span class="kd-ep-fam__eyebrow">${escHTML6(ui("kd_ep_fam_eyebrow"))}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML6(ui("kd_ep_fam_kill"))}</h3>
       <div class="kd-ep-fam__figure">${fatFamilyFigure()}</div>
       <div class="kd-ep-fam__steps">
         ${fatFamilyStep("01", "kd_ep_fam_s1_t", "kd_ep_fam_s1_b")}
@@ -214713,7 +212968,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ${fatFamilyStep("03", "kd_ep_fam_s3_t", "kd_ep_fam_s3_b")}
       </div>
       ${fatFamilyQuote(quoteClaim, highlight)}
-      <div class="kd-ep-fam__note">${escHTML5(ui("kd_ep_fam_note"))}</div>
+      <div class="kd-ep-fam__note">${escHTML6(ui("kd_ep_fam_note"))}</div>
       ${renderSourcesBlock(layoutKey)}
     </section>`;
   }
@@ -214724,7 +212979,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const cls = x < 250 ? "" : x > 430 ? " kd-ep-fam__head--rancid" : " kd-ep-fam__head--guard";
       heads.push(`<circle class="kd-ep-fam__head${cls}" cx="${x}" cy="58" r="5"/><circle class="kd-ep-fam__head${cls}" cx="${x}" cy="92" r="5"/>`);
     }
-    return `<svg class="kd-ep-fam__art kd-ep-fam__art--mech" viewBox="0 0 680 150" role="img" aria-label="${escHTML5(alt)}">
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--mech" viewBox="0 0 680 150" role="img" aria-label="${escHTML6(alt)}">
       <path class="kd-ep-fam__mem" d="M20 58 L430 58 M20 92 L430 92"/>
       <path class="kd-ep-fam__mem kd-ep-fam__mem--gone" d="M430 58 L660 58 M430 92 L660 92"/>
       ${heads.join("")}
@@ -214740,12 +212995,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     </svg>`;
   }
   function figLabel(labels, id) {
-    return escHTML5(labels?.[id] ?? "");
+    return escHTML6(labels?.[id] ?? "");
   }
   function cofactorForkFigure(alt, labels) {
     const HAIR = ["black", "brown", "auburn", "blond"];
     const swatches = HAIR.map((h, k) => `<rect class="kd-ep-fam__hair kd-ep-fam__hair--${h}" x="${80 + k * 31}" y="222" width="26" height="40" rx="4"/>`).join("");
-    return `<svg class="kd-ep-fam__art kd-ep-fam__art--fork" viewBox="0 0 700 322" role="img" aria-label="${escHTML5(alt)}">
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--fork" viewBox="0 0 700 322" role="img" aria-label="${escHTML6(alt)}">
       <defs><marker id="mech-fork-tip" markerWidth="8" markerHeight="8" refX="4.5" refY="2.6" orient="auto">
         <path class="kd-ep-fam__ghead" d="M0 0 L5.5 2.6 L0 5.2 Z"/></marker></defs>
       <rect class="kd-ep-fam__gnode kd-ep-fam__gnode--el" x="300" y="8" width="100" height="52" rx="10"/>
@@ -214778,7 +213033,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <text class="kd-ep-fam__gstop" x="${x}" y="48" text-anchor="middle">${figLabel(labels, `stop${k + 1}`)}</text>
       <text class="kd-ep-fam__gsub" x="${x}" y="70" text-anchor="middle">${figLabel(labels, `stop${k + 1}_sub`)}</text>
       <circle class="kd-ep-fam__gstopdot" cx="${x}" cy="100" r="7"/>`).join("");
-    return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 172" role="img" aria-label="${escHTML5(alt)}">
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 172" role="img" aria-label="${escHTML6(alt)}">
       <defs><marker id="mech-rail-tip" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
         <path class="kd-ep-fam__ghead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
       <path class="kd-ep-fam__grail" d="M60 100 H576" marker-end="url(#mech-rail-tip)"/>
@@ -214790,7 +213045,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     </svg>`;
   }
   function reversalRailFigure(alt, labels) {
-    return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 84" role="img" aria-label="${escHTML5(alt)}">
+    return `<svg class="kd-ep-fam__art kd-ep-fam__art--rail" viewBox="0 0 660 84" role="img" aria-label="${escHTML6(alt)}">
       <defs><marker id="mech-turn-tip" markerWidth="9" markerHeight="9" refX="5" refY="3" orient="auto">
         <path class="kd-ep-fam__ghead kd-ep-fam__ghead--acc" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
       <text class="kd-ep-fam__gsub kd-ep-fam__gsub--acc" x="330" y="22" text-anchor="middle">${figLabel(labels, "duration")}</text>
@@ -214821,7 +213076,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       </g>
       <path class="kd-ep-fam__nailline" d="${nail(f.x, f.t)}"/>`).join("");
     const spots = SPOTS.map((s) => `<ellipse class="kd-ep-fam__nspot" cx="${s.cx}" cy="${s.cy}" rx="${s.rx}" ry="${s.ry}"/>`).join("");
-    return `<svg class="kd-ep-fam__art" viewBox="0 0 380 132" role="img" aria-label="${escHTML5(alt)}">
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 380 132" role="img" aria-label="${escHTML6(alt)}">
       <defs>${clips}</defs>${skins}${nails}${spots}
       <path class="kd-ep-fam__gline" d="M260 50 H274"/>
       <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="280" y="54">${figLabel(labels, "spots")}</text>
@@ -214839,7 +213094,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const bars = STOPS.map((x) => `<rect class="kd-ep-fam__gbar${on2 ? "" : " kd-ep-fam__gbar--off"}" x="${x + dx - 32}" y="140" width="64" height="22" rx="4"/>`).join("");
       return `<path class="kd-ep-fam__strand" d="M${52 + dx} 74 C${82 + dx} 58 ${112 + dx} 90 ${142 + dx} 74 C${172 + dx} 58 ${202 + dx} 90 ${232 + dx} 74 C${262 + dx} 58 ${292 + dx} 90 ${308 + dx} 80"/>${nodes}${stems}${bars}`;
     };
-    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 216" role="img" aria-label="${escHTML5(alt)}">
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 216" role="img" aria-label="${escHTML6(alt)}">
       <defs><marker id="mech-mf-tip" markerWidth="8" markerHeight="8" refX="4.5" refY="2.6" orient="auto">
         <path class="kd-ep-fam__ghead kd-ep-fam__ghead--acc" d="M0 0 L5.5 2.6 L0 5.2 Z"/></marker></defs>
       <text class="kd-ep-fam__gtag kd-ep-fam__gtag--acc" x="180" y="18" text-anchor="middle">${figLabel(labels, "with")}</text>
@@ -214859,8 +213114,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function diseaseScaleFigure(alt, labels) {
     const L = labels ?? {};
-    const g = (k) => escHTML5(L[k] ?? "");
-    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 176" role="img" aria-label="${escHTML5(alt)}">
+    const g = (k) => escHTML6(L[k] ?? "");
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 176" role="img" aria-label="${escHTML6(alt)}">
       <defs><linearGradient id="kd-ep-scale-num" x1="0" y1="0" x2="0" y2="1">
         <stop offset="0" style="stop-color:var(--ds-accent-bright)"/><stop offset="0.6" style="stop-color:var(--ds-accent)"/><stop offset="1" style="stop-color:var(--ds-accent-deep)"/>
       </linearGradient></defs>
@@ -214874,8 +213129,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function heartbeatFigure(alt, labels) {
     const L = labels ?? {};
-    const g = (k) => escHTML5(L[k] ?? "");
-    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 249" role="img" aria-label="${escHTML5(alt)}">
+    const g = (k) => escHTML6(L[k] ?? "");
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 249" role="img" aria-label="${escHTML6(alt)}">
       <defs>
         <linearGradient id="kd-ep-heart-fill" x1="0" y1="0" x2="0.4" y2="1">
           <stop offset="0" stop-color="#e07a5f"/><stop offset="0.55" stop-color="#c0392b"/><stop offset="1" stop-color="#8f271c"/>
@@ -214901,8 +213156,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     </svg>`;
   }
   function mgCycleFigure(alt, labels) {
-    const g = (k) => escHTML5(labels?.[k] ?? "");
-    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 270" role="img" aria-label="${escHTML5(alt)}">
+    const g = (k) => escHTML6(labels?.[k] ?? "");
+    return `<svg class="kd-ep-fam__art" viewBox="0 0 700 270" role="img" aria-label="${escHTML6(alt)}">
       <defs>
         <radialGradient id="kd-ep-mg-sun" cx="50%" cy="50%" r="50%">
           <stop offset="0%" stop-color="#e8b13e" stop-opacity="0.5"/><stop offset="100%" stop-color="#e8b13e" stop-opacity="0"/>
@@ -214998,11 +213253,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const marks = [];
     for (let k = 0; k < f.total; k++) {
       const key = band[k];
-      const mod = key !== void 0 ? ` kd-ep-fam__mark--${escHTML5(key)}` : "";
+      const mod = key !== void 0 ? ` kd-ep-fam__mark--${escHTML6(key)}` : "";
       marks.push(`<circle class="kd-ep-fam__mark${mod}" cx="${6 + k % f.columns * 12}" cy="${6 + Math.floor(k / f.columns) * 12}" r="4.5"/>`);
     }
     const rows = Math.ceil(f.total / f.columns);
-    const legend = f.bands.filter((b) => b.label.length > 0).map((b) => `<div class="kd-ep-fam__fieldleg"><span class="kd-ep-fam__fieldkey kd-ep-fam__fieldkey--${escHTML5(b.key)}"></span>${escHTML5(b.label)}</div>`).join("");
+    const legend = f.bands.filter((b) => b.label.length > 0).map((b) => `<div class="kd-ep-fam__fieldleg"><span class="kd-ep-fam__fieldkey kd-ep-fam__fieldkey--${escHTML6(b.key)}"></span>${escHTML6(b.label)}</div>`).join("");
     return `<svg class="kd-ep-fam__fieldart" viewBox="0 0 ${12 + (f.columns - 1) * 12} ${12 + (rows - 1) * 12}" aria-hidden="true">${marks.join("")}</svg>${legend}`;
   }
   function mechEvidence(side) {
@@ -215012,7 +213267,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const c = side.quote_claim !== void 0 ? getClaim(side.quote_claim) : null;
     if (side.note !== void 0 && side.note.length > 0) {
       if (c !== null) {
-        return `<blockquote class="kd-ep-fam__miniq kd-ep-fam__miniq--sourced">${glossify(collapseWS(side.note))}<cite>${escHTML5(getBookLabel(c.book))}</cite></blockquote>`;
+        return `<blockquote class="kd-ep-fam__miniq kd-ep-fam__miniq--sourced">${glossify(collapseWS(side.note))}<cite>${escHTML6(getBookLabel(c.book))}</cite></blockquote>`;
       }
       return `<p class="kd-ep-fam__splittx kd-ep-fam__evnote">${glossify(collapseWS(side.note))}</p>`;
     }
@@ -215020,12 +213275,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return "";
     }
     const shown = side.quote_trim !== void 0 && side.quote_trim.length > 0 ? side.quote_trim : c.verbatim;
-    return `<blockquote class="kd-ep-fam__miniq">${glossify(collapseWS(shown))}<cite>${escHTML5(getBookLabel(c.book))}</cite></blockquote>`;
+    return `<blockquote class="kd-ep-fam__miniq">${glossify(collapseWS(shown))}<cite>${escHTML6(getBookLabel(c.book))}</cite></blockquote>`;
   }
   function renderMechSplit(left, right) {
     const R = " kd-ep-fam__splitcell--r";
     const prose = (s, mod) => `<div class="kd-ep-fam__splitcell${mod}">
-        <div class="kd-ep-fam__splithd">${escHTML5(s.head)}</div>
+        <div class="kd-ep-fam__splithd">${escHTML6(s.head)}</div>
         <p class="kd-ep-fam__splittx">${glossify(collapseWS(s.text), true)}</p>
       </div>`;
     const evid = (s, mod) => {
@@ -215033,7 +213288,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       if (body.length === 0) {
         return `<div class="kd-ep-fam__splitcell${mod}"></div>`;
       }
-      const cap = s.evidence_caption !== void 0 ? `<div class="kd-ep-fam__evcap">${escHTML5(s.evidence_caption)}</div>` : "";
+      const cap = s.evidence_caption !== void 0 ? `<div class="kd-ep-fam__evcap">${escHTML6(s.evidence_caption)}</div>` : "";
       return `<div class="kd-ep-fam__splitcell kd-ep-fam__splitcell--ev${mod}">${cap}${body}</div>`;
     };
     return `<div class="kd-ep-fam__split">${prose(left, "")}${prose(right, R)}${evid(left, "")}${evid(right, R)}</div>`;
@@ -215041,10 +213296,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   var MECH_BLOCK_SEP = `
       `;
   function mechEyebrow(text) {
-    return `<span class="kd-ep-fam__eyebrow">${escHTML5(text)}</span>`;
+    return `<span class="kd-ep-fam__eyebrow">${escHTML6(text)}</span>`;
   }
   function mechKill(text) {
-    return `<h3 class="kd-ep-fam__kill">${escHTML5(text)}</h3>`;
+    return `<h3 class="kd-ep-fam__kill">${escHTML6(text)}</h3>`;
   }
   function mechFigureRow(figSvg, mod) {
     return `<div class="kd-ep-fam__figure${mod}">${figSvg}</div>`;
@@ -215063,14 +213318,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function mechBeats(items, mod, bignum = false) {
     const steps = items.map((b) => {
-      const hook = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML5(b.hook)}</p>` : "";
+      const hook = b.hook !== void 0 && b.hook.length > 0 ? `<p class="kd-ep-fam__hook">${escHTML6(b.hook)}</p>` : "";
       const turn = b.turn === true ? " kd-ep-fam__step--turn" : "";
-      const cta = b.cta !== void 0 ? `<button class="kd-ep-fam__cta" type="button" data-kd-tab="${escHTML5(b.cta.tab)}">${escHTML5(b.cta.label)} <span class="kd-ep-fam__cta-arrow" aria-hidden="true">&rarr;</span></button>` : "";
+      const cta = b.cta !== void 0 ? `<button class="kd-ep-fam__cta" type="button" data-kd-tab="${escHTML6(b.cta.tab)}">${escHTML6(b.cta.label)} <span class="kd-ep-fam__cta-arrow" aria-hidden="true">&rarr;</span></button>` : "";
       return `
       <div class="kd-ep-fam__step${turn}">
-        <span class="kd-ep-fam__num${bignum ? " kd-ep-fam__num--big" : ""}">${escHTML5(b.n)}</span>
+        <span class="kd-ep-fam__num${bignum ? " kd-ep-fam__num--big" : ""}">${escHTML6(b.n)}</span>
         <div class="kd-ep-fam__stepbody">
-          <div class="kd-ep-fam__steptitle">${escHTML5(b.title)}</div>
+          <div class="kd-ep-fam__steptitle">${escHTML6(b.title)}</div>
           <div class="kd-ep-fam__steptext">${glossify(collapseWS(b.text))}</div>
           ${cta}${hook}
         </div>
@@ -215081,22 +213336,22 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function mechStat(readout, value, label) {
     return `
       <div class="kd-ep-fam__stat">
-        <span class="kd-ep-fam__statread">${escHTML5(readout)}</span>
-        <span class="kd-ep-fam__statnum">${escHTML5(value)}</span>
-        <span class="kd-ep-fam__statlbl">${escHTML5(label)}</span>
+        <span class="kd-ep-fam__statread">${escHTML6(readout)}</span>
+        <span class="kd-ep-fam__statnum">${escHTML6(value)}</span>
+        <span class="kd-ep-fam__statlbl">${escHTML6(label)}</span>
       </div>`;
   }
   function mechInline(raw) {
-    return escHTML5(raw).replace(/&lt;b&gt;/g, "<b>").replace(/&lt;\/b&gt;/g, "</b>").replace(/&lt;em&gt;/g, "<em>").replace(/&lt;\/em&gt;/g, "</em>");
+    return escHTML6(raw).replace(/&lt;b&gt;/g, "<b>").replace(/&lt;\/b&gt;/g, "</b>").replace(/&lt;em&gt;/g, "<em>").replace(/&lt;\/em&gt;/g, "</em>");
   }
   function mechCompareCard(c) {
     const marker = c.big.mark === "star" ? "<sup>*</sup>" : c.big.mark === "tick" ? ' <span class="mkA-tick">&#10003;</span>' : "";
     const bigMod = c.big.struck === true ? " mkA-big--muted" : "";
     const cardMod = c.accent === true ? " mkA-card--animal" : "";
-    const rows = (items, dir) => items.map((r) => `<div class="mkA-pt mkA-pt--${dir}"><span class="mkA-pt__chip">${dir === "up" ? "+" : "&minus;"}</span><div class="mkA-pt__txt"><span class="mkA-pt__lead">${escHTML5(r.lead)}</span> ${mechInline(r.body)}</div></div>`).join("");
+    const rows = (items, dir) => items.map((r) => `<div class="mkA-pt mkA-pt--${dir}"><span class="mkA-pt__chip">${dir === "up" ? "+" : "&minus;"}</span><div class="mkA-pt__txt"><span class="mkA-pt__lead">${escHTML6(r.lead)}</span> ${mechInline(r.body)}</div></div>`).join("");
     return `<div class="mkA-card${cardMod}">
-        <div class="mkA-kicker">${escHTML5(c.kicker)}</div>
-        <div class="mkA-big${bigMod}">${escHTML5(c.big.text)}${marker}</div>
+        <div class="mkA-kicker">${escHTML6(c.kicker)}</div>
+        <div class="mkA-big${bigMod}">${escHTML6(c.big.text)}${marker}</div>
         <p class="mkA-fine">${mechInline(c.fine)}</p>
         ${rows(c.pros, "up")}${rows(c.cons, "down")}
       </div>`;
@@ -215108,15 +213363,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       </div>`;
   }
   function mechExplain(label, text) {
-    return `<div class="mk-section-label">${escHTML5(label)}</div>
+    return `<div class="mk-section-label">${escHTML6(label)}</div>
       <div class="mk-explain">${mechInline(text)}</div>`;
   }
   function mechCurio(eyebrow, head, body, cite) {
     return `<div class="mk-curio">
-        <div class="mk-curio__eyebrow">${escHTML5(eyebrow)}</div>
-        <h4 class="mk-curio__head">${escHTML5(head)}</h4>
+        <div class="mk-curio__eyebrow">${escHTML6(eyebrow)}</div>
+        <h4 class="mk-curio__head">${escHTML6(head)}</h4>
         <p class="mk-curio__body">${mechInline(body)}</p>
-        <div class="mk-curio__cite">${escHTML5(cite)}</div>
+        <div class="mk-curio__cite">${escHTML6(cite)}</div>
       </div>`;
   }
   function mechSlotFigure(f) {
@@ -215188,9 +213443,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const body = composed ? renderMechBlocks(m.blocks) : renderMechLegacy(m);
     const cardsMod = composed && m.cards === true ? " kd-ep-fam--cards" : "";
     const variantMod = composed && typeof m.variant === "string" && m.variant.length > 0 ? ` kd-ep-fam--${m.variant}` : "";
-    return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}${variantMod}" data-category="${escHTML5(category ?? "")}">
+    return `<section class="kd-ep-fam kd-ep-fam--mech${cardsMod}${variantMod}" data-category="${escHTML6(category ?? "")}">
       ${body}
-      <div class="kd-ep-fam__note">${escHTML5(MECHANISM_CLARITY.disclaimer)}</div>
+      <div class="kd-ep-fam__note">${escHTML6(MECHANISM_CLARITY.disclaimer)}</div>
       ${renderSourcesBlock(layoutKey, slug)}
     </section>`;
   }
@@ -215204,8 +213459,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     ];
     const nodes = NODES.map((n) => {
       const rect = `<rect class="kd-ep-fam__node kd-ep-fam__node--${n.solid ? "solid" : "soft"}" x="${n.x}" y="40" width="${W}" height="76" rx="12"/>`;
-      const label = n.solid ? `<text class="kd-ep-fam__nabbr" x="${n.cx}" y="75" text-anchor="middle">${escHTML5(ui("kd_ep_pdm_fig_n4stat"))}</text>
-         <text class="kd-ep-fam__nname" x="${n.cx}" y="100" text-anchor="middle">${escHTML5(ui(n.nameKey))}</text>` : `<text class="kd-ep-fam__nname" x="${n.cx}" y="85" text-anchor="middle">${escHTML5(ui(n.nameKey))}</text>`;
+      const label = n.solid ? `<text class="kd-ep-fam__nabbr" x="${n.cx}" y="75" text-anchor="middle">${escHTML6(ui("kd_ep_pdm_fig_n4stat"))}</text>
+         <text class="kd-ep-fam__nname" x="${n.cx}" y="100" text-anchor="middle">${escHTML6(ui(n.nameKey))}</text>` : `<text class="kd-ep-fam__nname" x="${n.cx}" y="85" text-anchor="middle">${escHTML6(ui(n.nameKey))}</text>`;
       return rect + label;
     }).join("");
     const ARROWS = [
@@ -215216,7 +213471,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const arrows = ARROWS.map((a) => {
       const mid = (a.x1 + a.x2) / 2;
       return `<path class="kd-ep-fam__arrowline" d="M${a.x1 + 4} 78 L${a.x2 - 4} 78" marker-end="url(#pdm-arrow)"/>
-        <text class="kd-ep-fam__arrowlbl" x="${mid}" y="24" text-anchor="middle">${escHTML5(ui(a.key))}</text>`;
+        <text class="kd-ep-fam__arrowlbl" x="${mid}" y="24" text-anchor="middle">${escHTML6(ui(a.key))}</text>`;
     }).join("");
     return `<svg class="kd-ep-fam__art kd-ep-fam__art--pdm" viewBox="0 0 1050 130" role="img" aria-label="How plant-derived minerals form: parent rock is ground by glaciers into glacial milk, taken up and rebuilt by plants into colloidal minerals the body absorbs at about 98 percent">
       <defs><marker id="pdm-arrow" markerWidth="9" markerHeight="9" refX="5.5" refY="3" orient="auto"><path class="kd-ep-fam__arrowhead" d="M0 0 L6 3 L0 6 Z"/></marker></defs>
@@ -215228,8 +213483,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return "";
     }
     return `<section class="kd-ep-fam">
-      <span class="kd-ep-fam__eyebrow">${escHTML5(ui("kd_ep_pdm_hero_eyebrow"))}</span>
-      <h3 class="kd-ep-fam__kill">${escHTML5(ui("kd_ep_pdm_hero_kill"))}</h3>
+      <span class="kd-ep-fam__eyebrow">${escHTML6(ui("kd_ep_pdm_hero_eyebrow"))}</span>
+      <h3 class="kd-ep-fam__kill">${escHTML6(ui("kd_ep_pdm_hero_kill"))}</h3>
       <div class="kd-ep-fam__figure kd-ep-fam__figure--pdm">${pdmFigure()}</div>
       <div class="kd-ep-fam__steps">
         ${fatFamilyStep("01", "kd_ep_pdm_s1_t", "kd_ep_pdm_s1_b")}
@@ -215243,8 +213498,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function renderFamCTA() {
     return `<button class="kd-ep-mirror__cta" type="button" data-kd-essential="Omega-6 (Linoleic Acid / LA)">
-      <span class="kd-ep-mirror__cta-nm">${escHTML5(ui("kd_ep_fam_crosslink"))}</span>
-      <span class="kd-ep-mirror__cta-go">${escHTML5(ui("kd_ep_fam_cta_go"))}</span>
+      <span class="kd-ep-mirror__cta-nm">${escHTML6(ui("kd_ep_fam_crosslink"))}</span>
+      <span class="kd-ep-mirror__cta-go">${escHTML6(ui("kd_ep_fam_cta_go"))}</span>
       <span class="kd-ep-mirror__cta-chev" aria-hidden="true">\u203A</span>
     </button>`;
   }
@@ -215286,24 +213541,24 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const deferSources = page !== null && (fatBlockOwnsSources(page.name) || slug !== null && MECH_BY_SLUG.has(slug));
     const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot2, !deferSources);
     if (page === null) {
-      const nm = escHTML5(corpusEss?.common_name ?? layoutKey);
-      return `<div class="kd-essential-deep kd-ep" data-category="${escHTML5(corpusEss?.category ?? "")}" data-essential="${escHTML5(slug ?? "")}">
+      const nm = escHTML6(corpusEss?.common_name ?? layoutKey);
+      return `<div class="kd-essential-deep kd-ep" data-category="${escHTML6(corpusEss?.category ?? "")}" data-essential="${escHTML6(slug ?? "")}">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${backButton()}</div>
       ${seclabel("At a glance", "Daily Needs & How It Works")}
       ${glanceHTML}
-      <div class="kd-ep-empty">${escHTML5(ui("ep_empty_record"))}</div>
+      <div class="kd-ep-empty">${escHTML6(ui("ep_empty_record"))}</div>
     </div>`;
     }
-    const sciBit = page.scientific_name !== page.name ? escHTML5(page.scientific_name) : "";
-    const metaBits = [sciBit, escHTML5(page.category ?? ""), `${page.distinct_claim_count} ${plural(page.distinct_claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].filter((s) => s.length > 0).join(" \xB7 ");
-    const nonEss = page.is_essential || tile?.noTargetReason === "non_essential" ? "" : `<div class="kd-ep-flag">${escHTML5(ui("ep_non_essential"))}</div>`;
+    const sciBit = page.scientific_name !== page.name ? escHTML6(page.scientific_name) : "";
+    const metaBits = [sciBit, escHTML6(page.category ?? ""), `${page.distinct_claim_count} ${plural(page.distinct_claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].filter((s) => s.length > 0).join(" \xB7 ");
+    const nonEss = page.is_essential || tile?.noTargetReason === "non_essential" ? "" : `<div class="kd-ep-flag">${escHTML6(ui("ep_non_essential"))}</div>`;
     const ledeText = slug !== null ? essentialLede(slug) : "";
-    const lede = ledeText.length > 0 ? `<p class="kd-ep-lede">${escHTML5(ledeText)}</p>` : "";
-    return `<div class="kd-essential-deep kd-ep" data-category="${escHTML5(corpusEss?.category ?? "")}" data-essential="${escHTML5(slug ?? "")}">
+    const lede = ledeText.length > 0 ? `<p class="kd-ep-lede">${escHTML6(ledeText)}</p>` : "";
+    return `<div class="kd-essential-deep kd-ep" data-category="${escHTML6(corpusEss?.category ?? "")}" data-essential="${escHTML6(slug ?? "")}">
     <div class="kd-ep-hero">
-      ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML5(page.symbol)}</div>` : ""}
+      ${page.symbol !== null && page.symbol.length > 0 ? `<div class="kd-ep-hero__sym">${escHTML6(page.symbol)}</div>` : ""}
       <div class="kd-ep-hero__idblock">
-        <h1 class="kd-ep-hero__name">${escHTML5(page.name)}</h1>
+        <h1 class="kd-ep-hero__name">${escHTML6(page.name)}</h1>
         <div class="kd-ep-hero__meta">${metaBits}</div>
       </div>
       ${backButton()}
@@ -215367,9 +213622,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     if (kids.length === 0 || claimCount3 < UMBRELLA_TIP_MIN_CLAIMS) {
       return "";
     }
-    const examples = kids.slice(0, 2).map((n) => `<em>${escHTML5(n)}</em>`).join(", ");
+    const examples = kids.slice(0, 2).map((n) => `<em>${escHTML6(n)}</em>`).join(", ");
     const eg = examples.length > 0 ? ` (e.g. ${examples})` : "";
-    return `<p class="kd-ep-umbrella"><strong>${escHTML5(ui("kd_ep_umbrella_lead"))}</strong> \u2014 ${escHTML5(ui("kd_ep_umbrella_body"))}${eg}.</p>`;
+    return `<p class="kd-ep-umbrella"><strong>${escHTML6(ui("kd_ep_umbrella_lead"))}</strong> \u2014 ${escHTML6(ui("kd_ep_umbrella_body"))}${eg}.</p>`;
   }
   function nutrientPill(slug, cls) {
     const lk = getEssentialBySlug(slug)?.layout_key ?? slug;
@@ -215387,12 +213642,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const primaryLabel = restore2.length > 0 ? "To restore" : "Caused by these deficiencies";
     const primaryPills = primarySlugs.map((s) => nutrientPill(s, "kd-ep-pill--nut"));
     const primary = `<div class="kd-ep-nutri__grp">
-      <div class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--restore"></i>${escHTML5(primaryLabel)}<span class="kd-ep-nutri__n">${primarySlugs.length}</span></div>
+      <div class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--restore"></i>${escHTML6(primaryLabel)}<span class="kd-ep-nutri__n">${primarySlugs.length}</span></div>
       ${pillCloud(primaryPills, 12)}
     </div>`;
     const relToggle = '<span class="kd-ep-nutri__toggle"><span class="kd-ep-nutri__toggle-open">Expand \u25BE</span><span class="kd-ep-nutri__toggle-close">Collapse \u25B4</span></span>';
     const nutriLens = (dotCls, label, count, pillsHTML) => `<details class="kd-ep-nutri__rel">
-        <summary><span class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--${dotCls}"></i>${escHTML5(label)}<span class="kd-ep-nutri__n">${count}</span></span>${relToggle}</summary>
+        <summary><span class="kd-ep-nutri__lbl"><i class="kd-ep-nutri__dot kd-ep-nutri__dot--${dotCls}"></i>${escHTML6(label)}<span class="kd-ep-nutri__n">${count}</span></span>${relToggle}</summary>
         <div class="kd-ep-cloud kd-ep-nutri__cloud">${pillsHTML}</div>
       </details>`;
     const lenses = [];
@@ -215407,9 +213662,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function condProductRow(rec, total, isBest) {
     const price = rec.price > 0 ? `$${rec.price.toFixed(2)}` : "\u2014";
     const tag = isBest ? '<span class="kd-ep-vtag">best value</span>' : "";
-    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML5(rec.productId)}">
+    return `<button class="kd-ep-src" type="button" data-kd-product="${escHTML6(rec.productId)}">
       <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="13" rx="2"/><path d="M9 8V5.5h6V8"/></svg></span>
-      <span class="kd-ep-src__nm">${escHTML5(rec.name)}${tag}</span>
+      <span class="kd-ep-src__nm">${escHTML6(rec.name)}${tag}</span>
       <span class="kd-ep-src__amt">covers ${rec.supplies} / ${total}</span>
       <span class="kd-ep-src__pr">${price}</span>
       <span class="kd-ep-src__chev">\u203A</span>
@@ -215454,7 +213709,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         if (cond !== null) {
           return pill(cond.display_name, "data-kd-condition", slug, "kd-ep-pill--explore");
         }
-        return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML5(humanizeSlug(slug))}</span>`;
+        return `<span class="kd-ep-pill kd-ep-pill--explore kd-ep-pill--static">${escHTML6(humanizeSlug(slug))}</span>`;
       });
       out += seclabel("Keep exploring") + pillCloud(pills, 14);
     }
@@ -215464,24 +213719,24 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const page = getConditionPage(slug);
     const c = getCondition(slug);
     if (page === null) {
-      const nm = escHTML5(c?.display_name ?? humanizeSlug(slug));
+      const nm = escHTML6(c?.display_name ?? humanizeSlug(slug));
       return `<div class="kd-essential-deep kd-ep kd-ep--cond">
       <div class="kd-ep-hero"><div class="kd-ep-hero__idblock"><h1 class="kd-ep-hero__name">${nm}</h1></div>${conditionBackButton()}</div>
-      <div class="kd-ep-empty">${escHTML5(ui("ep_empty_record"))}</div>
+      <div class="kd-ep-empty">${escHTML6(ui("ep_empty_record"))}</div>
     </div>`;
     }
     const cat = conditionCategory(slug);
-    const catStyle = cat !== null ? ` style="--cat:${escHTML5(cat.color)}"` : "";
+    const catStyle = cat !== null ? ` style="--cat:${escHTML6(cat.color)}"` : "";
     const catIcon = cat !== null && cat.icon.length > 0 ? `<div class="kd-ep-hero__sym kd-ep-hero__sym--cat"><svg viewBox="0 0 24 24" aria-hidden="true">${cat.icon}</svg></div>` : "";
-    const catChip = cat !== null ? `<div class="kd-ep-hero__cat"><i></i>${escHTML5(cat.label)}</div>` : "";
+    const catChip = cat !== null ? `<div class="kd-ep-hero__cat"><i></i>${escHTML6(cat.label)}</div>` : "";
     const metaBits = [`${page.claim_count} ${plural(page.claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].join(" \xB7 ");
     const synopsis = c !== null ? conditionSynopsis(c) : "";
-    const lede = synopsis.length > 0 ? `<p class="kd-ep-lede">${escHTML5(synopsis)}</p>` : "";
+    const lede = synopsis.length > 0 ? `<p class="kd-ep-lede">${escHTML6(synopsis)}</p>` : "";
     return `<div class="kd-essential-deep kd-ep kd-ep--cond"${catStyle}>
     <div class="kd-ep-hero">
       ${catIcon}
       <div class="kd-ep-hero__idblock">
-        <h1 class="kd-ep-hero__name">${escHTML5(page.name)}</h1>
+        <h1 class="kd-ep-hero__name">${escHTML6(page.name)}</h1>
         <div class="kd-ep-hero__subline">${catChip}${catChip.length > 0 ? '<span class="kd-ep-hero__sep">\xB7</span>' : ""}<span class="kd-ep-hero__meta">${metaBits}</span></div>
       </div>
       ${conditionBackButton()}
@@ -215497,7 +213752,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
 
   // assets/js/src/views/knowledge-explore.ts
-  function escHTML6(s) {
+  function escHTML7(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   var EXPLORE_TYPES = [
@@ -215525,7 +213780,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return [...parts].join(" ");
   }
   function chip(e) {
-    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML6(e.slug)}" data-search="${escHTML6(searchBlob(e.slug))}">${escHTML6(e.display_name)}</button>`;
+    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML7(e.slug)}" data-search="${escHTML7(searchBlob(e.slug))}">${escHTML7(e.display_name)}</button>`;
   }
   function renderExploreTab() {
     const all = exploreEntities();
@@ -215534,7 +213789,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       if (inType.length === 0) {
         return "";
       }
-      return `<div class="kd-explore-group"><div class="kd-explore-group__head">${escHTML6(ui(key))}<span class="kd-explore-group__ct">${inType.length}</span></div><div class="kd-explore-cloud">${inType.map(chip).join("")}</div></div>`;
+      return `<div class="kd-explore-group"><div class="kd-explore-group__head">${escHTML7(ui(key))}<span class="kd-explore-group__ct">${inType.length}</span></div><div class="kd-explore-cloud">${inType.map(chip).join("")}</div></div>`;
     }).join("");
     return `<div class="kd-explore">${groups}</div>`;
   }
@@ -215673,17 +213928,17 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
 
   // assets/js/src/views/knowledge-foods.ts
-  function escHTML7(s) {
+  function escHTML8(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function withVilliGloss(raw) {
-    const def = escHTML7(ui("kd_foods_villi_gloss"));
-    return escHTML7(raw).replace(/\bvilli\b/gi, (m) => `<span class="gloss kd-foods-term" tabindex="0" role="button" aria-label="${m}: ${def}" data-def="${def}">${m}</span>`);
+    const def = escHTML8(ui("kd_foods_villi_gloss"));
+    return escHTML8(raw).replace(/\bvilli\b/gi, (m) => `<span class="gloss kd-foods-term" tabindex="0" role="button" aria-label="${m}: ${def}" data-def="${def}">${m}</span>`);
   }
   function sectionHeader(num2, kicker, headingHTML, extra) {
-    const kickerHTML = kicker.length > 0 ? `<div class="ds-kicker">${escHTML7(kicker)}</div>` : "";
+    const kickerHTML = kicker.length > 0 ? `<div class="ds-kicker">${escHTML8(kicker)}</div>` : "";
     return `<header class="kd-foods-sec${extra}">
-      <span class="kd-foods-sec__num">${escHTML7(num2)}</span>
+      <span class="kd-foods-sec__num">${escHTML8(num2)}</span>
       <div class="kd-foods-sec__body">
         ${kickerHTML}
         ${headingHTML}
@@ -215697,8 +213952,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       if (inFacet.length === 0) {
         return "";
       }
-      return `<details class="kd-ep-facet" data-facet="${escHTML7(facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML7(facetLabel(facet))}</span><span class="kd-ep-facet__count">${inFacet.length}</span></summary>
+      return `<details class="kd-ep-facet" data-facet="${escHTML8(facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML8(facetLabel(facet))}</span><span class="kd-ep-facet__count">${inFacet.length}</span></summary>
       <div class="kd-ep-facet__body">${inFacet.map(renderSearchCard).join("")}</div>
     </details>`;
     }).join("");
@@ -215751,8 +214006,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const cap = healthy ? ui("kd_foods_villi_ok_cap") : ui("kd_foods_villi_bad_cap");
     return `<div class="kd-foods-villi__panel kd-foods-villi__panel--${kind}">
       <div class="kd-foods-villi__top">
-        <div class="kd-foods-villi__t">${escHTML7(title)}</div>
-        <div class="kd-foods-villi__metric">${escHTML7(metric)}</div>
+        <div class="kd-foods-villi__t">${escHTML8(title)}</div>
+        <div class="kd-foods-villi__metric">${escHTML8(metric)}</div>
       </div>
       ${villiArt(healthy)}
       <div class="kd-foods-villi__cap">${withVilliGloss(cap)}</div>
@@ -215771,20 +214026,20 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
     const text = fixQuoteGlyph(collapseWS2(q.claim.verbatim));
     const idx = text.indexOf(q.highlightFrom);
-    const body = idx >= 0 ? `${escHTML7(text.slice(0, idx))}<mark class="ds-mark">${escHTML7(text.slice(idx))}</mark>` : escHTML7(text);
+    const body = idx >= 0 ? `${escHTML8(text.slice(0, idx))}<mark class="ds-mark">${escHTML8(text.slice(idx))}</mark>` : escHTML8(text);
     const page = q.claim.page !== null ? `Page \xB7 ${q.claim.page}` : "";
     return `<div class="ds-pull-quote-wrap kd-foods-pq">
       <blockquote class="ds-pull-quote">
-        ${page.length > 0 ? `<span class="kd-foods-pq__page">${escHTML7(page)}</span>` : ""}
+        ${page.length > 0 ? `<span class="kd-foods-pq__page">${escHTML8(page)}</span>` : ""}
         <p>${body}</p>
-        <footer>${escHTML7(ui("kd_foods_villi_cite"))}</footer>
+        <footer>${escHTML8(ui("kd_foods_villi_cite"))}</footer>
       </blockquote>
     </div>`;
   }
   function foodItem(c, kind) {
-    return `<button class="kd-foods-item kd-foods-item--${escHTML7(kind)}" type="button" data-kd-topic="${escHTML7(c.slug)}">
-      <span class="kd-foods-item__nm">${escHTML7(c.name)}</span>
-      <span class="kd-foods-item__why">${escHTML7(c.why)}</span>
+    return `<button class="kd-foods-item kd-foods-item--${escHTML8(kind)}" type="button" data-kd-topic="${escHTML8(c.slug)}">
+      <span class="kd-foods-item__nm">${escHTML8(c.name)}</span>
+      <span class="kd-foods-item__why">${escHTML8(c.why)}</span>
       <span class="kd-foods-item__go" aria-hidden="true">&rarr;</span>
     </button>`;
   }
@@ -215799,11 +214054,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return null;
   }
   function emphasize2(raw, sub, open, close) {
-    const e = escHTML7(raw);
+    const e = escHTML8(raw);
     if (sub.length === 0) {
       return e;
     }
-    const s = escHTML7(sub);
+    const s = escHTML8(sub);
     const i = e.indexOf(s);
     if (i < 0) {
       return e;
@@ -215820,15 +214075,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     for (let t = 0; t <= 14; t += 2) {
       out += `<span class="sxb-axis__t" style="top:${phY(t).toFixed(1)}px">${t}</span>`;
     }
-    out += `<span class="sxb-cap" style="top:${phY(13.3).toFixed(1)}px">${escHTML7(ui("kd_foods_sec04_ladder_alk"))}</span>`;
-    out += `<span class="sxb-cap" style="top:${phY(0.7).toFixed(1)}px">${escHTML7(ui("kd_foods_sec04_ladder_acid"))}</span>`;
+    out += `<span class="sxb-cap" style="top:${phY(13.3).toFixed(1)}px">${escHTML8(ui("kd_foods_sec04_ladder_alk"))}</span>`;
+    out += `<span class="sxb-cap" style="top:${phY(0.7).toFixed(1)}px">${escHTML8(ui("kd_foods_sec04_ladder_acid"))}</span>`;
     out += '<div class="sxb-track"></div>';
     out += `<div class="sxb-band" style="top:${phY(7.4).toFixed(1)}px"></div>`;
-    out += `<div class="sxb-bandlbl" style="top:${phY(7.4).toFixed(1)}px">${escHTML7(ui("kd_foods_sec04_ladder_blood"))}<small>${escHTML7(ui("kd_foods_sec04_ladder_blood_s"))}</small></div>`;
+    out += `<div class="sxb-bandlbl" style="top:${phY(7.4).toFixed(1)}px">${escHTML8(ui("kd_foods_sec04_ladder_blood"))}<small>${escHTML8(ui("kd_foods_sec04_ladder_blood_s"))}</small></div>`;
     out += `<div class="sxb-dot" style="top:${phY(8.2).toFixed(1)}px;background:#5a8ca8"></div>`;
-    out += `<div class="sxb-card sxb-card--panc" style="top:${phY(10.2).toFixed(1)}px"><div class="sxb-card__ph">${escHTML7(ui("kd_foods_sec04_ladder_panc_ph"))}</div><div class="sxb-card__nm">${escHTML7(ui("kd_foods_sec04_ladder_panc_nm"))}</div><div class="sxb-card__d">${escHTML7(ui("kd_foods_sec04_ladder_panc_d"))}</div></div>`;
+    out += `<div class="sxb-card sxb-card--panc" style="top:${phY(10.2).toFixed(1)}px"><div class="sxb-card__ph">${escHTML8(ui("kd_foods_sec04_ladder_panc_ph"))}</div><div class="sxb-card__nm">${escHTML8(ui("kd_foods_sec04_ladder_panc_nm"))}</div><div class="sxb-card__d">${escHTML8(ui("kd_foods_sec04_ladder_panc_d"))}</div></div>`;
     out += `<div class="sxb-dot" style="top:${phY(1).toFixed(1)}px;background:#ff6420"></div>`;
-    out += `<div class="sxb-card sxb-card--stomach" style="top:${phY(2).toFixed(1)}px"><div class="sxb-card__ph">${escHTML7(ui("kd_foods_sec04_ladder_stom_ph"))}</div><div class="sxb-card__nm">${escHTML7(ui("kd_foods_sec04_ladder_stom_nm"))}</div><div class="sxb-card__d">${escHTML7(ui("kd_foods_sec04_ladder_stom_d"))}</div></div>`;
+    out += `<div class="sxb-card sxb-card--stomach" style="top:${phY(2).toFixed(1)}px"><div class="sxb-card__ph">${escHTML8(ui("kd_foods_sec04_ladder_stom_ph"))}</div><div class="sxb-card__nm">${escHTML8(ui("kd_foods_sec04_ladder_stom_nm"))}</div><div class="sxb-card__d">${escHTML8(ui("kd_foods_sec04_ladder_stom_d"))}</div></div>`;
     return out;
   }
   var FRT_FOOD_X = [95, 140, 185, 225];
@@ -215905,8 +214160,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return ENZ_TILES.map((t) => {
       const amt = amountOf(t.comp);
       const provLabel = t.prov === "p" ? ui("kd_foods_sec04_prov_p") : ui("kd_foods_sec04_prov_w");
-      const dot = `<span class="ue-dot ue-dot--${t.prov}"></span> ${escHTML7(provLabel)}`;
-      return `<div class="ue-tile"><div class="ue-tile__stage">${escHTML7(ui(t.stage))}</div><div class="ue-tile__c">${escHTML7(ui(t.nm))}</div><div class="ue-tile__amt">${escHTML7(amt)}</div><div class="ue-tile__d">${escHTML7(ui(t.blurb))}</div><div class="ue-tile__prov">${dot}</div></div>`;
+      const dot = `<span class="ue-dot ue-dot--${t.prov}"></span> ${escHTML8(provLabel)}`;
+      return `<div class="ue-tile"><div class="ue-tile__stage">${escHTML8(ui(t.stage))}</div><div class="ue-tile__c">${escHTML8(ui(t.nm))}</div><div class="ue-tile__amt">${escHTML8(amt)}</div><div class="ue-tile__d">${escHTML8(ui(t.blurb))}</div><div class="ue-tile__prov">${dot}</div></div>`;
     }).join("");
   }
   function ctaBar() {
@@ -215918,14 +214173,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const perServeStr = perServe !== null ? `$${perServe.toFixed(2)}` : "";
     const perDayStr = perServe !== null ? `$${(perServe * 3).toFixed(2)}` : "";
     const capsStr = spc !== null ? String(spc) : "";
-    const foot = `Wholesale &middot; ${escHTML7(capsStr)} capsules &middot; &asymp; ${escHTML7(perDayStr)} a day &middot; ${escHTML7(ui("kd_foods_sec04_cta_foot_tail"))}`;
+    const foot = `Wholesale &middot; ${escHTML8(capsStr)} capsules &middot; &asymp; ${escHTML8(perDayStr)} a day &middot; ${escHTML8(ui("kd_foods_sec04_cta_foot_tail"))}`;
     return `<button class="ue-bar" type="button" data-kd-product="ultimate-enzymes">
         <span>
-          <span class="ue-bar__nm">${escHTML7(ui("kd_foods_sec04_cta_nm"))}</span>
-          <span class="ue-bar__sub">${escHTML7(ui("kd_foods_sec04_cta_sub"))}</span>
+          <span class="ue-bar__nm">${escHTML8(ui("kd_foods_sec04_cta_nm"))}</span>
+          <span class="ue-bar__sub">${escHTML8(ui("kd_foods_sec04_cta_sub"))}</span>
         </span>
         <span class="ue-bar__r">
-          <span class="ue-bar__price"><span class="ue-bar__pn">${escHTML7(perServeStr)}</span><span class="ue-bar__pl">${escHTML7(ui("kd_foods_sec04_cta_price_l"))}</span></span>
+          <span class="ue-bar__price"><span class="ue-bar__pn">${escHTML8(perServeStr)}</span><span class="ue-bar__pl">${escHTML8(ui("kd_foods_sec04_cta_price_l"))}</span></span>
           <span class="ue-bar__chev">&rsaquo;</span>
         </span>
       </button>
@@ -215944,7 +214199,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `<div class="ds-pull-quote-wrap kd-foods-pq sxbeat">
       <blockquote class="ds-pull-quote">
         <p>${body}</p>
-        <footer>&mdash; ${escHTML7(ui("kd_foods_sec04_pq_cite"))}</footer>
+        <footer>&mdash; ${escHTML8(ui("kd_foods_sec04_pq_cite"))}</footer>
       </blockquote>
     </div>`;
   }
@@ -215955,26 +214210,26 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `<div class="kt-page kd-ep kd-foods">
     <header class="kd-foods-hero">
       <div class="kd-foods-eyebrow">
-        <span class="kd-foods-eyebrow__l">${escHTML7(ui("kd_foods_eyebrow_l"))}</span>
+        <span class="kd-foods-eyebrow__l">${escHTML8(ui("kd_foods_eyebrow_l"))}</span>
         <span class="kd-foods-eyebrow__rule"></span>
-        <span class="kd-foods-eyebrow__r">${escHTML7(ui("kd_foods_eyebrow_r"))}</span>
+        <span class="kd-foods-eyebrow__r">${escHTML8(ui("kd_foods_eyebrow_r"))}</span>
       </div>
       <div class="kd-foods-corner">
-        <div class="kd-foods-brand">${escHTML7(ui("kd_foods_readout_2"))}</div>
-        <div class="kd-foods-scan">${escHTML7(ui("kd_foods_scan"))}</div>
+        <div class="kd-foods-brand">${escHTML8(ui("kd_foods_readout_2"))}</div>
+        <div class="kd-foods-scan">${escHTML8(ui("kd_foods_scan"))}</div>
       </div>
-      ${sectionHeader("01", "", `<h1 class="kd-foods-hero__h"><span class="l1">${escHTML7(ui("kd_foods_hl1"))}</span><span class="l2">${escHTML7(ui("kd_foods_hl2"))}</span></h1>`, " kd-foods-sec--hero")}
-      <p class="kd-foods-hero__deck">${escHTML7(ui("kd_foods_deck"))}</p>
+      ${sectionHeader("01", "", `<h1 class="kd-foods-hero__h"><span class="l1">${escHTML8(ui("kd_foods_hl1"))}</span><span class="l2">${escHTML8(ui("kd_foods_hl2"))}</span></h1>`, " kd-foods-sec--hero")}
+      <p class="kd-foods-hero__deck">${escHTML8(ui("kd_foods_deck"))}</p>
     </header>
 
     <div class="ds-pull-stat kd-foods-stat">
-      <span class="ds-pull-stat__readout">${escHTML7(ui("kd_foods_stat_readout"))}</span>
-      <div class="ds-pull-stat__num">${escHTML7(ui("kd_foods_stat_num"))}</div>
-      <div class="ds-pull-stat__body">${escHTML7(ui("kd_foods_stat_body"))}<small>${escHTML7(ui("kd_foods_stat_small"))}</small></div>
+      <span class="ds-pull-stat__readout">${escHTML8(ui("kd_foods_stat_readout"))}</span>
+      <div class="ds-pull-stat__num">${escHTML8(ui("kd_foods_stat_num"))}</div>
+      <div class="ds-pull-stat__body">${escHTML8(ui("kd_foods_stat_body"))}<small>${escHTML8(ui("kd_foods_stat_small"))}</small></div>
     </div>
 
     <section class="kd-foods-villi">
-      ${sectionHeader("02", ui("kd_foods_sec02_kicker"), `<h2 class="ds-h-section">${escHTML7(ui("kd_foods_villi_title"))}</h2>`, "")}
+      ${sectionHeader("02", ui("kd_foods_sec02_kicker"), `<h2 class="ds-h-section">${escHTML8(ui("kd_foods_villi_title"))}</h2>`, "")}
       <p class="kd-foods-villi__intro">${withVilliGloss(ui("kd_foods_villi_explain"))}</p>
       <div class="kd-foods-villi__grid">
         ${villiPanel(false)}
@@ -215984,19 +214239,19 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     </section>
 
     <section class="kd-foods-contrast">
-      ${sectionHeader("03", ui("kd_foods_sec03_kicker"), `<h2 class="ds-h-section">${escHTML7(ui("kd_foods_contrast_hd"))}</h2>`, "")}
+      ${sectionHeader("03", ui("kd_foods_sec03_kicker"), `<h2 class="ds-h-section">${escHTML8(ui("kd_foods_contrast_hd"))}</h2>`, "")}
       <div class="kd-foods-contrast__grid">
         <div class="kd-foods-col kd-foods-col--remove">
-          <div class="kd-foods-col__hd">${escHTML7(ui("kd_foods_col_remove"))}</div>
+          <div class="kd-foods-col__hd">${escHTML8(ui("kd_foods_col_remove"))}</div>
           ${remove2.map((c) => foodItem(c, "remove")).join("")}
         </div>
         <div class="kd-foods-col kd-foods-col--eat">
-          <div class="kd-foods-col__hd">${escHTML7(ui("kd_foods_col_eat"))}</div>
+          <div class="kd-foods-col__hd">${escHTML8(ui("kd_foods_col_eat"))}</div>
           ${eat.map((c) => foodItem(c, "eat")).join("")}
         </div>
       </div>
       <div class="kd-foods-form">
-        <div class="kd-foods-col__hd kd-foods-form__hd">${escHTML7(ui("kd_foods_form_hd"))}</div>
+        <div class="kd-foods-col__hd kd-foods-form__hd">${escHTML8(ui("kd_foods_form_hd"))}</div>
         <div class="kd-foods-form__grid">
           ${conditional.map((c) => foodItem(c, "form")).join("")}
         </div>
@@ -216004,73 +214259,73 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     </section>
 
     <section class="kd-foods-enz">
-      ${sectionHeader("04", ui("kd_foods_sec04_kicker"), `<h2 class="ds-h-section">${escHTML7(ui("kd_foods_sec04_hd"))}</h2>`, "")}
+      ${sectionHeader("04", ui("kd_foods_sec04_kicker"), `<h2 class="ds-h-section">${escHTML8(ui("kd_foods_sec04_hd"))}</h2>`, "")}
       <p class="sx-p">${emphasize2(ui("kd_foods_sec04_lead"), "pH 1.0", "<strong>", "</strong>")}</p>
 
       <div class="sxb-wrap">
         <div class="sxb-scale">${phLadder()}</div>
         <div class="sxb-side">
-          <div class="ds-kicker" style="margin-bottom:12px">${escHTML7(ui("kd_foods_sec04_ladder_kicker"))}</div>
+          <div class="ds-kicker" style="margin-bottom:12px">${escHTML8(ui("kd_foods_sec04_ladder_kicker"))}</div>
           <div class="sxb-triad">
-            <div class="sxb-triad__i"><span class="sxb-triad__n">01</span><span class="sxb-triad__t"><b>${escHTML7(ui("kd_foods_sec04_ladder_t1_b"))}</b> ${escHTML7(ui("kd_foods_sec04_ladder_t1"))}</span></div>
-            <div class="sxb-triad__i"><span class="sxb-triad__n">02</span><span class="sxb-triad__t"><b>${escHTML7(ui("kd_foods_sec04_ladder_t2_b"))}</b> ${escHTML7(ui("kd_foods_sec04_ladder_t2"))}</span></div>
-            <div class="sxb-triad__i"><span class="sxb-triad__n">03</span><span class="sxb-triad__t"><b>${escHTML7(ui("kd_foods_sec04_ladder_t3_b"))}</b> ${escHTML7(ui("kd_foods_sec04_ladder_t3"))}</span></div>
+            <div class="sxb-triad__i"><span class="sxb-triad__n">01</span><span class="sxb-triad__t"><b>${escHTML8(ui("kd_foods_sec04_ladder_t1_b"))}</b> ${escHTML8(ui("kd_foods_sec04_ladder_t1"))}</span></div>
+            <div class="sxb-triad__i"><span class="sxb-triad__n">02</span><span class="sxb-triad__t"><b>${escHTML8(ui("kd_foods_sec04_ladder_t2_b"))}</b> ${escHTML8(ui("kd_foods_sec04_ladder_t2"))}</span></div>
+            <div class="sxb-triad__i"><span class="sxb-triad__n">03</span><span class="sxb-triad__t"><b>${escHTML8(ui("kd_foods_sec04_ladder_t3_b"))}</b> ${escHTML8(ui("kd_foods_sec04_ladder_t3"))}</span></div>
           </div>
-          <p class="sx-note">${escHTML7(ui("kd_foods_sec04_ladder_note"))}</p>
-          <div class="sx-cite">${escHTML7(ui("kd_foods_sec04_ladder_cite"))}</div>
+          <p class="sx-note">${escHTML8(ui("kd_foods_sec04_ladder_note"))}</p>
+          <div class="sx-cite">${escHTML8(ui("kd_foods_sec04_ladder_cite"))}</div>
         </div>
       </div>
 
       <div class="sxbeat">
-        <div class="ds-kicker" style="margin-bottom:12px">${escHTML7(ui("kd_foods_sec04_frt_kicker"))}</div>
+        <div class="ds-kicker" style="margin-bottom:12px">${escHTML8(ui("kd_foods_sec04_frt_kicker"))}</div>
         <p class="sx-p">${emphasize2(ui("kd_foods_sec04_frt_lede"), "pH 1.0", "<strong>", "</strong>")}</p>
         <div class="frt-scene">
           <div class="frt-cell frt-cell--ok">
-            <div class="frt-cell__hd"><span class="frt-cell__k">${escHTML7(ui("kd_foods_sec04_frt_ok_k"))}</span><span class="frt-cell__ph">${escHTML7(ui("kd_foods_sec04_frt_ok_ph"))}</span></div>
-            <div class="frt-cell__t">${escHTML7(ui("kd_foods_sec04_frt_ok_t"))}</div>
+            <div class="frt-cell__hd"><span class="frt-cell__k">${escHTML8(ui("kd_foods_sec04_frt_ok_k"))}</span><span class="frt-cell__ph">${escHTML8(ui("kd_foods_sec04_frt_ok_ph"))}</span></div>
+            <div class="frt-cell__t">${escHTML8(ui("kd_foods_sec04_frt_ok_t"))}</div>
             ${fortressFig("ok")}
-            <p class="frt-cap">${escHTML7(ui("kd_foods_sec04_frt_ok_cap"))}</p>
+            <p class="frt-cap">${escHTML8(ui("kd_foods_sec04_frt_ok_cap"))}</p>
           </div>
           <div class="frt-cell frt-cell--bad">
-            <div class="frt-cell__hd"><span class="frt-cell__k">${escHTML7(ui("kd_foods_sec04_frt_bad_k"))}</span><span class="frt-cell__ph">${escHTML7(ui("kd_foods_sec04_frt_bad_ph"))}</span></div>
-            <div class="frt-cell__t">${escHTML7(ui("kd_foods_sec04_frt_bad_t"))}</div>
+            <div class="frt-cell__hd"><span class="frt-cell__k">${escHTML8(ui("kd_foods_sec04_frt_bad_k"))}</span><span class="frt-cell__ph">${escHTML8(ui("kd_foods_sec04_frt_bad_ph"))}</span></div>
+            <div class="frt-cell__t">${escHTML8(ui("kd_foods_sec04_frt_bad_t"))}</div>
             ${fortressFig("bad")}
-            <p class="frt-cap">${escHTML7(ui("kd_foods_sec04_frt_bad_cap"))}</p>
+            <p class="frt-cap">${escHTML8(ui("kd_foods_sec04_frt_bad_cap"))}</p>
           </div>
         </div>
         <div class="frt-legend">
-          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--ds-accent)"></span> ${escHTML7(ui("kd_foods_sec04_frt_leg_moat"))}</span>
-          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-calm)"></span> ${escHTML7(ui("kd_foods_sec04_frt_leg_nutrient"))}</span>
-          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-crit)"></span> ${escHTML7(ui("kd_foods_sec04_frt_leg_invader"))}</span>
-          <span class="frt-legend__i"><span class="frt-legend__sw" style="border:1px solid var(--ds-ink-faint);background:transparent"></span> ${escHTML7(ui("kd_foods_sec04_frt_leg_gas"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--ds-accent)"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_moat"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-calm)"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_nutrient"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="background:var(--sev-crit)"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_invader"))}</span>
+          <span class="frt-legend__i"><span class="frt-legend__sw" style="border:1px solid var(--ds-ink-faint);background:transparent"></span> ${escHTML8(ui("kd_foods_sec04_frt_leg_gas"))}</span>
         </div>
       </div>
 
       <div class="sxbeat">
         <div class="sx-callout">
-          <div class="sx-callout__k">${escHTML7(ui("kd_foods_sec04_inv_k"))}</div>
+          <div class="sx-callout__k">${escHTML8(ui("kd_foods_sec04_inv_k"))}</div>
           <div class="sx-callout__t">${emphasize2(ui("kd_foods_sec04_inv_t"), ui("kd_foods_sec04_inv_t_em"), "<em>", "</em>")}</div>
           <p class="sx-callout__b">${emphasize2(ui("kd_foods_sec04_inv_b"), ui("kd_foods_sec04_inv_b_mark"), '<mark class="ds-mark rose">', "</mark>")}</p>
         </div>
       </div>
 
       <div class="ds-pull-stat sxbeat">
-        <span class="ds-pull-stat__readout">${escHTML7(ui("kd_foods_sec04_stat_readout"))}</span>
-        <div class="ds-pull-stat__num">${escHTML7(ui("kd_foods_sec04_stat_num"))}</div>
-        <div class="ds-pull-stat__body">${escHTML7(ui("kd_foods_sec04_stat_body"))}<small>${escHTML7(ui("kd_foods_sec04_stat_small"))}</small></div>
+        <span class="ds-pull-stat__readout">${escHTML8(ui("kd_foods_sec04_stat_readout"))}</span>
+        <div class="ds-pull-stat__num">${escHTML8(ui("kd_foods_sec04_stat_num"))}</div>
+        <div class="ds-pull-stat__body">${escHTML8(ui("kd_foods_sec04_stat_body"))}<small>${escHTML8(ui("kd_foods_sec04_stat_small"))}</small></div>
       </div>
 
       ${sec04PullQuote()}
 
       <section class="sxbeat">
-        <div class="ds-kicker" style="margin-bottom:10px">${escHTML7(ui("kd_foods_sec04_cta_kicker"))}</div>
+        <div class="ds-kicker" style="margin-bottom:10px">${escHTML8(ui("kd_foods_sec04_cta_kicker"))}</div>
         <h3 style="font-family:var(--ds-font-display);font-size:2rem;font-weight:800;line-height:1.4;letter-spacing:-.01em;color:var(--ds-ink);margin:0 0 10px">${emphasize2(ui("kd_foods_sec04_cta_h"), ui("kd_foods_sec04_cta_h_em"), '<em style="color:var(--ds-accent-deep);font-style:italic">', "</em>")}</h3>
         <p class="sx-p">${emphasize2(ui("kd_foods_sec04_cta_p"), ui("kd_foods_sec04_cta_p_strong"), "<br><strong>", "</strong>")}</p>
         <div class="ue-strip">${enzStrip()}</div>
         <div class="ue-proof">
           <span class="ue-proof__q">&ldquo;</span>
           <div class="ue-proof__t">${emphasize2(ui("kd_foods_sec04_proof"), ui("kd_foods_sec04_proof_bold"), "<b>", "</b>")}
-            <span class="ue-proof__cite">${escHTML7(ui("kd_foods_sec04_proof_cite"))}</span>
+            <span class="ue-proof__cite">${escHTML8(ui("kd_foods_sec04_proof_cite"))}</span>
           </div>
         </div>
         ${ctaBar()}
@@ -216078,8 +214333,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
 
       <div class="sxr-wrap">
         <div class="sxr-lead">${emphasize2(ui("kd_foods_sec04_rec_lead"), ui("kd_foods_sec04_rec_lead_b"), "<b>", "</b>")}</div>
-        <h3 class="sxr-h">${escHTML7(ui("kd_foods_sec04_rec_h"))}</h3>
-        <p class="sxr-sub">${escHTML7(ui("kd_foods_sec04_rec_sub"))}</p>
+        <h3 class="sxr-h">${escHTML8(ui("kd_foods_sec04_rec_h"))}</h3>
+        <p class="sxr-sub">${escHTML8(ui("kd_foods_sec04_rec_sub"))}</p>
         ${facetSections([...foodsThesisClaims(), ...foodsEnzymeClaims()])}
       </div>
     </section>
@@ -216130,7 +214385,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
 
   // assets/js/src/views/knowledge-home.ts
-  function escHTML8(s) {
+  function escHTML9(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function fmt(n) {
@@ -216149,42 +214404,42 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       if (e === null) {
         return "";
       }
-      return `<button class="sh-hint" type="button" data-kd-essential="${escHTML8(e.layout_key)}">${escHTML8(e.common_name)}</button>`;
+      return `<button class="sh-hint" type="button" data-kd-essential="${escHTML9(e.layout_key)}">${escHTML9(e.common_name)}</button>`;
     }
-    return `<button class="sh-hint" type="button" data-kd-condition="${escHTML8(h.slug)}">${escHTML8(conditionDisplayName(h.slug))}</button>`;
+    return `<button class="sh-hint" type="button" data-kd-condition="${escHTML9(h.slug)}">${escHTML9(conditionDisplayName(h.slug))}</button>`;
   }
   var LEGEND_CATS = ["mineral", "vitamin", "amino_acid", "fatty_acid"];
   function shelfTile(e) {
     const layoutKey = getEssentialBySlug(e.slug)?.layout_key ?? e.slug;
     const glyph = essentialGlyph(layoutKey) || e.name.slice(0, 2);
-    return `<button class="sh-tile" data-cat="${escHTML8(e.category)}" data-kd-essential="${escHTML8(layoutKey)}" title="${escHTML8(e.name)}"><span class="sh-tile__sym">${escHTML8(glyph)}</span><span class="sh-tile__nm">${escHTML8(e.name)}</span><span class="sh-tile__ct">${e.distinct_claim_count} ${plural(e.distinct_claim_count, "claim")}</span></button>`;
+    return `<button class="sh-tile" data-cat="${escHTML9(e.category)}" data-kd-essential="${escHTML9(layoutKey)}" title="${escHTML9(e.name)}"><span class="sh-tile__sym">${escHTML9(glyph)}</span><span class="sh-tile__nm">${escHTML9(e.name)}</span><span class="sh-tile__ct">${e.distinct_claim_count} ${plural(e.distinct_claim_count, "claim")}</span></button>`;
   }
   function renderEssentialsShelf() {
     const top = listEssentialPages().slice().sort((a, b) => b.distinct_claim_count - a.distinct_claim_count).slice(0, 18);
-    const legend = LEGEND_CATS.map((cat) => `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML8(ui(`kh_legend_${cat}`))}</span>`).join("");
-    return `<div class="ep-seclabel ep-seclabel--tight">${escHTML8(ui("kh_essentials_label"))} <span class="ep-seclabel__hint">${escHTML8(ui("kh_essentials_hint"))}</span><a data-kd-tab="essentials">${escHTML8(ui("kh_essentials_link"))}</a></div>
+    const legend = LEGEND_CATS.map((cat) => `<span class="ep-legend__item"><span class="ep-legend__sw" data-cat="${cat}"></span>${escHTML9(ui(`kh_legend_${cat}`))}</span>`).join("");
+    return `<div class="ep-seclabel ep-seclabel--tight">${escHTML9(ui("kh_essentials_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_essentials_hint"))}</span><a data-kd-tab="essentials">${escHTML9(ui("kh_essentials_link"))}</a></div>
     <div class="sh-grid">${top.map(shelfTile).join("")}</div>
-    <div class="ep-legend"><span class="ep-legend__lbl">${escHTML8(ui("kh_legend_label"))}</span>${legend}</div>`;
+    <div class="ep-legend"><span class="ep-legend__lbl">${escHTML9(ui("kh_legend_label"))}</span>${legend}</div>`;
   }
   function condRow(c) {
-    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML8(c.slug)}"><span class="sh-condrow__nm">${escHTML8(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
+    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML9(c.slug)}"><span class="sh-condrow__nm">${escHTML9(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
   }
   function renderConditionsShelf() {
     const conds = listConditionPages();
     const top = conds.slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 8);
     const link = ui("kh_conditions_link").replace("{n}", fmt(conds.length));
-    return `<div class="ep-seclabel">${escHTML8(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML8(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML8(link)}</a></div>
+    return `<div class="ep-seclabel">${escHTML9(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML9(link)}</a></div>
     <div class="sh-condgrid">${top.map(condRow).join("")}</div>`;
   }
   function exploreChip(e) {
-    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML8(e.slug)}">${escHTML8(e.display_name)}</button>`;
+    return `<button class="kd-explore-chip" type="button" data-kd-topic="${escHTML9(e.slug)}">${escHTML9(e.display_name)}</button>`;
   }
   function renderExploreShelf() {
     const topics = homeExploreTopics();
     if (topics.length === 0) {
       return "";
     }
-    return `<div class="ep-seclabel">${escHTML8(ui("kh_explore_label"))} <span class="ep-seclabel__hint">${escHTML8(ui("kh_explore_hint"))}</span><a data-kd-tab="explore">${escHTML8(ui("kh_explore_link"))}</a></div>
+    return `<div class="ep-seclabel">${escHTML9(ui("kh_explore_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_explore_hint"))}</span><a data-kd-tab="explore">${escHTML9(ui("kh_explore_link"))}</a></div>
     <div class="kd-explore-cloud">${topics.map(exploreChip).join("")}</div>`;
   }
   function renderHomeTab() {
@@ -216193,11 +214448,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const hints = HINTS.map(hintChip).join("");
     return `<div class="kd-home">
     <section class="sh-hero">
-      <h1>${escHTML8(ui("kh_hero_headline"))}</h1>
-      <p>${escHTML8(sub).replace("{br}", "<br>")}</p>
+      <h1>${escHTML9(ui("kh_hero_headline"))}</h1>
+      <p>${escHTML9(sub).replace("{br}", "<br>")}</p>
       <div class="sh-hero__search">
         <div class="sh-search">
-          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" maxlength="120" placeholder="${escHTML8(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
+          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" maxlength="120" placeholder="${escHTML9(ui("kh_hero_placeholder"))}" autocomplete="off"></div>
           <div class="sh-search__results"></div>
         </div>
         <div class="sh-hero__hints">${hints}</div>
@@ -216235,6 +214490,35 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         out.push({ kind: "condition", name: cnd.name, navAttr: "data-kd-condition", navVal: cnd.slug, claimCount: cnd.claim_count, startsWith: nm.startsWith(q) });
       }
     }
+    const suppliedMeta = (n) => n > 0 ? ui("kh_meta_supplied").replace("{n}", String(n)).replace("{of}", String(essentialCount())) : ui("kh_meta_targeted");
+    for (const p of productSuggestItems()) {
+      const nm = p.name.toLowerCase();
+      if (nm.includes(q)) {
+        out.push({
+          kind: "product",
+          name: p.name,
+          navAttr: "data-kd-product",
+          navVal: p.id,
+          claimCount: 0,
+          meta: suppliedMeta(p.supplied),
+          startsWith: nm.startsWith(q)
+        });
+      }
+    }
+    for (const f of listFoods()) {
+      const nm = f.name.toLowerCase();
+      if (nm.includes(q) || f.category.toLowerCase().includes(q)) {
+        out.push({
+          kind: "food",
+          name: f.name,
+          navAttr: "data-kd-food",
+          navVal: f.id,
+          claimCount: 0,
+          meta: `${f.portion_label} \xB7 ${f.category}`,
+          startsWith: nm.startsWith(q)
+        });
+      }
+    }
     for (const t of entityList()) {
       if (t.type === "nutrient" || t.type === "condition" || taken.has(t.slug) || isChargedEntity(t.slug)) {
         continue;
@@ -216255,18 +214539,36 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return a.name.localeCompare(b.name);
   }
   function resRow(m, active) {
-    return `<button class="sh-res${active ? " active" : ""}" type="button" ${m.navAttr}="${escHTML8(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML8(m.name)}</span><span class="sh-res__meta">${m.claimCount} claim${m.claimCount === 1 ? "" : "s"}</span></button>`;
+    const meta = m.meta ?? `${m.claimCount} claim${m.claimCount === 1 ? "" : "s"}`;
+    return `<button class="sh-res${active ? " active" : ""}" type="button" ${m.navAttr}="${escHTML9(m.navVal)}"><span class="sh-res__dot"></span><span class="sh-res__nm">${escHTML9(m.name)}</span><span class="sh-res__meta">${escHTML9(meta)}</span></button>`;
+  }
+  var SHOWN_MAX = 10;
+  var GROUP_FLOOR = 2;
+  function pickShown(groups) {
+    const out = [];
+    for (let i = 0; i < groups.length; i += 1) {
+      const g = groups[i] ?? [];
+      if (g.length === 0) {
+        continue;
+      }
+      const laterNonEmpty = groups.slice(i + 1).filter((x) => x.length > 0).length;
+      const room = SHOWN_MAX - out.length - laterNonEmpty * GROUP_FLOOR;
+      out.push(...g.slice(0, Math.min(g.length, Math.max(GROUP_FLOOR, room))));
+    }
+    return out.slice(0, SHOWN_MAX);
   }
   function renderHomeSuggestions(query) {
     const matches = homeMatches(query);
     if (matches.length === 0) {
-      return `<div class="sh-res__empty">${escHTML8(ui("kh_search_empty"))}</div>`;
+      return `<div class="sh-res__empty">${escHTML9(ui("kh_search_empty"))}</div>`;
     }
-    const shown = [
-      ...matches.filter((m) => m.kind === "essential").sort(byRelevance),
-      ...matches.filter((m) => m.kind === "condition").sort(byRelevance),
-      ...matches.filter((m) => m.kind === "topic").sort(byRelevance)
-    ].slice(0, 10);
+    const shown = pickShown([
+      matches.filter((m) => m.kind === "essential").sort(byRelevance),
+      matches.filter((m) => m.kind === "condition").sort(byRelevance),
+      matches.filter((m) => m.kind === "topic").sort(byRelevance),
+      matches.filter((m) => m.kind === "product").sort(byRelevance),
+      matches.filter((m) => m.kind === "food").sort(byRelevance)
+    ]);
     let html = "";
     let idx = 0;
     const group = (label, kind) => {
@@ -216274,7 +214576,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       if (rows.length === 0) {
         return;
       }
-      html += `<div class="sh-res__group">${escHTML8(label)}</div>`;
+      html += `<div class="sh-res__group">${escHTML9(label)}</div>`;
       for (const m of rows) {
         html += resRow(m, idx === 0);
         idx += 1;
@@ -216283,6 +214585,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     group(ui("kh_group_essentials"), "essential");
     group(ui("kh_group_conditions"), "condition");
     group(ui("kh_group_topics"), "topic");
+    group(ui("kh_group_products"), "product");
+    group(ui("kh_group_foods"), "food");
     return html;
   }
 
@@ -216330,11 +214634,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function collapseWS3(s) {
     return s.replace(/\s+/g, " ").trim();
   }
-  function escHTML9(s) {
+  function escHTML10(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function emph(raw) {
-    return escHTML9(raw).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>");
+    return escHTML10(raw).replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>").replace(/\*(.+?)\*/g, "<em>$1</em>");
   }
   function fill(key, repl = {}) {
     let s = ui(key);
@@ -216361,15 +214665,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function sectionHeader2(num2, kickerHTML, headingKey) {
     return `<div class="kd-orac-sec">
-      <span class="kd-orac-sec__num">${escHTML9(num2)}</span>
+      <span class="kd-orac-sec__num">${escHTML10(num2)}</span>
       <div class="kd-orac-sec__body">
         ${kickerHTML}
-        <h2 class="kd-orac-sec__h">${escHTML9(ui(headingKey))}</h2>
+        <h2 class="kd-orac-sec__h">${escHTML10(ui(headingKey))}</h2>
       </div>
     </div>`;
   }
   function secKicker(key) {
-    return `<div class="kd-orac-sec__k">${escHTML9(ui(key))}</div>`;
+    return `<div class="kd-orac-sec__k">${escHTML10(ui(key))}</div>`;
   }
   function bandEnds(band) {
     const e = band.split(/[–-]/).map((s) => Number(s.trim()));
@@ -216397,28 +214701,28 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const mid = mids[i] ?? rMin;
       const left = (mid - rMin) / span * 100;
       const on2 = Math.abs(mid - startAge) <= 5 ? " kd-orac-tick--on" : "";
-      return `<div class="kd-orac-tick${on2}" data-age="${mid}" style="left:${left}%">${escHTML9(r.age)}</div>`;
+      return `<div class="kd-orac-tick${on2}" data-age="${mid}" style="left:${left}%">${escHTML10(r.age)}</div>`;
     }).join("");
     const subParts = ui("kd_orac_mirror_sub").split("{age}");
     const sub = `${emph(subParts[0] ?? "")}<span class="kd-orac-scrub__age">${startAge}</span>${emph(subParts[1] ?? "")}`;
-    return `<div class="kd-orac-mirror" data-orac-scrub data-meas="${meas}" data-caps="${escHTML9(caps)}">
-    <div class="kd-orac-mirror__k">${escHTML9(ui("kd_orac_mirror_k"))}</div>
+    return `<div class="kd-orac-mirror" data-orac-scrub data-meas="${meas}" data-caps="${escHTML10(caps)}">
+    <div class="kd-orac-mirror__k">${escHTML10(ui("kd_orac_mirror_k"))}</div>
     <h2 class="kd-orac-mirror__h">${fill("kd_orac_mirror_h")}</h2>
     <p class="kd-orac-mirror__body">${fill("kd_orac_mirror_body")}</p>
     <div class="kd-orac-cellwrap">
       <div class="kd-orac-cell"><div class="kd-orac-cell__nuc"></div><div class="kd-orac-cell__fill" style="height:${startPct}%"></div></div>
       <div class="kd-orac-read">
         <div class="kd-orac-read__pct"><span class="kd-orac-read__pctv">${startPct}</span>%</div>
-        <div class="kd-orac-read__cap">${escHTML9(ui(capKeys[0] ?? ""))}</div>
+        <div class="kd-orac-read__cap">${escHTML10(ui(capKeys[0] ?? ""))}</div>
         <p class="kd-orac-read__sub">${sub}</p>
         <div class="kd-orac-scrub">
-          <div class="kd-orac-scrub__lbl"><span aria-hidden="true">&#9668;</span>${escHTML9(ui("kd_orac_scrub_label"))}<span aria-hidden="true">&#9658;</span></div>
-          <input type="range" class="kd-orac-scrub__range" min="${rMin}" max="${rMax}" step="1" value="${startAge}" aria-label="${escHTML9(ui("kd_orac_scrub_label"))}">
+          <div class="kd-orac-scrub__lbl"><span aria-hidden="true">&#9668;</span>${escHTML10(ui("kd_orac_scrub_label"))}<span aria-hidden="true">&#9658;</span></div>
+          <input type="range" class="kd-orac-scrub__range" min="${rMin}" max="${rMax}" step="1" value="${startAge}" aria-label="${escHTML10(ui("kd_orac_scrub_label"))}">
           <div class="kd-orac-ticks">${ticks}</div>
         </div>
       </div>
     </div>
-    <div class="kd-orac-mirror__src">${escHTML9(d.cite)} \xB7 ${escHTML9(ui("kd_orac_mirror_src_note"))}</div>
+    <div class="kd-orac-mirror__src">${escHTML10(d.cite)} \xB7 ${escHTML10(ui("kd_orac_mirror_src_note"))}</div>
   </div>`;
   }
   function renderSteal(od) {
@@ -216428,13 +214732,13 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const cells = r.points.map((p, i) => {
       const style = i === last ? ' style="color:var(--ds-accent-deep)"' : "";
       return `<div class="kd-orac-rank__c">
-      <div class="kd-orac-rank__yr">${escHTML9(String(p.year))}</div>
-      <div class="kd-orac-rank__v"${style}>${escHTML9(String(p.rank))}${ordinal(p.rank)}</div>
+      <div class="kd-orac-rank__yr">${escHTML10(String(p.year))}</div>
+      <div class="kd-orac-rank__v"${style}>${escHTML10(String(p.rank))}${ordinal(p.rank)}</div>
     </div>`;
     }).join('<span class="kd-orac-rank__arrow">\u2192</span>');
     return `<div class="kd-orac-steal">
-    <div class="kd-orac-steal__lead">${escHTML9(ui("kd_orac_steal_lead"))}</div>
-    <div class="kd-orac-steal__num">${escHTML9(s.display)}</div>
+    <div class="kd-orac-steal__lead">${escHTML10(ui("kd_orac_steal_lead"))}</div>
+    <div class="kd-orac-steal__num">${escHTML10(s.display)}</div>
     <p class="kd-orac-steal__body">${fill("kd_orac_steal_body", {
       shouldLow: String(s.should_low),
       shouldHigh: String(s.should_high),
@@ -216443,7 +214747,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       high: String(s.high)
     })}</p>
     <div class="kd-orac-rank">${cells}</div>
-    <div class="kd-orac-mirror__src">${escHTML9(r.cite)}</div>
+    <div class="kd-orac-mirror__src">${escHTML10(r.cite)}</div>
   </div>`;
   }
   function renderChain() {
@@ -216451,8 +214755,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const n = i + 1;
       return `<div class="kd-orac-chain__step" style="--f:var(--p${i})">
       <div class="kd-orac-chain__i">${String(n).padStart(2, "0")}</div>
-      <div class="kd-orac-chain__t">${escHTML9(ui(`kd_orac_chain_s${n}_t`))}</div>
-      <div class="kd-orac-chain__d">${escHTML9(ui(`kd_orac_chain_s${n}_d`))}</div>
+      <div class="kd-orac-chain__t">${escHTML10(ui(`kd_orac_chain_s${n}_t`))}</div>
+      <div class="kd-orac-chain__d">${escHTML10(ui(`kd_orac_chain_s${n}_d`))}</div>
     </div>`;
     }).join("");
     return `${sectionHeader2("02", secKicker("kd_orac_chain_k"), "kd_orac_chain_h")}
@@ -216466,21 +214770,21 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     <p class="kd-orac-p">${fill("kd_orac_target_intro")}</p>
     <div class="kd-orac-target">
       <div class="kd-orac-target__main">
-        <div class="kd-orac-target__lead">${escHTML9(ui("kd_orac_target_lead"))}</div>
-        <div class="kd-orac-target__num">${escHTML9(t.low_display)}<em>${DASH}</em>${escHTML9(t.high_display)}<span class="kd-orac-target__unit">${escHTML9(ui("kd_orac_target_unit"))}</span></div>
+        <div class="kd-orac-target__lead">${escHTML10(ui("kd_orac_target_lead"))}</div>
+        <div class="kd-orac-target__num">${escHTML10(t.low_display)}<em>${DASH}</em>${escHTML10(t.high_display)}<span class="kd-orac-target__unit">${escHTML10(ui("kd_orac_target_unit"))}</span></div>
         <p class="kd-orac-target__body">${fill("kd_orac_target_body", { baseAge: String(t.base_age) })}</p>
       </div>
       <div class="kd-orac-target__side">
-        <div class="kd-orac-target__sk">${escHTML9(ui("kd_orac_target_sk"))}</div>
-        <div class="kd-orac-target__sn">${escHTML9(dis.display)}</div>
+        <div class="kd-orac-target__sk">${escHTML10(ui("kd_orac_target_sk"))}</div>
+        <div class="kd-orac-target__sn">${escHTML10(dis.display)}</div>
         <div class="kd-orac-target__sb">${fill("kd_orac_target_sb", { diseaseMin: dis.min_display })}</div>
       </div>
     </div>`;
   }
   function oracPiece(n, mod, repl = {}) {
     return `<div class="kd-orac-piece kd-orac-piece--${mod}">
-      <div class="kd-orac-piece__tag">${escHTML9(ui(`kd_orac_piece${n}_tag`))}</div>
-      <div class="kd-orac-piece__t">${escHTML9(ui(`kd_orac_piece${n}_t`))}</div>
+      <div class="kd-orac-piece__tag">${escHTML10(ui(`kd_orac_piece${n}_tag`))}</div>
+      <div class="kd-orac-piece__t">${escHTML10(ui(`kd_orac_piece${n}_t`))}</div>
       <div class="kd-orac-piece__d">${fill(`kd_orac_piece${n}_d`, repl)}</div>
     </div>`;
   }
@@ -216496,28 +214800,28 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     <div class="kd-orac-pieces">${pieces}</div>
     <div class="kd-orac-abs">
       <div class="kd-orac-abs__txt">${fill("kd_orac_abs_txt")}</div>
-      <button class="kd-orac-abs__btn" type="button" data-kd-tab="foods">${escHTML9(ui("kd_orac_abs_btn"))}</button>
+      <button class="kd-orac-abs__btn" type="button" data-kd-tab="foods">${escHTML10(ui("kd_orac_abs_btn"))}</button>
     </div>
     <p class="kd-orac-p" style="margin-top:34px; margin-bottom:12px; font-weight:700; font-size:1.25rem; text-align:center">${fill("kd_orac_forces_intro", { gap: String(cl.gap), baseAge: String(cl.base), ceiling: String(cl.ceiling) })}</p>
     <div class="kd-orac-forces">
       <div class="kd-orac-force kd-orac-force--a">
-        <div class="kd-orac-force__k">${escHTML9(ui("kd_orac_force_a_k"))}</div>
-        <div class="kd-orac-force__t">${escHTML9(ui("kd_orac_force_a_t"))}</div>
-        <div class="kd-orac-force__d">${escHTML9(ui("kd_orac_force_a_d"))}</div>
-        <div class="kd-orac-force__big">${escHTML9(ui("kd_orac_force_a_big"))}</div>
+        <div class="kd-orac-force__k">${escHTML10(ui("kd_orac_force_a_k"))}</div>
+        <div class="kd-orac-force__t">${escHTML10(ui("kd_orac_force_a_t"))}</div>
+        <div class="kd-orac-force__d">${escHTML10(ui("kd_orac_force_a_d"))}</div>
+        <div class="kd-orac-force__big">${escHTML10(ui("kd_orac_force_a_big"))}</div>
       </div>
       <div class="kd-orac-force__plus">+</div>
       <div class="kd-orac-force kd-orac-force--b">
         <div class="kd-orac-force__k">${fill("kd_orac_force_b_k", { essentials: String(essentialCount()) })}</div>
-        <div class="kd-orac-force__t">${escHTML9(ui("kd_orac_force_b_t"))}</div>
-        <div class="kd-orac-force__d">${escHTML9(ui("kd_orac_force_b_d"))}</div>
-        <div class="kd-orac-force__big">${escHTML9(ui("kd_orac_force_b_big"))}</div>
+        <div class="kd-orac-force__t">${escHTML10(ui("kd_orac_force_b_t"))}</div>
+        <div class="kd-orac-force__d">${escHTML10(ui("kd_orac_force_b_d"))}</div>
+        <div class="kd-orac-force__big">${escHTML10(ui("kd_orac_force_b_big"))}</div>
       </div>
     </div>
     <div class="kd-orac-payoff">
-      <div class="kd-orac-payoff__n">${escHTML9(pay.years_display)}</div>
+      <div class="kd-orac-payoff__n">${escHTML10(pay.years_display)}</div>
       <p class="kd-orac-payoff__b">${fill("kd_orac_payoff_body", { weight: pay.weight_display, baseAge: String(t.base_age) })}</p>
-      <div class="kd-orac-src">${escHTML9(pay.cite)}</div>
+      <div class="kd-orac-src">${escHTML10(pay.cite)}</div>
     </div>`;
   }
   function foodColorVar(token) {
@@ -216525,9 +214829,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function renderReach(f) {
     const rows = f.reach.rows.map((r) => `<div class="kd-orac-reach__row" style="--fc:${foodColorVar(r.color)}">
-      <span class="kd-orac-reach__name"><i class="kd-orac-reach__dot" aria-hidden="true"></i>${escHTML9(r.name)}</span>
+      <span class="kd-orac-reach__name"><i class="kd-orac-reach__dot" aria-hidden="true"></i>${escHTML10(r.name)}</span>
       <span class="kd-orac-reach__track"><span class="kd-orac-reach__fill" style="width:${Math.min(100, r.pct)}%"></span>${r.over ? '<span class="kd-orac-reach__over"></span>' : ""}</span>
-      <span class="kd-orac-reach__pct"><b>${r.pct}%</b> ${escHTML9(ui("kd_orac_reach_of_day"))}</span>
+      <span class="kd-orac-reach__pct"><b>${r.pct}%</b> ${escHTML10(ui("kd_orac_reach_of_day"))}</span>
     </div>`).join("");
     return `${sectionHeader2("04", secKicker("kd_orac_reach_k"), "kd_orac_reach_h")}
     <p class="kd-orac-p">${fill("kd_orac_reach_intro", { target: f.reach.target_display })}</p>
@@ -216536,7 +214840,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     <div class="kd-orac-reach__cap">${fill("kd_orac_reach_cap", { cite: f.reach.cite })}</div>`;
   }
   function renderScale(f) {
-    const rows = f.scale.rows.map((r) => `<div class="kd-orac-scale__row" style="--fc:${foodColorVar(r.color)}"><span class="kd-orac-scale__nm">${escHTML9(r.name)}</span><span class="kd-orac-scale__tr"><span class="kd-orac-scale__fl" style="width:${r.bar}%"></span></span><span class="kd-orac-scale__vl">${escHTML9(r.value_display)}</span></div>`).join("");
+    const rows = f.scale.rows.map((r) => `<div class="kd-orac-scale__row" style="--fc:${foodColorVar(r.color)}"><span class="kd-orac-scale__nm">${escHTML10(r.name)}</span><span class="kd-orac-scale__tr"><span class="kd-orac-scale__fl" style="width:${r.bar}%"></span></span><span class="kd-orac-scale__vl">${escHTML10(r.value_display)}</span></div>`).join("");
     return `${sectionHeader2("05", secKicker("kd_orac_scale_k"), "kd_orac_scale_h")}
     <div class="kd-orac-scale" id="scale">${rows}<p class="kd-orac-scale__note">${fill("kd_orac_scale_note", { cloves: f.scale.max_display })}</p></div>`;
   }
@@ -216612,15 +214916,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         const share = target > 0 ? v / target * 100 : 0;
         const shareStr = share >= 100 ? `${Math.round(share)}%` : `${share.toFixed(1)}%`;
         const barPct = Math.min(100, share);
-        return `<span class="kd-orac-dot" style="left:${pl.left}%;top:${pl.top}%" data-left-log="${pl.left}" data-top-log="${pl.top}" data-left-lin="${pn.left}" data-top-lin="${pn.top}" data-n="${escHTML9(r.name)}" data-vd="${escHTML9(r.value_display)}" data-fam="${escHTML9(cat.label)}" data-c="${colorVar}" data-unit="${escHTML9(unit)}" data-share="${shareStr}" data-sharetext="${escHTML9(shareText)}" data-barpct="${barPct}"></span>`;
+        return `<span class="kd-orac-dot" style="left:${pl.left}%;top:${pl.top}%" data-left-log="${pl.left}" data-top-log="${pl.top}" data-left-lin="${pn.left}" data-top-lin="${pn.top}" data-n="${escHTML10(r.name)}" data-vd="${escHTML10(r.value_display)}" data-fam="${escHTML10(cat.label)}" data-c="${colorVar}" data-unit="${escHTML10(unit)}" data-share="${shareStr}" data-sharetext="${escHTML10(shareText)}" data-barpct="${barPct}"></span>`;
       }).join("");
       const topRow = cat.rows[topIdx];
       const topL = clamp((posLog[topIdx] ?? { left: 0 }).left);
       const topN = clamp((posLin[topIdx] ?? { left: 0 }).left);
-      const topLabel = topRow !== void 0 ? `<span class="kd-orac-top" style="left:${topL}%" data-left-log="${topL}" data-left-lin="${topN}">${escHTML9(topRow.name)} \xB7 <b>${escHTML9(topRow.value_display)}</b></span>` : "";
-      const sub = cat.basis !== baseBasis ? `<i>${escHTML9(cat.basis)}</i>` : "";
-      return `<div class="kd-orac-lane" data-fam="${escHTML9(cat.key)}" style="--fc:${colorVar}">
-        <div class="kd-orac-lane__n"><span><b>${escHTML9(cat.label)}</b>${sub}</span><span class="kd-orac-lane__sw" aria-hidden="true"></span></div>
+      const topLabel = topRow !== void 0 ? `<span class="kd-orac-top" style="left:${topL}%" data-left-log="${topL}" data-left-lin="${topN}">${escHTML10(topRow.name)} \xB7 <b>${escHTML10(topRow.value_display)}</b></span>` : "";
+      const sub = cat.basis !== baseBasis ? `<i>${escHTML10(cat.basis)}</i>` : "";
+      return `<div class="kd-orac-lane" data-fam="${escHTML10(cat.key)}" style="--fc:${colorVar}">
+        <div class="kd-orac-lane__n"><span><b>${escHTML10(cat.label)}</b>${sub}</span><span class="kd-orac-lane__sw" aria-hidden="true"></span></div>
         <div class="kd-orac-rail">${dots}${topLabel}</div>
       </div>`;
     }).join("");
@@ -216637,19 +214941,19 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
     const axisLog = logTicks.map((v) => `<i class="kd-orac-axis__tick kd-orac-axis__tick--log" style="left:${plotPos(v, max, "log")}%">${v.toLocaleString("en-US")}</i>`).join("");
     const axisLin = linTicks.map((v) => `<i class="kd-orac-axis__tick kd-orac-axis__tick--lin" style="left:${plotPos(v, max, "lin")}%">${v.toLocaleString("en-US")}</i>`).join("");
-    const legend = cats.map((cat) => `<button type="button" class="kd-orac-keyb" data-fam="${escHTML9(cat.key)}" style="--fc:${foodColorVar(cat.color)}"><i aria-hidden="true"></i>${escHTML9(cat.label)}</button>`).join("");
+    const legend = cats.map((cat) => `<button type="button" class="kd-orac-keyb" data-fam="${escHTML10(cat.key)}" style="--fc:${foodColorVar(cat.color)}"><i aria-hidden="true"></i>${escHTML10(cat.label)}</button>`).join("");
     return `${sectionHeader2("06", secKicker("kd_orac_tables_k"), "kd_orac_tables_h")}
     <p class="kd-orac-p">${fill("kd_orac_tables_intro")}</p>
     <div class="kd-orac-field" data-orac-field data-mode="log">
       <div class="kd-orac-fld__ctl">
-        <span class="kd-orac-fld__hint"><i aria-hidden="true"></i>${escHTML9(ui("kd_orac_field_hint"))}</span>
+        <span class="kd-orac-fld__hint"><i aria-hidden="true"></i>${escHTML10(ui("kd_orac_field_hint"))}</span>
         <div class="kd-orac-seg">
-          <button type="button" class="kd-orac-seg__btn" data-orac-mode="log">${escHTML9(ui("kd_orac_field_log"))}</button>
-          <button type="button" class="kd-orac-seg__btn" data-orac-mode="lin">${escHTML9(ui("kd_orac_field_lin"))}</button>
+          <button type="button" class="kd-orac-seg__btn" data-orac-mode="log">${escHTML10(ui("kd_orac_field_log"))}</button>
+          <button type="button" class="kd-orac-seg__btn" data-orac-mode="lin">${escHTML10(ui("kd_orac_field_lin"))}</button>
         </div>
       </div>
       <div class="kd-orac-fld__plot">
-        <div class="kd-orac-fld__lines"><div class="kd-orac-fld__tgt" style="left:${tgtLog}%" data-left-log="${tgtLog}" data-left-lin="${tgtLin}"><b>${escHTML9(targetDisplay)} \xB7 ${escHTML9(ui("kd_orac_field_tgt_suffix"))}</b></div></div>
+        <div class="kd-orac-fld__lines"><div class="kd-orac-fld__tgt" style="left:${tgtLog}%" data-left-log="${tgtLog}" data-left-lin="${tgtLin}"><b>${escHTML10(targetDisplay)} \xB7 ${escHTML10(ui("kd_orac_field_tgt_suffix"))}</b></div></div>
         ${lanes}
         <div class="kd-orac-fld__axis">${axisLog}${axisLin}</div>
         <div class="kd-orac-fld__tip">
@@ -216665,7 +214969,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     <div class="kd-orac-fld__key">${legend}</div>
     <div class="kd-orac-fld__src">${fill("kd_orac_field_src", { cite: f.reach.cite })}</div>
     <div class="kd-orac-bridge">
-      <div class="kd-orac-bridge__k">${escHTML9(ui("kd_orac_bridge_k"))}</div>
+      <div class="kd-orac-bridge__k">${escHTML10(ui("kd_orac_bridge_k"))}</div>
       <p class="kd-orac-bridge__b">${fill("kd_orac_bridge_b", { low: od.target.low_display, high: od.target.high_display })}</p>
     </div>`;
   }
@@ -216872,20 +215176,20 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const L = p.leader;
     const li = formInfo(L.form);
     const lStyle = li.color.length > 0 ? ` style="--fc:${li.color}"` : "";
-    const leader = `<button type="button" class="kd-orac-supp__leader" data-kd-product="${escHTML9(L.product_id)}"${lStyle}>
-      <span class="kd-orac-supp__tag">${escHTML9(ui("kd_orac_supp_leader_tag"))}</span>
-      <span class="kd-orac-supp__lead-top"><span class="kd-orac-supp__lead-name">${escHTML9(L.name)}</span><span class="kd-orac-supp__form">${escHTML9(li.label)}</span></span>
-      <span class="kd-orac-supp__lead-meta"><span class="v"><strong>${escHTML9(L.value_display)}</strong> ${escHTML9(ui("kd_orac_supp_per_dollar"))}</span><span class="kd-orac-supp__dot" aria-hidden="true">\xB7</span><span class="p">${escHTML9(L.price_display)} ${escHTML9(ui("kd_orac_supp_wholesale"))}</span></span>
-      <span class="kd-orac-supp__lead-score"><span class="n">${escHTML9(L.orac_display)}</span><span class="u">${escHTML9(ui("kd_orac_supp_unit"))}</span></span>
+    const leader = `<button type="button" class="kd-orac-supp__leader" data-kd-product="${escHTML10(L.product_id)}"${lStyle}>
+      <span class="kd-orac-supp__tag">${escHTML10(ui("kd_orac_supp_leader_tag"))}</span>
+      <span class="kd-orac-supp__lead-top"><span class="kd-orac-supp__lead-name">${escHTML10(L.name)}</span><span class="kd-orac-supp__form">${escHTML10(li.label)}</span></span>
+      <span class="kd-orac-supp__lead-meta"><span class="v"><strong>${escHTML10(L.value_display)}</strong> ${escHTML10(ui("kd_orac_supp_per_dollar"))}</span><span class="kd-orac-supp__dot" aria-hidden="true">\xB7</span><span class="p">${escHTML10(L.price_display)} ${escHTML10(ui("kd_orac_supp_wholesale"))}</span></span>
+      <span class="kd-orac-supp__lead-score"><span class="n">${escHTML10(L.orac_display)}</span><span class="u">${escHTML10(ui("kd_orac_supp_unit"))}</span></span>
     </button>`;
     const rows = p.rows.map((r) => {
       const fi = formInfo(r.form);
       const barStyle = fi.color.length > 0 ? `width:${r.bar}%;--fc:${fi.color}` : `width:${r.bar}%`;
       const badge = fi.color.length > 0 ? ` style="--fc:${fi.color}"` : "";
-      return `<button type="button" class="kd-orac-supp__row" data-kd-product="${escHTML9(r.product_id)}">
-      <span class="kd-orac-supp__row-head"><span class="kd-orac-supp__row-name">${escHTML9(r.name)}</span><span class="kd-orac-supp__form"${badge}>${escHTML9(fi.label)}</span></span>
+      return `<button type="button" class="kd-orac-supp__row" data-kd-product="${escHTML10(r.product_id)}">
+      <span class="kd-orac-supp__row-head"><span class="kd-orac-supp__row-name">${escHTML10(r.name)}</span><span class="kd-orac-supp__form"${badge}>${escHTML10(fi.label)}</span></span>
       <span class="kd-orac-supp__row-track"><span class="kd-orac-supp__row-fill" style="${barStyle}"></span></span>
-      <span class="kd-orac-supp__row-nums"><span class="s">${escHTML9(r.orac_display)}</span><span class="sub"><span class="v">${escHTML9(r.value_display)}</span> ${escHTML9(ui("kd_orac_supp_per_dollar"))} \xB7 ${escHTML9(r.price_display)}</span></span>
+      <span class="kd-orac-supp__row-nums"><span class="s">${escHTML10(r.orac_display)}</span><span class="sub"><span class="v">${escHTML10(r.value_display)}</span> ${escHTML10(ui("kd_orac_supp_per_dollar"))} \xB7 ${escHTML10(r.price_display)}</span></span>
       <span class="kd-orac-supp__go" aria-hidden="true">\u203A</span>
     </button>`;
     }).join("");
@@ -216895,7 +215199,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     <div class="kd-orac-supp" id="supplements">
       ${leader}
       <div class="kd-orac-supp__rows">${rows}</div>
-      ${cap.length > 0 ? `<div class="kd-orac-supp__cap">${escHTML9(cap)}</div>` : ""}
+      ${cap.length > 0 ? `<div class="kd-orac-supp__cap">${escHTML10(cap)}</div>` : ""}
     </div>`;
   }
   function renderFoods(od, f) {
@@ -216917,15 +215221,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const fullAnswer = c.answer.trim() === c.answer_short.trim() ? "" : `<p class="kd-orac-claim__full">${glossify(c.answer)}</p>`;
     return `<details class="kd-orac-claim">
       <summary class="kd-orac-claim__summary">
-        <div class="kd-orac-claim__q">${escHTML9(c.question)}</div>
+        <div class="kd-orac-claim__q">${escHTML10(c.question)}</div>
         <span class="kd-orac-claim__chev" aria-hidden="true">\u25B8</span>
-        <p class="kd-orac-claim__a">${escHTML9(c.answer_short)}</p>
-        <div class="kd-orac-claim__src">${escHTML9(composeShortCite(c))}</div>
+        <p class="kd-orac-claim__a">${escHTML10(c.answer_short)}</p>
+        <div class="kd-orac-claim__src">${escHTML10(composeShortCite(c))}</div>
       </summary>
       <div class="kd-orac-claim__body">
         ${fullAnswer}
         <blockquote class="kd-orac-claim__verbatim">\u201C${glossify(collapseWS3(c.verbatim))}\u201D</blockquote>
-        ${cite.length > 0 ? `<div class="kd-orac-claim__cite">\u2014 Dr. Joel Wallach \xB7 ${escHTML9(cite)}</div>` : ""}
+        ${cite.length > 0 ? `<div class="kd-orac-claim__cite">\u2014 Dr. Joel Wallach \xB7 ${escHTML10(cite)}</div>` : ""}
       </div>
     </details>`;
   }
@@ -216937,7 +215241,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         return "";
       }
       return `<div class="kd-orac-fgroup">
-      <div class="kd-orac-fgroup__h">${escHTML9(facetLabel(facet))}<span class="kd-orac-fgroup__n">${inFacet.length}</span></div>
+      <div class="kd-orac-fgroup__h">${escHTML10(facetLabel(facet))}<span class="kd-orac-fgroup__n">${inFacet.length}</span></div>
       <div class="kd-orac-claimlist">${inFacet.map(oracClaimCard).join("")}</div>
     </div>`;
     }).join("");
@@ -216947,18 +215251,18 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const od = oracData();
     const ofd = oracFoodsData();
     const opd = oracProductsData();
-    const claimsKicker = `<div class="kd-orac-sec__k">${escHTML9(ui("kd_orac_claims_kicker").replace("{n}", String(claims.length)))}</div>`;
+    const claimsKicker = `<div class="kd-orac-sec__k">${escHTML10(ui("kd_orac_claims_kicker").replace("{n}", String(claims.length)))}</div>`;
     return `<div class="kt-page kd-orac">
     <header class="kd-orac-hero">
       <div class="kd-orac-eyebrow">
-        <span class="kd-orac-eyebrow__l">${escHTML9(ui("kd_orac_eyebrow_l"))}</span>
+        <span class="kd-orac-eyebrow__l">${escHTML10(ui("kd_orac_eyebrow_l"))}</span>
         <span class="kd-orac-eyebrow__rule"></span>
-        <span class="kd-orac-eyebrow__r">${escHTML9(ui("kd_orac_eyebrow_r"))}</span>
+        <span class="kd-orac-eyebrow__r">${escHTML10(ui("kd_orac_eyebrow_r"))}</span>
       </div>
       <div class="kd-orac-hd">
         <span class="kd-orac-hd__num">01</span>
         <div>
-          <h1 class="kd-orac-hero__h"><span class="l1">${escHTML9(ui("kd_orac_hero_hl1"))}</span><span class="l2">${escHTML9(ui("kd_orac_hero_hl2"))}</span></h1>
+          <h1 class="kd-orac-hero__h"><span class="l1">${escHTML10(ui("kd_orac_hero_hl1"))}</span><span class="l2">${escHTML10(ui("kd_orac_hero_hl2"))}</span></h1>
           <p class="kd-orac-hero__deck">${emph(ui("kd_orac_hero_deck"))}</p>
         </div>
       </div>
@@ -216967,19 +215271,19 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     ${od !== null ? renderNarrative(od, ofd, opd) : ""}
 
     ${sectionHeader2("09", claimsKicker, "kd_orac_claims_h")}
-    <p class="kd-orac-p">${escHTML9(ui("kd_orac_claims_intro"))}</p>
+    <p class="kd-orac-p">${escHTML10(ui("kd_orac_claims_intro"))}</p>
     <div class="kd-orac-claims">${oracClaimGroups(claims)}</div>
   </div>`;
   }
 
   // assets/js/src/views/knowledge-topic.ts
-  function escHTML10(s) {
+  function escHTML11(s) {
     return String(s ?? "").replace(/[&<>\x22\x27]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function relPill(slug) {
     const t = relTarget(slug);
     const name = displayName(slug);
-    return t === null ? `<span class="kt-pill kt-pill--static">${escHTML10(name)}</span>` : `<button class="kt-pill" type="button" ${t.attr}="${escHTML10(t.val)}">${escHTML10(name)}</button>`;
+    return t === null ? `<span class="kt-pill kt-pill--static">${escHTML11(name)}</span>` : `<button class="kt-pill" type="button" ${t.attr}="${escHTML11(t.val)}">${escHTML11(name)}</button>`;
   }
   function relTarget(slug) {
     const essAttr = (s) => {
@@ -217010,27 +215314,27 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const groups = facetGroups(slug);
     const lede = entityLede(slug);
     const sym = e.symbol ?? "";
-    const symHTML = sym.length > 0 ? `<span class="kt-sym">${escHTML10(sym)}</span>` : "";
+    const symHTML = sym.length > 0 ? `<span class="kt-sym">${escHTML11(sym)}</span>` : "";
     const rels = e.related.map(relPill).join("");
-    const relBlock = rels.length > 0 ? `<div class="kt-rel"><span class="kt-rel__lbl">${escHTML10(ui("kt_related"))}</span>${rels}</div>` : "";
+    const relBlock = rels.length > 0 ? `<div class="kt-rel"><span class="kt-rel__lbl">${escHTML11(ui("kt_related"))}</span>${rels}</div>` : "";
     const nClaims = groups.reduce((n, g) => n + g.claims.length, 0);
     const books = booksForSubject(slug);
     const noun = plural(nClaims, "claim");
     const meta = books.length > 0 ? ui("kt_meta_full").replace("{n}", String(nClaims)).replace("{noun}", noun).replace("{books}", books.join(", ")) : ui("kt_meta").replace("{n}", String(nClaims)).replace("{noun}", noun);
-    const facetsHTML = groups.map((g) => `<details class="kd-ep-facet" data-facet="${escHTML10(g.facet)}" open>
-      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML10(g.label)}</span><span class="kd-ep-facet__count">${g.claims.length}</span></summary>
+    const facetsHTML = groups.map((g) => `<details class="kd-ep-facet" data-facet="${escHTML11(g.facet)}" open>
+      <summary class="kd-ep-facet__head"><span class="kd-ep-facet__label">${escHTML11(g.label)}</span><span class="kd-ep-facet__count">${g.claims.length}</span></summary>
       <div class="kd-ep-facet__body">${g.claims.map(renderSearchCard).join("")}</div>
     </details>`).join("");
     return `<div class="kt-page kd-ep">
     <header class="kt-hero">
       <div class="kt-hero__top">
-        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML10(e.type)} \xB7 <button type="button" class="kt-kicker__link" data-kd-action="explore-home">${escHTML10(ui("kt_kicker"))}</button></span>
-        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML10(fromExplore ? ui("kt_back") : ui("kt_back_generic"))}</button>
+        <span class="kt-kicker"><span class="kt-kicker__dot"></span>${escHTML11(e.type)} \xB7 <button type="button" class="kt-kicker__link" data-kd-action="explore-home">${escHTML11(ui("kt_kicker"))}</button></span>
+        <button class="kd-ep-back" type="button" data-kd-action="topic-close">${escHTML11(fromExplore ? ui("kt_back") : ui("kt_back_generic"))}</button>
       </div>
-      <div class="kt-title">${symHTML}<h1>${escHTML10(e.common_name ?? e.display_name)}</h1></div>
-      ${lede.length > 0 ? `<p class="kt-lede">${escHTML10(lede)}</p>` : ""}
+      <div class="kt-title">${symHTML}<h1>${escHTML11(e.common_name ?? e.display_name)}</h1></div>
+      ${lede.length > 0 ? `<p class="kt-lede">${escHTML11(lede)}</p>` : ""}
       ${relBlock}
-      <div class="kt-meta">${escHTML10(meta)}</div>
+      <div class="kt-meta">${escHTML11(meta)}</div>
     </header>
     ${facetsHTML}
   </div>`;
@@ -217140,7 +215444,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return out;
   }
   var ESS_SUBSECTIONS = buildSubsections();
-  function escHTML11(s) {
+  function escHTML12(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   var CRUMB_MAX = 6;
@@ -217162,6 +215466,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     if (type === "condition") {
       return getCondition(val)?.display_name ?? val;
     }
+    if (type === "food") {
+      return foodName(val) || val;
+    }
     return vaultEntry(val)?.name ?? val;
   }
   function renderCrumbs(trail) {
@@ -217169,7 +215476,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return "";
     }
     const items = trail.map(
-      (c, i) => i === trail.length - 1 ? `<span class="kd-crumb kd-crumb--here">${escHTML11(c.label)}</span>` : `<button class="kd-crumb" type="button" data-kd-crumb="${i}">${escHTML11(c.label)}</button>`
+      (c, i) => i === trail.length - 1 ? `<span class="kd-crumb kd-crumb--here">${escHTML12(c.label)}</span>` : `<button class="kd-crumb" type="button" data-kd-crumb="${i}">${escHTML12(c.label)}</button>`
     ).join('<span class="kd-crumb__sep" aria-hidden="true">\u203A</span>');
     return `<nav class="kd-crumbs" aria-label="Breadcrumb">${items}</nav>`;
   }
@@ -217190,15 +215497,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const groupsHTML = ESS_SUBSECTIONS.map((group) => {
       const tilesHTML = group.items.map((e) => {
         const sel = e.key === selectedKey ? " is-selected" : "";
-        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML11(e.category)}" data-kd-essential="${escHTML11(e.key)}" title="${escHTML11(e.name)}"><span class="sh-tile__sym">${escHTML11(e.symbol)}</span><span class="sh-tile__nm">${escHTML11(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML11(plural(e.claimCount, "claim"))}</span></button>`;
+        return `<button type="button" class="sh-tile${sel}" data-cat="${escHTML12(e.category)}" data-kd-essential="${escHTML12(e.key)}" title="${escHTML12(e.name)}"><span class="sh-tile__sym">${escHTML12(e.symbol)}</span><span class="sh-tile__nm">${escHTML12(e.name)}</span><span class="sh-tile__ct">${e.claimCount} ${escHTML12(plural(e.claimCount, "claim"))}</span></button>`;
       }).join("");
       const key = SEC_LABEL_KEY[group.label];
       const label = key !== void 0 ? ui(key) : group.label;
-      return `<div class="sh-subhead">${escHTML11(label)}</div><div class="sh-grid${group.wide ? " sh-grid--wide" : ""}">${tilesHTML}</div>`;
+      return `<div class="sh-subhead">${escHTML12(label)}</div><div class="sh-grid${group.wide ? " sh-grid--wide" : ""}">${tilesHTML}</div>`;
     }).join("");
     return `${deepHTML}${groupsHTML}`;
   }
-  function renderTab(tab, snapshot2, selectedKey, selectedCondition, selectedProduct, selectedTopic, fromProductsTab) {
+  function renderTab(tab, snapshot2, selectedKey, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, fromProductsTab) {
     if (selectedTopic !== null) {
       const page = renderTopicPage(selectedTopic, tab === "explore");
       if (page.length > 0) {
@@ -217219,25 +215526,24 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       case "explore":
         return renderExploreTab();
       case "products":
-        return renderProductsTab(selectedProduct, fromProductsTab);
+        return renderProductsTab(selectedProduct, selectedFood, catalogKind, fromProductsTab);
     }
   }
-  function renderShell(activeTab, selectedKey, selectedCondition, selectedProduct, selectedTopic, trail) {
+  function renderShell(activeTab, selectedKey, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, trail) {
     const snapshot2 = getOrCompute();
-    const productsCount = productCount();
     const tabs = [
-      { id: "home", label: ui("kd_tab_home"), count: "" },
-      { id: "foods", label: ui("kd_tab_foods"), count: "" },
-      { id: "orac", label: ui("kd_tab_orac"), count: "" },
-      { id: "conditions", label: ui("kd_tab_conditions"), count: `${listConditions().length} INDEXED` },
-      { id: "explore", label: ui("kd_tab_explore"), count: `${exploreEntities().length} TOPICS` },
-      { id: "products", label: ui("kd_tab_products"), count: `${productsCount} KNOWN` }
+      { id: "home", label: ui("kd_tab_home") },
+      { id: "foods", label: ui("kd_tab_foods") },
+      { id: "orac", label: ui("kd_tab_orac") },
+      { id: "conditions", label: ui("kd_tab_conditions") },
+      { id: "explore", label: ui("kd_tab_explore") },
+      { id: "products", label: ui("kd_tab_products") }
     ];
-    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML11(t.label)}</button>`).join("");
+    const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML12(t.label)}</button>`).join("");
     const fromProductsTab = trail.length === 0 || trail[0]?.type === "tab" && trail[0].val === "products";
     return `
     <header class="kd-knh">
-      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML11(ui("kd_mark"))}</b></div>
+      <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML12(ui("kd_mark"))}</b></div>
       <nav class="kd-knh__tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="ui-close" data-kd-action="close" title="Close (Esc)" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
     </header>
@@ -217247,7 +215553,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <button class="kd-search-clear" data-kd-action="search-clear" type="button" aria-label="Clear search" title="Clear search">\xD7</button>
       <span class="kd-search-kbd">/</span>
     </div>` : ""}
-    <div class="kd-body">${renderCrumbs(trail)}${renderTab(activeTab, snapshot2, selectedKey, selectedCondition, selectedProduct, selectedTopic, fromProductsTab)}</div>`;
+    <div class="kd-body">${renderCrumbs(trail)}${renderTab(activeTab, snapshot2, selectedKey, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, fromProductsTab)}</div>`;
   }
   var KD_SEARCH_ITEM_SELECTOR = {
     home: ".kd-home",
@@ -217389,11 +215695,13 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     let selectedEssential = null;
     let selectedCondition = null;
     let selectedProduct = null;
+    let selectedFood = null;
+    let catalogKind = "all";
     let selectedTopic = null;
     let trail = [];
     let searchQuery = "";
     const render = () => {
-      container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedTopic, trail);
+      container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, trail);
       if (searchQuery.length > 0) {
         const input = container.querySelector(".kd-search-input");
         if (input !== null) {
@@ -217405,7 +215713,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           applyKnowledgeSearch(body, activeTab, searchQuery);
         }
       }
-      const scrollTint = activeTab === "conditions" && selectedCondition !== null ? conditionCategory(selectedCondition)?.color ?? "" : activeTab === "products" && selectedProduct !== null ? productScrollTint(selectedProduct) : activeTab === "essentials" && selectedEssential !== null ? ESSENTIAL_CAT_SCROLL[getEssentialByLayoutKey(selectedEssential)?.category ?? ""] ?? "" : "";
+      const scrollTint = activeTab === "conditions" && selectedCondition !== null ? conditionCategory(selectedCondition)?.color ?? "" : activeTab === "products" && selectedFood !== null ? foodScrollTint(selectedFood) : activeTab === "products" && selectedProduct !== null ? productScrollTint(selectedProduct) : activeTab === "essentials" && selectedEssential !== null ? ESSENTIAL_CAT_SCROLL[getEssentialByLayoutKey(selectedEssential)?.category ?? ""] ?? "" : "";
       if (/^#[0-9a-f]{3,8}$/i.test(scrollTint)) {
         document.documentElement.style.setProperty("--kd-detail-scroll", scrollTint);
       } else {
@@ -217413,11 +215721,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       }
     };
     const openDetail = (type, val) => {
-      const cur = type === "essential" ? selectedEssential : type === "condition" ? selectedCondition : selectedProduct;
+      const cur = type === "essential" ? selectedEssential : type === "condition" ? selectedCondition : type === "food" ? selectedFood : selectedProduct;
       const originTab = activeTab;
       selectedEssential = null;
       selectedCondition = null;
       selectedProduct = null;
+      selectedFood = null;
       selectedTopic = null;
       if (cur === val) {
         trail = [];
@@ -217430,6 +215739,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       } else if (type === "condition") {
         selectedCondition = val;
         activeTab = "conditions";
+      } else if (type === "food") {
+        selectedFood = val;
+        activeTab = "products";
       } else {
         selectedProduct = val;
         activeTab = "products";
@@ -217453,6 +215765,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       selectedEssential = null;
       selectedCondition = null;
       selectedProduct = null;
+      selectedFood = null;
       selectedTopic = null;
       if (i < 0 || c === void 0 || c.type === "tab") {
         trail = [];
@@ -217471,6 +215784,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         activeTab = "conditions";
       } else if (c.type === "product") {
         selectedProduct = c.val;
+        activeTab = "products";
+      } else if (c.type === "food") {
+        selectedFood = c.val;
         activeTab = "products";
       }
       render();
@@ -217493,6 +215809,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       selectedEssential = null;
       selectedCondition = null;
       selectedProduct = null;
+      selectedFood = null;
+      catalogKind = "all";
       selectedTopic = null;
       trail = [];
       searchQuery = "";
@@ -217527,6 +215845,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           selectedEssential = null;
           selectedCondition = null;
           selectedProduct = null;
+          selectedFood = null;
           selectedTopic = null;
           trail = [];
           searchQuery = "";
@@ -217571,6 +215890,23 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         }
         return;
       }
+      const foodEl = target.closest("[data-kd-food]");
+      if (foodEl !== null) {
+        const k = foodEl.getAttribute("data-kd-food");
+        if (k !== null) {
+          openDetail("food", k);
+        }
+        return;
+      }
+      const kindEl = target.closest("[data-kd-catfilter]");
+      if (kindEl !== null) {
+        const k = kindEl.getAttribute("data-kd-catfilter");
+        if (k === "all" || k === "products" || k === "foods") {
+          catalogKind = k;
+          render();
+        }
+        return;
+      }
       const actionEl = target.closest("[data-kd-action]");
       if (actionEl !== null) {
         const action = actionEl.getAttribute("data-kd-action");
@@ -217584,6 +215920,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           selectedCondition = null;
           trail = [];
           render();
+        } else if (action === "food-close") {
+          if (trail[0] !== void 0 && trail[0].type === "tab" && trail[0].val !== "products") {
+            goCrumb(0);
+          } else {
+            selectedFood = null;
+            trail = [];
+            render();
+          }
         } else if (action === "product-close") {
           if (trail[0] !== void 0 && trail[0].type === "tab" && trail[0].val !== "products") {
             goCrumb(0);
@@ -217593,6 +215937,22 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
             render();
           }
         } else if (action === "add-regimen") {
+          const fid = actionEl.getAttribute("data-add-food");
+          if (fid !== null && fid.length > 0) {
+            addCatalogFood(fid);
+            window.dispatchEvent(new CustomEvent("wallach:navigate", { detail: { to: "regimen" } }));
+            const foodKey = foodName(fid).trim().toLowerCase();
+            setTimeout(() => {
+              const rows = Array.from(document.querySelectorAll(".rail-list .rr-row"));
+              const match = rows.find((r) => r.dataset["rrName"] === foodKey);
+              if (match !== void 0) {
+                match.classList.remove("rr-row--flash");
+                void match.offsetWidth;
+                match.classList.add("rr-row--flash");
+              }
+            }, 240);
+            return;
+          }
           const pid = actionEl.getAttribute("data-add-product");
           const entry = pid !== null ? vaultEntry(pid) : null;
           if (entry !== null) {
@@ -217624,6 +215984,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           selectedEssential = null;
           selectedCondition = null;
           selectedProduct = null;
+          selectedFood = null;
           trail = [];
           searchQuery = "";
           render();
@@ -217764,6 +216125,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         selectedEssential = null;
         selectedCondition = null;
         selectedProduct = null;
+        selectedFood = null;
         selectedTopic = null;
         trail = [];
         activeTab = tab;
@@ -217775,6 +216137,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           selectedEssential = null;
           selectedCondition = null;
           selectedProduct = null;
+          selectedFood = null;
           selectedTopic = slug;
           trail = [];
           activeTab = "explore";
@@ -217821,7 +216184,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     up: '<svg viewBox="0 0 24 24"><path d="M12 21V9M8 13l4-4 4 4"/><path d="M4 3h16"/></svg>',
     trash: '<svg viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M19 6l-1 14H6L5 6"/></svg>'
   };
-  function escHTML12(s) {
+  function escHTML13(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -217855,8 +216218,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return "pf-logentry__pill";
   }
   function renderLogEntry(e) {
-    const detail = e.detail !== void 0 && e.detail.length > 0 ? `<div class="pf-logentry__detail">${escHTML12(e.detail)}</div>` : "";
-    return `<article class="pf-logentry"><div class="pf-logentry__head"><span>${escHTML12(fmtTs(e.ts))}</span><span>${escHTML12(e.surface)}</span><span class="${logPill(e.kind)}">${escHTML12(LOG_LABEL[e.kind])}</span></div><h4 class="pf-logentry__sum">${escHTML12(e.summary)}</h4>${detail}</article>`;
+    const detail = e.detail !== void 0 && e.detail.length > 0 ? `<div class="pf-logentry__detail">${escHTML13(e.detail)}</div>` : "";
+    return `<article class="pf-logentry"><div class="pf-logentry__head"><span>${escHTML13(fmtTs(e.ts))}</span><span>${escHTML13(e.surface)}</span><span class="${logPill(e.kind)}">${escHTML13(LOG_LABEL[e.kind])}</span></div><h4 class="pf-logentry__sum">${escHTML13(e.summary)}</h4>${detail}</article>`;
   }
   function renderLog() {
     const entries = getEntries();
@@ -218270,7 +216633,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   var LAYOUT4 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   var REC_LIMIT = 3;
   var FOOD_LIMIT = 3;
-  var FOOD_PAGE_CAP = 30;
   var SLOT_CAP = 4;
   var CATEGORY_ROWS = [
     { label: "Minerals", bucket: "other", hue: "#2b6fb0" },
@@ -218278,7 +216640,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     { label: "Amino acids", bucket: "aminos", hue: "#5aa82c" },
     { label: "Fatty acids", bucket: "fatty-acids", hue: "#8a4fae" }
   ];
-  function escHTML13(s) {
+  function escHTML14(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -218290,7 +216652,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function relEdited(iso) {
     const then = Date.parse(`${iso}T00:00:00`);
     if (Number.isNaN(then)) {
-      return escHTML13(iso);
+      return escHTML14(iso);
     }
     const today3 = /* @__PURE__ */ new Date();
     const start = Date.parse(`${today3.toISOString().slice(0, 10)}T00:00:00`);
@@ -218461,7 +216823,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function renderSwatches(selected) {
     return SLOT_COLOURS.map((h) => {
       const on2 = h === selected ? " is-on" : "";
-      return `<button type="button" class="ck-swatch${on2}" style="--h:${escHTML13(h)}" data-swatch="${escHTML13(h)}" aria-pressed="${h === selected ? "true" : "false"}" aria-label="${escHTML13(h)}"></button>`;
+      return `<button type="button" class="ck-swatch${on2}" style="--h:${escHTML14(h)}" data-swatch="${escHTML14(h)}" aria-pressed="${h === selected ? "true" : "false"}" aria-label="${escHTML14(h)}"></button>`;
     }).join("");
   }
   function renderFilledSlot(slot, active, covered, showDelete) {
@@ -218470,17 +216832,17 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const state = active ? "ck-slot--active" : "ck-slot--saved";
     const items = slot.items.length;
     return `
-  <div class="ck-slot ck-slot--filled ${state}" role="tab" aria-selected="${active ? "true" : "false"}" tabindex="0" data-slot="${escHTML13(slot.id)}" style="--sc:${escHTML13(hue)}" aria-label="${escHTML13(slot.name)}, ${active ? "active save slot" : "saved slot"}, ${covered} of ${essentialCount()} covered, ${items} ${items === 1 ? "item" : "items"}, ${escHTML13(relEdited(slot.editedAt))}">
+  <div class="ck-slot ck-slot--filled ${state}" role="tab" aria-selected="${active ? "true" : "false"}" tabindex="0" data-slot="${escHTML14(slot.id)}" style="--sc:${escHTML14(hue)}" aria-label="${escHTML14(slot.name)}, ${active ? "active save slot" : "saved slot"}, ${covered} of ${essentialCount()} covered, ${items} ${items === 1 ? "item" : "items"}, ${escHTML14(relEdited(slot.editedAt))}">
     <div class="ck-slot__top">
       <div class="ck-slot__head">
-        <span class="ck-slot__name" data-slot-name title="${escHTML13(slot.name)}">${escHTML13(slot.name)}</span>
+        <span class="ck-slot__name" data-slot-name title="${escHTML14(slot.name)}">${escHTML14(slot.name)}</span>
         <button type="button" class="ck-slot__pencil" data-slot-rename aria-label="Rename this save" title="Rename">${PENCIL_SVG}</button>
-        <button type="button" class="ck-slot__pencil ck-slot__export" data-slot-export="${escHTML13(slot.id)}" aria-label="Export this save to a file" title="Export this save">${EXPORT_SVG}</button>
+        <button type="button" class="ck-slot__pencil ck-slot__export" data-slot-export="${escHTML14(slot.id)}" aria-label="Export this save to a file" title="Export this save">${EXPORT_SVG}</button>
         ${showDelete ? `<button type="button" class="ck-slot__pencil ck-slot__trash" data-slot-delete aria-label="Delete this save" title="Delete">${TRASH_SVG}</button>` : ""}
       </div>
       <div class="ck-slot__body">
         <span class="ck-slot__cov"><span class="ck-slot__num">${covered}</span><span class="ck-slot__den">/${essentialCount()}</span></span>
-        <span class="ck-slot__meta">${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML13(relEdited(slot.editedAt))}</span>
+        <span class="ck-slot__meta">${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML14(relEdited(slot.editedAt))}</span>
       </div>
     </div>
     <div class="ck-slot__tray">
@@ -218600,7 +216962,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const emptyCls = bucket.covered === 0 ? " ck-cat--empty" : "";
       return `
       <div class="ck-cat${emptyCls}">
-        <span class="ck-cat__id"><span class="ck-cat__dot" style="--cc:${row.hue}"></span><span class="ck-cat__name">${escHTML13(row.label)}</span></span>
+        <span class="ck-cat__id"><span class="ck-cat__dot" style="--cc:${row.hue}"></span><span class="ck-cat__name">${escHTML14(row.label)}</span></span>
         <span class="ck-cat__meter"><i style="width:${pct.toFixed(1)}%"></i></span>
         <span class="ck-cat__frac"><b>${bucket.covered}</b>/${bucket.total}</span>
       </div>`;
@@ -218613,13 +216975,13 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const ordinal2 = String(Math.max(0, doc.slots.findIndex((s) => s.id === doc.activeSlot)) + 1).padStart(2, "0");
     const total = essentialCount();
     const items = active?.items.length ?? 0;
-    const cells = field.cells.map((c) => `<i class="${c.cls}" data-tip="${escHTML13(c.name)} \xB7 ${c.cls === "covered" ? "covered" : c.cls === "goalgap" ? "goal-gap" : "open"}"></i>`).join("");
+    const cells = field.cells.map((c) => `<i class="${c.cls}" data-tip="${escHTML14(c.name)} \xB7 ${c.cls === "covered" ? "covered" : c.cls === "goalgap" ? "goal-gap" : "open"}"></i>`).join("");
     return `
     <section class="ck-console" data-rise="2" aria-label="Coverage gauge">
       <div class="ck-console__bar">
         <span class="ck-console__live"></span>
-        <span class="ck-console__label">Coverage \xB7 <b>${escHTML13(active?.name ?? "Regimen")}</b></span>
-        <span class="ck-console__tag">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML13(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</span>
+        <span class="ck-console__label">Coverage \xB7 <b>${escHTML14(active?.name ?? "Regimen")}</b></span>
+        <span class="ck-console__tag">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML14(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</span>
       </div>
       <div class="ck-hero">
         ${renderGauge(field.covered, field.goalGap)}
@@ -218641,7 +217003,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function renderGoals(goals) {
     const chips = goals.map((g, i) => `
-    <span class="gchip" style="--gc:${escHTML13(GOAL_HUES[i] ?? GOAL_HUES[0])}"><span class="gchip__dot"></span><span class="gchip__label">${escHTML13(g.name)}</span><button class="ui-close ui-close--sm gchip__x" type="button" data-goal-remove="${escHTML13(g.id)}" aria-label="Remove ${escHTML13(g.name)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span>`).join("");
+    <span class="gchip" style="--gc:${escHTML14(GOAL_HUES[i] ?? GOAL_HUES[0])}"><span class="gchip__dot"></span><span class="gchip__label">${escHTML14(g.name)}</span><button class="ui-close ui-close--sm gchip__x" type="button" data-goal-remove="${escHTML14(g.id)}" aria-label="Remove ${escHTML14(g.name)}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></span>`).join("");
     const add = goals.length < MAX_GOALS ? '<span class="gchip gchip--add" data-goal-add><span class="gchip__label">\uFF0B Add goal</span></span>' : "";
     return `
     <div class="goalstrip ck-goals" data-rise="3">
@@ -218856,8 +217218,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <section class="rail-panel">
         <div class="rail-panel__head">
           <div class="rail-panel__eyebrow">Active stack</div>
-          <div class="rail-panel__title">${escHTML13(active?.name ?? "Regimen")}</div>
-          <div class="rail-panel__meta">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML13(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</div>
+          <div class="rail-panel__title">${escHTML14(active?.name ?? "Regimen")}</div>
+          <div class="rail-panel__meta">Slot ${ordinal2} \xB7 ${items} ${items === 1 ? "item" : "items"} \xB7 ${escHTML14(relEdited(active?.editedAt ?? (/* @__PURE__ */ new Date()).toISOString().slice(0, 10)))}</div>
         </div>
         <div class="rail-list" data-rail-list></div>
         <div class="rr-add">
@@ -218906,6 +217268,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function mount4(container) {
     let animated = false;
     let foodPage = 0;
+    let foodCategory = "";
+    let foodQuery = "";
     let toastTimer = null;
     let recycleOpen = false;
     let recycleReplaceKey = null;
@@ -219196,6 +217560,31 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         host.replaceChildren();
       }
     };
+    const paintFoods = () => {
+      const foodsHost = container.querySelector("[data-foodsblock]");
+      if (foodsHost === null) {
+        return;
+      }
+      const goals = activeGoals2();
+      const allCovered = fieldInfo(goals).covered >= essentialCount();
+      const ownedFoods = loadEffectiveRegimen().map((i) => i.label["food_id"]).filter((v) => typeof v === "string");
+      const foodPool = rankFoodsForCoverage({
+        want: wantedSlugs2(goals),
+        owned: ownedFoods,
+        goals: goals.map((g) => ({ id: g.id, members: g.members })),
+        limit: foodCatalogSize(),
+        category: foodCategory,
+        query: foodQuery
+      });
+      const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_LIMIT));
+      foodPage = Math.min(foodPage, foodPages - 1);
+      buildFoodsBlock(foodsHost, foodPool.slice(foodPage * FOOD_LIMIT, (foodPage + 1) * FOOD_LIMIT), {
+        education: allCovered,
+        ownedCount: ownedFoods.length,
+        pager: { page: foodPage, pages: foodPages, kind: "numbers" },
+        filter: { categories: foodCategories(), category: foodCategory, query: foodQuery }
+      });
+    };
     const render = () => {
       withScrollPreserved(container, paint);
     };
@@ -219238,26 +217627,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         });
         buildRecs2(recGrid, recs, goals, allCovered);
       }
-      const foodsHost = container.querySelector("[data-foodsblock]");
-      if (foodsHost !== null) {
-        const ownedFoods = items.map((i) => i.label["food_id"]).filter((v) => typeof v === "string");
-        const foodPool = rankFoodsForCoverage({
-          want: wantedSlugs2(goals),
-          owned: ownedFoods,
-          goals: goals.map((g) => ({ id: g.id, members: g.members })),
-          limit: FOOD_LIMIT * FOOD_PAGE_CAP,
-          greedy: true,
-          education: allCovered,
-          browse: true
-        });
-        const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_LIMIT));
-        foodPage = Math.min(foodPage, foodPages - 1);
-        buildFoodsBlock(foodsHost, foodPool.slice(foodPage * FOOD_LIMIT, (foodPage + 1) * FOOD_LIMIT), {
-          education: allCovered,
-          ownedCount: ownedFoods.length,
-          pager: { page: foodPage, pages: foodPages, kind: "squares" }
-        });
-      }
+      paintFoods();
       if (recycleOpen) {
         populateRecycle();
       }
@@ -219511,7 +217881,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         const n = Number.parseInt(foodPager.dataset["foodPage"] ?? "", 10);
         if (Number.isFinite(n) && n >= 0) {
           foodPage = n;
-          render();
+          paintFoods();
         }
         return;
       }
@@ -219627,8 +217997,23 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     };
     const inputHandler = (ev) => {
       const it = ev.target;
-      if (it !== null && it.matches("[data-add-input]")) {
+      if (it === null) {
+        return;
+      }
+      if (it.matches("[data-add-input]")) {
         renderTypeahead(container, it.value);
+        return;
+      }
+      if (it.matches("[data-food-q]")) {
+        foodQuery = it.value;
+        foodPage = 0;
+        paintFoods();
+        return;
+      }
+      if (it.matches("[data-food-cat]")) {
+        foodCategory = it.value;
+        foodPage = 0;
+        paintFoods();
       }
     };
     const escHandler = (ev) => {
@@ -222372,7 +220757,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
 
   // assets/js/src/views/scanner.ts
-  function escHTML14(s) {
+  function escHTML15(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -222422,7 +220807,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <span class="vd-error__ic" aria-hidden="true">!</span>
       <div class="vd-error__body">
         <div class="vd-error__t">Couldn\u2019t read the label</div>
-        <div class="vd-error__m">${escHTML14(message)}</div>
+        <div class="vd-error__m">${escHTML15(message)}</div>
       </div>
       <button class="ds-btn-primary vd-error__retry" type="button" data-sc-upload>Try again</button>
     </div>`;
@@ -222456,9 +220841,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       </div>` : `<div class="vd-scan">
         <button class="ds-btn-primary vd-newscan" type="button" data-sc-new><b aria-hidden="true">+</b> New Scan</button>
         <div class="vd-scan__thumb">
-          ${dataUrl !== null ? `<button class="vd-scan__imgbtn" type="button" data-sc-zoom title="See the full label \u2014 click to enlarge"><img class="vd-scan__img" src="${escHTML14(dataUrl)}" alt="Your scanned label \u2014 click to enlarge"></button>` : ""}
+          ${dataUrl !== null ? `<button class="vd-scan__imgbtn" type="button" data-sc-zoom title="See the full label \u2014 click to enlarge"><img class="vd-scan__img" src="${escHTML15(dataUrl)}" alt="Your scanned label \u2014 click to enlarge"></button>` : ""}
           <div class="vd-scan__meta">
-            <span class="vd-scan__file">${escHTML14(fileName ?? "label image")}</span>
+            <span class="vd-scan__file">${escHTML15(fileName ?? "label image")}</span>
             <span class="vd-scan__done">&check; decoded locally \xB7 reads confirmed below</span>
             <span class="vd-yours">Yours \xB7 user-scanned</span>
           </div>
@@ -222502,7 +220887,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&middot;</span>
           <input class="vd-edit" maxlength="60" value="" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient name">
-          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML15(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML15(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__cov">\xB7 type a name from the label</span></span>
           ${del}
         </div>
@@ -222515,9 +220900,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <div class="vd-nrow is-ok" data-nrow="${i}" data-nmap="essential">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
-          <input class="vd-edit" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient read (editable)">
-          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
-          <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML14(ess.name)}</b>${plus}</span>
+          <input class="vd-edit" maxlength="60" value="${escHTML15(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML15(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML15(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
+          <span class="vd-nrow__map"><span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML15(ess.name)}</b>${plus}</span>
           ${del}
         </div>
       </div>`;
@@ -222527,21 +220912,21 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       <div class="vd-nrow is-ok is-untracked" data-nrow="${i}" data-nmap="untracked">
         <div class="vd-nrow__main">
           <span class="vd-nrow__g">&check;</span>
-          <input class="vd-edit" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient read (editable)">
-          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
+          <input class="vd-edit" maxlength="60" value="${escHTML15(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Nutrient read (editable)">
+          <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML15(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML15(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
           <span class="vd-nrow__map"><span class="vd-nrow__cov">\xB7 read OK \xB7 not one of the 90</span></span>
           ${del}
         </div>
       </div>`;
     }
     const cands = findNutrientCandidates(name).slice(0, 4);
-    const btns = cands.map((c, k) => `<button class="vd-sug__btn${k === 0 ? " is-best" : ""}" type="button" data-nfix="${i}" data-nfix-val="${escHTML14(c.word)}">${escHTML14(c.word)}</button>`).join("");
+    const btns = cands.map((c, k) => `<button class="vd-sug__btn${k === 0 ? " is-best" : ""}" type="button" data-nfix="${i}" data-nfix-val="${escHTML15(c.word)}">${escHTML15(c.word)}</button>`).join("");
     return `
     <div class="vd-nrow is-warn" data-nrow="${i}" data-nmap="warn">
       <div class="vd-nrow__main">
         <span class="vd-nrow__g">!</span>
-        <input class="vd-edit is-warn" maxlength="60" value="${escHTML14(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Garbled read (editable)">
-        <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML14(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML14(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
+        <input class="vd-edit is-warn" maxlength="60" value="${escHTML15(name)}" data-nedit="${i}" placeholder="Nutrient" aria-label="Garbled read (editable)">
+        <span class="vd-nrow__amt"><input class="vd-amt" type="text" inputmode="decimal" maxlength="12" value="${escHTML15(String(n.amount ?? ""))}" data-aedit="${i}" placeholder="Amount" aria-label="Amount (editable)"><input class="vd-unit" type="text" maxlength="8" value="${escHTML15(n.unit ?? "")}" data-uedit="${i}" placeholder="Unit" aria-label="Unit (editable)"></span>
         <span class="vd-nrow__map vd-nrow__map--pending">not recognized \xB7 pick a match or edit</span>
         ${del}
       </div>
@@ -222550,24 +220935,24 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function flagRow(f) {
     const term = f.terms !== void 0 && f.terms.length > 0 ? f.terms[0] : f.category;
-    const reason = f.nuance ?? `On Wallach's anti-list (${escHTML14(f.category)}).`;
+    const reason = f.nuance ?? `On Wallach's anti-list (${escHTML15(f.category)}).`;
     return `
     <div class="vd-flag">
       <span class="vd-flag__m">!</span>
       <div class="vd-flag__b">
-        <span class="vd-flag__h"><b>${escHTML14(term)}</b> \u2014 ${escHTML14(f.category)}</span>
-        <span class="vd-flag__r">${escHTML14(reason)} <span class="vd-flag__cite">Wallach</span></span>
+        <span class="vd-flag__h"><b>${escHTML15(term)}</b> \u2014 ${escHTML15(f.category)}</span>
+        <span class="vd-flag__r">${escHTML15(reason)} <span class="vd-flag__cite">Wallach</span></span>
       </div>
     </div>`;
   }
   function suspectCard(s) {
-    const chips = s.candidates.slice(0, 4).map((c, k) => `<button class="vd-chip${k === 0 ? " is-best" : ""}" type="button" data-ifix="${escHTML14(s.word)}" data-ifix-val="${escHTML14(c.word)}">${escHTML14(c.word)}</button>`).join("");
+    const chips = s.candidates.slice(0, 4).map((c, k) => `<button class="vd-chip${k === 0 ? " is-best" : ""}" type="button" data-ifix="${escHTML15(s.word)}" data-ifix-val="${escHTML15(c.word)}">${escHTML15(c.word)}</button>`).join("");
     return `
-    <div class="vd-ocr__card" data-suspect="${escHTML14(s.word)}">
-      <span class="vd-ocr__word">${escHTML14(s.word)}</span>
+    <div class="vd-ocr__card" data-suspect="${escHTML15(s.word)}">
+      <span class="vd-ocr__word">${escHTML15(s.word)}</span>
       <span class="vd-ocr__arr" aria-hidden="true">&rarr;</span>
       ${chips}
-      <button class="ui-close ui-close--sm vd-ocr__x" type="button" data-idismiss="${escHTML14(s.word)}" title="Dismiss" aria-label="Dismiss">${CLOSE_SVG}</button>
+      <button class="ui-close ui-close--sm vd-ocr__x" type="button" data-idismiss="${escHTML15(s.word)}" title="Dismiss" aria-label="Dismiss">${CLOSE_SVG}</button>
     </div>`;
   }
   function suspectPanelHTML(suspects, typed) {
@@ -222605,7 +220990,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       </div>` : "";
     const photoPanel = dataUrl !== null ? `<aside class="vd-cf__ref">
             <div class="vd-cf__ref-h">Your uploaded photo</div>
-            <button class="vd-cf__refbtn" type="button" data-sc-zoom title="See the full label \u2014 click to enlarge"><img class="vd-cf__refimg" src="${escHTML14(dataUrl)}" alt="Your uploaded label \u2014 click to enlarge"><span class="vd-cf__refzoom" aria-hidden="true">&#10530;&nbsp;Enlarge</span></button>
+            <button class="vd-cf__refbtn" type="button" data-sc-zoom title="See the full label \u2014 click to enlarge"><img class="vd-cf__refimg" src="${escHTML15(dataUrl)}" alt="Your uploaded label \u2014 click to enlarge"><span class="vd-cf__refzoom" aria-hidden="true">&#10530;&nbsp;Enlarge</span></button>
           </aside>` : "";
     const nameValue = typed && label.name.trim() === "" ? "" : humanizeName(label.name);
     const emptyRows = typed ? '<div class="vd-nrow__covrow">No rows yet \u2014 add one below, or just enter the ingredients.</div>' : '<div class="vd-nrow__covrow">No nutrient lines read \u2014 add one below, edit the ingredients, or rescan.</div>';
@@ -222624,7 +221009,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           <div class="vd-cf__edits">
             <div class="vd-cf-sec vd-cf-sec--name">
               <label class="vd-cf-name__lab" for="vd-sc-name">Product name</label>
-              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name maxlength="80" value="${escHTML14(nameValue)}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
+              <input id="vd-sc-name" class="vd-cf-name__in" type="text" data-sc-name maxlength="80" value="${escHTML15(nameValue)}" placeholder="Name this product" spellcheck="false" aria-label="Product name">
               <span class="vd-cf-sec__hint">${typed ? "Name it so your saved items and regimen read cleanly." : "Name it so your saved items and regimen read cleanly \u2014 not a raw container guess."}</span>
             </div>
             <div class="vd-cf-sec">
@@ -222644,7 +221029,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
               </div>
               <div>
                 <label class="vd-ing__lab" for="vd-ing">${typed ? "Ingredients line" : "Ingredients line (editable)"}</label>
-                <textarea id="vd-ing" class="vd-ing" rows="2" maxlength="4000" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML14(ingredients)}</textarea>
+                <textarea id="vd-ing" class="vd-ing" rows="2" maxlength="4000" spellcheck="false" data-ing aria-label="Ingredients (editable)">${escHTML15(ingredients)}</textarea>
               </div>
               <div class="vd-ocr-host" data-ocr-host>${suspectPanel}</div>
               ${flagPanel}
@@ -222664,19 +221049,19 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return "";
     }
     if (!block) {
-      return ` \u2014 ${escHTML14(items.join(", "))}`;
+      return ` \u2014 ${escHTML15(items.join(", "))}`;
     }
-    return `<span class="vd-reason__items">${items.map((it) => `<span class="vd-reason__it">${escHTML14(it)}</span>`).join("")}</span>`;
+    return `<span class="vd-reason__items">${items.map((it) => `<span class="vd-reason__it">${escHTML15(it)}</span>`).join("")}</span>`;
   }
   function reasonRows(result) {
     const rows = [];
     for (const r of result.reasonsFor) {
-      rows.push(`<div class="vd-reason vd-reason--plus"><span class="vd-reason__m" aria-hidden="true">+</span><span class="vd-reason__t"><b>${escHTML14(r.label)}</b>${reasonItems(r.items, false)}</span></div>`);
+      rows.push(`<div class="vd-reason vd-reason--plus"><span class="vd-reason__m" aria-hidden="true">+</span><span class="vd-reason__t"><b>${escHTML15(r.label)}</b>${reasonItems(r.items, false)}</span></div>`);
     }
     for (const r of result.reasonsAgainst) {
       const cls = /flag|reject|conflict/i.test(r.label) ? "vd-reason--flag" : "vd-reason--minus";
       const glyph = cls === "vd-reason--flag" ? "!" : "&minus;";
-      rows.push(`<div class="vd-reason ${cls}"><span class="vd-reason__m" aria-hidden="true">${glyph}</span><span class="vd-reason__t"><b>${escHTML14(r.label)}</b>${reasonItems(r.items, true)}</span></div>`);
+      rows.push(`<div class="vd-reason ${cls}"><span class="vd-reason__m" aria-hidden="true">${glyph}</span><span class="vd-reason__t"><b>${escHTML15(r.label)}</b>${reasonItems(r.items, true)}</span></div>`);
     }
     return rows.join("");
   }
@@ -222704,14 +221089,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           <article class="vd-card">
             <div class="vd-card__top">
               <span class="vd-live" style="background:${tone};box-shadow:0 0 0 3px color-mix(in srgb, ${tone} 22%, transparent)" aria-hidden="true"></span>
-              <span class="vd-card__eyebrow">Wallach-alignment verdict \xB7 <b>${escHTML14(name)}</b></span>
+              <span class="vd-card__eyebrow">Wallach-alignment verdict \xB7 <b>${escHTML15(name)}</b></span>
               <span class="vd-card__tag">Local \xB7 confirmed</span>
               <button class="ui-close" type="button" data-sc-clear aria-label="Close this verdict" title="Close">${CLOSE_SVG}</button>
             </div>
             <div class="vd-card__body">
               <div class="vd-judg">
                 <div class="vd-verdict__eyebrow" style="color:${tone}">The verdict</div>
-                <div class="vd-tier" role="img" aria-label="Verdict: ${escHTML14(head)}${sub ? ` \u2014 ${escHTML14(sub)}` : ""}">
+                <div class="vd-tier" role="img" aria-label="Verdict: ${escHTML15(head)}${sub ? ` \u2014 ${escHTML15(sub)}` : ""}">
                   ${tierChip("ADD", "Add", "aligns")}${tierChip("SAVE", "Save", "neutral")}${tierChip("REJECT", "Reject", "out")}
                 </div>
                 <h2 class="vd-verdict__h" style="color:${tone}">${head}${sub ? `<b>${sub}</b>` : ""}</h2>
@@ -222798,9 +221183,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const rm = saved ? `<button class="ui-close ui-close--sm rl-row__rm" type="button" data-sc-unsave="${h.id}" aria-label="Remove from saved" title="Remove">${CLOSE_SVG}</button>` : "";
     return `
     <div class="rl-row vd-hrow" data-sc-open="${h.id}" data-sc-src="${saved ? "saved" : "recent"}" data-sc-idx="${index3}" role="button" tabindex="0" title="Re-open this verdict">
-      <div class="rl-row__name">${escHTML14(humanizeName(h.label.name))}</div>
+      <div class="rl-row__name">${escHTML15(humanizeName(h.label.name))}</div>
       ${verdictPill(h.verdict)}
-      <div class="rl-row__foot"><span class="rl-src is-own">Yours \xB7 ${h.label.entry === "typed" ? "typed in" : "user-scanned"}</span><span class="vd-when">${escHTML14(relAge2(h.ts))}</span></div>
+      <div class="rl-row__foot"><span class="rl-src is-own">Yours \xB7 ${h.label.entry === "typed" ? "typed in" : "user-scanned"}</span><span class="vd-when">${escHTML15(relAge2(h.ts))}</span></div>
       ${rm}
     </div>`;
   }
@@ -223003,7 +221388,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         if (map !== null) {
           const covered = new Set(getOrCompute().tiles.filter((t) => t.covered).map((t) => t.name)).has(ess.name);
           map.className = "vd-nrow__map";
-          map.innerHTML = `<span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML14(ess.name)}</b><span class="vd-nrow__cov">${covered ? "\xB7 already covered" : "\xB7 counts toward your 90"}</span>`;
+          map.innerHTML = `<span class="vd-nrow__arr" aria-hidden="true">&rarr;</span><b>${escHTML15(ess.name)}</b><span class="vd-nrow__cov">${covered ? "\xB7 already covered" : "\xB7 counts toward your 90"}</span>`;
         }
       } else if (isKnownNutrient(name)) {
         rowEl.className = "vd-nrow is-ok is-untracked";
@@ -223029,10 +221414,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         }
         const cands = findNutrientCandidates(name).slice(0, 4);
         if (cands.length > 0 && main !== null) {
-          const btns = cands.map((c, k) => `<button class="vd-sug__btn${k === 0 ? " is-best" : ""}" type="button" data-nfix="${escHTML14(idx)}" data-nfix-val="${escHTML14(c.word)}">${escHTML14(c.word)}</button>`).join("");
+          const btns = cands.map((c, k) => `<button class="vd-sug__btn${k === 0 ? " is-best" : ""}" type="button" data-nfix="${escHTML15(idx)}" data-nfix-val="${escHTML15(c.word)}">${escHTML15(c.word)}</button>`).join("");
           const sug = document.createElement("div");
           sug.className = "vd-sug";
-          sug.innerHTML = `<span class="vd-sug__lab">Did you mean</span>${btns}<button class="vd-sug__keep" type="button" data-nkeep="${escHTML14(idx)}">&times; keep</button>`;
+          sug.innerHTML = `<span class="vd-sug__lab">Did you mean</span>${btns}<button class="vd-sug__keep" type="button" data-nkeep="${escHTML15(idx)}">&times; keep</button>`;
           main.insertAdjacentElement("afterend", sug);
         }
       }
@@ -223058,7 +221443,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       el.setAttribute("role", "dialog");
       el.setAttribute("aria-modal", "true");
       el.setAttribute("aria-label", "Full-size scanned label");
-      el.innerHTML = `<button class="ui-close vd-lightbox__x" type="button" data-lb-close aria-label="Close full-size label" title="Close">${CLOSE_SVG}</button><img class="vd-lightbox__img" src="${escHTML14(imageDataUrl)}" alt="Your scanned label at full size">`;
+      el.innerHTML = `<button class="ui-close vd-lightbox__x" type="button" data-lb-close aria-label="Close full-size label" title="Close">${CLOSE_SVG}</button><img class="vd-lightbox__img" src="${escHTML15(imageDataUrl)}" alt="Your scanned label at full size">`;
       const ac = new AbortController();
       el.addEventListener("click", (ev) => {
         const tgt = ev.target;
@@ -223422,7 +221807,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
 
   // assets/js/src/views/search.ts
-  function escHTML15(s) {
+  function escHTML16(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
   function oneLine(s) {
@@ -223444,9 +221829,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   };
   function tileGlyph(slug, e) {
     if (typeof e.symbol === "string" && e.symbol.length > 0) {
-      return escHTML15(e.symbol);
+      return escHTML16(e.symbol);
     }
-    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML15(e.display_name.charAt(0));
+    return ENTITY_ICON[slug] ?? TYPE_ICON[e.type] ?? escHTML16(e.display_name.charAt(0));
   }
   function claimRelatedSlugs(claim) {
     const seen = /* @__PURE__ */ new Set([claim.subject]);
@@ -223466,11 +221851,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return out;
   }
   function renderRelPill(slug) {
-    const name = escHTML15(displayName(slug));
+    const name = escHTML16(displayName(slug));
     const e = getEntity(slug);
     const type = e !== null ? e.type : getConditionPage(slug) !== null ? "condition" : getEssentialPage(slug) !== null ? "essential" : "";
     if (type !== "") {
-      return `<button class="relpill" data-type="${escHTML15(type)}" data-sr-entity="${escHTML15(slug)}" title="Open ${name}">${name}</button>`;
+      return `<button class="relpill" data-type="${escHTML16(type)}" data-sr-entity="${escHTML16(slug)}" title="Open ${name}">${name}</button>`;
     }
     return `<span class="relpill relpill--plain" title="Related to this">${name}</span>`;
   }
@@ -223487,7 +221872,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const i = claim.answer.indexOf(xref.phrase);
       const before = claim.answer.slice(0, i);
       const after = claim.answer.slice(i + xref.phrase.length);
-      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML15(xref.target)}" title="Jump to the full answer">${escHTML15(xref.phrase)}</button>`;
+      const link = `<button type="button" class="sr-xref" data-sr-jump="${escHTML16(xref.target)}" title="Jump to the full answer">${escHTML16(xref.phrase)}</button>`;
       return glossify(before) + link + glossify(after);
     }
     return glossify(claim.answer);
@@ -223505,24 +221890,24 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `<div class="ans__body">${renderAnswer(claim)}</div>`;
   }
   function claimInner(claim) {
-    return `<div class="ans__short">${escHTML15(claim.answer_short)}</div>${renderAnswerBody(claim)}${renderVerbatim(claim)}`;
+    return `<div class="ans__short">${escHTML16(claim.answer_short)}</div>${renderAnswerBody(claim)}${renderVerbatim(claim)}`;
   }
   function renderBestAnswer(claim) {
     return `
-    <div class="ans" data-sr-claim="${escHTML15(claim.id)}" data-facet="${escHTML15(claim.facet)}">
-      <span class="facetpill"><i></i>${escHTML15(facetLabel(claim.facet))}</span>
-      <div class="ans__q">${escHTML15(claim.question)}</div>
+    <div class="ans" data-sr-claim="${escHTML16(claim.id)}" data-facet="${escHTML16(claim.facet)}">
+      <span class="facetpill"><i></i>${escHTML16(facetLabel(claim.facet))}</span>
+      <div class="ans__q">${escHTML16(claim.question)}</div>
       ${claimInner(claim)}
       ${renderRelated(claim)}
     </div>`;
   }
   function renderArow(claim, hidden) {
     return `
-    <details class="arow${hidden ? " arow--hidden" : ""}" data-facet="${escHTML15(claim.facet)}" data-sr-claim="${escHTML15(claim.id)}">
+    <details class="arow${hidden ? " arow--hidden" : ""}" data-facet="${escHTML16(claim.facet)}" data-sr-claim="${escHTML16(claim.id)}">
       <summary class="arow__sum">
-        <span class="arow__text"><span class="arow__q">${escHTML15(claim.question)}</span><span class="arow__prev">${escHTML15(claim.answer_short)}</span></span>
+        <span class="arow__text"><span class="arow__q">${escHTML16(claim.question)}</span><span class="arow__prev">${escHTML16(claim.answer_short)}</span></span>
         <span class="arow__chev">\u203A</span>
-        <span class="arow__pill">${escHTML15(facetLabel(claim.facet))}</span>
+        <span class="arow__pill">${escHTML16(facetLabel(claim.facet))}</span>
       </summary>
       <div class="arow__body">${claimInner(claim)}</div>
     </details>`;
@@ -223533,12 +221918,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return "";
     }
     const n = claimCount2(subject);
-    const hints = subjectFacetHints(subject).map(escHTML15).join(" \xB7 ");
+    const hints = subjectFacetHints(subject).map(escHTML16).join(" \xB7 ");
     return `
-    <button class="tcard" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(subject)}">
+    <button class="tcard" data-type="${escHTML16(e.type)}" data-sr-entity="${escHTML16(subject)}">
       <div class="tcard-ghost">${n}</div>
-      <div class="tcard-cat"><i></i>${escHTML15(e.type)}</div>
-      <div class="tcard-name">${escHTML15(displayName(subject))}</div>
+      <div class="tcard-cat"><i></i>${escHTML16(e.type)}</div>
+      <div class="tcard-name">${escHTML16(displayName(subject))}</div>
       <div class="tcard-foot"><b>${n} ${n === 1 ? "answer" : "answers"}</b>${hints.length > 0 ? ` \xB7 ${hints}` : ""}</div>
     </button>`;
   }
@@ -223562,16 +221947,16 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return `${rows}${more}`;
   }
   function renderEntityRow(a, hidden) {
-    const prev = a.prev.length > 0 ? `<span class="arow__prev">${escHTML15(a.prev)}</span>` : "";
-    const short = a.short.length > 0 ? `<div class="ans__short">${escHTML15(a.short)}</div>` : "";
+    const prev = a.prev.length > 0 ? `<span class="arow__prev">${escHTML16(a.prev)}</span>` : "";
+    const short = a.short.length > 0 ? `<div class="ans__short">${escHTML16(a.short)}</div>` : "";
     const body = a.body.length > 0 ? `<div class="ans__body">${glossify(a.body)}</div>` : "";
     const verbatim = a.verbatim.trim().length > 0 ? `<blockquote class="vq">${glossify(oneLine(a.verbatim))}<span class="vq__attr">\u2014 Dr. Wallach, in his own words</span></blockquote>` : "";
     return `
-    <details class="arow${hidden ? " arow--hidden" : ""}" data-family="${escHTML15(a.familyId)}" data-sr-claim="${escHTML15(a.id)}">
+    <details class="arow${hidden ? " arow--hidden" : ""}" data-family="${escHTML16(a.familyId)}" data-sr-claim="${escHTML16(a.id)}">
       <summary class="arow__sum">
-        <span class="arow__text"><span class="arow__q">${escHTML15(a.title)}</span>${prev}</span>
+        <span class="arow__text"><span class="arow__q">${escHTML16(a.title)}</span>${prev}</span>
         <span class="arow__chev">\u203A</span>
-        <span class="arow__pill">${escHTML15(a.pill)}</span>
+        <span class="arow__pill">${escHTML16(a.pill)}</span>
       </summary>
       <div class="arow__body">${short}${body}${verbatim}</div>
     </details>`;
@@ -223580,10 +221965,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const shown = fam.answers.slice(0, FAM_CAP).map((a) => renderEntityRow(a, false)).join("");
     const rest = fam.answers.slice(FAM_CAP);
     const hidden = rest.map((a) => renderEntityRow(a, true)).join("");
-    const more = rest.length > 0 ? `<button class="fgroup__more" data-aw-morebtn>See ${rest.length} more ${escHTML15(ui(`search_fam_${fam.familyId}_more`))} <span class="fm-arrow">\u2192</span></button>` : "";
+    const more = rest.length > 0 ? `<button class="fgroup__more" data-aw-morebtn>See ${rest.length} more ${escHTML16(ui(`search_fam_${fam.familyId}_more`))} <span class="fm-arrow">\u2192</span></button>` : "";
     return `
-    <div class="fgroup" data-family="${escHTML15(fam.familyId)}">
-      <div class="fgroup__head"><span class="fgroup__label">${escHTML15(ui(`search_fam_${fam.familyId}_name`))}</span><span class="fgroup__ct">${fam.count}</span><span class="fgroup__rule"></span></div>
+    <div class="fgroup" data-family="${escHTML16(fam.familyId)}">
+      <div class="fgroup__head"><span class="fgroup__label">${escHTML16(ui(`search_fam_${fam.familyId}_name`))}</span><span class="fgroup__ct">${fam.count}</span><span class="fgroup__rule"></span></div>
       ${shown}${hidden}
       ${more}
     </div>`;
@@ -223629,15 +222014,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const n = total > 0 ? total : hero.count;
     const kind = learnKind(subject, e);
     const heroCls = kind !== null ? "ehero ehero--link" : "ehero";
-    const heroAttrs = kind !== null ? ` data-aw-learnmore="${escHTML15(subject)}" data-aw-kind="${kind}"` : "";
-    const learnMore = kind !== null ? `<button class="eback" data-aw-learnmore="${escHTML15(subject)}" data-aw-kind="${kind}">Learn More \u2192</button>` : "";
+    const heroAttrs = kind !== null ? ` data-aw-learnmore="${escHTML16(subject)}" data-aw-kind="${kind}"` : "";
+    const learnMore = kind !== null ? `<button class="eback" data-aw-learnmore="${escHTML16(subject)}" data-aw-kind="${kind}">Learn More \u2192</button>` : "";
     const groupsHTML = families.length > 0 ? families.map(renderFamilyGroup).join("") : '<div class="aw-empty-line">\u2014 no sealed claims on this yet \u2014</div>';
     return `
-    <div class="${heroCls}" data-type="${escHTML15(hero.type)}"${heroAttrs}>
+    <div class="${heroCls}" data-type="${escHTML16(hero.type)}"${heroAttrs}>
       <span class="ehero__sym">${tileGlyph(subject, { symbol: hero.symbol, type: hero.type, display_name: hero.name })}</span>
       <span class="ehero__id">
-        <span class="ehero__name">${escHTML15(hero.name)}</span>
-        <span class="ehero__meta">${escHTML15(hero.type)} \xB7 ${n} ${n === 1 ? "answer" : "answers"}</span>
+        <span class="ehero__name">${escHTML16(hero.name)}</span>
+        <span class="ehero__meta">${escHTML16(hero.type)} \xB7 ${n} ${n === 1 ? "answer" : "answers"}</span>
       </span>
       ${learnMore}
     </div>
@@ -223646,53 +222031,53 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
   function renderOpening() {
     const card = (f) => `
-    <button class="kcard" data-family="${escHTML15(f.id)}" data-aw-family="${escHTML15(f.id)}">
+    <button class="kcard" data-family="${escHTML16(f.id)}" data-aw-family="${escHTML16(f.id)}">
       <span class="kcard-main">
-        <span class="kcard-name">${escHTML15(ui(`search_fam_${f.id}_name`))}</span>
-        <span class="kcard-facets">${escHTML15(ui(`search_fam_${f.id}_sub`))}</span>
+        <span class="kcard-name">${escHTML16(ui(`search_fam_${f.id}_name`))}</span>
+        <span class="kcard-facets">${escHTML16(ui(`search_fam_${f.id}_sub`))}</span>
       </span>
       <span class="kcard-n">${f.count}</span>
     </button>`;
     return `
-    <div class="scr-label">${escHTML15(ui("search_browse_label"))}</div>
+    <div class="scr-label">${escHTML16(ui("search_browse_label"))}</div>
     <div class="kstack">${familyCounts().map(card).join("")}</div>`;
   }
   function renderBrowseCard(familyId, t) {
     return `
-    <button class="brow-card" data-family="${escHTML15(familyId)}" data-sr-entity="${escHTML15(t.subject)}">
+    <button class="brow-card" data-family="${escHTML16(familyId)}" data-sr-entity="${escHTML16(t.subject)}">
       <span class="brow-card__top">
-        <span class="brow-card__cat"><i></i>${escHTML15(facetLabel(t.facet))}</span>
+        <span class="brow-card__cat"><i></i>${escHTML16(facetLabel(t.facet))}</span>
         <span class="brow-card__n">${t.count}</span>
       </span>
-      <span class="brow-card__name">${escHTML15(displayName(t.subject))}</span>
-      <span class="brow-card__peek">${escHTML15(t.peek)}</span>
+      <span class="brow-card__name">${escHTML16(displayName(t.subject))}</span>
+      <span class="brow-card__peek">${escHTML16(t.peek)}</span>
     </button>`;
   }
   function renderBrowse(familyId) {
     const topics = familyTopics(familyId);
     const total = topics.reduce((n, t) => n + t.count, 0);
     const lens = familyCounts().map((f) => `
-    <button class="brow-lens__b${f.id === familyId ? " is-active" : ""}" data-family="${escHTML15(f.id)}" data-aw-family="${escHTML15(f.id)}">${escHTML15(ui(`search_fam_${f.id}_name`))}</button>`).join("");
+    <button class="brow-lens__b${f.id === familyId ? " is-active" : ""}" data-family="${escHTML16(f.id)}" data-aw-family="${escHTML16(f.id)}">${escHTML16(ui(`search_fam_${f.id}_name`))}</button>`).join("");
     const cards2 = topics.map((t) => renderBrowseCard(familyId, t)).join("");
     return `
     <div class="brow-lens">${lens}</div>
-    <div class="brow-head" data-family="${escHTML15(familyId)}">
+    <div class="brow-head" data-family="${escHTML16(familyId)}">
       <div class="brow-head__main">
-        <div class="brow-head__k">${escHTML15(ui("search_browse_label"))}</div>
-        <div class="brow-head__t">${escHTML15(ui(`search_fam_${familyId}_name`))}</div>
+        <div class="brow-head__k">${escHTML16(ui("search_browse_label"))}</div>
+        <div class="brow-head__t">${escHTML16(ui(`search_fam_${familyId}_name`))}</div>
         <div class="brow-head__m"><b>${topics.length}</b> topics \xB7 <b>${total}</b> ${total === 1 ? "answer" : "answers"}</div>
       </div>
       <button class="brow-head__back" data-aw-browse-back type="button">\u2039 Go Back</button>
     </div>
-    <div class="brow-grid" data-family="${escHTML15(familyId)}">${cards2}</div>`;
+    <div class="brow-grid" data-family="${escHTML16(familyId)}">${cards2}</div>`;
   }
   function renderEmpty(query) {
     const sugg = entityList().filter((e) => !isChargedEntity(e.slug)).sort((a, b) => b.claim_count - a.claim_count).slice(0, 5);
-    const chip2 = (e) => `<button class="echip" data-type="${escHTML15(e.type)}" data-sr-entity="${escHTML15(e.slug)}">${escHTML15(e.display_name)}</button>`;
+    const chip2 = (e) => `<button class="echip" data-type="${escHTML16(e.type)}" data-sr-entity="${escHTML16(e.slug)}">${escHTML16(e.display_name)}</button>`;
     return `
     <div class="empty">
       <div class="empty__h">Nothing on that yet</div>
-      <div class="empty__p">No match for \u201C${escHTML15(query)}.\u201D Try one of these:</div>
+      <div class="empty__p">No match for \u201C${escHTML16(query)}.\u201D Try one of these:</div>
       <div class="empty__chips">${sugg.map(chip2).join("")}</div>
     </div>`;
   }
@@ -223717,7 +222102,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         <button class="scr-id" data-aw-home type="button" title="Back to the start">Ask <em>Wallach</em></button>
         <div class="aw-search">
           <div class="aw-search__well">
-            <input class="aw-search__input" type="text" maxlength="120" placeholder="${escHTML15(ui("search_placeholder"))}" autocomplete="off" spellcheck="false" />
+            <input class="aw-search__input" type="text" maxlength="120" placeholder="${escHTML16(ui("search_placeholder"))}" autocomplete="off" spellcheck="false" />
             <span class="aw-search__btn"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></span>
           </div>
         </div>
@@ -224023,7 +222408,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   var LAYOUT5 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   var NAME_MAX2 = 18;
   var CLOSE_SVG2 = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
-  function escHTML16(s) {
+  function escHTML17(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
       "<": "&lt;",
@@ -224040,7 +222425,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const reopen = existing !== null;
     const knownGoalIds = new Set(LAYOUT5.goals.map((g) => g.id));
     let chosen = [...loadRgUserGoals() ?? []].filter((id) => knownGoalIds.has(id)).slice(0, MAX_GOALS);
-    const chip2 = (g) => `<button class="wc-goal" type="button" data-goal="${escHTML16(g.id)}"><span class="wc-goal__dot"></span>${escHTML16(g.name)}</button>`;
+    const chip2 = (g) => `<button class="wc-goal" type="button" data-goal="${escHTML17(g.id)}"><span class="wc-goal__dot"></span>${escHTML17(g.name)}</button>`;
     const catOrder = [];
     const chipsByCat = /* @__PURE__ */ new Map();
     for (const g of LAYOUT5.goals) {
@@ -224054,7 +222439,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       bucket.push(chip2(g));
     }
     const goalGroups = catOrder.map((cat) => {
-      const head = cat === "" ? "" : `<span class="wc__goal-cat">${escHTML16(cat)}</span>`;
+      const head = cat === "" ? "" : `<span class="wc__goal-cat">${escHTML17(cat)}</span>`;
       const chips = (chipsByCat.get(cat) ?? []).join("");
       return `<div class="wc__goal-group">${head}${chips}</div>`;
     }).join("");
@@ -224062,23 +222447,23 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     <div class="wc-veil" data-veil>
       <div class="wc" role="dialog" aria-modal="true" aria-labelledby="wcH">
         <button class="ui-close wc__x" type="button" data-veil-close aria-label="Close" title="Close">${CLOSE_SVG2}</button>
-        <div class="wc__kicker">${escHTML16(ui("wc_kicker"))}</div>
-        <h2 class="wc__h" id="wcH">${escHTML16(ui("wc_h"))}</h2>
-        <p class="wc__deck">${escHTML16(ui("wc_deck"))}</p>
-        ${reopen ? "" : `<label class="wc__label" for="wcName">${escHTML16(ui("wc_name_label"))}
+        <div class="wc__kicker">${escHTML17(ui("wc_kicker"))}</div>
+        <h2 class="wc__h" id="wcH">${escHTML17(ui("wc_h"))}</h2>
+        <p class="wc__deck">${escHTML17(ui("wc_deck"))}</p>
+        ${reopen ? "" : `<label class="wc__label" for="wcName">${escHTML17(ui("wc_name_label"))}
                <span class="wc__count"><span data-name-count>0</span>/${NAME_MAX2}</span>
              </label>
              <input class="wc__name" id="wcName" data-name maxlength="${NAME_MAX2}"
-                    placeholder="${escHTML16(ui("wc_name_placeholder"))}" autocomplete="off">
+                    placeholder="${escHTML17(ui("wc_name_placeholder"))}" autocomplete="off">
              <p class="wc__err" data-name-err hidden></p>`}
         <div style="height: var(--ds-space-3)"></div>
-        <span class="wc__label">${escHTML16(ui("wc_goals_label"))}
+        <span class="wc__label">${escHTML17(ui("wc_goals_label"))}
           <span class="wc__count"><span data-goal-count>0</span>/${MAX_GOALS} selected</span>
         </span>
         <div class="wc__goals" data-goals>${goalGroups}</div>
         <div class="wc__foot">
-          ${reopen ? "" : `<button class="wc__browse" type="button" data-browse>${escHTML16(ui("wc_browse"))}</button>`}
-          <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML16(ui("wc_go"))}</button>
+          ${reopen ? "" : `<button class="wc__browse" type="button" data-browse>${escHTML17(ui("wc_browse"))}</button>`}
+          <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML17(ui("wc_go"))}</button>
         </div>
       </div>
     </div>

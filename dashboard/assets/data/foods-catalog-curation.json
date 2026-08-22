@@ -3,12 +3,7 @@
  "_numbers_free": "★ THIS FILE CONTAINS NO NUTRIENT NUMBERS AND MUST NEVER CONTAIN ONE. Every `fdc_id` and `portion_id` is a byte-exact join key into the pinned source; the amounts are derived from those keys and are proven against the source by the `food_composition_traces_to_source` gate. A number typed here would be a second, ungated home for a value (Charter R3) -- exactly the failure mode that let the mineral tiers sit sealed, green and wrong for three weeks.",
  "_doctrine": "Every food here was filtered against Wallach's own food rules before it was admitted: no gluten grain (wheat, barley, rye, oats), no refined sugar, no carbonated drinks, no processed meats, no refined seed oils -- the remove[] list in foods-curation.json, enforced in shipped code by the scanner's hard-reject terms. Foods he explicitly endorses (eggs, butter, beef, chicken, pork, salt, organ meats, nuts, seeds, vegetables) are deliberately well represented. Dairy is CONDITIONAL in his framework -- present, not pushed.",
  "_selection_rule": "A food earns a place only if one realistic serving delivers at least the derive's qualify_fraction (7%, set by Luneth on 2026-08-21) of Wallach's daily target for at least one essential. The derive HARD-FAILS on any food here that qualifies for nothing, so this list cannot silently accumulate dead weight.",
- "pinned": {
-  "_purpose": "Foods that hold their position by curation rather than by score, in this order, the same way the product starter pack does. Eggs are first by Luneth's ruling (2026-08-21): a near-universal food Wallach explicitly endorses, and the single best first move for a new user.",
-  "ids": [
-   "egg"
-  ]
- },
+ "_pinned_retired": "RETIRED 2026-08-22 by Luneth, reversing the 2026-08-21 ruling that put eggs in first position. The FOOD SOURCES list is now one ranked order end to end (see state/foods.ts): with goals chosen, the share of the outstanding goal targets a serving fills; with none, the food's own nutrition. A pin is not a score, and holding a card above that order was one of the two things that made a sixty-four-page browse read as random. The block is removed rather than kept dormant because nothing reads it any more, and curation data that looks live is data someone will wire back up. Eggs remain in the catalog below and still rank on their own merits.",
  "foods": [
   {
    "id": "acorn-squash-baked",

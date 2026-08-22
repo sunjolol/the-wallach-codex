@@ -39,7 +39,6 @@ import {
   getCondition,
   getEssentialByLayoutKey,
   getEssentialBySlug,
-  listConditions,
 } from '../state/corpus.js';
 import {
   type CoverageSnapshot,
@@ -50,12 +49,14 @@ import { listEssentialPages } from '../state/entity-page.js';
 import { vaultEntry } from '../state/recommender.js';
 import { addOrBumpRegimenItem } from '../state/regimen.js';
 import { applyRecordFilter, renderConditionPage, renderEssentialPage } from './entity-page.js';
+import { addCatalogFood } from './foods-block.js';
 import { renderConditionsTab } from './knowledge-corpus.js';
-import { exploreEntities, renderExploreTab } from './knowledge-explore.js';
+import { renderExploreTab } from './knowledge-explore.js';
+import { foodName, foodScrollTint } from './knowledge-food-sheet.js';
 import { renderFoodsTab } from './knowledge-foods.js';
 import { renderHomeSuggestions, renderHomeTab } from './knowledge-home.js';
 import { oracFieldClick, oracFieldHover, oracFieldOut, oracScrubInput, renderOracTab } from './knowledge-orac.js';
-import { productCount, productScrollTint, renderProductsTab } from './knowledge-products.js';
+import { type CatalogKind, productScrollTint, renderProductsTab } from './knowledge-products.js';
 import { renderTopicPage } from './knowledge-topic.js';
 import { clearSearchHighlights, highlightMatchesIn } from './search-highlight.js';
 
@@ -174,7 +175,7 @@ function escHTML(s: unknown): string {
 //  (2) re-visiting an entity already in the trail JUMPS BACK to it (openDetail/goCrumb truncate)
 //      instead of appending — kills the Calcium <-> Osteoporosis back-and-forth that grew forever;
 //  (3) capped at CRUMB_MAX (oldest recent crumb dropped, the anchor kept).
-type EntityCrumbType = 'essential' | 'condition' | 'product';
+type EntityCrumbType = 'essential' | 'condition' | 'product' | 'food';
 interface Crumb {
   type: EntityCrumbType | 'tab';
   val: string;
@@ -199,6 +200,9 @@ function crumbLabel(type: EntityCrumbType, val: string): string {
   }
   if (type === 'condition') {
     return getCondition(val)?.display_name ?? val;
+  }
+  if (type === 'food') {
+    return foodName(val) || val;
   }
   return vaultEntry(val)?.name ?? val;
 }
@@ -249,7 +253,7 @@ function renderEssentialsTab(snapshot: CoverageSnapshot | null, selectedKey: str
   return `${deepHTML}${groupsHTML}`;
 }
 
-function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null, fromProductsTab: boolean): string {
+function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedFood: string | null, catalogKind: CatalogKind, selectedTopic: string | null, fromProductsTab: boolean): string {
   // A selected topic is an OVERLAY page on top of whatever tab opened it: the topic renders
   // full-body while the origin tab stays active, so the back button (top-right) returns you there
   // — foods → the Absorption grid, explore → the all-topics grid. An unknown slug degrades to the
@@ -268,25 +272,28 @@ function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: str
     case 'essentials': return renderEssentialsTab(snapshot, selectedKey);
     case 'conditions': return (selectedCondition !== null ? renderConditionPage(selectedCondition) : '') + renderConditionsTab(selectedCondition);
     case 'explore': return renderExploreTab();
-    case 'products': return renderProductsTab(selectedProduct, fromProductsTab);
+    case 'products': return renderProductsTab(selectedProduct, selectedFood, catalogKind, fromProductsTab);
   }
 }
 
-function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedTopic: string | null, trail: Crumb[]): string {
+function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedFood: string | null, catalogKind: CatalogKind, selectedTopic: string | null, trail: Crumb[]): string {
   const snapshot = getOrCompute();
-  const productsCount = productCount();
   // The 'essentials' TAB IS DELIBERATELY ABSENT FROM THIS LIST while remaining a live route.
   // It duplicated the Coverage workspace, which is where the user already starts, so the menu
   // item went and the surface stayed. It keeps exactly three doors: the Home tab's "open the
   // full table →", the breadcrumb trail, and the "‹ All essentials" button on an essential's own
   // page. Do NOT "restore" it here — its absence is the feature; renderTab still serves it.
+  // NO `count` FIELD. Every tab used to carry one and tabsHTML below has only ever read
+  // `label` — four counts computed on every drawer paint and thrown away, one of them
+  // calling productCount() for nothing. Dead compute is how a number nobody renders stays
+  // plausible enough to be trusted the day someone renders it again.
   const tabs = [
-    { id: 'home' as Tab, label: ui('kd_tab_home'), count: '' },
-    { id: 'foods' as Tab, label: ui('kd_tab_foods'), count: '' },
-    { id: 'orac' as Tab, label: ui('kd_tab_orac'), count: '' },
-    { id: 'conditions' as Tab, label: ui('kd_tab_conditions'), count: `${listConditions().length} INDEXED` },
-    { id: 'explore' as Tab, label: ui('kd_tab_explore'), count: `${exploreEntities().length} TOPICS` },
-    { id: 'products' as Tab, label: ui('kd_tab_products'), count: `${productsCount} KNOWN` },
+    { id: 'home' as Tab, label: ui('kd_tab_home') },
+    { id: 'foods' as Tab, label: ui('kd_tab_foods') },
+    { id: 'orac' as Tab, label: ui('kd_tab_orac') },
+    { id: 'conditions' as Tab, label: ui('kd_tab_conditions') },
+    { id: 'explore' as Tab, label: ui('kd_tab_explore') },
+    { id: 'products' as Tab, label: ui('kd_tab_products') },
   ];
   const tabsHTML = tabs.map(t => `<button class="kd-knh__tab${t.id === activeTab ? ' active' : ''}" data-kd-tab="${t.id}">${escHTML(t.label)}</button>`).join('');
   // A product opened from a NON-products tab (e.g. the ORAC supplement list) gets an origin-aware
@@ -307,7 +314,7 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
       <span class="kd-search-kbd">/</span>
     </div>`
       : ''}
-    <div class="kd-body">${renderCrumbs(trail)}${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedTopic, fromProductsTab)}</div>`;
+    <div class="kd-body">${renderCrumbs(trail)}${renderTab(activeTab, snapshot, selectedKey, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, fromProductsTab)}</div>`;
 }
 
 // ─── Search (per-tab DOM filter) ──────────────────────────────
@@ -536,12 +543,16 @@ export function mount(container: HTMLElement): DrawerHandle {
   let selectedEssential: string | null = null;
   let selectedCondition: string | null = null;
   let selectedProduct: string | null = null;
+  let selectedFood: string | null = null;
+  /** Which half of the mixed catalog the Products tab is showing. Session-only, like the
+   *  search query beside it: it is where the reader is looking, not a setting they saved. */
+  let catalogKind: CatalogKind = 'all';
   let selectedTopic: string | null = null;
   let trail: Crumb[] = [];
   let searchQuery = '';
 
   const render = (): void => {
-    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedTopic, trail);
+    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, trail);
     // Re-apply the live query so a re-render (deep-dive open, regimen:changed)
     // doesn't silently drop an in-progress filter.
     if (searchQuery.length > 0) {
@@ -562,8 +573,10 @@ export function mount(container: HTMLElement): DrawerHandle {
     // hex); the .kd-body scrollbar CSS reads it, app-orange when unset.
     const scrollTint = (activeTab === 'conditions' && selectedCondition !== null)
       ? conditionCategory(selectedCondition)?.color ?? ''
-      : (activeTab === 'products' && selectedProduct !== null)
-          ? productScrollTint(selectedProduct)
+      : (activeTab === 'products' && selectedFood !== null)
+          ? foodScrollTint(selectedFood)
+          : (activeTab === 'products' && selectedProduct !== null)
+              ? productScrollTint(selectedProduct)
           : (activeTab === 'essentials' && selectedEssential !== null)
               ? (ESSENTIAL_CAT_SCROLL[getEssentialByLayoutKey(selectedEssential)?.category ?? ''] ?? '')
               : '';
@@ -577,11 +590,14 @@ export function mount(container: HTMLElement): DrawerHandle {
 
   // Opening an entity extends the trail; toggling the same entity off, or a tab switch, clears it.
   const openDetail = (type: EntityCrumbType, val: string): void => {
-    const cur = type === 'essential' ? selectedEssential : type === 'condition' ? selectedCondition : selectedProduct;
+    const cur = type === 'essential'
+      ? selectedEssential
+      : type === 'condition' ? selectedCondition : (type === 'food' ? selectedFood : selectedProduct);
     const originTab = activeTab;
     selectedEssential = null;
     selectedCondition = null;
     selectedProduct = null;
+    selectedFood = null;
     selectedTopic = null;
     if (cur === val) {
       // toggle off — close the detail, drop the trail
@@ -596,6 +612,12 @@ export function mount(container: HTMLElement): DrawerHandle {
     else if (type === 'condition') {
       selectedCondition = val;
       activeTab = 'conditions';
+    }
+    else if (type === 'food') {
+      // A food lives ON the Products tab, so opening one lands the reader in the same
+      // grid a product does — there is no separate foods tab to send them to.
+      selectedFood = val;
+      activeTab = 'products';
     }
     else {
       selectedProduct = val;
@@ -623,6 +645,7 @@ export function mount(container: HTMLElement): DrawerHandle {
     selectedEssential = null;
     selectedCondition = null;
     selectedProduct = null;
+    selectedFood = null;
     selectedTopic = null;
     // the origin anchor (or an invalid index) exits the detail
     if (i < 0 || c === undefined || c.type === 'tab') {
@@ -646,6 +669,10 @@ export function mount(container: HTMLElement): DrawerHandle {
       selectedProduct = c.val;
       activeTab = 'products';
     }
+    else if (c.type === 'food') {
+      selectedFood = c.val;
+      activeTab = 'products';
+    }
     render();
   };
 
@@ -667,6 +694,8 @@ export function mount(container: HTMLElement): DrawerHandle {
     selectedEssential = null;
     selectedCondition = null;
     selectedProduct = null;
+    selectedFood = null;
+    catalogKind = 'all';
     selectedTopic = null;
     trail = [];
     // Reset the per-tab filter too. Without this, a re-open renders Home while searchQuery still holds
@@ -711,6 +740,7 @@ export function mount(container: HTMLElement): DrawerHandle {
         selectedEssential = null;
         selectedCondition = null;
         selectedProduct = null;
+        selectedFood = null;
         selectedTopic = null;
         trail = [];
         searchQuery = '';
@@ -758,6 +788,26 @@ export function mount(container: HTMLElement): DrawerHandle {
       }
       return;
     }
+    const foodEl = target.closest<HTMLElement>('[data-kd-food]');
+    if (foodEl !== null) {
+      const k = foodEl.getAttribute('data-kd-food');
+      if (k !== null) {
+        openDetail('food', k);
+      }
+      return;
+    }
+    // The Products tab's own products/foods/all control. A re-render rather than a DOM
+    // toggle, because the section head above the grid states counts that have to change
+    // with it — and render() re-applies any live search query on the way out.
+    const kindEl = target.closest<HTMLElement>('[data-kd-catfilter]');
+    if (kindEl !== null) {
+      const k = kindEl.getAttribute('data-kd-catfilter');
+      if (k === 'all' || k === 'products' || k === 'foods') {
+        catalogKind = k;
+        render();
+      }
+      return;
+    }
     const actionEl = target.closest<HTMLElement>('[data-kd-action]');
     if (actionEl !== null) {
       const action = actionEl.getAttribute('data-kd-action');
@@ -773,6 +823,18 @@ export function mount(container: HTMLElement): DrawerHandle {
         selectedCondition = null;
         trail = [];
         render();
+      }
+      else if (action === 'food-close') {
+        // Origin-aware back, exactly as a product's is: a food opened from somewhere other
+        // than the Products tab returns there via its crumb.
+        if (trail[0] !== undefined && trail[0].type === 'tab' && trail[0].val !== 'products') {
+          goCrumb(0);
+        }
+        else {
+          selectedFood = null;
+          trail = [];
+          render();
+        }
       }
       else if (action === 'product-close') {
         // Origin-aware back (mirrors the topic page): a product opened from a NON-products tab (the
@@ -792,6 +854,22 @@ export function mount(container: HTMLElement): DrawerHandle {
         // §31 chokepoint), jump to the Regimen workspace, then flash the matching Active-stack
         // row so the add is visually confirmed. Name-keyed (data-rr-name) so it works for both a
         // fresh add and a dose bump; the timeout lets navigateTo mount/reveal + render the rail.
+        const fid = actionEl.getAttribute('data-add-food');
+        if (fid !== null && fid.length > 0) {
+          addCatalogFood(fid);
+          window.dispatchEvent(new CustomEvent('wallach:navigate', { detail: { to: 'regimen' } }));
+          const foodKey = foodName(fid).trim().toLowerCase();
+          setTimeout(() => {
+            const rows = Array.from(document.querySelectorAll<HTMLElement>('.rail-list .rr-row'));
+            const match = rows.find(r => r.dataset['rrName'] === foodKey);
+            if (match !== undefined) {
+              match.classList.remove('rr-row--flash');
+              void match.offsetWidth;
+              match.classList.add('rr-row--flash');
+            }
+          }, 240);
+          return;
+        }
         const pid = actionEl.getAttribute('data-add-product');
         const entry = pid !== null ? vaultEntry(pid) : null;
         if (entry !== null) {
@@ -827,6 +905,7 @@ export function mount(container: HTMLElement): DrawerHandle {
         selectedEssential = null;
         selectedCondition = null;
         selectedProduct = null;
+        selectedFood = null;
         trail = [];
         searchQuery = '';
         render();
@@ -996,6 +1075,7 @@ export function mount(container: HTMLElement): DrawerHandle {
       selectedEssential = null;
       selectedCondition = null;
       selectedProduct = null;
+      selectedFood = null;
       selectedTopic = null;
       trail = [];
       activeTab = tab;
@@ -1010,6 +1090,7 @@ export function mount(container: HTMLElement): DrawerHandle {
         selectedEssential = null;
         selectedCondition = null;
         selectedProduct = null;
+        selectedFood = null;
         selectedTopic = slug;
         trail = [];
         activeTab = 'explore';

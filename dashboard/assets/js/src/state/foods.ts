@@ -2,8 +2,28 @@
  * state/foods.ts — the FOOD half of the recommendation engine
  * ═══════════════════════════════════════════════════════════════════════════
  *
- * Surfaces dashboard/assets/data/foods-composition-data.json and ranks foods the same way
- * state/recommender.ts ranks products — against the essentials the user is still missing.
+ * Surfaces dashboard/assets/data/foods-composition-data.json and feeds the FOOD SOURCES
+ * blocks on Regimen and Coverage.
+ *
+ * ★ ONE ORDER, TOP TO BOTTOM — owner ruling 2026-08-22, which REVERSES two earlier ones.
+ * The list used to lead with a curated pin (eggs, 2026-08-21) and then walk GREEDILY: each
+ * emitted card consumed its essentials from the outstanding set, so three cards closed three
+ * different gaps. Both were defensible for a THREE-CARD recommendation and both made the
+ * sixty-four-page browse read as random — a pin is not a score, and a greedy walk re-scores
+ * the whole catalog after every card, so position four owes nothing to position three. The
+ * ruling: one honest sort key, applied to every food, page one to page sixty-four.
+ *
+ * ★ THE KEY. With goals chosen it is the share of your REMAINING GOAL TARGETS one serving
+ * fills — Σ min(fraction, 1) over the goal nutrients you have not covered yet, over how many
+ * there are. Capped at 1 per nutrient because a serving carrying 500% of one target has not
+ * filled five of them. With no goals — or with every goal nutrient already covered — it is
+ * `strength`, the food's own Σ of fractions, which is "most nutritious first". Ties fall back
+ * to strength and then to the id, so the order is TOTAL and cannot reshuffle between paints.
+ *
+ * ★ THE SCORE IS A SORT KEY AND NOTHING ELSE. It is never rendered, so its denominator has
+ * only to be CONSTANT across the candidates, not reachable: a goal naming omega-3 — which no
+ * nutrient row can credit, because the EFAs share one meter and carry no individual target —
+ * dilutes every candidate by the same amount and cannot move the order.
  *
  * ★ WHY THIS IS A SEPARATE MODULE AND NOT A BRANCH INSIDE recommender.ts.
  * `CoverageRec` carries a non-nullable `price`, and its value term
@@ -13,12 +33,6 @@
  * renderers and the vault join. A food has no price, is not in the product vault, and is not
  * capped by the starter pack — it is a different KIND of thing, so it gets its own ranker
  * and the views render two streams with a labelled rule between them.
- *
- * ★ THE SCORE IS RENORMALISED, NOT PATCHED. Products score
- * 0.6·adequacy + 0.3·breadth + 0.1·value. Foods drop the value term entirely and renormalise
- * the remaining two to sum to 1 (0.667·adequacy + 0.333·breadth), so a food competes on what
- * it actually delivers instead of being penalised for not being for sale. Owner ruling,
- * 2026-08-21. Inventing a neutral price would be a number nobody sourced.
  *
  * ★ WHOSE NUMBERS. Every amount here is USDA COMPOSITION measured against a WALLACH target.
  * See core/schemas/foods-composition.ts. This module authors no number of its own.
@@ -32,7 +46,6 @@
 
 import efaCoverageData from '../../../data/efa-coverage-data.json';
 import foodsCompositionData from '../../../data/foods-composition-data.json';
-import foodsCatalogCuration from '../../../data/foods-catalog-curation.json';
 import { EfaCoverageSchema, type Food, FoodsCompositionSchema } from '../core/schemas/index.js';
 
 /**
@@ -48,27 +61,6 @@ const DATA = FoodsCompositionSchema.parse(foodsCompositionData);
 const BY_ID = new Map<string, Food>(DATA.foods.map(f => [f.id, f]));
 
 /**
- * The curated pins, IN OFFER ORDER — eggs first, by owner ruling (2026-08-21).
- *
- * Read out of the curation rather than written down here, for the same reason the starter
- * pack is: a second hand-typed copy of an ordering is a second thing to forget to update.
- * An id that does not resolve is dropped rather than thrown on, because the food catalog is
- * curated far more often than the product pillar and a typo must not blank the tab —
- * `food_catalog_pins_resolve` REDs on exactly that case at build time instead.
- */
-const PINNED: readonly string[] = (
-  (foodsCatalogCuration as { pinned?: { ids?: unknown } }).pinned?.ids as string[] | undefined
-  ?? []
-).filter(id => BY_ID.has(id));
-
-/** The weights, renormalised from the product formula with the value term removed. */
-const W_ADEQ = 0.6 / 0.9;
-const W_BREADTH = 0.3 / 0.9;
-/** Breadth half-saturation, matching state/recommender.ts's BREADTH_HALF so the two
- *  streams' breadth terms mean the same thing. */
-const BREADTH_HALF = 5;
-
-/**
  * One essential a serving delivers, as the TILE needs it: a short label, the canon category
  * that picks its colour, the rounded percentage, and enough provenance for the card to gloss
  * the number honestly.
@@ -81,6 +73,14 @@ export interface FoodHit {
   category: string;
   /** Percentage of Wallach's daily target one serving delivers, rounded for display. */
   pct: number;
+  /**
+   * How much one serving actually holds, in WALLACH'S OWN unit for this essential —
+   * the numerator behind `pct`. The tile shows only the percentage; a nutrient sheet has
+   * to print the amount too, or it is a chart rather than a label.
+   */
+  amount: number;
+  /** Wallach's unit for this essential, copied from his target ('mg' | 'mcg'). */
+  unit: string;
   /** EXACT (joined by id) or APPROXIMATE (a curated name pair). */
   tier: 'EXACT' | 'APPROXIMATE';
   /** The words for the source this number came from, read from the artifact. */
@@ -114,9 +114,7 @@ export interface FoodRec {
   breadth: number;
   /** Which ACTIVE goals this food touches — the card's coloured dots. */
   goalIds: string[];
-  /** True iff this card holds its position by curation (the eggs pin), not by score. */
-  pinned: boolean;
-  /** The sort key that produced this position. Pinned cards sit above the scored band. */
+  /** The sort key that produced this position. See the header: never displayed. */
   score: number;
   /**
    * EVERY essential this serving delivers, strongest first. `hits[0]` is the card's lead
@@ -127,7 +125,7 @@ export interface FoodRec {
   hits: FoodHit[];
 }
 
-/** The whole catalog, for the education-mode ordering and for exhaustion checks. */
+/** The whole catalog, for the whole-catalog request and for exhaustion checks. */
 export function foodCatalogSize(): number {
   return DATA.foods.length;
 }
@@ -136,8 +134,50 @@ export function foodById(id: string): Food | undefined {
   return BY_ID.get(id);
 }
 
+/**
+ * The floor a value must clear to be in the catalog at all, as a whole percentage.
+ *
+ * ★ A SURFACE THAT PRINTS A FOOD'S WHOLE READOUT HAS TO SAY WHERE THAT READOUT STOPS. The
+ * generator drops anything under this, so "every nutrient we hold" is not "every nutrient in
+ * the food" — and a nutrient sheet that implied otherwise would be a complete label built out
+ * of an incomplete one. Read from the artifact so the sentence cannot drift from the derive.
+ */
+export function foodQualifyPct(): number {
+  return Math.round(DATA._meta.qualify_fraction * 100);
+}
 
+/**
+ * The whole catalog, in catalog order — for surfaces that LIST foods rather than rank them.
+ *
+ * Returned readonly because it is the module's own array, not a copy: the catalog is
+ * immutable at runtime and copying 192 records on every drawer paint would be waste.
+ */
+export function listFoods(): readonly Food[] {
+  return DATA.foods;
+}
 
+/**
+ * EVERY essential one serving of this food delivers, strongest first — the same readout
+ * `rankFoodsForCoverage` puts on a card, for a surface that shows a food WITHOUT ranking it.
+ *
+ * [] for an unknown id, which renders as a food with no numbers rather than as an
+ * invented one.
+ */
+export function foodHits(id: string): FoodHit[] {
+  const food = BY_ID.get(id);
+  return food === undefined ? [] : hitsOf(food);
+}
+
+/**
+ * Every category the catalog actually uses, A–Z — the food filter's option list.
+ *
+ * DERIVED, never a written-down list (R3): the catalog is curated far more often than the
+ * product pillar, and a hand-typed dropdown would keep offering a category the day its last
+ * food left, or hide one the day a new one arrived.
+ */
+export function foodCategories(): string[] {
+  return [...new Set(DATA.foods.map(f => f.category))].sort((a, b) => a.localeCompare(b));
+}
 
 /**
  * The nutrient rows to credit for a food in the regimen, shaped like a product label's.
@@ -213,6 +253,8 @@ function hitsOf(food: Food): FoodHit[] {
     label: DISPLAY[n.slug]?.label ?? n.slug,
     category: DISPLAY[n.slug]?.category ?? '',
     pct: Math.round(n.fraction * 100),
+    amount: n.amount,
+    unit: n.unit,
     tier: n.provenance.tier,
     source: sourceWordsFor(n.provenance.source_id),
     conservative: n.provenance.conservative === true,
@@ -225,6 +267,12 @@ function hitsOf(food: Food): FoodHit[] {
         label: DATA._meta.efa_reference.label,
         category: DATA._meta.efa_reference.category,
         pct,
+        // The EFA group's amount is FLAXSEED OIL, not the acid the source measured —
+        // the same currency EFA_GOAL_MG is in, because that is the only pair of numbers
+        // it is honest to print beside each other. The unit is mg by construction: the
+        // goal field the percentage divides by is `maintenance_mg`.
+        amount: food.efa.oil_equivalent_mg,
+        unit: 'mg',
         tier: 'EXACT',
         source: sourceWordsFor('usda-sr-legacy'),
         conservative: false,
@@ -235,54 +283,78 @@ function hitsOf(food: Food): FoodHit[] {
 }
 
 /**
- * Rank foods against what the user is still missing.
+ * The goal nutrients still outstanding — the denominator the ranking key is measured over.
  *
- * Mirrors rankProductsForCoverage's contract deliberately, so the two streams behave the
- * same way from a caller's point of view:
- *   - `want`     the essentials still outstanding
- *   - `owned`    food ids already in the regimen — they leave the list, which is what makes
+ * INTERSECTED with `want` on purpose (owner's choice, 2026-08-22): a goal nutrient already
+ * covered is not something a food can still help with, so counting it would score every
+ * candidate on work already done and freeze the order against a regimen that is changing.
+ */
+function goalGapSlugs(want: readonly string[], goals: readonly { members: readonly string[] }[]): Set<string> {
+  const outstanding = new Set(want);
+  const gaps = new Set<string>();
+  for (const g of goals) {
+    for (const m of g.members) {
+      if (outstanding.has(m)) {
+        gaps.add(m);
+      }
+    }
+  }
+  return gaps;
+}
+
+/** Case-insensitive substring over the name and the category, or true for an empty query. */
+function matchesQuery(food: Food, query: string): boolean {
+  if (query === '') {
+    return true;
+  }
+  return food.name.toLowerCase().includes(query) || food.category.toLowerCase().includes(query);
+}
+
+/**
+ * Rank foods for the FOOD SOURCES blocks.
+ *
+ *   - `want`     the essentials still outstanding — the goal key is measured against these
+ *   - `owned`    food ids already in the regimen. They leave the pool, which is what makes
  *                the list ADVANCE rather than repeat
- *   - `goals`    active goals, for the coloured dots and the goal-first ordering
- *   - `greedy`   consume each emitted food's essentials, so three cards cover three
- *                different gaps instead of three cards all covering the same one
- *   - `education` once nothing is outstanding, keep going by nutrient density instead of
- *                returning []. Owner ruling (2026-08-21): the foods list never exhausts on
- *                Regimen, because seeing the catalog IS the point.
- *   - `browse`   don't STOP at the end of the gap-fill list — rank whatever is left by
- *                nutrient density and keep emitting until `limit` or the catalog runs out.
+ *   - `goals`    active goals: the ranking key when any of their nutrients are outstanding,
+ *                and the card's coloured dots either way
+ *   - `limit`    how many cards the caller wants. Pass the catalog size for a pager, whose
+ *                page count must derive from the live pool and never be stored
+ *   - `category` restrict the pool to one catalog category ('' = all)
+ *   - `query`    restrict the pool to foods whose name or category contains this ('' = all)
  *
- * ★ WHY `browse` IS NOT THE SAME AS `education`. Education mode changes the ranking from
- * the FIRST card: nothing is outstanding, so adequacy is meaningless and every card is ranked
- * by density. `browse` leaves the recommendation itself untouched — the gap-fill cards come
- * out in exactly the order they always did — and only extends the TAIL past the point where
- * the greedy walk runs dry. Which it does early: each emitted card consumes its essentials
- * from the outstanding set, so about seven cards close everything a food can reach and the
- * eighth has nothing left to supply. That is correct for a RECOMMENDATION and wrong for a
- * pager, which is why the flag exists (owner ruling, 2026-08-22: browsing must reach the
- * whole catalog on both tabs).
+ * ★ THE FILTER IS APPLIED TO THE POOL, NOT TO THE PAGE. Filtering the returned slice would
+ * leave the pager counting pages that no longer exist and pages that render empty; filtering
+ * here means the page count still derives from exactly what will be shown.
+ *
+ * ★ A SORT, NOT AN ARGMAX LOOP. Every key is a static property of the food measured against
+ * one fixed gap set, so the whole catalog orders in a single pass instead of a re-scan per
+ * emitted card — which is what keeps a 192-food request cheap enough to run on every paint.
  */
 export function rankFoodsForCoverage(input: {
   want: readonly string[];
   owned?: readonly string[];
   goals?: readonly { id: string; members: readonly string[] }[];
   limit?: number;
-  greedy?: boolean;
-  education?: boolean;
-  browse?: boolean;
+  category?: string;
+  query?: string;
 }): FoodRec[] {
   const owned = new Set(input.owned ?? []);
   const goals = input.goals ?? [];
   const limit = input.limit ?? 3;
-  const greedy = input.greedy ?? true;
-  const education = input.education ?? false;
-  const browse = input.browse ?? false;
+  const category = input.category ?? '';
+  const query = (input.query ?? '').trim().toLowerCase();
   const outstanding = new Set(input.want);
 
-  const available = DATA.foods.filter(f => !owned.has(f.id));
+  const available = DATA.foods.filter(f =>
+    !owned.has(f.id)
+    && (category === '' || f.category === category)
+    && matchesQuery(f, query));
   if (available.length === 0) {
     return [];
   }
 
+  const goalGaps = goalGapSlugs(input.want, goals);
   const suppliesOf = (f: Food): number => {
     let n = 0;
     for (const row of f.nutrients) {
@@ -295,10 +367,40 @@ export function rankFoodsForCoverage(input: {
   const goalIdsFor = (f: Food): string[] =>
     goals.filter(g => g.members.some(m => f.nutrients.some(n => n.slug === m))).map(g => g.id);
 
-  const out: FoodRec[] = [];
-  const emitted = new Set<string>();
+  /**
+   * The share of the outstanding GOAL targets one serving fills. Each nutrient is capped at
+   * its own target: 500% of one is one nutrient filled, not five.
+   */
+  const goalFillOf = (f: Food): number => {
+    let filled = 0;
+    for (const row of f.nutrients) {
+      if (goalGaps.has(row.slug)) {
+        filled += Math.min(row.fraction, 1);
+      }
+    }
+    return filled / goalGaps.size;
+  };
 
-  const emit = (food: Food, score: number, isPinned: boolean): void => {
+  // With no goals chosen — or with every goal nutrient already covered — there is no goal
+  // gap to measure against and `strength` IS the answer the owner asked for: most nutritious
+  // first, which is Σ of how much of Wallach's targets one serving delivers.
+  const byGoal = goalGaps.size > 0;
+  const scored = available.map(f => ({ food: f, key: byGoal ? goalFillOf(f) : f.strength }));
+
+  // The two tiebreaks are what make the order TOTAL. Without the id, two foods of equal key
+  // could swap places between paints and the page under the reader's cursor would shuffle;
+  // without strength between them, every food that fills none of the goal gaps would fall
+  // into id order and the tail of the list would read as alphabetical noise.
+  scored.sort((a, b) =>
+    (b.key - a.key)
+    || (b.food.strength - a.food.strength)
+    || a.food.id.localeCompare(b.food.id));
+
+  const out: FoodRec[] = [];
+  for (const { food, key } of scored) {
+    if (out.length >= limit) {
+      break;
+    }
     const hits = hitsOf(food);
     out.push({
       foodId: food.id,
@@ -309,116 +411,9 @@ export function rankFoodsForCoverage(input: {
       supplies: suppliesOf(food),
       breadth: hits.length,
       goalIds: goalIdsFor(food),
-      pinned: isPinned,
-      score,
+      score: key,
       hits,
     });
-    emitted.add(food.id);
-    if (greedy) {
-      for (const row of food.nutrients) {
-        outstanding.delete(row.slug);
-      }
-    }
-  };
-
-  // ── the curated pins first, in curation order ──────────────────────────────
-  // A pin holds ORDER and nothing else: it still leaves the list once owned, and its
-  // `supplies` is still measured against the live outstanding set like any other card.
-  // The synthetic score sits above the scored band (which is strictly < 1, since the two
-  // weights sum to exactly 1 and breadthScore is asymptotic to 1) so `score` means ONE
-  // thing on every row — the key this position came from.
-  let pinRank = 0;
-  for (const id of PINNED) {
-    if (out.length >= limit) {
-      break;
-    }
-    const food = BY_ID.get(id);
-    if (food === undefined || owned.has(id)) {
-      continue;
-    }
-    // ★ A PIN HOLDS ORDER, NOT IMMUNITY FROM RELEVANCE — the same standing a pinned
-    // product has, which still leaves the list once owned. In gap-fill mode a pin that
-    // closes nothing outstanding is not a recommendation, it is noise wearing first
-    // position, so it is skipped exactly as a scored food with supplies 0 would be.
-    // Education mode is different by design: there nothing is outstanding for ANY food,
-    // and the pin leading the teaching list is the intended behaviour.
-    if (!education && suppliesOf(food) === 0) {
-      continue;
-    }
-    emit(food, 100 - pinRank, true);
-    pinRank += 1;
   }
-
-  // ── then the scored tail ───────────────────────────────────────────────────
-  while (out.length < limit) {
-    let bestFood: Food | null = null;
-    let bestScore = -1;
-
-    // The yardsticks are recomputed each round against the CURRENT outstanding set, the
-    // same way the product scorer does it — otherwise a food that covered everything in
-    // round one keeps defining "best" for rounds it can no longer help with.
-    let bestSupply = 0;
-    for (const f of available) {
-      if (emitted.has(f.id)) {
-        continue;
-      }
-      const s = suppliesOf(f);
-      if (s > bestSupply) {
-        bestSupply = s;
-      }
-    }
-
-    for (const f of available) {
-      if (emitted.has(f.id)) {
-        continue;
-      }
-      const supplies = suppliesOf(f);
-      if (!education && supplies === 0) {
-        // In gap-fill mode a food that closes nothing outstanding is not a recommendation.
-        continue;
-      }
-      const adequacy = bestSupply > 0 ? supplies / bestSupply : 0;
-      const breadth = f.breadth / (f.breadth + BREADTH_HALF);
-      // EDUCATION MODE: nothing is outstanding, so adequacy is meaningless and every food
-      // would tie at zero. Rank by nutrient DENSITY instead — the sum of how much of
-      // Wallach's targets one serving delivers — which is "most nutritious first".
-      const score = education
-        ? f.strength
-        : W_ADEQ * adequacy + W_BREADTH * breadth;
-      if (score > bestScore) {
-        bestScore = score;
-        bestFood = f;
-      }
-    }
-
-    if (bestFood === null) {
-      break;
-    }
-    emit(bestFood, bestScore, false);
-  }
-
-  // ── the browse tail ───────────────────────────────────────────────────────
-  // Everything the greedy walk could not justify recommending, most nutritious first — the
-  // same density key education mode ranks by, so a food sits in the same relative place
-  // whichever mode surfaced it.
-  //
-  // ★ A SORT, NOT ANOTHER ARGMAX LOOP. `strength` is a static property of the food, so the
-  // remainder can be ordered in one pass instead of re-scanning the catalog once per emitted
-  // card. That is what keeps a whole-catalog request cheap enough to run on every paint
-  // (~1.5 ms for all 192, measured) rather than something the views have to cache.
-  if (browse && out.length < limit) {
-    const rest = available
-      .filter(f => !emitted.has(f.id))
-      // The id tiebreak is what makes the order STABLE: two foods of equal strength must not
-      // swap places between paints, or the page under the reader's cursor would shuffle.
-      .sort((a, b) => (b.strength - a.strength) || a.id.localeCompare(b.id));
-    for (const food of rest) {
-      if (out.length >= limit) {
-        break;
-      }
-      emit(food, food.strength, false);
-    }
-  }
-
   return out;
 }
