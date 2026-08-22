@@ -776,3 +776,31 @@
 /* (L cont.) Mirror cell-fill: the accent ramp read too bright + too flat here in dark.
    Darker + wider gradient (a darkened-vivid top down to a deep bottom, mixed toward black). */
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-orac-cell__fill { background: linear-gradient(180deg, color-mix(in srgb, var(--ds-accent-hot) 78%, #000) 0%, color-mix(in srgb, var(--ds-accent-hot) 42%, #000) 100%); }
+
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   (M) FOOD SOURCES tiles — the block shipped 2026-08-22, AFTER every sweep above,
+   so none of it had been through one. Two defects, and this file has already named
+   both once:
+
+     · a CATEGORY HUE tuned for cream paper used as small text on charcoal. Mineral
+       blue #2b6fb0 is ~2.1:1 against the tile — the (J1) problem exactly, and the
+       same fix: brighten the dark FOREGROUND, leave the meaning alone. Minerals stay
+       blue, vitamins orange, fatty acids purple; only their charcoal brightness moves.
+     · a HOVER built as ink-on-paper. --ds-ink IS the light token in dark mode, so
+       hovering the + filled it near-white — the (D)/(C) failure on a new control.
+
+   The chip's own ink was the third, and it is fixed at its home in dashboard.css
+   rather than here: it was mixed toward #000, which is a cream assumption, and
+   mixing toward --ds-ink instead is correct in BOTH themes with no override.
+   ═══════════════════════════════════════════════════════════════════════════ */
+:root[data-theme="dark"] .fs-grid {
+  --fs-cat-minerals:    color-mix(in srgb, #2b6fb0 55%, var(--ds-ink));
+  --fs-cat-vitamins:    color-mix(in srgb, #ff7e3c 78%, var(--ds-ink));
+  --fs-cat-fatty_acids: color-mix(in srgb, #7d4a86 52%, var(--ds-ink));
+}
+:root[data-theme="dark"] .fs-ctl--add:hover {
+  background: var(--ds-paper-light);
+  border-color: var(--ds-accent-deep);
+  color: var(--ds-accent-deep);
+}

@@ -36,9 +36,10 @@ import { CoverageLayoutSchema, type LayoutGoal, type LayoutSection, type LayoutS
 import { ui } from '../state/copy.js';
 import { defaultServingsFor } from '../state/dose-defaults.js';
 import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCount, getOrCompute } from '../state/coverage.js';
-import { rankFoodsForCoverage } from '../state/foods.js';
+import { foodCatalogSize, rankFoodsForCoverage } from '../state/foods.js';
 import { type CoverageRec, productIdsForNames, rankProductsForCoverage, vaultEntry } from '../state/recommender.js';
 import { addCatalogFood, buildFoodsBlock } from './foods-block.js';
+import { withScrollPreserved } from './scroll-keep.js';
 import { addOrBumpRegimenItem, loadEffectiveRegimen, loadRgUserGoals, loadSlots, saveRgOverride, saveRgRemoved, saveRgUserGoals } from '../state/regimen.js';
 import { starterPackIds, starterPackSize } from '../state/starter-pack.js';
 
@@ -752,28 +753,11 @@ function renderRail(items: ReturnType<typeof loadEffectiveRegimen>): string {
 
 // ─── Mount ────────────────────────────────────────────────────────────────
 
-/**
- * Re-render without throwing the reader back to the top of the page.
- *
- * Both workspaces repaint by replacing `container.innerHTML`, and every dose step fires a
- * recompute, so a `+` halfway down a 91-tile field used to scroll the page to the top and make
- * the user find their place again. The three workspaces share ONE scroller (`.app-workspace`,
- * dashboard.css), which is the element whose scrollTop has to survive the swap.
- *
- * Restored synchronously: the replacement content is the same shape as what it replaced, so the
- * scroll height is already correct by the time this runs and the browser clamps nothing. A
- * rAF here would paint the top of the page for one frame first -- which is the flash itself.
- */
-function withScrollPreserved(container: HTMLElement, paint: () => void): void {
-  const scroller = container.closest<HTMLElement>('.app-workspace');
-  const keep = scroller !== null ? scroller.scrollTop : 0;
-  paint();
-  if (scroller !== null && keep > 0 && scroller.scrollTop !== keep) {
-    scroller.scrollTop = keep;
-  }
-}
-
 export function mount(container: HTMLElement): MountHandle {
+  /** Which page of FOOD SOURCES the aside is showing. Session-only and deliberately not
+   *  persisted: it is where the reader's eye is, not a preference they set. */
+  let foodPage = 0;
+
   const render = (): void => { withScrollPreserved(container, paint); };
 
   const paint = (): void => {
@@ -840,16 +824,29 @@ export function mount(container: HTMLElement): MountHandle {
         .map(i => i.label['food_id'])
         .filter((v): v is string => typeof v === 'string');
       const foodBudget = Math.max(0, FOOD_MAX - ownedFoods.length);
-      const foodRecs = foodBudget === 0 ? [] : rankFoodsForCoverage({
+      // ★ THE WHOLE CATALOG IS BROWSABLE; ONLY ADDING IS CAPPED. FOOD_MAX bounds what this
+      // tab will ever PUT IN a regimen, and that is still enforced above — at budget zero the
+      // block says so and offers nothing. Up to that point the arrows reach every food we
+      // hold (owner ruling, 2026-08-22), because a cap on what you may take is not a reason
+      // to hide what exists. The first cards are unchanged: `browse` only extends the tail
+      // past where the gap-fill walk runs dry.
+      const foodPool = foodBudget === 0 ? [] : rankFoodsForCoverage({
         want: wantedSlugs(snapshot, goals),
         owned: ownedFoods,
         goals: goals.map(g => ({ id: g.id, members: g.members })),
-        limit: Math.min(FOOD_PAGE, foodBudget),
+        limit: foodCatalogSize(),
         greedy: true,
+        browse: true,
       });
-      buildFoodsBlock(foodsHost, foodRecs, {
+      const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_PAGE));
+      // The pool re-ranks on every paint and SHRINKS as foods are added, so the page the
+      // reader is on can stop existing. Clamp to the last real page rather than paint an
+      // empty block that reads as "no foods left".
+      foodPage = Math.min(foodPage, foodPages - 1);
+      buildFoodsBlock(foodsHost, foodPool.slice(foodPage * FOOD_PAGE, (foodPage + 1) * FOOD_PAGE), {
         ownedCount: ownedFoods.length,
         capReached: foodBudget === 0,
+        pager: { page: foodPage, pages: foodPages, kind: 'arrows' },
       });
     }
   };
@@ -898,6 +895,17 @@ export function mount(container: HTMLElement): MountHandle {
     const foodCard = t.closest<HTMLElement>('[data-food-add]');
     if (foodCard !== null) {
       addCatalogFood(foodCard.dataset['foodAdd'] ?? '');
+      return;
+    }
+    const foodPager = t.closest<HTMLElement>('[data-food-page]');
+    if (foodPager !== null) {
+      const n = Number.parseInt(foodPager.dataset['foodPage'] ?? '', 10);
+      // A non-numeric or negative page is dropped rather than sent on as NaN, which would
+      // clamp to the last page and look like the pager jumping for no reason.
+      if (Number.isFinite(n) && n >= 0) {
+        foodPage = n;
+        render();
+      }
       return;
     }
     if (t.closest('[data-full-regimen]') !== null) {

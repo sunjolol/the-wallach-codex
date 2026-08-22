@@ -248,6 +248,18 @@ function hitsOf(food: Food): FoodHit[] {
  *   - `education` once nothing is outstanding, keep going by nutrient density instead of
  *                returning []. Owner ruling (2026-08-21): the foods list never exhausts on
  *                Regimen, because seeing the catalog IS the point.
+ *   - `browse`   don't STOP at the end of the gap-fill list — rank whatever is left by
+ *                nutrient density and keep emitting until `limit` or the catalog runs out.
+ *
+ * ★ WHY `browse` IS NOT THE SAME AS `education`. Education mode changes the ranking from
+ * the FIRST card: nothing is outstanding, so adequacy is meaningless and every card is ranked
+ * by density. `browse` leaves the recommendation itself untouched — the gap-fill cards come
+ * out in exactly the order they always did — and only extends the TAIL past the point where
+ * the greedy walk runs dry. Which it does early: each emitted card consumes its essentials
+ * from the outstanding set, so about seven cards close everything a food can reach and the
+ * eighth has nothing left to supply. That is correct for a RECOMMENDATION and wrong for a
+ * pager, which is why the flag exists (owner ruling, 2026-08-22: browsing must reach the
+ * whole catalog on both tabs).
  */
 export function rankFoodsForCoverage(input: {
   want: readonly string[];
@@ -256,12 +268,14 @@ export function rankFoodsForCoverage(input: {
   limit?: number;
   greedy?: boolean;
   education?: boolean;
+  browse?: boolean;
 }): FoodRec[] {
   const owned = new Set(input.owned ?? []);
   const goals = input.goals ?? [];
   const limit = input.limit ?? 3;
   const greedy = input.greedy ?? true;
   const education = input.education ?? false;
+  const browse = input.browse ?? false;
   const outstanding = new Set(input.want);
 
   const available = DATA.foods.filter(f => !owned.has(f.id));
@@ -381,6 +395,29 @@ export function rankFoodsForCoverage(input: {
       break;
     }
     emit(bestFood, bestScore, false);
+  }
+
+  // ── the browse tail ───────────────────────────────────────────────────────
+  // Everything the greedy walk could not justify recommending, most nutritious first — the
+  // same density key education mode ranks by, so a food sits in the same relative place
+  // whichever mode surfaced it.
+  //
+  // ★ A SORT, NOT ANOTHER ARGMAX LOOP. `strength` is a static property of the food, so the
+  // remainder can be ordered in one pass instead of re-scanning the catalog once per emitted
+  // card. That is what keeps a whole-catalog request cheap enough to run on every paint
+  // (~1.5 ms for all 192, measured) rather than something the views have to cache.
+  if (browse && out.length < limit) {
+    const rest = available
+      .filter(f => !emitted.has(f.id))
+      // The id tiebreak is what makes the order STABLE: two foods of equal strength must not
+      // swap places between paints, or the page under the reader's cursor would shuffle.
+      .sort((a, b) => (b.strength - a.strength) || a.id.localeCompare(b.id));
+    for (const food of rest) {
+      if (out.length >= limit) {
+        break;
+      }
+      emit(food, food.strength, false);
+    }
   }
 
   return out;

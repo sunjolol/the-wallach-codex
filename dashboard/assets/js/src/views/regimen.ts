@@ -74,6 +74,7 @@ import {
   type Slot,
   SLOT_COLOURS,
 } from '../state/regimen.js';
+import { withScrollPreserved } from './scroll-keep.js';
 
 export interface MountHandle {
   update: () => void;
@@ -94,8 +95,7 @@ const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
  * to keep producing until the field is closed, which is the next pass.
  *
  * ★ THREE, leaving room for three FOOD cards above them — six recommendations visible, foods
- * first. The foods half is not built yet (it waits on a source-rule ruling), so today the row
- * shows three products and nothing above them.
+ * first. Both halves are live: the foods block shipped 2026-08-22 and sits above this row.
  */
 const REC_LIMIT = 3;
 /** How many FOOD cards sit above the products. Three, so the row shows six in total —
@@ -103,6 +103,22 @@ const REC_LIMIT = 3;
  *  blocks are meant to read as one six-card row split by a labelled rule, not as a big
  *  block and a small one. */
 const FOOD_LIMIT = 3;
+/**
+ * The most PAGES the console's pager will list. Ninety foods, thirty squares — one row of
+ * the column, where sixty-four wrapped to two and read as clutter (owner's call,
+ * 2026-08-22).
+ *
+ * ★ IT CAPS THE COUNT, NOT THE REACH. The pool is still `catalog minus what you own`, so the
+ * square count falls below thirty on its own once fewer than ninety foods remain unowned,
+ * and climbs back the moment one is removed. The cap only stops it going ABOVE thirty; every
+ * other page number on screen is still derived from the live pool, never stored.
+ *
+ * ★ AND IT DOES NOT SHORTEN THE LIST. Adding a food removes it from the pool and the next
+ * enters, so the whole catalog stays reachable exactly as the 2026-08-21 ruling intended.
+ * Coverage is deliberately NOT capped: its arrows cost one row whatever the count, so they
+ * walk all sixty-four (owner, 2026-08-22).
+ */
+const FOOD_PAGE_CAP = 30;
 /** How many slot tiles the switcher paints. MUST equal state/regimen.ts's MAX_SLOTS — the state
  *  layer refuses a fifth save, so a mismatch here paints an empty tile that can never be filled. */
 const SLOT_CAP = 4;
@@ -877,29 +893,11 @@ function buildSlotDeleteConfirm(id: string, itemCount: number): HTMLElement {
 
 // ─── Mount ────────────────────────────────────────────────────────────────────
 
-/**
- * Re-render without throwing the reader back to the top of the page.
- *
- * Both workspaces repaint by replacing `container.innerHTML`, and every dose step fires a
- * recompute, so a `+` halfway down a 91-tile field used to scroll the page to the top and make
- * the user find their place again. The three workspaces share ONE scroller (`.app-workspace`,
- * dashboard.css), which is the element whose scrollTop has to survive the swap.
- *
- * Restored synchronously: the replacement content is the same shape as what it replaced, so the
- * scroll height is already correct by the time this runs and the browser clamps nothing. A
- * rAF here would paint the top of the page for one frame first -- which is the flash itself.
- */
-function withScrollPreserved(container: HTMLElement, paint: () => void): void {
-  const scroller = container.closest<HTMLElement>('.app-workspace');
-  const keep = scroller !== null ? scroller.scrollTop : 0;
-  paint();
-  if (scroller !== null && keep > 0 && scroller.scrollTop !== keep) {
-    scroller.scrollTop = keep;
-  }
-}
-
 export function mount(container: HTMLElement): MountHandle {
   let animated = false;
+  /** Which page of FOOD SOURCES the console is showing. Session-only and deliberately not
+   *  persisted: it is where the reader's eye is, not a preference they set. */
+  let foodPage = 0;
   let toastTimer: number | null = null;
   let recycleOpen = false;
   // The "Replace a save" step: while all four slots are full, this holds the deletedAt key of the
@@ -1252,7 +1250,7 @@ export function mount(container: HTMLElement): MountHandle {
             ${renderGoals(goals)}
             <div class="fs-block" data-foodsblock></div>
             <div class="recs ck-recs" data-rise="4">
-              <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><span class="ck-recs__note">Products, ranked by your goals</span></div>
+              <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><i class="ck-recs__rule" aria-hidden="true"></i><span class="ck-recs__note">Products, ranked by your goals</span></div>
               <div class="ck-recgrid" data-recgrid></div>
             </div>
           </div>
@@ -1288,17 +1286,29 @@ export function mount(container: HTMLElement): MountHandle {
       const ownedFoods = items
         .map(i => i.label['food_id'])
         .filter((v): v is string => typeof v === 'string');
-      const foodRecs = rankFoodsForCoverage({
+      // ★ THIRTY PAGES' WORTH, EVERY PAINT — and the CAP IS THE REQUEST. Asking for exactly
+      // FOOD_LIMIT * FOOD_PAGE_CAP is what makes the count self-adjusting: the ranker returns
+      // fewer than ninety only when fewer than ninety foods are left unowned, so the squares
+      // thin out as the regimen fills and come straight back when something is removed. No
+      // second rule decides the page count, and nothing is stored. (~0.8 ms, measured.)
+      const foodPool = rankFoodsForCoverage({
         want: wantedSlugs(goals),
         owned: ownedFoods,
         goals: goals.map(g => ({ id: g.id, members: g.members })),
-        limit: FOOD_LIMIT,
+        limit: FOOD_LIMIT * FOOD_PAGE_CAP,
         greedy: true,
         education: allCovered,
+        browse: true,
       });
-      buildFoodsBlock(foodsHost, foodRecs, {
+      const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_LIMIT));
+      // The pool re-ranks on every paint and SHRINKS as foods are added, so the page the
+      // reader is on can stop existing. Clamp to the last real page rather than paint an
+      // empty block that reads as "no foods left".
+      foodPage = Math.min(foodPage, foodPages - 1);
+      buildFoodsBlock(foodsHost, foodPool.slice(foodPage * FOOD_LIMIT, (foodPage + 1) * FOOD_LIMIT), {
         education: allCovered,
         ownedCount: ownedFoods.length,
+        pager: { page: foodPage, pages: foodPages, kind: 'squares' },
       });
     }
     if (recycleOpen) {
@@ -1582,6 +1592,18 @@ export function mount(container: HTMLElement): MountHandle {
       addCatalogFood(foodAdd.dataset['foodAdd'] ?? '');
       return;
     }
+    // — food pager —
+    const foodPager = target.closest<HTMLElement>('[data-food-page]');
+    if (foodPager !== null) {
+      const n = Number.parseInt(foodPager.dataset['foodPage'] ?? '', 10);
+      // A non-numeric or negative page is dropped rather than sent on as NaN, which would
+      // clamp to the last page and look like the pager jumping for no reason.
+      if (Number.isFinite(n) && n >= 0) {
+        foodPage = n;
+        render();
+      }
+      return;
+    }
     // — typeahead add —
     const taAdd = target.closest<HTMLElement>('[data-ta-add]');
     if (taAdd !== null) {
@@ -1639,7 +1661,11 @@ export function mount(container: HTMLElement): MountHandle {
     if (target.closest('[data-row-keep]') !== null) {
       const list = container.querySelector<HTMLElement>('[data-rail-list]');
       if (list !== null) {
-        buildRailRows(list, loadEffectiveRegimen());
+        // Backing out of a delete rebuilds the rail in place, which resets the rail's own
+        // scroller exactly as a full repaint does — so it goes through the same guard.
+        withScrollPreserved(container, () => {
+          buildRailRows(list, loadEffectiveRegimen());
+        });
       }
       return;
     }

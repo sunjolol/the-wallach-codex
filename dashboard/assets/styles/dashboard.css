@@ -465,7 +465,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .fs-tile__meta {
-  font: 400 9px/1.25 var(--ds-font-mono, monospace); color: var(--ds-ink-soft);
+  font: 400 10px/1.25 var(--ds-font-mono, monospace); color: var(--ds-ink-soft);
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
 .fs-tile__meta b { color: var(--ds-ink-medium); font-weight: 700; }
@@ -492,7 +492,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .fs-lead__pct sup { font-size: 10px; top: -.65em; }
 .fs-lead__pct--approx::after { content: ' ≈'; font-size: 11px; opacity: .55; }
 .fs-lead__of {
-  margin-top: 2px; font: 700 8px/1.2 var(--ds-font-mono, monospace); letter-spacing: .05em;
+  margin-top: 2px; font: 700 10px/1.2 var(--ds-font-mono, monospace); letter-spacing: .05em;
   text-transform: uppercase; color: var(--ds-ink); white-space: nowrap;
   border-bottom: 1px dotted var(--ds-ink-faint);
 }
@@ -500,8 +500,13 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .fs-chip {
   display: inline-flex; align-items: baseline; gap: 3px; white-space: nowrap;
   padding: 1px 6px 2px; border-radius: var(--ds-radius-pill); cursor: help;
-  font: 700 8px/1.4 var(--ds-font-mono, monospace); letter-spacing: .03em;
-  color: color-mix(in srgb, var(--c) 76%, #000);
+  font: 700 10px/1.4 var(--ds-font-mono, monospace); letter-spacing: .03em;
+  /* MIXED TOWARD THE INK TOKEN, NEVER #000. The category hue alone is too light to read
+     as small type, so it is darkened toward the page's ink — and "darker" is only correct
+     on cream. In dark mode --ds-ink IS the light token, so the same expression darkens on
+     paper and lightens on charcoal with no second rule. On cream the two differ by ~6/255
+     per channel, which is why this was invisible until the dark theme met it. */
+  color: color-mix(in srgb, var(--c) 76%, var(--ds-ink));
   background: color-mix(in srgb, var(--c) 14%, transparent);
 }
 .fs-chip u { text-decoration: none; font-weight: 400; opacity: .75; }
@@ -510,15 +515,55 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 .fs-chip--approx::after { content: '≈'; opacity: .55; font-weight: 400; }
 .fs-more {
   align-self: center; padding: 1px 3px; white-space: nowrap;
-  font: 700 8px/1.4 var(--ds-font-mono, monospace); color: var(--ds-ink-soft);
+  font: 700 10px/1.4 var(--ds-font-mono, monospace); color: var(--ds-ink-soft);
 }
+/* A SENTENCE, SO IT IS SIZED LIKE ONE. These are the block's terminal states — the field is
+   closed, the tab's cap is reached, or the catalog itself has run out — and at 0.6rem mono
+   they read as a footnote about the surface rather than as the surface's answer. Raised to
+   --ds-text-mini with the rest of the console's telemetry (owner's call, 2026-08-22). Weight
+   stays 400: these are sentences, and 700 mono prose reads as shouting. */
 .fs-note {
-  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-mini);
   color: var(--ds-ink-faint); letter-spacing: .05em;
   margin: 0 0 var(--ds-space-3); line-height: 1.5;
 }
 .fs-note--egg { color: var(--ds-ink-soft); }
 .fs-prize { color: var(--ds-accent-deep); text-decoration: underline dotted; }
+
+/* ── THE PAGER — the only way past the first three ─────────────────────────
+   The product list next door deliberately has none, and the reason is written down in
+   views/coverage.ts: that list ADVANCES, because adding a product removes it. The foods
+   list advances the same way — but ADDING is not BROWSING, and a reader who wants to see
+   what else is there had no way to look without first putting something in their regimen.
+   Two shapes off ONE builder (owner's choice, 2026-08-22): ‹ › on Coverage, whose list is
+   short and bounded by what may still be added, and numbered squares in the Regimen
+   console. Painted only when a second page exists — a pager over one page is chrome that
+   lies about there being more. */
+.fs-pager {
+  /* WRAPS ON PURPOSE. The console lists a square for EVERY page — about sixty-four of them
+     once the whole catalog is browsable — which is more than one row of the column can hold.
+     Owner's call, 2026-08-22: all of them listed, not a window with ellipses. */
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+  gap: 4px; margin-top: 8px;
+}
+.fs-pager__b {
+  box-sizing: border-box; display: grid; place-items: center;
+  min-width: 18px; height: 18px; padding: 0 4px;
+  font-family: var(--ds-font-mono); font-size: 10px; font-weight: 700; line-height: 1;
+  color: var(--ds-ink-soft); background: var(--ds-paper-light);
+  border: 1px solid var(--ds-rule); border-radius: 3px; cursor: pointer;
+  transition: color var(--ds-motion-fast) var(--ds-ease-out), border-color var(--ds-motion-fast) var(--ds-ease-out);
+}
+/* THE ARROWS SIT LOW IN THEIR OWN EM BOX. ‹ and › are centred on the maths axis, not on the
+   cap height the digits beside them read against, and at 12px that gap is visible: the pair
+   looked a pixel below the "N / N" between them. `place-items: center` centres the CONTENT
+   box, so trimming a pixel of padding off the bottom lifts the glyph without moving the
+   button, its border, or the row's baseline. */
+.fs-pager__b--arrow { font-size: 12px; padding-bottom: 2px; }
+.fs-pager__b:hover:not(:disabled) { color: var(--ds-accent-deep); border-color: var(--ds-accent); }
+.fs-pager__b:disabled { opacity: .38; cursor: default; }
+.fs-pager__b[aria-current="page"] { color: var(--ds-paper); background: var(--ds-accent); border-color: var(--ds-accent); }
+.fs-pager__at { padding: 0 2px; font-family: var(--ds-font-mono); font-size: 11px; letter-spacing: .06em; color: var(--ds-ink-faint); }
 
 /* The finish-line button under the Regimen console's "all 90 covered" note. Deliberately
    quiet — it is an invitation to keep browsing, not a call to action, because the user has
@@ -527,7 +572,7 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
   display: inline-block; margin-top: var(--ds-space-3);
   padding: 6px 12px; cursor: pointer;
   background: none; border: 1px dashed var(--ds-rule-bright);
-  font-family: var(--ds-font-mono); font-size: var(--ds-text-micro);
+  font-family: var(--ds-font-mono); font-size: var(--ds-text-mini);
   letter-spacing: .1em; text-transform: uppercase; color: var(--ds-ink-soft);
   transition: border-color .14s, color .14s;
 }

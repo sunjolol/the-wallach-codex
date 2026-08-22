@@ -1045,7 +1045,11 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .rec__val { color: var(--ds-status-ok); font-weight: 700; }
 /* The card's goal colour rides the BORDER — `--recRing` on `.rec` above — and nothing else.
    There are deliberately no per-goal dots on a rec card; see views/coverage.ts::buildRecs. */
-.recs__note { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .05em; margin-top: 8px; line-height: 1.5; }
+/* The rail's terminal states — the cap reached, or nothing left a product could add. Sized
+   like the sentences they are, matching .fs-note next door (2026-08-22). Its Regimen twin
+   needs no rule: that one rides .ck-recs__note, which the console's legibility bump already
+   raised, and it measured 0.7rem before this patch was written. */
+.recs__note { font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); color: var(--ds-ink-faint); letter-spacing: .05em; margin-top: 8px; line-height: 1.5; }
 
 
 
@@ -1111,7 +1115,11 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .rail-panel__meta { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-soft); letter-spacing: .08em; }
 .rail-empty { margin-top: var(--ds-space-5); padding: var(--ds-space-5); border: 1px dashed var(--ds-rule); border-radius: var(--ds-radius-sm); text-align: center; }
 .rail-empty p { margin: 0 0 4px; font-family: var(--ds-font-sans); font-size: .82rem; color: var(--ds-ink-medium); }
-.rail-empty small { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .06em; }
+/* A BLOCK WITH ITS OWN LEADING. As an inline it took its line box from .rail-empty's
+   24.8px strut, so the two lines it wraps to sat 24.8px apart under 11.2px type — a gap
+   wider than the text was tall. Raising the size to --ds-text-mini (2026-08-22) made that
+   plain; the leading was always wrong, the smaller type just hid it. */
+.rail-empty small { display: block; font-family: var(--ds-font-mono); font-size: var(--ds-text-mini); line-height: 1.5; color: var(--ds-ink-faint); letter-spacing: .06em; }
 .rail-panel__actions { display: flex; gap: 8px; margin-top: var(--ds-space-5); }
 .rail-panel__actions button { flex: 1; }
 

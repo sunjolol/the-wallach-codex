@@ -35690,6 +35690,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const limit = input.limit ?? 3;
     const greedy = input.greedy ?? true;
     const education = input.education ?? false;
+    const browse = input.browse ?? false;
     const outstanding = new Set(input.want);
     const available = DATA.foods.filter((f) => !owned.has(f.id));
     if (available.length === 0) {
@@ -35777,6 +35778,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         break;
       }
       emit2(bestFood, bestScore, false);
+    }
+    if (browse && out.length < limit) {
+      const rest = available.filter((f) => !emitted.has(f.id)).sort((a, b) => b.strength - a.strength || a.id.localeCompare(b.id));
+      for (const food of rest) {
+        if (out.length >= limit) {
+          break;
+        }
+        emit2(food, food.strength, false);
+      }
     }
     return out;
   }
@@ -42221,7 +42231,7 @@ nutrients; design F is approved but NOT wired; the USDA Isoflavone DB is acquire
 Phenol-Explorer is unreachable (its TLS certificate covers *.wishartlab.com, not
 phenol-explorer.eu -- not bypassed); Clements & Darnell 1980 for inositol is paywalled at every
 free route tried, and phytate tables are NOT a substitute because phytate-bound inositol is poorly
-absorbed. The foods feature remains uncommitted on purpose, per the standing tree rule.` }, { id: "lg_mt4hzfua_ehu7cg", ts: "2026-08-22T09:52:49.522998-05:00", surface: "foods/second-sources", kind: "round-close", summary: "Seven of the thirteen essentials no food could reach now have real foods behind them, every food number says which published source it came from and how firmly, and the approved tile design is live.", detail: 'Until this round, thirteen of the ninety essentials had no food a person could eat to move them \u2014 the app could only ever say "take a supplement". Seven of those now name real foods, and the numbers on screen say where each came from. Iodine points at iodised salt, lobster and ricotta; molybdenum at tofu, snow peas and pumpkin seeds; sulphur at lobster, venison, turkey and chicken breast; silica at dates, green beans and spinach; chloride at salt, cottage cheese and chard; flavonoids at blackberries and strawberries; biotin at peanuts and hazelnuts. Walnuts, which the app scored at zero for essential fatty acids yesterday, are now worth 220% of Dr. Wallach\'s daily dose.\n\nHover any number on a food card and it names the publication it came from. Where two tables had to be matched up by food NAME rather than by a shared id, the number carries a small "\u2248" and says plainly that a person paired the two by hand \u2014 a close stand-in, not a measurement of that exact item.\n\nThe half of this round worth remembering is what was REFUSED. Garlic \u2014 the food the campaign most wanted, the richest allium in the literature, and one Dr. Wallach names by name \u2014 did not make it: a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his sulphur target. It is a flavouring, not a serving. Oysters at 54-67% sulphur were refused because that source measures them raw and ours is cooked. Lamb chop at 42% was refused because their cut is lean and ours is lean and fat, and fat carries almost no sulphur. Boron was acquired, pinned and extracted, then deliberately not used at all: no source we hold measures boron per 100 g, and the one table that exists is per serving without ever saying what a serving weighs. Twenty-five refusals in total, each written down with its reasoning so nobody re-derives the hope.\n\nTHE TECHNICAL RECORD\n\nSECOND-SOURCE SPINE. eden/foods/sources/sources.json gained `nutrient_bindings` \u2014 the ONE home for how a pinned payload becomes a number: payload -> extractor -> committed candidate -> join kind -> value kind -> unit -> the words the card uses. Three value shapes: `cell` (one cell, byte-exact), `sum` (Sigma of component ROWS \u2014 USDA\'s per-compound flavonoid rows), `sum_fields` (Sigma of named FIELDS \u2014 Doleman splits sulphur in two). All sums in DECIMAL, never float: \'147.63\' + \'19.58\' must be \'167.21\' on every host because that string is what the gate re-derives. sr_legacy_food.csv (the fdc_id->NDB bridge) and USDA water/18:2/18:3/CLA joined the committed extract as `support_nutrients`, deliberately NOT nutrient_map, so an arithmetic input can never be mistaken for a Wallach-targeted essential.\n\nTIER IS DERIVED FROM THE JOIN, NEVER TYPED. An id join may be EXACT; a name join is APPROXIMATE forever. The gate REDs the other combination in EITHER the row or the binding, and REDs a name-joined row whose key or reasoning is not in the curation \u2014 a matcher\'s proposal cannot ship as though a person had accepted it.\n\nTWO SOURCES FOR ONE ESSENTIAL. Bindings declare `combine`: `sum` where parts measure DIFFERENT things (USDA publishes proanthocyanidins separately from the other flavonoid classes, and omitting them understated every total \u2014 2 qualifying foods became 10), or `first` where they measure the SAME thing and only one may win. Sulphur is `first`: AFCD primary because it measures directly per 100 g, Doleman second because its dry-weight value must be married to a moisture from a different sample. They are complementary rather than competing \u2014 AFCD supplies 24 foods, Doleman fills the three it has nothing for (chicken breast, cod, egg). The derive REFUSES to guess: a multi-part binding with no `combine` hard-fails.\n\nDOLEMAN, PINNED. Europe PMC serves the CC BY paper as JATS XML, so Table 1 comes out of real table cells rather than PDF coordinates. All 32 rows matched the values that had been hand-typed into convert_sulfur.py exactly \u2014 they were right; pinning makes them provable. That script is retired. The dry-to-fresh conversion (umol/g dry x 32.06 x dry-matter x 0.1) happens at derive time because the dry-matter fraction depends on which catalog food the row was paired with; every shipped row carries the umol/g, the water, the fraction and the arithmetic as a sentence. 32.06 lives in the binding AND independently in the gate, so editing one REDs.\n\nTHE PAIR RULE, CORRECTED MID-ROUND BY LUNETH. My rule dropped any food whose source measured several varieties, which made the app assert "lentils contain no silica" \u2014 a claim every one of that source\'s lentil rows contradicts. His words: "Lentils DO have silica, ALL of them... Claiming lentils have no silica when they do would be the worst possible option." The rule conflated WHICH measurement to attach (genuinely ambiguous) with WHETHER THE FOOD CONTAINS IT (not ambiguous). A blank card reads as "not a source", which is a stronger claim than the ambiguity being avoided, and a false one. Replaced with: take the LOWEST variety and SAY SO \u2014 `conservative` in the curation, carried to the card, which appends "It is the lowest of the varieties that source measured, so it holds whichever kind you eat." A poison case REDs if that flag is dropped.\n\nDESIGN F WIRED. The signed-off record keeps its .lb-* classes and is never edited; the app ships the same design under .fs-*, because a generic two-letter namespace in a sheet that loads over every workspace is how a bare `.rl-` rule once stacked Coverage\'s delete buttons. Chip colours come from the canon\'s own category, read off the data. Short labels are DERIVED from the canon (drop every parenthetical, drop a "/ alternative" tail) rather than 29 hand-typed strings; the first attempt split at the first parenthesis and produced "Vitamin D2", silently dropping half of what that tile covers \u2014 caught before it shipped. render_probe_food_tile.js now holds BOTH the record (190 foods) and the shipped app (120 tiles, clicked through the real control) to the same five clauses.\n\nEFA-FROM-FOODS. The meter matched regimen items by canonical name against the PRODUCT table, so a food matched nothing and walnuts moved the omega tiles by zero. Foods now enter the same meter converted to OIL \u2014 his dose is nine grams of flaxseed oil, and USDA measures a food\'s linoleic and linolenic ACID; summing them is adding pounds to kilograms. The bridge is his own dose read through the oil he named (USDA\'s cold-pressed flaxseed oil, 14.327 + 53.368 g per 100 g), read from the pinned archive at derive time, never typed. 52 of 192 foods now feed it.\n\nNEGATIVE CONTROLS, 11 -> 31. New: edited second-source value; tier upgraded in the row or in the binding; pair missing from the curation; reasoning dropped; `conservative` dropped; joined to a row the human did not pair; unit swap; re-labelled source; deleted binding leaving numbers with no route home; edited COMPONENT of a summed total; hand-edited candidate; re-pointed payload hash; parts summed instead of one winning; multi-part binding with no `combine`; row crediting the wrong publication; conversion swapped; working no longer showing its terms. Clause 7 re-runs each extractor against its sha256-pinned payload and byte-compares \u2014 all six reproduce.\n\nTWO PROBE DEFECTS FOUND AND FIXED. The EFA probe\'s first negative control was meaningless: walking the food list to reach salt added every food first. Rebuilt to add one food the tile ITSELF says carries an EFA chip, with a no-add navigation as the control. And the tile probe was checking the "+N" badge against the meta line\'s "N of 90" \u2014 a second rendering of the same fact; checking a badge against its sibling proves only that two renderings agree. The tile now publishes data-hits.\n\nCLEANED BEFORE COMMIT. Three files removed rather than shipped: a superseded sulfur candidate, a dead demo merge, and mk_sources.py \u2014 which knew nothing about bindings, combine, per-part displays or the boron finding, so re-running it would have silently erased all of them.\n\nVERIFICATION. Board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), 79 unit tests, 31 gate poison cases, 5 render probes, build fresh. NO SEAL TAKEN AND NONE NEEDED: eden/corpus, eden/catalog and eden/products are untouched this round; knowledge_version stays 491, 2601 claims, 7 books.\n\nDEFERRED. Copy review \u2014 none of the foods copy has been through Luneth. Two chip labels differ from the demo\'s mock data because the canon says "Vitamin D2 + D3" and "Folic Acid". Design F\'s remove state is unwired because the ranker never lists an owned food. `strength` still counts nutrient rows only, so education-mode ordering under-ranks the EFA-rich foods.' }];
+absorbed. The foods feature remains uncommitted on purpose, per the standing tree rule.` }, { id: "lg_mt4hzfua_ehu7cg", ts: "2026-08-22T09:52:49.522998-05:00", surface: "foods/second-sources", kind: "round-close", summary: "Seven of the thirteen essentials no food could reach now have real foods behind them, every food number says which published source it came from and how firmly, and the approved tile design is live.", detail: 'Until this round, thirteen of the ninety essentials had no food a person could eat to move them \u2014 the app could only ever say "take a supplement". Seven of those now name real foods, and the numbers on screen say where each came from. Iodine points at iodised salt, lobster and ricotta; molybdenum at tofu, snow peas and pumpkin seeds; sulphur at lobster, venison, turkey and chicken breast; silica at dates, green beans and spinach; chloride at salt, cottage cheese and chard; flavonoids at blackberries and strawberries; biotin at peanuts and hazelnuts. Walnuts, which the app scored at zero for essential fatty acids yesterday, are now worth 220% of Dr. Wallach\'s daily dose.\n\nHover any number on a food card and it names the publication it came from. Where two tables had to be matched up by food NAME rather than by a shared id, the number carries a small "\u2248" and says plainly that a person paired the two by hand \u2014 a close stand-in, not a measurement of that exact item.\n\nThe half of this round worth remembering is what was REFUSED. Garlic \u2014 the food the campaign most wanted, the richest allium in the literature, and one Dr. Wallach names by name \u2014 did not make it: a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his sulphur target. It is a flavouring, not a serving. Oysters at 54-67% sulphur were refused because that source measures them raw and ours is cooked. Lamb chop at 42% was refused because their cut is lean and ours is lean and fat, and fat carries almost no sulphur. Boron was acquired, pinned and extracted, then deliberately not used at all: no source we hold measures boron per 100 g, and the one table that exists is per serving without ever saying what a serving weighs. Twenty-five refusals in total, each written down with its reasoning so nobody re-derives the hope.\n\nTHE TECHNICAL RECORD\n\nSECOND-SOURCE SPINE. eden/foods/sources/sources.json gained `nutrient_bindings` \u2014 the ONE home for how a pinned payload becomes a number: payload -> extractor -> committed candidate -> join kind -> value kind -> unit -> the words the card uses. Three value shapes: `cell` (one cell, byte-exact), `sum` (Sigma of component ROWS \u2014 USDA\'s per-compound flavonoid rows), `sum_fields` (Sigma of named FIELDS \u2014 Doleman splits sulphur in two). All sums in DECIMAL, never float: \'147.63\' + \'19.58\' must be \'167.21\' on every host because that string is what the gate re-derives. sr_legacy_food.csv (the fdc_id->NDB bridge) and USDA water/18:2/18:3/CLA joined the committed extract as `support_nutrients`, deliberately NOT nutrient_map, so an arithmetic input can never be mistaken for a Wallach-targeted essential.\n\nTIER IS DERIVED FROM THE JOIN, NEVER TYPED. An id join may be EXACT; a name join is APPROXIMATE forever. The gate REDs the other combination in EITHER the row or the binding, and REDs a name-joined row whose key or reasoning is not in the curation \u2014 a matcher\'s proposal cannot ship as though a person had accepted it.\n\nTWO SOURCES FOR ONE ESSENTIAL. Bindings declare `combine`: `sum` where parts measure DIFFERENT things (USDA publishes proanthocyanidins separately from the other flavonoid classes, and omitting them understated every total \u2014 2 qualifying foods became 10), or `first` where they measure the SAME thing and only one may win. Sulphur is `first`: AFCD primary because it measures directly per 100 g, Doleman second because its dry-weight value must be married to a moisture from a different sample. They are complementary rather than competing \u2014 AFCD supplies 24 foods, Doleman fills the three it has nothing for (chicken breast, cod, egg). The derive REFUSES to guess: a multi-part binding with no `combine` hard-fails.\n\nDOLEMAN, PINNED. Europe PMC serves the CC BY paper as JATS XML, so Table 1 comes out of real table cells rather than PDF coordinates. All 32 rows matched the values that had been hand-typed into convert_sulfur.py exactly \u2014 they were right; pinning makes them provable. That script is retired. The dry-to-fresh conversion (umol/g dry x 32.06 x dry-matter x 0.1) happens at derive time because the dry-matter fraction depends on which catalog food the row was paired with; every shipped row carries the umol/g, the water, the fraction and the arithmetic as a sentence. 32.06 lives in the binding AND independently in the gate, so editing one REDs.\n\nTHE PAIR RULE, CORRECTED MID-ROUND BY LUNETH. My rule dropped any food whose source measured several varieties, which made the app assert "lentils contain no silica" \u2014 a claim every one of that source\'s lentil rows contradicts. His words: "Lentils DO have silica, ALL of them... Claiming lentils have no silica when they do would be the worst possible option." The rule conflated WHICH measurement to attach (genuinely ambiguous) with WHETHER THE FOOD CONTAINS IT (not ambiguous). A blank card reads as "not a source", which is a stronger claim than the ambiguity being avoided, and a false one. Replaced with: take the LOWEST variety and SAY SO \u2014 `conservative` in the curation, carried to the card, which appends "It is the lowest of the varieties that source measured, so it holds whichever kind you eat." A poison case REDs if that flag is dropped.\n\nDESIGN F WIRED. The signed-off record keeps its .lb-* classes and is never edited; the app ships the same design under .fs-*, because a generic two-letter namespace in a sheet that loads over every workspace is how a bare `.rl-` rule once stacked Coverage\'s delete buttons. Chip colours come from the canon\'s own category, read off the data. Short labels are DERIVED from the canon (drop every parenthetical, drop a "/ alternative" tail) rather than 29 hand-typed strings; the first attempt split at the first parenthesis and produced "Vitamin D2", silently dropping half of what that tile covers \u2014 caught before it shipped. render_probe_food_tile.js now holds BOTH the record (190 foods) and the shipped app (120 tiles, clicked through the real control) to the same five clauses.\n\nEFA-FROM-FOODS. The meter matched regimen items by canonical name against the PRODUCT table, so a food matched nothing and walnuts moved the omega tiles by zero. Foods now enter the same meter converted to OIL \u2014 his dose is nine grams of flaxseed oil, and USDA measures a food\'s linoleic and linolenic ACID; summing them is adding pounds to kilograms. The bridge is his own dose read through the oil he named (USDA\'s cold-pressed flaxseed oil, 14.327 + 53.368 g per 100 g), read from the pinned archive at derive time, never typed. 52 of 192 foods now feed it.\n\nNEGATIVE CONTROLS, 11 -> 31. New: edited second-source value; tier upgraded in the row or in the binding; pair missing from the curation; reasoning dropped; `conservative` dropped; joined to a row the human did not pair; unit swap; re-labelled source; deleted binding leaving numbers with no route home; edited COMPONENT of a summed total; hand-edited candidate; re-pointed payload hash; parts summed instead of one winning; multi-part binding with no `combine`; row crediting the wrong publication; conversion swapped; working no longer showing its terms. Clause 7 re-runs each extractor against its sha256-pinned payload and byte-compares \u2014 all six reproduce.\n\nTWO PROBE DEFECTS FOUND AND FIXED. The EFA probe\'s first negative control was meaningless: walking the food list to reach salt added every food first. Rebuilt to add one food the tile ITSELF says carries an EFA chip, with a no-add navigation as the control. And the tile probe was checking the "+N" badge against the meta line\'s "N of 90" \u2014 a second rendering of the same fact; checking a badge against its sibling proves only that two renderings agree. The tile now publishes data-hits.\n\nCLEANED BEFORE COMMIT. Three files removed rather than shipped: a superseded sulfur candidate, a dead demo merge, and mk_sources.py \u2014 which knew nothing about bindings, combine, per-part displays or the boron finding, so re-running it would have silently erased all of them.\n\nVERIFICATION. Board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), 79 unit tests, 31 gate poison cases, 5 render probes, build fresh. NO SEAL TAKEN AND NONE NEEDED: eden/corpus, eden/catalog and eden/products are untouched this round; knowledge_version stays 491, 2601 claims, 7 books.\n\nDEFERRED. Copy review \u2014 none of the foods copy has been through Luneth. Two chip labels differ from the demo\'s mock data because the canon says "Vitamin D2 + D3" and "Folic Acid". Design F\'s remove state is unwired because the ranker never lists an owned food. `strength` still counts nutrient rows only, so education-mode ordering under-ranks the EFA-rich foods.' }, { id: "lg_mt4k9syv_b4sq3h", ts: "2026-08-22T10:56:52.327146-05:00", surface: "dashboard/style", kind: "round-close", summary: "Seven owner-reported style items shipped across Coverage and the Regimen console \u2014 and the first of them, a servings step throwing the reader to the top, was a SECOND scroller the probe had never measured, so it had been passing over the defect all along.", detail: "Changing how many servings of something you take no longer throws you back to the top of your list, the food cards are readable in dark mode instead of near-black text on charcoal, and you can now page through every food we hold rather than only ever seeing the first three. Plus a pass of type and spacing across both tabs, all seven items from the owner's list and two rounds of refinement on top.\n\nWHAT LANDED, in his order. (1) THE SCROLL JUMP WAS A SECOND SCROLLER. The page scroller (.app-workspace) was already guarded; the Daily Protocol rail is its OWN scroller ([data-rail-list], max-height + overflow-y:auto) rebuilt through replaceChildren, and nothing guarded it \u2014 with more rows than fit, stepping the servings on a row near the bottom snapped the rail back to row one. Measured 572 -> 0 before, 572 -> 572 after, on both tabs. The guard was duplicated verbatim in coverage.ts and regimen.ts, so it moved to the new views/scroll-keep.ts; the Keep-after-delete path rebuilds the rail in place and now routes through it too. (2) DARK MODE ON THE FOOD TILES \u2014 theme.css block (M). Three defects, all of them ones that file had already named once: a cream-tuned category hue used as small text (mineral blue #2b6fb0 reads ~2.1:1 on the tile), a chip whose ink was mixed toward #000, and a + control whose hover was background:--ds-ink \u2014 which IS the light token in dark, so it flashed white. Hues brightened by the (J1) recipe with the MEANING untouched (minerals blue, vitamins orange, fatty acids purple); the chip's ink now mixes toward var(--ds-ink), which is correct in BOTH themes with no override and shifts cream by ~6/255 per channel. (3) TYPE ON THE TILE: chips 8 -> 10px, the lead label 8 -> 10px, the serving line 9 -> 10px, +N follows the chips. (4) PAGING, and the reason there was none: the RANKER stopped at seven foods, not the pager. Each emitted card consumes its essentials from the outstanding set, so the greedy walk runs dry after about seven \u2014 correct for a recommendation, wrong for a pager. state/foods.ts gained a `browse` tail: when the gap-fill walk ends, rank the remainder by nutrient density (the key education mode already uses) and keep going. The recommendation itself is unchanged; only the tail extends. It is a SORT, not another argmax loop, with an id tiebreak so equal-strength foods cannot swap places between paints. (5) 'Based on your goals' -> 'Supplements \u2014 based on your goals'. (6) 'Add or scan a product to light the field' -> 'Add a food or supplement to begin', at 0.7rem \u2014 and it exposed a leading bug my own change made visible: as an inline the <small> took its line box from .rail-empty's 24.8px strut, so two wrapped lines sat 24.8px apart under 11.2px type. Now display:block with its own line-height. (7) THE CONSOLE COLUMN'S RHYTHM. .ck-main sets one 32px gap between every child and the shared .fs-block added 16px above and 24px below on top of it \u2014 48px and 56px where every other seam is 32px. Dropped inside .ck only; Coverage's aside keeps the shared margins. FOOD SOURCES was the column's third section heading still at 0.6rem/400 next to two siblings at 0.7rem/700 (it shipped after that legibility bump); all three now measure 11.2px/700/1.68px. 'Best next moves' gained the foods heading's dotted rule, cut between the eyebrow and its note \u2014 an <i> rather than a pseudo because .recs__head has a second child. \xB7 REFINEMENT ROUND TWO (owner, same session): browsing must reach the WHOLE catalog, so both tabs now page the full 192. Coverage walks all 64 pages with the arrows; the console's pager is capped at 30 squares, and THE CAP IS THE REQUEST (limit = FOOD_LIMIT * FOOD_PAGE_CAP), so the count is still derived from the live pool and never stored: it holds at 30 through 103 foods owned, falls to 29/28/26 at 105/110/115, and returns to 30 when the regimen is cleared \u2014 walked, not reasoned about. Coverage's ADD cap (FOOD_MAX = 12) is unchanged and still enforced; only browsing is uncapped, because a cap on what you may take is not a reason to hide what exists. Thirty squares fit one row where sixty-four wrapped to two. Sizes: page squares 10px, arrows 12px, the 'N / 64' readout 11px, and the arrows lifted 1px via padding-bottom on a place-items:center grid \u2014 which moves the GLYPH without moving the button, its border, or the row's baseline (A/B'd at 8x). \xB7 REFINEMENT ROUND THREE: lead label to 10px with the pills; .fs-note (both tabs, including the exhaustion egg), Coverage's .recs__note and the .ck-recs__go button raised to 0.7rem, weight left at 400 because they are sentences and 700 mono prose reads as shouting. The fourth string he named \u2014 'All 90 essentials are now covered' \u2014 was ALREADY 0.7rem/700; it rides .ck-recs__note, which the console's legibility bump covers. Measured before touching anything, so it was left alone rather than re-set to the value it already had. \xB7 THE GATE WAS BLIND, AND IT WAS BLIND TWICE. render_probe_dose_scroll.js had been PASSING over the rail defect for as long as the rail has existed, because it only ever read .app-workspace \u2014 and it was clicking document.querySelector('[data-dose-up]') unscoped, so with both workspaces in the DOM its 'regimen' pass was clicking Coverage's HIDDEN stepper and watching the Regimen page react. It now scopes every click to the workspace under test, asserts the element is visible first, and measures BOTH scrollers, 10 checks. Its old fixed scrollTop of 500 also sat within 50px of the bottom of the regimen page, so it passed on headroom alone; when item 7 spent 40px of that headroom the probe went red over correct behaviour. It now scrolls to the middle and asserts the honest rule: the reader stays exactly where they were, unless the content no longer reaches that far, in which case they land at the new end. \xB7 PERFORMANCE, MEASURED BEFORE COMMITTING TO THE DESIGN, because he asked whether whole-catalog paging would lag: 1.54 ms to build all 192 recs, 0.19 ms for the old 24, 7-8 ms for a page click end to end (that is the whole innerHTML swap, not the ranking). Nothing is cached and nothing can go stale. \xB7 FILES: dashboard/assets/js/src/views/scroll-keep.ts (new), views/foods-block.ts, views/coverage.ts, views/regimen.ts, state/foods.ts, assets/styles/dashboard.css, theme.css, workspace-coverage.css, workspace-regimen.css, assets/data/view-copy.json, tools/probes/render_probe_dose_scroll.js. \xB7 FIXED AS FOUND: a comment in regimen.ts still claimed the foods half 'is not built yet (it waits on a source-rule ruling)' \u2014 it shipped 2026-08-22. \xB7 VERIFICATION: board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), no new reds; 79 unit tests; render probes dose_scroll (10 checks, both scrollers), food_tile (120 shipped tiles walked, all five design-F clauses hold at 10px chips), foods, efa_foods, food_tier, coverage_add_remove (33 checks); build fresh; eslint at HEAD parity on every touched file (foods 2, foods-block 7, regimen 8, coverage 12 \u2014 all pre-existing, none added). Screenshots in temporary/, signed off by Luneth. The terminal states were REACHED, not planted: 192 foods added for the exhaustion egg, 90/90 covered for the finish line. \xB7 NO SEAL TAKEN AND NONE NEEDED \u2014 eden/corpus, eden/catalog and eden/products are untouched; knowledge_version stays 491. No number, dose, target or claim was touched this round; every denominator on screen is still Wallach's.\n\nDEFERRED / KNOWN: the app now differs DELIBERATELY from the signed-off design-F record (chronicle/decisions/2026-08-21-food-tile-F-approved.html) on type size \u2014 the record is never edited, the owner asked for the larger type, and the probe's five clauses still hold on both. .fs-note is shared, so raising it also raised 'No food moves a remaining gap' and 'That's the last food this tab will suggest' \u2014 same class, same role, and he was told. The 'Add a food or supplement to begin' line still wraps to two lines with 'begin' alone on the second. PRE-EXISTING, NOT TOUCHED: the EXPLORE THE PRODUCTS TAB button is a grid item in .ck-recgrid, so display:inline-block is blockified and it stretches to a full cell instead of hugging its text; raised with him, left alone. Still queued from last round: the foods copy review, and the two chip labels where canon says 'Vitamin D2 + D3' and 'Folic Acid' where the demo said 'Vitamin D' and 'Folate'.", metadata: { chunk: "style-pass-2026-08-22", board: "100/100", items: 7, probes: ["dose_scroll", "food_tile", "foods", "efa_foods", "food_tier", "coverage_add_remove"] } }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -119450,14 +119460,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       cov_ledger_pending: "NO WALLACH NUMBER YET",
       cov_ledger_present: "PRESENT",
       cov_rail_empty: "Nothing here yet.",
-      cov_rail_empty_sub: "Add or scan a product to light the field",
+      cov_rail_empty_sub: "Add a food or supplement to begin",
       cov_rail_eyebrow: "Current regimen",
       cov_rail_full: "FULL REGIMEN \u2192",
       cov_rail_title: "DAILY PROTOCOL",
       cov_rec_tip: "\u201Cadds\u201D = essentials you are still missing that this product would newly cover; \u201C/ $10\u201D = those per $10 spent. The first few are the same starting set for everyone. Click the card to add it.",
       cov_recs_cap_reached: "That is the full starting set from here \u2014 nine products is as far as this tab goes. Browse the rest in the Products tab any time.",
       cov_recs_done_field: "Nothing left to add \u2014 every essential a product could reach is already covered.",
-      cov_recs_eyebrow: "Based on your goals",
+      cov_recs_eyebrow: "Supplements \u2014 based on your goals",
       ep_conditions_lead: "In Wallach's framework this nutrient is part of the protocol for {n} \u2014 open any for its full write-up, or search your own.",
       ep_coverage_of_target: "of Wallach's daily target",
       ep_empty_record: "No sealed Wallach claims for this one yet \u2014 the corpus is still being built out.",
@@ -174731,6 +174741,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   var MAX_CHIP_ROWS = 3;
   var PRIZE_URL = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
   var ADD_PATH = "M12 6v12M6 12h12";
+  var PAGER_PREV = "\u2039";
+  var PAGER_NEXT = "\u203A";
   function ruleWithLabel() {
     const rule = document.createElement("div");
     rule.className = "fs-rule";
@@ -174747,6 +174759,45 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return base + floor;
     }
     return `${base} \u2248 That source lists foods by name rather than by the id our catalog uses, so this food was paired with theirs by hand \u2014 a close stand-in, not a measurement of this exact item.${floor}`;
+  }
+  function pagerButton(label, page, disabled) {
+    const b = document.createElement("button");
+    b.className = "fs-pager__b";
+    b.type = "button";
+    b.textContent = label;
+    b.dataset["foodPage"] = String(page);
+    b.disabled = disabled;
+    return b;
+  }
+  function pagerNode(p) {
+    if (p.pages < 2) {
+      return null;
+    }
+    const nav = document.createElement("nav");
+    nav.className = "fs-pager";
+    nav.setAttribute("aria-label", "More foods");
+    if (p.kind === "arrows") {
+      const prev = pagerButton(PAGER_PREV, p.page - 1, p.page <= 0);
+      prev.classList.add("fs-pager__b--arrow");
+      prev.setAttribute("aria-label", "Previous foods");
+      const at = document.createElement("span");
+      at.className = "fs-pager__at";
+      at.textContent = `${p.page + 1} / ${p.pages}`;
+      const next = pagerButton(PAGER_NEXT, p.page + 1, p.page >= p.pages - 1);
+      next.classList.add("fs-pager__b--arrow");
+      next.setAttribute("aria-label", "More foods");
+      nav.append(prev, at, next);
+      return nav;
+    }
+    for (let i = 0; i < p.pages; i += 1) {
+      const b = pagerButton(String(i + 1), i, false);
+      b.setAttribute("aria-label", `Foods, page ${i + 1} of ${p.pages}`);
+      if (i === p.page) {
+        b.setAttribute("aria-current", "page");
+      }
+      nav.appendChild(b);
+    }
+    return nav;
   }
   function rowCount(host) {
     const tops = /* @__PURE__ */ new Set();
@@ -174916,6 +174967,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       }
     }
     host.appendChild(grid);
+    if (opts.pager !== void 0) {
+      const nav = pagerNode(opts.pager);
+      if (nav !== null) {
+        host.appendChild(nav);
+      }
+    }
     const fit = () => {
       for (const p of pending) {
         fitChips(p.host, p.chips);
@@ -174925,6 +174982,24 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       void document.fonts.ready.then(fit);
     } else {
       fit();
+    }
+  }
+
+  // assets/js/src/views/scroll-keep.ts
+  function withScrollPreserved(container, paint) {
+    const page = container.closest(".app-workspace");
+    const pageTop = page === null ? 0 : page.scrollTop;
+    const railBefore = container.querySelector("[data-rail-list]");
+    const railTop = railBefore === null ? 0 : railBefore.scrollTop;
+    paint();
+    if (page !== null && pageTop > 0 && page.scrollTop !== pageTop) {
+      page.scrollTop = pageTop;
+    }
+    if (railTop > 0) {
+      const rail = container.querySelector("[data-rail-list]");
+      if (rail !== null && rail.scrollTop !== railTop) {
+        rail.scrollTop = railTop;
+      }
     }
   }
 
@@ -175364,15 +175439,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     </div>
   `;
   }
-  function withScrollPreserved(container, paint) {
-    const scroller = container.closest(".app-workspace");
-    const keep = scroller !== null ? scroller.scrollTop : 0;
-    paint();
-    if (scroller !== null && keep > 0 && scroller.scrollTop !== keep) {
-      scroller.scrollTop = keep;
-    }
-  }
   function mount(container) {
+    let foodPage = 0;
     const render = () => {
       withScrollPreserved(container, paint);
     };
@@ -175420,16 +175488,20 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       if (foodsHost !== null) {
         const ownedFoods = items.map((i) => i.label["food_id"]).filter((v) => typeof v === "string");
         const foodBudget = Math.max(0, FOOD_MAX - ownedFoods.length);
-        const foodRecs = foodBudget === 0 ? [] : rankFoodsForCoverage({
+        const foodPool = foodBudget === 0 ? [] : rankFoodsForCoverage({
           want: wantedSlugs(snapshot2, goals),
           owned: ownedFoods,
           goals: goals.map((g) => ({ id: g.id, members: g.members })),
-          limit: Math.min(FOOD_PAGE, foodBudget),
-          greedy: true
+          limit: foodCatalogSize(),
+          greedy: true,
+          browse: true
         });
-        buildFoodsBlock(foodsHost, foodRecs, {
+        const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_PAGE));
+        foodPage = Math.min(foodPage, foodPages - 1);
+        buildFoodsBlock(foodsHost, foodPool.slice(foodPage * FOOD_PAGE, (foodPage + 1) * FOOD_PAGE), {
           ownedCount: ownedFoods.length,
-          capReached: foodBudget === 0
+          capReached: foodBudget === 0,
+          pager: { page: foodPage, pages: foodPages, kind: "arrows" }
         });
       }
     };
@@ -175470,6 +175542,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const foodCard = t.closest("[data-food-add]");
       if (foodCard !== null) {
         addCatalogFood(foodCard.dataset["foodAdd"] ?? "");
+        return;
+      }
+      const foodPager = t.closest("[data-food-page]");
+      if (foodPager !== null) {
+        const n = Number.parseInt(foodPager.dataset["foodPage"] ?? "", 10);
+        if (Number.isFinite(n) && n >= 0) {
+          foodPage = n;
+          render();
+        }
         return;
       }
       if (t.closest("[data-full-regimen]") !== null) {
@@ -218183,6 +218264,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   var LAYOUT4 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   var REC_LIMIT = 3;
   var FOOD_LIMIT = 3;
+  var FOOD_PAGE_CAP = 30;
   var SLOT_CAP = 4;
   var CATEGORY_ROWS = [
     { label: "Minerals", bucket: "other", hue: "#2b6fb0" },
@@ -218815,16 +218897,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     wrap.appendChild(btns);
     return wrap;
   }
-  function withScrollPreserved2(container, paint) {
-    const scroller = container.closest(".app-workspace");
-    const keep = scroller !== null ? scroller.scrollTop : 0;
-    paint();
-    if (scroller !== null && keep > 0 && scroller.scrollTop !== keep) {
-      scroller.scrollTop = keep;
-    }
-  }
   function mount4(container) {
     let animated = false;
+    let foodPage = 0;
     let toastTimer = null;
     let recycleOpen = false;
     let recycleReplaceKey = null;
@@ -219116,7 +219191,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       }
     };
     const render = () => {
-      withScrollPreserved2(container, paint);
+      withScrollPreserved(container, paint);
     };
     const paint = () => {
       const goals = activeGoals2();
@@ -219131,7 +219206,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
             ${renderGoals(goals)}
             <div class="fs-block" data-foodsblock></div>
             <div class="recs ck-recs" data-rise="4">
-              <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><span class="ck-recs__note">Products, ranked by your goals</span></div>
+              <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><i class="ck-recs__rule" aria-hidden="true"></i><span class="ck-recs__note">Products, ranked by your goals</span></div>
               <div class="ck-recgrid" data-recgrid></div>
             </div>
           </div>
@@ -219160,17 +219235,21 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const foodsHost = container.querySelector("[data-foodsblock]");
       if (foodsHost !== null) {
         const ownedFoods = items.map((i) => i.label["food_id"]).filter((v) => typeof v === "string");
-        const foodRecs = rankFoodsForCoverage({
+        const foodPool = rankFoodsForCoverage({
           want: wantedSlugs2(goals),
           owned: ownedFoods,
           goals: goals.map((g) => ({ id: g.id, members: g.members })),
-          limit: FOOD_LIMIT,
+          limit: FOOD_LIMIT * FOOD_PAGE_CAP,
           greedy: true,
-          education: allCovered
-        });
-        buildFoodsBlock(foodsHost, foodRecs, {
           education: allCovered,
-          ownedCount: ownedFoods.length
+          browse: true
+        });
+        const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_LIMIT));
+        foodPage = Math.min(foodPage, foodPages - 1);
+        buildFoodsBlock(foodsHost, foodPool.slice(foodPage * FOOD_LIMIT, (foodPage + 1) * FOOD_LIMIT), {
+          education: allCovered,
+          ownedCount: ownedFoods.length,
+          pager: { page: foodPage, pages: foodPages, kind: "squares" }
         });
       }
       if (recycleOpen) {
@@ -219421,6 +219500,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         addCatalogFood(foodAdd.dataset["foodAdd"] ?? "");
         return;
       }
+      const foodPager = target.closest("[data-food-page]");
+      if (foodPager !== null) {
+        const n = Number.parseInt(foodPager.dataset["foodPage"] ?? "", 10);
+        if (Number.isFinite(n) && n >= 0) {
+          foodPage = n;
+          render();
+        }
+        return;
+      }
       const taAdd = target.closest("[data-ta-add]");
       if (taAdd !== null) {
         const name = taAdd.dataset["taAdd"];
@@ -219473,7 +219561,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       if (target.closest("[data-row-keep]") !== null) {
         const list = container.querySelector("[data-rail-list]");
         if (list !== null) {
-          buildRailRows2(list, loadEffectiveRegimen());
+          withScrollPreserved(container, () => {
+            buildRailRows2(list, loadEffectiveRegimen());
+          });
         }
         return;
       }

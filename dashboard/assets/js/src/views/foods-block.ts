@@ -52,6 +52,10 @@ const PRIZE_URL = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 /** Design F's add control: the app's own 28px shell, differing only by its SVG path. */
 const ADD_PATH = 'M12 6v12M6 12h12';
 
+/** The pager's two arrows. Single glyphs, so they inherit the mono face like the squares. */
+const PAGER_PREV = '‹';
+const PAGER_NEXT = '›';
+
 export interface FoodsBlockOptions {
   /**
    * True when the products list has closed the field and the foods list is continuing for
@@ -63,6 +67,20 @@ export interface FoodsBlockOptions {
   ownedCount?: number;
   /** Coverage caps its foods; the Regimen console deliberately does not. */
   capReached?: boolean;
+  /**
+   * The pager under the grid, if this caller offers one.
+   *
+   * ★ THE CALLER OWNS THE PAGE, NOT THIS BLOCK. The views already re-render from the
+   * regimen:changed cascade, so a page index held here would be a second source of truth
+   * that the next repaint silently discarded. The buttons carry `data-food-page` and the
+   * view's own delegated click handler moves the page — the same contract `data-food-add`
+   * already uses.
+   *
+   * `kind` picks the shape, not the behaviour: `arrows` on Coverage, whose list is short
+   * and bounded by what may still be added, `squares` in the Regimen console, where the
+   * reader can jump straight to a page (owner's choice, 2026-08-22).
+   */
+  pager?: { page: number; pages: number; kind: 'arrows' | 'squares' };
 }
 
 function ruleWithLabel(): HTMLElement {
@@ -102,6 +120,56 @@ function glossFor(hit: FoodHit): string {
   return `${base} ≈ That source lists foods by name rather than by the id our catalog uses, `
     + 'so this food was paired with theirs by hand — a close stand-in, not a measurement of '
     + `this exact item.${floor}`;
+}
+
+function pagerButton(label: string, page: number, disabled: boolean): HTMLButtonElement {
+  const b = document.createElement('button');
+  b.className = 'fs-pager__b';
+  b.type = 'button';
+  b.textContent = label;
+  b.dataset['foodPage'] = String(page);
+  b.disabled = disabled;
+  return b;
+}
+
+/**
+ * The pager, or null when there is nothing to page to.
+ *
+ * ★ NEVER PAINTED OVER A SINGLE PAGE. A pager is a claim that more exists; rendering one
+ * for a one-page list is that claim made falsely, and the foods list is often one page —
+ * in gap-fill mode the greedy ranker exhausts after a handful of foods by design.
+ */
+function pagerNode(p: NonNullable<FoodsBlockOptions['pager']>): HTMLElement | null {
+  if (p.pages < 2) {
+    return null;
+  }
+  const nav = document.createElement('nav');
+  nav.className = 'fs-pager';
+  nav.setAttribute('aria-label', 'More foods');
+  if (p.kind === 'arrows') {
+    const prev = pagerButton(PAGER_PREV, p.page - 1, p.page <= 0);
+    prev.classList.add('fs-pager__b--arrow');
+    prev.setAttribute('aria-label', 'Previous foods');
+    // The readout is what makes the arrows honest: without it a disabled arrow is the only
+    // signal that the list has ended, and the reader cannot tell how far it went.
+    const at = document.createElement('span');
+    at.className = 'fs-pager__at';
+    at.textContent = `${p.page + 1} / ${p.pages}`;
+    const next = pagerButton(PAGER_NEXT, p.page + 1, p.page >= p.pages - 1);
+    next.classList.add('fs-pager__b--arrow');
+    next.setAttribute('aria-label', 'More foods');
+    nav.append(prev, at, next);
+    return nav;
+  }
+  for (let i = 0; i < p.pages; i += 1) {
+    const b = pagerButton(String(i + 1), i, false);
+    b.setAttribute('aria-label', `Foods, page ${i + 1} of ${p.pages}`);
+    if (i === p.page) {
+      b.setAttribute('aria-current', 'page');
+    }
+    nav.appendChild(b);
+  }
+  return nav;
 }
 
 /** How many distinct rows the chips actually occupy, measured from their laid-out tops. */
@@ -330,6 +398,13 @@ export function buildFoodsBlock(
     }
   }
   host.appendChild(grid);
+
+  if (opts.pager !== undefined) {
+    const nav = pagerNode(opts.pager);
+    if (nav !== null) {
+      host.appendChild(nav);
+    }
+  }
 
   // ★ MEASURE AFTER THE DISPLAY FACE LOADS, never before — see the header. `fonts.ready`
   // resolves immediately once the face is in, so this costs nothing on later paints.

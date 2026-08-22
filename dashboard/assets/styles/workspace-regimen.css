@@ -334,8 +334,30 @@
 /* ── GOALS — reuse .goalstrip / .gchip, stripped of the sticky-bar chrome ── */
 .ck .goalstrip { padding: 0; background: transparent; box-shadow: none; }
 
+/* ── FOOD SOURCES, in the console column ──────────────────────────────────
+   .ck-main already sets this column's rhythm: one 32px gap between every child. The
+   shared .fs-block adds 16px above and 24px below on top of that, so the two seams
+   around the foods measured 48px and 56px where every other seam in the column is 32px.
+   Drop the block's own margin HERE and let the column's gap be the only rhythm. Coverage
+   stacks the same block inside an aside with no such gap, so it keeps the shared margins. */
+.ck .fs-block { margin: 0; }
+/* The dotted rule's label is this column's THIRD section heading, after "Your Goals" and
+   "Best next moves", and it shipped after the legibility bump below — so it alone was
+   still reading at 0.6rem/400 next to two siblings at 0.7rem/700. Same three properties,
+   nothing else: the rule, its colour and its spacing are untouched. */
+.ck .fs-rule__label {
+  font-size: var(--ds-text-mini);
+  font-weight: 700;
+  letter-spacing: var(--ds-track-wider);
+}
+
 /* ── RECS — reuse .recs / .rec, laid out as a responsive card grid ──────── */
 .ck-recs__note { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .04em; margin-left: auto; }
+/* The products heading gets the foods heading's dotted rule, cut in between the eyebrow
+   and its note, so the two section heads in this column read as one pattern rather than
+   two. Same border and same token as .fs-rule::after; it is an <i> rather than a pseudo
+   because .recs__head has a second child and a pseudo-element would land after it. */
+.ck-recs__rule { flex: 1 1 auto; height: 0; border-top: 1px dotted var(--ds-rule-bright); }
 .ck-recgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 8px; }
 /* Best-next-moves cards carry REAL (long) product names; the shared .rec floats its
    + at top:50%, which collides with wrapped text. Scoped column layout: name up top,
