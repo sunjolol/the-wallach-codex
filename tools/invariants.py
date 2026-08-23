@@ -6186,12 +6186,32 @@ def _food_composition_impl(source_p, curation_p, artifact_p, extract_dir, archiv
                 # ★ TIER IS DERIVED FROM THE JOIN. This is the clause that keeps the label
                 #   from quietly becoming a lie: a name-joined pair is a human decision and
                 #   is APPROXIMATE forever, however good the match looks on the page.
+                #
+                #   ⚠ TWO DIFFERENT QUESTIONS, AND CONFLATING THEM MISREADS EVERY MIXED
+                #   BINDING. The BINDING's tier answers "could this binding ever yield an
+                #   approximate number", so it reads the union of its parts' join kinds. The
+                #   ROW's tier answers "how was THIS number joined", and only the row's own
+                #   `provenance.join` can say. They agree for a uniform binding, and every
+                #   binding was uniform until iodine gained a second part on 2026-08-22 --
+                #   at which point this clause demanded APPROXIMATE of ten rows the derive
+                #   had correctly stamped EXACT, because they came off the NDB part.
+                #
+                #   REFINED, NOT LOOSENED (R9), and precisely: the union test never let a
+                #   NAME-joined row claim EXACT -- "name" in kinds forced APPROXIMATE on
+                #   everything -- so nothing that was caught before is waved through now.
+                #   What changes is both directions of precision. It stops a FALSE RED on
+                #   every id-joined row in a mixed binding, which is the failure that
+                #   surfaced here. And it NEWLY catches the mirror image the union test
+                #   tolerated in silence: an id-joined row UNDER-claiming APPROXIMATE. An
+                #   under-claim is still a false label, and a label that can be false in
+                #   either direction is the thing this clause exists to prevent.
                 kinds = {q["join_kind"] for q in b["parts"]}
-                expected_tier = "APPROXIMATE" if "name" in kinds else "EXACT"
-                if prov.get("tier") != expected_tier or b["tier"] != expected_tier:
-                    viol.append(f"{name}/{slug}: joined by {sorted(kinds)} so the tier must be "
-                                f"{expected_tier}, but the row says {prov.get('tier')!r} and "
-                                f"the binding says {b['tier']!r} -- only an id join may be EXACT")
+                binding_tier = "APPROXIMATE" if "name" in kinds else "EXACT"
+                if b["tier"] != binding_tier:
+                    viol.append(f"{name}/{slug}: the binding's parts join by {sorted(kinds)} "
+                                f"so its declared tier must be {binding_tier}, but "
+                                f"sources.json says {b['tier']!r} -- a binding with any name "
+                                f"part may not declare itself EXACT")
                     continue
 
                 join = str(prov.get("join") or "")
@@ -6199,6 +6219,13 @@ def _food_composition_impl(source_p, curation_p, artifact_p, extract_dir, archiv
                 if jkind not in kinds or jkey == "":
                     viol.append(f"{name}/{slug}: provenance join {join!r} does not name one of "
                                 f"this binding's join kinds {sorted(kinds)}")
+                    continue
+
+                row_tier = "APPROXIMATE" if jkind == "name" else "EXACT"
+                if prov.get("tier") != row_tier:
+                    viol.append(f"{name}/{slug}: this row was joined by {jkind!r} so its tier "
+                                f"must be {row_tier}, but it says {prov.get('tier')!r} -- only "
+                                f"an id join may be EXACT")
                     continue
 
                 # ── (C6b) an APPROXIMATE pair is a HUMAN decision, and the human's key and

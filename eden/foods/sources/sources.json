@@ -9,9 +9,10 @@
   "_tier_rule": "TIER IS DERIVED FROM THE JOIN, never typed per row. join_kind 'ndb' is an ID join -- byte-exact, no human judgment, EXACT. join_kind 'name' is a curated pair a human accepted one at a time, and is APPROXIMATE FOREVER, however good the match looks. The gate REDs an EXACT tier sitting on a name join, which is the only way this label could quietly become a lie.",
   "_value_kind": "'cell' -- the value is ONE cell of the source, carried through as the source's own unparsed string and byte-compared by the gate. 'sum' -- the source publishes the value as component rows and the total is Sigma of them, summed in DECIMAL (never float) so the same string comes out on every host. A summed total is ALSO checked against the total the extractor independently computed and stored, so a transcription slip has two chances to show up.",
   "iodine": {
-   "source_id": "iodine-usda-ods-r4",
-   "tier": "EXACT",
+   "source_id": "iodine-usda-ods-r4+afcd-au-r3",
+   "tier": "APPROXIMATE",
    "unit": "UG",
+   "_two_parts_why": "USDA/FDA/ODS measures iodine in 478 US foods and joins to our catalog byte-exactly by NDB -- but it reaches only 10 of our 192, so 182 foods carried NO iodine number at all. AFCD measures iodine in every one of its 1,588 foods (1,084 above zero) and joins by name, so it can speak for foods ODS never listed. The parts are NOT summed: both measure the same element in the same food, and adding them would report a food as twice as iodine-rich as either source says.",
    "parts": [
     {
      "payload": "iodine-usda-ods/IODINE_DATABASE_RELEASE_4_PER_100G.pdf",
@@ -25,9 +26,22 @@
      "reader": "pdf",
      "source_id": "iodine-usda-ods-r4",
      "display": "the USDA/FDA/ODS iodine database"
+    },
+    {
+     "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
+     "candidate": "afcd-au-r3-gap-nutrients.json",
+     "extractor": "eden/tools/foods/extract_afcd.py",
+     "join_kind": "name",
+     "join_field": "food",
+     "value_kind": "cell",
+     "value_field": "iodine",
+     "unit": "UG",
+     "source_id": "afcd-au-r3",
+     "display": "the Australian Food Composition Database"
     }
    ],
-   "display": "the USDA/FDA/ODS iodine database"
+   "combine": "first",
+   "_precedence_why": "ODS FIRST, and the order carries more weight here than in any other binding. It is an ID join -- byte-exact, no human judgment -- and it is a UNITED STATES table describing a United States food supply, which is what this catalog's servings and portion weights are. AFCD is SECOND and therefore GAP-FILL ONLY: with `combine: first` it can never displace a number ODS already publishes, so adding it changed no existing value. See `_iodine_second_source_finding` for why that restriction is not caution but necessity."
   },
   "flavonoids": {
    "source_id": "flavonoid-usda-r33+proanthocyanidin-r2",
@@ -401,6 +415,7 @@
    "path": "eden/foods/sources/boron-nih-ods/Boron-HealthProfessional.html"
   }
  },
+ "_iodine_second_source_finding": "★ IODINE: A SECOND SOURCE THAT FILLS GAPS AND MUST NOT OVERWRITE (2026-08-22). Iodine was the worst-covered essential with a source at all: USDA/FDA/ODS reached 10 of 192 catalog foods and the other 182 showed nothing. AFCD was added as a second part, gap-fill only. ⚠ THE TWO SOURCES DISAGREE SUBSTANTIALLY WHEREVER BOTH MEASURE THE SAME FOOD, and this was measured before binding, not after: Lobster 185 vs 34.0 µg/100 g (5.4x), Ricotta 66 vs 19.0 (3.5x), Cottage cheese 46 vs 15.3 (3.0x), Egg 61 vs 47.3 (1.3x), Salt 5213 vs 4400 (1.2x). That is NOT a transcription error and chasing it as one would waste a session. It is geography: dietary iodine tracks soil iodine, national iodised-salt policy, and whether dairies clean with iodophor sanitisers -- and Australia and the United States differ on all three. Iodine is therefore the nutrient where two national food tables are LEAST interchangeable, which is exactly why the combine is `first` with the US table ahead: AFCD speaks only where ODS is silent, and not one existing number moved. WHAT IT BOUGHT, measured: 23 foods gained an iodine number they did not have, taking coverage from 10 to 33 of 192. Only ONE of them clears Wallach's 7% qualify floor -- Whole milk, at 24.3% of his 230 µg/day, which also makes it STRONG. The other 22 sit below the bar and are shown as measured-and-small rather than as nothing, per the curation's standing rule that a blank reads as 'not a source' and is the stronger, falser claim. NO NEW NAME PAIRS WERE INVENTED FOR THIS. Every one of the 23 rides a curated afcd-au-r3 pair that a human had already accepted for chloride, biotin, molybdenum or sulphur, with its reasoning already recorded in foods-catalog-curation.json. Widening iodine further means curating NEW pairs one at a time, which is a separate decision and has not been taken.",
  "_boron_finding": "★ BORON: ACQUIRED, MEASURED, AND DELIBERATELY NOT BOUND (2026-08-22). It was the last essential with no source at all, and it now has one that has been read rather than assumed. Three facts decide it. (1) NO SOURCE WE HOLD MEASURES BORON PER 100 g: USDA does not measure it at all — the ODS fact sheet says so itself, 'FoodData Central does not list the boron content of foods' — FDA TDS has never measured it across all 49 analytes 1991-2020, and AFCD does not carry it. (2) THE ODS TABLE IS PER SERVING WITH NO SERVING WEIGHT: 'Apples, 1 medium — 0.66 mg', and it never says what a medium apple weighs. It is not USDA-derived (its references are Rainey 1999 and Meacham & Hunt 1998), so USDA's gram weight for a household measure is NOT this table's, and supplying one would invent a number the source never stated. (3) THE ONE CLEAN JOIN CARRIES ALMOST NOTHING: six rows share an identical household measure with a catalog food, and only 'Apples, 1 medium' reaches 7% of Wallach's 9.2 mg — at 7.2%, and only if a medium apple means the same size in both tables. Shipping one food at 7.2% on an unstated serving weight would put a number on screen that the gate can check for transcription and nothing can check for meaning. Boron therefore stays in `essentials_without_composition`, and that entry is now a measured conclusion instead of an errand nobody ran. ⚠ TO REOPEN IT you need a source that publishes boron PER 100 g — Rainey 1999 and Meacham & Hunt 1998 are the two papers behind this table and neither is held; a European or Australian table that measures boron directly would be the other way.",
  "_authorship": "★ HAND-AUTHORED. A generator (eden/tools/foods/mk_sources.py) used to write this file from a hardcoded table, and it was DELETED on 2026-08-22: it knew nothing about nutrient_bindings, combine, per-part source_id/display or the boron finding, so re-running it would have silently erased all of them. A generator that would clobber the file it generates is worse than no generator. Edit this file directly."
 }

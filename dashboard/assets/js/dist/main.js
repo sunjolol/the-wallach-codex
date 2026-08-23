@@ -17322,8 +17322,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           tier: "EXACT"
         },
         iodine: {
-          source_id: "iodine-usda-ods-r4",
-          tier: "EXACT"
+          source_id: "iodine-usda-ods-r4+afcd-au-r3",
+          tier: "APPROXIMATE"
         },
         molybdenum: {
           source_id: "afcd-au-r3",
@@ -21584,6 +21584,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 0.226,
             per_100g: "46",
             provenance: {
+              combine: "first",
               join: "ndb:01012",
               source_id: "iodine-usda-ods-r4",
               tier: "EXACT",
@@ -22226,6 +22227,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 0.1326,
             per_100g: "61",
             provenance: {
+              combine: "first",
               join: "ndb:01129",
               source_id: "iodine-usda-ods-r4",
               tier: "EXACT",
@@ -26257,6 +26259,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 1.1663,
             per_100g: "185",
             provenance: {
+              combine: "first",
               join: "ndb:15148",
               source_id: "iodine-usda-ods-r4",
               tier: "EXACT",
@@ -26497,7 +26500,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Nuts, macadamia nuts, dry roasted, with salt added"
       },
       {
-        breadth: 5,
+        breadth: 6,
         category: "Fish & shellfish",
         efa: {
           acid_mg: 181.05,
@@ -26528,6 +26531,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             strong: true,
             unit: "mg",
             usda_unit: "MG"
+          },
+          {
+            amount: 32.045,
+            fraction: 0.1393,
+            per_100g: "37.700000000000003",
+            provenance: {
+              combine: "first",
+              join: "name:Mackerel, grilled, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both cooked mackerel flesh with nothing added."
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
           },
           {
             amount: 442.85,
@@ -26596,7 +26616,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "89703",
         portion_label: "3 oz",
-        strength: 1.212,
+        strength: 1.3513,
         usda_description: "Fish, mackerel, Pacific and jack, mixed species, cooked, dry heat"
       },
       {
@@ -26799,7 +26819,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Mung beans, mature seeds, sprouted, cooked, boiled, drained, with salt"
       },
       {
-        breadth: 4,
+        breadth: 5,
         category: "Fish & shellfish",
         efa: {
           acid_mg: 64.6,
@@ -26815,6 +26835,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "mussels-cooked",
         name: "Mussels, cooked",
         nutrients: [
+          {
+            amount: 227.63,
+            fraction: 0.9897,
+            per_100g: "267.8",
+            provenance: {
+              combine: "first",
+              join: "name:Mussel, blue, steamed",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both cooked mussel flesh; AFCD's only mussel row and its state matches ours."
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
           {
             amount: 5.712,
             fraction: 0.1242,
@@ -26882,7 +26919,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "93960",
         portion_label: "3 oz",
-        strength: 1.2155,
+        strength: 2.2052,
         usda_description: "Mollusks, mussel, blue, cooked, moist heat"
       },
       {
@@ -27660,6 +27697,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 0.4028,
             per_100g: "109",
             provenance: {
+              combine: "first",
               join: "ndb:15169",
               source_id: "iodine-usda-ods-r4",
               tier: "EXACT",
@@ -27818,6 +27856,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 0.1011,
             per_100g: "82",
             provenance: {
+              combine: "first",
               join: "ndb:01032",
               source_id: "iodine-usda-ods-r4",
               tier: "EXACT",
@@ -29178,6 +29217,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 0.0779,
             per_100g: "64",
             provenance: {
+              combine: "first",
               join: "ndb:01035",
               source_id: "iodine-usda-ods-r4",
               tier: "EXACT",
@@ -29789,6 +29829,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 0.3558,
             per_100g: "66",
             provenance: {
+              combine: "first",
               join: "ndb:01036",
               source_id: "iodine-usda-ods-r4",
               tier: "EXACT",
@@ -30079,6 +30120,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 1.3599,
             per_100g: "5213",
             provenance: {
+              combine: "first",
               join: "ndb:02047",
               source_id: "iodine-usda-ods-r4",
               tier: "EXACT",
@@ -30112,7 +30154,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Salt, table"
       },
       {
-        breadth: 6,
+        breadth: 9,
         category: "Fish & shellfish",
         efa: {
           acid_mg: 318.62,
@@ -30177,6 +30219,39 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             usda_unit: "MG"
           },
           {
+            amount: 46.28,
+            fraction: 0.2012,
+            per_100g: "52",
+            provenance: {
+              combine: "first",
+              join: "name:Sardine, Australian, whole, fried, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both whole sardine, cooked, eaten with the bones. AFCD publishes no canned sardine; of its two rows this is the cooked one AND the lower, so the state matches and the number is the conservative of the pair."
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
+          },
+          {
+            amount: 3.293,
+            fraction: 0.0867,
+            per_100g: "3.7",
+            provenance: {
+              join: "name:Sardine, Australian, whole, fried, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both whole sardine, cooked, eaten with the bones. AFCD publishes no canned sardine; of its two rows this is the cooked one AND the lower, so the state matches and the number is the conservative of the pair."
+            },
+            slug: "molybdenum",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
             amount: 36.134,
             fraction: 0.1166,
             nutrient_id: "1103",
@@ -30209,6 +30284,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             usda_unit: "MG"
           },
           {
+            amount: 252.76,
+            fraction: 0.5055,
+            per_100g: "284",
+            provenance: {
+              combine: "first",
+              join: "name:Sardine, Australian, whole, fried, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both whole sardine, cooked, eaten with the bones. AFCD publishes no canned sardine; of its two rows this is the cooked one AND the lower, so the state matches and the number is the conservative of the pair."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
             amount: 4.272,
             fraction: 0.0854,
             nutrient_id: "1114",
@@ -30227,7 +30319,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "95728",
         portion_label: "1 cup",
-        strength: 1.2106,
+        strength: 2.004,
         usda_description: "Fish, sardine, Pacific, canned in tomato sauce, drained solids with bone"
       },
       {
@@ -30270,7 +30362,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Onions, spring or scallions (includes tops and bulb), raw"
       },
       {
-        breadth: 2,
+        breadth: 4,
         category: "Fish & shellfish",
         efa: {
           acid_mg: 17,
@@ -30287,6 +30379,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         name: "Scallops, cooked",
         nutrients: [
           {
+            amount: 265.2,
+            fraction: 0.1061,
+            per_100g: "312",
+            provenance: {
+              join: "name:Scallop, fried, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD has two scallop rows, raw and fried-with-no-fat-added. Ours says cooked, so the cooked row is the state match; frying without added fat changes no mineral."
+            },
+            slug: "chloride",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
+          {
             amount: 94.095,
             fraction: 0.9409,
             nutrient_id: "1180",
@@ -30301,6 +30409,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             strong: true,
             unit: "mg",
             usda_unit: "MG"
+          },
+          {
+            amount: 151.385,
+            fraction: 0.6582,
+            per_100g: "178.1",
+            provenance: {
+              combine: "first",
+              join: "name:Scallop, fried, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "AFCD has two scallop rows, raw and fried-with-no-fat-added. Ours says cooked, so the cooked row is the state match; frying without added fat changes no mineral."
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
           },
           {
             amount: 566.95,
@@ -30321,7 +30446,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "81878",
         portion_label: "3 oz",
-        strength: 1.1127,
+        strength: 1.877,
         usda_description: "Mollusks, scallop, (bay and sea), cooked, steamed"
       },
       {
@@ -30532,7 +30657,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Mushrooms, shiitake, cooked, with salt"
       },
       {
-        breadth: 1,
+        breadth: 3,
         category: "Fish & shellfish",
         efa: {
           acid_mg: 16.15,
@@ -30564,11 +30689,45 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             strong: false,
             unit: "mg",
             usda_unit: "MG"
+          },
+          {
+            amount: 26.265,
+            fraction: 0.1142,
+            per_100g: "30.9",
+            provenance: {
+              combine: "first",
+              join: "name:Prawn, flesh, cooked from raw, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Prawn is the Australian name for shrimp. Generic to generic and cooked to cooked: AFCD's eight other prawn rows are named varieties (endeavour, school, tiger, banana), and this is the one that answers our unqualified row."
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
+          },
+          {
+            amount: 267.75,
+            fraction: 0.5355,
+            per_100g: "315",
+            provenance: {
+              combine: "first",
+              join: "name:Prawn, flesh, cooked from raw, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Prawn is the Australian name for shrimp. Generic to generic and cooked to cooked: AFCD's eight other prawn rows are named varieties (endeavour, school, tiger, banana), and this is the one that answers our unqualified row."
+            },
+            slug: "sulfur",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
           }
         ],
         portion_id: "95807",
         portion_label: "3 oz",
-        strength: 0.1039,
+        strength: 0.7536,
         usda_description: "Crustaceans, shrimp, cooked"
       },
       {
@@ -32162,6 +32321,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 0.1668,
             per_100g: "137",
             provenance: {
+              combine: "first",
               join: "ndb:01040",
               source_id: "iodine-usda-ods-r4",
               tier: "EXACT",
@@ -33864,7 +34024,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Mushrooms, white, cooked, boiled, drained, with salt"
       },
       {
-        breadth: 5,
+        breadth: 6,
         category: "Dairy & eggs",
         efa: {
           acid_mg: 331.84,
@@ -33911,6 +34071,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             source_unit: "MG",
             strong: false,
             unit: "mg"
+          },
+          {
+            amount: 55.876,
+            fraction: 0.2429,
+            per_100g: "22.9",
+            provenance: {
+              combine: "first",
+              join: "name:Milk, cow, fluid, regular fat (~3.5%)",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Our USDA row is producer milk at 3.7% fat; AFCD's regular-fat cow milk is ~3.5%. Same product, same state, essentially the same fat."
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: true,
+            unit: "mcg"
           },
           {
             amount: 7.076,
@@ -33964,7 +34141,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "88318",
         portion_label: "1 cup",
-        strength: 0.6877,
+        strength: 0.9306,
         usda_description: "Milk, producer, fluid, 3.7% milkfat"
       },
       {
@@ -34021,6 +34198,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 0.3409,
             per_100g: "32",
             provenance: {
+              combine: "first",
               join: "ndb:01116",
               source_id: "iodine-usda-ods-r4",
               tier: "EXACT",
@@ -34125,7 +34303,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Yam, cooked, boiled, drained, or baked, with salt"
       },
       {
-        breadth: 4,
+        breadth: 5,
         category: "Fish & shellfish",
         efa: {
           acid_mg: 21.25,
@@ -34156,6 +34334,23 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             strong: true,
             unit: "mg",
             usda_unit: "MG"
+          },
+          {
+            amount: 30.94,
+            fraction: 0.1345,
+            per_100g: "36.4",
+            provenance: {
+              combine: "first",
+              join: "name:Tuna, yellowfin, fillet, baked, no added fat",
+              source_id: "afcd-au-r3",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both cooked yellowfin fillet with nothing added; the species is named on both sides."
+            },
+            slug: "iodine",
+            source_unit: "UG",
+            strong: false,
+            unit: "mcg"
           },
           {
             amount: 447.95,
@@ -34208,7 +34403,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "89724",
         portion_label: "3 oz",
-        strength: 1.2335,
+        strength: 1.368,
         usda_description: "Fish, tuna, yellowfin, fresh, cooked, dry heat"
       }
     ]
@@ -40918,7 +41113,29 @@ ALSO CLOSED, BY BEING ALREADY DONE: the handoff's "Add a food or supplement to b
 
 VERIFIED: board 102/102, node tools/build.mjs exit 0, render_probe_foods / slots / coverage_add_remove all PASS, screenshot at temporary/recs-empty-state.png.
 
-STILL OPEN in the small-polish bundle: Design F's x is unwired, and wiring it is a BEHAVIOUR change - asked, not assumed. And dist-web/ is rebuilt but still not uploaded, so the live site is behind by this and by the font cut.` }];
+STILL OPEN in the small-polish bundle: Design F's x is unwired, and wiring it is a BEHAVIOUR change - asked, not assumed. And dist-web/ is rebuilt but still not uploaded, so the live site is behind by this and by the font cut.` }, { id: "lg_mt57y452_troowb", ts: "2026-08-22T21:59:37.718070-05:00", surface: "foods/iodine-second-source", kind: "milestone", summary: "Iodine was the worst-covered of Wallach's 90 essentials that had a food source at all - ten foods of 192 carried a number and 182 carried nothing. It now has seventeen, and a serving of mussels turns out to deliver 99% of his daily amount.", detail: `Two separate pieces of work. First, the Australian Food Composition Database now joins iodine as a SECOND source alongside the USDA/FDA/ODS one. Second, seven new food pairs were curated by hand, each one a food whose Australian counterpart matches in species and in state, plus seven refusals recorded with their reasons.
+
+THE ORDER IS LOAD-BEARING, and it was chosen before a single number shipped. ODS goes first: it joins by NDB id, which is byte-exact and involves no human judgment, and it is a UNITED STATES table describing the food supply this catalog's servings belong to. With combine: "first" the Australian data can only speak where ODS is silent. The proof is in the diff: +11 nutrient rows, 0 removed, and not one existing value moved.
+
+THE FINDING THAT MATTERS MORE THAN THE FEATURE, and it was measured BEFORE binding rather than discovered afterwards: THE TWO SOURCES DISAGREE SUBSTANTIALLY WHEREVER BOTH MEASURE THE SAME FOOD. Lobster 185 vs 34.0 ug/100 g (5.4x), Ricotta 66 vs 19.0 (3.5x), Cottage cheese 46 vs 15.3 (3.0x), Egg 61 vs 47.3 (1.3x), Salt 5213 vs 4400 (1.2x). That is not a transcription error, and chasing it as one would burn a session. It is geography: dietary iodine tracks soil iodine, national iodised-salt policy, and whether dairies clean with iodophor sanitisers, and Australia and the United States differ on all three. Iodine is therefore the nutrient where two national food tables are LEAST interchangeable, which is exactly why the precedence is what it is. It is written into sources.json as _iodine_second_source_finding so the next person meets it before re-deriving it.
+
+THE SEVEN PAIRS, each same species and same state, each carrying its reasoning in the curation: Mussels to "Mussel, blue, steamed" (99.0%, strong); Scallops to "Scallop, fried, no added fat" (65.8%, strong); Sardines to "Sardine, Australian, whole, fried, no added fat" (20.1%, strong - the cooked row and also the lower of the two); Mackerel to "Mackerel, grilled, no added fat" (13.9%); Yellowfin tuna to "Tuna, yellowfin, fillet, baked, no added fat" (13.5%); Shrimp to "Prawn, flesh, cooked from raw, no added fat" (11.4%, prawn being the Australian name and the generic cooked row answering our unqualified one). Whole milk (24.3%, strong) needed no new pair at all - it rides one a human had already accepted for another nutrient.
+
+SEVEN REFUSALS, because a refusal is a decision like any other and must be as visible as an acceptance. Cod: AFCD's only cod rows are SMOKED, and smoking adds salt, which is the single biggest lever on the one nutrient being chased. King crab: AFCD's one crab row names no species, and taking a generic for a named one is a variety guess rather than a state difference. Octopus: the state-matched boiled row lands at 6.2%, under the floor, while its raw row clears at 7.4% - taking that would be choosing the number over the state. Egg yolk: raw yolk is 5.9%, under the floor; the hard-boiled row clears but ours is raw. Duck egg and goat milk: AFCD carries duck MEAT and goat MEAT, no egg and no milk. Rainbow trout: the species matches exactly, but AFCD measures its iodine at 0.0, so the pair would ship nothing for the nutrient it was opened for.
+
+A PAIR IS NOT AN IODINE PAIR, and this was checked before accepting any of them: matches.afcd-au-r3 binds a food to that row for EVERY nutrient AFCD is bound to. Each of the seven was read across all five first, which is why the diff also carries sulphur for sardines and shrimp, molybdenum for sardines and chloride for scallops. Breadth rose on seven cards; shrimp went from 1 to 3 and scallops from 2 to 4, both nearly empty before.
+
+THE GATE WENT RED, AND IT WAS THE GATE THAT WAS WRONG - the fourth CLAUDE.md gotcha, live. food_composition_traces_to_source derived a row's tier from the UNION of its binding's join kinds, so the moment one binding held both an id part and a name part it demanded APPROXIMATE of ten rows the derive had correctly stamped EXACT off the id join. Every binding had been uniform until now, so the union equalled the winner's kind and the defect was invisible. REFINED, NOT LOOSENED, and precisely: the union test never let a name-joined row claim EXACT, so nothing that was caught before is waved through now. What changed is precision in both directions - it stops the false red on id-joined rows in a mixed binding, and it newly catches the mirror image the union tolerated in silence, an id-joined row UNDER-claiming APPROXIMATE. An under-claim is still a false label. The binding-level check is unchanged.
+
+MY OWN COMMENT WAS WRONG FIRST, AND THE TEST CAUGHT IT. The justification I wrote beside the fix claimed the old clause let an EXACT-on-name row pass, which is false - "name" in kinds forced APPROXIMATE on everything. Corrected in the same patch rather than left standing as a plausible-sounding lie next to a correct fix.
+
+The negative test gained case 11c: an id-joined second-source row under-claiming APPROXIMATE must red, which is the hole the refinement closes. It asserts loudly if no id-joined second-source row exists, rather than skipping silently. Case 11b's expected message was updated to match the reworded binding-level violation.
+
+TWO SCRIPT ERRORS WORTH KEEPING. The curation writer anchored each food's insertion on a closing brace WITH a comma - and the last food in the array closes without one, so it ran past the end into the next top-level key. It failed loudly and wrote nothing, because it validates everything before writing anything; a script that wrote as it went would have left the file half-edited. The second: rebuilding the refusals block from json.dumps with indent=1 matched zero characters against the file's own two-space style. Reconstruct a block in the FILE'S style, or anchor on its span and rebuild explicitly.
+
+VERIFIED: board 102/102 with food_composition_traces_to_source re-walking all 779 values - 105 from second sources, 85 APPROXIMATE, every one re-extracted byte-identically from its sha256-pinned payload. Its negative test passes every case. node tools/build.mjs exit 0. render_probe_foods, food_tile, food_catalog, food_efa_rank and food_pager all PASS. The diff against HEAD was computed explicitly rather than assumed: 768 to 779 rows, +11 and -0. Screenshot at temporary/iodine-cards.png shows the Mussels card leading "99% IODINE".
+
+WHAT IS STILL NOT COVERED: 175 of 192 foods carry no iodine number. AFCD measures it for all 1,588 of its foods, 1,084 of them above zero, so the ceiling is not the data - it is the name pairs. Every further food needs one human decision, and the ones with an obvious counterpart have now been taken.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

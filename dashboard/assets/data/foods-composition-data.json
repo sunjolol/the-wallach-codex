@@ -192,8 +192,8 @@
     "tier": "EXACT"
    },
    "iodine": {
-    "source_id": "iodine-usda-ods-r4",
-    "tier": "EXACT"
+    "source_id": "iodine-usda-ods-r4+afcd-au-r3",
+    "tier": "APPROXIMATE"
    },
    "molybdenum": {
     "source_id": "afcd-au-r3",
@@ -4454,6 +4454,7 @@
      "fraction": 0.226,
      "per_100g": "46",
      "provenance": {
+      "combine": "first",
       "join": "ndb:01012",
       "source_id": "iodine-usda-ods-r4",
       "tier": "EXACT",
@@ -5096,6 +5097,7 @@
      "fraction": 0.1326,
      "per_100g": "61",
      "provenance": {
+      "combine": "first",
       "join": "ndb:01129",
       "source_id": "iodine-usda-ods-r4",
       "tier": "EXACT",
@@ -9127,6 +9129,7 @@
      "fraction": 1.1663,
      "per_100g": "185",
      "provenance": {
+      "combine": "first",
       "join": "ndb:15148",
       "source_id": "iodine-usda-ods-r4",
       "tier": "EXACT",
@@ -9367,7 +9370,7 @@
    "usda_description": "Nuts, macadamia nuts, dry roasted, with salt added"
   },
   {
-   "breadth": 5,
+   "breadth": 6,
    "category": "Fish & shellfish",
    "efa": {
     "acid_mg": 181.05,
@@ -9398,6 +9401,23 @@
      "strong": true,
      "unit": "mg",
      "usda_unit": "MG"
+    },
+    {
+     "amount": 32.045,
+     "fraction": 0.1393,
+     "per_100g": "37.700000000000003",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Mackerel, grilled, no added fat",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Both cooked mackerel flesh with nothing added."
+     },
+     "slug": "iodine",
+     "source_unit": "UG",
+     "strong": false,
+     "unit": "mcg"
     },
     {
      "amount": 442.85,
@@ -9466,7 +9486,7 @@
    ],
    "portion_id": "89703",
    "portion_label": "3 oz",
-   "strength": 1.212,
+   "strength": 1.3513,
    "usda_description": "Fish, mackerel, Pacific and jack, mixed species, cooked, dry heat"
   },
   {
@@ -9669,7 +9689,7 @@
    "usda_description": "Mung beans, mature seeds, sprouted, cooked, boiled, drained, with salt"
   },
   {
-   "breadth": 4,
+   "breadth": 5,
    "category": "Fish & shellfish",
    "efa": {
     "acid_mg": 64.6,
@@ -9685,6 +9705,23 @@
    "id": "mussels-cooked",
    "name": "Mussels, cooked",
    "nutrients": [
+    {
+     "amount": 227.63,
+     "fraction": 0.9897,
+     "per_100g": "267.8",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Mussel, blue, steamed",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Both cooked mussel flesh; AFCD's only mussel row and its state matches ours."
+     },
+     "slug": "iodine",
+     "source_unit": "UG",
+     "strong": true,
+     "unit": "mcg"
+    },
     {
      "amount": 5.712,
      "fraction": 0.1242,
@@ -9752,7 +9789,7 @@
    ],
    "portion_id": "93960",
    "portion_label": "3 oz",
-   "strength": 1.2155,
+   "strength": 2.2052,
    "usda_description": "Mollusks, mussel, blue, cooked, moist heat"
   },
   {
@@ -10530,6 +10567,7 @@
      "fraction": 0.4028,
      "per_100g": "109",
      "provenance": {
+      "combine": "first",
       "join": "ndb:15169",
       "source_id": "iodine-usda-ods-r4",
       "tier": "EXACT",
@@ -10688,6 +10726,7 @@
      "fraction": 0.1011,
      "per_100g": "82",
      "provenance": {
+      "combine": "first",
       "join": "ndb:01032",
       "source_id": "iodine-usda-ods-r4",
       "tier": "EXACT",
@@ -12048,6 +12087,7 @@
      "fraction": 0.0779,
      "per_100g": "64",
      "provenance": {
+      "combine": "first",
       "join": "ndb:01035",
       "source_id": "iodine-usda-ods-r4",
       "tier": "EXACT",
@@ -12659,6 +12699,7 @@
      "fraction": 0.3558,
      "per_100g": "66",
      "provenance": {
+      "combine": "first",
       "join": "ndb:01036",
       "source_id": "iodine-usda-ods-r4",
       "tier": "EXACT",
@@ -12949,6 +12990,7 @@
      "fraction": 1.3599,
      "per_100g": "5213",
      "provenance": {
+      "combine": "first",
       "join": "ndb:02047",
       "source_id": "iodine-usda-ods-r4",
       "tier": "EXACT",
@@ -12982,7 +13024,7 @@
    "usda_description": "Salt, table"
   },
   {
-   "breadth": 6,
+   "breadth": 9,
    "category": "Fish & shellfish",
    "efa": {
     "acid_mg": 318.62,
@@ -13047,6 +13089,39 @@
      "usda_unit": "MG"
     },
     {
+     "amount": 46.28,
+     "fraction": 0.2012,
+     "per_100g": "52",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Sardine, Australian, whole, fried, no added fat",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Both whole sardine, cooked, eaten with the bones. AFCD publishes no canned sardine; of its two rows this is the cooked one AND the lower, so the state matches and the number is the conservative of the pair."
+     },
+     "slug": "iodine",
+     "source_unit": "UG",
+     "strong": true,
+     "unit": "mcg"
+    },
+    {
+     "amount": 3.293,
+     "fraction": 0.0867,
+     "per_100g": "3.7",
+     "provenance": {
+      "join": "name:Sardine, Australian, whole, fried, no added fat",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Both whole sardine, cooked, eaten with the bones. AFCD publishes no canned sardine; of its two rows this is the cooked one AND the lower, so the state matches and the number is the conservative of the pair."
+     },
+     "slug": "molybdenum",
+     "source_unit": "UG",
+     "strong": false,
+     "unit": "mcg"
+    },
+    {
      "amount": 36.134,
      "fraction": 0.1166,
      "nutrient_id": "1103",
@@ -13079,6 +13154,23 @@
      "usda_unit": "MG"
     },
     {
+     "amount": 252.76,
+     "fraction": 0.5055,
+     "per_100g": "284",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Sardine, Australian, whole, fried, no added fat",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Both whole sardine, cooked, eaten with the bones. AFCD publishes no canned sardine; of its two rows this is the cooked one AND the lower, so the state matches and the number is the conservative of the pair."
+     },
+     "slug": "sulfur",
+     "source_unit": "MG",
+     "strong": true,
+     "unit": "mg"
+    },
+    {
      "amount": 4.272,
      "fraction": 0.0854,
      "nutrient_id": "1114",
@@ -13097,7 +13189,7 @@
    ],
    "portion_id": "95728",
    "portion_label": "1 cup",
-   "strength": 1.2106,
+   "strength": 2.004,
    "usda_description": "Fish, sardine, Pacific, canned in tomato sauce, drained solids with bone"
   },
   {
@@ -13140,7 +13232,7 @@
    "usda_description": "Onions, spring or scallions (includes tops and bulb), raw"
   },
   {
-   "breadth": 2,
+   "breadth": 4,
    "category": "Fish & shellfish",
    "efa": {
     "acid_mg": 17.0,
@@ -13157,6 +13249,22 @@
    "name": "Scallops, cooked",
    "nutrients": [
     {
+     "amount": 265.2,
+     "fraction": 0.1061,
+     "per_100g": "312",
+     "provenance": {
+      "join": "name:Scallop, fried, no added fat",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "AFCD has two scallop rows, raw and fried-with-no-fat-added. Ours says cooked, so the cooked row is the state match; frying without added fat changes no mineral."
+     },
+     "slug": "chloride",
+     "source_unit": "MG",
+     "strong": false,
+     "unit": "mg"
+    },
+    {
      "amount": 94.095,
      "fraction": 0.9409,
      "nutrient_id": "1180",
@@ -13171,6 +13279,23 @@
      "strong": true,
      "unit": "mg",
      "usda_unit": "MG"
+    },
+    {
+     "amount": 151.385,
+     "fraction": 0.6582,
+     "per_100g": "178.1",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Scallop, fried, no added fat",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "AFCD has two scallop rows, raw and fried-with-no-fat-added. Ours says cooked, so the cooked row is the state match; frying without added fat changes no mineral."
+     },
+     "slug": "iodine",
+     "source_unit": "UG",
+     "strong": true,
+     "unit": "mcg"
     },
     {
      "amount": 566.95,
@@ -13191,7 +13316,7 @@
    ],
    "portion_id": "81878",
    "portion_label": "3 oz",
-   "strength": 1.1127,
+   "strength": 1.877,
    "usda_description": "Mollusks, scallop, (bay and sea), cooked, steamed"
   },
   {
@@ -13402,7 +13527,7 @@
    "usda_description": "Mushrooms, shiitake, cooked, with salt"
   },
   {
-   "breadth": 1,
+   "breadth": 3,
    "category": "Fish & shellfish",
    "efa": {
     "acid_mg": 16.15,
@@ -13434,11 +13559,45 @@
      "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
+    },
+    {
+     "amount": 26.265,
+     "fraction": 0.1142,
+     "per_100g": "30.9",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Prawn, flesh, cooked from raw, no added fat",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Prawn is the Australian name for shrimp. Generic to generic and cooked to cooked: AFCD's eight other prawn rows are named varieties (endeavour, school, tiger, banana), and this is the one that answers our unqualified row."
+     },
+     "slug": "iodine",
+     "source_unit": "UG",
+     "strong": false,
+     "unit": "mcg"
+    },
+    {
+     "amount": 267.75,
+     "fraction": 0.5355,
+     "per_100g": "315",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Prawn, flesh, cooked from raw, no added fat",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Prawn is the Australian name for shrimp. Generic to generic and cooked to cooked: AFCD's eight other prawn rows are named varieties (endeavour, school, tiger, banana), and this is the one that answers our unqualified row."
+     },
+     "slug": "sulfur",
+     "source_unit": "MG",
+     "strong": true,
+     "unit": "mg"
     }
    ],
    "portion_id": "95807",
    "portion_label": "3 oz",
-   "strength": 0.1039,
+   "strength": 0.7536,
    "usda_description": "Crustaceans, shrimp, cooked"
   },
   {
@@ -15032,6 +15191,7 @@
      "fraction": 0.1668,
      "per_100g": "137",
      "provenance": {
+      "combine": "first",
       "join": "ndb:01040",
       "source_id": "iodine-usda-ods-r4",
       "tier": "EXACT",
@@ -16734,7 +16894,7 @@
    "usda_description": "Mushrooms, white, cooked, boiled, drained, with salt"
   },
   {
-   "breadth": 5,
+   "breadth": 6,
    "category": "Dairy & eggs",
    "efa": {
     "acid_mg": 331.84,
@@ -16781,6 +16941,23 @@
      "source_unit": "MG",
      "strong": false,
      "unit": "mg"
+    },
+    {
+     "amount": 55.876,
+     "fraction": 0.2429,
+     "per_100g": "22.9",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Milk, cow, fluid, regular fat (~3.5%)",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Our USDA row is producer milk at 3.7% fat; AFCD's regular-fat cow milk is ~3.5%. Same product, same state, essentially the same fat."
+     },
+     "slug": "iodine",
+     "source_unit": "UG",
+     "strong": true,
+     "unit": "mcg"
     },
     {
      "amount": 7.076,
@@ -16834,7 +17011,7 @@
    ],
    "portion_id": "88318",
    "portion_label": "1 cup",
-   "strength": 0.6877,
+   "strength": 0.9306,
    "usda_description": "Milk, producer, fluid, 3.7% milkfat"
   },
   {
@@ -16891,6 +17068,7 @@
      "fraction": 0.3409,
      "per_100g": "32",
      "provenance": {
+      "combine": "first",
       "join": "ndb:01116",
       "source_id": "iodine-usda-ods-r4",
       "tier": "EXACT",
@@ -16995,7 +17173,7 @@
    "usda_description": "Yam, cooked, boiled, drained, or baked, with salt"
   },
   {
-   "breadth": 4,
+   "breadth": 5,
    "category": "Fish & shellfish",
    "efa": {
     "acid_mg": 21.25,
@@ -17026,6 +17204,23 @@
      "strong": true,
      "unit": "mg",
      "usda_unit": "MG"
+    },
+    {
+     "amount": 30.94,
+     "fraction": 0.1345,
+     "per_100g": "36.4",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Tuna, yellowfin, fillet, baked, no added fat",
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Both cooked yellowfin fillet with nothing added; the species is named on both sides."
+     },
+     "slug": "iodine",
+     "source_unit": "UG",
+     "strong": false,
+     "unit": "mcg"
     },
     {
      "amount": 447.95,
@@ -17078,7 +17273,7 @@
    ],
    "portion_id": "89724",
    "portion_label": "3 oz",
-   "strength": 1.2335,
+   "strength": 1.368,
    "usda_description": "Fish, tuna, yellowfin, fresh, cooked, dry heat"
   }
  ]

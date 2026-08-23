@@ -228,6 +228,31 @@ def main():
             if not slug.startswith("_") and b.get("tier") == "APPROXIMATE":
                 b["tier"] = "EXACT"
         expect_red("binding declares EXACT on a name join", run(tmp, second=s),
+                   "may not declare itself EXACT")
+
+        # 11c ★ THE MIRROR IMAGE, and the case a MIXED binding made possible. Since iodine
+        #      gained an AFCD part on 2026-08-22, one binding joins some foods by NDB id and
+        #      others by name, so a row's tier can no longer be read off its binding — only
+        #      off its own `provenance.join`. An id-joined row that UNDER-claims APPROXIMATE
+        #      is as false a label as a name-joined row claiming EXACT, and the union test
+        #      that preceded this one tolerated it in silence.
+        a = copy.deepcopy(art0)
+        exact_second = None
+        for f in a["foods"]:
+            for r in f["nutrients"]:
+                p = r["provenance"]
+                if (p.get("source_id") != "usda-sr-legacy"
+                        and p.get("tier") == "EXACT"
+                        and str(p.get("join", "")).startswith("ndb:")):
+                    exact_second = r
+                    break
+            if exact_second:
+                break
+        assert exact_second is not None, (
+            "no id-joined second-source row to test with -- if every second source now joins "
+            "by name this case is moot and should be removed, not silently skipped")
+        exact_second["provenance"]["tier"] = "APPROXIMATE"
+        expect_red("id-joined row under-claims APPROXIMATE", run(tmp, artifact=a),
                    "only an id join may be EXACT")
 
         # 12 ★ A PAIR NOBODY ACCEPTED. A name matcher proposes; a human decides. An

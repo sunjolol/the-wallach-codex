@@ -1058,7 +1058,13 @@
    "name": "Mackerel, cooked",
    "category": "Fish & shellfish",
    "fdc_id": "171994",
-   "portion_id": "89703"
+   "portion_id": "89703",
+   "matches": {
+    "afcd-au-r3": {
+     "key": "Mackerel, grilled, no added fat",
+     "why": "Both cooked mackerel flesh with nothing added."
+    }
+   }
   },
   {
    "id": "mango",
@@ -1099,7 +1105,13 @@
    "name": "Mussels, cooked",
    "category": "Fish & shellfish",
    "fdc_id": "174217",
-   "portion_id": "93960"
+   "portion_id": "93960",
+   "matches": {
+    "afcd-au-r3": {
+     "key": "Mussel, blue, steamed",
+     "why": "Both cooked mussel flesh; AFCD's only mussel row and its state matches ours."
+    }
+   }
   },
   {
    "id": "mustard-greens-cooked",
@@ -1522,7 +1534,13 @@
    "name": "Sardines, canned with bones",
    "category": "Fish & shellfish",
    "fdc_id": "175140",
-   "portion_id": "95728"
+   "portion_id": "95728",
+   "matches": {
+    "afcd-au-r3": {
+     "key": "Sardine, Australian, whole, fried, no added fat",
+     "why": "Both whole sardine, cooked, eaten with the bones. AFCD publishes no canned sardine; of its two rows this is the cooked one AND the lower, so the state matches and the number is the conservative of the pair."
+    }
+   }
   },
   {
    "id": "scallions-raw",
@@ -1542,7 +1560,13 @@
    "name": "Scallops, cooked",
    "category": "Fish & shellfish",
    "fdc_id": "167742",
-   "portion_id": "81878"
+   "portion_id": "81878",
+   "matches": {
+    "afcd-au-r3": {
+     "key": "Scallop, fried, no added fat",
+     "why": "AFCD has two scallop rows, raw and fried-with-no-fat-added. Ours says cooked, so the cooked row is the state match; frying without added fat changes no mineral."
+    }
+   }
   },
   {
    "id": "sesame-seeds-roasted",
@@ -1569,7 +1593,13 @@
    "name": "Shrimp, cooked",
    "category": "Fish & shellfish",
    "fdc_id": "175180",
-   "portion_id": "95807"
+   "portion_id": "95807",
+   "matches": {
+    "afcd-au-r3": {
+     "key": "Prawn, flesh, cooked from raw, no added fat",
+     "why": "Prawn is the Australian name for shrimp. Generic to generic and cooked to cooked: AFCD's eight other prawn rows are named varieties (endeavour, school, tiger, banana), and this is the one that answers our unqualified row."
+    }
+   }
   },
   {
    "id": "sirloin-steak",
@@ -1781,7 +1811,13 @@
    "name": "Tilapia, cooked",
    "category": "Fish & shellfish",
    "fdc_id": "175177",
-   "portion_id": "95804"
+   "portion_id": "95804",
+   "matches": {
+    "afcd-au-r3": {
+     "key": "Tilapia, fillet, baked, no added fat",
+     "why": "Both cooked tilapia fillet with nothing added."
+    }
+   }
   },
   {
    "id": "tofu-firm",
@@ -1970,7 +2006,13 @@
    "name": "Yellowfin tuna, cooked",
    "category": "Fish & shellfish",
    "fdc_id": "172006",
-   "portion_id": "89724"
+   "portion_id": "89724",
+   "matches": {
+    "afcd-au-r3": {
+     "key": "Tuna, yellowfin, fillet, baked, no added fat",
+     "why": "Both cooked yellowfin fillet with nothing added; the species is named on both sides."
+    }
+   }
   }
  ],
  "_matches_purpose": "★ STILL NUMBERS-FREE. `matches` binds a food to a row in a SECOND composition source by the source's own food NAME, because those sources publish no id our catalog shares. A name join is a human decision, so each one carries the reasoning that accepted it and every value it produces is APPROXIMATE tier FOREVER — the gate REDs an EXACT tier sitting on a name join. THE PAIR RULE: same food, same state. Where the source measures SEVERAL VARIETIES of what our generic row calls one food — red and green lentils, smooth and fibrous mango, three cabbages — take the LOWEST and set `conservative`, which makes the card say so. ⛔ DO NOT DROP THE FOOD. That is what this file did for one day, and Luneth overruled it on 2026-08-22: a blank card does not read as 'we could not choose', it reads as 'not a source', which is a stronger claim than the one being avoided and a false one — every Powell lentil row measures silicon in lentils. The lowest variety is true whichever kind is on the plate, can only understate, and asserts no absence that is not there. A pair is recorded even when it lands under the threshold and shows nothing, because a pair that exists only when it helps is a biased pair.",
@@ -1979,15 +2021,22 @@
   "canned-salmon-with-bones": "AFCD has pink canned salmon (chloride, no sulphur) and red canned salmon (sulphur, no chloride); ours is chum. Which row to take is not a variety question the lowest-value rule can answer.",
   "chicken-thigh-roasted": "AFCD's BAKED thigh — the row that matches our state — measures none of these four. Its raw and fried rows do, and are not borrowed.",
   "coconut-raw": "AFCD's coconut is grated and desiccated; ours is raw meat.",
+  "cod": "AFCD's only cod rows are SMOKED. Smoking is a different state and adds salt, which is the single biggest lever on a food's iodine — the one nutrient being chased.",
+  "duck-egg": "AFCD carries duck MEAT and no duck egg at all.",
+  "egg-yolk": "AFCD's raw yolk is 80 ug/100 g and lands at 5.9% on our 17 g serving, under the floor. Its hard-boiled yolk clears it at 9.6%, but ours is a raw yolk.",
   "eggplant-cooked": "AFCD has raw and roasted; ours is boiled.",
+  "goat-milk": "AFCD carries goat MEAT and goat CHEESE, and no goat milk.",
   "greek-yogurt": "AFCD has natural regular-fat yoghurt; Greek yoghurt is strained and is a different product.",
   "kale-cooked": "AFCD has kale RAW (64%) and FRIED (91%); ours is boiled. Boiling adds water, so either would read high on a boiled kale.",
+  "king-crab-cooked": "AFCD publishes one crab row, unnamed as to species. Ours names king crab. Taking a generic crab for a named one is a variety guess, not a state difference the conservative rule can absorb.",
   "lamb-chop": "AFCD's loin chop is LEAN (42% sulphur); our USDA row is lean AND fat. Fat carries almost no sulphur, so the lean figure reads high on a fatty chop.",
   "leg-of-lamb": "Same trim mismatch: AFCD's lean leg roast (22%) against our lean-and-fat row. AFCD's untrimmed leg roast measures no sulphur at all.",
   "macadamia-nuts-roasted": "AFCD's macadamia is raw; ours is roasted.",
+  "octopus-cooked": "AFCD's boiled octopus — the row that matches our state — is 16.7 ug/100 g and lands at 6.2% of Wallach's iodine, under the 7% floor, so it would ship nothing. Its RAW row would clear the bar at 7.4%, and taking that one would be choosing the number over the state.",
   "oysters-cooked": "AFCD's oyster rows are all RAW (sulphur 54-67%); ours is moist-heat cooked. The richest sulphur food in reach, and refused for it.",
   "parmesan-grated": "AFCD's dried finely-grated parmesan — the row that matches ours — measures none of these four. Its FRESH parmesan is a different product.",
   "potato-baked": "AFCD's baked potatoes are PEELED; ours is flesh and skin.",
+  "rainbow-trout-cooked": "AFCD names rainbow trout, so the species matches — but it measures its iodine at 0.0 ug/100 g, so the pair would ship nothing for the nutrient it was opened for. Left unpaired rather than bound for a value that is not there; reopen it if another nutrient needs it.",
   "sweet-potato-baked": "AFCD has raw and baked but peeled; ours is baked in skin."
  },
  "_doleman_refused": {
