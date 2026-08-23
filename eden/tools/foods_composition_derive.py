@@ -132,9 +132,21 @@ TARGETS_PATH = DATA / "essentials-targets-data.json"
 OUT_PATH = DATA / "foods-composition-data.json"
 
 sys.path.insert(0, str(ROOT / "tools"))
+sys.path.insert(0, str(ROOT / "eden" / "tools"))
 import safe_write  # noqa: E402
+# Wallach's ONE amount for the essential-fatty-acid GROUP, located in the sealed corpus by
+# its STATED FACT rather than by a hard-coded id. IMPORTED rather than re-implemented so a
+# single function owns "which claim is the EFA dose" (R1) -- and imported from the CLAIM
+# FINDER rather than read out of efa-coverage-data.json, so this generator never depends on
+# a sibling artifact having been written first. Reading the artifact would make MANIFEST
+# ORDER load-bearing with nothing anywhere saying so.
+from efa_coverage_derive import _collective_claim as _efa_dose_claim  # noqa: E402
 
 # A serving must deliver at least this fraction of Wallach's daily target to be credited.
+# ★ THE EFA GROUP IS HELD TO THIS TOO. It is not a nutrient row -- omega-3 and omega-6 carry
+# no individual Wallach dose, so they share one meter -- but it is measured against a Wallach
+# number exactly as a row is, it is drawn beside the rows on the same card, and it is summed
+# into `strength` beside them. A second entry rule for it would be a split the reader sees.
 QUALIFY_FRACTION = 0.07
 # At or above this fraction the UI calls the food a STRONG source.
 STRONG_FRACTION = 0.20
@@ -595,8 +607,55 @@ def _efa_reference(comp_all: dict, support: dict) -> dict:
     }
 
 
-def _efa_of(row: dict, support: dict, grams: float, fraction: float) -> dict:
-    """One food's EFA delivery, expressed in Wallach's own currency: grams of flaxseed oil."""
+def _efa_goal() -> dict:
+    """Wallach's ONE amount for the EFA group, in the mg of flaxseed oil this file counts.
+
+    9 g -> 9000 mg is a UNIT CHANGE of a figure he wrote, never a new amount, and it ships
+    with the id of the claim it came from (section 00.A). The group is scored on ONE meter
+    because omega-3 and omega-6 carry no individual Wallach dose; splitting his nine grams
+    between them would fan a collective dose into two he never stated, which is exactly what
+    the collective_doses_not_fanned gate exists to stop.
+
+    A missing or unconvertible dose is a HARD FAIL, never a default -- a silent 0 here would
+    make every food's EFA fraction infinite and a silent fallback would be an invented target.
+    """
+    claim = _efa_dose_claim()
+    dz = claim.get("dose") or {}
+    amount, unit = dz.get("amount"), dz.get("unit")
+    if not isinstance(amount, (int, float)) or amount <= 0 or unit not in WALLACH_UNIT_TO_MG:
+        raise FoodsCompositionError(
+            f"the sealed EFA dose claim {claim.get('id')!r} reads amount={amount!r} "
+            f"unit={unit!r}, which this generator cannot convert to mg. A missing denominator "
+            f"is a missing denominator, never a default one."
+        )
+    return {
+        "maintenance_mg": round(float(amount) * WALLACH_UNIT_TO_MG[unit], 4),
+        "unit": "mg",
+        "collective_group": dz.get("collective_group"),
+        "source_claim_id": claim["id"],
+        "wallach_dose_amount": amount,
+        "wallach_dose_unit": unit,
+        "_why": (
+            "The denominator the EFA group is ranked and drawn against. Read from the SEALED "
+            "claim, not from efa-coverage-data.json, so a food and a product are measured "
+            "against one Wallach number without this artifact depending on that one existing."
+        ),
+    }
+
+
+def _efa_of(row: dict, support: dict, grams: float, oil_fraction: float,
+            target_mg: float) -> dict:
+    """One food's EFA delivery, expressed in Wallach's own currency: grams of flaxseed oil.
+
+    `fraction` and `qualifies` MIRROR A NUTRIENT ROW exactly -- same kind of denominator (a
+    Wallach number), same 7% entry bar, tested at full precision before rounding, so the group
+    enters the card and the ranking key under the one rule every row already obeys.
+
+    ★ `fraction` IS ROUNDED AND `qualifies` IS NOT. A row is filtered on its exact fraction and
+    stored rounded to 4 dp; this does the same, so a food sitting just under the bar can store
+    0.07 and still read `qualifies: false`. That is the row rule reproduced faithfully, not a
+    defect -- and it is why nothing may re-derive this bar from the stored number.
+    """
     def cell(key):
         v = row.get(support[key]["nutrient_id"])
         return None if v in (None, "") else v
@@ -608,9 +667,14 @@ def _efa_of(row: dict, support: dict, grams: float, fraction: float) -> dict:
     if acid_g <= 0:
         return {}
     acid_mg = acid_g * 1000.0 * (grams / 100.0)
+    oil_mg = acid_mg / oil_fraction
+    fraction = oil_mg / target_mg
     out = {
         "acid_mg": round(acid_mg, 4),
-        "oil_equivalent_mg": round(acid_mg / fraction, 4),
+        "oil_equivalent_mg": round(oil_mg, 4),
+        "fraction": round(fraction, 4),
+        "qualifies": fraction >= QUALIFY_FRACTION,
+        "strong": fraction >= STRONG_FRACTION,
         "linoleic_g_per_100g": la,
         "linolenic_g_per_100g": ala,
     }
@@ -666,6 +730,7 @@ def build_data() -> dict:
     support = {k: v for k, v in (meta.get("support_nutrients") or {}).items()
                if not k.startswith("_")}
     efa_ref = _efa_reference(comp, support)
+    efa_goal = _efa_goal()
 
     # the USDA unit is RE-READ from nutrient.csv, never trusted from the map
     for slug, m in sorted(nutrient_map.items()):
@@ -757,7 +822,8 @@ def build_data() -> dict:
             )
             continue
 
-        efa = _efa_of(comp.get(fdc_id) or {}, support, grams, efa_ref["efa_fraction"])
+        efa = _efa_of(comp.get(fdc_id) or {}, support, grams, efa_ref["efa_fraction"],
+                      efa_goal["maintenance_mg"])
 
         portion_label = entry.get("portion_label") or _portion_label(portion, units)
         out_foods.append({
@@ -772,7 +838,21 @@ def build_data() -> dict:
             "grams": grams,
             "nutrients": rows,
             "breadth": len(rows),
-            "strength": round(sum(r["fraction"] for r in rows), 4),
+            # ★ THE RANKING KEY, AND WHY THE EFA GROUP IS IN IT (owner ruling 2026-08-22).
+            # `strength` is "most nutritious first" -- the sum of how much of Wallach's
+            # targets one serving delivers -- and it is the DEFAULT order of all 192 foods
+            # whenever no goal is chosen. It counted nutrient ROWS only, and the EFA group is
+            # not a row, so a food could deliver TWICE his stated nine grams and score zero
+            # for it: walnuts at 220% sat on page 47 of 64 in a list titled by nutrition.
+            # The card had shown that 220% all along -- only the order was blind to it.
+            #
+            # Summed UNCAPPED, because every other term is (his ruling, measured: capping
+            # only this one leaves the group the single under-weighted term against rows that
+            # routinely run 200-300%). Counted ONCE, never once per member: crediting
+            # omega-3 and omega-6 separately would fan a collective dose he states as one.
+            # Gated by food_strength_reproduces_its_own_terms.
+            "strength": round(sum(r["fraction"] for r in rows)
+                              + (efa["fraction"] if efa.get("qualifies") else 0.0), 4),
             **({"efa": efa} if efa else {}),
         })
 
@@ -798,7 +878,11 @@ def build_data() -> dict:
             "serving delivers at least the qualify_fraction of his daily target, and only "
             "for essentials carrying a NUMERIC Wallach target -- never for a tile that "
             "covers on presence alone. Every row carries its own provenance and match tier. "
-            "Never hand-edit; run eden/tools/build_embeds.py."
+            "`strength` is the ranking key -- the sum of every qualifying fraction one "
+            "serving delivers, INCLUDING the essential-fatty-acid group, which is not a row "
+            "(omega-3 and omega-6 carry no individual Wallach dose, so they share one meter) "
+            "but is measured against efa_goal, held to the same qualify_fraction, and summed "
+            "ONCE beside the rows. Never hand-edit; run eden/tools/build_embeds.py."
         ),
         "_meta": {
             "source": {
@@ -837,6 +921,10 @@ def build_data() -> dict:
             # The reference oil, read from the pinned archive so a food's EFA can be stated
             # in the same currency Wallach's dose is: grams of flaxseed oil.
             "efa_reference": efa_ref,
+            # ...and the Wallach amount that currency is measured against. Shipped so the
+            # surface can hold the group to the same bar as a row without re-deriving the
+            # denominator, and so the gate can recompute every fraction from these bytes.
+            "efa_goal": efa_goal,
         },
         "foods": out_foods,
     }

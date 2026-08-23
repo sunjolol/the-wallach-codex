@@ -135,10 +135,39 @@ export const FoodSchema = z.object({
     acid_mg: z.number(),
     /** That acid re-expressed as the flaxseed oil it would take to supply it. */
     oil_equivalent_mg: z.number(),
+    /**
+     * That oil over `_meta.efa_goal.maintenance_mg` — the same shape a nutrient row's
+     * `fraction` has, against the same kind of denominator (a Wallach number).
+     */
+    fraction: z.number(),
+    /**
+     * Whether the group clears `_meta.qualify_fraction`, the identical bar a nutrient row
+     * must clear to exist at all.
+     *
+     * ★ READ THIS FLAG; NEVER RE-DERIVE IT FROM `fraction`. The generator tests the
+     * FULL-PRECISION fraction and stores it rounded to 4 dp, exactly as it does for a row,
+     * so a food just under the bar can carry `fraction: 0.07` and `qualifies: false`
+     * (kiwifruit, at 6.996%). Re-deriving it in a view would disagree with the ranking on
+     * seven of the 192 foods, and the card and the order would tell different stories.
+     */
+    qualifies: z.boolean(),
+    /** At or above `_meta.strong_fraction`, mirroring a row's own `strong`. */
+    strong: z.boolean(),
   }).passthrough().optional(),
   /** How many essentials this food credits overall. */
   breadth: z.number(),
-  /** Sum of fractions — the education-mode ranking key ("most nutritious first"). */
+  /**
+   * The ranking key: Σ of every qualifying fraction one serving delivers — nutrient rows
+   * PLUS the EFA group, counted once, uncapped.
+   *
+   * ★ THE EFA GROUP IS IN HERE, and was not until 2026-08-22. It is not a row (see `efa`
+   * above), so a Σ over rows scored walnuts — 220% of Wallach's nine grams — at 0.38 and
+   * dropped them to page 47 of 64 in a list ordered by nutrition, while the card beside it
+   * printed the 220%. Uncapped because every other term is: capping this one alone would
+   * leave the group the single under-weighted term against rows that routinely run 200–300%.
+   * Counted ONCE and never per member — omega-3 and omega-6 share one meter because Wallach
+   * states one amount, and fanning it would invent two he never gave.
+   */
   strength: z.number(),
 }).passthrough();
 
@@ -198,6 +227,18 @@ export const FoodsCompositionSchema = z.object({
       efa_fraction: z.number(),
       label: z.string(),
       category: z.string(),
+    }).passthrough(),
+    /**
+     * Wallach's ONE amount for the EFA group, in the mg of flaxseed oil the meter counts —
+     * the denominator every food's `efa.fraction` is over. Read in the generator straight
+     * from the sealed dose claim it cites, so a food and a product are scored against one
+     * Wallach number rather than two copies of it.
+     */
+    efa_goal: z.object({
+      maintenance_mg: z.number(),
+      unit: z.string(),
+      collective_group: z.string(),
+      source_claim_id: z.string(),
     }).passthrough(),
     food_count: z.number(),
   }).passthrough(),

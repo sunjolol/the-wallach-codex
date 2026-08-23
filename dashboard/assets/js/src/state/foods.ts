@@ -20,10 +20,19 @@
  * `strength`, the food's own Σ of fractions, which is "most nutritious first". Ties fall back
  * to strength and then to the id, so the order is TOTAL and cannot reshuffle between paints.
  *
+ * ★ BOTH HALVES OF THAT KEY COUNT THE EFA GROUP — 2026-08-22, and neither did before.
+ * omega-3 and omega-6 carry no individual Wallach dose, so they are not nutrient rows, and a
+ * key summed over rows scored a food's essential-fatty-acid delivery at exactly zero. Walnuts
+ * supply 220% of his nine grams and sat on page 47 of 64 in a list ordered by nutrition —
+ * with the card beside them printing that 220% the whole time. `strength` now adds the
+ * group's own fraction (UNCAPPED, like every other term in it); the goal key fills each EFA
+ * member in the gap set from the one delivery (CAPPED, like every other term in that one).
+ * The second half mattered more: 24 of the 30 goals name an omega.
+ *
  * ★ THE SCORE IS A SORT KEY AND NOTHING ELSE. It is never rendered, so its denominator has
- * only to be CONSTANT across the candidates, not reachable: a goal naming omega-3 — which no
- * nutrient row can credit, because the EFAs share one meter and carry no individual target —
- * dilutes every candidate by the same amount and cannot move the order.
+ * only to be CONSTANT across the candidates. Reachability is no longer the free variable it
+ * was: until the group entered the key, a goal naming omega-3 contributed a gap no food could
+ * ever fill, which was harmless only because it diluted every candidate identically.
  *
  * ★ WHY THIS IS A SEPARATE MODULE AND NOT A BRANCH INSIDE recommender.ts.
  * `CoverageRec` carries a non-nullable `price`, and its value term
@@ -214,15 +223,24 @@ function sourceWordsFor(sourceId: string): string {
 const DISPLAY = DATA._meta.essential_display;
 
 /**
- * Wallach's EFA dose, in the mg of flaxseed oil the meter counts.
+ * The EFA group's shared goal — the ONE amount Wallach states for the essential fatty acids.
  *
- * Read from the SAME artifact state/coverage.ts scores the meter against, so a food and a
- * product are measured against one number and not two copies of it. The pseudo-slug below
- * is what the tile shows the group as; it is never a canon slug, because the group is not
- * one of the 90 — omega-3 and omega-6 are, and they share this meter.
+ * ★ THE PERCENTAGE IS NO LONGER DIVIDED HERE. It is read off `food.efa.fraction`, which the
+ * generator computed against the same sealed dose claim, so the card, the ranking key and
+ * the gate all quote one number instead of three roundings of it. What this file still needs
+ * from the goal is WHO the group answers for.
  */
-const EFA_GOAL_MG = EfaCoverageSchema.parse(efaCoverageData).goal.maintenance_mg;
+const EFA_GOAL = EfaCoverageSchema.parse(efaCoverageData).goal;
+/** The group's display pseudo-slug. Never a canon slug — the group is not one of the 90. */
 const EFA_SLUG = 'essential-fatty-acids';
+/**
+ * The two essentials the one meter answers for, read from the goal rather than typed here.
+ *
+ * ★ CREDITING BOTH IS NOT FANNING HIS DOSE. Nothing splits nine grams into two numbers: the
+ * pair share ONE delivery, and a serving that supplies it has moved both. That is already how
+ * the tiles resolve — state/coverage.ts hands a single efaStatus to omega-3 and omega-6 alike.
+ */
+const EFA_MEMBERS: ReadonlySet<string> = new Set(EFA_GOAL.members);
 
 /**
  * The flaxseed oil a serving of this food is worth, or 0.
@@ -247,7 +265,6 @@ function hitsOf(food: Food): FoodHit[] {
   // per-essential target to be a row against (see the schema), but it IS something a serving
   // delivers, and a tile that hid it would under-report walnuts by 220 points. It is held to
   // the same qualify_fraction as every other number on the card.
-  const floor = Math.round(DATA._meta.qualify_fraction * 100);
   const rows: FoodHit[] = food.nutrients.map(n => ({
     slug: n.slug,
     label: DISPLAY[n.slug]?.label ?? n.slug,
@@ -259,9 +276,13 @@ function hitsOf(food: Food): FoodHit[] {
     source: sourceWordsFor(n.provenance.source_id),
     conservative: n.provenance.conservative === true,
   }));
-  if (food.efa !== undefined && EFA_GOAL_MG > 0) {
-    const pct = Math.round((food.efa.oil_equivalent_mg / EFA_GOAL_MG) * 100);
-    if (pct >= floor) {
+  // ★ THE BAR IS READ, NOT RE-DERIVED. This used to divide the oil by the goal here and
+  // compare a ROUNDED percentage against a rounded floor, which admitted seven foods the
+  // generator's own full-precision test rejects — kiwifruit at 6.996% reads "7%". The card
+  // then printed a chip for delivery the ranking key scored at zero. One flag, one rule.
+  if (food.efa !== undefined) {
+    const pct = Math.round(food.efa.fraction * 100);
+    if (food.efa.qualifies) {
       rows.push({
         slug: EFA_SLUG,
         label: DATA._meta.efa_reference.label,
@@ -364,18 +385,45 @@ export function rankFoodsForCoverage(input: {
     }
     return n;
   };
+  /**
+   * Which goals tint this food's card — ANY member it moves, deliberately loose (see
+   * views/coverage.ts, which documents why this is a border tint and not a claim).
+   *
+   * The EFA group counts here for the same reason it counts below: 24 of the 30 goals name
+   * omega-3 or omega-6, and walnuts at 220% of his nine grams were tinted for none of them.
+   */
   const goalIdsFor = (f: Food): string[] =>
-    goals.filter(g => g.members.some(m => f.nutrients.some(n => n.slug === m))).map(g => g.id);
+    goals.filter(g => g.members.some(
+      m => f.nutrients.some(n => n.slug === m)
+        || (f.efa?.qualifies === true && EFA_MEMBERS.has(m)),
+    )).map(g => g.id);
 
   /**
    * The share of the outstanding GOAL targets one serving fills. Each nutrient is capped at
    * its own target: 500% of one is one nutrient filled, not five.
+   *
+   * ★ THE EFA GROUP FILLS ITS MEMBERS' GAPS — 2026-08-22, the same blind spot `strength`
+   * had and a wider one. 24 of the 30 goals name omega-3 or omega-6, and NO nutrient row can
+   * ever credit either: they carry no individual Wallach dose and share one meter. So every
+   * candidate was diluted by an identical unfillable amount, and the foods that actually
+   * answer the goal ranked as though they did nothing about it. The group's own fraction now
+   * fills each of its members present in the gap set — the denominator already counts them
+   * as two, one delivery genuinely moves both, and that is exactly how state/coverage.ts
+   * resolves their tiles. Capped like every other term on this key.
    */
   const goalFillOf = (f: Food): number => {
     let filled = 0;
     for (const row of f.nutrients) {
       if (goalGaps.has(row.slug)) {
         filled += Math.min(row.fraction, 1);
+      }
+    }
+    const efa = f.efa;
+    if (efa?.qualifies === true) {
+      for (const member of EFA_MEMBERS) {
+        if (goalGaps.has(member)) {
+          filled += Math.min(efa.fraction, 1);
+        }
       }
     }
     return filled / goalGaps.size;

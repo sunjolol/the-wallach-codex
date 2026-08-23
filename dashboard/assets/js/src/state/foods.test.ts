@@ -17,8 +17,8 @@ import { foodById, foodCatalogSize, foodCategories, foodNutrientRows, rankFoodsF
 
 const ALL_SLUGS = (foodsData as { _meta: { essentials_measurable: string[] } })
   ._meta.essentials_measurable;
-/** Wallach's EFA dose in mg of flaxseed oil — the meter foods are scored against. */
-const EFA_GOAL = (efaData as { goal: { maintenance_mg: number } }).goal.maintenance_mg;
+/** The two essentials the one EFA meter answers for. Read from the goal, never typed here. */
+const EFA_MEMBERS = (efaData as { goal: { members: string[] } }).goal.members;
 
 interface RawFood {
   id: string;
@@ -26,13 +26,25 @@ interface RawFood {
   category: string;
   strength: number;
   nutrients: { slug: string; fraction: number }[];
-  efa?: { oil_equivalent_mg: number };
+  efa?: { oil_equivalent_mg: number; fraction: number; qualifies: boolean };
 }
 const FOODS = (foodsData as { foods: RawFood[] }).foods;
 
-/** Σ min(fraction, 1) over a gap set — the ranker's goal key, minus its constant divisor. */
+/**
+ * Σ min(fraction, 1) over a gap set — the ranker's goal key, minus its constant divisor.
+ *
+ * ★ THE EFA GROUP FILLS EACH OF ITS OWN MEMBERS IN THE GAP SET, from one delivery. It is not
+ * a nutrient row (omega-3 and omega-6 carry no individual Wallach dose), so a model summed
+ * over rows alone would score a goal naming an omega identically for every candidate — and
+ * would therefore agree, in perfect health, with a ranker that had gone blind to it.
+ */
 function fillOver(f: RawFood, gaps: Set<string>): number {
-  return f.nutrients.reduce((s, n) => s + (gaps.has(n.slug) ? Math.min(n.fraction, 1) : 0), 0);
+  const rows = f.nutrients.reduce(
+    (s, n) => s + (gaps.has(n.slug) ? Math.min(n.fraction, 1) : 0), 0);
+  if (f.efa?.qualifies !== true) {
+    return rows;
+  }
+  return rows + EFA_MEMBERS.filter(m => gaps.has(m)).length * Math.min(f.efa.fraction, 1);
 }
 
 /** The catalog in the order the ranker must produce for this gap set. */
@@ -103,6 +115,24 @@ describe('rankFoodsForCoverage — the order', () => {
     const recs = rankFoodsForCoverage({ want, limit: 6, goals: [{ id: 'g', members }] });
     expect(recs.map(r => r.foodId))
       .toEqual(expectedOrder(new Set([members[1]!])).slice(0, 6).map(f => f.id));
+  });
+
+  it('a goal naming an omega is FILLED by the EFA group, not left unfillable', () => {
+    // 24 of the 30 shipped goals name omega-3 or omega-6, and no nutrient row can ever credit
+    // either — they carry no individual Wallach dose and share one meter. Until 2026-08-22
+    // that gap diluted every candidate by the same unfillable amount, so the foods that
+    // actually answer the goal ranked as though they did nothing about it. This is the test
+    // that would have caught it: with rows alone, the lead below is not an EFA food.
+    const members = [EFA_MEMBERS[0]!];
+    const recs = rankFoodsForCoverage({
+      want: [...ALL_SLUGS, ...EFA_MEMBERS],
+      limit: 6,
+      goals: [{ id: 'g', members }],
+    });
+    expect(recs.map(r => r.foodId))
+      .toEqual(expectedOrder(new Set(members)).slice(0, 6).map(f => f.id));
+    const lead = FOODS.find(f => f.id === recs[0]!.foodId)!;
+    expect(lead.efa?.qualifies, `${recs[0]!.foodId} leads a goal it cannot move`).toBe(true);
   });
 
   it('with every goal nutrient covered it falls back to most nutritious', () => {
@@ -217,8 +247,9 @@ describe('rankFoodsForCoverage — the readout', () => {
       // The lead is the best of the nutrient rows AND the EFA group, which is not a row:
       // omega-3/omega-6 carry no individual Wallach target, so the EFAs share one meter and
       // ride alongside. Walnuts deliver 220% of his nine grams and would lead on it.
-      const efaPct = food.efa === undefined
-        ? 0 : Math.round((food.efa.oil_equivalent_mg / EFA_GOAL) * 100);
+      // Only a QUALIFYING group is on the card, so only one can be the lead — and the
+      // percentage is the generator's own, not this file's second rounding of the division.
+      const efaPct = food.efa?.qualifies === true ? Math.round(food.efa.fraction * 100) : 0;
       const best = Math.max(
         Math.round(Math.max(...food.nutrients.map(n => n.fraction)) * 100), efaPct);
       expect(r.hits[0]!.pct).toBe(best);
@@ -232,16 +263,29 @@ describe('rankFoodsForCoverage — the readout', () => {
   it('the EFA group reaches the readout, and only above the threshold', () => {
     // It is NOT a nutrient row — omega-3 and omega-6 have no individual Wallach target — so
     // nothing else in this suite would notice if it silently stopped being shown.
-    const floor = Math.round(
-      (foodsData as { _meta: { qualify_fraction: number } })._meta.qualify_fraction * 100);
-    const expected = FOODS.filter(
-      f => f.efa !== undefined && Math.round((f.efa.oil_equivalent_mg / EFA_GOAL) * 100) >= floor);
-    expect(expected.length).toBeGreaterThan(20);
+    //
+    // ★ THE BAR IS THE GENERATOR'S `qualifies`, NOT A PERCENTAGE RE-ROUNDED HERE — and this
+    // test used to do the re-rounding, which is exactly how the split survived: seven foods
+    // (black beans at 6.521%, kiwifruit at 6.996%) round UP to the 7% floor, so the card drew
+    // them a chip for delivery the ranking key scored at zero. Both directions are asserted.
+    const shown = FOODS.filter(f => f.efa?.qualifies === true);
+    const hidden = FOODS.filter(f => f.efa !== undefined && f.efa.qualifies === false);
+    expect(shown.length).toBeGreaterThan(20);
+    expect(hidden.length).toBeGreaterThan(0);
     const recs = rankFoodsForCoverage({ want: ALL_SLUGS, limit: 500 });
-    for (const f of expected.slice(0, 12)) {
-      const rec = recs.find(r => r.foodId === f.id);
-      if (rec === undefined) { continue; }
-      expect(rec.hits.some(h => h.slug === 'essential-fatty-acids'), f.id).toBe(true);
+    const chipped = (id: string): boolean | undefined =>
+      recs.find(r => r.foodId === id)?.hits.some(h => h.slug === 'essential-fatty-acids');
+    for (const f of shown.slice(0, 12)) {
+      if (chipped(f.id) === undefined) {
+        continue;
+      }
+      expect(chipped(f.id), `${f.id} delivers ${f.efa!.fraction} and must be shown`).toBe(true);
+    }
+    for (const f of hidden.slice(0, 12)) {
+      if (chipped(f.id) === undefined) {
+        continue;
+      }
+      expect(chipped(f.id), `${f.id} is under the bar and must not be shown`).toBe(false);
     }
   });
 

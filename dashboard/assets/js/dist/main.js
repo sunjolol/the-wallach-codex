@@ -5548,11 +5548,40 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       /** Actual linoleic + linolenic delivered by one serving, CLA subtracted. */
       acid_mg: external_exports.number(),
       /** That acid re-expressed as the flaxseed oil it would take to supply it. */
-      oil_equivalent_mg: external_exports.number()
+      oil_equivalent_mg: external_exports.number(),
+      /**
+       * That oil over `_meta.efa_goal.maintenance_mg` — the same shape a nutrient row's
+       * `fraction` has, against the same kind of denominator (a Wallach number).
+       */
+      fraction: external_exports.number(),
+      /**
+       * Whether the group clears `_meta.qualify_fraction`, the identical bar a nutrient row
+       * must clear to exist at all.
+       *
+       * ★ READ THIS FLAG; NEVER RE-DERIVE IT FROM `fraction`. The generator tests the
+       * FULL-PRECISION fraction and stores it rounded to 4 dp, exactly as it does for a row,
+       * so a food just under the bar can carry `fraction: 0.07` and `qualifies: false`
+       * (kiwifruit, at 6.996%). Re-deriving it in a view would disagree with the ranking on
+       * seven of the 192 foods, and the card and the order would tell different stories.
+       */
+      qualifies: external_exports.boolean(),
+      /** At or above `_meta.strong_fraction`, mirroring a row's own `strong`. */
+      strong: external_exports.boolean()
     }).passthrough().optional(),
     /** How many essentials this food credits overall. */
     breadth: external_exports.number(),
-    /** Sum of fractions — the education-mode ranking key ("most nutritious first"). */
+    /**
+     * The ranking key: Σ of every qualifying fraction one serving delivers — nutrient rows
+     * PLUS the EFA group, counted once, uncapped.
+     *
+     * ★ THE EFA GROUP IS IN HERE, and was not until 2026-08-22. It is not a row (see `efa`
+     * above), so a Σ over rows scored walnuts — 220% of Wallach's nine grams — at 0.38 and
+     * dropped them to page 47 of 64 in a list ordered by nutrition, while the card beside it
+     * printed the 220%. Uncapped because every other term is: capping this one alone would
+     * leave the group the single under-weighted term against rows that routinely run 200–300%.
+     * Counted ONCE and never per member — omega-3 and omega-6 share one meter because Wallach
+     * states one amount, and fanning it would invent two he never gave.
+     */
     strength: external_exports.number()
   }).passthrough();
   var FoodsCompositionSchema = external_exports.object({
@@ -5610,6 +5639,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa_fraction: external_exports.number(),
         label: external_exports.string(),
         category: external_exports.string()
+      }).passthrough(),
+      /**
+       * Wallach's ONE amount for the EFA group, in the mg of flaxseed oil the meter counts —
+       * the denominator every food's `efa.fraction` is over. Read in the generator straight
+       * from the sealed dose claim it cites, so a food and a product are scored against one
+       * Wallach number rather than two copies of it.
+       */
+      efa_goal: external_exports.object({
+        maintenance_mg: external_exports.number(),
+        unit: external_exports.string(),
+        collective_group: external_exports.string(),
+        source_claim_id: external_exports.string()
       }).passthrough(),
       food_count: external_exports.number()
     }).passthrough(),
@@ -17089,6 +17130,15 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   // assets/data/foods-composition-data.json
   var foods_composition_data_default = {
     _meta: {
+      efa_goal: {
+        _why: "The denominator the EFA group is ranked and drawn against. Read from the SEALED claim, not from efa-coverage-data.json, so a food and a product are measured against one Wallach number without this artifact depending on that one existing.",
+        collective_group: "essential-fatty-acids",
+        maintenance_mg: 9e3,
+        source_claim_id: "WAL-CLM-DDDL-000115",
+        unit: "mg",
+        wallach_dose_amount: 9,
+        wallach_dose_unit: "g"
+      },
       efa_reference: {
         _label_why: "The one display string in this artifact that is NOT derived from the canon. The essential-fatty-acid GROUP has no canonical short name -- omega-3 and omega-6 have their own, the group has only 'essential-fatty-acids' -- and the signed-off tile demo showed 'Omega EFAs'. The canon-derived alternative, 'Essential Fatty Acids', is 21 characters and would blow out the lead column's nowrap label on a 340px card. The demo's label is used and the reason is written down.",
         category: "fatty_acids",
@@ -17308,16 +17358,19 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       strong_fraction: 0.2
     },
-    _purpose: "GENERATED by eden/tools/foods_composition_derive.py. Per-serving nutrient amounts for the FOOD SOURCES blocks on the Regimen and Coverage tabs. COMPOSITION comes from the pinned USDA SR Legacy source and from the second sources pinned in eden/foods/sources/sources.json (all numerators); every TARGET it is measured against is Dr. Wallach's, read from essentials-targets-data.json. A food is credited for an essential only when one serving delivers at least the qualify_fraction of his daily target, and only for essentials carrying a NUMERIC Wallach target -- never for a tile that covers on presence alone. Every row carries its own provenance and match tier. Never hand-edit; run eden/tools/build_embeds.py.",
+    _purpose: "GENERATED by eden/tools/foods_composition_derive.py. Per-serving nutrient amounts for the FOOD SOURCES blocks on the Regimen and Coverage tabs. COMPOSITION comes from the pinned USDA SR Legacy source and from the second sources pinned in eden/foods/sources/sources.json (all numerators); every TARGET it is measured against is Dr. Wallach's, read from essentials-targets-data.json. A food is credited for an essential only when one serving delivers at least the qualify_fraction of his daily target, and only for essentials carrying a NUMERIC Wallach target -- never for a tile that covers on presence alone. Every row carries its own provenance and match tier. `strength` is the ranking key -- the sum of every qualifying fraction one serving delivers, INCLUDING the essential-fatty-acid group, which is not a row (omega-3 and omega-6 carry no individual Wallach dose, so they share one meter) but is measured against efa_goal, held to the same qualify_fraction, and summed ONCE beside the rows. Never hand-edit; run eden/tools/build_embeds.py.",
     foods: [
       {
         breadth: 3,
         category: "Vegetables",
         efa: {
           acid_mg: 120.95,
+          fraction: 0.0199,
           linoleic_g_per_100g: "0.022",
           linolenic_g_per_100g: "0.037",
-          oil_equivalent_mg: 178.669
+          oil_equivalent_mg: 178.669,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170128",
         grams: 205,
@@ -17383,9 +17436,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 2177.92,
+          fraction: 0.3575,
           linoleic_g_per_100g: "13.605",
           linolenic_g_per_100g: "0.007",
-          oil_equivalent_mg: 3217.2539
+          oil_equivalent_mg: 3217.2539,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "168588",
         grams: 16,
@@ -17411,7 +17467,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "83375",
         portion_label: "1 tbsp",
-        strength: 0.0834,
+        strength: 0.4409,
         usda_description: "Nuts, almond butter, plain, without salt added"
       },
       {
@@ -17420,9 +17476,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 3494.1375,
           conjugated_linoleic_g_per_100g: "0.002",
+          fraction: 0.5735,
           linoleic_g_per_100g: "12.324",
           linolenic_g_per_100g: "0.003",
-          oil_equivalent_mg: 5161.5887
+          oil_equivalent_mg: 5161.5887,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "170567",
         grams: 28.35,
@@ -17512,7 +17571,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "86867",
         portion_label: "1 oz (23 whole kernels)",
-        strength: 0.7267,
+        strength: 1.3002,
         usda_description: "Nuts, almonds"
       },
       {
@@ -17578,9 +17637,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 119.35,
+          fraction: 0.0196,
           linoleic_g_per_100g: "0.077",
           linolenic_g_per_100g: "0",
-          oil_equivalent_mg: 176.3055
+          oil_equivalent_mg: 176.3055,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171697",
         grams: 155,
@@ -17614,9 +17676,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 120.12,
+          fraction: 0.0197,
           linoleic_g_per_100g: "0.105",
           linolenic_g_per_100g: "0.038",
-          oil_equivalent_mg: 177.4429
+          oil_equivalent_mg: 177.4429,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169311",
         grams: 84,
@@ -17682,9 +17747,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 94.5,
+          fraction: 0.0155,
           linoleic_g_per_100g: "0.076",
           linolenic_g_per_100g: "0.029",
-          oil_equivalent_mg: 139.5967
+          oil_equivalent_mg: 139.5967,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168390",
         grams: 90,
@@ -17750,9 +17818,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 2446.64,
+          fraction: 0.4016,
           linoleic_g_per_100g: "1.674",
           linolenic_g_per_100g: "0.125",
-          oil_equivalent_mg: 3614.2108
+          oil_equivalent_mg: 3614.2108,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "171706",
         grams: 136,
@@ -17842,7 +17913,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "89229",
         portion_label: "1 fruit, without skin and seed",
-        strength: 0.6218,
+        strength: 1.0234,
         usda_description: "Avocados, raw, California"
       },
       {
@@ -17850,9 +17921,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 110.96,
+          fraction: 0.0182,
           linoleic_g_per_100g: "0.046",
           linolenic_g_per_100g: "0.027",
-          oil_equivalent_mg: 163.9117
+          oil_equivalent_mg: 163.9117,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173944",
         grams: 152,
@@ -17935,9 +18009,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Spices & herbs",
         efa: {
           acid_mg: 20.617,
+          fraction: 34e-4,
           linoleic_g_per_100g: "0.073",
           linolenic_g_per_100g: "0.316",
-          oil_equivalent_mg: 30.4557
+          oil_equivalent_mg: 30.4557,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "172232",
         grams: 5.3,
@@ -17971,9 +18048,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 688.5,
+          fraction: 0.113,
           linoleic_g_per_100g: "0.58",
           linolenic_g_per_100g: "0.23",
-          oil_equivalent_mg: 1017.0618
+          oil_equivalent_mg: 1017.0618,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "168665",
         grams: 85,
@@ -18015,7 +18095,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "83526",
         portion_label: "3 oz",
-        strength: 0.9438,
+        strength: 1.0568,
         usda_description: 'Beef, brisket, whole, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, braised'
       },
       {
@@ -18023,9 +18103,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 641.75,
+          fraction: 0.1053,
           linoleic_g_per_100g: "0.736",
           linolenic_g_per_100g: "0.019",
-          oil_equivalent_mg: 948.0021
+          oil_equivalent_mg: 948.0021,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "169448",
         grams: 85,
@@ -18099,7 +18182,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "84889",
         portion_label: "3 oz",
-        strength: 2.3227,
+        strength: 2.428,
         usda_description: "Beef, variety meats and by-products, heart, cooked, simmered"
       },
       {
@@ -18107,9 +18190,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 550.8,
+          fraction: 0.0904,
           linoleic_g_per_100g: "0.626",
           linolenic_g_per_100g: "0.022",
-          oil_equivalent_mg: 813.6495
+          oil_equivalent_mg: 813.6495,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "169450",
         grams: 85,
@@ -18199,7 +18285,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "84892",
         portion_label: "3 oz",
-        strength: 5.1552,
+        strength: 5.2456,
         usda_description: "Beef, variety meats and by-products, kidneys, cooked, simmered"
       },
       {
@@ -18365,9 +18451,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 524.45,
+          fraction: 0.0861,
           linoleic_g_per_100g: "0.526",
           linolenic_g_per_100g: "0.091",
-          oil_equivalent_mg: 774.7249
+          oil_equivalent_mg: 774.7249,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "170598",
         grams: 85,
@@ -18409,7 +18498,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "86927",
         portion_label: "3 oz",
-        strength: 1.3931,
+        strength: 1.4792,
         usda_description: "Beef, variety meats and by-products, tongue, cooked, simmered"
       },
       {
@@ -18417,9 +18506,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 102.24,
+          fraction: 0.0168,
           linoleic_g_per_100g: "0.065",
           linolenic_g_per_100g: "0.006",
-          oil_equivalent_mg: 151.0304
+          oil_equivalent_mg: 151.0304,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168508",
         grams: 144,
@@ -18565,9 +18657,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 53.55,
+          fraction: 88e-4,
           linoleic_g_per_100g: "0.058",
           linolenic_g_per_100g: "0.005",
-          oil_equivalent_mg: 79.1048
+          oil_equivalent_mg: 79.1048,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168506",
         grams: 85,
@@ -18601,9 +18696,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 199.75,
+          fraction: 0.0328,
           linoleic_g_per_100g: "0.205",
           linolenic_g_per_100g: "0.03",
-          oil_equivalent_mg: 295.0735
+          oil_equivalent_mg: 295.0735,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "172599",
         grams: 85,
@@ -18653,9 +18751,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 397.32,
+          fraction: 0.0652,
           linoleic_g_per_100g: "0.126",
           linolenic_g_per_100g: "0.105",
-          oil_equivalent_mg: 586.9267
+          oil_equivalent_mg: 586.9267,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175237",
         grams: 172,
@@ -18801,9 +18902,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 386.46,
+          fraction: 0.0634,
           linoleic_g_per_100g: "0.143",
           linolenic_g_per_100g: "0.083",
-          oil_equivalent_mg: 570.8841
+          oil_equivalent_mg: 570.8841,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175252",
         grams: 171,
@@ -18949,9 +19053,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 403.2,
+          fraction: 0.0662,
           linoleic_g_per_100g: "0.186",
           linolenic_g_per_100g: "0.094",
-          oil_equivalent_mg: 595.6127
+          oil_equivalent_mg: 595.6127,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173946",
         grams: 144,
@@ -19061,9 +19168,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 226.8,
+          fraction: 0.0372,
           linoleic_g_per_100g: "0.536",
           linolenic_g_per_100g: "0.264",
-          oil_equivalent_mg: 335.0321
+          oil_equivalent_mg: 335.0321,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "172175",
         grams: 28.35,
@@ -19113,9 +19223,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 122.4,
+          fraction: 0.0201,
           linoleic_g_per_100g: "0.031",
           linolenic_g_per_100g: "0.041",
-          oil_equivalent_mg: 180.811
+          oil_equivalent_mg: 180.811,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168517",
         grams: 170,
@@ -19213,9 +19326,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 238,
+          fraction: 0.0391,
           linoleic_g_per_100g: "0.051",
           linolenic_g_per_100g: "0.119",
-          oil_equivalent_mg: 351.5769
+          oil_equivalent_mg: 351.5769,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168510",
         grams: 140,
@@ -19345,9 +19461,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 197.2,
+          fraction: 0.0324,
           linoleic_g_per_100g: "0.031",
           linolenic_g_per_100g: "0.201",
-          oil_equivalent_mg: 291.3066
+          oil_equivalent_mg: 291.3066,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170382",
         grams: 85,
@@ -19397,9 +19516,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 291.4,
+          fraction: 0.0478,
           linoleic_g_per_100g: "0.059",
           linolenic_g_per_100g: "0.129",
-          oil_equivalent_mg: 430.4602
+          oil_equivalent_mg: 430.4602,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169332",
         grams: 155,
@@ -19529,9 +19651,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 77.9,
+          fraction: 0.0128,
           linoleic_g_per_100g: "0.014",
           linolenic_g_per_100g: "0.024",
-          oil_equivalent_mg: 115.075
+          oil_equivalent_mg: 115.075,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170130",
         grams: 205,
@@ -19613,9 +19738,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 15.13,
+          fraction: 25e-4,
           linoleic_g_per_100g: "0.017",
           linolenic_g_per_100g: "0",
-          oil_equivalent_mg: 22.3502
+          oil_equivalent_mg: 22.3502,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169975",
         grams: 89,
@@ -19681,9 +19809,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 90.1,
+          fraction: 0.0148,
           linoleic_g_per_100g: "0.057",
           linolenic_g_per_100g: "0.049",
-          oil_equivalent_mg: 133.097
+          oil_equivalent_mg: 133.097,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175135",
         grams: 85,
@@ -19781,9 +19912,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 111.78,
+          fraction: 0.0183,
           linoleic_g_per_100g: "0.035",
           linolenic_g_per_100g: "0.046",
-          oil_equivalent_mg: 165.123
+          oil_equivalent_mg: 165.123,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169092",
         grams: 138,
@@ -19833,9 +19967,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 130.56,
+          fraction: 0.0214,
           linoleic_g_per_100g: "0.1",
           linolenic_g_per_100g: "0.002",
-          oil_equivalent_mg: 192.8651
+          oil_equivalent_mg: 192.8651,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170393",
         grams: 128,
@@ -19901,9 +20038,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 2217.2535,
+          fraction: 0.3639,
           linoleic_g_per_100g: "7.66",
           linolenic_g_per_100g: "0.161",
-          oil_equivalent_mg: 3275.3579
+          oil_equivalent_mg: 3275.3579,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "169421",
         grams: 28.35,
@@ -19977,7 +20117,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "84834",
         portion_label: "1 oz",
-        strength: 0.77,
+        strength: 1.1339,
         usda_description: "Nuts, cashew nuts, dry roasted, with salt added"
       },
       {
@@ -19985,9 +20125,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 897.6,
+          fraction: 0.1473,
           linoleic_g_per_100g: "0.969",
           linolenic_g_per_100g: "0.087",
-          oil_equivalent_mg: 1325.9473
+          oil_equivalent_mg: 1325.9473,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "175166",
         grams: 85,
@@ -20013,7 +20156,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "95785",
         portion_label: "3 oz",
-        strength: 0.6689,
+        strength: 0.8162,
         usda_description: "Fish, catfish, channel, farmed, cooked, dry heat"
       },
       {
@@ -20021,9 +20164,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 189,
+          fraction: 0.031,
           linoleic_g_per_100g: "0.024",
           linolenic_g_per_100g: "0.081",
-          oil_equivalent_mg: 279.1934
+          oil_equivalent_mg: 279.1934,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168521",
         grams: 180,
@@ -20151,9 +20297,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 79.79,
+          fraction: 0.0131,
           linoleic_g_per_100g: "0.079",
           linolenic_g_per_100g: "0",
-          oil_equivalent_mg: 117.8669
+          oil_equivalent_mg: 117.8669,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169988",
         grams: 101,
@@ -20220,9 +20369,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 313.32,
           conjugated_linoleic_g_per_100g: "0.166",
+          fraction: 0.0514,
           linoleic_g_per_100g: "1.171",
           linolenic_g_per_100g: "0.114",
-          oil_equivalent_mg: 462.8407
+          oil_equivalent_mg: 462.8407,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173414",
         grams: 28,
@@ -20272,9 +20424,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 74.2,
+          fraction: 0.0122,
           linoleic_g_per_100g: "0.027",
           linolenic_g_per_100g: "0.026",
-          oil_equivalent_mg: 109.6093
+          oil_equivalent_mg: 109.6093,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171719",
         grams: 140,
@@ -20336,9 +20491,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 58.401,
+          fraction: 96e-4,
           linoleic_g_per_100g: "0.186",
           linolenic_g_per_100g: "0.02",
-          oil_equivalent_mg: 86.2708
+          oil_equivalent_mg: 86.2708,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168590",
         grams: 28.35,
@@ -20372,9 +20530,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Poultry",
         efa: {
           acid_mg: 533.2,
+          fraction: 0.0875,
           linoleic_g_per_100g: "0.59",
           linolenic_g_per_100g: "0.03",
-          oil_equivalent_mg: 787.6505
+          oil_equivalent_mg: 787.6505,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "171477",
         grams: 86,
@@ -20478,7 +20639,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "88819",
         portion_label: "0.5 breast, bone and skin removed",
-        strength: 1.4898,
+        strength: 1.5773,
         usda_description: "Chicken, broilers or fryers, breast, meat only, cooked, roasted"
       },
       {
@@ -20645,9 +20806,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 1296.25,
           conjugated_linoleic_g_per_100g: "0.008",
+          fraction: 0.2128,
           linoleic_g_per_100g: "1.46",
           linolenic_g_per_100g: "0.073",
-          oil_equivalent_mg: 1914.8386
+          oil_equivalent_mg: 1914.8386,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "172388",
         grams: 85,
@@ -20689,7 +20853,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "90511",
         portion_label: "3 oz",
-        strength: 0.6846,
+        strength: 0.8974,
         usda_description: "Chicken, broilers or fryers, thigh, meat only, cooked, roasted"
       },
       {
@@ -20697,9 +20861,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 1895.84,
+          fraction: 0.3112,
           linoleic_g_per_100g: "1.113",
           linolenic_g_per_100g: "0.043",
-          oil_equivalent_mg: 2800.5613
+          oil_equivalent_mg: 2800.5613,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "173799",
         grams: 164,
@@ -20870,7 +21037,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "93272",
         portion_label: "1 cup",
-        strength: 2.1547,
+        strength: 2.4659,
         usda_description: "Chickpeas (garbanzo beans, bengal gram), mature seeds, cooked, boiled, with salt"
       },
       {
@@ -20878,9 +21045,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 583.95,
+          fraction: 0.0958,
           linoleic_g_per_100g: "0.477",
           linolenic_g_per_100g: "0.21",
-          oil_equivalent_mg: 862.6191
+          oil_equivalent_mg: 862.6191,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "168667",
         grams: 85,
@@ -20955,7 +21125,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "83530",
         portion_label: "3 oz",
-        strength: 1.4196,
+        strength: 1.5154,
         usda_description: 'Beef, chuck, arm pot roast, separable lean and fat, trimmed to 1/8" fat, all grades, cooked, braised'
       },
       {
@@ -20963,9 +21133,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 34,
+          fraction: 56e-4,
           linoleic_g_per_100g: "0.032",
           linolenic_g_per_100g: "0.008",
-          oil_equivalent_mg: 50.2253
+          oil_equivalent_mg: 50.2253,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171975",
         grams: 85,
@@ -21080,9 +21253,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 66.864,
           conjugated_linoleic_g_per_100g: "0.058",
+          fraction: 0.011,
           linoleic_g_per_100g: "2.657",
           linolenic_g_per_100g: "0.585",
-          oil_equivalent_mg: 98.7724
+          oil_equivalent_mg: 98.7724,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171321",
         grams: 2.1,
@@ -21116,9 +21292,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 164.7,
+          fraction: 0.027,
           linoleic_g_per_100g: "0.366",
           linolenic_g_per_100g: "0",
-          oil_equivalent_mg: 243.2971
+          oil_equivalent_mg: 243.2971,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170169",
         grams: 45,
@@ -21152,9 +21331,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 5.95,
+          fraction: 1e-3,
           linoleic_g_per_100g: "0.006",
           linolenic_g_per_100g: "0.001",
-          oil_equivalent_mg: 8.7894
+          oil_equivalent_mg: 8.7894,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171956",
         grams: 85,
@@ -21234,9 +21416,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 309.7,
+          fraction: 0.0508,
           linoleic_g_per_100g: "0.07",
           linolenic_g_per_100g: "0.093",
-          oil_equivalent_mg: 457.4932
+          oil_equivalent_mg: 457.4932,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168523",
         grams: 190,
@@ -21350,9 +21535,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 137.86,
+          fraction: 0.0226,
           linoleic_g_per_100g: "0.105",
           linolenic_g_per_100g: "0.017",
-          oil_equivalent_mg: 203.6487
+          oil_equivalent_mg: 203.6487,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "172179",
         grams: 113,
@@ -21543,9 +21731,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 27.93,
+          fraction: 46e-4,
           linoleic_g_per_100g: "0.016",
           linolenic_g_per_100g: "0.003",
-          oil_equivalent_mg: 41.2586
+          oil_equivalent_mg: 41.2586,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171726",
         grams: 147,
@@ -21643,9 +21834,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 462,
+          fraction: 0.0758,
           linoleic_g_per_100g: "0.558",
           linolenic_g_per_100g: "0.102",
-          oil_equivalent_mg: 682.4729
+          oil_equivalent_mg: 682.4729,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "172189",
         grams: 70,
@@ -21687,7 +21881,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "90055",
         portion_label: "1 egg",
-        strength: 1.926,
+        strength: 2.0018,
         usda_description: "Egg, duck, whole, fresh, raw"
       },
       {
@@ -21695,9 +21889,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Poultry",
         efa: {
           acid_mg: 6314.5,
+          fraction: 1.0364,
           linoleic_g_per_100g: "3.36",
           linolenic_g_per_100g: "0.29",
-          oil_equivalent_mg: 9327.8676
+          oil_equivalent_mg: 9327.8676,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "172409",
         grams: 173,
@@ -21836,7 +22033,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "90568",
         portion_label: "1 unit (yield from 1 lb ready-to-cook duck)",
-        strength: 1.918,
+        strength: 2.9544,
         usda_description: "Duck, domesticated, meat and skin, cooked, roasted"
       },
       {
@@ -21845,9 +22042,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 3332.5,
           conjugated_linoleic_g_per_100g: "0",
+          fraction: 0.547,
           linoleic_g_per_100g: "1.792",
           linolenic_g_per_100g: "0.358",
-          oil_equivalent_mg: 4922.8156
+          oil_equivalent_mg: 4922.8156,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "168411",
         grams: 155,
@@ -21985,7 +22185,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "83053",
         portion_label: "1 cup",
-        strength: 2.2119,
+        strength: 2.7589,
         usda_description: "Edamame, frozen, prepared"
       },
       {
@@ -21993,9 +22193,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 611.5,
+          fraction: 0.1004,
           linoleic_g_per_100g: "1.188",
           linolenic_g_per_100g: "0.035",
-          oil_equivalent_mg: 903.3163
+          oil_equivalent_mg: 903.3163,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "173424",
         grams: 50,
@@ -22082,7 +22285,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "92500",
         portion_label: "1 large",
-        strength: 1.8696,
+        strength: 1.97,
         usda_description: "Egg, whole, cooked, hard-boiled"
       },
       {
@@ -22090,9 +22293,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 618.97,
+          fraction: 0.1016,
           linoleic_g_per_100g: "3.538",
           linolenic_g_per_100g: "0.103",
-          oil_equivalent_mg: 914.3511
+          oil_equivalent_mg: 914.3511,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "172184",
         grams: 17,
@@ -22118,7 +22324,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "90045",
         portion_label: "1 large",
-        strength: 1.3943,
+        strength: 1.4959,
         usda_description: "Egg, yolk, raw, fresh"
       },
       {
@@ -22126,9 +22332,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 92.07,
+          fraction: 0.0151,
           linoleic_g_per_100g: "0.078",
           linolenic_g_per_100g: "0.015",
-          oil_equivalent_mg: 136.0071
+          oil_equivalent_mg: 136.0071,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169352",
         grams: 99,
@@ -22178,9 +22387,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 119.85,
+          fraction: 0.0197,
           linoleic_g_per_100g: "0.109",
           linolenic_g_per_100g: "0.032",
-          oil_equivalent_mg: 177.0441
+          oil_equivalent_mg: 177.0441,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174427",
         grams: 85,
@@ -22246,9 +22458,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 121.5,
+          fraction: 0.0199,
           linoleic_g_per_100g: "0.069",
           linolenic_g_per_100g: "0.012",
-          oil_equivalent_mg: 179.4815
+          oil_equivalent_mg: 179.4815,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168413",
         grams: 150,
@@ -22346,9 +22561,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 278.8,
+          fraction: 0.0458,
           linoleic_g_per_100g: "0.152",
           linolenic_g_per_100g: "0.012",
-          oil_equivalent_mg: 411.8473
+          oil_equivalent_mg: 411.8473,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173798",
         grams: 170,
@@ -22478,9 +22696,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 395.46,
+          fraction: 0.0649,
           linoleic_g_per_100g: "0.169",
           linolenic_g_per_100g: "0",
-          oil_equivalent_mg: 584.179
+          oil_equivalent_mg: 584.179,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169385",
         grams: 234,
@@ -22562,9 +22783,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 167.5485,
+          fraction: 0.0275,
           linoleic_g_per_100g: "0.326",
           linolenic_g_per_100g: "0.265",
-          oil_equivalent_mg: 247.505
+          oil_equivalent_mg: 247.505,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173420",
         grams: 28.35,
@@ -22614,9 +22838,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 64.6,
+          fraction: 0.0106,
           linoleic_g_per_100g: "0.055",
           linolenic_g_per_100g: "0.021",
-          oil_equivalent_mg: 95.428
+          oil_equivalent_mg: 95.428,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174197",
         grams: 85,
@@ -22682,9 +22909,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 363.56,
+          fraction: 0.0597,
           linoleic_g_per_100g: "0.109",
           linolenic_g_per_100g: "0.04",
-          oil_equivalent_mg: 537.0559
+          oil_equivalent_mg: 537.0559,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171278",
         grams: 244,
@@ -22750,9 +22980,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 127.5,
+          fraction: 0.0209,
           linoleic_g_per_100g: "0.13",
           linolenic_g_per_100g: "0.02",
-          oil_equivalent_mg: 188.3448
+          oil_equivalent_mg: 188.3448,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175304",
         grams: 85,
@@ -22818,9 +23051,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 55.2,
+          fraction: 91e-4,
           linoleic_g_per_100g: "0.019",
           linolenic_g_per_100g: "0.005",
-          oil_equivalent_mg: 81.5422
+          oil_equivalent_mg: 81.5422,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173033",
         grams: 230,
@@ -22870,9 +23106,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 72.48,
+          fraction: 0.0119,
           linoleic_g_per_100g: "0.037",
           linolenic_g_per_100g: "0.011",
-          oil_equivalent_mg: 107.0685
+          oil_equivalent_mg: 107.0685,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174683",
         grams: 151,
@@ -22923,9 +23162,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 128,
           conjugated_linoleic_g_per_100g: "0.008",
+          fraction: 0.021,
           linoleic_g_per_100g: "0.065",
           linolenic_g_per_100g: "0.007",
-          oil_equivalent_mg: 189.0834
+          oil_equivalent_mg: 189.0834,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170903",
         grams: 200,
@@ -22991,9 +23233,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 181.25,
+          fraction: 0.0297,
           linoleic_g_per_100g: "0.056",
           linolenic_g_per_100g: "0.089",
-          oil_equivalent_mg: 267.745
+          oil_equivalent_mg: 267.745,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169321",
         grams: 125,
@@ -23091,9 +23336,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 161.6,
+          fraction: 0.0265,
           linoleic_g_per_100g: "0.082",
           linolenic_g_per_100g: "0.019",
-          oil_equivalent_mg: 238.7178
+          oil_equivalent_mg: 238.7178,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170102",
         grams: 160,
@@ -23255,9 +23503,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 347.65,
+          fraction: 0.0571,
           linoleic_g_per_100g: "0.4",
           linolenic_g_per_100g: "0.009",
-          oil_equivalent_mg: 513.5534
+          oil_equivalent_mg: 513.5534,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174034",
         grams: 85,
@@ -23307,9 +23558,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 304.3,
+          fraction: 0.0499,
           linoleic_g_per_100g: "0.313",
           linolenic_g_per_100g: "0.045",
-          oil_equivalent_mg: 449.5162
+          oil_equivalent_mg: 449.5162,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173847",
         grams: 85,
@@ -23375,9 +23629,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Poultry",
         efa: {
           acid_mg: 1630.3,
+          fraction: 0.2676,
           linoleic_g_per_100g: "1.818",
           linolenic_g_per_100g: "0.1",
-          oil_equivalent_mg: 2408.3019
+          oil_equivalent_mg: 2408.3019,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "171117",
         grams: 85,
@@ -23419,7 +23676,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "88004",
         portion_label: "3 oz crumbled",
-        strength: 0.6166,
+        strength: 0.8842,
         usda_description: "Chicken, ground, crumbles, cooked, pan-browned"
       },
       {
@@ -23427,9 +23684,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 1130.5,
+          fraction: 0.1856,
           linoleic_g_per_100g: "1.07",
           linolenic_g_per_100g: "0.26",
-          oil_equivalent_mg: 1669.9904
+          oil_equivalent_mg: 1669.9904,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "172544",
         grams: 85,
@@ -23504,7 +23764,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "90819",
         portion_label: "3 oz",
-        strength: 1.1772,
+        strength: 1.3628,
         usda_description: "Lamb, ground, cooked, broiled"
       },
       {
@@ -23512,9 +23772,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Pork",
         efa: {
           acid_mg: 1453.5,
+          fraction: 0.2386,
           linoleic_g_per_100g: "1.64",
           linolenic_g_per_100g: "0.07",
-          oil_equivalent_mg: 2147.1305
+          oil_equivalent_mg: 2147.1305,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "167903",
         grams: 85,
@@ -23573,7 +23836,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "82191",
         portion_label: "3 oz",
-        strength: 1.2726,
+        strength: 1.5112,
         usda_description: "Pork, fresh, ground, cooked"
       },
       {
@@ -23582,9 +23845,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 2280.55,
           conjugated_linoleic_g_per_100g: "0.017",
+          fraction: 0.3743,
           linoleic_g_per_100g: "2.556",
           linolenic_g_per_100g: "0.144",
-          oil_equivalent_mg: 3368.8603
+          oil_equivalent_mg: 3368.8603,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "171506",
         grams: 85,
@@ -23642,7 +23908,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "88876",
         portion_label: "3 oz",
-        strength: 0.8242,
+        strength: 1.1985,
         usda_description: "Turkey, Ground, cooked"
       },
       {
@@ -23650,9 +23916,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 306,
+          fraction: 0.0502,
           linoleic_g_per_100g: "0.262",
           linolenic_g_per_100g: "0.098",
-          oil_equivalent_mg: 452.0275
+          oil_equivalent_mg: 452.0275,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "172603",
         grams: 85,
@@ -23735,9 +24004,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 660,
+          fraction: 0.1083,
           linoleic_g_per_100g: "0.288",
           linolenic_g_per_100g: "0.112",
-          oil_equivalent_mg: 974.9612
+          oil_equivalent_mg: 974.9612,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "173044",
         grams: 165,
@@ -23827,7 +24099,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "91858",
         portion_label: "1 cup",
-        strength: 0.843,
+        strength: 0.9513,
         usda_description: "Guavas, common, raw"
       },
       {
@@ -23835,9 +24107,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 17.85,
+          fraction: 29e-4,
           linoleic_g_per_100g: "0.019",
           linolenic_g_per_100g: "0.002",
-          oil_equivalent_mg: 26.3683
+          oil_equivalent_mg: 26.3683,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174198",
         grams: 85,
@@ -23887,9 +24162,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 45.9,
+          fraction: 75e-4,
           linoleic_g_per_100g: "0.041",
           linolenic_g_per_100g: "0.013",
-          oil_equivalent_mg: 67.8041
+          oil_equivalent_mg: 67.8041,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174201",
         grams: 85,
@@ -23971,9 +24249,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 2245.32,
+          fraction: 0.3685,
           linoleic_g_per_100g: "7.833",
           linolenic_g_per_100g: "0.087",
-          oil_equivalent_mg: 3316.8181
+          oil_equivalent_mg: 3316.8181,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "170581",
         grams: 28.35,
@@ -24092,7 +24373,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "86899",
         portion_label: "1 oz (21 whole kernels)",
-        strength: 0.8054,
+        strength: 1.1739,
         usda_description: "Nuts, hazelnuts or filberts"
       },
       {
@@ -24100,9 +24381,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 294.92,
+          fraction: 0.0484,
           linoleic_g_per_100g: "0.183",
           linolenic_g_per_100g: "0.019",
-          oil_equivalent_mg: 435.6599
+          oil_equivalent_mg: 435.6599,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168569",
         grams: 146,
@@ -24185,9 +24469,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 11184.3,
           conjugated_linoleic_g_per_100g: "0.202",
+          fraction: 1.8357,
           linoleic_g_per_100g: "27.459",
           linolenic_g_per_100g: "10.024",
-          oil_equivalent_mg: 16521.6043
+          oil_equivalent_mg: 16521.6043,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "170148",
         grams: 30,
@@ -24261,7 +24548,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "86132",
         portion_label: "3 tbsp",
-        strength: 0.7956,
+        strength: 2.6313,
         usda_description: "Seeds, hemp seed, hulled"
       },
       {
@@ -24269,9 +24556,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 271.15,
+          fraction: 0.0445,
           linoleic_g_per_100g: "0.246",
           linolenic_g_per_100g: "0.073",
-          oil_equivalent_mg: 400.5466
+          oil_equivalent_mg: 400.5466,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174233",
         grams: 85,
@@ -24321,9 +24611,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 94.4,
+          fraction: 0.0155,
           linoleic_g_per_100g: "0.026",
           linolenic_g_per_100g: "0.033",
-          oil_equivalent_mg: 139.449
+          oil_equivalent_mg: 139.449,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169911",
         grams: 160,
@@ -24389,9 +24682,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 691.48,
+          fraction: 0.1135,
           linoleic_g_per_100g: "0.255",
           linolenic_g_per_100g: "0.331",
-          oil_equivalent_mg: 1021.4639
+          oil_equivalent_mg: 1021.4639,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "169355",
         grams: 118,
@@ -24481,7 +24777,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "84696",
         portion_label: "1 cup",
-        strength: 2.014,
+        strength: 2.1275,
         usda_description: "Kale, cooked, boiled, drained, with salt"
       },
       {
@@ -24489,9 +24785,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 486.75,
+          fraction: 0.0799,
           linoleic_g_per_100g: "0.107",
           linolenic_g_per_100g: "0.168",
-          oil_equivalent_mg: 719.0339
+          oil_equivalent_mg: 719.0339,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "175242",
         grams: 177,
@@ -24646,7 +24945,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "95884",
         portion_label: "1 cup",
-        strength: 1.625,
+        strength: 1.7049,
         usda_description: "Beans, kidney, red, mature seeds, cooked, boiled, with salt"
       },
       {
@@ -24654,9 +24953,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 361.5,
+          fraction: 0.0593,
           linoleic_g_per_100g: "0.104",
           linolenic_g_per_100g: "0.137",
-          oil_equivalent_mg: 534.0129
+          oil_equivalent_mg: 534.0129,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170392",
         grams: 150,
@@ -24754,9 +25056,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 28.9,
+          fraction: 47e-4,
           linoleic_g_per_100g: "0.02",
           linolenic_g_per_100g: "0.014",
-          oil_equivalent_mg: 42.6915
+          oil_equivalent_mg: 42.6915,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174202",
         grams: 85,
@@ -24838,9 +25143,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 426.24,
+          fraction: 0.07,
           linoleic_g_per_100g: "0.246",
           linolenic_g_per_100g: "0.042",
-          oil_equivalent_mg: 629.6477
+          oil_equivalent_mg: 629.6477,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168153",
         grams: 148,
@@ -24922,9 +25230,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 82.5,
+          fraction: 0.0135,
           linoleic_g_per_100g: "0.022",
           linolenic_g_per_100g: "0.028",
-          oil_equivalent_mg: 121.8702
+          oil_equivalent_mg: 121.8702,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169357",
         grams: 165,
@@ -25022,9 +25333,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 1368.5,
+          fraction: 0.2246,
           linoleic_g_per_100g: "1.26",
           linolenic_g_per_100g: "0.35",
-          oil_equivalent_mg: 2021.5673
+          oil_equivalent_mg: 2021.5673,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "172489",
         grams: 85,
@@ -25066,7 +25380,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "90710",
         portion_label: "3 oz",
-        strength: 0.8724,
+        strength: 1.097,
         usda_description: 'Lamb, loin, separable lean and fat, trimmed to 1/4" fat, choice, cooked, broiled'
       },
       {
@@ -25074,9 +25388,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 297.5,
+          fraction: 0.0488,
           linoleic_g_per_100g: "0.26",
           linolenic_g_per_100g: "0.09",
-          oil_equivalent_mg: 439.4712
+          oil_equivalent_mg: 439.4712,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174355",
         grams: 85,
@@ -25174,9 +25491,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 833,
+          fraction: 0.1367,
           linoleic_g_per_100g: "0.81",
           linolenic_g_per_100g: "0.17",
-          oil_equivalent_mg: 1230.5192
+          oil_equivalent_mg: 1230.5192,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "172533",
         grams: 85,
@@ -25330,7 +25650,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "90798",
         portion_label: "3 oz",
-        strength: 4.783,
+        strength: 4.9197,
         usda_description: "Lamb, variety meats and by-products, liver, cooked, pan-fried"
       },
       {
@@ -25338,9 +25658,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 782,
+          fraction: 0.1284,
           linoleic_g_per_100g: "0.73",
           linolenic_g_per_100g: "0.19",
-          oil_equivalent_mg: 1155.1813
+          oil_equivalent_mg: 1155.1813,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "172482",
         grams: 85,
@@ -25398,7 +25721,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "90697",
         portion_label: "3 oz",
-        strength: 1.161,
+        strength: 1.2894,
         usda_description: 'Lamb, foreshank, separable lean and fat, trimmed to 1/4" fat, choice, cooked, braised'
       },
       {
@@ -25406,9 +25729,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 137.64,
+          fraction: 0.0226,
           linoleic_g_per_100g: "0.045",
           linolenic_g_per_100g: "0.066",
-          oil_equivalent_mg: 203.3237
+          oil_equivalent_mg: 203.3237,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168535",
         grams: 124,
@@ -25458,9 +25784,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 960.5,
+          fraction: 0.1577,
           linoleic_g_per_100g: "0.9",
           linolenic_g_per_100g: "0.23",
-          oil_equivalent_mg: 1418.864
+          oil_equivalent_mg: 1418.864,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "174312",
         grams: 85,
@@ -25518,7 +25847,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "94120",
         portion_label: "3 oz",
-        strength: 0.9744,
+        strength: 1.1321,
         usda_description: 'Lamb, leg, whole (shank and sirloin), separable lean and fat, trimmed to 1/4" fat, choice, cooked, roasted'
       },
       {
@@ -25526,9 +25855,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 344.52,
+          fraction: 0.0565,
           linoleic_g_per_100g: "0.137",
           linolenic_g_per_100g: "0.037",
-          oil_equivalent_mg: 508.9298
+          oil_equivalent_mg: 508.9298,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175254",
         grams: 198,
@@ -25691,9 +26023,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 319.6,
+          fraction: 0.0525,
           linoleic_g_per_100g: "0.118",
           linolenic_g_per_100g: "0.052",
-          oil_equivalent_mg: 472.1176
+          oil_equivalent_mg: 472.1176,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173802",
         grams: 188,
@@ -25857,9 +26192,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 124.7,
           conjugated_linoleic_g_per_100g: "0.002",
+          fraction: 0.0205,
           linoleic_g_per_100g: "0.038",
           linolenic_g_per_100g: "0.05",
-          oil_equivalent_mg: 184.2086
+          oil_equivalent_mg: 184.2086,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174209",
         grams: 145,
@@ -26021,9 +26359,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 250.8,
+          fraction: 0.0412,
           linoleic_g_per_100g: "0.067",
           linolenic_g_per_100g: "0.065",
-          oil_equivalent_mg: 370.4853
+          oil_equivalent_mg: 370.4853,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169086",
         grams: 190,
@@ -26105,9 +26446,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 424.9665,
+          fraction: 0.0698,
           linoleic_g_per_100g: "1.303",
           linolenic_g_per_100g: "0.196",
-          oil_equivalent_mg: 627.7665
+          oil_equivalent_mg: 627.7665,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168598",
         grams: 28.35,
@@ -26157,9 +26501,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 181.05,
+          fraction: 0.0297,
           linoleic_g_per_100g: "0.149",
           linolenic_g_per_100g: "0.064",
-          oil_equivalent_mg: 267.4496
+          oil_equivalent_mg: 267.4496,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171994",
         grams: 85,
@@ -26257,9 +26604,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 115.5,
+          fraction: 0.019,
           linoleic_g_per_100g: "0.019",
           linolenic_g_per_100g: "0.051",
-          oil_equivalent_mg: 170.6182
+          oil_equivalent_mg: 170.6182,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169910",
         grams: 165,
@@ -26326,9 +26676,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 216.8775,
+          fraction: 0.0356,
           linoleic_g_per_100g: "0.393",
           linolenic_g_per_100g: "0.372",
-          oil_equivalent_mg: 320.3745
+          oil_equivalent_mg: 320.3745,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170845",
         grams: 28.35,
@@ -26379,9 +26732,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 39.68,
+          fraction: 65e-4,
           linoleic_g_per_100g: "0.023",
           linolenic_g_per_100g: "0.009",
-          oil_equivalent_mg: 58.6159
+          oil_equivalent_mg: 58.6159,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168499",
         grams: 124,
@@ -26447,9 +26803,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 64.6,
+          fraction: 0.0106,
           linoleic_g_per_100g: "0.036",
           linolenic_g_per_100g: "0.04",
-          oil_equivalent_mg: 95.428
+          oil_equivalent_mg: 95.428,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174217",
         grams: 85,
@@ -26531,9 +26890,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 64.4,
+          fraction: 0.0106,
           linoleic_g_per_100g: "0.024",
           linolenic_g_per_100g: "0.022",
-          oil_equivalent_mg: 95.1326
+          oil_equivalent_mg: 95.1326,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170503",
         grams: 140,
@@ -26615,9 +26977,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 10867.5,
+          fraction: 1.7837,
           linoleic_g_per_100g: "5.476",
           linolenic_g_per_100g: "0.734",
-          oil_equivalent_mg: 16053.6229
+          oil_equivalent_mg: 16053.6229,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "172443",
         grams: 175,
@@ -26771,7 +27136,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "90631",
         portion_label: "1 cup",
-        strength: 3.0683,
+        strength: 4.852,
         usda_description: "Natto"
       },
       {
@@ -26779,9 +27144,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 289.38,
+          fraction: 0.0475,
           linoleic_g_per_100g: "0.069",
           linolenic_g_per_100g: "0.09",
-          oil_equivalent_mg: 427.4762
+          oil_equivalent_mg: 427.4762,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173794",
         grams: 182,
@@ -26943,9 +27311,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 15.3,
+          fraction: 25e-4,
           linoleic_g_per_100g: "0.018",
           linolenic_g_per_100g: "0",
-          oil_equivalent_mg: 22.6014
+          oil_equivalent_mg: 22.6014,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174249",
         grams: 85,
@@ -27075,9 +27446,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 36.8,
+          fraction: 6e-3,
           linoleic_g_per_100g: "0.045",
           linolenic_g_per_100g: "0.001",
-          oil_equivalent_mg: 54.3615
+          oil_equivalent_mg: 54.3615,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170098",
         grams: 80,
@@ -27127,9 +27501,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 27.2,
+          fraction: 45e-4,
           linoleic_g_per_100g: "0.013",
           linolenic_g_per_100g: "0.004",
-          oil_equivalent_mg: 40.1802
+          oil_equivalent_mg: 40.1802,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170000",
         grams: 160,
@@ -27194,9 +27571,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 32.75,
+          fraction: 54e-4,
           linoleic_g_per_100g: "0.018",
           linolenic_g_per_100g: "0.007",
-          oil_equivalent_mg: 48.3788
+          oil_equivalent_mg: 48.3788,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169097",
         grams: 131,
@@ -27231,9 +27611,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 203.15,
           conjugated_linoleic_g_per_100g: "0.011",
+          fraction: 0.0333,
           linoleic_g_per_100g: "0.082",
           linolenic_g_per_100g: "0.168",
-          oil_equivalent_mg: 300.096
+          oil_equivalent_mg: 300.096,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171980",
         grams: 85,
@@ -27346,9 +27729,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 84.1,
+          fraction: 0.0138,
           linoleic_g_per_100g: "0.011",
           linolenic_g_per_100g: "0.047",
-          oil_equivalent_mg: 124.2337
+          oil_equivalent_mg: 124.2337,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169926",
         grams: 145,
@@ -27399,9 +27785,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 324.6075,
           conjugated_linoleic_g_per_100g: "0.136",
+          fraction: 0.0533,
           linoleic_g_per_100g: "1.175",
           linolenic_g_per_100g: "0.106",
-          oil_equivalent_mg: 479.5147
+          oil_equivalent_mg: 479.5147,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171247",
         grams: 28.35,
@@ -27466,9 +27855,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 4.674,
+          fraction: 8e-4,
           linoleic_g_per_100g: "0.115",
           linolenic_g_per_100g: "0.008",
-          oil_equivalent_mg: 6.9045
+          oil_equivalent_mg: 6.9045,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170416",
         grams: 3.8,
@@ -27502,9 +27894,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 34.32,
+          fraction: 56e-4,
           linoleic_g_per_100g: "0.041",
           linolenic_g_per_100g: "0.003",
-          oil_equivalent_mg: 50.698
+          oil_equivalent_mg: 50.698,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170009",
         grams: 78,
@@ -27538,9 +27933,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 132.44,
+          fraction: 0.0217,
           linoleic_g_per_100g: "0.084",
           linolenic_g_per_100g: "0.002",
-          oil_equivalent_mg: 195.6422
+          oil_equivalent_mg: 195.6422,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169928",
         grams: 154,
@@ -27603,9 +28001,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 2759.022,
           conjugated_linoleic_g_per_100g: "0.009",
+          fraction: 0.4529,
           linoleic_g_per_100g: "9.715",
           linolenic_g_per_100g: "0.026",
-          oil_equivalent_mg: 4075.6659
+          oil_equivalent_mg: 4075.6659,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "173806",
         grams: 28.35,
@@ -27666,7 +28067,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "93281",
         portion_label: "1 oz",
-        strength: 0.3683,
+        strength: 0.8212,
         usda_description: "Peanuts, all types, dry-roasted, without salt"
       },
       {
@@ -27674,9 +28075,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 167.32,
+          fraction: 0.0275,
           linoleic_g_per_100g: "0.093",
           linolenic_g_per_100g: "0.001",
-          oil_equivalent_mg: 247.1674
+          oil_equivalent_mg: 247.1674,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169118",
         grams: 178,
@@ -27738,9 +28142,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 6127.569,
+          fraction: 1.0057,
           linoleic_g_per_100g: "20.628",
           linolenic_g_per_100g: "0.986",
-          oil_equivalent_mg: 9051.7306
+          oil_equivalent_mg: 9051.7306,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "170182",
         grams: 28.35,
@@ -27826,7 +28233,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "86190",
         portion_label: "1 oz (19 halves)",
-        strength: 0.535,
+        strength: 1.5407,
         usda_description: "Nuts, pecans"
       },
       {
@@ -27834,9 +28241,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 72.24,
+          fraction: 0.0119,
           linoleic_g_per_100g: "0.039",
           linolenic_g_per_100g: "0.004",
-          oil_equivalent_mg: 106.7139
+          oil_equivalent_mg: 106.7139,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169941",
         grams: 168,
@@ -27886,9 +28296,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 66.4,
+          fraction: 0.0109,
           linoleic_g_per_100g: "0.023",
           linolenic_g_per_100g: "0.017",
-          oil_equivalent_mg: 98.087
+          oil_equivalent_mg: 98.087,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169124",
         grams: 166,
@@ -27970,9 +28383,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 401.85,
+          fraction: 0.066,
           linoleic_g_per_100g: "0.098",
           linolenic_g_per_100g: "0.137",
-          oil_equivalent_mg: 593.6184
+          oil_equivalent_mg: 593.6184,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175200",
         grams: 171,
@@ -28102,9 +28518,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 3781.0395,
+          fraction: 0.6206,
           linoleic_g_per_100g: "13.125",
           linolenic_g_per_100g: "0.212",
-          oil_equivalent_mg: 5585.4044
+          oil_equivalent_mg: 5585.4044,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "169426",
         grams: 28.35,
@@ -28146,7 +28565,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "84844",
         portion_label: "1 oz (49 kernels)",
-        strength: 0.3206,
+        strength: 0.9412,
         usda_description: "Nuts, pistachio nuts, dry roasted, with salt added"
       },
       {
@@ -28232,9 +28651,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Spices & herbs",
         efa: {
           acid_mg: 2513.984,
+          fraction: 0.4126,
           linoleic_g_per_100g: "28.295",
           linolenic_g_per_100g: "0.273",
-          oil_equivalent_mg: 3713.6923
+          oil_equivalent_mg: 3713.6923,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "171330",
         grams: 8.8,
@@ -28276,7 +28698,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "88450",
         portion_label: "1 tbsp",
-        strength: 0.1611,
+        strength: 0.5737,
         usda_description: "Spices, poppy seed"
       },
       {
@@ -28284,9 +28706,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Pork",
         efa: {
           acid_mg: 391,
+          fraction: 0.0642,
           linoleic_g_per_100g: "0.42",
           linolenic_g_per_100g: "0.04",
-          oil_equivalent_mg: 577.5907
+          oil_equivalent_mg: 577.5907,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "167863",
         grams: 85,
@@ -28416,9 +28841,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Pork",
         efa: {
           acid_mg: 2198.95,
+          fraction: 0.3609,
           linoleic_g_per_100g: "2.471",
           linolenic_g_per_100g: "0.116",
-          oil_equivalent_mg: 3248.3197
+          oil_equivalent_mg: 3248.3197,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "168377",
         grams: 85,
@@ -28478,7 +28906,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "82988",
         portion_label: "3 oz",
-        strength: 1.2195,
+        strength: 1.5804,
         usda_description: "Pork loin, fresh, backribs, bone-in, cooked-roasted, lean only"
       },
       {
@@ -28486,9 +28914,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Pork",
         efa: {
           acid_mg: 1606.5,
+          fraction: 0.2637,
           linoleic_g_per_100g: "1.82",
           linolenic_g_per_100g: "0.07",
-          oil_equivalent_mg: 2373.1442
+          oil_equivalent_mg: 2373.1442,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "167844",
         grams: 85,
@@ -28547,7 +28978,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "82078",
         portion_label: "3 oz",
-        strength: 1.1813,
+        strength: 1.445,
         usda_description: "Pork, fresh, shoulder, whole, separable lean and fat, cooked, roasted"
       },
       {
@@ -28556,9 +28987,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 280.72,
           conjugated_linoleic_g_per_100g: "0",
+          fraction: 0.0461,
           linoleic_g_per_100g: "0.232",
           linolenic_g_per_100g: "0",
-          oil_equivalent_mg: 414.6835
+          oil_equivalent_mg: 414.6835,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169243",
         grams: 121,
@@ -28656,9 +29090,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 82.88,
+          fraction: 0.0136,
           linoleic_g_per_100g: "0.043",
           linolenic_g_per_100g: "0.013",
-          oil_equivalent_mg: 122.4315
+          oil_equivalent_mg: 122.4315,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170093",
         grams: 148,
@@ -28708,9 +29145,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 215.32,
+          fraction: 0.0353,
           linoleic_g_per_100g: "0.494",
           linolenic_g_per_100g: "0.275",
-          oil_equivalent_mg: 318.0737
+          oil_equivalent_mg: 318.0737,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170850",
         grams: 28,
@@ -28760,9 +29200,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 5583.816,
           conjugated_linoleic_g_per_100g: "0.005",
+          fraction: 0.9165,
           linoleic_g_per_100g: "19.59",
           linolenic_g_per_100g: "0.111",
-          oil_equivalent_mg: 8248.491
+          oil_equivalent_mg: 8248.491,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "169415",
         grams: 28.35,
@@ -28853,7 +29296,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "84822",
         portion_label: "1 oz",
-        strength: 2.0059,
+        strength: 2.9224,
         usda_description: "Seeds, pumpkin and squash seed kernels, roasted, with salt added"
       },
       {
@@ -28861,9 +29304,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 1394,
+          fraction: 0.2288,
           linoleic_g_per_100g: "1.3",
           linolenic_g_per_100g: "0.34",
-          oil_equivalent_mg: 2059.2363
+          oil_equivalent_mg: 2059.2363,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "174346",
         grams: 85,
@@ -28922,7 +29368,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "94188",
         portion_label: "3 oz",
-        strength: 1.5778,
+        strength: 1.8066,
         usda_description: "Game meat, rabbit, domesticated, composite of cuts, cooked, stewed"
       },
       {
@@ -28930,9 +29376,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 55.68,
+          fraction: 91e-4,
           linoleic_g_per_100g: "0.017",
           linolenic_g_per_100g: "0.031",
-          oil_equivalent_mg: 82.2513
+          oil_equivalent_mg: 82.2513,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169276",
         grams: 116,
@@ -28994,9 +29443,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 567.8,
+          fraction: 0.0932,
           linoleic_g_per_100g: "0.588",
           linolenic_g_per_100g: "0.08",
-          oil_equivalent_mg: 838.7621
+          oil_equivalent_mg: 838.7621,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "173718",
         grams: 85,
@@ -29070,7 +29522,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "93178",
         portion_label: "3 oz",
-        strength: 1.1361,
+        strength: 1.2293,
         usda_description: "Fish, trout, rainbow, farmed, cooked, dry heat"
       },
       {
@@ -29078,9 +29530,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 461.25,
+          fraction: 0.0757,
           linoleic_g_per_100g: "0.249",
           linolenic_g_per_100g: "0.126",
-          oil_equivalent_mg: 681.3649
+          oil_equivalent_mg: 681.3649,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "167755",
         grams: 123,
@@ -29150,7 +29605,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "81905",
         portion_label: "1 cup",
-        strength: 0.3598,
+        strength: 0.4355,
         usda_description: "Raspberries, raw"
       },
       {
@@ -29158,9 +29613,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 255.84,
+          fraction: 0.042,
           linoleic_g_per_100g: "0.1",
           linolenic_g_per_100g: "0.056",
-          oil_equivalent_mg: 377.9304
+          oil_equivalent_mg: 377.9304,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170108",
         grams: 164,
@@ -29226,9 +29684,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 362.1,
+          fraction: 0.0594,
           linoleic_g_per_100g: "0.346",
           linolenic_g_per_100g: "0.08",
-          oil_equivalent_mg: 534.8992
+          oil_equivalent_mg: 534.8992,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169556",
         grams: 85,
@@ -29279,9 +29740,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 436.48,
           conjugated_linoleic_g_per_100g: "0.047",
+          fraction: 0.0716,
           linoleic_g_per_100g: "0.356",
           linolenic_g_per_100g: "0.043",
-          oil_equivalent_mg: 644.7744
+          oil_equivalent_mg: 644.7744,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "170851",
         grams: 124,
@@ -29354,7 +29818,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "87401",
         portion_label: "0.5 cup",
-        strength: 0.8573,
+        strength: 0.9289,
         usda_description: "Cheese, ricotta, whole milk"
       },
       {
@@ -29362,9 +29826,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 51,
+          fraction: 84e-4,
           linoleic_g_per_100g: "0.046",
           linolenic_g_per_100g: "0.014",
-          oil_equivalent_mg: 75.3379
+          oil_equivalent_mg: 75.3379,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175131",
         grams: 85,
@@ -29446,9 +29913,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 136,
+          fraction: 0.0223,
           linoleic_g_per_100g: "0.047",
           linolenic_g_per_100g: "0.113",
-          oil_equivalent_mg: 200.9011
+          oil_equivalent_mg: 200.9011,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169247",
         grams: 85,
@@ -29514,9 +29984,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 161.5,
+          fraction: 0.0265,
           linoleic_g_per_100g: "0.038",
           linolenic_g_per_100g: "0.057",
-          oil_equivalent_mg: 238.5701
+          oil_equivalent_mg: 238.5701,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168455",
         grams: 170,
@@ -29643,9 +30116,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 318.62,
+          fraction: 0.0523,
           linoleic_g_per_100g: "0.123",
           linolenic_g_per_100g: "0.235",
-          oil_equivalent_mg: 470.6699
+          oil_equivalent_mg: 470.6699,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175140",
         grams: 89,
@@ -29759,9 +30235,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 74,
+          fraction: 0.0121,
           linoleic_g_per_100g: "0.07",
           linolenic_g_per_100g: "0.004",
-          oil_equivalent_mg: 109.3138
+          oil_equivalent_mg: 109.3138,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170005",
         grams: 100,
@@ -29795,9 +30274,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 17,
+          fraction: 28e-4,
           linoleic_g_per_100g: "0.014",
           linolenic_g_per_100g: "0.006",
-          oil_equivalent_mg: 25.1126
+          oil_equivalent_mg: 25.1126,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "167742",
         grams: 85,
@@ -29847,9 +30329,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 5958.3195,
+          fraction: 0.978,
           linoleic_g_per_100g: "20.654",
           linolenic_g_per_100g: "0.363",
-          oil_equivalent_mg: 8801.7128
+          oil_equivalent_mg: 8801.7128,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "170151",
         grams: 28.35,
@@ -29956,7 +30441,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "86137",
         portion_label: "1 oz",
-        strength: 0.8459,
+        strength: 1.8239,
         usda_description: "Seeds, sesame seeds, whole, roasted and toasted"
       },
       {
@@ -29964,9 +30449,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 49.3,
+          fraction: 81e-4,
           linoleic_g_per_100g: "0.031",
           linolenic_g_per_100g: "0.003",
-          oil_equivalent_mg: 72.8266
+          oil_equivalent_mg: 72.8266,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170097",
         grams: 145,
@@ -30049,9 +30537,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 16.15,
           conjugated_linoleic_g_per_100g: "0",
+          fraction: 27e-4,
           linoleic_g_per_100g: "0.018",
           linolenic_g_per_100g: "0.001",
-          oil_equivalent_mg: 23.857
+          oil_equivalent_mg: 23.857,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175180",
         grams: 85,
@@ -30085,9 +30576,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 420.75,
+          fraction: 0.0691,
           linoleic_g_per_100g: "0.368",
           linolenic_g_per_100g: "0.127",
-          oil_equivalent_mg: 621.5378
+          oil_equivalent_mg: 621.5378,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168727",
         grams: 85,
@@ -30153,9 +30647,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 160,
+          fraction: 0.0263,
           linoleic_g_per_100g: "0.085",
           linolenic_g_per_100g: "0.015",
-          oil_equivalent_mg: 236.3542
+          oil_equivalent_mg: 236.3542,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170509",
         grams: 160,
@@ -30269,9 +30766,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 210.8,
+          fraction: 0.0346,
           linoleic_g_per_100g: "0.19",
           linolenic_g_per_100g: "0.058",
-          oil_equivalent_mg: 311.3967
+          oil_equivalent_mg: 311.3967,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173692",
         grams: 85,
@@ -30369,9 +30869,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 8708.36,
+          fraction: 1.4293,
           linoleic_g_per_100g: "4.465",
           linolenic_g_per_100g: "0.598",
-          oil_equivalent_mg: 12864.1111
+          oil_equivalent_mg: 12864.1111,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "174271",
         grams: 172,
@@ -30525,7 +31028,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "94059",
         portion_label: "1 cup",
-        strength: 2.1084,
+        strength: 3.5377,
         usda_description: "Soybeans, mature cooked, boiled, without salt"
       },
       {
@@ -30533,9 +31036,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 193.75,
+          fraction: 0.0318,
           linoleic_g_per_100g: "0.047",
           linolenic_g_per_100g: "0.078",
-          oil_equivalent_mg: 286.2102
+          oil_equivalent_mg: 286.2102,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170539",
         grams: 155,
@@ -30585,9 +31091,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 196.2,
+          fraction: 0.0322,
           linoleic_g_per_100g: "0.017",
           linolenic_g_per_100g: "0.092",
-          oil_equivalent_mg: 289.8294
+          oil_equivalent_mg: 289.8294,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170531",
         grams: 180,
@@ -30813,9 +31322,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 323.4,
+          fraction: 0.0531,
           linoleic_g_per_100g: "0.137",
           linolenic_g_per_100g: "0.028",
-          oil_equivalent_mg: 477.731
+          oil_equivalent_mg: 477.731,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175257",
         grams: 196,
@@ -30962,9 +31474,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 227.85,
+          fraction: 0.0374,
           linoleic_g_per_100g: "0.09",
           linolenic_g_per_100g: "0.065",
-          oil_equivalent_mg: 336.5832
+          oil_equivalent_mg: 336.5832,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "167762",
         grams: 147,
@@ -31058,9 +31573,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 235.8,
+          fraction: 0.0387,
           linoleic_g_per_100g: "0.049",
           linolenic_g_per_100g: "0.082",
-          oil_equivalent_mg: 348.3271
+          oil_equivalent_mg: 348.3271,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170125",
         grams: 180,
@@ -31110,9 +31628,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 9313.2585,
+          fraction: 1.5286,
           linoleic_g_per_100g: "32.782",
           linolenic_g_per_100g: "0.069",
-          oil_equivalent_mg: 13757.6756
+          oil_equivalent_mg: 13757.6756,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "169417",
         grams: 28.35,
@@ -31235,7 +31756,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "84826",
         portion_label: "1 oz",
-        strength: 1.3868,
+        strength: 2.9154,
         usda_description: "Seeds, sunflower seed kernels from shell, dry roasted, with salt added"
       },
       {
@@ -31243,9 +31764,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 948.28,
+          fraction: 0.1556,
           linoleic_g_per_100g: "0.586",
           linolenic_g_per_100g: "0.018",
-          oil_equivalent_mg: 1400.8125
+          oil_equivalent_mg: 1400.8125,
+          qualifies: true,
+          strong: false
         },
         fdc_id: "168540",
         grams: 157,
@@ -31303,7 +31827,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "83275",
         portion_label: "1 cup cut",
-        strength: 0.6564,
+        strength: 0.812,
         usda_description: "Corn, sweet, white, cooked, boiled, drained, with salt"
       },
       {
@@ -31311,9 +31835,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 192,
+          fraction: 0.0315,
           linoleic_g_per_100g: "0.09",
           linolenic_g_per_100g: "0.006",
-          oil_equivalent_mg: 283.6251
+          oil_equivalent_mg: 283.6251,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168483",
         grams: 200,
@@ -31602,9 +32129,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 295.12,
           conjugated_linoleic_g_per_100g: "0.161",
+          fraction: 0.0484,
           linoleic_g_per_100g: "1.086",
           linolenic_g_per_100g: "0.129",
-          oil_equivalent_mg: 435.9554
+          oil_equivalent_mg: 435.9554,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171251",
         grams: 28,
@@ -31653,9 +32183,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 103.7,
+          fraction: 0.017,
           linoleic_g_per_100g: "0.088",
           linolenic_g_per_100g: "0.034",
-          oil_equivalent_mg: 153.1871
+          oil_equivalent_mg: 153.1871,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "173704",
         grams: 85,
@@ -31753,9 +32286,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 6673.59,
+          fraction: 1.0954,
           linoleic_g_per_100g: "23.133",
           linolenic_g_per_100g: "0.407",
-          oil_equivalent_mg: 9858.3204
+          oil_equivalent_mg: 9858.3204,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "170189",
         grams: 28.35,
@@ -31830,7 +32366,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "86210",
         portion_label: "1 oz",
-        strength: 0.4142,
+        strength: 1.5096,
         usda_description: "Seeds, sesame butter, tahini, from roasted and toasted kernels (most common type)"
       },
       {
@@ -31838,9 +32374,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 79.2,
+          fraction: 0.013,
           linoleic_g_per_100g: "0.048",
           linolenic_g_per_100g: "0.018",
-          oil_equivalent_mg: 116.9953
+          oil_equivalent_mg: 116.9953,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "169105",
         grams: 120,
@@ -31890,9 +32429,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 60.72,
+          fraction: 0.01,
           linoleic_g_per_100g: "0.032",
           linolenic_g_per_100g: "0.014",
-          oil_equivalent_mg: 89.6964
+          oil_equivalent_mg: 89.6964,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170543",
         grams: 132,
@@ -31990,9 +32532,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 7138,
+          fraction: 1.1716,
           linoleic_g_per_100g: "4.052",
           linolenic_g_per_100g: "0.248",
-          oil_equivalent_mg: 10544.3533
+          oil_equivalent_mg: 10544.3533,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "174272",
         grams: 166,
@@ -32098,7 +32643,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "94061",
         portion_label: "1 cup",
-        strength: 1.1118,
+        strength: 2.2834,
         usda_description: "Tempeh"
       },
       {
@@ -32106,9 +32651,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 287.1,
+          fraction: 0.0471,
           linoleic_g_per_100g: "0.285",
           linolenic_g_per_100g: "0.045",
-          oil_equivalent_mg: 424.1081
+          oil_equivalent_mg: 424.1081,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175177",
         grams: 87,
@@ -32158,9 +32706,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 2061.36,
+          fraction: 0.3383,
           linoleic_g_per_100g: "1.469",
           linolenic_g_per_100g: "0.167",
-          oil_equivalent_mg: 3045.0698
+          oil_equivalent_mg: 3045.0698,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "172448",
         grams: 126,
@@ -32266,7 +32817,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "90638",
         portion_label: "0.5 cup",
-        strength: 3.0646,
+        strength: 3.4029,
         usda_description: "Tofu, firm, prepared with calcium sulfate and magnesium chloride (nigari)"
       },
       {
@@ -32274,9 +32825,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 123.67,
+          fraction: 0.0203,
           linoleic_g_per_100g: "0.08",
           linolenic_g_per_100g: "0.003",
-          oil_equivalent_mg: 182.6871
+          oil_equivalent_mg: 182.6871,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170457",
         grams: 149,
@@ -32342,9 +32896,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 107.1,
+          fraction: 0.0176,
           linoleic_g_per_100g: "0.055",
           linolenic_g_per_100g: "0.071",
-          oil_equivalent_mg: 158.2096
+          oil_equivalent_mg: 158.2096,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175158",
         grams: 85,
@@ -32444,9 +33001,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 382.5,
           conjugated_linoleic_g_per_100g: "0.001",
+          fraction: 0.0628,
           linoleic_g_per_100g: "0.431",
           linolenic_g_per_100g: "0.02",
-          oil_equivalent_mg: 565.0343
+          oil_equivalent_mg: 565.0343,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171496",
         grams: 85,
@@ -32530,9 +33090,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 1275.85,
           conjugated_linoleic_g_per_100g: "0.01",
+          fraction: 0.2094,
           linoleic_g_per_100g: "1.436",
           linolenic_g_per_100g: "0.075",
-          oil_equivalent_mg: 1884.7034
+          oil_equivalent_mg: 1884.7034,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "171532",
         grams: 85,
@@ -32607,7 +33170,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "88938",
         portion_label: "3 oz",
-        strength: 1.4716,
+        strength: 1.681,
         usda_description: "Turkey, thigh, from whole bird, meat only, roasted"
       },
       {
@@ -32615,9 +33178,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Spices & herbs",
         efa: {
           acid_mg: 22.68,
+          fraction: 37e-4,
           linoleic_g_per_100g: "0.672",
           linolenic_g_per_100g: "0.084",
-          oil_equivalent_mg: 33.5032
+          oil_equivalent_mg: 33.5032,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "172231",
         grams: 3,
@@ -32651,9 +33217,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 132.48,
+          fraction: 0.0217,
           linoleic_g_per_100g: "0.028",
           linolenic_g_per_100g: "0.064",
-          oil_equivalent_mg: 195.7013
+          oil_equivalent_mg: 195.7013,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170139",
         grams: 144,
@@ -32751,9 +33320,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 63.96,
+          fraction: 0.0105,
           linoleic_g_per_100g: "0.009",
           linolenic_g_per_100g: "0.032",
-          oil_equivalent_mg: 94.4826
+          oil_equivalent_mg: 94.4826,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170547",
         grams: 156,
@@ -32803,9 +33375,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 344.25,
+          fraction: 0.0565,
           linoleic_g_per_100g: "0.393",
           linolenic_g_per_100g: "0.012",
-          oil_equivalent_mg: 508.5309
+          oil_equivalent_mg: 508.5309,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "172650",
         grams: 85,
@@ -32840,9 +33415,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         efa: {
           acid_mg: 86.7,
           conjugated_linoleic_g_per_100g: "0.009",
+          fraction: 0.0142,
           linoleic_g_per_100g: "0.107",
           linolenic_g_per_100g: "0.004",
-          oil_equivalent_mg: 128.0745
+          oil_equivalent_mg: 128.0745,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "174880",
         grams: 85,
@@ -32892,9 +33470,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 416.5,
+          fraction: 0.0684,
           linoleic_g_per_100g: "0.4",
           linolenic_g_per_100g: "0.09",
-          oil_equivalent_mg: 615.2596
+          oil_equivalent_mg: 615.2596,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175085",
         grams: 85,
@@ -32962,9 +33543,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 13373.5455,
+          fraction: 2.1951,
           linoleic_g_per_100g: "38.093",
           linolenic_g_per_100g: "9.08",
-          oil_equivalent_mg: 19755.5883
+          oil_equivalent_mg: 19755.5883,
+          qualifies: true,
+          strong: true
         },
         fdc_id: "170187",
         grams: 28.35,
@@ -33022,7 +33606,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "86206",
         portion_label: "1 oz (14 halves)",
-        strength: 0.3818,
+        strength: 2.5769,
         usda_description: "Nuts, walnuts, english"
       },
       {
@@ -33030,9 +33614,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 272.08,
+          fraction: 0.0447,
           linoleic_g_per_100g: "0.083",
           linolenic_g_per_100g: "0.069",
-          oil_equivalent_mg: 401.9204
+          oil_equivalent_mg: 401.9204,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "175249",
         grams: 179,
@@ -33194,9 +33781,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 280.8,
+          fraction: 0.0461,
           linoleic_g_per_100g: "0.179",
           linolenic_g_per_100g: "0.001",
-          oil_equivalent_mg: 414.8017
+          oil_equivalent_mg: 414.8017,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "168537",
         grams: 156,
@@ -33278,9 +33868,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 331.84,
+          fraction: 0.0545,
           linoleic_g_per_100g: "0.083",
           linolenic_g_per_100g: "0.053",
-          oil_equivalent_mg: 490.1987
+          oil_equivalent_mg: 490.1987,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171266",
         grams: 244,
@@ -33379,9 +33972,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 225.4,
+          fraction: 0.037,
           linoleic_g_per_100g: "0.065",
           linolenic_g_per_100g: "0.027",
-          oil_equivalent_mg: 332.964
+          oil_equivalent_mg: 332.964,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "171284",
         grams: 245,
@@ -33462,9 +34058,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 80.24,
+          fraction: 0.0132,
           linoleic_g_per_100g: "0.05",
           linolenic_g_per_100g: "0.009",
-          oil_equivalent_mg: 118.5316
+          oil_equivalent_mg: 118.5316,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "170551",
         grams: 136,
@@ -33530,9 +34129,12 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 21.25,
+          fraction: 35e-4,
           linoleic_g_per_100g: "0.023",
           linolenic_g_per_100g: "0.002",
-          oil_equivalent_mg: 31.3908
+          oil_equivalent_mg: 31.3908,
+          qualifies: false,
+          strong: false
         },
         fdc_id: "172006",
         grams: 85,
@@ -33645,13 +34247,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return DATA._meta.source_display[sourceId] ?? sourceId;
   }
   var DISPLAY = DATA._meta.essential_display;
-  var EFA_GOAL_MG = EfaCoverageSchema.parse(efa_coverage_data_default).goal.maintenance_mg;
+  var EFA_GOAL = EfaCoverageSchema.parse(efa_coverage_data_default).goal;
   var EFA_SLUG = "essential-fatty-acids";
+  var EFA_MEMBERS = new Set(EFA_GOAL.members);
   function foodEfaOilMg(id) {
     return BY_ID.get(id)?.efa?.oil_equivalent_mg ?? 0;
   }
   function hitsOf(food) {
-    const floor = Math.round(DATA._meta.qualify_fraction * 100);
     const rows = food.nutrients.map((n) => ({
       slug: n.slug,
       label: DISPLAY[n.slug]?.label ?? n.slug,
@@ -33663,9 +34265,9 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       source: sourceWordsFor(n.provenance.source_id),
       conservative: n.provenance.conservative === true
     }));
-    if (food.efa !== void 0 && EFA_GOAL_MG > 0) {
-      const pct = Math.round(food.efa.oil_equivalent_mg / EFA_GOAL_MG * 100);
-      if (pct >= floor) {
+    if (food.efa !== void 0) {
+      const pct = Math.round(food.efa.fraction * 100);
+      if (food.efa.qualifies) {
         rows.push({
           slug: EFA_SLUG,
           label: DATA._meta.efa_reference.label,
@@ -33724,12 +34326,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       }
       return n;
     };
-    const goalIdsFor = (f) => goals.filter((g) => g.members.some((m) => f.nutrients.some((n) => n.slug === m))).map((g) => g.id);
+    const goalIdsFor = (f) => goals.filter((g) => g.members.some(
+      (m) => f.nutrients.some((n) => n.slug === m) || f.efa?.qualifies === true && EFA_MEMBERS.has(m)
+    )).map((g) => g.id);
     const goalFillOf = (f) => {
       let filled = 0;
       for (const row of f.nutrients) {
         if (goalGaps.has(row.slug)) {
           filled += Math.min(row.fraction, 1);
+        }
+      }
+      const efa = f.efa;
+      if (efa?.qualifies === true) {
+        for (const member of EFA_MEMBERS) {
+          if (goalGaps.has(member)) {
+            filled += Math.min(efa.fraction, 1);
+          }
         }
       }
       return filled / goalGaps.size;
@@ -34435,7 +35047,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return { totalMg, present, sources };
   }
   var EFA = EfaCoverageSchema.parse(efa_coverage_data_default);
-  var EFA_GOAL = EFA.goal.maintenance_mg;
+  var EFA_GOAL2 = EFA.goal.maintenance_mg;
   var cachedEfaByName = null;
   function efaByName() {
     if (cachedEfaByName === null) {
@@ -34470,13 +35082,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return { totalMg, sources };
   }
   function efaStatusOf(e) {
-    if (EFA_GOAL <= 0) {
+    if (EFA_GOAL2 <= 0) {
       return "";
     }
-    if (e.totalMg >= EFA_GOAL * 0.95) {
+    if (e.totalMg >= EFA_GOAL2 * 0.95) {
       return "covered";
     }
-    if (e.totalMg >= EFA_GOAL * 0.3) {
+    if (e.totalMg >= EFA_GOAL2 * 0.3) {
       return "partial";
     }
     return e.totalMg > 0 ? "gap" : "";
@@ -34696,7 +35308,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         // own delivery against its own Wallach low. deliveryRatio cannot serve the
         // aggregates: they carry no numeric `low`, so it returns a binary 0/1 and the bar
         // snaps from empty to full instead of showing progress.
-        fillPercent: isPdm ? PDM_GOAL > 0 ? pdm.totalMg / PDM_GOAL : 0 : isEfa ? EFA_GOAL > 0 ? efa.totalMg / EFA_GOAL : 0 : deliveryRatio(t, status, d),
+        fillPercent: isPdm ? PDM_GOAL > 0 ? pdm.totalMg / PDM_GOAL : 0 : isEfa ? EFA_GOAL2 > 0 ? efa.totalMg / EFA_GOAL2 : 0 : deliveryRatio(t, status, d),
         // Same reasoning for the sources line: an EFA tile's contributors are the products
         // feeding the shared oil total, not this one tile's own nutrient rows.
         contributesTo: isPdm ? pdm.sources : isEfa ? efa.sources : d.sources,
@@ -40205,7 +40817,7 @@ phenol-explorer.eu -- not bypassed); Clements & Darnell 1980 for inositol is pay
 free route tried, and phytate tables are NOT a substitute because phytate-bound inositol is poorly
 absorbed. The foods feature remains uncommitted on purpose, per the standing tree rule.` }, { id: "lg_mt4hzfua_ehu7cg", ts: "2026-08-22T09:52:49.522998-05:00", surface: "foods/second-sources", kind: "round-close", summary: "Seven of the thirteen essentials no food could reach now have real foods behind them, every food number says which published source it came from and how firmly, and the approved tile design is live.", detail: 'Until this round, thirteen of the ninety essentials had no food a person could eat to move them \u2014 the app could only ever say "take a supplement". Seven of those now name real foods, and the numbers on screen say where each came from. Iodine points at iodised salt, lobster and ricotta; molybdenum at tofu, snow peas and pumpkin seeds; sulphur at lobster, venison, turkey and chicken breast; silica at dates, green beans and spinach; chloride at salt, cottage cheese and chard; flavonoids at blackberries and strawberries; biotin at peanuts and hazelnuts. Walnuts, which the app scored at zero for essential fatty acids yesterday, are now worth 220% of Dr. Wallach\'s daily dose.\n\nHover any number on a food card and it names the publication it came from. Where two tables had to be matched up by food NAME rather than by a shared id, the number carries a small "\u2248" and says plainly that a person paired the two by hand \u2014 a close stand-in, not a measurement of that exact item.\n\nThe half of this round worth remembering is what was REFUSED. Garlic \u2014 the food the campaign most wanted, the richest allium in the literature, and one Dr. Wallach names by name \u2014 did not make it: a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his sulphur target. It is a flavouring, not a serving. Oysters at 54-67% sulphur were refused because that source measures them raw and ours is cooked. Lamb chop at 42% was refused because their cut is lean and ours is lean and fat, and fat carries almost no sulphur. Boron was acquired, pinned and extracted, then deliberately not used at all: no source we hold measures boron per 100 g, and the one table that exists is per serving without ever saying what a serving weighs. Twenty-five refusals in total, each written down with its reasoning so nobody re-derives the hope.\n\nTHE TECHNICAL RECORD\n\nSECOND-SOURCE SPINE. eden/foods/sources/sources.json gained `nutrient_bindings` \u2014 the ONE home for how a pinned payload becomes a number: payload -> extractor -> committed candidate -> join kind -> value kind -> unit -> the words the card uses. Three value shapes: `cell` (one cell, byte-exact), `sum` (Sigma of component ROWS \u2014 USDA\'s per-compound flavonoid rows), `sum_fields` (Sigma of named FIELDS \u2014 Doleman splits sulphur in two). All sums in DECIMAL, never float: \'147.63\' + \'19.58\' must be \'167.21\' on every host because that string is what the gate re-derives. sr_legacy_food.csv (the fdc_id->NDB bridge) and USDA water/18:2/18:3/CLA joined the committed extract as `support_nutrients`, deliberately NOT nutrient_map, so an arithmetic input can never be mistaken for a Wallach-targeted essential.\n\nTIER IS DERIVED FROM THE JOIN, NEVER TYPED. An id join may be EXACT; a name join is APPROXIMATE forever. The gate REDs the other combination in EITHER the row or the binding, and REDs a name-joined row whose key or reasoning is not in the curation \u2014 a matcher\'s proposal cannot ship as though a person had accepted it.\n\nTWO SOURCES FOR ONE ESSENTIAL. Bindings declare `combine`: `sum` where parts measure DIFFERENT things (USDA publishes proanthocyanidins separately from the other flavonoid classes, and omitting them understated every total \u2014 2 qualifying foods became 10), or `first` where they measure the SAME thing and only one may win. Sulphur is `first`: AFCD primary because it measures directly per 100 g, Doleman second because its dry-weight value must be married to a moisture from a different sample. They are complementary rather than competing \u2014 AFCD supplies 24 foods, Doleman fills the three it has nothing for (chicken breast, cod, egg). The derive REFUSES to guess: a multi-part binding with no `combine` hard-fails.\n\nDOLEMAN, PINNED. Europe PMC serves the CC BY paper as JATS XML, so Table 1 comes out of real table cells rather than PDF coordinates. All 32 rows matched the values that had been hand-typed into convert_sulfur.py exactly \u2014 they were right; pinning makes them provable. That script is retired. The dry-to-fresh conversion (umol/g dry x 32.06 x dry-matter x 0.1) happens at derive time because the dry-matter fraction depends on which catalog food the row was paired with; every shipped row carries the umol/g, the water, the fraction and the arithmetic as a sentence. 32.06 lives in the binding AND independently in the gate, so editing one REDs.\n\nTHE PAIR RULE, CORRECTED MID-ROUND BY LUNETH. My rule dropped any food whose source measured several varieties, which made the app assert "lentils contain no silica" \u2014 a claim every one of that source\'s lentil rows contradicts. His words: "Lentils DO have silica, ALL of them... Claiming lentils have no silica when they do would be the worst possible option." The rule conflated WHICH measurement to attach (genuinely ambiguous) with WHETHER THE FOOD CONTAINS IT (not ambiguous). A blank card reads as "not a source", which is a stronger claim than the ambiguity being avoided, and a false one. Replaced with: take the LOWEST variety and SAY SO \u2014 `conservative` in the curation, carried to the card, which appends "It is the lowest of the varieties that source measured, so it holds whichever kind you eat." A poison case REDs if that flag is dropped.\n\nDESIGN F WIRED. The signed-off record keeps its .lb-* classes and is never edited; the app ships the same design under .fs-*, because a generic two-letter namespace in a sheet that loads over every workspace is how a bare `.rl-` rule once stacked Coverage\'s delete buttons. Chip colours come from the canon\'s own category, read off the data. Short labels are DERIVED from the canon (drop every parenthetical, drop a "/ alternative" tail) rather than 29 hand-typed strings; the first attempt split at the first parenthesis and produced "Vitamin D2", silently dropping half of what that tile covers \u2014 caught before it shipped. render_probe_food_tile.js now holds BOTH the record (190 foods) and the shipped app (120 tiles, clicked through the real control) to the same five clauses.\n\nEFA-FROM-FOODS. The meter matched regimen items by canonical name against the PRODUCT table, so a food matched nothing and walnuts moved the omega tiles by zero. Foods now enter the same meter converted to OIL \u2014 his dose is nine grams of flaxseed oil, and USDA measures a food\'s linoleic and linolenic ACID; summing them is adding pounds to kilograms. The bridge is his own dose read through the oil he named (USDA\'s cold-pressed flaxseed oil, 14.327 + 53.368 g per 100 g), read from the pinned archive at derive time, never typed. 52 of 192 foods now feed it.\n\nNEGATIVE CONTROLS, 11 -> 31. New: edited second-source value; tier upgraded in the row or in the binding; pair missing from the curation; reasoning dropped; `conservative` dropped; joined to a row the human did not pair; unit swap; re-labelled source; deleted binding leaving numbers with no route home; edited COMPONENT of a summed total; hand-edited candidate; re-pointed payload hash; parts summed instead of one winning; multi-part binding with no `combine`; row crediting the wrong publication; conversion swapped; working no longer showing its terms. Clause 7 re-runs each extractor against its sha256-pinned payload and byte-compares \u2014 all six reproduce.\n\nTWO PROBE DEFECTS FOUND AND FIXED. The EFA probe\'s first negative control was meaningless: walking the food list to reach salt added every food first. Rebuilt to add one food the tile ITSELF says carries an EFA chip, with a no-add navigation as the control. And the tile probe was checking the "+N" badge against the meta line\'s "N of 90" \u2014 a second rendering of the same fact; checking a badge against its sibling proves only that two renderings agree. The tile now publishes data-hits.\n\nCLEANED BEFORE COMMIT. Three files removed rather than shipped: a superseded sulfur candidate, a dead demo merge, and mk_sources.py \u2014 which knew nothing about bindings, combine, per-part displays or the boron finding, so re-running it would have silently erased all of them.\n\nVERIFICATION. Board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), 79 unit tests, 31 gate poison cases, 5 render probes, build fresh. NO SEAL TAKEN AND NONE NEEDED: eden/corpus, eden/catalog and eden/products are untouched this round; knowledge_version stays 491, 2601 claims, 7 books.\n\nDEFERRED. Copy review \u2014 none of the foods copy has been through Luneth. Two chip labels differ from the demo\'s mock data because the canon says "Vitamin D2 + D3" and "Folic Acid". Design F\'s remove state is unwired because the ranker never lists an owned food. `strength` still counts nutrient rows only, so education-mode ordering under-ranks the EFA-rich foods.' }, { id: "lg_mt4k9syv_b4sq3h", ts: "2026-08-22T10:56:52.327146-05:00", surface: "dashboard/style", kind: "round-close", summary: "Seven owner-reported style items shipped across Coverage and the Regimen console \u2014 and the first of them, a servings step throwing the reader to the top, was a SECOND scroller the probe had never measured, so it had been passing over the defect all along.", detail: "Changing how many servings of something you take no longer throws you back to the top of your list, the food cards are readable in dark mode instead of near-black text on charcoal, and you can now page through every food we hold rather than only ever seeing the first three. Plus a pass of type and spacing across both tabs, all seven items from the owner's list and two rounds of refinement on top.\n\nWHAT LANDED, in his order. (1) THE SCROLL JUMP WAS A SECOND SCROLLER. The page scroller (.app-workspace) was already guarded; the Daily Protocol rail is its OWN scroller ([data-rail-list], max-height + overflow-y:auto) rebuilt through replaceChildren, and nothing guarded it \u2014 with more rows than fit, stepping the servings on a row near the bottom snapped the rail back to row one. Measured 572 -> 0 before, 572 -> 572 after, on both tabs. The guard was duplicated verbatim in coverage.ts and regimen.ts, so it moved to the new views/scroll-keep.ts; the Keep-after-delete path rebuilds the rail in place and now routes through it too. (2) DARK MODE ON THE FOOD TILES \u2014 theme.css block (M). Three defects, all of them ones that file had already named once: a cream-tuned category hue used as small text (mineral blue #2b6fb0 reads ~2.1:1 on the tile), a chip whose ink was mixed toward #000, and a + control whose hover was background:--ds-ink \u2014 which IS the light token in dark, so it flashed white. Hues brightened by the (J1) recipe with the MEANING untouched (minerals blue, vitamins orange, fatty acids purple); the chip's ink now mixes toward var(--ds-ink), which is correct in BOTH themes with no override and shifts cream by ~6/255 per channel. (3) TYPE ON THE TILE: chips 8 -> 10px, the lead label 8 -> 10px, the serving line 9 -> 10px, +N follows the chips. (4) PAGING, and the reason there was none: the RANKER stopped at seven foods, not the pager. Each emitted card consumes its essentials from the outstanding set, so the greedy walk runs dry after about seven \u2014 correct for a recommendation, wrong for a pager. state/foods.ts gained a `browse` tail: when the gap-fill walk ends, rank the remainder by nutrient density (the key education mode already uses) and keep going. The recommendation itself is unchanged; only the tail extends. It is a SORT, not another argmax loop, with an id tiebreak so equal-strength foods cannot swap places between paints. (5) 'Based on your goals' -> 'Supplements \u2014 based on your goals'. (6) 'Add or scan a product to light the field' -> 'Add a food or supplement to begin', at 0.7rem \u2014 and it exposed a leading bug my own change made visible: as an inline the <small> took its line box from .rail-empty's 24.8px strut, so two wrapped lines sat 24.8px apart under 11.2px type. Now display:block with its own line-height. (7) THE CONSOLE COLUMN'S RHYTHM. .ck-main sets one 32px gap between every child and the shared .fs-block added 16px above and 24px below on top of it \u2014 48px and 56px where every other seam is 32px. Dropped inside .ck only; Coverage's aside keeps the shared margins. FOOD SOURCES was the column's third section heading still at 0.6rem/400 next to two siblings at 0.7rem/700 (it shipped after that legibility bump); all three now measure 11.2px/700/1.68px. 'Best next moves' gained the foods heading's dotted rule, cut between the eyebrow and its note \u2014 an <i> rather than a pseudo because .recs__head has a second child. \xB7 REFINEMENT ROUND TWO (owner, same session): browsing must reach the WHOLE catalog, so both tabs now page the full 192. Coverage walks all 64 pages with the arrows; the console's pager is capped at 30 squares, and THE CAP IS THE REQUEST (limit = FOOD_LIMIT * FOOD_PAGE_CAP), so the count is still derived from the live pool and never stored: it holds at 30 through 103 foods owned, falls to 29/28/26 at 105/110/115, and returns to 30 when the regimen is cleared \u2014 walked, not reasoned about. Coverage's ADD cap (FOOD_MAX = 12) is unchanged and still enforced; only browsing is uncapped, because a cap on what you may take is not a reason to hide what exists. Thirty squares fit one row where sixty-four wrapped to two. Sizes: page squares 10px, arrows 12px, the 'N / 64' readout 11px, and the arrows lifted 1px via padding-bottom on a place-items:center grid \u2014 which moves the GLYPH without moving the button, its border, or the row's baseline (A/B'd at 8x). \xB7 REFINEMENT ROUND THREE: lead label to 10px with the pills; .fs-note (both tabs, including the exhaustion egg), Coverage's .recs__note and the .ck-recs__go button raised to 0.7rem, weight left at 400 because they are sentences and 700 mono prose reads as shouting. The fourth string he named \u2014 'All 90 essentials are now covered' \u2014 was ALREADY 0.7rem/700; it rides .ck-recs__note, which the console's legibility bump covers. Measured before touching anything, so it was left alone rather than re-set to the value it already had. \xB7 THE GATE WAS BLIND, AND IT WAS BLIND TWICE. render_probe_dose_scroll.js had been PASSING over the rail defect for as long as the rail has existed, because it only ever read .app-workspace \u2014 and it was clicking document.querySelector('[data-dose-up]') unscoped, so with both workspaces in the DOM its 'regimen' pass was clicking Coverage's HIDDEN stepper and watching the Regimen page react. It now scopes every click to the workspace under test, asserts the element is visible first, and measures BOTH scrollers, 10 checks. Its old fixed scrollTop of 500 also sat within 50px of the bottom of the regimen page, so it passed on headroom alone; when item 7 spent 40px of that headroom the probe went red over correct behaviour. It now scrolls to the middle and asserts the honest rule: the reader stays exactly where they were, unless the content no longer reaches that far, in which case they land at the new end. \xB7 PERFORMANCE, MEASURED BEFORE COMMITTING TO THE DESIGN, because he asked whether whole-catalog paging would lag: 1.54 ms to build all 192 recs, 0.19 ms for the old 24, 7-8 ms for a page click end to end (that is the whole innerHTML swap, not the ranking). Nothing is cached and nothing can go stale. \xB7 FILES: dashboard/assets/js/src/views/scroll-keep.ts (new), views/foods-block.ts, views/coverage.ts, views/regimen.ts, state/foods.ts, assets/styles/dashboard.css, theme.css, workspace-coverage.css, workspace-regimen.css, assets/data/view-copy.json, tools/probes/render_probe_dose_scroll.js. \xB7 FIXED AS FOUND: a comment in regimen.ts still claimed the foods half 'is not built yet (it waits on a source-rule ruling)' \u2014 it shipped 2026-08-22. \xB7 VERIFICATION: board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), no new reds; 79 unit tests; render probes dose_scroll (10 checks, both scrollers), food_tile (120 shipped tiles walked, all five design-F clauses hold at 10px chips), foods, efa_foods, food_tier, coverage_add_remove (33 checks); build fresh; eslint at HEAD parity on every touched file (foods 2, foods-block 7, regimen 8, coverage 12 \u2014 all pre-existing, none added). Screenshots in temporary/, signed off by Luneth. The terminal states were REACHED, not planted: 192 foods added for the exhaustion egg, 90/90 covered for the finish line. \xB7 NO SEAL TAKEN AND NONE NEEDED \u2014 eden/corpus, eden/catalog and eden/products are untouched; knowledge_version stays 491. No number, dose, target or claim was touched this round; every denominator on screen is still Wallach's.\n\nDEFERRED / KNOWN: the app now differs DELIBERATELY from the signed-off design-F record (chronicle/decisions/2026-08-21-food-tile-F-approved.html) on type size \u2014 the record is never edited, the owner asked for the larger type, and the probe's five clauses still hold on both. .fs-note is shared, so raising it also raised 'No food moves a remaining gap' and 'That's the last food this tab will suggest' \u2014 same class, same role, and he was told. The 'Add a food or supplement to begin' line still wraps to two lines with 'begin' alone on the second. PRE-EXISTING, NOT TOUCHED: the EXPLORE THE PRODUCTS TAB button is a grid item in .ck-recgrid, so display:inline-block is blockified and it stretches to a full cell instead of hugging its text; raised with him, left alone. Still queued from last round: the foods copy review, and the two chip labels where canon says 'Vitamin D2 + D3' and 'Folic Acid' where the demo said 'Vitamin D' and 'Folate'.", metadata: { chunk: "style-pass-2026-08-22", board: "100/100", items: 7, probes: ["dose_scroll", "food_tile", "foods", "efa_foods", "food_tier", "coverage_add_remove"] } }, { id: "lg_mt4ro9c3_mfesr8", ts: "2026-08-22T14:24:04.035147-05:00", surface: "web/cache-contract", kind: "incident", summary: "The live site served a superseded corpus behind a fresh bundle \u2014 no error, just a wrong claim count \u2014 because three artifacts shipped under fixed names. They are content-hashed now, and the contract is gated with three poisons that each red it on demand.", detail: "The website was serving yesterday's copy of the knowledge base while showing today's app \u2014 no error, nothing broken-looking, just a claim count that was wrong and ten claims back on the page that had been removed. The three big data files now carry their own fingerprint in their filename, so a changed file is a different file and no cache anywhere can hand out an old one again.\n\nWHAT HAPPENED, MEASURED. After the 2026-08-22 upload the live site read 'Search 2,611 sourced claims' where the local build reads 2,601 \u2014 three runs each, deterministic. The live page's own fetch of assets/data/corpus-embed.json returned knowledge_version 490 with 2611 claims; the shipped seal is 491 with 2601. curl of the SAME URL returned the correct file and sha256-matched the build, so the two disagreed on identical bytes on disk. The headers settled it: `x-proxy-cache: HIT`, Last-Modified a day stale, ETag sizing the PREVIOUS deploy's file (0x2d44c5 = 2966725 B against the new 2953976 B). All three split artifacts were stale; index.html was a proxy MISS and every content-hashed asset was fresh. No service worker (checked: 0 registrations, no controller). \u2605 AND Cache-Control WAS NOT THE FIX. fetch(url,{cache:'reload'}) and {cache:'no-store'} both still returned HIT \u2014 those directives govern the BROWSER's cache; an upstream proxy's own object store is under no obligation to honour them. A flush cleared it, but a manual step that can be silently forgotten is not a fix: forgetting it produces a wrong site that looks perfectly fine. \xB7 THE FIX: the three artifacts are now CONTENT-HASHED like the JS and CSS have always been. tools/esbuild_web.mjs owns the naming (sha256, first 10 hex, matching build_web.py's digest()), bakes the map into the bundle as --define:__SPLIT_MANIFEST__, and writes a sidecar manifest that build_web.py reads to name the shipped files. ONE hasher, not two: two independent implementations that drift produce a bundle asking for a file nobody shipped. state/data-split.ts fetches pathFor(key) off that manifest instead of a fixed `./assets/data/${key}.json`. build_web.py hard-fails if the bundle names a file it did not write, or if a name does not carry that file's actual hash; esbuild_web.mjs hard-fails if a hash cannot be computed. The chain is now airtight end to end: index.html is never cached hard (must-revalidate, and verified a proxy MISS) \u2192 it names the hashed bundle \u2192 the bundle names the hashed artifacts \u2192 all three change name on any change. `json` therefore joins the immutable one-year group in .htaccess; those three are the only .json the web build ships and every one now carries its own hash. \xB7 GATED IN THE SAME PATCH (\xA700.B.2). split_data_manifest_agrees gained the cache contract: esbuild_web.mjs must define __SPLIT_MANIFEST__, data-split.ts must read it, and the literal `./assets/data/${key}.json` must not return. Three poisons added to tools/tests/test_split_data_manifest.py, which now reds on 8 drift shapes instead of 5 \u2014 each one drove the gate red on demand, so it is not vacuous. A regression here is invisible twice: it cannot fail on file:// (nothing is fetched) and it does not ERROR on the web (it just serves yesterday), which is exactly why it needed a gate and not a comment. \xB7 FILES: tools/esbuild_web.mjs, tools/build_web.py, dashboard/assets/js/src/state/data-split.ts, tools/invariants.py, tools/tests/test_split_data_manifest.py. \xB7 VERIFIED: web build ships corpus-embed.2154893117.json, search/search-index.169c48eae2.json, creators-log-embed.da1bb55373.json (the corpus hash matches the sha256 taken independently off the live host); served over real http, the app made ZERO requests to an un-hashed path, all three returned 200, and it hydrated to 2,601 claims / 7 books with search answering from the hashed index. The sidecar manifest is deleted before packaging \u2014 0 build-scaffolding files ship. File build unaffected (SPLIT_DATA=false, nothing fetched): dashboard reads 2,601 across three runs. Board 100/100, 79 unit tests, dose_scroll 10 checks, food_tile all five clauses, tsc clean, eslint at HEAD parity on data-split.ts (2 = 2). \xB7 ALSO CLOSED THIS ROUND: the foods copy review. Every string was read in its exact rendered form \u2014 the four gloss variants, the eight source names, 'Omega EFAs', the serving line, the three block notes \u2014 and NOTHING was changed. Owner ruled the two disputed chip labels stay as canon derives them ('Vitamin D2 + D3', 'Folic Acid'); the demo's shorter mock-data wording is declined, because hand-writing them would put those names in a second place to drift. Both items the 2026-08-22 handoff had parked are now closed.\n\nDEFERRED: the site declares NO favicon \u2014 not in dashboard.html and not in index.html \u2014 so every visitor's browser probes /favicon.ico, 404s, and the tab shows a generic globe. It is the only 404 on the live site. Raised with the owner, not taken. \u26A0 STILL TRUE AND WORTH KNOWING: .htaccess only applies while NGINX Direct Delivery is OFF, and a host setting can revert it \u2014 the one-line proof after every deploy is that x-content-type-options and referrer-policy appear on the bare domain (they do today), and that Content-Encoding is ABSENT on eng.traineddata.gz (it is). The proxy cache in front is a SEPARATE layer from Direct Delivery and is the one this patch defeats.", metadata: { chunk: "split-artifact-hashing-2026-08-22", board: "100/100", gate: "split_data_manifest_agrees", poisons: 8, stale_seal_served: 490, shipped_seal: 491 } }, { id: "lg_mt4sshc6_qtppo1", ts: "2026-08-22T14:55:20.646791-05:00", surface: "web/favicon", kind: "build", summary: "The site declared no tab icon at all, so every browser probed /favicon.ico and 404ed. Luneth's two PNGs are wired into both distributions \u2014 and kept OUT of the year-long cache group, because a fixed name that can be replaced is the trap we fixed today.", detail: `The site had no tab icon at all, so every visitor's browser asked for one, got nothing, and showed a generic globe. Luneth drew two and they are now wired into both the download and the website.
 
-Two PNGs he authored (16x16 and 32x32, RGBA) at dashboard/assets/favicons/, declared as <link rel="icon"> in dashboard.html \u2014 the shell had NO icon declaration of any kind, which is why browsers were probing /favicon.ico and 404ing. Two sizes rather than one so the tab strip is not a downscale of the larger art. They sit under assets/ like every other image, so the existing CSP img-src 'self' covers them and no root-level file is needed \u2014 which matters because the web deploy is 'upload the CONTENTS of dist-web/', and a root file would be one more thing to remember to drag. \xB7 build_web.py ships them: 'assets/favicons' joins VERBATIM_DIRS, copied under their exact names because the shell references them by path. \xB7 \u2605 AND THEY ARE DELIBERATELY NOT IMMUTABLE. .png sits in the year-long cache group, and a favicon is the one image with a FIXED name that might actually be REPLACED \u2014 the same shape of trap that served a superseded corpus earlier today. A later FilesMatch pins ^favicon-.*\\.png$ to must-revalidate instead; at ~2 KB a conditional request costs nothing and a new icon reaches everyone on their next load. \xB7 VERIFIED by driving BOTH distributions: the icons are declared, the 32x32 is fetched 200 image/png, and there are now ZERO requests to /favicon.ico, ZERO responses >=400 and ZERO console errors on the web build over real http AND on the file:// download. Board 100/100, 79 unit tests, dose_scroll 10 checks.`, metadata: { chunk: "favicon-2026-08-22", board: "100/100", sizes: ["16x16", "32x32"] } }, { id: "lg_mt4y0vv2_w4ix4j", ts: "2026-08-22T17:21:50.798179-05:00", surface: "foods/order+pager+catalog", kind: "round-close", summary: "Foods get one honest order, a real pager with a filter, and a full nutrition label in the Knowledge drawer beside the products.", detail: "Three changes to how foods work. The list of foods on the Regimen tab is no longer in a puzzling order \u2014 it now leads with whichever food fills the most of whatever you have picked as a goal and still have missing, or with the most nutritious food overall when you have picked nothing. Paging through the catalog got a normal pager (1 2 3 4 5 \u2026 64) with a category picker and a name box beside it, so finding a food is a few seconds rather than a few dozen clicks. And every food in the catalog now appears in the Knowledge drawer alongside the Youngevity products, in its own colour, with a full nutrition label behind it.\n\n\u2605 THE ORDER (state/foods.ts, rewritten). Owner ruling 2026-08-22 REVERSES two earlier ones: the eggs pin (2026-08-21) and the greedy walk are both gone, and goals now drive the food order where wantedSlugs() still deliberately ignores them for products. ONE sort key over the whole catalog: with goals chosen it is the share of the OUTSTANDING goal targets a serving fills \u2014 \u03A3 min(fraction, 1) over goal \u2229 want, over |goal \u2229 want| \u2014 capped per nutrient because 500% of one target has not filled five. With no goals, or with every goal nutrient already covered, it is `strength` (the food's own \u03A3 of Wallach fractions), which is 'most nutritious first'. Ties fall to strength then to the id, so the order is TOTAL and cannot reshuffle between paints. `greedy`, `education` and `browse` are gone from the signature; `category` and `query` replace them, applied to the POOL so the pager's page count stays derived. The score is a sort key and is never rendered, so its denominator has only to be constant across candidates \u2014 a goal naming omega-3 (which no row can credit) dilutes every candidate identically. THIS APPLIES TO COVERAGE TOO: one shared ranker, and two different orders for the same list on two tabs would be worse. \xB7 \u2605 THE PAGER (views/foods-block.ts + dashboard.css). Windowed, and the window STARTS at the current page rather than centring \u2014 the owner's literal shape: '1 2 3 4 5 \u2026 64' on page one, '1 \u2026 20 21 22 23 24 \u2026 64' on page twenty. It slides back only at the end, so the last page reads '1 \u2026 60 61 62 63 64' instead of a lonely '1 \u2026 64'. An ellipsis is emitted only between genuine non-neighbours. FOOD_PAGE_CAP=30 is GONE with the squares that needed it (that cap existed because 64 wrapped to two rows); regimen.ts now requests foodCatalogSize() and the page count is derived from the live pool. Coverage keeps its \u2039 N/N \u203A arrows, scoped via a new .fs-pager--numbers modifier rather than off .fs-controls \u2014 sizing must not depend on whether a filter happens to sit beside it. \xB7 \u2605 THE FILTER. Category select (the catalog's own 11, derived \u2014 never a written list) plus a name box, pager left / filter right. views/regimen.ts gained paintFoods(), which repaints ONLY the block: render() replaces the whole workspace, so every keystroke would destroy the input being typed into. buildFoodsBlock marks and restores the caret across its own repaint. TWO defects were found by screenshot and both are now gated: (1) with a one-page pool the pager vanishes and space-between slid the filter to the left edge, out from under the cursor \u2014 now flex-end with an auto margin on the pager; (2) a filter matching nothing said 'No food moves a remaining gap', which is a different claim \u2014 there is now a third terminal string and the controls row is painted even when the list is empty, so the reader can undo it. \xB7 \u2605 SIZING (owner's second pass). Filter boxes and the numbered pager at 12px/22px, name box 225px. His own attempt at 12px vertical padding blanked the <select>: border-box + height:18px + 24px of padding leaves a NEGATIVE content box and a select given less room than its text renders empty. Expressed as height instead, where it cannot collapse; the comment says so. Measured: row, nav, select, input and button all exactly 22px; Coverage measured unchanged at 18px/12px. \xB7 \u2605 FOODS IN THE KNOWLEDGE DRAWER (views/knowledge-food-sheet.ts, new). 192 foods mixed into the Products grid on the SAME card as a product \u2014 same ghost number, same three lines \u2014 differing only in the FOOD chip and a rust --form (#b0442e) set from a class, not [data-form], because a food is not a delivery form. Rust because the seven form colours occupy cyan, amber, green, indigo, pink, olive and grey; red is the only family left. ONE order over both kinds by essentials supplied, where a food's count is hits.length \u2014 the same number its tile prints, so no food claims two breadths on two surfaces. An ALL/PRODUCTS/FOODS control shares the section head's ROW but is a SIBLING of it inside .kd-catbar, because applyKnowledgeSearch hides a head whose rows are all filtered away. \xB7 \u2605 THE NUTRIENT SHEET. Hero, at-a-glance, then a real label: Nutrient / Amount / % OF TARGET. The third column is WALLACH'S target, never the FDA's %DV \u2014 a product's label column is the Daily Value because that is what the manufacturer printed, and swapping one in for the other would be the quietest \xA700.A breach on any surface. Rows link to the essential's page, carry the tile's own provenance gloss, and mark \u2248 (name-paired) and floor (lowest variety). The sheet states its OWN limits: only rows at foodQualifyPct()% or more of a Wallach target ever entered the catalog, and no calorie or macro source is pinned \u2014 so their absence is a gap in what we hold, not a claim about the food. FoodHit gained amount+unit so a label can print a number and not just a bar. \xB7 \u2605 HOME LIVE-SUGGEST answers with Products and Foods groups. A per-group floor keeps a query like 'vitamin' (a dozen essentials) from starving the kinds it also matched. \xB7 \u26A0 DEAD CODE FOUND AND REMOVED. (1) state/foods.ts claimed a gate `food_catalog_pins_resolve` REDs on an unresolvable pin 'at build time'. NO SUCH GATE EXISTS in tools/invariants.py \u2014 it was a WISH written as enforced (R7), and it has read that way since the food recommender landed. Gone with the pin. (2) The drawer's tab list computed a `count` for four tabs that tabsHTML has never rendered, including a productCount() call on every paint; productCount() was then dead and is replaced by productSuggestItems(). (3) The board's own no_new_dead_code gate caught an unused export of mine mid-build (foodCatalogCount) and it was removed. \xB7 \u26A0 AND ONE THAT SHIPPED. The food sheet's 'Add to regimen' button was UNSTYLED \u2014 .kd-ep-add-regimen's fill rule was scoped to .kd-ep--prod, so the food sheet fell through to the browser default. The owner caught it by eye. Nothing failed: a button with no rule still renders, still clicks, and passes every check that asks whether it EXISTS, which is exactly what my probe asked. The gate is now a CROSS-SHEET comparison (font, size, weight, transform, padding, radius, colour must match the product sheet; fill must be real and differ), and the negative control re-broke it: 7 of 8 checks went red (Arial 13.3px 400, no transform, 1px 6px, 0px radius, black) and green again on restore. The 8th ('filled, not transparent') stayed green because a UA default button has a grey fill \u2014 that clause is the weak one and is noted.\n\nFILES: state/foods.ts (rewritten), state/foods.test.ts (19 tests, ordering expectations recomputed from the artifact rather than written down), views/foods-block.ts, views/regimen.ts, views/coverage.ts, views/knowledge.ts, views/knowledge-products.ts, views/knowledge-home.ts, views/knowledge-food-sheet.ts (NEW), styles/dashboard.css, styles/drawer-knowledge.css, data/view-copy.json (+13 keys), data/foods-catalog-curation.json (the `pinned` block removed, `_pinned_retired` recording the reversal beside it \u2014 dead curation that looks live is data someone rewires), tools/probes/render_probe_food_pager.js (NEW), tools/probes/render_probe_food_catalog.js (NEW), tools/probes/render_probe_knowledge.js (taught to count both kinds), tools/probes/render_probe_food_tier.js (a drifted 'the recommender is greedy' comment).\n\nVERIFIED: board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), 85 unit tests, tsc clean, eslint at or below HEAD parity on every touched file (foods.ts 2\u21920, foods-block 7=7, regimen 8=8, coverage 12=12, knowledge 6=6, knowledge-products 0=0, knowledge-home 0=0, foods.test 13\u219210, the new view file at 0). Probes: food_pager 30 checks, food_catalog 44 checks, knowledge, knowledge_filter, entity, orac_supplements, search_routing, foods, food_tile, food_tier, efa_foods, dose_scroll \u2014 all PASS. MEASURED, not eyeballed: the controls row and every control in it at 22px with the filter's right edge on the block's; the catalog control adds 0px to the section head's row and the grid's top is unmoved (A/B'd by unwrapping the bar back to the pre-change structure in the live DOM). Screenshotted in BOTH themes and signed off by Luneth.\n\nDEFERRED / KNOWN: a windowed pager can only step to a page it LISTS, so reaching page 40 is ~10 clicks \u2014 inherent to the shape asked for, and the filter is the fast path. Foods rank below products in the mixed grid because products genuinely supply more of the 90 (best product 35, best food 13), so the two kinds meet around the 13-and-below band. The rust hue is one line to change if he wants another." }, { id: "lg_mt4y6gs2_tabi1s", ts: "2026-08-22T17:26:11.186792-05:00", surface: "web/probe", kind: "milestone", summary: "The website build is now driven by a probe before upload, comparing its rendered corpus counts against the download build rather than trusting headers.", detail: "The website build now gets checked by a machine before it is uploaded. Until today nothing ever opened it \u2014 the download was tested and the website was assumed to match. That assumption is exactly what let the site quietly serve yesterday's knowledge base earlier this month while every technical signal said it was fine.\n\ntools/probes/render_probe_web_build.js (NEW). Serves dist-web/ over a real http server on 127.0.0.1 (an ephemeral port \u2014 a fixed one fails with EADDRINUSE against its own previous run in TIME_WAIT and reads as a broken build) and drives it with puppeteer. file:// would not exercise the fetch path at all, which is the entire point: the web build STUBS the three split artifacts out of the bundle and fetches them, so a regression there is invisible on the download and silent on the web. \xB7 \u2605 THE METHOD IS A COMPARISON, NOT AN ASSERTION ABOUT A NUMBER. The corpus counts are read off the RENDERED page in BOTH distributions \u2014 the file build, where the corpus is inlined at build time, and the web build, where it is fetched \u2014 and required to agree. No literal to go stale, and a build hydrating from the wrong artifact cannot agree with the one that inlines it. That is the diagnostic the 2026-08-22 incident called for and did not have: `curl` and the page's own fetch() of ONE url returned DIFFERENT BYTES, so headers proved nothing. \xB7 ALSO ASSERTED: zero 4xx/5xx, zero page errors, and that every fetched assets/data/*.json carries a content hash \u2014 a fixed name is a name a cache can serve a stale copy of, which is the whole reason those three carry a digest. Then the surfaces the CSS rewrite could break: the Regimen pager + filter, the mixed catalog with its head agreeing with its grid, a food sheet with Wallach's target column, and the Add button still carrying its fill through the stylesheet rewrite-and-hash pass. \xB7 VERIFIED: 13 checks, all PASS against the dist-web built this round \u2014 both distributions read 2,601 claims / 7 books (matching seal 491), 3 artifacts fetched and 0 un-hashed. \xB7 HONEST LIMIT, stated rather than implied: the local server is NOT a model of SiteGround. The production cache contract lives in .htaccess and can only be verified against the live domain \u2014 this proves the BUILD is sound before upload, never that the host serves it right." }];
+Two PNGs he authored (16x16 and 32x32, RGBA) at dashboard/assets/favicons/, declared as <link rel="icon"> in dashboard.html \u2014 the shell had NO icon declaration of any kind, which is why browsers were probing /favicon.ico and 404ing. Two sizes rather than one so the tab strip is not a downscale of the larger art. They sit under assets/ like every other image, so the existing CSP img-src 'self' covers them and no root-level file is needed \u2014 which matters because the web deploy is 'upload the CONTENTS of dist-web/', and a root file would be one more thing to remember to drag. \xB7 build_web.py ships them: 'assets/favicons' joins VERBATIM_DIRS, copied under their exact names because the shell references them by path. \xB7 \u2605 AND THEY ARE DELIBERATELY NOT IMMUTABLE. .png sits in the year-long cache group, and a favicon is the one image with a FIXED name that might actually be REPLACED \u2014 the same shape of trap that served a superseded corpus earlier today. A later FilesMatch pins ^favicon-.*\\.png$ to must-revalidate instead; at ~2 KB a conditional request costs nothing and a new icon reaches everyone on their next load. \xB7 VERIFIED by driving BOTH distributions: the icons are declared, the 32x32 is fetched 200 image/png, and there are now ZERO requests to /favicon.ico, ZERO responses >=400 and ZERO console errors on the web build over real http AND on the file:// download. Board 100/100, 79 unit tests, dose_scroll 10 checks.`, metadata: { chunk: "favicon-2026-08-22", board: "100/100", sizes: ["16x16", "32x32"] } }, { id: "lg_mt4y0vv2_w4ix4j", ts: "2026-08-22T17:21:50.798179-05:00", surface: "foods/order+pager+catalog", kind: "round-close", summary: "Foods get one honest order, a real pager with a filter, and a full nutrition label in the Knowledge drawer beside the products.", detail: "Three changes to how foods work. The list of foods on the Regimen tab is no longer in a puzzling order \u2014 it now leads with whichever food fills the most of whatever you have picked as a goal and still have missing, or with the most nutritious food overall when you have picked nothing. Paging through the catalog got a normal pager (1 2 3 4 5 \u2026 64) with a category picker and a name box beside it, so finding a food is a few seconds rather than a few dozen clicks. And every food in the catalog now appears in the Knowledge drawer alongside the Youngevity products, in its own colour, with a full nutrition label behind it.\n\n\u2605 THE ORDER (state/foods.ts, rewritten). Owner ruling 2026-08-22 REVERSES two earlier ones: the eggs pin (2026-08-21) and the greedy walk are both gone, and goals now drive the food order where wantedSlugs() still deliberately ignores them for products. ONE sort key over the whole catalog: with goals chosen it is the share of the OUTSTANDING goal targets a serving fills \u2014 \u03A3 min(fraction, 1) over goal \u2229 want, over |goal \u2229 want| \u2014 capped per nutrient because 500% of one target has not filled five. With no goals, or with every goal nutrient already covered, it is `strength` (the food's own \u03A3 of Wallach fractions), which is 'most nutritious first'. Ties fall to strength then to the id, so the order is TOTAL and cannot reshuffle between paints. `greedy`, `education` and `browse` are gone from the signature; `category` and `query` replace them, applied to the POOL so the pager's page count stays derived. The score is a sort key and is never rendered, so its denominator has only to be constant across candidates \u2014 a goal naming omega-3 (which no row can credit) dilutes every candidate identically. THIS APPLIES TO COVERAGE TOO: one shared ranker, and two different orders for the same list on two tabs would be worse. \xB7 \u2605 THE PAGER (views/foods-block.ts + dashboard.css). Windowed, and the window STARTS at the current page rather than centring \u2014 the owner's literal shape: '1 2 3 4 5 \u2026 64' on page one, '1 \u2026 20 21 22 23 24 \u2026 64' on page twenty. It slides back only at the end, so the last page reads '1 \u2026 60 61 62 63 64' instead of a lonely '1 \u2026 64'. An ellipsis is emitted only between genuine non-neighbours. FOOD_PAGE_CAP=30 is GONE with the squares that needed it (that cap existed because 64 wrapped to two rows); regimen.ts now requests foodCatalogSize() and the page count is derived from the live pool. Coverage keeps its \u2039 N/N \u203A arrows, scoped via a new .fs-pager--numbers modifier rather than off .fs-controls \u2014 sizing must not depend on whether a filter happens to sit beside it. \xB7 \u2605 THE FILTER. Category select (the catalog's own 11, derived \u2014 never a written list) plus a name box, pager left / filter right. views/regimen.ts gained paintFoods(), which repaints ONLY the block: render() replaces the whole workspace, so every keystroke would destroy the input being typed into. buildFoodsBlock marks and restores the caret across its own repaint. TWO defects were found by screenshot and both are now gated: (1) with a one-page pool the pager vanishes and space-between slid the filter to the left edge, out from under the cursor \u2014 now flex-end with an auto margin on the pager; (2) a filter matching nothing said 'No food moves a remaining gap', which is a different claim \u2014 there is now a third terminal string and the controls row is painted even when the list is empty, so the reader can undo it. \xB7 \u2605 SIZING (owner's second pass). Filter boxes and the numbered pager at 12px/22px, name box 225px. His own attempt at 12px vertical padding blanked the <select>: border-box + height:18px + 24px of padding leaves a NEGATIVE content box and a select given less room than its text renders empty. Expressed as height instead, where it cannot collapse; the comment says so. Measured: row, nav, select, input and button all exactly 22px; Coverage measured unchanged at 18px/12px. \xB7 \u2605 FOODS IN THE KNOWLEDGE DRAWER (views/knowledge-food-sheet.ts, new). 192 foods mixed into the Products grid on the SAME card as a product \u2014 same ghost number, same three lines \u2014 differing only in the FOOD chip and a rust --form (#b0442e) set from a class, not [data-form], because a food is not a delivery form. Rust because the seven form colours occupy cyan, amber, green, indigo, pink, olive and grey; red is the only family left. ONE order over both kinds by essentials supplied, where a food's count is hits.length \u2014 the same number its tile prints, so no food claims two breadths on two surfaces. An ALL/PRODUCTS/FOODS control shares the section head's ROW but is a SIBLING of it inside .kd-catbar, because applyKnowledgeSearch hides a head whose rows are all filtered away. \xB7 \u2605 THE NUTRIENT SHEET. Hero, at-a-glance, then a real label: Nutrient / Amount / % OF TARGET. The third column is WALLACH'S target, never the FDA's %DV \u2014 a product's label column is the Daily Value because that is what the manufacturer printed, and swapping one in for the other would be the quietest \xA700.A breach on any surface. Rows link to the essential's page, carry the tile's own provenance gloss, and mark \u2248 (name-paired) and floor (lowest variety). The sheet states its OWN limits: only rows at foodQualifyPct()% or more of a Wallach target ever entered the catalog, and no calorie or macro source is pinned \u2014 so their absence is a gap in what we hold, not a claim about the food. FoodHit gained amount+unit so a label can print a number and not just a bar. \xB7 \u2605 HOME LIVE-SUGGEST answers with Products and Foods groups. A per-group floor keeps a query like 'vitamin' (a dozen essentials) from starving the kinds it also matched. \xB7 \u26A0 DEAD CODE FOUND AND REMOVED. (1) state/foods.ts claimed a gate `food_catalog_pins_resolve` REDs on an unresolvable pin 'at build time'. NO SUCH GATE EXISTS in tools/invariants.py \u2014 it was a WISH written as enforced (R7), and it has read that way since the food recommender landed. Gone with the pin. (2) The drawer's tab list computed a `count` for four tabs that tabsHTML has never rendered, including a productCount() call on every paint; productCount() was then dead and is replaced by productSuggestItems(). (3) The board's own no_new_dead_code gate caught an unused export of mine mid-build (foodCatalogCount) and it was removed. \xB7 \u26A0 AND ONE THAT SHIPPED. The food sheet's 'Add to regimen' button was UNSTYLED \u2014 .kd-ep-add-regimen's fill rule was scoped to .kd-ep--prod, so the food sheet fell through to the browser default. The owner caught it by eye. Nothing failed: a button with no rule still renders, still clicks, and passes every check that asks whether it EXISTS, which is exactly what my probe asked. The gate is now a CROSS-SHEET comparison (font, size, weight, transform, padding, radius, colour must match the product sheet; fill must be real and differ), and the negative control re-broke it: 7 of 8 checks went red (Arial 13.3px 400, no transform, 1px 6px, 0px radius, black) and green again on restore. The 8th ('filled, not transparent') stayed green because a UA default button has a grey fill \u2014 that clause is the weak one and is noted.\n\nFILES: state/foods.ts (rewritten), state/foods.test.ts (19 tests, ordering expectations recomputed from the artifact rather than written down), views/foods-block.ts, views/regimen.ts, views/coverage.ts, views/knowledge.ts, views/knowledge-products.ts, views/knowledge-home.ts, views/knowledge-food-sheet.ts (NEW), styles/dashboard.css, styles/drawer-knowledge.css, data/view-copy.json (+13 keys), data/foods-catalog-curation.json (the `pinned` block removed, `_pinned_retired` recording the reversal beside it \u2014 dead curation that looks live is data someone rewires), tools/probes/render_probe_food_pager.js (NEW), tools/probes/render_probe_food_catalog.js (NEW), tools/probes/render_probe_knowledge.js (taught to count both kinds), tools/probes/render_probe_food_tier.js (a drifted 'the recommender is greedy' comment).\n\nVERIFIED: board 100/100 (24 external / 29 consistency / 45 structural / 2 meta), 85 unit tests, tsc clean, eslint at or below HEAD parity on every touched file (foods.ts 2\u21920, foods-block 7=7, regimen 8=8, coverage 12=12, knowledge 6=6, knowledge-products 0=0, knowledge-home 0=0, foods.test 13\u219210, the new view file at 0). Probes: food_pager 30 checks, food_catalog 44 checks, knowledge, knowledge_filter, entity, orac_supplements, search_routing, foods, food_tile, food_tier, efa_foods, dose_scroll \u2014 all PASS. MEASURED, not eyeballed: the controls row and every control in it at 22px with the filter's right edge on the block's; the catalog control adds 0px to the section head's row and the grid's top is unmoved (A/B'd by unwrapping the bar back to the pre-change structure in the live DOM). Screenshotted in BOTH themes and signed off by Luneth.\n\nDEFERRED / KNOWN: a windowed pager can only step to a page it LISTS, so reaching page 40 is ~10 clicks \u2014 inherent to the shape asked for, and the filter is the fast path. Foods rank below products in the mixed grid because products genuinely supply more of the 90 (best product 35, best food 13), so the two kinds meet around the 13-and-below band. The rust hue is one line to change if he wants another." }, { id: "lg_mt4y6gs2_tabi1s", ts: "2026-08-22T17:26:11.186792-05:00", surface: "web/probe", kind: "milestone", summary: "The website build is now driven by a probe before upload, comparing its rendered corpus counts against the download build rather than trusting headers.", detail: "The website build now gets checked by a machine before it is uploaded. Until today nothing ever opened it \u2014 the download was tested and the website was assumed to match. That assumption is exactly what let the site quietly serve yesterday's knowledge base earlier this month while every technical signal said it was fine.\n\ntools/probes/render_probe_web_build.js (NEW). Serves dist-web/ over a real http server on 127.0.0.1 (an ephemeral port \u2014 a fixed one fails with EADDRINUSE against its own previous run in TIME_WAIT and reads as a broken build) and drives it with puppeteer. file:// would not exercise the fetch path at all, which is the entire point: the web build STUBS the three split artifacts out of the bundle and fetches them, so a regression there is invisible on the download and silent on the web. \xB7 \u2605 THE METHOD IS A COMPARISON, NOT AN ASSERTION ABOUT A NUMBER. The corpus counts are read off the RENDERED page in BOTH distributions \u2014 the file build, where the corpus is inlined at build time, and the web build, where it is fetched \u2014 and required to agree. No literal to go stale, and a build hydrating from the wrong artifact cannot agree with the one that inlines it. That is the diagnostic the 2026-08-22 incident called for and did not have: `curl` and the page's own fetch() of ONE url returned DIFFERENT BYTES, so headers proved nothing. \xB7 ALSO ASSERTED: zero 4xx/5xx, zero page errors, and that every fetched assets/data/*.json carries a content hash \u2014 a fixed name is a name a cache can serve a stale copy of, which is the whole reason those three carry a digest. Then the surfaces the CSS rewrite could break: the Regimen pager + filter, the mixed catalog with its head agreeing with its grid, a food sheet with Wallach's target column, and the Add button still carrying its fill through the stylesheet rewrite-and-hash pass. \xB7 VERIFIED: 13 checks, all PASS against the dist-web built this round \u2014 both distributions read 2,601 claims / 7 books (matching seal 491), 3 artifacts fetched and 0 un-hashed. \xB7 HONEST LIMIT, stated rather than implied: the local server is NOT a model of SiteGround. The production cache contract lives in .htaccess and can only be verified against the live domain \u2014 this proves the BUILD is sound before upload, never that the host serves it right." }, { id: "lg_mt521yt8_mk3y0a", ts: "2026-08-22T19:14:39.740259-05:00", surface: "foods/ranking", kind: "milestone", summary: "The food list was sorted by \u201Cmost nutritious first\u201D and could not see fats \u2014 walnuts, at twice Wallach\u2019s daily essential-fatty-acid amount, sat on page 47 of 64. Fixed in three places, and gated.", detail: "A serving of walnuts gives you more than twice the essential fatty acids Dr. Wallach asks\nfor in a day. The app knew that \u2014 the card printed \u201C220%\u201D in large type \u2014 and then filed\nwalnuts on page 47 of 64 in a list whose whole promise is \u201Cmost nutritious first\u201D. The number\non the card and the position of the card were telling a reader two different things.\n\nThe cause is a small one with a wide reach. Every other essential is scored as its own row:\nso much calcium against Wallach\u2019s calcium number. The fatty acids are not like that. He\nstates ONE amount for the pair of them \u2014 nine grams a day, as flaxseed oil \u2014 and never a\nseparate figure for omega-3 or omega-6. So they share a single meter, the way the plant-derived\ntrace minerals do. A score that adds up rows therefore adds up nothing for them.\n\nThree surfaces had the same blind spot, and only the first was known when the round started:\n\n  1. The default order of all 192 foods.\n  2. The GOAL order \u2014 and this was the worse one. 24 of the 30 goals name omega-3 or omega-6,\n     so someone who picks \u201Chealthy heart\u201D was being shown a list that scored every candidate\n     as though none of them could do anything about it. It now leads with natto, tempeh and\n     soybeans, all three of them fatty-acid foods.\n  3. The card itself, which decided whether to show the fatty-acid figure by re-doing the\n     arithmetic in its own way and rounding differently. Seven foods rounded UP over the line\n     and were shown a figure the ranking scored at zero.\n\nTwo rulings were his, both taken after the alternatives were measured rather than argued. The\nfatty acids count UNCAPPED, like every other term \u2014 capping just that one would have left it\nthe only under-weighted thing in the sum. And they must clear the same 7% bar every nutrient\nclears to appear at all. A third option, capping everything for symmetry, was measured and\nthrown out: it pushes beef liver, the strongest food in the catalog by a wide margin, down to\nthird behind lobster. Flattening the big numbers destroys the very signal the cap was meant\nto protect.\n\nWhat makes this worth writing down is that nothing could have caught it. The board was\n100/100. The number was arithmetically correct \u2014 correct about the rows it added up. The\ndefect was a term that WAS NOT THERE, which is the one shape a green board, a screenshot and\nan \u201Cis it rendering\u201D check are all blind to at once. It is the same shape as the food\nsheet\u2019s unstyled Add button from the previous round: absence renders fine.\n\nSo the fix ships with a gate that recomputes the whole key from the artifact\u2019s own bytes, and\nthe gate asserts the ABSENCE of the cap by existence \u2014 it requires a food scoring over 100%\nand carrying its full excess \u2014 because a quietly reintroduced min() would leave every other\nclause green. The board is 101/101, and the fix was re-broken four separate ways to confirm\neach one goes red.\n\nOne more thing the round taught, at my expense. The first version of the probe measured the\norder in node and told me the app was wrong about three positions. It was not; my prediction\nwas computed before a rounding step the shipped code applies. The same probe then read only\nthe small chips on each card and reported \u201Cno fatty acids shown\u201D about precisely the foods\nthat deliver the most of it \u2014 because the biggest figure on a card is drawn as the headline,\nnot as a chip. And it read the food list straight after switching goals, without noticing the\npager was still on page 7, and confidently named the wrong food as the top pick. Three wrong\nconclusions in one session, every one of them from reasoning about the app instead of driving\nit. The corrected probe clicks through all 64 pages." }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

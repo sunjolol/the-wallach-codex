@@ -6414,6 +6414,166 @@ def check_food_composition_traces_to_source():
                   f"({anchored}; {'; '.join(notes)})")
 
 
+# food_strength_reproduces_its_own_terms
+# ---------------------------------------------------------------------------
+# `strength` is the DEFAULT ORDER of all 192 foods on Regimen and Coverage whenever no goal
+# is chosen -- the first thing a new user sees -- and it was ungated arithmetic. It summed
+# nutrient ROWS only, and the essential-fatty-acid group is not a row (omega-3 and omega-6
+# carry no individual Wallach dose, so they share one meter), so a food delivering 220% of
+# his stated nine grams scored ZERO for it: walnuts sat on page 47 of 64 in a list titled by
+# nutrition while the card beside them printed the 220%.
+#
+# ★ WHY A GATE AND NOT A COMMENT. Nothing could have caught that. The number was internally
+# consistent, the board was 100/100, and the defect was a TERM THAT WAS NOT THERE -- the one
+# shape no existence check and no screenshot can see. Same class as the food sheet's unstyled
+# Add button: absence renders fine.
+#
+# ★ WHAT THIS CANNOT DO. It proves the artifact reproduces its own stated arithmetic and that
+# the EFA denominator is Wallach's, from the sealed claim. It cannot prove the RANKING IS
+# GOOD -- that walnuts belong at #21 rather than #47 is the owner's ruling, not a fact this
+# or any gate can establish.
+_EFA_BOUNDARY_EPS = 1e-6
+
+
+def check_food_strength_reproduces_its_own_terms():
+    """The food ranking key reproduces itself from the artifact's own bytes, and the
+    EFA group is IN it. Seven clauses:
+      (1) STRENGTH -- for every food, `strength` == round(SIGMA row fractions + the EFA
+          group's own fraction when it qualifies, 4). A term silently dropped REDs.
+      (2) BREADTH -- `breadth` == len(nutrients), the number the card prints.
+      (3) FRACTION -- every `efa.fraction` == round(oil_equivalent_mg / the goal, 4), so the
+          percentage the card shows and the term the order uses are one number.
+      (4) THE BAR -- `qualifies` agrees with (oil / goal) >= qualify_fraction, the identical
+          bar every nutrient row clears. A food sitting within 1e-6 of the bar REDs and asks
+          for a human: at that distance the stored 4-dp rounding cannot settle it, and
+          guessing which side it falls on is the violation, not the uncertainty.
+      (5) UNCAPPED, PROVEN BY EXISTENCE -- at least one food delivers OVER 100% of the group
+          and carries the full excess in `strength`. A `min(fraction, 1)` reintroduced in the
+          generator would leave every other clause green, so the cap's absence is asserted
+          positively rather than assumed.
+      (6) ONE WALLACH NUMBER -- `_meta.efa_goal` cites a sealed dose claim that exists, its
+          maintenance_mg is that claim's own amount converted to mg and nothing else, and it
+          EQUALS efa-coverage-data.json's goal. A food and a product are scored against one
+          figure of his, not two copies that can drift.
+      (7) THE BAR HAS ONE HOME -- no shipped .ts divides an EFA oil figure (its half of the
+          decision) by anything. Re-deriving the bar in a view is exactly what shipped: the
+          card compared a ROUNDED percentage against a rounded floor and drew a chip for
+          seven foods the generator rejects, so the tile and the order disagreed on screen.
+          Narrow by construction -- it catches the division, not every conceivable re-derive.
+    """
+    import json as _json
+    art_p = ROOT / "dashboard" / "assets" / "data" / "foods-composition-data.json"
+    efa_p = ROOT / "dashboard" / "assets" / "data" / "efa-coverage-data.json"
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    src_dir = ROOT / "dashboard" / "assets" / "js" / "src"
+    for p in (art_p, efa_p):
+        if not p.exists():
+            return False, f"{p.relative_to(ROOT).as_posix()} is missing"
+
+    art = _json.loads(art_p.read_text(encoding="utf-8"))
+    meta = art.get("_meta") or {}
+    foods = art.get("foods") or []
+    goal = meta.get("efa_goal") or {}
+    qualify = meta.get("qualify_fraction")
+    target = goal.get("maintenance_mg")
+    if not isinstance(qualify, (int, float)) or not isinstance(target, (int, float)) or target <= 0:
+        return False, (f"_meta.qualify_fraction={qualify!r} / _meta.efa_goal.maintenance_mg="
+                       f"{target!r} -- the key has no denominator to reproduce")
+
+    viol = []
+    over_one = 0
+    for f in foods:
+        rows = f.get("nutrients") or []
+        efa = f.get("efa") or {}
+        # (2) breadth
+        if f.get("breadth") != len(rows):
+            viol.append(f"{f.get('id')}: breadth {f.get('breadth')} != {len(rows)} rows")
+        if efa:
+            oil = efa.get("oil_equivalent_mg")
+            frac = efa.get("fraction")
+            quals = efa.get("qualifies")
+            if not isinstance(oil, (int, float)) or not isinstance(frac, (int, float)) \
+                    or not isinstance(quals, bool):
+                viol.append(f"{f.get('id')}: efa is missing oil_equivalent_mg/fraction/qualifies")
+                continue
+            exact = oil / target
+            # (3) the fraction IS the oil over his dose
+            if round(exact, 4) != round(frac, 4):
+                viol.append(f"{f.get('id')}: efa.fraction {frac} != {round(exact, 4)} "
+                            f"({oil} mg oil / {target} mg)")
+            # (4) the bar, with the boundary surfaced rather than guessed
+            if abs(exact - qualify) < _EFA_BOUNDARY_EPS:
+                viol.append(f"{f.get('id')}: efa sits {abs(exact - qualify):.2e} from the "
+                            f"{qualify:.0%} bar -- too close for the stored rounding to settle. "
+                            f"Rule on it by hand; do not widen this epsilon to make it pass")
+            elif quals != (exact >= qualify):
+                viol.append(f"{f.get('id')}: efa.qualifies={quals} but {exact:.6f} vs the "
+                            f"{qualify:.0%} bar says {exact >= qualify}")
+            if quals and frac > 1.0:
+                over_one += 1
+        # (1) the key itself, term for term
+        want = round(sum(r["fraction"] for r in rows)
+                     + (efa["fraction"] if efa.get("qualifies") else 0.0), 4)
+        if abs(want - float(f.get("strength", -1))) > 1e-9:
+            viol.append(f"{f.get('id')}: strength {f.get('strength')} != {want} "
+                        f"(SIGMA {len(rows)} row(s)"
+                        + (f" + efa {efa.get('fraction')}" if efa.get("qualifies") else "")
+                        + ")")
+    # (5) the cap's absence, asserted rather than assumed
+    if not viol and over_one == 0:
+        viol.append("no food carries an EFA fraction over 1.0, so nothing here would notice a "
+                    "min(fraction, 1) reintroduced in the generator. The catalog had 9 such "
+                    "foods when this gate was written -- if they are genuinely gone, this "
+                    "clause needs a new anchor, not deletion")
+
+    # (6) one Wallach number, from the sealed claim, shared with the product meter
+    claim_id = goal.get("source_claim_id")
+    claim = None
+    for shard in sorted(claims_dir.glob("claims-*.json")):
+        for c in _json.loads(shard.read_text(encoding="utf-8")).get("claims", []):
+            if c.get("id") == claim_id:
+                claim = c
+    if claim is None:
+        viol.append(f"efa_goal.source_claim_id {claim_id!r} resolves to no sealed claim")
+    else:
+        dz = claim.get("dose") or {}
+        factor = {"mg": 1.0, "mcg": 0.001, "g": 1000.0}.get(dz.get("unit"))
+        if factor is None or not isinstance(dz.get("amount"), (int, float)):
+            viol.append(f"{claim_id}: dose {dz.get('amount')!r} {dz.get('unit')!r} is not a "
+                        f"convertible amount")
+        elif round(float(dz["amount"]) * factor, 4) != round(float(target), 4):
+            viol.append(f"efa_goal.maintenance_mg {target} != {dz['amount']} "
+                        f"{dz['unit']} from {claim_id} -- the denominator left his number")
+        if dz.get("collective_group") != goal.get("collective_group"):
+            viol.append(f"efa_goal.collective_group {goal.get('collective_group')!r} != the "
+                        f"claim's {dz.get('collective_group')!r}")
+    other = ((_json.loads(efa_p.read_text(encoding="utf-8")).get("goal")) or {})
+    if round(float(other.get("maintenance_mg", -1)), 4) != round(float(target), 4):
+        viol.append(f"foods score the group against {target} mg but products against "
+                    f"{other.get('maintenance_mg')} mg -- two copies of one Wallach figure")
+
+    # (7) the bar has one home: no shipped view re-derives it by dividing the oil
+    for p in sorted(src_dir.rglob("*.ts")):
+        if p.name.endswith(".test.ts"):
+            continue
+        for i, line in enumerate(p.read_text(encoding="utf-8").splitlines(), 1):
+            if "oil_equivalent_mg" in line and "/" in line.split("//")[0]:
+                viol.append(f"{p.relative_to(ROOT).as_posix()}:{i} divides an EFA oil figure -- "
+                            f"the qualify bar and the percentage are the generator's, read "
+                            f"`efa.fraction` / `efa.qualifies` instead")
+
+    if viol:
+        return False, ("the food ranking key does not reproduce: " + "; ".join(viol[:6])
+                       + (f" ... (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+    with_efa = sum(1 for f in foods if (f.get("efa") or {}).get("qualifies"))
+    return True, (f"all {len(foods)} foods reproduce `strength` term for term from their own "
+                  f"rows plus the EFA group ({with_efa} clear the {qualify:.0%} bar, {over_one} "
+                  f"of them over 100% and carrying the full excess -- the key is uncapped); "
+                  f"breadth == rows everywhere; the group's denominator is {target:g} mg from "
+                  f"the sealed {claim_id}, identical to the one the product meter uses; no "
+                  f"shipped .ts re-derives the bar")
+
+
 # Eden's WALL -- scanner_user_items_marked
 # ---------------------------------------------------------------------------
 # The scanner lets a user add ANY item to THEIR regimen, but a user/scanned item can
@@ -9273,6 +9433,15 @@ INVARIANTS = [
         truth_anchor="the committed bytes of eden/foods/extract/*.csv, byte-compared against the sha256-pinned USDA archive when it is present, x essentials-targets-data.json's Wallach targets -- recomputed each run. PROVES FIDELITY TO SOURCE, NOT CORRECTNESS: it cannot prove USDA is right about a food, only that we copied it exactly. Same honest limit essentials_canon_matches_graphic carries.",
         severity="critical",
         lesson_ref="the app shipped ZERO per-food numbers until 2026-08-21 and now ships ~2,000, none of them Wallach's. amounts_wallach_only audits TARGETS and is structurally blind to a food NUMERATOR, which changes a tile's verdict without touching any target -- so a wrong food number would pass a 99/99 green board exactly as the mockup-derived mineral tiers did for three weeks.",
+    ),
+    Invariant(
+        name="food_strength_reproduces_its_own_terms",
+        anchor_class="consistency",  # our artifact vs its own rows + the sealed claim it cites
+        description="the food ranking key reproduces itself term for term from the artifact's own bytes -- `strength` == round(SIGMA row fractions + the essential-fatty-acid group's fraction when it clears the same 7% bar, 4), `breadth` == rows, every efa.fraction == its oil over Wallach's 9 g, and `qualifies` decided at full precision with any food within 1e-6 of the bar REDding for a human ruling. The group is scored UNCAPPED and that is asserted by EXISTENCE (a food over 100% carrying its full excess), the denominator resolves to the sealed dose claim it cites and equals the one the PRODUCT meter uses, and no shipped .ts re-derives the bar by dividing the oil itself",
+        check_fn=check_food_strength_reproduces_its_own_terms,
+        truth_anchor="dashboard/assets/data/foods-composition-data.json's own rows x eden/corpus/claims/* (the sealed EFA dose) x efa-coverage-data.json's goal x the non-test .ts bytes of dashboard/assets/js/src, recomputed each run. PROVES THE KEY REPRODUCES ITS STATED ARITHMETIC AND USES HIS DENOMINATOR -- it says nothing about whether the resulting ORDER is good; that walnuts belong at #21 and not #47 is the owner's ruling, not a fact any gate can establish.",
+        severity="critical",
+        lesson_ref="`strength` is the DEFAULT order of all 192 foods whenever no goal is chosen, and it was ungated arithmetic summed over nutrient ROWS. The EFA group is not a row -- omega-3 and omega-6 carry no individual Wallach dose -- so a food delivering 220% of his nine grams scored ZERO for it and walnuts sat on page 47 of 64 in a list ordered by nutrition, with the card beside them printing the 220% all along. Nothing caught it: the number was internally consistent and the board was 100/100, because the defect was a TERM THAT WAS NOT THERE. Absence renders fine -- the same shape as the food sheet's unstyled Add button.",
     ),
     Invariant(
         name="user_supplied_provenance_single_home",
