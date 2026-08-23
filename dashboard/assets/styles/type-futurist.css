@@ -32,9 +32,21 @@
 }
 
 /* Four of the FIVE places where drawer-knowledge.css hardcodes 'Playfair Display' instead
-   of reading the token. The fifth, .kd-claim__verbatim, deliberately stays serif — it is a
-   Wallach verbatim, like the carve-out below. Same specificity, loaded later, so these win
-   without !important. */
+   of reading the token. Same specificity, loaded later, so these win without !important.
+
+   ⚠ THE FIFTH IS NOT A LIVE SERIF SITE, whatever the sentence that used to sit here said.
+   .kd-claim__verbatim is left serif on purpose, but AUDITED 2026-08-22: nothing emits that
+   class. It survives only in its own two drawer-knowledge.css rules and in this comment. The
+   rules are KEPT, not deleted — dropping a block to re-author it later is a pattern here, and
+   the --rows rule records how a Fig. 8-1 dose table has to render (monospaced, source line
+   breaks preserved). Just do not read it as evidence that Playfair is reached through
+   drawer-knowledge.css, because it is not.
+
+   WHERE PLAYFAIR ACTUALLY IS LIVE, measured by driving the app (computed font on every
+   element, every surface, both themes): the carve-out immediately below — .kd-foods-pq on
+   Absorption and .kd-ep-fam__quote on the essentials pages — and #drawer-search-mount .vq,
+   which this sheet never touches at all because every selector here is scoped to
+   #drawer-knowledge-mount. Both Playfair faces load. */
 #drawer-knowledge-mount .kd-featured-citation__quote,
 #drawer-knowledge-mount .kd-featured-citation__quote::before,
 #drawer-knowledge-mount .kd-essential-tile__sym,

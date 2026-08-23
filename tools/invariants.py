@@ -641,6 +641,106 @@ def check_no_external_style_resources():
     )
 
 
+def _fonts_declared_and_shipped_impl(on_disk, sheets, resolves):
+    """The pure core, split out so the negative test can drive every drift shape without
+    writing a byte into the real tree.
+
+      on_disk   -- set of font filenames actually shipped in dashboard/assets/fonts/
+      sheets    -- {stylesheet name: css text}
+      resolves  -- resolves(css_name, src_url) -> shipped filename, or None if it points
+                   at nothing. Production resolves against the filesystem; the test hands
+                   in a fake driven by a tampered on_disk set."""
+    import re as _re
+
+    face_re = _re.compile(r"@font-face\s*\{(.*?)\}", _re.S)
+    fam_re = _re.compile(r"font-family:\s*['\"]?([^;'\"]+)['\"]?\s*;")
+    src_re = _re.compile(r"src:\s*url\(\s*['\"]?([^)'\"]+)['\"]?\s*\)")
+
+    declared = {}
+    broken = []
+    for name in sorted(sheets):
+        for body in face_re.findall(sheets[name]):
+            src = src_re.search(body)
+            if not src:
+                continue
+            fam = fam_re.search(body)
+            fam_name = fam.group(1).strip() if fam else "(no family)"
+            landed = resolves(name, src.group(1))
+            if landed is None:
+                broken.append(f"{name} -> {src.group(1)} (declares '{fam_name}')")
+                continue
+            declared.setdefault(landed, set()).add(fam_name)
+
+    # A parse that finds nothing must FAIL. Otherwise a reshaped stylesheet -- or a regex
+    # that stops matching -- turns this gate into a green no-op, which is the one outcome
+    # a checker must never have.
+    if not on_disk:
+        return False, "dashboard/assets/fonts/ holds no font files -- the set cannot be empty"
+    if not declared and not broken:
+        return False, ("no @font-face src was found in any stylesheet -- the parse found "
+                       "nothing, which is a broken check, not a clean tree")
+
+    problems = []
+    if broken:
+        problems.append("@font-face pointing at a file that does not exist: "
+                        + "; ".join(sorted(broken)))
+    orphans = sorted(on_disk - set(declared))
+    if orphans:
+        problems.append("font file shipped but declared by no @font-face (dead bytes in "
+                        "every download): " + ", ".join(orphans))
+    if problems:
+        return False, " | ".join(problems)
+
+    families = sorted({f for s in declared.values() for f in s})
+    return True, (f"{len(on_disk)} font files, all declared; {len(families)} families, every "
+                  f"src resolves ({', '.join(families)}). Reachability is NOT gated here -- "
+                  f"see the docstring.")
+
+
+def check_fonts_declared_and_shipped():
+    """Every shipped font FILE is declared by an @font-face, and every @font-face src resolves.
+
+    BOTH DIRECTIONS, because a font cut breaks in both. Delete a .ttf and leave its
+    @font-face and the app declares a face whose bytes are gone. Delete the @font-face and
+    leave the .ttf and the download carries megabytes nobody can ever select -- and THAT
+    shape is completely silent: an unreferenced font file renders nothing, errors nowhere,
+    and appears on no surface, forever. On 2026-08-22 it was worth 9.21 MB across four faces
+    and nothing in this repo said so.
+
+    WHAT THIS GATE DOES NOT DO, STATED PLAINLY (R7). It does not prove a declared family is
+    ever SELECTED. That question cannot be answered by reading files: a family is reached
+    through the --ds-font-* token chain, the token is redefined at :root by a later sheet
+    (type-futurist.css overrides design-system.css), and whether a rule ever matches a
+    laid-out element is a property of the RENDERED CASCADE, not of the text. It was answered
+    for real by driving the app -- every element's computed font on every surface in both
+    themes -- and that is a probe, not a gate.
+
+    So Crimson Pro x2 is declared, shipped, and selected by nothing today. That is a
+    DELIBERATE HEDGE ruled by the owner on 2026-08-22, not a defect, and a gate that failed
+    on it would be wrong. Declared-but-unselected families are therefore left alone here --
+    the hedge is recorded in the build log and the handoff, not enforced against.
+
+    Truth anchor: our own dashboard/assets/fonts/ directory vs the @font-face src urls in our
+    own git-tracked stylesheets, both recomputed each run. CONSISTENCY -- it proves the two
+    agree, never that shipping any particular face is the right call.
+
+    Negative test: tools/tests/test_fonts_declared_and_shipped.py"""
+    fonts_dir = ROOT / "dashboard" / "assets" / "fonts"
+    styles_dir = ROOT / "dashboard" / "assets" / "styles"
+    if not fonts_dir.is_dir() or not styles_dir.is_dir():
+        return False, "dashboard/assets/{fonts,styles} missing -- cannot audit the font set"
+
+    suffixes = {".ttf", ".otf", ".woff", ".woff2"}
+    on_disk = {p.name for p in fonts_dir.iterdir()
+               if p.is_file() and p.suffix.lower() in suffixes}
+    sheets = {p.name: p.read_text(encoding="utf-8") for p in sorted(styles_dir.glob("*.css"))}
+
+    def resolves(css_name, url):
+        target = (styles_dir / url).resolve()
+        return target.name if target.exists() and target.is_file() else None
+
+    return _fonts_declared_and_shipped_impl(on_disk, sheets, resolves)
+
 def check_design_system_hash_integrity():
     """Verify design-system.css matches design-system.golden.sha256.
     If the golden hash file doesn't exist yet (pre-sealing), informational
@@ -8848,6 +8948,15 @@ INVARIANTS = [
         truth_anchor="comment/string-state tokenizer scan of the git-tracked dashboard/assets/styles/*.css, recomputed each run",
         severity="critical",
         lesson_ref="a token glob written with a trailing star-slash inside a theme.css comment closed the comment early and silently dropped the rule after it (.rr-btn--danger) while the board stayed green; it was caught only by reading the live CSSOM",
+    ),
+    Invariant(
+        name="fonts_declared_and_shipped",
+        anchor_class="consistency",  # our fonts dir vs our stylesheets -- catches drift between the two, not a wrong choice of face
+        description="every file in dashboard/assets/fonts/ is declared by an @font-face, and every @font-face src resolves to a file that exists -- both directions, so neither half of a font cut can land alone",
+        check_fn=check_fonts_declared_and_shipped,
+        truth_anchor="the dashboard/assets/fonts/ directory listing vs the @font-face src urls parsed out of dashboard/assets/styles/*.css, both recomputed each run. Does NOT prove a declared family is ever selected -- that lives in the rendered cascade and was measured by driving the app, not by reading files.",
+        severity="critical",
+        lesson_ref="an unreferenced font file is perfectly silent -- it renders nothing, errors nowhere and appears on no surface, so 9.21 MB of never-selected faces rode in every download and only an audit that drove the app found them; the reverse, a declaration whose file is gone, is the other half of the same cut",
     ),
     Invariant(
         name="design_system_hash_integrity",
