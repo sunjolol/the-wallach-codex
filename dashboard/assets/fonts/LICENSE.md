@@ -13,7 +13,6 @@ with the font, so this table must be updated whenever a font file is added or re
 | Font Family | Copyright | License |
 |---|---|---|
 | **Playfair Display** | Copyright 2017 The Playfair Display Project Authors (https://github.com/clauseggers/Playfair-Display), with Reserved Font Name "Playfair Display" | OFL-1.1 |
-| **Merriweather** | Copyright 2024 The Merriweather Project Authors (https://github.com/EbenSorkin/Merriweather4), with Reserved Font Name "Merriweather" | OFL-1.1 |
 | **Crimson Pro** | Copyright 2018 The Crimson Pro Project Authors (https://github.com/Fonthausen/CrimsonPro) | OFL-1.1 |
 | **Space Grotesk** | Copyright 2020 The Space Grotesk Project Authors (https://github.com/floriankarsten/space-grotesk) | OFL-1.1 |
 | **JetBrains Mono** | Copyright 2020 The JetBrains Mono Project Authors (https://github.com/JetBrains/JetBrainsMono) | OFL-1.1 |

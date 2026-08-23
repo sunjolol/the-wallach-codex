@@ -14,7 +14,6 @@ the project — the shipped CSS declares a single `format('truetype')` src per f
 | Family | Filename(s) | Variable-font weights | Source |
 |---|---|---|---|
 | **Playfair Display** | `PlayfairDisplay-VariableFont_wght.ttf` (roman) + `PlayfairDisplay-Italic-VariableFont_wght.ttf` | 400-900 | <https://fonts.google.com/specimen/Playfair+Display> |
-| **Merriweather** | `Merriweather-VariableFont_opsz,wdth,wght.ttf` (roman) + `Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf` | 300-900 | <https://fonts.google.com/specimen/Merriweather> |
 | **Crimson Pro** | `CrimsonPro-VariableFont_wght.ttf` (roman) + `CrimsonPro-Italic-VariableFont_wght.ttf` | 200-900 | <https://fonts.google.com/specimen/Crimson+Pro> |
 | **Space Grotesk** | `SpaceGrotesk-VariableFont_wght.ttf` | 300-700 | <https://fonts.google.com/specimen/Space+Grotesk> |
 | **JetBrains Mono** | `JetBrainsMono-VariableFont_wght.ttf` (roman is sufficient) | 100-800 | <https://fonts.google.com/specimen/JetBrains+Mono> |
@@ -27,7 +26,6 @@ the project — the shipped CSS declares a single `format('truetype')` src per f
 2. Click **"Get font"** → **"Download all"** — you get a ZIP per family.
 3. Extract each ZIP. The variable font files live at the top level of each ZIP:
    - For most families: `<FontName>/<FontName>-VariableFont_wght.ttf` and `<FontName>/<FontName>-Italic-VariableFont_wght.ttf`
-   - For Merriweather: longer name with `opsz,wdth,wght` axes
 4. Drop the `.ttf` files into THIS folder (`dashboard/assets/fonts/`).
 5. (Optional but recommended) Convert each `.ttf` → `.woff2` for ~30% smaller file size. Tools that don't require online uploads:
    - `pyftsubset` from `fonttools` (install it first with `pip install fonttools[woff]`; the repo pins no Python dependency file): `pyftsubset input.ttf --output-file=output.woff2 --flavor=woff2`
@@ -70,7 +68,6 @@ All eight bundled typefaces are licensed under the **SIL Open Font License (OFL)
 
 _If the procurement process ever changes (Google Fonts moves, etc.), the upstream sources are all on GitHub under permissive licenses:_
 - _Playfair Display: <https://github.com/clauseggers/Playfair>_
-- _Merriweather: <https://github.com/SorkinType/Merriweather>_
 - _Crimson Pro: <https://github.com/Fonthausen/CrimsonPro>_
 - _Space Grotesk: <https://github.com/floriankarsten/space-grotesk>_
 - _JetBrains Mono: <https://github.com/JetBrains/JetBrainsMono>_
