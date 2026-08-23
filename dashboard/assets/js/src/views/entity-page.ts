@@ -2215,7 +2215,10 @@ export function renderConditionPage(slug: string): string {
   const catChip = cat !== null
     ? `<div class="kd-ep-hero__cat"><i></i>${escHTML(cat.label)}</div>`
     : '';
-  const metaBits = [`${page.claim_count} ${plural(page.claim_count, 'claim')}`, `${page.books.length} ${plural(page.books.length, 'book')}`].join(' · ');
+  // distinct_claim_count, NOT claim_count: the hero counts what this page RENDERS (Full Record
+  // UNION Worth Knowing), the same set `books` is derived from. claim_count is the role-mapped
+  // total behind "The full record" and is 30 lower on memory_loss.
+  const metaBits = [`${page.distinct_claim_count} ${plural(page.distinct_claim_count, 'claim')}`, `${page.books.length} ${plural(page.books.length, 'book')}`].join(' · ');
   const synopsis = c !== null ? conditionSynopsis(c) : '';
   const lede = synopsis.length > 0 ? `<p class="kd-ep-lede">${escHTML(synopsis)}</p>` : '';
 

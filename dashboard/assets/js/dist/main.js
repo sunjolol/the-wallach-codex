@@ -5272,6 +5272,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     type: external_exports.literal("condition"),
     name: external_exports.string(),
     claim_count: external_exports.number(),
+    /** HERO/ROW count: distinct claims a reader actually sees (Full Record UNION Worth Knowing,
+     * deduped). claim_count above is the role-mapped operational total that labels "All N claims";
+     * the two differ because Worth Knowing is subject UNION also_about. The hero and every browse
+     * row read THIS -- printing claim_count advertised 4 claims on a page rendering 34. */
+    distinct_claim_count: external_exports.number(),
+    /** The books THESE claims cite — derived from distinct_claim_count's own set, not the corpus
+     * role map, so the header can never cite fewer books than the cards below it. */
     books: external_exports.array(external_exports.string()),
     synonyms: external_exports.array(external_exports.string()),
     /** Curated "what to do": protocol-kind then non-base-line-table dose claims (prominence). */
@@ -119520,6 +119527,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 2,
         distinct_claim_count: 5,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "immortality"
         ],
@@ -119582,7 +119590,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 5,
         distinct_claim_count: 11,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
+          "immortality",
+          "lets-play-doctor",
           "rare-earths"
         ],
         synonyms: [
@@ -119663,6 +119674,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 11,
         distinct_claim_count: 19,
         books: [
+          "dddl-3e-2011",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -119786,6 +119799,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -120000,6 +120015,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -120389,6 +120405,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -120553,6 +120570,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 28,
         books: [
           "dddl-3e-2011",
+          "epigenetics",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -120710,6 +120728,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -120848,6 +120867,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -121059,6 +121079,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -122177,6 +122198,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -122726,6 +122748,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -122964,6 +122987,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -123151,6 +123175,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -123353,6 +123379,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -123463,6 +123491,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -123844,6 +123873,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 8,
         books: [
           "epigenetics",
+          "hells-kitchen",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -123929,6 +123960,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 7,
         books: [
           "dddl-3e-2011",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -124346,6 +124378,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -125064,6 +125097,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "dddl-3e-2011",
           "epigenetics",
           "immortality",
+          "lets-play-doctor",
           "rare-earths"
         ],
         synonyms: [
@@ -125261,6 +125295,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 13,
         books: [
           "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -125622,6 +125657,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 6,
         books: [
           "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -125776,6 +125812,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 7,
         books: [
           "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -126094,6 +126131,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "rare-earths"
         ],
@@ -127883,6 +127921,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 6,
         books: [
           "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -128030,6 +128069,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 5,
         books: [
           "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -128181,6 +128221,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 9,
         books: [
           "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -128366,6 +128407,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 1,
         distinct_claim_count: 6,
         books: [
+          "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -128518,6 +128561,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 1,
         distinct_claim_count: 5,
         books: [
+          "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -128669,6 +128714,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 1,
         distinct_claim_count: 5,
         books: [
+          "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -128820,6 +128867,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 1,
         distinct_claim_count: 4,
         books: [
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -128966,6 +129014,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 1,
         distinct_claim_count: 5,
         books: [
+          "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -129118,6 +129168,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 14,
         books: [
           "dddl-3e-2011",
+          "epigenetics",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -129309,6 +129360,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 1,
         distinct_claim_count: 5,
         books: [
+          "hells-kitchen",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -129461,6 +129514,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 1,
         distinct_claim_count: 4,
         books: [
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -129606,6 +129660,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 1,
         distinct_claim_count: 5,
         books: [
+          "hells-kitchen",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -129757,6 +129813,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 1,
         distinct_claim_count: 6,
         books: [
+          "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -129915,6 +129973,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 2,
         distinct_claim_count: 6,
         books: [
+          "epigenetics",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -130067,7 +130127,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         is_essential: true,
         claim_count: 0,
         distinct_claim_count: 2,
-        books: [],
+        books: [
+          "epigenetics",
+          "immortality"
+        ],
         synonyms: [
           "ytterbium",
           "Yb",
@@ -130200,6 +130263,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 1,
         distinct_claim_count: 7,
         books: [
+          "hells-kitchen",
+          "immortality",
           "rare-earths"
         ],
         synonyms: [
@@ -130361,6 +130426,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -130683,6 +130749,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "dddl-3e-2011",
           "epigenetics",
           "hells-kitchen",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -130856,6 +130923,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -131010,6 +131078,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -131345,6 +131414,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -131603,6 +131673,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -131807,6 +131879,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -132045,6 +132118,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor"
         ],
@@ -132364,6 +132438,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -132593,6 +132669,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -132920,6 +132997,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -133062,6 +133140,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 8,
         distinct_claim_count: 16,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "immortality",
           "lets-play-doctor",
@@ -133368,6 +133447,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -133679,6 +133759,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor"
         ],
@@ -133915,6 +133996,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 3,
         distinct_claim_count: 6,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "lets-play-doctor"
         ],
@@ -133993,6 +134075,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 3,
         distinct_claim_count: 6,
         books: [
+          "dddl-3e-2011",
           "epigenetics"
         ],
         synonyms: [
@@ -134060,6 +134143,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         distinct_claim_count: 10,
         books: [
           "epigenetics",
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -134258,6 +134342,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -134479,6 +134564,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 3,
         distinct_claim_count: 8,
         books: [
+          "dddl-3e-2011",
           "epigenetics"
         ],
         synonyms: [
@@ -134548,6 +134634,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -134678,7 +134765,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "dddl-3e-2011",
           "epigenetics",
           "immortality",
-          "lets-play-doctor"
+          "lets-play-doctor",
+          "rare-earths"
         ],
         synonyms: [
           "tyrosine",
@@ -134780,6 +134868,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         claim_count: 4,
         distinct_claim_count: 8,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "lets-play-doctor"
         ],
@@ -134871,6 +134960,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -135391,7 +135481,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         is_essential: false,
         claim_count: 0,
         distinct_claim_count: 3,
-        books: [],
+        books: [
+          "epigenetics",
+          "hells-kitchen"
+        ],
         synonyms: [
           "omega-9",
           "omega 9",
@@ -135441,6 +135534,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Abrasions",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -135481,6 +135575,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Abscess",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -135517,6 +135612,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Absence Attacks",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -135558,6 +135654,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Achalasia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -135590,6 +135687,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Achlorhydria",
         claim_count: 5,
+        distinct_claim_count: 7,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -135663,6 +135761,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Acidosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -135699,6 +135798,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Acne",
         claim_count: 26,
+        distinct_claim_count: 34,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -135835,6 +135935,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Acrodermatitis Enteropathica",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "rare-earths"
         ],
@@ -135877,6 +135978,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Addisons Disease",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "rare-earths"
@@ -135915,6 +136017,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Adhd",
         claim_count: 15,
+        distinct_claim_count: 18,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -136029,6 +136132,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Adrenal Exhaustion",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -136072,6 +136176,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Adrenoleukodystrophy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "rare-earths"
         ],
@@ -136115,6 +136220,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Ageusia",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -136160,6 +136266,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Aids",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -136207,6 +136314,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Airway Obstruction",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -136239,6 +136347,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Alcoholism",
         claim_count: 4,
+        distinct_claim_count: 6,
         books: [
           "dddl-3e-2011",
           "immortality",
@@ -136333,6 +136442,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Alkalosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -136369,8 +136479,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Allergies",
         claim_count: 14,
+        distinct_claim_count: 22,
         books: [
           "dddl-3e-2011",
+          "epigenetics",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -136483,6 +136595,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Alopecia",
         claim_count: 17,
+        distinct_claim_count: 24,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -136618,7 +136731,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Als",
         claim_count: 5,
+        distinct_claim_count: 7,
         books: [
+          "dddl-3e-2011",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -136694,8 +136809,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Alzheimers",
         claim_count: 10,
+        distinct_claim_count: 27,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -136832,6 +136950,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Amblyopia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -136868,6 +136987,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Amebiasis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "dddl-3e-2011"
         ],
@@ -136898,9 +137018,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Amenorrhea",
         claim_count: 4,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
-          "lets-play-doctor"
+          "lets-play-doctor",
+          "rare-earths"
         ],
         synonyms: [
           "missed period",
@@ -136974,6 +137096,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Anal Abscess",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -137006,6 +137129,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Anaphylaxis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -137038,9 +137162,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Anemia",
         claim_count: 34,
+        distinct_claim_count: 58,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "iaiyh",
           "immortality",
           "lets-play-doctor",
@@ -137233,7 +137359,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Anencephaly",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [],
@@ -137281,9 +137409,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Aneurysm",
         claim_count: 12,
+        distinct_claim_count: 17,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "rare-earths"
         ],
@@ -137390,6 +137520,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Angina",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -137441,6 +137572,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Angular Stomatitis",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "immortality",
@@ -137497,6 +137629,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Ankylosing Spondylitis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -137548,6 +137681,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Anorexia",
         claim_count: 27,
+        distinct_claim_count: 27,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -137666,6 +137800,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Anorexia Nervosa",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -137695,6 +137830,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Anosmia",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011",
           "iaiyh",
@@ -137739,6 +137875,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Anxiety",
         claim_count: 13,
+        distinct_claim_count: 16,
         books: [
           "dddl-3e-2011",
           "hells-kitchen",
@@ -137849,6 +137986,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Aphthous Stomatitis",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -137903,6 +138041,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Arsenic Toxicity",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -137945,6 +138084,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Arteriosclerosis",
         claim_count: 10,
+        distinct_claim_count: 11,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -138057,6 +138197,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Arthritis",
         claim_count: 40,
+        distinct_claim_count: 51,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -138242,6 +138383,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Asthma",
         claim_count: 19,
+        distinct_claim_count: 21,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -138368,8 +138510,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Atherosclerosis",
         claim_count: 6,
+        distinct_claim_count: 8,
         books: [
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor"
         ],
@@ -138447,6 +138591,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Athletes Foot",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -138505,6 +138650,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Atopic Asthma",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -138541,6 +138687,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Atopic Dermatitis",
         claim_count: 12,
+        distinct_claim_count: 12,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -138613,6 +138760,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Atrial Fibrillation",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "iaiyh"
@@ -138672,6 +138820,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Autism",
         claim_count: 7,
+        distinct_claim_count: 8,
         books: [
           "epigenetics",
           "immortality",
@@ -138758,6 +138907,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Autoimmune Disorders",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -138804,6 +138954,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Backache",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -138869,6 +139020,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bad Breath",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -138905,6 +139057,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Basal Cell Carcinoma",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -138934,6 +139087,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bedsores",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -138982,6 +139136,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bedwetting",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -139047,6 +139202,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bee Stings",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -139079,6 +139235,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bells Palsy",
         claim_count: 8,
+        distinct_claim_count: 8,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -139173,6 +139330,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Benign Prostatic Hyperplasia",
         claim_count: 13,
+        distinct_claim_count: 13,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor",
@@ -139271,6 +139429,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Beriberi",
         claim_count: 4,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -139332,6 +139491,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bipolar Disorder",
         claim_count: 9,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -139424,6 +139584,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Birth Defects",
         claim_count: 30,
+        distinct_claim_count: 34,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -139575,6 +139736,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bladder Stones",
         claim_count: 5,
+        distinct_claim_count: 6,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -139654,6 +139816,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bleeding",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -139686,6 +139849,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bleeding Bowels",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -139745,6 +139909,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bleeding Gums",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "immortality",
@@ -139816,6 +139981,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Blepharitis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "rare-earths"
@@ -139867,6 +140033,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Blind Rage",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "immortality",
@@ -139923,6 +140090,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Blindness",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011"
         ],
@@ -139961,6 +140129,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bloating",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -140011,6 +140180,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Body Odor",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -140044,6 +140214,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Boils",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -140105,6 +140276,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bone Pain",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -140150,6 +140322,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bone Spurs",
         claim_count: 8,
+        distinct_claim_count: 8,
         books: [
           "epigenetics",
           "immortality",
@@ -140238,6 +140411,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Brain Cancer",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "immortality",
@@ -140293,6 +140467,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Breast Cancer",
         claim_count: 7,
+        distinct_claim_count: 7,
         books: [
           "dddl-3e-2011",
           "hells-kitchen",
@@ -140363,6 +140538,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Breast Cysts",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -140397,6 +140573,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Breast Tenderness",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -140435,6 +140612,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Brittle Hair",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -140478,7 +140656,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Brittle Nails",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -140533,6 +140713,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bronchitis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -140596,6 +140777,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bruises",
         claim_count: 4,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -140673,6 +140855,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bruxism",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -140706,6 +140889,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bulimia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "rare-earths"
         ],
@@ -140748,7 +140932,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Burns",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [],
@@ -140802,6 +140988,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bursitis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -140848,6 +141035,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Bush Sickness",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -140880,6 +141068,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Calcium Deposits",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -140930,9 +141119,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cancer",
         claim_count: 76,
+        distinct_claim_count: 104,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -141174,8 +141365,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Candidiasis",
         claim_count: 6,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011",
+          "epigenetics",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -141248,6 +141441,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Canker Sores",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -141334,7 +141528,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Carcinoma",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [],
@@ -141364,6 +141560,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cardiac Arrest",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -141389,7 +141586,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cardiac Arrhythmia",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -141443,6 +141642,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cardiac Failure",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -141481,6 +141681,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cardiomyopathy",
         claim_count: 12,
+        distinct_claim_count: 16,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -141599,6 +141800,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cardiovascular Disease",
         claim_count: 9,
+        distinct_claim_count: 10,
         books: [
           "immortality",
           "lets-play-doctor",
@@ -141685,6 +141887,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Carpal Tunnel Syndrome",
         claim_count: 9,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -141783,6 +141986,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cataracts",
         claim_count: 20,
+        distinct_claim_count: 22,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -141914,6 +142118,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Catarrh",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -141946,6 +142151,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Celiac Disease",
         claim_count: 11,
+        distinct_claim_count: 17,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -142053,6 +142259,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cerebellar Hypoplasia",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality"
         ],
@@ -142097,6 +142304,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cerebral Palsy",
         claim_count: 9,
+        distinct_claim_count: 11,
         books: [
           "epigenetics",
           "immortality",
@@ -142191,6 +142399,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cerebrovascular Disease",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011"
         ],
@@ -142242,6 +142451,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cervical Dysplasia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -142280,6 +142490,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chalazion",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -142318,7 +142529,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cheilosis",
         claim_count: 2,
+        distinct_claim_count: 6,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "lets-play-doctor"
         ],
@@ -142386,6 +142599,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chicken Pox",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -142438,6 +142652,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chiggers",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -142470,6 +142685,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chills",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -142502,6 +142718,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chondrodystrophy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "epigenetics"
         ],
@@ -142545,6 +142762,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chondromalacia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "epigenetics"
         ],
@@ -142588,6 +142806,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chorea",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -142630,6 +142849,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chronic Fatigue",
         claim_count: 11,
+        distinct_claim_count: 13,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -142714,7 +142934,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chronic Fatigue Syndrome",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -142758,6 +142980,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chronic Obstructive Pulmonary Disease",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "iaiyh"
         ],
@@ -142787,6 +143010,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Chronic Wounds",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -142816,6 +143040,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Circulatory Disease",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "rare-earths"
         ],
@@ -142858,6 +143083,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cirrhosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality"
         ],
@@ -142902,6 +143128,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cleft Lip",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "dddl-3e-2011"
         ],
@@ -142940,8 +143167,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cleft Palate",
         claim_count: 2,
+        distinct_claim_count: 4,
         books: [
-          "dddl-3e-2011"
+          "dddl-3e-2011",
+          "epigenetics"
         ],
         synonyms: [],
         protocol_claim_ids: [],
@@ -142999,6 +143228,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cluster Headaches",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -143037,6 +143267,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cold Sores",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -143109,6 +143340,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Colds",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -143149,6 +143381,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Colic",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -143215,6 +143448,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Colitis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -143268,6 +143502,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Collagen Disease",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "rare-earths"
         ],
@@ -143304,6 +143539,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Colon Cancer",
         claim_count: 6,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "hells-kitchen",
@@ -143376,6 +143612,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Common Cold",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -143449,6 +143686,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Compression Fractures",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -143492,6 +143730,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Congenital Ataxia",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011",
           "epigenetics"
@@ -143545,6 +143784,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Congested Lungs",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -143586,6 +143826,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Congestive Heart Failure",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -143661,6 +143902,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Conjunctivitis",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -143737,9 +143979,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Constipation",
         claim_count: 10,
+        distinct_claim_count: 15,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -143838,11 +144082,13 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Convulsions",
         claim_count: 8,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011",
           "epigenetics",
           "immortality",
-          "lets-play-doctor"
+          "lets-play-doctor",
+          "rare-earths"
         ],
         synonyms: [
           "seizures",
@@ -143928,6 +144174,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cor Pulmonale",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -143971,6 +144218,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Corneal Ulcers",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -144024,6 +144272,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Coronary Artery Disease",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -144093,6 +144342,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cough",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -144154,6 +144404,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cradle Cap",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "dddl-3e-2011"
         ],
@@ -144192,6 +144443,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cretinism",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "epigenetics"
         ],
@@ -144226,6 +144478,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Creutzfeldt Jakob Disease",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -144269,6 +144522,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Criminal Behavior",
         claim_count: 6,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "immortality",
@@ -144343,8 +144597,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Crohns Disease",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -144415,6 +144671,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cuts",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -144472,6 +144729,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cystic Fibrosis",
         claim_count: 15,
+        distinct_claim_count: 22,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -144598,6 +144856,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Cystitis",
         claim_count: 9,
+        distinct_claim_count: 10,
         books: [
           "dddl-3e-2011",
           "immortality",
@@ -144685,7 +144944,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dandruff",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -144745,7 +145006,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Deafness",
         claim_count: 6,
+        distinct_claim_count: 9,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "iaiyh",
           "lets-play-doctor",
@@ -144829,6 +145092,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Degenerative Arthritis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -144872,6 +145136,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Degenerative Disc Disease",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "immortality"
         ],
@@ -144929,7 +145194,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dementia",
         claim_count: 21,
+        distinct_claim_count: 29,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "hells-kitchen",
           "lets-play-doctor",
@@ -145083,6 +145350,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Demyelination",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -145115,6 +145383,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dental Calculus",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -145151,6 +145420,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dental Fluorosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -145185,6 +145455,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Depression",
         claim_count: 46,
+        distinct_claim_count: 57,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -145374,6 +145645,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dermatitis",
         claim_count: 32,
+        distinct_claim_count: 32,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -145509,9 +145781,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Diabetes",
         claim_count: 35,
+        distinct_claim_count: 53,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -145685,6 +145959,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Diaper Rash",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -145725,6 +146000,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Diarrhea",
         claim_count: 11,
+        distinct_claim_count: 11,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -145816,6 +146092,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Diplopia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "iaiyh"
         ],
@@ -145846,6 +146123,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Disagreeable Attitude",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -145910,6 +146188,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Diverticulitis",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -145978,6 +146257,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dowagers Hump",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -146028,6 +146308,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Down Syndrome",
         claim_count: 6,
+        distinct_claim_count: 8,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -146110,6 +146391,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dropsy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -146142,6 +146424,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Drug Addiction",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -146171,6 +146454,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dry Skin",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -146215,6 +146499,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dumping Syndrome",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -146256,6 +146541,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dysentery",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -146312,6 +146598,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dyslexia",
         claim_count: 4,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -146370,9 +146657,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dysmenorrhea",
         claim_count: 4,
+        distinct_claim_count: 6,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -146447,6 +146736,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dyspepsia",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -146514,6 +146804,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Dysphagia",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "iaiyh",
           "immortality"
@@ -146565,6 +146856,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Earache",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -146604,7 +146896,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Ecchymosis",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "lets-play-doctor"
         ],
@@ -146664,8 +146958,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Eclampsia",
         claim_count: 1,
+        distinct_claim_count: 3,
         books: [
-          "lets-play-doctor"
+          "dddl-3e-2011",
+          "lets-play-doctor",
+          "rare-earths"
         ],
         synonyms: [],
         protocol_claim_ids: [
@@ -146710,6 +147007,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Eczema",
         claim_count: 29,
+        distinct_claim_count: 31,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -146851,6 +147149,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Edema",
         claim_count: 6,
+        distinct_claim_count: 8,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -146921,6 +147220,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Electric Shock",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -146953,6 +147253,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Emphysema",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "rare-earths"
         ],
@@ -146995,6 +147296,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Encephalopathy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "rare-earths"
         ],
@@ -147022,6 +147324,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Endometriosis",
         claim_count: 9,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011"
         ],
@@ -147077,6 +147380,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Enuresis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -147118,6 +147422,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Enzootic Ataxia",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "immortality"
         ],
@@ -147174,8 +147479,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Epilepsy",
         claim_count: 4,
+        distinct_claim_count: 11,
         books: [
           "dddl-3e-2011",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -147264,6 +147571,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Erbs Palsy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "iaiyh"
         ],
@@ -147306,6 +147614,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Erectile Dysfunction",
         claim_count: 6,
+        distinct_claim_count: 7,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -147375,6 +147684,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Esophageal Cancer",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -147416,6 +147726,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Exophthalmos",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -147448,6 +147759,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Explosive Outbursts",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "epigenetics"
         ],
@@ -147491,6 +147803,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Eye Redness",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -147551,6 +147864,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Failure To Thrive",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "immortality",
@@ -147626,6 +147940,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Fatty Liver",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -147685,6 +148000,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Fever",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -147717,6 +148033,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Fibrocystic Breast Disease",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -147795,6 +148112,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Fibromyalgia",
         claim_count: 5,
+        distinct_claim_count: 6,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -147879,6 +148197,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Flatulence",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -147913,6 +148232,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Food Allergy",
         claim_count: 17,
+        distinct_claim_count: 20,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor",
@@ -148025,7 +148345,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Fractures",
         claim_count: 3,
+        distinct_claim_count: 4,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "lets-play-doctor",
           "rare-earths"
@@ -148100,6 +148422,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Freckles",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -148144,6 +148467,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Gallstones",
         claim_count: 13,
+        distinct_claim_count: 14,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -148241,6 +148565,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Gangrene",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "rare-earths"
         ],
@@ -148283,6 +148608,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Gastroparesis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "iaiyh"
         ],
@@ -148312,6 +148638,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Geographic Tongue",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -148378,6 +148705,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Gestational Diabetes",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -148408,6 +148736,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Gingivitis",
         claim_count: 6,
+        distinct_claim_count: 8,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -148493,6 +148822,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Glaucoma",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "lets-play-doctor"
@@ -148554,6 +148884,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Glucose Intolerance",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "immortality",
@@ -148602,9 +148933,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Goiter",
         claim_count: 18,
+        distinct_claim_count: 33,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -148738,6 +149071,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Gout",
         claim_count: 8,
+        distinct_claim_count: 11,
         books: [
           "dddl-3e-2011",
           "immortality",
@@ -148831,6 +149165,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Graves Disease",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -148863,6 +149198,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Gray Hair",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "immortality"
@@ -148915,6 +149251,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Growing Pains",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -148962,6 +149299,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hangnails",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -149000,6 +149338,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hashimotos Disease",
         claim_count: 3,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "immortality",
@@ -149041,6 +149380,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hay Fever",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -149082,6 +149422,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Headache",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -149150,6 +149491,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Heart Attack",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -149219,6 +149561,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Heart Defects",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "dddl-3e-2011"
         ],
@@ -149257,6 +149600,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Heart Failure",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "immortality"
@@ -149301,6 +149645,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Heartburn",
         claim_count: 3,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -149353,6 +149698,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Heat Stroke",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "rare-earths"
         ],
@@ -149388,6 +149734,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Heavy Metal Toxicity",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "lets-play-doctor"
         ],
@@ -149442,6 +149789,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Heel Spurs",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -149485,6 +149833,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hemochromatosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality"
         ],
@@ -149529,6 +149878,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hemorrhoids",
         claim_count: 17,
+        distinct_claim_count: 20,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -149641,6 +149991,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hepatitis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -149689,6 +150040,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hernia",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "immortality",
@@ -149742,6 +150094,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Herpes Simplex",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -149801,6 +150154,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hiatal Hernia",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -149844,6 +150198,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hiccoughs",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -149876,6 +150231,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "High Cholesterol",
         claim_count: 22,
+        distinct_claim_count: 23,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -150001,6 +150357,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "High Triglycerides",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -150073,6 +150430,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hiv Aids",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "rare-earths"
         ],
@@ -150123,6 +150481,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hoarseness",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -150159,6 +150518,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Homosexuality",
         claim_count: 7,
+        distinct_claim_count: 8,
         books: [
           "epigenetics"
         ],
@@ -150220,6 +150580,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Huntingtons Disease",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "epigenetics"
         ],
@@ -150260,6 +150621,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hydrocephalus",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -150290,6 +150652,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hyperacidity",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -150322,6 +150685,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hyperactivity",
         claim_count: 13,
+        distinct_claim_count: 14,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -150427,6 +150791,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hypercalcemia",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality"
         ],
@@ -150476,7 +150841,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hyperinsulinemia",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "immortality"
         ],
@@ -150528,6 +150895,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hyperirritability",
         claim_count: 4,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "immortality",
@@ -150584,6 +150952,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hyperkinesis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -150640,8 +151009,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hyperparathyroidism",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [],
@@ -150697,9 +151068,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hypertension",
         claim_count: 27,
+        distinct_claim_count: 39,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -150847,6 +151220,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hyperthyroidism",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "immortality",
@@ -150908,9 +151282,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hypochlorhydria",
         claim_count: 5,
+        distinct_claim_count: 10,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality"
         ],
         synonyms: [],
@@ -150980,12 +151356,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hypoglycemia",
         claim_count: 21,
+        distinct_claim_count: 41,
         books: [
           "dddl-3e-2011",
           "epigenetics",
           "hells-kitchen",
           "immortality",
-          "lets-play-doctor"
+          "lets-play-doctor",
+          "rare-earths"
         ],
         synonyms: [
           "low blood sugar",
@@ -151135,6 +151513,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hypokalemia",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -151173,6 +151552,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hypophosphatemia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "rare-earths"
         ],
@@ -151198,6 +151578,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hypotension",
         claim_count: 6,
+        distinct_claim_count: 6,
         books: [
           "lets-play-doctor"
         ],
@@ -151270,6 +151651,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hypothermia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -151302,9 +151684,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hypothyroidism",
         claim_count: 17,
+        distinct_claim_count: 29,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -151425,6 +151809,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Hysteria",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -151474,6 +151859,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Ichthyosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "rare-earths"
@@ -151519,6 +151905,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Immune Depression",
         claim_count: 8,
+        distinct_claim_count: 8,
         books: [
           "epigenetics",
           "immortality",
@@ -151604,6 +151991,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Impetigo",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -151647,7 +152035,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Impotence",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -151710,6 +152100,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Incontinence",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -151754,6 +152145,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Indigestion",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -151800,6 +152192,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Infarction",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -151846,6 +152239,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Infected Wounds",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -151883,6 +152277,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Infection",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -151929,6 +152324,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Infertility",
         claim_count: 18,
+        distinct_claim_count: 28,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -152062,6 +152458,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Inflammation",
         claim_count: 3,
+        distinct_claim_count: 5,
         books: [
           "epigenetics",
           "immortality",
@@ -152139,8 +152536,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Influenza",
         claim_count: 4,
+        distinct_claim_count: 6,
         books: [
           "dddl-3e-2011",
+          "epigenetics",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -152223,6 +152622,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Insomnia",
         claim_count: 17,
+        distinct_claim_count: 22,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -152340,6 +152740,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Insulin Resistance",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "hells-kitchen",
           "immortality"
@@ -152387,6 +152788,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Intermittent Claudication",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -152431,6 +152833,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Intersex",
         claim_count: 4,
+        distinct_claim_count: 6,
         books: [
           "epigenetics"
         ],
@@ -152485,6 +152888,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Irritable Bowel Syndrome",
         claim_count: 7,
+        distinct_claim_count: 8,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -152553,6 +152957,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Ischemic Heart Disease",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "rare-earths"
@@ -152604,6 +153009,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Itching",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -152647,7 +153053,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Jaundice",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
+          "epigenetics",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -152715,6 +153123,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Joint Pain",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -152786,6 +153195,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Kawasaki Disease",
         claim_count: 7,
+        distinct_claim_count: 7,
         books: [
           "epigenetics",
           "immortality",
@@ -152855,6 +153265,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Keratitis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "dddl-3e-2011"
         ],
@@ -152887,6 +153298,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Keratomalacia",
         claim_count: 3,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -152955,7 +153367,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Keratosis",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -153002,6 +153416,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Kernicterus",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -153033,6 +153448,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Keshan Disease",
         claim_count: 7,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -153125,6 +153541,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Ketoacidosis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -153163,6 +153580,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Ketosis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -153195,8 +153613,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Kidney Disease",
         claim_count: 7,
+        distinct_claim_count: 10,
         books: [
           "dddl-3e-2011",
+          "hells-kitchen",
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -153295,6 +153716,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Kidney Stones",
         claim_count: 17,
+        distinct_claim_count: 23,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -153428,6 +153850,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Korsakoffs Syndrome",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -153489,6 +153912,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Kwashiorkor",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -153549,6 +153973,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Kyphosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -153599,6 +154024,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Labor",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -153632,6 +154058,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Lactase Deficiency",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -153668,6 +154095,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Lactose Intolerance",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "lets-play-doctor"
@@ -153710,6 +154138,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Laryngitis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -153747,6 +154176,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Lead Poisoning",
         claim_count: 6,
+        distinct_claim_count: 6,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor",
@@ -153815,6 +154245,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Learning Disabilities",
         claim_count: 9,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -153903,6 +154334,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Legg Perthes",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -153946,6 +154378,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Legionnaires Disease",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -153978,6 +154411,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Leptospirosis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -154013,7 +154447,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Leukemia",
         claim_count: 3,
+        distinct_claim_count: 4,
         books: [
+          "epigenetics",
           "immortality",
           "lets-play-doctor"
         ],
@@ -154073,6 +154509,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Leukopenia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -154107,6 +154544,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Leukorrhea",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -154139,6 +154577,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Lice",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -154175,6 +154614,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Liver Cancer",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "immortality",
           "lets-play-doctor",
@@ -154231,6 +154671,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Liver Cirrhosis",
         claim_count: 10,
+        distinct_claim_count: 10,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -154317,6 +154758,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Liver Disease",
         claim_count: 27,
+        distinct_claim_count: 29,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -154446,6 +154888,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Lordosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -154496,6 +154939,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Low Back Pain",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "immortality",
           "rare-earths"
@@ -154552,6 +154996,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Low Libido",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality"
         ],
@@ -154588,6 +155033,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Lung Cancer",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "lets-play-doctor"
@@ -154632,7 +155078,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Lupus",
         claim_count: 3,
+        distinct_claim_count: 5,
         books: [
+          "dddl-3e-2011",
           "iaiyh",
           "lets-play-doctor",
           "rare-earths"
@@ -154705,6 +155153,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Lyme Disease",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -154740,6 +155189,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Macular Degeneration",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -154774,6 +155224,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Mad Cow Disease",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "immortality"
@@ -154838,9 +155289,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Malabsorption",
         claim_count: 7,
+        distinct_claim_count: 16,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -154947,6 +155400,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Male Pattern Baldness",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011"
         ],
@@ -154990,7 +155444,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Malnutrition",
         claim_count: 2,
+        distinct_claim_count: 4,
         books: [
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -155040,6 +155496,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Measles",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -155072,7 +155529,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Melanoma",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -155124,6 +155583,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Melasma",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -155156,8 +155616,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Memory Loss",
         claim_count: 4,
+        distinct_claim_count: 34,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor"
         ],
@@ -155310,6 +155773,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Menieres Disease",
         claim_count: 6,
+        distinct_claim_count: 6,
         books: [
           "dddl-3e-2011",
           "iaiyh",
@@ -155382,6 +155846,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Meningitis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -155414,6 +155879,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Meningocele",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -155462,6 +155928,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Menkes Syndrome",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "lets-play-doctor"
@@ -155504,6 +155971,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Menopause",
         claim_count: 17,
+        distinct_claim_count: 18,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -155623,6 +156091,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Menorrhagia",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -155673,6 +156142,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Mental Retardation",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality"
         ],
@@ -155705,6 +156175,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Mercury Poisoning",
         claim_count: 6,
+        distinct_claim_count: 7,
         books: [
           "dddl-3e-2011",
           "immortality",
@@ -155789,6 +156260,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Migraine",
         claim_count: 7,
+        distinct_claim_count: 8,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -155874,6 +156346,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Minamata Disease",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -155913,8 +156386,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Miscarriage",
         claim_count: 2,
+        distinct_claim_count: 5,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [],
@@ -155972,7 +156448,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Mitral Valve Prolapse",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -156018,6 +156496,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Monckebergs Arteriosclerosis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -156056,6 +156535,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Morning Sickness",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "lets-play-doctor"
@@ -156102,6 +156582,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Motion Sickness",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -156154,6 +156635,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Multiple Sclerosis",
         claim_count: 7,
+        distinct_claim_count: 7,
         books: [
           "epigenetics",
           "immortality",
@@ -156228,6 +156710,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Mumps",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -156263,6 +156746,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Muscle Cramps",
         claim_count: 11,
+        distinct_claim_count: 12,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -156375,6 +156859,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Muscle Twitches",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -156418,6 +156903,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Muscular Dystrophy",
         claim_count: 12,
+        distinct_claim_count: 13,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -156511,6 +156997,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Myelofibrosis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -156554,7 +157041,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Myopia",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
+          "epigenetics",
           "lets-play-doctor"
         ],
         synonyms: [],
@@ -156597,6 +157086,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Narcolepsy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -156640,6 +157130,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Nasal Catarrh",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -156672,6 +157163,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Nervous Heart",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -156709,6 +157201,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Nervous Tension",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -156741,6 +157234,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Neural Tube Defects",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "immortality"
@@ -156799,6 +157293,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Neuralgia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -156845,7 +157340,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Neuropathy",
         claim_count: 5,
+        distinct_claim_count: 8,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "immortality",
           "lets-play-doctor"
@@ -156926,9 +157423,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Neutropenia",
         claim_count: 3,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
-          "immortality"
+          "immortality",
+          "rare-earths"
         ],
         synonyms: [],
         protocol_claim_ids: [],
@@ -156979,6 +157478,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Night Blindness",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -157052,6 +157552,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Night Terrors",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -157088,7 +157589,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Nosebleeds",
         claim_count: 3,
+        distinct_claim_count: 5,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "lets-play-doctor"
         ],
@@ -157171,6 +157674,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Nystagmus",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -157199,6 +157703,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Obesity",
         claim_count: 21,
+        distinct_claim_count: 37,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -157347,10 +157852,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Oligospermia",
         claim_count: 3,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "immortality",
-          "lets-play-doctor"
+          "lets-play-doctor",
+          "rare-earths"
         ],
         synonyms: [
           "low sperm count",
@@ -157415,6 +157922,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Omphalocele",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -157455,6 +157963,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Opiate Withdrawal",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -157491,6 +158000,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Optic Nerve Atrophy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "iaiyh"
         ],
@@ -157520,6 +158030,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Oral Cancer",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -157553,6 +158064,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Organic Brain Syndrome",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -157607,6 +158119,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Ornithosis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -157638,6 +158151,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Osteitis Fibrosa",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -157678,6 +158192,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Osteoarthritis",
         claim_count: 7,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -157766,6 +158281,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Osteofibrosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -157816,6 +158332,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Osteomalacia",
         claim_count: 7,
+        distinct_claim_count: 8,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -157888,6 +158405,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Osteopenia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -157931,9 +158449,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Osteoporosis",
         claim_count: 44,
+        distinct_claim_count: 66,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "iaiyh",
           "immortality",
           "lets-play-doctor",
@@ -158138,6 +158658,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Osteosarcoma",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -158175,6 +158696,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Osteosclerosis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -158202,6 +158724,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Otitis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -158244,6 +158767,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pagets Disease",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "iaiyh",
           "lets-play-doctor"
@@ -158303,7 +158827,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pain",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
+          "epigenetics",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -158341,7 +158867,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Palpitations",
         claim_count: 1,
+        distinct_claim_count: 5,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -158401,6 +158929,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pancreatic Cancer",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -158442,6 +158971,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pancreatic Fibrosis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -158474,6 +159004,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pancreatitis",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
           "rare-earths"
         ],
@@ -158524,6 +159055,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Panic Attacks",
         claim_count: 8,
+        distinct_claim_count: 8,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -158611,6 +159143,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Paranoia",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "lets-play-doctor",
           "rare-earths"
@@ -158675,6 +159208,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Parasites",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -158708,6 +159242,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Parkinsonism",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "lets-play-doctor",
           "rare-earths"
@@ -158767,6 +159302,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Parkinsons Disease",
         claim_count: 4,
+        distinct_claim_count: 5,
         books: [
           "immortality",
           "rare-earths"
@@ -158831,6 +159367,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pediculosis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -158860,9 +159397,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pellagra",
         claim_count: 4,
+        distinct_claim_count: 16,
         books: [
           "epigenetics",
           "hells-kitchen",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -158962,6 +159501,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Peptic Ulcers",
         claim_count: 17,
+        distinct_claim_count: 19,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -159080,6 +159620,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Periodontal Disease",
         claim_count: 13,
+        distinct_claim_count: 17,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -159190,6 +159731,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Peripheral Arterial Disease",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -159224,6 +159766,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Peripheral Neuropathy",
         claim_count: 7,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -159312,6 +159855,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Peritonsillar Abscess",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -159348,6 +159892,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pernicious Anemia",
         claim_count: 6,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "immortality",
@@ -159410,6 +159955,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Phlebitis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -159458,6 +160004,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Photophobia",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -159510,9 +160057,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pica",
         claim_count: 14,
+        distinct_claim_count: 23,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "immortality",
           "lets-play-doctor",
           "rare-earths"
@@ -159628,6 +160177,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pilonidal Cyst",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -159668,6 +160218,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Plumbism",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -159702,6 +160253,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Premenstrual Syndrome (PMS)",
         claim_count: 15,
+        distinct_claim_count: 18,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -159823,6 +160375,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Poison Ivy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -159855,7 +160408,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Poor Circulation",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -159899,6 +160454,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Post Partum Hemorrhage",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -159931,6 +160487,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Prediabetes",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "immortality"
@@ -159976,7 +160533,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Preeclampsia",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -160023,6 +160582,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pregnancy Toxemia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -160057,6 +160617,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Prolonged Clotting Time",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality"
         ],
@@ -160107,6 +160668,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Prostate Cancer",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "hells-kitchen",
           "immortality",
@@ -160161,6 +160723,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pruritus",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -160217,6 +160780,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Psoriasis",
         claim_count: 15,
+        distinct_claim_count: 17,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -160330,6 +160894,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Psychosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -160379,6 +160944,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Ptosis",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "iaiyh",
@@ -160439,6 +161005,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pubic Lice",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -160470,6 +161037,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Pyorrhea",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -160537,6 +161105,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Q Fever",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -160568,6 +161137,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Quinsy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -160611,6 +161181,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Rabbit Fever",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -160640,6 +161211,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Rabies",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -160671,6 +161243,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Radial Nerve Palsy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -160702,6 +161275,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Raynauds Disease",
         claim_count: 4,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -160769,6 +161343,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Reactive Hypoglycemia",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics"
         ],
@@ -160814,8 +161389,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Receding Gums",
         claim_count: 3,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
+          "epigenetics",
           "immortality",
           "rare-earths"
         ],
@@ -160878,6 +161455,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Rectal Itching",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -160911,8 +161489,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Renal Failure",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
+          "hells-kitchen",
           "lets-play-doctor"
         ],
         synonyms: [],
@@ -160968,6 +161548,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Repetitive Motion Syndrome",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -161033,6 +161614,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Respiratory Disease",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -161064,9 +161646,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Restless Leg Syndrome",
         claim_count: 6,
+        distinct_claim_count: 11,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
           "immortality",
+          "lets-play-doctor",
           "rare-earths"
         ],
         synonyms: [
@@ -161143,6 +161728,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Reyes Syndrome",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -161176,6 +161762,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Rheumatic Fever",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -161208,6 +161795,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Rheumatoid Arthritis",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "immortality",
@@ -161276,9 +161864,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Rickets",
         claim_count: 10,
+        distinct_claim_count: 15,
         books: [
           "dddl-3e-2011",
           "epigenetics",
+          "hells-kitchen",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -161389,6 +161979,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Ringworm",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -161446,6 +162037,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Rocky Mountain Spotted Fever",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -161477,6 +162069,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Rosacea",
         claim_count: 14,
+        distinct_claim_count: 14,
         books: [
           "dddl-3e-2011",
           "epigenetics"
@@ -161559,6 +162152,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Roseola",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -161590,6 +162184,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Rubella",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -161621,6 +162216,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Sarcoma",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "lets-play-doctor"
@@ -161665,8 +162261,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Scabies",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
-          "lets-play-doctor"
+          "lets-play-doctor",
+          "rare-earths"
         ],
         synonyms: [
           "itch mites",
@@ -161704,6 +162302,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Scarlatina",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -161735,6 +162334,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Schistosomiasis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "rare-earths"
         ],
@@ -161767,7 +162367,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Schizophrenia",
         claim_count: 4,
+        distinct_claim_count: 7,
         books: [
+          "dddl-3e-2011",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -161843,6 +162445,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Sciatica",
         claim_count: 8,
+        distinct_claim_count: 8,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -161939,6 +162542,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Scoliosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor",
           "rare-earths"
@@ -162002,8 +162606,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Scurvy",
         claim_count: 2,
+        distinct_claim_count: 8,
         books: [
           "epigenetics",
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [],
@@ -162077,6 +162683,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Sebaceous Cyst",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -162109,6 +162716,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Seborrheic Dermatitis",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "epigenetics",
           "lets-play-doctor",
@@ -162178,6 +162786,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Secondary Hyperparathyroidism",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "immortality",
           "rare-earths"
@@ -162234,6 +162843,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Shingles",
         claim_count: 11,
+        distinct_claim_count: 12,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor",
@@ -162316,6 +162926,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Sickle Cell Anemia",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
           "rare-earths"
         ],
@@ -162368,6 +162979,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Sids",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
           "lets-play-doctor",
           "rare-earths"
@@ -162421,6 +163033,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Skin Diseases",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -162449,6 +163062,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Sleep Apnea",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "epigenetics"
         ],
@@ -162479,6 +163093,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Sore Throat",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -162511,6 +163126,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Spider Bite",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -162542,6 +163158,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Spider Veins",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality"
         ],
@@ -162586,6 +163203,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Spina Bifida",
         claim_count: 6,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -162671,6 +163289,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Spinal Stenosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "immortality"
@@ -162721,6 +163340,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Spontaneous Fractures",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -162764,6 +163384,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Sprain",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -162796,6 +163417,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Stomach Cancer",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "lets-play-doctor"
@@ -162844,6 +163466,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Stomatitis",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "immortality",
@@ -162902,6 +163525,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Strabismus",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "iaiyh"
         ],
@@ -162932,6 +163556,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Strain",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -162963,8 +163588,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Stress",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
+          "immortality",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -163011,6 +163638,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Stroke",
         claim_count: 9,
+        distinct_claim_count: 11,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -163117,6 +163745,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Sty",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -163146,6 +163775,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Swimmers Ear",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -163177,8 +163807,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Syphilis",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
           "dddl-3e-2011",
+          "epigenetics",
           "lets-play-doctor"
         ],
         synonyms: [
@@ -163218,6 +163850,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tachycardia",
         claim_count: 2,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -163285,6 +163918,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tapeworms",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -163324,6 +163958,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tardive Dyskinesia",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -163387,6 +164022,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Teeth Discoloration",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -163417,6 +164053,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Teething",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -163475,8 +164112,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tetanus",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
-          "lets-play-doctor"
+          "lets-play-doctor",
+          "rare-earths"
         ],
         synonyms: [
           "lockjaw",
@@ -163512,6 +164151,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tetany",
         claim_count: 6,
+        distinct_claim_count: 6,
         books: [
           "epigenetics",
           "immortality",
@@ -163576,6 +164216,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Thallium Poisoning",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -163609,6 +164250,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Throat Cancer",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -163650,6 +164292,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Thrombosis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "immortality"
         ],
@@ -163682,6 +164325,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Thrush",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -163735,6 +164379,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Thyroid Cancer",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "rare-earths"
@@ -163772,6 +164417,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Thyroid Disease",
         claim_count: 3,
+        distinct_claim_count: 4,
         books: [
           "immortality",
           "rare-earths"
@@ -163835,6 +164481,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tinnitus",
         claim_count: 20,
+        distinct_claim_count: 20,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -163944,6 +164591,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tmj",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -164006,6 +164654,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tongue Atrophy",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "iaiyh"
         ],
@@ -164035,6 +164684,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tonsillitis",
         claim_count: 4,
+        distinct_claim_count: 4,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor",
@@ -164097,6 +164747,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tooth Decay",
         claim_count: 5,
+        distinct_claim_count: 6,
         books: [
           "dddl-3e-2011",
           "iaiyh",
@@ -164167,6 +164818,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Toothache",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "lets-play-doctor"
@@ -164206,6 +164858,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Torticollis",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -164248,6 +164901,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tourette Syndrome",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics"
         ],
@@ -164301,6 +164955,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Toxic Shock Syndrome",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -164332,6 +164987,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Toxoplasmosis",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "lets-play-doctor"
         ],
@@ -164375,6 +165031,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Trigeminal Neuralgia",
         claim_count: 5,
+        distinct_claim_count: 5,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -164447,8 +165104,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tuberculosis",
         claim_count: 1,
+        distinct_claim_count: 2,
         books: [
-          "lets-play-doctor"
+          "lets-play-doctor",
+          "rare-earths"
         ],
         synonyms: [],
         protocol_claim_ids: [],
@@ -164471,6 +165130,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Tularemia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -164506,6 +165166,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Umbilical Hernia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -164540,6 +165201,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Urinary Tract Infection",
         claim_count: 6,
+        distinct_claim_count: 6,
         books: [
           "dddl-3e-2011",
           "immortality",
@@ -164616,6 +165278,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Uterine Cancer",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011"
         ],
@@ -164650,6 +165313,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Uterine Fibroids",
         claim_count: 10,
+        distinct_claim_count: 10,
         books: [
           "dddl-3e-2011",
           "epigenetics"
@@ -164733,6 +165397,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Vaginitis",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "lets-play-doctor"
         ],
@@ -164785,6 +165450,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Varicose Veins",
         claim_count: 14,
+        distinct_claim_count: 14,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -164886,6 +165552,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Vascular Dementia",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "epigenetics"
         ],
@@ -164915,6 +165582,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Vertigo",
         claim_count: 19,
+        distinct_claim_count: 20,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -165024,6 +165692,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Violent Behavior",
         claim_count: 6,
+        distinct_claim_count: 7,
         books: [
           "epigenetics",
           "immortality",
@@ -165092,9 +165761,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Vitiligo",
         claim_count: 3,
+        distinct_claim_count: 4,
         books: [
           "immortality",
-          "lets-play-doctor"
+          "lets-play-doctor",
+          "rare-earths"
         ],
         synonyms: [],
         protocol_claim_ids: [
@@ -165157,6 +165828,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Vomiting",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "lets-play-doctor"
@@ -165204,6 +165876,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Warts",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -165237,6 +165910,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Water Intoxication",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "rare-earths"
@@ -165274,6 +165948,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Weight Loss",
         claim_count: 5,
+        distinct_claim_count: 9,
         books: [
           "dddl-3e-2011",
           "epigenetics",
@@ -165371,6 +166046,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Weils Disease",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -165400,6 +166076,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Wernicke Korsakoff Syndrome",
         claim_count: 3,
+        distinct_claim_count: 3,
         books: [
           "epigenetics",
           "rare-earths"
@@ -165455,6 +166132,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "White Muscle Disease",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "dddl-3e-2011",
           "rare-earths"
@@ -165506,6 +166184,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "White Spots Fingernails",
         claim_count: 1,
+        distinct_claim_count: 1,
         books: [
           "lets-play-doctor"
         ],
@@ -165541,6 +166220,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Wilsons Syndrome",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "epigenetics",
           "immortality"
@@ -165579,6 +166259,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Wounds",
         claim_count: 2,
+        distinct_claim_count: 2,
         books: [
           "immortality",
           "lets-play-doctor"
@@ -165619,8 +166300,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         type: "condition",
         name: "Xerophthalmia",
         claim_count: 5,
+        distinct_claim_count: 8,
         books: [
+          "dddl-3e-2011",
           "epigenetics",
+          "immortality",
           "lets-play-doctor",
           "rare-earths"
         ],
@@ -165732,6 +166416,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       slug,
       name: c.name,
       claim_count: c.claim_count,
+      distinct_claim_count: c.distinct_claim_count,
       nutrient_count: c.restore.length
     }));
   }
@@ -184218,6 +184903,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   }
 
   // assets/js/src/views/knowledge-corpus.ts
+  function rowClaimCount(slug, fallback) {
+    return getConditionPage(slug)?.distinct_claim_count ?? fallback;
+  }
   function escHTML3(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
   }
@@ -184246,15 +184934,16 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function renderConditionRow(c, selectedSlug) {
     const cls = `kd-condition-row${c.slug === selectedSlug ? " is-selected" : ""}`;
     const nutrients = c.essentials_involved.length;
+    const nClaims = rowClaimCount(c.slug, c.claim_count);
     const cat = conditionCategory(c.slug);
     const catStyle = cat !== null ? ` style="--cat:${escHTML3(cat.color)}"` : "";
     const catHTML = cat !== null ? `<div class="kd-condition-row__cat"><i></i>${escHTML3(cat.label)}</div>` : "";
     return `
     <div class="${cls}"${catStyle} data-kd-condition="${escHTML3(c.slug)}" data-search="${escHTML3(conditionSearchKeywords(c))}" role="button" tabindex="0">
-      <div class="kd-condition-row__ghost" aria-hidden="true">${c.claim_count}</div>
+      <div class="kd-condition-row__ghost" aria-hidden="true">${nClaims}</div>
       ${catHTML}
       <h4 class="kd-condition-row__name">${escHTML3(c.display_name)}</h4>
-      <div class="kd-condition-row__foot">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${nutrients} ${plural(nutrients, "nutrient")}</div>
+      <div class="kd-condition-row__foot">${nClaims} ${plural(nClaims, "claim")} \xB7 ${nutrients} ${plural(nutrients, "nutrient")}</div>
     </div>`;
   }
   function familiarEssentialName(slug) {
@@ -214673,7 +215362,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     const catStyle = cat !== null ? ` style="--cat:${escHTML6(cat.color)}"` : "";
     const catIcon = cat !== null && cat.icon.length > 0 ? `<div class="kd-ep-hero__sym kd-ep-hero__sym--cat"><svg viewBox="0 0 24 24" aria-hidden="true">${cat.icon}</svg></div>` : "";
     const catChip = cat !== null ? `<div class="kd-ep-hero__cat"><i></i>${escHTML6(cat.label)}</div>` : "";
-    const metaBits = [`${page.claim_count} ${plural(page.claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].join(" \xB7 ");
+    const metaBits = [`${page.distinct_claim_count} ${plural(page.distinct_claim_count, "claim")}`, `${page.books.length} ${plural(page.books.length, "book")}`].join(" \xB7 ");
     const synopsis = c !== null ? conditionSynopsis(c) : "";
     const lede = synopsis.length > 0 ? `<p class="kd-ep-lede">${escHTML6(synopsis)}</p>` : "";
     return `<div class="kd-essential-deep kd-ep kd-ep--cond"${catStyle}>
@@ -215366,11 +216055,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     <div class="ep-legend"><span class="ep-legend__lbl">${escHTML9(ui("kh_legend_label"))}</span>${legend}</div>`;
   }
   function condRow(c) {
-    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML9(c.slug)}"><span class="sh-condrow__nm">${escHTML9(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
+    return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML9(c.slug)}"><span class="sh-condrow__nm">${escHTML9(c.name)}</span><span class="sh-condrow__ct">${c.distinct_claim_count} ${plural(c.distinct_claim_count, "claim")} \xB7 ${c.nutrient_count} ${plural(c.nutrient_count, "nutrient")}</span></button>`;
   }
   function renderConditionsShelf() {
     const conds = listConditionPages();
-    const top = conds.slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 8);
+    const top = conds.slice().sort((a, b) => b.distinct_claim_count - a.distinct_claim_count).slice(0, 8);
     const link = ui("kh_conditions_link").replace("{n}", fmt(conds.length));
     return `<div class="ep-seclabel">${escHTML9(ui("kh_conditions_label"))} <span class="ep-seclabel__hint">${escHTML9(ui("kh_conditions_hint"))}</span><a data-kd-tab="conditions">${escHTML9(link)}</a></div>
     <div class="sh-condgrid">${top.map(condRow).join("")}</div>`;
@@ -215431,7 +216120,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const nm = cnd.name.toLowerCase();
       if (nm.includes(q) || spaced(cnd.slug).includes(q)) {
         taken.add(cnd.slug);
-        out.push({ kind: "condition", name: cnd.name, navAttr: "data-kd-condition", navVal: cnd.slug, claimCount: cnd.claim_count, startsWith: nm.startsWith(q) });
+        out.push({ kind: "condition", name: cnd.name, navAttr: "data-kd-condition", navVal: cnd.slug, claimCount: cnd.distinct_claim_count, startsWith: nm.startsWith(q) });
       }
     }
     const suppliedMeta = (n) => n > 0 ? ui("kh_meta_supplied").replace("{n}", String(n)).replace("{of}", String(essentialCount())) : ui("kh_meta_targeted");

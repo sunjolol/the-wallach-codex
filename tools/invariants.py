@@ -8592,6 +8592,69 @@ def check_entity_page_enriched_matches_search():
     return _entity_page_enriched_matches_search_impl(artifact, search_index)
 
 
+def _entity_page_header_counts_match_page_impl(artifact, corpus_claims):
+    """RED if any entity page's HERO NUMBERS disagree with what that page renders.
+
+    The hero prints "{distinct_claim_count} claims - {len(books)} books". Both must describe the
+    claims the page actually shows: The Full Record UNION Worth Knowing, deduped. They previously
+    did not. Conditions had no distinct_claim_count at all, so the hero fell back to claim_count --
+    the ROLE-mapped total (claims naming the condition in their conditions[] field) -- while the
+    page renders the SEARCH set (subject UNION also_about). memory_loss advertised "4 claims -
+    3 books" above 34 cards citing 5 books; 154 of 510 condition pages undercounted, and `books`
+    was wrong on 86 conditions and 63 of 91 essentials.
+
+    Nothing on the board watched these two numbers, so the whole class of defect was invisible while
+    102/102 stayed green -- the board was green BECAUSE nothing looked. This recomputes both from
+    the artifact's own claim ids and RED-flags any disagreement.
+
+    Note `record` UNION `search` is exactly what renderConditionPage/renderEssentialPage emit, and
+    group_record is deliberately excluded -- those plant-derived claims are shared across every
+    trace_pdm element and render in their own section, so counting them would make every rare-earth
+    hero read near-identical (the reason distinct_claim_count excludes them in the derive)."""
+    viol = []
+    checked = 0
+    for kind in ("conditions", "essentials"):
+        for slug, rec in artifact.get(kind, {}).items():
+            shown = set()
+            for sec in rec.get("record", []):
+                shown.update(sec.get("claim_ids", []))
+            for sec in rec.get("search", []):
+                shown.update(sec.get("claim_ids", []))
+            checked += 1
+            bits = []
+            got_n = rec.get("distinct_claim_count")
+            if got_n != len(shown):
+                bits.append(f"hero says {got_n} claims, page renders {len(shown)}")
+            want_books = sorted({b for b in (corpus_claims.get(cid, {}).get("book") for cid in shown) if b})
+            got_books = rec.get("books")
+            if got_books != want_books:
+                bits.append(f"hero says {len(got_books or [])} books, page cites {len(want_books)}")
+            if bits:
+                viol.append(f"{kind[:-1]} {slug}: " + ", ".join(bits))
+    if viol:
+        return False, ("entity page hero numbers disagree with the page's own claims: "
+                       + "; ".join(viol[:6])
+                       + (f" (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+    return True, (f"all {checked} condition/essential page heroes count EXACTLY what they render "
+                  "(distinct_claim_count and books == record UNION search)")
+
+
+def check_entity_page_header_counts_match_page():
+    """Every entity hero's "N claims - M books" describes the claims that page actually renders.
+
+    A header is a promise about the cards beneath it. Conditions printed the role-mapped
+    claim_count while rendering the search set, so memory_loss said "4 claims - 3 books" over 34
+    cards from 5 books. Recomputed here from the artifact's own claim ids against corpus-embed's
+    per-claim book, so neither number can drift from the page again. Truth anchor:
+    entity-page-data.json record+search claim ids x corpus-embed.json claim.book, recomputed
+    each run."""
+    artifact = json.loads((ROOT / "dashboard" / "assets" / "data" / "entity-page-data.json")
+                          .read_text(encoding="utf-8"))
+    embed = json.loads((ROOT / "dashboard" / "assets" / "data" / "corpus-embed.json")
+                       .read_text(encoding="utf-8"))
+    return _entity_page_header_counts_match_page_impl(artifact, embed.get("claims", {}))
+
+
 # --- Dead-code gate ---------------------------------------------------------
 # knip (dashboard/knip.json, configured with the real entry graph: main.ts + tests) is run here
 # as a board gate so an orphaned export/file/type can never ship silently. A detector that only
@@ -9758,6 +9821,15 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/entity-page-data.json search sections x an independent claimsForSubject (subject OR also_about) re-derivation from search-index.json, recomputed each run",
         severity="critical",
         lesson_ref="search surfaced more claims than the full topic page did -- no condition page should ever show less than its own search. Root cause: entity_page_derive.search_sections bucketed enriched claims by subject ONLY, while search.ts::claimsForSubject includes also_about -- so an also_about claim (Wallach's selenium answer naming hypothyroidism) was findable in search but absent from the hypothyroidism page. Fixed by including also_about in search_sections; gated here so the two derivations can never drift again. Negative test: tools/tests/test_entity_page_enriched_matches_search.py.",
+    ),
+    Invariant(
+        name="entity_page_header_counts_match_page",
+        anchor_class="consistency",  # the hero's numbers vs the page's own claim ids — catches drift between a stored counter and what renders
+        description="every condition/essential page hero counts EXACTLY what that page renders: distinct_claim_count == |record UNION search|, and `books` == the books those same claims cite. Conditions carried no distinct_claim_count, so the hero printed the ROLE-mapped claim_count (claims naming the condition in conditions[]) while the page rendered the SEARCH set (subject OR also_about) -- memory_loss advertised '4 claims - 3 books' above 34 cards from 5 books, and 154 of 510 conditions undercounted. Recomputes both numbers from the artifact's own claim ids so a header can never again promise a different page than the one below it",
+        check_fn=check_entity_page_header_counts_match_page,
+        truth_anchor="dashboard/assets/data/entity-page-data.json record+search claim ids x corpus-embed.json claim.book, recomputed each run",
+        severity="critical",
+        lesson_ref="he opened Memory Loss and read '4 claims - 3 books' over a page showing 34 claims from 5 books, while Ask Wallach reported 34 correctly. Root cause: Ask Wallach DERIVES its number from the rows it is about to render (search.ts renderTopicPage: families.reduce(+f.count)) while the entity hero read a STORED counter measuring a different population. The board was 102/102 throughout because no gate watched a rendered count -- green BECAUSE nothing looked. Negative test: tools/tests/test_entity_page_header_counts_match_page.py.",
     ),
     Invariant(
         name="offline_no_runtime_network",

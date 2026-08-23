@@ -137,6 +137,7 @@
       "claim_count": 2,
       "distinct_claim_count": 5,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "immortality"
       ],
@@ -199,7 +200,10 @@
       "claim_count": 5,
       "distinct_claim_count": 11,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
+        "immortality",
+        "lets-play-doctor",
         "rare-earths"
       ],
       "synonyms": [
@@ -280,6 +284,8 @@
       "claim_count": 11,
       "distinct_claim_count": 19,
       "books": [
+        "dddl-3e-2011",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -403,6 +409,8 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -617,6 +625,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -1006,6 +1015,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -1170,6 +1180,7 @@
       "distinct_claim_count": 28,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -1327,6 +1338,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -1465,6 +1477,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -1676,6 +1689,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -2794,6 +2808,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -3343,6 +3358,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -3581,6 +3597,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -3768,6 +3785,8 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -3970,6 +3989,8 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -4080,6 +4101,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -4461,6 +4483,8 @@
       "distinct_claim_count": 8,
       "books": [
         "epigenetics",
+        "hells-kitchen",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -4546,6 +4570,7 @@
       "distinct_claim_count": 7,
       "books": [
         "dddl-3e-2011",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -4963,6 +4988,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -5681,6 +5707,7 @@
         "dddl-3e-2011",
         "epigenetics",
         "immortality",
+        "lets-play-doctor",
         "rare-earths"
       ],
       "synonyms": [
@@ -5878,6 +5905,7 @@
       "distinct_claim_count": 13,
       "books": [
         "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -6239,6 +6267,7 @@
       "distinct_claim_count": 6,
       "books": [
         "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -6393,6 +6422,7 @@
       "distinct_claim_count": 7,
       "books": [
         "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -6711,6 +6741,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "rare-earths"
       ],
@@ -8500,6 +8531,7 @@
       "distinct_claim_count": 6,
       "books": [
         "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -8647,6 +8679,7 @@
       "distinct_claim_count": 5,
       "books": [
         "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -8798,6 +8831,7 @@
       "distinct_claim_count": 9,
       "books": [
         "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -8983,6 +9017,8 @@
       "claim_count": 1,
       "distinct_claim_count": 6,
       "books": [
+        "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -9135,6 +9171,8 @@
       "claim_count": 1,
       "distinct_claim_count": 5,
       "books": [
+        "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -9286,6 +9324,8 @@
       "claim_count": 1,
       "distinct_claim_count": 5,
       "books": [
+        "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -9437,6 +9477,7 @@
       "claim_count": 1,
       "distinct_claim_count": 4,
       "books": [
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -9583,6 +9624,8 @@
       "claim_count": 1,
       "distinct_claim_count": 5,
       "books": [
+        "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -9735,6 +9778,7 @@
       "distinct_claim_count": 14,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -9926,6 +9970,8 @@
       "claim_count": 1,
       "distinct_claim_count": 5,
       "books": [
+        "hells-kitchen",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -10078,6 +10124,7 @@
       "claim_count": 1,
       "distinct_claim_count": 4,
       "books": [
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -10223,6 +10270,8 @@
       "claim_count": 1,
       "distinct_claim_count": 5,
       "books": [
+        "hells-kitchen",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -10374,6 +10423,8 @@
       "claim_count": 1,
       "distinct_claim_count": 6,
       "books": [
+        "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -10532,6 +10583,8 @@
       "claim_count": 2,
       "distinct_claim_count": 6,
       "books": [
+        "epigenetics",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -10684,7 +10737,10 @@
       "is_essential": true,
       "claim_count": 0,
       "distinct_claim_count": 2,
-      "books": [],
+      "books": [
+        "epigenetics",
+        "immortality"
+      ],
       "synonyms": [
         "ytterbium",
         "Yb",
@@ -10817,6 +10873,8 @@
       "claim_count": 1,
       "distinct_claim_count": 7,
       "books": [
+        "hells-kitchen",
+        "immortality",
         "rare-earths"
       ],
       "synonyms": [
@@ -10978,6 +11036,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -11300,6 +11359,7 @@
         "dddl-3e-2011",
         "epigenetics",
         "hells-kitchen",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -11473,6 +11533,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -11627,6 +11688,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -11962,6 +12024,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -12220,6 +12283,8 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -12424,6 +12489,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -12662,6 +12728,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor"
       ],
@@ -12981,6 +13048,8 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -13210,6 +13279,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -13537,6 +13607,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -13679,6 +13750,7 @@
       "claim_count": 8,
       "distinct_claim_count": 16,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "immortality",
         "lets-play-doctor",
@@ -13985,6 +14057,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -14296,6 +14369,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor"
       ],
@@ -14532,6 +14606,7 @@
       "claim_count": 3,
       "distinct_claim_count": 6,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "lets-play-doctor"
       ],
@@ -14610,6 +14685,7 @@
       "claim_count": 3,
       "distinct_claim_count": 6,
       "books": [
+        "dddl-3e-2011",
         "epigenetics"
       ],
       "synonyms": [
@@ -14677,6 +14753,7 @@
       "distinct_claim_count": 10,
       "books": [
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -14875,6 +14952,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -15096,6 +15174,7 @@
       "claim_count": 3,
       "distinct_claim_count": 8,
       "books": [
+        "dddl-3e-2011",
         "epigenetics"
       ],
       "synonyms": [
@@ -15165,6 +15244,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -15295,7 +15375,8 @@
         "dddl-3e-2011",
         "epigenetics",
         "immortality",
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
         "tyrosine",
@@ -15397,6 +15478,7 @@
       "claim_count": 4,
       "distinct_claim_count": 8,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "lets-play-doctor"
       ],
@@ -15488,6 +15570,7 @@
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -16008,7 +16091,10 @@
       "is_essential": false,
       "claim_count": 0,
       "distinct_claim_count": 3,
-      "books": [],
+      "books": [
+        "epigenetics",
+        "hells-kitchen"
+      ],
       "synonyms": [
         "omega-9",
         "omega 9",
@@ -16058,6 +16144,7 @@
       "type": "condition",
       "name": "Abrasions",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -16098,6 +16185,7 @@
       "type": "condition",
       "name": "Abscess",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -16134,6 +16222,7 @@
       "type": "condition",
       "name": "Absence Attacks",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -16175,6 +16264,7 @@
       "type": "condition",
       "name": "Achalasia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -16207,6 +16297,7 @@
       "type": "condition",
       "name": "Achlorhydria",
       "claim_count": 5,
+      "distinct_claim_count": 7,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -16280,6 +16371,7 @@
       "type": "condition",
       "name": "Acidosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -16316,6 +16408,7 @@
       "type": "condition",
       "name": "Acne",
       "claim_count": 26,
+      "distinct_claim_count": 34,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -16452,6 +16545,7 @@
       "type": "condition",
       "name": "Acrodermatitis Enteropathica",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "rare-earths"
       ],
@@ -16494,6 +16588,7 @@
       "type": "condition",
       "name": "Addisons Disease",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -16532,6 +16627,7 @@
       "type": "condition",
       "name": "Adhd",
       "claim_count": 15,
+      "distinct_claim_count": 18,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -16646,6 +16742,7 @@
       "type": "condition",
       "name": "Adrenal Exhaustion",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -16689,6 +16786,7 @@
       "type": "condition",
       "name": "Adrenoleukodystrophy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "rare-earths"
       ],
@@ -16732,6 +16830,7 @@
       "type": "condition",
       "name": "Ageusia",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -16777,6 +16876,7 @@
       "type": "condition",
       "name": "Aids",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -16824,6 +16924,7 @@
       "type": "condition",
       "name": "Airway Obstruction",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -16856,6 +16957,7 @@
       "type": "condition",
       "name": "Alcoholism",
       "claim_count": 4,
+      "distinct_claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "immortality",
@@ -16950,6 +17052,7 @@
       "type": "condition",
       "name": "Alkalosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -16986,8 +17089,10 @@
       "type": "condition",
       "name": "Allergies",
       "claim_count": 14,
+      "distinct_claim_count": 22,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -17100,6 +17205,7 @@
       "type": "condition",
       "name": "Alopecia",
       "claim_count": 17,
+      "distinct_claim_count": 24,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -17235,7 +17341,9 @@
       "type": "condition",
       "name": "Als",
       "claim_count": 5,
+      "distinct_claim_count": 7,
       "books": [
+        "dddl-3e-2011",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -17311,8 +17419,11 @@
       "type": "condition",
       "name": "Alzheimers",
       "claim_count": 10,
+      "distinct_claim_count": 27,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -17449,6 +17560,7 @@
       "type": "condition",
       "name": "Amblyopia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -17485,6 +17597,7 @@
       "type": "condition",
       "name": "Amebiasis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "dddl-3e-2011"
       ],
@@ -17515,9 +17628,11 @@
       "type": "condition",
       "name": "Amenorrhea",
       "claim_count": 4,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
         "missed period",
@@ -17591,6 +17706,7 @@
       "type": "condition",
       "name": "Anal Abscess",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -17623,6 +17739,7 @@
       "type": "condition",
       "name": "Anaphylaxis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -17655,9 +17772,11 @@
       "type": "condition",
       "name": "Anemia",
       "claim_count": 34,
+      "distinct_claim_count": 58,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "iaiyh",
         "immortality",
         "lets-play-doctor",
@@ -17850,7 +17969,9 @@
       "type": "condition",
       "name": "Anencephaly",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -17898,9 +18019,11 @@
       "type": "condition",
       "name": "Aneurysm",
       "claim_count": 12,
+      "distinct_claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "rare-earths"
       ],
@@ -18007,6 +18130,7 @@
       "type": "condition",
       "name": "Angina",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -18058,6 +18182,7 @@
       "type": "condition",
       "name": "Angular Stomatitis",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "immortality",
@@ -18114,6 +18239,7 @@
       "type": "condition",
       "name": "Ankylosing Spondylitis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -18165,6 +18291,7 @@
       "type": "condition",
       "name": "Anorexia",
       "claim_count": 27,
+      "distinct_claim_count": 27,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -18283,6 +18410,7 @@
       "type": "condition",
       "name": "Anorexia Nervosa",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -18312,6 +18440,7 @@
       "type": "condition",
       "name": "Anosmia",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011",
         "iaiyh",
@@ -18356,6 +18485,7 @@
       "type": "condition",
       "name": "Anxiety",
       "claim_count": 13,
+      "distinct_claim_count": 16,
       "books": [
         "dddl-3e-2011",
         "hells-kitchen",
@@ -18466,6 +18596,7 @@
       "type": "condition",
       "name": "Aphthous Stomatitis",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -18520,6 +18651,7 @@
       "type": "condition",
       "name": "Arsenic Toxicity",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -18562,6 +18694,7 @@
       "type": "condition",
       "name": "Arteriosclerosis",
       "claim_count": 10,
+      "distinct_claim_count": 11,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -18674,6 +18807,7 @@
       "type": "condition",
       "name": "Arthritis",
       "claim_count": 40,
+      "distinct_claim_count": 51,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -18859,6 +18993,7 @@
       "type": "condition",
       "name": "Asthma",
       "claim_count": 19,
+      "distinct_claim_count": 21,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -18985,8 +19120,10 @@
       "type": "condition",
       "name": "Atherosclerosis",
       "claim_count": 6,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor"
       ],
@@ -19064,6 +19201,7 @@
       "type": "condition",
       "name": "Athletes Foot",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -19122,6 +19260,7 @@
       "type": "condition",
       "name": "Atopic Asthma",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -19158,6 +19297,7 @@
       "type": "condition",
       "name": "Atopic Dermatitis",
       "claim_count": 12,
+      "distinct_claim_count": 12,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -19230,6 +19370,7 @@
       "type": "condition",
       "name": "Atrial Fibrillation",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "iaiyh"
@@ -19289,6 +19430,7 @@
       "type": "condition",
       "name": "Autism",
       "claim_count": 7,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics",
         "immortality",
@@ -19375,6 +19517,7 @@
       "type": "condition",
       "name": "Autoimmune Disorders",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -19421,6 +19564,7 @@
       "type": "condition",
       "name": "Backache",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -19486,6 +19630,7 @@
       "type": "condition",
       "name": "Bad Breath",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -19522,6 +19667,7 @@
       "type": "condition",
       "name": "Basal Cell Carcinoma",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -19551,6 +19697,7 @@
       "type": "condition",
       "name": "Bedsores",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -19599,6 +19746,7 @@
       "type": "condition",
       "name": "Bedwetting",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -19664,6 +19812,7 @@
       "type": "condition",
       "name": "Bee Stings",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -19696,6 +19845,7 @@
       "type": "condition",
       "name": "Bells Palsy",
       "claim_count": 8,
+      "distinct_claim_count": 8,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -19790,6 +19940,7 @@
       "type": "condition",
       "name": "Benign Prostatic Hyperplasia",
       "claim_count": 13,
+      "distinct_claim_count": 13,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor",
@@ -19888,6 +20039,7 @@
       "type": "condition",
       "name": "Beriberi",
       "claim_count": 4,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -19949,6 +20101,7 @@
       "type": "condition",
       "name": "Bipolar Disorder",
       "claim_count": 9,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -20041,6 +20194,7 @@
       "type": "condition",
       "name": "Birth Defects",
       "claim_count": 30,
+      "distinct_claim_count": 34,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -20192,6 +20346,7 @@
       "type": "condition",
       "name": "Bladder Stones",
       "claim_count": 5,
+      "distinct_claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -20271,6 +20426,7 @@
       "type": "condition",
       "name": "Bleeding",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -20303,6 +20459,7 @@
       "type": "condition",
       "name": "Bleeding Bowels",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -20362,6 +20519,7 @@
       "type": "condition",
       "name": "Bleeding Gums",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "immortality",
@@ -20433,6 +20591,7 @@
       "type": "condition",
       "name": "Blepharitis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -20484,6 +20643,7 @@
       "type": "condition",
       "name": "Blind Rage",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "immortality",
@@ -20540,6 +20700,7 @@
       "type": "condition",
       "name": "Blindness",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011"
       ],
@@ -20578,6 +20739,7 @@
       "type": "condition",
       "name": "Bloating",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -20628,6 +20790,7 @@
       "type": "condition",
       "name": "Body Odor",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -20661,6 +20824,7 @@
       "type": "condition",
       "name": "Boils",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -20722,6 +20886,7 @@
       "type": "condition",
       "name": "Bone Pain",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -20767,6 +20932,7 @@
       "type": "condition",
       "name": "Bone Spurs",
       "claim_count": 8,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics",
         "immortality",
@@ -20855,6 +21021,7 @@
       "type": "condition",
       "name": "Brain Cancer",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "immortality",
@@ -20910,6 +21077,7 @@
       "type": "condition",
       "name": "Breast Cancer",
       "claim_count": 7,
+      "distinct_claim_count": 7,
       "books": [
         "dddl-3e-2011",
         "hells-kitchen",
@@ -20980,6 +21148,7 @@
       "type": "condition",
       "name": "Breast Cysts",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -21014,6 +21183,7 @@
       "type": "condition",
       "name": "Breast Tenderness",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -21052,6 +21222,7 @@
       "type": "condition",
       "name": "Brittle Hair",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -21095,7 +21266,9 @@
       "type": "condition",
       "name": "Brittle Nails",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -21150,6 +21323,7 @@
       "type": "condition",
       "name": "Bronchitis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -21213,6 +21387,7 @@
       "type": "condition",
       "name": "Bruises",
       "claim_count": 4,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -21290,6 +21465,7 @@
       "type": "condition",
       "name": "Bruxism",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -21323,6 +21499,7 @@
       "type": "condition",
       "name": "Bulimia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "rare-earths"
       ],
@@ -21365,7 +21542,9 @@
       "type": "condition",
       "name": "Burns",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -21419,6 +21598,7 @@
       "type": "condition",
       "name": "Bursitis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -21465,6 +21645,7 @@
       "type": "condition",
       "name": "Bush Sickness",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -21497,6 +21678,7 @@
       "type": "condition",
       "name": "Calcium Deposits",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -21547,9 +21729,11 @@
       "type": "condition",
       "name": "Cancer",
       "claim_count": 76,
+      "distinct_claim_count": 104,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -21791,8 +21975,10 @@
       "type": "condition",
       "name": "Candidiasis",
       "claim_count": 6,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -21865,6 +22051,7 @@
       "type": "condition",
       "name": "Canker Sores",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -21951,7 +22138,9 @@
       "type": "condition",
       "name": "Carcinoma",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -21981,6 +22170,7 @@
       "type": "condition",
       "name": "Cardiac Arrest",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -22006,7 +22196,9 @@
       "type": "condition",
       "name": "Cardiac Arrhythmia",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -22060,6 +22252,7 @@
       "type": "condition",
       "name": "Cardiac Failure",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -22098,6 +22291,7 @@
       "type": "condition",
       "name": "Cardiomyopathy",
       "claim_count": 12,
+      "distinct_claim_count": 16,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -22216,6 +22410,7 @@
       "type": "condition",
       "name": "Cardiovascular Disease",
       "claim_count": 9,
+      "distinct_claim_count": 10,
       "books": [
         "immortality",
         "lets-play-doctor",
@@ -22302,6 +22497,7 @@
       "type": "condition",
       "name": "Carpal Tunnel Syndrome",
       "claim_count": 9,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -22400,6 +22596,7 @@
       "type": "condition",
       "name": "Cataracts",
       "claim_count": 20,
+      "distinct_claim_count": 22,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -22531,6 +22728,7 @@
       "type": "condition",
       "name": "Catarrh",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -22563,6 +22761,7 @@
       "type": "condition",
       "name": "Celiac Disease",
       "claim_count": 11,
+      "distinct_claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -22670,6 +22869,7 @@
       "type": "condition",
       "name": "Cerebellar Hypoplasia",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality"
       ],
@@ -22714,6 +22914,7 @@
       "type": "condition",
       "name": "Cerebral Palsy",
       "claim_count": 9,
+      "distinct_claim_count": 11,
       "books": [
         "epigenetics",
         "immortality",
@@ -22808,6 +23009,7 @@
       "type": "condition",
       "name": "Cerebrovascular Disease",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011"
       ],
@@ -22859,6 +23061,7 @@
       "type": "condition",
       "name": "Cervical Dysplasia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -22897,6 +23100,7 @@
       "type": "condition",
       "name": "Chalazion",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -22935,7 +23139,9 @@
       "type": "condition",
       "name": "Cheilosis",
       "claim_count": 2,
+      "distinct_claim_count": 6,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "lets-play-doctor"
       ],
@@ -23003,6 +23209,7 @@
       "type": "condition",
       "name": "Chicken Pox",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -23055,6 +23262,7 @@
       "type": "condition",
       "name": "Chiggers",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -23087,6 +23295,7 @@
       "type": "condition",
       "name": "Chills",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -23119,6 +23328,7 @@
       "type": "condition",
       "name": "Chondrodystrophy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "epigenetics"
       ],
@@ -23162,6 +23372,7 @@
       "type": "condition",
       "name": "Chondromalacia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "epigenetics"
       ],
@@ -23205,6 +23416,7 @@
       "type": "condition",
       "name": "Chorea",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -23247,6 +23459,7 @@
       "type": "condition",
       "name": "Chronic Fatigue",
       "claim_count": 11,
+      "distinct_claim_count": 13,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -23331,7 +23544,9 @@
       "type": "condition",
       "name": "Chronic Fatigue Syndrome",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -23375,6 +23590,7 @@
       "type": "condition",
       "name": "Chronic Obstructive Pulmonary Disease",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "iaiyh"
       ],
@@ -23404,6 +23620,7 @@
       "type": "condition",
       "name": "Chronic Wounds",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -23433,6 +23650,7 @@
       "type": "condition",
       "name": "Circulatory Disease",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "rare-earths"
       ],
@@ -23475,6 +23693,7 @@
       "type": "condition",
       "name": "Cirrhosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality"
       ],
@@ -23519,6 +23738,7 @@
       "type": "condition",
       "name": "Cleft Lip",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "dddl-3e-2011"
       ],
@@ -23557,8 +23777,10 @@
       "type": "condition",
       "name": "Cleft Palate",
       "claim_count": 2,
+      "distinct_claim_count": 4,
       "books": [
-        "dddl-3e-2011"
+        "dddl-3e-2011",
+        "epigenetics"
       ],
       "synonyms": [],
       "protocol_claim_ids": [],
@@ -23616,6 +23838,7 @@
       "type": "condition",
       "name": "Cluster Headaches",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -23654,6 +23877,7 @@
       "type": "condition",
       "name": "Cold Sores",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -23726,6 +23950,7 @@
       "type": "condition",
       "name": "Colds",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -23766,6 +23991,7 @@
       "type": "condition",
       "name": "Colic",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -23832,6 +24058,7 @@
       "type": "condition",
       "name": "Colitis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -23885,6 +24112,7 @@
       "type": "condition",
       "name": "Collagen Disease",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "rare-earths"
       ],
@@ -23921,6 +24149,7 @@
       "type": "condition",
       "name": "Colon Cancer",
       "claim_count": 6,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics",
         "hells-kitchen",
@@ -23993,6 +24222,7 @@
       "type": "condition",
       "name": "Common Cold",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -24066,6 +24296,7 @@
       "type": "condition",
       "name": "Compression Fractures",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -24109,6 +24340,7 @@
       "type": "condition",
       "name": "Congenital Ataxia",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011",
         "epigenetics"
@@ -24162,6 +24394,7 @@
       "type": "condition",
       "name": "Congested Lungs",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -24203,6 +24436,7 @@
       "type": "condition",
       "name": "Congestive Heart Failure",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -24278,6 +24512,7 @@
       "type": "condition",
       "name": "Conjunctivitis",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -24354,9 +24589,11 @@
       "type": "condition",
       "name": "Constipation",
       "claim_count": 10,
+      "distinct_claim_count": 15,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -24455,11 +24692,13 @@
       "type": "condition",
       "name": "Convulsions",
       "claim_count": 8,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
         "immortality",
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
         "seizures",
@@ -24545,6 +24784,7 @@
       "type": "condition",
       "name": "Cor Pulmonale",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -24588,6 +24828,7 @@
       "type": "condition",
       "name": "Corneal Ulcers",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -24641,6 +24882,7 @@
       "type": "condition",
       "name": "Coronary Artery Disease",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -24710,6 +24952,7 @@
       "type": "condition",
       "name": "Cough",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -24771,6 +25014,7 @@
       "type": "condition",
       "name": "Cradle Cap",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "dddl-3e-2011"
       ],
@@ -24809,6 +25053,7 @@
       "type": "condition",
       "name": "Cretinism",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "epigenetics"
       ],
@@ -24843,6 +25088,7 @@
       "type": "condition",
       "name": "Creutzfeldt Jakob Disease",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -24886,6 +25132,7 @@
       "type": "condition",
       "name": "Criminal Behavior",
       "claim_count": 6,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics",
         "immortality",
@@ -24960,8 +25207,10 @@
       "type": "condition",
       "name": "Crohns Disease",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -25032,6 +25281,7 @@
       "type": "condition",
       "name": "Cuts",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -25089,6 +25339,7 @@
       "type": "condition",
       "name": "Cystic Fibrosis",
       "claim_count": 15,
+      "distinct_claim_count": 22,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -25215,6 +25466,7 @@
       "type": "condition",
       "name": "Cystitis",
       "claim_count": 9,
+      "distinct_claim_count": 10,
       "books": [
         "dddl-3e-2011",
         "immortality",
@@ -25302,7 +25554,9 @@
       "type": "condition",
       "name": "Dandruff",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -25362,7 +25616,9 @@
       "type": "condition",
       "name": "Deafness",
       "claim_count": 6,
+      "distinct_claim_count": 9,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "iaiyh",
         "lets-play-doctor",
@@ -25446,6 +25702,7 @@
       "type": "condition",
       "name": "Degenerative Arthritis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -25489,6 +25746,7 @@
       "type": "condition",
       "name": "Degenerative Disc Disease",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "immortality"
       ],
@@ -25546,7 +25804,9 @@
       "type": "condition",
       "name": "Dementia",
       "claim_count": 21,
+      "distinct_claim_count": 29,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "hells-kitchen",
         "lets-play-doctor",
@@ -25700,6 +25960,7 @@
       "type": "condition",
       "name": "Demyelination",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -25732,6 +25993,7 @@
       "type": "condition",
       "name": "Dental Calculus",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -25768,6 +26030,7 @@
       "type": "condition",
       "name": "Dental Fluorosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -25802,6 +26065,7 @@
       "type": "condition",
       "name": "Depression",
       "claim_count": 46,
+      "distinct_claim_count": 57,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -25991,6 +26255,7 @@
       "type": "condition",
       "name": "Dermatitis",
       "claim_count": 32,
+      "distinct_claim_count": 32,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -26126,9 +26391,11 @@
       "type": "condition",
       "name": "Diabetes",
       "claim_count": 35,
+      "distinct_claim_count": 53,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -26302,6 +26569,7 @@
       "type": "condition",
       "name": "Diaper Rash",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -26342,6 +26610,7 @@
       "type": "condition",
       "name": "Diarrhea",
       "claim_count": 11,
+      "distinct_claim_count": 11,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -26433,6 +26702,7 @@
       "type": "condition",
       "name": "Diplopia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "iaiyh"
       ],
@@ -26463,6 +26733,7 @@
       "type": "condition",
       "name": "Disagreeable Attitude",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -26527,6 +26798,7 @@
       "type": "condition",
       "name": "Diverticulitis",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -26595,6 +26867,7 @@
       "type": "condition",
       "name": "Dowagers Hump",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -26645,6 +26918,7 @@
       "type": "condition",
       "name": "Down Syndrome",
       "claim_count": 6,
+      "distinct_claim_count": 8,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -26727,6 +27001,7 @@
       "type": "condition",
       "name": "Dropsy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -26759,6 +27034,7 @@
       "type": "condition",
       "name": "Drug Addiction",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -26788,6 +27064,7 @@
       "type": "condition",
       "name": "Dry Skin",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -26832,6 +27109,7 @@
       "type": "condition",
       "name": "Dumping Syndrome",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -26873,6 +27151,7 @@
       "type": "condition",
       "name": "Dysentery",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -26929,6 +27208,7 @@
       "type": "condition",
       "name": "Dyslexia",
       "claim_count": 4,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -26987,9 +27267,11 @@
       "type": "condition",
       "name": "Dysmenorrhea",
       "claim_count": 4,
+      "distinct_claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -27064,6 +27346,7 @@
       "type": "condition",
       "name": "Dyspepsia",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -27131,6 +27414,7 @@
       "type": "condition",
       "name": "Dysphagia",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "iaiyh",
         "immortality"
@@ -27182,6 +27466,7 @@
       "type": "condition",
       "name": "Earache",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -27221,7 +27506,9 @@
       "type": "condition",
       "name": "Ecchymosis",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "lets-play-doctor"
       ],
@@ -27281,8 +27568,11 @@
       "type": "condition",
       "name": "Eclampsia",
       "claim_count": 1,
+      "distinct_claim_count": 3,
       "books": [
-        "lets-play-doctor"
+        "dddl-3e-2011",
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [],
       "protocol_claim_ids": [
@@ -27327,6 +27617,7 @@
       "type": "condition",
       "name": "Eczema",
       "claim_count": 29,
+      "distinct_claim_count": 31,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -27468,6 +27759,7 @@
       "type": "condition",
       "name": "Edema",
       "claim_count": 6,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -27538,6 +27830,7 @@
       "type": "condition",
       "name": "Electric Shock",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -27570,6 +27863,7 @@
       "type": "condition",
       "name": "Emphysema",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "rare-earths"
       ],
@@ -27612,6 +27906,7 @@
       "type": "condition",
       "name": "Encephalopathy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "rare-earths"
       ],
@@ -27639,6 +27934,7 @@
       "type": "condition",
       "name": "Endometriosis",
       "claim_count": 9,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011"
       ],
@@ -27694,6 +27990,7 @@
       "type": "condition",
       "name": "Enuresis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -27735,6 +28032,7 @@
       "type": "condition",
       "name": "Enzootic Ataxia",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "immortality"
       ],
@@ -27791,8 +28089,10 @@
       "type": "condition",
       "name": "Epilepsy",
       "claim_count": 4,
+      "distinct_claim_count": 11,
       "books": [
         "dddl-3e-2011",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -27881,6 +28181,7 @@
       "type": "condition",
       "name": "Erbs Palsy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "iaiyh"
       ],
@@ -27923,6 +28224,7 @@
       "type": "condition",
       "name": "Erectile Dysfunction",
       "claim_count": 6,
+      "distinct_claim_count": 7,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -27992,6 +28294,7 @@
       "type": "condition",
       "name": "Esophageal Cancer",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -28033,6 +28336,7 @@
       "type": "condition",
       "name": "Exophthalmos",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -28065,6 +28369,7 @@
       "type": "condition",
       "name": "Explosive Outbursts",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "epigenetics"
       ],
@@ -28108,6 +28413,7 @@
       "type": "condition",
       "name": "Eye Redness",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -28168,6 +28474,7 @@
       "type": "condition",
       "name": "Failure To Thrive",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "immortality",
@@ -28243,6 +28550,7 @@
       "type": "condition",
       "name": "Fatty Liver",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -28302,6 +28610,7 @@
       "type": "condition",
       "name": "Fever",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -28334,6 +28643,7 @@
       "type": "condition",
       "name": "Fibrocystic Breast Disease",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -28412,6 +28722,7 @@
       "type": "condition",
       "name": "Fibromyalgia",
       "claim_count": 5,
+      "distinct_claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -28496,6 +28807,7 @@
       "type": "condition",
       "name": "Flatulence",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -28530,6 +28842,7 @@
       "type": "condition",
       "name": "Food Allergy",
       "claim_count": 17,
+      "distinct_claim_count": 20,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor",
@@ -28642,7 +28955,9 @@
       "type": "condition",
       "name": "Fractures",
       "claim_count": 3,
+      "distinct_claim_count": 4,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "lets-play-doctor",
         "rare-earths"
@@ -28717,6 +29032,7 @@
       "type": "condition",
       "name": "Freckles",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -28761,6 +29077,7 @@
       "type": "condition",
       "name": "Gallstones",
       "claim_count": 13,
+      "distinct_claim_count": 14,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -28858,6 +29175,7 @@
       "type": "condition",
       "name": "Gangrene",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "rare-earths"
       ],
@@ -28900,6 +29218,7 @@
       "type": "condition",
       "name": "Gastroparesis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "iaiyh"
       ],
@@ -28929,6 +29248,7 @@
       "type": "condition",
       "name": "Geographic Tongue",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -28995,6 +29315,7 @@
       "type": "condition",
       "name": "Gestational Diabetes",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -29025,6 +29346,7 @@
       "type": "condition",
       "name": "Gingivitis",
       "claim_count": 6,
+      "distinct_claim_count": 8,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -29110,6 +29432,7 @@
       "type": "condition",
       "name": "Glaucoma",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "lets-play-doctor"
@@ -29171,6 +29494,7 @@
       "type": "condition",
       "name": "Glucose Intolerance",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "immortality",
@@ -29219,9 +29543,11 @@
       "type": "condition",
       "name": "Goiter",
       "claim_count": 18,
+      "distinct_claim_count": 33,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -29355,6 +29681,7 @@
       "type": "condition",
       "name": "Gout",
       "claim_count": 8,
+      "distinct_claim_count": 11,
       "books": [
         "dddl-3e-2011",
         "immortality",
@@ -29448,6 +29775,7 @@
       "type": "condition",
       "name": "Graves Disease",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -29480,6 +29808,7 @@
       "type": "condition",
       "name": "Gray Hair",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "immortality"
@@ -29532,6 +29861,7 @@
       "type": "condition",
       "name": "Growing Pains",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -29579,6 +29909,7 @@
       "type": "condition",
       "name": "Hangnails",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -29617,6 +29948,7 @@
       "type": "condition",
       "name": "Hashimotos Disease",
       "claim_count": 3,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "immortality",
@@ -29658,6 +29990,7 @@
       "type": "condition",
       "name": "Hay Fever",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -29699,6 +30032,7 @@
       "type": "condition",
       "name": "Headache",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -29767,6 +30101,7 @@
       "type": "condition",
       "name": "Heart Attack",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -29836,6 +30171,7 @@
       "type": "condition",
       "name": "Heart Defects",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "dddl-3e-2011"
       ],
@@ -29874,6 +30210,7 @@
       "type": "condition",
       "name": "Heart Failure",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "immortality"
@@ -29918,6 +30255,7 @@
       "type": "condition",
       "name": "Heartburn",
       "claim_count": 3,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -29970,6 +30308,7 @@
       "type": "condition",
       "name": "Heat Stroke",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "rare-earths"
       ],
@@ -30005,6 +30344,7 @@
       "type": "condition",
       "name": "Heavy Metal Toxicity",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "lets-play-doctor"
       ],
@@ -30059,6 +30399,7 @@
       "type": "condition",
       "name": "Heel Spurs",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -30102,6 +30443,7 @@
       "type": "condition",
       "name": "Hemochromatosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality"
       ],
@@ -30146,6 +30488,7 @@
       "type": "condition",
       "name": "Hemorrhoids",
       "claim_count": 17,
+      "distinct_claim_count": 20,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -30258,6 +30601,7 @@
       "type": "condition",
       "name": "Hepatitis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -30306,6 +30650,7 @@
       "type": "condition",
       "name": "Hernia",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "immortality",
@@ -30359,6 +30704,7 @@
       "type": "condition",
       "name": "Herpes Simplex",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -30418,6 +30764,7 @@
       "type": "condition",
       "name": "Hiatal Hernia",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -30461,6 +30808,7 @@
       "type": "condition",
       "name": "Hiccoughs",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -30493,6 +30841,7 @@
       "type": "condition",
       "name": "High Cholesterol",
       "claim_count": 22,
+      "distinct_claim_count": 23,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -30618,6 +30967,7 @@
       "type": "condition",
       "name": "High Triglycerides",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -30690,6 +31040,7 @@
       "type": "condition",
       "name": "Hiv Aids",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "rare-earths"
       ],
@@ -30740,6 +31091,7 @@
       "type": "condition",
       "name": "Hoarseness",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -30776,6 +31128,7 @@
       "type": "condition",
       "name": "Homosexuality",
       "claim_count": 7,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics"
       ],
@@ -30837,6 +31190,7 @@
       "type": "condition",
       "name": "Huntingtons Disease",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "epigenetics"
       ],
@@ -30877,6 +31231,7 @@
       "type": "condition",
       "name": "Hydrocephalus",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -30907,6 +31262,7 @@
       "type": "condition",
       "name": "Hyperacidity",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -30939,6 +31295,7 @@
       "type": "condition",
       "name": "Hyperactivity",
       "claim_count": 13,
+      "distinct_claim_count": 14,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -31044,6 +31401,7 @@
       "type": "condition",
       "name": "Hypercalcemia",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality"
       ],
@@ -31093,7 +31451,9 @@
       "type": "condition",
       "name": "Hyperinsulinemia",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "immortality"
       ],
@@ -31145,6 +31505,7 @@
       "type": "condition",
       "name": "Hyperirritability",
       "claim_count": 4,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "immortality",
@@ -31201,6 +31562,7 @@
       "type": "condition",
       "name": "Hyperkinesis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -31257,8 +31619,10 @@
       "type": "condition",
       "name": "Hyperparathyroidism",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -31314,9 +31678,11 @@
       "type": "condition",
       "name": "Hypertension",
       "claim_count": 27,
+      "distinct_claim_count": 39,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -31464,6 +31830,7 @@
       "type": "condition",
       "name": "Hyperthyroidism",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "immortality",
@@ -31525,9 +31892,11 @@
       "type": "condition",
       "name": "Hypochlorhydria",
       "claim_count": 5,
+      "distinct_claim_count": 10,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality"
       ],
       "synonyms": [],
@@ -31597,12 +31966,14 @@
       "type": "condition",
       "name": "Hypoglycemia",
       "claim_count": 21,
+      "distinct_claim_count": 41,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
         "hells-kitchen",
         "immortality",
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
         "low blood sugar",
@@ -31752,6 +32123,7 @@
       "type": "condition",
       "name": "Hypokalemia",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -31790,6 +32162,7 @@
       "type": "condition",
       "name": "Hypophosphatemia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "rare-earths"
       ],
@@ -31815,6 +32188,7 @@
       "type": "condition",
       "name": "Hypotension",
       "claim_count": 6,
+      "distinct_claim_count": 6,
       "books": [
         "lets-play-doctor"
       ],
@@ -31887,6 +32261,7 @@
       "type": "condition",
       "name": "Hypothermia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -31919,9 +32294,11 @@
       "type": "condition",
       "name": "Hypothyroidism",
       "claim_count": 17,
+      "distinct_claim_count": 29,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -32042,6 +32419,7 @@
       "type": "condition",
       "name": "Hysteria",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -32091,6 +32469,7 @@
       "type": "condition",
       "name": "Ichthyosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -32136,6 +32515,7 @@
       "type": "condition",
       "name": "Immune Depression",
       "claim_count": 8,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics",
         "immortality",
@@ -32221,6 +32601,7 @@
       "type": "condition",
       "name": "Impetigo",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -32264,7 +32645,9 @@
       "type": "condition",
       "name": "Impotence",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -32327,6 +32710,7 @@
       "type": "condition",
       "name": "Incontinence",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -32371,6 +32755,7 @@
       "type": "condition",
       "name": "Indigestion",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -32417,6 +32802,7 @@
       "type": "condition",
       "name": "Infarction",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -32463,6 +32849,7 @@
       "type": "condition",
       "name": "Infected Wounds",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -32500,6 +32887,7 @@
       "type": "condition",
       "name": "Infection",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -32546,6 +32934,7 @@
       "type": "condition",
       "name": "Infertility",
       "claim_count": 18,
+      "distinct_claim_count": 28,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -32679,6 +33068,7 @@
       "type": "condition",
       "name": "Inflammation",
       "claim_count": 3,
+      "distinct_claim_count": 5,
       "books": [
         "epigenetics",
         "immortality",
@@ -32756,8 +33146,10 @@
       "type": "condition",
       "name": "Influenza",
       "claim_count": 4,
+      "distinct_claim_count": 6,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -32840,6 +33232,7 @@
       "type": "condition",
       "name": "Insomnia",
       "claim_count": 17,
+      "distinct_claim_count": 22,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -32957,6 +33350,7 @@
       "type": "condition",
       "name": "Insulin Resistance",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "hells-kitchen",
         "immortality"
@@ -33004,6 +33398,7 @@
       "type": "condition",
       "name": "Intermittent Claudication",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -33048,6 +33443,7 @@
       "type": "condition",
       "name": "Intersex",
       "claim_count": 4,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics"
       ],
@@ -33102,6 +33498,7 @@
       "type": "condition",
       "name": "Irritable Bowel Syndrome",
       "claim_count": 7,
+      "distinct_claim_count": 8,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -33170,6 +33567,7 @@
       "type": "condition",
       "name": "Ischemic Heart Disease",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -33221,6 +33619,7 @@
       "type": "condition",
       "name": "Itching",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -33264,7 +33663,9 @@
       "type": "condition",
       "name": "Jaundice",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
+        "epigenetics",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -33332,6 +33733,7 @@
       "type": "condition",
       "name": "Joint Pain",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -33403,6 +33805,7 @@
       "type": "condition",
       "name": "Kawasaki Disease",
       "claim_count": 7,
+      "distinct_claim_count": 7,
       "books": [
         "epigenetics",
         "immortality",
@@ -33472,6 +33875,7 @@
       "type": "condition",
       "name": "Keratitis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "dddl-3e-2011"
       ],
@@ -33504,6 +33908,7 @@
       "type": "condition",
       "name": "Keratomalacia",
       "claim_count": 3,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -33572,7 +33977,9 @@
       "type": "condition",
       "name": "Keratosis",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -33619,6 +34026,7 @@
       "type": "condition",
       "name": "Kernicterus",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -33650,6 +34058,7 @@
       "type": "condition",
       "name": "Keshan Disease",
       "claim_count": 7,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -33742,6 +34151,7 @@
       "type": "condition",
       "name": "Ketoacidosis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -33780,6 +34190,7 @@
       "type": "condition",
       "name": "Ketosis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -33812,8 +34223,11 @@
       "type": "condition",
       "name": "Kidney Disease",
       "claim_count": 7,
+      "distinct_claim_count": 10,
       "books": [
         "dddl-3e-2011",
+        "hells-kitchen",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -33912,6 +34326,7 @@
       "type": "condition",
       "name": "Kidney Stones",
       "claim_count": 17,
+      "distinct_claim_count": 23,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -34045,6 +34460,7 @@
       "type": "condition",
       "name": "Korsakoffs Syndrome",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -34106,6 +34522,7 @@
       "type": "condition",
       "name": "Kwashiorkor",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -34166,6 +34583,7 @@
       "type": "condition",
       "name": "Kyphosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -34216,6 +34634,7 @@
       "type": "condition",
       "name": "Labor",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -34249,6 +34668,7 @@
       "type": "condition",
       "name": "Lactase Deficiency",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -34285,6 +34705,7 @@
       "type": "condition",
       "name": "Lactose Intolerance",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "lets-play-doctor"
@@ -34327,6 +34748,7 @@
       "type": "condition",
       "name": "Laryngitis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -34364,6 +34786,7 @@
       "type": "condition",
       "name": "Lead Poisoning",
       "claim_count": 6,
+      "distinct_claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor",
@@ -34432,6 +34855,7 @@
       "type": "condition",
       "name": "Learning Disabilities",
       "claim_count": 9,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -34520,6 +34944,7 @@
       "type": "condition",
       "name": "Legg Perthes",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -34563,6 +34988,7 @@
       "type": "condition",
       "name": "Legionnaires Disease",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -34595,6 +35021,7 @@
       "type": "condition",
       "name": "Leptospirosis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -34630,7 +35057,9 @@
       "type": "condition",
       "name": "Leukemia",
       "claim_count": 3,
+      "distinct_claim_count": 4,
       "books": [
+        "epigenetics",
         "immortality",
         "lets-play-doctor"
       ],
@@ -34690,6 +35119,7 @@
       "type": "condition",
       "name": "Leukopenia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -34724,6 +35154,7 @@
       "type": "condition",
       "name": "Leukorrhea",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -34756,6 +35187,7 @@
       "type": "condition",
       "name": "Lice",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -34792,6 +35224,7 @@
       "type": "condition",
       "name": "Liver Cancer",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "immortality",
         "lets-play-doctor",
@@ -34848,6 +35281,7 @@
       "type": "condition",
       "name": "Liver Cirrhosis",
       "claim_count": 10,
+      "distinct_claim_count": 10,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -34934,6 +35368,7 @@
       "type": "condition",
       "name": "Liver Disease",
       "claim_count": 27,
+      "distinct_claim_count": 29,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -35063,6 +35498,7 @@
       "type": "condition",
       "name": "Lordosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -35113,6 +35549,7 @@
       "type": "condition",
       "name": "Low Back Pain",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "immortality",
         "rare-earths"
@@ -35169,6 +35606,7 @@
       "type": "condition",
       "name": "Low Libido",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality"
       ],
@@ -35205,6 +35643,7 @@
       "type": "condition",
       "name": "Lung Cancer",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "lets-play-doctor"
@@ -35249,7 +35688,9 @@
       "type": "condition",
       "name": "Lupus",
       "claim_count": 3,
+      "distinct_claim_count": 5,
       "books": [
+        "dddl-3e-2011",
         "iaiyh",
         "lets-play-doctor",
         "rare-earths"
@@ -35322,6 +35763,7 @@
       "type": "condition",
       "name": "Lyme Disease",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -35357,6 +35799,7 @@
       "type": "condition",
       "name": "Macular Degeneration",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -35391,6 +35834,7 @@
       "type": "condition",
       "name": "Mad Cow Disease",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "immortality"
@@ -35455,9 +35899,11 @@
       "type": "condition",
       "name": "Malabsorption",
       "claim_count": 7,
+      "distinct_claim_count": 16,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -35564,6 +36010,7 @@
       "type": "condition",
       "name": "Male Pattern Baldness",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011"
       ],
@@ -35607,7 +36054,9 @@
       "type": "condition",
       "name": "Malnutrition",
       "claim_count": 2,
+      "distinct_claim_count": 4,
       "books": [
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -35657,6 +36106,7 @@
       "type": "condition",
       "name": "Measles",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -35689,7 +36139,9 @@
       "type": "condition",
       "name": "Melanoma",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -35741,6 +36193,7 @@
       "type": "condition",
       "name": "Melasma",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -35773,8 +36226,11 @@
       "type": "condition",
       "name": "Memory Loss",
       "claim_count": 4,
+      "distinct_claim_count": 34,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor"
       ],
@@ -35927,6 +36383,7 @@
       "type": "condition",
       "name": "Menieres Disease",
       "claim_count": 6,
+      "distinct_claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "iaiyh",
@@ -35999,6 +36456,7 @@
       "type": "condition",
       "name": "Meningitis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -36031,6 +36489,7 @@
       "type": "condition",
       "name": "Meningocele",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -36079,6 +36538,7 @@
       "type": "condition",
       "name": "Menkes Syndrome",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "lets-play-doctor"
@@ -36121,6 +36581,7 @@
       "type": "condition",
       "name": "Menopause",
       "claim_count": 17,
+      "distinct_claim_count": 18,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -36240,6 +36701,7 @@
       "type": "condition",
       "name": "Menorrhagia",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -36290,6 +36752,7 @@
       "type": "condition",
       "name": "Mental Retardation",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality"
       ],
@@ -36322,6 +36785,7 @@
       "type": "condition",
       "name": "Mercury Poisoning",
       "claim_count": 6,
+      "distinct_claim_count": 7,
       "books": [
         "dddl-3e-2011",
         "immortality",
@@ -36406,6 +36870,7 @@
       "type": "condition",
       "name": "Migraine",
       "claim_count": 7,
+      "distinct_claim_count": 8,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -36491,6 +36956,7 @@
       "type": "condition",
       "name": "Minamata Disease",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -36530,8 +36996,11 @@
       "type": "condition",
       "name": "Miscarriage",
       "claim_count": 2,
+      "distinct_claim_count": 5,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -36589,7 +37058,9 @@
       "type": "condition",
       "name": "Mitral Valve Prolapse",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -36635,6 +37106,7 @@
       "type": "condition",
       "name": "Monckebergs Arteriosclerosis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -36673,6 +37145,7 @@
       "type": "condition",
       "name": "Morning Sickness",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "lets-play-doctor"
@@ -36719,6 +37192,7 @@
       "type": "condition",
       "name": "Motion Sickness",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -36771,6 +37245,7 @@
       "type": "condition",
       "name": "Multiple Sclerosis",
       "claim_count": 7,
+      "distinct_claim_count": 7,
       "books": [
         "epigenetics",
         "immortality",
@@ -36845,6 +37320,7 @@
       "type": "condition",
       "name": "Mumps",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -36880,6 +37356,7 @@
       "type": "condition",
       "name": "Muscle Cramps",
       "claim_count": 11,
+      "distinct_claim_count": 12,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -36992,6 +37469,7 @@
       "type": "condition",
       "name": "Muscle Twitches",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -37035,6 +37513,7 @@
       "type": "condition",
       "name": "Muscular Dystrophy",
       "claim_count": 12,
+      "distinct_claim_count": 13,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -37128,6 +37607,7 @@
       "type": "condition",
       "name": "Myelofibrosis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -37171,7 +37651,9 @@
       "type": "condition",
       "name": "Myopia",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
+        "epigenetics",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -37214,6 +37696,7 @@
       "type": "condition",
       "name": "Narcolepsy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -37257,6 +37740,7 @@
       "type": "condition",
       "name": "Nasal Catarrh",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -37289,6 +37773,7 @@
       "type": "condition",
       "name": "Nervous Heart",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -37326,6 +37811,7 @@
       "type": "condition",
       "name": "Nervous Tension",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -37358,6 +37844,7 @@
       "type": "condition",
       "name": "Neural Tube Defects",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "immortality"
@@ -37416,6 +37903,7 @@
       "type": "condition",
       "name": "Neuralgia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -37462,7 +37950,9 @@
       "type": "condition",
       "name": "Neuropathy",
       "claim_count": 5,
+      "distinct_claim_count": 8,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "immortality",
         "lets-play-doctor"
@@ -37543,9 +38033,11 @@
       "type": "condition",
       "name": "Neutropenia",
       "claim_count": 3,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
-        "immortality"
+        "immortality",
+        "rare-earths"
       ],
       "synonyms": [],
       "protocol_claim_ids": [],
@@ -37596,6 +38088,7 @@
       "type": "condition",
       "name": "Night Blindness",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -37669,6 +38162,7 @@
       "type": "condition",
       "name": "Night Terrors",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -37705,7 +38199,9 @@
       "type": "condition",
       "name": "Nosebleeds",
       "claim_count": 3,
+      "distinct_claim_count": 5,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "lets-play-doctor"
       ],
@@ -37788,6 +38284,7 @@
       "type": "condition",
       "name": "Nystagmus",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -37816,6 +38313,7 @@
       "type": "condition",
       "name": "Obesity",
       "claim_count": 21,
+      "distinct_claim_count": 37,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -37964,10 +38462,12 @@
       "type": "condition",
       "name": "Oligospermia",
       "claim_count": 3,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "immortality",
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
         "low sperm count",
@@ -38032,6 +38532,7 @@
       "type": "condition",
       "name": "Omphalocele",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -38072,6 +38573,7 @@
       "type": "condition",
       "name": "Opiate Withdrawal",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -38108,6 +38610,7 @@
       "type": "condition",
       "name": "Optic Nerve Atrophy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "iaiyh"
       ],
@@ -38137,6 +38640,7 @@
       "type": "condition",
       "name": "Oral Cancer",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -38170,6 +38674,7 @@
       "type": "condition",
       "name": "Organic Brain Syndrome",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -38224,6 +38729,7 @@
       "type": "condition",
       "name": "Ornithosis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -38255,6 +38761,7 @@
       "type": "condition",
       "name": "Osteitis Fibrosa",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -38295,6 +38802,7 @@
       "type": "condition",
       "name": "Osteoarthritis",
       "claim_count": 7,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -38383,6 +38891,7 @@
       "type": "condition",
       "name": "Osteofibrosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -38433,6 +38942,7 @@
       "type": "condition",
       "name": "Osteomalacia",
       "claim_count": 7,
+      "distinct_claim_count": 8,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -38505,6 +39015,7 @@
       "type": "condition",
       "name": "Osteopenia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -38548,9 +39059,11 @@
       "type": "condition",
       "name": "Osteoporosis",
       "claim_count": 44,
+      "distinct_claim_count": 66,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "iaiyh",
         "immortality",
         "lets-play-doctor",
@@ -38755,6 +39268,7 @@
       "type": "condition",
       "name": "Osteosarcoma",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -38792,6 +39306,7 @@
       "type": "condition",
       "name": "Osteosclerosis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -38819,6 +39334,7 @@
       "type": "condition",
       "name": "Otitis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -38861,6 +39377,7 @@
       "type": "condition",
       "name": "Pagets Disease",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "iaiyh",
         "lets-play-doctor"
@@ -38920,7 +39437,9 @@
       "type": "condition",
       "name": "Pain",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
+        "epigenetics",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -38958,7 +39477,9 @@
       "type": "condition",
       "name": "Palpitations",
       "claim_count": 1,
+      "distinct_claim_count": 5,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -39018,6 +39539,7 @@
       "type": "condition",
       "name": "Pancreatic Cancer",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -39059,6 +39581,7 @@
       "type": "condition",
       "name": "Pancreatic Fibrosis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -39091,6 +39614,7 @@
       "type": "condition",
       "name": "Pancreatitis",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
         "rare-earths"
       ],
@@ -39141,6 +39665,7 @@
       "type": "condition",
       "name": "Panic Attacks",
       "claim_count": 8,
+      "distinct_claim_count": 8,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -39228,6 +39753,7 @@
       "type": "condition",
       "name": "Paranoia",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "lets-play-doctor",
         "rare-earths"
@@ -39292,6 +39818,7 @@
       "type": "condition",
       "name": "Parasites",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -39325,6 +39852,7 @@
       "type": "condition",
       "name": "Parkinsonism",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "lets-play-doctor",
         "rare-earths"
@@ -39384,6 +39912,7 @@
       "type": "condition",
       "name": "Parkinsons Disease",
       "claim_count": 4,
+      "distinct_claim_count": 5,
       "books": [
         "immortality",
         "rare-earths"
@@ -39448,6 +39977,7 @@
       "type": "condition",
       "name": "Pediculosis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -39477,9 +40007,11 @@
       "type": "condition",
       "name": "Pellagra",
       "claim_count": 4,
+      "distinct_claim_count": 16,
       "books": [
         "epigenetics",
         "hells-kitchen",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -39579,6 +40111,7 @@
       "type": "condition",
       "name": "Peptic Ulcers",
       "claim_count": 17,
+      "distinct_claim_count": 19,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -39697,6 +40230,7 @@
       "type": "condition",
       "name": "Periodontal Disease",
       "claim_count": 13,
+      "distinct_claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -39807,6 +40341,7 @@
       "type": "condition",
       "name": "Peripheral Arterial Disease",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -39841,6 +40376,7 @@
       "type": "condition",
       "name": "Peripheral Neuropathy",
       "claim_count": 7,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -39929,6 +40465,7 @@
       "type": "condition",
       "name": "Peritonsillar Abscess",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -39965,6 +40502,7 @@
       "type": "condition",
       "name": "Pernicious Anemia",
       "claim_count": 6,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics",
         "immortality",
@@ -40027,6 +40565,7 @@
       "type": "condition",
       "name": "Phlebitis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -40075,6 +40614,7 @@
       "type": "condition",
       "name": "Photophobia",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -40127,9 +40667,11 @@
       "type": "condition",
       "name": "Pica",
       "claim_count": 14,
+      "distinct_claim_count": 23,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
@@ -40245,6 +40787,7 @@
       "type": "condition",
       "name": "Pilonidal Cyst",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -40285,6 +40828,7 @@
       "type": "condition",
       "name": "Plumbism",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -40319,6 +40863,7 @@
       "type": "condition",
       "name": "Premenstrual Syndrome (PMS)",
       "claim_count": 15,
+      "distinct_claim_count": 18,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -40440,6 +40985,7 @@
       "type": "condition",
       "name": "Poison Ivy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -40472,7 +41018,9 @@
       "type": "condition",
       "name": "Poor Circulation",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -40516,6 +41064,7 @@
       "type": "condition",
       "name": "Post Partum Hemorrhage",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -40548,6 +41097,7 @@
       "type": "condition",
       "name": "Prediabetes",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "immortality"
@@ -40593,7 +41143,9 @@
       "type": "condition",
       "name": "Preeclampsia",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -40640,6 +41192,7 @@
       "type": "condition",
       "name": "Pregnancy Toxemia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -40674,6 +41227,7 @@
       "type": "condition",
       "name": "Prolonged Clotting Time",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality"
       ],
@@ -40724,6 +41278,7 @@
       "type": "condition",
       "name": "Prostate Cancer",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "hells-kitchen",
         "immortality",
@@ -40778,6 +41333,7 @@
       "type": "condition",
       "name": "Pruritus",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -40834,6 +41390,7 @@
       "type": "condition",
       "name": "Psoriasis",
       "claim_count": 15,
+      "distinct_claim_count": 17,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -40947,6 +41504,7 @@
       "type": "condition",
       "name": "Psychosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -40996,6 +41554,7 @@
       "type": "condition",
       "name": "Ptosis",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "iaiyh",
@@ -41056,6 +41615,7 @@
       "type": "condition",
       "name": "Pubic Lice",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -41087,6 +41647,7 @@
       "type": "condition",
       "name": "Pyorrhea",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -41154,6 +41715,7 @@
       "type": "condition",
       "name": "Q Fever",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -41185,6 +41747,7 @@
       "type": "condition",
       "name": "Quinsy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -41228,6 +41791,7 @@
       "type": "condition",
       "name": "Rabbit Fever",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -41257,6 +41821,7 @@
       "type": "condition",
       "name": "Rabies",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -41288,6 +41853,7 @@
       "type": "condition",
       "name": "Radial Nerve Palsy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -41319,6 +41885,7 @@
       "type": "condition",
       "name": "Raynauds Disease",
       "claim_count": 4,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -41386,6 +41953,7 @@
       "type": "condition",
       "name": "Reactive Hypoglycemia",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics"
       ],
@@ -41431,8 +41999,10 @@
       "type": "condition",
       "name": "Receding Gums",
       "claim_count": 3,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "immortality",
         "rare-earths"
       ],
@@ -41495,6 +42065,7 @@
       "type": "condition",
       "name": "Rectal Itching",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -41528,8 +42099,10 @@
       "type": "condition",
       "name": "Renal Failure",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
+        "hells-kitchen",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -41585,6 +42158,7 @@
       "type": "condition",
       "name": "Repetitive Motion Syndrome",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -41650,6 +42224,7 @@
       "type": "condition",
       "name": "Respiratory Disease",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -41681,9 +42256,12 @@
       "type": "condition",
       "name": "Restless Leg Syndrome",
       "claim_count": 6,
+      "distinct_claim_count": 11,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "immortality",
+        "lets-play-doctor",
         "rare-earths"
       ],
       "synonyms": [
@@ -41760,6 +42338,7 @@
       "type": "condition",
       "name": "Reyes Syndrome",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -41793,6 +42372,7 @@
       "type": "condition",
       "name": "Rheumatic Fever",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -41825,6 +42405,7 @@
       "type": "condition",
       "name": "Rheumatoid Arthritis",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "immortality",
@@ -41893,9 +42474,11 @@
       "type": "condition",
       "name": "Rickets",
       "claim_count": 10,
+      "distinct_claim_count": 15,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -42006,6 +42589,7 @@
       "type": "condition",
       "name": "Ringworm",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -42063,6 +42647,7 @@
       "type": "condition",
       "name": "Rocky Mountain Spotted Fever",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -42094,6 +42679,7 @@
       "type": "condition",
       "name": "Rosacea",
       "claim_count": 14,
+      "distinct_claim_count": 14,
       "books": [
         "dddl-3e-2011",
         "epigenetics"
@@ -42176,6 +42762,7 @@
       "type": "condition",
       "name": "Roseola",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -42207,6 +42794,7 @@
       "type": "condition",
       "name": "Rubella",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -42238,6 +42826,7 @@
       "type": "condition",
       "name": "Sarcoma",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "lets-play-doctor"
@@ -42282,8 +42871,10 @@
       "type": "condition",
       "name": "Scabies",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
         "itch mites",
@@ -42321,6 +42912,7 @@
       "type": "condition",
       "name": "Scarlatina",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -42352,6 +42944,7 @@
       "type": "condition",
       "name": "Schistosomiasis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "rare-earths"
       ],
@@ -42384,7 +42977,9 @@
       "type": "condition",
       "name": "Schizophrenia",
       "claim_count": 4,
+      "distinct_claim_count": 7,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor",
         "rare-earths"
       ],
@@ -42460,6 +43055,7 @@
       "type": "condition",
       "name": "Sciatica",
       "claim_count": 8,
+      "distinct_claim_count": 8,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -42556,6 +43152,7 @@
       "type": "condition",
       "name": "Scoliosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor",
         "rare-earths"
@@ -42619,8 +43216,10 @@
       "type": "condition",
       "name": "Scurvy",
       "claim_count": 2,
+      "distinct_claim_count": 8,
       "books": [
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -42694,6 +43293,7 @@
       "type": "condition",
       "name": "Sebaceous Cyst",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -42726,6 +43326,7 @@
       "type": "condition",
       "name": "Seborrheic Dermatitis",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "epigenetics",
         "lets-play-doctor",
@@ -42795,6 +43396,7 @@
       "type": "condition",
       "name": "Secondary Hyperparathyroidism",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "immortality",
         "rare-earths"
@@ -42851,6 +43453,7 @@
       "type": "condition",
       "name": "Shingles",
       "claim_count": 11,
+      "distinct_claim_count": 12,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor",
@@ -42933,6 +43536,7 @@
       "type": "condition",
       "name": "Sickle Cell Anemia",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
         "rare-earths"
       ],
@@ -42985,6 +43589,7 @@
       "type": "condition",
       "name": "Sids",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
         "lets-play-doctor",
         "rare-earths"
@@ -43038,6 +43643,7 @@
       "type": "condition",
       "name": "Skin Diseases",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -43066,6 +43672,7 @@
       "type": "condition",
       "name": "Sleep Apnea",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "epigenetics"
       ],
@@ -43096,6 +43703,7 @@
       "type": "condition",
       "name": "Sore Throat",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -43128,6 +43736,7 @@
       "type": "condition",
       "name": "Spider Bite",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -43159,6 +43768,7 @@
       "type": "condition",
       "name": "Spider Veins",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality"
       ],
@@ -43203,6 +43813,7 @@
       "type": "condition",
       "name": "Spina Bifida",
       "claim_count": 6,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -43288,6 +43899,7 @@
       "type": "condition",
       "name": "Spinal Stenosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "immortality"
@@ -43338,6 +43950,7 @@
       "type": "condition",
       "name": "Spontaneous Fractures",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -43381,6 +43994,7 @@
       "type": "condition",
       "name": "Sprain",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -43413,6 +44027,7 @@
       "type": "condition",
       "name": "Stomach Cancer",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "lets-play-doctor"
@@ -43461,6 +44076,7 @@
       "type": "condition",
       "name": "Stomatitis",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "immortality",
@@ -43519,6 +44135,7 @@
       "type": "condition",
       "name": "Strabismus",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "iaiyh"
       ],
@@ -43549,6 +44166,7 @@
       "type": "condition",
       "name": "Strain",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -43580,8 +44198,10 @@
       "type": "condition",
       "name": "Stress",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
+        "immortality",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -43628,6 +44248,7 @@
       "type": "condition",
       "name": "Stroke",
       "claim_count": 9,
+      "distinct_claim_count": 11,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -43734,6 +44355,7 @@
       "type": "condition",
       "name": "Sty",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -43763,6 +44385,7 @@
       "type": "condition",
       "name": "Swimmers Ear",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -43794,8 +44417,10 @@
       "type": "condition",
       "name": "Syphilis",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
         "dddl-3e-2011",
+        "epigenetics",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -43835,6 +44460,7 @@
       "type": "condition",
       "name": "Tachycardia",
       "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -43902,6 +44528,7 @@
       "type": "condition",
       "name": "Tapeworms",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -43941,6 +44568,7 @@
       "type": "condition",
       "name": "Tardive Dyskinesia",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -44004,6 +44632,7 @@
       "type": "condition",
       "name": "Teeth Discoloration",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -44034,6 +44663,7 @@
       "type": "condition",
       "name": "Teething",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -44092,8 +44722,10 @@
       "type": "condition",
       "name": "Tetanus",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
         "lockjaw",
@@ -44129,6 +44761,7 @@
       "type": "condition",
       "name": "Tetany",
       "claim_count": 6,
+      "distinct_claim_count": 6,
       "books": [
         "epigenetics",
         "immortality",
@@ -44193,6 +44826,7 @@
       "type": "condition",
       "name": "Thallium Poisoning",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -44226,6 +44860,7 @@
       "type": "condition",
       "name": "Throat Cancer",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -44267,6 +44902,7 @@
       "type": "condition",
       "name": "Thrombosis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "immortality"
       ],
@@ -44299,6 +44935,7 @@
       "type": "condition",
       "name": "Thrush",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -44352,6 +44989,7 @@
       "type": "condition",
       "name": "Thyroid Cancer",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "rare-earths"
@@ -44389,6 +45027,7 @@
       "type": "condition",
       "name": "Thyroid Disease",
       "claim_count": 3,
+      "distinct_claim_count": 4,
       "books": [
         "immortality",
         "rare-earths"
@@ -44452,6 +45091,7 @@
       "type": "condition",
       "name": "Tinnitus",
       "claim_count": 20,
+      "distinct_claim_count": 20,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -44561,6 +45201,7 @@
       "type": "condition",
       "name": "Tmj",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -44623,6 +45264,7 @@
       "type": "condition",
       "name": "Tongue Atrophy",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "iaiyh"
       ],
@@ -44652,6 +45294,7 @@
       "type": "condition",
       "name": "Tonsillitis",
       "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor",
@@ -44714,6 +45357,7 @@
       "type": "condition",
       "name": "Tooth Decay",
       "claim_count": 5,
+      "distinct_claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "iaiyh",
@@ -44784,6 +45428,7 @@
       "type": "condition",
       "name": "Toothache",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "lets-play-doctor"
@@ -44823,6 +45468,7 @@
       "type": "condition",
       "name": "Torticollis",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -44865,6 +45511,7 @@
       "type": "condition",
       "name": "Tourette Syndrome",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics"
       ],
@@ -44918,6 +45565,7 @@
       "type": "condition",
       "name": "Toxic Shock Syndrome",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -44949,6 +45597,7 @@
       "type": "condition",
       "name": "Toxoplasmosis",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "lets-play-doctor"
       ],
@@ -44992,6 +45641,7 @@
       "type": "condition",
       "name": "Trigeminal Neuralgia",
       "claim_count": 5,
+      "distinct_claim_count": 5,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -45064,8 +45714,10 @@
       "type": "condition",
       "name": "Tuberculosis",
       "claim_count": 1,
+      "distinct_claim_count": 2,
       "books": [
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [],
       "protocol_claim_ids": [],
@@ -45088,6 +45740,7 @@
       "type": "condition",
       "name": "Tularemia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -45123,6 +45776,7 @@
       "type": "condition",
       "name": "Umbilical Hernia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -45157,6 +45811,7 @@
       "type": "condition",
       "name": "Urinary Tract Infection",
       "claim_count": 6,
+      "distinct_claim_count": 6,
       "books": [
         "dddl-3e-2011",
         "immortality",
@@ -45233,6 +45888,7 @@
       "type": "condition",
       "name": "Uterine Cancer",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011"
       ],
@@ -45267,6 +45923,7 @@
       "type": "condition",
       "name": "Uterine Fibroids",
       "claim_count": 10,
+      "distinct_claim_count": 10,
       "books": [
         "dddl-3e-2011",
         "epigenetics"
@@ -45350,6 +46007,7 @@
       "type": "condition",
       "name": "Vaginitis",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "lets-play-doctor"
       ],
@@ -45402,6 +46060,7 @@
       "type": "condition",
       "name": "Varicose Veins",
       "claim_count": 14,
+      "distinct_claim_count": 14,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -45503,6 +46162,7 @@
       "type": "condition",
       "name": "Vascular Dementia",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "epigenetics"
       ],
@@ -45532,6 +46192,7 @@
       "type": "condition",
       "name": "Vertigo",
       "claim_count": 19,
+      "distinct_claim_count": 20,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -45641,6 +46302,7 @@
       "type": "condition",
       "name": "Violent Behavior",
       "claim_count": 6,
+      "distinct_claim_count": 7,
       "books": [
         "epigenetics",
         "immortality",
@@ -45709,9 +46371,11 @@
       "type": "condition",
       "name": "Vitiligo",
       "claim_count": 3,
+      "distinct_claim_count": 4,
       "books": [
         "immortality",
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [],
       "protocol_claim_ids": [
@@ -45774,6 +46438,7 @@
       "type": "condition",
       "name": "Vomiting",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "lets-play-doctor"
@@ -45821,6 +46486,7 @@
       "type": "condition",
       "name": "Warts",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -45854,6 +46520,7 @@
       "type": "condition",
       "name": "Water Intoxication",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -45891,6 +46558,7 @@
       "type": "condition",
       "name": "Weight Loss",
       "claim_count": 5,
+      "distinct_claim_count": 9,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -45988,6 +46656,7 @@
       "type": "condition",
       "name": "Weils Disease",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -46017,6 +46686,7 @@
       "type": "condition",
       "name": "Wernicke Korsakoff Syndrome",
       "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "epigenetics",
         "rare-earths"
@@ -46072,6 +46742,7 @@
       "type": "condition",
       "name": "White Muscle Disease",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "dddl-3e-2011",
         "rare-earths"
@@ -46123,6 +46794,7 @@
       "type": "condition",
       "name": "White Spots Fingernails",
       "claim_count": 1,
+      "distinct_claim_count": 1,
       "books": [
         "lets-play-doctor"
       ],
@@ -46158,6 +46830,7 @@
       "type": "condition",
       "name": "Wilsons Syndrome",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "epigenetics",
         "immortality"
@@ -46196,6 +46869,7 @@
       "type": "condition",
       "name": "Wounds",
       "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
         "immortality",
         "lets-play-doctor"
@@ -46236,8 +46910,11 @@
       "type": "condition",
       "name": "Xerophthalmia",
       "claim_count": 5,
+      "distinct_claim_count": 8,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
+        "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],

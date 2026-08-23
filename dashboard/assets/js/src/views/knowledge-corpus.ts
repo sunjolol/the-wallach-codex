@@ -29,6 +29,20 @@ import {
   listConditions,
   resolveClaims,
 } from '../state/corpus.js';
+import { getConditionPage } from '../state/entity-page.js';
+
+/**
+ * The claim number a Conditions-tab row advertises.
+ *
+ * CorpusCondition.claim_count is the ROLE-mapped total (claims naming this condition in their
+ * conditions[] field). The page the row opens renders the SEARCH set instead — subject UNION
+ * also_about — so the two diverge badly: memory_loss carries 4 role claims and its page shows 34.
+ * A row that says 4 and opens a page that says 34 is a row that lies, so the row reads the page's
+ * own hero count. Falls back to the corpus total for any condition with no derived page.
+ */
+function rowClaimCount(slug: string, fallback: number): number {
+  return getConditionPage(slug)?.distinct_claim_count ?? fallback;
+}
 
 function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', '\'': '&#39;' }[c] as string));
@@ -81,6 +95,7 @@ function conditionSearchKeywords(c: CorpusCondition): string {
 function renderConditionRow(c: CorpusCondition, selectedSlug: string | null): string {
   const cls = `kd-condition-row${c.slug === selectedSlug ? ' is-selected' : ''}`;
   const nutrients = c.essentials_involved.length;
+  const nClaims = rowClaimCount(c.slug, c.claim_count);
   const cat = conditionCategory(c.slug);
   const catStyle = cat !== null ? ` style="--cat:${escHTML(cat.color)}"` : '';
   const catHTML = cat !== null
@@ -88,10 +103,10 @@ function renderConditionRow(c: CorpusCondition, selectedSlug: string | null): st
     : '';
   return `
     <div class="${cls}"${catStyle} data-kd-condition="${escHTML(c.slug)}" data-search="${escHTML(conditionSearchKeywords(c))}" role="button" tabindex="0">
-      <div class="kd-condition-row__ghost" aria-hidden="true">${c.claim_count}</div>
+      <div class="kd-condition-row__ghost" aria-hidden="true">${nClaims}</div>
       ${catHTML}
       <h4 class="kd-condition-row__name">${escHTML(c.display_name)}</h4>
-      <div class="kd-condition-row__foot">${c.claim_count} ${plural(c.claim_count, 'claim')} · ${nutrients} ${plural(nutrients, 'nutrient')}</div>
+      <div class="kd-condition-row__foot">${nClaims} ${plural(nClaims, 'claim')} · ${nutrients} ${plural(nutrients, 'nutrient')}</div>
     </div>`;
 }
 

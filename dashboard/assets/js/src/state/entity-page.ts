@@ -69,6 +69,11 @@ export interface ConditionSummary {
   slug: string;
   name: string;
   claim_count: number;
+  /** Row/hero count: distinct claims a reader actually sees on the page (Full Record UNION Worth
+   *  Knowing, deduped). claim_count above is the role-mapped total; the two differ because Worth
+   *  Knowing is subject UNION also_about. Browse rows show THIS so a row can never advertise a
+   *  smaller number than the page it opens. Mirrors EssentialSummary.distinct_claim_count. */
+  distinct_claim_count: number;
   /** How many nutrients Wallach ties to the condition — the length of its directed `restore` list. */
   nutrient_count: number;
 }
@@ -93,6 +98,7 @@ export function listConditionPages(): ConditionSummary[] {
     slug,
     name: c.name,
     claim_count: c.claim_count,
+    distinct_claim_count: c.distinct_claim_count,
     nutrient_count: c.restore.length,
   }));
 }

@@ -101,7 +101,7 @@ function renderEssentialsShelf(): string {
 
 /** One condition row: friendly name + "N claims · M nutrients"; opens the condition's page. */
 function condRow(c: ConditionSummary): string {
-  return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML(c.slug)}"><span class="sh-condrow__nm">${escHTML(c.name)}</span><span class="sh-condrow__ct">${c.claim_count} ${plural(c.claim_count, 'claim')} · ${c.nutrient_count} ${plural(c.nutrient_count, 'nutrient')}</span></button>`;
+  return `<button class="sh-condrow" type="button" data-kd-condition="${escHTML(c.slug)}"><span class="sh-condrow__nm">${escHTML(c.name)}</span><span class="sh-condrow__ct">${c.distinct_claim_count} ${plural(c.distinct_claim_count, 'claim')} · ${c.nutrient_count} ${plural(c.nutrient_count, 'nutrient')}</span></button>`;
 }
 
 /**
@@ -112,7 +112,7 @@ function condRow(c: ConditionSummary): string {
  */
 function renderConditionsShelf(): string {
   const conds = listConditionPages();
-  const top = conds.slice().sort((a, b) => b.claim_count - a.claim_count).slice(0, 8);
+  const top = conds.slice().sort((a, b) => b.distinct_claim_count - a.distinct_claim_count).slice(0, 8);
   const link = ui('kh_conditions_link').replace('{n}', fmt(conds.length));
   return `<div class="ep-seclabel">${escHTML(ui('kh_conditions_label'))} <span class="ep-seclabel__hint">${escHTML(ui('kh_conditions_hint'))}</span><a data-kd-tab="conditions">${escHTML(link)}</a></div>
     <div class="sh-condgrid">${top.map(condRow).join('')}</div>`;
@@ -214,7 +214,7 @@ function homeMatches(query: string): HomeMatch[] {
     const nm = cnd.name.toLowerCase();
     if (nm.includes(q) || spaced(cnd.slug).includes(q)) {
       taken.add(cnd.slug);
-      out.push({ kind: 'condition', name: cnd.name, navAttr: 'data-kd-condition', navVal: cnd.slug, claimCount: cnd.claim_count, startsWith: nm.startsWith(q) });
+      out.push({ kind: 'condition', name: cnd.name, navAttr: 'data-kd-condition', navVal: cnd.slug, claimCount: cnd.distinct_claim_count, startsWith: nm.startsWith(q) });
     }
   }
   // Explore TOPICS — the search-registry entities that are NOT essentials/conditions (those have

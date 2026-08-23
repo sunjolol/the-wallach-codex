@@ -156,6 +156,17 @@ def build_data() -> dict:
         for t in ([slug] if slug else []) + list(sc.get("also_about", [])):
             search_for_subject.setdefault(t, []).append(sc)
 
+    def books_for_ids(claim_ids):
+        """The books a page's OWN rendered claims cite, sorted.
+
+        NOT corpus-embed's `books_cited`: that is the ROLE-mapped set (claims naming the entity in
+        their conditions[]/essentials[] field), while the page renders the SEARCH set
+        (subject UNION also_about). The two diverge -- memory_loss cited 3 role books while its page
+        showed claims from 5 -- so a header composed from books_cited contradicts the very cards
+        beneath it. Derived from the claim ids actually emitted, so it cannot drift from them.
+        """
+        return sorted({b for b in (claims.get(cid, {}).get("book") for cid in claim_ids) if b})
+
     def search_sections(slug, ent_type):
         scs = search_for_subject.get(slug)
         if not scs:
@@ -336,7 +347,8 @@ def build_data() -> dict:
             "is_essential": e.get("essential") is not False,
             "claim_count": ecorp.get("claim_count", 0),
             "distinct_claim_count": len(rec_ids | srch_ids),
-            "books": ecorp.get("books_cited", []),
+            # The same set the count above measures -- see books_for_ids.
+            "books": books_for_ids(rec_ids | srch_ids),
             "synonyms": si_ent.get("synonyms", []),
             "record": record_secs,
             "record_claim_count": sum(len(g["claim_ids"]) for g in record_secs),
@@ -367,11 +379,21 @@ def build_data() -> dict:
         csearch = search_sections(slug, "condition")
         crecord = _record_minus_enriched(
             cond_record(ccorp), {cid for sec in csearch for cid in sec["claim_ids"]})
+        crec_ids = {cid for sec in crecord for cid in sec["claim_ids"]}
+        csrch_ids = {cid for sec in csearch for cid in sec["claim_ids"]}
         conditions_out[slug] = {
             "type": "condition",
             "name": (catcond.get(slug, {}) or {}).get("display_name", slug),
+            # claim_count stays the OPERATIONAL total (claims naming this condition in their
+            # conditions[] role field) -- it is what "The full record" is drawn from.
             "claim_count": ccorp.get("claim_count", 0),
-            "books": ccorp.get("books_cited", []),
+            # distinct_claim_count is the HERO/ROW count: how many distinct claims a reader actually
+            # sees = The Full Record UNION Worth Knowing, deduped. The two differ because the record
+            # is role-mapped while Worth Knowing is subject UNION also_about; memory_loss reads 4 and
+            # 34. Conditions previously had no such field and the hero printed claim_count, so 154 of
+            # 510 pages advertised fewer claims than they rendered. Mirrors the essentials field.
+            "distinct_claim_count": len(crec_ids | csrch_ids),
+            "books": books_for_ids(crec_ids | csrch_ids),
             "synonyms": si_ent.get("synonyms", []),
             "protocol_claim_ids": protocol_claim_ids(slug),
             "restore": sorted(cond_essentials.get(slug, set())),     # directed pills

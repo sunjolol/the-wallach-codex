@@ -73,6 +73,13 @@ export const ConditionPageSchema = z.object({
   type: z.literal('condition'),
   name: z.string(),
   claim_count: z.number(),
+  /** HERO/ROW count: distinct claims a reader actually sees (Full Record UNION Worth Knowing,
+   * deduped). claim_count above is the role-mapped operational total that labels "All N claims";
+   * the two differ because Worth Knowing is subject UNION also_about. The hero and every browse
+   * row read THIS -- printing claim_count advertised 4 claims on a page rendering 34. */
+  distinct_claim_count: z.number(),
+  /** The books THESE claims cite — derived from distinct_claim_count's own set, not the corpus
+   * role map, so the header can never cite fewer books than the cards below it. */
   books: z.array(z.string()),
   synonyms: z.array(z.string()),
   /** Curated "what to do": protocol-kind then non-base-line-table dose claims (prominence). */
