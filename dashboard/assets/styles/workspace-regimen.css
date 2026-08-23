@@ -359,6 +359,19 @@
    because .recs__head has a second child and a pseudo-element would land after it. */
 .ck-recs__rule { flex: 1 1 auto; height: 0; border-top: 1px dotted var(--ds-rule-bright); }
 .ck-recgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 8px; }
+/* THE END STATE — all 90 covered, so there is nothing to recommend. buildRecs() then puts a
+   sentence and a button into this same CARD GRID, and left alone the grid treats them as two
+   cards: the sentence takes column 1, the button sits BESIDE it in column 2, and the button —
+   blockified because it is a grid item, whatever its own `display: inline-block` says — is
+   stretched to the full 360px track for 214px of text (measured). Both belong to the whole
+   row, and the button should be its own width. Scoped with `>` deliberately: .ck-recs__note is
+   ALSO used in .recs__head, where it is a flex child whose `margin-left: auto` right-aligns it
+   correctly — and that same auto margin is why the note needs an explicit `margin-left: 0`
+   here. Giving it the full row was what EXPOSED that: at 360px the stretch had no slack to
+   push into, so the note only swung flush-right once it had 728px. One fix uncovered the
+   next; both were measured, neither was eyeballed. */
+.ck-recgrid > .ck-recs__note { grid-column: 1 / -1; margin-left: 0; }
+.ck-recgrid > .ck-recs__go { grid-column: 1 / -1; justify-self: start; }
 /* Best-next-moves cards carry REAL (long) product names; the shared .rec floats its
    + at top:50%, which collides with wrapped text. Scoped column layout: name up top,
    meta pinned to the bottom, the + parked in the corner. Coverage's .rec is untouched. */

@@ -40897,7 +40897,28 @@ MEASURED: dist-web went from 39.01 MB across 64 files to 34.31 MB across 62 - a 
 
 KEPT ON PURPOSE, and a future round should not "clean these up": Playfair Display x2 is LIVE, measured on three surfaces in both themes. Crimson Pro x2 is a deliberate hedge he ruled on - declared, shipped, selected by nothing. fonts_declared_and_shipped does not fail on an unselected family precisely so that a ruling does not have to fight a gate.
 
-THE WEBSITE IS NOW BEHIND: dist-web/ has been rebuilt but not uploaded. render_probe_live_host.js will report a DEPLOY PARITY red until he uploads, which is the correct reading - the host is behind the local build, not broken.` }];
+THE WEBSITE IS NOW BEHIND: dist-web/ has been rebuilt but not uploaded. render_probe_live_host.js will report a DEPLOY PARITY red until he uploads, which is the correct reading - the host is behind the local build, not broken.` }, { id: "lg_mt564doi_0o616m", ts: "2026-08-22T21:08:30.786216-05:00", surface: "regimen/recs-end-state", kind: "build", summary: "When you finally cover all 90 essentials, the panel says so and offers a button through to the catalog. The button was being stretched to the width of a product card and the sentence above it sat off to one side. Both now sit where they should.", detail: `A small one, and the interesting part is that it was one cause, not two, and that fixing it uncovered a second problem the first had been hiding.
+
+THE CAUSE. buildRecs() puts a sentence and a button into .ck-recgrid, which is a responsive CARD grid - repeat(auto-fill, minmax(300px, 1fr)). The grid treated them as two cards: the sentence took column 1 and the button sat BESIDE it in column 2. And the button, blockified because it is a grid item whatever its own display: inline-block says, stretched to fill the whole track. Measured: 360px of button for 214px of text, with getComputedStyle().display reading "block" where the stylesheet says "inline-block".
+
+THE FIX, in workspace-regimen.css beside the .ck-recgrid rule it corrects:
+  .ck-recgrid > .ck-recs__note { grid-column: 1 / -1; margin-left: 0; }
+  .ck-recgrid > .ck-recs__go   { grid-column: 1 / -1; justify-self: start; }
+After: the button is 214px, exactly its own ink, at offset 0, on the row below a full-width sentence.
+
+THE > IS LOAD-BEARING, NOT DECORATION. .ck-recs__note is used TWICE - here, and in .recs__head, where it is a flex child whose margin-left: auto right-aligns "Products, ranked by your goals" correctly. A bare .ck-recs__note rule would have captured both. Confirmed at the markup that .recs__head is a SIBLING of .ck-recgrid rather than a descendant, so the child combinator cannot reach it, and the after-screenshot shows that heading note still right-aligned. This is the same failure class as the bare .rl- rule that once captured Coverage's delete buttons; scoping it correctly was the whole job.
+
+ONE FIX UNCOVERED THE NEXT, AND ONLY MEASURING FOUND IT. Giving the note the full row made it swing FLUSH RIGHT, because margin-left: auto had been inherited from its other use all along and, at 360px in a stretched cell, had no slack to push into. The stretch was masking it. Hence the explicit margin-left: 0. Neither state was eyeballed - both were read off getBoundingClientRect() before and after - and the comment beside the rule records the sequence so a later reader does not "simplify" that margin away.
+
+HOW IT WAS DRIVEN. This state needs a regimen covering all 90 essentials, which cannot be reached by clicking in a probe. Rather than fake the app, the harness injects the exact elements buildRecs() creates into the REAL .ck-recgrid on a REAL page: same container, same cascade, same stylesheets. The bug is a layout bug and layout is precisely what that reproduces. The harness says so in its own header rather than implying it drove the app into that state, which it did not.
+
+AND THE SCREENSHOT WAS WRONG THE FIRST TIME: the block sits below the fold, so a plain page screenshot framed the dashboard header and showed nothing of the fix at all. Scrolled into view and clipped to the block. Same family as the standing elementFromPoint trap - a viewport is not a page.
+
+ALSO CLOSED, BY BEING ALREADY DONE: the handoff's "Add a food or supplement to begin still wraps with 'begin' alone". That string no longer exists anywhere in src/. The copy is now "Nothing in this save yet." / "Add a product below, or scan a label.", which does not wrap. Verified by grep AND by reading it off a live screenshot, rather than trusting the handoff.
+
+VERIFIED: board 102/102, node tools/build.mjs exit 0, render_probe_foods / slots / coverage_add_remove all PASS, screenshot at temporary/recs-empty-state.png.
+
+STILL OPEN in the small-polish bundle: Design F's x is unwired, and wiring it is a BEHAVIOUR change - asked, not assumed. And dist-web/ is rebuilt but still not uploaded, so the live site is behind by this and by the font cut.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
