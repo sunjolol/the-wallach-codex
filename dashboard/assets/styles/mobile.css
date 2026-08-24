@@ -1,0 +1,259 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+ * mobile.css — THE PHONE ARRANGEMENT
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * This sheet RE-ARRANGES. It does not re-design.
+ *
+ * Every colour, font, radius, shadow and motion curve below is an existing --ds-* token or an
+ * existing component class. Nothing here invents a visual language: the phone gets the same
+ * theme (all 8 accents plus light/dark), the same plates, the same chips, the same rails. What
+ * changes is where things sit, how big they are, and — the part that actually matters — what
+ * is ON SCREEN AT ONCE.
+ *
+ * THE OPERATING RULE, in his words: "one screen at a time, everything else should be a button
+ * or separate screen easily accessible". A phone screen does one job. Anything that is not
+ * that job is a control, never a scroll.
+ *
+ * LOAD ORDER IS THE MECHANISM. This sheet is linked LAST in dashboard.html, after theme.css.
+ * At equal specificity source order wins, so `.cov-d .coverage-grid` here beats the identical
+ * selector in workspace-coverage.css without raising specificity and without !important. The
+ * ONE exception is the 100px tile track, which carries !important at its own site and can only
+ * be answered in kind — see the plate block.
+ *
+ * ONE BREAKPOINT: 767px. Touch-target rules key off `pointer: coarse` instead, because
+ * sub-44px controls were measured as common at 1440px as at 375px — that is a pointer problem,
+ * not a width problem.
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+
+/* THE DEFAULT `.cov-panes { display: none }` DELIBERATELY LIVES IN workspace-coverage.css, NOT
+   HERE. coverage.ts renders the switch at every width, so something must hide it outside the
+   phone — and this sheet is held back from the web build, so a default stated here would not
+   reach the website and the browser would draw four raw UA buttons there. A media query can only
+   ADD; the default has to sit in a sheet that ships everywhere. */
+
+@media (max-width: 767px) {
+
+  /* ═══ SHELL — the rail becomes a bottom bar ═══════════════════════════════
+     PROVISIONAL AND SEPARABLE. The coverage field cannot be judged while a 220px desktop rail
+     eats 59% of a 375px viewport, so the shell has to move for the field to be reviewable at
+     all. This is the smallest change that frees the width, and it is one grid-template-areas
+     declaration to undo. It is NOT a ruling on what the phone shell should be. */
+
+  .app-shell {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      "topbar"
+      "workspace"
+      "rail";
+    /* dvh, not vh: on iOS 100vh is the LARGE viewport, so the box overhangs the screen and
+       takes its own last row with it. */
+    height: 100dvh;
+  }
+
+  .app-rail {
+    flex-direction: row;
+    align-items: stretch;
+    padding: 0;
+    border-right: 0;
+    border-top: 1px solid var(--ds-ink-medium);
+    /* the home indicator sits over the bar without this */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  /* the rail's accent seam is drawn down its right edge, for a vertical rail */
+  .app-rail::after { display: none; }
+
+  /* Chrome the bar has no room for. Nothing here is a destination — the brand block, the
+     section captions, the flex spacer, and the keyboard hints, which name keys a phone has no
+     way to press. Every NAVIGABLE item survives. */
+  .rail__brand,
+  .rail__section-label,
+  .rail__divider,
+  .rail__spacer,
+  .rail__kbd { display: none; }
+
+  /* The bar carries 6 targets: 5 destinations across two rail sections plus the profile. Sizing
+     the SECTIONS equally would give the 3-item section 56px per item and the 2-item section 75px,
+     and push the profile chip half off the right edge — and the profile is where the 8 accent
+     themes and light/dark live, so losing it loses the theme picker. Size every item equally
+     instead, and let the profile keep a fixed slot. */
+  /* `display: contents` flattens both sections away so every .rail__item becomes a direct flex
+     child of the bar and `flex: 1 1 0` sizes all five identically. Sizing the SECTIONS instead
+     cannot do this: they hold 3 items and 2, so any ratio that makes the sections fair makes the
+     items unfair. .rail__section is a presentational div with no role or label, so removing it
+     from the box tree costs no semantics. */
+  .rail__section { display: contents; }
+
+  .rail__item {
+    flex: 1 1 0;
+    min-width: 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    padding: var(--ds-space-2) var(--ds-space-1);
+    min-height: 52px;
+    border-radius: 0;
+    text-align: center;
+  }
+  /* the active marker is a LEFT edge on a vertical rail; on a horizontal bar it reads as a top edge */
+  .rail__item.active::before {
+    left: 20%; right: 20%; top: 0; bottom: auto;
+    width: auto; height: 3px;
+  }
+  .rail__item.active {
+    background: linear-gradient(180deg, color-mix(in srgb, var(--ds-accent) 15%, transparent) 0%, transparent 100%);
+  }
+  .rail__icon { width: auto; height: 18px; font-size: var(--ds-text-base); }
+  /* display, deliberately: dashboard.css:351 hides the label under `max-width: 820px` to collapse
+     the DESKTOP rail into a 60px icon strip. That is the right call for a narrow desktop and the
+     wrong one for a bottom bar, where an unlabelled icon row is a guessing game — especially for
+     this readership. This sheet loads later at equal specificity, so it wins without !important. */
+  .rail__label {
+    display: block;
+    flex: none;
+    width: 100%;
+    font-size: var(--ds-text-micro);
+    line-height: 1.2;
+    /* zero tracking, not the rail's 0.02em: at 64px per item "KNOWLEDGE" is the longest label and
+       tracking is what pushed it past its own box, so the labels collided into each other. */
+    letter-spacing: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rail__footer { padding: 0; display: flex; align-items: stretch; flex: 0 0 auto; }
+  .rail__profile { flex-direction: column; justify-content: center; gap: 0; padding: 0 var(--ds-space-3); }
+  .rail__profile-name,
+  .rail__profile-meta { display: none; }
+
+  .app-topbar { padding: var(--ds-space-3) var(--ds-space-4); gap: var(--ds-space-3); }
+  .app-topbar::after { left: var(--ds-space-4); right: var(--ds-space-4); }
+
+
+  /* ═══ COVERAGE — one screen, one job ═══════════════════════════════════
+     The desktop lays the field beside a 340px aside carrying three more surfaces: the
+     supplement recommendations, the food sources, and the daily protocol. Narrow the window
+     and that aside does not go away — it falls BELOW the field, which is how "the only way to
+     find food recommendations and product recommendations" became "scroll to the bottom over
+     and over".
+     So the aside stops being scroll and becomes a destination. Same four surfaces, same
+     markup, same components — one visible at a time, each one tap away. */
+
+  .cov-d { padding: var(--ds-space-4); }
+
+  /* single column: the aside no longer overlaps or trails the field.
+     Beats workspace-coverage.css:1104 on source order alone — identical specificity (0,2,0). */
+  .cov-d .coverage-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  /* THE PANE SWITCH. `data-cov-pane` is set on .coverage-workspace by coverage.ts; the
+     segmented control that sets it is the only new markup this arrangement adds. Desktop never
+     sets the attribute, so every rule below is inert there and the two-column layout is
+     untouched. */
+  /* 2x2, not 4-across. Measured: at 375px four pills get 80px each, and "SUPPLEMENTS" in 9.6px
+     tracked uppercase needs ~118px — it clipped by 38px. Fitting four across would need ~8px
+     type, below the legibility floor for this readership. Two rows keeps the type and shows
+     every label whole. No horizontal scroller, so nothing hides off the edge. */
+  .cov-panes {
+    /* re-shown here; the default above is `none` so it can never leak onto a desktop */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--ds-space-2);
+    padding: 0 var(--ds-space-4) var(--ds-space-3);
+  }
+  .cov-panes__btn {
+    min-width: 0;
+    min-height: 44px;
+    padding: var(--ds-space-2) var(--ds-space-2);
+    text-align: center;
+    font-family: var(--ds-font-display);
+    font-size: var(--ds-text-mini);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ds-ink-soft);
+    background: var(--ds-paper);
+    border: 1px solid var(--ds-rule-soft);
+    border-radius: var(--ds-radius-pill);
+    cursor: pointer;
+    transition: background var(--ds-motion-fast) var(--ds-ease-out),
+                color var(--ds-motion-fast) var(--ds-ease-out),
+                border-color var(--ds-motion-fast) var(--ds-ease-out);
+  }
+  .cov-panes__btn[aria-pressed="true"] {
+    color: var(--ds-paper);
+    background: var(--ds-accent);
+    border-color: var(--ds-accent);
+  }
+
+  .coverage-workspace[data-cov-pane] .essentials-host,
+  .coverage-workspace[data-cov-pane] .cov-aside > .recs,
+  .coverage-workspace[data-cov-pane] .cov-aside > .fs-block,
+  .coverage-workspace[data-cov-pane] .cov-aside > .rail-panel { display: none; }
+
+  .coverage-workspace[data-cov-pane="field"]    .essentials-host,
+  .coverage-workspace[data-cov-pane="products"] .cov-aside > .recs,
+  .coverage-workspace[data-cov-pane="foods"]    .cov-aside > .fs-block,
+  .coverage-workspace[data-cov-pane="protocol"] .cov-aside > .rail-panel { display: block; }
+
+
+  /* ═══ SECTION HEADERS — stacked, because four columns do not fit ════════
+     Desktop runs the head as `auto auto 1fr auto` — number, title, strapline, stat — on one
+     baseline. At 375px that squeezes the strapline into a 6-word-tall column and pushes the
+     "5 / 60 covered" stat off the right edge. Same four parts, same type, stacked. */
+  .essentials-section__head {
+    grid-template-columns: auto 1fr;
+    gap: var(--ds-space-2) var(--ds-space-3);
+    align-items: center;
+  }
+  .essentials-section__sub,
+  .essentials-section__stat { grid-column: 1 / -1; }
+  .essentials-section__stat { justify-self: start; }
+
+  /* the subsection caption is a baseline flex row of rank + name + count + hint; the hint is a
+     full sentence and has to wrap under the rest rather than interleave with it */
+  .essentials-subsection__label { flex-wrap: wrap; }
+  .essentials-subsection__hint { flex: 1 0 100%; }
+
+  /* ═══ THE PLATES — square, because a name needs the width ═══════════════
+     Desktop pins the track to `repeat(auto-fill, 100px) !important` for a documented reason:
+     an INTEGER column position is what keeps each plate's 1px inset ring crisp, and a 1fr
+     track lands on fractional pixels. That reason survives on a phone, so this keeps a fixed
+     integer track rather than switching to 1fr — it just picks one that fits three across and
+     makes the plate SQUARE instead of 100x80 landscape.
+     Square is the fix for two symptoms at once: a 100x80 plate with `overflow: hidden` has no
+     room for a long name, so the name is silently cut; 21 more pixels of height is all it
+     needs. !important is answered in kind here because the desktop rule carries it. */
+  .essentials-grid--minerals,
+  .essentials-grid--vitamins,
+  .essentials-grid--aminos,
+  .essentials-grid--fats {
+    grid-template-columns: repeat(3, 101px) !important;
+    gap: 9px !important;
+    justify-content: center;
+  }
+  .tile,
+  .tile--vitamin,
+  .tile--amino,
+  .tile--fat {
+    min-height: 101px;
+  }
+  /* the fat plate carries its own taller min-height and roomier padding upstream */
+  .tile--fat { padding: var(--ds-space-3); }
+}
+
+
+/* ═══ TOUCH — keyed to the POINTER, not the width ═════════════════════════
+   Sub-44px controls were measured as common at 1440px (316) as at 375px (305), so this is a
+   pointer problem, and scoping it to a phone width would leave a touch laptop broken. */
+@media (pointer: coarse) {
+  /* A FLOOR, not a height. `.rail__item` is 52px in the bar above; this block loads later at
+     equal specificity, so naming .rail__item here would have OVERRIDDEN 52 with 44 and squashed
+     the labels to zero height. It did. Raise the floor for controls that have none of their own,
+     and leave anything already taller alone. */
+  .cov-panes__btn,
+  .gchip { min-height: 44px; }
+}

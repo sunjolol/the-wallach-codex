@@ -118384,6 +118384,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       cov_ledger_partial: "PARTIAL",
       cov_ledger_pending: "NO WALLACH NUMBER YET",
       cov_ledger_present: "PRESENT",
+      cov_pane_field: "The field",
+      cov_pane_foods: "Foods",
+      cov_pane_products: "Supplements",
+      cov_pane_protocol: "Protocol",
+      cov_panes_label: "Which part of your coverage to show",
       cov_rail_empty: "Nothing here yet.",
       cov_rail_empty_sub: "Add a food or supplement to begin",
       cov_rail_eyebrow: "Current regimen",
@@ -174975,6 +174980,17 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     </section>
   `;
   }
+  var PANES = ["field", "products", "foods", "protocol"];
+  function isPane(v) {
+    return PANES.includes(v);
+  }
+  var pane = "field";
+  function renderPaneSwitch(active) {
+    const btns = PANES.map((p) => `
+    <button class="cov-panes__btn" type="button" data-cov-pane-set="${p}"
+            aria-pressed="${p === active ? "true" : "false"}">${escHTML(ui(`cov_pane_${p}`))}</button>`).join("");
+    return `<div class="cov-panes" role="group" aria-label="${escHTML(ui("cov_panes_label"))}">${btns}</div>`;
+  }
   function renderGoalStrip(goals) {
     if (goals.length === 0) {
       return `
@@ -175175,8 +175191,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       const goals = activeGoals();
       const items = loadEffectiveRegimen();
       container.innerHTML = `
-      <div class="coverage-workspace">
+      <div class="coverage-workspace" data-cov-pane="${escHTML(pane)}">
         ${renderGoalStrip(goals)}
+        ${renderPaneSwitch(pane)}
         <div class="cov-d">
           <div class="coverage-grid">
             ${renderField(snapshot2, goals)}
@@ -175237,6 +175254,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       if (remove2 !== null) {
         const id = remove2.dataset["goalRemove"] ?? "";
         saveRgUserGoals((loadRgUserGoals() ?? []).filter((g) => g !== id));
+        return;
+      }
+      const paneBtn = t.closest("[data-cov-pane-set]");
+      if (paneBtn !== null) {
+        const next = paneBtn.dataset["covPaneSet"] ?? "field";
+        if (isPane(next)) {
+          pane = next;
+          render();
+        }
         return;
       }
       if (t.closest("[data-goal-add]") !== null) {

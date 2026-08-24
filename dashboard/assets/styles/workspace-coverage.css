@@ -1100,6 +1100,16 @@ body { margin: 0; background: var(--ds-paper-deep); }
 .ledger__recon { margin-left: auto; color: var(--ds-ink-faint); }
 .ledger__recon b { color: var(--ds-ink-soft); font-weight: 500; }
 
+/* ── THE PHONE PANE SWITCH IS HIDDEN BY DEFAULT, AND THAT DEFAULT LIVES HERE ──
+   coverage.ts renders .cov-panes at EVERY width — one template, not a per-breakpoint branch —
+   and only mobile.css re-shows it under `max-width: 767px`. This declaration must sit in a sheet
+   that SHIPS EVERYWHERE, because mobile.css is deliberately held back from the web build
+   (build_web.py::WEB_EXCLUDED_CSS). Put the default in mobile.css instead and the web gets the
+   markup with no rule matching it, and the browser draws four raw UA buttons — 2px outset, Arial,
+   #f0f0f0 — which is exactly the defect that shipped locally on 2026-08-23.
+   Gated by web_build_excludes_unapproved_styles. */
+.cov-panes { display: none; }
+
 .cov-d { padding: var(--ds-space-5) var(--ds-space-7) var(--ds-space-7); }
 .cov-d .coverage-grid { display: grid; grid-template-columns: minmax(0,1fr) 340px; gap: var(--ds-space-5); padding: 0; }
 .cov-d .essentials-host { padding: var(--ds-space-5); box-shadow: inset 0 2px 5px rgba(26,22,18,.10), inset 0 0 0 1px var(--ds-rule), 0 1px 0 rgba(255,255,255,.7); }

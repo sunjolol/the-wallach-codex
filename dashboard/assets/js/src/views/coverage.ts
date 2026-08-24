@@ -430,6 +430,38 @@ function renderField(snapshot: CoverageSnapshot | null, goals: LayoutGoal[]): st
   `;
 }
 
+// ─── The pane switch (phone only) ─────────────────────────────────────────
+
+/**
+ * On a phone the coverage screen shows ONE of its four surfaces at a time.
+ *
+ * The desktop lays the field beside a 340px aside carrying the supplement recommendations, the
+ * food sources and the daily protocol. Narrowed, that aside does not disappear — it falls BELOW
+ * the field, which is what made food and product recommendations reachable only by scrolling to
+ * the bottom. Here they become destinations instead: same four surfaces, same markup, same
+ * components, one visible at a time and each one tap away.
+ *
+ * This renders at every width; mobile.css is what makes it visible and what hides the three
+ * inactive surfaces, both scoped to max-width 767px. Desktop is untouched — it keeps showing
+ * all four at once, which is the right answer when there is room for them.
+ */
+const PANES = ['field', 'products', 'foods', 'protocol'] as const;
+type Pane = (typeof PANES)[number];
+
+function isPane(v: string): v is Pane {
+  return (PANES as readonly string[]).includes(v);
+}
+
+/** The surface on screen. Survives a repaint; resets only on a fresh mount. */
+let pane: Pane = 'field';
+
+function renderPaneSwitch(active: Pane): string {
+  const btns = PANES.map(p => `
+    <button class="cov-panes__btn" type="button" data-cov-pane-set="${p}"
+            aria-pressed="${p === active ? 'true' : 'false'}">${escHTML(ui(`cov_pane_${p}`))}</button>`).join('');
+  return `<div class="cov-panes" role="group" aria-label="${escHTML(ui('cov_panes_label'))}">${btns}</div>`;
+}
+
 // ─── The goal strip ───────────────────────────────────────────────────────
 
 /**
@@ -770,8 +802,9 @@ export function mount(container: HTMLElement): MountHandle {
     const items = loadEffectiveRegimen();
 
     container.innerHTML = `
-      <div class="coverage-workspace">
+      <div class="coverage-workspace" data-cov-pane="${escHTML(pane)}">
         ${renderGoalStrip(goals)}
+        ${renderPaneSwitch(pane)}
         <div class="cov-d">
           <div class="coverage-grid">
             ${renderField(snapshot, goals)}
@@ -862,6 +895,15 @@ export function mount(container: HTMLElement): MountHandle {
     if (remove !== null) {
       const id = remove.dataset['goalRemove'] ?? '';
       saveRgUserGoals((loadRgUserGoals() ?? []).filter(g => g !== id));
+      return;
+    }
+    const paneBtn = t.closest<HTMLElement>('[data-cov-pane-set]');
+    if (paneBtn !== null) {
+      const next = paneBtn.dataset['covPaneSet'] ?? 'field';
+      if (isPane(next)) {
+        pane = next;
+        render();
+      }
       return;
     }
     if (t.closest('[data-goal-add]') !== null) {

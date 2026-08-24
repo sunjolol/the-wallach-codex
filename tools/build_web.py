@@ -155,7 +155,19 @@ say('Rewriting stylesheets…')
 css_out = OUT / 'assets' / 'styles'
 css_out.mkdir(parents=True)
 css_map: dict[str, str] = {}
+# ★★ STYLESHEETS HELD BACK FROM THE WEB BUILD.
+# The phone arrangement layer is APPROVED FOR THE LOCAL DASHBOARD ONLY and must not reach
+# nutrientcodex.com until the owner has signed it off. It was added to the live dashboard surface
+# without his approval on 2026-08-23; he ruled it may STAY LOCALLY because testing mobile against
+# the real dashboard is easier than against a demo, and that it may NEVER ship to the web
+# unapproved. This glob would have carried it there on the next build, silently, so the rule is
+# enforced here rather than remembered. Its <link> is stripped from index.html below to match, and
+# web_build_excludes_unapproved_styles gates both halves.
+WEB_EXCLUDED_CSS = {'mobile.css'}
+
 for src in sorted((DASH / 'assets/styles').glob('*.css')):
+    if src.name in WEB_EXCLUDED_CSS:
+        continue
     text = src.read_text(encoding='utf-8')
     before = text
     text = re.sub(r"(url\(['\"]?[^)'\"]+?)\.ttf(['\"]?\))", r'\1.woff2\2', text)
@@ -220,6 +232,12 @@ ok(f'split artifacts · {len(split_keys)} shipped ({sizeof(split_bytes)}) — ha
 # --- 6. index.html --------------------------------------------------------
 say('Writing index.html…')
 html = (DASH / 'dashboard.html').read_text(encoding='utf-8')
+# Drop the <link> for every held-back sheet, or index.html would point at a file that was never
+# copied and the browser would 404 on it.
+for excluded in sorted(WEB_EXCLUDED_CSS):
+    html = re.sub(rf'[^\n]*\./assets/styles/{re.escape(excluded)}[^\n]*\n?', '', html)
+    if excluded in html:
+        die(f'index.html: a reference to the held-back {excluded} survived')
 for original, hashed in css_map.items():
     needle = f'./assets/styles/{original}'
     if needle not in html:
