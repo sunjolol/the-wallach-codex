@@ -459,7 +459,7 @@
     "kd_ep_foodsrc_all": "Show all",
     "kd_ep_foodsrc_plant_derived": "No reliable food source exists in our database, and by Dr. Wallach's framework none is expected to: the plant-derived minerals are depleted from farm soil, so this one is obtained by supplementing the colloidal-mineral group rather than from any single food.",
     "kd_ep_foodsrc_vehicle": "No reliable food source exists in our database. Dr. Wallach names plant-derived colloidal minerals as the supply route for this one in his own words, so it is obtained by supplementing.",
-    "kd_ep_foodsrc_unreachable": "No reliable food source exists in our database — this one requires supplementing. We measured every food in the USDA tables against Dr. Wallach's daily amount and none reaches it on a realistic serving.",
+    "kd_ep_foodsrc_unreachable": "No food in our catalogue delivers 7% of Dr. Wallach's daily amount for this one on a realistic serving — his target sits far above what a diet supplies, so this one is obtained by supplementing.",
     "kd_ep_foodsrc_no_binding": "We have no food composition data bound for this one yet. That is a gap in our sources, not a finding about food — do not read it as “supplement only”.",
     "kd_ep_foodsrc_no_target": "Dr. Wallach states no daily amount for this one, so there is nothing for a serving to be measured against. Foods are not ranked here for that reason, not because none carry it.",
     "rg_recs_sort_gap": "Fills the most gaps",
@@ -471,6 +471,7 @@
     "rg_recs_nutrient_all": "Any nutrient",
     "rg_recs_nutrient_label": "Show only products that carry this nutrient",
     "rg_recs_note": "Browse every product · sort and filter",
-    "rg_recs_empty": "No product matches those filters."
+    "rg_recs_empty": "No product matches those filters.",
+    "kd_ep_foodsrc_zero_target": "Dr. Wallach recommends none of this one — his Base Line table lists it at zero, because an ordinary diet already supplies a large excess. Foods are not ranked here for that reason."
   }
 }

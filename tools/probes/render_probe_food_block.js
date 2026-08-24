@@ -22,7 +22,10 @@ const CASES = [
   { slug: 'vitamin-b1', key: 'Vitamin B1 (Thiamine)', want: 'supplementing', why: 'bound, swept, no food reaches 100 mg' },
   { slug: 'tin', key: 'Tin', want: 'supplementing', why: 'Wallach names the colloidal vehicle as its route' },
   { slug: 'strontium', key: 'Strontium', want: 'supplementing', why: 'plant-derived, depleted soil' },
-  { slug: 'chromium', key: 'Chromium', want: 'gap', why: 'no composition source bound yet - OURS, not the food world' },
+  // BOUND 2026-08-24 (AFCD). It was the `no_binding` case until then; abalone is the one food
+  // in the catalog that clears 7% of his 620 mcg, at 19.5% on a 3 oz serving.
+  { slug: 'chromium', key: 'Chromium', want: 'rows', why: 'bound to AFCD; abalone clears the floor' },
+  { slug: 'inositol', key: 'Inositol', want: 'gap', why: 'still unbound - OURS, not a finding about food' },
   { slug: 'lysine', key: 'Lysine', want: 'no-target', why: 'no Wallach amount, so nothing to measure against' },
   { slug: 'gold', key: 'Gold', want: 'supplementing', why: 'plant-derived, second case' },
   { slug: 'lithium', key: 'Lithium', want: 'supplementing', why: 'plant-derived, third case' },

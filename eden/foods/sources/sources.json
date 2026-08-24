@@ -1,421 +1,443 @@
 {
- "_purpose": "Every OUTSIDE food-composition source this project reads, pinned by URL + sha256 so each payload is re-downloadable and verifiable. The payloads themselves are gitignored (copyright for Powell; weight for the rest); the NUMBERS extracted from them are committed. Section 00.A: these supply COMPOSITION ONLY - a numerator. Every denominator in this app remains Dr. Wallach's.",
- "_ruling": "Owner ruling, Luneth 2026-08-21: branch out beyond USDA, gather from many reputable sources, verify, THEN build. Gap champions may be added to the catalog but ONLY with a sourced number - 'without the numbers we have no ground to stand on'. Two match tiers, both labelled on the surface: EXACT = joined by ID, gate-provable; APPROXIMATE = curated name match, one human decision per pair.",
- "_zero_padding_trap": "Our catalog stores NDB numbers UNPADDED (1009); every published table uses five digits (01009). The unpadded join found 15 foods and would have reported iodine as barely present; padded it finds 38. Always zfill(5) both sides before joining.",
- "retrieved": "2026-08-21",
- "nutrient_bindings": {
-  "_purpose": "HOW a pinned payload becomes a number on screen. Each essential slug here names the part(s) it is built from: the pinned payload (a key into `sources` above, so the URL and sha256 have ONE home), the committed candidate file that carries the extracted rows, the extractor that reproduces that file from the payload BYTE-EXACTLY, how a catalog food joins to a row, and which field holds the value. `food_composition_traces_to_source` reads this block and re-walks every step.",
-  "_ruling": "Owner ruling, Luneth 2026-08-21: branch out beyond USDA; two match tiers, both labelled on the surface. This block is what makes the label provable rather than asserted. It supersedes usda-source.json's `no_usda_composition` note for the slugs named here, and ONLY for those -- an essential absent from this block still has no food source anywhere and is still stated as a gap.",
-  "_tier_rule": "TIER IS DERIVED FROM THE JOIN, never typed per row. join_kind 'ndb' is an ID join -- byte-exact, no human judgment, EXACT. join_kind 'name' is a curated pair a human accepted one at a time, and is APPROXIMATE FOREVER, however good the match looks. The gate REDs an EXACT tier sitting on a name join, which is the only way this label could quietly become a lie.",
-  "_value_kind": "'cell' -- the value is ONE cell of the source, carried through as the source's own unparsed string and byte-compared by the gate. 'sum' -- the source publishes the value as component rows and the total is Sigma of them, summed in DECIMAL (never float) so the same string comes out on every host. A summed total is ALSO checked against the total the extractor independently computed and stored, so a transcription slip has two chances to show up.",
-  "iodine": {
-   "source_id": "iodine-usda-ods-r4+afcd-au-r3",
-   "tier": "APPROXIMATE",
-   "unit": "UG",
-   "_two_parts_why": "USDA/FDA/ODS measures iodine in 478 US foods and joins to our catalog byte-exactly by NDB -- but it reaches only 10 of our 192, so 182 foods carried NO iodine number at all. AFCD measures iodine in every one of its 1,588 foods (1,084 above zero) and joins by name, so it can speak for foods ODS never listed. The parts are NOT summed: both measure the same element in the same food, and adding them would report a food as twice as iodine-rich as either source says.",
-   "parts": [
-    {
-     "payload": "iodine-usda-ods/IODINE_DATABASE_RELEASE_4_PER_100G.pdf",
-     "candidate": "iodine-usda-ods-r4.json",
-     "extractor": "eden/tools/foods/extract_iodine.py",
-     "join_kind": "ndb",
-     "join_field": "ndb_numbers",
-     "value_kind": "cell",
-     "value_field": "iodine_mcg_per_100g",
-     "unit": "UG",
-     "reader": "pdf",
-     "source_id": "iodine-usda-ods-r4",
-     "display": "the USDA/FDA/ODS iodine database"
+  "_purpose": "Every OUTSIDE food-composition source this project reads, pinned by URL + sha256 so each payload is re-downloadable and verifiable. The payloads themselves are gitignored (copyright for Powell; weight for the rest); the NUMBERS extracted from them are committed. Section 00.A: these supply COMPOSITION ONLY - a numerator. Every denominator in this app remains Dr. Wallach's.",
+  "_ruling": "Owner ruling, Luneth 2026-08-21: branch out beyond USDA, gather from many reputable sources, verify, THEN build. Gap champions may be added to the catalog but ONLY with a sourced number - 'without the numbers we have no ground to stand on'. Two match tiers, both labelled on the surface: EXACT = joined by ID, gate-provable; APPROXIMATE = curated name match, one human decision per pair.",
+  "_zero_padding_trap": "Our catalog stores NDB numbers UNPADDED (1009); every published table uses five digits (01009). The unpadded join found 15 foods and would have reported iodine as barely present; padded it finds 38. Always zfill(5) both sides before joining.",
+  "retrieved": "2026-08-21",
+  "nutrient_bindings": {
+    "_purpose": "HOW a pinned payload becomes a number on screen. Each essential slug here names the part(s) it is built from: the pinned payload (a key into `sources` above, so the URL and sha256 have ONE home), the committed candidate file that carries the extracted rows, the extractor that reproduces that file from the payload BYTE-EXACTLY, how a catalog food joins to a row, and which field holds the value. `food_composition_traces_to_source` reads this block and re-walks every step.",
+    "_ruling": "Owner ruling, Luneth 2026-08-21: branch out beyond USDA; two match tiers, both labelled on the surface. This block is what makes the label provable rather than asserted. It supersedes usda-source.json's `no_usda_composition` note for the slugs named here, and ONLY for those -- an essential absent from this block still has no food source anywhere and is still stated as a gap.",
+    "_tier_rule": "TIER IS DERIVED FROM THE JOIN, never typed per row. join_kind 'ndb' is an ID join -- byte-exact, no human judgment, EXACT. join_kind 'name' is a curated pair a human accepted one at a time, and is APPROXIMATE FOREVER, however good the match looks. The gate REDs an EXACT tier sitting on a name join, which is the only way this label could quietly become a lie.",
+    "_value_kind": "'cell' -- the value is ONE cell of the source, carried through as the source's own unparsed string and byte-compared by the gate. 'sum' -- the source publishes the value as component rows and the total is Sigma of them, summed in DECIMAL (never float) so the same string comes out on every host. A summed total is ALSO checked against the total the extractor independently computed and stored, so a transcription slip has two chances to show up.",
+    "iodine": {
+      "source_id": "iodine-usda-ods-r4+afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "unit": "UG",
+      "_two_parts_why": "USDA/FDA/ODS measures iodine in 478 US foods and joins to our catalog byte-exactly by NDB -- but it reaches only 10 of our 192, so 182 foods carried NO iodine number at all. AFCD measures iodine in every one of its 1,588 foods (1,084 above zero) and joins by name, so it can speak for foods ODS never listed. The parts are NOT summed: both measure the same element in the same food, and adding them would report a food as twice as iodine-rich as either source says.",
+      "parts": [
+        {
+          "payload": "iodine-usda-ods/IODINE_DATABASE_RELEASE_4_PER_100G.pdf",
+          "candidate": "iodine-usda-ods-r4.json",
+          "extractor": "eden/tools/foods/extract_iodine.py",
+          "join_kind": "ndb",
+          "join_field": "ndb_numbers",
+          "value_kind": "cell",
+          "value_field": "iodine_mcg_per_100g",
+          "unit": "UG",
+          "reader": "pdf",
+          "source_id": "iodine-usda-ods-r4",
+          "display": "the USDA/FDA/ODS iodine database"
+        },
+        {
+          "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
+          "candidate": "afcd-au-r3-gap-nutrients.json",
+          "extractor": "eden/tools/foods/extract_afcd.py",
+          "join_kind": "name",
+          "join_field": "food",
+          "value_kind": "cell",
+          "value_field": "iodine",
+          "unit": "UG",
+          "source_id": "afcd-au-r3",
+          "display": "the Australian Food Composition Database"
+        }
+      ],
+      "combine": "first",
+      "_precedence_why": "ODS FIRST, and the order carries more weight here than in any other binding. It is an ID join -- byte-exact, no human judgment -- and it is a UNITED STATES table describing a United States food supply, which is what this catalog's servings and portion weights are. AFCD is SECOND and therefore GAP-FILL ONLY: with `combine: first` it can never displace a number ODS already publishes, so adding it changed no existing value. See `_iodine_second_source_finding` for why that restriction is not caution but necessity."
     },
-    {
-     "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
-     "candidate": "afcd-au-r3-gap-nutrients.json",
-     "extractor": "eden/tools/foods/extract_afcd.py",
-     "join_kind": "name",
-     "join_field": "food",
-     "value_kind": "cell",
-     "value_field": "iodine",
-     "unit": "UG",
-     "source_id": "afcd-au-r3",
-     "display": "the Australian Food Composition Database"
-    }
-   ],
-   "combine": "first",
-   "_precedence_why": "ODS FIRST, and the order carries more weight here than in any other binding. It is an ID join -- byte-exact, no human judgment -- and it is a UNITED STATES table describing a United States food supply, which is what this catalog's servings and portion weights are. AFCD is SECOND and therefore GAP-FILL ONLY: with `combine: first` it can never displace a number ODS already publishes, so adding it changed no existing value. See `_iodine_second_source_finding` for why that restriction is not caution but necessity."
-  },
-  "flavonoids": {
-   "source_id": "flavonoid-usda-r33+proanthocyanidin-r2",
-   "tier": "EXACT",
-   "unit": "MG",
-   "_two_parts_why": "USDA publishes proanthocyanidins in a SEPARATE database from the other five flavonoid classes. Reading only the first understates every total and is the difference between 2 catalog foods qualifying and 10 -- proanthocyanidins are the largest contributor by mass in berries, nuts and cocoa. Both are the same publisher, the same units and the same NDB join, so they sum.",
-   "parts": [
-    {
-     "payload": "flavonoid-usda/Flav_R03-3.zip",
-     "zip_member": "Flav3.3.pdf",
-     "candidate": "flavonoids-usda-r33.json",
-     "extractor": "eden/tools/foods/extract_flavonoids.py",
-     "join_kind": "ndb",
-     "join_field": "ndb",
-     "value_kind": "sum",
-     "rows_field": "compounds",
-     "value_field": "mean_mg_per_100g",
-     "total_field": "total_flavonoids_mg_per_100g",
-     "unit": "MG",
-     "reader": "pdf",
-     "source_id": "flavonoid-usda-r33",
-     "display": "the USDA flavonoid database"
+    "flavonoids": {
+      "source_id": "flavonoid-usda-r33+proanthocyanidin-r2",
+      "tier": "EXACT",
+      "unit": "MG",
+      "_two_parts_why": "USDA publishes proanthocyanidins in a SEPARATE database from the other five flavonoid classes. Reading only the first understates every total and is the difference between 2 catalog foods qualifying and 10 -- proanthocyanidins are the largest contributor by mass in berries, nuts and cocoa. Both are the same publisher, the same units and the same NDB join, so they sum.",
+      "parts": [
+        {
+          "payload": "flavonoid-usda/Flav_R03-3.zip",
+          "zip_member": "Flav3.3.pdf",
+          "candidate": "flavonoids-usda-r33.json",
+          "extractor": "eden/tools/foods/extract_flavonoids.py",
+          "join_kind": "ndb",
+          "join_field": "ndb",
+          "value_kind": "sum",
+          "rows_field": "compounds",
+          "value_field": "mean_mg_per_100g",
+          "total_field": "total_flavonoids_mg_per_100g",
+          "unit": "MG",
+          "reader": "pdf",
+          "source_id": "flavonoid-usda-r33",
+          "display": "the USDA flavonoid database"
+        },
+        {
+          "payload": "flavonoid-usda/USDA_Proanthocyanidin_DB.pdf",
+          "candidate": "proanthocyanidins-usda-r2.json",
+          "extractor": "eden/tools/foods/extract_proanthocyanidins.py",
+          "join_kind": "ndb",
+          "join_field": "ndb",
+          "value_kind": "sum",
+          "rows_field": "classes",
+          "value_field": "mean_mg_per_100g",
+          "total_field": "total_proanthocyanidins_mg_per_100g",
+          "unit": "MG",
+          "reader": "pdf",
+          "source_id": "proanthocyanidin-usda-r2",
+          "display": "the USDA proanthocyanidin database"
+        }
+      ],
+      "display": "the USDA flavonoid and proanthocyanidin databases",
+      "combine": "sum"
     },
-    {
-     "payload": "flavonoid-usda/USDA_Proanthocyanidin_DB.pdf",
-     "candidate": "proanthocyanidins-usda-r2.json",
-     "extractor": "eden/tools/foods/extract_proanthocyanidins.py",
-     "join_kind": "ndb",
-     "join_field": "ndb",
-     "value_kind": "sum",
-     "rows_field": "classes",
-     "value_field": "mean_mg_per_100g",
-     "total_field": "total_proanthocyanidins_mg_per_100g",
-     "unit": "MG",
-     "reader": "pdf",
-     "source_id": "proanthocyanidin-usda-r2",
-     "display": "the USDA proanthocyanidin database"
-    }
-   ],
-   "display": "the USDA flavonoid and proanthocyanidin databases",
-   "combine": "sum"
-  },
-  "silica": {
-   "source_id": "silicon-powell-2005",
-   "tier": "APPROXIMATE",
-   "unit": "MG",
-   "_tier_why": "Powell publishes UK foods by name with no ID our catalog shares, so every pair is a human decision recorded in foods-catalog-curation.json with its reasoning. The measurement is as good as any here -- ICP-OES, and 179 of its 181 rows reproduce the paper's own printed arithmetic -- but the FOOD on our card is not provably the food in their tube, and that is what APPROXIMATE says.",
-   "parts": [
-    {
-     "payload": "silicon-powell2005/Powell_2005_silicon_BJN.pdf",
-     "candidate": "silicon-powell-2005.json",
-     "extractor": "eden/tools/foods/extract_silicon.py",
-     "join_kind": "name",
-     "join_field": "food",
-     "value_kind": "cell",
-     "value_field": "silicon_mg_per_100g",
-     "unit": "MG",
-     "reader": "pdf",
-     "source_id": "silicon-powell-2005",
-     "display": "Powell’s 2005 silicon database (British Journal of Nutrition)"
-    }
-   ],
-   "display": "Powell’s 2005 silicon database (British Journal of Nutrition)"
-  },
-  "_display": "The words the CARD uses for this source, in the provenance gloss that sits on the number. Kept here so a view never hand-types a source name.",
-  "chloride": {
-   "source_id": "afcd-au-r3",
-   "tier": "APPROXIMATE",
-   "unit": "MG",
-   "display": "the Australian Food Composition Database",
-   "parts": [
-    {
-     "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
-     "candidate": "afcd-au-r3-gap-nutrients.json",
-     "extractor": "eden/tools/foods/extract_afcd.py",
-     "join_kind": "name",
-     "join_field": "food",
-     "value_kind": "cell",
-     "value_field": "chloride",
-     "unit": "MG",
-     "source_id": "afcd-au-r3",
-     "display": "the Australian Food Composition Database"
-    }
-   ]
-  },
-  "biotin": {
-   "source_id": "afcd-au-r3",
-   "tier": "APPROXIMATE",
-   "unit": "UG",
-   "display": "the Australian Food Composition Database",
-   "parts": [
-    {
-     "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
-     "candidate": "afcd-au-r3-gap-nutrients.json",
-     "extractor": "eden/tools/foods/extract_afcd.py",
-     "join_kind": "name",
-     "join_field": "food",
-     "value_kind": "cell",
-     "value_field": "biotin",
-     "unit": "UG",
-     "source_id": "afcd-au-r3",
-     "display": "the Australian Food Composition Database"
-    }
-   ]
-  },
-  "molybdenum": {
-   "source_id": "afcd-au-r3",
-   "tier": "APPROXIMATE",
-   "unit": "UG",
-   "display": "the Australian Food Composition Database",
-   "parts": [
-    {
-     "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
-     "candidate": "afcd-au-r3-gap-nutrients.json",
-     "extractor": "eden/tools/foods/extract_afcd.py",
-     "join_kind": "name",
-     "join_field": "food",
-     "value_kind": "cell",
-     "value_field": "molybdenum",
-     "unit": "UG",
-     "source_id": "afcd-au-r3",
-     "display": "the Australian Food Composition Database"
-    }
-   ]
-  },
-  "sulfur": {
-   "source_id": "afcd-au-r3+doleman-2017",
-   "tier": "APPROXIMATE",
-   "unit": "MG",
-   "parts": [
-    {
-     "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
-     "candidate": "afcd-au-r3-gap-nutrients.json",
-     "extractor": "eden/tools/foods/extract_afcd.py",
-     "join_kind": "name",
-     "join_field": "food",
-     "value_kind": "cell",
-     "value_field": "sulfur",
-     "unit": "MG",
-     "source_id": "afcd-au-r3",
-     "display": "the Australian Food Composition Database"
+    "silica": {
+      "source_id": "silicon-powell-2005",
+      "tier": "APPROXIMATE",
+      "unit": "MG",
+      "_tier_why": "Powell publishes UK foods by name with no ID our catalog shares, so every pair is a human decision recorded in foods-catalog-curation.json with its reasoning. The measurement is as good as any here -- ICP-OES, and 179 of its 181 rows reproduce the paper's own printed arithmetic -- but the FOOD on our card is not provably the food in their tube, and that is what APPROXIMATE says.",
+      "parts": [
+        {
+          "payload": "silicon-powell2005/Powell_2005_silicon_BJN.pdf",
+          "candidate": "silicon-powell-2005.json",
+          "extractor": "eden/tools/foods/extract_silicon.py",
+          "join_kind": "name",
+          "join_field": "food",
+          "value_kind": "cell",
+          "value_field": "silicon_mg_per_100g",
+          "unit": "MG",
+          "reader": "pdf",
+          "source_id": "silicon-powell-2005",
+          "display": "Powell’s 2005 silicon database (British Journal of Nutrition)"
+        }
+      ],
+      "display": "Powell’s 2005 silicon database (British Journal of Nutrition)"
     },
-    {
-     "payload": "doleman2017/Doleman_2017_PMC5460521_fullTextXML.xml",
-     "candidate": "sulfur-doleman-2017.json",
-     "extractor": "eden/tools/foods/extract_doleman.py",
-     "source_id": "doleman-2017",
-     "display": "Doleman 2017 (Food Chemistry)",
-     "join_kind": "name",
-     "join_field": "food",
-     "value_kind": "sum_fields",
-     "value_fields": [
-      "saa_umol_g_dry",
-      "other_s_umol_g_dry"
-     ],
-     "_value_why": "The paper prints sulphur split into the amino acids and everything else; TOTAL sulphur is what a body gets, so both are summed. The total is not stored in the candidate — it is added here — so a transcription slip has to survive addition to reach a screen. For garlic the amino-acid fraction is only 10.5%, which is exactly why the old methionine+cystine shortcut failed for alliums and crucifers.",
-     "convert": "dry_umol_per_g_to_mg_per_100g_fresh",
-     "unit": "MG"
+    "_display": "The words the CARD uses for this source, in the provenance gloss that sits on the number. Kept here so a view never hand-types a source name.",
+    "chloride": {
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "unit": "MG",
+      "display": "the Australian Food Composition Database",
+      "parts": [
+        {
+          "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
+          "candidate": "afcd-au-r3-gap-nutrients.json",
+          "extractor": "eden/tools/foods/extract_afcd.py",
+          "join_kind": "name",
+          "join_field": "food",
+          "value_kind": "cell",
+          "value_field": "chloride",
+          "unit": "MG",
+          "source_id": "afcd-au-r3",
+          "display": "the Australian Food Composition Database"
+        }
+      ]
+    },
+    "biotin": {
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "unit": "UG",
+      "display": "the Australian Food Composition Database",
+      "parts": [
+        {
+          "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
+          "candidate": "afcd-au-r3-gap-nutrients.json",
+          "extractor": "eden/tools/foods/extract_afcd.py",
+          "join_kind": "name",
+          "join_field": "food",
+          "value_kind": "cell",
+          "value_field": "biotin",
+          "unit": "UG",
+          "source_id": "afcd-au-r3",
+          "display": "the Australian Food Composition Database"
+        }
+      ]
+    },
+    "molybdenum": {
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "unit": "UG",
+      "display": "the Australian Food Composition Database",
+      "parts": [
+        {
+          "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
+          "candidate": "afcd-au-r3-gap-nutrients.json",
+          "extractor": "eden/tools/foods/extract_afcd.py",
+          "join_kind": "name",
+          "join_field": "food",
+          "value_kind": "cell",
+          "value_field": "molybdenum",
+          "unit": "UG",
+          "source_id": "afcd-au-r3",
+          "display": "the Australian Food Composition Database"
+        }
+      ]
+    },
+    "sulfur": {
+      "source_id": "afcd-au-r3+doleman-2017",
+      "tier": "APPROXIMATE",
+      "unit": "MG",
+      "parts": [
+        {
+          "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
+          "candidate": "afcd-au-r3-gap-nutrients.json",
+          "extractor": "eden/tools/foods/extract_afcd.py",
+          "join_kind": "name",
+          "join_field": "food",
+          "value_kind": "cell",
+          "value_field": "sulfur",
+          "unit": "MG",
+          "source_id": "afcd-au-r3",
+          "display": "the Australian Food Composition Database"
+        },
+        {
+          "payload": "doleman2017/Doleman_2017_PMC5460521_fullTextXML.xml",
+          "candidate": "sulfur-doleman-2017.json",
+          "extractor": "eden/tools/foods/extract_doleman.py",
+          "source_id": "doleman-2017",
+          "display": "Doleman 2017 (Food Chemistry)",
+          "join_kind": "name",
+          "join_field": "food",
+          "value_kind": "sum_fields",
+          "value_fields": [
+            "saa_umol_g_dry",
+            "other_s_umol_g_dry"
+          ],
+          "_value_why": "The paper prints sulphur split into the amino acids and everything else; TOTAL sulphur is what a body gets, so both are summed. The total is not stored in the candidate — it is added here — so a transcription slip has to survive addition to reach a screen. For garlic the amino-acid fraction is only 10.5%, which is exactly why the old methionine+cystine shortcut failed for alliums and crucifers.",
+          "convert": "dry_umol_per_g_to_mg_per_100g_fresh",
+          "unit": "MG"
+        }
+      ],
+      "combine": "first",
+      "_precedence_why": "AFCD FIRST because it measures sulphur DIRECTLY per 100 g of the food as eaten — no conversion, no second sample. Doleman SECOND because its umoles/g dry has to be married to a USDA moisture from a different sample to mean anything, which is a real approximation on top of a real measurement. They are NOT summed: both measure the same element in the same food, and adding them would double it. Owner ruling, Luneth 2026-08-22: 'both — AFCD primary, Doleman second'. ⚠ They are also largely COMPLEMENTARY rather than competing: AFCD has no sulphur value for chicken breast at all and its only cod row is smoked cod, which is why Doleman is worth carrying rather than dropping.",
+      "_display_why": "Deliberately ABSENT. This binding resolves to one of two different publications per food, and the card must name the one that actually supplied the number — so the words live on each PART, never on the binding."
+    },
+    "_refused_pairs": "Foods deliberately left UNPAIRED with a source, and why, recorded in foods-catalog-curation.json's `_afcd_refused`. A refusal is a decision like any other and must be as visible as an acceptance, or the next person re-derives it.",
+    "_reader": "`reader: pdf` marks a part whose extractor needs PyMuPDF. The gate skips re-extracting only THOSE when the reader is absent; a spreadsheet part is read by our own dependency-free xlsx reader and always re-runs.",
+    "_combine": "How a binding's PARTS combine, and confusing the two double-counts. `sum` — the parts measure DIFFERENT THINGS about the same food and add up (USDA publishes proanthocyanidins separately from the other flavonoid classes; a food's total is genuinely both). `first` — the parts measure the SAME THING and only one may be used (AFCD and Doleman both measure sulphur; adding them would report a food as twice as sulphurous as either source says). For `first` the parts are tried IN ORDER, so the order below IS the precedence. Required explicitly whenever a binding has more than one part: the derive refuses to guess.",
+    "chromium": {
+      "source_id": "afcd-au-r3",
+      "tier": "APPROXIMATE",
+      "unit": "UG",
+      "display": "the Australian Food Composition Database",
+      "_why": "Bound 2026-08-24 on the owner's ruling. AFCD Release 3 measures chromium in 341 rows and the candidate file has been extracted and pinned here since the gap campaign -- it was simply never named in this map, which is the whole of why chromium read as having no food source. Against Wallach's 620 mcg the table is not marginal: abalone is 392.5 ug/100 g, so 11 g clears the 7% floor, and ocean trout at 162.7 ug clears it on 27 g. Boron is the one that stays unbound, and for a measured reason -- see _boron_finding.",
+      "parts": [
+        {
+          "payload": "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx",
+          "candidate": "afcd-au-r3-gap-nutrients.json",
+          "extractor": "eden/tools/foods/extract_afcd.py",
+          "join_kind": "name",
+          "join_field": "food",
+          "value_kind": "cell",
+          "value_field": "chromium",
+          "unit": "UG",
+          "source_id": "afcd-au-r3",
+          "display": "the Australian Food Composition Database"
+        }
+      ]
     }
-   ],
-   "combine": "first",
-   "_precedence_why": "AFCD FIRST because it measures sulphur DIRECTLY per 100 g of the food as eaten — no conversion, no second sample. Doleman SECOND because its umoles/g dry has to be married to a USDA moisture from a different sample to mean anything, which is a real approximation on top of a real measurement. They are NOT summed: both measure the same element in the same food, and adding them would double it. Owner ruling, Luneth 2026-08-22: 'both — AFCD primary, Doleman second'. ⚠ They are also largely COMPLEMENTARY rather than competing: AFCD has no sulphur value for chicken breast at all and its only cod row is smoked cod, which is why Doleman is worth carrying rather than dropping.",
-   "_display_why": "Deliberately ABSENT. This binding resolves to one of two different publications per food, and the card must name the one that actually supplied the number — so the words live on each PART, never on the binding."
   },
-  "_refused_pairs": "Foods deliberately left UNPAIRED with a source, and why, recorded in foods-catalog-curation.json's `_afcd_refused`. A refusal is a decision like any other and must be as visible as an acceptance, or the next person re-derives it.",
-  "_reader": "`reader: pdf` marks a part whose extractor needs PyMuPDF. The gate skips re-extracting only THOSE when the reader is absent; a spreadsheet part is read by our own dependency-free xlsx reader and always re-runs.",
-  "_combine": "How a binding's PARTS combine, and confusing the two double-counts. `sum` — the parts measure DIFFERENT THINGS about the same food and add up (USDA publishes proanthocyanidins separately from the other flavonoid classes; a food's total is genuinely both). `first` — the parts measure the SAME THING and only one may be used (AFCD and Doleman both measure sulphur; adding them would report a food as twice as sulphurous as either source says). For `first` the parts are tried IN ORDER, so the order below IS the precedence. Required explicitly whenever a binding has more than one part: the derive refuses to guess."
- },
- "sources": {
-  "iodine-usda-ods/IODINE_DATABASE_RELEASE_4_PER_100G.pdf": {
-   "dataset": "USDA, FDA and ODS-NIH Database for the Iodine Content of Common Foods, Release 4",
-   "publisher": "USDA ARS / FDA CFSAN / NIH Office of Dietary Supplements",
-   "released": "2024-10",
-   "url": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/Iodine/IODINE_DATABASE_RELEASE_4_PER_100G.pdf",
-   "licence": "Public domain (17 U.S.C. 105 - work of the U.S. Government).",
-   "supplies": [
-    "iodine"
-   ],
-   "join": "NDB No. (+ FDC id for Foundation Foods) - byte-exact into our catalog",
-   "note": "478 rows extracted; 293 carry BOTH an NDB and a TDS number, which is a published crosswalk between the USDA and FDA TDS food lists.",
-   "sha256": "01bfa21021002e6031b5076ed46b3f489724835c042d279dab1e977456f5aa84",
-   "bytes": 357524,
-   "path": "eden/foods/sources/iodine-usda-ods/IODINE_DATABASE_RELEASE_4_PER_100G.pdf"
+  "sources": {
+    "iodine-usda-ods/IODINE_DATABASE_RELEASE_4_PER_100G.pdf": {
+      "dataset": "USDA, FDA and ODS-NIH Database for the Iodine Content of Common Foods, Release 4",
+      "publisher": "USDA ARS / FDA CFSAN / NIH Office of Dietary Supplements",
+      "released": "2024-10",
+      "url": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/Iodine/IODINE_DATABASE_RELEASE_4_PER_100G.pdf",
+      "licence": "Public domain (17 U.S.C. 105 - work of the U.S. Government).",
+      "supplies": [
+        "iodine"
+      ],
+      "join": "NDB No. (+ FDC id for Foundation Foods) - byte-exact into our catalog",
+      "note": "478 rows extracted; 293 carry BOTH an NDB and a TDS number, which is a published crosswalk between the USDA and FDA TDS food lists.",
+      "sha256": "01bfa21021002e6031b5076ed46b3f489724835c042d279dab1e977456f5aa84",
+      "bytes": 357524,
+      "path": "eden/foods/sources/iodine-usda-ods/IODINE_DATABASE_RELEASE_4_PER_100G.pdf"
+    },
+    "cofid-uk/McCance_Widdowsons_Composition_of_Foods_Integrated_Dataset_2021.xlsx": {
+      "dataset": "McCance and Widdowson's The Composition of Foods Integrated Dataset (CoFID) 2021",
+      "publisher": "Public Health England / UK Food Standards Agency",
+      "released": "2021",
+      "url": "https://assets.publishing.service.gov.uk/media/60538b91e90e07527df82ae4/McCance_Widdowsons_Composition_of_Foods_Integrated_Dataset_2021..xlsx",
+      "licence": "Open Government Licence v3.0.",
+      "supplies": [
+        "chloride",
+        "biotin",
+        "iodine",
+        "selenium"
+      ],
+      "join": "food name - APPROXIMATE tier, one curation decision per pair",
+      "note": "2,887 foods. 'N' means NOT MEASURED and 'Tr' means TRACE; neither is zero and neither may ever be read as zero (362 chloride and 803 biotin cells are 'N').",
+      "sha256": "436e9445ef2adb2a75f3d7edd51302de3adad25385f9795fc94ba58bd030e97d",
+      "bytes": 4629542,
+      "path": "eden/foods/sources/cofid-uk/McCance_Widdowsons_Composition_of_Foods_Integrated_Dataset_2021.xlsx"
+    },
+    "fda-tds/TDS_FY18-20_Analytical_Results.csv": {
+      "dataset": "FDA Total Diet Study, FY2018-2020 analytical results",
+      "publisher": "U.S. Food and Drug Administration",
+      "released": "2022",
+      "url": "https://www.fda.gov/media/159750/download?attachment",
+      "licence": "Public domain (work of the U.S. Government).",
+      "supplies": [
+        "EVIDENCE ONLY — no shipped value derives from it"
+      ],
+      "join": "n/a — nothing is bound to it",
+      "note": "307 foods, ~3,270 measurements per analyte. EVIDENCE, not a source of shipped numbers: it is what CLOSED chromium and vanadium as food-unreachable (chromium median 0.00 µg/100 g; only 6 of 307 foods clear 7% of vanadium, every one a reject or a condiment). Extracted to candidates/fda-tds-fy18-20-means.json and deliberately not bound — AFCD measures the same elements with far better catalog overlap. SERVED AS text/plain;charset=UTF-8 AND IS ACTUALLY cp1252 (confirmed in the bytes: crème). TDS has NEVER measured boron, tin, sulfur or silicon: checked across all 49 analytes, 1991-2020.",
+      "sha256": "e358bdff4203eba66825edb8cc131669cdc3205cce752c2e898b5a2aa9e6c46c",
+      "bytes": 6262478,
+      "path": "eden/foods/sources/fda-tds/TDS_FY18-20_Analytical_Results.csv"
+    },
+    "fda-tds/TDS_Elements_1991-2002.zip": {
+      "dataset": "FDA Total Diet Study, elements 1991-2002",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/media/149817/download?attachment",
+      "licence": "Public domain (work of the U.S. Government).",
+      "supplies": [
+        "historical element coverage only"
+      ],
+      "join": "n/a",
+      "note": "Used ONLY to prove the analyte list across years. No shipped value derives from it.",
+      "sha256": "490035f60a18e1623af6223e4ea6f642048d45ef3589c6c45fb0a068b0ae179c",
+      "bytes": 1237766,
+      "path": "eden/foods/sources/fda-tds/TDS_Elements_1991-2002.zip"
+    },
+    "fda-tds/TDS_Elements_2003-2017.zip": {
+      "dataset": "FDA Total Diet Study, elements 2003-2017",
+      "publisher": "U.S. Food and Drug Administration",
+      "url": "https://www.fda.gov/media/151752/download?attachment",
+      "licence": "Public domain (work of the U.S. Government).",
+      "supplies": [
+        "historical element coverage only"
+      ],
+      "join": "n/a",
+      "note": "Same - evidence for the analyte list, not a source of shipped numbers.",
+      "sha256": "eca3d610e0171c686638d8732f39633b1fd541304fe13b30f80f0caea6865b5a",
+      "bytes": 2297815,
+      "path": "eden/foods/sources/fda-tds/TDS_Elements_2003-2017.zip"
+    },
+    "flavonoid-usda/Flav_R03-3.zip": {
+      "dataset": "USDA Database for the Flavonoid Content of Selected Foods, Release 3.3",
+      "publisher": "USDA ARS Nutrient Data Laboratory",
+      "released": "2018-03",
+      "url": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/Flav/Flav_R03-3.zip",
+      "licence": "Public domain (work of the U.S. Government).",
+      "supplies": [
+        "flavonoids (5 subclasses)"
+      ],
+      "join": "NDB No. - byte-exact",
+      "note": "Ships as an Access .accdb this host cannot read (no ACE driver; only Jet 4.0, which reads .mdb). The same values are printed in the bundled PDF and were extracted from it by x-coordinate: 510 foods, 3,592 compound rows.",
+      "sha256": "f01397c51ab2c964507a54e158edde6f8065974cda0f97b067f5f361c8ec6939",
+      "bytes": 2465730,
+      "path": "eden/foods/sources/flavonoid-usda/Flav_R03-3.zip"
+    },
+    "flavonoid-usda/USDA_Proanthocyanidin_DB.pdf": {
+      "dataset": "USDA Database for the Proanthocyanidin Content of Selected Foods, Release 2",
+      "publisher": "USDA ARS Nutrient Data Laboratory",
+      "released": "2015",
+      "url": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/PA/PA02.pdf",
+      "licence": "Public domain (work of the U.S. Government).",
+      "supplies": [
+        "proanthocyanidins - the SIXTH flavonoid class"
+      ],
+      "join": "NDB No. - byte-exact",
+      "note": "* OMITTING THIS UNDERSTATES EVERY FLAVONOID TOTAL. USDA publishes it separately from the flavonoid database and it is the largest contributor by mass in berries, cocoa and nuts (cacao 8100, cinnamon 8084, cocoa powder 4252 mg/100 g). Adding it took the catalog from 2 qualifying foods to 10. 283 foods, 1,235 class rows.",
+      "sha256": "347aa75b2550814c40e43bb78f6e82f1c7c61e5f157ab6bff59a041f55c24105",
+      "bytes": 408011,
+      "path": "eden/foods/sources/flavonoid-usda/USDA_Proanthocyanidin_DB.pdf"
+    },
+    "flavonoid-usda/USDA_Isoflavone_DB_R2-1.pdf": {
+      "dataset": "USDA Database for the Isoflavone Content of Selected Foods, Release 2.1",
+      "publisher": "USDA ARS Nutrient Data Laboratory",
+      "url": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/isoflav/Isoflav_R2-1.pdf",
+      "licence": "Public domain (work of the U.S. Government).",
+      "supplies": [
+        "isoflavones - a further flavonoid class"
+      ],
+      "join": "NDB No.",
+      "note": "ACQUIRED, NOT YET EXTRACTED. Would raise flavonoid totals again, as proanthocyanidins did.",
+      "sha256": "3a4650d4011e89317e94ce644b323add23ff029b62d5f9466c548f05071d98d1",
+      "bytes": 385785,
+      "path": "eden/foods/sources/flavonoid-usda/USDA_Isoflavone_DB_R2-1.pdf"
+    },
+    "silicon-powell2005/Powell_2005_silicon_BJN.pdf": {
+      "dataset": "Powell JJ et al., 'A provisional database for the silicon content of foods in the United Kingdom', British Journal of Nutrition 2005;94:804-812",
+      "publisher": "Cambridge University Press",
+      "released": "2005",
+      "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AFEE32B45AD3798A320732575F6C1D4C/S0007114505002503a.pdf/a-provisional-database-for-the-silicon-content-of-foods-in-the-united-kingdom.pdf",
+      "licence": "!! COPYRIGHT CAMBRIDGE UNIVERSITY PRESS. The ARTICLE is not ours to redistribute and is gitignored for that reason, not merely for size - the same policy the seven Wallach books run under. The measured VALUES are facts and are not copyrightable.",
+      "supplies": [
+        "silica"
+      ],
+      "join": "food name - APPROXIMATE tier",
+      "note": "207 UK foods by ICP-OES. 181 rows extracted; 179 reproduce the paper's OWN printed arithmetic (mg/portion == mean x grams/100). The 2 that do not are both teas and are FLAGGED, never silently kept. A vertical Cambridge watermark lands a word on every row, which is why extraction is by x-coordinate and not by whitespace.",
+      "sha256": "546cc6220d02ebabd14f4d097fca85a819733f9ec1fdc27473a060404fe91a07",
+      "bytes": 124036,
+      "path": "eden/foods/sources/silicon-powell2005/Powell_2005_silicon_BJN.pdf"
+    },
+    "ciqual-fr/CIQUAL_2020_XML.zip": {
+      "dataset": "ANSES-CIQUAL French food composition table 2020",
+      "publisher": "ANSES (France)",
+      "released": "2020-07-07",
+      "url": "https://ciqual.anses.fr/cms/sites/default/files/inline-files/XML_2020_07_07.zip",
+      "licence": "CC-BY-4.0 (Zenodo record 4770202).",
+      "supplies": [
+        "chloride",
+        "iodine",
+        "selenium"
+      ],
+      "join": "food name - APPROXIMATE tier",
+      "note": "3,185 foods but only 67 constituents; of our gap list it carries chloride, iodine and selenium ONLY. XML taken over the .xls deliberately - legacy BIFF would have required a new dependency (no xlrd on this host).",
+      "sha256": "cab13941ca693b7007c2f0fed2288fd5b94073fe6d598c9773297cf37aa59ca8",
+      "bytes": 3554394,
+      "path": "eden/foods/sources/ciqual-fr/CIQUAL_2020_XML.zip"
+    },
+    "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx": {
+      "dataset": "Australian Food Composition Database, Release 3",
+      "publisher": "Food Standards Australia New Zealand",
+      "released": "2025-12",
+      "url": "https://www.foodstandards.gov.au/sites/default/files/2025-12/AFCD%20Release%203%20-%20Nutrient%20profiles.xlsx",
+      "licence": "CC-BY (FSANZ).",
+      "supplies": [
+        "sulphur",
+        "chromium",
+        "chloride",
+        "iodine",
+        "molybdenum",
+        "selenium",
+        "biotin"
+      ],
+      "join": "food name - APPROXIMATE tier",
+      "note": "* THE RICHEST ACQUISITION OF THE CAMPAIGN. 1,588 foods x 272 columns. Carries SULPHUR MEASURED DIRECTLY per 100 g (nori 1900, abalone 600-770, oyster 367), which retires the dry-weight conversion entirely and gives sulfur a second source. Also gives chromium a second read that PARTLY REVERSES the 'no food reaches it' verdict: abalone 392.5 ug/100 g (63% of target), ocean trout 118-163. Values present: iodine 1588, selenium 1588, molybdenum 663, chloride 575, biotin 544, sulphur 446, chromium 441.",
+      "sha256": "14cb3e73dbf58987b440e6299624c0fefd7a4e61591fc1f753995d9534e0efc9",
+      "bytes": 2107021,
+      "path": "eden/foods/sources/afcd-au/AFCD_Release3_Nutrient_profiles.xlsx"
+    },
+    "doleman2017/Doleman_2017_PMC5460521_fullTextXML.xml": {
+      "dataset": "Doleman JF, Grisar K, Van Liedekerke L, Saha S, Roe M, Tapp HS, Mithen RF, 'The contribution of alliaceous and cruciferous vegetables to dietary sulphur intake', Food Chemistry 2017;234:38-45. Table 1: sulphur content of 32 commonly consumed foods.",
+      "publisher": "Elsevier (Institute of Food Research, Norwich)",
+      "released": "2017",
+      "doi": "10.1016/j.foodchem.2017.04.098",
+      "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5460521/fullTextXML",
+      "licence": "CC BY 4.0 — stated in the article's own <permissions> block. Freely redistributable with attribution, unlike Powell 2005; it is gitignored for consistency of policy and repo weight, not for copyright.",
+      "supplies": [
+        "sulfur"
+      ],
+      "join": "food name - APPROXIMATE tier, one curation decision per pair",
+      "note": "★ READ AS JATS XML, NOT AS A PDF. Europe PMC serves the open-access full text with Table 1 as real <tr>/<td> cells, so the columns cannot be spliced by a watermark or a wrapped line the way every other extractor here has to guard against. ★ THE VALUES ARE umoles/g DRY WEIGHT and the paper never prints a moisture percentage, so a fresh-weight number has to be derived at derive time from the PAIRED food's USDA water content — which is why no Doleman row can ever be EXACT tier. ★ All 32 rows were checked against the values that had been hand-typed into the old convert_sulfur.py: every one agreed exactly. They were right; the point of pinning is that they are now PROVABLE.",
+      "sha256": "f537530b4ef40b1ce0820b4a4393b1691c19675121c07eab0f15176d13d8705b",
+      "bytes": 97045,
+      "path": "eden/foods/sources/doleman2017/Doleman_2017_PMC5460521_fullTextXML.xml"
+    },
+    "boron-nih-ods/Boron-HealthProfessional.html": {
+      "dataset": "NIH Office of Dietary Supplements — Boron, Health Professional Fact Sheet, Table 1: Boron Content of Selected Foods (39 foods)",
+      "publisher": "NIH Office of Dietary Supplements",
+      "url": "https://ods.od.nih.gov/factsheets/Boron-HealthProfessional/",
+      "licence": "Public domain (work of the U.S. Government).",
+      "supplies": [
+        "EVIDENCE ONLY — no shipped value derives from it"
+      ],
+      "join": "n/a — see _boron_finding",
+      "note": "Acquired 2026-08-22 to settle boron one way or the other. Extracted by eden/tools/foods/extract_boron.py into candidates/boron-nih-ods.json, and NOT bound to any essential. The reason is in _boron_finding below, and it is a finding rather than a gap.",
+      "sha256": "fd271b3ca31c85de0fca09b572bb504fa0b7b92b9c55393964a184ff8d8b2104",
+      "bytes": 185532,
+      "path": "eden/foods/sources/boron-nih-ods/Boron-HealthProfessional.html"
+    }
   },
-  "cofid-uk/McCance_Widdowsons_Composition_of_Foods_Integrated_Dataset_2021.xlsx": {
-   "dataset": "McCance and Widdowson's The Composition of Foods Integrated Dataset (CoFID) 2021",
-   "publisher": "Public Health England / UK Food Standards Agency",
-   "released": "2021",
-   "url": "https://assets.publishing.service.gov.uk/media/60538b91e90e07527df82ae4/McCance_Widdowsons_Composition_of_Foods_Integrated_Dataset_2021..xlsx",
-   "licence": "Open Government Licence v3.0.",
-   "supplies": [
-    "chloride",
-    "biotin",
-    "iodine",
-    "selenium"
-   ],
-   "join": "food name - APPROXIMATE tier, one curation decision per pair",
-   "note": "2,887 foods. 'N' means NOT MEASURED and 'Tr' means TRACE; neither is zero and neither may ever be read as zero (362 chloride and 803 biotin cells are 'N').",
-   "sha256": "436e9445ef2adb2a75f3d7edd51302de3adad25385f9795fc94ba58bd030e97d",
-   "bytes": 4629542,
-   "path": "eden/foods/sources/cofid-uk/McCance_Widdowsons_Composition_of_Foods_Integrated_Dataset_2021.xlsx"
-  },
-  "fda-tds/TDS_FY18-20_Analytical_Results.csv": {
-   "dataset": "FDA Total Diet Study, FY2018-2020 analytical results",
-   "publisher": "U.S. Food and Drug Administration",
-   "released": "2022",
-   "url": "https://www.fda.gov/media/159750/download?attachment",
-   "licence": "Public domain (work of the U.S. Government).",
-   "supplies": [
-    "EVIDENCE ONLY — no shipped value derives from it"
-   ],
-   "join": "n/a — nothing is bound to it",
-   "note": "307 foods, ~3,270 measurements per analyte. EVIDENCE, not a source of shipped numbers: it is what CLOSED chromium and vanadium as food-unreachable (chromium median 0.00 µg/100 g; only 6 of 307 foods clear 7% of vanadium, every one a reject or a condiment). Extracted to candidates/fda-tds-fy18-20-means.json and deliberately not bound — AFCD measures the same elements with far better catalog overlap. SERVED AS text/plain;charset=UTF-8 AND IS ACTUALLY cp1252 (confirmed in the bytes: crème). TDS has NEVER measured boron, tin, sulfur or silicon: checked across all 49 analytes, 1991-2020.",
-   "sha256": "e358bdff4203eba66825edb8cc131669cdc3205cce752c2e898b5a2aa9e6c46c",
-   "bytes": 6262478,
-   "path": "eden/foods/sources/fda-tds/TDS_FY18-20_Analytical_Results.csv"
-  },
-  "fda-tds/TDS_Elements_1991-2002.zip": {
-   "dataset": "FDA Total Diet Study, elements 1991-2002",
-   "publisher": "U.S. Food and Drug Administration",
-   "url": "https://www.fda.gov/media/149817/download?attachment",
-   "licence": "Public domain (work of the U.S. Government).",
-   "supplies": [
-    "historical element coverage only"
-   ],
-   "join": "n/a",
-   "note": "Used ONLY to prove the analyte list across years. No shipped value derives from it.",
-   "sha256": "490035f60a18e1623af6223e4ea6f642048d45ef3589c6c45fb0a068b0ae179c",
-   "bytes": 1237766,
-   "path": "eden/foods/sources/fda-tds/TDS_Elements_1991-2002.zip"
-  },
-  "fda-tds/TDS_Elements_2003-2017.zip": {
-   "dataset": "FDA Total Diet Study, elements 2003-2017",
-   "publisher": "U.S. Food and Drug Administration",
-   "url": "https://www.fda.gov/media/151752/download?attachment",
-   "licence": "Public domain (work of the U.S. Government).",
-   "supplies": [
-    "historical element coverage only"
-   ],
-   "join": "n/a",
-   "note": "Same - evidence for the analyte list, not a source of shipped numbers.",
-   "sha256": "eca3d610e0171c686638d8732f39633b1fd541304fe13b30f80f0caea6865b5a",
-   "bytes": 2297815,
-   "path": "eden/foods/sources/fda-tds/TDS_Elements_2003-2017.zip"
-  },
-  "flavonoid-usda/Flav_R03-3.zip": {
-   "dataset": "USDA Database for the Flavonoid Content of Selected Foods, Release 3.3",
-   "publisher": "USDA ARS Nutrient Data Laboratory",
-   "released": "2018-03",
-   "url": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/Flav/Flav_R03-3.zip",
-   "licence": "Public domain (work of the U.S. Government).",
-   "supplies": [
-    "flavonoids (5 subclasses)"
-   ],
-   "join": "NDB No. - byte-exact",
-   "note": "Ships as an Access .accdb this host cannot read (no ACE driver; only Jet 4.0, which reads .mdb). The same values are printed in the bundled PDF and were extracted from it by x-coordinate: 510 foods, 3,592 compound rows.",
-   "sha256": "f01397c51ab2c964507a54e158edde6f8065974cda0f97b067f5f361c8ec6939",
-   "bytes": 2465730,
-   "path": "eden/foods/sources/flavonoid-usda/Flav_R03-3.zip"
-  },
-  "flavonoid-usda/USDA_Proanthocyanidin_DB.pdf": {
-   "dataset": "USDA Database for the Proanthocyanidin Content of Selected Foods, Release 2",
-   "publisher": "USDA ARS Nutrient Data Laboratory",
-   "released": "2015",
-   "url": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/PA/PA02.pdf",
-   "licence": "Public domain (work of the U.S. Government).",
-   "supplies": [
-    "proanthocyanidins - the SIXTH flavonoid class"
-   ],
-   "join": "NDB No. - byte-exact",
-   "note": "* OMITTING THIS UNDERSTATES EVERY FLAVONOID TOTAL. USDA publishes it separately from the flavonoid database and it is the largest contributor by mass in berries, cocoa and nuts (cacao 8100, cinnamon 8084, cocoa powder 4252 mg/100 g). Adding it took the catalog from 2 qualifying foods to 10. 283 foods, 1,235 class rows.",
-   "sha256": "347aa75b2550814c40e43bb78f6e82f1c7c61e5f157ab6bff59a041f55c24105",
-   "bytes": 408011,
-   "path": "eden/foods/sources/flavonoid-usda/USDA_Proanthocyanidin_DB.pdf"
-  },
-  "flavonoid-usda/USDA_Isoflavone_DB_R2-1.pdf": {
-   "dataset": "USDA Database for the Isoflavone Content of Selected Foods, Release 2.1",
-   "publisher": "USDA ARS Nutrient Data Laboratory",
-   "url": "https://www.ars.usda.gov/ARSUserFiles/80400535/Data/isoflav/Isoflav_R2-1.pdf",
-   "licence": "Public domain (work of the U.S. Government).",
-   "supplies": [
-    "isoflavones - a further flavonoid class"
-   ],
-   "join": "NDB No.",
-   "note": "ACQUIRED, NOT YET EXTRACTED. Would raise flavonoid totals again, as proanthocyanidins did.",
-   "sha256": "3a4650d4011e89317e94ce644b323add23ff029b62d5f9466c548f05071d98d1",
-   "bytes": 385785,
-   "path": "eden/foods/sources/flavonoid-usda/USDA_Isoflavone_DB_R2-1.pdf"
-  },
-  "silicon-powell2005/Powell_2005_silicon_BJN.pdf": {
-   "dataset": "Powell JJ et al., 'A provisional database for the silicon content of foods in the United Kingdom', British Journal of Nutrition 2005;94:804-812",
-   "publisher": "Cambridge University Press",
-   "released": "2005",
-   "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AFEE32B45AD3798A320732575F6C1D4C/S0007114505002503a.pdf/a-provisional-database-for-the-silicon-content-of-foods-in-the-united-kingdom.pdf",
-   "licence": "!! COPYRIGHT CAMBRIDGE UNIVERSITY PRESS. The ARTICLE is not ours to redistribute and is gitignored for that reason, not merely for size - the same policy the seven Wallach books run under. The measured VALUES are facts and are not copyrightable.",
-   "supplies": [
-    "silica"
-   ],
-   "join": "food name - APPROXIMATE tier",
-   "note": "207 UK foods by ICP-OES. 181 rows extracted; 179 reproduce the paper's OWN printed arithmetic (mg/portion == mean x grams/100). The 2 that do not are both teas and are FLAGGED, never silently kept. A vertical Cambridge watermark lands a word on every row, which is why extraction is by x-coordinate and not by whitespace.",
-   "sha256": "546cc6220d02ebabd14f4d097fca85a819733f9ec1fdc27473a060404fe91a07",
-   "bytes": 124036,
-   "path": "eden/foods/sources/silicon-powell2005/Powell_2005_silicon_BJN.pdf"
-  },
-  "ciqual-fr/CIQUAL_2020_XML.zip": {
-   "dataset": "ANSES-CIQUAL French food composition table 2020",
-   "publisher": "ANSES (France)",
-   "released": "2020-07-07",
-   "url": "https://ciqual.anses.fr/cms/sites/default/files/inline-files/XML_2020_07_07.zip",
-   "licence": "CC-BY-4.0 (Zenodo record 4770202).",
-   "supplies": [
-    "chloride",
-    "iodine",
-    "selenium"
-   ],
-   "join": "food name - APPROXIMATE tier",
-   "note": "3,185 foods but only 67 constituents; of our gap list it carries chloride, iodine and selenium ONLY. XML taken over the .xls deliberately - legacy BIFF would have required a new dependency (no xlrd on this host).",
-   "sha256": "cab13941ca693b7007c2f0fed2288fd5b94073fe6d598c9773297cf37aa59ca8",
-   "bytes": 3554394,
-   "path": "eden/foods/sources/ciqual-fr/CIQUAL_2020_XML.zip"
-  },
-  "afcd-au/AFCD_Release3_Nutrient_profiles.xlsx": {
-   "dataset": "Australian Food Composition Database, Release 3",
-   "publisher": "Food Standards Australia New Zealand",
-   "released": "2025-12",
-   "url": "https://www.foodstandards.gov.au/sites/default/files/2025-12/AFCD%20Release%203%20-%20Nutrient%20profiles.xlsx",
-   "licence": "CC-BY (FSANZ).",
-   "supplies": [
-    "sulphur",
-    "chromium",
-    "chloride",
-    "iodine",
-    "molybdenum",
-    "selenium",
-    "biotin"
-   ],
-   "join": "food name - APPROXIMATE tier",
-   "note": "* THE RICHEST ACQUISITION OF THE CAMPAIGN. 1,588 foods x 272 columns. Carries SULPHUR MEASURED DIRECTLY per 100 g (nori 1900, abalone 600-770, oyster 367), which retires the dry-weight conversion entirely and gives sulfur a second source. Also gives chromium a second read that PARTLY REVERSES the 'no food reaches it' verdict: abalone 392.5 ug/100 g (63% of target), ocean trout 118-163. Values present: iodine 1588, selenium 1588, molybdenum 663, chloride 575, biotin 544, sulphur 446, chromium 441.",
-   "sha256": "14cb3e73dbf58987b440e6299624c0fefd7a4e61591fc1f753995d9534e0efc9",
-   "bytes": 2107021,
-   "path": "eden/foods/sources/afcd-au/AFCD_Release3_Nutrient_profiles.xlsx"
-  },
-  "doleman2017/Doleman_2017_PMC5460521_fullTextXML.xml": {
-   "dataset": "Doleman JF, Grisar K, Van Liedekerke L, Saha S, Roe M, Tapp HS, Mithen RF, 'The contribution of alliaceous and cruciferous vegetables to dietary sulphur intake', Food Chemistry 2017;234:38-45. Table 1: sulphur content of 32 commonly consumed foods.",
-   "publisher": "Elsevier (Institute of Food Research, Norwich)",
-   "released": "2017",
-   "doi": "10.1016/j.foodchem.2017.04.098",
-   "url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5460521/fullTextXML",
-   "licence": "CC BY 4.0 — stated in the article's own <permissions> block. Freely redistributable with attribution, unlike Powell 2005; it is gitignored for consistency of policy and repo weight, not for copyright.",
-   "supplies": [
-    "sulfur"
-   ],
-   "join": "food name - APPROXIMATE tier, one curation decision per pair",
-   "note": "★ READ AS JATS XML, NOT AS A PDF. Europe PMC serves the open-access full text with Table 1 as real <tr>/<td> cells, so the columns cannot be spliced by a watermark or a wrapped line the way every other extractor here has to guard against. ★ THE VALUES ARE umoles/g DRY WEIGHT and the paper never prints a moisture percentage, so a fresh-weight number has to be derived at derive time from the PAIRED food's USDA water content — which is why no Doleman row can ever be EXACT tier. ★ All 32 rows were checked against the values that had been hand-typed into the old convert_sulfur.py: every one agreed exactly. They were right; the point of pinning is that they are now PROVABLE.",
-   "sha256": "f537530b4ef40b1ce0820b4a4393b1691c19675121c07eab0f15176d13d8705b",
-   "bytes": 97045,
-   "path": "eden/foods/sources/doleman2017/Doleman_2017_PMC5460521_fullTextXML.xml"
-  },
-  "boron-nih-ods/Boron-HealthProfessional.html": {
-   "dataset": "NIH Office of Dietary Supplements — Boron, Health Professional Fact Sheet, Table 1: Boron Content of Selected Foods (39 foods)",
-   "publisher": "NIH Office of Dietary Supplements",
-   "url": "https://ods.od.nih.gov/factsheets/Boron-HealthProfessional/",
-   "licence": "Public domain (work of the U.S. Government).",
-   "supplies": [
-    "EVIDENCE ONLY — no shipped value derives from it"
-   ],
-   "join": "n/a — see _boron_finding",
-   "note": "Acquired 2026-08-22 to settle boron one way or the other. Extracted by eden/tools/foods/extract_boron.py into candidates/boron-nih-ods.json, and NOT bound to any essential. The reason is in _boron_finding below, and it is a finding rather than a gap.",
-   "sha256": "fd271b3ca31c85de0fca09b572bb504fa0b7b92b9c55393964a184ff8d8b2104",
-   "bytes": 185532,
-   "path": "eden/foods/sources/boron-nih-ods/Boron-HealthProfessional.html"
-  }
- },
- "_iodine_second_source_finding": "★ IODINE: A SECOND SOURCE THAT FILLS GAPS AND MUST NOT OVERWRITE (2026-08-22). Iodine was the worst-covered essential with a source at all: USDA/FDA/ODS reached 10 of 192 catalog foods and the other 182 showed nothing. AFCD was added as a second part, gap-fill only. ⚠ THE TWO SOURCES DISAGREE SUBSTANTIALLY WHEREVER BOTH MEASURE THE SAME FOOD, and this was measured before binding, not after: Lobster 185 vs 34.0 µg/100 g (5.4x), Ricotta 66 vs 19.0 (3.5x), Cottage cheese 46 vs 15.3 (3.0x), Egg 61 vs 47.3 (1.3x), Salt 5213 vs 4400 (1.2x). That is NOT a transcription error and chasing it as one would waste a session. It is geography: dietary iodine tracks soil iodine, national iodised-salt policy, and whether dairies clean with iodophor sanitisers -- and Australia and the United States differ on all three. Iodine is therefore the nutrient where two national food tables are LEAST interchangeable, which is exactly why the combine is `first` with the US table ahead: AFCD speaks only where ODS is silent, and not one existing number moved. WHAT IT BOUGHT, measured: 23 foods gained an iodine number they did not have, taking coverage from 10 to 33 of 192. Only ONE of them clears Wallach's 7% qualify floor -- Whole milk, at 24.3% of his 230 µg/day, which also makes it STRONG. The other 22 sit below the bar and are shown as measured-and-small rather than as nothing, per the curation's standing rule that a blank reads as 'not a source' and is the stronger, falser claim. NO NEW NAME PAIRS WERE INVENTED FOR THIS. Every one of the 23 rides a curated afcd-au-r3 pair that a human had already accepted for chloride, biotin, molybdenum or sulphur, with its reasoning already recorded in foods-catalog-curation.json. Widening iodine further means curating NEW pairs one at a time, which is a separate decision and has not been taken.",
- "_boron_finding": "★ BORON: ACQUIRED, MEASURED, AND DELIBERATELY NOT BOUND (2026-08-22). It was the last essential with no source at all, and it now has one that has been read rather than assumed. Three facts decide it. (1) NO SOURCE WE HOLD MEASURES BORON PER 100 g: USDA does not measure it at all — the ODS fact sheet says so itself, 'FoodData Central does not list the boron content of foods' — FDA TDS has never measured it across all 49 analytes 1991-2020, and AFCD does not carry it. (2) THE ODS TABLE IS PER SERVING WITH NO SERVING WEIGHT: 'Apples, 1 medium — 0.66 mg', and it never says what a medium apple weighs. It is not USDA-derived (its references are Rainey 1999 and Meacham & Hunt 1998), so USDA's gram weight for a household measure is NOT this table's, and supplying one would invent a number the source never stated. (3) THE ONE CLEAN JOIN CARRIES ALMOST NOTHING: six rows share an identical household measure with a catalog food, and only 'Apples, 1 medium' reaches 7% of Wallach's 9.2 mg — at 7.2%, and only if a medium apple means the same size in both tables. Shipping one food at 7.2% on an unstated serving weight would put a number on screen that the gate can check for transcription and nothing can check for meaning. Boron therefore stays in `essentials_without_composition`, and that entry is now a measured conclusion instead of an errand nobody ran. ⚠ TO REOPEN IT you need a source that publishes boron PER 100 g — Rainey 1999 and Meacham & Hunt 1998 are the two papers behind this table and neither is held; a European or Australian table that measures boron directly would be the other way.",
- "_authorship": "★ HAND-AUTHORED. A generator (eden/tools/foods/mk_sources.py) used to write this file from a hardcoded table, and it was DELETED on 2026-08-22: it knew nothing about nutrient_bindings, combine, per-part source_id/display or the boron finding, so re-running it would have silently erased all of them. A generator that would clobber the file it generates is worse than no generator. Edit this file directly."
+  "_iodine_second_source_finding": "★ IODINE: A SECOND SOURCE THAT FILLS GAPS AND MUST NOT OVERWRITE (2026-08-22). Iodine was the worst-covered essential with a source at all: USDA/FDA/ODS reached 10 of 192 catalog foods and the other 182 showed nothing. AFCD was added as a second part, gap-fill only. ⚠ THE TWO SOURCES DISAGREE SUBSTANTIALLY WHEREVER BOTH MEASURE THE SAME FOOD, and this was measured before binding, not after: Lobster 185 vs 34.0 µg/100 g (5.4x), Ricotta 66 vs 19.0 (3.5x), Cottage cheese 46 vs 15.3 (3.0x), Egg 61 vs 47.3 (1.3x), Salt 5213 vs 4400 (1.2x). That is NOT a transcription error and chasing it as one would waste a session. It is geography: dietary iodine tracks soil iodine, national iodised-salt policy, and whether dairies clean with iodophor sanitisers -- and Australia and the United States differ on all three. Iodine is therefore the nutrient where two national food tables are LEAST interchangeable, which is exactly why the combine is `first` with the US table ahead: AFCD speaks only where ODS is silent, and not one existing number moved. WHAT IT BOUGHT, measured: 23 foods gained an iodine number they did not have, taking coverage from 10 to 33 of 192. Only ONE of them clears Wallach's 7% qualify floor -- Whole milk, at 24.3% of his 230 µg/day, which also makes it STRONG. The other 22 sit below the bar and are shown as measured-and-small rather than as nothing, per the curation's standing rule that a blank reads as 'not a source' and is the stronger, falser claim. NO NEW NAME PAIRS WERE INVENTED FOR THIS. Every one of the 23 rides a curated afcd-au-r3 pair that a human had already accepted for chloride, biotin, molybdenum or sulphur, with its reasoning already recorded in foods-catalog-curation.json. Widening iodine further means curating NEW pairs one at a time, which is a separate decision and has not been taken.",
+  "_boron_finding": "★ BORON: ACQUIRED, MEASURED, AND DELIBERATELY NOT BOUND (2026-08-22). It was the last essential with no source at all, and it now has one that has been read rather than assumed. Three facts decide it. (1) NO SOURCE WE HOLD MEASURES BORON PER 100 g: USDA does not measure it at all — the ODS fact sheet says so itself, 'FoodData Central does not list the boron content of foods' — FDA TDS has never measured it across all 49 analytes 1991-2020, and AFCD does not carry it. (2) THE ODS TABLE IS PER SERVING WITH NO SERVING WEIGHT: 'Apples, 1 medium — 0.66 mg', and it never says what a medium apple weighs. It is not USDA-derived (its references are Rainey 1999 and Meacham & Hunt 1998), so USDA's gram weight for a household measure is NOT this table's, and supplying one would invent a number the source never stated. (3) THE ONE CLEAN JOIN CARRIES ALMOST NOTHING: six rows share an identical household measure with a catalog food, and only 'Apples, 1 medium' reaches 7% of Wallach's 9.2 mg — at 7.2%, and only if a medium apple means the same size in both tables. Shipping one food at 7.2% on an unstated serving weight would put a number on screen that the gate can check for transcription and nothing can check for meaning. Boron therefore stays in `essentials_without_composition`, and that entry is now a measured conclusion instead of an errand nobody ran. ⚠ TO REOPEN IT you need a source that publishes boron PER 100 g — Rainey 1999 and Meacham & Hunt 1998 are the two papers behind this table and neither is held; a European or Australian table that measures boron directly would be the other way.",
+  "_authorship": "★ HAND-AUTHORED. A generator (eden/tools/foods/mk_sources.py) used to write this file from a hardcoded table, and it was DELETED on 2026-08-22: it knew nothing about nutrient_bindings, combine, per-part source_id/display or the boron finding, so re-running it would have silently erased all of them. A generator that would clobber the file it generates is worse than no generator. Edit this file directly.",
+  "_boron_finding_2026_08_24": "★ SEARCHED AGAIN ON THE OWNER'S INSTRUCTION (2026-08-24): \"find a reliable source for Boron, if I can do a simple google search and get exact numbers and top foods, there's no way it's not published somewhere.\" He is right that numbers are published. What the search actually found is more useful than that, and it CONFIRMS the 2026-08-22 refusal rather than overturning it. (1) THE WIDELY-CIRCULATED NUMBERS ARE DISCLAIMED BY THEIR OWN AUTHORS. The figures a search returns -- raisins 4.51 mg/100 g, almonds 2.82, dried apricots 2.11 -- trace to a table captioned, verbatim, \"(Food Processor/Overestimated) Boron Content of Richest Food Sources\" in Pizzorno, 'Nothing Boring About Boron' (Integr Med 2015, PMC4712861). The same article states why: \"Meacham et al have shown that currently available computer software databases such as Food Processor (ESHA, Salem, OR, USA) greatly overestimate the boron content of foods.\" Those numbers are software estimates, not measurements. (2) THE CHEMICALLY ANALYSED TABLE IS TEN FOODS AND THE VALUES ARE 3-8x LOWER. Table 2 of the same article, adapted from Meacham et al: avocado 1.43 mg/100 g, peanut butter 0.59, peanuts dry 0.58, prune juice 0.56, chocolate powder 0.43, red wine 0.36, granola-raisin cereal 0.36, grape juice 0.34, pecans 0.26, raisin bran 0.26. Scored against Wallach's 9.2 mg on our own serving weights, exactly THREE clear the 7% floor -- avocado 21.1% (136 g, already in the catalog), prune juice 15.6% and grape juice 9.4% -- and two of those three are juices, which the anti-list refuses. So a boron binding on this table would ship ONE food: avocado. (3) EVERY OTHER TABLE WE HOLD OR COULD REACH STILL FAILS. Re-checked directly this session: CIQUAL 2020 publishes 67 components and boron is not among them; CoFID supplies chloride, biotin, iodine and selenium and not boron; AFCD does not carry it; USDA FoodData Central does not measure it; FDA TDS never has. FAO's Food Composition Tables for Bahrain LIST boron in their units table at mg/100 g to 2 decimals -- which is why a search hits them -- but the tables themselves report only \"three minerals (Ca, P, Fe)\", so the column is declared and never populated. Hunt/Shuler/Mullen 1991 (JADA 91:558-68) and Naghii 1996 (66 Australian foods per 100 g, J Am Coll Nutr, PMID 8951740) are the two primary tables that would actually do the job and BOTH are paywalled; neither is held. ★ WHAT IS NOT DONE, AND WHY IT IS THE OWNER'S CALL. The reachable table is a REVIEW's adaptation of Meacham, not Meacham's own paper. Every other second source here pins a PRIMARY payload -- Doleman 2017 is a PMC full text, Powell 2005 is the journal PDF -- and pinning a secondhand transcription is a step down from that bar, on the one nutrient whose numbers have already proven to be widely misreported. Two honest ways forward: acquire Meacham & Hunt 1998 or Naghii 1996 and pin the primary, or accept the review as an APPROXIMATE source for the single food it can actually support. Not bound either way without his ruling (2026-08-21: gather, verify, THEN build)."
 }

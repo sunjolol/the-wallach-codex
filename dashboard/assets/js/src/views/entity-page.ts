@@ -67,7 +67,7 @@ import {
 } from '../state/corpus.js';
 import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCeiling, essentialNameOf, essentialSlugFor, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
 import { essentialLede, essentialSourcesNote, essentialWhy } from '../state/entity-copy.js';
-import { type FoodSourceVerdict, foodSourceVerdict, type RankedFoodSource, rankedFoodsForEssential } from '../state/foods.js';
+import { foodSourceVerdict, type RankedFoodSource, rankedFoodsForEssential } from '../state/foods.js';
 import { getConditionPage, getEssentialPage } from '../state/entity-page.js';
 import { glossaryDef } from '../state/glossary.js';
 import { type CoverageRec, rankProductsForCoverage } from '../state/recommender.js';
@@ -378,7 +378,7 @@ function srcRow(s: RankedSourceRow, isBest: boolean): string {
     </button>`;
 }
 
-function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageTile | null, status: CoverageStatus, snapshot: CoverageSnapshot | null, showSources = true): string {
+function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageTile | null, status: CoverageStatus, snapshot: CoverageSnapshot | null, showSources = true, ownsFoodBlock = true): string {
   // Plant-derived GROUP tiles carry no per-element dose — the trace_pdm minerals share ONE
   // meter (Σ plant-derived vehicle mg vs the 924 mg Wallach group goal). Render the group
   // treatment, not the per-element target/pending logic.
@@ -431,7 +431,7 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
     coverageHTML = `<div class="kd-ep-k">Your coverage</div>
         <div class="kd-ep-readout"><span class="kd-essential-deep__status-pill ${statusPillClass(status)}">● ${statusLabel(status)}</span></div>`;
   }
-  const sourcesHTML = showSources ? renderSourcesBlock(layoutKey, slug) : '';
+  const sourcesHTML = showSources ? renderSourcesBlock(layoutKey, slug, ownsFoodBlock) : '';
   return `<div class="kd-ep-op">
     <div class="kd-ep-op__grid">
       <div>
@@ -478,20 +478,11 @@ function foodSrcRow(f: RankedFoodSource): string {
  * The grounds are DERIVED (state/foods.ts::foodSourceVerdict), never a hand-kept slug list —
  * such a list goes stale silently, which is the failure mode this whole block is about.
  */
-function renderFoodSourcesBlock(slug: string | null, onlyIf: FoodSourceVerdict | null = null): string {
+function renderFoodSourcesBlock(slug: string | null): string {
   if (slug === null) {
     return '';
   }
   const verdict = foodSourceVerdict(slug);
-  // `onlyIf` exists for ONE caller: the plant-derived hero, which renders on every page
-  // carrying `group_record` — and that set is wider than the plant-derived minerals. Tin also
-  // carries it (Wallach names the colloidal vehicle as tin's supply route), and tin ALSO gets
-  // the standard sources block, so an unguarded call there printed the food block twice on the
-  // same page. The guard says "render here only if this page is plant-derived", which leaves
-  // tin to the standard block that was already saying the right thing about it.
-  if (onlyIf !== null && verdict !== onlyIf) {
-    return '';
-  }
   const label = `<hr class="kd-ep-op__div">
       <div class="kd-ep-k kd-ep-op__srclabel">${escHTML(ui('kd_ep_foodsrc_label'))}</div>`;
   if (verdict !== 'foods') {
@@ -499,7 +490,8 @@ function renderFoodSourcesBlock(slug: string | null, onlyIf: FoodSourceVerdict |
       : verdict === 'vehicle_supplied' ? 'kd_ep_foodsrc_vehicle'
         : verdict === 'unreachable' ? 'kd_ep_foodsrc_unreachable'
           : verdict === 'no_binding' ? 'kd_ep_foodsrc_no_binding'
-            : 'kd_ep_foodsrc_no_target';
+            : verdict === 'zero_target' ? 'kd_ep_foodsrc_zero_target'
+              : 'kd_ep_foodsrc_no_target';
     return `${label}<p class="kd-ep-foodnote">${escHTML(ui(noteId))}</p>`;
   }
   const foods = rankedFoodsForEssential(slug);
@@ -519,7 +511,7 @@ function renderFoodSourcesBlock(slug: string | null, onlyIf: FoodSourceVerdict |
  * by the standard glance + the non-essential glance (omega-9 lists its label composition too — the
  * mg is what a product CONTAINS, never a target · §00.A). '' when no product carries it.
  */
-function renderSourcesBlock(layoutKey: string, slugIn: string | null = null): string {
+function renderSourcesBlock(layoutKey: string, slugIn: string | null = null, ownsFoodBlock = true): string {
   // Three callers hand us only the layout key (the omega family blocks, the non-essential
   // glance). Resolving the slug here rather than at each of them means the FOOD block reaches
   // every path that renders sources, instead of the subset that happened to have a slug.
@@ -539,11 +531,19 @@ function renderSourcesBlock(layoutKey: string, slugIn: string | null = null): st
   const note = slug !== null ? essentialSourcesNote(slug) : '';
   const noteHtml = note.length > 0 ? `<p class="kd-ep-srcnote">${escHTML(note)}</p>` : '';
   if (sources.length === 0) {
-    // The FOOD block is independent of whether any product carries this, so it survives the
-    // no-products exit. Germanium is the case that proves it: zero rows in the whole pillar,
-    // and Wallach names the colloidal-mineral vehicle as its supply route — the one essential
-    // most in need of a where-from line would otherwise be the only one that never shows one.
-    const foodsHTML = renderFoodSourcesBlock(slug);
+    // ★ NO PRODUCTS HERE MEANS NO FOOD BLOCK HERE EITHER. The food block belongs directly above
+    // the sources list, and on a page whose sources are DEFERRED to a section further down (the
+    // plant-derived hero, the omega family blocks) this call site has no list for it to sit
+    // above. Emitting it anyway stranded the note in the top "at a glance" panel while the list
+    // it belongs to sat 900 px below — measured on Tin, note at y=477, sources at y=1351. The
+    // deferred renderer carries it instead; renderPdmClarity is the one that does.
+    // With no product rows there is no sources LIST here for the food block to sit above — so
+    // it renders here ONLY when nothing further down the page is going to carry it. Germanium
+    // proves why the flag is needed: it has a diet note AND a plant-derived hero, and emitting
+    // unconditionally put the food block on the page twice. Hydrogen and Phosphorus prove the
+    // other half: no dock exists anywhere on their pages, so if the glance does not carry it,
+    // nothing does, and the owner's rule is that it is always there.
+    const foodsHTML = ownsFoodBlock ? renderFoodSourcesBlock(slug) : '';
     return note.length === 0
       ? foodsHTML
       : `${foodsHTML}<hr class="kd-ep-op__div">
@@ -1908,7 +1908,7 @@ function renderPdmClarity(page: EssentialPage): string {
         ${fatFamilyStep('04', 'kd_ep_pdm_s4_t', 'kd_ep_pdm_s4_b')}
       </div>
       ${fatFamilyQuote('WAL-CLM-RARE-000061', '98 %')}
-      ${renderFoodSourcesBlock(essentialSlugFor(page.name), 'plant_derived')}
+      ${renderFoodSourcesBlock(essentialSlugFor(page.name))}
       ${renderPdmSourcesBlock()}
     </section>`;
 }
@@ -1984,7 +1984,12 @@ export function renderEssentialPage(layoutKey: string, snapshot: CoverageSnapsho
   const tile = tileOf(snapshot, layoutKey);
   const status: CoverageStatus = tile?.status ?? '';
   const deferSources = page !== null && (fatBlockOwnsSources(page.name) || (slug !== null && MECH_BY_SLUG.has(slug)));
-  const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot, !deferSources);
+  // The plant-derived hero renders its own sources dock and carries the food block with it, so
+  // the glance must not also emit one. `group_record` is the derived per-page datum that marks
+  // such a page — it is present on the 34 trace_pdm slugs AND on tin, which is exactly the set
+  // whose pages show the plant-derived block.
+  const pdmHero = page !== null && page.group_record !== undefined && page.group_record.length > 0;
+  const glanceHTML = renderAtAGlance(layoutKey, slug, tile, status, snapshot, !deferSources, !pdmHero);
 
   if (page === null) {
     // Graceful fallback: an essential the artifact has no record for. Every canon slug has one

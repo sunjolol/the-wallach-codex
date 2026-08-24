@@ -6,11 +6,25 @@
   "_pinned_retired": "RETIRED 2026-08-22 by Luneth, reversing the 2026-08-21 ruling that put eggs in first position. The FOOD SOURCES list is now one ranked order end to end (see state/foods.ts): with goals chosen, the share of the outstanding goal targets a serving fills; with none, the food's own nutrition. A pin is not a score, and holding a card above that order was one of the two things that made a sixty-four-page browse read as random. The block is removed rather than kept dormant because nothing reads it any more, and curation data that looks live is data someone will wire back up. Eggs remain in the catalog below and still rank on their own merits.",
   "foods": [
     {
+      "id": "abalone",
+      "name": "Abalone",
+      "category": "Fish & shellfish",
+      "fdc_id": "174212",
+      "portion_id": "93945",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Abalone, black lip, wild, raw",
+          "why": "Both raw abalone. AFCD measures five varieties (black lip and green lip, each wild and aquacultured, plus brown lip wild) and our USDA row is generic as to species, so the LOWEST is taken per the curation's rule — black lip wild, 142 ug/100 g chromium against 392.5 for the richest. The figure therefore holds whichever abalone is on the plate.",
+          "conservative": true
+        }
+      }
+    },
+    {
       "id": "acerola",
       "name": "Acerola",
       "category": "Fruit",
       "fdc_id": "171686",
-      "portion_id": "89187"
+      "portion_id": "89186"
     },
     {
       "id": "acorn-squash-baked",
@@ -79,7 +93,7 @@
       "name": "Arrowroot",
       "category": "Vegetables",
       "fdc_id": "168490",
-      "portion_id": "83183"
+      "portion_id": "83182"
     },
     {
       "id": "artichoke-cooked",
@@ -248,7 +262,7 @@
       "name": "Breadfruit",
       "category": "Fruit",
       "fdc_id": "171714",
-      "portion_id": "89244"
+      "portion_id": "89243"
     },
     {
       "id": "broccoli-cooked",
@@ -788,7 +802,7 @@
       "name": "Fireweed",
       "category": "Vegetables",
       "fdc_id": "169399",
-      "portion_id": "84794"
+      "portion_id": "84793"
     },
     {
       "id": "flounder-cooked",
@@ -1018,14 +1032,21 @@
       "name": "Horned melon (Kiwano)",
       "category": "Fruit",
       "fdc_id": "167791",
-      "portion_id": "81984"
+      "portion_id": "81983"
     },
     {
-      "id": "hyacinth-beans",
-      "name": "Hyacinth beans",
+      "id": "hyacinth-beans-cooked",
+      "name": "Hyacinth beans, cooked",
       "category": "Legumes",
       "fdc_id": "175211",
       "portion_id": "95850"
+    },
+    {
+      "id": "hyacinth-beans-dry",
+      "name": "Hyacinth beans, dry",
+      "category": "Legumes",
+      "fdc_id": "175210",
+      "portion_id": "95849"
     },
     {
       "id": "jackfruit",
@@ -1199,14 +1220,21 @@
       "name": "Lotus root",
       "category": "Vegetables",
       "fdc_id": "169250",
-      "portion_id": "84524"
+      "portion_id": "84525"
     },
     {
-      "id": "lupins",
-      "name": "Lupins",
+      "id": "lupins-cooked",
+      "name": "Lupins, cooked",
       "category": "Legumes",
       "fdc_id": "172424",
       "portion_id": "90600"
+    },
+    {
+      "id": "lupins-dry",
+      "name": "Lupins, dry",
+      "category": "Legumes",
+      "fdc_id": "172423",
+      "portion_id": "90599"
     },
     {
       "id": "lychee",
@@ -1256,11 +1284,18 @@
       }
     },
     {
-      "id": "mothbeans",
-      "name": "Mothbeans",
+      "id": "mothbeans-cooked",
+      "name": "Mothbeans, cooked",
       "category": "Legumes",
       "fdc_id": "172426",
       "portion_id": "90602"
+    },
+    {
+      "id": "mothbeans-dry",
+      "name": "Mothbeans, dry",
+      "category": "Legumes",
+      "fdc_id": "172425",
+      "portion_id": "90601"
     },
     {
       "id": "mozzarella",
@@ -1283,11 +1318,18 @@
       "portion_id": "83197"
     },
     {
-      "id": "mungo-beans",
-      "name": "Mungo beans",
+      "id": "mungo-beans-cooked",
+      "name": "Mungo beans, cooked",
       "category": "Legumes",
       "fdc_id": "172427",
-      "portion_id": "90604"
+      "portion_id": "90603"
+    },
+    {
+      "id": "mungo-beans-dry",
+      "name": "Mungo beans, dry",
+      "category": "Legumes",
+      "fdc_id": "174259",
+      "portion_id": "94034"
     },
     {
       "id": "mussels-cooked",
@@ -1490,11 +1532,18 @@
       "portion_id": "85724"
     },
     {
-      "id": "pigeon-peas",
-      "name": "Pigeon peas (red gram)",
+      "id": "pigeon-peas-cooked",
+      "name": "Pigeon peas, cooked",
       "category": "Legumes",
       "fdc_id": "172437",
       "portion_id": "90621"
+    },
+    {
+      "id": "pigeon-peas-dry",
+      "name": "Pigeon peas, dry",
+      "category": "Legumes",
+      "fdc_id": "172436",
+      "portion_id": "90620"
     },
     {
       "id": "pineapple",
@@ -1597,7 +1646,7 @@
       "name": "Prickly pears",
       "category": "Fruit",
       "fdc_id": "167750",
-      "portion_id": "81898"
+      "portion_id": "81897"
     },
     {
       "id": "provolone",
@@ -2267,7 +2316,7 @@
       "name": "Waterchestnuts",
       "category": "Vegetables",
       "fdc_id": "170066",
-      "portion_id": "85988"
+      "portion_id": "85987"
     },
     {
       "id": "white-beans-cooked",
@@ -2304,11 +2353,18 @@
       "portion_id": "88365"
     },
     {
-      "id": "winged-beans",
-      "name": "Winged beans",
+      "id": "winged-beans-cooked",
+      "name": "Winged beans, cooked",
       "category": "Legumes",
       "fdc_id": "172453",
       "portion_id": "90650"
+    },
+    {
+      "id": "winged-beans-dry",
+      "name": "Winged beans, dry",
+      "category": "Legumes",
+      "fdc_id": "174283",
+      "portion_id": "94080"
     },
     {
       "id": "yam-cooked",
@@ -2324,11 +2380,18 @@
       }
     },
     {
-      "id": "yardlong-beans",
-      "name": "Yardlong beans",
+      "id": "yardlong-beans-cooked",
+      "name": "Yardlong beans, cooked",
       "category": "Legumes",
       "fdc_id": "174282",
       "portion_id": "94079"
+    },
+    {
+      "id": "yardlong-beans-dry",
+      "name": "Yardlong beans, dry",
+      "category": "Legumes",
+      "fdc_id": "174281",
+      "portion_id": "94078"
     },
     {
       "id": "yautia",
@@ -2373,7 +2436,8 @@
     "parmesan-grated": "AFCD's dried finely-grated parmesan — the row that matches ours — measures none of these four. Its FRESH parmesan is a different product.",
     "potato-baked": "AFCD's baked potatoes are PEELED; ours is flesh and skin.",
     "rainbow-trout-cooked": "AFCD names rainbow trout, so the species matches — but it measures its iodine at 0.0 ug/100 g, so the pair would ship nothing for the nutrient it was opened for. Left unpaired rather than bound for a value that is not there; reopen it if another nutrient needs it.",
-    "sweet-potato-baked": "AFCD has raw and baked but peeled; ours is baked in skin."
+    "sweet-potato-baked": "AFCD has raw and baked but peeled; ours is baked in skin.",
+    "ocean-trout": "REFUSED 2026-08-24, and it is the second-richest chromium food AFCD measures (118.8-162.7 ug/100 g). AFCD names 'Trout, ocean' — in Australia a sea-run salmonid — while USDA's row is 'Fish, trout, mixed species'. Pairing a NAMED species with a GENERIC row is the same guess already refused for king crab, in the same direction. Reopen it only with a USDA row that names the species."
   },
   "_doleman_refused": {
     "broccoli-cooked": "Doleman analysed broccoli RAW; ours is boiled. Boiling leaches sulphate and glucosinolates, so a raw dry-basis figure reads high on a boiled crucifer. It would have shipped at 27%.",
@@ -2391,5 +2455,6 @@
   "_gap_champions_refused": {
     "garlic": "REFUSED 2026-08-22, and it is the food the campaign most wanted. Doleman measures garlic at 252.3 umoles/g DRY — the highest allium in its table — and Wallach names garlic by name on germanium's own page. But a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his 500 mg sulphur target: under the 7% bar. Only a whole cup of raw garlic (136 g) clears anything, and nobody eats that. AFCD measures garlic for none of the four gap nutrients, and germanium — the thing Wallach actually names it for — carries no numeric target for a food to be measured against. Stretching the portion to admit it is what the derive's own error message forbids. Garlic is a flavouring, not a serving, and the number says so."
   },
-  "_tier_a_batch": "48 foods added 2026-08-24 after the owner reviewed temporary/foods-gap-review.html. That review answered a question nobody had asked: the catalog's selection rule is an ADMISSION test ('a food earns a place only if...'), and it had never been run in reverse to ask what else would pass. Sweeping all 7,793 SR Legacy foods against the shipped 7% arithmetic found 249 distinct qualifying foods the catalog carried nothing for. The owner cleared the whole Tier-B list (canned / salted / soy / game / native states) and confirmed the Tier-C exclusions; these are Tier A, the plain unprocessed rows. SEVEN OF THEM ARE NOT THE ROW THE SWEEP FOUND: USDA's smallest published portion for a raw mature legume seed is one cup UNCOOKED, which roughly triples in weight cooked, so that serving is nearer three than one and every percentage on it is inflated. Each of those took USDA's own plain cooked row instead (lupins, mothbeans, mungo beans, pigeon peas, winged beans, yardlong beans, hyacinth beans). Two candidates were dropped rather than shipped on a portion nobody eats: mamey apple (USDA publishes no household portion under 400 g) and immature hyacinth beans (no plain cooked row exists)."
+  "_tier_a_batch": "48 foods added 2026-08-24 after the owner reviewed temporary/foods-gap-review.html. That review answered a question nobody had asked: the catalog's selection rule is an ADMISSION test ('a food earns a place only if...'), and it had never been run in reverse to ask what else would pass. Sweeping all 7,793 SR Legacy foods against the shipped 7% arithmetic found 249 distinct qualifying foods the catalog carried nothing for. The owner cleared the whole Tier-B list (canned / salted / soy / game / native states) and confirmed the Tier-C exclusions; these are Tier A, the plain unprocessed rows. SEVEN OF THEM ARE NOT THE ROW THE SWEEP FOUND: USDA's smallest published portion for a raw mature legume seed is one cup UNCOOKED, which roughly triples in weight cooked, so that serving is nearer three than one and every percentage on it is inflated. Each of those took USDA's own plain cooked row instead (lupins, mothbeans, mungo beans, pigeon peas, winged beans, yardlong beans, hyacinth beans). Two candidates were dropped rather than shipped on a portion nobody eats: mamey apple (USDA publishes no household portion under 400 g) and immature hyacinth beans (no plain cooked row exists).",
+  "_legume_states": "Every legume that USDA measures in both states carries BOTH rows, named so the state is unmistakable (owner ruling, 2026-08-24: 'why not have cooked and uncooked variants? I don't want to lose the more nutritional ones'). The DRY row's portion is USDA's own 1 cup of uncooked seed — the only portion it publishes for a raw mature seed, and a real measure since a cook measures beans dry — but a cup of dry seed YIELDS roughly three cooked cups, which is why the name says 'dry' rather than leaving the reader to infer it. Hyacinth beans carry only a dry row: USDA publishes no plain cooked one."
 }

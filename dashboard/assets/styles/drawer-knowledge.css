@@ -1896,7 +1896,8 @@
 /* The FOOD-sources note — what the block says when no food qualifies. Sized 0.85rem to the
    owner's spec (2026-08-24): it is a paragraph of reasoning under a label, not a row, and at
    the row size it competed with the product names below it. */
-#drawer-knowledge-mount .kd-ep-foodnote { font-family: var(--ds-font-serif); font-size: 0.85rem; color: var(--ds-ink-medium); line-height: 1.55; margin: 0 0 var(--ds-space-3); max-width: 62ch; }
+/* FULL WIDTH. The measure cap that was here made this note narrower than every other line in the block — .kd-ep-srcnote beside it has never had one. */
+#drawer-knowledge-mount .kd-ep-foodnote { font-family: var(--ds-font-serif); font-size: 0.85rem; color: var(--ds-ink-medium); line-height: 1.55; margin: 0 0 var(--ds-space-3); }
 /* A food row does not open anything, so it is a div and must not offer a button's affordances.
    Everything else is inherited from .kd-ep-src so the two lists read as one stack. */
 #drawer-knowledge-mount .kd-ep-src--food { cursor: default; }

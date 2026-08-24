@@ -504,6 +504,15 @@ export type FoodSourceVerdict =
   | 'unreachable'
   /** Carries a numeric Wallach target, but no composition source is bound yet. A GAP, not a finding. */
   | 'no_binding'
+  /**
+   * Wallach states a target of ZERO — he recommends none of it.
+   *
+   * Phosphorus is the only case, and it is deliberate: his Base Line table lists no supplemental
+   * phosphorus because the ordinary diet already supplies a large excess, and that surplus pulls
+   * calcium out of the bones (WAL-CLM-LETS-000061). Reporting this as a missing binding would put
+   * "a gap in our sources" over a number he actually states.
+   */
+  | 'zero_target'
   /** Wallach states no amount, so there is no denominator any food could be measured against. */
   | 'no_target';
 
@@ -513,15 +522,21 @@ const MEASURABLE = new Set(DATA._meta.essentials_measurable ?? []);
 const EFA_SLUGS = new Set(['omega-3', 'omega-6']);
 
 /** slug → its target block, read once from the same artifact state/coverage.ts reads. */
-const TARGET_BY_SLUG: Map<string, { kind?: string; vehicle_supplied?: boolean }> = (() => {
+const TARGET_BY_SLUG: Map<string, { kind?: string; vehicle_supplied?: boolean; low?: number }> = (() => {
   const parsed = EssentialsDataSchema.safeParse(essentialsTargetsData);
-  const m = new Map<string, { kind?: string; vehicle_supplied?: boolean }>();
+  const m = new Map<string, { kind?: string; vehicle_supplied?: boolean; low?: number }>();
   if (!parsed.success) {
     return m;
   }
   for (const e of parsed.data.essentials) {
     const t = CoverageTargetSchema.safeParse(e.target);
-    m.set(e.slug, t.success ? { ...(t.data.kind === undefined ? {} : { kind: t.data.kind }), ...(t.data.vehicle_supplied === undefined ? {} : { vehicle_supplied: t.data.vehicle_supplied }) } : {});
+    m.set(e.slug, t.success
+      ? {
+        ...(t.data.kind === undefined ? {} : { kind: t.data.kind }),
+        ...(t.data.vehicle_supplied === undefined ? {} : { vehicle_supplied: t.data.vehicle_supplied }),
+        ...(t.data.low === undefined ? {} : { low: t.data.low }),
+      }
+      : {});
   }
   return m;
 })();
@@ -593,6 +608,11 @@ export function foodSourceVerdict(slug: string): FoodSourceVerdict {
   }
   if (t.kind !== 'wallach') {
     return 'no_target';
+  }
+  // A stated ZERO is a statement, not a silence — and it is the same test the derive uses to
+  // decide what a food may be measured against, so the two cannot disagree.
+  if (typeof t.low !== 'number' || t.low <= 0) {
+    return 'zero_target';
   }
   return MEASURABLE.has(slug) ? 'unreachable' : 'no_binding';
 }
