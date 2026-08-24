@@ -1893,6 +1893,19 @@
 /* The diet note. Quieter than the lede and sized to be read before the product rows, because
    it exists to answer the question those rows provoke on a diet-routed essential. */
 #drawer-knowledge-mount .kd-ep-srcnote { font-family: var(--ds-font-serif); font-size: var(--ds-text-sm); color: var(--ds-ink-medium); line-height: 1.5; margin: 0 0 var(--ds-space-3); }
+/* The FOOD-sources note — what the block says when no food qualifies. Sized 0.85rem to the
+   owner's spec (2026-08-24): it is a paragraph of reasoning under a label, not a row, and at
+   the row size it competed with the product names below it. */
+#drawer-knowledge-mount .kd-ep-foodnote { font-family: var(--ds-font-serif); font-size: 0.85rem; color: var(--ds-ink-medium); line-height: 1.55; margin: 0 0 var(--ds-space-3); max-width: 62ch; }
+/* A food row does not open anything, so it is a div and must not offer a button's affordances.
+   Everything else is inherited from .kd-ep-src so the two lists read as one stack. */
+#drawer-knowledge-mount .kd-ep-src--food { cursor: default; }
+#drawer-knowledge-mount .kd-ep-src--food:hover { border-color: var(--ds-rule-soft); background: var(--ds-paper); transform: none; }
+#drawer-knowledge-mount .kd-ep-src--food:hover .kd-ep-src__nm { color: var(--ds-ink); }
+#drawer-knowledge-mount .kd-ep-src--food:hover .kd-ep-src__ico { color: var(--ds-ink-faint); }
+/* A serving that clears the artifact's STRONG threshold — the same signal the food cards on
+   Coverage and Regimen already use, so a reader who has seen one recognises the other. */
+#drawer-knowledge-mount .kd-ep-src--strong .kd-ep-src__pr { color: var(--ds-status-ok); font-weight: 700; }
 #drawer-knowledge-mount .kd-ep-bar { height: 7px; background: var(--ds-paper-darker); border: 1px solid var(--ds-rule); border-radius: var(--ds-radius-pill); overflow: hidden; margin-top: var(--ds-space-2); }
 #drawer-knowledge-mount .kd-ep-bar > i { display: block; height: 100%; background: var(--ds-accent); border-radius: var(--ds-radius-pill); }
 #drawer-knowledge-mount .kd-ep-sub { font-family: var(--ds-font-sans); font-size: var(--ds-text-xs); color: var(--ds-ink-soft); margin-top: var(--ds-space-2); }

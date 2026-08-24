@@ -31,6 +31,7 @@ import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
 import { ProductEntrySchema, ProductsLookupSchema, RecommenderDataSchema } from '../core/schemas/index.js';
 import { toMg } from '../core/units.js';
 import { isExcludedFromRecommendations } from './kids-exclusion.js';
+import { starterPackIds } from './starter-pack.js';
 import { isSupersededProduct } from './superseded-products.js';
 
 // ─── Weights + curves (the tuner) ──────────────────────────────────────────
@@ -632,4 +633,72 @@ export function rankProductsForCoverage(input: {
   // generated artifact's key order, and a probe asserting the rec list must not flake.
   scored.sort((a, b) => (b.score - a.score) || a.productId.localeCompare(b.productId));
   return out.concat(scored).slice(0, limit);
+}
+
+// ─── The BROWSABLE catalog (Regimen product list) ───────────────────────────
+
+/**
+ * One product as the Regimen's browsable list needs it.
+ *
+ * Distinct from `CoverageRec` on purpose. A rec is one card in a three-card RECOMMENDATION and
+ * carries a greedy `supplies` that only means anything in the order it was emitted; this is a
+ * row in a CATALOGUE the reader sorts and filters for themselves, so every field has to stand
+ * on its own at any position in any order.
+ */
+export interface CatalogProduct {
+  productId: string;
+  name: string;
+  price: number | null;
+  /** Distinct essentials the formula delivers, whatever you already cover. */
+  breadth: number;
+  /** Those essentials, so the list can be filtered down to one nutrient. */
+  essentials: string[];
+  /** How many of them you do NOT yet cover — the gap-fill sort key. */
+  supplies: number;
+  /** Which of your chosen goals this product touches, for the goal filter + the card tint. */
+  goalIds: string[];
+  /**
+   * Leads the list in EVERY sort order.
+   *
+   * Read from the starter pack's curated array, first entry — not a slug written down here.
+   * The owner's reason is recorded beside it in starter-pack.json ("it covers not only PDM but
+   * many other sources"), and it is exactly why the pin has to survive a "most nutrients" sort:
+   * the plant-derived vehicle carries scores of minerals that are never named individually, so
+   * a count of NAMED essentials understates it against every tablet multi in the catalogue.
+   */
+  pinned: boolean;
+}
+
+/**
+ * Every product the recommender can see, unranked and unsliced — the pool the Regimen's
+ * browsable list sorts, filters and pages for itself.
+ *
+ * The two curated exclusions (kids' formulas, superseded products) are already applied by
+ * coverageIndex, so a product that must never be recommended cannot appear here either.
+ */
+export function listCatalogProducts(input: {
+  want: readonly string[];
+  goals?: readonly { id: string; members: readonly string[] }[];
+}): CatalogProduct[] {
+  const outstanding = new Set(input.want);
+  const goals = input.goals ?? [];
+  const lead = starterPackIds()[0];
+  const out: CatalogProduct[] = [];
+  for (const [productId, agg] of coverageIndex()) {
+    const essentials = [...agg.essentials].sort();
+    out.push({
+      productId,
+      name: productName(productId),
+      price: agg.price > 0 ? agg.price : null,
+      breadth: agg.breadth,
+      essentials,
+      supplies: essentials.filter(s => outstanding.has(s)).length,
+      goalIds: goals.filter(g => g.members.some(m => agg.essentials.has(m))).map(g => g.id),
+      pinned: productId === lead,
+    });
+  }
+  // Deterministic base order so every sort below it is total and cannot reshuffle between
+  // paints — the same contract rankProductsForCoverage keeps.
+  out.sort((a, b) => a.productId.localeCompare(b.productId));
+  return out;
 }

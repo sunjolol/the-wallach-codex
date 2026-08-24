@@ -54,8 +54,9 @@
  */
 
 import efaCoverageData from '../../../data/efa-coverage-data.json';
+import essentialsTargetsData from '../../../data/essentials-targets-data.json';
 import foodsCompositionData from '../../../data/foods-composition-data.json';
-import { EfaCoverageSchema, type Food, FoodsCompositionSchema } from '../core/schemas/index.js';
+import { CoverageTargetSchema, EfaCoverageSchema, EssentialsDataSchema, type Food, FoodsCompositionSchema } from '../core/schemas/index.js';
 
 /**
  * Parsed ONCE at module load, and deliberately NOT wrapped in a safe fallback — same
@@ -464,4 +465,134 @@ export function rankFoodsForCoverage(input: {
     });
   }
   return out;
+}
+
+// ─── "Best food sources" for ONE essential (the Knowledge entity page) ───────
+
+/** One food offered as a source of a single essential, as the entity page's row needs it. */
+export interface RankedFoodSource {
+  id: string;
+  name: string;
+  /** Amount in that essential's own unit, on one serving. */
+  amount: number;
+  unit: string;
+  /** Share of Wallach's daily target one serving delivers, 0..n. */
+  fraction: number;
+  /** True once the serving clears the artifact's STRONG threshold. */
+  strong: boolean;
+  grams: number;
+}
+
+/**
+ * Why an essential's food block says what it says.
+ *
+ * The four no-food outcomes are NOT interchangeable, and collapsing them was the whole risk
+ * here. "Wallach's target is therapeutic and no food on earth reaches it" is a finding;
+ * "nobody has bound a composition source for this one" is an admission; "Wallach states no
+ * amount, so nothing can be measured" is a third thing again. Printing the first sentence over
+ * either of the others would put a claim on screen that the data does not support — and for the
+ * twelve amino acids it would be flatly false, since protein is where they come from.
+ */
+export type FoodSourceVerdict =
+  /** At least one catalog food clears the qualify threshold. */
+  | 'foods'
+  /** A plant-derived (trace_pdm) mineral: covered as a group by the colloidal-mineral vehicle. */
+  | 'plant_derived'
+  /** Wallach names the plant-derived vehicle as THIS essential's supply route, in his own words. */
+  | 'vehicle_supplied'
+  /** Bound to a composition source, swept, and no food reaches 7% of his target. */
+  | 'unreachable'
+  /** Carries a numeric Wallach target, but no composition source is bound yet. A GAP, not a finding. */
+  | 'no_binding'
+  /** Wallach states no amount, so there is no denominator any food could be measured against. */
+  | 'no_target';
+
+const MEASURABLE = new Set(DATA._meta.essentials_measurable ?? []);
+
+/** The two essentials scored through the shared EFA meter rather than a nutrient row. */
+const EFA_SLUGS = new Set(['omega-3', 'omega-6']);
+
+/** slug → its target block, read once from the same artifact state/coverage.ts reads. */
+const TARGET_BY_SLUG: Map<string, { kind?: string; vehicle_supplied?: boolean }> = (() => {
+  const parsed = EssentialsDataSchema.safeParse(essentialsTargetsData);
+  const m = new Map<string, { kind?: string; vehicle_supplied?: boolean }>();
+  if (!parsed.success) {
+    return m;
+  }
+  for (const e of parsed.data.essentials) {
+    const t = CoverageTargetSchema.safeParse(e.target);
+    m.set(e.slug, t.success ? { ...(t.data.kind === undefined ? {} : { kind: t.data.kind }), ...(t.data.vehicle_supplied === undefined ? {} : { vehicle_supplied: t.data.vehicle_supplied }) } : {});
+  }
+  return m;
+})();
+
+/**
+ * Every catalog food that credits this essential, richest serving first.
+ *
+ * Ranked by `fraction` — the share of Wallach's daily target one serving delivers — because the
+ * question the block answers is "what should I eat for THIS", not "what is the most nutritious
+ * food that happens to contain it". A raw amount would rank by unit size instead of by meaning.
+ */
+export function rankedFoodsForEssential(slug: string): RankedFoodSource[] {
+  const out: RankedFoodSource[] = [];
+  // The two omegas carry no individual Wallach dose, so the derive emits no nutrient row for
+  // them; their delivery lives in the food's `efa` block, measured against his ONE collective
+  // amount for the pair. Reading rows only would report "no food source" for the two essentials
+  // whose food sources this app already prints a percentage for on every card.
+  if (EFA_SLUGS.has(slug)) {
+    for (const f of DATA.foods) {
+      const e = f.efa;
+      if (e === undefined || e.qualifies !== true) {
+        continue;
+      }
+      out.push({
+        id: f.id, name: f.name, amount: e.oil_equivalent_mg, unit: 'mg',
+        fraction: e.fraction, strong: e.strong === true, grams: f.grams,
+      });
+    }
+    out.sort((a, b) => (b.fraction - a.fraction) || a.id.localeCompare(b.id));
+    return out;
+  }
+  for (const f of DATA.foods) {
+    for (const n of f.nutrients) {
+      if (n.slug !== slug) {
+        continue;
+      }
+      out.push({
+        id: f.id, name: f.name, amount: n.amount, unit: n.unit,
+        fraction: n.fraction, strong: n.strong === true, grams: f.grams,
+      });
+    }
+  }
+  // Total order: fraction, then id, so the list cannot reshuffle between paints.
+  out.sort((a, b) => (b.fraction - a.fraction) || a.id.localeCompare(b.id));
+  return out;
+}
+
+/**
+ * What the food block should say for an essential, and on what grounds.
+ *
+ * Derived end to end — there is no hand-kept list of "supplement-only" slugs anywhere, because
+ * such a list is exactly the thing that goes stale silently. `vehicle_supplied` is stamped onto
+ * the target by targets_derive from cited claims; `trace_pdm` is the target kind; `unreachable`
+ * is a SWEPT result over the shipped catalog, not an assertion.
+ */
+export function foodSourceVerdict(slug: string): FoodSourceVerdict {
+  if (rankedFoodsForEssential(slug).length > 0) {
+    return 'foods';
+  }
+  const t = TARGET_BY_SLUG.get(slug);
+  if (t === undefined) {
+    return 'no_target';
+  }
+  if (t.kind === 'trace_pdm') {
+    return 'plant_derived';
+  }
+  if (t.vehicle_supplied === true) {
+    return 'vehicle_supplied';
+  }
+  if (t.kind !== 'wallach') {
+    return 'no_target';
+  }
+  return MEASURABLE.has(slug) ? 'unreachable' : 'no_binding';
 }

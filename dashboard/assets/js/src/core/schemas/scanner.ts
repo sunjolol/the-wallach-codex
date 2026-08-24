@@ -55,6 +55,19 @@ export const AlignmentSchema = z.object({
 export const HistoryEntrySchema = z.object({
   id: z.number(),
   ts: z.string(), // ISO timestamp
+  /**
+   * Scan-order ordinal, minted ONCE when the capture is written and never recomputed.
+   *
+   * It exists because a capture with no legible product name displays as 'Scanned label' —
+   * and three of those in the Recent shelf are indistinguishable. The number is what tells
+   * them apart, so it has to be STABLE: 'Scanned label 5' must still be 5 after the FIFO
+   * evicts everything above it. A position-derived index cannot do that; a stored one can.
+   *
+   * Optional because history written before this field existed carries none. Such an entry
+   * shows the bare 'Scanned label' it always showed, which is honest — we genuinely do not
+   * know where it fell in the scan order.
+   */
+  seq: z.number().int().positive().optional(),
   label: ScanLabelSchema,
   verdict: VerdictSchema,
   alignment: AlignmentSchema,

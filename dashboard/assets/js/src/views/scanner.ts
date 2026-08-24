@@ -50,16 +50,21 @@ import { addOrBumpRegimenItem } from '../state/regimen.js';
 import {
   type AntiFlag,
   coverageDeltaForLabel,
+  ensureOrdinals,
   getAntiIngredientWords,
+  genericScanCount,
   getHistory,
   getSaved,
   type HistoryEntry,
+  historyDisplayName,
   humanizeName,
+  isGenericName,
   removeSaved,
   runScan,
   saveScan,
   type ScanResult,
   scoreLabel,
+  updateScan,
   type Verdict,
 } from '../state/scanner.js';
 
@@ -461,11 +466,14 @@ function reasonRows(result: ScanResult): string {
   return rows.join('');
 }
 
-function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent'): string {
+/** The verdict card. `name` is passed IN rather than derived here: an unnamed capture's display
+ *  name carries its scan-order ordinal, and the ordinal lives on the history ENTRY, which a bare
+ *  ScanResult does not know about. Deriving it here would silently drop the number the user just
+ *  clicked to get here. */
+function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent', name: string): string {
   const tone = VERDICT_TONE[result.verdict];
   const { head, sub } = verdictHeadline(result.verdict);
   const total = essentialCount();
-  const name = humanizeName(result.label.name);
   const flags = result.anti.length;
   const typed = result.label.entry === 'typed';
 
@@ -573,7 +581,17 @@ function verdictPill(v: Verdict): string {
   return '<span class="vd-pill vd-pill--out">Out</span>';
 }
 
-/** Compact relative age for a scan-history row: 'Now' / 'Nd' / 'Nw'. */
+/**
+ * Compact relative age for a scan-history row, with the unit spelled out as an elapsed time.
+ *
+ * A bare "4D" reads as an identifier as easily as a duration — it sits beside a verdict pill in
+ * the same mono face and the same micro size, so nothing on the row says which of the two it is.
+ * "4D AGO" can only be read one way (owner ruling, 2026-08-24). Today keeps the bare "NOW": an
+ * elapsed time of zero has no "ago" to speak of, and "NOW AGO" is not English.
+ *
+ * Months and years are here because the Saved shelf is durable — it holds items until the user
+ * removes them, so "78W AGO" was always going to happen eventually.
+ */
 function relAge(iso: string): string {
   const then = Date.parse(iso);
   if (Number.isNaN(then)) {
@@ -584,21 +602,32 @@ function relAge(iso: string): string {
     return 'Now';
   }
   if (days < 7) {
-    return `${days}d`;
+    return `${days}d ago`;
   }
-  return `${Math.floor(days / 7)}w`;
+  if (days < 60) {
+    return `${Math.floor(days / 7)}w ago`;
+  }
+  if (days < 365) {
+    return `${Math.floor(days / 30)}mo ago`;
+  }
+  return `${Math.floor(days / 365)}y ago`;
 }
 
-/** One scan row — clickable to re-open its verdict (data-sc-open); a saved row carries a x. */
-function scanRow(h: HistoryEntry, saved: boolean, index: number): string {
+/** One scan row — clickable to re-open its verdict (data-sc-open); a saved row carries a x.
+ *
+ *  `numbered` is decided once per paint by renderRail, not per row: the owner's rule is that an
+ *  unnamed capture picks up its scan-order number only when there is more than one of them to
+ *  tell apart, and that is a fact about the shelf, not about any single entry. */
+function scanRow(h: HistoryEntry, saved: boolean, index: number, numbered: boolean): string {
   const rm = saved
     ? `<button class="ui-close ui-close--sm rl-row__rm" type="button" data-sc-unsave="${h.id}" aria-label="Remove from saved" title="Remove">${CLOSE_SVG}</button>`
     : '';
   return `
-    <div class="rl-row vd-hrow" data-sc-open="${h.id}" data-sc-src="${saved ? 'saved' : 'recent'}" data-sc-idx="${index}" role="button" tabindex="0" title="Re-open this verdict">
-      <div class="rl-row__name">${escHTML(humanizeName(h.label.name))}</div>
+    <div class="rl-row vd-hrow" data-sc-open="${h.id}" data-sc-src="${saved ? 'saved' : 'recent'}" data-sc-idx="${index}" role="button" tabindex="0" title="Re-open and edit this capture">
+      <div class="rl-row__name">${escHTML(historyDisplayName(h, numbered))}</div>
       ${verdictPill(h.verdict)}
-      <div class="rl-row__foot"><span class="rl-src is-own">Yours · ${h.label.entry === 'typed' ? 'typed in' : 'user-scanned'}</span><span class="vd-when">${escHTML(relAge(h.ts))}</span></div>
+      <div class="rl-row__foot"><span class="rl-src is-own">Yours · ${h.label.entry === 'typed' ? 'typed in' : 'user-scanned'}</span></div>
+      <span class="vd-when">${escHTML(relAge(h.ts))}</span>
       ${rm}
     </div>`;
 }
@@ -606,8 +635,12 @@ function scanRow(h: HistoryEntry, saved: boolean, index: number): string {
 /** The persistent rail: the durable Saved shelf over the auto Recent captures.
  *  Rendered in every state so a refresh always surfaces saved items; rows re-open on click. */
 function renderRail(): string {
-  const saved = getSaved().map((h, i) => scanRow(h, true, i)).join('');
-  const recent = getHistory().map((h, i) => scanRow(h, false, i)).join('');
+  // ONE read of the shelf state per paint, shared by both lists — a per-list count would say
+  // "one unnamed capture, no number needed" about a Recent shelf whose row is a twin of a
+  // Saved one, which is the exact collision the number exists to prevent.
+  const numbered = genericScanCount() > 1;
+  const saved = getSaved().map((h, i) => scanRow(h, true, i, numbered)).join('');
+  const recent = getHistory().map((h, i) => scanRow(h, false, i, numbered)).join('');
   return `
     <aside class="vd-rail">
       <div class="rail-panel">
@@ -632,6 +665,10 @@ function renderRail(): string {
 // ─── Mount ────────────────────────────────────────────────────────────────────
 
 export function mount(container: HTMLElement): MountHandle {
+  // Backfill ordinals for captures written before the field existed, ONCE, before the first
+  // paint reads them. Without it a user who already has five "Pasted ingredients" rows keeps
+  // five identical rows forever — the number would only ever help captures made from here on.
+  ensureOrdinals();
   let state: ScState = 'idle';
   let label: ScanLabel | null = null;
   let result: ScanResult | null = null;
@@ -649,20 +686,50 @@ export function mount(container: HTMLElement): MountHandle {
   let suspectTimer = 0;
   // Live nutrient-row re-evaluation debounce (re-check a corrected read vs the essentials/known list).
   let nameTimer = 0;
+  // Debounce for the re-opened row's live verdict, kept separate from the two above so a
+  // fast typist editing an ingredient line cannot cancel a pending nutrient re-check.
+  let verdictTimer = 0;
   // Where the shown verdict came from, so a re-opened SAVED item offers Delete (removes it from
   // the shelf) instead of a meaningless Reject. A fresh scan / recent re-open stays Reject.
   let resultOrigin: 'scan' | 'saved' | 'recent' = 'scan';
   let reopenedSavedId: number | null = null;
+  /**
+   * The shelf entry currently being re-opened, or null for a fresh scan.
+   *
+   * Clicking a Recent / Saved row lands on the EDITABLE Confirm step rather than a finished
+   * verdict (owner ruling, 2026-08-24): the row is opened to see and fix what was read, and a
+   * verdict alone answers a question the user did not ask. This holds what Confirm needs that a
+   * bare ScanLabel cannot supply — which shelf to write a correction back to, which id to write
+   * it onto, and the scan-order ordinal the row is identified by.
+   */
+  let reopened: { shelf: 'saved' | 'recent'; id: number; seq: number | undefined } | null = null;
+
+  /** What this capture calls itself on screen — the ordinal included, on the same rule the rail
+   *  uses, so the card and the row a user clicked never disagree about which one this is. */
+  const shownName = (l: ScanLabel | null): string => {
+    const raw = l === null ? '' : l.name;
+    const seq = reopened?.seq ?? result?.seq;
+    if (seq === undefined || !isGenericName(raw) || genericScanCount() <= 1) {
+      return humanizeName(raw);
+    }
+    return `${humanizeName(raw)} ${seq}`;
+  };
 
   const render = (): void => {
     let main = '';
     const typed = isTyped(label);
     if (state === 'result' && result !== null) {
       const unreadable = result.sparseNutrients === true && result.sparseIngredients === true;
-      main = renderScan(state, fileName, imageDataUrl, typed) + (unreadable ? renderUnreadable(typed) : renderResult(result, resultOrigin));
+      main = renderScan(state, fileName, imageDataUrl, typed) + (unreadable ? renderUnreadable(typed) : renderResult(result, resultOrigin, shownName(result.label)));
     }
     else if (state === 'confirming' && label !== null) {
-      main = renderScan(state, fileName, imageDataUrl, typed) + renderConfirm(label, dismissed, imageDataUrl);
+      // A RE-OPENED row shows both steps at once: the reads, editable, with the verdict standing
+      // underneath and re-scoring as they change. A FRESH scan shows Confirm alone — its verdict
+      // step says "Fires only now", and previewing one above that line would make the copy a lie.
+      const verdict = reopened !== null && result !== null
+        ? renderResult(result, resultOrigin, shownName(label))
+        : '';
+      main = renderScan(state, fileName, imageDataUrl, typed) + renderConfirm(label, dismissed, imageDataUrl) + verdict;
     }
     else {
       main = (scanError !== null ? renderScanError(scanError) : '') + renderScan(state, fileName, imageDataUrl, typed);
@@ -690,6 +757,7 @@ export function mount(container: HTMLElement): MountHandle {
     console.warn('[views/scanner] scan failed:', e);
     scanError = scanErrorMessage(e);
     state = 'idle';
+    reopened = null;
     fileName = null;
     imageDataUrl = null;
     render();
@@ -802,6 +870,36 @@ export function mount(container: HTMLElement): MountHandle {
 
   /** After a row delete, keep the "N lines · M mapped · K to check" tally honest — recount
    *  from the rows still in the DOM rather than re-render (which would discard in-flight edits). */
+  /**
+   * Re-score the reads currently on screen and swap the standing verdict for the new one.
+   *
+   * Re-opened rows ONLY. A fresh capture has no verdict on screen to refresh, and its Result
+   * step says the judgement "fires only now" — quietly scoring behind that sentence would make
+   * it false. Only the .vd-step--result block is replaced, never the whole view, because a
+   * full repaint mid-edit would take the caret out of the field being typed into.
+   */
+  const refreshReopenedVerdict = (): void => {
+    if (reopened === null || label === null) {
+      return;
+    }
+    const live = readCorrectedLabel();
+    const r = scoreLabel(live);
+    if (r === null) {
+      return;
+    }
+    result = r;
+    const host = container.querySelector('.vd-step--result');
+    if (host === null) {
+      return;
+    }
+    const tmp = document.createElement('div');
+    tmp.innerHTML = renderResult(r, resultOrigin, shownName(live));
+    const next = tmp.firstElementChild;
+    if (next !== null) {
+      host.replaceWith(next);
+    }
+  };
+
   const recountNutrients = (): void => {
     const rows = container.querySelectorAll('.vd-nlist .vd-nrow[data-nrow]');
     let total = 0;
@@ -969,6 +1067,7 @@ export function mount(container: HTMLElement): MountHandle {
     // every surface downstream from claiming something was read.
     if (t.closest('[data-sc-manual]') !== null) {
       label = { name: '', entry: 'typed', nutrients: [{ name: '', unit: '' }], ingredients: '' };
+      reopened = null;
       dismissed.clear();
       removedRows.clear();
       fileName = null;
@@ -999,6 +1098,7 @@ export function mount(container: HTMLElement): MountHandle {
         state = 'result';
         resultOrigin = 'scan';
         reopenedSavedId = null;
+        reopened = null;
         imageDataUrl = null;
         render();
       }
@@ -1083,12 +1183,20 @@ export function mount(container: HTMLElement): MountHandle {
       // writes. Otherwise every empty confirm drops an "Untitled item" row into Recent whose
       // pill states a verdict the app just declined to give.
       const nothingToJudge = (label.nutrients ?? []).length === 0 && (label.ingredients ?? '').trim() === '';
-      const r = nothingToJudge ? scoreLabel(label) : runScan(label);
+      // Confirming a RE-OPENED row is a correction to a capture already on a shelf, so it is
+      // written back over that row rather than appended. runScan would leave the shelf holding
+      // the same product twice — once with the numbers the user just came here to fix.
+      const r = reopened !== null || nothingToJudge ? scoreLabel(label) : runScan(label);
       if (r !== null) {
+        if (reopened !== null && !nothingToJudge) {
+          updateScan(reopened.shelf, reopened.id, label, r);
+        }
         result = r;
         state = 'result';
-        resultOrigin = 'scan';
-        reopenedSavedId = null;
+        if (reopened === null) {
+          resultOrigin = 'scan';
+          reopenedSavedId = null;
+        }
         render();
       }
       else {
@@ -1138,7 +1246,10 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
-    // Re-open a Saved / Recent row: re-score its stored label against your CURRENT regimen.
+    // Re-open a Saved / Recent row: land on the EDITABLE Confirm step with its stored reads
+    // filled in, re-scored against your CURRENT regimen, with the verdict standing underneath.
+    // (Owner ruling, 2026-08-24 — it used to land on the finished verdict, which showed the
+    // judgement and none of what was judged.)
     const openRow = t.closest<HTMLElement>('[data-sc-open]');
     if (openRow !== null) {
       // Resolve by (source list, index), NOT by id: two saved/recent entries can share a
@@ -1153,9 +1264,15 @@ export function mount(container: HTMLElement): MountHandle {
         if (r !== null) {
           label = entry.label;
           result = r;
-          state = 'result';
+          state = 'confirming';
           resultOrigin = src === 'saved' ? 'saved' : 'recent';
           reopenedSavedId = src === 'saved' && typeof entry.id === 'number' ? entry.id : null;
+          reopened = { shelf: src === 'saved' ? 'saved' : 'recent', id: entry.id, seq: entry.seq };
+          // Editing starts from what is stored, so the dismissal + deletion sets from whatever
+          // was on screen before must not carry over — a stale removedRows index drops the
+          // WRONG row out of this label the first time readCorrectedLabel runs.
+          dismissed.clear();
+          removedRows.clear();
           imageDataUrl = null;
           fileName = typeof entry.label.name === 'string' ? entry.label.name : null;
           scanError = null;
@@ -1182,6 +1299,7 @@ export function mount(container: HTMLElement): MountHandle {
     }
     if (t.closest('[data-sc-clear]') !== null) {
       state = 'idle';
+      reopened = null;
       label = null;
       result = null;
       fileName = null;
@@ -1202,6 +1320,7 @@ export function mount(container: HTMLElement): MountHandle {
       imageDataUrl = null;
       resultOrigin = 'scan';
       reopenedSavedId = null;
+      reopened = null;
       render();
     }
   };
@@ -1295,6 +1414,13 @@ export function mount(container: HTMLElement): MountHandle {
     if (target === null) {
       return;
     }
+    // A re-opened row carries a live verdict under the reads, so ANY edit re-scores it. Fired
+    // before the branches below because each of them returns, and the verdict has to track a
+    // corrected ingredient line exactly as it tracks a corrected nutrient row.
+    if (reopened !== null) {
+      window.clearTimeout(verdictTimer);
+      verdictTimer = window.setTimeout(refreshReopenedVerdict, 260);
+    }
     if (target.matches('[data-ing]')) {
       window.clearTimeout(suspectTimer);
       suspectTimer = window.setTimeout(refreshSuspects, 250);
@@ -1319,6 +1445,7 @@ export function mount(container: HTMLElement): MountHandle {
   window.addEventListener('lcscan:progress', onProgress);
   const unsub = on('scanner:scan-cleared', () => {
     state = 'idle';
+    reopened = null;
     label = null;
     result = null;
     fileName = null;
@@ -1334,6 +1461,7 @@ export function mount(container: HTMLElement): MountHandle {
       closeLightbox();
       window.clearTimeout(suspectTimer);
       window.clearTimeout(nameTimer);
+      window.clearTimeout(verdictTimer);
       container.removeEventListener('click', clickHandler);
       container.removeEventListener('input', inputHandler);
       container.removeEventListener('change', changeHandler);

@@ -292,7 +292,19 @@
 .vd-pill--aligns { color: var(--ds-status-ok); background: var(--ds-ok-wash); box-shadow: inset 0 0 0 1px var(--ds-status-ok-soft); }
 .vd-pill--save { color: var(--ds-status-warn); background: var(--ds-status-warn-soft); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-status-warn) 40%, transparent); }
 .vd-pill--out { color: var(--ds-status-err); background: var(--ds-status-err-soft); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--ds-status-err) 30%, transparent); }
-.vd-when { margin-left: auto; font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .06em; text-transform: uppercase; }
+.vd-when { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); color: var(--ds-ink-faint); letter-spacing: .06em; text-transform: uppercase; }
+/* The age belongs UNDER THE PILL, sharing its right edge (owner ruling, 2026-08-24).
+   It used to live inside .rl-row__foot, which is column 1 — so `margin-left: auto` pushed it to
+   the right edge of the NAME column, which is where column 2 begins, not where the pill ends.
+   On a saved row the 44px x-gutter moved that edge again, so Saved and Recent disagreed with
+   each other as well as with the pill. Pinning it to column 2 / row 2 with the same justify-self
+   the pill uses is what actually makes the two share an edge, on both shelves.
+   Scoped to .vd-rail: .rl-row is a SHARED class and an unscoped rule here would reach the
+   Coverage rail (see the note above — that exact mistake shipped once). */
+.vd-rail .vd-hrow .vd-when { grid-column: 2; grid-row: 2; justify-self: end; align-self: start; margin-left: 0; padding-top: 2px; }
+/* With the age lifted out, the foot carries only the provenance mark and no longer needs to
+   stretch to push anything rightwards. */
+.vd-rail .vd-hrow .rl-row__foot { justify-content: flex-start; }
 
 /* -- uploaded-image previews (live shows the REAL scan, not a faux label) -- */
 .vd-scan__img { width: 56px; height: 56px; flex: 0 0 auto; object-fit: cover; border-radius: var(--ds-radius-sm); border: 1px solid var(--ds-rule); box-shadow: var(--ds-elev-1); }
@@ -367,8 +379,15 @@
    its content width in this flex column). Scoped to .vd-rail so the coverage rail is untouched. */
 .vd-rail .rail-panel { position: static; align-self: stretch; }
 /* The remove x sat absolute over the verdict pill and was a 20px target. Reserve a right
-   gutter on a saved (re-openable) row and seat a larger, centred x in it, clear of the pill. */
-.vd-rail .rl-row[data-sc-src="saved"] { padding-right: 44px; }
+   gutter and seat a larger, centred x in it, clear of the pill.
+   ★ THE GUTTER IS ON EVERY ROW, NOT JUST SAVED ONES. It used to be saved-only, which was
+   defensible per-row and wrong per-PANEL: the Saved and Recent shelves stack in one column, so a
+   gutter on one of them put its pills and ages 44px left of the other shelf's, and two columns of
+   right-aligned text that do not share an edge read as broken. A recent row spends the gutter on
+   nothing, which costs a truncation point on a name that already truncates. Measured by
+   tools/probes/render_probe_scan_rail.js, which compares the two shelves' right edges directly —
+   a screenshot cannot see a 44px disagreement between two panels you scroll between. */
+.vd-rail .vd-hrow { padding-right: 44px; }
 .vd-rail .rl-row__rm { position: absolute; top: 50%; right: 9px; transform: translateY(-50%); }
 /* Editable nutrient amount + unit — these were read-only spans. */
 .vd-nrow__amt { display: inline-flex; align-items: center; gap: 5px; }

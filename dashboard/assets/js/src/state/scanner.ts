@@ -99,12 +99,16 @@ const CONTAINER_LABELS = new Map<string, string>([
   ['bottle', 'Bottled product'],
 ]);
 
+/** The display name of a capture that has none of its own. One home for the string so the
+ *  fallback, the generic test and the numbered form can never disagree. */
+const UNNAMED = 'Scanned label';
+
 /** A human product name for display: humanise a known container token, keep a real name as-is,
  *  else fall back to 'Scanned label' — never show the raw parser token to the user. */
 export function humanizeName(raw: string | undefined): string {
   const s = (raw ?? '').trim();
   if (s === '' || s.toLowerCase() === 'scanned label') {
-    return 'Scanned label';
+    return UNNAMED;
   }
   const mapped = CONTAINER_LABELS.get(s.toLowerCase().replace(/\s+/g, '_'));
   if (mapped !== undefined) {
@@ -116,6 +120,111 @@ export function humanizeName(raw: string | undefined): string {
     return s;
   }
   return s.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+}
+
+/**
+ * Names the APP mints when the user supplied none, alongside the empty string.
+ *
+ * Every one is a placeholder the app wrote about ITSELF — how the capture arrived, or what the
+ * container looked like — and none of them names a product. Five rows reading
+ * "Pasted ingredients" are exactly as impossible to tell apart as five reading "Scanned label",
+ * so they belong in the same set and get the same ordinal treatment.
+ */
+const APP_MINTED_NAMES = new Set([
+  'scanned label',
+  'pasted ingredients',
+  'untitled item',
+]);
+
+/**
+ * True when a label carries NO product name of its own — either nothing legible at all, one of
+ * the app's own placeholders, or a bare container token.
+ *
+ * A container token is grouped with the empty case deliberately: it names the PACKAGE, never the
+ * product, so it is exactly as useless for picking one row out of five.
+ */
+export function isGenericName(raw: string | undefined): boolean {
+  const s = (raw ?? '').trim().toLowerCase();
+  if (s === '' || APP_MINTED_NAMES.has(s)) {
+    return true;
+  }
+  return CONTAINER_LABELS.has(s.replace(/\s+/g, '_'));
+}
+
+/**
+ * Give every nameless capture already on a shelf a stable ordinal, oldest first.
+ *
+ * History written before the ordinal existed carries none, so a user who already has five rows
+ * reading "Pasted ingredients" would keep five identical rows forever — the ordinal would only
+ * ever help captures made from here on. The stored timestamp IS the scan order, so backfilling
+ * from it recovers the true order rather than inventing one.
+ *
+ * Idempotent, and it writes only when something actually changed: a no-op call must not churn
+ * localStorage on every mount. Ordinals already present are never touched — the whole promise of
+ * the number is that it does not move.
+ */
+export function ensureOrdinals(): void {
+  const recent = getValidated(RECENT_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
+  const saved = getValidated(SAVED_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
+  const missing = [...recent.items, ...saved.items]
+    .filter(e => e.seq === undefined && isGenericName(e.label.name))
+    .sort((a, b) => Date.parse(a.ts) - Date.parse(b.ts) || a.id - b.id);
+  if (missing.length === 0) {
+    return;
+  }
+  let next = nextSeq();
+  const assigned = new Map<number, number>();
+  for (const e of missing) {
+    assigned.set(e.id, next);
+    next += 1;
+  }
+  const patch = (items: HistoryEntry[]): HistoryEntry[] => items.map((e) => {
+    const seq = assigned.get(e.id);
+    return seq === undefined ? e : { ...e, seq };
+  });
+  setValidated(RECENT_SCANS_KEY, { items: patch(recent.items) }, HistoryShapeSchema);
+  setValidated(SAVED_SCANS_KEY, { items: patch(saved.items) }, HistoryShapeSchema);
+}
+
+/**
+ * The next scan-order ordinal: one past the highest already minted across BOTH shelves.
+ *
+ * Read from both because the recent FIFO evicts and the Saved shelf does not — taking the max
+ * of recent alone would re-issue a number that a saved row is still displaying, and two rows
+ * called 'Scanned label 3' is the exact failure the number exists to prevent.
+ *
+ * A fully emptied history restarts at 1. That is correct rather than merely tolerable: there is
+ * no row left for a fresh 1 to collide with.
+ */
+function nextSeq(): number {
+  let max = 0;
+  for (const e of [...getHistory(), ...getSaved()]) {
+    if (typeof e.seq === 'number' && e.seq > max) {
+      max = e.seq;
+    }
+  }
+  return max + 1;
+}
+
+/**
+ * What a history row calls itself.
+ *
+ * `numbered` is the caller's judgement about the SET on screen, not about this entry: the
+ * owner's rule is that an unnamed capture reads 'Scanned label', and picks up its number only
+ * once there is more than one of them to tell apart. The ordinal itself never moves — hiding it
+ * when it is not needed is a display choice, and a row that shows 5 today shows 5 forever.
+ */
+export function historyDisplayName(entry: HistoryEntry, numbered: boolean): string {
+  const base = humanizeName(entry.label.name);
+  if (!numbered || entry.seq === undefined || !isGenericName(entry.label.name)) {
+    return base;
+  }
+  return `${base} ${entry.seq}`;
+}
+
+/** How many captures across both shelves carry no product name of their own. */
+export function genericScanCount(): number {
+  return [...getHistory(), ...getSaved()].filter(e => isGenericName(e.label.name)).length;
 }
 
 // ─── Re-export inferred types so callers can import from @state/scanner ───
@@ -160,6 +269,10 @@ export interface ScanResult {
   hits: number;
   hitEssentials: string[];
   hitsStrong: number;
+  /** The scan-order ordinal the history writer minted for this capture, when it needed one.
+   *  Carried on the result so a later "Save for later" copies the SAME number across rather
+   *  than minting a second ordinal for one capture. */
+  seq?: number;
 }
 
 type ScanNutrient = NonNullable<ScanLabel['nutrients']>[number];
@@ -768,13 +881,20 @@ function nextScanId(): number {
  * No name-dedup — scanned labels share a few low-cardinality container names
  * ('capsule', 'powder'), so deduping by name collapsed genuinely distinct products. Each
  * capture carries a unique id, so distinct scans each keep a slot up to the cap.
+ *
+ * Returns the scan-order ordinal it minted, or undefined when the label named itself and
+ * therefore needs no number. The caller threads it onto the ScanResult so a later
+ * "Save for later" copies the SAME number onto the Saved shelf instead of minting a second
+ * one for the same capture.
  */
-function pushRecentScan(label: ScanLabel, result: ScanResult): void {
+function pushRecentScan(label: ScanLabel, result: ScanResult): number | undefined {
   const shape = getValidated(RECENT_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
   const items = [...shape.items];
+  const seq = isGenericName(label.name) ? nextSeq() : undefined;
   items.unshift({
     id: nextScanId(),
     ts: new Date().toISOString(),
+    ...(seq === undefined ? {} : { seq }),
     label,
     verdict: result.verdict,
     alignment: result.alignment,
@@ -782,19 +902,67 @@ function pushRecentScan(label: ScanLabel, result: ScanResult): void {
     gapFills: result.gapFills,
   });
   setValidated(RECENT_SCANS_KEY, { items: items.slice(0, MAX_RECENT) }, HistoryShapeSchema);
+  return seq;
 }
 
 /** Add a scan to the durable Saved shelf. Newest first, cap MAX_SAVED. Returns the
- *  new entry's id so the caller can reflect a 'saved' state. */
-export function saveScan(label: ScanLabel, result: ScanResult): number {
+ *  new entry's id so the caller can reflect a 'saved' state.
+ *
+ *  `seq` carries the capture's EXISTING scan-order ordinal when it has one — a save is a
+ *  second home for the same capture, not a second capture, so it must not be renumbered.
+ *  Only a save of something that was never logged to Recent mints a fresh one. */
+export function saveScan(label: ScanLabel, result: ScanResult, seq?: number): number {
   const shape = getValidated(SAVED_SCANS_KEY, HistoryShapeSchema) ?? { items: [] };
   const id = nextScanId();
+  const ordinal = seq ?? (isGenericName(label.name) ? nextSeq() : undefined);
   const items = [
-    { id, ts: new Date().toISOString(), label, verdict: result.verdict, alignment: result.alignment, goals: result.goals, gapFills: result.gapFills },
+    {
+      id,
+      ts: new Date().toISOString(),
+      ...(ordinal === undefined ? {} : { seq: ordinal }),
+      label,
+      verdict: result.verdict,
+      alignment: result.alignment,
+      goals: result.goals,
+      gapFills: result.gapFills,
+    },
     ...shape.items,
   ];
   setValidated(SAVED_SCANS_KEY, { items: items.slice(0, MAX_SAVED) }, HistoryShapeSchema);
   return id;
+}
+
+/**
+ * Re-judge a capture that is already on a shelf, in place.
+ *
+ * Re-opening a row lands on the editable Confirm step, so a user can correct what the OCR read
+ * and confirm again. That is a CORRECTION to an existing capture, not a new one — appending
+ * would leave the shelf holding the same product twice, once with the wrong numbers. The id,
+ * the ordinal and the original timestamp all survive: the row keeps the identity the user has
+ * been navigating by.
+ *
+ * Returns false when the id is not on the named shelf, so a caller can fall back to appending
+ * rather than silently dropping the user's edit.
+ */
+export function updateScan(shelf: 'saved' | 'recent', id: number, label: ScanLabel, result: ScanResult): boolean {
+  const key = shelf === 'saved' ? SAVED_SCANS_KEY : RECENT_SCANS_KEY;
+  const shape = getValidated(key, HistoryShapeSchema) ?? { items: [] };
+  const i = shape.items.findIndex(e => e.id === id);
+  if (i === -1) {
+    return false;
+  }
+  const prev = shape.items[i]!;
+  const items = [...shape.items];
+  items[i] = {
+    ...prev,
+    label,
+    verdict: result.verdict,
+    alignment: result.alignment,
+    goals: result.goals,
+    gapFills: result.gapFills,
+  };
+  setValidated(key, { items }, HistoryShapeSchema);
+  return true;
 }
 
 /** Remove one saved scan by id (the shelf × affordance). */
@@ -840,7 +1008,10 @@ function scan(label: ScanLabel, opts?: { logToRecent?: boolean }): ScanResult {
   result.sparseNutrients = nutrients.length === 0;
   result.sparseIngredients = (label.ingredients ?? '').trim().length === 0;
   if (cfg.logToRecent) {
-    pushRecentScan(label, result);
+    const seq = pushRecentScan(label, result);
+    if (seq !== undefined) {
+      result.seq = seq;
+    }
     (window as LegacyWindow).lcLastResult = result;
     emit('scanner:scan-complete', { captureId: String(Date.now()), verdict: mapVerdict(verdict) });
   }

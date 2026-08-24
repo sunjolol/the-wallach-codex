@@ -65,8 +65,9 @@ import {
   resolveClaims,
   umbrellaChildren,
 } from '../state/corpus.js';
-import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCeiling, essentialNameOf, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
+import { type CoverageSnapshot, type CoverageStatus, type CoverageTile, essentialCeiling, essentialNameOf, essentialSlugFor, pdmGoalProvenance, type PdmGroupSummary, rankedPdmSources } from '../state/coverage.js';
 import { essentialLede, essentialSourcesNote, essentialWhy } from '../state/entity-copy.js';
+import { type FoodSourceVerdict, foodSourceVerdict, type RankedFoodSource, rankedFoodsForEssential } from '../state/foods.js';
 import { getConditionPage, getEssentialPage } from '../state/entity-page.js';
 import { glossaryDef } from '../state/glossary.js';
 import { type CoverageRec, rankProductsForCoverage } from '../state/recommender.js';
@@ -446,6 +447,71 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
   </div>`;
 }
 
+/** One best-food-source row. A div, not a button: nothing opens, and a chevron on a dead row
+ *  promises a panel that does not exist. Same five-column shell as the product row so the two
+ *  lists read as one stack — the price column carries the share of Wallach's daily target,
+ *  which is the food's answer to the question price answers for a product. */
+function foodSrcRow(f: RankedFoodSource): string {
+  const pct = Math.round(f.fraction * 100);
+  const strong = f.strong ? ' kd-ep-src--strong' : '';
+  return `<div class="kd-ep-src kd-ep-src--food${strong}">
+      <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4 0-7-3-7-7 0-4 3-8 7-11 4 3 7 7 7 11 0 4-3 7-7 7z"/><path d="M12 21V9"/></svg></span>
+      <span class="kd-ep-src__nm">${escHTML(f.name)}</span>
+      <span class="kd-ep-src__amt">${fmtAmount(f.amount, f.unit).value} ${escHTML(fmtAmount(f.amount, f.unit).unit)}</span>
+      <span class="kd-ep-src__pr">${pct}%</span>
+    </div>`;
+}
+
+/**
+ * The "Best food sources" list for an essential — the food half of the same question the
+ * Youngevity block answers, and it sits ABOVE it (owner ruling, 2026-08-24).
+ *
+ * ★ WHEN THERE ARE NO FOODS, THE BLOCK STILL RENDERS, AND WHAT IT SAYS IS THE WHOLE POINT.
+ * "This one requires supplementing" is a CLAIM, and there are only three grounds on which the
+ * data supports it: a plant-derived mineral (depleted soil — his own framework), an essential
+ * whose supply route he names as the colloidal-mineral vehicle in his own words, or one we
+ * bound to a composition source, swept every USDA food against, and could not reach. Where the
+ * silence is OURS — no source bound yet, or no Wallach amount to measure against — the block
+ * says so instead. Printing the supplementing sentence over a gap would put a claim on screen
+ * that nothing supports, and on the twelve amino acids it would be flatly false.
+ *
+ * The grounds are DERIVED (state/foods.ts::foodSourceVerdict), never a hand-kept slug list —
+ * such a list goes stale silently, which is the failure mode this whole block is about.
+ */
+function renderFoodSourcesBlock(slug: string | null, onlyIf: FoodSourceVerdict | null = null): string {
+  if (slug === null) {
+    return '';
+  }
+  const verdict = foodSourceVerdict(slug);
+  // `onlyIf` exists for ONE caller: the plant-derived hero, which renders on every page
+  // carrying `group_record` — and that set is wider than the plant-derived minerals. Tin also
+  // carries it (Wallach names the colloidal vehicle as tin's supply route), and tin ALSO gets
+  // the standard sources block, so an unguarded call there printed the food block twice on the
+  // same page. The guard says "render here only if this page is plant-derived", which leaves
+  // tin to the standard block that was already saying the right thing about it.
+  if (onlyIf !== null && verdict !== onlyIf) {
+    return '';
+  }
+  const label = `<hr class="kd-ep-op__div">
+      <div class="kd-ep-k kd-ep-op__srclabel">${escHTML(ui('kd_ep_foodsrc_label'))}</div>`;
+  if (verdict !== 'foods') {
+    const noteId = verdict === 'plant_derived' ? 'kd_ep_foodsrc_plant_derived'
+      : verdict === 'vehicle_supplied' ? 'kd_ep_foodsrc_vehicle'
+        : verdict === 'unreachable' ? 'kd_ep_foodsrc_unreachable'
+          : verdict === 'no_binding' ? 'kd_ep_foodsrc_no_binding'
+            : 'kd_ep_foodsrc_no_target';
+    return `${label}<p class="kd-ep-foodnote">${escHTML(ui(noteId))}</p>`;
+  }
+  const foods = rankedFoodsForEssential(slug);
+  const TOP = 5;
+  const head = foods.slice(0, TOP).map(foodSrcRow).join('');
+  const rest = foods.slice(TOP);
+  const more = rest.length > 0
+    ? `<details class="kd-ep-more"><summary>${escHTML(ui('kd_ep_foodsrc_all'))} ${foods.length}</summary><div class="kd-ep-more__body">${rest.map(foodSrcRow).join('')}</div></details>`
+    : '';
+  return `${label}${head}${more}`;
+}
+
 /**
  * The "Best Youngevity sources" list for an essential — the recommender ranking in the
  * kd-ep-src row style. Top 5, but if the best-value product ranks 6th or lower it is swapped into the
@@ -453,7 +519,11 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
  * by the standard glance + the non-essential glance (omega-9 lists its label composition too — the
  * mg is what a product CONTAINS, never a target · §00.A). '' when no product carries it.
  */
-function renderSourcesBlock(layoutKey: string, slug: string | null = null): string {
+function renderSourcesBlock(layoutKey: string, slugIn: string | null = null): string {
+  // Three callers hand us only the layout key (the omega family blocks, the non-essential
+  // glance). Resolving the slug here rather than at each of them means the FOOD block reaches
+  // every path that renders sources, instead of the subset that happened to have a slug.
+  const slug = slugIn ?? essentialSlugFor(layoutKey);
   // A label that DECLARES zero is a statement that the product contains none of this — 16 rows in
   // the shipped composition say exactly that (a "Sodium 0mg" nutrition panel, most of them). Such a
   // product is not a source, so it is not listed as one; it used to render as a "0 mg" row under
@@ -469,9 +539,14 @@ function renderSourcesBlock(layoutKey: string, slug: string | null = null): stri
   const note = slug !== null ? essentialSourcesNote(slug) : '';
   const noteHtml = note.length > 0 ? `<p class="kd-ep-srcnote">${escHTML(note)}</p>` : '';
   if (sources.length === 0) {
+    // The FOOD block is independent of whether any product carries this, so it survives the
+    // no-products exit. Germanium is the case that proves it: zero rows in the whole pillar,
+    // and Wallach names the colloidal-mineral vehicle as its supply route — the one essential
+    // most in need of a where-from line would otherwise be the only one that never shows one.
+    const foodsHTML = renderFoodSourcesBlock(slug);
     return note.length === 0
-      ? ''
-      : `<hr class="kd-ep-op__div">
+      ? foodsHTML
+      : `${foodsHTML}<hr class="kd-ep-op__div">
       <div class="kd-ep-k kd-ep-op__srclabel">${escHTML(ui('kd_ep_srcnote_label'))}</div>
       ${noteHtml}`;
   }
@@ -494,7 +569,7 @@ function renderSourcesBlock(layoutKey: string, slug: string | null = null): stri
   // The diet note (read above) sits directly under the label and ABOVE the product rows: it is
   // the answer to the question the rows provoke ("why is the best one only 3% of the target?"),
   // so it has to arrive before the reader has finished being confused by them.
-  return `<hr class="kd-ep-op__div">
+  return `${renderFoodSourcesBlock(slug)}<hr class="kd-ep-op__div">
       <div class="kd-ep-k kd-ep-op__srclabel">Best Youngevity sources</div>
       ${noteHtml}${head}${more}`;
 }
@@ -1833,6 +1908,7 @@ function renderPdmClarity(page: EssentialPage): string {
         ${fatFamilyStep('04', 'kd_ep_pdm_s4_t', 'kd_ep_pdm_s4_b')}
       </div>
       ${fatFamilyQuote('WAL-CLM-RARE-000061', '98 %')}
+      ${renderFoodSourcesBlock(essentialSlugFor(page.name), 'plant_derived')}
       ${renderPdmSourcesBlock()}
     </section>`;
 }

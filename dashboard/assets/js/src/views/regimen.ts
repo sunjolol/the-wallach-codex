@@ -46,9 +46,11 @@ import { coveredCountForItems, essentialCount, getOrCompute, matchEssential } fr
 import { atMinimumDose, doseCount, doseUnitLabel, doseUnitsOf } from '../core/dose-units.js';
 import { defaultServingsFor } from '../state/dose-defaults.js';
 import { foodCatalogSize, foodCategories, rankFoodsForCoverage } from '../state/foods.js';
-import { type CoverageRec, productIdsForNames, rankProductsForCoverage } from '../state/recommender.js';
+import { type CatalogProduct, listCatalogProducts, productIdsForNames } from '../state/recommender.js';
+import { ui } from '../state/copy.js';
+import { essentialNameOf } from '../state/coverage.js';
 import { addCatalogFood, buildFoodsBlock } from './foods-block.js';
-import { starterPackIds } from '../state/starter-pack.js';
+import { pagerNode } from './pager.js';
 import {
   addOrBumpRegimenItem,
   type AddOutcome,
@@ -589,7 +591,8 @@ function wantedSlugs(goals: LayoutGoal[]): string[] {
 }
 
 function buildRecs(
-  host: HTMLElement, recs: CoverageRec[], goals: LayoutGoal[], allCovered: boolean,
+  host: HTMLElement, recs: CatalogProduct[], goals: LayoutGoal[], allCovered: boolean,
+  filteredToNothing = false,
 ): void {
   host.replaceChildren();
   const hueOf = (id: string): string => {
@@ -599,14 +602,17 @@ function buildRecs(
   if (recs.length === 0) {
     const note = document.createElement('p');
     note.className = 'ck-recs__note';
-    // TWO different endings, and conflating them would lie in one direction or the other.
-    // "No product fits" happens all the time with an unfinished field; "all 90 covered" is
-    // the actual finish line and it earns a different sentence AND a way onward.
-    note.textContent = allCovered
-      ? 'All 90 essentials are now covered — no more recommendations needed.'
-      : 'No product fills a gap right now — your stack already reaches these.';
+    // THREE different endings now, and conflating any two would lie in some direction.
+    // "No product matches those filters" is the reader's own doing and is undone by clearing
+    // them; "all 90 covered" is the actual finish line and earns a different sentence AND a way
+    // onward; "your stack already reaches these" is neither.
+    note.textContent = filteredToNothing
+      ? ui('rg_recs_empty')
+      : allCovered
+        ? 'All 90 essentials are now covered — no more recommendations needed.'
+        : 'No product fills a gap right now — your stack already reaches these.';
     host.appendChild(note);
-    if (allCovered) {
+    if (allCovered && !filteredToNothing) {
       const go = document.createElement('button');
       go.className = 'ck-recs__go';
       go.type = 'button';
@@ -622,7 +628,7 @@ function buildRecs(
       ? 'linear-gradient(var(--ds-rule-bright), var(--ds-rule-soft))'
       : cols.length === 1 ? `linear-gradient(150deg, ${cols[0]}, color-mix(in srgb, ${cols[0]} 22%, transparent))` : `linear-gradient(150deg, ${cols.join(', ')})`;
     const card = document.createElement('button');
-    card.className = 'rec';
+    card.className = r.pinned ? 'rec rec--lead' : 'rec';
     card.type = 'button';
     card.dataset['recAdd'] = r.name;
     card.style.setProperty('--recRing', ring);
@@ -634,11 +640,19 @@ function buildRecs(
     meta.className = 'rec__meta';
     const price = document.createElement('span');
     price.className = 'rec__price';
-    price.textContent = `$${r.price.toFixed(2)}`;
+    // An unpriced product is a real state in the vault; "$0.00" would be a claim about its
+    // price rather than an admission that we do not hold one.
+    price.textContent = r.price !== null ? `$${r.price.toFixed(2)}` : '—';
     const val = document.createElement('span');
     val.className = 'rec__val';
-    val.textContent = `+${r.supplies} ${r.supplies === 1 ? 'essential' : 'essentials'}`;
-    meta.append(price, val);
+    val.textContent = `+${r.supplies} new`;
+    // Formula size, shown beside what it ADDS because the two answer different questions and
+    // the reader can now sort by either. A card that says "+0 new · 34 nutrients" is telling
+    // the truth in both halves: broad formula, nothing here you do not already cover.
+    const br = document.createElement('span');
+    br.className = 'rec__br';
+    br.textContent = `${r.breadth} nutrients`;
+    meta.append(price, val, br);
     for (const gid of r.goalIds) {
       const g = goals.find(x => x.id === gid);
       if (g === undefined) {
@@ -888,6 +902,13 @@ export function mount(container: HTMLElement): MountHandle {
    *  from someone who had forgotten they set it. */
   let foodCategory = '';
   let foodQuery = '';
+  /** The PRODUCT catalogue's page, sort and two filters. Session-only for exactly the reasons
+   *  the food ones above are: this is where the reader is looking, not a setting they chose.
+   *  A sort that outlived a reload would quietly reorder a list they had stopped thinking about. */
+  let recPage = 0;
+  let recSort: RecSort = 'gap';
+  let recGoal = '';
+  let recNutrient = '';
   let toastTimer: number | null = null;
   let recycleOpen = false;
   // The "Replace a save" step: while all four slots are full, this holds the deletedAt key of the
@@ -1287,8 +1308,9 @@ export function mount(container: HTMLElement): MountHandle {
             ${renderGoals(goals)}
             <div class="fs-block" data-foodsblock></div>
             <div class="recs ck-recs" data-rise="4">
-              <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><i class="ck-recs__rule" aria-hidden="true"></i><span class="ck-recs__note">Products, ranked by your goals</span></div>
+              <div class="recs__head"><span class="recs__eyebrow">Best next moves</span><i class="ck-recs__rule" aria-hidden="true"></i><span class="ck-recs__note">${escHTML(ui('rg_recs_note'))}</span></div>
               <div class="ck-recgrid" data-recgrid></div>
+              <div class="fs-controls" data-reccontrols></div>
             </div>
           </div>
           ${renderRail()}
@@ -1304,15 +1326,36 @@ export function mount(container: HTMLElement): MountHandle {
     }
     const recGrid = container.querySelector<HTMLElement>('[data-recgrid]');
     if (recGrid !== null) {
-      const recs = rankProductsForCoverage({
+      // The whole catalogue is the pool now, not a top-3 ranking (owner ruling, 2026-08-24).
+      // Filtering and sorting happen on the POOL and paging on the result, in that order —
+      // page-then-filter would leave the pager counting pages that no longer exist.
+      const owned = new Set(productIdsForNames(items.map(i => (typeof i.label.name === 'string' ? i.label.name : ''))));
+      const pool = listCatalogProducts({
         want: wantedSlugs(goals),
-        owned: productIdsForNames(items.map(i => (typeof i.label.name === 'string' ? i.label.name : ''))),
         goals: goals.map(g => ({ id: g.id, members: g.members })),
-        limit: REC_LIMIT,
-        pinned: starterPackIds(),
-        greedy: true,
-      });
-      buildRecs(recGrid, recs, goals, allCovered);
+      }).filter(r => !owned.has(r.productId));
+      // The nutrient picker offers only what the CATALOGUE actually carries, read off the pool
+      // itself — a list written down here would keep offering a nutrient the day its last
+      // product left (R3). Labelled from the canon so the option reads "Vitamin B12", not a slug.
+      const nutrients = [...new Set(pool.flatMap(r => r.essentials))]
+        .map(slug => ({ slug, label: essentialNameOf(slug) || slug }))
+        .sort((a, b) => a.label.localeCompare(b.label));
+      const filtered = sortCatalog(filterCatalog(pool, recGoal, recNutrient), recSort);
+      const pages = Math.max(1, Math.ceil(filtered.length / REC_PAGE));
+      // A filter can strand the reader past the end of the narrowed list. Clamp rather than
+      // paint an empty page: an empty grid under a live pager reads as a broken app.
+      recPage = Math.min(recPage, pages - 1);
+      const slice = filtered.slice(recPage * REC_PAGE, recPage * REC_PAGE + REC_PAGE);
+      buildRecs(recGrid, slice, goals, allCovered, filtered.length === 0);
+      const controlsHost = container.querySelector<HTMLElement>('[data-reccontrols]');
+      if (controlsHost !== null) {
+        controlsHost.replaceChildren();
+        const nav = pagerNode({ page: recPage, pages, kind: 'numbers', dataAttr: 'recPage' });
+        if (nav !== null) {
+          controlsHost.appendChild(nav);
+        }
+        controlsHost.appendChild(recControls(recSort, recGoal, recNutrient, goals, nutrients));
+      }
     }
     paintFoods();
     if (recycleOpen) {
@@ -1608,6 +1651,16 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
+    // — product-catalogue pager —
+    const recPager = target.closest<HTMLElement>('[data-rec-page]');
+    if (recPager !== null) {
+      const n = Number.parseInt(recPager.dataset['recPage'] ?? '', 10);
+      if (Number.isFinite(n) && n >= 0) {
+        recPage = n;
+        render();
+      }
+      return;
+    }
     // — typeahead add —
     const taAdd = target.closest<HTMLElement>('[data-ta-add]');
     if (taAdd !== null) {
@@ -1755,6 +1808,28 @@ export function mount(container: HTMLElement): MountHandle {
       foodCategory = (it as HTMLSelectElement).value;
       foodPage = 0;
       paintFoods();
+      return;
+    }
+    // The product catalogue's three pickers. Each resets to page one for the same reason the
+    // food filters do: a narrowed list has fewer pages, and staying on page forty of a
+    // two-page list reads as the filter having found nothing at all.
+    if (it.matches('[data-rec-sort]')) {
+      const v = (it as HTMLSelectElement).value;
+      recSort = v === 'nutrients' || v === 'name' ? v : 'gap';
+      recPage = 0;
+      render();
+      return;
+    }
+    if (it.matches('[data-rec-goal]')) {
+      recGoal = (it as HTMLSelectElement).value;
+      recPage = 0;
+      render();
+      return;
+    }
+    if (it.matches('[data-rec-nutrient]')) {
+      recNutrient = (it as HTMLSelectElement).value;
+      recPage = 0;
+      render();
     }
   };
 
@@ -1800,4 +1875,81 @@ export function mount(container: HTMLElement): MountHandle {
       container.innerHTML = '';
     },
   };
+}
+
+// ─── The browsable product catalogue (filter · sort · page) ──────────────────
+
+/**
+ * How the reader may order the catalogue.
+ *
+ * Price is deliberately absent — the owner dropped it from the offered set on 2026-08-24. A
+ * cheapest-first browse of a supplement catalogue is an invitation to buy the wrong thing, and
+ * the gap-fill order already carries value as one of its terms.
+ */
+type RecSort = 'gap' | 'nutrients' | 'name';
+
+/**
+ * The catalogue shows the SAME three cards at a time the recommendation did.
+ *
+ * The owner's ruling, 2026-08-24: "still shows 3 at a time, add pagination same as foods". So
+ * the row's shape never changes — three food cards over three product cards — and the whole
+ * 155-product catalogue is reachable through the pager underneath rather than by lengthening
+ * the row. REC_LIMIT stays the page SIZE for exactly that reason.
+ */
+const REC_PAGE = REC_LIMIT;
+
+/** Sort a filtered pool. The pinned lead survives EVERY order (see CatalogProduct.pinned). */
+function sortCatalog(rows: CatalogProduct[], sort: RecSort): CatalogProduct[] {
+  const rest = rows.filter(r => !r.pinned);
+  const lead = rows.filter(r => r.pinned);
+  const cmp: Record<RecSort, (a: CatalogProduct, b: CatalogProduct) => number> = {
+    // What it adds to what you have not covered yet, then formula size as the tie-break.
+    gap: (a, b) => (b.supplies - a.supplies) || (b.breadth - a.breadth),
+    nutrients: (a, b) => (b.breadth - a.breadth) || (b.supplies - a.supplies),
+    name: (a, b) => a.name.localeCompare(b.name),
+  };
+  // Every comparator falls through to the id, so the order is TOTAL: two products that tie on
+  // the visible key must not swap places between paints.
+  rest.sort((a, b) => cmp[sort](a, b) || a.productId.localeCompare(b.productId));
+  return [...lead, ...rest];
+}
+
+/** Narrow the pool to a goal and/or a single nutrient. Applied to the POOL, never to the page,
+ *  or the pager would count pages that no longer exist. */
+function filterCatalog(rows: CatalogProduct[], goalId: string, nutrient: string): CatalogProduct[] {
+  return rows.filter(r => (goalId === '' || r.goalIds.includes(goalId))
+    && (nutrient === '' || r.essentials.includes(nutrient)));
+}
+
+/** The sort picker + the two filters, at the right of the pager's row — the foods layout. */
+function recControls(sort: RecSort, goalId: string, nutrient: string, goals: LayoutGoal[], nutrients: { slug: string; label: string }[]): HTMLElement {
+  const wrap = document.createElement('div');
+  wrap.className = 'fs-filter';
+  const pick = (attr: string, value: string, allLabel: string, opts: { v: string; t: string }[], aria: string): HTMLSelectElement => {
+    const s = document.createElement('select');
+    s.className = 'fs-filter__cat';
+    s.dataset[attr] = '';
+    s.setAttribute('aria-label', aria);
+    const all = document.createElement('option');
+    all.value = '';
+    all.textContent = allLabel;
+    s.appendChild(all);
+    for (const o of opts) {
+      const el = document.createElement('option');
+      el.value = o.v;
+      el.textContent = o.t;
+      s.appendChild(el);
+    }
+    s.value = value;
+    return s;
+  };
+  wrap.append(
+    pick('recSort', sort, ui('rg_recs_sort_gap'), [
+      { v: 'nutrients', t: ui('rg_recs_sort_nutrients') },
+      { v: 'name', t: ui('rg_recs_sort_name') },
+    ], ui('rg_recs_sort_label')),
+    pick('recGoal', goalId, ui('rg_recs_goal_all'), goals.map(g => ({ v: g.id, t: g.name })), ui('rg_recs_goal_label')),
+    pick('recNutrient', nutrient, ui('rg_recs_nutrient_all'), nutrients.map(n => ({ v: n.slug, t: n.label })), ui('rg_recs_nutrient_label')),
+  );
+  return wrap;
 }

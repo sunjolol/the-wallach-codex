@@ -734,6 +734,18 @@ export function essentialNameOf(slug: string): string {
 }
 
 /**
+ * The inverse: a layout key (the canon NAME a tile carries) back to its slug, or null.
+ *
+ * Several entity-page renderers — the omega family blocks, the non-essential glance — are handed
+ * only the layout key, so anything keyed by slug was simply unreachable from them. That was
+ * harmless while nothing needed it and stopped being harmless the moment the FOOD SOURCES block
+ * did: omega-3 renders through one of those paths, and it has real food sources.
+ */
+export function essentialSlugFor(layoutKey: string): string | null {
+  return readTargets().find(e => e.name === layoutKey)?.slug ?? null;
+}
+
+/**
  * The stated SAFE INTAKE for an essential Wallach gives no requirement for — or null.
  *
  * Silver is the only case today. The page needs it because the alternative reads as a lie:

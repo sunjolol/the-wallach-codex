@@ -1,2058 +1,2395 @@
 {
- "_purpose": "The FOOD CATALOG's hand-authored curation -- WHICH foods the Regimen and Coverage tabs may recommend, what each is CALLED, and WHICH USDA portion counts as one serving. Read by eden/tools/foods_composition_derive.py, which joins every row into the pinned USDA SR Legacy source to produce foods-composition-data.json.",
- "_numbers_free": "★ THIS FILE CONTAINS NO NUTRIENT NUMBERS AND MUST NEVER CONTAIN ONE. Every `fdc_id` and `portion_id` is a byte-exact join key into the pinned source; the amounts are derived from those keys and are proven against the source by the `food_composition_traces_to_source` gate. A number typed here would be a second, ungated home for a value (Charter R3) -- exactly the failure mode that let the mineral tiers sit sealed, green and wrong for three weeks.",
- "_doctrine": "Every food here was filtered against Wallach's own food rules before it was admitted: no gluten grain (wheat, barley, rye, oats), no refined sugar, no carbonated drinks, no processed meats, no refined seed oils -- the remove[] list in foods-curation.json, enforced in shipped code by the scanner's hard-reject terms. Foods he explicitly endorses (eggs, butter, beef, chicken, pork, salt, organ meats, nuts, seeds, vegetables) are deliberately well represented. Dairy is CONDITIONAL in his framework -- present, not pushed.",
- "_selection_rule": "A food earns a place only if one realistic serving delivers at least the derive's qualify_fraction (7%, set by Luneth on 2026-08-21) of Wallach's daily target for at least one essential. The derive HARD-FAILS on any food here that qualifies for nothing, so this list cannot silently accumulate dead weight.",
- "_pinned_retired": "RETIRED 2026-08-22 by Luneth, reversing the 2026-08-21 ruling that put eggs in first position. The FOOD SOURCES list is now one ranked order end to end (see state/foods.ts): with goals chosen, the share of the outstanding goal targets a serving fills; with none, the food's own nutrition. A pin is not a score, and holding a card above that order was one of the two things that made a sixty-four-page browse read as random. The block is removed rather than kept dormant because nothing reads it any more, and curation data that looks live is data someone will wire back up. Eggs remain in the catalog below and still rank on their own merits.",
- "foods": [
-  {
-   "id": "acorn-squash-baked",
-   "name": "Acorn squash, baked",
-   "category": "Vegetables",
-   "fdc_id": "170128",
-   "portion_id": "86099"
-  },
-  {
-   "id": "almond-butter",
-   "name": "Almond butter",
-   "category": "Nuts & seeds",
-   "fdc_id": "168588",
-   "portion_id": "83375"
-  },
-  {
-   "id": "almonds",
-   "name": "Almonds",
-   "category": "Nuts & seeds",
-   "fdc_id": "170567",
-   "portion_id": "86867",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Nut, almond, with skin, raw, unsalted",
-     "why": "Both raw almonds with skin."
-    }
-   }
-  },
-  {
-   "id": "apple",
-   "name": "Apple",
-   "category": "Fruits",
-   "fdc_id": "168202",
-   "portion_id": "82658",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Apples, eating, raw",
-     "why": "Our row is USDA raw apple with skin. Powell's other apple row is cooking apples, peeled and cooked -- a different food in a different state."
+  "_purpose": "The FOOD CATALOG's hand-authored curation -- WHICH foods the Regimen and Coverage tabs may recommend, what each is CALLED, and WHICH USDA portion counts as one serving. Read by eden/tools/foods_composition_derive.py, which joins every row into the pinned USDA SR Legacy source to produce foods-composition-data.json.",
+  "_numbers_free": "★ THIS FILE CONTAINS NO NUTRIENT NUMBERS AND MUST NEVER CONTAIN ONE. Every `fdc_id` and `portion_id` is a byte-exact join key into the pinned source; the amounts are derived from those keys and are proven against the source by the `food_composition_traces_to_source` gate. A number typed here would be a second, ungated home for a value (Charter R3) -- exactly the failure mode that let the mineral tiers sit sealed, green and wrong for three weeks.",
+  "_doctrine": "Every food here was filtered against Wallach's own food rules before it was admitted: no gluten grain (wheat, barley, rye, oats), no refined sugar, no carbonated drinks, no processed meats, no refined seed oils -- the remove[] list in foods-curation.json, enforced in shipped code by the scanner's hard-reject terms. Foods he explicitly endorses (eggs, butter, beef, chicken, pork, salt, organ meats, nuts, seeds, vegetables) are deliberately well represented. Dairy is CONDITIONAL in his framework -- present, not pushed.",
+  "_selection_rule": "A food earns a place only if one realistic serving delivers at least the derive's qualify_fraction (7%, set by Luneth on 2026-08-21) of Wallach's daily target for at least one essential. The derive HARD-FAILS on any food here that qualifies for nothing, so this list cannot silently accumulate dead weight.",
+  "_pinned_retired": "RETIRED 2026-08-22 by Luneth, reversing the 2026-08-21 ruling that put eggs in first position. The FOOD SOURCES list is now one ranked order end to end (see state/foods.ts): with goals chosen, the share of the outstanding goal targets a serving fills; with none, the food's own nutrition. A pin is not a score, and holding a card above that order was one of the two things that made a sixty-four-page browse read as random. The block is removed rather than kept dormant because nothing reads it any more, and curation data that looks live is data someone will wire back up. Eggs remain in the catalog below and still rank on their own merits.",
+  "foods": [
+    {
+      "id": "acerola",
+      "name": "Acerola",
+      "category": "Fruit",
+      "fdc_id": "171686",
+      "portion_id": "89187"
     },
-    "afcd-au-r3": {
-     "key": "Apple, granny-smith, unpeeled, raw",
-     "why": "AFCD measures granny smith unpeeled and red-skin peeled; ours is golden delicious with skin. The unpeeled row matches our peel, and it is also the lower. Lands under the threshold.",
-     "conservative": true
+    {
+      "id": "acorn-squash-baked",
+      "name": "Acorn squash, baked",
+      "category": "Vegetables",
+      "fdc_id": "170128",
+      "portion_id": "86099"
     },
-    "doleman-2017": {
-     "key": "Braeburn apple",
-     "why": "Doleman measured Braeburn and our USDA row is golden delicious; both raw, both with skin. Lands under the threshold."
-    }
-   }
-  },
-  {
-   "id": "apricots",
-   "name": "Apricots",
-   "category": "Fruits",
-   "fdc_id": "171697",
-   "portion_id": "89209",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Apricots, fresh",
-     "why": "Same fruit, both fresh and raw."
-    }
-   }
-  },
-  {
-   "id": "artichoke-cooked",
-   "name": "Artichoke, cooked",
-   "category": "Vegetables",
-   "fdc_id": "169311",
-   "portion_id": "84636"
-  },
-  {
-   "id": "asparagus-cooked",
-   "name": "Asparagus, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168390",
-   "portion_id": "83018"
-  },
-  {
-   "id": "avocado",
-   "name": "Avocado",
-   "category": "Fruits",
-   "fdc_id": "171706",
-   "portion_id": "89229",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Avocado, fresh",
-     "why": "Same fruit, both raw."
-    }
-   }
-  },
-  {
-   "id": "banana",
-   "name": "Banana",
-   "category": "Fruits",
-   "fdc_id": "173944",
-   "portion_id": "93517",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Banana, raw",
-     "why": "Same fruit, both raw."
+    {
+      "id": "almond-butter",
+      "name": "Almond butter",
+      "category": "Nuts & seeds",
+      "fdc_id": "168588",
+      "portion_id": "83375"
     },
-    "afcd-au-r3": {
-     "key": "Banana, lady finger or sugar, peeled, raw",
-     "why": "AFCD measures cavendish and lady-finger bananas; our USDA row is the generic 'Bananas, raw'. The lower is taken.",
-     "conservative": true
-    }
-   }
-  },
-  {
-   "id": "basil-fresh",
-   "name": "Basil, fresh",
-   "category": "Spices & herbs",
-   "fdc_id": "172232",
-   "portion_id": "90126"
-  },
-  {
-   "id": "beef-brisket",
-   "name": "Beef brisket",
-   "category": "Beef",
-   "fdc_id": "168665",
-   "portion_id": "83526"
-  },
-  {
-   "id": "beef-heart",
-   "name": "Beef heart",
-   "category": "Beef",
-   "fdc_id": "169448",
-   "portion_id": "84889"
-  },
-  {
-   "id": "beef-kidney",
-   "name": "Beef kidney",
-   "category": "Beef",
-   "fdc_id": "169450",
-   "portion_id": "84892"
-  },
-  {
-   "id": "beef-liver",
-   "name": "Beef liver",
-   "category": "Beef",
-   "fdc_id": "168626",
-   "portion_id": "83447"
-  },
-  {
-   "id": "beef-tongue",
-   "name": "Beef tongue",
-   "category": "Beef",
-   "fdc_id": "170598",
-   "portion_id": "86927"
-  },
-  {
-   "id": "beet-greens-cooked",
-   "name": "Beet greens, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168508",
-   "portion_id": "83212"
-  },
-  {
-   "id": "beets-cooked",
-   "name": "Beets, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168506",
-   "portion_id": "83209"
-  },
-  {
-   "id": "bison-ribeye",
-   "name": "Bison ribeye",
-   "category": "Lamb, veal & game",
-   "fdc_id": "172599",
-   "portion_id": "90936"
-  },
-  {
-   "id": "black-beans-cooked",
-   "name": "Black beans, cooked",
-   "category": "Legumes",
-   "fdc_id": "175237",
-   "portion_id": "95879"
-  },
-  {
-   "id": "black-eyed-peas-cooked",
-   "name": "Black-eyed peas, cooked",
-   "category": "Legumes",
-   "fdc_id": "175252",
-   "portion_id": "95897"
-  },
-  {
-   "id": "blackberries",
-   "name": "Blackberries",
-   "category": "Fruits",
-   "fdc_id": "173946",
-   "portion_id": "93521",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Blackberries, raw",
-     "why": "Same fruit, both raw."
-    }
-   }
-  },
-  {
-   "id": "blue-cheese",
-   "name": "Blue cheese",
-   "category": "Dairy & eggs",
-   "fdc_id": "172175",
-   "portion_id": "90017",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Cheese, blue vein",
-     "why": "Same cheese. Lands under the threshold."
-    }
-   }
-  },
-  {
-   "id": "bok-choy-cooked",
-   "name": "Bok choy, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168517",
-   "portion_id": "83228"
-  },
-  {
-   "id": "broccoli-cooked",
-   "name": "Broccoli, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168510",
-   "portion_id": "83216",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Broccoli, green, fresh, boiled",
-     "why": "Same vegetable, both boiled. Powell's is calabrese/green broccoli, which is what USDA 'Broccoli, cooked' is."
+    {
+      "id": "almonds",
+      "name": "Almonds",
+      "category": "Nuts & seeds",
+      "fdc_id": "170567",
+      "portion_id": "86867",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Nut, almond, with skin, raw, unsalted",
+          "why": "Both raw almonds with skin."
+        }
+      }
     },
-    "afcd-au-r3": {
-     "key": "Broccoli, fresh, boiled, drained",
-     "why": "Both boiled and drained. AFCD's BAKED broccoli reads 76% against this row's 25% — a 3x spread on cooking method alone, which is exactly why the state has to match and not merely the vegetable."
-    }
-   }
-  },
-  {
-   "id": "broccoli-rabe-cooked",
-   "name": "Broccoli rabe, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170382",
-   "portion_id": "86538"
-  },
-  {
-   "id": "brussels-sprouts-cooked",
-   "name": "Brussels sprouts, cooked",
-   "category": "Vegetables",
-   "fdc_id": "169332",
-   "portion_id": "84662",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Brussels sprout, fresh, boiled, drained",
-     "why": "Both boiled and drained; ours from frozen, theirs from fresh."
-    }
-   }
-  },
-  {
-   "id": "butternut-squash-baked",
-   "name": "Butternut squash, baked",
-   "category": "Vegetables",
-   "fdc_id": "170130",
-   "portion_id": "86101"
-  },
-  {
-   "id": "cabbage-raw",
-   "name": "Cabbage, raw",
-   "category": "Vegetables",
-   "fdc_id": "169975",
-   "portion_id": "85791",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Cabbage, red, fresh, raw",
-     "why": "Powell measures red (0.28), savoy (0.71) and white (0.53) cabbage with no generic row; USDA's 'Cabbage, raw' is common green cabbage. The lowest is taken. It lands well under the 7% threshold, so no card shows it — the pair is recorded anyway, because a pair that exists only when it helps is a biased pair.",
-     "conservative": true
+    {
+      "id": "apple",
+      "name": "Apple",
+      "category": "Fruits",
+      "fdc_id": "168202",
+      "portion_id": "82658",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Apples, eating, raw",
+          "why": "Our row is USDA raw apple with skin. Powell's other apple row is cooking apples, peeled and cooked -- a different food in a different state."
+        },
+        "afcd-au-r3": {
+          "key": "Apple, granny-smith, unpeeled, raw",
+          "why": "AFCD measures granny smith unpeeled and red-skin peeled; ours is golden delicious with skin. The unpeeled row matches our peel, and it is also the lower. Lands under the threshold.",
+          "conservative": true
+        },
+        "doleman-2017": {
+          "key": "Braeburn apple",
+          "why": "Doleman measured Braeburn and our USDA row is golden delicious; both raw, both with skin. Lands under the threshold."
+        }
+      }
     },
-    "afcd-au-r3": {
-     "key": "Cabbage, white, raw",
-     "why": "Both raw. AFCD's white cabbage is what USDA calls plain 'Cabbage' — the common green head."
+    {
+      "id": "apricots",
+      "name": "Apricots",
+      "category": "Fruits",
+      "fdc_id": "171697",
+      "portion_id": "89209",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Apricots, fresh",
+          "why": "Same fruit, both fresh and raw."
+        }
+      }
     },
-    "doleman-2017": {
-     "key": "Sweetheart cabbage",
-     "why": "Doleman measured savoy (188.7 umol/g dry) and sweetheart (98.6) cabbage, both raw; our USDA row is generic raw cabbage and says which neither. The LOWER is taken — it is true whichever head is on the board. Savoy would have shipped at 8.4%; this lands under the threshold at 4.4%, and the pair is recorded anyway.",
-     "conservative": true
-    }
-   }
-  },
-  {
-   "id": "canned-salmon-with-bones",
-   "name": "Canned salmon with bones",
-   "category": "Fish & shellfish",
-   "fdc_id": "175135",
-   "portion_id": "95714"
-  },
-  {
-   "id": "cantaloupe",
-   "name": "Cantaloupe",
-   "category": "Fruits",
-   "fdc_id": "169092",
-   "portion_id": "84216",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Melon, (cantaloupe, honeydew, galia)",
-     "why": "Powell publishes ONE melon row covering cantaloupe, honeydew and galia, and it names cantaloupe. Honeydew pairs to the same row for the same reason: the source treats the three as one measurement, so both our melons rest on it."
-    }
-   }
-  },
-  {
-   "id": "carrots-raw",
-   "name": "Carrots, raw",
-   "category": "Vegetables",
-   "fdc_id": "170393",
-   "portion_id": "86555",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Carrots, new and old, fresh, raw",
-     "why": "Same vegetable, both raw; Powell's row deliberately spans both ages."
+    {
+      "id": "arrowroot",
+      "name": "Arrowroot",
+      "category": "Vegetables",
+      "fdc_id": "168490",
+      "portion_id": "83183"
     },
-    "doleman-2017": {
-     "key": "Carrot",
-     "why": "Both raw. Lands under the threshold."
-    }
-   }
-  },
-  {
-   "id": "cashews-dry-roasted",
-   "name": "Cashews, dry roasted",
-   "category": "Nuts & seeds",
-   "fdc_id": "169421",
-   "portion_id": "84834",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Cashew nuts, roasted",
-     "why": "Same nut, both roasted."
+    {
+      "id": "artichoke-cooked",
+      "name": "Artichoke, cooked",
+      "category": "Vegetables",
+      "fdc_id": "169311",
+      "portion_id": "84636"
     },
-    "afcd-au-r3": {
-     "key": "Nut, cashew, roasted, salted",
-     "why": "Both roasted. AFCD's is salted and ours is not; salt adds sodium, not molybdenum. Lands under the threshold."
-    }
-   }
-  },
-  {
-   "id": "catfish-cooked",
-   "name": "Catfish, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "175166",
-   "portion_id": "95785"
-  },
-  {
-   "id": "cauliflower-cooked",
-   "name": "Cauliflower, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168521",
-   "portion_id": "83236",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Cauliﬂower, fresh, boiled",
-     "why": "Same vegetable, both boiled."
+    {
+      "id": "asparagus-cooked",
+      "name": "Asparagus, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168390",
+      "portion_id": "83018"
     },
-    "afcd-au-r3": {
-     "key": "Cauliflower, fresh, boiled, drained",
-     "why": "Both boiled and drained; ours is from frozen, theirs from fresh."
-    }
-   }
-  },
-  {
-   "id": "celeriac-cooked",
-   "name": "Celeriac, cooked",
-   "category": "Vegetables",
-   "fdc_id": "169341",
-   "portion_id": "84676"
-  },
-  {
-   "id": "celery-raw",
-   "name": "Celery, raw",
-   "category": "Vegetables",
-   "fdc_id": "169988",
-   "portion_id": "85824",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Celery, fresh, raw",
-     "why": "Same vegetable, both raw."
+    {
+      "id": "avocado",
+      "name": "Avocado",
+      "category": "Fruits",
+      "fdc_id": "171706",
+      "portion_id": "89229",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Avocado, fresh",
+          "why": "Same fruit, both raw."
+        }
+      }
     },
-    "afcd-au-r3": {
-     "key": "Celery, fresh, raw",
-     "why": "Both raw."
-    }
-   }
-  },
-  {
-   "id": "cheddar-cheese",
-   "name": "Cheddar cheese",
-   "category": "Dairy & eggs",
-   "fdc_id": "173414",
-   "portion_id": "92472",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Cheese, cheddar, natural, regular fat",
-     "why": "NATURAL cheddar, not AFCD's processed row — ours is natural cheddar."
-    }
-   }
-  },
-  {
-   "id": "cherries",
-   "name": "Cherries",
-   "category": "Fruits",
-   "fdc_id": "171719",
-   "portion_id": "89257",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Cherries, raw, without stone",
-     "why": "Same fruit, both raw; USDA's sweet-cherry row is also stoned weight."
-    }
-   }
-  },
-  {
-   "id": "chestnuts-roasted",
-   "name": "Japanese chestnuts, roasted",
-   "category": "Nuts & seeds",
-   "fdc_id": "168590",
-   "portion_id": "83378"
-  },
-  {
-   "id": "chicken-breast-roasted",
-   "name": "Chicken breast, roasted",
-   "category": "Poultry",
-   "fdc_id": "171477",
-   "portion_id": "88819",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Chicken, breast, lean flesh, baked, no added fat",
-     "why": "Our USDA row is breast meat only, roasted; this is lean flesh baked with no added fat. AFCD's grilled and fried rows read higher and are not borrowed."
+    {
+      "id": "banana",
+      "name": "Banana",
+      "category": "Fruits",
+      "fdc_id": "173944",
+      "portion_id": "93517",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Banana, raw",
+          "why": "Same fruit, both raw."
+        },
+        "afcd-au-r3": {
+          "key": "Banana, lady finger or sugar, peeled, raw",
+          "why": "AFCD measures cavendish and lady-finger bananas; our USDA row is the generic 'Bananas, raw'. The lower is taken.",
+          "conservative": true
+        }
+      }
     },
-    "doleman-2017": {
-     "key": "Chicken breast",
-     "why": "Doleman pan-fried the fillet without fat; our USDA row is breast meat only, roasted. Both dry heat, no fat added, no skin. ⚠ AFCD measures no sulphur in chicken breast at all, so this is the only route to it."
-    }
-   }
-  },
-  {
-   "id": "chicken-liver",
-   "name": "Chicken liver",
-   "category": "Poultry",
-   "fdc_id": "174491",
-   "portion_id": "94449"
-  },
-  {
-   "id": "chicken-thigh-roasted",
-   "name": "Chicken thigh, roasted",
-   "category": "Poultry",
-   "fdc_id": "172388",
-   "portion_id": "90511"
-  },
-  {
-   "id": "chickpeas-cooked",
-   "name": "Chickpeas, cooked",
-   "category": "Legumes",
-   "fdc_id": "173799",
-   "portion_id": "93272",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Chickpeas, canned or dried and boiled",
-     "why": "Same legume, both boiled from dry."
+    {
+      "id": "basil-fresh",
+      "name": "Basil, fresh",
+      "category": "Spices & herbs",
+      "fdc_id": "172232",
+      "portion_id": "90126"
     },
-    "afcd-au-r3": {
-     "key": "Chickpea, dried, boiled, drained",
-     "why": "Both boiled from dry. AFCD's dry chickpea row reads ~3x higher and is not borrowed — nobody eats them dry."
-    }
-   }
-  },
-  {
-   "id": "chuck-pot-roast",
-   "name": "Chuck pot roast",
-   "category": "Beef",
-   "fdc_id": "168667",
-   "portion_id": "83530",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Beef, casserole meat, boneless, chuck, lean, casseroled, no added fat",
-     "why": "Boneless chuck in both, slow-cooked in both, and our USDA row is trimmed to 0 inch fat, which is what AFCD calls lean."
-    }
-   }
-  },
-  {
-   "id": "clams-cooked",
-   "name": "Clams, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "171975",
-   "portion_id": "89661"
-  },
-  {
-   "id": "cloves-ground",
-   "name": "Cloves, ground",
-   "category": "Spices & herbs",
-   "fdc_id": "171321",
-   "portion_id": "88431"
-  },
-  {
-   "id": "coconut-raw",
-   "name": "Coconut, raw",
-   "category": "Nuts & seeds",
-   "fdc_id": "170169",
-   "portion_id": "86165"
-  },
-  {
-   "id": "cod",
-   "name": "Cod",
-   "category": "Fish & shellfish",
-   "fdc_id": "171956",
-   "portion_id": "89622",
-   "matches": {
-    "doleman-2017": {
-     "key": "Cod",
-     "why": "Doleman pan-fried a boneless fillet without fat; our USDA row is Atlantic cod cooked by dry heat. ⚠ AFCD's only cod is SMOKED cod, whose chloride is brine — this is the only honest route to cod."
-    }
-   }
-  },
-  {
-   "id": "collard-greens-cooked",
-   "name": "Collard greens, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168523",
-   "portion_id": "83238"
-  },
-  {
-   "id": "cottage-cheese",
-   "name": "Cottage cheese",
-   "category": "Dairy & eggs",
-   "fdc_id": "172179",
-   "portion_id": "90034",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Cheese, cottage",
-     "why": "Same cheese, both as sold."
-    }
-   }
-  },
-  {
-   "id": "dandelion-greens-cooked",
-   "name": "Dandelion greens, cooked",
-   "category": "Vegetables",
-   "fdc_id": "169351",
-   "portion_id": "84692"
-  },
-  {
-   "id": "dates",
-   "name": "Dates",
-   "category": "Fruits",
-   "fdc_id": "171726",
-   "portion_id": "89264",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Dates, dried",
-     "why": "Powell's only dates row. Our catalog entry is deglet noor, also a dried date -- USDA sells no fresh date row."
-    }
-   }
-  },
-  {
-   "id": "duck-egg",
-   "name": "Duck egg",
-   "category": "Dairy & eggs",
-   "fdc_id": "172189",
-   "portion_id": "90055"
-  },
-  {
-   "id": "duck-roasted",
-   "name": "Duck, roasted",
-   "category": "Poultry",
-   "fdc_id": "172409",
-   "portion_id": "90568",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Duck, lean flesh, skin & fat, baked, no added fat",
-     "why": "Meat AND skin in both, roasted/baked with no added fat. AFCD's skinless row reads higher and is not borrowed — ours includes the skin."
-    }
-   }
-  },
-  {
-   "id": "edamame",
-   "name": "Edamame",
-   "category": "Vegetables",
-   "fdc_id": "168411",
-   "portion_id": "83053"
-  },
-  {
-   "id": "egg",
-   "name": "Egg",
-   "category": "Dairy & eggs",
-   "fdc_id": "173424",
-   "portion_id": "92500",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Egg, chicken, whole, hard-boiled",
-     "why": "Our USDA row is 'Egg, whole, cooked, hard-boiled' and this is AFCD's hard-boiled row — the same food in the same state. AFCD's RAW egg row shows sulphur where the boiled one does not, and it is not borrowed: a raw figure on a boiled egg is a different measurement."
+    {
+      "id": "beef-brisket",
+      "name": "Beef brisket",
+      "category": "Beef",
+      "fdc_id": "168665",
+      "portion_id": "83526"
     },
-    "doleman-2017": {
-     "key": "Eggs",
-     "why": "Doleman boiled medium free-range eggs; our USDA row is whole egg, cooked, hard-boiled. The same food in the same state. AFCD's hard-boiled egg measures no sulphur."
-    }
-   }
-  },
-  {
-   "id": "egg-yolk",
-   "name": "Egg yolk",
-   "category": "Dairy & eggs",
-   "fdc_id": "172184",
-   "portion_id": "90045"
-  },
-  {
-   "id": "eggplant-cooked",
-   "name": "Eggplant, cooked",
-   "category": "Vegetables",
-   "fdc_id": "169352",
-   "portion_id": "84693",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Aubergine, fresh, boiled Table 1. Continued Food description",
-     "why": "Aubergine IS eggplant; both boiled. The key carries 'Table 1. Continued Food description' because the paper's repeated table header bleeds into this PDF line; kept byte-exact so the gate can join it."
-    }
-   }
-  },
-  {
-   "id": "elk-steak",
-   "name": "Elk steak",
-   "category": "Lamb, veal & game",
-   "fdc_id": "174427",
-   "portion_id": "94350"
-  },
-  {
-   "id": "escarole-cooked",
-   "name": "Escarole, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168413",
-   "portion_id": "83056"
-  },
-  {
-   "id": "fava-beans-cooked",
-   "name": "Fava beans, cooked",
-   "category": "Legumes",
-   "fdc_id": "173798",
-   "portion_id": "93271"
-  },
-  {
-   "id": "fennel-raw",
-   "name": "Fennel, raw",
-   "category": "Vegetables",
-   "fdc_id": "169385",
-   "portion_id": "84767"
-  },
-  {
-   "id": "feta",
-   "name": "Feta",
-   "category": "Dairy & eggs",
-   "fdc_id": "173420",
-   "portion_id": "92490",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Cheese, fetta (feta)",
-     "why": "AFCD spells it fetta. Same cheese. Lands under the threshold."
-    }
-   }
-  },
-  {
-   "id": "flounder-cooked",
-   "name": "Flounder, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "174197",
-   "portion_id": "93913"
-  },
-  {
-   "id": "goat-milk",
-   "name": "Goat milk",
-   "category": "Dairy & eggs",
-   "fdc_id": "171278",
-   "portion_id": "88350"
-  },
-  {
-   "id": "goat-roasted",
-   "name": "Goat, roasted",
-   "category": "Lamb, veal & game",
-   "fdc_id": "175304",
-   "portion_id": "95996"
-  },
-  {
-   "id": "grapefruit",
-   "name": "Grapefruit",
-   "category": "Fruits",
-   "fdc_id": "173033",
-   "portion_id": "91838",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Grapefruit, raw",
-     "why": "Same fruit, both raw."
-    }
-   }
-  },
-  {
-   "id": "grapes",
-   "name": "Grapes",
-   "category": "Fruits",
-   "fdc_id": "174683",
-   "portion_id": "94748",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Grapes, green and red",
-     "why": "Same fruit; Powell's row spans both colours, as USDA's 'Grapes, red or green' does."
-    }
-   }
-  },
-  {
-   "id": "greek-yogurt",
-   "name": "Greek yogurt, lowfat",
-   "category": "Dairy & eggs",
-   "fdc_id": "170903",
-   "portion_id": "87526"
-  },
-  {
-   "id": "green-beans-cooked",
-   "name": "Green beans, cooked",
-   "category": "Vegetables",
-   "fdc_id": "169321",
-   "portion_id": "84651",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Beans, green or French, fresh, boiled",
-     "why": "The GENERIC green-bean row. Powell also prints Kenyan/fine beans (a thinner cultivar of the same species, 10.00) and runner beans (a different species, Phaseolus coccineus). USDA 'Beans, snap, green' is Phaseolus vulgaris, so the generic row is the pair and the higher cultivar row is not borrowed."
+    {
+      "id": "beef-heart",
+      "name": "Beef heart",
+      "category": "Beef",
+      "fdc_id": "169448",
+      "portion_id": "84889"
     },
-    "afcd-au-r3": {
-     "key": "Bean, green, fresh, boiled, drained",
-     "why": "Both boiled and drained. AFCD's 'cooked, no added fat' row reads higher and is not borrowed — ours is boiled."
-    }
-   }
-  },
-  {
-   "id": "green-peas-cooked",
-   "name": "Green peas, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170102",
-   "portion_id": "86051",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Peas, fresh, boiled",
-     "why": "USDA's row is fresh peas boiled; Powell's frozen and petit-pois rows are different products and are not used."
+    {
+      "id": "beef-kidney",
+      "name": "Beef kidney",
+      "category": "Beef",
+      "fdc_id": "169450",
+      "portion_id": "84892"
     },
-    "afcd-au-r3": {
-     "key": "Pea, green, fresh, boiled, drained",
-     "why": "Both fresh peas, boiled and drained."
-    }
-   }
-  },
-  {
-   "id": "ground-beef",
-   "name": "Ground beef",
-   "category": "Beef",
-   "fdc_id": "174034",
-   "portion_id": "93669"
-  },
-  {
-   "id": "ground-bison",
-   "name": "Ground bison",
-   "category": "Lamb, veal & game",
-   "fdc_id": "173847",
-   "portion_id": "93365"
-  },
-  {
-   "id": "ground-chicken",
-   "name": "Ground chicken",
-   "category": "Poultry",
-   "fdc_id": "171117",
-   "portion_id": "88004"
-  },
-  {
-   "id": "ground-lamb",
-   "name": "Ground lamb",
-   "category": "Lamb, veal & game",
-   "fdc_id": "172544",
-   "portion_id": "90819",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Lamb, mince, stir-fried, no added fat",
-     "why": "Mince IS ground lamb. Ours is broiled and AFCD's stir-fried — both dry heat with no added fat, which is the part that moves the number."
-    }
-   }
-  },
-  {
-   "id": "ground-pork",
-   "name": "Ground pork",
-   "category": "Pork",
-   "fdc_id": "167903",
-   "portion_id": "82191",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Pork, mince, as purchased, fried, no added fat",
-     "why": "Mince IS ground pork; cooked in both, no fat added in either."
-    }
-   }
-  },
-  {
-   "id": "ground-turkey",
-   "name": "Ground turkey",
-   "category": "Poultry",
-   "fdc_id": "171506",
-   "portion_id": "88876"
-  },
-  {
-   "id": "ground-venison",
-   "name": "Ground venison",
-   "category": "Lamb, veal & game",
-   "fdc_id": "172603",
-   "portion_id": "90945",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Venison, mince, premium, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",
-     "why": "Mince IS ground venison; cooked in both."
-    }
-   }
-  },
-  {
-   "id": "guava",
-   "name": "Guava",
-   "category": "Fruits",
-   "fdc_id": "173044",
-   "portion_id": "91858"
-  },
-  {
-   "id": "haddock-cooked",
-   "name": "Haddock, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "174198",
-   "portion_id": "93915"
-  },
-  {
-   "id": "halibut-cooked",
-   "name": "Halibut, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "174201",
-   "portion_id": "93921"
-  },
-  {
-   "id": "hazelnuts",
-   "name": "Hazelnuts",
-   "category": "Nuts & seeds",
-   "fdc_id": "170581",
-   "portion_id": "86899",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Nut, hazelnut, raw, unsalted",
-     "why": "Both raw."
-    }
-   }
-  },
-  {
-   "id": "hearts-of-palm-canned",
-   "name": "Hearts of palm, canned",
-   "category": "Vegetables",
-   "fdc_id": "168569",
-   "portion_id": "83344"
-  },
-  {
-   "id": "hemp-seeds",
-   "name": "Hemp seeds",
-   "category": "Nuts & seeds",
-   "fdc_id": "170148",
-   "portion_id": "86132"
-  },
-  {
-   "id": "herring-cooked",
-   "name": "Herring, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "174233",
-   "portion_id": "93989"
-  },
-  {
-   "id": "honeydew-melon",
-   "name": "Honeydew melon",
-   "category": "Fruits",
-   "fdc_id": "169911",
-   "portion_id": "85658",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Melon, (cantaloupe, honeydew, galia)",
-     "why": "The same single melon row, which names honeydew. See cantaloupe -- both our melons rest on one pooled measurement, which is the source's choice, not ours."
-    }
-   }
-  },
-  {
-   "id": "kale-cooked",
-   "name": "Kale, cooked",
-   "category": "Vegetables",
-   "fdc_id": "169355",
-   "portion_id": "84696"
-  },
-  {
-   "id": "kidney-beans-cooked",
-   "name": "Kidney beans, cooked",
-   "category": "Legumes",
-   "fdc_id": "175242",
-   "portion_id": "95884",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Red kidney beans, canned or dried and boiled",
-     "why": "Same legume, both boiled from dry."
+    {
+      "id": "beef-liver",
+      "name": "Beef liver",
+      "category": "Beef",
+      "fdc_id": "168626",
+      "portion_id": "83447"
     },
-    "afcd-au-r3": {
-     "key": "Bean, red kidney, dried, boiled, drained",
-     "why": "Both boiled from dry."
-    }
-   }
-  },
-  {
-   "id": "kimchi",
-   "name": "Kimchi",
-   "category": "Vegetables",
-   "fdc_id": "170392",
-   "portion_id": "86554"
-  },
-  {
-   "id": "king-crab-cooked",
-   "name": "King crab, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "174202",
-   "portion_id": "93924"
-  },
-  {
-   "id": "kiwifruit",
-   "name": "Kiwifruit",
-   "category": "Fruits",
-   "fdc_id": "168153",
-   "portion_id": "82568",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Kiwi fruit, raw, without skin",
-     "why": "Same fruit, both raw, both flesh-only."
-    }
-   }
-  },
-  {
-   "id": "kohlrabi-cooked",
-   "name": "Kohlrabi, cooked",
-   "category": "Vegetables",
-   "fdc_id": "169357",
-   "portion_id": "84698"
-  },
-  {
-   "id": "lamb-chop",
-   "name": "Lamb chop",
-   "category": "Lamb, veal & game",
-   "fdc_id": "172489",
-   "portion_id": "90710"
-  },
-  {
-   "id": "lamb-kidneys",
-   "name": "Lamb kidneys",
-   "category": "Lamb, veal & game",
-   "fdc_id": "174355",
-   "portion_id": "94206"
-  },
-  {
-   "id": "lamb-liver",
-   "name": "Lamb liver",
-   "category": "Lamb, veal & game",
-   "fdc_id": "172533",
-   "portion_id": "90798"
-  },
-  {
-   "id": "lamb-shank",
-   "name": "Lamb shank",
-   "category": "Lamb, veal & game",
-   "fdc_id": "172482",
-   "portion_id": "90697"
-  },
-  {
-   "id": "leeks-cooked",
-   "name": "Leeks, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168535",
-   "portion_id": "83256",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Leeks, fresh, boiled",
-     "why": "Same vegetable, both boiled."
-    }
-   }
-  },
-  {
-   "id": "leg-of-lamb",
-   "name": "Leg of lamb",
-   "category": "Lamb, veal & game",
-   "fdc_id": "174312",
-   "portion_id": "94120"
-  },
-  {
-   "id": "lentils-cooked",
-   "name": "Lentils, cooked",
-   "category": "Legumes",
-   "fdc_id": "175254",
-   "portion_id": "95899",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Lentils, green and brown, boiled",
-     "why": "Powell measures two lentils — red at 4.42 and green/brown at 1.95 mg/100 g — and our USDA row is the generic 'Lentils, mature seeds, cooked', which says nothing about colour. The LOWER is taken: it is true of whichever lentil is on the plate, where taking red would only be true of red. Dropping lentils instead, which is what this curation did for one day, told the user lentils contain no silica at all — a claim both of Powell's rows contradict.",
-     "conservative": true
-    }
-   }
-  },
-  {
-   "id": "lima-beans-cooked",
-   "name": "Lima beans, cooked",
-   "category": "Legumes",
-   "fdc_id": "173802",
-   "portion_id": "93276",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Bean, lima, dried, boiled, drained",
-     "why": "Both boiled from dry."
-    }
-   }
-  },
-  {
-   "id": "lobster-cooked",
-   "name": "Lobster, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "174209",
-   "portion_id": "93937",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Lobster or crayfish, flesh, purchased steamed, poached or boiled, no added fat",
-     "why": "Lobster flesh in both, moist-heat cooked in both."
-    }
-   }
-  },
-  {
-   "id": "lychee",
-   "name": "Lychee",
-   "category": "Fruits",
-   "fdc_id": "169086",
-   "portion_id": "84200",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Lychee, peeled, raw",
-     "why": "Both raw, both peeled."
-    }
-   }
-  },
-  {
-   "id": "macadamia-nuts-roasted",
-   "name": "Macadamia nuts, roasted",
-   "category": "Nuts & seeds",
-   "fdc_id": "168598",
-   "portion_id": "83393"
-  },
-  {
-   "id": "mackerel-cooked",
-   "name": "Mackerel, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "171994",
-   "portion_id": "89703",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Mackerel, grilled, no added fat",
-     "why": "Both cooked mackerel flesh with nothing added."
-    }
-   }
-  },
-  {
-   "id": "mango",
-   "name": "Mango",
-   "category": "Fruits",
-   "fdc_id": "169910",
-   "portion_id": "85651",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Mango, fresh, raw, ﬁbrous",
-     "why": "Powell measures smooth mango at 3.15 and fibrous at 2.00 mg/100 g; our USDA row is the generic 'Mangos, raw'. The lower is taken for the same reason as lentils.",
-     "conservative": true
-    }
-   }
-  },
-  {
-   "id": "mozzarella",
-   "name": "Mozzarella",
-   "category": "Dairy & eggs",
-   "fdc_id": "170845",
-   "portion_id": "87382",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Cheese, mozzarella",
-     "why": "Same cheese, both as sold."
-    }
-   }
-  },
-  {
-   "id": "mung-bean-sprouts-cooked",
-   "name": "Mung bean sprouts, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168499",
-   "portion_id": "83197"
-  },
-  {
-   "id": "mussels-cooked",
-   "name": "Mussels, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "174217",
-   "portion_id": "93960",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Mussel, blue, steamed",
-     "why": "Both cooked mussel flesh; AFCD's only mussel row and its state matches ours."
-    }
-   }
-  },
-  {
-   "id": "mustard-greens-cooked",
-   "name": "Mustard greens, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170503",
-   "portion_id": "86772"
-  },
-  {
-   "id": "natto",
-   "name": "Natto",
-   "category": "Legumes",
-   "fdc_id": "172443",
-   "portion_id": "90631"
-  },
-  {
-   "id": "navy-beans-cooked",
-   "name": "Navy beans, cooked",
-   "category": "Legumes",
-   "fdc_id": "173794",
-   "portion_id": "93266"
-  },
-  {
-   "id": "octopus-cooked",
-   "name": "Octopus, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "174249",
-   "portion_id": "94020"
-  },
-  {
-   "id": "okra-cooked",
-   "name": "Okra, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170098",
-   "portion_id": "86037"
-  },
-  {
-   "id": "onions-raw",
-   "name": "Onions, raw",
-   "category": "Vegetables",
-   "fdc_id": "170000",
-   "portion_id": "85855",
-   "matches": {
-    "doleman-2017": {
-     "key": "Brown onion",
-     "conservative": true,
-     "why": "Doleman measured brown (77.0 umol/g dry) and red (121.3) mature onions raw; our USDA row is the generic 'Onions, raw' and says which neither. The LOWER is taken. Doleman's spring onion is a different food and lives on our scallions entry, not here."
+    {
+      "id": "beef-tongue",
+      "name": "Beef tongue",
+      "category": "Beef",
+      "fdc_id": "170598",
+      "portion_id": "86927"
     },
-    "afcd-au-r3": {
-     "key": "Onion, mature, white skinned, peeled, fresh, raw",
-     "conservative": true,
-     "why": "AFCD measures brown, red and white mature onions raw; ours is the generic raw onion. The LOWEST is taken, which is white — and it lands under the threshold, where brown would have shipped molybdenum at 8.4%. The pair is recorded anyway: a pair that exists only when it helps is a biased pair."
-    }
-   }
-  },
-  {
-   "id": "orange",
-   "name": "Orange",
-   "category": "Fruits",
-   "fdc_id": "169097",
-   "portion_id": "84230"
-  },
-  {
-   "id": "oysters-cooked",
-   "name": "Oysters, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "171980",
-   "portion_id": "89671"
-  },
-  {
-   "id": "papaya",
-   "name": "Papaya",
-   "category": "Fruits",
-   "fdc_id": "169926",
-   "portion_id": "85692",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Papaya, yellow, peeled, raw",
-     "why": "AFCD measures pawpaw, red papaya and yellow papaya; ours is the generic 'Papayas, raw'. The lowest is taken. Lands under the threshold.",
-     "conservative": true
-    }
-   }
-  },
-  {
-   "id": "parmesan-grated",
-   "name": "Parmesan, grated",
-   "category": "Dairy & eggs",
-   "fdc_id": "171247",
-   "portion_id": "88263"
-  },
-  {
-   "id": "parsley-fresh",
-   "name": "Parsley, fresh",
-   "category": "Vegetables",
-   "fdc_id": "170416",
-   "portion_id": "86608",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Parsley, continental, fresh, raw",
-     "why": "Both fresh and raw. Lands under the threshold."
-    }
-   }
-  },
-  {
-   "id": "parsnips-cooked",
-   "name": "Parsnips, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170009",
-   "portion_id": "85888",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Parsnips, fresh, peeled, boiled",
-     "why": "Same vegetable, both boiled."
-    }
-   }
-  },
-  {
-   "id": "peach",
-   "name": "Peach",
-   "category": "Fruits",
-   "fdc_id": "169928",
-   "portion_id": "85697",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Peaches, fresh, raw",
-     "why": "Same fruit, both raw."
-    }
-   }
-  },
-  {
-   "id": "peanuts-dry-roasted",
-   "name": "Peanuts, dry-roasted",
-   "category": "Legumes",
-   "fdc_id": "173806",
-   "portion_id": "93281",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Groundnuts, roasted and salted",
-     "why": "Groundnut IS peanut, and both are roasted. Powell's is salted and ours is not; salt adds sodium, not silicon."
+    {
+      "id": "beet-greens-cooked",
+      "name": "Beet greens, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168508",
+      "portion_id": "83212"
     },
-    "afcd-au-r3": {
-     "key": "Nut, peanut, without skin, roasted, with oil, unsalted",
-     "why": "AFCD has no dry-roasted peanut; this is roasted in oil, and the oil dilutes everything per 100 g, so it is a floor for our dry-roasted row.",
-     "conservative": true
-    }
-   }
-  },
-  {
-   "id": "pear",
-   "name": "Pear",
-   "category": "Fruits",
-   "fdc_id": "169118",
-   "portion_id": "84275",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Pears, raw",
-     "why": "Same fruit, both raw."
-    }
-   }
-  },
-  {
-   "id": "pecans",
-   "name": "Pecans",
-   "category": "Nuts & seeds",
-   "fdc_id": "170182",
-   "portion_id": "86190"
-  },
-  {
-   "id": "persimmon",
-   "name": "Persimmon",
-   "category": "Fruits",
-   "fdc_id": "169941",
-   "portion_id": "85724"
-  },
-  {
-   "id": "pineapple",
-   "name": "Pineapple",
-   "category": "Fruits",
-   "fdc_id": "169124",
-   "portion_id": "84289",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Pineapple, fresh, raw",
-     "why": "Powell's only FRESH pineapple row. The canned-in-juice and canned-in-syrup rows are different products and are not used."
-    }
-   }
-  },
-  {
-   "id": "pinto-beans-cooked",
-   "name": "Pinto beans, cooked",
-   "category": "Legumes",
-   "fdc_id": "175200",
-   "portion_id": "95832"
-  },
-  {
-   "id": "pistachios-dry-roasted",
-   "name": "Pistachios, dry roasted",
-   "category": "Nuts & seeds",
-   "fdc_id": "169426",
-   "portion_id": "84844"
-  },
-  {
-   "id": "plantain-baked",
-   "name": "Plantain, baked",
-   "category": "Fruits",
-   "fdc_id": "169131",
-   "portion_id": "84304"
-  },
-  {
-   "id": "poppy-seeds",
-   "name": "Poppy seeds",
-   "category": "Spices & herbs",
-   "fdc_id": "171330",
-   "portion_id": "88450"
-  },
-  {
-   "id": "pork-liver",
-   "name": "Pork liver",
-   "category": "Pork",
-   "fdc_id": "167863",
-   "portion_id": "82113"
-  },
-  {
-   "id": "pork-ribs",
-   "name": "Pork ribs",
-   "category": "Pork",
-   "fdc_id": "168377",
-   "portion_id": "82988",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Pork, spare ribs, untrimmed, baked, no added fat",
-     "why": "Ribs in both, roasted/baked in both. Ours is lean only and AFCD's is untrimmed; fat carries almost no sulphur, so the untrimmed figure is the floor for a lean rib.",
-     "conservative": true
-    }
-   }
-  },
-  {
-   "id": "pork-shoulder-roasted",
-   "name": "Pork shoulder, roasted",
-   "category": "Pork",
-   "fdc_id": "167844",
-   "portion_id": "82078",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Pork, forequarter shoulder roast, untrimmed, BBQ'd, no added fat",
-     "why": "Shoulder roast in both, cooked in both, and UNTRIMMED — which is what our USDA row's 'separable lean and fat' means. AFCD's lean row reads higher and is not borrowed."
-    }
-   }
-  },
-  {
-   "id": "portabella-mushrooms-grilled",
-   "name": "Portabella mushrooms, grilled",
-   "category": "Vegetables",
-   "fdc_id": "169243",
-   "portion_id": "84501"
-  },
-  {
-   "id": "potato-baked",
-   "name": "Potato, baked",
-   "category": "Vegetables",
-   "fdc_id": "170093",
-   "portion_id": "86027"
-  },
-  {
-   "id": "provolone",
-   "name": "Provolone",
-   "category": "Dairy & eggs",
-   "fdc_id": "170850",
-   "portion_id": "87399"
-  },
-  {
-   "id": "pumpkin-seeds-roasted",
-   "name": "Pumpkin seeds, roasted",
-   "category": "Nuts & seeds",
-   "fdc_id": "169415",
-   "portion_id": "84822",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Seed, pumpkin, hulled & dried",
-     "why": "AFCD measures hulled DRIED pepitas; ours are roasted. Roasting drives off the last of the moisture, so the roasted figure can only be higher — the dried one is the floor.",
-     "conservative": true
-    }
-   }
-  },
-  {
-   "id": "rabbit-stewed",
-   "name": "Rabbit, stewed",
-   "category": "Lamb, veal & game",
-   "fdc_id": "174346",
-   "portion_id": "94188",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Rabbit, flesh, casseroled, no added fat",
-     "why": "Casseroled IS stewed; flesh only in both."
-    }
-   }
-  },
-  {
-   "id": "radishes-raw",
-   "name": "Radishes, raw",
-   "category": "Vegetables",
-   "fdc_id": "169276",
-   "portion_id": "84582",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Radish, fresh",
-     "why": "Same vegetable, both raw."
+    {
+      "id": "beets-cooked",
+      "name": "Beets, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168506",
+      "portion_id": "83209"
     },
-    "doleman-2017": {
-     "key": "Radish",
-     "why": "Both raw. Lands under the threshold."
-    }
-   }
-  },
-  {
-   "id": "rainbow-trout-cooked",
-   "name": "Rainbow trout, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "173718",
-   "portion_id": "93178"
-  },
-  {
-   "id": "raspberries",
-   "name": "Raspberries",
-   "category": "Fruits",
-   "fdc_id": "167755",
-   "portion_id": "81905",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Raspberries, fresh, raw",
-     "why": "Same fruit, both raw."
-    }
-   }
-  },
-  {
-   "id": "red-bell-pepper-raw",
-   "name": "Red bell pepper, raw",
-   "category": "Vegetables",
-   "fdc_id": "170108",
-   "portion_id": "86065",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Peppers, red, fresh, raw",
-     "why": "Same vegetable, same colour, both raw."
-    }
-   }
-  },
-  {
-   "id": "ribeye-steak",
-   "name": "Beef ribeye",
-   "category": "Beef",
-   "fdc_id": "169556",
-   "portion_id": "85100"
-  },
-  {
-   "id": "ricotta",
-   "name": "Ricotta",
-   "category": "Dairy & eggs",
-   "fdc_id": "170851",
-   "portion_id": "87401",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Cheese, ricotta",
-     "why": "Same cheese, both as sold."
-    }
-   }
-  },
-  {
-   "id": "rockfish-cooked",
-   "name": "Rockfish, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "175131",
-   "portion_id": "95706"
-  },
-  {
-   "id": "romaine-lettuce",
-   "name": "Romaine lettuce",
-   "category": "Vegetables",
-   "fdc_id": "169247",
-   "portion_id": "84510",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Lettuce, little gem, fresh, raw",
-     "why": "Little gem is a cos/romaine cultivar -- the only romaine-type row Powell prints. Iceberg, lamb's, rocket and mixed leaves are other lettuces and are not borrowed."
+    {
+      "id": "bison-ribeye",
+      "name": "Bison ribeye",
+      "category": "Lamb, veal & game",
+      "fdc_id": "172599",
+      "portion_id": "90936"
     },
-    "doleman-2017": {
-     "key": "Lettuce",
-     "why": "Doleman's row is generic lettuce and ours is cos/romaine; both raw. Lands under the threshold."
-    }
-   }
-  },
-  {
-   "id": "rutabaga-cooked",
-   "name": "Rutabaga, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168455",
-   "portion_id": "83123",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Swede, fresh, boiled",
-     "why": "Swede IS rutabaga (Brassica napus); both boiled."
-    }
-   }
-  },
-  {
-   "id": "salt",
-   "name": "Salt",
-   "category": "Spices & herbs",
-   "fdc_id": "173468",
-   "portion_id": "92594",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Salt, table, iodised",
-     "why": "AFCD publishes iodised and non-iodised table salt at the identical 61,200 mg chloride per 100 g — salt IS sodium chloride, so this is a composition fact, not a sample. Iodised is taken because that is what our catalog entry is."
-    }
-   }
-  },
-  {
-   "id": "sardines-canned-with-bones",
-   "name": "Sardines, canned with bones",
-   "category": "Fish & shellfish",
-   "fdc_id": "175140",
-   "portion_id": "95728",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Sardine, Australian, whole, fried, no added fat",
-     "why": "Both whole sardine, cooked, eaten with the bones. AFCD publishes no canned sardine; of its two rows this is the cooked one AND the lower, so the state matches and the number is the conservative of the pair."
-    }
-   }
-  },
-  {
-   "id": "scallions-raw",
-   "name": "Scallions, raw",
-   "category": "Vegetables",
-   "fdc_id": "170005",
-   "portion_id": "85878",
-   "matches": {
-    "doleman-2017": {
-     "key": "Spring onion",
-     "why": "Spring onion IS the scallion; both raw, both including tops and bulb. Lands under the threshold at 5.8% and is recorded anyway."
-    }
-   }
-  },
-  {
-   "id": "scallops-cooked",
-   "name": "Scallops, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "167742",
-   "portion_id": "81878",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Scallop, fried, no added fat",
-     "why": "AFCD has two scallop rows, raw and fried-with-no-fat-added. Ours says cooked, so the cooked row is the state match; frying without added fat changes no mineral."
-    }
-   }
-  },
-  {
-   "id": "sesame-seeds-roasted",
-   "name": "Sesame seeds, roasted",
-   "category": "Nuts & seeds",
-   "fdc_id": "170151",
-   "portion_id": "86137",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Seed, sesame, unsalted",
-     "why": "AFCD does not state a roast; sesame seed is sesame seed, and roasting drives off a little water, so if anything this reads low."
-    }
-   }
-  },
-  {
-   "id": "shiitake-mushrooms-cooked",
-   "name": "Shiitake mushrooms, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170097",
-   "portion_id": "86035"
-  },
-  {
-   "id": "shrimp-cooked",
-   "name": "Shrimp, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "175180",
-   "portion_id": "95807",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Prawn, flesh, cooked from raw, no added fat",
-     "why": "Prawn is the Australian name for shrimp. Generic to generic and cooked to cooked: AFCD's eight other prawn rows are named varieties (endeavour, school, tiger, banana), and this is the one that answers our unqualified row."
-    }
-   }
-  },
-  {
-   "id": "sirloin-steak",
-   "name": "Sirloin steak",
-   "category": "Beef",
-   "fdc_id": "168727",
-   "portion_id": "83655"
-  },
-  {
-   "id": "snow-peas-cooked",
-   "name": "Snow peas, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170509",
-   "portion_id": "86780",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Mange-tout, fresh, boiled Marrow, fresh, raw",
-     "why": "Mange-tout IS the edible-podded pea USDA calls snow peas; both boiled. The key carries 'Marrow, fresh, raw' because the paper's next row title bleeds into this line in the PDF -- the KEY is noisy, the VALUE is mange-tout's, and the key is kept byte-exact so the gate can join it."
+    {
+      "id": "black-beans-cooked",
+      "name": "Black beans, cooked",
+      "category": "Legumes",
+      "fdc_id": "175237",
+      "portion_id": "95879"
     },
-    "afcd-au-r3": {
-     "key": "Snow pea, fresh, boiled, drained",
-     "why": "Both boiled and drained."
-    }
-   }
-  },
-  {
-   "id": "sockeye-salmon-cooked",
-   "name": "Sockeye salmon, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "173692",
-   "portion_id": "93121"
-  },
-  {
-   "id": "soybeans-cooked",
-   "name": "Soybeans, cooked",
-   "category": "Legumes",
-   "fdc_id": "174271",
-   "portion_id": "94059",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Soya beans, dried and boiled",
-     "why": "Same legume, both boiled from dry."
-    }
-   }
-  },
-  {
-   "id": "spaghetti-squash-cooked",
-   "name": "Spaghetti squash, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170539",
-   "portion_id": "86821"
-  },
-  {
-   "id": "spinach-cooked",
-   "name": "Spinach, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170531",
-   "portion_id": "86811",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Spinach, fresh, boiled",
-     "why": "Same vegetable, both boiled."
+    {
+      "id": "black-eyed-peas-cooked",
+      "name": "Black-eyed peas, cooked",
+      "category": "Legumes",
+      "fdc_id": "175252",
+      "portion_id": "95897"
     },
-    "afcd-au-r3": {
-     "key": "Spinach, Mature English, fresh, boiled, drained",
-     "why": "Both boiled and drained. AFCD's BABY spinach row is raw and is not borrowed."
-    }
-   }
-  },
-  {
-   "id": "split-peas-cooked",
-   "name": "Split peas, cooked",
-   "category": "Legumes",
-   "fdc_id": "175257",
-   "portion_id": "95902",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Pea, split, dried, boiled, drained",
-     "why": "Both boiled from dry."
-    }
-   }
-  },
-  {
-   "id": "strawberries",
-   "name": "Strawberries",
-   "category": "Fruits",
-   "fdc_id": "167762",
-   "portion_id": "81928",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Strawberries, raw",
-     "why": "Same fruit, both raw."
-    }
-   }
-  },
-  {
-   "id": "summer-squash-cooked",
-   "name": "Summer squash, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170125",
-   "portion_id": "86096"
-  },
-  {
-   "id": "sunflower-seeds-dry-roasted",
-   "name": "Sunflower seeds, dry roasted",
-   "category": "Nuts & seeds",
-   "fdc_id": "169417",
-   "portion_id": "84826",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Seed, sunflower",
-     "why": "AFCD does not state a roast. Same as sesame: roasting can only concentrate, so this reads low if it is wrong at all."
-    }
-   }
-  },
-  {
-   "id": "sweet-corn-cooked",
-   "name": "White corn on the cob",
-   "category": "Vegetables",
-   "fdc_id": "168540",
-   "portion_id": "83275",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Sweetcorn, on the cob, fresh, boiled",
-     "why": "Same vegetable, both on the cob and boiled."
-    }
-   }
-  },
-  {
-   "id": "sweet-potato-baked",
-   "name": "Sweet potato, baked",
-   "category": "Vegetables",
-   "fdc_id": "168483",
-   "portion_id": "83168"
-  },
-  {
-   "id": "swiss-chard-cooked",
-   "name": "Swiss chard, cooked",
-   "category": "Vegetables",
-   "fdc_id": "169343",
-   "portion_id": "84679",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Silverbeet, fresh, boiled, drained",
-     "why": "Silverbeet IS Swiss chard; both boiled and drained."
-    }
-   }
-  },
-  {
-   "id": "swiss-cheese",
-   "name": "Swiss cheese",
-   "category": "Dairy & eggs",
-   "fdc_id": "171251",
-   "portion_id": "88276"
-  },
-  {
-   "id": "swordfish-cooked",
-   "name": "Swordfish, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "173704",
-   "portion_id": "93143"
-  },
-  {
-   "id": "tahini",
-   "name": "Tahini",
-   "category": "Nuts & seeds",
-   "fdc_id": "170189",
-   "portion_id": "86210",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Tahini Beverages†‡",
-     "why": "Same product. The key carries 'Beverages' because the paper's next SECTION HEADING bleeds into this line in the PDF; kept byte-exact so the gate can join it."
+    {
+      "id": "blackberries",
+      "name": "Blackberries",
+      "category": "Fruits",
+      "fdc_id": "173946",
+      "portion_id": "93521",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Blackberries, raw",
+          "why": "Same fruit, both raw."
+        }
+      }
     },
-    "afcd-au-r3": {
-     "key": "Tahini, sesame seed pulp",
-     "why": "Same product."
-    }
-   }
-  },
-  {
-   "id": "tangerine",
-   "name": "Tangerine",
-   "category": "Fruits",
-   "fdc_id": "169105",
-   "portion_id": "84250",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Clementines, raw, without skin",
-     "why": "A clementine is a mandarin cultivar, which is what USDA's tangerine row is; both raw, both peeled."
-    }
-   }
-  },
-  {
-   "id": "taro-cooked",
-   "name": "Taro, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170543",
-   "portion_id": "86826"
-  },
-  {
-   "id": "tempeh",
-   "name": "Tempeh",
-   "category": "Legumes",
-   "fdc_id": "174272",
-   "portion_id": "94061"
-  },
-  {
-   "id": "tilapia-cooked",
-   "name": "Tilapia, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "175177",
-   "portion_id": "95804",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Tilapia, fillet, baked, no added fat",
-     "why": "Both cooked tilapia fillet with nothing added."
-    }
-   }
-  },
-  {
-   "id": "tofu-firm",
-   "name": "Tofu, firm",
-   "category": "Legumes",
-   "fdc_id": "172448",
-   "portion_id": "90638",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Tofu Milk and milk products",
-     "why": "Same product. Powell does not state firmness. The key carries 'Milk and milk products' because the next section heading bleeds into this PDF line; kept byte-exact so the gate can join it."
+    {
+      "id": "blue-cheese",
+      "name": "Blue cheese",
+      "category": "Dairy & eggs",
+      "fdc_id": "172175",
+      "portion_id": "90017",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Cheese, blue vein",
+          "why": "Same cheese. Lands under the threshold."
+        }
+      }
     },
-    "afcd-au-r3": {
-     "key": "Tofu (soy bean curd), firm, as purchased",
-     "why": "Both firm tofu as purchased."
-    }
-   }
-  },
-  {
-   "id": "tomato-raw",
-   "name": "Tomato, raw",
-   "category": "Vegetables",
-   "fdc_id": "170457",
-   "portion_id": "86681",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Tomato, common, raw",
-     "why": "AFCD's COMMON tomato — the generic row — not its cherry tomato, which reads double. ⚠ A name matcher proposed 'Sauce, tomato, commercial' here, which would have shipped 83% chloride off the sauce's added salt."
+    {
+      "id": "bok-choy-cooked",
+      "name": "Bok choy, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168517",
+      "portion_id": "83228"
     },
-    "doleman-2017": {
-     "key": "Tomato",
-     "why": "Both raw. Lands under the threshold."
+    {
+      "id": "borage",
+      "name": "Borage",
+      "category": "Vegetables",
+      "fdc_id": "170481",
+      "portion_id": "86737"
+    },
+    {
+      "id": "breadfruit",
+      "name": "Breadfruit",
+      "category": "Fruit",
+      "fdc_id": "171714",
+      "portion_id": "89244"
+    },
+    {
+      "id": "broccoli-cooked",
+      "name": "Broccoli, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168510",
+      "portion_id": "83216",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Broccoli, green, fresh, boiled",
+          "why": "Same vegetable, both boiled. Powell's is calabrese/green broccoli, which is what USDA 'Broccoli, cooked' is."
+        },
+        "afcd-au-r3": {
+          "key": "Broccoli, fresh, boiled, drained",
+          "why": "Both boiled and drained. AFCD's BAKED broccoli reads 76% against this row's 25% — a 3x spread on cooking method alone, which is exactly why the state has to match and not merely the vegetable."
+        }
+      }
+    },
+    {
+      "id": "broccoli-rabe-cooked",
+      "name": "Broccoli rabe, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170382",
+      "portion_id": "86538"
+    },
+    {
+      "id": "brussels-sprouts-cooked",
+      "name": "Brussels sprouts, cooked",
+      "category": "Vegetables",
+      "fdc_id": "169332",
+      "portion_id": "84662",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Brussels sprout, fresh, boiled, drained",
+          "why": "Both boiled and drained; ours from frozen, theirs from fresh."
+        }
+      }
+    },
+    {
+      "id": "burdock-root",
+      "name": "Burdock root",
+      "category": "Vegetables",
+      "fdc_id": "169974",
+      "portion_id": "85789"
+    },
+    {
+      "id": "butternut-squash-baked",
+      "name": "Butternut squash, baked",
+      "category": "Vegetables",
+      "fdc_id": "170130",
+      "portion_id": "86101"
+    },
+    {
+      "id": "cabbage-raw",
+      "name": "Cabbage, raw",
+      "category": "Vegetables",
+      "fdc_id": "169975",
+      "portion_id": "85791",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Cabbage, red, fresh, raw",
+          "why": "Powell measures red (0.28), savoy (0.71) and white (0.53) cabbage with no generic row; USDA's 'Cabbage, raw' is common green cabbage. The lowest is taken. It lands well under the 7% threshold, so no card shows it — the pair is recorded anyway, because a pair that exists only when it helps is a biased pair.",
+          "conservative": true
+        },
+        "afcd-au-r3": {
+          "key": "Cabbage, white, raw",
+          "why": "Both raw. AFCD's white cabbage is what USDA calls plain 'Cabbage' — the common green head."
+        },
+        "doleman-2017": {
+          "key": "Sweetheart cabbage",
+          "why": "Doleman measured savoy (188.7 umol/g dry) and sweetheart (98.6) cabbage, both raw; our USDA row is generic raw cabbage and says which neither. The LOWER is taken — it is true whichever head is on the board. Savoy would have shipped at 8.4%; this lands under the threshold at 4.4%, and the pair is recorded anyway.",
+          "conservative": true
+        }
+      }
+    },
+    {
+      "id": "canned-salmon-with-bones",
+      "name": "Canned salmon with bones",
+      "category": "Fish & shellfish",
+      "fdc_id": "175135",
+      "portion_id": "95714"
+    },
+    {
+      "id": "cantaloupe",
+      "name": "Cantaloupe",
+      "category": "Fruits",
+      "fdc_id": "169092",
+      "portion_id": "84216",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Melon, (cantaloupe, honeydew, galia)",
+          "why": "Powell publishes ONE melon row covering cantaloupe, honeydew and galia, and it names cantaloupe. Honeydew pairs to the same row for the same reason: the source treats the three as one measurement, so both our melons rest on it."
+        }
+      }
+    },
+    {
+      "id": "cardoon",
+      "name": "Cardoon",
+      "category": "Vegetables",
+      "fdc_id": "169981",
+      "portion_id": "85812"
+    },
+    {
+      "id": "carrots-raw",
+      "name": "Carrots, raw",
+      "category": "Vegetables",
+      "fdc_id": "170393",
+      "portion_id": "86555",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Carrots, new and old, fresh, raw",
+          "why": "Same vegetable, both raw; Powell's row deliberately spans both ages."
+        },
+        "doleman-2017": {
+          "key": "Carrot",
+          "why": "Both raw. Lands under the threshold."
+        }
+      }
+    },
+    {
+      "id": "cashews-dry-roasted",
+      "name": "Cashews, dry roasted",
+      "category": "Nuts & seeds",
+      "fdc_id": "169421",
+      "portion_id": "84834",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Cashew nuts, roasted",
+          "why": "Same nut, both roasted."
+        },
+        "afcd-au-r3": {
+          "key": "Nut, cashew, roasted, salted",
+          "why": "Both roasted. AFCD's is salted and ours is not; salt adds sodium, not molybdenum. Lands under the threshold."
+        }
+      }
+    },
+    {
+      "id": "cassava",
+      "name": "Cassava",
+      "category": "Vegetables",
+      "fdc_id": "169985",
+      "portion_id": "85816"
+    },
+    {
+      "id": "catfish-cooked",
+      "name": "Catfish, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "175166",
+      "portion_id": "95785"
+    },
+    {
+      "id": "cauliflower-cooked",
+      "name": "Cauliflower, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168521",
+      "portion_id": "83236",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Cauliﬂower, fresh, boiled",
+          "why": "Same vegetable, both boiled."
+        },
+        "afcd-au-r3": {
+          "key": "Cauliflower, fresh, boiled, drained",
+          "why": "Both boiled and drained; ours is from frozen, theirs from fresh."
+        }
+      }
+    },
+    {
+      "id": "celeriac-cooked",
+      "name": "Celeriac, cooked",
+      "category": "Vegetables",
+      "fdc_id": "169341",
+      "portion_id": "84676"
+    },
+    {
+      "id": "celery-raw",
+      "name": "Celery, raw",
+      "category": "Vegetables",
+      "fdc_id": "169988",
+      "portion_id": "85824",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Celery, fresh, raw",
+          "why": "Same vegetable, both raw."
+        },
+        "afcd-au-r3": {
+          "key": "Celery, fresh, raw",
+          "why": "Both raw."
+        }
+      }
+    },
+    {
+      "id": "chayote",
+      "name": "Chayote",
+      "category": "Vegetables",
+      "fdc_id": "170402",
+      "portion_id": "86580"
+    },
+    {
+      "id": "cheddar-cheese",
+      "name": "Cheddar cheese",
+      "category": "Dairy & eggs",
+      "fdc_id": "173414",
+      "portion_id": "92472",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Cheese, cheddar, natural, regular fat",
+          "why": "NATURAL cheddar, not AFCD's processed row — ours is natural cheddar."
+        }
+      }
+    },
+    {
+      "id": "cherimoya",
+      "name": "Cherimoya",
+      "category": "Fruit",
+      "fdc_id": "173953",
+      "portion_id": "93531"
+    },
+    {
+      "id": "cherries",
+      "name": "Cherries",
+      "category": "Fruits",
+      "fdc_id": "171719",
+      "portion_id": "89257",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Cherries, raw, without stone",
+          "why": "Same fruit, both raw; USDA's sweet-cherry row is also stoned weight."
+        }
+      }
+    },
+    {
+      "id": "chestnuts-roasted",
+      "name": "Japanese chestnuts, roasted",
+      "category": "Nuts & seeds",
+      "fdc_id": "168590",
+      "portion_id": "83378"
+    },
+    {
+      "id": "chicken-breast-roasted",
+      "name": "Chicken breast, roasted",
+      "category": "Poultry",
+      "fdc_id": "171477",
+      "portion_id": "88819",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Chicken, breast, lean flesh, baked, no added fat",
+          "why": "Our USDA row is breast meat only, roasted; this is lean flesh baked with no added fat. AFCD's grilled and fried rows read higher and are not borrowed."
+        },
+        "doleman-2017": {
+          "key": "Chicken breast",
+          "why": "Doleman pan-fried the fillet without fat; our USDA row is breast meat only, roasted. Both dry heat, no fat added, no skin. ⚠ AFCD measures no sulphur in chicken breast at all, so this is the only route to it."
+        }
+      }
+    },
+    {
+      "id": "chicken-liver",
+      "name": "Chicken liver",
+      "category": "Poultry",
+      "fdc_id": "174491",
+      "portion_id": "94449"
+    },
+    {
+      "id": "chicken-thigh-roasted",
+      "name": "Chicken thigh, roasted",
+      "category": "Poultry",
+      "fdc_id": "172388",
+      "portion_id": "90511"
+    },
+    {
+      "id": "chickpeas-cooked",
+      "name": "Chickpeas, cooked",
+      "category": "Legumes",
+      "fdc_id": "173799",
+      "portion_id": "93272",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Chickpeas, canned or dried and boiled",
+          "why": "Same legume, both boiled from dry."
+        },
+        "afcd-au-r3": {
+          "key": "Chickpea, dried, boiled, drained",
+          "why": "Both boiled from dry. AFCD's dry chickpea row reads ~3x higher and is not borrowed — nobody eats them dry."
+        }
+      }
+    },
+    {
+      "id": "chicory-greens",
+      "name": "Chicory greens",
+      "category": "Vegetables",
+      "fdc_id": "169992",
+      "portion_id": "85836"
+    },
+    {
+      "id": "chuck-pot-roast",
+      "name": "Chuck pot roast",
+      "category": "Beef",
+      "fdc_id": "168667",
+      "portion_id": "83530",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Beef, casserole meat, boneless, chuck, lean, casseroled, no added fat",
+          "why": "Boneless chuck in both, slow-cooked in both, and our USDA row is trimmed to 0 inch fat, which is what AFCD calls lean."
+        }
+      }
+    },
+    {
+      "id": "clams-cooked",
+      "name": "Clams, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "171975",
+      "portion_id": "89661"
+    },
+    {
+      "id": "clementines",
+      "name": "Clementines",
+      "category": "Fruit",
+      "fdc_id": "168195",
+      "portion_id": "82645"
+    },
+    {
+      "id": "cloves-ground",
+      "name": "Cloves, ground",
+      "category": "Spices & herbs",
+      "fdc_id": "171321",
+      "portion_id": "88431"
+    },
+    {
+      "id": "coconut-raw",
+      "name": "Coconut, raw",
+      "category": "Nuts & seeds",
+      "fdc_id": "170169",
+      "portion_id": "86165"
+    },
+    {
+      "id": "cod",
+      "name": "Cod",
+      "category": "Fish & shellfish",
+      "fdc_id": "171956",
+      "portion_id": "89622",
+      "matches": {
+        "doleman-2017": {
+          "key": "Cod",
+          "why": "Doleman pan-fried a boneless fillet without fat; our USDA row is Atlantic cod cooked by dry heat. ⚠ AFCD's only cod is SMOKED cod, whose chloride is brine — this is the only honest route to cod."
+        }
+      }
+    },
+    {
+      "id": "collard-greens-cooked",
+      "name": "Collard greens, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168523",
+      "portion_id": "83238"
+    },
+    {
+      "id": "cottage-cheese",
+      "name": "Cottage cheese",
+      "category": "Dairy & eggs",
+      "fdc_id": "172179",
+      "portion_id": "90034",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Cheese, cottage",
+          "why": "Same cheese, both as sold."
+        }
+      }
+    },
+    {
+      "id": "currants",
+      "name": "Currants",
+      "category": "Fruit",
+      "fdc_id": "173963",
+      "portion_id": "93544"
+    },
+    {
+      "id": "dandelion-greens-cooked",
+      "name": "Dandelion greens, cooked",
+      "category": "Vegetables",
+      "fdc_id": "169351",
+      "portion_id": "84692"
+    },
+    {
+      "id": "dates",
+      "name": "Dates",
+      "category": "Fruits",
+      "fdc_id": "171726",
+      "portion_id": "89264",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Dates, dried",
+          "why": "Powell's only dates row. Our catalog entry is deglet noor, also a dried date -- USDA sells no fresh date row."
+        }
+      }
+    },
+    {
+      "id": "dock",
+      "name": "Dock",
+      "category": "Vegetables",
+      "fdc_id": "170076",
+      "portion_id": "86007"
+    },
+    {
+      "id": "duck-egg",
+      "name": "Duck egg",
+      "category": "Dairy & eggs",
+      "fdc_id": "172189",
+      "portion_id": "90055"
+    },
+    {
+      "id": "duck-roasted",
+      "name": "Duck, roasted",
+      "category": "Poultry",
+      "fdc_id": "172409",
+      "portion_id": "90568",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Duck, lean flesh, skin & fat, baked, no added fat",
+          "why": "Meat AND skin in both, roasted/baked with no added fat. AFCD's skinless row reads higher and is not borrowed — ours includes the skin."
+        }
+      }
+    },
+    {
+      "id": "durian",
+      "name": "Durian",
+      "category": "Fruit",
+      "fdc_id": "168192",
+      "portion_id": "82635"
+    },
+    {
+      "id": "edamame",
+      "name": "Edamame",
+      "category": "Vegetables",
+      "fdc_id": "168411",
+      "portion_id": "83053"
+    },
+    {
+      "id": "egg",
+      "name": "Egg",
+      "category": "Dairy & eggs",
+      "fdc_id": "173424",
+      "portion_id": "92500",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Egg, chicken, whole, hard-boiled",
+          "why": "Our USDA row is 'Egg, whole, cooked, hard-boiled' and this is AFCD's hard-boiled row — the same food in the same state. AFCD's RAW egg row shows sulphur where the boiled one does not, and it is not borrowed: a raw figure on a boiled egg is a different measurement."
+        },
+        "doleman-2017": {
+          "key": "Eggs",
+          "why": "Doleman boiled medium free-range eggs; our USDA row is whole egg, cooked, hard-boiled. The same food in the same state. AFCD's hard-boiled egg measures no sulphur."
+        }
+      }
+    },
+    {
+      "id": "egg-yolk",
+      "name": "Egg yolk",
+      "category": "Dairy & eggs",
+      "fdc_id": "172184",
+      "portion_id": "90045"
+    },
+    {
+      "id": "eggplant-cooked",
+      "name": "Eggplant, cooked",
+      "category": "Vegetables",
+      "fdc_id": "169352",
+      "portion_id": "84693",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Aubergine, fresh, boiled Table 1. Continued Food description",
+          "why": "Aubergine IS eggplant; both boiled. The key carries 'Table 1. Continued Food description' because the paper's repeated table header bleeds into this PDF line; kept byte-exact so the gate can join it."
+        }
+      }
+    },
+    {
+      "id": "elderberries",
+      "name": "Elderberries",
+      "category": "Fruit",
+      "fdc_id": "171727",
+      "portion_id": "89266"
+    },
+    {
+      "id": "elk-steak",
+      "name": "Elk steak",
+      "category": "Lamb, veal & game",
+      "fdc_id": "174427",
+      "portion_id": "94350"
+    },
+    {
+      "id": "endive",
+      "name": "Endive",
+      "category": "Vegetables",
+      "fdc_id": "168412",
+      "portion_id": "83054"
+    },
+    {
+      "id": "eppaw",
+      "name": "Eppaw",
+      "category": "Vegetables",
+      "fdc_id": "170078",
+      "portion_id": "86008"
+    },
+    {
+      "id": "escarole-cooked",
+      "name": "Escarole, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168413",
+      "portion_id": "83056"
+    },
+    {
+      "id": "fava-beans-cooked",
+      "name": "Fava beans, cooked",
+      "category": "Legumes",
+      "fdc_id": "173798",
+      "portion_id": "93271"
+    },
+    {
+      "id": "fennel-raw",
+      "name": "Fennel, raw",
+      "category": "Vegetables",
+      "fdc_id": "169385",
+      "portion_id": "84767"
+    },
+    {
+      "id": "feta",
+      "name": "Feta",
+      "category": "Dairy & eggs",
+      "fdc_id": "173420",
+      "portion_id": "92490",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Cheese, fetta (feta)",
+          "why": "AFCD spells it fetta. Same cheese. Lands under the threshold."
+        }
+      }
+    },
+    {
+      "id": "fireweed",
+      "name": "Fireweed",
+      "category": "Vegetables",
+      "fdc_id": "169399",
+      "portion_id": "84794"
+    },
+    {
+      "id": "flounder-cooked",
+      "name": "Flounder, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "174197",
+      "portion_id": "93913"
+    },
+    {
+      "id": "goat-milk",
+      "name": "Goat milk",
+      "category": "Dairy & eggs",
+      "fdc_id": "171278",
+      "portion_id": "88350"
+    },
+    {
+      "id": "goat-roasted",
+      "name": "Goat, roasted",
+      "category": "Lamb, veal & game",
+      "fdc_id": "175304",
+      "portion_id": "95996"
+    },
+    {
+      "id": "grapefruit",
+      "name": "Grapefruit",
+      "category": "Fruits",
+      "fdc_id": "173033",
+      "portion_id": "91838",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Grapefruit, raw",
+          "why": "Same fruit, both raw."
+        }
+      }
+    },
+    {
+      "id": "grapes",
+      "name": "Grapes",
+      "category": "Fruits",
+      "fdc_id": "174683",
+      "portion_id": "94748",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Grapes, green and red",
+          "why": "Same fruit; Powell's row spans both colours, as USDA's 'Grapes, red or green' does."
+        }
+      }
+    },
+    {
+      "id": "greek-yogurt",
+      "name": "Greek yogurt, lowfat",
+      "category": "Dairy & eggs",
+      "fdc_id": "170903",
+      "portion_id": "87526"
+    },
+    {
+      "id": "green-beans-cooked",
+      "name": "Green beans, cooked",
+      "category": "Vegetables",
+      "fdc_id": "169321",
+      "portion_id": "84651",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Beans, green or French, fresh, boiled",
+          "why": "The GENERIC green-bean row. Powell also prints Kenyan/fine beans (a thinner cultivar of the same species, 10.00) and runner beans (a different species, Phaseolus coccineus). USDA 'Beans, snap, green' is Phaseolus vulgaris, so the generic row is the pair and the higher cultivar row is not borrowed."
+        },
+        "afcd-au-r3": {
+          "key": "Bean, green, fresh, boiled, drained",
+          "why": "Both boiled and drained. AFCD's 'cooked, no added fat' row reads higher and is not borrowed — ours is boiled."
+        }
+      }
+    },
+    {
+      "id": "green-peas-cooked",
+      "name": "Green peas, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170102",
+      "portion_id": "86051",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Peas, fresh, boiled",
+          "why": "USDA's row is fresh peas boiled; Powell's frozen and petit-pois rows are different products and are not used."
+        },
+        "afcd-au-r3": {
+          "key": "Pea, green, fresh, boiled, drained",
+          "why": "Both fresh peas, boiled and drained."
+        }
+      }
+    },
+    {
+      "id": "ground-beef",
+      "name": "Ground beef",
+      "category": "Beef",
+      "fdc_id": "174034",
+      "portion_id": "93669"
+    },
+    {
+      "id": "ground-bison",
+      "name": "Ground bison",
+      "category": "Lamb, veal & game",
+      "fdc_id": "173847",
+      "portion_id": "93365"
+    },
+    {
+      "id": "ground-chicken",
+      "name": "Ground chicken",
+      "category": "Poultry",
+      "fdc_id": "171117",
+      "portion_id": "88004"
+    },
+    {
+      "id": "ground-lamb",
+      "name": "Ground lamb",
+      "category": "Lamb, veal & game",
+      "fdc_id": "172544",
+      "portion_id": "90819",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Lamb, mince, stir-fried, no added fat",
+          "why": "Mince IS ground lamb. Ours is broiled and AFCD's stir-fried — both dry heat with no added fat, which is the part that moves the number."
+        }
+      }
+    },
+    {
+      "id": "ground-pork",
+      "name": "Ground pork",
+      "category": "Pork",
+      "fdc_id": "167903",
+      "portion_id": "82191",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Pork, mince, as purchased, fried, no added fat",
+          "why": "Mince IS ground pork; cooked in both, no fat added in either."
+        }
+      }
+    },
+    {
+      "id": "ground-turkey",
+      "name": "Ground turkey",
+      "category": "Poultry",
+      "fdc_id": "171506",
+      "portion_id": "88876"
+    },
+    {
+      "id": "ground-venison",
+      "name": "Ground venison",
+      "category": "Lamb, veal & game",
+      "fdc_id": "172603",
+      "portion_id": "90945",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Venison, mince, premium, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",
+          "why": "Mince IS ground venison; cooked in both."
+        }
+      }
+    },
+    {
+      "id": "guava",
+      "name": "Guava",
+      "category": "Fruits",
+      "fdc_id": "173044",
+      "portion_id": "91858"
+    },
+    {
+      "id": "haddock-cooked",
+      "name": "Haddock, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "174198",
+      "portion_id": "93915"
+    },
+    {
+      "id": "halibut-cooked",
+      "name": "Halibut, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "174201",
+      "portion_id": "93921"
+    },
+    {
+      "id": "hazelnuts",
+      "name": "Hazelnuts",
+      "category": "Nuts & seeds",
+      "fdc_id": "170581",
+      "portion_id": "86899",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Nut, hazelnut, raw, unsalted",
+          "why": "Both raw."
+        }
+      }
+    },
+    {
+      "id": "hearts-of-palm-canned",
+      "name": "Hearts of palm, canned",
+      "category": "Vegetables",
+      "fdc_id": "168569",
+      "portion_id": "83344"
+    },
+    {
+      "id": "hemp-seeds",
+      "name": "Hemp seeds",
+      "category": "Nuts & seeds",
+      "fdc_id": "170148",
+      "portion_id": "86132"
+    },
+    {
+      "id": "herring-cooked",
+      "name": "Herring, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "174233",
+      "portion_id": "93989"
+    },
+    {
+      "id": "honeydew-melon",
+      "name": "Honeydew melon",
+      "category": "Fruits",
+      "fdc_id": "169911",
+      "portion_id": "85658",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Melon, (cantaloupe, honeydew, galia)",
+          "why": "The same single melon row, which names honeydew. See cantaloupe -- both our melons rest on one pooled measurement, which is the source's choice, not ours."
+        }
+      }
+    },
+    {
+      "id": "horned-melon",
+      "name": "Horned melon (Kiwano)",
+      "category": "Fruit",
+      "fdc_id": "167791",
+      "portion_id": "81984"
+    },
+    {
+      "id": "hyacinth-beans",
+      "name": "Hyacinth beans",
+      "category": "Legumes",
+      "fdc_id": "175211",
+      "portion_id": "95850"
+    },
+    {
+      "id": "jackfruit",
+      "name": "Jackfruit",
+      "category": "Fruit",
+      "fdc_id": "174687",
+      "portion_id": "94755"
+    },
+    {
+      "id": "jerusalem-artichokes",
+      "name": "Jerusalem-artichokes",
+      "category": "Vegetables",
+      "fdc_id": "169236",
+      "portion_id": "84490"
+    },
+    {
+      "id": "kale-cooked",
+      "name": "Kale, cooked",
+      "category": "Vegetables",
+      "fdc_id": "169355",
+      "portion_id": "84696"
+    },
+    {
+      "id": "kidney-beans-cooked",
+      "name": "Kidney beans, cooked",
+      "category": "Legumes",
+      "fdc_id": "175242",
+      "portion_id": "95884",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Red kidney beans, canned or dried and boiled",
+          "why": "Same legume, both boiled from dry."
+        },
+        "afcd-au-r3": {
+          "key": "Bean, red kidney, dried, boiled, drained",
+          "why": "Both boiled from dry."
+        }
+      }
+    },
+    {
+      "id": "kimchi",
+      "name": "Kimchi",
+      "category": "Vegetables",
+      "fdc_id": "170392",
+      "portion_id": "86554"
+    },
+    {
+      "id": "king-crab-cooked",
+      "name": "King crab, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "174202",
+      "portion_id": "93924"
+    },
+    {
+      "id": "kiwifruit",
+      "name": "Kiwifruit",
+      "category": "Fruits",
+      "fdc_id": "168153",
+      "portion_id": "82568",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Kiwi fruit, raw, without skin",
+          "why": "Same fruit, both raw, both flesh-only."
+        }
+      }
+    },
+    {
+      "id": "kohlrabi-cooked",
+      "name": "Kohlrabi, cooked",
+      "category": "Vegetables",
+      "fdc_id": "169357",
+      "portion_id": "84698"
+    },
+    {
+      "id": "lamb-chop",
+      "name": "Lamb chop",
+      "category": "Lamb, veal & game",
+      "fdc_id": "172489",
+      "portion_id": "90710"
+    },
+    {
+      "id": "lamb-kidneys",
+      "name": "Lamb kidneys",
+      "category": "Lamb, veal & game",
+      "fdc_id": "174355",
+      "portion_id": "94206"
+    },
+    {
+      "id": "lamb-liver",
+      "name": "Lamb liver",
+      "category": "Lamb, veal & game",
+      "fdc_id": "172533",
+      "portion_id": "90798"
+    },
+    {
+      "id": "lamb-shank",
+      "name": "Lamb shank",
+      "category": "Lamb, veal & game",
+      "fdc_id": "172482",
+      "portion_id": "90697"
+    },
+    {
+      "id": "leeks-cooked",
+      "name": "Leeks, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168535",
+      "portion_id": "83256",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Leeks, fresh, boiled",
+          "why": "Same vegetable, both boiled."
+        }
+      }
+    },
+    {
+      "id": "leg-of-lamb",
+      "name": "Leg of lamb",
+      "category": "Lamb, veal & game",
+      "fdc_id": "174312",
+      "portion_id": "94120"
+    },
+    {
+      "id": "lentils-cooked",
+      "name": "Lentils, cooked",
+      "category": "Legumes",
+      "fdc_id": "175254",
+      "portion_id": "95899",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Lentils, green and brown, boiled",
+          "why": "Powell measures two lentils — red at 4.42 and green/brown at 1.95 mg/100 g — and our USDA row is the generic 'Lentils, mature seeds, cooked', which says nothing about colour. The LOWER is taken: it is true of whichever lentil is on the plate, where taking red would only be true of red. Dropping lentils instead, which is what this curation did for one day, told the user lentils contain no silica at all — a claim both of Powell's rows contradict.",
+          "conservative": true
+        }
+      }
+    },
+    {
+      "id": "lima-beans-cooked",
+      "name": "Lima beans, cooked",
+      "category": "Legumes",
+      "fdc_id": "173802",
+      "portion_id": "93276",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Bean, lima, dried, boiled, drained",
+          "why": "Both boiled from dry."
+        }
+      }
+    },
+    {
+      "id": "lobster-cooked",
+      "name": "Lobster, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "174209",
+      "portion_id": "93937",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Lobster or crayfish, flesh, purchased steamed, poached or boiled, no added fat",
+          "why": "Lobster flesh in both, moist-heat cooked in both."
+        }
+      }
+    },
+    {
+      "id": "loganberries",
+      "name": "Loganberries",
+      "category": "Fruit",
+      "fdc_id": "169088",
+      "portion_id": "84203"
+    },
+    {
+      "id": "lotus-root",
+      "name": "Lotus root",
+      "category": "Vegetables",
+      "fdc_id": "169250",
+      "portion_id": "84524"
+    },
+    {
+      "id": "lupins",
+      "name": "Lupins",
+      "category": "Legumes",
+      "fdc_id": "172424",
+      "portion_id": "90600"
+    },
+    {
+      "id": "lychee",
+      "name": "Lychee",
+      "category": "Fruits",
+      "fdc_id": "169086",
+      "portion_id": "84200",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Lychee, peeled, raw",
+          "why": "Both raw, both peeled."
+        }
+      }
+    },
+    {
+      "id": "macadamia-nuts-roasted",
+      "name": "Macadamia nuts, roasted",
+      "category": "Nuts & seeds",
+      "fdc_id": "168598",
+      "portion_id": "83393"
+    },
+    {
+      "id": "mackerel-cooked",
+      "name": "Mackerel, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "171994",
+      "portion_id": "89703",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Mackerel, grilled, no added fat",
+          "why": "Both cooked mackerel flesh with nothing added."
+        }
+      }
+    },
+    {
+      "id": "mango",
+      "name": "Mango",
+      "category": "Fruits",
+      "fdc_id": "169910",
+      "portion_id": "85651",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Mango, fresh, raw, ﬁbrous",
+          "why": "Powell measures smooth mango at 3.15 and fibrous at 2.00 mg/100 g; our USDA row is the generic 'Mangos, raw'. The lower is taken for the same reason as lentils.",
+          "conservative": true
+        }
+      }
+    },
+    {
+      "id": "mothbeans",
+      "name": "Mothbeans",
+      "category": "Legumes",
+      "fdc_id": "172426",
+      "portion_id": "90602"
+    },
+    {
+      "id": "mozzarella",
+      "name": "Mozzarella",
+      "category": "Dairy & eggs",
+      "fdc_id": "170845",
+      "portion_id": "87382",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Cheese, mozzarella",
+          "why": "Same cheese, both as sold."
+        }
+      }
+    },
+    {
+      "id": "mung-bean-sprouts-cooked",
+      "name": "Mung bean sprouts, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168499",
+      "portion_id": "83197"
+    },
+    {
+      "id": "mungo-beans",
+      "name": "Mungo beans",
+      "category": "Legumes",
+      "fdc_id": "172427",
+      "portion_id": "90604"
+    },
+    {
+      "id": "mussels-cooked",
+      "name": "Mussels, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "174217",
+      "portion_id": "93960",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Mussel, blue, steamed",
+          "why": "Both cooked mussel flesh; AFCD's only mussel row and its state matches ours."
+        }
+      }
+    },
+    {
+      "id": "mustard-greens-cooked",
+      "name": "Mustard greens, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170503",
+      "portion_id": "86772"
+    },
+    {
+      "id": "mustard-spinach",
+      "name": "Mustard spinach",
+      "category": "Vegetables",
+      "fdc_id": "168438",
+      "portion_id": "83102"
+    },
+    {
+      "id": "natto",
+      "name": "Natto",
+      "category": "Legumes",
+      "fdc_id": "172443",
+      "portion_id": "90631"
+    },
+    {
+      "id": "navy-beans-cooked",
+      "name": "Navy beans, cooked",
+      "category": "Legumes",
+      "fdc_id": "173794",
+      "portion_id": "93266"
+    },
+    {
+      "id": "nopales",
+      "name": "Nopales",
+      "category": "Vegetables",
+      "fdc_id": "168571",
+      "portion_id": "83348"
+    },
+    {
+      "id": "octopus-cooked",
+      "name": "Octopus, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "174249",
+      "portion_id": "94020"
+    },
+    {
+      "id": "okra-cooked",
+      "name": "Okra, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170098",
+      "portion_id": "86037"
+    },
+    {
+      "id": "onions-raw",
+      "name": "Onions, raw",
+      "category": "Vegetables",
+      "fdc_id": "170000",
+      "portion_id": "85855",
+      "matches": {
+        "doleman-2017": {
+          "key": "Brown onion",
+          "conservative": true,
+          "why": "Doleman measured brown (77.0 umol/g dry) and red (121.3) mature onions raw; our USDA row is the generic 'Onions, raw' and says which neither. The LOWER is taken. Doleman's spring onion is a different food and lives on our scallions entry, not here."
+        },
+        "afcd-au-r3": {
+          "key": "Onion, mature, white skinned, peeled, fresh, raw",
+          "conservative": true,
+          "why": "AFCD measures brown, red and white mature onions raw; ours is the generic raw onion. The LOWEST is taken, which is white — and it lands under the threshold, where brown would have shipped molybdenum at 8.4%. The pair is recorded anyway: a pair that exists only when it helps is a biased pair."
+        }
+      }
+    },
+    {
+      "id": "orange",
+      "name": "Orange",
+      "category": "Fruits",
+      "fdc_id": "169097",
+      "portion_id": "84230"
+    },
+    {
+      "id": "oysters-cooked",
+      "name": "Oysters, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "171980",
+      "portion_id": "89671"
+    },
+    {
+      "id": "papaya",
+      "name": "Papaya",
+      "category": "Fruits",
+      "fdc_id": "169926",
+      "portion_id": "85692",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Papaya, yellow, peeled, raw",
+          "why": "AFCD measures pawpaw, red papaya and yellow papaya; ours is the generic 'Papayas, raw'. The lowest is taken. Lands under the threshold.",
+          "conservative": true
+        }
+      }
+    },
+    {
+      "id": "parmesan-grated",
+      "name": "Parmesan, grated",
+      "category": "Dairy & eggs",
+      "fdc_id": "171247",
+      "portion_id": "88263"
+    },
+    {
+      "id": "parsley-fresh",
+      "name": "Parsley, fresh",
+      "category": "Vegetables",
+      "fdc_id": "170416",
+      "portion_id": "86608",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Parsley, continental, fresh, raw",
+          "why": "Both fresh and raw. Lands under the threshold."
+        }
+      }
+    },
+    {
+      "id": "parsnips-cooked",
+      "name": "Parsnips, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170009",
+      "portion_id": "85888",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Parsnips, fresh, peeled, boiled",
+          "why": "Same vegetable, both boiled."
+        }
+      }
+    },
+    {
+      "id": "peach",
+      "name": "Peach",
+      "category": "Fruits",
+      "fdc_id": "169928",
+      "portion_id": "85697",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Peaches, fresh, raw",
+          "why": "Same fruit, both raw."
+        }
+      }
+    },
+    {
+      "id": "peanuts-dry-roasted",
+      "name": "Peanuts, dry-roasted",
+      "category": "Legumes",
+      "fdc_id": "173806",
+      "portion_id": "93281",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Groundnuts, roasted and salted",
+          "why": "Groundnut IS peanut, and both are roasted. Powell's is salted and ours is not; salt adds sodium, not silicon."
+        },
+        "afcd-au-r3": {
+          "key": "Nut, peanut, without skin, roasted, with oil, unsalted",
+          "why": "AFCD has no dry-roasted peanut; this is roasted in oil, and the oil dilutes everything per 100 g, so it is a floor for our dry-roasted row.",
+          "conservative": true
+        }
+      }
+    },
+    {
+      "id": "pear",
+      "name": "Pear",
+      "category": "Fruits",
+      "fdc_id": "169118",
+      "portion_id": "84275",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Pears, raw",
+          "why": "Same fruit, both raw."
+        }
+      }
+    },
+    {
+      "id": "pecans",
+      "name": "Pecans",
+      "category": "Nuts & seeds",
+      "fdc_id": "170182",
+      "portion_id": "86190"
+    },
+    {
+      "id": "persimmon",
+      "name": "Persimmon",
+      "category": "Fruits",
+      "fdc_id": "169941",
+      "portion_id": "85724"
+    },
+    {
+      "id": "pigeon-peas",
+      "name": "Pigeon peas (red gram)",
+      "category": "Legumes",
+      "fdc_id": "172437",
+      "portion_id": "90621"
+    },
+    {
+      "id": "pineapple",
+      "name": "Pineapple",
+      "category": "Fruits",
+      "fdc_id": "169124",
+      "portion_id": "84289",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Pineapple, fresh, raw",
+          "why": "Powell's only FRESH pineapple row. The canned-in-juice and canned-in-syrup rows are different products and are not used."
+        }
+      }
+    },
+    {
+      "id": "pinto-beans-cooked",
+      "name": "Pinto beans, cooked",
+      "category": "Legumes",
+      "fdc_id": "175200",
+      "portion_id": "95832"
+    },
+    {
+      "id": "pistachios-dry-roasted",
+      "name": "Pistachios, dry roasted",
+      "category": "Nuts & seeds",
+      "fdc_id": "169426",
+      "portion_id": "84844"
+    },
+    {
+      "id": "plantain-baked",
+      "name": "Plantain, baked",
+      "category": "Fruits",
+      "fdc_id": "169131",
+      "portion_id": "84304"
+    },
+    {
+      "id": "pokeberry-shoots",
+      "name": "Pokeberry shoots",
+      "category": "Vegetables",
+      "fdc_id": "170432",
+      "portion_id": "86636"
+    },
+    {
+      "id": "poppy-seeds",
+      "name": "Poppy seeds",
+      "category": "Spices & herbs",
+      "fdc_id": "171330",
+      "portion_id": "88450"
+    },
+    {
+      "id": "pork-liver",
+      "name": "Pork liver",
+      "category": "Pork",
+      "fdc_id": "167863",
+      "portion_id": "82113"
+    },
+    {
+      "id": "pork-ribs",
+      "name": "Pork ribs",
+      "category": "Pork",
+      "fdc_id": "168377",
+      "portion_id": "82988",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Pork, spare ribs, untrimmed, baked, no added fat",
+          "why": "Ribs in both, roasted/baked in both. Ours is lean only and AFCD's is untrimmed; fat carries almost no sulphur, so the untrimmed figure is the floor for a lean rib.",
+          "conservative": true
+        }
+      }
+    },
+    {
+      "id": "pork-shoulder-roasted",
+      "name": "Pork shoulder, roasted",
+      "category": "Pork",
+      "fdc_id": "167844",
+      "portion_id": "82078",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Pork, forequarter shoulder roast, untrimmed, BBQ'd, no added fat",
+          "why": "Shoulder roast in both, cooked in both, and UNTRIMMED — which is what our USDA row's 'separable lean and fat' means. AFCD's lean row reads higher and is not borrowed."
+        }
+      }
+    },
+    {
+      "id": "portabella-mushrooms-grilled",
+      "name": "Portabella mushrooms, grilled",
+      "category": "Vegetables",
+      "fdc_id": "169243",
+      "portion_id": "84501"
+    },
+    {
+      "id": "potato-baked",
+      "name": "Potato, baked",
+      "category": "Vegetables",
+      "fdc_id": "170093",
+      "portion_id": "86027"
+    },
+    {
+      "id": "prickly-pears",
+      "name": "Prickly pears",
+      "category": "Fruit",
+      "fdc_id": "167750",
+      "portion_id": "81898"
+    },
+    {
+      "id": "provolone",
+      "name": "Provolone",
+      "category": "Dairy & eggs",
+      "fdc_id": "170850",
+      "portion_id": "87399"
+    },
+    {
+      "id": "pummelo",
+      "name": "Pummelo",
+      "category": "Fruit",
+      "fdc_id": "167754",
+      "portion_id": "81903"
+    },
+    {
+      "id": "pumpkin-flowers",
+      "name": "Pumpkin flowers",
+      "category": "Vegetables",
+      "fdc_id": "169271",
+      "portion_id": "84575"
+    },
+    {
+      "id": "pumpkin-leaves",
+      "name": "Pumpkin leaves",
+      "category": "Vegetables",
+      "fdc_id": "168447",
+      "portion_id": "83111"
+    },
+    {
+      "id": "pumpkin-seeds-roasted",
+      "name": "Pumpkin seeds, roasted",
+      "category": "Nuts & seeds",
+      "fdc_id": "169415",
+      "portion_id": "84822",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Seed, pumpkin, hulled & dried",
+          "why": "AFCD measures hulled DRIED pepitas; ours are roasted. Roasting drives off the last of the moisture, so the roasted figure can only be higher — the dried one is the floor.",
+          "conservative": true
+        }
+      }
+    },
+    {
+      "id": "rabbit-stewed",
+      "name": "Rabbit, stewed",
+      "category": "Lamb, veal & game",
+      "fdc_id": "174346",
+      "portion_id": "94188",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Rabbit, flesh, casseroled, no added fat",
+          "why": "Casseroled IS stewed; flesh only in both."
+        }
+      }
+    },
+    {
+      "id": "radishes-raw",
+      "name": "Radishes, raw",
+      "category": "Vegetables",
+      "fdc_id": "169276",
+      "portion_id": "84582",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Radish, fresh",
+          "why": "Same vegetable, both raw."
+        },
+        "doleman-2017": {
+          "key": "Radish",
+          "why": "Both raw. Lands under the threshold."
+        }
+      }
+    },
+    {
+      "id": "rainbow-trout-cooked",
+      "name": "Rainbow trout, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "173718",
+      "portion_id": "93178"
+    },
+    {
+      "id": "raspberries",
+      "name": "Raspberries",
+      "category": "Fruits",
+      "fdc_id": "167755",
+      "portion_id": "81905",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Raspberries, fresh, raw",
+          "why": "Same fruit, both raw."
+        }
+      }
+    },
+    {
+      "id": "red-bell-pepper-raw",
+      "name": "Red bell pepper, raw",
+      "category": "Vegetables",
+      "fdc_id": "170108",
+      "portion_id": "86065",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Peppers, red, fresh, raw",
+          "why": "Same vegetable, same colour, both raw."
+        }
+      }
+    },
+    {
+      "id": "rhubarb",
+      "name": "Rhubarb",
+      "category": "Fruit",
+      "fdc_id": "168168",
+      "portion_id": "82598"
+    },
+    {
+      "id": "ribeye-steak",
+      "name": "Beef ribeye",
+      "category": "Beef",
+      "fdc_id": "169556",
+      "portion_id": "85100"
+    },
+    {
+      "id": "ricotta",
+      "name": "Ricotta",
+      "category": "Dairy & eggs",
+      "fdc_id": "170851",
+      "portion_id": "87401",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Cheese, ricotta",
+          "why": "Same cheese, both as sold."
+        }
+      }
+    },
+    {
+      "id": "rockfish-cooked",
+      "name": "Rockfish, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "175131",
+      "portion_id": "95706"
+    },
+    {
+      "id": "romaine-lettuce",
+      "name": "Romaine lettuce",
+      "category": "Vegetables",
+      "fdc_id": "169247",
+      "portion_id": "84510",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Lettuce, little gem, fresh, raw",
+          "why": "Little gem is a cos/romaine cultivar -- the only romaine-type row Powell prints. Iceberg, lamb's, rocket and mixed leaves are other lettuces and are not borrowed."
+        },
+        "doleman-2017": {
+          "key": "Lettuce",
+          "why": "Doleman's row is generic lettuce and ours is cos/romaine; both raw. Lands under the threshold."
+        }
+      }
+    },
+    {
+      "id": "roselle",
+      "name": "Roselle",
+      "category": "Fruit",
+      "fdc_id": "168170",
+      "portion_id": "82600"
+    },
+    {
+      "id": "rowal",
+      "name": "Rowal",
+      "category": "Fruit",
+      "fdc_id": "167783",
+      "portion_id": "81973"
+    },
+    {
+      "id": "rutabaga-cooked",
+      "name": "Rutabaga, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168455",
+      "portion_id": "83123",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Swede, fresh, boiled",
+          "why": "Swede IS rutabaga (Brassica napus); both boiled."
+        }
+      }
+    },
+    {
+      "id": "salt",
+      "name": "Salt",
+      "category": "Spices & herbs",
+      "fdc_id": "173468",
+      "portion_id": "92594",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Salt, table, iodised",
+          "why": "AFCD publishes iodised and non-iodised table salt at the identical 61,200 mg chloride per 100 g — salt IS sodium chloride, so this is a composition fact, not a sample. Iodised is taken because that is what our catalog entry is."
+        }
+      }
+    },
+    {
+      "id": "sapote",
+      "name": "Sapote",
+      "category": "Fruit",
+      "fdc_id": "167760",
+      "portion_id": "81915"
+    },
+    {
+      "id": "sardines-canned-with-bones",
+      "name": "Sardines, canned with bones",
+      "category": "Fish & shellfish",
+      "fdc_id": "175140",
+      "portion_id": "95728",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Sardine, Australian, whole, fried, no added fat",
+          "why": "Both whole sardine, cooked, eaten with the bones. AFCD publishes no canned sardine; of its two rows this is the cooked one AND the lower, so the state matches and the number is the conservative of the pair."
+        }
+      }
+    },
+    {
+      "id": "scallions-raw",
+      "name": "Scallions, raw",
+      "category": "Vegetables",
+      "fdc_id": "170005",
+      "portion_id": "85878",
+      "matches": {
+        "doleman-2017": {
+          "key": "Spring onion",
+          "why": "Spring onion IS the scallion; both raw, both including tops and bulb. Lands under the threshold at 5.8% and is recorded anyway."
+        }
+      }
+    },
+    {
+      "id": "scallops-cooked",
+      "name": "Scallops, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "167742",
+      "portion_id": "81878",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Scallop, fried, no added fat",
+          "why": "AFCD has two scallop rows, raw and fried-with-no-fat-added. Ours says cooked, so the cooked row is the state match; frying without added fat changes no mineral."
+        }
+      }
+    },
+    {
+      "id": "sesame-seeds-roasted",
+      "name": "Sesame seeds, roasted",
+      "category": "Nuts & seeds",
+      "fdc_id": "170151",
+      "portion_id": "86137",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Seed, sesame, unsalted",
+          "why": "AFCD does not state a roast; sesame seed is sesame seed, and roasting drives off a little water, so if anything this reads low."
+        }
+      }
+    },
+    {
+      "id": "shiitake-mushrooms-cooked",
+      "name": "Shiitake mushrooms, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170097",
+      "portion_id": "86035"
+    },
+    {
+      "id": "shrimp-cooked",
+      "name": "Shrimp, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "175180",
+      "portion_id": "95807",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Prawn, flesh, cooked from raw, no added fat",
+          "why": "Prawn is the Australian name for shrimp. Generic to generic and cooked to cooked: AFCD's eight other prawn rows are named varieties (endeavour, school, tiger, banana), and this is the one that answers our unqualified row."
+        }
+      }
+    },
+    {
+      "id": "sirloin-steak",
+      "name": "Sirloin steak",
+      "category": "Beef",
+      "fdc_id": "168727",
+      "portion_id": "83655"
+    },
+    {
+      "id": "snow-peas-cooked",
+      "name": "Snow peas, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170509",
+      "portion_id": "86780",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Mange-tout, fresh, boiled Marrow, fresh, raw",
+          "why": "Mange-tout IS the edible-podded pea USDA calls snow peas; both boiled. The key carries 'Marrow, fresh, raw' because the paper's next row title bleeds into this line in the PDF -- the KEY is noisy, the VALUE is mange-tout's, and the key is kept byte-exact so the gate can join it."
+        },
+        "afcd-au-r3": {
+          "key": "Snow pea, fresh, boiled, drained",
+          "why": "Both boiled and drained."
+        }
+      }
+    },
+    {
+      "id": "sockeye-salmon-cooked",
+      "name": "Sockeye salmon, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "173692",
+      "portion_id": "93121"
+    },
+    {
+      "id": "soursop",
+      "name": "Soursop",
+      "category": "Fruit",
+      "fdc_id": "167761",
+      "portion_id": "81917"
+    },
+    {
+      "id": "soybeans-cooked",
+      "name": "Soybeans, cooked",
+      "category": "Legumes",
+      "fdc_id": "174271",
+      "portion_id": "94059",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Soya beans, dried and boiled",
+          "why": "Same legume, both boiled from dry."
+        }
+      }
+    },
+    {
+      "id": "spaghetti-squash-cooked",
+      "name": "Spaghetti squash, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170539",
+      "portion_id": "86821"
+    },
+    {
+      "id": "spinach-cooked",
+      "name": "Spinach, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170531",
+      "portion_id": "86811",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Spinach, fresh, boiled",
+          "why": "Same vegetable, both boiled."
+        },
+        "afcd-au-r3": {
+          "key": "Spinach, Mature English, fresh, boiled, drained",
+          "why": "Both boiled and drained. AFCD's BABY spinach row is raw and is not borrowed."
+        }
+      }
+    },
+    {
+      "id": "split-peas-cooked",
+      "name": "Split peas, cooked",
+      "category": "Legumes",
+      "fdc_id": "175257",
+      "portion_id": "95902",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Pea, split, dried, boiled, drained",
+          "why": "Both boiled from dry."
+        }
+      }
+    },
+    {
+      "id": "strawberries",
+      "name": "Strawberries",
+      "category": "Fruits",
+      "fdc_id": "167762",
+      "portion_id": "81928",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Strawberries, raw",
+          "why": "Same fruit, both raw."
+        }
+      }
+    },
+    {
+      "id": "summer-squash-cooked",
+      "name": "Summer squash, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170125",
+      "portion_id": "86096"
+    },
+    {
+      "id": "sunflower-seeds-dry-roasted",
+      "name": "Sunflower seeds, dry roasted",
+      "category": "Nuts & seeds",
+      "fdc_id": "169417",
+      "portion_id": "84826",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Seed, sunflower",
+          "why": "AFCD does not state a roast. Same as sesame: roasting can only concentrate, so this reads low if it is wrong at all."
+        }
+      }
+    },
+    {
+      "id": "sweet-corn-cooked",
+      "name": "White corn on the cob",
+      "category": "Vegetables",
+      "fdc_id": "168540",
+      "portion_id": "83275",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Sweetcorn, on the cob, fresh, boiled",
+          "why": "Same vegetable, both on the cob and boiled."
+        }
+      }
+    },
+    {
+      "id": "sweet-potato-baked",
+      "name": "Sweet potato, baked",
+      "category": "Vegetables",
+      "fdc_id": "168483",
+      "portion_id": "83168"
+    },
+    {
+      "id": "swiss-chard-cooked",
+      "name": "Swiss chard, cooked",
+      "category": "Vegetables",
+      "fdc_id": "169343",
+      "portion_id": "84679",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Silverbeet, fresh, boiled, drained",
+          "why": "Silverbeet IS Swiss chard; both boiled and drained."
+        }
+      }
+    },
+    {
+      "id": "swiss-cheese",
+      "name": "Swiss cheese",
+      "category": "Dairy & eggs",
+      "fdc_id": "171251",
+      "portion_id": "88276"
+    },
+    {
+      "id": "swordfish-cooked",
+      "name": "Swordfish, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "173704",
+      "portion_id": "93143"
+    },
+    {
+      "id": "tahini",
+      "name": "Tahini",
+      "category": "Nuts & seeds",
+      "fdc_id": "170189",
+      "portion_id": "86210",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Tahini Beverages†‡",
+          "why": "Same product. The key carries 'Beverages' because the paper's next SECTION HEADING bleeds into this line in the PDF; kept byte-exact so the gate can join it."
+        },
+        "afcd-au-r3": {
+          "key": "Tahini, sesame seed pulp",
+          "why": "Same product."
+        }
+      }
+    },
+    {
+      "id": "tangerine",
+      "name": "Tangerine",
+      "category": "Fruits",
+      "fdc_id": "169105",
+      "portion_id": "84250",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Clementines, raw, without skin",
+          "why": "A clementine is a mandarin cultivar, which is what USDA's tangerine row is; both raw, both peeled."
+        }
+      }
+    },
+    {
+      "id": "taro-cooked",
+      "name": "Taro, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170543",
+      "portion_id": "86826"
+    },
+    {
+      "id": "taro-leaves",
+      "name": "Taro leaves",
+      "category": "Vegetables",
+      "fdc_id": "168488",
+      "portion_id": "83179"
+    },
+    {
+      "id": "taro-shoots",
+      "name": "Taro shoots",
+      "category": "Vegetables",
+      "fdc_id": "169309",
+      "portion_id": "84633"
+    },
+    {
+      "id": "tempeh",
+      "name": "Tempeh",
+      "category": "Legumes",
+      "fdc_id": "174272",
+      "portion_id": "94061"
+    },
+    {
+      "id": "tilapia-cooked",
+      "name": "Tilapia, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "175177",
+      "portion_id": "95804",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Tilapia, fillet, baked, no added fat",
+          "why": "Both cooked tilapia fillet with nothing added."
+        }
+      }
+    },
+    {
+      "id": "tofu-firm",
+      "name": "Tofu, firm",
+      "category": "Legumes",
+      "fdc_id": "172448",
+      "portion_id": "90638",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Tofu Milk and milk products",
+          "why": "Same product. Powell does not state firmness. The key carries 'Milk and milk products' because the next section heading bleeds into this PDF line; kept byte-exact so the gate can join it."
+        },
+        "afcd-au-r3": {
+          "key": "Tofu (soy bean curd), firm, as purchased",
+          "why": "Both firm tofu as purchased."
+        }
+      }
+    },
+    {
+      "id": "tomato-raw",
+      "name": "Tomato, raw",
+      "category": "Vegetables",
+      "fdc_id": "170457",
+      "portion_id": "86681",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Tomato, common, raw",
+          "why": "AFCD's COMMON tomato — the generic row — not its cherry tomato, which reads double. ⚠ A name matcher proposed 'Sauce, tomato, commercial' here, which would have shipped 83% chloride off the sauce's added salt."
+        },
+        "doleman-2017": {
+          "key": "Tomato",
+          "why": "Both raw. Lands under the threshold."
+        }
+      }
+    },
+    {
+      "id": "tuna-canned-in-water",
+      "name": "Tuna, canned in water",
+      "category": "Fish & shellfish",
+      "fdc_id": "175158",
+      "portion_id": "95767",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Tuna, unflavoured, canned in water, drained",
+          "why": "Canned in water and drained in both, unflavoured in both."
+        }
+      }
+    },
+    {
+      "id": "turkey-breast-roasted",
+      "name": "Turkey breast, roasted",
+      "category": "Poultry",
+      "fdc_id": "171496",
+      "portion_id": "88856",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Turkey, breast, lean flesh, baked, no added fat",
+          "why": "Breast meat only in both, roasted/baked with no added fat."
+        }
+      }
+    },
+    {
+      "id": "turkey-thigh-roasted",
+      "name": "Turkey thigh, roasted",
+      "category": "Poultry",
+      "fdc_id": "171532",
+      "portion_id": "88938",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Turkey, hindquarter, lean flesh, baked, no added fat",
+          "why": "AFCD publishes the HINDQUARTER — thigh plus drumstick — where ours is thigh alone. Same bird, same dark meat, same state; the cut boundary is the approximation, and it is why this is not EXACT tier."
+        }
+      }
+    },
+    {
+      "id": "turmeric-ground",
+      "name": "Turmeric, ground",
+      "category": "Spices & herbs",
+      "fdc_id": "172231",
+      "portion_id": "90123"
+    },
+    {
+      "id": "turnip-greens-and-turnips",
+      "name": "Turnip greens and turnips",
+      "category": "Vegetables",
+      "fdc_id": "170062",
+      "portion_id": "85982"
+    },
+    {
+      "id": "turnip-greens-cooked",
+      "name": "Turnip greens, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170139",
+      "portion_id": "86119"
+    },
+    {
+      "id": "turnips-cooked",
+      "name": "Turnips, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170547",
+      "portion_id": "86833",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Turnips, fresh, peeled, boiled",
+          "why": "Same vegetable, both boiled."
+        }
+      }
+    },
+    {
+      "id": "veal-chop",
+      "name": "Veal chop",
+      "category": "Lamb, veal & game",
+      "fdc_id": "172650",
+      "portion_id": "91005"
+    },
+    {
+      "id": "veal-cutlet",
+      "name": "Veal cutlet",
+      "category": "Lamb, veal & game",
+      "fdc_id": "174880",
+      "portion_id": "95064"
+    },
+    {
+      "id": "venison-roasted",
+      "name": "Venison, roasted",
+      "category": "Lamb, veal & game",
+      "fdc_id": "175085",
+      "portion_id": "95585",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Venison, leg medallion, lean, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",
+          "why": "Our USDA row is a composite of deer cuts, roasted. AFCD publishes a leg medallion and a mince, both cooked; the medallion is the cut (not the ground) and is also the lower of the two.",
+          "conservative": true
+        }
+      }
+    },
+    {
+      "id": "walnuts",
+      "name": "Walnuts",
+      "category": "Nuts & seeds",
+      "fdc_id": "170187",
+      "portion_id": "86206"
+    },
+    {
+      "id": "wasabi",
+      "name": "Wasabi",
+      "category": "Vegetables",
+      "fdc_id": "168583",
+      "portion_id": "83368"
+    },
+    {
+      "id": "waterchestnuts",
+      "name": "Waterchestnuts",
+      "category": "Vegetables",
+      "fdc_id": "170066",
+      "portion_id": "85988"
+    },
+    {
+      "id": "white-beans-cooked",
+      "name": "White beans, cooked",
+      "category": "Legumes",
+      "fdc_id": "175249",
+      "portion_id": "95893"
+    },
+    {
+      "id": "white-mushrooms-cooked",
+      "name": "White mushrooms, cooked",
+      "category": "Vegetables",
+      "fdc_id": "168537",
+      "portion_id": "83260"
+    },
+    {
+      "id": "whole-milk",
+      "name": "Whole milk",
+      "category": "Dairy & eggs",
+      "fdc_id": "171266",
+      "portion_id": "88318",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Milk, cow, fluid, regular fat (~3.5%)",
+          "why": "Our USDA row is producer milk at 3.7% fat; AFCD's regular-fat cow milk is ~3.5%. Same product, same state, essentially the same fat."
+        }
+      }
+    },
+    {
+      "id": "whole-milk-yogurt",
+      "name": "Whole-milk yogurt",
+      "category": "Dairy & eggs",
+      "fdc_id": "171284",
+      "portion_id": "88365"
+    },
+    {
+      "id": "winged-beans",
+      "name": "Winged beans",
+      "category": "Legumes",
+      "fdc_id": "172453",
+      "portion_id": "90650"
+    },
+    {
+      "id": "yam-cooked",
+      "name": "Yam, cooked",
+      "category": "Vegetables",
+      "fdc_id": "170551",
+      "portion_id": "86839",
+      "matches": {
+        "silicon-powell-2005": {
+          "key": "Yam, fresh, peeled, boiled Snack foods",
+          "why": "Same vegetable; USDA's row is 'boiled, drained, or baked' and Powell's is boiled. The key carries 'Snack foods' because the next section heading bleeds into this PDF line; kept byte-exact so the gate can join it."
+        }
+      }
+    },
+    {
+      "id": "yardlong-beans",
+      "name": "Yardlong beans",
+      "category": "Legumes",
+      "fdc_id": "174282",
+      "portion_id": "94079"
+    },
+    {
+      "id": "yautia",
+      "name": "Yautia (tannier)",
+      "category": "Vegetables",
+      "fdc_id": "169401",
+      "portion_id": "84797"
+    },
+    {
+      "id": "yellowfin-tuna-cooked",
+      "name": "Yellowfin tuna, cooked",
+      "category": "Fish & shellfish",
+      "fdc_id": "172006",
+      "portion_id": "89724",
+      "matches": {
+        "afcd-au-r3": {
+          "key": "Tuna, yellowfin, fillet, baked, no added fat",
+          "why": "Both cooked yellowfin fillet with nothing added; the species is named on both sides."
+        }
+      }
     }
-   }
+  ],
+  "_matches_purpose": "★ STILL NUMBERS-FREE. `matches` binds a food to a row in a SECOND composition source by the source's own food NAME, because those sources publish no id our catalog shares. A name join is a human decision, so each one carries the reasoning that accepted it and every value it produces is APPROXIMATE tier FOREVER — the gate REDs an EXACT tier sitting on a name join. THE PAIR RULE: same food, same state. Where the source measures SEVERAL VARIETIES of what our generic row calls one food — red and green lentils, smooth and fibrous mango, three cabbages — take the LOWEST and set `conservative`, which makes the card say so. ⛔ DO NOT DROP THE FOOD. That is what this file did for one day, and Luneth overruled it on 2026-08-22: a blank card does not read as 'we could not choose', it reads as 'not a source', which is a stronger claim than the one being avoided and a false one — every Powell lentil row measures silicon in lentils. The lowest variety is true whichever kind is on the plate, can only understate, and asserts no absence that is not there. A pair is recorded even when it lands under the threshold and shows nothing, because a pair that exists only when it helps is a biased pair.",
+  "_afcd_refused": {
+    "bok-choy-cooked": "AFCD has steamed and fried; ours is boiled.",
+    "canned-salmon-with-bones": "AFCD has pink canned salmon (chloride, no sulphur) and red canned salmon (sulphur, no chloride); ours is chum. Which row to take is not a variety question the lowest-value rule can answer.",
+    "chicken-thigh-roasted": "AFCD's BAKED thigh — the row that matches our state — measures none of these four. Its raw and fried rows do, and are not borrowed.",
+    "coconut-raw": "AFCD's coconut is grated and desiccated; ours is raw meat.",
+    "cod": "AFCD's only cod rows are SMOKED. Smoking is a different state and adds salt, which is the single biggest lever on a food's iodine — the one nutrient being chased.",
+    "duck-egg": "AFCD carries duck MEAT and no duck egg at all.",
+    "egg-yolk": "AFCD's raw yolk is 80 ug/100 g and lands at 5.9% on our 17 g serving, under the floor. Its hard-boiled yolk clears it at 9.6%, but ours is a raw yolk.",
+    "eggplant-cooked": "AFCD has raw and roasted; ours is boiled.",
+    "goat-milk": "AFCD carries goat MEAT and goat CHEESE, and no goat milk.",
+    "greek-yogurt": "AFCD has natural regular-fat yoghurt; Greek yoghurt is strained and is a different product.",
+    "kale-cooked": "AFCD has kale RAW (64%) and FRIED (91%); ours is boiled. Boiling adds water, so either would read high on a boiled kale.",
+    "king-crab-cooked": "AFCD publishes one crab row, unnamed as to species. Ours names king crab. Taking a generic crab for a named one is a variety guess, not a state difference the conservative rule can absorb.",
+    "lamb-chop": "AFCD's loin chop is LEAN (42% sulphur); our USDA row is lean AND fat. Fat carries almost no sulphur, so the lean figure reads high on a fatty chop.",
+    "leg-of-lamb": "Same trim mismatch: AFCD's lean leg roast (22%) against our lean-and-fat row. AFCD's untrimmed leg roast measures no sulphur at all.",
+    "macadamia-nuts-roasted": "AFCD's macadamia is raw; ours is roasted.",
+    "octopus-cooked": "AFCD's boiled octopus — the row that matches our state — is 16.7 ug/100 g and lands at 6.2% of Wallach's iodine, under the 7% floor, so it would ship nothing. Its RAW row would clear the bar at 7.4%, and taking that one would be choosing the number over the state.",
+    "oysters-cooked": "AFCD's oyster rows are all RAW (sulphur 54-67%); ours is moist-heat cooked. The richest sulphur food in reach, and refused for it.",
+    "parmesan-grated": "AFCD's dried finely-grated parmesan — the row that matches ours — measures none of these four. Its FRESH parmesan is a different product.",
+    "potato-baked": "AFCD's baked potatoes are PEELED; ours is flesh and skin.",
+    "rainbow-trout-cooked": "AFCD names rainbow trout, so the species matches — but it measures its iodine at 0.0 ug/100 g, so the pair would ship nothing for the nutrient it was opened for. Left unpaired rather than bound for a value that is not there; reopen it if another nutrient needs it.",
+    "sweet-potato-baked": "AFCD has raw and baked but peeled; ours is baked in skin."
   },
-  {
-   "id": "tuna-canned-in-water",
-   "name": "Tuna, canned in water",
-   "category": "Fish & shellfish",
-   "fdc_id": "175158",
-   "portion_id": "95767",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Tuna, unflavoured, canned in water, drained",
-     "why": "Canned in water and drained in both, unflavoured in both."
-    }
-   }
+  "_doleman_refused": {
+    "broccoli-cooked": "Doleman analysed broccoli RAW; ours is boiled. Boiling leaches sulphate and glucosinolates, so a raw dry-basis figure reads high on a boiled crucifer. It would have shipped at 27%.",
+    "cauliflower-cooked": "Raw in Doleman, boiled in ours. Same leaching argument. 13%.",
+    "green-beans-cooked": "Doleman's dwarf beans are raw; ours are boiled.",
+    "ground-beef": "Doleman analysed minced beef AS PURCHASED — raw — and our USDA row is cooked and pan-browned. It would have shipped at 38%.",
+    "kale-cooked": "Raw in Doleman, boiled in ours. Same leaching argument. 24%.",
+    "leeks-cooked": "Raw in Doleman, boiled in ours.",
+    "parsnips-cooked": "Raw in Doleman, boiled in ours.",
+    "potato-baked": "Raw in Doleman, baked in ours.",
+    "red-bell-pepper-raw": "Doleman measured GREEN pepper; ours is red. Both raw, but a green pepper is an unripe fruit and is not the same food.",
+    "snow-peas-cooked": "Doleman measured sugar snap peas, raw; ours are snow peas, boiled — a different pod and a different state.",
+    "sweet-potato-baked": "Raw in Doleman, baked in ours."
   },
-  {
-   "id": "turkey-breast-roasted",
-   "name": "Turkey breast, roasted",
-   "category": "Poultry",
-   "fdc_id": "171496",
-   "portion_id": "88856",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Turkey, breast, lean flesh, baked, no added fat",
-     "why": "Breast meat only in both, roasted/baked with no added fat."
-    }
-   }
+  "_gap_champions_refused": {
+    "garlic": "REFUSED 2026-08-22, and it is the food the campaign most wanted. Doleman measures garlic at 252.3 umoles/g DRY — the highest allium in its table — and Wallach names garlic by name on germanium's own page. But a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his 500 mg sulphur target: under the 7% bar. Only a whole cup of raw garlic (136 g) clears anything, and nobody eats that. AFCD measures garlic for none of the four gap nutrients, and germanium — the thing Wallach actually names it for — carries no numeric target for a food to be measured against. Stretching the portion to admit it is what the derive's own error message forbids. Garlic is a flavouring, not a serving, and the number says so."
   },
-  {
-   "id": "turkey-thigh-roasted",
-   "name": "Turkey thigh, roasted",
-   "category": "Poultry",
-   "fdc_id": "171532",
-   "portion_id": "88938",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Turkey, hindquarter, lean flesh, baked, no added fat",
-     "why": "AFCD publishes the HINDQUARTER — thigh plus drumstick — where ours is thigh alone. Same bird, same dark meat, same state; the cut boundary is the approximation, and it is why this is not EXACT tier."
-    }
-   }
-  },
-  {
-   "id": "turmeric-ground",
-   "name": "Turmeric, ground",
-   "category": "Spices & herbs",
-   "fdc_id": "172231",
-   "portion_id": "90123"
-  },
-  {
-   "id": "turnip-greens-cooked",
-   "name": "Turnip greens, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170139",
-   "portion_id": "86119"
-  },
-  {
-   "id": "turnips-cooked",
-   "name": "Turnips, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170547",
-   "portion_id": "86833",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Turnips, fresh, peeled, boiled",
-     "why": "Same vegetable, both boiled."
-    }
-   }
-  },
-  {
-   "id": "veal-chop",
-   "name": "Veal chop",
-   "category": "Lamb, veal & game",
-   "fdc_id": "172650",
-   "portion_id": "91005"
-  },
-  {
-   "id": "veal-cutlet",
-   "name": "Veal cutlet",
-   "category": "Lamb, veal & game",
-   "fdc_id": "174880",
-   "portion_id": "95064"
-  },
-  {
-   "id": "venison-roasted",
-   "name": "Venison, roasted",
-   "category": "Lamb, veal & game",
-   "fdc_id": "175085",
-   "portion_id": "95585",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Venison, leg medallion, lean, baked, roasted, fried, stir-fried, grilled or BBQ'd, no added fat",
-     "why": "Our USDA row is a composite of deer cuts, roasted. AFCD publishes a leg medallion and a mince, both cooked; the medallion is the cut (not the ground) and is also the lower of the two.",
-     "conservative": true
-    }
-   }
-  },
-  {
-   "id": "walnuts",
-   "name": "Walnuts",
-   "category": "Nuts & seeds",
-   "fdc_id": "170187",
-   "portion_id": "86206"
-  },
-  {
-   "id": "white-beans-cooked",
-   "name": "White beans, cooked",
-   "category": "Legumes",
-   "fdc_id": "175249",
-   "portion_id": "95893"
-  },
-  {
-   "id": "white-mushrooms-cooked",
-   "name": "White mushrooms, cooked",
-   "category": "Vegetables",
-   "fdc_id": "168537",
-   "portion_id": "83260"
-  },
-  {
-   "id": "whole-milk",
-   "name": "Whole milk",
-   "category": "Dairy & eggs",
-   "fdc_id": "171266",
-   "portion_id": "88318",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Milk, cow, fluid, regular fat (~3.5%)",
-     "why": "Our USDA row is producer milk at 3.7% fat; AFCD's regular-fat cow milk is ~3.5%. Same product, same state, essentially the same fat."
-    }
-   }
-  },
-  {
-   "id": "whole-milk-yogurt",
-   "name": "Whole-milk yogurt",
-   "category": "Dairy & eggs",
-   "fdc_id": "171284",
-   "portion_id": "88365"
-  },
-  {
-   "id": "yam-cooked",
-   "name": "Yam, cooked",
-   "category": "Vegetables",
-   "fdc_id": "170551",
-   "portion_id": "86839",
-   "matches": {
-    "silicon-powell-2005": {
-     "key": "Yam, fresh, peeled, boiled Snack foods",
-     "why": "Same vegetable; USDA's row is 'boiled, drained, or baked' and Powell's is boiled. The key carries 'Snack foods' because the next section heading bleeds into this PDF line; kept byte-exact so the gate can join it."
-    }
-   }
-  },
-  {
-   "id": "yellowfin-tuna-cooked",
-   "name": "Yellowfin tuna, cooked",
-   "category": "Fish & shellfish",
-   "fdc_id": "172006",
-   "portion_id": "89724",
-   "matches": {
-    "afcd-au-r3": {
-     "key": "Tuna, yellowfin, fillet, baked, no added fat",
-     "why": "Both cooked yellowfin fillet with nothing added; the species is named on both sides."
-    }
-   }
-  }
- ],
- "_matches_purpose": "★ STILL NUMBERS-FREE. `matches` binds a food to a row in a SECOND composition source by the source's own food NAME, because those sources publish no id our catalog shares. A name join is a human decision, so each one carries the reasoning that accepted it and every value it produces is APPROXIMATE tier FOREVER — the gate REDs an EXACT tier sitting on a name join. THE PAIR RULE: same food, same state. Where the source measures SEVERAL VARIETIES of what our generic row calls one food — red and green lentils, smooth and fibrous mango, three cabbages — take the LOWEST and set `conservative`, which makes the card say so. ⛔ DO NOT DROP THE FOOD. That is what this file did for one day, and Luneth overruled it on 2026-08-22: a blank card does not read as 'we could not choose', it reads as 'not a source', which is a stronger claim than the one being avoided and a false one — every Powell lentil row measures silicon in lentils. The lowest variety is true whichever kind is on the plate, can only understate, and asserts no absence that is not there. A pair is recorded even when it lands under the threshold and shows nothing, because a pair that exists only when it helps is a biased pair.",
- "_afcd_refused": {
-  "bok-choy-cooked": "AFCD has steamed and fried; ours is boiled.",
-  "canned-salmon-with-bones": "AFCD has pink canned salmon (chloride, no sulphur) and red canned salmon (sulphur, no chloride); ours is chum. Which row to take is not a variety question the lowest-value rule can answer.",
-  "chicken-thigh-roasted": "AFCD's BAKED thigh — the row that matches our state — measures none of these four. Its raw and fried rows do, and are not borrowed.",
-  "coconut-raw": "AFCD's coconut is grated and desiccated; ours is raw meat.",
-  "cod": "AFCD's only cod rows are SMOKED. Smoking is a different state and adds salt, which is the single biggest lever on a food's iodine — the one nutrient being chased.",
-  "duck-egg": "AFCD carries duck MEAT and no duck egg at all.",
-  "egg-yolk": "AFCD's raw yolk is 80 ug/100 g and lands at 5.9% on our 17 g serving, under the floor. Its hard-boiled yolk clears it at 9.6%, but ours is a raw yolk.",
-  "eggplant-cooked": "AFCD has raw and roasted; ours is boiled.",
-  "goat-milk": "AFCD carries goat MEAT and goat CHEESE, and no goat milk.",
-  "greek-yogurt": "AFCD has natural regular-fat yoghurt; Greek yoghurt is strained and is a different product.",
-  "kale-cooked": "AFCD has kale RAW (64%) and FRIED (91%); ours is boiled. Boiling adds water, so either would read high on a boiled kale.",
-  "king-crab-cooked": "AFCD publishes one crab row, unnamed as to species. Ours names king crab. Taking a generic crab for a named one is a variety guess, not a state difference the conservative rule can absorb.",
-  "lamb-chop": "AFCD's loin chop is LEAN (42% sulphur); our USDA row is lean AND fat. Fat carries almost no sulphur, so the lean figure reads high on a fatty chop.",
-  "leg-of-lamb": "Same trim mismatch: AFCD's lean leg roast (22%) against our lean-and-fat row. AFCD's untrimmed leg roast measures no sulphur at all.",
-  "macadamia-nuts-roasted": "AFCD's macadamia is raw; ours is roasted.",
-  "octopus-cooked": "AFCD's boiled octopus — the row that matches our state — is 16.7 ug/100 g and lands at 6.2% of Wallach's iodine, under the 7% floor, so it would ship nothing. Its RAW row would clear the bar at 7.4%, and taking that one would be choosing the number over the state.",
-  "oysters-cooked": "AFCD's oyster rows are all RAW (sulphur 54-67%); ours is moist-heat cooked. The richest sulphur food in reach, and refused for it.",
-  "parmesan-grated": "AFCD's dried finely-grated parmesan — the row that matches ours — measures none of these four. Its FRESH parmesan is a different product.",
-  "potato-baked": "AFCD's baked potatoes are PEELED; ours is flesh and skin.",
-  "rainbow-trout-cooked": "AFCD names rainbow trout, so the species matches — but it measures its iodine at 0.0 ug/100 g, so the pair would ship nothing for the nutrient it was opened for. Left unpaired rather than bound for a value that is not there; reopen it if another nutrient needs it.",
-  "sweet-potato-baked": "AFCD has raw and baked but peeled; ours is baked in skin."
- },
- "_doleman_refused": {
-  "broccoli-cooked": "Doleman analysed broccoli RAW; ours is boiled. Boiling leaches sulphate and glucosinolates, so a raw dry-basis figure reads high on a boiled crucifer. It would have shipped at 27%.",
-  "cauliflower-cooked": "Raw in Doleman, boiled in ours. Same leaching argument. 13%.",
-  "green-beans-cooked": "Doleman's dwarf beans are raw; ours are boiled.",
-  "ground-beef": "Doleman analysed minced beef AS PURCHASED — raw — and our USDA row is cooked and pan-browned. It would have shipped at 38%.",
-  "kale-cooked": "Raw in Doleman, boiled in ours. Same leaching argument. 24%.",
-  "leeks-cooked": "Raw in Doleman, boiled in ours.",
-  "parsnips-cooked": "Raw in Doleman, boiled in ours.",
-  "potato-baked": "Raw in Doleman, baked in ours.",
-  "red-bell-pepper-raw": "Doleman measured GREEN pepper; ours is red. Both raw, but a green pepper is an unripe fruit and is not the same food.",
-  "snow-peas-cooked": "Doleman measured sugar snap peas, raw; ours are snow peas, boiled — a different pod and a different state.",
-  "sweet-potato-baked": "Raw in Doleman, baked in ours."
- },
- "_gap_champions_refused": {
-  "garlic": "REFUSED 2026-08-22, and it is the food the campaign most wanted. Doleman measures garlic at 252.3 umoles/g DRY — the highest allium in its table — and Wallach names garlic by name on germanium's own page. But a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his 500 mg sulphur target: under the 7% bar. Only a whole cup of raw garlic (136 g) clears anything, and nobody eats that. AFCD measures garlic for none of the four gap nutrients, and germanium — the thing Wallach actually names it for — carries no numeric target for a food to be measured against. Stretching the portion to admit it is what the derive's own error message forbids. Garlic is a flavouring, not a serving, and the number says so."
- }
+  "_tier_a_batch": "48 foods added 2026-08-24 after the owner reviewed temporary/foods-gap-review.html. That review answered a question nobody had asked: the catalog's selection rule is an ADMISSION test ('a food earns a place only if...'), and it had never been run in reverse to ask what else would pass. Sweeping all 7,793 SR Legacy foods against the shipped 7% arithmetic found 249 distinct qualifying foods the catalog carried nothing for. The owner cleared the whole Tier-B list (canned / salted / soy / game / native states) and confirmed the Tier-C exclusions; these are Tier A, the plain unprocessed rows. SEVEN OF THEM ARE NOT THE ROW THE SWEEP FOUND: USDA's smallest published portion for a raw mature legume seed is one cup UNCOOKED, which roughly triples in weight cooked, so that serving is nearer three than one and every percentage on it is inflated. Each of those took USDA's own plain cooked row instead (lupins, mothbeans, mungo beans, pigeon peas, winged beans, yardlong beans, hyacinth beans). Two candidates were dropped rather than shipped on a portion nobody eats: mamey apple (USDA publishes no household portion under 400 g) and immature hyacinth beans (no plain cooked row exists)."
 }

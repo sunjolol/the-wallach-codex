@@ -376,6 +376,14 @@
    + at top:50%, which collides with wrapped text. Scoped column layout: name up top,
    meta pinned to the bottom, the + parked in the corner. Coverage's .rec is untouched. */
 .ck-recgrid .rec { display: flex; flex-direction: column; gap: 6px; min-height: 90px; margin-bottom: 0; padding: 12px 14px; }
+/* The catalogue's PINNED lead — Ultimate Classic, first in every sort order (owner ruling,
+   2026-08-24; the reason is recorded in starter-pack.json). Marked quietly rather than loudly:
+   a reader who sorts by "most nutrients" and sees a 27-nutrient formula above a 35-nutrient one
+   needs to be told the position is deliberate, but the card is a recommendation, not a badge. */
+.ck-recgrid .rec--lead { box-shadow: inset 2px 0 0 var(--ds-accent); }
+/* Formula size, beside what the card ADDS. Quieter than .rec__val: what you do not yet have is
+   the actionable number, and how big the formula is, is context for it. */
+.ck-recgrid .rec__br { color: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); }
 .ck-recgrid .rec__name { margin-bottom: 0; font-size: .82rem; line-height: 1.22; }
 .ck-recgrid .rec__meta { margin-top: auto; flex-wrap: wrap; padding-right: 26px; }
 .ck-recgrid .rec__add { top: auto; bottom: 12px; right: 12px; transform: none; width: 22px; height: 22px; }

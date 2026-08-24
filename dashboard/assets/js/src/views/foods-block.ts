@@ -38,6 +38,7 @@ import type { RegimenItem } from '../core/schemas/index.js';
 import { ui } from '../state/copy.js';
 import { foodById, foodCatalogSize, type FoodHit, type FoodRec } from '../state/foods.js';
 import { addOrBumpRegimenItem } from '../state/regimen.js';
+import { pagerNode } from './pager.js';
 
 /** The label cut into the dotted rule. Owner's choice of the three offered, 2026-08-21. */
 const RULE_LABEL = 'FOOD SOURCES';
@@ -53,20 +54,6 @@ const PRIZE_URL = 'https://www.youtube.com/watch?v=dQw4w9WgXcQ';
 /** Design F's add control: the app's own 28px shell, differing only by its SVG path. */
 const ADD_PATH = 'M12 6v12M6 12h12';
 
-/** The pager's two arrows. Single glyphs, so they inherit the mono face like the numbers. */
-const PAGER_PREV = '‹';
-const PAGER_NEXT = '›';
-/** What stands between two page numbers that are not neighbours. */
-const PAGER_GAP = '…';
-/**
- * How many page numbers the moving window holds.
- *
- * ★ THE WINDOW STARTS AT THE CURRENT PAGE, it does not centre on it — the owner's shape,
- * 2026-08-22: "1 2 3 4 5 … 64" on page one, and "1 … 20 21 22 23 24 … 64" on page twenty.
- * It only slides backwards when the end of the list would otherwise cut it short, so the
- * last page reads "1 … 60 61 62 63 64" instead of a lonely "1 … 64".
- */
-const PAGER_WINDOW = 5;
 
 export interface FoodsBlockOptions {
   /**
@@ -141,105 +128,6 @@ function glossFor(hit: FoodHit): string {
   return `${base} ≈ That source lists foods by name rather than by the id our catalog uses, `
     + 'so this food was paired with theirs by hand — a close stand-in, not a measurement of '
     + `this exact item.${floor}`;
-}
-
-function pagerButton(label: string, page: number, disabled: boolean): HTMLButtonElement {
-  const b = document.createElement('button');
-  b.className = 'fs-pager__b';
-  b.type = 'button';
-  b.textContent = label;
-  b.dataset['foodPage'] = String(page);
-  b.disabled = disabled;
-  return b;
-}
-
-/**
- * Which page numbers the numbered pager lists, in order — a `null` is an ellipsis.
- *
- * The first and last pages are ALWAYS listed, because they are the two a reader reaches for
- * without counting; everything else is the window described at PAGER_WINDOW. An ellipsis is
- * emitted only where the numbers on either side of it are genuinely not neighbours, so the
- * pager never prints "1 … 2" — a gap mark over no gap is chrome that lies.
- */
-function windowedPages(page: number, pages: number): (number | null)[] {
-  const last = pages - 1;
-  const start = Math.max(0, Math.min(page, last - (PAGER_WINDOW - 1)));
-  const end = Math.min(last, start + PAGER_WINDOW - 1);
-  const out: (number | null)[] = [0];
-  if (start > 1) {
-    out.push(null);
-  }
-  for (let i = Math.max(start, 1); i <= Math.min(end, last - 1); i += 1) {
-    out.push(i);
-  }
-  if (end < last - 1) {
-    out.push(null);
-  }
-  if (last > 0) {
-    out.push(last);
-  }
-  return out;
-}
-
-function pagerGap(): HTMLElement {
-  const gap = document.createElement('span');
-  gap.className = 'fs-pager__gap';
-  gap.textContent = PAGER_GAP;
-  gap.setAttribute('aria-hidden', 'true');
-  return gap;
-}
-
-function arrow(label: string, page: number, disabled: boolean, aria: string): HTMLButtonElement {
-  const b = pagerButton(label, page, disabled);
-  b.classList.add('fs-pager__b--arrow');
-  b.setAttribute('aria-label', aria);
-  return b;
-}
-
-/**
- * The pager, or null when there is nothing to page to.
- *
- * ★ NEVER PAINTED OVER A SINGLE PAGE. A pager is a claim that more exists; rendering one
- * for a one-page list is that claim made falsely, and the foods list is one page whenever a
- * filter narrows the catalog to a handful.
- */
-function pagerNode(p: NonNullable<FoodsBlockOptions['pager']>): HTMLElement | null {
-  if (p.pages < 2) {
-    return null;
-  }
-  const nav = document.createElement('nav');
-  // The modifier is what lets the Regimen console size its pager up without touching
-  // Coverage's (owner, 2026-08-22: "only for the regimen tab, coverage stays the same").
-  // Scoping that off `.fs-controls` instead would tie a control's SIZE to whether a
-  // filter happens to sit beside it, which is a coincidence, not a reason.
-  nav.className = `fs-pager fs-pager--${p.kind}`;
-  nav.setAttribute('aria-label', ui('fs_pager_label'));
-  const prev = arrow(PAGER_PREV, p.page - 1, p.page <= 0, ui('fs_pager_prev'));
-  const next = arrow(PAGER_NEXT, p.page + 1, p.page >= p.pages - 1, ui('fs_pager_next'));
-  if (p.kind === 'arrows') {
-    // The readout is what makes the arrows honest: without it a disabled arrow is the only
-    // signal that the list has ended, and the reader cannot tell how far it went.
-    const at = document.createElement('span');
-    at.className = 'fs-pager__at';
-    at.textContent = `${p.page + 1} / ${p.pages}`;
-    nav.append(prev, at, next);
-    return nav;
-  }
-  nav.appendChild(prev);
-  for (const i of windowedPages(p.page, p.pages)) {
-    if (i === null) {
-      nav.appendChild(pagerGap());
-      continue;
-    }
-    const b = pagerButton(String(i + 1), i, false);
-    b.setAttribute('aria-label', ui('fs_pager_page').replace('{n}', String(i + 1)).replace('{of}', String(p.pages)));
-    if (i === p.page) {
-      b.setAttribute('aria-current', 'page');
-    }
-    nav.appendChild(b);
-  }
-  nav.appendChild(next);
-  return nav;
 }
 
 /** The category picker + name box, at the right of the pager's row. */
@@ -504,7 +392,9 @@ export function buildFoodsBlock(
    * reader is stranded with no way to undo it.
    */
   const appendControls = (): void => {
-    const nav = opts.pager !== undefined ? pagerNode(opts.pager) : null;
+    const nav = opts.pager !== undefined
+      ? pagerNode({ ...opts.pager, dataAttr: 'foodPage' })
+      : null;
     if (filter === undefined) {
       if (nav !== null) {
         host.appendChild(nav);

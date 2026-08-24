@@ -48,11 +48,20 @@ export const CoverageTargetSchema = z.object({
   mirrors_slug: z.string().optional(),
   /**
    * True when Wallach names the plant-derived colloidal mineral vehicle as THIS essential's
-   * supply route, in his own words — tin is the only case: "tin from plant derived colloidal
-   * minerals" (WAL-CLM-LETS-000451, 1995; repeated in DDDL-000406/465/466, 2011), with
-   * DDDL-000287 recording his own use of it. Membership is hand-authored WITH citations in
-   * trace-mineral-vehicles.json and stamped here by targets_derive, which refuses to build on
-   * a citation that does not resolve.
+   * supply route — THREE essentials carry it, not one. Tin is the case his own words settle:
+   * "tin from plant derived colloidal minerals" (WAL-CLM-LETS-000451, 1995; repeated in
+   * DDDL-000406/465/466, 2011), with DDDL-000287 recording his own use of it. GERMANIUM and
+   * VANADIUM were admitted on 2026-08-21 by OWNER RULING rather than by that supply-sentence
+   * test — both appear on his humic-shale roster (WAL-CLM-HELLS-000069), and the reasoning that
+   * accepted each is recorded beside it in trace-mineral-vehicles.json.
+   *
+   * ⚠ This comment read "tin is the only case" until 2026-08-24, three days after the other two
+   * landed in the data it describes. It was caught by a reader who trusted it, checked the
+   * artifact, and got a different answer — the failure §00.B.3 names: a comment out of sync with
+   * its code is a defect worse than no comment.
+   *
+   * Membership is hand-authored WITH citations in trace-mineral-vehicles.json and stamped here
+   * by targets_derive, which refuses to build on a citation that does not resolve.
    *
    * It is NOT presence on the humic-shale roster — that roster lists calcium, sodium and
    * potassium, so presence cannot be the test and never becomes it.
