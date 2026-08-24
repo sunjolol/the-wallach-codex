@@ -38886,6 +38886,16 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return food.name.toLowerCase().includes(query) || food.category.toLowerCase().includes(query);
   }
   var EFA_SLUGS = /* @__PURE__ */ new Set(["omega-3", "omega-6"]);
+  var GOAL_CONTRIB_MIN = 0.25;
+  function deliversGoal(f, members) {
+    for (const row of f.nutrients) {
+      if (members.has(row.slug) && row.fraction >= GOAL_CONTRIB_MIN) {
+        return true;
+      }
+    }
+    const efa = f.efa;
+    return efa?.qualifies === true && efa.fraction >= GOAL_CONTRIB_MIN && [...members].some((m) => EFA_SLUGS.has(m));
+  }
   function rankFoodsForCoverage(input) {
     const owned = new Set(input.owned ?? []);
     const goals = input.goals ?? [];
@@ -38896,7 +38906,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const nutrient = input.nutrient ?? "";
     const outstanding = new Set(input.want);
     const goalMembers = goalFilter === void 0 || goalFilter.length === 0 ? null : new Set(goalFilter);
-    const available = DATA.foods.filter((f) => !owned.has(f.id) && (category === "" || f.category === category) && (nutrient === "" || f.nutrients.some((n) => n.slug === nutrient) || EFA_SLUGS.has(nutrient) && f.efa?.qualifies === true) && (goalMembers === null || f.nutrients.some((n) => goalMembers.has(n.slug)) || f.efa?.qualifies === true && [...goalMembers].some((m) => EFA_SLUGS.has(m))) && matchesQuery(f, query));
+    const available = DATA.foods.filter((f) => !owned.has(f.id) && (category === "" || f.category === category) && (nutrient === "" || f.nutrients.some((n) => n.slug === nutrient) || EFA_SLUGS.has(nutrient) && f.efa?.qualifies === true) && (goalMembers === null || deliversGoal(f, goalMembers)) && matchesQuery(f, query));
     if (available.length === 0) {
       return [];
     }
@@ -45712,7 +45722,44 @@ I have NOT fixed either one, deliberately. Both are a choice of number, and a nu
 
 THE THIRD INSTANCE OF THE SAME LESSON TODAY. The food note that stranded at the top of the page, the pager crushed to zero width, and now these counts \u2014 three changes that passed every gate and were still wrong on screen. In each case the code did what it said and the OUTPUT was nonsense. After wiring any filter, sort or threshold, the step that catches this is a census: ask what every option actually returns and read the distribution. The new probe proves the filters fire; nothing yet asserts they return a sensible number, and that assertion should land with the fix.
 
-Nothing is owed a seal \u2014 the corpus, catalog and products pillars were untouched all session, and seals are the owner's to run in any case. Board 104/104, master clean and pushed.` }];
+Nothing is owed a seal \u2014 the corpus, catalog and products pillars were untouched all session, and seals are the owner's to run in any case. Board 104/104, master clean and pushed.` }, { id: "lg_mt7uuz5j_lsgyiv", ts: "2026-08-24T18:16:34.807840-05:00", surface: "regimen/goal-filters+chips", kind: "session-end", summary: "Both goal filters recalibrated to one rule, the goal pills rejoined the filter that lists them, the essential fatty acids are finally scored, and every screenshot today was blurred by a veil six probes forgot to dismiss.", detail: `Picking a goal used to show almost no products -- thyroid support showed none at all -- while the same pick left nearly every food on screen. Two controls, miscalibrated in opposite directions, and he caught both. They now share one rule that can be explained in a sentence: something is shown under a goal when it delivers at least a quarter of Dr. Wallach's daily amount for at least one of that goal's essentials.
+
+The coloured goal pills had the mirror of that problem. 143 of the 149 products carried no pill at all, so a product could sit in a filtered list while its own card said nothing about the goal that had put it there. He described it exactly: "Ultimate Daily still shows nothing even though it filters under sharper thinking." The pill and the filter now ask one question, and the number on the pill is what tells a broad formula from a narrow one.
+
+Underneath that, the app had been blind to a whole pair of essentials. Dr. Wallach states one amount for the essential fatty acids together -- nine grams a day -- rather than one for omega-3 and one for omega-6, so the product scorer, which only knew how to read per-essential amounts, dropped both and every omega product read "0%" on every goal. No new number was needed: his nine grams was already sealed and already read by two other parts of the app. He also corrected the arithmetic himself -- averaging a focused product across everything a goal names buried it, and one soft gel of Ultimate EFA Plus is 11.1% of his nine grams, not 1%.
+
+And the whole day's screenshots were blurred. He finally said "I can't see any of your screenshots", which was the only reason it came to light.
+
+TECHNICAL RECORD
+
+state/recommender.ts
+- goalStrength -> goalDelivery(productId, members): {depth, delivers, of} | null. depth averages ONLY the goal essentials the product carries. The whole-goal mean was the defect the owner named "totally wrong": it diluted a focused product by every essential it was never meant to cover.
+- goalRank (depth x delivers/of) orders a card's chips. Depth alone is a hopeless sort key -- a vitamin D spray is 100% deep on thirteen goals at once and would lead every card with its thinnest claim.
+- contributesToGoal + GOAL_CONTRIB_MIN = 0.25, a PER-NUTRIENT MAX rather than a mean. Censused over 149 products x 30 goals: 21-81 per goal where the old chip test returned 0-7.
+- thyroid-support returned literally nothing under every strength test and no threshold could have rescued it: three of its five essentials (arginine, taurine, tyrosine) carry no Wallach amount, so it cannot reach GOAL_MIN_MEASURABLE. Members he puts no number on are now tested by presence -- stated as presence, never as a share.
+- EFA group bound through efa-coverage-data.json (WAL-CLM-DDDL-000115, 9000 mg, oil mass). Scored for the SHARE; tested by PRESENCE for the filter, because one serving of all seven EFA products lands between 5.6% and 22.2% of nine grams and a per-serving bar would empty every one of them out of all 25 goals that name an omega.
+- goalDelivery returns null rather than zero when a product delivers none of a goal's scorable essentials: exactly nothing is not a share of zero percent.
+
+state/foods.ts
+- deliversGoal() gives the foods filter the bar it never had. The catalogue's own admission test already keeps only rows at 7% of target or better (measured: 974 rows, minimum 0.0701), which is exactly why "carries any of them" read as almost every food. 96-237 of 248 -> 24-135.
+
+views/regimen.ts + CSS
+- filterCatalog reads r.goals, which IS the contribution list now; the chip list and the filter cannot disagree.
+- Chips moved out of .rec__meta into .rec__goals. He was shown four measured treatments and chose this one; the other three are recorded in the CSS so they are not re-proposed as new.
+- Chip label: name + one percentage, never "0%". Three states: a real share, "<1%", or the name alone where no share exists. The x/y count moved to the chip's title on his ruling -- it still guards the narrow-product over-claim, at no width.
+- .fs-filter__cat--sort 218px, --goal 222px, base 148 -> 160px. The sort picker read "Fills the most ga"; the food category picker was clipping by 4px and nobody had reported it.
+- .fs-controls flex-wrap: wrap-reverse -- the pager keeps its place in source order for tab order but renders BELOW the filters, his shape.
+- The + button's gutter is reserved on the LAST chip, not across the row. Surveyed 35 cards: row-wide padding 3.69 lines/180px avg, nothing at all 2.91/160px but the + lands on a chip on 8 of them, last-chip margin 3.14/166px with zero collisions.
+- .rec__add padding-top: 1.5px centres the fullwidth plus. Measured -0.75px high on the shipped card, on the pre-change DOM, and on the untouched Coverage card -- pre-existing font metrics, not this work, and fixed at the shared rule so both surfaces get it.
+
+THE BLUR
+.wc is the welcome dialog; .wc-veil is a separate position:fixed, full-viewport, z-index 60 backdrop carrying backdrop-filter: blur(9px) saturate(0.9). A class selector matches whole tokens, so querySelectorAll('.wc') never matched it. Six probes removed the dialog and left the blur, and every PNG they produced all day was shot through it while every DOM assertion passed, because the tree underneath is perfectly correct. I noticed the softness, attributed it to my own image pipeline, and kept shipping unreadable images until he said he could not see any of them. Fixed in all six probes; the census probe now fails if anything covering more than half the viewport carries a blur or filter; negative control proves the old removal leaves the veil and the fix clears it.
+
+VERIFICATION
+build OK; invariants 104/104 with no new reds (24 external / 33 consistency / 45 structural / 2 meta -- green means nothing drifted, not that anything is right); vitest 100/100, sixteen of them new, including per-goal floor and ceiling bands on both surfaces, "never lists a product under a goal its own card says nothing about", and an omega-only product reading exactly efa_oil_mg / 9000; nine render probes green, including the new tools/probes/render_probe_goal_filter_census.js which drives all 31 options of both filters in the running app and censuses what each returns -- the assertion the previous miscalibration shipped without.
+
+NOT DONE
+The goal pills still run about 2.4 lines per card at five chosen goals. Three further treatments were measured and deliberately not taken: moving the denominator to the goal picker (166px), bar rows (177px, and the only shape that cannot wrap at any label length or goal count), and shorter goal names, which is a rename and therefore his call. Mobile design is the next session's task.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -123348,13 +123395,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       rg_recs_sort_name: "Name A\u2013Z",
       rg_recs_sort_label: "Order the products by",
       rg_recs_goal_all: "Any goal",
-      rg_recs_goal_label: "Show only products that touch this goal",
+      rg_recs_goal_label: "Show only products that contribute to this goal",
       rg_recs_nutrient_all: "Any nutrient",
       rg_recs_nutrient_label: "Show only products that carry this nutrient",
       rg_recs_note: "Browse every product \xB7 sort and filter",
       rg_recs_empty: "No product matches those filters.",
       kd_ep_foodsrc_zero_target: "Dr. Wallach recommends none of this one \u2014 his Base Line table lists it at zero, because an ordinary diet already supplies a large excess. Foods are not ranked here for that reason.",
-      rg_recs_goal_tag_why: "The share of Dr. Wallach's daily amounts this product delivers across the essentials in this goal, counting only the ones he puts a number on. A goal is only tagged above 30%.",
+      rg_recs_goal_tag_why_n: "Delivers {n} of the {of} essentials in this goal that Dr. Wallach states an amount for, at {pct}% of those amounts \u2014 so a broad formula reads higher than a single-nutrient one. A product is shown under a goal when it delivers at least a quarter of his amount for at least one of the goal's essentials.",
+      rg_recs_goal_tag_why: "Shown when this product delivers at least a quarter of Dr. Wallach's daily amount for at least one of this goal's essentials \u2014 the same test the goal filter runs. The number is the share it covers across the whole goal, counting only the essentials he puts a number on, so a broad formula reads higher than a single-nutrient one. No number at all means there is no share to state: he names an amount for too few of this goal's essentials, or this product delivers none of the ones he does.",
       fs_filter_goal_all: "Any goal",
       fs_filter_goal_label: "Show only foods that contribute to this goal",
       fs_filter_nutrient_all: "Any nutrient",
@@ -178997,8 +179045,17 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return out;
   }
   var GOAL_MIN_MEASURABLE = 3;
-  var GOAL_TAG_MIN = 0.3;
   var GOAL_UNIT_TO_MG = { mg: 1, mcg: 1e-3, g: 1e3 };
+  var EFA2 = EfaCoverageSchema.parse(efa_coverage_data_default);
+  var EFA_MEMBERS2 = new Set(EFA2.goal.members);
+  function efaShareOf(productId) {
+    const goal = EFA2.goal.maintenance_mg;
+    if (goal <= 0) {
+      return null;
+    }
+    const rec = EFA2.products[productId];
+    return rec === void 0 ? null : Math.min(1, rec.efa_oil_mg / goal);
+  }
   var GOAL_TARGET_MG = (() => {
     const m = /* @__PURE__ */ new Map();
     const parsed = EssentialsDataSchema.safeParse(essentials_targets_data_default);
@@ -179040,31 +179097,59 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
     return m;
   })();
-  function goalStrength(productId, members) {
-    const measurable = members.filter((m) => GOAL_TARGET_MG.has(m));
-    if (measurable.length < GOAL_MIN_MEASURABLE) {
+  function goalDelivery(productId, members) {
+    const scorable = members.filter((m) => GOAL_TARGET_MG.has(m) || EFA_MEMBERS2.has(m));
+    if (scorable.length < GOAL_MIN_MEASURABLE) {
       return null;
     }
     const row = DELIVERED_MG.get(productId);
     let sum = 0;
-    for (const slug of measurable) {
-      const target = GOAL_TARGET_MG.get(slug) ?? 0;
-      if (target > 0) {
-        sum += Math.min(1, (row?.get(slug) ?? 0) / target);
+    let delivers = 0;
+    for (const slug of scorable) {
+      const share = EFA_MEMBERS2.has(slug) ? efaShareOf(productId) ?? 0 : Math.min(1, (row?.get(slug) ?? 0) / (GOAL_TARGET_MG.get(slug) ?? Infinity));
+      if (share > 0) {
+        sum += share;
+        delivers += 1;
       }
     }
-    return sum / measurable.length;
+    return delivers === 0 ? null : { depth: sum / delivers, delivers, of: scorable.length };
+  }
+  function goalRank(d) {
+    return d === null ? -1 : d.depth * d.delivers / d.of;
   }
   function goalTagsFor(productId, goals) {
     const out = [];
     for (const g of goals) {
-      const v = goalStrength(productId, g.members);
-      if (v !== null && v >= GOAL_TAG_MIN) {
-        out.push({ id: g.id, strength: v });
+      if (contributesToGoal(productId, g.members)) {
+        out.push({ id: g.id, delivery: goalDelivery(productId, g.members) });
       }
     }
-    out.sort((a, b) => b.strength - a.strength || a.id.localeCompare(b.id));
+    out.sort((a, b) => goalRank(b.delivery) - goalRank(a.delivery) || a.id.localeCompare(b.id));
     return out;
+  }
+  var GOAL_CONTRIB_MIN2 = 0.25;
+  function contributesToGoal(productId, members) {
+    const delivered = DELIVERED_MG.get(productId);
+    const byPresence = [];
+    for (const slug of members) {
+      if (EFA_MEMBERS2.has(slug)) {
+        byPresence.push(slug);
+        continue;
+      }
+      const target = GOAL_TARGET_MG.get(slug);
+      if (target === void 0 || target <= 0) {
+        byPresence.push(slug);
+        continue;
+      }
+      if ((delivered?.get(slug) ?? 0) / target >= GOAL_CONTRIB_MIN2) {
+        return true;
+      }
+    }
+    if (byPresence.length === 0) {
+      return false;
+    }
+    const essentials = coverageIndex().get(productId)?.essentials;
+    return essentials !== void 0 && byPresence.some((slug) => essentials.has(slug));
   }
 
   // assets/js/src/views/pager.ts
@@ -179215,13 +179300,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     };
     wrap.appendChild(sel);
     if (f.goals !== void 0) {
-      wrap.appendChild(pick(
+      const goalSel = pick(
         "foodGoal",
         f.goalId ?? "",
         ui("fs_filter_goal_all"),
         f.goals.map((g) => ({ v: g.id, t: g.name })),
         ui("fs_filter_goal_label")
-      ));
+      );
+      goalSel.classList.add("fs-filter__cat--goal");
+      wrap.appendChild(goalSel);
     }
     if (f.nutrients !== void 0) {
       wrap.appendChild(pick(
@@ -223462,6 +223549,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       br.className = "rec__br";
       br.textContent = `${r.breadth} nutrients`;
       meta.append(price, val, br);
+      card.appendChild(meta);
+      const goalRow = document.createElement("div");
+      goalRow.className = "rec__goals";
       for (const gt of r.goals) {
         const g = goals.find((x) => x.id === gt.id);
         if (g === void 0) {
@@ -223470,11 +223560,20 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         const tag = document.createElement("span");
         tag.className = "ck-tag";
         tag.style.setProperty("--tc", hueOf(gt.id));
-        tag.textContent = `${g.name} ${Math.round(gt.strength * 100)}%`;
-        tag.title = ui("rg_recs_goal_tag_why");
-        meta.appendChild(tag);
+        const d = gt.delivery;
+        if (d === null) {
+          tag.textContent = g.name;
+          tag.title = ui("rg_recs_goal_tag_why");
+        } else {
+          const pct = Math.round(d.depth * 100);
+          tag.textContent = `${g.name} ${pct < 1 ? "<1" : String(pct)}%`;
+          tag.title = ui("rg_recs_goal_tag_why_n").replace("{n}", String(d.delivers)).replace("{of}", String(d.of)).replace("{pct}", pct < 1 ? "<1" : String(pct));
+        }
+        goalRow.appendChild(tag);
       }
-      card.appendChild(meta);
+      if (goalRow.childElementCount > 0) {
+        card.appendChild(goalRow);
+      }
       const add = document.createElement("span");
       add.className = "rec__add";
       add.textContent = "\uFF0B";
@@ -224583,9 +224682,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       sortSel.appendChild(el);
     }
     sortSel.value = sort;
+    sortSel.classList.add("fs-filter__cat--sort");
+    const goalSel = pick("recGoal", goalId, ui("rg_recs_goal_all"), goals.map((g) => ({ v: g.id, t: g.name })), ui("rg_recs_goal_label"));
+    goalSel.classList.add("fs-filter__cat--goal");
     wrap.append(
       sortSel,
-      pick("recGoal", goalId, ui("rg_recs_goal_all"), goals.map((g) => ({ v: g.id, t: g.name })), ui("rg_recs_goal_label")),
+      goalSel,
       pick("recNutrient", nutrient, ui("rg_recs_nutrient_all"), nutrients.map((n) => ({ v: n.slug, t: n.label })), ui("rg_recs_nutrient_label"))
     );
     return wrap;

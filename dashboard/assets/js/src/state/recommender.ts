@@ -26,10 +26,11 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import efaCoverageData from '../../../data/efa-coverage-data.json';
 import essentialsTargetsData from '../../../data/essentials-targets-data.json';
 import recommenderData from '../../../data/product-recommender-data.json';
 import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
-import { CoverageTargetSchema, EssentialsDataSchema, ProductEntrySchema, ProductsLookupSchema, RecommenderDataSchema } from '../core/schemas/index.js';
+import { CoverageTargetSchema, EfaCoverageSchema, EssentialsDataSchema, ProductEntrySchema, ProductsLookupSchema, RecommenderDataSchema } from '../core/schemas/index.js';
 import { toMg } from '../core/units.js';
 import { isExcludedFromRecommendations } from './kids-exclusion.js';
 import { starterPackIds } from './starter-pack.js';
@@ -656,9 +657,13 @@ export interface CatalogProduct {
   essentials: string[];
   /** How many of them you do NOT yet cover — the gap-fill sort key. */
   supplies: number;
-  /** Which of your chosen goals this product genuinely delivers toward, strongest first,
-   *  with the share of Wallach's amounts it covers for each. See goalTagsFor. */
-  goals: { id: string; strength: number }[];
+  /**
+   * Every goal this product contributes to, best-first, each with what it delivers toward that
+   * goal — or null where there is no share to state. EVERY goal in the picker, not only the
+   * reader's chosen few: the card paints the intersection, the filter needs all thirty.
+   * See goalTagsFor.
+   */
+  goals: { id: string; delivery: GoalDelivery | null }[];
   /**
    * Leads the list in EVERY sort order.
    *
@@ -727,17 +732,40 @@ export function listCatalogProducts(input: {
  */
 const GOAL_MIN_MEASURABLE = 3;
 
-/**
- * The bar a product must clear for a goal chip.
- *
- * Measured across all 155 products x 30 goals: the median pair scores 0.015 and the 95th
- * percentile is 0.278, so 0.30 is roughly the top 4% of pairs. It leaves the broad flagship
- * formulas tagged -- they genuinely deliver 40-55% of his amounts across a goal -- and takes the
- * chip away from everything that was only brushing one member of the list.
- */
-const GOAL_TAG_MIN = 0.30;
-
 const GOAL_UNIT_TO_MG: Record<string, number> = { mg: 1, mcg: 0.001, g: 1000 };
+
+/**
+ * The essential fatty acids, scored the way state/coverage.ts already scores them.
+ *
+ * ★ THIS SCORER WAS BLIND TO A WHOLE ESSENTIAL PAIR, and 25 of the 30 goals name one of them.
+ * omega-3 and omega-6 carry no individual Wallach amount — he states ONE for the category,
+ * "supplemented at the rate of 9 grams per day in capsule form" (WAL-CLM-DDDL-000115), measured
+ * as OIL mass — so GOAL_TARGET_MG has no row for either and both were dropped from the numerator
+ * AND the denominator. A product whose only essential is an omega therefore averaged to exactly
+ * zero and the card printed "0%" beside a goal it was listed under. Measured 2026-08-24: 134
+ * chips across 10 products read 0%.
+ *
+ * Nothing is derived here. The 9 g is the sealed dose claim, already generated into
+ * efa-coverage-data.json by eden/tools/efa_coverage_derive.py and already read by the Coverage
+ * meter; this reads the same artifact rather than keeping a second copy of the number (R1).
+ */
+const EFA = EfaCoverageSchema.parse(efaCoverageData);
+const EFA_MEMBERS: ReadonlySet<string> = new Set(EFA.goal.members);
+
+/**
+ * The share of Wallach's ONE essential-fatty-acid amount a serving of this product delivers, or
+ * null if it names no EFA at all. Both members answer with the group's fraction — one delivery
+ * genuinely moves both, which is exactly how state/coverage.ts resolves their two tiles and how
+ * state/foods.ts fills their two gaps.
+ */
+function efaShareOf(productId: string): number | null {
+  const goal = EFA.goal.maintenance_mg;
+  if (goal <= 0) {
+    return null;
+  }
+  const rec = EFA.products[productId];
+  return rec === undefined ? null : Math.min(1, rec.efa_oil_mg / goal);
+}
 
 /** slug -> Wallach's daily amount in mg, for the essentials that state one in a mass unit. */
 const GOAL_TARGET_MG: Map<string, number> = (() => {
@@ -784,39 +812,171 @@ const DELIVERED_MG: Map<string, Map<string, number>> = (() => {
   return m;
 })();
 
+/** What one product does about one goal, as TWO numbers that must be read together. */
+export interface GoalDelivery {
+  /**
+   * 0..1 -- of the goal's essentials this product actually carries, how completely does it
+   * deliver Wallach's amounts for them. DEPTH, not coverage of the goal.
+   */
+  depth: number;
+  /** How many of the goal's scorable essentials the product carries. */
+  delivers: number;
+  /** How many scorable essentials the goal has at all. */
+  of: number;
+}
+
 /**
- * 0..1 -- the share of Wallach's amounts this product delivers across one goal's MEASURABLE
- * essentials, or null when the goal has too few of them to say anything.
+ * What this product does about this goal -- depth over the essentials it CARRIES, plus the
+ * breadth that number has to be read against. Null when there is nothing to say.
+ *
+ * ★ THE DENOMINATOR IS WHAT THE PRODUCT DELIVERS, NOT THE WHOLE GOAL. Averaging over every
+ * essential in the goal diluted a focused product by everything it was never meant to cover:
+ * one soft gel of Ultimate EFA Plus is 1000 mg of oil against Wallach's 9 g a day -- 11.1% of
+ * his EFA amount, and the whole reason to buy the product -- and it read 1% because the other
+ * eighteen essentials in "more energy" dragged the mean down. The owner's word for that number
+ * was "totally wrong" and he is right: it answered a question nobody asked of a chip.
+ *
+ * ★ DEPTH ALONE OVER-CLAIMS, WHICH IS WHY `delivers`/`of` IS NOT OPTIONAL. Measured over all
+ * 1777 chips: depth alone puts 44 pairs at 90% or better, and the worst of them is a vitamin D
+ * spray reading 100% for "healthy heart" while carrying ONE of that goal's twenty-five
+ * essentials. A lone "100%" on that card is a claim this app must not make. The pair --
+ * "100% of 1/25" -- is the same measurement told honestly, and it is the shape this project
+ * already commits to: the field shows GAPS, not wins.
+ *
+ * Returns null when the goal has too few scorable essentials to say anything (thyroid support
+ * has two), or when the product delivers none of the ones it does have -- a product listed on
+ * an essential Wallach gives no number for has no share to state, and a rounded "0%" claims a
+ * measurement of nothing.
  */
-export function goalStrength(productId: string, members: readonly string[]): number | null {
-  const measurable = members.filter(m => GOAL_TARGET_MG.has(m));
-  if (measurable.length < GOAL_MIN_MEASURABLE) {
+export function goalDelivery(productId: string, members: readonly string[]): GoalDelivery | null {
+  const scorable = members.filter(m => GOAL_TARGET_MG.has(m) || EFA_MEMBERS.has(m));
+  if (scorable.length < GOAL_MIN_MEASURABLE) {
     return null;
   }
   const row = DELIVERED_MG.get(productId);
   let sum = 0;
-  for (const slug of measurable) {
-    const target = GOAL_TARGET_MG.get(slug) ?? 0;
-    if (target > 0) {
-      sum += Math.min(1, (row?.get(slug) ?? 0) / target);
+  let delivers = 0;
+  for (const slug of scorable) {
+    const share = EFA_MEMBERS.has(slug)
+      ? (efaShareOf(productId) ?? 0)
+      : Math.min(1, (row?.get(slug) ?? 0) / (GOAL_TARGET_MG.get(slug) ?? Infinity));
+    if (share > 0) {
+      sum += share;
+      delivers += 1;
     }
   }
-  return sum / measurable.length;
+  return delivers === 0 ? null : { depth: sum / delivers, delivers, of: scorable.length };
 }
 
-/** Which goal chips a product has EARNED, strongest first, each with its share. Exported with
- *  the number so a view can print it rather than assert an unexplained badge. */
+/**
+ * How much of the WHOLE goal this product covers -- depth scaled by breadth, which is the
+ * product of the two numbers above and the only one of the three that ranks goals against each
+ * other. Used to order a card's chips, never printed: as a headline it is the number that read
+ * 1% on an omega product.
+ */
+function goalRank(d: GoalDelivery | null): number {
+  return d === null ? -1 : d.depth * d.delivers / d.of;
+}
+
+/**
+ * Which goal chips a product carries, strongest first, each with its share.
+ *
+ * ★ THE CHIP AND THE FILTER ASK THE SAME QUESTION AND MUST SHARE ONE TEST. They were split on
+ * 2026-08-24 to fix a filter that returned 1-9 products per goal, and splitting them created the
+ * opposite defect on the card: the chip kept a 0.30 bar across the WHOLE goal, so 143 of the 149
+ * products carried no chip at all against the owner's five goals, and a product could be listed
+ * UNDER a goal while its own card said nothing about that goal. He reported it in one line —
+ * "Ultimate Daily still shows nothing even though it filters under sharper thinking".
+ *
+ * So the test is contributesToGoal, exactly as the filter uses. What the chip then STATES is
+ * goalDelivery -- how completely this formula delivers the goal's essentials it carries, and how
+ * many of them that is. A broad multi reads 54% of 15/20, an omega soft gel reads 11% of 2/20,
+ * and neither number lies about the other.
+ *
+ * ★ THE DELIVERY IS NULLABLE ON PURPOSE. A goal Wallach puts a number on too few of (thyroid
+ * support: two of five) can be CONTRIBUTED to but cannot be scored, and so can a product whose
+ * only claim on the goal is an essential he gives no amount for. The chip is shown without a
+ * number rather than with an invented one, and the view prints the name alone.
+ */
 export function goalTagsFor(
   productId: string,
   goals: readonly { id: string; members: readonly string[] }[],
-): { id: string; strength: number }[] {
-  const out: { id: string; strength: number }[] = [];
+): { id: string; delivery: GoalDelivery | null }[] {
+  const out: { id: string; delivery: GoalDelivery | null }[] = [];
   for (const g of goals) {
-    const v = goalStrength(productId, g.members);
-    if (v !== null && v >= GOAL_TAG_MIN) {
-      out.push({ id: g.id, strength: v });
+    if (contributesToGoal(productId, g.members)) {
+      out.push({ id: g.id, delivery: goalDelivery(productId, g.members) });
     }
   }
-  out.sort((a, b) => (b.strength - a.strength) || a.id.localeCompare(b.id));
+  // ORDERED BY WHOLE-GOAL COVERAGE, not by the depth on show. Depth is the honest headline for
+  // one goal and a hopeless way to rank several: a vitamin D spray is 100% deep on thirteen
+  // goals at once, and sorting on that would put its narrowest claim first on every card. The
+  // unscorable ones sort last -- no number is the weakest claim on a card, not the strongest.
+  out.sort((a, b) => (goalRank(b.delivery) - goalRank(a.delivery)) || a.id.localeCompare(b.id));
   return out;
+}
+
+// ─── Goal CONTRIBUTION: what the FILTER asks, which is a different question ──
+
+/**
+ * The bar a product must clear to be SHOWN under a goal.
+ *
+ * The filter used to test a MEAN across the whole goal, and that was the defect. A mean over as
+ * many as 27 essentials answers "is this notably strong for the goal"; the filter asks "does
+ * this contribute to the goal at all". Averaged over 27 members, a product that delivers 100%
+ * of one of them scores 0.037 and disappears. Measured 2026-08-24:
+ * `ultimate-daily` delivers ALL of Wallach's vitamin B2 and half his vitamin E, scores 0.12–0.22
+ * across the owner's five goals, and so appeared under NONE of them. He was right that no
+ * reading of that product justifies hiding it.
+ *
+ * So contribution is a PER-NUTRIENT MAX, never a mean: one member delivered at a quarter of
+ * Wallach's amount or better IS a contribution to that goal, whatever the other twenty-six say.
+ * Censused over all 149 products × 30 goals, this returns 21–81 products per goal where the mean
+ * test returned 0–7. The same number and the same sentence gate the foods filter
+ * (state/foods.ts::GOAL_CONTRIB_MIN) and the goal CHIP (goalTagsFor), so there is one rule to
+ * tell the reader and no way for the list and the card to disagree again.
+ */
+const GOAL_CONTRIB_MIN = 0.25;
+
+/**
+ * Does this product contribute to this goal — the GOAL FILTER's test.
+ *
+ * ★ A MEMBER WALLACH PUTS NO NUMBER ON CANNOT BE SCORED, AND IS NOT HIDDEN. Three of
+ * thyroid-support's five essentials (arginine, taurine, tyrosine) carry no Wallach amount, which
+ * is why that goal returned literally nothing under any strength test: two measurable members is
+ * below GOAL_MIN_MEASURABLE, so goalStrength is null for all 149 products and no threshold
+ * anywhere could have rescued it. Inventing an amount for those three is the one thing this
+ * project does not do (§00.A), so the fallback is the only evidence that exists — the product
+ * carries it. That is stated as presence, never as a share.
+ */
+export function contributesToGoal(productId: string, members: readonly string[]): boolean {
+  const delivered = DELIVERED_MG.get(productId);
+  const byPresence: string[] = [];
+  for (const slug of members) {
+    // ★ THE EFA GROUP IS SCORED FOR THE SHARE AND TESTED BY PRESENCE HERE, deliberately, and
+    // the measurement is the reason. Wallach's amount is 9 GRAMS A DAY for the whole category
+    // and an EFA product is dosed in multiples of a roughly one-gram soft gel, so ONE SERVING of
+    // every EFA product in the catalogue lands between 5.6% and 22.2% of it — the best of them,
+    // ReVERSE!, reaches 22.2%. Held to the per-serving bar, all seven would leave every goal
+    // that names an omega, the flagship Ultimate EFA included, and 25 of the 30 goals name one.
+    // That says the per-serving bar is the wrong instrument for a category dosed in multiples,
+    // not that the products are irrelevant.
+    if (EFA_MEMBERS.has(slug)) {
+      byPresence.push(slug);
+      continue;
+    }
+    const target = GOAL_TARGET_MG.get(slug);
+    if (target === undefined || target <= 0) {
+      byPresence.push(slug);
+      continue;
+    }
+    if ((delivered?.get(slug) ?? 0) / target >= GOAL_CONTRIB_MIN) {
+      return true;
+    }
+  }
+  if (byPresence.length === 0) {
+    return false;
+  }
+  const essentials = coverageIndex().get(productId)?.essentials;
+  return essentials !== undefined && byPresence.some(slug => essentials.has(slug));
 }

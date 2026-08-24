@@ -43,7 +43,7 @@ const NO_BLOCK_EXPECTED = new Set(['Hydrogen', 'Carbon', 'Nitrogen', 'Oxygen', '
   p.on('pageerror', e => errs.push(e.message));
   await p.goto('file://' + path.join(REPO, 'dashboard', 'dashboard.html').split(path.sep).join('/'), { waitUntil: 'domcontentloaded' });
   await sleep(2400);
-  await p.evaluate(() => document.querySelectorAll('.wc').forEach(n => n.remove()));
+  await p.evaluate(() => (() => { const btn = document.querySelector('.wc-veil .ui-close, .wc-veil [data-veil-close], .wc-veil button'); if (btn) { btn.click(); } document.querySelectorAll('.wc-veil, .wc').forEach(n => n.remove()); })());
   await p.evaluate(() => document.querySelector('[data-rail-nav="knowledge"]').click());
   await sleep(1200);
   await p.evaluate(() => {

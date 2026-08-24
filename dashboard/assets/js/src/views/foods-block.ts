@@ -195,8 +195,13 @@ function filterNode(f: NonNullable<FoodsBlockOptions['filter']>): HTMLElement {
   // The goal + nutrient pickers, only where the caller supplies their options -- the Coverage
   // block deliberately keeps the shorter row.
   if (f.goals !== undefined) {
-    wrap.appendChild(pick('foodGoal', f.goalId ?? '', ui('fs_filter_goal_all'),
-      f.goals.map(g => ({ v: g.id, t: g.name })), ui('fs_filter_goal_label')));
+    // The widest labels in the row live here — "Nerves, Seizures, MS & ALS" — and the shared
+    // shell clipped them. Same modifier as the Regimen products row, so the two filters stay
+    // one instrument rather than two that drifted apart.
+    const goalSel = pick('foodGoal', f.goalId ?? '', ui('fs_filter_goal_all'),
+      f.goals.map(g => ({ v: g.id, t: g.name })), ui('fs_filter_goal_label'));
+    goalSel.classList.add('fs-filter__cat--goal');
+    wrap.appendChild(goalSel);
   }
   if (f.nutrients !== undefined) {
     wrap.appendChild(pick('foodNutrient', f.nutrient ?? '', ui('fs_filter_nutrient_all'),

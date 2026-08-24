@@ -653,12 +653,27 @@ function buildRecs(
     br.className = 'rec__br';
     br.textContent = `${r.breadth} nutrients`;
     meta.append(price, val, br);
-    // A chip is EARNED (state/recommender.ts::goalTagsFor) and prints the share it was earned
-    // with. The old chip fired on a single shared essential, so every product wore every goal
-    // and the reader learned nothing; a number beside the name is what makes it checkable.
+    card.appendChild(meta);
+    /**
+     * ★ THE CHIPS GET A ROW OF THEIR OWN (owner's ruling, 2026-08-24 — option B of four he was
+     * shown). They used to be appended into `meta`, queueing behind the price, the "+N new" and
+     * the formula size — which spend 200px of the card's 358px before the first chip is even
+     * reached, leaving every card five and six wrapped lines deep.
+     *
+     * Nothing about a chip changed: same text, same size, same order, same information. They
+     * simply stopped sharing a line with three unrelated facts. Measured on the real card:
+     * 217px -> 191px, and the option was chosen over three that would have moved or dropped
+     * something (see the CSS note on .rec__goals for the ones not taken).
+     */
+    const goalRow = document.createElement('div');
+    goalRow.className = 'rec__goals';
+    // A chip marks a goal this product CONTRIBUTES to — the same test the goal filter runs, so
+    // a card can never sit in a filtered list saying nothing about the goal that put it there
+    // (owner, 2026-08-24). The NUMBER is what discriminates: the share of Wallach's amounts the
+    // formula covers across that whole goal, printed beside the name so the claim is checkable.
     for (const gt of r.goals) {
-      // `goals` here is the reader's OWN chosen few. r.goals carries a strength for every goal in
-      // the layout so the filter can reach them all; the card paints only the ones he asked about.
+      // `goals` here is the reader's OWN chosen few. r.goals spans every goal in the layout so
+      // the filter can reach them all; the card paints only the ones he asked about.
       const g = goals.find(x => x.id === gt.id);
       if (g === undefined) {
         continue;
@@ -666,11 +681,37 @@ function buildRecs(
       const tag = document.createElement('span');
       tag.className = 'ck-tag';
       tag.style.setProperty('--tc', hueOf(gt.id));
-      tag.textContent = `${g.name} ${Math.round(gt.strength * 100)}%`;
-      tag.title = ui('rg_recs_goal_tag_why');
-      meta.appendChild(tag);
+      // ONE NUMBER ON THE LABEL, never a bare "0%" (owner, 2026-08-24).
+      //   "More energy 54%"   how completely it delivers the goal's essentials it CARRIES
+      //   "More energy <1%"   measured, below the smallest number worth printing
+      //   "More energy"       no number exists to state — see goalDelivery
+      //
+      // ★ THE COUNT MOVED TO THE TOOLTIP, IT WAS NOT DROPPED. The label used to read
+      // "More energy 54% · 15/20" and the owner ruled the pair out: at ~190px a chip, five of
+      // them wrapped a card to three and four lines. What the count guards against is real —
+      // depth alone reads 100% on a vitamin D spray for thirteen different goals, each on a
+      // single essential — so it still travels with every chip, in the title, where it costs no
+      // width. Losing it entirely would let a card claim a goal it barely touches.
+      const d = gt.delivery;
+      if (d === null) {
+        tag.textContent = g.name;
+        tag.title = ui('rg_recs_goal_tag_why');
+      }
+      else {
+        const pct = Math.round(d.depth * 100);
+        tag.textContent = `${g.name} ${pct < 1 ? '<1' : String(pct)}%`;
+        tag.title = ui('rg_recs_goal_tag_why_n')
+          .replace('{n}', String(d.delivers))
+          .replace('{of}', String(d.of))
+          .replace('{pct}', pct < 1 ? '<1' : String(pct));
+      }
+      goalRow.appendChild(tag);
     }
-    card.appendChild(meta);
+    // A card whose product touches none of the reader's goals gets no empty row and no stray
+    // margin — the row exists only where there is something to put in it.
+    if (goalRow.childElementCount > 0) {
+      card.appendChild(goalRow);
+    }
     const add = document.createElement('span');
     add.className = 'rec__add';
     add.textContent = '＋';
@@ -1949,8 +1990,17 @@ function sortCatalog(rows: CatalogProduct[], sort: RecSort): CatalogProduct[] {
   return [...lead, ...rest];
 }
 
-/** Narrow the pool to a goal and/or a single nutrient. Applied to the POOL, never to the page,
- *  or the pager would count pages that no longer exist. */
+/**
+ * Narrow the pool to a goal and/or a single nutrient. Applied to the POOL, never to the page,
+ * or the pager would count pages that no longer exist.
+ *
+ * ★ `r.goals` IS THE CONTRIBUTION LIST, AND SO IS THE CHIP LIST. It used to be a 0.30 mean
+ * across the whole goal, and testing THAT here answered "is this notably strong for X" when the
+ * reader had asked "show me things for X" — two questions on one number, which left nine of
+ * thirty goals showing three products or fewer and thyroid-support showing none. The bar moved
+ * into state/recommender.ts::contributesToGoal; both surfaces read it, so the list and the card
+ * cannot disagree about which goals a product serves.
+ */
 function filterCatalog(rows: CatalogProduct[], goalId: string, nutrient: string): CatalogProduct[] {
   return rows.filter(r => (goalId === '' || r.goals.some(g => g.id === goalId))
     && (nutrient === '' || r.essentials.includes(nutrient)));
@@ -1996,9 +2046,15 @@ function recControls(sort: RecSort, goalId: string, nutrient: string, goals: Lay
     sortSel.appendChild(el);
   }
   sortSel.value = sort;
+  // Two of the three pickers hold labels the shared 148px shell clips, and a <select> clips
+  // rather than wraps: "Fills the most gaps" read as "Fills the most ga" on screen. The
+  // modifiers carry the extra width — see .fs-filter__cat--sort / --goal.
+  sortSel.classList.add('fs-filter__cat--sort');
+  const goalSel = pick('recGoal', goalId, ui('rg_recs_goal_all'), goals.map(g => ({ v: g.id, t: g.name })), ui('rg_recs_goal_label'));
+  goalSel.classList.add('fs-filter__cat--goal');
   wrap.append(
     sortSel,
-    pick('recGoal', goalId, ui('rg_recs_goal_all'), goals.map(g => ({ v: g.id, t: g.name })), ui('rg_recs_goal_label')),
+    goalSel,
     pick('recNutrient', nutrient, ui('rg_recs_nutrient_all'), nutrients.map(n => ({ v: n.slug, t: n.label })), ui('rg_recs_nutrient_label')),
   );
   return wrap;

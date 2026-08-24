@@ -12,7 +12,7 @@
 //                                                        printing a lonely "1 … 64")
 //   4. no ellipsis stands between two pages that ARE neighbours
 //   5. the arrows disable at each end, and only there
-//   6. the pager sits LEFT of the filter, on one row, and neither wraps
+//   6. the pager sits LEFT of the filter on a wide block, and BELOW it on a narrow one
 //   7. the category select offers exactly the catalog's categories + "all"
 //   8. a category narrows the POOL: the page count falls to the real number of pages
 //   9. typing in the name box narrows further, KEEPS THE CARET, and resets to page one
@@ -141,13 +141,34 @@ const check = (label, cond, detail) => {
     s.navRect.h <= 22 && new Set(s.items.filter(i => !i.gap).map(i => i.top)).size === 1,
     `nav ${s.navRect.h}px, ${new Set(s.items.filter(i => !i.gap).map(i => i.top)).size} button row(s)`);
 
-  console.log('\n── the row: pager left, filter right ──');
+  console.log('\n── the row: filters, with the pager beside them or below them ──');
   check('pager and filter share one row', s.hasRow && s.navRect !== null && s.filterRect !== null);
   const filterHome = s.filterRect.x;
-  check('the pager sits LEFT of the filter', s.navRect.x + s.navRect.w <= s.filterRect.x,
-    `pager ends ${s.navRect.x + s.navRect.w}, filter starts ${s.filterRect.x}`);
-  check('the row is one line tall', s.rowRect.h <= Math.max(s.navRect.h, s.filterRect.h) + 2,
-    `${s.rowRect.h}px`);
+  // ★ TWO CORRECT SHAPES SINCE 2026-08-24, and this probe has to know both. The row WRAPS now
+  // (owner: "let the pagination wrap BELOW the filters on smaller screens"), because the sort
+  // and goal pickers were widened to stop clipping their own labels and no longer fit beside a
+  // pager on a narrow block. So: beside the filter on a wide block, under it on a narrow one.
+  // What is never correct is the pager ABOVE the filter — that is what wrap-reverse exists to
+  // prevent — or the pager crushed to nothing, which is the zero-width regression this file
+  // caught in the first place. Both are still asserted, in both shapes.
+  const sameLine = Math.abs(s.navRect.y - s.filterRect.y) < 6;
+  console.log(`  (row is ${sameLine ? 'ONE line' : 'WRAPPED'} at this width: ${s.rowRect.h}px)`);
+  if (sameLine) {
+    check('the pager sits LEFT of the filter', s.navRect.x + s.navRect.w <= s.filterRect.x,
+      `pager ends ${s.navRect.x + s.navRect.w}, filter starts ${s.filterRect.x}`);
+    check('the unwrapped row is one line tall', s.rowRect.h <= Math.max(s.navRect.h, s.filterRect.h) + 2,
+      `${s.rowRect.h}px`);
+  }
+  else {
+    check('the wrapped pager sits BELOW the filter, never above it', s.navRect.y > s.filterRect.y,
+      `pager y ${s.navRect.y}, filter y ${s.filterRect.y}`);
+    check('the wrapped row is two lines tall, not more',
+      s.rowRect.h <= s.navRect.h + s.filterRect.h + 12, `${s.rowRect.h}px`);
+  }
+  // The regression that made this file worth having: the filter grew and the pager absorbed the
+  // whole overflow at zero width — in the DOM, invisible, every click target gone.
+  check('the pager keeps its full width whatever the filter does', s.navRect.w > 100,
+    `${s.navRect.w}px`);
 
   // ── walk to page twenty through the real controls ─────────────────────────
   // ★ A WINDOW CANNOT JUMP TO A PAGE IT DOES NOT LIST, and that is the shape rather

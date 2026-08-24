@@ -20,7 +20,7 @@ const check = (n, ok, d) => { console.log(`${ok ? 'PASS' : 'FAIL'}  ${n}${d === 
   const url = 'file://' + path.join(REPO, 'dashboard', 'dashboard.html').split(path.sep).join('/');
   const boot = async () => {
     await p.goto(url, { waitUntil: 'domcontentloaded' }); await sleep(2200);
-    await p.evaluate(() => document.querySelectorAll('.wc').forEach(n => n.remove()));
+    await p.evaluate(() => (() => { const btn = document.querySelector('.wc-veil .ui-close, .wc-veil [data-veil-close], .wc-veil button'); if (btn) { btn.click(); } document.querySelectorAll('.wc-veil, .wc').forEach(n => n.remove()); })());
   };
   await boot();
 

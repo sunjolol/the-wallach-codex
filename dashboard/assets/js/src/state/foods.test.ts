@@ -11,6 +11,7 @@
  * so a test cannot keep passing by agreeing with a copy of the ranker's opinion.
  */
 import { describe, expect, it } from 'vitest';
+import layoutData from '../../../data/coverage-layout-data.json';
 import efaData from '../../../data/efa-coverage-data.json';
 import foodsData from '../../../data/foods-composition-data.json';
 import { foodById, foodCatalogSize, foodCategories, foodNutrientRows, rankFoodsForCoverage } from './foods.js';
@@ -299,6 +300,46 @@ describe('rankFoodsForCoverage — the readout', () => {
         expect(h.pct, `${r.foodId}/${h.slug}`).toBeGreaterThan(0);
         expect(h.category, `${r.foodId}/${h.slug}`).not.toBe('');
       }
+    }
+  });
+});
+
+/**
+ * The goal filter's FLOOR — added 2026-08-24 after it returned 156-237 of 248 foods for every
+ * goal it was given. A control that keeps almost everything is not a control, and the probe
+ * that proved this one FIRED could not see that.
+ */
+describe('rankFoodsForCoverage — the goal filter has a bar', () => {
+  const GOALS = (layoutData as { goals: { id: string; members: string[] }[] }).goals;
+  /** Recomputed from the artifact, never a copy of the ranker's opinion. */
+  const passes = (f: RawFood, members: string[]): boolean =>
+    f.nutrients.some(n => members.includes(n.slug) && n.fraction >= 0.25)
+    || (f.efa?.qualifies === true && f.efa.fraction >= 0.25
+      && members.some(m => EFA_MEMBERS.includes(m)));
+
+  it('returns only foods delivering a real share of one of that goal\'s essentials', () => {
+    for (const goal of GOALS) {
+      const recs = rankFoodsForCoverage({ want: ALL_SLUGS, limit: 500, goalMembers: goal.members });
+      for (const r of recs) {
+        const raw = FOODS.find(f => f.id === r.foodId)!;
+        expect(passes(raw, goal.members), `${r.foodId} under ${goal.id}`).toBe(true);
+      }
+    }
+  });
+
+  it('keeps every food that clears the bar — the filter narrows, it does not sample', () => {
+    for (const goal of GOALS) {
+      const recs = rankFoodsForCoverage({ want: ALL_SLUGS, limit: 500, goalMembers: goal.members });
+      expect(recs.length, goal.id).toBe(FOODS.filter(f => passes(f, goal.members)).length);
+    }
+  });
+
+  it('lands every goal inside a usable band, in both directions', () => {
+    for (const goal of GOALS) {
+      const n = rankFoodsForCoverage({ want: ALL_SLUGS, limit: 500, goalMembers: goal.members }).length;
+      expect(n, `${goal.id} returns too few`).toBeGreaterThanOrEqual(10);
+      expect(n, `${goal.id} keeps most of the catalogue`)
+        .toBeLessThanOrEqual(Math.round(foodCatalogSize() * 0.6));
     }
   });
 });

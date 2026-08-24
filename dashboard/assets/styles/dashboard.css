@@ -591,6 +591,14 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
      the empty space with an auto margin instead, so the filter never moves. */
   display: flex; align-items: center; justify-content: flex-end;
   gap: 8px; margin-top: 8px;
+  /* ★ wrap-REVERSE, so the PAGER lands BELOW the filters rather than above them (owner's
+     shape, 2026-08-24). The pager is first in source order — it must stay there for tab
+     order, and it is the control a reader reaches for by position — but it is also the
+     narrow one, so it is what fits on the first flex line and the filters wrap to the
+     second. Reversing the cross axis puts that first line at the BOTTOM, which lands the
+     filters on top and the pager under them without touching the DOM.
+     Below the wrap point this row is two lines; above it, nothing changes. */
+  flex-wrap: wrap-reverse; row-gap: 6px;
 }
 /* In the row the pager gives up its own margin — the row sets the rhythm — and sits LEFT
    rather than centred, because a centred pager beside a right-aligned filter reads as two
@@ -607,7 +615,14 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
    shrinks when the pager appears and grows when it vanishes moves on every keystroke that
    changes the page count. Fixed control widths below keep the row constant, which leaves the
    pager a predictable share of the line. */
-.fs-filter { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; }
+/* The filter wraps INTERNALLY too, once the row itself has run out of line. `max-width` is
+   what makes that possible without giving up `flex: 0 0 auto`: the fixed basis still keeps the
+   controls from resizing under a typing cursor, and the cap only bites when the filter is wider
+   than the block it sits in — at which point overflowing off the edge is the alternative. */
+.fs-filter {
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: 4px; row-gap: 6px; flex: 0 0 auto; flex-wrap: wrap; max-width: 100%;
+}
 /* Both controls are the pager button's own shell — same height, same border, same mono
    face — so the row reads as one instrument rather than a pager with form fields bolted on.
 
@@ -632,8 +647,18 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
    made it 779px wide, which crushed the pager to zero. These are wide enough for the longest
    real labels ("Fish & shellfish", "Nerves, Seizures, MS & ALS" truncates with the native
    ellipsis) and never less than a select needs to draw its own text. */
-.fs-filter__cat { flex: 0 0 auto; width: 148px; }
+/* 160, not 148: the food CATEGORY picker's longest option needs 122px of text room and 148
+   left it 118 -- a four-pixel clip, found by measuring every option against the control's own
+   computed font rather than by looking at it. */
+.fs-filter__cat { flex: 0 0 auto; width: 160px; }
 .fs-filter__q { flex: 0 0 auto; width: 180px; }
+/* Two labels are longer than that shell, and a <select> CLIPS rather than wraps or ellipsises
+   its own closed value: "Fills the most gaps" rendered as "Fills the most ga" (owner,
+   2026-08-24). Widened to the measured labels rather than to a guess — at 12px mono the sort's
+   longest option needs ~165px and the goal picker's "Nerves, Seizures, MS & ALS" needs ~215px,
+   both before the native arrow. */
+.fs-filter__cat--sort { width: 218px; }
+.fs-filter__cat--goal { width: 222px; }
 .fs-filter__cat:hover, .fs-filter__q:hover { border-color: var(--ds-accent); }
 .fs-filter__cat:focus, .fs-filter__q:focus {
   outline: none; color: var(--ds-ink); border-color: var(--ds-accent);

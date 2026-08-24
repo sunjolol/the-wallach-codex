@@ -356,6 +356,46 @@ function matchesQuery(food: Food, query: string): boolean {
 /** The two essentials scored through the shared EFA meter rather than a nutrient row. */
 const EFA_SLUGS = new Set(['omega-3', 'omega-6']);
 
+/**
+ * The share of Wallach's daily amount one serving must deliver, for at least ONE of a goal's
+ * essentials, before that food is shown under that goal.
+ *
+ * The filter used to pass a food that carried ANY member at ANY amount. Goals hold up to 27
+ * essentials, so it returned 156–237 of 248 foods — the same "a signal that is always on is not
+ * a signal" failure the product chips had, reproduced here. The bar could not come from the
+ * catalogue's own admission test either: every nutrient row recorded in it is ALREADY at least
+ * 7% of its target (measured 2026-08-24 over all 974 rows, minimum 0.0701), which is precisely
+ * why "carries any of them" read as almost every food.
+ *
+ * The comment this replaces argued FOR having no bar — a food is one ingredient rather than a
+ * formula, so it cannot be asked to cover a whole goal. That reasoning is still right, and it is
+ * why the test is a PER-NUTRIENT MAX rather than the mean a product's chip uses. It was the
+ * absence of any bar at all that made the control useless.
+ *
+ * 0.25 is the same number and the same sentence the product filter uses
+ * (state/recommender.ts::GOAL_CONTRIB_MIN). Censused over all 30 goals it returns 24–135 foods.
+ */
+const GOAL_CONTRIB_MIN = 0.25;
+
+/**
+ * Does one serving of this food contribute to this goal — see GOAL_CONTRIB_MIN.
+ *
+ * The EFA group answers for both of its members: 24 of the 30 goals name omega-3 or omega-6 and
+ * neither carries an individual amount, so the group's own fraction is the only number there is
+ * to test. Held to the same bar as a nutrient row rather than waved through on `qualifies`,
+ * which is what made every EFA food match all 24 of those goals.
+ */
+function deliversGoal(f: Food, members: ReadonlySet<string>): boolean {
+  for (const row of f.nutrients) {
+    if (members.has(row.slug) && row.fraction >= GOAL_CONTRIB_MIN) {
+      return true;
+    }
+  }
+  const efa = f.efa;
+  return efa?.qualifies === true && efa.fraction >= GOAL_CONTRIB_MIN
+    && [...members].some(m => EFA_SLUGS.has(m));
+}
+
 export function rankFoodsForCoverage(input: {
   want: readonly string[];
   owned?: readonly string[];
@@ -382,11 +422,10 @@ export function rankFoodsForCoverage(input: {
   const nutrient = input.nutrient ?? '';
   const outstanding = new Set(input.want);
 
-  // A food passes the GOAL filter by delivering at least one of that goal's essentials. No
-  // strength bar, unlike a product's goal chip: a food is one ingredient of a diet rather than a
-  // formula claiming to cover a goal, and requiring a serving to carry 30% of a goal's amounts
-  // would empty every list. "Which foods contribute to this" and "does this product deliver
-  // this" are different questions and get different tests.
+  // A food passes the GOAL filter by delivering a REAL SHARE of at least one of that goal's
+  // essentials — see GOAL_CONTRIB_MIN for the bar and for what having no bar at all did to this
+  // list. "Which foods contribute to this" and "does this formula cover this" are still
+  // different questions and still get different tests; both now have a floor.
   const goalMembers = goalFilter === undefined || goalFilter.length === 0
     ? null
     : new Set(goalFilter);
@@ -395,8 +434,7 @@ export function rankFoodsForCoverage(input: {
     && (category === '' || f.category === category)
     && (nutrient === '' || f.nutrients.some(n => n.slug === nutrient)
       || (EFA_SLUGS.has(nutrient) && f.efa?.qualifies === true))
-    && (goalMembers === null || f.nutrients.some(n => goalMembers.has(n.slug))
-      || (f.efa?.qualifies === true && [...goalMembers].some(m => EFA_SLUGS.has(m))))
+    && (goalMembers === null || deliversGoal(f, goalMembers))
     && matchesQuery(f, query));
   if (available.length === 0) {
     return [];

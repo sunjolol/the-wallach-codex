@@ -1221,7 +1221,14 @@ body { margin: 0; background: var(--ds-paper-deep); }
 /* The + is the discoverability of 1-click add — NOT a second button that lies. The
    whole card is the target; the glyph says what the click does. */
 .rec { padding-right: 30px; }
-.rec__add { position: absolute; top: 50%; right: 9px; transform: translateY(-50%); width: 18px; height: 18px; display: grid; place-items: center; border: 1px solid var(--ds-rule); border-radius: 50%; color: var(--ds-ink-faint); font-family: var(--ds-font-mono); font-size: .78rem; line-height: 1; transition: background .14s, color .14s, border-color .14s; }
+/* ★ padding-top CENTRES THE GLYPH, and it is not a magic number. `place-items: center` centres
+   the LINE BOX; the fullwidth plus (U+FF0B) has a 17px ink box inside a 12.48px line box in
+   JetBrains Mono, and it is not centred within it — so the mark rendered 0.75px HIGH in its
+   circle. Measured on both cards that share this rule (regimen 22px and coverage 18px, both
+   -0.75px), so it predates the 2026-08-24 card work and was simply easier to see once the
+   button sat beside a row of chips. Corrections measured rather than guessed: padding-top 1px
+   -> -0.25, 2px -> +0.25, 1.5px -> centred. Re-measure if the glyph or the face ever changes. */
+.rec__add { position: absolute; top: 50%; right: 9px; transform: translateY(-50%); width: 18px; height: 18px; display: grid; place-items: center; padding-top: 1.5px; border: 1px solid var(--ds-rule); border-radius: 50%; color: var(--ds-ink-faint); font-family: var(--ds-font-mono); font-size: .78rem; line-height: 1; transition: background .14s, color .14s, border-color .14s; }
 .rec:hover .rec__add { background: var(--ds-ink); border-color: var(--ds-ink); color: var(--ds-paper); }
 
 

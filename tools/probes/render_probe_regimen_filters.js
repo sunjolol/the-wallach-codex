@@ -23,7 +23,7 @@ const fire = (el, v) => { el.value = v; el.dispatchEvent(new Event('input', { bu
   p.on('pageerror', e => errs.push(e.message));
   await p.goto('file://' + path.join(REPO, 'dashboard', 'dashboard.html').split(path.sep).join('/'), { waitUntil: 'domcontentloaded' });
   await sleep(2400);
-  await p.evaluate(() => document.querySelectorAll('.wc').forEach(n => n.remove()));
+  await p.evaluate(() => (() => { const btn = document.querySelector('.wc-veil .ui-close, .wc-veil [data-veil-close], .wc-veil button'); if (btn) { btn.click(); } document.querySelectorAll('.wc-veil, .wc').forEach(n => n.remove()); })());
   // Seed his five goals: on a fresh profile none are chosen, and the goal CHIPS are scoped to
   // the reader's own goals by design, so an unseeded run proves nothing about them.
   await p.evaluate(() => {
@@ -34,7 +34,7 @@ const fire = (el, v) => { el.value = v; el.dispatchEvent(new Event('input', { bu
   });
   await p.reload({ waitUntil: 'domcontentloaded' });
   await sleep(2200);
-  await p.evaluate(() => document.querySelectorAll('.wc').forEach(n => n.remove()));
+  await p.evaluate(() => (() => { const btn = document.querySelector('.wc-veil .ui-close, .wc-veil [data-veil-close], .wc-veil button'); if (btn) { btn.click(); } document.querySelectorAll('.wc-veil, .wc').forEach(n => n.remove()); })());
   await p.evaluate(() => document.querySelector('[data-rail-nav="regimen"]').click());
   await sleep(1800);
 
@@ -61,10 +61,71 @@ const fire = (el, v) => { el.value = v; el.dispatchEvent(new Event('input', { bu
   })));
   console.log('cards:', JSON.stringify(chips, null, 1));
   const allTags = chips.flatMap(c => c.tags);
-  check('2. goal chips exist and each states the share it earned',
-    allTags.length > 0 && allTags.every(t => /\d+%$/.test(t)), allTags);
-  check('2b. chips are SELECTIVE, not every goal on every card',
-    chips.some(c => c.tags.length < 5), chips.map(c => c.tags.length));
+  // The label carries ONE number and never a bare "0%" (owner, 2026-08-24: the "· 15/20" count
+  // was ruled off the label for width and moved into the chip's title, which this cannot see).
+  // A chip with no number at all is legal — it means no share exists to state.
+  check('2. every goal chip states a real share, or none at all',
+    allTags.length > 0 && allTags.every(t => !/%/.test(t) || /(<1|[1-9][0-9]*)%$/.test(t)),
+    allTags.filter(t => /%/.test(t) && !/(<1|[1-9][0-9]*)%$/.test(t)).slice(0, 6));
+  // ★ SELECTIVITY IS A PROPERTY OF THE CATALOGUE, NOT OF THE FIRST PAGE, and reading only the
+  // first page was measuring the wrong thing. This list is sorted best-first, so its top three
+  // are the broad flagship formulas — they genuinely deliver toward all five of the reader's
+  // goals and SHOULD wear all five chips. The old form of this check asserted that one of those
+  // three carried fewer than five, which held only while the chip's 0.30 bar was leaving 143 of
+  // 149 products bare, i.e. it was passing BECAUSE of the defect the owner then reported.
+  // The honest test walks to the other end of the same sort.
+  const lastIdx = await p.evaluate(() => Math.max(...[...document.querySelectorAll('[data-rec-page]')]
+    .map(x => Number(x.dataset.recPage)).filter(n => Number.isFinite(n))));
+  await p.evaluate((n) => {
+    const el = [...document.querySelectorAll('[data-rec-page]')].find(x => Number(x.dataset.recPage) === n);
+    if (el) el.click();
+  }, lastIdx);
+  await sleep(400);
+  const tail = await p.evaluate(() => [...document.querySelectorAll('.ck-recgrid .rec')]
+    .map(c => [...c.querySelectorAll('.ck-tag')].length));
+  check('2b. chips are SELECTIVE across the catalogue, not worn by every product',
+    tail.length > 0 && tail.some(n => n === 0),
+    { firstPage: chips.map(c => c.tags.length), lastPage: tail });
+  check('2c. the strongest products carry MORE chips than the weakest — the chip discriminates',
+    Math.max(...chips.map(c => c.tags.length)) > Math.max(0, ...tail),
+    { firstPage: chips.map(c => c.tags.length), lastPage: tail });
+  await p.evaluate(() => {
+    const el = [...document.querySelectorAll('[data-rec-page]')].find(x => Number(x.dataset.recPage) === 0);
+    if (el) el.click();
+  });
+  await sleep(300);
+
+  // 2d — THE CHIPS SIT IN THEIR OWN ROW, AND THE + LANDS ON NONE OF THEM.
+  // They used to be appended into .rec__meta, queueing behind the price / +new / formula size,
+  // which left every card five and six wrapped lines deep. The owner picked this fix from four
+  // he was shown (2026-08-24). The + is absolutely positioned at the card's bottom-right, so the
+  // row beneath it must reserve its space — reserved on the LAST CHIP rather than across the
+  // whole row, which is what keeps the line count down. Surveyed over 35 cards: with no
+  // clearance at all the + lands on a chip on 8 of them, so a collision here means the
+  // reservation was dropped, not that one card got unlucky.
+  const cardShape = await p.evaluate(() => {
+    const out = { cards: 0, chipsInMeta: 0, collisions: [], maxLines: 0 };
+    for (const c of document.querySelectorAll('.ck-recgrid .rec')) {
+      const tags = [...c.querySelectorAll('.ck-tag')];
+      if (tags.length === 0) { continue; }
+      out.cards += 1;
+      out.chipsInMeta += c.querySelectorAll('.rec__meta .ck-tag').length;
+      out.maxLines = Math.max(out.maxLines, new Set(tags.map(t => Math.round(t.getBoundingClientRect().top))).size);
+      const plus = c.querySelector('.rec__add');
+      if (!plus) { continue; }
+      const a = plus.getBoundingClientRect();
+      for (const t of tags) {
+        const r = t.getBoundingClientRect();
+        if (!(a.right < r.left || a.left > r.right || a.bottom < r.top || a.top > r.bottom)) {
+          out.collisions.push(t.textContent.trim());
+        }
+      }
+    }
+    return out;
+  });
+  check('2d. the goal chips have a row of their own, never back in the meta line',
+    cardShape.cards > 0 && cardShape.chipsInMeta === 0, cardShape);
+  check('2e. the + button lands on no chip', cardShape.collisions.length === 0, cardShape);
 
   // 5 — nutrient options carry no scientific parenthetical
   const nut = await p.evaluate(() => {

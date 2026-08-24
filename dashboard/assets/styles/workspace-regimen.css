@@ -385,6 +385,36 @@
 .ck-recgrid .rec__br { color: var(--ds-ink-soft); font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); }
 .ck-recgrid .rec__name { margin-bottom: 0; font-size: .82rem; line-height: 1.22; }
 .ck-recgrid .rec__meta { margin-top: auto; flex-wrap: wrap; padding-right: 26px; }
+/* The goal chips, on a row of their own beneath the price line (owner's ruling, 2026-08-24).
+   Sharing .rec__meta cost them 200px of a 358px row before the first chip was reached, and every
+   card ran five or six wrapped lines. This changes no chip text and hides nothing: 217px -> 191px.
+
+   Three alternatives were measured and NOT taken, recorded so they are not re-proposed as new:
+   moving the "/20" denominator out to the goal picker (166px, but it relocates information),
+   bar rows in place of pills (177px, and the only shape that can never wrap at any label length),
+   and shorter goal names (a rename, so his to make, not ours).
+
+   The + button's space is reserved AFTER THE LAST CHIP rather than down the whole row -- see
+   the rule below, which is where the measurement lives. */
+.ck-recgrid .rec__goals {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+}
+/* ★ THE GUTTER FOR THE + BUTTON GOES ON THE LAST CHIP, NOT ON THE ROW. This row is the bottom
+   of the card, so the absolutely-positioned + can land on a chip -- but only ever on the LAST
+   one, and only on the last line. A row-wide `padding-right: 26px` pays for that clearance on
+   every line, and it costs real lines. Surveyed across 35 real cards:
+
+     row-wide padding-right: 26px   3.69 chip lines   180px avg   200px max   0 collisions
+     nothing at all                 2.91 chip lines   160px avg   191px max   8 collisions
+     margin-right on the last chip  3.14 chip lines   166px avg   191px max   0 collisions
+
+   The middle row is what the approved mockup showed -- it looked clean because the three cards
+   in it happened not to collide; a quarter of the catalogue does. The last row is this rule. */
+.ck-recgrid .rec__goals .ck-tag:last-child { margin-right: 26px; }
 .ck-recgrid .rec__add { top: auto; bottom: 12px; right: 12px; transform: none; width: 22px; height: 22px; }
 .ck .rec { --recRing: linear-gradient(150deg, var(--ds-rule-bright), var(--ds-rule-soft)); }
 .ck-tag { font-family: var(--ds-font-mono); font-size: var(--ds-text-micro); letter-spacing: .05em; text-transform: uppercase; padding: 2px 7px; border-radius: var(--ds-radius-pill); color: var(--tc, var(--ds-ink-soft)); background: color-mix(in srgb, var(--tc, var(--ds-ink-faint)) 12%, transparent); border: 1px solid color-mix(in srgb, var(--tc, var(--ds-ink-faint)) 30%, transparent); }
