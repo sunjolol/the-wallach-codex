@@ -45,10 +45,10 @@ import {
 import { coveredCountForItems, essentialCount, getOrCompute, matchEssential } from '../state/coverage.js';
 import { atMinimumDose, doseCount, doseUnitLabel, doseUnitsOf } from '../core/dose-units.js';
 import { defaultServingsFor } from '../state/dose-defaults.js';
-import { foodCatalogSize, foodCategories, rankFoodsForCoverage } from '../state/foods.js';
+import { foodCatalogSize, foodCategories, listFoods, rankFoodsForCoverage } from '../state/foods.js';
 import { type CatalogProduct, listCatalogProducts, productIdsForNames } from '../state/recommender.js';
 import { ui } from '../state/copy.js';
-import { essentialNameOf } from '../state/coverage.js';
+import { shortEssentialLabel } from '../state/coverage.js';
 import { addCatalogFood, buildFoodsBlock } from './foods-block.js';
 import { pagerNode } from './pager.js';
 import {
@@ -623,7 +623,7 @@ function buildRecs(
     return;
   }
   for (const r of recs) {
-    const cols = r.goalIds.map(hueOf);
+    const cols = r.goals.filter(g => goals.some(x => x.id === g.id)).map(g => hueOf(g.id));
     const ring = cols.length === 0
       ? 'linear-gradient(var(--ds-rule-bright), var(--ds-rule-soft))'
       : cols.length === 1 ? `linear-gradient(150deg, ${cols[0]}, color-mix(in srgb, ${cols[0]} 22%, transparent))` : `linear-gradient(150deg, ${cols.join(', ')})`;
@@ -653,15 +653,21 @@ function buildRecs(
     br.className = 'rec__br';
     br.textContent = `${r.breadth} nutrients`;
     meta.append(price, val, br);
-    for (const gid of r.goalIds) {
-      const g = goals.find(x => x.id === gid);
+    // A chip is EARNED (state/recommender.ts::goalTagsFor) and prints the share it was earned
+    // with. The old chip fired on a single shared essential, so every product wore every goal
+    // and the reader learned nothing; a number beside the name is what makes it checkable.
+    for (const gt of r.goals) {
+      // `goals` here is the reader's OWN chosen few. r.goals carries a strength for every goal in
+      // the layout so the filter can reach them all; the card paints only the ones he asked about.
+      const g = goals.find(x => x.id === gt.id);
       if (g === undefined) {
         continue;
       }
       const tag = document.createElement('span');
       tag.className = 'ck-tag';
-      tag.style.setProperty('--tc', hueOf(gid));
-      tag.textContent = g.name;
+      tag.style.setProperty('--tc', hueOf(gt.id));
+      tag.textContent = `${g.name} ${Math.round(gt.strength * 100)}%`;
+      tag.title = ui('rg_recs_goal_tag_why');
       meta.appendChild(tag);
     }
     card.appendChild(meta);
@@ -902,6 +908,10 @@ export function mount(container: HTMLElement): MountHandle {
    *  from someone who had forgotten they set it. */
   let foodCategory = '';
   let foodQuery = '';
+  /** The FOOD list's goal + nutrient pickers -- the two he actually asked for. Session-only,
+   *  like the category and the query beside them. */
+  let foodGoal = '';
+  let foodNutrient = '';
   /** The PRODUCT catalogue's page, sort and two filters. Session-only for exactly the reasons
    *  the food ones above are: this is where the reader is looking, not a setting they chose.
    *  A sort that outlived a reload would quietly reorder a list they had stopped thinking about. */
@@ -1274,6 +1284,8 @@ export function mount(container: HTMLElement): MountHandle {
       limit: foodCatalogSize(),
       category: foodCategory,
       query: foodQuery,
+      goalMembers: LAYOUT.goals.find(g => g.id === foodGoal)?.members ?? [],
+      nutrient: foodNutrient,
     });
     const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_LIMIT));
     // The pool re-ranks on every paint and SHRINKS as foods are added or the filter bites, so
@@ -1284,7 +1296,15 @@ export function mount(container: HTMLElement): MountHandle {
       education: allCovered,
       ownedCount: ownedFoods.length,
       pager: { page: foodPage, pages: foodPages, kind: 'numbers' },
-      filter: { categories: foodCategories(), category: foodCategory, query: foodQuery },
+      filter: {
+        categories: foodCategories(), category: foodCategory, query: foodQuery,
+        // The nutrient options are read off the CATALOG, not off the narrowed pool: a picker
+        // that loses its own options as you use it cannot be undone from itself.
+        goals: LAYOUT.goals.map(g => ({ id: g.id, name: g.name })),
+        goalId: foodGoal,
+        nutrients: foodNutrientOptions(),
+        nutrient: foodNutrient,
+      },
     });
   };
 
@@ -1332,13 +1352,16 @@ export function mount(container: HTMLElement): MountHandle {
       const owned = new Set(productIdsForNames(items.map(i => (typeof i.label.name === 'string' ? i.label.name : ''))));
       const pool = listCatalogProducts({
         want: wantedSlugs(goals),
-        goals: goals.map(g => ({ id: g.id, members: g.members })),
+        // The CHIPS are the reader's own goals; the FILTER reaches every goal, so the pool has to
+        // carry a strength for all of them. A product tags a chip only for a chosen goal, which
+        // filterCatalog does not depend on.
+        goals: LAYOUT.goals.map(g => ({ id: g.id, members: g.members })),
       }).filter(r => !owned.has(r.productId));
       // The nutrient picker offers only what the CATALOGUE actually carries, read off the pool
       // itself — a list written down here would keep offering a nutrient the day its last
       // product left (R3). Labelled from the canon so the option reads "Vitamin B12", not a slug.
       const nutrients = [...new Set(pool.flatMap(r => r.essentials))]
-        .map(slug => ({ slug, label: essentialNameOf(slug) || slug }))
+        .map(slug => ({ slug, label: shortEssentialLabel(slug) }))
         .sort((a, b) => a.label.localeCompare(b.label));
       const filtered = sortCatalog(filterCatalog(pool, recGoal, recNutrient), recSort);
       const pages = Math.max(1, Math.ceil(filtered.length / REC_PAGE));
@@ -1354,7 +1377,7 @@ export function mount(container: HTMLElement): MountHandle {
         if (nav !== null) {
           controlsHost.appendChild(nav);
         }
-        controlsHost.appendChild(recControls(recSort, recGoal, recNutrient, goals, nutrients));
+        controlsHost.appendChild(recControls(recSort, recGoal, recNutrient, LAYOUT.goals, nutrients));
       }
     }
     paintFoods();
@@ -1810,6 +1833,18 @@ export function mount(container: HTMLElement): MountHandle {
       paintFoods();
       return;
     }
+    if (it.matches('[data-food-goal]')) {
+      foodGoal = (it as HTMLSelectElement).value;
+      foodPage = 0;
+      paintFoods();
+      return;
+    }
+    if (it.matches('[data-food-nutrient]')) {
+      foodNutrient = (it as HTMLSelectElement).value;
+      foodPage = 0;
+      paintFoods();
+      return;
+    }
     // The product catalogue's three pickers. Each resets to page one for the same reason the
     // food filters do: a narrowed list has fewer pages, and staying on page forty of a
     // two-page list reads as the filter having found nothing at all.
@@ -1917,7 +1952,7 @@ function sortCatalog(rows: CatalogProduct[], sort: RecSort): CatalogProduct[] {
 /** Narrow the pool to a goal and/or a single nutrient. Applied to the POOL, never to the page,
  *  or the pager would count pages that no longer exist. */
 function filterCatalog(rows: CatalogProduct[], goalId: string, nutrient: string): CatalogProduct[] {
-  return rows.filter(r => (goalId === '' || r.goalIds.includes(goalId))
+  return rows.filter(r => (goalId === '' || r.goals.some(g => g.id === goalId))
     && (nutrient === '' || r.essentials.includes(nutrient)));
 }
 
@@ -1943,13 +1978,52 @@ function recControls(sort: RecSort, goalId: string, nutrient: string, goals: Lay
     s.value = value;
     return s;
   };
+  // ★ THE SORT HAS NO "ALL" OPTION. Its default IS one of its three values, so building it
+  // through the all-option helper left `select.value = 'gap'` matching nothing and the control
+  // rendered BLANK. Built explicitly instead.
+  const sortSel = document.createElement('select');
+  sortSel.className = 'fs-filter__cat';
+  sortSel.dataset['recSort'] = '';
+  sortSel.setAttribute('aria-label', ui('rg_recs_sort_label'));
+  for (const o of [
+    { v: 'gap', t: ui('rg_recs_sort_gap') },
+    { v: 'nutrients', t: ui('rg_recs_sort_nutrients') },
+    { v: 'name', t: ui('rg_recs_sort_name') },
+  ]) {
+    const el = document.createElement('option');
+    el.value = o.v;
+    el.textContent = o.t;
+    sortSel.appendChild(el);
+  }
+  sortSel.value = sort;
   wrap.append(
-    pick('recSort', sort, ui('rg_recs_sort_gap'), [
-      { v: 'nutrients', t: ui('rg_recs_sort_nutrients') },
-      { v: 'name', t: ui('rg_recs_sort_name') },
-    ], ui('rg_recs_sort_label')),
+    sortSel,
     pick('recGoal', goalId, ui('rg_recs_goal_all'), goals.map(g => ({ v: g.id, t: g.name })), ui('rg_recs_goal_label')),
     pick('recNutrient', nutrient, ui('rg_recs_nutrient_all'), nutrients.map(n => ({ v: n.slug, t: n.label })), ui('rg_recs_nutrient_label')),
   );
   return wrap;
+}
+
+/**
+ * Every essential any catalog food delivers, short-labelled, for the FOOD list's nutrient picker.
+ *
+ * Read from the CATALOG rather than from the narrowed pool on purpose: a picker whose options
+ * disappear as you use it cannot be reset from itself. The two omegas are added explicitly
+ * because they carry no nutrient row -- their delivery lives in each food's `efa` block -- and a
+ * row-only read would offer no way to filter for the essential fatty acids at all.
+ */
+function foodNutrientOptions(): { slug: string; label: string }[] {
+  const slugs = new Set<string>();
+  for (const f of listFoods()) {
+    for (const n of f.nutrients) {
+      slugs.add(n.slug);
+    }
+    if (f.efa?.qualifies === true) {
+      slugs.add('omega-3');
+      slugs.add('omega-6');
+    }
+  }
+  return [...slugs]
+    .map(slug => ({ slug, label: shortEssentialLabel(slug) }))
+    .sort((a, b) => a.label.localeCompare(b.label));
 }

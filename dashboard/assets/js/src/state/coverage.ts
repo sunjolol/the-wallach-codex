@@ -741,6 +741,30 @@ export function essentialNameOf(slug: string): string {
  * harmless while nothing needed it and stopped being harmless the moment the FOOD SOURCES block
  * did: omega-3 renders through one of those paths, and it has real food sources.
  */
+/**
+ * The SHORT display name for an essential -- the canon name with its scientific parenthetical and
+ * its "/ ..." alternative removed. "Vitamin B1 (Thiamine)" -> "Vitamin B1".
+ *
+ * A picker listing ninety of these is as wide as its longest entry, and the parentheticals were
+ * doubling that width for no gain: a reader choosing a nutrient from a list knows which vitamin
+ * they mean (owner, 2026-08-24: "Shorten the Nutrients box by removing the scientific names").
+ * The scientific name is still on the essential's own page, where it is the point.
+ *
+ * DERIVED by the same two rules eden/tools/foods_composition_derive.py uses for the food card's
+ * chips, so the two surfaces cannot end up calling the same essential different things. Every
+ * parenthetical is dropped rather than only the first, because "Vitamin D2 (Ergocalciferol) + D3
+ * (Cholecalciferol)" has to come out as "Vitamin D2 + D3" -- splitting at the first would quietly
+ * narrow what the label covers.
+ */
+export function shortEssentialLabel(slug: string): string {
+  const name = essentialNameOf(slug);
+  if (name === '') {
+    return slug;
+  }
+  const noParens = name.replace(/\s*\([^)]*\)/g, '');
+  return noParens.split(' / ')[0]!.replace(/\s+/g, ' ').trim();
+}
+
 export function essentialSlugFor(layoutKey: string): string | null {
   return readTargets().find(e => e.name === layoutKey)?.slug ?? null;
 }

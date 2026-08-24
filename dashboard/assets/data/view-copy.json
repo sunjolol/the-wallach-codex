@@ -472,6 +472,11 @@
     "rg_recs_nutrient_label": "Show only products that carry this nutrient",
     "rg_recs_note": "Browse every product · sort and filter",
     "rg_recs_empty": "No product matches those filters.",
-    "kd_ep_foodsrc_zero_target": "Dr. Wallach recommends none of this one — his Base Line table lists it at zero, because an ordinary diet already supplies a large excess. Foods are not ranked here for that reason."
+    "kd_ep_foodsrc_zero_target": "Dr. Wallach recommends none of this one — his Base Line table lists it at zero, because an ordinary diet already supplies a large excess. Foods are not ranked here for that reason.",
+    "rg_recs_goal_tag_why": "The share of Dr. Wallach's daily amounts this product delivers across the essentials in this goal, counting only the ones he puts a number on. A goal is only tagged above 30%.",
+    "fs_filter_goal_all": "Any goal",
+    "fs_filter_goal_label": "Show only foods that contribute to this goal",
+    "fs_filter_nutrient_all": "Any nutrient",
+    "fs_filter_nutrient_label": "Show only foods that carry this nutrient"
   }
 }

@@ -595,7 +595,18 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 /* In the row the pager gives up its own margin — the row sets the rhythm — and sits LEFT
    rather than centred, because a centred pager beside a right-aligned filter reads as two
    controls that missed each other. */
-.fs-controls .fs-pager { margin-top: 0; margin-right: auto; justify-content: flex-start; }
+/* ★ THE PAGER NEVER SHRINKS. It carried `min-width: 0` and the default `flex: 0 1 auto` while
+   the filter beside it was `flex: 0 0 auto`, so when the FOOD filter grew from two controls to
+   four (goal + nutrient, 2026-08-24) the pager absorbed the whole overflow and rendered at ZERO
+   WIDTH at 1440px -- present in the DOM, invisible on screen, and every click target gone.
+   `render_probe_food_pager` caught it on its topmost-at-its-own-centre assertion, which is the
+   only check in the suite that would have. */
+.fs-controls .fs-pager { margin-top: 0; margin-right: auto; justify-content: flex-start; flex: 0 0 auto; }
+/* ...and the FILTER stays a FIXED width. Not shrink-to-fit: the whole point of the auto margin
+   above is that the query box never moves while someone is typing in it, and a filter that
+   shrinks when the pager appears and grows when it vanishes moves on every keystroke that
+   changes the page count. Fixed control widths below keep the row constant, which leaves the
+   pager a predictable share of the line. */
 .fs-filter { display: flex; align-items: center; gap: 4px; flex: 0 0 auto; }
 /* Both controls are the pager button's own shell — same height, same border, same mono
    face — so the row reads as one instrument rather than a pager with form fields bolted on.
@@ -616,6 +627,13 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
 /* Wide enough to hold a real food name while you type it — "canned salmon with bones"
    is 25 characters and the catalog is full of them (owner's measure, 2026-08-22). */
 .fs-filter__q { width: 225px; }
+/* FIXED widths, so the row is a constant size whatever the options say. The FOOD row carries
+   four controls since the goal + nutrient pickers landed (2026-08-24) and content-sized selects
+   made it 779px wide, which crushed the pager to zero. These are wide enough for the longest
+   real labels ("Fish & shellfish", "Nerves, Seizures, MS & ALS" truncates with the native
+   ellipsis) and never less than a select needs to draw its own text. */
+.fs-filter__cat { flex: 0 0 auto; width: 148px; }
+.fs-filter__q { flex: 0 0 auto; width: 180px; }
 .fs-filter__cat:hover, .fs-filter__q:hover { border-color: var(--ds-accent); }
 .fs-filter__cat:focus, .fs-filter__q:focus {
   outline: none; color: var(--ds-ink); border-color: var(--ds-accent);

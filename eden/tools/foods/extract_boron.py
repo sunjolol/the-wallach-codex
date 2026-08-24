@@ -1,87 +1,82 @@
-"""Extract Table 1 of the NIH ODS boron fact sheet — the boron content of 39 foods.
+#!/usr/bin/env python3
+"""extract_boron.py -- Table 2 of Pizzorno 2015 (PMC4712861): boron by CHEMICAL ANALYSIS.
 
-★ THIS SOURCE IS PINNED AS EVIDENCE AND IS DELIBERATELY NOT BOUND TO ANY ESSENTIAL. Nothing
-it contains reaches a screen. Read `_boron_finding` in sources.json before changing that.
+Usage: extract_boron.py <payload.html> <out.json>
 
-WHY IT IS EXTRACTED ANYWAY. Boron was the last essential with no source at all, and "we never
-went and got it" is a different statement from "we got it and it cannot carry a number". This
-file turns the first into the second, and the numbers are here so nobody has to re-fetch the
-page to check the reasoning.
+★ THE ARTICLE PUBLISHES TWO BORON TABLES AND TAKING THE WRONG ONE IS THE WHOLE RISK.
 
-WHAT THE TABLE IS, AND WHY IT CANNOT BE JOINED TO OUR CATALOG:
+TABLE 1 (id="table001") is captioned, verbatim, "(Food Processor/Overestimated) Boron Content of
+Richest Food Sources" and is adapted from Naghii et al. Its figures -- raisins 4.51 mg/100 g,
+almonds 2.82, dried apricots 2.11 -- are the ones a web search returns for boron, and they are NOT
+measurements: the article's own body states that Meacham et al "have shown that currently available
+computer software databases such as Food Processor (ESHA, Salem, OR, USA) greatly overestimate the
+boron content of foods", and reports the comparison -- chemical analysis of the same dietary
+records found 1.2 mg/d where Food Processor reported 4.5 to 5.3 mg/d.
 
-  1. IT IS PER SERVING, NOT PER 100 g. Every other source this project reads publishes per
-     100 g, which composes with any portion. This one publishes "Apples, 1 medium — 0.66 mg"
-     and never says what a medium apple weighs.
+TABLE 2 (id="table002") is what this reads: "Chemical Analysis of Boron Content (mg/100 g) in the
+Top 10 Foods", adapted from Meacham et al. Its values run 3-8x lower for the same foods.
 
-  2. IT IS NOT USDA-BASED, so USDA's gram weights are not its gram weights. The fact sheet
-     says so itself, in as many words: "The U.S. Department of Agriculture's (USDA's)
-     FoodData Central does not list the boron content of foods or provide lists of foods
-     containing boron." Its two references are Rainey 1999 (J Am Diet Assoc) and Meacham &
-     Hunt 1998 (Biol Trace Elem Res). Supplying a USDA weight for "1/2 cup cubed avocado"
-     would be inventing a number this source never stated, which is exactly the kind of
-     quiet guess section 00.A exists to forbid.
-
-  3. THE ONE CLEAN JOIN CARRIES ALMOST NOTHING. Six rows share an identical household measure
-     with a catalog food, and of those only "Apples, 1 medium" (0.66 mg) reaches 7% of
-     Wallach's 9.2 mg — at 7.2%, and only if a medium apple means the same size in both
-     tables, which the fact sheet does not say.
-
-Usage: python extract_boron.py <Boron-HealthProfessional.html> <out.json>
+This extractor pins itself to the section id AND re-reads the caption, so a re-ordered page cannot
+silently hand it Table 1. Values are carried as the source's own STRINGS, unparsed -- the same
+contract every other candidate here keeps, so the gate's byte comparison means something.
 """
-import html
 import json
 import re
 import sys
+from pathlib import Path
 
-PAGE, OUT = sys.argv[1], sys.argv[2]
+# Table 2's caption. Re-read rather than assumed: the id alone would not notice a re-ordered page.
+CAPTION = "Chemical Analysis of Boron Content"
+EXPECTED_ROWS = 10
+# The richest figure Table 2 publishes is avocado at 1.43. Table 1's top entries (raisins 4.51,
+# almonds 2.82, hazelnuts 2.77) all sit above 2.0, so a ceiling here catches a wrong-table read
+# even if the caption check were ever defeated.
+MAX_PLAUSIBLE = 2.0
 
-CAPTION = "Boron Content of Selected Foods"
-HEADING = "Milligrams (mg) per serving"
+
+def strip_tags(t: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", "", t)).strip()
 
 
-def text(fragment):
-    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", fragment))).strip()
+def main() -> int:
+    if len(sys.argv) != 3:
+        print("usage: extract_boron.py <payload.html> <out.json>", file=sys.stderr)
+        return 2
+    html = Path(sys.argv[1]).read_text(encoding="utf-8", errors="replace")
 
-
-def main():
-    page = open(PAGE, encoding="utf-8", errors="replace").read()
-    m = re.search(r"<table[^>]*>(?:(?!</table>).)*?" + re.escape(CAPTION) + r".*?</table>",
-                  page, re.S)
+    m = re.search(r'<section[^>]*id="table002"(.*?)</section>', html, re.S)
     if m is None:
-        raise SystemExit(f"no table captioned {CAPTION!r} — the fact sheet has changed shape")
-    table = m.group(0)
+        print("Table 2 (id=table002) not found in the payload", file=sys.stderr)
+        return 1
+    block = m.group(1)
+    if CAPTION.lower() not in strip_tags(block).lower():
+        print(f"id=table002 does not carry the expected caption {CAPTION!r} -- refusing rather "
+              f"than risk reading Table 1", file=sys.stderr)
+        return 1
 
     rows = []
-    header_seen = False
-    for tr in re.findall(r"<tr[^>]*>(.*?)</tr>", table, re.S):
-        cells = [text(c) for c in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, re.S)]
-        if len(cells) < 2:
+    for tr in re.findall(r"<tr>(.*?)</tr>", block, re.S):
+        cells = [strip_tags(td) for td in re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", tr, re.S)]
+        if len(cells) != 2 or not re.fullmatch(r"\d+\.\d+", cells[1]):
             continue
-        if HEADING in cells[1]:
-            header_seen = True
-            continue
-        if not re.fullmatch(r"\d+(?:\.\d+)?", cells[1]):
-            continue
-        rows.append({"food": cells[0], "mg_per_serving": cells[1]})
+        rows.append({"food": cells[0], "boron_mg_per_100g": cells[1]})
 
-    if not header_seen:
-        raise SystemExit(
-            f"Table 1 no longer declares {HEADING!r}. The unit under every value in it may "
-            f"have changed; re-read the fact sheet before anything uses this.")
-    if len(rows) != 39:
-        raise SystemExit(f"Table 1 gave {len(rows)} food rows; 39 were published. Extraction "
-                         f"is not reproducing the source.")
+    if len(rows) != EXPECTED_ROWS:
+        print(f"expected {EXPECTED_ROWS} rows, parsed {len(rows)}", file=sys.stderr)
+        return 1
+    over = [r for r in rows if float(r["boron_mg_per_100g"]) > MAX_PLAUSIBLE]
+    if over:
+        print(f"REFUSED: {over} exceeds Table 2's range -- this looks like the "
+              f"Food Processor/Overestimated table", file=sys.stderr)
+        return 1
 
-    with open(OUT, "w", encoding="utf-8", newline="\n") as fh:
-        json.dump(rows, fh, ensure_ascii=False, indent=1)
-        fh.write("\n")
-
-    print(f"foods extracted : {len(rows)}")
-    print("-- richest, mg per THEIR serving (not per 100 g) --")
-    for r in sorted(rows, key=lambda x: -float(x["mg_per_serving"]))[:6]:
-        print(f"  {float(r['mg_per_serving']):5.2f}  {r['food']}")
+    # newline="" so the bytes are the SAME on every host: write_text would translate to CRLF on
+    # Windows and the gate compares this output to the committed candidate BYTE for byte (R1).
+    Path(sys.argv[2]).write_text(json.dumps(rows, indent=1, ensure_ascii=False) + "\n",
+                                 encoding="utf-8", newline="")
+    print(f"OK  {len(rows)} rows from Table 2 (chemical analysis)")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

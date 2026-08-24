@@ -88,7 +88,17 @@ export interface FoodsBlockOptions {
    * apply the filter to the POOL it ranks, never to the slice it passes here, or the pager
    * would count pages that no longer exist.
    */
-  filter?: { categories: readonly string[]; category: string; query: string };
+  filter?: {
+    categories: readonly string[];
+    category: string;
+    query: string;
+    /** The goal + nutrient pickers, when the caller offers them. Both optional so the
+     *  Coverage block can keep its short two-control row. */
+    goals?: readonly { id: string; name: string }[];
+    goalId?: string;
+    nutrients?: readonly { slug: string; label: string }[];
+    nutrient?: string;
+  };
 }
 
 function ruleWithLabel(): HTMLElement {
@@ -162,7 +172,37 @@ function filterNode(f: NonNullable<FoodsBlockOptions['filter']>): HTMLElement {
   q.value = f.query;
   q.setAttribute('aria-label', ui('fs_filter_q_label'));
 
-  wrap.append(sel, q);
+  const pick = (attr: string, value: string, allLabel: string, opts: { v: string; t: string }[], aria: string): HTMLSelectElement => {
+    const el = document.createElement('select');
+    el.className = 'fs-filter__cat';
+    el.dataset[attr] = '';
+    el.setAttribute('aria-label', aria);
+    const all = document.createElement('option');
+    all.value = '';
+    all.textContent = allLabel;
+    el.appendChild(all);
+    for (const o of opts) {
+      const opt = document.createElement('option');
+      opt.value = o.v;
+      opt.textContent = o.t;
+      el.appendChild(opt);
+    }
+    el.value = value;
+    return el;
+  };
+
+  wrap.appendChild(sel);
+  // The goal + nutrient pickers, only where the caller supplies their options -- the Coverage
+  // block deliberately keeps the shorter row.
+  if (f.goals !== undefined) {
+    wrap.appendChild(pick('foodGoal', f.goalId ?? '', ui('fs_filter_goal_all'),
+      f.goals.map(g => ({ v: g.id, t: g.name })), ui('fs_filter_goal_label')));
+  }
+  if (f.nutrients !== undefined) {
+    wrap.appendChild(pick('foodNutrient', f.nutrient ?? '', ui('fs_filter_nutrient_all'),
+      f.nutrients.map(n => ({ v: n.slug, t: n.label })), ui('fs_filter_nutrient_label')));
+  }
+  wrap.appendChild(q);
   return wrap;
 }
 

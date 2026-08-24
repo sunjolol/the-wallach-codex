@@ -353,6 +353,9 @@ function matchesQuery(food: Food, query: string): boolean {
  * one fixed gap set, so the whole catalog orders in a single pass instead of a re-scan per
  * emitted card — which is what keeps a 192-food request cheap enough to run on every paint.
  */
+/** The two essentials scored through the shared EFA meter rather than a nutrient row. */
+const EFA_SLUGS = new Set(['omega-3', 'omega-6']);
+
 export function rankFoodsForCoverage(input: {
   want: readonly string[];
   owned?: readonly string[];
@@ -360,17 +363,40 @@ export function rankFoodsForCoverage(input: {
   limit?: number;
   category?: string;
   query?: string;
+  /**
+   * Show only foods delivering at least one of THESE essentials (undefined / empty = no goal
+   * filter). The members are passed in rather than looked up from `goals` above, because that
+   * list is the reader's own chosen few and the picker offers all thirty: resolving there meant
+   * choosing any goal he had not already picked matched an empty set and emptied the list.
+   */
+  goalMembers?: readonly string[];
+  /** Show only foods delivering this one essential ('' = every nutrient). */
+  nutrient?: string;
 }): FoodRec[] {
   const owned = new Set(input.owned ?? []);
   const goals = input.goals ?? [];
   const limit = input.limit ?? 3;
   const category = input.category ?? '';
   const query = (input.query ?? '').trim().toLowerCase();
+  const goalFilter = input.goalMembers;
+  const nutrient = input.nutrient ?? '';
   const outstanding = new Set(input.want);
 
+  // A food passes the GOAL filter by delivering at least one of that goal's essentials. No
+  // strength bar, unlike a product's goal chip: a food is one ingredient of a diet rather than a
+  // formula claiming to cover a goal, and requiring a serving to carry 30% of a goal's amounts
+  // would empty every list. "Which foods contribute to this" and "does this product deliver
+  // this" are different questions and get different tests.
+  const goalMembers = goalFilter === undefined || goalFilter.length === 0
+    ? null
+    : new Set(goalFilter);
   const available = DATA.foods.filter(f =>
     !owned.has(f.id)
     && (category === '' || f.category === category)
+    && (nutrient === '' || f.nutrients.some(n => n.slug === nutrient)
+      || (EFA_SLUGS.has(nutrient) && f.efa?.qualifies === true))
+    && (goalMembers === null || f.nutrients.some(n => goalMembers.has(n.slug))
+      || (f.efa?.qualifies === true && [...goalMembers].some(m => EFA_SLUGS.has(m))))
     && matchesQuery(f, query));
   if (available.length === 0) {
     return [];
@@ -518,8 +544,6 @@ export type FoodSourceVerdict =
 
 const MEASURABLE = new Set(DATA._meta.essentials_measurable ?? []);
 
-/** The two essentials scored through the shared EFA meter rather than a nutrient row. */
-const EFA_SLUGS = new Set(['omega-3', 'omega-6']);
 
 /** slug → its target block, read once from the same artifact state/coverage.ts reads. */
 const TARGET_BY_SLUG: Map<string, { kind?: string; vehicle_supplied?: boolean; low?: number }> = (() => {

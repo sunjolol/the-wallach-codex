@@ -229,6 +229,27 @@
           "display": "the Australian Food Composition Database"
         }
       ]
+    },
+    "boron": {
+      "source_id": "boron-meacham-2015",
+      "tier": "APPROXIMATE",
+      "unit": "MG",
+      "display": "Meacham's chemical analysis, via Pizzorno 2015",
+      "_why": "BOUND 2026-08-24 on the owner's ruling: \"That's a great, high quality and refined source correcting a poorly calculated one, add it.\" It reverses the 2026-08-22 refusal, and on better grounds than that refusal was made: what was missing then was a per-100 g table, and this is one. ⚠ IT IS A REVIEW'S ADAPTATION OF MEACHAM, NOT MEACHAM'S OWN PAPER, and every other second source registered here pins a primary. That is a real step down and it is recorded rather than smoothed over. REOPEN THIS if Meacham & Hunt 1998 or Naghii 1996 is ever acquired -- Naghii covers 66 foods per 100 g against this table's ten.",
+      "parts": [
+        {
+          "payload": "boron-meacham-pizzorno-2015/Nothing_Boring_About_Boron_PMC4712861.html",
+          "candidate": "boron-meacham-pizzorno-2015.json",
+          "extractor": "eden/tools/foods/extract_boron.py",
+          "join_kind": "name",
+          "join_field": "food",
+          "value_kind": "cell",
+          "value_field": "boron_mg_per_100g",
+          "unit": "MG",
+          "source_id": "boron-meacham-2015",
+          "display": "Meacham's chemical analysis, via Pizzorno 2015"
+        }
+      ]
     }
   },
   "sources": {
@@ -434,6 +455,21 @@
       "sha256": "fd271b3ca31c85de0fca09b572bb504fa0b7b92b9c55393964a184ff8d8b2104",
       "bytes": 185532,
       "path": "eden/foods/sources/boron-nih-ods/Boron-HealthProfessional.html"
+    },
+    "boron-meacham-pizzorno-2015/Nothing_Boring_About_Boron_PMC4712861.html": {
+      "dataset": "Pizzorno L. \"Nothing Boring About Boron.\" Integr Med (Encinitas) 2015;14(4):35-48. TABLE 2 -- boron by CHEMICAL ANALYSIS, mg/100 g, adapted from Meacham et al.",
+      "publisher": "InnoVision Professional Media; open on PubMed Central",
+      "released": "2015",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4712861/",
+      "licence": "Copyright (c) 2015 InnoVision Professional Media Inc. Free full text on PMC. The payload is GITIGNORED like every other source payload here; only the ten extracted rows are committed.",
+      "supplies": [
+        "boron"
+      ],
+      "join": "food name -- APPROXIMATE tier, one curation decision per pair",
+      "note": "★ THE ARTICLE PUBLISHES TWO BORON TABLES AND ONLY ONE IS USABLE. Table 1 is captioned, verbatim, \"(Food Processor/Overestimated) Boron Content of Richest Food Sources\" and the body states that Food Processor \"greatly overestimate[s] the boron content of foods\". Its figures -- raisins 4.51 mg/100 g, almonds 2.82, dried apricots 2.11 -- are exactly the ones a web search returns, and they are NOT measurements. TABLE 2 is what is bound: ten foods by chemical analysis, values 3-8x lower. extract_boron.py refuses any candidate row carrying a Table 1 figure, so the two can never be confused by accident. TEN ROWS, ONE SURVIVES OUR RULES: avocado at 21.1% of Wallach's 9.2 mg on the 136 g serving already in the catalog. Prune juice (15.6%) and grape juice (9.4%) clear the 7% floor and are refused as juices by the anti-list; the other seven do not clear it.",
+      "sha256": "4ab25555a2b6a54dd807ef4cb3193a97f76f5cf21d71aa09492ab2dfed8cbeb5",
+      "bytes": 305266,
+      "path": "eden/foods/sources/boron-meacham-pizzorno-2015/Nothing_Boring_About_Boron_PMC4712861.html"
     }
   },
   "_iodine_second_source_finding": "★ IODINE: A SECOND SOURCE THAT FILLS GAPS AND MUST NOT OVERWRITE (2026-08-22). Iodine was the worst-covered essential with a source at all: USDA/FDA/ODS reached 10 of 192 catalog foods and the other 182 showed nothing. AFCD was added as a second part, gap-fill only. ⚠ THE TWO SOURCES DISAGREE SUBSTANTIALLY WHEREVER BOTH MEASURE THE SAME FOOD, and this was measured before binding, not after: Lobster 185 vs 34.0 µg/100 g (5.4x), Ricotta 66 vs 19.0 (3.5x), Cottage cheese 46 vs 15.3 (3.0x), Egg 61 vs 47.3 (1.3x), Salt 5213 vs 4400 (1.2x). That is NOT a transcription error and chasing it as one would waste a session. It is geography: dietary iodine tracks soil iodine, national iodised-salt policy, and whether dairies clean with iodophor sanitisers -- and Australia and the United States differ on all three. Iodine is therefore the nutrient where two national food tables are LEAST interchangeable, which is exactly why the combine is `first` with the US table ahead: AFCD speaks only where ODS is silent, and not one existing number moved. WHAT IT BOUGHT, measured: 23 foods gained an iodine number they did not have, taking coverage from 10 to 33 of 192. Only ONE of them clears Wallach's 7% qualify floor -- Whole milk, at 24.3% of his 230 µg/day, which also makes it STRONG. The other 22 sit below the bar and are shown as measured-and-small rather than as nothing, per the curation's standing rule that a blank reads as 'not a source' and is the stronger, falser claim. NO NEW NAME PAIRS WERE INVENTED FOR THIS. Every one of the 23 rides a curated afcd-au-r3 pair that a human had already accepted for chloride, biotin, molybdenum or sulphur, with its reasoning already recorded in foods-catalog-curation.json. Widening iodine further means curating NEW pairs one at a time, which is a separate decision and has not been taken.",

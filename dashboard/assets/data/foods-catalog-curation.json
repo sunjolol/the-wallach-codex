@@ -22,7 +22,7 @@
     {
       "id": "acerola",
       "name": "Acerola",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "171686",
       "portion_id": "89186"
     },
@@ -119,6 +119,10 @@
         "silicon-powell-2005": {
           "key": "Avocado, fresh",
           "why": "Same fruit, both raw."
+        },
+        "boron-meacham-2015": {
+          "key": "Avocado",
+          "why": "Both plain raw avocado. Meacham's chemically analysed value (1.43 mg/100 g) is taken rather than the same article's Food Processor figure for avocado (2.06), which its own authors label overestimated."
         }
       }
     },
@@ -260,7 +264,7 @@
     {
       "id": "breadfruit",
       "name": "Breadfruit",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "171714",
       "portion_id": "89243"
     },
@@ -477,7 +481,7 @@
     {
       "id": "cherimoya",
       "name": "Cherimoya",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "173953",
       "portion_id": "93531"
     },
@@ -579,7 +583,7 @@
     {
       "id": "clementines",
       "name": "Clementines",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "168195",
       "portion_id": "82645"
     },
@@ -633,7 +637,7 @@
     {
       "id": "currants",
       "name": "Currants",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "173963",
       "portion_id": "93544"
     },
@@ -687,7 +691,7 @@
     {
       "id": "durian",
       "name": "Durian",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "168192",
       "portion_id": "82635"
     },
@@ -738,7 +742,7 @@
     {
       "id": "elderberries",
       "name": "Elderberries",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "171727",
       "portion_id": "89266"
     },
@@ -1030,7 +1034,7 @@
     {
       "id": "horned-melon",
       "name": "Horned melon (Kiwano)",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "167791",
       "portion_id": "81983"
     },
@@ -1051,7 +1055,7 @@
     {
       "id": "jackfruit",
       "name": "Jackfruit",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "174687",
       "portion_id": "94755"
     },
@@ -1211,7 +1215,7 @@
     {
       "id": "loganberries",
       "name": "Loganberries",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "169088",
       "portion_id": "84203"
     },
@@ -1644,7 +1648,7 @@
     {
       "id": "prickly-pears",
       "name": "Prickly pears",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "167750",
       "portion_id": "81897"
     },
@@ -1658,7 +1662,7 @@
     {
       "id": "pummelo",
       "name": "Pummelo",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "167754",
       "portion_id": "81903"
     },
@@ -1756,7 +1760,7 @@
     {
       "id": "rhubarb",
       "name": "Rhubarb",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "168168",
       "portion_id": "82598"
     },
@@ -1807,14 +1811,14 @@
     {
       "id": "roselle",
       "name": "Roselle",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "168170",
       "portion_id": "82600"
     },
     {
       "id": "rowal",
       "name": "Rowal",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "167783",
       "portion_id": "81973"
     },
@@ -1847,7 +1851,7 @@
     {
       "id": "sapote",
       "name": "Sapote",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "167760",
       "portion_id": "81915"
     },
@@ -1957,7 +1961,7 @@
     {
       "id": "soursop",
       "name": "Soursop",
-      "category": "Fruit",
+      "category": "Fruits",
       "fdc_id": "167761",
       "portion_id": "81917"
     },
@@ -2456,5 +2460,10 @@
     "garlic": "REFUSED 2026-08-22, and it is the food the campaign most wanted. Doleman measures garlic at 252.3 umoles/g DRY — the highest allium in its table — and Wallach names garlic by name on germanium's own page. But a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his 500 mg sulphur target: under the 7% bar. Only a whole cup of raw garlic (136 g) clears anything, and nobody eats that. AFCD measures garlic for none of the four gap nutrients, and germanium — the thing Wallach actually names it for — carries no numeric target for a food to be measured against. Stretching the portion to admit it is what the derive's own error message forbids. Garlic is a flavouring, not a serving, and the number says so."
   },
   "_tier_a_batch": "48 foods added 2026-08-24 after the owner reviewed temporary/foods-gap-review.html. That review answered a question nobody had asked: the catalog's selection rule is an ADMISSION test ('a food earns a place only if...'), and it had never been run in reverse to ask what else would pass. Sweeping all 7,793 SR Legacy foods against the shipped 7% arithmetic found 249 distinct qualifying foods the catalog carried nothing for. The owner cleared the whole Tier-B list (canned / salted / soy / game / native states) and confirmed the Tier-C exclusions; these are Tier A, the plain unprocessed rows. SEVEN OF THEM ARE NOT THE ROW THE SWEEP FOUND: USDA's smallest published portion for a raw mature legume seed is one cup UNCOOKED, which roughly triples in weight cooked, so that serving is nearer three than one and every percentage on it is inflated. Each of those took USDA's own plain cooked row instead (lupins, mothbeans, mungo beans, pigeon peas, winged beans, yardlong beans, hyacinth beans). Two candidates were dropped rather than shipped on a portion nobody eats: mamey apple (USDA publishes no household portion under 400 g) and immature hyacinth beans (no plain cooked row exists).",
-  "_legume_states": "Every legume that USDA measures in both states carries BOTH rows, named so the state is unmistakable (owner ruling, 2026-08-24: 'why not have cooked and uncooked variants? I don't want to lose the more nutritional ones'). The DRY row's portion is USDA's own 1 cup of uncooked seed — the only portion it publishes for a raw mature seed, and a real measure since a cook measures beans dry — but a cup of dry seed YIELDS roughly three cooked cups, which is why the name says 'dry' rather than leaving the reader to infer it. Hyacinth beans carry only a dry row: USDA publishes no plain cooked one."
+  "_legume_states": "Every legume that USDA measures in both states carries BOTH rows, named so the state is unmistakable (owner ruling, 2026-08-24: 'why not have cooked and uncooked variants? I don't want to lose the more nutritional ones'). The DRY row's portion is USDA's own 1 cup of uncooked seed — the only portion it publishes for a raw mature seed, and a real measure since a cook measures beans dry — but a cup of dry seed YIELDS roughly three cooked cups, which is why the name says 'dry' rather than leaving the reader to infer it. Hyacinth beans carry only a dry row: USDA publishes no plain cooked one.",
+  "_boron_refused": {
+    "prune-juice": "Clears 7% (15.6%) and is a JUICE — the anti-list refuses juices, not this pairing.",
+    "grape-juice": "Clears 7% (9.4%) and is a JUICE, same refusal.",
+    "_others": "Peanut butter, peanuts, chocolate powder, red wine, granola-raisin cereal, pecans and raisin bran are the rest of Meacham's ten; none clears 7% of Wallach's 9.2 mg on a realistic serving, and several are anti-list besides."
+  }
 }

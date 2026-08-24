@@ -1,0 +1,42 @@
+[
+ {
+  "food": "Avocado",
+  "boron_mg_per_100g": "1.43"
+ },
+ {
+  "food": "Peanut butter",
+  "boron_mg_per_100g": "0.59"
+ },
+ {
+  "food": "Peanuts, dry",
+  "boron_mg_per_100g": "0.58"
+ },
+ {
+  "food": "Prune juice",
+  "boron_mg_per_100g": "0.56"
+ },
+ {
+  "food": "Chocolate powder",
+  "boron_mg_per_100g": "0.43"
+ },
+ {
+  "food": "Red wine",
+  "boron_mg_per_100g": "0.36"
+ },
+ {
+  "food": "Granola-raisin cereal",
+  "boron_mg_per_100g": "0.36"
+ },
+ {
+  "food": "Grape juice",
+  "boron_mg_per_100g": "0.34"
+ },
+ {
+  "food": "Pecans",
+  "boron_mg_per_100g": "0.26"
+ },
+ {
+  "food": "Raisin bran",
+  "boron_mg_per_100g": "0.26"
+ }
+]

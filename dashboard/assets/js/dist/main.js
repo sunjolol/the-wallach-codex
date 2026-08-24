@@ -17183,6 +17183,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           category: "vitamins",
           label: "Biotin"
         },
+        boron: {
+          category: "minerals",
+          label: "Boron"
+        },
         calcium: {
           category: "minerals",
           label: "Calcium"
@@ -17302,6 +17306,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       essentials_measurable: [
         "biotin",
+        "boron",
         "calcium",
         "chloride",
         "choline",
@@ -17333,7 +17338,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         "zinc"
       ],
       essentials_without_composition: [
-        "boron",
         "germanium",
         "inositol",
         "tin",
@@ -17344,6 +17348,10 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       second_sources: {
         biotin: {
           source_id: "afcd-au-r3",
+          tier: "APPROXIMATE"
+        },
+        boron: {
+          source_id: "boron-meacham-2015",
           tier: "APPROXIMATE"
         },
         chloride: {
@@ -17385,6 +17393,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       source_display: {
         "afcd-au-r3": "the Australian Food Composition Database",
+        "boron-meacham-2015": "Meacham's chemical analysis, via Pizzorno 2015",
         "doleman-2017": "Doleman 2017 (Food Chemistry)",
         "flavonoid-usda-r33": "the USDA flavonoid database",
         "flavonoid-usda-r33+proanthocyanidin-r2": "the USDA flavonoid and proanthocyanidin databases",
@@ -17523,7 +17532,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 1,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 88.2,
           fraction: 0.0145,
@@ -18069,7 +18078,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Asparagus, cooked, boiled, drained"
       },
       {
-        breadth: 5,
+        breadth: 6,
         category: "Fruits",
         efa: {
           acid_mg: 2446.64,
@@ -18085,6 +18094,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "avocado",
         name: "Avocado",
         nutrients: [
+          {
+            amount: 1.9448,
+            fraction: 0.2114,
+            per_100g: "1.43",
+            provenance: {
+              join: "name:Avocado",
+              source_id: "boron-meacham-2015",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both plain raw avocado. Meacham's chemically analysed value (1.43 mg/100 g) is taken rather than the same article's Food Processor figure for avocado (2.06), which its own authors label overestimated."
+            },
+            slug: "boron",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
           {
             amount: 19.312,
             fraction: 0.1931,
@@ -18168,7 +18193,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "89229",
         portion_label: "1 fruit, without skin and seed",
-        strength: 1.0234,
+        strength: 1.2348,
         usda_description: "Avocados, raw, California"
       },
       {
@@ -19617,7 +19642,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 3,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 145.2,
           fraction: 0.0238,
@@ -21086,7 +21111,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 1,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 299.2,
           conjugated_linoleic_g_per_100g: "0",
@@ -21993,7 +22018,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 1,
-        category: "Fruit",
+        category: "Fruits",
         fdc_id: "168195",
         grams: 74,
         id: "clementines",
@@ -22409,7 +22434,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 3,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 200.48,
           fraction: 0.0329,
@@ -22965,7 +22990,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 5,
-        category: "Fruit",
+        category: "Fruits",
         fdc_id: "168192",
         grams: 243,
         id: "durian",
@@ -23406,7 +23431,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 2,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 358.15,
           fraction: 0.0588,
@@ -25899,7 +25924,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 1,
-        category: "Fruit",
+        category: "Fruits",
         fdc_id: "167791",
         grams: 233,
         id: "horned-melon",
@@ -26183,7 +26208,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 1,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 141.94,
           conjugated_linoleic_g_per_100g: "0",
@@ -27972,7 +27997,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 2,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 258.72,
           fraction: 0.0425,
@@ -32204,7 +32229,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 1,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 311.41,
           fraction: 0.0511,
@@ -32298,7 +32323,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 2,
-        category: "Fruit",
+        category: "Fruits",
         fdc_id: "167754",
         grams: 190,
         id: "pummelo",
@@ -32923,7 +32948,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 3,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 73.98,
           fraction: 0.0121,
@@ -33295,7 +33320,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 1,
-        category: "Fruit",
+        category: "Fruits",
         fdc_id: "168170",
         grams: 57,
         id: "roselle",
@@ -33325,7 +33350,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 1,
-        category: "Fruit",
+        category: "Fruits",
         fdc_id: "167783",
         grams: 114,
         id: "rowal",
@@ -33488,7 +33513,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 2,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 162.75,
           conjugated_linoleic_g_per_100g: "0",
@@ -34414,7 +34439,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       },
       {
         breadth: 2,
-        category: "Fruit",
+        category: "Fruits",
         efa: {
           acid_mg: 155.25,
           fraction: 0.0255,
@@ -38860,14 +38885,18 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     return food.name.toLowerCase().includes(query) || food.category.toLowerCase().includes(query);
   }
+  var EFA_SLUGS = /* @__PURE__ */ new Set(["omega-3", "omega-6"]);
   function rankFoodsForCoverage(input) {
     const owned = new Set(input.owned ?? []);
     const goals = input.goals ?? [];
     const limit = input.limit ?? 3;
     const category = input.category ?? "";
     const query = (input.query ?? "").trim().toLowerCase();
+    const goalFilter = input.goalMembers;
+    const nutrient = input.nutrient ?? "";
     const outstanding = new Set(input.want);
-    const available = DATA.foods.filter((f) => !owned.has(f.id) && (category === "" || f.category === category) && matchesQuery(f, query));
+    const goalMembers = goalFilter === void 0 || goalFilter.length === 0 ? null : new Set(goalFilter);
+    const available = DATA.foods.filter((f) => !owned.has(f.id) && (category === "" || f.category === category) && (nutrient === "" || f.nutrients.some((n) => n.slug === nutrient) || EFA_SLUGS.has(nutrient) && f.efa?.qualifies === true) && (goalMembers === null || f.nutrients.some((n) => goalMembers.has(n.slug)) || f.efa?.qualifies === true && [...goalMembers].some((m) => EFA_SLUGS.has(m))) && matchesQuery(f, query));
     if (available.length === 0) {
       return [];
     }
@@ -38926,7 +38955,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     return out;
   }
   var MEASURABLE = new Set(DATA._meta.essentials_measurable ?? []);
-  var EFA_SLUGS = /* @__PURE__ */ new Set(["omega-3", "omega-6"]);
   var TARGET_BY_SLUG = (() => {
     const parsed = EssentialsDataSchema.safeParse(essentials_targets_data_default);
     const m = /* @__PURE__ */ new Map();
@@ -39810,6 +39838,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   ]);
   function essentialNameOf(slug) {
     return readTargets().find((e) => e.slug === slug)?.name ?? "";
+  }
+  function shortEssentialLabel(slug) {
+    const name = essentialNameOf(slug);
+    if (name === "") {
+      return slug;
+    }
+    const noParens = name.replace(/\s*\([^)]*\)/g, "");
+    return noParens.split(" / ")[0].replace(/\s+/g, " ").trim();
   }
   function essentialSlugFor(layoutKey) {
     return readTargets().find((e) => e.name === layoutKey)?.slug ?? null;
@@ -45646,7 +45682,25 @@ Everything else still fails, and I checked rather than assumed: CIQUAL publishes
 
 It is not bound. The one reachable table is a review's adaptation of Meacham rather than Meacham's own paper, and every other second source here pins a primary \u2014 on the one nutrient whose published numbers have already proven to be widely misreported, that gap matters. Two honest ways forward are recorded for him: acquire the primary, or accept the review as approximate for the single food it can support.
 
-Catalogue 240 to 248. Board 104/104.` }];
+Catalogue 240 to 248. Board 104/104.` }, { id: "lg_mt7oprqy_4b7psd", ts: "2026-08-24T15:24:34.234404-05:00", surface: "regimen+foods", kind: "round-close", summary: "Six reported issues, all real, all fixed: blank sort dropdown, goal chips that tagged everything, a stray accent bar, missing foods filters, padded nutrient names. Boron bound to Meacham's chemical analysis -- avocado at 21%.", detail: `He came back with six things. Every one was real, and two of them were mine from the same morning.
+
+THE BLANK DROPDOWN. The sort picker was built through the same helper as the two filters beside it, and that helper's first option is an "all" entry with an empty value. The sort has no "all" \u2014 its default IS one of its three options \u2014 so setting the control to "gap" matched nothing on the list and the browser drew an empty box. Built explicitly now.
+
+THE GOAL CHIPS, WHICH HE CALLED DISINGENUOUS. He was right about the effect, and the reason is worth writing down because each individual chip was true. A goal was tagged when a product carried ANY ONE of that goal's essentials. Goals hold between five and twenty-seven essentials and a broad multivitamin carries twenty-seven, so nearly every product wore nearly every goal. A signal that is always on is not a signal.
+
+A chip is now earned by DELIVERY: the mean of what the product actually provides against Wallach's own amount, across the goal's essentials, capped at 100% each. Essentials he puts no number on are dropped from both halves of that mean rather than credited some invented partial \u2014 there is nothing to compare them to. Measured across all 155 products and 30 goals, the median pair scores 0.015 and the ninety-fifth percentile is 0.278, so the bar sits at 0.30 \u2014 roughly the top four per cent. And the chip now PRINTS the share it earned, so the claim is checkable instead of a badge. Ultimate Classic keeps four of his five goals and drops Focus & attention at 26%; BTT drops the same one at 19%.
+
+THE ORANGE BAR. I had added an accent stripe down the left edge of the pinned card to mark it as deliberately first. He did not ask for it, nothing else on the card uses that treatment, and against the goal-chip colours it read as an error state. Gone. A pin is expressed by the order, which is what a pin is.
+
+THE FOODS FILTERS \u2014 "the main thing I wanted". He asked for filtering by goals and nutrients, and I had added it to the products list and not to the foods list, which is the one he cares about most. Both now have it. Two things I decided along the way: the pickers offer all thirty goals rather than the reader's chosen few, because on a fresh profile the chosen list is empty and a filter with one option is not a filter; and the goal filter on FOODS has no strength bar the way the product chip does, because a food is one ingredient of a diet rather than a formula claiming to cover a goal, and demanding a serving of spinach deliver thirty per cent of a goal would empty every list.
+
+THE NUTRIENT NAMES. The picker printed the canon name with its scientific parenthetical, which doubled the width of the box for no gain \u2014 a reader choosing "Vitamin B1" from a list knows which vitamin they mean. Shortened by the same two rules the food cards already use, so the two surfaces cannot start calling the same essential different things.
+
+BORON. He ruled: "That's a great, high quality and refined source correcting a poorly calculated one, add it." It is bound. The source is Table 2 of Pizzorno's review \u2014 chemical analysis, mg per 100 g, adapted from Meacham \u2014 which is precisely the table that corrects the software figures the whole internet repeats. The payload is pinned and gitignored like every other source here, and the extractor is written to make the one dangerous mistake impossible: it locates Table 2 by section id, re-reads its caption to confirm it, and refuses outright if any parsed value exceeds 2.0, because every one of Table 1's disclaimed figures sits above that. Its output byte-matches the committed candidate, which is what the gate compares. Avocado \u2014 already in the catalogue \u2014 now carries boron at 21.1% of his 9.2 mg, marked strong.
+
+TWO THINGS THE DRIVING FOUND THAT HE HAD NOT MENTIONED. The Tier-A foods I added that morning used "Fruit" where the catalogue says "Fruits", so the category picker listed both; seventeen rows renamed. And adding two selects to the foods filter grew that row to 779 pixels, which crushed the pager to ZERO WIDTH at 1440 \u2014 still in the DOM, invisible on screen, every page button gone. The pager probe caught it on its topmost-at-its-own-centre assertion, which is the only check in the whole suite that could have; the geometry looked perfect and a screenshot would have shown a row that simply had no pager in it. The fix pins the pager so it cannot shrink and gives the filter controls fixed widths, which also preserves an older guarantee I nearly broke twice on the way: that the search box never moves while someone is typing in it.
+
+Board 104/104. A new probe, render_probe_regimen_filters, checks one assertion per issue he reported.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -123287,7 +123341,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       rg_recs_nutrient_label: "Show only products that carry this nutrient",
       rg_recs_note: "Browse every product \xB7 sort and filter",
       rg_recs_empty: "No product matches those filters.",
-      kd_ep_foodsrc_zero_target: "Dr. Wallach recommends none of this one \u2014 his Base Line table lists it at zero, because an ordinary diet already supplies a large excess. Foods are not ranked here for that reason."
+      kd_ep_foodsrc_zero_target: "Dr. Wallach recommends none of this one \u2014 his Base Line table lists it at zero, because an ordinary diet already supplies a large excess. Foods are not ranked here for that reason.",
+      rg_recs_goal_tag_why: "The share of Dr. Wallach's daily amounts this product delivers across the essentials in this goal, counting only the ones he puts a number on. A goal is only tagged above 30%.",
+      fs_filter_goal_all: "Any goal",
+      fs_filter_goal_label: "Show only foods that contribute to this goal",
+      fs_filter_nutrient_all: "Any nutrient",
+      fs_filter_nutrient_label: "Show only foods that carry this nutrient"
     }
   };
 
@@ -178918,11 +178977,81 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         breadth: agg.breadth,
         essentials,
         supplies: essentials.filter((s) => outstanding.has(s)).length,
-        goalIds: goals.filter((g) => g.members.some((m) => agg.essentials.has(m))).map((g) => g.id),
+        goals: goalTagsFor(productId, goals),
         pinned: productId === lead
       });
     }
     out.sort((a, b) => a.productId.localeCompare(b.productId));
+    return out;
+  }
+  var GOAL_MIN_MEASURABLE = 3;
+  var GOAL_TAG_MIN = 0.3;
+  var GOAL_UNIT_TO_MG = { mg: 1, mcg: 1e-3, g: 1e3 };
+  var GOAL_TARGET_MG = (() => {
+    const m = /* @__PURE__ */ new Map();
+    const parsed = EssentialsDataSchema.safeParse(essentials_targets_data_default);
+    if (!parsed.success) {
+      return m;
+    }
+    for (const e of parsed.data.essentials) {
+      const t = CoverageTargetSchema.safeParse(e.target);
+      if (!t.success || t.data.kind !== "wallach") {
+        continue;
+      }
+      const low = t.data.low;
+      const f = GOAL_UNIT_TO_MG[(t.data.unit ?? "").toLowerCase()];
+      if (typeof low === "number" && low > 0 && f !== void 0) {
+        m.set(e.slug, low * f);
+      }
+    }
+    return m;
+  })();
+  var DELIVERED_MG = (() => {
+    const m = /* @__PURE__ */ new Map();
+    for (const [slug, entry] of Object.entries(DATA6.essentials)) {
+      const f = GOAL_UNIT_TO_MG[(entry.unit ?? "mg").toLowerCase()];
+      if (f === void 0) {
+        continue;
+      }
+      for (const c of entry.candidates) {
+        const a = c.amount;
+        if (typeof a !== "number") {
+          continue;
+        }
+        let row = m.get(c.product_id);
+        if (row === void 0) {
+          row = /* @__PURE__ */ new Map();
+          m.set(c.product_id, row);
+        }
+        row.set(slug, a * f);
+      }
+    }
+    return m;
+  })();
+  function goalStrength(productId, members) {
+    const measurable = members.filter((m) => GOAL_TARGET_MG.has(m));
+    if (measurable.length < GOAL_MIN_MEASURABLE) {
+      return null;
+    }
+    const row = DELIVERED_MG.get(productId);
+    let sum = 0;
+    for (const slug of measurable) {
+      const target = GOAL_TARGET_MG.get(slug) ?? 0;
+      if (target > 0) {
+        sum += Math.min(1, (row?.get(slug) ?? 0) / target);
+      }
+    }
+    return sum / measurable.length;
+  }
+  function goalTagsFor(productId, goals) {
+    const out = [];
+    for (const g of goals) {
+      const v = goalStrength(productId, g.members);
+      if (v !== null && v >= GOAL_TAG_MIN) {
+        out.push({ id: g.id, strength: v });
+      }
+    }
+    out.sort((a, b) => b.strength - a.strength || a.id.localeCompare(b.id));
     return out;
   }
 
@@ -179054,7 +179183,44 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     q.placeholder = ui("fs_filter_find");
     q.value = f.query;
     q.setAttribute("aria-label", ui("fs_filter_q_label"));
-    wrap.append(sel, q);
+    const pick = (attr, value, allLabel, opts, aria) => {
+      const el = document.createElement("select");
+      el.className = "fs-filter__cat";
+      el.dataset[attr] = "";
+      el.setAttribute("aria-label", aria);
+      const all2 = document.createElement("option");
+      all2.value = "";
+      all2.textContent = allLabel;
+      el.appendChild(all2);
+      for (const o of opts) {
+        const opt = document.createElement("option");
+        opt.value = o.v;
+        opt.textContent = o.t;
+        el.appendChild(opt);
+      }
+      el.value = value;
+      return el;
+    };
+    wrap.appendChild(sel);
+    if (f.goals !== void 0) {
+      wrap.appendChild(pick(
+        "foodGoal",
+        f.goalId ?? "",
+        ui("fs_filter_goal_all"),
+        f.goals.map((g) => ({ v: g.id, t: g.name })),
+        ui("fs_filter_goal_label")
+      ));
+    }
+    if (f.nutrients !== void 0) {
+      wrap.appendChild(pick(
+        "foodNutrient",
+        f.nutrient ?? "",
+        ui("fs_filter_nutrient_all"),
+        f.nutrients.map((n) => ({ v: n.slug, t: n.label })),
+        ui("fs_filter_nutrient_label")
+      ));
+    }
+    wrap.appendChild(q);
     return wrap;
   }
   function markFocus(host) {
@@ -223261,7 +223427,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return;
     }
     for (const r of recs) {
-      const cols = r.goalIds.map(hueOf);
+      const cols = r.goals.filter((g) => goals.some((x) => x.id === g.id)).map((g) => hueOf(g.id));
       const ring = cols.length === 0 ? "linear-gradient(var(--ds-rule-bright), var(--ds-rule-soft))" : cols.length === 1 ? `linear-gradient(150deg, ${cols[0]}, color-mix(in srgb, ${cols[0]} 22%, transparent))` : `linear-gradient(150deg, ${cols.join(", ")})`;
       const card = document.createElement("button");
       card.className = r.pinned ? "rec rec--lead" : "rec";
@@ -223284,15 +223450,16 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       br.className = "rec__br";
       br.textContent = `${r.breadth} nutrients`;
       meta.append(price, val, br);
-      for (const gid of r.goalIds) {
-        const g = goals.find((x) => x.id === gid);
+      for (const gt of r.goals) {
+        const g = goals.find((x) => x.id === gt.id);
         if (g === void 0) {
           continue;
         }
         const tag = document.createElement("span");
         tag.className = "ck-tag";
-        tag.style.setProperty("--tc", hueOf(gid));
-        tag.textContent = g.name;
+        tag.style.setProperty("--tc", hueOf(gt.id));
+        tag.textContent = `${g.name} ${Math.round(gt.strength * 100)}%`;
+        tag.title = ui("rg_recs_goal_tag_why");
         meta.appendChild(tag);
       }
       card.appendChild(meta);
@@ -223495,6 +223662,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     let foodPage = 0;
     let foodCategory = "";
     let foodQuery = "";
+    let foodGoal = "";
+    let foodNutrient = "";
     let recPage = 0;
     let recSort = "gap";
     let recGoal = "";
@@ -223803,7 +223972,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         goals: goals.map((g) => ({ id: g.id, members: g.members })),
         limit: foodCatalogSize(),
         category: foodCategory,
-        query: foodQuery
+        query: foodQuery,
+        goalMembers: LAYOUT4.goals.find((g) => g.id === foodGoal)?.members ?? [],
+        nutrient: foodNutrient
       });
       const foodPages = Math.max(1, Math.ceil(foodPool.length / FOOD_LIMIT));
       foodPage = Math.min(foodPage, foodPages - 1);
@@ -223811,7 +223982,17 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         education: allCovered,
         ownedCount: ownedFoods.length,
         pager: { page: foodPage, pages: foodPages, kind: "numbers" },
-        filter: { categories: foodCategories(), category: foodCategory, query: foodQuery }
+        filter: {
+          categories: foodCategories(),
+          category: foodCategory,
+          query: foodQuery,
+          // The nutrient options are read off the CATALOG, not off the narrowed pool: a picker
+          // that loses its own options as you use it cannot be undone from itself.
+          goals: LAYOUT4.goals.map((g) => ({ id: g.id, name: g.name })),
+          goalId: foodGoal,
+          nutrients: foodNutrientOptions(),
+          nutrient: foodNutrient
+        }
       });
     };
     const render = () => {
@@ -223850,9 +224031,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         const owned = new Set(productIdsForNames(items.map((i) => typeof i.label.name === "string" ? i.label.name : "")));
         const pool = listCatalogProducts({
           want: wantedSlugs2(goals),
-          goals: goals.map((g) => ({ id: g.id, members: g.members }))
+          // The CHIPS are the reader's own goals; the FILTER reaches every goal, so the pool has to
+          // carry a strength for all of them. A product tags a chip only for a chosen goal, which
+          // filterCatalog does not depend on.
+          goals: LAYOUT4.goals.map((g) => ({ id: g.id, members: g.members }))
         }).filter((r) => !owned.has(r.productId));
-        const nutrients = [...new Set(pool.flatMap((r) => r.essentials))].map((slug) => ({ slug, label: essentialNameOf(slug) || slug })).sort((a, b) => a.label.localeCompare(b.label));
+        const nutrients = [...new Set(pool.flatMap((r) => r.essentials))].map((slug) => ({ slug, label: shortEssentialLabel(slug) })).sort((a, b) => a.label.localeCompare(b.label));
         const filtered = sortCatalog(filterCatalog(pool, recGoal, recNutrient), recSort);
         const pages = Math.max(1, Math.ceil(filtered.length / REC_PAGE2));
         recPage = Math.min(recPage, pages - 1);
@@ -223865,7 +224049,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           if (nav !== null) {
             controlsHost.appendChild(nav);
           }
-          controlsHost.appendChild(recControls(recSort, recGoal, recNutrient, goals, nutrients));
+          controlsHost.appendChild(recControls(recSort, recGoal, recNutrient, LAYOUT4.goals, nutrients));
         }
       }
       paintFoods();
@@ -224266,6 +224450,18 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         paintFoods();
         return;
       }
+      if (it.matches("[data-food-goal]")) {
+        foodGoal = it.value;
+        foodPage = 0;
+        paintFoods();
+        return;
+      }
+      if (it.matches("[data-food-nutrient]")) {
+        foodNutrient = it.value;
+        foodPage = 0;
+        paintFoods();
+        return;
+      }
       if (it.matches("[data-rec-sort]")) {
         const v = it.value;
         recSort = v === "nutrients" || v === "name" ? v : "gap";
@@ -224337,7 +224533,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return [...lead, ...rest];
   }
   function filterCatalog(rows, goalId, nutrient) {
-    return rows.filter((r) => (goalId === "" || r.goalIds.includes(goalId)) && (nutrient === "" || r.essentials.includes(nutrient)));
+    return rows.filter((r) => (goalId === "" || r.goals.some((g) => g.id === goalId)) && (nutrient === "" || r.essentials.includes(nutrient)));
   }
   function recControls(sort, goalId, nutrient, goals, nutrients) {
     const wrap = document.createElement("div");
@@ -224360,15 +224556,40 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       s.value = value;
       return s;
     };
+    const sortSel = document.createElement("select");
+    sortSel.className = "fs-filter__cat";
+    sortSel.dataset["recSort"] = "";
+    sortSel.setAttribute("aria-label", ui("rg_recs_sort_label"));
+    for (const o of [
+      { v: "gap", t: ui("rg_recs_sort_gap") },
+      { v: "nutrients", t: ui("rg_recs_sort_nutrients") },
+      { v: "name", t: ui("rg_recs_sort_name") }
+    ]) {
+      const el = document.createElement("option");
+      el.value = o.v;
+      el.textContent = o.t;
+      sortSel.appendChild(el);
+    }
+    sortSel.value = sort;
     wrap.append(
-      pick("recSort", sort, ui("rg_recs_sort_gap"), [
-        { v: "nutrients", t: ui("rg_recs_sort_nutrients") },
-        { v: "name", t: ui("rg_recs_sort_name") }
-      ], ui("rg_recs_sort_label")),
+      sortSel,
       pick("recGoal", goalId, ui("rg_recs_goal_all"), goals.map((g) => ({ v: g.id, t: g.name })), ui("rg_recs_goal_label")),
       pick("recNutrient", nutrient, ui("rg_recs_nutrient_all"), nutrients.map((n) => ({ v: n.slug, t: n.label })), ui("rg_recs_nutrient_label"))
     );
     return wrap;
+  }
+  function foodNutrientOptions() {
+    const slugs = /* @__PURE__ */ new Set();
+    for (const f of listFoods()) {
+      for (const n of f.nutrients) {
+        slugs.add(n.slug);
+      }
+      if (f.efa?.qualifies === true) {
+        slugs.add("omega-3");
+        slugs.add("omega-6");
+      }
+    }
+    return [...slugs].map((slug) => ({ slug, label: shortEssentialLabel(slug) })).sort((a, b) => a.label.localeCompare(b.label));
   }
 
   // assets/data/ocr-dict-data.json

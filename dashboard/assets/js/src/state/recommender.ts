@@ -26,9 +26,10 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
+import essentialsTargetsData from '../../../data/essentials-targets-data.json';
 import recommenderData from '../../../data/product-recommender-data.json';
 import regimenLabelLookup from '../../../data/regimen-label-lookup.json';
-import { ProductEntrySchema, ProductsLookupSchema, RecommenderDataSchema } from '../core/schemas/index.js';
+import { CoverageTargetSchema, EssentialsDataSchema, ProductEntrySchema, ProductsLookupSchema, RecommenderDataSchema } from '../core/schemas/index.js';
 import { toMg } from '../core/units.js';
 import { isExcludedFromRecommendations } from './kids-exclusion.js';
 import { starterPackIds } from './starter-pack.js';
@@ -655,8 +656,9 @@ export interface CatalogProduct {
   essentials: string[];
   /** How many of them you do NOT yet cover — the gap-fill sort key. */
   supplies: number;
-  /** Which of your chosen goals this product touches, for the goal filter + the card tint. */
-  goalIds: string[];
+  /** Which of your chosen goals this product genuinely delivers toward, strongest first,
+   *  with the share of Wallach's amounts it covers for each. See goalTagsFor. */
+  goals: { id: string; strength: number }[];
   /**
    * Leads the list in EVERY sort order.
    *
@@ -693,12 +695,128 @@ export function listCatalogProducts(input: {
       breadth: agg.breadth,
       essentials,
       supplies: essentials.filter(s => outstanding.has(s)).length,
-      goalIds: goals.filter(g => g.members.some(m => agg.essentials.has(m))).map(g => g.id),
+      goals: goalTagsFor(productId, goals),
       pinned: productId === lead,
     });
   }
   // Deterministic base order so every sort below it is total and cannot reshuffle between
   // paints — the same contract rankProductsForCoverage keeps.
   out.sort((a, b) => a.productId.localeCompare(b.productId));
+  return out;
+}
+
+// ─── Goal STRENGTH: what a product actually delivers toward one goal ─────────
+
+/**
+ * A goal chip used to appear when a product carried ANY ONE of that goal's essentials.
+ *
+ * Goals hold between 5 and 27 essentials and a broad multi carries 27, so almost every product
+ * tagged almost every goal and the chip told the reader nothing. The owner's word for it was
+ * disingenuous, and he was right about the effect even though each individual tag was true:
+ * a signal that is always on is not a signal.
+ *
+ * The chip is now earned by DELIVERY. `goalStrength` is the mean of min(1, delivered / Wallach's
+ * amount) across the goal's essentials -- so it answers "how much of this goal does this product
+ * actually cover", not "how many of its boxes does it touch".
+ *
+ * ★ ONLY MEASURABLE MEMBERS COUNT, on both sides of the mean. An essential with no numeric
+ * Wallach amount is dropped from the numerator AND the denominator rather than credited a
+ * made-up partial -- there is no number to compare it against, and inventing one is the thing
+ * this project does not do. A goal with fewer than GOAL_MIN_MEASURABLE such members cannot
+ * support a claim about itself at all and scores null.
+ */
+const GOAL_MIN_MEASURABLE = 3;
+
+/**
+ * The bar a product must clear for a goal chip.
+ *
+ * Measured across all 155 products x 30 goals: the median pair scores 0.015 and the 95th
+ * percentile is 0.278, so 0.30 is roughly the top 4% of pairs. It leaves the broad flagship
+ * formulas tagged -- they genuinely deliver 40-55% of his amounts across a goal -- and takes the
+ * chip away from everything that was only brushing one member of the list.
+ */
+const GOAL_TAG_MIN = 0.30;
+
+const GOAL_UNIT_TO_MG: Record<string, number> = { mg: 1, mcg: 0.001, g: 1000 };
+
+/** slug -> Wallach's daily amount in mg, for the essentials that state one in a mass unit. */
+const GOAL_TARGET_MG: Map<string, number> = (() => {
+  const m = new Map<string, number>();
+  const parsed = EssentialsDataSchema.safeParse(essentialsTargetsData);
+  if (!parsed.success) {
+    return m;
+  }
+  for (const e of parsed.data.essentials) {
+    const t = CoverageTargetSchema.safeParse(e.target);
+    if (!t.success || t.data.kind !== 'wallach') {
+      continue;
+    }
+    const low = t.data.low;
+    const f = GOAL_UNIT_TO_MG[(t.data.unit ?? '').toLowerCase()];
+    if (typeof low === 'number' && low > 0 && f !== undefined) {
+      m.set(e.slug, low * f);
+    }
+  }
+  return m;
+})();
+
+/** product_id -> slug -> delivered mg, from the same artifact the ranker reads. */
+const DELIVERED_MG: Map<string, Map<string, number>> = (() => {
+  const m = new Map<string, Map<string, number>>();
+  for (const [slug, entry] of Object.entries(DATA.essentials)) {
+    const f = GOAL_UNIT_TO_MG[(entry.unit ?? 'mg').toLowerCase()];
+    if (f === undefined) {
+      continue;
+    }
+    for (const c of entry.candidates) {
+      const a = c.amount;
+      if (typeof a !== 'number') {
+        continue;
+      }
+      let row = m.get(c.product_id);
+      if (row === undefined) {
+        row = new Map<string, number>();
+        m.set(c.product_id, row);
+      }
+      row.set(slug, a * f);
+    }
+  }
+  return m;
+})();
+
+/**
+ * 0..1 -- the share of Wallach's amounts this product delivers across one goal's MEASURABLE
+ * essentials, or null when the goal has too few of them to say anything.
+ */
+export function goalStrength(productId: string, members: readonly string[]): number | null {
+  const measurable = members.filter(m => GOAL_TARGET_MG.has(m));
+  if (measurable.length < GOAL_MIN_MEASURABLE) {
+    return null;
+  }
+  const row = DELIVERED_MG.get(productId);
+  let sum = 0;
+  for (const slug of measurable) {
+    const target = GOAL_TARGET_MG.get(slug) ?? 0;
+    if (target > 0) {
+      sum += Math.min(1, (row?.get(slug) ?? 0) / target);
+    }
+  }
+  return sum / measurable.length;
+}
+
+/** Which goal chips a product has EARNED, strongest first, each with its share. Exported with
+ *  the number so a view can print it rather than assert an unexplained badge. */
+export function goalTagsFor(
+  productId: string,
+  goals: readonly { id: string; members: readonly string[] }[],
+): { id: string; strength: number }[] {
+  const out: { id: string; strength: number }[] = [];
+  for (const g of goals) {
+    const v = goalStrength(productId, g.members);
+    if (v !== null && v >= GOAL_TAG_MIN) {
+      out.push({ id: g.id, strength: v });
+    }
+  }
+  out.sort((a, b) => (b.strength - a.strength) || a.id.localeCompare(b.id));
   return out;
 }

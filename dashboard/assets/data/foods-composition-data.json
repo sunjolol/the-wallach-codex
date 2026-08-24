@@ -24,6 +24,10 @@
     "category": "vitamins",
     "label": "Biotin"
    },
+   "boron": {
+    "category": "minerals",
+    "label": "Boron"
+   },
    "calcium": {
     "category": "minerals",
     "label": "Calcium"
@@ -143,6 +147,7 @@
   },
   "essentials_measurable": [
    "biotin",
+   "boron",
    "calcium",
    "chloride",
    "choline",
@@ -174,7 +179,6 @@
    "zinc"
   ],
   "essentials_without_composition": [
-   "boron",
    "germanium",
    "inositol",
    "tin",
@@ -185,6 +189,10 @@
   "second_sources": {
    "biotin": {
     "source_id": "afcd-au-r3",
+    "tier": "APPROXIMATE"
+   },
+   "boron": {
+    "source_id": "boron-meacham-2015",
     "tier": "APPROXIMATE"
    },
    "chloride": {
@@ -226,6 +234,7 @@
   },
   "source_display": {
    "afcd-au-r3": "the Australian Food Composition Database",
+   "boron-meacham-2015": "Meacham's chemical analysis, via Pizzorno 2015",
    "doleman-2017": "Doleman 2017 (Food Chemistry)",
    "flavonoid-usda-r33": "the USDA flavonoid database",
    "flavonoid-usda-r33+proanthocyanidin-r2": "the USDA flavonoid and proanthocyanidin databases",
@@ -364,7 +373,7 @@
   },
   {
    "breadth": 1,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 88.2,
     "fraction": 0.0145,
@@ -910,7 +919,7 @@
    "usda_description": "Asparagus, cooked, boiled, drained"
   },
   {
-   "breadth": 5,
+   "breadth": 6,
    "category": "Fruits",
    "efa": {
     "acid_mg": 2446.64,
@@ -926,6 +935,22 @@
    "id": "avocado",
    "name": "Avocado",
    "nutrients": [
+    {
+     "amount": 1.9448,
+     "fraction": 0.2114,
+     "per_100g": "1.43",
+     "provenance": {
+      "join": "name:Avocado",
+      "source_id": "boron-meacham-2015",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Both plain raw avocado. Meacham's chemically analysed value (1.43 mg/100 g) is taken rather than the same article's Food Processor figure for avocado (2.06), which its own authors label overestimated."
+     },
+     "slug": "boron",
+     "source_unit": "MG",
+     "strong": true,
+     "unit": "mg"
+    },
     {
      "amount": 19.312,
      "fraction": 0.1931,
@@ -1009,7 +1034,7 @@
    ],
    "portion_id": "89229",
    "portion_label": "1 fruit, without skin and seed",
-   "strength": 1.0234,
+   "strength": 1.2348,
    "usda_description": "Avocados, raw, California"
   },
   {
@@ -2458,7 +2483,7 @@
   },
   {
    "breadth": 3,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 145.2,
     "fraction": 0.0238,
@@ -3927,7 +3952,7 @@
   },
   {
    "breadth": 1,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 299.2,
     "conjugated_linoleic_g_per_100g": "0",
@@ -4834,7 +4859,7 @@
   },
   {
    "breadth": 1,
-   "category": "Fruit",
+   "category": "Fruits",
    "fdc_id": "168195",
    "grams": 74.0,
    "id": "clementines",
@@ -5250,7 +5275,7 @@
   },
   {
    "breadth": 3,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 200.48,
     "fraction": 0.0329,
@@ -5806,7 +5831,7 @@
   },
   {
    "breadth": 5,
-   "category": "Fruit",
+   "category": "Fruits",
    "fdc_id": "168192",
    "grams": 243.0,
    "id": "durian",
@@ -6247,7 +6272,7 @@
   },
   {
    "breadth": 2,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 358.15,
     "fraction": 0.0588,
@@ -8740,7 +8765,7 @@
   },
   {
    "breadth": 1,
-   "category": "Fruit",
+   "category": "Fruits",
    "fdc_id": "167791",
    "grams": 233.0,
    "id": "horned-melon",
@@ -9024,7 +9049,7 @@
   },
   {
    "breadth": 1,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 141.94,
     "conjugated_linoleic_g_per_100g": "0",
@@ -10813,7 +10838,7 @@
   },
   {
    "breadth": 2,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 258.72,
     "fraction": 0.0425,
@@ -15045,7 +15070,7 @@
   },
   {
    "breadth": 1,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 311.41,
     "fraction": 0.0511,
@@ -15139,7 +15164,7 @@
   },
   {
    "breadth": 2,
-   "category": "Fruit",
+   "category": "Fruits",
    "fdc_id": "167754",
    "grams": 190.0,
    "id": "pummelo",
@@ -15764,7 +15789,7 @@
   },
   {
    "breadth": 3,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 73.98,
     "fraction": 0.0121,
@@ -16136,7 +16161,7 @@
   },
   {
    "breadth": 1,
-   "category": "Fruit",
+   "category": "Fruits",
    "fdc_id": "168170",
    "grams": 57.0,
    "id": "roselle",
@@ -16166,7 +16191,7 @@
   },
   {
    "breadth": 1,
-   "category": "Fruit",
+   "category": "Fruits",
    "fdc_id": "167783",
    "grams": 114.0,
    "id": "rowal",
@@ -16329,7 +16354,7 @@
   },
   {
    "breadth": 2,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 162.75,
     "conjugated_linoleic_g_per_100g": "0",
@@ -17255,7 +17280,7 @@
   },
   {
    "breadth": 2,
-   "category": "Fruit",
+   "category": "Fruits",
    "efa": {
     "acid_mg": 155.25,
     "fraction": 0.0255,
