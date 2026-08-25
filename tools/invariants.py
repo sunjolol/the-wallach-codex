@@ -8916,6 +8916,69 @@ _WC_DEAD_RULE_ALLOWLIST = {
                       "together if the concept is dropped.",
 }
 
+# drawer-shared.css carries no dormant classes: the superseded drawer-header block that used to
+# live there was deleted on 2026-08-25 once every one of its classes was proven unrendered, and
+# the sheet measured 9 class selectors with 0 dead immediately after. An empty allowlist is the
+# honest statement of that, and it means ANY dead class appearing there from now on reds the board.
+_DRAWER_SHARED_DEAD_RULE_ALLOWLIST: dict[str, str] = {}
+
+# ★ THIS IS A BACKLOG, NOT A SET OF EXCEPTIONS, AND THE DIFFERENCE IS THE WHOLE POINT.
+# Extending the fence to drawer-knowledge.css on 2026-08-25 surfaced these class rules with no
+# live reference. NOBODY HAS RULED ON THEM YET. Calling them "deliberately dormant" would be a
+# lie that turns the board green; deleting them on sight would repeat the mistake this fence
+# exists to prevent -- the 2026-08-25 cleanup proved a "dead" list can contain a live class.
+# So they are listed as what they are: found, unruled, awaiting a decision. The fence still does
+# its real job from today, because anything NOT on this list reds the board immediately.
+# Several already carry "UNREACHABLE" comments at their own site from earlier sessions, which is
+# evidence they were noticed and left rather than missed.
+# SHRINK THIS LIST. Every entry removed is either a deletion or a ruling; it should never grow.
+_DRAWER_KNOWLEDGE_UNRULED_BACKLOG: dict[str, str] = {name: (
+    "found 2026-08-25 when the dead-rule fence was extended to this sheet; UNRULED -- needs a "
+    "decision (delete, or justify as dormant). Not an exception."
+) for name in (
+    "kd-book-deep__close", "kd-book-deep__count", "kd-book-deep__eyebrow",
+    "kd-book-deep__head", "kd-book-row", "kd-book-row--planned",
+    "kd-book-row__body", "kd-book-row__count", "kd-book-row__count--queued",
+    "kd-book-row__count--soon", "kd-book-row__meta", "kd-book-row__spine",
+    "kd-book-row__title", "kd-claim", "kd-claim__cite",
+    "kd-claim__text", "kd-claim__verbatim", "kd-claim__verbatim--rows",
+    "kd-condition-deep", "kd-condition-deep__synopsis", "kd-condition-deep__umbrella-tip",
+    "kd-corpus", "kd-corpus__chip", "kd-corpus__chip--ess",
+    "kd-corpus__chips", "kd-corpus__count", "kd-corpus__empty",
+    "kd-corpus__eyebrow", "kd-corpus__group", "kd-corpus__group-label",
+    "kd-corpus__head", "kd-corpus__sub", "kd-cov-dot",
+    "kd-cov-dot--covered", "kd-cov-dot--partial", "kd-cov-dot--present",
+    "kd-cov-dot--uncovered", "kd-cov-legend", "kd-doctrine-card",
+    "kd-doctrine-card__body", "kd-doctrine-card__cite", "kd-doctrine-card__id",
+    "kd-doctrine-card__title", "kd-ep-hero__sci", "kd-ep-protocol",
+    "kd-essential-deep__body", "kd-essential-deep__cat", "kd-essential-deep__close",
+    "kd-essential-deep__flag", "kd-essential-deep__head", "kd-essential-deep__name",
+    "kd-essential-deep__name-block", "kd-essential-deep__readout", "kd-essential-deep__source",
+    "kd-essential-deep__sym", "kd-essential-deep__sym-row", "kd-essential-tile",
+    "kd-essential-tile--bonus", "kd-essential-tile--covered", "kd-essential-tile--partial",
+    "kd-essential-tile__meta", "kd-essential-tile__name", "kd-essential-tile__sym",
+    "kd-essentials-grid", "kd-featured-citation__attr", "kd-featured-citation__eyebrow",
+    "kd-featured-citation__quote", "kd-foods-enz__grid", "kd-foods-enz__h",
+    "kd-foods-enz__hd", "kd-foods-enz__lead", "kd-foods-enz__note",
+    "kd-foods-enz__panel", "kd-foods-enz__panel--right", "kd-foods-enz__panel--wrong",
+    "kd-foods-enz__panel-b", "kd-foods-enz__panel-t", "kd-foods-enz__stat",
+    "kd-foods-gate", "kd-foods-gate__art", "kd-foods-gate__blood",
+    "kd-foods-gate__cap", "kd-foods-gate__frag", "kd-foods-gate__gridline",
+    "kd-foods-gate__mass", "kd-foods-gate__metric", "kd-foods-gate__note",
+    "kd-foods-gate__panel", "kd-foods-gate__panel--bad", "kd-foods-gate__panel--ok",
+    "kd-foods-gate__t", "kd-foods-gate__through", "kd-foods-gate__tick",
+    "kd-foods-gate__top", "kd-foods-gate__wall", "kd-foods-time__b",
+    "kd-foods-time__body", "kd-foods-time__meal", "kd-foods-time__rail",
+    "kd-foods-time__zone", "kd-foods-villi__hd", "kd-foods-villi__note",
+    "kd-meter", "kd-meter--ok", "kd-meter--warn",
+    "kd-meter__cap", "kd-meter__fill", "kd-meter__nums",
+    "kd-meter__track", "kd-more", "kd-why",
+    "kd-why__body", "kd-why__derivation", "kd-why__gloss",
+    "kd-why__how", "kd-why__older", "kd-why__parts-list",
+    "kd-why__posted", "kd-why__summary", "pulse-dot",
+    "sxbeat--tight",
+)}
+
 
 def _wc_live_class_refs():
     """Bounded-token live set + dynamic-construction stubs from COMMENT-STRIPPED src+html.
@@ -9062,8 +9125,15 @@ def _workspace_coverage_no_dead_rules_impl(css_text, runs, stubs, data_refs, all
                   f"keyframes all animated")
 
 
-def check_workspace_coverage_no_dead_rules():
-    """FENCE: no class-selector rule in workspace-coverage.css may be dead. A rule is dead
+_DEAD_RULE_SHEETS = (
+    ("dashboard/assets/styles/workspace-coverage.css", "_WC_DEAD_RULE_ALLOWLIST"),
+    ("dashboard/assets/styles/drawer-shared.css", "_DRAWER_SHARED_DEAD_RULE_ALLOWLIST"),
+    ("dashboard/assets/styles/drawer-knowledge.css", "_DRAWER_KNOWLEDGE_UNRULED_BACKLOG"),
+)
+
+
+def check_stylesheets_no_dead_rules():
+    """FENCE: no class-selector rule in any fenced stylesheet may be dead. A rule is dead
     when none of its class tokens is referenced by any LIVE surface --
     src/**/*.ts (non-test, comment-stripped), dashboard.html, a class-valued field in the
     coverage-layout data family, or dynamic `prefix-${...}` construction. Deliberately dormant classes are
@@ -9074,10 +9144,6 @@ def check_workspace_coverage_no_dead_rules():
     from one sheet: a single design token is read THROUGH by dozens of rules spread across
     every stylesheet, so its absence here proves nothing. Truth anchor: the sheet's bytes vs the live
     reference surface, re-derived each run."""
-    css_path = ROOT / _WC_CSS_REL
-    if not css_path.exists():
-        return False, f"{_WC_CSS_REL} missing"
-    css = css_path.read_text(encoding="utf-8", errors="replace")
     runs, stubs = _wc_live_class_refs()
     data_refs = _wc_data_class_refs()
     all_css = []
@@ -9088,8 +9154,25 @@ def check_workspace_coverage_no_dead_rules():
                 all_css.append(p.read_text(encoding="utf-8", errors="replace"))
             except Exception:
                 continue
-    return _workspace_coverage_no_dead_rules_impl(css, runs, stubs, data_refs, all_css,
-                                                  _WC_DEAD_RULE_ALLOWLIST)
+    notes = []
+    unruled_total = 0
+    for rel, allow_name in _DEAD_RULE_SHEETS:
+        css_path = ROOT / rel
+        if not css_path.exists():
+            return False, f"{rel} missing"
+        allow = globals()[allow_name]
+        ok, msg = _workspace_coverage_no_dead_rules_impl(
+            css_path.read_text(encoding="utf-8", errors="replace"),
+            runs, stubs, data_refs, all_css, allow)
+        if not ok:
+            return False, f"{css_path.name}: {msg}"
+        if allow_name.endswith("UNRULED_BACKLOG"):
+            unruled_total += len(allow)
+        notes.append(f"{css_path.name} clean")
+    tail = (f"; {unruled_total} UNRULED backlog entries in drawer-knowledge.css awaiting a "
+            "decision (see _DRAWER_KNOWLEDGE_UNRULED_BACKLOG -- they are not exceptions)"
+            if unruled_total else "")
+    return True, "; ".join(notes) + tail
 
 
 INVARIANTS = [
@@ -10021,10 +10104,10 @@ INVARIANTS = [
         lesson_ref="2026-08-03 doctor sweep — 'offline-first' now means vendored + pinned rather than small, so the pin has to be real. The CSS half has a prior incident: a 404'd @font-face src does not error, the token falls back and shifts metrics on EVERY element, presenting as 'everything slightly off' with a clean console.",
     ),
     Invariant(
-        name="workspace_coverage_no_dead_rules",
+        name="stylesheets_no_dead_rules",
         anchor_class="consistency",  # the sheet vs src/data — catches a rule whose referrer vanished, not a born-wrong value
         description="no class-selector rule in workspace-coverage.css is dead: every class token in a selector traces to a LIVE reference (src/**/*.ts non-test comment-stripped, dashboard.html, a coverage-layout data class field, or dynamic prefix-${...} construction) or sits on _WC_DEAD_RULE_ALLOWLIST with a reason; also flags a @keyframes defined here but animated nowhere. Fills the gap knip cannot see: CSS-rule liveness. Scope is class rules + this sheet's keyframes, NOT custom-property/@font-face liveness (the 2026-07-14 font-token disaster showed a token cannot be judged dead from this sheet alone)",
-        check_fn=check_workspace_coverage_no_dead_rules,
+        check_fn=check_stylesheets_no_dead_rules,
         truth_anchor="workspace-coverage.css class selectors x the live reference surface (src + dashboard.html + coverage-layout data + dynamic stubs) + styles/*.css animation refs, re-derived each run",
         severity="critical",
         lesson_ref="a dead-CSS purge, prompted by the app being called clean when it was not. 51 dead class rules across two superseded UI generations (coverage-hero/stat/console/goal-chip + regimen-rail) plus a deleted footer, ~425 lines, that only demos still pulled in. knip (no_new_dead_code) is blind to CSS. Non-vacuous: an empty allowlist REDs on .is-foundation, and a synthetic .zzz-dead class REDs.",
