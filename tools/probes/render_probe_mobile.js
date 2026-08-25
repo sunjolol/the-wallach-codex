@@ -45,7 +45,10 @@ if (!pup) { console.log('NO_PUPPETEER (npm i -D puppeteer at repo root)'); proce
 
 const NEGATIVE = process.argv.includes('--negative');
 const wait = ms => new Promise(r => setTimeout(r, ms));
-const URL = 'file://' + path.join(REPO, 'dashboard', 'dashboard.html').split(path.sep).join('/');
+// PROBE_URL points this at a SERVED build instead of the local file:// dashboard — which is the
+// only way to run it against dist-web/, because the web target FETCHES its split artifacts and
+// fetch() is blocked on a file:// page. Same assertions, other distribution.
+const URL = process.env['PROBE_URL'] || ('file://' + path.join(REPO, 'dashboard', 'dashboard.html').split(path.sep).join('/'));
 
 /**
  * ★ THE EXEMPTION IS DERIVED FROM THE DOM, NOT FROM A LIST OF CLASS NAMES.
