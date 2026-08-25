@@ -8713,61 +8713,88 @@ def check_entity_page_header_counts_match_page():
     return _entity_page_header_counts_match_page_impl(artifact, embed.get("claims", {}))
 
 
-def _web_build_excludes_unapproved_styles_impl(build_web_src, shell_html, ships_texts, dist_styles, dist_index):
-    """RED if the phone arrangement layer can reach the website, or if holding it back would
-    leave an unstyled control there.
+# Phone-layer controls whose markup renders at EVERY width, so their `display: none` default
+# must live in a stylesheet that SHIPS. Each entry is (selector-for-the-message, regex).
+# .cov-panes    coverage.ts renders the four-pane switch at every width (2026-08-23)
+# .topbar__goals dashboard.html carries the Goals button at every width (2026-08-25)
+# This exact shape -- a default written only into a sheet the other target does not get -- has
+# shipped THREE times here (the food-sheet Add button, .kd-ep--prod, .cov-panes__btn), which is
+# why it is a gate and not a habit.
+_PHONE_LAYER_DEFAULTS = (
+    ('.cov-panes', r'\.cov-panes\s*\{[^}]*display\s*:\s*none'),
+    ('.topbar__goals', r'\.topbar__goals\s*\{[^}]*display\s*:\s*none'),
+)
 
-    The owner approved mobile.css for the LOCAL dashboard only, after it was added to the live
-    dashboard surface without his approval. build_web.py globs assets/styles/*.css, so the next
-    web build would have carried it silently. Three clauses, because the obvious fix breaks the
-    site in a second way:
 
-      (1) build_web.py must NAME the sheet in WEB_EXCLUDED_CSS, and dashboard.html must still
-          LINK it -- held back from the web, kept locally, which is exactly the ruling.
-      (2) `.cov-panes { display: none }` must live in a sheet that SHIPS. coverage.ts renders the
-          switch at every width; if the only rule hiding it sat in the excluded sheet, the website
-          would receive the markup with nothing matching it and the browser would draw raw UA
-          buttons -- the same defect that shipped locally on 2026-08-23, moved to the web.
-      (3) if dist-web/ has been built, no excluded sheet may be in it and index.html may not
-          reference one.
+def _web_build_stylesheet_parity_impl(build_web_src, shell_html, ships_texts, dist_styles, dist_index):
+    """RED if the website and the local shell disagree about which stylesheets exist, or if a
+    phone-layer DEFAULT is stranded in a sheet that does not ship.
+
+    WHAT THIS USED TO SAY, and why it changed. From 2026-08-23 to 2026-08-25 this gate asserted
+    that mobile.css was HELD BACK from the web: the phone layer had reached the live dashboard
+    surface without the owner's approval, and he ruled it could stay locally but never ship
+    unapproved. ON 2026-08-25 HE APPROVED IT FOR THE WEBSITE. Asserting the old claim would now
+    be asserting something false, and a gate whose name contradicts its check is worse than no
+    gate -- so it was renamed and re-aimed at what is still true and still worth proving.
+
+    Three clauses:
+      (1) PARITY. Every stylesheet dashboard.html links is either shipped to the web or named in
+          WEB_EXCLUDED_CSS. A sheet cannot fall out of the website by accident, and one cannot be
+          held back by accident either -- the only way to withhold a sheet is to say so.
+      (2) NOTHING HELD BACK LEAKS. Whatever WEB_EXCLUDED_CSS names (today: nothing) must not
+          appear in a built dist-web/ or be referenced by its index.html.
+      (3) PHONE-LAYER DEFAULTS SHIP. See _PHONE_LAYER_DEFAULTS above. Their markup renders at
+          every width, so a `display: none` written only into a held-back sheet leaves the other
+          target drawing raw user-agent buttons. This clause is deliberately INDEPENDENT of what
+          is currently excluded: it must keep holding the day someone withholds a sheet again.
     """
-    m = re.search(r'WEB_EXCLUDED_CSS\s*=\s*\{([^}]*)\}', build_web_src)
+    m = re.search(r'WEB_EXCLUDED_CSS[^=]*=\s*(set\(\)|\{[^}]*\})', build_web_src)
     if m is None:
-        return False, "build_web.py declares no WEB_EXCLUDED_CSS set — the web glob would carry every stylesheet"
+        return False, ("build_web.py declares no WEB_EXCLUDED_CSS — there is no longer a single place "
+                       "a stylesheet can be held back from the web, so withholding one would be invisible")
     excluded = set(re.findall(r"'([^']+)'", m.group(1)))
-    if 'mobile.css' not in excluded:
-        return False, f"mobile.css is not held back from the web build (WEB_EXCLUDED_CSS = {sorted(excluded)})"
-    if './assets/styles/mobile.css' not in shell_html:
-        return False, "dashboard.html no longer links mobile.css — the LOCAL dashboard lost the phone layer"
 
-    hidden_in = [name for name, text in ships_texts.items()
-                 if re.search(r'\.cov-panes\s*\{[^}]*display\s*:\s*none', text)]
-    if not hidden_in:
-        return False, ("no SHIPPING stylesheet hides .cov-panes; the switch renders at every width, so the "
-                       "website would draw it as unstyled user-agent buttons")
+    # (1) parity: every linked sheet is either shipped or explicitly held back
+    linked = set(re.findall(r'\./assets/styles/([A-Za-z0-9_.-]+\.css)', shell_html))
+    if not linked:
+        return False, "dashboard.html links no stylesheets — the shell changed shape"
+    unaccounted = sorted(n for n in linked if n not in excluded and n not in ships_texts)
+    if unaccounted:
+        return False, (f"dashboard.html links {unaccounted} but the web build neither ships them nor "
+                       "names them in WEB_EXCLUDED_CSS — they would 404 on the website")
 
-    if dist_styles is not None:
-        stray = sorted(n for n in dist_styles if any(n.startswith(e.rsplit('.', 1)[0]) for e in excluded))
+    # (3) phone-layer defaults must live in a SHIPPING sheet
+    for label, pattern in _PHONE_LAYER_DEFAULTS:
+        if not any(re.search(pattern, text) for text in ships_texts.values()):
+            return False, (f"no SHIPPING stylesheet carries the `{label}{{display:none}}` default; its markup "
+                           "renders at every width, so a target without it draws unstyled user-agent buttons")
+
+    # (2) nothing held back may leak into a built dist-web
+    if dist_styles is not None and excluded:
+        stems = {e.rsplit('.', 1)[0] for e in excluded}
+        stray = sorted(n for n in dist_styles if n.rsplit('.', 1)[0].split('.')[0] in stems)
         if stray:
             return False, f"dist-web ships a held-back stylesheet: {stray}"
-        if dist_index is not None and 'mobile' in dist_index:
-            return False, "dist-web/index.html still references a held-back stylesheet"
+        if dist_index is not None:
+            leaked = sorted(s for s in stems if s in dist_index)
+            if leaked:
+                return False, f"dist-web/index.html still references a held-back stylesheet: {leaked}"
 
-    where = ', '.join(sorted(hidden_in))
-    built = 'dist-web verified clean' if dist_styles is not None else 'dist-web not built'
-    return True, (f"{len(excluded)} stylesheet(s) held back from the web build ({sorted(excluded)}); "
-                  f"dashboard.html still links them locally; .cov-panes hidden by {where}; {built}")
+    held = f"{sorted(excluded)} held back" if excluded else "NONE held back (the phone layer ships)"
+    built = 'dist-web verified' if dist_styles is not None else 'dist-web not built'
+    return True, (f"{len(linked)} linked stylesheet(s), all accounted for; {held}; "
+                  f"{len(_PHONE_LAYER_DEFAULTS)} phone-layer default(s) live in shipping sheets; {built}")
 
 
-def check_web_build_excludes_unapproved_styles():
-    """The phone arrangement layer stays off nutrientcodex.com until it is approved -- and holding
-    it back must not leave an unstyled control on the website. Truth anchor: build_web.py's
-    WEB_EXCLUDED_CSS x dashboard.html's links x the shipping stylesheets' own bytes x dist-web/
-    when it exists, re-read each run."""
+def check_web_build_stylesheet_parity():
+    """The website ships exactly the stylesheets the local shell links, minus anything explicitly
+    held back -- and no phone-layer default is stranded in a sheet that does not ship. Truth
+    anchor: build_web.py's WEB_EXCLUDED_CSS x dashboard.html's links x the shipping stylesheets'
+    own bytes x dist-web/ when it exists, re-read each run."""
     build_web_src = (ROOT / "tools" / "build_web.py").read_text(encoding="utf-8")
     shell_html = (ROOT / "dashboard" / "dashboard.html").read_text(encoding="utf-8")
     styles_dir = ROOT / "dashboard" / "assets" / "styles"
-    m = re.search(r'WEB_EXCLUDED_CSS\s*=\s*\{([^}]*)\}', build_web_src)
+    m = re.search(r'WEB_EXCLUDED_CSS[^=]*=\s*(set\(\)|\{[^}]*\})', build_web_src)
     excluded = set(re.findall(r"'([^']+)'", m.group(1))) if m else set()
     ships = {p.name: p.read_text(encoding="utf-8") for p in sorted(styles_dir.glob("*.css"))
              if p.name not in excluded}
@@ -8778,7 +8805,7 @@ def check_web_build_excludes_unapproved_styles():
         dist_styles = [p.name for p in (dist / "assets" / "styles").glob("*.css")]
         idx = dist / "index.html"
         dist_index = idx.read_text(encoding="utf-8") if idx.exists() else None
-    return _web_build_excludes_unapproved_styles_impl(build_web_src, shell_html, ships, dist_styles, dist_index)
+    return _web_build_stylesheet_parity_impl(build_web_src, shell_html, ships, dist_styles, dist_index)
 
 
 # --- Dead-code gate ---------------------------------------------------------
@@ -9958,13 +9985,13 @@ INVARIANTS = [
         lesson_ref="he opened Memory Loss and read '4 claims - 3 books' over a page showing 34 claims from 5 books, while Ask Wallach reported 34 correctly. Root cause: Ask Wallach DERIVES its number from the rows it is about to render (search.ts renderTopicPage: families.reduce(+f.count)) while the entity hero read a STORED counter measuring a different population. The board was 102/102 throughout because no gate watched a rendered count -- green BECAUSE nothing looked. Negative test: tools/tests/test_entity_page_header_counts_match_page.py.",
     ),
     Invariant(
-        name="web_build_excludes_unapproved_styles",
-        anchor_class="consistency",  # build_web.py x dashboard.html x the shipping sheets x dist-web — catches drift between what is approved and what ships
-        description="the phone arrangement layer (mobile.css) is held back from the web build and stays on the LOCAL dashboard only, and holding it back does not leave an unstyled control on the website. build_web.py globs assets/styles/*.css, so without an explicit exclusion the next web build would have carried an unapproved layer to nutrientcodex.com silently. Also asserts `.cov-panes { display: none }` lives in a SHIPPING sheet -- coverage.ts renders the pane switch at every width, so if only the excluded sheet hid it the website would draw four raw user-agent buttons",
-        check_fn=check_web_build_excludes_unapproved_styles,
+        name="web_build_stylesheet_parity",
+        anchor_class="consistency",  # build_web.py x dashboard.html x the shipping sheets x dist-web — catches drift between what the two targets carry
+        description="the website ships exactly the stylesheets dashboard.html links, minus anything explicitly named in build_web.py's WEB_EXCLUDED_CSS, and nothing named there leaks into a built dist-web/. Also asserts every PHONE-LAYER DEFAULT (`.cov-panes` and `.topbar__goals`, both `display: none` outside the phone) lives in a SHIPPING sheet: their markup renders at every width, so a default written only into a held-back sheet leaves the other target drawing raw user-agent buttons. THIS GATE WAS RE-AIMED on 2026-08-25 — it previously asserted that mobile.css was held BACK from the web, which the owner's approval made false",
+        check_fn=check_web_build_stylesheet_parity,
         truth_anchor="tools/build_web.py WEB_EXCLUDED_CSS x dashboard.html style links x the shipping stylesheets' bytes x dist-web/ when built, re-read each run",
         severity="critical",
-        lesson_ref="the mobile layer was added to the LIVE dashboard surface on 2026-08-23 without the owner's approval; his standing instruction had been that mobile work stays a separate demo. He ruled it may stay LOCALLY (testing mobile against the real dashboard beats testing a demo) and may NEVER reach the web unapproved. A promise is not a mechanism: build_web.py's glob would have shipped it on the next build. Negative test: tools/tests/test_web_build_excludes_unapproved_styles.py.",
+        lesson_ref="the mobile layer was added to the LIVE dashboard surface on 2026-08-23 without the owner's approval; he ruled it may stay LOCALLY but may NEVER reach the web unapproved, and build_web.py's glob would have shipped it on the next build — a promise is not a mechanism. On 2026-08-25, after reviewing the second round, HE APPROVED IT FOR THE WEBSITE, so WEB_EXCLUDED_CSS is now empty and the gate asserts PARITY instead of exclusion. The withholding mechanism is kept deliberately, so the next unapproved layer is one line rather than a new argument. The defaults clause is kept because it never depended on approval: that exact shape has shipped three times (the food-sheet Add button, .kd-ep--prod, .cov-panes__btn). Negative test: tools/tests/test_web_build_stylesheet_parity.py.",
     ),
     Invariant(
         name="offline_no_runtime_network",

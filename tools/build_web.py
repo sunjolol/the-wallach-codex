@@ -155,15 +155,19 @@ say('Rewriting stylesheets…')
 css_out = OUT / 'assets' / 'styles'
 css_out.mkdir(parents=True)
 css_map: dict[str, str] = {}
-# ★★ STYLESHEETS HELD BACK FROM THE WEB BUILD.
-# The phone arrangement layer is APPROVED FOR THE LOCAL DASHBOARD ONLY and must not reach
-# nutrientcodex.com until the owner has signed it off. It was added to the live dashboard surface
-# without his approval on 2026-08-23; he ruled it may STAY LOCALLY because testing mobile against
-# the real dashboard is easier than against a demo, and that it may NEVER ship to the web
-# unapproved. This glob would have carried it there on the next build, silently, so the rule is
-# enforced here rather than remembered. Its <link> is stripped from index.html below to match, and
-# web_build_excludes_unapproved_styles gates both halves.
-WEB_EXCLUDED_CSS = {'mobile.css'}
+# ★★ STYLESHEETS HELD BACK FROM THE WEB BUILD — CURRENTLY NONE, DELIBERATELY.
+# HISTORY, kept because the rule CHANGED and the reason must survive the change:
+# mobile.css — the phone arrangement layer — was held back here from 2026-08-23 to 2026-08-25.
+# It had reached the live dashboard surface without the owner's approval; he ruled it could STAY
+# LOCALLY (testing mobile against the real dashboard beats testing a demo) but might NEVER ship to
+# the web unapproved, and this glob would have carried it there on the next build, silently.
+# ON 2026-08-25 HE APPROVED IT FOR THE WEBSITE — "update the website files so I can push this to
+# the live website also" — after reviewing the second round. So the set is empty and the phone
+# layer ships like any other sheet: font-rewritten, content-hashed, linked from index.html.
+# THE MECHANISM STAYS. This remains the one place a sheet can be held back, so the next
+# unapproved layer is a one-line change rather than a new argument, and web_build_stylesheet_parity
+# still proves that nothing named here can leak into dist-web.
+WEB_EXCLUDED_CSS: set[str] = set()
 
 for src in sorted((DASH / 'assets/styles').glob('*.css')):
     if src.name in WEB_EXCLUDED_CSS:

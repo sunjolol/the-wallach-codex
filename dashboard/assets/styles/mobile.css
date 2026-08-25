@@ -536,8 +536,16 @@
      broken string rather than a truncated one. `Try “selenium”, “osteoporosis”, or “colloidal
      minerals”…` stopped dead at `…“osteoporosis”, o`. An ellipsis says "there is more".
      THE COPY IS UNTOUCHED. This is presentation only, so one string still serves every width
-     and view-copy.json stays the single source for it. */
-  #drawer-knowledge-mount input::placeholder { text-overflow: ellipsis; }
+     and view-copy.json stays the single source for it.
+     ★ ON THE ELEMENT, NOT ON `::placeholder`. The first cut of this rule was
+     `input::placeholder { text-overflow: ellipsis }` and it was DEAD — `text-overflow` is not in
+     the property set that pseudo-element accepts, so the computed value stayed `clip` and the
+     string went on being cut mid-word. It was written into the sheet, logged as fixed, and did
+     nothing; only reading the computed style back caught it. On the input itself the property
+     applies, and the browser carries it to the placeholder text. */
+  #drawer-knowledge-mount input {
+    text-overflow: ellipsis;
+  }
 
   /* .ep-seclabel is a baseline flex row: LABEL + hint + link + a hairline that eats the
      remainder. At this width the hint and the link were squeezed into ~90px columns and each
