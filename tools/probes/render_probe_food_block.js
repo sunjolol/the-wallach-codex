@@ -25,7 +25,19 @@ const CASES = [
   // BOUND 2026-08-24 (AFCD). It was the `no_binding` case until then; abalone is the one food
   // in the catalog that clears 7% of his 620 mcg, at 19.5% on a 3 oz serving.
   { slug: 'chromium', key: 'Chromium', want: 'rows', why: 'bound to AFCD; abalone clears the floor' },
+  // The other closed gap: the published boron tables are software ESTIMATES their own authors
+  // label overestimated, so only measured values were bound and avocado is the one food left
+  // standing. If this ever falls back to a note, a binding has been lost -- not a new finding.
+  { slug: 'boron', key: 'Boron', want: 'rows', why: 'bound to measured values; avocado clears the floor' },
   { slug: 'inositol', key: 'Inositol', want: 'gap', why: 'still unbound - OURS, not a finding about food' },
+  // ★ PHOSPHORUS RENDERS NO FOOD BLOCK AT ALL, and that is not the bug it looks like.
+  // Its glance takes the present-by-default early return (`present_stated_zero`), which returns
+  // before renderSourcesBlock is ever reached -- so `kd_ep_foodsrc_zero_target`, the verdict
+  // copy written for it, reaches no screen. The PAGE still tells the truth (the present-glance
+  // says he lists it at zero), so this asserts the thing that must hold under EITHER resolution:
+  // whatever the page says about phosphorus, it must never read as a missing binding and never
+  // as supplement-only. Whether the block should also be there is an open owner question.
+  { slug: 'phosphorus', key: 'Phosphorus', want: 'zero', why: 'Wallach states zero deliberately - a statement, not a gap' },
   { slug: 'lysine', key: 'Lysine', want: 'no-target', why: 'no Wallach amount, so nothing to measure against' },
   { slug: 'gold', key: 'Gold', want: 'supplementing', why: 'plant-derived, second case' },
   { slug: 'lithium', key: 'Lithium', want: 'supplementing', why: 'plant-derived, third case' },
@@ -34,9 +46,12 @@ const CASES = [
 
 const READ_BLOCK = () => {
   const labels = [...document.querySelectorAll('.kd-ep-op__srclabel')].map(n => n.textContent.trim());
+  // Read the whole glance too: a page can carry its food verdict in the GLANCE instead of in a
+  // block (phosphorus), and a probe that only ever looks inside the block cannot see that.
+  const opText = (document.querySelector('.kd-ep-op')?.innerText ?? '').replace(/\s+/g, ' ').trim();
   const foodLabel = [...document.querySelectorAll('.kd-ep-op__srclabel')]
     .find(n => n.textContent.trim() === 'Best food sources');
-  if (!foodLabel) return { present: false, labels };
+  if (!foodLabel) return { present: false, labels, opText };
   const parts = [];
   let n = foodLabel.nextElementSibling;
   while (n && !n.classList.contains('kd-ep-op__srclabel') && n.tagName !== 'HR') {
@@ -47,7 +62,7 @@ const READ_BLOCK = () => {
   const rows = parts.filter(x => x.classList.contains('kd-ep-src--food'));
   const more = parts.find(x => x.classList.contains('kd-ep-more'));
   return {
-    present: true, labels,
+    present: true, labels, opText,
     foodIdx: labels.indexOf('Best food sources'),
     foodLabelCount: labels.filter(l => l === 'Best food sources').length,
     ygvIdx: labels.indexOf('Best Youngevity sources'),
@@ -94,6 +109,17 @@ const READ_BLOCK = () => {
     console.log(`\n-- ${c.slug}  (${c.why})`);
     if (!opened) { check(`${c.slug}: tile found`, false, c.key); continue; }
     const got = await p.evaluate(READ_BLOCK);
+    if (c.want === 'zero') {
+      // Three ways this page could lie, all asserted wherever the words live: it must not claim
+      // a missing binding, it must not say supplement-only, and it must not read as Wallach
+      // being SILENT -- he is not silent about phosphorus, he writes a zero.
+      const t = got.opText ?? '';
+      check(`${c.slug}: states he needs none of it`, /need of zero|lists it at zero|None needed/i.test(t), t.slice(0, 200));
+      check(`${c.slug}: never calls it a gap in our sources`, !/gap in our sources/i.test(t), t.slice(0, 200));
+      check(`${c.slug}: never says it requires supplementing`, !/requires supplementing|obtained by supplementing/i.test(t), t.slice(0, 200));
+      check(`${c.slug}: never says Wallach states no amount`, !/states no daily amount/i.test(t), t.slice(0, 200));
+      continue;
+    }
     check(`${c.slug}: the block is present`, got.present, got.labels);
     if (!got.present) continue;
     check(`${c.slug}: rendered EXACTLY once`, got.foodLabelCount === 1, got.labels);

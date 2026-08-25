@@ -1,0 +1,224 @@
+[
+ {
+  "food": "Apple, red with peel, raw",
+  "boron_ug_per_g": "2.38",
+  "hunt_1991": "2.73",
+  "anderson_1994b": "2.38"
+ },
+ {
+  "food": "Apple juice",
+  "boron_ug_per_g": "1.88",
+  "hunt_1991": "1.88",
+  "anderson_1994b": "2.41"
+ },
+ {
+  "food": "Apple sauce",
+  "boron_ug_per_g": "1.04",
+  "hunt_1991": "2.83",
+  "anderson_1994b": "1.04"
+ },
+ {
+  "food": "Banana, raw",
+  "boron_ug_per_g": "3.72",
+  "hunt_1991": null,
+  "anderson_1994b": "3.72"
+ },
+ {
+  "food": "Cherries, dark",
+  "boron_ug_per_g": "0.92",
+  "hunt_1991": "1.47",
+  "anderson_1994b": "0.92"
+ },
+ {
+  "food": "Grape juice",
+  "boron_ug_per_g": "2.02",
+  "hunt_1991": "2.02",
+  "anderson_1994b": "2.06"
+ },
+ {
+  "food": "Orange juice",
+  "boron_ug_per_g": "0.41",
+  "hunt_1991": "0.41",
+  "anderson_1994b": "1.59"
+ },
+ {
+  "food": "Peaches, canned",
+  "boron_ug_per_g": "1.87",
+  "hunt_1991": "1.87",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Pears, canned",
+  "boron_ug_per_g": "1.22",
+  "hunt_1991": "1.22",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Dates",
+  "boron_ug_per_g": "9.2",
+  "hunt_1991": "9.2",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Prunes",
+  "boron_ug_per_g": "21.5",
+  "hunt_1991": "27",
+  "anderson_1994b": "21.5"
+ },
+ {
+  "food": "Raisins",
+  "boron_ug_per_g": "19.0",
+  "hunt_1991": "25",
+  "anderson_1994b": "19.0"
+ },
+ {
+  "food": "Beans, green",
+  "boron_ug_per_g": "0.46",
+  "hunt_1991": "0.46",
+  "anderson_1994b": "1.56"
+ },
+ {
+  "food": "Broccoli, flowers",
+  "boron_ug_per_g": "1.85",
+  "hunt_1991": "1.85",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Broccoli, stalks",
+  "boron_ug_per_g": "0.89",
+  "hunt_1991": "0.89",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Lettuce, iceberg",
+  "boron_ug_per_g": null,
+  "hunt_1991": "<0.015",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Carrots, canned",
+  "boron_ug_per_g": "0.75",
+  "hunt_1991": "0.75",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Almonds",
+  "boron_ug_per_g": "23",
+  "hunt_1991": "23",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Hazelnuts",
+  "boron_ug_per_g": "16",
+  "hunt_1991": "16",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Peanuts",
+  "boron_ug_per_g": "13.8",
+  "hunt_1991": "18",
+  "anderson_1994b": "13.8"
+ },
+ {
+  "food": "Beef, round, ground, raw",
+  "boron_ug_per_g": null,
+  "hunt_1991": "<0.015",
+  "anderson_1994b": "<0.05"
+ },
+ {
+  "food": "Chicken, breast, ground, raw",
+  "boron_ug_per_g": "0.09",
+  "hunt_1991": "<0.015",
+  "anderson_1994b": "0.09"
+ },
+ {
+  "food": "Turkey breast",
+  "boron_ug_per_g": null,
+  "hunt_1991": "<0.015",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Cheese, cream",
+  "boron_ug_per_g": "0.19",
+  "hunt_1991": "<0.015",
+  "anderson_1994b": "0.19"
+ },
+ {
+  "food": "Milk, 2%",
+  "boron_ug_per_g": "0.23",
+  "hunt_1991": "<0.015",
+  "anderson_1994b": "0.23"
+ },
+ {
+  "food": "Bread, white, enriched",
+  "boron_ug_per_g": "0.20",
+  "hunt_1991": "0.20",
+  "anderson_1994b": "0.48"
+ },
+ {
+  "food": "Cornflakes, fortified",
+  "boron_ug_per_g": "0.31",
+  "hunt_1991": "0.31",
+  "anderson_1994b": "0.92"
+ },
+ {
+  "food": "Flour, wheat, white",
+  "boron_ug_per_g": "0.28",
+  "hunt_1991": "0.28",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Noodles, egg, dry, enriched",
+  "boron_ug_per_g": "0.37",
+  "hunt_1991": "0.37",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Rice, white, instant",
+  "boron_ug_per_g": null,
+  "hunt_1991": "<0.015",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Spaghetti, dry, enriched",
+  "boron_ug_per_g": null,
+  "hunt_1991": "<0.015",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Catsup",
+  "boron_ug_per_g": "0.85",
+  "hunt_1991": "0.85",
+  "anderson_1994b": "1.39"
+ },
+ {
+  "food": "Eggs, homogenized",
+  "boron_ug_per_g": "0.12",
+  "hunt_1991": "<0.015",
+  "anderson_1994b": "0.12"
+ },
+ {
+  "food": "Honey",
+  "boron_ug_per_g": "6.07",
+  "hunt_1991": "7.2",
+  "anderson_1994b": "6.07"
+ },
+ {
+  "food": "Jelly, strawberry",
+  "boron_ug_per_g": "0.41",
+  "hunt_1991": "0.41",
+  "anderson_1994b": null
+ },
+ {
+  "food": "Jelly, grape",
+  "boron_ug_per_g": "1.47",
+  "hunt_1991": "1.47",
+  "anderson_1994b": "1.86"
+ },
+ {
+  "food": "Sugar, white",
+  "boron_ug_per_g": "0.29",
+  "hunt_1991": "<0.015",
+  "anderson_1994b": "0.29"
+ }
+]

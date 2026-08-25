@@ -451,15 +451,30 @@ function renderAtAGlance(layoutKey: string, slug: string | null, tile: CoverageT
  *  promises a panel that does not exist. Same five-column shell as the product row so the two
  *  lists read as one stack — the price column carries the share of Wallach's daily target,
  *  which is the food's answer to the question price answers for a product. */
+/**
+ * One food in the "Best food sources" list, and it OPENS that food (owner ruling, 2026-08-24).
+ *
+ * It is the same `kd-ep-src` row as the Youngevity source beside it, and it now behaves like one:
+ * a real <button> carrying `data-kd-food`, which knowledge.ts routes to openDetail('food') exactly
+ * as it routes the product row's `data-kd-product`. It was a plain <div> with no id on it at all,
+ * so a click reached nothing — the row LOOKED like the clickable one directly below it and was
+ * inert, which is the worst of both.
+ *
+ * ★ THE CSS MOVED WITH IT. `.kd-ep-src--food` carried four rules whose whole job was to take a
+ * button's affordances back off this row (cursor: default, and a :hover that undid the border,
+ * background, transform and colour changes). Shipping the button without deleting those would
+ * have produced a row that opens on click and denies it on hover.
+ */
 function foodSrcRow(f: RankedFoodSource): string {
   const pct = Math.round(f.fraction * 100);
   const strong = f.strong ? ' kd-ep-src--strong' : '';
-  return `<div class="kd-ep-src kd-ep-src--food${strong}">
+  return `<button class="kd-ep-src kd-ep-src--food${strong}" type="button" data-kd-food="${escHTML(f.id)}">
       <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4 0-7-3-7-7 0-4 3-8 7-11 4 3 7 7 7 11 0 4-3 7-7 7z"/><path d="M12 21V9"/></svg></span>
       <span class="kd-ep-src__nm">${escHTML(f.name)}</span>
       <span class="kd-ep-src__amt">${fmtAmount(f.amount, f.unit).value} ${escHTML(fmtAmount(f.amount, f.unit).unit)}</span>
       <span class="kd-ep-src__pr">${pct}%</span>
-    </div>`;
+      <span class="kd-ep-src__chev">›</span>
+    </button>`;
 }
 
 /**

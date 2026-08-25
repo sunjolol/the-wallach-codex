@@ -184,7 +184,7 @@
    "tin",
    "vanadium"
   ],
-  "food_count": 248,
+  "food_count": 250,
   "qualify_fraction": 0.07,
   "second_sources": {
    "biotin": {
@@ -192,7 +192,7 @@
     "tier": "APPROXIMATE"
    },
    "boron": {
-    "source_id": "boron-meacham-2015",
+    "source_id": "who-ehc204",
     "tier": "APPROXIMATE"
    },
    "chloride": {
@@ -241,7 +241,8 @@
    "iodine-usda-ods-r4": "the USDA/FDA/ODS iodine database",
    "proanthocyanidin-usda-r2": "the USDA proanthocyanidin database",
    "silicon-powell-2005": "Powell’s 2005 silicon database (British Journal of Nutrition)",
-   "usda-sr-legacy": "USDA FoodData Central"
+   "usda-sr-legacy": "USDA FoodData Central",
+   "who-ehc204": "WHO EHC 204, from Hunt 1991 + Anderson 1994"
   },
   "strong_fraction": 0.2
  },
@@ -521,7 +522,7 @@
    "usda_description": "Nuts, almond butter, plain, without salt added"
   },
   {
-   "breadth": 5,
+   "breadth": 6,
    "category": "Nuts & seeds",
    "efa": {
     "acid_mg": 3494.1375,
@@ -538,6 +539,27 @@
    "id": "almonds",
    "name": "Almonds",
    "nutrients": [
+    {
+     "amount": 0.6521,
+     "fraction": 0.0709,
+     "per_100g": "23",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Almonds",
+      "source_id": "who-ehc204",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "EHC Table 11 names the nut plainly and our row is raw almonds with skin; the analyses it reprints list no other almond. At 23 ug/g on a 28.35 g ounce this clears the 7% floor by a hair -- 7.09% -- so a change to either the portion or the floor drops it out.",
+      "working": {
+       "arithmetic": "23 ug/g x 0.1 = 2.3 mg/100 g",
+       "ug_per_g": "23"
+      }
+     },
+     "slug": "boron",
+     "source_unit": "MG",
+     "strong": false,
+     "unit": "mg"
+    },
     {
      "amount": 14.7704,
      "fraction": 0.1477,
@@ -621,7 +643,7 @@
    ],
    "portion_id": "86867",
    "portion_label": "1 oz (23 whole kernels)",
-   "strength": 1.3002,
+   "strength": 1.3711,
    "usda_description": "Nuts, almonds"
   },
   {
@@ -940,6 +962,7 @@
      "fraction": 0.2114,
      "per_100g": "1.43",
      "provenance": {
+      "combine": "first",
       "join": "name:Avocado",
       "source_id": "boron-meacham-2015",
       "tier": "APPROXIMATE",
@@ -5451,7 +5474,7 @@
    "usda_description": "Dandelion greens, cooked, boiled, drained, with salt"
   },
   {
-   "breadth": 5,
+   "breadth": 6,
    "category": "Fruits",
    "efa": {
     "acid_mg": 27.93,
@@ -5467,6 +5490,27 @@
    "id": "dates",
    "name": "Dates",
    "nutrients": [
+    {
+     "amount": 1.3524,
+     "fraction": 0.147,
+     "per_100g": "9.2",
+     "provenance": {
+      "combine": "first",
+      "join": "name:Dates",
+      "source_id": "who-ehc204",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "Both dried dates. EHC lists one date row and our catalog entry is deglet noor; USDA sells no fresh date row, so there is no state ambiguity to resolve.",
+      "working": {
+       "arithmetic": "9.2 ug/g x 0.1 = 0.92 mg/100 g",
+       "ug_per_g": "9.2"
+      }
+     },
+     "slug": "boron",
+     "source_unit": "MG",
+     "strong": false,
+     "unit": "mg"
+    },
     {
      "amount": 9.261,
      "fraction": 0.0926,
@@ -5550,7 +5594,7 @@
    ],
    "portion_id": "89264",
    "portion_label": "1 cup, chopped",
-   "strength": 1.1078,
+   "strength": 1.2548,
    "usda_description": "Dates, deglet noor"
   },
   {
@@ -8913,41 +8957,32 @@
    "usda_description": "Hyacinth beans, mature seeds, cooked, boiled, without salt"
   },
   {
-   "breadth": 7,
+   "breadth": 6,
    "category": "Legumes",
+   "dry_yield": {
+    "arithmetic": "194.0 g cooked x 0.3087 dry matter / 0.9062 dry matter = 66.1 g of dry seed",
+    "cooked_portion_g": "194.0",
+    "cooked_twin": "hyacinth-beans-cooked",
+    "water_cooked_g_per_100g": "69.13",
+    "water_dry_g_per_100g": "9.38"
+   },
    "efa": {
-    "acid_mg": 1501.5,
-    "fraction": 0.2464,
+    "acid_mg": 472.615,
+    "fraction": 0.0776,
     "linoleic_g_per_100g": "0.715",
     "linolenic_g_per_100g": null,
-    "oil_equivalent_mg": 2218.0368,
+    "oil_equivalent_mg": 698.1535,
     "qualifies": true,
-    "strong": true
+    "strong": false
    },
    "fdc_id": "175210",
-   "grams": 210.0,
+   "grams": 66.1,
    "id": "hyacinth-beans-dry",
    "name": "Hyacinth beans, dry",
    "nutrients": [
     {
-     "amount": 273.0,
-     "fraction": 0.182,
-     "nutrient_id": "1087",
-     "per_100g": "130",
-     "provenance": {
-      "join": "fdc:175210/nutrient:1087",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "calcium",
-     "strong": false,
-     "unit": "mg",
-     "usda_unit": "MG"
-    },
-    {
-     "amount": 2.8035,
-     "fraction": 0.9044,
+     "amount": 0.8824,
+     "fraction": 0.2847,
      "nutrient_id": "1098",
      "per_100g": "1.335",
      "provenance": {
@@ -8962,8 +8997,8 @@
      "usda_unit": "MG"
     },
     {
-     "amount": 10.71,
-     "fraction": 0.2328,
+     "amount": 3.3711,
+     "fraction": 0.0733,
      "nutrient_id": "1089",
      "per_100g": "5.1",
      "provenance": {
@@ -8973,13 +9008,13 @@
       "value_kind": "cell"
      },
      "slug": "iron",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 594.3,
-     "fraction": 0.7718,
+     "amount": 187.063,
+     "fraction": 0.2429,
      "nutrient_id": "1090",
      "per_100g": "283",
      "provenance": {
@@ -8994,8 +9029,8 @@
      "usda_unit": "MG"
     },
     {
-     "amount": 3.3033,
-     "fraction": 0.429,
+     "amount": 1.0398,
+     "fraction": 0.135,
      "nutrient_id": "1101",
      "per_100g": "1.573",
      "provenance": {
@@ -9005,13 +9040,13 @@
       "value_kind": "cell"
      },
      "slug": "manganese",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 2593.5,
-     "fraction": 0.5187,
+     "amount": 816.335,
+     "fraction": 0.1633,
      "nutrient_id": "1092",
      "per_100g": "1235",
      "provenance": {
@@ -9021,13 +9056,13 @@
       "value_kind": "cell"
      },
      "slug": "potassium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 19.53,
-     "fraction": 0.4246,
+     "amount": 6.1473,
+     "fraction": 0.1336,
      "nutrient_id": "1095",
      "per_100g": "9.3",
      "provenance": {
@@ -9037,14 +9072,14 @@
       "value_kind": "cell"
      },
      "slug": "zinc",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     }
    ],
    "portion_id": "95849",
-   "portion_label": "1 cup",
-   "strength": 3.7097,
+   "portion_label": "66.1 g dry · makes 1 cup cooked",
+   "strength": 1.1104,
    "usda_description": "Hyacinth beans, mature seeds, raw"
   },
   {
@@ -11050,41 +11085,32 @@
    "usda_description": "Lupins, mature seeds, cooked, boiled, without salt"
   },
   {
-   "breadth": 8,
+   "breadth": 5,
    "category": "Legumes",
+   "dry_yield": {
+    "arithmetic": "166.0 g cooked x 0.2892 dry matter / 0.8956 dry matter = 53.6 g of dry seed",
+    "cooked_portion_g": "166.0",
+    "cooked_twin": "lupins-cooked",
+    "water_cooked_g_per_100g": "71.08",
+    "water_dry_g_per_100g": "10.44"
+   },
    "efa": {
-    "acid_mg": 4393.8,
-    "fraction": 0.7212,
+    "acid_mg": 1308.376,
+    "fraction": 0.2148,
     "linoleic_g_per_100g": "1.995",
     "linolenic_g_per_100g": "0.446",
-    "oil_equivalent_mg": 6490.5828,
+    "oil_equivalent_mg": 1932.7513,
     "qualifies": true,
     "strong": true
    },
    "fdc_id": "172423",
-   "grams": 180.0,
+   "grams": 53.6,
    "id": "lupins-dry",
    "name": "Lupins, dry",
    "nutrients": [
     {
-     "amount": 316.8,
-     "fraction": 0.2112,
-     "nutrient_id": "1087",
-     "per_100g": "176",
-     "provenance": {
-      "join": "fdc:172423/nutrient:1087",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "calcium",
-     "strong": true,
-     "unit": "mg",
-     "usda_unit": "MG"
-    },
-    {
-     "amount": 1.8396,
-     "fraction": 0.5934,
+     "amount": 0.5478,
+     "fraction": 0.1767,
      "nutrient_id": "1098",
      "per_100g": "1.022",
      "provenance": {
@@ -11094,29 +11120,13 @@
       "value_kind": "cell"
      },
      "slug": "copper",
-     "strong": true,
-     "unit": "mg",
-     "usda_unit": "MG"
-    },
-    {
-     "amount": 7.848,
-     "fraction": 0.1706,
-     "nutrient_id": "1089",
-     "per_100g": "4.36",
-     "provenance": {
-      "join": "fdc:172423/nutrient:1089",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "iron",
      "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 356.4,
-     "fraction": 0.4629,
+     "amount": 106.128,
+     "fraction": 0.1378,
      "nutrient_id": "1090",
      "per_100g": "198",
      "provenance": {
@@ -11126,13 +11136,13 @@
       "value_kind": "cell"
      },
      "slug": "magnesium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 4.2876,
-     "fraction": 0.5568,
+     "amount": 1.2768,
+     "fraction": 0.1658,
      "nutrient_id": "1101",
      "per_100g": "2.382",
      "provenance": {
@@ -11142,13 +11152,13 @@
       "value_kind": "cell"
      },
      "slug": "manganese",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 1823.4,
-     "fraction": 0.3647,
+     "amount": 542.968,
+     "fraction": 0.1086,
      "nutrient_id": "1092",
      "per_100g": "1013",
      "provenance": {
@@ -11158,13 +11168,13 @@
       "value_kind": "cell"
      },
      "slug": "potassium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 639.0,
-     "fraction": 0.639,
+     "amount": 190.28,
+     "fraction": 0.1903,
      "nutrient_id": "1177",
      "per_100g": "355",
      "provenance": {
@@ -11174,30 +11184,14 @@
       "value_kind": "cell"
      },
      "slug": "vitamin-b9",
-     "strong": true,
+     "strong": false,
      "unit": "mcg",
      "usda_unit": "UG"
-    },
-    {
-     "amount": 8.55,
-     "fraction": 0.1859,
-     "nutrient_id": "1095",
-     "per_100g": "4.75",
-     "provenance": {
-      "join": "fdc:172423/nutrient:1095",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "zinc",
-     "strong": false,
-     "unit": "mg",
-     "usda_unit": "MG"
     }
    ],
    "portion_id": "90599",
-   "portion_label": "1 cup",
-   "strength": 3.9057,
+   "portion_label": "53.6 g dry · makes 1 cup cooked",
+   "strength": 0.994,
    "usda_description": "Lupins, mature seeds, raw"
   },
   {
@@ -11654,41 +11648,32 @@
    "usda_description": "Mothbeans, mature seeds, cooked, boiled, without salt"
   },
   {
-   "breadth": 8,
+   "breadth": 6,
    "category": "Legumes",
+   "dry_yield": {
+    "arithmetic": "177.0 g cooked x 0.3077 dry matter / 0.9032 dry matter = 60.3 g of dry seed",
+    "cooked_portion_g": "177.0",
+    "cooked_twin": "mothbeans-cooked",
+    "water_cooked_g_per_100g": "69.23",
+    "water_dry_g_per_100g": "9.68"
+   },
    "efa": {
-    "acid_mg": 1470.0,
-    "fraction": 0.2413,
+    "acid_mg": 452.25,
+    "fraction": 0.0742,
     "linoleic_g_per_100g": "0.485",
     "linolenic_g_per_100g": "0.265",
-    "oil_equivalent_mg": 2171.5045,
+    "oil_equivalent_mg": 668.07,
     "qualifies": true,
-    "strong": true
+    "strong": false
    },
    "fdc_id": "172425",
-   "grams": 196.0,
+   "grams": 60.3,
    "id": "mothbeans-dry",
    "name": "Mothbeans, dry",
    "nutrients": [
     {
-     "amount": 294.0,
-     "fraction": 0.196,
-     "nutrient_id": "1087",
-     "per_100g": "150",
-     "provenance": {
-      "join": "fdc:172425/nutrient:1087",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "calcium",
-     "strong": false,
-     "unit": "mg",
-     "usda_unit": "MG"
-    },
-    {
-     "amount": 1.3485,
-     "fraction": 0.435,
+     "amount": 0.4149,
+     "fraction": 0.1338,
      "nutrient_id": "1098",
      "per_100g": "0.688",
      "provenance": {
@@ -11698,13 +11683,13 @@
       "value_kind": "cell"
      },
      "slug": "copper",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 21.266,
-     "fraction": 0.4623,
+     "amount": 6.5425,
+     "fraction": 0.1422,
      "nutrient_id": "1089",
      "per_100g": "10.85",
      "provenance": {
@@ -11714,13 +11699,13 @@
       "value_kind": "cell"
      },
      "slug": "iron",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 746.76,
-     "fraction": 0.9698,
+     "amount": 229.743,
+     "fraction": 0.2984,
      "nutrient_id": "1090",
      "per_100g": "381",
      "provenance": {
@@ -11735,8 +11720,8 @@
      "usda_unit": "MG"
     },
     {
-     "amount": 3.5672,
-     "fraction": 0.4633,
+     "amount": 1.0975,
+     "fraction": 0.1425,
      "nutrient_id": "1101",
      "per_100g": "1.82",
      "provenance": {
@@ -11746,13 +11731,13 @@
       "value_kind": "cell"
      },
      "slug": "manganese",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 2334.36,
-     "fraction": 0.4669,
+     "amount": 718.173,
+     "fraction": 0.1436,
      "nutrient_id": "1092",
      "per_100g": "1191",
      "provenance": {
@@ -11762,13 +11747,13 @@
       "value_kind": "cell"
      },
      "slug": "potassium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 1272.04,
-     "fraction": 1.272,
+     "amount": 391.347,
+     "fraction": 0.3913,
      "nutrient_id": "1177",
      "per_100g": "649",
      "provenance": {
@@ -11781,27 +11766,11 @@
      "strong": true,
      "unit": "mcg",
      "usda_unit": "UG"
-    },
-    {
-     "amount": 3.7632,
-     "fraction": 0.0818,
-     "nutrient_id": "1095",
-     "per_100g": "1.92",
-     "provenance": {
-      "join": "fdc:172425/nutrient:1095",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "zinc",
-     "strong": false,
-     "unit": "mg",
-     "usda_unit": "MG"
     }
    ],
    "portion_id": "90601",
-   "portion_label": "1 cup",
-   "strength": 4.5884,
+   "portion_label": "60.3 g dry · makes 1 cup cooked",
+   "strength": 1.326,
    "usda_description": "Mothbeans, mature seeds, raw"
   },
   {
@@ -12051,41 +12020,32 @@
    "usda_description": "Mungo beans, mature seeds, cooked, boiled, without salt"
   },
   {
-   "breadth": 8,
+   "breadth": 6,
    "category": "Legumes",
+   "dry_yield": {
+    "arithmetic": "180.0 g cooked x 0.2749 dry matter / 0.892 dry matter = 55.5 g of dry seed",
+    "cooked_portion_g": "180.0",
+    "cooked_twin": "mungo-beans-cooked",
+    "water_cooked_g_per_100g": "72.51",
+    "water_dry_g_per_100g": "10.8"
+   },
    "efa": {
-    "acid_mg": 2216.97,
-    "fraction": 0.3639,
+    "acid_mg": 594.405,
+    "fraction": 0.0976,
     "linoleic_g_per_100g": "0.072",
     "linolenic_g_per_100g": "0.999",
-    "oil_equivalent_mg": 3274.9391,
+    "oil_equivalent_mg": 878.0634,
     "qualifies": true,
-    "strong": true
+    "strong": false
    },
    "fdc_id": "174259",
-   "grams": 207.0,
+   "grams": 55.5,
    "id": "mungo-beans-dry",
    "name": "Mungo beans, dry",
    "nutrients": [
     {
-     "amount": 285.66,
-     "fraction": 0.1904,
-     "nutrient_id": "1087",
-     "per_100g": "138",
-     "provenance": {
-      "join": "fdc:174259/nutrient:1087",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "calcium",
-     "strong": false,
-     "unit": "mg",
-     "usda_unit": "MG"
-    },
-    {
-     "amount": 2.0307,
-     "fraction": 0.6551,
+     "amount": 0.5445,
+     "fraction": 0.1756,
      "nutrient_id": "1098",
      "per_100g": "0.981",
      "provenance": {
@@ -12095,13 +12055,13 @@
       "value_kind": "cell"
      },
      "slug": "copper",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 15.6699,
-     "fraction": 0.3407,
+     "amount": 4.2014,
+     "fraction": 0.0913,
      "nutrient_id": "1089",
      "per_100g": "7.57",
      "provenance": {
@@ -12111,13 +12071,13 @@
       "value_kind": "cell"
      },
      "slug": "iron",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 552.69,
-     "fraction": 0.7178,
+     "amount": 148.185,
+     "fraction": 0.1924,
      "nutrient_id": "1090",
      "per_100g": "267",
      "provenance": {
@@ -12127,13 +12087,13 @@
       "value_kind": "cell"
      },
      "slug": "magnesium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 3.1609,
-     "fraction": 0.4105,
+     "amount": 0.8475,
+     "fraction": 0.1101,
      "nutrient_id": "1101",
      "per_100g": "1.527",
      "provenance": {
@@ -12143,13 +12103,13 @@
       "value_kind": "cell"
      },
      "slug": "manganese",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 2034.81,
-     "fraction": 0.407,
+     "amount": 545.565,
+     "fraction": 0.1091,
      "nutrient_id": "1092",
      "per_100g": "983",
      "provenance": {
@@ -12159,13 +12119,13 @@
       "value_kind": "cell"
      },
      "slug": "potassium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 447.12,
-     "fraction": 0.4471,
+     "amount": 119.88,
+     "fraction": 0.1199,
      "nutrient_id": "1177",
      "per_100g": "216",
      "provenance": {
@@ -12175,30 +12135,14 @@
       "value_kind": "cell"
      },
      "slug": "vitamin-b9",
-     "strong": true,
+     "strong": false,
      "unit": "mcg",
      "usda_unit": "UG"
-    },
-    {
-     "amount": 6.9345,
-     "fraction": 0.1507,
-     "nutrient_id": "1095",
-     "per_100g": "3.35",
-     "provenance": {
-      "join": "fdc:174259/nutrient:1095",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "zinc",
-     "strong": false,
-     "unit": "mg",
-     "usda_unit": "MG"
     }
    ],
    "portion_id": "94034",
-   "portion_label": "1 cup",
-   "strength": 3.6832,
+   "portion_label": "55.5 g dry · makes 1 cup cooked",
+   "strength": 0.896,
    "usda_description": "Mungo beans, mature seeds, raw"
   },
   {
@@ -13975,41 +13919,32 @@
    "usda_description": "Pigeon peas (red gram), mature seeds, cooked, boiled, without salt"
   },
   {
-   "breadth": 8,
+   "breadth": 5,
    "category": "Legumes",
+   "dry_yield": {
+    "arithmetic": "168.0 g cooked x 0.3145 dry matter / 0.8941 dry matter = 59.1 g of dry seed",
+    "cooked_portion_g": "168.0",
+    "cooked_twin": "pigeon-peas-cooked",
+    "water_cooked_g_per_100g": "68.55",
+    "water_dry_g_per_100g": "10.59"
+   },
    "efa": {
-    "acid_mg": 1666.65,
-    "fraction": 0.2736,
+    "acid_mg": 480.483,
+    "fraction": 0.0789,
     "linoleic_g_per_100g": "0.778",
     "linolenic_g_per_100g": "0.035",
-    "oil_equivalent_mg": 2461.9987,
+    "oil_equivalent_mg": 709.7762,
     "qualifies": true,
-    "strong": true
+    "strong": false
    },
    "fdc_id": "172436",
-   "grams": 205.0,
+   "grams": 59.1,
    "id": "pigeon-peas-dry",
    "name": "Pigeon peas, dry",
    "nutrients": [
     {
-     "amount": 266.5,
-     "fraction": 0.1777,
-     "nutrient_id": "1087",
-     "per_100g": "130",
-     "provenance": {
-      "join": "fdc:172436/nutrient:1087",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "calcium",
-     "strong": false,
-     "unit": "mg",
-     "usda_unit": "MG"
-    },
-    {
-     "amount": 2.1668,
-     "fraction": 0.699,
+     "amount": 0.6247,
+     "fraction": 0.2015,
      "nutrient_id": "1098",
      "per_100g": "1.057",
      "provenance": {
@@ -14024,24 +13959,8 @@
      "usda_unit": "MG"
     },
     {
-     "amount": 10.7215,
-     "fraction": 0.2331,
-     "nutrient_id": "1089",
-     "per_100g": "5.23",
-     "provenance": {
-      "join": "fdc:172436/nutrient:1089",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "iron",
-     "strong": true,
-     "unit": "mg",
-     "usda_unit": "MG"
-    },
-    {
-     "amount": 375.15,
-     "fraction": 0.4872,
+     "amount": 108.153,
+     "fraction": 0.1405,
      "nutrient_id": "1090",
      "per_100g": "183",
      "provenance": {
@@ -14051,13 +13970,13 @@
       "value_kind": "cell"
      },
      "slug": "magnesium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 3.6715,
-     "fraction": 0.4768,
+     "amount": 1.0585,
+     "fraction": 0.1375,
      "nutrient_id": "1101",
      "per_100g": "1.791",
      "provenance": {
@@ -14067,13 +13986,13 @@
       "value_kind": "cell"
      },
      "slug": "manganese",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 2853.6,
-     "fraction": 0.5707,
+     "amount": 822.672,
+     "fraction": 0.1645,
      "nutrient_id": "1092",
      "per_100g": "1392",
      "provenance": {
@@ -14083,13 +14002,13 @@
       "value_kind": "cell"
      },
      "slug": "potassium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 934.8,
-     "fraction": 0.9348,
+     "amount": 269.496,
+     "fraction": 0.2695,
      "nutrient_id": "1177",
      "per_100g": "456",
      "provenance": {
@@ -14102,27 +14021,11 @@
      "strong": true,
      "unit": "mcg",
      "usda_unit": "UG"
-    },
-    {
-     "amount": 5.658,
-     "fraction": 0.123,
-     "nutrient_id": "1095",
-     "per_100g": "2.76",
-     "provenance": {
-      "join": "fdc:172436/nutrient:1095",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "zinc",
-     "strong": false,
-     "unit": "mg",
-     "usda_unit": "MG"
     }
    ],
    "portion_id": "90620",
-   "portion_label": "1 cup",
-   "strength": 3.9759,
+   "portion_label": "59.1 g dry · makes 1 cup cooked",
+   "strength": 0.9924,
    "usda_description": "Pigeon peas (red gram), mature seeds, raw"
   },
   {
@@ -15163,6 +15066,131 @@
    "usda_description": "Cheese, provolone"
   },
   {
+   "breadth": 6,
+   "category": "Fruits",
+   "efa": {
+    "acid_mg": 106.14,
+    "fraction": 0.0174,
+    "linoleic_g_per_100g": "0.044",
+    "linolenic_g_per_100g": "0.017",
+    "oil_equivalent_mg": 156.7915,
+    "qualifies": false,
+    "strong": false
+   },
+   "fdc_id": "168162",
+   "grams": 174.0,
+   "id": "prunes",
+   "name": "Prunes",
+   "nutrients": [
+    {
+     "amount": 3.741,
+     "fraction": 0.4066,
+     "per_100g": "21.5",
+     "provenance": {
+      "combine": "first",
+      "conservative": true,
+      "join": "name:Prunes",
+      "source_id": "who-ehc204",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "ADDED 2026-08-24 as boron's richest food. Both are plain uncooked dried prunes -- our USDA row is 'Plums, dried (prunes), uncooked'. Anderson's 21.5 ug/g is taken over Hunt's 27 by the conservative rule. THE PORTION IS USDA'S 'cup, pitted' (174 g), the same shape as the cup already used for dates, and it is the only choice that admits prunes at all: the one other portion USDA publishes is a single 9.5 g prune, which reaches 2.2%.",
+      "working": {
+       "arithmetic": "21.5 ug/g x 0.1 = 2.15 mg/100 g",
+       "ug_per_g": "21.5"
+      }
+     },
+     "slug": "boron",
+     "source_unit": "MG",
+     "strong": true,
+     "unit": "mg"
+    },
+    {
+     "amount": 17.574,
+     "fraction": 0.1757,
+     "nutrient_id": "1180",
+     "per_100g": "10.1",
+     "provenance": {
+      "join": "fdc:168162/nutrient:1180",
+      "source_id": "usda-sr-legacy",
+      "tier": "EXACT",
+      "value_kind": "cell"
+     },
+     "slug": "choline",
+     "strong": false,
+     "unit": "mg",
+     "usda_unit": "MG"
+    },
+    {
+     "amount": 0.4889,
+     "fraction": 0.1577,
+     "nutrient_id": "1098",
+     "per_100g": "0.281",
+     "provenance": {
+      "join": "fdc:168162/nutrient:1098",
+      "source_id": "usda-sr-legacy",
+      "tier": "EXACT",
+      "value_kind": "cell"
+     },
+     "slug": "copper",
+     "strong": false,
+     "unit": "mg",
+     "usda_unit": "MG"
+    },
+    {
+     "amount": 71.34,
+     "fraction": 0.0926,
+     "nutrient_id": "1090",
+     "per_100g": "41",
+     "provenance": {
+      "join": "fdc:168162/nutrient:1090",
+      "source_id": "usda-sr-legacy",
+      "tier": "EXACT",
+      "value_kind": "cell"
+     },
+     "slug": "magnesium",
+     "strong": false,
+     "unit": "mg",
+     "usda_unit": "MG"
+    },
+    {
+     "amount": 1273.68,
+     "fraction": 0.2547,
+     "nutrient_id": "1092",
+     "per_100g": "732",
+     "provenance": {
+      "join": "fdc:168162/nutrient:1092",
+      "source_id": "usda-sr-legacy",
+      "tier": "EXACT",
+      "value_kind": "cell"
+     },
+     "slug": "potassium",
+     "strong": true,
+     "unit": "mg",
+     "usda_unit": "MG"
+    },
+    {
+     "amount": 103.53,
+     "fraction": 0.3451,
+     "nutrient_id": "1185",
+     "per_100g": "59.5",
+     "provenance": {
+      "join": "fdc:168162/nutrient:1185",
+      "source_id": "usda-sr-legacy",
+      "tier": "EXACT",
+      "value_kind": "cell"
+     },
+     "slug": "vitamin-k",
+     "strong": true,
+     "unit": "mcg",
+     "usda_unit": "UG"
+    }
+   ],
+   "portion_id": "82582",
+   "portion_label": "1 cup, pitted",
+   "strength": 1.4324,
+   "usda_description": "Plums, dried (prunes), uncooked"
+  },
+  {
    "breadth": 2,
    "category": "Fruits",
    "fdc_id": "167754",
@@ -15632,6 +15660,100 @@
    "portion_label": "3 oz",
    "strength": 1.2293,
    "usda_description": "Fish, trout, rainbow, farmed, cooked, dry heat"
+  },
+  {
+   "breadth": 4,
+   "category": "Fruits",
+   "efa": {
+    "acid_mg": 76.85,
+    "conjugated_linoleic_g_per_100g": "0",
+    "fraction": 0.0126,
+    "linoleic_g_per_100g": "0.039",
+    "linolenic_g_per_100g": "0.014",
+    "oil_equivalent_mg": 113.5239,
+    "qualifies": false,
+    "strong": false
+   },
+   "fdc_id": "168165",
+   "grams": 145.0,
+   "id": "raisins",
+   "name": "Raisins",
+   "nutrients": [
+    {
+     "amount": 2.755,
+     "fraction": 0.2995,
+     "per_100g": "19.0",
+     "provenance": {
+      "combine": "first",
+      "conservative": true,
+      "join": "name:Raisins",
+      "source_id": "who-ehc204",
+      "tier": "APPROXIMATE",
+      "value_kind": "cell",
+      "why": "ADDED 2026-08-24 -- the food the owner named, and he was right about it. Both plain seedless raisins; our USDA row is the dark seedless. Anderson's 19.0 ug/g is taken over Hunt's 25 by the conservative rule. THE PORTION IS USDA'S 'cup (not packed)' (145 g), the lower of USDA's two cup readings and the same shape as dates and prunes. That choice is not what admits it: a 1.5 oz small box (43 g) still reaches 8.9%, so raisins qualify on any realistic serving.",
+      "working": {
+       "arithmetic": "19.0 ug/g x 0.1 = 1.9 mg/100 g",
+       "ug_per_g": "19.0"
+      }
+     },
+     "slug": "boron",
+     "source_unit": "MG",
+     "strong": true,
+     "unit": "mg"
+    },
+    {
+     "amount": 16.095,
+     "fraction": 0.1609,
+     "nutrient_id": "1180",
+     "per_100g": "11.1",
+     "provenance": {
+      "join": "fdc:168165/nutrient:1180",
+      "source_id": "usda-sr-legacy",
+      "tier": "EXACT",
+      "value_kind": "cell"
+     },
+     "slug": "choline",
+     "strong": false,
+     "unit": "mg",
+     "usda_unit": "MG"
+    },
+    {
+     "amount": 0.3944,
+     "fraction": 0.1272,
+     "nutrient_id": "1098",
+     "per_100g": "0.272",
+     "provenance": {
+      "join": "fdc:168165/nutrient:1098",
+      "source_id": "usda-sr-legacy",
+      "tier": "EXACT",
+      "value_kind": "cell"
+     },
+     "slug": "copper",
+     "strong": false,
+     "unit": "mg",
+     "usda_unit": "MG"
+    },
+    {
+     "amount": 1078.8,
+     "fraction": 0.2158,
+     "nutrient_id": "1092",
+     "per_100g": "744",
+     "provenance": {
+      "join": "fdc:168165/nutrient:1092",
+      "source_id": "usda-sr-legacy",
+      "tier": "EXACT",
+      "value_kind": "cell"
+     },
+     "slug": "potassium",
+     "strong": true,
+     "unit": "mg",
+     "usda_unit": "MG"
+    }
+   ],
+   "portion_id": "82588",
+   "portion_label": "1 cup (not packed)",
+   "strength": 0.8034,
+   "usda_description": "Raisins, dark, seedless (Includes foods for USDA's Food Distribution Program)"
   },
   {
    "breadth": 3,
@@ -20991,25 +21113,32 @@
    "usda_description": "Winged beans, mature seeds, cooked, boiled, without salt"
   },
   {
-   "breadth": 8,
+   "breadth": 6,
    "category": "Legumes",
+   "dry_yield": {
+    "arithmetic": "172.0 g cooked x 0.3281 dry matter / 0.9166 dry matter = 61.6 g of dry seed",
+    "cooked_portion_g": "172.0",
+    "cooked_twin": "winged-beans-cooked",
+    "water_cooked_g_per_100g": "67.19",
+    "water_dry_g_per_100g": "8.34"
+   },
    "efa": {
-    "acid_mg": 7880.6,
-    "fraction": 1.2935,
+    "acid_mg": 2667.28,
+    "fraction": 0.4378,
     "linoleic_g_per_100g": "4.068",
     "linolenic_g_per_100g": "0.262",
-    "oil_equivalent_mg": 11641.3324,
+    "oil_equivalent_mg": 3940.1433,
     "qualifies": true,
     "strong": true
    },
    "fdc_id": "174283",
-   "grams": 182.0,
+   "grams": 61.6,
    "id": "winged-beans-dry",
    "name": "Winged beans, dry",
    "nutrients": [
     {
-     "amount": 800.8,
-     "fraction": 0.5339,
+     "amount": 271.04,
+     "fraction": 0.1807,
      "nutrient_id": "1087",
      "per_100g": "440",
      "provenance": {
@@ -21019,13 +21148,13 @@
       "value_kind": "cell"
      },
      "slug": "calcium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 5.2416,
-     "fraction": 1.6908,
+     "amount": 1.7741,
+     "fraction": 0.5723,
      "nutrient_id": "1098",
      "per_100g": "2.88",
      "provenance": {
@@ -21040,8 +21169,8 @@
      "usda_unit": "MG"
     },
     {
-     "amount": 24.4608,
-     "fraction": 0.5318,
+     "amount": 8.279,
+     "fraction": 0.18,
      "nutrient_id": "1089",
      "per_100g": "13.44",
      "provenance": {
@@ -21051,13 +21180,13 @@
       "value_kind": "cell"
      },
      "slug": "iron",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 325.78,
-     "fraction": 0.4231,
+     "amount": 110.264,
+     "fraction": 0.1432,
      "nutrient_id": "1090",
      "per_100g": "179",
      "provenance": {
@@ -21067,13 +21196,13 @@
       "value_kind": "cell"
      },
      "slug": "magnesium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 6.7722,
-     "fraction": 0.8795,
+     "amount": 2.2921,
+     "fraction": 0.2977,
      "nutrient_id": "1101",
      "per_100g": "3.721",
      "provenance": {
@@ -21088,8 +21217,8 @@
      "usda_unit": "MG"
     },
     {
-     "amount": 1778.14,
-     "fraction": 0.3556,
+     "amount": 601.832,
+     "fraction": 0.1204,
      "nutrient_id": "1092",
      "per_100g": "977",
      "provenance": {
@@ -21099,46 +21228,14 @@
       "value_kind": "cell"
      },
      "slug": "potassium",
-     "strong": true,
-     "unit": "mg",
-     "usda_unit": "MG"
-    },
-    {
-     "amount": 81.9,
-     "fraction": 0.0819,
-     "nutrient_id": "1177",
-     "per_100g": "45",
-     "provenance": {
-      "join": "fdc:174283/nutrient:1177",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "vitamin-b9",
-     "strong": false,
-     "unit": "mcg",
-     "usda_unit": "UG"
-    },
-    {
-     "amount": 8.1536,
-     "fraction": 0.1773,
-     "nutrient_id": "1095",
-     "per_100g": "4.48",
-     "provenance": {
-      "join": "fdc:174283/nutrient:1095",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "zinc",
      "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     }
    ],
    "portion_id": "94080",
-   "portion_label": "1 cup",
-   "strength": 5.9674,
+   "portion_label": "61.6 g dry · makes 1 cup cooked",
+   "strength": 1.9321,
    "usda_description": "Winged beans, mature seeds, raw"
   },
   {
@@ -21332,41 +21429,32 @@
    "usda_description": "Yardlong beans, mature seeds, cooked, boiled, without salt"
   },
   {
-   "breadth": 8,
+   "breadth": 6,
    "category": "Legumes",
+   "dry_yield": {
+    "arithmetic": "171.0 g cooked x 0.312 dry matter / 0.9157 dry matter = 58.3 g of dry seed",
+    "cooked_portion_g": "171.0",
+    "cooked_twin": "yardlong-beans-cooked",
+    "water_cooked_g_per_100g": "68.8",
+    "water_dry_g_per_100g": "8.43"
+   },
    "efa": {
-    "acid_mg": 945.22,
-    "fraction": 0.1551,
+    "acid_mg": 329.978,
+    "fraction": 0.0542,
     "linoleic_g_per_100g": "0.308",
     "linolenic_g_per_100g": "0.258",
-    "oil_equivalent_mg": 1396.2922,
-    "qualifies": true,
+    "oil_equivalent_mg": 487.4481,
+    "qualifies": false,
     "strong": false
    },
    "fdc_id": "174281",
-   "grams": 167.0,
+   "grams": 58.3,
    "id": "yardlong-beans-dry",
    "name": "Yardlong beans, dry",
    "nutrients": [
     {
-     "amount": 230.46,
-     "fraction": 0.1536,
-     "nutrient_id": "1087",
-     "per_100g": "138",
-     "provenance": {
-      "join": "fdc:174281/nutrient:1087",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "calcium",
-     "strong": false,
-     "unit": "mg",
-     "usda_unit": "MG"
-    },
-    {
-     "amount": 1.4679,
-     "fraction": 0.4735,
+     "amount": 0.5125,
+     "fraction": 0.1653,
      "nutrient_id": "1098",
      "per_100g": "0.879",
      "provenance": {
@@ -21376,13 +21464,13 @@
       "value_kind": "cell"
      },
      "slug": "copper",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 14.3787,
-     "fraction": 0.3126,
+     "amount": 5.0196,
+     "fraction": 0.1091,
      "nutrient_id": "1089",
      "per_100g": "8.61",
      "provenance": {
@@ -21392,13 +21480,13 @@
       "value_kind": "cell"
      },
      "slug": "iron",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 564.46,
-     "fraction": 0.7331,
+     "amount": 197.054,
+     "fraction": 0.2559,
      "nutrient_id": "1090",
      "per_100g": "338",
      "provenance": {
@@ -21413,8 +21501,8 @@
      "usda_unit": "MG"
     },
     {
-     "amount": 2.6553,
-     "fraction": 0.3448,
+     "amount": 0.927,
+     "fraction": 0.1204,
      "nutrient_id": "1101",
      "per_100g": "1.59",
      "provenance": {
@@ -21424,13 +21512,13 @@
       "value_kind": "cell"
      },
      "slug": "manganese",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 1932.19,
-     "fraction": 0.3864,
+     "amount": 674.531,
+     "fraction": 0.1349,
      "nutrient_id": "1092",
      "per_100g": "1157",
      "provenance": {
@@ -21440,13 +21528,13 @@
       "value_kind": "cell"
      },
      "slug": "potassium",
-     "strong": true,
+     "strong": false,
      "unit": "mg",
      "usda_unit": "MG"
     },
     {
-     "amount": 1098.86,
-     "fraction": 1.0989,
+     "amount": 383.614,
+     "fraction": 0.3836,
      "nutrient_id": "1177",
      "per_100g": "658",
      "provenance": {
@@ -21459,27 +21547,11 @@
      "strong": true,
      "unit": "mcg",
      "usda_unit": "UG"
-    },
-    {
-     "amount": 5.845,
-     "fraction": 0.1271,
-     "nutrient_id": "1095",
-     "per_100g": "3.5",
-     "provenance": {
-      "join": "fdc:174281/nutrient:1095",
-      "source_id": "usda-sr-legacy",
-      "tier": "EXACT",
-      "value_kind": "cell"
-     },
-     "slug": "zinc",
-     "strong": false,
-     "unit": "mg",
-     "usda_unit": "MG"
     }
    ],
    "portion_id": "94078",
-   "portion_label": "1 cup",
-   "strength": 3.7851,
+   "portion_label": "58.3 g dry · makes 1 cup cooked",
+   "strength": 1.1692,
    "usda_description": "Yardlong beans, mature seeds, raw"
   },
   {

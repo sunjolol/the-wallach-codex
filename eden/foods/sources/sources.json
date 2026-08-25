@@ -231,12 +231,25 @@
       ]
     },
     "boron": {
-      "source_id": "boron-meacham-2015",
+      "source_id": "who-ehc204",
       "tier": "APPROXIMATE",
       "unit": "MG",
-      "display": "Meacham's chemical analysis, via Pizzorno 2015",
-      "_why": "BOUND 2026-08-24 on the owner's ruling: \"That's a great, high quality and refined source correcting a poorly calculated one, add it.\" It reverses the 2026-08-22 refusal, and on better grounds than that refusal was made: what was missing then was a per-100 g table, and this is one. ⚠ IT IS A REVIEW'S ADAPTATION OF MEACHAM, NOT MEACHAM'S OWN PAPER, and every other second source registered here pins a primary. That is a real step down and it is recorded rather than smoothed over. REOPEN THIS if Meacham & Hunt 1998 or Naghii 1996 is ever acquired -- Naghii covers 66 foods per 100 g against this table's ten.",
+      "display": "WHO EHC 204, from Hunt 1991 + Anderson 1994",
+      "_why": "REOPENED AND UPGRADED 2026-08-24 (third session) on the owner's instruction: \"re-look at Boron because the only thing showing is avocado even though I know raisins have boron also... finding ONE source and calling it done is pure laziness, DO THE WORK.\" He was right on both counts, and the binding this displaces said so itself: 'REOPEN THIS if Meacham & Hunt 1998 or Naghii 1996 is ever acquired'. Neither is acquirable -- both are paywalled -- but WHO EHC 204 is better than either alone, because it prints BOTH primary analyses side by side and is free and stable. 37 foods against ten. COMBINE IS `first` AND THE ORDER IS THE PRECEDENCE: EHC 204 leads, and Meacham-via-Pizzorno is KEPT rather than deleted because EHC Table 11 has no avocado row -- dropping it would have taken away the one food boron already showed. The two share no bound food today; if they ever do, EHC wins.",
       "parts": [
+        {
+          "payload": "who-ehc204/EHC204_Boron_WHO_IPCS_1998.html",
+          "candidate": "boron-who-ehc204.json",
+          "extractor": "eden/tools/foods/extract_boron_ehc204.py",
+          "join_kind": "name",
+          "join_field": "food",
+          "value_kind": "cell",
+          "value_field": "boron_ug_per_g",
+          "unit": "MG",
+          "convert": "ug_per_g_to_mg_per_100g",
+          "source_id": "who-ehc204",
+          "display": "WHO EHC 204, from Hunt 1991 + Anderson 1994"
+        },
         {
           "payload": "boron-meacham-pizzorno-2015/Nothing_Boring_About_Boron_PMC4712861.html",
           "candidate": "boron-meacham-pizzorno-2015.json",
@@ -249,7 +262,8 @@
           "source_id": "boron-meacham-2015",
           "display": "Meacham's chemical analysis, via Pizzorno 2015"
         }
-      ]
+      ],
+      "combine": "first"
     }
   },
   "sources": {
@@ -470,6 +484,21 @@
       "sha256": "4ab25555a2b6a54dd807ef4cb3193a97f76f5cf21d71aa09492ab2dfed8cbeb5",
       "bytes": 305266,
       "path": "eden/foods/sources/boron-meacham-pizzorno-2015/Nothing_Boring_About_Boron_PMC4712861.html"
+    },
+    "who-ehc204/EHC204_Boron_WHO_IPCS_1998.html": {
+      "dataset": "WHO/IPCS Environmental Health Criteria 204: BORON. TABLE 11 -- \"Boron content of some common foods\", ug/g fresh weight, printing Hunt et al. (1991) and Anderson et al. (1994b) side by side.",
+      "publisher": "World Health Organization, International Programme on Chemical Safety; hosted by IPCS INCHEM",
+      "released": "1998",
+      "url": "https://www.inchem.org/documents/ehc/ehc/ehc204.htm",
+      "licence": "(c) World Health Organization 1998. Published for free public access by IPCS INCHEM. The payload is GITIGNORED like every other source payload here; only the 37 extracted rows are committed.",
+      "supplies": [
+        "boron"
+      ],
+      "join": "food name -- APPROXIMATE tier, one curation decision per pair",
+      "note": "* THE CLOSEST TO PRIMARY THAT IS FREELY RETRIEVABLE, AND IT REOPENS THE 2026-08-24 BINDING EXACTLY AS THAT BINDING SAID IT SHOULD BE REOPENED. Hunt/Shuler/Mullen 1991 and Anderson et al. 1994b are the two chemical analyses every later boron table is built on, and both are paywalled. This is WHO reprinting their numbers, introduced in WHO's own words: \"Most of the concentrations of boron in foods reported before 1985 are of questionable validity because of inadequate analytical methods. Two recent reports (Hunt et al., 1991; Anderson et al., 1994b) provide an adequate indication of the amounts of boron found in various foods\". 37 foods against Meacham-via-Pizzorno's ten. * THE UNIT IS ug/g, NOT mg/100 g. Raisins read '19.0' here and 1.9 mg/100 g in the same breath; every other boron table this project has read publishes mg/100 g. The extractor re-reads the unit line from the payload and the binding declares the conversion, so the clean 10x error has two places to be caught. * TWO COLUMNS, THE LOWER IS TAKEN. Hunt and Anderson disagree by up to 3x on the same food (apple sauce 2.83 vs 1.04); WHO endorses both and neither settles it, so the conservative reading wins -- the same rule the catalog already applies to a source that measures several varieties of one food. * IT SETTLES THE RAISIN QUESTION THE OWNER RAISED. He was right that raisins carry boron: measured, they are 19.0-25 ug/g = 1.9-2.5 mg/100 g. The 2026-08-24 note that measured values run '3-8x lower' than the disclaimed software table compared RAISINS (4.51 mg/100 g) against RAISIN BRAN CEREAL (0.26) -- different foods. Against the real measured raisin the software table was high by under 2x. * BEVERAGES ARE EXCLUDED: the table's last block (wine, beer) is footnoted ug/ml, a volume basis, and parsing it with the rest would mix the two silently.",
+      "sha256": "79b55d9483906c598483ea5ccb981fb1e288d44f297123531ec6f02c0d702dd2",
+      "bytes": 550045,
+      "path": "eden/foods/sources/who-ehc204/EHC204_Boron_WHO_IPCS_1998.html"
     }
   },
   "_iodine_second_source_finding": "★ IODINE: A SECOND SOURCE THAT FILLS GAPS AND MUST NOT OVERWRITE (2026-08-22). Iodine was the worst-covered essential with a source at all: USDA/FDA/ODS reached 10 of 192 catalog foods and the other 182 showed nothing. AFCD was added as a second part, gap-fill only. ⚠ THE TWO SOURCES DISAGREE SUBSTANTIALLY WHEREVER BOTH MEASURE THE SAME FOOD, and this was measured before binding, not after: Lobster 185 vs 34.0 µg/100 g (5.4x), Ricotta 66 vs 19.0 (3.5x), Cottage cheese 46 vs 15.3 (3.0x), Egg 61 vs 47.3 (1.3x), Salt 5213 vs 4400 (1.2x). That is NOT a transcription error and chasing it as one would waste a session. It is geography: dietary iodine tracks soil iodine, national iodised-salt policy, and whether dairies clean with iodophor sanitisers -- and Australia and the United States differ on all three. Iodine is therefore the nutrient where two national food tables are LEAST interchangeable, which is exactly why the combine is `first` with the US table ahead: AFCD speaks only where ODS is silent, and not one existing number moved. WHAT IT BOUGHT, measured: 23 foods gained an iodine number they did not have, taking coverage from 10 to 33 of 192. Only ONE of them clears Wallach's 7% qualify floor -- Whole milk, at 24.3% of his 230 µg/day, which also makes it STRONG. The other 22 sit below the bar and are shown as measured-and-small rather than as nothing, per the curation's standing rule that a blank reads as 'not a source' and is the stronger, falser claim. NO NEW NAME PAIRS WERE INVENTED FOR THIS. Every one of the 23 rides a curated afcd-au-r3 pair that a human had already accepted for chloride, biotin, molybdenum or sulphur, with its reasoning already recorded in foods-catalog-curation.json. Widening iodine further means curating NEW pairs one at a time, which is a separate decision and has not been taken.",

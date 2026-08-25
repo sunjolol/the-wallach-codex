@@ -17343,7 +17343,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         "tin",
         "vanadium"
       ],
-      food_count: 248,
+      food_count: 250,
       qualify_fraction: 0.07,
       second_sources: {
         biotin: {
@@ -17351,7 +17351,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           tier: "APPROXIMATE"
         },
         boron: {
-          source_id: "boron-meacham-2015",
+          source_id: "who-ehc204",
           tier: "APPROXIMATE"
         },
         chloride: {
@@ -17400,7 +17400,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         "iodine-usda-ods-r4": "the USDA/FDA/ODS iodine database",
         "proanthocyanidin-usda-r2": "the USDA proanthocyanidin database",
         "silicon-powell-2005": "Powell\u2019s 2005 silicon database (British Journal of Nutrition)",
-        "usda-sr-legacy": "USDA FoodData Central"
+        "usda-sr-legacy": "USDA FoodData Central",
+        "who-ehc204": "WHO EHC 204, from Hunt 1991 + Anderson 1994"
       },
       strong_fraction: 0.2
     },
@@ -17680,7 +17681,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Nuts, almond butter, plain, without salt added"
       },
       {
-        breadth: 5,
+        breadth: 6,
         category: "Nuts & seeds",
         efa: {
           acid_mg: 3494.1375,
@@ -17697,6 +17698,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "almonds",
         name: "Almonds",
         nutrients: [
+          {
+            amount: 0.6521,
+            fraction: 0.0709,
+            per_100g: "23",
+            provenance: {
+              combine: "first",
+              join: "name:Almonds",
+              source_id: "who-ehc204",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "EHC Table 11 names the nut plainly and our row is raw almonds with skin; the analyses it reprints list no other almond. At 23 ug/g on a 28.35 g ounce this clears the 7% floor by a hair -- 7.09% -- so a change to either the portion or the floor drops it out.",
+              working: {
+                arithmetic: "23 ug/g x 0.1 = 2.3 mg/100 g",
+                ug_per_g: "23"
+              }
+            },
+            slug: "boron",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
           {
             amount: 14.7704,
             fraction: 0.1477,
@@ -17780,7 +17802,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "86867",
         portion_label: "1 oz (23 whole kernels)",
-        strength: 1.3002,
+        strength: 1.3711,
         usda_description: "Nuts, almonds"
       },
       {
@@ -18099,6 +18121,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             fraction: 0.2114,
             per_100g: "1.43",
             provenance: {
+              combine: "first",
               join: "name:Avocado",
               source_id: "boron-meacham-2015",
               tier: "APPROXIMATE",
@@ -22610,7 +22633,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Dandelion greens, cooked, boiled, drained, with salt"
       },
       {
-        breadth: 5,
+        breadth: 6,
         category: "Fruits",
         efa: {
           acid_mg: 27.93,
@@ -22626,6 +22649,27 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         id: "dates",
         name: "Dates",
         nutrients: [
+          {
+            amount: 1.3524,
+            fraction: 0.147,
+            per_100g: "9.2",
+            provenance: {
+              combine: "first",
+              join: "name:Dates",
+              source_id: "who-ehc204",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "Both dried dates. EHC lists one date row and our catalog entry is deglet noor; USDA sells no fresh date row, so there is no state ambiguity to resolve.",
+              working: {
+                arithmetic: "9.2 ug/g x 0.1 = 0.92 mg/100 g",
+                ug_per_g: "9.2"
+              }
+            },
+            slug: "boron",
+            source_unit: "MG",
+            strong: false,
+            unit: "mg"
+          },
           {
             amount: 9.261,
             fraction: 0.0926,
@@ -22709,7 +22753,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         ],
         portion_id: "89264",
         portion_label: "1 cup, chopped",
-        strength: 1.1078,
+        strength: 1.2548,
         usda_description: "Dates, deglet noor"
       },
       {
@@ -26072,41 +26116,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Hyacinth beans, mature seeds, cooked, boiled, without salt"
       },
       {
-        breadth: 7,
+        breadth: 6,
         category: "Legumes",
+        dry_yield: {
+          arithmetic: "194.0 g cooked x 0.3087 dry matter / 0.9062 dry matter = 66.1 g of dry seed",
+          cooked_portion_g: "194.0",
+          cooked_twin: "hyacinth-beans-cooked",
+          water_cooked_g_per_100g: "69.13",
+          water_dry_g_per_100g: "9.38"
+        },
         efa: {
-          acid_mg: 1501.5,
-          fraction: 0.2464,
+          acid_mg: 472.615,
+          fraction: 0.0776,
           linoleic_g_per_100g: "0.715",
           linolenic_g_per_100g: null,
-          oil_equivalent_mg: 2218.0368,
+          oil_equivalent_mg: 698.1535,
           qualifies: true,
-          strong: true
+          strong: false
         },
         fdc_id: "175210",
-        grams: 210,
+        grams: 66.1,
         id: "hyacinth-beans-dry",
         name: "Hyacinth beans, dry",
         nutrients: [
           {
-            amount: 273,
-            fraction: 0.182,
-            nutrient_id: "1087",
-            per_100g: "130",
-            provenance: {
-              join: "fdc:175210/nutrient:1087",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "calcium",
-            strong: false,
-            unit: "mg",
-            usda_unit: "MG"
-          },
-          {
-            amount: 2.8035,
-            fraction: 0.9044,
+            amount: 0.8824,
+            fraction: 0.2847,
             nutrient_id: "1098",
             per_100g: "1.335",
             provenance: {
@@ -26121,8 +26156,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             usda_unit: "MG"
           },
           {
-            amount: 10.71,
-            fraction: 0.2328,
+            amount: 3.3711,
+            fraction: 0.0733,
             nutrient_id: "1089",
             per_100g: "5.1",
             provenance: {
@@ -26132,13 +26167,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "iron",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 594.3,
-            fraction: 0.7718,
+            amount: 187.063,
+            fraction: 0.2429,
             nutrient_id: "1090",
             per_100g: "283",
             provenance: {
@@ -26153,8 +26188,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             usda_unit: "MG"
           },
           {
-            amount: 3.3033,
-            fraction: 0.429,
+            amount: 1.0398,
+            fraction: 0.135,
             nutrient_id: "1101",
             per_100g: "1.573",
             provenance: {
@@ -26164,13 +26199,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "manganese",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 2593.5,
-            fraction: 0.5187,
+            amount: 816.335,
+            fraction: 0.1633,
             nutrient_id: "1092",
             per_100g: "1235",
             provenance: {
@@ -26180,13 +26215,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "potassium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 19.53,
-            fraction: 0.4246,
+            amount: 6.1473,
+            fraction: 0.1336,
             nutrient_id: "1095",
             per_100g: "9.3",
             provenance: {
@@ -26196,14 +26231,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "zinc",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           }
         ],
         portion_id: "95849",
-        portion_label: "1 cup",
-        strength: 3.7097,
+        portion_label: "66.1 g dry \xB7 makes 1 cup cooked",
+        strength: 1.1104,
         usda_description: "Hyacinth beans, mature seeds, raw"
       },
       {
@@ -28209,41 +28244,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Lupins, mature seeds, cooked, boiled, without salt"
       },
       {
-        breadth: 8,
+        breadth: 5,
         category: "Legumes",
+        dry_yield: {
+          arithmetic: "166.0 g cooked x 0.2892 dry matter / 0.8956 dry matter = 53.6 g of dry seed",
+          cooked_portion_g: "166.0",
+          cooked_twin: "lupins-cooked",
+          water_cooked_g_per_100g: "71.08",
+          water_dry_g_per_100g: "10.44"
+        },
         efa: {
-          acid_mg: 4393.8,
-          fraction: 0.7212,
+          acid_mg: 1308.376,
+          fraction: 0.2148,
           linoleic_g_per_100g: "1.995",
           linolenic_g_per_100g: "0.446",
-          oil_equivalent_mg: 6490.5828,
+          oil_equivalent_mg: 1932.7513,
           qualifies: true,
           strong: true
         },
         fdc_id: "172423",
-        grams: 180,
+        grams: 53.6,
         id: "lupins-dry",
         name: "Lupins, dry",
         nutrients: [
           {
-            amount: 316.8,
-            fraction: 0.2112,
-            nutrient_id: "1087",
-            per_100g: "176",
-            provenance: {
-              join: "fdc:172423/nutrient:1087",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "calcium",
-            strong: true,
-            unit: "mg",
-            usda_unit: "MG"
-          },
-          {
-            amount: 1.8396,
-            fraction: 0.5934,
+            amount: 0.5478,
+            fraction: 0.1767,
             nutrient_id: "1098",
             per_100g: "1.022",
             provenance: {
@@ -28253,29 +28279,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "copper",
-            strong: true,
-            unit: "mg",
-            usda_unit: "MG"
-          },
-          {
-            amount: 7.848,
-            fraction: 0.1706,
-            nutrient_id: "1089",
-            per_100g: "4.36",
-            provenance: {
-              join: "fdc:172423/nutrient:1089",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "iron",
             strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 356.4,
-            fraction: 0.4629,
+            amount: 106.128,
+            fraction: 0.1378,
             nutrient_id: "1090",
             per_100g: "198",
             provenance: {
@@ -28285,13 +28295,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "magnesium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 4.2876,
-            fraction: 0.5568,
+            amount: 1.2768,
+            fraction: 0.1658,
             nutrient_id: "1101",
             per_100g: "2.382",
             provenance: {
@@ -28301,13 +28311,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "manganese",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 1823.4,
-            fraction: 0.3647,
+            amount: 542.968,
+            fraction: 0.1086,
             nutrient_id: "1092",
             per_100g: "1013",
             provenance: {
@@ -28317,13 +28327,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "potassium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 639,
-            fraction: 0.639,
+            amount: 190.28,
+            fraction: 0.1903,
             nutrient_id: "1177",
             per_100g: "355",
             provenance: {
@@ -28333,30 +28343,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "vitamin-b9",
-            strong: true,
+            strong: false,
             unit: "mcg",
             usda_unit: "UG"
-          },
-          {
-            amount: 8.55,
-            fraction: 0.1859,
-            nutrient_id: "1095",
-            per_100g: "4.75",
-            provenance: {
-              join: "fdc:172423/nutrient:1095",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "zinc",
-            strong: false,
-            unit: "mg",
-            usda_unit: "MG"
           }
         ],
         portion_id: "90599",
-        portion_label: "1 cup",
-        strength: 3.9057,
+        portion_label: "53.6 g dry \xB7 makes 1 cup cooked",
+        strength: 0.994,
         usda_description: "Lupins, mature seeds, raw"
       },
       {
@@ -28813,41 +28807,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Mothbeans, mature seeds, cooked, boiled, without salt"
       },
       {
-        breadth: 8,
+        breadth: 6,
         category: "Legumes",
+        dry_yield: {
+          arithmetic: "177.0 g cooked x 0.3077 dry matter / 0.9032 dry matter = 60.3 g of dry seed",
+          cooked_portion_g: "177.0",
+          cooked_twin: "mothbeans-cooked",
+          water_cooked_g_per_100g: "69.23",
+          water_dry_g_per_100g: "9.68"
+        },
         efa: {
-          acid_mg: 1470,
-          fraction: 0.2413,
+          acid_mg: 452.25,
+          fraction: 0.0742,
           linoleic_g_per_100g: "0.485",
           linolenic_g_per_100g: "0.265",
-          oil_equivalent_mg: 2171.5045,
+          oil_equivalent_mg: 668.07,
           qualifies: true,
-          strong: true
+          strong: false
         },
         fdc_id: "172425",
-        grams: 196,
+        grams: 60.3,
         id: "mothbeans-dry",
         name: "Mothbeans, dry",
         nutrients: [
           {
-            amount: 294,
-            fraction: 0.196,
-            nutrient_id: "1087",
-            per_100g: "150",
-            provenance: {
-              join: "fdc:172425/nutrient:1087",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "calcium",
-            strong: false,
-            unit: "mg",
-            usda_unit: "MG"
-          },
-          {
-            amount: 1.3485,
-            fraction: 0.435,
+            amount: 0.4149,
+            fraction: 0.1338,
             nutrient_id: "1098",
             per_100g: "0.688",
             provenance: {
@@ -28857,13 +28842,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "copper",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 21.266,
-            fraction: 0.4623,
+            amount: 6.5425,
+            fraction: 0.1422,
             nutrient_id: "1089",
             per_100g: "10.85",
             provenance: {
@@ -28873,13 +28858,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "iron",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 746.76,
-            fraction: 0.9698,
+            amount: 229.743,
+            fraction: 0.2984,
             nutrient_id: "1090",
             per_100g: "381",
             provenance: {
@@ -28894,8 +28879,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             usda_unit: "MG"
           },
           {
-            amount: 3.5672,
-            fraction: 0.4633,
+            amount: 1.0975,
+            fraction: 0.1425,
             nutrient_id: "1101",
             per_100g: "1.82",
             provenance: {
@@ -28905,13 +28890,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "manganese",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 2334.36,
-            fraction: 0.4669,
+            amount: 718.173,
+            fraction: 0.1436,
             nutrient_id: "1092",
             per_100g: "1191",
             provenance: {
@@ -28921,13 +28906,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "potassium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 1272.04,
-            fraction: 1.272,
+            amount: 391.347,
+            fraction: 0.3913,
             nutrient_id: "1177",
             per_100g: "649",
             provenance: {
@@ -28940,27 +28925,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             strong: true,
             unit: "mcg",
             usda_unit: "UG"
-          },
-          {
-            amount: 3.7632,
-            fraction: 0.0818,
-            nutrient_id: "1095",
-            per_100g: "1.92",
-            provenance: {
-              join: "fdc:172425/nutrient:1095",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "zinc",
-            strong: false,
-            unit: "mg",
-            usda_unit: "MG"
           }
         ],
         portion_id: "90601",
-        portion_label: "1 cup",
-        strength: 4.5884,
+        portion_label: "60.3 g dry \xB7 makes 1 cup cooked",
+        strength: 1.326,
         usda_description: "Mothbeans, mature seeds, raw"
       },
       {
@@ -29210,41 +29179,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Mungo beans, mature seeds, cooked, boiled, without salt"
       },
       {
-        breadth: 8,
+        breadth: 6,
         category: "Legumes",
+        dry_yield: {
+          arithmetic: "180.0 g cooked x 0.2749 dry matter / 0.892 dry matter = 55.5 g of dry seed",
+          cooked_portion_g: "180.0",
+          cooked_twin: "mungo-beans-cooked",
+          water_cooked_g_per_100g: "72.51",
+          water_dry_g_per_100g: "10.8"
+        },
         efa: {
-          acid_mg: 2216.97,
-          fraction: 0.3639,
+          acid_mg: 594.405,
+          fraction: 0.0976,
           linoleic_g_per_100g: "0.072",
           linolenic_g_per_100g: "0.999",
-          oil_equivalent_mg: 3274.9391,
+          oil_equivalent_mg: 878.0634,
           qualifies: true,
-          strong: true
+          strong: false
         },
         fdc_id: "174259",
-        grams: 207,
+        grams: 55.5,
         id: "mungo-beans-dry",
         name: "Mungo beans, dry",
         nutrients: [
           {
-            amount: 285.66,
-            fraction: 0.1904,
-            nutrient_id: "1087",
-            per_100g: "138",
-            provenance: {
-              join: "fdc:174259/nutrient:1087",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "calcium",
-            strong: false,
-            unit: "mg",
-            usda_unit: "MG"
-          },
-          {
-            amount: 2.0307,
-            fraction: 0.6551,
+            amount: 0.5445,
+            fraction: 0.1756,
             nutrient_id: "1098",
             per_100g: "0.981",
             provenance: {
@@ -29254,13 +29214,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "copper",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 15.6699,
-            fraction: 0.3407,
+            amount: 4.2014,
+            fraction: 0.0913,
             nutrient_id: "1089",
             per_100g: "7.57",
             provenance: {
@@ -29270,13 +29230,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "iron",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 552.69,
-            fraction: 0.7178,
+            amount: 148.185,
+            fraction: 0.1924,
             nutrient_id: "1090",
             per_100g: "267",
             provenance: {
@@ -29286,13 +29246,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "magnesium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 3.1609,
-            fraction: 0.4105,
+            amount: 0.8475,
+            fraction: 0.1101,
             nutrient_id: "1101",
             per_100g: "1.527",
             provenance: {
@@ -29302,13 +29262,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "manganese",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 2034.81,
-            fraction: 0.407,
+            amount: 545.565,
+            fraction: 0.1091,
             nutrient_id: "1092",
             per_100g: "983",
             provenance: {
@@ -29318,13 +29278,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "potassium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 447.12,
-            fraction: 0.4471,
+            amount: 119.88,
+            fraction: 0.1199,
             nutrient_id: "1177",
             per_100g: "216",
             provenance: {
@@ -29334,30 +29294,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "vitamin-b9",
-            strong: true,
+            strong: false,
             unit: "mcg",
             usda_unit: "UG"
-          },
-          {
-            amount: 6.9345,
-            fraction: 0.1507,
-            nutrient_id: "1095",
-            per_100g: "3.35",
-            provenance: {
-              join: "fdc:174259/nutrient:1095",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "zinc",
-            strong: false,
-            unit: "mg",
-            usda_unit: "MG"
           }
         ],
         portion_id: "94034",
-        portion_label: "1 cup",
-        strength: 3.6832,
+        portion_label: "55.5 g dry \xB7 makes 1 cup cooked",
+        strength: 0.896,
         usda_description: "Mungo beans, mature seeds, raw"
       },
       {
@@ -31134,41 +31078,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Pigeon peas (red gram), mature seeds, cooked, boiled, without salt"
       },
       {
-        breadth: 8,
+        breadth: 5,
         category: "Legumes",
+        dry_yield: {
+          arithmetic: "168.0 g cooked x 0.3145 dry matter / 0.8941 dry matter = 59.1 g of dry seed",
+          cooked_portion_g: "168.0",
+          cooked_twin: "pigeon-peas-cooked",
+          water_cooked_g_per_100g: "68.55",
+          water_dry_g_per_100g: "10.59"
+        },
         efa: {
-          acid_mg: 1666.65,
-          fraction: 0.2736,
+          acid_mg: 480.483,
+          fraction: 0.0789,
           linoleic_g_per_100g: "0.778",
           linolenic_g_per_100g: "0.035",
-          oil_equivalent_mg: 2461.9987,
+          oil_equivalent_mg: 709.7762,
           qualifies: true,
-          strong: true
+          strong: false
         },
         fdc_id: "172436",
-        grams: 205,
+        grams: 59.1,
         id: "pigeon-peas-dry",
         name: "Pigeon peas, dry",
         nutrients: [
           {
-            amount: 266.5,
-            fraction: 0.1777,
-            nutrient_id: "1087",
-            per_100g: "130",
-            provenance: {
-              join: "fdc:172436/nutrient:1087",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "calcium",
-            strong: false,
-            unit: "mg",
-            usda_unit: "MG"
-          },
-          {
-            amount: 2.1668,
-            fraction: 0.699,
+            amount: 0.6247,
+            fraction: 0.2015,
             nutrient_id: "1098",
             per_100g: "1.057",
             provenance: {
@@ -31183,24 +31118,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             usda_unit: "MG"
           },
           {
-            amount: 10.7215,
-            fraction: 0.2331,
-            nutrient_id: "1089",
-            per_100g: "5.23",
-            provenance: {
-              join: "fdc:172436/nutrient:1089",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "iron",
-            strong: true,
-            unit: "mg",
-            usda_unit: "MG"
-          },
-          {
-            amount: 375.15,
-            fraction: 0.4872,
+            amount: 108.153,
+            fraction: 0.1405,
             nutrient_id: "1090",
             per_100g: "183",
             provenance: {
@@ -31210,13 +31129,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "magnesium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 3.6715,
-            fraction: 0.4768,
+            amount: 1.0585,
+            fraction: 0.1375,
             nutrient_id: "1101",
             per_100g: "1.791",
             provenance: {
@@ -31226,13 +31145,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "manganese",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 2853.6,
-            fraction: 0.5707,
+            amount: 822.672,
+            fraction: 0.1645,
             nutrient_id: "1092",
             per_100g: "1392",
             provenance: {
@@ -31242,13 +31161,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "potassium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 934.8,
-            fraction: 0.9348,
+            amount: 269.496,
+            fraction: 0.2695,
             nutrient_id: "1177",
             per_100g: "456",
             provenance: {
@@ -31261,27 +31180,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             strong: true,
             unit: "mcg",
             usda_unit: "UG"
-          },
-          {
-            amount: 5.658,
-            fraction: 0.123,
-            nutrient_id: "1095",
-            per_100g: "2.76",
-            provenance: {
-              join: "fdc:172436/nutrient:1095",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "zinc",
-            strong: false,
-            unit: "mg",
-            usda_unit: "MG"
           }
         ],
         portion_id: "90620",
-        portion_label: "1 cup",
-        strength: 3.9759,
+        portion_label: "59.1 g dry \xB7 makes 1 cup cooked",
+        strength: 0.9924,
         usda_description: "Pigeon peas (red gram), mature seeds, raw"
       },
       {
@@ -32322,6 +32225,131 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Cheese, provolone"
       },
       {
+        breadth: 6,
+        category: "Fruits",
+        efa: {
+          acid_mg: 106.14,
+          fraction: 0.0174,
+          linoleic_g_per_100g: "0.044",
+          linolenic_g_per_100g: "0.017",
+          oil_equivalent_mg: 156.7915,
+          qualifies: false,
+          strong: false
+        },
+        fdc_id: "168162",
+        grams: 174,
+        id: "prunes",
+        name: "Prunes",
+        nutrients: [
+          {
+            amount: 3.741,
+            fraction: 0.4066,
+            per_100g: "21.5",
+            provenance: {
+              combine: "first",
+              conservative: true,
+              join: "name:Prunes",
+              source_id: "who-ehc204",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "ADDED 2026-08-24 as boron's richest food. Both are plain uncooked dried prunes -- our USDA row is 'Plums, dried (prunes), uncooked'. Anderson's 21.5 ug/g is taken over Hunt's 27 by the conservative rule. THE PORTION IS USDA'S 'cup, pitted' (174 g), the same shape as the cup already used for dates, and it is the only choice that admits prunes at all: the one other portion USDA publishes is a single 9.5 g prune, which reaches 2.2%.",
+              working: {
+                arithmetic: "21.5 ug/g x 0.1 = 2.15 mg/100 g",
+                ug_per_g: "21.5"
+              }
+            },
+            slug: "boron",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 17.574,
+            fraction: 0.1757,
+            nutrient_id: "1180",
+            per_100g: "10.1",
+            provenance: {
+              join: "fdc:168162/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.4889,
+            fraction: 0.1577,
+            nutrient_id: "1098",
+            per_100g: "0.281",
+            provenance: {
+              join: "fdc:168162/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 71.34,
+            fraction: 0.0926,
+            nutrient_id: "1090",
+            per_100g: "41",
+            provenance: {
+              join: "fdc:168162/nutrient:1090",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "magnesium",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1273.68,
+            fraction: 0.2547,
+            nutrient_id: "1092",
+            per_100g: "732",
+            provenance: {
+              join: "fdc:168162/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 103.53,
+            fraction: 0.3451,
+            nutrient_id: "1185",
+            per_100g: "59.5",
+            provenance: {
+              join: "fdc:168162/nutrient:1185",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "vitamin-k",
+            strong: true,
+            unit: "mcg",
+            usda_unit: "UG"
+          }
+        ],
+        portion_id: "82582",
+        portion_label: "1 cup, pitted",
+        strength: 1.4324,
+        usda_description: "Plums, dried (prunes), uncooked"
+      },
+      {
         breadth: 2,
         category: "Fruits",
         fdc_id: "167754",
@@ -32791,6 +32819,100 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         portion_label: "3 oz",
         strength: 1.2293,
         usda_description: "Fish, trout, rainbow, farmed, cooked, dry heat"
+      },
+      {
+        breadth: 4,
+        category: "Fruits",
+        efa: {
+          acid_mg: 76.85,
+          conjugated_linoleic_g_per_100g: "0",
+          fraction: 0.0126,
+          linoleic_g_per_100g: "0.039",
+          linolenic_g_per_100g: "0.014",
+          oil_equivalent_mg: 113.5239,
+          qualifies: false,
+          strong: false
+        },
+        fdc_id: "168165",
+        grams: 145,
+        id: "raisins",
+        name: "Raisins",
+        nutrients: [
+          {
+            amount: 2.755,
+            fraction: 0.2995,
+            per_100g: "19.0",
+            provenance: {
+              combine: "first",
+              conservative: true,
+              join: "name:Raisins",
+              source_id: "who-ehc204",
+              tier: "APPROXIMATE",
+              value_kind: "cell",
+              why: "ADDED 2026-08-24 -- the food the owner named, and he was right about it. Both plain seedless raisins; our USDA row is the dark seedless. Anderson's 19.0 ug/g is taken over Hunt's 25 by the conservative rule. THE PORTION IS USDA'S 'cup (not packed)' (145 g), the lower of USDA's two cup readings and the same shape as dates and prunes. That choice is not what admits it: a 1.5 oz small box (43 g) still reaches 8.9%, so raisins qualify on any realistic serving.",
+              working: {
+                arithmetic: "19.0 ug/g x 0.1 = 1.9 mg/100 g",
+                ug_per_g: "19.0"
+              }
+            },
+            slug: "boron",
+            source_unit: "MG",
+            strong: true,
+            unit: "mg"
+          },
+          {
+            amount: 16.095,
+            fraction: 0.1609,
+            nutrient_id: "1180",
+            per_100g: "11.1",
+            provenance: {
+              join: "fdc:168165/nutrient:1180",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "choline",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 0.3944,
+            fraction: 0.1272,
+            nutrient_id: "1098",
+            per_100g: "0.272",
+            provenance: {
+              join: "fdc:168165/nutrient:1098",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "copper",
+            strong: false,
+            unit: "mg",
+            usda_unit: "MG"
+          },
+          {
+            amount: 1078.8,
+            fraction: 0.2158,
+            nutrient_id: "1092",
+            per_100g: "744",
+            provenance: {
+              join: "fdc:168165/nutrient:1092",
+              source_id: "usda-sr-legacy",
+              tier: "EXACT",
+              value_kind: "cell"
+            },
+            slug: "potassium",
+            strong: true,
+            unit: "mg",
+            usda_unit: "MG"
+          }
+        ],
+        portion_id: "82588",
+        portion_label: "1 cup (not packed)",
+        strength: 0.8034,
+        usda_description: "Raisins, dark, seedless (Includes foods for USDA's Food Distribution Program)"
       },
       {
         breadth: 3,
@@ -38150,25 +38272,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Winged beans, mature seeds, cooked, boiled, without salt"
       },
       {
-        breadth: 8,
+        breadth: 6,
         category: "Legumes",
+        dry_yield: {
+          arithmetic: "172.0 g cooked x 0.3281 dry matter / 0.9166 dry matter = 61.6 g of dry seed",
+          cooked_portion_g: "172.0",
+          cooked_twin: "winged-beans-cooked",
+          water_cooked_g_per_100g: "67.19",
+          water_dry_g_per_100g: "8.34"
+        },
         efa: {
-          acid_mg: 7880.6,
-          fraction: 1.2935,
+          acid_mg: 2667.28,
+          fraction: 0.4378,
           linoleic_g_per_100g: "4.068",
           linolenic_g_per_100g: "0.262",
-          oil_equivalent_mg: 11641.3324,
+          oil_equivalent_mg: 3940.1433,
           qualifies: true,
           strong: true
         },
         fdc_id: "174283",
-        grams: 182,
+        grams: 61.6,
         id: "winged-beans-dry",
         name: "Winged beans, dry",
         nutrients: [
           {
-            amount: 800.8,
-            fraction: 0.5339,
+            amount: 271.04,
+            fraction: 0.1807,
             nutrient_id: "1087",
             per_100g: "440",
             provenance: {
@@ -38178,13 +38307,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "calcium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 5.2416,
-            fraction: 1.6908,
+            amount: 1.7741,
+            fraction: 0.5723,
             nutrient_id: "1098",
             per_100g: "2.88",
             provenance: {
@@ -38199,8 +38328,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             usda_unit: "MG"
           },
           {
-            amount: 24.4608,
-            fraction: 0.5318,
+            amount: 8.279,
+            fraction: 0.18,
             nutrient_id: "1089",
             per_100g: "13.44",
             provenance: {
@@ -38210,13 +38339,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "iron",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 325.78,
-            fraction: 0.4231,
+            amount: 110.264,
+            fraction: 0.1432,
             nutrient_id: "1090",
             per_100g: "179",
             provenance: {
@@ -38226,13 +38355,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "magnesium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 6.7722,
-            fraction: 0.8795,
+            amount: 2.2921,
+            fraction: 0.2977,
             nutrient_id: "1101",
             per_100g: "3.721",
             provenance: {
@@ -38247,8 +38376,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             usda_unit: "MG"
           },
           {
-            amount: 1778.14,
-            fraction: 0.3556,
+            amount: 601.832,
+            fraction: 0.1204,
             nutrient_id: "1092",
             per_100g: "977",
             provenance: {
@@ -38258,46 +38387,14 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "potassium",
-            strong: true,
-            unit: "mg",
-            usda_unit: "MG"
-          },
-          {
-            amount: 81.9,
-            fraction: 0.0819,
-            nutrient_id: "1177",
-            per_100g: "45",
-            provenance: {
-              join: "fdc:174283/nutrient:1177",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "vitamin-b9",
-            strong: false,
-            unit: "mcg",
-            usda_unit: "UG"
-          },
-          {
-            amount: 8.1536,
-            fraction: 0.1773,
-            nutrient_id: "1095",
-            per_100g: "4.48",
-            provenance: {
-              join: "fdc:174283/nutrient:1095",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "zinc",
             strong: false,
             unit: "mg",
             usda_unit: "MG"
           }
         ],
         portion_id: "94080",
-        portion_label: "1 cup",
-        strength: 5.9674,
+        portion_label: "61.6 g dry \xB7 makes 1 cup cooked",
+        strength: 1.9321,
         usda_description: "Winged beans, mature seeds, raw"
       },
       {
@@ -38491,41 +38588,32 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         usda_description: "Yardlong beans, mature seeds, cooked, boiled, without salt"
       },
       {
-        breadth: 8,
+        breadth: 6,
         category: "Legumes",
+        dry_yield: {
+          arithmetic: "171.0 g cooked x 0.312 dry matter / 0.9157 dry matter = 58.3 g of dry seed",
+          cooked_portion_g: "171.0",
+          cooked_twin: "yardlong-beans-cooked",
+          water_cooked_g_per_100g: "68.8",
+          water_dry_g_per_100g: "8.43"
+        },
         efa: {
-          acid_mg: 945.22,
-          fraction: 0.1551,
+          acid_mg: 329.978,
+          fraction: 0.0542,
           linoleic_g_per_100g: "0.308",
           linolenic_g_per_100g: "0.258",
-          oil_equivalent_mg: 1396.2922,
-          qualifies: true,
+          oil_equivalent_mg: 487.4481,
+          qualifies: false,
           strong: false
         },
         fdc_id: "174281",
-        grams: 167,
+        grams: 58.3,
         id: "yardlong-beans-dry",
         name: "Yardlong beans, dry",
         nutrients: [
           {
-            amount: 230.46,
-            fraction: 0.1536,
-            nutrient_id: "1087",
-            per_100g: "138",
-            provenance: {
-              join: "fdc:174281/nutrient:1087",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "calcium",
-            strong: false,
-            unit: "mg",
-            usda_unit: "MG"
-          },
-          {
-            amount: 1.4679,
-            fraction: 0.4735,
+            amount: 0.5125,
+            fraction: 0.1653,
             nutrient_id: "1098",
             per_100g: "0.879",
             provenance: {
@@ -38535,13 +38623,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "copper",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 14.3787,
-            fraction: 0.3126,
+            amount: 5.0196,
+            fraction: 0.1091,
             nutrient_id: "1089",
             per_100g: "8.61",
             provenance: {
@@ -38551,13 +38639,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "iron",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 564.46,
-            fraction: 0.7331,
+            amount: 197.054,
+            fraction: 0.2559,
             nutrient_id: "1090",
             per_100g: "338",
             provenance: {
@@ -38572,8 +38660,8 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             usda_unit: "MG"
           },
           {
-            amount: 2.6553,
-            fraction: 0.3448,
+            amount: 0.927,
+            fraction: 0.1204,
             nutrient_id: "1101",
             per_100g: "1.59",
             provenance: {
@@ -38583,13 +38671,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "manganese",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 1932.19,
-            fraction: 0.3864,
+            amount: 674.531,
+            fraction: 0.1349,
             nutrient_id: "1092",
             per_100g: "1157",
             provenance: {
@@ -38599,13 +38687,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
               value_kind: "cell"
             },
             slug: "potassium",
-            strong: true,
+            strong: false,
             unit: "mg",
             usda_unit: "MG"
           },
           {
-            amount: 1098.86,
-            fraction: 1.0989,
+            amount: 383.614,
+            fraction: 0.3836,
             nutrient_id: "1177",
             per_100g: "658",
             provenance: {
@@ -38618,27 +38706,11 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
             strong: true,
             unit: "mcg",
             usda_unit: "UG"
-          },
-          {
-            amount: 5.845,
-            fraction: 0.1271,
-            nutrient_id: "1095",
-            per_100g: "3.5",
-            provenance: {
-              join: "fdc:174281/nutrient:1095",
-              source_id: "usda-sr-legacy",
-              tier: "EXACT",
-              value_kind: "cell"
-            },
-            slug: "zinc",
-            strong: false,
-            unit: "mg",
-            usda_unit: "MG"
           }
         ],
         portion_id: "94078",
-        portion_label: "1 cup",
-        strength: 3.7851,
+        portion_label: "58.3 g dry \xB7 makes 1 cup cooked",
+        strength: 1.1692,
         usda_description: "Yardlong beans, mature seeds, raw"
       },
       {
@@ -45759,7 +45831,113 @@ VERIFICATION
 build OK; invariants 104/104 with no new reds (24 external / 33 consistency / 45 structural / 2 meta -- green means nothing drifted, not that anything is right); vitest 100/100, sixteen of them new, including per-goal floor and ceiling bands on both surfaces, "never lists a product under a goal its own card says nothing about", and an omega-only product reading exactly efa_oil_mg / 9000; nine render probes green, including the new tools/probes/render_probe_goal_filter_census.js which drives all 31 options of both filters in the running app and censuses what each returns -- the assertion the previous miscalibration shipped without.
 
 NOT DONE
-The goal pills still run about 2.4 lines per card at five chosen goals. Three further treatments were measured and deliberately not taken: moving the denominator to the goal picker (166px), bar rows (177px, and the only shape that cannot wrap at any label length or goal count), and shorter goal names, which is a rename and therefore his call. Mobile design is the next session's task.` }];
+The goal pills still run about 2.4 lines per card at five chosen goals. Three further treatments were measured and deliberately not taken: moving the denominator to the goal picker (166px), bar rows (177px, and the only shape that cannot wrap at any label length or goal count), and shorter goal names, which is a rename and therefore his call. Mobile design is the next session's task.` }, { id: "lg_mt7xa74p_0ns1dt", ts: "2026-08-24T19:24:24.217648-05:00", surface: "foods/boron+inositol", kind: "round-close", summary: "Boron's food list went from one food to five - prunes, raisins, avocado, dates, almonds - after he called the one-avocado list lazy and was right; and the note saying raisins had no boron had compared raisins against raisin BRAN.", detail: `He opened by saying nothing should still be unbound, because he had already approved
+all of it. He was right, and then he was right again about something bigger.
+
+The first thing he caught was a stale note. The handoff said chromium and phosphorus were still
+waiting on his decision. Both had actually been finished in the very same session that wrote that
+note. Checking every one of the ninety-one nutrients in the running app settled it: chromium is
+covered by abalone, and phosphorus was never a question at all - Dr. Wallach deliberately
+recommends none of it, so there is nothing to find a food for. Only one nutrient, inositol, is
+genuinely still missing a food source.
+
+The second thing was boron. Its page listed exactly one food, avocado, and he said finding one
+source and calling it done was laziness. He also said he knew raisins had boron. Both of those
+turned out to be correct, and the project's own records were wrong about the second one. An earlier
+note had claimed the properly measured boron figures were three to eight times lower than the
+widely quoted ones - but it had compared RAISINS against RAISIN BRAN CEREAL, which are not the same
+food. The table it was reading simply had no raisin row. Real measured raisins carry plenty of
+boron.
+
+So the search was run again properly, and it found something better than either of the two papers
+the old record had given up on as paywalled: the World Health Organization's own boron report from
+1998 reprints BOTH of those primary laboratory analyses side by side, thirty-seven foods instead of
+ten, free to read and stable. The WHO introduces it by saying that boron figures published before
+1985 are unreliable and that these two studies are the ones to trust.
+
+Boron's food list is now five foods: prunes at 41% of his daily amount, raisins at 30%, avocado at
+21%, dates at 15% and almonds at 7%. Prunes and raisins had to be added to the food catalogue -
+they were never in it.
+
+Inositol was hunted just as hard and did not close. The definitive study measured 487 foods in
+1980, and it sits behind a paywall. Every free alternative either has no numbers in it or measures
+a different molecule. Its page already tells the truth: this is a gap in our sources, not a finding
+about food.
+
+--- technical record ---
+
+STALE HANDOFF LINE, CORRECTED. chronicle/next-chunk.md carried "chromium and phosphorus remain
+bindable-but-unbound, awaiting his ruling". Censused all 91 essentials by driving the running app:
+verdicts are foods 30 / plant_derived 34 / vehicle_supplied 3 / unreachable 3 / no_binding 1 /
+zero_target 1 / no_target 19. chromium = foods (abalone 120.7 mcg, 19.5% of 620 mcg, AFCD r3).
+phosphorus = zero_target (Wallach low = 0.0 mg, WAL-CLM-LETS-000061). Only inositol is no_binding.
+
+BORON REBOUND. New source pinned: WHO/IPCS Environmental Health Criteria 204 (1998), Table 11
+"Boron content of some common foods", inchem.org, sha256
+79b55d9483906c598483ea5ccb981fb1e288d44f297123531ec6f02c0d702dd2, 550045 bytes, payload gitignored
+per the standing rule. New extractor eden/tools/foods/extract_boron_ehc204.py -> new candidate
+eden/foods/candidates/boron-who-ehc204.json (37 rows). nutrient_bindings.boron now has two parts
+with combine: first - who-ehc204 leads, boron-meacham-2015 KEPT second because EHC Table 11 has no
+avocado row and deleting it would have removed the one food boron already showed.
+
+THE TWO-COLUMN RULE. Hunt 1991 and Anderson 1994b disagree by up to 3x on the same food (apple
+sauce 2.83 vs 1.04). WHO endorses both and nothing settles it, so the LOWER is taken - the same
+conservative rule the catalog already applies where a source measures several varieties of one
+food.
+
+THREE TRAPS, ALL NEGATIVE-TESTED.
+ 1. The unit is ug/g, NOT mg/100 g - a clean 10x, and every other boron table this project has read
+    is mg/100 g. Handled by a declared convert: ug_per_g_to_mg_per_100g rather than folding a tenth
+    into UNIT_TO_MG, because that table maps a unit of MASS and this is a change of BASIS. The gate
+    keeps its OWN copy of the factor: changing the derive's 0.1 to 0.2 REDs
+    food_composition_traces_to_source on 20 rows with its own arithmetic. Tampering the payload's
+    unit line makes the extractor REFUSE.
+ 2. The payload is latin-1, not UTF-8 - its micro sign is the single byte 0xB5. Read as UTF-8 the
+    unit assertion fails on a correct file.
+ 3. The beverages block is ug/ml (volume basis) and its heading renders "Beveragesa" once tags are
+    stripped, so an equality test silently never fires. Wine and beer joined on the wrong basis
+    until the EXPECTED_ROWS=37 assert caught it (parsed 39). Now a prefix test at heading indent.
+
+CATALOG. Two new foods: prunes (USDA 168162, portion 82582 "cup, pitted" 174 g) and raisins (USDA
+168165, portion 82588 "cup (not packed)" 145 g - the lower of USDA's two cup readings, the same cup
+shape dates already uses). The portion is not what admits raisins: a 43 g small box still reaches
+8.9%. Six existing foods gained EHC pairs (almonds, dates, hazelnuts, peanuts, apple, banana);
+refusals recorded in _boron_refused with reasons - canned-vs-fresh state mismatches, juice-vs-fruit,
+below-detection meats and dairy, anti-list grains and sugar, and condiments.
+
+RESULT ON SCREEN: prunes 3.741 mg 40.7% | raisins 2.755 mg 29.9% | avocado 1.9448 mg 21.1% | dates
+1.3524 mg 14.7% | almonds 0.6521 mg 7.1%, against Wallach's 9.2 mg.
+
+INOSITOL - HUNTED, NOT CLOSED. Clements & Darnell 1980 (Am J Clin Nutr 33:1954-67, 487 foods by
+gas-liquid chromatography) is the definitive table and is paywalled; the DOI resolves to an HTML
+landing page. FooDB compound FDB010547's "Associated Foods" content table is EMPTY. The open
+phytic-acid literature (Moroni 2021, downloaded and read) measures inositol hexaphosphate, a bound
+form - converting needs a hydrolysis assumption and would invent a number. Frida, CIQUAL, CoFID,
+AFCD and USDA FoodData Central do not carry inositol. Secondary blog tables quote Clements with
+unit muddles in the same paragraph ("cantaloupe 3.55 mg/g" beside "green beans 54.8 mg per 100 g")
+- the exact boron trap. foodSourceVerdict('inositol') stays no_binding and its copy is honest.
+
+ALSO FOUND: kd_ep_foodsrc_zero_target reaches NO screen. Phosphorus is its only case and its glance
+takes the present_stated_zero early return at entity-page.ts:398, which returns before
+renderSourcesBlock is called. The page is still honest - the present-glance says he lists it at
+zero - so this is dead shipped copy plus a comment at entity-page.ts:546 naming "Hydrogen and
+Phosphorus" as cases the glance carries when it does not. Six pages carry no food block at all
+(H, C, N, O, phosphorus, cobalt). HE RULED: leave all six as they are. The dead copy and the false
+comment were deliberately NOT cleaned up pending his word.
+
+PROBE. render_probe_food_block gained boron and phosphorus cases; zero_target had NO case at all,
+so the one verdict whose copy never renders was the one nothing checked. The phosphorus case reads
+the whole glance rather than the block and asserts what holds under EITHER resolution: never "a gap
+in our sources", never "requires supplementing", never "states no daily amount".
+
+VERIFICATIONS: invariants 104/104 (24 external / 33 consistency / 45 structural / 2 meta, no new
+reds); vitest 100/100; build OK; food probes green (block, foods, catalog, tile, pager,
+block_position, efa_foods, entity, base).
+
+WARNING CARRIED FORWARD: render_probe_food_efa_rank and render_probe_food_tier are RED and were RED
+AT HEAD before this work - proved by reverting the food data to HEAD, rebuilding and re-running.
+Not diagnosed, not touched. The 2026-08-24 handoff claimed "9 render probes green"; that was either
+a subset or has regressed since.` }, { id: "lg_mt7yicvw_i46uf8", ts: "2026-08-24T19:58:44.540165-05:00", surface: "knowledge/food-click+probes", kind: "round-close", summary: "Food rows in an essential's source list now open that food and come back to the essential; and the two red probes split cleanly - one had never worked at all, the other had caught a real defect where a cup of dry beans outranked everything.", detail: 'Two jobs this round, and the second one turned out to be two different stories.\n\nTHE CLICK. On an essential\'s page - boron, say - the "Best food sources" list showed prunes,\nraisins, avocado. Clicking any of them did nothing at all. The reason is a small one with an\nunpleasant shape: those rows were plain containers with no identity attached, sitting directly\nabove the Youngevity product rows, which ARE real buttons. So the food rows looked exactly as\nclickable as the ones below them and quietly weren\'t. They are buttons now, they carry the\nfood\'s id, and the app already knew what to do with that.\n\nThe styling had to move with them. Four rules existed for the sole purpose of taking a button\'s\nbehaviour back OFF those rows - no hand cursor, and a hover state that undid the highlight. Left\nin place, they would have produced a row that opens when you click it and insists it isn\'t\nclickable when you point at it.\n\nTHE BACK BUTTON. It already said "Go back", but it went back to the wrong place: the tab you\nstarted from, not the screen you came from. Opening a product from boron and pressing back landed\non the grid of all ninety essentials with boron gone. It now returns to the previous screen, which\nis what he asked for and what the words on the button always promised.\n\nTHE FIRST RED PROBE had never worked. It was supposed to page through the food list looking for a\ncard whose numbers come from a hand-matched source rather than a database id, and check that such\na card is marked. To page forward it clicked something that has never existed in this app - so it\nnever advanced past the first page, not once, in its whole life. It passed anyway, because the\nfirst page happened to contain such a card. When the food ordering changed yesterday the first\npage stopped containing one and the probe finally went red. The feature it guards was fine all\nalong; the probe was the broken thing. It now walks the real pager, and breaking that walk on\npurpose makes it fail loudly instead of passing.\n\nTHE SECOND RED PROBE was right. It had noticed that one food - dry winged beans - had come to lead\nevery single one of the thirty health goals, including goals it has no business leading. The cause\nis a measuring problem. The food database publishes exactly one serving size for a raw dried bean:\none cup. But a cup of dry beans swells into about three cups when cooked, so scoring that cup was\ncrediting somebody with roughly three servings. Every dry bean in the catalogue was scoring three\nto six times its own cooked version.\n\nHe ruled: keep the dry beans, fix the serving. So a dry bean\'s serving is now the amount that cooks\ndown into one cooked cup - about sixty grams instead of about a hundred and eighty. Nothing was\ntyped in by hand to make that happen: the water content of both the raw and the cooked bean is\nalready in the database, and the difference between them IS the answer. The seven beans work out to\nbetween 2.9 and 3.7 times, which is the "about three" every cook already knows. The label on the\ncard changed too, because both versions used to say "1 cup" and only the word "dry" in the name told\nthem apart.\n\n--- technical record ---\n\nTHE CLICK. `foodSrcRow` in views/entity-page.ts emitted `<div class="kd-ep-src kd-ep-src--food">`\nwith no data attribute; it now emits `<button type="button" data-kd-food="{id}">` plus the\n`.kd-ep-src__chev` the product row beside it already carried. knowledge.ts:791 already routed\n`[data-kd-food]` to openDetail(\'food\'), and knowledge-food-sheet.ts already rendered an\norigin-aware back button - the row was the only missing link.\n\nTHE CSS. drawer-knowledge.css carried four rules at `.kd-ep-src--food` whose comment said "A food\nrow does not open anything, so it is a div and must not offer a button\'s affordances": cursor:\ndefault, plus a :hover cancelling border-color, background, transform, and the name/icon colour\nchanges. All four deleted with the markup, comment replaced with the reason. Probed: the row\'s\ncomputed cursor is now `pointer`.\n\nTHE BACK DESTINATION. `food-close` and `product-close` in knowledge.ts both called `goCrumb(0)`,\nthe ORIGIN-TAB anchor. Measured in the running app first: opening a product from Boron gave\ncrumbs [Essentials, Boron, <product>] and back produced crumbs [] on the essentials grid. Both now\ncall `goCrumb(trail.length - 2)`. goCrumb already handles negative indices and tab crumbs, and\nlength-2 collapses to 0 for every [tab, detail] trail, so the ORAC-list case and the Products-tab\ncase are bit-for-bit unchanged. Verified both controls.\n\nNEW PROBE tools/probes/render_probe_food_source_click.js - 10 assertions: the row is a BUTTON with\ndata-kd-food, its computed cursor is pointer, clicking opens Prunes, the label reads "Go back" and\nnot "All products", the trail contains Boron, back lands on the essential, plus two controls\nproving a Products-tab open still reads "All products" and still clears to the list.\n\nRED PROBE 1 - render_probe_food_tier. Its walk clicked `.fs-card`. That class has never existed in\na view or a stylesheet in this repo; `git log -S fs-card --all` returns only probe files, and\nfa562910 is the commit that ADDED this probe already carrying the wrong selector. `clicked`\nreturned false on iteration 0, the loop broke at `adds = 0`, and the probe only ever read page one.\nIt stayed green because page one carried an APPROXIMATE reading until the 2026-08-24 re-ordering\nput dry legumes on top and made page one all-EXACT. Feature verified independently by walking all\n85 pager pages: Spinach cooked / SILICA 24% / computed ::after "\u2248" / gloss naming Powell 2005 and\n"paired with theirs by hand"; Beef liver EXACT with ::after "none" and no pairing sentence.\nRewritten to walk `.fs-pager__b--arrow`, MAX_ADDS -> MAX_PAGES, header comment corrected (it named\n`.fs-card__amt--approx`; the real classes are `.fs-lead__pct--approx` and `.fs-chip--approx`).\nNegative control: breaking the advance selector now prints the diagnostic and RESULT: FAIL.\n\nRED PROBE 2 - render_probe_food_efa_rank. Control assertion "a goal naming no omega is led by\nsomething else" failed with Winged beans, dry leading both stronger-bones and healthy-heart. Cause\nestablished by git worktree at a992d57f (the commit before dry legumes): PASS, Lobster vs Natto.\nDry rows entered at 853639f3. Measured dominance: winged beans 5.97 vs cooked 1.68, mothbeans 4.59\nvs 1.01, pigeon peas 3.98 vs 0.67, lupins 3.91 vs 0.76, yardlong 3.79 vs 0.91, hyacinth 3.71 vs\n1.06, mungo 3.68 vs 1.22.\n\nTHE FIX (owner ruling: keep the rows, fix the portion). USDA publishes exactly one portion for each\nraw mature seed - "1 cup" - so there was no smaller portion_id to switch to, and\nfoods-catalog-curation.json is numbers-free (Charter R3) so a gram weight could not be typed. The\nserving is derived instead: `serving_yields` names the cooked twin by CATALOG ID (a join key, not a\nnumber) and foods_composition_derive.py computes\n\n    dry g = cooked portion g x (1 - water_cooked/100) / (1 - water_dry/100)\n\nfrom nutrient 1051 on both states, returning the working onto the food as `dry_yield`. Guard rails:\na missing water on either state raises rather than defaulting, and a yield outside 1.2x-10x raises\nas a mis-paired twin. Results: hyacinth 210->66.1 (3.18x), lupins 180->53.6 (3.36x), mothbeans\n196->60.3 (3.25x), mungo 207->55.5 (3.73x), pigeon peas 205->59.1 (3.47x), winged 182->61.6\n(2.96x), yardlong 167->58.3 (2.87x). Winged beans strength 5.97 -> 1.93, out of the top ten and\njust above its own cooked row (1.68), which is the right relationship since boiling leaches into\nthe water. No row lost - each still clears the 7% floor on five or six nutrients.\n\nTHE LABEL. Both states carried USDA\'s "1 cup", so a rescaled dry row printing "1 cup" beside its\ncooked twin printing "1 cup" would have been the same misstatement somewhere quieter - the only\nother clue on the tile is the word "dry" in the name. Dry rows now read "61.6 g dry \xB7 makes 1 cup\ncooked".\n\nTHE GATE. tools/invariants.py keeps its OWN copy of the yield arithmetic at (C1b), re-derives the\nserving from the extract, checks the artifact\'s `dry_yield` shows the terms it was built from,\nrejects a `dry_yield` the curation did not authorise, and threads `serving_g` through both the USDA\nand second-source mg computations. Negative control: inflating the derive\'s yield by 1.5x REDs all\nseven with the exact gram mismatch named.\n\nVERIFICATIONS: invariants 104/104 (24 external / 33 consistency / 45 structural / 2 meta, no new\nreds); vitest 100/100; build OK; 14 render probes green, including both formerly-red ones.' }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -218964,12 +219142,13 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   function foodSrcRow(f) {
     const pct = Math.round(f.fraction * 100);
     const strong = f.strong ? " kd-ep-src--strong" : "";
-    return `<div class="kd-ep-src kd-ep-src--food${strong}">
+    return `<button class="kd-ep-src kd-ep-src--food${strong}" type="button" data-kd-food="${escHTML6(f.id)}">
       <span class="kd-ep-src__ico"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21c-4 0-7-3-7-7 0-4 3-8 7-11 4 3 7 7 7 11 0 4-3 7-7 7z"/><path d="M12 21V9"/></svg></span>
       <span class="kd-ep-src__nm">${escHTML6(f.name)}</span>
       <span class="kd-ep-src__amt">${fmtAmount2(f.amount, f.unit).value} ${escHTML6(fmtAmount2(f.amount, f.unit).unit)}</span>
       <span class="kd-ep-src__pr">${pct}%</span>
-    </div>`;
+      <span class="kd-ep-src__chev">\u203A</span>
+    </button>`;
   }
   function renderFoodSourcesBlock(slug) {
     if (slug === null) {
@@ -222409,7 +222588,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           render();
         } else if (action === "food-close") {
           if (trail[0] !== void 0 && trail[0].type === "tab" && trail[0].val !== "products") {
-            goCrumb(0);
+            goCrumb(trail.length - 2);
           } else {
             selectedFood = null;
             trail = [];
@@ -222417,7 +222596,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           }
         } else if (action === "product-close") {
           if (trail[0] !== void 0 && trail[0].type === "tab" && trail[0].val !== "products") {
-            goCrumb(0);
+            goCrumb(trail.length - 2);
           } else {
             selectedProduct = null;
             trail = [];

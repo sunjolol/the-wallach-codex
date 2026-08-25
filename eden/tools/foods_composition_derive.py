@@ -366,9 +366,16 @@ def _part_value(part: dict, row: dict) -> tuple:
 def _part_mg_per_100g(part: dict, value: str, water: float, food_id: str, slug: str) -> tuple:
     """(mg per 100 g of food, working) for one part's value.
 
-    Most parts publish per 100 g of the food already and only need a unit factor. Doleman
-    publishes umoles per gram of FREEZE-DRIED sample, which nobody eats, so its rows carry a
-    declared conversion instead:
+    Most parts publish per 100 g of the food already and only need a unit factor. Two do not,
+    and both declare a conversion rather than folding the factor into a unit.
+
+    WHO EHC 204 publishes ug of boron per GRAM of food, so its factor is a flat tenth. It is
+    small enough to look like it belongs in UNIT_TO_MG and it does not: that table maps a unit
+    of MASS, and this is a change of BASIS. Folding it in would make 'UG' mean per-gram for one
+    source and per-100 g for every other, which is how a clean 10x error gets in.
+
+    Doleman publishes umoles per gram of FREEZE-DRIED sample, which nobody eats, so its rows
+    carry a declared conversion too:
 
         mg S / 100 g fresh = umol_per_g_dry x 32.06 ug/umol x dry_matter_fraction x 0.1
 
@@ -383,6 +390,14 @@ def _part_mg_per_100g(part: dict, value: str, water: float, food_id: str, slug: 
     convert = part.get("convert")
     if convert is None:
         return float(value) * UNIT_TO_MG[part["unit"]], None
+    if convert == "ug_per_g_to_mg_per_100g":
+        # A tenth, and nothing else -- no moisture, no sample basis. The working is still
+        # returned so the gate can re-do it and a reader can see the basis change happen.
+        mg = float(value) * 0.1
+        return mg, {
+            "ug_per_g": value,
+            "arithmetic": f"{value} ug/g x 0.1 = {round(mg, 4)} mg/100 g",
+        }
     if convert != "dry_umol_per_g_to_mg_per_100g_fresh":
         raise FoodsCompositionError(f"{slug}: unknown convert {convert!r}")
     if water is None:
@@ -770,6 +785,67 @@ def build_data() -> dict:
         if grams <= 0:
             raise FoodsCompositionError(f"{entry.get('name')}: portion weighs {grams} g")
 
+        # ── A DRY SEED IS SERVED AS THE AMOUNT THAT COOKS INTO ONE COOKED PORTION ──────
+        # Owner ruling 2026-08-24: keep both legume states, fix the portion. USDA publishes
+        # exactly ONE portion for every raw mature seed here -- "1 cup" -- and a cup of dry
+        # seed swells into roughly three cooked cups, so scoring it against Wallach's daily
+        # amounts credited a serving nobody eats. Winged beans read 5.97 on the ranking key
+        # against 1.68 for their own cooked row, and one dry legume led every one of the 30
+        # goals.
+        #
+        # The honest serving is derived, never typed: the seed and its cooked twin are the
+        # same dry matter plus water, and BOTH water contents are in the pinned USDA source.
+        #
+        #     dry grams = cooked portion g x (1 - water_cooked/100) / (1 - water_dry/100)
+        #
+        # `serving_yields` names the cooked twin by CATALOG ID -- a join key, not a number,
+        # so foods-catalog-curation.json stays numbers-free (Charter R3). The working is
+        # returned onto the food and `food_composition_traces_to_source` re-does it with its
+        # own copy of the arithmetic.
+        yields_id = entry.get("serving_yields")
+        dry_working = None
+        if yields_id is not None:
+            twin = next((f for f in curation["foods"] if f["id"] == yields_id), None)
+            if twin is None:
+                raise FoodsCompositionError(
+                    f"{entry.get('name')}: serving_yields names {yields_id!r}, which is not a "
+                    f"catalog food. A yield must point at a row that exists.")
+            twin_portion = portions.get(str(twin["portion_id"]))
+            if twin_portion is None:
+                raise FoodsCompositionError(
+                    f"{entry.get('name')}: the cooked twin {yields_id} has no portion row.")
+            w_dry = (comp.get(fdc_id) or {}).get(WATER_NUTRIENT_ID)
+            w_cooked = (comp.get(str(twin["fdc_id"])) or {}).get(WATER_NUTRIENT_ID)
+            if w_dry is None or w_cooked is None:
+                raise FoodsCompositionError(
+                    f"{entry.get('name')}: the dry-yield conversion needs the USDA water "
+                    f"content of BOTH states and one is missing (dry={w_dry}, "
+                    f"cooked={w_cooked}). A missing moisture is a missing conversion, never "
+                    f"a default one.")
+            dm_dry = 1.0 - float(w_dry) / 100.0
+            dm_cooked = 1.0 - float(w_cooked) / 100.0
+            if not 0.0 < dm_dry <= 1.0 or not 0.0 < dm_cooked <= 1.0:
+                raise FoodsCompositionError(
+                    f"{entry.get('name')}: water reads dry={w_dry} cooked={w_cooked} g/100 g; "
+                    f"one of those is not a food.")
+            cooked_g = float(twin_portion["gram_weight"])
+            grams = round(cooked_g * dm_cooked / dm_dry, 1)
+            # A seed that cooks into LESS than itself, or into more than ten times itself, is
+            # a mis-paired twin rather than a surprising legume.
+            if not 1.2 <= cooked_g / grams <= 10.0:
+                raise FoodsCompositionError(
+                    f"{entry.get('name')}: {cooked_g} g cooked works out to {grams} g dry, a "
+                    f"yield of {cooked_g / grams:.2f}x. Check that {yields_id} is really its "
+                    f"cooked twin.")
+            dry_working = {
+                "cooked_twin": yields_id,
+                "cooked_portion_g": str(cooked_g),
+                "water_dry_g_per_100g": str(w_dry),
+                "water_cooked_g_per_100g": str(w_cooked),
+                "arithmetic": (f"{cooked_g} g cooked x {round(dm_cooked, 4)} dry matter / "
+                               f"{round(dm_dry, 4)} dry matter = {grams} g of dry seed"),
+            }
+
         ndb = ndb_of.get(fdc_id)
         if ndb is None:
             raise FoodsCompositionError(
@@ -826,6 +902,13 @@ def build_data() -> dict:
                       efa_goal["maintenance_mg"])
 
         portion_label = entry.get("portion_label") or _portion_label(portion, units)
+        # ★ THE LABEL MOVES WITH THE GRAMS. Both legume states carry USDA's "1 cup", so a
+        # rescaled dry row printing "1 cup" beside its own cooked row printing "1 cup" would
+        # be the same lie in a quieter place -- the tile's only other clue is the word "dry"
+        # in the name. It states the weight it actually scored and what that weight makes.
+        if dry_working is not None:
+            portion_label = (f"{grams:g} g dry \u00b7 makes "
+                             f"{_portion_label(twin_portion, units)} cooked")
         out_foods.append({
             "id": entry["id"],
             "name": entry["name"],
@@ -836,6 +919,7 @@ def build_data() -> dict:
             "portion_id": portion_id,
             "portion_label": portion_label,
             "grams": grams,
+            **({"dry_yield": dry_working} if dry_working is not None else {}),
             "nutrients": rows,
             "breadth": len(rows),
             # ★ THE RANKING KEY, AND WHY THE EFA GROUP IS IN IT (owner ruling 2026-08-22).

@@ -826,9 +826,15 @@ export function mount(container: HTMLElement): DrawerHandle {
       }
       else if (action === 'food-close') {
         // Origin-aware back, exactly as a product's is: a food opened from somewhere other
-        // than the Products tab returns there via its crumb.
+        // than the Products tab returns the way it came.
+        //
+        // ★ THE PREVIOUS CRUMB, NOT THE ORIGIN TAB. Opening a food from an essential builds
+        // [Essentials, Boron, Raisins]; jumping to crumb 0 landed on the essentials GRID and
+        // threw away the essential the reader was actually reading. `length - 2` is the screen
+        // they came from, and it collapses to crumb 0 — the old behaviour — whenever the trail
+        // is just [tab, detail], which is every case that existed before foods became openable.
         if (trail[0] !== undefined && trail[0].type === 'tab' && trail[0].val !== 'products') {
-          goCrumb(0);
+          goCrumb(trail.length - 2);
         }
         else {
           selectedFood = null;
@@ -837,11 +843,13 @@ export function mount(container: HTMLElement): DrawerHandle {
         }
       }
       else if (action === 'product-close') {
-        // Origin-aware back (mirrors the topic page): a product opened from a NON-products tab (the
-        // ORAC "Best Supplement Sources" list) returns to that origin tab via its crumb; a normal
-        // Products-tab open clears the detail and lands on the product list.
+        // Origin-aware back (mirrors the topic page): a product opened from a NON-products tab
+        // returns the way it came; a normal Products-tab open clears the detail and lands on the
+        // product list. Same `length - 2` as the food case above and for the same reason — a
+        // product opened from an essential's "Best Youngevity sources" was losing that essential
+        // too, measured in the running app before the change.
         if (trail[0] !== undefined && trail[0].type === 'tab' && trail[0].val !== 'products') {
-          goCrumb(0);
+          goCrumb(trail.length - 2);
         }
         else {
           selectedProduct = null;

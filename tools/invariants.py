@@ -5966,14 +5966,24 @@ def _food_part_value(part, row):
 def _food_part_mg(part, value, water):
     """(mg per 100 g of food, error) for one part's value -- the gate's own arithmetic.
 
-    Most parts publish per 100 g already. Doleman publishes umoles per gram of FREEZE-DRIED
-    sample, so its rows declare a conversion that needs the PAIRED food's USDA water content:
+    Most parts publish per 100 g already. Two declare a conversion instead, and this is the
+    gate's INDEPENDENT copy of each -- editing the derive's constant must RED here rather than
+    silently rescale every value that depends on it.
+
+    WHO EHC 204 publishes ug of boron per GRAM of food, a change of BASIS and not of unit:
+
+        mg B / 100 g = ug_per_g x 0.1
+
+    Doleman publishes umoles per gram of FREEZE-DRIED sample, so its rows need the PAIRED
+    food's USDA water content:
 
         mg S / 100 g fresh = umol_per_g_dry x 32.06 ug/umol x (1 - water/100) x 0.1
     """
     convert = part.get("convert")
     if convert is None:
         return float(value) * _FOOD_UNIT_TO_MG[part["unit"]], None
+    if convert == "ug_per_g_to_mg_per_100g":
+        return float(value) * 0.1, None
     if convert != "dry_umol_per_g_to_mg_per_100g_fresh":
         return None, f"unknown convert {convert!r}"
     if water is None:
@@ -6101,9 +6111,48 @@ def _food_composition_impl(source_p, curation_p, artifact_p, extract_dir, archiv
                         f"{p['fdc_id']}, not {fid} -- a portion cannot be borrowed from "
                         f"another food")
             continue
-        if abs(float(p["gram_weight"]) - float(food["grams"])) > 1e-9:
-            viol.append(f"{name}: artifact says {food['grams']} g but the source portion row "
-                        f"says {p['gram_weight']} g")
+        # ── (C1b) THE SERVING, RE-DERIVED HERE. ────────────────────────────
+        # Most foods are served at the USDA portion's own weight. A raw mature legume seed is
+        # not: USDA publishes only "1 cup" for it and that cup cooks into about three, so the
+        # curation points the row at its cooked twin with `serving_yields` and the serving is
+        # the dry weight that cooks into the twin's portion. This is the gate's OWN copy of
+        # that arithmetic -- editing the derive's must RED here rather than silently rescale
+        # seven foods.
+        #
+        #     dry g = cooked portion g x (1 - water_cooked/100) / (1 - water_dry/100)
+        cur_entry = curated_by_id.get(food["id"]) or {}
+        yields_id = cur_entry.get("serving_yields")
+        serving_g = float(p["gram_weight"])
+        if yields_id is not None:
+            twin_cur = curated_by_id.get(yields_id)
+            twin_p = portions.get(str(twin_cur["portion_id"])) if twin_cur else None
+            wd = (comp.get(fid) or {}).get(water_id) if water_id is not None else None
+            wc = ((comp.get(str(twin_cur["fdc_id"])) or {}).get(water_id)
+                  if (twin_cur and water_id is not None) else None)
+            if twin_cur is None or twin_p is None or wd in (None, "") or wc in (None, ""):
+                viol.append(f"{name}: serving_yields names {yields_id!r} but its portion or "
+                            f"the water content of one of the two states is missing, so the "
+                            f"dry serving cannot be reproduced")
+                continue
+            serving_g = round(float(twin_p["gram_weight"])
+                              * (1.0 - float(wc) / 100.0) / (1.0 - float(wd) / 100.0), 1)
+            w = food.get("dry_yield") or {}
+            if (w.get("cooked_twin") != yields_id
+                    or w.get("water_dry_g_per_100g") != str(wd)
+                    or w.get("water_cooked_g_per_100g") != str(wc)):
+                viol.append(f"{name}: the artifact's `dry_yield` does not show the terms this "
+                            f"serving was actually built from (twin {yields_id}, water dry "
+                            f"{wd}, cooked {wc})")
+                continue
+        elif food.get("dry_yield") is not None:
+            viol.append(f"{name}: the artifact carries a `dry_yield` but the curation asks for "
+                        f"no yield -- a rescaled serving with nothing authorising it")
+            continue
+        if abs(serving_g - float(food["grams"])) > 1e-9:
+            viol.append(f"{name}: artifact says {food['grams']} g but the serving works out to "
+                        f"{serving_g} g"
+                        + (f" (dry weight yielding {yields_id}'s portion)" if yields_id else
+                           f" from the source portion row"))
 
         for row in food["nutrients"]:
             slug = row["slug"]
@@ -6161,7 +6210,7 @@ def _food_composition_impl(source_p, curation_p, artifact_p, extract_dir, archiv
                                 f"the row claims tier {prov.get('tier')!r}")
                     continue
                 mg = (float(raw) * _FOOD_UNIT_TO_MG[row["usda_unit"]]
-                      * (float(p["gram_weight"]) / 100.0))
+                      * (serving_g / 100.0))
 
             else:
                 # ── (C6) SECOND SOURCE: the same proof, one link longer ─────
@@ -6347,13 +6396,22 @@ def _food_composition_impl(source_p, curation_p, artifact_p, extract_dir, archiv
                 #     sources.json REDs instead of silently rescaling every value.
                 if win.get("convert") is not None:
                     w = row["provenance"].get("working") or {}
-                    if w.get("umol_per_g_dry") != got[0][2] or \
+                    # Each conversion shows DIFFERENT terms, so each is checked against
+                    # its own. One shape for both would pass the boron rows vacuously --
+                    # they carry no moisture term for the dry-weight check to compare.
+                    if win["convert"] == "ug_per_g_to_mg_per_100g":
+                        if w.get("ug_per_g") != got[0][2]:
+                            viol.append(f"{name}/{slug}: the provenance `working` does not "
+                                        f"show the ug/g this number was built from "
+                                        f"({got[0][2]})")
+                            continue
+                    elif w.get("umol_per_g_dry") != got[0][2] or \
                             w.get("water_g_per_100g") != str(water):
                         viol.append(f"{name}/{slug}: the provenance `working` does not show "
                                     f"the terms this number was actually built from "
                                     f"({got[0][2]} umol/g dry, water {water})")
                         continue
-                mg = sum(g[3] for g in got) * (float(p["gram_weight"]) / 100.0)
+                mg = sum(g[3] for g in got) * (serving_g / 100.0)
 
             # ── (C2) the ARITHMETIC reproduces from the source string(s) ────
             amount = mg / _FOOD_WALLACH_TO_MG[wunit]

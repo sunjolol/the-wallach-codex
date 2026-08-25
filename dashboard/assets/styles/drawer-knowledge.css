@@ -1898,12 +1898,11 @@
    the row size it competed with the product names below it. */
 /* FULL WIDTH. The measure cap that was here made this note narrower than every other line in the block — .kd-ep-srcnote beside it has never had one. */
 #drawer-knowledge-mount .kd-ep-foodnote { font-family: var(--ds-font-serif); font-size: 0.85rem; color: var(--ds-ink-medium); line-height: 1.55; margin: 0 0 var(--ds-space-3); }
-/* A food row does not open anything, so it is a div and must not offer a button's affordances.
-   Everything else is inherited from .kd-ep-src so the two lists read as one stack. */
-#drawer-knowledge-mount .kd-ep-src--food { cursor: default; }
-#drawer-knowledge-mount .kd-ep-src--food:hover { border-color: var(--ds-rule-soft); background: var(--ds-paper); transform: none; }
-#drawer-knowledge-mount .kd-ep-src--food:hover .kd-ep-src__nm { color: var(--ds-ink); }
-#drawer-knowledge-mount .kd-ep-src--food:hover .kd-ep-src__ico { color: var(--ds-ink-faint); }
+/* A food row OPENS that food (2026-08-24), so it is a button and takes the same affordances as
+   the Youngevity row beside it — everything is inherited from .kd-ep-src and nothing is undone
+   here. Four rules used to live at this selector for the opposite reason (cursor: default plus a
+   :hover that cancelled the border, background, transform and name/icon colour) and they were
+   removed with the markup, not left to fight it. */
 /* A serving that clears the artifact's STRONG threshold — the same signal the food cards on
    Coverage and Regimen already use, so a reader who has seen one recognises the other. */
 #drawer-knowledge-mount .kd-ep-src--strong .kd-ep-src__pr { color: var(--ds-status-ok); font-weight: 700; }

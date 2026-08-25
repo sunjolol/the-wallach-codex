@@ -10,11 +10,26 @@
 // recorded in an artifact and never rendered is a label nobody can act on.
 //
 // What this asserts, on the real app driven through its real controls:
-//   · an APPROXIMATE card carries .fs-card__amt--approx AND the CSS rule is live (the '≈'
-//     comes back from getComputedStyle ::after, not merely from the stylesheet text)
+//   · an APPROXIMATE reading carries .fs-lead__pct--approx (lead) or .fs-chip--approx
+//     (chip) AND the CSS rule is live (the '≈' comes back from getComputedStyle ::after,
+//     not merely from the stylesheet text)
 //   · its gloss names the actual source and explains what the pairing does and does not mean
 //   · ★ THE NEGATIVE CONTROL: an EXACT card in the SAME run carries neither. Without it this
 //     probe would pass just as happily if every card were marked approximate.
+//
+// ★ THIS PROBE PASSED FOR MONTHS WITHOUT EVER ADVANCING THE LIST -- fixed 2026-08-24.
+// Its walk clicked `.fs-card`, a class that has NEVER existed in this app: the tile is
+// `.fs-tile` and its add control is `.fs-ctl--add[data-food-add]`. `git log -S fs-card --all`
+// finds the string only inside probe files, never in a view or a stylesheet. So the click
+// returned false on the very first iteration, the loop broke at `adds = 0`, and the probe only
+// ever saw PAGE ONE. It went green anyway because page one happened to carry an APPROXIMATE
+// reading -- until the 2026-08-24 food re-ordering put seven dry-legume rows at the top and made
+// page one all-EXACT, at which point the latent no-op finally showed as a red.
+//
+// It now walks the PAGER, which is a real control, is deterministic, and does not mutate the
+// reader's regimen the way adding a food does. The lesson is the general one: a probe that
+// cannot fail for the reason it claims to test is not a gate, and only a NEGATIVE CONTROL
+// (deliberately break the thing, watch it go red) proves otherwise.
 //
 // ★ A DOM PROBE IS NOT A VISUAL CHECK. It screenshots the card it found; a person still looks.
 
@@ -31,7 +46,7 @@ if (!pup) { console.log('NO_PUPPETEER'); process.exit(2); }
 const OUT = process.env.FOODS_SHOT_DIR || path.join(REPO, 'temporary');
 fs.mkdirSync(OUT, { recursive: true });
 
-const MAX_ADDS = 90;          // the catalog is 190 foods; the mark surfaces long before this
+const MAX_PAGES = 200;        // a hard stop only; the walk ends when the pager stops advancing
 
 (async () => {
   const browser = await pup.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox'] });
@@ -99,16 +114,14 @@ const MAX_ADDS = 90;          // the catalog is 190 foods; the mark surfaces lon
     };
   });
 
-  // Drive the list forward through the real control until an APPROXIMATE card shows up.
-  // Adding a card removes that food from the pool, so the list advances — the same way a
-  // person using the app would reach it. (It used to advance for a second reason too: the
-  // walk was greedy. That went with the 2026-08-22 re-ordering; this still works because
-  // `owned` has always left the pool.)
+  // Walk the REAL pager until an APPROXIMATE reading shows up. Both tiers have to be found in
+  // the SAME run, because the negative control is the whole point: without an EXACT card to
+  // compare against, this probe would pass just as happily if every reading were marked.
   let approx = null;
   let exact = null;
-  let adds = 0;
+  let pages = 0;
   const seenExact = [];
-  for (; adds <= MAX_ADDS; adds += 1) {
+  for (; pages < MAX_PAGES; pages += 1) {
     const state = await readCards();
     if (!state.present || state.cards.length === 0) { break; }
     for (const c of state.cards) {
@@ -116,20 +129,28 @@ const MAX_ADDS = 90;          // the catalog is 190 foods; the mark surfaces lon
       if (!c.approxClass && exact === null && c.amount) { exact = c; seenExact.push(c.name); }
     }
     if (approx !== null && exact !== null) { break; }
-    if (approx !== null) { break; }
-    const clicked = await page.evaluate(() => {
+    // ★ THE ADVANCE MUST BE ABLE TO FAIL LOUDLY. A selector that matches nothing used to end
+    // this loop silently at page one and the probe reported a pass; now a walk that cannot
+    // advance and has not found both tiers is reported as the reason for the red.
+    const advanced = await page.evaluate(() => {
       const block = [...document.querySelectorAll('.fs-block')]
         .filter(b => b.getBoundingClientRect().height > 0)[0];
-      const card = block && block.querySelector('.fs-card');
-      if (!card) return false;
-      card.click();
+      if (!block) return false;
+      const next = [...block.querySelectorAll('.fs-pager__b--arrow')]
+        .find(n => (n.textContent || '').trim() === '›' && !n.disabled);
+      if (!next) return false;
+      next.click();
       return true;
     });
-    if (!clicked) { break; }
-    await new Promise(r => setTimeout(r, 130));
+    if (!advanced) { break; }
+    await new Promise(r => setTimeout(r, 180));
   }
 
-  console.log('\nfoods added to reach an APPROXIMATE card:', adds);
+  console.log('\npager pages walked to find both tiers:', pages + 1);
+  if (approx === null) {
+    console.log('  \u26a0 the walk ended without an APPROXIMATE reading. If it stopped at page 1,',
+      'the advance selector is broken again \u2014 that is the 2026-08-24 failure, not a data change.');
+  }
   console.log('\n── APPROXIMATE card ──');
   if (approx) {
     console.log('  name           :', approx.name);
@@ -138,7 +159,7 @@ const MAX_ADDS = 90;          // the catalog is 190 foods; the mark surfaces lon
     console.log('  rendered ::after:', JSON.stringify(approx.after));
     console.log('  gloss          :', JSON.stringify(approx.gloss));
   } else {
-    console.log('  NONE FOUND in', adds, 'adds');
+    console.log('  NONE FOUND in', pages + 1, 'pages');
   }
   console.log('\n── EXACT card (the negative control) ──');
   if (exact) {

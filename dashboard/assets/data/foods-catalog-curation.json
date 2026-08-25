@@ -50,6 +50,10 @@
         "afcd-au-r3": {
           "key": "Nut, almond, with skin, raw, unsalted",
           "why": "Both raw almonds with skin."
+        },
+        "who-ehc204": {
+          "key": "Almonds",
+          "why": "EHC Table 11 names the nut plainly and our row is raw almonds with skin; the analyses it reprints list no other almond. At 23 ug/g on a 28.35 g ounce this clears the 7% floor by a hair -- 7.09% -- so a change to either the portion or the floor drops it out."
         }
       }
     },
@@ -72,6 +76,11 @@
         "doleman-2017": {
           "key": "Braeburn apple",
           "why": "Doleman measured Braeburn and our USDA row is golden delicious; both raw, both with skin. Lands under the threshold."
+        },
+        "who-ehc204": {
+          "key": "Apple, red with peel, raw",
+          "why": "Both raw apple WITH the peel, which is where the boron is; ours is golden delicious and EHC's is red. Anderson's 2.38 ug/g is the lower of the two analyses. Lands under the threshold (4.4%).",
+          "conservative": true
         }
       }
     },
@@ -141,6 +150,10 @@
           "key": "Banana, lady finger or sugar, peeled, raw",
           "why": "AFCD measures cavendish and lady-finger bananas; our USDA row is the generic 'Bananas, raw'. The lower is taken.",
           "conservative": true
+        },
+        "who-ehc204": {
+          "key": "Banana, raw",
+          "why": "Same fruit, both raw; only Anderson measured it. The nearest miss in the table -- 6.2% of 9.2 mg on a 152 g banana, just under the 7% floor."
         }
       }
     },
@@ -658,6 +671,10 @@
         "silicon-powell-2005": {
           "key": "Dates, dried",
           "why": "Powell's only dates row. Our catalog entry is deglet noor, also a dried date -- USDA sells no fresh date row."
+        },
+        "who-ehc204": {
+          "key": "Dates",
+          "why": "Both dried dates. EHC lists one date row and our catalog entry is deglet noor; USDA sells no fresh date row, so there is no state ambiguity to resolve."
         }
       }
     },
@@ -994,6 +1011,10 @@
         "afcd-au-r3": {
           "key": "Nut, hazelnut, raw, unsalted",
           "why": "Both raw."
+        },
+        "who-ehc204": {
+          "key": "Hazelnuts",
+          "why": "Both plain hazelnuts. Lands under the threshold (4.9% of 9.2 mg on an ounce)."
         }
       }
     },
@@ -1050,7 +1071,8 @@
       "name": "Hyacinth beans, dry",
       "category": "Legumes",
       "fdc_id": "175210",
-      "portion_id": "95849"
+      "portion_id": "95849",
+      "serving_yields": "hyacinth-beans-cooked"
     },
     {
       "id": "jackfruit",
@@ -1238,7 +1260,8 @@
       "name": "Lupins, dry",
       "category": "Legumes",
       "fdc_id": "172423",
-      "portion_id": "90599"
+      "portion_id": "90599",
+      "serving_yields": "lupins-cooked"
     },
     {
       "id": "lychee",
@@ -1299,7 +1322,8 @@
       "name": "Mothbeans, dry",
       "category": "Legumes",
       "fdc_id": "172425",
-      "portion_id": "90601"
+      "portion_id": "90601",
+      "serving_yields": "mothbeans-cooked"
     },
     {
       "id": "mozzarella",
@@ -1333,7 +1357,8 @@
       "name": "Mungo beans, dry",
       "category": "Legumes",
       "fdc_id": "174259",
-      "portion_id": "94034"
+      "portion_id": "94034",
+      "serving_yields": "mungo-beans-cooked"
     },
     {
       "id": "mussels-cooked",
@@ -1505,6 +1530,11 @@
           "key": "Nut, peanut, without skin, roasted, with oil, unsalted",
           "why": "AFCD has no dry-roasted peanut; this is roasted in oil, and the oil dilutes everything per 100 g, so it is a floor for our dry-roasted row.",
           "conservative": true
+        },
+        "who-ehc204": {
+          "key": "Peanuts",
+          "why": "EHC's peanut row is generic as to roast and ours is dry-roasted. Anderson's 13.8 ug/g is taken over Hunt's 18 by the conservative rule. Lands under the threshold (4.3%).",
+          "conservative": true
         }
       }
     },
@@ -1547,7 +1577,8 @@
       "name": "Pigeon peas, dry",
       "category": "Legumes",
       "fdc_id": "172436",
-      "portion_id": "90620"
+      "portion_id": "90620",
+      "serving_yields": "pigeon-peas-cooked"
     },
     {
       "id": "pineapple",
@@ -1660,6 +1691,20 @@
       "portion_id": "87399"
     },
     {
+      "id": "prunes",
+      "name": "Prunes",
+      "category": "Fruits",
+      "fdc_id": "168162",
+      "portion_id": "82582",
+      "matches": {
+        "who-ehc204": {
+          "key": "Prunes",
+          "why": "ADDED 2026-08-24 as boron's richest food. Both are plain uncooked dried prunes -- our USDA row is 'Plums, dried (prunes), uncooked'. Anderson's 21.5 ug/g is taken over Hunt's 27 by the conservative rule. THE PORTION IS USDA'S 'cup, pitted' (174 g), the same shape as the cup already used for dates, and it is the only choice that admits prunes at all: the one other portion USDA publishes is a single 9.5 g prune, which reaches 2.2%.",
+          "conservative": true
+        }
+      }
+    },
+    {
       "id": "pummelo",
       "name": "Pummelo",
       "category": "Fruits",
@@ -1730,6 +1775,20 @@
       "category": "Fish & shellfish",
       "fdc_id": "173718",
       "portion_id": "93178"
+    },
+    {
+      "id": "raisins",
+      "name": "Raisins",
+      "category": "Fruits",
+      "fdc_id": "168165",
+      "portion_id": "82588",
+      "matches": {
+        "who-ehc204": {
+          "key": "Raisins",
+          "why": "ADDED 2026-08-24 -- the food the owner named, and he was right about it. Both plain seedless raisins; our USDA row is the dark seedless. Anderson's 19.0 ug/g is taken over Hunt's 25 by the conservative rule. THE PORTION IS USDA'S 'cup (not packed)' (145 g), the lower of USDA's two cup readings and the same shape as dates and prunes. That choice is not what admits it: a 1.5 oz small box (43 g) still reaches 8.9%, so raisins qualify on any realistic serving.",
+          "conservative": true
+        }
+      }
     },
     {
       "id": "raspberries",
@@ -2368,7 +2427,8 @@
       "name": "Winged beans, dry",
       "category": "Legumes",
       "fdc_id": "174283",
-      "portion_id": "94080"
+      "portion_id": "94080",
+      "serving_yields": "winged-beans-cooked"
     },
     {
       "id": "yam-cooked",
@@ -2395,7 +2455,8 @@
       "name": "Yardlong beans, dry",
       "category": "Legumes",
       "fdc_id": "174281",
-      "portion_id": "94078"
+      "portion_id": "94078",
+      "serving_yields": "yardlong-beans-cooked"
     },
     {
       "id": "yautia",
@@ -2460,10 +2521,23 @@
     "garlic": "REFUSED 2026-08-22, and it is the food the campaign most wanted. Doleman measures garlic at 252.3 umoles/g DRY — the highest allium in its table — and Wallach names garlic by name on germanium's own page. But a serving of garlic is three cloves, nine grams, and nine grams delivers 6.0% of his 500 mg sulphur target: under the 7% bar. Only a whole cup of raw garlic (136 g) clears anything, and nobody eats that. AFCD measures garlic for none of the four gap nutrients, and germanium — the thing Wallach actually names it for — carries no numeric target for a food to be measured against. Stretching the portion to admit it is what the derive's own error message forbids. Garlic is a flavouring, not a serving, and the number says so."
   },
   "_tier_a_batch": "48 foods added 2026-08-24 after the owner reviewed temporary/foods-gap-review.html. That review answered a question nobody had asked: the catalog's selection rule is an ADMISSION test ('a food earns a place only if...'), and it had never been run in reverse to ask what else would pass. Sweeping all 7,793 SR Legacy foods against the shipped 7% arithmetic found 249 distinct qualifying foods the catalog carried nothing for. The owner cleared the whole Tier-B list (canned / salted / soy / game / native states) and confirmed the Tier-C exclusions; these are Tier A, the plain unprocessed rows. SEVEN OF THEM ARE NOT THE ROW THE SWEEP FOUND: USDA's smallest published portion for a raw mature legume seed is one cup UNCOOKED, which roughly triples in weight cooked, so that serving is nearer three than one and every percentage on it is inflated. Each of those took USDA's own plain cooked row instead (lupins, mothbeans, mungo beans, pigeon peas, winged beans, yardlong beans, hyacinth beans). Two candidates were dropped rather than shipped on a portion nobody eats: mamey apple (USDA publishes no household portion under 400 g) and immature hyacinth beans (no plain cooked row exists).",
-  "_legume_states": "Every legume that USDA measures in both states carries BOTH rows, named so the state is unmistakable (owner ruling, 2026-08-24: 'why not have cooked and uncooked variants? I don't want to lose the more nutritional ones'). The DRY row's portion is USDA's own 1 cup of uncooked seed — the only portion it publishes for a raw mature seed, and a real measure since a cook measures beans dry — but a cup of dry seed YIELDS roughly three cooked cups, which is why the name says 'dry' rather than leaving the reader to infer it. Hyacinth beans carry only a dry row: USDA publishes no plain cooked one.",
+  "_legume_states": "Every legume that USDA measures in both states carries BOTH rows, named so the state is unmistakable (owner ruling, 2026-08-24: 'why not have cooked and uncooked variants? I don't want to lose the more nutritional ones'). The DRY row's portion is USDA's own 1 cup of uncooked seed — the only portion it publishes for a raw mature seed, and a real measure since a cook measures beans dry — but a cup of dry seed YIELDS roughly three cooked cups, which is why the name says 'dry' rather than leaving the reader to infer it. Hyacinth beans carry only a dry row: USDA publishes no plain cooked one. ★ THE DRY PORTION WAS RESCALED 2026-08-24 (owner ruling: \"keep the rows, fix the portion\"). USDA publishes exactly ONE portion for every raw mature seed -- \"1 cup\" -- and a cup of dry seed cooks into roughly three cooked cups, so scoring that cup against Wallach's daily amounts credited a serving nobody eats: winged beans read 5.97 on the ranking key against 1.68 for their own cooked row, and one dry legume led all 30 goals. `serving_yields` names the cooked twin by CATALOG ID and the derive works out the dry weight that cooks into that twin's portion, from the USDA water content of both states -- so this file stays numbers-free and the gate re-does the arithmetic. The seven yields land at 2.87-3.73x, which is the ~3x every cook already knows. No row was lost: each still clears the 7% floor on five or six nutrients.",
   "_boron_refused": {
-    "prune-juice": "Clears 7% (15.6%) and is a JUICE — the anti-list refuses juices, not this pairing.",
-    "grape-juice": "Clears 7% (9.4%) and is a JUICE, same refusal.",
-    "_others": "Peanut butter, peanuts, chocolate powder, red wine, granola-raisin cereal, pecans and raisin bran are the rest of Meacham's ten; none clears 7% of Wallach's 9.2 mg on a realistic serving, and several are anti-list besides."
+    "_supersedes": "The entry kept at the bottom described Meacham's ten-food table, which is now the SECOND part of the boron binding. WHO EHC 204 leads it with 37 foods, so the refusals worth recording are the ones in THAT table.",
+    "carrots-raw": "EHC measures carrots CANNED and our row is raw. Different state, so the pair rule refuses it -- and 0.75 ug/g reaches 1.0% either way.",
+    "peach": "EHC measures peaches CANNED, ours is fresh. Same refusal (3.1%).",
+    "pear": "EHC measures pears CANNED, ours is fresh. Same refusal (2.4%).",
+    "romaine-lettuce": "EHC measures ICEBERG and ours is romaine -- a different variety, and iceberg reads below the detection limit anyway.",
+    "orange": "EHC has orange JUICE and no whole orange. A juice is not the fruit.",
+    "grapes": "EHC has grape JUICE and no whole grape. Same refusal.",
+    "green-beans-and-broccoli": "EHC gives 'Beans, green' and splits broccoli into flowers and stalks, none of them stating a cooked or raw state; our rows are cooked. The state cannot be resolved from the table and all three land far under the floor (0.6-2.8%), so the pair is not worth guessing at.",
+    "meat-dairy-eggs-and-grains": "Beef, chicken, turkey, cream cheese, milk, eggs, instant white rice and dry spaghetti all read below Hunt's detection limit (<0.015 ug/g). The table's own conclusion: 'Dairy products, fish, meats, and most grains are poor sources of boron.'",
+    "anti-list-rows": "Bread, wheat flour, egg noodles, fortified cornflakes and white sugar are in the table and are gluten grains, refined grains or refined sugar -- the catalog's doctrine refuses them before boron is considered.",
+    "catsup-honey-jelly": "Catsup, honey and the two jellies carry real boron (honey 6.07 ug/g) but are condiments, not servings -- the same reasoning that refused garlic. None is in the catalog and none is proposed.",
+    "_2026_08_24_meacham_ten": {
+      "prune-juice": "Clears 7% (15.6%) and is a JUICE — the anti-list refuses juices, not this pairing.",
+      "grape-juice": "Clears 7% (9.4%) and is a JUICE, same refusal.",
+      "_others": "Peanut butter, peanuts, chocolate powder, red wine, granola-raisin cereal, pecans and raisin bran are the rest of Meacham's ten; none clears 7% of Wallach's 9.2 mg on a realistic serving, and several are anti-list besides."
+    }
   }
 }
