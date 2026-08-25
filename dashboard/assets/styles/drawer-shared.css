@@ -33,17 +33,6 @@
   pointer-events: auto;
   transition: width var(--ds-motion-base) var(--ds-ease-out);
 }
-#drawer-knowledge-mount.kd-open::after {
-  content: '';
-  position: absolute;
-  top: var(--ds-space-7);
-  bottom: var(--ds-space-7);
-  right: -1px;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent 0%, var(--ds-accent) 8%, var(--ds-accent) 12%, transparent 14%, transparent 86%, var(--ds-accent) 88%, var(--ds-accent) 92%, transparent 100%);
-  z-index: 1;
-}
-
 /* ─── SEARCH BAR ─────────────────────────────────────────────────────────── */
 #drawer-knowledge-mount .kd-search {
   padding: var(--ds-space-3) var(--ds-space-4);

@@ -633,7 +633,6 @@
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-why { border-bottom-color: var(--ds-accent-deep); }
 :root[data-theme="dark"] .gloss { border-bottom-color: var(--kd-ep-fam, var(--ds-accent-deep)); }
 :root[data-theme="dark"] :is(
-  #drawer-knowledge-mount.kd-open::after,
   #drawer-knowledge-mount .kd-corpus__eyebrow .pulse-dot, #drawer-knowledge-mount .kd-essential-deep__sub::before,
   #drawer-knowledge-mount .kd-ep-bar > i, #drawer-knowledge-mount .sh-res[data-kd-condition] .sh-res__dot
 ) { background: var(--ds-accent-deep); }

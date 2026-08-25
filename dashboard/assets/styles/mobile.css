@@ -25,7 +25,6 @@
  * not a width problem.
  * ═══════════════════════════════════════════════════════════════════════════ */
 
-
 /* THE DEFAULT `.cov-panes { display: none }` DELIBERATELY LIVES IN workspace-coverage.css, NOT
    HERE. coverage.ts renders the switch at every width, so something must hide it outside the
    phone — and this sheet is held back from the web build, so a default stated here would not
@@ -211,7 +210,6 @@
     letter-spacing: 0.01em;
   }
 
-
   /* ═══ GOALS BECOME A TAP, NOT A BAND ════════════════════════════
      Even at 60px the strip was still permanent height for a surface you touch rarely, in a
      screen that had 67% of itself spent on chrome before the field began. His ruling: hide it
@@ -283,7 +281,6 @@
     border-color: var(--ds-accent);
   }
 
-
   /* ═══ THE GOAL STRIP — 136px, pinned, for one control that works ══════════
      MEASURED at 375px: the strip is 136px tall and `position: sticky`, so it holds 18% of the
      759px usable height PERMANENTLY — and the first plate lands at y=508, meaning 67% of the
@@ -313,7 +310,6 @@
      empty state renders no `.gchip[data-goal]` — only .gchip--add — so testing for one
      separates the two cases exactly. */
   .goalstrip:has(.gchip[data-goal]) .goalstrip__eyebrow--end { display: none; }
-
 
   /* ═══ COVERAGE — one screen, one job ═══════════════════════════════════
      The desktop lays the field beside a 340px aside carrying three more surfaces: the
@@ -382,7 +378,6 @@
   .coverage-workspace[data-cov-pane="foods"]    .cov-aside > .fs-block,
   .coverage-workspace[data-cov-pane="protocol"] .cov-aside > .rail-panel { display: block; }
 
-
   /* ═══ SECTION HEADERS — stacked, because four columns do not fit ════════
      Desktop runs the head as `auto auto 1fr auto` — number, title, strapline, stat — on one
      baseline. At 375px that squeezes the strapline into a 6-word-tall column and pushes the
@@ -427,7 +422,6 @@
   /* the fat plate carries its own taller min-height and roomier padding upstream */
   .tile--fat { padding: var(--ds-space-3); }
 
-
   /* ═══ THE KNOWLEDGE DRAWER — it was not cramped, it was OFF SCREEN ════════
      MEASURED at 375px BEFORE this block: the drawer's own box ran x=220..1170. You saw a 155px
      strip of it with the workspace still showing beside it, and 147 elements sat past the right
@@ -457,9 +451,13 @@
     /* the shadow threw a side-drawer's edge onto nothing; a full screen has no outside */
     box-shadow: none;
   }
-  /* the accent seam is drawn down the drawer's RIGHT EDGE, which is now the screen edge */
-  #drawer-knowledge-mount.kd-open::after { display: none; }
-
+  /* There is no accent-seam rule here any more. The drawer used to carry a 1px gradient
+     pseudo-element down its right edge, and this sheet hid it on a phone because that edge
+     is the SCREEN edge. It turned out the seam was never painted at ANY width — it sat at
+     `right: -1px`, outside a container that is `overflow: hidden`, so it was clipped away
+     before it could render, and its dark-theme rule was separately dead inside an invalid
+     `:is()`. Deleted from all three sheets on 2026-08-25; nothing on screen changed, which
+     was verified by byte-comparing screenshots rather than assumed. */
 
   /* ═══ ITS HEADER — 905px of chrome asked to fit in 375 ════════════════
      MEASURED, natural widths: the mark 91 + the six-tab nav 700 + the close 34, inside
@@ -518,7 +516,6 @@
     justify-content: center;
   }
 
-
   /* ═══ THE DRAWER BODY ═════════════════════════════════════════
      The Home hero is one long sentence set at the desktop display size. In a 343px column it
      broke to three lines, and headline + deck together took ~230px before the first thing you
@@ -558,7 +555,6 @@
   #drawer-knowledge-mount .ep-seclabel__hint,
   #drawer-knowledge-mount .kd-ep-seclabel__hint { flex: 1 0 100%; }
 
-
   /* ═══ THE ENTITY PAGE — THE BACK BUTTON WAS PAINTING OVER THE TITLE ══════
      MEASURED on Hydrogen at 375px. .kd-ep-hero is a flex row of a 56px symbol tile, the id
      block, and the back button, and the back carries
@@ -579,7 +575,6 @@
     margin-left: 0;
   }
   #drawer-knowledge-mount .kd-ep-hero__name { font-size: var(--ds-text-xl); }
-
 
   /* ═══ THE EYEBROWS — A DECORATIVE HAIRLINE WAS BREAKING TWO WHOLE TABS ═══
      MEASURED: on ORAC, .kd-orac-eyebrow__l computes to 377.6px in a 375px viewport — and it is
@@ -629,7 +624,6 @@
      "1 scoop (16" is worse than one that takes two lines. */
   #drawer-knowledge-mount .kd-pf-metric__v { white-space: normal; }
 
-
   /* ═══ THE ORAC CELL — 488px of FIXED columns in a 323px box ═════════════
      MEASURED: .kd-orac-cellwrap is `grid-template-columns: 292px 1fr; gap: 40px`, and the cell
      itself is a hard `width: 292px; height: 292px` circle. Inside a 323px body that leaves the
@@ -667,7 +661,6 @@
      done while making the measurement read clean. */
   #drawer-knowledge-mount .kd-orac-fld__plot,
   #drawer-knowledge-mount .kd-orac-steal { overflow-x: auto; }
-
 
   /* ═══ THE ELEMENT HEADERS — CONTENT WAS BEING THROWN OFF THE SCREEN ════
      Not a layout blemish. `.kd-essential-deep` is `overflow: hidden` and nothing below it
@@ -729,7 +722,6 @@
      surface it — the corpus has 2,601 claims and nothing stops the next one doing this. */
   #drawer-knowledge-mount .kd-body { overflow-wrap: break-word; }
 
-
   /* ═══ REGIMEN — FOUR SAVE SLOTS ACROSS A PHONE ════════════════════
      .ck-slots is a flex row of four `flex: 1 1 0` cards. At 375px that is
      (375 - 8 padding - 36 gaps) / 4 = 82.75px per card, and each card has to carry a name, a
@@ -761,7 +753,6 @@
   .ck-slot__body { flex-wrap: wrap; }
   .ck-slot__meta { flex: 1 0 100%; text-align: left; }
 }
-
 
 /* ═══ TOUCH — keyed to the POINTER, not the width ═════════════════════════
    Sub-44px controls were measured as common at 1440px (316) as at 375px (305), so this is a
@@ -814,7 +805,6 @@
      the whole scanner flow was the smallest target on its own screen */
   .vd-newscan,
   .vd-manual { min-height: 44px; }
-
 
   /* ═══ THE TOUCH FLOOR IS A POLICY, NOT ONE NUMBER APPLIED TO EVERYTHING ═══
      A walk of every drawer screen at 375px counted 957 sub-44px "controls" on a single
