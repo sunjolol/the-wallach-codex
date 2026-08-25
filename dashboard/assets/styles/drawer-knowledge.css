@@ -22,8 +22,12 @@
 #drawer-knowledge-mount.kd-open { width: 950px; }
 
 /* ─── HEADER — compact single row (mark · pill-group tabs · close). This is the
-       ONLY drawer header the view renders; it supersedes drawer-shared.css's
-       .kd-head / .kd-tabs block+grid chrome, which nothing renders any more.
+       ONLY drawer header there is. It superseded a block+grid header in drawer-shared.css
+       (.kd-head / .kd-tabs / .kd-tab / …), deleted on 2026-08-25 once every one of those
+       classes was PROVEN to have no render or query site left in the TypeScript or the
+       shell — its dark-theme half went from theme.css in the same patch.
+       On a phone this row becomes a 2-row grid: mark + close, then a 3×2 tab pad. See
+       mobile.css, which carries the arithmetic for why six tabs cannot share one 375px row.
        ────────────────────────────────── */
 #drawer-knowledge-mount .kd-knh { display: flex; align-items: center; gap: var(--ds-space-5); padding: var(--ds-space-4) var(--ds-space-7); border-bottom: 1px solid var(--ds-rule-soft); position: relative; flex: 0 0 auto; }
 #drawer-knowledge-mount .kd-knh::after { content: ''; position: absolute; left: var(--ds-space-7); right: var(--ds-space-7); bottom: -1px; height: 1px; background: linear-gradient(to right, transparent, var(--ds-accent) 8%, transparent 22%, transparent 100%); }

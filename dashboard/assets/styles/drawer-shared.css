@@ -5,10 +5,12 @@
  * the scrolling body and the empty-state line. Every rule is rooted at
  * #drawer-knowledge-mount so nothing here can leak onto another surface.
  *
- * NOTE: the .kd-head / .kd-tabs / .kd-tab / .kd-eyebrow / .kd-title / .kd-sub /
- * .kd-close rules below are no longer rendered by anything — the drawer supplies
- * its own header (.kd-knh, in drawer-knowledge.css) and a `ui-close` button. They
- * should be deleted rather than maintained.
+ * The drawer's HEADER is not here: it is .kd-knh in drawer-knowledge.css, and its close control
+ * is the shared `ui-close` button. An older block-and-grid header (.kd-head / .kd-tabs /
+ * .kd-tab / .kd-eyebrow / .kd-title / .kd-sub / .kd-close) lived here until 2026-08-25 and was
+ * deleted once every one of those classes was PROVEN to have no render or query site left in
+ * the TypeScript or the shell. Its dark-theme half lived in theme.css and went in the same
+ * patch — deleting only this file would have relocated the dead code rather than removed it.
  *
  * Loaded after workspace-coverage.css (provides --ds-font-display-*), before
  * drawer-knowledge.css. Tokens come from design-system.css (sealed).
@@ -41,132 +43,6 @@
   background: linear-gradient(to bottom, transparent 0%, var(--ds-accent) 8%, var(--ds-accent) 12%, transparent 14%, transparent 86%, var(--ds-accent) 88%, var(--ds-accent) 92%, transparent 100%);
   z-index: 1;
 }
-
-/* ─── HEAD ───────────────────────────────────────────────────────────────── */
-#drawer-knowledge-mount .kd-head {
-  padding: var(--ds-space-5) var(--ds-space-5) var(--ds-space-4);
-  background: var(--ds-paper-darker);
-  border-bottom: 1px solid var(--ds-rule);
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: start;
-  gap: var(--ds-space-3);
-}
-#drawer-knowledge-mount .kd-head::after {
-  content: '';
-  position: absolute;
-  left: var(--ds-space-5);
-  right: var(--ds-space-5);
-  bottom: -1px;
-  height: 1px;
-  background: linear-gradient(to right, transparent 0%, var(--ds-accent) 6%, var(--ds-accent) 13%, transparent 15%, transparent 85%, var(--ds-tech) 88%, var(--ds-tech) 92%, transparent 95%);
-}
-#drawer-knowledge-mount .kd-eyebrow {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-widest);
-  text-transform: uppercase;
-  color: var(--ds-accent);
-  font-weight: 600;
-  margin-bottom: var(--ds-space-2);
-  display: flex;
-  align-items: center;
-  gap: var(--ds-space-2);
-}
-#drawer-knowledge-mount .kd-eyebrow .pulse-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--ds-accent);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--ds-accent-soft);
-}
-#drawer-knowledge-mount .kd-title {
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-2xl);
-  font-weight: 700;
-  color: var(--ds-ink);
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  margin: 0;
-  line-height: 1;
-}
-#drawer-knowledge-mount .kd-sub {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: var(--ds-track-wider);
-  text-transform: uppercase;
-  color: var(--ds-ink-soft);
-  margin-top: var(--ds-space-2);
-}
-#drawer-knowledge-mount .kd-close {
-  width: 32px;
-  height: 32px;
-  background: transparent;
-  border: 1px solid var(--ds-rule);
-  color: var(--ds-ink-soft);
-  font-size: 1.1rem;
-  border-radius: var(--ds-radius-sm);
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--ds-font-mono);
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-}
-#drawer-knowledge-mount .kd-close:hover { border-color: var(--ds-ink); color: var(--ds-ink); }
-
-/* ─── TAB STRIP ──────────────────────────────────────────────────────────── */
-#drawer-knowledge-mount .kd-tabs {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: var(--ds-paper);
-  border-bottom: 1px solid var(--ds-rule-soft);
-  position: relative;
-}
-#drawer-knowledge-mount .kd-tab {
-  background: transparent;
-  border: 0;
-  padding: var(--ds-space-3) var(--ds-space-2);
-  font-family: var(--ds-font-display-interface);
-  font-size: var(--ds-text-xs);
-  font-weight: 700;
-  letter-spacing: var(--ds-track-wide);
-  text-transform: uppercase;
-  color: var(--ds-ink-soft);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 4px;
-  position: relative;
-  transition: all var(--ds-motion-fast) var(--ds-ease-out);
-  border-bottom: 2px solid transparent;
-}
-#drawer-knowledge-mount .kd-tab:hover { color: var(--ds-ink); background: var(--ds-paper-deep); }
-#drawer-knowledge-mount .kd-tab.active {
-  color: var(--ds-accent-deep);
-  background: var(--ds-paper);
-  border-bottom-color: var(--ds-accent);
-}
-#drawer-knowledge-mount .kd-tab.active::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 30%;
-  right: 30%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--ds-accent), transparent);
-  box-shadow: 0 0 8px var(--ds-accent);
-}
-#drawer-knowledge-mount .kd-tab__count {
-  font-family: var(--ds-font-mono);
-  font-size: var(--ds-text-micro);
-  letter-spacing: 0.05em;
-  color: var(--ds-ink-faint);
-  font-weight: 600;
-}
-#drawer-knowledge-mount .kd-tab.active .kd-tab__count { color: var(--ds-accent); }
 
 /* ─── SEARCH BAR ─────────────────────────────────────────────────────────── */
 #drawer-knowledge-mount .kd-search {

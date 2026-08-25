@@ -399,8 +399,7 @@
   .vd-prog__pct, .vd-steps__i.is-active
 ) { color: var(--ds-accent-deep); }
 :root[data-theme="dark"] :is(
-  #drawer-knowledge-mount .kd-eyebrow, #drawer-knowledge-mount .kd-knh__g,
-  #drawer-knowledge-mount .kd-tab.active .kd-tab__count, #drawer-knowledge-mount .kd-essential-deep__sub,
+  #drawer-knowledge-mount .kd-knh__g, #drawer-knowledge-mount .kd-essential-deep__sub,
   #drawer-knowledge-mount .kd-why__summary, #drawer-knowledge-mount .kd-why[open] .kd-why__summary,
   #drawer-knowledge-mount .kd-why__how, #drawer-knowledge-mount .kd-corpus__eyebrow,
   #drawer-knowledge-mount .kd-foods-eyebrow__r, #drawer-knowledge-mount .kd-foods-hero__h .l2,
@@ -408,7 +407,6 @@
   #drawer-knowledge-mount .kd-ep-fam__num, #drawer-knowledge-mount .kd-section-head,
   #drawer-knowledge-mount .kd-corpus__group-label
 ) { color: var(--ds-accent-deep); }
-:root[data-theme="dark"] #drawer-shared .kd-eyebrow { color: var(--ds-accent-deep); }
 
 /* (J4) Section-head / eyebrow links and the "open the full table / browse all / see all"
    style links that ride bare --ds-accent → bright. */
@@ -632,16 +630,15 @@
   #drawer-knowledge-mount .sh-condrow
 ) { border-left-color: var(--ds-accent-deep); }
 :root[data-theme="dark"] #drawer-knowledge-mount .ue-tile { border-top-color: var(--ds-accent-deep); }
-:root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-tab.active, #drawer-knowledge-mount .kd-ep-why) { border-bottom-color: var(--ds-accent-deep); }
+:root[data-theme="dark"] #drawer-knowledge-mount .kd-ep-why { border-bottom-color: var(--ds-accent-deep); }
 :root[data-theme="dark"] .gloss { border-bottom-color: var(--kd-ep-fam, var(--ds-accent-deep)); }
 :root[data-theme="dark"] :is(
-  #drawer-knowledge-mount.kd-open::after, #drawer-knowledge-mount .kd-eyebrow .pulse-dot,
+  #drawer-knowledge-mount.kd-open::after,
   #drawer-knowledge-mount .kd-corpus__eyebrow .pulse-dot, #drawer-knowledge-mount .kd-essential-deep__sub::before,
   #drawer-knowledge-mount .kd-ep-bar > i, #drawer-knowledge-mount .sh-res[data-kd-condition] .sh-res__dot
 ) { background: var(--ds-accent-deep); }
 :root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-foods-villi__panel--ok .kd-foods-villi__dot, #drawer-knowledge-mount .kd-foods-gate__through) { fill: var(--ds-accent-deep); }
 :root[data-theme="dark"] :is(#drawer-knowledge-mount .kd-ep-fam__node--solid, #drawer-knowledge-mount .kd-ep-fam__bracket) { stroke: var(--ds-accent-deep); }
-:root[data-theme="dark"] #drawer-knowledge-mount .kd-tab.active::before { background: linear-gradient(90deg, transparent, var(--ds-accent-deep), transparent); }
 :root[data-theme="dark"] #drawer-knowledge-mount .kd-bestmatch__label::after { background: color-mix(in srgb, var(--ds-accent-deep) 30%, transparent); }
 
 /* search-surface accent = --aw-green (kept green, brighter) */
