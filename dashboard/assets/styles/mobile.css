@@ -1002,11 +1002,22 @@
     width: auto;
     padding: 0 6px;
   }
+  /* ★ A CENTRED 44x44 BOX, NOT A NEGATIVE INSET, AND THAT IS NOT A STYLE PREFERENCE.
+     `inset: -6px` looks like it makes any 32px control a 44px target, and for THIS control it
+     happens to. It does not generalise: an absolutely-positioned pseudo sizes off its host's
+     PADDING box, so the same declaration on the profile's 30px avatar badge (3px border,
+     border-box) produced 24 + 16 = 40px — four pixels short, silently, and it took the probe
+     asserting the number to notice. An explicit 44x44 centred on the host is the same result
+     for every host, whatever its borders. */
   .ck-slot .ck-slot__pencil::after,
   .ck-slot .ck-slot__hue::after {
     content: '';
     position: absolute;
-    inset: -6px;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
   }
 
   /* ═══ THE FILTER ROW BECOMES A BAR AND A SHEET ═════════════════════
@@ -1268,6 +1279,118 @@
   #drawer-knowledge-mount .ue-strip,
   #drawer-knowledge-mount .kd-foods-villi__grid,
   #drawer-knowledge-mount .kd-orac-chain { grid-template-columns: minmax(0, 1fr); }
+
+  /* ═══ THE SCANNER'S VERDICT — ITS DECISION CONTROL RAN OFF THE SCREEN ═════
+     MEASURED at 375px: `.vd-tier` — the ADD / SAVE / REJECT segmented control, which IS the
+     scanner's decision — is 330px wide starting at x=57, so it ended at 387. Twelve pixels of
+     the REJECT cell were past the right edge, and REJECT is the verdict the label under test
+     actually got. It survived the earlier overflow audit because that audit compared each
+     element's WIDTH to the viewport; nothing here is wider than 375, it is just pushed too far
+     right. Compare the RIGHT EDGE, not the width.
+     Two causes, both fixed here:
+       .vd-card__body  padding: space-7 — 40px per side, on a card already inside .vd's 16
+       .vd-tier        one inline-flex row of three baseline cells, natural width 330
+     The padding comes to space-4, and the control becomes a full-width three-column grid with
+     each cell's sub-label under its verb instead of beside it. Same three choices, same order,
+     same colours, and each cell lands on the 44px touch floor for free. */
+  .vd-card__body { padding: var(--ds-space-4); }
+  /* THE CARD'S TOP ROW. The eyebrow was ellipsing to "WALLAC…" inside 2x32px of padding; half
+     that padding was not enough on its own. The row is a dot, the eyebrow, a "Local · confirmed"
+     tag that is `margin-left: auto; flex: 0 0 auto`, and a 44px close — 202px of fixed parts,
+     leaving ~109 for a string that wants 280. The eyebrow takes its own line instead, via
+     `order` rather than a markup change, and stops being nowrap so a long scan name wraps
+     rather than truncating. Row one keeps the dot, the tag and the close, which is the status
+     line; row two is what the card is ABOUT. */
+  .vd-card__top { padding: 11px var(--ds-space-4); flex-wrap: wrap; }
+  .vd-card__eyebrow {
+    order: 1;
+    flex: 1 0 100%;
+    white-space: normal;
+    overflow: visible;
+  }
+  /* the scan thumbnail is `flex: 0 0 auto` and sat in a 210px box with the rest of the line
+     empty beside it; at this width it is the whole line */
+  .vd-scan__thumb { flex: 1 1 100%; }
+  .vd-tier {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+  .vd-tier__c {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    padding: var(--ds-space-2) var(--ds-space-1);
+    min-height: 44px;
+    text-align: center;
+  }
+
+  /* ═══ THE SEARCH DRAWER BECOMES A SCREEN, NOT A WINDOW IN A WINDOW ═══════
+     It needed no OVERFLOW work — it is built as a modal (`position: fixed; inset: 0` plus a
+     centred panel), so it was already width-agnostic, and this sheet has said so since the
+     phone layer landed. That was true and it was not the whole story: MEASURED, the modal
+     insets itself 20px on each side and then `.scr-body` adds 24 and `.kcard` another 20, so
+     a knowledge card's text ran in a 132px column on a 375px screen. 130px of nesting, the
+     same shape the Knowledge drawer had.
+     On a phone a search overlay IS the screen. It goes full-bleed and stops above the bottom
+     bar — the same offset the Knowledge drawer takes, read from the same single token, for the
+     same reason: the bar is the app's navigation and a screen that covers it makes every exit
+     a two-step. `bottom` is set after `inset: 0` and wins on source order. */
+  #drawer-search-mount.sr-open {
+    padding: 0;
+    align-items: stretch;
+    bottom: calc(var(--phone-bar-h) + env(safe-area-inset-bottom));
+  }
+  #drawer-search-mount .scr {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    border-radius: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    /* a panel with no outside edges has nothing to cast onto */
+    box-shadow: none;
+  }
+  #drawer-search-mount .scr-body { padding: var(--ds-space-4) var(--ds-space-4) var(--ds-space-6); }
+  #drawer-search-mount .kcard { padding: var(--ds-space-3); gap: var(--ds-space-3); }
+  #drawer-search-mount .arow__sum { padding: var(--ds-space-3); }
+  /* ★ THE ENTITY HERO'S LINK WAS PAINTING OVER ITS OWN TITLE — the same collision the Knowledge
+     drawer's .kd-ep-hero had, in a different sheet. `.ehero` is a flex row of a 58px symbol, the
+     id block, and a `flex: 0 0 auto; white-space: nowrap` control (class `.eback`, but the string
+     it carries here is "LEARN MORE →"). After the symbol, the gaps and a ~155px button, the id
+     block was left too little for a 1.7rem display name that sets no overflow rule — so
+     "Selenium" rendered straight ACROSS "LEARN MORE".
+     The row wraps and the control takes its own line beneath the title. `width: max-content`
+     keeps it its natural size rather than stretching across the 100% basis that forces the
+     break. break-word on the name so a longer entity wraps instead of escaping the same way. */
+  #drawer-search-mount .ehero { flex-wrap: wrap; row-gap: var(--ds-space-3); }
+  #drawer-search-mount .ehero .eback {
+    flex: 0 0 100%;
+    width: max-content;
+    margin-right: 0;
+    align-self: flex-start;
+  }
+  #drawer-search-mount .ehero__name { overflow-wrap: break-word; }
+
+  /* ═══ THE ARRIVAL VEIL — A GROUP LABEL SITTING INSIDE ITS OWN GROUP ══════
+     `.wc__goal-group` is a wrapping flex row whose FIRST item is the category label. On a
+     desktop the whole group fits one line, so the label heads its chips and reads as a shelf.
+     At 375px the chips wrap and the label is left inline with whichever chip lands beside it:
+     "MIND & NERVES" rendered next to "Sharper thinking", and "HEART & METABOLISM" next to
+     "Heart health" — a heading that reads as a chip it does not belong to, on the FIRST screen
+     anyone sees.
+     The label takes a full line of its own. Same shape .essentials-subsection__hint and
+     .ep-seclabel__hint already use higher up this sheet, and for the same reason. */
+  .wc__goal-cat { flex: 1 0 100%; margin-right: 0; }
+
+  /* ═══ THE PROFILE'S AVATAR GRID — 7 ACROSS IS 31px A TILE ════════════════
+     MEASURED: `.pf-grid` is `repeat(7, 1fr)` in a ~277px column, so each of the 25 portraits
+     is a 31px circle. Raising a minimum would only overflow the grid; the column count is what
+     has to give. Five across puts every tile at ~47px — over the touch floor, with the same 25
+     portraits in the same order and the same scroll box. */
+  .pf-grid { grid-template-columns: repeat(5, 1fr); }
 }
 
 /* ═══ TOUCH — keyed to the POINTER, not the width ═════════════════════════
@@ -1448,5 +1571,88 @@
   #drawer-search-mount .scr-nav {
     width: 44px;
     height: 44px;
+  }
+
+  /* ── 2026-08-25: THE SURFACES THE FIRST TOUCH PASS NEVER WALKED ──────────
+     A walk of the arrival veil, the profile overlay, the Search drawer's RESULTS (rather than
+     its empty state) and the Coverage food tiles, by the same policy the block above states:
+     discrete controls to 44, dense clusters to 36 on a wider pitch, and an INVISIBLE hit-area
+     extension where a 44px BOX would wreck the composition around it. */
+
+  /* THE ARRIVAL VEIL'S GOAL CHIPS — 28px, and they are the only controls on the first screen
+     anyone ever sees. Thirty of them, but they are the WHOLE task of that screen, not a cloud
+     beside one, so they take the full floor rather than the cluster's 36. */
+  .wc-goal,
+  .wc__browse {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* THE SEARCH DRAWER'S RESULTS. Measured on a real query rather than the empty panel, which
+     is why the first pass missed all three: `.eback` 30px (a discrete back control),
+     `.fgroup__more` 26px (one "show more" per facet group — discrete, you aim at it), and
+     `.relpill` 24px, which is the related-entity CLOUD and takes the documented 36-on-a-
+     wider-pitch trade for exactly the reason .kd-ep-pill does. */
+  #drawer-search-mount .eback,
+  #drawer-search-mount .fgroup__more {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  #drawer-search-mount .relpill {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* THE PROFILE OVERLAY. The avatar tiles are handled by the column count in the phone block
+     above (a minimum here would only overflow the grid). What is left:
+       .pf-fchip  25px — four discrete filters (All / Generic / Men / Women)
+       .pf-modeb  32px — the two-way Cream/Charcoal switch
+       .pf-sw     30px — eight accent swatches, a dense cluster, so 36 on a wider gap */
+  .pf-fchip,
+  .pf-modeb {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .pf-sw { width: 36px; height: 36px; }
+  .pf-swatches { gap: var(--ds-space-2); }
+
+  /* ★ TWO CONTROLS WHERE A 44px BOX IS THE WRONG ANSWER AND A 44px TARGET IS THE RIGHT ONE.
+     `.pf-av__badge` is the "+" welded to the corner of the avatar circle — at 44 it swallows
+     the portrait it is attached to. `.fs-ctl--add` is the add-this-food button on a Coverage
+     food tile, drawn at 28px by `.ui-close--sm` because it sits in a tile's action cell; at 44
+     it re-lays the tile out around itself.
+     Same technique as the Regimen slot pencils: the visible box is left alone and a transparent
+     ::after carries the hit area out to 44.
+     ★ ONLY .fs-ctl--add TAKES `position: relative`, AND THE FIRST CUT GOT THAT WRONG.
+     It named .pf-av__badge too, "so the pseudo cannot anchor to some other ancestor" — but that
+     badge is `position: absolute; right: -2px; bottom: -2px`, welded to the corner of the avatar
+     circle. This block loads later at equal specificity, so `relative` OVERRODE `absolute` and
+     the badge fell out of its corner into normal flow, landing on top of the profile name. It
+     never needed the declaration: an absolutely-positioned element is already a positioned
+     ancestor for its own ::after. `.ui-close` sets no position at all, so .fs-ctl--add does
+     need it. A screenshot caught this; no measurement would have.
+     ★ `.fs-ctl--add` MUST BE NAMED, NOT REACHED THROUGH `.ui-close`. The rule above
+     deliberately excludes `.ui-close--sm` from the floor, because that variant is an inline
+     chip-remove X sized by the chip around it. This one is not that: it is a discrete action
+     with its own job, which is why it is called out by its own class. */
+  .fs-ctl--add { position: relative; }
+  /* Explicit 44x44 centred on the host, for the reason spelled out at the slot pencils above:
+     a negative inset sizes off the host's padding box, so it lands on a different number for
+     every control it is applied to. This badge is 30px border-box with a 3px border — an
+     `inset: -8px` gave it 40. */
+  .pf-av__badge::after,
+  .fs-ctl--add::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 44px;
+    height: 44px;
+    transform: translate(-50%, -50%);
   }
 }

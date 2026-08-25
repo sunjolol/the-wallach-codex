@@ -1,7 +1,7 @@
 {
   "name": "health-expert",
   "version": "1.0.0",
-  "description": "The Wallach Codex — root package. Exists only to hold puppeteer for the headless tools in tools/ (37 render probes plus mockup_measure.js and style_diff.js); the app + its build toolchain live in dashboard/.",
+  "description": "The Wallach Codex — root package. Exists only to hold puppeteer for the headless tools in tools/ (the render_probe_* suite plus mockup_measure.js and style_diff.js); the app + its build toolchain live in dashboard/. NO COUNT HERE ON PURPOSE: this line said \"37 render probes\" while the directory held 58, because a number typed into a description cannot follow the directory it describes.",
   "license": "MIT",
   "private": true,
   "type": "commonjs",
