@@ -1391,6 +1391,152 @@
      has to give. Five across puts every tile at ~47px — over the touch floor, with the same 25
      portraits in the same order and the same scroll box. */
   .pf-grid { grid-template-columns: repeat(5, 1fr); }
+
+  /* ═══════════════════════════════════════════════════════════════════════
+     THE LAST FIVE — the chart and diagram annotation the census kept flagging
+     ═══════════════════════════════════════════════════════════════════════
+     These were deferred once with the note that each is "pinned to a datum, so it cannot be
+     re-flowed without moving a label off the thing it labels". That was true of the LABELS and
+     false as a reason to leave the five alone: in four of the five the narrow column is not a
+     label at all, it is a two-column layout that should be one, and the fifth (the pH ladder)
+     had a real collision underneath the narrow measurement. */
+
+  /* ── 1 · THE pH LADDER — a card was painting over the next section ───────
+     MEASURED at 375px: `.sxb-scale` is `height: 380px` below 780px, and the two callout cards
+     are absolutely positioned inside it at their own pH heights. The stomach card sits at
+     pH 2.0 — 615px down a 380px box — so it hung 114px BELOW the figure and printed straight
+     over "WHY 1.0" and the numbered beat beneath it. Two blocks of text on the same pixels.
+     It also ran to x=366 in a 339px stage, so its right edge was clipped.
+     The figure keeps its full desktop height here, which is what actually contains the bottom
+     card (at 500px the card ends at 490), and the SCALE column comes in so the cards get the
+     width back: 34px of axis plus a 40px track at left:44 was 84px of a 339px stage spent
+     before a card could start. Same ladder, same gradient, same dots and band — narrower. */
+  #drawer-knowledge-mount .sxb-scale { height: 500px; }
+  #drawer-knowledge-mount .sxb-axis__t { width: 20px; font-size: 0.62rem; }
+  #drawer-knowledge-mount .sxb-track,
+  #drawer-knowledge-mount .sxb-band { left: 26px; width: 30px; }
+  #drawer-knowledge-mount .sxb-dot { left: 41px; }
+  #drawer-knowledge-mount .sxb-cap,
+  #drawer-knowledge-mount .sxb-bandlbl { left: 62px; }
+  /* `right: 0` with `width: auto` instead of a second fixed width — the card then measures
+     itself off the stage rather than off a number that has to be re-guessed per screen. */
+  #drawer-knowledge-mount .sxb-card { left: 64px; right: 0; width: auto; }
+
+  /* ── 2 · THE ENZYME CTA BAR ──────────────────────────────────────────────
+     `.ue-bar` is a flex row: name + subtitle on the left, a price block that is
+     `margin-left: auto; flex: none` on the right. The price cannot shrink, so the subtitle
+     absorbed the whole squeeze and read in a 162px column. It wraps: the name and its line take
+     the full width, the price and chevron take the row beneath, spread to the edges. */
+  #drawer-knowledge-mount .ue-bar { flex-wrap: wrap; row-gap: var(--ds-space-3); }
+  #drawer-knowledge-mount .ue-bar__r {
+    margin-left: 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* ── 3 · THE FOOD LISTS — TWO COLUMNS OF 162px ───────────────────────────
+     Two grids build a `.kd-foods-item`, both `1fr 1fr`: `.kd-foods-contrast__grid`, which is
+     the REMOVE-vs-EAT comparison, and `.kd-foods-form__grid` below it. Each tile came out 162px
+     and its "why" line — a full sentence — ran in 134.
+     Both stack. The contrast loses nothing by stacking: each column already carries its own
+     header ("Remove" / "Eat"), so the pair reads as two labelled lists rather than one lost
+     side-by-side — the same trade `.kd-ep-fam__split` takes higher up this sheet, and for the
+     same reason. Below ~200px a comparison column stops comparing anything. */
+  #drawer-knowledge-mount .kd-foods-contrast__grid,
+  #drawer-knowledge-mount .kd-foods-form__grid { grid-template-columns: minmax(0, 1fr); }
+
+  /* ── 4 · THE ORAC SUPPLEMENT ROWS, SECOND PASS ───────────────────────────
+     The first pass moved the bar to its own row and lifted the product name from 23px to 128.
+     128 is still not a product name: "Beyond Tangy Tangerine® (BTT) 2.5 Canister" needs three
+     lines in it. The figures column is content-sized and `white-space: nowrap`, so it takes
+     147px whatever is left — the name can only win by not sharing the line at all.
+     Three rows: name (with its chevron), then the comparison bar full width, then the figures
+     right-aligned beneath. Every part keeps its data and its order. */
+  #drawer-knowledge-mount .kd-orac-supp__row {
+    grid-template-columns: minmax(0, 1fr) 12px;
+    grid-template-areas:
+      "head  go"
+      "track track"
+      "nums  nums";
+    gap: 8px 10px;
+  }
+  #drawer-knowledge-mount .kd-orac-supp__row-nums { align-items: flex-end; }
+
+  /* THE LEADER CARD ABOVE THOSE ROWS, same section, same disease. It is
+     `grid-template-areas: "top score" / "meta score"` with `1fr auto`, and the score is a
+     2.15rem tabular number — so it took ~200px and left the product NAME about 90. MEASURED:
+     "BTT 2.0® Tablets - 120 Tablets" broke to four lines, and the "2,912 ORAC per $1" meta
+     broke to FOUR lines of its own, one word each.
+     One column, in reading order: what it is, what it scored, what it costs. Every part keeps
+     its type and its colour; the score simply stops being a column and becomes a line. */
+  #drawer-knowledge-mount .kd-orac-supp__leader {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "top"
+      "score"
+      "meta";
+    align-items: start;
+    gap: var(--ds-space-3);
+    padding: var(--ds-space-5) var(--ds-space-3) var(--ds-space-4);
+  }
+  /* the score was `align-items: flex-end` to sit against the card's right edge as a column;
+     on its own line it reads from the left with everything else, and its unit caption goes
+     beside the number rather than under it */
+  #drawer-knowledge-mount .kd-orac-supp__lead-score {
+    flex-direction: row;
+    align-items: baseline;
+    gap: var(--ds-space-2);
+  }
+  #drawer-knowledge-mount .kd-orac-supp__lead-score .u { margin-top: 0; }
+  #drawer-knowledge-mount .kd-orac-supp__lead-meta { flex-wrap: wrap; }
+
+  /* ── 5 · THE ORAC FIELD — THE NAME GUTTER WAS 96px ───────────────────────
+     `.kd-orac-lane` is `grid-template-columns: var(--gut) 1fr`, and drawer-orac.css already
+     halves that gutter to 128px below 820. Inside it the name shares its box with a 13px swatch
+     and 14px of padding, so a food category name got 96px — and the gutter cannot simply grow,
+     because every pixel it takes comes off the BAR, which is the thing being compared.
+     So the lane stops being two columns. `--gut: 0` collapses the gutter (the gridline overlay
+     reads the same variable, `left: calc(var(--gut) + var(--gap))`, so the lines follow), the
+     name takes its own row left-aligned, and the bar gets the full 339px underneath — better
+     resolution for the comparison, not just a wider label. */
+  #drawer-knowledge-mount .kd-orac-field { --gut: 0px; --gap: 0px; }
+  #drawer-knowledge-mount .kd-orac-lane {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 2px;
+    padding-bottom: 6px;
+  }
+  /* the colour swatch belongs BESIDE its name, not pushed to the far right of a now-full-width
+     row — a 1fr name column would strand it 300px from the thing it keys */
+  #drawer-knowledge-mount .kd-orac-lane__n {
+    grid-template-columns: minmax(0, max-content) 13px;
+    justify-content: start;
+    text-align: left;
+    padding: 8px 8px 0;
+  }
+
+  /* ═══ SUPPLEMENT FACTS — A TABLE WHOSE COLUMNS DID NOT LINE UP ═══════════
+     Found by looking at the screenshot after the census said the product page was fine on text
+     width. It was not fine: every AMOUNT and every %DV started at a different x, and the row
+     rules under them ended at a different x too. A facts table that does not align is not a
+     table.
+     THE CAUSE IS THAT EACH ROW IS ITS OWN GRID. `.kd-pf-nrow` is
+     `grid-template-columns: 1fr auto 56px` — so the tracks are computed PER ROW, not once for
+     the table. Two things then vary row to row: `auto` sizes the amount to its own content
+     ("30 mg" vs "25 mcg · 1000 IU"), and `1fr` is `minmax(auto, 1fr)`, whose floor is the name's
+     min-content — a long nutrient name pushes everything right. At 1440px there is enough slack
+     that the difference is invisible. At 375px it is the whole layout.
+     Pinning the two right-hand tracks makes every row agree, because every row reads the same
+     declaration. `minmax(0, 1fr)` removes the min-content floor so a long name WRAPS instead of
+     shoving the numbers. The head row takes the same tracks so its captions sit over their
+     columns. And the amount stops being nowrap — a dual-unit value like "25 mcg · 1000 IU" is
+     the one string that cannot fit a fixed track, and wrapping it is better than re-ragging the
+     table for it. */
+  #drawer-knowledge-mount .kd-pf-nhead,
+  #drawer-knowledge-mount .kd-pf-nrow {
+    grid-template-columns: minmax(0, 1fr) 76px 42px;
+    gap: var(--ds-space-2);
+  }
+  #drawer-knowledge-mount .kd-pf-nrow__amt { white-space: normal; }
 }
 
 /* ═══ TOUCH — keyed to the POINTER, not the width ═════════════════════════
@@ -1475,11 +1621,28 @@
   #drawer-knowledge-mount .kd-catfilter__b,
   #drawer-knowledge-mount .kd-orac-keyb,
   #drawer-knowledge-mount .kd-ep-src,
-  #drawer-knowledge-mount .kd-pf-nrow--link,
   #drawer-knowledge-mount .kt-kicker__link {
     min-height: 44px;
     display: inline-flex;
     align-items: center;
+  }
+  /* ★★ `display: inline-flex` IS NOT A FREE ADDITION TO A TOUCH FLOOR, AND IT WRECKED A TABLE.
+     `.kd-pf-nrow--link` was in the list above. Every clickable row of SUPPLEMENT FACTS is a
+     `display: grid` of `1fr auto 56px` — and an inline-level box SHRINK-WRAPS, so each row
+     stopped being 317px wide and became as wide as its own contents: measured 317, 195, 261,
+     238, 217, 206, 165, 189. Its grid tracks are computed from that width, so every AMOUNT and
+     every %DV started at a different x and every row rule ended at a different x. A facts table
+     that does not line up.
+     WHY ONLY THIS ONE, out of eleven selectors that take the same declaration: `inline-flex`
+     BLOCKIFIES to `flex` on a grid or flex item, so `.sh-condrow`, `.kd-explore-chip` and the
+     rest were saved by their parents, and `.kd-ep-src` was saved by its own `width: 100%`.
+     `.kd-pf-comp` is `display: block`, so nothing blockified this one and nothing caught it —
+     a census of narrow TEXT could not see it, because the text was not narrow. Only the picture
+     showed it.
+     The floor is a MINIMUM HEIGHT. It never needed to be a display mode. */
+  #drawer-knowledge-mount .kd-pf-nrow--link {
+    display: grid;
+    min-height: 44px;
   }
   #drawer-knowledge-mount .kd-ep-filter { min-height: 44px; }
 

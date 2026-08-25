@@ -342,6 +342,65 @@ const EDGE_SCAN = `(() => {
   check('essential page: the two-up split is one column at full width', deboxed.splittx !== null && deboxed.splittx > 250, deboxed.splittx);
   check('essential page: the detail card bleeds to both screen edges', deboxed.deepLeft === 0 && deboxed.deepRight === 375, deboxed);
 
+  // 7. THE FIGURES AND TABLES — the surfaces where a census of narrow TEXT sees nothing.
+  //    Everything below was found by looking at a screenshot after the numbers read clean.
+  await click('[data-kd-tab="products"]');
+  await wait(900);
+  await p.evaluate(() => document.querySelector('[data-kd-product]')?.click());
+  await wait(1400);
+  const facts = await p.evaluate(() => {
+    const rows = Array.from(document.querySelectorAll('.kd-pf-nrow'));
+    if (rows.length < 3) return null;
+    return {
+      n: rows.length,
+      widths: Array.from(new Set(rows.map(r => Math.round(r.getBoundingClientRect().width)))),
+      amtLefts: Array.from(new Set(rows.map(r => {
+        const a = r.querySelector('.kd-pf-nrow__amt');
+        return a ? Math.round(a.getBoundingClientRect().left) : -1;
+      }))),
+      display: getComputedStyle(rows[0]).display,
+    };
+  });
+  // ★ THE REGRESSION THIS PINS. A touch-floor pass gave `.kd-pf-nrow--link` `display: inline-flex`
+  // alongside a min-height. An inline-level box SHRINK-WRAPS, so every row of SUPPLEMENT FACTS
+  // became as wide as its own contents (measured 317 / 195 / 261 / 238 / 217 / 206 / 165 / 189)
+  // and each row's grid tracks were computed off that width — so no two AMOUNT columns started
+  // at the same x. A table that does not line up. Nothing measuring TEXT WIDTH could see it.
+  check('facts table: every row is the same width', facts !== null && facts.widths.length === 1, facts && facts.widths);
+  check('facts table: every AMOUNT starts at the same x', facts !== null && facts.amtLefts.length === 1, facts && facts.amtLefts);
+  check('facts table: the rows are still a grid, not shrink-wrapped', facts !== null && facts.display === 'grid', facts && facts.display);
+
+  await click('[data-kd-tab="foods"]');
+  await wait(1400);
+  const figs = await p.evaluate(() => {
+    const w = s => { const e = document.querySelector(s); return e ? Math.round(e.getBoundingClientRect().width) : null; };
+    const scale = document.querySelector('.sxb-scale');
+    const cards = Array.from(document.querySelectorAll('.sxb-card'));
+    const sr = scale ? scale.getBoundingClientRect() : null;
+    return {
+      // the pH callouts must stay INSIDE the figure — one of them hung 114px below it and
+      // printed over the next section's heading and body copy
+      cardsEscape: sr === null ? null : cards.some(c => c.getBoundingClientRect().bottom > sr.bottom + 1),
+      cardW: w('.sxb-card__d'),
+      ueSub: w('.ue-bar__sub'),
+      foodWhy: w('.kd-foods-item__why'),
+    };
+  });
+  check('pH ladder: no callout card escapes the figure', figs.cardsEscape === false, figs.cardsEscape);
+  check('pH ladder: the callout text has room', figs.cardW !== null && figs.cardW > 230, figs.cardW);
+  check('enzyme CTA: the subtitle has room', figs.ueSub !== null && figs.ueSub > 260, figs.ueSub);
+  check('food lists: one column, not two 162px ones', figs.foodWhy !== null && figs.foodWhy > 260, figs.foodWhy);
+
+  await click('[data-kd-tab="orac"]');
+  await wait(1500);
+  const orac = await p.evaluate(() => {
+    const w = s => { const e = document.querySelector(s); return e ? Math.round(e.getBoundingClientRect().width) : null; };
+    return { suppHead: w('.kd-orac-supp__row-head'), laneName: w('.kd-orac-lane__n'), plot: w('.kd-orac-fld__plot') };
+  });
+  check('ORAC: a supplement row can hold a product name', orac.suppHead !== null && orac.suppHead > 250, orac.suppHead);
+  check('ORAC field: the category name is not in a 96px gutter', orac.laneName !== null && orac.laneName > 120, orac.laneName);
+  check('ORAC field: the bar plot got the full width', orac.plot !== null && orac.plot > 300, orac.plot);
+
   await click('.rail__profile');
   await wait(1100);
   const pf = await p.evaluate(() => {
