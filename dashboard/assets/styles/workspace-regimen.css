@@ -143,6 +143,21 @@
   transition:width var(--ds-motion-slow) var(--ds-ease-out);
 }
 .ck-slot__swatches{ display:flex; align-items:center; gap:7px; }
+/* THE PHONE'S COLOUR HANDLE — one dot showing the slot's current colour, which expands the
+   fourteen-swatch row below. See views/regimen.ts::renderFilledSlot.
+   IT IS `display: none` HERE, IN THE ALWAYS-LOADED SHEET, not in mobile.css: the button is in
+   the markup at every width, and a control styled only inside a media query renders as a raw
+   user-agent button everywhere that query does not match. mobile.css turns it on.
+   ★ THE RING IS LOAD-BEARING, NOT DECORATION. The handle sits in .ck-slot__head, and that head
+   is inside .ck-slot__top — whose background IS var(--sc). A --sc dot on a --sc ground is an
+   invisible control. The paper-light ring is what separates the chip from the card it is
+   painted on, and it is the same paper-light the pencil buttons beside it are drawn in. */
+.ck-slot__hue{ display:none; }
+.ck-slot__hue-dot{
+  width:13px; height:13px; border-radius:var(--ds-radius-circle); background:var(--sc);
+  border:2px solid color-mix(in srgb, var(--ds-paper-light) 85%, transparent);
+  box-shadow:0 1px 2px color-mix(in srgb, var(--ds-ink) 30%, transparent);
+}
 .ck-swatch{
   flex:0 0 auto; width:10px; height:10px; padding:0; cursor:pointer;
   border-radius:var(--ds-radius-circle); background:var(--h);

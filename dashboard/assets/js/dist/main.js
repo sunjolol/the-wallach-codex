@@ -46055,7 +46055,22 @@ twice over.
 
 Not fixed. Repairing them changes how dark mode LOOKS on four live elements, and that wants his
 eyes, exactly as the seam did. The difference is that this time nobody will be shown a pair of
-identical screenshots and asked to choose.` }];
+identical screenshots and asked to choose.` }, { id: "lg_mt8t6p80_xad66i", ts: "2026-08-25T10:17:28.752492-05:00", surface: "mobile/phone-arrangement", kind: "round-close", summary: "Six phone defects he listed are fixed: reading a page meant reading it through three nested boxes \u2014 Calcium's body text was 80px wide on a 375px screen, now 279. The Knowledge menu folds, the colour picker hides behind a dot, the filters became a sheet.", detail: `mobile/de-boxing + collapsible-drawer-header + regimen-filter-sheet \xB7 He listed six things wrong with the phone version and asked that every screen be brought to modern mobile standards. Six are fixed. The biggest was that reading anything on a phone meant reading it through three nested boxes \u2014 the Calcium page's "when it's there" paragraph was rendering two words per line, in an 80-pixel column, on a 375-pixel screen. The boxes have come in and the text is now 279 pixels wide. The Knowledge menu that sat above every screen now folds to a single bar naming where you are, with a tap to reopen it; the Regimen save cards hide their fourteen-colour picker behind one dot; and the filter dropdowns move into a sheet that slides up from the bottom instead of taking 194 pixels of permanent height.
+
+CENSUS FIRST, NOT GUESSES. tools/probes-style scratch harness walked every phone screen at 375x812 and listed every text block under 230px wide together with the chain of ancestors that ate the width. ONE cause on every detail surface: .kd-body 24px/side + .kd-essential-deep 16+1px/side (it wraps essentials AND conditions AND products) + .kd-ep-fam/-op/.kd-pf-comp/.kd-pf-glance 24+1px/side = 132px of 375 gone before content, then a fourth level (.kd-ep-claim__body 60, .kd-ep-fam__splitcell 38, .ds-pull-quote 82).
+SIX SURFACES, ALL IN mobile.css's 767px query unless noted:
+ 1. DE-BOXING. .vd padding space-7 -> space-4 (Scanner had DOUBLE Coverage's and Regimen's gutters, a verbatim port from the desktop demo). .kd-body padding-inline space-5 -> space-4. .kd-essential-deep bleeds to both screen edges (margin-inline -space-4, padding-inline space-4, side borders 0, radius 0) so its accent ring becomes a top/bottom band. Inner plates padding-inline space-3. .kd-ep-claim__body loses its 44px hanging indent. .ds-pull-quote space-7 -> space-5 with the ::before glyph stepped 6rem -> 4rem. .kd-ep-fam__split -> one column, --r's left border/padding flipped to a top border. .kd-ep-op__grid column-gap space-6 -> space-4.
+ 2. COLLAPSIBLE KNOWLEDGE HEADER. New .kd-knh__menu handle in views/knowledge.ts::renderShell naming the active tab + a caret; .kd-knh--menu-open on the header; tabs row removed from grid-template-areas when shut. Open state is stored as menuOverride = {screen, open} keyed on screenId() (activeTab + the five selection fields) so ANY navigation resets it with no reset hook at any navigation site. render() also toggles .kd-detail on the mount, which the phone layer uses to drop the per-tab search box on a detail screen (lists keep it; desktop untouched, where the deep-dive sits directly above the grid it filters).
+ 3. REGIMEN SLOT CARD. New .ck-slot__hue handle (dot + caret) in views/regimen.ts::renderFilledSlot; a pure DOM disclosure toggling .ck-slot--hue-open, no state and no re-render (picking a colour re-renders, which folds it away). .ck-slot__pencil 44px -> 32px VISIBLE with a transparent ::after {inset:-6px} carrying the hit area back to 44 \u2014 a 44px target was always the requirement, a 44px box was the easy way to get one. Scoped (0,2,0) so it does not depend on staying above the pointer:coarse block.
+ 4. FILTER SHEET. New views/filter-sheet.ts (filterSheet / refreshFilterCount / installFilterSheet, one delegated document listener because both rows are rebuilt on every repaint). Wired into views/foods-block.ts::filterNode and views/regimen.ts::recControls; installFilterSheet() called once from main.ts. .fs-filter__sheet is \`display: contents\` at every non-phone width, which is what keeps the desktop flex row byte-identical. Badge counts a <select> only if it OFFERS an option[value=""] and is not on it \u2014 that excludes the sort picker (whose default IS a value) for free. One-picker rows (the Coverage pane) get no toggle, derived from pickers.length. New copy keys fs_filter_clear/_done/_open/_sheet_label in view-copy.json.
+ 5. EDITORIAL NUMERALS. .kd-orac-sec / .kd-orac-hd / .kd-foods-sec -> one column, numeral 4-4.5rem -> 2.4rem. --hero's margin-top/line-height overhang answered at (1,2,0).
+ 6. PRODUCTS CAPTION + THREE MORE THE CENSUS FOUND. .kd-catbar wraps, .kd-section-head takes a full line (the STRING is untouched \u2014 215 and 250 are derived at render). .kd-orac-supp__row -> named areas "head nums go" / "track track track" (its name column measured 23px). .ue-strip / .kd-foods-villi__grid / .kd-orac-chain -> one column.
+DEFAULTS IN SHIPPING SHEETS, per the rule that has been broken four times here: .kd-knh__menu in drawer-knowledge.css, .ck-slot__hue + .ck-slot__hue-dot in workspace-regimen.css, .fs-filter__toggle/__foot/__sheethd + .fs-filter__sheet{display:contents} in dashboard.css.
+MEASURED, before -> after at 375x812: Calcium .kd-ep-fam__splittx 80 -> 279px; Calcium chrome above the body 244 -> 61px (body 515 -> 698); Calcium text blocks under 230px 16 -> 3; condition page 8 -> 0; topic page 2 -> 0; KD/foods 10 -> 3; KD/orac 7 -> 4; KD/products 1 -> 0; .fs-controls 244 and 194 -> 94 and 94; slot card 289 -> 164; .ck-slot__swatches 112 -> 0 at rest; Scanner gutters 40 -> 16.
+TWO DEFECTS ONLY A SCREENSHOT COULD CATCH, both found and fixed in this chunk. (a) \`box-shadow: none\` on .kd-essential-deep did nothing: every detail screen re-declares the shadow at (1,2,0) to carry its own category colour (.kd-essential-deep[data-category=...], .kd-ep--cond, .kd-ep--prod), so a (1,1,0) rule loses however late it loads \u2014 five of six declarations in the block landed and the sixth silently did not. Answered in kind. (b) The sheet's backdrop painted OVER the sheet: it was .fs-filter__sheet.is-open::before at z-index:-1, and CSS paints a stacking context's own background FIRST and its negative-z descendants AFTER. Moved to .fs-filter:has(.fs-filter__sheet.is-open)::before at z-index 29 \u2014 that row opens no stacking context, so the pseudo joins the root layer below the sheet's 30. Every measurement passed while it was broken.
+ALSO LEARNED: 0 of 12 stylesheets are CSSOM-readable over file:// in headless Chrome, so a "which rule wins" walk of document.styleSheets returns an empty list and reads as "no rule matches". Use getComputedStyle, or serve over http.
+VERIFICATION. tsc --noEmit clean. build.mjs OK. invariants 104/104 (24 external / 33 consistency / 45 structural / 2 meta), no new reds. Two purpose-built probes, 23 + 27 checks, both PASS, each carrying DESKTOP NEGATIVE CONTROLS at 1440x900: handle and filter toggle compute display:none, the sheet computes display:contents, the three pickers keep their measured 160/222/160 widths and share ONE line (tops all 1017), the tab-search box is untouched at 51px, the drawer head stays 78px, .ck-slot__pencil is back at its own 24px, .ck-slot__swatches still shown. Re-ran 18 existing render probes: all PASS. render_probe_orac / _mech_shape / _group_dots are RED \u2014 built a detached HEAD worktree at 307022fc, rebuilt its bundle and ran all three there: BYTE-IDENTICAL failure lists. Pre-existing, not from this work.
+DEFERRED, NOT DONE: Coverage's four panes, the Scanner's Confirm/Result steps and the Search drawer have had no screen-by-screen pass \u2014 their census reads clean, which is not the same as a clean screen. Five census items remain, all chart/diagram annotation rather than prose: .sxb-card__d 214px, .ue-bar__sub 162, .kd-foods-item__why 134, .kd-orac-supp__row-head 128, a .kd-orac-lane__n label at 96.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -123310,9 +123325,13 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       ep_works_with_lead: "Nutrients rarely work alone \u2014 Wallach names {n} this one partners with.",
       fs_filter_all: "All foods",
       fs_filter_cat_label: "Filter foods by category",
+      fs_filter_clear: "Clear",
+      fs_filter_done: "Done",
       fs_filter_find: "Find a food\u2026",
       fs_filter_none: "No food in the catalog matches that filter.",
+      fs_filter_open: "Filters",
       fs_filter_q_label: "Find a food by name",
+      fs_filter_sheet_label: "Filters",
       fs_pager_label: "More foods",
       fs_pager_next: "More foods",
       fs_pager_page: "Foods, page {n} of {of}",
@@ -179448,6 +179467,142 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     return essentials !== void 0 && byPresence.some((slug) => essentials.has(slug));
   }
 
+  // assets/js/src/views/filter-sheet.ts
+  function activeCount(row) {
+    let n = 0;
+    for (const sel of Array.from(row.querySelectorAll("select.fs-filter__cat"))) {
+      const offersAll = Array.from(sel.options).some((o) => o.value === "");
+      if (offersAll && sel.value !== "") {
+        n += 1;
+      }
+    }
+    return n;
+  }
+  function refreshFilterCount(row) {
+    const toggle = row.querySelector("[data-fs-filters]");
+    if (toggle === null) {
+      return;
+    }
+    const n = activeCount(row);
+    const badge = toggle.querySelector(".fs-filter__count");
+    if (badge !== null) {
+      badge.textContent = n > 0 ? String(n) : "";
+    }
+    toggle.classList.toggle("is-on", n > 0);
+  }
+  function filterSheet(pickers) {
+    if (pickers.length < 2) {
+      return pickers;
+    }
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "fs-filter__toggle";
+    toggle.dataset["fsFilters"] = "";
+    toggle.setAttribute("aria-expanded", "false");
+    const label = document.createElement("span");
+    label.className = "fs-filter__toggle-label";
+    label.textContent = ui("fs_filter_open");
+    const count = document.createElement("span");
+    count.className = "fs-filter__count";
+    toggle.append(label, count);
+    const sheet = document.createElement("div");
+    sheet.className = "fs-filter__sheet";
+    sheet.setAttribute("role", "group");
+    sheet.setAttribute("aria-label", ui("fs_filter_sheet_label"));
+    const foot = document.createElement("div");
+    foot.className = "fs-filter__foot";
+    const clear = document.createElement("button");
+    clear.type = "button";
+    clear.className = "fs-filter__footb";
+    clear.dataset["fsClear"] = "";
+    clear.textContent = ui("fs_filter_clear");
+    const done = document.createElement("button");
+    done.type = "button";
+    done.className = "fs-filter__footb fs-filter__footb--go";
+    done.dataset["fsDone"] = "";
+    done.textContent = ui("fs_filter_done");
+    foot.append(clear, done);
+    const head = document.createElement("div");
+    head.className = "fs-filter__sheethd";
+    head.setAttribute("aria-hidden", "true");
+    head.textContent = ui("fs_filter_sheet_label");
+    sheet.append(head, ...pickers, foot);
+    return [toggle, sheet];
+  }
+  function closeAll() {
+    for (const el of Array.from(document.querySelectorAll(".fs-filter__sheet.is-open"))) {
+      el.classList.remove("is-open");
+      el.closest(".fs-filter")?.querySelector("[data-fs-filters]")?.setAttribute("aria-expanded", "false");
+    }
+    document.body.classList.remove("fs-sheet-open");
+  }
+  var installed = false;
+  function installFilterSheet() {
+    if (installed) {
+      return;
+    }
+    installed = true;
+    document.addEventListener("click", (ev) => {
+      const target = ev.target;
+      if (!(target instanceof Element)) {
+        return;
+      }
+      const toggle = target.closest("[data-fs-filters]");
+      if (toggle !== null) {
+        const row = toggle.closest(".fs-filter");
+        const sheet = row?.querySelector(".fs-filter__sheet");
+        if (sheet !== void 0 && sheet !== null) {
+          const open = !sheet.classList.contains("is-open");
+          closeAll();
+          sheet.classList.toggle("is-open", open);
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          document.body.classList.toggle("fs-sheet-open", open);
+        }
+        return;
+      }
+      if (target.closest("[data-fs-done]") !== null) {
+        closeAll();
+        return;
+      }
+      const clear = target.closest("[data-fs-clear]");
+      if (clear !== null) {
+        const row = clear.closest(".fs-filter");
+        if (row !== null) {
+          for (const sel of Array.from(row.querySelectorAll("select.fs-filter__cat"))) {
+            if (sel.value !== "" && Array.from(sel.options).some((o) => o.value === "")) {
+              sel.value = "";
+              sel.dispatchEvent(new Event("change", { bubbles: true }));
+            }
+          }
+          const q = row.querySelector("input.fs-filter__q");
+          if (q !== null && q.value !== "") {
+            q.value = "";
+            q.dispatchEvent(new Event("input", { bubbles: true }));
+          }
+          refreshFilterCount(row);
+        }
+        return;
+      }
+      if ((target.classList.contains("fs-filter") || target.classList.contains("fs-filter__sheet")) && document.querySelector(".fs-filter__sheet.is-open") !== null) {
+        closeAll();
+      }
+    });
+    document.addEventListener("change", (ev) => {
+      const t = ev.target;
+      if (t instanceof Element) {
+        const row = t.closest(".fs-filter");
+        if (row !== null) {
+          refreshFilterCount(row);
+        }
+      }
+    });
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape" && document.body.classList.contains("fs-sheet-open")) {
+        closeAll();
+      }
+    });
+  }
+
   // assets/js/src/views/pager.ts
   var PAGER_PREV = "\u2039";
   var PAGER_NEXT = "\u203A";
@@ -179594,7 +179749,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       el.value = value;
       return el;
     };
-    wrap.appendChild(sel);
+    const pickers = [sel];
     if (f.goals !== void 0) {
       const goalSel = pick(
         "foodGoal",
@@ -179604,10 +179759,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ui("fs_filter_goal_label")
       );
       goalSel.classList.add("fs-filter__cat--goal");
-      wrap.appendChild(goalSel);
+      pickers.push(goalSel);
     }
     if (f.nutrients !== void 0) {
-      wrap.appendChild(pick(
+      pickers.push(pick(
         "foodNutrient",
         f.nutrient ?? "",
         ui("fs_filter_nutrient_all"),
@@ -179615,7 +179770,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ui("fs_filter_nutrient_label")
       ));
     }
-    wrap.appendChild(q);
+    wrap.append(...filterSheet(pickers), q);
+    refreshFilterCount(wrap);
     return wrap;
   }
   function markFocus(host) {
@@ -222313,7 +222469,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         return renderProductsTab(selectedProduct, selectedFood, catalogKind, fromProductsTab);
     }
   }
-  function renderShell(activeTab, selectedKey, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, trail) {
+  function renderShell(activeTab, selectedKey, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, trail, menuOpen) {
     const snapshot2 = getOrCompute();
     const tabs = [
       { id: "home", label: ui("kd_tab_home") },
@@ -222325,10 +222481,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     ];
     const tabsHTML = tabs.map((t) => `<button class="kd-knh__tab${t.id === activeTab ? " active" : ""}" data-kd-tab="${t.id}">${escHTML12(t.label)}</button>`).join("");
     const fromProductsTab = trail.length === 0 || trail[0]?.type === "tab" && trail[0].val === "products";
+    const menuName = tabLabel(activeTab);
     return `
-    <header class="kd-knh">
+    <header class="kd-knh${menuOpen ? " kd-knh--menu-open" : ""}">
       <div class="kd-knh__mark"><span class="kd-knh__g">\u2761</span><b>${escHTML12(ui("kd_mark"))}</b></div>
-      <nav class="kd-knh__tabs">${tabsHTML}</nav>
+      <button class="kd-knh__menu" data-kd-action="menu" type="button" aria-expanded="${menuOpen ? "true" : "false"}" aria-controls="kd-knh-tabs" aria-label="${escHTML12(menuName)} \u2014 show the Knowledge menu"><span class="kd-knh__menu-name">${escHTML12(menuName)}</span><span class="kd-knh__menu-caret" aria-hidden="true">\u25BE</span></button>
+      <nav class="kd-knh__tabs" id="kd-knh-tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="ui-close" data-kd-action="close" title="Close (Esc)" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
     </header>
     ${(activeTab === "essentials" || activeTab === "conditions" || activeTab === "products" || activeTab === "explore") && selectedTopic === null ? `<div class="kd-search">
@@ -222484,8 +222642,17 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     let selectedTopic = null;
     let trail = [];
     let searchQuery = "";
+    let menuOverride = null;
+    const screenId = () => [activeTab, selectedEssential, selectedCondition, selectedProduct, selectedFood, selectedTopic].join("|");
+    const menuIsOpen = () => {
+      if (menuOverride !== null && menuOverride.screen === screenId()) {
+        return menuOverride.open;
+      }
+      return activeTab === "home" && selectedTopic === null;
+    };
     const render = () => {
-      container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, trail);
+      container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, trail, menuIsOpen());
+      container.classList.toggle("kd-detail", selectedEssential !== null || selectedCondition !== null || selectedProduct !== null || selectedFood !== null || selectedTopic !== null);
       if (searchQuery.length > 0) {
         const input = container.querySelector(".kd-search-input");
         if (input !== null) {
@@ -222696,6 +222863,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         const action = actionEl.getAttribute("data-kd-action");
         if (action === "close") {
           close();
+        } else if (action === "menu") {
+          menuOverride = { screen: screenId(), open: !menuIsOpen() };
+          render();
         } else if (action === "essential-close") {
           selectedEssential = null;
           trail = [];
@@ -223620,6 +223790,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     <div class="ck-slot__top">
       <div class="ck-slot__head">
         <span class="ck-slot__name" data-slot-name title="${escHTML14(slot.name)}">${escHTML14(slot.name)}</span>
+        <button type="button" class="ck-slot__hue" data-slot-hue aria-expanded="false" aria-controls="ck-hues-${escHTML14(slot.id)}" aria-label="Slot colour \u2014 show the palette" title="Slot colour"><span class="ck-slot__hue-dot" aria-hidden="true"></span><span class="ck-slot__hue-caret" aria-hidden="true">\u25BE</span></button>
         <button type="button" class="ck-slot__pencil" data-slot-rename aria-label="Rename this save" title="Rename">${PENCIL_SVG}</button>
         <button type="button" class="ck-slot__pencil ck-slot__export" data-slot-export="${escHTML14(slot.id)}" aria-label="Export this save to a file" title="Export this save">${EXPORT_SVG}</button>
         ${showDelete ? `<button type="button" class="ck-slot__pencil ck-slot__trash" data-slot-delete aria-label="Delete this save" title="Delete">${TRASH_SVG}</button>` : ""}
@@ -223631,7 +223802,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     </div>
     <div class="ck-slot__tray">
       <div class="ck-slot__meter" role="img" aria-label="${covered} of ${essentialCount()} covered"><span class="ck-slot__meter-fill" style="width:${pct}%"></span></div>
-      <div class="ck-slot__swatches" role="group" aria-label="Slot colour">${renderSwatches(hue)}</div>
+      <div class="ck-slot__swatches" id="ck-hues-${escHTML14(slot.id)}" role="group" aria-label="Slot colour">${renderSwatches(hue)}</div>
     </div>
   </div>`;
   }
@@ -224602,6 +224773,15 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         }
         return;
       }
+      const hueBtn = target.closest("[data-slot-hue]");
+      if (hueBtn !== null) {
+        ev.stopPropagation();
+        const card = hueBtn.closest(".ck-slot");
+        if (card !== null) {
+          hueBtn.setAttribute("aria-expanded", card.classList.toggle("ck-slot--hue-open") ? "true" : "false");
+        }
+        return;
+      }
       const swatch = target.closest("[data-swatch]");
       if (swatch !== null) {
         ev.stopPropagation();
@@ -224982,11 +225162,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     sortSel.classList.add("fs-filter__cat--sort");
     const goalSel = pick("recGoal", goalId, ui("rg_recs_goal_all"), goals.map((g) => ({ v: g.id, t: g.name })), ui("rg_recs_goal_label"));
     goalSel.classList.add("fs-filter__cat--goal");
-    wrap.append(
+    wrap.append(...filterSheet([
       sortSel,
       goalSel,
       pick("recNutrient", nutrient, ui("rg_recs_nutrient_all"), nutrients.map((n) => ({ v: n.slug, t: n.label })), ui("rg_recs_nutrient_label"))
-    );
+    ]));
+    refreshFilterCount(wrap);
     return wrap;
   }
   function foodNutrientOptions() {
@@ -230051,6 +230232,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     on("drawer:toggled", () => syncDrawerRail());
     wireSearchToKnowledge();
     initGlossTooltip();
+    installFilterSheet();
     setTimeout(() => navigateTo("coverage"), 0);
     prefetchSplit(["creators-log-embed", "corpus-embed", "search/search-index"]);
     void ensureKnowledgeData();

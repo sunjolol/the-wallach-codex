@@ -49,6 +49,7 @@ import { foodCatalogSize, foodCategories, listFoods, rankFoodsForCoverage } from
 import { type CatalogProduct, listCatalogProducts, productIdsForNames } from '../state/recommender.js';
 import { ui } from '../state/copy.js';
 import { shortEssentialLabel } from '../state/coverage.js';
+import { filterSheet, refreshFilterCount } from './filter-sheet.js';
 import { addCatalogFood, buildFoodsBlock } from './foods-block.js';
 import { pagerNode } from './pager.js';
 import {
@@ -376,6 +377,7 @@ function renderFilledSlot(slot: Slot, active: boolean, covered: number, showDele
     <div class="ck-slot__top">
       <div class="ck-slot__head">
         <span class="ck-slot__name" data-slot-name title="${escHTML(slot.name)}">${escHTML(slot.name)}</span>
+        <button type="button" class="ck-slot__hue" data-slot-hue aria-expanded="false" aria-controls="ck-hues-${escHTML(slot.id)}" aria-label="Slot colour — show the palette" title="Slot colour"><span class="ck-slot__hue-dot" aria-hidden="true"></span><span class="ck-slot__hue-caret" aria-hidden="true">▾</span></button>
         <button type="button" class="ck-slot__pencil" data-slot-rename aria-label="Rename this save" title="Rename">${PENCIL_SVG}</button>
         <button type="button" class="ck-slot__pencil ck-slot__export" data-slot-export="${escHTML(slot.id)}" aria-label="Export this save to a file" title="Export this save">${EXPORT_SVG}</button>
         ${showDelete ? `<button type="button" class="ck-slot__pencil ck-slot__trash" data-slot-delete aria-label="Delete this save" title="Delete">${TRASH_SVG}</button>` : ''}
@@ -387,7 +389,7 @@ function renderFilledSlot(slot: Slot, active: boolean, covered: number, showDele
     </div>
     <div class="ck-slot__tray">
       <div class="ck-slot__meter" role="img" aria-label="${covered} of ${essentialCount()} covered"><span class="ck-slot__meter-fill" style="width:${pct}%"></span></div>
-      <div class="ck-slot__swatches" role="group" aria-label="Slot colour">${renderSwatches(hue)}</div>
+      <div class="ck-slot__swatches" id="ck-hues-${escHTML(slot.id)}" role="group" aria-label="Slot colour">${renderSwatches(hue)}</div>
     </div>
   </div>`;
 }
@@ -1580,6 +1582,20 @@ export function mount(container: HTMLElement): MountHandle {
       }
       return;
     }
+    // — the colour handle: a DISCLOSURE, not state —
+    // The phone hides the fourteen-swatch row behind one dot (workspace-regimen.css declares the
+    // handle `display: none`; mobile.css turns it on), so this toggles a class and nothing else:
+    // no persisted flag, no re-render. Picking a colour DOES re-render, which folds the row away
+    // again — which is the behaviour you want and costs no code to get.
+    const hueBtn = target.closest<HTMLElement>('[data-slot-hue]');
+    if (hueBtn !== null) {
+      ev.stopPropagation();
+      const card = hueBtn.closest<HTMLElement>('.ck-slot');
+      if (card !== null) {
+        hueBtn.setAttribute('aria-expanded', card.classList.toggle('ck-slot--hue-open') ? 'true' : 'false');
+      }
+      return;
+    }
     // — slot swatch (recolour) —
     const swatch = target.closest<HTMLElement>('[data-swatch]');
     if (swatch !== null) {
@@ -2052,11 +2068,15 @@ function recControls(sort: RecSort, goalId: string, nutrient: string, goals: Lay
   sortSel.classList.add('fs-filter__cat--sort');
   const goalSel = pick('recGoal', goalId, ui('rg_recs_goal_all'), goals.map(g => ({ v: g.id, t: g.name })), ui('rg_recs_goal_label'));
   goalSel.classList.add('fs-filter__cat--goal');
-  wrap.append(
+  // All three go behind the phone's filter sheet — this row has no name box to leave in the
+  // bar. `display: contents` keeps them direct flex children of .fs-filter at every other
+  // width, so the desktop row is unchanged; see views/filter-sheet.ts.
+  wrap.append(...filterSheet([
     sortSel,
     goalSel,
     pick('recNutrient', nutrient, ui('rg_recs_nutrient_all'), nutrients.map(n => ({ v: n.slug, t: n.label })), ui('rg_recs_nutrient_label')),
-  );
+  ]));
+  refreshFilterCount(wrap);
   return wrap;
 }
 

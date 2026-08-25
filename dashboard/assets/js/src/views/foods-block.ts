@@ -38,6 +38,7 @@ import type { RegimenItem } from '../core/schemas/index.js';
 import { ui } from '../state/copy.js';
 import { foodById, foodCatalogSize, type FoodHit, type FoodRec } from '../state/foods.js';
 import { addOrBumpRegimenItem } from '../state/regimen.js';
+import { filterSheet, refreshFilterCount } from './filter-sheet.js';
 import { pagerNode } from './pager.js';
 
 /** The label cut into the dotted rule. Owner's choice of the three offered, 2026-08-21. */
@@ -191,7 +192,7 @@ function filterNode(f: NonNullable<FoodsBlockOptions['filter']>): HTMLElement {
     return el;
   };
 
-  wrap.appendChild(sel);
+  const pickers: HTMLElement[] = [sel];
   // The goal + nutrient pickers, only where the caller supplies their options -- the Coverage
   // block deliberately keeps the shorter row.
   if (f.goals !== undefined) {
@@ -201,13 +202,18 @@ function filterNode(f: NonNullable<FoodsBlockOptions['filter']>): HTMLElement {
     const goalSel = pick('foodGoal', f.goalId ?? '', ui('fs_filter_goal_all'),
       f.goals.map(g => ({ v: g.id, t: g.name })), ui('fs_filter_goal_label'));
     goalSel.classList.add('fs-filter__cat--goal');
-    wrap.appendChild(goalSel);
+    pickers.push(goalSel);
   }
   if (f.nutrients !== undefined) {
-    wrap.appendChild(pick('foodNutrient', f.nutrient ?? '', ui('fs_filter_nutrient_all'),
+    pickers.push(pick('foodNutrient', f.nutrient ?? '', ui('fs_filter_nutrient_all'),
       f.nutrients.map(n => ({ v: n.slug, t: n.label })), ui('fs_filter_nutrient_label')));
   }
-  wrap.appendChild(q);
+  // The PICKERS go behind the phone's filter sheet; the NAME BOX stays in the bar beside its
+  // toggle, because typing a food name is the one narrowing a reader does without deciding to
+  // filter first. At every other width the sheet is `display: contents` and this row is exactly
+  // what it was. A one-picker row (the Coverage pane) gets no toggle — see filterSheet.
+  wrap.append(...filterSheet(pickers), q);
+  refreshFilterCount(wrap);
   return wrap;
 }
 

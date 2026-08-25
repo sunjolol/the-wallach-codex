@@ -276,7 +276,7 @@ function renderTab(tab: Tab, snapshot: CoverageSnapshot | null, selectedKey: str
   }
 }
 
-function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedFood: string | null, catalogKind: CatalogKind, selectedTopic: string | null, trail: Crumb[]): string {
+function renderShell(activeTab: Tab, selectedKey: string | null, selectedCondition: string | null, selectedProduct: string | null, selectedFood: string | null, catalogKind: CatalogKind, selectedTopic: string | null, trail: Crumb[], menuOpen: boolean): string {
   const snapshot = getOrCompute();
   // The 'essentials' TAB IS DELIBERATELY ABSENT FROM THIS LIST while remaining a live route.
   // It duplicated the Coverage workspace, which is where the user already starts, so the menu
@@ -300,10 +300,25 @@ function renderShell(activeTab: Tab, selectedKey: string | null, selectedConditi
   // back button ("Go back" -> that tab); a normal Products-tab open keeps "All products".
   const fromProductsTab = trail.length === 0 || (trail[0]?.type === 'tab' && trail[0].val === 'products');
 
+  // ─── THE TAB MENU'S HANDLE — a phone control, inert at every other width ───
+  // On a 375px screen the six-tab grid is a two-row block ~101px tall, and it sat above EVERY
+  // screen the drawer serves — including an essential's page, where it and the tab-search box
+  // together took 244px of 812 before a word of the article. His ruling: expanded on Home,
+  // collapsed once you are inside something, and "obvious there's a menu" either way.
+  // So the header carries a button that NAMES the screen you are on and opens the same grid
+  // beneath it. Nothing is hidden off an edge and no destination is dropped: the same six tabs,
+  // one tap away, with the seventh (Essentials — a live route with no menu button) still
+  // naming itself in the handle.
+  // `display: none` BY DEFAULT IN drawer-knowledge.css, NOT here and NOT in mobile.css. This
+  // markup renders at every width, so the default has to sit in the sheet that is always
+  // loaded — a control styled only inside a media query draws as a raw user-agent button
+  // everywhere the query does not match. That trap has shipped here four times.
+  const menuName = tabLabel(activeTab);
   return `
-    <header class="kd-knh">
+    <header class="kd-knh${menuOpen ? ' kd-knh--menu-open' : ''}">
       <div class="kd-knh__mark"><span class="kd-knh__g">❡</span><b>${escHTML(ui('kd_mark'))}</b></div>
-      <nav class="kd-knh__tabs">${tabsHTML}</nav>
+      <button class="kd-knh__menu" data-kd-action="menu" type="button" aria-expanded="${menuOpen ? 'true' : 'false'}" aria-controls="kd-knh-tabs" aria-label="${escHTML(menuName)} — show the Knowledge menu"><span class="kd-knh__menu-name">${escHTML(menuName)}</span><span class="kd-knh__menu-caret" aria-hidden="true">▾</span></button>
+      <nav class="kd-knh__tabs" id="kd-knh-tabs">${tabsHTML}</nav>
       <div class="kd-knh__end"><button class="ui-close" data-kd-action="close" title="Close (Esc)" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
     </header>
     ${(activeTab === 'essentials' || activeTab === 'conditions' || activeTab === 'products' || activeTab === 'explore') && selectedTopic === null
@@ -550,9 +565,42 @@ export function mount(container: HTMLElement): DrawerHandle {
   let selectedTopic: string | null = null;
   let trail: Crumb[] = [];
   let searchQuery = '';
+  /**
+   * THE TAB MENU'S OPEN STATE — phone only (the handle that toggles it is `display: none`
+   * at every other width, so this is inert on a desktop).
+   *
+   * ★ STORED AS AN OVERRIDE ON ONE SCREEN, NOT AS A BARE BOOLEAN, AND THAT IS THE WHOLE POINT.
+   * The rule is "expanded on Home, collapsed everywhere else", which means EVERY navigation has
+   * to reset it. A bare `let menuOpen` needs a reset line at each of the six places that
+   * navigate — tab switch, openDetail's two branches, a topic, a crumb, a drawer open — and the
+   * seventh one added later would silently carry an open menu into a detail page.
+   * Keying the override to the screen it was made on inverts that: the DEFAULT is what any
+   * screen gets, and a reader's toggle survives only the re-renders of the screen they made it
+   * on (a deep-dive opening, a regimen:changed repaint). Change the screen and the override
+   * stops matching, with no reset hook anywhere.
+   */
+  let menuOverride: { screen: string; open: boolean } | null = null;
+  /** Every field that decides WHICH screen is showing. A change to any of them is a navigation. */
+  const screenId = (): string => [activeTab, selectedEssential, selectedCondition, selectedProduct, selectedFood, selectedTopic].join('|');
+  const menuIsOpen = (): boolean => {
+    if (menuOverride !== null && menuOverride.screen === screenId()) {
+      return menuOverride.open;
+    }
+    // Home is the hub — the screen whose job IS picking a destination. A topic renders as a
+    // full-body overlay ON Home when opened from there, so it counts as being inside something.
+    return activeTab === 'home' && selectedTopic === null;
+  };
 
   const render = (): void => {
-    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, trail);
+    container.innerHTML = renderShell(activeTab, selectedEssential, selectedCondition, selectedProduct, selectedFood, catalogKind, selectedTopic, trail, menuIsOpen());
+    // A DETAIL screen is marked on the mount so the phone layer can drop the per-tab search box
+    // there: on Essentials/Conditions/Products/Explore that box filters the LIST, and once a
+    // reader is inside one item the list is thousands of pixels below them — 69px of a phone
+    // screen spent on a control for a surface they are no longer looking at. A class rather
+    // than a render condition, deliberately: on a desktop the deep-dive sits directly above the
+    // grid it filters, so the box still has a job there and the markup must not change.
+    container.classList.toggle('kd-detail', selectedEssential !== null || selectedCondition !== null
+      || selectedProduct !== null || selectedFood !== null || selectedTopic !== null);
     // Re-apply the live query so a re-render (deep-dive open, regimen:changed)
     // doesn't silently drop an in-progress filter.
     if (searchQuery.length > 0) {
@@ -813,6 +861,11 @@ export function mount(container: HTMLElement): DrawerHandle {
       const action = actionEl.getAttribute('data-kd-action');
       if (action === 'close') {
         close();
+      }
+      else if (action === 'menu') {
+        // Pin the reader's choice to the screen they made it on; see menuOverride.
+        menuOverride = { screen: screenId(), open: !menuIsOpen() };
+        render();
       }
       else if (action === 'essential-close') {
         selectedEssential = null;

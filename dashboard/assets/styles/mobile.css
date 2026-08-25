@@ -477,20 +477,89 @@
      to swipe for it. Every destination stays visible.
      The head becomes a 2-row grid so the close button rides on the mark's row instead of
      taking a third row to itself. */
+  /* ★ 2026-08-25 — THE GRID ABOVE IS NOW THE **EXPANDED** STATE, NOT THE ONLY ONE.
+     MEASURED on an essential's page at 375px: the head 175px + the tab-search box 69px = 244
+     of 812 — 30% of the screen — before the breadcrumb, and the reader is already inside the
+     thing they came to read. His ruling: expanded on Home, collapsed once you click into
+     something, "but also obvious there's a menu".
+     A third column carries the handle. Collapsed, the head is ONE row — mark, handle, close —
+     and the tabs row is removed from the template outright rather than left as an empty track,
+     because an empty named row still takes its share of the row gap. */
   #drawer-knowledge-mount .kd-knh {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr) auto;
     grid-template-areas:
-      "mark end"
-      "tabs tabs";
+      "mark menu end"
+      "tabs tabs tabs";
     align-items: center;
     gap: var(--ds-space-2) var(--ds-space-3);
     padding: var(--ds-space-2) var(--ds-space-4) var(--ds-space-3);
+  }
+  #drawer-knowledge-mount .kd-knh:not(.kd-knh--menu-open) {
+    grid-template-areas: "mark menu end";
+    padding-bottom: var(--ds-space-2);
   }
   /* the seam under the head is inset to the head's padding; that padding just changed */
   #drawer-knowledge-mount .kd-knh::after { left: var(--ds-space-4); right: var(--ds-space-4); }
   #drawer-knowledge-mount .kd-knh__mark { grid-area: mark; }
   #drawer-knowledge-mount .kd-knh__end { grid-area: end; }
+
+  /* THE WORDMARK'S WORD GOES; THE ❡ STAYS. The handle beside it now names the screen, and
+     "KNOWLEDGE ESSENTIALS ▾" is two names in one 375px bar — the bottom bar already carries
+     KNOWLEDGE as a labelled destination, so the drawer is not unlabelled by this. The glyph
+     stays because it is the drawer's mark and it costs 16px. */
+  #drawer-knowledge-mount .kd-knh__mark b { display: none; }
+
+  /* THE HANDLE. Its look is not invented: it is the .kd-knh__tab face — the same display
+     family, the same mini size, the same uppercase tracking — set in full ink instead of soft,
+     because this one names where you ARE rather than where you could go. The caret is the only
+     new mark, and it is the accent, so the one coloured thing in the bar is the affordance. */
+  #drawer-knowledge-mount .kd-knh__menu {
+    grid-area: menu;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ds-space-2);
+    min-width: 0;
+    min-height: 44px;
+    padding: 0 var(--ds-space-2);
+    background: none;
+    border: 0;
+    cursor: pointer;
+    font-family: var(--ds-font-display);
+    font-size: var(--ds-text-mini);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ds-ink);
+  }
+  /* ABSORPTION is the longest label at ~102px and the column is minmax(0, 1fr) of whatever the
+     mark and the close leave — ~245px at 375. It fits with room, but a longer tab label added
+     later must ellipse rather than push the close button off the bar. */
+  #drawer-knowledge-mount .kd-knh__menu-name {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  #drawer-knowledge-mount .kd-knh__menu-caret {
+    flex: 0 0 auto;
+    color: var(--ds-accent);
+    font-size: var(--ds-text-xs);
+    line-height: 1;
+    transition: transform var(--ds-motion-fast) var(--ds-ease-out);
+  }
+  #drawer-knowledge-mount .kd-knh--menu-open .kd-knh__menu-caret { transform: rotate(180deg); }
+
+  /* (1,2,0) so it beats the (1,1,0) `display: grid` on .kd-knh__tabs below without touching it —
+     the tab grid keeps every property it has and simply is not drawn while the menu is shut. */
+  #drawer-knowledge-mount .kd-knh:not(.kd-knh--menu-open) .kd-knh__tabs { display: none; }
+
+  /* THE PER-TAB SEARCH BOX GOES ON A DETAIL SCREEN — 69px for a control that filters a list
+     the reader has already left. views/knowledge.ts marks the mount `.kd-detail` whenever an
+     essential, condition, product, food or topic is open; the box is untouched on the LISTS,
+     where it is the fastest way through 215 products or 91 essentials, and untouched on a
+     desktop, where the deep-dive sits directly above the grid it filters. */
+  #drawer-knowledge-mount.kd-detail .kd-search { display: none; }
   #drawer-knowledge-mount .kd-knh__tabs {
     grid-area: tabs;
     display: grid;
@@ -722,6 +791,127 @@
      surface it — the corpus has 2,601 claims and nothing stops the next one doing this. */
   #drawer-knowledge-mount .kd-body { overflow-wrap: break-word; }
 
+  /* ═══ THE DE-BOXING — 132px OF NESTED PADDING BEFORE A WORD IS READ ═══════
+     His words: "we need to remove some of the outer content boxes so the content extends out
+     closer to the edges with less content boxes condensing it, this applies EVERYWHERE".
+
+     A CENSUS of every phone screen — every text block under 230px wide, with the chain of
+     ancestors that ate the width — found ONE cause repeated on every detail surface. Three
+     boxes, nested, each one padded for a 950px desktop drawer:
+
+       .kd-body ............ 24px per side  (48)
+       .kd-essential-deep .. 16px + 1px border per side  (34)   ← wraps essentials AND
+                                                                  conditions AND products
+       .kd-ep-fam / -op /
+       .kd-pf-comp / -glance 24px + 1px per side  (50)
+
+     132px of a 375px screen, gone before any content — and then a FOURTH level on top:
+       .kd-ep-claim__body ...... 60  →  claim text 215px
+       .kd-ep-fam__splitcell ... 38  →  "When it's there" body **80px**, two words per line
+       .ds-pull-quote .......... 82  →  a 1.4rem display quote in a 161px column
+
+     THIS BLOCK IS RE-PADDING, NOT RE-STYLING. Every box keeps its background, its border
+     colour, its radius where a radius still reads, and its type. What changes is how much
+     air each one claims — and, for the one box that is pure decoration at this width, whether
+     it draws a side at all. */
+
+  /* 1 — THE SCANNER'S GUTTER WAS DOUBLE EVERY OTHER SCREEN'S.
+     `.vd` is `padding: space-4 space-7 space-7` (workspace-scanner.css:11) — 40px per side,
+     ported verbatim from a desktop demo. Coverage (.cov-d) and Regimen (.ck) both sit at
+     space-4. So the Scanner rendered 295px of content where its two neighbours render 343,
+     and the same three tabs disagreed by 48px with nothing to justify it. It joins them. */
+  .vd { padding: var(--ds-space-4) var(--ds-space-4) var(--ds-space-6); }
+
+  /* 2 — THE DRAWER BODY joins them too: space-5 (24) → space-4 (16), the gutter every
+     workspace already uses. drawer-shared.css:94 writes this at (1,1,0); this sheet loads
+     last, so equal specificity wins on source order. */
+  #drawer-knowledge-mount .kd-body { padding-inline: var(--ds-space-4); }
+
+  /* 3 — THE DETAIL CARD GOES FULL-BLEED INSTEAD OF DOUBLE-INSET.
+     .kd-essential-deep is the wrapper for EVERY detail screen in the drawer — an essential, a
+     condition, a product — so its 34px is charged three times over. On a desktop it is a card
+     floating in a drawer and its ring is what says so. On a 375px screen a card inset 16px
+     inside a body already inset 16px is just two gutters, and the ring is drawing a box around
+     the whole screen.
+     So it bleeds to the screen edges and keeps its own 16px instead: the accent rule survives
+     as a top-and-bottom BAND rather than a ring, which is what a phone does with a section,
+     and the content ends up at 343px instead of 293. A band that stopped 16px short of each
+     edge would read as a mistake, which is why this bleeds rather than simply un-padding.
+     The negative margin is exactly the body's new padding, so the box lands flush on both
+     edges and adds no scrollable width. */
+  #drawer-knowledge-mount .kd-essential-deep {
+    margin-inline: calc(var(--ds-space-4) * -1);
+    padding-inline: var(--ds-space-4);
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+  }
+  /* ★ THE SHADOW NEEDED ITS OWN RULE, AND IT TOOK A MEASUREMENT TO FIND OUT.
+     `box-shadow: none` sat in the block above and did nothing: every detail screen re-declares
+     the shadow at (1,2,0) to carry its own colour —
+       .kd-essential-deep[data-category="mineral"|"vitamin"|"amino"|"fat"]  (the category tint)
+       .kd-essential-deep.kd-ep--cond   (body-system colour)
+       .kd-essential-deep.kd-ep--prod   (delivery-form colour)
+     — so a (1,1,0) rule loses on specificity no matter how late it loads. The padding beside it
+     landed, which is exactly why this was invisible: five of six declarations applied and the
+     sixth silently did not. Answered in kind at (1,2,0).
+     A drop shadow under a box with no visible left or right side is shading nothing — it stops
+     dead at both screen edges. */
+  #drawer-knowledge-mount .kd-essential-deep[data-category],
+  #drawer-knowledge-mount .kd-essential-deep.kd-ep--cond,
+  #drawer-knowledge-mount .kd-essential-deep.kd-ep--prod { box-shadow: none; }
+
+  /* 4 — THE INNER SECTIONS come in one step, 24 → 12. Not to zero: these are plates on a
+     paper ground and they need enough inset to read as plates. Half is what buys the width
+     back without turning them into rules. */
+  #drawer-knowledge-mount .kd-ep-fam,
+  #drawer-knowledge-mount .kd-ep-op,
+  #drawer-knowledge-mount .kd-pf-comp,
+  #drawer-knowledge-mount .kd-pf-glance { padding-inline: var(--ds-space-3); }
+
+  /* 5 — THE CLAIM BODY'S HANGING INDENT. It is
+     `padding-left: calc(20px + space-3 + space-3)` — 44px — so the answer lines up under the
+     claim's marker rather than under its own summary. That alignment is worth 44px on a
+     desktop and not on a phone, where it costs a fifth of the line. The facet and kind bodies
+     carry the same idea at space-4 and take the same step. */
+  #drawer-knowledge-mount .kd-ep-claim__body { padding-inline: var(--ds-space-3); }
+  #drawer-knowledge-mount .kd-ep-facet__body,
+  #drawer-knowledge-mount .kd-ep-kind__body { padding-left: var(--ds-space-2); }
+
+  /* 6 — THE PULL QUOTE. space-7 per side (40) is generous around a 1.85rem display italic in a
+     700px column and absurd around one in a 343px column — it left the quote 161px, narrower
+     than the body text it is meant to interrupt. One step to space-5.
+     The oversized opening “ is a positioned ::before at 6rem; with 24px of inset instead of 40
+     it would sit further over the first line, so it steps down with the padding. Same glyph,
+     same place, sized for the box it now decorates. */
+  .ds-pull-quote { padding-inline: var(--ds-space-5); }
+  .ds-pull-quote::before { font-size: 4rem; }
+
+  /* 7 — THE TWO-UP SPLIT BECOMES ONE COLUMN. This is the block he named: "when its there" and
+     "when its short" on Calcium, measured at **80px and 135px of text**. A 1fr 1fr grid inside
+     a box that had already lost 132px cannot be rescued by padding alone — 24px back on each
+     side is 12px per column. It has to stop being two columns.
+     Same two cells, same cards, same order, stacked — the shape .kd-ep-fam__opener,
+     .kd-ep-fam__steps--row and .mkA-grid already take higher up this sheet, for the same
+     reason. The right-hand cell's separator flips from a left border to a top one, because
+     that is where the seam between them now is. `--cards` (Calcium) overrides both properties
+     with its own card border at (1,2,0) and is unaffected. */
+  #drawer-knowledge-mount .kd-ep-fam__split {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: var(--ds-space-3);
+  }
+  #drawer-knowledge-mount .kd-ep-fam__splitcell--r {
+    padding-left: 0;
+    border-left: 0;
+    padding-top: var(--ds-space-4);
+    border-top: 1px solid var(--ds-rule-soft);
+  }
+
+  /* 8 — THE TARGET/STATUS PAIR keeps its two columns — "Wallach daily target" beside "Your
+     status" is the one glance the page exists for — but not a space-6 gutter between them.
+     The label that was wrapping to two lines is what this pays for. */
+  #drawer-knowledge-mount .kd-ep-op__grid { column-gap: var(--ds-space-4); }
+
   /* ═══ REGIMEN — FOUR SAVE SLOTS ACROSS A PHONE ════════════════════
      .ck-slots is a flex row of four `flex: 1 1 0` cards. At 375px that is
      (375 - 8 padding - 36 gaps) / 4 = 82.75px per card, and each card has to carry a name, a
@@ -748,10 +938,336 @@
      drop beneath it; the coverage figure keeps its line and the "0 items · edited today" meta
      takes the next one instead of sharing 83px with a big number. Nothing is removed — the
      card is two lines taller and every string reads whole. */
-  .ck-slot__head { flex-wrap: wrap; }
+  .ck-slot__head { flex-wrap: wrap; gap: 10px; }
   .ck-slot__name { flex: 1 0 100%; }
   .ck-slot__body { flex-wrap: wrap; }
   .ck-slot__meta { flex: 1 0 100%; text-align: left; }
+
+  /* ═══ THE COLOUR PICKER BECOMES A CONTROL, NOT A BAND ═════════════
+     MEASURED: .ck-slot__swatches is 138x112 inside a 168px card — fourteen 22px circles on a
+     29px pitch, wrapped to four rows, PERMANENTLY, on a card whose whole job is to be glanced
+     at. It was 39% of the card's height for a thing you touch once.
+     His ruling: "it would probably be better to have it be an option that expands as needed."
+     So the card carries ONE dot — the colour it currently is — and the fourteen open beneath it
+     on a tap. Nothing is dropped, nothing scrolls off an edge, and every swatch keeps the 22px
+     size the touch pass gave it. Picking a colour re-renders the card, which folds the row
+     away again; see the disclosure handler in views/regimen.ts. */
+  .ck-slot__swatches { display: none; }
+  .ck-slot--hue-open .ck-slot__swatches { display: flex; }
+  .ck-slot__hue {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 0;
+    border: 0;
+    border-radius: var(--ds-radius-sm);
+    background: color-mix(in srgb, var(--ds-paper-light) 22%, transparent);
+    color: var(--ds-paper-light);
+    cursor: pointer;
+  }
+  .ck-slot__hue:hover { background: color-mix(in srgb, var(--ds-paper-light) 40%, transparent); }
+  .ck-slot__hue-caret {
+    font-size: 11px;
+    line-height: 1;
+    transition: transform var(--ds-motion-fast) var(--ds-ease-out);
+  }
+  .ck-slot--hue-open .ck-slot__hue-caret { transform: rotate(180deg); }
+
+  /* ═══ A 44px TARGET IS NOT A 44px BOX ═══════════════════════════════
+     HIS WORDS: "the export/rename icons are way too big". They are, and the touch pass is why —
+     the coarse block below sets .ck-slot__pencil to `min-width: 44px; min-height: 44px`, and
+     three of those inside a card whose content box is 139px ARE the card. The floor exists to
+     guarantee a 44px TARGET; it reached for a 44px BOX because that is the easy way to get one.
+     The visible button comes down to 32px and a transparent ::after carries the hit area back
+     out to 44 (32 + 6 either side), so the thumb is aiming at exactly what it was before and
+     the card stops being a row of grey blocks. The 10px head gap keeps adjacent hit areas from
+     overlapping by more than 2px.
+     ★ (0,2,0) ON PURPOSE. The coarse block loads AFTER this one, so a bare `.ck-slot__pencil`
+     here — same (0,1,0) — would lose to the floor rule on source order and this whole block
+     would silently do nothing. Scoping to the card is what makes it win, and it does not depend
+     on the two blocks staying in their current order. */
+  .ck-slot .ck-slot__pencil,
+  .ck-slot .ck-slot__hue {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+  /* the handle carries a dot AND a caret, so it is the one control here that is wider than
+     it is tall — 32px square left the pair 22px to share and the caret unreadable */
+  .ck-slot .ck-slot__hue {
+    width: auto;
+    padding: 0 6px;
+  }
+  .ck-slot .ck-slot__pencil::after,
+  .ck-slot .ck-slot__hue::after {
+    content: '';
+    position: absolute;
+    inset: -6px;
+  }
+
+  /* ═══ THE FILTER ROW BECOMES A BAR AND A SHEET ═════════════════════
+     MEASURED: the FOOD row is .fs-controls 343x244 — a wrapped pager plus .fs-filter at 194px,
+     four fixed-width controls (160 / 222 / 160 / 180) stacked into four full-width rows. The
+     PRODUCT row is another 144. Nearly 400px of chrome above two lists.
+     His ruling: "find a solution that mimics modern mobile app standards for such features."
+     The pickers move into a sheet behind one 44px button; the NAME box stays in the bar, so
+     the one narrowing a reader does without deciding to filter first costs no taps at all.
+     WHY THE WRAPPER GOES FIXED AND NOT .fs-filter: the bar has to stay in the controls row, or
+     the row reflows under the backdrop as the sheet opens — visible, and exactly the kind of
+     twitch that reads as a bug. The wrapper is the only thing that leaves the flow.
+     Every control keeps its own data-attribute and its own change handler; the list still
+     updates LIVE, which is why the footer reads "Done" and not "Apply". */
+  .fs-filter {
+    /* its own line above the pager: .fs-controls is wrap-REVERSE, so a 100% basis here puts
+       the filter on the top line and leaves the pager beneath it */
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    gap: var(--ds-space-2);
+  }
+  .fs-filter__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--ds-space-2);
+    flex: 0 0 auto;
+    min-height: 44px;
+    padding: 0 var(--ds-space-4);
+    cursor: pointer;
+    /* the .cov-panes__btn shell, borrowed wholesale — same display face, same mini type, same
+       tracking, same pill, same paper/rule pair, same accent fill for the ON state. The phone
+       gains no new visual vocabulary for this. */
+    font-family: var(--ds-font-display);
+    font-size: var(--ds-text-mini);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ds-ink-soft);
+    background: var(--ds-paper);
+    border: 1px solid var(--ds-rule-soft);
+    border-radius: var(--ds-radius-pill);
+    transition: background var(--ds-motion-fast) var(--ds-ease-out),
+                color var(--ds-motion-fast) var(--ds-ease-out),
+                border-color var(--ds-motion-fast) var(--ds-ease-out);
+  }
+  .fs-filter__toggle.is-on {
+    color: var(--ds-paper);
+    background: var(--ds-accent);
+    border-color: var(--ds-accent);
+  }
+  .fs-filter__count {
+    font-family: var(--ds-font-mono);
+    font-size: var(--ds-text-micro);
+    font-weight: 700;
+    line-height: 1;
+    padding: 3px 6px;
+    border-radius: var(--ds-radius-pill);
+    background: color-mix(in srgb, var(--ds-paper) 34%, transparent);
+  }
+  /* NO BADGE WHEN NOTHING IS FILTERED. `:empty` rather than a second class, because the count
+     is written as textContent by the one function that derives it — an "is there a badge" flag
+     kept beside it would be a second copy of the same fact. */
+  .fs-filter__count:empty { display: none; }
+
+  /* the name box takes whatever the toggle leaves; (0,2,0) to beat its own fixed 180px */
+  .fs-filter .fs-filter__q {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    height: 44px;
+  }
+
+  /* THE SHEET. Stops above the bottom bar rather than covering it, reading the bar's height
+     from the same single token everything else does. */
+  .fs-filter__sheet { display: none; }
+  .fs-filter__sheet.is-open {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ds-space-3);
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--phone-bar-h) + env(safe-area-inset-bottom));
+    z-index: 30;
+    max-height: 72dvh;
+    overflow-y: auto;
+    padding: var(--ds-space-5) var(--ds-space-4) var(--ds-space-4);
+    background: var(--ds-paper);
+    border-top: 1px solid var(--ds-rule);
+    border-radius: var(--ds-radius-lg) var(--ds-radius-lg) 0 0;
+    box-shadow: 0 -14px 34px -20px rgba(26, 22, 18, .55);
+  }
+  /* ★ THE BACKDROP HANGS OFF THE ROW, NOT OFF THE SHEET, AND THAT COST A SCREENSHOT TO LEARN.
+     The first cut put it on `.fs-filter__sheet.is-open::before` at `z-index: -1`, reasoning
+     that a negative z-index inside the sheet's own stacking context would paint behind the
+     sheet and above everything else. It does not. CSS paints a stacking context's own
+     background FIRST and its negative-z-index descendants AFTER — so the scrim landed ON TOP
+     of the sheet and greyed out the very panel it was meant to sit behind. Every measurement
+     passed (position, geometry, widths, the badge, Clear, Done); only the picture showed it.
+     On `.fs-filter` it works, because that row sets no z-index of its own and therefore opens
+     no stacking context: the pseudo-element joins the ROOT layer at 29, one below the sheet.
+     It also keeps the dismiss gesture free — a tap on the scrim lands on .fs-filter itself,
+     never on a child, which is exactly the test the handler makes. */
+  .fs-filter:has(.fs-filter__sheet.is-open)::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 29;
+    background: color-mix(in srgb, var(--ds-ink) 38%, transparent);
+  }
+  /* (0,3,0) — the pickers carry fixed widths of 160/218/222px at (0,1,0), measured for a
+     desktop row. In a full-width sheet they are full-width. */
+  .fs-filter__sheet.is-open .fs-filter__cat {
+    width: 100%;
+    height: 44px;
+    font-size: var(--ds-text-sm);
+  }
+  /* The grab bar + title. A sheet that opens flush against a <select> reads as a panel that
+     appeared by accident; the pill is the mark every phone user already knows means "this
+     slides". Decorative only — the sheet carries the same string as its accessible name. */
+  .fs-filter__sheethd {
+    display: block;
+    position: relative;
+    padding-top: var(--ds-space-2);
+    margin-bottom: var(--ds-space-1);
+    text-align: center;
+    font-family: var(--ds-font-display);
+    font-size: var(--ds-text-mini);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ds-ink-faint);
+  }
+  .fs-filter__sheethd::before {
+    content: '';
+    position: absolute;
+    top: calc(var(--ds-space-4) * -1 + 2px);
+    left: 50%;
+    width: 36px;
+    height: 4px;
+    margin-left: -18px;
+    border-radius: var(--ds-radius-pill);
+    background: var(--ds-rule);
+  }
+  .fs-filter__foot {
+    display: flex;
+    gap: var(--ds-space-2);
+    margin-top: var(--ds-space-1);
+  }
+  .fs-filter__footb {
+    flex: 1 1 0;
+    min-height: 44px;
+    padding: 0 var(--ds-space-4);
+    cursor: pointer;
+    font-family: var(--ds-font-display);
+    font-size: var(--ds-text-mini);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ds-ink-soft);
+    background: var(--ds-paper-light);
+    border: 1px solid var(--ds-rule-soft);
+    border-radius: var(--ds-radius-pill);
+  }
+  .fs-filter__footb--go {
+    color: var(--ds-paper);
+    background: var(--ds-accent);
+    border-color: var(--ds-accent);
+  }
+
+  /* ═══ THE SECTION NUMERALS — A COLUMN OF BLANK UNDER EVERY "01" ═══════════
+     HIS WORDS: "the 01, 02, etc. on the ORAC/Absorption tabs creates way too much blank space
+     on mobile."
+     MEASURED: .kd-orac-sec and .kd-foods-sec are `grid-template-columns: auto 1fr` with a
+     space-5 gutter, and the numeral is 4–4.5rem — so ~100px of numeral plus 24px of gutter is
+     taken off a 343px line, and the numeral is ONE line tall beside a headline that is five.
+     The result is a tall empty column under a big number, which is exactly what he saw.
+     The numeral takes its own line and steps down to 2.4rem. Same face, same weight, same
+     gradient fill, same order — it stops being a column and becomes what it reads as on a
+     phone: an eyebrow numeral over its headline, with the headline on the full width.
+     `--hero` re-declares margin-top/line-height at (1,2,0) for the numeral's overhang above the
+     first section; that overhang is a two-column composition's trick and has nothing to sit
+     against once the numeral is on its own line, so it is answered in kind. */
+  /* ★ THE ORAC HERO IS A FOURTH GRID, NOT A .kd-orac-sec, AND THE FIRST CUT MISSED IT.
+     Absorption's "01" comes from the shared sectionHeader() helper and takes the rule below;
+     ORAC's hero has its own `.kd-orac-hd` (drawer-orac.css:12), so the tab's LOUDEST numeral —
+     the 4.5rem 01 beside "The score that measures how fast you rust" — went on rendering as a
+     column while every other numeral on the tab had stacked. A screenshot caught it; the
+     census could not, because the headline beside it is short enough to clear 230px. */
+  #drawer-knowledge-mount .kd-orac-sec,
+  #drawer-knowledge-mount .kd-orac-hd,
+  #drawer-knowledge-mount .kd-foods-sec {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--ds-space-1);
+    align-items: start;
+  }
+  #drawer-knowledge-mount .kd-orac-sec { margin-top: var(--ds-space-6); }
+  #drawer-knowledge-mount .kd-orac-sec__num,
+  #drawer-knowledge-mount .kd-orac-hd__num,
+  #drawer-knowledge-mount .kd-foods-sec__num {
+    font-size: 2.4rem;
+    line-height: 0.9;
+  }
+  #drawer-knowledge-mount .kd-foods-sec--hero { margin-top: 0; }
+  #drawer-knowledge-mount .kd-foods-sec--hero .kd-foods-sec__num {
+    margin-top: 0;
+    line-height: 0.9;
+  }
+  #drawer-knowledge-mount .kd-orac-sec__body,
+  #drawer-knowledge-mount .kd-foods-sec__body { padding-bottom: 0; }
+
+  /* ═══ THE PRODUCTS CAPTION — 60 CHARACTERS IN A 133px COLUMN ══════════════
+     HIS WORDS: "the 'ALL 215 PRODUCTS + 250 FOODS · SORTED BY ESSENTIALS SUPPLIED' is wayy too
+     long and making the side buttons too small."
+     MEASURED: .kd-catbar is a one-line flex row — caption, then the ALL/PRODUCTS/FOODS control.
+     At 375px the caption was squeezed to 133px and broke to FIVE lines while the three buttons
+     shared what was left.
+     THE STRING IS NOT TOUCHED. Every number in it is derived from the catalog at render time
+     (215, 250), so shortening it by hand would put a count in a place that cannot follow the
+     data. The ROW wraps instead: the caption takes a full line and the control takes the next
+     one, whole. The bar keeps the margins it owns — the note at its rule says the grid must sit
+     exactly where it sat before the control existed, and that is still true here. */
+  #drawer-knowledge-mount .kd-catbar {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: var(--ds-space-2);
+  }
+  #drawer-knowledge-mount .kd-catbar .kd-section-head {
+    flex: 1 0 100%;
+    margin: 0;
+  }
+
+  /* ═══ THE ORAC SUPPLEMENT ROWS — A 23px NAME COLUMN ═══════════════════════
+     MEASURED, and the worst single number the census found: .kd-orac-supp__row is
+     `minmax(0,1.5fr) minmax(64px,1fr) auto 12px` — name, bar, figures, chevron — and the
+     figures column is `white-space: nowrap` and content-sized. At 375px it took what it needed
+     and the NAME was left 23px. A product list where you cannot read a product name.
+     The bar drops to its own full-width row beneath, which is where a comparison bar belongs
+     anyway; the name keeps the line with the figures and the chevron. Same four parts, same
+     order, same data. */
+  #drawer-knowledge-mount .kd-orac-supp__row {
+    grid-template-columns: minmax(0, 1fr) auto 12px;
+    grid-template-areas:
+      "head nums go"
+      "track track track";
+    gap: 9px 10px;
+  }
+  #drawer-knowledge-mount .kd-orac-supp__row-head { grid-area: head; }
+  #drawer-knowledge-mount .kd-orac-supp__row-track { grid-area: track; }
+  #drawer-knowledge-mount .kd-orac-supp__row-nums { grid-area: nums; }
+  #drawer-knowledge-mount .kd-orac-supp__go { grid-area: go; }
+
+  /* ═══ THREE MORE MULTI-COLUMN FIGURES THE CENSUS CAUGHT ═══════════════════
+     Each already has a narrow-width pass at 820px that halves it — and half of 343 is still
+     not a column you can set a sentence in. MEASURED at 375px, the body text each one left:
+       .ue-strip ................ 5 enzyme tiles → 2 across → .ue-tile__d at 130px
+       .kd-foods-villi__grid .... 2 panels        → .kd-foods-villi__cap at 120px
+       .kd-orac-chain ........... 5 steps → 2 across → .kd-orac-chain__d at 128px
+     One column each. Nothing is dropped or re-styled; the tiles simply stop being columns,
+     which is the same trade .kd-ep-fam__opener, .mkA-grid and .kd-ep-fam__split already took
+     higher up this sheet. */
+  #drawer-knowledge-mount .ue-strip,
+  #drawer-knowledge-mount .kd-foods-villi__grid,
+  #drawer-knowledge-mount .kd-orac-chain { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ═══ TOUCH — keyed to the POINTER, not the width ═════════════════════════

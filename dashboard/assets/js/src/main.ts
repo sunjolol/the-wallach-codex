@@ -32,6 +32,7 @@ import * as profileView from './views/profile.js';
 import * as regimenView from './views/regimen.js';
 import * as scannerView from './views/scanner.js';
 import * as searchView from './views/search.js';
+import { installFilterSheet } from './views/filter-sheet.js';
 import { initGlossTooltip } from './views/gloss-tooltip.js';
 import * as welcomeView from './views/welcome.js';
 
@@ -557,6 +558,9 @@ function bootstrap(): void {
   events.on('drawer:toggled', () => syncDrawerRail());
   wireSearchToKnowledge();
   initGlossTooltip();
+  // One delegated listener for every filter row on the page. Bound here rather than per row,
+  // because both rows are rebuilt from scratch on every repaint — see views/filter-sheet.ts.
+  installFilterSheet();
 
   /*
    * Default landing: Coverage. Deferred one tick so every listener registered above is

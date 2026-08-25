@@ -39,6 +39,14 @@
 #drawer-knowledge-mount .kd-knh__tab:hover { color: var(--ds-ink); background: var(--ds-paper); }
 #drawer-knowledge-mount .kd-knh__tab.active { background: var(--ds-paper); color: var(--ds-accent-deep); box-shadow: 0 2px 6px rgba(26, 22, 18, .18), 0 0 0 1px var(--ds-rule-soft); }
 #drawer-knowledge-mount .kd-knh__end { flex: 0 0 auto; display: flex; justify-content: flex-end; }
+/* THE PHONE'S TAB-MENU HANDLE — the button that names the current screen and expands the tab
+   grid beneath it. See views/knowledge.ts::renderShell for what it is and why.
+   IT IS `display: none` HERE, IN THE ALWAYS-LOADED SHEET, and that placement is the rule not a
+   preference: the button is in the markup at EVERY width, so a control whose only styling
+   lives inside mobile.css's media query renders as a raw user-agent button everywhere the
+   query does not match. Four things have shipped that way here (the food-sheet Add button,
+   .kd-ep--prod, .cov-panes__btn, .topbar__goals). mobile.css turns it on. */
+#drawer-knowledge-mount .kd-knh__menu { display: none; }
 
 /* ─── SECTION HEADERS — the Conditions and Products list headings; the search
        filter treats them as headings alongside .sh-subhead and

@@ -629,6 +629,17 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
   display: flex; align-items: center; justify-content: flex-end;
   gap: 4px; row-gap: 6px; flex: 0 0 auto; flex-wrap: wrap; max-width: 100%;
 }
+/* ── THE PHONE'S FILTER SHEET — three defaults, all of them load-bearing ────────────────
+   See views/filter-sheet.ts for what the sheet is and why the phone needs one.
+   These live HERE, in the always-loaded sheet, not in mobile.css. The toggle and the footer
+   are in the markup at EVERY width, so a control styled only inside a media query renders as
+   a raw user-agent button wherever the query does not match — that has shipped here four
+   times. And `display: contents` is not cosmetic: .fs-filter is a FLEX ROW, so a real wrapper
+   around its <select>s would collapse four flex children into one and the desktop row would
+   re-lay itself out. `contents` takes the wrapper out of the box tree, leaving the selects
+   direct children of the row exactly as they were. mobile.css turns all three into boxes. */
+.fs-filter__toggle, .fs-filter__foot, .fs-filter__sheethd { display: none; }
+.fs-filter__sheet { display: contents; }
 /* Both controls are the pager button's own shell — same height, same border, same mono
    face — so the row reads as one instrument rather than a pager with form fields bolted on.
 
