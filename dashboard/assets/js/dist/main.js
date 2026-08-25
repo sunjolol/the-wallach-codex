@@ -45937,7 +45937,87 @@ block_position, efa_foods, entity, base).
 WARNING CARRIED FORWARD: render_probe_food_efa_rank and render_probe_food_tier are RED and were RED
 AT HEAD before this work - proved by reverting the food data to HEAD, rebuilding and re-running.
 Not diagnosed, not touched. The 2026-08-24 handoff claimed "9 render probes green"; that was either
-a subset or has regressed since.` }, { id: "lg_mt7yicvw_i46uf8", ts: "2026-08-24T19:58:44.540165-05:00", surface: "knowledge/food-click+probes", kind: "round-close", summary: "Food rows in an essential's source list now open that food and come back to the essential; and the two red probes split cleanly - one had never worked at all, the other had caught a real defect where a cup of dry beans outranked everything.", detail: 'Two jobs this round, and the second one turned out to be two different stories.\n\nTHE CLICK. On an essential\'s page - boron, say - the "Best food sources" list showed prunes,\nraisins, avocado. Clicking any of them did nothing at all. The reason is a small one with an\nunpleasant shape: those rows were plain containers with no identity attached, sitting directly\nabove the Youngevity product rows, which ARE real buttons. So the food rows looked exactly as\nclickable as the ones below them and quietly weren\'t. They are buttons now, they carry the\nfood\'s id, and the app already knew what to do with that.\n\nThe styling had to move with them. Four rules existed for the sole purpose of taking a button\'s\nbehaviour back OFF those rows - no hand cursor, and a hover state that undid the highlight. Left\nin place, they would have produced a row that opens when you click it and insists it isn\'t\nclickable when you point at it.\n\nTHE BACK BUTTON. It already said "Go back", but it went back to the wrong place: the tab you\nstarted from, not the screen you came from. Opening a product from boron and pressing back landed\non the grid of all ninety essentials with boron gone. It now returns to the previous screen, which\nis what he asked for and what the words on the button always promised.\n\nTHE FIRST RED PROBE had never worked. It was supposed to page through the food list looking for a\ncard whose numbers come from a hand-matched source rather than a database id, and check that such\na card is marked. To page forward it clicked something that has never existed in this app - so it\nnever advanced past the first page, not once, in its whole life. It passed anyway, because the\nfirst page happened to contain such a card. When the food ordering changed yesterday the first\npage stopped containing one and the probe finally went red. The feature it guards was fine all\nalong; the probe was the broken thing. It now walks the real pager, and breaking that walk on\npurpose makes it fail loudly instead of passing.\n\nTHE SECOND RED PROBE was right. It had noticed that one food - dry winged beans - had come to lead\nevery single one of the thirty health goals, including goals it has no business leading. The cause\nis a measuring problem. The food database publishes exactly one serving size for a raw dried bean:\none cup. But a cup of dry beans swells into about three cups when cooked, so scoring that cup was\ncrediting somebody with roughly three servings. Every dry bean in the catalogue was scoring three\nto six times its own cooked version.\n\nHe ruled: keep the dry beans, fix the serving. So a dry bean\'s serving is now the amount that cooks\ndown into one cooked cup - about sixty grams instead of about a hundred and eighty. Nothing was\ntyped in by hand to make that happen: the water content of both the raw and the cooked bean is\nalready in the database, and the difference between them IS the answer. The seven beans work out to\nbetween 2.9 and 3.7 times, which is the "about three" every cook already knows. The label on the\ncard changed too, because both versions used to say "1 cup" and only the word "dry" in the name told\nthem apart.\n\n--- technical record ---\n\nTHE CLICK. `foodSrcRow` in views/entity-page.ts emitted `<div class="kd-ep-src kd-ep-src--food">`\nwith no data attribute; it now emits `<button type="button" data-kd-food="{id}">` plus the\n`.kd-ep-src__chev` the product row beside it already carried. knowledge.ts:791 already routed\n`[data-kd-food]` to openDetail(\'food\'), and knowledge-food-sheet.ts already rendered an\norigin-aware back button - the row was the only missing link.\n\nTHE CSS. drawer-knowledge.css carried four rules at `.kd-ep-src--food` whose comment said "A food\nrow does not open anything, so it is a div and must not offer a button\'s affordances": cursor:\ndefault, plus a :hover cancelling border-color, background, transform, and the name/icon colour\nchanges. All four deleted with the markup, comment replaced with the reason. Probed: the row\'s\ncomputed cursor is now `pointer`.\n\nTHE BACK DESTINATION. `food-close` and `product-close` in knowledge.ts both called `goCrumb(0)`,\nthe ORIGIN-TAB anchor. Measured in the running app first: opening a product from Boron gave\ncrumbs [Essentials, Boron, <product>] and back produced crumbs [] on the essentials grid. Both now\ncall `goCrumb(trail.length - 2)`. goCrumb already handles negative indices and tab crumbs, and\nlength-2 collapses to 0 for every [tab, detail] trail, so the ORAC-list case and the Products-tab\ncase are bit-for-bit unchanged. Verified both controls.\n\nNEW PROBE tools/probes/render_probe_food_source_click.js - 10 assertions: the row is a BUTTON with\ndata-kd-food, its computed cursor is pointer, clicking opens Prunes, the label reads "Go back" and\nnot "All products", the trail contains Boron, back lands on the essential, plus two controls\nproving a Products-tab open still reads "All products" and still clears to the list.\n\nRED PROBE 1 - render_probe_food_tier. Its walk clicked `.fs-card`. That class has never existed in\na view or a stylesheet in this repo; `git log -S fs-card --all` returns only probe files, and\nfa562910 is the commit that ADDED this probe already carrying the wrong selector. `clicked`\nreturned false on iteration 0, the loop broke at `adds = 0`, and the probe only ever read page one.\nIt stayed green because page one carried an APPROXIMATE reading until the 2026-08-24 re-ordering\nput dry legumes on top and made page one all-EXACT. Feature verified independently by walking all\n85 pager pages: Spinach cooked / SILICA 24% / computed ::after "\u2248" / gloss naming Powell 2005 and\n"paired with theirs by hand"; Beef liver EXACT with ::after "none" and no pairing sentence.\nRewritten to walk `.fs-pager__b--arrow`, MAX_ADDS -> MAX_PAGES, header comment corrected (it named\n`.fs-card__amt--approx`; the real classes are `.fs-lead__pct--approx` and `.fs-chip--approx`).\nNegative control: breaking the advance selector now prints the diagnostic and RESULT: FAIL.\n\nRED PROBE 2 - render_probe_food_efa_rank. Control assertion "a goal naming no omega is led by\nsomething else" failed with Winged beans, dry leading both stronger-bones and healthy-heart. Cause\nestablished by git worktree at a992d57f (the commit before dry legumes): PASS, Lobster vs Natto.\nDry rows entered at 853639f3. Measured dominance: winged beans 5.97 vs cooked 1.68, mothbeans 4.59\nvs 1.01, pigeon peas 3.98 vs 0.67, lupins 3.91 vs 0.76, yardlong 3.79 vs 0.91, hyacinth 3.71 vs\n1.06, mungo 3.68 vs 1.22.\n\nTHE FIX (owner ruling: keep the rows, fix the portion). USDA publishes exactly one portion for each\nraw mature seed - "1 cup" - so there was no smaller portion_id to switch to, and\nfoods-catalog-curation.json is numbers-free (Charter R3) so a gram weight could not be typed. The\nserving is derived instead: `serving_yields` names the cooked twin by CATALOG ID (a join key, not a\nnumber) and foods_composition_derive.py computes\n\n    dry g = cooked portion g x (1 - water_cooked/100) / (1 - water_dry/100)\n\nfrom nutrient 1051 on both states, returning the working onto the food as `dry_yield`. Guard rails:\na missing water on either state raises rather than defaulting, and a yield outside 1.2x-10x raises\nas a mis-paired twin. Results: hyacinth 210->66.1 (3.18x), lupins 180->53.6 (3.36x), mothbeans\n196->60.3 (3.25x), mungo 207->55.5 (3.73x), pigeon peas 205->59.1 (3.47x), winged 182->61.6\n(2.96x), yardlong 167->58.3 (2.87x). Winged beans strength 5.97 -> 1.93, out of the top ten and\njust above its own cooked row (1.68), which is the right relationship since boiling leaches into\nthe water. No row lost - each still clears the 7% floor on five or six nutrients.\n\nTHE LABEL. Both states carried USDA\'s "1 cup", so a rescaled dry row printing "1 cup" beside its\ncooked twin printing "1 cup" would have been the same misstatement somewhere quieter - the only\nother clue on the tile is the word "dry" in the name. Dry rows now read "61.6 g dry \xB7 makes 1 cup\ncooked".\n\nTHE GATE. tools/invariants.py keeps its OWN copy of the yield arithmetic at (C1b), re-derives the\nserving from the extract, checks the artifact\'s `dry_yield` shows the terms it was built from,\nrejects a `dry_yield` the curation did not authorise, and threads `serving_g` through both the USDA\nand second-source mg computations. Negative control: inflating the derive\'s yield by 1.5x REDs all\nseven with the exact gram mismatch named.\n\nVERIFICATIONS: invariants 104/104 (24 external / 33 consistency / 45 structural / 2 meta, no new\nreds); vitest 100/100; build OK; 14 render probes green, including both formerly-red ones.' }];
+a subset or has regressed since.` }, { id: "lg_mt7yicvw_i46uf8", ts: "2026-08-24T19:58:44.540165-05:00", surface: "knowledge/food-click+probes", kind: "round-close", summary: "Food rows in an essential's source list now open that food and come back to the essential; and the two red probes split cleanly - one had never worked at all, the other had caught a real defect where a cup of dry beans outranked everything.", detail: 'Two jobs this round, and the second one turned out to be two different stories.\n\nTHE CLICK. On an essential\'s page - boron, say - the "Best food sources" list showed prunes,\nraisins, avocado. Clicking any of them did nothing at all. The reason is a small one with an\nunpleasant shape: those rows were plain containers with no identity attached, sitting directly\nabove the Youngevity product rows, which ARE real buttons. So the food rows looked exactly as\nclickable as the ones below them and quietly weren\'t. They are buttons now, they carry the\nfood\'s id, and the app already knew what to do with that.\n\nThe styling had to move with them. Four rules existed for the sole purpose of taking a button\'s\nbehaviour back OFF those rows - no hand cursor, and a hover state that undid the highlight. Left\nin place, they would have produced a row that opens when you click it and insists it isn\'t\nclickable when you point at it.\n\nTHE BACK BUTTON. It already said "Go back", but it went back to the wrong place: the tab you\nstarted from, not the screen you came from. Opening a product from boron and pressing back landed\non the grid of all ninety essentials with boron gone. It now returns to the previous screen, which\nis what he asked for and what the words on the button always promised.\n\nTHE FIRST RED PROBE had never worked. It was supposed to page through the food list looking for a\ncard whose numbers come from a hand-matched source rather than a database id, and check that such\na card is marked. To page forward it clicked something that has never existed in this app - so it\nnever advanced past the first page, not once, in its whole life. It passed anyway, because the\nfirst page happened to contain such a card. When the food ordering changed yesterday the first\npage stopped containing one and the probe finally went red. The feature it guards was fine all\nalong; the probe was the broken thing. It now walks the real pager, and breaking that walk on\npurpose makes it fail loudly instead of passing.\n\nTHE SECOND RED PROBE was right. It had noticed that one food - dry winged beans - had come to lead\nevery single one of the thirty health goals, including goals it has no business leading. The cause\nis a measuring problem. The food database publishes exactly one serving size for a raw dried bean:\none cup. But a cup of dry beans swells into about three cups when cooked, so scoring that cup was\ncrediting somebody with roughly three servings. Every dry bean in the catalogue was scoring three\nto six times its own cooked version.\n\nHe ruled: keep the dry beans, fix the serving. So a dry bean\'s serving is now the amount that cooks\ndown into one cooked cup - about sixty grams instead of about a hundred and eighty. Nothing was\ntyped in by hand to make that happen: the water content of both the raw and the cooked bean is\nalready in the database, and the difference between them IS the answer. The seven beans work out to\nbetween 2.9 and 3.7 times, which is the "about three" every cook already knows. The label on the\ncard changed too, because both versions used to say "1 cup" and only the word "dry" in the name told\nthem apart.\n\n--- technical record ---\n\nTHE CLICK. `foodSrcRow` in views/entity-page.ts emitted `<div class="kd-ep-src kd-ep-src--food">`\nwith no data attribute; it now emits `<button type="button" data-kd-food="{id}">` plus the\n`.kd-ep-src__chev` the product row beside it already carried. knowledge.ts:791 already routed\n`[data-kd-food]` to openDetail(\'food\'), and knowledge-food-sheet.ts already rendered an\norigin-aware back button - the row was the only missing link.\n\nTHE CSS. drawer-knowledge.css carried four rules at `.kd-ep-src--food` whose comment said "A food\nrow does not open anything, so it is a div and must not offer a button\'s affordances": cursor:\ndefault, plus a :hover cancelling border-color, background, transform, and the name/icon colour\nchanges. All four deleted with the markup, comment replaced with the reason. Probed: the row\'s\ncomputed cursor is now `pointer`.\n\nTHE BACK DESTINATION. `food-close` and `product-close` in knowledge.ts both called `goCrumb(0)`,\nthe ORIGIN-TAB anchor. Measured in the running app first: opening a product from Boron gave\ncrumbs [Essentials, Boron, <product>] and back produced crumbs [] on the essentials grid. Both now\ncall `goCrumb(trail.length - 2)`. goCrumb already handles negative indices and tab crumbs, and\nlength-2 collapses to 0 for every [tab, detail] trail, so the ORAC-list case and the Products-tab\ncase are bit-for-bit unchanged. Verified both controls.\n\nNEW PROBE tools/probes/render_probe_food_source_click.js - 10 assertions: the row is a BUTTON with\ndata-kd-food, its computed cursor is pointer, clicking opens Prunes, the label reads "Go back" and\nnot "All products", the trail contains Boron, back lands on the essential, plus two controls\nproving a Products-tab open still reads "All products" and still clears to the list.\n\nRED PROBE 1 - render_probe_food_tier. Its walk clicked `.fs-card`. That class has never existed in\na view or a stylesheet in this repo; `git log -S fs-card --all` returns only probe files, and\nfa562910 is the commit that ADDED this probe already carrying the wrong selector. `clicked`\nreturned false on iteration 0, the loop broke at `adds = 0`, and the probe only ever read page one.\nIt stayed green because page one carried an APPROXIMATE reading until the 2026-08-24 re-ordering\nput dry legumes on top and made page one all-EXACT. Feature verified independently by walking all\n85 pager pages: Spinach cooked / SILICA 24% / computed ::after "\u2248" / gloss naming Powell 2005 and\n"paired with theirs by hand"; Beef liver EXACT with ::after "none" and no pairing sentence.\nRewritten to walk `.fs-pager__b--arrow`, MAX_ADDS -> MAX_PAGES, header comment corrected (it named\n`.fs-card__amt--approx`; the real classes are `.fs-lead__pct--approx` and `.fs-chip--approx`).\nNegative control: breaking the advance selector now prints the diagnostic and RESULT: FAIL.\n\nRED PROBE 2 - render_probe_food_efa_rank. Control assertion "a goal naming no omega is led by\nsomething else" failed with Winged beans, dry leading both stronger-bones and healthy-heart. Cause\nestablished by git worktree at a992d57f (the commit before dry legumes): PASS, Lobster vs Natto.\nDry rows entered at 853639f3. Measured dominance: winged beans 5.97 vs cooked 1.68, mothbeans 4.59\nvs 1.01, pigeon peas 3.98 vs 0.67, lupins 3.91 vs 0.76, yardlong 3.79 vs 0.91, hyacinth 3.71 vs\n1.06, mungo 3.68 vs 1.22.\n\nTHE FIX (owner ruling: keep the rows, fix the portion). USDA publishes exactly one portion for each\nraw mature seed - "1 cup" - so there was no smaller portion_id to switch to, and\nfoods-catalog-curation.json is numbers-free (Charter R3) so a gram weight could not be typed. The\nserving is derived instead: `serving_yields` names the cooked twin by CATALOG ID (a join key, not a\nnumber) and foods_composition_derive.py computes\n\n    dry g = cooked portion g x (1 - water_cooked/100) / (1 - water_dry/100)\n\nfrom nutrient 1051 on both states, returning the working onto the food as `dry_yield`. Guard rails:\na missing water on either state raises rather than defaulting, and a yield outside 1.2x-10x raises\nas a mis-paired twin. Results: hyacinth 210->66.1 (3.18x), lupins 180->53.6 (3.36x), mothbeans\n196->60.3 (3.25x), mungo 207->55.5 (3.73x), pigeon peas 205->59.1 (3.47x), winged 182->61.6\n(2.96x), yardlong 167->58.3 (2.87x). Winged beans strength 5.97 -> 1.93, out of the top ten and\njust above its own cooked row (1.68), which is the right relationship since boiling leaches into\nthe water. No row lost - each still clears the 7% floor on five or six nutrients.\n\nTHE LABEL. Both states carried USDA\'s "1 cup", so a rescaled dry row printing "1 cup" beside its\ncooked twin printing "1 cup" would have been the same misstatement somewhere quieter - the only\nother clue on the tile is the word "dry" in the name. Dry rows now read "61.6 g dry \xB7 makes 1 cup\ncooked".\n\nTHE GATE. tools/invariants.py keeps its OWN copy of the yield arithmetic at (C1b), re-derives the\nserving from the extract, checks the artifact\'s `dry_yield` shows the terms it was built from,\nrejects a `dry_yield` the curation did not authorise, and threads `serving_g` through both the USDA\nand second-source mg computations. Negative control: inflating the derive\'s yield by 1.5x REDs all\nseven with the exact gram mismatch named.\n\nVERIFICATIONS: invariants 104/104 (24 external / 33 consistency / 45 structural / 2 meta, no new\nreds); vitest 100/100; build OK; 14 render probes green, including both formerly-red ones.' }, { id: "lg_mt837ff6_o3k7we", ts: "2026-08-24T22:10:12.690562-05:00", surface: "mobile/phone-arrangement", kind: "round-close", summary: "The Knowledge drawer was not cramped on a phone, it was off screen: it hung off a desktop rail that no longer exists, so none of its six tabs, its close button or any of its detail pages could be reached. It fills the screen now and all 91 essential pages read whole.", detail: `The Knowledge drawer was never really "raw desktop at phone width" \u2014 it was somewhere
+off to the right of the screen. It is a side drawer that hangs off the desktop navigation rail, and
+the phone arrangement replaced that rail with a bottom bar months ago, so the drawer was still
+measuring from a 220px rail that is not there. On a 375px phone its box ran from x=220 to x=1170:
+you saw a 155px sliver of it with the Scanner page still showing beside it, and not one of its six
+tabs, its close button, or any of its detail pages could be tapped at all.
+
+It now fills the screen and stops just above the bottom bar, so all four destinations stay one tap
+away from inside it. Its menu \u2014 the one he called "WAY, WAY too wide", and he was right by 530px \u2014
+became two rows of three instead of one row of six, at the same type size, with every label whole.
+And the coverage goal strip, which was still taking a permanent band of a screen that had already
+spent two thirds of itself on chrome, became a GOALS button beside the avatar.
+
+Two things had quietly not worked on a touchscreen at all. A goal could be ADDED on a phone and
+never REMOVED there, because its \xD7 only appeared on hover. And tapping any glossary word opened its
+definition and closed it again inside the same tap. Both are fixed.
+
+THE SHELL. Four destinations instead of five plus a chip. Search leaves the bottom bar because it
+is a duplicate, not a cut \u2014 the topbar's own control is literally aria-label="Ask Wallach \u2014 open
+Search" and opens the same drawer. The profile chip is promoted to the topbar rather than dropped:
+it was 56x39, under the touch floor, and it now has a 44x44 target and still carries the theme
+picker and all 8 accents (verified: the panel opens with exactly 8 .pf-sw swatches). Measured label
+widths COVERAGE 67 \xB7 REGIMEN 56 \xB7 SCANNER 60 \xB7 SEARCH 50 \xB7 KNOWLEDGE 80 against what each
+arrangement affords \u2014 5+chip 55px, 4+chip 71, 5 no chip 67, 4 no chip 85. Only the last fits every
+label at the type it already had. Nothing shrunk, nothing icons-only, no word changed.
+
+WHAT THE MEASUREMENTS ACTUALLY CAUGHT, three times, is that a fix is not a fix until it is
+re-measured:
+
+  1. The GOALS button's pressed state never painted. The show rule computes to (0,3,1) because of
+     its :has() prefix and my bare [aria-expanded="true"] rule was (0,2,0), so it lost on
+     background. Every automated check passed while the button looked identical open and closed. A
+     screenshot caught it.
+  2. Raising the Regimen slot pencils to a 44px touch target put two or three 44px buttons into a
+     card header that had just become 176px wide, and they ate it \u2014 the slot NAME was left a 34px
+     box holding 69px of text. The correction created the defect.
+  3. Raising the food pager to a flat 44px made 16 buttons need 704px in a 375px row, and the pager
+     centres itself, so it spilled 36px off BOTH edges.
+
+THE TOUCH FLOOR IS A POLICY, NOT ONE NUMBER. A walk of the drawer counted 957 sub-44px "controls"
+on a single condition page \u2014 and 918 of them were \`span.gloss\`, individual WORDS inside sentences.
+Applying 44px to those would have destroyed every paragraph they sit in. So: discrete controls you
+aim at go to 44 (tabs, close, breadcrumb, back, filter inputs, category pills, condition rows, the
+Scanner's own +NEW SCAN button at 26px, the Search drawer's primary input at 24px). Dense clusters
+go to 36 on a 44px pitch, recorded in the sheet as a judgement that can be overruled rather than
+discovered (related-entity pill clouds run 35 to a page; 44 would add ~72px per cloud and change
+the character of pages the brief exists to preserve).
+
+THE GLOSSARY BUG, traced rather than guessed. One tap fires, in order: pointerdown \u2192 touchstart \u2192
+touchend \u2192 mouseout \u2192 mouseover \u2192 focusin (which OPENS the tip) \u2192 click (which finds the tip open
+on the same element and toggles it OFF). My first fix blamed the synthetic mouseover and did not
+work, because focusin was the real opener. The toggle now asks "was this already open BEFORE this
+gesture began" instead of "is it open now". Gating on (hover: hover) was rejected: a touch laptop
+reports hover:hover and would still have broken. Verified both ways \u2014 a phone tap opens and stays
+open, a second tap closes, a different term switches in one tap, and DESKTOP HOVER STILL WORKS,
+which is the control that proves the fix did not cost the mouse path.
+
+A CENSUS, NOT A SAMPLE. The drawer walk had sampled Hydrogen \u2014 which has no illustrative header \u2014
+and reported the entity page perfectly clean. Three headers picked by an independent pass each lost
+real copy off the right edge into an overflow:hidden, including, on Vitamin A, the caution "Toxic
+in excess \u2014 above about 50,000 IU a day". Each of the 90 headers is designed bespoke to its
+element, so each can fail its own way; all 91 were opened and measured. That found one page still
+losing content, and the cause was not layout at all \u2014 the corpus carries
+"osteopenia/osteoporosis/osteoarthritis/osteomalacia", 46 characters with no break opportunity at
+"/", so the browser treated it as one unbreakable word and a phone reader simply never saw
+"osteomalacia" in a deficiency list. Fixed at the container, so the other 2,600 claims cannot do it
+again. Final: 91/91 lose nothing.
+
+WHAT THIS DOES NOT CLAIM. It is not pushed and it is not on master \u2014 it sits on a branch awaiting
+his review, because a green probe is not a shipped phone surface and he has to look at it on a
+phone. mobile.css is still held back from the web build (the gate still reports it), but the
+glossary fix and the hidden GOALS button live in shared files and WILL reach nutrientcodex.com when
+he pushes.
+
+And four render probes are red \u2014 render_probe_orac, render_probe_group_dots, render_probe_live_host
+(which needs the network) and render_probe_mech_shape. All four were confirmed pre-existing by
+re-running them in a detached worktree of HEAD, so none is from tonight. mech_shape matters: its
+goldens went stale on the previous session's food-source change, it fails 5 of 23, and it is the
+gate the element-headers skill names as enforcement \u2014 so it can no longer catch a header
+regression. Re-blessing those goldens is his call, not a cleanup. The 104-gate board does not run
+the probe suite at all, which is why genesis reported a clean 104/104 through all four.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -229294,6 +229374,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   var tip = null;
   var activeEl = null;
   var wired = false;
+  var lastPointerWasTouch = false;
+  var openAtGestureStart = null;
   function ensureTip() {
     if (tip === null) {
       tip = document.createElement("div");
@@ -229348,13 +229430,23 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       return;
     }
     wired = true;
+    document.addEventListener("pointerdown", (e) => {
+      lastPointerWasTouch = e.pointerType === "touch";
+      openAtGestureStart = tip !== null && tip.hidden === false ? activeEl : null;
+    }, true);
     document.addEventListener("mouseover", (e) => {
+      if (lastPointerWasTouch) {
+        return;
+      }
       const el = glossTarget(e);
       if (el !== null) {
         showFor(el);
       }
     });
     document.addEventListener("mouseout", (e) => {
+      if (lastPointerWasTouch) {
+        return;
+      }
       if (glossTarget(e) !== null) {
         hide();
       }
@@ -229369,7 +229461,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     document.addEventListener("click", (e) => {
       const el = glossTarget(e);
       if (el !== null) {
-        if (tip !== null && tip.hidden === false && el === activeEl) {
+        if (el === openAtGestureStart) {
           hide();
         } else {
           showFor(el);
@@ -229377,6 +229469,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       } else {
         hide();
       }
+      openAtGestureStart = null;
     });
     window.addEventListener("scroll", hide, true);
   }
@@ -229839,6 +229932,36 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     }
     btn.addEventListener("click", () => void toggleDrawer("search"));
   }
+  function wireGoalsToggle() {
+    const btn = document.querySelector("[data-goals-toggle]");
+    if (btn === null) {
+      return;
+    }
+    const OPEN = "goals-open";
+    const setOpen = (open) => {
+      document.body.classList.toggle(OPEN, open);
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    };
+    btn.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      setOpen(!document.body.classList.contains(OPEN));
+    });
+    document.addEventListener("click", (ev) => {
+      if (!document.body.classList.contains(OPEN)) {
+        return;
+      }
+      const t = ev.target;
+      if (t !== null && (t.closest(".goalstrip") !== null || t.closest("[data-goals-toggle]") !== null)) {
+        return;
+      }
+      setOpen(false);
+    });
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape" && document.body.classList.contains(OPEN)) {
+        setOpen(false);
+      }
+    });
+  }
   function wireProfileChip() {
     const chip2 = document.querySelector(".rail__profile");
     if (chip2 === null) {
@@ -229884,6 +230007,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
     wireProfileIdentity();
     wireWelcome();
     wireTopbarSearch();
+    wireGoalsToggle();
     mountDrawers();
     wireDrawerKeys();
     on("drawer:toggled", () => syncDrawerRail());

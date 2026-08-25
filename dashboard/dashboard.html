@@ -114,6 +114,17 @@
       <span class="np__rule" aria-hidden="true"></span>
       <span class="np__deck">Every essential Wallach named, measured against what you take.</span>
     </div>
+    <!-- THE GOALS TOGGLE — phone only. It is `display: none` at every width by default, and
+         only the phone layer turns it on, so the desktop topbar is byte-for-byte unchanged: a
+         `display: none` child is not a grid item at all, so the 3-column grid below still sees
+         exactly three items.
+         ★ THE DEFAULT LIVES IN dashboard.css, NOT mobile.css, and that is not a style
+         preference. mobile.css is deliberately held back from the web build
+         (web_build_excludes_unapproved_styles), so a default stated there never reaches
+         nutrientcodex.com — the website would draw this as a raw unstyled UA button. That exact
+         trap has shipped three times here (the food-sheet Add button, .kd-ep--prod,
+         .cov-panes__btn). A media query can only ADD. -->
+    <button class="topbar__goals" data-goals-toggle type="button" aria-expanded="false">Goals</button>
     <!-- The topbar's flexible middle column. NOT stray markup: .app-topbar is a 3-column grid
          (auto | minmax(0,1fr) | auto) and this empty span IS the spacer that pushes Ask Wallach
          to the far right. Delete it and the topbar layout collapses. -->

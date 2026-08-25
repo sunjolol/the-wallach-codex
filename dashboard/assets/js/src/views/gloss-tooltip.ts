@@ -4,6 +4,9 @@
  *
  * A `.gloss` term (emitted by glossify() in views/glossify.ts) shows its
  * plain-language definition on hover (desktop), focus (keyboard), or tap (touch).
+ * The tap path is NOT free: a touchscreen fires a synthetic mouseover before the click, and
+ * until it was gated on pointer modality that pair opened and closed the tip in one gesture.
+ * Read `lastPointerWasTouch` below before changing any listener here.
  * ONE tooltip element + delegated document listeners — no per-term wiring, so it
  * covers glossary terms in both claim summaries and Wallach verbatims, however many
  * re-render. Reads the definition from the element's data-def (already escaped at
@@ -14,6 +17,31 @@
 let tip: HTMLElement | null = null;
 let activeEl: HTMLElement | null = null;
 let wired = false;
+/**
+ * Whether the gesture in flight came from a finger.
+ *
+ * A touchscreen SYNTHESISES a mouseover before it dispatches the click, so on a phone one tap
+ * ran showFor() (from the fake mouseover) and then the click handler found the tip already
+ * open on the same element and toggled it straight back off. The definition appeared and
+ * vanished inside a single tap, which reads as "glossary terms do nothing on a phone".
+ * MEASURED at 375x812 with touch emulation on: after tapping `villi`, the tip element held the
+ * correct definition text and `hidden` was still true.
+ *
+ * Gating on `(hover: hover)` would fix a phone and BREAK A TOUCH LAPTOP, which reports
+ * hover:hover and still synthesises the same events. The modality of the actual gesture is the
+ * only thing that answers this, so that is what gets recorded.
+ */
+let lastPointerWasTouch = false;
+/**
+ * The term whose tip was ALREADY open when the current gesture started, or null.
+ *
+ * The click handler must not read "is the tip open right now?" to decide whether a tap means
+ * open-or-close, because by the time click fires, this gesture has usually opened it itself:
+ * a tap focuses the term, focusin calls showFor(), and click then found its own tip open on
+ * its own element and closed it. Reading the state from BEFORE the gesture separates
+ * "I am opening this" from "I am closing what was already open".
+ */
+let openAtGestureStart: HTMLElement | null = null;
 
 function ensureTip(): HTMLElement {
   if (tip === null) {
@@ -80,13 +108,28 @@ export function initGlossTooltip(): void {
     return;
   }
   wired = true;
+  // Capture phase, and declared before every other listener here: pointerdown always precedes
+  // both the synthesised mouseover and the click, so by the time either of those runs this flag
+  // already describes the gesture in flight.
+  document.addEventListener('pointerdown', (e) => {
+    lastPointerWasTouch = e.pointerType === 'touch';
+    openAtGestureStart = (tip !== null && tip.hidden === false) ? activeEl : null;
+  }, true);
   document.addEventListener('mouseover', (e) => {
+    // A finger produces no real hover. Anything arriving here during a touch gesture is the
+    // browser's synthetic compatibility event, and acting on it is what cancelled the tap.
+    if (lastPointerWasTouch) {
+      return;
+    }
     const el = glossTarget(e);
     if (el !== null) {
       showFor(el);
     }
   });
   document.addEventListener('mouseout', (e) => {
+    if (lastPointerWasTouch) {
+      return;
+    }
     if (glossTarget(e) !== null) {
       hide();
     }
@@ -102,9 +145,11 @@ export function initGlossTooltip(): void {
   document.addEventListener('click', (e) => {
     const el = glossTarget(e);
     if (el !== null) {
-      // Only toggle OFF when the SAME term is tapped again; tapping a different term switches
-      // the tip straight to it, so moving between terms on touch never costs two taps.
-      if (tip !== null && tip.hidden === false && el === activeEl) {
+      // Only toggle OFF when the SAME term was ALREADY showing before this gesture began;
+      // tapping a different term switches the tip straight to it, so moving between terms on
+      // touch never costs two taps. Comparing against openAtGestureStart rather than the live
+      // state is what stops a tap from closing the tip its own focusin just opened.
+      if (el === openAtGestureStart) {
         hide();
       }
       else {
@@ -114,6 +159,7 @@ export function initGlossTooltip(): void {
     else {
       hide();
     }
+    openAtGestureStart = null;
   });
   // Any scroll (capture, so drawer-internal scroll counts) dismisses the tip.
   window.addEventListener('scroll', hide, true);

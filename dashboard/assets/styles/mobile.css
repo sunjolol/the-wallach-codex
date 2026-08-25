@@ -52,12 +52,27 @@
     height: 100dvh;
   }
 
+  /* ONE declaration of the bar's height, read by everything that must sit above it. The
+     Knowledge drawer stops here; anything else that needs the figure reads the same token
+     rather than repeating 53. Two hand-maintained copies of one number is how they drift.
+     Declared on :root, NOT on .app-shell: #drawer-knowledge-mount only inherits the token if
+     it is a descendant of whatever declares it, and if the var failed to resolve the calc()
+     below would be invalid — the drawer would silently fall back to bottom:0 and cover the
+     bar. :root cannot miss. */
+  :root { --phone-bar-h: 53px; }
+
   .app-rail {
     flex-direction: row;
     align-items: stretch;
     padding: 0;
     border-right: 0;
     border-top: 1px solid var(--ds-ink-medium);
+    /* height, not min-height: the drawer above computes its own bottom from --phone-bar-h, so
+       the bar has to actually BE that tall. 52px of item + the 1px top border.
+       The safe-area inset is ADDED to the height rather than left to eat it: box-sizing is
+       border-box here, so a bare `height: 53px` would let the home-indicator padding shrink
+       the bar's content to 53 minus the inset on exactly the phones that have one. */
+    height: calc(var(--phone-bar-h) + env(safe-area-inset-bottom));
     /* the home indicator sits over the bar without this */
     padding-bottom: env(safe-area-inset-bottom);
   }
@@ -73,16 +88,26 @@
   .rail__spacer,
   .rail__kbd { display: none; }
 
-  /* The bar carries 6 targets: 5 destinations across two rail sections plus the profile. Sizing
-     the SECTIONS equally would give the 3-item section 56px per item and the 2-item section 75px,
-     and push the profile chip half off the right edge — and the profile is where the 8 accent
-     themes and light/dark live, so losing it loses the theme picker. Size every item equally
-     instead, and let the profile keep a fixed slot. */
+  /* The bar carries FOUR destinations, and that is the whole reason its labels read.
+     MEASURED at 375px — natural label widths at the type this sheet already sets:
+       COVERAGE 67px · REGIMEN 56 · SCANNER 60 · SEARCH 50 · KNOWLEDGE 80
+     against the box each arrangement affords a label:
+       5 items + the 56px profile chip ....  55px  — four of the five truncate  (the shipped state)
+       4 items + the chip .................  71px  — KNOWLEDGE still 9px over
+       5 items, chip moved out ............  67px  — KNOWLEDGE still 13px over
+       4 items, chip moved out ............  85px  — every label whole, 5px to spare
+     Both moves are needed together, and NEITHER COSTS AN OPTION.
+     Search leaves the bar because it is a DUPLICATE, not a cut: the topbar's control carries
+     `aria-label="Ask Wallach — open Search"` and opens the very same drawer, from every screen.
+     The profile leaves to be PROMOTED, not dropped — see .rail__footer below. It keeps the
+     theme picker, all 8 accents and light/dark; it stops being a 39px chip crowding a label. */
+  .rail__item[data-rail-nav="search"] { display: none; }
+
   /* `display: contents` flattens both sections away so every .rail__item becomes a direct flex
-     child of the bar and `flex: 1 1 0` sizes all five identically. Sizing the SECTIONS instead
-     cannot do this: they hold 3 items and 2, so any ratio that makes the sections fair makes the
-     items unfair. .rail__section is a presentational div with no role or label, so removing it
-     from the box tree costs no semantics. */
+     child of the bar and `flex: 1 1 0` sizes the survivors identically. Sizing the SECTIONS
+     instead cannot do this: they hold 3 items and 2 (2 and 1 once Search is out), so any ratio
+     that makes the sections fair makes the items unfair. .rail__section is a presentational div
+     with no role or label, so removing it from the box tree costs no semantics. */
   .rail__section { display: contents; }
 
   .rail__item {
@@ -123,13 +148,171 @@
     text-overflow: ellipsis;
   }
 
-  .rail__footer { padding: 0; display: flex; align-items: stretch; flex: 0 0 auto; }
-  .rail__profile { flex-direction: column; justify-content: center; gap: 0; padding: 0 var(--ds-space-3); }
+  /* ═══ THE PROFILE IS PROMOTED TO THE TOPBAR ══════════════════════
+     Moved, not dropped — and to a better slot than it had. In the bar it measured 56x39, under
+     the 44px touch floor, and it crowded KNOWLEDGE out of its own label. The topbar at this
+     width is 60px tall and carries exactly ONE control: .topbar__breadcrumb measures 0x0 here
+     (dashboard.css:351 collapses it), so most of the left half is empty.
+     `position: fixed` rather than a reparent, for two reasons: the chip is markup-bound to
+     .app-rail and this sheet may not touch markup; and fixed takes it out of the bar's flex
+     flow entirely, so the four destinations divide the whole 375px rather than 319px — which
+     is what buys the 85px label box above.
+     z-index 6 clears the topbar's own content and stays BELOW the drawers at 10, on the same
+     ladder .goalstrip sits on at 5 (workspace-coverage.css documents it). */
+  .rail__footer {
+    position: fixed;
+    top: 0;
+    left: var(--ds-space-4);
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-top: 0;
+    border-top: 0;
+    z-index: 6;
+  }
+  .rail__profile {
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+    min-width: 44px;
+    min-height: 44px;
+  }
+  /* The chip's press fill came with it out of the rail, and it is var(--ds-ink-medium) — the
+     RAIL's own background. That reads as depth on a dark rail and as a dark blot on the light
+     topbar it now sits on, which is exactly what it drew: a near-black square behind the
+     avatar on first tap. On a coarse pointer :hover also LATCHES after a tap and does not
+     clear until you touch elsewhere, so it is not a flicker, it stays.
+     Same idea, correct ground: the accent wash the rest of the paper surfaces press with. */
+  .rail__profile:hover,
+  .rail__profile:active { background: var(--ds-accent-wash); }
   .rail__profile-name,
   .rail__profile-meta { display: none; }
 
-  .app-topbar { padding: var(--ds-space-3) var(--ds-space-4); gap: var(--ds-space-3); }
+  /* space-2, not space-3: the Ask control below grew from 35px to a touch-legal 44, which pushed
+     the bar from 60px to 69. Trimming 4px of padding off each edge pays that back exactly, so the
+     topbar ends where it started while everything inside it got bigger. */
+  .app-topbar { padding: var(--ds-space-2) var(--ds-space-4); gap: var(--ds-space-3); min-height: 56px; }
   .app-topbar::after { left: var(--ds-space-4); right: var(--ds-space-4); }
+
+  /* The Ask control measured 183x35 — half the topbar's width for one button, on a bar that
+     holds nothing else. The keyboard hint goes first, for exactly the reason .rail__kbd goes:
+     it names a key this device cannot press. The rest is a RE-SIZE, not a re-word — same green
+     pill, same live dot, same words, same accent vars — and it GAINS height while losing width,
+     because 35px was under the touch floor. Type steps down one stop (sm -> mini) so the pill
+     reads as a control rather than the loudest thing on the screen; it stays the display
+     interface face at weight 700, so it is the same button, quieter. */
+  .topbar__ask-kbd { display: none; }
+  .topbar__ask {
+    padding: var(--ds-space-2) var(--ds-space-3);
+    gap: var(--ds-space-2);
+    min-height: 44px;
+    font-size: var(--ds-text-mini);
+    letter-spacing: 0.01em;
+  }
+
+
+  /* ═══ GOALS BECOME A TAP, NOT A BAND ════════════════════════════
+     Even at 60px the strip was still permanent height for a surface you touch rarely, in a
+     screen that had 67% of itself spent on chrome before the field began. His ruling: hide it
+     outright, put a small GOALS button beside the avatar, and let it be referenced from
+     anywhere in the scroll — which is the job `position: sticky` used to do, done for free.
+     Nothing is lost and nothing is re-styled: the SAME .goalstrip, the SAME .gchip components
+     with the SAME per-goal hues, one tap away instead of always underfoot.
+     Scoped `:not(.ck-goals)` deliberately. regimen.ts renders a SECOND .goalstrip inside each
+     saved slot card (`.goalstrip.ck-goals`), which belongs to that card and must not be
+     yanked into a topbar popover. */
+  .goalstrip:not(.ck-goals) { display: none; }
+
+  body.goals-open .goalstrip:not(.ck-goals) {
+    display: flex;
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    /* above the topbar chrome at 6, still below the drawers at 10 */
+    z-index: 7;
+    padding: var(--ds-space-3) var(--ds-space-4);
+    gap: var(--ds-space-2);
+    background: var(--ds-paper);
+    border-bottom: 1px solid var(--ds-rule-soft);
+    box-shadow: 0 10px 18px -12px rgba(26, 22, 18, .40);
+  }
+
+  /* The handle. It sits beside the 44px avatar, which is fixed at left:var(--ds-space-4) — so
+     this clears it by exactly avatar + one gap. Same `position: fixed` reason as the avatar:
+     the button is markup-bound to the topbar's 3-column grid, and taking it out of flow keeps
+     that grid seeing exactly the items it was written for.
+     Its look is not invented. It borrows .cov-panes__btn wholesale — same display face, same
+     mini type, same tracking, same pill radius, same paper/rule pair, same accent fill for the
+     ON state — so the phone gains no new visual vocabulary. */
+  body:has(.goalstrip:not(.ck-goals)) .topbar__goals {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 6px;
+    left: calc(var(--ds-space-4) + 44px + var(--ds-space-2));
+    height: 44px;
+    min-width: 44px;
+    padding: 0 var(--ds-space-3);
+    z-index: 6;
+    font-family: var(--ds-font-display);
+    font-size: var(--ds-text-mini);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ds-ink-soft);
+    background: var(--ds-paper);
+    border: 1px solid var(--ds-rule-soft);
+    border-radius: var(--ds-radius-pill);
+    cursor: pointer;
+    transition: background var(--ds-motion-fast) var(--ds-ease-out),
+                color var(--ds-motion-fast) var(--ds-ease-out),
+                border-color var(--ds-motion-fast) var(--ds-ease-out);
+  }
+  /* ★ THE `body:has(...)` PREFIX IS NOT DECORATION HERE — IT IS THE WHOLE RULE.
+     The show rule above computes to (0,3,1): `body` (0,0,1) + `:has(.goalstrip:not(.ck-goals))`,
+     which takes the specificity of its most specific argument (0,2,0), + `.topbar__goals`
+     (0,1,0). A bare `.topbar__goals[aria-expanded="true"]` is only (0,2,0), so it LOST on
+     `background` and the pressed state silently never painted — the button looked identical
+     open and closed. Every check passed while it was broken; a screenshot caught it.
+     Repeating the prefix brings this to (0,4,1) and it wins. */
+  body:has(.goalstrip:not(.ck-goals)) .topbar__goals[aria-expanded="true"] {
+    color: var(--ds-paper);
+    background: var(--ds-accent);
+    border-color: var(--ds-accent);
+  }
+
+
+  /* ═══ THE GOAL STRIP — 136px, pinned, for one control that works ══════════
+     MEASURED at 375px: the strip is 136px tall and `position: sticky`, so it holds 18% of the
+     759px usable height PERMANENTLY — and the first plate lands at y=508, meaning 67% of the
+     screen is chrome before the field even starts.
+     It wraps to three rows because it carries four things: the YOUR GOALS eyebrow, the chips,
+     + ADD, and a closing hint reading "Hover a goal to focus it". THREE OF THE FOUR DO NOTHING
+     ON A PHONE. coverage.ts binds goal focus to `mouseover`/`mouseout` and nothing else
+     (coverage.ts:1007), so no chip can be focused by touch; .gchip__x is opacity:0 until
+     :hover, so a goal added on a phone could never be REMOVED on one (fixed in the coarse
+     block at the foot of this sheet); and the hint names a gesture the device has not got.
+     The pin is justified upstream by hover-focus specifically — "hover-focus is the strip's
+     whole job" — so it has nothing left to earn 136px with here.
+     THE DESKTOP STICKY IS UNTOUCHED. It is load-bearing and gated: render_probe_coverage_add_remove
+     asserts `position: sticky` after a past fix silently deleted it — and that probe runs at
+     1440x900, outside this query, so it still proves the desktop behaviour it was written for.
+     What this does NOT do: drop a chip, the eyebrow, or + ADD. Every option stays. */
+  .goalstrip {
+    position: static;
+    padding: var(--ds-space-2) var(--ds-space-4);
+    gap: var(--ds-space-2);
+  }
+  /* :has(), NOT a bare `display: none`. .goalstrip__eyebrow--end is ONE class rendering TWO
+     different strings: with goals it is cov_goals_hint, "Hover a goal to focus it", an
+     instruction for a pointer this device has not got. With NO goals it is cov_goals_none,
+     "No goals — the whole field, nothing highlighted", the only thing on screen explaining an
+     empty strip. Hiding the class outright would delete real copy in the empty state. The
+     empty state renders no `.gchip[data-goal]` — only .gchip--add — so testing for one
+     separates the two cases exactly. */
+  .goalstrip:has(.gchip[data-goal]) .goalstrip__eyebrow--end { display: none; }
 
 
   /* ═══ COVERAGE — one screen, one job ═══════════════════════════════════
@@ -243,6 +426,332 @@
   }
   /* the fat plate carries its own taller min-height and roomier padding upstream */
   .tile--fat { padding: var(--ds-space-3); }
+
+
+  /* ═══ THE KNOWLEDGE DRAWER — it was not cramped, it was OFF SCREEN ════════
+     MEASURED at 375px BEFORE this block: the drawer's own box ran x=220..1170. You saw a 155px
+     strip of it with the workspace still showing beside it, and 147 elements sat past the right
+     edge. Two hard pins put it there, and neither survives the rail's removal:
+       drawer-shared.css:23   left: 220px     — the width of the DESKTOP RAIL, which this
+                                                arrangement replaced with a bottom bar
+       drawer-knowledge.css:22  width: 950px  — a desktop side-drawer measure, 2.5x the screen
+     The Search drawer never had this problem because it is built as a MODAL
+     (`position: fixed; inset: 0` + a centred panel, drawer-search.css:33), so it is
+     width-agnostic by construction. Knowledge is a SIDE drawer hung off a rail. On a phone
+     there is no side to hang from, so it becomes what Search already is: a full screen.
+     `position: fixed`, not absolute — same reason and same technique as the Search drawer, and
+     it takes the panel out of any ancestor's clipping. Both overriding rules are ID-rooted at
+     (1,1,0) to match their targets exactly, and win on source order alone.
+     THE BOTTOM BAR STAYS VISIBLE. The drawer stops above it rather than covering it, so all
+     four destinations remain one tap away from inside Knowledge — the bar is the app's
+     navigation, and a screen that hides it makes every exit a two-step. The offset reads the
+     bar's height from a single token declared with the bar itself, so the two can never
+     disagree. */
+  #drawer-knowledge-mount.kd-open {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    bottom: calc(var(--phone-bar-h) + env(safe-area-inset-bottom));
+    border-right: 0;
+    /* the shadow threw a side-drawer's edge onto nothing; a full screen has no outside */
+    box-shadow: none;
+  }
+  /* the accent seam is drawn down the drawer's RIGHT EDGE, which is now the screen edge */
+  #drawer-knowledge-mount.kd-open::after { display: none; }
+
+
+  /* ═══ ITS HEADER — 905px of chrome asked to fit in 375 ════════════════
+     MEASURED, natural widths: the mark 91 + the six-tab nav 700 + the close 34, inside
+     2x40px of padding = 905px. He called this menu "WAY, WAY too wide" and he is right by
+     530px.
+     THE ARITHMETIC, at the type the tabs already use (11.2px Unbounded, uppercase):
+       label naturals — HOME 47 · ORAC 44 · EXPLORE 70 · PRODUCTS 84 · CONDITIONS 98 · ABSORPTION 102
+       one row of six ............ 56px per label  — five of the six truncate
+       two rows of three ......... 93px per label  — ABSORPTION needs 102, still 9 over
+       ...with tracking zeroed ... 93px per label vs ABSORPTION 93  — fits, with nothing spare
+     Zero margin is not a fit, so the tabs also drop to space-1 side padding, which lifts the
+     box to 101px and leaves ABSORPTION 8px of room. Same type size, same face, same weight:
+     nothing is shrunk to make this work, exactly as the bottom bar was not.
+     WHY A GRID AND NOT A SCROLLER: a horizontal scroller would fit trivially and hide two
+     tabs off the edge. This app already made that call once, for .cov-panes — "No horizontal
+     scroller, so nothing hides off the edge" — and a reader who cannot see ORAC does not know
+     to swipe for it. Every destination stays visible.
+     The head becomes a 2-row grid so the close button rides on the mark's row instead of
+     taking a third row to itself. */
+  #drawer-knowledge-mount .kd-knh {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "mark end"
+      "tabs tabs";
+    align-items: center;
+    gap: var(--ds-space-2) var(--ds-space-3);
+    padding: var(--ds-space-2) var(--ds-space-4) var(--ds-space-3);
+  }
+  /* the seam under the head is inset to the head's padding; that padding just changed */
+  #drawer-knowledge-mount .kd-knh::after { left: var(--ds-space-4); right: var(--ds-space-4); }
+  #drawer-knowledge-mount .kd-knh__mark { grid-area: mark; }
+  #drawer-knowledge-mount .kd-knh__end { grid-area: end; }
+  #drawer-knowledge-mount .kd-knh__tabs {
+    grid-area: tabs;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--ds-space-1);
+    margin-inline: 0;
+    padding: var(--ds-space-1);
+    /* a 999px pill radius on a TWO-ROW block draws a stadium around a rectangle — it reads as
+       a mistake rather than a segmented control. The same segmented control, cornered for the
+       shape it now is; the tabs inside keep their own pill radius, so the component still
+       reads as pills in a trough. */
+    border-radius: var(--ds-radius-lg);
+  }
+  #drawer-knowledge-mount .kd-knh__tab {
+    padding: var(--ds-space-2) var(--ds-space-1);
+    min-height: 44px;
+    /* tracking is what pushes ABSORPTION past its box; the same trade the bottom-bar labels
+       took, and for the same reason */
+    letter-spacing: 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  /* ═══ THE DRAWER BODY ═════════════════════════════════════════
+     The Home hero is one long sentence set at the desktop display size. In a 343px column it
+     broke to three lines, and headline + deck together took ~230px before the first thing you
+     can actually do. One step down the SAME scale — 2xl to xl for the headline, and the deck
+     from 1.0625rem to base — puts the headline on two lines and hands the difference back to
+     the content. Same face, same weight, same tracking: re-sized, not re-chosen. */
+  #drawer-knowledge-mount .sh-hero { padding: var(--ds-space-4) 0; }
+  #drawer-knowledge-mount .sh-hero h1 { font-size: var(--ds-text-xl); }
+  #drawer-knowledge-mount .sh-hero p {
+    font-size: var(--ds-text-base);
+    margin-bottom: var(--ds-space-4);
+  }
+
+  /* A placeholder longer than its box is ordinary; being CUT MID-WORD is not — it reads as a
+     broken string rather than a truncated one. `Try “selenium”, “osteoporosis”, or “colloidal
+     minerals”…` stopped dead at `…“osteoporosis”, o`. An ellipsis says "there is more".
+     THE COPY IS UNTOUCHED. This is presentation only, so one string still serves every width
+     and view-copy.json stays the single source for it. */
+  #drawer-knowledge-mount input::placeholder { text-overflow: ellipsis; }
+
+  /* .ep-seclabel is a baseline flex row: LABEL + hint + link + a hairline that eats the
+     remainder. At this width the hint and the link were squeezed into ~90px columns and each
+     broke to three lines — "the body's required inputs" set as a three-line stack next to its
+     own heading. The hint takes a full-width line of its own instead. That is not a new idea:
+     it is exactly the shape .essentials-subsection__hint already uses on the coverage field
+     higher up in this sheet. */
+  #drawer-knowledge-mount .ep-seclabel,
+  #drawer-knowledge-mount .kd-ep-seclabel { flex-wrap: wrap; }
+  #drawer-knowledge-mount .ep-seclabel__hint,
+  #drawer-knowledge-mount .kd-ep-seclabel__hint { flex: 1 0 100%; }
+
+
+  /* ═══ THE ENTITY PAGE — THE BACK BUTTON WAS PAINTING OVER THE TITLE ══════
+     MEASURED on Hydrogen at 375px. .kd-ep-hero is a flex row of a 56px symbol tile, the id
+     block, and the back button, and the back carries
+     `white-space: nowrap; flex: 0 0 auto` under the comment "the back affordance is ALWAYS one
+     line — the title shrinks, never this" (drawer-knowledge.css:1441). That trade is right on a
+     desktop and impossible here: after the tile, the gaps and a 135px back button, the id block
+     was left ~130px for a 29.6px display name, and .kd-ep-hero__name sets no overflow rule — so
+     "Hydrogen" rendered straight ACROSS "ALL ESSENTIALS". A collision, not a tight fit.
+     The row wraps and the back takes its own line ABOVE the title, which is where a phone
+     expects a back affordance anyway — and the desktop rule it overrides stays exactly as it
+     is. `width: max-content` keeps the button its natural size instead of stretching it across
+     the full 100% basis that forces the line break. */
+  #drawer-knowledge-mount .kd-ep-hero { flex-wrap: wrap; }
+  #drawer-knowledge-mount .kd-ep-hero .kd-ep-back {
+    order: -1;
+    flex: 0 0 100%;
+    width: max-content;
+    margin-left: 0;
+  }
+  #drawer-knowledge-mount .kd-ep-hero__name { font-size: var(--ds-text-xl); }
+
+
+  /* ═══ THE EYEBROWS — A DECORATIVE HAIRLINE WAS BREAKING TWO WHOLE TABS ═══
+     MEASURED: on ORAC, .kd-orac-eyebrow__l computes to 377.6px in a 375px viewport — and it is
+     `white-space: nowrap`, so it cannot give. That one span is what pushed .kd-body to a 559px
+     scrollWidth and put 31 elements past the right edge; Absorption has the identical rule and
+     the identical break. The text is not the problem: it is ~244px. The problem is the
+     `::before` hairline that opens the row, which is a fixed **122px** — a third of a phone
+     screen spent on a rule.
+     So the rule shortens and the gaps tighten. Nothing is removed, nothing re-typed: the same
+     eyebrow, the same nowrap text, the same accent rule — the decoration just stops claiming
+     more width than the words it decorates. */
+  #drawer-knowledge-mount .kd-orac-eyebrow,
+  #drawer-knowledge-mount .kd-foods-eyebrow { gap: var(--ds-space-2); }
+  #drawer-knowledge-mount .kd-orac-eyebrow__l::before,
+  #drawer-knowledge-mount .kd-foods-eyebrow__l::before { width: var(--ds-space-5); }
+
+  /* 2.5rem of display type in a 343px column. One step down, same face and weight. */
+  #drawer-knowledge-mount .kd-orac-hero__h { font-size: 2rem; }
+  #drawer-knowledge-mount .kd-orac-hero__deck { font-size: var(--ds-text-base); }
+
+  /* .ds-pull-stat is a two-column slab — a big number beside its sentence — inside 40px of
+     padding on each side. At 375px that leaves the sentence ~144px too little and it ran
+     straight out of the slab. It stacks instead: the number over its sentence, which is the
+     same two parts in the same order, just vertically. Padding comes in one step and the
+     body takes one step down the type scale. */
+  #drawer-knowledge-mount .ds-pull-stat {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--ds-space-3);
+    padding: var(--ds-space-5) var(--ds-space-4);
+  }
+  #drawer-knowledge-mount .ds-pull-stat__body { font-size: var(--ds-text-base); }
+
+  /* The product panel's three metrics (.kd-pf-glance__metrics) are `repeat(3, auto)` with content-sized columns, and
+     the comment above them says a long value "borrows the blank space a short wholesale price
+     leaves — no wrapping". At 375px there is no blank space to borrow: each column got 64px,
+     and both `$69.95` (69px) and `Per serving` (72px) are `white-space: nowrap`, so THE PRICE
+     WAS BEING CUT OFF. Two columns instead of three gives each ~160px and every value reads
+     whole; the third metric wraps to a second row rather than being trimmed. */
+  #drawer-knowledge-mount .kd-pf-glance__metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: start;
+    gap: var(--ds-space-4);
+  }
+  /* Two columns is enough room for `$69.95` and `Per serving`, but not for every value:
+     `1 scoop (16 g)` still wanted 133px in a 113px column, and .kd-pf-metric__v is
+     `white-space: nowrap`, so it was cut rather than wrapped. A serving size that reads
+     "1 scoop (16" is worse than one that takes two lines. */
+  #drawer-knowledge-mount .kd-pf-metric__v { white-space: normal; }
+
+
+  /* ═══ THE ORAC CELL — 488px of FIXED columns in a 323px box ═════════════
+     MEASURED: .kd-orac-cellwrap is `grid-template-columns: 292px 1fr; gap: 40px`, and the cell
+     itself is a hard `width: 292px; height: 292px` circle. Inside a 323px body that leaves the
+     1fr column -5px, so it collapsed to its min-content 196px and started at x=358 — entirely
+     past a 375px screen. Every one of the 23 remaining protrusions on this tab was that second
+     column and its children, and it is what kept .kd-body at a 559px scrollWidth.
+     The two columns stack. The figure is not shrunk to fit — at 375px it does not need to be,
+     since 292 fits inside 327 — but `aspect-ratio: 1` with a `min()` width means it stays a
+     CIRCLE rather than an ellipse on the narrower phones where it will have to give (a 320px
+     screen leaves 272). Same figure, same fill, same nucleus. */
+  #drawer-knowledge-mount .kd-orac-cellwrap {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--ds-space-4);
+    justify-items: center;
+  }
+  #drawer-knowledge-mount .kd-orac-cell {
+    width: min(292px, 100%);
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  /* What is left on this tab is CHART ANNOTATION, and it is pinned to data, not to layout:
+       .kd-orac-fld__tgt b   a "25,000 - a day's target" label hung off a 2px marker line that
+                             sits at 86% of the plot, `white-space: nowrap`, running 74px past
+                             the screen — on its own the reason .kd-body scrolled to 449px
+       .kd-orac-top          a "Cloves, ground - 314,446" value label centred on its bar with
+                             translate(-50%), overflowing 9px at the right end of the scale
+       .kd-orac-rank__c      a year/rank column in the steal chart, 3px over
+     None of these can be re-flowed without moving a label off the datum it labels, and the
+     marker MOVES (it transitions `left` with the age scrubber), so flipping the label to the
+     other side would only relocate the overflow rather than remove it.
+     So the standard rule for wide chart content applies: it scrolls INSIDE ITS OWN CONTAINER
+     and never pushes the page. Every label is still reachable and still attached to its datum;
+     nothing is clipped away and nothing is hidden — which a `overflow: hidden` here would have
+     done while making the measurement read clean. */
+  #drawer-knowledge-mount .kd-orac-fld__plot,
+  #drawer-knowledge-mount .kd-orac-steal { overflow-x: auto; }
+
+
+  /* ═══ THE ELEMENT HEADERS — CONTENT WAS BEING THROWN OFF THE SCREEN ════
+     Not a layout blemish. `.kd-essential-deep` is `overflow: hidden` and nothing below it
+     scrolls sideways, so anything laid out past 375px is DELETED FROM THE PAGE for a phone
+     reader. MEASURED, three headers, three different fixed-column grids:
+
+       Zinc      .kd-ep-fam__opener is `grid-template-columns: 380px 1fr` — a 380px art column
+                 leaves the text column starting at x=470. BOTH opener paragraphs are 100% off
+                 screen. 184px lost.
+       Vitamin A .mkA-grid is `1fr 1fr` — the animal-source card starts at x=281 and loses
+                 100px, taking the retinol side of the retinol-vs-beta-carotene comparison with
+                 it, INCLUDING the caution "Toxic in excess — above about 50,000 IU a day".
+                 A safety line that a phone reader simply never sees.
+       Calcium   .kd-ep-fam__steps--row is `repeat(3, 1fr)` — the third beat starts at x=238
+                 and loses 105px of body plus 89px of its CTA label.
+
+     One column each. The beats keep their rules, numbers, order and type; the comparison keeps
+     both cards and their +/- points; the opener keeps its art above its words instead of
+     beside them. Nothing is dropped, re-worded or re-styled — the columns simply become rows,
+     which is the one thing a 375px screen can actually hold.
+     The figure SVGs are scaled rather than cropped: each is authored at scale 1 with a viewBox,
+     so width:100% + height:auto keeps every label proportional to its art. Authored size is
+     what the mockup harness measures against; this changes only the RENDERED size, at one
+     width, and only where the alternative was cutting the art in half. */
+  #drawer-knowledge-mount .kd-ep-fam__opener {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--ds-space-4);
+  }
+  #drawer-knowledge-mount .kd-ep-fam__openerart { max-width: 100%; }
+
+  #drawer-knowledge-mount .kd-ep-fam__steps--row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--ds-space-4);
+  }
+
+  #drawer-knowledge-mount .mkA-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--ds-space-4);
+  }
+
+  #drawer-knowledge-mount .kd-ep-fam__figure { max-width: 100%; }
+  #drawer-knowledge-mount .kd-ep-fam__figure svg,
+  #drawer-knowledge-mount .kd-ep-fam__openerart svg {
+    width: 100%;
+    height: auto;
+  }
+
+  /* A CENSUS OF ALL 91 ESSENTIAL PAGES left exactly one page still losing content, and the
+     cause was not layout at all — it was one word in the corpus.
+     Vitamin A carries the deficiency list
+     "osteopenia/osteoporosis/osteoarthritis/osteomalacia": 46 characters with NO SPACE in
+     them. CSS does not offer a line-break opportunity at "/", so the browser treats the whole
+     run as a single unbreakable word, and in a 215px claim column it started at x=367 and ran
+     80px past a 375px screen — where .kd-essential-deep's `overflow: hidden` cut it off. A
+     reader on a phone saw "osteomalacia" simply missing from a deficiency list.
+     `overflow-wrap: break-word` breaks a word ONLY when it cannot fit its line on its own, so
+     ordinary prose is untouched and this class of run stops escaping. Applied at .kd-body so
+     it covers every surface the drawer renders rather than the one page that happened to
+     surface it — the corpus has 2,601 claims and nothing stops the next one doing this. */
+  #drawer-knowledge-mount .kd-body { overflow-wrap: break-word; }
+
+
+  /* ═══ REGIMEN — FOUR SAVE SLOTS ACROSS A PHONE ════════════════════
+     .ck-slots is a flex row of four `flex: 1 1 0` cards. At 375px that is
+     (375 - 8 padding - 36 gaps) / 4 = 82.75px per card, and each card has to carry a name, a
+     "0 items · edited today" meta line, a progress meter and a row of colour swatches.
+     MEASURED on the live screen: .ck-slot__meta rendered into a 10px box holding 113px of
+     text — the whole line gone — while the slot's own name ellipsed to "5/9…".
+     Two across instead of four. Each card gets ~176px, which is the difference between a
+     label and a stub. Same four slots, same order, same card — two rows instead of one row of
+     quarters. Nothing is hidden behind a scroller and no slot is dropped. */
+  .ck-slots {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--ds-space-2);
+    padding: var(--ds-space-2) 0;
+  }
+
+  /* ★ THIS SECOND ROW EXISTS BECAUSE THE FIRST FIX CAUSED IT.
+     Raising .ck-slot__pencil to a 44px touch target (in the coarse block below) put TWO OR
+     THREE 44px icon buttons into a card header that is now 176px wide, and they ate it: the
+     slot NAME was left a 34px box holding 69px of text, so "Default" rendered as "Def…".
+     Before the touch fix the pencils were 24px and the name was fine — the correction created
+     the defect, which is exactly why a fix gets re-measured rather than assumed.
+     Both header rows wrap instead. The name takes a full line of its own and the icon buttons
+     drop beneath it; the coverage figure keeps its line and the "0 items · edited today" meta
+     takes the next one instead of sharing 83px with a big number. Nothing is removed — the
+     card is two lines taller and every string reads whole. */
+  .ck-slot__head { flex-wrap: wrap; }
+  .ck-slot__name { flex: 1 0 100%; }
+  .ck-slot__body { flex-wrap: wrap; }
+  .ck-slot__meta { flex: 1 0 100%; text-align: left; }
 }
 
 
@@ -256,4 +765,174 @@
      and leave anything already taller alone. */
   .cov-panes__btn,
   .gchip { min-height: 44px; }
+
+  /* WITHOUT THIS A GOAL CAN BE ADDED ON A PHONE AND NEVER REMOVED THERE.
+     workspace-coverage.css:1018 sets .gchip__x to opacity:0 and reveals it only on
+     `.gchip:hover` — zero layout shift by design, because the space is always reserved. A
+     coarse pointer has no hover to give, so the X is permanently invisible and the remove
+     action is unreachable. Revealing it costs nothing: the box is already reserved, so nothing
+     moves. Equal specificity to the opacity:0 rule (0,1,0) and this sheet loads later, so it
+     wins on source order without !important — and it never reaches a fine pointer, where
+     reveal-on-hover is still the better behaviour. */
+  .gchip__x { opacity: 1; }
+
+  /* THE DRAWER'S OWN FLOORS. Every number here was measured on a real 375px run, not guessed:
+     the tab-search input at 24px tall, the home hint chips at 22, the explore chips at 27, the
+     condition rows at 37. Rooted at the mount ID because NOTHING below (1,1,0) specificity
+     reaches inside this drawer — a bare `.sh-hint { min-height }` here would compute (0,1,0)
+     and lose to every rule in drawer-knowledge.css.
+     inline-flex, not just min-height: these are <button>s, and a min-height on an
+     inline-block grows the box without moving the label off the top of it. */
+  #drawer-knowledge-mount .kh-search,
+  #drawer-knowledge-mount .kd-search-input { min-height: 44px; }
+  #drawer-knowledge-mount .sh-condrow,
+  #drawer-knowledge-mount .sh-hint,
+  #drawer-knowledge-mount .kd-explore-chip {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* .ui-close sizes itself from --uic-size, so setting width/height would fight its own
+     contract and leave the SVG off-centre. Raise the token instead.
+     ★ `:not(.ui-close--sm)` IS LOAD-BEARING. This sheet loads after dashboard.css, so a bare
+     `.ui-close` here would out-order `.ui-close--sm { --uic-size: 28px }` at equal specificity
+     and blow every inline chip-remove X — including .gchip__x, which asks for 20px — up to
+     44px. The small variant is an INLINE affordance inside a chip; it is sized by the chip it
+     sits in, and the chip is already on the 44px floor. */
+  .ui-close:not(.ui-close--sm) { --uic-size: 44px; }
+
+  /* the Scanner's two primary actions, measured 161x26 and 120x17 — the button that starts
+     the whole scanner flow was the smallest target on its own screen */
+  .vd-newscan,
+  .vd-manual { min-height: 44px; }
+
+
+  /* ═══ THE TOUCH FLOOR IS A POLICY, NOT ONE NUMBER APPLIED TO EVERYTHING ═══
+     A walk of every drawer screen at 375px counted 957 sub-44px "controls" on a single
+     condition page. That number is an artefact, and applying 44px to all of it would have
+     wrecked the page. The breakdown, and what each class actually deserves:
+
+     1. INLINE PROSE AFFORDANCES — LEFT ALONE.
+        918 of those 957 are `span.gloss`: individual WORDS inside sentences, carrying a dotted
+        underline and a definition. They are not controls in a layout; giving them a 44px box
+        would break every paragraph they sit in. Their real touch problem is not size, it is
+        that a tap opened the tip and instantly closed it again — fixed properly in
+        views/gloss-tooltip.ts, not here.
+
+     2. DISCRETE CONTROLS — 44px, no argument.
+        One of each per screen, each one a thing you deliberately aim at.
+
+     3. DENSE CHIP CLOUDS — 36px with an 8px gap, DELIBERATELY UNDER 44.
+        .kd-ep-pill is a related-entity cloud: 35 of them on a product page, six rows deep.
+        44px would add ~72px per cloud and visibly change the character of a page the brief
+        exists to preserve. 36px of target on a 44px PITCH (36 + an 8px gap, up from the cloud's own 6px) is what actually
+        governs mis-taps in a wrapped cloud, and it keeps the page recognisable.
+        THIS IS A JUDGEMENT, NOT A STANDARD. It is recorded here so it can be overruled
+        rather than discovered. */
+
+  /* 2 — discrete controls */
+  #drawer-knowledge-mount .kd-crumb,
+  #drawer-knowledge-mount .kd-ep-back,
+  #drawer-knowledge-mount .kd-ep-add-regimen,
+  #drawer-knowledge-mount .kd-catfilter__b,
+  #drawer-knowledge-mount .kd-orac-keyb,
+  #drawer-knowledge-mount .kd-ep-src,
+  #drawer-knowledge-mount .kd-pf-nrow--link,
+  #drawer-knowledge-mount .kt-kicker__link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+  #drawer-knowledge-mount .kd-ep-filter { min-height: 44px; }
+
+  /* 3 — chip clouds: 36px of target on a 44px pitch */
+  #drawer-knowledge-mount .kd-ep-pill {
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+  }
+  #drawer-knowledge-mount .kd-ep-cloud { gap: var(--ds-space-2); }
+
+  /* The ORAC scrubber is a range input with a 4px track and a 24px thumb. The thumb is
+     draggable; the 4px TRACK is what you have to hit to jump the scrubber, and 4px is not a
+     target. The track keeps its exact 4px look — the gradient becomes a centred background
+     layer instead of the element's own height — inside a 44px box you can actually hit. */
+  #drawer-knowledge-mount .kd-orac-scrub__range {
+    height: 44px;
+    background: linear-gradient(90deg, var(--p1), var(--p4)) center / 100% 4px no-repeat;
+  }
+
+  /* THE REGIMEN SCREEN'S OWN FLOORS, by the same policy as the drawer's:
+     discrete controls to 44, dense clusters to 36 on a wider pitch.
+     Measured before: the slot pencil and its export twin at 24x24, the Import button 80x24,
+     the food-sheet pager arrows 22x22, and the per-slot colour swatches at 10x10 — fourteen
+     10px circles is a colour STRIP, not fourteen buttons a thumb can pick from. */
+  .ck-slot__pencil,
+  .ck-slot__import,
+  .fs-pager__b {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* The swatch row is the dense-cluster case. 22px on a 7px gap gives a 29px pitch, so a row
+     of fourteen needs 406px and WRAPS inside the card rather than overflowing it — which is
+     why the gap goes up with the size rather than staying at 7. Still under 44 and recorded
+     as such: a colour picker of fourteen is not fourteen destinations, and at 44 it would be
+     three rows of chrome on a card whose whole job is to be glanced at. */
+  .ck-swatch { width: 22px; height: 22px; }
+  .ck-slot__swatches { flex-wrap: wrap; gap: var(--ds-space-2); }
+
+  /* ★ A `min-height` CANNOT RAISE A CONTROL THAT DECLARES AN EXPLICIT `height`.
+     These four kept measuring 22px through the floor rule above, and it was not a cascade
+     accident — each one is authored with a fixed height, which wins over any minimum:
+       dashboard.css:643  .fs-filter__cat, .fs-filter__q  height: 22px
+       dashboard.css:576  .fs-pager--numbers .fs-pager__b  min-width: 22px; height: 22px
+     The pager rule also carries (0,2,0), so a bare `.fs-pager__b` here loses on specificity as
+     well as on the property. Both are answered in kind: matched specificity, and `height`
+     rather than `min-height`.
+     The filter row keeps its fixed widths — those are deliberate (a food name like "canned
+     salmon with bones" is 25 characters) and they fit; only the heights were unusable. */
+  .fs-filter__cat,
+  .fs-filter__q { height: 44px; }
+  /* ★ THE SECOND TIME TONIGHT A TOUCH FIX BROKE THE THING IT TOUCHED.
+     A flat 44px here put 16 buttons (12 page numbers + 4 arrows) into a row needing 704px, and
+     the pager — which centres itself — spilled 36px off BOTH edges. The audit caught it as a
+     negative `left`, which is the only reason it did not ship looking deliberate.
+     The touch policy already had the answer and I had not applied it: page NUMBERS are a dense
+     cluster, the same shape as the drawer's pill clouds, so they take 36px on a wider pitch;
+     the prev/next ARROWS are discrete controls you aim at, so they take 44. And the row wraps,
+     because at any size a 12-page pager will eventually outgrow 375px and wrapping is the only
+     answer that hides no page. */
+  .fs-pager { flex-wrap: wrap; justify-content: center; }
+  .fs-pager--numbers .fs-pager__b,
+  .fs-pager__b {
+    min-width: 36px;
+    height: 36px;
+  }
+  .fs-pager--numbers .fs-pager__b--arrow,
+  .fs-pager__b--arrow {
+    min-width: 44px;
+    height: 44px;
+  }
+  .ck-addfield__input { min-height: 44px; }
+  .rr-scan__link { min-height: 44px; display: inline-flex; align-items: center; }
+
+  /* THE SEARCH DRAWER. It needed no layout work at all — unlike Knowledge it is built as a
+     MODAL (`position: fixed; inset: 0` + a centred panel, drawer-search.css:33), so it was
+     already full-width and clean at 375px with nothing protruding. Only its controls were
+     under the floor, and the one that matters most is the search box itself at 24px tall —
+     the primary input of the whole surface.
+     Rooted at the mount ID for the same reason as the Knowledge rules: drawer-search.css
+     writes everything at (1,1,0) and nothing below that reaches inside.
+     .scr-nav declares an explicit 34px width AND height, so both are answered in kind rather
+     than with a minimum. */
+  #drawer-search-mount .aw-search__input,
+  #drawer-search-mount .scr-id { min-height: 44px; }
+  #drawer-search-mount .scr-nav {
+    width: 44px;
+    height: 44px;
+  }
 }

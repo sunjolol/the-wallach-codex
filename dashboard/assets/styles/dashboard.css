@@ -132,6 +132,12 @@ body { margin: 0; background: var(--ds-paper-deep); font-family: var(--ds-font-s
   transition: background var(--ds-motion-fast) var(--ds-ease-out), border-color var(--ds-motion-fast) var(--ds-ease-out), box-shadow var(--ds-motion-fast) var(--ds-ease-out), transform var(--ds-motion-fast) var(--ds-ease-out);
 }
 .topbar__ask:hover { background: var(--ask-wash); border-color: var(--ask-accent-deep); box-shadow: 0 0 0 3px var(--ask-soft), 0 6px 16px -8px var(--ask-accent); transform: translateY(-1px); }
+
+/* THE GOALS TOGGLE is OFF at every width, and mobile.css turns it on for the phone alone.
+   This default has to live HERE, in a sheet that ships everywhere, rather than in mobile.css:
+   that sheet is held back from the web build, so a default written there would leave the
+   website rendering a raw UA button. See the comment on the element in dashboard.html. */
+.topbar__goals { display: none; }
 .topbar__ask:active { transform: translateY(0); box-shadow: 0 0 0 3px var(--ask-soft); }
 .topbar__ask:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--ask-soft); }
 .topbar__ask-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--ask-accent); box-shadow: 0 0 6px var(--ask-soft); animation: ds-pulse-animate 2s ease-in-out infinite; }

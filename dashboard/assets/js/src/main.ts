@@ -444,6 +444,53 @@ function wireTopbarSearch(): void {
   btn.addEventListener('click', () => void toggleDrawer('search'));
 }
 
+/**
+ * The topbar "Goals" button — PHONE ONLY, and hidden at every other width by
+ * `.topbar__goals { display: none }` in dashboard.css.
+ *
+ * On a phone the coverage goal strip is not worth permanent height: it measured 136px of a
+ * 759px usable screen, pinned, for one chip — and two of the three things it offers do not
+ * work on a touch device at all (goal focus is bound to mouseover/mouseout; the remove X is
+ * revealed on :hover). So the strip becomes a popover and this button is its handle, sitting
+ * beside the avatar where it stays reachable no matter how far down the field you have
+ * scrolled — which is the job the `position: sticky` used to do.
+ *
+ * This only ever toggles a class on <body>. It touches no state, so it cannot change a
+ * coverage verdict or a count — the same guarantee the goal hover carries.
+ */
+function wireGoalsToggle(): void {
+  const btn = document.querySelector<HTMLElement>('[data-goals-toggle]');
+  if (btn === null) {
+    return;
+  }
+  const OPEN = 'goals-open';
+  const setOpen = (open: boolean): void => {
+    document.body.classList.toggle(OPEN, open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  btn.addEventListener('click', (ev) => {
+    ev.stopPropagation();
+    setOpen(!document.body.classList.contains(OPEN));
+  });
+  // Tapping the field closes it, the way any popover should. The strip itself is excluded, or
+  // the first tap on a chip would dismiss the thing you are trying to use.
+  document.addEventListener('click', (ev) => {
+    if (!document.body.classList.contains(OPEN)) {
+      return;
+    }
+    const t = ev.target as HTMLElement | null;
+    if (t !== null && (t.closest('.goalstrip') !== null || t.closest('[data-goals-toggle]') !== null)) {
+      return;
+    }
+    setOpen(false);
+  });
+  document.addEventListener('keydown', (ev) => {
+    if (ev.key === 'Escape' && document.body.classList.contains(OPEN)) {
+      setOpen(false);
+    }
+  });
+}
+
 function wireProfileChip(): void {
   const chip = document.querySelector<HTMLElement>('.rail__profile');
   if (chip === null) {
@@ -502,6 +549,7 @@ function bootstrap(): void {
   wireProfileIdentity();
   wireWelcome();
   wireTopbarSearch();
+  wireGoalsToggle();
   mountDrawers();
   wireDrawerKeys();
   // The rail highlight is DERIVED from drawer open-state, so it must re-sync on every
