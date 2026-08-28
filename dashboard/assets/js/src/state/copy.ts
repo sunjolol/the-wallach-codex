@@ -62,3 +62,39 @@ export function facetLabel(facet: string): string {
 export function ui(id: string): string {
   return data().ui[id] ?? '';
 }
+
+/**
+ * The ONE place the phone breakpoint is written for a COPY decision.
+ *
+ * mobile.css owns the same number for layout; this is the text half of it, and it is a
+ * constant rather than a second hand-typed `(max-width: 767px)` at each call site. A view
+ * reads it — `matchMedia(PHONE_MEDIA).matches` — because a view may touch the browser and this
+ * module may not: state/copy.ts is a pure read boundary over the prose store.
+ */
+export const PHONE_MEDIA = '(max-width: 767px)';
+
+/**
+ * UI copy for a control that has to fit a PHONE as well as a desktop.
+ *
+ * Returns `<id>_narrow` when the caller says the viewport is narrow AND that key exists;
+ * otherwise the ordinary string. CSS cannot do this — a `placeholder` is an ATTRIBUTE, not
+ * rendered text, so no amount of `text-overflow` reaches it and a long one is simply cut
+ * mid-word by the input's own box. MEASURED at 375px: the Ask-Wallach box showed
+ * "Ask about a nutrient, food," of "Ask about a nutrient, food, condition, or symptom…", and
+ * the Knowledge hero stopped at "osteoporosis", o. Reported 2026-08-28.
+ *
+ * ★ FALLING BACK TO THE LONG STRING IS THE POINT. A missing `_narrow` key means a slightly
+ * clipped placeholder, never an EMPTY one — so adding a control here can never blank the copy
+ * on a phone by forgetting a key, and the two strings stay optional rather than paired.
+ * A placeholder is read at RENDER, so a rotation mid-session keeps the string it was built
+ * with until that view repaints. Both callers repaint often; neither is worth a resize listener.
+ */
+export function uiNarrow(id: string, narrow: boolean): string {
+  if (narrow) {
+    const short = data().ui[`${id}_narrow`];
+    if (short !== undefined && short !== '') {
+      return short;
+    }
+  }
+  return ui(id);
+}

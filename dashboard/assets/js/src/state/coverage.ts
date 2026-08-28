@@ -329,6 +329,43 @@ function buildBySlug(targets: Essential[]): Map<string, Essential> {
   return m;
 }
 
+/**
+ * A nutrient row → its essential, whether the row names the nutrient by DISPLAY NAME or by
+ * CANON SLUG.
+ *
+ * ★ THIS EXISTS BECAUSE EVERY VITAMIN A FOOD CARRIES WAS SILENTLY DROPPED FROM COVERAGE.
+ * Two kinds of row reach this accumulator and they identify their nutrient differently:
+ *   a SCANNED or TYPED row carries what the label says — "Vitamin K", "Thiamin (B1)" — which
+ *     is exactly what core/nutrient-resolver.ts is built to resolve;
+ *   a CATALOG FOOD row comes from the sealed composition artifact, which is keyed by CANON
+ *     SLUG, so state/foods.ts::foodNutrientRows emits `name: 'vitamin-k'`.
+ * The resolver's alias maps hold display names only — `vitamin k`, never `vitamin-k` — and it
+ * does not fold a hyphen to a space. So a slug went in, `null` came out, and the row was
+ * skipped by the `slug === null` guard with no error anywhere.
+ * MEASURED over the food catalog: 19 of 28 distinct slugs resolved and 9 did NOT — every one
+ * of them a vitamin, across 154 nutrient rows. `vitamin-b9` (50 rows), `vitamin-k` (42),
+ * `vitamin-c` (17), `vitamin-b3` (16), `vitamin-a` (14), `vitamin-d` (8), `vitamin-b12` (5),
+ * `vitamin-b5`, `vitamin-b2`. Minerals were fine, because their slugs are single words that
+ * happen to BE their display names — which is why the failure looked like "foods do nothing"
+ * rather than "vitamins do nothing", and why adding spinach moved calcium 0 → 245 mg while its
+ * 888 mcg of vitamin K (296% of the Wallach target) changed nothing at all.
+ *
+ * ★ WHY THE FIX IS HERE AND NOT IN THE RESOLVER. Widening resolveSlug to accept slugs would
+ * silently break its ONE contract — that it is byte-equivalent to Python
+ * nutrient_resolve.resolve(), proven by `nutrient_resolver_parity` over the products pillar,
+ * where no input is ever a bare slug. The gate would stay green while the two resolvers
+ * diverged. A canon slug does not need resolving at all: it is already the answer, and the
+ * map that answers it is right here.
+ */
+function essentialFor(bySlug: Map<string, Essential>, name: string, form?: string | null): Essential | null {
+  const direct = bySlug.get(name);
+  if (direct !== undefined) {
+    return direct;
+  }
+  const slug = resolveSlug(name, form ?? null);
+  return slug === null ? null : (bySlug.get(slug) ?? null);
+}
+
 // ─── Regimen delivery accumulation ─────────────────────────────────────────
 
 interface Delivery {
@@ -658,12 +695,9 @@ function accumulate(
       if (!(n.amount > 0)) {
         continue;
       }
-      const slug = resolveSlug(n.name, n.form ?? null);
-      if (slug === null) {
-        continue;
-      }
-      const matched = bySlug.get(slug);
-      if (matched === undefined) {
+      // name OR canon slug — see essentialFor for the 154 rows this was dropping
+      const matched = essentialFor(bySlug, n.name, n.form ?? null);
+      if (matched === null) {
         continue;
       }
       const d = out.get(matched.name);
@@ -1192,11 +1226,9 @@ export function matchEssential(name: string): Essential | null {
   if (cachedBySlug === null) {
     return null;
   }
-  const slug = resolveSlug(name);
-  if (slug === null) {
-    return null;
-  }
-  return cachedBySlug.get(slug) ?? null;
+  // Through the same helper the accumulator uses, so the scanner's gap-fill math and the
+  // Coverage surface agree on what a row names — including a row that names a canon slug.
+  return essentialFor(cachedBySlug, name);
 }
 
 /**

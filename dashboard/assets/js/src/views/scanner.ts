@@ -470,7 +470,20 @@ function reasonRows(result: ScanResult): string {
  *  name carries its scan-order ordinal, and the ordinal lives on the history ENTRY, which a bare
  *  ScanResult does not know about. Deriving it here would silently drop the number the user just
  *  clicked to get here. */
+/**
+ * ★ AN INGREDIENTS-ONLY CHECK HAS NOTHING TO ADD TO A REGIMEN, AND OFFERING TO WAS A BUG.
+ * "Check ingredients" mints `{ name: 'Pasted ingredients', entry: 'typed', nutrients: [], … }`
+ * — a real verdict about an ingredient list, with no nutrition panel behind it. Adopting that
+ * put an item called "Pasted ingredients" into the regimen that delivers nothing and can never
+ * heal into anything, because it is marked user-supplied and so is never re-read from a
+ * catalog. Reported 2026-08-28.
+ * THE TEST IS THE PANEL, NOT THE MODE. `nutrients.length === 0` is the fact that makes an item
+ * unaddable; keying off "was this a paste?" would also have to guess right about a photo whose
+ * OCR found an ingredients list and no panel (same situation, same answer) and about a paste
+ * that somehow did carry rows (adoptable, and it should stay so).
+ */
 function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent', name: string): string {
+  const adoptable = (result.label.nutrients ?? []).length > 0;
   const tone = VERDICT_TONE[result.verdict];
   const { head, sub } = verdictHeadline(result.verdict);
   const total = essentialCount();
@@ -529,7 +542,9 @@ function renderResult(result: ScanResult, origin: 'scan' | 'saved' | 'recent', n
               </div>
             </div>
             <div class="vd-card__foot">
-              <button class="ds-btn-primary vd-cta" type="button" data-sc-adopt>Add to regimen <span aria-hidden="true">&rarr;</span></button>
+              ${adoptable
+                ? `<button class="ds-btn-primary vd-cta" type="button" data-sc-adopt>Add to regimen <span aria-hidden="true">&rarr;</span></button>`
+                : `<div class="vd-cta-note">No nutrition panel — an ingredients check has nothing to add.</div>`}
               <button class="ds-btn-ghost" type="button" data-sc-save>Save for later</button>
               <button class="vd-reject" type="button" data-sc-reject>${origin === 'saved' ? 'Delete' : 'Reject'}</button>
               <div class="vd-foot__note">
@@ -1213,7 +1228,9 @@ export function mount(container: HTMLElement): MountHandle {
       return;
     }
     // result actions
-    if (t.closest('[data-sc-adopt]') !== null && result !== null) {
+    // The button is not rendered without a panel (see renderResult); the same test is repeated
+    // here so a stale or hand-crafted DOM cannot mint a regimen item that delivers nothing.
+    if (t.closest('[data-sc-adopt]') !== null && result !== null && (result.label.nutrients ?? []).length > 0) {
       const lbl = result.label;
       const item: RegimenItem = {
         id: Date.now(),

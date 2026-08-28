@@ -3928,6 +3928,81 @@ def check_pdm_goal_wallach_sourced():
                   f"{cid} ({dose_amt:.0f} {dose.get('unit')}/{per_bw:.0f}lb) x {ref_mg:.0f}mg/oz composition x 154lb")
 
 
+def check_food_nutrient_slugs_reach_coverage():
+    """FENCE: every distinct nutrient slug in the FOOD catalog can be scored by the Coverage
+    accumulator -- i.e. it is a canon essential slug, or the shipped resolver map resolves it.
+
+    THE DEFECT THIS EXISTS FOR (2026-08-28). state/foods.ts::foodNutrientRows emits rows keyed by
+    CANON SLUG (`vitamin-k`); the accumulator resolved every row through
+    core/nutrient-resolver.ts, whose alias maps hold DISPLAY names only (`vitamin k`) and which
+    does not fold a hyphen to a space. Nine slugs -- every hyphenated vitamin, 154 rows across the
+    catalog -- returned null and were dropped by a `continue`. No error, no mark on screen: adding
+    spinach moved calcium 0 -> 245 mg while its 888 mcg of vitamin K (296% of the Wallach target)
+    changed nothing. Minerals hid it, because their slugs ARE their display names.
+
+    Cross-artifact, and it does not depend on the fix: it asks whether the food catalog and the
+    essentials registry still speak the same language, which is the fact that broke. Truth
+    anchor: the bytes of foods-composition-data.json x essentials-targets-data.json x
+    nutrient-resolver-data.json, re-read each run."""
+    foods_p = ROOT / "dashboard" / "assets" / "data" / "foods-composition-data.json"
+    ess_p = ROOT / "dashboard" / "assets" / "data" / "essentials-targets-data.json"
+    res_p = ROOT / "dashboard" / "assets" / "data" / "nutrient-resolver-data.json"
+    for p in (foods_p, ess_p, res_p):
+        if not p.exists():
+            return True, f"{p.name} not installed (bootstrap-guard)"
+    try:
+        foods = json.loads(foods_p.read_text(encoding="utf-8"))
+        ess = json.loads(ess_p.read_text(encoding="utf-8"))
+        res = json.loads(res_p.read_text(encoding="utf-8"))
+    except Exception as e:
+        return False, f"artifact unreadable ({e})"
+    return _food_nutrient_slugs_reach_coverage_impl(foods, ess, res)
+
+
+def _food_nutrient_slugs_reach_coverage_impl(foods, ess, res):
+    """The gate's whole judgement, over PARSED artifacts rather than file paths, so
+    tools/tests/test_food_nutrient_slugs.py can drive it with tampered copies and prove it
+    still bites. `foods`, `ess`, `res` are the three artifacts' decoded JSON."""
+    canon = {str(e.get("slug", "")) for e in ess.get("essentials", []) if e.get("slug")}
+    if not canon:
+        return False, "essentials-targets-data.json declares no slugs"
+
+    # the resolver's own name maps, mirrored exactly as core/nutrient-resolver.ts reads them
+    names = {}
+    for key in ("vitamin_aliases", "mineral_names", "mineral_aliases", "amino_names"):
+        names.update(res.get(key, {}))
+    fa_pats = [(slug, re.compile(pat)) for slug, pat in res.get("fatty_acid_patterns", [])]
+
+    def resolves(raw: str) -> bool:
+        # canon slug -> scored directly by state/coverage.ts::essentialFor
+        if raw in canon:
+            return True
+        low = (raw + " ").lower()
+        if any(p.search(low) for _, p in fa_pats):
+            return True
+        n = re.sub(r"\s+", " ", re.sub(r"\s*\([^)]*\)\s*", " ", raw.lower())).strip()
+        return names.get(n) in canon
+
+    rows = foods.get("foods") or foods.get("items") or []
+    counts = {}
+    for f in rows:
+        for n in f.get("nutrients", []):
+            s = str(n.get("slug", ""))
+            if s:
+                counts[s] = counts.get(s, 0) + 1
+    if not counts:
+        return False, "the food catalog declares no nutrient rows"
+
+    dead = sorted(((s, c) for s, c in counts.items() if not resolves(s)), key=lambda x: -x[1])
+    if dead:
+        shown = "; ".join(f"{s} ({c} rows)" for s, c in dead[:6])
+        return False, (f"{len(dead)} food nutrient slug(s) reach NO essential, so every row that "
+                       f"carries them is silently dropped from coverage: {shown}"
+                       + (" ..." if len(dead) > 6 else ""))
+    return True, (f"all {len(counts)} distinct food nutrient slug(s) across {len(rows)} food(s) "
+                  f"reach a canon essential ({sum(counts.values())} rows)")
+
+
 def check_nutrient_resolver_parity():
     """Single source of truth -- the runtime IDENTITY resolver == the Python source of truth.
     The Coverage matcher (core/nutrient-resolver.ts) resolves label names to canon slugs
@@ -10084,6 +10159,15 @@ INVARIANTS = [
         truth_anchor="the bytes of the files the browser actually opens from file://, re-read each run",
         severity="critical",
         lesson_ref="2026-08-03 doctor sweep — replaces the retired `dist/main.js gzipped <= 250 KB` size-limit budget, which measured 2.67 MB (10.7x over) and had been failing-and-bypassed rather than enforcing. Size was a proxy that also capped design ambition; this gates the actual promise (cannot be taken offline or broken by someone else's server) while vendored libraries are now explicitly allowed.",
+    ),
+    Invariant(
+        name="food_nutrient_slugs_reach_coverage",
+        anchor_class="consistency",  # our food catalog vs our essentials registry vs our resolver map
+        description="every distinct nutrient slug in foods-composition-data.json can be scored by the Coverage accumulator — it is a canon slug in essentials-targets-data.json, or nutrient-resolver-data.json resolves it to one. A slug that reaches no essential is dropped by a `continue` with no error, so the food silently delivers less than it says it does",
+        check_fn=check_food_nutrient_slugs_reach_coverage,
+        truth_anchor="the bytes of foods-composition-data.json x essentials-targets-data.json x nutrient-resolver-data.json, re-read each run",
+        severity="critical",
+        lesson_ref="2026-08-28, found by a user: 'adding Spinach should completely fill the Vitamin K bar according to the 296% text and it doesn't'. foodNutrientRows emits rows keyed by CANON SLUG (`vitamin-k`); the accumulator resolved every row through core/nutrient-resolver.ts, whose alias maps hold DISPLAY names only (`vitamin k`) and which does not fold a hyphen to a space. NINE slugs — every hyphenated vitamin, 154 rows across the catalog — returned null and were skipped. Minerals hid it completely, because their slugs ARE their display names, so the symptom read as 'foods do nothing' while calcium quietly worked. Fixed in state/coverage.ts::essentialFor (a canon slug needs no resolving); this gate asks the cross-artifact question instead, so it stays true whatever the runtime does. Negative test: tools/tests/test_food_nutrient_slugs.py.",
     ),
     Invariant(
         name="split_data_manifest_agrees",

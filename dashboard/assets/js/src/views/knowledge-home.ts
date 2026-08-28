@@ -21,7 +21,7 @@
  */
 
 import { plural } from '../core/format.js';
-import { ui } from '../state/copy.js';
+import { PHONE_MEDIA, ui, uiNarrow } from '../state/copy.js';
 import { conditionDisplayName, getEssentialBySlug, listBooks, listConditions } from '../state/corpus.js';
 import { essentialCount, essentialGlyph } from '../state/coverage.js';
 import { type ConditionSummary, type EssentialSummary, listConditionPages, listEssentialPages } from '../state/entity-page.js';
@@ -155,7 +155,7 @@ export function renderHomeTab(): string {
       <p>${escHTML(sub).replace('{br}', '<br>')}</p>
       <div class="sh-hero__search">
         <div class="sh-search">
-          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" maxlength="120" placeholder="${escHTML(ui('kh_hero_placeholder'))}" autocomplete="off"></div>
+          <div class="sh-search__field">${SEARCH_SVG}<input class="kh-search" type="text" maxlength="120" placeholder="${escHTML(uiNarrow('kh_hero_placeholder', matchMedia(PHONE_MEDIA).matches))}" autocomplete="off"></div>
           <div class="sh-search__results"></div>
         </div>
         <div class="sh-hero__hints">${hints}</div>

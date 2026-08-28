@@ -404,6 +404,13 @@
 .vd-amt:focus, .vd-unit:focus { outline: none; border-color: var(--ds-accent); box-shadow: 0 0 0 2px var(--ds-accent-wash); }
 /* the verdict-card close now uses the canonical .ui-close (dashboard.css); only its spacing is scoped here. */
 .vd-card__top .ui-close { margin-left: 8px; }
+/* Shown INSTEAD OF the Add-to-regimen button when the label carries no nutrition panel — an
+   ingredients-only check (see views/scanner.ts::renderResult). Deliberately a note and not a
+   disabled button: a greyed-out control invites a tap and then explains nothing, while this
+   says why there is nothing to add. Styled here rather than in the phone layer because the
+   case is not a phone case — it renders at every width. */
+.vd-cta-note { flex: 1 1 auto; min-width: 0; font-family: var(--ds-font-sans); font-size: var(--ds-text-sm);
+  line-height: 1.45; color: var(--ds-ink-soft); font-style: italic; }
 
 /* Hero/confirm step close — replaces the herotag that is no longer rendered; reuses
    the canonical .ui-close, pinned to the top-right of the flex step header. */

@@ -130,9 +130,19 @@ function closeAllDrawers(): void {
   }
 }
 
+/**
+ * Close the phone's GOALS popover, set by wireGoalsToggle.
+ *
+ * Module-level because navigateTo has to be able to call it: the popover BORROWS the Coverage
+ * mount (see wireGoalsToggle), and a workspace switch resets every mount's display — leaving the
+ * body classes claiming a popover that is no longer on screen.
+ */
+let closeGoalsPopover: () => void = () => { /* until wireGoalsToggle runs */ };
+
 function navigateTo(target: WorkspaceTarget): void {
   // Switching workspace closes any open drawer overlay.
   closeAllDrawers();
+  closeGoalsPopover();
   activateRailItem(target);
   setTopbarHeader(target);
   events.emit('rail:navigate', { target });
@@ -465,10 +475,39 @@ function wireGoalsToggle(): void {
     return;
   }
   const OPEN = 'goals-open';
+  // ★ THE BUTTON DID NOTHING ON REGIMEN AND SCANNER, AND THE REASON IS STRUCTURAL.
+  // `.goalstrip` is rendered by views/coverage.ts INSIDE the Coverage workspace. On any other
+  // tab that mount is `display: none`, and a `display: none` ancestor hides its subtree no
+  // matter what position the popover CSS gives it — so the handle toggled a class and nothing
+  // appeared. Reported 2026-08-28.
+  // The popover BORROWS the mount rather than moving the strip out of it: coverage.ts binds ONE
+  // delegated click listener to that container (per-element handlers would die on every
+  // re-render), so a strip re-parented into the shell would keep rendering and stop working —
+  // chips that no longer remove, an + ADD that no longer adds, with nothing on screen to say so.
+  // Borrowing keeps the node exactly where its listener is. `goals-borrow` is what the phone
+  // layer uses to blank the rest of that workspace while the popover is up.
+  const BORROW = 'goals-borrow';
   const setOpen = (open: boolean): void => {
     document.body.classList.toggle(OPEN, open);
     btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    const away = currentWorkspace !== 'coverage';
+    const borrow = open && away;
+    document.body.classList.toggle(BORROW, borrow);
+    if (!away) {
+      return;
+    }
+    const mountEl = document.getElementById('workspace-coverage-mount');
+    if (mountEl === null) {
+      return;
+    }
+    // The reader may never have opened Coverage, in which case the mount is EMPTY and the
+    // popover would open onto nothing. Mount it on demand — the same call navigateTo makes.
+    if (borrow && mounted.coverage === undefined) {
+      mounted.coverage = coverageView.mount(mountEl);
+    }
+    mountEl.style.display = borrow ? 'block' : 'none';
   };
+  closeGoalsPopover = () => { if (document.body.classList.contains(OPEN)) { setOpen(false); } };
   btn.addEventListener('click', (ev) => {
     ev.stopPropagation();
     setOpen(!document.body.classList.contains(OPEN));

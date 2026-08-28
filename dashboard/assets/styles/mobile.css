@@ -342,8 +342,33 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--ds-space-2);
-    padding: 0 var(--ds-space-4) var(--ds-space-3);
+    /* 2026-08-28, his measure: the switch sat flush against the topbar's rule with all its air
+       underneath. Ten pixels move from the bottom to the top — the block ends where it ended,
+       and the first row of pills stops touching the bar above it. 10 and 2 are not on the space
+       scale (space-2 is 8, space-3 is 12); the number is his, taken as given rather than
+       rounded to the nearest token it is not. */
+    padding: 10px var(--ds-space-4) 2px;
   }
+
+  /* ═══ THE GOALS POPOVER, ON THE TABS WHERE IT DID NOTHING ════════════════
+     `.goalstrip` is rendered INSIDE the Coverage workspace, so on Regimen and Scanner — where
+     that mount is `display: none` — the handle toggled a class over a subtree the browser was
+     never going to paint. main.ts now BORROWS the mount (it cannot move the strip: coverage.ts
+     binds one delegated listener to that container, so a re-parented strip would render and
+     silently stop working). This blanks everything else in the borrowed workspace, leaving the
+     strip — which the rule above already pins as a fixed popover — alone on screen.
+     Scoped to `.goals-borrow`, which main.ts sets ONLY when the reader is away from Coverage,
+     so the field is never blanked on the tab that owns it. */
+  body.goals-borrow #workspace-coverage-mount > .coverage-workspace > :not(.goalstrip) { display: none; }
+  body.goals-borrow #workspace-coverage-mount { padding: 0; }
+  /* ★ AND THE BORROWED WORKSPACE HAS TO BE RAISED, OR THE POPOVER OPENS BEHIND THE PAGE.
+     `.coverage-workspace` is `position: relative; z-index: 1`, which makes it a STACKING
+     CONTEXT — so the strip's own `z-index: 7` is spent INSIDE it and the whole thing still
+     competes with the Regimen mount as a 1. The popover rendered, measured 375x69 at the right
+     place, reported `display: flex`, and was painted underneath the save-slot cards; only the
+     screenshot showed it. Raising the CONTEXT is what actually moves it. 7 keeps the documented
+     ladder — goalstrip 5, topbar chrome 6, this 7, drawers 10. */
+  body.goals-borrow #workspace-coverage-mount > .coverage-workspace { z-index: 7; }
   .cov-panes__btn {
     min-width: 0;
     min-height: 44px;
