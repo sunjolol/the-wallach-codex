@@ -96,10 +96,24 @@ def last_creators_log():
         return "(unparseable last entry)"
 
 
+# The opening line of a build-log entry: "[YYYY-MM-DD HH:MM TZ] surface · …".
+_BUILD_LOG_ENTRY = re.compile(r"^\[\d{4}-\d{2}-\d{2} \d{2}:\d{2} [A-Z]{2,5}\] ")
+
+
 def build_log_tail(n=3):
+    """The last n build-log ENTRIES, by their opening lines.
+
+    ★ NOT the last n non-blank lines, which is what this did until 2026-08-28. The logging
+    standard asks every entry to open plain and then carry the full technical record beneath it,
+    so entries are many lines long — and a line-based tail printed three fragments from the
+    MIDDLE of one entry. The boot report is the first thing a session reads; it was showing
+    sentences that started nowhere. Anchoring on the timestamped opener gives three real entries.
+    Falls back to the old behaviour if no line matches, so an entry written in some other shape
+    still shows something rather than '(none)'."""
     p = ROOT / "chronicle/build-log.md"
     lines = [l for l in p.read_text(encoding="utf-8").splitlines() if l.strip()] if p.exists() else []
-    return [(l[:150] + "…") if len(l) > 150 else l for l in lines[-n:]] or ["(none)"]
+    heads = [l for l in lines if _BUILD_LOG_ENTRY.match(l)] or lines
+    return [(l[:150] + "…") if len(l) > 150 else l for l in heads[-n:]] or ["(none)"]
 
 
 def passoff():

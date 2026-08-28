@@ -1427,3 +1427,16 @@ exempt, 2 local untouched, both markup patterns asserted markup-only, all five c
 asserted to run everywhere, plus an end-to-end assertion that a real remote stylesheet in the HTML
 still reds. invariants 105/105. Sibling negative tests still green: test_food_nutrient_slugs,
 test_split_data_manifest, test_dead_rules.
+
+[2026-08-28 18:20 CDT] genesis/build-log-tail-by-entry · The boot report was quoting three sentences from the middle of one log entry instead of the last three entries. Anyone starting a session read fragments that began nowhere. It now anchors on the timestamped opening line, so the boot shows three real entries and their plain-language summaries.
+
+`build_log_tail(n=3)` took the last n non-blank LINES. The logging standard asks every entry to
+open plain and then carry the full technical record beneath it, so entries run 10-30 lines — and a
+line tail lands mid-paragraph every time. Noticed on this session's own boot, where all three
+"entries" were consecutive lines of one verification block.
+Now filters on `^\[YYYY-MM-DD HH:MM TZ\] ` and takes the last three of THOSE, falling back to the
+old line behaviour if nothing matches, so an entry written in another shape still shows something
+rather than "(none)". The 150-char truncation is unchanged, so each line is the opener plus the
+start of its plain-language summary — which is exactly what a boot wants.
+Read-only tool, no shipped surface touched. VERIFIED by running genesis: three distinct entries,
+three distinct timestamps, each starting at its own beginning.
