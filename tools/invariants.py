@@ -7246,17 +7246,28 @@ def check_corpus_audit_gate():
 # A bundle SIZE budget is only a proxy for offline-first, and a proxy that is routinely
 # bypassed enforces nothing. These gates check the actual promise instead -- the app loads
 # nothing off-machine, and every asset it does load is present and pinned.
+# Each entry is (pattern, label, markup_only). `markup_only` keeps the two HTML tag patterns
+# off the JS bundle — see check_offline_no_runtime_network for the two false positives that
+# forced the split, and for what it gives up.
 _NET_LOAD_PATTERNS = [
     # constructs that would actually FETCH at runtime. Deliberately NOT a bare
     # "https?://" scan: the corpus legitimately QUOTES urls in prose, and the bundle
     # inlines the corpus. A mention is not a load.
-    (re.compile(r"""fetch\s*\(\s*['"`]https?://""", re.I), "fetch() to a remote url"),
-    (re.compile(r"""new\s+WebSocket\s*\(\s*['"`]wss?://""", re.I), "WebSocket to a remote host"),
-    (re.compile(r"""importScripts\s*\(\s*['"`]https?://""", re.I), "importScripts() from a remote url"),
-    (re.compile(r"""<script[^>]+src\s*=\s*['"](?:https?:)?//""", re.I), "<script src> to a remote url"),
-    (re.compile(r"""<link[^>]+href\s*=\s*['"](?:https?:)?//""", re.I), "<link href> to a remote url"),
-    (re.compile(r"""@import\s+(?:url\()?['"]?(?:https?:)?//""", re.I), "CSS @import of a remote sheet"),
-    (re.compile(r"""url\(\s*['"]?(?:https?:)?//""", re.I), "CSS url() pointing off-machine"),
+    (re.compile(r"""fetch\s*\(\s*['"`]https?://""", re.I), "fetch() to a remote url", False),
+    (re.compile(r"""new\s+WebSocket\s*\(\s*['"`]wss?://""", re.I), "WebSocket to a remote host", False),
+    (re.compile(r"""importScripts\s*\(\s*['"`]https?://""", re.I), "importScripts() from a remote url", False),
+    # ── MARKUP ONLY, both of them: a tag inside main.js is prose or an injection, never a link
+    #    the browser resolves from the file it was written in.
+    (re.compile(r"""<script[^>]+src\s*=\s*['"](?:https?:)?//""", re.I), "<script src> to a remote url", True),
+    # ★ AND rel="canonical" / rel="alternate" ARE NOT LOADS EVEN IN MARKUP. No browser fetches a
+    # canonical — it is a hint to a crawler, exactly like the og:/twitter: <meta> tags beside it,
+    # none of which this list matches either. A stylesheet, icon, preload or prefetch still reds.
+    # `\brel\s*=\s*['"](canonical|alternate)['"]` is exact-value on purpose: rel="canonicalish"
+    # and rel="alternate-stylesheet" are NOT exempt, and the negative test pins both.
+    (re.compile(r"""<link(?![^>]*\brel\s*=\s*['"](?:canonical|alternate)['"])[^>]+href\s*=\s*['"](?:https?:)?//""", re.I),
+     "<link href> to a remote url", True),
+    (re.compile(r"""@import\s+(?:url\()?['"]?(?:https?:)?//""", re.I), "CSS @import of a remote sheet", False),
+    (re.compile(r"""url\(\s*['"]?(?:https?:)?//""", re.I), "CSS url() pointing off-machine", False),
 ]
 
 
@@ -7282,15 +7293,33 @@ def check_offline_no_runtime_network():
     behind a runtime-built string (e.g. fetch(base + path)) is NOT caught; that is a
     labeled WISH resting on review, not a covered case.
 
+    ★ THE MARKUP PATTERNS RUN ON MARKUP ONLY, and that boundary was learned twice in one hour.
+    `<script src>` and `<link href>` describe HTML. The bundle inlines PROSE STORES -- the sealed
+    corpus and the Creator's Log -- so any entry that QUOTES a tag puts that tag's bytes into
+    main.js. On 2026-08-28 a round-close entry documenting that a canonical link would trip this
+    gate did trip it, out of the log embed; the follow-up entry documenting THAT tripped it again,
+    on the `<link rel="stylesheet">` it used as the counter-example. Both were mentions. Neither
+    was a load, and the Creator's Log is append-only, so neither could be reworded away.
+    So the two HTML patterns now run against the shipped HTML and CSS, where a tag is a tag, and
+    the JS patterns (fetch / WebSocket / importScripts / @import / url()) still run against
+    EVERYTHING including the bundle -- those are code constructs that prose does not produce.
+    WHAT THIS GIVES UP, said plainly: a remote `<script src>` or `<link href>` BUILT AS A STRING
+    inside the bundle and injected at runtime is no longer caught here. That is the same class as
+    the `fetch(base + path)` hole above -- a labeled WISH resting on review, not a covered case --
+    and it is the honest price of not having the gate read the project's own diary as evidence.
+
     Truth anchor: the bytes of the files the browser actually opens, re-read each run."""
     hits = []
     for p in _shipped_surfaces():
+        markup = p.suffix.lower() in (".html", ".css")
         try:
             text = p.read_text(encoding="utf-8", errors="replace")
         except Exception:
             continue
         rel = p.relative_to(ROOT).as_posix()
-        for rx, label in _NET_LOAD_PATTERNS:
+        for rx, label, markup_only in _NET_LOAD_PATTERNS:
+            if markup_only and not markup:
+                continue
             m = rx.search(text)
             if m:
                 frag = text[m.start():m.start() + 60].replace("\n", " ")
