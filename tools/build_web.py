@@ -332,12 +332,15 @@ AddType font/woff2 .woff2
   <FilesMatch "\\.(html|gz)$">
     Header set Cache-Control "public, max-age=0, must-revalidate"
   </FilesMatch>
-  # The favicons are the one image with a FIXED name that might actually be replaced, and the
-  # year-long rule above would pin a stale icon on every returning visitor -- the same shape of
-  # trap that served a superseded corpus on 2026-08-22. They are ~2 KB each, so a conditional
-  # request costs nothing and a new icon reaches everyone on their next load. This block is
-  # LATER, so it wins for these two files only.
-  <FilesMatch "^favicon-.*\\.png$">
+  # The favicons and the social share card are the images with FIXED names that might actually
+  # be replaced. Every other image on the host carries its content hash, so the year-long rule
+  # above is safe for those -- a change produces a new name. For a fixed name it would pin a
+  # stale file on every returning visitor: the same shape of trap that served a superseded
+  # corpus on 2026-08-22. Worse for the card than the icons, because social platforms cache
+  # og:image harder than browsers do, so a stale card can outlive several deploys. A
+  # conditional request costs nothing and a replacement reaches everyone on their next load.
+  # This block is LATER, so it wins for these files only.
+  <FilesMatch "^(favicon-.*|share-card)\\.png$">
     Header set Cache-Control "public, max-age=0, must-revalidate"
   </FilesMatch>
 </IfModule>

@@ -195,16 +195,31 @@ export function displayInitial(profile: UserProfile | null): string {
 }
 
 /**
- * The browser-tab title. "Health Journey" is the app's name; the possessive derives from
- * the identity choice -- a named user gets "<Name>'s Health Journey"; a guest gets "Your
- * Health Journey". Kept here (not in a view) so the title derives from the same one place
- * as the brand + profile slots and cannot drift.
+ * The guest browser-tab title -- what anyone WITHOUT a profile sees, which includes every
+ * crawler, since a crawler never has one.
+ *
+ * THE SAME STRING IS IN dashboard.html's <title>, and it has to be. main.ts assigns
+ * document.title = displayTitle(...) on every boot, so the shell's markup title is
+ * overwritten before a JS-rendering crawler (Google renders) ever reads it -- editing the
+ * markup alone is inert and nothing goes red to tell you. Two hand-maintained copies of one
+ * string is the shape 00.B.1 forbids, so shell_title_matches_runtime_default asserts the two
+ * are byte-identical; change one and the board reds until you change the other.
+ *
+ * Not exported: an unused export trips knip through no_new_dead_code.
+ */
+const GUEST_TITLE = 'The Wallach Codex — what your supplements miss';
+
+/**
+ * The browser-tab title. The possessive derives from the identity choice -- a named user
+ * gets "<Name>'s Health Journey"; everyone else gets the product title above. Kept here
+ * (not in a view) so the title derives from the same one place as the brand + profile
+ * slots and cannot drift.
  */
 export function displayTitle(profile: UserProfile | null): string {
   if (profile?.name !== undefined && profile.name !== '') {
     return `${profile.name}'s Health Journey`;
   }
-  return 'Your Health Journey';
+  return GUEST_TITLE;
 }
 
 /* --- APPEARANCE derives -----------------------------------------------------

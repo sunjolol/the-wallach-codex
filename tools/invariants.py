@@ -581,6 +581,32 @@ def _ds_finalize(violations, success_msg):
     return False, f"{len(violations)} violation(s) — {payload}"
 
 
+# Module-level ON PURPOSE. This list is the SECOND copy of the "no remote <link>"
+# rule -- _NET_LOAD_PATTERNS is the first -- and while it was a function-local no
+# test could import it. That is precisely how it missed the rel-awareness added to
+# its sibling on 2026-08-28 and went on reddening a canonical the other gate had
+# already ruled harmless. tools/tests/test_offline_link_rel.py now drives BOTH.
+_EXTERNAL_STYLE_PATTERNS = [
+    (r"fonts\.googleapis\.com", "Google Fonts CSS"),
+    (r"fonts\.gstatic\.com", "Google Fonts static"),
+    (r"cdnjs\.cloudflare\.com", "cdnjs CDN"),
+    (r"unpkg\.com", "unpkg CDN"),
+    (r"pro\.fontawesome\.com", "FontAwesome Pro CDN"),
+    (r"@import\s+url\(['\"]?https?://", "@import of external resource"),
+    # rel="canonical" / rel="alternate" are crawler hints, never loads -- no browser
+    # fetches one. offline_no_runtime_network learned that on 2026-08-28; this list is
+    # the SECOND hand-maintained copy of the same rule and was missed, so a canonical
+    # reddened HERE while passing THERE. Same exemption, same shape. The href matcher
+    # also tolerates spaces around the "=" now: a spaced href slipped past the old
+    # pattern entirely, which was a hole, not a permission. A stylesheet, icon,
+    # preload or prefetch to a remote origin still fires -- pinned by
+    # test_offline_link_rel.py, which now drives BOTH lists so they cannot drift.
+    (r"<link(?!(?i:[^>]*\brel\s*=\s*['\"](?:canonical|alternate)['\"]))[^>]+"
+     r"href\s*=\s*['\"]https?://(?!cdn\.jsdelivr\.net/npm/tesseract)", "external <link>"),
+    (r"<script[^>]+src=['\"]https?://(?!cdn\.jsdelivr\.net/npm/tesseract)", "external <script>"),
+]
+
+
 def check_no_external_style_resources():
     """Scan dashboard.html + dashboard/assets/styles/*.css for external
     style/font/script imports. The 'no external resources' rule is the
@@ -593,16 +619,7 @@ def check_no_external_style_resources():
     file references the CDN. Remove the carve-out rather than let anything
     grow back into it."""
     import re as _re
-    EXTERNAL_PATTERNS = [
-        (r"fonts\.googleapis\.com", "Google Fonts CSS"),
-        (r"fonts\.gstatic\.com", "Google Fonts static"),
-        (r"cdnjs\.cloudflare\.com", "cdnjs CDN"),
-        (r"unpkg\.com", "unpkg CDN"),
-        (r"pro\.fontawesome\.com", "FontAwesome Pro CDN"),
-        (r"@import\s+url\(['\"]?https?://", "@import of external resource"),
-        (r"<link[^>]+href=['\"]https?://(?!cdn\.jsdelivr\.net/npm/tesseract)", "external <link>"),
-        (r"<script[^>]+src=['\"]https?://(?!cdn\.jsdelivr\.net/npm/tesseract)", "external <script>"),
-    ]
+    EXTERNAL_PATTERNS = _EXTERNAL_STYLE_PATTERNS
 
     scan_targets = [
         ROOT / "dashboard" / "dashboard.html",
@@ -638,6 +655,134 @@ def check_no_external_style_resources():
     return _ds_finalize(
         violations,
         "no external style/font/script resources detected — portability rule clean",
+    )
+
+
+def check_shell_title_matches_runtime_default():
+    """The <title> in dashboard.html and the guest title in state/profile.ts must be the
+    SAME STRING, byte for byte.
+
+    WHY THIS GATE EXISTS. main.ts assigns `document.title = displayTitle(profile)` on every
+    boot, so whatever the shell declares is overwritten before a JS-rendering crawler ever
+    reads it -- and Google renders. That makes the markup <title> inert on its own: it can be
+    edited to anything at all and nothing goes red, nothing 404s, no probe notices. The SEO
+    title shipped 2026-08-28 would have been silently thrown away.
+
+    The fix put the string in both places, which is two hand-maintained copies of one value --
+    the shape 00.B.1 forbids. This gate is the price of that, and it is a gate rather than a
+    comment because a comment would have been a WISH.
+
+    It also asserts the runtime overwrite still EXISTS. If someone deletes that assignment the
+    parity requirement evaporates, and a gate that keeps guarding a premise that has died is a
+    gate that passes for the wrong reason -- so it reds and asks a human to look."""
+    import re as _re
+
+    shell = ROOT / "dashboard" / "dashboard.html"
+    prof = ROOT / "dashboard" / "assets" / "js" / "src" / "state" / "profile.ts"
+    main_ts = ROOT / "dashboard" / "assets" / "js" / "src" / "main.ts"
+    for p in (shell, prof, main_ts):
+        if not p.exists():
+            return False, f"{p.relative_to(ROOT)} is missing — cannot compare the two titles"
+
+    html = shell.read_text(encoding="utf-8")
+    m = _re.search(r"<title>(.*?)</title>", html, _re.S)
+    if m is None:
+        return False, "dashboard.html has no <title> — the shell changed shape"
+    shell_title = m.group(1).strip()
+
+    ts = prof.read_text(encoding="utf-8")
+    m2 = _re.search(r"const GUEST_TITLE = '([^']*)';", ts)
+    if m2 is None:
+        return False, "state/profile.ts no longer declares GUEST_TITLE — the runtime title moved"
+    runtime_title = m2.group(1)
+
+    if not _re.search(r"document\.title\s*=\s*\w+\.displayTitle\(", main_ts.read_text(encoding="utf-8")):
+        return False, (
+            "main.ts no longer assigns document.title from displayTitle(). That assignment is "
+            "the ONLY reason these two strings must match; re-read this gate before touching it"
+        )
+
+    if shell_title != runtime_title:
+        return False, (
+            f"the tab title differs between the shell and the runtime, so a crawler and a "
+            f"reader would see different things: dashboard.html has {shell_title!r} but "
+            f"state/profile.ts::GUEST_TITLE has {runtime_title!r}"
+        )
+    return True, f"shell <title> and runtime guest title agree — {shell_title!r}"
+
+
+def check_shell_images_reach_the_web_build():
+    """Every image dashboard.html names must exist on disk AND sit under a directory the
+    web build copies, so it cannot 404 on nutrientcodex.com.
+
+    THE HOLE THIS CLOSES. tools/build_web.py copies exactly three asset trees verbatim
+    (VERBATIM_DIRS). Anything else under dashboard/assets/ is never enumerated -- no
+    warning, no error, the build prints success. An og:image pointing outside those three
+    would therefore 404 on the live site with a fully green board.
+
+    And it is worse than an ordinary missing asset, because the page NEVER REQUESTS an
+    og:image -- only a crawler does. render_probe_web_build.js filters responses >= 400,
+    so even the probe suite is blind to it. Nothing in this repo would have said a word.
+
+    VERBATIM_DIRS is read out of build_web.py rather than retyped, so this gate cannot
+    drift from the build it is describing."""
+    import re as _re
+
+    shell = ROOT / "dashboard" / "dashboard.html"
+    build = ROOT / "tools" / "build_web.py"
+    if not shell.exists() or not build.exists():
+        return False, "dashboard.html or build_web.py is missing"
+
+    bsrc = build.read_text(encoding="utf-8")
+    m = _re.search(r"VERBATIM_DIRS\s*=\s*\[([^\]]*)\]", bsrc)
+    if m is None:
+        return False, "build_web.py no longer declares VERBATIM_DIRS — this gate cannot tell what ships"
+    shipped_dirs = _re.findall(r"'([^']+)'", m.group(1))
+    if not shipped_dirs:
+        return False, "VERBATIM_DIRS parsed empty — refusing to pass vacuously"
+
+    html = shell.read_text(encoding="utf-8")
+    # href= on a <link rel=icon>, and the content= of any og:image / twitter:image
+    refs = []
+    for mm in _re.finditer(r"<link[^>]*rel=[\"']icon[\"'][^>]*href=[\"']([^\"']+)[\"']", html, _re.I):
+        refs.append(("favicon", mm.group(1)))
+    for mm in _re.finditer(
+            r"<meta[^>]*(?:property|name)=[\"'](?:og:image|twitter:image)[\"'][^>]*content=[\"']([^\"']+)[\"']",
+            html, _re.I):
+        refs.append(("social card", mm.group(1)))
+
+    if not refs:
+        return False, "no favicon or social-card image found in dashboard.html — the shell changed shape"
+
+    SITE = "https://nutrientcodex.com/"
+    violations = []
+    for kind, url in refs:
+        if url.startswith(SITE):
+            rel = url[len(SITE):]
+        elif url.startswith("./"):
+            rel = url[2:]
+        elif url.startswith("/"):
+            rel = url[1:]
+        elif not url.startswith(("http://", "https://", "data:")):
+            rel = url
+        else:
+            violations.append(f"{kind} {url!r} points off-site — it would not be served from our own build")
+            continue
+
+        on_disk = ROOT / "dashboard" / rel
+        if not on_disk.exists():
+            violations.append(f"{kind} {url!r} names dashboard/{rel}, which does not exist")
+            continue
+        if not any(rel.startswith(d + "/") for d in shipped_dirs):
+            violations.append(
+                f"{kind} {url!r} lives at dashboard/{rel}, outside the directories build_web.py "
+                f"copies ({', '.join(shipped_dirs)}) — it would 404 on the live site with a green board"
+            )
+
+    return _ds_finalize(
+        violations,
+        f"all {len(refs)} shell image(s) exist and sit inside the {len(shipped_dirs)} verbatim-copied "
+        f"director{'y' if len(shipped_dirs) == 1 else 'ies'} — none can 404 on the live site",
     )
 
 
@@ -9369,6 +9514,24 @@ INVARIANTS = [
         truth_anchor="static regex scan against fonts.googleapis.com / fonts.gstatic.com / cdn.jsdelivr.net / cdnjs / unpkg / pro.fontawesome.com / external <link>+<script>+@import",
         severity="critical",
         lesson_ref="long-term portability requires zero external resources: the app opens from file:// and must never depend on a host that can disappear. Promoted warn → critical once the OCR engine was vendored locally.",
+    ),
+    Invariant(
+        name="shell_title_matches_runtime_default",
+        anchor_class="consistency",  # two files we own agree — says nothing about whether the string is GOOD
+        description="dashboard.html's <title> and state/profile.ts's guest GUEST_TITLE are the same string, and main.ts still overwrites the former with the latter",
+        check_fn=check_shell_title_matches_runtime_default,
+        truth_anchor="direct string compare of the <title> parsed from dashboard.html against the GUEST_TITLE literal parsed from state/profile.ts, plus a presence check on the document.title assignment in main.ts, recomputed each run",
+        severity="critical",
+        lesson_ref="main.ts rewrites document.title on every boot, so the shell's <title> is inert for a JS-rendering crawler. The SEO title added on 2026-08-28 would have been silently discarded, with no gate, probe or test saying a word. Putting the string in both places fixed the visible bug and created a two-copy drift risk; this gate is what pays for it.",
+    ),
+    Invariant(
+        name="shell_images_reach_the_web_build",
+        anchor_class="consistency",  # dashboard.html vs build_web.py vs the filesystem — drift only
+        description="every image dashboard.html names exists and sits under a directory tools/build_web.py copies verbatim, so it cannot 404 on the live site",
+        check_fn=check_shell_images_reach_the_web_build,
+        truth_anchor="favicon hrefs + og:image/twitter:image contents parsed out of dashboard.html, resolved against the filesystem and against VERBATIM_DIRS parsed out of build_web.py, recomputed each run",
+        severity="critical",
+        lesson_ref="build_web.py copies only three asset trees; anything else under dashboard/assets/ is silently dropped and the build still reports success. An og:image is never requested by the page, only by a crawler, so a 404 there is invisible to the board AND to the render probes — the live site would simply serve a broken share card.",
     ),
     Invariant(
         name="css_comment_no_premature_close",

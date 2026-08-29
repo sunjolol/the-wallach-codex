@@ -1440,3 +1440,92 @@ rather than "(none)". The 150-char truncation is unchanged, so each line is the 
 start of its plain-language summary — which is exactly what a boot wants.
 Read-only tool, no shipped surface touched. VERIFIED by running genesis: three distinct entries,
 three distinct timestamps, each starting at its own beginning.
+
+[2026-08-28 19:14 CDT] seo/share-and-search · The site had nothing to show for itself. Posted anywhere, a link to nutrientcodex.com produced a grey box and a URL, and the whole browser tab said "Your Health Journey" — which does not contain the product's name or anything a person would search for. It now carries a title, a description, and a real 1200x630 share card, and the card is generated from the app's own palette and its own coverage strip rather than drawn by hand. Two things nearly made the change pointless: the tab title is rewritten by the app on every load, so editing the page alone would have been thrown away before Google ever saw it; and the image would have been dropped on the way to the live site by a build step that copies only three folders. Both are fixed and both are now guarded by checks that fail loudly instead of quietly.
+
+He picked option A (the gap) from the three angles rendered on 2026-08-28, then rejected the first
+four card designs on a real ground: every one carried description text at 17-19px, which dies at
+feed scale. A 1200x630 card renders ~340px wide in a phone timeline (0.28x), so 17px lands at ~5px.
+Second round set a 34px floor and he chose C2 — kicker, headline, strip, domain only, no wordmark.
+
+★ THE SHIP-BREAKER, found by an adversarial pass over the recon and not by the recon itself.
+`main.ts:639` runs `document.title = profileState.displayTitle(p)` on every boot, and
+`state/profile.ts` returned 'Your Health Journey' for a guest. Googlebot renders JS, so it indexes
+the JS title, not the markup one. Editing `<title>` alone would have been completely inert — no
+gate, no probe and no test asserts that literal anywhere in the repo, so nothing would have said a
+word. The guest fallback is now the product title; a named profile still gets its own possessive,
+and a crawler never has a profile, so a crawler always renders the SEO title.
+
+That put one string in two hand-maintained places, which is the shape 00.B.1 forbids, so it is
+gated rather than commented: NEW GATE `shell_title_matches_runtime_default` compares the parsed
+`<title>` against the parsed `GUEST_TITLE` literal and also asserts the `document.title` assignment
+still EXISTS — a gate whose premise has died is a gate passing for the wrong reason.
+`tools/tests/test_shell_title_parity.py` drives it 8 ways on a synthetic tree: green on agreement,
+RED on shell-edited-only, runtime-edited-only, a single trailing space, GUEST_TITLE renamed, a
+missing `<title>`, the assignment removed, and profile.ts absent.
+
+★ THE SECOND SILENT 404. `build_web.py` copies exactly three asset trees (`VERBATIM_DIRS`);
+anything else under `dashboard/assets/` is never enumerated and the build still prints success. An
+og:image is never requested BY THE PAGE, only by a crawler, so `render_probe_web_build.js`'s
+`status >= 400` filter is blind to it too. A card in the wrong folder would have 404'd on the live
+site with a fully green board and green probes. The card ships from `assets/favicons/`, and NEW
+GATE `shell_images_reach_the_web_build` parses the favicon hrefs and og:/twitter: image contents
+out of dashboard.html, resolves them against the filesystem AND against `VERBATIM_DIRS` read out of
+build_web.py, so it cannot drift from the build it describes.
+`tools/tests/test_shell_images_ship.py` drives it 10 ways, including the vacuity cases (an emptied
+VERBATIM_DIRS and a removed one both RED rather than pass on nothing).
+
+★ THE HANDOFF WAS WRONG that the tag block was "safe to paste whole". `offline_no_runtime_network`
+was made rel-aware on 2026-08-28, but `no_external_style_resources` carries its OWN copy of the same
+"no remote <link>" rule at what was line 603, was never updated, and is severity=critical. A
+canonical reddened there while passing here — confirmed by running both pattern sets. Refined, not
+bypassed: same negative lookahead, with the rel test case-INsensitive because this gate calls
+`re.findall` with no flags while its sibling compiles with `re.I`, and without that the two would
+still have disagreed on `rel="CANONICAL"`. The old pattern also hardcoded `href=` with no `\s*`, so
+a single space around the equals slipped a real remote stylesheet past a critical gate; that hole is
+closed and pinned.
+Root cause of the drift was structural: the list was a function-LOCAL, so no test could import it,
+so nothing drove it. It is module-level `_EXTERNAL_STYLE_PATTERNS` now, and
+`test_offline_link_rel.py` drives BOTH lists — 21 cases on the second list plus 7 explicit parity
+cases asserting the two agree on the rel exemption. They are still two lists; the test is what keeps
+them honest until they are one.
+
+★ CACHE. `.htaccess` sets `max-age=31536000, immutable` on every png, with a carve-out matching only
+`^favicon-.*\.png$`. `share-card.png` did not match, and would have become the only fixed-name,
+un-hashed, year-immutable image on the host — social platforms cache og:image harder than browsers,
+so a replacement could outlive several deploys. Carve-out widened to `^(favicon-.*|share-card)\.png$`.
+
+THE CARD is `tools/make_share_card.js` → `dashboard/assets/favicons/share-card.png`, 1200x630,
+272,776 B. Generated, not drawn, so the palette and the strip cannot drift from the app. It refuses
+to write on four conditions: a font that fell back silently (data: URIs, because a setContent page
+has an opaque origin and a file:// @font-face is blocked there and fails silently), any rendered
+text under 34px, any text INK escaping the frame or colliding with the strip, and any region taller
+than 630px. The ink check is the one that matters: measuring boxes said the first FIELD design was
+clean while its headline ran 169px under the tile artwork — a long unbreakable word overflows its
+box while the box's own rect stays innocent. Compare the ink, not the box.
+
+VERIFIED, and by rendering rather than grepping:
+  - board 107/107, 0 failed (was 105; +2 new gates, CLAUDE.md retyped in the same patch)
+  - `document.title` AFTER the bundle runs = 'The Wallach Codex — what your supplements miss',
+    measured in headless Chrome against the SERVED dist-web, not the source
+  - 9 og: tags, 4 twitter: tags, canonical, description all present in the live DOM
+  - ZERO off-machine requests with every tag present, WITH a negative control: a planted
+    `<img src="https://example.invalid/...">` DID trip the same logger, so the zero means something
+  - `render_probe_mobile.js` 79/79 against the served dist-web — identical to the baseline taken
+    BEFORE any of this landed, so nothing regressed
+  - the card is byte-identical between `dashboard/` and `dist-web/` (sha256 matched) and serves 200
+  - 54 of 55 python tests pass
+
+ALSO DONE, unasked but load-bearing: he asked whether the web build actually carried last session's
+fixes. It did. Proven by hashing dist-web, rebuilding at HEAD and diffing: the only difference was
+the Creator's Log embed missing the three entries logged after 17:57, plus its knock-on hashes. A
+control rebuild proved the 11 WOFF2 fonts change hash on EVERY build (encoder non-determinism);
+their filenames are not hashed, so index.html is unaffected. Two stale `python -m http.server`
+processes (one running since 08-21, one started at 17:57:12 — last session's verification server)
+were holding dist-web open and blocking the rebuild; both stopped.
+
+DEFERRED, and NOT touched: `test_food_composition_traces_to_source.py` fails one negative-control
+case — "provenance `working` does not match the terms used: stayed GREEN on poisoned input". It is
+PRE-EXISTING, proven by stashing only tools/invariants.py and re-running against HEAD's copy: the
+identical failure. The shipped gate is green on the board; the blind spot is in what the test proves
+about it. Unrelated to this work and left for him to rule on.

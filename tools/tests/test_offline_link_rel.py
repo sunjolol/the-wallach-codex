@@ -118,6 +118,98 @@ for needed in ("fetch() to a remote url", "<script src> to a remote url",
         print(f"FAIL — {needed!r} vanished from _NET_LOAD_PATTERNS")
         fails.append(needed)
 
-print("\nPASS — the narrowing exempts canonical/alternate and nothing else"
+# ══════════════════════════════════════════════════════════════════════════════════════════
+# THE SECOND LIST.  no_external_style_resources carries its OWN copy of the "no remote
+# <link>" rule.  On 2026-08-28 only _NET_LOAD_PATTERNS was made rel-aware, so a canonical
+# passed one gate and reddened the other -- and no test noticed, because that list was a
+# function-local nothing could import.  It is module-level now and it is driven here.
+# Two hand-maintained copies of one rule is the shape 00.B.1 forbids; until they are truly
+# one list, this block is what keeps them honest.
+# ══════════════════════════════════════════════════════════════════════════════════════════
+import re as _re2
+
+STYLE = None
+for _pat, _label in inv._EXTERNAL_STYLE_PATTERNS:
+    if _label == "external <link>":
+        STYLE = _pat
+        break
+if STYLE is None:
+    print("FAIL — the 'external <link>' pattern is gone from _EXTERNAL_STYLE_PATTERNS")
+    sys.exit(1)
+
+# This list is applied with re.findall and NO flags (see check_no_external_style_resources),
+# so it is driven here exactly the way the gate drives it -- not with re.I bolted on.
+STYLE_CASES = [
+    # ── must still catch: every one of these really is fetched by the browser ──
+    ('<link rel="stylesheet" href="https://cdn.example.com/x.css">', True),
+    ('<link rel="icon" href="https://example.com/favicon.ico">', True),
+    ('<link rel="preload" as="font" href="https://fonts.gstatic.com/a.woff2">', True),
+    ('<link rel="modulepreload" href="https://example.com/m.js">', True),
+    ('<link rel="prefetch" href="https://example.com/next.html">', True),
+    ('<link href="https://example.com/x.css" rel="stylesheet">', True),
+    ('<link rel="canonicalish" href="https://example.com/x.css">', True),
+    ('<link rel="alternate-stylesheet" href="https://example.com/x.css">', True),
+    ('<link rel=canonical href="https://example.com/">', True),          # unquoted rel is not the exemption
+    # THE HOLE THAT WAS CLOSED.  The old pattern hardcoded `href=` with no \s*, so a single
+    # space slipped a real remote stylesheet past a critical gate.  Never use it; it is
+    # pinned here so it can never be re-opened by accident.
+    ('<link rel="stylesheet" href = "https://example.com/x.css">', True),
+    # ── deliberately exempt: crawler hints, nothing is fetched ──
+    ('<link rel="canonical" href="https://nutrientcodex.com/">', False),
+    ("<link rel='canonical' href='https://nutrientcodex.com/'>", False),
+    ('<link href="https://nutrientcodex.com/" rel="canonical">', False),
+    ('<link REL="Canonical" href="https://nutrientcodex.com/">', False),
+    ('<link rel="alternate" hreflang="en" href="https://nutrientcodex.com/">', False),
+    # ── never matched, before or after ──
+    ('<link rel="stylesheet" href="./assets/styles/mobile.css">', False),
+    ('<link rel="icon" href="./assets/favicons/favicon-32x32.png">', False),
+    ('<meta property="og:image" content="https://nutrientcodex.com/assets/favicons/share-card.png">', False),
+    ('<meta name="twitter:card" content="summary_large_image">', False),
+    ('<meta name="description" content="See what your supplements still miss.">', False),
+    ('<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tesseract/x.css">', False),
+]
+
+print()
+for text, must_match in STYLE_CASES:
+    hit = bool(_re2.findall(STYLE, text))
+    good = hit == must_match
+    verdict = "caught" if hit else "allowed"
+    want = "must catch" if must_match else "must allow"
+    print(f"{'ok  ' if good else 'FAIL'} list2 {want:10} · {verdict:8} · {text[:58]}")
+    if not good:
+        fails.append("list2: " + text)
+
+# ── THE PARITY THAT MATTERS ────────────────────────────────────────────────────────────────
+# The two lists are NOT identical by design: _NET_LOAD_PATTERNS also catches protocol-relative
+# `//host`, which this one does not.  What they MUST agree on is the rel exemption, because
+# that is the rule that was copied and then only half-updated.  Absolute URLs only.
+PARITY = [
+    ('<link rel="canonical" href="https://nutrientcodex.com/">', False),
+    ('<link REL="Canonical" href="https://nutrientcodex.com/">', False),
+    ('<link rel="alternate" hreflang="en" href="https://nutrientcodex.com/">', False),
+    ('<link rel="canonicalish" href="https://example.com/x.css">', True),
+    ('<link rel="alternate-stylesheet" href="https://example.com/x.css">', True),
+    ('<link rel="stylesheet" href="https://cdn.example.com/x.css">', True),
+    ('<link rel="icon" href="https://example.com/favicon.ico">', True),
+]
+print()
+for text, expect in PARITY:
+    a = LINK.search(text) is not None
+    b = bool(_re2.findall(STYLE, text))
+    good = (a == b == expect)
+    print(f"{'ok  ' if good else 'FAIL'} parity       · net={a!s:5} style={b!s:5} want={expect!s:5} · {text[:50]}")
+    if not good:
+        fails.append("parity: " + text)
+
+# The lifted list must not have lost its other teeth on the way to module scope.
+_style_labels = [lbl for _, lbl in inv._EXTERNAL_STYLE_PATTERNS]
+for needed in ("Google Fonts CSS", "Google Fonts static", "cdnjs CDN", "unpkg CDN",
+               "FontAwesome Pro CDN", "@import of external resource",
+               "external <link>", "external <script>"):
+    if needed not in _style_labels:
+        print(f"FAIL — {needed!r} vanished from _EXTERNAL_STYLE_PATTERNS")
+        fails.append(needed)
+
+print("\nPASS — both copies of the <link> rule exempt canonical/alternate and nothing else"
       if not fails else f"\nFAILED: {len(fails)} case(s)")
 sys.exit(0 if not fails else 1)
