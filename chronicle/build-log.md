@@ -1664,3 +1664,53 @@ tools/invariants.py) · dist-web rebuilt, 66 files, Apache licence served 200.
 
 STILL NEEDS HIM: the GitHub repo description, topics and homepage URL are account settings this
 environment cannot reach (no gh CLI, no token). The exact text to paste is in the handoff.
+
+[2026-08-28 23:40 CDT] launch/x-playbook + live verification · He uploaded the site and set the GitHub fields, so the disclaimer is now live for real visitors — confirmed by driving nutrientcodex.com itself, not the local copy. Then a launch plan for X, written from zero followers. The main finding is that the thing he asked for does not work: hashtags are no longer a discovery channel on X, and the health ones are bot swamps. What does work is the wording inside the post, because X search went full-text years ago. No code changed in this entry.
+
+LIVE VERIFICATION, against the real host rather than a local build:
+  - live bundle `main.2d27d04809.js` is BYTE-FOR-BYTE the local one (hash match), so the upload is
+    complete rather than partial
+  - `render_probe_welcome_legal.js` run with PROBE_URL=https://nutrientcodex.com/ — ALL 21 PASS,
+    including the two that matter: the welcome is still visible while the disclaimer is open, and
+    Escape closes only the top layer
+  - GitHub now reports `MIT` (was NOASSERTION), homepage set to nutrientcodex.com, 9 topics, and
+    the description leads with what the tool does instead of with doctrine
+
+THE PLAYBOOK — published as an artifact, not committed here (it is marketing collateral, not part
+of the app): https://claude.ai/code/artifact/42e608b1-a88f-4c1f-a6f7-53e7d33b2ad1
+
+★ THE HASHTAG ANSWER IS NO. He asked for the best hashtags; the honest answer is that X
+deprioritised them for reach, the health tags are bot-farmed, and three or more reads as spam to
+both the filter and the human. `#buildinpublic` is the one live community tag worth using, on build
+posts only. The real lever is that X search is full-text: a post containing the words magnesium,
+multivitamin and deficiency is found by more people than the same post carrying five tags. The
+playbook trades the tag list for a search-term list to write INTO posts.
+
+★ THE MECHANIC the whole plan serves: a stranger scans their own multivitamin, gets a number lower
+than they expected, and posts it. Free, no signup, four seconds, produces a comparable number, and
+invites competition. Re-run every ten days with a running total (lowest / highest / median) so it
+compounds into a dataset people want to be in.
+
+HIS ANSWERS, which shaped it: lead with the gap and keep Wallach inside rather than in the hook;
+no face and no voice, so silent screen-recordings; the win condition is people actually using it;
+one hour a day, which is exactly the budget where a reply engine works. Split 20 minutes posting /
+40 replying — at zero followers nobody sees your posts, they see your replies under accounts that
+already have the audience.
+
+TWO CAUTIONS WRITTEN INTO THE PLAYBOOK, both of which protect work done earlier today:
+  1. every "N of 90" in the draft posts is a SLOT he fills by running the scanner. Naming real
+     brands is what makes those posts travel and it is only safe if every number is measured. The
+     marketing must not invent what the app refuses to.
+  2. DO NOT ADD GOOGLE ANALYTICS. His goal is usage numbers from an app deliberately built not to
+     watch anyone. One tag would falsify the strongest claim he makes, break
+     `offline_no_runtime_network`, and hand a critic a free hit. Use the SiteGround access logs and
+     X's own link-click stats instead — server-side, nothing on the user's device.
+
+NOTHING TO SEAL. No sealed pillar was touched: `git diff` over eden/corpus, eden/catalog and
+eden/products across this session's commits is empty, and every seal gate is green
+(`design_system_hash_integrity`, `design_system_write_protection`, `derived_artifacts_fresh`,
+`essentials_canon_matches_graphic`). `corpus_seal` / `catalog_seal` are USER-ONLY and have nothing
+pending, so none was run.
+
+VERIFIED: board 108/108 · dist/main.js fresh (100 .ts files all older) · live site driven green ·
+local master == origin/master.
