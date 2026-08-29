@@ -15,7 +15,7 @@ The catalog foods live in three other places:
 | C | **Absorption tab** — the editorial essay | `views/knowledge-foods.ts` + `.kd-foods-*` / `.sx*` / `.frt-*` / `.ue-*` in `drawer-knowledge.css` | Knowledge → **Absorption** tab |
 | D | **ORAC tab** — nine numbered sections, incl. three food league-tables | `views/knowledge-orac.ts` + `drawer-orac.css` | Knowledge → **ORAC** tab |
 
-Files read for this inventory (all under `C:/Users/Light/Desktop/claude/health expert`):
+Files read for this inventory (all repo-relative):
 `dashboard/assets/js/src/views/{knowledge-foods,knowledge-food-sheet,knowledge-orac,foods-block,knowledge-products,knowledge,knowledge-home,coverage,regimen,entity-page,gloss-tooltip}.ts`,
 `dashboard/assets/js/src/state/{foods,foods-curation,search,orac,orac-foods,orac-products}.ts`,
 `dashboard/assets/js/src/core/schemas/{orac-data,orac-foods-data,orac-products-data}.ts`,

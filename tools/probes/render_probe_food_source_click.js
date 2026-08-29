@@ -6,7 +6,7 @@
 // clickable and did nothing. A DOM assertion that the row exists would have passed throughout,
 // so this probe drives the actual click and reads where it lands.
 const path = require('path');
-const REPO = 'C:/Users/Light/Desktop/claude/health expert';
+const REPO = path.resolve(__dirname, '..', '..');
 let pup;
 for (const c of [REPO + '/node_modules/puppeteer', REPO + '/dashboard/node_modules/puppeteer']) {
   try { pup = require(c); break; } catch (e) { /* next */ }

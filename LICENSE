@@ -19,28 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-SCOPE NOTE
-
-This licence covers the source code, tooling and documentation in this
-repository. It does NOT cover:
-
-  * The books of Dr. Joel Wallach. They are the copyrighted work of their
-    authors and are not distributed here. The derived claim data committed to
-    this repository is a non-infringing set of short quotations and structured
-    references used for study and citation.
-
-  * The bundled typefaces under dashboard/assets/fonts/, which are licensed
-    separately under the SIL Open Font License 1.1. See that folder's
-    LICENSE.md for the per-family attributions.
-
-  * The vendored third-party libraries under dashboard/assets/vendor/, each of
-    which keeps its own upstream licence (Tesseract.js is Apache-2.0; the
-    design libraries are MIT or ISC). See the vendor manifest for versions and
-    hashes.
-
-  * Product names, trademarks and composition data belonging to their
-    respective owners. Product data appears here to support nutrient
-    arithmetic and is not a commercial endorsement.

@@ -2,8 +2,8 @@
 // pinned in every order. Driven in the real app — a sort that only looks right on page one is
 // exactly the kind of thing a screenshot passes and a probe does not.
 const path = require('path');
-const REPO = 'C:/Users/Light/Desktop/claude/health expert';
-const OUT = 'C:/Users/Light/AppData/Local/Temp/claude/C--Users-Light-Desktop-claude-health-expert/3a1caf4b-796a-4455-ae4d-e12efd49f28f/scratchpad';
+const REPO = path.resolve(__dirname, '..', '..');
+const OUT = __dirname;   // probe output lands beside the probe, not in a dead session's scratchpad
 let pup;
 for (const c of [REPO + '/node_modules/puppeteer', REPO + '/dashboard/node_modules/puppeteer']) {
   try { pup = require(c); break; } catch (e) { /* next */ }

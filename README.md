@@ -10,12 +10,14 @@ you point it at, and answers health questions out of seven of his books in his o
 It runs entirely on your computer. You open one file and it works — no install, no server, no account,
 no internet connection, and nothing about you ever leaves the machine.
 
+![The coverage field: all 90 essentials laid out as a periodic table, graded against what you take, with supplement and food suggestions beside it](docs/coverage.png)
+
 | | |
 |---|---|
 | **Runs from** | a single file, double-clicked. No install, no localhost, no build step. |
 | **Network use** | none, ever. There is no server to talk to and no endpoint to leak to. |
 | **Your data** | lives in your browser on your device. Export it as a plain `.json` file you can read. |
-| **Sourced from** | 7 Wallach books (1994–2020), 2,611 hand-checked claims, every one citable. |
+| **Sourced from** | 7 Wallach books (1994–2020), 2,601 hand-checked claims, every one citable. |
 
 ---
 
@@ -177,14 +179,18 @@ export/import is plain JSON.
 
 ```bash
 node tools/build.mjs                     # type-check (tsc) + bundle (esbuild)
-PYTHONUTF8=1 python tools/invariants.py  # the integrity board — 94 gates
+PYTHONUTF8=1 python tools/invariants.py  # the integrity board — 108 gates
 node tools/probes/render_probe.js        # a headless render check
 ```
 
 `tools/build.mjs` installs its own dev dependencies on first run. **You do not need to build to run the
 app** — `dist/main.js` is committed, so a fresh clone opens and works immediately. Alongside the build,
-`tools/probes/` holds 38 headless render probes and `tools/tests/` 44 standalone Python
-control tests.
+`tools/probes/` holds 59 headless render probes and `tools/tests/` 55 standalone Python
+control tests. The render probes need Puppeteer, which lives in the ROOT `package.json` — run
+`npm install` at the repo root once, or `render_probe.js` exits 2 with `NO_PUPPETEER`.
+
+Every count on this page is checked by the `readme_counts_match_reality` gate, so a stale number
+here turns the board red rather than quietly misleading you.
 
 ### How the data flows
 
@@ -204,8 +210,8 @@ reach past state, `localStorage` is confined to `core/storage.ts`, and `any` is 
 
 ### What a green board means
 
-`invariants.py` reports 94 gates. Green means **nothing drifted** — it does not mean anything is right.
-Only the 23 gates anchored outside the project's own files (book bytes, physical constants, git) can
+`invariants.py` reports 108 gates. Green means **nothing drifted** — it does not mean anything is right.
+Only the 24 gates anchored outside the project's own files (book bytes, physical constants, git) can
 catch a value that is wrong but self-consistent. The board prints that split every run, and it is worth
 reading honestly.
 
@@ -242,6 +248,10 @@ anything measured in you. It does not know what you absorb, what you eat, or wha
 
 Released under the [MIT Licence](LICENSE) — use it, change it, build on it.
 
-The bundled fonts are licensed separately under the SIL Open Font License 1.1; see
-`dashboard/assets/fonts/LICENSE.md`. Dr. Wallach's books are the copyrighted work of their authors and
-are not distributed in this repository.
+Everything the MIT grant does **not** cover is set out in [NOTICE.md](NOTICE.md): the bundled fonts
+(SIL Open Font License 1.1), the vendored Tesseract OCR engine (Apache-2.0), the design-time
+libraries (MIT/ISC, hash-pinned), and product names and trademarks belonging to their owners.
+
+Dr. Wallach's books are the copyrighted work of their authors and are not distributed in this
+repository. What is committed is a derived set of short, cited quotations; the book texts are kept
+locally and gitignored, and a fresh clone runs without them.

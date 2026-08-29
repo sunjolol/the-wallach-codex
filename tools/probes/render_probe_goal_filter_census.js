@@ -16,7 +16,7 @@
 // catalogue — the two failure modes actually observed.
 // ═══════════════════════════════════════════════════════════════════════════
 const path = require('path');
-const REPO = 'C:/Users/Light/Desktop/claude/health expert';
+const REPO = path.resolve(__dirname, '..', '..');
 const OUT = process.env.PROBE_OUT || REPO + '/tools/probes';
 let pup;
 for (const c of [REPO + '/node_modules/puppeteer', REPO + '/dashboard/node_modules/puppeteer']) {

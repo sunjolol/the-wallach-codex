@@ -9,7 +9,7 @@
 // essential page can take (standard glance, mechanism section, plant-derived hero, omega family).
 
 const path = require('path');
-const REPO = 'C:/Users/Light/Desktop/claude/health expert';
+const REPO = path.resolve(__dirname, '..', '..');
 let pup;
 for (const c of [REPO + '/node_modules/puppeteer', REPO + '/dashboard/node_modules/puppeteer']) {
   try { pup = require(c); break; } catch (e) { /* next */ }

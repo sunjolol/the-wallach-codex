@@ -6,6 +6,10 @@ __pycache__/
 *.log
 *.payload.tmp
 dashboard/assets/js/dist/*.map
+# Render-probe screenshots. A probe writes these beside itself as evidence for ONE run;
+# they are regenerated on demand and none of them is a record worth committing. The README
+# screenshot is deliberately NOT here -- it lives in docs/ and is committed on purpose.
+tools/probes/*.png
 
 # ── Per-machine, never shared ────────────────────────────────────────────────
 .claude/settings.local.json

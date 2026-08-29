@@ -1465,6 +1465,90 @@ def check_board_claims_match_reality():
                   f"{external} externally anchored")
 
 
+def check_readme_counts_match_reality():
+    """Every number the README states about this project must match what the project is.
+
+    Same shape as board_claims_match_reality, and it exists for the same reason: the README
+    retypes five counts that are COMPUTED elsewhere -- the gate total, the external-anchor
+    total, the render-probe count, the control-test count, and the sealed claim count. All
+    five had rotted simultaneously (94/23/38/44/2,611 against a real 107/24/58/55/2,601).
+
+    This is the repo's front door, and its pitch is that the work is verified. A visitor who
+    runs the very command the README documents and gets a different number learns the
+    opposite in one step. package.json already carries this lesson in its own description --
+    it refuses to state a probe count at all, having once said 37 while the directory held
+    58. The README keeps its numbers, because they are worth stating, and pays for them here.
+
+    A reworded claim is RED, not a silent pass: a gate that goes green because its subject
+    vanished is worse than no gate."""
+    doc = ROOT / "README.md"
+    if not doc.exists():
+        return False, "README.md missing -- this gate's subject"
+    text = doc.read_text(encoding="utf-8")
+
+    total = len(INVARIANTS)
+    external = sum(1 for i in INVARIANTS if i.anchor_class == "external")
+    probes = len(list((ROOT / "tools" / "probes").glob("render_probe*.js")))
+    tests = len(list((ROOT / "tools" / "tests").glob("test_*.py")))
+
+    claims = 0
+    claims_dir = ROOT / "eden" / "corpus" / "claims"
+    if claims_dir.exists():
+        for f in claims_dir.glob("*.json"):
+            try:
+                d = json.loads(f.read_text(encoding="utf-8"))
+            except Exception:
+                continue
+            c = d if isinstance(d, list) else d.get("claims", d.get("entries", []))
+            if isinstance(c, dict):
+                c = list(c.values())
+            claims += len(c)
+
+    # every "<N> gates" the README states -- there are two, and BOTH must be right
+    gate_hits = [int(x) for x in re.findall(r"invariants\.py`?[^\n]*?(\d+)\s+gates", text)]
+    m_ext = re.search(r"Only the\s+(\d+)\s+gates anchored outside", text)
+    m_probes = re.search(r"holds\s+([\d,]+)\s+headless render probes", text)
+    m_tests = re.search(r"([\d,]+)\s+standalone Python", text)
+    m_claims = re.search(r"([\d,]+)\s+hand-checked claims", text)
+
+    def n(m):
+        return int(m.group(1).replace(",", "")) if m else None
+
+    missing = []
+    if not gate_hits:
+        missing.append("the '<N> gates' claim")
+    if m_ext is None:
+        missing.append("the 'Only the <N> gates anchored outside' claim")
+    if m_probes is None:
+        missing.append("the '<N> headless render probes' claim")
+    if m_tests is None:
+        missing.append("the '<N> standalone Python' control-test claim")
+    if m_claims is None:
+        missing.append("the '<N> hand-checked claims' claim")
+    if missing:
+        return False, ("README.md no longer states " + "; ".join(missing)
+                       + " -- restore the wording or re-anchor this gate, but do not let the "
+                         "front door stop accounting for itself")
+
+    wrong = []
+    for got in gate_hits:
+        if got != total:
+            wrong.append(f"gates: README says {got}, board runs {total}")
+    if n(m_ext) != external:
+        wrong.append(f"external: README says {n(m_ext)}, board has {external}")
+    if n(m_probes) != probes:
+        wrong.append(f"probes: README says {n(m_probes)}, tools/probes/ holds {probes}")
+    if n(m_tests) != tests:
+        wrong.append(f"tests: README says {n(m_tests)}, tools/tests/ holds {tests}")
+    if n(m_claims) != claims:
+        wrong.append(f"claims: README says {n(m_claims)}, the sealed shards hold {claims}")
+    if wrong:
+        return False, "README misdescribes the project -- " + "; ".join(wrong)
+
+    return True, (f"README's five counts match reality: {total} gates, {external} external, "
+                  f"{probes} probes, {tests} tests, {claims} claims")
+
+
 def check_creators_log_digest_synced():
     """LOG.md must equal the deterministic render of log.jsonl. It is a generated
     human view; drift means a hand-edit or a missed regeneration, which would let
@@ -9532,6 +9616,15 @@ INVARIANTS = [
         truth_anchor="favicon hrefs + og:image/twitter:image contents parsed out of dashboard.html, resolved against the filesystem and against VERBATIM_DIRS parsed out of build_web.py, recomputed each run",
         severity="critical",
         lesson_ref="build_web.py copies only three asset trees; anything else under dashboard/assets/ is silently dropped and the build still reports success. An og:image is never requested by the page, only by a crawler, so a 404 there is invisible to the board AND to the render probes — the live site would simply serve a broken share card.",
+    ),
+    Invariant(
+        name="readme_counts_match_reality",
+        anchor_class="consistency",  # the README vs our own registry/filesystem — drift only
+        description="every count the README states (gates, external anchors, render probes, control tests, sealed claims) matches what the project actually contains",
+        check_fn=check_readme_counts_match_reality,
+        truth_anchor="the INVARIANTS registry, a glob of tools/probes/ and tools/tests/, and a parse of the sealed claim shards, all recomputed each run and compared against README.md's bytes",
+        severity="critical",
+        lesson_ref="the README's five hand-typed counts had ALL rotted at once — 94 gates against a real 107, 23 external against 24, 2,611 claims against 2,601, 38 probes against 58, 44 tests against 55. It is the repo's front door and its pitch is that the work is verified; a visitor who runs the documented command and gets a different number learns the opposite immediately. package.json already refuses to state a count for this reason.",
     ),
     Invariant(
         name="css_comment_no_premature_close",

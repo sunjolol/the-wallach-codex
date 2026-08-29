@@ -48,6 +48,13 @@ const LAYOUT = CoverageLayoutSchema.parse(coverageLayoutData);
 const NAME_MAX = 18;
 const CLOSE_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
+/**
+ * The disclaimer's sections, by number. The COPY lives in the view-copy store as
+ * wc_legal_s<n>_h / _b; this is only the running order, so adding a section is one
+ * number here and two keys there — the view never holds the prose.
+ */
+const LEGAL_SECTIONS = [1, 2, 3, 4, 5, 6, 7] as const;
+
 function escHTML(s: unknown): string {
   return String(s ?? '').replace(/[&<>"']/g, c => ({
     '&': '&amp;',
@@ -133,8 +140,29 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
         </span>
         <div class="wc__goals" data-goals>${goalGroups}</div>
         <div class="wc__foot">
+          <button class="wc__legal-link" type="button" data-legal-open
+                  aria-haspopup="dialog">${escHTML(ui('wc_legal_link'))}</button>
           ${reopen ? '' : `<button class="wc__browse" type="button" data-browse>${escHTML(ui('wc_browse'))}</button>`}
           <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML(ui('wc_go'))}</button>
+        </div>
+      </div>
+      <div class="wc-legal" data-legal hidden>
+        <div class="wc-legal__box" role="dialog" aria-modal="true" aria-labelledby="wcLegalH"
+             tabindex="-1" data-legal-box>
+          <button class="ui-close wc-legal__x" type="button" data-legal-close
+                  aria-label="Close" title="Close">${CLOSE_SVG}</button>
+          <div class="wc__kicker">${escHTML(ui('wc_legal_kicker'))}</div>
+          <h2 class="wc-legal__h" id="wcLegalH">${escHTML(ui('wc_legal_h'))}</h2>
+          <p class="wc-legal__intro">${escHTML(ui('wc_legal_intro'))}</p>
+          ${LEGAL_SECTIONS.map(n => `
+            <section class="wc-legal__s">
+              <h3 class="wc-legal__sh">${escHTML(ui(`wc_legal_s${n}_h`))}</h3>
+              <p class="wc-legal__sb">${escHTML(ui(`wc_legal_s${n}_b`))}</p>
+            </section>`).join('')}
+          <p class="wc-legal__ack">${escHTML(ui('wc_legal_ack'))}</p>
+          <div class="wc-legal__foot">
+            <button class="ds-btn-primary" type="button" data-legal-close>${escHTML(ui('wc_legal_close'))}</button>
+          </div>
         </div>
       </div>
     </div>
@@ -201,6 +229,7 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
     // "I'm just browsing" on FIRST arrival means no goals; on a re-open it means "leave my
     // goals alone and close", so the goals are only cleared when the choice is the arrival's.
     saveRgUserGoals(browsing && !reopen ? [] : chosen);
+    document.removeEventListener('keydown', onKey, true);
     host.replaceChildren();
     onDone?.();
   };
@@ -208,6 +237,7 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
   const dismiss = (): void => {
     if (reopen) {
       // Goal-picker cancel: leave the existing profile and its goals untouched, just close.
+      document.removeEventListener('keydown', onKey, true);
       host.replaceChildren();
       onDone?.();
     }
@@ -218,9 +248,62 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
     }
   };
 
+  const legal = host.querySelector<HTMLElement>('[data-legal]');
+  const legalBox = host.querySelector<HTMLElement>('[data-legal-box]');
+  const legalLink = host.querySelector<HTMLElement>('[data-legal-open]');
+
+  /**
+   * Open the disclaimer OVER the welcome, never instead of it. The welcome dialog stays
+   * mounted and visible behind this layer, so closing returns the user to exactly the
+   * state they left — a half-filled name and a set of chosen goals both survive.
+   */
+  const openLegal = (): void => {
+    if (legal === null) {
+      return;
+    }
+    legal.hidden = false;
+    legalBox?.focus();
+  };
+
+  const closeLegal = (): void => {
+    if (legal === null || legal.hidden) {
+      return;
+    }
+    legal.hidden = true;
+    legalLink?.focus();
+  };
+
+  const onKey = (ev: KeyboardEvent): void => {
+    if (ev.key !== 'Escape') {
+      return;
+    }
+    // Escape closes the TOP layer only. With the disclaimer open it must not also
+    // dismiss the welcome underneath, or one keypress would silently record a
+    // "just browsing" choice the user never made.
+    if (legal !== null && !legal.hidden) {
+      ev.stopPropagation();
+      closeLegal();
+    }
+  };
+
   const onClick = (ev: Event): void => {
     const t = ev.target as HTMLElement | null;
     if (t === null) {
+      return;
+    }
+    if (t.closest('[data-legal-close]') !== null) {
+      closeLegal();
+      return;
+    }
+    if (t.closest('[data-legal-open]') !== null) {
+      openLegal();
+      return;
+    }
+    // A click on the disclaimer's own backdrop closes it; a click inside must not.
+    if (legal !== null && !legal.hidden) {
+      if (t === legal) {
+        closeLegal();
+      }
       return;
     }
     if (t.closest('[data-veil-close]') !== null) {
@@ -249,6 +332,7 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
   };
 
   host.addEventListener('click', onClick);
+  document.addEventListener('keydown', onKey, true);
   nameEl?.addEventListener('input', () => {
     if (nameErr !== null) {
       nameErr.hidden = true;
@@ -262,6 +346,7 @@ export function mount(host: HTMLElement, onDone?: () => void): MountHandle {
     update: paint,
     unmount: () => {
       host.removeEventListener('click', onClick);
+      document.removeEventListener('keydown', onKey, true);
       host.replaceChildren();
     },
   };

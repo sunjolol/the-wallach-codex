@@ -46193,7 +46193,55 @@ could not see its own subject. dist-web hashes differ on EVERY build (11 non-det
 fonts). A collision check measuring element BOXES called a share card clean while its headline ran
 169px under the artwork: measure the INK, not the box. And a "0 blobs" verification came from a
 broken pipeline, not a clean repo -- a zero from a broken instrument is indistinguishable from a
-pass.` }];
+pass.` }, { id: "lg_mtdva6mw_jl79mx", ts: "2026-08-28T23:15:01.400829-05:00", surface: "audit-fixes/disclaimer", kind: "round-close", summary: "The app finally has a disclaimer, reachable from the first screen and stacked over the welcome rather than replacing it. The README's five rotten counts are fixed and gated, and GitHub will stop reporting the project as unlicensed.", detail: `Three things landed, and all three were found by yesterday's audit rather than by anyone using the app.
+
+First, and most important: the app now has a disclaimer, and you cannot miss it. A small DISCLAIMER link sits at the bottom of the very first screen. Clicking it opens a second panel stacked on top of the first, so the welcome stays exactly where it was underneath \u2014 if you had already typed your name and picked a couple of goals, they are all still there when you close it. It closes with the X, with the button, with the Escape key, or by clicking beside it, and Escape closes only the disclaimer rather than accidentally dismissing the welcome behind it. Before this, every disclaimer lived in a file on GitHub that nobody visiting the website would ever read.
+
+Second, the front page of the repository was wrong in five places at once. It advertised 94 integrity checks when the project actually runs 108, and four other counts were stale in the same way. Anyone who ran the very command the page documents would have got a different number within thirty seconds, on a project whose whole pitch is that the work is verified. All five are corrected, and a new check now recomputes them on every run so they cannot quietly rot again. It proved itself immediately: adding the disclaimer's own test nudged one count, and the new check caught the page still quoting the old number in the same sitting that wrote it.
+
+Third, GitHub had been reporting the project as having no licence at all \u2014 which legally means the opposite of what the licence intends. The cause turned out to be a well-written scope note appended underneath the licence text, which GitHub's detector will not match. The note moved to its own file and the licence is back to its exact standard wording. The OCR engine's licence, which is required to travel with it, is now included too.
+
+--- the technical record ---
+
+THE DISCLAIMER: views/welcome.ts + wc_legal_* keys in the view-copy store + .wc-legal in
+workspace-coverage.css. Seven sections -- not medical advice / Wallach's positions are not settled
+science / talk to a professional before changing anything / in an emergency close this app / no
+affiliation with Wallach, Youngevity or any maker / the numbers can be wrong and the label wins /
+no warranty and your data is yours -- plus an acknowledgement line. Copy in the store, never inline.
+
+LAYERED, NOT SWAPPED: .wc-legal is its own fixed layer at z-index 61 above .wc-veil's 60, a sibling
+of .wc inside the veil. The welcome is never unmounted. Escape is capture-phase with
+stopPropagation while the panel is open, so one keypress cannot fall through and silently record a
+"just browsing" choice. [hidden] carries an explicit display:none, because display:grid would beat
+the UA rule and the panel would be open on arrival.
+
+NEW PROBE render_probe_welcome_legal.js -- 21 assertions, driven not inspected, including the one
+that matters: the WELCOME IS STILL VISIBLE while the disclaimer is open. Green on file:// and on
+the served dist-web.
+
+README: five counts corrected (94\u2192108 gates, 23\u219224 external, 2,611\u21922,601 claims, 38\u219259 probes,
+44\u219255 tests) and NEW GATE readme_counts_match_reality recomputes all five each run. Board 107\u2192108,
+CLAUDE.md retyped in the same patch. Also documented the root npm install the probe suite needs.
+
+LICENSING: LICENSE is canonical MIT and nothing else (1,063 B, 21 lines); the scope note moved to
+NOTICE.md with a per-library table. dashboard/assets/vendor/tesseract/ gained the canonical
+11,358-byte Apache-2.0 text plus a NOTICE naming tesseract.js 5.1.1 and tesseract.js-core 5.1.1 --
+Apache-2.0 4(a) requires the licence to travel with the redistribution. Both ship: dist-web 64\u219266.
+
+NINE PROBES could not run on any machine but this one -- they hardcoded an absolute repo path, and
+three wrote output into a scratchpad from a session that ended weeks ago. Now
+path.resolve(__dirname,'..','..'). VERIFIED BY RUNNING TWO, not by syntax check. That also cleared
+the Windows username from 11 of the 16 tracked files carrying it; the remaining five are the
+append-only Creator's Log and build log and the artifacts generated from them, which the covenant
+forbids editing.
+
+VERIFIED: board 108/108, typecheck clean, welcome-legal probe ALL PASS on both targets,
+render_probe_mobile 79/79 on both, 54 of 55 python tests (the one failure proven pre-existing
+earlier today), dist-web rebuilt and the Apache licence served 200.
+
+STILL NEEDS A HUMAN: the GitHub description, topics and homepage URL are account settings this
+environment cannot reach. The text to paste is in the handoff. And dist-web wants re-uploading, so
+the live site gets the disclaimer.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -123821,6 +123869,26 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       wc_goals_label: "Your goals",
       wc_h: "What do you want to work on?",
       wc_kicker: "// Let\u2019s get started",
+      wc_legal_link: "Disclaimer",
+      wc_legal_kicker: "// Please read",
+      wc_legal_h: "Before you use the Codex",
+      wc_legal_intro: "This app organises one author's framework so you can read it with its sources attached. It is a study tool, not a clinician. Please take the following seriously.",
+      wc_legal_s1_h: "This is not medical advice",
+      wc_legal_s1_b: "The Wallach Codex is educational software. It does not diagnose, treat, cure or prevent any disease, and nothing in it has been evaluated by the Food and Drug Administration (FDA) or any other regulator. It is not a diagnosis, not a prescription and not a treatment plan.",
+      wc_legal_s2_h: "These are Dr. Wallach's positions, not settled science",
+      wc_legal_s2_b: "Every amount, target and claim here traces to a book written by Dr. Joel Wallach and is presented as his position \u2014 not as scientific consensus and not as this app's own recommendation. Many of his views are disputed by mainstream medicine. They are shown with their source attached precisely so you can weigh them yourself.",
+      wc_legal_s3_h: "Talk to a professional before you change anything",
+      wc_legal_s3_b: "Speak to a qualified doctor, pharmacist or dietitian before starting, stopping or changing any supplement, medicine or diet \u2014 especially if you are pregnant or nursing, giving anything to a child, living with a health condition, or taking prescription medication. Supplements interact with medicines and can cause harm in large doses. Never stop a treatment you were prescribed because of something you read here.",
+      wc_legal_s4_h: "In an emergency, close this app",
+      wc_legal_s4_b: "If you think you may be having a medical emergency, call your local emergency number or go to the nearest emergency department now. Do not use this app to decide.",
+      wc_legal_s5_h: "No affiliation with anyone",
+      wc_legal_s5_b: "This is an independent project. It is not affiliated with, endorsed by, sponsored by or connected to Dr. Joel Wallach, Youngevity International, or any supplement maker or seller. Nothing here is a paid placement. Product names, brands and composition figures belong to their owners and appear only to make the arithmetic possible.",
+      wc_legal_s6_h: "The numbers can be wrong",
+      wc_legal_s6_b: "Product and food figures are transcribed from labels and public databases, and they can be incomplete, outdated or simply mistaken. Always read the actual label on the actual product in your hand. Where this app and a label disagree, the label is right.",
+      wc_legal_s7_h: "No warranty, and your data is yours",
+      wc_legal_s7_b: "This software is provided as is, without warranty of any kind, and you use it and act on it entirely at your own risk. Everything you enter stays in your browser on this device \u2014 it is never uploaded \u2014 which also means keeping your own backup is up to you.",
+      wc_legal_ack: "By continuing to use the Codex you confirm that you have read this and accept it.",
+      wc_legal_close: "I understand",
       wc_name_label: "Your name",
       wc_name_placeholder: "What should we call you?",
       kd_ep_foodsrc_label: "Best food sources",
@@ -229834,6 +229902,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
   var LAYOUT5 = CoverageLayoutSchema.parse(coverage_layout_data_default);
   var NAME_MAX2 = 18;
   var CLOSE_SVG2 = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+  var LEGAL_SECTIONS = [1, 2, 3, 4, 5, 6, 7];
   function escHTML17(s) {
     return String(s ?? "").replace(/[&<>"']/g, (c) => ({
       "&": "&amp;",
@@ -229888,8 +229957,29 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         </span>
         <div class="wc__goals" data-goals>${goalGroups}</div>
         <div class="wc__foot">
+          <button class="wc__legal-link" type="button" data-legal-open
+                  aria-haspopup="dialog">${escHTML17(ui("wc_legal_link"))}</button>
           ${reopen ? "" : `<button class="wc__browse" type="button" data-browse>${escHTML17(ui("wc_browse"))}</button>`}
           <button class="ds-btn-primary wc__go" type="button" data-go disabled>${escHTML17(ui("wc_go"))}</button>
+        </div>
+      </div>
+      <div class="wc-legal" data-legal hidden>
+        <div class="wc-legal__box" role="dialog" aria-modal="true" aria-labelledby="wcLegalH"
+             tabindex="-1" data-legal-box>
+          <button class="ui-close wc-legal__x" type="button" data-legal-close
+                  aria-label="Close" title="Close">${CLOSE_SVG2}</button>
+          <div class="wc__kicker">${escHTML17(ui("wc_legal_kicker"))}</div>
+          <h2 class="wc-legal__h" id="wcLegalH">${escHTML17(ui("wc_legal_h"))}</h2>
+          <p class="wc-legal__intro">${escHTML17(ui("wc_legal_intro"))}</p>
+          ${LEGAL_SECTIONS.map((n) => `
+            <section class="wc-legal__s">
+              <h3 class="wc-legal__sh">${escHTML17(ui(`wc_legal_s${n}_h`))}</h3>
+              <p class="wc-legal__sb">${escHTML17(ui(`wc_legal_s${n}_b`))}</p>
+            </section>`).join("")}
+          <p class="wc-legal__ack">${escHTML17(ui("wc_legal_ack"))}</p>
+          <div class="wc-legal__foot">
+            <button class="ds-btn-primary" type="button" data-legal-close>${escHTML17(ui("wc_legal_close"))}</button>
+          </div>
         </div>
       </div>
     </div>
@@ -229944,20 +230034,62 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         }
       }
       saveRgUserGoals(browsing && !reopen ? [] : chosen);
+      document.removeEventListener("keydown", onKey, true);
       host.replaceChildren();
       onDone?.();
     };
     const dismiss = () => {
       if (reopen) {
+        document.removeEventListener("keydown", onKey, true);
         host.replaceChildren();
         onDone?.();
       } else {
         enter(true);
       }
     };
+    const legal = host.querySelector("[data-legal]");
+    const legalBox = host.querySelector("[data-legal-box]");
+    const legalLink = host.querySelector("[data-legal-open]");
+    const openLegal = () => {
+      if (legal === null) {
+        return;
+      }
+      legal.hidden = false;
+      legalBox?.focus();
+    };
+    const closeLegal = () => {
+      if (legal === null || legal.hidden) {
+        return;
+      }
+      legal.hidden = true;
+      legalLink?.focus();
+    };
+    const onKey = (ev) => {
+      if (ev.key !== "Escape") {
+        return;
+      }
+      if (legal !== null && !legal.hidden) {
+        ev.stopPropagation();
+        closeLegal();
+      }
+    };
     const onClick = (ev) => {
       const t = ev.target;
       if (t === null) {
+        return;
+      }
+      if (t.closest("[data-legal-close]") !== null) {
+        closeLegal();
+        return;
+      }
+      if (t.closest("[data-legal-open]") !== null) {
+        openLegal();
+        return;
+      }
+      if (legal !== null && !legal.hidden) {
+        if (t === legal) {
+          closeLegal();
+        }
         return;
       }
       if (t.closest("[data-veil-close]") !== null) {
@@ -229984,6 +230116,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       }
     };
     host.addEventListener("click", onClick);
+    document.addEventListener("keydown", onKey, true);
     nameEl?.addEventListener("input", () => {
       if (nameErr !== null) {
         nameErr.hidden = true;
@@ -229996,6 +230129,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
       update: paint,
       unmount: () => {
         host.removeEventListener("click", onClick);
+        document.removeEventListener("keydown", onKey, true);
         host.replaceChildren();
       }
     };

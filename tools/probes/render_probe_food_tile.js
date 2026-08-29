@@ -18,7 +18,8 @@
 // so chips measured narrow, "fitted" in three rows, then grew when the display face loaded and
 // spilled to a fourth - hidden by the max-height belt. Two of 190 cards failed exactly that way.
 // The fit now waits on document.fonts.ready.
-const REPO = 'C:/Users/Light/Desktop/claude/health expert';
+const path = require('path');
+const REPO = path.resolve(__dirname, '..', '..');
 let pup;
 for (const c of [REPO + '/node_modules/puppeteer', REPO + '/dashboard/node_modules/puppeteer']) {
   try { pup = require(c); break; } catch (e) { /* next */ }

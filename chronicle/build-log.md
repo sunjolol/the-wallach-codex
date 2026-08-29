@@ -1597,3 +1597,70 @@ verification came from a broken pipeline rather than a clean repo. A zero from a
 is indistinguishable from a pass.
 
 NO SHIPPED SURFACE CHANGED IN THIS ENTRY. Board 107/107, build fresh, `master` == `origin/master`.
+
+[2026-08-28 23:14 CDT] audit-fixes/disclaimer + readme + licensing · The app now has a disclaimer, and it is reachable from the very first screen. A small DISCLAIMER link in the arrival popup opens a second popup stacked on top of the first, so the welcome stays exactly where it was underneath — a half-typed name and any chosen goals both survive the trip. It closes with an X, with a button, with Escape, or by clicking beside it, and Escape closes only the disclaimer rather than dismissing the welcome behind it. The repository front door was also wrong in five places at once: it advertised 94 integrity checks when the project runs 108, and four other counts were stale the same way. Those are corrected and now guarded by a check of their own, so they cannot rot again. GitHub was reporting the project as having NO licence at all; that is fixed too.
+
+★ THE DISCLAIMER — `views/welcome.ts` + `wc_legal_*` in the view-copy store + `.wc-legal` in
+workspace-coverage.css. Seven sections, each with its own heading: not medical advice / these are
+Wallach's positions not settled science / talk to a professional first / in an emergency close this
+app / no affiliation with Wallach, Youngevity or any maker / the numbers can be wrong, the label
+wins / no warranty and your data is yours. Plus an acknowledgement line. All copy lives in the
+view-copy store, never inline in the view, matching how the rest of the welcome already works.
+
+LAYERED, NOT SWAPPED. `.wc-legal` is its own fixed layer at z-index 61, one above `.wc-veil`'s 60,
+rendered as a sibling of `.wc` INSIDE the veil. The welcome dialog is never unmounted. Escape is
+handled capture-phase and calls stopPropagation when the disclaimer is open, so one keypress can
+never fall through and record a "just browsing" choice the user did not make. `[hidden]` gets an
+explicit `display: none` because `display: grid` would otherwise beat the UA rule and the panel
+would be open on arrival.
+
+NEW PROBE — `tools/probes/render_probe_welcome_legal.js`, 21 assertions, driven not inspected: the
+link exists and renders uppercase; the panel starts closed; it opens; ★ THE WELCOME IS STILL
+VISIBLE AT THE SAME TIME; it stacks above the veil; it has a close control; the copy contains each
+of the six things it must; it scrolls when it overflows; the X closes it and the welcome survives;
+Escape closes it and the welcome survives; and a half-typed name survives the round trip. Runs
+green against `file://` AND against the served `dist-web`.
+
+★ THE README'S FIVE COUNTS WERE ALL ROTTEN — 94 gates against a real 107, 23 external against 24,
+2,611 claims against 2,601, 38 probes against 58, 44 tests against 55. Corrected, and NEW GATE
+`readme_counts_match_reality` now recomputes all five each run and reds on any drift. It earned its
+place immediately: adding the disclaimer probe took the directory to 59 and the gate caught the
+README still saying 58, in the same session that wrote it. Also documented the root `npm install`
+the probe suite needs, since `render_probe.js` exits 2 with NO_PUPPETEER in a fresh clone.
+Board 107 → 108; CLAUDE.md retyped in the same patch.
+
+★ GITHUB REPORTED `NOASSERTION` — no licence badge at all, the legal opposite of the MIT grant.
+Cause was specific: an otherwise excellent SCOPE NOTE appended after the MIT text, and GitHub's
+classifier only matches the canonical wording byte for byte. LICENSE is now canonical MIT and
+nothing else (1,063 B, 21 lines, nothing after "SOFTWARE."); the scope note moved to `NOTICE.md`,
+expanded with a per-library table.
+
+★ TESSERACT'S LICENCE NOW SHIPS. Apache-2.0 section 4(a) requires giving recipients a copy of the
+licence when redistributing, and there was none. `dashboard/assets/vendor/tesseract/LICENSE` is the
+canonical 11,358-byte Apache-2.0 text fetched from apache.org, with a `NOTICE` beside it naming
+tesseract.js 5.1.1, tesseract.js-core 5.1.1 and the tessdata model. Both sit under a VERBATIM_DIR,
+so they reach the live site as well as the repo — dist-web went 64 → 66 files.
+
+★ NINE PROBES COULD NOT RUN ON ANY OTHER MACHINE. They hardcoded `const REPO =
+'C:/Users/Light/Desktop/claude/health expert'`, and three also wrote output to a scratchpad
+directory belonging to a session that ended weeks ago. Now `path.resolve(__dirname, '..', '..')`,
+the way render_probe_mobile.js always did it, with OUT beside the probe. VERIFIED BY RUNNING TWO OF
+THEM, not by syntax-checking: `render_probe_scan_rail` and `render_probe_food_block` both ALL PASS.
+That also removes the Windows username from 11 of the 16 tracked files that carried it.
+
+CANNOT BE SCRUBBED, and this is a limit rather than an omission: the username remains in
+`chronicle/build-log.md`, `chronicle/creators-log/log.jsonl`, the 2026-06 digest, and the two
+artifacts generated from them. Those are append-only under the Creator's Log covenant, and editing
+them would break `build_log_append_only` as well as the covenant itself.
+
+ALSO: `tools/probes/*.png` is gitignored — probe screenshots are single-run evidence. `docs/` is
+deliberately NOT ignored: it holds the new README screenshot (`docs/coverage.png`, 634 KB, 2x),
+and `docs/` is not a VERBATIM_DIR so it never ships to the website.
+
+VERIFIED: board 108/108 · typecheck clean · welcome-legal probe ALL PASS on file:// and on the
+served dist-web · render_probe_mobile 79/79 on both · 54 of 55 python tests (the one failure is
+`test_food_composition_traces_to_source.py`, PROVEN pre-existing earlier today by stashing only
+tools/invariants.py) · dist-web rebuilt, 66 files, Apache licence served 200.
+
+STILL NEEDS HIM: the GitHub repo description, topics and homepage URL are account settings this
+environment cannot reach (no gh CLI, no token). The exact text to paste is in the handoff.
