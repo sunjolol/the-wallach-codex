@@ -46139,7 +46139,61 @@ tools/invariants.py and re-running against HEAD's copy -- identical failure. The
 green; the gap is in what the test proves about it.
 
 STILL WAITING ON A HUMAN: dist-web/ must be uploaded to public_html/, including the .htaccess
-dotfile most FTP clients hide.` }];
+dotfile most FTP clients hide.` }, { id: "lg_mtdu52pv_kv7hn4", ts: "2026-08-28T22:43:03.428004-05:00", surface: "audit/pre-launch", kind: "incident", summary: "Pre-launch audit: the copyrighted books were never actually removed from GitHub -- untracking is not deletion. A full purge was built and verified; he ruled to leave the history as it is. Nothing shipped changed.", detail: `Before pointing Hacker News and Reddit at the repository, everything the README claims was checked by running a command rather than by reading it.
+
+The important finding is uncomfortable. The seven Wallach books were never actually removed from the public repository. An earlier session UNTRACKED them, which takes them out of the working folder and out of everyday view, and leaves every byte sitting in the project's history. The README then said they were "not distributed here" on that basis. Anyone who wanted them could have retrieved the complete text of any of the seven with a single command, copyright notice and all. He had been told this was handled. It was not, and that put him at a real risk he did not know he was carrying.
+
+A complete removal was built, run and verified. It worked: every book, page scan and transcript gone, all 1,241 commits kept, the app still building and every check still passing. Then a second problem surfaced that changes the whole picture -- GitHub keeps the branches attached to old pull requests forever, one of his closed pull requests carries all seven books, and nobody, not even the repository's owner, can delete that. The only thing that removes it is deleting the repository and making a new one.
+
+He decided not to. His words: the books are not in the live files, and if someone digs them up that is on them. That is his call, it is recorded, and it is closed -- the removal was undone so his local copy matches the published one exactly, and the cleaned version is kept in the backup folder in case he ever changes his mind.
+
+Nothing about the app or the website changed. The books were never part of what the dashboard reads; that was measured rather than assumed.
+
+--- the technical record ---
+
+PDFs + EPUB: 7 files, 97.65 MB, added a8e1bd22 (2026-06-21), deleted 7d264b42 (2026-07-04). Full
+OCR'd text: eden/corpus/books/*.txt, added 01669ee1, untracked 05ec2d09 -- a commit titled "untrack
+copyrighted book sources for public release". Retrievability PROVEN, not inferred:
+\`git show 05ec2d09^:...dddl...txt\` returned 974,037 bytes. Plus 467 YouTube caption files and 423
+lecture transcripts.
+
+THE PURGE (performed, verified, then reverted): two git-filter-repo passes, 1,253 blobs / 531 MB,
+1,241 commits preserved, 0 copyrighted paths, pack 340 MB -> 123 MB, build OK, board 107/107. The
+second pass was needed because the first -- built from directory names -- MISSED two classes that
+only a content fingerprint found: tools/frontface/ocr-cache/ (2.4 MB of OCR'd book PAGES, 406 KB in
+one file, contiguous runs to 4,282 chars) and chronicle/ratify-unverified-2026-08-19/rare-earths/
+pages/ (23 scanned page images). Any future purge must enumerate by CONTENT, never by folder name.
+
+WHY FORCE-PUSH WAS NEVER SUFFICIENT: GitHub retains refs/pull/* permanently. Closed PR #1's head
+carries 806 book-path objects including all seven book texts. Neither a force-push nor the owner can
+delete it. Restored local master to origin (trees byte-identical, so no file changed); cleaned
+history preserved as a 152 MB bundle beside a full pre-purge mirror and the 7 book texts.
+
+ALSO FOUND, verified, left for him: the app has NO disclaimer anywhere in the live DOM (zero hits
+for medical advice / not affiliated / consult / diagnose across 5,135 chars including hidden nodes)
+-- they exist only in the README. README numbers all stale: 94 gates (actual 107), 23 external (24),
+2,611 claims (2,601), 38 probes (58), 44 tests (55). GitHub reports NOASSERTION because the LICENSE
+carries a scope note after the MIT text. No README screenshot, no topics, no homepage URL. No
+Apache-2.0 copy under vendor/tesseract/. 16 tracked files embed the Windows username.
+test_food_composition_traces_to_source.py fails one negative-control case -- PROVEN pre-existing by
+stashing only tools/invariants.py and re-running against HEAD's copy.
+
+WHAT PASSED: remote fully in sync (1241/1241, README byte-identical); ZERO hard credentials across
+16,882 history blobs; 0 tracked-but-ignored files; the committed bundle is BYTE-IDENTICAL to a
+rebuild; board 107/107 in a fresh clone with the books absent; and the no-network claim holds --
+two fetch() sites, both relative, with a live browser test showing 0 off-machine requests and a
+planted remote image as a negative control that DID fire.
+
+LIVE SITE re-verified after his upload: 14 tags serving, card byte-identical to the repo copy,
+max-age=0 must-revalidate on the card, Content-Encoding ABSENT on the OCR model, hashed bundle
+immutable, index revalidating.
+
+THREE INSTRUMENTS LIED, each caught only by a control, all the same shape -- a measurement that
+could not see its own subject. dist-web hashes differ on EVERY build (11 non-deterministic WOFF2
+fonts). A collision check measuring element BOXES called a share card clean while its headline ran
+169px under the artwork: measure the INK, not the box. And a "0 blobs" verification came from a
+broken pipeline, not a clean repo -- a zero from a broken instrument is indistinguishable from a
+pass.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

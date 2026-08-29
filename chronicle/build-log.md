@@ -1529,3 +1529,71 @@ case — "provenance `working` does not match the terms used: stayed GREEN on po
 PRE-EXISTING, proven by stashing only tools/invariants.py and re-running against HEAD's copy: the
 identical failure. The shipped gate is green on the board; the blind spot is in what the test proves
 about it. Unrelated to this work and left for him to rule on.
+
+[2026-08-28 22:42 CDT] audit/pre-launch · A read-only audit of the public repository, run before pointing Hacker News and Reddit at it. The headline finding is that the copyrighted books were never actually removed from GitHub: a previous session UNTRACKED them, which clears them from the working folder and leaves every byte in the history, and the README said they were "not distributed here" on that basis. Anyone could retrieve the complete text of any of the seven books with one command. He was told this had been handled; it had not. A full purge was built, demonstrated and verified, and he then ruled to leave the history as it is — his call, recorded, closed. Nothing about the app or the website changed today beyond the SEO work logged earlier.
+
+SCOPE: read-only Phase 1 across remote sync, git history, secrets, licensing, fresh-clone
+reproducibility, the no-network claim, and the launch surface. Every claim was made from a command,
+not from the README.
+
+★ THE BOOKS ARE IN origin/master's HISTORY. PDFs + EPUB: 7 files, 97.65 MB, added `a8e1bd22`
+(2026-06-21), deleted `7d264b42` (2026-07-04). Full OCR'd TEXT: `eden/corpus/books/*.txt`, added
+`01669ee1`, untracked `05ec2d09` — a commit literally titled "untrack copyrighted book sources for
+public release". Proven retrievable, not inferred: `git show 05ec2d09^:…dddl…txt` returned 974,037
+bytes of Dead Doctors Don't Lie including its own copyright notice. Also 467 YouTube caption files
+and 423 lecture transcripts.
+
+A PURGE WAS PERFORMED AND THEN REVERTED. Two `git-filter-repo` passes removed 1,253 blobs / 531 MB
+and left 1,241 commits, 0 copyrighted paths, pack 340 MB → 123 MB, build OK, board 107/107. The
+second pass existed because the first, built from directory names, MISSED two classes that only a
+content fingerprint found: `tools/frontface/ocr-cache/` (2.4 MB of OCR'd book PAGES, 406 KB in one
+file, contiguous runs to 4,282 chars) and `chronicle/ratify-unverified-2026-08-19/rare-earths/pages/`
+(23 scanned page images). Lesson for any future purge: enumerate by content, never by folder name.
+
+★ AND A FORCE-PUSH WOULD NOT HAVE BEEN ENOUGH. GitHub keeps `refs/pull/*` refs PERMANENTLY. Closed
+PR #1's head carries 806 book-path objects including all seven book texts, and neither a force-push
+nor the repo owner can delete that ref — only deleting the repository removes it. That is why the
+recommendation was delete-and-recreate. HE DECLINED: "I'm not deleting the repo simply because the
+books are in the history, they're not in the live files so if someone digs them up that's on them."
+SETTLED. Local `master` was restored to match `origin` exactly (trees were byte-identical, so no
+file changed) and the cleaned history is preserved as a 152 MB bundle in the backup folder.
+
+NOTHING ON THE DASHBOARD WAS EVER AFFECTED — measured, not assumed. Every book-path string in
+dist/main.js sits inside the inlined Creator's Log prose; zero unexplained. `eden/graphics/` are his
+own work (he said so) and stay, which also keeps `essentials_canon_matches_graphic` anchored. The
+one PDF still in history, `dashboard/assets/luneth-slab-mask.pdf`, is a 1-page Adobe Photoshop
+export with no Wallach content.
+
+WHAT ELSE THE AUDIT FOUND, all verified, all left for him:
+  - THE APP HAS NO DISCLAIMER. Driven on the LIVE site: zero occurrences of "medical advice",
+    "not affiliated", "consult" or "diagnose" in document.documentElement.textContent (5,135 chars,
+    hidden nodes included). Every disclaimer is README-only.
+  - README numbers all stale: 94 gates (actual 107), 23 external (24), 2,611 claims (2,601),
+    38 probes (58), 44 tests (55).
+  - GitHub reports NOASSERTION — no licence badge — because the LICENSE carries a SCOPE NOTE after
+    the MIT text and GitHub's classifier only matches byte-canonical licence text.
+  - No README screenshot, no GitHub topics, no homepage URL, doctrine-first repo description.
+  - Tesseract.js attributed in the scope note but no Apache-2.0 licence copy under vendor/tesseract/.
+  - 16 tracked files embed the Windows username in absolute paths.
+  - `test_food_composition_traces_to_source.py` fails one negative-control case — PROVEN
+    pre-existing by stashing only tools/invariants.py and re-running against HEAD's copy.
+
+WHAT PASSED, and these are the strong ones: remote fully in sync (1241/1241, README byte-identical);
+ZERO hard credentials across 16,882 history blobs (every `sk-` hit is a CSS class); 0 tracked files
+that .gitignore claims to ignore; the committed bundle is BYTE-IDENTICAL to a rebuild
+(sha256 9ca6c1e7…); board 107/107 in a fresh clone with the books absent; and the no-network claim
+holds — only two real fetch() sites, both `./assets/…`, with a live browser test showing 0
+off-machine requests and a planted remote image as a negative control that DID fire.
+
+THE LIVE SITE WAS RE-VERIFIED against the real host after he uploaded: all 14 tags serving, share
+card byte-identical to the repo copy (c0d6630844c685cb), card `max-age=0, must-revalidate`,
+`Content-Encoding` ABSENT on eng.traineddata.gz, hashed bundle `immutable`, index revalidating.
+
+THREE INSTRUMENTS LIED TODAY, each caught only by a control, and all three are the same shape — a
+measurement that could not see its own subject: dist-web hashes differ on EVERY build (11 WOFF2
+fonts are non-deterministic); a collision check measuring element BOXES called a share card clean
+while its headline ran 169px under the artwork (measure the INK, not the box); and a "0 blobs"
+verification came from a broken pipeline rather than a clean repo. A zero from a broken instrument
+is indistinguishable from a pass.
+
+NO SHIPPED SURFACE CHANGED IN THIS ENTRY. Board 107/107, build fresh, `master` == `origin/master`.
