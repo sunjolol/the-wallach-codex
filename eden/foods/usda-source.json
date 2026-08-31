@@ -183,6 +183,18 @@
       "usda_unit": "G",
       "why": "PUFA 18:2 CLAs — SUBTRACTED from the 18:2 aggregate, because the aggregate includes it and conjugated linoleic acid is not the essential fatty acid Wallach names. 0-0.7% of 18:2 in the nuts and seeds that qualify."
     },
-    "_efa_why_here": "These three are NOT in nutrient_map and must never be: omega-3 and omega-6 carry no individual Wallach target — he states ONE amount for the essential fatty acids as a category — so a food credited against either would be measured against a number that does not exist. They are inputs to the EFA aggregate instead, which is the same shape the 34 plant-derived minerals already use."
+    "epa": {
+      "nutrient_id": "1278",
+      "usda_unit": "G",
+      "why": "PUFA 20:5 n-3 — eicosapentaenoic acid, one of the two MARINE forms Wallach files under omega-3: 'further divided into the Omega-3 (DHA and EPA)' (Epigenetics, 2014). He names salmon oil as an essential-fatty-acid source interchangeable with flaxseed oil at the SAME dose — 'taken alternately as salmon oil and flaxseed oil at the rate of 5 grams t.i.d.' (Let's Play Doctor, 1995) — and calls cold-water fish 'rich sources of the essential fatty acids' (Rare Earths, 1994). Added 2026-08-31. Until then this row was never extracted, so a food's EFA was its 18:2/18:3 alone: canned salmon scored 1.5% of his nine grams and fell off the omega-3 list while pork ribs sat at 36%, and a fish-oil softgel was credited its full label oil mass. Owner ruling, Luneth 2026-08-31."
+    },
+    "dha": {
+      "nutrient_id": "1272",
+      "usda_unit": "G",
+      "why": "PUFA 22:6 n-3 — docosahexaenoic acid, the other marine form named in that same sentence. Converted against SALMON oil, never flaxseed oil: in this same pinned archive flaxseed oil (fdc 167702) reads 0.000 g of BOTH 20:5 and 22:6, so flax-equivalent grams are not a currency a fish can be paid in. See _efa_why_two_oils in this file."
+    },
+    "_efa_why_no_dpa": "USDA 1280 (22:5 n-3, docosapentaenoic acid) is an omega-3 and is deliberately NOT extracted. Wallach names EPA and DHA; he never names DPA. Adding a form he does not name to a meter measured against his nine grams would be widening his claim by inference, which is the silent guess section 00.A forbids — so the marine numerator and the salmon-oil denominator both stop where his words stop. Salmon oil carries 2.991 g of it per 100 g, so including it would move a fish by roughly a tenth; the reason to leave it out is the rule, not the size.",
+    "_efa_why_two_oils": "The EFA meter converts a food's ACID into the OIL Wallach doses, and he doses TWO. The 18:2/18:3 share converts against flaxseed oil (fdc 167702, 67.695% LA+ALA); the 20:5/22:6 share converts against salmon oil (fdc 172343, 31.255% EPA+DHA). Both fractions are read from the pinned archive at derive time, never typed. One oil for both shares was tried first and is wrong in the direction that matters: flaxseed oil contains none of what a fish carries.",
+    "_efa_why_here": "These five are NOT in nutrient_map and must never be: omega-3 and omega-6 carry no individual Wallach target — he states ONE amount for the essential fatty acids as a category — so a food credited against either would be measured against a number that does not exist. They are inputs to the EFA aggregate instead, which is the same shape the 34 plant-derived minerals already use."
   }
 }

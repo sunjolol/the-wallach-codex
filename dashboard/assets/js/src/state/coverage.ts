@@ -614,11 +614,14 @@ function efaAggregate(items: RegimenItem[], overrides: OverridesMap): EfaDeliver
   for (const item of items) {
     const name = typeof item.label.name === 'string' ? item.label.name.toLowerCase() : '';
     // ★ A FOOD ENTERS THIS METER IN OIL, LIKE A PRODUCT. Wallach's dose is nine grams of
-    // FLAXSEED OIL, so the meter counts oil mass; USDA measures a food's linoleic and
-    // linolenic ACID. state/foods.ts converts through the composition of the oil he named
-    // (read from the pinned archive), so both currencies arrive here already the same one.
-    // Converting HERE instead would put that conversion in two places.
+    // oil, so the meter counts oil mass; USDA measures a food's fatty ACIDS. The generator
+    // converts through the composition of the oils he named (read from the pinned archive),
+    // so both currencies arrive here already the same one. Converting HERE instead would put
+    // that conversion in two places.
     // Owner ruling, Luneth 2026-08-22: convert foods to oil-equivalent, ONE meter.
+    // Owner ruling, Luneth 2026-08-31: TWO oils feed that equivalent — flaxseed for 18:2/18:3
+    // and salmon for 20:5/22:6 — because he doses the two alternately at the same rate and
+    // flaxseed oil carries none of what a fish does.
     const foodId = item.label['food_id'];
     const mg = typeof foodId === 'string' ? foodEfaOilMg(foodId) : map.get(name);
     if (mg === undefined || mg <= 0) {

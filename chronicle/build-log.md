@@ -1714,3 +1714,100 @@ pending, so none was run.
 
 VERIFIED: board 108/108 · dist/main.js fresh (100 .ts files all older) · live site driven green ·
 local master == origin/master.
+
+[2026-08-31 11:56 CDT] foods/efa-marine-forms · Salmon and every other oily fish are now on the omega-3 food list, where they always belonged. He asked why no fish showed up under the essential fatty acids when he knew for a fact that salmon is loaded with them, and Wallach says so too. He was right, and the cause was ours: the app measured a food's essential fats using only the two forms found in plants, and never even loaded the two forms found in fish. Salmon therefore scored 1.5% of Wallach's daily amount and dropped off the list entirely, while pork ribs sat at 36% — and the only two fish that did appear were there for their omega-SIX, not their omega-3. Meanwhile a fish-oil capsule was credited its full label amount, so the app was rewarding the capsule and refusing the fish it came from. Fixed by measuring the fish forms too and converting them against SALMON oil rather than flaxseed oil, because flaxseed oil contains none of what a fish carries, and because Wallach prescribes the two oils alternately at exactly the same dose. Salmon now reads 37%, herring 69%. A new integrity check guards it, and that check was deliberately broken four times to prove it actually notices.
+
+THE DEFECT, measured rather than inferred. `eden/foods/usda-source.json::support_nutrients` bound
+exactly three USDA nutrients into the EFA aggregate: 1269 (PUFA 18:2, linoleic), 1270 (PUFA 18:3,
+linolenic), minus 1311 (CLA). EPA (1278) and DHA (1272) had ZERO rows in
+`eden/foods/extract/food_nutrient.csv` — never pulled, so no amount of ranking logic could have
+recovered them. Fish carry their omega-3 almost entirely as those two. Canned salmon with bones
+read 0.057 g LA + 0.049 g ALA per 100 g, converting to 133 mg of flaxseed-oil equivalent = 1.5% of
+Wallach's 9 g, under the 7% entry bar. Catfish (14.7%) and rainbow trout (9.3%) were the only fish
+on the list and BOTH qualified on linoleic acid. Ahead of them: duck 104%, ground turkey 37%, pork
+ribs 36%. Products feed the same meter in oil mass read off the label, so `Omega(TM) 120 Softgels`
+was credited 1,000 mg and `ReVERSE!(R)` 2,000 mg while the 3 oz salmon serving carrying 1,075 mg of
+real EPA+DHA got 133 mg.
+
+WALLACH SAYS THE OPPOSITE IN THREE PLACES, byte-exact from the sealed corpus:
+  - `WAL-CLM-RARE-000414` (Rare Earths, 1994): "The salmon and other cold water fish in their diet
+    provide rich sources of the essential fatty acids required by the liver to properly process
+    cholesterol and prevent platelet clumping."
+  - `WAL-CLM-LETS-000150` (Let's Play Doctor, 1995): "Essential fatty acids are of great value and
+    may be taken alternately as salmon oil and flaxseed oil at the rate of 5 grams t.i.d."
+  - `WAL-CLM-DDDL-000161` (Dead Doctors Don't Lie, 2011): "other than the essentials— i.e. flaxseed
+    oil and/or salmon oil"
+And in the NEWEST book, Epigenetics (2014), he still files the marine forms under omega-3:
+"further divided into the Omega-3 (DHA and EPA)". There is no Wallach-versus-Wallach contradiction
+to arbitrate — the narrowing was ours. The page argued against itself on one screen: its own hero
+reads "One from plants. Two from the sea" and "DHA — found mostly in seafood", and four cards down
+its own Q&A answers "What are the best sources of omega-3?" with "flaxseed oil and salmon oil".
+
+THE RULING (his, put to him as a four-way choice and answered "count marine, salmon-oil
+denominator"): two reference oils, each converting the acids it actually carries, summed.
+  18:2 + 18:3 - CLA  ->  FLAXSEED oil (fdc 167702, 67.695% LA+ALA)
+  20:5 + 22:6        ->  SALMON   oil (fdc 172343, 31.255% EPA+DHA)
+Both fractions READ FROM THE PINNED ARCHIVE at derive time, never typed. Flaxseed oil reads 0.000 g
+of BOTH 20:5 and 22:6 in that same archive, which is why one oil for both shares is wrong in the
+direction that matters. No new Wallach number: the denominator is still 9 g from the sealed
+`WAL-CLM-DDDL-000115`, and USDA supplies COMPOSITION only — the role ruled admissible 2026-08-21.
+
+DPA (22:5 n-3, USDA 1280) DELIBERATELY EXCLUDED from both the numerator and the salmon denominator.
+Wallach names EPA and DHA; he never names DPA. Salmon oil carries 2.991 g/100 g of it, so including
+it would move a fish by roughly a tenth — the reason to leave it out is section 00.A, not the size.
+Recorded in `usda-source.json::_efa_why_no_dpa`, and clause (4) of the new gate reds if anything
+ever binds 1280.
+
+THE NUMBERS, after re-derive: qualifying foods 64 -> 83 of 250; fish 2 -> 19 of 25. Herring
+4.5 -> 68.7%, mackerel 3.0 -> 58.8%, sardines 5.2 -> 49.4%, canned salmon 1.5 -> 37.0%, rainbow
+trout 9.3 -> 35.8%, sockeye 3.5 -> 29.4%, swordfish 1.7 -> 28.9%, tuna 1.8 -> 27.8%. 20 foods owe
+their place ENTIRELY to EPA/DHA (17 fish plus lamb kidneys, pork liver, sirloin steak). Nuts and
+seeds did not move a decimal — walnuts 219.5%, hemp 183.6% — because they carry no marine forms.
+Kiwifruit still stores fraction 0.07 with qualifies:false, the documented rounding boundary,
+unmoved.
+
+THE GATE: `efa_marine_share_converts_against_salmon_oil`, anchor_class EXTERNAL, severity critical.
+Board 108 -> 109, external 24 -> 25. Five clauses: (1) both oils recompute from the extract's own
+cells and may not be equal; (2) every food's oil_equivalent_mg == plant share + marine share; (3)
+each share reproduces from source at that food's own grams; (4) DPA binds to nothing; (5) THE
+MARINE SHARE IS LOAD-BEARING, asserted by existence — at least one qualifying food is carried
+mainly by it.
+
+NEGATIVE CONTROL — four deliberate re-breaks, each restored byte-exact:
+  1. salmon's fraction typed 10% off its source cells  -> RED, caught by clause (1)
+  2. marine share converted against flaxseed oil       -> RED, caught by clause (2)
+  3. marine shares zeroed, sums rebalanced consistent  -> RED, caught by clause (3)
+  4. 346 marine rows stripped from the extract, re-derived -> RED, caught by clause (5) ALONE.
+Break 4 is the original defect reproduced exactly, and it matters: the derive printed
+"OK  foods-composition-data.json: 250 foods, 31 measurable essentials" — a SUCCESSFUL derive — with
+every marine term reading 0.0. Only clause (5) noticed. Extract restored and sha256-verified
+identical; gate green again after each.
+
+FILES: eden/foods/usda-source.json (epa/dha bound, _efa_why_no_dpa + _efa_why_two_oils recorded) ·
+eden/tools/foods_composition_derive.py (new `_oil_fraction`, two-oil `_efa_reference` and `_efa_of`,
+SALMON_FDC added to both wanted_fdc sets) · eden/foods/extract/{food,food_nutrient,sr_legacy_food}.csv
+regenerated via --extract · dashboard/assets/data/foods-composition-data.json re-derived ·
+core/schemas/foods-composition.ts (marine fields typed; four drifted doc-comments corrected) ·
+state/foods.ts + state/coverage.ts (three more drifted comments — every one said "flaxseed oil"
+about a number that is now flaxseed PLUS salmon) · tools/invariants.py (gate + registration) ·
+CLAUDE.md + README.md (108->109, 24->25, both caught by their own count-gates) ·
+chronicle/decisions/2026-08-31-efa-marine-forms.md (the ruling, his verbatim question, the three
+quotes, and the limit no gate can cross).
+
+VERIFIED: board 109/109, 0 failed (external 25 / consistency 37 / structural 45 / meta 2) ·
+`npm run typecheck` clean · `npm test` 100 passed in 8 files · `node tools/build.mjs` OK,
+dist/main.js 14144.5 KB · 8 render probes on the touched surfaces all exit 0 (efa_foods,
+food_efa_rank, omega, food_block, food_tile, foods, food_catalog, goal_filter_census) · the corrected
+list DRIVEN in the real app and screenshotted, not grepped — herring 6,180 mg 69%, mackerel 5,293 mg
+59%, sardines 4,446 mg 49%, canned salmon 3,329 mg 37%, "Show all 83".
+
+NOTHING TO SEAL. No sealed pillar was touched: eden/corpus, eden/catalog and eden/products are
+untouched in this diff. `eden/foods/` is a pinned SOURCE extract, not a sealed pillar, and it was
+regenerated by its own generator from the sha256-pinned archive. corpus_seal / catalog_seal are
+USER-ONLY and had nothing pending, so neither was run.
+
+FLAGGED, NOT FIXED: the omega-3 and omega-6 tiles share ONE meter because Wallach states one
+collective amount and `collective_doses_not_fanned` forbids splitting it — so all 83 foods,
+herring included, now appear on the omega-6 page too. That rule is unchanged and already cut the
+other way (duck was on the omega-3 page for its omega-6 fat). Left alone pending his call.
+CLAUDE.md changed, so the next session should reboot before leaning on it.

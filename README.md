@@ -179,7 +179,7 @@ export/import is plain JSON.
 
 ```bash
 node tools/build.mjs                     # type-check (tsc) + bundle (esbuild)
-PYTHONUTF8=1 python tools/invariants.py  # the integrity board — 108 gates
+PYTHONUTF8=1 python tools/invariants.py  # the integrity board — 109 gates
 node tools/probes/render_probe.js        # a headless render check
 ```
 
@@ -210,8 +210,8 @@ reach past state, `localStorage` is confined to `core/storage.ts`, and `any` is 
 
 ### What a green board means
 
-`invariants.py` reports 108 gates. Green means **nothing drifted** — it does not mean anything is right.
-Only the 24 gates anchored outside the project's own files (book bytes, physical constants, git) can
+`invariants.py` reports 109 gates. Green means **nothing drifted** — it does not mean anything is right.
+Only the 25 gates anchored outside the project's own files (book bytes, physical constants, git) can
 catch a value that is wrong but self-consistent. The board prints that split every run, and it is worth
 reading honestly.
 

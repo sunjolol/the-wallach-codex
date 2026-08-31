@@ -566,51 +566,116 @@ def _second_source_rows(food_id: str, ndb: str, grams: float, water: float, matc
 # ── the essential-fatty-acid aggregate ───────────────────────────────────────
 # ★ WHY FOODS ENTER THE EFA METER IN OIL, NOT IN ACID. Wallach's dose is nine grams of
 # FLAXSEED OIL ("essential fatty acids as flaxseed oil at 9 grams per day"), so the meter
-# products already feed counts OIL MASS. USDA measures a food's linoleic and linolenic ACID.
-# Those are different quantities and summing them into one meter would be adding pounds to
-# kilograms -- a salmon fillet's 12 g of fat is not 12 g of Wallach's flaxseed oil.
+# products already feed counts OIL MASS. USDA measures a food's fatty ACIDS. Those are
+# different quantities and summing them into one meter would be adding pounds to kilograms
+# -- a salmon fillet's 12 g of fat is not 12 g of the oil Wallach doses.
 #
-# The conversion is his own dose read through the composition of the oil he named: USDA
-# measures cold-pressed flaxseed oil at 14.327 g linoleic + 53.368 g linolenic per 100 g, so
-# nine grams of it delivers 6.09 g of actual EFA. A food's EFA divided by that same fraction
-# is therefore "how much of HIS nine grams this food is worth", which is exactly what the
-# meter counts. Owner ruling, Luneth 2026-08-22: convert foods to oil-equivalent, one meter.
+# ★ AND WHY THERE ARE TWO REFERENCE OILS, NOT ONE (owner ruling, Luneth 2026-08-31). He does
+# not name one oil. He names two, and he doses them INTERCHANGEABLY at the same rate:
+#   "Essential fatty acids are of great value and may be taken alternately as salmon oil and
+#    flaxseed oil at the rate of 5 grams t.i.d."        -- Let's Play Doctor (1995)
+#   "other than the essentials-- i.e. flaxseed oil and/or salmon oil"
+#                                                       -- Dead Doctors Don't Lie (2011)
+#   "The salmon and other cold water fish in their diet provide rich sources of the
+#    essential fatty acids required by the liver..."    -- Rare Earths (1994)
+# A gram of salmon oil is worth a gram of flaxseed oil in his protocol, so a food's acids are
+# converted against whichever of his two oils actually carries them, and the two oil masses
+# are SUMMED -- both are grams of an oil he prescribes at nine per day:
+#   18:2 + 18:3 - CLA  ->  FLAXSEED oil (fdc 167702, 67.695% LA+ALA)
+#   20:5 + 22:6        ->  SALMON   oil (fdc 172343, 31.255% EPA+DHA)
 #
-# The fraction is READ FROM THE PINNED ARCHIVE at derive time, never typed: if the pinned
-# release ever restates flaxseed oil, every food moves with it.
+# ⚠ ONE OIL FOR BOTH SHARES IS WRONG IN THE DIRECTION THAT MATTERS. Flaxseed oil reads
+# 0.000 g of BOTH 20:5 and 22:6 in this same pinned archive, so "grams of flaxseed oil" is
+# not a currency a fish can be paid in. Until 2026-08-31 neither marine row was extracted at
+# all and every food's EFA was its trace 18:2/18:3 alone: canned salmon scored 1.5% of his
+# nine grams and did not appear on the omega-3 list, pork ribs sat at 36%, and a fish-oil
+# softgel was still credited its full label oil mass. 2 of 25 fish qualified -- and both of
+# those qualified on their omega-SIX. See chronicle/decisions/2026-08-31-efa-marine-forms.md.
 #
-# ⚠ ONE DELIBERATE ASYMMETRY. CLA is subtracted from a FOOD's 18:2 but not from the flaxseed
-# reference, because that is how the denominator was stated when it was approved (67.695%).
-# Flaxseed oil's CLA is 0.031 g/100 g, so the asymmetry is 0.05% -- immaterial, and recorded
-# rather than silently "fixed", because the approved number is the approved number.
+# ⚠ DPA (22:5 n-3, USDA 1280) IS DELIBERATELY OUT of both the numerator and the salmon
+# denominator. Wallach names EPA and DHA; he never names DPA. Adding a form he does not name
+# to a meter measured against his amount would be widening his claim by inference. See
+# usda-source.json::_efa_why_no_dpa.
+#
+# Both fractions are READ FROM THE PINNED ARCHIVE at derive time, never typed: if the pinned
+# release ever restates either oil, every food moves with it.
+#
+# ⚠ ONE DELIBERATE ASYMMETRY, PRESERVED. CLA is subtracted from a FOOD's 18:2 but not from
+# the flaxseed reference, because that is how the denominator was stated when it was
+# approved (67.695%). Flaxseed oil's CLA is 0.031 g/100 g, so the asymmetry is 0.05% --
+# immaterial, and recorded rather than silently "fixed", because the approved number is the
+# approved number. The salmon reference carries no such history: it is exactly its own
+# 20:5 + 22:6, and salmon oil reports no CLA at all.
 FLAX_FDC = "167702"          # Oil, flaxseed, cold pressed
-EFA_NUTRIENTS = ("linoleic", "linolenic", "conjugated_linoleic")
+SALMON_FDC = "172343"        # Fish oil, salmon -- the second oil he names, at the same dose
+EFA_NUTRIENTS = ("linoleic", "linolenic", "conjugated_linoleic", "epa", "dha")
+PLANT_EFA = ("linoleic", "linolenic")
+MARINE_EFA = ("epa", "dha")
+
+
+def _oil_fraction(comp_all: dict, support: dict, fdc: str, keys: tuple, what: str) -> tuple:
+    """One reference oil's own EFA fraction by mass, from the pinned source. Never a literal.
+
+    Returns (fraction, {key: g_per_100g}). A missing cell is a HARD FAIL: the oil is the
+    conversion's denominator, and a missing denominator is a missing conversion, never a
+    default one.
+    """
+    row = comp_all.get(fdc) or {}
+    cells = {}
+    for k in keys:
+        v = row.get(support[k]["nutrient_id"])
+        if v in (None, ""):
+            raise FoodsCompositionError(
+                f"{what} (fdc {fdc}) carries no {support[k]['nutrient_id']} ({k}) in the "
+                f"extract, so the oil-equivalent conversion has no denominator. It must be "
+                f"in the extract's wanted_fdc set and its nutrient_id in support_nutrients "
+                f"-- a missing reference is a missing conversion, never a default."
+            )
+        cells[k] = v
+    fraction = sum(float(v) for v in cells.values()) / 100.0
+    if not 0.2 < fraction < 1.0:
+        raise FoodsCompositionError(
+            f"{what} reads {fraction:.4f} EFA by mass, which is not a plausible oil. "
+            f"Re-read the source.")
+    return fraction, cells
 
 
 def _efa_reference(comp_all: dict, support: dict) -> dict:
-    """Flaxseed oil's own EFA fraction, from the pinned source. Never a literal."""
-    row = comp_all.get(FLAX_FDC) or {}
-    la = row.get(support["linoleic"]["nutrient_id"])
-    ala = row.get(support["linolenic"]["nutrient_id"])
-    if la is None or ala is None:
-        raise FoodsCompositionError(
-            f"flaxseed oil (fdc {FLAX_FDC}) carries no 18:2/18:3 in the extract, so the "
-            f"oil-equivalent conversion has no denominator. It must be in the extract's "
-            f"wanted_fdc set -- a missing reference is a missing conversion, never a default."
-        )
-    fraction = (float(la) + float(ala)) / 100.0
-    if not 0.2 < fraction < 1.0:
-        raise FoodsCompositionError(
-            f"flaxseed oil reads {fraction:.4f} EFA by mass, which is not a plausible oil. "
-            f"Re-read the source.")
+    """The TWO reference oils Wallach names, read from the pinned source. Never a literal.
+
+    ★ `efa_fraction` STAYS THE FLAX ONE at the top level. It is the plant conversion, it is
+    what the shipped Zod schema requires under that name, and re-pointing a published key at
+    a different quantity is exactly the token-indirection failure this project keeps meeting.
+    The marine oil ships BESIDE it under `marine`, so both are legible and neither is hidden.
+    """
+    flax_fraction, flax_cells = _oil_fraction(
+        comp_all, support, FLAX_FDC, PLANT_EFA, "flaxseed oil")
+    salmon_fraction, salmon_cells = _oil_fraction(
+        comp_all, support, SALMON_FDC, MARINE_EFA, "salmon oil")
     return {
         "fdc_id": FLAX_FDC,
         "description": "Oil, flaxseed, cold pressed",
-        "linoleic_g_per_100g": la,
-        "linolenic_g_per_100g": ala,
-        "efa_fraction": round(fraction, 5),
+        "linoleic_g_per_100g": flax_cells["linoleic"],
+        "linolenic_g_per_100g": flax_cells["linolenic"],
+        "efa_fraction": round(flax_fraction, 5),
         "label": "Omega EFAs",
         "category": "fatty_acids",
+        # The second oil, for the 20:5/22:6 share. Same shape, same provenance, read the
+        # same way -- so a fish is converted against the oil Wallach names for a fish.
+        "marine": {
+            "fdc_id": SALMON_FDC,
+            "description": "Fish oil, salmon",
+            "epa_g_per_100g": salmon_cells["epa"],
+            "dha_g_per_100g": salmon_cells["dha"],
+            "efa_fraction": round(salmon_fraction, 5),
+            "_why": (
+                "Wallach doses salmon oil and flaxseed oil ALTERNATELY at the same 5 g "
+                "t.i.d., so a gram of either is a gram of his EFA dose -- but flaxseed oil "
+                "carries 0.000 g of both 20:5 and 22:6 in this archive, so a fish's omega-3 "
+                "cannot be honestly expressed in flaxseed grams. The marine share converts "
+                "against this oil instead, and the two oil masses are summed."
+            ),
+        },
         "_label_why": (
             "The one display string in this artifact that is NOT derived from the canon. The "
             "essential-fatty-acid GROUP has no canonical short name -- omega-3 and omega-6 "
@@ -623,7 +688,7 @@ def _efa_reference(comp_all: dict, support: dict) -> dict:
 
 
 def _efa_goal() -> dict:
-    """Wallach's ONE amount for the EFA group, in the mg of flaxseed oil this file counts.
+    """Wallach's ONE amount for the EFA group, in the mg of oil this file counts.
 
     9 g -> 9000 mg is a UNIT CHANGE of a figure he wrote, never a new amount, and it ships
     with the id of the claim it came from (section 00.A). The group is scored on ONE meter
@@ -658,9 +723,15 @@ def _efa_goal() -> dict:
     }
 
 
-def _efa_of(row: dict, support: dict, grams: float, oil_fraction: float,
+def _efa_of(row: dict, support: dict, grams: float, ref: dict,
             target_mg: float) -> dict:
-    """One food's EFA delivery, expressed in Wallach's own currency: grams of flaxseed oil.
+    """One food's EFA delivery, in Wallach's own currency: grams of the oil he doses.
+
+    TWO SHARES, each converted against the oil that actually carries it, then summed:
+      plant  = 18:2 + 18:3 - CLA, over flaxseed oil's 67.695%
+      marine = 20:5 + 22:6,       over salmon   oil's 31.255%
+    Both are grams of an oil he prescribes at nine per day, so the sum is one number in one
+    currency. A food with neither share returns {} and carries no EFA term at all.
 
     `fraction` and `qualifies` MIRROR A NUTRIENT ROW exactly -- same kind of denominator (a
     Wallach number), same 7% entry bar, tested at full precision before rounding, so the group
@@ -676,17 +747,31 @@ def _efa_of(row: dict, support: dict, grams: float, oil_fraction: float,
         return None if v in (None, "") else v
 
     la, ala, cla = cell("linoleic"), cell("linolenic"), cell("conjugated_linoleic")
-    if la is None and ala is None:
+    epa, dha = cell("epa"), cell("dha")
+    if la is None and ala is None and epa is None and dha is None:
         return {}
-    acid_g = (float(la or 0) + float(ala or 0) - float(cla or 0))
-    if acid_g <= 0:
+    serving = grams / 100.0
+    # ★ CLA IS SUBTRACTED FROM THE PLANT SHARE ONLY, and that share is floored at zero rather
+    # than allowed to go negative and eat into the marine share: 18:2 is an aggregate that
+    # INCLUDES its conjugated forms, so the subtraction belongs to that aggregate and nowhere
+    # else. No catalog food currently reads CLA above its own 18:2; the floor is here so that
+    # a future source row which does cannot silently reduce a fish's omega-3.
+    plant_acid_g = max(0.0, float(la or 0) + float(ala or 0) - float(cla or 0))
+    marine_acid_g = float(epa or 0) + float(dha or 0)
+    if plant_acid_g <= 0 and marine_acid_g <= 0:
         return {}
-    acid_mg = acid_g * 1000.0 * (grams / 100.0)
-    oil_mg = acid_mg / oil_fraction
+    plant_oil_mg = plant_acid_g * 1000.0 * serving / ref["efa_fraction"]
+    marine_oil_mg = marine_acid_g * 1000.0 * serving / ref["marine"]["efa_fraction"]
+    acid_mg = (plant_acid_g + marine_acid_g) * 1000.0 * serving
+    oil_mg = plant_oil_mg + marine_oil_mg
     fraction = oil_mg / target_mg
     out = {
         "acid_mg": round(acid_mg, 4),
+        "plant_acid_mg": round(plant_acid_g * 1000.0 * serving, 4),
+        "marine_acid_mg": round(marine_acid_g * 1000.0 * serving, 4),
         "oil_equivalent_mg": round(oil_mg, 4),
+        "plant_oil_equivalent_mg": round(plant_oil_mg, 4),
+        "marine_oil_equivalent_mg": round(marine_oil_mg, 4),
         "fraction": round(fraction, 4),
         "qualifies": fraction >= QUALIFY_FRACTION,
         "strong": fraction >= STRONG_FRACTION,
@@ -695,6 +780,10 @@ def _efa_of(row: dict, support: dict, grams: float, oil_fraction: float,
     }
     if cla is not None:
         out["conjugated_linoleic_g_per_100g"] = cla
+    if epa is not None:
+        out["epa_g_per_100g"] = epa
+    if dha is not None:
+        out["dha_g_per_100g"] = dha
     return out
 
 
@@ -737,7 +826,7 @@ def build_data() -> dict:
     wanted_nid = {v["nutrient_id"] for v in nutrient_map.values()}
     wanted_nid |= {v["nutrient_id"] for k, v in
                    (meta.get("support_nutrients") or {}).items() if not k.startswith("_")}
-    wanted_fdc = {str(f["fdc_id"]) for f in curation["foods"]} | {FLAX_FDC}
+    wanted_fdc = {str(f["fdc_id"]) for f in curation["foods"]} | {FLAX_FDC, SALMON_FDC}
     comp = {}
     for r in _rows("food_nutrient.csv"):
         if r["fdc_id"] in wanted_fdc and r["nutrient_id"] in wanted_nid:
@@ -898,7 +987,7 @@ def build_data() -> dict:
             )
             continue
 
-        efa = _efa_of(comp.get(fdc_id) or {}, support, grams, efa_ref["efa_fraction"],
+        efa = _efa_of(comp.get(fdc_id) or {}, support, grams, efa_ref,
                       efa_goal["maintenance_mg"])
 
         portion_label = entry.get("portion_label") or _portion_label(portion, units)
@@ -1002,8 +1091,11 @@ def build_data() -> dict:
             "essentials_without_composition": sorted(
                 s for s in meta["no_usda_composition"]["slugs"] if s not in bindings),
             "food_count": len(out_foods),
-            # The reference oil, read from the pinned archive so a food's EFA can be stated
-            # in the same currency Wallach's dose is: grams of flaxseed oil.
+            # The TWO reference oils, read from the pinned archive so a food's EFA can be
+            # stated in the same currency Wallach's dose is: grams of an oil he prescribes.
+            # `efa_fraction` is FLAXSEED oil's, for the 18:2/18:3 share; `marine.efa_fraction`
+            # is SALMON oil's, for the 20:5/22:6 share -- he doses the two alternately at the
+            # same rate, so their oil masses are summed into one figure.
             "efa_reference": efa_ref,
             # ...and the Wallach amount that currency is measured against. Shipped so the
             # surface can hold the group to the same bar as a row without re-deriving the
@@ -1041,7 +1133,7 @@ def write_extract() -> None:
             "Download it from usda-source.json's url first.")
     curation = _curation()
     meta = _source_meta()
-    wanted_fdc = {str(f["fdc_id"]) for f in curation["foods"]} | {FLAX_FDC}
+    wanted_fdc = {str(f["fdc_id"]) for f in curation["foods"]} | {FLAX_FDC, SALMON_FDC}
     wanted_portion = {str(f["portion_id"]) for f in curation["foods"]}
     wanted_nid = {v["nutrient_id"] for k, v in meta["nutrient_map"].items()
                   if not k.startswith("_")}

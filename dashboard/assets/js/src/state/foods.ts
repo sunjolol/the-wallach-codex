@@ -244,11 +244,15 @@ const EFA_SLUG = 'essential-fatty-acids';
 const EFA_MEMBERS: ReadonlySet<string> = new Set(EFA_GOAL.members);
 
 /**
- * The flaxseed oil a serving of this food is worth, or 0.
+ * The Wallach-prescribed oil a serving of this food is worth, or 0.
  *
  * ★ EXPORTED FOR state/coverage.ts, which sums it into the shared EFA meter beside the
  * products. Foods enter in OIL because that is the currency Wallach's nine grams is stated
  * in; converting there instead would put the conversion in two places.
+ *
+ * ★ IT IS TWO OILS ADDED, NOT ONE. The generator converts the plant acids against flaxseed
+ * oil and the marine acids against salmon oil — both of which he doses at the same rate —
+ * and ships the sum. Read it; never re-derive it from the acid.
  */
 export function foodEfaOilMg(id: string): number {
   return BY_ID.get(id)?.efa?.oil_equivalent_mg ?? 0;
@@ -289,10 +293,11 @@ function hitsOf(food: Food): FoodHit[] {
         label: DATA._meta.efa_reference.label,
         category: DATA._meta.efa_reference.category,
         pct,
-        // The EFA group's amount is FLAXSEED OIL, not the acid the source measured —
-        // the same currency EFA_GOAL_MG is in, because that is the only pair of numbers
-        // it is honest to print beside each other. The unit is mg by construction: the
-        // goal field the percentage divides by is `maintenance_mg`.
+        // The EFA group's amount is OIL — flaxseed for the plant acids, salmon for the
+        // marine ones, summed by the generator — not the acid the source measured. That is
+        // the same currency EFA_GOAL_MG is in, and the only pair of numbers it is honest to
+        // print beside each other. The unit is mg by construction: the goal field the
+        // percentage divides by is `maintenance_mg`.
         amount: food.efa.oil_equivalent_mg,
         unit: 'mg',
         tier: 'EXACT',

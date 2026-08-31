@@ -7063,6 +7063,169 @@ def check_food_strength_reproduces_its_own_terms():
                   f"shipped .ts re-derives the bar")
 
 
+# ★ THE MARINE HALF OF THE EFA METER, added 2026-08-31 with the defect it exists to stop.
+# For as long as this app has ranked foods, the EFA aggregate counted 18:2 and 18:3 alone --
+# USDA 20:5 and 22:6 were never even pulled into the extract. Fish carry their omega-3 almost
+# entirely as those two, so canned salmon scored 1.5% of Wallach's nine grams and did not
+# appear on the omega-3 list at all, while pork ribs sat at 36% and a fish-oil softgel was
+# credited its full label oil mass. 2 of 25 fish qualified, and BOTH of those qualified on
+# their omega-SIX. Wallach's own books say the opposite in three places -- salmon oil doses
+# interchangeably with flaxseed oil at the same 5 g t.i.d. -- so this was our narrowing of his
+# claim, not his. See chronicle/decisions/2026-08-31-efa-marine-forms.md.
+#
+# ★ WHY CLAUSE (5) IS THE ONE THAT MATTERS. Every other clause here is satisfied by a marine
+# share of exactly zero: 0 + plant == plant, and 0 acid over any denominator is 0. Deleting
+# 20:5/22:6 from support_nutrients again would restore the original defect with this gate
+# still green. Only "some qualifying food's marine share EXCEEDS its plant share" notices,
+# which is the same assert-by-existence the uncapped clause next door uses.
+def check_efa_marine_share_converts_against_salmon_oil():
+    """The EFA meter has a marine half, and it converts against the oil Wallach names for it.
+
+      (1) BOTH OILS ARE READ, NEVER TYPED -- `_meta.efa_reference.efa_fraction` recomputes
+          from FLAXSEED oil's own 18:2 + 18:3 in the pinned extract, and
+          `.marine.efa_fraction` from SALMON oil's own 20:5 + 22:6. A literal that drifted
+          from the source REDs, and so does a reference oil missing from the extract.
+      (2) THE TWO SHARES ADD UP -- every food's `oil_equivalent_mg` == its plant share plus
+          its marine share, and each share == its own acid over its OWN oil's fraction. A
+          fish converted against flaxseed oil (which carries none of what a fish does) REDs.
+      (3) THE ACIDS ARE THE SOURCE'S -- `plant_acid_mg` and `marine_acid_mg` reproduce from
+          the extract's own (18:2, 18:3, CLA) and (20:5, 22:6) cells at the food's own grams.
+      (4) DPA STAYS OUT -- USDA 1280 (22:5 n-3) binds to nothing. Wallach names EPA and DHA
+          and never names DPA; a form he does not name must not enter a meter measured
+          against an amount he does (section 00.A -- never widen his claim by inference).
+      (5) THE MARINE SHARE IS LOAD-BEARING, ASSERTED BY EXISTENCE -- at least one QUALIFYING
+          food's marine share exceeds its plant share. See the note above: without this,
+          every marine term could read 0.0 and every other clause would still pass.
+
+    ★ WHAT THIS CANNOT DO. It proves the marine share exists, reproduces from the pinned
+    source, and uses salmon oil's own composition as its denominator. It cannot prove that
+    salmon oil is the RIGHT reference for a fish -- that is the owner's ruling of 2026-08-31
+    off Wallach's own text, not a fact any gate can establish.
+    """
+    import csv as _csv
+    import io as _io
+    import json as _json
+    art_p = ROOT / "dashboard" / "assets" / "data" / "foods-composition-data.json"
+    src_p = ROOT / "eden" / "foods" / "usda-source.json"
+    ext_p = ROOT / "eden" / "foods" / "extract" / "food_nutrient.csv"
+    for p in (art_p, src_p, ext_p):
+        if not p.exists():
+            return False, f"{p.relative_to(ROOT).as_posix()} is missing"
+
+    art = _json.loads(art_p.read_text(encoding="utf-8"))
+    meta = art.get("_meta") or {}
+    ref = meta.get("efa_reference") or {}
+    marine_ref = ref.get("marine") or {}
+    support = {k: v for k, v in
+               ((_json.loads(src_p.read_text(encoding="utf-8"))).get("support_nutrients")
+                or {}).items() if not k.startswith("_")}
+
+    # (4) DPA binds to nothing -- checked before anything depends on the bindings
+    viol = []
+    dpa = sorted(k for k, v in support.items() if str(v.get("nutrient_id")) == "1280")
+    if dpa:
+        viol.append(f"USDA 1280 (22:5 n-3, DPA) is bound as {dpa} -- Wallach names EPA and "
+                    f"DHA and never names DPA, so it must not feed a meter measured against "
+                    f"his nine grams. Unbind it, or take the source-rule override first")
+
+    need = ("linoleic", "linolenic", "conjugated_linoleic", "epa", "dha")
+    missing = [k for k in need if k not in support]
+    if missing:
+        return False, (f"usda-source.json::support_nutrients is missing {missing} -- the EFA "
+                       f"aggregate cannot be recomputed, and a marine share that is not bound "
+                       f"is the exact defect this gate exists to stop")
+    nid = {k: str(support[k]["nutrient_id"]) for k in need}
+
+    wanted_fdc = {str(f.get("fdc_id")) for f in (art.get("foods") or [])}
+    flax_fdc, salmon_fdc = str(ref.get("fdc_id")), str(marine_ref.get("fdc_id"))
+    wanted_fdc |= {flax_fdc, salmon_fdc}
+    cells = {}
+    with ext_p.open(encoding="utf-8", newline="") as fh:
+        for row in _csv.DictReader(fh):
+            if row.get("fdc_id") in wanted_fdc and row.get("nutrient_id") in nid.values():
+                cells.setdefault(row["fdc_id"], {})[row["nutrient_id"]] = row["amount"]
+
+    def g(fdc, key):
+        v = (cells.get(fdc) or {}).get(nid[key])
+        return None if v in (None, "") else float(v)
+
+    # (1) both oils recomputed from the source's own cells
+    oils = []
+    for fdc, keys, label, stated in (
+            (flax_fdc, ("linoleic", "linolenic"), "flaxseed oil", ref.get("efa_fraction")),
+            (salmon_fdc, ("epa", "dha"), "salmon oil", marine_ref.get("efa_fraction"))):
+        vals = [g(fdc, k) for k in keys]
+        if any(v is None for v in vals):
+            viol.append(f"{label} (fdc {fdc}) is missing {keys} in the extract -- a reference "
+                        f"oil absent from the source is a conversion with no denominator")
+            oils.append(None)
+            continue
+        recomputed = round(sum(vals) / 100.0, 5)
+        if not isinstance(stated, (int, float)) or round(float(stated), 5) != recomputed:
+            viol.append(f"{label}: the artifact states {stated!r} but the extract's own "
+                        f"{'+'.join(keys)} recompute to {recomputed} -- the denominator left "
+                        f"its source")
+        oils.append(recomputed)
+    flax_fraction, salmon_fraction = oils
+    if flax_fraction and salmon_fraction and abs(flax_fraction - salmon_fraction) < 1e-9:
+        viol.append(f"both reference oils read {flax_fraction} -- the marine share is being "
+                    f"converted against the plant oil, which carries none of 20:5/22:6")
+
+    # (2) + (3) every food's two shares, recomputed from the source
+    marine_dominant = 0
+    checked = 0
+    if flax_fraction and salmon_fraction:
+        for f in (art.get("foods") or []):
+            efa = f.get("efa")
+            if not efa:
+                continue
+            checked += 1
+            fdc, grams = str(f.get("fdc_id")), float(f.get("grams") or 0)
+            serving = grams / 100.0
+            la, ala = g(fdc, "linoleic") or 0.0, g(fdc, "linolenic") or 0.0
+            cla = g(fdc, "conjugated_linoleic") or 0.0
+            epa, dha = g(fdc, "epa") or 0.0, g(fdc, "dha") or 0.0
+            plant_acid = max(0.0, la + ala - cla) * 1000.0 * serving
+            marine_acid = (epa + dha) * 1000.0 * serving
+            want = {
+                "plant_acid_mg": round(plant_acid, 4),
+                "marine_acid_mg": round(marine_acid, 4),
+                "plant_oil_equivalent_mg": round(plant_acid / flax_fraction, 4),
+                "marine_oil_equivalent_mg": round(marine_acid / salmon_fraction, 4),
+            }
+            for k, v in want.items():
+                got = efa.get(k)
+                if not isinstance(got, (int, float)) or abs(float(got) - v) > 1e-3:
+                    viol.append(f"{f.get('id')}: efa.{k}={got!r} but the extract's own cells "
+                                f"at {grams:g} g give {v}")
+            total = (float(efa.get("plant_oil_equivalent_mg") or 0)
+                     + float(efa.get("marine_oil_equivalent_mg") or 0))
+            if abs(total - float(efa.get("oil_equivalent_mg") or -1)) > 1e-3:
+                viol.append(f"{f.get('id')}: oil_equivalent_mg {efa.get('oil_equivalent_mg')} "
+                            f"!= plant + marine ({total:.4f}) -- a share was dropped")
+            if efa.get("qualifies") and want["marine_oil_equivalent_mg"] > want["plant_oil_equivalent_mg"]:
+                marine_dominant += 1
+
+    # (5) the marine share is load-bearing, asserted rather than assumed
+    if not viol and marine_dominant == 0:
+        viol.append("no QUALIFYING food's marine share exceeds its plant share, so nothing "
+                    "here would notice 20:5/22:6 being dropped from the extract again -- "
+                    "every marine term would read 0.0 and every other clause would stay "
+                    "green. The catalog had 17 such foods when this gate was written; if "
+                    "they are genuinely gone, this clause needs a new anchor, not deletion")
+
+    if viol:
+        return False, ("the EFA marine share does not reproduce: " + "; ".join(viol[:6])
+                       + (f" ... (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+    return True, (f"both reference oils recompute from the pinned extract -- flaxseed "
+                  f"{flax_fraction:.5f} (18:2+18:3) for the plant share, salmon "
+                  f"{salmon_fraction:.5f} (20:5+22:6) for the marine one; all {checked} food(s) "
+                  f"with an EFA block reproduce BOTH shares and their sum from the source's own "
+                  f"cells; DPA (1280) binds to nothing, as Wallach never names it; and "
+                  f"{marine_dominant} qualifying food(s) are carried MAINLY by their marine "
+                  f"share, so a dropped 20:5/22:6 could not pass unnoticed")
+
+
 # Eden's WALL -- scanner_user_items_marked
 # ---------------------------------------------------------------------------
 # The scanner lets a user add ANY item to THEIR regimen, but a user/scanned item can
@@ -10237,6 +10400,15 @@ INVARIANTS = [
         truth_anchor="dashboard/assets/data/foods-composition-data.json's own rows x eden/corpus/claims/* (the sealed EFA dose) x efa-coverage-data.json's goal x the non-test .ts bytes of dashboard/assets/js/src, recomputed each run. PROVES THE KEY REPRODUCES ITS STATED ARITHMETIC AND USES HIS DENOMINATOR -- it says nothing about whether the resulting ORDER is good; that walnuts belong at #21 and not #47 is the owner's ruling, not a fact any gate can establish.",
         severity="critical",
         lesson_ref="`strength` is the DEFAULT order of all 192 foods whenever no goal is chosen, and it was ungated arithmetic summed over nutrient ROWS. The EFA group is not a row -- omega-3 and omega-6 carry no individual Wallach dose -- so a food delivering 220% of his nine grams scored ZERO for it and walnuts sat on page 47 of 64 in a list ordered by nutrition, with the card beside them printing the 220% all along. Nothing caught it: the number was internally consistent and the board was 100/100, because the defect was a TERM THAT WAS NOT THERE. Absence renders fine -- the same shape as the food sheet's unstyled Add button.",
+    ),
+    Invariant(
+        name="efa_marine_share_converts_against_salmon_oil",
+        anchor_class="external",  # bound to the pinned USDA source bytes, outside our hand-maintained data
+        description="the essential-fatty-acid meter has a MARINE half and converts it against the oil Wallach names for it -- both reference oils recompute from the pinned extract's own cells (flaxseed's 18:2+18:3 for the plant share, salmon's 20:5+22:6 for the marine one, and they may not be equal), every food's oil_equivalent_mg == its plant share + its marine share with each share reproducing from the source at that food's own grams, USDA 1280 (DPA) binds to nothing because Wallach never names it, and the marine share is proven LOAD-BEARING by existence -- at least one qualifying food is carried mainly by it, since every other clause here is satisfied by a marine share of exactly zero",
+        check_fn=check_efa_marine_share_converts_against_salmon_oil,
+        truth_anchor="eden/foods/extract/food_nutrient.csv's own cells (byte-compared to the sha256-pinned USDA archive by food_composition_traces_to_source) x eden/foods/usda-source.json's support_nutrients x foods-composition-data.json's shipped shares, recomputed each run. PROVES THE MARINE SHARE EXISTS AND REPRODUCES FROM SOURCE -- it cannot prove salmon oil is the RIGHT reference for a fish. That is the owner's ruling of 2026-08-31 off Wallach's own text, not a fact any gate can establish.",
+        severity="critical",
+        lesson_ref="for as long as the app ranked foods, USDA 20:5 and 22:6 were never pulled into the extract at all, so the EFA aggregate was 18:2 + 18:3 alone. Fish carry their omega-3 almost entirely as the two that were missing: canned salmon scored 1.5% of Wallach's nine grams and did not appear on the omega-3 list, pork ribs sat at 36%, and a fish-oil softgel was credited its full label oil mass while the fish was not. 2 of 25 fish qualified and BOTH did so on their omega-SIX. The board was 108/108 throughout, because a term that is NOT THERE is internally consistent with itself -- the same shape as the EFA group's absence from `strength` next door. His books say the opposite in three places (salmon oil doses interchangeably with flaxseed oil at 5 g t.i.d.), so this was OUR narrowing of his claim, and only a reader who knew fish caught it.",
     ),
     Invariant(
         name="user_supplied_provenance_single_home",

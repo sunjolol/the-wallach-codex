@@ -121,8 +121,16 @@ export const FoodSchema = z.object({
   grams: z.number(),
   nutrients: z.array(FoodNutrientSchema),
   /**
-   * Essential-fatty-acid delivery, in the currency Wallach's dose is stated in: grams of
-   * FLAXSEED OIL. Absent on a food with no measured 18:2 or 18:3.
+   * Essential-fatty-acid delivery, in the currency Wallach's dose is stated in: grams of an
+   * oil HE prescribes. Absent on a food with no measured 18:2, 18:3, 20:5 or 22:6.
+   *
+   * ★ TWO OILS, SUMMED (owner ruling, Luneth 2026-08-31). He names two and doses them
+   * interchangeably — "taken alternately as salmon oil and flaxseed oil at the rate of 5
+   * grams t.i.d." — so the plant share (18:2 + 18:3 − CLA) converts against FLAXSEED oil and
+   * the marine share (20:5 + 22:6) against SALMON oil, and the two oil masses add. Flaxseed
+   * oil carries none of the marine forms, so one oil for both shares under-reported every
+   * oily fish by roughly 25x: canned salmon read 1.5% of his nine grams and did not appear
+   * on the omega-3 list at all.
    *
    * ★ WHY NOT A NUTRIENT ROW. omega-3 and omega-6 carry no individual Wallach target — he
    * states ONE amount for the essential fatty acids as a category — so a food credited
@@ -131,10 +139,21 @@ export const FoodSchema = z.object({
    * 34 plant-derived minerals already use.
    */
   efa: z.object({
-    /** Actual linoleic + linolenic delivered by one serving, CLA subtracted. */
+    /** Every counted acid one serving delivers: plant + marine, CLA already subtracted. */
     acid_mg: z.number(),
-    /** That acid re-expressed as the flaxseed oil it would take to supply it. */
+    /** The plant half of `acid_mg` — 18:2 + 18:3 − CLA. */
+    plant_acid_mg: z.number(),
+    /** The marine half of `acid_mg` — 20:5 + 22:6. Zero on everything that is not seafood. */
+    marine_acid_mg: z.number(),
+    /**
+     * Those acids re-expressed as the oil it would take to supply them, EACH against its own
+     * oil, then summed. This is the number the card prints and the meter counts.
+     */
     oil_equivalent_mg: z.number(),
+    /** The plant acid over flaxseed oil's own EFA fraction. */
+    plant_oil_equivalent_mg: z.number(),
+    /** The marine acid over salmon oil's own EFA fraction. */
+    marine_oil_equivalent_mg: z.number(),
     /**
      * That oil over `_meta.efa_goal.maintenance_mg` — the same shape a nutrient row's
      * `fraction` has, against the same kind of denominator (a Wallach number).
@@ -220,16 +239,25 @@ export const FoodsCompositionSchema = z.object({
      */
     essentials_without_composition: z.array(z.string()),
     /**
-     * Flaxseed oil's own EFA fraction, read from the pinned archive — the bridge between
-     * what USDA measures in a food (acid) and what Wallach's dose is stated in (oil).
+     * The TWO reference oils Wallach names, read from the pinned archive — the bridge
+     * between what USDA measures in a food (acid) and what his dose is stated in (oil).
+     *
+     * ★ `efa_fraction` IS FLAXSEED OIL'S, and stays that way. The marine oil sits beside it
+     * under `marine`, never in place of it: re-pointing a published key at a different
+     * quantity is the token-indirection failure this project keeps meeting.
      */
     efa_reference: z.object({
       efa_fraction: z.number(),
       label: z.string(),
       category: z.string(),
+      /** Salmon oil — the denominator for the 20:5/22:6 share. */
+      marine: z.object({
+        fdc_id: z.string(),
+        efa_fraction: z.number(),
+      }).passthrough(),
     }).passthrough(),
     /**
-     * Wallach's ONE amount for the EFA group, in the mg of flaxseed oil the meter counts —
+     * Wallach's ONE amount for the EFA group, in the mg of oil the meter counts —
      * the denominator every food's `efa.fraction` is over. Read in the generator straight
      * from the sealed dose claim it cites, so a food and a product are scored against one
      * Wallach number rather than two copies of it.
