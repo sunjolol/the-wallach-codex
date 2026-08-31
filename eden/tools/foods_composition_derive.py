@@ -751,13 +751,21 @@ def _efa_of(row: dict, support: dict, grams: float, ref: dict,
     if la is None and ala is None and epa is None and dha is None:
         return {}
     serving = grams / 100.0
-    # ★ CLA IS SUBTRACTED FROM THE PLANT SHARE ONLY, and that share is floored at zero rather
-    # than allowed to go negative and eat into the marine share: 18:2 is an aggregate that
-    # INCLUDES its conjugated forms, so the subtraction belongs to that aggregate and nowhere
-    # else. No catalog food currently reads CLA above its own 18:2; the floor is here so that
-    # a future source row which does cannot silently reduce a fish's omega-3.
-    plant_acid_g = max(0.0, float(la or 0) + float(ala or 0) - float(cla or 0))
+    # ★ CLA IS SUBTRACTED FROM THE OMEGA-6 SHARE ONLY. 18:2 is an aggregate that INCLUDES its
+    # conjugated forms, so the subtraction belongs to that aggregate and nowhere else -- not to
+    # 18:3, and not to the marine forms. A source row reading CLA ABOVE its own 18:2 would make
+    # the split unsound in a way no floor can honestly repair, so it HARD-FAILS rather than
+    # clamping. 0 of the 250 catalog foods do that today; 24 carry a CLA cell at all.
+    if cla is not None and float(cla) > float(la or 0):
+        raise FoodsCompositionError(
+            f"a food reads CLA {cla} above its own 18:2 {la} per 100 g. The conjugated forms are "
+            f"a SUBSET of the 18:2 aggregate, so this is a contradiction in the source, not a "
+            f"value to clamp -- re-read the source before deriving."
+        )
+    omega6_acid_g = max(0.0, float(la or 0) - float(cla or 0))
+    omega3_plant_acid_g = float(ala or 0)
     marine_acid_g = float(epa or 0) + float(dha or 0)
+    plant_acid_g = omega6_acid_g + omega3_plant_acid_g
     if plant_acid_g <= 0 and marine_acid_g <= 0:
         return {}
     plant_oil_mg = plant_acid_g * 1000.0 * serving / ref["efa_fraction"]
@@ -765,6 +773,56 @@ def _efa_of(row: dict, support: dict, grams: float, ref: dict,
     acid_mg = (plant_acid_g + marine_acid_g) * 1000.0 * serving
     oil_mg = plant_oil_mg + marine_oil_mg
     fraction = oil_mg / target_mg
+
+    # ── the per-member split, and why it is NOT a fanned dose ────────────────────────────
+    # ★ ONE BUDGET, ATTRIBUTED. `collective_doses_not_fanned` forbids putting a NUMERIC TARGET
+    # on omega-3 or omega-6 sourced from Wallach's one 9 g EFA claim -- 9 g posted twice is 18 g
+    # of board target from a 9 g source. Nothing here does that: the denominator stays the single
+    # `target_mg`, and no per-member target exists anywhere. What is split is the FOOD's own
+    # measured delivery, which is composition, not an amount of his. The two shares sum back to
+    # `oil_mg` exactly, and that identity is ASSERTED below rather than trusted.
+    #
+    # ★ WHY IT HAD TO EXIST (owner ruling, Luneth 2026-08-31, the same session as the marine
+    # forms). "Best food sources" on an essential's page answers "what should I eat for THIS" --
+    # its own docstring in state/foods.ts says so. Ranked on the COLLECTIVE figure it answered a
+    # different question, and both pages lied in opposite directions: the omega-3 page led with
+    # sunflower seeds at 152.9% (0.3% omega-3) and almonds at 57.4% (0.0% omega-3), while the
+    # omega-6 page led with herring at 68.7% (3.4% omega-6). 58 of 83 foods were on the omega-3
+    # list purely for their omega-6, and 30 of 83 on the omega-6 list purely for their omega-3.
+    #
+    # ★ WHICH ACIDS BELONG TO WHICH MEMBER, and only these:
+    #     omega-6 = 18:2 - CLA                    (converted against FLAXSEED oil)
+    #     omega-3 = 18:3          -> flaxseed oil
+    #             + 20:5 + 22:6   -> SALMON oil
+    # Wallach files the marine forms under omega-3 himself -- "further divided into the Omega-3
+    # (DHA and EPA)" (Epigenetics, 2014) -- so this mapping is his, not an inference.
+    #
+    # ⚠ THE COLLECTIVE FIGURE IS STILL THE ONE THAT COUNTS ELSEWHERE. `fraction`/`qualifies`
+    # above remain the food tile's "Omega EFAs" chip, the `strength` ranking term, the regimen
+    # meter (state/coverage.ts) and the goal-gap fill. Those are all questions ABOUT THE GROUP,
+    # which shares one meter because Wallach states one amount. Only the per-ESSENTIAL list
+    # reads `by_member`. Do not cross the two.
+    omega6_oil_mg = omega6_acid_g * 1000.0 * serving / ref["efa_fraction"]
+    omega3_oil_mg = (omega3_plant_acid_g * 1000.0 * serving / ref["efa_fraction"]
+                     + marine_acid_g * 1000.0 * serving / ref["marine"]["efa_fraction"])
+    if abs((omega6_oil_mg + omega3_oil_mg) - oil_mg) > 1e-9:
+        raise FoodsCompositionError(
+            f"the per-member EFA split does not reconstitute the group: omega-6 "
+            f"{omega6_oil_mg:.6f} + omega-3 {omega3_oil_mg:.6f} != {oil_mg:.6f} mg of oil. A "
+            f"split that loses or invents delivery is worse than no split at all."
+        )
+
+    def _member(oil: float, acid_g: float) -> dict:
+        """One member's own delivery, held to the SAME bar as the group and as a nutrient row."""
+        frac = oil / target_mg
+        return {
+            "acid_mg": round(acid_g * 1000.0 * serving, 4),
+            "oil_equivalent_mg": round(oil, 4),
+            "fraction": round(frac, 4),
+            "qualifies": frac >= QUALIFY_FRACTION,
+            "strong": frac >= STRONG_FRACTION,
+        }
+
     out = {
         "acid_mg": round(acid_mg, 4),
         "plant_acid_mg": round(plant_acid_g * 1000.0 * serving, 4),
@@ -775,6 +833,10 @@ def _efa_of(row: dict, support: dict, grams: float, ref: dict,
         "fraction": round(fraction, 4),
         "qualifies": fraction >= QUALIFY_FRACTION,
         "strong": fraction >= STRONG_FRACTION,
+        "by_member": {
+            "omega-6": _member(omega6_oil_mg, omega6_acid_g),
+            "omega-3": _member(omega3_oil_mg, omega3_plant_acid_g + marine_acid_g),
+        },
         "linoleic_g_per_100g": la,
         "linolenic_g_per_100g": ala,
     }

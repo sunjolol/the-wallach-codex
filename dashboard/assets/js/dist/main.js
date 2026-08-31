@@ -5598,6 +5598,30 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       /** The marine acid over salmon oil's own EFA fraction. */
       marine_oil_equivalent_mg: external_exports.number(),
       /**
+       * The same delivery ATTRIBUTED to the two members, keyed by essential slug —
+       * `omega-6` = 18:2 − CLA; `omega-3` = 18:3 + 20:5 + 22:6. The two
+       * `oil_equivalent_mg` sum back to the group's exactly, and the generator hard-fails if
+       * they ever do not.
+       *
+       * ★ THIS IS NOT A FANNED DOSE. `collective_doses_not_fanned` forbids a numeric TARGET on
+       * omega-3 or omega-6 sourced from Wallach's one 9 g EFA claim; nothing here creates one.
+       * The denominator is still that single figure. What is split is the FOOD's own measured
+       * composition, which was never his number to begin with.
+       *
+       * ★ READ THIS ONLY FOR A PER-ESSENTIAL LIST — "what should I eat for THIS". Every
+       * question about the GROUP (the tile's "Omega EFAs" chip, the `strength` ranking term,
+       * the regimen meter, the goal-gap fill) reads the collective `fraction` above, because
+       * the pair shares one meter. Crossing the two is the defect this split exists to fix,
+       * reintroduced from the other side.
+       */
+      by_member: external_exports.record(external_exports.string(), external_exports.object({
+        acid_mg: external_exports.number(),
+        oil_equivalent_mg: external_exports.number(),
+        fraction: external_exports.number(),
+        qualifies: external_exports.boolean(),
+        strong: external_exports.boolean()
+      }).passthrough()),
+      /**
        * That oil over `_meta.efa_goal.maintenance_mg` — the same shape a nutrient row's
        * `fraction` has, against the same kind of denominator (a Wallach number).
        */
@@ -17448,6 +17472,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 47.6,
+          by_member: {
+            "omega-3": {
+              acid_mg: 41.65,
+              fraction: 0.0148,
+              oil_equivalent_mg: 133.2587,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 5.95,
+              fraction: 1e-3,
+              oil_equivalent_mg: 8.7894,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0.049",
           fraction: 0.0158,
@@ -17578,6 +17618,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 88.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 43.12,
+              fraction: 71e-4,
+              oil_equivalent_mg: 63.6975,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 45.08,
+              fraction: 74e-4,
+              oil_equivalent_mg: 66.5928,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0145,
@@ -17623,6 +17679,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 120.95,
+          by_member: {
+            "omega-3": {
+              acid_mg: 75.85,
+              fraction: 0.0124,
+              oil_equivalent_mg: 112.0467,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 45.1,
+              fraction: 74e-4,
+              oil_equivalent_mg: 66.6224,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0199,
           linoleic_g_per_100g: "0.022",
           linolenic_g_per_100g: "0.037",
@@ -17698,6 +17770,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 2177.92,
+          by_member: {
+            "omega-3": {
+              acid_mg: 1.12,
+              fraction: 2e-4,
+              oil_equivalent_mg: 1.6545,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2176.8,
+              fraction: 0.3573,
+              oil_equivalent_mg: 3215.5994,
+              qualifies: true,
+              strong: true
+            }
+          },
           fraction: 0.3575,
           linoleic_g_per_100g: "13.605",
           linolenic_g_per_100g: "0.007",
@@ -17741,6 +17829,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 3494.1375,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0.8505,
+              fraction: 1e-4,
+              oil_equivalent_mg: 1.2564,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 3493.287,
+              fraction: 0.5734,
+              oil_equivalent_mg: 5160.3324,
+              qualifies: true,
+              strong: true
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.002",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
@@ -17930,6 +18034,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 119.35,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 119.35,
+              fraction: 0.0196,
+              oil_equivalent_mg: 176.3055,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0196,
@@ -17975,6 +18095,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 110.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 21.6,
+              fraction: 35e-4,
+              oil_equivalent_mg: 31.9078,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 88.8,
+              fraction: 0.0146,
+              oil_equivalent_mg: 131.1766,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0181,
           linoleic_g_per_100g: "0.074",
           linolenic_g_per_100g: "0.018",
@@ -18034,6 +18170,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 120.12,
+          by_member: {
+            "omega-3": {
+              acid_mg: 31.92,
+              fraction: 52e-4,
+              oil_equivalent_mg: 47.1527,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 88.2,
+              fraction: 0.0145,
+              oil_equivalent_mg: 130.2903,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0197,
           linoleic_g_per_100g: "0.105",
           linolenic_g_per_100g: "0.038",
@@ -18109,6 +18261,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 94.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 26.1,
+              fraction: 43e-4,
+              oil_equivalent_mg: 38.5553,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 68.4,
+              fraction: 0.0112,
+              oil_equivalent_mg: 101.0414,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0155,
@@ -18186,6 +18354,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 2446.64,
+          by_member: {
+            "omega-3": {
+              acid_mg: 170,
+              fraction: 0.0279,
+              oil_equivalent_mg: 251.1264,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2276.64,
+              fraction: 0.3737,
+              oil_equivalent_mg: 3363.0844,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.4016,
@@ -18312,6 +18496,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 110.96,
+          by_member: {
+            "omega-3": {
+              acid_mg: 41.04,
+              fraction: 67e-4,
+              oil_equivalent_mg: 60.6249,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 69.92,
+              fraction: 0.0115,
+              oil_equivalent_mg: 103.2868,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0182,
@@ -18406,6 +18606,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Spices & herbs",
         efa: {
           acid_mg: 20.617,
+          by_member: {
+            "omega-3": {
+              acid_mg: 16.748,
+              fraction: 27e-4,
+              oil_equivalent_mg: 24.7404,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 3.869,
+              fraction: 6e-4,
+              oil_equivalent_mg: 5.7153,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 34e-4,
@@ -18451,6 +18667,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 691.9,
+          by_member: {
+            "omega-3": {
+              acid_mg: 198.9,
+              fraction: 0.0333,
+              oil_equivalent_mg: 299.6736,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 493,
+              fraction: 0.0809,
+              oil_equivalent_mg: 728.2665,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.001",
           epa_g_per_100g: "0.003",
           fraction: 0.1142,
@@ -18512,6 +18744,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 641.75,
+          by_member: {
+            "omega-3": {
+              acid_mg: 16.15,
+              fraction: 27e-4,
+              oil_equivalent_mg: 23.857,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 625.6,
+              fraction: 0.1027,
+              oil_equivalent_mg: 924.1451,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.1053,
@@ -18605,6 +18853,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 550.8,
+          by_member: {
+            "omega-3": {
+              acid_mg: 18.7,
+              fraction: 31e-4,
+              oil_equivalent_mg: 27.6239,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 532.1,
+              fraction: 0.0873,
+              oil_equivalent_mg: 786.0256,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0904,
@@ -18872,6 +19136,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 524.45,
+          by_member: {
+            "omega-3": {
+              acid_mg: 77.35,
+              fraction: 0.0127,
+              oil_equivalent_mg: 114.2625,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 447.1,
+              fraction: 0.0734,
+              oil_equivalent_mg: 660.4624,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0861,
@@ -18933,6 +19213,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 102.24,
+          by_member: {
+            "omega-3": {
+              acid_mg: 8.64,
+              fraction: 14e-4,
+              oil_equivalent_mg: 12.7631,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 93.6,
+              fraction: 0.0154,
+              oil_equivalent_mg: 138.2672,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0168,
           linoleic_g_per_100g: "0.065",
           linolenic_g_per_100g: "0.006",
@@ -19088,6 +19384,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 53.55,
+          by_member: {
+            "omega-3": {
+              acid_mg: 4.25,
+              fraction: 7e-4,
+              oil_equivalent_mg: 6.2782,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 49.3,
+              fraction: 81e-4,
+              oil_equivalent_mg: 72.8266,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 88e-4,
           linoleic_g_per_100g: "0.058",
           linolenic_g_per_100g: "0.005",
@@ -19131,6 +19443,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 199.75,
+          by_member: {
+            "omega-3": {
+              acid_mg: 25.5,
+              fraction: 42e-4,
+              oil_equivalent_mg: 37.669,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 174.25,
+              fraction: 0.0286,
+              oil_equivalent_mg: 257.4045,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0328,
           linoleic_g_per_100g: "0.205",
           linolenic_g_per_100g: "0.03",
@@ -19190,6 +19518,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 397.32,
+          by_member: {
+            "omega-3": {
+              acid_mg: 180.6,
+              fraction: 0.0296,
+              oil_equivalent_mg: 266.7848,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 216.72,
+              fraction: 0.0356,
+              oil_equivalent_mg: 320.1418,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0652,
@@ -19347,6 +19691,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 386.46,
+          by_member: {
+            "omega-3": {
+              acid_mg: 141.93,
+              fraction: 0.0233,
+              oil_equivalent_mg: 209.661,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 244.53,
+              fraction: 0.0401,
+              oil_equivalent_mg: 361.2231,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0634,
           linoleic_g_per_100g: "0.143",
           linolenic_g_per_100g: "0.083",
@@ -19502,6 +19862,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 403.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 135.36,
+              fraction: 0.0222,
+              oil_equivalent_mg: 199.9557,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 267.84,
+              fraction: 0.044,
+              oil_equivalent_mg: 395.657,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0662,
@@ -19623,6 +19999,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 226.8,
+          by_member: {
+            "omega-3": {
+              acid_mg: 74.844,
+              fraction: 0.0123,
+              oil_equivalent_mg: 110.5606,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 151.956,
+              fraction: 0.0249,
+              oil_equivalent_mg: 224.4715,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0372,
@@ -19684,6 +20076,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 122.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 69.7,
+              fraction: 0.0114,
+              oil_equivalent_mg: 102.9618,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 52.7,
+              fraction: 86e-4,
+              oil_equivalent_mg: 77.8492,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0201,
           linoleic_g_per_100g: "0.031",
           linolenic_g_per_100g: "0.041",
@@ -19791,6 +20199,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 97.01,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 97.01,
+              fraction: 0.0159,
+              oil_equivalent_mg: 143.3045,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0159,
           linoleic_g_per_100g: "0.109",
           linolenic_g_per_100g: null,
@@ -19834,6 +20258,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 145.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 39.6,
+              fraction: 65e-4,
+              oil_equivalent_mg: 58.4977,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 105.6,
+              fraction: 0.0173,
+              oil_equivalent_mg: 155.9938,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0238,
@@ -19911,6 +20351,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 238,
+          by_member: {
+            "omega-3": {
+              acid_mg: 166.6,
+              fraction: 0.0273,
+              oil_equivalent_mg: 246.1038,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 71.4,
+              fraction: 0.0117,
+              oil_equivalent_mg: 105.4731,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0391,
           linoleic_g_per_100g: "0.051",
           linolenic_g_per_100g: "0.119",
@@ -20050,6 +20506,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 197.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 170.85,
+              fraction: 0.028,
+              oil_equivalent_mg: 252.382,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 26.35,
+              fraction: 43e-4,
+              oil_equivalent_mg: 38.9246,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0324,
@@ -20111,6 +20583,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 291.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 199.95,
+              fraction: 0.0328,
+              oil_equivalent_mg: 295.3689,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 91.45,
+              fraction: 0.015,
+              oil_equivalent_mg: 135.0912,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0478,
           linoleic_g_per_100g: "0.059",
           linolenic_g_per_100g: "0.129",
@@ -20250,6 +20738,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 68.44,
+          by_member: {
+            "omega-3": {
+              acid_mg: 2.36,
+              fraction: 4e-4,
+              oil_equivalent_mg: 3.4862,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 66.08,
+              fraction: 0.0108,
+              oil_equivalent_mg: 97.6143,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0112,
@@ -20311,6 +20815,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 77.9,
+          by_member: {
+            "omega-3": {
+              acid_mg: 49.2,
+              fraction: 81e-4,
+              oil_equivalent_mg: 72.6789,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 28.7,
+              fraction: 47e-4,
+              oil_equivalent_mg: 42.396,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0128,
           linoleic_g_per_100g: "0.014",
           linolenic_g_per_100g: "0.024",
@@ -20402,6 +20922,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 15.13,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 15.13,
+              fraction: 25e-4,
+              oil_equivalent_mg: 22.3502,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 25e-4,
@@ -20479,6 +21015,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 1088.85,
+          by_member: {
+            "omega-3": {
+              acid_mg: 1040.4,
+              fraction: 0.3619,
+              oil_equivalent_mg: 3257.0147,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 48.45,
+              fraction: 8e-3,
+              oil_equivalent_mg: 71.571,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.702",
           epa_g_per_100g: "0.473",
           fraction: 0.3698,
@@ -20588,6 +21140,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 111.78,
+          by_member: {
+            "omega-3": {
+              acid_mg: 63.48,
+              fraction: 0.0104,
+              oil_equivalent_mg: 93.7735,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 48.3,
+              fraction: 79e-4,
+              oil_equivalent_mg: 71.3494,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0183,
@@ -20649,6 +21217,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 72.98,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 72.98,
+              fraction: 0.012,
+              oil_equivalent_mg: 107.8071,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.012,
           linoleic_g_per_100g: "0.041",
           linolenic_g_per_100g: null,
@@ -20772,6 +21356,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 130.56,
+          by_member: {
+            "omega-3": {
+              acid_mg: 2.56,
+              fraction: 4e-4,
+              oil_equivalent_mg: 3.7817,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 128,
+              fraction: 0.021,
+              oil_equivalent_mg: 189.0834,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0214,
@@ -20849,6 +21449,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 2217.2535,
+          by_member: {
+            "omega-3": {
+              acid_mg: 45.6435,
+              fraction: 75e-4,
+              oil_equivalent_mg: 67.4252,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2171.61,
+              fraction: 0.3564,
+              oil_equivalent_mg: 3207.9326,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.3639,
@@ -20942,6 +21558,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 100.94,
+          by_member: {
+            "omega-3": {
+              acid_mg: 35.02,
+              fraction: 57e-4,
+              oil_equivalent_mg: 51.732,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 65.92,
+              fraction: 0.0108,
+              oil_equivalent_mg: 97.3779,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0166,
@@ -21019,6 +21651,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 973.25,
+          by_member: {
+            "omega-3": {
+              acid_mg: 149.6,
+              fraction: 0.039,
+              oil_equivalent_mg: 351.2812,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 823.65,
+              fraction: 0.1352,
+              oil_equivalent_mg: 1216.7073,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.069",
           epa_g_per_100g: "0.02",
           fraction: 0.1742,
@@ -21064,6 +21712,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 189,
+          by_member: {
+            "omega-3": {
+              acid_mg: 145.8,
+              fraction: 0.0239,
+              oil_equivalent_mg: 215.3778,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 43.2,
+              fraction: 71e-4,
+              oil_equivalent_mg: 63.8156,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.031,
           linoleic_g_per_100g: "0.024",
           linolenic_g_per_100g: "0.081",
@@ -21201,6 +21865,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 79.79,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 79.79,
+              fraction: 0.0131,
+              oil_equivalent_mg: 117.8669,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0131,
@@ -21278,6 +21958,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 75.24,
+          by_member: {
+            "omega-3": {
+              acid_mg: 47.52,
+              fraction: 78e-4,
+              oil_equivalent_mg: 70.1972,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 27.72,
+              fraction: 45e-4,
+              oil_equivalent_mg: 40.9484,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0123,
@@ -21339,6 +22035,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 316.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 35,
+              fraction: 63e-4,
+              oil_equivalent_mg: 57.0071,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 281.4,
+              fraction: 0.0462,
+              oil_equivalent_mg: 415.688,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.166",
           dha_g_per_100g: "0.001",
           epa_g_per_100g: "0.01",
@@ -21401,6 +22113,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 299.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 254.4,
+              fraction: 0.0418,
+              oil_equivalent_mg: 375.8032,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 44.8,
+              fraction: 74e-4,
+              oil_equivalent_mg: 66.1792,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
@@ -21447,6 +22175,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 74.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 36.4,
+              fraction: 6e-3,
+              oil_equivalent_mg: 53.7706,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 37.8,
+              fraction: 62e-4,
+              oil_equivalent_mg: 55.8387,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0122,
@@ -21520,6 +22264,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 58.401,
+          by_member: {
+            "omega-3": {
+              acid_mg: 5.67,
+              fraction: 9e-4,
+              oil_equivalent_mg: 8.3758,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 52.731,
+              fraction: 87e-4,
+              oil_equivalent_mg: 77.895,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 96e-4,
           linoleic_g_per_100g: "0.186",
           linolenic_g_per_100g: "0.02",
@@ -21563,6 +22323,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Poultry",
         efa: {
           acid_mg: 559,
+          by_member: {
+            "omega-3": {
+              acid_mg: 51.6,
+              fraction: 0.0134,
+              oil_equivalent_mg: 120.6589,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 507.4,
+              fraction: 0.0833,
+              oil_equivalent_mg: 749.5384,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.02",
           epa_g_per_100g: "0.01",
           fraction: 0.0967,
@@ -21844,6 +22620,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Poultry",
         efa: {
           acid_mg: 1304.75,
+          by_member: {
+            "omega-3": {
+              acid_mg: 70.55,
+              fraction: 0.0132,
+              oil_equivalent_mg: 118.8568,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1234.2,
+              fraction: 0.2026,
+              oil_equivalent_mg: 1823.1775,
+              qualifies: true,
+              strong: true
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.008",
           dha_g_per_100g: "0.005",
           epa_g_per_100g: "0.005",
@@ -21906,6 +22698,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 1895.84,
+          by_member: {
+            "omega-3": {
+              acid_mg: 70.52,
+              fraction: 0.0116,
+              oil_equivalent_mg: 104.1731,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1825.32,
+              fraction: 0.2996,
+              oil_equivalent_mg: 2696.3882,
+              qualifies: true,
+              strong: true
+            }
+          },
           fraction: 0.3112,
           linoleic_g_per_100g: "1.113",
           linolenic_g_per_100g: "0.043",
@@ -22094,6 +22902,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 37.99,
+          by_member: {
+            "omega-3": {
+              acid_mg: 5.51,
+              fraction: 9e-4,
+              oil_equivalent_mg: 8.1394,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 32.48,
+              fraction: 53e-4,
+              oil_equivalent_mg: 47.9799,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 62e-4,
@@ -22139,6 +22963,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 587.35,
+          by_member: {
+            "omega-3": {
+              acid_mg: 181.9,
+              fraction: 0.0305,
+              oil_equivalent_mg: 274.561,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 405.45,
+              fraction: 0.0665,
+              oil_equivalent_mg: 598.9364,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.001",
           epa_g_per_100g: "0.003",
           fraction: 0.0971,
@@ -22233,6 +23073,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 275.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 248.2,
+              fraction: 0.0869,
+              oil_equivalent_mg: 782.4015,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 27.2,
+              fraction: 45e-4,
+              oil_equivalent_mg: 40.1802,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.146",
           epa_g_per_100g: "0.138",
           fraction: 0.0914,
@@ -22388,6 +23244,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Spices & herbs",
         efa: {
           acid_mg: 67.032,
+          by_member: {
+            "omega-3": {
+              acid_mg: 12.453,
+              fraction: 21e-4,
+              oil_equivalent_mg: 18.6851,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 54.579,
+              fraction: 9e-3,
+              oil_equivalent_mg: 80.6249,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.058",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0.008",
@@ -22434,6 +23306,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 164.7,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 164.7,
+              fraction: 0.027,
+              oil_equivalent_mg: 243.2971,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.027,
@@ -22479,6 +23367,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 140.25,
+          by_member: {
+            "omega-3": {
+              acid_mg: 135.15,
+              fraction: 0.0479,
+              oil_equivalent_mg: 430.9469,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 5.1,
+              fraction: 8e-4,
+              oil_equivalent_mg: 7.5338,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.154",
           epa_g_per_100g: "0.004",
           fraction: 0.0487,
@@ -22570,6 +23474,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 309.7,
+          by_member: {
+            "omega-3": {
+              acid_mg: 176.7,
+              fraction: 0.029,
+              oil_equivalent_mg: 261.0237,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 133,
+              fraction: 0.0218,
+              oil_equivalent_mg: 196.4695,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0508,
@@ -22695,6 +23615,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 137.86,
+          by_member: {
+            "omega-3": {
+              acid_mg: 19.21,
+              fraction: 32e-4,
+              oil_equivalent_mg: 28.3773,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 118.65,
+              fraction: 0.0195,
+              oil_equivalent_mg: 175.2714,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0226,
@@ -22804,6 +23740,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 200.48,
+          by_member: {
+            "omega-3": {
+              acid_mg: 80.64,
+              fraction: 0.0132,
+              oil_equivalent_mg: 119.1225,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 119.84,
+              fraction: 0.0197,
+              oil_equivalent_mg: 177.0293,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0329,
           linoleic_g_per_100g: "0.107",
           linolenic_g_per_100g: "0.072",
@@ -22985,6 +23937,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 27.93,
+          by_member: {
+            "omega-3": {
+              acid_mg: 4.41,
+              fraction: 7e-4,
+              oil_equivalent_mg: 6.5145,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 23.52,
+              fraction: 39e-4,
+              oil_equivalent_mg: 34.7441,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 46e-4,
@@ -23184,6 +24152,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 462,
+          by_member: {
+            "omega-3": {
+              acid_mg: 71.4,
+              fraction: 0.0117,
+              oil_equivalent_mg: 105.4731,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 390.6,
+              fraction: 0.0641,
+              oil_equivalent_mg: 576.9998,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0758,
@@ -23245,6 +24229,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Poultry",
         efa: {
           acid_mg: 6314.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 501.7,
+              fraction: 0.0823,
+              oil_equivalent_mg: 741.1183,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 5812.8,
+              fraction: 0.9541,
+              oil_equivalent_mg: 8586.7494,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 1.0364,
@@ -23497,6 +24497,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 3337.15,
+          by_member: {
+            "omega-3": {
+              acid_mg: 559.55,
+              fraction: 0.0927,
+              oil_equivalent_mg: 834.5837,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2777.6,
+              fraction: 0.4559,
+              oil_equivalent_mg: 4103.1095,
+              qualifies: true,
+              strong: true
+            }
+          },
           conjugated_linoleic_g_per_100g: "0",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0.003",
@@ -23655,6 +24671,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 633,
+          by_member: {
+            "omega-3": {
+              acid_mg: 39,
+              fraction: 0.0105,
+              oil_equivalent_mg: 94.6402,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 594,
+              fraction: 0.0975,
+              oil_equivalent_mg: 877.4651,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.038",
           epa_g_per_100g: "0.005",
           fraction: 0.108,
@@ -23762,6 +24794,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 640.22,
+          by_member: {
+            "omega-3": {
+              acid_mg: 38.76,
+              fraction: 0.0104,
+              oil_equivalent_mg: 93.8551,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 601.46,
+              fraction: 0.0987,
+              oil_equivalent_mg: 888.4851,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.114",
           epa_g_per_100g: "0.011",
           fraction: 0.1091,
@@ -23807,6 +24855,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 92.07,
+          by_member: {
+            "omega-3": {
+              acid_mg: 14.85,
+              fraction: 24e-4,
+              oil_equivalent_mg: 21.9366,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 77.22,
+              fraction: 0.0127,
+              oil_equivalent_mg: 114.0705,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0151,
           linoleic_g_per_100g: "0.078",
           linolenic_g_per_100g: "0.015",
@@ -23866,6 +24930,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 358.15,
+          by_member: {
+            "omega-3": {
+              acid_mg: 123.25,
+              fraction: 0.0202,
+              oil_equivalent_mg: 182.0666,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 234.9,
+              fraction: 0.0386,
+              oil_equivalent_mg: 346.9976,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0588,
@@ -23939,6 +25019,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 119.85,
+          by_member: {
+            "omega-3": {
+              acid_mg: 27.2,
+              fraction: 45e-4,
+              oil_equivalent_mg: 40.1802,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 92.65,
+              fraction: 0.0152,
+              oil_equivalent_mg: 136.8639,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0197,
           linoleic_g_per_100g: "0.109",
           linolenic_g_per_100g: "0.032",
@@ -24014,6 +25110,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 22,
+          by_member: {
+            "omega-3": {
+              acid_mg: 3.25,
+              fraction: 5e-4,
+              oil_equivalent_mg: 4.8009,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 18.75,
+              fraction: 31e-4,
+              oil_equivalent_mg: 27.6978,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 36e-4,
@@ -24121,6 +25233,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 121.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 18,
+              fraction: 3e-3,
+              oil_equivalent_mg: 26.5899,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 103.5,
+              fraction: 0.017,
+              oil_equivalent_mg: 152.8916,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0199,
@@ -24230,6 +25358,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 278.8,
+          by_member: {
+            "omega-3": {
+              acid_mg: 20.4,
+              fraction: 33e-4,
+              oil_equivalent_mg: 30.1352,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 258.4,
+              fraction: 0.0424,
+              oil_equivalent_mg: 381.7121,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0458,
           linoleic_g_per_100g: "0.152",
           linolenic_g_per_100g: "0.012",
@@ -24369,6 +25513,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 395.46,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 395.46,
+              fraction: 0.0649,
+              oil_equivalent_mg: 584.179,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0649,
@@ -24462,6 +25622,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 167.5485,
+          by_member: {
+            "omega-3": {
+              acid_mg: 75.1275,
+              fraction: 0.0123,
+              oil_equivalent_mg: 110.9794,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 92.421,
+              fraction: 0.0152,
+              oil_equivalent_mg: 136.5256,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0275,
@@ -24553,6 +25729,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 319.6,
+          by_member: {
+            "omega-3": {
+              acid_mg: 272.85,
+              fraction: 0.0936,
+              oil_equivalent_mg: 842.2377,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 46.75,
+              fraction: 77e-4,
+              oil_equivalent_mg: 69.0598,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.132",
           epa_g_per_100g: "0.168",
           fraction: 0.1013,
@@ -24630,6 +25822,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 363.56,
+          by_member: {
+            "omega-3": {
+              acid_mg: 97.6,
+              fraction: 0.016,
+              oil_equivalent_mg: 144.1761,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 265.96,
+              fraction: 0.0437,
+              oil_equivalent_mg: 392.8798,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0597,
@@ -24707,6 +25915,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 127.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 17,
+              fraction: 28e-4,
+              oil_equivalent_mg: 25.1126,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 110.5,
+              fraction: 0.0181,
+              oil_equivalent_mg: 163.2321,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0209,
@@ -24784,6 +26008,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 55.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 11.5,
+              fraction: 19e-4,
+              oil_equivalent_mg: 16.988,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 43.7,
+              fraction: 72e-4,
+              oil_equivalent_mg: 64.5543,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 91e-4,
@@ -24845,6 +26085,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 72.48,
+          by_member: {
+            "omega-3": {
+              acid_mg: 16.61,
+              fraction: 27e-4,
+              oil_equivalent_mg: 24.5365,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 55.87,
+              fraction: 92e-4,
+              oil_equivalent_mg: 82.5319,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0119,
@@ -24906,6 +26162,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 128,
+          by_member: {
+            "omega-3": {
+              acid_mg: 14,
+              fraction: 23e-4,
+              oil_equivalent_mg: 20.681,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 114,
+              fraction: 0.0187,
+              oil_equivalent_mg: 168.4024,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.008",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
@@ -24984,6 +26256,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 181.25,
+          by_member: {
+            "omega-3": {
+              acid_mg: 111.25,
+              fraction: 0.0183,
+              oil_equivalent_mg: 164.3401,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 70,
+              fraction: 0.0115,
+              oil_equivalent_mg: 103.405,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0297,
           linoleic_g_per_100g: "0.056",
           linolenic_g_per_100g: "0.089",
@@ -25091,6 +26379,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 161.6,
+          by_member: {
+            "omega-3": {
+              acid_mg: 30.4,
+              fraction: 5e-3,
+              oil_equivalent_mg: 44.9073,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 131.2,
+              fraction: 0.0215,
+              oil_equivalent_mg: 193.8105,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0265,
           linoleic_g_per_100g: "0.082",
           linolenic_g_per_100g: "0.019",
@@ -25262,6 +26566,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 347.65,
+          by_member: {
+            "omega-3": {
+              acid_mg: 7.65,
+              fraction: 13e-4,
+              oil_equivalent_mg: 11.3007,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 340,
+              fraction: 0.0558,
+              oil_equivalent_mg: 502.2528,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0571,
@@ -25323,6 +26643,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 304.3,
+          by_member: {
+            "omega-3": {
+              acid_mg: 38.25,
+              fraction: 63e-4,
+              oil_equivalent_mg: 56.5034,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 266.05,
+              fraction: 0.0437,
+              oil_equivalent_mg: 393.0128,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0499,
@@ -25400,6 +26736,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Poultry",
         efa: {
           acid_mg: 1663.45,
+          by_member: {
+            "omega-3": {
+              acid_mg: 118.15,
+              fraction: 0.0257,
+              oil_equivalent_mg: 231.6262,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1545.3,
+              fraction: 0.2536,
+              oil_equivalent_mg: 2282.7388,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0.031",
           epa_g_per_100g: "0.008",
           fraction: 0.2794,
@@ -25461,6 +26813,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 1130.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 221,
+              fraction: 0.0363,
+              oil_equivalent_mg: 326.4643,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 909.5,
+              fraction: 0.1493,
+              oil_equivalent_mg: 1343.5261,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.1856,
@@ -25555,6 +26923,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Pork",
         efa: {
           acid_mg: 1453.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 59.5,
+              fraction: 98e-4,
+              oil_equivalent_mg: 87.8942,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1394,
+              fraction: 0.2288,
+              oil_equivalent_mg: 2059.2363,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.2386,
@@ -25633,6 +27017,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Poultry",
         efa: {
           acid_mg: 2296.7,
+          by_member: {
+            "omega-3": {
+              acid_mg: 138.55,
+              fraction: 0.0258,
+              oil_equivalent_mg: 232.4827,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2158.15,
+              fraction: 0.3542,
+              oil_equivalent_mg: 3188.0493,
+              qualifies: true,
+              strong: true
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.017",
           dha_g_per_100g: "0.009",
           epa_g_per_100g: "0.01",
@@ -25711,6 +27111,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 306,
+          by_member: {
+            "omega-3": {
+              acid_mg: 83.3,
+              fraction: 0.0137,
+              oil_equivalent_mg: 123.0519,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 222.7,
+              fraction: 0.0366,
+              oil_equivalent_mg: 328.9756,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0502,
@@ -25805,6 +27221,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 660,
+          by_member: {
+            "omega-3": {
+              acid_mg: 184.8,
+              fraction: 0.0303,
+              oil_equivalent_mg: 272.9891,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 475.2,
+              fraction: 0.078,
+              oil_equivalent_mg: 701.9721,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.1083,
@@ -25914,6 +27346,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 153.85,
+          by_member: {
+            "omega-3": {
+              acid_mg: 137.7,
+              fraction: 0.0486,
+              oil_equivalent_mg: 437.6416,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 16.15,
+              fraction: 27e-4,
+              oil_equivalent_mg: 23.857,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.109",
           epa_g_per_100g: "0.051",
           fraction: 0.0513,
@@ -25975,6 +27423,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 245.65,
+          by_member: {
+            "omega-3": {
+              acid_mg: 210.8,
+              fraction: 0.0728,
+              oil_equivalent_mg: 655.421,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 34.85,
+              fraction: 57e-4,
+              oil_equivalent_mg: 51.4809,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.155",
           epa_g_per_100g: "0.08",
           fraction: 0.0785,
@@ -26068,6 +27532,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 2245.32,
+          by_member: {
+            "omega-3": {
+              acid_mg: 24.6645,
+              fraction: 4e-3,
+              oil_equivalent_mg: 36.4347,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2220.6555,
+              fraction: 0.3645,
+              oil_equivalent_mg: 3280.3833,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.3685,
@@ -26206,6 +27686,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 294.92,
+          by_member: {
+            "omega-3": {
+              acid_mg: 27.74,
+              fraction: 46e-4,
+              oil_equivalent_mg: 40.9779,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 267.18,
+              fraction: 0.0439,
+              oil_equivalent_mg: 394.682,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0484,
           linoleic_g_per_100g: "0.183",
           linolenic_g_per_100g: "0.019",
@@ -26297,6 +27793,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 11184.3,
+          by_member: {
+            "omega-3": {
+              acid_mg: 3007.2,
+              fraction: 0.4936,
+              oil_equivalent_mg: 4442.2779,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 8177.1,
+              fraction: 1.3421,
+              oil_equivalent_mg: 12079.3264,
+              qualifies: true,
+              strong: true
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.202",
           fraction: 1.8357,
           linoleic_g_per_100g: "27.459",
@@ -26389,6 +27901,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 2077.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 1868.3,
+              fraction: 0.6523,
+              oil_equivalent_mg: 5870.7365,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 209.1,
+              fraction: 0.0343,
+              oil_equivalent_mg: 308.8854,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.883",
           epa_g_per_100g: "1.242",
           fraction: 0.6866,
@@ -26450,6 +27978,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 94.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 52.8,
+              fraction: 87e-4,
+              oil_equivalent_mg: 77.9969,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 41.6,
+              fraction: 68e-4,
+              oil_equivalent_mg: 61.4521,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0155,
@@ -26557,6 +28101,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 475.3,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 475.3,
+              fraction: 0.078,
+              oil_equivalent_mg: 702.1198,
+              qualifies: true,
+              strong: false
+            }
+          },
           fraction: 0.078,
           linoleic_g_per_100g: "0.245",
           linolenic_g_per_100g: null,
@@ -26687,6 +28247,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         },
         efa: {
           acid_mg: 472.615,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 472.615,
+              fraction: 0.0776,
+              oil_equivalent_mg: 698.1535,
+              qualifies: true,
+              strong: false
+            }
+          },
           fraction: 0.0776,
           linoleic_g_per_100g: "0.715",
           linolenic_g_per_100g: null,
@@ -26810,6 +28386,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 141.94,
+          by_member: {
+            "omega-3": {
+              acid_mg: 119.29,
+              fraction: 0.0196,
+              oil_equivalent_mg: 176.2169,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 22.65,
+              fraction: 37e-4,
+              oil_equivalent_mg: 33.4589,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
@@ -26856,6 +28448,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 1.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1.5,
+              fraction: 2e-4,
+              oil_equivalent_mg: 2.2158,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 2e-4,
@@ -26933,6 +28541,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 691.48,
+          by_member: {
+            "omega-3": {
+              acid_mg: 390.58,
+              fraction: 0.0641,
+              oil_equivalent_mg: 576.9702,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 300.9,
+              fraction: 0.0494,
+              oil_equivalent_mg: 444.4937,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.1135,
@@ -27042,6 +28666,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 486.75,
+          by_member: {
+            "omega-3": {
+              acid_mg: 297.36,
+              fraction: 0.0488,
+              oil_equivalent_mg: 439.2643,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 189.39,
+              fraction: 0.0311,
+              oil_equivalent_mg: 279.7696,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0799,
           linoleic_g_per_100g: "0.107",
           linolenic_g_per_100g: "0.168",
@@ -27214,6 +28854,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 361.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 205.5,
+              fraction: 0.0337,
+              oil_equivalent_mg: 303.5675,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 156,
+              fraction: 0.0256,
+              oil_equivalent_mg: 230.4454,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0593,
@@ -27323,6 +28979,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 379.95,
+          by_member: {
+            "omega-3": {
+              acid_mg: 362.95,
+              fraction: 0.1268,
+              oil_equivalent_mg: 1140.7591,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 17,
+              fraction: 28e-4,
+              oil_equivalent_mg: 25.1126,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.118",
           epa_g_per_100g: "0.295",
           fraction: 0.1295,
@@ -27416,6 +29088,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 426.24,
+          by_member: {
+            "omega-3": {
+              acid_mg: 62.16,
+              fraction: 0.0102,
+              oil_equivalent_mg: 91.8236,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 364.08,
+              fraction: 0.0598,
+              oil_equivalent_mg: 537.8241,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.07,
@@ -27509,6 +29197,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 82.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 46.2,
+              fraction: 76e-4,
+              oil_equivalent_mg: 68.2473,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 36.3,
+              fraction: 6e-3,
+              oil_equivalent_mg: 53.6229,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0135,
           linoleic_g_per_100g: "0.022",
           linolenic_g_per_100g: "0.028",
@@ -27616,6 +29320,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 1368.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 297.5,
+              fraction: 0.0488,
+              oil_equivalent_mg: 439.4712,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1071,
+              fraction: 0.1758,
+              oil_equivalent_mg: 1582.0962,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.2246,
@@ -27677,6 +29397,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 382.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 161.5,
+              fraction: 0.0428,
+              oil_equivalent_mg: 384.9634,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 221,
+              fraction: 0.0363,
+              oil_equivalent_mg: 326.4643,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.04",
           epa_g_per_100g: "0.06",
           fraction: 0.079,
@@ -27786,6 +29522,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 833,
+          by_member: {
+            "omega-3": {
+              acid_mg: 144.5,
+              fraction: 0.0237,
+              oil_equivalent_mg: 213.4574,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 688.5,
+              fraction: 0.113,
+              oil_equivalent_mg: 1017.0618,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.1367,
@@ -27959,6 +29711,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 782,
+          by_member: {
+            "omega-3": {
+              acid_mg: 161.5,
+              fraction: 0.0265,
+              oil_equivalent_mg: 238.5701,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 620.5,
+              fraction: 0.1018,
+              oil_equivalent_mg: 916.6113,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.1284,
@@ -28036,6 +29804,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 137.64,
+          by_member: {
+            "omega-3": {
+              acid_mg: 81.84,
+              fraction: 0.0134,
+              oil_equivalent_mg: 120.8952,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 55.8,
+              fraction: 92e-4,
+              oil_equivalent_mg: 82.4285,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0226,
           linoleic_g_per_100g: "0.045",
           linolenic_g_per_100g: "0.066",
@@ -28095,6 +29879,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 960.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 195.5,
+              fraction: 0.0321,
+              oil_equivalent_mg: 288.7953,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 765,
+              fraction: 0.1256,
+              oil_equivalent_mg: 1130.0687,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.1577,
@@ -28172,6 +29972,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 344.52,
+          by_member: {
+            "omega-3": {
+              acid_mg: 73.26,
+              fraction: 0.012,
+              oil_equivalent_mg: 108.2207,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 271.26,
+              fraction: 0.0445,
+              oil_equivalent_mg: 400.7091,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0565,
           linoleic_g_per_100g: "0.137",
           linolenic_g_per_100g: "0.037",
@@ -28344,6 +30160,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 319.6,
+          by_member: {
+            "omega-3": {
+              acid_mg: 97.76,
+              fraction: 0.016,
+              oil_equivalent_mg: 144.4124,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 221.84,
+              fraction: 0.0364,
+              oil_equivalent_mg: 327.7051,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0525,
           linoleic_g_per_100g: "0.118",
           linolenic_g_per_100g: "0.052",
@@ -28516,6 +30348,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 407.45,
+          by_member: {
+            "omega-3": {
+              acid_mg: 355.25,
+              fraction: 0.1124,
+              oil_equivalent_mg: 1011.7533,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 52.2,
+              fraction: 86e-4,
+              oil_equivalent_mg: 77.1106,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.002",
           dha_g_per_100g: "0.078",
           epa_g_per_100g: "0.117",
@@ -28691,6 +30539,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 258.72,
+          by_member: {
+            "omega-3": {
+              acid_mg: 86.73,
+              fraction: 0.0142,
+              oil_equivalent_mg: 128.1188,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 171.99,
+              fraction: 0.0282,
+              oil_equivalent_mg: 254.066,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0425,
@@ -28752,6 +30616,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 23,
+          by_member: {
+            "omega-3": {
+              acid_mg: 6.9,
+              fraction: 11e-4,
+              oil_equivalent_mg: 10.1928,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 16.1,
+              fraction: 26e-4,
+              oil_equivalent_mg: 23.7831,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 38e-4,
           linoleic_g_per_100g: "0.014",
           linolenic_g_per_100g: "0.006",
@@ -28811,6 +30691,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 1213.46,
+          by_member: {
+            "omega-3": {
+              acid_mg: 222.44,
+              fraction: 0.0365,
+              oil_equivalent_mg: 328.5915,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 991.02,
+              fraction: 0.1627,
+              oil_equivalent_mg: 1463.9486,
+              qualifies: true,
+              strong: false
+            }
+          },
           fraction: 0.1992,
           linoleic_g_per_100g: "0.597",
           linolenic_g_per_100g: "0.134",
@@ -28925,6 +30821,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         },
         efa: {
           acid_mg: 1308.376,
+          by_member: {
+            "omega-3": {
+              acid_mg: 239.056,
+              fraction: 0.0392,
+              oil_equivalent_mg: 353.1369,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1069.32,
+              fraction: 0.1755,
+              oil_equivalent_mg: 1579.6144,
+              qualifies: true,
+              strong: false
+            }
+          },
           fraction: 0.2148,
           linoleic_g_per_100g: "1.995",
           linolenic_g_per_100g: "0.446",
@@ -29032,6 +30944,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 250.8,
+          by_member: {
+            "omega-3": {
+              acid_mg: 123.5,
+              fraction: 0.0203,
+              oil_equivalent_mg: 182.4359,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 127.3,
+              fraction: 0.0209,
+              oil_equivalent_mg: 188.0493,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0412,
@@ -29125,6 +31053,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 424.9665,
+          by_member: {
+            "omega-3": {
+              acid_mg: 55.566,
+              fraction: 91e-4,
+              oil_equivalent_mg: 82.0829,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 369.4005,
+              fraction: 0.0606,
+              oil_equivalent_mg: 545.6836,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0698,
@@ -29186,6 +31130,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 1751.85,
+          by_member: {
+            "omega-3": {
+              acid_mg: 1625.2,
+              fraction: 0.5673,
+              oil_equivalent_mg: 5106.1163,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 126.65,
+              fraction: 0.0208,
+              oil_equivalent_mg: 187.0891,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "1.195",
           epa_g_per_100g: "0.653",
           fraction: 0.5881,
@@ -29312,6 +31272,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 115.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 84.15,
+              fraction: 0.0138,
+              oil_equivalent_mg: 124.3076,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 31.35,
+              fraction: 51e-4,
+              oil_equivalent_mg: 46.3107,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.019,
@@ -29390,6 +31366,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 451.35,
+          by_member: {
+            "omega-3": {
+              acid_mg: 159.3,
+              fraction: 0.0261,
+              oil_equivalent_mg: 235.3202,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 292.05,
+              fraction: 0.0479,
+              oil_equivalent_mg: 431.4203,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0741,
           linoleic_g_per_100g: "0.165",
           linolenic_g_per_100g: "0.09",
@@ -29520,6 +31512,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         },
         efa: {
           acid_mg: 452.25,
+          by_member: {
+            "omega-3": {
+              acid_mg: 159.795,
+              fraction: 0.0262,
+              oil_equivalent_mg: 236.0514,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 292.455,
+              fraction: 0.048,
+              oil_equivalent_mg: 432.0186,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0742,
           linoleic_g_per_100g: "0.485",
           linolenic_g_per_100g: "0.265",
@@ -29643,6 +31651,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 216.8775,
+          by_member: {
+            "omega-3": {
+              acid_mg: 105.462,
+              fraction: 0.0173,
+              oil_equivalent_mg: 155.7899,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 111.4155,
+              fraction: 0.0183,
+              oil_equivalent_mg: 164.5845,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0356,
@@ -29705,6 +31729,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 39.68,
+          by_member: {
+            "omega-3": {
+              acid_mg: 11.16,
+              fraction: 18e-4,
+              oil_equivalent_mg: 16.4857,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 28.52,
+              fraction: 47e-4,
+              oil_equivalent_mg: 42.1301,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 65e-4,
@@ -29782,6 +31822,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 646.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 603,
+              fraction: 0.099,
+              oil_equivalent_mg: 890.76,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 43.2,
+              fraction: 71e-4,
+              oil_equivalent_mg: 63.8156,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.1061,
@@ -29914,6 +31970,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         },
         efa: {
           acid_mg: 594.405,
+          by_member: {
+            "omega-3": {
+              acid_mg: 554.445,
+              fraction: 0.091,
+              oil_equivalent_mg: 819.0339,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 39.96,
+              fraction: 66e-4,
+              oil_equivalent_mg: 59.0295,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0976,
           linoleic_g_per_100g: "0.072",
           linolenic_g_per_100g: "0.999",
@@ -30037,6 +32109,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 729.3,
+          by_member: {
+            "omega-3": {
+              acid_mg: 698.7,
+              fraction: 0.2419,
+              oil_equivalent_mg: 2176.925,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 30.6,
+              fraction: 5e-3,
+              oil_equivalent_mg: 45.2027,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.506",
           epa_g_per_100g: "0.276",
           fraction: 0.2469,
@@ -30147,6 +32235,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 64.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 30.8,
+              fraction: 51e-4,
+              oil_equivalent_mg: 45.4982,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 33.6,
+              fraction: 55e-4,
+              oil_equivalent_mg: 49.6344,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0106,
@@ -30240,6 +32344,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 85.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 40.5,
+              fraction: 66e-4,
+              oil_equivalent_mg: 59.8272,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 45,
+              fraction: 74e-4,
+              oil_equivalent_mg: 66.4746,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.014,
@@ -30365,6 +32485,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 10867.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 1284.5,
+              fraction: 0.2108,
+              oil_equivalent_mg: 1897.4814,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 9583,
+              fraction: 1.5729,
+              oil_equivalent_mg: 14156.1415,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 1.7837,
@@ -30538,6 +32674,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 289.38,
+          by_member: {
+            "omega-3": {
+              acid_mg: 163.8,
+              fraction: 0.0269,
+              oil_equivalent_mg: 241.9676,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 125.58,
+              fraction: 0.0206,
+              oil_equivalent_mg: 185.5085,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0475,
@@ -30711,6 +32863,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 42.14,
+          by_member: {
+            "omega-3": {
+              acid_mg: 4.3,
+              fraction: 7e-4,
+              oil_equivalent_mg: 6.352,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 37.84,
+              fraction: 62e-4,
+              oil_equivalent_mg: 55.8978,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 69e-4,
@@ -30756,6 +32924,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 282.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 266.9,
+              fraction: 0.0949,
+              oil_equivalent_mg: 853.9434,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 15.3,
+              fraction: 25e-4,
+              oil_equivalent_mg: 22.6014,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.162",
           epa_g_per_100g: "0.152",
           fraction: 0.0974,
@@ -30897,6 +33081,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 36.8,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0.8,
+              fraction: 1e-4,
+              oil_equivalent_mg: 1.1818,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 36,
+              fraction: 59e-4,
+              oil_equivalent_mg: 53.1797,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 6e-3,
           linoleic_g_per_100g: "0.045",
           linolenic_g_per_100g: "0.001",
@@ -30956,6 +33156,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 27.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 6.4,
+              fraction: 11e-4,
+              oil_equivalent_mg: 9.4542,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 20.8,
+              fraction: 34e-4,
+              oil_equivalent_mg: 30.7261,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 45e-4,
@@ -31032,6 +33248,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 32.75,
+          by_member: {
+            "omega-3": {
+              acid_mg: 9.17,
+              fraction: 15e-4,
+              oil_equivalent_mg: 13.5461,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 23.58,
+              fraction: 39e-4,
+              oil_equivalent_mg: 34.8327,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 54e-4,
@@ -31077,6 +33309,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 733.55,
+          by_member: {
+            "omega-3": {
+              acid_mg: 673.2,
+              fraction: 0.212,
+              oil_equivalent_mg: 1907.9546,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 60.35,
+              fraction: 99e-4,
+              oil_equivalent_mg: 89.1499,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.011",
           dha_g_per_100g: "0.271",
           epa_g_per_100g: "0.353",
@@ -31203,6 +33451,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 84.1,
+          by_member: {
+            "omega-3": {
+              acid_mg: 68.15,
+              fraction: 0.0112,
+              oil_equivalent_mg: 100.6721,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 15.95,
+              fraction: 26e-4,
+              oil_equivalent_mg: 23.5616,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0138,
@@ -31264,6 +33528,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 324.6075,
+          by_member: {
+            "omega-3": {
+              acid_mg: 30.051,
+              fraction: 49e-4,
+              oil_equivalent_mg: 44.3918,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 294.5565,
+              fraction: 0.0483,
+              oil_equivalent_mg: 435.123,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.136",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
@@ -31342,6 +33622,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 4.674,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0.304,
+              fraction: 0,
+              oil_equivalent_mg: 0.4491,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 4.37,
+              fraction: 7e-4,
+              oil_equivalent_mg: 6.4554,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 8e-4,
@@ -31387,6 +33683,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 34.32,
+          by_member: {
+            "omega-3": {
+              acid_mg: 2.34,
+              fraction: 4e-4,
+              oil_equivalent_mg: 3.4567,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 31.98,
+              fraction: 52e-4,
+              oil_equivalent_mg: 47.2413,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 56e-4,
@@ -31432,6 +33744,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 132.44,
+          by_member: {
+            "omega-3": {
+              acid_mg: 3.08,
+              fraction: 5e-4,
+              oil_equivalent_mg: 4.5498,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 129.36,
+              fraction: 0.0212,
+              oil_equivalent_mg: 191.0924,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0217,
@@ -31505,6 +33833,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 2759.022,
+          by_member: {
+            "omega-3": {
+              acid_mg: 7.371,
+              fraction: 12e-4,
+              oil_equivalent_mg: 10.8885,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2751.651,
+              fraction: 0.4516,
+              oil_equivalent_mg: 4064.7773,
+              qualifies: true,
+              strong: true
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.009",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
@@ -31586,6 +33930,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 167.32,
+          by_member: {
+            "omega-3": {
+              acid_mg: 1.78,
+              fraction: 3e-4,
+              oil_equivalent_mg: 2.6294,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 165.54,
+              fraction: 0.0272,
+              oil_equivalent_mg: 244.538,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0275,
@@ -31659,6 +34019,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 6127.569,
+          by_member: {
+            "omega-3": {
+              acid_mg: 279.531,
+              fraction: 0.0459,
+              oil_equivalent_mg: 412.9271,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 5848.038,
+              fraction: 0.9599,
+              oil_equivalent_mg: 8638.8035,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 1.0057,
@@ -31764,6 +34140,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 72.24,
+          by_member: {
+            "omega-3": {
+              acid_mg: 6.72,
+              fraction: 11e-4,
+              oil_equivalent_mg: 9.9269,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 65.52,
+              fraction: 0.0108,
+              oil_equivalent_mg: 96.7871,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0119,
@@ -31825,6 +34217,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 344.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 15.12,
+              fraction: 25e-4,
+              oil_equivalent_mg: 22.3355,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 329.28,
+              fraction: 0.054,
+              oil_equivalent_mg: 486.417,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0565,
           linoleic_g_per_100g: "0.196",
           linolenic_g_per_100g: "0.009",
@@ -31939,6 +34347,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         },
         efa: {
           acid_mg: 480.483,
+          by_member: {
+            "omega-3": {
+              acid_mg: 20.685,
+              fraction: 34e-4,
+              oil_equivalent_mg: 30.5562,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 459.798,
+              fraction: 0.0755,
+              oil_equivalent_mg: 679.22,
+              qualifies: true,
+              strong: false
+            }
+          },
           fraction: 0.0789,
           linoleic_g_per_100g: "0.778",
           linolenic_g_per_100g: "0.035",
@@ -32046,6 +34470,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 66.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 28.22,
+              fraction: 46e-4,
+              oil_equivalent_mg: 41.687,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 38.18,
+              fraction: 63e-4,
+              oil_equivalent_mg: 56.4,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0109,
@@ -32139,6 +34579,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 401.85,
+          by_member: {
+            "omega-3": {
+              acid_mg: 234.27,
+              fraction: 0.0385,
+              oil_equivalent_mg: 346.0669,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 167.58,
+              fraction: 0.0275,
+              oil_equivalent_mg: 247.5515,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.066,
@@ -32280,6 +34736,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 3781.0395,
+          by_member: {
+            "omega-3": {
+              acid_mg: 60.102,
+              fraction: 99e-4,
+              oil_equivalent_mg: 88.7835,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 3720.9375,
+              fraction: 0.6107,
+              oil_equivalent_mg: 5496.6209,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.6206,
@@ -32513,6 +34985,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Spices & herbs",
         efa: {
           acid_mg: 2513.984,
+          by_member: {
+            "omega-3": {
+              acid_mg: 24.024,
+              fraction: 39e-4,
+              oil_equivalent_mg: 35.4886,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2489.96,
+              fraction: 0.4087,
+              oil_equivalent_mg: 3678.2037,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.4126,
@@ -32574,6 +35062,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Pork",
         efa: {
           acid_mg: 416.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 59.5,
+              fraction: 0.0146,
+              oil_equivalent_mg: 131.8122,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 357,
+              fraction: 0.0586,
+              oil_equivalent_mg: 527.3654,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.03",
           epa_g_per_100g: "0",
           fraction: 0.0732,
@@ -32715,6 +35219,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Pork",
         efa: {
           acid_mg: 2198.95,
+          by_member: {
+            "omega-3": {
+              acid_mg: 98.6,
+              fraction: 0.0162,
+              oil_equivalent_mg: 145.6533,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2100.35,
+              fraction: 0.3447,
+              oil_equivalent_mg: 3102.6664,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.3609,
@@ -32794,6 +35314,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Pork",
         efa: {
           acid_mg: 1606.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 59.5,
+              fraction: 98e-4,
+              oil_equivalent_mg: 87.8942,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1547,
+              fraction: 0.2539,
+              oil_equivalent_mg: 2285.25,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.2637,
@@ -32872,6 +35408,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 280.72,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 280.72,
+              fraction: 0.0461,
+              oil_equivalent_mg: 414.6835,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
@@ -32982,6 +35534,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 82.88,
+          by_member: {
+            "omega-3": {
+              acid_mg: 19.24,
+              fraction: 32e-4,
+              oil_equivalent_mg: 28.4216,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 63.64,
+              fraction: 0.0104,
+              oil_equivalent_mg: 94.0099,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0136,
@@ -33043,6 +35611,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 311.41,
+          by_member: {
+            "omega-3": {
+              acid_mg: 34.27,
+              fraction: 56e-4,
+              oil_equivalent_mg: 50.6241,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 277.14,
+              fraction: 0.0455,
+              oil_equivalent_mg: 409.3951,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0511,
@@ -33088,6 +35672,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 215.32,
+          by_member: {
+            "omega-3": {
+              acid_mg: 77,
+              fraction: 0.0126,
+              oil_equivalent_mg: 113.7455,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 138.32,
+              fraction: 0.0227,
+              oil_equivalent_mg: 204.3282,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0353,
@@ -33149,6 +35749,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 106.14,
+          by_member: {
+            "omega-3": {
+              acid_mg: 29.58,
+              fraction: 49e-4,
+              oil_equivalent_mg: 43.696,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 76.56,
+              fraction: 0.0126,
+              oil_equivalent_mg: 113.0955,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0174,
@@ -33326,6 +35942,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 5.36,
+          by_member: {
+            "omega-3": {
+              acid_mg: 2.68,
+              fraction: 4e-4,
+              oil_equivalent_mg: 3.9589,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2.68,
+              fraction: 4e-4,
+              oil_equivalent_mg: 3.9589,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 9e-4,
@@ -33371,6 +36003,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 7.81,
+          by_member: {
+            "omega-3": {
+              acid_mg: 4.26,
+              fraction: 7e-4,
+              oil_equivalent_mg: 6.2929,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 3.55,
+              fraction: 6e-4,
+              oil_equivalent_mg: 5.2441,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 13e-4,
@@ -33432,6 +36080,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 5583.816,
+          by_member: {
+            "omega-3": {
+              acid_mg: 31.4685,
+              fraction: 52e-4,
+              oil_equivalent_mg: 46.4857,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 5552.3475,
+              fraction: 0.9113,
+              oil_equivalent_mg: 8202.0053,
+              qualifies: true,
+              strong: true
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.005",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
@@ -33543,6 +36207,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 1394,
+          by_member: {
+            "omega-3": {
+              acid_mg: 289,
+              fraction: 0.0474,
+              oil_equivalent_mg: 426.9148,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1105,
+              fraction: 0.1814,
+              oil_equivalent_mg: 1632.3214,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.2288,
@@ -33621,6 +36301,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 55.68,
+          by_member: {
+            "omega-3": {
+              acid_mg: 35.96,
+              fraction: 59e-4,
+              oil_equivalent_mg: 53.1206,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 19.72,
+              fraction: 32e-4,
+              oil_equivalent_mg: 29.1307,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 91e-4,
@@ -33694,6 +36390,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 1311.55,
+          by_member: {
+            "omega-3": {
+              acid_mg: 811.75,
+              fraction: 0.2756,
+              oil_equivalent_mg: 2480.0698,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 499.8,
+              fraction: 0.082,
+              oil_equivalent_mg: 738.3115,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.616",
           epa_g_per_100g: "0.259",
           fraction: 0.3576,
@@ -33787,6 +36499,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 76.85,
+          by_member: {
+            "omega-3": {
+              acid_mg: 20.3,
+              fraction: 33e-4,
+              oil_equivalent_mg: 29.9874,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 56.55,
+              fraction: 93e-4,
+              oil_equivalent_mg: 83.5365,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
@@ -33887,6 +36615,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 461.25,
+          by_member: {
+            "omega-3": {
+              acid_mg: 154.98,
+              fraction: 0.0254,
+              oil_equivalent_mg: 228.9386,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 306.27,
+              fraction: 0.0503,
+              oil_equivalent_mg: 452.4263,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0757,
@@ -33976,6 +36720,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 255.84,
+          by_member: {
+            "omega-3": {
+              acid_mg: 91.84,
+              fraction: 0.0151,
+              oil_equivalent_mg: 135.6673,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 164,
+              fraction: 0.0269,
+              oil_equivalent_mg: 242.2631,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.042,
@@ -34053,6 +36813,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 73.98,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 73.98,
+              fraction: 0.0121,
+              oil_equivalent_mg: 109.2843,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0121,
@@ -34130,6 +36906,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 362.1,
+          by_member: {
+            "omega-3": {
+              acid_mg: 68,
+              fraction: 0.0112,
+              oil_equivalent_mg: 100.4506,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 294.1,
+              fraction: 0.0483,
+              oil_equivalent_mg: 434.4486,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0594,
@@ -34191,6 +36983,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 442.68,
+          by_member: {
+            "omega-3": {
+              acid_mg: 59.52,
+              fraction: 0.011,
+              oil_equivalent_mg: 98.6019,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 383.16,
+              fraction: 0.0629,
+              oil_equivalent_mg: 566.0093,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.047",
           dha_g_per_100g: "0.001",
           epa_g_per_100g: "0.004",
@@ -34285,6 +37093,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 344.25,
+          by_member: {
+            "omega-3": {
+              acid_mg: 305.15,
+              fraction: 0.1062,
+              oil_equivalent_mg: 955.8287,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 39.1,
+              fraction: 64e-4,
+              oil_equivalent_mg: 57.7591,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.238",
           epa_g_per_100g: "0.107",
           fraction: 0.1126,
@@ -34378,6 +37202,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 136,
+          by_member: {
+            "omega-3": {
+              acid_mg: 96.05,
+              fraction: 0.0158,
+              oil_equivalent_mg: 141.8864,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 39.95,
+              fraction: 66e-4,
+              oil_equivalent_mg: 59.0147,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0223,
@@ -34515,6 +37355,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 161.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 96.9,
+              fraction: 0.0159,
+              oil_equivalent_mg: 143.142,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 64.6,
+              fraction: 0.0106,
+              oil_equivalent_mg: 95.428,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0265,
@@ -34654,6 +37510,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 162.75,
+          by_member: {
+            "omega-3": {
+              acid_mg: 143.5,
+              fraction: 0.0236,
+              oil_equivalent_mg: 211.9802,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 19.25,
+              fraction: 32e-4,
+              oil_equivalent_mg: 28.4364,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
@@ -34716,6 +37588,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 1561.06,
+          by_member: {
+            "omega-3": {
+              acid_mg: 1451.59,
+              fraction: 0.476,
+              oil_equivalent_mg: 4284.1313,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 109.47,
+              fraction: 0.018,
+              oil_equivalent_mg: 161.7106,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.864",
           epa_g_per_100g: "0.532",
           fraction: 0.494,
@@ -34891,6 +37779,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 74,
+          by_member: {
+            "omega-3": {
+              acid_mg: 4,
+              fraction: 7e-4,
+              oil_equivalent_mg: 5.9089,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 70,
+              fraction: 0.0115,
+              oil_equivalent_mg: 103.405,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0121,
@@ -34936,6 +37840,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 166.6,
+          by_member: {
+            "omega-3": {
+              acid_mg: 154.7,
+              fraction: 0.054,
+              oil_equivalent_mg: 486.1772,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 11.9,
+              fraction: 2e-3,
+              oil_equivalent_mg: 17.5788,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.104",
           epa_g_per_100g: "0.072",
           fraction: 0.056,
@@ -35030,6 +37950,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 5958.3195,
+          by_member: {
+            "omega-3": {
+              acid_mg: 102.9105,
+              fraction: 0.0169,
+              oil_equivalent_mg: 152.0208,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 5855.409,
+              fraction: 0.9611,
+              oil_equivalent_mg: 8649.692,
+              qualifies: true,
+              strong: true
+            }
+          },
           fraction: 0.978,
           linoleic_g_per_100g: "20.654",
           linolenic_g_per_100g: "0.363",
@@ -35154,6 +38090,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 49.3,
+          by_member: {
+            "omega-3": {
+              acid_mg: 4.35,
+              fraction: 7e-4,
+              oil_equivalent_mg: 6.4259,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 44.95,
+              fraction: 74e-4,
+              oil_equivalent_mg: 66.4008,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 81e-4,
           linoleic_g_per_100g: "0.031",
           linolenic_g_per_100g: "0.003",
@@ -35245,6 +38197,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 41.65,
+          by_member: {
+            "omega-3": {
+              acid_mg: 26.35,
+              fraction: 92e-4,
+              oil_equivalent_mg: 82.8426,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 15.3,
+              fraction: 25e-4,
+              oil_equivalent_mg: 22.6014,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0",
           dha_g_per_100g: "0.015",
           epa_g_per_100g: "0.015",
@@ -35325,6 +38293,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Beef",
         efa: {
           acid_mg: 424.15,
+          by_member: {
+            "omega-3": {
+              acid_mg: 111.35,
+              fraction: 0.0189,
+              oil_equivalent_mg: 170.3435,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 312.8,
+              fraction: 0.0513,
+              oil_equivalent_mg: 462.0725,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.001",
           epa_g_per_100g: "0.003",
           fraction: 0.0703,
@@ -35402,6 +38386,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 160,
+          by_member: {
+            "omega-3": {
+              acid_mg: 24,
+              fraction: 39e-4,
+              oil_equivalent_mg: 35.4531,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 136,
+              fraction: 0.0223,
+              oil_equivalent_mg: 200.9011,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0263,
           linoleic_g_per_100g: "0.085",
           linolenic_g_per_100g: "0.015",
@@ -35525,6 +38525,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 940.95,
+          by_member: {
+            "omega-3": {
+              acid_mg: 779.45,
+              fraction: 0.2677,
+              oil_equivalent_mg: 2408.9329,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 161.5,
+              fraction: 0.0265,
+              oil_equivalent_mg: 238.5701,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.56",
           epa_g_per_100g: "0.299",
           fraction: 0.2942,
@@ -35634,6 +38650,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 155.25,
+          by_member: {
+            "omega-3": {
+              acid_mg: 0,
+              fraction: 0,
+              oil_equivalent_mg: 0,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 155.25,
+              fraction: 0.0255,
+              oil_equivalent_mg: 229.3375,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0255,
@@ -35695,6 +38727,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 8708.36,
+          by_member: {
+            "omega-3": {
+              acid_mg: 1028.56,
+              fraction: 0.1688,
+              oil_equivalent_mg: 1519.4032,
+              qualifies: true,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 7679.8,
+              fraction: 1.2605,
+              oil_equivalent_mg: 11344.7079,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 1.4293,
@@ -35868,6 +38916,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 193.75,
+          by_member: {
+            "omega-3": {
+              acid_mg: 120.9,
+              fraction: 0.0198,
+              oil_equivalent_mg: 178.5952,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 72.85,
+              fraction: 0.012,
+              oil_equivalent_mg: 107.615,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0318,
           linoleic_g_per_100g: "0.047",
           linolenic_g_per_100g: "0.078",
@@ -35927,6 +38991,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 196.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 165.6,
+              fraction: 0.0272,
+              oil_equivalent_mg: 244.6266,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 30.6,
+              fraction: 5e-3,
+              oil_equivalent_mg: 45.2027,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0322,
           linoleic_g_per_100g: "0.017",
           linolenic_g_per_100g: "0.092",
@@ -36162,6 +39242,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 323.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 54.88,
+              fraction: 9e-3,
+              oil_equivalent_mg: 81.0695,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 268.52,
+              fraction: 0.0441,
+              oil_equivalent_mg: 396.6615,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0531,
           linoleic_g_per_100g: "0.137",
           linolenic_g_per_100g: "0.028",
@@ -36318,6 +39414,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 227.85,
+          by_member: {
+            "omega-3": {
+              acid_mg: 95.55,
+              fraction: 0.0157,
+              oil_equivalent_mg: 141.1478,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 132.3,
+              fraction: 0.0217,
+              oil_equivalent_mg: 195.4354,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0374,
@@ -36423,6 +39535,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 235.8,
+          by_member: {
+            "omega-3": {
+              acid_mg: 147.6,
+              fraction: 0.0242,
+              oil_equivalent_mg: 218.0368,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 88.2,
+              fraction: 0.0145,
+              oil_equivalent_mg: 130.2903,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0387,
           linoleic_g_per_100g: "0.049",
           linolenic_g_per_100g: "0.082",
@@ -36482,6 +39610,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 9313.2585,
+          by_member: {
+            "omega-3": {
+              acid_mg: 19.5615,
+              fraction: 32e-4,
+              oil_equivalent_mg: 28.8965,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 9293.697,
+              fraction: 1.5254,
+              oil_equivalent_mg: 13728.7791,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 1.5286,
@@ -36624,6 +39768,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 948.28,
+          by_member: {
+            "omega-3": {
+              acid_mg: 28.26,
+              fraction: 46e-4,
+              oil_equivalent_mg: 41.7461,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 920.02,
+              fraction: 0.151,
+              oil_equivalent_mg: 1359.0664,
+              qualifies: true,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.1556,
@@ -36701,6 +39861,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 192,
+          by_member: {
+            "omega-3": {
+              acid_mg: 12,
+              fraction: 2e-3,
+              oil_equivalent_mg: 17.7266,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 180,
+              fraction: 0.0295,
+              oil_equivalent_mg: 265.8985,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0315,
@@ -37000,6 +40176,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 297.64,
+          by_member: {
+            "omega-3": {
+              acid_mg: 38.64,
+              fraction: 68e-4,
+              oil_equivalent_mg: 61.4197,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 259,
+              fraction: 0.0425,
+              oil_equivalent_mg: 382.5984,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.161",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0.009",
@@ -37062,6 +40254,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 867.85,
+          by_member: {
+            "omega-3": {
+              acid_mg: 793.05,
+              fraction: 0.2764,
+              oil_equivalent_mg: 2487.5803,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 74.8,
+              fraction: 0.0123,
+              oil_equivalent_mg: 110.4956,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.772",
           epa_g_per_100g: "0.127",
           fraction: 0.2887,
@@ -37171,6 +40379,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 6673.59,
+          by_member: {
+            "omega-3": {
+              acid_mg: 115.3845,
+              fraction: 0.0189,
+              oil_equivalent_mg: 170.4476,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 6558.2055,
+              fraction: 1.0764,
+              oil_equivalent_mg: 9687.8728,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 1.0954,
@@ -37265,6 +40489,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fruits",
         efa: {
           acid_mg: 79.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 21.6,
+              fraction: 35e-4,
+              oil_equivalent_mg: 31.9078,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 57.6,
+              fraction: 95e-4,
+              oil_equivalent_mg: 85.0875,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.013,
@@ -37326,6 +40566,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 60.72,
+          by_member: {
+            "omega-3": {
+              acid_mg: 18.48,
+              fraction: 3e-3,
+              oil_equivalent_mg: 27.2989,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 42.24,
+              fraction: 69e-4,
+              oil_equivalent_mg: 62.3975,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.01,
           linoleic_g_per_100g: "0.032",
           linolenic_g_per_100g: "0.014",
@@ -37433,6 +40689,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 243.6,
+          by_member: {
+            "omega-3": {
+              acid_mg: 73.95,
+              fraction: 0.0121,
+              oil_equivalent_mg: 109.24,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 169.65,
+              fraction: 0.0278,
+              oil_equivalent_mg: 250.6094,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.04,
           linoleic_g_per_100g: "0.117",
           linolenic_g_per_100g: "0.051",
@@ -37508,6 +40780,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 46.2,
+          by_member: {
+            "omega-3": {
+              acid_mg: 14,
+              fraction: 23e-4,
+              oil_equivalent_mg: 20.681,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 32.2,
+              fraction: 53e-4,
+              oil_equivalent_mg: 47.5663,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 76e-4,
           linoleic_g_per_100g: "0.023",
           linolenic_g_per_100g: "0.01",
@@ -37551,6 +40839,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 7138,
+          by_member: {
+            "omega-3": {
+              acid_mg: 411.68,
+              fraction: 0.0676,
+              oil_equivalent_mg: 608.1394,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 6726.32,
+              fraction: 1.104,
+              oil_equivalent_mg: 9936.2139,
+              qualifies: true,
+              strong: true
+            }
+          },
           fraction: 1.1716,
           linoleic_g_per_100g: "4.052",
           linolenic_g_per_100g: "0.248",
@@ -37674,6 +40978,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 404.55,
+          by_member: {
+            "omega-3": {
+              acid_mg: 156.6,
+              fraction: 0.0482,
+              oil_equivalent_mg: 433.6128,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 247.95,
+              fraction: 0.0407,
+              oil_equivalent_mg: 366.2752,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.13",
           epa_g_per_100g: "0.005",
           fraction: 0.0889,
@@ -37735,6 +41055,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 2061.36,
+          by_member: {
+            "omega-3": {
+              acid_mg: 210.42,
+              fraction: 0.0345,
+              oil_equivalent_mg: 310.8354,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1850.94,
+              fraction: 0.3038,
+              oil_equivalent_mg: 2734.2344,
+              qualifies: true,
+              strong: true
+            }
+          },
           fraction: 0.3383,
           linoleic_g_per_100g: "1.469",
           linolenic_g_per_100g: "0.167",
@@ -37858,6 +41194,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 123.67,
+          by_member: {
+            "omega-3": {
+              acid_mg: 4.47,
+              fraction: 7e-4,
+              oil_equivalent_mg: 6.6031,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 119.2,
+              fraction: 0.0196,
+              oil_equivalent_mg: 176.0839,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0203,
@@ -37935,6 +41287,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 839.8,
+          by_member: {
+            "omega-3": {
+              acid_mg: 793.05,
+              fraction: 0.2704,
+              oil_equivalent_mg: 2433.4148,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 46.75,
+              fraction: 77e-4,
+              oil_equivalent_mg: 69.0598,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.629",
           epa_g_per_100g: "0.233",
           fraction: 0.2781,
@@ -38045,6 +41413,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Poultry",
         efa: {
           acid_mg: 389.3,
+          by_member: {
+            "omega-3": {
+              acid_mg: 23.8,
+              fraction: 52e-4,
+              oil_equivalent_mg: 46.8692,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 365.5,
+              fraction: 0.06,
+              oil_equivalent_mg: 539.9217,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.001",
           dha_g_per_100g: "0.004",
           epa_g_per_100g: "0.004",
@@ -38140,6 +41524,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Poultry",
         efa: {
           acid_mg: 1290.3,
+          by_member: {
+            "omega-3": {
+              acid_mg: 78.2,
+              fraction: 0.0156,
+              oil_equivalent_mg: 140.405,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 1212.1,
+              fraction: 0.1989,
+              oil_equivalent_mg: 1790.5311,
+              qualifies: true,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.01",
           dha_g_per_100g: "0.005",
           epa_g_per_100g: "0.012",
@@ -38235,6 +41635,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Spices & herbs",
         efa: {
           acid_mg: 22.68,
+          by_member: {
+            "omega-3": {
+              acid_mg: 2.52,
+              fraction: 4e-4,
+              oil_equivalent_mg: 3.7226,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 20.16,
+              fraction: 33e-4,
+              oil_equivalent_mg: 29.7806,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 37e-4,
@@ -38280,6 +41696,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 260.8,
+          by_member: {
+            "omega-3": {
+              acid_mg: 185.82,
+              fraction: 0.0305,
+              oil_equivalent_mg: 274.4959,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 74.98,
+              fraction: 0.0123,
+              oil_equivalent_mg: 110.7615,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0428,
@@ -38389,6 +41821,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 132.48,
+          by_member: {
+            "omega-3": {
+              acid_mg: 92.16,
+              fraction: 0.0151,
+              oil_equivalent_mg: 136.14,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 40.32,
+              fraction: 66e-4,
+              oil_equivalent_mg: 59.5613,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0217,
           linoleic_g_per_100g: "0.028",
           linolenic_g_per_100g: "0.064",
@@ -38496,6 +41944,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 63.96,
+          by_member: {
+            "omega-3": {
+              acid_mg: 49.92,
+              fraction: 82e-4,
+              oil_equivalent_mg: 73.7425,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 14.04,
+              fraction: 23e-4,
+              oil_equivalent_mg: 20.7401,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0105,
@@ -38557,6 +42021,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 344.25,
+          by_member: {
+            "omega-3": {
+              acid_mg: 10.2,
+              fraction: 17e-4,
+              oil_equivalent_mg: 15.0676,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 334.05,
+              fraction: 0.0548,
+              oil_equivalent_mg: 493.4633,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0565,
@@ -38602,6 +42082,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 87.55,
+          by_member: {
+            "omega-3": {
+              acid_mg: 4.25,
+              fraction: 9e-4,
+              oil_equivalent_mg: 7.7421,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 83.3,
+              fraction: 0.0137,
+              oil_equivalent_mg: 123.0519,
+              qualifies: false,
+              strong: false
+            }
+          },
           conjugated_linoleic_g_per_100g: "0.009",
           dha_g_per_100g: "0",
           epa_g_per_100g: "0.001",
@@ -38664,6 +42160,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Lamb, veal & game",
         efa: {
           acid_mg: 416.5,
+          by_member: {
+            "omega-3": {
+              acid_mg: 76.5,
+              fraction: 0.0126,
+              oil_equivalent_mg: 113.0069,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 340,
+              fraction: 0.0558,
+              oil_equivalent_mg: 502.2528,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0684,
           linoleic_g_per_100g: "0.4",
           linolenic_g_per_100g: "0.09",
@@ -38741,6 +42253,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Nuts & seeds",
         efa: {
           acid_mg: 13373.5455,
+          by_member: {
+            "omega-3": {
+              acid_mg: 2574.18,
+              fraction: 0.4225,
+              oil_equivalent_mg: 3802.6147,
+              qualifies: true,
+              strong: true
+            },
+            "omega-6": {
+              acid_mg: 10799.3655,
+              fraction: 1.7726,
+              oil_equivalent_mg: 15952.9736,
+              qualifies: true,
+              strong: true
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 2.1951,
@@ -38880,6 +42408,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 26.04,
+          by_member: {
+            "omega-3": {
+              acid_mg: 6.2,
+              fraction: 1e-3,
+              oil_equivalent_mg: 9.1587,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 19.84,
+              fraction: 33e-4,
+              oil_equivalent_mg: 29.3079,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 43e-4,
@@ -38941,6 +42485,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 272.08,
+          by_member: {
+            "omega-3": {
+              acid_mg: 123.51,
+              fraction: 0.0203,
+              oil_equivalent_mg: 182.4507,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 148.57,
+              fraction: 0.0244,
+              oil_equivalent_mg: 219.4697,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0447,
           linoleic_g_per_100g: "0.083",
           linolenic_g_per_100g: "0.069",
@@ -39112,6 +42672,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 280.8,
+          by_member: {
+            "omega-3": {
+              acid_mg: 1.56,
+              fraction: 3e-4,
+              oil_equivalent_mg: 2.3045,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 279.24,
+              fraction: 0.0458,
+              oil_equivalent_mg: 412.4972,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0461,
           linoleic_g_per_100g: "0.179",
           linolenic_g_per_100g: "0.001",
@@ -39203,6 +42779,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 331.84,
+          by_member: {
+            "omega-3": {
+              acid_mg: 129.32,
+              fraction: 0.0212,
+              oil_equivalent_mg: 191.0333,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 202.52,
+              fraction: 0.0332,
+              oil_equivalent_mg: 299.1654,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0545,
@@ -39330,6 +42922,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Dairy & eggs",
         efa: {
           acid_mg: 225.4,
+          by_member: {
+            "omega-3": {
+              acid_mg: 66.15,
+              fraction: 0.0109,
+              oil_equivalent_mg: 97.7177,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 159.25,
+              fraction: 0.0261,
+              oil_equivalent_mg: 235.2463,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.037,
@@ -39423,6 +43031,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 2667.72,
+          by_member: {
+            "omega-3": {
+              acid_mg: 161.68,
+              fraction: 0.0265,
+              oil_equivalent_mg: 238.836,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2506.04,
+              fraction: 0.4113,
+              oil_equivalent_mg: 3701.9573,
+              qualifies: true,
+              strong: true
+            }
+          },
           fraction: 0.4379,
           linoleic_g_per_100g: "1.457",
           linolenic_g_per_100g: "0.094",
@@ -39553,6 +43177,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         },
         efa: {
           acid_mg: 2667.28,
+          by_member: {
+            "omega-3": {
+              acid_mg: 161.392,
+              fraction: 0.0265,
+              oil_equivalent_mg: 238.4105,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 2505.888,
+              fraction: 0.4113,
+              oil_equivalent_mg: 3701.7328,
+              qualifies: true,
+              strong: true
+            }
+          },
           fraction: 0.4378,
           linoleic_g_per_100g: "4.068",
           linolenic_g_per_100g: "0.262",
@@ -39676,6 +43316,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Vegetables",
         efa: {
           acid_mg: 80.24,
+          by_member: {
+            "omega-3": {
+              acid_mg: 12.24,
+              fraction: 2e-3,
+              oil_equivalent_mg: 18.0811,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 68,
+              fraction: 0.0112,
+              oil_equivalent_mg: 100.4506,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0",
           epa_g_per_100g: "0",
           fraction: 0.0132,
@@ -39753,6 +43409,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Legumes",
         efa: {
           acid_mg: 330.03,
+          by_member: {
+            "omega-3": {
+              acid_mg: 150.48,
+              fraction: 0.0247,
+              oil_equivalent_mg: 222.2912,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 179.55,
+              fraction: 0.0295,
+              oil_equivalent_mg: 265.2338,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0542,
           linoleic_g_per_100g: "0.105",
           linolenic_g_per_100g: "0.088",
@@ -39883,6 +43555,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         },
         efa: {
           acid_mg: 329.978,
+          by_member: {
+            "omega-3": {
+              acid_mg: 150.414,
+              fraction: 0.0247,
+              oil_equivalent_mg: 222.1937,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 179.564,
+              fraction: 0.0295,
+              oil_equivalent_mg: 265.2545,
+              qualifies: false,
+              strong: false
+            }
+          },
           fraction: 0.0542,
           linoleic_g_per_100g: "0.308",
           linolenic_g_per_100g: "0.258",
@@ -40052,6 +43740,22 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         category: "Fish & shellfish",
         efa: {
           acid_mg: 123.25,
+          by_member: {
+            "omega-3": {
+              acid_mg: 103.7,
+              fraction: 0.0365,
+              oil_equivalent_mg: 328.859,
+              qualifies: false,
+              strong: false
+            },
+            "omega-6": {
+              acid_mg: 19.55,
+              fraction: 32e-4,
+              oil_equivalent_mg: 28.8795,
+              qualifies: false,
+              strong: false
+            }
+          },
           dha_g_per_100g: "0.105",
           epa_g_per_100g: "0.015",
           fraction: 0.0397,
@@ -40352,17 +44056,17 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const out = [];
     if (EFA_SLUGS.has(slug)) {
       for (const f of DATA.foods) {
-        const e = f.efa;
-        if (e === void 0 || e.qualifies !== true) {
+        const m = f.efa?.by_member[slug];
+        if (m === void 0 || m.qualifies !== true) {
           continue;
         }
         out.push({
           id: f.id,
           name: f.name,
-          amount: e.oil_equivalent_mg,
+          amount: m.oil_equivalent_mg,
           unit: "mg",
-          fraction: e.fraction,
-          strong: e.strong === true,
+          fraction: m.fraction,
+          strong: m.strong === true,
           grams: f.grams
         });
       }
@@ -47602,7 +51306,32 @@ NEGATIVE CONTROL, four re-breaks, each restored byte-exact: salmon's fraction ty
 
 VERIFIED. Board 109/109. typecheck clean. 100 unit tests pass. Build OK. Eight render probes on the touched surfaces exit 0. The corrected list driven in the real app and screenshotted rather than grepped.
 
-THE STANDING LESSON. The board was 108/108 green for the entire life of this defect, and the two gates that recompute the EFA arithmetic stayed green through the fix as well -- they are consistency gates, and a term that is not there is perfectly consistent with itself. Same shape as the EFA group's absence from \`strength\` on 2026-08-22. No instrument caught this. A reader who knew fish did.` }];
+THE STANDING LESSON. The board was 108/108 green for the entire life of this defect, and the two gates that recompute the EFA arithmetic stayed green through the fix as well -- they are consistency gates, and a term that is not there is perfectly consistent with itself. Same shape as the EFA group's absence from \`strength\` on 2026-08-22. No instrument caught this. A reader who knew fish did.` }, { id: "lg_mthi6f2x_3kw4zt", ts: "2026-08-31T12:19:15.417763-05:00", surface: "foods/efa-member-split", kind: "incident", summary: "Each omega page now lists the foods it is actually about. One shared list was printed under both, so the omega-3 page led with sunflower seeds and almonds -- foods with no omega-3 in them. 58 of its 83 foods were there for their omega-6.", detail: `He asked me to do the omega-6 page too. Measuring before touching it found the problem was worse than the one he had named, and that it pointed both ways.
+
+One list was being printed under both omega-3 and omega-6, ranked on the combined figure for the pair. So the omega-3 page led with sunflower seeds at 153% and almonds at 57% -- two foods with essentially no omega-3 in them at all -- while the omega-6 page led with herring. Fifty-eight of the eighty-three foods on the omega-3 list were there purely for their omega-6, and thirty of the same eighty-three were on the omega-6 list purely for their omega-3. It is the same defect he caught this morning, seen from the other side: a heading that says "Best food sources" over a list that was answering a different question.
+
+Each food's delivery is now attributed to the fat it actually carries. Omega-6 is linoleic acid; omega-3 is linolenic plus the two forms that come from fish. The omega-3 list drops from 83 foods to 25 and is led by herring, mackerel, hemp seeds, sardines and walnuts. The omega-6 list drops to 53 and is led by walnuts, natto and sunflower seeds. Walnuts and hemp seeds rank high on both, which is correct, and matches what Wallach says about walnuts himself.
+
+Nothing about his own number changed. The two shares add back up to exactly what the combined figure always was, and both are still measured against his single nine grams. The only two fish left on the omega-6 page are catfish and rainbow trout -- the exact two that used to be the only fish on the omega-3 page, where they had been all along for their omega-6.
+
+TECHNICAL RECORD
+
+WHY THE COLLECTIVE FIGURE WAS WRONG FOR THIS BLOCK. rankedFoodsForEssential fed the entity page's "Best food sources" from efa.fraction -- the GROUP's share of the 9 g. That block's own docstring says it answers "what should I eat for THIS". Measured first: sunflower seeds 152.9% collective / 0.3% omega-3; almonds 57.4% / 0.0%; pumpkin seeds 91.6% / 0.5%; sesame 97.8% / 1.7%; poppy seeds 41.3% / 0.4%; and on the other side herring 68.7% / 3.4% omega-6.
+
+THE SPLIT, AND WHY IT IS NOT A FANNED DOSE. collective_doses_not_fanned forbids a numeric TARGET on omega-3 or omega-6 sourced from the one 9 g claim -- 9 g posted twice is 18 g of board target from a 9 g source. Nothing here creates one; the denominator is still that single figure. What is split is the FOOD's own composition, which was never Wallach's number. The gate reads the sealed claims independently and stayed green.
+  omega-6 = 18:2 - CLA                          -> FLAXSEED oil (67.695%)
+  omega-3 = 18:3 -> flaxseed, + 20:5 + 22:6     -> SALMON oil (31.255%)
+The mapping is his own -- "further divided into the Omega-3 (DHA and EPA)" (Epigenetics, 2014). CLA is subtracted from the omega-6 share only, since 18:2 is an aggregate that includes its conjugated forms; a source row reading CLA ABOVE its own 18:2 now hard-fails the derive rather than being clamped. The derive asserts the two shares reconstitute the group to 1e-9.
+
+THE LINE DELIBERATELY NOT CROSSED. Only the per-ESSENTIAL list reads by_member. The food tile's "Omega EFAs" chip, the strength ranking term, foodEfaOilMg and the regimen meter, and the goal-gap fill all still read the collective fraction, because those ask about the GROUP, which shares one meter because Wallach states one amount. render_probe_omega still passes and still reports that the meter grades the pair as one group.
+
+THE GATE. efa_member_split_reconstitutes_the_group, anchor_class EXTERNAL, critical. Board 109 -> 110, external 25 -> 26. Four clauses: reconstitution; each member recomputed from the pinned extract at that food's grams; one denominator and the same 7% bar at full precision; and neither list a copy of the other. Negative control, four re-breaks each restored byte-exact: degenerate split -> RED; marine forms filed under omega-6 -> RED; a flipped qualify flag -> RED; 10% of a member's oil dropped -> RED.
+
+TWO CORRECTIONS WORTH RECORDING. First, the gate's own comments overstated clause (4) -- claimed it was load-bearing and the only thing that could see a degenerate split, by analogy with the marine gate written an hour earlier. The control says clause (2)'s independent recompute catches that immediately, and stripping the marine rows (which REDS the marine gate) leaves this gate green. Clause (4) is a coverage backstop and is now described as one in all four places that said otherwise. Second, the gate caught a bug in itself on its first run: round(float(mem.get("fraction") or -1), 4) fired on 14 correct foods, because a member's fraction is legitimately 0.0 for a food carrying none of that fat and 0.0 is FALSY in Python, so the sentinel replaced a valid zero with -1.
+
+VERIFIED. Board 110/110. typecheck clean. 100 unit tests pass. Build OK. Eleven render probes pass. Both pages driven in the real app and screenshotted, zero page errors: 25 rows under omega-3 (17 of them fish), 53 under omega-6 (2 fish).
+
+FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with the food's COLLECTIVE share, so sunflower seeds still fill an omega-3 goal gap at 152.9%. Defensible -- the pair shares one budget -- and it is a separate owner ruling from 2026-08-22 with its own reasoning, so it was left alone rather than changed unasked.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

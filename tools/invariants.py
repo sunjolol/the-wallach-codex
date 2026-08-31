@@ -7226,6 +7226,170 @@ def check_efa_marine_share_converts_against_salmon_oil():
                   f"share, so a dropped 20:5/22:6 could not pass unnoticed")
 
 
+# ★ THE PER-MEMBER SPLIT, added 2026-08-31 alongside the defect it exists to stop.
+# "Best food sources" on an essential's page answers "what should I eat for THIS" -- its own
+# docstring in state/foods.ts says so -- but it ranked on the COLLECTIVE EFA figure, so both
+# omega pages lied in opposite directions off one shared list. The omega-3 page led with
+# sunflower seeds at 152.9% (0.3% omega-3) and almonds at 57.4% (0.0% omega-3); the omega-6 page
+# led with herring at 68.7% (3.4% omega-6). 58 of 83 foods were on the omega-3 list purely for
+# their omega-6, and 30 of 83 on the omega-6 list purely for their omega-3.
+#
+# ★ WHAT EACH CLAUSE IS ACTUALLY WORTH -- measured by re-breaking it, not reasoned about.
+# Clauses (1)-(3) catch every computation error, the DEGENERATE split included: clause (2)
+# recomputes each member from the pinned extract independently, so handing omega-3 the whole
+# group and omega-6 zero reds immediately. It was tempting to write clause (4) up as the
+# load-bearing one by analogy with the sibling gate next door; the control says otherwise.
+#
+# Clause (4) is a COVERAGE BACKSTOP, and a narrower one. It fires when the catalog or the acid
+# mapping stops DISTINGUISHING the two lists at all -- the state in which printing them as two
+# separate lists is a lie of a different kind, and one no arithmetic clause can see because the
+# arithmetic would be perfectly correct. Proof that it is genuinely narrower: stripping the
+# marine rows from the extract and re-deriving REDS the sibling gate's clause (5) and leaves
+# THIS gate green, because a plant food still qualifies for omega-3 alone.
+def check_efa_member_split_reconstitutes_the_group():
+    """Each omega's food list is its OWN share, and the two shares are the group exactly.
+
+      (1) RECONSTITUTION -- for every food carrying an efa block, the two members'
+          `oil_equivalent_mg` sum to the group's, and their `acid_mg` sum to the group's.
+          A split that loses or invents delivery REDs.
+      (2) THE RIGHT ACIDS, from source -- omega-6 == (18:2 - CLA) over FLAXSEED oil's fraction;
+          omega-3 == 18:3 over flaxseed PLUS (20:5 + 22:6) over SALMON oil's. Recomputed from
+          the pinned extract's own cells at that food's own grams, so a member built from the
+          wrong acids REDs even while it still sums correctly.
+      (3) ONE DENOMINATOR, THE SAME BAR -- every member `fraction` == its own oil over the ONE
+          `_meta.efa_goal.maintenance_mg`, and `qualifies` is decided at full precision against
+          the identical 7% bar a nutrient row clears. A food within 1e-6 of the bar REDs and
+          asks for a human, exactly as the group's own gate does.
+      (4) NEITHER LIST IS A COPY OF THE OTHER, ASSERTED BY EXISTENCE -- some food qualifies
+          for omega-6 and NOT omega-3, and some food qualifies for omega-3 and NOT omega-6.
+          A COVERAGE backstop, not an arithmetic one: clause (2) already catches a degenerate
+          split by recomputing each member from source. This catches the catalog or the acid
+          mapping ceasing to tell the two apart, which is correct arithmetic and a false page.
+
+    ★ WHAT THIS CANNOT DO. It proves the split is arithmetically the group, reproduces from the
+    pinned source, and separates the two lists. It cannot prove that 20:5/22:6 BELONG to
+    omega-3 -- that is Wallach's own mapping ("further divided into the Omega-3 (DHA and EPA)",
+    Epigenetics 2014), read by a human, not a fact this gate establishes.
+
+    ★ AND IT IS NOT A FAN-OUT. No per-member TARGET exists; `collective_doses_not_fanned` still
+    owns that question and reads the sealed claims independently. What is split here is the
+    FOOD's own composition, which was never Wallach's number.
+    """
+    import csv as _csv
+    import json as _json
+    art_p = ROOT / "dashboard" / "assets" / "data" / "foods-composition-data.json"
+    src_p = ROOT / "eden" / "foods" / "usda-source.json"
+    ext_p = ROOT / "eden" / "foods" / "extract" / "food_nutrient.csv"
+    for p in (art_p, src_p, ext_p):
+        if not p.exists():
+            return False, f"{p.relative_to(ROOT).as_posix()} is missing"
+
+    art = _json.loads(art_p.read_text(encoding="utf-8"))
+    meta = art.get("_meta") or {}
+    ref = meta.get("efa_reference") or {}
+    flax = ref.get("efa_fraction")
+    salmon = (ref.get("marine") or {}).get("efa_fraction")
+    target = (meta.get("efa_goal") or {}).get("maintenance_mg")
+    qualify = meta.get("qualify_fraction")
+    if not all(isinstance(v, (int, float)) and v > 0 for v in (flax, salmon, target, qualify)):
+        return False, (f"_meta is missing a denominator (flax={flax!r} salmon={salmon!r} "
+                       f"goal={target!r} bar={qualify!r}) -- the split cannot be recomputed")
+
+    support = {k: v for k, v in
+               ((_json.loads(src_p.read_text(encoding="utf-8"))).get("support_nutrients")
+                or {}).items() if not k.startswith("_")}
+    need = ("linoleic", "linolenic", "conjugated_linoleic", "epa", "dha")
+    if any(k not in support for k in need):
+        return False, "usda-source.json::support_nutrients cannot supply the five EFA cells"
+    nid = {k: str(support[k]["nutrient_id"]) for k in need}
+
+    foods = art.get("foods") or []
+    wanted = {str(f.get("fdc_id")) for f in foods}
+    cells = {}
+    with ext_p.open(encoding="utf-8", newline="") as fh:
+        for row in _csv.DictReader(fh):
+            if row.get("fdc_id") in wanted and row.get("nutrient_id") in nid.values():
+                cells.setdefault(row["fdc_id"], {})[row["nutrient_id"]] = row["amount"]
+
+    viol = []
+    only6 = only3 = checked = 0
+    for f in foods:
+        efa = f.get("efa")
+        if not efa:
+            continue
+        checked += 1
+        fid = f.get("id")
+        by = efa.get("by_member")
+        if not isinstance(by, dict) or set(by) != {"omega-3", "omega-6"}:
+            viol.append(f"{fid}: by_member is {sorted(by) if isinstance(by, dict) else by!r}, "
+                        f"expected exactly omega-3 and omega-6")
+            continue
+        m6, m3 = by["omega-6"], by["omega-3"]
+
+        # (1) reconstitution
+        for key in ("oil_equivalent_mg", "acid_mg"):
+            parts = float(m6.get(key) or 0) + float(m3.get(key) or 0)
+            whole = float(efa.get(key) or 0)
+            if abs(parts - whole) > 1e-3:
+                viol.append(f"{fid}: omega-6 + omega-3 {key} = {parts:.4f} but the group says "
+                            f"{whole:.4f} -- the split loses or invents delivery")
+
+        # (2) the right acids, recomputed from the pinned source
+        c = cells.get(str(f.get("fdc_id"))) or {}
+        def g(key):
+            v = c.get(nid[key])
+            return 0.0 if v in (None, "") else float(v)
+        serving = float(f.get("grams") or 0) / 100.0
+        want6 = max(0.0, g("linoleic") - g("conjugated_linoleic")) * 1000.0 * serving / flax
+        want3 = (g("linolenic") * 1000.0 * serving / flax
+                 + (g("epa") + g("dha")) * 1000.0 * serving / salmon)
+        for label, mem, want in (("omega-6", m6, want6), ("omega-3", m3, want3)):
+            got = mem.get("oil_equivalent_mg")
+            if not isinstance(got, (int, float)) or abs(float(got) - want) > 1e-3:
+                viol.append(f"{fid}: {label} oil {got!r} but the extract's own cells at "
+                            f"{f.get('grams')} g give {want:.4f}")
+            # (3) one denominator, the same bar, decided at full precision
+            exact = want / target
+            # ★ NOT `mem.get("fraction") or -1`. A member's fraction is legitimately 0.0 for
+            # every food that carries none of that fat -- almonds have no 18:3 at all -- and
+            # 0.0 is FALSY, so the sentinel fired on 14 correct foods the first time this ran.
+            stored = mem.get("fraction")
+            if not isinstance(stored, (int, float)) or round(exact, 4) != round(float(stored), 4):
+                viol.append(f"{fid}: {label} fraction {stored!r} != "
+                            f"{round(exact, 4)} ({want:.4f} mg / {target:g} mg)")
+            if abs(exact - qualify) < _EFA_BOUNDARY_EPS:
+                viol.append(f"{fid}: {label} sits {abs(exact - qualify):.2e} from the "
+                            f"{qualify:.0%} bar -- too close for the stored rounding to settle. "
+                            f"Rule on it by hand; do not widen this epsilon to make it pass")
+            elif mem.get("qualifies") != (exact >= qualify):
+                viol.append(f"{fid}: {label} qualifies={mem.get('qualifies')!r} but "
+                            f"{exact:.6f} vs the {qualify:.0%} bar says {exact >= qualify}")
+
+        if m6.get("qualifies") and not m3.get("qualifies"):
+            only6 += 1
+        if m3.get("qualifies") and not m6.get("qualifies"):
+            only3 += 1
+
+    # (4) neither member is degenerate, asserted rather than assumed
+    if not viol and (only6 == 0 or only3 == 0):
+        viol.append(f"the split is degenerate: {only6} food(s) qualify for omega-6 alone and "
+                    f"{only3} for omega-3 alone. Handing one member the whole group and the "
+                    f"other zero satisfies every other clause here and IS the defect this "
+                    f"exists to stop. The catalog had 58 and 30 when this gate was written; if "
+                    f"they are genuinely gone, this clause needs a new anchor, not deletion")
+
+    if viol:
+        return False, ("the per-member EFA split does not reconstitute the group: "
+                       + "; ".join(viol[:6])
+                       + (f" ... (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+    return True, (f"all {checked} food(s) with an EFA block split exactly into omega-6 "
+                  f"(18:2 - CLA over flaxseed {flax:.5f}) and omega-3 (18:3 over flaxseed + "
+                  f"20:5/22:6 over salmon {salmon:.5f}), both recomputed from the pinned "
+                  f"extract, both scored against the ONE {target:g} mg Wallach figure at the "
+                  f"same {qualify:.0%} bar; {only6} food(s) qualify for omega-6 alone and "
+                  f"{only3} for omega-3 alone, so neither list can be silently handed the other's")
+
+
 # Eden's WALL -- scanner_user_items_marked
 # ---------------------------------------------------------------------------
 # The scanner lets a user add ANY item to THEIR regimen, but a user/scanned item can
@@ -10409,6 +10573,15 @@ INVARIANTS = [
         truth_anchor="eden/foods/extract/food_nutrient.csv's own cells (byte-compared to the sha256-pinned USDA archive by food_composition_traces_to_source) x eden/foods/usda-source.json's support_nutrients x foods-composition-data.json's shipped shares, recomputed each run. PROVES THE MARINE SHARE EXISTS AND REPRODUCES FROM SOURCE -- it cannot prove salmon oil is the RIGHT reference for a fish. That is the owner's ruling of 2026-08-31 off Wallach's own text, not a fact any gate can establish.",
         severity="critical",
         lesson_ref="for as long as the app ranked foods, USDA 20:5 and 22:6 were never pulled into the extract at all, so the EFA aggregate was 18:2 + 18:3 alone. Fish carry their omega-3 almost entirely as the two that were missing: canned salmon scored 1.5% of Wallach's nine grams and did not appear on the omega-3 list, pork ribs sat at 36%, and a fish-oil softgel was credited its full label oil mass while the fish was not. 2 of 25 fish qualified and BOTH did so on their omega-SIX. The board was 108/108 throughout, because a term that is NOT THERE is internally consistent with itself -- the same shape as the EFA group's absence from `strength` next door. His books say the opposite in three places (salmon oil doses interchangeably with flaxseed oil at 5 g t.i.d.), so this was OUR narrowing of his claim, and only a reader who knew fish caught it.",
+    ),
+    Invariant(
+        name="efa_member_split_reconstitutes_the_group",
+        anchor_class="external",  # bound to the pinned USDA source bytes, outside our hand-maintained data
+        description="each omega's \"Best food sources\" list is scored on ITS OWN share, and the two shares are the group exactly -- omega-6 == (18:2 - CLA) over flaxseed oil and omega-3 == 18:3 over flaxseed plus 20:5/22:6 over salmon oil, both recomputed from the pinned extract at that food's own grams, both measured against the ONE Wallach figure at the same 7% bar, and summing back to the group's oil and acid; plus a coverage backstop -- some food must qualify for omega-6 and NOT omega-3 and vice versa, so the two lists can never silently become one. That last clause is NOT the load-bearing one (clause 2's independent recompute already catches a degenerate split); it catches the catalog or the acid mapping ceasing to distinguish the members, which is correct arithmetic and a false page",
+        check_fn=check_efa_member_split_reconstitutes_the_group,
+        truth_anchor="eden/foods/extract/food_nutrient.csv's own cells (byte-compared to the sha256-pinned USDA archive by food_composition_traces_to_source) x foods-composition-data.json's shipped per-member shares x the single _meta.efa_goal, recomputed each run. PROVES THE SPLIT IS ARITHMETICALLY THE GROUP AND THE TWO LISTS ARE DISTINCT -- it cannot prove that 20:5/22:6 BELONG to omega-3. That is Wallach's own mapping (\"further divided into the Omega-3 (DHA and EPA)\", Epigenetics 2014), read by a human. NOT a fan-out check either: no per-member target exists, and collective_doses_not_fanned still owns that question from the sealed claims independently.",
+        severity="critical",
+        lesson_ref="\"Best food sources\" answers \"what should I eat for THIS essential\" -- its own docstring says so -- but it ranked on the COLLECTIVE EFA figure, so ONE shared list was printed under both omegas and lied in opposite directions. The omega-3 page led with sunflower seeds at 152.9% (0.3% omega-3) and almonds at 57.4% (0.0% omega-3); the omega-6 page led with herring at 68.7% (3.4% omega-6). 58 of 83 foods sat on the omega-3 list purely for their omega-6 and 30 of 83 on the omega-6 list purely for their omega-3. Found the same day and by the same question as the missing marine forms, and it is the same shape: the number was internally consistent, every gate was green, and only a reader who knew that almonds have no omega-3 could see it. Verified by four deliberate re-breaks -- degenerate split, marine forms filed under omega-6, a flipped qualify flag, and 10% of a member's oil silently dropped -- each restored byte-exact.",
     ),
     Invariant(
         name="user_supplied_provenance_single_home",

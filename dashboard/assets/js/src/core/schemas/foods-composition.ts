@@ -155,6 +155,30 @@ export const FoodSchema = z.object({
     /** The marine acid over salmon oil's own EFA fraction. */
     marine_oil_equivalent_mg: z.number(),
     /**
+     * The same delivery ATTRIBUTED to the two members, keyed by essential slug —
+     * `omega-6` = 18:2 − CLA; `omega-3` = 18:3 + 20:5 + 22:6. The two
+     * `oil_equivalent_mg` sum back to the group's exactly, and the generator hard-fails if
+     * they ever do not.
+     *
+     * ★ THIS IS NOT A FANNED DOSE. `collective_doses_not_fanned` forbids a numeric TARGET on
+     * omega-3 or omega-6 sourced from Wallach's one 9 g EFA claim; nothing here creates one.
+     * The denominator is still that single figure. What is split is the FOOD's own measured
+     * composition, which was never his number to begin with.
+     *
+     * ★ READ THIS ONLY FOR A PER-ESSENTIAL LIST — "what should I eat for THIS". Every
+     * question about the GROUP (the tile's "Omega EFAs" chip, the `strength` ranking term,
+     * the regimen meter, the goal-gap fill) reads the collective `fraction` above, because
+     * the pair shares one meter. Crossing the two is the defect this split exists to fix,
+     * reintroduced from the other side.
+     */
+    by_member: z.record(z.string(), z.object({
+      acid_mg: z.number(),
+      oil_equivalent_mg: z.number(),
+      fraction: z.number(),
+      qualifies: z.boolean(),
+      strong: z.boolean(),
+    }).passthrough()),
+    /**
      * That oil over `_meta.efa_goal.maintenance_mg` — the same shape a nutrient row's
      * `fraction` has, against the same kind of denominator (a Wallach number).
      */

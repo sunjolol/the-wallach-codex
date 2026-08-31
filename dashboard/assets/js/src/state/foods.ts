@@ -623,13 +623,22 @@ export function rankedFoodsForEssential(slug: string): RankedFoodSource[] {
   // whose food sources this app already prints a percentage for on every card.
   if (EFA_SLUGS.has(slug)) {
     for (const f of DATA.foods) {
-      const e = f.efa;
-      if (e === undefined || e.qualifies !== true) {
+      // ★ THE MEMBER'S OWN SHARE, NOT THE GROUP'S (owner ruling, Luneth 2026-08-31). This
+      // block answers "what should I eat for THIS essential" — see the docstring above — and
+      // ranking it on the COLLECTIVE figure made both pages lie in opposite directions: the
+      // omega-3 list led with sunflower seeds at 152.9% (0.3% omega-3) and almonds at 57.4%
+      // (0.0%), while the omega-6 list led with herring at 68.7% (3.4% omega-6). 58 of 83
+      // foods sat on the omega-3 list purely for their omega-6.
+      //
+      // The GROUP figure is still what `foodEfaOilMg`, `hitsOf`, `strength` and the goal fill
+      // read, because those ask about the pair, which shares one meter. Do not cross them.
+      const m = f.efa?.by_member[slug];
+      if (m === undefined || m.qualifies !== true) {
         continue;
       }
       out.push({
-        id: f.id, name: f.name, amount: e.oil_equivalent_mg, unit: 'mg',
-        fraction: e.fraction, strong: e.strong === true, grams: f.grams,
+        id: f.id, name: f.name, amount: m.oil_equivalent_mg, unit: 'mg',
+        fraction: m.fraction, strong: m.strong === true, grams: f.grams,
       });
     }
     out.sort((a, b) => (b.fraction - a.fraction) || a.id.localeCompare(b.id));

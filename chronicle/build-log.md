@@ -1811,3 +1811,86 @@ collective amount and `collective_doses_not_fanned` forbids splitting it — so 
 herring included, now appear on the omega-6 page too. That rule is unchanged and already cut the
 other way (duck was on the omega-3 page for its omega-6 fat). Left alone pending his call.
 CLAUDE.md changed, so the next session should reboot before leaning on it.
+
+[2026-08-31 12:17 CDT] foods/efa-member-split · Each omega page now lists the foods it is actually about. He said "do the omega-6 page too", and measuring first found that the problem was worse and pointed both ways. One shared list was being printed under both omega-3 and omega-6, ranked on the combined figure — so the omega-3 page led with sunflower seeds at 153% and almonds at 57%, two foods with essentially no omega-3 in them at all, while the omega-6 page led with herring. Fifty-eight of its eighty-three foods were on the omega-3 list purely for their omega-6. Each food's delivery is now attributed to the fat it actually carries: omega-6 is linoleic acid, omega-3 is linolenic plus the two fish forms. The omega-3 list drops from 83 foods to 25 and is now led by herring, mackerel, hemp seeds, sardines and walnuts; the omega-6 list drops to 53 and is led by walnuts, natto and sunflower seeds. Nothing about Wallach's own number changed — the two shares add back up to exactly what the combined figure always was, and the app still measures both against his single nine grams. Walnuts and hemp appear high on both lists, which is right and matches what he says about walnuts himself.
+
+WHY THE COLLECTIVE FIGURE WAS THE WRONG ONE FOR THIS BLOCK. `rankedFoodsForEssential` fed the
+entity page's "Best food sources" from `efa.fraction` — the GROUP's share of Wallach's 9 g. That
+block's own docstring says it answers "what should I eat for THIS", and the group figure answers a
+different question. Measured before touching anything: 58 of 83 qualifying foods cleared the bar
+on the omega-3 page on their omega-6 alone (sunflower seeds 152.9% collective / 0.3% omega-3;
+almonds 57.4% / 0.0%; pumpkin seeds 91.6% / 0.5%; sesame 97.8% / 1.7%; poppy seeds 41.3% / 0.4%),
+and 30 of 83 were on the omega-6 page on their omega-3 alone (herring 68.7% / 3.4% omega-6).
+
+THE SPLIT, and why it is NOT a fanned dose. `collective_doses_not_fanned` forbids a numeric TARGET
+on omega-3 or omega-6 sourced from Wallach's one 9 g claim — 9 g posted twice is 18 g of board
+target from a 9 g source. Nothing here creates one: the denominator is still that single figure and
+no per-member target exists anywhere. What is split is the FOOD's own measured composition, which
+was never his number. The gate reads the sealed claims independently and stayed green throughout.
+  omega-6 = 18:2 - CLA                      -> FLAXSEED oil (67.695%)
+  omega-3 = 18:3 -> flaxseed oil, + 20:5 + 22:6 -> SALMON oil (31.255%)
+That mapping is Wallach's own — "further divided into the Omega-3 (DHA and EPA)" (Epigenetics,
+2014) — not an inference. CLA is subtracted from the omega-6 share ONLY, because 18:2 is an
+aggregate that includes its conjugated forms; a source row reading CLA ABOVE its own 18:2 now HARD
+FAILS the derive rather than being clamped (0 of 250 catalog foods do that; 24 carry a CLA cell).
+The derive asserts the two shares reconstitute `oil_equivalent_mg` to 1e-9 and raises if not.
+
+THE LINE THAT WAS DELIBERATELY NOT CROSSED. Only the per-ESSENTIAL list reads `by_member`. The food
+tile's "Omega EFAs" chip, the `strength` ranking term, `foodEfaOilMg` / the regimen meter in
+state/coverage.ts, and the goal-gap fill ALL still read the collective `fraction`, because those ask
+about the GROUP, which shares one meter because Wallach states one amount. `render_probe_omega`
+still passes and still reports "the EFA group meter grades omega-3 + omega-6 as one group".
+
+RESULTS. omega-3: 83 -> 25 foods — herring 65%, mackerel 57%, hemp seeds 49%, sardines 48%, walnuts
+42%, canned salmon 36%, swordfish 28%, rainbow trout 28%, tuna 27%, sockeye 27%, mussels 24%,
+oysters 21%, natto 21%. omega-6: 83 -> 53 foods — walnuts 177%, natto 157%, sunflower seeds 153%,
+hemp 134%, soybeans 126%, tempeh 110%, tahini 108%, sesame 96%, pecans 96%, duck 95%. The only two
+fish left on the omega-6 page are catfish (14%) and rainbow trout (8%) — the exact two that used to
+be the only fish on the omega-3 page, and they were there for their omega-6 all along.
+
+THE GATE: `efa_member_split_reconstitutes_the_group`, anchor_class EXTERNAL, critical. Board
+109 -> 110, external 25 -> 26. Four clauses: (1) the two members' oil and acid sum to the group's;
+(2) each member recomputes from the pinned extract's own cells at that food's grams; (3) one
+denominator, the same 7% bar, decided at full precision with the boundary-epsilon rule; (4) neither
+list is a copy of the other.
+
+NEGATIVE CONTROL — four re-breaks, each restored byte-exact: a DEGENERATE split (omega-3 gets the
+whole group, omega-6 zero) -> RED; the marine forms filed under omega-6 -> RED; one qualify flag
+flipped -> RED; 10% of a member's oil silently dropped -> RED.
+
+★ AND A CORRECTION MADE TO THIS GATE'S OWN COMMENTS, because the first draft overstated them. It
+claimed clause (4) was the load-bearing one and the only thing that could see a degenerate split,
+by analogy with the marine gate next door. The control says otherwise: clause (2)'s independent
+recompute catches it immediately. Stripping the marine rows and re-deriving — which REDS the marine
+gate's clause (5) — leaves THIS gate green, because a plant food still qualifies for omega-3 alone.
+Clause (4) is a COVERAGE backstop and is now described as one, in all four places that said
+otherwise (banner comment, docstring, registration description, lesson_ref).
+
+★ AND THE GATE CAUGHT A BUG IN ITSELF ON FIRST RUN. `round(float(mem.get("fraction") or -1), 4)`
+fired on 14 correct foods, because a member's fraction is legitimately 0.0 for any food carrying
+none of that fat — almonds have no 18:3 at all — and 0.0 is FALSY in Python, so the sentinel
+replaced a valid zero with -1. Fixed with an explicit isinstance check and the reason written into
+the code.
+
+FILES: eden/tools/foods_composition_derive.py (`by_member` emitted, CLA-above-18:2 hard fail,
+reconstitution assert) · dashboard/assets/data/foods-composition-data.json re-derived ·
+core/schemas/foods-composition.ts (`by_member` typed + the do-not-cross note) · state/foods.ts
+(`rankedFoodsForEssential` reads the member share) · tools/invariants.py (gate + registration +
+the four honesty corrections + the falsy-zero fix) · CLAUDE.md + README.md (109->110, 25->26, both
+caught by their own count-gates).
+
+VERIFIED: board 110/110, 0 failed (external 26 / consistency 37 / structural 45 / meta 2) ·
+`npm run typecheck` clean · `npm test` 100 passed in 8 files · `node tools/build.mjs` OK ·
+11 render probes pass (efa_foods, food_efa_rank, omega, food_block, food_tile, foods, food_catalog,
+goal_filter_census, coverage_add_remove, rec_catalogue, regimen_filters) · BOTH pages driven in the
+real app and screenshotted, zero page errors, 25 rows rendered under omega-3 (17 of them fish) and
+53 under omega-6 (2 fish).
+
+NOTHING TO SEAL. eden/corpus, eden/catalog and eden/products untouched; eden/foods/ not re-extracted
+this round (no new nutrient bindings). corpus_seal / catalog_seal are USER-ONLY, nothing pending.
+
+FLAGGED, NOT CHANGED: the goal-gap fill in state/foods.ts still credits a goal naming omega-3 with
+the food's COLLECTIVE share, so sunflower seeds still fill an omega-3 goal gap at 152.9%. That is
+defensible — the pair shares one budget and sunflower seeds do move it — and it is a separate
+owner ruling from 2026-08-22 with its own documented reasoning, so it was left alone rather than
+changed unasked. Raise it if the recommender should follow the pages.
