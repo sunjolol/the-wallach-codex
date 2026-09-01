@@ -2007,3 +2007,59 @@ permanently at his instruction — struck from the handoff, not to be raised aga
 121 unruled drawer-knowledge.css classes, the pH-ladder ACID cap, the 13 dark-theme dead args.
 tools/make_share_card.js is now unreferenced by any live task and is a candidate for the next
 obsolescence pass — flagged, not deleted.
+
+[2026-09-01 15:41 CDT] web-build/second-distribution-gated · The website now carries this round's fix, and forgetting it again is a red board rather than something he has to notice. He said "once again you never updated the web version" — the second time, and he was right both times. nutrientcodex.com is a second live distribution with its own build, and the round-close ritual rebuilt only the offline one, so the site was a full round behind while every local check said green. The web build is rebuilt and verified, the ritual gained the missing step, and a new integrity check refuses to let the two drift apart again.
+
+WHY NOTHING CAUGHT IT, AND WHY THAT IS STRUCTURAL. Every instrument in this project is scoped to
+the `file://` build: 112 gates, 58 render probes and 106 unit tests all passed on a tree whose web
+distribution was a round old. The failure is silent BY CONSTRUCTION — the only symptom lives on a
+machine no invariant is allowed to contact, because a gate that reached SiteGround would make the
+board depend on wifi.
+
+THE FIX, IN THREE PARTS.
+  1. `PYTHONUTF8=1 python tools/build_web.py` — dist-web rebuilt: bundle main.405e6cec44.js
+     (2.25 MB), 12 stylesheets rewritten + hashed, fonts 2.36 MB TTF to 847.3 KB WOFF2, three
+     split artifacts shipped hashed (9.55 MB), 35.05 MB across 66 files, 2.98 MB first load.
+     `render_probe_web_build` PASS — both distributions render the same corpus counts
+     (2,601 claims / 7 books), every fetched artifact content-hashed, zero 4xx/5xx, zero page
+     errors.
+  2. THE ROUND'S ACTUAL FIX WAS VERIFIED ON THE WEB TARGET, not assumed to have travelled.
+     `render_probe_web_build` proves the build hydrates; it knows nothing about the omega split,
+     and the web build is NOT the local one — fonts rewritten, CSS hashed, data FETCHED rather
+     than inlined. So dist-web was served over real http and the omega filters were censused
+     against the artifact exactly as they were censused locally: "Omega-3" returns exactly the 25
+     foods that qualify for omega-3 and "Omega-6" exactly 53, with zero extra and zero missing in
+     both directions, zero page errors, zero 4xx/5xx. Screenshotted on the web build.
+  3. `web_build_not_stale` — a new gate, the board moves 112 to 113 (external stays 27,
+     consistency 38 to 39). If a dist-web/ exists it must carry THIS tree's artifacts: for every
+     key the builder declares in SPLIT_ARTIFACTS, dist-web must ship a file named for the sha256
+     digest the local artifact has RIGHT NOW. Appending to the Creator's Log or resealing the
+     corpus without re-running build_web.py REDs immediately.
+     · CONTENT, NOT MTIME, and that choice is load-bearing: dist-web/ is gitignored while
+       dashboard/assets/js/dist/main.js is tracked, so any checkout can make the tracked file
+       newer than the untracked build and a timestamp comparison would cry stale on a perfectly
+       current one. A digest cannot be confused by a checkout.
+     · The key list is PARSED out of tools/esbuild_web.mjs and vacuity-checked, never typed into
+       the gate — an artifact added to the split cannot escape by not being listed, and a
+       reshaped builder fails loudly instead of silently parsing nothing. Both of those clauses
+       exist because this same session watched `render_probe_group_dots` invert its own negative
+       control by hardcoding what it measured against.
+     · Three re-breaks, each watched RED: a re-serialised creators-log-embed with dist-web
+       untouched (the exact failure mode — "the web build is BEHIND this tree: creators-log-embed
+       (this tree's digest is e22723f5f3; dist-web ships no such file)"), SPLIT_ARTIFACTS emptied,
+       and SPLIT_ARTIFACTS renamed. Both touched files restored and confirmed by sha256.
+     · HONEST LIMIT, stated in the gate: it proves the LOCAL web build is current and says
+       NOTHING about what is served at nutrientcodex.com. Uploading is a human act;
+       `render_probe_live_host` remains the instrument for the host.
+  4. The round-close skill gained the step it was missing — step 7, the second distribution,
+     placed AFTER the Creator's Log entry because the web build ships that embed too. The ritual
+     had seven steps and rebuilt one of two live targets.
+
+VERIFICATION. Board 113/113, 0 failed, external 27. render_probe_web_build PASS. The omega census
+on the web target: 25 / 53 exact, both directions clean. Local build fresh and rebuilt AFTER the
+Creator's Log entry, then the web build rebuilt after that, in the order the new gate enforces.
+CLAUDE.md and README.md updated 112 to 113 in the same patch that made them wrong.
+
+DEFERRED. The upload itself is his — dist-web/ is gitignored and lives only on this machine.
+After he uploads, `node tools/probes/render_probe_live_host.js` is the check that the HOST agrees;
+it cannot run meaningfully until then.

@@ -7488,6 +7488,79 @@ def check_usda_bindings_are_all_load_bearing():
                   f"twice or declared unsourceable while bound")
 
 
+def check_web_build_not_stale():
+    """If a web build exists, it must carry THIS tree's artifacts -- not the last round's.
+
+    The website is a SECOND live distribution, and the round-close ritual only rebuilds the
+    file:// one. Twice a round has shipped with `dist-web/` a round behind, and both times the
+    owner noticed rather than an instrument. Nothing here reaches the network: it compares the
+    hashed filenames the web build SHIPPED against the digests this tree's artifacts have now.
+
+      (1) EVERY SPLIT ARTIFACT IS THE CURRENT ONE -- for each key in SPLIT_ARTIFACTS,
+          `dist-web/assets/data/<name>.<sha256[:10]>.json` must exist for the digest the local
+          artifact has RIGHT NOW. Rebuild the corpus or append to the Creator's Log without
+          re-running build_web.py and the expected name is simply not there.
+      (2) THE KEYS COME FROM THE BUILDER, NEVER FROM A LIST HERE -- SPLIT_ARTIFACTS is parsed
+          out of tools/esbuild_web.mjs, so an artifact added to the split cannot escape this
+          gate by not being typed into it. The parse is vacuity-checked: zero keys is RED, not
+          a silent pass (a reshaped builder must fail loudly, the way the live-host probe's
+          .htaccess parse does).
+
+    ★ WHY CONTENT AND NOT MTIME. `dashboard/assets/js/dist/main.js` is tracked and `dist-web/`
+    is gitignored, so any checkout can make the tracked file newer than the untracked build and
+    a timestamp comparison would cry stale on a perfectly current one. A digest cannot be
+    confused by a checkout.
+
+    ★ WHAT THIS CANNOT DO. It proves the LOCAL web build is current. It says nothing about what
+    is actually on nutrientcodex.com -- an upload is a human act, and `render_probe_live_host`
+    is the instrument for the host. A board gate may never reach the network (it would make the
+    board depend on wifi), so this is deliberately the strongest offline half of that pair.
+    """
+    import hashlib as _hashlib
+    import re as _re
+    dist = ROOT / "dist-web"
+    builder = ROOT / "tools" / "esbuild_web.mjs"
+    data = ROOT / "dashboard" / "assets" / "data"
+    if not builder.exists():
+        return True, "tools/esbuild_web.mjs not installed (bootstrap-guard)"
+    if not dist.exists():
+        return True, ("no dist-web/ in this tree -- nothing to be stale. Run "
+                      "`PYTHONUTF8=1 python tools/build_web.py` before an upload")
+
+    src = builder.read_text(encoding="utf-8")
+    block = _re.search(r"export const SPLIT_ARTIFACTS\s*=\s*\[(.*?)\];", src, _re.S)
+    if block is None:
+        return False, ("cannot find SPLIT_ARTIFACTS in tools/esbuild_web.mjs -- the builder was "
+                       "reshaped and this gate must be re-pointed rather than left parsing "
+                       "nothing")
+    keys = _re.findall(r"key:\s*'([^']+)'", block.group(1))
+    if not keys:
+        return False, ("SPLIT_ARTIFACTS parsed to ZERO keys -- the gate would pass over an empty "
+                       "set, which is exactly the vacuous success it exists to prevent")
+
+    stale, missing_src = [], []
+    for key in keys:
+        art = data / f"{key}.json"
+        if not art.exists():
+            missing_src.append(key)
+            continue
+        digest = _hashlib.sha256(art.read_bytes()).hexdigest()[:10]
+        rel = pathlib.PurePosixPath(key)
+        shipped = dist / "assets" / "data" / rel.parent / f"{rel.name}.{digest}.json"
+        if not shipped.exists():
+            stale.append(f"{key} (this tree's digest is {digest}; dist-web ships no such file)")
+    if missing_src:
+        return False, (f"split artifact(s) {missing_src} are declared by the builder but absent "
+                       f"from dashboard/assets/data -- the web build cannot ship them")
+    if stale:
+        return False, ("the web build is BEHIND this tree: " + "; ".join(stale)
+                       + ". The website is a second live distribution -- re-run "
+                         "`PYTHONUTF8=1 python tools/build_web.py`, then "
+                         "`node tools/probes/render_probe_web_build.js`, before uploading")
+    return True, (f"dist-web ships this tree's own {len(keys)} split artifact(s), matched by "
+                  f"content digest (" + ", ".join(keys) + ")")
+
+
 def check_per_essential_food_lists_are_distinct():
     """No two essentials are handed one shared list of foods.
 
@@ -10758,6 +10831,15 @@ INVARIANTS = [
         truth_anchor="eden/foods/extract/food_nutrient.csv's own cells (byte-compared to the sha256-pinned USDA archive by food_composition_traces_to_source) x eden/foods/usda-source.json's declared bindings, recomputed each run. PROVES EVERY BOUND TERM REACHES THE CATALOGUE WITH A REAL VALUE -- it cannot prove the binding is the RIGHT USDA nutrient for that essential; that 20:5 belongs to omega-3 is Wallach's mapping, read by a human.",
         severity="critical",
         lesson_ref="EPA (1278) and DHA (1272) were named in the source map and never pulled into the extract, so both terms read ZERO rows on all 192 foods for as long as the app ranked them -- and every gate that recomputed EFA arithmetic stayed green, because it recomputed 18:2 + 18:3 and agreed with itself. Salmon read 1.5% of Wallach's nine grams while pork ribs sat at 36%. The board was 108/108 through the whole of it. WHEN YOU ADD A TERM, GATE ITS EXISTENCE: a term that is not there is consistent with itself, and no consistency gate can ever see it.",
+    ),
+    Invariant(
+        name="web_build_not_stale",
+        anchor_class="consistency",  # our shipped web artifacts vs the artifacts they came from
+        description="if a dist-web/ build exists it must carry THIS tree's artifacts -- for every key the builder declares in SPLIT_ARTIFACTS, dist-web ships a file named for the sha256 digest the local artifact has right now, so appending to the Creator's Log or resealing the corpus without re-running build_web.py REDs. The key list is parsed out of tools/esbuild_web.mjs and vacuity-checked, never typed here; absent dist-web/ passes (nothing to be stale)",
+        check_fn=check_web_build_not_stale,
+        truth_anchor="dashboard/assets/data/<split keys>.json's own bytes x the filenames present in dist-web/assets/data, re-digested each run. PROVES THE LOCAL WEB BUILD IS CURRENT -- it says NOTHING about what is served at nutrientcodex.com. An upload is a human act and render_probe_live_host is the instrument for the host; a board gate may never reach the network.",
+        severity="critical",
+        lesson_ref="the website is a SECOND live distribution and the round-close ritual rebuilds only the file:// one. Twice a round ended with dist-web a full round behind, and BOTH times the owner noticed rather than an instrument -- 2026-08-31 verbatim: \"Once again you never updated the web version after fixing these things\". The failure is silent by construction: every local check passes, the board is green, the probes are green, and the only symptom lives on a machine no gate is allowed to contact. Content digests rather than mtimes, because dist-web is gitignored while the bundle is tracked and a checkout would make a current build look stale.",
     ),
     Invariant(
         name="per_essential_food_lists_are_distinct",

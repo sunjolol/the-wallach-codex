@@ -14,9 +14,18 @@ description: Read when closing a chunk, writing a commit, appending to the build
 6. **`node tools/build.mjs` again, AFTER step 5.** The offline app inlines the log embed at *build*
    time, so an entry logged after step 1 is not in the shipped bundle until you rebuild. Skip this
    and the in-app log silently goes stale while the ledger looks complete.
-7. `git commit` + `git push`.
+7. **The SECOND distribution, if any shipped artifact moved.**
+   `PYTHONUTF8=1 python tools/build_web.py`, then
+   `node tools/probes/render_probe_web_build.js`. The website is a live target with its own
+   build, and steps 1 and 6 rebuild only the `file://` one — a round that ends here leaves
+   nutrientcodex.com a full round behind. **It has to come AFTER step 5**, because the web build
+   ships the Creator's Log embed too. `web_build_not_stale` REDs on exactly this and will not
+   let step 8 happen without it. Uploading is HIS act, not yours; `render_probe_live_host` is the
+   instrument for after he uploads.
+8. `git commit` + `git push`.
 
-`tools/hooks/stop_round_close.py` hard-blocks on 2, 5, and 6. The rest is discipline.
+`tools/hooks/stop_round_close.py` hard-blocks on 2, 5, and 6. Step 7's first half is gated by
+`web_build_not_stale`. The rest is discipline.
 
 ## Plain-language first, then the complete technicals
 Every build-log line, commit body, and Creator's Log `detail` **opens** with a short plain-language
