@@ -165,11 +165,13 @@ export const FoodSchema = z.object({
      * The denominator is still that single figure. What is split is the FOOD's own measured
      * composition, which was never his number to begin with.
      *
-     * ★ READ THIS ONLY FOR A PER-ESSENTIAL LIST — "what should I eat for THIS". Every
-     * question about the GROUP (the tile's "Omega EFAs" chip, the `strength` ranking term,
-     * the regimen meter, the goal-gap fill) reads the collective `fraction` above, because
-     * the pair shares one meter. Crossing the two is the defect this split exists to fix,
-     * reintroduced from the other side.
+     * ★ READ THIS WHEREVER ONE OMEGA IS NAMED — a per-essential list, a goal that names an
+     * omega, a filter set to one of them. Every question about the GROUP (the tile's "Omega
+     * EFAs" chip, the `strength` ranking term, the regimen meter) reads the collective
+     * `fraction` above, because the pair shares one meter and Wallach states one amount.
+     * Crossing the two is the defect this split exists to fix, reintroduced from the other
+     * side: the group's figure under a heading that names ONE omega, or a member's figure
+     * inside the one meter his nine grams is measured by.
      */
     by_member: z.record(z.string(), z.object({
       acid_mg: z.number(),

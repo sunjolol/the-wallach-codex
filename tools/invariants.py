@@ -7389,6 +7389,173 @@ def check_efa_member_split_reconstitutes_the_group():
                   f"same {qualify:.0%} bar; {only6} food(s) qualify for omega-6 alone and "
                   f"{only3} for omega-3 alone, so neither list can be silently handed the other's")
 
+def check_usda_bindings_are_all_load_bearing():
+    """Every nutrient this project BINDS to USDA actually delivers something. No dead terms.
+
+    The generalised form of the defect that cost 2026-08-31: USDA 20:5 and 22:6 were named in
+    the source map and never pulled into the extract, so the EPA and DHA terms existed in every
+    docstring, every schema and every comment while reading zero rows on all 192 foods. Nothing
+    saw it. A term that is NOT THERE is perfectly consistent with itself, so the arithmetic
+    gates recomputed 18:2 + 18:3 and agreed with themselves at 108/108.
+
+      (1) EVERY BINDING IS IN THE EXTRACT AT ALL -- each nutrient_id in `nutrient_map` and
+          `support_nutrients` appears somewhere in food_nutrient.csv. This is the exact EPA/DHA
+          failure and it is the cheapest clause to satisfy, which is why it is stated first and
+          separately from (2): the ids were simply never extracted.
+      (2) EVERY BINDING IS LOAD-BEARING -- each resolves to at least one NON-ZERO cell across
+          the shipped catalogue's own fdc_ids. A column present but all zeroes is the same
+          silence wearing a different mask, and clause (1) alone would pass it.
+      (3) NOTHING IS BOUND TWICE -- no two slugs share a nutrient_id, which would count one
+          USDA cell under two essentials.
+      (4) AND `no_usda_composition` MEANS IT -- a slug declared to have no USDA composition may
+          not also be bound. The two lists disagreeing is how an essential ends up sourced
+          twice, or claimed to be unsourceable while quietly carrying numbers.
+
+    ★ WHAT THIS CANNOT DO. It proves each bound nutrient reaches the catalogue with a real
+    value. It cannot prove the binding is the RIGHT USDA nutrient for that essential -- that
+    20:5 belongs to omega-3 rather than omega-6 is Wallach's own mapping, read by a human.
+    """
+    import csv as _csv
+    import json as _json
+    src_p = ROOT / "eden" / "foods" / "usda-source.json"
+    art_p = ROOT / "dashboard" / "assets" / "data" / "foods-composition-data.json"
+    ext_p = ROOT / "eden" / "foods" / "extract" / "food_nutrient.csv"
+    for p in (src_p, art_p, ext_p):
+        if not p.exists():
+            return True, f"{p.relative_to(ROOT).as_posix()} not installed (bootstrap-guard)"
+
+    src = _json.loads(src_p.read_text(encoding="utf-8"))
+    art = _json.loads(art_p.read_text(encoding="utf-8"))
+    binds = {}
+    for group in ("nutrient_map", "support_nutrients"):
+        for slug, spec in (src.get(group) or {}).items():
+            if slug.startswith("_"):
+                continue
+            nid = spec.get("nutrient_id")
+            if nid is None:
+                return False, f"{group}.{slug} declares no nutrient_id"
+            binds[slug] = str(nid)
+    if not binds:
+        return False, "usda-source.json binds no nutrients at all -- the map is empty"
+
+    viol = []
+    # (3) one cell, one slug
+    by_id = {}
+    for slug, nid in sorted(binds.items()):
+        by_id.setdefault(nid, []).append(slug)
+    for nid, slugs in sorted(by_id.items()):
+        if len(slugs) > 1:
+            viol.append(f"USDA {nid} is bound by {slugs} -- one cell counted under two names")
+
+    # (4) the two lists may not disagree
+    unsourced = set((src.get("no_usda_composition") or {}).get("slugs") or [])
+    both = sorted(unsourced & set(binds))
+    if both:
+        viol.append(f"{both} are declared in no_usda_composition AND bound to a USDA nutrient")
+
+    # (1) + (2), one pass over the extract
+    catalogue = {str(f.get("fdc_id")) for f in (art.get("foods") or [])}
+    wanted = set(binds.values())
+    anywhere, nonzero_on = set(), {nid: 0 for nid in wanted}
+    with ext_p.open(encoding="utf-8", newline="") as fh:
+        for row in _csv.DictReader(fh):
+            nid = row.get("nutrient_id")
+            if nid not in wanted:
+                continue
+            anywhere.add(nid)
+            if row.get("fdc_id") in catalogue:
+                try:
+                    if float(row.get("amount") or 0) > 0:
+                        nonzero_on[nid] += 1
+                except ValueError:
+                    pass
+
+    for slug, nid in sorted(binds.items()):
+        if nid not in anywhere:
+            viol.append(f"{slug} binds USDA {nid}, which is ABSENT from the extract entirely -- "
+                        f"the term reads nothing on every food and always will")
+        elif nonzero_on[nid] == 0:
+            viol.append(f"{slug} binds USDA {nid}, which is in the extract but ZERO on all "
+                        f"{len(catalogue)} catalogue foods -- a term that is not there")
+
+    if viol:
+        return False, ("USDA bindings are not all load-bearing: " + "; ".join(viol[:6])
+                       + (f" ... (+{len(viol) - 6} more)" if len(viol) > 6 else ""))
+    thinnest = min(binds, key=lambda s: nonzero_on[binds[s]])
+    return True, (f"all {len(binds)} USDA binding(s) reach the extract and carry a real value on "
+                  f"the {len(catalogue)}-food catalogue; thinnest is {thinnest} "
+                  f"(non-zero on {nonzero_on[binds[thinnest]]} food(s)), and no cell is bound "
+                  f"twice or declared unsourceable while bound")
+
+
+def check_per_essential_food_lists_are_distinct():
+    """No two essentials are handed one shared list of foods.
+
+    The other half of 2026-08-31, generalised. "Best food sources" answers "what should I eat
+    for THIS", and it was reading the EFA GROUP's figure, so ONE list was printed under both
+    omega-3 and omega-6 -- ranked on a number that was neither one's. Every arithmetic gate
+    stayed green because the shared figure was perfectly correct AS A GROUP FIGURE; the defect
+    was not a wrong value but the same value answering two different questions.
+
+      (1) NO TWO ESSENTIALS SHARE A LIST -- for every pair of essentials whose qualifying-food
+          set holds at least THREE foods, the two sets must differ. This is deliberately blind
+          to WHY they differ: two lists that are byte-identical are either one field feeding two
+          headings, or a coincidence too unlikely to wave through without a human looking.
+      (2) THE FLOOR IS NOT DOING THE WORK -- at least 15 essentials must clear that three-food
+          floor. Without this, a catalogue change that shrank every list below three would make
+          clause (1) pass over an empty comparison and report a clean board (no silent caps).
+
+    ★ WHY THREE. A one-food list can legitimately collide -- two essentials whose only source in
+    the catalogue is the same food is a fact about the catalogue, not a defect. Measured when
+    this gate was written: 26 of 30 essentials clear the floor, 325 pairs are compared, and zero
+    collide. Verified by re-break, not by argument: forcing both omegas to read the group's
+    figure again REDs this gate.
+
+    ★ WHAT THIS CANNOT DO. It proves two lists are not the SAME. It cannot prove either list is
+    RIGHT -- a list ranked on the wrong number, but on a wrong number unique to it, passes here.
+    """
+    import json as _json
+    art_p = ROOT / "dashboard" / "assets" / "data" / "foods-composition-data.json"
+    if not art_p.exists():
+        return True, "foods-composition-data.json not installed (bootstrap-guard)"
+    art = _json.loads(art_p.read_text(encoding="utf-8"))
+    foods = art.get("foods") or []
+    if not foods:
+        return False, "the food catalogue is empty -- nothing to compare"
+
+    # The set of foods each essential is sourced from, read exactly as the app reads it: a
+    # nutrient ROW exists only above the qualify bar, and each omega carries its OWN flag.
+    sourced = {}
+    for f in foods:
+        fid = f.get("id")
+        for row in (f.get("nutrients") or []):
+            sourced.setdefault(row.get("slug"), set()).add(fid)
+        for member, share in (((f.get("efa") or {}).get("by_member")) or {}).items():
+            if share.get("qualifies") is True:
+                sourced.setdefault(member, set()).add(fid)
+
+    FLOOR = 3
+    MIN_COMPARED = 15
+    big = sorted(s for s, ids in sourced.items() if len(ids) >= FLOOR)
+    if len(big) < MIN_COMPARED:
+        return False, (f"only {len(big)} essential(s) have {FLOOR} or more food sources, under "
+                       f"the {MIN_COMPARED} this gate needs to be comparing anything -- clause "
+                       f"(1) would be passing vacuously")
+
+    collisions, pairs = [], 0
+    for i, a in enumerate(big):
+        for b in big[i + 1:]:
+            pairs += 1
+            if sourced[a] == sourced[b]:
+                collisions.append(f"{a} and {b} are sourced from one identical set of "
+                                  f"{len(sourced[a])} food(s)")
+    if collisions:
+        return False, ("two essentials are being handed one shared food list: "
+                       + "; ".join(collisions[:5])
+                       + (f" ... (+{len(collisions) - 5} more)" if len(collisions) > 5 else ""))
+    return True, (f"{pairs} pair(s) across {len(big)} essential(s) with {FLOOR}+ food sources "
+                  f"each, and no two are sourced from the same set; smallest compared list is "
+                  f"{min(len(sourced[s]) for s in big)} food(s)")
 
 # Eden's WALL -- scanner_user_items_marked
 # ---------------------------------------------------------------------------
@@ -10582,6 +10749,24 @@ INVARIANTS = [
         truth_anchor="eden/foods/extract/food_nutrient.csv's own cells (byte-compared to the sha256-pinned USDA archive by food_composition_traces_to_source) x foods-composition-data.json's shipped per-member shares x the single _meta.efa_goal, recomputed each run. PROVES THE SPLIT IS ARITHMETICALLY THE GROUP AND THE TWO LISTS ARE DISTINCT -- it cannot prove that 20:5/22:6 BELONG to omega-3. That is Wallach's own mapping (\"further divided into the Omega-3 (DHA and EPA)\", Epigenetics 2014), read by a human. NOT a fan-out check either: no per-member target exists, and collective_doses_not_fanned still owns that question from the sealed claims independently.",
         severity="critical",
         lesson_ref="\"Best food sources\" answers \"what should I eat for THIS essential\" -- its own docstring says so -- but it ranked on the COLLECTIVE EFA figure, so ONE shared list was printed under both omegas and lied in opposite directions. The omega-3 page led with sunflower seeds at 152.9% (0.3% omega-3) and almonds at 57.4% (0.0% omega-3); the omega-6 page led with herring at 68.7% (3.4% omega-6). 58 of 83 foods sat on the omega-3 list purely for their omega-6 and 30 of 83 on the omega-6 list purely for their omega-3. Found the same day and by the same question as the missing marine forms, and it is the same shape: the number was internally consistent, every gate was green, and only a reader who knew that almonds have no omega-3 could see it. Verified by four deliberate re-breaks -- degenerate split, marine forms filed under omega-6, a flipped qualify flag, and 10% of a member's oil silently dropped -- each restored byte-exact.",
+    ),
+    Invariant(
+        name="usda_bindings_are_all_load_bearing",
+        anchor_class="external",  # bound to the pinned USDA extract, outside our hand-maintained data
+        description="every nutrient bound to USDA actually delivers -- each nutrient_id in nutrient_map + support_nutrients is PRESENT in the pinned extract (the exact way 20:5/22:6 were lost), and resolves to at least one NON-ZERO cell on the shipped catalogue (the same silence with a column to hide behind); plus no two slugs bind one cell, and nothing appears in both no_usda_composition and the bound map",
+        check_fn=check_usda_bindings_are_all_load_bearing,
+        truth_anchor="eden/foods/extract/food_nutrient.csv's own cells (byte-compared to the sha256-pinned USDA archive by food_composition_traces_to_source) x eden/foods/usda-source.json's declared bindings, recomputed each run. PROVES EVERY BOUND TERM REACHES THE CATALOGUE WITH A REAL VALUE -- it cannot prove the binding is the RIGHT USDA nutrient for that essential; that 20:5 belongs to omega-3 is Wallach's mapping, read by a human.",
+        severity="critical",
+        lesson_ref="EPA (1278) and DHA (1272) were named in the source map and never pulled into the extract, so both terms read ZERO rows on all 192 foods for as long as the app ranked them -- and every gate that recomputed EFA arithmetic stayed green, because it recomputed 18:2 + 18:3 and agreed with itself. Salmon read 1.5% of Wallach's nine grams while pork ribs sat at 36%. The board was 108/108 through the whole of it. WHEN YOU ADD A TERM, GATE ITS EXISTENCE: a term that is not there is consistent with itself, and no consistency gate can ever see it.",
+    ),
+    Invariant(
+        name="per_essential_food_lists_are_distinct",
+        anchor_class="consistency",  # our artifact vs itself — catches one field feeding two headings
+        description="no two essentials are sourced from one identical set of foods -- every pair whose qualifying-food set holds 3+ foods must differ, with a second clause requiring at least 15 essentials to clear that floor so the comparison can never pass vacuously over an empty set",
+        check_fn=check_per_essential_food_lists_are_distinct,
+        truth_anchor="foods-composition-data.json's own rows and per-member EFA flags, compared pairwise each run. PROVES TWO LISTS ARE NOT THE SAME -- it cannot prove either is RIGHT. A list ranked on the wrong number, but on a wrong number unique to it, passes here.",
+        severity="critical",
+        lesson_ref="one list was printed under BOTH omega pages, ranked on the pair's combined figure -- so omega-3 led with sunflower seeds at 152.9% (0.3% omega-3) and almonds at 57.4% (0.0%), and 58 of its 83 foods were on it purely for their omega-6. No arithmetic was wrong: the shared figure was a perfectly correct GROUP figure answering the wrong question. WHEN YOU RANK A LIST, GATE THAT IT IS DISTINCT -- consistency gates are structurally blind to one value answering two questions, because it agrees with itself in both places.",
     ),
     Invariant(
         name="user_supplied_provenance_single_home",

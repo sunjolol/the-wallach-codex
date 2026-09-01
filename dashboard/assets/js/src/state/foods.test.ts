@@ -27,25 +27,35 @@ interface RawFood {
   category: string;
   strength: number;
   nutrients: { slug: string; fraction: number }[];
-  efa?: { oil_equivalent_mg: number; fraction: number; qualifies: boolean };
+  efa?: {
+    oil_equivalent_mg: number;
+    fraction: number;
+    qualifies: boolean;
+    by_member: Record<string, { fraction: number; qualifies: boolean }>;
+  };
 }
 const FOODS = (foodsData as { foods: RawFood[] }).foods;
 
 /**
  * Σ min(fraction, 1) over a gap set — the ranker's goal key, minus its constant divisor.
  *
- * ★ THE EFA GROUP FILLS EACH OF ITS OWN MEMBERS IN THE GAP SET, from one delivery. It is not
- * a nutrient row (omega-3 and omega-6 carry no individual Wallach dose), so a model summed
- * over rows alone would score a goal naming an omega identically for every candidate — and
- * would therefore agree, in perfect health, with a ranker that had gone blind to it.
+ * ★ EACH OMEGA IN THE GAP SET FILLS FROM ITS OWN SHARE (owner ruling, 2026-08-31). Neither is
+ * a nutrient row — they carry no individual Wallach dose — so a model summed over rows alone
+ * would score a goal naming an omega identically for every candidate, and would therefore
+ * agree, in perfect health, with a ranker that had gone blind to them.
+ *
+ * ★ AND IT MUST NOT USE THE PAIR'S COMBINED FRACTION, which is what shipped between
+ * 2026-08-22 and 2026-08-31. That figure is capped at 1 here, so it handed every
+ * EFA-qualifying food an identical full point — a qualify/do-not-qualify flag wearing a
+ * magnitude's clothes. A model written that way agrees with that defect exactly.
  */
 function fillOver(f: RawFood, gaps: Set<string>): number {
   const rows = f.nutrients.reduce(
     (s, n) => s + (gaps.has(n.slug) ? Math.min(n.fraction, 1) : 0), 0);
-  if (f.efa?.qualifies !== true) {
-    return rows;
-  }
-  return rows + EFA_MEMBERS.filter(m => gaps.has(m)).length * Math.min(f.efa.fraction, 1);
+  return EFA_MEMBERS.filter(m => gaps.has(m)).reduce((s, m) => {
+    const share = f.efa?.by_member[m];
+    return s + (share?.qualifies === true ? Math.min(share.fraction, 1) : 0);
+  }, rows);
 }
 
 /** The catalog in the order the ranker must produce for this gap set. */
@@ -118,7 +128,7 @@ describe('rankFoodsForCoverage — the order', () => {
       .toEqual(expectedOrder(new Set([members[1]!])).slice(0, 6).map(f => f.id));
   });
 
-  it('a goal naming an omega is FILLED by the EFA group, not left unfillable', () => {
+  it('a goal naming an omega is FILLED by that omega\'s own share, not left unfillable', () => {
     // 24 of the 30 shipped goals name omega-3 or omega-6, and no nutrient row can ever credit
     // either — they carry no individual Wallach dose and share one meter. Until 2026-08-22
     // that gap diluted every candidate by the same unfillable amount, so the foods that
@@ -133,7 +143,35 @@ describe('rankFoodsForCoverage — the order', () => {
     expect(recs.map(r => r.foodId))
       .toEqual(expectedOrder(new Set(members)).slice(0, 6).map(f => f.id));
     const lead = FOODS.find(f => f.id === recs[0]!.foodId)!;
-    expect(lead.efa?.qualifies, `${recs[0]!.foodId} leads a goal it cannot move`).toBe(true);
+    expect(lead.efa?.by_member[members[0]!]?.qualifies,
+      `${recs[0]!.foodId} leads a goal whose only gap is ${members[0]!}, and does not carry it`)
+      .toBe(true);
+  });
+
+  /**
+   * ★ THE TWO OMEGAS ARE NOT INTERCHANGEABLE — the unit-level form of the lesson that cost
+   * two rounds on 2026-08-31. Every arithmetic assertion above passes just as happily when
+   * both members read the SAME number, because a shared figure is perfectly consistent with
+   * itself. Only asking whether the two answers DIFFER can see it.
+   *
+   * Asserted by existence rather than by a snapshot: no count here moves when the catalogue
+   * legitimately gains a food.
+   */
+  it('ranks a goal naming omega-3 differently from one naming omega-6', () => {
+    const orders = EFA_MEMBERS.map(m => rankFoodsForCoverage({
+      want: [...ALL_SLUGS, ...EFA_MEMBERS],
+      limit: 8,
+      goals: [{ id: 'g', members: [m] }],
+    }).map(r => r.foodId));
+    expect(orders[0], 'the two omegas produced one identical ranking — the pair\'s combined '
+      + 'figure is being read for a goal that names ONE of them').not.toEqual(orders[1]);
+    const lead3 = FOODS.find(f => f.id === orders[0]![0])!;
+    const lead6 = FOODS.find(f => f.id === orders[1]![0])!;
+    expect(lead3.efa!.by_member[EFA_MEMBERS[0]!]!.fraction,
+      `${orders[0]![0]} leads the ${EFA_MEMBERS[0]} goal on less ${EFA_MEMBERS[0]} than it has ${EFA_MEMBERS[1]}`)
+      .toBeGreaterThan(lead3.efa!.by_member[EFA_MEMBERS[1]!]!.fraction);
+    expect(lead6.efa!.by_member[EFA_MEMBERS[1]!]!.fraction)
+      .toBeGreaterThan(lead6.efa!.by_member[EFA_MEMBERS[0]!]!.fraction);
   });
 
   it('with every goal nutrient covered it falls back to most nutritious', () => {
@@ -314,8 +352,12 @@ describe('rankFoodsForCoverage — the goal filter has a bar', () => {
   /** Recomputed from the artifact, never a copy of the ranker's opinion. */
   const passes = (f: RawFood, members: string[]): boolean =>
     f.nutrients.some(n => members.includes(n.slug) && n.fraction >= 0.25)
-    || (f.efa?.qualifies === true && f.efa.fraction >= 0.25
-      && members.some(m => EFA_MEMBERS.includes(m)));
+    || members.some((m) => {
+      // PER MEMBER since 2026-08-31. Against the pair's combined fraction this read true for
+      // every EFA food on all 24 goals naming an omega — almonds included, at 0.0% omega-3.
+      const share = f.efa?.by_member[m];
+      return EFA_MEMBERS.includes(m) && share?.qualifies === true && share.fraction >= 0.25;
+    });
 
   it('returns only foods delivering a real share of one of that goal\'s essentials', () => {
     for (const goal of GOALS) {
@@ -340,6 +382,104 @@ describe('rankFoodsForCoverage — the goal filter has a bar', () => {
       expect(n, `${goal.id} returns too few`).toBeGreaterThanOrEqual(10);
       expect(n, `${goal.id} keeps most of the catalogue`)
         .toBeLessThanOrEqual(Math.round(foodCatalogSize() * 0.6));
+    }
+  });
+});
+
+/**
+ * The two surfaces that a negative control caught NAKED on 2026-08-31, in the same patch that
+ * split them onto the per-member share. Re-breaking `goalFillOf` and `deliversGoal` turned the
+ * suite red; re-breaking the NUTRIENT FILTER and the GOAL TINT left it perfectly green, so
+ * both had shipped a per-member promise with nothing holding them to it.
+ *
+ * ★ THE FILTER IS THE STRONGEST CLAIM OF THE FOUR. A reader who picks "Omega-3" from a
+ * dropdown has asked one unambiguous question. Against the pair's combined fraction that
+ * returned 85 foods, 59 of them under the bar for omega-3 itself, while the omega-3 essential
+ * page showed 25 — one app answering one question two ways on two screens.
+ */
+describe('rankFoodsForCoverage — a filter that names ONE nutrient returns that nutrient', () => {
+  const GOALS = (layoutData as { goals: { id: string; members: string[] }[] }).goals;
+
+  /** Recomputed from the artifact, never asked of the ranker. */
+  const carries = (f: RawFood, slug: string): boolean =>
+    f.nutrients.some(n => n.slug === slug) || f.efa?.by_member[slug]?.qualifies === true;
+
+  it('returns only foods that actually carry the nutrient asked for', () => {
+    for (const slug of [...ALL_SLUGS, ...EFA_MEMBERS]) {
+      for (const r of rankFoodsForCoverage({ want: ALL_SLUGS, limit: 500, nutrient: slug })) {
+        const raw = FOODS.find(f => f.id === r.foodId)!;
+        expect(carries(raw, slug), `${r.foodId} came back under the ${slug} filter`).toBe(true);
+      }
+    }
+  });
+
+  it('keeps every food that carries it — the filter narrows, it does not sample', () => {
+    for (const slug of [...ALL_SLUGS, ...EFA_MEMBERS]) {
+      const n = rankFoodsForCoverage({ want: ALL_SLUGS, limit: 500, nutrient: slug }).length;
+      expect(n, slug).toBe(FOODS.filter(f => carries(f, slug)).length);
+    }
+  });
+
+  /**
+   * ★ DISTINCTNESS, ASSERTED BY EXISTENCE. Every assertion above passes when both omegas read
+   * the SAME number — a shared figure is entirely consistent with itself, which is precisely
+   * why two rounds of this defect shipped green. Only asking whether the two answers DIFFER
+   * can see it. No count here moves when the catalogue legitimately gains a food.
+   */
+  it('the two omega filters do not return one shared list', () => {
+    const [a, b] = EFA_MEMBERS.map(m =>
+      rankFoodsForCoverage({ want: ALL_SLUGS, limit: 500, nutrient: m }).map(r => r.foodId));
+    expect(a, 'both omega filters returned one identical list').not.toEqual(b);
+    expect(a!.filter(id => !b!.includes(id)).length,
+      `no food is on the ${EFA_MEMBERS[0]} list alone`).toBeGreaterThan(0);
+    expect(b!.filter(id => !a!.includes(id)).length,
+      `no food is on the ${EFA_MEMBERS[1]} list alone`).toBeGreaterThan(0);
+  });
+
+  /**
+   * The card's goal TINT. Loose about HOW MUCH by design (see goalIdsFor), never about WHICH:
+   * against the combined figure it tinted pumpkin seeds, at 0.5% omega-3, for every goal
+   * naming omega-3.
+   */
+  it('tints a card only for goals it actually moves', () => {
+    const goals = GOALS.map(g => ({ id: g.id, members: g.members }));
+    for (const r of rankFoodsForCoverage({ want: ALL_SLUGS, limit: 500, goals })) {
+      const raw = FOODS.find(f => f.id === r.foodId)!;
+      for (const gid of r.goalIds) {
+        const g = GOALS.find(x => x.id === gid)!;
+        expect(g.members.some(m => carries(raw, m)),
+          `${r.foodId} is tinted for ${gid}, which names nothing it carries`).toBe(true);
+      }
+    }
+  });
+
+  /**
+   * The tint's own negative control. The check above can only see a food that carries NOTHING
+   * a goal names — a food riding in on the pair's combined figure while also carrying, say,
+   * that goal's magnesium is invisible to it. This one names the case directly: a food that
+   * qualifies for exactly ONE omega must not be tinted by the OTHER omega's account.
+   */
+  it('does not tint a food for an omega it does not carry', () => {
+    const [o3, o6] = EFA_MEMBERS as [string, string];
+    const oneSided = FOODS.filter(f => f.efa !== undefined
+      && f.efa.by_member[o3]!.qualifies !== f.efa.by_member[o6]!.qualifies);
+    expect(oneSided.length, 'no food qualifies for one omega and not the other').toBeGreaterThan(0);
+    // A goal naming ONLY the omega this food lacks, and nothing else it carries, must not tint.
+    const goals = GOALS.map(g => ({ id: g.id, members: g.members }));
+    const recs = rankFoodsForCoverage({ want: ALL_SLUGS, limit: 500, goals });
+    for (const f of oneSided) {
+      const lacked = f.efa!.by_member[o3]!.qualifies ? o6 : o3;
+      const rec = recs.find(r => r.foodId === f.id);
+      if (rec === undefined) {
+        continue;
+      }
+      for (const gid of rec.goalIds) {
+        const g = GOALS.find(x => x.id === gid)!;
+        const onlyByTheLackedOmega = g.members.every(m => m === lacked || !carries(f, m));
+        expect(onlyByTheLackedOmega,
+          `${f.id} is tinted for ${gid} solely through ${lacked}, which it does not carry`)
+          .toBe(false);
+      }
     }
   });
 });

@@ -20,14 +20,21 @@
  * `strength`, the food's own Σ of fractions, which is "most nutritious first". Ties fall back
  * to strength and then to the id, so the order is TOTAL and cannot reshuffle between paints.
  *
- * ★ BOTH HALVES OF THAT KEY COUNT THE EFA GROUP — 2026-08-22, and neither did before.
+ * ★ BOTH HALVES OF THAT KEY COUNT THE OMEGAS — 2026-08-22, and neither did before.
  * omega-3 and omega-6 carry no individual Wallach dose, so they are not nutrient rows, and a
  * key summed over rows scored a food's essential-fatty-acid delivery at exactly zero. Walnuts
  * supply 220% of his nine grams and sat on page 47 of 64 in a list ordered by nutrition —
- * with the card beside them printing that 220% the whole time. `strength` now adds the
- * group's own fraction (UNCAPPED, like every other term in it); the goal key fills each EFA
- * member in the gap set from the one delivery (CAPPED, like every other term in that one).
- * The second half mattered more: 24 of the 30 goals name an omega.
+ * with the card beside them printing that 220% the whole time. `strength` adds the GROUP's
+ * own fraction (UNCAPPED, like every other term in it); the goal key fills each omega in the
+ * gap set (CAPPED, like every other term in that one).
+ *
+ * ★ AND THE GOAL KEY COUNTS THEM SEPARATELY — owner ruling, 2026-08-31. The key first
+ * credited each member with the PAIR's combined fraction, which is capped at 1, so every
+ * EFA-qualifying food scored a flat full point and the term stopped telling foods apart at
+ * all. 9 of the 30 goals name omega-3 ALONE and none names omega-6 alone, so this was never
+ * symmetric: on `calm-inflammation` it ranked pumpkin seeds (0.5% omega-3) first and
+ * sunflower seeds (0.3%) ahead of hemp (49.4%). Four surfaces read per-member now — this
+ * key, the goal tint, the goal filter and the nutrient filter. See efaMemberShare.
  *
  * ★ THE SCORE IS A SORT KEY AND NOTHING ELSE. It is never rendered, so its denominator has
  * only to be CONSTANT across the candidates. Reachability is no longer the free variable it
@@ -244,6 +251,29 @@ const EFA_SLUG = 'essential-fatty-acids';
 const EFA_MEMBERS: ReadonlySet<string> = new Set(EFA_GOAL.members);
 
 /**
+ * One food's delivery of ONE omega — `null` when `slug` is not an omega, or when the food
+ * carries no EFA block at all. The single door every per-member question in this file goes
+ * through, so there is one place to be wrong instead of four.
+ *
+ * ★ WHAT IS SPLIT IS THE FOOD, NEVER THE DOSE. `by_member` attributes the food's own measured
+ * composition — 18:2 less CLA to omega-6, 18:3 plus the two marine forms to omega-3 — and both
+ * members are still measured against Wallach's ONE nine grams. No per-member TARGET exists or
+ * may exist; `collective_doses_not_fanned` owns that question and reads the sealed claims.
+ *
+ * ★ READ `qualifies`; NEVER RE-DERIVE IT FROM `fraction`. The generator decides it at full
+ * precision and stores the fraction rounded to 4 dp, so a food just under the bar can carry
+ * `fraction: 0.07` and `qualifies: false`. See core/schemas/foods-composition.ts, which says
+ * the same thing about the group's own flag for the same reason.
+ */
+function efaMemberShare(f: Food, slug: string): { fraction: number; qualifies: boolean } | null {
+  if (!EFA_MEMBERS.has(slug)) {
+    return null;
+  }
+  const m = f.efa?.by_member[slug];
+  return m === undefined ? null : { fraction: m.fraction, qualifies: m.qualifies };
+}
+
+/**
  * The Wallach-prescribed oil a serving of this food is worth, or 0.
  *
  * ★ EXPORTED FOR state/coverage.ts, which sums it into the shared EFA meter beside the
@@ -358,9 +388,6 @@ function matchesQuery(food: Food, query: string): boolean {
  * one fixed gap set, so the whole catalog orders in a single pass instead of a re-scan per
  * emitted card — which is what keeps a 192-food request cheap enough to run on every paint.
  */
-/** The two essentials scored through the shared EFA meter rather than a nutrient row. */
-const EFA_SLUGS = new Set(['omega-3', 'omega-6']);
-
 /**
  * The share of Wallach's daily amount one serving must deliver, for at least ONE of a goal's
  * essentials, before that food is shown under that goal.
@@ -385,10 +412,14 @@ const GOAL_CONTRIB_MIN = 0.25;
 /**
  * Does one serving of this food contribute to this goal — see GOAL_CONTRIB_MIN.
  *
- * The EFA group answers for both of its members: 24 of the 30 goals name omega-3 or omega-6 and
- * neither carries an individual amount, so the group's own fraction is the only number there is
- * to test. Held to the same bar as a nutrient row rather than waved through on `qualifies`,
- * which is what made every EFA food match all 24 of those goals.
+ * ★ EACH OMEGA ANSWERS FOR ITSELF — owner ruling, 2026-08-31, replacing the group reading this
+ * filter shipped with. 24 of the 30 goals name an omega and 9 name omega-3 ALONE, so testing
+ * the PAIR's combined fraction passed foods for goals they do not move. Measured on the running
+ * app before the change: the "Omega-3" nutrient filter returned 85 foods, 59 of them under the
+ * bar for omega-3 itself — almonds among them, at 0.0% omega-3 and 57.3% omega-6 — while the
+ * omega-3 essential page, fixed a day earlier, showed 25. Two screens, one question, two
+ * answers. Each omega is now held to the same GOAL_CONTRIB_MIN a nutrient row clears, against
+ * its OWN share.
  */
 function deliversGoal(f: Food, members: ReadonlySet<string>): boolean {
   for (const row of f.nutrients) {
@@ -396,9 +427,13 @@ function deliversGoal(f: Food, members: ReadonlySet<string>): boolean {
       return true;
     }
   }
-  const efa = f.efa;
-  return efa?.qualifies === true && efa.fraction >= GOAL_CONTRIB_MIN
-    && [...members].some(m => EFA_SLUGS.has(m));
+  for (const m of members) {
+    const share = efaMemberShare(f, m);
+    if (share !== null && share.qualifies && share.fraction >= GOAL_CONTRIB_MIN) {
+      return true;
+    }
+  }
+  return false;
 }
 
 export function rankFoodsForCoverage(input: {
@@ -438,7 +473,7 @@ export function rankFoodsForCoverage(input: {
     !owned.has(f.id)
     && (category === '' || f.category === category)
     && (nutrient === '' || f.nutrients.some(n => n.slug === nutrient)
-      || (EFA_SLUGS.has(nutrient) && f.efa?.qualifies === true))
+      || efaMemberShare(f, nutrient)?.qualifies === true)
     && (goalMembers === null || deliversGoal(f, goalMembers))
     && matchesQuery(f, query));
   if (available.length === 0) {
@@ -459,27 +494,38 @@ export function rankFoodsForCoverage(input: {
    * Which goals tint this food's card — ANY member it moves, deliberately loose (see
    * views/coverage.ts, which documents why this is a border tint and not a claim).
    *
-   * The EFA group counts here for the same reason it counts below: 24 of the 30 goals name
-   * omega-3 or omega-6, and walnuts at 220% of his nine grams were tinted for none of them.
+   * The omegas count here for the same reason they count below: 24 of the 30 goals name one,
+   * and walnuts at 220% of his nine grams were tinted for none of them. They count PER MEMBER
+   * since 2026-08-31 — the pair's combined figure tinted pumpkin seeds (0.5% omega-3) for
+   * every goal naming omega-3, which is the same false claim the key below was making. Loose
+   * is not the same as wrong: a tint may be generous about HOW MUCH, never about WHICH.
    */
   const goalIdsFor = (f: Food): string[] =>
     goals.filter(g => g.members.some(
       m => f.nutrients.some(n => n.slug === m)
-        || (f.efa?.qualifies === true && EFA_MEMBERS.has(m)),
+        || efaMemberShare(f, m)?.qualifies === true,
     )).map(g => g.id);
 
   /**
    * The share of the outstanding GOAL targets one serving fills. Each nutrient is capped at
    * its own target: 500% of one is one nutrient filled, not five.
    *
-   * ★ THE EFA GROUP FILLS ITS MEMBERS' GAPS — 2026-08-22, the same blind spot `strength`
-   * had and a wider one. 24 of the 30 goals name omega-3 or omega-6, and NO nutrient row can
-   * ever credit either: they carry no individual Wallach dose and share one meter. So every
-   * candidate was diluted by an identical unfillable amount, and the foods that actually
-   * answer the goal ranked as though they did nothing about it. The group's own fraction now
-   * fills each of its members present in the gap set — the denominator already counts them
-   * as two, one delivery genuinely moves both, and that is exactly how state/coverage.ts
-   * resolves their tiles. Capped like every other term on this key.
+   * ★ EACH OMEGA FILLS ITS OWN GAP — 2026-08-22 gave this term its existence, 2026-08-31 its
+   * honesty. 24 of the 30 goals name omega-3 or omega-6, and NO nutrient row can ever credit
+   * either: they carry no individual Wallach dose. Before the term existed, every candidate
+   * was diluted by an identical unfillable amount and the foods that answer the goal ranked
+   * as though they did nothing about it.
+   *
+   * The term was then the PAIR's combined fraction — which is CAPPED at 1, so every
+   * EFA-qualifying food scored a flat full point and the term stopped separating foods at
+   * all. It had become a qualify/do-not-qualify flag wearing a magnitude's clothes. On
+   * `calm-inflammation`, which names omega-3 and NOT omega-6, that ranked pumpkin seeds
+   * (0.5% omega-3) first and sunflower seeds (0.3%) ahead of hemp seeds (49.4%).
+   *
+   * Each omega now fills its own gap from its OWN share. This makes the term TRUTHFUL, not
+   * LOUDER: an omega is one member of a goal that holds up to 27, and no food carries more
+   * than ~65% of the nine grams as omega-3 alone, so EFA-rich foods legitimately lose the
+   * flat point they were never earning. Capped like every other term on this key.
    */
   const goalFillOf = (f: Food): number => {
     let filled = 0;
@@ -488,12 +534,13 @@ export function rankFoodsForCoverage(input: {
         filled += Math.min(row.fraction, 1);
       }
     }
-    const efa = f.efa;
-    if (efa?.qualifies === true) {
-      for (const member of EFA_MEMBERS) {
-        if (goalGaps.has(member)) {
-          filled += Math.min(efa.fraction, 1);
-        }
+    for (const member of EFA_MEMBERS) {
+      if (!goalGaps.has(member)) {
+        continue;
+      }
+      const share = efaMemberShare(f, member);
+      if (share !== null && share.qualifies) {
+        filled += Math.min(share.fraction, 1);
       }
     }
     return filled / goalGaps.size;
@@ -621,7 +668,7 @@ export function rankedFoodsForEssential(slug: string): RankedFoodSource[] {
   // them; their delivery lives in the food's `efa` block, measured against his ONE collective
   // amount for the pair. Reading rows only would report "no food source" for the two essentials
   // whose food sources this app already prints a percentage for on every card.
-  if (EFA_SLUGS.has(slug)) {
+  if (EFA_MEMBERS.has(slug)) {
     for (const f of DATA.foods) {
       // ★ THE MEMBER'S OWN SHARE, NOT THE GROUP'S (owner ruling, Luneth 2026-08-31). This
       // block answers "what should I eat for THIS essential" — see the docstring above — and
@@ -630,8 +677,10 @@ export function rankedFoodsForEssential(slug: string): RankedFoodSource[] {
       // (0.0%), while the omega-6 list led with herring at 68.7% (3.4% omega-6). 58 of 83
       // foods sat on the omega-3 list purely for their omega-6.
       //
-      // The GROUP figure is still what `foodEfaOilMg`, `hitsOf`, `strength` and the goal fill
-      // read, because those ask about the pair, which shares one meter. Do not cross them.
+      // The GROUP figure is still what `foodEfaOilMg`, `hitsOf` and `strength` read, because
+      // those ask about the PAIR, which shares one meter and one Wallach amount. The goal key,
+      // the goal tint and BOTH filters left that list on 2026-08-31: each of them names ONE
+      // omega, so each reads one. Do not cross what remains.
       const m = f.efa?.by_member[slug];
       if (m === undefined || m.qualifies !== true) {
         continue;

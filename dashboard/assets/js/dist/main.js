@@ -5608,11 +5608,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
        * The denominator is still that single figure. What is split is the FOOD's own measured
        * composition, which was never his number to begin with.
        *
-       * ★ READ THIS ONLY FOR A PER-ESSENTIAL LIST — "what should I eat for THIS". Every
-       * question about the GROUP (the tile's "Omega EFAs" chip, the `strength` ranking term,
-       * the regimen meter, the goal-gap fill) reads the collective `fraction` above, because
-       * the pair shares one meter. Crossing the two is the defect this split exists to fix,
-       * reintroduced from the other side.
+       * ★ READ THIS WHEREVER ONE OMEGA IS NAMED — a per-essential list, a goal that names an
+       * omega, a filter set to one of them. Every question about the GROUP (the tile's "Omega
+       * EFAs" chip, the `strength` ranking term, the regimen meter) reads the collective
+       * `fraction` above, because the pair shares one meter and Wallach states one amount.
+       * Crossing the two is the defect this split exists to fix, reintroduced from the other
+       * side: the group's figure under a heading that names ONE omega, or a member's figure
+       * inside the one meter his nine grams is measured by.
        */
       by_member: external_exports.record(external_exports.string(), external_exports.object({
         acid_mg: external_exports.number(),
@@ -43900,6 +43902,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   var EFA_GOAL = EfaCoverageSchema.parse(efa_coverage_data_default).goal;
   var EFA_SLUG = "essential-fatty-acids";
   var EFA_MEMBERS = new Set(EFA_GOAL.members);
+  function efaMemberShare(f, slug) {
+    if (!EFA_MEMBERS.has(slug)) {
+      return null;
+    }
+    const m = f.efa?.by_member[slug];
+    return m === void 0 ? null : { fraction: m.fraction, qualifies: m.qualifies };
+  }
   function foodEfaOilMg(id) {
     return BY_ID.get(id)?.efa?.oil_equivalent_mg ?? 0;
   }
@@ -43956,7 +43965,6 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     }
     return food.name.toLowerCase().includes(query) || food.category.toLowerCase().includes(query);
   }
-  var EFA_SLUGS = /* @__PURE__ */ new Set(["omega-3", "omega-6"]);
   var GOAL_CONTRIB_MIN = 0.25;
   function deliversGoal(f, members) {
     for (const row of f.nutrients) {
@@ -43964,8 +43972,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
         return true;
       }
     }
-    const efa = f.efa;
-    return efa?.qualifies === true && efa.fraction >= GOAL_CONTRIB_MIN && [...members].some((m) => EFA_SLUGS.has(m));
+    for (const m of members) {
+      const share = efaMemberShare(f, m);
+      if (share !== null && share.qualifies && share.fraction >= GOAL_CONTRIB_MIN) {
+        return true;
+      }
+    }
+    return false;
   }
   function rankFoodsForCoverage(input) {
     const owned = new Set(input.owned ?? []);
@@ -43977,7 +43990,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
     const nutrient = input.nutrient ?? "";
     const outstanding = new Set(input.want);
     const goalMembers = goalFilter === void 0 || goalFilter.length === 0 ? null : new Set(goalFilter);
-    const available = DATA.foods.filter((f) => !owned.has(f.id) && (category === "" || f.category === category) && (nutrient === "" || f.nutrients.some((n) => n.slug === nutrient) || EFA_SLUGS.has(nutrient) && f.efa?.qualifies === true) && (goalMembers === null || deliversGoal(f, goalMembers)) && matchesQuery(f, query));
+    const available = DATA.foods.filter((f) => !owned.has(f.id) && (category === "" || f.category === category) && (nutrient === "" || f.nutrients.some((n) => n.slug === nutrient) || efaMemberShare(f, nutrient)?.qualifies === true) && (goalMembers === null || deliversGoal(f, goalMembers)) && matchesQuery(f, query));
     if (available.length === 0) {
       return [];
     }
@@ -43992,7 +44005,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
       return n;
     };
     const goalIdsFor = (f) => goals.filter((g) => g.members.some(
-      (m) => f.nutrients.some((n) => n.slug === m) || f.efa?.qualifies === true && EFA_MEMBERS.has(m)
+      (m) => f.nutrients.some((n) => n.slug === m) || efaMemberShare(f, m)?.qualifies === true
     )).map((g) => g.id);
     const goalFillOf = (f) => {
       let filled = 0;
@@ -44001,12 +44014,13 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
           filled += Math.min(row.fraction, 1);
         }
       }
-      const efa = f.efa;
-      if (efa?.qualifies === true) {
-        for (const member of EFA_MEMBERS) {
-          if (goalGaps.has(member)) {
-            filled += Math.min(efa.fraction, 1);
-          }
+      for (const member of EFA_MEMBERS) {
+        if (!goalGaps.has(member)) {
+          continue;
+        }
+        const share = efaMemberShare(f, member);
+        if (share !== null && share.qualifies) {
+          filled += Math.min(share.fraction, 1);
         }
       }
       return filled / goalGaps.size;
@@ -44054,7 +44068,7 @@ Sickle cell anemia` }, "WAL-CLM-RARE-000271": { book: "rare-earths", claim_text:
   })();
   function rankedFoodsForEssential(slug) {
     const out = [];
-    if (EFA_SLUGS.has(slug)) {
+    if (EFA_MEMBERS.has(slug)) {
       for (const f of DATA.foods) {
         const m = f.efa?.by_member[slug];
         if (m === void 0 || m.qualifies !== true) {
@@ -51331,7 +51345,7 @@ TWO CORRECTIONS WORTH RECORDING. First, the gate's own comments overstated claus
 
 VERIFIED. Board 110/110. typecheck clean. 100 unit tests pass. Build OK. Eleven render probes pass. Both pages driven in the real app and screenshotted, zero page errors: 25 rows under omega-3 (17 of them fish), 53 under omega-6 (2 fish).
 
-FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with the food's COLLECTIVE share, so sunflower seeds still fill an omega-3 goal gap at 152.9%. Defensible -- the pair shares one budget -- and it is a separate owner ruling from 2026-08-22 with its own reasoning, so it was left alone rather than changed unasked.` }];
+FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with the food's COLLECTIVE share, so sunflower seeds still fill an omega-3 goal gap at 152.9%. Defensible -- the pair shares one budget -- and it is a separate owner ruling from 2026-08-22 with its own reasoning, so it was left alone rather than changed unasked.` }, { id: "lg_mthzl5w7_a75950", ts: "2026-08-31T20:26:36.823339-05:00", surface: "foods+gates+probes", kind: "round-close", summary: `A goal naming omega-3 now gets foods that carry omega-3: four more surfaces left the pair's combined figure, the "Omega-3" filter went from 83 foods to 25, and all three long-red render probes are green.`, detail: '`usda_bindings_are_all_load_bearing` (external). Every nutrient bound in usda-source.json must\n    be PRESENT in the pinned extract and resolve to at least one NON-ZERO cell on the shipped\n    catalogue; no two slugs may bind one cell; nothing may sit in `no_usda_composition` and the\n    bound map at once. This is this morning\'s EPA/DHA failure generalised \u2014 both were named in the\n    map and never extracted, so the terms existed in every docstring while reading zero rows on\n    all 192 foods, and every arithmetic gate recomputed 18:2 + 18:3 and agreed with itself at\n    108/108. All 28 bindings are live today; the thinnest is CLA at 17 foods, EPA at 43 and DHA at\n    39 are 2nd and 3rd thinnest. All four clauses re-broken and watched red.\n  \xB7 `per_essential_food_lists_are_distinct` (consistency). For every pair of essentials with 3+\n    food sources, the two sourced sets must differ; and at least 15 essentials must clear that\n    floor so the comparison can never pass vacuously. 325 pairs across 26 essentials today, zero\n    collisions. Re-broken by giving both omegas one shared block, and it names the collision\n    exactly: "omega-3 and omega-6 are sourced from one identical set of 53 food(s)". It would have\n    caught the defect that cost the last two rounds.\n\nTHREE RED PROBES, THREE DIFFERENT DISEASES. The suite went 55/58 to 58/58.\n  \xB7 `render_probe_group_dots` \u2014 the probe was wrong about the app. It NAMED which goals Wallach is\n    recorded as naming the plant-derived complex for. The layout moved to 19 of 30 and the list\n    did not, so `more-energy` NAMES the group and was being used as the NEGATIVE CONTROL: all four\n    of its failures asserted the opposite of the truth. Now derived from `g.groups`, 14 checks,\n    with a new clause asserting the split is non-trivial in both directions so the controls can\n    never go vacuous. views/coverage.ts said "20 of the 30 goals" in two places; the data says 19,\n    and the ~11% figure beside it is 10.2%. Both corrected \u2014 the same drift in prose instead of\n    code.\n  \xB7 `render_probe_mech_shape` \u2014 stale goldens, re-blessed on his explicit ruling with the full\n    diff read first. 17 changed regions across the four signed-off headers, and EVERY one of them\n    sits below the sources label: all four header BODIES are byte-identical to the 2026-08-20\n    capture, which is the property the fixture exists to protect. Two commits caused them, not\n    one, and that is worth saying because the ruling asked whether anything else rode along:\n    34fe0cc9 (2026-08-21) registered btt-2-0-citrus-peach-fusion as superseded, dropping it from\n    every dock and taking zinc\'s collapse from "Show all 53 sources" to 49; e38d9e50 (2026-08-24)\n    inserted the food-first "Best food sources" run, which pushed vitamin-a past the collapse\n    threshold. Determinism was checked before blessing \u2014 two independent captures byte-identical.\n    The fixture\'s own `_captured` note carries the whole account, including that re-capturing\n    eleven days late breaks its own same-patch rule.\n  \xB7 `render_probe_orac` \u2014 it described a design that had been replaced around it, and its own\n    header said so in a note nobody acted on, because the probe suite is not on the invariant\n    board and a red probe is silent. All seven failures were stale: \xA701\'s four `.kd-orac-dec`\n    decade bars are now one scrubbable `.kd-orac-cell`, and \xA706\'s nine `.kd-orac-tbl` tables are\n    now nine `.kd-orac-lane` rows in a plot; neither dead class appears in any view or stylesheet.\n    Zero live defects \u2014 the per-100 g guard survived the redesign in a stronger form, as an <i>\n    sub-label on the diverging lane and a per-dot `data-unit`. Re-pointed with every expectation\n    DERIVED from orac-data.json and orac-foods-data.json, and two assertions are now stronger than\n    what they replaced: the reach bar is measured against the share it prints (448.5 of 625 px =\n    71.8% against a printed 72%) rather than merely being a gradient, and the scrubber is driven\n    to each of Wallach\'s four measured band midpoints and must report 35/41/55/78 exactly. Both\n    re-broken and watched red.\n\nVERIFICATION. Board 112/112, 0 failed, external 27. Probe suite 58/58. Unit tests 106/106, tsc\nclean. Build fresh. Every negative control restored its files and the restore was confirmed by\nsha256, not by assumption.\n\nDEFERRED / DROPPED. The X share card (1500x500 from tools/make_share_card.js) is dropped\npermanently at his instruction \u2014 struck from the handoff, not to be raised again. Untouched: the\n121 unruled drawer-knowledge.css classes, the pH-ladder ACID cap, the 13 dark-theme dead args.\ntools/make_share_card.js is now unreferenced by any live task and is a candidate for the next\nobsolescence pass \u2014 flagged, not deleted.' }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";

@@ -1894,3 +1894,116 @@ the food's COLLECTIVE share, so sunflower seeds still fill an omega-3 goal gap a
 defensible — the pair shares one budget and sunflower seeds do move it — and it is a separate
 owner ruling from 2026-08-22 with its own documented reasoning, so it was left alone rather than
 changed unasked. Raise it if the recommender should follow the pages.
+
+[2026-08-31 20:24 CDT] foods+gates+probes/efa-goal-split-and-three-probe-reds · A goal that names omega-3 now gets foods that actually carry omega-3, and the three render probes that had been red for weeks are green. He picked "calm inflammation" — a goal that names omega-3 and not omega-6 — and the app led with pumpkin seeds, which are 0.5% omega-3 and 91% omega-6. Setting the nutrient filter to "Omega-3" returned 83 foods including almonds, which have essentially none. Yesterday's round fixed the two essential pages but four other places were still ranking and filtering on the pair's COMBINED figure. All four now read each omega's own share, so the filter returns the same 25 foods the omega-3 page shows. He also asked why almonds could go from a top omega-3 food to zero: the answer is that this app told him they were one. Until yesterday the omega-3 page printed the combined number, and almonds' combined number is 57%. Their actual omega-3 content is three thousandths of a gram per 100 g against a walnut's nine grams. Two new integrity checks were added for the two lessons the last two rounds taught, and every new check was deliberately broken and watched fail before being trusted.
+
+WHAT WAS STILL READING THE COMBINED FIGURE. Yesterday's split fixed `rankedFoodsForEssential`
+only. Four more readers in state/foods.ts asked group questions about a single omega: `goalFillOf`
+(the ranking key), `goalIdsFor` (the card's goal border tint), `deliversGoal` (the goal filter) and
+the nutrient filter inside `rankFoodsForCoverage`. All four now go through one new accessor,
+`efaMemberShare(food, slug)`, so there is one place to be wrong instead of four. `EFA_SLUGS`, a
+second hand-typed copy of `EFA_MEMBERS` (which derives from the goal), was deleted — section 00.B
+#1, no canonical value in two hand-maintained places.
+
+MEASURED ON THE RUNNING APP, BEFORE AND AFTER. The old filter condition (`efa.qualifies`) returned
+83 foods for EITHER omega. 58 of those 83 do not clear the bar for omega-3 and 30 do not clear it
+for omega-6 — the same 58/30 the previous round measured on the essential pages, which is the
+point: it was the same defect on a different screen. The nutrient filter now returns 25 for
+omega-3 and 53 for omega-6, exactly matching the essential pages; driven in the browser, the pager
+under "Omega-3" went from 28 pages to 9, and page one went from pumpkin seeds / oysters / natto to
+oysters (21.2% omega-3), natto (21.1%) and lobster (11.2%). A census of the returned set against
+the artifact showed zero foods present that should be absent and zero absent that should be
+present.
+
+THE ALMOND NUMBER, CHECKED THREE WAYS BECAUSE HE CHALLENGED IT. The pinned USDA extract gives
+almonds (fdc 170567) 12.324 g of 18:2 and 0.003 g of 18:3 per 100 g, with 20:5 and 22:6 at zero;
+walnuts (170187) carry 9.080 g of 18:3, about three thousand times as much, and hemp seeds 10.024.
+Almonds' 57.4% EFA figure is 57.3 points omega-6 and 0.0 omega-3. The corpus mentions almonds in
+exactly two claims across the seven books — WAL-CLM-HELLS-000051 (vitamin E, beside hazelnuts) and
+WAL-CLM-IMMORT-000264 (an ORAC table) — and never as an omega-3 or EFA source, so section 00.A has
+nothing in conflict. The belief traces to this app: before commit 6891d5e0, line 289 of
+state/foods.ts read `const pct = Math.round(food.efa.fraction * 100)` and printed that combined
+figure on BOTH omega pages.
+
+THE HONEST COST, STATED BECAUSE IT IS NOT AN IMPROVEMENT EVERYWHERE. Splitting makes the term
+TRUTHFUL, not LOUDER. The combined fraction is capped at 1 on this key, so every EFA-qualifying
+food was scoring a flat full point — a qualify/do-not-qualify flag wearing a magnitude's clothes.
+Once the term is honest it is one member of a goal holding up to 27, and no food carries more than
+about 65% of the nine grams as omega-3 alone, so EFA-rich foods legitimately lose ground they were
+never earning. On `calm-inflammation` the list now leads with oysters, lamb liver and beef liver —
+and beef liver carries no EFA at all. That is the goal's other thirteen nutrients answering, which
+is what the key was always summing. Sardines and herring do not jump to the top and were never
+going to; the fix is that sunflower seeds no longer sit above hemp.
+
+THE NEGATIVE CONTROL FOUND TWO SURFACES WITH NOTHING HOLDING THEM. Each of the four was re-broken
+back to the combined figure and the suite watched. Breaking `goalFillOf` and `deliversGoal` turned
+it red. Breaking the NUTRIENT FILTER and the GOAL TINT left it perfectly green — both had shipped
+a per-member promise with no test behind it, and the filter is the strongest claim of the four.
+Five tests were written (a nutrient filter that returns only what it names, that it narrows rather
+than samples, that the two omega filters are not one shared list, that a card is tinted only for
+goals it moves, and that a food qualifying for exactly one omega is never tinted on the other's
+account) plus a distinctness test on the ranking key. All four surfaces now go red on re-break.
+101 unit tests to 106; both independent models in foods.test.ts (`fillOver`, `passes`) were moved
+to the per-member share, because a model left on the group figure would have agreed with the
+defect in perfect health.
+
+TWO NEW GATES FOR THE TWO LESSONS — the board moves 110 to 112, external 26 to 27, and CLAUDE.md
+and README.md were updated to match (they went red BECAUSE of the correction, which is gotcha 4
+working as intended).
+  · `usda_bindings_are_all_load_bearing` (external). Every nutrient bound in usda-source.json must
+    be PRESENT in the pinned extract and resolve to at least one NON-ZERO cell on the shipped
+    catalogue; no two slugs may bind one cell; nothing may sit in `no_usda_composition` and the
+    bound map at once. This is this morning's EPA/DHA failure generalised — both were named in the
+    map and never extracted, so the terms existed in every docstring while reading zero rows on
+    all 192 foods, and every arithmetic gate recomputed 18:2 + 18:3 and agreed with itself at
+    108/108. All 28 bindings are live today; the thinnest is CLA at 17 foods, EPA at 43 and DHA at
+    39 are 2nd and 3rd thinnest. All four clauses re-broken and watched red.
+  · `per_essential_food_lists_are_distinct` (consistency). For every pair of essentials with 3+
+    food sources, the two sourced sets must differ; and at least 15 essentials must clear that
+    floor so the comparison can never pass vacuously. 325 pairs across 26 essentials today, zero
+    collisions. Re-broken by giving both omegas one shared block, and it names the collision
+    exactly: "omega-3 and omega-6 are sourced from one identical set of 53 food(s)". It would have
+    caught the defect that cost the last two rounds.
+
+THREE RED PROBES, THREE DIFFERENT DISEASES. The suite went 55/58 to 58/58.
+  · `render_probe_group_dots` — the probe was wrong about the app. It NAMED which goals Wallach is
+    recorded as naming the plant-derived complex for. The layout moved to 19 of 30 and the list
+    did not, so `more-energy` NAMES the group and was being used as the NEGATIVE CONTROL: all four
+    of its failures asserted the opposite of the truth. Now derived from `g.groups`, 14 checks,
+    with a new clause asserting the split is non-trivial in both directions so the controls can
+    never go vacuous. views/coverage.ts said "20 of the 30 goals" in two places; the data says 19,
+    and the ~11% figure beside it is 10.2%. Both corrected — the same drift in prose instead of
+    code.
+  · `render_probe_mech_shape` — stale goldens, re-blessed on his explicit ruling with the full
+    diff read first. 17 changed regions across the four signed-off headers, and EVERY one of them
+    sits below the sources label: all four header BODIES are byte-identical to the 2026-08-20
+    capture, which is the property the fixture exists to protect. Two commits caused them, not
+    one, and that is worth saying because the ruling asked whether anything else rode along:
+    34fe0cc9 (2026-08-21) registered btt-2-0-citrus-peach-fusion as superseded, dropping it from
+    every dock and taking zinc's collapse from "Show all 53 sources" to 49; e38d9e50 (2026-08-24)
+    inserted the food-first "Best food sources" run, which pushed vitamin-a past the collapse
+    threshold. Determinism was checked before blessing — two independent captures byte-identical.
+    The fixture's own `_captured` note carries the whole account, including that re-capturing
+    eleven days late breaks its own same-patch rule.
+  · `render_probe_orac` — it described a design that had been replaced around it, and its own
+    header said so in a note nobody acted on, because the probe suite is not on the invariant
+    board and a red probe is silent. All seven failures were stale: §01's four `.kd-orac-dec`
+    decade bars are now one scrubbable `.kd-orac-cell`, and §06's nine `.kd-orac-tbl` tables are
+    now nine `.kd-orac-lane` rows in a plot; neither dead class appears in any view or stylesheet.
+    Zero live defects — the per-100 g guard survived the redesign in a stronger form, as an <i>
+    sub-label on the diverging lane and a per-dot `data-unit`. Re-pointed with every expectation
+    DERIVED from orac-data.json and orac-foods-data.json, and two assertions are now stronger than
+    what they replaced: the reach bar is measured against the share it prints (448.5 of 625 px =
+    71.8% against a printed 72%) rather than merely being a gradient, and the scrubber is driven
+    to each of Wallach's four measured band midpoints and must report 35/41/55/78 exactly. Both
+    re-broken and watched red.
+
+VERIFICATION. Board 112/112, 0 failed, external 27. Probe suite 58/58. Unit tests 106/106, tsc
+clean. Build fresh. Every negative control restored its files and the restore was confirmed by
+sha256, not by assumption.
+
+DEFERRED / DROPPED. The X share card (1500x500 from tools/make_share_card.js) is dropped
+permanently at his instruction — struck from the handoff, not to be raised again. Untouched: the
+121 unruled drawer-knowledge.css classes, the pH-ladder ACID cap, the 13 dark-theme dead args.
+tools/make_share_card.js is now unreferenced by any live task and is a candidate for the next
+obsolescence pass — flagged, not deleted.

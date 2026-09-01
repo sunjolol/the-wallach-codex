@@ -287,7 +287,7 @@ function subCovered(sub: LayoutSubsection, snapshot: CoverageSnapshot | null): b
  *
  * ★ WHY THE GROUP AND NOT 34 RINGS: the plant-derived 34 share ONE verdict off the
  * colloidal-mineral bottle, so the group IS the unit — there is exactly one thing to do about
- * all 34. Ringing them individually would light 34 of the 91 tiles on the 20 of 30 goals that
+ * all 34. Ringing them individually would light 34 of the 91 tiles on the 19 of 30 goals that
  * name the group — roughly 37% of the field on two goals out of every three — and a goal system
  * where nearly everything lights on nearly every goal reads as cheap and means nothing. The dots
  * ride the LABEL, which already reads "PLANT DERIVED · 34", so they read as a property of the
@@ -300,10 +300,11 @@ function subCovered(sub: LayoutSubsection, snapshot: CoverageSnapshot | null): b
  *
  * ★ AND WHY THIS IS NOT THE SAME AS THE REC-CARD GOAL DOTS, which were removed — the distinction
  * is MEASURED, not aesthetic, so do not "unify" the two: the rec dots lit almost every time (a
- * broad product touches every goal), so they never varied and encoded nothing. These VARY — 20
- * of the 30 goals name the group, so on a 5-goal pick all five dots light only ~11% of the time
- * and the modal case is 3 of 5. A dot here is a fact about YOUR goals; a dot there was a
- * constant.
+ * broad product touches every goal), so they never varied and encoded nothing. These VARY — 19
+ * of the 30 goals name the group, so on a 5-goal pick all five dots light only ~10% of the time
+ * and the modal case is 3 of 5 (34%). A dot here is a fact about YOUR goals; a dot there was a
+ * constant. The count said 20 until 2026-08-31, when render_probe_group_dots was rewritten to
+ * DERIVE it from the layout rather than name it — the same drift, in prose instead of code.
  *
  * Hues come from GOAL_HUES by PICK order — the same index the tile ring uses, so one colour
  * means one goal everywhere on the field.
